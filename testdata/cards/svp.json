@@ -6,9 +6,9 @@
     "localId": "224",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "224/0",
+    "cardNumber": "224",
     "cardName": "Paradise Resort",
-    "fullDisplayName": "Paradise Resort 224/0 SVP Black Star Promos",
+    "fullDisplayName": "Paradise Resort 224 SVP Black Star Promos",
     "rarity": "None",
     "category": "Trainer",
     "stage": null,
@@ -26,7 +26,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-224-low.jpg",
-    "imageHighSrc": "cards/svp-224-low.jpg"
+    "imageHighSrc": "cards/svp-224-low.jpg",
+    "rules": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "22537",
@@ -35,9 +36,9 @@
     "localId": "223",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "223/0",
+    "cardNumber": "223",
     "cardName": "Professor's Research",
-    "fullDisplayName": "Professor's Research 223/0 SVP Black Star Promos",
+    "fullDisplayName": "Professor's Research 223 SVP Black Star Promos",
     "rarity": "None",
     "category": "Trainer",
     "stage": null,
@@ -55,7 +56,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-223-low.jpg",
-    "imageHighSrc": "cards/svp-223-low.jpg"
+    "imageHighSrc": "cards/svp-223-low.jpg",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "22536",
@@ -64,9 +66,9 @@
     "localId": "222",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "222/0",
+    "cardNumber": "222",
     "cardName": "Professor's Research",
-    "fullDisplayName": "Professor's Research 222/0 SVP Black Star Promos",
+    "fullDisplayName": "Professor's Research 222 SVP Black Star Promos",
     "rarity": "None",
     "category": "Trainer",
     "stage": null,
@@ -84,7 +86,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-222-low.jpg",
-    "imageHighSrc": "cards/svp-222-low.jpg"
+    "imageHighSrc": "cards/svp-222-low.jpg",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "22535",
@@ -93,9 +96,9 @@
     "localId": "221",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "221/0",
+    "cardNumber": "221",
     "cardName": "Professor's Research",
-    "fullDisplayName": "Professor's Research 221/0 SVP Black Star Promos",
+    "fullDisplayName": "Professor's Research 221 SVP Black Star Promos",
     "rarity": "None",
     "category": "Trainer",
     "stage": null,
@@ -113,7 +116,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-221-low.jpg",
-    "imageHighSrc": "cards/svp-221-low.jpg"
+    "imageHighSrc": "cards/svp-221-low.jpg",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "22534",
@@ -122,9 +126,9 @@
     "localId": "220",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "220/0",
+    "cardNumber": "220",
     "cardName": "Black Belt's Training",
-    "fullDisplayName": "Black Belt's Training 220/0 SVP Black Star Promos",
+    "fullDisplayName": "Black Belt's Training 220 SVP Black Star Promos",
     "rarity": "None",
     "category": "Trainer",
     "stage": null,
@@ -142,7 +146,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-220-low.jpg",
-    "imageHighSrc": "cards/svp-220-low.jpg"
+    "imageHighSrc": "cards/svp-220-low.jpg",
+    "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "22533",
@@ -151,9 +156,9 @@
     "localId": "219",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "219/0",
+    "cardNumber": "219",
     "cardName": "Black Belt's Training",
-    "fullDisplayName": "Black Belt's Training 219/0 SVP Black Star Promos",
+    "fullDisplayName": "Black Belt's Training 219 SVP Black Star Promos",
     "rarity": "None",
     "category": "Trainer",
     "stage": null,
@@ -171,7 +176,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-219-low.jpg",
-    "imageHighSrc": "cards/svp-219-low.jpg"
+    "imageHighSrc": "cards/svp-219-low.jpg",
+    "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "22532",
@@ -180,9 +186,9 @@
     "localId": "218",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "218/0",
+    "cardNumber": "218",
     "cardName": "Team Rocket's Persian ex",
-    "fullDisplayName": "Team Rocket's Persian ex 218/0 SVP Black Star Promos",
+    "fullDisplayName": "Team Rocket's Persian ex 218 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -205,7 +211,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-218-low.jpg",
-    "imageHighSrc": "cards/svp-218-low.jpg"
+    "imageHighSrc": "cards/svp-218-low.jpg",
+    "attacks": [
+      {
+        "name": "Haughty Order",
+        "damage": null
+      },
+      {
+        "name": "Cruel Slash",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22531",
@@ -214,9 +231,9 @@
     "localId": "217",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "217/0",
+    "cardNumber": "217",
     "cardName": "Team Rocket's Nidoking ex",
-    "fullDisplayName": "Team Rocket's Nidoking ex 217/0 SVP Black Star Promos",
+    "fullDisplayName": "Team Rocket's Nidoking ex 217 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -239,7 +256,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-217-low.jpg",
-    "imageHighSrc": "cards/svp-217-low.jpg"
+    "imageHighSrc": "cards/svp-217-low.jpg",
+    "attacks": [
+      {
+        "name": "Tainted Horn",
+        "damage": "100"
+      },
+      {
+        "name": "Kingly Impact",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22530",
@@ -248,9 +276,9 @@
     "localId": "216",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "216/0",
+    "cardNumber": "216",
     "cardName": "Team Rocket's Mewtwo ex",
-    "fullDisplayName": "Team Rocket's Mewtwo ex 216/0 SVP Black Star Promos",
+    "fullDisplayName": "Team Rocket's Mewtwo ex 216 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -273,7 +301,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-216-low.jpg",
-    "imageHighSrc": "cards/svp-216-low.jpg"
+    "imageHighSrc": "cards/svp-216-low.jpg",
+    "attacks": [
+      {
+        "name": "Erasure Ball",
+        "damage": "160+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22529",
@@ -282,9 +317,9 @@
     "localId": "215",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "215/0",
+    "cardNumber": "215",
     "cardName": "Toxtricity ex",
-    "fullDisplayName": "Toxtricity ex 215/0 SVP Black Star Promos",
+    "fullDisplayName": "Toxtricity ex 215 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -307,7 +342,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-215-low.jpg",
-    "imageHighSrc": "cards/svp-215-low.jpg"
+    "imageHighSrc": "cards/svp-215-low.jpg",
+    "attacks": [
+      {
+        "name": "Strumming Thunder",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22528",
@@ -316,9 +358,9 @@
     "localId": "214",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "214/0",
+    "cardNumber": "214",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 214/0 SVP Black Star Promos",
+    "fullDisplayName": "Pikachu 214 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -340,7 +382,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-214-low.jpg",
-    "imageHighSrc": "cards/svp-214-low.jpg"
+    "imageHighSrc": "cards/svp-214-low.jpg",
+    "attacks": [
+      {
+        "name": "Unwind",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "22527",
@@ -349,9 +397,9 @@
     "localId": "213",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "213/0",
+    "cardNumber": "213",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 213/0 SVP Black Star Promos",
+    "fullDisplayName": "Feraligatr 213 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -373,7 +421,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-213-low.jpg",
-    "imageHighSrc": "cards/svp-213-low.jpg"
+    "imageHighSrc": "cards/svp-213-low.jpg",
+    "attacks": [
+      {
+        "name": "Deep Submergence",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "22526",
@@ -382,9 +436,9 @@
     "localId": "212",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "212/0",
+    "cardNumber": "212",
     "cardName": "Reuniclus",
-    "fullDisplayName": "Reuniclus 212/0 SVP Black Star Promos",
+    "fullDisplayName": "Reuniclus 212 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -406,7 +460,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-212-low.jpg",
-    "imageHighSrc": "cards/svp-212-low.jpg"
+    "imageHighSrc": "cards/svp-212-low.jpg",
+    "attacks": [
+      {
+        "name": "Cellular Ascension",
+        "damage": null
+      },
+      {
+        "name": "Evo-Lariat",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "22525",
@@ -415,9 +479,9 @@
     "localId": "211",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "211/0",
+    "cardNumber": "211",
     "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 211/0 SVP Black Star Promos",
+    "fullDisplayName": "Gothitelle 211 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -439,7 +503,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-211-low.jpg",
-    "imageHighSrc": "cards/svp-211-low.jpg"
+    "imageHighSrc": "cards/svp-211-low.jpg",
+    "attacks": [
+      {
+        "name": "Synchro Shot",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "22524",
@@ -448,9 +518,9 @@
     "localId": "210",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "210/0",
+    "cardNumber": "210",
     "cardName": "Tornadus",
-    "fullDisplayName": "Tornadus 210/0 SVP Black Star Promos",
+    "fullDisplayName": "Tornadus 210 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -472,7 +542,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-210-low.jpg",
-    "imageHighSrc": "cards/svp-210-low.jpg"
+    "imageHighSrc": "cards/svp-210-low.jpg",
+    "attacks": [
+      {
+        "name": "Wrapped in Wind",
+        "damage": null
+      },
+      {
+        "name": "Hurricane",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "22523",
@@ -481,9 +561,9 @@
     "localId": "209",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "209/0",
+    "cardNumber": "209",
     "cardName": "Thundurus",
-    "fullDisplayName": "Thundurus 209/0 SVP Black Star Promos",
+    "fullDisplayName": "Thundurus 209 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -505,7 +585,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-209-low.jpg",
-    "imageHighSrc": "cards/svp-209-low.jpg"
+    "imageHighSrc": "cards/svp-209-low.jpg",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Disaster Volt",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "22522",
@@ -514,9 +604,9 @@
     "localId": "208",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "208/0",
+    "cardNumber": "208",
     "cardName": "Victini",
-    "fullDisplayName": "Victini 208/0 SVP Black Star Promos",
+    "fullDisplayName": "Victini 208 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -538,18 +628,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-208-low.jpg",
-    "imageHighSrc": "cards/svp-208-low.jpg"
+    "imageHighSrc": "cards/svp-208-low.jpg",
+    "attacks": [
+      {
+        "name": "V-Force",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "21014",
-    "externalId": null,
+    "externalId": "svp-207",
     "tcgdex_id": "svp-207",
     "localId": "207",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "207/0",
+    "cardNumber": "207",
     "cardName": "Steven's Beldum",
-    "fullDisplayName": "Steven's Beldum 207/0 SVP Black Star Promos",
+    "fullDisplayName": "Steven's Beldum 207 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -571,18 +667,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-207-low.webp",
-    "imageHighSrc": "cards/svp-207-high.webp"
+    "imageHighSrc": "cards/svp-207-high.webp",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21013",
-    "externalId": null,
+    "externalId": "svp-206",
     "tcgdex_id": "svp-206",
     "localId": "206",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "206/0",
+    "cardNumber": "206",
     "cardName": "Marnie's Morpeko",
-    "fullDisplayName": "Marnie's Morpeko 206/0 SVP Black Star Promos",
+    "fullDisplayName": "Marnie's Morpeko 206 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -604,7 +706,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-206-low.webp",
-    "imageHighSrc": "cards/svp-206-high.webp"
+    "imageHighSrc": "cards/svp-206-high.webp",
+    "attacks": [
+      {
+        "name": "Spiky Wheel",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "22521",
@@ -613,9 +721,9 @@
     "localId": "205",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "205/0",
+    "cardNumber": "205",
     "cardName": "Team Rocket’s Mewtwo ex",
-    "fullDisplayName": "Team Rocket’s Mewtwo ex 205/0 SVP Black Star Promos",
+    "fullDisplayName": "Team Rocket’s Mewtwo ex 205 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -638,7 +746,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-205-low.jpg",
-    "imageHighSrc": "cards/svp-205-low.jpg"
+    "imageHighSrc": "cards/svp-205-low.jpg",
+    "attacks": [
+      {
+        "name": "Erasure Ball",
+        "damage": "160+"
+      }
+    ],
+    "rules": "Pokémon ex Rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22520",
@@ -647,9 +762,9 @@
     "localId": "204",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "204/0",
+    "cardNumber": "204",
     "cardName": "Cynthia’s Garchomp ex",
-    "fullDisplayName": "Cynthia’s Garchomp ex 204/0 SVP Black Star Promos",
+    "fullDisplayName": "Cynthia’s Garchomp ex 204 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -671,7 +786,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-204-low.jpg",
-    "imageHighSrc": "cards/svp-204-low.jpg"
+    "imageHighSrc": "cards/svp-204-low.jpg",
+    "attacks": [
+      {
+        "name": "Corkscrew Dive",
+        "damage": "100"
+      },
+      {
+        "name": "Draconic Buster",
+        "damage": "260"
+      }
+    ],
+    "rules": "Pokémon ex Rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22519",
@@ -680,9 +806,9 @@
     "localId": "203",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "203/0",
+    "cardNumber": "203",
     "cardName": "Team Rocket's Wobbuffet",
-    "fullDisplayName": "Team Rocket's Wobbuffet 203/0 SVP Black Star Promos",
+    "fullDisplayName": "Team Rocket's Wobbuffet 203 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -704,7 +830,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-203-low.jpg",
-    "imageHighSrc": "cards/svp-203-low.jpg"
+    "imageHighSrc": "cards/svp-203-low.jpg",
+    "attacks": [
+      {
+        "name": "Rocket Mirror",
+        "damage": null
+      },
+      {
+        "name": "Headbutt Bounce",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "22518",
@@ -713,9 +849,9 @@
     "localId": "202",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "202/0",
+    "cardNumber": "202",
     "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 202/0 SVP Black Star Promos",
+    "fullDisplayName": "Kangaskhan 202 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -737,7 +873,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-202-low.jpg",
-    "imageHighSrc": "cards/svp-202-low.jpg"
+    "imageHighSrc": "cards/svp-202-low.jpg",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Mega Punch",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "22517",
@@ -746,9 +892,9 @@
     "localId": "201",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "201/0",
+    "cardNumber": "201",
     "cardName": "Zebstrika",
-    "fullDisplayName": "Zebstrika 201/0 SVP Black Star Promos",
+    "fullDisplayName": "Zebstrika 201 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -770,7 +916,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-201-low.jpg",
-    "imageHighSrc": "cards/svp-201-low.jpg"
+    "imageHighSrc": "cards/svp-201-low.jpg",
+    "attacks": [
+      {
+        "name": "Full Speed",
+        "damage": null
+      },
+      {
+        "name": "Head Bolt",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "22516",
@@ -779,9 +935,9 @@
     "localId": "200",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "200/0",
+    "cardNumber": "200",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 200/0 SVP Black Star Promos",
+    "fullDisplayName": "Eevee 200 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -803,7 +959,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-200-low.jpg",
-    "imageHighSrc": "cards/svp-200-low.jpg"
+    "imageHighSrc": "cards/svp-200-low.jpg",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22515",
@@ -812,9 +978,9 @@
     "localId": "199",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "199/0",
+    "cardNumber": "199",
     "cardName": "Zarude",
-    "fullDisplayName": "Zarude 199/0 SVP Black Star Promos",
+    "fullDisplayName": "Zarude 199 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -836,18 +1002,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-199-low.jpg",
-    "imageHighSrc": "cards/svp-199-low.jpg"
+    "imageHighSrc": "cards/svp-199-low.jpg",
+    "attacks": [
+      {
+        "name": "Pluck Off",
+        "damage": null
+      },
+      {
+        "name": "Hammer Whip",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "21005",
-    "externalId": null,
+    "externalId": "svp-198",
     "tcgdex_id": "svp-198",
     "localId": "198",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "198/0",
+    "cardNumber": "198",
     "cardName": "Zacian ex",
-    "fullDisplayName": "Zacian ex 198/0 SVP Black Star Promos",
+    "fullDisplayName": "Zacian ex 198 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -869,18 +1045,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-198-low.webp",
-    "imageHighSrc": "cards/svp-198-high.webp"
+    "imageHighSrc": "cards/svp-198-high.webp",
+    "attacks": [
+      {
+        "name": "Steel Armament",
+        "damage": "20"
+      },
+      {
+        "name": "Slashing Strike",
+        "damage": "210"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21004",
-    "externalId": null,
+    "externalId": "svp-197",
     "tcgdex_id": "svp-197",
     "localId": "197",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "197/0",
+    "cardNumber": "197",
     "cardName": "Koraidon ex",
-    "fullDisplayName": "Koraidon ex 197/0 SVP Black Star Promos",
+    "fullDisplayName": "Koraidon ex 197 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -902,7 +1089,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-197-low.webp",
-    "imageHighSrc": "cards/svp-197-high.webp"
+    "imageHighSrc": "cards/svp-197-high.webp",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "50"
+      },
+      {
+        "name": "Revenge Buster",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22514",
@@ -911,9 +1109,9 @@
     "localId": "196",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "196/0",
+    "cardNumber": "196",
     "cardName": "Charizard ex",
-    "fullDisplayName": "Charizard ex 196/0 SVP Black Star Promos",
+    "fullDisplayName": "Charizard ex 196 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -937,18 +1135,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-196-low.jpg",
-    "imageHighSrc": "cards/svp-196-low.jpg"
+    "imageHighSrc": "cards/svp-196-low.jpg",
+    "attacks": [
+      {
+        "name": "Burning Darkness",
+        "damage": "180+"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21002",
-    "externalId": null,
+    "externalId": "svp-195",
     "tcgdex_id": "svp-195",
     "localId": "195",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "195/0",
+    "cardNumber": "195",
     "cardName": "Lillie's Clefairy ex",
-    "fullDisplayName": "Lillie's Clefairy ex 195/0 SVP Black Star Promos",
+    "fullDisplayName": "Lillie's Clefairy ex 195 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -970,18 +1175,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-195-low.webp",
-    "imageHighSrc": "cards/svp-195-high.webp"
+    "imageHighSrc": "cards/svp-195-high.webp",
+    "attacks": [
+      {
+        "name": "Full Moon Rondo",
+        "damage": "20+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21001",
-    "externalId": null,
+    "externalId": "svp-194",
     "tcgdex_id": "svp-194",
     "localId": "194",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "194/0",
+    "cardNumber": "194",
     "cardName": "Iono's Bellibolt ex",
-    "fullDisplayName": "Iono's Bellibolt ex 194/0 SVP Black Star Promos",
+    "fullDisplayName": "Iono's Bellibolt ex 194 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1003,18 +1215,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-194-low.webp",
-    "imageHighSrc": "cards/svp-194-high.webp"
+    "imageHighSrc": "cards/svp-194-high.webp",
+    "attacks": [
+      {
+        "name": "Thunderous Bolt",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21000",
-    "externalId": null,
+    "externalId": "svp-193",
     "tcgdex_id": "svp-193",
     "localId": "193",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "193/0",
+    "cardNumber": "193",
     "cardName": "Hop's Zacian ex",
-    "fullDisplayName": "Hop's Zacian ex 193/0 SVP Black Star Promos",
+    "fullDisplayName": "Hop's Zacian ex 193 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1036,7 +1255,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-193-low.webp",
-    "imageHighSrc": "cards/svp-193-high.webp"
+    "imageHighSrc": "cards/svp-193-high.webp",
+    "attacks": [
+      {
+        "name": "Insta-Strike",
+        "damage": "30"
+      },
+      {
+        "name": "Brave Slash",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22513",
@@ -1045,9 +1275,9 @@
     "localId": "192",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "192/0",
+    "cardNumber": "192",
     "cardName": "Fuecoco",
-    "fullDisplayName": "Fuecoco 192/0 SVP Black Star Promos",
+    "fullDisplayName": "Fuecoco 192 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1069,7 +1299,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-192-low.jpg",
-    "imageHighSrc": "cards/svp-192-low.jpg"
+    "imageHighSrc": "cards/svp-192-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22512",
@@ -1078,9 +1314,9 @@
     "localId": "191",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "191/0",
+    "cardNumber": "191",
     "cardName": "Sprigatito",
-    "fullDisplayName": "Sprigatito 191/0 SVP Black Star Promos",
+    "fullDisplayName": "Sprigatito 191 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1100,7 +1336,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-191-low.jpg",
-    "imageHighSrc": "cards/svp-191-low.jpg"
+    "imageHighSrc": "cards/svp-191-low.jpg",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Leafage",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22511",
@@ -1109,9 +1355,9 @@
     "localId": "190",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "190/0",
+    "cardNumber": "190",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 190/0 SVP Black Star Promos",
+    "fullDisplayName": "Pikachu 190 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1133,18 +1379,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-190-low.jpg",
-    "imageHighSrc": "cards/svp-190-low.jpg"
+    "imageHighSrc": "cards/svp-190-low.jpg",
+    "attacks": [
+      {
+        "name": "Scrappy Spark",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "20996",
-    "externalId": null,
+    "externalId": "svp-189",
     "tcgdex_id": "svp-189",
     "localId": "189",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "189/0",
+    "cardNumber": "189",
     "cardName": "N's Zorua",
-    "fullDisplayName": "N's Zorua 189/0 SVP Black Star Promos",
+    "fullDisplayName": "N's Zorua 189 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1166,18 +1418,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-189-low.webp",
-    "imageHighSrc": "cards/svp-189-high.webp"
+    "imageHighSrc": "cards/svp-189-high.webp",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "20995",
-    "externalId": null,
+    "externalId": "svp-188",
     "tcgdex_id": "svp-188",
     "localId": "188",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "188/0",
+    "cardNumber": "188",
     "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 188/0 SVP Black Star Promos",
+    "fullDisplayName": "Scrafty 188 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1199,18 +1457,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-188-low.webp",
-    "imageHighSrc": "cards/svp-188-high.webp"
+    "imageHighSrc": "cards/svp-188-high.webp",
+    "attacks": [
+      {
+        "name": "Nab 'n' Dash",
+        "damage": null
+      },
+      {
+        "name": "High Jump Kick",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "20994",
-    "externalId": null,
+    "externalId": "svp-187",
     "tcgdex_id": "svp-187",
     "localId": "187",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "187/0",
+    "cardNumber": "187",
     "cardName": "Yanmega",
-    "fullDisplayName": "Yanmega 187/0 SVP Black Star Promos",
+    "fullDisplayName": "Yanmega 187 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1232,18 +1500,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-187-low.webp",
-    "imageHighSrc": "cards/svp-187-high.webp"
+    "imageHighSrc": "cards/svp-187-high.webp",
+    "attacks": [
+      {
+        "name": "Gyro Shockwave",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "20993",
-    "externalId": null,
+    "externalId": "svp-186",
     "tcgdex_id": "svp-186",
     "localId": "186",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "186/0",
+    "cardNumber": "186",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 186/0 SVP Black Star Promos",
+    "fullDisplayName": "Scraggy 186 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1265,18 +1539,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-186-low.webp",
-    "imageHighSrc": "cards/svp-186-high.webp"
+    "imageHighSrc": "cards/svp-186-high.webp",
+    "attacks": [
+      {
+        "name": "Kick Shot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20992",
-    "externalId": null,
+    "externalId": "svp-185",
     "tcgdex_id": "svp-185",
     "localId": "185",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "185/0",
+    "cardNumber": "185",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma 185/0 SVP Black Star Promos",
+    "fullDisplayName": "Yanma 185 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1298,18 +1578,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-185-low.webp",
-    "imageHighSrc": "cards/svp-185-high.webp"
+    "imageHighSrc": "cards/svp-185-high.webp",
+    "attacks": [
+      {
+        "name": "Silent Wing",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "20991",
-    "externalId": null,
+    "externalId": "svp-184",
     "tcgdex_id": "svp-184",
     "localId": "184",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "184/0",
+    "cardNumber": "184",
     "cardName": "Hop's Snorlax",
-    "fullDisplayName": "Hop's Snorlax 184/0 SVP Black Star Promos",
+    "fullDisplayName": "Hop's Snorlax 184 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1331,18 +1617,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-184-low.webp",
-    "imageHighSrc": "cards/svp-184-high.webp"
+    "imageHighSrc": "cards/svp-184-high.webp",
+    "attacks": [
+      {
+        "name": "Dynamic Press",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "20990",
-    "externalId": null,
+    "externalId": "svp-183",
     "tcgdex_id": "svp-183",
     "localId": "183",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "183/0",
+    "cardNumber": "183",
     "cardName": "Lillie's Ribombee",
-    "fullDisplayName": "Lillie's Ribombee 183/0 SVP Black Star Promos",
+    "fullDisplayName": "Lillie's Ribombee 183 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1364,18 +1656,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-183-low.webp",
-    "imageHighSrc": "cards/svp-183-high.webp"
+    "imageHighSrc": "cards/svp-183-high.webp",
+    "attacks": [
+      {
+        "name": "Magical Shot",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "20989",
-    "externalId": null,
+    "externalId": "svp-182",
     "tcgdex_id": "svp-182",
     "localId": "182",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "182/0",
+    "cardNumber": "182",
     "cardName": "Iono's Kilowattrel",
-    "fullDisplayName": "Iono's Kilowattrel 182/0 SVP Black Star Promos",
+    "fullDisplayName": "Iono's Kilowattrel 182 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1397,18 +1695,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-182-low.webp",
-    "imageHighSrc": "cards/svp-182-high.webp"
+    "imageHighSrc": "cards/svp-182-high.webp",
+    "attacks": [
+      {
+        "name": "Mach Bolt",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "20988",
-    "externalId": null,
+    "externalId": "svp-181",
     "tcgdex_id": "svp-181",
     "localId": "181",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "181/0",
+    "cardNumber": "181",
     "cardName": "N's Darmanitan",
-    "fullDisplayName": "N's Darmanitan 181/0 SVP Black Star Promos",
+    "fullDisplayName": "N's Darmanitan 181 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1430,18 +1734,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-181-low.webp",
-    "imageHighSrc": "cards/svp-181-high.webp"
+    "imageHighSrc": "cards/svp-181-high.webp",
+    "attacks": [
+      {
+        "name": "Back Draft",
+        "damage": "30×"
+      },
+      {
+        "name": "Flamebody Cannon",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "20987",
-    "externalId": null,
+    "externalId": "svp-180",
     "tcgdex_id": "svp-180",
     "localId": "180",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "180/0",
+    "cardNumber": "180",
     "cardName": "Dialga ex",
-    "fullDisplayName": "Dialga ex 180/0 SVP Black Star Promos",
+    "fullDisplayName": "Dialga ex 180 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1463,18 +1777,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-180-low.webp",
-    "imageHighSrc": "cards/svp-180-high.webp"
+    "imageHighSrc": "cards/svp-180-high.webp",
+    "attacks": [
+      {
+        "name": "Time Bellow",
+        "damage": "20"
+      },
+      {
+        "name": "Metal Blast",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20986",
-    "externalId": null,
+    "externalId": "svp-179",
     "tcgdex_id": "svp-179",
     "localId": "179",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "179/0",
+    "cardNumber": "179",
     "cardName": "Xerneas ex",
-    "fullDisplayName": "Xerneas ex 179/0 SVP Black Star Promos",
+    "fullDisplayName": "Xerneas ex 179 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1496,18 +1821,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-179-low.webp",
-    "imageHighSrc": "cards/svp-179-high.webp"
+    "imageHighSrc": "cards/svp-179-high.webp",
+    "attacks": [
+      {
+        "name": "Aurora Beam",
+        "damage": "50"
+      },
+      {
+        "name": "Rising Horns",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20985",
-    "externalId": null,
+    "externalId": "svp-178",
     "tcgdex_id": "svp-178",
     "localId": "178",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "178/0",
+    "cardNumber": "178",
     "cardName": "Kyogre ex",
-    "fullDisplayName": "Kyogre ex 178/0 SVP Black Star Promos",
+    "fullDisplayName": "Kyogre ex 178 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1529,18 +1865,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-178-low.webp",
-    "imageHighSrc": "cards/svp-178-high.webp"
+    "imageHighSrc": "cards/svp-178-high.webp",
+    "attacks": [
+      {
+        "name": "Winding Waves",
+        "damage": "80"
+      },
+      {
+        "name": "Tidal Surge",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20984",
-    "externalId": null,
+    "externalId": "svp-177",
     "tcgdex_id": "svp-177",
     "localId": "177",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "177/0",
+    "cardNumber": "177",
     "cardName": "Bloodmoon Ursaluna ex",
-    "fullDisplayName": "Bloodmoon Ursaluna ex 177/0 SVP Black Star Promos",
+    "fullDisplayName": "Bloodmoon Ursaluna ex 177 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1562,7 +1909,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-177-low.webp",
-    "imageHighSrc": "cards/svp-177-high.webp"
+    "imageHighSrc": "cards/svp-177-high.webp",
+    "attacks": [
+      {
+        "name": "Blood Moon",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22510",
@@ -1571,9 +1925,9 @@
     "localId": "176",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "176/0",
+    "cardNumber": "176",
     "cardName": "Umbreon ex",
-    "fullDisplayName": "Umbreon ex 176/0 SVP Black Star Promos",
+    "fullDisplayName": "Umbreon ex 176 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1597,7 +1951,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-176-low.jpg",
-    "imageHighSrc": "cards/svp-176-low.jpg"
+    "imageHighSrc": "cards/svp-176-low.jpg",
+    "attacks": [
+      {
+        "name": "Moon Mirage",
+        "damage": "160"
+      },
+      {
+        "name": "Onyx",
+        "damage": null
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22509",
@@ -1606,9 +1971,9 @@
     "localId": "175",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "175/0",
+    "cardNumber": "175",
     "cardName": "Espeon ex",
-    "fullDisplayName": "Espeon ex 175/0 SVP Black Star Promos",
+    "fullDisplayName": "Espeon ex 175 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1632,18 +1997,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-175-low.jpg",
-    "imageHighSrc": "cards/svp-175-low.jpg"
+    "imageHighSrc": "cards/svp-175-low.jpg",
+    "attacks": [
+      {
+        "name": "Psych Out",
+        "damage": "160"
+      },
+      {
+        "name": "Amazez",
+        "damage": null
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20983",
-    "externalId": null,
+    "externalId": "svp-174",
     "tcgdex_id": "svp-174",
     "localId": "174",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "174/0",
+    "cardNumber": "174",
     "cardName": "Eevee ex",
-    "fullDisplayName": "Eevee ex 174/0 SVP Black Star Promos",
+    "fullDisplayName": "Eevee ex 174 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1665,18 +2041,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-174-low.webp",
-    "imageHighSrc": "cards/svp-174-high.webp"
+    "imageHighSrc": "cards/svp-174-high.webp",
+    "attacks": [
+      {
+        "name": "Coruscating Quartz",
+        "damage": "200"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20982",
-    "externalId": null,
+    "externalId": "svp-173",
     "tcgdex_id": "svp-173",
     "localId": "173",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "173/0",
+    "cardNumber": "173",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 173/0 SVP Black Star Promos",
+    "fullDisplayName": "Eevee 173 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1698,18 +2081,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-173-low.webp",
-    "imageHighSrc": "cards/svp-173-high.webp"
+    "imageHighSrc": "cards/svp-173-high.webp",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20981",
-    "externalId": null,
+    "externalId": "svp-172",
     "tcgdex_id": "svp-172",
     "localId": "172",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "172/0",
+    "cardNumber": "172",
     "cardName": "Sylveon",
-    "fullDisplayName": "Sylveon 172/0 SVP Black Star Promos",
+    "fullDisplayName": "Sylveon 172 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1731,18 +2120,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-172-low.webp",
-    "imageHighSrc": "cards/svp-172-high.webp"
+    "imageHighSrc": "cards/svp-172-high.webp",
+    "attacks": [
+      {
+        "name": "Mystical Return",
+        "damage": null
+      },
+      {
+        "name": "Disarming Voice",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "20980",
-    "externalId": null,
+    "externalId": "svp-171",
     "tcgdex_id": "svp-171",
     "localId": "171",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "171/0",
+    "cardNumber": "171",
     "cardName": "Glaceon",
-    "fullDisplayName": "Glaceon 171/0 SVP Black Star Promos",
+    "fullDisplayName": "Glaceon 171 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1764,18 +2163,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-171-low.webp",
-    "imageHighSrc": "cards/svp-171-high.webp"
+    "imageHighSrc": "cards/svp-171-high.webp",
+    "attacks": [
+      {
+        "name": "Permeating Chill",
+        "damage": "30"
+      },
+      {
+        "name": "Icicle Missile",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "20979",
-    "externalId": null,
+    "externalId": "svp-170",
     "tcgdex_id": "svp-170",
     "localId": "170",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "170/0",
+    "cardNumber": "170",
     "cardName": "Leafeon",
-    "fullDisplayName": "Leafeon 170/0 SVP Black Star Promos",
+    "fullDisplayName": "Leafeon 170 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1797,18 +2206,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-170-low.webp",
-    "imageHighSrc": "cards/svp-170-high.webp"
+    "imageHighSrc": "cards/svp-170-high.webp",
+    "attacks": [
+      {
+        "name": "Leaflet Blessings",
+        "damage": null
+      },
+      {
+        "name": "Solar Beam",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "20978",
-    "externalId": null,
+    "externalId": "svp-169",
     "tcgdex_id": "svp-169",
     "localId": "169",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "169/0",
+    "cardNumber": "169",
     "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 169/0 SVP Black Star Promos",
+    "fullDisplayName": "Jolteon 169 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1830,18 +2249,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-169-low.webp",
-    "imageHighSrc": "cards/svp-169-high.webp"
+    "imageHighSrc": "cards/svp-169-high.webp",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Fighting Lightning",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "20977",
-    "externalId": null,
+    "externalId": "svp-168",
     "tcgdex_id": "svp-168",
     "localId": "168",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "168/0",
+    "cardNumber": "168",
     "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 168/0 SVP Black Star Promos",
+    "fullDisplayName": "Vaporeon 168 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1863,18 +2292,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-168-low.webp",
-    "imageHighSrc": "cards/svp-168-high.webp"
+    "imageHighSrc": "cards/svp-168-high.webp",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "30"
+      },
+      {
+        "name": "Fighting Whirlpool",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "20976",
-    "externalId": null,
+    "externalId": "svp-167",
     "tcgdex_id": "svp-167",
     "localId": "167",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "167/0",
+    "cardNumber": "167",
     "cardName": "Flareon",
-    "fullDisplayName": "Flareon 167/0 SVP Black Star Promos",
+    "fullDisplayName": "Flareon 167 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -1896,18 +2335,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-167-low.webp",
-    "imageHighSrc": "cards/svp-167-high.webp"
+    "imageHighSrc": "cards/svp-167-high.webp",
+    "attacks": [
+      {
+        "name": "Destructive Flame",
+        "damage": "30"
+      },
+      {
+        "name": "Fighting Blaze",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "20975",
-    "externalId": null,
+    "externalId": "svp-166",
     "tcgdex_id": "svp-166",
     "localId": "166",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "166/0",
+    "cardNumber": "166",
     "cardName": "Teal Mask Ogerpon ex",
-    "fullDisplayName": "Teal Mask Ogerpon ex 166/0 SVP Black Star Promos",
+    "fullDisplayName": "Teal Mask Ogerpon ex 166 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1929,18 +2378,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-166-low.webp",
-    "imageHighSrc": "cards/svp-166-high.webp"
+    "imageHighSrc": "cards/svp-166-high.webp",
+    "attacks": [
+      {
+        "name": "Myriad Leaf Shower",
+        "damage": "30+"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16026",
-    "externalId": null,
+    "externalId": "svp-165",
     "tcgdex_id": "svp-165",
     "localId": "165",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "165/219",
+    "cardNumber": "165",
     "cardName": "Terapagos ex",
-    "fullDisplayName": "Terapagos ex 165/219 SVP Black Star Promos",
+    "fullDisplayName": "Terapagos ex 165 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1964,18 +2420,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-165-low.png",
-    "imageHighSrc": "cards/svp-165-high.png"
+    "imageHighSrc": "cards/svp-165-high.png",
+    "attacks": [
+      {
+        "name": "Unified Beatdown",
+        "damage": "30×"
+      },
+      {
+        "name": "Crown Opal",
+        "damage": "180"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16018",
-    "externalId": null,
+    "externalId": "svp-164",
     "tcgdex_id": "svp-164",
     "localId": "164",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "164/219",
+    "cardNumber": "164",
     "cardName": "Lapras ex",
-    "fullDisplayName": "Lapras ex 164/219 SVP Black Star Promos",
+    "fullDisplayName": "Lapras ex 164 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1999,18 +2466,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-164-low.png",
-    "imageHighSrc": "cards/svp-164-high.png"
+    "imageHighSrc": "cards/svp-164-high.png",
+    "attacks": [
+      {
+        "name": "Power Splash",
+        "damage": "40×"
+      },
+      {
+        "name": "Larimar Rain",
+        "damage": null
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16009",
-    "externalId": null,
+    "externalId": "svp-163",
     "tcgdex_id": "svp-163",
     "localId": "163",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "163/219",
+    "cardNumber": "163",
     "cardName": "Cinderace ex",
-    "fullDisplayName": "Cinderace ex 163/219 SVP Black Star Promos",
+    "fullDisplayName": "Cinderace ex 163 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2034,18 +2512,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-163-low.png",
-    "imageHighSrc": "cards/svp-163-high.png"
+    "imageHighSrc": "cards/svp-163-high.png",
+    "attacks": [
+      {
+        "name": "Flare Strike",
+        "damage": "280"
+      },
+      {
+        "name": "Garnet Volley",
+        "damage": null
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15998",
-    "externalId": null,
+    "externalId": "svp-162",
     "tcgdex_id": "svp-162",
     "localId": "162",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "162/219",
+    "cardNumber": "162",
     "cardName": "Houndstone ex",
-    "fullDisplayName": "Houndstone ex 162/219 SVP Black Star Promos",
+    "fullDisplayName": "Houndstone ex 162 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2068,18 +2557,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-162-low.png",
-    "imageHighSrc": "cards/svp-162-high.png"
+    "imageHighSrc": "cards/svp-162-high.png",
+    "attacks": [
+      {
+        "name": "Horrifying Fang",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15989",
-    "externalId": null,
+    "externalId": "svp-161",
     "tcgdex_id": "svp-161",
     "localId": "161",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "161/219",
+    "cardNumber": "161",
     "cardName": "Charizard ex",
-    "fullDisplayName": "Charizard ex 161/219 SVP Black Star Promos",
+    "fullDisplayName": "Charizard ex 161 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2102,18 +2598,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-161-low.png",
-    "imageHighSrc": "cards/svp-161-high.png"
+    "imageHighSrc": "cards/svp-161-high.png",
+    "attacks": [
+      {
+        "name": "Brave Wing",
+        "damage": "60+"
+      },
+      {
+        "name": "Explosive Vortex",
+        "damage": "330"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15978",
-    "externalId": null,
+    "externalId": "svp-160",
     "tcgdex_id": "svp-160",
     "localId": "160",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "160/219",
+    "cardNumber": "160",
     "cardName": "Squawkabilly ex",
-    "fullDisplayName": "Squawkabilly ex 160/219 SVP Black Star Promos",
+    "fullDisplayName": "Squawkabilly ex 160 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2136,18 +2643,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-160-low.png",
-    "imageHighSrc": "cards/svp-160-high.png"
+    "imageHighSrc": "cards/svp-160-high.png",
+    "attacks": [
+      {
+        "name": "Motivate",
+        "damage": "20"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15968",
-    "externalId": null,
+    "externalId": "svp-159",
     "tcgdex_id": "svp-159",
     "localId": "159",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "159/219",
+    "cardNumber": "159",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 159/219 SVP Black Star Promos",
+    "fullDisplayName": "Magneton 159 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2169,18 +2683,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-159-low.png",
-    "imageHighSrc": "cards/svp-159-high.png"
+    "imageHighSrc": "cards/svp-159-high.png",
+    "attacks": [
+      {
+        "name": "Electric Ball",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "15960",
-    "externalId": null,
+    "externalId": "svp-158",
     "tcgdex_id": "svp-158",
     "localId": "158",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "158/219",
+    "cardNumber": "158",
     "cardName": "Pachirisu",
-    "fullDisplayName": "Pachirisu 158/219 SVP Black Star Promos",
+    "fullDisplayName": "Pachirisu 158 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2202,18 +2722,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-158-low.png",
-    "imageHighSrc": "cards/svp-158-high.png"
+    "imageHighSrc": "cards/svp-158-high.png",
+    "attacks": [
+      {
+        "name": "Crackling Charge",
+        "damage": null
+      },
+      {
+        "name": "Tiny Bolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "15952",
-    "externalId": null,
+    "externalId": "svp-157",
     "tcgdex_id": "svp-157",
     "localId": "157",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "157/219",
+    "cardNumber": "157",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 157/219 SVP Black Star Promos",
+    "fullDisplayName": "Zapdos 157 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2235,18 +2765,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-157-low.png",
-    "imageHighSrc": "cards/svp-157-high.png"
+    "imageHighSrc": "cards/svp-157-high.png",
+    "attacks": [
+      {
+        "name": "Follow-Up Bolt",
+        "damage": "20+"
+      },
+      {
+        "name": "Drill Peck",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "15943",
-    "externalId": null,
+    "externalId": "svp-156",
     "tcgdex_id": "svp-156",
     "localId": "156",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "156/219",
+    "cardNumber": "156",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 156/219 SVP Black Star Promos",
+    "fullDisplayName": "Quagsire 156 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2268,18 +2808,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-156-low.png",
-    "imageHighSrc": "cards/svp-156-high.png"
+    "imageHighSrc": "cards/svp-156-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "30"
+      },
+      {
+        "name": "Drenched Headbutt",
+        "damage": "80×"
+      }
+    ]
   },
   {
     "masterCardId": "15935",
-    "externalId": null,
+    "externalId": "svp-155",
     "tcgdex_id": "svp-155",
     "localId": "155",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "155/219",
+    "cardNumber": "155",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper 155/219 SVP Black Star Promos",
+    "fullDisplayName": "Wooper 155 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2301,18 +2851,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-155-low.png",
-    "imageHighSrc": "cards/svp-155-high.png"
+    "imageHighSrc": "cards/svp-155-high.png",
+    "attacks": [
+      {
+        "name": "Scoop Water",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "15924",
-    "externalId": null,
+    "externalId": "svp-154",
     "tcgdex_id": "svp-154",
     "localId": "154",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "154/219",
+    "cardNumber": "154",
     "cardName": "Indeedee",
-    "fullDisplayName": "Indeedee 154/219 SVP Black Star Promos",
+    "fullDisplayName": "Indeedee 154 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2334,18 +2894,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-154-low.png",
-    "imageHighSrc": "cards/svp-154-high.png"
+    "imageHighSrc": "cards/svp-154-high.png",
+    "attacks": [
+      {
+        "name": "Super Psy Bolt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "15913",
-    "externalId": null,
+    "externalId": "svp-153",
     "tcgdex_id": "svp-153",
     "localId": "153",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "153/219",
+    "cardNumber": "153",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 153/219 SVP Black Star Promos",
+    "fullDisplayName": "Magneton 153 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2367,18 +2933,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-153-low.png",
-    "imageHighSrc": "cards/svp-153-high.png"
+    "imageHighSrc": "cards/svp-153-high.png",
+    "attacks": [
+      {
+        "name": "Electric Ball",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "15903",
-    "externalId": null,
+    "externalId": "svp-152",
     "tcgdex_id": "svp-152",
     "localId": "152",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "152/219",
+    "cardNumber": "152",
     "cardName": "Chien-Pao",
-    "fullDisplayName": "Chien-Pao 152/219 SVP Black Star Promos",
+    "fullDisplayName": "Chien-Pao 152 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2400,18 +2972,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-152-low.png",
-    "imageHighSrc": "cards/svp-152-high.png"
+    "imageHighSrc": "cards/svp-152-high.png",
+    "attacks": [
+      {
+        "name": "Icicle Loop",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "15895",
-    "externalId": null,
+    "externalId": "svp-151",
     "tcgdex_id": "svp-151",
     "localId": "151",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "151/219",
+    "cardNumber": "151",
     "cardName": "Gouging Fire",
-    "fullDisplayName": "Gouging Fire 151/219 SVP Black Star Promos",
+    "fullDisplayName": "Gouging Fire 151 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2434,18 +3012,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-151-low.png",
-    "imageHighSrc": "cards/svp-151-high.png"
+    "imageHighSrc": "cards/svp-151-high.png",
+    "attacks": [
+      {
+        "name": "Lunge Out",
+        "damage": "30"
+      },
+      {
+        "name": "Blazing Charge",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "15885",
-    "externalId": null,
+    "externalId": "svp-150",
     "tcgdex_id": "svp-150",
     "localId": "150",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "150/219",
+    "cardNumber": "150",
     "cardName": "Paradise Resort",
-    "fullDisplayName": "Paradise Resort 150/219 SVP Black Star Promos",
+    "fullDisplayName": "Paradise Resort 150 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -2463,18 +3051,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-150-low.png",
-    "imageHighSrc": "cards/svp-150-high.png"
+    "imageHighSrc": "cards/svp-150-high.png",
+    "rules": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "15876",
-    "externalId": null,
+    "externalId": "svp-149",
     "tcgdex_id": "svp-149",
     "localId": "149",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "149/219",
+    "cardNumber": "149",
     "cardName": "Pecharunt",
-    "fullDisplayName": "Pecharunt 149/219 SVP Black Star Promos",
+    "fullDisplayName": "Pecharunt 149 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2496,18 +3085,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-149-low.png",
-    "imageHighSrc": "cards/svp-149-high.png"
+    "imageHighSrc": "cards/svp-149-high.png",
+    "attacks": [
+      {
+        "name": "Poison Chain",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "15866",
-    "externalId": null,
+    "externalId": "svp-148",
     "tcgdex_id": "svp-148",
     "localId": "148",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "148/219",
+    "cardNumber": "148",
     "cardName": "Miraidon",
-    "fullDisplayName": "Miraidon 148/219 SVP Black Star Promos",
+    "fullDisplayName": "Miraidon 148 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2529,18 +3124,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-148-low.png",
-    "imageHighSrc": "cards/svp-148-high.png"
+    "imageHighSrc": "cards/svp-148-high.png",
+    "attacks": [
+      {
+        "name": "Electric Claws",
+        "damage": "30"
+      },
+      {
+        "name": "Mach Bolt",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "15852",
-    "externalId": null,
+    "externalId": "svp-147",
     "tcgdex_id": "svp-147",
     "localId": "147",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "147/219",
+    "cardNumber": "147",
     "cardName": "Iron Boulder ex",
-    "fullDisplayName": "Iron Boulder ex 147/219 SVP Black Star Promos",
+    "fullDisplayName": "Iron Boulder ex 147 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2564,18 +3169,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-147-low.png",
-    "imageHighSrc": "cards/svp-147-high.png"
+    "imageHighSrc": "cards/svp-147-high.png",
+    "attacks": [
+      {
+        "name": "Repulsor Axe",
+        "damage": "60"
+      },
+      {
+        "name": "Power Stomp",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15840",
-    "externalId": null,
+    "externalId": "svp-146",
     "tcgdex_id": "svp-146",
     "localId": "146",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "146/219",
+    "cardNumber": "146",
     "cardName": "Iron Crown ex",
-    "fullDisplayName": "Iron Crown ex 146/219 SVP Black Star Promos",
+    "fullDisplayName": "Iron Crown ex 146 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2599,18 +3215,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-146-low.png",
-    "imageHighSrc": "cards/svp-146-high.png"
+    "imageHighSrc": "cards/svp-146-high.png",
+    "attacks": [
+      {
+        "name": "Twin Shotels",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15828",
-    "externalId": null,
+    "externalId": "svp-145",
     "tcgdex_id": "svp-145",
     "localId": "145",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "145/219",
+    "cardNumber": "145",
     "cardName": "Raging Bolt ex",
-    "fullDisplayName": "Raging Bolt ex 145/219 SVP Black Star Promos",
+    "fullDisplayName": "Raging Bolt ex 145 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2634,18 +3257,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-145-low.png",
-    "imageHighSrc": "cards/svp-145-high.png"
+    "imageHighSrc": "cards/svp-145-high.png",
+    "attacks": [
+      {
+        "name": "Burst Roar",
+        "damage": null
+      },
+      {
+        "name": "Bellowing Thunder",
+        "damage": "70×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15818",
-    "externalId": null,
+    "externalId": "svp-144",
     "tcgdex_id": "svp-144",
     "localId": "144",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "144/219",
+    "cardNumber": "144",
     "cardName": "Gouging Fire ex",
-    "fullDisplayName": "Gouging Fire ex 144/219 SVP Black Star Promos",
+    "fullDisplayName": "Gouging Fire ex 144 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2669,18 +3303,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-144-low.png",
-    "imageHighSrc": "cards/svp-144-high.png"
+    "imageHighSrc": "cards/svp-144-high.png",
+    "attacks": [
+      {
+        "name": "Heat Blast",
+        "damage": "60"
+      },
+      {
+        "name": "Blaze Blitz",
+        "damage": "260"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15808",
-    "externalId": null,
+    "externalId": "svp-143",
     "tcgdex_id": "svp-143",
     "localId": "143",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "143/219",
+    "cardNumber": "143",
     "cardName": "Miraidon ex",
-    "fullDisplayName": "Miraidon ex 143/219 SVP Black Star Promos",
+    "fullDisplayName": "Miraidon ex 143 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2703,18 +3348,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-143-low.png",
-    "imageHighSrc": "cards/svp-143-high.png"
+    "imageHighSrc": "cards/svp-143-high.png",
+    "attacks": [
+      {
+        "name": "Rapid Draw",
+        "damage": "20"
+      },
+      {
+        "name": "Techno Turbo",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15799",
-    "externalId": null,
+    "externalId": "svp-142",
     "tcgdex_id": "svp-142",
     "localId": "142",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "142/219",
+    "cardNumber": "142",
     "cardName": "Victini ex",
-    "fullDisplayName": "Victini ex 142/219 SVP Black Star Promos",
+    "fullDisplayName": "Victini ex 142 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2737,18 +3393,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-142-low.png",
-    "imageHighSrc": "cards/svp-142-high.png"
+    "imageHighSrc": "cards/svp-142-high.png",
+    "attacks": [
+      {
+        "name": "Strafe",
+        "damage": "30"
+      },
+      {
+        "name": "Victory Flame",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15789",
-    "externalId": null,
+    "externalId": "svp-141",
     "tcgdex_id": "svp-141",
     "localId": "141",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "141/219",
+    "cardNumber": "141",
     "cardName": "Noctowl",
-    "fullDisplayName": "Noctowl 141/219 SVP Black Star Promos",
+    "fullDisplayName": "Noctowl 141 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2770,18 +3437,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-141-low.png",
-    "imageHighSrc": "cards/svp-141-high.png"
+    "imageHighSrc": "cards/svp-141-high.png",
+    "attacks": [
+      {
+        "name": "Speed Wing",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "15780",
-    "externalId": null,
+    "externalId": "svp-140",
     "tcgdex_id": "svp-140",
     "localId": "140",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "140/219",
+    "cardNumber": "140",
     "cardName": "Tinkaton",
-    "fullDisplayName": "Tinkaton 140/219 SVP Black Star Promos",
+    "fullDisplayName": "Tinkaton 140 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2803,18 +3476,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-140-low.png",
-    "imageHighSrc": "cards/svp-140-high.png"
+    "imageHighSrc": "cards/svp-140-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "40"
+      },
+      {
+        "name": "Wild Press",
+        "damage": "220"
+      }
+    ]
   },
   {
     "masterCardId": "15770",
-    "externalId": null,
+    "externalId": "svp-139",
     "tcgdex_id": "svp-139",
     "localId": "139",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "139/219",
+    "cardNumber": "139",
     "cardName": "Latias",
-    "fullDisplayName": "Latias 139/219 SVP Black Star Promos",
+    "fullDisplayName": "Latias 139 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2836,18 +3519,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-139-low.png",
-    "imageHighSrc": "cards/svp-139-high.png"
+    "imageHighSrc": "cards/svp-139-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Sphere",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "15761",
-    "externalId": null,
+    "externalId": "svp-138",
     "tcgdex_id": "svp-138",
     "localId": "138",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "138/219",
+    "cardNumber": "138",
     "cardName": "Porygon2",
-    "fullDisplayName": "Porygon2 138/219 SVP Black Star Promos",
+    "fullDisplayName": "Porygon2 138 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2869,18 +3558,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-138-low.png",
-    "imageHighSrc": "cards/svp-138-high.png"
+    "imageHighSrc": "cards/svp-138-high.png",
+    "attacks": [
+      {
+        "name": "Powered Ball",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "15751",
-    "externalId": null,
+    "externalId": "svp-137",
     "tcgdex_id": "svp-137",
     "localId": "137",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "137/219",
+    "cardNumber": "137",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 137/219 SVP Black Star Promos",
+    "fullDisplayName": "Horsea 137 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2902,18 +3597,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-137-low.png",
-    "imageHighSrc": "cards/svp-137-high.png"
+    "imageHighSrc": "cards/svp-137-high.png",
+    "attacks": [
+      {
+        "name": "Hook",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "15742",
-    "externalId": null,
+    "externalId": "svp-136",
     "tcgdex_id": "svp-136",
     "localId": "136",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "136/219",
+    "cardNumber": "136",
     "cardName": "Bouffalant",
-    "fullDisplayName": "Bouffalant 136/219 SVP Black Star Promos",
+    "fullDisplayName": "Bouffalant 136 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2935,18 +3636,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-136-low.png",
-    "imageHighSrc": "cards/svp-136-high.png"
+    "imageHighSrc": "cards/svp-136-high.png",
+    "attacks": [
+      {
+        "name": "Boundless Power",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "15733",
-    "externalId": null,
+    "externalId": "svp-135",
     "tcgdex_id": "svp-135",
     "localId": "135",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "135/219",
+    "cardNumber": "135",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 135/219 SVP Black Star Promos",
+    "fullDisplayName": "Drifblim 135 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2968,18 +3675,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-135-low.png",
-    "imageHighSrc": "cards/svp-135-high.png"
+    "imageHighSrc": "cards/svp-135-high.png",
+    "attacks": [
+      {
+        "name": "Everyone Explode Now",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "15724",
-    "externalId": null,
+    "externalId": "svp-134",
     "tcgdex_id": "svp-134",
     "localId": "134",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "134/219",
+    "cardNumber": "134",
     "cardName": "Crabominable",
-    "fullDisplayName": "Crabominable 134/219 SVP Black Star Promos",
+    "fullDisplayName": "Crabominable 134 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3001,18 +3714,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-134-low.png",
-    "imageHighSrc": "cards/svp-134-high.png"
+    "imageHighSrc": "cards/svp-134-high.png",
+    "attacks": [
+      {
+        "name": "Haymaker",
+        "damage": "250"
+      }
+    ]
   },
   {
     "masterCardId": "15714",
-    "externalId": null,
+    "externalId": "svp-133",
     "tcgdex_id": "svp-133",
     "localId": "133",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "133/219",
+    "cardNumber": "133",
     "cardName": "Ledian",
-    "fullDisplayName": "Ledian 133/219 SVP Black Star Promos",
+    "fullDisplayName": "Ledian 133 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3034,18 +3753,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-133-low.png",
-    "imageHighSrc": "cards/svp-133-high.png"
+    "imageHighSrc": "cards/svp-133-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "15705",
-    "externalId": null,
+    "externalId": "svp-132",
     "tcgdex_id": "svp-132",
     "localId": "132",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "132/219",
+    "cardNumber": "132",
     "cardName": "Greninja ex",
-    "fullDisplayName": "Greninja ex 132/219 SVP Black Star Promos",
+    "fullDisplayName": "Greninja ex 132 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3068,18 +3793,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-132-low.png",
-    "imageHighSrc": "cards/svp-132-high.png"
+    "imageHighSrc": "cards/svp-132-high.png",
+    "attacks": [
+      {
+        "name": "Stealthy Shuriken",
+        "damage": null
+      },
+      {
+        "name": "Torrential Slash",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15696",
-    "externalId": null,
+    "externalId": "svp-131",
     "tcgdex_id": "svp-131",
     "localId": "131",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "131/219",
+    "cardNumber": "131",
     "cardName": "Kingdra ex",
-    "fullDisplayName": "Kingdra ex 131/219 SVP Black Star Promos",
+    "fullDisplayName": "Kingdra ex 131 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3102,18 +3838,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-131-low.png",
-    "imageHighSrc": "cards/svp-131-high.png"
+    "imageHighSrc": "cards/svp-131-high.png",
+    "attacks": [
+      {
+        "name": "King's Order",
+        "damage": null
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15687",
-    "externalId": null,
+    "externalId": "svp-130",
     "tcgdex_id": "svp-130",
     "localId": "130",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "130/219",
+    "cardNumber": "130",
     "cardName": "Kingambit",
-    "fullDisplayName": "Kingambit 130/219 SVP Black Star Promos",
+    "fullDisplayName": "Kingambit 130 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3135,18 +3882,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-130-low.png",
-    "imageHighSrc": "cards/svp-130-high.png"
+    "imageHighSrc": "cards/svp-130-high.png",
+    "attacks": [
+      {
+        "name": "Strike Down",
+        "damage": null
+      },
+      {
+        "name": "Massive Rend",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "15677",
-    "externalId": null,
+    "externalId": "svp-129",
     "tcgdex_id": "svp-129",
     "localId": "129",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "129/219",
+    "cardNumber": "129",
     "cardName": "Pecharunt",
-    "fullDisplayName": "Pecharunt 129/219 SVP Black Star Promos",
+    "fullDisplayName": "Pecharunt 129 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3168,18 +3925,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-129-low.png",
-    "imageHighSrc": "cards/svp-129-high.png"
+    "imageHighSrc": "cards/svp-129-high.png",
+    "attacks": [
+      {
+        "name": "Poison Chain",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "15668",
-    "externalId": null,
+    "externalId": "svp-128",
     "tcgdex_id": "svp-128",
     "localId": "128",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "128/219",
+    "cardNumber": "128",
     "cardName": "Iron Leaves ex",
-    "fullDisplayName": "Iron Leaves ex 128/219 SVP Black Star Promos",
+    "fullDisplayName": "Iron Leaves ex 128 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3203,18 +3966,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-128-low.png",
-    "imageHighSrc": "cards/svp-128-high.png"
+    "imageHighSrc": "cards/svp-128-high.png",
+    "attacks": [
+      {
+        "name": "Prism Edge",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15659",
-    "externalId": null,
+    "externalId": "svp-127",
     "tcgdex_id": "svp-127",
     "localId": "127",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "127/219",
+    "cardNumber": "127",
     "cardName": "Walking Wake ex",
-    "fullDisplayName": "Walking Wake ex 127/219 SVP Black Star Promos",
+    "fullDisplayName": "Walking Wake ex 127 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3238,18 +4008,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-127-low.png",
-    "imageHighSrc": "cards/svp-127-high.png"
+    "imageHighSrc": "cards/svp-127-high.png",
+    "attacks": [
+      {
+        "name": "Catharsis Roar",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15648",
-    "externalId": null,
+    "externalId": "svp-126",
     "tcgdex_id": "svp-126",
     "localId": "126",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "126/219",
+    "cardNumber": "126",
     "cardName": "Palafin ex",
-    "fullDisplayName": "Palafin ex 126/219 SVP Black Star Promos",
+    "fullDisplayName": "Palafin ex 126 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3272,18 +4049,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-126-low.png",
-    "imageHighSrc": "cards/svp-126-high.png"
+    "imageHighSrc": "cards/svp-126-high.png",
+    "attacks": [
+      {
+        "name": "Giga Impact",
+        "damage": "250"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15638",
-    "externalId": null,
+    "externalId": "svp-125",
     "tcgdex_id": "svp-125",
     "localId": "125",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "125/219",
+    "cardNumber": "125",
     "cardName": "Armarouge ex",
-    "fullDisplayName": "Armarouge ex 125/219 SVP Black Star Promos",
+    "fullDisplayName": "Armarouge ex 125 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3306,18 +4090,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-125-low.png",
-    "imageHighSrc": "cards/svp-125-high.png"
+    "imageHighSrc": "cards/svp-125-high.png",
+    "attacks": [
+      {
+        "name": "Scorching Bazooka",
+        "damage": "40+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15628",
-    "externalId": null,
+    "externalId": "svp-124",
     "tcgdex_id": "svp-124",
     "localId": "124",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "124/219",
+    "cardNumber": "124",
     "cardName": "Iono",
-    "fullDisplayName": "Iono 124/219 SVP Black Star Promos",
+    "fullDisplayName": "Iono 124 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -3335,18 +4126,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-124-low.png",
-    "imageHighSrc": "cards/svp-124-high.png"
+    "imageHighSrc": "cards/svp-124-high.png",
+    "rules": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player draws a card for each of their remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "15618",
-    "externalId": null,
+    "externalId": "svp-123",
     "tcgdex_id": "svp-123",
     "localId": "123",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "123/219",
+    "cardNumber": "123",
     "cardName": "Teal Mask Ogerpon",
-    "fullDisplayName": "Teal Mask Ogerpon 123/219 SVP Black Star Promos",
+    "fullDisplayName": "Teal Mask Ogerpon 123 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3368,18 +4160,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-123-low.png",
-    "imageHighSrc": "cards/svp-123-high.png"
+    "imageHighSrc": "cards/svp-123-high.png",
+    "attacks": [
+      {
+        "name": "Mountain Stroll",
+        "damage": null
+      },
+      {
+        "name": "Ogre Comeback",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "15608",
-    "externalId": null,
+    "externalId": "svp-122",
     "tcgdex_id": "svp-122",
     "localId": "122",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "122/219",
+    "cardNumber": "122",
     "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 122/219 SVP Black Star Promos",
+    "fullDisplayName": "Snorlax 122 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3401,18 +4203,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-122-low.png",
-    "imageHighSrc": "cards/svp-122-high.png"
+    "imageHighSrc": "cards/svp-122-high.png",
+    "attacks": [
+      {
+        "name": "Lazy Press",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "15596",
-    "externalId": null,
+    "externalId": "svp-121",
     "tcgdex_id": "svp-121",
     "localId": "121",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "121/219",
+    "cardNumber": "121",
     "cardName": "Revavroom",
-    "fullDisplayName": "Revavroom 121/219 SVP Black Star Promos",
+    "fullDisplayName": "Revavroom 121 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3434,18 +4242,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-121-low.png",
-    "imageHighSrc": "cards/svp-121-high.png"
+    "imageHighSrc": "cards/svp-121-high.png",
+    "attacks": [
+      {
+        "name": "Swagger",
+        "damage": null
+      },
+      {
+        "name": "Huge Tackle",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "15586",
-    "externalId": null,
+    "externalId": "svp-120",
     "tcgdex_id": "svp-120",
     "localId": "120",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "120/219",
+    "cardNumber": "120",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 120/219 SVP Black Star Promos",
+    "fullDisplayName": "Pupitar 120 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3467,18 +4285,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-120-low.png",
-    "imageHighSrc": "cards/svp-120-high.png"
+    "imageHighSrc": "cards/svp-120-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "20"
+      },
+      {
+        "name": "Blasting Tackle",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "15575",
-    "externalId": null,
+    "externalId": "svp-119",
     "tcgdex_id": "svp-119",
     "localId": "119",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "119/219",
+    "cardNumber": "119",
     "cardName": "Toxel",
-    "fullDisplayName": "Toxel 119/219 SVP Black Star Promos",
+    "fullDisplayName": "Toxel 119 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3500,18 +4328,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-119-low.png",
-    "imageHighSrc": "cards/svp-119-high.png"
+    "imageHighSrc": "cards/svp-119-high.png",
+    "attacks": [
+      {
+        "name": "Slight Intrusion",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "15566",
-    "externalId": null,
+    "externalId": "svp-118",
     "tcgdex_id": "svp-118",
     "localId": "118",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "118/219",
+    "cardNumber": "118",
     "cardName": "Tatsugiri",
-    "fullDisplayName": "Tatsugiri 118/219 SVP Black Star Promos",
+    "fullDisplayName": "Tatsugiri 118 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3533,18 +4367,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-118-low.png",
-    "imageHighSrc": "cards/svp-118-high.png"
+    "imageHighSrc": "cards/svp-118-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "15559",
-    "externalId": null,
+    "externalId": "svp-117",
     "tcgdex_id": "svp-117",
     "localId": "117",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "117/219",
+    "cardNumber": "117",
     "cardName": "Froslass",
-    "fullDisplayName": "Froslass 117/219 SVP Black Star Promos",
+    "fullDisplayName": "Froslass 117 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3566,18 +4406,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-117-low.png",
-    "imageHighSrc": "cards/svp-117-high.png"
+    "imageHighSrc": "cards/svp-117-high.png",
+    "attacks": [
+      {
+        "name": "Frost Smash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "15549",
-    "externalId": null,
+    "externalId": "svp-116",
     "tcgdex_id": "svp-116",
     "localId": "116",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "116/219",
+    "cardNumber": "116",
     "cardName": "Infernape",
-    "fullDisplayName": "Infernape 116/219 SVP Black Star Promos",
+    "fullDisplayName": "Infernape 116 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3599,18 +4445,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-116-low.png",
-    "imageHighSrc": "cards/svp-116-high.png"
+    "imageHighSrc": "cards/svp-116-high.png",
+    "attacks": [
+      {
+        "name": "Scorching Fire",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "15540",
-    "externalId": null,
+    "externalId": "svp-115",
     "tcgdex_id": "svp-115",
     "localId": "115",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "115/219",
+    "cardNumber": "115",
     "cardName": "Thwackey",
-    "fullDisplayName": "Thwackey 115/219 SVP Black Star Promos",
+    "fullDisplayName": "Thwackey 115 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3632,18 +4484,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-115-low.png",
-    "imageHighSrc": "cards/svp-115-high.png"
+    "imageHighSrc": "cards/svp-115-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "15530",
-    "externalId": null,
+    "externalId": "svp-114",
     "tcgdex_id": "svp-114",
     "localId": "114",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "114/219",
+    "cardNumber": "114",
     "cardName": "Picnicker",
-    "fullDisplayName": "Picnicker 114/219 SVP Black Star Promos",
+    "fullDisplayName": "Picnicker 114 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -3661,18 +4519,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-114-low.png",
-    "imageHighSrc": "cards/svp-114-high.png"
+    "imageHighSrc": "cards/svp-114-high.png",
+    "rules": "Flip a coin. If heads, draw 4 cards. If tails, draw 2 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "15519",
-    "externalId": null,
+    "externalId": "svp-113",
     "tcgdex_id": "svp-113",
     "localId": "113",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "113/219",
+    "cardNumber": "113",
     "cardName": "Kingambit",
-    "fullDisplayName": "Kingambit 113/219 SVP Black Star Promos",
+    "fullDisplayName": "Kingambit 113 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3694,18 +4553,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-113-low.png",
-    "imageHighSrc": "cards/svp-113-high.png"
+    "imageHighSrc": "cards/svp-113-high.png",
+    "attacks": [
+      {
+        "name": "Elbow Strike",
+        "damage": "40"
+      },
+      {
+        "name": "Slicing Blade",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "15508",
-    "externalId": null,
+    "externalId": "svp-112",
     "tcgdex_id": "svp-112",
     "localId": "112",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "112/219",
+    "cardNumber": "112",
     "cardName": "Bisharp",
-    "fullDisplayName": "Bisharp 112/219 SVP Black Star Promos",
+    "fullDisplayName": "Bisharp 112 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3727,18 +4596,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-112-low.png",
-    "imageHighSrc": "cards/svp-112-high.png"
+    "imageHighSrc": "cards/svp-112-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "15499",
-    "externalId": null,
+    "externalId": "svp-111",
     "tcgdex_id": "svp-111",
     "localId": "111",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "111/219",
+    "cardNumber": "111",
     "cardName": "Pawniard",
-    "fullDisplayName": "Pawniard 111/219 SVP Black Star Promos",
+    "fullDisplayName": "Pawniard 111 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3760,18 +4635,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-111-low.png",
-    "imageHighSrc": "cards/svp-111-high.png"
+    "imageHighSrc": "cards/svp-111-high.png",
+    "attacks": [
+      {
+        "name": "Pierce",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "15490",
-    "externalId": null,
+    "externalId": "svp-110",
     "tcgdex_id": "svp-110",
     "localId": "110",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "110/219",
+    "cardNumber": "110",
     "cardName": "Darkrai ex",
-    "fullDisplayName": "Darkrai ex 110/219 SVP Black Star Promos",
+    "fullDisplayName": "Darkrai ex 110 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3794,18 +4675,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-110-low.png",
-    "imageHighSrc": "cards/svp-110-high.png"
+    "imageHighSrc": "cards/svp-110-high.png",
+    "attacks": [
+      {
+        "name": "Wind of Darkness",
+        "damage": "40"
+      },
+      {
+        "name": "Night Impact",
+        "damage": "110"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15481",
-    "externalId": null,
+    "externalId": "svp-109",
     "tcgdex_id": "svp-109",
     "localId": "109",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "109/219",
+    "cardNumber": "109",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 109/219 SVP Black Star Promos",
+    "fullDisplayName": "Ampharos 109 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3827,18 +4719,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-109-low.png",
-    "imageHighSrc": "cards/svp-109-high.png"
+    "imageHighSrc": "cards/svp-109-high.png",
+    "attacks": [
+      {
+        "name": "Electric Ball",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "15473",
-    "externalId": null,
+    "externalId": "svp-108",
     "tcgdex_id": "svp-108",
     "localId": "108",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "108/219",
+    "cardNumber": "108",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 108/219 SVP Black Star Promos",
+    "fullDisplayName": "Flaaffy 108 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3860,18 +4758,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-108-low.png",
-    "imageHighSrc": "cards/svp-108-high.png"
+    "imageHighSrc": "cards/svp-108-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "15464",
-    "externalId": null,
+    "externalId": "svp-107",
     "tcgdex_id": "svp-107",
     "localId": "107",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "107/219",
+    "cardNumber": "107",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 107/219 SVP Black Star Promos",
+    "fullDisplayName": "Mareep 107 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3893,18 +4801,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-107-low.png",
-    "imageHighSrc": "cards/svp-107-high.png"
+    "imageHighSrc": "cards/svp-107-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Lightning Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "15454",
-    "externalId": null,
+    "externalId": "svp-106",
     "tcgdex_id": "svp-106",
     "localId": "106",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "106/219",
+    "cardNumber": "106",
     "cardName": "Pikachu ex",
-    "fullDisplayName": "Pikachu ex 106/219 SVP Black Star Promos",
+    "fullDisplayName": "Pikachu ex 106 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3927,18 +4845,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-106-low.png",
-    "imageHighSrc": "cards/svp-106-high.png"
+    "imageHighSrc": "cards/svp-106-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15444",
-    "externalId": null,
+    "externalId": "svp-105",
     "tcgdex_id": "svp-105",
     "localId": "105",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "105/219",
+    "cardNumber": "105",
     "cardName": "Armarouge ex",
-    "fullDisplayName": "Armarouge ex 105/219 SVP Black Star Promos",
+    "fullDisplayName": "Armarouge ex 105 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3961,18 +4886,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-105-low.png",
-    "imageHighSrc": "cards/svp-105-high.png"
+    "imageHighSrc": "cards/svp-105-high.png",
+    "attacks": [
+      {
+        "name": "Armor Cannon",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15432",
-    "externalId": null,
+    "externalId": "svp-104",
     "tcgdex_id": "svp-104",
     "localId": "104",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "104/219",
+    "cardNumber": "104",
     "cardName": "Melmetal ex",
-    "fullDisplayName": "Melmetal ex 104/219 SVP Black Star Promos",
+    "fullDisplayName": "Melmetal ex 104 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3995,18 +4927,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-104-low.png",
-    "imageHighSrc": "cards/svp-104-high.png"
+    "imageHighSrc": "cards/svp-104-high.png",
+    "attacks": [
+      {
+        "name": "Metal-bolize",
+        "damage": null
+      },
+      {
+        "name": "Full Metal Knuckle",
+        "damage": "90+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15422",
-    "externalId": null,
+    "externalId": "svp-103",
     "tcgdex_id": "svp-103",
     "localId": "103",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "103/219",
+    "cardNumber": "103",
     "cardName": "Houndoom ex",
-    "fullDisplayName": "Houndoom ex 103/219 SVP Black Star Promos",
+    "fullDisplayName": "Houndoom ex 103 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4029,7 +4972,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-103-low.png",
-    "imageHighSrc": "cards/svp-103-high.png"
+    "imageHighSrc": "cards/svp-103-high.png",
+    "attacks": [
+      {
+        "name": "Evil Claw",
+        "damage": "90"
+      },
+      {
+        "name": "Hound's Fang",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22508",
@@ -4038,9 +4992,9 @@
     "localId": "102",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "102/0",
+    "cardNumber": "102",
     "cardName": "Oddish",
-    "fullDisplayName": "Oddish 102/0 SVP Black Star Promos",
+    "fullDisplayName": "Oddish 102 SVP Black Star Promos",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4062,18 +5016,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-102-low.jpg",
-    "imageHighSrc": "cards/svp-102-low.jpg"
+    "imageHighSrc": "cards/svp-102-low.jpg",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "10"
+      },
+      {
+        "name": "Grass Knot",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "15405",
-    "externalId": null,
+    "externalId": "svp-101",
     "tcgdex_id": "svp-101",
     "localId": "101",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "101/219",
+    "cardNumber": "101",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 101/219 SVP Black Star Promos",
+    "fullDisplayName": "Pikachu 101 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4095,18 +5059,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-101-low.png",
-    "imageHighSrc": "cards/svp-101-high.png"
+    "imageHighSrc": "cards/svp-101-high.png",
+    "attacks": [
+      {
+        "name": "Scrappy Spark",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "15396",
-    "externalId": null,
+    "externalId": "svp-100",
     "tcgdex_id": "svp-100",
     "localId": "100",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "100/219",
+    "cardNumber": "100",
     "cardName": "Grafaiai ex",
-    "fullDisplayName": "Grafaiai ex 100/219 SVP Black Star Promos",
+    "fullDisplayName": "Grafaiai ex 100 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4129,18 +5099,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-100-low.png",
-    "imageHighSrc": "cards/svp-100-high.png"
+    "imageHighSrc": "cards/svp-100-high.png",
+    "attacks": [
+      {
+        "name": "Numbing Saliva",
+        "damage": "30"
+      },
+      {
+        "name": "Toxic Throw",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15387",
-    "externalId": null,
+    "externalId": "svp-99",
     "tcgdex_id": "svp-099",
     "localId": "099",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "099/219",
+    "cardNumber": "099",
     "cardName": "Shroodle",
-    "fullDisplayName": "Shroodle 099/219 SVP Black Star Promos",
+    "fullDisplayName": "Shroodle 099 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4162,18 +5143,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-099-low.png",
-    "imageHighSrc": "cards/svp-099-high.png"
+    "imageHighSrc": "cards/svp-099-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Toxic Teeth",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "15377",
-    "externalId": null,
+    "externalId": "svp-98",
     "tcgdex_id": "svp-098",
     "localId": "098",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "098/219",
+    "cardNumber": "098",
     "cardName": "Iron Thorns",
-    "fullDisplayName": "Iron Thorns 098/219 SVP Black Star Promos",
+    "fullDisplayName": "Iron Thorns 098 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4196,18 +5187,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-098-low.png",
-    "imageHighSrc": "cards/svp-098-high.png"
+    "imageHighSrc": "cards/svp-098-high.png",
+    "attacks": [
+      {
+        "name": "Destructo-Press",
+        "damage": "70×"
+      },
+      {
+        "name": "Megaton Lariat",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "15365",
-    "externalId": null,
+    "externalId": "svp-97",
     "tcgdex_id": "svp-097",
     "localId": "097",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "097/219",
+    "cardNumber": "097",
     "cardName": "Flutter Mane",
-    "fullDisplayName": "Flutter Mane 097/219 SVP Black Star Promos",
+    "fullDisplayName": "Flutter Mane 097 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4230,18 +5231,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-097-low.png",
-    "imageHighSrc": "cards/svp-097-high.png"
+    "imageHighSrc": "cards/svp-097-high.png",
+    "attacks": [
+      {
+        "name": "Hex Hurl",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "15354",
-    "externalId": null,
+    "externalId": "svp-96",
     "tcgdex_id": "svp-096",
     "localId": "096",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "096/219",
+    "cardNumber": "096",
     "cardName": "Cyclizar",
-    "fullDisplayName": "Cyclizar 096/219 SVP Black Star Promos",
+    "fullDisplayName": "Cyclizar 096 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4263,18 +5270,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-096-low.png",
-    "imageHighSrc": "cards/svp-096-high.png"
+    "imageHighSrc": "cards/svp-096-high.png",
+    "attacks": [
+      {
+        "name": "Flat-Out Dash",
+        "damage": null
+      },
+      {
+        "name": "Power Tackle",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "15345",
-    "externalId": null,
+    "externalId": "svp-95",
     "tcgdex_id": "svp-095",
     "localId": "095",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "095/219",
+    "cardNumber": "095",
     "cardName": "Cleffa",
-    "fullDisplayName": "Cleffa 095/219 SVP Black Star Promos",
+    "fullDisplayName": "Cleffa 095 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4296,18 +5313,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-095-low.png",
-    "imageHighSrc": "cards/svp-095-high.png"
+    "imageHighSrc": "cards/svp-095-high.png",
+    "attacks": [
+      {
+        "name": "Twinkling Hope",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "15335",
-    "externalId": null,
+    "externalId": "svp-94",
     "tcgdex_id": "svp-094",
     "localId": "094",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "094/219",
+    "cardNumber": "094",
     "cardName": "Bellibolt",
-    "fullDisplayName": "Bellibolt 094/219 SVP Black Star Promos",
+    "fullDisplayName": "Bellibolt 094 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4329,18 +5352,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-094-low.png",
-    "imageHighSrc": "cards/svp-094-high.png"
+    "imageHighSrc": "cards/svp-094-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Two Bump Bolt",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "15325",
-    "externalId": null,
+    "externalId": "svp-93",
     "tcgdex_id": "svp-093",
     "localId": "093",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "093/219",
+    "cardNumber": "093",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 093/219 SVP Black Star Promos",
+    "fullDisplayName": "Carvanha 093 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4362,18 +5395,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-093-low.png",
-    "imageHighSrc": "cards/svp-093-high.png"
+    "imageHighSrc": "cards/svp-093-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "15315",
-    "externalId": null,
+    "externalId": "svp-92",
     "tcgdex_id": "svp-092",
     "localId": "092",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "092/219",
+    "cardNumber": "092",
     "cardName": "Miraidon",
-    "fullDisplayName": "Miraidon 092/219 SVP Black Star Promos",
+    "fullDisplayName": "Miraidon 092 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4396,18 +5435,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-092-low.png",
-    "imageHighSrc": "cards/svp-092-high.png"
+    "imageHighSrc": "cards/svp-092-high.png",
+    "attacks": [
+      {
+        "name": "Peak Acceleration",
+        "damage": "40"
+      },
+      {
+        "name": "Sparking Strike",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "15297",
-    "externalId": null,
+    "externalId": "svp-91",
     "tcgdex_id": "svp-091",
     "localId": "091",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "091/219",
+    "cardNumber": "091",
     "cardName": "Koraidon",
-    "fullDisplayName": "Koraidon 091/219 SVP Black Star Promos",
+    "fullDisplayName": "Koraidon 091 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4430,18 +5479,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-091-low.png",
-    "imageHighSrc": "cards/svp-091-high.png"
+    "imageHighSrc": "cards/svp-091-high.png",
+    "attacks": [
+      {
+        "name": "Primordial Beatdown",
+        "damage": "30×"
+      },
+      {
+        "name": "Shred",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "15287",
-    "externalId": null,
+    "externalId": "svp-90",
     "tcgdex_id": "svp-090",
     "localId": "090",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "090/219",
+    "cardNumber": "090",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 090/219 SVP Black Star Promos",
+    "fullDisplayName": "Metang 090 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4463,18 +5522,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-090-low.png",
-    "imageHighSrc": "cards/svp-090-high.png"
+    "imageHighSrc": "cards/svp-090-high.png",
+    "attacks": [
+      {
+        "name": "Beam",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "15278",
-    "externalId": null,
+    "externalId": "svp-89",
     "tcgdex_id": "svp-089",
     "localId": "089",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "089/219",
+    "cardNumber": "089",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 089/219 SVP Black Star Promos",
+    "fullDisplayName": "Feraligatr 089 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4496,18 +5561,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-089-low.png",
-    "imageHighSrc": "cards/svp-089-high.png"
+    "imageHighSrc": "cards/svp-089-high.png",
+    "attacks": [
+      {
+        "name": "Giant Wave",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "15269",
-    "externalId": null,
+    "externalId": "svp-88",
     "tcgdex_id": "svp-088",
     "localId": "088",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "088/219",
+    "cardNumber": "088",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 088/219 SVP Black Star Promos",
+    "fullDisplayName": "Pikachu 088 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4529,18 +5600,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-088-low.png",
-    "imageHighSrc": "cards/svp-088-high.png"
+    "imageHighSrc": "cards/svp-088-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Pika Bolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "15260",
-    "externalId": null,
+    "externalId": "svp-87",
     "tcgdex_id": "svp-087",
     "localId": "087",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "087/219",
+    "cardNumber": "087",
     "cardName": "Sprigatito ex",
-    "fullDisplayName": "Sprigatito ex 087/219 SVP Black Star Promos",
+    "fullDisplayName": "Sprigatito ex 087 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4563,18 +5644,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-087-low.png",
-    "imageHighSrc": "cards/svp-087-high.png"
+    "imageHighSrc": "cards/svp-087-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Magical Leaf",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15250",
-    "externalId": null,
+    "externalId": "svp-86",
     "tcgdex_id": "svp-086",
     "localId": "086",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "086/219",
+    "cardNumber": "086",
     "cardName": "Mabosstiff ex",
-    "fullDisplayName": "Mabosstiff ex 086/219 SVP Black Star Promos",
+    "fullDisplayName": "Mabosstiff ex 086 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4597,18 +5689,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-086-low.png",
-    "imageHighSrc": "cards/svp-086-high.png"
+    "imageHighSrc": "cards/svp-086-high.png",
+    "attacks": [
+      {
+        "name": "Daunt",
+        "damage": "30"
+      },
+      {
+        "name": "Proud Fangs",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15240",
-    "externalId": null,
+    "externalId": "svp-85",
     "tcgdex_id": "svp-085",
     "localId": "085",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "085/219",
+    "cardNumber": "085",
     "cardName": "Pikachu with Grey Felt Hat",
-    "fullDisplayName": "Pikachu with Grey Felt Hat 085/219 SVP Black Star Promos",
+    "fullDisplayName": "Pikachu with Grey Felt Hat 085 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4630,18 +5733,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-085-low.png",
-    "imageHighSrc": "cards/svp-085-high.png"
+    "imageHighSrc": "cards/svp-085-high.png",
+    "attacks": [
+      {
+        "name": "Pika-Portrait",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "15230",
-    "externalId": null,
+    "externalId": "svp-84",
     "tcgdex_id": "svp-084",
     "localId": "084",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "084/219",
+    "cardNumber": "084",
     "cardName": "Quaquaval ex",
-    "fullDisplayName": "Quaquaval ex 084/219 SVP Black Star Promos",
+    "fullDisplayName": "Quaquaval ex 084 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4664,18 +5773,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-084-low.png",
-    "imageHighSrc": "cards/svp-084-high.png"
+    "imageHighSrc": "cards/svp-084-high.png",
+    "attacks": [
+      {
+        "name": "Exciting Dance",
+        "damage": "60"
+      },
+      {
+        "name": "Spiral Shot",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15220",
-    "externalId": null,
+    "externalId": "svp-83",
     "tcgdex_id": "svp-083",
     "localId": "083",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "083/219",
+    "cardNumber": "083",
     "cardName": "Quaxwell",
-    "fullDisplayName": "Quaxwell 083/219 SVP Black Star Promos",
+    "fullDisplayName": "Quaxwell 083 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4697,18 +5817,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-083-low.png",
-    "imageHighSrc": "cards/svp-083-high.png"
+    "imageHighSrc": "cards/svp-083-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "15211",
-    "externalId": null,
+    "externalId": "svp-82",
     "tcgdex_id": "svp-082",
     "localId": "082",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "082/219",
+    "cardNumber": "082",
     "cardName": "Quaxly",
-    "fullDisplayName": "Quaxly 082/219 SVP Black Star Promos",
+    "fullDisplayName": "Quaxly 082 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4730,18 +5860,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-082-low.png",
-    "imageHighSrc": "cards/svp-082-high.png"
+    "imageHighSrc": "cards/svp-082-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "15201",
-    "externalId": null,
+    "externalId": "svp-81",
     "tcgdex_id": "svp-081",
     "localId": "081",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "081/219",
+    "cardNumber": "081",
     "cardName": "Skeledirge ex",
-    "fullDisplayName": "Skeledirge ex 081/219 SVP Black Star Promos",
+    "fullDisplayName": "Skeledirge ex 081 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4764,18 +5900,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-081-low.png",
-    "imageHighSrc": "cards/svp-081-high.png"
+    "imageHighSrc": "cards/svp-081-high.png",
+    "attacks": [
+      {
+        "name": "Vitality Song",
+        "damage": "50"
+      },
+      {
+        "name": "Burning Voice",
+        "damage": "270-"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15191",
-    "externalId": null,
+    "externalId": "svp-80",
     "tcgdex_id": "svp-080",
     "localId": "080",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "080/219",
+    "cardNumber": "080",
     "cardName": "Crocalor",
-    "fullDisplayName": "Crocalor 080/219 SVP Black Star Promos",
+    "fullDisplayName": "Crocalor 080 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4797,18 +5944,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-080-low.png",
-    "imageHighSrc": "cards/svp-080-high.png"
+    "imageHighSrc": "cards/svp-080-high.png",
+    "attacks": [
+      {
+        "name": "Steady Firebreathing",
+        "damage": "30"
+      },
+      {
+        "name": "Hyper Voice",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "15181",
-    "externalId": null,
+    "externalId": "svp-79",
     "tcgdex_id": "svp-079",
     "localId": "079",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "079/219",
+    "cardNumber": "079",
     "cardName": "Fuecoco",
-    "fullDisplayName": "Fuecoco 079/219 SVP Black Star Promos",
+    "fullDisplayName": "Fuecoco 079 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4830,18 +5987,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-079-low.png",
-    "imageHighSrc": "cards/svp-079-high.png"
+    "imageHighSrc": "cards/svp-079-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "15171",
-    "externalId": null,
+    "externalId": "svp-78",
     "tcgdex_id": "svp-078",
     "localId": "078",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "078/219",
+    "cardNumber": "078",
     "cardName": "Meowscarada ex",
-    "fullDisplayName": "Meowscarada ex 078/219 SVP Black Star Promos",
+    "fullDisplayName": "Meowscarada ex 078 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4864,18 +6027,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-078-low.png",
-    "imageHighSrc": "cards/svp-078-high.png"
+    "imageHighSrc": "cards/svp-078-high.png",
+    "attacks": [
+      {
+        "name": "Scratching Nails",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15163",
-    "externalId": null,
+    "externalId": "svp-77",
     "tcgdex_id": "svp-077",
     "localId": "077",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "077/219",
+    "cardNumber": "077",
     "cardName": "Floragato",
-    "fullDisplayName": "Floragato 077/219 SVP Black Star Promos",
+    "fullDisplayName": "Floragato 077 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4897,18 +6067,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-077-low.png",
-    "imageHighSrc": "cards/svp-077-high.png"
+    "imageHighSrc": "cards/svp-077-high.png",
+    "attacks": [
+      {
+        "name": "Seed Bomb",
+        "damage": "30"
+      },
+      {
+        "name": "Magic Whip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "15152",
-    "externalId": null,
+    "externalId": "svp-76",
     "tcgdex_id": "svp-076",
     "localId": "076",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "076/219",
+    "cardNumber": "076",
     "cardName": "Sprigatito",
-    "fullDisplayName": "Sprigatito 076/219 SVP Black Star Promos",
+    "fullDisplayName": "Sprigatito 076 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4930,18 +6110,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-076-low.png",
-    "imageHighSrc": "cards/svp-076-high.png"
+    "imageHighSrc": "cards/svp-076-high.png",
+    "attacks": [
+      {
+        "name": "Gather Sunlight",
+        "damage": null
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "15140",
-    "externalId": null,
+    "externalId": "svp-75",
     "tcgdex_id": "svp-075",
     "localId": "075",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "075/219",
+    "cardNumber": "075",
     "cardName": "Mimikyu",
-    "fullDisplayName": "Mimikyu 075/219 SVP Black Star Promos",
+    "fullDisplayName": "Mimikyu 075 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4963,18 +6153,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-075-low.png",
-    "imageHighSrc": "cards/svp-075-high.png"
+    "imageHighSrc": "cards/svp-075-high.png",
+    "attacks": [
+      {
+        "name": "Ghost Eye",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "15130",
-    "externalId": null,
+    "externalId": "svp-74",
     "tcgdex_id": "svp-074",
     "localId": "074",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "074/219",
+    "cardNumber": "074",
     "cardName": "Charizard ex",
-    "fullDisplayName": "Charizard ex 074/219 SVP Black Star Promos",
+    "fullDisplayName": "Charizard ex 074 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4998,18 +6194,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-074-low.png",
-    "imageHighSrc": "cards/svp-074-high.png"
+    "imageHighSrc": "cards/svp-074-high.png",
+    "attacks": [
+      {
+        "name": "Burning Darkness",
+        "damage": "180+"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15121",
-    "externalId": null,
+    "externalId": "svp-73",
     "tcgdex_id": "svp-073",
     "localId": "073",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "073/219",
+    "cardNumber": "073",
     "cardName": "Iron Treads ex",
-    "fullDisplayName": "Iron Treads ex 073/219 SVP Black Star Promos",
+    "fullDisplayName": "Iron Treads ex 073 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5033,18 +6236,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-073-low.png",
-    "imageHighSrc": "cards/svp-073-high.png"
+    "imageHighSrc": "cards/svp-073-high.png",
+    "attacks": [
+      {
+        "name": "Iron-Clad Roll",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15113",
-    "externalId": null,
+    "externalId": "svp-72",
     "tcgdex_id": "svp-072",
     "localId": "072",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "072/219",
+    "cardNumber": "072",
     "cardName": "Great Tusk ex",
-    "fullDisplayName": "Great Tusk ex 072/219 SVP Black Star Promos",
+    "fullDisplayName": "Great Tusk ex 072 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5068,18 +6278,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-072-low.png",
-    "imageHighSrc": "cards/svp-072-high.png"
+    "imageHighSrc": "cards/svp-072-high.png",
+    "attacks": [
+      {
+        "name": "Great Bash",
+        "damage": "260"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15102",
-    "externalId": null,
+    "externalId": "svp-71",
     "tcgdex_id": "svp-071",
     "localId": "071",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "071/219",
+    "cardNumber": "071",
     "cardName": "Maschiff",
-    "fullDisplayName": "Maschiff 071/219 SVP Black Star Promos",
+    "fullDisplayName": "Maschiff 071 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5101,18 +6318,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-071-low.png",
-    "imageHighSrc": "cards/svp-071-high.png"
+    "imageHighSrc": "cards/svp-071-high.png",
+    "attacks": [
+      {
+        "name": "Ambush",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "15093",
-    "externalId": null,
+    "externalId": "svp-70",
     "tcgdex_id": "svp-070",
     "localId": "070",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "070/219",
+    "cardNumber": "070",
     "cardName": "Greavard",
-    "fullDisplayName": "Greavard 070/219 SVP Black Star Promos",
+    "fullDisplayName": "Greavard 070 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5134,18 +6357,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-070-low.png",
-    "imageHighSrc": "cards/svp-070-high.png"
+    "imageHighSrc": "cards/svp-070-high.png",
+    "attacks": [
+      {
+        "name": "Graveyard Gamboling",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "15084",
-    "externalId": null,
+    "externalId": "svp-69",
     "tcgdex_id": "svp-069",
     "localId": "069",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "069/219",
+    "cardNumber": "069",
     "cardName": "Fidough",
-    "fullDisplayName": "Fidough 069/219 SVP Black Star Promos",
+    "fullDisplayName": "Fidough 069 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5167,18 +6396,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-069-low.png",
-    "imageHighSrc": "cards/svp-069-high.png"
+    "imageHighSrc": "cards/svp-069-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "15075",
-    "externalId": null,
+    "externalId": "svp-68",
     "tcgdex_id": "svp-068",
     "localId": "068",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "068/219",
+    "cardNumber": "068",
     "cardName": "Iron Valiant ex",
-    "fullDisplayName": "Iron Valiant ex 068/219 SVP Black Star Promos",
+    "fullDisplayName": "Iron Valiant ex 068 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5202,18 +6437,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-068-low.png",
-    "imageHighSrc": "cards/svp-068-high.png"
+    "imageHighSrc": "cards/svp-068-high.png",
+    "attacks": [
+      {
+        "name": "Laser Blade",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15065",
-    "externalId": null,
+    "externalId": "svp-67",
     "tcgdex_id": "svp-067",
     "localId": "067",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "067/219",
+    "cardNumber": "067",
     "cardName": "Roaring Moon ex",
-    "fullDisplayName": "Roaring Moon ex 067/219 SVP Black Star Promos",
+    "fullDisplayName": "Roaring Moon ex 067 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5237,18 +6479,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-067-low.png",
-    "imageHighSrc": "cards/svp-067-high.png"
+    "imageHighSrc": "cards/svp-067-high.png",
+    "attacks": [
+      {
+        "name": "Frenzied Gouging",
+        "damage": null
+      },
+      {
+        "name": "Calamity Storm",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "15055",
-    "externalId": null,
+    "externalId": "svp-66",
     "tcgdex_id": "svp-066",
     "localId": "066",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "066/219",
+    "cardNumber": "066",
     "cardName": "Iron Bundle",
-    "fullDisplayName": "Iron Bundle 066/219 SVP Black Star Promos",
+    "fullDisplayName": "Iron Bundle 066 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5271,18 +6524,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-066-low.png",
-    "imageHighSrc": "cards/svp-066-high.png"
+    "imageHighSrc": "cards/svp-066-high.png",
+    "attacks": [
+      {
+        "name": "Refrigerated Stream",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "15045",
-    "externalId": null,
+    "externalId": "svp-65",
     "tcgdex_id": "svp-065",
     "localId": "065",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "065/219",
+    "cardNumber": "065",
     "cardName": "Scream Tail",
-    "fullDisplayName": "Scream Tail 065/219 SVP Black Star Promos",
+    "fullDisplayName": "Scream Tail 065 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5305,18 +6564,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-065-low.png",
-    "imageHighSrc": "cards/svp-065-high.png"
+    "imageHighSrc": "cards/svp-065-high.png",
+    "attacks": [
+      {
+        "name": "Slap",
+        "damage": "30"
+      },
+      {
+        "name": "Roaring Scream",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "15035",
-    "externalId": null,
+    "externalId": "svp-64",
     "tcgdex_id": "svp-064",
     "localId": "064",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "064/219",
+    "cardNumber": "064",
     "cardName": "Arctibax",
-    "fullDisplayName": "Arctibax 064/219 SVP Black Star Promos",
+    "fullDisplayName": "Arctibax 064 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5338,18 +6607,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-064-low.png",
-    "imageHighSrc": "cards/svp-064-high.png"
+    "imageHighSrc": "cards/svp-064-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fin",
+        "damage": "40"
+      },
+      {
+        "name": "Frost Smash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "15025",
-    "externalId": null,
+    "externalId": "svp-63",
     "tcgdex_id": "svp-063",
     "localId": "063",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "063/219",
+    "cardNumber": "063",
     "cardName": "Cetitan",
-    "fullDisplayName": "Cetitan 063/219 SVP Black Star Promos",
+    "fullDisplayName": "Cetitan 063 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5371,18 +6650,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-063-low.png",
-    "imageHighSrc": "cards/svp-063-high.png"
+    "imageHighSrc": "cards/svp-063-high.png",
+    "attacks": [
+      {
+        "name": "Avalanche",
+        "damage": "30"
+      },
+      {
+        "name": "Rolling Slider",
+        "damage": "100×"
+      }
+    ]
   },
   {
     "masterCardId": "15015",
-    "externalId": null,
+    "externalId": "svp-62",
     "tcgdex_id": "svp-062",
     "localId": "062",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "062/219",
+    "cardNumber": "062",
     "cardName": "Sinistea",
-    "fullDisplayName": "Sinistea 062/219 SVP Black Star Promos",
+    "fullDisplayName": "Sinistea 062 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5404,18 +6693,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-062-low.png",
-    "imageHighSrc": "cards/svp-062-high.png"
+    "imageHighSrc": "cards/svp-062-high.png",
+    "attacks": [
+      {
+        "name": "Cold Tea",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "15005",
-    "externalId": null,
+    "externalId": "svp-61",
     "tcgdex_id": "svp-061",
     "localId": "061",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "061/219",
+    "cardNumber": "061",
     "cardName": "Pineco",
-    "fullDisplayName": "Pineco 061/219 SVP Black Star Promos",
+    "fullDisplayName": "Pineco 061 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5437,18 +6732,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-061-low.png",
-    "imageHighSrc": "cards/svp-061-high.png"
+    "imageHighSrc": "cards/svp-061-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "14995",
-    "externalId": null,
+    "externalId": "svp-60",
     "tcgdex_id": "svp-060",
     "localId": "060",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "060/219",
+    "cardNumber": "060",
     "cardName": "Aegislash",
-    "fullDisplayName": "Aegislash 060/219 SVP Black Star Promos",
+    "fullDisplayName": "Aegislash 060 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5470,18 +6771,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-060-low.png",
-    "imageHighSrc": "cards/svp-060-high.png"
+    "imageHighSrc": "cards/svp-060-high.png",
+    "attacks": [
+      {
+        "name": "Hard Bashing",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "14986",
-    "externalId": null,
+    "externalId": "svp-59",
     "tcgdex_id": "svp-059",
     "localId": "059",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "059/219",
+    "cardNumber": "059",
     "cardName": "Xatu",
-    "fullDisplayName": "Xatu 059/219 SVP Black Star Promos",
+    "fullDisplayName": "Xatu 059 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5503,18 +6810,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-059-low.png",
-    "imageHighSrc": "cards/svp-059-high.png"
+    "imageHighSrc": "cards/svp-059-high.png",
+    "attacks": [
+      {
+        "name": "Super Psy Bolt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "14976",
-    "externalId": null,
+    "externalId": "svp-58",
     "tcgdex_id": "svp-058",
     "localId": "058",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "058/219",
+    "cardNumber": "058",
     "cardName": "Iron Bundle",
-    "fullDisplayName": "Iron Bundle 058/219 SVP Black Star Promos",
+    "fullDisplayName": "Iron Bundle 058 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5537,18 +6850,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-058-low.png",
-    "imageHighSrc": "cards/svp-058-high.png"
+    "imageHighSrc": "cards/svp-058-high.png",
+    "attacks": [
+      {
+        "name": "Refrigerated Stream",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "14966",
-    "externalId": null,
+    "externalId": "svp-57",
     "tcgdex_id": "svp-057",
     "localId": "057",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "057/219",
+    "cardNumber": "057",
     "cardName": "Chi-Yu",
-    "fullDisplayName": "Chi-Yu 057/219 SVP Black Star Promos",
+    "fullDisplayName": "Chi-Yu 057 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5570,18 +6889,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-057-low.png",
-    "imageHighSrc": "cards/svp-057-high.png"
+    "imageHighSrc": "cards/svp-057-high.png",
+    "attacks": [
+      {
+        "name": "Flare Bringer",
+        "damage": null
+      },
+      {
+        "name": "Megafire of Envy",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "14956",
-    "externalId": null,
+    "externalId": "svp-56",
     "tcgdex_id": "svp-056",
     "localId": "056",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "056/219",
+    "cardNumber": "056",
     "cardName": "Charizard ex",
-    "fullDisplayName": "Charizard ex 056/219 SVP Black Star Promos",
+    "fullDisplayName": "Charizard ex 056 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5605,18 +6934,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-056-low.png",
-    "imageHighSrc": "cards/svp-056-high.png"
+    "imageHighSrc": "cards/svp-056-high.png",
+    "attacks": [
+      {
+        "name": "Burning Darkness",
+        "damage": "180+"
+      }
+    ],
+    "rules": "Tera: As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14947",
-    "externalId": null,
+    "externalId": "svp-55",
     "tcgdex_id": "svp-055",
     "localId": "055",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "055/219",
+    "cardNumber": "055",
     "cardName": "Kangaskhan ex",
-    "fullDisplayName": "Kangaskhan ex 055/219 SVP Black Star Promos",
+    "fullDisplayName": "Kangaskhan ex 055 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5639,18 +6975,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-055-low.png",
-    "imageHighSrc": "cards/svp-055-high.png"
+    "imageHighSrc": "cards/svp-055-high.png",
+    "attacks": [
+      {
+        "name": "Triple Draw",
+        "damage": null
+      },
+      {
+        "name": "Incessant Punching",
+        "damage": "100×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14936",
-    "externalId": null,
+    "externalId": "svp-54",
     "tcgdex_id": "svp-054",
     "localId": "054",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "054/219",
+    "cardNumber": "054",
     "cardName": "Greninja ex",
-    "fullDisplayName": "Greninja ex 054/219 SVP Black Star Promos",
+    "fullDisplayName": "Greninja ex 054 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5673,18 +7020,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-054-low.png",
-    "imageHighSrc": "cards/svp-054-high.png"
+    "imageHighSrc": "cards/svp-054-high.png",
+    "attacks": [
+      {
+        "name": "Stealthy Shuriken",
+        "damage": null
+      },
+      {
+        "name": "Torrential Slash",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14926",
-    "externalId": null,
+    "externalId": "svp-53",
     "tcgdex_id": "svp-053",
     "localId": "053",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "053/219",
+    "cardNumber": "053",
     "cardName": "Mew ex",
-    "fullDisplayName": "Mew ex 053/219 SVP Black Star Promos",
+    "fullDisplayName": "Mew ex 053 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5707,18 +7065,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-053-low.png",
-    "imageHighSrc": "cards/svp-053-high.png"
+    "imageHighSrc": "cards/svp-053-high.png",
+    "attacks": [
+      {
+        "name": "Genome Hacking",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14916",
-    "externalId": null,
+    "externalId": "svp-52",
     "tcgdex_id": "svp-052",
     "localId": "052",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "052/219",
+    "cardNumber": "052",
     "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 052/219 SVP Black Star Promos",
+    "fullDisplayName": "Mewtwo 052 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5740,18 +7105,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-052-low.png",
-    "imageHighSrc": "cards/svp-052-high.png"
+    "imageHighSrc": "cards/svp-052-high.png",
+    "attacks": [
+      {
+        "name": "Reflective Barrier",
+        "damage": "20"
+      },
+      {
+        "name": "Psyslash",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "14907",
-    "externalId": null,
+    "externalId": "svp-51",
     "tcgdex_id": "svp-051",
     "localId": "051",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "051/219",
+    "cardNumber": "051",
     "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 051/219 SVP Black Star Promos",
+    "fullDisplayName": "Snorlax 051 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5773,18 +7148,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-051-low.png",
-    "imageHighSrc": "cards/svp-051-high.png"
+    "imageHighSrc": "cards/svp-051-high.png",
+    "attacks": [
+      {
+        "name": "Thudding Press",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "14899",
-    "externalId": null,
+    "externalId": "svp-50",
     "tcgdex_id": "svp-050",
     "localId": "050",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "050/219",
+    "cardNumber": "050",
     "cardName": "Alakazam ex",
-    "fullDisplayName": "Alakazam ex 050/219 SVP Black Star Promos",
+    "fullDisplayName": "Alakazam ex 050 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5807,18 +7188,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-050-low.png",
-    "imageHighSrc": "cards/svp-050-high.png"
+    "imageHighSrc": "cards/svp-050-high.png",
+    "attacks": [
+      {
+        "name": "Mind Jack",
+        "damage": "90+"
+      },
+      {
+        "name": "Dimensional Hand",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14889",
-    "externalId": null,
+    "externalId": "svp-49",
     "tcgdex_id": "svp-049",
     "localId": "049",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "049/219",
+    "cardNumber": "049",
     "cardName": "Zapdos ex",
-    "fullDisplayName": "Zapdos ex 049/219 SVP Black Star Promos",
+    "fullDisplayName": "Zapdos ex 049 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5841,18 +7233,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-049-low.png",
-    "imageHighSrc": "cards/svp-049-high.png"
+    "imageHighSrc": "cards/svp-049-high.png",
+    "attacks": [
+      {
+        "name": "Multishot Lightning",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14879",
-    "externalId": null,
+    "externalId": "svp-48",
     "tcgdex_id": "svp-048",
     "localId": "048",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "048/219",
+    "cardNumber": "048",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 048/219 SVP Black Star Promos",
+    "fullDisplayName": "Squirtle 048 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5874,18 +7273,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-048-low.png",
-    "imageHighSrc": "cards/svp-048-high.png"
+    "imageHighSrc": "cards/svp-048-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "14869",
-    "externalId": null,
+    "externalId": "svp-47",
     "tcgdex_id": "svp-047",
     "localId": "047",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "047/219",
+    "cardNumber": "047",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 047/219 SVP Black Star Promos",
+    "fullDisplayName": "Charmander 047 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5907,18 +7312,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-047-low.png",
-    "imageHighSrc": "cards/svp-047-high.png"
+    "imageHighSrc": "cards/svp-047-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "14859",
-    "externalId": null,
+    "externalId": "svp-46",
     "tcgdex_id": "svp-046",
     "localId": "046",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "046/219",
+    "cardNumber": "046",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 046/219 SVP Black Star Promos",
+    "fullDisplayName": "Bulbasaur 046 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5940,18 +7351,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-046-low.png",
-    "imageHighSrc": "cards/svp-046-high.png"
+    "imageHighSrc": "cards/svp-046-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "14849",
-    "externalId": null,
+    "externalId": "svp-45",
     "tcgdex_id": "svp-045",
     "localId": "045",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "045/219",
+    "cardNumber": "045",
     "cardName": "Paradise Resort",
-    "fullDisplayName": "Paradise Resort 045/219 SVP Black Star Promos",
+    "fullDisplayName": "Paradise Resort 045 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -5969,18 +7386,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-045-low.png",
-    "imageHighSrc": "cards/svp-045-high.png"
+    "imageHighSrc": "cards/svp-045-high.png",
+    "rules": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "14840",
-    "externalId": null,
+    "externalId": "svp-44",
     "tcgdex_id": "svp-044",
     "localId": "044",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "044/219",
+    "cardNumber": "044",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 044/219 SVP Black Star Promos",
+    "fullDisplayName": "Charmander 044 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6002,18 +7420,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-044-low.png",
-    "imageHighSrc": "cards/svp-044-high.png"
+    "imageHighSrc": "cards/svp-044-high.png",
+    "attacks": [
+      {
+        "name": "Heat Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "14831",
-    "externalId": null,
+    "externalId": "svp-43",
     "tcgdex_id": "svp-043",
     "localId": "043",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "043/219",
+    "cardNumber": "043",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 043/219 SVP Black Star Promos",
+    "fullDisplayName": "Eevee 043 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6035,18 +7459,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-043-low.png",
-    "imageHighSrc": "cards/svp-043-high.png"
+    "imageHighSrc": "cards/svp-043-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "14820",
-    "externalId": null,
+    "externalId": "svp-42",
     "tcgdex_id": "svp-042",
     "localId": "042",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "042/219",
+    "cardNumber": "042",
     "cardName": "Houndstone",
-    "fullDisplayName": "Houndstone 042/219 SVP Black Star Promos",
+    "fullDisplayName": "Houndstone 042 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6068,18 +7502,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-042-low.png",
-    "imageHighSrc": "cards/svp-042-high.png"
+    "imageHighSrc": "cards/svp-042-high.png",
+    "attacks": [
+      {
+        "name": "Delve",
+        "damage": null
+      },
+      {
+        "name": "Spooky Shot",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "14810",
-    "externalId": null,
+    "externalId": "svp-41",
     "tcgdex_id": "svp-041",
     "localId": "041",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "041/219",
+    "cardNumber": "041",
     "cardName": "Paldean Wooper",
-    "fullDisplayName": "Paldean Wooper 041/219 SVP Black Star Promos",
+    "fullDisplayName": "Paldean Wooper 041 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6101,18 +7545,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-041-low.png",
-    "imageHighSrc": "cards/svp-041-high.png"
+    "imageHighSrc": "cards/svp-041-high.png",
+    "attacks": [
+      {
+        "name": "Splattering Poison",
+        "damage": null
+      },
+      {
+        "name": "Tail Whap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "14802",
-    "externalId": null,
+    "externalId": "svp-40",
     "tcgdex_id": "svp-040",
     "localId": "040",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "040/219",
+    "cardNumber": "040",
     "cardName": "Pawmi",
-    "fullDisplayName": "Pawmi 040/219 SVP Black Star Promos",
+    "fullDisplayName": "Pawmi 040 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6134,18 +7588,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-040-low.png",
-    "imageHighSrc": "cards/svp-040-high.png"
+    "imageHighSrc": "cards/svp-040-high.png",
+    "attacks": [
+      {
+        "name": "Static Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "14791",
-    "externalId": null,
+    "externalId": "svp-39",
     "tcgdex_id": "svp-039",
     "localId": "039",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "039/219",
+    "cardNumber": "039",
     "cardName": "Mawile",
-    "fullDisplayName": "Mawile 039/219 SVP Black Star Promos",
+    "fullDisplayName": "Mawile 039 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6167,18 +7627,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-039-low.png",
-    "imageHighSrc": "cards/svp-039-high.png"
+    "imageHighSrc": "cards/svp-039-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "14782",
-    "externalId": null,
+    "externalId": "svp-38",
     "tcgdex_id": "svp-038",
     "localId": "038",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "038/219",
+    "cardNumber": "038",
     "cardName": "Togekiss",
-    "fullDisplayName": "Togekiss 038/219 SVP Black Star Promos",
+    "fullDisplayName": "Togekiss 038 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6200,18 +7666,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-038-low.png",
-    "imageHighSrc": "cards/svp-038-high.png"
+    "imageHighSrc": "cards/svp-038-high.png",
+    "attacks": [
+      {
+        "name": "Power Cyclone",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "14774",
-    "externalId": null,
+    "externalId": "svp-37",
     "tcgdex_id": "svp-037",
     "localId": "037",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "037/219",
+    "cardNumber": "037",
     "cardName": "Cleffa",
-    "fullDisplayName": "Cleffa 037/219 SVP Black Star Promos",
+    "fullDisplayName": "Cleffa 037 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6233,18 +7705,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-037-low.png",
-    "imageHighSrc": "cards/svp-037-high.png"
+    "imageHighSrc": "cards/svp-037-high.png",
+    "attacks": [
+      {
+        "name": "Grasping Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "14765",
-    "externalId": null,
+    "externalId": "svp-36",
     "tcgdex_id": "svp-036",
     "localId": "036",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "036/219",
+    "cardNumber": "036",
     "cardName": "Palafin",
-    "fullDisplayName": "Palafin 036/219 SVP Black Star Promos",
+    "fullDisplayName": "Palafin 036 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6266,18 +7744,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-036-low.png",
-    "imageHighSrc": "cards/svp-036-high.png"
+    "imageHighSrc": "cards/svp-036-high.png",
+    "attacks": [
+      {
+        "name": "Jet Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Justice Kick",
+        "damage": "210"
+      }
+    ]
   },
   {
     "masterCardId": "14755",
-    "externalId": null,
+    "externalId": "svp-35",
     "tcgdex_id": "svp-035",
     "localId": "035",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "035/219",
+    "cardNumber": "035",
     "cardName": "Quaquaval ex",
-    "fullDisplayName": "Quaquaval ex 035/219 SVP Black Star Promos",
+    "fullDisplayName": "Quaquaval ex 035 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6300,18 +7788,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-035-low.png",
-    "imageHighSrc": "cards/svp-035-high.png"
+    "imageHighSrc": "cards/svp-035-high.png",
+    "attacks": [
+      {
+        "name": "Exciting Dance",
+        "damage": "60"
+      },
+      {
+        "name": "Spiral Shot",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14744",
-    "externalId": null,
+    "externalId": "svp-34",
     "tcgdex_id": "svp-034",
     "localId": "034",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "034/219",
+    "cardNumber": "034",
     "cardName": "Skeledirge ex",
-    "fullDisplayName": "Skeledirge ex 034/219 SVP Black Star Promos",
+    "fullDisplayName": "Skeledirge ex 034 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6334,18 +7833,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-034-low.png",
-    "imageHighSrc": "cards/svp-034-high.png"
+    "imageHighSrc": "cards/svp-034-high.png",
+    "attacks": [
+      {
+        "name": "Vitality Song",
+        "damage": "50"
+      },
+      {
+        "name": "Burning Voice",
+        "damage": "270-"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14735",
-    "externalId": null,
+    "externalId": "svp-33",
     "tcgdex_id": "svp-033",
     "localId": "033",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "033/219",
+    "cardNumber": "033",
     "cardName": "Meowscarada ex",
-    "fullDisplayName": "Meowscarada ex 033/219 SVP Black Star Promos",
+    "fullDisplayName": "Meowscarada ex 033 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6368,18 +7878,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-033-low.png",
-    "imageHighSrc": "cards/svp-033-high.png"
+    "imageHighSrc": "cards/svp-033-high.png",
+    "attacks": [
+      {
+        "name": "Scratching Nails",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14725",
-    "externalId": null,
+    "externalId": "svp-32",
     "tcgdex_id": "svp-032",
     "localId": "032",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "032/219",
+    "cardNumber": "032",
     "cardName": "Annihilape ex",
-    "fullDisplayName": "Annihilape ex 032/219 SVP Black Star Promos",
+    "fullDisplayName": "Annihilape ex 032 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6402,18 +7919,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-032-low.png",
-    "imageHighSrc": "cards/svp-032-high.png"
+    "imageHighSrc": "cards/svp-032-high.png",
+    "attacks": [
+      {
+        "name": "Angry Grudge",
+        "damage": "20×"
+      },
+      {
+        "name": "Seismic Toss",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14716",
-    "externalId": null,
+    "externalId": "svp-31",
     "tcgdex_id": "svp-031",
     "localId": "031",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "031/219",
+    "cardNumber": "031",
     "cardName": "Tinkaton ex",
-    "fullDisplayName": "Tinkaton ex 031/219 SVP Black Star Promos",
+    "fullDisplayName": "Tinkaton ex 031 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6436,18 +7964,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-031-low.png",
-    "imageHighSrc": "cards/svp-031-high.png"
+    "imageHighSrc": "cards/svp-031-high.png",
+    "attacks": [
+      {
+        "name": "Big Hammer",
+        "damage": "30×"
+      },
+      {
+        "name": "Pulverizing Press",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14707",
-    "externalId": null,
+    "externalId": "svp-30",
     "tcgdex_id": "svp-030",
     "localId": "030",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "030/219",
+    "cardNumber": "030",
     "cardName": "Chien-Pao ex",
-    "fullDisplayName": "Chien-Pao ex 030/219 SVP Black Star Promos",
+    "fullDisplayName": "Chien-Pao ex 030 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6470,18 +8009,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-030-low.png",
-    "imageHighSrc": "cards/svp-030-high.png"
+    "imageHighSrc": "cards/svp-030-high.png",
+    "attacks": [
+      {
+        "name": "Hail Blade",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14697",
-    "externalId": null,
+    "externalId": "svp-29",
     "tcgdex_id": "svp-029",
     "localId": "029",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "029/219",
+    "cardNumber": "029",
     "cardName": "Koraidon ex",
-    "fullDisplayName": "Koraidon ex 029/219 SVP Black Star Promos",
+    "fullDisplayName": "Koraidon ex 029 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6504,18 +8050,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-029-low.png",
-    "imageHighSrc": "cards/svp-029-high.png"
+    "imageHighSrc": "cards/svp-029-high.png",
+    "attacks": [
+      {
+        "name": "Wild Impact",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14676",
-    "externalId": null,
+    "externalId": "svp-28",
     "tcgdex_id": "svp-028",
     "localId": "028",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "028/219",
+    "cardNumber": "028",
     "cardName": "Miraidon ex",
-    "fullDisplayName": "Miraidon ex 028/219 SVP Black Star Promos",
+    "fullDisplayName": "Miraidon ex 028 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6538,18 +8091,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-028-low.png",
-    "imageHighSrc": "cards/svp-028-high.png"
+    "imageHighSrc": "cards/svp-028-high.png",
+    "attacks": [
+      {
+        "name": "Photon Blaster",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14664",
-    "externalId": null,
+    "externalId": "svp-27",
     "tcgdex_id": "svp-027",
     "localId": "027",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "027/219",
+    "cardNumber": "027",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 027/219 SVP Black Star Promos",
+    "fullDisplayName": "Pikachu 027 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6571,18 +8131,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-027-low.png",
-    "imageHighSrc": "cards/svp-027-high.png"
+    "imageHighSrc": "cards/svp-027-high.png",
+    "attacks": [
+      {
+        "name": "Adventuring Together",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "14651",
-    "externalId": null,
+    "externalId": "svp-26",
     "tcgdex_id": "svp-026",
     "localId": "026",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "026/219",
+    "cardNumber": "026",
     "cardName": "Varoom",
-    "fullDisplayName": "Varoom 026/219 SVP Black Star Promos",
+    "fullDisplayName": "Varoom 026 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6604,18 +8170,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-026-low.png",
-    "imageHighSrc": "cards/svp-026-high.png"
+    "imageHighSrc": "cards/svp-026-high.png",
+    "attacks": [
+      {
+        "name": "Poison Gas",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "14641",
-    "externalId": null,
+    "externalId": "svp-25",
     "tcgdex_id": "svp-025",
     "localId": "025",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "025/219",
+    "cardNumber": "025",
     "cardName": "Tinkatink",
-    "fullDisplayName": "Tinkatink 025/219 SVP Black Star Promos",
+    "fullDisplayName": "Tinkatink 025 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6637,18 +8209,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-025-low.png",
-    "imageHighSrc": "cards/svp-025-high.png"
+    "imageHighSrc": "cards/svp-025-high.png",
+    "attacks": [
+      {
+        "name": "Smithereen Smash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "14629",
-    "externalId": null,
+    "externalId": "svp-24",
     "tcgdex_id": "svp-024",
     "localId": "024",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "024/219",
+    "cardNumber": "024",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 024/219 SVP Black Star Promos",
+    "fullDisplayName": "Growlithe 024 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6670,18 +8248,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-024-low.png",
-    "imageHighSrc": "cards/svp-024-high.png"
+    "imageHighSrc": "cards/svp-024-high.png",
+    "attacks": [
+      {
+        "name": "Stoke",
+        "damage": null
+      },
+      {
+        "name": "Fire Claws",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "14619",
-    "externalId": null,
+    "externalId": "svp-23",
     "tcgdex_id": "svp-023",
     "localId": "023",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "023/219",
+    "cardNumber": "023",
     "cardName": "Smoliv",
-    "fullDisplayName": "Smoliv 023/219 SVP Black Star Promos",
+    "fullDisplayName": "Smoliv 023 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6703,18 +8291,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-023-low.png",
-    "imageHighSrc": "cards/svp-023-high.png"
+    "imageHighSrc": "cards/svp-023-high.png",
+    "attacks": [
+      {
+        "name": "Nutrients",
+        "damage": null
+      },
+      {
+        "name": "Spray Fluid",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "14609",
-    "externalId": null,
+    "externalId": "svp-22",
     "tcgdex_id": "svp-022",
     "localId": "022",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "022/219",
+    "cardNumber": "022",
     "cardName": "Pelipper",
-    "fullDisplayName": "Pelipper 022/219 SVP Black Star Promos",
+    "fullDisplayName": "Pelipper 022 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6736,18 +8334,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-022-low.png",
-    "imageHighSrc": "cards/svp-022-high.png"
+    "imageHighSrc": "cards/svp-022-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "14590",
-    "externalId": null,
+    "externalId": "svp-21",
     "tcgdex_id": "svp-021",
     "localId": "021",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "021/219",
+    "cardNumber": "021",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 021/219 SVP Black Star Promos",
+    "fullDisplayName": "Murkrow 021 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6769,18 +8373,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-021-low.png",
-    "imageHighSrc": "cards/svp-021-high.png"
+    "imageHighSrc": "cards/svp-021-high.png",
+    "attacks": [
+      {
+        "name": "Spin Turn",
+        "damage": "10"
+      },
+      {
+        "name": "United Wings",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "14580",
-    "externalId": null,
+    "externalId": "svp-20",
     "tcgdex_id": "svp-020",
     "localId": "020",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "020/219",
+    "cardNumber": "020",
     "cardName": "Tinkaton",
-    "fullDisplayName": "Tinkaton 020/219 SVP Black Star Promos",
+    "fullDisplayName": "Tinkaton 020 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6802,18 +8416,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-020-low.png",
-    "imageHighSrc": "cards/svp-020-high.png"
+    "imageHighSrc": "cards/svp-020-high.png",
+    "attacks": [
+      {
+        "name": "Special Hammer",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "14572",
-    "externalId": null,
+    "externalId": "svp-19",
     "tcgdex_id": "svp-019",
     "localId": "019",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "019/219",
+    "cardNumber": "019",
     "cardName": "Baxcalibur",
-    "fullDisplayName": "Baxcalibur 019/219 SVP Black Star Promos",
+    "fullDisplayName": "Baxcalibur 019 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6835,18 +8455,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-019-low.png",
-    "imageHighSrc": "cards/svp-019-high.png"
+    "imageHighSrc": "cards/svp-019-high.png",
+    "attacks": [
+      {
+        "name": "Buster Tail",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "14562",
-    "externalId": null,
+    "externalId": "svp-18",
     "tcgdex_id": "svp-018",
     "localId": "018",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "018/219",
+    "cardNumber": "018",
     "cardName": "Cyclizar ex",
-    "fullDisplayName": "Cyclizar ex 018/219 SVP Black Star Promos",
+    "fullDisplayName": "Cyclizar ex 018 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6869,18 +8495,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-018-low.png",
-    "imageHighSrc": "cards/svp-018-high.png"
+    "imageHighSrc": "cards/svp-018-high.png",
+    "attacks": [
+      {
+        "name": "Power Run",
+        "damage": "30"
+      },
+      {
+        "name": "Full Throttle",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14556",
-    "externalId": null,
+    "externalId": "svp-17",
     "tcgdex_id": "svp-017",
     "localId": "017",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "017/219",
+    "cardNumber": "017",
     "cardName": "Lucario ex",
-    "fullDisplayName": "Lucario ex 017/219 SVP Black Star Promos",
+    "fullDisplayName": "Lucario ex 017 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6903,18 +8540,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-017-low.png",
-    "imageHighSrc": "cards/svp-017-high.png"
+    "imageHighSrc": "cards/svp-017-high.png",
+    "attacks": [
+      {
+        "name": "Low Sweep",
+        "damage": "60"
+      },
+      {
+        "name": "Aura Sphere",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14547",
-    "externalId": null,
+    "externalId": "svp-16",
     "tcgdex_id": "svp-016",
     "localId": "016",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "016/219",
+    "cardNumber": "016",
     "cardName": "Ampharos ex",
-    "fullDisplayName": "Ampharos ex 016/219 SVP Black Star Promos",
+    "fullDisplayName": "Ampharos ex 016 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6937,18 +8585,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-016-low.png",
-    "imageHighSrc": "cards/svp-016-high.png"
+    "imageHighSrc": "cards/svp-016-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "60"
+      },
+      {
+        "name": "Thunderstrike Tail",
+        "damage": "140+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14539",
-    "externalId": null,
+    "externalId": "svp-15",
     "tcgdex_id": "svp-015",
     "localId": "015",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "015/219",
+    "cardNumber": "015",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 015/219 SVP Black Star Promos",
+    "fullDisplayName": "Flaaffy 015 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6970,18 +8629,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-015-low.png",
-    "imageHighSrc": "cards/svp-015-high.png"
+    "imageHighSrc": "cards/svp-015-high.png",
+    "attacks": [
+      {
+        "name": "Static Shock",
+        "damage": "30"
+      },
+      {
+        "name": "Extreme Current",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "14529",
-    "externalId": null,
+    "externalId": "svp-14",
     "tcgdex_id": "svp-014",
     "localId": "014",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "014/219",
+    "cardNumber": "014",
     "cardName": "Koraidon",
-    "fullDisplayName": "Koraidon 014/219 SVP Black Star Promos",
+    "fullDisplayName": "Koraidon 014 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7003,18 +8672,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-014-low.png",
-    "imageHighSrc": "cards/svp-014-high.png"
+    "imageHighSrc": "cards/svp-014-high.png",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "70"
+      },
+      {
+        "name": "Rampaging Fang",
+        "damage": "190"
+      }
+    ]
   },
   {
     "masterCardId": "14519",
-    "externalId": null,
+    "externalId": "svp-13",
     "tcgdex_id": "svp-013",
     "localId": "013",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "013/219",
+    "cardNumber": "013",
     "cardName": "Miraidon",
-    "fullDisplayName": "Miraidon 013/219 SVP Black Star Promos",
+    "fullDisplayName": "Miraidon 013 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7036,18 +8715,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-013-low.png",
-    "imageHighSrc": "cards/svp-013-high.png"
+    "imageHighSrc": "cards/svp-013-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Lightning Laser",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "14509",
-    "externalId": null,
+    "externalId": "svp-12",
     "tcgdex_id": "svp-012",
     "localId": "012",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "012/219",
+    "cardNumber": "012",
     "cardName": "Dondozo",
-    "fullDisplayName": "Dondozo 012/219 SVP Black Star Promos",
+    "fullDisplayName": "Dondozo 012 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7069,18 +8758,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-012-low.png",
-    "imageHighSrc": "cards/svp-012-high.png"
+    "imageHighSrc": "cards/svp-012-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "60"
+      },
+      {
+        "name": "Dangerous Wave",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "14500",
-    "externalId": null,
+    "externalId": "svp-11",
     "tcgdex_id": "svp-011",
     "localId": "011",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "011/219",
+    "cardNumber": "011",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 011/219 SVP Black Star Promos",
+    "fullDisplayName": "Arcanine 011 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7102,18 +8801,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-011-low.png",
-    "imageHighSrc": "cards/svp-011-high.png"
+    "imageHighSrc": "cards/svp-011-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "30"
+      },
+      {
+        "name": "Fire Mane",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "14490",
-    "externalId": null,
+    "externalId": "svp-10",
     "tcgdex_id": "svp-010",
     "localId": "010",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "010/219",
+    "cardNumber": "010",
     "cardName": "Espathra",
-    "fullDisplayName": "Espathra 010/219 SVP Black Star Promos",
+    "fullDisplayName": "Espathra 010 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7135,18 +8844,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-010-low.png",
-    "imageHighSrc": "cards/svp-010-high.png"
+    "imageHighSrc": "cards/svp-010-high.png",
+    "attacks": [
+      {
+        "name": "Aurora Gain",
+        "damage": "30"
+      },
+      {
+        "name": "Super Psy Bolt",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "14481",
-    "externalId": null,
+    "externalId": "svp-9",
     "tcgdex_id": "svp-009",
     "localId": "009",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "009/219",
+    "cardNumber": "009",
     "cardName": "Spidops",
-    "fullDisplayName": "Spidops 009/219 SVP Black Star Promos",
+    "fullDisplayName": "Spidops 009 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7168,18 +8887,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-009-low.png",
-    "imageHighSrc": "cards/svp-009-high.png"
+    "imageHighSrc": "cards/svp-009-high.png",
+    "attacks": [
+      {
+        "name": "String Truss",
+        "damage": "30"
+      },
+      {
+        "name": "Jet Headbutt",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "14471",
-    "externalId": null,
+    "externalId": "svp-8",
     "tcgdex_id": "svp-008",
     "localId": "008",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "008/219",
+    "cardNumber": "008",
     "cardName": "Revavroom",
-    "fullDisplayName": "Revavroom 008/219 SVP Black Star Promos",
+    "fullDisplayName": "Revavroom 008 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7201,18 +8930,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-008-low.png",
-    "imageHighSrc": "cards/svp-008-high.png"
+    "imageHighSrc": "cards/svp-008-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "14461",
-    "externalId": null,
+    "externalId": "svp-7",
     "tcgdex_id": "svp-007",
     "localId": "007",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "007/219",
+    "cardNumber": "007",
     "cardName": "Hawlucha",
-    "fullDisplayName": "Hawlucha 007/219 SVP Black Star Promos",
+    "fullDisplayName": "Hawlucha 007 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7234,18 +8969,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-007-low.png",
-    "imageHighSrc": "cards/svp-007-high.png"
+    "imageHighSrc": "cards/svp-007-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "14451",
-    "externalId": null,
+    "externalId": "svp-6",
     "tcgdex_id": "svp-006",
     "localId": "006",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "006/219",
+    "cardNumber": "006",
     "cardName": "Pawmot",
-    "fullDisplayName": "Pawmot 006/219 SVP Black Star Promos",
+    "fullDisplayName": "Pawmot 006 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -7267,18 +9008,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-006-low.png",
-    "imageHighSrc": "cards/svp-006-high.png"
+    "imageHighSrc": "cards/svp-006-high.png",
+    "attacks": [
+      {
+        "name": "Electro Paws",
+        "damage": "230"
+      }
+    ]
   },
   {
     "masterCardId": "14439",
-    "externalId": null,
+    "externalId": "svp-5",
     "tcgdex_id": "svp-005",
     "localId": "005",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "005/219",
+    "cardNumber": "005",
     "cardName": "Quaquaval",
-    "fullDisplayName": "Quaquaval 005/219 SVP Black Star Promos",
+    "fullDisplayName": "Quaquaval 005 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -7300,18 +9047,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-005-low.png",
-    "imageHighSrc": "cards/svp-005-high.png"
+    "imageHighSrc": "cards/svp-005-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Kick",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "14431",
-    "externalId": null,
+    "externalId": "svp-4",
     "tcgdex_id": "svp-004",
     "localId": "004",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "004/219",
+    "cardNumber": "004",
     "cardName": "Mimikyu ex",
-    "fullDisplayName": "Mimikyu ex 004/219 SVP Black Star Promos",
+    "fullDisplayName": "Mimikyu ex 004 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7334,18 +9087,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-004-low.png",
-    "imageHighSrc": "cards/svp-004-high.png"
+    "imageHighSrc": "cards/svp-004-high.png",
+    "attacks": [
+      {
+        "name": "Void Return",
+        "damage": "30"
+      },
+      {
+        "name": "Energy Burst",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14419",
-    "externalId": null,
+    "externalId": "svp-3",
     "tcgdex_id": "svp-003",
     "localId": "003",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "003/219",
+    "cardNumber": "003",
     "cardName": "Quaxly",
-    "fullDisplayName": "Quaxly 003/219 SVP Black Star Promos",
+    "fullDisplayName": "Quaxly 003 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7367,18 +9131,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-003-low.png",
-    "imageHighSrc": "cards/svp-003-high.png"
+    "imageHighSrc": "cards/svp-003-high.png",
+    "attacks": [
+      {
+        "name": "Water Splash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "14409",
-    "externalId": null,
+    "externalId": "svp-2",
     "tcgdex_id": "svp-002",
     "localId": "002",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "002/219",
+    "cardNumber": "002",
     "cardName": "Fuecoco",
-    "fullDisplayName": "Fuecoco 002/219 SVP Black Star Promos",
+    "fullDisplayName": "Fuecoco 002 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7400,18 +9170,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-002-low.png",
-    "imageHighSrc": "cards/svp-002-high.png"
+    "imageHighSrc": "cards/svp-002-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "14399",
-    "externalId": null,
+    "externalId": "svp-1",
     "tcgdex_id": "svp-001",
     "localId": "001",
     "setCode": "svp",
     "setTcgdexId": "svp",
-    "cardNumber": "001/219",
+    "cardNumber": "001",
     "cardName": "Sprigatito",
-    "fullDisplayName": "Sprigatito 001/219 SVP Black Star Promos",
+    "fullDisplayName": "Sprigatito 001 SVP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7433,6 +9209,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/svp-001-low.png",
-    "imageHighSrc": "cards/svp-001-high.png"
+    "imageHighSrc": "cards/svp-001-high.png",
+    "attacks": [
+      {
+        "name": "Mini Drain",
+        "damage": "10"
+      }
+    ]
   }
 ]

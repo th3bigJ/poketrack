@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "6736",
-    "externalId": null,
+    "externalId": "ex6-116",
     "tcgdex_id": "ex6-116",
     "localId": "116",
     "setCode": "ex6",
@@ -31,11 +31,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-116-low.png",
-    "imageHighSrc": "cards/ex6-116-high.png"
+    "imageHighSrc": "cards/ex6-116-high.png",
+    "attacks": [
+      {
+        "name": "Electron Crush",
+        "damage": "50+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6735",
-    "externalId": null,
+    "externalId": "ex6-115",
     "tcgdex_id": "ex6-115",
     "localId": "115",
     "setCode": "ex6",
@@ -65,11 +72,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-115-low.png",
-    "imageHighSrc": "cards/ex6-115-high.png"
+    "imageHighSrc": "cards/ex6-115-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Flames",
+        "damage": "60"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6734",
-    "externalId": null,
+    "externalId": "ex6-114",
     "tcgdex_id": "ex6-114",
     "localId": "114",
     "setCode": "ex6",
@@ -99,11 +113,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-114-low.png",
-    "imageHighSrc": "cards/ex6-114-high.png"
+    "imageHighSrc": "cards/ex6-114-high.png",
+    "attacks": [
+      {
+        "name": "Cold Crush",
+        "damage": "50"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6733",
-    "externalId": null,
+    "externalId": "ex6-113",
     "tcgdex_id": "ex6-113",
     "localId": "113",
     "setCode": "ex6",
@@ -132,11 +153,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-113-low.png",
-    "imageHighSrc": "cards/ex6-113-high.png"
+    "imageHighSrc": "cards/ex6-113-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "10"
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6732",
-    "externalId": null,
+    "externalId": "ex6-112",
     "tcgdex_id": "ex6-112",
     "localId": "112",
     "setCode": "ex6",
@@ -166,11 +197,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-112-low.png",
-    "imageHighSrc": "cards/ex6-112-high.png"
+    "imageHighSrc": "cards/ex6-112-high.png",
+    "attacks": [
+      {
+        "name": "Pollen Hazard",
+        "damage": "20"
+      },
+      {
+        "name": "Solarbeam",
+        "damage": "90"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6730",
-    "externalId": null,
+    "externalId": "ex6-111",
     "tcgdex_id": "ex6-111",
     "localId": "111",
     "setCode": "ex6",
@@ -200,11 +242,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-111-low.png",
-    "imageHighSrc": "cards/ex6-111-high.png"
+    "imageHighSrc": "cards/ex6-111-high.png",
+    "attacks": [
+      {
+        "name": "Breakdown",
+        "damage": null
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6728",
-    "externalId": null,
+    "externalId": "ex6-110",
     "tcgdex_id": "ex6-110",
     "localId": "110",
     "setCode": "ex6",
@@ -234,11 +283,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-110-low.png",
-    "imageHighSrc": "cards/ex6-110-high.png"
+    "imageHighSrc": "cards/ex6-110-high.png",
+    "attacks": [
+      {
+        "name": "Breakdown",
+        "damage": null
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6726",
-    "externalId": null,
+    "externalId": "ex6-109",
     "tcgdex_id": "ex6-109",
     "localId": "109",
     "setCode": "ex6",
@@ -268,11 +324,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-109-low.png",
-    "imageHighSrc": "cards/ex6-109-high.png"
+    "imageHighSrc": "cards/ex6-109-high.png",
+    "attacks": [
+      {
+        "name": "Twister",
+        "damage": "40"
+      },
+      {
+        "name": "Dragon Rage",
+        "damage": "100"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6724",
-    "externalId": null,
+    "externalId": "ex6-108",
     "tcgdex_id": "ex6-108",
     "localId": "108",
     "setCode": "ex6",
@@ -302,11 +369,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-108-low.png",
-    "imageHighSrc": "cards/ex6-108-high.png"
+    "imageHighSrc": "cards/ex6-108-high.png",
+    "attacks": [
+      {
+        "name": "Poltergeist",
+        "damage": "40+"
+      },
+      {
+        "name": "Prize Count",
+        "damage": "60+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6721",
-    "externalId": null,
+    "externalId": "ex6-107",
     "tcgdex_id": "ex6-107",
     "localId": "107",
     "setCode": "ex6",
@@ -336,11 +414,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-107-low.png",
-    "imageHighSrc": "cards/ex6-107-high.png"
+    "imageHighSrc": "cards/ex6-107-high.png",
+    "attacks": [
+      {
+        "name": "Crush and Burn",
+        "damage": "30+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6718",
-    "externalId": null,
+    "externalId": "ex6-106",
     "tcgdex_id": "ex6-106",
     "localId": "106",
     "setCode": "ex6",
@@ -370,11 +455,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-106-low.png",
-    "imageHighSrc": "cards/ex6-106-high.png"
+    "imageHighSrc": "cards/ex6-106-high.png",
+    "attacks": [
+      {
+        "name": "Metronome",
+        "damage": null
+      },
+      {
+        "name": "Moon Impact",
+        "damage": "40"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6715",
-    "externalId": null,
+    "externalId": "ex6-105",
     "tcgdex_id": "ex6-105",
     "localId": "105",
     "setCode": "ex6",
@@ -404,11 +500,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-105-low.png",
-    "imageHighSrc": "cards/ex6-105-high.png"
+    "imageHighSrc": "cards/ex6-105-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "50"
+      },
+      {
+        "name": "Burn Down",
+        "damage": "200"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6711",
-    "externalId": null,
+    "externalId": "ex6-104",
     "tcgdex_id": "ex6-104",
     "localId": "104",
     "setCode": "ex6",
@@ -438,11 +545,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-104-low.png",
-    "imageHighSrc": "cards/ex6-104-high.png"
+    "imageHighSrc": "cards/ex6-104-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Whirlpool",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6706",
-    "externalId": null,
+    "externalId": "ex6-103",
     "tcgdex_id": "ex6-103",
     "localId": "103",
     "setCode": "ex6",
@@ -467,11 +581,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-103-low.png",
-    "imageHighSrc": "cards/ex6-103-high.png"
+    "imageHighSrc": "cards/ex6-103-high.png",
+    "rules": "Attach Multi Energy to 1 of your Pokémon. While in play, Multi Energy provides every type of Energy but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) Multi Energy provides Colorless Energy when attached to a Pokémon that already has Special Energy cards attached to it."
   },
   {
     "masterCardId": "6701",
-    "externalId": null,
+    "externalId": "ex6-102",
     "tcgdex_id": "ex6-102",
     "localId": "102",
     "setCode": "ex6",
@@ -496,11 +611,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-102-low.png",
-    "imageHighSrc": "cards/ex6-102-high.png"
+    "imageHighSrc": "cards/ex6-102-high.png",
+    "rules": "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "6696",
-    "externalId": null,
+    "externalId": "ex6-101",
     "tcgdex_id": "ex6-101",
     "localId": "101",
     "setCode": "ex6",
@@ -525,11 +641,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-101-low.png",
-    "imageHighSrc": "cards/ex6-101-high.png"
+    "imageHighSrc": "cards/ex6-101-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "6691",
-    "externalId": null,
+    "externalId": "ex6-100",
     "tcgdex_id": "ex6-100",
     "localId": "100",
     "setCode": "ex6",
@@ -554,18 +671,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-100-low.png",
-    "imageHighSrc": "cards/ex6-100-high.png"
+    "imageHighSrc": "cards/ex6-100-high.png",
+    "rules": "Search your discard pile for a Supporter card, show it to your opponent, and put it into your hand."
   },
   {
     "masterCardId": "6686",
-    "externalId": null,
+    "externalId": "ex6-99",
     "tcgdex_id": "ex6-99",
     "localId": "099",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "099/112",
+    "cardNumber": "99/112",
     "cardName": "Super Scoop Up",
-    "fullDisplayName": "Super Scoop Up 099/112 FireRed & LeafGreen",
+    "fullDisplayName": "Super Scoop Up 99/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -583,18 +701,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-099-low.png",
-    "imageHighSrc": "cards/ex6-099-high.png"
+    "imageHighSrc": "cards/ex6-099-high.png",
+    "rules": "Flip a coin. If heads, return 1 of your Pokémon and all cards attached to it to your hand."
   },
   {
     "masterCardId": "6681",
-    "externalId": null,
+    "externalId": "ex6-98",
     "tcgdex_id": "ex6-98",
     "localId": "098",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "098/112",
+    "cardNumber": "98/112",
     "cardName": "Prof. Oak's Research",
-    "fullDisplayName": "Prof. Oak's Research 098/112 FireRed & LeafGreen",
+    "fullDisplayName": "Prof. Oak's Research 98/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -612,18 +731,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-098-low.png",
-    "imageHighSrc": "cards/ex6-098-high.png"
+    "imageHighSrc": "cards/ex6-098-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nShuffle your hand into your deck, then draw 5 cards."
   },
   {
     "masterCardId": "6676",
-    "externalId": null,
+    "externalId": "ex6-97",
     "tcgdex_id": "ex6-97",
     "localId": "097",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "097/112",
+    "cardNumber": "97/112",
     "cardName": "Pokémon Reversal",
-    "fullDisplayName": "Pokémon Reversal 097/112 FireRed & LeafGreen",
+    "fullDisplayName": "Pokémon Reversal 97/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -641,18 +761,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-097-low.png",
-    "imageHighSrc": "cards/ex6-097-high.png"
+    "imageHighSrc": "cards/ex6-097-high.png",
+    "rules": "Flip a coin. If heads, choose 1 of your opponent's Benched Pokémon and switch it with 1 of the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch."
   },
   {
     "masterCardId": "6671",
-    "externalId": null,
+    "externalId": "ex6-96",
     "tcgdex_id": "ex6-96",
     "localId": "096",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "096/112",
+    "cardNumber": "96/112",
     "cardName": "PokéDex HANDY909",
-    "fullDisplayName": "PokéDex HANDY909 096/112 FireRed & LeafGreen",
+    "fullDisplayName": "PokéDex HANDY909 96/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -670,18 +791,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex6-096-low.png",
-    "imageHighSrc": "cards/ex6-096-high.png"
+    "imageHighSrc": "cards/ex6-096-high.png",
+    "rules": "Shuffle your deck. Look at 6 cards from the top of your deck, then put them back on top of your deck in any order."
   },
   {
     "masterCardId": "6667",
-    "externalId": null,
+    "externalId": "ex6-95",
     "tcgdex_id": "ex6-95",
     "localId": "095",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "095/112",
+    "cardNumber": "95/112",
     "cardName": "Poké Ball",
-    "fullDisplayName": "Poké Ball 095/112 FireRed & LeafGreen",
+    "fullDisplayName": "Poké Ball 95/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -699,18 +821,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-095-low.png",
-    "imageHighSrc": "cards/ex6-095-high.png"
+    "imageHighSrc": "cards/ex6-095-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Basic Pokémon or Evolution card, show it to your opponent and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6660",
-    "externalId": null,
+    "externalId": "ex6-94",
     "tcgdex_id": "ex6-94",
     "localId": "094",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "094/112",
+    "cardNumber": "94/112",
     "cardName": "Mt. Moon",
-    "fullDisplayName": "Mt. Moon 094/112 FireRed & LeafGreen",
+    "fullDisplayName": "Mt. Moon 94/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -728,18 +851,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-094-low.png",
-    "imageHighSrc": "cards/ex6-094-high.png"
+    "imageHighSrc": "cards/ex6-094-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nAny Pokémon (both yours and your opponent's) with maximum HP less than 70 can't use any Poké-Powers."
   },
   {
     "masterCardId": "6652",
-    "externalId": null,
+    "externalId": "ex6-93",
     "tcgdex_id": "ex6-93",
     "localId": "093",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "093/112",
+    "cardNumber": "93/112",
     "cardName": "Life Herb",
-    "fullDisplayName": "Life Herb 093/112 FireRed & LeafGreen",
+    "fullDisplayName": "Life Herb 93/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -757,18 +881,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-093-low.png",
-    "imageHighSrc": "cards/ex6-093-high.png"
+    "imageHighSrc": "cards/ex6-093-high.png",
+    "rules": "Flip a coin. If heads, choose 1 of your Pokémon (excluding Pokémon-ex), and remove all Special Conditions and 6 damage counters from that Pokémon (all if there are less than 6)."
   },
   {
     "masterCardId": "6647",
-    "externalId": null,
+    "externalId": "ex6-92",
     "tcgdex_id": "ex6-92",
     "localId": "092",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "092/112",
+    "cardNumber": "92/112",
     "cardName": "Great Ball",
-    "fullDisplayName": "Great Ball 092/112 FireRed & LeafGreen",
+    "fullDisplayName": "Great Ball 92/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -786,18 +911,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-092-low.png",
-    "imageHighSrc": "cards/ex6-092-high.png"
+    "imageHighSrc": "cards/ex6-092-high.png",
+    "rules": "Search your deck for a Basic Pokémon (excluding Pokémon-ex) and put it onto your Bench. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6642",
-    "externalId": null,
+    "externalId": "ex6-91",
     "tcgdex_id": "ex6-91",
     "localId": "091",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "091/112",
+    "cardNumber": "91/112",
     "cardName": "EXP.ALL",
-    "fullDisplayName": "EXP.ALL 091/112 FireRed & LeafGreen",
+    "fullDisplayName": "EXP.ALL 91/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -815,18 +941,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-091-low.png",
-    "imageHighSrc": "cards/ex6-091-high.png"
+    "imageHighSrc": "cards/ex6-091-high.png",
+    "rules": "Attach EXP. ALL to 1 of your Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nDuring your opponent's turn, if 1 of your Active Pokémon is Knocked Out by your opponent's attack, you may take 1 basic Energy card attached to that Knocked Out Pokémon and attach it to the Pokémon with EXP.ALL attached to it. If you do, discard EXP.ALL."
   },
   {
     "masterCardId": "6637",
-    "externalId": null,
+    "externalId": "ex6-90",
     "tcgdex_id": "ex6-90",
     "localId": "090",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "090/112",
+    "cardNumber": "90/112",
     "cardName": "Energy Switch",
-    "fullDisplayName": "Energy Switch 090/112 FireRed & LeafGreen",
+    "fullDisplayName": "Energy Switch 90/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -844,18 +971,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-090-low.png",
-    "imageHighSrc": "cards/ex6-090-high.png"
+    "imageHighSrc": "cards/ex6-090-high.png",
+    "rules": "Move a basic Energy card attached to 1 of your Pokémon to another of your Pokémon."
   },
   {
     "masterCardId": "6631",
-    "externalId": null,
+    "externalId": "ex6-89",
     "tcgdex_id": "ex6-89",
     "localId": "089",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "089/112",
+    "cardNumber": "89/112",
     "cardName": "Energy Removal 2",
-    "fullDisplayName": "Energy Removal 2 089/112 FireRed & LeafGreen",
+    "fullDisplayName": "Energy Removal 2 89/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -873,18 +1001,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-089-low.png",
-    "imageHighSrc": "cards/ex6-089-high.png"
+    "imageHighSrc": "cards/ex6-089-high.png",
+    "rules": "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it."
   },
   {
     "masterCardId": "6624",
-    "externalId": null,
+    "externalId": "ex6-88",
     "tcgdex_id": "ex6-88",
     "localId": "088",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "088/112",
+    "cardNumber": "88/112",
     "cardName": "Celio's Network",
-    "fullDisplayName": "Celio's Network 088/112 FireRed & LeafGreen",
+    "fullDisplayName": "Celio's Network 88/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -902,18 +1031,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-088-low.png",
-    "imageHighSrc": "cards/ex6-088-high.png"
+    "imageHighSrc": "cards/ex6-088-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for a Basic Pokémon or Evolution card (excluding Pokémon-ex), show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6619",
-    "externalId": null,
+    "externalId": "ex6-87",
     "tcgdex_id": "ex6-87",
     "localId": "087",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "087/112",
+    "cardNumber": "87/112",
     "cardName": "Bill's Maintenance",
-    "fullDisplayName": "Bill's Maintenance 087/112 FireRed & LeafGreen",
+    "fullDisplayName": "Bill's Maintenance 87/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -931,18 +1061,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-087-low.png",
-    "imageHighSrc": "cards/ex6-087-high.png"
+    "imageHighSrc": "cards/ex6-087-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nIf you have any cards in your hand, shuffle 1 of them into your deck, then draw 3 cards."
   },
   {
     "masterCardId": "6614",
-    "externalId": null,
+    "externalId": "ex6-86",
     "tcgdex_id": "ex6-86",
     "localId": "086",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "086/112",
+    "cardNumber": "86/112",
     "cardName": "Weedle",
-    "fullDisplayName": "Weedle 086/112 FireRed & LeafGreen",
+    "fullDisplayName": "Weedle 86/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -964,18 +1095,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-086-low.png",
-    "imageHighSrc": "cards/ex6-086-high.png"
+    "imageHighSrc": "cards/ex6-086-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Poison Spurt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6608",
-    "externalId": null,
+    "externalId": "ex6-85",
     "tcgdex_id": "ex6-85",
     "localId": "085",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "085/112",
+    "cardNumber": "85/112",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 085/112 FireRed & LeafGreen",
+    "fullDisplayName": "Voltorb 85/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -997,18 +1138,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-085-low.png",
-    "imageHighSrc": "cards/ex6-085-high.png"
+    "imageHighSrc": "cards/ex6-085-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6603",
-    "externalId": null,
+    "externalId": "ex6-84",
     "tcgdex_id": "ex6-84",
     "localId": "084",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "084/112",
+    "cardNumber": "84/112",
     "cardName": "Venonat",
-    "fullDisplayName": "Venonat 084/112 FireRed & LeafGreen",
+    "fullDisplayName": "Venonat 84/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1030,18 +1177,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-084-low.png",
-    "imageHighSrc": "cards/ex6-084-high.png"
+    "imageHighSrc": "cards/ex6-084-high.png",
+    "attacks": [
+      {
+        "name": "Psycho Waves",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6597",
-    "externalId": null,
+    "externalId": "ex6-83",
     "tcgdex_id": "ex6-83",
     "localId": "083",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "083/112",
+    "cardNumber": "83/112",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 083/112 FireRed & LeafGreen",
+    "fullDisplayName": "Squirtle 83/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1063,18 +1220,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-083-low.png",
-    "imageHighSrc": "cards/ex6-083-high.png"
+    "imageHighSrc": "cards/ex6-083-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": null
+      },
+      {
+        "name": "Smash Turn",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6592",
-    "externalId": null,
+    "externalId": "ex6-82",
     "tcgdex_id": "ex6-82",
     "localId": "082",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "082/112",
+    "cardNumber": "82/112",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 082/112 FireRed & LeafGreen",
+    "fullDisplayName": "Squirtle 82/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1096,18 +1263,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-082-low.png",
-    "imageHighSrc": "cards/ex6-082-high.png"
+    "imageHighSrc": "cards/ex6-082-high.png",
+    "attacks": [
+      {
+        "name": "Sleepy Ball",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6585",
-    "externalId": null,
+    "externalId": "ex6-81",
     "tcgdex_id": "ex6-81",
     "localId": "081",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "081/112",
+    "cardNumber": "81/112",
     "cardName": "Spearow",
-    "fullDisplayName": "Spearow 081/112 FireRed & LeafGreen",
+    "fullDisplayName": "Spearow 81/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1129,18 +1302,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-081-low.png",
-    "imageHighSrc": "cards/ex6-081-high.png"
+    "imageHighSrc": "cards/ex6-081-high.png",
+    "attacks": [
+      {
+        "name": "Claw",
+        "damage": "10"
+      },
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6580",
-    "externalId": null,
+    "externalId": "ex6-80",
     "tcgdex_id": "ex6-80",
     "localId": "080",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "080/112",
+    "cardNumber": "80/112",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 080/112 FireRed & LeafGreen",
+    "fullDisplayName": "Slowpoke 80/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1162,18 +1345,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-080-low.png",
-    "imageHighSrc": "cards/ex6-080-high.png"
+    "imageHighSrc": "cards/ex6-080-high.png",
+    "attacks": [
+      {
+        "name": "Confusion Wave",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6578",
-    "externalId": null,
+    "externalId": "ex6-79",
     "tcgdex_id": "ex6-79",
     "localId": "079",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "079/112",
+    "cardNumber": "79/112",
     "cardName": "Shellder",
-    "fullDisplayName": "Shellder 079/112 FireRed & LeafGreen",
+    "fullDisplayName": "Shellder 79/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1195,18 +1384,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-079-low.png",
-    "imageHighSrc": "cards/ex6-079-high.png"
+    "imageHighSrc": "cards/ex6-079-high.png",
+    "attacks": [
+      {
+        "name": "Minimize",
+        "damage": null
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6573",
-    "externalId": null,
+    "externalId": "ex6-78",
     "tcgdex_id": "ex6-78",
     "localId": "078",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "078/112",
+    "cardNumber": "78/112",
     "cardName": "Seel",
-    "fullDisplayName": "Seel 078/112 FireRed & LeafGreen",
+    "fullDisplayName": "Seel 78/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1228,18 +1427,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-078-low.png",
-    "imageHighSrc": "cards/ex6-078-high.png"
+    "imageHighSrc": "cards/ex6-078-high.png",
+    "attacks": [
+      {
+        "name": "Horn Hazard",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6570",
-    "externalId": null,
+    "externalId": "ex6-77",
     "tcgdex_id": "ex6-77",
     "localId": "077",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "077/112",
+    "cardNumber": "77/112",
     "cardName": "Rattata",
-    "fullDisplayName": "Rattata 077/112 FireRed & LeafGreen",
+    "fullDisplayName": "Rattata 77/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1261,18 +1466,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-077-low.png",
-    "imageHighSrc": "cards/ex6-077-high.png"
+    "imageHighSrc": "cards/ex6-077-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6565",
-    "externalId": null,
+    "externalId": "ex6-76",
     "tcgdex_id": "ex6-76",
     "localId": "076",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "076/112",
+    "cardNumber": "76/112",
     "cardName": "Ponyta",
-    "fullDisplayName": "Ponyta 076/112 FireRed & LeafGreen",
+    "fullDisplayName": "Ponyta 76/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1294,18 +1509,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-076-low.png",
-    "imageHighSrc": "cards/ex6-076-high.png"
+    "imageHighSrc": "cards/ex6-076-high.png",
+    "attacks": [
+      {
+        "name": "Stomp",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "6560",
-    "externalId": null,
+    "externalId": "ex6-75",
     "tcgdex_id": "ex6-75",
     "localId": "075",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "075/112",
+    "cardNumber": "75/112",
     "cardName": "Poliwag",
-    "fullDisplayName": "Poliwag 075/112 FireRed & LeafGreen",
+    "fullDisplayName": "Poliwag 75/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1327,18 +1548,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-075-low.png",
-    "imageHighSrc": "cards/ex6-075-high.png"
+    "imageHighSrc": "cards/ex6-075-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Attack",
+        "damage": null
+      },
+      {
+        "name": "Tail Whap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6554",
-    "externalId": null,
+    "externalId": "ex6-74",
     "tcgdex_id": "ex6-74",
     "localId": "074",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "074/112",
+    "cardNumber": "74/112",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 074/112 FireRed & LeafGreen",
+    "fullDisplayName": "Pikachu 74/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1360,18 +1591,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-074-low.png",
-    "imageHighSrc": "cards/ex6-074-high.png"
+    "imageHighSrc": "cards/ex6-074-high.png",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6549",
-    "externalId": null,
+    "externalId": "ex6-73",
     "tcgdex_id": "ex6-73",
     "localId": "073",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "073/112",
+    "cardNumber": "73/112",
     "cardName": "Pidgey",
-    "fullDisplayName": "Pidgey 073/112 FireRed & LeafGreen",
+    "fullDisplayName": "Pidgey 73/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1393,18 +1630,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-073-low.png",
-    "imageHighSrc": "cards/ex6-073-high.png"
+    "imageHighSrc": "cards/ex6-073-high.png",
+    "attacks": [
+      {
+        "name": "Corner",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6546",
-    "externalId": null,
+    "externalId": "ex6-72",
     "tcgdex_id": "ex6-72",
     "localId": "072",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "072/112",
+    "cardNumber": "72/112",
     "cardName": "Paras",
-    "fullDisplayName": "Paras 072/112 FireRed & LeafGreen",
+    "fullDisplayName": "Paras 72/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1426,18 +1673,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-072-low.png",
-    "imageHighSrc": "cards/ex6-072-high.png"
+    "imageHighSrc": "cards/ex6-072-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Toxic Spore",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6541",
-    "externalId": null,
+    "externalId": "ex6-71",
     "tcgdex_id": "ex6-71",
     "localId": "071",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "071/112",
+    "cardNumber": "71/112",
     "cardName": "Nidoran ♂",
-    "fullDisplayName": "Nidoran ♂ 071/112 FireRed & LeafGreen",
+    "fullDisplayName": "Nidoran ♂ 71/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1459,18 +1716,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex6-071-low.png",
-    "imageHighSrc": "cards/ex6-071-high.png"
+    "imageHighSrc": "cards/ex6-071-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Double Stab",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "6536",
-    "externalId": null,
+    "externalId": "ex6-70",
     "tcgdex_id": "ex6-70",
     "localId": "070",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "070/112",
+    "cardNumber": "70/112",
     "cardName": "Nidoran ♀",
-    "fullDisplayName": "Nidoran ♀ 070/112 FireRed & LeafGreen",
+    "fullDisplayName": "Nidoran ♀ 70/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1492,18 +1759,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex6-070-low.png",
-    "imageHighSrc": "cards/ex6-070-high.png"
+    "imageHighSrc": "cards/ex6-070-high.png",
+    "attacks": [
+      {
+        "name": "Look for Friends",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6531",
-    "externalId": null,
+    "externalId": "ex6-69",
     "tcgdex_id": "ex6-69",
     "localId": "069",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "069/112",
+    "cardNumber": "69/112",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 069/112 FireRed & LeafGreen",
+    "fullDisplayName": "Meowth 69/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1525,18 +1802,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-069-low.png",
-    "imageHighSrc": "cards/ex6-069-high.png"
+    "imageHighSrc": "cards/ex6-069-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Cat Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6526",
-    "externalId": null,
+    "externalId": "ex6-68",
     "tcgdex_id": "ex6-68",
     "localId": "068",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "068/112",
+    "cardNumber": "68/112",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 068/112 FireRed & LeafGreen",
+    "fullDisplayName": "Magnemite 68/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1558,18 +1845,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-068-low.png",
-    "imageHighSrc": "cards/ex6-068-high.png"
+    "imageHighSrc": "cards/ex6-068-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Speed Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6521",
-    "externalId": null,
+    "externalId": "ex6-67",
     "tcgdex_id": "ex6-67",
     "localId": "067",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "067/112",
+    "cardNumber": "67/112",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 067/112 FireRed & LeafGreen",
+    "fullDisplayName": "Magikarp 67/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1591,18 +1888,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-067-low.png",
-    "imageHighSrc": "cards/ex6-067-high.png"
+    "imageHighSrc": "cards/ex6-067-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Ascension",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6515",
-    "externalId": null,
+    "externalId": "ex6-66",
     "tcgdex_id": "ex6-66",
     "localId": "066",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "066/112",
+    "cardNumber": "66/112",
     "cardName": "Krabby",
-    "fullDisplayName": "Krabby 066/112 FireRed & LeafGreen",
+    "fullDisplayName": "Krabby 66/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1624,18 +1931,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-066-low.png",
-    "imageHighSrc": "cards/ex6-066-high.png"
+    "imageHighSrc": "cards/ex6-066-high.png",
+    "attacks": [
+      {
+        "name": "Irongrip",
+        "damage": "10"
+      },
+      {
+        "name": "Nap",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6510",
-    "externalId": null,
+    "externalId": "ex6-65",
     "tcgdex_id": "ex6-65",
     "localId": "065",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "065/112",
+    "cardNumber": "65/112",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 065/112 FireRed & LeafGreen",
+    "fullDisplayName": "Jigglypuff 65/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1657,18 +1974,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-065-low.png",
-    "imageHighSrc": "cards/ex6-065-high.png"
+    "imageHighSrc": "cards/ex6-065-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Inducer",
+        "damage": null
+      },
+      {
+        "name": "Quick Blow",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6502",
-    "externalId": null,
+    "externalId": "ex6-64",
     "tcgdex_id": "ex6-64",
     "localId": "064",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "064/112",
+    "cardNumber": "64/112",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 064/112 FireRed & LeafGreen",
+    "fullDisplayName": "Growlithe 64/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1690,18 +2017,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-064-low.png",
-    "imageHighSrc": "cards/ex6-064-high.png"
+    "imageHighSrc": "cards/ex6-064-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Flame Tail",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6497",
-    "externalId": null,
+    "externalId": "ex6-63",
     "tcgdex_id": "ex6-63",
     "localId": "063",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "063/112",
+    "cardNumber": "63/112",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 063/112 FireRed & LeafGreen",
+    "fullDisplayName": "Gastly 63/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1723,18 +2060,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-063-low.png",
-    "imageHighSrc": "cards/ex6-063-high.png"
+    "imageHighSrc": "cards/ex6-063-high.png",
+    "attacks": [
+      {
+        "name": "Slow Trip Gas",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6492",
-    "externalId": null,
+    "externalId": "ex6-62",
     "tcgdex_id": "ex6-62",
     "localId": "062",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "062/112",
+    "cardNumber": "62/112",
     "cardName": "Doduo",
-    "fullDisplayName": "Doduo 062/112 FireRed & LeafGreen",
+    "fullDisplayName": "Doduo 62/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1756,18 +2099,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-062-low.png",
-    "imageHighSrc": "cards/ex6-062-high.png"
+    "imageHighSrc": "cards/ex6-062-high.png",
+    "attacks": [
+      {
+        "name": "Run Around",
+        "damage": null
+      },
+      {
+        "name": "Random Peck",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6487",
-    "externalId": null,
+    "externalId": "ex6-61",
     "tcgdex_id": "ex6-61",
     "localId": "061",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "061/112",
+    "cardNumber": "61/112",
     "cardName": "Diglett",
-    "fullDisplayName": "Diglett 061/112 FireRed & LeafGreen",
+    "fullDisplayName": "Diglett 61/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1789,18 +2142,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-061-low.png",
-    "imageHighSrc": "cards/ex6-061-high.png"
+    "imageHighSrc": "cards/ex6-061-high.png",
+    "attacks": [
+      {
+        "name": "Dig Under",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6482",
-    "externalId": null,
+    "externalId": "ex6-60",
     "tcgdex_id": "ex6-60",
     "localId": "060",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "060/112",
+    "cardNumber": "60/112",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 060/112 FireRed & LeafGreen",
+    "fullDisplayName": "Cubone 60/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1822,18 +2181,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-060-low.png",
-    "imageHighSrc": "cards/ex6-060-high.png"
+    "imageHighSrc": "cards/ex6-060-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Linear Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6477",
-    "externalId": null,
+    "externalId": "ex6-59",
     "tcgdex_id": "ex6-59",
     "localId": "059",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "059/112",
+    "cardNumber": "59/112",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 059/112 FireRed & LeafGreen",
+    "fullDisplayName": "Clefairy 59/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1855,18 +2224,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-059-low.png",
-    "imageHighSrc": "cards/ex6-059-high.png"
+    "imageHighSrc": "cards/ex6-059-high.png",
+    "attacks": [
+      {
+        "name": "Gesture",
+        "damage": null
+      },
+      {
+        "name": "Moon Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6472",
-    "externalId": null,
+    "externalId": "ex6-58",
     "tcgdex_id": "ex6-58",
     "localId": "058",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "058/112",
+    "cardNumber": "58/112",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 058/112 FireRed & LeafGreen",
+    "fullDisplayName": "Charmander 58/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1888,18 +2267,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-058-low.png",
-    "imageHighSrc": "cards/ex6-058-high.png"
+    "imageHighSrc": "cards/ex6-058-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6464",
-    "externalId": null,
+    "externalId": "ex6-57",
     "tcgdex_id": "ex6-57",
     "localId": "057",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "057/112",
+    "cardNumber": "57/112",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 057/112 FireRed & LeafGreen",
+    "fullDisplayName": "Charmander 57/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1921,18 +2310,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-057-low.png",
-    "imageHighSrc": "cards/ex6-057-high.png"
+    "imageHighSrc": "cards/ex6-057-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6459",
-    "externalId": null,
+    "externalId": "ex6-56",
     "tcgdex_id": "ex6-56",
     "localId": "056",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "056/112",
+    "cardNumber": "56/112",
     "cardName": "Caterpie",
-    "fullDisplayName": "Caterpie 056/112 FireRed & LeafGreen",
+    "fullDisplayName": "Caterpie 56/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1954,18 +2349,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-056-low.png",
-    "imageHighSrc": "cards/ex6-056-high.png"
+    "imageHighSrc": "cards/ex6-056-high.png",
+    "attacks": [
+      {
+        "name": "Signs of Evolution",
+        "damage": null
+      },
+      {
+        "name": "String Shot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6454",
-    "externalId": null,
+    "externalId": "ex6-55",
     "tcgdex_id": "ex6-55",
     "localId": "055",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "055/112",
+    "cardNumber": "55/112",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 055/112 FireRed & LeafGreen",
+    "fullDisplayName": "Bulbasaur 55/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1987,18 +2392,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-055-low.png",
-    "imageHighSrc": "cards/ex6-055-high.png"
+    "imageHighSrc": "cards/ex6-055-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Gouge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "6450",
-    "externalId": null,
+    "externalId": "ex6-54",
     "tcgdex_id": "ex6-54",
     "localId": "054",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "054/112",
+    "cardNumber": "54/112",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 054/112 FireRed & LeafGreen",
+    "fullDisplayName": "Bulbasaur 54/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2020,18 +2435,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-054-low.png",
-    "imageHighSrc": "cards/ex6-054-high.png"
+    "imageHighSrc": "cards/ex6-054-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6445",
-    "externalId": null,
+    "externalId": "ex6-53",
     "tcgdex_id": "ex6-53",
     "localId": "053",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "053/112",
+    "cardNumber": "53/112",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 053/112 FireRed & LeafGreen",
+    "fullDisplayName": "Bellsprout 53/112 FireRed & LeafGreen",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2053,18 +2478,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-053-low.png",
-    "imageHighSrc": "cards/ex6-053-high.png"
+    "imageHighSrc": "cards/ex6-053-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6440",
-    "externalId": null,
+    "externalId": "ex6-52",
     "tcgdex_id": "ex6-52",
     "localId": "052",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "052/112",
+    "cardNumber": "52/112",
     "cardName": "Wigglytuff",
-    "fullDisplayName": "Wigglytuff 052/112 FireRed & LeafGreen",
+    "fullDisplayName": "Wigglytuff 52/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2086,18 +2517,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-052-low.png",
-    "imageHighSrc": "cards/ex6-052-high.png"
+    "imageHighSrc": "cards/ex6-052-high.png",
+    "attacks": [
+      {
+        "name": "Expand",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6435",
-    "externalId": null,
+    "externalId": "ex6-51",
     "tcgdex_id": "ex6-51",
     "localId": "051",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "051/112",
+    "cardNumber": "51/112",
     "cardName": "Weepinbell",
-    "fullDisplayName": "Weepinbell 051/112 FireRed & LeafGreen",
+    "fullDisplayName": "Weepinbell 51/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2119,18 +2556,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-051-low.png",
-    "imageHighSrc": "cards/ex6-051-high.png"
+    "imageHighSrc": "cards/ex6-051-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      },
+      {
+        "name": "Corrosive Acid",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6429",
-    "externalId": null,
+    "externalId": "ex6-50",
     "tcgdex_id": "ex6-50",
     "localId": "050",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "050/112",
+    "cardNumber": "50/112",
     "cardName": "Wartortle",
-    "fullDisplayName": "Wartortle 050/112 FireRed & LeafGreen",
+    "fullDisplayName": "Wartortle 50/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2152,18 +2599,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-050-low.png",
-    "imageHighSrc": "cards/ex6-050-high.png"
+    "imageHighSrc": "cards/ex6-050-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "20+"
+      },
+      {
+        "name": "Smash Turn",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6425",
-    "externalId": null,
+    "externalId": "ex6-49",
     "tcgdex_id": "ex6-49",
     "localId": "049",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "049/112",
+    "cardNumber": "49/112",
     "cardName": "Venomoth",
-    "fullDisplayName": "Venomoth 049/112 FireRed & LeafGreen",
+    "fullDisplayName": "Venomoth 49/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2185,18 +2642,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-049-low.png",
-    "imageHighSrc": "cards/ex6-049-high.png"
+    "imageHighSrc": "cards/ex6-049-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": null
+      },
+      {
+        "name": "Razor Wind",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6418",
-    "externalId": null,
+    "externalId": "ex6-48",
     "tcgdex_id": "ex6-48",
     "localId": "048",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "048/112",
+    "cardNumber": "48/112",
     "cardName": "Raticate",
-    "fullDisplayName": "Raticate 048/112 FireRed & LeafGreen",
+    "fullDisplayName": "Raticate 48/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2218,18 +2685,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-048-low.png",
-    "imageHighSrc": "cards/ex6-048-high.png"
+    "imageHighSrc": "cards/ex6-048-high.png",
+    "attacks": [
+      {
+        "name": "Pickup",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6413",
-    "externalId": null,
+    "externalId": "ex6-47",
     "tcgdex_id": "ex6-47",
     "localId": "047",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "047/112",
+    "cardNumber": "47/112",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon 047/112 FireRed & LeafGreen",
+    "fullDisplayName": "Porygon 47/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2251,18 +2728,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-047-low.png",
-    "imageHighSrc": "cards/ex6-047-high.png"
+    "imageHighSrc": "cards/ex6-047-high.png",
+    "attacks": [
+      {
+        "name": "Data Retrieval",
+        "damage": null
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6408",
-    "externalId": null,
+    "externalId": "ex6-46",
     "tcgdex_id": "ex6-46",
     "localId": "046",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "046/112",
+    "cardNumber": "46/112",
     "cardName": "Poliwhirl",
-    "fullDisplayName": "Poliwhirl 046/112 FireRed & LeafGreen",
+    "fullDisplayName": "Poliwhirl 46/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2284,18 +2771,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-046-low.png",
-    "imageHighSrc": "cards/ex6-046-high.png"
+    "imageHighSrc": "cards/ex6-046-high.png",
+    "attacks": [
+      {
+        "name": "Energy Stream",
+        "damage": "10"
+      },
+      {
+        "name": "Bubble",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6403",
-    "externalId": null,
+    "externalId": "ex6-45",
     "tcgdex_id": "ex6-45",
     "localId": "045",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "045/112",
+    "cardNumber": "45/112",
     "cardName": "Pidgeotto",
-    "fullDisplayName": "Pidgeotto 045/112 FireRed & LeafGreen",
+    "fullDisplayName": "Pidgeotto 45/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2317,18 +2814,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-045-low.png",
-    "imageHighSrc": "cards/ex6-045-high.png"
+    "imageHighSrc": "cards/ex6-045-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "10"
+      },
+      {
+        "name": "Cutting Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6398",
-    "externalId": null,
+    "externalId": "ex6-44",
     "tcgdex_id": "ex6-44",
     "localId": "044",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "044/112",
+    "cardNumber": "44/112",
     "cardName": "Persian",
-    "fullDisplayName": "Persian 044/112 FireRed & LeafGreen",
+    "fullDisplayName": "Persian 44/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2350,18 +2857,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-044-low.png",
-    "imageHighSrc": "cards/ex6-044-high.png"
+    "imageHighSrc": "cards/ex6-044-high.png",
+    "attacks": [
+      {
+        "name": "Poison Claws",
+        "damage": null
+      },
+      {
+        "name": "Shining Claws",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6393",
-    "externalId": null,
+    "externalId": "ex6-43",
     "tcgdex_id": "ex6-43",
     "localId": "043",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "043/112",
+    "cardNumber": "43/112",
     "cardName": "Parasect",
-    "fullDisplayName": "Parasect 043/112 FireRed & LeafGreen",
+    "fullDisplayName": "Parasect 43/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2383,18 +2900,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-043-low.png",
-    "imageHighSrc": "cards/ex6-043-high.png"
+    "imageHighSrc": "cards/ex6-043-high.png",
+    "attacks": [
+      {
+        "name": "Energy Powder",
+        "damage": null
+      },
+      {
+        "name": "Toxic Spore",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6388",
-    "externalId": null,
+    "externalId": "ex6-42",
     "tcgdex_id": "ex6-42",
     "localId": "042",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "042/112",
+    "cardNumber": "42/112",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 042/112 FireRed & LeafGreen",
+    "fullDisplayName": "Onix 42/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2416,18 +2943,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-042-low.png",
-    "imageHighSrc": "cards/ex6-042-high.png"
+    "imageHighSrc": "cards/ex6-042-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "10"
+      },
+      {
+        "name": "Tunneling",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6383",
-    "externalId": null,
+    "externalId": "ex6-41",
     "tcgdex_id": "ex6-41",
     "localId": "041",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "041/112",
+    "cardNumber": "41/112",
     "cardName": "Nidorino",
-    "fullDisplayName": "Nidorino 041/112 FireRed & LeafGreen",
+    "fullDisplayName": "Nidorino 41/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2449,18 +2986,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-041-low.png",
-    "imageHighSrc": "cards/ex6-041-high.png"
+    "imageHighSrc": "cards/ex6-041-high.png",
+    "attacks": [
+      {
+        "name": "Double Stab",
+        "damage": "20×"
+      },
+      {
+        "name": "Rend",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "6378",
-    "externalId": null,
+    "externalId": "ex6-40",
     "tcgdex_id": "ex6-40",
     "localId": "040",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "040/112",
+    "cardNumber": "40/112",
     "cardName": "Nidorina",
-    "fullDisplayName": "Nidorina 040/112 FireRed & LeafGreen",
+    "fullDisplayName": "Nidorina 40/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2482,18 +3029,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-040-low.png",
-    "imageHighSrc": "cards/ex6-040-high.png"
+    "imageHighSrc": "cards/ex6-040-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Fast Evolution",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6373",
-    "externalId": null,
+    "externalId": "ex6-39",
     "tcgdex_id": "ex6-39",
     "localId": "039",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "039/112",
+    "cardNumber": "39/112",
     "cardName": "Metapod",
-    "fullDisplayName": "Metapod 039/112 FireRed & LeafGreen",
+    "fullDisplayName": "Metapod 39/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2515,18 +3072,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-039-low.png",
-    "imageHighSrc": "cards/ex6-039-high.png"
+    "imageHighSrc": "cards/ex6-039-high.png",
+    "attacks": [
+      {
+        "name": "Sharpen",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6368",
-    "externalId": null,
+    "externalId": "ex6-38",
     "tcgdex_id": "ex6-38",
     "localId": "038",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "038/112",
+    "cardNumber": "38/112",
     "cardName": "Mankey",
-    "fullDisplayName": "Mankey 038/112 FireRed & LeafGreen",
+    "fullDisplayName": "Mankey 38/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2548,18 +3111,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-038-low.png",
-    "imageHighSrc": "cards/ex6-038-high.png"
+    "imageHighSrc": "cards/ex6-038-high.png",
+    "attacks": [
+      {
+        "name": "Mischief",
+        "damage": null
+      },
+      {
+        "name": "Light Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6363",
-    "externalId": null,
+    "externalId": "ex6-37",
     "tcgdex_id": "ex6-37",
     "localId": "037",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "037/112",
+    "cardNumber": "37/112",
     "cardName": "Lickitung",
-    "fullDisplayName": "Lickitung 037/112 FireRed & LeafGreen",
+    "fullDisplayName": "Lickitung 37/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2581,18 +3154,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-037-low.png",
-    "imageHighSrc": "cards/ex6-037-high.png"
+    "imageHighSrc": "cards/ex6-037-high.png",
+    "attacks": [
+      {
+        "name": "Lick",
+        "damage": "10"
+      },
+      {
+        "name": "Tongue Whip",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6358",
-    "externalId": null,
+    "externalId": "ex6-36",
     "tcgdex_id": "ex6-36",
     "localId": "036",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "036/112",
+    "cardNumber": "36/112",
     "cardName": "Kakuna",
-    "fullDisplayName": "Kakuna 036/112 FireRed & LeafGreen",
+    "fullDisplayName": "Kakuna 36/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2614,18 +3197,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-036-low.png",
-    "imageHighSrc": "cards/ex6-036-high.png"
+    "imageHighSrc": "cards/ex6-036-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6353",
-    "externalId": null,
+    "externalId": "ex6-35",
     "tcgdex_id": "ex6-35",
     "localId": "035",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "035/112",
+    "cardNumber": "35/112",
     "cardName": "Ivysaur",
-    "fullDisplayName": "Ivysaur 035/112 FireRed & LeafGreen",
+    "fullDisplayName": "Ivysaur 35/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2647,18 +3236,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-035-low.png",
-    "imageHighSrc": "cards/ex6-035-high.png"
+    "imageHighSrc": "cards/ex6-035-high.png",
+    "attacks": [
+      {
+        "name": "Poison Seed",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6348",
-    "externalId": null,
+    "externalId": "ex6-34",
     "tcgdex_id": "ex6-34",
     "localId": "034",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "034/112",
+    "cardNumber": "34/112",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 034/112 FireRed & LeafGreen",
+    "fullDisplayName": "Haunter 34/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2680,18 +3279,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-034-low.png",
-    "imageHighSrc": "cards/ex6-034-high.png"
+    "imageHighSrc": "cards/ex6-034-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6343",
-    "externalId": null,
+    "externalId": "ex6-33",
     "tcgdex_id": "ex6-33",
     "localId": "033",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "033/112",
+    "cardNumber": "33/112",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 033/112 FireRed & LeafGreen",
+    "fullDisplayName": "Exeggcute 33/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2713,18 +3318,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-033-low.png",
-    "imageHighSrc": "cards/ex6-033-high.png"
+    "imageHighSrc": "cards/ex6-033-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": "10"
+      },
+      {
+        "name": "Double Spin",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "6338",
-    "externalId": null,
+    "externalId": "ex6-32",
     "tcgdex_id": "ex6-32",
     "localId": "032",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "032/112",
+    "cardNumber": "32/112",
     "cardName": "Drowzee",
-    "fullDisplayName": "Drowzee 032/112 FireRed & LeafGreen",
+    "fullDisplayName": "Drowzee 32/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2746,18 +3361,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-032-low.png",
-    "imageHighSrc": "cards/ex6-032-high.png"
+    "imageHighSrc": "cards/ex6-032-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Ambush",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6332",
-    "externalId": null,
+    "externalId": "ex6-31",
     "tcgdex_id": "ex6-31",
     "localId": "031",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "031/112",
+    "cardNumber": "31/112",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 031/112 FireRed & LeafGreen",
+    "fullDisplayName": "Charmeleon 31/112 FireRed & LeafGreen",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2779,18 +3404,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-031-low.png",
-    "imageHighSrc": "cards/ex6-031-high.png"
+    "imageHighSrc": "cards/ex6-031-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "30"
+      },
+      {
+        "name": "Damage Burn",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "6327",
-    "externalId": null,
+    "externalId": "ex6-30",
     "tcgdex_id": "ex6-30",
     "localId": "030",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "030/112",
+    "cardNumber": "30/112",
     "cardName": "Tangela",
-    "fullDisplayName": "Tangela 030/112 FireRed & LeafGreen",
+    "fullDisplayName": "Tangela 30/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2812,18 +3447,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-030-low.png",
-    "imageHighSrc": "cards/ex6-030-high.png"
+    "imageHighSrc": "cards/ex6-030-high.png",
+    "attacks": [
+      {
+        "name": "Vine Tease",
+        "damage": null
+      },
+      {
+        "name": "Wiggle",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6322",
-    "externalId": null,
+    "externalId": "ex6-29",
     "tcgdex_id": "ex6-29",
     "localId": "029",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "029/112",
+    "cardNumber": "29/112",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 029/112 FireRed & LeafGreen",
+    "fullDisplayName": "Scyther 29/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2845,18 +3490,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-029-low.png",
-    "imageHighSrc": "cards/ex6-029-high.png"
+    "imageHighSrc": "cards/ex6-029-high.png",
+    "attacks": [
+      {
+        "name": "Fury Cutter",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6317",
-    "externalId": null,
+    "externalId": "ex6-28",
     "tcgdex_id": "ex6-28",
     "localId": "028",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "028/112",
+    "cardNumber": "28/112",
     "cardName": "Primeape",
-    "fullDisplayName": "Primeape 028/112 FireRed & LeafGreen",
+    "fullDisplayName": "Primeape 28/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2878,18 +3529,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-028-low.png",
-    "imageHighSrc": "cards/ex6-028-high.png"
+    "imageHighSrc": "cards/ex6-028-high.png",
+    "attacks": [
+      {
+        "name": "Toss",
+        "damage": "30×"
+      },
+      {
+        "name": "Low Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6312",
-    "externalId": null,
+    "externalId": "ex6-27",
     "tcgdex_id": "ex6-27",
     "localId": "027",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "027/112",
+    "cardNumber": "27/112",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 027/112 FireRed & LeafGreen",
+    "fullDisplayName": "Magneton 27/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2911,18 +3572,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-027-low.png",
-    "imageHighSrc": "cards/ex6-027-high.png"
+    "imageHighSrc": "cards/ex6-027-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      },
+      {
+        "name": "Speed Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6307",
-    "externalId": null,
+    "externalId": "ex6-26",
     "tcgdex_id": "ex6-26",
     "localId": "026",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "026/112",
+    "cardNumber": "26/112",
     "cardName": "Kingler",
-    "fullDisplayName": "Kingler 026/112 FireRed & LeafGreen",
+    "fullDisplayName": "Kingler 26/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2944,18 +3615,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-026-low.png",
-    "imageHighSrc": "cards/ex6-026-high.png"
+    "imageHighSrc": "cards/ex6-026-high.png",
+    "attacks": [
+      {
+        "name": "Salt Water",
+        "damage": null
+      },
+      {
+        "name": "Hyper Pump",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "6302",
-    "externalId": null,
+    "externalId": "ex6-25",
     "tcgdex_id": "ex6-25",
     "localId": "025",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "025/112",
+    "cardNumber": "25/112",
     "cardName": "Hypno",
-    "fullDisplayName": "Hypno 025/112 FireRed & LeafGreen",
+    "fullDisplayName": "Hypno 25/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2977,18 +3658,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-025-low.png",
-    "imageHighSrc": "cards/ex6-025-high.png"
+    "imageHighSrc": "cards/ex6-025-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Ray",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6298",
-    "externalId": null,
+    "externalId": "ex6-24",
     "tcgdex_id": "ex6-24",
     "localId": "024",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "024/112",
+    "cardNumber": "24/112",
     "cardName": "Fearow",
-    "fullDisplayName": "Fearow 024/112 FireRed & LeafGreen",
+    "fullDisplayName": "Fearow 24/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3010,18 +3697,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-024-low.png",
-    "imageHighSrc": "cards/ex6-024-high.png"
+    "imageHighSrc": "cards/ex6-024-high.png",
+    "attacks": [
+      {
+        "name": "Shot Air",
+        "damage": "10"
+      },
+      {
+        "name": "Drill Peck",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6293",
-    "externalId": null,
+    "externalId": "ex6-23",
     "tcgdex_id": "ex6-23",
     "localId": "023",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "023/112",
+    "cardNumber": "23/112",
     "cardName": "Farfetch'd",
-    "fullDisplayName": "Farfetch'd 023/112 FireRed & LeafGreen",
+    "fullDisplayName": "Farfetch'd 23/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3043,18 +3740,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-023-low.png",
-    "imageHighSrc": "cards/ex6-023-high.png"
+    "imageHighSrc": "cards/ex6-023-high.png",
+    "attacks": [
+      {
+        "name": "Hoard",
+        "damage": null
+      },
+      {
+        "name": "Cross-Cut",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6288",
-    "externalId": null,
+    "externalId": "ex6-22",
     "tcgdex_id": "ex6-22",
     "localId": "022",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "022/112",
+    "cardNumber": "22/112",
     "cardName": "Dugtrio",
-    "fullDisplayName": "Dugtrio 022/112 FireRed & LeafGreen",
+    "fullDisplayName": "Dugtrio 22/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3076,18 +3783,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-022-low.png",
-    "imageHighSrc": "cards/ex6-022-high.png"
+    "imageHighSrc": "cards/ex6-022-high.png",
+    "attacks": [
+      {
+        "name": "Sonicboom",
+        "damage": "30"
+      },
+      {
+        "name": "Rumble",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6283",
-    "externalId": null,
+    "externalId": "ex6-21",
     "tcgdex_id": "ex6-21",
     "localId": "021",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "021/112",
+    "cardNumber": "21/112",
     "cardName": "Dodrio",
-    "fullDisplayName": "Dodrio 021/112 FireRed & LeafGreen",
+    "fullDisplayName": "Dodrio 21/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3109,18 +3826,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-021-low.png",
-    "imageHighSrc": "cards/ex6-021-high.png"
+    "imageHighSrc": "cards/ex6-021-high.png",
+    "attacks": [
+      {
+        "name": "Tri Attack",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "6278",
-    "externalId": null,
+    "externalId": "ex6-20",
     "tcgdex_id": "ex6-20",
     "localId": "020",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "020/112",
+    "cardNumber": "20/112",
     "cardName": "Cloyster",
-    "fullDisplayName": "Cloyster 020/112 FireRed & LeafGreen",
+    "fullDisplayName": "Cloyster 20/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3142,18 +3865,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-020-low.png",
-    "imageHighSrc": "cards/ex6-020-high.png"
+    "imageHighSrc": "cards/ex6-020-high.png",
+    "attacks": [
+      {
+        "name": "Double Bubble",
+        "damage": "10×"
+      },
+      {
+        "name": "Shell Attack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6271",
-    "externalId": null,
+    "externalId": "ex6-19",
     "tcgdex_id": "ex6-19",
     "localId": "019",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "019/112",
+    "cardNumber": "19/112",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 019/112 FireRed & LeafGreen",
+    "fullDisplayName": "Chansey 19/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3175,18 +3908,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-019-low.png",
-    "imageHighSrc": "cards/ex6-019-high.png"
+    "imageHighSrc": "cards/ex6-019-high.png",
+    "attacks": [
+      {
+        "name": "Sing",
+        "damage": null
+      },
+      {
+        "name": "Egg Surprise",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6266",
-    "externalId": null,
+    "externalId": "ex6-18",
     "tcgdex_id": "ex6-18",
     "localId": "018",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "018/112",
+    "cardNumber": "18/112",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 018/112 FireRed & LeafGreen",
+    "fullDisplayName": "Arcanine 18/112 FireRed & LeafGreen",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3208,18 +3951,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-018-low.png",
-    "imageHighSrc": "cards/ex6-018-high.png"
+    "imageHighSrc": "cards/ex6-018-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      },
+      {
+        "name": "Heat Tackle",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "6261",
-    "externalId": null,
+    "externalId": "ex6-17",
     "tcgdex_id": "ex6-17",
     "localId": "017",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "017/112",
+    "cardNumber": "17/112",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel 017/112 FireRed & LeafGreen",
+    "fullDisplayName": "Victreebel 17/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3241,18 +3994,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-017-low.png",
-    "imageHighSrc": "cards/ex6-017-high.png"
+    "imageHighSrc": "cards/ex6-017-high.png",
+    "attacks": [
+      {
+        "name": "Acid",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6255",
-    "externalId": null,
+    "externalId": "ex6-16",
     "tcgdex_id": "ex6-16",
     "localId": "016",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "016/112",
+    "cardNumber": "16/112",
     "cardName": "Tauros",
-    "fullDisplayName": "Tauros 016/112 FireRed & LeafGreen",
+    "fullDisplayName": "Tauros 16/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3274,18 +4033,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-016-low.png",
-    "imageHighSrc": "cards/ex6-016-high.png"
+    "imageHighSrc": "cards/ex6-016-high.png",
+    "attacks": [
+      {
+        "name": "Knock Over",
+        "damage": "10"
+      },
+      {
+        "name": "Rampage",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "6250",
-    "externalId": null,
+    "externalId": "ex6-15",
     "tcgdex_id": "ex6-15",
     "localId": "015",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "015/112",
+    "cardNumber": "15/112",
     "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 015/112 FireRed & LeafGreen",
+    "fullDisplayName": "Snorlax 15/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3307,18 +4076,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-015-low.png",
-    "imageHighSrc": "cards/ex6-015-high.png"
+    "imageHighSrc": "cards/ex6-015-high.png",
+    "attacks": [
+      {
+        "name": "Collapse",
+        "damage": "10"
+      },
+      {
+        "name": "Toss and Turn",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "6245",
-    "externalId": null,
+    "externalId": "ex6-14",
     "tcgdex_id": "ex6-14",
     "localId": "014",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "014/112",
+    "cardNumber": "14/112",
     "cardName": "Slowbro",
-    "fullDisplayName": "Slowbro 014/112 FireRed & LeafGreen",
+    "fullDisplayName": "Slowbro 14/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3340,18 +4119,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-014-low.png",
-    "imageHighSrc": "cards/ex6-014-high.png"
+    "imageHighSrc": "cards/ex6-014-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6240",
-    "externalId": null,
+    "externalId": "ex6-13",
     "tcgdex_id": "ex6-13",
     "localId": "013",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "013/112",
+    "cardNumber": "13/112",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 013/112 FireRed & LeafGreen",
+    "fullDisplayName": "Rapidash 13/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3373,18 +4158,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-013-low.png",
-    "imageHighSrc": "cards/ex6-013-high.png"
+    "imageHighSrc": "cards/ex6-013-high.png",
+    "attacks": [
+      {
+        "name": "Searing Flame",
+        "damage": "10"
+      },
+      {
+        "name": "Rear Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6235",
-    "externalId": null,
+    "externalId": "ex6-12",
     "tcgdex_id": "ex6-12",
     "localId": "012",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "012/112",
+    "cardNumber": "12/112",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 012/112 FireRed & LeafGreen",
+    "fullDisplayName": "Raichu 12/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3406,18 +4201,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-012-low.png",
-    "imageHighSrc": "cards/ex6-012-high.png"
+    "imageHighSrc": "cards/ex6-012-high.png",
+    "attacks": [
+      {
+        "name": "Recharge",
+        "damage": null
+      },
+      {
+        "name": "Thunder Reflection",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6230",
-    "externalId": null,
+    "externalId": "ex6-11",
     "tcgdex_id": "ex6-11",
     "localId": "011",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "011/112",
+    "cardNumber": "11/112",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 011/112 FireRed & LeafGreen",
+    "fullDisplayName": "Poliwrath 11/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3439,18 +4244,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-011-low.png",
-    "imageHighSrc": "cards/ex6-011-high.png"
+    "imageHighSrc": "cards/ex6-011-high.png",
+    "attacks": [
+      {
+        "name": "Split Spiral Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Mega Throw",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "6225",
-    "externalId": null,
+    "externalId": "ex6-10",
     "tcgdex_id": "ex6-10",
     "localId": "010",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "010/112",
+    "cardNumber": "10/112",
     "cardName": "Pidgeot",
-    "fullDisplayName": "Pidgeot 010/112 FireRed & LeafGreen",
+    "fullDisplayName": "Pidgeot 10/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3472,18 +4287,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-010-low.png",
-    "imageHighSrc": "cards/ex6-010-high.png"
+    "imageHighSrc": "cards/ex6-010-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6220",
-    "externalId": null,
+    "externalId": "ex6-9",
     "tcgdex_id": "ex6-9",
     "localId": "009",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "009/112",
+    "cardNumber": "9/112",
     "cardName": "Nidoqueen",
-    "fullDisplayName": "Nidoqueen 009/112 FireRed & LeafGreen",
+    "fullDisplayName": "Nidoqueen 9/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3505,18 +4326,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-009-low.png",
-    "imageHighSrc": "cards/ex6-009-high.png"
+    "imageHighSrc": "cards/ex6-009-high.png",
+    "attacks": [
+      {
+        "name": "Toxic",
+        "damage": null
+      },
+      {
+        "name": "Power Lariat",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "6215",
-    "externalId": null,
+    "externalId": "ex6-8",
     "tcgdex_id": "ex6-8",
     "localId": "008",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "008/112",
+    "cardNumber": "8/112",
     "cardName": "Nidoking",
-    "fullDisplayName": "Nidoking 008/112 FireRed & LeafGreen",
+    "fullDisplayName": "Nidoking 8/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3538,18 +4369,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-008-low.png",
-    "imageHighSrc": "cards/ex6-008-high.png"
+    "imageHighSrc": "cards/ex6-008-high.png",
+    "attacks": [
+      {
+        "name": "Earth Poison",
+        "damage": "40"
+      },
+      {
+        "name": "Bound Crush",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6210",
-    "externalId": null,
+    "externalId": "ex6-7",
     "tcgdex_id": "ex6-7",
     "localId": "007",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "007/112",
+    "cardNumber": "7/112",
     "cardName": "Marowak",
-    "fullDisplayName": "Marowak 007/112 FireRed & LeafGreen",
+    "fullDisplayName": "Marowak 7/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3571,18 +4412,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-007-low.png",
-    "imageHighSrc": "cards/ex6-007-high.png"
+    "imageHighSrc": "cards/ex6-007-high.png",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Vengeance",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "6204",
-    "externalId": null,
+    "externalId": "ex6-6",
     "tcgdex_id": "ex6-6",
     "localId": "006",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "006/112",
+    "cardNumber": "6/112",
     "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 006/112 FireRed & LeafGreen",
+    "fullDisplayName": "Kangaskhan 6/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3604,18 +4455,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-006-low.png",
-    "imageHighSrc": "cards/ex6-006-high.png"
+    "imageHighSrc": "cards/ex6-006-high.png",
+    "attacks": [
+      {
+        "name": "Fetch",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "One-Two Punch",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "6200",
-    "externalId": null,
+    "externalId": "ex6-5",
     "tcgdex_id": "ex6-5",
     "localId": "005",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "005/112",
+    "cardNumber": "5/112",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 005/112 FireRed & LeafGreen",
+    "fullDisplayName": "Exeggutor 5/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3637,18 +4502,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-005-low.png",
-    "imageHighSrc": "cards/ex6-005-high.png"
+    "imageHighSrc": "cards/ex6-005-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Exchange",
+        "damage": null
+      },
+      {
+        "name": "Big Eggsplosion",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "6195",
-    "externalId": null,
+    "externalId": "ex6-4",
     "tcgdex_id": "ex6-4",
     "localId": "004",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "004/112",
+    "cardNumber": "4/112",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 004/112 FireRed & LeafGreen",
+    "fullDisplayName": "Ditto 4/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3670,18 +4545,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-004-low.png",
-    "imageHighSrc": "cards/ex6-004-high.png"
+    "imageHighSrc": "cards/ex6-004-high.png",
+    "attacks": [
+      {
+        "name": "Energy Ball",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6190",
-    "externalId": null,
+    "externalId": "ex6-3",
     "tcgdex_id": "ex6-3",
     "localId": "003",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "003/112",
+    "cardNumber": "3/112",
     "cardName": "Dewgong",
-    "fullDisplayName": "Dewgong 003/112 FireRed & LeafGreen",
+    "fullDisplayName": "Dewgong 3/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3703,18 +4584,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-003-low.png",
-    "imageHighSrc": "cards/ex6-003-high.png"
+    "imageHighSrc": "cards/ex6-003-high.png",
+    "attacks": [
+      {
+        "name": "Cold Breath",
+        "damage": "10"
+      },
+      {
+        "name": "Aurora Beam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6185",
-    "externalId": null,
+    "externalId": "ex6-2",
     "tcgdex_id": "ex6-2",
     "localId": "002",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "002/112",
+    "cardNumber": "2/112",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 002/112 FireRed & LeafGreen",
+    "fullDisplayName": "Butterfree 2/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3736,18 +4627,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-002-low.png",
-    "imageHighSrc": "cards/ex6-002-high.png"
+    "imageHighSrc": "cards/ex6-002-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "30"
+      },
+      {
+        "name": "Gust",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6178",
-    "externalId": null,
+    "externalId": "ex6-1",
     "tcgdex_id": "ex6-1",
     "localId": "001",
     "setCode": "ex6",
     "setTcgdexId": "ex6",
-    "cardNumber": "001/112",
+    "cardNumber": "1/112",
     "cardName": "Beedrill",
-    "fullDisplayName": "Beedrill 001/112 FireRed & LeafGreen",
+    "fullDisplayName": "Beedrill 1/112 FireRed & LeafGreen",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3769,6 +4670,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex6-001-low.png",
-    "imageHighSrc": "cards/ex6-001-high.png"
+    "imageHighSrc": "cards/ex6-001-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      },
+      {
+        "name": "Link Needle",
+        "damage": "50+"
+      }
+    ]
   }
 ]

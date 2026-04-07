@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "9019",
-    "externalId": null,
+    "externalId": "neo4-113",
     "tcgdex_id": "neo4-113",
     "localId": "113",
     "setCode": "neo4",
@@ -30,11 +30,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-113-low.png",
-    "imageHighSrc": "cards/neo4-113-high.png"
+    "imageHighSrc": "cards/neo4-113-high.png",
+    "attacks": [
+      {
+        "name": "Mountain Crush",
+        "damage": "30"
+      },
+      {
+        "name": "Destructive Fire",
+        "damage": "50"
+      }
+    ],
+    "rules": "You can't have more than 1 Shining Tyranitar in your deck."
   },
   {
     "masterCardId": "9013",
-    "externalId": null,
+    "externalId": "neo4-112",
     "tcgdex_id": "neo4-112",
     "localId": "112",
     "setCode": "neo4",
@@ -63,11 +74,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-112-low.png",
-    "imageHighSrc": "cards/neo4-112-high.png"
+    "imageHighSrc": "cards/neo4-112-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Earth",
+        "damage": "80"
+      }
+    ],
+    "rules": "You can't have more than 1 Shining Steelix in your deck."
   },
   {
     "masterCardId": "9008",
-    "externalId": null,
+    "externalId": "neo4-111",
     "tcgdex_id": "neo4-111",
     "localId": "111",
     "setCode": "neo4",
@@ -96,11 +114,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-111-low.png",
-    "imageHighSrc": "cards/neo4-111-high.png"
+    "imageHighSrc": "cards/neo4-111-high.png",
+    "attacks": [
+      {
+        "name": "Thundersquall",
+        "damage": "40"
+      }
+    ],
+    "rules": "You can't have more than 1 Shining Raichu in your deck."
   },
   {
     "masterCardId": "9003",
-    "externalId": null,
+    "externalId": "neo4-110",
     "tcgdex_id": "neo4-110",
     "localId": "110",
     "setCode": "neo4",
@@ -129,11 +154,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-110-low.png",
-    "imageHighSrc": "cards/neo4-110-high.png"
+    "imageHighSrc": "cards/neo4-110-high.png",
+    "attacks": [
+      {
+        "name": "Flashing Eyes",
+        "damage": "30"
+      }
+    ],
+    "rules": "You can't have more than 1 Shining Noctowl in your deck."
   },
   {
     "masterCardId": "8998",
-    "externalId": null,
+    "externalId": "neo4-109",
     "tcgdex_id": "neo4-109",
     "localId": "109",
     "setCode": "neo4",
@@ -162,11 +194,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-109-low.png",
-    "imageHighSrc": "cards/neo4-109-high.png"
+    "imageHighSrc": "cards/neo4-109-high.png",
+    "attacks": [
+      {
+        "name": "Reflect Shield",
+        "damage": null
+      },
+      {
+        "name": "Psyburst",
+        "damage": "40+"
+      }
+    ],
+    "rules": "You can't have more than 1 Shining Mewtwo in your deck."
   },
   {
     "masterCardId": "8993",
-    "externalId": null,
+    "externalId": "neo4-108",
     "tcgdex_id": "neo4-108",
     "localId": "108",
     "setCode": "neo4",
@@ -195,11 +238,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-108-low.png",
-    "imageHighSrc": "cards/neo4-108-high.png"
+    "imageHighSrc": "cards/neo4-108-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Cut",
+        "damage": "30+"
+      },
+      {
+        "name": "Water Slash",
+        "damage": "50+"
+      }
+    ],
+    "rules": "You can't have more than 1 Shining Kabutops in your deck."
   },
   {
     "masterCardId": "8988",
-    "externalId": null,
+    "externalId": "neo4-107",
     "tcgdex_id": "neo4-107",
     "localId": "107",
     "setCode": "neo4",
@@ -228,11 +282,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-107-low.png",
-    "imageHighSrc": "cards/neo4-107-high.png"
+    "imageHighSrc": "cards/neo4-107-high.png",
+    "attacks": [
+      {
+        "name": "White-hot Flame",
+        "damage": "100"
+      }
+    ],
+    "rules": "You can't have more than 1 Shining Charizard in your deck."
   },
   {
     "masterCardId": "8983",
-    "externalId": null,
+    "externalId": "neo4-106",
     "tcgdex_id": "neo4-106",
     "localId": "106",
     "setCode": "neo4",
@@ -261,11 +322,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-106-low.png",
-    "imageHighSrc": "cards/neo4-106-high.png"
+    "imageHighSrc": "cards/neo4-106-high.png",
+    "attacks": [
+      {
+        "name": "Healing Water",
+        "damage": null
+      },
+      {
+        "name": "Miracle Leaf",
+        "damage": "10"
+      }
+    ],
+    "rules": "You can't have more than 1 Shining Celebi in your deck."
   },
   {
     "masterCardId": "8978",
-    "externalId": null,
+    "externalId": "neo4-105",
     "tcgdex_id": "neo4-105",
     "localId": "105",
     "setCode": "neo4",
@@ -288,11 +360,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-105-low.png",
-    "imageHighSrc": "cards/neo4-105-high.png"
+    "imageHighSrc": "cards/neo4-105-high.png",
+    "rules": "You can't play this card if you have 5 or more cards in your hand (including this one). Draw cards until you have exactly 4 cards in your hand."
   },
   {
     "masterCardId": "8973",
-    "externalId": null,
+    "externalId": "neo4-104",
     "tcgdex_id": "neo4-104",
     "localId": "104",
     "setCode": "neo4",
@@ -315,11 +388,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-104-low.png",
-    "imageHighSrc": "cards/neo4-104-high.png"
+    "imageHighSrc": "cards/neo4-104-high.png",
+    "rules": "Flip a coin. If heads, your Active Pokémon is no longer Asleep, Confused, Paralyzed, or Poisoned and remove 2 damage counters from it. If your Active Pokémon has fewer damage counters than that, remove all of them."
   },
   {
     "masterCardId": "8968",
-    "externalId": null,
+    "externalId": "neo4-103",
     "tcgdex_id": "neo4-103",
     "localId": "103",
     "setCode": "neo4",
@@ -342,11 +416,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-103-low.png",
-    "imageHighSrc": "cards/neo4-103-high.png"
+    "imageHighSrc": "cards/neo4-103-high.png",
+    "rules": "Look at your opponent's hand and choose a card there. Your opponent shuffles that card into his or her deck. Then, your opponent may draw up to 2 cards."
   },
   {
     "masterCardId": "8964",
-    "externalId": null,
+    "externalId": "neo4-102",
     "tcgdex_id": "neo4-102",
     "localId": "102",
     "setCode": "neo4",
@@ -369,11 +444,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-102-low.png",
-    "imageHighSrc": "cards/neo4-102-high.png"
+    "imageHighSrc": "cards/neo4-102-high.png",
+    "rules": "Put an Evolution card from your hand face down in front of you. Your opponent guesses whether it is a Pokémon card with Light in its name, a Pokémon card with Dark in its name, or neither one. Flip the card over. If your opponent guessed right, he or she draws 3 cards. If your opponent guessed wrong, you draw 3 cards. Either way, return the card to your hand."
   },
   {
     "masterCardId": "8959",
-    "externalId": null,
+    "externalId": "neo4-101",
     "tcgdex_id": "neo4-101",
     "localId": "101",
     "setCode": "neo4",
@@ -396,11 +472,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-101-low.png",
-    "imageHighSrc": "cards/neo4-101-high.png"
+    "imageHighSrc": "cards/neo4-101-high.png",
+    "rules": "Attach Magnifier to 1 of your Pokémon. At the end of your turn, discard Magnifier. If the Pokémon Magnifier is attached to attacks, don't apply Resistance for that attack."
   },
   {
     "masterCardId": "8953",
-    "externalId": null,
+    "externalId": "neo4-100",
     "tcgdex_id": "neo4-100",
     "localId": "100",
     "setCode": "neo4",
@@ -425,18 +502,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-100-low.png",
-    "imageHighSrc": "cards/neo4-100-high.png"
+    "imageHighSrc": "cards/neo4-100-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nOnce during each player's turn (before attacking), that player may flip a coin. If heads, that player draws a card."
   },
   {
     "masterCardId": "8948",
-    "externalId": null,
+    "externalId": "neo4-99",
     "tcgdex_id": "neo4-99",
     "localId": "099",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "099/105",
+    "cardNumber": "99/105",
     "cardName": "Energy Stadium",
-    "fullDisplayName": "Energy Stadium 099/105 Neo Destiny",
+    "fullDisplayName": "Energy Stadium 99/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -454,18 +532,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-099-low.png",
-    "imageHighSrc": "cards/neo4-099-high.png"
+    "imageHighSrc": "cards/neo4-099-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nOnce during each player's turn (before attacking), that player may flip a coin. If heads, that player puts a basic Energy card from his or her discard pile into his or her hand."
   },
   {
     "masterCardId": "8944",
-    "externalId": null,
+    "externalId": "neo4-98",
     "tcgdex_id": "neo4-98",
     "localId": "098",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "098/105",
+    "cardNumber": "98/105",
     "cardName": "Energy Amplifier",
-    "fullDisplayName": "Energy Amplifier 098/105 Neo Destiny",
+    "fullDisplayName": "Energy Amplifier 98/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -481,18 +560,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-098-low.png",
-    "imageHighSrc": "cards/neo4-098-high.png"
+    "imageHighSrc": "cards/neo4-098-high.png",
+    "rules": "Choose an Energy card in your hand, show it to your opponent, and shuffle it into your deck. Then flip a coin. If heads, search your deck for up to 3 basic Energy cards. Show them to your opponent, and put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "8939",
-    "externalId": null,
+    "externalId": "neo4-97",
     "tcgdex_id": "neo4-97",
     "localId": "097",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "097/105",
+    "cardNumber": "97/105",
     "cardName": "Counterattack Claws",
-    "fullDisplayName": "Counterattack Claws 097/105 Neo Destiny",
+    "fullDisplayName": "Counterattack Claws 97/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -510,18 +590,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-097-low.png",
-    "imageHighSrc": "cards/neo4-097-high.png"
+    "imageHighSrc": "cards/neo4-097-high.png",
+    "rules": "Attach Counterattack Claws to 1 of your Pokémon that doesn't have a Pokémon Tool attached to it.\n\nDuring your opponent's turn, if the Pokémon Counterattack Claws is attached to is your Active Pokémon and an opponent's attack damages it (even if it is Knocked Out), flip a coin. If heads, put 2 damage counters on the Defending Pokémon. Then, discard Counterattack Claws."
   },
   {
     "masterCardId": "8934",
-    "externalId": null,
+    "externalId": "neo4-96",
     "tcgdex_id": "neo4-96",
     "localId": "096",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "096/105",
+    "cardNumber": "96/105",
     "cardName": "Thought Wave Machine",
-    "fullDisplayName": "Thought Wave Machine 096/105 Neo Destiny",
+    "fullDisplayName": "Thought Wave Machine 96/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -539,18 +620,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-096-low.png",
-    "imageHighSrc": "cards/neo4-096-high.png"
+    "imageHighSrc": "cards/neo4-096-high.png",
+    "rules": "Flip a coin until you get tails. For each heads, return an Energy card attached to your opponent's Active Pokémon to your opponent's hand. If the Pokémon has fewer attached Energy cards than that, return all of them to your opponent's hand. Your turn is over now (you don't get to attack)."
   },
   {
     "masterCardId": "8929",
-    "externalId": null,
+    "externalId": "neo4-95",
     "tcgdex_id": "neo4-95",
     "localId": "095",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "095/105",
+    "cardNumber": "95/105",
     "cardName": "Radio Tower",
-    "fullDisplayName": "Radio Tower 095/105 Neo Destiny",
+    "fullDisplayName": "Radio Tower 95/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -568,18 +650,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-095-low.png",
-    "imageHighSrc": "cards/neo4-095-high.png"
+    "imageHighSrc": "cards/neo4-095-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nOnce during each player's turn (before attacking), that player may look at the top 2 cards of his or her deck and put them back in the same order."
   },
   {
     "masterCardId": "8924",
-    "externalId": null,
+    "externalId": "neo4-94",
     "tcgdex_id": "neo4-94",
     "localId": "094",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "094/105",
+    "cardNumber": "94/105",
     "cardName": "Impostor Professor Oak's Invention",
-    "fullDisplayName": "Impostor Professor Oak's Invention 094/105 Neo Destiny",
+    "fullDisplayName": "Impostor Professor Oak's Invention 94/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -595,18 +678,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-094-low.png",
-    "imageHighSrc": "cards/neo4-094-high.png"
+    "imageHighSrc": "cards/neo4-094-high.png",
+    "rules": "Look at your opponent's Prize cards. You may have your opponent shuffle them into his or her deck. If you do, your opponent takes that many cards from the top of his or her deck and sets them aside as his or her new Prize cards (without looking at them)."
   },
   {
     "masterCardId": "8919",
-    "externalId": null,
+    "externalId": "neo4-93",
     "tcgdex_id": "neo4-93",
     "localId": "093",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "093/105",
+    "cardNumber": "93/105",
     "cardName": "EXP.ALL",
-    "fullDisplayName": "EXP.ALL 093/105 Neo Destiny",
+    "fullDisplayName": "EXP.ALL 93/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -624,18 +708,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-093-low.png",
-    "imageHighSrc": "cards/neo4-093-high.png"
+    "imageHighSrc": "cards/neo4-093-high.png",
+    "rules": "Attach EXP.ALL to 1 of your Pokémon that doesn't have a Pokémon Tool attached to it.\n\nDuring your opponent's turn, if your Active Pokémon would be Knocked Out by your opponent's attack, you may take 1 of the basic Energy cards attached to your Active Pokémon and attach it to the Pokémon with EXP.ALL attached to it. If you do, discard EXP.ALL."
   },
   {
     "masterCardId": "8914",
-    "externalId": null,
+    "externalId": "neo4-92",
     "tcgdex_id": "neo4-92",
     "localId": "092",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "092/105",
+    "cardNumber": "92/105",
     "cardName": "Broken Ground Gym",
-    "fullDisplayName": "Broken Ground Gym 092/105 Neo Destiny",
+    "fullDisplayName": "Broken Ground Gym 92/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -653,18 +738,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-092-low.png",
-    "imageHighSrc": "cards/neo4-092-high.png"
+    "imageHighSrc": "cards/neo4-092-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player pays Colorless more to retreat a Baby Pokémon or Basic Pokémon."
   },
   {
     "masterCardId": "8909",
-    "externalId": null,
+    "externalId": "neo4-91",
     "tcgdex_id": "neo4-91",
     "localId": "091",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "091/105",
+    "cardNumber": "91/105",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 091/105 Neo Destiny",
+    "fullDisplayName": "Vulpix 91/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -686,18 +772,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-091-low.png",
-    "imageHighSrc": "cards/neo4-091-high.png"
+    "imageHighSrc": "cards/neo4-091-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8905",
-    "externalId": null,
+    "externalId": "neo4-90",
     "tcgdex_id": "neo4-90",
     "localId": "090",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "090/105",
+    "cardNumber": "90/105",
     "cardName": "Venonat",
-    "fullDisplayName": "Venonat 090/105 Neo Destiny",
+    "fullDisplayName": "Venonat 90/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -719,18 +811,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-090-low.png",
-    "imageHighSrc": "cards/neo4-090-high.png"
+    "imageHighSrc": "cards/neo4-090-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Poisonpowder",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8900",
-    "externalId": null,
+    "externalId": "neo4-89",
     "tcgdex_id": "neo4-89",
     "localId": "089",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "089/105",
+    "cardNumber": "89/105",
     "cardName": "Unown [V]",
-    "fullDisplayName": "Unown [V] 089/105 Neo Destiny",
+    "fullDisplayName": "Unown [V] 89/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -752,18 +854,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-089-low.png",
-    "imageHighSrc": "cards/neo4-089-high.png"
+    "imageHighSrc": "cards/neo4-089-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8894",
-    "externalId": null,
+    "externalId": "neo4-88",
     "tcgdex_id": "neo4-88",
     "localId": "088",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "088/105",
+    "cardNumber": "88/105",
     "cardName": "Unown [T]",
-    "fullDisplayName": "Unown [T] 088/105 Neo Destiny",
+    "fullDisplayName": "Unown [T] 88/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -785,18 +894,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-088-low.png",
-    "imageHighSrc": "cards/neo4-088-high.png"
+    "imageHighSrc": "cards/neo4-088-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "20"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8888",
-    "externalId": null,
+    "externalId": "neo4-87",
     "tcgdex_id": "neo4-87",
     "localId": "087",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "087/105",
+    "cardNumber": "87/105",
     "cardName": "Unown [S]",
-    "fullDisplayName": "Unown [S] 087/105 Neo Destiny",
+    "fullDisplayName": "Unown [S] 87/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -818,18 +934,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-087-low.png",
-    "imageHighSrc": "cards/neo4-087-high.png"
+    "imageHighSrc": "cards/neo4-087-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "20"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8882",
-    "externalId": null,
+    "externalId": "neo4-86",
     "tcgdex_id": "neo4-86",
     "localId": "086",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "086/105",
+    "cardNumber": "86/105",
     "cardName": "Unown [L]",
-    "fullDisplayName": "Unown [L] 086/105 Neo Destiny",
+    "fullDisplayName": "Unown [L] 86/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -851,18 +974,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-086-low.png",
-    "imageHighSrc": "cards/neo4-086-high.png"
+    "imageHighSrc": "cards/neo4-086-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8876",
-    "externalId": null,
+    "externalId": "neo4-85",
     "tcgdex_id": "neo4-85",
     "localId": "085",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "085/105",
+    "cardNumber": "85/105",
     "cardName": "Totodile",
-    "fullDisplayName": "Totodile 085/105 Neo Destiny",
+    "fullDisplayName": "Totodile 85/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -884,18 +1014,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-085-low.png",
-    "imageHighSrc": "cards/neo4-085-high.png"
+    "imageHighSrc": "cards/neo4-085-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8870",
-    "externalId": null,
+    "externalId": "neo4-84",
     "tcgdex_id": "neo4-84",
     "localId": "084",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "084/105",
+    "cardNumber": "84/105",
     "cardName": "Swinub",
-    "fullDisplayName": "Swinub 084/105 Neo Destiny",
+    "fullDisplayName": "Swinub 84/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -917,18 +1053,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-084-low.png",
-    "imageHighSrc": "cards/neo4-084-high.png"
+    "imageHighSrc": "cards/neo4-084-high.png",
+    "attacks": [
+      {
+        "name": "Generate Cold",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8864",
-    "externalId": null,
+    "externalId": "neo4-83",
     "tcgdex_id": "neo4-83",
     "localId": "083",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "083/105",
+    "cardNumber": "83/105",
     "cardName": "Sunkern",
-    "fullDisplayName": "Sunkern 083/105 Neo Destiny",
+    "fullDisplayName": "Sunkern 83/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -950,18 +1092,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-083-low.png",
-    "imageHighSrc": "cards/neo4-083-high.png"
+    "imageHighSrc": "cards/neo4-083-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Sunbathe",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8858",
-    "externalId": null,
+    "externalId": "neo4-82",
     "tcgdex_id": "neo4-82",
     "localId": "082",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "082/105",
+    "cardNumber": "82/105",
     "cardName": "Slugma",
-    "fullDisplayName": "Slugma 082/105 Neo Destiny",
+    "fullDisplayName": "Slugma 82/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -983,18 +1135,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-082-low.png",
-    "imageHighSrc": "cards/neo4-082-high.png"
+    "imageHighSrc": "cards/neo4-082-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8852",
-    "externalId": null,
+    "externalId": "neo4-81",
     "tcgdex_id": "neo4-81",
     "localId": "081",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "081/105",
+    "cardNumber": "81/105",
     "cardName": "Seel",
-    "fullDisplayName": "Seel 081/105 Neo Destiny",
+    "fullDisplayName": "Seel 81/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1016,18 +1174,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-081-low.png",
-    "imageHighSrc": "cards/neo4-081-high.png"
+    "imageHighSrc": "cards/neo4-081-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8846",
-    "externalId": null,
+    "externalId": "neo4-80",
     "tcgdex_id": "neo4-80",
     "localId": "080",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "080/105",
+    "cardNumber": "80/105",
     "cardName": "Remoraid",
-    "fullDisplayName": "Remoraid 080/105 Neo Destiny",
+    "fullDisplayName": "Remoraid 80/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1049,18 +1213,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-080-low.png",
-    "imageHighSrc": "cards/neo4-080-high.png"
+    "imageHighSrc": "cards/neo4-080-high.png",
+    "attacks": [
+      {
+        "name": "Fury Strikes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "8840",
-    "externalId": null,
+    "externalId": "neo4-79",
     "tcgdex_id": "neo4-79",
     "localId": "079",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "079/105",
+    "cardNumber": "79/105",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 079/105 Neo Destiny",
+    "fullDisplayName": "Psyduck 79/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1082,18 +1252,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-079-low.png",
-    "imageHighSrc": "cards/neo4-079-high.png"
+    "imageHighSrc": "cards/neo4-079-high.png",
+    "attacks": [
+      {
+        "name": "Flipper Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Migraine",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8834",
-    "externalId": null,
+    "externalId": "neo4-78",
     "tcgdex_id": "neo4-78",
     "localId": "078",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "078/105",
+    "cardNumber": "78/105",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon 078/105 Neo Destiny",
+    "fullDisplayName": "Porygon 78/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1115,18 +1295,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-078-low.png",
-    "imageHighSrc": "cards/neo4-078-high.png"
+    "imageHighSrc": "cards/neo4-078-high.png",
+    "attacks": [
+      {
+        "name": "Sharpen",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8828",
-    "externalId": null,
+    "externalId": "neo4-77",
     "tcgdex_id": "neo4-77",
     "localId": "077",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "077/105",
+    "cardNumber": "77/105",
     "cardName": "Pineco",
-    "fullDisplayName": "Pineco 077/105 Neo Destiny",
+    "fullDisplayName": "Pineco 77/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1148,18 +1334,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-077-low.png",
-    "imageHighSrc": "cards/neo4-077-high.png"
+    "imageHighSrc": "cards/neo4-077-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8822",
-    "externalId": null,
+    "externalId": "neo4-76",
     "tcgdex_id": "neo4-76",
     "localId": "076",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "076/105",
+    "cardNumber": "76/105",
     "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 076/105 Neo Destiny",
+    "fullDisplayName": "Phanpy 76/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1181,18 +1373,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-076-low.png",
-    "imageHighSrc": "cards/neo4-076-high.png"
+    "imageHighSrc": "cards/neo4-076-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Step",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8815",
-    "externalId": null,
+    "externalId": "neo4-75",
     "tcgdex_id": "neo4-75",
     "localId": "075",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "075/105",
+    "cardNumber": "75/105",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 075/105 Neo Destiny",
+    "fullDisplayName": "Mareep 75/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1214,18 +1412,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-075-low.png",
-    "imageHighSrc": "cards/neo4-075-high.png"
+    "imageHighSrc": "cards/neo4-075-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8809",
-    "externalId": null,
+    "externalId": "neo4-74",
     "tcgdex_id": "neo4-74",
     "localId": "074",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "074/105",
+    "cardNumber": "74/105",
     "cardName": "Mantine",
-    "fullDisplayName": "Mantine 074/105 Neo Destiny",
+    "fullDisplayName": "Mantine 74/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1247,18 +1451,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-074-low.png",
-    "imageHighSrc": "cards/neo4-074-high.png"
+    "imageHighSrc": "cards/neo4-074-high.png",
+    "attacks": [
+      {
+        "name": "Giant Wave",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8803",
-    "externalId": null,
+    "externalId": "neo4-73",
     "tcgdex_id": "neo4-73",
     "localId": "073",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "073/105",
+    "cardNumber": "73/105",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 073/105 Neo Destiny",
+    "fullDisplayName": "Machop 73/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1280,18 +1490,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-073-low.png",
-    "imageHighSrc": "cards/neo4-073-high.png"
+    "imageHighSrc": "cards/neo4-073-high.png",
+    "attacks": [
+      {
+        "name": "Chop",
+        "damage": "10"
+      },
+      {
+        "name": "Punch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8797",
-    "externalId": null,
+    "externalId": "neo4-72",
     "tcgdex_id": "neo4-72",
     "localId": "072",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "072/105",
+    "cardNumber": "72/105",
     "cardName": "Light Sunflora",
-    "fullDisplayName": "Light Sunflora 072/105 Neo Destiny",
+    "fullDisplayName": "Light Sunflora 72/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1313,18 +1533,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-072-low.png",
-    "imageHighSrc": "cards/neo4-072-high.png"
+    "imageHighSrc": "cards/neo4-072-high.png",
+    "attacks": [
+      {
+        "name": "Reflected Sunlight",
+        "damage": null
+      },
+      {
+        "name": "Solarbeam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8791",
-    "externalId": null,
+    "externalId": "neo4-71",
     "tcgdex_id": "neo4-71",
     "localId": "071",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "071/105",
+    "cardNumber": "71/105",
     "cardName": "Ledyba",
-    "fullDisplayName": "Ledyba 071/105 Neo Destiny",
+    "fullDisplayName": "Ledyba 71/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1346,18 +1576,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-071-low.png",
-    "imageHighSrc": "cards/neo4-071-high.png"
+    "imageHighSrc": "cards/neo4-071-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8784",
-    "externalId": null,
+    "externalId": "neo4-70",
     "tcgdex_id": "neo4-70",
     "localId": "070",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "070/105",
+    "cardNumber": "70/105",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 070/105 Neo Destiny",
+    "fullDisplayName": "Larvitar 70/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1379,18 +1615,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-070-low.png",
-    "imageHighSrc": "cards/neo4-070-high.png"
+    "imageHighSrc": "cards/neo4-070-high.png",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Rock Throw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8778",
-    "externalId": null,
+    "externalId": "neo4-69",
     "tcgdex_id": "neo4-69",
     "localId": "069",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "069/105",
+    "cardNumber": "69/105",
     "cardName": "Hitmonchan",
-    "fullDisplayName": "Hitmonchan 069/105 Neo Destiny",
+    "fullDisplayName": "Hitmonchan 69/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1412,18 +1658,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-069-low.png",
-    "imageHighSrc": "cards/neo4-069-high.png"
+    "imageHighSrc": "cards/neo4-069-high.png",
+    "attacks": [
+      {
+        "name": "Dodge",
+        "damage": null
+      },
+      {
+        "name": "Supersonic Jab",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8772",
-    "externalId": null,
+    "externalId": "neo4-68",
     "tcgdex_id": "neo4-68",
     "localId": "068",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "068/105",
+    "cardNumber": "68/105",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 068/105 Neo Destiny",
+    "fullDisplayName": "Growlithe 68/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1445,18 +1701,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-068-low.png",
-    "imageHighSrc": "cards/neo4-068-high.png"
+    "imageHighSrc": "cards/neo4-068-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8764",
-    "externalId": null,
+    "externalId": "neo4-67",
     "tcgdex_id": "neo4-67",
     "localId": "067",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "067/105",
+    "cardNumber": "67/105",
     "cardName": "Gligar",
-    "fullDisplayName": "Gligar 067/105 Neo Destiny",
+    "fullDisplayName": "Gligar 67/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1478,18 +1740,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-067-low.png",
-    "imageHighSrc": "cards/neo4-067-high.png"
+    "imageHighSrc": "cards/neo4-067-high.png",
+    "attacks": [
+      {
+        "name": "Stun Poison",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8759",
-    "externalId": null,
+    "externalId": "neo4-66",
     "tcgdex_id": "neo4-66",
     "localId": "066",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "066/105",
+    "cardNumber": "66/105",
     "cardName": "Girafarig",
-    "fullDisplayName": "Girafarig 066/105 Neo Destiny",
+    "fullDisplayName": "Girafarig 66/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1511,18 +1779,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-066-low.png",
-    "imageHighSrc": "cards/neo4-066-high.png"
+    "imageHighSrc": "cards/neo4-066-high.png",
+    "attacks": [
+      {
+        "name": "Tail Bite",
+        "damage": "10+"
+      },
+      {
+        "name": "Psychic",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8752",
-    "externalId": null,
+    "externalId": "neo4-65",
     "tcgdex_id": "neo4-65",
     "localId": "065",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "065/105",
+    "cardNumber": "65/105",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 065/105 Neo Destiny",
+    "fullDisplayName": "Gastly 65/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1544,18 +1822,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-065-low.png",
-    "imageHighSrc": "cards/neo4-065-high.png"
+    "imageHighSrc": "cards/neo4-065-high.png",
+    "attacks": [
+      {
+        "name": "Nightmare",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8749",
-    "externalId": null,
+    "externalId": "neo4-64",
     "tcgdex_id": "neo4-64",
     "localId": "064",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "064/105",
+    "cardNumber": "64/105",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 064/105 Neo Destiny",
+    "fullDisplayName": "Exeggcute 64/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1577,18 +1861,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-064-low.png",
-    "imageHighSrc": "cards/neo4-064-high.png"
+    "imageHighSrc": "cards/neo4-064-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "10"
+      },
+      {
+        "name": "Psyshock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8742",
-    "externalId": null,
+    "externalId": "neo4-63",
     "tcgdex_id": "neo4-63",
     "localId": "063",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "063/105",
+    "cardNumber": "63/105",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 063/105 Neo Destiny",
+    "fullDisplayName": "Dratini 63/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1610,18 +1904,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-063-low.png",
-    "imageHighSrc": "cards/neo4-063-high.png"
+    "imageHighSrc": "cards/neo4-063-high.png",
+    "attacks": [
+      {
+        "name": "Shed",
+        "damage": null
+      },
+      {
+        "name": "Fury Attack",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "8737",
-    "externalId": null,
+    "externalId": "neo4-62",
     "tcgdex_id": "neo4-62",
     "localId": "062",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "062/105",
+    "cardNumber": "62/105",
     "cardName": "Dark Octillery",
-    "fullDisplayName": "Dark Octillery 062/105 Neo Destiny",
+    "fullDisplayName": "Dark Octillery 62/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1643,18 +1947,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-062-low.png",
-    "imageHighSrc": "cards/neo4-062-high.png"
+    "imageHighSrc": "cards/neo4-062-high.png",
+    "attacks": [
+      {
+        "name": "Ink Blast",
+        "damage": "20+"
+      },
+      {
+        "name": "Tentacle Wrap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8729",
-    "externalId": null,
+    "externalId": "neo4-61",
     "tcgdex_id": "neo4-61",
     "localId": "061",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "061/105",
+    "cardNumber": "61/105",
     "cardName": "Cyndaquil",
-    "fullDisplayName": "Cyndaquil 061/105 Neo Destiny",
+    "fullDisplayName": "Cyndaquil 61/105 Neo Destiny",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1676,18 +1990,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-061-low.png",
-    "imageHighSrc": "cards/neo4-061-high.png"
+    "imageHighSrc": "cards/neo4-061-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8723",
-    "externalId": null,
+    "externalId": "neo4-60",
     "tcgdex_id": "neo4-60",
     "localId": "060",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "060/105",
+    "cardNumber": "60/105",
     "cardName": "Unown [Z]",
-    "fullDisplayName": "Unown [Z] 060/105 Neo Destiny",
+    "fullDisplayName": "Unown [Z] 60/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1709,18 +2029,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-060-low.png",
-    "imageHighSrc": "cards/neo4-060-high.png"
+    "imageHighSrc": "cards/neo4-060-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8718",
-    "externalId": null,
+    "externalId": "neo4-59",
     "tcgdex_id": "neo4-59",
     "localId": "059",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "059/105",
+    "cardNumber": "59/105",
     "cardName": "Unown [Q]",
-    "fullDisplayName": "Unown [Q] 059/105 Neo Destiny",
+    "fullDisplayName": "Unown [Q] 59/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1742,18 +2069,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-059-low.png",
-    "imageHighSrc": "cards/neo4-059-high.png"
+    "imageHighSrc": "cards/neo4-059-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8712",
-    "externalId": null,
+    "externalId": "neo4-58",
     "tcgdex_id": "neo4-58",
     "localId": "058",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "058/105",
+    "cardNumber": "58/105",
     "cardName": "Unown [P]",
-    "fullDisplayName": "Unown [P] 058/105 Neo Destiny",
+    "fullDisplayName": "Unown [P] 58/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1775,18 +2109,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-058-low.png",
-    "imageHighSrc": "cards/neo4-058-high.png"
+    "imageHighSrc": "cards/neo4-058-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8707",
-    "externalId": null,
+    "externalId": "neo4-57",
     "tcgdex_id": "neo4-57",
     "localId": "057",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "057/105",
+    "cardNumber": "57/105",
     "cardName": "Unown [C]",
-    "fullDisplayName": "Unown [C] 057/105 Neo Destiny",
+    "fullDisplayName": "Unown [C] 57/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1808,18 +2149,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-057-low.png",
-    "imageHighSrc": "cards/neo4-057-high.png"
+    "imageHighSrc": "cards/neo4-057-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8702",
-    "externalId": null,
+    "externalId": "neo4-56",
     "tcgdex_id": "neo4-56",
     "localId": "056",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "056/105",
+    "cardNumber": "56/105",
     "cardName": "Togepi",
-    "fullDisplayName": "Togepi 056/105 Neo Destiny",
+    "fullDisplayName": "Togepi 56/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1841,18 +2189,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-056-low.png",
-    "imageHighSrc": "cards/neo4-056-high.png"
+    "imageHighSrc": "cards/neo4-056-high.png",
+    "attacks": [
+      {
+        "name": "Charm",
+        "damage": null
+      },
+      {
+        "name": "Spike Ball Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8696",
-    "externalId": null,
+    "externalId": "neo4-55",
     "tcgdex_id": "neo4-55",
     "localId": "055",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "055/105",
+    "cardNumber": "55/105",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 055/105 Neo Destiny",
+    "fullDisplayName": "Scyther 55/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1874,18 +2232,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-055-low.png",
-    "imageHighSrc": "cards/neo4-055-high.png"
+    "imageHighSrc": "cards/neo4-055-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "10"
+      },
+      {
+        "name": "Sharp Sickle",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8687",
-    "externalId": null,
+    "externalId": "neo4-54",
     "tcgdex_id": "neo4-54",
     "localId": "054",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "054/105",
+    "cardNumber": "54/105",
     "cardName": "Light Wigglytuff",
-    "fullDisplayName": "Light Wigglytuff 054/105 Neo Destiny",
+    "fullDisplayName": "Light Wigglytuff 54/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1907,18 +2275,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-054-low.png",
-    "imageHighSrc": "cards/neo4-054-high.png"
+    "imageHighSrc": "cards/neo4-054-high.png",
+    "attacks": [
+      {
+        "name": "Evolution Song",
+        "damage": null
+      },
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8682",
-    "externalId": null,
+    "externalId": "neo4-53",
     "tcgdex_id": "neo4-53",
     "localId": "053",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "053/105",
+    "cardNumber": "53/105",
     "cardName": "Light Venomoth",
-    "fullDisplayName": "Light Venomoth 053/105 Neo Destiny",
+    "fullDisplayName": "Light Venomoth 53/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1940,18 +2318,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-053-low.png",
-    "imageHighSrc": "cards/neo4-053-high.png"
+    "imageHighSrc": "cards/neo4-053-high.png",
+    "attacks": [
+      {
+        "name": "Mysterious Wing",
+        "damage": null
+      },
+      {
+        "name": "Synchronize",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8678",
-    "externalId": null,
+    "externalId": "neo4-52",
     "tcgdex_id": "neo4-52",
     "localId": "052",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "052/105",
+    "cardNumber": "52/105",
     "cardName": "Light Vaporeon",
-    "fullDisplayName": "Light Vaporeon 052/105 Neo Destiny",
+    "fullDisplayName": "Light Vaporeon 52/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1973,18 +2361,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-052-low.png",
-    "imageHighSrc": "cards/neo4-052-high.png"
+    "imageHighSrc": "cards/neo4-052-high.png",
+    "attacks": [
+      {
+        "name": "Wash Away",
+        "damage": null
+      },
+      {
+        "name": "Hypnoshower",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8673",
-    "externalId": null,
+    "externalId": "neo4-51",
     "tcgdex_id": "neo4-51",
     "localId": "051",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "051/105",
+    "cardNumber": "51/105",
     "cardName": "Light Slowbro",
-    "fullDisplayName": "Light Slowbro 051/105 Neo Destiny",
+    "fullDisplayName": "Light Slowbro 51/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2006,18 +2404,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-051-low.png",
-    "imageHighSrc": "cards/neo4-051-high.png"
+    "imageHighSrc": "cards/neo4-051-high.png",
+    "attacks": [
+      {
+        "name": "Fish Out",
+        "damage": null
+      },
+      {
+        "name": "Splash About",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8667",
-    "externalId": null,
+    "externalId": "neo4-50",
     "tcgdex_id": "neo4-50",
     "localId": "050",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "050/105",
+    "cardNumber": "50/105",
     "cardName": "Light Ninetales",
-    "fullDisplayName": "Light Ninetales 050/105 Neo Destiny",
+    "fullDisplayName": "Light Ninetales 50/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2039,18 +2447,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-050-low.png",
-    "imageHighSrc": "cards/neo4-050-high.png"
+    "imageHighSrc": "cards/neo4-050-high.png",
+    "attacks": [
+      {
+        "name": "Guiding Flame",
+        "damage": null
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8662",
-    "externalId": null,
+    "externalId": "neo4-49",
     "tcgdex_id": "neo4-49",
     "localId": "049",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "049/105",
+    "cardNumber": "49/105",
     "cardName": "Light Machoke",
-    "fullDisplayName": "Light Machoke 049/105 Neo Destiny",
+    "fullDisplayName": "Light Machoke 49/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2072,18 +2490,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-049-low.png",
-    "imageHighSrc": "cards/neo4-049-high.png"
+    "imageHighSrc": "cards/neo4-049-high.png",
+    "attacks": [
+      {
+        "name": "Return Home",
+        "damage": null
+      },
+      {
+        "name": "Gentle Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8655",
-    "externalId": null,
+    "externalId": "neo4-48",
     "tcgdex_id": "neo4-48",
     "localId": "048",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "048/105",
+    "cardNumber": "48/105",
     "cardName": "Light Jolteon",
-    "fullDisplayName": "Light Jolteon 048/105 Neo Destiny",
+    "fullDisplayName": "Light Jolteon 48/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2105,18 +2533,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-048-low.png",
-    "imageHighSrc": "cards/neo4-048-high.png"
+    "imageHighSrc": "cards/neo4-048-high.png",
+    "attacks": [
+      {
+        "name": "Pulse Guard",
+        "damage": null
+      },
+      {
+        "name": "Thunder Needle",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "8651",
-    "externalId": null,
+    "externalId": "neo4-47",
     "tcgdex_id": "neo4-47",
     "localId": "047",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "047/105",
+    "cardNumber": "47/105",
     "cardName": "Light Golduck",
-    "fullDisplayName": "Light Golduck 047/105 Neo Destiny",
+    "fullDisplayName": "Light Golduck 47/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2138,18 +2576,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-047-low.png",
-    "imageHighSrc": "cards/neo4-047-high.png"
+    "imageHighSrc": "cards/neo4-047-high.png",
+    "attacks": [
+      {
+        "name": "Flipper Stroke",
+        "damage": null
+      },
+      {
+        "name": "Core Blast",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8647",
-    "externalId": null,
+    "externalId": "neo4-46",
     "tcgdex_id": "neo4-46",
     "localId": "046",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "046/105",
+    "cardNumber": "46/105",
     "cardName": "Light Flareon",
-    "fullDisplayName": "Light Flareon 046/105 Neo Destiny",
+    "fullDisplayName": "Light Flareon 46/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2171,18 +2619,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-046-low.png",
-    "imageHighSrc": "cards/neo4-046-high.png"
+    "imageHighSrc": "cards/neo4-046-high.png",
+    "attacks": [
+      {
+        "name": "Warm Up",
+        "damage": null
+      },
+      {
+        "name": "Burning Flame",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8642",
-    "externalId": null,
+    "externalId": "neo4-45",
     "tcgdex_id": "neo4-45",
     "localId": "045",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "045/105",
+    "cardNumber": "45/105",
     "cardName": "Light Dewgong",
-    "fullDisplayName": "Light Dewgong 045/105 Neo Destiny",
+    "fullDisplayName": "Light Dewgong 45/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2204,18 +2662,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-045-low.png",
-    "imageHighSrc": "cards/neo4-045-high.png"
+    "imageHighSrc": "cards/neo4-045-high.png",
+    "attacks": [
+      {
+        "name": "Freezing Breath",
+        "damage": "10"
+      },
+      {
+        "name": "Ice Pillar",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8639",
-    "externalId": null,
+    "externalId": "neo4-44",
     "tcgdex_id": "neo4-44",
     "localId": "044",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "044/105",
+    "cardNumber": "44/105",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 044/105 Neo Destiny",
+    "fullDisplayName": "Jigglypuff 44/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2237,18 +2705,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-044-low.png",
-    "imageHighSrc": "cards/neo4-044-high.png"
+    "imageHighSrc": "cards/neo4-044-high.png",
+    "attacks": [
+      {
+        "name": "Expand",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8633",
-    "externalId": null,
+    "externalId": "neo4-43",
     "tcgdex_id": "neo4-43",
     "localId": "043",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "043/105",
+    "cardNumber": "43/105",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 043/105 Neo Destiny",
+    "fullDisplayName": "Houndour 43/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2270,18 +2744,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-043-low.png",
-    "imageHighSrc": "cards/neo4-043-high.png"
+    "imageHighSrc": "cards/neo4-043-high.png",
+    "attacks": [
+      {
+        "name": "Corner",
+        "damage": null
+      },
+      {
+        "name": "Lunge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8625",
-    "externalId": null,
+    "externalId": "neo4-42",
     "tcgdex_id": "neo4-42",
     "localId": "042",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "042/105",
+    "cardNumber": "42/105",
     "cardName": "Hitmonlee",
-    "fullDisplayName": "Hitmonlee 042/105 Neo Destiny",
+    "fullDisplayName": "Hitmonlee 42/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2303,18 +2787,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-042-low.png",
-    "imageHighSrc": "cards/neo4-042-high.png"
+    "imageHighSrc": "cards/neo4-042-high.png",
+    "attacks": [
+      {
+        "name": "One-Two Kick",
+        "damage": "20×"
+      },
+      {
+        "name": "Heel Drop",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8620",
-    "externalId": null,
+    "externalId": "neo4-41",
     "tcgdex_id": "neo4-41",
     "localId": "041",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "041/105",
+    "cardNumber": "41/105",
     "cardName": "Heracross",
-    "fullDisplayName": "Heracross 041/105 Neo Destiny",
+    "fullDisplayName": "Heracross 41/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2336,18 +2830,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-041-low.png",
-    "imageHighSrc": "cards/neo4-041-high.png"
+    "imageHighSrc": "cards/neo4-041-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Charging Horn",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8614",
-    "externalId": null,
+    "externalId": "neo4-40",
     "tcgdex_id": "neo4-40",
     "localId": "040",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "040/105",
+    "cardNumber": "40/105",
     "cardName": "Dark Wigglytuff",
-    "fullDisplayName": "Dark Wigglytuff 040/105 Neo Destiny",
+    "fullDisplayName": "Dark Wigglytuff 40/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2369,18 +2873,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-040-low.png",
-    "imageHighSrc": "cards/neo4-040-high.png"
+    "imageHighSrc": "cards/neo4-040-high.png",
+    "attacks": [
+      {
+        "name": "Dark Song",
+        "damage": null
+      },
+      {
+        "name": "Slap Awake",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8607",
-    "externalId": null,
+    "externalId": "neo4-39",
     "tcgdex_id": "neo4-39",
     "localId": "039",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "039/105",
+    "cardNumber": "39/105",
     "cardName": "Dark Quilava",
-    "fullDisplayName": "Dark Quilava 039/105 Neo Destiny",
+    "fullDisplayName": "Dark Quilava 39/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2402,18 +2916,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-039-low.png",
-    "imageHighSrc": "cards/neo4-039-high.png"
+    "imageHighSrc": "cards/neo4-039-high.png",
+    "attacks": [
+      {
+        "name": "Incinerate",
+        "damage": null
+      },
+      {
+        "name": "Rushing Magma",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "8600",
-    "externalId": null,
+    "externalId": "neo4-38",
     "tcgdex_id": "neo4-38",
     "localId": "038",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "038/105",
+    "cardNumber": "38/105",
     "cardName": "Dark Pupitar",
-    "fullDisplayName": "Dark Pupitar 038/105 Neo Destiny",
+    "fullDisplayName": "Dark Pupitar 38/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2435,18 +2959,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-038-low.png",
-    "imageHighSrc": "cards/neo4-038-high.png"
+    "imageHighSrc": "cards/neo4-038-high.png",
+    "attacks": [
+      {
+        "name": "Rock Tackle",
+        "damage": "40"
+      },
+      {
+        "name": "Explosive Evolution",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8593",
-    "externalId": null,
+    "externalId": "neo4-37",
     "tcgdex_id": "neo4-37",
     "localId": "037",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "037/105",
+    "cardNumber": "37/105",
     "cardName": "Dark Omanyte",
-    "fullDisplayName": "Dark Omanyte 037/105 Neo Destiny",
+    "fullDisplayName": "Dark Omanyte 37/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2468,18 +3002,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-037-low.png",
-    "imageHighSrc": "cards/neo4-037-high.png"
+    "imageHighSrc": "cards/neo4-037-high.png",
+    "attacks": [
+      {
+        "name": "Water Cannon",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8586",
-    "externalId": null,
+    "externalId": "neo4-36",
     "tcgdex_id": "neo4-36",
     "localId": "036",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "036/105",
+    "cardNumber": "36/105",
     "cardName": "Dark Haunter",
-    "fullDisplayName": "Dark Haunter 036/105 Neo Destiny",
+    "fullDisplayName": "Dark Haunter 36/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2501,18 +3041,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-036-low.png",
-    "imageHighSrc": "cards/neo4-036-high.png"
+    "imageHighSrc": "cards/neo4-036-high.png",
+    "attacks": [
+      {
+        "name": "Call Back",
+        "damage": null
+      },
+      {
+        "name": "Surround",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8580",
-    "externalId": null,
+    "externalId": "neo4-35",
     "tcgdex_id": "neo4-35",
     "localId": "035",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "035/105",
+    "cardNumber": "35/105",
     "cardName": "Dark Forretress",
-    "fullDisplayName": "Dark Forretress 035/105 Neo Destiny",
+    "fullDisplayName": "Dark Forretress 35/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2534,18 +3084,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-035-low.png",
-    "imageHighSrc": "cards/neo4-035-high.png"
+    "imageHighSrc": "cards/neo4-035-high.png",
+    "attacks": [
+      {
+        "name": "Armor Up",
+        "damage": null
+      },
+      {
+        "name": "Explosion",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8573",
-    "externalId": null,
+    "externalId": "neo4-34",
     "tcgdex_id": "neo4-34",
     "localId": "034",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "034/105",
+    "cardNumber": "34/105",
     "cardName": "Dark Flaaffy",
-    "fullDisplayName": "Dark Flaaffy 034/105 Neo Destiny",
+    "fullDisplayName": "Dark Flaaffy 34/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2567,18 +3127,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-034-low.png",
-    "imageHighSrc": "cards/neo4-034-high.png"
+    "imageHighSrc": "cards/neo4-034-high.png",
+    "attacks": [
+      {
+        "name": "High Voltage",
+        "damage": "10"
+      },
+      {
+        "name": "Stun Wave",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8566",
-    "externalId": null,
+    "externalId": "neo4-33",
     "tcgdex_id": "neo4-33",
     "localId": "033",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "033/105",
+    "cardNumber": "33/105",
     "cardName": "Dark Exeggutor",
-    "fullDisplayName": "Dark Exeggutor 033/105 Neo Destiny",
+    "fullDisplayName": "Dark Exeggutor 33/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2600,18 +3170,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-033-low.png",
-    "imageHighSrc": "cards/neo4-033-high.png"
+    "imageHighSrc": "cards/neo4-033-high.png",
+    "attacks": [
+      {
+        "name": "Triple Headbutt",
+        "damage": "10×"
+      },
+      {
+        "name": "MAX Burst",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "8560",
-    "externalId": null,
+    "externalId": "neo4-32",
     "tcgdex_id": "neo4-32",
     "localId": "032",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "032/105",
+    "cardNumber": "32/105",
     "cardName": "Dark Croconaw",
-    "fullDisplayName": "Dark Croconaw 032/105 Neo Destiny",
+    "fullDisplayName": "Dark Croconaw 32/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2633,18 +3213,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-032-low.png",
-    "imageHighSrc": "cards/neo4-032-high.png"
+    "imageHighSrc": "cards/neo4-032-high.png",
+    "attacks": [
+      {
+        "name": "Clamping Jaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8548",
-    "externalId": null,
+    "externalId": "neo4-31",
     "tcgdex_id": "neo4-31",
     "localId": "031",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "031/105",
+    "cardNumber": "31/105",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 031/105 Neo Destiny",
+    "fullDisplayName": "Chansey 31/105 Neo Destiny",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2666,18 +3252,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-031-low.png",
-    "imageHighSrc": "cards/neo4-031-high.png"
+    "imageHighSrc": "cards/neo4-031-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "20×"
+      },
+      {
+        "name": "Egg Toss",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "8543",
-    "externalId": null,
+    "externalId": "neo4-30",
     "tcgdex_id": "neo4-30",
     "localId": "030",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "030/105",
+    "cardNumber": "30/105",
     "cardName": "Unown [X]",
-    "fullDisplayName": "Unown [X] 030/105 Neo Destiny",
+    "fullDisplayName": "Unown [X] 30/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2699,18 +3295,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-030-low.png",
-    "imageHighSrc": "cards/neo4-030-high.png"
+    "imageHighSrc": "cards/neo4-030-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8537",
-    "externalId": null,
+    "externalId": "neo4-29",
     "tcgdex_id": "neo4-29",
     "localId": "029",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "029/105",
+    "cardNumber": "29/105",
     "cardName": "Unown [W]",
-    "fullDisplayName": "Unown [W] 029/105 Neo Destiny",
+    "fullDisplayName": "Unown [W] 29/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2732,18 +3335,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-029-low.png",
-    "imageHighSrc": "cards/neo4-029-high.png"
+    "imageHighSrc": "cards/neo4-029-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8531",
-    "externalId": null,
+    "externalId": "neo4-28",
     "tcgdex_id": "neo4-28",
     "localId": "028",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "028/105",
+    "cardNumber": "28/105",
     "cardName": "Unown [H]",
-    "fullDisplayName": "Unown [H] 028/105 Neo Destiny",
+    "fullDisplayName": "Unown [H] 28/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2765,18 +3375,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-028-low.png",
-    "imageHighSrc": "cards/neo4-028-high.png"
+    "imageHighSrc": "cards/neo4-028-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8524",
-    "externalId": null,
+    "externalId": "neo4-27",
     "tcgdex_id": "neo4-27",
     "localId": "027",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "027/105",
+    "cardNumber": "27/105",
     "cardName": "Unown [G]",
-    "fullDisplayName": "Unown [G] 027/105 Neo Destiny",
+    "fullDisplayName": "Unown [G] 27/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2798,18 +3415,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-027-low.png",
-    "imageHighSrc": "cards/neo4-027-high.png"
+    "imageHighSrc": "cards/neo4-027-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "8517",
-    "externalId": null,
+    "externalId": "neo4-26",
     "tcgdex_id": "neo4-26",
     "localId": "026",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "026/105",
+    "cardNumber": "26/105",
     "cardName": "Light Piloswine",
-    "fullDisplayName": "Light Piloswine 026/105 Neo Destiny",
+    "fullDisplayName": "Light Piloswine 26/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2831,18 +3455,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-026-low.png",
-    "imageHighSrc": "cards/neo4-026-high.png"
+    "imageHighSrc": "cards/neo4-026-high.png",
+    "attacks": [
+      {
+        "name": "Knock Over",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8510",
-    "externalId": null,
+    "externalId": "neo4-25",
     "tcgdex_id": "neo4-25",
     "localId": "025",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "025/105",
+    "cardNumber": "25/105",
     "cardName": "Light Machamp",
-    "fullDisplayName": "Light Machamp 025/105 Neo Destiny",
+    "fullDisplayName": "Light Machamp 25/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2864,18 +3494,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-025-low.png",
-    "imageHighSrc": "cards/neo4-025-high.png"
+    "imageHighSrc": "cards/neo4-025-high.png",
+    "attacks": [
+      {
+        "name": "Beatdown",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8503",
-    "externalId": null,
+    "externalId": "neo4-24",
     "tcgdex_id": "neo4-24",
     "localId": "024",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "024/105",
+    "cardNumber": "24/105",
     "cardName": "Light Ledian",
-    "fullDisplayName": "Light Ledian 024/105 Neo Destiny",
+    "fullDisplayName": "Light Ledian 24/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2897,18 +3533,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-024-low.png",
-    "imageHighSrc": "cards/neo4-024-high.png"
+    "imageHighSrc": "cards/neo4-024-high.png",
+    "attacks": [
+      {
+        "name": "Flash Touch",
+        "damage": null
+      },
+      {
+        "name": "Comet Punch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "8497",
-    "externalId": null,
+    "externalId": "neo4-23",
     "tcgdex_id": "neo4-23",
     "localId": "023",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "023/105",
+    "cardNumber": "23/105",
     "cardName": "Light Lanturn",
-    "fullDisplayName": "Light Lanturn 023/105 Neo Destiny",
+    "fullDisplayName": "Light Lanturn 23/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2930,18 +3576,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-023-low.png",
-    "imageHighSrc": "cards/neo4-023-high.png"
+    "imageHighSrc": "cards/neo4-023-high.png",
+    "attacks": [
+      {
+        "name": "Searchlight",
+        "damage": null
+      },
+      {
+        "name": "Spark",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8490",
-    "externalId": null,
+    "externalId": "neo4-22",
     "tcgdex_id": "neo4-22",
     "localId": "022",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "022/105",
+    "cardNumber": "22/105",
     "cardName": "Light Dragonair",
-    "fullDisplayName": "Light Dragonair 022/105 Neo Destiny",
+    "fullDisplayName": "Light Dragonair 22/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2963,18 +3619,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-022-low.png",
-    "imageHighSrc": "cards/neo4-022-high.png"
+    "imageHighSrc": "cards/neo4-022-high.png",
+    "attacks": [
+      {
+        "name": "Healing Light",
+        "damage": null
+      },
+      {
+        "name": "Protective Wave",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8483",
-    "externalId": null,
+    "externalId": "neo4-21",
     "tcgdex_id": "neo4-21",
     "localId": "021",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "021/105",
+    "cardNumber": "21/105",
     "cardName": "Dark Ursaring",
-    "fullDisplayName": "Dark Ursaring 021/105 Neo Destiny",
+    "fullDisplayName": "Dark Ursaring 21/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2996,18 +3662,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-021-low.png",
-    "imageHighSrc": "cards/neo4-021-high.png"
+    "imageHighSrc": "cards/neo4-021-high.png",
+    "attacks": [
+      {
+        "name": "Provoke",
+        "damage": null
+      },
+      {
+        "name": "Battle Frenzy",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8477",
-    "externalId": null,
+    "externalId": "neo4-20",
     "tcgdex_id": "neo4-20",
     "localId": "020",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "020/105",
+    "cardNumber": "20/105",
     "cardName": "Dark Slowking",
-    "fullDisplayName": "Dark Slowking 020/105 Neo Destiny",
+    "fullDisplayName": "Dark Slowking 20/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3029,18 +3705,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-020-low.png",
-    "imageHighSrc": "cards/neo4-020-high.png"
+    "imageHighSrc": "cards/neo4-020-high.png",
+    "attacks": [
+      {
+        "name": "Mind Shock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8471",
-    "externalId": null,
+    "externalId": "neo4-19",
     "tcgdex_id": "neo4-19",
     "localId": "019",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "019/105",
+    "cardNumber": "19/105",
     "cardName": "Dark Omastar",
-    "fullDisplayName": "Dark Omastar 019/105 Neo Destiny",
+    "fullDisplayName": "Dark Omastar 19/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3062,18 +3744,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-019-low.png",
-    "imageHighSrc": "cards/neo4-019-high.png"
+    "imageHighSrc": "cards/neo4-019-high.png",
+    "attacks": [
+      {
+        "name": "Prehistoric Water",
+        "damage": null
+      },
+      {
+        "name": "Dark Tentacle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8463",
-    "externalId": null,
+    "externalId": "neo4-18",
     "tcgdex_id": "neo4-18",
     "localId": "018",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "018/105",
+    "cardNumber": "18/105",
     "cardName": "Dark Magcargo",
-    "fullDisplayName": "Dark Magcargo 018/105 Neo Destiny",
+    "fullDisplayName": "Dark Magcargo 18/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3095,18 +3787,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-018-low.png",
-    "imageHighSrc": "cards/neo4-018-high.png"
+    "imageHighSrc": "cards/neo4-018-high.png",
+    "attacks": [
+      {
+        "name": "Ball of Flame",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8456",
-    "externalId": null,
+    "externalId": "neo4-17",
     "tcgdex_id": "neo4-17",
     "localId": "017",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "017/105",
+    "cardNumber": "17/105",
     "cardName": "Dark Ariados",
-    "fullDisplayName": "Dark Ariados 017/105 Neo Destiny",
+    "fullDisplayName": "Dark Ariados 17/105 Neo Destiny",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3128,18 +3826,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-017-low.png",
-    "imageHighSrc": "cards/neo4-017-high.png"
+    "imageHighSrc": "cards/neo4-017-high.png",
+    "attacks": [
+      {
+        "name": "Entangle",
+        "damage": null
+      },
+      {
+        "name": "Poison Bind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8447",
-    "externalId": null,
+    "externalId": "neo4-16",
     "tcgdex_id": "neo4-16",
     "localId": "016",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "016/105",
+    "cardNumber": "16/105",
     "cardName": "Miracle Energy",
-    "fullDisplayName": "Miracle Energy 016/105 Neo Destiny",
+    "fullDisplayName": "Miracle Energy 16/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Energy",
     "stage": null,
@@ -3157,18 +3865,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-016-low.png",
-    "imageHighSrc": "cards/neo4-016-high.png"
+    "imageHighSrc": "cards/neo4-016-high.png",
+    "rules": "You can't have more than 1 Miracle Energy in your deck. Attach Miracle Energy to 1 of your Shining or Light Pokémon. At the end of your turn, discard Miracle Energy.\nWhile in play, Miracle Energy counts as every type of Energy but provides only 2 Energy at a time."
   },
   {
     "masterCardId": "8436",
-    "externalId": null,
+    "externalId": "neo4-15",
     "tcgdex_id": "neo4-15",
     "localId": "015",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "015/105",
+    "cardNumber": "15/105",
     "cardName": "Light Togetic",
-    "fullDisplayName": "Light Togetic 015/105 Neo Destiny",
+    "fullDisplayName": "Light Togetic 15/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3190,18 +3899,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-015-low.png",
-    "imageHighSrc": "cards/neo4-015-high.png"
+    "imageHighSrc": "cards/neo4-015-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Kiss",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8427",
-    "externalId": null,
+    "externalId": "neo4-14",
     "tcgdex_id": "neo4-14",
     "localId": "014",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "014/105",
+    "cardNumber": "14/105",
     "cardName": "Light Dragonite",
-    "fullDisplayName": "Light Dragonite 014/105 Neo Destiny",
+    "fullDisplayName": "Light Dragonite 14/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3223,18 +3938,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-014-low.png",
-    "imageHighSrc": "cards/neo4-014-high.png"
+    "imageHighSrc": "cards/neo4-014-high.png",
+    "attacks": [
+      {
+        "name": "Light Wave",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8420",
-    "externalId": null,
+    "externalId": "neo4-13",
     "tcgdex_id": "neo4-13",
     "localId": "013",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "013/105",
+    "cardNumber": "13/105",
     "cardName": "Light Azumarill",
-    "fullDisplayName": "Light Azumarill 013/105 Neo Destiny",
+    "fullDisplayName": "Light Azumarill 13/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3256,18 +3977,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-013-low.png",
-    "imageHighSrc": "cards/neo4-013-high.png"
+    "imageHighSrc": "cards/neo4-013-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      },
+      {
+        "name": "Bubble Jump",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8412",
-    "externalId": null,
+    "externalId": "neo4-12",
     "tcgdex_id": "neo4-12",
     "localId": "012",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "012/105",
+    "cardNumber": "12/105",
     "cardName": "Light Arcanine",
-    "fullDisplayName": "Light Arcanine 012/105 Neo Destiny",
+    "fullDisplayName": "Light Arcanine 12/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3289,18 +4020,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-012-low.png",
-    "imageHighSrc": "cards/neo4-012-high.png"
+    "imageHighSrc": "cards/neo4-012-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Flames",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8403",
-    "externalId": null,
+    "externalId": "neo4-11",
     "tcgdex_id": "neo4-11",
     "localId": "011",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "011/105",
+    "cardNumber": "11/105",
     "cardName": "Dark Tyranitar",
-    "fullDisplayName": "Dark Tyranitar 011/105 Neo Destiny",
+    "fullDisplayName": "Dark Tyranitar 11/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3322,18 +4059,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-011-low.png",
-    "imageHighSrc": "cards/neo4-011-high.png"
+    "imageHighSrc": "cards/neo4-011-high.png",
+    "attacks": [
+      {
+        "name": "Mountain Smasher",
+        "damage": "20×"
+      },
+      {
+        "name": "Fling Away",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8395",
-    "externalId": null,
+    "externalId": "neo4-10",
     "tcgdex_id": "neo4-10",
     "localId": "010",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "010/105",
+    "cardNumber": "10/105",
     "cardName": "Dark Typhlosion",
-    "fullDisplayName": "Dark Typhlosion 010/105 Neo Destiny",
+    "fullDisplayName": "Dark Typhlosion 10/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3355,18 +4102,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-010-low.png",
-    "imageHighSrc": "cards/neo4-010-high.png"
+    "imageHighSrc": "cards/neo4-010-high.png",
+    "attacks": [
+      {
+        "name": "Claw Swipe",
+        "damage": "20"
+      },
+      {
+        "name": "Rushing Flames",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "8387",
-    "externalId": null,
+    "externalId": "neo4-9",
     "tcgdex_id": "neo4-9",
     "localId": "009",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "009/105",
+    "cardNumber": "9/105",
     "cardName": "Dark Scizor",
-    "fullDisplayName": "Dark Scizor 009/105 Neo Destiny",
+    "fullDisplayName": "Dark Scizor 9/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3388,18 +4145,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-009-low.png",
-    "imageHighSrc": "cards/neo4-009-high.png"
+    "imageHighSrc": "cards/neo4-009-high.png",
+    "attacks": [
+      {
+        "name": "Threaten",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8380",
-    "externalId": null,
+    "externalId": "neo4-8",
     "tcgdex_id": "neo4-8",
     "localId": "008",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "008/105",
+    "cardNumber": "8/105",
     "cardName": "Dark Porygon2",
-    "fullDisplayName": "Dark Porygon2 008/105 Neo Destiny",
+    "fullDisplayName": "Dark Porygon2 8/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3421,18 +4188,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-008-low.png",
-    "imageHighSrc": "cards/neo4-008-high.png"
+    "imageHighSrc": "cards/neo4-008-high.png",
+    "attacks": [
+      {
+        "name": "Curve Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8369",
-    "externalId": null,
+    "externalId": "neo4-7",
     "tcgdex_id": "neo4-7",
     "localId": "007",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "007/105",
+    "cardNumber": "7/105",
     "cardName": "Dark Houndoom",
-    "fullDisplayName": "Dark Houndoom 007/105 Neo Destiny",
+    "fullDisplayName": "Dark Houndoom 7/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3454,18 +4227,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-007-low.png",
-    "imageHighSrc": "cards/neo4-007-high.png"
+    "imageHighSrc": "cards/neo4-007-high.png",
+    "attacks": [
+      {
+        "name": "Eerie Howl",
+        "damage": null
+      },
+      {
+        "name": "Dark Fire",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8363",
-    "externalId": null,
+    "externalId": "neo4-6",
     "tcgdex_id": "neo4-6",
     "localId": "006",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "006/105",
+    "cardNumber": "6/105",
     "cardName": "Dark Gengar",
-    "fullDisplayName": "Dark Gengar 006/105 Neo Destiny",
+    "fullDisplayName": "Dark Gengar 6/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3487,18 +4270,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-006-low.png",
-    "imageHighSrc": "cards/neo4-006-high.png"
+    "imageHighSrc": "cards/neo4-006-high.png",
+    "attacks": [
+      {
+        "name": "Pull In",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8354",
-    "externalId": null,
+    "externalId": "neo4-5",
     "tcgdex_id": "neo4-5",
     "localId": "005",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "005/105",
+    "cardNumber": "5/105",
     "cardName": "Dark Feraligatr",
-    "fullDisplayName": "Dark Feraligatr 005/105 Neo Destiny",
+    "fullDisplayName": "Dark Feraligatr 5/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3520,18 +4309,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-005-low.png",
-    "imageHighSrc": "cards/neo4-005-high.png"
+    "imageHighSrc": "cards/neo4-005-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Blow",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8343",
-    "externalId": null,
+    "externalId": "neo4-4",
     "tcgdex_id": "neo4-4",
     "localId": "004",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "004/105",
+    "cardNumber": "4/105",
     "cardName": "Dark Espeon",
-    "fullDisplayName": "Dark Espeon 004/105 Neo Destiny",
+    "fullDisplayName": "Dark Espeon 4/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3553,18 +4348,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-004-low.png",
-    "imageHighSrc": "cards/neo4-004-high.png"
+    "imageHighSrc": "cards/neo4-004-high.png",
+    "attacks": [
+      {
+        "name": "Gouge",
+        "damage": "10+"
+      },
+      {
+        "name": "Psysplash",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8328",
-    "externalId": null,
+    "externalId": "neo4-3",
     "tcgdex_id": "neo4-3",
     "localId": "003",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "003/105",
+    "cardNumber": "3/105",
     "cardName": "Dark Donphan",
-    "fullDisplayName": "Dark Donphan 003/105 Neo Destiny",
+    "fullDisplayName": "Dark Donphan 3/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3586,18 +4391,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-003-low.png",
-    "imageHighSrc": "cards/neo4-003-high.png"
+    "imageHighSrc": "cards/neo4-003-high.png",
+    "attacks": [
+      {
+        "name": "Tusk Toss",
+        "damage": null
+      },
+      {
+        "name": "Giant Tusk",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8318",
-    "externalId": null,
+    "externalId": "neo4-2",
     "tcgdex_id": "neo4-2",
     "localId": "002",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "002/105",
+    "cardNumber": "2/105",
     "cardName": "Dark Crobat",
-    "fullDisplayName": "Dark Crobat 002/105 Neo Destiny",
+    "fullDisplayName": "Dark Crobat 2/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3619,18 +4434,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-002-low.png",
-    "imageHighSrc": "cards/neo4-002-high.png"
+    "imageHighSrc": "cards/neo4-002-high.png",
+    "attacks": [
+      {
+        "name": "Dark Drain",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8301",
-    "externalId": null,
+    "externalId": "neo4-1",
     "tcgdex_id": "neo4-1",
     "localId": "001",
     "setCode": "neo4",
     "setTcgdexId": "neo4",
-    "cardNumber": "001/105",
+    "cardNumber": "1/105",
     "cardName": "Dark Ampharos",
-    "fullDisplayName": "Dark Ampharos 001/105 Neo Destiny",
+    "fullDisplayName": "Dark Ampharos 1/105 Neo Destiny",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3652,6 +4473,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo4-001-low.png",
-    "imageHighSrc": "cards/neo4-001-high.png"
+    "imageHighSrc": "cards/neo4-001-high.png",
+    "attacks": [
+      {
+        "name": "Shock Bolt",
+        "damage": "50"
+      }
+    ]
   }
 ]

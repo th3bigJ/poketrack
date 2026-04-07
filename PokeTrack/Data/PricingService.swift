@@ -42,18 +42,33 @@ final class PricingService {
 
     func pricing(for card: Card) async -> CardPricingEntry? {
         let map = await loadPricingMap(setCode: card.setCode)
-        return Self.resolvePricingEntry(in: map, for: card)
+        if let entry = Self.resolvePricingEntry(in: map, for: card) {
+            return entry
+        }
+        // `CatalogStore` / disk may hold pricing JSON from before a card was added to R2; price history is fetched
+        // fresh from the network, so the chart can work while Scrydex rows are missing. Force one network reload.
+        let map2 = await loadPricingMap(setCode: card.setCode, forceNetwork: true)
+        return Self.resolvePricingEntry(in: map2, for: card)
     }
 
-    /// Keys to try against `tcg/pricing/card-pricing/{set}.json` (see `AppConfiguration.r2CardPricingSetJSONURL`). Some sets key rows by `externalId`; most use `tcgdex_id` — **both** are tried when present.
-    private static func pricingLookupKeys(for card: Card) -> [String] {
+    /// Keys to try for per-set pricing / history JSON lookups.
+    /// - **Market (default):** `externalId` first (Scrydex-style keys in `card-pricing`), then `tcgdex_id`, then derived ids.
+    /// - **History / trends (`historyStyle: true`):** `tcgdex_id` first — price-history files often key rows like `me02.5-280`
+    ///   with full series, while the same export may also include a sparse `me2pt5-280` duplicate; prefer the dotted id so we
+    ///   don’t pick the short duplicate when both exist.
+    private static func pricingLookupKeys(for card: Card, historyStyle: Bool = false) -> [String] {
         var keys: [String] = []
         func append(_ s: String) {
             let t = s.trimmingCharacters(in: .whitespacesAndNewlines)
             if !t.isEmpty, !keys.contains(t) { keys.append(t) }
         }
-        if let e = card.externalId { append(e) }
-        if let t = card.tcgdex_id { append(t) }
+        if historyStyle {
+            if let t = card.tcgdex_id { append(t) }
+            if let e = card.externalId { append(e) }
+        } else {
+            if let e = card.externalId { append(e) }
+            if let t = card.tcgdex_id { append(t) }
+        }
         if let local = card.localId, !local.isEmpty {
             let sc = card.setCode.trimmingCharacters(in: .whitespacesAndNewlines)
             append("\(sc)-\(local)")
@@ -66,7 +81,7 @@ final class PricingService {
         return keys
     }
 
-    /// Exact key, case-insensitive, then canonical (`sm4-030`/`sm4-30`, `me3-124`/`me03-124`).
+    /// Exact key, case-insensitive, then unified form (`me02.5-280` ≡ `me2pt5-280`, `sm4-030` ≡ `sm4-30`, …).
     private static func resolvePricingEntry(in map: SetPricingMap, for card: Card) -> CardPricingEntry? {
         let candidates = pricingLookupKeys(for: card)
         guard !candidates.isEmpty else { return nil }
@@ -80,24 +95,65 @@ final class PricingService {
                 return found
             }
         }
-        let canonSet = Set(candidates.map { canonicalCardPricingKey($0) })
+        let unified = Set(candidates.map { unifiedPricingCardKey($0) })
         for (mapKey, entry) in map {
-            if canonSet.contains(canonicalCardPricingKey(mapKey)) {
+            if unified.contains(unifiedPricingCardKey(mapKey)) {
                 return entry
             }
         }
         return nil
     }
 
-    /// Unifies tcgdx-style keys: trailing card # (`030`→`30`) and set prefix (`me03`→`me3`) so catalog ↔ pricing exports match.
-    private static func canonicalCardPricingKey(_ id: String) -> String {
+    /// One comparable form for card ids in pricing JSON: dotted TCGdex (`me02.5-280`) and Scrydex `pt` ids (`me2pt5-280`) become the same key.
+    private static func unifiedPricingCardKey(_ id: String) -> String {
         let t = id.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
         guard let idx = t.lastIndex(of: "-") else { return t }
         let left = String(t[..<idx])
         let right = String(t[t.index(after: idx)...])
         guard right.allSatisfy({ $0.isNumber }), let num = Int(right) else { return t }
-        let leftNorm = normalizeTcgdxSetPrefix(left)
-        return "\(leftNorm)-\(num)"
+        let leftU = unifySetPortionOfPricingCardKey(left)
+        return "\(leftU)-\(num)"
+    }
+
+    /// `me02.5` / `me2pt5` / `me02pt5` → `me2pt5`; `me03` → `me3`; `sm4` → `sm4`.
+    private static func unifySetPortionOfPricingCardKey(_ left: String) -> String {
+        let s = left.lowercased()
+        if s.contains(".") {
+            return dottedSetPrefixToPtCollapsed(s)
+        }
+        if s.contains("pt") {
+            if let regex = try? NSRegularExpression(pattern: #"^([a-z]+)(\d+)pt(\d+)$"#, options: []),
+               let m = regex.firstMatch(in: s, range: NSRange(s.startIndex..., in: s)),
+               m.numberOfRanges == 4,
+               let r1 = Range(m.range(at: 1), in: s),
+               let r2 = Range(m.range(at: 2), in: s),
+               let r3 = Range(m.range(at: 3), in: s) {
+                let letters = String(s[r1])
+                let mid = String(s[r2])
+                let tail = String(s[r3])
+                if let n = Int(mid) {
+                    return "\(letters)\(n)pt\(tail)"
+                }
+            }
+        }
+        return normalizeTcgdxSetPrefix(s)
+    }
+
+    /// `me02.5` → `me2pt5` (collapse digits before dot, then `pt` + fractional index).
+    private static func dottedSetPrefixToPtCollapsed(_ dotted: String) -> String {
+        guard let dot = dotted.firstIndex(of: ".") else { return dotted }
+        let a = String(dotted[..<dot])
+        let b = String(dotted[dotted.index(after: dot)...])
+        guard b.allSatisfy({ $0.isNumber }) else { return dotted }
+        var collapsed = a
+        if let range = a.range(of: #"\d+$"#, options: .regularExpression) {
+            let p = String(a[..<range.lowerBound])
+            let tail = String(a[range])
+            if let n = Int(tail) {
+                collapsed = p + String(n)
+            }
+        }
+        return collapsed + "pt" + b
     }
 
     /// Collapses `me03`→`me3`, keeps `sm4`, `base1`, etc.
@@ -114,28 +170,6 @@ final class PricingService {
         let digits = String(lower[r2])
         guard let n = Int(digits) else { return lower }
         return "\(letters)\(n)"
-    }
-
-    /// Tries `me03.json` and `me3.json` (common mismatch between `setCode` and pricing pipeline names).
-    private static func pricingFileStemVariants(for setCode: String) -> [String] {
-        let s = setCode.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-        var stems: [String] = []
-        func add(_ x: String) {
-            if !stems.contains(x) { stems.append(x) }
-        }
-        add(s)
-        if let regex = try? NSRegularExpression(pattern: #"^([a-z]+)0+(\d+)$"#, options: []),
-           let m = regex.firstMatch(in: s, range: NSRange(s.startIndex..., in: s)),
-           m.numberOfRanges == 3,
-           let r1 = Range(m.range(at: 1), in: s),
-           let r2 = Range(m.range(at: 2), in: s) {
-            let letters = String(s[r1])
-            let digits = String(s[r2])
-            if let n = Int(digits) {
-                add("\(letters)\(n)")
-            }
-        }
-        return stems
     }
 
     /// All scrydex variant keys present for a card (used to populate the variant picker).
@@ -161,17 +195,53 @@ final class PricingService {
 
     /// USD price for a variant + grade combination (matches R2 / Scrydex fields).
     /// Grade "raw" uses the standard market estimate; "psa10" / "ace10" use their respective fields.
+    ///
+    /// Price-history JSON often labels variants differently than Scrydex (e.g. `specialIllustrationRare` vs `holofoil`).
+    /// When the requested key is missing or has no price for this grade, we fall through the same variant order as
+    /// ``usdPrice(for:printing:)`` so the headline market price still matches available Scrydex rows.
     func usdPriceForVariantAndGrade(for card: Card, variantKey: String, grade: String) async -> Double? {
         guard let entry = await pricing(for: card),
-              let scrydex = entry.scrydex,
-              let pricing = scrydex[variantKey] else { return nil }
-        let usd: Double?
-        switch grade {
-        case "psa10": usd = pricing.psa10
-        case "ace10": usd = pricing.ace10
-        default:      usd = pricing.raw ?? pricing.market ?? pricing.avg
+              let scrydex = entry.scrydex, !scrydex.isEmpty else { return nil }
+        for key in Self.scrydexVariantKeyFallbackOrder(preferred: variantKey, scrydex: scrydex) {
+            guard let pricing = scrydex[key] else { continue }
+            if let usd = Self.usdForScrydexVariant(pricing, grade: grade) { return usd }
         }
-        return usd
+        return nil
+    }
+
+    private static func usdForScrydexVariant(_ pricing: ScrydexVariantPricing, grade: String) -> Double? {
+        switch grade {
+        case "psa10": return pricing.psa10
+        case "ace10": return pricing.ace10
+        default: return pricing.raw ?? pricing.market ?? pricing.avg
+        }
+    }
+
+    /// Scrydex keys to try: preferred (case-insensitive), then common English product types, then remaining keys.
+    private static func scrydexVariantKeyFallbackOrder(
+        preferred: String,
+        scrydex: [String: ScrydexVariantPricing]
+    ) -> [String] {
+        var ordered: [String] = []
+        var seen = Set<String>()
+        func appendCanonical(_ raw: String) {
+            let k = scrydex.keys.first(where: { $0 == raw || $0.lowercased() == raw.lowercased() }) ?? raw
+            guard scrydex[k] != nil, !seen.contains(k) else { return }
+            ordered.append(k)
+            seen.insert(k)
+        }
+        appendCanonical(preferred)
+        for k in [
+            "normal", "holofoil", "reverseHolofoil", "reverse_holofoil",
+            "pokeballReverseHolofoil", "cosmosHolofoil", "unlimited", "unlimitedHolofoil",
+            "firstEdition", "firstEditionHolofoil", "shadowless", "amazingRare", "radiantHolofoil",
+        ] {
+            appendCanonical(k)
+        }
+        for k in scrydex.keys.sorted() {
+            appendCanonical(k)
+        }
+        return ordered
     }
 
     /// GBP price for a variant + grade combination.
@@ -191,20 +261,9 @@ final class PricingService {
 
         let setCode = card.setCode.lowercased()
         let setMap = await loadSetHistoryMap(setCode: setCode)
-        let keys = Self.pricingLookupKeys(for: card)
-        for key in keys {
-            if let variantMap = setMap[key] {
-                return CardPriceHistory.parse(from: variantMap)
-            }
-        }
-        // Case-insensitive fallback (e.g. tcgdex_id "smp-SM211" vs file key "smp-sm211")
-        for key in keys {
-            let lower = key.lowercased()
-            if let variantMap = setMap.first(where: { $0.key.lowercased() == lower })?.value {
-                return CardPriceHistory.parse(from: variantMap)
-            }
-        }
-        return nil
+        let keys = Self.pricingLookupKeys(for: card, historyStyle: true)
+        guard let variantMap = Self.lookupPerCardEntry(in: setMap, keys: keys) else { return nil }
+        return CardPriceHistory.parse(from: variantMap)
     }
 
     /// Fetches price trends for a card from the per-set file, looks up by card key.
@@ -214,17 +273,24 @@ final class PricingService {
 
         let setCode = card.setCode.lowercased()
         let setMap = await loadSetTrendsMap(setCode: setCode)
-        let keys = Self.pricingLookupKeys(for: card)
-        for key in keys {
-            if let entry = setMap[key] {
-                return CardPriceTrends.parse(from: entry)
-            }
+        let keys = Self.pricingLookupKeys(for: card, historyStyle: true)
+        guard let entry = Self.lookupPerCardEntry(in: setMap, keys: keys) else { return nil }
+        return CardPriceTrends.parse(from: entry)
+    }
+
+    /// Resolves a card row in per-set JSON keyed by `me2pt5-280`, `me02.5-280`, etc.
+    private static func lookupPerCardEntry(in map: [String: [String: Any]], keys: [String]) -> [String: Any]? {
+        for k in keys {
+            if let v = map[k] { return v }
         }
-        // Case-insensitive fallback
-        for key in keys {
-            let lower = key.lowercased()
-            if let entry = setMap.first(where: { $0.key.lowercased() == lower })?.value {
-                return CardPriceTrends.parse(from: entry)
+        for k in keys {
+            let lower = k.lowercased()
+            if let v = map.first(where: { $0.key.lowercased() == lower })?.value { return v }
+        }
+        let unified = Set(keys.map { unifiedPricingCardKey($0) })
+        for (mapKey, value) in map {
+            if unified.contains(unifiedPricingCardKey(mapKey)) {
+                return value
             }
         }
         return nil
@@ -232,23 +298,30 @@ final class PricingService {
 
     private func loadSetHistoryMap(setCode: String) async -> [String: [String: Any]] {
         if let cached = historyCache[setCode] { return cached }
-        let url = AppConfiguration.r2PricingHistoryURL(setCode: setCode)
-        guard let data = await fetchDataIfOK(from: url),
-              let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return [:] }
-        // root: { cardKey: { variant: { grade: { daily... } } } }
-        let typed = root.compactMapValues { $0 as? [String: Any] }
-        historyCache[setCode] = typed
-        return typed
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return [:] }
+        for stem in AppConfiguration.pricingFileStemVariants(for: setCode) {
+            let url = AppConfiguration.r2PricingHistoryURL(setCode: stem)
+            guard let data = await fetchDataIfOK(from: url),
+                  let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { continue }
+            let typed = root.compactMapValues { $0 as? [String: Any] }
+            historyCache[setCode] = typed
+            return typed
+        }
+        return [:]
     }
 
     private func loadSetTrendsMap(setCode: String) async -> [String: [String: Any]] {
         if let cached = trendsCache[setCode] { return cached }
-        let url = AppConfiguration.r2PriceTrendsURL(setCode: setCode)
-        guard let data = await fetchDataIfOK(from: url),
-              let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { return [:] }
-        let typed = root.compactMapValues { $0 as? [String: Any] }
-        trendsCache[setCode] = typed
-        return typed
+        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return [:] }
+        for stem in AppConfiguration.pricingFileStemVariants(for: setCode) {
+            let url = AppConfiguration.r2PriceTrendsURL(setCode: stem)
+            guard let data = await fetchDataIfOK(from: url),
+                  let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { continue }
+            let typed = root.compactMapValues { $0 as? [String: Any] }
+            trendsCache[setCode] = typed
+            return typed
+        }
+        return [:]
     }
 
     private func fetchDataIfOK(from url: URL) async -> Data? {
@@ -310,35 +383,45 @@ final class PricingService {
         return nil
     }
 
-    private func loadPricingMap(setCode: String) async -> SetPricingMap {
+    /// Loads per-set Scrydex pricing. Prefer disk (24h) then **network** so we stay aligned with live R2; `CatalogStore`
+    /// is a last-resort offline copy and can lag behind catalog / history imports.
+    private func loadPricingMap(setCode: String, forceNetwork: Bool = false) async -> SetPricingMap {
         let key = setCode.lowercased()
-        if let hit = pricingCache[key], hit.expiry > Date() {
+        if !forceNetwork, let hit = pricingCache[key], hit.expiry > Date() {
             return hit.map
         }
-
-        try? CatalogStore.shared.open()
-        if let blob = CatalogStore.shared.fetchPricingData(setCode: key),
-           let map = Self.decodePricingMap(from: blob) {
-            pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
-            return map
+        if forceNetwork {
+            pricingCache.removeValue(forKey: key)
         }
 
-        if let disk = loadDiskCache(setCode: key) {
+        if !forceNetwork, let disk = loadDiskCache(setCode: key) {
             pricingCache[key] = (disk, Date().addingTimeInterval(cacheTTL))
             return disk
         }
 
         let base = AppConfiguration.r2BaseURL
-        guard base.host != "invalid.local" else { return [:] }
+        if base.host != "invalid.local" {
+            for stem in AppConfiguration.pricingFileStemVariants(for: key) {
+                let url = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
+                if let (map, data) = await fetchPricingMapAndDataIfOK(from: url) {
+                    pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
+                    saveDiskCache(setCode: key, data: data)
+                    try? CatalogStore.shared.open()
+                    try? CatalogStore.shared.upsertPricing(setCode: key, json: data)
+                    return map
+                }
+            }
+        }
 
-        for stem in Self.pricingFileStemVariants(for: key) {
-            let url = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
-            if let (map, data) = await fetchPricingMapAndDataIfOK(from: url) {
+        if !forceNetwork {
+            try? CatalogStore.shared.open()
+            if let blob = CatalogStore.shared.fetchPricingData(setCode: key),
+               let map = Self.decodePricingMap(from: blob) {
                 pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
-                saveDiskCache(setCode: key, data: data)
                 return map
             }
         }
+
         return [:]
     }
 

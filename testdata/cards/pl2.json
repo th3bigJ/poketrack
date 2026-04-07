@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9050",
-    "externalId": null,
+    "externalId": "pl2-RT6",
     "tcgdex_id": "pl2-RT6",
     "localId": "RT6",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "RT6/111",
+    "cardNumber": "RT6",
     "cardName": "Charon's Choice",
-    "fullDisplayName": "Charon's Choice RT6/111 Rising Rivals",
+    "fullDisplayName": "Charon's Choice RT6 Rising Rivals",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -26,18 +26,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-RT6-low.png",
-    "imageHighSrc": "cards/pl2-RT6-high.png"
+    "imageHighSrc": "cards/pl2-RT6-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, put this card into your hand instead of discarding it.\n\nSearch your deck for any Rotom and switch it with any Rotom you have in play. Any cards attached to Rotom and damage counters on it are now on the new Pokémon. (Remove all Special Conditions and effects from Rotom.) Put Rotom on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "9047",
-    "externalId": null,
+    "externalId": "pl2-RT5",
     "tcgdex_id": "pl2-RT5",
     "localId": "RT5",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "RT5/111",
+    "cardNumber": "RT5",
     "cardName": "Wash Rotom",
-    "fullDisplayName": "Wash Rotom RT5/111 Rising Rivals",
+    "fullDisplayName": "Wash Rotom RT5 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -59,18 +60,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-RT5-low.png",
-    "imageHighSrc": "cards/pl2-RT5-high.png"
+    "imageHighSrc": "cards/pl2-RT5-high.png",
+    "attacks": [
+      {
+        "name": "Cleanse Away",
+        "damage": null
+      },
+      {
+        "name": "Drain Wash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9044",
-    "externalId": null,
+    "externalId": "pl2-RT4",
     "tcgdex_id": "pl2-RT4",
     "localId": "RT4",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "RT4/111",
+    "cardNumber": "RT4",
     "cardName": "Mow Rotom",
-    "fullDisplayName": "Mow Rotom RT4/111 Rising Rivals",
+    "fullDisplayName": "Mow Rotom RT4 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -92,18 +103,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-RT4-low.png",
-    "imageHighSrc": "cards/pl2-RT4-high.png"
+    "imageHighSrc": "cards/pl2-RT4-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      },
+      {
+        "name": "Mow Down",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9040",
-    "externalId": null,
+    "externalId": "pl2-RT3",
     "tcgdex_id": "pl2-RT3",
     "localId": "RT3",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "RT3/111",
+    "cardNumber": "RT3",
     "cardName": "Heat Rotom",
-    "fullDisplayName": "Heat Rotom RT3/111 Rising Rivals",
+    "fullDisplayName": "Heat Rotom RT3 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -125,18 +146,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-RT3-low.png",
-    "imageHighSrc": "cards/pl2-RT3-high.png"
+    "imageHighSrc": "cards/pl2-RT3-high.png",
+    "attacks": [
+      {
+        "name": "Warm Up",
+        "damage": null
+      },
+      {
+        "name": "Heat Burn",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9036",
-    "externalId": null,
+    "externalId": "pl2-RT2",
     "tcgdex_id": "pl2-RT2",
     "localId": "RT2",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "RT2/111",
+    "cardNumber": "RT2",
     "cardName": "Frost Rotom",
-    "fullDisplayName": "Frost Rotom RT2/111 Rising Rivals",
+    "fullDisplayName": "Frost Rotom RT2 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -158,18 +189,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-RT2-low.png",
-    "imageHighSrc": "cards/pl2-RT2-high.png"
+    "imageHighSrc": "cards/pl2-RT2-high.png",
+    "attacks": [
+      {
+        "name": "Hail",
+        "damage": null
+      },
+      {
+        "name": "Crushing Ice",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "9032",
-    "externalId": null,
+    "externalId": "pl2-RT1",
     "tcgdex_id": "pl2-RT1",
     "localId": "RT1",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "RT1/111",
+    "cardNumber": "RT1",
     "cardName": "Fan Rotom",
-    "fullDisplayName": "Fan Rotom RT1/111 Rising Rivals",
+    "fullDisplayName": "Fan Rotom RT1 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -191,11 +232,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-RT1-low.png",
-    "imageHighSrc": "cards/pl2-RT1-high.png"
+    "imageHighSrc": "cards/pl2-RT1-high.png",
+    "attacks": [
+      {
+        "name": "Spin Storm",
+        "damage": null
+      },
+      {
+        "name": "Air Slash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9028",
-    "externalId": null,
+    "externalId": "pl2-114",
     "tcgdex_id": "pl2-114",
     "localId": "114",
     "setCode": "pl2",
@@ -224,11 +275,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-114-low.png",
-    "imageHighSrc": "cards/pl2-114-high.png"
+    "imageHighSrc": "cards/pl2-114-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9025",
-    "externalId": null,
+    "externalId": "pl2-113",
     "tcgdex_id": "pl2-113",
     "localId": "113",
     "setCode": "pl2",
@@ -257,11 +314,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-113-low.png",
-    "imageHighSrc": "cards/pl2-113-high.png"
+    "imageHighSrc": "cards/pl2-113-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Fly",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9020",
-    "externalId": null,
+    "externalId": "pl2-112",
     "tcgdex_id": "pl2-112",
     "localId": "112",
     "setCode": "pl2",
@@ -290,11 +357,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-112-low.png",
-    "imageHighSrc": "cards/pl2-112-high.png"
+    "imageHighSrc": "cards/pl2-112-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9015",
-    "externalId": null,
+    "externalId": "pl2-111",
     "tcgdex_id": "pl2-111",
     "localId": "111",
     "setCode": "pl2",
@@ -323,11 +400,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-111-low.png",
-    "imageHighSrc": "cards/pl2-111-high.png"
+    "imageHighSrc": "cards/pl2-111-high.png",
+    "attacks": [
+      {
+        "name": "Exercise",
+        "damage": "80"
+      }
+    ],
+    "rules": "Put this card onto your Active Snorlax. Snorlax LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9011",
-    "externalId": null,
+    "externalId": "pl2-110",
     "tcgdex_id": "pl2-110",
     "localId": "110",
     "setCode": "pl2",
@@ -357,11 +441,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-110-low.png",
-    "imageHighSrc": "cards/pl2-110-high.png"
+    "imageHighSrc": "cards/pl2-110-high.png",
+    "attacks": [
+      {
+        "name": "Darkness Magic",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Mismagius GL. Mismagius GL LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9005",
-    "externalId": null,
+    "externalId": "pl2-109",
     "tcgdex_id": "pl2-109",
     "localId": "109",
     "setCode": "pl2",
@@ -391,11 +482,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-109-low.png",
-    "imageHighSrc": "cards/pl2-109-high.png"
+    "imageHighSrc": "cards/pl2-109-high.png",
+    "attacks": [
+      {
+        "name": "Flash Impact",
+        "damage": "60"
+      }
+    ],
+    "rules": "Put this card onto your Active Luxray GL. Luxray GL LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9000",
-    "externalId": null,
+    "externalId": "pl2-108",
     "tcgdex_id": "pl2-108",
     "localId": "108",
     "setCode": "pl2",
@@ -425,11 +523,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-108-low.png",
-    "imageHighSrc": "cards/pl2-108-high.png"
+    "imageHighSrc": "cards/pl2-108-high.png",
+    "attacks": [
+      {
+        "name": "Fire Spin",
+        "damage": "100"
+      }
+    ],
+    "rules": "Put this card onto your Active Infernape E4. Infernape E4 LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "8995",
-    "externalId": null,
+    "externalId": "pl2-107",
     "tcgdex_id": "pl2-107",
     "localId": "107",
     "setCode": "pl2",
@@ -458,11 +563,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-107-low.png",
-    "imageHighSrc": "cards/pl2-107-high.png"
+    "imageHighSrc": "cards/pl2-107-high.png",
+    "attacks": [
+      {
+        "name": "Double Shoot",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Hippowdon. Hippowdon LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "8990",
-    "externalId": null,
+    "externalId": "pl2-106",
     "tcgdex_id": "pl2-106",
     "localId": "106",
     "setCode": "pl2",
@@ -492,11 +604,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-106-low.png",
-    "imageHighSrc": "cards/pl2-106-high.png"
+    "imageHighSrc": "cards/pl2-106-high.png",
+    "attacks": [
+      {
+        "name": "Aimed Cut",
+        "damage": "40+"
+      }
+    ],
+    "rules": "Put this card onto your Active Gallade E4. Gallade E4 LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "8985",
-    "externalId": null,
+    "externalId": "pl2-105",
     "tcgdex_id": "pl2-105",
     "localId": "105",
     "setCode": "pl2",
@@ -525,11 +644,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-105-low.png",
-    "imageHighSrc": "cards/pl2-105-high.png"
+    "imageHighSrc": "cards/pl2-105-high.png",
+    "attacks": [
+      {
+        "name": "Extreme Attack",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Flygon. Flygon LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "8980",
-    "externalId": null,
+    "externalId": "pl2-104",
     "tcgdex_id": "pl2-104",
     "localId": "104",
     "setCode": "pl2",
@@ -559,11 +685,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-104-low.png",
-    "imageHighSrc": "cards/pl2-104-high.png"
+    "imageHighSrc": "cards/pl2-104-high.png",
+    "attacks": [
+      {
+        "name": "Energy Cyclone",
+        "damage": "20×"
+      }
+    ],
+    "rules": "Put this card onto your Active Floatzel GL. Floatzel GL LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "8975",
-    "externalId": null,
+    "externalId": "pl2-103",
     "tcgdex_id": "pl2-103",
     "localId": "103",
     "setCode": "pl2",
@@ -593,11 +726,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-103-low.png",
-    "imageHighSrc": "cards/pl2-103-high.png"
+    "imageHighSrc": "cards/pl2-103-high.png",
+    "attacks": [
+      {
+        "name": "Mind Shock",
+        "damage": "50"
+      }
+    ],
+    "rules": "Put this card onto your Active Alakazam E4. Alakazam E4 LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "8970",
-    "externalId": null,
+    "externalId": "pl2-102",
     "tcgdex_id": "pl2-102",
     "localId": "102",
     "setCode": "pl2",
@@ -622,11 +762,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-102-low.png",
-    "imageHighSrc": "cards/pl2-102-high.png"
+    "imageHighSrc": "cards/pl2-102-high.png",
+    "rules": "Upper Energy provides Colorless Energy. If you have more Prize cards left than your opponent and this card is attached to a Pokémon (excluding Pokémon LV.X), Upper Energy provides ColorlessColorless."
   },
   {
     "masterCardId": "8967",
-    "externalId": null,
+    "externalId": "pl2-101",
     "tcgdex_id": "pl2-101",
     "localId": "101",
     "setCode": "pl2",
@@ -651,11 +792,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-101-low.png",
-    "imageHighSrc": "cards/pl2-101-high.png"
+    "imageHighSrc": "cards/pl2-101-high.png",
+    "rules": "SP Energy provides Colorless Energy. If the Pokémon SP Energy is attached to is a Pokémon SP, SP Energy provides every type of Energy buy provides only 1 Energy at a time. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "8962",
-    "externalId": null,
+    "externalId": "pl2-100",
     "tcgdex_id": "pl2-100",
     "localId": "100",
     "setCode": "pl2",
@@ -680,18 +822,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-100-low.png",
-    "imageHighSrc": "cards/pl2-100-high.png"
+    "imageHighSrc": "cards/pl2-100-high.png",
+    "rules": "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't Metal. Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "8957",
-    "externalId": null,
+    "externalId": "pl2-99",
     "tcgdex_id": "pl2-99",
     "localId": "099",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "099/111",
+    "cardNumber": "99/111",
     "cardName": "Darkness Energy",
-    "fullDisplayName": "Darkness Energy 099/111 Rising Rivals",
+    "fullDisplayName": "Darkness Energy 99/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -709,18 +852,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-099-low.png",
-    "imageHighSrc": "cards/pl2-099-high.png"
+    "imageHighSrc": "cards/pl2-099-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect if the Pokémon that Darkness Energy is attached to isn't Darkness. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "8951",
-    "externalId": null,
+    "externalId": "pl2-98",
     "tcgdex_id": "pl2-98",
     "localId": "098",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "098/111",
+    "cardNumber": "98/111",
     "cardName": "Volkner's Philosophy",
-    "fullDisplayName": "Volkner's Philosophy 098/111 Rising Rivals",
+    "fullDisplayName": "Volkner's Philosophy 98/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -738,18 +882,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-098-low.png",
-    "imageHighSrc": "cards/pl2-098-high.png"
+    "imageHighSrc": "cards/pl2-098-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nYou may discard a card from your hand. Then, draw cards until you have 6 cards in your hand. (If you can't draw any cards, you can't play this card.)"
   },
   {
     "masterCardId": "8946",
-    "externalId": null,
+    "externalId": "pl2-97",
     "tcgdex_id": "pl2-97",
     "localId": "097",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "097/111",
+    "cardNumber": "97/111",
     "cardName": "Underground Expedition",
-    "fullDisplayName": "Underground Expedition 097/111 Rising Rivals",
+    "fullDisplayName": "Underground Expedition 97/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -767,18 +912,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-097-low.png",
-    "imageHighSrc": "cards/pl2-097-high.png"
+    "imageHighSrc": "cards/pl2-097-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nLook at the 4 cards from the bottom of your deck. Choose any 2 cards there and put them into your hand. Put the remaining cards back on the bottom of your deck in any order."
   },
   {
     "masterCardId": "8940",
-    "externalId": null,
+    "externalId": "pl2-96",
     "tcgdex_id": "pl2-96",
     "localId": "096",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "096/111",
+    "cardNumber": "96/111",
     "cardName": "Team Galactic's Invention G-109 SP Radar",
-    "fullDisplayName": "Team Galactic's Invention G-109 SP Radar 096/111 Rising Rivals",
+    "fullDisplayName": "Team Galactic's Invention G-109 SP Radar 96/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -796,18 +942,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-096-low.png",
-    "imageHighSrc": "cards/pl2-096-high.png"
+    "imageHighSrc": "cards/pl2-096-high.png",
+    "rules": "Choose a card from your hand and put it on top of your deck. Search your deck for a Pokémon SP, show it to your opponent, and put it into your hand. Shuffle your deck afterward. (If this is the only card in your hand, you can't play this card.)"
   },
   {
     "masterCardId": "8935",
-    "externalId": null,
+    "externalId": "pl2-95",
     "tcgdex_id": "pl2-95",
     "localId": "095",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "095/111",
+    "cardNumber": "95/111",
     "cardName": "Team Galactic's Invention G-107 Technical Machine G",
-    "fullDisplayName": "Team Galactic's Invention G-107 Technical Machine G 095/111 Rising Rivals",
+    "fullDisplayName": "Team Galactic's Invention G-107 Technical Machine G 95/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -825,18 +972,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-095-low.png",
-    "imageHighSrc": "cards/pl2-095-high.png"
+    "imageHighSrc": "cards/pl2-095-high.png",
+    "attacks": [
+      {
+        "name": "Damage Porter",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Pokémon SP in play. That Pokémon may use this card's attack instead of its own. When the Pokémon this card is attached to is no longer Pokémon SP, discard this card."
   },
   {
     "masterCardId": "8930",
-    "externalId": null,
+    "externalId": "pl2-94",
     "tcgdex_id": "pl2-94",
     "localId": "094",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "094/111",
+    "cardNumber": "94/111",
     "cardName": "Sunyshore City Gym",
-    "fullDisplayName": "Sunyshore City Gym 094/111 Rising Rivals",
+    "fullDisplayName": "Sunyshore City Gym 94/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -854,18 +1008,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-094-low.png",
-    "imageHighSrc": "cards/pl2-094-high.png"
+    "imageHighSrc": "cards/pl2-094-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nAny damage done by attacks from Lightning Pokémon (both yours and your opponent's) to the Defending Pokémon isn't affected by Resistance. Each Lightning Pokémon in play (both yours and your opponent's) has no Weakness."
   },
   {
     "masterCardId": "8925",
-    "externalId": null,
+    "externalId": "pl2-93",
     "tcgdex_id": "pl2-93",
     "localId": "093",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "093/111",
+    "cardNumber": "93/111",
     "cardName": "Pokémon Contest Hall",
-    "fullDisplayName": "Pokémon Contest Hall 093/111 Rising Rivals",
+    "fullDisplayName": "Pokémon Contest Hall 93/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -883,18 +1038,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-093-low.png",
-    "imageHighSrc": "cards/pl2-093-high.png"
+    "imageHighSrc": "cards/pl2-093-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nOnce during each player's turn, if that player's Bench isn't full, the player may flip a coin. If heads, that player searches his or her deck for a Basic Pokémon and puts it onto his or her Bench. If the player does, he or she may search his or her deck for a Pokémon Tool card and attach it to that Pokémon. If that player searched his or her deck, the player shuffles his or her deck afterward."
   },
   {
     "masterCardId": "8921",
-    "externalId": null,
+    "externalId": "pl2-92",
     "tcgdex_id": "pl2-92",
     "localId": "092",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "092/111",
+    "cardNumber": "92/111",
     "cardName": "Lucian's Assignment",
-    "fullDisplayName": "Lucian's Assignment 092/111 Rising Rivals",
+    "fullDisplayName": "Lucian's Assignment 92/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -912,18 +1068,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-092-low.png",
-    "imageHighSrc": "cards/pl2-092-high.png"
+    "imageHighSrc": "cards/pl2-092-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nMove as many Energy cards attached to 1 of your Pokémon as you like to another of your Pokémon."
   },
   {
     "masterCardId": "8916",
-    "externalId": null,
+    "externalId": "pl2-91",
     "tcgdex_id": "pl2-91",
     "localId": "091",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "091/111",
+    "cardNumber": "91/111",
     "cardName": "Flint's Willpower",
-    "fullDisplayName": "Flint's Willpower 091/111 Rising Rivals",
+    "fullDisplayName": "Flint's Willpower 91/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -941,18 +1098,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-091-low.png",
-    "imageHighSrc": "cards/pl2-091-high.png"
+    "imageHighSrc": "cards/pl2-091-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nAttach a basic Energy card from your hand to 1 of your Pokémon SP."
   },
   {
     "masterCardId": "8911",
-    "externalId": null,
+    "externalId": "pl2-90",
     "tcgdex_id": "pl2-90",
     "localId": "090",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "090/111",
+    "cardNumber": "90/111",
     "cardName": "Bertha's Warmth",
-    "fullDisplayName": "Bertha's Warmth 090/111 Rising Rivals",
+    "fullDisplayName": "Bertha's Warmth 90/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -970,18 +1128,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-090-low.png",
-    "imageHighSrc": "cards/pl2-090-high.png"
+    "imageHighSrc": "cards/pl2-090-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nRemove 5 damage counters from 1 of your Pokémon SP."
   },
   {
     "masterCardId": "8906",
-    "externalId": null,
+    "externalId": "pl2-89",
     "tcgdex_id": "pl2-89",
     "localId": "089",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "089/111",
+    "cardNumber": "89/111",
     "cardName": "Bebe's Search",
-    "fullDisplayName": "Bebe's Search 089/111 Rising Rivals",
+    "fullDisplayName": "Bebe's Search 89/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -999,18 +1158,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-089-low.png",
-    "imageHighSrc": "cards/pl2-089-high.png"
+    "imageHighSrc": "cards/pl2-089-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nChoose a card from your hand and put it on top of your deck. Search your deck for a Pokémon, show it to your opponent, and put it into your hand. Shuffle your deck afterward. (If this is the only card in your hand, you can't play this card.)"
   },
   {
     "masterCardId": "8901",
-    "externalId": null,
+    "externalId": "pl2-88",
     "tcgdex_id": "pl2-88",
     "localId": "088",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "088/111",
+    "cardNumber": "88/111",
     "cardName": "Aaron's Collection",
-    "fullDisplayName": "Aaron's Collection 088/111 Rising Rivals",
+    "fullDisplayName": "Aaron's Collection 88/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1028,18 +1188,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-088-low.png",
-    "imageHighSrc": "cards/pl2-088-high.png"
+    "imageHighSrc": "cards/pl2-088-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your discard pile for up to 2 in any combination of Pokémon SP and basic Energy cards, show them to your opponent, and put them into your hand."
   },
   {
     "masterCardId": "8897",
-    "externalId": null,
+    "externalId": "pl2-87",
     "tcgdex_id": "pl2-87",
     "localId": "087",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "087/111",
+    "cardNumber": "87/111",
     "cardName": "Weezing",
-    "fullDisplayName": "Weezing 087/111 Rising Rivals",
+    "fullDisplayName": "Weezing 87/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1061,18 +1222,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-087-low.png",
-    "imageHighSrc": "cards/pl2-087-high.png"
+    "imageHighSrc": "cards/pl2-087-high.png",
+    "attacks": [
+      {
+        "name": "Damage Breakdown",
+        "damage": null
+      },
+      {
+        "name": "Smog",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8891",
-    "externalId": null,
+    "externalId": "pl2-86",
     "tcgdex_id": "pl2-86",
     "localId": "086",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "086/111",
+    "cardNumber": "86/111",
     "cardName": "Weedle",
-    "fullDisplayName": "Weedle 086/111 Rising Rivals",
+    "fullDisplayName": "Weedle 86/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1094,18 +1265,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-086-low.png",
-    "imageHighSrc": "cards/pl2-086-high.png"
+    "imageHighSrc": "cards/pl2-086-high.png",
+    "attacks": [
+      {
+        "name": "Rescue String",
+        "damage": null
+      },
+      {
+        "name": "Needling Sting",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8885",
-    "externalId": null,
+    "externalId": "pl2-85",
     "tcgdex_id": "pl2-85",
     "localId": "085",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "085/111",
+    "cardNumber": "85/111",
     "cardName": "Turtwig GL",
-    "fullDisplayName": "Turtwig GL 085/111 Rising Rivals",
+    "fullDisplayName": "Turtwig GL 85/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1128,18 +1309,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-085-low.png",
-    "imageHighSrc": "cards/pl2-085-high.png"
+    "imageHighSrc": "cards/pl2-085-high.png",
+    "attacks": [
+      {
+        "name": "Giga Drain",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8879",
-    "externalId": null,
+    "externalId": "pl2-84",
     "tcgdex_id": "pl2-84",
     "localId": "084",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "084/111",
+    "cardNumber": "84/111",
     "cardName": "Trapinch",
-    "fullDisplayName": "Trapinch 084/111 Rising Rivals",
+    "fullDisplayName": "Trapinch 84/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1161,18 +1348,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-084-low.png",
-    "imageHighSrc": "cards/pl2-084-high.png"
+    "imageHighSrc": "cards/pl2-084-high.png",
+    "attacks": [
+      {
+        "name": "Grind",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "8873",
-    "externalId": null,
+    "externalId": "pl2-83",
     "tcgdex_id": "pl2-83",
     "localId": "083",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "083/111",
+    "cardNumber": "83/111",
     "cardName": "Staryu",
-    "fullDisplayName": "Staryu 083/111 Rising Rivals",
+    "fullDisplayName": "Staryu 83/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1194,18 +1387,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-083-low.png",
-    "imageHighSrc": "cards/pl2-083-high.png"
+    "imageHighSrc": "cards/pl2-083-high.png",
+    "attacks": [
+      {
+        "name": "Cosmic Draw",
+        "damage": null
+      },
+      {
+        "name": "Swift",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8868",
-    "externalId": null,
+    "externalId": "pl2-82",
     "tcgdex_id": "pl2-82",
     "localId": "082",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "082/111",
+    "cardNumber": "82/111",
     "cardName": "Spheal",
-    "fullDisplayName": "Spheal 082/111 Rising Rivals",
+    "fullDisplayName": "Spheal 82/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1227,18 +1430,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-082-low.png",
-    "imageHighSrc": "cards/pl2-082-high.png"
+    "imageHighSrc": "cards/pl2-082-high.png",
+    "attacks": [
+      {
+        "name": "Powder Snow",
+        "damage": null
+      },
+      {
+        "name": "Ice Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8862",
-    "externalId": null,
+    "externalId": "pl2-81",
     "tcgdex_id": "pl2-81",
     "localId": "081",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "081/111",
+    "cardNumber": "81/111",
     "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 081/111 Rising Rivals",
+    "fullDisplayName": "Snorlax 81/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1260,18 +1473,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-081-low.png",
-    "imageHighSrc": "cards/pl2-081-high.png"
+    "imageHighSrc": "cards/pl2-081-high.png",
+    "attacks": [
+      {
+        "name": "Toss and Turn",
+        "damage": "20+"
+      },
+      {
+        "name": "Heavy Press",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "8856",
-    "externalId": null,
+    "externalId": "pl2-80",
     "tcgdex_id": "pl2-80",
     "localId": "080",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "080/111",
+    "cardNumber": "80/111",
     "cardName": "Shellos West Sea",
-    "fullDisplayName": "Shellos West Sea 080/111 Rising Rivals",
+    "fullDisplayName": "Shellos West Sea 80/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1293,18 +1516,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-080-low.png",
-    "imageHighSrc": "cards/pl2-080-high.png"
+    "imageHighSrc": "cards/pl2-080-high.png",
+    "attacks": [
+      {
+        "name": "Healing Sea",
+        "damage": null
+      },
+      {
+        "name": "Mud Shot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8851",
-    "externalId": null,
+    "externalId": "pl2-79",
     "tcgdex_id": "pl2-79",
     "localId": "079",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "079/111",
+    "cardNumber": "79/111",
     "cardName": "Shellos East Sea",
-    "fullDisplayName": "Shellos East Sea 079/111 Rising Rivals",
+    "fullDisplayName": "Shellos East Sea 79/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1326,18 +1559,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-079-low.png",
-    "imageHighSrc": "cards/pl2-079-high.png"
+    "imageHighSrc": "cards/pl2-079-high.png",
+    "attacks": [
+      {
+        "name": "Ripple",
+        "damage": null
+      },
+      {
+        "name": "Brine",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8845",
-    "externalId": null,
+    "externalId": "pl2-78",
     "tcgdex_id": "pl2-78",
     "localId": "078",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "078/111",
+    "cardNumber": "78/111",
     "cardName": "Seedot",
-    "fullDisplayName": "Seedot 078/111 Rising Rivals",
+    "fullDisplayName": "Seedot 78/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1359,18 +1602,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-078-low.png",
-    "imageHighSrc": "cards/pl2-078-high.png"
+    "imageHighSrc": "cards/pl2-078-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Astonish",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8839",
-    "externalId": null,
+    "externalId": "pl2-77",
     "tcgdex_id": "pl2-77",
     "localId": "077",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "077/111",
+    "cardNumber": "77/111",
     "cardName": "Sealeo",
-    "fullDisplayName": "Sealeo 077/111 Rising Rivals",
+    "fullDisplayName": "Sealeo 77/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1392,18 +1645,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-077-low.png",
-    "imageHighSrc": "cards/pl2-077-high.png"
+    "imageHighSrc": "cards/pl2-077-high.png",
+    "attacks": [
+      {
+        "name": "Find Ice",
+        "damage": null
+      },
+      {
+        "name": "Sheer Cold",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8833",
-    "externalId": null,
+    "externalId": "pl2-76",
     "tcgdex_id": "pl2-76",
     "localId": "076",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "076/111",
+    "cardNumber": "76/111",
     "cardName": "Quagsire GL",
-    "fullDisplayName": "Quagsire GL 076/111 Rising Rivals",
+    "fullDisplayName": "Quagsire GL 76/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1426,18 +1689,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-076-low.png",
-    "imageHighSrc": "cards/pl2-076-high.png"
+    "imageHighSrc": "cards/pl2-076-high.png",
+    "attacks": [
+      {
+        "name": "Punch and Run",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8825",
-    "externalId": null,
+    "externalId": "pl2-75",
     "tcgdex_id": "pl2-75",
     "localId": "075",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "075/111",
+    "cardNumber": "75/111",
     "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 075/111 Rising Rivals",
+    "fullDisplayName": "Nuzleaf 75/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1459,18 +1728,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-075-low.png",
-    "imageHighSrc": "cards/pl2-075-high.png"
+    "imageHighSrc": "cards/pl2-075-high.png",
+    "attacks": [
+      {
+        "name": "Blind",
+        "damage": "10"
+      },
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8819",
-    "externalId": null,
+    "externalId": "pl2-74",
     "tcgdex_id": "pl2-74",
     "localId": "074",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "074/111",
+    "cardNumber": "74/111",
     "cardName": "Nidorino",
-    "fullDisplayName": "Nidorino 074/111 Rising Rivals",
+    "fullDisplayName": "Nidorino 74/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1492,18 +1771,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-074-low.png",
-    "imageHighSrc": "cards/pl2-074-high.png"
+    "imageHighSrc": "cards/pl2-074-high.png",
+    "attacks": [
+      {
+        "name": "Toxic",
+        "damage": null
+      },
+      {
+        "name": "Frustration",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8813",
-    "externalId": null,
+    "externalId": "pl2-73",
     "tcgdex_id": "pl2-73",
     "localId": "073",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "073/111",
+    "cardNumber": "73/111",
     "cardName": "Nidorina",
-    "fullDisplayName": "Nidorina 073/111 Rising Rivals",
+    "fullDisplayName": "Nidorina 73/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1525,18 +1814,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-073-low.png",
-    "imageHighSrc": "cards/pl2-073-high.png"
+    "imageHighSrc": "cards/pl2-073-high.png",
+    "attacks": [
+      {
+        "name": "Jump Tackle",
+        "damage": "30"
+      },
+      {
+        "name": "Stress Poison",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "8806",
-    "externalId": null,
+    "externalId": "pl2-72",
     "tcgdex_id": "pl2-72",
     "localId": "072",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "072/111",
+    "cardNumber": "72/111",
     "cardName": "Nidoran ♂",
-    "fullDisplayName": "Nidoran ♂ 072/111 Rising Rivals",
+    "fullDisplayName": "Nidoran ♂ 72/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1558,18 +1857,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-072-low.png",
-    "imageHighSrc": "cards/pl2-072-high.png"
+    "imageHighSrc": "cards/pl2-072-high.png",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Horn Hazard",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8800",
-    "externalId": null,
+    "externalId": "pl2-71",
     "tcgdex_id": "pl2-71",
     "localId": "071",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "071/111",
+    "cardNumber": "71/111",
     "cardName": "Nidoran ♀",
-    "fullDisplayName": "Nidoran ♀ 071/111 Rising Rivals",
+    "fullDisplayName": "Nidoran ♀ 71/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1591,18 +1900,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-071-low.png",
-    "imageHighSrc": "cards/pl2-071-high.png"
+    "imageHighSrc": "cards/pl2-071-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Offer Help",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8793",
-    "externalId": null,
+    "externalId": "pl2-70",
     "tcgdex_id": "pl2-70",
     "localId": "070",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "070/111",
+    "cardNumber": "70/111",
     "cardName": "Munchlax",
-    "fullDisplayName": "Munchlax 070/111 Rising Rivals",
+    "fullDisplayName": "Munchlax 70/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1624,18 +1943,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-070-low.png",
-    "imageHighSrc": "cards/pl2-070-high.png"
+    "imageHighSrc": "cards/pl2-070-high.png",
+    "attacks": [
+      {
+        "name": "Errand-Running",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8787",
-    "externalId": null,
+    "externalId": "pl2-69",
     "tcgdex_id": "pl2-69",
     "localId": "069",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "069/111",
+    "cardNumber": "69/111",
     "cardName": "Munchlax",
-    "fullDisplayName": "Munchlax 069/111 Rising Rivals",
+    "fullDisplayName": "Munchlax 69/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1657,18 +1982,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-069-low.png",
-    "imageHighSrc": "cards/pl2-069-high.png"
+    "imageHighSrc": "cards/pl2-069-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8781",
-    "externalId": null,
+    "externalId": "pl2-68",
     "tcgdex_id": "pl2-68",
     "localId": "068",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "068/111",
+    "cardNumber": "68/111",
     "cardName": "Koffing",
-    "fullDisplayName": "Koffing 068/111 Rising Rivals",
+    "fullDisplayName": "Koffing 68/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1690,18 +2021,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-068-low.png",
-    "imageHighSrc": "cards/pl2-068-high.png"
+    "imageHighSrc": "cards/pl2-068-high.png",
+    "attacks": [
+      {
+        "name": "Offensive Gas",
+        "damage": null
+      },
+      {
+        "name": "Gas Bomb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8775",
-    "externalId": null,
+    "externalId": "pl2-67",
     "tcgdex_id": "pl2-67",
     "localId": "067",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "067/111",
+    "cardNumber": "67/111",
     "cardName": "Kecleon",
-    "fullDisplayName": "Kecleon 067/111 Rising Rivals",
+    "fullDisplayName": "Kecleon 67/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1723,18 +2064,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-067-low.png",
-    "imageHighSrc": "cards/pl2-067-high.png"
+    "imageHighSrc": "cards/pl2-067-high.png",
+    "attacks": [
+      {
+        "name": "Triple Smash",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8769",
-    "externalId": null,
+    "externalId": "pl2-66",
     "tcgdex_id": "pl2-66",
     "localId": "066",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "066/111",
+    "cardNumber": "66/111",
     "cardName": "Kakuna",
-    "fullDisplayName": "Kakuna 066/111 Rising Rivals",
+    "fullDisplayName": "Kakuna 66/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1756,18 +2103,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-066-low.png",
-    "imageHighSrc": "cards/pl2-066-high.png"
+    "imageHighSrc": "cards/pl2-066-high.png",
+    "attacks": [
+      {
+        "name": "Dangerous Evolution",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8758",
-    "externalId": null,
+    "externalId": "pl2-65",
     "tcgdex_id": "pl2-65",
     "localId": "065",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "065/111",
+    "cardNumber": "65/111",
     "cardName": "Houndoom E4",
-    "fullDisplayName": "Houndoom E4 065/111 Rising Rivals",
+    "fullDisplayName": "Houndoom E4 65/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1790,18 +2143,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-065-low.png",
-    "imageHighSrc": "cards/pl2-065-high.png"
+    "imageHighSrc": "cards/pl2-065-high.png",
+    "attacks": [
+      {
+        "name": "Corner",
+        "damage": "20"
+      },
+      {
+        "name": "Fire Fang",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8753",
-    "externalId": null,
+    "externalId": "pl2-64",
     "tcgdex_id": "pl2-64",
     "localId": "064",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "064/111",
+    "cardNumber": "64/111",
     "cardName": "Hippopotas",
-    "fullDisplayName": "Hippopotas 064/111 Rising Rivals",
+    "fullDisplayName": "Hippopotas 64/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1823,18 +2186,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-064-low.png",
-    "imageHighSrc": "cards/pl2-064-high.png"
+    "imageHighSrc": "cards/pl2-064-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "10"
+      },
+      {
+        "name": "Endeavor",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8748",
-    "externalId": null,
+    "externalId": "pl2-63",
     "tcgdex_id": "pl2-63",
     "localId": "063",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "063/111",
+    "cardNumber": "63/111",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 063/111 Rising Rivals",
+    "fullDisplayName": "Growlithe 63/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1856,18 +2229,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-063-low.png",
-    "imageHighSrc": "cards/pl2-063-high.png"
+    "imageHighSrc": "cards/pl2-063-high.png",
+    "attacks": [
+      {
+        "name": "Stoke",
+        "damage": null
+      },
+      {
+        "name": "Take Down",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8743",
-    "externalId": null,
+    "externalId": "pl2-62",
     "tcgdex_id": "pl2-62",
     "localId": "062",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "062/111",
+    "cardNumber": "62/111",
     "cardName": "Gliscor E4",
-    "fullDisplayName": "Gliscor E4 062/111 Rising Rivals",
+    "fullDisplayName": "Gliscor E4 62/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1890,18 +2273,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-062-low.png",
-    "imageHighSrc": "cards/pl2-062-high.png"
+    "imageHighSrc": "cards/pl2-062-high.png",
+    "attacks": [
+      {
+        "name": "Irongrip",
+        "damage": "10"
+      },
+      {
+        "name": "Loaded Needle",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8738",
-    "externalId": null,
+    "externalId": "pl2-61",
     "tcgdex_id": "pl2-61",
     "localId": "061",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "061/111",
+    "cardNumber": "61/111",
     "cardName": "Forretress G",
-    "fullDisplayName": "Forretress G 061/111 Rising Rivals",
+    "fullDisplayName": "Forretress G 61/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1924,18 +2317,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-061-low.png",
-    "imageHighSrc": "cards/pl2-061-high.png"
+    "imageHighSrc": "cards/pl2-061-high.png",
+    "attacks": [
+      {
+        "name": "Shell Scatter",
+        "damage": null
+      },
+      {
+        "name": "Bomb Risk",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "8728",
-    "externalId": null,
+    "externalId": "pl2-60",
     "tcgdex_id": "pl2-60",
     "localId": "060",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "060/111",
+    "cardNumber": "60/111",
     "cardName": "Flareon E4",
-    "fullDisplayName": "Flareon E4 060/111 Rising Rivals",
+    "fullDisplayName": "Flareon E4 60/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1958,18 +2361,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-060-low.png",
-    "imageHighSrc": "cards/pl2-060-high.png"
+    "imageHighSrc": "cards/pl2-060-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Fire Tail Slap",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8722",
-    "externalId": null,
+    "externalId": "pl2-59",
     "tcgdex_id": "pl2-59",
     "localId": "059",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "059/111",
+    "cardNumber": "59/111",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 059/111 Rising Rivals",
+    "fullDisplayName": "Eevee 59/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1991,18 +2404,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-059-low.png",
-    "imageHighSrc": "cards/pl2-059-high.png"
+    "imageHighSrc": "cards/pl2-059-high.png",
+    "attacks": [
+      {
+        "name": "Signs of Evolution",
+        "damage": null
+      },
+      {
+        "name": "Bounce",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8716",
-    "externalId": null,
+    "externalId": "pl2-58",
     "tcgdex_id": "pl2-58",
     "localId": "058",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "058/111",
+    "cardNumber": "58/111",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 058/111 Rising Rivals",
+    "fullDisplayName": "Carvanha 58/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2024,18 +2447,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-058-low.png",
-    "imageHighSrc": "cards/pl2-058-high.png"
+    "imageHighSrc": "cards/pl2-058-high.png",
+    "attacks": [
+      {
+        "name": "Scary Face",
+        "damage": null
+      },
+      {
+        "name": "Whirlpool",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8710",
-    "externalId": null,
+    "externalId": "pl2-57",
     "tcgdex_id": "pl2-57",
     "localId": "057",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "057/111",
+    "cardNumber": "57/111",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 057/111 Rising Rivals",
+    "fullDisplayName": "Aron 57/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2057,18 +2490,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-057-low.png",
-    "imageHighSrc": "cards/pl2-057-high.png"
+    "imageHighSrc": "cards/pl2-057-high.png",
+    "attacks": [
+      {
+        "name": "Iron Head",
+        "damage": "10×"
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8704",
-    "externalId": null,
+    "externalId": "pl2-56",
     "tcgdex_id": "pl2-56",
     "localId": "056",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "056/111",
+    "cardNumber": "56/111",
     "cardName": "Ambipom G",
-    "fullDisplayName": "Ambipom G 056/111 Rising Rivals",
+    "fullDisplayName": "Ambipom G 56/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2091,18 +2534,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-056-low.png",
-    "imageHighSrc": "cards/pl2-056-high.png"
+    "imageHighSrc": "cards/pl2-056-high.png",
+    "attacks": [
+      {
+        "name": "Tail Code",
+        "damage": null
+      },
+      {
+        "name": "Snap Attack",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8699",
-    "externalId": null,
+    "externalId": "pl2-55",
     "tcgdex_id": "pl2-55",
     "localId": "055",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "055/111",
+    "cardNumber": "55/111",
     "cardName": "Aerodactyl GL",
-    "fullDisplayName": "Aerodactyl GL 055/111 Rising Rivals",
+    "fullDisplayName": "Aerodactyl GL 55/111 Rising Rivals",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2125,18 +2578,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-055-low.png",
-    "imageHighSrc": "cards/pl2-055-high.png"
+    "imageHighSrc": "cards/pl2-055-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Primal Breath",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8693",
-    "externalId": null,
+    "externalId": "pl2-54",
     "tcgdex_id": "pl2-54",
     "localId": "054",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "054/111",
+    "cardNumber": "54/111",
     "cardName": "Whiscash E4",
-    "fullDisplayName": "Whiscash E4 054/111 Rising Rivals",
+    "fullDisplayName": "Whiscash E4 54/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2159,18 +2622,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-054-low.png",
-    "imageHighSrc": "cards/pl2-054-high.png"
+    "imageHighSrc": "cards/pl2-054-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Pulse",
+        "damage": "10"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8688",
-    "externalId": null,
+    "externalId": "pl2-53",
     "tcgdex_id": "pl2-53",
     "localId": "053",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "053/111",
+    "cardNumber": "53/111",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 053/111 Rising Rivals",
+    "fullDisplayName": "Vibrava 53/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2192,18 +2665,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-053-low.png",
-    "imageHighSrc": "cards/pl2-053-high.png"
+    "imageHighSrc": "cards/pl2-053-high.png",
+    "attacks": [
+      {
+        "name": "Energy Typhoon",
+        "damage": "20×"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8683",
-    "externalId": null,
+    "externalId": "pl2-52",
     "tcgdex_id": "pl2-52",
     "localId": "052",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "052/111",
+    "cardNumber": "52/111",
     "cardName": "Tropius",
-    "fullDisplayName": "Tropius 052/111 Rising Rivals",
+    "fullDisplayName": "Tropius 52/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2225,18 +2708,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-052-low.png",
-    "imageHighSrc": "cards/pl2-052-high.png"
+    "imageHighSrc": "cards/pl2-052-high.png",
+    "attacks": [
+      {
+        "name": "Fly",
+        "damage": "30"
+      },
+      {
+        "name": "Blessed Fruit",
+        "damage": null
+      },
+      {
+        "name": "Solarbeam",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8676",
-    "externalId": null,
+    "externalId": "pl2-51",
     "tcgdex_id": "pl2-51",
     "localId": "051",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "051/111",
+    "cardNumber": "51/111",
     "cardName": "Steelix GL",
-    "fullDisplayName": "Steelix GL 051/111 Rising Rivals",
+    "fullDisplayName": "Steelix GL 51/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2259,18 +2756,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-051-low.png",
-    "imageHighSrc": "cards/pl2-051-high.png"
+    "imageHighSrc": "cards/pl2-051-high.png",
+    "attacks": [
+      {
+        "name": "Mend",
+        "damage": null
+      },
+      {
+        "name": "Squeeze",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8670",
-    "externalId": null,
+    "externalId": "pl2-50",
     "tcgdex_id": "pl2-50",
     "localId": "050",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "050/111",
+    "cardNumber": "50/111",
     "cardName": "Starmie",
-    "fullDisplayName": "Starmie 050/111 Rising Rivals",
+    "fullDisplayName": "Starmie 50/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2292,18 +2799,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-050-low.png",
-    "imageHighSrc": "cards/pl2-050-high.png"
+    "imageHighSrc": "cards/pl2-050-high.png",
+    "attacks": [
+      {
+        "name": "Synchro Gain",
+        "damage": "20"
+      },
+      {
+        "name": "Powerful Spin",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8664",
-    "externalId": null,
+    "externalId": "pl2-49",
     "tcgdex_id": "pl2-49",
     "localId": "049",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "049/111",
+    "cardNumber": "49/111",
     "cardName": "Sharpedo",
-    "fullDisplayName": "Sharpedo 049/111 Rising Rivals",
+    "fullDisplayName": "Sharpedo 49/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2325,18 +2842,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-049-low.png",
-    "imageHighSrc": "cards/pl2-049-high.png"
+    "imageHighSrc": "cards/pl2-049-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "20"
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8660",
-    "externalId": null,
+    "externalId": "pl2-48",
     "tcgdex_id": "pl2-48",
     "localId": "048",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "048/111",
+    "cardNumber": "48/111",
     "cardName": "Scizor E4",
-    "fullDisplayName": "Scizor E4 048/111 Rising Rivals",
+    "fullDisplayName": "Scizor E4 48/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2359,18 +2886,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-048-low.png",
-    "imageHighSrc": "cards/pl2-048-high.png"
+    "imageHighSrc": "cards/pl2-048-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "20"
+      },
+      {
+        "name": "Crushing Blow",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8654",
-    "externalId": null,
+    "externalId": "pl2-47",
     "tcgdex_id": "pl2-47",
     "localId": "047",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "047/111",
+    "cardNumber": "47/111",
     "cardName": "Rapidash E4",
-    "fullDisplayName": "Rapidash E4 047/111 Rising Rivals",
+    "fullDisplayName": "Rapidash E4 47/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2393,18 +2930,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-047-low.png",
-    "imageHighSrc": "cards/pl2-047-high.png"
+    "imageHighSrc": "cards/pl2-047-high.png",
+    "attacks": [
+      {
+        "name": "Pickup Power",
+        "damage": null
+      },
+      {
+        "name": "Fire Mane",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8649",
-    "externalId": null,
+    "externalId": "pl2-46",
     "tcgdex_id": "pl2-46",
     "localId": "046",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "046/111",
+    "cardNumber": "46/111",
     "cardName": "Machamp GL",
-    "fullDisplayName": "Machamp GL 046/111 Rising Rivals",
+    "fullDisplayName": "Machamp GL 46/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2427,18 +2974,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-046-low.png",
-    "imageHighSrc": "cards/pl2-046-high.png"
+    "imageHighSrc": "cards/pl2-046-high.png",
+    "attacks": [
+      {
+        "name": "Cross-Cut",
+        "damage": "30+"
+      },
+      {
+        "name": "Brush Off",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8643",
-    "externalId": null,
+    "externalId": "pl2-45",
     "tcgdex_id": "pl2-45",
     "localId": "045",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "045/111",
+    "cardNumber": "45/111",
     "cardName": "Leafeon",
-    "fullDisplayName": "Leafeon 045/111 Rising Rivals",
+    "fullDisplayName": "Leafeon 45/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2460,18 +3017,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-045-low.png",
-    "imageHighSrc": "cards/pl2-045-high.png"
+    "imageHighSrc": "cards/pl2-045-high.png",
+    "attacks": [
+      {
+        "name": "Plus Energy",
+        "damage": "40"
+      },
+      {
+        "name": "Soothing Scent",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8640",
-    "externalId": null,
+    "externalId": "pl2-44",
     "tcgdex_id": "pl2-44",
     "localId": "044",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "044/111",
+    "cardNumber": "44/111",
     "cardName": "Lairon",
-    "fullDisplayName": "Lairon 044/111 Rising Rivals",
+    "fullDisplayName": "Lairon 44/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2493,18 +3060,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-044-low.png",
-    "imageHighSrc": "cards/pl2-044-high.png"
+    "imageHighSrc": "cards/pl2-044-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Metal",
+        "damage": "10+"
+      },
+      {
+        "name": "Granite Head",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8636",
-    "externalId": null,
+    "externalId": "pl2-43",
     "tcgdex_id": "pl2-43",
     "localId": "043",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "043/111",
+    "cardNumber": "43/111",
     "cardName": "Infernape E4",
-    "fullDisplayName": "Infernape E4 043/111 Rising Rivals",
+    "fullDisplayName": "Infernape E4 43/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2527,18 +3104,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-043-low.png",
-    "imageHighSrc": "cards/pl2-043-high.png"
+    "imageHighSrc": "cards/pl2-043-high.png",
+    "attacks": [
+      {
+        "name": "Split Bomb",
+        "damage": null
+      },
+      {
+        "name": "High Jump Kick",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8629",
-    "externalId": null,
+    "externalId": "pl2-42",
     "tcgdex_id": "pl2-42",
     "localId": "042",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "042/111",
+    "cardNumber": "42/111",
     "cardName": "Hippowdon E4",
-    "fullDisplayName": "Hippowdon E4 042/111 Rising Rivals",
+    "fullDisplayName": "Hippowdon E4 42/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2561,18 +3148,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-042-low.png",
-    "imageHighSrc": "cards/pl2-042-high.png"
+    "imageHighSrc": "cards/pl2-042-high.png",
+    "attacks": [
+      {
+        "name": "Bite and Crush",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8622",
-    "externalId": null,
+    "externalId": "pl2-41",
     "tcgdex_id": "pl2-41",
     "localId": "041",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "041/111",
+    "cardNumber": "41/111",
     "cardName": "Glaceon",
-    "fullDisplayName": "Glaceon 041/111 Rising Rivals",
+    "fullDisplayName": "Glaceon 41/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2594,18 +3187,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-041-low.png",
-    "imageHighSrc": "cards/pl2-041-high.png"
+    "imageHighSrc": "cards/pl2-041-high.png",
+    "attacks": [
+      {
+        "name": "Ice Blade",
+        "damage": null
+      },
+      {
+        "name": "Ice Bind",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8616",
-    "externalId": null,
+    "externalId": "pl2-40",
     "tcgdex_id": "pl2-40",
     "localId": "040",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "040/111",
+    "cardNumber": "40/111",
     "cardName": "Gengar GL",
-    "fullDisplayName": "Gengar GL 040/111 Rising Rivals",
+    "fullDisplayName": "Gengar GL 40/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2628,18 +3231,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-040-low.png",
-    "imageHighSrc": "cards/pl2-040-high.png"
+    "imageHighSrc": "cards/pl2-040-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "10"
+      },
+      {
+        "name": "Attack and Hide",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8611",
-    "externalId": null,
+    "externalId": "pl2-39",
     "tcgdex_id": "pl2-39",
     "localId": "039",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "039/111",
+    "cardNumber": "39/111",
     "cardName": "Electrode G",
-    "fullDisplayName": "Electrode G 039/111 Rising Rivals",
+    "fullDisplayName": "Electrode G 39/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2662,18 +3275,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-039-low.png",
-    "imageHighSrc": "cards/pl2-039-high.png"
+    "imageHighSrc": "cards/pl2-039-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Bomb",
+        "damage": null
+      },
+      {
+        "name": "Reflect Energy",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8604",
-    "externalId": null,
+    "externalId": "pl2-38",
     "tcgdex_id": "pl2-38",
     "localId": "038",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "038/111",
+    "cardNumber": "38/111",
     "cardName": "Alakazam E4",
-    "fullDisplayName": "Alakazam E4 038/111 Rising Rivals",
+    "fullDisplayName": "Alakazam E4 38/111 Rising Rivals",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2696,18 +3319,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-038-low.png",
-    "imageHighSrc": "cards/pl2-038-high.png"
+    "imageHighSrc": "cards/pl2-038-high.png",
+    "attacks": [
+      {
+        "name": "Recover",
+        "damage": null
+      },
+      {
+        "name": "Mysterious Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8597",
-    "externalId": null,
+    "externalId": "pl2-37",
     "tcgdex_id": "pl2-37",
     "localId": "037",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "037/111",
+    "cardNumber": "37/111",
     "cardName": "Yanmega E4",
-    "fullDisplayName": "Yanmega E4 037/111 Rising Rivals",
+    "fullDisplayName": "Yanmega E4 37/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2730,18 +3363,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-037-low.png",
-    "imageHighSrc": "cards/pl2-037-high.png"
+    "imageHighSrc": "cards/pl2-037-high.png",
+    "attacks": [
+      {
+        "name": "Skill Dive",
+        "damage": null
+      },
+      {
+        "name": "Whirlwind",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8591",
-    "externalId": null,
+    "externalId": "pl2-36",
     "tcgdex_id": "pl2-36",
     "localId": "036",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "036/111",
+    "cardNumber": "36/111",
     "cardName": "Walrein",
-    "fullDisplayName": "Walrein 036/111 Rising Rivals",
+    "fullDisplayName": "Walrein 36/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2763,18 +3406,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-036-low.png",
-    "imageHighSrc": "cards/pl2-036-high.png"
+    "imageHighSrc": "cards/pl2-036-high.png",
+    "attacks": [
+      {
+        "name": "Cold Crush",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "8585",
-    "externalId": null,
+    "externalId": "pl2-35",
     "tcgdex_id": "pl2-35",
     "localId": "035",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "035/111",
+    "cardNumber": "35/111",
     "cardName": "Vespiquen E4",
-    "fullDisplayName": "Vespiquen E4 035/111 Rising Rivals",
+    "fullDisplayName": "Vespiquen E4 35/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2797,18 +3446,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-035-low.png",
-    "imageHighSrc": "cards/pl2-035-high.png"
+    "imageHighSrc": "cards/pl2-035-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Needle",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8579",
-    "externalId": null,
+    "externalId": "pl2-34",
     "tcgdex_id": "pl2-34",
     "localId": "034",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "034/111",
+    "cardNumber": "34/111",
     "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 034/111 Rising Rivals",
+    "fullDisplayName": "Vaporeon 34/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2830,18 +3485,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-034-low.png",
-    "imageHighSrc": "cards/pl2-034-high.png"
+    "imageHighSrc": "cards/pl2-034-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "20"
+      },
+      {
+        "name": "Evolving Aqua",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8572",
-    "externalId": null,
+    "externalId": "pl2-33",
     "tcgdex_id": "pl2-33",
     "localId": "033",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "033/111",
+    "cardNumber": "33/111",
     "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 033/111 Rising Rivals",
+    "fullDisplayName": "Snorlax 33/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2863,18 +3528,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-033-low.png",
-    "imageHighSrc": "cards/pl2-033-high.png"
+    "imageHighSrc": "cards/pl2-033-high.png",
+    "attacks": [
+      {
+        "name": "Pick and Collect",
+        "damage": null
+      },
+      {
+        "name": "Roll Over",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8563",
-    "externalId": null,
+    "externalId": "pl2-32",
     "tcgdex_id": "pl2-32",
     "localId": "032",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "032/111",
+    "cardNumber": "32/111",
     "cardName": "Rhyperior E4",
-    "fullDisplayName": "Rhyperior E4 032/111 Rising Rivals",
+    "fullDisplayName": "Rhyperior E4 32/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2897,18 +3572,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-032-low.png",
-    "imageHighSrc": "cards/pl2-032-high.png"
+    "imageHighSrc": "cards/pl2-032-high.png",
+    "attacks": [
+      {
+        "name": "Double Lariat",
+        "damage": "30×"
+      },
+      {
+        "name": "Rock Tumble",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8557",
-    "externalId": null,
+    "externalId": "pl2-31",
     "tcgdex_id": "pl2-31",
     "localId": "031",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "031/111",
+    "cardNumber": "31/111",
     "cardName": "Raichu GL",
-    "fullDisplayName": "Raichu GL 031/111 Rising Rivals",
+    "fullDisplayName": "Raichu GL 31/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2931,18 +3616,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-031-low.png",
-    "imageHighSrc": "cards/pl2-031-high.png"
+    "imageHighSrc": "cards/pl2-031-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Throw",
+        "damage": null
+      },
+      {
+        "name": "Repeat Lightning",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8551",
-    "externalId": null,
+    "externalId": "pl2-30",
     "tcgdex_id": "pl2-30",
     "localId": "030",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "030/111",
+    "cardNumber": "30/111",
     "cardName": "Nidoqueen",
-    "fullDisplayName": "Nidoqueen 030/111 Rising Rivals",
+    "fullDisplayName": "Nidoqueen 30/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2964,18 +3659,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-030-low.png",
-    "imageHighSrc": "cards/pl2-030-high.png"
+    "imageHighSrc": "cards/pl2-030-high.png",
+    "attacks": [
+      {
+        "name": "Mega Punch",
+        "damage": "40"
+      },
+      {
+        "name": "Ruthless Tail",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "8545",
-    "externalId": null,
+    "externalId": "pl2-29",
     "tcgdex_id": "pl2-29",
     "localId": "029",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "029/111",
+    "cardNumber": "29/111",
     "cardName": "Nidoking",
-    "fullDisplayName": "Nidoking 029/111 Rising Rivals",
+    "fullDisplayName": "Nidoking 29/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2997,18 +3702,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-029-low.png",
-    "imageHighSrc": "cards/pl2-029-high.png"
+    "imageHighSrc": "cards/pl2-029-high.png",
+    "attacks": [
+      {
+        "name": "Fling Away",
+        "damage": "60"
+      },
+      {
+        "name": "Giga Horn",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "8539",
-    "externalId": null,
+    "externalId": "pl2-28",
     "tcgdex_id": "pl2-28",
     "localId": "028",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "028/111",
+    "cardNumber": "28/111",
     "cardName": "Mr. Mime E4",
-    "fullDisplayName": "Mr. Mime E4 028/111 Rising Rivals",
+    "fullDisplayName": "Mr. Mime E4 28/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3031,18 +3746,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-028-low.png",
-    "imageHighSrc": "cards/pl2-028-high.png"
+    "imageHighSrc": "cards/pl2-028-high.png",
+    "attacks": [
+      {
+        "name": "Magic Heal",
+        "damage": null
+      },
+      {
+        "name": "Barrier Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8528",
-    "externalId": null,
+    "externalId": "pl2-27",
     "tcgdex_id": "pl2-27",
     "localId": "027",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "027/111",
+    "cardNumber": "27/111",
     "cardName": "Mamoswine GL",
-    "fullDisplayName": "Mamoswine GL 027/111 Rising Rivals",
+    "fullDisplayName": "Mamoswine GL 27/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3065,18 +3790,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-027-low.png",
-    "imageHighSrc": "cards/pl2-027-high.png"
+    "imageHighSrc": "cards/pl2-027-high.png",
+    "attacks": [
+      {
+        "name": "Avalanche",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8521",
-    "externalId": null,
+    "externalId": "pl2-26",
     "tcgdex_id": "pl2-26",
     "localId": "026",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "026/111",
+    "cardNumber": "26/111",
     "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 026/111 Rising Rivals",
+    "fullDisplayName": "Jolteon 26/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3098,18 +3829,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-026-low.png",
-    "imageHighSrc": "cards/pl2-026-high.png"
+    "imageHighSrc": "cards/pl2-026-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Evolving Thunder",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8516",
-    "externalId": null,
+    "externalId": "pl2-25",
     "tcgdex_id": "pl2-25",
     "localId": "025",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "025/111",
+    "cardNumber": "25/111",
     "cardName": "Hippowdon",
-    "fullDisplayName": "Hippowdon 025/111 Rising Rivals",
+    "fullDisplayName": "Hippowdon 25/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3131,18 +3872,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-025-low.png",
-    "imageHighSrc": "cards/pl2-025-high.png"
+    "imageHighSrc": "cards/pl2-025-high.png",
+    "attacks": [
+      {
+        "name": "Save Sand",
+        "damage": "20+"
+      },
+      {
+        "name": "Groundquake",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "8509",
-    "externalId": null,
+    "externalId": "pl2-24",
     "tcgdex_id": "pl2-24",
     "localId": "024",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "024/111",
+    "cardNumber": "24/111",
     "cardName": "Heracross E4",
-    "fullDisplayName": "Heracross E4 024/111 Rising Rivals",
+    "fullDisplayName": "Heracross E4 24/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3165,18 +3916,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-024-low.png",
-    "imageHighSrc": "cards/pl2-024-high.png"
+    "imageHighSrc": "cards/pl2-024-high.png",
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "damage": null
+      },
+      {
+        "name": "Megahorn",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8500",
-    "externalId": null,
+    "externalId": "pl2-23",
     "tcgdex_id": "pl2-23",
     "localId": "023",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "023/111",
+    "cardNumber": "23/111",
     "cardName": "Golem E4",
-    "fullDisplayName": "Golem E4 023/111 Rising Rivals",
+    "fullDisplayName": "Golem E4 23/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3199,18 +3960,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-023-low.png",
-    "imageHighSrc": "cards/pl2-023-high.png"
+    "imageHighSrc": "cards/pl2-023-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "20+"
+      },
+      {
+        "name": "Double-edge",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "8492",
-    "externalId": null,
+    "externalId": "pl2-22",
     "tcgdex_id": "pl2-22",
     "localId": "022",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "022/111",
+    "cardNumber": "22/111",
     "cardName": "Gastrodon West Sea",
-    "fullDisplayName": "Gastrodon West Sea 022/111 Rising Rivals",
+    "fullDisplayName": "Gastrodon West Sea 22/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3232,18 +4003,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-022-low.png",
-    "imageHighSrc": "cards/pl2-022-high.png"
+    "imageHighSrc": "cards/pl2-022-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "50"
+      },
+      {
+        "name": "Muddy Bomb",
+        "damage": null
+      },
+      {
+        "name": "Raging Sea",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "8485",
-    "externalId": null,
+    "externalId": "pl2-21",
     "tcgdex_id": "pl2-21",
     "localId": "021",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "021/111",
+    "cardNumber": "21/111",
     "cardName": "Gastrodon East Sea",
-    "fullDisplayName": "Gastrodon East Sea 021/111 Rising Rivals",
+    "fullDisplayName": "Gastrodon East Sea 21/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3265,18 +4050,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-021-low.png",
-    "imageHighSrc": "cards/pl2-021-high.png"
+    "imageHighSrc": "cards/pl2-021-high.png",
+    "attacks": [
+      {
+        "name": "Calling Wave",
+        "damage": null
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8479",
-    "externalId": null,
+    "externalId": "pl2-20",
     "tcgdex_id": "pl2-20",
     "localId": "020",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "020/111",
+    "cardNumber": "20/111",
     "cardName": "Gallade E4",
-    "fullDisplayName": "Gallade E4 020/111 Rising Rivals",
+    "fullDisplayName": "Gallade E4 20/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3299,18 +4094,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-020-low.png",
-    "imageHighSrc": "cards/pl2-020-high.png"
+    "imageHighSrc": "cards/pl2-020-high.png",
+    "attacks": [
+      {
+        "name": "Chop Up",
+        "damage": "20"
+      },
+      {
+        "name": "Feint",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8474",
-    "externalId": null,
+    "externalId": "pl2-19",
     "tcgdex_id": "pl2-19",
     "localId": "019",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "019/111",
+    "cardNumber": "19/111",
     "cardName": "Flareon",
-    "fullDisplayName": "Flareon 019/111 Rising Rivals",
+    "fullDisplayName": "Flareon 19/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3332,18 +4137,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-019-low.png",
-    "imageHighSrc": "cards/pl2-019-high.png"
+    "imageHighSrc": "cards/pl2-019-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "30"
+      },
+      {
+        "name": "Evolving Flare",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "8468",
-    "externalId": null,
+    "externalId": "pl2-18",
     "tcgdex_id": "pl2-18",
     "localId": "018",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "018/111",
+    "cardNumber": "18/111",
     "cardName": "Espeon E4",
-    "fullDisplayName": "Espeon E4 018/111 Rising Rivals",
+    "fullDisplayName": "Espeon E4 18/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3366,18 +4181,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-018-low.png",
-    "imageHighSrc": "cards/pl2-018-high.png"
+    "imageHighSrc": "cards/pl2-018-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Psywave",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8458",
-    "externalId": null,
+    "externalId": "pl2-17",
     "tcgdex_id": "pl2-17",
     "localId": "017",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "017/111",
+    "cardNumber": "17/111",
     "cardName": "Drapion E4",
-    "fullDisplayName": "Drapion E4 017/111 Rising Rivals",
+    "fullDisplayName": "Drapion E4 17/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3400,18 +4225,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-017-low.png",
-    "imageHighSrc": "cards/pl2-017-high.png"
+    "imageHighSrc": "cards/pl2-017-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      },
+      {
+        "name": "Mega Impact",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "8449",
-    "externalId": null,
+    "externalId": "pl2-16",
     "tcgdex_id": "pl2-16",
     "localId": "016",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "016/111",
+    "cardNumber": "16/111",
     "cardName": "Bronzong E4",
-    "fullDisplayName": "Bronzong E4 016/111 Rising Rivals",
+    "fullDisplayName": "Bronzong E4 16/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3434,18 +4269,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl2-016-low.png",
-    "imageHighSrc": "cards/pl2-016-high.png"
+    "imageHighSrc": "cards/pl2-016-high.png",
+    "attacks": [
+      {
+        "name": "Hand Refresh",
+        "damage": null
+      },
+      {
+        "name": "Payback",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8440",
-    "externalId": null,
+    "externalId": "pl2-15",
     "tcgdex_id": "pl2-15",
     "localId": "015",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "015/111",
+    "cardNumber": "15/111",
     "cardName": "Beedrill",
-    "fullDisplayName": "Beedrill 015/111 Rising Rivals",
+    "fullDisplayName": "Beedrill 15/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3467,18 +4312,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-015-low.png",
-    "imageHighSrc": "cards/pl2-015-high.png"
+    "imageHighSrc": "cards/pl2-015-high.png",
+    "attacks": [
+      {
+        "name": "Needle Shock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8430",
-    "externalId": null,
+    "externalId": "pl2-14",
     "tcgdex_id": "pl2-14",
     "localId": "014",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "014/111",
+    "cardNumber": "14/111",
     "cardName": "Aggron",
-    "fullDisplayName": "Aggron 014/111 Rising Rivals",
+    "fullDisplayName": "Aggron 14/111 Rising Rivals",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3500,18 +4351,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-014-low.png",
-    "imageHighSrc": "cards/pl2-014-high.png"
+    "imageHighSrc": "cards/pl2-014-high.png",
+    "attacks": [
+      {
+        "name": "Return Blow",
+        "damage": null
+      },
+      {
+        "name": "Metal Fang",
+        "damage": "40"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "8422",
-    "externalId": null,
+    "externalId": "pl2-13",
     "tcgdex_id": "pl2-13",
     "localId": "013",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "013/111",
+    "cardNumber": "13/111",
     "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 013/111 Rising Rivals",
+    "fullDisplayName": "Shiftry 13/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3533,18 +4398,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-013-low.png",
-    "imageHighSrc": "cards/pl2-013-high.png"
+    "imageHighSrc": "cards/pl2-013-high.png",
+    "attacks": [
+      {
+        "name": "Conform",
+        "damage": "40"
+      },
+      {
+        "name": "Seal Off",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8413",
-    "externalId": null,
+    "externalId": "pl2-12",
     "tcgdex_id": "pl2-12",
     "localId": "012",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "012/111",
+    "cardNumber": "12/111",
     "cardName": "Roserade GL",
-    "fullDisplayName": "Roserade GL 012/111 Rising Rivals",
+    "fullDisplayName": "Roserade GL 12/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3567,18 +4442,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-012-low.png",
-    "imageHighSrc": "cards/pl2-012-high.png"
+    "imageHighSrc": "cards/pl2-012-high.png",
+    "attacks": [
+      {
+        "name": "Poison Bind",
+        "damage": "10"
+      },
+      {
+        "name": "Long Whip",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8404",
-    "externalId": null,
+    "externalId": "pl2-11",
     "tcgdex_id": "pl2-11",
     "localId": "011",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "011/111",
+    "cardNumber": "11/111",
     "cardName": "Rampardos GL",
-    "fullDisplayName": "Rampardos GL 011/111 Rising Rivals",
+    "fullDisplayName": "Rampardos GL 11/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3601,18 +4486,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-011-low.png",
-    "imageHighSrc": "cards/pl2-011-high.png"
+    "imageHighSrc": "cards/pl2-011-high.png",
+    "attacks": [
+      {
+        "name": "Trample",
+        "damage": null
+      },
+      {
+        "name": "Rend",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "8396",
-    "externalId": null,
+    "externalId": "pl2-10",
     "tcgdex_id": "pl2-10",
     "localId": "010",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "010/111",
+    "cardNumber": "10/111",
     "cardName": "Mismagius GL",
-    "fullDisplayName": "Mismagius GL 010/111 Rising Rivals",
+    "fullDisplayName": "Mismagius GL 10/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3635,18 +4530,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-010-low.png",
-    "imageHighSrc": "cards/pl2-010-high.png"
+    "imageHighSrc": "cards/pl2-010-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Removal",
+        "damage": "10"
+      },
+      {
+        "name": "Grudge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8381",
-    "externalId": null,
+    "externalId": "pl2-9",
     "tcgdex_id": "pl2-9",
     "localId": "009",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "009/111",
+    "cardNumber": "9/111",
     "cardName": "Luxray GL",
-    "fullDisplayName": "Luxray GL 009/111 Rising Rivals",
+    "fullDisplayName": "Luxray GL 9/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3669,18 +4574,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-009-low.png",
-    "imageHighSrc": "cards/pl2-009-high.png"
+    "imageHighSrc": "cards/pl2-009-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Trash Bolt",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "8370",
-    "externalId": null,
+    "externalId": "pl2-8",
     "tcgdex_id": "pl2-8",
     "localId": "008",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "008/111",
+    "cardNumber": "8/111",
     "cardName": "Lucario GL",
-    "fullDisplayName": "Lucario GL 008/111 Rising Rivals",
+    "fullDisplayName": "Lucario GL 8/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3703,18 +4618,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-008-low.png",
-    "imageHighSrc": "cards/pl2-008-high.png"
+    "imageHighSrc": "cards/pl2-008-high.png",
+    "attacks": [
+      {
+        "name": "Combo Throw",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8362",
-    "externalId": null,
+    "externalId": "pl2-7",
     "tcgdex_id": "pl2-7",
     "localId": "007",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "007/111",
+    "cardNumber": "7/111",
     "cardName": "Jirachi",
-    "fullDisplayName": "Jirachi 007/111 Rising Rivals",
+    "fullDisplayName": "Jirachi 7/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3736,18 +4657,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-007-low.png",
-    "imageHighSrc": "cards/pl2-007-high.png"
+    "imageHighSrc": "cards/pl2-007-high.png",
+    "attacks": [
+      {
+        "name": "Detour",
+        "damage": null
+      },
+      {
+        "name": "Swift",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8352",
-    "externalId": null,
+    "externalId": "pl2-6",
     "tcgdex_id": "pl2-6",
     "localId": "006",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "006/111",
+    "cardNumber": "6/111",
     "cardName": "Froslass GL",
-    "fullDisplayName": "Froslass GL 006/111 Rising Rivals",
+    "fullDisplayName": "Froslass GL 6/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3770,18 +4701,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-006-low.png",
-    "imageHighSrc": "cards/pl2-006-high.png"
+    "imageHighSrc": "cards/pl2-006-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Inducer",
+        "damage": null
+      },
+      {
+        "name": "Wake-Up Slap",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8341",
-    "externalId": null,
+    "externalId": "pl2-5",
     "tcgdex_id": "pl2-5",
     "localId": "005",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "005/111",
+    "cardNumber": "5/111",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 005/111 Rising Rivals",
+    "fullDisplayName": "Flygon 5/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3803,18 +4744,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-005-low.png",
-    "imageHighSrc": "cards/pl2-005-high.png"
+    "imageHighSrc": "cards/pl2-005-high.png",
+    "attacks": [
+      {
+        "name": "Sand Wall",
+        "damage": "40"
+      },
+      {
+        "name": "Power Swing",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "8331",
-    "externalId": null,
+    "externalId": "pl2-4",
     "tcgdex_id": "pl2-4",
     "localId": "004",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "004/111",
+    "cardNumber": "4/111",
     "cardName": "Floatzel GL",
-    "fullDisplayName": "Floatzel GL 004/111 Rising Rivals",
+    "fullDisplayName": "Floatzel GL 4/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3837,18 +4788,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-004-low.png",
-    "imageHighSrc": "cards/pl2-004-high.png"
+    "imageHighSrc": "cards/pl2-004-high.png",
+    "attacks": [
+      {
+        "name": "Incite",
+        "damage": null
+      },
+      {
+        "name": "Giant Wave",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8321",
-    "externalId": null,
+    "externalId": "pl2-3",
     "tcgdex_id": "pl2-3",
     "localId": "003",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "003/111",
+    "cardNumber": "3/111",
     "cardName": "Darkrai G",
-    "fullDisplayName": "Darkrai G 003/111 Rising Rivals",
+    "fullDisplayName": "Darkrai G 3/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3871,18 +4832,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-003-low.png",
-    "imageHighSrc": "cards/pl2-003-high.png"
+    "imageHighSrc": "cards/pl2-003-high.png",
+    "attacks": [
+      {
+        "name": "Darkness Sleep",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8309",
-    "externalId": null,
+    "externalId": "pl2-2",
     "tcgdex_id": "pl2-2",
     "localId": "002",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "002/111",
+    "cardNumber": "2/111",
     "cardName": "Bastiodon GL",
-    "fullDisplayName": "Bastiodon GL 002/111 Rising Rivals",
+    "fullDisplayName": "Bastiodon GL 2/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3905,18 +4872,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-002-low.png",
-    "imageHighSrc": "cards/pl2-002-high.png"
+    "imageHighSrc": "cards/pl2-002-high.png",
+    "attacks": [
+      {
+        "name": "Bounce Back",
+        "damage": "30"
+      },
+      {
+        "name": "Smack Attack",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8307",
-    "externalId": null,
+    "externalId": "pl2-1",
     "tcgdex_id": "pl2-1",
     "localId": "001",
     "setCode": "pl2",
     "setTcgdexId": "pl2",
-    "cardNumber": "001/111",
+    "cardNumber": "1/111",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 001/111 Rising Rivals",
+    "fullDisplayName": "Arcanine 1/111 Rising Rivals",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3938,6 +4915,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl2-001-low.png",
-    "imageHighSrc": "cards/pl2-001-high.png"
+    "imageHighSrc": "cards/pl2-001-high.png",
+    "attacks": [
+      {
+        "name": "Burn Out",
+        "damage": "30+"
+      },
+      {
+        "name": "Flames of Rage",
+        "damage": "60+"
+      }
+    ]
   }
 ]

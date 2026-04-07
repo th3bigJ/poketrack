@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "22012",
-    "externalId": null,
+    "externalId": "mcd15-12",
     "tcgdex_id": "2015xy-12",
     "localId": "012",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "012/12",
+    "cardNumber": "12/12",
     "cardName": "Skitty",
-    "fullDisplayName": "Skitty 012/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Skitty 12/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-012-low.jpg",
-    "imageHighSrc": "cards/2015xy-012-low.jpg"
+    "imageHighSrc": "cards/2015xy-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Charm",
+        "damage": null
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22011",
-    "externalId": null,
+    "externalId": "mcd15-11",
     "tcgdex_id": "2015xy-11",
     "localId": "011",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "011/12",
+    "cardNumber": "11/12",
     "cardName": "Zigzagoon",
-    "fullDisplayName": "Zigzagoon 011/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Zigzagoon 11/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-011-low.jpg",
-    "imageHighSrc": "cards/2015xy-011-low.jpg"
+    "imageHighSrc": "cards/2015xy-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22010",
-    "externalId": null,
+    "externalId": "mcd15-10",
     "tcgdex_id": "2015xy-10",
     "localId": "010",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "010/12",
+    "cardNumber": "10/12",
     "cardName": "Marill",
-    "fullDisplayName": "Marill 010/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Marill 10/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-010-low.jpg",
-    "imageHighSrc": "cards/2015xy-010-low.jpg"
+    "imageHighSrc": "cards/2015xy-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22009",
-    "externalId": null,
+    "externalId": "mcd15-9",
     "tcgdex_id": "2015xy-9",
     "localId": "009",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "009/12",
+    "cardNumber": "9/12",
     "cardName": "Meditite",
-    "fullDisplayName": "Meditite 009/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Meditite 9/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +159,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-009-low.jpg",
-    "imageHighSrc": "cards/2015xy-009-low.jpg"
+    "imageHighSrc": "cards/2015xy-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22008",
-    "externalId": null,
+    "externalId": "mcd15-8",
     "tcgdex_id": "2015xy-8",
     "localId": "008",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "008/12",
+    "cardNumber": "8/12",
     "cardName": "Rhyhorn",
-    "fullDisplayName": "Rhyhorn 008/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Rhyhorn 8/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +198,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-008-low.jpg",
-    "imageHighSrc": "cards/2015xy-008-low.jpg"
+    "imageHighSrc": "cards/2015xy-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "22007",
-    "externalId": null,
+    "externalId": "mcd15-7",
     "tcgdex_id": "2015xy-7",
     "localId": "007",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "007/12",
+    "cardNumber": "7/12",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 007/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Electrike 7/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +237,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-007-low.jpg",
-    "imageHighSrc": "cards/2015xy-007-low.jpg"
+    "imageHighSrc": "cards/2015xy-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22006",
-    "externalId": null,
+    "externalId": "mcd15-6",
     "tcgdex_id": "2015xy-6",
     "localId": "006",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "006/12",
+    "cardNumber": "6/12",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 006/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Pikachu 6/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +280,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-006-low.jpg",
-    "imageHighSrc": "cards/2015xy-006-low.jpg"
+    "imageHighSrc": "cards/2015xy-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Tail Whip",
+        "damage": null
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "22005",
-    "externalId": null,
+    "externalId": "mcd15-5",
     "tcgdex_id": "2015xy-5",
     "localId": "005",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "005/12",
+    "cardNumber": "5/12",
     "cardName": "Mudkip",
-    "fullDisplayName": "Mudkip 005/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Mudkip 5/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +323,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-005-low.jpg",
-    "imageHighSrc": "cards/2015xy-005-low.jpg"
+    "imageHighSrc": "cards/2015xy-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22004",
-    "externalId": null,
+    "externalId": "mcd15-4",
     "tcgdex_id": "2015xy-4",
     "localId": "004",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "004/12",
+    "cardNumber": "4/12",
     "cardName": "Staryu",
-    "fullDisplayName": "Staryu 004/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Staryu 4/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +366,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-004-low.jpg",
-    "imageHighSrc": "cards/2015xy-004-low.jpg"
+    "imageHighSrc": "cards/2015xy-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22003",
-    "externalId": null,
+    "externalId": "mcd15-3",
     "tcgdex_id": "2015xy-3",
     "localId": "003",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "003/12",
+    "cardNumber": "3/12",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 003/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Torchic 3/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +405,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-003-low.jpg",
-    "imageHighSrc": "cards/2015xy-003-low.jpg"
+    "imageHighSrc": "cards/2015xy-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22002",
-    "externalId": null,
+    "externalId": "mcd15-2",
     "tcgdex_id": "2015xy-2",
     "localId": "002",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "002/12",
+    "cardNumber": "2/12",
     "cardName": "Lotad",
-    "fullDisplayName": "Lotad 002/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Lotad 2/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +444,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-002-low.jpg",
-    "imageHighSrc": "cards/2015xy-002-low.jpg"
+    "imageHighSrc": "cards/2015xy-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22001",
-    "externalId": null,
+    "externalId": "mcd15-1",
     "tcgdex_id": "2015xy-1",
     "localId": "001",
     "setCode": "2015xy",
     "setTcgdexId": "2015xy",
-    "cardNumber": "001/12",
+    "cardNumber": "1/12",
     "cardName": "Treecko",
-    "fullDisplayName": "Treecko 001/12 Macdonald's Collection 2015",
+    "fullDisplayName": "Treecko 1/12 Macdonald's Collection 2015",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,6 +483,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2015xy-001-low.jpg",
-    "imageHighSrc": "cards/2015xy-001-low.jpg"
+    "imageHighSrc": "cards/2015xy-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   }
 ]

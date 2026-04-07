@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9250",
-    "externalId": null,
+    "externalId": "pop9-17",
     "tcgdex_id": "pop9-17",
     "localId": "017",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "017/17",
+    "cardNumber": "17/17",
     "cardName": "Turtwig",
-    "fullDisplayName": "Turtwig 017/17 POP Series 9",
+    "fullDisplayName": "Turtwig 17/17 POP Series 9",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-017-low.png",
-    "imageHighSrc": "cards/pop9-017-high.png"
+    "imageHighSrc": "cards/pop9-017-high.png",
+    "attacks": [
+      {
+        "name": "Absorb",
+        "damage": "10"
+      },
+      {
+        "name": "Parboil",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "9240",
-    "externalId": null,
+    "externalId": "pop9-16",
     "tcgdex_id": "pop9-16",
     "localId": "016",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "016/17",
+    "cardNumber": "16/17",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 016/17 POP Series 9",
+    "fullDisplayName": "Piplup 16/17 POP Series 9",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-016-low.png",
-    "imageHighSrc": "cards/pop9-016-high.png"
+    "imageHighSrc": "cards/pop9-016-high.png",
+    "attacks": [
+      {
+        "name": "Water Sport",
+        "damage": "10+"
+      },
+      {
+        "name": "Wavelet",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9231",
-    "externalId": null,
+    "externalId": "pop9-15",
     "tcgdex_id": "pop9-15",
     "localId": "015",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "015/17",
+    "cardNumber": "15/17",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 015/17 POP Series 9",
+    "fullDisplayName": "Pikachu 15/17 POP Series 9",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-015-low.png",
-    "imageHighSrc": "cards/pop9-015-high.png"
+    "imageHighSrc": "cards/pop9-015-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Numb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9222",
-    "externalId": null,
+    "externalId": "pop9-14",
     "tcgdex_id": "pop9-14",
     "localId": "014",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "014/17",
+    "cardNumber": "14/17",
     "cardName": "Gible",
-    "fullDisplayName": "Gible 014/17 POP Series 9",
+    "fullDisplayName": "Gible 14/17 POP Series 9",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +159,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-014-low.png",
-    "imageHighSrc": "cards/pop9-014-high.png"
+    "imageHighSrc": "cards/pop9-014-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9215",
-    "externalId": null,
+    "externalId": "pop9-13",
     "tcgdex_id": "pop9-13",
     "localId": "013",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "013/17",
+    "cardNumber": "13/17",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 013/17 POP Series 9",
+    "fullDisplayName": "Chimchar 13/17 POP Series 9",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +198,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-013-low.png",
-    "imageHighSrc": "cards/pop9-013-high.png"
+    "imageHighSrc": "cards/pop9-013-high.png",
+    "attacks": [
+      {
+        "name": "Serial Swipes",
+        "damage": "10×"
+      },
+      {
+        "name": "Sleepy",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "9205",
-    "externalId": null,
+    "externalId": "pop9-12",
     "tcgdex_id": "pop9-12",
     "localId": "012",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "012/17",
+    "cardNumber": "12/17",
     "cardName": "Buneary",
-    "fullDisplayName": "Buneary 012/17 POP Series 9",
+    "fullDisplayName": "Buneary 12/17 POP Series 9",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +241,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-012-low.png",
-    "imageHighSrc": "cards/pop9-012-high.png"
+    "imageHighSrc": "cards/pop9-012-high.png",
+    "attacks": [
+      {
+        "name": "Dizzy Punch",
+        "damage": "10×"
+      },
+      {
+        "name": "Defense Curl",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9196",
-    "externalId": null,
+    "externalId": "pop9-11",
     "tcgdex_id": "pop9-11",
     "localId": "011",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "011/17",
+    "cardNumber": "11/17",
     "cardName": "Pichu",
-    "fullDisplayName": "Pichu 011/17 POP Series 9",
+    "fullDisplayName": "Pichu 11/17 POP Series 9",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +284,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-011-low.png",
-    "imageHighSrc": "cards/pop9-011-high.png"
+    "imageHighSrc": "cards/pop9-011-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9188",
-    "externalId": null,
+    "externalId": "pop9-10",
     "tcgdex_id": "pop9-10",
     "localId": "010",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "010/17",
+    "cardNumber": "10/17",
     "cardName": "Pachirisu",
-    "fullDisplayName": "Pachirisu 010/17 POP Series 9",
+    "fullDisplayName": "Pachirisu 10/17 POP Series 9",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +323,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-010-low.png",
-    "imageHighSrc": "cards/pop9-010-high.png"
+    "imageHighSrc": "cards/pop9-010-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Berry",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9179",
-    "externalId": null,
+    "externalId": "pop9-9",
     "tcgdex_id": "pop9-9",
     "localId": "009",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "009/17",
+    "cardNumber": "9/17",
     "cardName": "Lopunny",
-    "fullDisplayName": "Lopunny 009/17 POP Series 9",
+    "fullDisplayName": "Lopunny 9/17 POP Series 9",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -294,18 +366,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-009-low.png",
-    "imageHighSrc": "cards/pop9-009-high.png"
+    "imageHighSrc": "cards/pop9-009-high.png",
+    "attacks": [
+      {
+        "name": "Jump Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Jazzed",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9170",
-    "externalId": null,
+    "externalId": "pop9-8",
     "tcgdex_id": "pop9-8",
     "localId": "008",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "008/17",
+    "cardNumber": "8/17",
     "cardName": "Gabite",
-    "fullDisplayName": "Gabite 008/17 POP Series 9",
+    "fullDisplayName": "Gabite 8/17 POP Series 9",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -327,18 +409,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-008-low.png",
-    "imageHighSrc": "cards/pop9-008-high.png"
+    "imageHighSrc": "cards/pop9-008-high.png",
+    "attacks": [
+      {
+        "name": "Burrow",
+        "damage": null
+      },
+      {
+        "name": "Distored Wave",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9161",
-    "externalId": null,
+    "externalId": "pop9-7",
     "tcgdex_id": "pop9-7",
     "localId": "007",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "007/17",
+    "cardNumber": "7/17",
     "cardName": "Croagunk",
-    "fullDisplayName": "Croagunk 007/17 POP Series 9",
+    "fullDisplayName": "Croagunk 7/17 POP Series 9",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +452,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-007-low.png",
-    "imageHighSrc": "cards/pop9-007-high.png"
+    "imageHighSrc": "cards/pop9-007-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": null
+      },
+      {
+        "name": "Nimble",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9153",
-    "externalId": null,
+    "externalId": "pop9-6",
     "tcgdex_id": "pop9-6",
     "localId": "006",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "006/17",
+    "cardNumber": "6/17",
     "cardName": "Buizel",
-    "fullDisplayName": "Buizel 006/17 POP Series 9",
+    "fullDisplayName": "Buizel 6/17 POP Series 9",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,18 +495,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-006-low.png",
-    "imageHighSrc": "cards/pop9-006-high.png"
+    "imageHighSrc": "cards/pop9-006-high.png",
+    "attacks": [
+      {
+        "name": "Whirlpool",
+        "damage": null
+      },
+      {
+        "name": "Super Fast",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9144",
-    "externalId": null,
+    "externalId": "pop9-5",
     "tcgdex_id": "pop9-5",
     "localId": "005",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "005/17",
+    "cardNumber": "5/17",
     "cardName": "Rotom",
-    "fullDisplayName": "Rotom 005/17 POP Series 9",
+    "fullDisplayName": "Rotom 5/17 POP Series 9",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -426,18 +538,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-005-low.png",
-    "imageHighSrc": "cards/pop9-005-high.png"
+    "imageHighSrc": "cards/pop9-005-high.png",
+    "attacks": [
+      {
+        "name": "Poltergeist",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "9137",
-    "externalId": null,
+    "externalId": "pop9-4",
     "tcgdex_id": "pop9-4",
     "localId": "004",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "004/17",
+    "cardNumber": "4/17",
     "cardName": "Regigigas",
-    "fullDisplayName": "Regigigas 004/17 POP Series 9",
+    "fullDisplayName": "Regigigas 4/17 POP Series 9",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -459,18 +577,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-004-low.png",
-    "imageHighSrc": "cards/pop9-004-high.png"
+    "imageHighSrc": "cards/pop9-004-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      },
+      {
+        "name": "Double Stomp",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "9126",
-    "externalId": null,
+    "externalId": "pop9-3",
     "tcgdex_id": "pop9-3",
     "localId": "003",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "003/17",
+    "cardNumber": "3/17",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 003/17 POP Series 9",
+    "fullDisplayName": "Raichu 3/17 POP Series 9",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -492,18 +620,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-003-low.png",
-    "imageHighSrc": "cards/pop9-003-high.png"
+    "imageHighSrc": "cards/pop9-003-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "30×"
+      },
+      {
+        "name": "High Volt",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9119",
-    "externalId": null,
+    "externalId": "pop9-2",
     "tcgdex_id": "pop9-2",
     "localId": "002",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "002/17",
+    "cardNumber": "2/17",
     "cardName": "Manaphy",
-    "fullDisplayName": "Manaphy 002/17 POP Series 9",
+    "fullDisplayName": "Manaphy 2/17 POP Series 9",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -525,18 +663,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-002-low.png",
-    "imageHighSrc": "cards/pop9-002-high.png"
+    "imageHighSrc": "cards/pop9-002-high.png",
+    "attacks": [
+      {
+        "name": "Dive",
+        "damage": null
+      },
+      {
+        "name": "Water Glow",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9110",
-    "externalId": null,
+    "externalId": "pop9-1",
     "tcgdex_id": "pop9-1",
     "localId": "001",
     "setCode": "pop9",
     "setTcgdexId": "pop9",
-    "cardNumber": "001/17",
+    "cardNumber": "1/17",
     "cardName": "Garchomp",
-    "fullDisplayName": "Garchomp 001/17 POP Series 9",
+    "fullDisplayName": "Garchomp 1/17 POP Series 9",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -558,6 +706,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop9-001-low.png",
-    "imageHighSrc": "cards/pop9-001-high.png"
+    "imageHighSrc": "cards/pop9-001-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Rage",
+        "damage": "80"
+      },
+      {
+        "name": "Jet Sword",
+        "damage": "100"
+      }
+    ]
   }
 ]

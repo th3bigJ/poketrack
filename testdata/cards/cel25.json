@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "3410",
-    "externalId": null,
+    "externalId": "cel25-25",
     "tcgdex_id": "cel25-25",
     "localId": "25",
     "setCode": "cel25",
@@ -30,11 +30,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-025-low.png",
-    "imageHighSrc": "cards/cel25-025-high.png"
+    "imageHighSrc": "cards/cel25-025-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3409",
-    "externalId": null,
+    "externalId": "cel25-24",
     "tcgdex_id": "cel25-24",
     "localId": "24",
     "setCode": "cel25",
@@ -59,11 +65,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-024-low.png",
-    "imageHighSrc": "cards/cel25-024-high.png"
+    "imageHighSrc": "cards/cel25-024-high.png",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "3408",
-    "externalId": null,
+    "externalId": "cel25-23",
     "tcgdex_id": "cel25-23",
     "localId": "23",
     "setCode": "cel25",
@@ -88,11 +95,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-023-low.png",
-    "imageHighSrc": "cards/cel25-023-high.png"
+    "imageHighSrc": "cards/cel25-023-high.png",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "3407",
-    "externalId": null,
+    "externalId": "cel25-22",
     "tcgdex_id": "cel25-22",
     "localId": "22",
     "setCode": "cel25",
@@ -121,11 +129,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-022-low.png",
-    "imageHighSrc": "cards/cel25-022-high.png"
+    "imageHighSrc": "cards/cel25-022-high.png",
+    "attacks": [
+      {
+        "name": "Aero Ball",
+        "damage": "20×"
+      },
+      {
+        "name": "Deep Crush",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "3406",
-    "externalId": null,
+    "externalId": "cel25-21",
     "tcgdex_id": "cel25-21",
     "localId": "21",
     "setCode": "cel25",
@@ -154,11 +172,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-021-low.png",
-    "imageHighSrc": "cards/cel25-021-high.png"
+    "imageHighSrc": "cards/cel25-021-high.png",
+    "attacks": [
+      {
+        "name": "Solar Geyser",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3405",
-    "externalId": null,
+    "externalId": "cel25-20",
     "tcgdex_id": "cel25-20",
     "localId": "20",
     "setCode": "cel25",
@@ -187,11 +211,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-020-low.png",
-    "imageHighSrc": "cards/cel25-020-high.png"
+    "imageHighSrc": "cards/cel25-020-high.png",
+    "attacks": [
+      {
+        "name": "Temporal Backflow",
+        "damage": null
+      },
+      {
+        "name": "Metal Blast",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3404",
-    "externalId": null,
+    "externalId": "cel25-19",
     "tcgdex_id": "cel25-19",
     "localId": "19",
     "setCode": "cel25",
@@ -220,11 +254,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-019-low.png",
-    "imageHighSrc": "cards/cel25-019-high.png"
+    "imageHighSrc": "cards/cel25-019-high.png",
+    "attacks": [
+      {
+        "name": "Cry of Destruction",
+        "damage": null
+      },
+      {
+        "name": "Dark Feather",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3403",
-    "externalId": null,
+    "externalId": "cel25-18",
     "tcgdex_id": "cel25-18",
     "localId": "18",
     "setCode": "cel25",
@@ -254,11 +298,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-018-low.png",
-    "imageHighSrc": "cards/cel25-018-high.png"
+    "imageHighSrc": "cards/cel25-018-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Impact",
+        "damage": "150"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3402",
-    "externalId": null,
+    "externalId": "cel25-17",
     "tcgdex_id": "cel25-17",
     "localId": "17",
     "setCode": "cel25",
@@ -287,11 +338,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-017-low.png",
-    "imageHighSrc": "cards/cel25-017-high.png"
+    "imageHighSrc": "cards/cel25-017-high.png",
+    "attacks": [
+      {
+        "name": "Magma Volcano",
+        "damage": "80×"
+      },
+      {
+        "name": "Massive Rend",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "3401",
-    "externalId": null,
+    "externalId": "cel25-16",
     "tcgdex_id": "cel25-16",
     "localId": "16",
     "setCode": "cel25",
@@ -321,11 +382,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-016-low.png",
-    "imageHighSrc": "cards/cel25-016-high.png"
+    "imageHighSrc": "cards/cel25-016-high.png",
+    "attacks": [
+      {
+        "name": "Storm Slash",
+        "damage": "60+"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3400",
-    "externalId": null,
+    "externalId": "cel25-15",
     "tcgdex_id": "cel25-15",
     "localId": "15",
     "setCode": "cel25",
@@ -354,11 +422,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-015-low.png",
-    "imageHighSrc": "cards/cel25-015-high.png"
+    "imageHighSrc": "cards/cel25-015-high.png",
+    "attacks": [
+      {
+        "name": "Lunar Pain",
+        "damage": null
+      },
+      {
+        "name": "Psychic Shot",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "3399",
-    "externalId": null,
+    "externalId": "cel25-14",
     "tcgdex_id": "cel25-14",
     "localId": "14",
     "setCode": "cel25",
@@ -387,11 +465,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-014-low.png",
-    "imageHighSrc": "cards/cel25-014-high.png"
+    "imageHighSrc": "cards/cel25-014-high.png",
+    "attacks": [
+      {
+        "name": "Star Protection",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3398",
-    "externalId": null,
+    "externalId": "cel25-13",
     "tcgdex_id": "cel25-13",
     "localId": "13",
     "setCode": "cel25",
@@ -420,11 +504,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-013-low.png",
-    "imageHighSrc": "cards/cel25-013-high.png"
+    "imageHighSrc": "cards/cel25-013-high.png",
+    "attacks": [
+      {
+        "name": "Star Protection",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3397",
-    "externalId": null,
+    "externalId": "cel25-12",
     "tcgdex_id": "cel25-12",
     "localId": "12",
     "setCode": "cel25",
@@ -453,11 +543,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-012-low.png",
-    "imageHighSrc": "cards/cel25-012-high.png"
+    "imageHighSrc": "cards/cel25-012-high.png",
+    "attacks": [
+      {
+        "name": "Breath of Life",
+        "damage": null
+      },
+      {
+        "name": "Aurora Horns",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3396",
-    "externalId": null,
+    "externalId": "cel25-11",
     "tcgdex_id": "cel25-11",
     "localId": "11",
     "setCode": "cel25",
@@ -486,11 +586,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-011-low.png",
-    "imageHighSrc": "cards/cel25-011-high.png"
+    "imageHighSrc": "cards/cel25-011-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3395",
-    "externalId": null,
+    "externalId": "cel25-10",
     "tcgdex_id": "cel25-10",
     "localId": "10",
     "setCode": "cel25",
@@ -519,11 +625,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-010-low.png",
-    "imageHighSrc": "cards/cel25-010-high.png"
+    "imageHighSrc": "cards/cel25-010-high.png",
+    "attacks": [
+      {
+        "name": "Field Crush",
+        "damage": "30"
+      },
+      {
+        "name": "White Thunder",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3394",
-    "externalId": null,
+    "externalId": "cel25-9",
     "tcgdex_id": "cel25-9",
     "localId": "9",
     "setCode": "cel25",
@@ -552,11 +668,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-009-low.png",
-    "imageHighSrc": "cards/cel25-009-high.png"
+    "imageHighSrc": "cards/cel25-009-high.png",
+    "attacks": [
+      {
+        "name": "Max Surfer",
+        "damage": "160"
+      }
+    ],
+    "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "3393",
-    "externalId": null,
+    "externalId": "cel25-8",
     "tcgdex_id": "cel25-8",
     "localId": "8",
     "setCode": "cel25",
@@ -586,11 +709,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-008-low.png",
-    "imageHighSrc": "cards/cel25-008-high.png"
+    "imageHighSrc": "cards/cel25-008-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "150"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3392",
-    "externalId": null,
+    "externalId": "cel25-7",
     "tcgdex_id": "cel25-7",
     "localId": "7",
     "setCode": "cel25",
@@ -619,11 +749,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-007-low.png",
-    "imageHighSrc": "cards/cel25-007-high.png"
+    "imageHighSrc": "cards/cel25-007-high.png",
+    "attacks": [
+      {
+        "name": "Max Balloon",
+        "damage": "160"
+      }
+    ],
+    "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "3391",
-    "externalId": null,
+    "externalId": "cel25-6",
     "tcgdex_id": "cel25-6",
     "localId": "6",
     "setCode": "cel25",
@@ -653,11 +790,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-006-low.png",
-    "imageHighSrc": "cards/cel25-006-high.png"
+    "imageHighSrc": "cards/cel25-006-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Shock",
+        "damage": "20"
+      },
+      {
+        "name": "Fly",
+        "damage": "120"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3390",
-    "externalId": null,
+    "externalId": "cel25-5",
     "tcgdex_id": "cel25-5",
     "localId": "5",
     "setCode": "cel25",
@@ -686,11 +834,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-005-low.png",
-    "imageHighSrc": "cards/cel25-005-high.png"
+    "imageHighSrc": "cards/cel25-005-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3389",
-    "externalId": null,
+    "externalId": "cel25-4",
     "tcgdex_id": "cel25-4",
     "localId": "4",
     "setCode": "cel25",
@@ -719,11 +877,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-004-low.png",
-    "imageHighSrc": "cards/cel25-004-high.png"
+    "imageHighSrc": "cards/cel25-004-high.png",
+    "attacks": [
+      {
+        "name": "Overdrive Smash",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3388",
-    "externalId": null,
+    "externalId": "cel25-3",
     "tcgdex_id": "cel25-3",
     "localId": "3",
     "setCode": "cel25",
@@ -752,11 +916,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-003-low.png",
-    "imageHighSrc": "cards/cel25-003-high.png"
+    "imageHighSrc": "cards/cel25-003-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Storm",
+        "damage": null
+      },
+      {
+        "name": "Surf",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "3387",
-    "externalId": null,
+    "externalId": "cel25-2",
     "tcgdex_id": "cel25-2",
     "localId": "2",
     "setCode": "cel25",
@@ -785,11 +959,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-002-low.png",
-    "imageHighSrc": "cards/cel25-002-high.png"
+    "imageHighSrc": "cards/cel25-002-high.png",
+    "attacks": [
+      {
+        "name": "Scorching Wind",
+        "damage": null
+      },
+      {
+        "name": "Black Flame",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3386",
-    "externalId": null,
+    "externalId": "cel25-1",
     "tcgdex_id": "cel25-1",
     "localId": "1",
     "setCode": "cel25",
@@ -818,6 +1002,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25-001-low.png",
-    "imageHighSrc": "cards/cel25-001-high.png"
+    "imageHighSrc": "cards/cel25-001-high.png",
+    "attacks": [
+      {
+        "name": "Sacred Fire",
+        "damage": null
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "120"
+      }
+    ]
   }
 ]

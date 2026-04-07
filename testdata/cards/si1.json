@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9260",
-    "externalId": null,
+    "externalId": "si1-18",
     "tcgdex_id": "si1-18",
     "localId": "018",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "018/18",
+    "cardNumber": "18/18",
     "cardName": "Primeape",
-    "fullDisplayName": "Primeape 018/18 Southern Islands",
+    "fullDisplayName": "Primeape 18/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-018-low.png",
-    "imageHighSrc": "cards/si1-018-high.png"
+    "imageHighSrc": "cards/si1-018-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Rampage",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9255",
-    "externalId": null,
+    "externalId": "si1-17",
     "tcgdex_id": "si1-17",
     "localId": "017",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "017/18",
+    "cardNumber": "17/18",
     "cardName": "Vileplume",
-    "fullDisplayName": "Vileplume 017/18 Southern Islands",
+    "fullDisplayName": "Vileplume 17/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-017-low.png",
-    "imageHighSrc": "cards/si1-017-high.png"
+    "imageHighSrc": "cards/si1-017-high.png",
+    "attacks": [
+      {
+        "name": "Paradise Pollen",
+        "damage": null
+      },
+      {
+        "name": "Horrid Pollen",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9246",
-    "externalId": null,
+    "externalId": "si1-16",
     "tcgdex_id": "si1-16",
     "localId": "016",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "016/18",
+    "cardNumber": "16/18",
     "cardName": "Lickitung",
-    "fullDisplayName": "Lickitung 016/18 Southern Islands",
+    "fullDisplayName": "Lickitung 16/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-016-low.png",
-    "imageHighSrc": "cards/si1-016-high.png"
+    "imageHighSrc": "cards/si1-016-high.png",
+    "attacks": [
+      {
+        "name": "Lick Wounds",
+        "damage": null
+      },
+      {
+        "name": "Tongue Stretch",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9237",
-    "externalId": null,
+    "externalId": "si1-15",
     "tcgdex_id": "si1-15",
     "localId": "015",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "015/18",
+    "cardNumber": "15/18",
     "cardName": "Wartortle",
-    "fullDisplayName": "Wartortle 015/18 Southern Islands",
+    "fullDisplayName": "Wartortle 15/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -129,18 +159,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-015-low.png",
-    "imageHighSrc": "cards/si1-015-high.png"
+    "imageHighSrc": "cards/si1-015-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9228",
-    "externalId": null,
+    "externalId": "si1-14",
     "tcgdex_id": "si1-14",
     "localId": "014",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "014/18",
+    "cardNumber": "14/18",
     "cardName": "Slowking",
-    "fullDisplayName": "Slowking 014/18 Southern Islands",
+    "fullDisplayName": "Slowking 14/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -162,18 +198,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-014-low.png",
-    "imageHighSrc": "cards/si1-014-high.png"
+    "imageHighSrc": "cards/si1-014-high.png",
+    "attacks": [
+      {
+        "name": "Revelation",
+        "damage": null
+      },
+      {
+        "name": "Psychic",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9219",
-    "externalId": null,
+    "externalId": "si1-13",
     "tcgdex_id": "si1-13",
     "localId": "013",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "013/18",
+    "cardNumber": "13/18",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 013/18 Southern Islands",
+    "fullDisplayName": "Exeggutor 13/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -195,18 +241,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-013-low.png",
-    "imageHighSrc": "cards/si1-013-high.png"
+    "imageHighSrc": "cards/si1-013-high.png",
+    "attacks": [
+      {
+        "name": "Sharpshooter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9210",
-    "externalId": null,
+    "externalId": "si1-12",
     "tcgdex_id": "si1-12",
     "localId": "012",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "012/18",
+    "cardNumber": "12/18",
     "cardName": "Lapras",
-    "fullDisplayName": "Lapras 012/18 Southern Islands",
+    "fullDisplayName": "Lapras 12/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +280,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-012-low.png",
-    "imageHighSrc": "cards/si1-012-high.png"
+    "imageHighSrc": "cards/si1-012-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Song",
+        "damage": null
+      },
+      {
+        "name": "Ice Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9202",
-    "externalId": null,
+    "externalId": "si1-11",
     "tcgdex_id": "si1-11",
     "localId": "011",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "011/18",
+    "cardNumber": "11/18",
     "cardName": "Marill",
-    "fullDisplayName": "Marill 011/18 Southern Islands",
+    "fullDisplayName": "Marill 11/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +323,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-011-low.png",
-    "imageHighSrc": "cards/si1-011-high.png"
+    "imageHighSrc": "cards/si1-011-high.png",
+    "attacks": [
+      {
+        "name": "Squirt",
+        "damage": null
+      },
+      {
+        "name": "Rolling Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9193",
-    "externalId": null,
+    "externalId": "si1-10",
     "tcgdex_id": "si1-10",
     "localId": "010",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "010/18",
+    "cardNumber": "10/18",
     "cardName": "Tentacruel",
-    "fullDisplayName": "Tentacruel 010/18 Southern Islands",
+    "fullDisplayName": "Tentacruel 10/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -294,18 +366,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-010-low.png",
-    "imageHighSrc": "cards/si1-010-high.png"
+    "imageHighSrc": "cards/si1-010-high.png",
+    "attacks": [
+      {
+        "name": "Tentacle Grip",
+        "damage": null
+      },
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9186",
-    "externalId": null,
+    "externalId": "si1-9",
     "tcgdex_id": "si1-9",
     "localId": "009",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "009/18",
+    "cardNumber": "9/18",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 009/18 Southern Islands",
+    "fullDisplayName": "Butterfree 9/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -327,18 +409,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-009-low.png",
-    "imageHighSrc": "cards/si1-009-high.png"
+    "imageHighSrc": "cards/si1-009-high.png",
+    "attacks": [
+      {
+        "name": "Fly",
+        "damage": "30"
+      },
+      {
+        "name": "Rainbow Powder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9177",
-    "externalId": null,
+    "externalId": "si1-8",
     "tcgdex_id": "si1-8",
     "localId": "008",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "008/18",
+    "cardNumber": "8/18",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 008/18 Southern Islands",
+    "fullDisplayName": "Jigglypuff 8/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +452,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-008-low.png",
-    "imageHighSrc": "cards/si1-008-high.png"
+    "imageHighSrc": "cards/si1-008-high.png",
+    "attacks": [
+      {
+        "name": "Tempting Eyes",
+        "damage": null
+      },
+      {
+        "name": "Sing",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9168",
-    "externalId": null,
+    "externalId": "si1-7",
     "tcgdex_id": "si1-7",
     "localId": "007",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "007/18",
+    "cardNumber": "7/18",
     "cardName": "Ledyba",
-    "fullDisplayName": "Ledyba 007/18 Southern Islands",
+    "fullDisplayName": "Ledyba 7/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,18 +495,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-007-low.png",
-    "imageHighSrc": "cards/si1-007-high.png"
+    "imageHighSrc": "cards/si1-007-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9156",
-    "externalId": null,
+    "externalId": "si1-6",
     "tcgdex_id": "si1-6",
     "localId": "006",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "006/18",
+    "cardNumber": "6/18",
     "cardName": "Raticate",
-    "fullDisplayName": "Raticate 006/18 Southern Islands",
+    "fullDisplayName": "Raticate 6/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -426,18 +538,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-006-low.png",
-    "imageHighSrc": "cards/si1-006-high.png"
+    "imageHighSrc": "cards/si1-006-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Teeth",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9147",
-    "externalId": null,
+    "externalId": "si1-5",
     "tcgdex_id": "si1-5",
     "localId": "005",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "005/18",
+    "cardNumber": "5/18",
     "cardName": "Ivysaur",
-    "fullDisplayName": "Ivysaur 005/18 Southern Islands",
+    "fullDisplayName": "Ivysaur 5/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -459,18 +577,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-005-low.png",
-    "imageHighSrc": "cards/si1-005-high.png"
+    "imageHighSrc": "cards/si1-005-high.png",
+    "attacks": [
+      {
+        "name": "Strange Scent",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9139",
-    "externalId": null,
+    "externalId": "si1-4",
     "tcgdex_id": "si1-4",
     "localId": "004",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "004/18",
+    "cardNumber": "4/18",
     "cardName": "Togepi",
-    "fullDisplayName": "Togepi 004/18 Southern Islands",
+    "fullDisplayName": "Togepi 4/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,18 +620,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-004-low.png",
-    "imageHighSrc": "cards/si1-004-high.png"
+    "imageHighSrc": "cards/si1-004-high.png",
+    "attacks": [
+      {
+        "name": "Bawl",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9130",
-    "externalId": null,
+    "externalId": "si1-3",
     "tcgdex_id": "si1-3",
     "localId": "003",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "003/18",
+    "cardNumber": "3/18",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 003/18 Southern Islands",
+    "fullDisplayName": "Onix 3/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -525,18 +659,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-003-low.png",
-    "imageHighSrc": "cards/si1-003-high.png"
+    "imageHighSrc": "cards/si1-003-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "20×"
+      },
+      {
+        "name": "Body Slam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9122",
-    "externalId": null,
+    "externalId": "si1-2",
     "tcgdex_id": "si1-2",
     "localId": "002",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "002/18",
+    "cardNumber": "2/18",
     "cardName": "Pidgeot",
-    "fullDisplayName": "Pidgeot 002/18 Southern Islands",
+    "fullDisplayName": "Pidgeot 2/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -558,18 +702,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-002-low.png",
-    "imageHighSrc": "cards/si1-002-high.png"
+    "imageHighSrc": "cards/si1-002-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic Flight",
+        "damage": "40"
+      },
+      {
+        "name": "Slicing Wind",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9116",
-    "externalId": null,
+    "externalId": "si1-1",
     "tcgdex_id": "si1-1",
     "localId": "001",
     "setCode": "si1",
     "setTcgdexId": "si1",
-    "cardNumber": "001/18",
+    "cardNumber": "1/18",
     "cardName": "Mew",
-    "fullDisplayName": "Mew 001/18 Southern Islands",
+    "fullDisplayName": "Mew 1/18 Southern Islands",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -591,6 +745,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/si1-001-low.png",
-    "imageHighSrc": "cards/si1-001-high.png"
+    "imageHighSrc": "cards/si1-001-high.png",
+    "attacks": [
+      {
+        "name": "Rainbow Wave",
+        "damage": null
+      }
+    ]
   }
 ]

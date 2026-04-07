@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "1797",
-    "externalId": null,
+    "externalId": "base5-83",
     "tcgdex_id": "base5-83",
     "localId": "083",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "083/82",
+    "cardNumber": "83/82",
     "cardName": "Dark Raichu",
-    "fullDisplayName": "Dark Raichu 083/82 Team Rocket",
+    "fullDisplayName": "Dark Raichu 83/82 Team Rocket",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -30,18 +30,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-083-low.png",
-    "imageHighSrc": "cards/base5-083-high.png"
+    "imageHighSrc": "cards/base5-083-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Thunder",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1796",
-    "externalId": null,
+    "externalId": "base5-82",
     "tcgdex_id": "base5-82",
     "localId": "082",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "082/82",
+    "cardNumber": "82/82",
     "cardName": "Potion Energy",
-    "fullDisplayName": "Potion Energy 082/82 Team Rocket",
+    "fullDisplayName": "Potion Energy 82/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -59,18 +65,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-082-low.png",
-    "imageHighSrc": "cards/base5-082-high.png"
+    "imageHighSrc": "cards/base5-082-high.png",
+    "rules": "If you play this card from your hand, remove 1 damage counter from the Pokémon you attach it to, if it has any.\n\nPotion Energy provides Colorless energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "1795",
-    "externalId": null,
+    "externalId": "base5-81",
     "tcgdex_id": "base5-81",
     "localId": "081",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "081/82",
+    "cardNumber": "81/82",
     "cardName": "Full Heal Energy",
-    "fullDisplayName": "Full Heal Energy 081/82 Team Rocket",
+    "fullDisplayName": "Full Heal Energy 81/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -88,18 +95,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-081-low.png",
-    "imageHighSrc": "cards/base5-081-high.png"
+    "imageHighSrc": "cards/base5-081-high.png",
+    "rules": "If you play this card from your hand, the Pokémon you attach it to is no longer Asleep, Confused, Paralyzed, or Poisoned.\n\nFull Heal Energy provides Colorless energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "1794",
-    "externalId": null,
+    "externalId": "base5-80",
     "tcgdex_id": "base5-80",
     "localId": "080",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "080/82",
+    "cardNumber": "80/82",
     "cardName": "Rainbow Energy",
-    "fullDisplayName": "Rainbow Energy 080/82 Team Rocket",
+    "fullDisplayName": "Rainbow Energy 80/82 Team Rocket",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -117,18 +125,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-080-low.png",
-    "imageHighSrc": "cards/base5-080-high.png"
+    "imageHighSrc": "cards/base5-080-high.png",
+    "rules": "Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy counts as every type of basic Energy but only provides 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) When you attach this card from your hand to 1 of your Pokémon, it does 10 damage to that Pokémon. (Don't apply Weakness and Resistance.)"
   },
   {
     "masterCardId": "1793",
-    "externalId": null,
+    "externalId": "base5-79",
     "tcgdex_id": "base5-79",
     "localId": "079",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "079/82",
+    "cardNumber": "79/82",
     "cardName": "Sleep!",
-    "fullDisplayName": "Sleep! 079/82 Team Rocket",
+    "fullDisplayName": "Sleep! 79/82 Team Rocket",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -146,18 +155,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-079-low.png",
-    "imageHighSrc": "cards/base5-079-high.png"
+    "imageHighSrc": "cards/base5-079-high.png",
+    "rules": "Flip a coin. If heads, the Defending Pokémon is now Asleep."
   },
   {
     "masterCardId": "1792",
-    "externalId": null,
+    "externalId": "base5-78",
     "tcgdex_id": "base5-78",
     "localId": "078",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "078/82",
+    "cardNumber": "78/82",
     "cardName": "Goop Gas Attack",
-    "fullDisplayName": "Goop Gas Attack 078/82 Team Rocket",
+    "fullDisplayName": "Goop Gas Attack 78/82 Team Rocket",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -173,18 +183,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-078-low.png",
-    "imageHighSrc": "cards/base5-078-high.png"
+    "imageHighSrc": "cards/base5-078-high.png",
+    "rules": "All Pokémon Powers stop working until the end of your opponent's next turn."
   },
   {
     "masterCardId": "1791",
-    "externalId": null,
+    "externalId": "base5-77",
     "tcgdex_id": "base5-77",
     "localId": "077",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "077/82",
+    "cardNumber": "77/82",
     "cardName": "Nightly Garbage Run",
-    "fullDisplayName": "Nightly Garbage Run 077/82 Team Rocket",
+    "fullDisplayName": "Nightly Garbage Run 77/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -202,18 +213,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-077-low.png",
-    "imageHighSrc": "cards/base5-077-high.png"
+    "imageHighSrc": "cards/base5-077-high.png",
+    "rules": "Choose up to 3 Basic Pokémon cards, Evolution cards, and/or basic Energy cards from your discard pile. Show them to your opponent and shuffle them into your deck."
   },
   {
     "masterCardId": "1790",
-    "externalId": null,
+    "externalId": "base5-76",
     "tcgdex_id": "base5-76",
     "localId": "076",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "076/82",
+    "cardNumber": "76/82",
     "cardName": "Imposter Oak's Revenge",
-    "fullDisplayName": "Imposter Oak's Revenge 076/82 Team Rocket",
+    "fullDisplayName": "Imposter Oak's Revenge 76/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -229,18 +241,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-076-low.png",
-    "imageHighSrc": "cards/base5-076-high.png"
+    "imageHighSrc": "cards/base5-076-high.png",
+    "rules": "Discard a card from your hand in order to play this card. Your opponent shuffles his or her hand into his or her deck, then draws 4 cards."
   },
   {
     "masterCardId": "1789",
-    "externalId": null,
+    "externalId": "base5-75",
     "tcgdex_id": "base5-75",
     "localId": "075",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "075/82",
+    "cardNumber": "75/82",
     "cardName": "Digger",
-    "fullDisplayName": "Digger 075/82 Team Rocket",
+    "fullDisplayName": "Digger 75/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -258,18 +271,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-075-low.png",
-    "imageHighSrc": "cards/base5-075-high.png"
+    "imageHighSrc": "cards/base5-075-high.png",
+    "rules": "Flip a coin. If tails, do 10 damage to your Active Pokémon. If heads, your opponent flips a coin. If tails, your opponent does 10 damage to his or her Active Pokémon. If heads, you flip a coin. Keep doing this until a player gets tails."
   },
   {
     "masterCardId": "1788",
-    "externalId": null,
+    "externalId": "base5-74",
     "tcgdex_id": "base5-74",
     "localId": "074",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "074/82",
+    "cardNumber": "74/82",
     "cardName": "Challenge!",
-    "fullDisplayName": "Challenge! 074/82 Team Rocket",
+    "fullDisplayName": "Challenge! 74/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -285,18 +299,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-074-low.png",
-    "imageHighSrc": "cards/base5-074-high.png"
+    "imageHighSrc": "cards/base5-074-high.png",
+    "rules": "Ask your opponent if he or she accepts your challenge. If your opponent declines (or if both Benches are full), draw 2 cards. If your opponent accepts, each of you searches your decks for any number of Basic Pokémon cards and puts them face down onto your Benches. (A player can't do this if his or her Bench is full.) When you both have finished, shuffle your decks and turn those cards face up."
   },
   {
     "masterCardId": "1787",
-    "externalId": null,
+    "externalId": "base5-73",
     "tcgdex_id": "base5-73",
     "localId": "073",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "073/82",
+    "cardNumber": "73/82",
     "cardName": "The Boss's Way",
-    "fullDisplayName": "The Boss's Way 073/82 Team Rocket",
+    "fullDisplayName": "The Boss's Way 73/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -312,18 +327,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-073-low.png",
-    "imageHighSrc": "cards/base5-073-high.png"
+    "imageHighSrc": "cards/base5-073-high.png",
+    "rules": "Search your deck for an Evolution card with Dark in its name. Show it to your opponent and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "1786",
-    "externalId": null,
+    "externalId": "base5-72",
     "tcgdex_id": "base5-72",
     "localId": "072",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "072/82",
+    "cardNumber": "72/82",
     "cardName": "Rocket's Sneak Attack",
-    "fullDisplayName": "Rocket's Sneak Attack 072/82 Team Rocket",
+    "fullDisplayName": "Rocket's Sneak Attack 72/82 Team Rocket",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -339,18 +355,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-072-low.png",
-    "imageHighSrc": "cards/base5-072-high.png"
+    "imageHighSrc": "cards/base5-072-high.png",
+    "rules": "Look at your opponent's hand. If he or she has any Trainer cards, choose 1 of them. Your opponent shuffles that card into his or her deck."
   },
   {
     "masterCardId": "1785",
-    "externalId": null,
+    "externalId": "base5-71",
     "tcgdex_id": "base5-71",
     "localId": "071",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "071/82",
+    "cardNumber": "71/82",
     "cardName": "Here Comes Team Rocket!",
-    "fullDisplayName": "Here Comes Team Rocket! 071/82 Team Rocket",
+    "fullDisplayName": "Here Comes Team Rocket! 71/82 Team Rocket",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -366,18 +383,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-071-low.png",
-    "imageHighSrc": "cards/base5-071-high.png"
+    "imageHighSrc": "cards/base5-071-high.png",
+    "rules": "Each player plays with his or her Prize cards face up for the rest of the game."
   },
   {
     "masterCardId": "1784",
-    "externalId": null,
+    "externalId": "base5-70",
     "tcgdex_id": "base5-70",
     "localId": "070",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "070/82",
+    "cardNumber": "70/82",
     "cardName": "Zubat",
-    "fullDisplayName": "Zubat 070/82 Team Rocket",
+    "fullDisplayName": "Zubat 70/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -399,18 +417,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-070-low.png",
-    "imageHighSrc": "cards/base5-070-high.png"
+    "imageHighSrc": "cards/base5-070-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1783",
-    "externalId": null,
+    "externalId": "base5-69",
     "tcgdex_id": "base5-69",
     "localId": "069",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "069/82",
+    "cardNumber": "69/82",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 069/82 Team Rocket",
+    "fullDisplayName": "Voltorb 69/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -432,18 +460,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-069-low.png",
-    "imageHighSrc": "cards/base5-069-high.png"
+    "imageHighSrc": "cards/base5-069-high.png",
+    "attacks": [
+      {
+        "name": "Speed Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1782",
-    "externalId": null,
+    "externalId": "base5-68",
     "tcgdex_id": "base5-68",
     "localId": "068",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "068/82",
+    "cardNumber": "68/82",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 068/82 Team Rocket",
+    "fullDisplayName": "Squirtle 68/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -465,18 +499,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-068-low.png",
-    "imageHighSrc": "cards/base5-068-high.png"
+    "imageHighSrc": "cards/base5-068-high.png",
+    "attacks": [
+      {
+        "name": "Shell Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1781",
-    "externalId": null,
+    "externalId": "base5-67",
     "tcgdex_id": "base5-67",
     "localId": "067",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "067/82",
+    "cardNumber": "67/82",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 067/82 Team Rocket",
+    "fullDisplayName": "Slowpoke 67/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -498,18 +538,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-067-low.png",
-    "imageHighSrc": "cards/base5-067-high.png"
+    "imageHighSrc": "cards/base5-067-high.png",
+    "attacks": [
+      {
+        "name": "Afternoon Nap",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1780",
-    "externalId": null,
+    "externalId": "base5-66",
     "tcgdex_id": "base5-66",
     "localId": "066",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "066/82",
+    "cardNumber": "66/82",
     "cardName": "Rattata",
-    "fullDisplayName": "Rattata 066/82 Team Rocket",
+    "fullDisplayName": "Rattata 66/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -531,18 +581,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-066-low.png",
-    "imageHighSrc": "cards/base5-066-high.png"
+    "imageHighSrc": "cards/base5-066-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1779",
-    "externalId": null,
+    "externalId": "base5-65",
     "tcgdex_id": "base5-65",
     "localId": "065",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "065/82",
+    "cardNumber": "65/82",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 065/82 Team Rocket",
+    "fullDisplayName": "Psyduck 65/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -564,18 +620,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-065-low.png",
-    "imageHighSrc": "cards/base5-065-high.png"
+    "imageHighSrc": "cards/base5-065-high.png",
+    "attacks": [
+      {
+        "name": "Dizziness",
+        "damage": null
+      },
+      {
+        "name": "Water Gun",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "1778",
-    "externalId": null,
+    "externalId": "base5-64",
     "tcgdex_id": "base5-64",
     "localId": "064",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "064/82",
+    "cardNumber": "64/82",
     "cardName": "Ponyta",
-    "fullDisplayName": "Ponyta 064/82 Team Rocket",
+    "fullDisplayName": "Ponyta 64/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -597,18 +663,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-064-low.png",
-    "imageHighSrc": "cards/base5-064-high.png"
+    "imageHighSrc": "cards/base5-064-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1777",
-    "externalId": null,
+    "externalId": "base5-63",
     "tcgdex_id": "base5-63",
     "localId": "063",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "063/82",
+    "cardNumber": "63/82",
     "cardName": "Oddish",
-    "fullDisplayName": "Oddish 063/82 Team Rocket",
+    "fullDisplayName": "Oddish 63/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -630,18 +702,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-063-low.png",
-    "imageHighSrc": "cards/base5-063-high.png"
+    "imageHighSrc": "cards/base5-063-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": null
+      },
+      {
+        "name": "Poisonpowder",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1776",
-    "externalId": null,
+    "externalId": "base5-62",
     "tcgdex_id": "base5-62",
     "localId": "062",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "062/82",
+    "cardNumber": "62/82",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 062/82 Team Rocket",
+    "fullDisplayName": "Meowth 62/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -663,18 +745,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-062-low.png",
-    "imageHighSrc": "cards/base5-062-high.png"
+    "imageHighSrc": "cards/base5-062-high.png",
+    "attacks": [
+      {
+        "name": "Coin Hurl",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1775",
-    "externalId": null,
+    "externalId": "base5-61",
     "tcgdex_id": "base5-61",
     "localId": "061",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "061/82",
+    "cardNumber": "61/82",
     "cardName": "Mankey",
-    "fullDisplayName": "Mankey 061/82 Team Rocket",
+    "fullDisplayName": "Mankey 61/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -696,18 +784,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-061-low.png",
-    "imageHighSrc": "cards/base5-061-high.png"
+    "imageHighSrc": "cards/base5-061-high.png",
+    "attacks": [
+      {
+        "name": "Mischief",
+        "damage": null
+      },
+      {
+        "name": "Anger",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "1774",
-    "externalId": null,
+    "externalId": "base5-60",
     "tcgdex_id": "base5-60",
     "localId": "060",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "060/82",
+    "cardNumber": "60/82",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 060/82 Team Rocket",
+    "fullDisplayName": "Magnemite 60/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -729,18 +827,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-060-low.png",
-    "imageHighSrc": "cards/base5-060-high.png"
+    "imageHighSrc": "cards/base5-060-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Magnetism",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1773",
-    "externalId": null,
+    "externalId": "base5-59",
     "tcgdex_id": "base5-59",
     "localId": "059",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "059/82",
+    "cardNumber": "59/82",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 059/82 Team Rocket",
+    "fullDisplayName": "Machop 59/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -762,18 +870,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-059-low.png",
-    "imageHighSrc": "cards/base5-059-high.png"
+    "imageHighSrc": "cards/base5-059-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1772",
-    "externalId": null,
+    "externalId": "base5-58",
     "tcgdex_id": "base5-58",
     "localId": "058",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "058/82",
+    "cardNumber": "58/82",
     "cardName": "Koffing",
-    "fullDisplayName": "Koffing 058/82 Team Rocket",
+    "fullDisplayName": "Koffing 58/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -795,18 +913,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-058-low.png",
-    "imageHighSrc": "cards/base5-058-high.png"
+    "imageHighSrc": "cards/base5-058-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Gas",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1771",
-    "externalId": null,
+    "externalId": "base5-57",
     "tcgdex_id": "base5-57",
     "localId": "057",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "057/82",
+    "cardNumber": "57/82",
     "cardName": "Grimer",
-    "fullDisplayName": "Grimer 057/82 Team Rocket",
+    "fullDisplayName": "Grimer 57/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -828,18 +956,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-057-low.png",
-    "imageHighSrc": "cards/base5-057-high.png"
+    "imageHighSrc": "cards/base5-057-high.png",
+    "attacks": [
+      {
+        "name": "Poison Gas",
+        "damage": null
+      },
+      {
+        "name": "Sticky Hands",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1770",
-    "externalId": null,
+    "externalId": "base5-56",
     "tcgdex_id": "base5-56",
     "localId": "056",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "056/82",
+    "cardNumber": "56/82",
     "cardName": "Ekans",
-    "fullDisplayName": "Ekans 056/82 Team Rocket",
+    "fullDisplayName": "Ekans 56/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -861,18 +999,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-056-low.png",
-    "imageHighSrc": "cards/base5-056-high.png"
+    "imageHighSrc": "cards/base5-056-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1769",
-    "externalId": null,
+    "externalId": "base5-55",
     "tcgdex_id": "base5-55",
     "localId": "055",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "055/82",
+    "cardNumber": "55/82",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 055/82 Team Rocket",
+    "fullDisplayName": "Eevee 55/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -894,18 +1042,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-055-low.png",
-    "imageHighSrc": "cards/base5-055-high.png"
+    "imageHighSrc": "cards/base5-055-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Sand-attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1768",
-    "externalId": null,
+    "externalId": "base5-54",
     "tcgdex_id": "base5-54",
     "localId": "054",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "054/82",
+    "cardNumber": "54/82",
     "cardName": "Drowzee",
-    "fullDisplayName": "Drowzee 054/82 Team Rocket",
+    "fullDisplayName": "Drowzee 54/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -927,18 +1085,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-054-low.png",
-    "imageHighSrc": "cards/base5-054-high.png"
+    "imageHighSrc": "cards/base5-054-high.png",
+    "attacks": [
+      {
+        "name": "Nightmare",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1767",
-    "externalId": null,
+    "externalId": "base5-53",
     "tcgdex_id": "base5-53",
     "localId": "053",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "053/82",
+    "cardNumber": "53/82",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 053/82 Team Rocket",
+    "fullDisplayName": "Dratini 53/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -960,18 +1124,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-053-low.png",
-    "imageHighSrc": "cards/base5-053-high.png"
+    "imageHighSrc": "cards/base5-053-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1766",
-    "externalId": null,
+    "externalId": "base5-52",
     "tcgdex_id": "base5-52",
     "localId": "052",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "052/82",
+    "cardNumber": "52/82",
     "cardName": "Diglett",
-    "fullDisplayName": "Diglett 052/82 Team Rocket",
+    "fullDisplayName": "Diglett 52/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -993,18 +1163,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-052-low.png",
-    "imageHighSrc": "cards/base5-052-high.png"
+    "imageHighSrc": "cards/base5-052-high.png",
+    "attacks": [
+      {
+        "name": "Dig Under",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1765",
-    "externalId": null,
+    "externalId": "base5-51",
     "tcgdex_id": "base5-51",
     "localId": "051",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "051/82",
+    "cardNumber": "51/82",
     "cardName": "Dark Raticate",
-    "fullDisplayName": "Dark Raticate 051/82 Team Rocket",
+    "fullDisplayName": "Dark Raticate 51/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1026,18 +1206,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-051-low.png",
-    "imageHighSrc": "cards/base5-051-high.png"
+    "imageHighSrc": "cards/base5-051-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      },
+      {
+        "name": "Hyper Fang",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1764",
-    "externalId": null,
+    "externalId": "base5-50",
     "tcgdex_id": "base5-50",
     "localId": "050",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "050/82",
+    "cardNumber": "50/82",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 050/82 Team Rocket",
+    "fullDisplayName": "Charmander 50/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1059,18 +1249,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-050-low.png",
-    "imageHighSrc": "cards/base5-050-high.png"
+    "imageHighSrc": "cards/base5-050-high.png",
+    "attacks": [
+      {
+        "name": "Fire Tail",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1763",
-    "externalId": null,
+    "externalId": "base5-49",
     "tcgdex_id": "base5-49",
     "localId": "049",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "049/82",
+    "cardNumber": "49/82",
     "cardName": "Abra",
-    "fullDisplayName": "Abra 049/82 Team Rocket",
+    "fullDisplayName": "Abra 49/82 Team Rocket",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1092,18 +1288,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-049-low.png",
-    "imageHighSrc": "cards/base5-049-high.png"
+    "imageHighSrc": "cards/base5-049-high.png",
+    "attacks": [
+      {
+        "name": "Vanish",
+        "damage": null
+      },
+      {
+        "name": "Psyshock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1762",
-    "externalId": null,
+    "externalId": "base5-48",
     "tcgdex_id": "base5-48",
     "localId": "048",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "048/82",
+    "cardNumber": "48/82",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon 048/82 Team Rocket",
+    "fullDisplayName": "Porygon 48/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1125,18 +1331,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-048-low.png",
-    "imageHighSrc": "cards/base5-048-high.png"
+    "imageHighSrc": "cards/base5-048-high.png",
+    "attacks": [
+      {
+        "name": "Conversion 1",
+        "damage": null
+      },
+      {
+        "name": "Psybeam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1761",
-    "externalId": null,
+    "externalId": "base5-47",
     "tcgdex_id": "base5-47",
     "localId": "047",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "047/82",
+    "cardNumber": "47/82",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 047/82 Team Rocket",
+    "fullDisplayName": "Magikarp 47/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1158,18 +1374,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-047-low.png",
-    "imageHighSrc": "cards/base5-047-high.png"
+    "imageHighSrc": "cards/base5-047-high.png",
+    "attacks": [
+      {
+        "name": "Flop",
+        "damage": "10"
+      },
+      {
+        "name": "Rapid Evolution",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1760",
-    "externalId": null,
+    "externalId": "base5-46",
     "tcgdex_id": "base5-46",
     "localId": "046",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "046/82",
+    "cardNumber": "46/82",
     "cardName": "Dark Wartortle",
-    "fullDisplayName": "Dark Wartortle 046/82 Team Rocket",
+    "fullDisplayName": "Dark Wartortle 46/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1191,18 +1417,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-046-low.png",
-    "imageHighSrc": "cards/base5-046-high.png"
+    "imageHighSrc": "cards/base5-046-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "10×"
+      },
+      {
+        "name": "Mirror Shell",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1759",
-    "externalId": null,
+    "externalId": "base5-45",
     "tcgdex_id": "base5-45",
     "localId": "045",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "045/82",
+    "cardNumber": "45/82",
     "cardName": "Dark Vaporeon",
-    "fullDisplayName": "Dark Vaporeon 045/82 Team Rocket",
+    "fullDisplayName": "Dark Vaporeon 45/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1224,18 +1460,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-045-low.png",
-    "imageHighSrc": "cards/base5-045-high.png"
+    "imageHighSrc": "cards/base5-045-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Whirlpool",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1758",
-    "externalId": null,
+    "externalId": "base5-44",
     "tcgdex_id": "base5-44",
     "localId": "044",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "044/82",
+    "cardNumber": "44/82",
     "cardName": "Dark Rapidash",
-    "fullDisplayName": "Dark Rapidash 044/82 Team Rocket",
+    "fullDisplayName": "Dark Rapidash 44/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1257,18 +1503,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-044-low.png",
-    "imageHighSrc": "cards/base5-044-high.png"
+    "imageHighSrc": "cards/base5-044-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Flame Pillar",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1757",
-    "externalId": null,
+    "externalId": "base5-43",
     "tcgdex_id": "base5-43",
     "localId": "043",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "043/82",
+    "cardNumber": "43/82",
     "cardName": "Dark Primeape",
-    "fullDisplayName": "Dark Primeape 043/82 Team Rocket",
+    "fullDisplayName": "Dark Primeape 43/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1290,18 +1546,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-043-low.png",
-    "imageHighSrc": "cards/base5-043-high.png"
+    "imageHighSrc": "cards/base5-043-high.png",
+    "attacks": [
+      {
+        "name": "Frenzied Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1756",
-    "externalId": null,
+    "externalId": "base5-42",
     "tcgdex_id": "base5-42",
     "localId": "042",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "042/82",
+    "cardNumber": "42/82",
     "cardName": "Dark Persian",
-    "fullDisplayName": "Dark Persian 042/82 Team Rocket",
+    "fullDisplayName": "Dark Persian 42/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1323,18 +1585,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-042-low.png",
-    "imageHighSrc": "cards/base5-042-high.png"
+    "imageHighSrc": "cards/base5-042-high.png",
+    "attacks": [
+      {
+        "name": "Fascinate",
+        "damage": null
+      },
+      {
+        "name": "Poison Claws",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1755",
-    "externalId": null,
+    "externalId": "base5-41",
     "tcgdex_id": "base5-41",
     "localId": "041",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "041/82",
+    "cardNumber": "41/82",
     "cardName": "Dark Muk",
-    "fullDisplayName": "Dark Muk 041/82 Team Rocket",
+    "fullDisplayName": "Dark Muk 41/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1356,18 +1628,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-041-low.png",
-    "imageHighSrc": "cards/base5-041-high.png"
+    "imageHighSrc": "cards/base5-041-high.png",
+    "attacks": [
+      {
+        "name": "Sludge Punch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1754",
-    "externalId": null,
+    "externalId": "base5-40",
     "tcgdex_id": "base5-40",
     "localId": "040",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "040/82",
+    "cardNumber": "40/82",
     "cardName": "Dark Machoke",
-    "fullDisplayName": "Dark Machoke 040/82 Team Rocket",
+    "fullDisplayName": "Dark Machoke 40/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1389,18 +1667,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-040-low.png",
-    "imageHighSrc": "cards/base5-040-high.png"
+    "imageHighSrc": "cards/base5-040-high.png",
+    "attacks": [
+      {
+        "name": "Drag Off",
+        "damage": "20"
+      },
+      {
+        "name": "Knock Back",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1753",
-    "externalId": null,
+    "externalId": "base5-39",
     "tcgdex_id": "base5-39",
     "localId": "039",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "039/82",
+    "cardNumber": "39/82",
     "cardName": "Dark Kadabra",
-    "fullDisplayName": "Dark Kadabra 039/82 Team Rocket",
+    "fullDisplayName": "Dark Kadabra 39/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1422,18 +1710,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-039-low.png",
-    "imageHighSrc": "cards/base5-039-high.png"
+    "imageHighSrc": "cards/base5-039-high.png",
+    "attacks": [
+      {
+        "name": "Mind Shock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1752",
-    "externalId": null,
+    "externalId": "base5-38",
     "tcgdex_id": "base5-38",
     "localId": "038",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "038/82",
+    "cardNumber": "38/82",
     "cardName": "Dark Jolteon",
-    "fullDisplayName": "Dark Jolteon 038/82 Team Rocket",
+    "fullDisplayName": "Dark Jolteon 38/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1455,18 +1749,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-038-low.png",
-    "imageHighSrc": "cards/base5-038-high.png"
+    "imageHighSrc": "cards/base5-038-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Flash",
+        "damage": "20"
+      },
+      {
+        "name": "Thunder Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1751",
-    "externalId": null,
+    "externalId": "base5-37",
     "tcgdex_id": "base5-37",
     "localId": "037",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "037/82",
+    "cardNumber": "37/82",
     "cardName": "Dark Golduck",
-    "fullDisplayName": "Dark Golduck 037/82 Team Rocket",
+    "fullDisplayName": "Dark Golduck 37/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1488,18 +1792,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-037-low.png",
-    "imageHighSrc": "cards/base5-037-high.png"
+    "imageHighSrc": "cards/base5-037-high.png",
+    "attacks": [
+      {
+        "name": "Third Eye",
+        "damage": null
+      },
+      {
+        "name": "Super Psy",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1750",
-    "externalId": null,
+    "externalId": "base5-36",
     "tcgdex_id": "base5-36",
     "localId": "036",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "036/82",
+    "cardNumber": "36/82",
     "cardName": "Dark Gloom",
-    "fullDisplayName": "Dark Gloom 036/82 Team Rocket",
+    "fullDisplayName": "Dark Gloom 36/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1521,18 +1835,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-036-low.png",
-    "imageHighSrc": "cards/base5-036-high.png"
+    "imageHighSrc": "cards/base5-036-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1749",
-    "externalId": null,
+    "externalId": "base5-35",
     "tcgdex_id": "base5-35",
     "localId": "035",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "035/82",
+    "cardNumber": "35/82",
     "cardName": "Dark Flareon",
-    "fullDisplayName": "Dark Flareon 035/82 Team Rocket",
+    "fullDisplayName": "Dark Flareon 35/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1554,18 +1874,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-035-low.png",
-    "imageHighSrc": "cards/base5-035-high.png"
+    "imageHighSrc": "cards/base5-035-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "10+"
+      },
+      {
+        "name": "Playing with Fire",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "1748",
-    "externalId": null,
+    "externalId": "base5-34",
     "tcgdex_id": "base5-34",
     "localId": "034",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "034/82",
+    "cardNumber": "34/82",
     "cardName": "Dark Electrode",
-    "fullDisplayName": "Dark Electrode 034/82 Team Rocket",
+    "fullDisplayName": "Dark Electrode 34/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1587,18 +1917,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-034-low.png",
-    "imageHighSrc": "cards/base5-034-high.png"
+    "imageHighSrc": "cards/base5-034-high.png",
+    "attacks": [
+      {
+        "name": "Rolling Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Energy Bomb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1747",
-    "externalId": null,
+    "externalId": "base5-33",
     "tcgdex_id": "base5-33",
     "localId": "033",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "033/82",
+    "cardNumber": "33/82",
     "cardName": "Dark Dragonair",
-    "fullDisplayName": "Dark Dragonair 033/82 Team Rocket",
+    "fullDisplayName": "Dark Dragonair 33/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1620,18 +1960,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-033-low.png",
-    "imageHighSrc": "cards/base5-033-high.png"
+    "imageHighSrc": "cards/base5-033-high.png",
+    "attacks": [
+      {
+        "name": "Tail Strike",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "1746",
-    "externalId": null,
+    "externalId": "base5-32",
     "tcgdex_id": "base5-32",
     "localId": "032",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "032/82",
+    "cardNumber": "32/82",
     "cardName": "Dark Charmeleon",
-    "fullDisplayName": "Dark Charmeleon 032/82 Team Rocket",
+    "fullDisplayName": "Dark Charmeleon 32/82 Team Rocket",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1653,18 +1999,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-032-low.png",
-    "imageHighSrc": "cards/base5-032-high.png"
+    "imageHighSrc": "cards/base5-032-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "20"
+      },
+      {
+        "name": "Fireball",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1745",
-    "externalId": null,
+    "externalId": "base5-31",
     "tcgdex_id": "base5-31",
     "localId": "031",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "031/82",
+    "cardNumber": "31/82",
     "cardName": "Dark Weezing",
-    "fullDisplayName": "Dark Weezing 031/82 Team Rocket",
+    "fullDisplayName": "Dark Weezing 31/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1686,18 +2042,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-031-low.png",
-    "imageHighSrc": "cards/base5-031-high.png"
+    "imageHighSrc": "cards/base5-031-high.png",
+    "attacks": [
+      {
+        "name": "Mass Explosion",
+        "damage": "20×"
+      },
+      {
+        "name": "Stun Gas",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1744",
-    "externalId": null,
+    "externalId": "base5-30",
     "tcgdex_id": "base5-30",
     "localId": "030",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "030/82",
+    "cardNumber": "30/82",
     "cardName": "Dark Vileplume",
-    "fullDisplayName": "Dark Vileplume 030/82 Team Rocket",
+    "fullDisplayName": "Dark Vileplume 30/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1719,18 +2085,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-030-low.png",
-    "imageHighSrc": "cards/base5-030-high.png"
+    "imageHighSrc": "cards/base5-030-high.png",
+    "attacks": [
+      {
+        "name": "Petal Whirlwind",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "1743",
-    "externalId": null,
+    "externalId": "base5-29",
     "tcgdex_id": "base5-29",
     "localId": "029",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "029/82",
+    "cardNumber": "29/82",
     "cardName": "Dark Slowbro",
-    "fullDisplayName": "Dark Slowbro 029/82 Team Rocket",
+    "fullDisplayName": "Dark Slowbro 29/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1752,18 +2124,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-029-low.png",
-    "imageHighSrc": "cards/base5-029-high.png"
+    "imageHighSrc": "cards/base5-029-high.png",
+    "attacks": [
+      {
+        "name": "Fickle Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1742",
-    "externalId": null,
+    "externalId": "base5-28",
     "tcgdex_id": "base5-28",
     "localId": "028",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "028/82",
+    "cardNumber": "28/82",
     "cardName": "Dark Magneton",
-    "fullDisplayName": "Dark Magneton 028/82 Team Rocket",
+    "fullDisplayName": "Dark Magneton 28/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1785,18 +2163,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-028-low.png",
-    "imageHighSrc": "cards/base5-028-high.png"
+    "imageHighSrc": "cards/base5-028-high.png",
+    "attacks": [
+      {
+        "name": "Sonicboom",
+        "damage": "20"
+      },
+      {
+        "name": "Magnetic Lines",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1741",
-    "externalId": null,
+    "externalId": "base5-27",
     "tcgdex_id": "base5-27",
     "localId": "027",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "027/82",
+    "cardNumber": "27/82",
     "cardName": "Dark Machamp",
-    "fullDisplayName": "Dark Machamp 027/82 Team Rocket",
+    "fullDisplayName": "Dark Machamp 27/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1818,18 +2206,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-027-low.png",
-    "imageHighSrc": "cards/base5-027-high.png"
+    "imageHighSrc": "cards/base5-027-high.png",
+    "attacks": [
+      {
+        "name": "Mega Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Fling",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1740",
-    "externalId": null,
+    "externalId": "base5-26",
     "tcgdex_id": "base5-26",
     "localId": "026",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "026/82",
+    "cardNumber": "26/82",
     "cardName": "Dark Hypno",
-    "fullDisplayName": "Dark Hypno 026/82 Team Rocket",
+    "fullDisplayName": "Dark Hypno 26/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1851,18 +2249,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-026-low.png",
-    "imageHighSrc": "cards/base5-026-high.png"
+    "imageHighSrc": "cards/base5-026-high.png",
+    "attacks": [
+      {
+        "name": "Psypunch",
+        "damage": "20"
+      },
+      {
+        "name": "Bench Manipulation",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "1739",
-    "externalId": null,
+    "externalId": "base5-25",
     "tcgdex_id": "base5-25",
     "localId": "025",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "025/82",
+    "cardNumber": "25/82",
     "cardName": "Dark Gyarados",
-    "fullDisplayName": "Dark Gyarados 025/82 Team Rocket",
+    "fullDisplayName": "Dark Gyarados 25/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1884,18 +2292,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-025-low.png",
-    "imageHighSrc": "cards/base5-025-high.png"
+    "imageHighSrc": "cards/base5-025-high.png",
+    "attacks": [
+      {
+        "name": "Ice Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1738",
-    "externalId": null,
+    "externalId": "base5-24",
     "tcgdex_id": "base5-24",
     "localId": "024",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "024/82",
+    "cardNumber": "24/82",
     "cardName": "Dark Golbat",
-    "fullDisplayName": "Dark Golbat 024/82 Team Rocket",
+    "fullDisplayName": "Dark Golbat 24/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1917,18 +2331,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-024-low.png",
-    "imageHighSrc": "cards/base5-024-high.png"
+    "imageHighSrc": "cards/base5-024-high.png",
+    "attacks": [
+      {
+        "name": "Flitter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1737",
-    "externalId": null,
+    "externalId": "base5-23",
     "tcgdex_id": "base5-23",
     "localId": "023",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "023/82",
+    "cardNumber": "23/82",
     "cardName": "Dark Dugtrio",
-    "fullDisplayName": "Dark Dugtrio 023/82 Team Rocket",
+    "fullDisplayName": "Dark Dugtrio 23/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1950,18 +2370,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-023-low.png",
-    "imageHighSrc": "cards/base5-023-high.png"
+    "imageHighSrc": "cards/base5-023-high.png",
+    "attacks": [
+      {
+        "name": "Knock Down",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "1736",
-    "externalId": null,
+    "externalId": "base5-22",
     "tcgdex_id": "base5-22",
     "localId": "022",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "022/82",
+    "cardNumber": "22/82",
     "cardName": "Dark Dragonite",
-    "fullDisplayName": "Dark Dragonite 022/82 Team Rocket",
+    "fullDisplayName": "Dark Dragonite 22/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1983,18 +2409,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-022-low.png",
-    "imageHighSrc": "cards/base5-022-high.png"
+    "imageHighSrc": "cards/base5-022-high.png",
+    "attacks": [
+      {
+        "name": "Giant Tail",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1735",
-    "externalId": null,
+    "externalId": "base5-21",
     "tcgdex_id": "base5-21",
     "localId": "021",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "021/82",
+    "cardNumber": "21/82",
     "cardName": "Dark Charizard",
-    "fullDisplayName": "Dark Charizard 021/82 Team Rocket",
+    "fullDisplayName": "Dark Charizard 21/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2016,18 +2448,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-021-low.png",
-    "imageHighSrc": "cards/base5-021-high.png"
+    "imageHighSrc": "cards/base5-021-high.png",
+    "attacks": [
+      {
+        "name": "Nail Flick",
+        "damage": "10"
+      },
+      {
+        "name": "Continuous Fireball",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "1734",
-    "externalId": null,
+    "externalId": "base5-20",
     "tcgdex_id": "base5-20",
     "localId": "020",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "020/82",
+    "cardNumber": "20/82",
     "cardName": "Dark Blastoise",
-    "fullDisplayName": "Dark Blastoise 020/82 Team Rocket",
+    "fullDisplayName": "Dark Blastoise 20/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2049,18 +2491,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-020-low.png",
-    "imageHighSrc": "cards/base5-020-high.png"
+    "imageHighSrc": "cards/base5-020-high.png",
+    "attacks": [
+      {
+        "name": "Hydrocannon",
+        "damage": "30+"
+      },
+      {
+        "name": "Rocket Tackle",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1733",
-    "externalId": null,
+    "externalId": "base5-19",
     "tcgdex_id": "base5-19",
     "localId": "019",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "019/82",
+    "cardNumber": "19/82",
     "cardName": "Dark Arbok",
-    "fullDisplayName": "Dark Arbok 019/82 Team Rocket",
+    "fullDisplayName": "Dark Arbok 19/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2082,18 +2534,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-019-low.png",
-    "imageHighSrc": "cards/base5-019-high.png"
+    "imageHighSrc": "cards/base5-019-high.png",
+    "attacks": [
+      {
+        "name": "Stare",
+        "damage": null
+      },
+      {
+        "name": "Poison Vapor",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1732",
-    "externalId": null,
+    "externalId": "base5-18",
     "tcgdex_id": "base5-18",
     "localId": "018",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "018/82",
+    "cardNumber": "18/82",
     "cardName": "Dark Alakazam",
-    "fullDisplayName": "Dark Alakazam 018/82 Team Rocket",
+    "fullDisplayName": "Dark Alakazam 18/82 Team Rocket",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2115,18 +2577,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-018-low.png",
-    "imageHighSrc": "cards/base5-018-high.png"
+    "imageHighSrc": "cards/base5-018-high.png",
+    "attacks": [
+      {
+        "name": "Teleport Blast",
+        "damage": "30"
+      },
+      {
+        "name": "Mind Shock",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1731",
-    "externalId": null,
+    "externalId": "base5-17",
     "tcgdex_id": "base5-17",
     "localId": "017",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "017/82",
+    "cardNumber": "17/82",
     "cardName": "Rainbow Energy",
-    "fullDisplayName": "Rainbow Energy 017/82 Team Rocket",
+    "fullDisplayName": "Rainbow Energy 17/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Energy",
     "stage": null,
@@ -2144,18 +2616,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-017-low.png",
-    "imageHighSrc": "cards/base5-017-high.png"
+    "imageHighSrc": "cards/base5-017-high.png",
+    "rules": "Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy counts as every type of basic Energy but only provides 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) When you attach this card from your hand to 1 of your Pokémon, it does 10 damage to that Pokémon. (Don't apply Weakness and Resistance.)"
   },
   {
     "masterCardId": "1730",
-    "externalId": null,
+    "externalId": "base5-16",
     "tcgdex_id": "base5-16",
     "localId": "016",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "016/82",
+    "cardNumber": "16/82",
     "cardName": "Rocket's Sneak Attack",
-    "fullDisplayName": "Rocket's Sneak Attack 016/82 Team Rocket",
+    "fullDisplayName": "Rocket's Sneak Attack 16/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -2171,18 +2644,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-016-low.png",
-    "imageHighSrc": "cards/base5-016-high.png"
+    "imageHighSrc": "cards/base5-016-high.png",
+    "rules": "Look at your opponent's hand. If he or she has any Trainer cards, choose 1 of them. Your opponent shuffles that card into his or her deck."
   },
   {
     "masterCardId": "1729",
-    "externalId": null,
+    "externalId": "base5-15",
     "tcgdex_id": "base5-15",
     "localId": "015",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "015/82",
+    "cardNumber": "15/82",
     "cardName": "Here Comes Team Rocket!",
-    "fullDisplayName": "Here Comes Team Rocket! 015/82 Team Rocket",
+    "fullDisplayName": "Here Comes Team Rocket! 15/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -2198,18 +2672,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-015-low.png",
-    "imageHighSrc": "cards/base5-015-high.png"
+    "imageHighSrc": "cards/base5-015-high.png",
+    "rules": "Each player plays with his or her Prize cards face up for the rest of the game."
   },
   {
     "masterCardId": "1728",
-    "externalId": null,
+    "externalId": "base5-14",
     "tcgdex_id": "base5-14",
     "localId": "014",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "014/82",
+    "cardNumber": "14/82",
     "cardName": "Dark Weezing",
-    "fullDisplayName": "Dark Weezing 014/82 Team Rocket",
+    "fullDisplayName": "Dark Weezing 14/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2231,18 +2706,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-014-low.png",
-    "imageHighSrc": "cards/base5-014-high.png"
+    "imageHighSrc": "cards/base5-014-high.png",
+    "attacks": [
+      {
+        "name": "Mass Explosion",
+        "damage": "20×"
+      },
+      {
+        "name": "Stun Gas",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1727",
-    "externalId": null,
+    "externalId": "base5-13",
     "tcgdex_id": "base5-13",
     "localId": "013",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "013/82",
+    "cardNumber": "13/82",
     "cardName": "Dark Vileplume",
-    "fullDisplayName": "Dark Vileplume 013/82 Team Rocket",
+    "fullDisplayName": "Dark Vileplume 13/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2264,18 +2749,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-013-low.png",
-    "imageHighSrc": "cards/base5-013-high.png"
+    "imageHighSrc": "cards/base5-013-high.png",
+    "attacks": [
+      {
+        "name": "Petal Whirlwind",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "1726",
-    "externalId": null,
+    "externalId": "base5-12",
     "tcgdex_id": "base5-12",
     "localId": "012",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "012/82",
+    "cardNumber": "12/82",
     "cardName": "Dark Slowbro",
-    "fullDisplayName": "Dark Slowbro 012/82 Team Rocket",
+    "fullDisplayName": "Dark Slowbro 12/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2297,18 +2788,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-012-low.png",
-    "imageHighSrc": "cards/base5-012-high.png"
+    "imageHighSrc": "cards/base5-012-high.png",
+    "attacks": [
+      {
+        "name": "Fickle Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1725",
-    "externalId": null,
+    "externalId": "base5-11",
     "tcgdex_id": "base5-11",
     "localId": "011",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "011/82",
+    "cardNumber": "11/82",
     "cardName": "Dark Magneton",
-    "fullDisplayName": "Dark Magneton 011/82 Team Rocket",
+    "fullDisplayName": "Dark Magneton 11/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2330,18 +2827,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-011-low.png",
-    "imageHighSrc": "cards/base5-011-high.png"
+    "imageHighSrc": "cards/base5-011-high.png",
+    "attacks": [
+      {
+        "name": "Sonicboom",
+        "damage": "20"
+      },
+      {
+        "name": "Magnetic Lines",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1724",
-    "externalId": null,
+    "externalId": "base5-10",
     "tcgdex_id": "base5-10",
     "localId": "010",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "010/82",
+    "cardNumber": "10/82",
     "cardName": "Dark Machamp",
-    "fullDisplayName": "Dark Machamp 010/82 Team Rocket",
+    "fullDisplayName": "Dark Machamp 10/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2363,18 +2870,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-010-low.png",
-    "imageHighSrc": "cards/base5-010-high.png"
+    "imageHighSrc": "cards/base5-010-high.png",
+    "attacks": [
+      {
+        "name": "Mega Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Fling",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1723",
-    "externalId": null,
+    "externalId": "base5-9",
     "tcgdex_id": "base5-9",
     "localId": "009",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "009/82",
+    "cardNumber": "9/82",
     "cardName": "Dark Hypno",
-    "fullDisplayName": "Dark Hypno 009/82 Team Rocket",
+    "fullDisplayName": "Dark Hypno 9/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2396,18 +2913,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-009-low.png",
-    "imageHighSrc": "cards/base5-009-high.png"
+    "imageHighSrc": "cards/base5-009-high.png",
+    "attacks": [
+      {
+        "name": "Psypunch",
+        "damage": "20"
+      },
+      {
+        "name": "Bench Manipulation",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "1722",
-    "externalId": null,
+    "externalId": "base5-8",
     "tcgdex_id": "base5-8",
     "localId": "008",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "008/82",
+    "cardNumber": "8/82",
     "cardName": "Dark Gyarados",
-    "fullDisplayName": "Dark Gyarados 008/82 Team Rocket",
+    "fullDisplayName": "Dark Gyarados 8/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2429,18 +2956,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-008-low.png",
-    "imageHighSrc": "cards/base5-008-high.png"
+    "imageHighSrc": "cards/base5-008-high.png",
+    "attacks": [
+      {
+        "name": "Ice Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1721",
-    "externalId": null,
+    "externalId": "base5-7",
     "tcgdex_id": "base5-7",
     "localId": "007",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "007/82",
+    "cardNumber": "7/82",
     "cardName": "Dark Golbat",
-    "fullDisplayName": "Dark Golbat 007/82 Team Rocket",
+    "fullDisplayName": "Dark Golbat 7/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2462,18 +2995,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-007-low.png",
-    "imageHighSrc": "cards/base5-007-high.png"
+    "imageHighSrc": "cards/base5-007-high.png",
+    "attacks": [
+      {
+        "name": "Flitter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1720",
-    "externalId": null,
+    "externalId": "base5-6",
     "tcgdex_id": "base5-6",
     "localId": "006",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "006/82",
+    "cardNumber": "6/82",
     "cardName": "Dark Dugtrio",
-    "fullDisplayName": "Dark Dugtrio 006/82 Team Rocket",
+    "fullDisplayName": "Dark Dugtrio 6/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2495,18 +3034,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-006-low.png",
-    "imageHighSrc": "cards/base5-006-high.png"
+    "imageHighSrc": "cards/base5-006-high.png",
+    "attacks": [
+      {
+        "name": "Knock Down",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "1719",
-    "externalId": null,
+    "externalId": "base5-5",
     "tcgdex_id": "base5-5",
     "localId": "005",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "005/82",
+    "cardNumber": "5/82",
     "cardName": "Dark Dragonite",
-    "fullDisplayName": "Dark Dragonite 005/82 Team Rocket",
+    "fullDisplayName": "Dark Dragonite 5/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2528,18 +3073,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-005-low.png",
-    "imageHighSrc": "cards/base5-005-high.png"
+    "imageHighSrc": "cards/base5-005-high.png",
+    "attacks": [
+      {
+        "name": "Giant Tail",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1718",
-    "externalId": null,
+    "externalId": "base5-4",
     "tcgdex_id": "base5-4",
     "localId": "004",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "004/82",
+    "cardNumber": "4/82",
     "cardName": "Dark Charizard",
-    "fullDisplayName": "Dark Charizard 004/82 Team Rocket",
+    "fullDisplayName": "Dark Charizard 4/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2561,18 +3112,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-004-low.png",
-    "imageHighSrc": "cards/base5-004-high.png"
+    "imageHighSrc": "cards/base5-004-high.png",
+    "attacks": [
+      {
+        "name": "Nail Flick",
+        "damage": "10"
+      },
+      {
+        "name": "Continuous Fireball",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "1717",
-    "externalId": null,
+    "externalId": "base5-3",
     "tcgdex_id": "base5-3",
     "localId": "003",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "003/82",
+    "cardNumber": "3/82",
     "cardName": "Dark Blastoise",
-    "fullDisplayName": "Dark Blastoise 003/82 Team Rocket",
+    "fullDisplayName": "Dark Blastoise 3/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2594,18 +3155,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-003-low.png",
-    "imageHighSrc": "cards/base5-003-high.png"
+    "imageHighSrc": "cards/base5-003-high.png",
+    "attacks": [
+      {
+        "name": "Hydrocannon",
+        "damage": "30+"
+      },
+      {
+        "name": "Rocket Tackle",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1716",
-    "externalId": null,
+    "externalId": "base5-2",
     "tcgdex_id": "base5-2",
     "localId": "002",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "002/82",
+    "cardNumber": "2/82",
     "cardName": "Dark Arbok",
-    "fullDisplayName": "Dark Arbok 002/82 Team Rocket",
+    "fullDisplayName": "Dark Arbok 2/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2627,18 +3198,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-002-low.png",
-    "imageHighSrc": "cards/base5-002-high.png"
+    "imageHighSrc": "cards/base5-002-high.png",
+    "attacks": [
+      {
+        "name": "Stare",
+        "damage": null
+      },
+      {
+        "name": "Poison Vapor",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1715",
-    "externalId": null,
+    "externalId": "base5-1",
     "tcgdex_id": "base5-1",
     "localId": "001",
     "setCode": "base5",
     "setTcgdexId": "base5",
-    "cardNumber": "001/82",
+    "cardNumber": "1/82",
     "cardName": "Dark Alakazam",
-    "fullDisplayName": "Dark Alakazam 001/82 Team Rocket",
+    "fullDisplayName": "Dark Alakazam 1/82 Team Rocket",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2660,6 +3241,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base5-001-low.png",
-    "imageHighSrc": "cards/base5-001-high.png"
+    "imageHighSrc": "cards/base5-001-high.png",
+    "attacks": [
+      {
+        "name": "Teleport Blast",
+        "damage": "30"
+      },
+      {
+        "name": "Mind Shock",
+        "damage": "40"
+      }
+    ]
   }
 ]

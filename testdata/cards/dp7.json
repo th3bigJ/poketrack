@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "4960",
-    "externalId": null,
+    "externalId": "dp7-SH3",
     "tcgdex_id": "dp7-SH3",
     "localId": "SH3",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "SH3/100",
+    "cardNumber": "SH3",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb SH3/100 Stormfront",
+    "fullDisplayName": "Voltorb SH3 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-SH3-low.png",
-    "imageHighSrc": "cards/dp7-SH3-high.png"
+    "imageHighSrc": "cards/dp7-SH3-high.png",
+    "attacks": [
+      {
+        "name": "Fastball",
+        "damage": null
+      },
+      {
+        "name": "Charge Beam",
+        "damage": "10"
+      },
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4954",
-    "externalId": null,
+    "externalId": "dp7-SH2",
     "tcgdex_id": "dp7-SH2",
     "localId": "SH2",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "SH2/100",
+    "cardNumber": "SH2",
     "cardName": "Duskull",
-    "fullDisplayName": "Duskull SH2/100 Stormfront",
+    "fullDisplayName": "Duskull SH2 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +77,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-SH2-low.png",
-    "imageHighSrc": "cards/dp7-SH2-high.png"
+    "imageHighSrc": "cards/dp7-SH2-high.png",
+    "attacks": [
+      {
+        "name": "Counting Song",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Night Bind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4947",
-    "externalId": null,
+    "externalId": "dp7-SH1",
     "tcgdex_id": "dp7-SH1",
     "localId": "SH1",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "SH1/100",
+    "cardNumber": "SH1",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon SH1/100 Stormfront",
+    "fullDisplayName": "Drifloon SH1 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,11 +124,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-SH1-low.png",
-    "imageHighSrc": "cards/dp7-SH1-high.png"
+    "imageHighSrc": "cards/dp7-SH1-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Big Explosion",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4940",
-    "externalId": null,
+    "externalId": "dp7-103",
     "tcgdex_id": "dp7-103",
     "localId": "103",
     "setCode": "dp7",
@@ -129,11 +167,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-103-low.png",
-    "imageHighSrc": "cards/dp7-103-high.png"
+    "imageHighSrc": "cards/dp7-103-high.png",
+    "attacks": [
+      {
+        "name": "Fire Spin",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4933",
-    "externalId": null,
+    "externalId": "dp7-102",
     "tcgdex_id": "dp7-102",
     "localId": "102",
     "setCode": "dp7",
@@ -162,11 +206,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-102-low.png",
-    "imageHighSrc": "cards/dp7-102-high.png"
+    "imageHighSrc": "cards/dp7-102-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "30"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4926",
-    "externalId": null,
+    "externalId": "dp7-101",
     "tcgdex_id": "dp7-101",
     "localId": "101",
     "setCode": "dp7",
@@ -195,11 +249,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-101-low.png",
-    "imageHighSrc": "cards/dp7-101-high.png"
+    "imageHighSrc": "cards/dp7-101-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4919",
-    "externalId": null,
+    "externalId": "dp7-100",
     "tcgdex_id": "dp7-100",
     "localId": "100",
     "setCode": "dp7",
@@ -228,18 +292,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-100-low.png",
-    "imageHighSrc": "cards/dp7-100-high.png"
+    "imageHighSrc": "cards/dp7-100-high.png",
+    "attacks": [
+      {
+        "name": "Giga Blaster",
+        "damage": "100"
+      }
+    ],
+    "rules": "Put this card onto your Active Regigigas. Regigigas LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4912",
-    "externalId": null,
+    "externalId": "dp7-99",
     "tcgdex_id": "dp7-99",
     "localId": "099",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "099/100",
+    "cardNumber": "99/100",
     "cardName": "Raichu LV.X",
-    "fullDisplayName": "Raichu LV.X 099/100 Stormfront",
+    "fullDisplayName": "Raichu LV.X 99/100 Stormfront",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -261,18 +332,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-099-low.png",
-    "imageHighSrc": "cards/dp7-099-high.png"
+    "imageHighSrc": "cards/dp7-099-high.png",
+    "attacks": [
+      {
+        "name": "Voltage Shoot",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Raichu. Raichu LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4903",
-    "externalId": null,
+    "externalId": "dp7-98",
     "tcgdex_id": "dp7-98",
     "localId": "098",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "098/100",
+    "cardNumber": "98/100",
     "cardName": "Machamp LV.X",
-    "fullDisplayName": "Machamp LV.X 098/100 Stormfront",
+    "fullDisplayName": "Machamp LV.X 98/100 Stormfront",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -294,18 +372,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-098-low.png",
-    "imageHighSrc": "cards/dp7-098-high.png"
+    "imageHighSrc": "cards/dp7-098-high.png",
+    "attacks": [
+      {
+        "name": "Strong-Willed",
+        "damage": "20"
+      }
+    ],
+    "rules": "Put this card onto your Active Machamp. Machamp LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4896",
-    "externalId": null,
+    "externalId": "dp7-97",
     "tcgdex_id": "dp7-97",
     "localId": "097",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "097/100",
+    "cardNumber": "97/100",
     "cardName": "Heatran LV.X",
-    "fullDisplayName": "Heatran LV.X 097/100 Stormfront",
+    "fullDisplayName": "Heatran LV.X 97/100 Stormfront",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -327,18 +412,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-097-low.png",
-    "imageHighSrc": "cards/dp7-097-high.png"
+    "imageHighSrc": "cards/dp7-097-high.png",
+    "rules": "Put this card onto your Active Heatran. Heatran LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4888",
-    "externalId": null,
+    "externalId": "dp7-96",
     "tcgdex_id": "dp7-96",
     "localId": "096",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "096/100",
+    "cardNumber": "96/100",
     "cardName": "Dusknoir LV.X",
-    "fullDisplayName": "Dusknoir LV.X 096/100 Stormfront",
+    "fullDisplayName": "Dusknoir LV.X 96/100 Stormfront",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -360,18 +446,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-096-low.png",
-    "imageHighSrc": "cards/dp7-096-high.png"
+    "imageHighSrc": "cards/dp7-096-high.png",
+    "rules": "Put this card onto your Active Dusknoir. Dusknoir LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4881",
-    "externalId": null,
+    "externalId": "dp7-95",
     "tcgdex_id": "dp7-95",
     "localId": "095",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "095/100",
+    "cardNumber": "95/100",
     "cardName": "Warp Energy",
-    "fullDisplayName": "Warp Energy 095/100 Stormfront",
+    "fullDisplayName": "Warp Energy 95/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -389,18 +476,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-095-low.png",
-    "imageHighSrc": "cards/dp7-095-high.png"
+    "imageHighSrc": "cards/dp7-095-high.png",
+    "rules": "Warp Energy provides Colorless Energy. When you attach this card from your hand to your Active Pokémon, switch that Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "4871",
-    "externalId": null,
+    "externalId": "dp7-94",
     "tcgdex_id": "dp7-94",
     "localId": "094",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "094/100",
+    "cardNumber": "94/100",
     "cardName": "Cyclone Energy",
-    "fullDisplayName": "Cyclone Energy 094/100 Stormfront",
+    "fullDisplayName": "Cyclone Energy 94/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -418,18 +506,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-094-low.png",
-    "imageHighSrc": "cards/dp7-094-high.png"
+    "imageHighSrc": "cards/dp7-094-high.png",
+    "rules": "Cyclone Energy provides Colorless Energy. When you attach this card from your hand to your Active Pokémon, switch 1 of the Defending Pokémon with 1 of your opponent's Benched Pokémon. Your opponent chooses the Benched Pokémon to switch."
   },
   {
     "masterCardId": "4863",
-    "externalId": null,
+    "externalId": "dp7-93",
     "tcgdex_id": "dp7-93",
     "localId": "093",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "093/100",
+    "cardNumber": "93/100",
     "cardName": "Switch",
-    "fullDisplayName": "Switch 093/100 Stormfront",
+    "fullDisplayName": "Switch 93/100 Stormfront",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -447,18 +536,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-093-low.png",
-    "imageHighSrc": "cards/dp7-093-high.png"
+    "imageHighSrc": "cards/dp7-093-high.png",
+    "rules": "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "4859",
-    "externalId": null,
+    "externalId": "dp7-92",
     "tcgdex_id": "dp7-92",
     "localId": "092",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "092/100",
+    "cardNumber": "92/100",
     "cardName": "Potion",
-    "fullDisplayName": "Potion 092/100 Stormfront",
+    "fullDisplayName": "Potion 92/100 Stormfront",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -476,18 +566,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-092-low.png",
-    "imageHighSrc": "cards/dp7-092-high.png"
+    "imageHighSrc": "cards/dp7-092-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "4851",
-    "externalId": null,
+    "externalId": "dp7-91",
     "tcgdex_id": "dp7-91",
     "localId": "091",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "091/100",
+    "cardNumber": "91/100",
     "cardName": "Premier Ball",
-    "fullDisplayName": "Premier Ball 091/100 Stormfront",
+    "fullDisplayName": "Premier Ball 91/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -505,18 +596,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-091-low.png",
-    "imageHighSrc": "cards/dp7-091-high.png"
+    "imageHighSrc": "cards/dp7-091-high.png",
+    "rules": "Search your deck or your discard pile for a Pokémon LV.X, show it to your opponent, and put it into your hand. If you search your deck, shuffle your deck afterward."
   },
   {
     "masterCardId": "4843",
-    "externalId": null,
+    "externalId": "dp7-90",
     "tcgdex_id": "dp7-90",
     "localId": "090",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "090/100",
+    "cardNumber": "90/100",
     "cardName": "Poké Healer +",
-    "fullDisplayName": "Poké Healer + 090/100 Stormfront",
+    "fullDisplayName": "Poké Healer + 90/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -534,18 +626,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-090-low.png",
-    "imageHighSrc": "cards/dp7-090-high.png"
+    "imageHighSrc": "cards/dp7-090-high.png",
+    "rules": "You may play 2 Poké Healer + at the same time. If you play 1 Poké Healer +, remove 1 damage counter and a Special Condition from 1 of your Active Pokémon. If you play 2 Poké Healer +, remove 8 damage counters and all Special Conditions from 1 of your Active Pokémon."
   },
   {
     "masterCardId": "4834",
-    "externalId": null,
+    "externalId": "dp7-89",
     "tcgdex_id": "dp7-89",
     "localId": "089",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "089/100",
+    "cardNumber": "89/100",
     "cardName": "Poké Drawer +",
-    "fullDisplayName": "Poké Drawer + 089/100 Stormfront",
+    "fullDisplayName": "Poké Drawer + 89/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -563,18 +656,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-089-low.png",
-    "imageHighSrc": "cards/dp7-089-high.png"
+    "imageHighSrc": "cards/dp7-089-high.png",
+    "rules": "You may play 2 Poké Drawer + at the same time. If you play 1 Poké Drawer +, draw a card. If you play 2 Poké Drawer +, search your deck for up to 2 cards, and put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4826",
-    "externalId": null,
+    "externalId": "dp7-88",
     "tcgdex_id": "dp7-88",
     "localId": "088",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "088/100",
+    "cardNumber": "88/100",
     "cardName": "Poké Blower +",
-    "fullDisplayName": "Poké Blower + 088/100 Stormfront",
+    "fullDisplayName": "Poké Blower + 88/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -592,18 +686,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-088-low.png",
-    "imageHighSrc": "cards/dp7-088-high.png"
+    "imageHighSrc": "cards/dp7-088-high.png",
+    "rules": "You may play 2 Poké Blower + at the same time. If you play 1 Poké Blower +, flip a coin. If heads, put 1 damage counter on 1 of your opponent's Pokémon. If you play 2 Poké Blower +, choose 1 of your opponent's Benched Pokémon and switch it with 1 of your opponent's Active Pokémon."
   },
   {
     "masterCardId": "4818",
-    "externalId": null,
+    "externalId": "dp7-87",
     "tcgdex_id": "dp7-87",
     "localId": "087",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "087/100",
+    "cardNumber": "87/100",
     "cardName": "Marley's Request",
-    "fullDisplayName": "Marley's Request 087/100 Stormfront",
+    "fullDisplayName": "Marley's Request 87/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -621,18 +716,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-087-low.png",
-    "imageHighSrc": "cards/dp7-087-high.png"
+    "imageHighSrc": "cards/dp7-087-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your discard pile for 2 different Trainer, Supporter, or Stadium cards, show them to your opponent, and your opponent chooses 1 of them. Put that card into your hand, and discard the other card. (If all Trainer, Supporter, and Stadium cards in your discard pile have the same name, choose 1 of them. Show that card to your opponent and put it into your hand.)"
   },
   {
     "masterCardId": "4810",
-    "externalId": null,
+    "externalId": "dp7-86",
     "tcgdex_id": "dp7-86",
     "localId": "086",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "086/100",
+    "cardNumber": "86/100",
     "cardName": "Luxury Ball",
-    "fullDisplayName": "Luxury Ball 086/100 Stormfront",
+    "fullDisplayName": "Luxury Ball 86/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -650,18 +746,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-086-low.png",
-    "imageHighSrc": "cards/dp7-086-high.png"
+    "imageHighSrc": "cards/dp7-086-high.png",
+    "rules": "Search your deck for a Pokémon (excluding Pokémon LV.X), show it to your opponent, and put it into your hand. Shuffle your deck afterward. If any Luxury Ball is in your discard pile, you can't play this card."
   },
   {
     "masterCardId": "4803",
-    "externalId": null,
+    "externalId": "dp7-85",
     "tcgdex_id": "dp7-85",
     "localId": "085",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "085/100",
+    "cardNumber": "85/100",
     "cardName": "Great Ball",
-    "fullDisplayName": "Great Ball 085/100 Stormfront",
+    "fullDisplayName": "Great Ball 85/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -679,18 +776,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-085-low.png",
-    "imageHighSrc": "cards/dp7-085-high.png"
+    "imageHighSrc": "cards/dp7-085-high.png",
+    "rules": "Search your deck for a Basic Pokémon and put it onto your Bench. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4796",
-    "externalId": null,
+    "externalId": "dp7-84",
     "tcgdex_id": "dp7-84",
     "localId": "084",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "084/100",
+    "cardNumber": "84/100",
     "cardName": "Energy Switch",
-    "fullDisplayName": "Energy Switch 084/100 Stormfront",
+    "fullDisplayName": "Energy Switch 84/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -708,18 +806,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-084-low.png",
-    "imageHighSrc": "cards/dp7-084-high.png"
+    "imageHighSrc": "cards/dp7-084-high.png",
+    "rules": "Move a basic Energy card attached to 1 of your Pokémon to another of your Pokémon."
   },
   {
     "masterCardId": "4788",
-    "externalId": null,
+    "externalId": "dp7-83",
     "tcgdex_id": "dp7-83",
     "localId": "083",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "083/100",
+    "cardNumber": "83/100",
     "cardName": "Energy Link",
-    "fullDisplayName": "Energy Link 083/100 Stormfront",
+    "fullDisplayName": "Energy Link 83/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -737,18 +836,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-083-low.png",
-    "imageHighSrc": "cards/dp7-083-high.png"
+    "imageHighSrc": "cards/dp7-083-high.png",
+    "rules": "Attach Energy Link to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nAs long as Energy Link is attached to a Pokémon, you may move an Energy card attached to that Pokémon to another of your Pokémon that has Energy Link attached to it. You may use this effect as often as you like during your turn."
   },
   {
     "masterCardId": "4779",
-    "externalId": null,
+    "externalId": "dp7-82",
     "tcgdex_id": "dp7-82",
     "localId": "082",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "082/100",
+    "cardNumber": "82/100",
     "cardName": "Conductive Quarry",
-    "fullDisplayName": "Conductive Quarry 082/100 Stormfront",
+    "fullDisplayName": "Conductive Quarry 82/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -766,18 +866,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-082-low.png",
-    "imageHighSrc": "cards/dp7-082-high.png"
+    "imageHighSrc": "cards/dp7-082-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nOnce during each player's turn, the player may flip a coin. If heads, that player searches his or her discard pile for a Lightning or Metal Energy card, shows it to the opponent, and puts it into his or her hand."
   },
   {
     "masterCardId": "4772",
-    "externalId": null,
+    "externalId": "dp7-81",
     "tcgdex_id": "dp7-81",
     "localId": "081",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "081/100",
+    "cardNumber": "81/100",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 081/100 Stormfront",
+    "fullDisplayName": "Voltorb 81/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -799,18 +900,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-081-low.png",
-    "imageHighSrc": "cards/dp7-081-high.png"
+    "imageHighSrc": "cards/dp7-081-high.png",
+    "attacks": [
+      {
+        "name": "Outlet",
+        "damage": null
+      },
+      {
+        "name": "Bouncing Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4764",
-    "externalId": null,
+    "externalId": "dp7-80",
     "tcgdex_id": "dp7-80",
     "localId": "080",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "080/100",
+    "cardNumber": "80/100",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 080/100 Stormfront",
+    "fullDisplayName": "Voltorb 80/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -832,18 +943,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-080-low.png",
-    "imageHighSrc": "cards/dp7-080-high.png"
+    "imageHighSrc": "cards/dp7-080-high.png",
+    "attacks": [
+      {
+        "name": "Screech",
+        "damage": null
+      },
+      {
+        "name": "Double Spin",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4757",
-    "externalId": null,
+    "externalId": "dp7-79",
     "tcgdex_id": "dp7-79",
     "localId": "079",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "079/100",
+    "cardNumber": "79/100",
     "cardName": "Treecko",
-    "fullDisplayName": "Treecko 079/100 Stormfront",
+    "fullDisplayName": "Treecko 79/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -865,18 +986,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-079-low.png",
-    "imageHighSrc": "cards/dp7-079-high.png"
+    "imageHighSrc": "cards/dp7-079-high.png",
+    "attacks": [
+      {
+        "name": "Call for Friends",
+        "damage": null
+      },
+      {
+        "name": "Poison Breath",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4749",
-    "externalId": null,
+    "externalId": "dp7-78",
     "tcgdex_id": "dp7-78",
     "localId": "078",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "078/100",
+    "cardNumber": "78/100",
     "cardName": "Tangela",
-    "fullDisplayName": "Tangela 078/100 Stormfront",
+    "fullDisplayName": "Tangela 78/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -898,18 +1029,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-078-low.png",
-    "imageHighSrc": "cards/dp7-078-high.png"
+    "imageHighSrc": "cards/dp7-078-high.png",
+    "attacks": [
+      {
+        "name": "Ingrain",
+        "damage": null
+      },
+      {
+        "name": "Tickle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4743",
-    "externalId": null,
+    "externalId": "dp7-77",
     "tcgdex_id": "dp7-77",
     "localId": "077",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "077/100",
+    "cardNumber": "77/100",
     "cardName": "Swinub",
-    "fullDisplayName": "Swinub 077/100 Stormfront",
+    "fullDisplayName": "Swinub 77/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -931,18 +1072,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-077-low.png",
-    "imageHighSrc": "cards/dp7-077-high.png"
+    "imageHighSrc": "cards/dp7-077-high.png",
+    "attacks": [
+      {
+        "name": "Freezing Breath",
+        "damage": null
+      },
+      {
+        "name": "Take Down",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4731",
-    "externalId": null,
+    "externalId": "dp7-76",
     "tcgdex_id": "dp7-76",
     "localId": "076",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "076/100",
+    "cardNumber": "76/100",
     "cardName": "Stunky",
-    "fullDisplayName": "Stunky 076/100 Stormfront",
+    "fullDisplayName": "Stunky 76/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -964,18 +1115,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-076-low.png",
-    "imageHighSrc": "cards/dp7-076-high.png"
+    "imageHighSrc": "cards/dp7-076-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw and Run",
+        "damage": "10"
+      },
+      {
+        "name": "Double Scratch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4723",
-    "externalId": null,
+    "externalId": "dp7-75",
     "tcgdex_id": "dp7-75",
     "localId": "075",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "075/100",
+    "cardNumber": "75/100",
     "cardName": "Starly",
-    "fullDisplayName": "Starly 075/100 Stormfront",
+    "fullDisplayName": "Starly 75/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -997,18 +1158,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-075-low.png",
-    "imageHighSrc": "cards/dp7-075-high.png"
+    "imageHighSrc": "cards/dp7-075-high.png",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": null
+      },
+      {
+        "name": "Double Stab",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4715",
-    "externalId": null,
+    "externalId": "dp7-74",
     "tcgdex_id": "dp7-74",
     "localId": "074",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "074/100",
+    "cardNumber": "74/100",
     "cardName": "Snover",
-    "fullDisplayName": "Snover 074/100 Stormfront",
+    "fullDisplayName": "Snover 74/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1030,18 +1201,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-074-low.png",
-    "imageHighSrc": "cards/dp7-074-high.png"
+    "imageHighSrc": "cards/dp7-074-high.png",
+    "attacks": [
+      {
+        "name": "Hide",
+        "damage": null
+      },
+      {
+        "name": "Powder Snow",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4710",
-    "externalId": null,
+    "externalId": "dp7-73",
     "tcgdex_id": "dp7-73",
     "localId": "073",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "073/100",
+    "cardNumber": "73/100",
     "cardName": "Skorupi",
-    "fullDisplayName": "Skorupi 073/100 Stormfront",
+    "fullDisplayName": "Skorupi 73/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1063,18 +1244,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-073-low.png",
-    "imageHighSrc": "cards/dp7-073-high.png"
+    "imageHighSrc": "cards/dp7-073-high.png",
+    "attacks": [
+      {
+        "name": "Stalk",
+        "damage": "10"
+      },
+      {
+        "name": "Dangerous Claw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4701",
-    "externalId": null,
+    "externalId": "dp7-72",
     "tcgdex_id": "dp7-72",
     "localId": "072",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "072/100",
+    "cardNumber": "72/100",
     "cardName": "Roselia",
-    "fullDisplayName": "Roselia 072/100 Stormfront",
+    "fullDisplayName": "Roselia 72/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1096,18 +1287,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-072-low.png",
-    "imageHighSrc": "cards/dp7-072-high.png"
+    "imageHighSrc": "cards/dp7-072-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Petal Spikes",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4693",
-    "externalId": null,
+    "externalId": "dp7-71",
     "tcgdex_id": "dp7-71",
     "localId": "071",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "071/100",
+    "cardNumber": "71/100",
     "cardName": "Ponyta",
-    "fullDisplayName": "Ponyta 071/100 Stormfront",
+    "fullDisplayName": "Ponyta 71/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1129,18 +1330,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-071-low.png",
-    "imageHighSrc": "cards/dp7-071-high.png"
+    "imageHighSrc": "cards/dp7-071-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4685",
-    "externalId": null,
+    "externalId": "dp7-70",
     "tcgdex_id": "dp7-70",
     "localId": "070",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "070/100",
+    "cardNumber": "70/100",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 070/100 Stormfront",
+    "fullDisplayName": "Pikachu 70/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1162,18 +1373,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-070-low.png",
-    "imageHighSrc": "cards/dp7-070-high.png"
+    "imageHighSrc": "cards/dp7-070-high.png",
+    "attacks": [
+      {
+        "name": "Pika Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Speed Bolt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4678",
-    "externalId": null,
+    "externalId": "dp7-69",
     "tcgdex_id": "dp7-69",
     "localId": "069",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "069/100",
+    "cardNumber": "69/100",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 069/100 Stormfront",
+    "fullDisplayName": "Onix 69/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1195,18 +1416,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-069-low.png",
-    "imageHighSrc": "cards/dp7-069-high.png"
+    "imageHighSrc": "cards/dp7-069-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Bind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4672",
-    "externalId": null,
+    "externalId": "dp7-68",
     "tcgdex_id": "dp7-68",
     "localId": "068",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "068/100",
+    "cardNumber": "68/100",
     "cardName": "Misdreavus",
-    "fullDisplayName": "Misdreavus 068/100 Stormfront",
+    "fullDisplayName": "Misdreavus 68/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1228,18 +1459,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-068-low.png",
-    "imageHighSrc": "cards/dp7-068-high.png"
+    "imageHighSrc": "cards/dp7-068-high.png",
+    "attacks": [
+      {
+        "name": "Lullaby",
+        "damage": null
+      },
+      {
+        "name": "Nightmare Feast",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4664",
-    "externalId": null,
+    "externalId": "dp7-67",
     "tcgdex_id": "dp7-67",
     "localId": "067",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "067/100",
+    "cardNumber": "67/100",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 067/100 Stormfront",
+    "fullDisplayName": "Magnemite 67/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1261,18 +1502,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-067-low.png",
-    "imageHighSrc": "cards/dp7-067-high.png"
+    "imageHighSrc": "cards/dp7-067-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Random Spark",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4656",
-    "externalId": null,
+    "externalId": "dp7-66",
     "tcgdex_id": "dp7-66",
     "localId": "066",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "066/100",
+    "cardNumber": "66/100",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 066/100 Stormfront",
+    "fullDisplayName": "Magnemite 66/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1294,18 +1545,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-066-low.png",
-    "imageHighSrc": "cards/dp7-066-high.png"
+    "imageHighSrc": "cards/dp7-066-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Bomb",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Magnet: Magnemite's Retreat Cost is Colorless less for each Magnemite on your Bench."
   },
   {
     "masterCardId": "4647",
-    "externalId": null,
+    "externalId": "dp7-65",
     "tcgdex_id": "dp7-65",
     "localId": "065",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "065/100",
+    "cardNumber": "65/100",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 065/100 Stormfront",
+    "fullDisplayName": "Magikarp 65/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1327,18 +1585,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-065-low.png",
-    "imageHighSrc": "cards/dp7-065-high.png"
+    "imageHighSrc": "cards/dp7-065-high.png",
+    "attacks": [
+      {
+        "name": "Sea Spray",
+        "damage": null
+      },
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4638",
-    "externalId": null,
+    "externalId": "dp7-64",
     "tcgdex_id": "dp7-64",
     "localId": "064",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "064/100",
+    "cardNumber": "64/100",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 064/100 Stormfront",
+    "fullDisplayName": "Machop 64/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1360,18 +1628,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-064-low.png",
-    "imageHighSrc": "cards/dp7-064-high.png"
+    "imageHighSrc": "cards/dp7-064-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Knock Back",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4631",
-    "externalId": null,
+    "externalId": "dp7-63",
     "tcgdex_id": "dp7-63",
     "localId": "063",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "063/100",
+    "cardNumber": "63/100",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 063/100 Stormfront",
+    "fullDisplayName": "Larvitar 63/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1393,18 +1671,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-063-low.png",
-    "imageHighSrc": "cards/dp7-063-high.png"
+    "imageHighSrc": "cards/dp7-063-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Rock Slide",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4623",
-    "externalId": null,
+    "externalId": "dp7-62",
     "tcgdex_id": "dp7-62",
     "localId": "062",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "062/100",
+    "cardNumber": "62/100",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 062/100 Stormfront",
+    "fullDisplayName": "Gastly 62/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1426,18 +1714,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-062-low.png",
-    "imageHighSrc": "cards/dp7-062-high.png"
+    "imageHighSrc": "cards/dp7-062-high.png",
+    "attacks": [
+      {
+        "name": "Pitch-Dark",
+        "damage": null
+      },
+      {
+        "name": "Trick Gas",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4616",
-    "externalId": null,
+    "externalId": "dp7-61",
     "tcgdex_id": "dp7-61",
     "localId": "061",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "061/100",
+    "cardNumber": "61/100",
     "cardName": "Finneon",
-    "fullDisplayName": "Finneon 061/100 Stormfront",
+    "fullDisplayName": "Finneon 61/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1459,18 +1757,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-061-low.png",
-    "imageHighSrc": "cards/dp7-061-high.png"
+    "imageHighSrc": "cards/dp7-061-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Liner",
+        "damage": null
+      },
+      {
+        "name": "Mouth Pump",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4608",
-    "externalId": null,
+    "externalId": "dp7-60",
     "tcgdex_id": "dp7-60",
     "localId": "060",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "060/100",
+    "cardNumber": "60/100",
     "cardName": "Duskull",
-    "fullDisplayName": "Duskull 060/100 Stormfront",
+    "fullDisplayName": "Duskull 60/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1492,18 +1800,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-060-low.png",
-    "imageHighSrc": "cards/dp7-060-high.png"
+    "imageHighSrc": "cards/dp7-060-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Surprise Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4600",
-    "externalId": null,
+    "externalId": "dp7-59",
     "tcgdex_id": "dp7-59",
     "localId": "059",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "059/100",
+    "cardNumber": "59/100",
     "cardName": "Duskull",
-    "fullDisplayName": "Duskull 059/100 Stormfront",
+    "fullDisplayName": "Duskull 59/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1525,18 +1843,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-059-low.png",
-    "imageHighSrc": "cards/dp7-059-high.png"
+    "imageHighSrc": "cards/dp7-059-high.png",
+    "attacks": [
+      {
+        "name": "Silhouette",
+        "damage": null
+      },
+      {
+        "name": "Will-o'-the-wisp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4592",
-    "externalId": null,
+    "externalId": "dp7-58",
     "tcgdex_id": "dp7-58",
     "localId": "058",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "058/100",
+    "cardNumber": "58/100",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 058/100 Stormfront",
+    "fullDisplayName": "Drifloon 58/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1558,18 +1886,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-058-low.png",
-    "imageHighSrc": "cards/dp7-058-high.png"
+    "imageHighSrc": "cards/dp7-058-high.png",
+    "attacks": [
+      {
+        "name": "Constrict",
+        "damage": null
+      },
+      {
+        "name": "Linear Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4585",
-    "externalId": null,
+    "externalId": "dp7-57",
     "tcgdex_id": "dp7-57",
     "localId": "057",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "057/100",
+    "cardNumber": "57/100",
     "cardName": "Combee",
-    "fullDisplayName": "Combee 057/100 Stormfront",
+    "fullDisplayName": "Combee 57/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1591,18 +1929,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-057-low.png",
-    "imageHighSrc": "cards/dp7-057-high.png"
+    "imageHighSrc": "cards/dp7-057-high.png",
+    "attacks": [
+      {
+        "name": "Alert",
+        "damage": null
+      }
+    ],
+    "rules": "Honey: Once during your turn, when you put Combee from your hand onto your Bench, you may search your discard pile for a Basic Pokémon and put it onto your Bench."
   },
   {
     "masterCardId": "4576",
-    "externalId": null,
+    "externalId": "dp7-56",
     "tcgdex_id": "dp7-56",
     "localId": "056",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "056/100",
+    "cardNumber": "56/100",
     "cardName": "Cherubi",
-    "fullDisplayName": "Cherubi 056/100 Stormfront",
+    "fullDisplayName": "Cherubi 56/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1624,18 +1969,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-056-low.png",
-    "imageHighSrc": "cards/dp7-056-high.png"
+    "imageHighSrc": "cards/dp7-056-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Bullet Seed",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4569",
-    "externalId": null,
+    "externalId": "dp7-55",
     "tcgdex_id": "dp7-55",
     "localId": "055",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "055/100",
+    "cardNumber": "55/100",
     "cardName": "Bronzor",
-    "fullDisplayName": "Bronzor 055/100 Stormfront",
+    "fullDisplayName": "Bronzor 55/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1657,18 +2012,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-055-low.png",
-    "imageHighSrc": "cards/dp7-055-high.png"
+    "imageHighSrc": "cards/dp7-055-high.png",
+    "attacks": [
+      {
+        "name": "Gyro Swap",
+        "damage": null
+      },
+      {
+        "name": "Psyshock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4560",
-    "externalId": null,
+    "externalId": "dp7-54",
     "tcgdex_id": "dp7-54",
     "localId": "054",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "054/100",
+    "cardNumber": "54/100",
     "cardName": "Bidoof",
-    "fullDisplayName": "Bidoof 054/100 Stormfront",
+    "fullDisplayName": "Bidoof 54/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1690,18 +2055,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-054-low.png",
-    "imageHighSrc": "cards/dp7-054-high.png"
+    "imageHighSrc": "cards/dp7-054-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      },
+      {
+        "name": "Self-abandonment",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4550",
-    "externalId": null,
+    "externalId": "dp7-53",
     "tcgdex_id": "dp7-53",
     "localId": "053",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "053/100",
+    "cardNumber": "53/100",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 053/100 Stormfront",
+    "fullDisplayName": "Bagon 53/100 Stormfront",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1723,18 +2098,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-053-low.png",
-    "imageHighSrc": "cards/dp7-053-high.png"
+    "imageHighSrc": "cards/dp7-053-high.png",
+    "attacks": [
+      {
+        "name": "Scary Face",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4543",
-    "externalId": null,
+    "externalId": "dp7-52",
     "tcgdex_id": "dp7-52",
     "localId": "052",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "052/100",
+    "cardNumber": "52/100",
     "cardName": "Staravia",
-    "fullDisplayName": "Staravia 052/100 Stormfront",
+    "fullDisplayName": "Staravia 52/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1756,18 +2141,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-052-low.png",
-    "imageHighSrc": "cards/dp7-052-high.png"
+    "imageHighSrc": "cards/dp7-052-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "30"
+      },
+      {
+        "name": "Shot Air",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4534",
-    "externalId": null,
+    "externalId": "dp7-51",
     "tcgdex_id": "dp7-51",
     "localId": "051",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "051/100",
+    "cardNumber": "51/100",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 051/100 Stormfront",
+    "fullDisplayName": "Skarmory 51/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1789,18 +2184,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-051-low.png",
-    "imageHighSrc": "cards/dp7-051-high.png"
+    "imageHighSrc": "cards/dp7-051-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Mach Blade",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4525",
-    "externalId": null,
+    "externalId": "dp7-50",
     "tcgdex_id": "dp7-50",
     "localId": "050",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "050/100",
+    "cardNumber": "50/100",
     "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 050/100 Stormfront",
+    "fullDisplayName": "Shelgon 50/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1822,18 +2227,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-050-low.png",
-    "imageHighSrc": "cards/dp7-050-high.png"
+    "imageHighSrc": "cards/dp7-050-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      },
+      {
+        "name": "Rollout",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4516",
-    "externalId": null,
+    "externalId": "dp7-49",
     "tcgdex_id": "dp7-49",
     "localId": "049",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "049/100",
+    "cardNumber": "49/100",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 049/100 Stormfront",
+    "fullDisplayName": "Scyther 49/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1855,18 +2270,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-049-low.png",
-    "imageHighSrc": "cards/dp7-049-high.png"
+    "imageHighSrc": "cards/dp7-049-high.png",
+    "attacks": [
+      {
+        "name": "Swords Dance",
+        "damage": null
+      },
+      {
+        "name": "Slashing Strike",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4507",
-    "externalId": null,
+    "externalId": "dp7-48",
     "tcgdex_id": "dp7-48",
     "localId": "048",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "048/100",
+    "cardNumber": "48/100",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 048/100 Stormfront",
+    "fullDisplayName": "Sableye 48/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1888,18 +2313,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-048-low.png",
-    "imageHighSrc": "cards/dp7-048-high.png"
+    "imageHighSrc": "cards/dp7-048-high.png",
+    "attacks": [
+      {
+        "name": "Impersonate",
+        "damage": null
+      },
+      {
+        "name": "Overconfident",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4496",
-    "externalId": null,
+    "externalId": "dp7-47",
     "tcgdex_id": "dp7-47",
     "localId": "047",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "047/100",
+    "cardNumber": "47/100",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 047/100 Stormfront",
+    "fullDisplayName": "Pupitar 47/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1921,18 +2356,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-047-low.png",
-    "imageHighSrc": "cards/dp7-047-high.png"
+    "imageHighSrc": "cards/dp7-047-high.png",
+    "attacks": [
+      {
+        "name": "Rock Smash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4486",
-    "externalId": null,
+    "externalId": "dp7-46",
     "tcgdex_id": "dp7-46",
     "localId": "046",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "046/100",
+    "cardNumber": "46/100",
     "cardName": "Piloswine",
-    "fullDisplayName": "Piloswine 046/100 Stormfront",
+    "fullDisplayName": "Piloswine 46/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1954,18 +2395,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-046-low.png",
-    "imageHighSrc": "cards/dp7-046-high.png"
+    "imageHighSrc": "cards/dp7-046-high.png",
+    "attacks": [
+      {
+        "name": "Rouse",
+        "damage": "20+"
+      },
+      {
+        "name": "Overrun",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4478",
-    "externalId": null,
+    "externalId": "dp7-45",
     "tcgdex_id": "dp7-45",
     "localId": "045",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "045/100",
+    "cardNumber": "45/100",
     "cardName": "Pichu",
-    "fullDisplayName": "Pichu 045/100 Stormfront",
+    "fullDisplayName": "Pichu 45/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1987,18 +2438,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-045-low.png",
-    "imageHighSrc": "cards/dp7-045-high.png"
+    "imageHighSrc": "cards/dp7-045-high.png",
+    "attacks": [
+      {
+        "name": "Electric Circuit",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4469",
-    "externalId": null,
+    "externalId": "dp7-44",
     "tcgdex_id": "dp7-44",
     "localId": "044",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "044/100",
+    "cardNumber": "44/100",
     "cardName": "Miltank",
-    "fullDisplayName": "Miltank 044/100 Stormfront",
+    "fullDisplayName": "Miltank 44/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2020,18 +2477,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-044-low.png",
-    "imageHighSrc": "cards/dp7-044-high.png"
+    "imageHighSrc": "cards/dp7-044-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Energy Milk",
+        "damage": null
+      },
+      {
+        "name": "Stomp",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4459",
-    "externalId": null,
+    "externalId": "dp7-43",
     "tcgdex_id": "dp7-43",
     "localId": "043",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "043/100",
+    "cardNumber": "43/100",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 043/100 Stormfront",
+    "fullDisplayName": "Magneton 43/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2053,18 +2524,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-043-low.png",
-    "imageHighSrc": "cards/dp7-043-high.png"
+    "imageHighSrc": "cards/dp7-043-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": "20"
+      },
+      {
+        "name": "Removal Pulse",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4448",
-    "externalId": null,
+    "externalId": "dp7-42",
     "tcgdex_id": "dp7-42",
     "localId": "042",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "042/100",
+    "cardNumber": "42/100",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 042/100 Stormfront",
+    "fullDisplayName": "Magneton 42/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2086,18 +2567,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-042-low.png",
-    "imageHighSrc": "cards/dp7-042-high.png"
+    "imageHighSrc": "cards/dp7-042-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Resonance",
+        "damage": "20"
+      },
+      {
+        "name": "Magnetic Release",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4439",
-    "externalId": null,
+    "externalId": "dp7-41",
     "tcgdex_id": "dp7-41",
     "localId": "041",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "041/100",
+    "cardNumber": "41/100",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 041/100 Stormfront",
+    "fullDisplayName": "Machoke 41/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2119,18 +2610,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-041-low.png",
-    "imageHighSrc": "cards/dp7-041-high.png"
+    "imageHighSrc": "cards/dp7-041-high.png",
+    "attacks": [
+      {
+        "name": "Steady Punch",
+        "damage": "20+"
+      },
+      {
+        "name": "Brick Break",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4425",
-    "externalId": null,
+    "externalId": "dp7-40",
     "tcgdex_id": "dp7-40",
     "localId": "040",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "040/100",
+    "cardNumber": "40/100",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 040/100 Stormfront",
+    "fullDisplayName": "Haunter 40/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2152,18 +2653,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-040-low.png",
-    "imageHighSrc": "cards/dp7-040-high.png"
+    "imageHighSrc": "cards/dp7-040-high.png",
+    "attacks": [
+      {
+        "name": "Smog",
+        "damage": null
+      },
+      {
+        "name": "Hoodwink",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4417",
-    "externalId": null,
+    "externalId": "dp7-39",
     "tcgdex_id": "dp7-39",
     "localId": "039",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "039/100",
+    "cardNumber": "39/100",
     "cardName": "Grovyle",
-    "fullDisplayName": "Grovyle 039/100 Stormfront",
+    "fullDisplayName": "Grovyle 39/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2185,18 +2696,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-039-low.png",
-    "imageHighSrc": "cards/dp7-039-high.png"
+    "imageHighSrc": "cards/dp7-039-high.png",
+    "attacks": [
+      {
+        "name": "Tail Shake",
+        "damage": "20"
+      },
+      {
+        "name": "Slam",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "4402",
-    "externalId": null,
+    "externalId": "dp7-38",
     "tcgdex_id": "dp7-38",
     "localId": "038",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "038/100",
+    "cardNumber": "38/100",
     "cardName": "Farfetch'd",
-    "fullDisplayName": "Farfetch'd 038/100 Stormfront",
+    "fullDisplayName": "Farfetch'd 38/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2218,18 +2739,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-038-low.png",
-    "imageHighSrc": "cards/dp7-038-high.png"
+    "imageHighSrc": "cards/dp7-038-high.png",
+    "attacks": [
+      {
+        "name": "Go and Collect",
+        "damage": null
+      },
+      {
+        "name": "Fury Cutter",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4393",
-    "externalId": null,
+    "externalId": "dp7-37",
     "tcgdex_id": "dp7-37",
     "localId": "037",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "037/100",
+    "cardNumber": "37/100",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 037/100 Stormfront",
+    "fullDisplayName": "Electrode 37/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2251,18 +2782,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-037-low.png",
-    "imageHighSrc": "cards/dp7-037-high.png"
+    "imageHighSrc": "cards/dp7-037-high.png",
+    "attacks": [
+      {
+        "name": "Flash",
+        "damage": "20"
+      },
+      {
+        "name": "Electro Diffusion",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4384",
-    "externalId": null,
+    "externalId": "dp7-36",
     "tcgdex_id": "dp7-36",
     "localId": "036",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "036/100",
+    "cardNumber": "36/100",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 036/100 Stormfront",
+    "fullDisplayName": "Electrode 36/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2284,18 +2825,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-036-low.png",
-    "imageHighSrc": "cards/dp7-036-high.png"
+    "imageHighSrc": "cards/dp7-036-high.png",
+    "attacks": [
+      {
+        "name": "Low Current",
+        "damage": "30"
+      },
+      {
+        "name": "Swift",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4375",
-    "externalId": null,
+    "externalId": "dp7-35",
     "tcgdex_id": "dp7-35",
     "localId": "035",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "035/100",
+    "cardNumber": "35/100",
     "cardName": "Dusclops",
-    "fullDisplayName": "Dusclops 035/100 Stormfront",
+    "fullDisplayName": "Dusclops 35/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2317,18 +2868,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-035-low.png",
-    "imageHighSrc": "cards/dp7-035-high.png"
+    "imageHighSrc": "cards/dp7-035-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "20"
+      },
+      {
+        "name": "Trick Room",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4365",
-    "externalId": null,
+    "externalId": "dp7-34",
     "tcgdex_id": "dp7-34",
     "localId": "034",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "034/100",
+    "cardNumber": "34/100",
     "cardName": "Dusclops",
-    "fullDisplayName": "Dusclops 034/100 Stormfront",
+    "fullDisplayName": "Dusclops 34/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2350,18 +2911,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-034-low.png",
-    "imageHighSrc": "cards/dp7-034-high.png"
+    "imageHighSrc": "cards/dp7-034-high.png",
+    "attacks": [
+      {
+        "name": "Dark One-eye",
+        "damage": "20"
+      },
+      {
+        "name": "Ambush",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4357",
-    "externalId": null,
+    "externalId": "dp7-33",
     "tcgdex_id": "dp7-33",
     "localId": "033",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "033/100",
+    "cardNumber": "33/100",
     "cardName": "Budew",
-    "fullDisplayName": "Budew 033/100 Stormfront",
+    "fullDisplayName": "Budew 33/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2383,18 +2954,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-033-low.png",
-    "imageHighSrc": "cards/dp7-033-high.png"
+    "imageHighSrc": "cards/dp7-033-high.png",
+    "attacks": [
+      {
+        "name": "Buddy-buddy",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4345",
-    "externalId": null,
+    "externalId": "dp7-32",
     "tcgdex_id": "dp7-32",
     "localId": "032",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "032/100",
+    "cardNumber": "32/100",
     "cardName": "Bibarel",
-    "fullDisplayName": "Bibarel 032/100 Stormfront",
+    "fullDisplayName": "Bibarel 32/100 Stormfront",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2416,18 +2993,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-032-low.png",
-    "imageHighSrc": "cards/dp7-032-high.png"
+    "imageHighSrc": "cards/dp7-032-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": "20"
+      },
+      {
+        "name": "Surf",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4336",
-    "externalId": null,
+    "externalId": "dp7-31",
     "tcgdex_id": "dp7-31",
     "localId": "031",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "031/100",
+    "cardNumber": "31/100",
     "cardName": "Vespiquen",
-    "fullDisplayName": "Vespiquen 031/100 Stormfront",
+    "fullDisplayName": "Vespiquen 31/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2449,18 +3036,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-031-low.png",
-    "imageHighSrc": "cards/dp7-031-high.png"
+    "imageHighSrc": "cards/dp7-031-high.png",
+    "attacks": [
+      {
+        "name": "Bee Drain",
+        "damage": "20"
+      },
+      {
+        "name": "Bee Powder",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4328",
-    "externalId": null,
+    "externalId": "dp7-30",
     "tcgdex_id": "dp7-30",
     "localId": "030",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "030/100",
+    "cardNumber": "30/100",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 030/100 Stormfront",
+    "fullDisplayName": "Tyranitar 30/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2482,18 +3079,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-030-low.png",
-    "imageHighSrc": "cards/dp7-030-high.png"
+    "imageHighSrc": "cards/dp7-030-high.png",
+    "attacks": [
+      {
+        "name": "Grind",
+        "damage": "20×"
+      },
+      {
+        "name": "Spinning Tail",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4320",
-    "externalId": null,
+    "externalId": "dp7-29",
     "tcgdex_id": "dp7-29",
     "localId": "029",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "029/100",
+    "cardNumber": "29/100",
     "cardName": "Tangrowth",
-    "fullDisplayName": "Tangrowth 029/100 Stormfront",
+    "fullDisplayName": "Tangrowth 29/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2515,18 +3122,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-029-low.png",
-    "imageHighSrc": "cards/dp7-029-high.png"
+    "imageHighSrc": "cards/dp7-029-high.png",
+    "attacks": [
+      {
+        "name": "Green Acid",
+        "damage": "20"
+      },
+      {
+        "name": "Reaching Vine",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4310",
-    "externalId": null,
+    "externalId": "dp7-28",
     "tcgdex_id": "dp7-28",
     "localId": "028",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "028/100",
+    "cardNumber": "28/100",
     "cardName": "Steelix",
-    "fullDisplayName": "Steelix 028/100 Stormfront",
+    "fullDisplayName": "Steelix 28/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2548,18 +3165,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-028-low.png",
-    "imageHighSrc": "cards/dp7-028-high.png"
+    "imageHighSrc": "cards/dp7-028-high.png",
+    "attacks": [
+      {
+        "name": "Outbreak Power",
+        "damage": null
+      },
+      {
+        "name": "Iron Tail",
+        "damage": "100×"
+      }
+    ]
   },
   {
     "masterCardId": "4301",
-    "externalId": null,
+    "externalId": "dp7-27",
     "tcgdex_id": "dp7-27",
     "localId": "027",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "027/100",
+    "cardNumber": "27/100",
     "cardName": "Staraptor",
-    "fullDisplayName": "Staraptor 027/100 Stormfront",
+    "fullDisplayName": "Staraptor 27/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2581,18 +3208,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-027-low.png",
-    "imageHighSrc": "cards/dp7-027-high.png"
+    "imageHighSrc": "cards/dp7-027-high.png",
+    "attacks": [
+      {
+        "name": "Strong Breeze",
+        "damage": null
+      },
+      {
+        "name": "Clutch",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4291",
-    "externalId": null,
+    "externalId": "dp7-26",
     "tcgdex_id": "dp7-26",
     "localId": "026",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "026/100",
+    "cardNumber": "26/100",
     "cardName": "Skuntank",
-    "fullDisplayName": "Skuntank 026/100 Stormfront",
+    "fullDisplayName": "Skuntank 26/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2614,18 +3251,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-026-low.png",
-    "imageHighSrc": "cards/dp7-026-high.png"
+    "imageHighSrc": "cards/dp7-026-high.png",
+    "attacks": [
+      {
+        "name": "Poison Claws",
+        "damage": "20"
+      },
+      {
+        "name": "Plunder",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4281",
-    "externalId": null,
+    "externalId": "dp7-25",
     "tcgdex_id": "dp7-25",
     "localId": "025",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "025/100",
+    "cardNumber": "25/100",
     "cardName": "Scizor",
-    "fullDisplayName": "Scizor 025/100 Stormfront",
+    "fullDisplayName": "Scizor 25/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2647,18 +3294,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-025-low.png",
-    "imageHighSrc": "cards/dp7-025-high.png"
+    "imageHighSrc": "cards/dp7-025-high.png",
+    "attacks": [
+      {
+        "name": "Accelerate",
+        "damage": "30"
+      },
+      {
+        "name": "Pound Down",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4272",
-    "externalId": null,
+    "externalId": "dp7-24",
     "tcgdex_id": "dp7-24",
     "localId": "024",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "024/100",
+    "cardNumber": "24/100",
     "cardName": "Salamence",
-    "fullDisplayName": "Salamence 024/100 Stormfront",
+    "fullDisplayName": "Salamence 24/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2680,18 +3337,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-024-low.png",
-    "imageHighSrc": "cards/dp7-024-high.png"
+    "imageHighSrc": "cards/dp7-024-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "50"
+      },
+      {
+        "name": "Steam Twister",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "4263",
-    "externalId": null,
+    "externalId": "dp7-23",
     "tcgdex_id": "dp7-23",
     "localId": "023",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "023/100",
+    "cardNumber": "23/100",
     "cardName": "Roserade",
-    "fullDisplayName": "Roserade 023/100 Stormfront",
+    "fullDisplayName": "Roserade 23/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2713,18 +3380,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-023-low.png",
-    "imageHighSrc": "cards/dp7-023-high.png"
+    "imageHighSrc": "cards/dp7-023-high.png",
+    "attacks": [
+      {
+        "name": "Bowed Whip",
+        "damage": null
+      },
+      {
+        "name": "Deep Poison",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4256",
-    "externalId": null,
+    "externalId": "dp7-22",
     "tcgdex_id": "dp7-22",
     "localId": "022",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "022/100",
+    "cardNumber": "22/100",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 022/100 Stormfront",
+    "fullDisplayName": "Rapidash 22/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2746,18 +3423,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-022-low.png",
-    "imageHighSrc": "cards/dp7-022-high.png"
+    "imageHighSrc": "cards/dp7-022-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Shooting Fire",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4246",
-    "externalId": null,
+    "externalId": "dp7-21",
     "tcgdex_id": "dp7-21",
     "localId": "021",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "021/100",
+    "cardNumber": "21/100",
     "cardName": "Mamoswine",
-    "fullDisplayName": "Mamoswine 021/100 Stormfront",
+    "fullDisplayName": "Mamoswine 21/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2779,18 +3466,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-021-low.png",
-    "imageHighSrc": "cards/dp7-021-high.png"
+    "imageHighSrc": "cards/dp7-021-high.png",
+    "attacks": [
+      {
+        "name": "Ramming Strike",
+        "damage": "30×"
+      },
+      {
+        "name": "Parade",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4238",
-    "externalId": null,
+    "externalId": "dp7-20",
     "tcgdex_id": "dp7-20",
     "localId": "020",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "020/100",
+    "cardNumber": "20/100",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 020/100 Stormfront",
+    "fullDisplayName": "Machamp 20/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2812,18 +3509,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-020-low.png",
-    "imageHighSrc": "cards/dp7-020-high.png"
+    "imageHighSrc": "cards/dp7-020-high.png",
+    "attacks": [
+      {
+        "name": "Take Out",
+        "damage": "40"
+      },
+      {
+        "name": "Hurricane Punch",
+        "damage": "30×"
+      },
+      {
+        "name": "Rage",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4230",
-    "externalId": null,
+    "externalId": "dp7-19",
     "tcgdex_id": "dp7-19",
     "localId": "019",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "019/100",
+    "cardNumber": "19/100",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 019/100 Stormfront",
+    "fullDisplayName": "Gyarados 19/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2845,18 +3556,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-019-low.png",
-    "imageHighSrc": "cards/dp7-019-high.png"
+    "imageHighSrc": "cards/dp7-019-high.png",
+    "attacks": [
+      {
+        "name": "Tail Revenge",
+        "damage": "30×"
+      },
+      {
+        "name": "Wreak Havoc",
+        "damage": "40"
+      },
+      {
+        "name": "Dragon Beat",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4218",
-    "externalId": null,
+    "externalId": "dp7-18",
     "tcgdex_id": "dp7-18",
     "localId": "018",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "018/100",
+    "cardNumber": "18/100",
     "cardName": "Gengar",
-    "fullDisplayName": "Gengar 018/100 Stormfront",
+    "fullDisplayName": "Gengar 18/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2878,18 +3603,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-018-low.png",
-    "imageHighSrc": "cards/dp7-018-high.png"
+    "imageHighSrc": "cards/dp7-018-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Room",
+        "damage": null
+      },
+      {
+        "name": "Poltergeist",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "4209",
-    "externalId": null,
+    "externalId": "dp7-17",
     "tcgdex_id": "dp7-17",
     "localId": "017",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "017/100",
+    "cardNumber": "17/100",
     "cardName": "Dusknoir",
-    "fullDisplayName": "Dusknoir 017/100 Stormfront",
+    "fullDisplayName": "Dusknoir 17/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2911,18 +3646,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-017-low.png",
-    "imageHighSrc": "cards/dp7-017-high.png"
+    "imageHighSrc": "cards/dp7-017-high.png",
+    "attacks": [
+      {
+        "name": "Darkness Mist",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4200",
-    "externalId": null,
+    "externalId": "dp7-16",
     "tcgdex_id": "dp7-16",
     "localId": "016",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "016/100",
+    "cardNumber": "16/100",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 016/100 Stormfront",
+    "fullDisplayName": "Drifblim 16/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2944,18 +3685,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-016-low.png",
-    "imageHighSrc": "cards/dp7-016-high.png"
+    "imageHighSrc": "cards/dp7-016-high.png",
+    "attacks": [
+      {
+        "name": "Delivery",
+        "damage": null
+      },
+      {
+        "name": "Lifting",
+        "damage": null
+      },
+      {
+        "name": "Ominous Wind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4193",
-    "externalId": null,
+    "externalId": "dp7-15",
     "tcgdex_id": "dp7-15",
     "localId": "015",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "015/100",
+    "cardNumber": "15/100",
     "cardName": "Drapion",
-    "fullDisplayName": "Drapion 015/100 Stormfront",
+    "fullDisplayName": "Drapion 15/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2977,18 +3732,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-015-low.png",
-    "imageHighSrc": "cards/dp7-015-high.png"
+    "imageHighSrc": "cards/dp7-015-high.png",
+    "attacks": [
+      {
+        "name": "Scorpion Grapple",
+        "damage": "10"
+      },
+      {
+        "name": "Cross Poison",
+        "damage": "20×"
+      },
+      {
+        "name": "Derail",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4184",
-    "externalId": null,
+    "externalId": "dp7-14",
     "tcgdex_id": "dp7-14",
     "localId": "014",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "014/100",
+    "cardNumber": "14/100",
     "cardName": "Cherrim",
-    "fullDisplayName": "Cherrim 014/100 Stormfront",
+    "fullDisplayName": "Cherrim 14/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3010,18 +3779,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-014-low.png",
-    "imageHighSrc": "cards/dp7-014-high.png"
+    "imageHighSrc": "cards/dp7-014-high.png",
+    "attacks": [
+      {
+        "name": "Salty-sweet Pollen",
+        "damage": "20"
+      },
+      {
+        "name": "Solarbeam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4177",
-    "externalId": null,
+    "externalId": "dp7-13",
     "tcgdex_id": "dp7-13",
     "localId": "013",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "013/100",
+    "cardNumber": "13/100",
     "cardName": "Bronzong",
-    "fullDisplayName": "Bronzong 013/100 Stormfront",
+    "fullDisplayName": "Bronzong 13/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3043,18 +3822,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-013-low.png",
-    "imageHighSrc": "cards/dp7-013-high.png"
+    "imageHighSrc": "cards/dp7-013-high.png",
+    "attacks": [
+      {
+        "name": "Strange Spin",
+        "damage": "20+"
+      },
+      {
+        "name": "Heavy Potential",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4169",
-    "externalId": null,
+    "externalId": "dp7-12",
     "tcgdex_id": "dp7-12",
     "localId": "012",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "012/100",
+    "cardNumber": "12/100",
     "cardName": "Abomasnow",
-    "fullDisplayName": "Abomasnow 012/100 Stormfront",
+    "fullDisplayName": "Abomasnow 12/100 Stormfront",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3076,18 +3865,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-012-low.png",
-    "imageHighSrc": "cards/dp7-012-high.png"
+    "imageHighSrc": "cards/dp7-012-high.png",
+    "attacks": [
+      {
+        "name": "Snow Play",
+        "damage": "20"
+      },
+      {
+        "name": "Below Zero",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4159",
-    "externalId": null,
+    "externalId": "dp7-11",
     "tcgdex_id": "dp7-11",
     "localId": "011",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "011/100",
+    "cardNumber": "11/100",
     "cardName": "Torterra",
-    "fullDisplayName": "Torterra 011/100 Stormfront",
+    "fullDisplayName": "Torterra 11/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3109,18 +3908,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-011-low.png",
-    "imageHighSrc": "cards/dp7-011-high.png"
+    "imageHighSrc": "cards/dp7-011-high.png",
+    "attacks": [
+      {
+        "name": "Crash Impact",
+        "damage": "60"
+      },
+      {
+        "name": "Land Shake",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "4151",
-    "externalId": null,
+    "externalId": "dp7-10",
     "tcgdex_id": "dp7-10",
     "localId": "010",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "010/100",
+    "cardNumber": "10/100",
     "cardName": "Sceptile",
-    "fullDisplayName": "Sceptile 010/100 Stormfront",
+    "fullDisplayName": "Sceptile 10/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3142,18 +3951,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-010-low.png",
-    "imageHighSrc": "cards/dp7-010-high.png"
+    "imageHighSrc": "cards/dp7-010-high.png",
+    "attacks": [
+      {
+        "name": "Poison Leaf",
+        "damage": "40"
+      },
+      {
+        "name": "Slice Drain",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4141",
-    "externalId": null,
+    "externalId": "dp7-9",
     "tcgdex_id": "dp7-9",
     "localId": "009",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "009/100",
+    "cardNumber": "9/100",
     "cardName": "Regigigas",
-    "fullDisplayName": "Regigigas 009/100 Stormfront",
+    "fullDisplayName": "Regigigas 9/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3175,18 +3994,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-009-low.png",
-    "imageHighSrc": "cards/dp7-009-high.png"
+    "imageHighSrc": "cards/dp7-009-high.png",
+    "attacks": [
+      {
+        "name": "Mega Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Giga Power",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4131",
-    "externalId": null,
+    "externalId": "dp7-8",
     "tcgdex_id": "dp7-8",
     "localId": "008",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "008/100",
+    "cardNumber": "8/100",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 008/100 Stormfront",
+    "fullDisplayName": "Raichu 8/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3208,18 +4037,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-008-low.png",
-    "imageHighSrc": "cards/dp7-008-high.png"
+    "imageHighSrc": "cards/dp7-008-high.png",
+    "attacks": [
+      {
+        "name": "Slice",
+        "damage": "30"
+      },
+      {
+        "name": "Split Ball",
+        "damage": "50"
+      },
+      {
+        "name": "Burst Ball",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4124",
-    "externalId": null,
+    "externalId": "dp7-7",
     "tcgdex_id": "dp7-7",
     "localId": "007",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "007/100",
+    "cardNumber": "7/100",
     "cardName": "Mismagius",
-    "fullDisplayName": "Mismagius 007/100 Stormfront",
+    "fullDisplayName": "Mismagius 7/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3241,18 +4084,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-007-low.png",
-    "imageHighSrc": "cards/dp7-007-high.png"
+    "imageHighSrc": "cards/dp7-007-high.png",
+    "attacks": [
+      {
+        "name": "Crash Chant",
+        "damage": "20×"
+      },
+      {
+        "name": "Horror Chant",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4115",
-    "externalId": null,
+    "externalId": "dp7-6",
     "tcgdex_id": "dp7-6",
     "localId": "006",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "006/100",
+    "cardNumber": "6/100",
     "cardName": "Magnezone",
-    "fullDisplayName": "Magnezone 006/100 Stormfront",
+    "fullDisplayName": "Magnezone 6/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3274,18 +4127,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-006-low.png",
-    "imageHighSrc": "cards/dp7-006-high.png"
+    "imageHighSrc": "cards/dp7-006-high.png",
+    "attacks": [
+      {
+        "name": "Gyro Ball",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4105",
-    "externalId": null,
+    "externalId": "dp7-5",
     "tcgdex_id": "dp7-5",
     "localId": "005",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "005/100",
+    "cardNumber": "5/100",
     "cardName": "Magnezone",
-    "fullDisplayName": "Magnezone 005/100 Stormfront",
+    "fullDisplayName": "Magnezone 5/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3307,18 +4166,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-005-low.png",
-    "imageHighSrc": "cards/dp7-005-high.png"
+    "imageHighSrc": "cards/dp7-005-high.png",
+    "attacks": [
+      {
+        "name": "Speed Shot",
+        "damage": null
+      },
+      {
+        "name": "Crush Volt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "4098",
-    "externalId": null,
+    "externalId": "dp7-4",
     "tcgdex_id": "dp7-4",
     "localId": "004",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "004/100",
+    "cardNumber": "4/100",
     "cardName": "Lumineon",
-    "fullDisplayName": "Lumineon 004/100 Stormfront",
+    "fullDisplayName": "Lumineon 4/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3340,18 +4209,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-004-low.png",
-    "imageHighSrc": "cards/dp7-004-high.png"
+    "imageHighSrc": "cards/dp7-004-high.png",
+    "attacks": [
+      {
+        "name": "Quick Swim",
+        "damage": null
+      },
+      {
+        "name": "Elegant Swim",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4088",
-    "externalId": null,
+    "externalId": "dp7-3",
     "tcgdex_id": "dp7-3",
     "localId": "003",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "003/100",
+    "cardNumber": "3/100",
     "cardName": "Infernape",
-    "fullDisplayName": "Infernape 003/100 Stormfront",
+    "fullDisplayName": "Infernape 3/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3373,18 +4252,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-003-low.png",
-    "imageHighSrc": "cards/dp7-003-high.png"
+    "imageHighSrc": "cards/dp7-003-high.png",
+    "attacks": [
+      {
+        "name": "Close Combat",
+        "damage": "60"
+      },
+      {
+        "name": "Spreading Fire",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "4078",
-    "externalId": null,
+    "externalId": "dp7-2",
     "tcgdex_id": "dp7-2",
     "localId": "002",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "002/100",
+    "cardNumber": "2/100",
     "cardName": "Empoleon",
-    "fullDisplayName": "Empoleon 002/100 Stormfront",
+    "fullDisplayName": "Empoleon 2/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3406,18 +4295,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-002-low.png",
-    "imageHighSrc": "cards/dp7-002-high.png"
+    "imageHighSrc": "cards/dp7-002-high.png",
+    "attacks": [
+      {
+        "name": "Steel Wing",
+        "damage": "40"
+      },
+      {
+        "name": "Whirlpool",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4061",
-    "externalId": null,
+    "externalId": "dp7-1",
     "tcgdex_id": "dp7-1",
     "localId": "001",
     "setCode": "dp7",
     "setTcgdexId": "dp7",
-    "cardNumber": "001/100",
+    "cardNumber": "1/100",
     "cardName": "Dusknoir",
-    "fullDisplayName": "Dusknoir 001/100 Stormfront",
+    "fullDisplayName": "Dusknoir 1/100 Stormfront",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3439,6 +4338,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp7-001-low.png",
-    "imageHighSrc": "cards/dp7-001-high.png"
+    "imageHighSrc": "cards/dp7-001-high.png",
+    "attacks": [
+      {
+        "name": "Damage Even",
+        "damage": null
+      },
+      {
+        "name": "Night Spin",
+        "damage": "50"
+      }
+    ]
   }
 ]

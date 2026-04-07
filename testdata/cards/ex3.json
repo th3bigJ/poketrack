@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "6140",
-    "externalId": null,
+    "externalId": "ex3-100",
     "tcgdex_id": "ex3-100",
     "localId": "100",
     "setCode": "ex3",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-100-low.png",
-    "imageHighSrc": "cards/ex3-100-high.png"
+    "imageHighSrc": "cards/ex3-100-high.png",
+    "attacks": [
+      {
+        "name": "Collect Fire",
+        "damage": "30"
+      },
+      {
+        "name": "Flame Pillar",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6133",
-    "externalId": null,
+    "externalId": "ex3-99",
     "tcgdex_id": "ex3-99",
     "localId": "099",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "099/97",
+    "cardNumber": "99/97",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 099/97 Dragon",
+    "fullDisplayName": "Charmeleon 99/97 Dragon",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-099-low.png",
-    "imageHighSrc": "cards/ex3-099-high.png"
+    "imageHighSrc": "cards/ex3-099-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "10"
+      },
+      {
+        "name": "Fireworks",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6126",
-    "externalId": null,
+    "externalId": "ex3-98",
     "tcgdex_id": "ex3-98",
     "localId": "098",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "098/97",
+    "cardNumber": "98/97",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 098/97 Dragon",
+    "fullDisplayName": "Charmander 98/97 Dragon",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-098-low.png",
-    "imageHighSrc": "cards/ex3-098-high.png"
+    "imageHighSrc": "cards/ex3-098-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "10"
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6119",
-    "externalId": null,
+    "externalId": "ex3-97",
     "tcgdex_id": "ex3-97",
     "localId": "097",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "097/97",
+    "cardNumber": "97/97",
     "cardName": "Rayquaza ex",
-    "fullDisplayName": "Rayquaza ex 097/97 Dragon",
+    "fullDisplayName": "Rayquaza ex 97/97 Dragon",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -130,18 +160,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-097-low.png",
-    "imageHighSrc": "cards/ex3-097-high.png"
+    "imageHighSrc": "cards/ex3-097-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Growth",
+        "damage": null
+      },
+      {
+        "name": "Dragon Burst",
+        "damage": "40×"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6112",
-    "externalId": null,
+    "externalId": "ex3-96",
     "tcgdex_id": "ex3-96",
     "localId": "096",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "096/97",
+    "cardNumber": "96/97",
     "cardName": "Muk ex",
-    "fullDisplayName": "Muk ex 096/97 Dragon",
+    "fullDisplayName": "Muk ex 96/97 Dragon",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -164,18 +205,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-096-low.png",
-    "imageHighSrc": "cards/ex3-096-high.png"
+    "imageHighSrc": "cards/ex3-096-high.png",
+    "attacks": [
+      {
+        "name": "Poison Breath",
+        "damage": "10"
+      },
+      {
+        "name": "Slimy Water",
+        "damage": "40+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6105",
-    "externalId": null,
+    "externalId": "ex3-95",
     "tcgdex_id": "ex3-95",
     "localId": "095",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "095/97",
+    "cardNumber": "95/97",
     "cardName": "Magcargo ex",
-    "fullDisplayName": "Magcargo ex 095/97 Dragon",
+    "fullDisplayName": "Magcargo ex 95/97 Dragon",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -198,18 +250,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-095-low.png",
-    "imageHighSrc": "cards/ex3-095-high.png"
+    "imageHighSrc": "cards/ex3-095-high.png",
+    "attacks": [
+      {
+        "name": "Melting Mountain",
+        "damage": "20"
+      },
+      {
+        "name": "Lava Flow",
+        "damage": "40+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6097",
-    "externalId": null,
+    "externalId": "ex3-94",
     "tcgdex_id": "ex3-94",
     "localId": "094",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "094/97",
+    "cardNumber": "94/97",
     "cardName": "Latios ex",
-    "fullDisplayName": "Latios ex 094/97 Dragon",
+    "fullDisplayName": "Latios ex 94/97 Dragon",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -232,18 +295,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-094-low.png",
-    "imageHighSrc": "cards/ex3-094-high.png"
+    "imageHighSrc": "cards/ex3-094-high.png",
+    "attacks": [
+      {
+        "name": "Energy Stream",
+        "damage": "10"
+      },
+      {
+        "name": "Luster Purge",
+        "damage": "100"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6089",
-    "externalId": null,
+    "externalId": "ex3-93",
     "tcgdex_id": "ex3-93",
     "localId": "093",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "093/97",
+    "cardNumber": "93/97",
     "cardName": "Latias ex",
-    "fullDisplayName": "Latias ex 093/97 Dragon",
+    "fullDisplayName": "Latias ex 93/97 Dragon",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -266,18 +340,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-093-low.png",
-    "imageHighSrc": "cards/ex3-093-high.png"
+    "imageHighSrc": "cards/ex3-093-high.png",
+    "attacks": [
+      {
+        "name": "Hypnoblast",
+        "damage": "10"
+      },
+      {
+        "name": "Mist Ball",
+        "damage": "100"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6082",
-    "externalId": null,
+    "externalId": "ex3-92",
     "tcgdex_id": "ex3-92",
     "localId": "092",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "092/97",
+    "cardNumber": "92/97",
     "cardName": "Kingdra ex",
-    "fullDisplayName": "Kingdra ex 092/97 Dragon",
+    "fullDisplayName": "Kingdra ex 92/97 Dragon",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -300,18 +385,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-092-low.png",
-    "imageHighSrc": "cards/ex3-092-high.png"
+    "imageHighSrc": "cards/ex3-092-high.png",
+    "attacks": [
+      {
+        "name": "Genetic Memory",
+        "damage": null
+      },
+      {
+        "name": "Hydrocannon",
+        "damage": "50+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6073",
-    "externalId": null,
+    "externalId": "ex3-91",
     "tcgdex_id": "ex3-91",
     "localId": "091",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "091/97",
+    "cardNumber": "91/97",
     "cardName": "Golem ex",
-    "fullDisplayName": "Golem ex 091/97 Dragon",
+    "fullDisplayName": "Golem ex 91/97 Dragon",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -334,18 +430,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-091-low.png",
-    "imageHighSrc": "cards/ex3-091-high.png"
+    "imageHighSrc": "cards/ex3-091-high.png",
+    "attacks": [
+      {
+        "name": "Magnitude",
+        "damage": "60"
+      },
+      {
+        "name": "Double-edge",
+        "damage": "120"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6064",
-    "externalId": null,
+    "externalId": "ex3-90",
     "tcgdex_id": "ex3-90",
     "localId": "090",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "090/97",
+    "cardNumber": "90/97",
     "cardName": "Dragonite ex",
-    "fullDisplayName": "Dragonite ex 090/97 Dragon",
+    "fullDisplayName": "Dragonite ex 90/97 Dragon",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -368,18 +475,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-090-low.png",
-    "imageHighSrc": "cards/ex3-090-high.png"
+    "imageHighSrc": "cards/ex3-090-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Wave",
+        "damage": "70"
+      },
+      {
+        "name": "Giant Tail",
+        "damage": "120"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6054",
-    "externalId": null,
+    "externalId": "ex3-89",
     "tcgdex_id": "ex3-89",
     "localId": "089",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "089/97",
+    "cardNumber": "89/97",
     "cardName": "Ampharos ex",
-    "fullDisplayName": "Ampharos ex 089/97 Dragon",
+    "fullDisplayName": "Ampharos ex 89/97 Dragon",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -402,18 +520,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-089-low.png",
-    "imageHighSrc": "cards/ex3-089-high.png"
+    "imageHighSrc": "cards/ex3-089-high.png",
+    "attacks": [
+      {
+        "name": "Gigavolt",
+        "damage": "40+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6045",
-    "externalId": null,
+    "externalId": "ex3-88",
     "tcgdex_id": "ex3-88",
     "localId": "088",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "088/97",
+    "cardNumber": "88/97",
     "cardName": "TV Reporter",
-    "fullDisplayName": "TV Reporter 088/97 Dragon",
+    "fullDisplayName": "TV Reporter 88/97 Dragon",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -431,18 +556,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-088-low.png",
-    "imageHighSrc": "cards/ex3-088-high.png"
+    "imageHighSrc": "cards/ex3-088-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 3 cards. Then discard any 1 card from your hand."
   },
   {
     "masterCardId": "6038",
-    "externalId": null,
+    "externalId": "ex3-87",
     "tcgdex_id": "ex3-87",
     "localId": "087",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "087/97",
+    "cardNumber": "87/97",
     "cardName": "Mr. Briney's Compassion",
-    "fullDisplayName": "Mr. Briney's Compassion 087/97 Dragon",
+    "fullDisplayName": "Mr. Briney's Compassion 87/97 Dragon",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -460,18 +586,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-087-low.png",
-    "imageHighSrc": "cards/ex3-087-high.png"
+    "imageHighSrc": "cards/ex3-087-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nChoose 1 of your Pokémon in play (excluding Pokémon-ex). Return that Pokémon and all cards attached to it to your hand."
   },
   {
     "masterCardId": "6029",
-    "externalId": null,
+    "externalId": "ex3-86",
     "tcgdex_id": "ex3-86",
     "localId": "086",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "086/97",
+    "cardNumber": "86/97",
     "cardName": "Low Pressure System",
-    "fullDisplayName": "Low Pressure System 086/97 Dragon",
+    "fullDisplayName": "Low Pressure System 86/97 Dragon",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -489,18 +616,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-086-low.png",
-    "imageHighSrc": "cards/ex3-086-high.png"
+    "imageHighSrc": "cards/ex3-086-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach Grass and Lightning Pokémon in play (both yours and your opponent's) gets +10 HP."
   },
   {
     "masterCardId": "6020",
-    "externalId": null,
+    "externalId": "ex3-85",
     "tcgdex_id": "ex3-85",
     "localId": "085",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "085/97",
+    "cardNumber": "85/97",
     "cardName": "High Pressure System",
-    "fullDisplayName": "High Pressure System 085/97 Dragon",
+    "fullDisplayName": "High Pressure System 85/97 Dragon",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -518,18 +646,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-085-low.png",
-    "imageHighSrc": "cards/ex3-085-high.png"
+    "imageHighSrc": "cards/ex3-085-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player pays Colorless less to retreat his or her Fire and Water Pokémon."
   },
   {
     "masterCardId": "6011",
-    "externalId": null,
+    "externalId": "ex3-84",
     "tcgdex_id": "ex3-84",
     "localId": "084",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "084/97",
+    "cardNumber": "84/97",
     "cardName": "Energy Recycle System",
-    "fullDisplayName": "Energy Recycle System 084/97 Dragon",
+    "fullDisplayName": "Energy Recycle System 84/97 Dragon",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -547,18 +676,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-084-low.png",
-    "imageHighSrc": "cards/ex3-084-high.png"
+    "imageHighSrc": "cards/ex3-084-high.png",
+    "rules": "Search your discard pile for basic Energy cards. You may either show 1 basic Energy card to your opponent and put it into your hand, or show 3 basic Energy cards to your opponent and shuffle them into your deck."
   },
   {
     "masterCardId": "6001",
-    "externalId": null,
+    "externalId": "ex3-83",
     "tcgdex_id": "ex3-83",
     "localId": "083",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "083/97",
+    "cardNumber": "83/97",
     "cardName": "Buffer Piece",
-    "fullDisplayName": "Buffer Piece 083/97 Dragon",
+    "fullDisplayName": "Buffer Piece 83/97 Dragon",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -576,18 +706,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-083-low.png",
-    "imageHighSrc": "cards/ex3-083-high.png"
+    "imageHighSrc": "cards/ex3-083-high.png",
+    "rules": "Attach Buffer Piece to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nDamage done to the Pokémon Buffer Piece is attached to by an opponent's attack is reduced by 20 (after applying Weakness and Resistance). At the end of your opponent's turn after you played Buffer Piece, discard Buffer Piece."
   },
   {
     "masterCardId": "5992",
-    "externalId": null,
+    "externalId": "ex3-82",
     "tcgdex_id": "ex3-82",
     "localId": "082",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "082/97",
+    "cardNumber": "82/97",
     "cardName": "Balloon Berry",
-    "fullDisplayName": "Balloon Berry 082/97 Dragon",
+    "fullDisplayName": "Balloon Berry 82/97 Dragon",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -605,18 +736,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-082-low.png",
-    "imageHighSrc": "cards/ex3-082-high.png"
+    "imageHighSrc": "cards/ex3-082-high.png",
+    "rules": "Attach Balloon Berry to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nWhen the Pokémon Balloon Berry is attached to retreats, discard Balloon Berry instead of discarding Energy cards."
   },
   {
     "masterCardId": "5983",
-    "externalId": null,
+    "externalId": "ex3-81",
     "tcgdex_id": "ex3-81",
     "localId": "081",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "081/97",
+    "cardNumber": "81/97",
     "cardName": "Wurmple",
-    "fullDisplayName": "Wurmple 081/97 Dragon",
+    "fullDisplayName": "Wurmple 81/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -638,18 +770,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-081-low.png",
-    "imageHighSrc": "cards/ex3-081-high.png"
+    "imageHighSrc": "cards/ex3-081-high.png",
+    "attacks": [
+      {
+        "name": "Call for Friends",
+        "damage": null
+      },
+      {
+        "name": "String Shot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5974",
-    "externalId": null,
+    "externalId": "ex3-80",
     "tcgdex_id": "ex3-80",
     "localId": "080",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "080/97",
+    "cardNumber": "80/97",
     "cardName": "Treecko",
-    "fullDisplayName": "Treecko 080/97 Dragon",
+    "fullDisplayName": "Treecko 80/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -671,18 +813,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-080-low.png",
-    "imageHighSrc": "cards/ex3-080-high.png"
+    "imageHighSrc": "cards/ex3-080-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5965",
-    "externalId": null,
+    "externalId": "ex3-79",
     "tcgdex_id": "ex3-79",
     "localId": "079",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "079/97",
+    "cardNumber": "79/97",
     "cardName": "Trapinch",
-    "fullDisplayName": "Trapinch 079/97 Dragon",
+    "fullDisplayName": "Trapinch 79/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -704,18 +852,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-079-low.png",
-    "imageHighSrc": "cards/ex3-079-high.png"
+    "imageHighSrc": "cards/ex3-079-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": null
+      },
+      {
+        "name": "Rock Smash",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5956",
-    "externalId": null,
+    "externalId": "ex3-78",
     "tcgdex_id": "ex3-78",
     "localId": "078",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "078/97",
+    "cardNumber": "78/97",
     "cardName": "Trapinch",
-    "fullDisplayName": "Trapinch 078/97 Dragon",
+    "fullDisplayName": "Trapinch 78/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -737,18 +895,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-078-low.png",
-    "imageHighSrc": "cards/ex3-078-high.png"
+    "imageHighSrc": "cards/ex3-078-high.png",
+    "attacks": [
+      {
+        "name": "Dig",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5947",
-    "externalId": null,
+    "externalId": "ex3-77",
     "tcgdex_id": "ex3-77",
     "localId": "077",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "077/97",
+    "cardNumber": "77/97",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 077/97 Dragon",
+    "fullDisplayName": "Torchic 77/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -770,18 +934,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-077-low.png",
-    "imageHighSrc": "cards/ex3-077-high.png"
+    "imageHighSrc": "cards/ex3-077-high.png",
+    "attacks": [
+      {
+        "name": "Firebreathing",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5938",
-    "externalId": null,
+    "externalId": "ex3-76",
     "tcgdex_id": "ex3-76",
     "localId": "076",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "076/97",
+    "cardNumber": "76/97",
     "cardName": "Taillow",
-    "fullDisplayName": "Taillow 076/97 Dragon",
+    "fullDisplayName": "Taillow 76/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -803,18 +973,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-076-low.png",
-    "imageHighSrc": "cards/ex3-076-high.png"
+    "imageHighSrc": "cards/ex3-076-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5929",
-    "externalId": null,
+    "externalId": "ex3-75",
     "tcgdex_id": "ex3-75",
     "localId": "075",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "075/97",
+    "cardNumber": "75/97",
     "cardName": "Swablu",
-    "fullDisplayName": "Swablu 075/97 Dragon",
+    "fullDisplayName": "Swablu 75/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -836,18 +1012,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-075-low.png",
-    "imageHighSrc": "cards/ex3-075-high.png"
+    "imageHighSrc": "cards/ex3-075-high.png",
+    "attacks": [
+      {
+        "name": "Lullaby",
+        "damage": "10"
+      },
+      {
+        "name": "Stifling Fluff",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5920",
-    "externalId": null,
+    "externalId": "ex3-74",
     "tcgdex_id": "ex3-74",
     "localId": "074",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "074/97",
+    "cardNumber": "74/97",
     "cardName": "Spoink",
-    "fullDisplayName": "Spoink 074/97 Dragon",
+    "fullDisplayName": "Spoink 74/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -869,18 +1055,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-074-low.png",
-    "imageHighSrc": "cards/ex3-074-high.png"
+    "imageHighSrc": "cards/ex3-074-high.png",
+    "attacks": [
+      {
+        "name": "Hop",
+        "damage": "10"
+      },
+      {
+        "name": "Psybeam",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5911",
-    "externalId": null,
+    "externalId": "ex3-73",
     "tcgdex_id": "ex3-73",
     "localId": "073",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "073/97",
+    "cardNumber": "73/97",
     "cardName": "Spoink",
-    "fullDisplayName": "Spoink 073/97 Dragon",
+    "fullDisplayName": "Spoink 73/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -902,18 +1098,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-073-low.png",
-    "imageHighSrc": "cards/ex3-073-high.png"
+    "imageHighSrc": "cards/ex3-073-high.png",
+    "attacks": [
+      {
+        "name": "Bounce",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5902",
-    "externalId": null,
+    "externalId": "ex3-72",
     "tcgdex_id": "ex3-72",
     "localId": "072",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "072/97",
+    "cardNumber": "72/97",
     "cardName": "Slugma",
-    "fullDisplayName": "Slugma 072/97 Dragon",
+    "fullDisplayName": "Slugma 72/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -935,18 +1137,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-072-low.png",
-    "imageHighSrc": "cards/ex3-072-high.png"
+    "imageHighSrc": "cards/ex3-072-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Luring Flame",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5893",
-    "externalId": null,
+    "externalId": "ex3-71",
     "tcgdex_id": "ex3-71",
     "localId": "071",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "071/97",
+    "cardNumber": "71/97",
     "cardName": "Pineco",
-    "fullDisplayName": "Pineco 071/97 Dragon",
+    "fullDisplayName": "Pineco 71/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -968,18 +1180,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-071-low.png",
-    "imageHighSrc": "cards/ex3-071-high.png"
+    "imageHighSrc": "cards/ex3-071-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5884",
-    "externalId": null,
+    "externalId": "ex3-70",
     "tcgdex_id": "ex3-70",
     "localId": "070",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "070/97",
+    "cardNumber": "70/97",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 070/97 Dragon",
+    "fullDisplayName": "Numel 70/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1001,18 +1219,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-070-low.png",
-    "imageHighSrc": "cards/ex3-070-high.png"
+    "imageHighSrc": "cards/ex3-070-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Kindle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5875",
-    "externalId": null,
+    "externalId": "ex3-69",
     "tcgdex_id": "ex3-69",
     "localId": "069",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "069/97",
+    "cardNumber": "69/97",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 069/97 Dragon",
+    "fullDisplayName": "Numel 69/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1034,18 +1262,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-069-low.png",
-    "imageHighSrc": "cards/ex3-069-high.png"
+    "imageHighSrc": "cards/ex3-069-high.png",
+    "attacks": [
+      {
+        "name": "Firebreathing",
+        "damage": "10+"
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5866",
-    "externalId": null,
+    "externalId": "ex3-68",
     "tcgdex_id": "ex3-68",
     "localId": "068",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "068/97",
+    "cardNumber": "68/97",
     "cardName": "Nincada",
-    "fullDisplayName": "Nincada 068/97 Dragon",
+    "fullDisplayName": "Nincada 68/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1067,18 +1305,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-068-low.png",
-    "imageHighSrc": "cards/ex3-068-high.png"
+    "imageHighSrc": "cards/ex3-068-high.png",
+    "attacks": [
+      {
+        "name": "Leech Life",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5857",
-    "externalId": null,
+    "externalId": "ex3-67",
     "tcgdex_id": "ex3-67",
     "localId": "067",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "067/97",
+    "cardNumber": "67/97",
     "cardName": "Nincada",
-    "fullDisplayName": "Nincada 067/97 Dragon",
+    "fullDisplayName": "Nincada 67/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1100,18 +1344,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-067-low.png",
-    "imageHighSrc": "cards/ex3-067-high.png"
+    "imageHighSrc": "cards/ex3-067-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Double Scratch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "5849",
-    "externalId": null,
+    "externalId": "ex3-66",
     "tcgdex_id": "ex3-66",
     "localId": "066",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "066/97",
+    "cardNumber": "66/97",
     "cardName": "Nincada",
-    "fullDisplayName": "Nincada 066/97 Dragon",
+    "fullDisplayName": "Nincada 66/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1133,18 +1387,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-066-low.png",
-    "imageHighSrc": "cards/ex3-066-high.png"
+    "imageHighSrc": "cards/ex3-066-high.png",
+    "attacks": [
+      {
+        "name": "Poison Breath",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5839",
-    "externalId": null,
+    "externalId": "ex3-65",
     "tcgdex_id": "ex3-65",
     "localId": "065",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "065/97",
+    "cardNumber": "65/97",
     "cardName": "Mudkip",
-    "fullDisplayName": "Mudkip 065/97 Dragon",
+    "fullDisplayName": "Mudkip 65/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1166,18 +1426,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-065-low.png",
-    "imageHighSrc": "cards/ex3-065-high.png"
+    "imageHighSrc": "cards/ex3-065-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5832",
-    "externalId": null,
+    "externalId": "ex3-64",
     "tcgdex_id": "ex3-64",
     "localId": "064",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "064/97",
+    "cardNumber": "64/97",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 064/97 Dragon",
+    "fullDisplayName": "Mareep 64/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1199,18 +1465,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-064-low.png",
-    "imageHighSrc": "cards/ex3-064-high.png"
+    "imageHighSrc": "cards/ex3-064-high.png",
+    "attacks": [
+      {
+        "name": "Jolt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5824",
-    "externalId": null,
+    "externalId": "ex3-63",
     "tcgdex_id": "ex3-63",
     "localId": "063",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "063/97",
+    "cardNumber": "63/97",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 063/97 Dragon",
+    "fullDisplayName": "Magnemite 63/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1232,18 +1504,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-063-low.png",
-    "imageHighSrc": "cards/ex3-063-high.png"
+    "imageHighSrc": "cards/ex3-063-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5815",
-    "externalId": null,
+    "externalId": "ex3-62",
     "tcgdex_id": "ex3-62",
     "localId": "062",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "062/97",
+    "cardNumber": "62/97",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 062/97 Dragon",
+    "fullDisplayName": "Magnemite 62/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1265,18 +1543,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-062-low.png",
-    "imageHighSrc": "cards/ex3-062-high.png"
+    "imageHighSrc": "cards/ex3-062-high.png",
+    "attacks": [
+      {
+        "name": "Random Spark",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5806",
-    "externalId": null,
+    "externalId": "ex3-61",
     "tcgdex_id": "ex3-61",
     "localId": "061",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "061/97",
+    "cardNumber": "61/97",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 061/97 Dragon",
+    "fullDisplayName": "Magnemite 61/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1298,18 +1582,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-061-low.png",
-    "imageHighSrc": "cards/ex3-061-high.png"
+    "imageHighSrc": "cards/ex3-061-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Hook",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5797",
-    "externalId": null,
+    "externalId": "ex3-60",
     "tcgdex_id": "ex3-60",
     "localId": "060",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "060/97",
+    "cardNumber": "60/97",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 060/97 Dragon",
+    "fullDisplayName": "Magikarp 60/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1331,18 +1625,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-060-low.png",
-    "imageHighSrc": "cards/ex3-060-high.png"
+    "imageHighSrc": "cards/ex3-060-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5788",
-    "externalId": null,
+    "externalId": "ex3-59",
     "tcgdex_id": "ex3-59",
     "localId": "059",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "059/97",
+    "cardNumber": "59/97",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 059/97 Dragon",
+    "fullDisplayName": "Houndour 59/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1364,18 +1668,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-059-low.png",
-    "imageHighSrc": "cards/ex3-059-high.png"
+    "imageHighSrc": "cards/ex3-059-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5779",
-    "externalId": null,
+    "externalId": "ex3-58",
     "tcgdex_id": "ex3-58",
     "localId": "058",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "058/97",
+    "cardNumber": "58/97",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 058/97 Dragon",
+    "fullDisplayName": "Horsea 58/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1397,18 +1711,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-058-low.png",
-    "imageHighSrc": "cards/ex3-058-high.png"
+    "imageHighSrc": "cards/ex3-058-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5769",
-    "externalId": null,
+    "externalId": "ex3-57",
     "tcgdex_id": "ex3-57",
     "localId": "057",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "057/97",
+    "cardNumber": "57/97",
     "cardName": "Grimer",
-    "fullDisplayName": "Grimer 057/97 Dragon",
+    "fullDisplayName": "Grimer 57/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1430,18 +1754,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-057-low.png",
-    "imageHighSrc": "cards/ex3-057-high.png"
+    "imageHighSrc": "cards/ex3-057-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Spurt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5760",
-    "externalId": null,
+    "externalId": "ex3-56",
     "tcgdex_id": "ex3-56",
     "localId": "056",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "056/97",
+    "cardNumber": "56/97",
     "cardName": "Geodude",
-    "fullDisplayName": "Geodude 056/97 Dragon",
+    "fullDisplayName": "Geodude 56/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1463,18 +1797,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-056-low.png",
-    "imageHighSrc": "cards/ex3-056-high.png"
+    "imageHighSrc": "cards/ex3-056-high.png",
+    "attacks": [
+      {
+        "name": "Steady Punch",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5751",
-    "externalId": null,
+    "externalId": "ex3-55",
     "tcgdex_id": "ex3-55",
     "localId": "055",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "055/97",
+    "cardNumber": "55/97",
     "cardName": "Geodude",
-    "fullDisplayName": "Geodude 055/97 Dragon",
+    "fullDisplayName": "Geodude 55/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1496,18 +1836,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-055-low.png",
-    "imageHighSrc": "cards/ex3-055-high.png"
+    "imageHighSrc": "cards/ex3-055-high.png",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Pebble Throw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5742",
-    "externalId": null,
+    "externalId": "ex3-54",
     "tcgdex_id": "ex3-54",
     "localId": "054",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "054/97",
+    "cardNumber": "54/97",
     "cardName": "Corphish",
-    "fullDisplayName": "Corphish 054/97 Dragon",
+    "fullDisplayName": "Corphish 54/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1529,18 +1879,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-054-low.png",
-    "imageHighSrc": "cards/ex3-054-high.png"
+    "imageHighSrc": "cards/ex3-054-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Toxic Grip",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5733",
-    "externalId": null,
+    "externalId": "ex3-53",
     "tcgdex_id": "ex3-53",
     "localId": "053",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "053/97",
+    "cardNumber": "53/97",
     "cardName": "Corphish",
-    "fullDisplayName": "Corphish 053/97 Dragon",
+    "fullDisplayName": "Corphish 53/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1562,18 +1922,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-053-low.png",
-    "imageHighSrc": "cards/ex3-053-high.png"
+    "imageHighSrc": "cards/ex3-053-high.png",
+    "attacks": [
+      {
+        "name": "Irongrip",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5725",
-    "externalId": null,
+    "externalId": "ex3-52",
     "tcgdex_id": "ex3-52",
     "localId": "052",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "052/97",
+    "cardNumber": "52/97",
     "cardName": "Corphish",
-    "fullDisplayName": "Corphish 052/97 Dragon",
+    "fullDisplayName": "Corphish 52/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1595,18 +1965,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-052-low.png",
-    "imageHighSrc": "cards/ex3-052-high.png"
+    "imageHighSrc": "cards/ex3-052-high.png",
+    "attacks": [
+      {
+        "name": "Poison Claws",
+        "damage": null
+      },
+      {
+        "name": "Bubble",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5716",
-    "externalId": null,
+    "externalId": "ex3-51",
     "tcgdex_id": "ex3-51",
     "localId": "051",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "051/97",
+    "cardNumber": "51/97",
     "cardName": "Barboach",
-    "fullDisplayName": "Barboach 051/97 Dragon",
+    "fullDisplayName": "Barboach 51/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1628,18 +2008,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-051-low.png",
-    "imageHighSrc": "cards/ex3-051-high.png"
+    "imageHighSrc": "cards/ex3-051-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Mud Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5707",
-    "externalId": null,
+    "externalId": "ex3-50",
     "tcgdex_id": "ex3-50",
     "localId": "050",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "050/97",
+    "cardNumber": "50/97",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 050/97 Dragon",
+    "fullDisplayName": "Bagon 50/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1661,18 +2051,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-050-low.png",
-    "imageHighSrc": "cards/ex3-050-high.png"
+    "imageHighSrc": "cards/ex3-050-high.png",
+    "attacks": [
+      {
+        "name": "Risky Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Dragon Eye",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5699",
-    "externalId": null,
+    "externalId": "ex3-49",
     "tcgdex_id": "ex3-49",
     "localId": "049",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "049/97",
+    "cardNumber": "49/97",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 049/97 Dragon",
+    "fullDisplayName": "Bagon 49/97 Dragon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1694,18 +2094,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-049-low.png",
-    "imageHighSrc": "cards/ex3-049-high.png"
+    "imageHighSrc": "cards/ex3-049-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5690",
-    "externalId": null,
+    "externalId": "ex3-48",
     "tcgdex_id": "ex3-48",
     "localId": "048",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "048/97",
+    "cardNumber": "48/97",
     "cardName": "Whiscash",
-    "fullDisplayName": "Whiscash 048/97 Dragon",
+    "fullDisplayName": "Whiscash 48/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1727,18 +2137,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-048-low.png",
-    "imageHighSrc": "cards/ex3-048-high.png"
+    "imageHighSrc": "cards/ex3-048-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "30"
+      },
+      {
+        "name": "Magnitude",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5681",
-    "externalId": null,
+    "externalId": "ex3-47",
     "tcgdex_id": "ex3-47",
     "localId": "047",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "047/97",
+    "cardNumber": "47/97",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 047/97 Dragon",
+    "fullDisplayName": "Vibrava 47/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1760,18 +2180,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-047-low.png",
-    "imageHighSrc": "cards/ex3-047-high.png"
+    "imageHighSrc": "cards/ex3-047-high.png",
+    "attacks": [
+      {
+        "name": "Dive",
+        "damage": "20"
+      },
+      {
+        "name": "Quick Turn",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "5672",
-    "externalId": null,
+    "externalId": "ex3-46",
     "tcgdex_id": "ex3-46",
     "localId": "046",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "046/97",
+    "cardNumber": "46/97",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 046/97 Dragon",
+    "fullDisplayName": "Vibrava 46/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1793,18 +2223,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-046-low.png",
-    "imageHighSrc": "cards/ex3-046-high.png"
+    "imageHighSrc": "cards/ex3-046-high.png",
+    "attacks": [
+      {
+        "name": "Razor Wing",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5664",
-    "externalId": null,
+    "externalId": "ex3-45",
     "tcgdex_id": "ex3-45",
     "localId": "045",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "045/97",
+    "cardNumber": "45/97",
     "cardName": "Swellow",
-    "fullDisplayName": "Swellow 045/97 Dragon",
+    "fullDisplayName": "Swellow 45/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1826,18 +2262,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-045-low.png",
-    "imageHighSrc": "cards/ex3-045-high.png"
+    "imageHighSrc": "cards/ex3-045-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Dive",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5654",
-    "externalId": null,
+    "externalId": "ex3-44",
     "tcgdex_id": "ex3-44",
     "localId": "044",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "044/97",
+    "cardNumber": "44/97",
     "cardName": "Snorunt",
-    "fullDisplayName": "Snorunt 044/97 Dragon",
+    "fullDisplayName": "Snorunt 44/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1859,18 +2305,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-044-low.png",
-    "imageHighSrc": "cards/ex3-044-high.png"
+    "imageHighSrc": "cards/ex3-044-high.png",
+    "attacks": [
+      {
+        "name": "Powder Snow",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5646",
-    "externalId": null,
+    "externalId": "ex3-43",
     "tcgdex_id": "ex3-43",
     "localId": "043",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "043/97",
+    "cardNumber": "43/97",
     "cardName": "Shuppet",
-    "fullDisplayName": "Shuppet 043/97 Dragon",
+    "fullDisplayName": "Shuppet 43/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1892,18 +2344,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-043-low.png",
-    "imageHighSrc": "cards/ex3-043-high.png"
+    "imageHighSrc": "cards/ex3-043-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Night Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5637",
-    "externalId": null,
+    "externalId": "ex3-42",
     "tcgdex_id": "ex3-42",
     "localId": "042",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "042/97",
+    "cardNumber": "42/97",
     "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 042/97 Dragon",
+    "fullDisplayName": "Shelgon 42/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1925,18 +2387,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-042-low.png",
-    "imageHighSrc": "cards/ex3-042-high.png"
+    "imageHighSrc": "cards/ex3-042-high.png",
+    "attacks": [
+      {
+        "name": "Granite Head",
+        "damage": "20"
+      },
+      {
+        "name": "Flare",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5629",
-    "externalId": null,
+    "externalId": "ex3-41",
     "tcgdex_id": "ex3-41",
     "localId": "041",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "041/97",
+    "cardNumber": "41/97",
     "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 041/97 Dragon",
+    "fullDisplayName": "Shelgon 41/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1958,18 +2430,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-041-low.png",
-    "imageHighSrc": "cards/ex3-041-high.png"
+    "imageHighSrc": "cards/ex3-041-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5620",
-    "externalId": null,
+    "externalId": "ex3-40",
     "tcgdex_id": "ex3-40",
     "localId": "040",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "040/97",
+    "cardNumber": "40/97",
     "cardName": "Seadra",
-    "fullDisplayName": "Seadra 040/97 Dragon",
+    "fullDisplayName": "Seadra 40/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1991,18 +2469,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-040-low.png",
-    "imageHighSrc": "cards/ex3-040-high.png"
+    "imageHighSrc": "cards/ex3-040-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "20"
+      },
+      {
+        "name": "Waterfall",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5612",
-    "externalId": null,
+    "externalId": "ex3-39",
     "tcgdex_id": "ex3-39",
     "localId": "039",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "039/97",
+    "cardNumber": "39/97",
     "cardName": "Seadra",
-    "fullDisplayName": "Seadra 039/97 Dragon",
+    "fullDisplayName": "Seadra 39/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2024,18 +2512,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-039-low.png",
-    "imageHighSrc": "cards/ex3-039-high.png"
+    "imageHighSrc": "cards/ex3-039-high.png",
+    "attacks": [
+      {
+        "name": "Energy Cannon",
+        "damage": "20+"
+      },
+      {
+        "name": "Water Arrow",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5602",
-    "externalId": null,
+    "externalId": "ex3-38",
     "tcgdex_id": "ex3-38",
     "localId": "038",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "038/97",
+    "cardNumber": "38/97",
     "cardName": "Ninjask",
-    "fullDisplayName": "Ninjask 038/97 Dragon",
+    "fullDisplayName": "Ninjask 38/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2057,18 +2555,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-038-low.png",
-    "imageHighSrc": "cards/ex3-038-high.png"
+    "imageHighSrc": "cards/ex3-038-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": "10"
+      },
+      {
+        "name": "Sonic Wing",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5591",
-    "externalId": null,
+    "externalId": "ex3-37",
     "tcgdex_id": "ex3-37",
     "localId": "037",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "037/97",
+    "cardNumber": "37/97",
     "cardName": "Meditite",
-    "fullDisplayName": "Meditite 037/97 Dragon",
+    "fullDisplayName": "Meditite 37/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2090,18 +2598,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-037-low.png",
-    "imageHighSrc": "cards/ex3-037-high.png"
+    "imageHighSrc": "cards/ex3-037-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Meditate",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5583",
-    "externalId": null,
+    "externalId": "ex3-36",
     "tcgdex_id": "ex3-36",
     "localId": "036",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "036/97",
+    "cardNumber": "36/97",
     "cardName": "Marshtomp",
-    "fullDisplayName": "Marshtomp 036/97 Dragon",
+    "fullDisplayName": "Marshtomp 36/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2123,18 +2641,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-036-low.png",
-    "imageHighSrc": "cards/ex3-036-high.png"
+    "imageHighSrc": "cards/ex3-036-high.png",
+    "attacks": [
+      {
+        "name": "Mud Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5574",
-    "externalId": null,
+    "externalId": "ex3-35",
     "tcgdex_id": "ex3-35",
     "localId": "035",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "035/97",
+    "cardNumber": "35/97",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 035/97 Dragon",
+    "fullDisplayName": "Magneton 35/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2156,18 +2680,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-035-low.png",
-    "imageHighSrc": "cards/ex3-035-high.png"
+    "imageHighSrc": "cards/ex3-035-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Triple Smash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5565",
-    "externalId": null,
+    "externalId": "ex3-34",
     "tcgdex_id": "ex3-34",
     "localId": "034",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "034/97",
+    "cardNumber": "34/97",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 034/97 Dragon",
+    "fullDisplayName": "Houndoom 34/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2189,18 +2723,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-034-low.png",
-    "imageHighSrc": "cards/ex3-034-high.png"
+    "imageHighSrc": "cards/ex3-034-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5556",
-    "externalId": null,
+    "externalId": "ex3-33",
     "tcgdex_id": "ex3-33",
     "localId": "033",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "033/97",
+    "cardNumber": "33/97",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 033/97 Dragon",
+    "fullDisplayName": "Horsea 33/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2222,18 +2766,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-033-low.png",
-    "imageHighSrc": "cards/ex3-033-high.png"
+    "imageHighSrc": "cards/ex3-033-high.png",
+    "attacks": [
+      {
+        "name": "Retaliate",
+        "damage": "10×"
+      },
+      {
+        "name": "Smokescreen",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5547",
-    "externalId": null,
+    "externalId": "ex3-32",
     "tcgdex_id": "ex3-32",
     "localId": "032",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "032/97",
+    "cardNumber": "32/97",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 032/97 Dragon",
+    "fullDisplayName": "Gyarados 32/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2255,18 +2809,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-032-low.png",
-    "imageHighSrc": "cards/ex3-032-high.png"
+    "imageHighSrc": "cards/ex3-032-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Crush",
+        "damage": null
+      },
+      {
+        "name": "Aqua Sonic",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "5538",
-    "externalId": null,
+    "externalId": "ex3-31",
     "tcgdex_id": "ex3-31",
     "localId": "031",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "031/97",
+    "cardNumber": "31/97",
     "cardName": "Grovyle",
-    "fullDisplayName": "Grovyle 031/97 Dragon",
+    "fullDisplayName": "Grovyle 31/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2288,18 +2852,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-031-low.png",
-    "imageHighSrc": "cards/ex3-031-high.png"
+    "imageHighSrc": "cards/ex3-031-high.png",
+    "attacks": [
+      {
+        "name": "Fury Cutter",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5529",
-    "externalId": null,
+    "externalId": "ex3-30",
     "tcgdex_id": "ex3-30",
     "localId": "030",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "030/97",
+    "cardNumber": "30/97",
     "cardName": "Graveler",
-    "fullDisplayName": "Graveler 030/97 Dragon",
+    "fullDisplayName": "Graveler 30/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2321,18 +2891,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-030-low.png",
-    "imageHighSrc": "cards/ex3-030-high.png"
+    "imageHighSrc": "cards/ex3-030-high.png",
+    "attacks": [
+      {
+        "name": "Magnitude",
+        "damage": "20"
+      },
+      {
+        "name": "Rollout",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5520",
-    "externalId": null,
+    "externalId": "ex3-29",
     "tcgdex_id": "ex3-29",
     "localId": "029",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "029/97",
+    "cardNumber": "29/97",
     "cardName": "Graveler",
-    "fullDisplayName": "Graveler 029/97 Dragon",
+    "fullDisplayName": "Graveler 29/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2354,18 +2934,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-029-low.png",
-    "imageHighSrc": "cards/ex3-029-high.png"
+    "imageHighSrc": "cards/ex3-029-high.png",
+    "attacks": [
+      {
+        "name": "Grind",
+        "damage": "10×"
+      },
+      {
+        "name": "Big Explosion",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5511",
-    "externalId": null,
+    "externalId": "ex3-28",
     "tcgdex_id": "ex3-28",
     "localId": "028",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "028/97",
+    "cardNumber": "28/97",
     "cardName": "Forretress",
-    "fullDisplayName": "Forretress 028/97 Dragon",
+    "fullDisplayName": "Forretress 28/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2387,18 +2977,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-028-low.png",
-    "imageHighSrc": "cards/ex3-028-high.png"
+    "imageHighSrc": "cards/ex3-028-high.png",
+    "attacks": [
+      {
+        "name": "Double Metal Ball",
+        "damage": null
+      },
+      {
+        "name": "Backspin",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5502",
-    "externalId": null,
+    "externalId": "ex3-27",
     "tcgdex_id": "ex3-27",
     "localId": "027",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "027/97",
+    "cardNumber": "27/97",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 027/97 Dragon",
+    "fullDisplayName": "Flaaffy 27/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2420,18 +3020,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-027-low.png",
-    "imageHighSrc": "cards/ex3-027-high.png"
+    "imageHighSrc": "cards/ex3-027-high.png",
+    "attacks": [
+      {
+        "name": "Energy Recall",
+        "damage": null
+      },
+      {
+        "name": "Lightning Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5493",
-    "externalId": null,
+    "externalId": "ex3-26",
     "tcgdex_id": "ex3-26",
     "localId": "026",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "026/97",
+    "cardNumber": "26/97",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 026/97 Dragon",
+    "fullDisplayName": "Dratini 26/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2453,18 +3063,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-026-low.png",
-    "imageHighSrc": "cards/ex3-026-high.png"
+    "imageHighSrc": "cards/ex3-026-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Dew",
+        "damage": null
+      },
+      {
+        "name": "Tail Slap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5485",
-    "externalId": null,
+    "externalId": "ex3-25",
     "tcgdex_id": "ex3-25",
     "localId": "025",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "025/97",
+    "cardNumber": "25/97",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 025/97 Dragon",
+    "fullDisplayName": "Combusken 25/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2486,18 +3106,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-025-low.png",
-    "imageHighSrc": "cards/ex3-025-high.png"
+    "imageHighSrc": "cards/ex3-025-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Combustion",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5475",
-    "externalId": null,
+    "externalId": "ex3-24",
     "tcgdex_id": "ex3-24",
     "localId": "024",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "024/97",
+    "cardNumber": "24/97",
     "cardName": "Camerupt",
-    "fullDisplayName": "Camerupt 024/97 Dragon",
+    "fullDisplayName": "Camerupt 24/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2519,18 +3149,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-024-low.png",
-    "imageHighSrc": "cards/ex3-024-high.png"
+    "imageHighSrc": "cards/ex3-024-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "20"
+      },
+      {
+        "name": "Ram",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5466",
-    "externalId": null,
+    "externalId": "ex3-23",
     "tcgdex_id": "ex3-23",
     "localId": "023",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "023/97",
+    "cardNumber": "23/97",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 023/97 Dragon",
+    "fullDisplayName": "Bagon 23/97 Dragon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2552,18 +3192,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-023-low.png",
-    "imageHighSrc": "cards/ex3-023-high.png"
+    "imageHighSrc": "cards/ex3-023-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Combustion",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5455",
-    "externalId": null,
+    "externalId": "ex3-22",
     "tcgdex_id": "ex3-22",
     "localId": "022",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "022/97",
+    "cardNumber": "22/97",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 022/97 Dragon",
+    "fullDisplayName": "Vibrava 22/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2585,18 +3235,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-022-low.png",
-    "imageHighSrc": "cards/ex3-022-high.png"
+    "imageHighSrc": "cards/ex3-022-high.png",
+    "attacks": [
+      {
+        "name": "Quick Charge",
+        "damage": null
+      },
+      {
+        "name": "Dragon Spark",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5446",
-    "externalId": null,
+    "externalId": "ex3-21",
     "tcgdex_id": "ex3-21",
     "localId": "021",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "021/97",
+    "cardNumber": "21/97",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 021/97 Dragon",
+    "fullDisplayName": "Skarmory 21/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2618,18 +3278,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-021-low.png",
-    "imageHighSrc": "cards/ex3-021-high.png"
+    "imageHighSrc": "cards/ex3-021-high.png",
+    "attacks": [
+      {
+        "name": "Pick On",
+        "damage": null
+      },
+      {
+        "name": "Power Count",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5437",
-    "externalId": null,
+    "externalId": "ex3-20",
     "tcgdex_id": "ex3-20",
     "localId": "020",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "020/97",
+    "cardNumber": "20/97",
     "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 020/97 Dragon",
+    "fullDisplayName": "Shelgon 20/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2651,18 +3321,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-020-low.png",
-    "imageHighSrc": "cards/ex3-020-high.png"
+    "imageHighSrc": "cards/ex3-020-high.png",
+    "attacks": [
+      {
+        "name": "Scrunch",
+        "damage": null
+      },
+      {
+        "name": "Rolling Attack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5427",
-    "externalId": null,
+    "externalId": "ex3-19",
     "tcgdex_id": "ex3-19",
     "localId": "019",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "019/97",
+    "cardNumber": "19/97",
     "cardName": "Salamence",
-    "fullDisplayName": "Salamence 019/97 Dragon",
+    "fullDisplayName": "Salamence 19/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2684,18 +3364,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-019-low.png",
-    "imageHighSrc": "cards/ex3-019-high.png"
+    "imageHighSrc": "cards/ex3-019-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Flame",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5418",
-    "externalId": null,
+    "externalId": "ex3-18",
     "tcgdex_id": "ex3-18",
     "localId": "018",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "018/97",
+    "cardNumber": "18/97",
     "cardName": "Ninjask",
-    "fullDisplayName": "Ninjask 018/97 Dragon",
+    "fullDisplayName": "Ninjask 18/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2717,18 +3403,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-018-low.png",
-    "imageHighSrc": "cards/ex3-018-high.png"
+    "imageHighSrc": "cards/ex3-018-high.png",
+    "attacks": [
+      {
+        "name": "Quick Touch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5409",
-    "externalId": null,
+    "externalId": "ex3-17",
     "tcgdex_id": "ex3-17",
     "localId": "017",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "017/97",
+    "cardNumber": "17/97",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 017/97 Dragon",
+    "fullDisplayName": "Magneton 17/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2750,18 +3442,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-017-low.png",
-    "imageHighSrc": "cards/ex3-017-high.png"
+    "imageHighSrc": "cards/ex3-017-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Force",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5400",
-    "externalId": null,
+    "externalId": "ex3-16",
     "tcgdex_id": "ex3-16",
     "localId": "016",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "016/97",
+    "cardNumber": "16/97",
     "cardName": "Girafarig",
-    "fullDisplayName": "Girafarig 016/97 Dragon",
+    "fullDisplayName": "Girafarig 16/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2783,18 +3481,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-016-low.png",
-    "imageHighSrc": "cards/ex3-016-high.png"
+    "imageHighSrc": "cards/ex3-016-high.png",
+    "attacks": [
+      {
+        "name": "Synchronized Search",
+        "damage": null
+      },
+      {
+        "name": "Breaking Impact",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5392",
-    "externalId": null,
+    "externalId": "ex3-15",
     "tcgdex_id": "ex3-15",
     "localId": "015",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "015/97",
+    "cardNumber": "15/97",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 015/97 Dragon",
+    "fullDisplayName": "Flygon 15/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2816,18 +3524,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-015-low.png",
-    "imageHighSrc": "cards/ex3-015-high.png"
+    "imageHighSrc": "cards/ex3-015-high.png",
+    "attacks": [
+      {
+        "name": "Air Slash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5383",
-    "externalId": null,
+    "externalId": "ex3-14",
     "tcgdex_id": "ex3-14",
     "localId": "014",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "014/97",
+    "cardNumber": "14/97",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 014/97 Dragon",
+    "fullDisplayName": "Dragonair 14/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2849,18 +3563,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-014-low.png",
-    "imageHighSrc": "cards/ex3-014-high.png"
+    "imageHighSrc": "cards/ex3-014-high.png",
+    "attacks": [
+      {
+        "name": "Dazzle Blast",
+        "damage": "20"
+      },
+      {
+        "name": "Healing Wave",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5374",
-    "externalId": null,
+    "externalId": "ex3-13",
     "tcgdex_id": "ex3-13",
     "localId": "013",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "013/97",
+    "cardNumber": "13/97",
     "cardName": "Crawdaunt",
-    "fullDisplayName": "Crawdaunt 013/97 Dragon",
+    "fullDisplayName": "Crawdaunt 13/97 Dragon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2882,18 +3606,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-013-low.png",
-    "imageHighSrc": "cards/ex3-013-high.png"
+    "imageHighSrc": "cards/ex3-013-high.png",
+    "attacks": [
+      {
+        "name": "Poison Claws",
+        "damage": "10"
+      },
+      {
+        "name": "Rend",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5365",
-    "externalId": null,
+    "externalId": "ex3-12",
     "tcgdex_id": "ex3-12",
     "localId": "012",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "012/97",
+    "cardNumber": "12/97",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 012/97 Dragon",
+    "fullDisplayName": "Torkoal 12/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2915,18 +3649,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-012-low.png",
-    "imageHighSrc": "cards/ex3-012-high.png"
+    "imageHighSrc": "cards/ex3-012-high.png",
+    "attacks": [
+      {
+        "name": "Power Generation",
+        "damage": null
+      },
+      {
+        "name": "Scorching Smoke",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5356",
-    "externalId": null,
+    "externalId": "ex3-11",
     "tcgdex_id": "ex3-11",
     "localId": "011",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "011/97",
+    "cardNumber": "11/97",
     "cardName": "Shedinja",
-    "fullDisplayName": "Shedinja 011/97 Dragon",
+    "fullDisplayName": "Shedinja 11/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2948,18 +3692,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-011-low.png",
-    "imageHighSrc": "cards/ex3-011-high.png"
+    "imageHighSrc": "cards/ex3-011-high.png",
+    "attacks": [
+      {
+        "name": "Damage Curse",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5347",
-    "externalId": null,
+    "externalId": "ex3-10",
     "tcgdex_id": "ex3-10",
     "localId": "010",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "010/97",
+    "cardNumber": "10/97",
     "cardName": "Salamence",
-    "fullDisplayName": "Salamence 010/97 Dragon",
+    "fullDisplayName": "Salamence 10/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2981,18 +3731,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-010-low.png",
-    "imageHighSrc": "cards/ex3-010-high.png"
+    "imageHighSrc": "cards/ex3-010-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "20"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5338",
-    "externalId": null,
+    "externalId": "ex3-9",
     "tcgdex_id": "ex3-9",
     "localId": "009",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "009/97",
+    "cardNumber": "9/97",
     "cardName": "Roselia",
-    "fullDisplayName": "Roselia 009/97 Dragon",
+    "fullDisplayName": "Roselia 9/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3014,18 +3774,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-009-low.png",
-    "imageHighSrc": "cards/ex3-009-high.png"
+    "imageHighSrc": "cards/ex3-009-high.png",
+    "attacks": [
+      {
+        "name": "Speed Growth",
+        "damage": null
+      },
+      {
+        "name": "Sleep Powder",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5329",
-    "externalId": null,
+    "externalId": "ex3-8",
     "tcgdex_id": "ex3-8",
     "localId": "008",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "008/97",
+    "cardNumber": "8/97",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 008/97 Dragon",
+    "fullDisplayName": "Plusle 8/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3047,18 +3817,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-008-low.png",
-    "imageHighSrc": "cards/ex3-008-high.png"
+    "imageHighSrc": "cards/ex3-008-high.png",
+    "attacks": [
+      {
+        "name": "Cheer On",
+        "damage": null
+      },
+      {
+        "name": "Extra Circuit",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5320",
-    "externalId": null,
+    "externalId": "ex3-7",
     "tcgdex_id": "ex3-7",
     "localId": "007",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "007/97",
+    "cardNumber": "7/97",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 007/97 Dragon",
+    "fullDisplayName": "Minun 7/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3080,18 +3860,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-007-low.png",
-    "imageHighSrc": "cards/ex3-007-high.png"
+    "imageHighSrc": "cards/ex3-007-high.png",
+    "attacks": [
+      {
+        "name": "Cheer On",
+        "damage": null
+      },
+      {
+        "name": "Special Circuit",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5311",
-    "externalId": null,
+    "externalId": "ex3-6",
     "tcgdex_id": "ex3-6",
     "localId": "006",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "006/97",
+    "cardNumber": "6/97",
     "cardName": "Grumpig",
-    "fullDisplayName": "Grumpig 006/97 Dragon",
+    "fullDisplayName": "Grumpig 6/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3113,18 +3903,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-006-low.png",
-    "imageHighSrc": "cards/ex3-006-high.png"
+    "imageHighSrc": "cards/ex3-006-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Boom",
+        "damage": "20+"
+      },
+      {
+        "name": "Mind Trip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5291",
-    "externalId": null,
+    "externalId": "ex3-5",
     "tcgdex_id": "ex3-5",
     "localId": "005",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "005/97",
+    "cardNumber": "5/97",
     "cardName": "Golem",
-    "fullDisplayName": "Golem 005/97 Dragon",
+    "fullDisplayName": "Golem 5/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3146,18 +3946,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-005-low.png",
-    "imageHighSrc": "cards/ex3-005-high.png"
+    "imageHighSrc": "cards/ex3-005-high.png",
+    "attacks": [
+      {
+        "name": "Rock Vengeance",
+        "damage": "20+"
+      },
+      {
+        "name": "Rock Slide",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5283",
-    "externalId": null,
+    "externalId": "ex3-4",
     "tcgdex_id": "ex3-4",
     "localId": "004",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "004/97",
+    "cardNumber": "4/97",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 004/97 Dragon",
+    "fullDisplayName": "Flygon 4/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3179,18 +3989,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-004-low.png",
-    "imageHighSrc": "cards/ex3-004-high.png"
+    "imageHighSrc": "cards/ex3-004-high.png",
+    "attacks": [
+      {
+        "name": "Energy Shower",
+        "damage": null
+      },
+      {
+        "name": "Rainbow Burn",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5274",
-    "externalId": null,
+    "externalId": "ex3-3",
     "tcgdex_id": "ex3-3",
     "localId": "003",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "003/97",
+    "cardNumber": "3/97",
     "cardName": "Crawdaunt",
-    "fullDisplayName": "Crawdaunt 003/97 Dragon",
+    "fullDisplayName": "Crawdaunt 3/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3212,18 +4032,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-003-low.png",
-    "imageHighSrc": "cards/ex3-003-high.png"
+    "imageHighSrc": "cards/ex3-003-high.png",
+    "attacks": [
+      {
+        "name": "Guillotine",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5268",
-    "externalId": null,
+    "externalId": "ex3-2",
     "tcgdex_id": "ex3-2",
     "localId": "002",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "002/97",
+    "cardNumber": "2/97",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 002/97 Dragon",
+    "fullDisplayName": "Altaria 2/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3245,18 +4071,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-002-low.png",
-    "imageHighSrc": "cards/ex3-002-high.png"
+    "imageHighSrc": "cards/ex3-002-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Dance",
+        "damage": null
+      },
+      {
+        "name": "Dragon Song",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5258",
-    "externalId": null,
+    "externalId": "ex3-1",
     "tcgdex_id": "ex3-1",
     "localId": "001",
     "setCode": "ex3",
     "setTcgdexId": "ex3",
-    "cardNumber": "001/97",
+    "cardNumber": "1/97",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 001/97 Dragon",
+    "fullDisplayName": "Absol 1/97 Dragon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3278,6 +4114,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex3-001-low.png",
-    "imageHighSrc": "cards/ex3-001-high.png"
+    "imageHighSrc": "cards/ex3-001-high.png",
+    "attacks": [
+      {
+        "name": "Bad News",
+        "damage": null
+      },
+      {
+        "name": "Prize Count",
+        "damage": "20+"
+      }
+    ]
   }
 ]

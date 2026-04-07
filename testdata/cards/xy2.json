@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "20030",
-    "externalId": null,
+    "externalId": "xy2-109",
     "tcgdex_id": "xy2-109",
     "localId": "109",
     "setCode": "xy2",
@@ -31,11 +31,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-109-low.png",
-    "imageHighSrc": "cards/xy2-109-high.png"
+    "imageHighSrc": "cards/xy2-109-high.png",
+    "attacks": [
+      {
+        "name": "Wham Bam Punch",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20021",
-    "externalId": null,
+    "externalId": "xy2-108",
     "tcgdex_id": "xy2-108",
     "localId": "108",
     "setCode": "xy2",
@@ -65,11 +72,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-108-low.png",
-    "imageHighSrc": "cards/xy2-108-high.png"
+    "imageHighSrc": "cards/xy2-108-high.png",
+    "attacks": [
+      {
+        "name": "Wild Blaze",
+        "damage": "300"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20012",
-    "externalId": null,
+    "externalId": "xy2-107",
     "tcgdex_id": "xy2-107",
     "localId": "107",
     "setCode": "xy2",
@@ -99,11 +113,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-107-low.png",
-    "imageHighSrc": "cards/xy2-107-high.png"
+    "imageHighSrc": "cards/xy2-107-high.png",
+    "attacks": [
+      {
+        "name": "Crimson Dive",
+        "damage": "300"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20003",
-    "externalId": null,
+    "externalId": "xy2-106",
     "tcgdex_id": "xy2-106",
     "localId": "106",
     "setCode": "xy2",
@@ -128,11 +149,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-106-low.png",
-    "imageHighSrc": "cards/xy2-106-high.png"
+    "imageHighSrc": "cards/xy2-106-high.png",
+    "rules": "Search your deck for up to 2 Basic Pokémon, reveal them, and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19994",
-    "externalId": null,
+    "externalId": "xy2-105",
     "tcgdex_id": "xy2-105",
     "localId": "105",
     "setCode": "xy2",
@@ -157,11 +179,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-105-low.png",
-    "imageHighSrc": "cards/xy2-105-high.png"
+    "imageHighSrc": "cards/xy2-105-high.png",
+    "rules": "Heal 60 damage and remove all Special Conditions from 1 of your Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19985",
-    "externalId": null,
+    "externalId": "xy2-104",
     "tcgdex_id": "xy2-104",
     "localId": "104",
     "setCode": "xy2",
@@ -186,11 +209,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-104-low.png",
-    "imageHighSrc": "cards/xy2-104-high.png"
+    "imageHighSrc": "cards/xy2-104-high.png",
+    "rules": "Switch 1 of your opponent's Benched Pokémon with his or her Active Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19976",
-    "externalId": null,
+    "externalId": "xy2-103",
     "tcgdex_id": "xy2-103",
     "localId": "103",
     "setCode": "xy2",
@@ -220,11 +244,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-103-low.png",
-    "imageHighSrc": "cards/xy2-103-high.png"
+    "imageHighSrc": "cards/xy2-103-high.png",
+    "attacks": [
+      {
+        "name": "Triple Draw",
+        "damage": null
+      },
+      {
+        "name": "Kindred Kick",
+        "damage": "70+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19967",
-    "externalId": null,
+    "externalId": "xy2-102",
     "tcgdex_id": "xy2-102",
     "localId": "102",
     "setCode": "xy2",
@@ -254,11 +289,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-102-low.png",
-    "imageHighSrc": "cards/xy2-102-high.png"
+    "imageHighSrc": "cards/xy2-102-high.png",
+    "attacks": [
+      {
+        "name": "Triple Poison",
+        "damage": null
+      },
+      {
+        "name": "Smash Uppercut",
+        "damage": "80"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19959",
-    "externalId": null,
+    "externalId": "xy2-101",
     "tcgdex_id": "xy2-101",
     "localId": "101",
     "setCode": "xy2",
@@ -288,11 +334,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-101-low.png",
-    "imageHighSrc": "cards/xy2-101-high.png"
+    "imageHighSrc": "cards/xy2-101-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "40"
+      },
+      {
+        "name": "Dual Bullet",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19949",
-    "externalId": null,
+    "externalId": "xy2-100",
     "tcgdex_id": "xy2-100",
     "localId": "100",
     "setCode": "xy2",
@@ -322,18 +379,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-100-low.png",
-    "imageHighSrc": "cards/xy2-100-high.png"
+    "imageHighSrc": "cards/xy2-100-high.png",
+    "attacks": [
+      {
+        "name": "Stoke",
+        "damage": null
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19940",
-    "externalId": null,
+    "externalId": "xy2-99",
     "tcgdex_id": "xy2-99",
     "localId": "099",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "099/106",
+    "cardNumber": "99/106",
     "cardName": "Ultra Ball",
-    "fullDisplayName": "Ultra Ball 099/106 Flashfire",
+    "fullDisplayName": "Ultra Ball 99/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -351,18 +419,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-099-low.png",
-    "imageHighSrc": "cards/xy2-099-high.png"
+    "imageHighSrc": "cards/xy2-099-high.png",
+    "rules": "Discard 2 cards from your hand. (If you can't discard 2 cards, you can't play this card.) Search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19931",
-    "externalId": null,
+    "externalId": "xy2-98",
     "tcgdex_id": "xy2-98",
     "localId": "098",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "098/106",
+    "cardNumber": "98/106",
     "cardName": "Trick Shovel",
-    "fullDisplayName": "Trick Shovel 098/106 Flashfire",
+    "fullDisplayName": "Trick Shovel 98/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -380,18 +449,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-098-low.png",
-    "imageHighSrc": "cards/xy2-098-high.png"
+    "imageHighSrc": "cards/xy2-098-high.png",
+    "rules": "Look at the top card of either player's deck. You may discard that card or return it to the top of the deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19922",
-    "externalId": null,
+    "externalId": "xy2-97",
     "tcgdex_id": "xy2-97",
     "localId": "097",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "097/106",
+    "cardNumber": "97/106",
     "cardName": "Startling Megaphone",
-    "fullDisplayName": "Startling Megaphone 097/106 Flashfire",
+    "fullDisplayName": "Startling Megaphone 97/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -409,18 +479,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-097-low.png",
-    "imageHighSrc": "cards/xy2-097-high.png"
+    "imageHighSrc": "cards/xy2-097-high.png",
+    "rules": "Discard all Pokémon Tool cards attached to each of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19913",
-    "externalId": null,
+    "externalId": "xy2-96",
     "tcgdex_id": "xy2-96",
     "localId": "096",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "096/106",
+    "cardNumber": "96/106",
     "cardName": "Sacred Ash",
-    "fullDisplayName": "Sacred Ash 096/106 Flashfire",
+    "fullDisplayName": "Sacred Ash 96/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -438,18 +509,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-096-low.png",
-    "imageHighSrc": "cards/xy2-096-high.png"
+    "imageHighSrc": "cards/xy2-096-high.png",
+    "rules": "Shuffle 5 Pokémon from your discard pile into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19905",
-    "externalId": null,
+    "externalId": "xy2-95",
     "tcgdex_id": "xy2-95",
     "localId": "095",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "095/106",
+    "cardNumber": "95/106",
     "cardName": "Protection Cube",
-    "fullDisplayName": "Protection Cube 095/106 Flashfire",
+    "fullDisplayName": "Protection Cube 95/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -467,18 +539,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-095-low.png",
-    "imageHighSrc": "cards/xy2-095-high.png"
+    "imageHighSrc": "cards/xy2-095-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nPrevent all damage done to the Pokémon this card is attached to by attacks it uses.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19896",
-    "externalId": null,
+    "externalId": "xy2-94",
     "tcgdex_id": "xy2-94",
     "localId": "094",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "094/106",
+    "cardNumber": "94/106",
     "cardName": "Pokémon Fan Club",
-    "fullDisplayName": "Pokémon Fan Club 094/106 Flashfire",
+    "fullDisplayName": "Pokémon Fan Club 94/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -496,18 +569,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-094-low.png",
-    "imageHighSrc": "cards/xy2-094-high.png"
+    "imageHighSrc": "cards/xy2-094-high.png",
+    "rules": "Search your deck for up to 2 Basic Pokémon, reveal them, and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19887",
-    "externalId": null,
+    "externalId": "xy2-93",
     "tcgdex_id": "xy2-93",
     "localId": "093",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "093/106",
+    "cardNumber": "93/106",
     "cardName": "Pokémon Center Lady",
-    "fullDisplayName": "Pokémon Center Lady 093/106 Flashfire",
+    "fullDisplayName": "Pokémon Center Lady 93/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -525,18 +599,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-093-low.png",
-    "imageHighSrc": "cards/xy2-093-high.png"
+    "imageHighSrc": "cards/xy2-093-high.png",
+    "rules": "Heal 60 damage and remove all Special Conditions from 1 of your Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19878",
-    "externalId": null,
+    "externalId": "xy2-92",
     "tcgdex_id": "xy2-92",
     "localId": "092",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "092/106",
+    "cardNumber": "92/106",
     "cardName": "Pal Pad",
-    "fullDisplayName": "Pal Pad 092/106 Flashfire",
+    "fullDisplayName": "Pal Pad 92/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -554,18 +629,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-092-low.png",
-    "imageHighSrc": "cards/xy2-092-high.png"
+    "imageHighSrc": "cards/xy2-092-high.png",
+    "rules": "Shuffle 2 Supporter cards from your discard pile into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19869",
-    "externalId": null,
+    "externalId": "xy2-91",
     "tcgdex_id": "xy2-91",
     "localId": "091",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "091/106",
+    "cardNumber": "91/106",
     "cardName": "Magnetic Storm",
-    "fullDisplayName": "Magnetic Storm 091/106 Flashfire",
+    "fullDisplayName": "Magnetic Storm 91/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -583,18 +659,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-091-low.png",
-    "imageHighSrc": "cards/xy2-091-high.png"
+    "imageHighSrc": "cards/xy2-091-high.png",
+    "rules": "Each Pokémon in play has no Resistance.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "19860",
-    "externalId": null,
+    "externalId": "xy2-90",
     "tcgdex_id": "xy2-90",
     "localId": "090",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "090/106",
+    "cardNumber": "90/106",
     "cardName": "Lysandre",
-    "fullDisplayName": "Lysandre 090/106 Flashfire",
+    "fullDisplayName": "Lysandre 90/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -612,18 +689,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-090-low.png",
-    "imageHighSrc": "cards/xy2-090-high.png"
+    "imageHighSrc": "cards/xy2-090-high.png",
+    "rules": "Switch 1 of your opponent's Benched Pokémon with his or her Active Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19851",
-    "externalId": null,
+    "externalId": "xy2-89",
     "tcgdex_id": "xy2-89",
     "localId": "089",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "089/106",
+    "cardNumber": "89/106",
     "cardName": "Fiery Torch",
-    "fullDisplayName": "Fiery Torch 089/106 Flashfire",
+    "fullDisplayName": "Fiery Torch 89/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -641,11 +719,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-089-low.png",
-    "imageHighSrc": "cards/xy2-089-high.png"
+    "imageHighSrc": "cards/xy2-089-high.png",
+    "rules": "Discard a Fire Energy card from your hand. (If you can't discard a Fire Energy card, you can't play this card.) Draw 2 cards.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19842",
-    "externalId": null,
+    "externalId": "xy2-88a",
     "tcgdex_id": "xy2-88a",
     "localId": "88a",
     "setCode": "xy2",
@@ -670,18 +749,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-88a-low.png",
-    "imageHighSrc": "cards/xy2-88a-high.png"
+    "imageHighSrc": "cards/xy2-88a-high.png",
+    "rules": "Attach 2 Fire Energy cards from your discard pile to 1 of your Fire Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19833",
-    "externalId": null,
+    "externalId": "xy2-88",
     "tcgdex_id": "xy2-88",
     "localId": "088",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "088/106",
+    "cardNumber": "88/106",
     "cardName": "Blacksmith",
-    "fullDisplayName": "Blacksmith 088/106 Flashfire",
+    "fullDisplayName": "Blacksmith 88/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -699,18 +779,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-088-low.png",
-    "imageHighSrc": "cards/xy2-088-high.png"
+    "imageHighSrc": "cards/xy2-088-high.png",
+    "rules": "Attach 2 Fire Energy cards from your discard pile to 1 of your Fire Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19824",
-    "externalId": null,
+    "externalId": "xy2-87",
     "tcgdex_id": "xy2-87",
     "localId": "087",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "087/106",
+    "cardNumber": "87/106",
     "cardName": "Furfrou",
-    "fullDisplayName": "Furfrou 087/106 Flashfire",
+    "fullDisplayName": "Furfrou 87/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -732,18 +813,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-087-low.png",
-    "imageHighSrc": "cards/xy2-087-high.png"
+    "imageHighSrc": "cards/xy2-087-high.png",
+    "attacks": [
+      {
+        "name": "Tight Jaw",
+        "damage": "20"
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "19815",
-    "externalId": null,
+    "externalId": "xy2-86",
     "tcgdex_id": "xy2-86",
     "localId": "086",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "086/106",
+    "cardNumber": "86/106",
     "cardName": "Fletchling",
-    "fullDisplayName": "Fletchling 086/106 Flashfire",
+    "fullDisplayName": "Fletchling 86/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -765,18 +856,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-086-low.png",
-    "imageHighSrc": "cards/xy2-086-high.png"
+    "imageHighSrc": "cards/xy2-086-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "19806",
-    "externalId": null,
+    "externalId": "xy2-85",
     "tcgdex_id": "xy2-85",
     "localId": "085",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "085/106",
+    "cardNumber": "85/106",
     "cardName": "Lopunny",
-    "fullDisplayName": "Lopunny 085/106 Flashfire",
+    "fullDisplayName": "Lopunny 85/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -798,18 +895,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-085-low.png",
-    "imageHighSrc": "cards/xy2-085-high.png"
+    "imageHighSrc": "cards/xy2-085-high.png",
+    "attacks": [
+      {
+        "name": "Sitdown Bounce",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19795",
-    "externalId": null,
+    "externalId": "xy2-84",
     "tcgdex_id": "xy2-84",
     "localId": "084",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "084/106",
+    "cardNumber": "84/106",
     "cardName": "Buneary",
-    "fullDisplayName": "Buneary 084/106 Flashfire",
+    "fullDisplayName": "Buneary 84/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -831,18 +934,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-084-low.png",
-    "imageHighSrc": "cards/xy2-084-high.png"
+    "imageHighSrc": "cards/xy2-084-high.png",
+    "attacks": [
+      {
+        "name": "Bounce",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19786",
-    "externalId": null,
+    "externalId": "xy2-83",
     "tcgdex_id": "xy2-83",
     "localId": "083",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "083/106",
+    "cardNumber": "83/106",
     "cardName": "Miltank",
-    "fullDisplayName": "Miltank 083/106 Flashfire",
+    "fullDisplayName": "Miltank 83/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -864,18 +973,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-083-low.png",
-    "imageHighSrc": "cards/xy2-083-high.png"
+    "imageHighSrc": "cards/xy2-083-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Friends",
+        "damage": "10+"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19778",
-    "externalId": null,
+    "externalId": "xy2-82",
     "tcgdex_id": "xy2-82",
     "localId": "082",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "082/106",
+    "cardNumber": "82/106",
     "cardName": "Furret",
-    "fullDisplayName": "Furret 082/106 Flashfire",
+    "fullDisplayName": "Furret 82/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -897,18 +1016,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-082-low.png",
-    "imageHighSrc": "cards/xy2-082-high.png"
+    "imageHighSrc": "cards/xy2-082-high.png",
+    "attacks": [
+      {
+        "name": "Buried Treasure Hunt",
+        "damage": null
+      },
+      {
+        "name": "Slam",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "19769",
-    "externalId": null,
+    "externalId": "xy2-81",
     "tcgdex_id": "xy2-81",
     "localId": "081",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "081/106",
+    "cardNumber": "81/106",
     "cardName": "Sentret",
-    "fullDisplayName": "Sentret 081/106 Flashfire",
+    "fullDisplayName": "Sentret 81/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -930,18 +1059,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-081-low.png",
-    "imageHighSrc": "cards/xy2-081-high.png"
+    "imageHighSrc": "cards/xy2-081-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19759",
-    "externalId": null,
+    "externalId": "xy2-80",
     "tcgdex_id": "xy2-80",
     "localId": "080",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "080/106",
+    "cardNumber": "80/106",
     "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 080/106 Flashfire",
+    "fullDisplayName": "Snorlax 80/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -963,18 +1102,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-080-low.png",
-    "imageHighSrc": "cards/xy2-080-high.png"
+    "imageHighSrc": "cards/xy2-080-high.png",
+    "attacks": [
+      {
+        "name": "Sleepy Press",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "19750",
-    "externalId": null,
+    "externalId": "xy2-79",
     "tcgdex_id": "xy2-79",
     "localId": "079",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "079/106",
+    "cardNumber": "79/106",
     "cardName": "M Kangaskhan-EX",
-    "fullDisplayName": "M Kangaskhan-EX 079/106 Flashfire",
+    "fullDisplayName": "M Kangaskhan-EX 79/106 Flashfire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -997,18 +1142,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-079-low.png",
-    "imageHighSrc": "cards/xy2-079-high.png"
+    "imageHighSrc": "cards/xy2-079-high.png",
+    "attacks": [
+      {
+        "name": "Wham Bam Punch",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19741",
-    "externalId": null,
+    "externalId": "xy2-78",
     "tcgdex_id": "xy2-78",
     "localId": "078",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "078/106",
+    "cardNumber": "78/106",
     "cardName": "Kangaskhan-EX",
-    "fullDisplayName": "Kangaskhan-EX 078/106 Flashfire",
+    "fullDisplayName": "Kangaskhan-EX 78/106 Flashfire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1031,18 +1183,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-078-low.png",
-    "imageHighSrc": "cards/xy2-078-high.png"
+    "imageHighSrc": "cards/xy2-078-high.png",
+    "attacks": [
+      {
+        "name": "Triple Draw",
+        "damage": null
+      },
+      {
+        "name": "Kindred Kick",
+        "damage": "70+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19732",
-    "externalId": null,
+    "externalId": "xy2-77",
     "tcgdex_id": "xy2-77",
     "localId": "077",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "077/106",
+    "cardNumber": "77/106",
     "cardName": "Pidgeot",
-    "fullDisplayName": "Pidgeot 077/106 Flashfire",
+    "fullDisplayName": "Pidgeot 77/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1064,18 +1227,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-077-low.png",
-    "imageHighSrc": "cards/xy2-077-high.png"
+    "imageHighSrc": "cards/xy2-077-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "40"
+      },
+      {
+        "name": "Strong Gust",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19723",
-    "externalId": null,
+    "externalId": "xy2-76",
     "tcgdex_id": "xy2-76",
     "localId": "076",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "076/106",
+    "cardNumber": "76/106",
     "cardName": "Pidgeotto",
-    "fullDisplayName": "Pidgeotto 076/106 Flashfire",
+    "fullDisplayName": "Pidgeotto 76/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1097,18 +1270,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-076-low.png",
-    "imageHighSrc": "cards/xy2-076-high.png"
+    "imageHighSrc": "cards/xy2-076-high.png",
+    "attacks": [
+      {
+        "name": "Sand-Attack",
+        "damage": null
+      },
+      {
+        "name": "Ambush",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "19713",
-    "externalId": null,
+    "externalId": "xy2-75",
     "tcgdex_id": "xy2-75",
     "localId": "075",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "075/106",
+    "cardNumber": "75/106",
     "cardName": "Pidgey",
-    "fullDisplayName": "Pidgey 075/106 Flashfire",
+    "fullDisplayName": "Pidgey 75/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1130,18 +1313,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-075-low.png",
-    "imageHighSrc": "cards/xy2-075-high.png"
+    "imageHighSrc": "cards/xy2-075-high.png",
+    "attacks": [
+      {
+        "name": "Peck Off",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19704",
-    "externalId": null,
+    "externalId": "xy2-74",
     "tcgdex_id": "xy2-74",
     "localId": "074",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "074/106",
+    "cardNumber": "74/106",
     "cardName": "Goodra",
-    "fullDisplayName": "Goodra 074/106 Flashfire",
+    "fullDisplayName": "Goodra 74/106 Flashfire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1163,18 +1352,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-074-low.png",
-    "imageHighSrc": "cards/xy2-074-high.png"
+    "imageHighSrc": "cards/xy2-074-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Whip",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "19695",
-    "externalId": null,
+    "externalId": "xy2-73",
     "tcgdex_id": "xy2-73",
     "localId": "073",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "073/106",
+    "cardNumber": "73/106",
     "cardName": "Sliggoo",
-    "fullDisplayName": "Sliggoo 073/106 Flashfire",
+    "fullDisplayName": "Sliggoo 73/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1196,18 +1391,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-073-low.png",
-    "imageHighSrc": "cards/xy2-073-high.png"
+    "imageHighSrc": "cards/xy2-073-high.png",
+    "attacks": [
+      {
+        "name": "Gooey",
+        "damage": null
+      },
+      {
+        "name": "Gentle Slap",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19687",
-    "externalId": null,
+    "externalId": "xy2-72",
     "tcgdex_id": "xy2-72",
     "localId": "072",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "072/106",
+    "cardNumber": "72/106",
     "cardName": "Goomy",
-    "fullDisplayName": "Goomy 072/106 Flashfire",
+    "fullDisplayName": "Goomy 72/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1229,18 +1434,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-072-low.png",
-    "imageHighSrc": "cards/xy2-072-high.png"
+    "imageHighSrc": "cards/xy2-072-high.png",
+    "attacks": [
+      {
+        "name": "Gooey",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19678",
-    "externalId": null,
+    "externalId": "xy2-71",
     "tcgdex_id": "xy2-71",
     "localId": "071",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "071/106",
+    "cardNumber": "71/106",
     "cardName": "Dragalge",
-    "fullDisplayName": "Dragalge 071/106 Flashfire",
+    "fullDisplayName": "Dragalge 71/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1262,18 +1477,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-071-low.png",
-    "imageHighSrc": "cards/xy2-071-high.png"
+    "imageHighSrc": "cards/xy2-071-high.png",
+    "attacks": [
+      {
+        "name": "Poison Breath",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19669",
-    "externalId": null,
+    "externalId": "xy2-70",
     "tcgdex_id": "xy2-70",
     "localId": "070",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "070/106",
+    "cardNumber": "70/106",
     "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon 070/106 Flashfire",
+    "fullDisplayName": "Druddigon 70/106 Flashfire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1295,18 +1516,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-070-low.png",
-    "imageHighSrc": "cards/xy2-070-high.png"
+    "imageHighSrc": "cards/xy2-070-high.png",
+    "attacks": [
+      {
+        "name": "Revenge",
+        "damage": "20+"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19660",
-    "externalId": null,
+    "externalId": "xy2-69",
     "tcgdex_id": "xy2-69",
     "localId": "069",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "069/106",
+    "cardNumber": "69/106",
     "cardName": "M Charizard-EX",
-    "fullDisplayName": "M Charizard-EX 069/106 Flashfire",
+    "fullDisplayName": "M Charizard-EX 69/106 Flashfire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -1329,18 +1560,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-069-low.png",
-    "imageHighSrc": "cards/xy2-069-high.png"
+    "imageHighSrc": "cards/xy2-069-high.png",
+    "attacks": [
+      {
+        "name": "Wild Blaze",
+        "damage": "300"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19649",
-    "externalId": null,
+    "externalId": "xy2-68",
     "tcgdex_id": "xy2-68",
     "localId": "068",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "068/106",
+    "cardNumber": "68/106",
     "cardName": "Carbink",
-    "fullDisplayName": "Carbink 068/106 Flashfire",
+    "fullDisplayName": "Carbink 68/106 Flashfire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1362,18 +1600,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-068-low.png",
-    "imageHighSrc": "cards/xy2-068-high.png"
+    "imageHighSrc": "cards/xy2-068-high.png",
+    "attacks": [
+      {
+        "name": "Crystal Barrier",
+        "damage": null
+      },
+      {
+        "name": "Wonder Blast",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "19641",
-    "externalId": null,
+    "externalId": "xy2-67",
     "tcgdex_id": "xy2-67",
     "localId": "067",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "067/106",
+    "cardNumber": "67/106",
     "cardName": "Spritzee",
-    "fullDisplayName": "Spritzee 067/106 Flashfire",
+    "fullDisplayName": "Spritzee 67/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1395,18 +1643,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-067-low.png",
-    "imageHighSrc": "cards/xy2-067-high.png"
+    "imageHighSrc": "cards/xy2-067-high.png",
+    "attacks": [
+      {
+        "name": "Fairy Wind",
+        "damage": "10"
+      },
+      {
+        "name": "Fickle Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19632",
-    "externalId": null,
+    "externalId": "xy2-66",
     "tcgdex_id": "xy2-66",
     "localId": "066",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "066/106",
+    "cardNumber": "66/106",
     "cardName": "Florges",
-    "fullDisplayName": "Florges 066/106 Flashfire",
+    "fullDisplayName": "Florges 66/106 Flashfire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1428,18 +1686,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-066-low.png",
-    "imageHighSrc": "cards/xy2-066-high.png"
+    "imageHighSrc": "cards/xy2-066-high.png",
+    "attacks": [
+      {
+        "name": "Brilliant Search",
+        "damage": null
+      },
+      {
+        "name": "Petal Blizzard",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19623",
-    "externalId": null,
+    "externalId": "xy2-65",
     "tcgdex_id": "xy2-65",
     "localId": "065",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "065/106",
+    "cardNumber": "65/106",
     "cardName": "Floette",
-    "fullDisplayName": "Floette 065/106 Flashfire",
+    "fullDisplayName": "Floette 65/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1461,18 +1729,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-065-low.png",
-    "imageHighSrc": "cards/xy2-065-high.png"
+    "imageHighSrc": "cards/xy2-065-high.png",
+    "attacks": [
+      {
+        "name": "Petal Blizzard",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19614",
-    "externalId": null,
+    "externalId": "xy2-64",
     "tcgdex_id": "xy2-64",
     "localId": "064",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "064/106",
+    "cardNumber": "64/106",
     "cardName": "Floette",
-    "fullDisplayName": "Floette 064/106 Flashfire",
+    "fullDisplayName": "Floette 64/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1494,18 +1772,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-064-low.png",
-    "imageHighSrc": "cards/xy2-064-high.png"
+    "imageHighSrc": "cards/xy2-064-high.png",
+    "attacks": [
+      {
+        "name": "Fairy Wind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19605",
-    "externalId": null,
+    "externalId": "xy2-63",
     "tcgdex_id": "xy2-63",
     "localId": "063",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "063/106",
+    "cardNumber": "63/106",
     "cardName": "Flabébé",
-    "fullDisplayName": "Flabébé 063/106 Flashfire",
+    "fullDisplayName": "Flabébé 63/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1527,18 +1811,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-063-low.png",
-    "imageHighSrc": "cards/xy2-063-high.png"
+    "imageHighSrc": "cards/xy2-063-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19594",
-    "externalId": null,
+    "externalId": "xy2-62",
     "tcgdex_id": "xy2-62",
     "localId": "062",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "062/106",
+    "cardNumber": "62/106",
     "cardName": "Flabébé",
-    "fullDisplayName": "Flabébé 062/106 Flashfire",
+    "fullDisplayName": "Flabébé 62/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1560,18 +1850,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-062-low.png",
-    "imageHighSrc": "cards/xy2-062-high.png"
+    "imageHighSrc": "cards/xy2-062-high.png",
+    "attacks": [
+      {
+        "name": "Aromatherapy",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19584",
-    "externalId": null,
+    "externalId": "xy2-61",
     "tcgdex_id": "xy2-61",
     "localId": "061",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "061/106",
+    "cardNumber": "61/106",
     "cardName": "Durant",
-    "fullDisplayName": "Durant 061/106 Flashfire",
+    "fullDisplayName": "Durant 61/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1593,18 +1889,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-061-low.png",
-    "imageHighSrc": "cards/xy2-061-high.png"
+    "imageHighSrc": "cards/xy2-061-high.png",
+    "attacks": [
+      {
+        "name": "Chip Off",
+        "damage": null
+      },
+      {
+        "name": "X-Scissor",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "19574",
-    "externalId": null,
+    "externalId": "xy2-60",
     "tcgdex_id": "xy2-60",
     "localId": "060",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "060/106",
+    "cardNumber": "60/106",
     "cardName": "Forretress",
-    "fullDisplayName": "Forretress 060/106 Flashfire",
+    "fullDisplayName": "Forretress 60/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1626,18 +1932,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-060-low.png",
-    "imageHighSrc": "cards/xy2-060-high.png"
+    "imageHighSrc": "cards/xy2-060-high.png",
+    "attacks": [
+      {
+        "name": "Iron Crash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "19566",
-    "externalId": null,
+    "externalId": "xy2-59",
     "tcgdex_id": "xy2-59",
     "localId": "059",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "059/106",
+    "cardNumber": "59/106",
     "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 059/106 Flashfire",
+    "fullDisplayName": "Scrafty 59/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1659,18 +1971,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-059-low.png",
-    "imageHighSrc": "cards/xy2-059-high.png"
+    "imageHighSrc": "cards/xy2-059-high.png",
+    "attacks": [
+      {
+        "name": "Corner",
+        "damage": "30"
+      },
+      {
+        "name": "Jet Headbutt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19556",
-    "externalId": null,
+    "externalId": "xy2-58",
     "tcgdex_id": "xy2-58",
     "localId": "058",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "058/106",
+    "cardNumber": "58/106",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 058/106 Flashfire",
+    "fullDisplayName": "Scraggy 58/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1692,18 +2014,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-058-low.png",
-    "imageHighSrc": "cards/xy2-058-high.png"
+    "imageHighSrc": "cards/xy2-058-high.png",
+    "attacks": [
+      {
+        "name": "Tail Rap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "19548",
-    "externalId": null,
+    "externalId": "xy2-57",
     "tcgdex_id": "xy2-57",
     "localId": "057",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "057/106",
+    "cardNumber": "57/106",
     "cardName": "Krokorok",
-    "fullDisplayName": "Krokorok 057/106 Flashfire",
+    "fullDisplayName": "Krokorok 57/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1725,18 +2053,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-057-low.png",
-    "imageHighSrc": "cards/xy2-057-high.png"
+    "imageHighSrc": "cards/xy2-057-high.png",
+    "attacks": [
+      {
+        "name": "Dark Clamp",
+        "damage": "10"
+      },
+      {
+        "name": "Double Swing",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "19538",
-    "externalId": null,
+    "externalId": "xy2-56",
     "tcgdex_id": "xy2-56",
     "localId": "056",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "056/106",
+    "cardNumber": "56/106",
     "cardName": "Sandile",
-    "fullDisplayName": "Sandile 056/106 Flashfire",
+    "fullDisplayName": "Sandile 56/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1758,18 +2096,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-056-low.png",
-    "imageHighSrc": "cards/xy2-056-high.png"
+    "imageHighSrc": "cards/xy2-056-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19529",
-    "externalId": null,
+    "externalId": "xy2-55",
     "tcgdex_id": "xy2-55",
     "localId": "055",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "055/106",
+    "cardNumber": "55/106",
     "cardName": "Skuntank",
-    "fullDisplayName": "Skuntank 055/106 Flashfire",
+    "fullDisplayName": "Skuntank 55/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1791,18 +2135,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-055-low.png",
-    "imageHighSrc": "cards/xy2-055-high.png"
+    "imageHighSrc": "cards/xy2-055-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "30"
+      },
+      {
+        "name": "Acid Spray",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19519",
-    "externalId": null,
+    "externalId": "xy2-54",
     "tcgdex_id": "xy2-54",
     "localId": "054",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "054/106",
+    "cardNumber": "54/106",
     "cardName": "Stunky",
-    "fullDisplayName": "Stunky 054/106 Flashfire",
+    "fullDisplayName": "Stunky 54/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1824,18 +2178,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-054-low.png",
-    "imageHighSrc": "cards/xy2-054-high.png"
+    "imageHighSrc": "cards/xy2-054-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Spray Fluid",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19510",
-    "externalId": null,
+    "externalId": "xy2-53",
     "tcgdex_id": "xy2-53",
     "localId": "053",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "053/106",
+    "cardNumber": "53/106",
     "cardName": "Stunky",
-    "fullDisplayName": "Stunky 053/106 Flashfire",
+    "fullDisplayName": "Stunky 53/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1857,18 +2221,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-053-low.png",
-    "imageHighSrc": "cards/xy2-053-high.png"
+    "imageHighSrc": "cards/xy2-053-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19501",
-    "externalId": null,
+    "externalId": "xy2-52",
     "tcgdex_id": "xy2-52",
     "localId": "052",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "052/106",
+    "cardNumber": "52/106",
     "cardName": "Weavile",
-    "fullDisplayName": "Weavile 052/106 Flashfire",
+    "fullDisplayName": "Weavile 52/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1890,18 +2264,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-052-low.png",
-    "imageHighSrc": "cards/xy2-052-high.png"
+    "imageHighSrc": "cards/xy2-052-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Claw Rend",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19492",
-    "externalId": null,
+    "externalId": "xy2-51",
     "tcgdex_id": "xy2-51",
     "localId": "051",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "051/106",
+    "cardNumber": "51/106",
     "cardName": "Sneasel",
-    "fullDisplayName": "Sneasel 051/106 Flashfire",
+    "fullDisplayName": "Sneasel 51/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1923,18 +2307,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-051-low.png",
-    "imageHighSrc": "cards/xy2-051-high.png"
+    "imageHighSrc": "cards/xy2-051-high.png",
+    "attacks": [
+      {
+        "name": "Icy Wind",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19483",
-    "externalId": null,
+    "externalId": "xy2-50",
     "tcgdex_id": "xy2-50",
     "localId": "050",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "050/106",
+    "cardNumber": "50/106",
     "cardName": "Sneasel",
-    "fullDisplayName": "Sneasel 050/106 Flashfire",
+    "fullDisplayName": "Sneasel 50/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1956,18 +2350,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-050-low.png",
-    "imageHighSrc": "cards/xy2-050-high.png"
+    "imageHighSrc": "cards/xy2-050-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Flash Claw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19474",
-    "externalId": null,
+    "externalId": "xy2-49",
     "tcgdex_id": "xy2-49",
     "localId": "049",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "049/106",
+    "cardNumber": "49/106",
     "cardName": "Barbaracle",
-    "fullDisplayName": "Barbaracle 049/106 Flashfire",
+    "fullDisplayName": "Barbaracle 49/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1989,18 +2393,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-049-low.png",
-    "imageHighSrc": "cards/xy2-049-high.png"
+    "imageHighSrc": "cards/xy2-049-high.png",
+    "attacks": [
+      {
+        "name": "Rock Rush",
+        "damage": "30×"
+      },
+      {
+        "name": "Boulder Crush",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19465",
-    "externalId": null,
+    "externalId": "xy2-48",
     "tcgdex_id": "xy2-48",
     "localId": "048",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "048/106",
+    "cardNumber": "48/106",
     "cardName": "Binacle",
-    "fullDisplayName": "Binacle 048/106 Flashfire",
+    "fullDisplayName": "Binacle 48/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2022,18 +2436,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-048-low.png",
-    "imageHighSrc": "cards/xy2-048-high.png"
+    "imageHighSrc": "cards/xy2-048-high.png",
+    "attacks": [
+      {
+        "name": "Double Scratch",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "19456",
-    "externalId": null,
+    "externalId": "xy2-47",
     "tcgdex_id": "xy2-47",
     "localId": "047",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "047/106",
+    "cardNumber": "47/106",
     "cardName": "Golem",
-    "fullDisplayName": "Golem 047/106 Flashfire",
+    "fullDisplayName": "Golem 47/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2055,18 +2475,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-047-low.png",
-    "imageHighSrc": "cards/xy2-047-high.png"
+    "imageHighSrc": "cards/xy2-047-high.png",
+    "attacks": [
+      {
+        "name": "Stone Edge",
+        "damage": "60+"
+      },
+      {
+        "name": "Explosion",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "19447",
-    "externalId": null,
+    "externalId": "xy2-46",
     "tcgdex_id": "xy2-46",
     "localId": "046",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "046/106",
+    "cardNumber": "46/106",
     "cardName": "Graveler",
-    "fullDisplayName": "Graveler 046/106 Flashfire",
+    "fullDisplayName": "Graveler 46/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2088,18 +2518,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-046-low.png",
-    "imageHighSrc": "cards/xy2-046-high.png"
+    "imageHighSrc": "cards/xy2-046-high.png",
+    "attacks": [
+      {
+        "name": "Double-Edge",
+        "damage": "60"
+      },
+      {
+        "name": "Rollout",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19438",
-    "externalId": null,
+    "externalId": "xy2-45",
     "tcgdex_id": "xy2-45",
     "localId": "045",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "045/106",
+    "cardNumber": "45/106",
     "cardName": "Geodude",
-    "fullDisplayName": "Geodude 045/106 Flashfire",
+    "fullDisplayName": "Geodude 45/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2121,18 +2561,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-045-low.png",
-    "imageHighSrc": "cards/xy2-045-high.png"
+    "imageHighSrc": "cards/xy2-045-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "19429",
-    "externalId": null,
+    "externalId": "xy2-44",
     "tcgdex_id": "xy2-44",
     "localId": "044",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "044/106",
+    "cardNumber": "44/106",
     "cardName": "Skrelp",
-    "fullDisplayName": "Skrelp 044/106 Flashfire",
+    "fullDisplayName": "Skrelp 44/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2154,18 +2604,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-044-low.png",
-    "imageHighSrc": "cards/xy2-044-high.png"
+    "imageHighSrc": "cards/xy2-044-high.png",
+    "attacks": [
+      {
+        "name": "Spit Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19419",
-    "externalId": null,
+    "externalId": "xy2-43",
     "tcgdex_id": "xy2-43",
     "localId": "043",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "043/106",
+    "cardNumber": "43/106",
     "cardName": "Meowstic",
-    "fullDisplayName": "Meowstic 043/106 Flashfire",
+    "fullDisplayName": "Meowstic 43/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2187,18 +2643,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-043-low.png",
-    "imageHighSrc": "cards/xy2-043-high.png"
+    "imageHighSrc": "cards/xy2-043-high.png",
+    "attacks": [
+      {
+        "name": "Ear Influence",
+        "damage": null
+      },
+      {
+        "name": "Psychic",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19411",
-    "externalId": null,
+    "externalId": "xy2-42",
     "tcgdex_id": "xy2-42",
     "localId": "042",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "042/106",
+    "cardNumber": "42/106",
     "cardName": "Espurr",
-    "fullDisplayName": "Espurr 042/106 Flashfire",
+    "fullDisplayName": "Espurr 42/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2220,18 +2686,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-042-low.png",
-    "imageHighSrc": "cards/xy2-042-high.png"
+    "imageHighSrc": "cards/xy2-042-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "10"
+      },
+      {
+        "name": "Fake Out",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19401",
-    "externalId": null,
+    "externalId": "xy2-41",
     "tcgdex_id": "xy2-41",
     "localId": "041",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "041/106",
+    "cardNumber": "41/106",
     "cardName": "Toxicroak-EX",
-    "fullDisplayName": "Toxicroak-EX 041/106 Flashfire",
+    "fullDisplayName": "Toxicroak-EX 41/106 Flashfire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2254,18 +2730,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-041-low.png",
-    "imageHighSrc": "cards/xy2-041-high.png"
+    "imageHighSrc": "cards/xy2-041-high.png",
+    "attacks": [
+      {
+        "name": "Triple Poison",
+        "damage": null
+      },
+      {
+        "name": "Smash Uppercut",
+        "damage": "80"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19392",
-    "externalId": null,
+    "externalId": "xy2-40",
     "tcgdex_id": "xy2-40",
     "localId": "040",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "040/106",
+    "cardNumber": "40/106",
     "cardName": "Dusknoir",
-    "fullDisplayName": "Dusknoir 040/106 Flashfire",
+    "fullDisplayName": "Dusknoir 40/106 Flashfire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2287,18 +2774,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-040-low.png",
-    "imageHighSrc": "cards/xy2-040-high.png"
+    "imageHighSrc": "cards/xy2-040-high.png",
+    "attacks": [
+      {
+        "name": "Pain Pellets",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19384",
-    "externalId": null,
+    "externalId": "xy2-39",
     "tcgdex_id": "xy2-39",
     "localId": "039",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "039/106",
+    "cardNumber": "39/106",
     "cardName": "Dusclops",
-    "fullDisplayName": "Dusclops 039/106 Flashfire",
+    "fullDisplayName": "Dusclops 39/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2320,18 +2813,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-039-low.png",
-    "imageHighSrc": "cards/xy2-039-high.png"
+    "imageHighSrc": "cards/xy2-039-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      },
+      {
+        "name": "Cursed Drop",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19374",
-    "externalId": null,
+    "externalId": "xy2-38",
     "tcgdex_id": "xy2-38",
     "localId": "038",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "038/106",
+    "cardNumber": "38/106",
     "cardName": "Duskull",
-    "fullDisplayName": "Duskull 038/106 Flashfire",
+    "fullDisplayName": "Duskull 38/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2353,18 +2856,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-038-low.png",
-    "imageHighSrc": "cards/xy2-038-high.png"
+    "imageHighSrc": "cards/xy2-038-high.png",
+    "attacks": [
+      {
+        "name": "Revival",
+        "damage": null
+      },
+      {
+        "name": "Sneaky Placement",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19364",
-    "externalId": null,
+    "externalId": "xy2-37",
     "tcgdex_id": "xy2-37",
     "localId": "037",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "037/106",
+    "cardNumber": "37/106",
     "cardName": "Heliolisk",
-    "fullDisplayName": "Heliolisk 037/106 Flashfire",
+    "fullDisplayName": "Heliolisk 37/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2386,18 +2899,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-037-low.png",
-    "imageHighSrc": "cards/xy2-037-high.png"
+    "imageHighSrc": "cards/xy2-037-high.png",
+    "attacks": [
+      {
+        "name": "Parabolic Charge",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19352",
-    "externalId": null,
+    "externalId": "xy2-36",
     "tcgdex_id": "xy2-36",
     "localId": "036",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "036/106",
+    "cardNumber": "36/106",
     "cardName": "Helioptile",
-    "fullDisplayName": "Helioptile 036/106 Flashfire",
+    "fullDisplayName": "Helioptile 36/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2419,18 +2942,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-036-low.png",
-    "imageHighSrc": "cards/xy2-036-high.png"
+    "imageHighSrc": "cards/xy2-036-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Destructive Beam",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19342",
-    "externalId": null,
+    "externalId": "xy2-35",
     "tcgdex_id": "xy2-35",
     "localId": "035",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "035/106",
+    "cardNumber": "35/106",
     "cardName": "Magnezone-EX",
-    "fullDisplayName": "Magnezone-EX 035/106 Flashfire",
+    "fullDisplayName": "Magnezone-EX 35/106 Flashfire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2453,18 +2986,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-035-low.png",
-    "imageHighSrc": "cards/xy2-035-high.png"
+    "imageHighSrc": "cards/xy2-035-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "40"
+      },
+      {
+        "name": "Dual Bullet",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19330",
-    "externalId": null,
+    "externalId": "xy2-34",
     "tcgdex_id": "xy2-34",
     "localId": "034",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "034/106",
+    "cardNumber": "34/106",
     "cardName": "Luxray",
-    "fullDisplayName": "Luxray 034/106 Flashfire",
+    "fullDisplayName": "Luxray 34/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2486,18 +3030,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-034-low.png",
-    "imageHighSrc": "cards/xy2-034-high.png"
+    "imageHighSrc": "cards/xy2-034-high.png",
+    "attacks": [
+      {
+        "name": "Fang Snipe",
+        "damage": "40"
+      },
+      {
+        "name": "Wild Charge",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "19319",
-    "externalId": null,
+    "externalId": "xy2-33",
     "tcgdex_id": "xy2-33",
     "localId": "033",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "033/106",
+    "cardNumber": "33/106",
     "cardName": "Luxio",
-    "fullDisplayName": "Luxio 033/106 Flashfire",
+    "fullDisplayName": "Luxio 33/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2519,18 +3073,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-033-low.png",
-    "imageHighSrc": "cards/xy2-033-high.png"
+    "imageHighSrc": "cards/xy2-033-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Electricounter",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "19308",
-    "externalId": null,
+    "externalId": "xy2-32",
     "tcgdex_id": "xy2-32",
     "localId": "032",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "032/106",
+    "cardNumber": "32/106",
     "cardName": "Shinx",
-    "fullDisplayName": "Shinx 032/106 Flashfire",
+    "fullDisplayName": "Shinx 32/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2552,18 +3116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-032-low.png",
-    "imageHighSrc": "cards/xy2-032-high.png"
+    "imageHighSrc": "cards/xy2-032-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Static Shock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19297",
-    "externalId": null,
+    "externalId": "xy2-31",
     "tcgdex_id": "xy2-31",
     "localId": "031",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "031/106",
+    "cardNumber": "31/106",
     "cardName": "Avalugg",
-    "fullDisplayName": "Avalugg 031/106 Flashfire",
+    "fullDisplayName": "Avalugg 31/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2585,18 +3159,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-031-low.png",
-    "imageHighSrc": "cards/xy2-031-high.png"
+    "imageHighSrc": "cards/xy2-031-high.png",
+    "attacks": [
+      {
+        "name": "Frost Barrier",
+        "damage": "40"
+      },
+      {
+        "name": "Shatter",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "19287",
-    "externalId": null,
+    "externalId": "xy2-30",
     "tcgdex_id": "xy2-30",
     "localId": "030",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "030/106",
+    "cardNumber": "30/106",
     "cardName": "Bergmite",
-    "fullDisplayName": "Bergmite 030/106 Flashfire",
+    "fullDisplayName": "Bergmite 30/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2618,18 +3202,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-030-low.png",
-    "imageHighSrc": "cards/xy2-030-high.png"
+    "imageHighSrc": "cards/xy2-030-high.png",
+    "attacks": [
+      {
+        "name": "Stomp Off",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19277",
-    "externalId": null,
+    "externalId": "xy2-29",
     "tcgdex_id": "xy2-29",
     "localId": "029",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "029/106",
+    "cardNumber": "29/106",
     "cardName": "Floatzel",
-    "fullDisplayName": "Floatzel 029/106 Flashfire",
+    "fullDisplayName": "Floatzel 29/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2651,18 +3245,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-029-low.png",
-    "imageHighSrc": "cards/xy2-029-high.png"
+    "imageHighSrc": "cards/xy2-029-high.png",
+    "attacks": [
+      {
+        "name": "Rescue",
+        "damage": null
+      },
+      {
+        "name": "Screw Tail",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19267",
-    "externalId": null,
+    "externalId": "xy2-28",
     "tcgdex_id": "xy2-28",
     "localId": "028",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "028/106",
+    "cardNumber": "28/106",
     "cardName": "Buizel",
-    "fullDisplayName": "Buizel 028/106 Flashfire",
+    "fullDisplayName": "Buizel 28/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2684,18 +3288,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-028-low.png",
-    "imageHighSrc": "cards/xy2-028-high.png"
+    "imageHighSrc": "cards/xy2-028-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "19256",
-    "externalId": null,
+    "externalId": "xy2-27",
     "tcgdex_id": "xy2-27",
     "localId": "027",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "027/106",
+    "cardNumber": "27/106",
     "cardName": "Luvdisc",
-    "fullDisplayName": "Luvdisc 027/106 Flashfire",
+    "fullDisplayName": "Luvdisc 27/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2717,18 +3331,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-027-low.png",
-    "imageHighSrc": "cards/xy2-027-high.png"
+    "imageHighSrc": "cards/xy2-027-high.png",
+    "attacks": [
+      {
+        "name": "Heart Wink",
+        "damage": null
+      },
+      {
+        "name": "Spike Draw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19246",
-    "externalId": null,
+    "externalId": "xy2-26",
     "tcgdex_id": "xy2-26",
     "localId": "026",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "026/106",
+    "cardNumber": "26/106",
     "cardName": "Walrein",
-    "fullDisplayName": "Walrein 026/106 Flashfire",
+    "fullDisplayName": "Walrein 26/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2750,18 +3374,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-026-low.png",
-    "imageHighSrc": "cards/xy2-026-high.png"
+    "imageHighSrc": "cards/xy2-026-high.png",
+    "attacks": [
+      {
+        "name": "Powder Snow",
+        "damage": "60"
+      },
+      {
+        "name": "Big Tusk",
+        "damage": "120-"
+      }
+    ]
   },
   {
     "masterCardId": "19235",
-    "externalId": null,
+    "externalId": "xy2-25",
     "tcgdex_id": "xy2-25",
     "localId": "025",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "025/106",
+    "cardNumber": "25/106",
     "cardName": "Sealeo",
-    "fullDisplayName": "Sealeo 025/106 Flashfire",
+    "fullDisplayName": "Sealeo 25/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2783,18 +3417,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-025-low.png",
-    "imageHighSrc": "cards/xy2-025-high.png"
+    "imageHighSrc": "cards/xy2-025-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      },
+      {
+        "name": "Ice Ball",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19225",
-    "externalId": null,
+    "externalId": "xy2-24",
     "tcgdex_id": "xy2-24",
     "localId": "024",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "024/106",
+    "cardNumber": "24/106",
     "cardName": "Spheal",
-    "fullDisplayName": "Spheal 024/106 Flashfire",
+    "fullDisplayName": "Spheal 24/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2816,18 +3460,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-024-low.png",
-    "imageHighSrc": "cards/xy2-024-high.png"
+    "imageHighSrc": "cards/xy2-024-high.png",
+    "attacks": [
+      {
+        "name": "Ice Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19215",
-    "externalId": null,
+    "externalId": "xy2-23",
     "tcgdex_id": "xy2-23",
     "localId": "023",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "023/106",
+    "cardNumber": "23/106",
     "cardName": "Milotic",
-    "fullDisplayName": "Milotic 023/106 Flashfire",
+    "fullDisplayName": "Milotic 23/106 Flashfire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2849,18 +3499,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-023-low.png",
-    "imageHighSrc": "cards/xy2-023-high.png"
+    "imageHighSrc": "cards/xy2-023-high.png",
+    "attacks": [
+      {
+        "name": "Waterfall",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19205",
-    "externalId": null,
+    "externalId": "xy2-22",
     "tcgdex_id": "xy2-22",
     "localId": "022",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "022/106",
+    "cardNumber": "22/106",
     "cardName": "Feebas",
-    "fullDisplayName": "Feebas 022/106 Flashfire",
+    "fullDisplayName": "Feebas 22/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2882,18 +3538,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-022-low.png",
-    "imageHighSrc": "cards/xy2-022-high.png"
+    "imageHighSrc": "cards/xy2-022-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19195",
-    "externalId": null,
+    "externalId": "xy2-21",
     "tcgdex_id": "xy2-21",
     "localId": "021",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "021/106",
+    "cardNumber": "21/106",
     "cardName": "Qwilfish",
-    "fullDisplayName": "Qwilfish 021/106 Flashfire",
+    "fullDisplayName": "Qwilfish 21/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2915,18 +3577,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-021-low.png",
-    "imageHighSrc": "cards/xy2-021-high.png"
+    "imageHighSrc": "cards/xy2-021-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19184",
-    "externalId": null,
+    "externalId": "xy2-20",
     "tcgdex_id": "xy2-20",
     "localId": "020",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "020/106",
+    "cardNumber": "20/106",
     "cardName": "Pyroar",
-    "fullDisplayName": "Pyroar 020/106 Flashfire",
+    "fullDisplayName": "Pyroar 20/106 Flashfire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2948,18 +3616,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-020-low.png",
-    "imageHighSrc": "cards/xy2-020-high.png"
+    "imageHighSrc": "cards/xy2-020-high.png",
+    "attacks": [
+      {
+        "name": "Scorching Fang",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19173",
-    "externalId": null,
+    "externalId": "xy2-19",
     "tcgdex_id": "xy2-19",
     "localId": "019",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "019/106",
+    "cardNumber": "19/106",
     "cardName": "Litleo",
-    "fullDisplayName": "Litleo 019/106 Flashfire",
+    "fullDisplayName": "Litleo 19/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2981,18 +3655,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-019-low.png",
-    "imageHighSrc": "cards/xy2-019-high.png"
+    "imageHighSrc": "cards/xy2-019-high.png",
+    "attacks": [
+      {
+        "name": "Fire Mane",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19163",
-    "externalId": null,
+    "externalId": "xy2-18",
     "tcgdex_id": "xy2-18",
     "localId": "018",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "018/106",
+    "cardNumber": "18/106",
     "cardName": "Litleo",
-    "fullDisplayName": "Litleo 018/106 Flashfire",
+    "fullDisplayName": "Litleo 18/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3014,18 +3694,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-018-low.png",
-    "imageHighSrc": "cards/xy2-018-high.png"
+    "imageHighSrc": "cards/xy2-018-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19153",
-    "externalId": null,
+    "externalId": "xy2-17",
     "tcgdex_id": "xy2-17",
     "localId": "017",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "017/106",
+    "cardNumber": "17/106",
     "cardName": "Fletchinder",
-    "fullDisplayName": "Fletchinder 017/106 Flashfire",
+    "fullDisplayName": "Fletchinder 17/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3047,18 +3733,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-017-low.png",
-    "imageHighSrc": "cards/xy2-017-high.png"
+    "imageHighSrc": "cards/xy2-017-high.png",
+    "attacks": [
+      {
+        "name": "Firebreathing",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "19143",
-    "externalId": null,
+    "externalId": "xy2-16",
     "tcgdex_id": "xy2-16",
     "localId": "016",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "016/106",
+    "cardNumber": "16/106",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 016/106 Flashfire",
+    "fullDisplayName": "Torkoal 16/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3080,18 +3772,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-016-low.png",
-    "imageHighSrc": "cards/xy2-016-high.png"
+    "imageHighSrc": "cards/xy2-016-high.png",
+    "attacks": [
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19133",
-    "externalId": null,
+    "externalId": "xy2-15",
     "tcgdex_id": "xy2-15",
     "localId": "015",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "015/106",
+    "cardNumber": "15/106",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 015/106 Flashfire",
+    "fullDisplayName": "Rapidash 15/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3113,18 +3815,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-015-low.png",
-    "imageHighSrc": "cards/xy2-015-high.png"
+    "imageHighSrc": "cards/xy2-015-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "20"
+      },
+      {
+        "name": "Overrun",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19123",
-    "externalId": null,
+    "externalId": "xy2-14",
     "tcgdex_id": "xy2-14",
     "localId": "014",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "014/106",
+    "cardNumber": "14/106",
     "cardName": "Ponyta",
-    "fullDisplayName": "Ponyta 014/106 Flashfire",
+    "fullDisplayName": "Ponyta 14/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3146,18 +3858,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-014-low.png",
-    "imageHighSrc": "cards/xy2-014-high.png"
+    "imageHighSrc": "cards/xy2-014-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "10"
+      },
+      {
+        "name": "Flame Tail",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19113",
-    "externalId": null,
+    "externalId": "xy2-13",
     "tcgdex_id": "xy2-13",
     "localId": "013",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "013/106",
+    "cardNumber": "13/106",
     "cardName": "M Charizard-EX",
-    "fullDisplayName": "M Charizard-EX 013/106 Flashfire",
+    "fullDisplayName": "M Charizard-EX 13/106 Flashfire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -3180,18 +3902,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-013-low.png",
-    "imageHighSrc": "cards/xy2-013-high.png"
+    "imageHighSrc": "cards/xy2-013-high.png",
+    "attacks": [
+      {
+        "name": "Crimson Dive",
+        "damage": "300"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19103",
-    "externalId": null,
+    "externalId": "xy2-12",
     "tcgdex_id": "xy2-12",
     "localId": "012",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "012/106",
+    "cardNumber": "12/106",
     "cardName": "Charizard-EX",
-    "fullDisplayName": "Charizard-EX 012/106 Flashfire",
+    "fullDisplayName": "Charizard-EX 12/106 Flashfire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3214,18 +3943,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-012-low.png",
-    "imageHighSrc": "cards/xy2-012-high.png"
+    "imageHighSrc": "cards/xy2-012-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "60"
+      },
+      {
+        "name": "Combustion Blast",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19093",
-    "externalId": null,
+    "externalId": "xy2-11",
     "tcgdex_id": "xy2-11",
     "localId": "011",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "011/106",
+    "cardNumber": "11/106",
     "cardName": "Charizard-EX",
-    "fullDisplayName": "Charizard-EX 011/106 Flashfire",
+    "fullDisplayName": "Charizard-EX 11/106 Flashfire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3248,18 +3988,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-011-low.png",
-    "imageHighSrc": "cards/xy2-011-high.png"
+    "imageHighSrc": "cards/xy2-011-high.png",
+    "attacks": [
+      {
+        "name": "Stoke",
+        "damage": null
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19082",
-    "externalId": null,
+    "externalId": "xy2-10",
     "tcgdex_id": "xy2-10",
     "localId": "010",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "010/106",
+    "cardNumber": "10/106",
     "cardName": "Maractus",
-    "fullDisplayName": "Maractus 010/106 Flashfire",
+    "fullDisplayName": "Maractus 10/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3281,18 +4032,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-010-low.png",
-    "imageHighSrc": "cards/xy2-010-high.png"
+    "imageHighSrc": "cards/xy2-010-high.png",
+    "attacks": [
+      {
+        "name": "Exciting Shake",
+        "damage": null
+      },
+      {
+        "name": "Prickly Needles",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "19072",
-    "externalId": null,
+    "externalId": "xy2-9",
     "tcgdex_id": "xy2-9",
     "localId": "009",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "009/106",
+    "cardNumber": "9/106",
     "cardName": "Roserade",
-    "fullDisplayName": "Roserade 009/106 Flashfire",
+    "fullDisplayName": "Roserade 9/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3314,18 +4075,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-009-low.png",
-    "imageHighSrc": "cards/xy2-009-high.png"
+    "imageHighSrc": "cards/xy2-009-high.png",
+    "attacks": [
+      {
+        "name": "Whiplash",
+        "damage": null
+      },
+      {
+        "name": "Mega Drain",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19061",
-    "externalId": null,
+    "externalId": "xy2-8",
     "tcgdex_id": "xy2-8",
     "localId": "008",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "008/106",
+    "cardNumber": "8/106",
     "cardName": "Roselia",
-    "fullDisplayName": "Roselia 008/106 Flashfire",
+    "fullDisplayName": "Roselia 8/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3347,18 +4118,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-008-low.png",
-    "imageHighSrc": "cards/xy2-008-high.png"
+    "imageHighSrc": "cards/xy2-008-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "10"
+      },
+      {
+        "name": "Cut",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19051",
-    "externalId": null,
+    "externalId": "xy2-7",
     "tcgdex_id": "xy2-7",
     "localId": "007",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "007/106",
+    "cardNumber": "7/106",
     "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 007/106 Flashfire",
+    "fullDisplayName": "Shiftry 7/106 Flashfire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3380,18 +4161,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-007-low.png",
-    "imageHighSrc": "cards/xy2-007-high.png"
+    "imageHighSrc": "cards/xy2-007-high.png",
+    "attacks": [
+      {
+        "name": "Deranged Dance",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "19041",
-    "externalId": null,
+    "externalId": "xy2-6",
     "tcgdex_id": "xy2-6",
     "localId": "006",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "006/106",
+    "cardNumber": "6/106",
     "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 006/106 Flashfire",
+    "fullDisplayName": "Nuzleaf 6/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3413,18 +4200,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-006-low.png",
-    "imageHighSrc": "cards/xy2-006-high.png"
+    "imageHighSrc": "cards/xy2-006-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      },
+      {
+        "name": "Cut",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19030",
-    "externalId": null,
+    "externalId": "xy2-5",
     "tcgdex_id": "xy2-5",
     "localId": "005",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "005/106",
+    "cardNumber": "5/106",
     "cardName": "Seedot",
-    "fullDisplayName": "Seedot 005/106 Flashfire",
+    "fullDisplayName": "Seedot 5/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3446,18 +4243,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-005-low.png",
-    "imageHighSrc": "cards/xy2-005-high.png"
+    "imageHighSrc": "cards/xy2-005-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19018",
-    "externalId": null,
+    "externalId": "xy2-4",
     "tcgdex_id": "xy2-4",
     "localId": "004",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "004/106",
+    "cardNumber": "4/106",
     "cardName": "Pineco",
-    "fullDisplayName": "Pineco 004/106 Flashfire",
+    "fullDisplayName": "Pineco 4/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3479,18 +4282,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-004-low.png",
-    "imageHighSrc": "cards/xy2-004-high.png"
+    "imageHighSrc": "cards/xy2-004-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19008",
-    "externalId": null,
+    "externalId": "xy2-3",
     "tcgdex_id": "xy2-3",
     "localId": "003",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "003/106",
+    "cardNumber": "3/106",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 003/106 Flashfire",
+    "fullDisplayName": "Butterfree 3/106 Flashfire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3512,18 +4321,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-003-low.png",
-    "imageHighSrc": "cards/xy2-003-high.png"
+    "imageHighSrc": "cards/xy2-003-high.png",
+    "attacks": [
+      {
+        "name": "Quiver Dance",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "18999",
-    "externalId": null,
+    "externalId": "xy2-2",
     "tcgdex_id": "xy2-2",
     "localId": "002",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "002/106",
+    "cardNumber": "2/106",
     "cardName": "Metapod",
-    "fullDisplayName": "Metapod 002/106 Flashfire",
+    "fullDisplayName": "Metapod 2/106 Flashfire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3545,18 +4364,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-002-low.png",
-    "imageHighSrc": "cards/xy2-002-high.png"
+    "imageHighSrc": "cards/xy2-002-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "18992",
-    "externalId": null,
+    "externalId": "xy2-1",
     "tcgdex_id": "xy2-1",
     "localId": "001",
     "setCode": "xy2",
     "setTcgdexId": "xy2",
-    "cardNumber": "001/106",
+    "cardNumber": "1/106",
     "cardName": "Caterpie",
-    "fullDisplayName": "Caterpie 001/106 Flashfire",
+    "fullDisplayName": "Caterpie 1/106 Flashfire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3578,6 +4403,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy2-001-low.png",
-    "imageHighSrc": "cards/xy2-001-high.png"
+    "imageHighSrc": "cards/xy2-001-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "10"
+      }
+    ]
   }
 ]

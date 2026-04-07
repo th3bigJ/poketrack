@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "20662",
-    "externalId": null,
+    "externalId": "xy7-100",
     "tcgdex_id": "xy7-100",
     "localId": "100",
     "setCode": "xy7",
@@ -26,18 +26,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-100-low.png",
-    "imageHighSrc": "cards/xy7-100-high.png"
+    "imageHighSrc": "cards/xy7-100-high.png",
+    "rules": "Look at the top 4 cards of your deck. You may reveal a Trainer card you find there (except Trainers' Mail) and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20657",
-    "externalId": null,
+    "externalId": "xy7-99",
     "tcgdex_id": "xy7-99",
     "localId": "099",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "099/98",
+    "cardNumber": "99/98",
     "cardName": "Energy Retrieval",
-    "fullDisplayName": "Energy Retrieval 099/98 Ancient Origins",
+    "fullDisplayName": "Energy Retrieval 99/98 Ancient Origins",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -55,18 +56,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-099-low.png",
-    "imageHighSrc": "cards/xy7-099-high.png"
+    "imageHighSrc": "cards/xy7-099-high.png",
+    "rules": "Put 2 basic Energy cards from your discard pile into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20652",
-    "externalId": null,
+    "externalId": "xy7-98",
     "tcgdex_id": "xy7-98",
     "localId": "098",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "098/98",
+    "cardNumber": "98/98",
     "cardName": "M Rayquaza-EX",
-    "fullDisplayName": "M Rayquaza-EX 098/98 Ancient Origins",
+    "fullDisplayName": "M Rayquaza-EX 98/98 Ancient Origins",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -89,18 +91,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-098-low.png",
-    "imageHighSrc": "cards/xy7-098-high.png"
+    "imageHighSrc": "cards/xy7-098-high.png",
+    "attacks": [
+      {
+        "name": "Emerald Break",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20647",
-    "externalId": null,
+    "externalId": "xy7-97",
     "tcgdex_id": "xy7-97",
     "localId": "097",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "097/98",
+    "cardNumber": "97/98",
     "cardName": "Primal Groudon-EX",
-    "fullDisplayName": "Primal Groudon-EX 097/98 Ancient Origins",
+    "fullDisplayName": "Primal Groudon-EX 97/98 Ancient Origins",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -123,18 +132,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-097-low.png",
-    "imageHighSrc": "cards/xy7-097-high.png"
+    "imageHighSrc": "cards/xy7-097-high.png",
+    "attacks": [
+      {
+        "name": "Gaia Volcano",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Primal Reversion rule: When 1 of your Pokémon becomes Primal Groudon-EX, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20642",
-    "externalId": null,
+    "externalId": "xy7-96",
     "tcgdex_id": "xy7-96",
     "localId": "096",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "096/98",
+    "cardNumber": "96/98",
     "cardName": "Primal Kyogre-EX",
-    "fullDisplayName": "Primal Kyogre-EX 096/98 Ancient Origins",
+    "fullDisplayName": "Primal Kyogre-EX 96/98 Ancient Origins",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -157,18 +173,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-096-low.png",
-    "imageHighSrc": "cards/xy7-096-high.png"
+    "imageHighSrc": "cards/xy7-096-high.png",
+    "attacks": [
+      {
+        "name": "Tidal Storm",
+        "damage": "150"
+      }
+    ],
+    "rules": "Primal Reversion rule: When 1 of your Pokémon becomes Primal Kyogre-EX, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20637",
-    "externalId": null,
+    "externalId": "xy7-95",
     "tcgdex_id": "xy7-95",
     "localId": "095",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "095/98",
+    "cardNumber": "95/98",
     "cardName": "Steven",
-    "fullDisplayName": "Steven 095/98 Ancient Origins",
+    "fullDisplayName": "Steven 95/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -186,18 +209,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-095-low.png",
-    "imageHighSrc": "cards/xy7-095-high.png"
+    "imageHighSrc": "cards/xy7-095-high.png",
+    "rules": "Search your deck for a Supporter card and a basic Energy card, reveal them, and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20632",
-    "externalId": null,
+    "externalId": "xy7-94",
     "tcgdex_id": "xy7-94",
     "localId": "094",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "094/98",
+    "cardNumber": "94/98",
     "cardName": "Lugia-EX",
-    "fullDisplayName": "Lugia-EX 094/98 Ancient Origins",
+    "fullDisplayName": "Lugia-EX 94/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -220,18 +244,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-094-low.png",
-    "imageHighSrc": "cards/xy7-094-high.png"
+    "imageHighSrc": "cards/xy7-094-high.png",
+    "attacks": [
+      {
+        "name": "Aero Ball",
+        "damage": "20×"
+      },
+      {
+        "name": "Deep Hurricane",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20624",
-    "externalId": null,
+    "externalId": "xy7-93",
     "tcgdex_id": "xy7-93",
     "localId": "093",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "093/98",
+    "cardNumber": "93/98",
     "cardName": "Giratina-EX",
-    "fullDisplayName": "Giratina-EX 093/98 Ancient Origins",
+    "fullDisplayName": "Giratina-EX 93/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -254,18 +289,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-093-low.png",
-    "imageHighSrc": "cards/xy7-093-high.png"
+    "imageHighSrc": "cards/xy7-093-high.png",
+    "attacks": [
+      {
+        "name": "Chaos Wheel",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20620",
-    "externalId": null,
+    "externalId": "xy7-92",
     "tcgdex_id": "xy7-92",
     "localId": "092",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "092/98",
+    "cardNumber": "92/98",
     "cardName": "M Tyranitar-EX",
-    "fullDisplayName": "M Tyranitar-EX 092/98 Ancient Origins",
+    "fullDisplayName": "M Tyranitar-EX 92/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -288,18 +330,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-092-low.png",
-    "imageHighSrc": "cards/xy7-092-high.png"
+    "imageHighSrc": "cards/xy7-092-high.png",
+    "attacks": [
+      {
+        "name": "Destroyer King",
+        "damage": "110+"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20615",
-    "externalId": null,
+    "externalId": "xy7-91",
     "tcgdex_id": "xy7-91",
     "localId": "091",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "091/98",
+    "cardNumber": "91/98",
     "cardName": "Tyranitar-EX",
-    "fullDisplayName": "Tyranitar-EX 091/98 Ancient Origins",
+    "fullDisplayName": "Tyranitar-EX 91/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -322,18 +371,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-091-low.png",
-    "imageHighSrc": "cards/xy7-091-high.png"
+    "imageHighSrc": "cards/xy7-091-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "60"
+      },
+      {
+        "name": "Break Ground",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20610",
-    "externalId": null,
+    "externalId": "xy7-90",
     "tcgdex_id": "xy7-90",
     "localId": "090",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "090/98",
+    "cardNumber": "90/98",
     "cardName": "Machamp-EX",
-    "fullDisplayName": "Machamp-EX 090/98 Ancient Origins",
+    "fullDisplayName": "Machamp-EX 90/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -356,18 +416,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-090-low.png",
-    "imageHighSrc": "cards/xy7-090-high.png"
+    "imageHighSrc": "cards/xy7-090-high.png",
+    "attacks": [
+      {
+        "name": "Steaming Mad",
+        "damage": "20×"
+      },
+      {
+        "name": "Crazy Hammer",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20605",
-    "externalId": null,
+    "externalId": "xy7-89",
     "tcgdex_id": "xy7-89",
     "localId": "089",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "089/98",
+    "cardNumber": "89/98",
     "cardName": "Hoopa-EX",
-    "fullDisplayName": "Hoopa-EX 089/98 Ancient Origins",
+    "fullDisplayName": "Hoopa-EX 89/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -390,18 +461,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-089-low.png",
-    "imageHighSrc": "cards/xy7-089-high.png"
+    "imageHighSrc": "cards/xy7-089-high.png",
+    "attacks": [
+      {
+        "name": "Hyperspace Fury",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20600",
-    "externalId": null,
+    "externalId": "xy7-88",
     "tcgdex_id": "xy7-88",
     "localId": "088",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "088/98",
+    "cardNumber": "88/98",
     "cardName": "M Ampharos-EX",
-    "fullDisplayName": "M Ampharos-EX 088/98 Ancient Origins",
+    "fullDisplayName": "M Ampharos-EX 88/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -424,18 +502,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-088-low.png",
-    "imageHighSrc": "cards/xy7-088-high.png"
+    "imageHighSrc": "cards/xy7-088-high.png",
+    "attacks": [
+      {
+        "name": "Exavolt",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20595",
-    "externalId": null,
+    "externalId": "xy7-87",
     "tcgdex_id": "xy7-87",
     "localId": "087",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "087/98",
+    "cardNumber": "87/98",
     "cardName": "Ampharos-EX",
-    "fullDisplayName": "Ampharos-EX 087/98 Ancient Origins",
+    "fullDisplayName": "Ampharos-EX 87/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -458,18 +543,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-087-low.png",
-    "imageHighSrc": "cards/xy7-087-high.png"
+    "imageHighSrc": "cards/xy7-087-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Rod",
+        "damage": null
+      },
+      {
+        "name": "Sparkling Tail",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20589",
-    "externalId": null,
+    "externalId": "xy7-86",
     "tcgdex_id": "xy7-86",
     "localId": "086",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "086/98",
+    "cardNumber": "86/98",
     "cardName": "Kyurem-EX",
-    "fullDisplayName": "Kyurem-EX 086/98 Ancient Origins",
+    "fullDisplayName": "Kyurem-EX 86/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,18 +588,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-086-low.png",
-    "imageHighSrc": "cards/xy7-086-high.png"
+    "imageHighSrc": "cards/xy7-086-high.png",
+    "attacks": [
+      {
+        "name": "Glaciate",
+        "damage": null
+      },
+      {
+        "name": "Icecalibur",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20584",
-    "externalId": null,
+    "externalId": "xy7-85",
     "tcgdex_id": "xy7-85",
     "localId": "085",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "085/98",
+    "cardNumber": "85/98",
     "cardName": "M Sceptile-EX",
-    "fullDisplayName": "M Sceptile-EX 085/98 Ancient Origins",
+    "fullDisplayName": "M Sceptile-EX 85/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -526,18 +633,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-085-low.png",
-    "imageHighSrc": "cards/xy7-085-high.png"
+    "imageHighSrc": "cards/xy7-085-high.png",
+    "attacks": [
+      {
+        "name": "Jagged Saber",
+        "damage": "100"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20579",
-    "externalId": null,
+    "externalId": "xy7-84",
     "tcgdex_id": "xy7-84",
     "localId": "084",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "084/98",
+    "cardNumber": "84/98",
     "cardName": "Sceptile-EX",
-    "fullDisplayName": "Sceptile-EX 084/98 Ancient Origins",
+    "fullDisplayName": "Sceptile-EX 84/98 Ancient Origins",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -560,18 +674,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-084-low.png",
-    "imageHighSrc": "cards/xy7-084-high.png"
+    "imageHighSrc": "cards/xy7-084-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": "10"
+      },
+      {
+        "name": "Unseen Claw",
+        "damage": "60+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20574",
-    "externalId": null,
+    "externalId": "xy7-83",
     "tcgdex_id": "xy7-83",
     "localId": "083",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "083/98",
+    "cardNumber": "83/98",
     "cardName": "Flash Energy",
-    "fullDisplayName": "Flash Energy 083/98 Ancient Origins",
+    "fullDisplayName": "Flash Energy 83/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -589,18 +714,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-083-low.png",
-    "imageHighSrc": "cards/xy7-083-high.png"
+    "imageHighSrc": "cards/xy7-083-high.png",
+    "rules": "This card can only be attached to Lightning Pokémon. This card provides Lightning Energy only while this card is attached to a Lightning Pokémon.\n\nThe Lightning Pokémon this card is attached to has no Weakness.\n\n(If this card is attached to anything other than a Lightning Pokémon, discard this card.)"
   },
   {
     "masterCardId": "20569",
-    "externalId": null,
+    "externalId": "xy7-82",
     "tcgdex_id": "xy7-82",
     "localId": "082",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "082/98",
+    "cardNumber": "82/98",
     "cardName": "Dangerous Energy",
-    "fullDisplayName": "Dangerous Energy 082/98 Ancient Origins",
+    "fullDisplayName": "Dangerous Energy 82/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -618,18 +744,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-082-low.png",
-    "imageHighSrc": "cards/xy7-082-high.png"
+    "imageHighSrc": "cards/xy7-082-high.png",
+    "rules": "This card can only be attached to Darkness Pokémon. This card provides Darkness Energy only while this card is attached to a Darkness Pokémon.\n\nWhenever the Darkness Pokémon this card is attached to is your Active Pokémon and is damaged by an attack from your opponent's Pokémon-EX (even if that Pokémon is Knocked Out), put 2 damage counters on the Attacking Pokémon-EX.\n\n(If this card is attached to anything other than a Darkness Pokémon, discard this card.)"
   },
   {
     "masterCardId": "20564",
-    "externalId": null,
+    "externalId": "xy7-81",
     "tcgdex_id": "xy7-81",
     "localId": "081",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "081/98",
+    "cardNumber": "81/98",
     "cardName": "Tyranitar Spirit Link",
-    "fullDisplayName": "Tyranitar Spirit Link 081/98 Ancient Origins",
+    "fullDisplayName": "Tyranitar Spirit Link 81/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -647,18 +774,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-081-low.png",
-    "imageHighSrc": "cards/xy7-081-high.png"
+    "imageHighSrc": "cards/xy7-081-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nYour turn does not end if the Pokémon this card is attached to becomes M Tyranitar-EX.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20559",
-    "externalId": null,
+    "externalId": "xy7-80",
     "tcgdex_id": "xy7-80",
     "localId": "080",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "080/98",
+    "cardNumber": "80/98",
     "cardName": "Sceptile Spirit Link",
-    "fullDisplayName": "Sceptile Spirit Link 080/98 Ancient Origins",
+    "fullDisplayName": "Sceptile Spirit Link 80/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -676,18 +804,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-080-low.png",
-    "imageHighSrc": "cards/xy7-080-high.png"
+    "imageHighSrc": "cards/xy7-080-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nYour turn does not end if the Pokémon this card is attached to becomes M Sceptile-EX.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20554",
-    "externalId": null,
+    "externalId": "xy7-79",
     "tcgdex_id": "xy7-79",
     "localId": "079",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "079/98",
+    "cardNumber": "79/98",
     "cardName": "Paint Roller",
-    "fullDisplayName": "Paint Roller 079/98 Ancient Origins",
+    "fullDisplayName": "Paint Roller 79/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -705,18 +834,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-079-low.png",
-    "imageHighSrc": "cards/xy7-079-high.png"
+    "imageHighSrc": "cards/xy7-079-high.png",
+    "rules": "Discard any Stadium card in play. Then, draw a card.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20550",
-    "externalId": null,
+    "externalId": "xy7-78",
     "tcgdex_id": "xy7-78",
     "localId": "078",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "078/98",
+    "cardNumber": "78/98",
     "cardName": "Lysandre",
-    "fullDisplayName": "Lysandre 078/98 Ancient Origins",
+    "fullDisplayName": "Lysandre 78/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -734,18 +864,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-078-low.png",
-    "imageHighSrc": "cards/xy7-078-high.png"
+    "imageHighSrc": "cards/xy7-078-high.png",
+    "rules": "Switch 1 of your opponent's Benched Pokémon with his or her Active Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20545",
-    "externalId": null,
+    "externalId": "xy7-77",
     "tcgdex_id": "xy7-77",
     "localId": "077",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "077/98",
+    "cardNumber": "77/98",
     "cardName": "Lucky Helmet",
-    "fullDisplayName": "Lucky Helmet 077/98 Ancient Origins",
+    "fullDisplayName": "Lucky Helmet 77/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -763,18 +894,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-077-low.png",
-    "imageHighSrc": "cards/xy7-077-high.png"
+    "imageHighSrc": "cards/xy7-077-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhenever the Pokémon this card is attached to is your Active Pokémon and is damaged by an opponent's attack (even if that Pokémon is Knocked Out), draw 2 cards.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20538",
-    "externalId": null,
+    "externalId": "xy7-76",
     "tcgdex_id": "xy7-76",
     "localId": "076",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "076/98",
+    "cardNumber": "76/98",
     "cardName": "Level Ball",
-    "fullDisplayName": "Level Ball 076/98 Ancient Origins",
+    "fullDisplayName": "Level Ball 76/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -792,11 +924,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-076-low.png",
-    "imageHighSrc": "cards/xy7-076-high.png"
+    "imageHighSrc": "cards/xy7-076-high.png",
+    "rules": "Search your deck for a Pokémon with 90 HP or less, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20534",
-    "externalId": null,
+    "externalId": "xy7-75a",
     "tcgdex_id": "xy7-75a",
     "localId": "75a",
     "setCode": "xy7",
@@ -821,18 +954,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-75a-low.png",
-    "imageHighSrc": "cards/xy7-75a-high.png"
+    "imageHighSrc": "cards/xy7-75a-high.png",
+    "rules": "Until the end of your opponent's next turn, each Pokémon in play, in each player's hand, and in each player's discard pile has no Abilities. (This includes cards that come into play on that turn.)\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20528",
-    "externalId": null,
+    "externalId": "xy7-75",
     "tcgdex_id": "xy7-75",
     "localId": "075",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "075/98",
+    "cardNumber": "75/98",
     "cardName": "Hex Maniac",
-    "fullDisplayName": "Hex Maniac 075/98 Ancient Origins",
+    "fullDisplayName": "Hex Maniac 75/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -850,18 +984,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-075-low.png",
-    "imageHighSrc": "cards/xy7-075-high.png"
+    "imageHighSrc": "cards/xy7-075-high.png",
+    "rules": "Until the end of your opponent's next turn, each Pokémon in play, in each player's hand, and in each player's discard pile has no Abilities. (This includes cards that come into play on that turn.)\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20522",
-    "externalId": null,
+    "externalId": "xy7-74",
     "tcgdex_id": "xy7-74",
     "localId": "074",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "074/98",
+    "cardNumber": "74/98",
     "cardName": "Forest of Giant Plants",
-    "fullDisplayName": "Forest of Giant Plants 074/98 Ancient Origins",
+    "fullDisplayName": "Forest of Giant Plants 74/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -879,18 +1014,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-074-low.png",
-    "imageHighSrc": "cards/xy7-074-high.png"
+    "imageHighSrc": "cards/xy7-074-high.png",
+    "rules": "Each player's Grass Pokémon can evolve during his or her first turn or the turn he or she plays those Pokémon.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "20518",
-    "externalId": null,
+    "externalId": "xy7-73",
     "tcgdex_id": "xy7-73",
     "localId": "073",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "073/98",
+    "cardNumber": "73/98",
     "cardName": "Faded Town",
-    "fullDisplayName": "Faded Town 073/98 Ancient Origins",
+    "fullDisplayName": "Faded Town 73/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -908,18 +1044,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-073-low.png",
-    "imageHighSrc": "cards/xy7-073-high.png"
+    "imageHighSrc": "cards/xy7-073-high.png",
+    "rules": "At any time between turns, put 2 damage counters on each Mega Evolution Pokémon.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "20514",
-    "externalId": null,
+    "externalId": "xy7-72",
     "tcgdex_id": "xy7-72",
     "localId": "072",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "072/98",
+    "cardNumber": "72/98",
     "cardName": "Energy Recycler",
-    "fullDisplayName": "Energy Recycler 072/98 Ancient Origins",
+    "fullDisplayName": "Energy Recycler 72/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -937,18 +1074,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-072-low.png",
-    "imageHighSrc": "cards/xy7-072-high.png"
+    "imageHighSrc": "cards/xy7-072-high.png",
+    "rules": "Shuffle 5 basic Energy cards from your discard pile into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20509",
-    "externalId": null,
+    "externalId": "xy7-71",
     "tcgdex_id": "xy7-71",
     "localId": "071",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "071/98",
+    "cardNumber": "71/98",
     "cardName": "Eco Arm",
-    "fullDisplayName": "Eco Arm 071/98 Ancient Origins",
+    "fullDisplayName": "Eco Arm 71/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -966,18 +1104,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-071-low.png",
-    "imageHighSrc": "cards/xy7-071-high.png"
+    "imageHighSrc": "cards/xy7-071-high.png",
+    "rules": "Shuffle 3 Pokémon Tool cards from your discard pile into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20504",
-    "externalId": null,
+    "externalId": "xy7-70",
     "tcgdex_id": "xy7-70",
     "localId": "070",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "070/98",
+    "cardNumber": "70/98",
     "cardName": "Ampharos Spirit Link",
-    "fullDisplayName": "Ampharos Spirit Link 070/98 Ancient Origins",
+    "fullDisplayName": "Ampharos Spirit Link 70/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -995,18 +1134,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-070-low.png",
-    "imageHighSrc": "cards/xy7-070-high.png"
+    "imageHighSrc": "cards/xy7-070-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nYour turn does not end if the Pokémon this card is attached to becomes M Ampharos-EX.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20499",
-    "externalId": null,
+    "externalId": "xy7-69",
     "tcgdex_id": "xy7-69",
     "localId": "069",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "069/98",
+    "cardNumber": "69/98",
     "cardName": "Ace Trainer",
-    "fullDisplayName": "Ace Trainer 069/98 Ancient Origins",
+    "fullDisplayName": "Ace Trainer 69/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1024,18 +1164,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-069-low.png",
-    "imageHighSrc": "cards/xy7-069-high.png"
+    "imageHighSrc": "cards/xy7-069-high.png",
+    "rules": "You can play this card only if you have more Prize cards left than your opponent.\n\nEach player shuffles his or her hand into his or her deck. Then, draw 6 cards. Your opponent draws 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20494",
-    "externalId": null,
+    "externalId": "xy7-68",
     "tcgdex_id": "xy7-68",
     "localId": "068",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "068/98",
+    "cardNumber": "68/98",
     "cardName": "Lugia-EX",
-    "fullDisplayName": "Lugia-EX 068/98 Ancient Origins",
+    "fullDisplayName": "Lugia-EX 68/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1058,18 +1199,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-068-low.png",
-    "imageHighSrc": "cards/xy7-068-high.png"
+    "imageHighSrc": "cards/xy7-068-high.png",
+    "attacks": [
+      {
+        "name": "Aero Ball",
+        "damage": "20×"
+      },
+      {
+        "name": "Deep Hurricane",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20488",
-    "externalId": null,
+    "externalId": "xy7-67",
     "tcgdex_id": "xy7-67",
     "localId": "067",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "067/98",
+    "cardNumber": "67/98",
     "cardName": "Porygon-Z",
-    "fullDisplayName": "Porygon-Z 067/98 Ancient Origins",
+    "fullDisplayName": "Porygon-Z 67/98 Ancient Origins",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1091,18 +1243,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-067-low.png",
-    "imageHighSrc": "cards/xy7-067-high.png"
+    "imageHighSrc": "cards/xy7-067-high.png",
+    "attacks": [
+      {
+        "name": "Digital Reboot",
+        "damage": null
+      },
+      {
+        "name": "Dazzle Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "20483",
-    "externalId": null,
+    "externalId": "xy7-66",
     "tcgdex_id": "xy7-66",
     "localId": "066",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "066/98",
+    "cardNumber": "66/98",
     "cardName": "Porygon-Z",
-    "fullDisplayName": "Porygon-Z 066/98 Ancient Origins",
+    "fullDisplayName": "Porygon-Z 66/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1124,18 +1286,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-066-low.png",
-    "imageHighSrc": "cards/xy7-066-high.png"
+    "imageHighSrc": "cards/xy7-066-high.png",
+    "attacks": [
+      {
+        "name": "Cyber Crush",
+        "damage": null
+      },
+      {
+        "name": "Slowing Beam",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "20479",
-    "externalId": null,
+    "externalId": "xy7-65",
     "tcgdex_id": "xy7-65",
     "localId": "065",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "065/98",
+    "cardNumber": "65/98",
     "cardName": "Porygon2",
-    "fullDisplayName": "Porygon2 065/98 Ancient Origins",
+    "fullDisplayName": "Porygon2 65/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1157,18 +1329,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-065-low.png",
-    "imageHighSrc": "cards/xy7-065-high.png"
+    "imageHighSrc": "cards/xy7-065-high.png",
+    "attacks": [
+      {
+        "name": "Sharpen",
+        "damage": "20"
+      },
+      {
+        "name": "Tri Attack",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "20474",
-    "externalId": null,
+    "externalId": "xy7-64",
     "tcgdex_id": "xy7-64",
     "localId": "064",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "064/98",
+    "cardNumber": "64/98",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon 064/98 Ancient Origins",
+    "fullDisplayName": "Porygon 64/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1190,18 +1372,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-064-low.png",
-    "imageHighSrc": "cards/xy7-064-high.png"
+    "imageHighSrc": "cards/xy7-064-high.png",
+    "attacks": [
+      {
+        "name": "Data Check",
+        "damage": null
+      },
+      {
+        "name": "Sharpen",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "20469",
-    "externalId": null,
+    "externalId": "xy7-63",
     "tcgdex_id": "xy7-63",
     "localId": "063",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "063/98",
+    "cardNumber": "63/98",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 063/98 Ancient Origins",
+    "fullDisplayName": "Eevee 63/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1223,18 +1415,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-063-low.png",
-    "imageHighSrc": "cards/xy7-063-high.png"
+    "imageHighSrc": "cards/xy7-063-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Lunge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20464",
-    "externalId": null,
+    "externalId": "xy7-62",
     "tcgdex_id": "xy7-62",
     "localId": "062",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "062/98",
+    "cardNumber": "62/98",
     "cardName": "Persian",
-    "fullDisplayName": "Persian 062/98 Ancient Origins",
+    "fullDisplayName": "Persian 62/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1256,18 +1458,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-062-low.png",
-    "imageHighSrc": "cards/xy7-062-high.png"
+    "imageHighSrc": "cards/xy7-062-high.png",
+    "attacks": [
+      {
+        "name": "Fake Out",
+        "damage": "30"
+      },
+      {
+        "name": "Ambush",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "20459",
-    "externalId": null,
+    "externalId": "xy7-61",
     "tcgdex_id": "xy7-61",
     "localId": "061",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "061/98",
+    "cardNumber": "61/98",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 061/98 Ancient Origins",
+    "fullDisplayName": "Meowth 61/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1289,18 +1501,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-061-low.png",
-    "imageHighSrc": "cards/xy7-061-high.png"
+    "imageHighSrc": "cards/xy7-061-high.png",
+    "attacks": [
+      {
+        "name": "Act Tough",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "20454",
-    "externalId": null,
+    "externalId": "xy7-60",
     "tcgdex_id": "xy7-60",
     "localId": "060",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "060/98",
+    "cardNumber": "60/98",
     "cardName": "Goodra",
-    "fullDisplayName": "Goodra 060/98 Ancient Origins",
+    "fullDisplayName": "Goodra 60/98 Ancient Origins",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1322,18 +1540,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-060-low.png",
-    "imageHighSrc": "cards/xy7-060-high.png"
+    "imageHighSrc": "cards/xy7-060-high.png",
+    "attacks": [
+      {
+        "name": "Liquid Blow",
+        "damage": null
+      },
+      {
+        "name": "Shining Breath",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "20449",
-    "externalId": null,
+    "externalId": "xy7-59",
     "tcgdex_id": "xy7-59",
     "localId": "059",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "059/98",
+    "cardNumber": "59/98",
     "cardName": "Sliggoo",
-    "fullDisplayName": "Sliggoo 059/98 Ancient Origins",
+    "fullDisplayName": "Sliggoo 59/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1355,18 +1583,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-059-low.png",
-    "imageHighSrc": "cards/xy7-059-high.png"
+    "imageHighSrc": "cards/xy7-059-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": null
+      },
+      {
+        "name": "Melt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "20444",
-    "externalId": null,
+    "externalId": "xy7-58",
     "tcgdex_id": "xy7-58",
     "localId": "058",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "058/98",
+    "cardNumber": "58/98",
     "cardName": "Goomy",
-    "fullDisplayName": "Goomy 058/98 Ancient Origins",
+    "fullDisplayName": "Goomy 58/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1388,18 +1626,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-058-low.png",
-    "imageHighSrc": "cards/xy7-058-high.png"
+    "imageHighSrc": "cards/xy7-058-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "20437",
-    "externalId": null,
+    "externalId": "xy7-57",
     "tcgdex_id": "xy7-57",
     "localId": "057",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "057/98",
+    "cardNumber": "57/98",
     "cardName": "Giratina-EX",
-    "fullDisplayName": "Giratina-EX 057/98 Ancient Origins",
+    "fullDisplayName": "Giratina-EX 57/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1422,18 +1666,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-057-low.png",
-    "imageHighSrc": "cards/xy7-057-high.png"
+    "imageHighSrc": "cards/xy7-057-high.png",
+    "attacks": [
+      {
+        "name": "Chaos Wheel",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20432",
-    "externalId": null,
+    "externalId": "xy7-56",
     "tcgdex_id": "xy7-56",
     "localId": "056",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "056/98",
+    "cardNumber": "56/98",
     "cardName": "Whimsicott",
-    "fullDisplayName": "Whimsicott 056/98 Ancient Origins",
+    "fullDisplayName": "Whimsicott 56/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1455,18 +1706,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-056-low.png",
-    "imageHighSrc": "cards/xy7-056-high.png"
+    "imageHighSrc": "cards/xy7-056-high.png",
+    "attacks": [
+      {
+        "name": "Windy Mischief",
+        "damage": null
+      },
+      {
+        "name": "Rolling Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20428",
-    "externalId": null,
+    "externalId": "xy7-55",
     "tcgdex_id": "xy7-55",
     "localId": "055",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "055/98",
+    "cardNumber": "55/98",
     "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 055/98 Ancient Origins",
+    "fullDisplayName": "Cottonee 55/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1488,18 +1749,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-055-low.png",
-    "imageHighSrc": "cards/xy7-055-high.png"
+    "imageHighSrc": "cards/xy7-055-high.png",
+    "attacks": [
+      {
+        "name": "Cotton Bed",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "20422",
-    "externalId": null,
+    "externalId": "xy7-54",
     "tcgdex_id": "xy7-54",
     "localId": "054",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "054/98",
+    "cardNumber": "54/98",
     "cardName": "Gardevoir",
-    "fullDisplayName": "Gardevoir 054/98 Ancient Origins",
+    "fullDisplayName": "Gardevoir 54/98 Ancient Origins",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1521,18 +1788,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-054-low.png",
-    "imageHighSrc": "cards/xy7-054-high.png"
+    "imageHighSrc": "cards/xy7-054-high.png",
+    "attacks": [
+      {
+        "name": "Telekinesis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "20417",
-    "externalId": null,
+    "externalId": "xy7-53",
     "tcgdex_id": "xy7-53",
     "localId": "053",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "053/98",
+    "cardNumber": "53/98",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 053/98 Ancient Origins",
+    "fullDisplayName": "Kirlia 53/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1554,18 +1827,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-053-low.png",
-    "imageHighSrc": "cards/xy7-053-high.png"
+    "imageHighSrc": "cards/xy7-053-high.png",
+    "attacks": [
+      {
+        "name": "Calm Mind",
+        "damage": null
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "20410",
-    "externalId": null,
+    "externalId": "xy7-52",
     "tcgdex_id": "xy7-52",
     "localId": "052",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "052/98",
+    "cardNumber": "52/98",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts 052/98 Ancient Origins",
+    "fullDisplayName": "Ralts 52/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1587,18 +1870,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-052-low.png",
-    "imageHighSrc": "cards/xy7-052-high.png"
+    "imageHighSrc": "cards/xy7-052-high.png",
+    "attacks": [
+      {
+        "name": "Mumble",
+        "damage": "10"
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "20406",
-    "externalId": null,
+    "externalId": "xy7-51",
     "tcgdex_id": "xy7-51",
     "localId": "051",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "051/98",
+    "cardNumber": "51/98",
     "cardName": "Registeel",
-    "fullDisplayName": "Registeel 051/98 Ancient Origins",
+    "fullDisplayName": "Registeel 51/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1620,18 +1913,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-051-low.png",
-    "imageHighSrc": "cards/xy7-051-high.png"
+    "imageHighSrc": "cards/xy7-051-high.png",
+    "attacks": [
+      {
+        "name": "Iron Head",
+        "damage": "30×"
+      },
+      {
+        "name": "Forbidden Iron Hammer",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "20401",
-    "externalId": null,
+    "externalId": "xy7-50",
     "tcgdex_id": "xy7-50",
     "localId": "050",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "050/98",
+    "cardNumber": "50/98",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross 050/98 Ancient Origins",
+    "fullDisplayName": "Metagross 50/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1653,18 +1956,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-050-low.png",
-    "imageHighSrc": "cards/xy7-050-high.png"
+    "imageHighSrc": "cards/xy7-050-high.png",
+    "attacks": [
+      {
+        "name": "Machine Gun Stomp",
+        "damage": "20+"
+      },
+      {
+        "name": "Guard Press",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "20396",
-    "externalId": null,
+    "externalId": "xy7-49",
     "tcgdex_id": "xy7-49",
     "localId": "049",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "049/98",
+    "cardNumber": "49/98",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross 049/98 Ancient Origins",
+    "fullDisplayName": "Metagross 49/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1686,18 +1999,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-049-low.png",
-    "imageHighSrc": "cards/xy7-049-high.png"
+    "imageHighSrc": "cards/xy7-049-high.png",
+    "attacks": [
+      {
+        "name": "Iron Cannon",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "20391",
-    "externalId": null,
+    "externalId": "xy7-48",
     "tcgdex_id": "xy7-48",
     "localId": "048",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "048/98",
+    "cardNumber": "48/98",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 048/98 Ancient Origins",
+    "fullDisplayName": "Metang 48/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1719,18 +2038,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-048-low.png",
-    "imageHighSrc": "cards/xy7-048-high.png"
+    "imageHighSrc": "cards/xy7-048-high.png",
+    "attacks": [
+      {
+        "name": "Metal Claw",
+        "damage": "30"
+      },
+      {
+        "name": "Bullet Punch",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "20386",
-    "externalId": null,
+    "externalId": "xy7-47",
     "tcgdex_id": "xy7-47",
     "localId": "047",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "047/98",
+    "cardNumber": "47/98",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 047/98 Ancient Origins",
+    "fullDisplayName": "Beldum 47/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1752,18 +2081,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-047-low.png",
-    "imageHighSrc": "cards/xy7-047-high.png"
+    "imageHighSrc": "cards/xy7-047-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Spinning Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20380",
-    "externalId": null,
+    "externalId": "xy7-46",
     "tcgdex_id": "xy7-46",
     "localId": "046",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "046/98",
+    "cardNumber": "46/98",
     "cardName": "Malamar",
-    "fullDisplayName": "Malamar 046/98 Ancient Origins",
+    "fullDisplayName": "Malamar 46/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1785,18 +2124,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-046-low.png",
-    "imageHighSrc": "cards/xy7-046-high.png"
+    "imageHighSrc": "cards/xy7-046-high.png",
+    "attacks": [
+      {
+        "name": "Entangling Control",
+        "damage": null
+      },
+      {
+        "name": "Trash Tentacle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20375",
-    "externalId": null,
+    "externalId": "xy7-45",
     "tcgdex_id": "xy7-45",
     "localId": "045",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "045/98",
+    "cardNumber": "45/98",
     "cardName": "Inkay",
-    "fullDisplayName": "Inkay 045/98 Ancient Origins",
+    "fullDisplayName": "Inkay 45/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1818,18 +2167,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-045-low.png",
-    "imageHighSrc": "cards/xy7-045-high.png"
+    "imageHighSrc": "cards/xy7-045-high.png",
+    "attacks": [
+      {
+        "name": "Ink Spit",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "20370",
-    "externalId": null,
+    "externalId": "xy7-44",
     "tcgdex_id": "xy7-44",
     "localId": "044",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "044/98",
+    "cardNumber": "44/98",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 044/98 Ancient Origins",
+    "fullDisplayName": "Sableye 44/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1851,18 +2206,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-044-low.png",
-    "imageHighSrc": "cards/xy7-044-high.png"
+    "imageHighSrc": "cards/xy7-044-high.png",
+    "attacks": [
+      {
+        "name": "Bewitching Eyes",
+        "damage": null
+      },
+      {
+        "name": "Furtive Drop",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "20365",
-    "externalId": null,
+    "externalId": "xy7-43",
     "tcgdex_id": "xy7-43",
     "localId": "043",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "043/98",
+    "cardNumber": "43/98",
     "cardName": "M Tyranitar-EX",
-    "fullDisplayName": "M Tyranitar-EX 043/98 Ancient Origins",
+    "fullDisplayName": "M Tyranitar-EX 43/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -1885,18 +2250,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-043-low.png",
-    "imageHighSrc": "cards/xy7-043-high.png"
+    "imageHighSrc": "cards/xy7-043-high.png",
+    "attacks": [
+      {
+        "name": "Destroyer King",
+        "damage": "110+"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20360",
-    "externalId": null,
+    "externalId": "xy7-42",
     "tcgdex_id": "xy7-42",
     "localId": "042",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "042/98",
+    "cardNumber": "42/98",
     "cardName": "Tyranitar-EX",
-    "fullDisplayName": "Tyranitar-EX 042/98 Ancient Origins",
+    "fullDisplayName": "Tyranitar-EX 42/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1919,18 +2291,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-042-low.png",
-    "imageHighSrc": "cards/xy7-042-high.png"
+    "imageHighSrc": "cards/xy7-042-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "60"
+      },
+      {
+        "name": "Break Ground",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20355",
-    "externalId": null,
+    "externalId": "xy7-41",
     "tcgdex_id": "xy7-41",
     "localId": "041",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "041/98",
+    "cardNumber": "41/98",
     "cardName": "Golurk",
-    "fullDisplayName": "Golurk 041/98 Ancient Origins",
+    "fullDisplayName": "Golurk 41/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1952,18 +2335,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-041-low.png",
-    "imageHighSrc": "cards/xy7-041-high.png"
+    "imageHighSrc": "cards/xy7-041-high.png",
+    "attacks": [
+      {
+        "name": "Dig Out",
+        "damage": "20"
+      },
+      {
+        "name": "Double Lariat",
+        "damage": "90×"
+      }
+    ]
   },
   {
     "masterCardId": "20350",
-    "externalId": null,
+    "externalId": "xy7-40",
     "tcgdex_id": "xy7-40",
     "localId": "040",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "040/98",
+    "cardNumber": "40/98",
     "cardName": "Regirock",
-    "fullDisplayName": "Regirock 040/98 Ancient Origins",
+    "fullDisplayName": "Regirock 40/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1985,18 +2378,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-040-low.png",
-    "imageHighSrc": "cards/xy7-040-high.png"
+    "imageHighSrc": "cards/xy7-040-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "40"
+      },
+      {
+        "name": "Unyielding Rock",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "20346",
-    "externalId": null,
+    "externalId": "xy7-39",
     "tcgdex_id": "xy7-39",
     "localId": "039",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "039/98",
+    "cardNumber": "39/98",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 039/98 Ancient Origins",
+    "fullDisplayName": "Quagsire 39/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2018,18 +2421,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-039-low.png",
-    "imageHighSrc": "cards/xy7-039-high.png"
+    "imageHighSrc": "cards/xy7-039-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "30"
+      },
+      {
+        "name": "Landslide",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "20341",
-    "externalId": null,
+    "externalId": "xy7-38",
     "tcgdex_id": "xy7-38",
     "localId": "038",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "038/98",
+    "cardNumber": "38/98",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper 038/98 Ancient Origins",
+    "fullDisplayName": "Wooper 38/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2051,18 +2464,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-038-low.png",
-    "imageHighSrc": "cards/xy7-038-high.png"
+    "imageHighSrc": "cards/xy7-038-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "20337",
-    "externalId": null,
+    "externalId": "xy7-37",
     "tcgdex_id": "xy7-37",
     "localId": "037",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "037/98",
+    "cardNumber": "37/98",
     "cardName": "Machamp-EX",
-    "fullDisplayName": "Machamp-EX 037/98 Ancient Origins",
+    "fullDisplayName": "Machamp-EX 37/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2085,18 +2508,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-037-low.png",
-    "imageHighSrc": "cards/xy7-037-high.png"
+    "imageHighSrc": "cards/xy7-037-high.png",
+    "attacks": [
+      {
+        "name": "Steaming Mad",
+        "damage": "20×"
+      },
+      {
+        "name": "Crazy Hammer",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20331",
-    "externalId": null,
+    "externalId": "xy7-36",
     "tcgdex_id": "xy7-36",
     "localId": "036",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "036/98",
+    "cardNumber": "36/98",
     "cardName": "Hoopa-EX",
-    "fullDisplayName": "Hoopa-EX 036/98 Ancient Origins",
+    "fullDisplayName": "Hoopa-EX 36/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2119,18 +2553,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-036-low.png",
-    "imageHighSrc": "cards/xy7-036-high.png"
+    "imageHighSrc": "cards/xy7-036-high.png",
+    "attacks": [
+      {
+        "name": "Hyperspace Fury",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20326",
-    "externalId": null,
+    "externalId": "xy7-35",
     "tcgdex_id": "xy7-35",
     "localId": "035",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "035/98",
+    "cardNumber": "35/98",
     "cardName": "Golurk",
-    "fullDisplayName": "Golurk 035/98 Ancient Origins",
+    "fullDisplayName": "Golurk 35/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2152,18 +2593,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-035-low.png",
-    "imageHighSrc": "cards/xy7-035-high.png"
+    "imageHighSrc": "cards/xy7-035-high.png",
+    "attacks": [
+      {
+        "name": "Superpower",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "20321",
-    "externalId": null,
+    "externalId": "xy7-34",
     "tcgdex_id": "xy7-34",
     "localId": "034",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "034/98",
+    "cardNumber": "34/98",
     "cardName": "Golett",
-    "fullDisplayName": "Golett 034/98 Ancient Origins",
+    "fullDisplayName": "Golett 34/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2185,18 +2632,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-034-low.png",
-    "imageHighSrc": "cards/xy7-034-high.png"
+    "imageHighSrc": "cards/xy7-034-high.png",
+    "attacks": [
+      {
+        "name": "Smash Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20317",
-    "externalId": null,
+    "externalId": "xy7-33",
     "tcgdex_id": "xy7-33",
     "localId": "033",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "033/98",
+    "cardNumber": "33/98",
     "cardName": "Claydol",
-    "fullDisplayName": "Claydol 033/98 Ancient Origins",
+    "fullDisplayName": "Claydol 33/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2218,18 +2671,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-033-low.png",
-    "imageHighSrc": "cards/xy7-033-high.png"
+    "imageHighSrc": "cards/xy7-033-high.png",
+    "attacks": [
+      {
+        "name": "Rewind",
+        "damage": null
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20311",
-    "externalId": null,
+    "externalId": "xy7-32",
     "tcgdex_id": "xy7-32",
     "localId": "032",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "032/98",
+    "cardNumber": "32/98",
     "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 032/98 Ancient Origins",
+    "fullDisplayName": "Baltoy 32/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2251,18 +2714,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-032-low.png",
-    "imageHighSrc": "cards/xy7-032-high.png"
+    "imageHighSrc": "cards/xy7-032-high.png",
+    "attacks": [
+      {
+        "name": "Future Spin",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "20306",
-    "externalId": null,
+    "externalId": "xy7-31",
     "tcgdex_id": "xy7-31",
     "localId": "031",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "031/98",
+    "cardNumber": "31/98",
     "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 031/98 Ancient Origins",
+    "fullDisplayName": "Baltoy 31/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2284,18 +2753,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-031-low.png",
-    "imageHighSrc": "cards/xy7-031-high.png"
+    "imageHighSrc": "cards/xy7-031-high.png",
+    "attacks": [
+      {
+        "name": "Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Spinning Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "20301",
-    "externalId": null,
+    "externalId": "xy7-30",
     "tcgdex_id": "xy7-30",
     "localId": "030",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "030/98",
+    "cardNumber": "30/98",
     "cardName": "Unown",
-    "fullDisplayName": "Unown 030/98 Ancient Origins",
+    "fullDisplayName": "Unown 30/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2317,18 +2796,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-030-low.png",
-    "imageHighSrc": "cards/xy7-030-high.png"
+    "imageHighSrc": "cards/xy7-030-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "20296",
-    "externalId": null,
+    "externalId": "xy7-29",
     "tcgdex_id": "xy7-29",
     "localId": "029",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "029/98",
+    "cardNumber": "29/98",
     "cardName": "Rotom",
-    "fullDisplayName": "Rotom 029/98 Ancient Origins",
+    "fullDisplayName": "Rotom 29/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2350,18 +2835,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-029-low.png",
-    "imageHighSrc": "cards/xy7-029-high.png"
+    "imageHighSrc": "cards/xy7-029-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "20"
+      },
+      {
+        "name": "Electric Mischief",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "20291",
-    "externalId": null,
+    "externalId": "xy7-28",
     "tcgdex_id": "xy7-28",
     "localId": "028",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "028/98",
+    "cardNumber": "28/98",
     "cardName": "M Ampharos-EX",
-    "fullDisplayName": "M Ampharos-EX 028/98 Ancient Origins",
+    "fullDisplayName": "M Ampharos-EX 28/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -2384,18 +2879,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-028-low.png",
-    "imageHighSrc": "cards/xy7-028-high.png"
+    "imageHighSrc": "cards/xy7-028-high.png",
+    "attacks": [
+      {
+        "name": "Exavolt",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20286",
-    "externalId": null,
+    "externalId": "xy7-27",
     "tcgdex_id": "xy7-27",
     "localId": "027",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "027/98",
+    "cardNumber": "27/98",
     "cardName": "Ampharos-EX",
-    "fullDisplayName": "Ampharos-EX 027/98 Ancient Origins",
+    "fullDisplayName": "Ampharos-EX 27/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2418,18 +2920,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-027-low.png",
-    "imageHighSrc": "cards/xy7-027-high.png"
+    "imageHighSrc": "cards/xy7-027-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Rod",
+        "damage": null
+      },
+      {
+        "name": "Sparkling Tail",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20281",
-    "externalId": null,
+    "externalId": "xy7-26",
     "tcgdex_id": "xy7-26",
     "localId": "026",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "026/98",
+    "cardNumber": "26/98",
     "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 026/98 Ancient Origins",
+    "fullDisplayName": "Jolteon 26/98 Ancient Origins",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2451,18 +2964,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-026-low.png",
-    "imageHighSrc": "cards/xy7-026-high.png"
+    "imageHighSrc": "cards/xy7-026-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Blast",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "20276",
-    "externalId": null,
+    "externalId": "xy7-25",
     "tcgdex_id": "xy7-25",
     "localId": "025",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "025/98",
+    "cardNumber": "25/98",
     "cardName": "Kyurem-EX",
-    "fullDisplayName": "Kyurem-EX 025/98 Ancient Origins",
+    "fullDisplayName": "Kyurem-EX 25/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2485,18 +3004,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-025-low.png",
-    "imageHighSrc": "cards/xy7-025-high.png"
+    "imageHighSrc": "cards/xy7-025-high.png",
+    "attacks": [
+      {
+        "name": "Glaciate",
+        "damage": null
+      },
+      {
+        "name": "Icecalibur",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20271",
-    "externalId": null,
+    "externalId": "xy7-24",
     "tcgdex_id": "xy7-24",
     "localId": "024",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "024/98",
+    "cardNumber": "24/98",
     "cardName": "Regice",
-    "fullDisplayName": "Regice 024/98 Ancient Origins",
+    "fullDisplayName": "Regice 24/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2518,18 +3048,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-024-low.png",
-    "imageHighSrc": "cards/xy7-024-high.png"
+    "imageHighSrc": "cards/xy7-024-high.png",
+    "attacks": [
+      {
+        "name": "Ice Beam",
+        "damage": "30"
+      },
+      {
+        "name": "Resistance Blizzard",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "20266",
-    "externalId": null,
+    "externalId": "xy7-23",
     "tcgdex_id": "xy7-23",
     "localId": "023",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "023/98",
+    "cardNumber": "23/98",
     "cardName": "Relicanth",
-    "fullDisplayName": "Relicanth 023/98 Ancient Origins",
+    "fullDisplayName": "Relicanth 23/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2551,18 +3091,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-023-low.png",
-    "imageHighSrc": "cards/xy7-023-high.png"
+    "imageHighSrc": "cards/xy7-023-high.png",
+    "attacks": [
+      {
+        "name": "Deep Sea Search",
+        "damage": null
+      },
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20261",
-    "externalId": null,
+    "externalId": "xy7-22",
     "tcgdex_id": "xy7-22",
     "localId": "022",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "022/98",
+    "cardNumber": "22/98",
     "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 022/98 Ancient Origins",
+    "fullDisplayName": "Vaporeon 22/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2584,18 +3134,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-022-low.png",
-    "imageHighSrc": "cards/xy7-022-high.png"
+    "imageHighSrc": "cards/xy7-022-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Splash",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "20256",
-    "externalId": null,
+    "externalId": "xy7-21",
     "tcgdex_id": "xy7-21",
     "localId": "021",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "021/98",
+    "cardNumber": "21/98",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 021/98 Ancient Origins",
+    "fullDisplayName": "Gyarados 21/98 Ancient Origins",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2617,18 +3173,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-021-low.png",
-    "imageHighSrc": "cards/xy7-021-high.png"
+    "imageHighSrc": "cards/xy7-021-high.png",
+    "attacks": [
+      {
+        "name": "Full Retaliation",
+        "damage": "30+"
+      },
+      {
+        "name": "Thrash",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "20251",
-    "externalId": null,
+    "externalId": "xy7-20",
     "tcgdex_id": "xy7-20",
     "localId": "020",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "020/98",
+    "cardNumber": "20/98",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 020/98 Ancient Origins",
+    "fullDisplayName": "Gyarados 20/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2650,18 +3216,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-020-low.png",
-    "imageHighSrc": "cards/xy7-020-high.png"
+    "imageHighSrc": "cards/xy7-020-high.png",
+    "attacks": [
+      {
+        "name": "Berserker Splash",
+        "damage": "80"
+      },
+      {
+        "name": "Aqua Tail",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "20246",
-    "externalId": null,
+    "externalId": "xy7-19",
     "tcgdex_id": "xy7-19",
     "localId": "019",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "019/98",
+    "cardNumber": "19/98",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 019/98 Ancient Origins",
+    "fullDisplayName": "Magikarp 19/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2683,18 +3259,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-019-low.png",
-    "imageHighSrc": "cards/xy7-019-high.png"
+    "imageHighSrc": "cards/xy7-019-high.png",
+    "attacks": [
+      {
+        "name": "Epic Splash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20241",
-    "externalId": null,
+    "externalId": "xy7-18",
     "tcgdex_id": "xy7-18",
     "localId": "018",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "018/98",
+    "cardNumber": "18/98",
     "cardName": "Volcarona",
-    "fullDisplayName": "Volcarona 018/98 Ancient Origins",
+    "fullDisplayName": "Volcarona 18/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2716,18 +3298,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-018-low.png",
-    "imageHighSrc": "cards/xy7-018-high.png"
+    "imageHighSrc": "cards/xy7-018-high.png",
+    "attacks": [
+      {
+        "name": "Burning Scales",
+        "damage": "20+"
+      },
+      {
+        "name": "Wind Wheel",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "20236",
-    "externalId": null,
+    "externalId": "xy7-17",
     "tcgdex_id": "xy7-17",
     "localId": "017",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "017/98",
+    "cardNumber": "17/98",
     "cardName": "Volcarona",
-    "fullDisplayName": "Volcarona 017/98 Ancient Origins",
+    "fullDisplayName": "Volcarona 17/98 Ancient Origins",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2749,18 +3341,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-017-low.png",
-    "imageHighSrc": "cards/xy7-017-high.png"
+    "imageHighSrc": "cards/xy7-017-high.png",
+    "attacks": [
+      {
+        "name": "Solar Birth",
+        "damage": null
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "20231",
-    "externalId": null,
+    "externalId": "xy7-16",
     "tcgdex_id": "xy7-16",
     "localId": "016",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "016/98",
+    "cardNumber": "16/98",
     "cardName": "Larvesta",
-    "fullDisplayName": "Larvesta 016/98 Ancient Origins",
+    "fullDisplayName": "Larvesta 16/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2782,18 +3384,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-016-low.png",
-    "imageHighSrc": "cards/xy7-016-high.png"
+    "imageHighSrc": "cards/xy7-016-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20225",
-    "externalId": null,
+    "externalId": "xy7-15",
     "tcgdex_id": "xy7-15",
     "localId": "015",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "015/98",
+    "cardNumber": "15/98",
     "cardName": "Entei",
-    "fullDisplayName": "Entei 015/98 Ancient Origins",
+    "fullDisplayName": "Entei 15/98 Ancient Origins",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2815,18 +3423,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-015-low.png",
-    "imageHighSrc": "cards/xy7-015-high.png"
+    "imageHighSrc": "cards/xy7-015-high.png",
+    "attacks": [
+      {
+        "name": "Flame Screen",
+        "damage": "30"
+      },
+      {
+        "name": "Heat Tackle",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "20220",
-    "externalId": null,
+    "externalId": "xy7-14",
     "tcgdex_id": "xy7-14",
     "localId": "014",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "014/98",
+    "cardNumber": "14/98",
     "cardName": "Entei",
-    "fullDisplayName": "Entei 014/98 Ancient Origins",
+    "fullDisplayName": "Entei 14/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2848,18 +3466,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-014-low.png",
-    "imageHighSrc": "cards/xy7-014-high.png"
+    "imageHighSrc": "cards/xy7-014-high.png",
+    "attacks": [
+      {
+        "name": "Burning Roar",
+        "damage": null
+      },
+      {
+        "name": "Combat Blaze",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "20214",
-    "externalId": null,
+    "externalId": "xy7-13",
     "tcgdex_id": "xy7-13",
     "localId": "013",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "013/98",
+    "cardNumber": "13/98",
     "cardName": "Flareon",
-    "fullDisplayName": "Flareon 013/98 Ancient Origins",
+    "fullDisplayName": "Flareon 13/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2881,18 +3509,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-013-low.png",
-    "imageHighSrc": "cards/xy7-013-high.png"
+    "imageHighSrc": "cards/xy7-013-high.png",
+    "attacks": [
+      {
+        "name": "Heat Breath",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "20209",
-    "externalId": null,
+    "externalId": "xy7-12",
     "tcgdex_id": "xy7-12",
     "localId": "012",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "012/98",
+    "cardNumber": "12/98",
     "cardName": "Virizion",
-    "fullDisplayName": "Virizion 012/98 Ancient Origins",
+    "fullDisplayName": "Virizion 12/98 Ancient Origins",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2914,18 +3548,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-012-low.png",
-    "imageHighSrc": "cards/xy7-012-high.png"
+    "imageHighSrc": "cards/xy7-012-high.png",
+    "attacks": [
+      {
+        "name": "Bail Out",
+        "damage": null
+      },
+      {
+        "name": "Prize Count",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "20205",
-    "externalId": null,
+    "externalId": "xy7-11",
     "tcgdex_id": "xy7-11",
     "localId": "011",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "011/98",
+    "cardNumber": "11/98",
     "cardName": "Vespiquen",
-    "fullDisplayName": "Vespiquen 011/98 Ancient Origins",
+    "fullDisplayName": "Vespiquen 11/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2947,18 +3591,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-011-low.png",
-    "imageHighSrc": "cards/xy7-011-high.png"
+    "imageHighSrc": "cards/xy7-011-high.png",
+    "attacks": [
+      {
+        "name": "Bee Drain",
+        "damage": "20"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "20199",
-    "externalId": null,
+    "externalId": "xy7-10",
     "tcgdex_id": "xy7-10",
     "localId": "010",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "010/98",
+    "cardNumber": "10/98",
     "cardName": "Vespiquen",
-    "fullDisplayName": "Vespiquen 010/98 Ancient Origins",
+    "fullDisplayName": "Vespiquen 10/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2980,18 +3634,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-010-low.png",
-    "imageHighSrc": "cards/xy7-010-high.png"
+    "imageHighSrc": "cards/xy7-010-high.png",
+    "attacks": [
+      {
+        "name": "Intelligence Gathering",
+        "damage": "10"
+      },
+      {
+        "name": "Bee Revenge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "20194",
-    "externalId": null,
+    "externalId": "xy7-9",
     "tcgdex_id": "xy7-9",
     "localId": "009",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "009/98",
+    "cardNumber": "9/98",
     "cardName": "Combee",
-    "fullDisplayName": "Combee 009/98 Ancient Origins",
+    "fullDisplayName": "Combee 9/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3013,18 +3677,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-009-low.png",
-    "imageHighSrc": "cards/xy7-009-high.png"
+    "imageHighSrc": "cards/xy7-009-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "20188",
-    "externalId": null,
+    "externalId": "xy7-8",
     "tcgdex_id": "xy7-8",
     "localId": "008",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "008/98",
+    "cardNumber": "8/98",
     "cardName": "M Sceptile-EX",
-    "fullDisplayName": "M Sceptile-EX 008/98 Ancient Origins",
+    "fullDisplayName": "M Sceptile-EX 8/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -3047,18 +3717,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-008-low.png",
-    "imageHighSrc": "cards/xy7-008-high.png"
+    "imageHighSrc": "cards/xy7-008-high.png",
+    "attacks": [
+      {
+        "name": "Jagged Saber",
+        "damage": "100"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20183",
-    "externalId": null,
+    "externalId": "xy7-7",
     "tcgdex_id": "xy7-7",
     "localId": "007",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "007/98",
+    "cardNumber": "7/98",
     "cardName": "Sceptile-EX",
-    "fullDisplayName": "Sceptile-EX 007/98 Ancient Origins",
+    "fullDisplayName": "Sceptile-EX 7/98 Ancient Origins",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3081,18 +3758,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-007-low.png",
-    "imageHighSrc": "cards/xy7-007-high.png"
+    "imageHighSrc": "cards/xy7-007-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": "10"
+      },
+      {
+        "name": "Unseen Claw",
+        "damage": "60+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20178",
-    "externalId": null,
+    "externalId": "xy7-6",
     "tcgdex_id": "xy7-6",
     "localId": "006",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "006/98",
+    "cardNumber": "6/98",
     "cardName": "Ariados",
-    "fullDisplayName": "Ariados 006/98 Ancient Origins",
+    "fullDisplayName": "Ariados 6/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3114,18 +3802,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-006-low.png",
-    "imageHighSrc": "cards/xy7-006-high.png"
+    "imageHighSrc": "cards/xy7-006-high.png",
+    "attacks": [
+      {
+        "name": "Impound",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "20173",
-    "externalId": null,
+    "externalId": "xy7-5",
     "tcgdex_id": "xy7-5",
     "localId": "005",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "005/98",
+    "cardNumber": "5/98",
     "cardName": "Spinarak",
-    "fullDisplayName": "Spinarak 005/98 Ancient Origins",
+    "fullDisplayName": "Spinarak 5/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3147,18 +3841,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-005-low.png",
-    "imageHighSrc": "cards/xy7-005-high.png"
+    "imageHighSrc": "cards/xy7-005-high.png",
+    "attacks": [
+      {
+        "name": "String Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "20168",
-    "externalId": null,
+    "externalId": "xy7-4",
     "tcgdex_id": "xy7-4",
     "localId": "004",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "004/98",
+    "cardNumber": "4/98",
     "cardName": "Bellossom",
-    "fullDisplayName": "Bellossom 004/98 Ancient Origins",
+    "fullDisplayName": "Bellossom 4/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3180,18 +3880,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-004-low.png",
-    "imageHighSrc": "cards/xy7-004-high.png"
+    "imageHighSrc": "cards/xy7-004-high.png",
+    "attacks": [
+      {
+        "name": "Windmill",
+        "damage": "20"
+      },
+      {
+        "name": "Flower Tornado",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "20163",
-    "externalId": null,
+    "externalId": "xy7-3",
     "tcgdex_id": "xy7-3",
     "localId": "003",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "003/98",
+    "cardNumber": "3/98",
     "cardName": "Vileplume",
-    "fullDisplayName": "Vileplume 003/98 Ancient Origins",
+    "fullDisplayName": "Vileplume 3/98 Ancient Origins",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3213,18 +3923,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-003-low.png",
-    "imageHighSrc": "cards/xy7-003-high.png"
+    "imageHighSrc": "cards/xy7-003-high.png",
+    "attacks": [
+      {
+        "name": "Solar Beam",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "20159",
-    "externalId": null,
+    "externalId": "xy7-2",
     "tcgdex_id": "xy7-2",
     "localId": "002",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "002/98",
+    "cardNumber": "2/98",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 002/98 Ancient Origins",
+    "fullDisplayName": "Gloom 2/98 Ancient Origins",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3246,18 +3962,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-002-low.png",
-    "imageHighSrc": "cards/xy7-002-high.png"
+    "imageHighSrc": "cards/xy7-002-high.png",
+    "attacks": [
+      {
+        "name": "Drool",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "20152",
-    "externalId": null,
+    "externalId": "xy7-1",
     "tcgdex_id": "xy7-1",
     "localId": "001",
     "setCode": "xy7",
     "setTcgdexId": "xy7",
-    "cardNumber": "001/98",
+    "cardNumber": "1/98",
     "cardName": "Oddish",
-    "fullDisplayName": "Oddish 001/98 Ancient Origins",
+    "fullDisplayName": "Oddish 1/98 Ancient Origins",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3279,6 +4001,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy7-001-low.png",
-    "imageHighSrc": "cards/xy7-001-high.png"
+    "imageHighSrc": "cards/xy7-001-high.png",
+    "attacks": [
+      {
+        "name": "Trip Over",
+        "damage": "10+"
+      }
+    ]
   }
 ]

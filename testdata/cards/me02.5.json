@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "1213",
-    "externalId": null,
+    "externalId": "me2pt5-295",
     "tcgdex_id": "me02.5-295",
     "localId": "295",
     "setCode": "me02.5",
@@ -30,11 +30,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-295-low.png",
-    "imageHighSrc": "cards/me2pt5-295-high.png"
+    "imageHighSrc": "cards/me2pt5-295-high.png",
+    "attacks": [
+      {
+        "name": "Ryuno Glide",
+        "damage": "330"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1212",
-    "externalId": null,
+    "externalId": "me2pt5-294",
     "tcgdex_id": "me02.5-294",
     "localId": "294",
     "setCode": "me02.5",
@@ -63,11 +70,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-294-low.png",
-    "imageHighSrc": "cards/me2pt5-294-high.png"
+    "imageHighSrc": "cards/me2pt5-294-high.png",
+    "attacks": [
+      {
+        "name": "Explosion Y",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1211",
-    "externalId": null,
+    "externalId": "me2pt5-293",
     "tcgdex_id": "me02.5-293",
     "localId": "293",
     "setCode": "me02.5",
@@ -90,11 +104,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-293-low.png",
-    "imageHighSrc": "cards/me2pt5-293-high.png"
+    "imageHighSrc": "cards/me2pt5-293-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon. If you do, draw cards until you have 5 cards in your hand.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1210",
-    "externalId": null,
+    "externalId": "me2pt5-292",
     "tcgdex_id": "me02.5-292",
     "localId": "292",
     "setCode": "me02.5",
@@ -117,11 +132,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-292-low.png",
-    "imageHighSrc": "cards/me2pt5-292-high.png"
+    "imageHighSrc": "cards/me2pt5-292-high.png",
+    "rules": "You can use this card only if you discard another card from your hand.  Draw cards until you have 6 cards in your hand.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1209",
-    "externalId": null,
+    "externalId": "me2pt5-291",
     "tcgdex_id": "me02.5-291",
     "localId": "291",
     "setCode": "me02.5",
@@ -144,11 +160,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-291-low.png",
-    "imageHighSrc": "cards/me2pt5-291-high.png"
+    "imageHighSrc": "cards/me2pt5-291-high.png",
+    "rules": "You can use this card only if you discard another card from your hand.  Search your deck for up to 4 Lightning Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1208",
-    "externalId": null,
+    "externalId": "me2pt5-290",
     "tcgdex_id": "me02.5-290",
     "localId": "290",
     "setCode": "me02.5",
@@ -177,11 +194,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-290-low.png",
-    "imageHighSrc": "cards/me2pt5-290-high.png"
+    "imageHighSrc": "cards/me2pt5-290-high.png",
+    "attacks": [
+      {
+        "name": "Ryuno Glide",
+        "damage": "330"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1207",
-    "externalId": null,
+    "externalId": "me2pt5-289",
     "tcgdex_id": "me02.5-289",
     "localId": "289",
     "setCode": "me02.5",
@@ -210,11 +234,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-289-low.png",
-    "imageHighSrc": "cards/me2pt5-289-high.png"
+    "imageHighSrc": "cards/me2pt5-289-high.png",
+    "attacks": [
+      {
+        "name": "Metal Stomp",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1206",
-    "externalId": null,
+    "externalId": "me2pt5-288",
     "tcgdex_id": "me02.5-288",
     "localId": "288",
     "setCode": "me02.5",
@@ -243,11 +274,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-288-low.png",
-    "imageHighSrc": "cards/me2pt5-288-high.png"
+    "imageHighSrc": "cards/me2pt5-288-high.png",
+    "attacks": [
+      {
+        "name": "Cruel Arrow",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1205",
-    "externalId": null,
+    "externalId": "me2pt5-287",
     "tcgdex_id": "me02.5-287",
     "localId": "287",
     "setCode": "me02.5",
@@ -276,11 +314,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-287-low.png",
-    "imageHighSrc": "cards/me2pt5-287-high.png"
+    "imageHighSrc": "cards/me2pt5-287-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Bullet",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1204",
-    "externalId": null,
+    "externalId": "me2pt5-286",
     "tcgdex_id": "me02.5-286",
     "localId": "286",
     "setCode": "me02.5",
@@ -309,11 +354,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-286-low.png",
-    "imageHighSrc": "cards/me2pt5-286-high.png"
+    "imageHighSrc": "cards/me2pt5-286-high.png",
+    "attacks": [
+      {
+        "name": "Night Joker",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1203",
-    "externalId": null,
+    "externalId": "me2pt5-285",
     "tcgdex_id": "me02.5-285",
     "localId": "285",
     "setCode": "me02.5",
@@ -342,11 +394,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-285-low.png",
-    "imageHighSrc": "cards/me2pt5-285-high.png"
+    "imageHighSrc": "cards/me2pt5-285-high.png",
+    "attacks": [
+      {
+        "name": "Outlaw Leg",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1202",
-    "externalId": null,
+    "externalId": "me2pt5-284",
     "tcgdex_id": "me02.5-284",
     "localId": "284",
     "setCode": "me02.5",
@@ -375,11 +434,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-284-low.png",
-    "imageHighSrc": "cards/me2pt5-284-high.png"
+    "imageHighSrc": "cards/me2pt5-284-high.png",
+    "attacks": [
+      {
+        "name": "Void Gale",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1201",
-    "externalId": null,
+    "externalId": "me2pt5-283",
     "tcgdex_id": "me02.5-283",
     "localId": "283",
     "setCode": "me02.5",
@@ -408,11 +474,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-283-low.png",
-    "imageHighSrc": "cards/me2pt5-283-high.png"
+    "imageHighSrc": "cards/me2pt5-283-high.png",
+    "attacks": [
+      {
+        "name": "Somersault Dive",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1200",
-    "externalId": null,
+    "externalId": "me2pt5-282",
     "tcgdex_id": "me02.5-282",
     "localId": "282",
     "setCode": "me02.5",
@@ -441,11 +514,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-282-low.png",
-    "imageHighSrc": "cards/me2pt5-282-high.png"
+    "imageHighSrc": "cards/me2pt5-282-high.png",
+    "attacks": [
+      {
+        "name": "Garland Ray",
+        "damage": "120×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1199",
-    "externalId": null,
+    "externalId": "me2pt5-281",
     "tcgdex_id": "me02.5-281",
     "localId": "281",
     "setCode": "me02.5",
@@ -474,11 +554,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-281-low.png",
-    "imageHighSrc": "cards/me2pt5-281-high.png"
+    "imageHighSrc": "cards/me2pt5-281-high.png",
+    "attacks": [
+      {
+        "name": "Erasure Ball",
+        "damage": "160+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1198",
-    "externalId": null,
+    "externalId": "me2pt5-280",
     "tcgdex_id": "me02.5-280",
     "localId": "280",
     "setCode": "me02.5",
@@ -507,11 +594,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-280-low.png",
-    "imageHighSrc": "cards/me2pt5-280-high.png"
+    "imageHighSrc": "cards/me2pt5-280-high.png",
+    "attacks": [
+      {
+        "name": "Full Moon Rondo",
+        "damage": "20+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1197",
-    "externalId": null,
+    "externalId": "me2pt5-279",
     "tcgdex_id": "me02.5-279",
     "localId": "279",
     "setCode": "me02.5",
@@ -540,11 +634,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-279-low.png",
-    "imageHighSrc": "cards/me2pt5-279-high.png"
+    "imageHighSrc": "cards/me2pt5-279-high.png",
+    "attacks": [
+      {
+        "name": "Thunderous Bolt",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1196",
-    "externalId": null,
+    "externalId": "me2pt5-278",
     "tcgdex_id": "me02.5-278",
     "localId": "278",
     "setCode": "me02.5",
@@ -573,11 +674,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-278-low.png",
-    "imageHighSrc": "cards/me2pt5-278-high.png"
+    "imageHighSrc": "cards/me2pt5-278-high.png",
+    "attacks": [
+      {
+        "name": "Split Bomb",
+        "damage": null
+      },
+      {
+        "name": "Disaster Shock",
+        "damage": "190"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1195",
-    "externalId": null,
+    "externalId": "me2pt5-277",
     "tcgdex_id": "me02.5-277",
     "localId": "277",
     "setCode": "me02.5",
@@ -606,11 +718,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-277-low.png",
-    "imageHighSrc": "cards/me2pt5-277-high.png"
+    "imageHighSrc": "cards/me2pt5-277-high.png",
+    "attacks": [
+      {
+        "name": "Topaz Bolt",
+        "damage": "300"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent’s).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1194",
-    "externalId": null,
+    "externalId": "me2pt5-276",
     "tcgdex_id": "me02.5-276",
     "localId": "276",
     "setCode": "me02.5",
@@ -639,11 +758,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-276-low.png",
-    "imageHighSrc": "cards/me2pt5-276-high.png"
+    "imageHighSrc": "cards/me2pt5-276-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1193",
-    "externalId": null,
+    "externalId": "me2pt5-275",
     "tcgdex_id": "me02.5-275",
     "localId": "275",
     "setCode": "me02.5",
@@ -672,11 +798,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-275-low.png",
-    "imageHighSrc": "cards/me2pt5-275-high.png"
+    "imageHighSrc": "cards/me2pt5-275-high.png",
+    "attacks": [
+      {
+        "name": "Resentful Refrain",
+        "damage": "50×"
+      },
+      {
+        "name": "Absolute Snow",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1192",
-    "externalId": null,
+    "externalId": "me2pt5-274",
     "tcgdex_id": "me02.5-274",
     "localId": "274",
     "setCode": "me02.5",
@@ -705,11 +842,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-274-low.png",
-    "imageHighSrc": "cards/me2pt5-274-high.png"
+    "imageHighSrc": "cards/me2pt5-274-high.png",
+    "attacks": [
+      {
+        "name": "Mortal Crunch",
+        "damage": "200+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1191",
-    "externalId": null,
+    "externalId": "me2pt5-273",
     "tcgdex_id": "me02.5-273",
     "localId": "273",
     "setCode": "me02.5",
@@ -738,11 +882,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-273-low.png",
-    "imageHighSrc": "cards/me2pt5-273-high.png"
+    "imageHighSrc": "cards/me2pt5-273-high.png",
+    "attacks": [
+      {
+        "name": "Crimson Blast",
+        "damage": "320"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1190",
-    "externalId": null,
+    "externalId": "me2pt5-272",
     "tcgdex_id": "me02.5-272",
     "localId": "272",
     "setCode": "me02.5",
@@ -771,11 +922,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-272-low.png",
-    "imageHighSrc": "cards/me2pt5-272-high.png"
+    "imageHighSrc": "cards/me2pt5-272-high.png",
+    "attacks": [
+      {
+        "name": "Giant Bouquet",
+        "damage": "70+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1189",
-    "externalId": null,
+    "externalId": "me2pt5-271",
     "tcgdex_id": "me02.5-271",
     "localId": "271",
     "setCode": "me02.5",
@@ -804,11 +962,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-271-low.png",
-    "imageHighSrc": "cards/me2pt5-271-high.png"
+    "imageHighSrc": "cards/me2pt5-271-high.png",
+    "attacks": [
+      {
+        "name": "Ryuno Glide",
+        "damage": "330"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1188",
-    "externalId": null,
+    "externalId": "me2pt5-270",
     "tcgdex_id": "me02.5-270",
     "localId": "270",
     "setCode": "me02.5",
@@ -837,11 +1002,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-270-low.png",
-    "imageHighSrc": "cards/me2pt5-270-high.png"
+    "imageHighSrc": "cards/me2pt5-270-high.png",
+    "attacks": [
+      {
+        "name": "Outlaw Leg",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1187",
-    "externalId": null,
+    "externalId": "me2pt5-269",
     "tcgdex_id": "me02.5-269",
     "localId": "269",
     "setCode": "me02.5",
@@ -870,11 +1042,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-269-low.png",
-    "imageHighSrc": "cards/me2pt5-269-high.png"
+    "imageHighSrc": "cards/me2pt5-269-high.png",
+    "attacks": [
+      {
+        "name": "Void Gale",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1186",
-    "externalId": null,
+    "externalId": "me2pt5-268",
     "tcgdex_id": "me02.5-268",
     "localId": "268",
     "setCode": "me02.5",
@@ -903,11 +1082,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-268-low.png",
-    "imageHighSrc": "cards/me2pt5-268-high.png"
+    "imageHighSrc": "cards/me2pt5-268-high.png",
+    "attacks": [
+      {
+        "name": "Somersault Dive",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1185",
-    "externalId": null,
+    "externalId": "me2pt5-267",
     "tcgdex_id": "me02.5-267",
     "localId": "267",
     "setCode": "me02.5",
@@ -936,11 +1122,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-267-low.png",
-    "imageHighSrc": "cards/me2pt5-267-high.png"
+    "imageHighSrc": "cards/me2pt5-267-high.png",
+    "attacks": [
+      {
+        "name": "Garland Ray",
+        "damage": "120×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1184",
-    "externalId": null,
+    "externalId": "me2pt5-266",
     "tcgdex_id": "me02.5-266",
     "localId": "266",
     "setCode": "me02.5",
@@ -969,11 +1162,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-266-low.png",
-    "imageHighSrc": "cards/me2pt5-266-high.png"
+    "imageHighSrc": "cards/me2pt5-266-high.png",
+    "attacks": [
+      {
+        "name": "Split Bomb",
+        "damage": null
+      },
+      {
+        "name": "Disaster Shock",
+        "damage": "190"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1183",
-    "externalId": null,
+    "externalId": "me2pt5-265",
     "tcgdex_id": "me02.5-265",
     "localId": "265",
     "setCode": "me02.5",
@@ -1002,11 +1206,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-265-low.png",
-    "imageHighSrc": "cards/me2pt5-265-high.png"
+    "imageHighSrc": "cards/me2pt5-265-high.png",
+    "attacks": [
+      {
+        "name": "Resentful Refrain",
+        "damage": "50×"
+      },
+      {
+        "name": "Absolute Snow",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1182",
-    "externalId": null,
+    "externalId": "me2pt5-264",
     "tcgdex_id": "me02.5-264",
     "localId": "264",
     "setCode": "me02.5",
@@ -1029,11 +1244,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-264-low.png",
-    "imageHighSrc": "cards/me2pt5-264-high.png"
+    "imageHighSrc": "cards/me2pt5-264-high.png",
+    "rules": "You can use this card only if you discard 2 other cards from your hand. Search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1181",
-    "externalId": null,
+    "externalId": "me2pt5-263",
     "tcgdex_id": "me02.5-263",
     "localId": "263",
     "setCode": "me02.5",
@@ -1056,11 +1272,12 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/me2pt5-263-low.png",
-    "imageHighSrc": "cards/me2pt5-263-high.png"
+    "imageHighSrc": "cards/me2pt5-263-high.png",
+    "rules": "Search your deck for a Supporter card that has \"Team Rocket\" in its name, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1180",
-    "externalId": null,
+    "externalId": "me2pt5-262",
     "tcgdex_id": "me02.5-262",
     "localId": "262",
     "setCode": "me02.5",
@@ -1083,11 +1300,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-262-low.png",
-    "imageHighSrc": "cards/me2pt5-262-high.png"
+    "imageHighSrc": "cards/me2pt5-262-high.png",
+    "rules": "Attach a Basic Energy card from your discard pile to 1 of your Benched N's Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1179",
-    "externalId": null,
+    "externalId": "me2pt5-261",
     "tcgdex_id": "me02.5-261",
     "localId": "261",
     "setCode": "me02.5",
@@ -1110,11 +1328,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-261-low.png",
-    "imageHighSrc": "cards/me2pt5-261-high.png"
+    "imageHighSrc": "cards/me2pt5-261-high.png",
+    "rules": "Pokémon Tools attached to each Pokémon (both yours and your opponent's) have no effect.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "1178",
-    "externalId": null,
+    "externalId": "me2pt5-260",
     "tcgdex_id": "me02.5-260",
     "localId": "260",
     "setCode": "me02.5",
@@ -1137,11 +1356,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-260-low.png",
-    "imageHighSrc": "cards/me2pt5-260-high.png"
+    "imageHighSrc": "cards/me2pt5-260-high.png",
+    "rules": "You can use this card only if you have any Tera Pokémon in play.  Choose up to 2 of your Benched Colorless Pokémon and attach a Basic Energy card from your discard pile to each of them.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1177",
-    "externalId": null,
+    "externalId": "me2pt5-259",
     "tcgdex_id": "me02.5-259",
     "localId": "259",
     "setCode": "me02.5",
@@ -1164,11 +1384,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-259-low.png",
-    "imageHighSrc": "cards/me2pt5-259-high.png"
+    "imageHighSrc": "cards/me2pt5-259-high.png",
+    "rules": "If you have more Prize cards remaining than your opponent, attacks used by the Pokémon this card is attached to cost Colorless less.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "1176",
-    "externalId": null,
+    "externalId": "me2pt5-258",
     "tcgdex_id": "me02.5-258",
     "localId": "258",
     "setCode": "me02.5",
@@ -1191,11 +1412,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-258-low.png",
-    "imageHighSrc": "cards/me2pt5-258-high.png"
+    "imageHighSrc": "cards/me2pt5-258-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1175",
-    "externalId": null,
+    "externalId": "me2pt5-257",
     "tcgdex_id": "me02.5-257",
     "localId": "257",
     "setCode": "me02.5",
@@ -1218,11 +1440,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-257-low.png",
-    "imageHighSrc": "cards/me2pt5-257-high.png"
+    "imageHighSrc": "cards/me2pt5-257-high.png",
+    "rules": "You can use this card only if you discard another card from your hand.  Search your deck for up to 4 Lightning Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1174",
-    "externalId": null,
+    "externalId": "me2pt5-256",
     "tcgdex_id": "me02.5-256",
     "localId": "256",
     "setCode": "me02.5",
@@ -1245,11 +1468,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-256-low.png",
-    "imageHighSrc": "cards/me2pt5-256-high.png"
+    "imageHighSrc": "cards/me2pt5-256-high.png",
+    "rules": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1173",
-    "externalId": null,
+    "externalId": "me2pt5-255",
     "tcgdex_id": "me02.5-255",
     "localId": "255",
     "setCode": "me02.5",
@@ -1272,11 +1496,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-255-low.png",
-    "imageHighSrc": "cards/me2pt5-255-high.png"
+    "imageHighSrc": "cards/me2pt5-255-high.png",
+    "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1172",
-    "externalId": null,
+    "externalId": "me2pt5-254",
     "tcgdex_id": "me02.5-254",
     "localId": "254",
     "setCode": "me02.5",
@@ -1299,11 +1524,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-254-low.png",
-    "imageHighSrc": "cards/me2pt5-254-high.png"
+    "imageHighSrc": "cards/me2pt5-254-high.png",
+    "rules": "You can use this card only if you have N's Darmanitan, N's Zoroark ex, N's Vanilluxe, N's Klinklang, N's Reshiram, and N's Zekrom in play.  During this turn, if your opponent's Active Pokémon is Knocked Out by damage from an attack used by your N's Pokémon, take 3 more Prize cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1171",
-    "externalId": null,
+    "externalId": "me2pt5-253",
     "tcgdex_id": "me02.5-253",
     "localId": "253",
     "setCode": "me02.5",
@@ -1332,11 +1558,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-253-low.png",
-    "imageHighSrc": "cards/me2pt5-253-high.png"
+    "imageHighSrc": "cards/me2pt5-253-high.png",
+    "attacks": [
+      {
+        "name": "Kaleidowaltz",
+        "damage": null
+      },
+      {
+        "name": "Ear Force",
+        "damage": "20+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1170",
-    "externalId": null,
+    "externalId": "me2pt5-252",
     "tcgdex_id": "me02.5-252",
     "localId": "252",
     "setCode": "me02.5",
@@ -1365,11 +1602,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-252-low.png",
-    "imageHighSrc": "cards/me2pt5-252-high.png"
+    "imageHighSrc": "cards/me2pt5-252-high.png",
+    "attacks": [
+      {
+        "name": "Big Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Flopping Trap",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1169",
-    "externalId": null,
+    "externalId": "me2pt5-251",
     "tcgdex_id": "me02.5-251",
     "localId": "251",
     "setCode": "me02.5",
@@ -1398,11 +1646,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-251-low.png",
-    "imageHighSrc": "cards/me2pt5-251-high.png"
+    "imageHighSrc": "cards/me2pt5-251-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Magical Leaf",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1168",
-    "externalId": null,
+    "externalId": "me2pt5-250",
     "tcgdex_id": "me02.5-250",
     "localId": "250",
     "setCode": "me02.5",
@@ -1431,11 +1690,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-250-low.png",
-    "imageHighSrc": "cards/me2pt5-250-high.png"
+    "imageHighSrc": "cards/me2pt5-250-high.png",
+    "attacks": [
+      {
+        "name": "Assault Landing",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1167",
-    "externalId": null,
+    "externalId": "me2pt5-249",
     "tcgdex_id": "me02.5-249",
     "localId": "249",
     "setCode": "me02.5",
@@ -1464,11 +1729,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-249-low.png",
-    "imageHighSrc": "cards/me2pt5-249-high.png"
+    "imageHighSrc": "cards/me2pt5-249-high.png",
+    "attacks": [
+      {
+        "name": "Facade",
+        "damage": "60+"
+      },
+      {
+        "name": "Feathery Strike",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "1166",
-    "externalId": null,
+    "externalId": "me2pt5-248",
     "tcgdex_id": "me02.5-248",
     "localId": "248",
     "setCode": "me02.5",
@@ -1497,11 +1772,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-248-low.png",
-    "imageHighSrc": "cards/me2pt5-248-high.png"
+    "imageHighSrc": "cards/me2pt5-248-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Headbutt",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1165",
-    "externalId": null,
+    "externalId": "me2pt5-247",
     "tcgdex_id": "me02.5-247",
     "localId": "247",
     "setCode": "me02.5",
@@ -1530,11 +1811,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-247-low.png",
-    "imageHighSrc": "cards/me2pt5-247-high.png"
+    "imageHighSrc": "cards/me2pt5-247-high.png",
+    "attacks": [
+      {
+        "name": "Petty Grudge",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1164",
-    "externalId": null,
+    "externalId": "me2pt5-246",
     "tcgdex_id": "me02.5-246",
     "localId": "246",
     "setCode": "me02.5",
@@ -1563,11 +1854,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-246-low.png",
-    "imageHighSrc": "cards/me2pt5-246-high.png"
+    "imageHighSrc": "cards/me2pt5-246-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "1163",
-    "externalId": null,
+    "externalId": "me2pt5-245",
     "tcgdex_id": "me02.5-245",
     "localId": "245",
     "setCode": "me02.5",
@@ -1596,11 +1897,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-245-low.png",
-    "imageHighSrc": "cards/me2pt5-245-high.png"
+    "imageHighSrc": "cards/me2pt5-245-high.png",
+    "attacks": [
+      {
+        "name": "Scarring Shout",
+        "damage": "70×"
+      },
+      {
+        "name": "Punk Smash",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "1162",
-    "externalId": null,
+    "externalId": "me2pt5-244",
     "tcgdex_id": "me02.5-244",
     "localId": "244",
     "setCode": "me02.5",
@@ -1629,11 +1940,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-244-low.png",
-    "imageHighSrc": "cards/me2pt5-244-high.png"
+    "imageHighSrc": "cards/me2pt5-244-high.png",
+    "attacks": [
+      {
+        "name": "Raging Curse",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "1161",
-    "externalId": null,
+    "externalId": "me2pt5-243",
     "tcgdex_id": "me02.5-243",
     "localId": "243",
     "setCode": "me02.5",
@@ -1662,11 +1979,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-243-low.png",
-    "imageHighSrc": "cards/me2pt5-243-high.png"
+    "imageHighSrc": "cards/me2pt5-243-high.png",
+    "attacks": [
+      {
+        "name": "Kick Away",
+        "damage": "50"
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "1160",
-    "externalId": null,
+    "externalId": "me2pt5-242",
     "tcgdex_id": "me02.5-242",
     "localId": "242",
     "setCode": "me02.5",
@@ -1695,11 +2022,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-242-low.png",
-    "imageHighSrc": "cards/me2pt5-242-high.png"
+    "imageHighSrc": "cards/me2pt5-242-high.png",
+    "attacks": [
+      {
+        "name": "Counter Jewel",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "1159",
-    "externalId": null,
+    "externalId": "me2pt5-241",
     "tcgdex_id": "me02.5-241",
     "localId": "241",
     "setCode": "me02.5",
@@ -1728,11 +2061,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-241-low.png",
-    "imageHighSrc": "cards/me2pt5-241-high.png"
+    "imageHighSrc": "cards/me2pt5-241-high.png",
+    "attacks": [
+      {
+        "name": "Seventh Kick",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "1158",
-    "externalId": null,
+    "externalId": "me2pt5-240",
     "tcgdex_id": "me02.5-240",
     "localId": "240",
     "setCode": "me02.5",
@@ -1761,11 +2100,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-240-low.png",
-    "imageHighSrc": "cards/me2pt5-240-high.png"
+    "imageHighSrc": "cards/me2pt5-240-high.png",
+    "attacks": [
+      {
+        "name": "Spin and Draw",
+        "damage": null
+      },
+      {
+        "name": "Low Kick",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1157",
-    "externalId": null,
+    "externalId": "me2pt5-239",
     "tcgdex_id": "me02.5-239",
     "localId": "239",
     "setCode": "me02.5",
@@ -1794,11 +2143,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-239-low.png",
-    "imageHighSrc": "cards/me2pt5-239-high.png"
+    "imageHighSrc": "cards/me2pt5-239-high.png",
+    "attacks": [
+      {
+        "name": "Mud Shot",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1156",
-    "externalId": null,
+    "externalId": "me2pt5-238",
     "tcgdex_id": "me02.5-238",
     "localId": "238",
     "setCode": "me02.5",
@@ -1827,11 +2182,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-238-low.png",
-    "imageHighSrc": "cards/me2pt5-238-high.png"
+    "imageHighSrc": "cards/me2pt5-238-high.png",
+    "attacks": [
+      {
+        "name": "Gemstone Mimicry",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1155",
-    "externalId": null,
+    "externalId": "me2pt5-237",
     "tcgdex_id": "me02.5-237",
     "localId": "237",
     "setCode": "me02.5",
@@ -1860,11 +2221,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-237-low.png",
-    "imageHighSrc": "cards/me2pt5-237-high.png"
+    "imageHighSrc": "cards/me2pt5-237-high.png",
+    "attacks": [
+      {
+        "name": "Horrifying Revenge",
+        "damage": "30+"
+      },
+      {
+        "name": "Corner",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "1154",
-    "externalId": null,
+    "externalId": "me2pt5-236",
     "tcgdex_id": "me02.5-236",
     "localId": "236",
     "setCode": "me02.5",
@@ -1893,11 +2264,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-236-low.png",
-    "imageHighSrc": "cards/me2pt5-236-high.png"
+    "imageHighSrc": "cards/me2pt5-236-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "40"
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1153",
-    "externalId": null,
+    "externalId": "me2pt5-235",
     "tcgdex_id": "me02.5-235",
     "localId": "235",
     "setCode": "me02.5",
@@ -1926,11 +2307,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-235-low.png",
-    "imageHighSrc": "cards/me2pt5-235-high.png"
+    "imageHighSrc": "cards/me2pt5-235-high.png",
+    "attacks": [
+      {
+        "name": "Speed Wing",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "1152",
-    "externalId": null,
+    "externalId": "me2pt5-234",
     "tcgdex_id": "me02.5-234",
     "localId": "234",
     "setCode": "me02.5",
@@ -1959,11 +2346,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-234-low.png",
-    "imageHighSrc": "cards/me2pt5-234-high.png"
+    "imageHighSrc": "cards/me2pt5-234-high.png",
+    "attacks": [
+      {
+        "name": "Cursed Words",
+        "damage": null
+      },
+      {
+        "name": "Spooky Shot",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1151",
-    "externalId": null,
+    "externalId": "me2pt5-233",
     "tcgdex_id": "me02.5-233",
     "localId": "233",
     "setCode": "me02.5",
@@ -1992,11 +2389,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-233-low.png",
-    "imageHighSrc": "cards/me2pt5-233-high.png"
+    "imageHighSrc": "cards/me2pt5-233-high.png",
+    "attacks": [
+      {
+        "name": "Ascension",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1150",
-    "externalId": null,
+    "externalId": "me2pt5-232",
     "tcgdex_id": "me02.5-232",
     "localId": "232",
     "setCode": "me02.5",
@@ -2025,11 +2428,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-232-low.png",
-    "imageHighSrc": "cards/me2pt5-232-high.png"
+    "imageHighSrc": "cards/me2pt5-232-high.png",
+    "attacks": [
+      {
+        "name": "Hide",
+        "damage": null
+      },
+      {
+        "name": "Flop",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1149",
-    "externalId": null,
+    "externalId": "me2pt5-231",
     "tcgdex_id": "me02.5-231",
     "localId": "231",
     "setCode": "me02.5",
@@ -2058,11 +2471,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-231-low.png",
-    "imageHighSrc": "cards/me2pt5-231-high.png"
+    "imageHighSrc": "cards/me2pt5-231-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1148",
-    "externalId": null,
+    "externalId": "me2pt5-230",
     "tcgdex_id": "me02.5-230",
     "localId": "230",
     "setCode": "me02.5",
@@ -2091,11 +2510,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-230-low.png",
-    "imageHighSrc": "cards/me2pt5-230-high.png"
+    "imageHighSrc": "cards/me2pt5-230-high.png",
+    "attacks": [
+      {
+        "name": "Volt Switch",
+        "damage": "90"
+      },
+      {
+        "name": "Sparking Strike",
+        "damage": "240"
+      }
+    ]
   },
   {
     "masterCardId": "1147",
-    "externalId": null,
+    "externalId": "me2pt5-229",
     "tcgdex_id": "me02.5-229",
     "localId": "229",
     "setCode": "me02.5",
@@ -2124,11 +2553,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-229-low.png",
-    "imageHighSrc": "cards/me2pt5-229-high.png"
+    "imageHighSrc": "cards/me2pt5-229-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Bolt",
+        "damage": "70×"
+      }
+    ]
   },
   {
     "masterCardId": "1146",
-    "externalId": null,
+    "externalId": "me2pt5-228",
     "tcgdex_id": "me02.5-228",
     "localId": "228",
     "setCode": "me02.5",
@@ -2157,11 +2592,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-228-low.png",
-    "imageHighSrc": "cards/me2pt5-228-high.png"
+    "imageHighSrc": "cards/me2pt5-228-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "40"
+      },
+      {
+        "name": "Hail Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1145",
-    "externalId": null,
+    "externalId": "me2pt5-227",
     "tcgdex_id": "me02.5-227",
     "localId": "227",
     "setCode": "me02.5",
@@ -2190,11 +2635,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-227-low.png",
-    "imageHighSrc": "cards/me2pt5-227-high.png"
+    "imageHighSrc": "cards/me2pt5-227-high.png",
+    "attacks": [
+      {
+        "name": "Chilly",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1144",
-    "externalId": null,
+    "externalId": "me2pt5-226",
     "tcgdex_id": "me02.5-226",
     "localId": "226",
     "setCode": "me02.5",
@@ -2223,11 +2674,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-226-low.png",
-    "imageHighSrc": "cards/me2pt5-226-high.png"
+    "imageHighSrc": "cards/me2pt5-226-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1143",
-    "externalId": null,
+    "externalId": "me2pt5-225",
     "tcgdex_id": "me02.5-225",
     "localId": "225",
     "setCode": "me02.5",
@@ -2256,11 +2713,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-225-low.png",
-    "imageHighSrc": "cards/me2pt5-225-high.png"
+    "imageHighSrc": "cards/me2pt5-225-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1142",
-    "externalId": null,
+    "externalId": "me2pt5-224",
     "tcgdex_id": "me02.5-224",
     "localId": "224",
     "setCode": "me02.5",
@@ -2289,11 +2752,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-224-low.png",
-    "imageHighSrc": "cards/me2pt5-224-high.png"
+    "imageHighSrc": "cards/me2pt5-224-high.png",
+    "attacks": [
+      {
+        "name": "Sudden Scorching",
+        "damage": null
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "1141",
-    "externalId": null,
+    "externalId": "me2pt5-223",
     "tcgdex_id": "me02.5-223",
     "localId": "223",
     "setCode": "me02.5",
@@ -2322,11 +2795,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-223-low.png",
-    "imageHighSrc": "cards/me2pt5-223-high.png"
+    "imageHighSrc": "cards/me2pt5-223-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1140",
-    "externalId": null,
+    "externalId": "me2pt5-222",
     "tcgdex_id": "me02.5-222",
     "localId": "222",
     "setCode": "me02.5",
@@ -2355,11 +2834,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-222-low.png",
-    "imageHighSrc": "cards/me2pt5-222-high.png"
+    "imageHighSrc": "cards/me2pt5-222-high.png",
+    "attacks": [
+      {
+        "name": "Lava Burst",
+        "damage": "70×"
+      }
+    ]
   },
   {
     "masterCardId": "1139",
-    "externalId": null,
+    "externalId": "me2pt5-221",
     "tcgdex_id": "me02.5-221",
     "localId": "221",
     "setCode": "me02.5",
@@ -2388,11 +2873,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-221-low.png",
-    "imageHighSrc": "cards/me2pt5-221-high.png"
+    "imageHighSrc": "cards/me2pt5-221-high.png",
+    "attacks": [
+      {
+        "name": "Itchy Pollen",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1138",
-    "externalId": null,
+    "externalId": "me2pt5-220",
     "tcgdex_id": "me02.5-220",
     "localId": "220",
     "setCode": "me02.5",
@@ -2421,11 +2912,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-220-low.png",
-    "imageHighSrc": "cards/me2pt5-220-high.png"
+    "imageHighSrc": "cards/me2pt5-220-high.png",
+    "attacks": [
+      {
+        "name": "Twilight Poison",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "1137",
-    "externalId": null,
+    "externalId": "me2pt5-219",
     "tcgdex_id": "me02.5-219",
     "localId": "219",
     "setCode": "me02.5",
@@ -2454,11 +2951,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-219-low.png",
-    "imageHighSrc": "cards/me2pt5-219-high.png"
+    "imageHighSrc": "cards/me2pt5-219-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": "40"
+      },
+      {
+        "name": "Energy Straw",
+        "damage": "80×"
+      }
+    ]
   },
   {
     "masterCardId": "1136",
-    "externalId": null,
+    "externalId": "me2pt5-218",
     "tcgdex_id": "me02.5-218",
     "localId": "218",
     "setCode": "me02.5",
@@ -2487,11 +2994,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-218-low.png",
-    "imageHighSrc": "cards/me2pt5-218-high.png"
+    "imageHighSrc": "cards/me2pt5-218-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1135",
-    "externalId": null,
+    "externalId": "me2pt5-217",
     "tcgdex_id": "me02.5-217",
     "localId": "217",
     "setCode": "me02.5",
@@ -2514,11 +3027,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-217-low.png",
-    "imageHighSrc": "cards/me2pt5-217-high.png"
+    "imageHighSrc": "cards/me2pt5-217-high.png",
+    "rules": "This card can only be attached to a Team Rocket's Pokémon. If this card is attached to anything other than a Team Rocket's Pokémon, discard this card.  As long as this card is attached to a Pokémon, it provides 2 in any combination of Psychic Energy and Darkness Energy."
   },
   {
     "masterCardId": "1134",
-    "externalId": null,
+    "externalId": "me2pt5-216",
     "tcgdex_id": "me02.5-216",
     "localId": "216",
     "setCode": "me02.5",
@@ -2541,11 +3055,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-216-low.png",
-    "imageHighSrc": "cards/me2pt5-216-high.png"
+    "imageHighSrc": "cards/me2pt5-216-high.png",
+    "rules": "As long as this card is attached to a Pokémon, it provides Colorless Energy.  If this card is attached to a Basic Pokémon, this card provides every type of Energy but provides only 1 Energy at a time."
   },
   {
     "masterCardId": "1133",
-    "externalId": null,
+    "externalId": "me2pt5-215",
     "tcgdex_id": "me02.5-215",
     "localId": "215",
     "setCode": "me02.5",
@@ -2568,11 +3083,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-215-low.png",
-    "imageHighSrc": "cards/me2pt5-215-high.png"
+    "imageHighSrc": "cards/me2pt5-215-high.png",
+    "rules": "Look at the top 6 cards of your deck and attach a Basic Energy card you find there to 1 of your Pokémon. Shuffle the other cards back into your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1132",
-    "externalId": null,
+    "externalId": "me2pt5-214",
     "tcgdex_id": "me02.5-214",
     "localId": "214",
     "setCode": "me02.5",
@@ -2595,11 +3111,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-214-low.png",
-    "imageHighSrc": "cards/me2pt5-214-high.png"
+    "imageHighSrc": "cards/me2pt5-214-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1131",
-    "externalId": null,
+    "externalId": "me2pt5-213",
     "tcgdex_id": "me02.5-213",
     "localId": "213",
     "setCode": "me02.5",
@@ -2622,11 +3139,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-213-low.png",
-    "imageHighSrc": "cards/me2pt5-213-high.png"
+    "imageHighSrc": "cards/me2pt5-213-high.png",
+    "rules": "You can use this card only if you discard 2 other cards from your hand. Search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1130",
-    "externalId": null,
+    "externalId": "me2pt5-212",
     "tcgdex_id": "me02.5-212",
     "localId": "212",
     "setCode": "me02.5",
@@ -2649,11 +3167,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-212-low.png",
-    "imageHighSrc": "cards/me2pt5-212-high.png"
+    "imageHighSrc": "cards/me2pt5-212-high.png",
+    "rules": "Choose up to 2 Pokémon Tools attached to Pokémon (yours or your opponent's) and discard them.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1129",
-    "externalId": null,
+    "externalId": "me2pt5-211",
     "tcgdex_id": "me02.5-211",
     "localId": "211",
     "setCode": "me02.5",
@@ -2676,11 +3195,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-211-low.png",
-    "imageHighSrc": "cards/me2pt5-211-high.png"
+    "imageHighSrc": "cards/me2pt5-211-high.png",
+    "rules": "The Dragon Pokémon this card is attached to takes 50 less damage from attacks from your opponent's Grass, Fire, Water, or Lightning Pokémon (after applying Weakness and Resistance).\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "1128",
-    "externalId": null,
+    "externalId": "me2pt5-210",
     "tcgdex_id": "me02.5-210",
     "localId": "210",
     "setCode": "me02.5",
@@ -2703,11 +3223,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-210-low.png",
-    "imageHighSrc": "cards/me2pt5-210-high.png"
+    "imageHighSrc": "cards/me2pt5-210-high.png",
+    "rules": "Colorless Pokémon in play (both yours and your opponent's) have no Abilities.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "1127",
-    "externalId": null,
+    "externalId": "me2pt5-209",
     "tcgdex_id": "me02.5-209",
     "localId": "209",
     "setCode": "me02.5",
@@ -2730,11 +3251,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-209-low.png",
-    "imageHighSrc": "cards/me2pt5-209-high.png"
+    "imageHighSrc": "cards/me2pt5-209-high.png",
+    "rules": "Search your deck for a Supporter card that has \"Team Rocket\" in its name, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1126",
-    "externalId": null,
+    "externalId": "me2pt5-208",
     "tcgdex_id": "me02.5-208",
     "localId": "208",
     "setCode": "me02.5",
@@ -2757,11 +3279,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-208-low.png",
-    "imageHighSrc": "cards/me2pt5-208-high.png"
+    "imageHighSrc": "cards/me2pt5-208-high.png",
+    "rules": "If you go first, you may use this card during your first turn.  Search your deck for up to 3 Basic Team Rocket's Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1125",
-    "externalId": null,
+    "externalId": "me2pt5-207",
     "tcgdex_id": "me02.5-207",
     "localId": "207",
     "setCode": "me02.5",
@@ -2784,11 +3307,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-207-low.png",
-    "imageHighSrc": "cards/me2pt5-207-high.png"
+    "imageHighSrc": "cards/me2pt5-207-high.png",
+    "rules": "Search your deck for a Trainer card, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1124",
-    "externalId": null,
+    "externalId": "me2pt5-206",
     "tcgdex_id": "me02.5-206",
     "localId": "206",
     "setCode": "me02.5",
@@ -2813,11 +3337,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-206-low.png",
-    "imageHighSrc": "cards/me2pt5-206-high.png"
+    "imageHighSrc": "cards/me2pt5-206-high.png",
+    "rules": "If the Team Rocket's Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Team Rocket's Pokémon is Knocked Out), the Attacking Pokémon is now Asleep.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "1123",
-    "externalId": null,
+    "externalId": "me2pt5-205",
     "tcgdex_id": "me02.5-205",
     "localId": "205",
     "setCode": "me02.5",
@@ -2840,11 +3365,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-205-low.png",
-    "imageHighSrc": "cards/me2pt5-205-high.png"
+    "imageHighSrc": "cards/me2pt5-205-high.png",
+    "rules": "Flip a coin. If heads, search your deck for an Evolution Team Rocket's Pokémon, reveal it, and put it into your hand. If tails, search your deck for a Basic Team Rocket's Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1122",
-    "externalId": null,
+    "externalId": "me2pt5-204",
     "tcgdex_id": "me02.5-204",
     "localId": "204",
     "setCode": "me02.5",
@@ -2867,11 +3393,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-204-low.png",
-    "imageHighSrc": "cards/me2pt5-204-high.png"
+    "imageHighSrc": "cards/me2pt5-204-high.png",
+    "rules": "Switch your Active Team Rocket's Pokémon with 1 of your Benched Team Rocket's Pokémon. If you do, switch in 1 of your opponent's Benched Pokémon to the Active Spot.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1121",
-    "externalId": null,
+    "externalId": "me2pt5-203",
     "tcgdex_id": "me02.5-203",
     "localId": "203",
     "setCode": "me02.5",
@@ -2894,11 +3421,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-203-low.png",
-    "imageHighSrc": "cards/me2pt5-203-high.png"
+    "imageHighSrc": "cards/me2pt5-203-high.png",
+    "rules": "Once during each player's turn, if they played a Supporter card that has \"Team Rocket\" in its name from their hand this turn, they may draw 2 cards.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "1120",
-    "externalId": null,
+    "externalId": "me2pt5-202",
     "tcgdex_id": "me02.5-202",
     "localId": "202",
     "setCode": "me02.5",
@@ -2921,11 +3449,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-202-low.png",
-    "imageHighSrc": "cards/me2pt5-202-high.png"
+    "imageHighSrc": "cards/me2pt5-202-high.png",
+    "rules": "Draw cards until you have 5 cards in your hand. If all of your Pokémon in play are Team Rocket's Pokémon, draw cards until you have 8 cards in your hand instead.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1119",
-    "externalId": null,
+    "externalId": "me2pt5-201",
     "tcgdex_id": "me02.5-201",
     "localId": "201",
     "setCode": "me02.5",
@@ -2948,11 +3477,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-201-low.png",
-    "imageHighSrc": "cards/me2pt5-201-high.png"
+    "imageHighSrc": "cards/me2pt5-201-high.png",
+    "rules": "You can use this card only if any of your Team Rocket's Pokémon were Knocked Out during your opponent's last turn.  Each player shuffles their hand into their deck. Then, you draw 5 cards, and your opponent draws 3 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1118",
-    "externalId": null,
+    "externalId": "me2pt5-200",
     "tcgdex_id": "me02.5-200",
     "localId": "200",
     "setCode": "me02.5",
@@ -2975,11 +3505,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-200-low.png",
-    "imageHighSrc": "cards/me2pt5-200-high.png"
+    "imageHighSrc": "cards/me2pt5-200-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon. If you do, draw cards until you have 5 cards in your hand.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1117",
-    "externalId": null,
+    "externalId": "me2pt5-199",
     "tcgdex_id": "me02.5-199",
     "localId": "199",
     "setCode": "me02.5",
@@ -3002,11 +3533,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-199-low.png",
-    "imageHighSrc": "cards/me2pt5-199-high.png"
+    "imageHighSrc": "cards/me2pt5-199-high.png",
+    "rules": "During this turn, attacks used by your Fighting Pokémon do 30 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1116",
-    "externalId": null,
+    "externalId": "me2pt5-198",
     "tcgdex_id": "me02.5-198",
     "localId": "198",
     "setCode": "me02.5",
@@ -3029,11 +3561,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-198-low.png",
-    "imageHighSrc": "cards/me2pt5-198-high.png"
+    "imageHighSrc": "cards/me2pt5-198-high.png",
+    "rules": "Search your deck for a Pokémon that doesn't have a Rule Box, reveal it, and put it into your hand. Then, shuffle your deck. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1115",
-    "externalId": null,
+    "externalId": "me2pt5-197",
     "tcgdex_id": "me02.5-197",
     "localId": "197",
     "setCode": "me02.5",
@@ -3056,11 +3589,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-197-low.png",
-    "imageHighSrc": "cards/me2pt5-197-high.png"
+    "imageHighSrc": "cards/me2pt5-197-high.png",
+    "rules": "Attacks used by each Tera Pokémon in play (both yours and your opponent's) cost Colorless more.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "1114",
-    "externalId": null,
+    "externalId": "me2pt5-196",
     "tcgdex_id": "me02.5-196",
     "localId": "196",
     "setCode": "me02.5",
@@ -3083,11 +3617,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-196-low.png",
-    "imageHighSrc": "cards/me2pt5-196-high.png"
+    "imageHighSrc": "cards/me2pt5-196-high.png",
+    "rules": "Put a Pokémon or a Basic Energy card from your discard pile into your hand.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1113",
-    "externalId": null,
+    "externalId": "me2pt5-195",
     "tcgdex_id": "me02.5-195",
     "localId": "195",
     "setCode": "me02.5",
@@ -3110,11 +3645,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-195-low.png",
-    "imageHighSrc": "cards/me2pt5-195-high.png"
+    "imageHighSrc": "cards/me2pt5-195-high.png",
+    "rules": "Attach a Basic Energy card from your discard pile to 1 of your Benched N's Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1112",
-    "externalId": null,
+    "externalId": "me2pt5-194",
     "tcgdex_id": "me02.5-194",
     "localId": "194",
     "setCode": "me02.5",
@@ -3137,11 +3673,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-194-low.png",
-    "imageHighSrc": "cards/me2pt5-194-high.png"
+    "imageHighSrc": "cards/me2pt5-194-high.png",
+    "rules": "Once during each player's turn, that player may discard an Energy card from their hand in order to draw cards until they have as many cards in their hand as they have Psychic Pokémon in play.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "1111",
-    "externalId": null,
+    "externalId": "me2pt5-193",
     "tcgdex_id": "me02.5-193",
     "localId": "193",
     "setCode": "me02.5",
@@ -3164,11 +3701,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-193-low.png",
-    "imageHighSrc": "cards/me2pt5-193-high.png"
+    "imageHighSrc": "cards/me2pt5-193-high.png",
+    "rules": "Search your deck for a Mega Evolution Pokémon ex, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1110",
-    "externalId": null,
+    "externalId": "me2pt5-192",
     "tcgdex_id": "me02.5-192",
     "localId": "192",
     "setCode": "me02.5",
@@ -3191,11 +3729,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-192-low.png",
-    "imageHighSrc": "cards/me2pt5-192-high.png"
+    "imageHighSrc": "cards/me2pt5-192-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw 6 cards. If you have exactly 6 Prize cards remaining, draw 8 cards instead.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1109",
-    "externalId": null,
+    "externalId": "me2pt5-191",
     "tcgdex_id": "me02.5-191",
     "localId": "191",
     "setCode": "me02.5",
@@ -3218,11 +3757,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-191-low.png",
-    "imageHighSrc": "cards/me2pt5-191-high.png"
+    "imageHighSrc": "cards/me2pt5-191-high.png",
+    "rules": "Attacks used by the Pikachu ex this card is attached to do 50 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "1108",
-    "externalId": null,
+    "externalId": "me2pt5-190",
     "tcgdex_id": "me02.5-190",
     "localId": "190",
     "setCode": "me02.5",
@@ -3245,11 +3785,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-190-low.png",
-    "imageHighSrc": "cards/me2pt5-190-high.png"
+    "imageHighSrc": "cards/me2pt5-190-high.png",
+    "rules": "You can use this card only if you discard another card from your hand.  Draw cards until you have 6 cards in your hand.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1107",
-    "externalId": null,
+    "externalId": "me2pt5-189",
     "tcgdex_id": "me02.5-189",
     "localId": "189",
     "setCode": "me02.5",
@@ -3272,11 +3813,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-189-low.png",
-    "imageHighSrc": "cards/me2pt5-189-high.png"
+    "imageHighSrc": "cards/me2pt5-189-high.png",
+    "rules": "You can use this card only if you have any Tera Pokémon in play.  Choose up to 2 of your Benched Colorless Pokémon and attach a Basic Energy card from your discard pile to each of them.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1106",
-    "externalId": null,
+    "externalId": "me2pt5-188",
     "tcgdex_id": "me02.5-188",
     "localId": "188",
     "setCode": "me02.5",
@@ -3299,11 +3841,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-188-low.png",
-    "imageHighSrc": "cards/me2pt5-188-high.png"
+    "imageHighSrc": "cards/me2pt5-188-high.png",
+    "rules": "Each player's Grass Pokémon can evolve into Grass Pokémon during the turn they play those Pokémon, except during their first turn.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "1105",
-    "externalId": null,
+    "externalId": "me2pt5-187",
     "tcgdex_id": "me02.5-187",
     "localId": "187",
     "setCode": "me02.5",
@@ -3326,11 +3869,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-187-low.png",
-    "imageHighSrc": "cards/me2pt5-187-high.png"
+    "imageHighSrc": "cards/me2pt5-187-high.png",
+    "rules": "Search your deck for a Basic Fighting Energy card or a Basic Fighting Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1104",
-    "externalId": null,
+    "externalId": "me2pt5-186",
     "tcgdex_id": "me02.5-186",
     "localId": "186",
     "setCode": "me02.5",
@@ -3353,11 +3897,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-186-low.png",
-    "imageHighSrc": "cards/me2pt5-186-high.png"
+    "imageHighSrc": "cards/me2pt5-186-high.png",
+    "rules": "If you have more Prize cards remaining than your opponent, attacks used by the Pokémon this card is attached to cost Colorless less.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "1103",
-    "externalId": null,
+    "externalId": "me2pt5-185",
     "tcgdex_id": "me02.5-185",
     "localId": "185",
     "setCode": "me02.5",
@@ -3380,11 +3925,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-185-low.png",
-    "imageHighSrc": "cards/me2pt5-185-high.png"
+    "imageHighSrc": "cards/me2pt5-185-high.png",
+    "rules": "You can use this card only if you discard another card from your hand.  Search your deck for up to 4 Lightning Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1102",
-    "externalId": null,
+    "externalId": "me2pt5-184",
     "tcgdex_id": "me02.5-184",
     "localId": "184",
     "setCode": "me02.5",
@@ -3407,11 +3953,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-184-low.png",
-    "imageHighSrc": "cards/me2pt5-184-high.png"
+    "imageHighSrc": "cards/me2pt5-184-high.png",
+    "rules": "Search your deck for up to 2 Basic Pokémon with 70 HP or less and put them onto your Bench. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "1101",
-    "externalId": null,
+    "externalId": "me2pt5-183",
     "tcgdex_id": "me02.5-183",
     "localId": "183",
     "setCode": "me02.5",
@@ -3434,11 +3981,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-183-low.png",
-    "imageHighSrc": "cards/me2pt5-183-high.png"
+    "imageHighSrc": "cards/me2pt5-183-high.png",
+    "rules": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1100",
-    "externalId": null,
+    "externalId": "me2pt5-182",
     "tcgdex_id": "me02.5-182",
     "localId": "182",
     "setCode": "me02.5",
@@ -3461,11 +4009,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-182-low.png",
-    "imageHighSrc": "cards/me2pt5-182-high.png"
+    "imageHighSrc": "cards/me2pt5-182-high.png",
+    "rules": "You can use this card only if you have N's Darmanitan, N's Zoroark ex, N's Vanilluxe, N's Klinklang, N's Reshiram, and N's Zekrom in play.  During this turn, if your opponent's Active Pokémon is Knocked Out by damage from an attack used by your N's Pokémon, take 3 more Prize cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1099",
-    "externalId": null,
+    "externalId": "me2pt5-181",
     "tcgdex_id": "me02.5-181",
     "localId": "181",
     "setCode": "me02.5",
@@ -3488,11 +4037,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-181-low.png",
-    "imageHighSrc": "cards/me2pt5-181-high.png"
+    "imageHighSrc": "cards/me2pt5-181-high.png",
+    "rules": "The Retreat Cost of the Pokémon this card is attached to is ColorlessColorless less.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "1098",
-    "externalId": null,
+    "externalId": "me2pt5-180",
     "tcgdex_id": "me02.5-180",
     "localId": "180",
     "setCode": "me02.5",
@@ -3515,11 +4065,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-180-low.png",
-    "imageHighSrc": "cards/me2pt5-180-high.png"
+    "imageHighSrc": "cards/me2pt5-180-high.png",
+    "rules": "You can use this card only if your opponent has 2 or fewer Prize cards remaining.  Choose 1 of your Pokémon in play. During your opponent's next turn, prevent all damage from and effects of attacks done to that Pokémon by your opponent's Pokémon ex.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "1097",
-    "externalId": null,
+    "externalId": "me2pt5-179",
     "tcgdex_id": "me02.5-179",
     "localId": "179",
     "setCode": "me02.5",
@@ -3548,11 +4099,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-179-low.png",
-    "imageHighSrc": "cards/me2pt5-179-high.png"
+    "imageHighSrc": "cards/me2pt5-179-high.png",
+    "attacks": [
+      {
+        "name": "Unified Beatdown",
+        "damage": "30×"
+      },
+      {
+        "name": "Crown Opal",
+        "damage": "180"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent’s).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1096",
-    "externalId": null,
+    "externalId": "me2pt5-178",
     "tcgdex_id": "me02.5-178",
     "localId": "178",
     "setCode": "me02.5",
@@ -3581,11 +4143,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-178-low.png",
-    "imageHighSrc": "cards/me2pt5-178-high.png"
+    "imageHighSrc": "cards/me2pt5-178-high.png",
+    "attacks": [
+      {
+        "name": "Prism Charge",
+        "damage": null
+      },
+      {
+        "name": "Hard Tackle",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "1095",
-    "externalId": null,
+    "externalId": "me2pt5-177",
     "tcgdex_id": "me02.5-177",
     "localId": "177",
     "setCode": "me02.5",
@@ -3614,11 +4186,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-177-low.png",
-    "imageHighSrc": "cards/me2pt5-177-high.png"
+    "imageHighSrc": "cards/me2pt5-177-high.png",
+    "attacks": [
+      {
+        "name": "Fickle Spitting",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "1094",
-    "externalId": null,
+    "externalId": "me2pt5-176",
     "tcgdex_id": "me02.5-176",
     "localId": "176",
     "setCode": "me02.5",
@@ -3647,11 +4225,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-176-low.png",
-    "imageHighSrc": "cards/me2pt5-176-high.png"
+    "imageHighSrc": "cards/me2pt5-176-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "50"
+      },
+      {
+        "name": "Dragon Strike",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "1093",
-    "externalId": null,
+    "externalId": "me2pt5-175",
     "tcgdex_id": "me02.5-175",
     "localId": "175",
     "setCode": "me02.5",
@@ -3680,11 +4268,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-175-low.png",
-    "imageHighSrc": "cards/me2pt5-175-high.png"
+    "imageHighSrc": "cards/me2pt5-175-high.png",
+    "attacks": [
+      {
+        "name": "Dozing Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1092",
-    "externalId": null,
+    "externalId": "me2pt5-174",
     "tcgdex_id": "me02.5-174",
     "localId": "174",
     "setCode": "me02.5",
@@ -3713,11 +4307,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-174-low.png",
-    "imageHighSrc": "cards/me2pt5-174-high.png"
+    "imageHighSrc": "cards/me2pt5-174-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "50"
+      },
+      {
+        "name": "Brave Bird",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "1091",
-    "externalId": null,
+    "externalId": "me2pt5-173",
     "tcgdex_id": "me02.5-173",
     "localId": "173",
     "setCode": "me02.5",
@@ -3746,11 +4350,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-173-low.png",
-    "imageHighSrc": "cards/me2pt5-173-high.png"
+    "imageHighSrc": "cards/me2pt5-173-high.png",
+    "attacks": [
+      {
+        "name": "Peck the Wound",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "1090",
-    "externalId": null,
+    "externalId": "me2pt5-172",
     "tcgdex_id": "me02.5-172",
     "localId": "172",
     "setCode": "me02.5",
@@ -3779,11 +4389,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-172-low.png",
-    "imageHighSrc": "cards/me2pt5-172-high.png"
+    "imageHighSrc": "cards/me2pt5-172-high.png",
+    "attacks": [
+      {
+        "name": "Kaleidowaltz",
+        "damage": null
+      },
+      {
+        "name": "Ear Force",
+        "damage": "20+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1089",
-    "externalId": null,
+    "externalId": "me2pt5-171",
     "tcgdex_id": "me02.5-171",
     "localId": "171",
     "setCode": "me02.5",
@@ -3812,11 +4433,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-171-low.png",
-    "imageHighSrc": "cards/me2pt5-171-high.png"
+    "imageHighSrc": "cards/me2pt5-171-high.png",
+    "attacks": [
+      {
+        "name": "Assault Landing",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1088",
-    "externalId": null,
+    "externalId": "me2pt5-170",
     "tcgdex_id": "me02.5-170",
     "localId": "170",
     "setCode": "me02.5",
@@ -3845,11 +4472,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-170-low.png",
-    "imageHighSrc": "cards/me2pt5-170-high.png"
+    "imageHighSrc": "cards/me2pt5-170-high.png",
+    "attacks": [
+      {
+        "name": "Facade",
+        "damage": "60+"
+      },
+      {
+        "name": "Feathery Strike",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "1087",
-    "externalId": null,
+    "externalId": "me2pt5-169",
     "tcgdex_id": "me02.5-169",
     "localId": "169",
     "setCode": "me02.5",
@@ -3878,11 +4515,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-169-low.png",
-    "imageHighSrc": "cards/me2pt5-169-high.png"
+    "imageHighSrc": "cards/me2pt5-169-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "20"
+      },
+      {
+        "name": "Razor Wing",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1086",
-    "externalId": null,
+    "externalId": "me2pt5-168",
     "tcgdex_id": "me02.5-168",
     "localId": "168",
     "setCode": "me02.5",
@@ -3911,11 +4558,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-168-low.png",
-    "imageHighSrc": "cards/me2pt5-168-high.png"
+    "imageHighSrc": "cards/me2pt5-168-high.png",
+    "attacks": [
+      {
+        "name": "Minor Errand-Running",
+        "damage": null
+      },
+      {
+        "name": "Glide",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1085",
-    "externalId": null,
+    "externalId": "me2pt5-167",
     "tcgdex_id": "me02.5-167",
     "localId": "167",
     "setCode": "me02.5",
@@ -3944,11 +4601,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-167-low.png",
-    "imageHighSrc": "cards/me2pt5-167-high.png"
+    "imageHighSrc": "cards/me2pt5-167-high.png",
+    "attacks": [
+      {
+        "name": "Spike Draw",
+        "damage": "20"
+      },
+      {
+        "name": "Wild Scissors",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1084",
-    "externalId": null,
+    "externalId": "me2pt5-166",
     "tcgdex_id": "me02.5-166",
     "localId": "166",
     "setCode": "me02.5",
@@ -3977,11 +4645,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-166-low.png",
-    "imageHighSrc": "cards/me2pt5-166-high.png"
+    "imageHighSrc": "cards/me2pt5-166-high.png",
+    "attacks": [
+      {
+        "name": "Cat Kick",
+        "damage": "40"
+      },
+      {
+        "name": "Energy Crush",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "1083",
-    "externalId": null,
+    "externalId": "me2pt5-165",
     "tcgdex_id": "me02.5-165",
     "localId": "165",
     "setCode": "me02.5",
@@ -4010,11 +4688,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-165-low.png",
-    "imageHighSrc": "cards/me2pt5-165-high.png"
+    "imageHighSrc": "cards/me2pt5-165-high.png",
+    "attacks": [
+      {
+        "name": "Cat Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1082",
-    "externalId": null,
+    "externalId": "me2pt5-164",
     "tcgdex_id": "me02.5-164",
     "localId": "164",
     "setCode": "me02.5",
@@ -4043,11 +4727,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-164-low.png",
-    "imageHighSrc": "cards/me2pt5-164-high.png"
+    "imageHighSrc": "cards/me2pt5-164-high.png",
+    "attacks": [
+      {
+        "name": "Work Rush",
+        "damage": "80×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1081",
-    "externalId": null,
+    "externalId": "me2pt5-163",
     "tcgdex_id": "me02.5-163",
     "localId": "163",
     "setCode": "me02.5",
@@ -4076,11 +4767,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-163-low.png",
-    "imageHighSrc": "cards/me2pt5-163-high.png"
+    "imageHighSrc": "cards/me2pt5-163-high.png",
+    "attacks": [
+      {
+        "name": "Rising Lunge",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1080",
-    "externalId": null,
+    "externalId": "me2pt5-162",
     "tcgdex_id": "me02.5-162",
     "localId": "162",
     "setCode": "me02.5",
@@ -4109,11 +4806,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-162-low.png",
-    "imageHighSrc": "cards/me2pt5-162-high.png"
+    "imageHighSrc": "cards/me2pt5-162-high.png",
+    "attacks": [
+      {
+        "name": "Comet Punch",
+        "damage": "30×"
+      },
+      {
+        "name": "Wicked Impact",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1079",
-    "externalId": null,
+    "externalId": "me2pt5-161",
     "tcgdex_id": "me02.5-161",
     "localId": "161",
     "setCode": "me02.5",
@@ -4142,11 +4850,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-161-low.png",
-    "imageHighSrc": "cards/me2pt5-161-high.png"
+    "imageHighSrc": "cards/me2pt5-161-high.png",
+    "attacks": [
+      {
+        "name": "Paw-cket Pilfer",
+        "damage": null
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "1078",
-    "externalId": null,
+    "externalId": "me2pt5-160",
     "tcgdex_id": "me02.5-160",
     "localId": "160",
     "setCode": "me02.5",
@@ -4175,11 +4893,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-160-low.png",
-    "imageHighSrc": "cards/me2pt5-160-high.png"
+    "imageHighSrc": "cards/me2pt5-160-high.png",
+    "attacks": [
+      {
+        "name": "Jet Headbutt",
+        "damage": "70"
+      },
+      {
+        "name": "Phantom Dive",
+        "damage": "200"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent’s).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1077",
-    "externalId": null,
+    "externalId": "me2pt5-159",
     "tcgdex_id": "me02.5-159",
     "localId": "159",
     "setCode": "me02.5",
@@ -4208,11 +4937,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-159-low.png",
-    "imageHighSrc": "cards/me2pt5-159-high.png"
+    "imageHighSrc": "cards/me2pt5-159-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Headbutt",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1076",
-    "externalId": null,
+    "externalId": "me2pt5-158",
     "tcgdex_id": "me02.5-158",
     "localId": "158",
     "setCode": "me02.5",
@@ -4241,11 +4976,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-158-low.png",
-    "imageHighSrc": "cards/me2pt5-158-high.png"
+    "imageHighSrc": "cards/me2pt5-158-high.png",
+    "attacks": [
+      {
+        "name": "Petty Grudge",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1075",
-    "externalId": null,
+    "externalId": "me2pt5-157",
     "tcgdex_id": "me02.5-157",
     "localId": "157",
     "setCode": "me02.5",
@@ -4274,11 +5019,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-157-low.png",
-    "imageHighSrc": "cards/me2pt5-157-high.png"
+    "imageHighSrc": "cards/me2pt5-157-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "40"
+      },
+      {
+        "name": "Enhanced Blade",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "1074",
-    "externalId": null,
+    "externalId": "me2pt5-156",
     "tcgdex_id": "me02.5-156",
     "localId": "156",
     "setCode": "me02.5",
@@ -4307,11 +5062,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-156-low.png",
-    "imageHighSrc": "cards/me2pt5-156-high.png"
+    "imageHighSrc": "cards/me2pt5-156-high.png",
+    "attacks": [
+      {
+        "name": "Knickknack Carrying",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1073",
-    "externalId": null,
+    "externalId": "me2pt5-155",
     "tcgdex_id": "me02.5-155",
     "localId": "155",
     "setCode": "me02.5",
@@ -4340,11 +5105,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-155-low.png",
-    "imageHighSrc": "cards/me2pt5-155-high.png"
+    "imageHighSrc": "cards/me2pt5-155-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "70"
+      },
+      {
+        "name": "Rampaging Thunder",
+        "damage": "250"
+      }
+    ]
   },
   {
     "masterCardId": "1072",
-    "externalId": null,
+    "externalId": "me2pt5-154",
     "tcgdex_id": "me02.5-154",
     "localId": "154",
     "setCode": "me02.5",
@@ -4373,11 +5148,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-154-low.png",
-    "imageHighSrc": "cards/me2pt5-154-high.png"
+    "imageHighSrc": "cards/me2pt5-154-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Rage",
+        "damage": "20×"
+      },
+      {
+        "name": "Virtuous Flame",
+        "damage": "170"
+      }
+    ]
   },
   {
     "masterCardId": "1071",
-    "externalId": null,
+    "externalId": "me2pt5-153",
     "tcgdex_id": "me02.5-153",
     "localId": "153",
     "setCode": "me02.5",
@@ -4406,11 +5191,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-153-low.png",
-    "imageHighSrc": "cards/me2pt5-153-high.png"
+    "imageHighSrc": "cards/me2pt5-153-high.png",
+    "attacks": [
+      {
+        "name": "Breakthrough Assault",
+        "damage": "20+"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "1070",
-    "externalId": null,
+    "externalId": "me2pt5-152",
     "tcgdex_id": "me02.5-152",
     "localId": "152",
     "setCode": "me02.5",
@@ -4439,11 +5234,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-152-low.png",
-    "imageHighSrc": "cards/me2pt5-152-high.png"
+    "imageHighSrc": "cards/me2pt5-152-high.png",
+    "attacks": [
+      {
+        "name": "Ryuno Glide",
+        "damage": "330"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1069",
-    "externalId": null,
+    "externalId": "me2pt5-151",
     "tcgdex_id": "me02.5-151",
     "localId": "151",
     "setCode": "me02.5",
@@ -4472,11 +5274,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-151-low.png",
-    "imageHighSrc": "cards/me2pt5-151-high.png"
+    "imageHighSrc": "cards/me2pt5-151-high.png",
+    "attacks": [
+      {
+        "name": "Tail Snap",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1068",
-    "externalId": null,
+    "externalId": "me2pt5-150",
     "tcgdex_id": "me02.5-150",
     "localId": "150",
     "setCode": "me02.5",
@@ -4505,11 +5313,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-150-low.png",
-    "imageHighSrc": "cards/me2pt5-150-high.png"
+    "imageHighSrc": "cards/me2pt5-150-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1067",
-    "externalId": null,
+    "externalId": "me2pt5-149",
     "tcgdex_id": "me02.5-149",
     "localId": "149",
     "setCode": "me02.5",
@@ -4538,11 +5352,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-149-low.png",
-    "imageHighSrc": "cards/me2pt5-149-high.png"
+    "imageHighSrc": "cards/me2pt5-149-high.png",
+    "attacks": [
+      {
+        "name": "Stun Needle",
+        "damage": "20"
+      },
+      {
+        "name": "Spiky Rolling",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1066",
-    "externalId": null,
+    "externalId": "me2pt5-148",
     "tcgdex_id": "me02.5-148",
     "localId": "148",
     "setCode": "me02.5",
@@ -4571,11 +5396,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-148-low.png",
-    "imageHighSrc": "cards/me2pt5-148-high.png"
+    "imageHighSrc": "cards/me2pt5-148-high.png",
+    "attacks": [
+      {
+        "name": "Double-Edged Slash",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "1065",
-    "externalId": null,
+    "externalId": "me2pt5-147",
     "tcgdex_id": "me02.5-147",
     "localId": "147",
     "setCode": "me02.5",
@@ -4604,11 +5435,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-147-low.png",
-    "imageHighSrc": "cards/me2pt5-147-high.png"
+    "imageHighSrc": "cards/me2pt5-147-high.png",
+    "attacks": [
+      {
+        "name": "Rapid Draw",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1064",
-    "externalId": null,
+    "externalId": "me2pt5-146",
     "tcgdex_id": "me02.5-146",
     "localId": "146",
     "setCode": "me02.5",
@@ -4637,11 +5474,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-146-low.png",
-    "imageHighSrc": "cards/me2pt5-146-high.png"
+    "imageHighSrc": "cards/me2pt5-146-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1063",
-    "externalId": null,
+    "externalId": "me2pt5-145",
     "tcgdex_id": "me02.5-145",
     "localId": "145",
     "setCode": "me02.5",
@@ -4670,11 +5513,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-145-low.png",
-    "imageHighSrc": "cards/me2pt5-145-high.png"
+    "imageHighSrc": "cards/me2pt5-145-high.png",
+    "attacks": [
+      {
+        "name": "Regi Charge",
+        "damage": null
+      },
+      {
+        "name": "Protecting Steel",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1062",
-    "externalId": null,
+    "externalId": "me2pt5-144",
     "tcgdex_id": "me02.5-144",
     "localId": "144",
     "setCode": "me02.5",
@@ -4703,11 +5557,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-144-low.png",
-    "imageHighSrc": "cards/me2pt5-144-high.png"
+    "imageHighSrc": "cards/me2pt5-144-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "1061",
-    "externalId": null,
+    "externalId": "me2pt5-143",
     "tcgdex_id": "me02.5-143",
     "localId": "143",
     "setCode": "me02.5",
@@ -4736,11 +5600,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-143-low.png",
-    "imageHighSrc": "cards/me2pt5-143-high.png"
+    "imageHighSrc": "cards/me2pt5-143-high.png",
+    "attacks": [
+      {
+        "name": "Mochi Rush",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1060",
-    "externalId": null,
+    "externalId": "me2pt5-142",
     "tcgdex_id": "me02.5-142",
     "localId": "142",
     "setCode": "me02.5",
@@ -4769,11 +5639,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-142-low.png",
-    "imageHighSrc": "cards/me2pt5-142-high.png"
+    "imageHighSrc": "cards/me2pt5-142-high.png",
+    "attacks": [
+      {
+        "name": "Cruel Arrow",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1059",
-    "externalId": null,
+    "externalId": "me2pt5-141",
     "tcgdex_id": "me02.5-141",
     "localId": "141",
     "setCode": "me02.5",
@@ -4802,11 +5679,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-141-low.png",
-    "imageHighSrc": "cards/me2pt5-141-high.png"
+    "imageHighSrc": "cards/me2pt5-141-high.png",
+    "attacks": [
+      {
+        "name": "Filch",
+        "damage": null
+      },
+      {
+        "name": "Knuckle Impact",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "1058",
-    "externalId": null,
+    "externalId": "me2pt5-140",
     "tcgdex_id": "me02.5-140",
     "localId": "140",
     "setCode": "me02.5",
@@ -4835,11 +5722,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-140-low.png",
-    "imageHighSrc": "cards/me2pt5-140-high.png"
+    "imageHighSrc": "cards/me2pt5-140-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "40"
+      },
+      {
+        "name": "Master's Punch",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "1057",
-    "externalId": null,
+    "externalId": "me2pt5-139",
     "tcgdex_id": "me02.5-139",
     "localId": "139",
     "setCode": "me02.5",
@@ -4868,11 +5765,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-139-low.png",
-    "imageHighSrc": "cards/me2pt5-139-high.png"
+    "imageHighSrc": "cards/me2pt5-139-high.png",
+    "attacks": [
+      {
+        "name": "Bone Shot",
+        "damage": null
+      },
+      {
+        "name": "Vulture Claw",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1056",
-    "externalId": null,
+    "externalId": "me2pt5-138",
     "tcgdex_id": "me02.5-138",
     "localId": "138",
     "setCode": "me02.5",
@@ -4901,11 +5809,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-138-low.png",
-    "imageHighSrc": "cards/me2pt5-138-high.png"
+    "imageHighSrc": "cards/me2pt5-138-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1055",
-    "externalId": null,
+    "externalId": "me2pt5-137",
     "tcgdex_id": "me02.5-137",
     "localId": "137",
     "setCode": "me02.5",
@@ -4934,11 +5848,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-137-low.png",
-    "imageHighSrc": "cards/me2pt5-137-high.png"
+    "imageHighSrc": "cards/me2pt5-137-high.png",
+    "attacks": [
+      {
+        "name": "Night Joker",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1054",
-    "externalId": null,
+    "externalId": "me2pt5-136",
     "tcgdex_id": "me02.5-136",
     "localId": "136",
     "setCode": "me02.5",
@@ -4967,11 +5888,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-136-low.png",
-    "imageHighSrc": "cards/me2pt5-136-high.png"
+    "imageHighSrc": "cards/me2pt5-136-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1053",
-    "externalId": null,
+    "externalId": "me2pt5-135",
     "tcgdex_id": "me02.5-135",
     "localId": "135",
     "setCode": "me02.5",
@@ -5000,11 +5927,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-135-low.png",
-    "imageHighSrc": "cards/me2pt5-135-high.png"
+    "imageHighSrc": "cards/me2pt5-135-high.png",
+    "attacks": [
+      {
+        "name": "Outlaw Leg",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1052",
-    "externalId": null,
+    "externalId": "me2pt5-134",
     "tcgdex_id": "me02.5-134",
     "localId": "134",
     "setCode": "me02.5",
@@ -5033,11 +5967,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-134-low.png",
-    "imageHighSrc": "cards/me2pt5-134-high.png"
+    "imageHighSrc": "cards/me2pt5-134-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1051",
-    "externalId": null,
+    "externalId": "me2pt5-133",
     "tcgdex_id": "me02.5-133",
     "localId": "133",
     "setCode": "me02.5",
@@ -5066,11 +6006,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-133-low.png",
-    "imageHighSrc": "cards/me2pt5-133-high.png"
+    "imageHighSrc": "cards/me2pt5-133-high.png",
+    "attacks": [
+      {
+        "name": "Raging Curse",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "1050",
-    "externalId": null,
+    "externalId": "me2pt5-132",
     "tcgdex_id": "me02.5-132",
     "localId": "132",
     "setCode": "me02.5",
@@ -5099,11 +6045,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-132-low.png",
-    "imageHighSrc": "cards/me2pt5-132-high.png"
+    "imageHighSrc": "cards/me2pt5-132-high.png",
+    "attacks": [
+      {
+        "name": "Scarring Shout",
+        "damage": "70×"
+      },
+      {
+        "name": "Punk Smash",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "1049",
-    "externalId": null,
+    "externalId": "me2pt5-131",
     "tcgdex_id": "me02.5-131",
     "localId": "131",
     "setCode": "me02.5",
@@ -5132,11 +6088,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-131-low.png",
-    "imageHighSrc": "cards/me2pt5-131-high.png"
+    "imageHighSrc": "cards/me2pt5-131-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      },
+      {
+        "name": "Claw Slash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1048",
-    "externalId": null,
+    "externalId": "me2pt5-130",
     "tcgdex_id": "me02.5-130",
     "localId": "130",
     "setCode": "me02.5",
@@ -5165,11 +6131,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-130-low.png",
-    "imageHighSrc": "cards/me2pt5-130-high.png"
+    "imageHighSrc": "cards/me2pt5-130-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1047",
-    "externalId": null,
+    "externalId": "me2pt5-129",
     "tcgdex_id": "me02.5-129",
     "localId": "129",
     "setCode": "me02.5",
@@ -5198,11 +6170,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-129-low.png",
-    "imageHighSrc": "cards/me2pt5-129-high.png"
+    "imageHighSrc": "cards/me2pt5-129-high.png",
+    "attacks": [
+      {
+        "name": "Kick Away",
+        "damage": "50"
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "1046",
-    "externalId": null,
+    "externalId": "me2pt5-128",
     "tcgdex_id": "me02.5-128",
     "localId": "128",
     "setCode": "me02.5",
@@ -5231,11 +6213,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-128-low.png",
-    "imageHighSrc": "cards/me2pt5-128-high.png"
+    "imageHighSrc": "cards/me2pt5-128-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw Off",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "1045",
-    "externalId": null,
+    "externalId": "me2pt5-127",
     "tcgdex_id": "me02.5-127",
     "localId": "127",
     "setCode": "me02.5",
@@ -5264,11 +6252,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-127-low.png",
-    "imageHighSrc": "cards/me2pt5-127-high.png"
+    "imageHighSrc": "cards/me2pt5-127-high.png",
+    "attacks": [
+      {
+        "name": "Rocket Feathers",
+        "damage": "60×"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "1044",
-    "externalId": null,
+    "externalId": "me2pt5-126",
     "tcgdex_id": "me02.5-126",
     "localId": "126",
     "setCode": "me02.5",
@@ -5297,11 +6295,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-126-low.png",
-    "imageHighSrc": "cards/me2pt5-126-high.png"
+    "imageHighSrc": "cards/me2pt5-126-high.png",
+    "attacks": [
+      {
+        "name": "Deceit",
+        "damage": null
+      },
+      {
+        "name": "Torment",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1043",
-    "externalId": null,
+    "externalId": "me2pt5-125",
     "tcgdex_id": "me02.5-125",
     "localId": "125",
     "setCode": "me02.5",
@@ -5330,11 +6338,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-125-low.png",
-    "imageHighSrc": "cards/me2pt5-125-high.png"
+    "imageHighSrc": "cards/me2pt5-125-high.png",
+    "attacks": [
+      {
+        "name": "Void Gale",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1042",
-    "externalId": null,
+    "externalId": "me2pt5-124",
     "tcgdex_id": "me02.5-124",
     "localId": "124",
     "setCode": "me02.5",
@@ -5363,11 +6378,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-124-low.png",
-    "imageHighSrc": "cards/me2pt5-124-high.png"
+    "imageHighSrc": "cards/me2pt5-124-high.png",
+    "attacks": [
+      {
+        "name": "Spooky Shot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1041",
-    "externalId": null,
+    "externalId": "me2pt5-123",
     "tcgdex_id": "me02.5-123",
     "localId": "123",
     "setCode": "me02.5",
@@ -5396,11 +6417,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-123-low.png",
-    "imageHighSrc": "cards/me2pt5-123-high.png"
+    "imageHighSrc": "cards/me2pt5-123-high.png",
+    "attacks": [
+      {
+        "name": "Petty Grudge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1040",
-    "externalId": null,
+    "externalId": "me2pt5-122",
     "tcgdex_id": "me02.5-122",
     "localId": "122",
     "setCode": "me02.5",
@@ -5427,11 +6454,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-122-low.png",
-    "imageHighSrc": "cards/me2pt5-122-high.png"
+    "imageHighSrc": "cards/me2pt5-122-high.png",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Settle the Score",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "1039",
-    "externalId": null,
+    "externalId": "me2pt5-121",
     "tcgdex_id": "me02.5-121",
     "localId": "121",
     "setCode": "me02.5",
@@ -5460,11 +6497,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-121-low.png",
-    "imageHighSrc": "cards/me2pt5-121-high.png"
+    "imageHighSrc": "cards/me2pt5-121-high.png",
+    "attacks": [
+      {
+        "name": "Orichalcum Fang",
+        "damage": "50+"
+      },
+      {
+        "name": "Impact Blow",
+        "damage": "200"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent’s).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1038",
-    "externalId": null,
+    "externalId": "me2pt5-120",
     "tcgdex_id": "me02.5-120",
     "localId": "120",
     "setCode": "me02.5",
@@ -5493,11 +6541,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-120-low.png",
-    "imageHighSrc": "cards/me2pt5-120-high.png"
+    "imageHighSrc": "cards/me2pt5-120-high.png",
+    "attacks": [
+      {
+        "name": "Tar Cannon",
+        "damage": null
+      },
+      {
+        "name": "Bulky Bump",
+        "damage": "220"
+      }
+    ]
   },
   {
     "masterCardId": "1037",
-    "externalId": null,
+    "externalId": "me2pt5-119",
     "tcgdex_id": "me02.5-119",
     "localId": "119",
     "setCode": "me02.5",
@@ -5526,11 +6584,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-119-low.png",
-    "imageHighSrc": "cards/me2pt5-119-high.png"
+    "imageHighSrc": "cards/me2pt5-119-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "20"
+      },
+      {
+        "name": "Power Gem",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1036",
-    "externalId": null,
+    "externalId": "me2pt5-118",
     "tcgdex_id": "me02.5-118",
     "localId": "118",
     "setCode": "me02.5",
@@ -5559,11 +6627,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-118-low.png",
-    "imageHighSrc": "cards/me2pt5-118-high.png"
+    "imageHighSrc": "cards/me2pt5-118-high.png",
+    "attacks": [
+      {
+        "name": "Mud-Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1035",
-    "externalId": null,
+    "externalId": "me2pt5-117",
     "tcgdex_id": "me02.5-117",
     "localId": "117",
     "setCode": "me02.5",
@@ -5592,11 +6666,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-117-low.png",
-    "imageHighSrc": "cards/me2pt5-117-high.png"
+    "imageHighSrc": "cards/me2pt5-117-high.png",
+    "attacks": [
+      {
+        "name": "Counter Jewel",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "1034",
-    "externalId": null,
+    "externalId": "me2pt5-116",
     "tcgdex_id": "me02.5-116",
     "localId": "116",
     "setCode": "me02.5",
@@ -5625,11 +6705,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-116-low.png",
-    "imageHighSrc": "cards/me2pt5-116-high.png"
+    "imageHighSrc": "cards/me2pt5-116-high.png",
+    "attacks": [
+      {
+        "name": "Somersault Dive",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1033",
-    "externalId": null,
+    "externalId": "me2pt5-115",
     "tcgdex_id": "me02.5-115",
     "localId": "115",
     "setCode": "me02.5",
@@ -5658,11 +6745,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-115-low.png",
-    "imageHighSrc": "cards/me2pt5-115-high.png"
+    "imageHighSrc": "cards/me2pt5-115-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1032",
-    "externalId": null,
+    "externalId": "me2pt5-114",
     "tcgdex_id": "me02.5-114",
     "localId": "114",
     "setCode": "me02.5",
@@ -5691,11 +6784,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-114-low.png",
-    "imageHighSrc": "cards/me2pt5-114-high.png"
+    "imageHighSrc": "cards/me2pt5-114-high.png",
+    "attacks": [
+      {
+        "name": "Big Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Flopping Trap",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1031",
-    "externalId": null,
+    "externalId": "me2pt5-113",
     "tcgdex_id": "me02.5-113",
     "localId": "113",
     "setCode": "me02.5",
@@ -5724,11 +6828,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-113-low.png",
-    "imageHighSrc": "cards/me2pt5-113-high.png"
+    "imageHighSrc": "cards/me2pt5-113-high.png",
+    "attacks": [
+      {
+        "name": "Aura Jab",
+        "damage": "130"
+      },
+      {
+        "name": "Mega Brave",
+        "damage": "270"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1030",
-    "externalId": null,
+    "externalId": "me2pt5-112",
     "tcgdex_id": "me02.5-112",
     "localId": "112",
     "setCode": "me02.5",
@@ -5757,11 +6872,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-112-low.png",
-    "imageHighSrc": "cards/me2pt5-112-high.png"
+    "imageHighSrc": "cards/me2pt5-112-high.png",
+    "attacks": [
+      {
+        "name": "Accelerating Stab",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1029",
-    "externalId": null,
+    "externalId": "me2pt5-111",
     "tcgdex_id": "me02.5-111",
     "localId": "111",
     "setCode": "me02.5",
@@ -5790,11 +6911,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-111-low.png",
-    "imageHighSrc": "cards/me2pt5-111-high.png"
+    "imageHighSrc": "cards/me2pt5-111-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Dive",
+        "damage": "100"
+      },
+      {
+        "name": "Draconic Buster",
+        "damage": "260"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1028",
-    "externalId": null,
+    "externalId": "me2pt5-110",
     "tcgdex_id": "me02.5-110",
     "localId": "110",
     "setCode": "me02.5",
@@ -5823,11 +6955,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-110-low.png",
-    "imageHighSrc": "cards/me2pt5-110-high.png"
+    "imageHighSrc": "cards/me2pt5-110-high.png",
+    "attacks": [
+      {
+        "name": "Dragonslice",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1027",
-    "externalId": null,
+    "externalId": "me2pt5-109",
     "tcgdex_id": "me02.5-109",
     "localId": "109",
     "setCode": "me02.5",
@@ -5856,11 +6994,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-109-low.png",
-    "imageHighSrc": "cards/me2pt5-109-high.png"
+    "imageHighSrc": "cards/me2pt5-109-high.png",
+    "attacks": [
+      {
+        "name": "Rock Hurl",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1026",
-    "externalId": null,
+    "externalId": "me2pt5-108",
     "tcgdex_id": "me02.5-108",
     "localId": "108",
     "setCode": "me02.5",
@@ -5889,11 +7033,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-108-low.png",
-    "imageHighSrc": "cards/me2pt5-108-high.png"
+    "imageHighSrc": "cards/me2pt5-108-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      },
+      {
+        "name": "Megaton Fall",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "1025",
-    "externalId": null,
+    "externalId": "me2pt5-107",
     "tcgdex_id": "me02.5-107",
     "localId": "107",
     "setCode": "me02.5",
@@ -5922,11 +7076,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-107-low.png",
-    "imageHighSrc": "cards/me2pt5-107-high.png"
+    "imageHighSrc": "cards/me2pt5-107-high.png",
+    "attacks": [
+      {
+        "name": "Regi Charge",
+        "damage": null
+      },
+      {
+        "name": "Giant Rock",
+        "damage": "140+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1024",
-    "externalId": null,
+    "externalId": "me2pt5-106",
     "tcgdex_id": "me02.5-106",
     "localId": "106",
     "setCode": "me02.5",
@@ -5955,11 +7120,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-106-low.png",
-    "imageHighSrc": "cards/me2pt5-106-high.png"
+    "imageHighSrc": "cards/me2pt5-106-high.png",
+    "attacks": [
+      {
+        "name": "Cosmic Beam",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1023",
-    "externalId": null,
+    "externalId": "me2pt5-105",
     "tcgdex_id": "me02.5-105",
     "localId": "105",
     "setCode": "me02.5",
@@ -5988,11 +7159,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-105-low.png",
-    "imageHighSrc": "cards/me2pt5-105-high.png"
+    "imageHighSrc": "cards/me2pt5-105-high.png",
+    "attacks": [
+      {
+        "name": "Power Gem",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1022",
-    "externalId": null,
+    "externalId": "me2pt5-104",
     "tcgdex_id": "me02.5-104",
     "localId": "104",
     "setCode": "me02.5",
@@ -6021,11 +7198,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-104-low.png",
-    "imageHighSrc": "cards/me2pt5-104-high.png"
+    "imageHighSrc": "cards/me2pt5-104-high.png",
+    "attacks": [
+      {
+        "name": "Seventh Kick",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "1021",
-    "externalId": null,
+    "externalId": "me2pt5-103",
     "tcgdex_id": "me02.5-103",
     "localId": "103",
     "setCode": "me02.5",
@@ -6054,11 +7237,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-103-low.png",
-    "imageHighSrc": "cards/me2pt5-103-high.png"
+    "imageHighSrc": "cards/me2pt5-103-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Gentle Slap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1020",
-    "externalId": null,
+    "externalId": "me2pt5-102",
     "tcgdex_id": "me02.5-102",
     "localId": "102",
     "setCode": "me02.5",
@@ -6087,11 +7280,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-102-low.png",
-    "imageHighSrc": "cards/me2pt5-102-high.png"
+    "imageHighSrc": "cards/me2pt5-102-high.png",
+    "attacks": [
+      {
+        "name": "Spin and Draw",
+        "damage": null
+      },
+      {
+        "name": "Low Kick",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1019",
-    "externalId": null,
+    "externalId": "me2pt5-101",
     "tcgdex_id": "me02.5-101",
     "localId": "101",
     "setCode": "me02.5",
@@ -6120,11 +7323,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-101-low.png",
-    "imageHighSrc": "cards/me2pt5-101-high.png"
+    "imageHighSrc": "cards/me2pt5-101-high.png",
+    "attacks": [
+      {
+        "name": "Mud Shot",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1018",
-    "externalId": null,
+    "externalId": "me2pt5-100",
     "tcgdex_id": "me02.5-100",
     "localId": "100",
     "setCode": "me02.5",
@@ -6153,11 +7362,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-100-low.png",
-    "imageHighSrc": "cards/me2pt5-100-high.png"
+    "imageHighSrc": "cards/me2pt5-100-high.png",
+    "attacks": [
+      {
+        "name": "Relentless Burrowing",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1017",
-    "externalId": null,
+    "externalId": "me2pt5-99",
     "tcgdex_id": "me02.5-099",
     "localId": "099",
     "setCode": "me02.5",
@@ -6186,11 +7401,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-099-low.png",
-    "imageHighSrc": "cards/me2pt5-099-high.png"
+    "imageHighSrc": "cards/me2pt5-099-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1016",
-    "externalId": null,
+    "externalId": "me2pt5-98",
     "tcgdex_id": "me02.5-098",
     "localId": "098",
     "setCode": "me02.5",
@@ -6219,11 +7440,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-098-low.png",
-    "imageHighSrc": "cards/me2pt5-098-high.png"
+    "imageHighSrc": "cards/me2pt5-098-high.png",
+    "attacks": [
+      {
+        "name": "Spooky Shot",
+        "damage": "30"
+      },
+      {
+        "name": "Phantasmal Barrage",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1015",
-    "externalId": null,
+    "externalId": "me2pt5-97",
     "tcgdex_id": "me02.5-097",
     "localId": "097",
     "setCode": "me02.5",
@@ -6252,11 +7483,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-097-low.png",
-    "imageHighSrc": "cards/me2pt5-097-high.png"
+    "imageHighSrc": "cards/me2pt5-097-high.png",
+    "attacks": [
+      {
+        "name": "Gemstone Mimicry",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1014",
-    "externalId": null,
+    "externalId": "me2pt5-96",
     "tcgdex_id": "me02.5-096",
     "localId": "096",
     "setCode": "me02.5",
@@ -6285,11 +7522,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-096-low.png",
-    "imageHighSrc": "cards/me2pt5-096-high.png"
+    "imageHighSrc": "cards/me2pt5-096-high.png",
+    "attacks": [
+      {
+        "name": "Horrifying Revenge",
+        "damage": "30+"
+      },
+      {
+        "name": "Corner",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "1013",
-    "externalId": null,
+    "externalId": "me2pt5-95",
     "tcgdex_id": "me02.5-095",
     "localId": "095",
     "setCode": "me02.5",
@@ -6318,11 +7565,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-095-low.png",
-    "imageHighSrc": "cards/me2pt5-095-high.png"
+    "imageHighSrc": "cards/me2pt5-095-high.png",
+    "attacks": [
+      {
+        "name": "Splashing Dodge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1012",
-    "externalId": null,
+    "externalId": "me2pt5-94",
     "tcgdex_id": "me02.5-094",
     "localId": "094",
     "setCode": "me02.5",
@@ -6351,11 +7604,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-094-low.png",
-    "imageHighSrc": "cards/me2pt5-094-high.png"
+    "imageHighSrc": "cards/me2pt5-094-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "40"
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1011",
-    "externalId": null,
+    "externalId": "me2pt5-93",
     "tcgdex_id": "me02.5-093",
     "localId": "093",
     "setCode": "me02.5",
@@ -6384,11 +7647,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-093-low.png",
-    "imageHighSrc": "cards/me2pt5-093-high.png"
+    "imageHighSrc": "cards/me2pt5-093-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1010",
-    "externalId": null,
+    "externalId": "me2pt5-92",
     "tcgdex_id": "me02.5-092",
     "localId": "092",
     "setCode": "me02.5",
@@ -6417,11 +7686,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-092-low.png",
-    "imageHighSrc": "cards/me2pt5-092-high.png"
+    "imageHighSrc": "cards/me2pt5-092-high.png",
+    "attacks": [
+      {
+        "name": "Roto Call",
+        "damage": null
+      },
+      {
+        "name": "Gadget Show",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "1009",
-    "externalId": null,
+    "externalId": "me2pt5-91",
     "tcgdex_id": "me02.5-091",
     "localId": "091",
     "setCode": "me02.5",
@@ -6450,11 +7729,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-091-low.png",
-    "imageHighSrc": "cards/me2pt5-091-high.png"
+    "imageHighSrc": "cards/me2pt5-091-high.png",
+    "attacks": [
+      {
+        "name": "Cursed Words",
+        "damage": null
+      },
+      {
+        "name": "Spooky Shot",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1008",
-    "externalId": null,
+    "externalId": "me2pt5-90",
     "tcgdex_id": "me02.5-090",
     "localId": "090",
     "setCode": "me02.5",
@@ -6483,11 +7772,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-090-low.png",
-    "imageHighSrc": "cards/me2pt5-090-high.png"
+    "imageHighSrc": "cards/me2pt5-090-high.png",
+    "attacks": [
+      {
+        "name": "Spooky Shot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1007",
-    "externalId": null,
+    "externalId": "me2pt5-89",
     "tcgdex_id": "me02.5-089",
     "localId": "089",
     "setCode": "me02.5",
@@ -6516,11 +7811,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-089-low.png",
-    "imageHighSrc": "cards/me2pt5-089-high.png"
+    "imageHighSrc": "cards/me2pt5-089-high.png",
+    "attacks": [
+      {
+        "name": "Overflowing Wishes",
+        "damage": null
+      },
+      {
+        "name": "Mega Symphonia",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "1006",
-    "externalId": null,
+    "externalId": "me2pt5-88",
     "tcgdex_id": "me02.5-088",
     "localId": "088",
     "setCode": "me02.5",
@@ -6549,11 +7855,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-088-low.png",
-    "imageHighSrc": "cards/me2pt5-088-high.png"
+    "imageHighSrc": "cards/me2pt5-088-high.png",
+    "attacks": [
+      {
+        "name": "Call Sign",
+        "damage": null
+      },
+      {
+        "name": "Psyshot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1005",
-    "externalId": null,
+    "externalId": "me2pt5-87",
     "tcgdex_id": "me02.5-087",
     "localId": "087",
     "setCode": "me02.5",
@@ -6582,11 +7898,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-087-low.png",
-    "imageHighSrc": "cards/me2pt5-087-high.png"
+    "imageHighSrc": "cards/me2pt5-087-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1004",
-    "externalId": null,
+    "externalId": "me2pt5-86",
     "tcgdex_id": "me02.5-086",
     "localId": "086",
     "setCode": "me02.5",
@@ -6615,11 +7941,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-086-low.png",
-    "imageHighSrc": "cards/me2pt5-086-high.png"
+    "imageHighSrc": "cards/me2pt5-086-high.png",
+    "attacks": [
+      {
+        "name": "Assassin's Magic",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1003",
-    "externalId": null,
+    "externalId": "me2pt5-85",
     "tcgdex_id": "me02.5-085",
     "localId": "085",
     "setCode": "me02.5",
@@ -6648,11 +7980,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-085-low.png",
-    "imageHighSrc": "cards/me2pt5-085-high.png"
+    "imageHighSrc": "cards/me2pt5-085-high.png",
+    "attacks": [
+      {
+        "name": "Ascension",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1002",
-    "externalId": null,
+    "externalId": "me2pt5-84",
     "tcgdex_id": "me02.5-084",
     "localId": "084",
     "setCode": "me02.5",
@@ -6681,11 +8019,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-084-low.png",
-    "imageHighSrc": "cards/me2pt5-084-high.png"
+    "imageHighSrc": "cards/me2pt5-084-high.png",
+    "attacks": [
+      {
+        "name": "Energized Balloon",
+        "damage": "60+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "1001",
-    "externalId": null,
+    "externalId": "me2pt5-83",
     "tcgdex_id": "me02.5-083",
     "localId": "083",
     "setCode": "me02.5",
@@ -6714,11 +8059,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-083-low.png",
-    "imageHighSrc": "cards/me2pt5-083-high.png"
+    "imageHighSrc": "cards/me2pt5-083-high.png",
+    "attacks": [
+      {
+        "name": "Hide",
+        "damage": null
+      },
+      {
+        "name": "Flop",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1000",
-    "externalId": null,
+    "externalId": "me2pt5-82",
     "tcgdex_id": "me02.5-082",
     "localId": "082",
     "setCode": "me02.5",
@@ -6747,11 +8102,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-082-low.png",
-    "imageHighSrc": "cards/me2pt5-082-high.png"
+    "imageHighSrc": "cards/me2pt5-082-high.png",
+    "attacks": [
+      {
+        "name": "Speed Wing",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "999",
-    "externalId": null,
+    "externalId": "me2pt5-81",
     "tcgdex_id": "me02.5-081",
     "localId": "081",
     "setCode": "me02.5",
@@ -6780,11 +8141,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-081-low.png",
-    "imageHighSrc": "cards/me2pt5-081-high.png"
+    "imageHighSrc": "cards/me2pt5-081-high.png",
+    "attacks": [
+      {
+        "name": "Draining Kiss",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "998",
-    "externalId": null,
+    "externalId": "me2pt5-80",
     "tcgdex_id": "me02.5-080",
     "localId": "080",
     "setCode": "me02.5",
@@ -6813,11 +8180,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-080-low.png",
-    "imageHighSrc": "cards/me2pt5-080-high.png"
+    "imageHighSrc": "cards/me2pt5-080-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "997",
-    "externalId": null,
+    "externalId": "me2pt5-79",
     "tcgdex_id": "me02.5-079",
     "localId": "079",
     "setCode": "me02.5",
@@ -6846,11 +8219,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-079-low.png",
-    "imageHighSrc": "cards/me2pt5-079-high.png"
+    "imageHighSrc": "cards/me2pt5-079-high.png",
+    "attacks": [
+      {
+        "name": "Erasure Ball",
+        "damage": "160+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "996",
-    "externalId": null,
+    "externalId": "me2pt5-78",
     "tcgdex_id": "me02.5-078",
     "localId": "078",
     "setCode": "me02.5",
@@ -6879,11 +8259,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-078-low.png",
-    "imageHighSrc": "cards/me2pt5-078-high.png"
+    "imageHighSrc": "cards/me2pt5-078-high.png",
+    "attacks": [
+      {
+        "name": "Tri Kinesis",
+        "damage": null
+      },
+      {
+        "name": "Double-Edge",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "995",
-    "externalId": null,
+    "externalId": "me2pt5-77",
     "tcgdex_id": "me02.5-077",
     "localId": "077",
     "setCode": "me02.5",
@@ -6912,11 +8302,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-077-low.png",
-    "imageHighSrc": "cards/me2pt5-077-high.png"
+    "imageHighSrc": "cards/me2pt5-077-high.png",
+    "attacks": [
+      {
+        "name": "Focused Wish",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "994",
-    "externalId": null,
+    "externalId": "me2pt5-76",
     "tcgdex_id": "me02.5-076",
     "localId": "076",
     "setCode": "me02.5",
@@ -6945,11 +8341,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-076-low.png",
-    "imageHighSrc": "cards/me2pt5-076-high.png"
+    "imageHighSrc": "cards/me2pt5-076-high.png",
+    "attacks": [
+      {
+        "name": "Full Moon Rondo",
+        "damage": "20+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "993",
-    "externalId": null,
+    "externalId": "me2pt5-75",
     "tcgdex_id": "me02.5-075",
     "localId": "075",
     "setCode": "me02.5",
@@ -6978,11 +8381,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-075-low.png",
-    "imageHighSrc": "cards/me2pt5-075-high.png"
+    "imageHighSrc": "cards/me2pt5-075-high.png",
+    "attacks": [
+      {
+        "name": "Metronome",
+        "damage": null
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "992",
-    "externalId": null,
+    "externalId": "me2pt5-74",
     "tcgdex_id": "me02.5-074",
     "localId": "074",
     "setCode": "me02.5",
@@ -7011,11 +8424,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-074-low.png",
-    "imageHighSrc": "cards/me2pt5-074-high.png"
+    "imageHighSrc": "cards/me2pt5-074-high.png",
+    "attacks": [
+      {
+        "name": "Moon Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "991",
-    "externalId": null,
+    "externalId": "me2pt5-73",
     "tcgdex_id": "me02.5-073",
     "localId": "073",
     "setCode": "me02.5",
@@ -7044,11 +8463,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-073-low.png",
-    "imageHighSrc": "cards/me2pt5-073-high.png"
+    "imageHighSrc": "cards/me2pt5-073-high.png",
+    "attacks": [
+      {
+        "name": "Slashing Claw",
+        "damage": "40"
+      },
+      {
+        "name": "Hadron Spark",
+        "damage": "120+"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent’s).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "990",
-    "externalId": null,
+    "externalId": "me2pt5-72",
     "tcgdex_id": "me02.5-072",
     "localId": "072",
     "setCode": "me02.5",
@@ -7077,11 +8507,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-072-low.png",
-    "imageHighSrc": "cards/me2pt5-072-high.png"
+    "imageHighSrc": "cards/me2pt5-072-high.png",
+    "attacks": [
+      {
+        "name": "Mach Bolt",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "989",
-    "externalId": null,
+    "externalId": "me2pt5-71",
     "tcgdex_id": "me02.5-071",
     "localId": "071",
     "setCode": "me02.5",
@@ -7110,11 +8546,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-071-low.png",
-    "imageHighSrc": "cards/me2pt5-071-high.png"
+    "imageHighSrc": "cards/me2pt5-071-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "988",
-    "externalId": null,
+    "externalId": "me2pt5-70",
     "tcgdex_id": "me02.5-070",
     "localId": "070",
     "setCode": "me02.5",
@@ -7143,11 +8585,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-070-low.png",
-    "imageHighSrc": "cards/me2pt5-070-high.png"
+    "imageHighSrc": "cards/me2pt5-070-high.png",
+    "attacks": [
+      {
+        "name": "Thunderous Bolt",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "987",
-    "externalId": null,
+    "externalId": "me2pt5-69",
     "tcgdex_id": "me02.5-069",
     "localId": "069",
     "setCode": "me02.5",
@@ -7176,11 +8625,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-069-low.png",
-    "imageHighSrc": "cards/me2pt5-069-high.png"
+    "imageHighSrc": "cards/me2pt5-069-high.png",
+    "attacks": [
+      {
+        "name": "Tiny Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "986",
-    "externalId": null,
+    "externalId": "me2pt5-68",
     "tcgdex_id": "me02.5-068",
     "localId": "068",
     "setCode": "me02.5",
@@ -7209,11 +8664,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-068-low.png",
-    "imageHighSrc": "cards/me2pt5-068-high.png"
+    "imageHighSrc": "cards/me2pt5-068-high.png",
+    "attacks": [
+      {
+        "name": "Spiky Thunder",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "985",
-    "externalId": null,
+    "externalId": "me2pt5-67",
     "tcgdex_id": "me02.5-067",
     "localId": "067",
     "setCode": "me02.5",
@@ -7242,11 +8704,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-067-low.png",
-    "imageHighSrc": "cards/me2pt5-067-high.png"
+    "imageHighSrc": "cards/me2pt5-067-high.png",
+    "attacks": [
+      {
+        "name": "Fast Flight",
+        "damage": null
+      },
+      {
+        "name": "Thunder Blast",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "984",
-    "externalId": null,
+    "externalId": "me2pt5-66",
     "tcgdex_id": "me02.5-066",
     "localId": "066",
     "setCode": "me02.5",
@@ -7275,11 +8747,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-066-low.png",
-    "imageHighSrc": "cards/me2pt5-066-high.png"
+    "imageHighSrc": "cards/me2pt5-066-high.png",
+    "attacks": [
+      {
+        "name": "Volt Switch",
+        "damage": "90"
+      },
+      {
+        "name": "Sparking Strike",
+        "damage": "240"
+      }
+    ]
   },
   {
     "masterCardId": "983",
-    "externalId": null,
+    "externalId": "me2pt5-65",
     "tcgdex_id": "me02.5-065",
     "localId": "065",
     "setCode": "me02.5",
@@ -7308,11 +8790,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-065-low.png",
-    "imageHighSrc": "cards/me2pt5-065-high.png"
+    "imageHighSrc": "cards/me2pt5-065-high.png",
+    "attacks": [
+      {
+        "name": "Static Shock",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "982",
-    "externalId": null,
+    "externalId": "me2pt5-64",
     "tcgdex_id": "me02.5-064",
     "localId": "064",
     "setCode": "me02.5",
@@ -7341,11 +8829,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-064-low.png",
-    "imageHighSrc": "cards/me2pt5-064-high.png"
+    "imageHighSrc": "cards/me2pt5-064-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Bolt",
+        "damage": "70×"
+      }
+    ]
   },
   {
     "masterCardId": "981",
-    "externalId": null,
+    "externalId": "me2pt5-63",
     "tcgdex_id": "me02.5-063",
     "localId": "063",
     "setCode": "me02.5",
@@ -7374,11 +8868,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-063-low.png",
-    "imageHighSrc": "cards/me2pt5-063-high.png"
+    "imageHighSrc": "cards/me2pt5-063-high.png",
+    "attacks": [
+      {
+        "name": "Zap Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "980",
-    "externalId": null,
+    "externalId": "me2pt5-62",
     "tcgdex_id": "me02.5-062",
     "localId": "062",
     "setCode": "me02.5",
@@ -7407,11 +8907,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-062-low.png",
-    "imageHighSrc": "cards/me2pt5-062-high.png"
+    "imageHighSrc": "cards/me2pt5-062-high.png",
+    "attacks": [
+      {
+        "name": "Pouncing Trap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "979",
-    "externalId": null,
+    "externalId": "me2pt5-61",
     "tcgdex_id": "me02.5-061",
     "localId": "061",
     "setCode": "me02.5",
@@ -7440,11 +8946,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-061-low.png",
-    "imageHighSrc": "cards/me2pt5-061-high.png"
+    "imageHighSrc": "cards/me2pt5-061-high.png",
+    "attacks": [
+      {
+        "name": "Split Bomb",
+        "damage": null
+      },
+      {
+        "name": "Disaster Shock",
+        "damage": "190"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "978",
-    "externalId": null,
+    "externalId": "me2pt5-60",
     "tcgdex_id": "me02.5-060",
     "localId": "060",
     "setCode": "me02.5",
@@ -7473,11 +8990,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-060-low.png",
-    "imageHighSrc": "cards/me2pt5-060-high.png"
+    "imageHighSrc": "cards/me2pt5-060-high.png",
+    "attacks": [
+      {
+        "name": "Electric Ball",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "977",
-    "externalId": null,
+    "externalId": "me2pt5-59",
     "tcgdex_id": "me02.5-059",
     "localId": "059",
     "setCode": "me02.5",
@@ -7506,11 +9029,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-059-low.png",
-    "imageHighSrc": "cards/me2pt5-059-high.png"
+    "imageHighSrc": "cards/me2pt5-059-high.png",
+    "attacks": [
+      {
+        "name": "Hold Still",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "976",
-    "externalId": null,
+    "externalId": "me2pt5-58",
     "tcgdex_id": "me02.5-058",
     "localId": "058",
     "setCode": "me02.5",
@@ -7539,11 +9068,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-058-low.png",
-    "imageHighSrc": "cards/me2pt5-058-high.png"
+    "imageHighSrc": "cards/me2pt5-058-high.png",
+    "attacks": [
+      {
+        "name": "Hundred-Hitting Ball",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "975",
-    "externalId": null,
+    "externalId": "me2pt5-57",
     "tcgdex_id": "me02.5-057",
     "localId": "057",
     "setCode": "me02.5",
@@ -7572,11 +9108,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-057-low.png",
-    "imageHighSrc": "cards/me2pt5-057-high.png"
+    "imageHighSrc": "cards/me2pt5-057-high.png",
+    "attacks": [
+      {
+        "name": "Topaz Bolt",
+        "damage": "300"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent’s).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "974",
-    "externalId": null,
+    "externalId": "me2pt5-56",
     "tcgdex_id": "me02.5-056",
     "localId": "056",
     "setCode": "me02.5",
@@ -7605,11 +9148,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-056-low.png",
-    "imageHighSrc": "cards/me2pt5-056-high.png"
+    "imageHighSrc": "cards/me2pt5-056-high.png",
+    "attacks": [
+      {
+        "name": "Quick Blow",
+        "damage": "20+"
+      },
+      {
+        "name": "Strong Volt",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "973",
-    "externalId": null,
+    "externalId": "me2pt5-55",
     "tcgdex_id": "me02.5-055",
     "localId": "055",
     "setCode": "me02.5",
@@ -7638,11 +9191,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-055-low.png",
-    "imageHighSrc": "cards/me2pt5-055-high.png"
+    "imageHighSrc": "cards/me2pt5-055-high.png",
+    "attacks": [
+      {
+        "name": "Tail Smack",
+        "damage": "10"
+      },
+      {
+        "name": "Tiny Bolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "972",
-    "externalId": null,
+    "externalId": "me2pt5-54",
     "tcgdex_id": "me02.5-054",
     "localId": "054",
     "setCode": "me02.5",
@@ -7671,11 +9234,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-054-low.png",
-    "imageHighSrc": "cards/me2pt5-054-high.png"
+    "imageHighSrc": "cards/me2pt5-054-high.png",
+    "attacks": [
+      {
+        "name": "Ice Shot",
+        "damage": "20"
+      },
+      {
+        "name": "Frosty Typhoon",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "971",
-    "externalId": null,
+    "externalId": "me2pt5-53",
     "tcgdex_id": "me02.5-053",
     "localId": "053",
     "setCode": "me02.5",
@@ -7704,11 +9277,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-053-low.png",
-    "imageHighSrc": "cards/me2pt5-053-high.png"
+    "imageHighSrc": "cards/me2pt5-053-high.png",
+    "attacks": [
+      {
+        "name": "Cold Cyclone",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "970",
-    "externalId": null,
+    "externalId": "me2pt5-52",
     "tcgdex_id": "me02.5-052",
     "localId": "052",
     "setCode": "me02.5",
@@ -7737,11 +9316,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-052-low.png",
-    "imageHighSrc": "cards/me2pt5-052-high.png"
+    "imageHighSrc": "cards/me2pt5-052-high.png",
+    "attacks": [
+      {
+        "name": "Icicle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "969",
-    "externalId": null,
+    "externalId": "me2pt5-51",
     "tcgdex_id": "me02.5-051",
     "localId": "051",
     "setCode": "me02.5",
@@ -7770,11 +9355,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-051-low.png",
-    "imageHighSrc": "cards/me2pt5-051-high.png"
+    "imageHighSrc": "cards/me2pt5-051-high.png",
+    "attacks": [
+      {
+        "name": "Snow Coating",
+        "damage": null
+      },
+      {
+        "name": "Blizzard",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "968",
-    "externalId": null,
+    "externalId": "me2pt5-50",
     "tcgdex_id": "me02.5-050",
     "localId": "050",
     "setCode": "me02.5",
@@ -7803,11 +9398,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-050-low.png",
-    "imageHighSrc": "cards/me2pt5-050-high.png"
+    "imageHighSrc": "cards/me2pt5-050-high.png",
+    "attacks": [
+      {
+        "name": "Flop",
+        "damage": "20"
+      },
+      {
+        "name": "Sheer Cold",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "967",
-    "externalId": null,
+    "externalId": "me2pt5-49",
     "tcgdex_id": "me02.5-049",
     "localId": "049",
     "setCode": "me02.5",
@@ -7836,11 +9441,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-049-low.png",
-    "imageHighSrc": "cards/me2pt5-049-high.png"
+    "imageHighSrc": "cards/me2pt5-049-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Icy Snow",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "966",
-    "externalId": null,
+    "externalId": "me2pt5-48",
     "tcgdex_id": "me02.5-048",
     "localId": "048",
     "setCode": "me02.5",
@@ -7869,11 +9484,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-048-low.png",
-    "imageHighSrc": "cards/me2pt5-048-high.png"
+    "imageHighSrc": "cards/me2pt5-048-high.png",
+    "attacks": [
+      {
+        "name": "Regi Charge",
+        "damage": null
+      },
+      {
+        "name": "Ice Prison",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "965",
-    "externalId": null,
+    "externalId": "me2pt5-47",
     "tcgdex_id": "me02.5-047",
     "localId": "047",
     "setCode": "me02.5",
@@ -7902,11 +9528,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-047-low.png",
-    "imageHighSrc": "cards/me2pt5-047-high.png"
+    "imageHighSrc": "cards/me2pt5-047-high.png",
+    "attacks": [
+      {
+        "name": "Resentful Refrain",
+        "damage": "50×"
+      },
+      {
+        "name": "Absolute Snow",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "964",
-    "externalId": null,
+    "externalId": "me2pt5-46",
     "tcgdex_id": "me02.5-046",
     "localId": "046",
     "setCode": "me02.5",
@@ -7935,11 +9572,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-046-low.png",
-    "imageHighSrc": "cards/me2pt5-046-high.png"
+    "imageHighSrc": "cards/me2pt5-046-high.png",
+    "attacks": [
+      {
+        "name": "Chilly",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "963",
-    "externalId": null,
+    "externalId": "me2pt5-45",
     "tcgdex_id": "me02.5-045",
     "localId": "045",
     "setCode": "me02.5",
@@ -7968,11 +9611,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-045-low.png",
-    "imageHighSrc": "cards/me2pt5-045-high.png"
+    "imageHighSrc": "cards/me2pt5-045-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "40"
+      },
+      {
+        "name": "Hail Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "962",
-    "externalId": null,
+    "externalId": "me2pt5-44",
     "tcgdex_id": "me02.5-044",
     "localId": "044",
     "setCode": "me02.5",
@@ -8001,11 +9654,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-044-low.png",
-    "imageHighSrc": "cards/me2pt5-044-high.png"
+    "imageHighSrc": "cards/me2pt5-044-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "10"
+      },
+      {
+        "name": "Beset",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "961",
-    "externalId": null,
+    "externalId": "me2pt5-43",
     "tcgdex_id": "me02.5-043",
     "localId": "043",
     "setCode": "me02.5",
@@ -8034,11 +9697,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-043-low.png",
-    "imageHighSrc": "cards/me2pt5-043-high.png"
+    "imageHighSrc": "cards/me2pt5-043-high.png",
+    "attacks": [
+      {
+        "name": "Mortal Crunch",
+        "damage": "200+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "960",
-    "externalId": null,
+    "externalId": "me2pt5-42",
     "tcgdex_id": "me02.5-042",
     "localId": "042",
     "setCode": "me02.5",
@@ -8067,11 +9737,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-042-low.png",
-    "imageHighSrc": "cards/me2pt5-042-high.png"
+    "imageHighSrc": "cards/me2pt5-042-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "959",
-    "externalId": null,
+    "externalId": "me2pt5-41",
     "tcgdex_id": "me02.5-041",
     "localId": "041",
     "setCode": "me02.5",
@@ -8100,11 +9776,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-041-low.png",
-    "imageHighSrc": "cards/me2pt5-041-high.png"
+    "imageHighSrc": "cards/me2pt5-041-high.png",
+    "attacks": [
+      {
+        "name": "Slight Intrusion",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "958",
-    "externalId": null,
+    "externalId": "me2pt5-40",
     "tcgdex_id": "me02.5-040",
     "localId": "040",
     "setCode": "me02.5",
@@ -8133,11 +9815,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-040-low.png",
-    "imageHighSrc": "cards/me2pt5-040-high.png"
+    "imageHighSrc": "cards/me2pt5-040-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "957",
-    "externalId": null,
+    "externalId": "me2pt5-39",
     "tcgdex_id": "me02.5-039",
     "localId": "039",
     "setCode": "me02.5",
@@ -8166,11 +9854,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-039-low.png",
-    "imageHighSrc": "cards/me2pt5-039-high.png"
+    "imageHighSrc": "cards/me2pt5-039-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "956",
-    "externalId": null,
+    "externalId": "me2pt5-38",
     "tcgdex_id": "me02.5-038",
     "localId": "038",
     "setCode": "me02.5",
@@ -8199,11 +9893,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-038-low.png",
-    "imageHighSrc": "cards/me2pt5-038-high.png"
+    "imageHighSrc": "cards/me2pt5-038-high.png",
+    "attacks": [
+      {
+        "name": "Flare Strike",
+        "damage": "280"
+      },
+      {
+        "name": "Garnet Volley",
+        "damage": null
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent’s).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "955",
-    "externalId": null,
+    "externalId": "me2pt5-37",
     "tcgdex_id": "me02.5-037",
     "localId": "037",
     "setCode": "me02.5",
@@ -8232,11 +9937,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-037-low.png",
-    "imageHighSrc": "cards/me2pt5-037-high.png"
+    "imageHighSrc": "cards/me2pt5-037-high.png",
+    "attacks": [
+      {
+        "name": "Low Sweep",
+        "damage": "30"
+      },
+      {
+        "name": "Combustion",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "954",
-    "externalId": null,
+    "externalId": "me2pt5-36",
     "tcgdex_id": "me02.5-036",
     "localId": "036",
     "setCode": "me02.5",
@@ -8265,11 +9980,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-036-low.png",
-    "imageHighSrc": "cards/me2pt5-036-high.png"
+    "imageHighSrc": "cards/me2pt5-036-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "953",
-    "externalId": null,
+    "externalId": "me2pt5-35",
     "tcgdex_id": "me02.5-035",
     "localId": "035",
     "setCode": "me02.5",
@@ -8298,11 +10019,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-035-low.png",
-    "imageHighSrc": "cards/me2pt5-035-high.png"
+    "imageHighSrc": "cards/me2pt5-035-high.png",
+    "attacks": [
+      {
+        "name": "Sudden Scorching",
+        "damage": null
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "952",
-    "externalId": null,
+    "externalId": "me2pt5-34",
     "tcgdex_id": "me02.5-034",
     "localId": "034",
     "setCode": "me02.5",
@@ -8331,11 +10062,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-034-low.png",
-    "imageHighSrc": "cards/me2pt5-034-high.png"
+    "imageHighSrc": "cards/me2pt5-034-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "951",
-    "externalId": null,
+    "externalId": "me2pt5-33",
     "tcgdex_id": "me02.5-033",
     "localId": "033",
     "setCode": "me02.5",
@@ -8364,11 +10101,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-033-low.png",
-    "imageHighSrc": "cards/me2pt5-033-high.png"
+    "imageHighSrc": "cards/me2pt5-033-high.png",
+    "attacks": [
+      {
+        "name": "Back Draft",
+        "damage": "30×"
+      },
+      {
+        "name": "Flamebody Cannon",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "950",
-    "externalId": null,
+    "externalId": "me2pt5-32",
     "tcgdex_id": "me02.5-032",
     "localId": "032",
     "setCode": "me02.5",
@@ -8397,11 +10144,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-032-low.png",
-    "imageHighSrc": "cards/me2pt5-032-high.png"
+    "imageHighSrc": "cards/me2pt5-032-high.png",
+    "attacks": [
+      {
+        "name": "Rolling Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Flare",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "949",
-    "externalId": null,
+    "externalId": "me2pt5-31",
     "tcgdex_id": "me02.5-031",
     "localId": "031",
     "setCode": "me02.5",
@@ -8430,11 +10187,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-031-low.png",
-    "imageHighSrc": "cards/me2pt5-031-high.png"
+    "imageHighSrc": "cards/me2pt5-031-high.png",
+    "attacks": [
+      {
+        "name": "Crimson Blast",
+        "damage": "320"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "948",
-    "externalId": null,
+    "externalId": "me2pt5-30",
     "tcgdex_id": "me02.5-030",
     "localId": "030",
     "setCode": "me02.5",
@@ -8463,11 +10227,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-030-low.png",
-    "imageHighSrc": "cards/me2pt5-030-high.png"
+    "imageHighSrc": "cards/me2pt5-030-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "947",
-    "externalId": null,
+    "externalId": "me2pt5-29",
     "tcgdex_id": "me02.5-029",
     "localId": "029",
     "setCode": "me02.5",
@@ -8496,11 +10266,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-029-low.png",
-    "imageHighSrc": "cards/me2pt5-029-high.png"
+    "imageHighSrc": "cards/me2pt5-029-high.png",
+    "attacks": [
+      {
+        "name": "Steady Firebreathing",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "946",
-    "externalId": null,
+    "externalId": "me2pt5-28",
     "tcgdex_id": "me02.5-028",
     "localId": "028",
     "setCode": "me02.5",
@@ -8529,11 +10305,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-028-low.png",
-    "imageHighSrc": "cards/me2pt5-028-high.png"
+    "imageHighSrc": "cards/me2pt5-028-high.png",
+    "attacks": [
+      {
+        "name": "Roasting Burn",
+        "damage": "110"
+      },
+      {
+        "name": "Power Stomp",
+        "damage": "170"
+      }
+    ]
   },
   {
     "masterCardId": "945",
-    "externalId": null,
+    "externalId": "me2pt5-27",
     "tcgdex_id": "me02.5-027",
     "localId": "027",
     "setCode": "me02.5",
@@ -8562,11 +10348,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-027-low.png",
-    "imageHighSrc": "cards/me2pt5-027-high.png"
+    "imageHighSrc": "cards/me2pt5-027-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "944",
-    "externalId": null,
+    "externalId": "me2pt5-26",
     "tcgdex_id": "me02.5-026",
     "localId": "026",
     "setCode": "me02.5",
@@ -8595,11 +10387,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-026-low.png",
-    "imageHighSrc": "cards/me2pt5-026-high.png"
+    "imageHighSrc": "cards/me2pt5-026-high.png",
+    "attacks": [
+      {
+        "name": "Shining Feathers",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "943",
-    "externalId": null,
+    "externalId": "me2pt5-25",
     "tcgdex_id": "me02.5-025",
     "localId": "025",
     "setCode": "me02.5",
@@ -8628,11 +10427,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-025-low.png",
-    "imageHighSrc": "cards/me2pt5-025-high.png"
+    "imageHighSrc": "cards/me2pt5-025-high.png",
+    "attacks": [
+      {
+        "name": "Flare Fall",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "942",
-    "externalId": null,
+    "externalId": "me2pt5-24",
     "tcgdex_id": "me02.5-024",
     "localId": "024",
     "setCode": "me02.5",
@@ -8661,11 +10466,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-024-low.png",
-    "imageHighSrc": "cards/me2pt5-024-high.png"
+    "imageHighSrc": "cards/me2pt5-024-high.png",
+    "attacks": [
+      {
+        "name": "Lava Burst",
+        "damage": "70×"
+      }
+    ]
   },
   {
     "masterCardId": "941",
-    "externalId": null,
+    "externalId": "me2pt5-23",
     "tcgdex_id": "me02.5-023",
     "localId": "023",
     "setCode": "me02.5",
@@ -8694,11 +10505,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-023-low.png",
-    "imageHighSrc": "cards/me2pt5-023-high.png"
+    "imageHighSrc": "cards/me2pt5-023-high.png",
+    "attacks": [
+      {
+        "name": "Steady Firebreathing",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "940",
-    "externalId": null,
+    "externalId": "me2pt5-22",
     "tcgdex_id": "me02.5-022",
     "localId": "022",
     "setCode": "me02.5",
@@ -8727,11 +10544,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-022-low.png",
-    "imageHighSrc": "cards/me2pt5-022-high.png"
+    "imageHighSrc": "cards/me2pt5-022-high.png",
+    "attacks": [
+      {
+        "name": "Explosion Y",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "939",
-    "externalId": null,
+    "externalId": "me2pt5-21",
     "tcgdex_id": "me02.5-021",
     "localId": "021",
     "setCode": "me02.5",
@@ -8760,11 +10584,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-021-low.png",
-    "imageHighSrc": "cards/me2pt5-021-high.png"
+    "imageHighSrc": "cards/me2pt5-021-high.png",
+    "attacks": [
+      {
+        "name": "Heat Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "938",
-    "externalId": null,
+    "externalId": "me2pt5-20",
     "tcgdex_id": "me02.5-020",
     "localId": "020",
     "setCode": "me02.5",
@@ -8793,11 +10623,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-020-low.png",
-    "imageHighSrc": "cards/me2pt5-020-high.png"
+    "imageHighSrc": "cards/me2pt5-020-high.png",
+    "attacks": [
+      {
+        "name": "Fire Claws",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "937",
-    "externalId": null,
+    "externalId": "me2pt5-19",
     "tcgdex_id": "me02.5-019",
     "localId": "019",
     "setCode": "me02.5",
@@ -8826,11 +10662,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-019-low.png",
-    "imageHighSrc": "cards/me2pt5-019-high.png"
+    "imageHighSrc": "cards/me2pt5-019-high.png",
+    "attacks": [
+      {
+        "name": "Rocket Rush",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "936",
-    "externalId": null,
+    "externalId": "me2pt5-18",
     "tcgdex_id": "me02.5-018",
     "localId": "018",
     "setCode": "me02.5",
@@ -8859,11 +10701,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-018-low.png",
-    "imageHighSrc": "cards/me2pt5-018-high.png"
+    "imageHighSrc": "cards/me2pt5-018-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "935",
-    "externalId": null,
+    "externalId": "me2pt5-17",
     "tcgdex_id": "me02.5-017",
     "localId": "017",
     "setCode": "me02.5",
@@ -8892,11 +10740,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-017-low.png",
-    "imageHighSrc": "cards/me2pt5-017-high.png"
+    "imageHighSrc": "cards/me2pt5-017-high.png",
+    "attacks": [
+      {
+        "name": "Ambush",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "934",
-    "externalId": null,
+    "externalId": "me2pt5-16",
     "tcgdex_id": "me02.5-016",
     "localId": "016",
     "setCode": "me02.5",
@@ -8925,11 +10779,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-016-low.png",
-    "imageHighSrc": "cards/me2pt5-016-high.png"
+    "imageHighSrc": "cards/me2pt5-016-high.png",
+    "attacks": [
+      {
+        "name": "Itchy Pollen",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "933",
-    "externalId": null,
+    "externalId": "me2pt5-15",
     "tcgdex_id": "me02.5-015",
     "localId": "015",
     "setCode": "me02.5",
@@ -8958,11 +10818,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-015-low.png",
-    "imageHighSrc": "cards/me2pt5-015-high.png"
+    "imageHighSrc": "cards/me2pt5-015-high.png",
+    "attacks": [
+      {
+        "name": "Twilight Poison",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "932",
-    "externalId": null,
+    "externalId": "me2pt5-14",
     "tcgdex_id": "me02.5-014",
     "localId": "014",
     "setCode": "me02.5",
@@ -8991,11 +10857,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-014-low.png",
-    "imageHighSrc": "cards/me2pt5-014-high.png"
+    "imageHighSrc": "cards/me2pt5-014-high.png",
+    "attacks": [
+      {
+        "name": "Trading Places",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "931",
-    "externalId": null,
+    "externalId": "me2pt5-13",
     "tcgdex_id": "me02.5-013",
     "localId": "013",
     "setCode": "me02.5",
@@ -9024,11 +10896,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-013-low.png",
-    "imageHighSrc": "cards/me2pt5-013-high.png"
+    "imageHighSrc": "cards/me2pt5-013-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": "40"
+      },
+      {
+        "name": "Energy Straw",
+        "damage": "80×"
+      }
+    ]
   },
   {
     "masterCardId": "930",
-    "externalId": null,
+    "externalId": "me2pt5-12",
     "tcgdex_id": "me02.5-012",
     "localId": "012",
     "setCode": "me02.5",
@@ -9057,11 +10939,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-012-low.png",
-    "imageHighSrc": "cards/me2pt5-012-high.png"
+    "imageHighSrc": "cards/me2pt5-012-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "929",
-    "externalId": null,
+    "externalId": "me2pt5-11",
     "tcgdex_id": "me02.5-011",
     "localId": "011",
     "setCode": "me02.5",
@@ -9090,11 +10978,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-011-low.png",
-    "imageHighSrc": "cards/me2pt5-011-high.png"
+    "imageHighSrc": "cards/me2pt5-011-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "928",
-    "externalId": null,
+    "externalId": "me2pt5-10",
     "tcgdex_id": "me02.5-010",
     "localId": "010",
     "setCode": "me02.5",
@@ -9123,11 +11017,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-010-low.png",
-    "imageHighSrc": "cards/me2pt5-010-high.png"
+    "imageHighSrc": "cards/me2pt5-010-high.png",
+    "attacks": [
+      {
+        "name": "Giant Bouquet",
+        "damage": "70+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "927",
-    "externalId": null,
+    "externalId": "me2pt5-9",
     "tcgdex_id": "me02.5-009",
     "localId": "009",
     "setCode": "me02.5",
@@ -9156,11 +11057,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-009-low.png",
-    "imageHighSrc": "cards/me2pt5-009-high.png"
+    "imageHighSrc": "cards/me2pt5-009-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Step",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "926",
-    "externalId": null,
+    "externalId": "me2pt5-8",
     "tcgdex_id": "me02.5-008",
     "localId": "008",
     "setCode": "me02.5",
@@ -9189,11 +11096,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-008-low.png",
-    "imageHighSrc": "cards/me2pt5-008-high.png"
+    "imageHighSrc": "cards/me2pt5-008-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "925",
-    "externalId": null,
+    "externalId": "me2pt5-7",
     "tcgdex_id": "me02.5-007",
     "localId": "007",
     "setCode": "me02.5",
@@ -9222,11 +11139,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-007-low.png",
-    "imageHighSrc": "cards/me2pt5-007-high.png"
+    "imageHighSrc": "cards/me2pt5-007-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "924",
-    "externalId": null,
+    "externalId": "me2pt5-6",
     "tcgdex_id": "me02.5-006",
     "localId": "006",
     "setCode": "me02.5",
@@ -9255,11 +11178,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-006-low.png",
-    "imageHighSrc": "cards/me2pt5-006-high.png"
+    "imageHighSrc": "cards/me2pt5-006-high.png",
+    "attacks": [
+      {
+        "name": "Flower Garden Rondo",
+        "damage": "40×"
+      },
+      {
+        "name": "Solar Beam",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "923",
-    "externalId": null,
+    "externalId": "me2pt5-5",
     "tcgdex_id": "me02.5-005",
     "localId": "005",
     "setCode": "me02.5",
@@ -9288,11 +11221,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-005-low.png",
-    "imageHighSrc": "cards/me2pt5-005-high.png"
+    "imageHighSrc": "cards/me2pt5-005-high.png",
+    "attacks": [
+      {
+        "name": "Melt",
+        "damage": "30"
+      },
+      {
+        "name": "Leafy Cyclone",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "922",
-    "externalId": null,
+    "externalId": "me2pt5-4",
     "tcgdex_id": "me02.5-004",
     "localId": "004",
     "setCode": "me02.5",
@@ -9321,11 +11264,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-004-low.png",
-    "imageHighSrc": "cards/me2pt5-004-high.png"
+    "imageHighSrc": "cards/me2pt5-004-high.png",
+    "attacks": [
+      {
+        "name": "Vine Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "921",
-    "externalId": null,
+    "externalId": "me2pt5-3",
     "tcgdex_id": "me02.5-003",
     "localId": "003",
     "setCode": "me02.5",
@@ -9354,11 +11303,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-003-low.png",
-    "imageHighSrc": "cards/me2pt5-003-high.png"
+    "imageHighSrc": "cards/me2pt5-003-high.png",
+    "attacks": [
+      {
+        "name": "Bloom Powder",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "920",
-    "externalId": null,
+    "externalId": "me2pt5-2",
     "tcgdex_id": "me02.5-002",
     "localId": "002",
     "setCode": "me02.5",
@@ -9387,11 +11343,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-002-low.png",
-    "imageHighSrc": "cards/me2pt5-002-high.png"
+    "imageHighSrc": "cards/me2pt5-002-high.png",
+    "attacks": [
+      {
+        "name": "Poison Spray",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "919",
-    "externalId": null,
+    "externalId": "me2pt5-1",
     "tcgdex_id": "me02.5-001",
     "localId": "001",
     "setCode": "me02.5",
@@ -9420,6 +11382,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2pt5-001-low.png",
-    "imageHighSrc": "cards/me2pt5-001-high.png"
+    "imageHighSrc": "cards/me2pt5-001-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   }
 ]

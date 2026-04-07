@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "10417",
-    "externalId": null,
+    "externalId": "sm4-124",
     "tcgdex_id": "sm4-124",
     "localId": "124",
     "setCode": "sm4",
@@ -30,7 +30,7 @@
   },
   {
     "masterCardId": "10410",
-    "externalId": null,
+    "externalId": "sm4-123",
     "tcgdex_id": "sm4-123",
     "localId": "123",
     "setCode": "sm4",
@@ -55,11 +55,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-123-low.png",
-    "imageHighSrc": "cards/sm4-123-high.png"
+    "imageHighSrc": "cards/sm4-123-high.png",
+    "rules": "This card provides Colorless Energy.\n\nWhen you attach this card from your hand to your Active Pokémon, switch that Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "10403",
-    "externalId": null,
+    "externalId": "sm4-122",
     "tcgdex_id": "sm4-122",
     "localId": "122",
     "setCode": "sm4",
@@ -84,11 +85,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-122-low.png",
-    "imageHighSrc": "cards/sm4-122-high.png"
+    "imageHighSrc": "cards/sm4-122-high.png",
+    "rules": "This card provides Colorless Energy.\n\nIf you have more Prize cards remaining than your opponent, and if this card is attached to a Pokémon that isn't a Pokémon-GX or Pokémon-EX, this card provides every type of Energy but provides only 2 Energy at a time."
   },
   {
     "masterCardId": "10396",
-    "externalId": null,
+    "externalId": "sm4-121",
     "tcgdex_id": "sm4-121",
     "localId": "121",
     "setCode": "sm4",
@@ -113,11 +115,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-121-low.png",
-    "imageHighSrc": "cards/sm4-121-high.png"
+    "imageHighSrc": "cards/sm4-121-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is your Active Pokémon and is Knocked Out by damage from an opponent's attack, move up to 3 basic Energy cards from that Pokémon to 1 of your Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10390",
-    "externalId": null,
+    "externalId": "sm4-120",
     "tcgdex_id": "sm4-120",
     "localId": "120",
     "setCode": "sm4",
@@ -142,11 +145,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-120-low.png",
-    "imageHighSrc": "cards/sm4-120-high.png"
+    "imageHighSrc": "cards/sm4-120-high.png",
+    "rules": "You can play this card only if you have more Prize cards remaining than your opponent.\n\nSwitch 1 of your opponent's Benched Pokémon with their Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10381",
-    "externalId": null,
+    "externalId": "sm4-119",
     "tcgdex_id": "sm4-119",
     "localId": "119",
     "setCode": "sm4",
@@ -176,11 +180,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-119-low.png",
-    "imageHighSrc": "cards/sm4-119-high.png"
+    "imageHighSrc": "cards/sm4-119-high.png",
+    "attacks": [
+      {
+        "name": "Turbo Drive",
+        "damage": "120"
+      },
+      {
+        "name": "Rebel-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10374",
-    "externalId": null,
+    "externalId": "sm4-118",
     "tcgdex_id": "sm4-118",
     "localId": "118",
     "setCode": "sm4",
@@ -210,11 +225,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-118-low.png",
-    "imageHighSrc": "cards/sm4-118-high.png"
+    "imageHighSrc": "cards/sm4-118-high.png",
+    "attacks": [
+      {
+        "name": "Tropical Head",
+        "damage": null
+      },
+      {
+        "name": "Dragon Hammer",
+        "damage": "120"
+      },
+      {
+        "name": "Tower-Go-Round-GX",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10368",
-    "externalId": null,
+    "externalId": "sm4-117",
     "tcgdex_id": "sm4-117",
     "localId": "117",
     "setCode": "sm4",
@@ -245,11 +275,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-117-low.png",
-    "imageHighSrc": "cards/sm4-117-high.png"
+    "imageHighSrc": "cards/sm4-117-high.png",
+    "attacks": [
+      {
+        "name": "Gale Blade",
+        "damage": "70"
+      },
+      {
+        "name": "Blade-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10361",
-    "externalId": null,
+    "externalId": "sm4-116",
     "tcgdex_id": "sm4-116",
     "localId": "116",
     "setCode": "sm4",
@@ -280,11 +321,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-116-low.png",
-    "imageHighSrc": "cards/sm4-116-high.png"
+    "imageHighSrc": "cards/sm4-116-high.png",
+    "attacks": [
+      {
+        "name": "Eat Sloppily",
+        "damage": null
+      },
+      {
+        "name": "Tyrannical Hole",
+        "damage": "180"
+      },
+      {
+        "name": "Glutton-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10353",
-    "externalId": null,
+    "externalId": "sm4-115",
     "tcgdex_id": "sm4-115",
     "localId": "115",
     "setCode": "sm4",
@@ -315,11 +371,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-115-low.png",
-    "imageHighSrc": "cards/sm4-115-high.png"
+    "imageHighSrc": "cards/sm4-115-high.png",
+    "attacks": [
+      {
+        "name": "Jet Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Knuckle Impact",
+        "damage": "160"
+      },
+      {
+        "name": "Absorption-GX",
+        "damage": "40×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10347",
-    "externalId": null,
+    "externalId": "sm4-114",
     "tcgdex_id": "sm4-114",
     "localId": "114",
     "setCode": "sm4",
@@ -350,11 +421,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-114-low.png",
-    "imageHighSrc": "cards/sm4-114-high.png"
+    "imageHighSrc": "cards/sm4-114-high.png",
+    "attacks": [
+      {
+        "name": "Lock Up",
+        "damage": "120"
+      },
+      {
+        "name": "Symbiont-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10340",
-    "externalId": null,
+    "externalId": "sm4-113",
     "tcgdex_id": "sm4-113",
     "localId": "113",
     "setCode": "sm4",
@@ -384,11 +466,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-113-low.png",
-    "imageHighSrc": "cards/sm4-113-high.png"
+    "imageHighSrc": "cards/sm4-113-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      },
+      {
+        "name": "Super Electromagnetic Tackle",
+        "damage": "200"
+      },
+      {
+        "name": "Heavy Rock-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10333",
-    "externalId": null,
+    "externalId": "sm4-112",
     "tcgdex_id": "sm4-112",
     "localId": "112",
     "setCode": "sm4",
@@ -418,11 +515,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-112-low.png",
-    "imageHighSrc": "cards/sm4-112-high.png"
+    "imageHighSrc": "cards/sm4-112-high.png",
+    "attacks": [
+      {
+        "name": "Waterfall",
+        "damage": "70"
+      },
+      {
+        "name": "Draconic Disaster",
+        "damage": "100+"
+      },
+      {
+        "name": "Dread Storm-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10321",
-    "externalId": null,
+    "externalId": "sm4-111",
     "tcgdex_id": "sm4-111",
     "localId": "111",
     "setCode": "sm4",
@@ -447,11 +559,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-111-low.png",
-    "imageHighSrc": "cards/sm4-111-high.png"
+    "imageHighSrc": "cards/sm4-111-high.png",
+    "rules": "Search your deck for up to 2 Pokémon-GX, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10314",
-    "externalId": null,
+    "externalId": "sm4-110",
     "tcgdex_id": "sm4-110",
     "localId": "110",
     "setCode": "sm4",
@@ -476,11 +589,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-110-low.png",
-    "imageHighSrc": "cards/sm4-110-high.png"
+    "imageHighSrc": "cards/sm4-110-high.png",
+    "rules": "Put 2 in any combination of Supporter and Stadium cards from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10307",
-    "externalId": null,
+    "externalId": "sm4-109",
     "tcgdex_id": "sm4-109",
     "localId": "109",
     "setCode": "sm4",
@@ -505,11 +619,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-109-low.png",
-    "imageHighSrc": "cards/sm4-109-high.png"
+    "imageHighSrc": "cards/sm4-109-high.png",
+    "rules": "Look at your face-down Prize cards and put 1 of them into your hand. Then, shuffle this Gladion into your remaining Prize cards and put them back face down. If you didn't play this Gladion from your hand, it does nothing.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10301",
-    "externalId": null,
+    "externalId": "sm4-108",
     "tcgdex_id": "sm4-108",
     "localId": "108",
     "setCode": "sm4",
@@ -539,11 +654,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-108-low.png",
-    "imageHighSrc": "cards/sm4-108-high.png"
+    "imageHighSrc": "cards/sm4-108-high.png",
+    "attacks": [
+      {
+        "name": "Turbo Drive",
+        "damage": "120"
+      },
+      {
+        "name": "Rebel-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10297",
-    "externalId": null,
+    "externalId": "sm4-107",
     "tcgdex_id": "sm4-107",
     "localId": "107",
     "setCode": "sm4",
@@ -573,11 +699,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-107-low.png",
-    "imageHighSrc": "cards/sm4-107-high.png"
+    "imageHighSrc": "cards/sm4-107-high.png",
+    "attacks": [
+      {
+        "name": "Tropical Head",
+        "damage": null
+      },
+      {
+        "name": "Dragon Hammer",
+        "damage": "120"
+      },
+      {
+        "name": "Tower-Go-Round-GX",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10290",
-    "externalId": null,
+    "externalId": "sm4-106",
     "tcgdex_id": "sm4-106",
     "localId": "106",
     "setCode": "sm4",
@@ -608,11 +749,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-106-low.png",
-    "imageHighSrc": "cards/sm4-106-high.png"
+    "imageHighSrc": "cards/sm4-106-high.png",
+    "attacks": [
+      {
+        "name": "Gale Blade",
+        "damage": "70"
+      },
+      {
+        "name": "Blade-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10284",
-    "externalId": null,
+    "externalId": "sm4-105",
     "tcgdex_id": "sm4-105",
     "localId": "105",
     "setCode": "sm4",
@@ -643,11 +795,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-105-low.png",
-    "imageHighSrc": "cards/sm4-105-high.png"
+    "imageHighSrc": "cards/sm4-105-high.png",
+    "attacks": [
+      {
+        "name": "Eat Sloppily",
+        "damage": null
+      },
+      {
+        "name": "Tyrannical Hole",
+        "damage": "180"
+      },
+      {
+        "name": "Glutton-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10276",
-    "externalId": null,
+    "externalId": "sm4-104",
     "tcgdex_id": "sm4-104",
     "localId": "104",
     "setCode": "sm4",
@@ -678,11 +845,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-104-low.png",
-    "imageHighSrc": "cards/sm4-104-high.png"
+    "imageHighSrc": "cards/sm4-104-high.png",
+    "attacks": [
+      {
+        "name": "Jet Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Knuckle Impact",
+        "damage": "160"
+      },
+      {
+        "name": "Absorption-GX",
+        "damage": "40×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10270",
-    "externalId": null,
+    "externalId": "sm4-103",
     "tcgdex_id": "sm4-103",
     "localId": "103",
     "setCode": "sm4",
@@ -713,11 +895,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-103-low.png",
-    "imageHighSrc": "cards/sm4-103-high.png"
+    "imageHighSrc": "cards/sm4-103-high.png",
+    "attacks": [
+      {
+        "name": "Lock Up",
+        "damage": "120"
+      },
+      {
+        "name": "Symbiont-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10259",
-    "externalId": null,
+    "externalId": "sm4-102",
     "tcgdex_id": "sm4-102",
     "localId": "102",
     "setCode": "sm4",
@@ -747,11 +940,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-102-low.png",
-    "imageHighSrc": "cards/sm4-102-high.png"
+    "imageHighSrc": "cards/sm4-102-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      },
+      {
+        "name": "Super Electromagnetic Tackle",
+        "damage": "200"
+      },
+      {
+        "name": "Heavy Rock-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10254",
-    "externalId": null,
+    "externalId": "sm4-101",
     "tcgdex_id": "sm4-101",
     "localId": "101",
     "setCode": "sm4",
@@ -781,11 +989,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-101-low.png",
-    "imageHighSrc": "cards/sm4-101-high.png"
+    "imageHighSrc": "cards/sm4-101-high.png",
+    "attacks": [
+      {
+        "name": "Waterfall",
+        "damage": "70"
+      },
+      {
+        "name": "Draconic Disaster",
+        "damage": "100+"
+      },
+      {
+        "name": "Dread Storm-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10248",
-    "externalId": null,
+    "externalId": "sm4-100",
     "tcgdex_id": "sm4-100",
     "localId": "100",
     "setCode": "sm4",
@@ -810,18 +1033,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-100-low.png",
-    "imageHighSrc": "cards/sm4-100-high.png"
+    "imageHighSrc": "cards/sm4-100-high.png",
+    "rules": "This card provides Colorless Energy.\n\nIf you have more Prize cards remaining than your opponent, and if this card is attached to a Pokémon that isn't a Pokémon-GX or Pokémon-EX, this card provides every type of Energy but provides only 2 Energy at a time."
   },
   {
     "masterCardId": "10241",
-    "externalId": null,
+    "externalId": "sm4-99",
     "tcgdex_id": "sm4-99",
     "localId": "99",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "099/111",
+    "cardNumber": "99/111",
     "cardName": "Sea of Nothingness",
-    "fullDisplayName": "Sea of Nothingness 099/111 Crimson Invasion",
+    "fullDisplayName": "Sea of Nothingness 99/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -839,18 +1063,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-099-low.png",
-    "imageHighSrc": "cards/sm4-099-high.png"
+    "imageHighSrc": "cards/sm4-099-high.png",
+    "rules": "Special Conditions are not removed when Pokémon (both yours and your opponent's) evolve or devolve.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10238",
-    "externalId": null,
+    "externalId": "sm4-98",
     "tcgdex_id": "sm4-98",
     "localId": "98",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "098/111",
+    "cardNumber": "98/111",
     "cardName": "Psychic Memory",
-    "fullDisplayName": "Psychic Memory 098/111 Crimson Invasion",
+    "fullDisplayName": "Psychic Memory 98/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -868,18 +1093,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-098-low.png",
-    "imageHighSrc": "cards/sm4-098-high.png"
+    "imageHighSrc": "cards/sm4-098-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Silvally-GX this card is attached to is a Psychic Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10231",
-    "externalId": null,
+    "externalId": "sm4-97",
     "tcgdex_id": "sm4-97",
     "localId": "97",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "097/111",
+    "cardNumber": "97/111",
     "cardName": "Peeking Red Card",
-    "fullDisplayName": "Peeking Red Card 097/111 Crimson Invasion",
+    "fullDisplayName": "Peeking Red Card 97/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -897,18 +1123,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-097-low.png",
-    "imageHighSrc": "cards/sm4-097-high.png"
+    "imageHighSrc": "cards/sm4-097-high.png",
+    "rules": "Your opponent reveals their hand. You may have your opponent count the cards in their hand, shuffle those cards into their deck, then draw that many cards.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10224",
-    "externalId": null,
+    "externalId": "sm4-96",
     "tcgdex_id": "sm4-96",
     "localId": "96",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "096/111",
+    "cardNumber": "96/111",
     "cardName": "Lusamine",
-    "fullDisplayName": "Lusamine 096/111 Crimson Invasion",
+    "fullDisplayName": "Lusamine 96/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -926,18 +1153,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-096-low.png",
-    "imageHighSrc": "cards/sm4-096-high.png"
+    "imageHighSrc": "cards/sm4-096-high.png",
+    "rules": "Put 2 in any combination of Supporter and Stadium cards from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10215",
-    "externalId": null,
+    "externalId": "sm4-95",
     "tcgdex_id": "sm4-95",
     "localId": "95",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "095/111",
+    "cardNumber": "95/111",
     "cardName": "Gladion",
-    "fullDisplayName": "Gladion 095/111 Crimson Invasion",
+    "fullDisplayName": "Gladion 95/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -955,18 +1183,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-095-low.png",
-    "imageHighSrc": "cards/sm4-095-high.png"
+    "imageHighSrc": "cards/sm4-095-high.png",
+    "rules": "Look at your face-down Prize cards and put 1 of them into your hand. Then, shuffle this Gladion into your remaining Prize cards and put them back face down. If you didn't play this Gladion from your hand, it does nothing.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10210",
-    "externalId": null,
+    "externalId": "sm4-94",
     "tcgdex_id": "sm4-94",
     "localId": "94",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "094/111",
+    "cardNumber": "94/111",
     "cardName": "Fighting Memory",
-    "fullDisplayName": "Fighting Memory 094/111 Crimson Invasion",
+    "fullDisplayName": "Fighting Memory 94/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -984,18 +1213,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-094-low.png",
-    "imageHighSrc": "cards/sm4-094-high.png"
+    "imageHighSrc": "cards/sm4-094-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Silvally-GX this card is attached to is a Fighting Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10202",
-    "externalId": null,
+    "externalId": "sm4-93",
     "tcgdex_id": "sm4-93",
     "localId": "93",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "093/111",
+    "cardNumber": "93/111",
     "cardName": "Devoured Field",
-    "fullDisplayName": "Devoured Field 093/111 Crimson Invasion",
+    "fullDisplayName": "Devoured Field 93/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1013,18 +1243,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-093-low.png",
-    "imageHighSrc": "cards/sm4-093-high.png"
+    "imageHighSrc": "cards/sm4-093-high.png",
+    "rules": "The attacks of Darkness Pokémon and Dragon Pokémon (both yours and your opponent's) do 10 more damage to the opponent's Active Pokémon (before applying Weakness and Resistance).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10197",
-    "externalId": null,
+    "externalId": "sm4-92",
     "tcgdex_id": "sm4-92",
     "localId": "92",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "092/111",
+    "cardNumber": "92/111",
     "cardName": "Dashing Pouch",
-    "fullDisplayName": "Dashing Pouch 092/111 Crimson Invasion",
+    "fullDisplayName": "Dashing Pouch 92/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1042,18 +1273,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-092-low.png",
-    "imageHighSrc": "cards/sm4-092-high.png"
+    "imageHighSrc": "cards/sm4-092-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to discards Energy for its Retreat Cost, put that Energy into your hand instead of the discard pile.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10191",
-    "externalId": null,
+    "externalId": "sm4-91",
     "tcgdex_id": "sm4-91",
     "localId": "91",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "091/111",
+    "cardNumber": "91/111",
     "cardName": "Counter Catcher",
-    "fullDisplayName": "Counter Catcher 091/111 Crimson Invasion",
+    "fullDisplayName": "Counter Catcher 91/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1071,18 +1303,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-091-low.png",
-    "imageHighSrc": "cards/sm4-091-high.png"
+    "imageHighSrc": "cards/sm4-091-high.png",
+    "rules": "You can play this card only if you have more Prize cards remaining than your opponent.\n\nSwitch 1 of your opponent's Benched Pokémon with their Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10185",
-    "externalId": null,
+    "externalId": "sm4-90",
     "tcgdex_id": "sm4-90",
     "localId": "90",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "090/111",
+    "cardNumber": "90/111",
     "cardName": "Silvally-GX",
-    "fullDisplayName": "Silvally-GX 090/111 Crimson Invasion",
+    "fullDisplayName": "Silvally-GX 90/111 Crimson Invasion",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1105,18 +1338,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-090-low.png",
-    "imageHighSrc": "cards/sm4-090-high.png"
+    "imageHighSrc": "cards/sm4-090-high.png",
+    "attacks": [
+      {
+        "name": "Turbo Drive",
+        "damage": "120"
+      },
+      {
+        "name": "Rebel-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10179",
-    "externalId": null,
+    "externalId": "sm4-89",
     "tcgdex_id": "sm4-89",
     "localId": "89",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "089/111",
+    "cardNumber": "89/111",
     "cardName": "Type: Null",
-    "fullDisplayName": "Type: Null 089/111 Crimson Invasion",
+    "fullDisplayName": "Type: Null 89/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1138,18 +1382,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-089-low.png",
-    "imageHighSrc": "cards/sm4-089-high.png"
+    "imageHighSrc": "cards/sm4-089-high.png",
+    "attacks": [
+      {
+        "name": "Armor Press",
+        "damage": "30"
+      },
+      {
+        "name": "Slashing Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "10172",
-    "externalId": null,
+    "externalId": "sm4-88",
     "tcgdex_id": "sm4-88",
     "localId": "88",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "088/111",
+    "cardNumber": "88/111",
     "cardName": "Diggersby",
-    "fullDisplayName": "Diggersby 088/111 Crimson Invasion",
+    "fullDisplayName": "Diggersby 88/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1171,18 +1425,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-088-low.png",
-    "imageHighSrc": "cards/sm4-088-high.png"
+    "imageHighSrc": "cards/sm4-088-high.png",
+    "attacks": [
+      {
+        "name": "Dig",
+        "damage": "60"
+      },
+      {
+        "name": "Hammer Arm",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10165",
-    "externalId": null,
+    "externalId": "sm4-87",
     "tcgdex_id": "sm4-87",
     "localId": "87",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "087/111",
+    "cardNumber": "87/111",
     "cardName": "Bunnelby",
-    "fullDisplayName": "Bunnelby 087/111 Crimson Invasion",
+    "fullDisplayName": "Bunnelby 87/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1204,18 +1468,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-087-low.png",
-    "imageHighSrc": "cards/sm4-087-high.png"
+    "imageHighSrc": "cards/sm4-087-high.png",
+    "attacks": [
+      {
+        "name": "Mud Shot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10159",
-    "externalId": null,
+    "externalId": "sm4-86",
     "tcgdex_id": "sm4-86",
     "localId": "86",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "086/111",
+    "cardNumber": "86/111",
     "cardName": "Cinccino",
-    "fullDisplayName": "Cinccino 086/111 Crimson Invasion",
+    "fullDisplayName": "Cinccino 86/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1237,18 +1507,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-086-low.png",
-    "imageHighSrc": "cards/sm4-086-high.png"
+    "imageHighSrc": "cards/sm4-086-high.png",
+    "attacks": [
+      {
+        "name": "Amazing Plea",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10152",
-    "externalId": null,
+    "externalId": "sm4-85",
     "tcgdex_id": "sm4-85",
     "localId": "85",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "085/111",
+    "cardNumber": "85/111",
     "cardName": "Minccino",
-    "fullDisplayName": "Minccino 085/111 Crimson Invasion",
+    "fullDisplayName": "Minccino 85/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1270,18 +1546,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-085-low.png",
-    "imageHighSrc": "cards/sm4-085-high.png"
+    "imageHighSrc": "cards/sm4-085-high.png",
+    "attacks": [
+      {
+        "name": "Tickle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10145",
-    "externalId": null,
+    "externalId": "sm4-84",
     "tcgdex_id": "sm4-84",
     "localId": "84",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "84a/111",
+    "cardNumber": "84/111",
     "cardName": "Regigigas",
-    "fullDisplayName": "Regigigas 84a/111 Crimson Invasion",
+    "fullDisplayName": "Regigigas 84/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1303,18 +1585,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-84a-low.png",
-    "imageHighSrc": "cards/sm4-84a-high.png"
+    "imageHighSrc": "cards/sm4-84a-high.png",
+    "attacks": [
+      {
+        "name": "Giant Stomp",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "10138",
-    "externalId": null,
+    "externalId": "sm4-84",
     "tcgdex_id": "sm4-84",
     "localId": "84",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "084/111",
+    "cardNumber": "84/111",
     "cardName": "Regigigas",
-    "fullDisplayName": "Regigigas 084/111 Crimson Invasion",
+    "fullDisplayName": "Regigigas 84/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1336,18 +1624,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-084-low.png",
-    "imageHighSrc": "cards/sm4-084-high.png"
+    "imageHighSrc": "cards/sm4-084-high.png",
+    "attacks": [
+      {
+        "name": "Giant Stomp",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "10131",
-    "externalId": null,
+    "externalId": "sm4-83",
     "tcgdex_id": "sm4-83",
     "localId": "83",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "083/111",
+    "cardNumber": "83/111",
     "cardName": "Staraptor",
-    "fullDisplayName": "Staraptor 083/111 Crimson Invasion",
+    "fullDisplayName": "Staraptor 83/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1369,18 +1663,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-083-low.png",
-    "imageHighSrc": "cards/sm4-083-high.png"
+    "imageHighSrc": "cards/sm4-083-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "50"
+      },
+      {
+        "name": "Sky Hunting",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10123",
-    "externalId": null,
+    "externalId": "sm4-82",
     "tcgdex_id": "sm4-82",
     "localId": "82",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "082/111",
+    "cardNumber": "82/111",
     "cardName": "Staravia",
-    "fullDisplayName": "Staravia 082/111 Crimson Invasion",
+    "fullDisplayName": "Staravia 82/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1402,18 +1706,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-082-low.png",
-    "imageHighSrc": "cards/sm4-082-high.png"
+    "imageHighSrc": "cards/sm4-082-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "20"
+      },
+      {
+        "name": "Wing Attack",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10115",
-    "externalId": null,
+    "externalId": "sm4-81",
     "tcgdex_id": "sm4-81",
     "localId": "81",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "081/111",
+    "cardNumber": "81/111",
     "cardName": "Starly",
-    "fullDisplayName": "Starly 081/111 Crimson Invasion",
+    "fullDisplayName": "Starly 81/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1435,18 +1749,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-081-low.png",
-    "imageHighSrc": "cards/sm4-081-high.png"
+    "imageHighSrc": "cards/sm4-081-high.png",
+    "attacks": [
+      {
+        "name": "Bug Search",
+        "damage": null
+      },
+      {
+        "name": "Flap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10110",
-    "externalId": null,
+    "externalId": "sm4-80",
     "tcgdex_id": "sm4-80",
     "localId": "80",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "080/111",
+    "cardNumber": "80/111",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 080/111 Crimson Invasion",
+    "fullDisplayName": "Altaria 80/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1468,18 +1792,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-080-low.png",
-    "imageHighSrc": "cards/sm4-080-high.png"
+    "imageHighSrc": "cards/sm4-080-high.png",
+    "attacks": [
+      {
+        "name": "Draco Melody",
+        "damage": null
+      },
+      {
+        "name": "Cotton Guard",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10103",
-    "externalId": null,
+    "externalId": "sm4-79",
     "tcgdex_id": "sm4-79",
     "localId": "79",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "079/111",
+    "cardNumber": "79/111",
     "cardName": "Swablu",
-    "fullDisplayName": "Swablu 079/111 Crimson Invasion",
+    "fullDisplayName": "Swablu 79/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1501,18 +1835,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-079-low.png",
-    "imageHighSrc": "cards/sm4-079-high.png"
+    "imageHighSrc": "cards/sm4-079-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10095",
-    "externalId": null,
+    "externalId": "sm4-78",
     "tcgdex_id": "sm4-78",
     "localId": "78",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "078/111",
+    "cardNumber": "78/111",
     "cardName": "Miltank",
-    "fullDisplayName": "Miltank 078/111 Crimson Invasion",
+    "fullDisplayName": "Miltank 78/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1534,18 +1874,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-078-low.png",
-    "imageHighSrc": "cards/sm4-078-high.png"
+    "imageHighSrc": "cards/sm4-078-high.png",
+    "attacks": [
+      {
+        "name": "Sitdown Splash",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "10081",
-    "externalId": null,
+    "externalId": "sm4-77",
     "tcgdex_id": "sm4-77",
     "localId": "77",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "077/111",
+    "cardNumber": "77/111",
     "cardName": "Kommo-o",
-    "fullDisplayName": "Kommo-o 077/111 Crimson Invasion",
+    "fullDisplayName": "Kommo-o 77/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1567,18 +1913,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-077-low.png",
-    "imageHighSrc": "cards/sm4-077-high.png"
+    "imageHighSrc": "cards/sm4-077-high.png",
+    "attacks": [
+      {
+        "name": "War Cry",
+        "damage": "30+"
+      },
+      {
+        "name": "Clanging Scales",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "10074",
-    "externalId": null,
+    "externalId": "sm4-76",
     "tcgdex_id": "sm4-76",
     "localId": "76",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "076/111",
+    "cardNumber": "76/111",
     "cardName": "Hakamo-o",
-    "fullDisplayName": "Hakamo-o 076/111 Crimson Invasion",
+    "fullDisplayName": "Hakamo-o 76/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1600,18 +1956,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-076-low.png",
-    "imageHighSrc": "cards/sm4-076-high.png"
+    "imageHighSrc": "cards/sm4-076-high.png",
+    "attacks": [
+      {
+        "name": "Noble Roar",
+        "damage": null
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10067",
-    "externalId": null,
+    "externalId": "sm4-75",
     "tcgdex_id": "sm4-75",
     "localId": "75",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "075/111",
+    "cardNumber": "75/111",
     "cardName": "Jangmo-o",
-    "fullDisplayName": "Jangmo-o 075/111 Crimson Invasion",
+    "fullDisplayName": "Jangmo-o 75/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1633,18 +1999,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-075-low.png",
-    "imageHighSrc": "cards/sm4-075-high.png"
+    "imageHighSrc": "cards/sm4-075-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Gentle Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10060",
-    "externalId": null,
+    "externalId": "sm4-74",
     "tcgdex_id": "sm4-74",
     "localId": "74",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "074/111",
+    "cardNumber": "74/111",
     "cardName": "Alolan Exeggutor-GX",
-    "fullDisplayName": "Alolan Exeggutor-GX 074/111 Crimson Invasion",
+    "fullDisplayName": "Alolan Exeggutor-GX 74/111 Crimson Invasion",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1667,18 +2043,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-074-low.png",
-    "imageHighSrc": "cards/sm4-074-high.png"
+    "imageHighSrc": "cards/sm4-074-high.png",
+    "attacks": [
+      {
+        "name": "Tropical Head",
+        "damage": null
+      },
+      {
+        "name": "Dragon Hammer",
+        "damage": "120"
+      },
+      {
+        "name": "Tower-Go-Round-GX",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10053",
-    "externalId": null,
+    "externalId": "sm4-73",
     "tcgdex_id": "sm4-73",
     "localId": "73",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "073/111",
+    "cardNumber": "73/111",
     "cardName": "Xerneas",
-    "fullDisplayName": "Xerneas 073/111 Crimson Invasion",
+    "fullDisplayName": "Xerneas 73/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1700,18 +2091,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-073-low.png",
-    "imageHighSrc": "cards/sm4-073-high.png"
+    "imageHighSrc": "cards/sm4-073-high.png",
+    "attacks": [
+      {
+        "name": "Lead",
+        "damage": null
+      },
+      {
+        "name": "Bright Horns",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "10046",
-    "externalId": null,
+    "externalId": "sm4-72",
     "tcgdex_id": "sm4-72",
     "localId": "72",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "072/111",
+    "cardNumber": "72/111",
     "cardName": "Wigglytuff",
-    "fullDisplayName": "Wigglytuff 072/111 Crimson Invasion",
+    "fullDisplayName": "Wigglytuff 72/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1733,18 +2134,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-072-low.png",
-    "imageHighSrc": "cards/sm4-072-high.png"
+    "imageHighSrc": "cards/sm4-072-high.png",
+    "attacks": [
+      {
+        "name": "Hypnoblast",
+        "damage": "30"
+      },
+      {
+        "name": "Punishing Slap",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "10037",
-    "externalId": null,
+    "externalId": "sm4-71",
     "tcgdex_id": "sm4-71",
     "localId": "71",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "071/111",
+    "cardNumber": "71/111",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 071/111 Crimson Invasion",
+    "fullDisplayName": "Jigglypuff 71/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1766,18 +2177,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-071-low.png",
-    "imageHighSrc": "cards/sm4-071-high.png"
+    "imageHighSrc": "cards/sm4-071-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Double Slap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "10029",
-    "externalId": null,
+    "externalId": "sm4-70",
     "tcgdex_id": "sm4-70",
     "localId": "70",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "070/111",
+    "cardNumber": "70/111",
     "cardName": "Kartana-GX",
-    "fullDisplayName": "Kartana-GX 070/111 Crimson Invasion",
+    "fullDisplayName": "Kartana-GX 70/111 Crimson Invasion",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1801,18 +2222,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-070-low.png",
-    "imageHighSrc": "cards/sm4-070-high.png"
+    "imageHighSrc": "cards/sm4-070-high.png",
+    "attacks": [
+      {
+        "name": "Gale Blade",
+        "damage": "70"
+      },
+      {
+        "name": "Blade-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10020",
-    "externalId": null,
+    "externalId": "sm4-69",
     "tcgdex_id": "sm4-69",
     "localId": "69",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "069/111",
+    "cardNumber": "69/111",
     "cardName": "Escavalier",
-    "fullDisplayName": "Escavalier 069/111 Crimson Invasion",
+    "fullDisplayName": "Escavalier 69/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1834,18 +2266,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-069-low.png",
-    "imageHighSrc": "cards/sm4-069-high.png"
+    "imageHighSrc": "cards/sm4-069-high.png",
+    "attacks": [
+      {
+        "name": "Fury Attack",
+        "damage": "30×"
+      },
+      {
+        "name": "Iron Tackle",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "10012",
-    "externalId": null,
+    "externalId": "sm4-68",
     "tcgdex_id": "sm4-68",
     "localId": "68",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "068/111",
+    "cardNumber": "68/111",
     "cardName": "Registeel",
-    "fullDisplayName": "Registeel 068/111 Crimson Invasion",
+    "fullDisplayName": "Registeel 68/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1867,18 +2309,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-068-low.png",
-    "imageHighSrc": "cards/sm4-068-high.png"
+    "imageHighSrc": "cards/sm4-068-high.png",
+    "attacks": [
+      {
+        "name": "Turbo Arm",
+        "damage": "30"
+      },
+      {
+        "name": "Iron Hand",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10002",
-    "externalId": null,
+    "externalId": "sm4-67",
     "tcgdex_id": "sm4-67",
     "localId": "67",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "067/111",
+    "cardNumber": "67/111",
     "cardName": "Aggron",
-    "fullDisplayName": "Aggron 067/111 Crimson Invasion",
+    "fullDisplayName": "Aggron 67/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1900,18 +2352,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-067-low.png",
-    "imageHighSrc": "cards/sm4-067-high.png"
+    "imageHighSrc": "cards/sm4-067-high.png",
+    "attacks": [
+      {
+        "name": "Revenge Cannon",
+        "damage": "10+"
+      },
+      {
+        "name": "Buster Swing",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9993",
-    "externalId": null,
+    "externalId": "sm4-66",
     "tcgdex_id": "sm4-66",
     "localId": "66",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "066/111",
+    "cardNumber": "66/111",
     "cardName": "Lairon",
-    "fullDisplayName": "Lairon 066/111 Crimson Invasion",
+    "fullDisplayName": "Lairon 66/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1933,18 +2395,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-066-low.png",
-    "imageHighSrc": "cards/sm4-066-high.png"
+    "imageHighSrc": "cards/sm4-066-high.png",
+    "attacks": [
+      {
+        "name": "Metal Claw",
+        "damage": "20"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9986",
-    "externalId": null,
+    "externalId": "sm4-65",
     "tcgdex_id": "sm4-65",
     "localId": "65",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "065/111",
+    "cardNumber": "65/111",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 065/111 Crimson Invasion",
+    "fullDisplayName": "Aron 65/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1966,18 +2438,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-065-low.png",
-    "imageHighSrc": "cards/sm4-065-high.png"
+    "imageHighSrc": "cards/sm4-065-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9977",
-    "externalId": null,
+    "externalId": "sm4-64",
     "tcgdex_id": "sm4-64",
     "localId": "64",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "064/111",
+    "cardNumber": "64/111",
     "cardName": "Mawile",
-    "fullDisplayName": "Mawile 064/111 Crimson Invasion",
+    "fullDisplayName": "Mawile 64/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1999,11 +2481,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-064-low.png",
-    "imageHighSrc": "cards/sm4-064-high.png"
+    "imageHighSrc": "cards/sm4-064-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Crunch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9967",
-    "externalId": null,
+    "externalId": "sm4-63a",
     "tcgdex_id": "sm4-63a",
     "localId": "63a",
     "setCode": "sm4",
@@ -2034,18 +2526,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-63a-low.png",
-    "imageHighSrc": "cards/sm4-63a-high.png"
+    "imageHighSrc": "cards/sm4-63a-high.png",
+    "attacks": [
+      {
+        "name": "Eat Sloppily",
+        "damage": null
+      },
+      {
+        "name": "Tyrannical Hole",
+        "damage": "180"
+      },
+      {
+        "name": "Glutton-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9958",
-    "externalId": null,
+    "externalId": "sm4-63",
     "tcgdex_id": "sm4-63",
     "localId": "63",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "063/111",
+    "cardNumber": "63/111",
     "cardName": "Guzzlord-GX",
-    "fullDisplayName": "Guzzlord-GX 063/111 Crimson Invasion",
+    "fullDisplayName": "Guzzlord-GX 63/111 Crimson Invasion",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2069,18 +2576,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-063-low.png",
-    "imageHighSrc": "cards/sm4-063-high.png"
+    "imageHighSrc": "cards/sm4-063-high.png",
+    "attacks": [
+      {
+        "name": "Eat Sloppily",
+        "damage": null
+      },
+      {
+        "name": "Tyrannical Hole",
+        "damage": "180"
+      },
+      {
+        "name": "Glutton-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9950",
-    "externalId": null,
+    "externalId": "sm4-62",
     "tcgdex_id": "sm4-62",
     "localId": "62",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "062/111",
+    "cardNumber": "62/111",
     "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 062/111 Crimson Invasion",
+    "fullDisplayName": "Hydreigon 62/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2102,18 +2624,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-062-low.png",
-    "imageHighSrc": "cards/sm4-062-high.png"
+    "imageHighSrc": "cards/sm4-062-high.png",
+    "attacks": [
+      {
+        "name": "Dark Destruction",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9941",
-    "externalId": null,
+    "externalId": "sm4-61",
     "tcgdex_id": "sm4-61",
     "localId": "61",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "061/111",
+    "cardNumber": "61/111",
     "cardName": "Zweilous",
-    "fullDisplayName": "Zweilous 061/111 Crimson Invasion",
+    "fullDisplayName": "Zweilous 61/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2135,18 +2663,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-061-low.png",
-    "imageHighSrc": "cards/sm4-061-high.png"
+    "imageHighSrc": "cards/sm4-061-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      },
+      {
+        "name": "Double Hit",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "9930",
-    "externalId": null,
+    "externalId": "sm4-60",
     "tcgdex_id": "sm4-60",
     "localId": "60",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "060/111",
+    "cardNumber": "60/111",
     "cardName": "Deino",
-    "fullDisplayName": "Deino 060/111 Crimson Invasion",
+    "fullDisplayName": "Deino 60/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2168,18 +2706,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-060-low.png",
-    "imageHighSrc": "cards/sm4-060-high.png"
+    "imageHighSrc": "cards/sm4-060-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Surprise Attack",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9921",
-    "externalId": null,
+    "externalId": "sm4-59",
     "tcgdex_id": "sm4-59",
     "localId": "59",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "059/111",
+    "cardNumber": "59/111",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 059/111 Crimson Invasion",
+    "fullDisplayName": "Houndoom 59/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2201,18 +2749,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-059-low.png",
-    "imageHighSrc": "cards/sm4-059-high.png"
+    "imageHighSrc": "cards/sm4-059-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Puncturing Fangs",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9912",
-    "externalId": null,
+    "externalId": "sm4-58",
     "tcgdex_id": "sm4-58",
     "localId": "58",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "058/111",
+    "cardNumber": "58/111",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 058/111 Crimson Invasion",
+    "fullDisplayName": "Houndour 58/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2234,18 +2792,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-058-low.png",
-    "imageHighSrc": "cards/sm4-058-high.png"
+    "imageHighSrc": "cards/sm4-058-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Darkness Fang",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9903",
-    "externalId": null,
+    "externalId": "sm4-57",
     "tcgdex_id": "sm4-57",
     "localId": "57",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "057/111",
+    "cardNumber": "57/111",
     "cardName": "Buzzwole-GX",
-    "fullDisplayName": "Buzzwole-GX 057/111 Crimson Invasion",
+    "fullDisplayName": "Buzzwole-GX 57/111 Crimson Invasion",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2269,18 +2837,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-057-low.png",
-    "imageHighSrc": "cards/sm4-057-high.png"
+    "imageHighSrc": "cards/sm4-057-high.png",
+    "attacks": [
+      {
+        "name": "Jet Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Knuckle Impact",
+        "damage": "160"
+      },
+      {
+        "name": "Absorption-GX",
+        "damage": "40×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9895",
-    "externalId": null,
+    "externalId": "sm4-56",
     "tcgdex_id": "sm4-56",
     "localId": "56",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "056/111",
+    "cardNumber": "56/111",
     "cardName": "Bewear",
-    "fullDisplayName": "Bewear 056/111 Crimson Invasion",
+    "fullDisplayName": "Bewear 56/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2302,18 +2885,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-056-low.png",
-    "imageHighSrc": "cards/sm4-056-high.png"
+    "imageHighSrc": "cards/sm4-056-high.png",
+    "attacks": [
+      {
+        "name": "Cross-Cut",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "9887",
-    "externalId": null,
+    "externalId": "sm4-55",
     "tcgdex_id": "sm4-55",
     "localId": "55",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "055/111",
+    "cardNumber": "55/111",
     "cardName": "Stufful",
-    "fullDisplayName": "Stufful 055/111 Crimson Invasion",
+    "fullDisplayName": "Stufful 55/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2335,18 +2924,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-055-low.png",
-    "imageHighSrc": "cards/sm4-055-high.png"
+    "imageHighSrc": "cards/sm4-055-high.png",
+    "attacks": [
+      {
+        "name": "Flop",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9878",
-    "externalId": null,
+    "externalId": "sm4-54",
     "tcgdex_id": "sm4-54",
     "localId": "54",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "054/111",
+    "cardNumber": "54/111",
     "cardName": "Gastrodon",
-    "fullDisplayName": "Gastrodon 054/111 Crimson Invasion",
+    "fullDisplayName": "Gastrodon 54/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2368,18 +2963,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-054-low.png",
-    "imageHighSrc": "cards/sm4-054-high.png"
+    "imageHighSrc": "cards/sm4-054-high.png",
+    "attacks": [
+      {
+        "name": "Eerie Fluid",
+        "damage": "30"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9870",
-    "externalId": null,
+    "externalId": "sm4-53",
     "tcgdex_id": "sm4-53",
     "localId": "53",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "053/111",
+    "cardNumber": "53/111",
     "cardName": "Regirock",
-    "fullDisplayName": "Regirock 053/111 Crimson Invasion",
+    "fullDisplayName": "Regirock 53/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2401,18 +3006,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-053-low.png",
-    "imageHighSrc": "cards/sm4-053-high.png"
+    "imageHighSrc": "cards/sm4-053-high.png",
+    "attacks": [
+      {
+        "name": "Tough Swing",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "9860",
-    "externalId": null,
+    "externalId": "sm4-52",
     "tcgdex_id": "sm4-52",
     "localId": "52",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "052/111",
+    "cardNumber": "52/111",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 052/111 Crimson Invasion",
+    "fullDisplayName": "Cubone 52/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2434,18 +3045,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-052-low.png",
-    "imageHighSrc": "cards/sm4-052-high.png"
+    "imageHighSrc": "cards/sm4-052-high.png",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9850",
-    "externalId": null,
+    "externalId": "sm4-51",
     "tcgdex_id": "sm4-51",
     "localId": "51",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "051/111",
+    "cardNumber": "51/111",
     "cardName": "Primeape",
-    "fullDisplayName": "Primeape 051/111 Crimson Invasion",
+    "fullDisplayName": "Primeape 51/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2467,18 +3088,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-051-low.png",
-    "imageHighSrc": "cards/sm4-051-high.png"
+    "imageHighSrc": "cards/sm4-051-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Lucha Fight",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9838",
-    "externalId": null,
+    "externalId": "sm4-50",
     "tcgdex_id": "sm4-50",
     "localId": "50",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "050/111",
+    "cardNumber": "50/111",
     "cardName": "Mankey",
-    "fullDisplayName": "Mankey 050/111 Crimson Invasion",
+    "fullDisplayName": "Mankey 50/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2500,18 +3131,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-050-low.png",
-    "imageHighSrc": "cards/sm4-050-high.png"
+    "imageHighSrc": "cards/sm4-050-high.png",
+    "attacks": [
+      {
+        "name": "Three-Step Strike",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "9830",
-    "externalId": null,
+    "externalId": "sm4-49",
     "tcgdex_id": "sm4-49",
     "localId": "49",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "049/111",
+    "cardNumber": "49/111",
     "cardName": "Nihilego-GX",
-    "fullDisplayName": "Nihilego-GX 049/111 Crimson Invasion",
+    "fullDisplayName": "Nihilego-GX 49/111 Crimson Invasion",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2535,18 +3172,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-049-low.png",
-    "imageHighSrc": "cards/sm4-049-high.png"
+    "imageHighSrc": "cards/sm4-049-high.png",
+    "attacks": [
+      {
+        "name": "Lock Up",
+        "damage": "120"
+      },
+      {
+        "name": "Symbiont-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9819",
-    "externalId": null,
+    "externalId": "sm4-48",
     "tcgdex_id": "sm4-48",
     "localId": "48",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "048/111",
+    "cardNumber": "48/111",
     "cardName": "Oranguru",
-    "fullDisplayName": "Oranguru 048/111 Crimson Invasion",
+    "fullDisplayName": "Oranguru 48/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2568,18 +3216,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-048-low.png",
-    "imageHighSrc": "cards/sm4-048-high.png"
+    "imageHighSrc": "cards/sm4-048-high.png",
+    "attacks": [
+      {
+        "name": "Fixer of the Forest",
+        "damage": null
+      },
+      {
+        "name": "Zen Headbutt",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9810",
-    "externalId": null,
+    "externalId": "sm4-47",
     "tcgdex_id": "sm4-47",
     "localId": "47",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "047/111",
+    "cardNumber": "47/111",
     "cardName": "Salazzle",
-    "fullDisplayName": "Salazzle 047/111 Crimson Invasion",
+    "fullDisplayName": "Salazzle 47/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2601,18 +3259,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-047-low.png",
-    "imageHighSrc": "cards/sm4-047-high.png"
+    "imageHighSrc": "cards/sm4-047-high.png",
+    "attacks": [
+      {
+        "name": "Nasty Plot",
+        "damage": null
+      },
+      {
+        "name": "Severe Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9796",
-    "externalId": null,
+    "externalId": "sm4-46",
     "tcgdex_id": "sm4-46",
     "localId": "46",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "046/111",
+    "cardNumber": "46/111",
     "cardName": "Salandit",
-    "fullDisplayName": "Salandit 046/111 Crimson Invasion",
+    "fullDisplayName": "Salandit 46/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2634,18 +3302,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-046-low.png",
-    "imageHighSrc": "cards/sm4-046-high.png"
+    "imageHighSrc": "cards/sm4-046-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9789",
-    "externalId": null,
+    "externalId": "sm4-45",
     "tcgdex_id": "sm4-45",
     "localId": "45",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "045/111",
+    "cardNumber": "45/111",
     "cardName": "Gourgeist",
-    "fullDisplayName": "Gourgeist 045/111 Crimson Invasion",
+    "fullDisplayName": "Gourgeist 45/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2667,18 +3341,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-045-low.png",
-    "imageHighSrc": "cards/sm4-045-high.png"
+    "imageHighSrc": "cards/sm4-045-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      },
+      {
+        "name": "Pumpkin Bomb",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9781",
-    "externalId": null,
+    "externalId": "sm4-44",
     "tcgdex_id": "sm4-44",
     "localId": "44",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "044/111",
+    "cardNumber": "44/111",
     "cardName": "Pumpkaboo",
-    "fullDisplayName": "Pumpkaboo 044/111 Crimson Invasion",
+    "fullDisplayName": "Pumpkaboo 44/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2700,18 +3384,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-044-low.png",
-    "imageHighSrc": "cards/sm4-044-high.png"
+    "imageHighSrc": "cards/sm4-044-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9772",
-    "externalId": null,
+    "externalId": "sm4-43",
     "tcgdex_id": "sm4-43",
     "localId": "43",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "043/111",
+    "cardNumber": "43/111",
     "cardName": "Chimecho",
-    "fullDisplayName": "Chimecho 043/111 Crimson Invasion",
+    "fullDisplayName": "Chimecho 43/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2733,18 +3423,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-043-low.png",
-    "imageHighSrc": "cards/sm4-043-high.png"
+    "imageHighSrc": "cards/sm4-043-high.png",
+    "attacks": [
+      {
+        "name": "Bell of Silence",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9762",
-    "externalId": null,
+    "externalId": "sm4-42",
     "tcgdex_id": "sm4-42",
     "localId": "42",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "042/111",
+    "cardNumber": "42/111",
     "cardName": "Grumpig",
-    "fullDisplayName": "Grumpig 042/111 Crimson Invasion",
+    "fullDisplayName": "Grumpig 42/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2766,18 +3462,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-042-low.png",
-    "imageHighSrc": "cards/sm4-042-high.png"
+    "imageHighSrc": "cards/sm4-042-high.png",
+    "attacks": [
+      {
+        "name": "Psych Up",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9752",
-    "externalId": null,
+    "externalId": "sm4-41",
     "tcgdex_id": "sm4-41",
     "localId": "41",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "041/111",
+    "cardNumber": "41/111",
     "cardName": "Spoink",
-    "fullDisplayName": "Spoink 041/111 Crimson Invasion",
+    "fullDisplayName": "Spoink 41/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2799,18 +3501,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-041-low.png",
-    "imageHighSrc": "cards/sm4-041-high.png"
+    "imageHighSrc": "cards/sm4-041-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9745",
-    "externalId": null,
+    "externalId": "sm4-40",
     "tcgdex_id": "sm4-40",
     "localId": "40",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "040/111",
+    "cardNumber": "40/111",
     "cardName": "Mismagius",
-    "fullDisplayName": "Mismagius 040/111 Crimson Invasion",
+    "fullDisplayName": "Mismagius 40/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2832,18 +3540,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-040-low.png",
-    "imageHighSrc": "cards/sm4-040-high.png"
+    "imageHighSrc": "cards/sm4-040-high.png",
+    "attacks": [
+      {
+        "name": "Chaos Wheel",
+        "damage": "30"
+      },
+      {
+        "name": "Dark Arts",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "9737",
-    "externalId": null,
+    "externalId": "sm4-39",
     "tcgdex_id": "sm4-39",
     "localId": "39",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "039/111",
+    "cardNumber": "39/111",
     "cardName": "Misdreavus",
-    "fullDisplayName": "Misdreavus 039/111 Crimson Invasion",
+    "fullDisplayName": "Misdreavus 39/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2865,18 +3583,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-039-low.png",
-    "imageHighSrc": "cards/sm4-039-high.png"
+    "imageHighSrc": "cards/sm4-039-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9728",
-    "externalId": null,
+    "externalId": "sm4-38",
     "tcgdex_id": "sm4-38",
     "localId": "38",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "038/111",
+    "cardNumber": "38/111",
     "cardName": "Gengar",
-    "fullDisplayName": "Gengar 038/111 Crimson Invasion",
+    "fullDisplayName": "Gengar 38/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2898,18 +3622,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-038-low.png",
-    "imageHighSrc": "cards/sm4-038-high.png"
+    "imageHighSrc": "cards/sm4-038-high.png",
+    "attacks": [
+      {
+        "name": "Fade to Black",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9721",
-    "externalId": null,
+    "externalId": "sm4-37",
     "tcgdex_id": "sm4-37",
     "localId": "37",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "037/111",
+    "cardNumber": "37/111",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 037/111 Crimson Invasion",
+    "fullDisplayName": "Haunter 37/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2931,18 +3661,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-037-low.png",
-    "imageHighSrc": "cards/sm4-037-high.png"
+    "imageHighSrc": "cards/sm4-037-high.png",
+    "attacks": [
+      {
+        "name": "Pain Amplifier",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9712",
-    "externalId": null,
+    "externalId": "sm4-36",
     "tcgdex_id": "sm4-36",
     "localId": "36",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "036/111",
+    "cardNumber": "36/111",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 036/111 Crimson Invasion",
+    "fullDisplayName": "Gastly 36/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2964,18 +3700,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-036-low.png",
-    "imageHighSrc": "cards/sm4-036-high.png"
+    "imageHighSrc": "cards/sm4-036-high.png",
+    "attacks": [
+      {
+        "name": "Ominous Eyes",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9706",
-    "externalId": null,
+    "externalId": "sm4-35",
     "tcgdex_id": "sm4-35",
     "localId": "35",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "035/111",
+    "cardNumber": "35/111",
     "cardName": "Emolga",
-    "fullDisplayName": "Emolga 035/111 Crimson Invasion",
+    "fullDisplayName": "Emolga 35/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2997,18 +3739,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-035-low.png",
-    "imageHighSrc": "cards/sm4-035-high.png"
+    "imageHighSrc": "cards/sm4-035-high.png",
+    "attacks": [
+      {
+        "name": "Energy Catch",
+        "damage": null
+      },
+      {
+        "name": "Volt Switch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9696",
-    "externalId": null,
+    "externalId": "sm4-34",
     "tcgdex_id": "sm4-34",
     "localId": "34",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "034/111",
+    "cardNumber": "34/111",
     "cardName": "Alolan Golem-GX",
-    "fullDisplayName": "Alolan Golem-GX 034/111 Crimson Invasion",
+    "fullDisplayName": "Alolan Golem-GX 34/111 Crimson Invasion",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3031,18 +3783,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-034-low.png",
-    "imageHighSrc": "cards/sm4-034-high.png"
+    "imageHighSrc": "cards/sm4-034-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      },
+      {
+        "name": "Super Electromagnetic Tackle",
+        "damage": "200"
+      },
+      {
+        "name": "Heavy Rock-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9687",
-    "externalId": null,
+    "externalId": "sm4-33",
     "tcgdex_id": "sm4-33",
     "localId": "33",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "033/111",
+    "cardNumber": "33/111",
     "cardName": "Alolan Graveler",
-    "fullDisplayName": "Alolan Graveler 033/111 Crimson Invasion",
+    "fullDisplayName": "Alolan Graveler 33/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3064,18 +3831,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-033-low.png",
-    "imageHighSrc": "cards/sm4-033-high.png"
+    "imageHighSrc": "cards/sm4-033-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Self-Destruct",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9677",
-    "externalId": null,
+    "externalId": "sm4-32",
     "tcgdex_id": "sm4-32",
     "localId": "32",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "032/111",
+    "cardNumber": "32/111",
     "cardName": "Alolan Geodude",
-    "fullDisplayName": "Alolan Geodude 032/111 Crimson Invasion",
+    "fullDisplayName": "Alolan Geodude 32/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3097,18 +3874,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-032-low.png",
-    "imageHighSrc": "cards/sm4-032-high.png"
+    "imageHighSrc": "cards/sm4-032-high.png",
+    "attacks": [
+      {
+        "name": "Defense Curl",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9669",
-    "externalId": null,
+    "externalId": "sm4-31",
     "tcgdex_id": "sm4-31",
     "localId": "31",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "031/111",
+    "cardNumber": "31/111",
     "cardName": "Alolan Raichu",
-    "fullDisplayName": "Alolan Raichu 031/111 Crimson Invasion",
+    "fullDisplayName": "Alolan Raichu 31/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3130,18 +3917,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-031-low.png",
-    "imageHighSrc": "cards/sm4-031-high.png"
+    "imageHighSrc": "cards/sm4-031-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "9660",
-    "externalId": null,
+    "externalId": "sm4-30",
     "tcgdex_id": "sm4-30",
     "localId": "30",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "030/111",
+    "cardNumber": "30/111",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 030/111 Crimson Invasion",
+    "fullDisplayName": "Pikachu 30/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3163,18 +3956,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-030-low.png",
-    "imageHighSrc": "cards/sm4-030-high.png"
+    "imageHighSrc": "cards/sm4-030-high.png",
+    "attacks": [
+      {
+        "name": "Pika Draw",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9651",
-    "externalId": null,
+    "externalId": "sm4-29",
     "tcgdex_id": "sm4-29",
     "localId": "29",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "029/111",
+    "cardNumber": "29/111",
     "cardName": "Shellos",
-    "fullDisplayName": "Shellos 029/111 Crimson Invasion",
+    "fullDisplayName": "Shellos 29/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3196,18 +3999,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-029-low.png",
-    "imageHighSrc": "cards/sm4-029-high.png"
+    "imageHighSrc": "cards/sm4-029-high.png",
+    "attacks": [
+      {
+        "name": "Regeneration",
+        "damage": null
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9644",
-    "externalId": null,
+    "externalId": "sm4-28",
     "tcgdex_id": "sm4-28",
     "localId": "28",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "028/111",
+    "cardNumber": "28/111",
     "cardName": "Regice",
-    "fullDisplayName": "Regice 028/111 Crimson Invasion",
+    "fullDisplayName": "Regice 28/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3229,18 +4042,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-028-low.png",
-    "imageHighSrc": "cards/sm4-028-high.png"
+    "imageHighSrc": "cards/sm4-028-high.png",
+    "attacks": [
+      {
+        "name": "Frost Smash",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9636",
-    "externalId": null,
+    "externalId": "sm4-27",
     "tcgdex_id": "sm4-27",
     "localId": "27",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "027/111",
+    "cardNumber": "27/111",
     "cardName": "Milotic",
-    "fullDisplayName": "Milotic 027/111 Crimson Invasion",
+    "fullDisplayName": "Milotic 27/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3262,18 +4081,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-027-low.png",
-    "imageHighSrc": "cards/sm4-027-high.png"
+    "imageHighSrc": "cards/sm4-027-high.png",
+    "attacks": [
+      {
+        "name": "TLC",
+        "damage": null
+      },
+      {
+        "name": "Ocean Cyclone",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9628",
-    "externalId": null,
+    "externalId": "sm4-26",
     "tcgdex_id": "sm4-26",
     "localId": "26",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "026/111",
+    "cardNumber": "26/111",
     "cardName": "Feebas",
-    "fullDisplayName": "Feebas 026/111 Crimson Invasion",
+    "fullDisplayName": "Feebas 26/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3295,18 +4124,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-026-low.png",
-    "imageHighSrc": "cards/sm4-026-high.png"
+    "imageHighSrc": "cards/sm4-026-high.png",
+    "attacks": [
+      {
+        "name": "Splashing Dodge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9620",
-    "externalId": null,
+    "externalId": "sm4-25",
     "tcgdex_id": "sm4-25",
     "localId": "25",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "025/111",
+    "cardNumber": "25/111",
     "cardName": "Crawdaunt",
-    "fullDisplayName": "Crawdaunt 025/111 Crimson Invasion",
+    "fullDisplayName": "Crawdaunt 25/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3328,18 +4163,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-025-low.png",
-    "imageHighSrc": "cards/sm4-025-high.png"
+    "imageHighSrc": "cards/sm4-025-high.png",
+    "attacks": [
+      {
+        "name": "Double Claws",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9612",
-    "externalId": null,
+    "externalId": "sm4-24",
     "tcgdex_id": "sm4-24",
     "localId": "24",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "024/111",
+    "cardNumber": "24/111",
     "cardName": "Corphish",
-    "fullDisplayName": "Corphish 024/111 Crimson Invasion",
+    "fullDisplayName": "Corphish 24/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3361,18 +4202,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-024-low.png",
-    "imageHighSrc": "cards/sm4-024-high.png"
+    "imageHighSrc": "cards/sm4-024-high.png",
+    "attacks": [
+      {
+        "name": "Crabhammer",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9604",
-    "externalId": null,
+    "externalId": "sm4-23",
     "tcgdex_id": "sm4-23",
     "localId": "23",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "023/111",
+    "cardNumber": "23/111",
     "cardName": "Octillery",
-    "fullDisplayName": "Octillery 023/111 Crimson Invasion",
+    "fullDisplayName": "Octillery 23/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3394,18 +4241,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-023-low.png",
-    "imageHighSrc": "cards/sm4-023-high.png"
+    "imageHighSrc": "cards/sm4-023-high.png",
+    "attacks": [
+      {
+        "name": "Ink Spit",
+        "damage": null
+      },
+      {
+        "name": "Special Artillery",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "9596",
-    "externalId": null,
+    "externalId": "sm4-22",
     "tcgdex_id": "sm4-22",
     "localId": "22",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "022/111",
+    "cardNumber": "22/111",
     "cardName": "Remoraid",
-    "fullDisplayName": "Remoraid 022/111 Crimson Invasion",
+    "fullDisplayName": "Remoraid 22/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3427,18 +4284,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-022-low.png",
-    "imageHighSrc": "cards/sm4-022-high.png"
+    "imageHighSrc": "cards/sm4-022-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9587",
-    "externalId": null,
+    "externalId": "sm4-21",
     "tcgdex_id": "sm4-21",
     "localId": "21",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "021/111",
+    "cardNumber": "21/111",
     "cardName": "Mamoswine",
-    "fullDisplayName": "Mamoswine 021/111 Crimson Invasion",
+    "fullDisplayName": "Mamoswine 21/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3460,18 +4323,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-021-low.png",
-    "imageHighSrc": "cards/sm4-021-high.png"
+    "imageHighSrc": "cards/sm4-021-high.png",
+    "attacks": [
+      {
+        "name": "Double Stomp",
+        "damage": "60+"
+      },
+      {
+        "name": "Forceful Tackle",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "9579",
-    "externalId": null,
+    "externalId": "sm4-20",
     "tcgdex_id": "sm4-20",
     "localId": "20",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "020/111",
+    "cardNumber": "20/111",
     "cardName": "Piloswine",
-    "fullDisplayName": "Piloswine 020/111 Crimson Invasion",
+    "fullDisplayName": "Piloswine 20/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3493,18 +4366,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-020-low.png",
-    "imageHighSrc": "cards/sm4-020-high.png"
+    "imageHighSrc": "cards/sm4-020-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "20"
+      },
+      {
+        "name": "Rest",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9567",
-    "externalId": null,
+    "externalId": "sm4-19",
     "tcgdex_id": "sm4-19",
     "localId": "19",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "019/111",
+    "cardNumber": "19/111",
     "cardName": "Swinub",
-    "fullDisplayName": "Swinub 019/111 Crimson Invasion",
+    "fullDisplayName": "Swinub 19/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3526,18 +4409,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-019-low.png",
-    "imageHighSrc": "cards/sm4-019-high.png"
+    "imageHighSrc": "cards/sm4-019-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9557",
-    "externalId": null,
+    "externalId": "sm4-18",
     "tcgdex_id": "sm4-18",
     "localId": "18",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "018/111",
+    "cardNumber": "18/111",
     "cardName": "Gyarados-GX",
-    "fullDisplayName": "Gyarados-GX 018/111 Crimson Invasion",
+    "fullDisplayName": "Gyarados-GX 18/111 Crimson Invasion",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3560,18 +4449,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-018-low.png",
-    "imageHighSrc": "cards/sm4-018-high.png"
+    "imageHighSrc": "cards/sm4-018-high.png",
+    "attacks": [
+      {
+        "name": "Waterfall",
+        "damage": "70"
+      },
+      {
+        "name": "Draconic Disaster",
+        "damage": "100+"
+      },
+      {
+        "name": "Dread Storm-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9548",
-    "externalId": null,
+    "externalId": "sm4-17",
     "tcgdex_id": "sm4-17",
     "localId": "17",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "017/111",
+    "cardNumber": "17/111",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 017/111 Crimson Invasion",
+    "fullDisplayName": "Magikarp 17/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3593,18 +4497,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-017-low.png",
-    "imageHighSrc": "cards/sm4-017-high.png"
+    "imageHighSrc": "cards/sm4-017-high.png",
+    "attacks": [
+      {
+        "name": "Waterfall Evolution",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9540",
-    "externalId": null,
+    "externalId": "sm4-16",
     "tcgdex_id": "sm4-16",
     "localId": "16",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "016/111",
+    "cardNumber": "16/111",
     "cardName": "Starmie",
-    "fullDisplayName": "Starmie 016/111 Crimson Invasion",
+    "fullDisplayName": "Starmie 16/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3626,18 +4536,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-016-low.png",
-    "imageHighSrc": "cards/sm4-016-high.png"
+    "imageHighSrc": "cards/sm4-016-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9532",
-    "externalId": null,
+    "externalId": "sm4-15",
     "tcgdex_id": "sm4-15",
     "localId": "15",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "015/111",
+    "cardNumber": "15/111",
     "cardName": "Staryu",
-    "fullDisplayName": "Staryu 015/111 Crimson Invasion",
+    "fullDisplayName": "Staryu 15/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3659,18 +4575,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-015-low.png",
-    "imageHighSrc": "cards/sm4-015-high.png"
+    "imageHighSrc": "cards/sm4-015-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9525",
-    "externalId": null,
+    "externalId": "sm4-14",
     "tcgdex_id": "sm4-14",
     "localId": "14",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "014/111",
+    "cardNumber": "14/111",
     "cardName": "Camerupt",
-    "fullDisplayName": "Camerupt 014/111 Crimson Invasion",
+    "fullDisplayName": "Camerupt 14/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3692,18 +4614,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-014-low.png",
-    "imageHighSrc": "cards/sm4-014-high.png"
+    "imageHighSrc": "cards/sm4-014-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Headbutt",
+        "damage": "80×"
+      },
+      {
+        "name": "Searing Flame",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9519",
-    "externalId": null,
+    "externalId": "sm4-13",
     "tcgdex_id": "sm4-13",
     "localId": "13",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "013/111",
+    "cardNumber": "13/111",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 013/111 Crimson Invasion",
+    "fullDisplayName": "Numel 13/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3725,18 +4657,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-013-low.png",
-    "imageHighSrc": "cards/sm4-013-high.png"
+    "imageHighSrc": "cards/sm4-013-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Headbutt",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "9510",
-    "externalId": null,
+    "externalId": "sm4-12",
     "tcgdex_id": "sm4-12",
     "localId": "12",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "012/111",
+    "cardNumber": "12/111",
     "cardName": "Alolan Marowak",
-    "fullDisplayName": "Alolan Marowak 012/111 Crimson Invasion",
+    "fullDisplayName": "Alolan Marowak 12/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3758,18 +4696,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-012-low.png",
-    "imageHighSrc": "cards/sm4-012-high.png"
+    "imageHighSrc": "cards/sm4-012-high.png",
+    "attacks": [
+      {
+        "name": "Dance of Flames",
+        "damage": null
+      },
+      {
+        "name": "Burning Bonemerang",
+        "damage": "70×"
+      }
+    ]
   },
   {
     "masterCardId": "9504",
-    "externalId": null,
+    "externalId": "sm4-11",
     "tcgdex_id": "sm4-11",
     "localId": "11",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "011/111",
+    "cardNumber": "11/111",
     "cardName": "Gogoat",
-    "fullDisplayName": "Gogoat 011/111 Crimson Invasion",
+    "fullDisplayName": "Gogoat 11/111 Crimson Invasion",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3791,18 +4739,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-011-low.png",
-    "imageHighSrc": "cards/sm4-011-high.png"
+    "imageHighSrc": "cards/sm4-011-high.png",
+    "attacks": [
+      {
+        "name": "Horn Leech",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9495",
-    "externalId": null,
+    "externalId": "sm4-10",
     "tcgdex_id": "sm4-10",
     "localId": "10",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "010/111",
+    "cardNumber": "10/111",
     "cardName": "Skiddo",
-    "fullDisplayName": "Skiddo 010/111 Crimson Invasion",
+    "fullDisplayName": "Skiddo 10/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3824,18 +4778,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-010-low.png",
-    "imageHighSrc": "cards/sm4-010-high.png"
+    "imageHighSrc": "cards/sm4-010-high.png",
+    "attacks": [
+      {
+        "name": "Seed Bomb",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9486",
-    "externalId": null,
+    "externalId": "sm4-9",
     "tcgdex_id": "sm4-9",
     "localId": "9",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "009/111",
+    "cardNumber": "9/111",
     "cardName": "Accelgor",
-    "fullDisplayName": "Accelgor 009/111 Crimson Invasion",
+    "fullDisplayName": "Accelgor 9/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3857,18 +4817,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-009-low.png",
-    "imageHighSrc": "cards/sm4-009-high.png"
+    "imageHighSrc": "cards/sm4-009-high.png",
+    "attacks": [
+      {
+        "name": "Recover",
+        "damage": null
+      },
+      {
+        "name": "Speed Attack",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9478",
-    "externalId": null,
+    "externalId": "sm4-8",
     "tcgdex_id": "sm4-8",
     "localId": "8",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "008/111",
+    "cardNumber": "8/111",
     "cardName": "Shelmet",
-    "fullDisplayName": "Shelmet 008/111 Crimson Invasion",
+    "fullDisplayName": "Shelmet 8/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3890,18 +4860,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-008-low.png",
-    "imageHighSrc": "cards/sm4-008-high.png"
+    "imageHighSrc": "cards/sm4-008-high.png",
+    "attacks": [
+      {
+        "name": "Absorb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9471",
-    "externalId": null,
+    "externalId": "sm4-7",
     "tcgdex_id": "sm4-7",
     "localId": "7",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "007/111",
+    "cardNumber": "7/111",
     "cardName": "Karrablast",
-    "fullDisplayName": "Karrablast 007/111 Crimson Invasion",
+    "fullDisplayName": "Karrablast 7/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3923,18 +4899,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-007-low.png",
-    "imageHighSrc": "cards/sm4-007-high.png"
+    "imageHighSrc": "cards/sm4-007-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9463",
-    "externalId": null,
+    "externalId": "sm4-6",
     "tcgdex_id": "sm4-6",
     "localId": "6",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "006/111",
+    "cardNumber": "6/111",
     "cardName": "Cacturne",
-    "fullDisplayName": "Cacturne 006/111 Crimson Invasion",
+    "fullDisplayName": "Cacturne 6/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3956,18 +4938,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-006-low.png",
-    "imageHighSrc": "cards/sm4-006-high.png"
+    "imageHighSrc": "cards/sm4-006-high.png",
+    "attacks": [
+      {
+        "name": "Spike Rend",
+        "damage": "30+"
+      },
+      {
+        "name": "Hunt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9455",
-    "externalId": null,
+    "externalId": "sm4-5",
     "tcgdex_id": "sm4-5",
     "localId": "5",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "005/111",
+    "cardNumber": "5/111",
     "cardName": "Cacnea",
-    "fullDisplayName": "Cacnea 005/111 Crimson Invasion",
+    "fullDisplayName": "Cacnea 5/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3989,18 +4981,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-005-low.png",
-    "imageHighSrc": "cards/sm4-005-high.png"
+    "imageHighSrc": "cards/sm4-005-high.png",
+    "attacks": [
+      {
+        "name": "Sucker Punch",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9445",
-    "externalId": null,
+    "externalId": "sm4-4",
     "tcgdex_id": "sm4-4",
     "localId": "4",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "004/111",
+    "cardNumber": "4/111",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 004/111 Crimson Invasion",
+    "fullDisplayName": "Exeggcute 4/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4022,18 +5020,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-004-low.png",
-    "imageHighSrc": "cards/sm4-004-high.png"
+    "imageHighSrc": "cards/sm4-004-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9439",
-    "externalId": null,
+    "externalId": "sm4-3",
     "tcgdex_id": "sm4-3",
     "localId": "3",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "003/111",
+    "cardNumber": "3/111",
     "cardName": "Beedrill",
-    "fullDisplayName": "Beedrill 003/111 Crimson Invasion",
+    "fullDisplayName": "Beedrill 3/111 Crimson Invasion",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4055,18 +5063,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-003-low.png",
-    "imageHighSrc": "cards/sm4-003-high.png"
+    "imageHighSrc": "cards/sm4-003-high.png",
+    "attacks": [
+      {
+        "name": "Sudden Sting",
+        "damage": "10"
+      },
+      {
+        "name": "Sharp Sting",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9433",
-    "externalId": null,
+    "externalId": "sm4-2",
     "tcgdex_id": "sm4-2",
     "localId": "2",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "002/111",
+    "cardNumber": "2/111",
     "cardName": "Kakuna",
-    "fullDisplayName": "Kakuna 002/111 Crimson Invasion",
+    "fullDisplayName": "Kakuna 2/111 Crimson Invasion",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4088,18 +5106,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-002-low.png",
-    "imageHighSrc": "cards/sm4-002-high.png"
+    "imageHighSrc": "cards/sm4-002-high.png",
+    "attacks": [
+      {
+        "name": "Multiply",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9424",
-    "externalId": null,
+    "externalId": "sm4-1",
     "tcgdex_id": "sm4-1",
     "localId": "1",
     "setCode": "sm4",
     "setTcgdexId": "sm4",
-    "cardNumber": "001/111",
+    "cardNumber": "1/111",
     "cardName": "Weedle",
-    "fullDisplayName": "Weedle 001/111 Crimson Invasion",
+    "fullDisplayName": "Weedle 1/111 Crimson Invasion",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4121,6 +5145,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm4-001-low.png",
-    "imageHighSrc": "cards/sm4-001-high.png"
+    "imageHighSrc": "cards/sm4-001-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      }
+    ]
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "3024",
-    "externalId": null,
+    "externalId": "bw7-153",
     "tcgdex_id": "bw7-153",
     "localId": "153",
     "setCode": "bw7",
@@ -26,11 +26,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-153-low.png",
-    "imageHighSrc": "cards/bw7-153-high.png"
+    "imageHighSrc": "cards/bw7-153-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is your Active Pokémon and is damage by an opponent's attack (even if that Pokémon is Knocked Out), put 2 damage counters on the Attacking Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3023",
-    "externalId": null,
+    "externalId": "bw7-152",
     "tcgdex_id": "bw7-152",
     "localId": "152",
     "setCode": "bw7",
@@ -59,11 +60,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-152-low.png",
-    "imageHighSrc": "cards/bw7-152-high.png"
+    "imageHighSrc": "cards/bw7-152-high.png",
+    "attacks": [
+      {
+        "name": "Glide",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3022",
-    "externalId": null,
+    "externalId": "bw7-151",
     "tcgdex_id": "bw7-151",
     "localId": "151",
     "setCode": "bw7",
@@ -92,11 +99,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-151-low.png",
-    "imageHighSrc": "cards/bw7-151-high.png"
+    "imageHighSrc": "cards/bw7-151-high.png",
+    "attacks": [
+      {
+        "name": "Retaliate",
+        "damage": "30+"
+      },
+      {
+        "name": "Land Crush",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3021",
-    "externalId": null,
+    "externalId": "bw7-150",
     "tcgdex_id": "bw7-150",
     "localId": "150",
     "setCode": "bw7",
@@ -125,11 +142,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-150-low.png",
-    "imageHighSrc": "cards/bw7-150-high.png"
+    "imageHighSrc": "cards/bw7-150-high.png",
+    "attacks": [
+      {
+        "name": "Devolution Punch",
+        "damage": "60"
+      },
+      {
+        "name": "Ghost Hammer",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3020",
-    "externalId": null,
+    "externalId": "bw7-149",
     "tcgdex_id": "bw7-149",
     "localId": "149",
     "setCode": "bw7",
@@ -154,11 +181,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-149-low.png",
-    "imageHighSrc": "cards/bw7-149-high.png"
+    "imageHighSrc": "cards/bw7-149-high.png",
+    "rules": "Search your deck for a Trainer card, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3019",
-    "externalId": null,
+    "externalId": "bw7-148",
     "tcgdex_id": "bw7-148",
     "localId": "148",
     "setCode": "bw7",
@@ -183,11 +211,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-148-low.png",
-    "imageHighSrc": "cards/bw7-148-high.png"
+    "imageHighSrc": "cards/bw7-148-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3018",
-    "externalId": null,
+    "externalId": "bw7-147",
     "tcgdex_id": "bw7-147",
     "localId": "147",
     "setCode": "bw7",
@@ -212,11 +241,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-147-low.png",
-    "imageHighSrc": "cards/bw7-147-high.png"
+    "imageHighSrc": "cards/bw7-147-high.png",
+    "rules": "Draw cards until you have 6 cards in your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3017",
-    "externalId": null,
+    "externalId": "bw7-146",
     "tcgdex_id": "bw7-146",
     "localId": "146",
     "setCode": "bw7",
@@ -246,11 +276,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-146-low.png",
-    "imageHighSrc": "cards/bw7-146-high.png"
+    "imageHighSrc": "cards/bw7-146-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Stream",
+        "damage": "60"
+      },
+      {
+        "name": "Ice Burn",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3016",
-    "externalId": null,
+    "externalId": "bw7-145",
     "tcgdex_id": "bw7-145",
     "localId": "145",
     "setCode": "bw7",
@@ -280,11 +321,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-145-low.png",
-    "imageHighSrc": "cards/bw7-145-high.png"
+    "imageHighSrc": "cards/bw7-145-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Fang",
+        "damage": "60"
+      },
+      {
+        "name": "Freeze Shock",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3015",
-    "externalId": null,
+    "externalId": "bw7-144",
     "tcgdex_id": "bw7-144",
     "localId": "144",
     "setCode": "bw7",
@@ -314,11 +366,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-144-low.png",
-    "imageHighSrc": "cards/bw7-144-high.png"
+    "imageHighSrc": "cards/bw7-144-high.png",
+    "attacks": [
+      {
+        "name": "Hammerhead",
+        "damage": "30"
+      },
+      {
+        "name": "Land's Judgment",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3014",
-    "externalId": null,
+    "externalId": "bw7-143",
     "tcgdex_id": "bw7-143",
     "localId": "143",
     "setCode": "bw7",
@@ -348,11 +411,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-143-low.png",
-    "imageHighSrc": "cards/bw7-143-high.png"
+    "imageHighSrc": "cards/bw7-143-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Protection",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3013",
-    "externalId": null,
+    "externalId": "bw7-142",
     "tcgdex_id": "bw7-142",
     "localId": "142",
     "setCode": "bw7",
@@ -382,11 +452,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-142-low.png",
-    "imageHighSrc": "cards/bw7-142-high.png"
+    "imageHighSrc": "cards/bw7-142-high.png",
+    "attacks": [
+      {
+        "name": "Secret Sword",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3012",
-    "externalId": null,
+    "externalId": "bw7-141",
     "tcgdex_id": "bw7-141",
     "localId": "141",
     "setCode": "bw7",
@@ -416,11 +493,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-141-low.png",
-    "imageHighSrc": "cards/bw7-141-high.png"
+    "imageHighSrc": "cards/bw7-141-high.png",
+    "attacks": [
+      {
+        "name": "Wind Whisk",
+        "damage": "60"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3011",
-    "externalId": null,
+    "externalId": "bw7-140",
     "tcgdex_id": "bw7-140",
     "localId": "140",
     "setCode": "bw7",
@@ -446,11 +530,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-140-low.png",
-    "imageHighSrc": "cards/bw7-140-high.png"
+    "imageHighSrc": "cards/bw7-140-high.png",
+    "rules": "Heal 90 damage from your Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
   },
   {
     "masterCardId": "3010",
-    "externalId": null,
+    "externalId": "bw7-139",
     "tcgdex_id": "bw7-139",
     "localId": "139",
     "setCode": "bw7",
@@ -476,11 +561,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-139-low.png",
-    "imageHighSrc": "cards/bw7-139-high.png"
+    "imageHighSrc": "cards/bw7-139-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf this card is attached to Black Kyurem-EX, its maximum HP is 300.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
   },
   {
     "masterCardId": "3009",
-    "externalId": null,
+    "externalId": "bw7-138",
     "tcgdex_id": "bw7-138",
     "localId": "138",
     "setCode": "bw7",
@@ -506,11 +592,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-138-low.png",
-    "imageHighSrc": "cards/bw7-138-high.png"
+    "imageHighSrc": "cards/bw7-138-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf this card is attached to White Kyurem-EX, each of its attacks does 50 more damage to the Active Pokémon (before applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
   },
   {
     "masterCardId": "3008",
-    "externalId": null,
+    "externalId": "bw7-137",
     "tcgdex_id": "bw7-137",
     "localId": "137",
     "setCode": "bw7",
@@ -536,11 +623,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-137-low.png",
-    "imageHighSrc": "cards/bw7-137-high.png"
+    "imageHighSrc": "cards/bw7-137-high.png",
+    "rules": "Discard 2 cards from your hand. (If you can't discard 2 cards, you can't play this card.) Search your deck for a card and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
   },
   {
     "masterCardId": "3007",
-    "externalId": null,
+    "externalId": "bw7-136",
     "tcgdex_id": "bw7-136",
     "localId": "136",
     "setCode": "bw7",
@@ -565,11 +653,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-136-low.png",
-    "imageHighSrc": "cards/bw7-136-high.png"
+    "imageHighSrc": "cards/bw7-136-high.png",
+    "rules": "Turn all of your Prize cards face up. (Those Prize cards remain face up for the rest of the game.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3006",
-    "externalId": null,
+    "externalId": "bw7-135",
     "tcgdex_id": "bw7-135",
     "localId": "135",
     "setCode": "bw7",
@@ -594,11 +683,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-135-low.png",
-    "imageHighSrc": "cards/bw7-135-high.png"
+    "imageHighSrc": "cards/bw7-135-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3005",
-    "externalId": null,
+    "externalId": "bw7-134",
     "tcgdex_id": "bw7-134",
     "localId": "134",
     "setCode": "bw7",
@@ -623,11 +713,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-134-low.png",
-    "imageHighSrc": "cards/bw7-134-high.png"
+    "imageHighSrc": "cards/bw7-134-high.png",
+    "rules": "Search your deck for a Trainer card, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3004",
-    "externalId": null,
+    "externalId": "bw7-133",
     "tcgdex_id": "bw7-133",
     "localId": "133",
     "setCode": "bw7",
@@ -652,11 +743,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-133-low.png",
-    "imageHighSrc": "cards/bw7-133-high.png"
+    "imageHighSrc": "cards/bw7-133-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is your Active Pokémon and is damage by an opponent's attack (even if that Pokémon is Knocked Out), put 2 damage counters on the Attacking Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3003",
-    "externalId": null,
+    "externalId": "bw7-132",
     "tcgdex_id": "bw7-132",
     "localId": "132",
     "setCode": "bw7",
@@ -681,11 +773,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-132-low.png",
-    "imageHighSrc": "cards/bw7-132-high.png"
+    "imageHighSrc": "cards/bw7-132-high.png",
+    "rules": "Heal 30 damage from 1 of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3002",
-    "externalId": null,
+    "externalId": "bw7-131",
     "tcgdex_id": "bw7-131",
     "localId": "131",
     "setCode": "bw7",
@@ -710,11 +803,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-131-low.png",
-    "imageHighSrc": "cards/bw7-131-high.png"
+    "imageHighSrc": "cards/bw7-131-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3001",
-    "externalId": null,
+    "externalId": "bw7-130",
     "tcgdex_id": "bw7-130",
     "localId": "130",
     "setCode": "bw7",
@@ -739,11 +833,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-130-low.png",
-    "imageHighSrc": "cards/bw7-130-high.png"
+    "imageHighSrc": "cards/bw7-130-high.png",
+    "rules": "Each player either draws or discard cards until he or she has 5 cards in his or her hand. (Your opponent does this first.)\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3000",
-    "externalId": null,
+    "externalId": "bw7-129",
     "tcgdex_id": "bw7-129",
     "localId": "129",
     "setCode": "bw7",
@@ -768,11 +863,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-129-low.png",
-    "imageHighSrc": "cards/bw7-129-high.png"
+    "imageHighSrc": "cards/bw7-129-high.png",
+    "rules": "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2999",
-    "externalId": null,
+    "externalId": "bw7-128",
     "tcgdex_id": "bw7-128",
     "localId": "128",
     "setCode": "bw7",
@@ -797,11 +893,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-128-low.png",
-    "imageHighSrc": "cards/bw7-128-high.png"
+    "imageHighSrc": "cards/bw7-128-high.png",
+    "rules": "Search your deck for a basic Energy card, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2998",
-    "externalId": null,
+    "externalId": "bw7-127",
     "tcgdex_id": "bw7-127",
     "localId": "127",
     "setCode": "bw7",
@@ -826,11 +923,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-127-low.png",
-    "imageHighSrc": "cards/bw7-127-high.png"
+    "imageHighSrc": "cards/bw7-127-high.png",
+    "rules": "Each Colorless Pokémon in play (both yours and your opponent's) gets +20 HP.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "2997",
-    "externalId": null,
+    "externalId": "bw7-126",
     "tcgdex_id": "bw7-126",
     "localId": "126",
     "setCode": "bw7",
@@ -859,11 +957,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-126-low.png",
-    "imageHighSrc": "cards/bw7-126-high.png"
+    "imageHighSrc": "cards/bw7-126-high.png",
+    "attacks": [
+      {
+        "name": "Hip Bump",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2996",
-    "externalId": null,
+    "externalId": "bw7-125",
     "tcgdex_id": "bw7-125",
     "localId": "125",
     "setCode": "bw7",
@@ -892,11 +996,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-125-low.png",
-    "imageHighSrc": "cards/bw7-125-high.png"
+    "imageHighSrc": "cards/bw7-125-high.png",
+    "attacks": [
+      {
+        "name": "Wing Flick",
+        "damage": "40"
+      },
+      {
+        "name": "Air Slash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2995",
-    "externalId": null,
+    "externalId": "bw7-124",
     "tcgdex_id": "bw7-124",
     "localId": "124",
     "setCode": "bw7",
@@ -925,11 +1039,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-124-low.png",
-    "imageHighSrc": "cards/bw7-124-high.png"
+    "imageHighSrc": "cards/bw7-124-high.png",
+    "attacks": [
+      {
+        "name": "Air Slash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2994",
-    "externalId": null,
+    "externalId": "bw7-123",
     "tcgdex_id": "bw7-123",
     "localId": "123",
     "setCode": "bw7",
@@ -958,11 +1078,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-123-low.png",
-    "imageHighSrc": "cards/bw7-123-high.png"
+    "imageHighSrc": "cards/bw7-123-high.png",
+    "attacks": [
+      {
+        "name": "Razor Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2993",
-    "externalId": null,
+    "externalId": "bw7-122",
     "tcgdex_id": "bw7-122",
     "localId": "122",
     "setCode": "bw7",
@@ -991,11 +1117,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-122-low.png",
-    "imageHighSrc": "cards/bw7-122-high.png"
+    "imageHighSrc": "cards/bw7-122-high.png",
+    "attacks": [
+      {
+        "name": "Wild Tackle",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2992",
-    "externalId": null,
+    "externalId": "bw7-121",
     "tcgdex_id": "bw7-121",
     "localId": "121",
     "setCode": "bw7",
@@ -1024,11 +1156,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-121-low.png",
-    "imageHighSrc": "cards/bw7-121-high.png"
+    "imageHighSrc": "cards/bw7-121-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Take Down",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2991",
-    "externalId": null,
+    "externalId": "bw7-120",
     "tcgdex_id": "bw7-120",
     "localId": "120",
     "setCode": "bw7",
@@ -1057,11 +1199,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-120-low.png",
-    "imageHighSrc": "cards/bw7-120-high.png"
+    "imageHighSrc": "cards/bw7-120-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2990",
-    "externalId": null,
+    "externalId": "bw7-119",
     "tcgdex_id": "bw7-119",
     "localId": "119",
     "setCode": "bw7",
@@ -1090,11 +1242,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-119-low.png",
-    "imageHighSrc": "cards/bw7-119-high.png"
+    "imageHighSrc": "cards/bw7-119-high.png",
+    "attacks": [
+      {
+        "name": "Hypnoblast",
+        "damage": "20"
+      },
+      {
+        "name": "Psych Up",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2989",
-    "externalId": null,
+    "externalId": "bw7-118",
     "tcgdex_id": "bw7-118",
     "localId": "118",
     "setCode": "bw7",
@@ -1123,11 +1285,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-118-low.png",
-    "imageHighSrc": "cards/bw7-118-high.png"
+    "imageHighSrc": "cards/bw7-118-high.png",
+    "attacks": [
+      {
+        "name": "Patrol",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2988",
-    "externalId": null,
+    "externalId": "bw7-117",
     "tcgdex_id": "bw7-117",
     "localId": "117",
     "setCode": "bw7",
@@ -1156,11 +1324,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-117-low.png",
-    "imageHighSrc": "cards/bw7-117-high.png"
+    "imageHighSrc": "cards/bw7-117-high.png",
+    "attacks": [
+      {
+        "name": "Healing Melody",
+        "damage": null
+      },
+      {
+        "name": "Kick Away",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2987",
-    "externalId": null,
+    "externalId": "bw7-116",
     "tcgdex_id": "bw7-116",
     "localId": "116",
     "setCode": "bw7",
@@ -1189,11 +1367,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-116-low.png",
-    "imageHighSrc": "cards/bw7-116-high.png"
+    "imageHighSrc": "cards/bw7-116-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Smash Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2986",
-    "externalId": null,
+    "externalId": "bw7-115",
     "tcgdex_id": "bw7-115",
     "localId": "115",
     "setCode": "bw7",
@@ -1222,11 +1410,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-115-low.png",
-    "imageHighSrc": "cards/bw7-115-high.png"
+    "imageHighSrc": "cards/bw7-115-high.png",
+    "attacks": [
+      {
+        "name": "Whimsy Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2985",
-    "externalId": null,
+    "externalId": "bw7-114",
     "tcgdex_id": "bw7-114",
     "localId": "114",
     "setCode": "bw7",
@@ -1255,11 +1449,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-114-low.png",
-    "imageHighSrc": "cards/bw7-114-high.png"
+    "imageHighSrc": "cards/bw7-114-high.png",
+    "attacks": [
+      {
+        "name": "Gather Energy",
+        "damage": "30"
+      },
+      {
+        "name": "Double Slap",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "2984",
-    "externalId": null,
+    "externalId": "bw7-113",
     "tcgdex_id": "bw7-113",
     "localId": "113",
     "setCode": "bw7",
@@ -1288,11 +1492,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-113-low.png",
-    "imageHighSrc": "cards/bw7-113-high.png"
+    "imageHighSrc": "cards/bw7-113-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Double Slap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2983",
-    "externalId": null,
+    "externalId": "bw7-112",
     "tcgdex_id": "bw7-112",
     "localId": "112",
     "setCode": "bw7",
@@ -1321,11 +1535,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-112-low.png",
-    "imageHighSrc": "cards/bw7-112-high.png"
+    "imageHighSrc": "cards/bw7-112-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2982",
-    "externalId": null,
+    "externalId": "bw7-111",
     "tcgdex_id": "bw7-111",
     "localId": "111",
     "setCode": "bw7",
@@ -1354,11 +1574,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-111-low.png",
-    "imageHighSrc": "cards/bw7-111-high.png"
+    "imageHighSrc": "cards/bw7-111-high.png",
+    "attacks": [
+      {
+        "name": "Double Draw",
+        "damage": null
+      },
+      {
+        "name": "Dig",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2981",
-    "externalId": null,
+    "externalId": "bw7-110",
     "tcgdex_id": "bw7-110",
     "localId": "110",
     "setCode": "bw7",
@@ -1387,11 +1617,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-110-low.png",
-    "imageHighSrc": "cards/bw7-110-high.png"
+    "imageHighSrc": "cards/bw7-110-high.png",
+    "attacks": [
+      {
+        "name": "Attract Smack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2980",
-    "externalId": null,
+    "externalId": "bw7-109",
     "tcgdex_id": "bw7-109",
     "localId": "109",
     "setCode": "bw7",
@@ -1420,11 +1656,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-109-low.png",
-    "imageHighSrc": "cards/bw7-109-high.png"
+    "imageHighSrc": "cards/bw7-109-high.png",
+    "attacks": [
+      {
+        "name": "Double Lariat",
+        "damage": "40×"
+      },
+      {
+        "name": "Rollout",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2979",
-    "externalId": null,
+    "externalId": "bw7-108",
     "tcgdex_id": "bw7-108",
     "localId": "108",
     "setCode": "bw7",
@@ -1457,7 +1703,7 @@
   },
   {
     "masterCardId": "2978",
-    "externalId": null,
+    "externalId": "bw7-107",
     "tcgdex_id": "bw7-107",
     "localId": "107",
     "setCode": "bw7",
@@ -1486,11 +1732,17 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-107-low.png",
-    "imageHighSrc": "cards/bw7-107-high.png"
+    "imageHighSrc": "cards/bw7-107-high.png",
+    "attacks": [
+      {
+        "name": "Hard Swing",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2977",
-    "externalId": null,
+    "externalId": "bw7-106",
     "tcgdex_id": "bw7-106",
     "localId": "106",
     "setCode": "bw7",
@@ -1519,11 +1771,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-106-low.png",
-    "imageHighSrc": "cards/bw7-106-high.png"
+    "imageHighSrc": "cards/bw7-106-high.png",
+    "attacks": [
+      {
+        "name": "Fake Out",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2976",
-    "externalId": null,
+    "externalId": "bw7-105",
     "tcgdex_id": "bw7-105",
     "localId": "105",
     "setCode": "bw7",
@@ -1552,11 +1810,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-105-low.png",
-    "imageHighSrc": "cards/bw7-105-high.png"
+    "imageHighSrc": "cards/bw7-105-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw Through",
+        "damage": null
+      },
+      {
+        "name": "Super Fang",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2975",
-    "externalId": null,
+    "externalId": "bw7-104",
     "tcgdex_id": "bw7-104",
     "localId": "104",
     "setCode": "bw7",
@@ -1585,11 +1853,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-104-low.png",
-    "imageHighSrc": "cards/bw7-104-high.png"
+    "imageHighSrc": "cards/bw7-104-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2974",
-    "externalId": null,
+    "externalId": "bw7-103",
     "tcgdex_id": "bw7-103",
     "localId": "103",
     "setCode": "bw7",
@@ -1619,11 +1893,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-103-low.png",
-    "imageHighSrc": "cards/bw7-103-high.png"
+    "imageHighSrc": "cards/bw7-103-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Stream",
+        "damage": "60"
+      },
+      {
+        "name": "Ice Burn",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2973",
-    "externalId": null,
+    "externalId": "bw7-102",
     "tcgdex_id": "bw7-102",
     "localId": "102",
     "setCode": "bw7",
@@ -1652,11 +1937,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-102-low.png",
-    "imageHighSrc": "cards/bw7-102-high.png"
+    "imageHighSrc": "cards/bw7-102-high.png",
+    "attacks": [
+      {
+        "name": "Damage Rush",
+        "damage": "20×"
+      },
+      {
+        "name": "Cold Fire",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "2972",
-    "externalId": null,
+    "externalId": "bw7-101",
     "tcgdex_id": "bw7-101",
     "localId": "101",
     "setCode": "bw7",
@@ -1686,11 +1981,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-101-low.png",
-    "imageHighSrc": "cards/bw7-101-high.png"
+    "imageHighSrc": "cards/bw7-101-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Fang",
+        "damage": "60"
+      },
+      {
+        "name": "Freeze Shock",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2971",
-    "externalId": null,
+    "externalId": "bw7-100",
     "tcgdex_id": "bw7-100",
     "localId": "100",
     "setCode": "bw7",
@@ -1719,18 +2025,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-100-low.png",
-    "imageHighSrc": "cards/bw7-100-high.png"
+    "imageHighSrc": "cards/bw7-100-high.png",
+    "attacks": [
+      {
+        "name": "Dual Claw",
+        "damage": "20×"
+      },
+      {
+        "name": "Flash Freeze",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "2970",
-    "externalId": null,
+    "externalId": "bw7-99",
     "tcgdex_id": "bw7-99",
     "localId": "099",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "099/149",
+    "cardNumber": "99/149",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 099/149 Boundaries Crossed",
+    "fullDisplayName": "Flygon 99/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1752,18 +2068,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-099-low.png",
-    "imageHighSrc": "cards/bw7-099-high.png"
+    "imageHighSrc": "cards/bw7-099-high.png",
+    "attacks": [
+      {
+        "name": "Flying Beatdown",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2969",
-    "externalId": null,
+    "externalId": "bw7-98",
     "tcgdex_id": "bw7-98",
     "localId": "098",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "098/149",
+    "cardNumber": "98/149",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 098/149 Boundaries Crossed",
+    "fullDisplayName": "Vibrava 98/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1785,18 +2107,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-098-low.png",
-    "imageHighSrc": "cards/bw7-098-high.png"
+    "imageHighSrc": "cards/bw7-098-high.png",
+    "attacks": [
+      {
+        "name": "Quick Turn",
+        "damage": "20×"
+      },
+      {
+        "name": "Sand Pulse",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2968",
-    "externalId": null,
+    "externalId": "bw7-97",
     "tcgdex_id": "bw7-97",
     "localId": "097",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "097/149",
+    "cardNumber": "97/149",
     "cardName": "Klink",
-    "fullDisplayName": "Klink 097/149 Boundaries Crossed",
+    "fullDisplayName": "Klink 97/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1818,18 +2150,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-097-low.png",
-    "imageHighSrc": "cards/bw7-097-high.png"
+    "imageHighSrc": "cards/bw7-097-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2967",
-    "externalId": null,
+    "externalId": "bw7-96",
     "tcgdex_id": "bw7-96",
     "localId": "096",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "096/149",
+    "cardNumber": "96/149",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 096/149 Boundaries Crossed",
+    "fullDisplayName": "Skarmory 96/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1851,18 +2189,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-096-low.png",
-    "imageHighSrc": "cards/bw7-096-high.png"
+    "imageHighSrc": "cards/bw7-096-high.png",
+    "attacks": [
+      {
+        "name": "Metal Sound",
+        "damage": null
+      },
+      {
+        "name": "Swift",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2966",
-    "externalId": null,
+    "externalId": "bw7-95",
     "tcgdex_id": "bw7-95",
     "localId": "095",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "095/149",
+    "cardNumber": "95/149",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 095/149 Boundaries Crossed",
+    "fullDisplayName": "Skarmory 95/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1884,18 +2232,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-095-low.png",
-    "imageHighSrc": "cards/bw7-095-high.png"
+    "imageHighSrc": "cards/bw7-095-high.png",
+    "attacks": [
+      {
+        "name": "Claw",
+        "damage": "20"
+      },
+      {
+        "name": "Drill Peck",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2965",
-    "externalId": null,
+    "externalId": "bw7-94",
     "tcgdex_id": "bw7-94",
     "localId": "094",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "094/149",
+    "cardNumber": "94/149",
     "cardName": "Scizor",
-    "fullDisplayName": "Scizor 094/149 Boundaries Crossed",
+    "fullDisplayName": "Scizor 94/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1917,18 +2275,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-094-low.png",
-    "imageHighSrc": "cards/bw7-094-high.png"
+    "imageHighSrc": "cards/bw7-094-high.png",
+    "attacks": [
+      {
+        "name": "Steel Slash",
+        "damage": "40"
+      },
+      {
+        "name": "Slashing Strike",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "2964",
-    "externalId": null,
+    "externalId": "bw7-93",
     "tcgdex_id": "bw7-93",
     "localId": "093",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "093/149",
+    "cardNumber": "93/149",
     "cardName": "Mandibuzz",
-    "fullDisplayName": "Mandibuzz 093/149 Boundaries Crossed",
+    "fullDisplayName": "Mandibuzz 93/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1950,18 +2318,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-093-low.png",
-    "imageHighSrc": "cards/bw7-093-high.png"
+    "imageHighSrc": "cards/bw7-093-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "30"
+      },
+      {
+        "name": "Dual Cut",
+        "damage": "80×"
+      }
+    ]
   },
   {
     "masterCardId": "2963",
-    "externalId": null,
+    "externalId": "bw7-92",
     "tcgdex_id": "bw7-92",
     "localId": "092",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "092/149",
+    "cardNumber": "92/149",
     "cardName": "Vullaby",
-    "fullDisplayName": "Vullaby 092/149 Boundaries Crossed",
+    "fullDisplayName": "Vullaby 92/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1983,18 +2361,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-092-low.png",
-    "imageHighSrc": "cards/bw7-092-high.png"
+    "imageHighSrc": "cards/bw7-092-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Wing",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2962",
-    "externalId": null,
+    "externalId": "bw7-91",
     "tcgdex_id": "bw7-91",
     "localId": "091",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "091/149",
+    "cardNumber": "91/149",
     "cardName": "Liepard",
-    "fullDisplayName": "Liepard 091/149 Boundaries Crossed",
+    "fullDisplayName": "Liepard 91/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2016,18 +2404,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-091-low.png",
-    "imageHighSrc": "cards/bw7-091-high.png"
+    "imageHighSrc": "cards/bw7-091-high.png",
+    "attacks": [
+      {
+        "name": "Tail Trickery",
+        "damage": null
+      },
+      {
+        "name": "Assist",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2961",
-    "externalId": null,
+    "externalId": "bw7-90",
     "tcgdex_id": "bw7-90",
     "localId": "090",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "090/149",
+    "cardNumber": "90/149",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 090/149 Boundaries Crossed",
+    "fullDisplayName": "Purrloin 90/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2049,18 +2447,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-090-low.png",
-    "imageHighSrc": "cards/bw7-090-high.png"
+    "imageHighSrc": "cards/bw7-090-high.png",
+    "attacks": [
+      {
+        "name": "Captivate",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2960",
-    "externalId": null,
+    "externalId": "bw7-89",
     "tcgdex_id": "bw7-89",
     "localId": "089",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "089/149",
+    "cardNumber": "89/149",
     "cardName": "Landorus-EX",
-    "fullDisplayName": "Landorus-EX 089/149 Boundaries Crossed",
+    "fullDisplayName": "Landorus-EX 89/149 Boundaries Crossed",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2083,18 +2487,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-089-low.png",
-    "imageHighSrc": "cards/bw7-089-high.png"
+    "imageHighSrc": "cards/bw7-089-high.png",
+    "attacks": [
+      {
+        "name": "Hammerhead",
+        "damage": "30"
+      },
+      {
+        "name": "Land's Judgment",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2959",
-    "externalId": null,
+    "externalId": "bw7-88",
     "tcgdex_id": "bw7-88",
     "localId": "088",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "088/149",
+    "cardNumber": "88/149",
     "cardName": "Mienshao",
-    "fullDisplayName": "Mienshao 088/149 Boundaries Crossed",
+    "fullDisplayName": "Mienshao 88/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2116,18 +2531,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-088-low.png",
-    "imageHighSrc": "cards/bw7-088-high.png"
+    "imageHighSrc": "cards/bw7-088-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "20"
+      },
+      {
+        "name": "Double Whip",
+        "damage": "70×"
+      }
+    ]
   },
   {
     "masterCardId": "2958",
-    "externalId": null,
+    "externalId": "bw7-87",
     "tcgdex_id": "bw7-87",
     "localId": "087",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "087/149",
+    "cardNumber": "87/149",
     "cardName": "Mienfoo",
-    "fullDisplayName": "Mienfoo 087/149 Boundaries Crossed",
+    "fullDisplayName": "Mienfoo 87/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2149,18 +2574,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-087-low.png",
-    "imageHighSrc": "cards/bw7-087-high.png"
+    "imageHighSrc": "cards/bw7-087-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2957",
-    "externalId": null,
+    "externalId": "bw7-86",
     "tcgdex_id": "bw7-86",
     "localId": "086",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "086/149",
+    "cardNumber": "86/149",
     "cardName": "Mienfoo",
-    "fullDisplayName": "Mienfoo 086/149 Boundaries Crossed",
+    "fullDisplayName": "Mienfoo 86/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2182,18 +2613,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-086-low.png",
-    "imageHighSrc": "cards/bw7-086-high.png"
+    "imageHighSrc": "cards/bw7-086-high.png",
+    "attacks": [
+      {
+        "name": "Steady Punch",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2956",
-    "externalId": null,
+    "externalId": "bw7-85",
     "tcgdex_id": "bw7-85",
     "localId": "085",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "085/149",
+    "cardNumber": "85/149",
     "cardName": "Crustle",
-    "fullDisplayName": "Crustle 085/149 Boundaries Crossed",
+    "fullDisplayName": "Crustle 85/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2215,18 +2652,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-085-low.png",
-    "imageHighSrc": "cards/bw7-085-high.png"
+    "imageHighSrc": "cards/bw7-085-high.png",
+    "attacks": [
+      {
+        "name": "Stone Edge",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "2955",
-    "externalId": null,
+    "externalId": "bw7-84",
     "tcgdex_id": "bw7-84",
     "localId": "084",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "084/149",
+    "cardNumber": "84/149",
     "cardName": "Dwebble",
-    "fullDisplayName": "Dwebble 084/149 Boundaries Crossed",
+    "fullDisplayName": "Dwebble 84/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2248,18 +2691,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-084-low.png",
-    "imageHighSrc": "cards/bw7-084-high.png"
+    "imageHighSrc": "cards/bw7-084-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2954",
-    "externalId": null,
+    "externalId": "bw7-83",
     "tcgdex_id": "bw7-83",
     "localId": "083",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "083/149",
+    "cardNumber": "83/149",
     "cardName": "Trapinch",
-    "fullDisplayName": "Trapinch 083/149 Boundaries Crossed",
+    "fullDisplayName": "Trapinch 83/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2281,18 +2730,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-083-low.png",
-    "imageHighSrc": "cards/bw7-083-high.png"
+    "imageHighSrc": "cards/bw7-083-high.png",
+    "attacks": [
+      {
+        "name": "Smithereen Smash",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2953",
-    "externalId": null,
+    "externalId": "bw7-82",
     "tcgdex_id": "bw7-82",
     "localId": "082",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "082/149",
+    "cardNumber": "82/149",
     "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 082/149 Boundaries Crossed",
+    "fullDisplayName": "Makuhita 82/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2314,18 +2773,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-082-low.png",
-    "imageHighSrc": "cards/bw7-082-high.png"
+    "imageHighSrc": "cards/bw7-082-high.png",
+    "attacks": [
+      {
+        "name": "Slap Push",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2952",
-    "externalId": null,
+    "externalId": "bw7-81",
     "tcgdex_id": "bw7-81",
     "localId": "081",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "081/149",
+    "cardNumber": "81/149",
     "cardName": "Gliscor",
-    "fullDisplayName": "Gliscor 081/149 Boundaries Crossed",
+    "fullDisplayName": "Gliscor 81/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2347,18 +2812,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-081-low.png",
-    "imageHighSrc": "cards/bw7-081-high.png"
+    "imageHighSrc": "cards/bw7-081-high.png",
+    "attacks": [
+      {
+        "name": "Poison Ring",
+        "damage": "20"
+      },
+      {
+        "name": "Night Slash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2951",
-    "externalId": null,
+    "externalId": "bw7-80",
     "tcgdex_id": "bw7-80",
     "localId": "080",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "080/149",
+    "cardNumber": "80/149",
     "cardName": "Gligar",
-    "fullDisplayName": "Gligar 080/149 Boundaries Crossed",
+    "fullDisplayName": "Gligar 80/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2380,18 +2855,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-080-low.png",
-    "imageHighSrc": "cards/bw7-080-high.png"
+    "imageHighSrc": "cards/bw7-080-high.png",
+    "attacks": [
+      {
+        "name": "Tail Smack",
+        "damage": "10"
+      },
+      {
+        "name": "Wicked Jab",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2950",
-    "externalId": null,
+    "externalId": "bw7-79",
     "tcgdex_id": "bw7-79",
     "localId": "079",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "079/149",
+    "cardNumber": "79/149",
     "cardName": "Sandslash",
-    "fullDisplayName": "Sandslash 079/149 Boundaries Crossed",
+    "fullDisplayName": "Sandslash 79/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2413,18 +2898,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-079-low.png",
-    "imageHighSrc": "cards/bw7-079-high.png"
+    "imageHighSrc": "cards/bw7-079-high.png",
+    "attacks": [
+      {
+        "name": "Sand-Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2949",
-    "externalId": null,
+    "externalId": "bw7-78",
     "tcgdex_id": "bw7-78",
     "localId": "078",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "078/149",
+    "cardNumber": "78/149",
     "cardName": "Sandshrew",
-    "fullDisplayName": "Sandshrew 078/149 Boundaries Crossed",
+    "fullDisplayName": "Sandshrew 78/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2446,18 +2941,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-078-low.png",
-    "imageHighSrc": "cards/bw7-078-high.png"
+    "imageHighSrc": "cards/bw7-078-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2948",
-    "externalId": null,
+    "externalId": "bw7-77",
     "tcgdex_id": "bw7-77",
     "localId": "077",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "077/149",
+    "cardNumber": "77/149",
     "cardName": "Meloetta",
-    "fullDisplayName": "Meloetta 077/149 Boundaries Crossed",
+    "fullDisplayName": "Meloetta 77/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2479,18 +2984,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-077-low.png",
-    "imageHighSrc": "cards/bw7-077-high.png"
+    "imageHighSrc": "cards/bw7-077-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "10+"
+      },
+      {
+        "name": "Echoed Voice",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2947",
-    "externalId": null,
+    "externalId": "bw7-76",
     "tcgdex_id": "bw7-76",
     "localId": "076",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "076/149",
+    "cardNumber": "76/149",
     "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 076/149 Boundaries Crossed",
+    "fullDisplayName": "Gothorita 76/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2512,18 +3027,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-076-low.png",
-    "imageHighSrc": "cards/bw7-076-high.png"
+    "imageHighSrc": "cards/bw7-076-high.png",
+    "attacks": [
+      {
+        "name": "Psypunch",
+        "damage": "30"
+      },
+      {
+        "name": "Destructive Beam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2946",
-    "externalId": null,
+    "externalId": "bw7-75",
     "tcgdex_id": "bw7-75",
     "localId": "075",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "075/149",
+    "cardNumber": "75/149",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 075/149 Boundaries Crossed",
+    "fullDisplayName": "Gothita 75/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2545,18 +3070,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-075-low.png",
-    "imageHighSrc": "cards/bw7-075-high.png"
+    "imageHighSrc": "cards/bw7-075-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Psypunch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2945",
-    "externalId": null,
+    "externalId": "bw7-74",
     "tcgdex_id": "bw7-74",
     "localId": "074",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "074/149",
+    "cardNumber": "74/149",
     "cardName": "Scolipede",
-    "fullDisplayName": "Scolipede 074/149 Boundaries Crossed",
+    "fullDisplayName": "Scolipede 74/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2578,18 +3113,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-074-low.png",
-    "imageHighSrc": "cards/bw7-074-high.png"
+    "imageHighSrc": "cards/bw7-074-high.png",
+    "attacks": [
+      {
+        "name": "Venoshock",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "2944",
-    "externalId": null,
+    "externalId": "bw7-73",
     "tcgdex_id": "bw7-73",
     "localId": "073",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "073/149",
+    "cardNumber": "73/149",
     "cardName": "Whirlipede",
-    "fullDisplayName": "Whirlipede 073/149 Boundaries Crossed",
+    "fullDisplayName": "Whirlipede 73/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2611,18 +3152,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-073-low.png",
-    "imageHighSrc": "cards/bw7-073-high.png"
+    "imageHighSrc": "cards/bw7-073-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2943",
-    "externalId": null,
+    "externalId": "bw7-72",
     "tcgdex_id": "bw7-72",
     "localId": "072",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "072/149",
+    "cardNumber": "72/149",
     "cardName": "Venipede",
-    "fullDisplayName": "Venipede 072/149 Boundaries Crossed",
+    "fullDisplayName": "Venipede 72/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2644,18 +3191,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-072-low.png",
-    "imageHighSrc": "cards/bw7-072-high.png"
+    "imageHighSrc": "cards/bw7-072-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2942",
-    "externalId": null,
+    "externalId": "bw7-71",
     "tcgdex_id": "bw7-71",
     "localId": "071",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "071/149",
+    "cardNumber": "71/149",
     "cardName": "Swoobat",
-    "fullDisplayName": "Swoobat 071/149 Boundaries Crossed",
+    "fullDisplayName": "Swoobat 71/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2677,18 +3230,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-071-low.png",
-    "imageHighSrc": "cards/bw7-071-high.png"
+    "imageHighSrc": "cards/bw7-071-high.png",
+    "attacks": [
+      {
+        "name": "Jet Woofer",
+        "damage": null
+      },
+      {
+        "name": "Acrobatics",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2941",
-    "externalId": null,
+    "externalId": "bw7-70",
     "tcgdex_id": "bw7-70",
     "localId": "070",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "070/149",
+    "cardNumber": "70/149",
     "cardName": "Woobat",
-    "fullDisplayName": "Woobat 070/149 Boundaries Crossed",
+    "fullDisplayName": "Woobat 70/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2710,18 +3273,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-070-low.png",
-    "imageHighSrc": "cards/bw7-070-high.png"
+    "imageHighSrc": "cards/bw7-070-high.png",
+    "attacks": [
+      {
+        "name": "Scout",
+        "damage": null
+      },
+      {
+        "name": "Heart Stamp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2940",
-    "externalId": null,
+    "externalId": "bw7-69",
     "tcgdex_id": "bw7-69",
     "localId": "069",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "069/149",
+    "cardNumber": "69/149",
     "cardName": "Musharna",
-    "fullDisplayName": "Musharna 069/149 Boundaries Crossed",
+    "fullDisplayName": "Musharna 69/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2743,18 +3316,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-069-low.png",
-    "imageHighSrc": "cards/bw7-069-high.png"
+    "imageHighSrc": "cards/bw7-069-high.png",
+    "attacks": [
+      {
+        "name": "Telekinesis",
+        "damage": null
+      },
+      {
+        "name": "Dream Waltz",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2939",
-    "externalId": null,
+    "externalId": "bw7-68",
     "tcgdex_id": "bw7-68",
     "localId": "068",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "068/149",
+    "cardNumber": "68/149",
     "cardName": "Munna",
-    "fullDisplayName": "Munna 068/149 Boundaries Crossed",
+    "fullDisplayName": "Munna 68/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2776,18 +3359,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-068-low.png",
-    "imageHighSrc": "cards/bw7-068-high.png"
+    "imageHighSrc": "cards/bw7-068-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2938",
-    "externalId": null,
+    "externalId": "bw7-67",
     "tcgdex_id": "bw7-67",
     "localId": "067",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "067/149",
+    "cardNumber": "67/149",
     "cardName": "Cresselia-EX",
-    "fullDisplayName": "Cresselia-EX 067/149 Boundaries Crossed",
+    "fullDisplayName": "Cresselia-EX 67/149 Boundaries Crossed",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2810,18 +3399,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-067-low.png",
-    "imageHighSrc": "cards/bw7-067-high.png"
+    "imageHighSrc": "cards/bw7-067-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Protection",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2937",
-    "externalId": null,
+    "externalId": "bw7-66",
     "tcgdex_id": "bw7-66",
     "localId": "066",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "066/149",
+    "cardNumber": "66/149",
     "cardName": "Toxicroak",
-    "fullDisplayName": "Toxicroak 066/149 Boundaries Crossed",
+    "fullDisplayName": "Toxicroak 66/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2843,18 +3439,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-066-low.png",
-    "imageHighSrc": "cards/bw7-066-high.png"
+    "imageHighSrc": "cards/bw7-066-high.png",
+    "attacks": [
+      {
+        "name": "Revenge",
+        "damage": "20+"
+      },
+      {
+        "name": "Poison Jab",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2936",
-    "externalId": null,
+    "externalId": "bw7-65",
     "tcgdex_id": "bw7-65",
     "localId": "065",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "065/149",
+    "cardNumber": "65/149",
     "cardName": "Croagunk",
-    "fullDisplayName": "Croagunk 065/149 Boundaries Crossed",
+    "fullDisplayName": "Croagunk 65/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2876,18 +3482,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-065-low.png",
-    "imageHighSrc": "cards/bw7-065-high.png"
+    "imageHighSrc": "cards/bw7-065-high.png",
+    "attacks": [
+      {
+        "name": "Poison Jab",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2935",
-    "externalId": null,
+    "externalId": "bw7-64",
     "tcgdex_id": "bw7-64",
     "localId": "064",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "064/149",
+    "cardNumber": "64/149",
     "cardName": "Croagunk",
-    "fullDisplayName": "Croagunk 064/149 Boundaries Crossed",
+    "fullDisplayName": "Croagunk 64/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2909,18 +3521,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-064-low.png",
-    "imageHighSrc": "cards/bw7-064-high.png"
+    "imageHighSrc": "cards/bw7-064-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Jab",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2934",
-    "externalId": null,
+    "externalId": "bw7-63",
     "tcgdex_id": "bw7-63",
     "localId": "063",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "063/149",
+    "cardNumber": "63/149",
     "cardName": "Dusknoir",
-    "fullDisplayName": "Dusknoir 063/149 Boundaries Crossed",
+    "fullDisplayName": "Dusknoir 63/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2942,18 +3560,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-063-low.png",
-    "imageHighSrc": "cards/bw7-063-high.png"
+    "imageHighSrc": "cards/bw7-063-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Punch",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2933",
-    "externalId": null,
+    "externalId": "bw7-62",
     "tcgdex_id": "bw7-62",
     "localId": "062",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "062/149",
+    "cardNumber": "62/149",
     "cardName": "Dusclops",
-    "fullDisplayName": "Dusclops 062/149 Boundaries Crossed",
+    "fullDisplayName": "Dusclops 62/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2975,18 +3599,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-062-low.png",
-    "imageHighSrc": "cards/bw7-062-high.png"
+    "imageHighSrc": "cards/bw7-062-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      },
+      {
+        "name": "Psyshot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2932",
-    "externalId": null,
+    "externalId": "bw7-61",
     "tcgdex_id": "bw7-61",
     "localId": "061",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "061/149",
+    "cardNumber": "61/149",
     "cardName": "Duskull",
-    "fullDisplayName": "Duskull 061/149 Boundaries Crossed",
+    "fullDisplayName": "Duskull 61/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3008,18 +3642,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-061-low.png",
-    "imageHighSrc": "cards/bw7-061-high.png"
+    "imageHighSrc": "cards/bw7-061-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2931",
-    "externalId": null,
+    "externalId": "bw7-60",
     "tcgdex_id": "bw7-60",
     "localId": "060",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "060/149",
+    "cardNumber": "60/149",
     "cardName": "Grumpig",
-    "fullDisplayName": "Grumpig 060/149 Boundaries Crossed",
+    "fullDisplayName": "Grumpig 60/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3041,18 +3681,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-060-low.png",
-    "imageHighSrc": "cards/bw7-060-high.png"
+    "imageHighSrc": "cards/bw7-060-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": "30"
+      },
+      {
+        "name": "Extrasensory",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2930",
-    "externalId": null,
+    "externalId": "bw7-59",
     "tcgdex_id": "bw7-59",
     "localId": "059",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "059/149",
+    "cardNumber": "59/149",
     "cardName": "Spoink",
-    "fullDisplayName": "Spoink 059/149 Boundaries Crossed",
+    "fullDisplayName": "Spoink 59/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3074,18 +3724,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-059-low.png",
-    "imageHighSrc": "cards/bw7-059-high.png"
+    "imageHighSrc": "cards/bw7-059-high.png",
+    "attacks": [
+      {
+        "name": "Flail Around",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2929",
-    "externalId": null,
+    "externalId": "bw7-58",
     "tcgdex_id": "bw7-58",
     "localId": "058",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "058/149",
+    "cardNumber": "58/149",
     "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet 058/149 Boundaries Crossed",
+    "fullDisplayName": "Wobbuffet 58/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3107,18 +3763,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-058-low.png",
-    "imageHighSrc": "cards/bw7-058-high.png"
+    "imageHighSrc": "cards/bw7-058-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt Bounce",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2928",
-    "externalId": null,
+    "externalId": "bw7-57",
     "tcgdex_id": "bw7-57",
     "localId": "057",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "057/149",
+    "cardNumber": "57/149",
     "cardName": "Zebstrika",
-    "fullDisplayName": "Zebstrika 057/149 Boundaries Crossed",
+    "fullDisplayName": "Zebstrika 57/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3140,18 +3802,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-057-low.png",
-    "imageHighSrc": "cards/bw7-057-high.png"
+    "imageHighSrc": "cards/bw7-057-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": null
+      },
+      {
+        "name": "Thunder",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2927",
-    "externalId": null,
+    "externalId": "bw7-56",
     "tcgdex_id": "bw7-56",
     "localId": "056",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "056/149",
+    "cardNumber": "56/149",
     "cardName": "Blitzle",
-    "fullDisplayName": "Blitzle 056/149 Boundaries Crossed",
+    "fullDisplayName": "Blitzle 56/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3173,18 +3845,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-056-low.png",
-    "imageHighSrc": "cards/bw7-056-high.png"
+    "imageHighSrc": "cards/bw7-056-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2926",
-    "externalId": null,
+    "externalId": "bw7-55",
     "tcgdex_id": "bw7-55",
     "localId": "055",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "055/149",
+    "cardNumber": "55/149",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 055/149 Boundaries Crossed",
+    "fullDisplayName": "Chinchou 55/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3206,18 +3884,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-055-low.png",
-    "imageHighSrc": "cards/bw7-055-high.png"
+    "imageHighSrc": "cards/bw7-055-high.png",
+    "attacks": [
+      {
+        "name": "Electripult",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2925",
-    "externalId": null,
+    "externalId": "bw7-54",
     "tcgdex_id": "bw7-54",
     "localId": "054",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "054/149",
+    "cardNumber": "54/149",
     "cardName": "Electivire",
-    "fullDisplayName": "Electivire 054/149 Boundaries Crossed",
+    "fullDisplayName": "Electivire 54/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3239,18 +3923,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-054-low.png",
-    "imageHighSrc": "cards/bw7-054-high.png"
+    "imageHighSrc": "cards/bw7-054-high.png",
+    "attacks": [
+      {
+        "name": "Electriwave",
+        "damage": null
+      },
+      {
+        "name": "Shock Wave",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2924",
-    "externalId": null,
+    "externalId": "bw7-53",
     "tcgdex_id": "bw7-53",
     "localId": "053",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "053/149",
+    "cardNumber": "53/149",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 053/149 Boundaries Crossed",
+    "fullDisplayName": "Electabuzz 53/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3272,18 +3966,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-053-low.png",
-    "imageHighSrc": "cards/bw7-053-high.png"
+    "imageHighSrc": "cards/bw7-053-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Magnetic Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2923",
-    "externalId": null,
+    "externalId": "bw7-52",
     "tcgdex_id": "bw7-52",
     "localId": "052",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "052/149",
+    "cardNumber": "52/149",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 052/149 Boundaries Crossed",
+    "fullDisplayName": "Electrode 52/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3305,18 +4009,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-052-low.png",
-    "imageHighSrc": "cards/bw7-052-high.png"
+    "imageHighSrc": "cards/bw7-052-high.png",
+    "attacks": [
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2922",
-    "externalId": null,
+    "externalId": "bw7-51",
     "tcgdex_id": "bw7-51",
     "localId": "051",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "051/149",
+    "cardNumber": "51/149",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 051/149 Boundaries Crossed",
+    "fullDisplayName": "Voltorb 51/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3338,18 +4052,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-051-low.png",
-    "imageHighSrc": "cards/bw7-051-high.png"
+    "imageHighSrc": "cards/bw7-051-high.png",
+    "attacks": [
+      {
+        "name": "Static Shock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2921",
-    "externalId": null,
+    "externalId": "bw7-50",
     "tcgdex_id": "bw7-50",
     "localId": "050",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "050/149",
+    "cardNumber": "50/149",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 050/149 Boundaries Crossed",
+    "fullDisplayName": "Pikachu 50/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3371,18 +4091,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-050-low.png",
-    "imageHighSrc": "cards/bw7-050-high.png"
+    "imageHighSrc": "cards/bw7-050-high.png",
+    "attacks": [
+      {
+        "name": "Pika Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Double Voltage",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "2920",
-    "externalId": null,
+    "externalId": "bw7-49",
     "tcgdex_id": "bw7-49",
     "localId": "049",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "049/149",
+    "cardNumber": "49/149",
     "cardName": "Keldeo-EX",
-    "fullDisplayName": "Keldeo-EX 049/149 Boundaries Crossed",
+    "fullDisplayName": "Keldeo-EX 49/149 Boundaries Crossed",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3405,18 +4135,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-049-low.png",
-    "imageHighSrc": "cards/bw7-049-high.png"
+    "imageHighSrc": "cards/bw7-049-high.png",
+    "attacks": [
+      {
+        "name": "Secret Sword",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2919",
-    "externalId": null,
+    "externalId": "bw7-48",
     "tcgdex_id": "bw7-48",
     "localId": "048",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "048/149",
+    "cardNumber": "48/149",
     "cardName": "Keldeo",
-    "fullDisplayName": "Keldeo 048/149 Boundaries Crossed",
+    "fullDisplayName": "Keldeo 48/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3438,18 +4175,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-048-low.png",
-    "imageHighSrc": "cards/bw7-048-high.png"
+    "imageHighSrc": "cards/bw7-048-high.png",
+    "attacks": [
+      {
+        "name": "Rising Lunge",
+        "damage": "20+"
+      },
+      {
+        "name": "Hydro Kick",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2918",
-    "externalId": null,
+    "externalId": "bw7-47",
     "tcgdex_id": "bw7-47",
     "localId": "047",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "047/149",
+    "cardNumber": "47/149",
     "cardName": "Keldeo",
-    "fullDisplayName": "Keldeo 047/149 Boundaries Crossed",
+    "fullDisplayName": "Keldeo 47/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3471,18 +4218,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-047-low.png",
-    "imageHighSrc": "cards/bw7-047-high.png"
+    "imageHighSrc": "cards/bw7-047-high.png",
+    "attacks": [
+      {
+        "name": "Slicing Blade",
+        "damage": "30"
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2917",
-    "externalId": null,
+    "externalId": "bw7-46",
     "tcgdex_id": "bw7-46",
     "localId": "046",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "046/149",
+    "cardNumber": "46/149",
     "cardName": "Cryogonal",
-    "fullDisplayName": "Cryogonal 046/149 Boundaries Crossed",
+    "fullDisplayName": "Cryogonal 46/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3504,18 +4261,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-046-low.png",
-    "imageHighSrc": "cards/bw7-046-high.png"
+    "imageHighSrc": "cards/bw7-046-high.png",
+    "attacks": [
+      {
+        "name": "Ice Edge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2916",
-    "externalId": null,
+    "externalId": "bw7-45",
     "tcgdex_id": "bw7-45",
     "localId": "045",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "045/149",
+    "cardNumber": "45/149",
     "cardName": "Jellicent",
-    "fullDisplayName": "Jellicent 045/149 Boundaries Crossed",
+    "fullDisplayName": "Jellicent 45/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3537,18 +4300,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-045-low.png",
-    "imageHighSrc": "cards/bw7-045-high.png"
+    "imageHighSrc": "cards/bw7-045-high.png",
+    "attacks": [
+      {
+        "name": "Eerie Light",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2915",
-    "externalId": null,
+    "externalId": "bw7-44",
     "tcgdex_id": "bw7-44",
     "localId": "044",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "044/149",
+    "cardNumber": "44/149",
     "cardName": "Frillish",
-    "fullDisplayName": "Frillish 044/149 Boundaries Crossed",
+    "fullDisplayName": "Frillish 44/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3570,18 +4339,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-044-low.png",
-    "imageHighSrc": "cards/bw7-044-high.png"
+    "imageHighSrc": "cards/bw7-044-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2914",
-    "externalId": null,
+    "externalId": "bw7-43",
     "tcgdex_id": "bw7-43",
     "localId": "043",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "043/149",
+    "cardNumber": "43/149",
     "cardName": "Swanna",
-    "fullDisplayName": "Swanna 043/149 Boundaries Crossed",
+    "fullDisplayName": "Swanna 43/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3603,18 +4378,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-043-low.png",
-    "imageHighSrc": "cards/bw7-043-high.png"
+    "imageHighSrc": "cards/bw7-043-high.png",
+    "attacks": [
+      {
+        "name": "Aerial Ace",
+        "damage": "20+"
+      },
+      {
+        "name": "Defog",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2913",
-    "externalId": null,
+    "externalId": "bw7-42",
     "tcgdex_id": "bw7-42",
     "localId": "042",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "042/149",
+    "cardNumber": "42/149",
     "cardName": "Ducklett",
-    "fullDisplayName": "Ducklett 042/149 Boundaries Crossed",
+    "fullDisplayName": "Ducklett 42/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3636,18 +4421,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-042-low.png",
-    "imageHighSrc": "cards/bw7-042-high.png"
+    "imageHighSrc": "cards/bw7-042-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2912",
-    "externalId": null,
+    "externalId": "bw7-41",
     "tcgdex_id": "bw7-41",
     "localId": "041",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "041/149",
+    "cardNumber": "41/149",
     "cardName": "Samurott",
-    "fullDisplayName": "Samurott 041/149 Boundaries Crossed",
+    "fullDisplayName": "Samurott 41/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3669,18 +4460,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-041-low.png",
-    "imageHighSrc": "cards/bw7-041-high.png"
+    "imageHighSrc": "cards/bw7-041-high.png",
+    "attacks": [
+      {
+        "name": "Waterfall",
+        "damage": "50"
+      },
+      {
+        "name": "Destructive Whirlpool",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2911",
-    "externalId": null,
+    "externalId": "bw7-40",
     "tcgdex_id": "bw7-40",
     "localId": "040",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "040/149",
+    "cardNumber": "40/149",
     "cardName": "Dewott",
-    "fullDisplayName": "Dewott 040/149 Boundaries Crossed",
+    "fullDisplayName": "Dewott 40/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3702,18 +4503,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-040-low.png",
-    "imageHighSrc": "cards/bw7-040-high.png"
+    "imageHighSrc": "cards/bw7-040-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "20"
+      },
+      {
+        "name": "Waterfall",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2910",
-    "externalId": null,
+    "externalId": "bw7-39",
     "tcgdex_id": "bw7-39",
     "localId": "039",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "039/149",
+    "cardNumber": "39/149",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott 039/149 Boundaries Crossed",
+    "fullDisplayName": "Oshawott 39/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3735,18 +4546,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-039-low.png",
-    "imageHighSrc": "cards/bw7-039-high.png"
+    "imageHighSrc": "cards/bw7-039-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Seashell Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2909",
-    "externalId": null,
+    "externalId": "bw7-38",
     "tcgdex_id": "bw7-38",
     "localId": "038",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "038/149",
+    "cardNumber": "38/149",
     "cardName": "Delibird",
-    "fullDisplayName": "Delibird 038/149 Boundaries Crossed",
+    "fullDisplayName": "Delibird 38/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3768,18 +4589,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-038-low.png",
-    "imageHighSrc": "cards/bw7-038-high.png"
+    "imageHighSrc": "cards/bw7-038-high.png",
+    "attacks": [
+      {
+        "name": "Present",
+        "damage": null
+      },
+      {
+        "name": "Icy Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2908",
-    "externalId": null,
+    "externalId": "bw7-37",
     "tcgdex_id": "bw7-37",
     "localId": "037",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "037/149",
+    "cardNumber": "37/149",
     "cardName": "Azumarill",
-    "fullDisplayName": "Azumarill 037/149 Boundaries Crossed",
+    "fullDisplayName": "Azumarill 37/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3801,18 +4632,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-037-low.png",
-    "imageHighSrc": "cards/bw7-037-high.png"
+    "imageHighSrc": "cards/bw7-037-high.png",
+    "attacks": [
+      {
+        "name": "Deep Dive",
+        "damage": null
+      },
+      {
+        "name": "Aqua Sonic",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2907",
-    "externalId": null,
+    "externalId": "bw7-36",
     "tcgdex_id": "bw7-36",
     "localId": "036",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "036/149",
+    "cardNumber": "36/149",
     "cardName": "Marill",
-    "fullDisplayName": "Marill 036/149 Boundaries Crossed",
+    "fullDisplayName": "Marill 36/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3834,18 +4675,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-036-low.png",
-    "imageHighSrc": "cards/bw7-036-high.png"
+    "imageHighSrc": "cards/bw7-036-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "20"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2906",
-    "externalId": null,
+    "externalId": "bw7-35",
     "tcgdex_id": "bw7-35",
     "localId": "035",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "035/149",
+    "cardNumber": "35/149",
     "cardName": "Golduck",
-    "fullDisplayName": "Golduck 035/149 Boundaries Crossed",
+    "fullDisplayName": "Golduck 35/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3867,18 +4718,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-035-low.png",
-    "imageHighSrc": "cards/bw7-035-high.png"
+    "imageHighSrc": "cards/bw7-035-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": "20"
+      },
+      {
+        "name": "Aquafall",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2905",
-    "externalId": null,
+    "externalId": "bw7-34",
     "tcgdex_id": "bw7-34",
     "localId": "034",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "034/149",
+    "cardNumber": "34/149",
     "cardName": "Golduck",
-    "fullDisplayName": "Golduck 034/149 Boundaries Crossed",
+    "fullDisplayName": "Golduck 34/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3900,18 +4761,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-034-low.png",
-    "imageHighSrc": "cards/bw7-034-high.png"
+    "imageHighSrc": "cards/bw7-034-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      },
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2904",
-    "externalId": null,
+    "externalId": "bw7-33",
     "tcgdex_id": "bw7-33",
     "localId": "033",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "033/149",
+    "cardNumber": "33/149",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 033/149 Boundaries Crossed",
+    "fullDisplayName": "Psyduck 33/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3933,18 +4804,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-033-low.png",
-    "imageHighSrc": "cards/bw7-033-high.png"
+    "imageHighSrc": "cards/bw7-033-high.png",
+    "attacks": [
+      {
+        "name": "Firefighting",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2903",
-    "externalId": null,
+    "externalId": "bw7-32",
     "tcgdex_id": "bw7-32",
     "localId": "032",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "032/149",
+    "cardNumber": "32/149",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 032/149 Boundaries Crossed",
+    "fullDisplayName": "Psyduck 32/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3966,18 +4843,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-032-low.png",
-    "imageHighSrc": "cards/bw7-032-high.png"
+    "imageHighSrc": "cards/bw7-032-high.png",
+    "attacks": [
+      {
+        "name": "Dazzle Dance",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2902",
-    "externalId": null,
+    "externalId": "bw7-31",
     "tcgdex_id": "bw7-31",
     "localId": "031",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "031/149",
+    "cardNumber": "31/149",
     "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 031/149 Boundaries Crossed",
+    "fullDisplayName": "Blastoise 31/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3999,18 +4882,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-031-low.png",
-    "imageHighSrc": "cards/bw7-031-high.png"
+    "imageHighSrc": "cards/bw7-031-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2901",
-    "externalId": null,
+    "externalId": "bw7-30",
     "tcgdex_id": "bw7-30",
     "localId": "030",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "030/149",
+    "cardNumber": "30/149",
     "cardName": "Wartortle",
-    "fullDisplayName": "Wartortle 030/149 Boundaries Crossed",
+    "fullDisplayName": "Wartortle 30/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4032,18 +4921,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-030-low.png",
-    "imageHighSrc": "cards/bw7-030-high.png"
+    "imageHighSrc": "cards/bw7-030-high.png",
+    "attacks": [
+      {
+        "name": "Withdraw",
+        "damage": null
+      },
+      {
+        "name": "Waterfall",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2900",
-    "externalId": null,
+    "externalId": "bw7-29",
     "tcgdex_id": "bw7-29",
     "localId": "029",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "029/149",
+    "cardNumber": "29/149",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 029/149 Boundaries Crossed",
+    "fullDisplayName": "Squirtle 29/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4065,18 +4964,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-029-low.png",
-    "imageHighSrc": "cards/bw7-029-high.png"
+    "imageHighSrc": "cards/bw7-029-high.png",
+    "attacks": [
+      {
+        "name": "Water Splash",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2899",
-    "externalId": null,
+    "externalId": "bw7-28",
     "tcgdex_id": "bw7-28",
     "localId": "028",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "028/149",
+    "cardNumber": "28/149",
     "cardName": "Darmanitan",
-    "fullDisplayName": "Darmanitan 028/149 Boundaries Crossed",
+    "fullDisplayName": "Darmanitan 28/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4098,18 +5003,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-028-low.png",
-    "imageHighSrc": "cards/bw7-028-high.png"
+    "imageHighSrc": "cards/bw7-028-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Tumble",
+        "damage": "20×"
+      },
+      {
+        "name": "Damage Counterpunch",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2898",
-    "externalId": null,
+    "externalId": "bw7-27",
     "tcgdex_id": "bw7-27",
     "localId": "027",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "027/149",
+    "cardNumber": "27/149",
     "cardName": "Darumaka",
-    "fullDisplayName": "Darumaka 027/149 Boundaries Crossed",
+    "fullDisplayName": "Darumaka 27/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4131,18 +5046,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-027-low.png",
-    "imageHighSrc": "cards/bw7-027-high.png"
+    "imageHighSrc": "cards/bw7-027-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2897",
-    "externalId": null,
+    "externalId": "bw7-26",
     "tcgdex_id": "bw7-26",
     "localId": "026",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "026/149",
+    "cardNumber": "26/149",
     "cardName": "Emboar",
-    "fullDisplayName": "Emboar 026/149 Boundaries Crossed",
+    "fullDisplayName": "Emboar 26/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4164,18 +5085,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-026-low.png",
-    "imageHighSrc": "cards/bw7-026-high.png"
+    "imageHighSrc": "cards/bw7-026-high.png",
+    "attacks": [
+      {
+        "name": "Firebreathing",
+        "damage": "40+"
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2896",
-    "externalId": null,
+    "externalId": "bw7-25",
     "tcgdex_id": "bw7-25",
     "localId": "025",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "025/149",
+    "cardNumber": "25/149",
     "cardName": "Pignite",
-    "fullDisplayName": "Pignite 025/149 Boundaries Crossed",
+    "fullDisplayName": "Pignite 25/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4197,18 +5128,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-025-low.png",
-    "imageHighSrc": "cards/bw7-025-high.png"
+    "imageHighSrc": "cards/bw7-025-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "20"
+      },
+      {
+        "name": "Firebreathing",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2895",
-    "externalId": null,
+    "externalId": "bw7-24",
     "tcgdex_id": "bw7-24",
     "localId": "024",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "024/149",
+    "cardNumber": "24/149",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig 024/149 Boundaries Crossed",
+    "fullDisplayName": "Tepig 24/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4230,18 +5171,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-024-low.png",
-    "imageHighSrc": "cards/bw7-024-high.png"
+    "imageHighSrc": "cards/bw7-024-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2894",
-    "externalId": null,
+    "externalId": "bw7-23",
     "tcgdex_id": "bw7-23",
     "localId": "023",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "023/149",
+    "cardNumber": "23/149",
     "cardName": "Victini",
-    "fullDisplayName": "Victini 023/149 Boundaries Crossed",
+    "fullDisplayName": "Victini 23/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4263,18 +5214,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-023-low.png",
-    "imageHighSrc": "cards/bw7-023-high.png"
+    "imageHighSrc": "cards/bw7-023-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Relentless Flames",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "2893",
-    "externalId": null,
+    "externalId": "bw7-22",
     "tcgdex_id": "bw7-22",
     "localId": "022",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "022/149",
+    "cardNumber": "22/149",
     "cardName": "Camerupt",
-    "fullDisplayName": "Camerupt 022/149 Boundaries Crossed",
+    "fullDisplayName": "Camerupt 22/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4296,18 +5257,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-022-low.png",
-    "imageHighSrc": "cards/bw7-022-high.png"
+    "imageHighSrc": "cards/bw7-022-high.png",
+    "attacks": [
+      {
+        "name": "Fire Shard",
+        "damage": "60"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2892",
-    "externalId": null,
+    "externalId": "bw7-21",
     "tcgdex_id": "bw7-21",
     "localId": "021",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "021/149",
+    "cardNumber": "21/149",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 021/149 Boundaries Crossed",
+    "fullDisplayName": "Numel 21/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4329,18 +5300,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-021-low.png",
-    "imageHighSrc": "cards/bw7-021-high.png"
+    "imageHighSrc": "cards/bw7-021-high.png",
+    "attacks": [
+      {
+        "name": "Flamethrower",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2891",
-    "externalId": null,
+    "externalId": "bw7-20",
     "tcgdex_id": "bw7-20",
     "localId": "020",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "020/149",
+    "cardNumber": "20/149",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 020/149 Boundaries Crossed",
+    "fullDisplayName": "Charizard 20/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4362,18 +5339,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-020-low.png",
-    "imageHighSrc": "cards/bw7-020-high.png"
+    "imageHighSrc": "cards/bw7-020-high.png",
+    "attacks": [
+      {
+        "name": "Split Bomb",
+        "damage": null
+      },
+      {
+        "name": "Scorching Fire",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "2890",
-    "externalId": null,
+    "externalId": "bw7-19",
     "tcgdex_id": "bw7-19",
     "localId": "019",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "019/149",
+    "cardNumber": "19/149",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 019/149 Boundaries Crossed",
+    "fullDisplayName": "Charmeleon 19/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4395,18 +5382,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-019-low.png",
-    "imageHighSrc": "cards/bw7-019-high.png"
+    "imageHighSrc": "cards/bw7-019-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      },
+      {
+        "name": "Raging Claws",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2889",
-    "externalId": null,
+    "externalId": "bw7-18",
     "tcgdex_id": "bw7-18",
     "localId": "018",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "018/149",
+    "cardNumber": "18/149",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 018/149 Boundaries Crossed",
+    "fullDisplayName": "Charmander 18/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4428,18 +5425,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-018-low.png",
-    "imageHighSrc": "cards/bw7-018-high.png"
+    "imageHighSrc": "cards/bw7-018-high.png",
+    "attacks": [
+      {
+        "name": "Draw In",
+        "damage": null
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2888",
-    "externalId": null,
+    "externalId": "bw7-17",
     "tcgdex_id": "bw7-17",
     "localId": "017",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "017/149",
+    "cardNumber": "17/149",
     "cardName": "Lilligant",
-    "fullDisplayName": "Lilligant 017/149 Boundaries Crossed",
+    "fullDisplayName": "Lilligant 17/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4461,18 +5468,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-017-low.png",
-    "imageHighSrc": "cards/bw7-017-high.png"
+    "imageHighSrc": "cards/bw7-017-high.png",
+    "attacks": [
+      {
+        "name": "Return",
+        "damage": "20"
+      },
+      {
+        "name": "Magical Leaf",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2887",
-    "externalId": null,
+    "externalId": "bw7-16",
     "tcgdex_id": "bw7-16",
     "localId": "016",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "016/149",
+    "cardNumber": "16/149",
     "cardName": "Petilil",
-    "fullDisplayName": "Petilil 016/149 Boundaries Crossed",
+    "fullDisplayName": "Petilil 16/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4494,18 +5511,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-016-low.png",
-    "imageHighSrc": "cards/bw7-016-high.png"
+    "imageHighSrc": "cards/bw7-016-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2886",
-    "externalId": null,
+    "externalId": "bw7-15",
     "tcgdex_id": "bw7-15",
     "localId": "015",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "015/149",
+    "cardNumber": "15/149",
     "cardName": "Whimsicott",
-    "fullDisplayName": "Whimsicott 015/149 Boundaries Crossed",
+    "fullDisplayName": "Whimsicott 15/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4527,18 +5550,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-015-low.png",
-    "imageHighSrc": "cards/bw7-015-high.png"
+    "imageHighSrc": "cards/bw7-015-high.png",
+    "attacks": [
+      {
+        "name": "Fluffy Tag",
+        "damage": null
+      },
+      {
+        "name": "Stun Spore",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2885",
-    "externalId": null,
+    "externalId": "bw7-14",
     "tcgdex_id": "bw7-14",
     "localId": "014",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "014/149",
+    "cardNumber": "14/149",
     "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 014/149 Boundaries Crossed",
+    "fullDisplayName": "Cottonee 14/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4560,18 +5593,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-014-low.png",
-    "imageHighSrc": "cards/bw7-014-high.png"
+    "imageHighSrc": "cards/bw7-014-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2884",
-    "externalId": null,
+    "externalId": "bw7-13",
     "tcgdex_id": "bw7-13",
     "localId": "013",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "013/149",
+    "cardNumber": "13/149",
     "cardName": "Serperior",
-    "fullDisplayName": "Serperior 013/149 Boundaries Crossed",
+    "fullDisplayName": "Serperior 13/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4593,18 +5632,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-013-low.png",
-    "imageHighSrc": "cards/bw7-013-high.png"
+    "imageHighSrc": "cards/bw7-013-high.png",
+    "attacks": [
+      {
+        "name": "Double Slash",
+        "damage": "50×"
+      },
+      {
+        "name": "Mega Drain",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2883",
-    "externalId": null,
+    "externalId": "bw7-12",
     "tcgdex_id": "bw7-12",
     "localId": "012",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "012/149",
+    "cardNumber": "12/149",
     "cardName": "Servine",
-    "fullDisplayName": "Servine 012/149 Boundaries Crossed",
+    "fullDisplayName": "Servine 12/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4626,18 +5675,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-012-low.png",
-    "imageHighSrc": "cards/bw7-012-high.png"
+    "imageHighSrc": "cards/bw7-012-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "20"
+      },
+      {
+        "name": "Double Slash",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "2882",
-    "externalId": null,
+    "externalId": "bw7-11",
     "tcgdex_id": "bw7-11",
     "localId": "011",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "011/149",
+    "cardNumber": "11/149",
     "cardName": "Snivy",
-    "fullDisplayName": "Snivy 011/149 Boundaries Crossed",
+    "fullDisplayName": "Snivy 11/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4659,18 +5718,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-011-low.png",
-    "imageHighSrc": "cards/bw7-011-high.png"
+    "imageHighSrc": "cards/bw7-011-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "10"
+      },
+      {
+        "name": "Cut",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2881",
-    "externalId": null,
+    "externalId": "bw7-10",
     "tcgdex_id": "bw7-10",
     "localId": "010",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "010/149",
+    "cardNumber": "10/149",
     "cardName": "Shaymin",
-    "fullDisplayName": "Shaymin 010/149 Boundaries Crossed",
+    "fullDisplayName": "Shaymin 10/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4692,18 +5761,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-010-low.png",
-    "imageHighSrc": "cards/bw7-010-high.png"
+    "imageHighSrc": "cards/bw7-010-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Leaf Drain",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2880",
-    "externalId": null,
+    "externalId": "bw7-9",
     "tcgdex_id": "bw7-9",
     "localId": "009",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "009/149",
+    "cardNumber": "9/149",
     "cardName": "Celebi-EX",
-    "fullDisplayName": "Celebi-EX 009/149 Boundaries Crossed",
+    "fullDisplayName": "Celebi-EX 9/149 Boundaries Crossed",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4726,18 +5805,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw7-009-low.png",
-    "imageHighSrc": "cards/bw7-009-high.png"
+    "imageHighSrc": "cards/bw7-009-high.png",
+    "attacks": [
+      {
+        "name": "Wind Whisk",
+        "damage": "60"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2879",
-    "externalId": null,
+    "externalId": "bw7-8",
     "tcgdex_id": "bw7-8",
     "localId": "008",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "008/149",
+    "cardNumber": "8/149",
     "cardName": "Heracross",
-    "fullDisplayName": "Heracross 008/149 Boundaries Crossed",
+    "fullDisplayName": "Heracross 8/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4759,18 +5845,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-008-low.png",
-    "imageHighSrc": "cards/bw7-008-high.png"
+    "imageHighSrc": "cards/bw7-008-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Giga Horn",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2878",
-    "externalId": null,
+    "externalId": "bw7-7",
     "tcgdex_id": "bw7-7",
     "localId": "007",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "007/149",
+    "cardNumber": "7/149",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 007/149 Boundaries Crossed",
+    "fullDisplayName": "Scyther 7/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4792,18 +5888,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-007-low.png",
-    "imageHighSrc": "cards/bw7-007-high.png"
+    "imageHighSrc": "cards/bw7-007-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "10"
+      },
+      {
+        "name": "Sharp Scythe",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2877",
-    "externalId": null,
+    "externalId": "bw7-6",
     "tcgdex_id": "bw7-6",
     "localId": "006",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "006/149",
+    "cardNumber": "6/149",
     "cardName": "Tangrowth",
-    "fullDisplayName": "Tangrowth 006/149 Boundaries Crossed",
+    "fullDisplayName": "Tangrowth 6/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4825,18 +5931,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-006-low.png",
-    "imageHighSrc": "cards/bw7-006-high.png"
+    "imageHighSrc": "cards/bw7-006-high.png",
+    "attacks": [
+      {
+        "name": "Hundred Furious Lashes",
+        "damage": "30×"
+      },
+      {
+        "name": "Mega Drain",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2876",
-    "externalId": null,
+    "externalId": "bw7-5",
     "tcgdex_id": "bw7-5",
     "localId": "005",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "005/149",
+    "cardNumber": "5/149",
     "cardName": "Tangela",
-    "fullDisplayName": "Tangela 005/149 Boundaries Crossed",
+    "fullDisplayName": "Tangela 5/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4858,18 +5974,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-005-low.png",
-    "imageHighSrc": "cards/bw7-005-high.png"
+    "imageHighSrc": "cards/bw7-005-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2875",
-    "externalId": null,
+    "externalId": "bw7-4",
     "tcgdex_id": "bw7-4",
     "localId": "004",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "004/149",
+    "cardNumber": "4/149",
     "cardName": "Bellossom",
-    "fullDisplayName": "Bellossom 004/149 Boundaries Crossed",
+    "fullDisplayName": "Bellossom 4/149 Boundaries Crossed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4891,18 +6017,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-004-low.png",
-    "imageHighSrc": "cards/bw7-004-high.png"
+    "imageHighSrc": "cards/bw7-004-high.png",
+    "attacks": [
+      {
+        "name": "Grass Knot",
+        "damage": "10+"
+      },
+      {
+        "name": "Petal Dance",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "2874",
-    "externalId": null,
+    "externalId": "bw7-3",
     "tcgdex_id": "bw7-3",
     "localId": "003",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "003/149",
+    "cardNumber": "3/149",
     "cardName": "Vileplume",
-    "fullDisplayName": "Vileplume 003/149 Boundaries Crossed",
+    "fullDisplayName": "Vileplume 3/149 Boundaries Crossed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4924,18 +6060,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-003-low.png",
-    "imageHighSrc": "cards/bw7-003-high.png"
+    "imageHighSrc": "cards/bw7-003-high.png",
+    "attacks": [
+      {
+        "name": "Pollen Spray",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2873",
-    "externalId": null,
+    "externalId": "bw7-2",
     "tcgdex_id": "bw7-2",
     "localId": "002",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "002/149",
+    "cardNumber": "2/149",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 002/149 Boundaries Crossed",
+    "fullDisplayName": "Gloom 2/149 Boundaries Crossed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4957,18 +6099,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-002-low.png",
-    "imageHighSrc": "cards/bw7-002-high.png"
+    "imageHighSrc": "cards/bw7-002-high.png",
+    "attacks": [
+      {
+        "name": "Foul Odor",
+        "damage": null
+      },
+      {
+        "name": "Poison Powder",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2872",
-    "externalId": null,
+    "externalId": "bw7-1",
     "tcgdex_id": "bw7-1",
     "localId": "001",
     "setCode": "bw7",
     "setTcgdexId": "bw7",
-    "cardNumber": "001/149",
+    "cardNumber": "1/149",
     "cardName": "Oddish",
-    "fullDisplayName": "Oddish 001/149 Boundaries Crossed",
+    "fullDisplayName": "Oddish 1/149 Boundaries Crossed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4990,6 +6142,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw7-001-low.png",
-    "imageHighSrc": "cards/bw7-001-high.png"
+    "imageHighSrc": "cards/bw7-001-high.png",
+    "attacks": [
+      {
+        "name": "Absorb",
+        "damage": "10"
+      },
+      {
+        "name": "Acid",
+        "damage": "20"
+      }
+    ]
   }
 ]

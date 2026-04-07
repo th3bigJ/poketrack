@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9256",
-    "externalId": null,
+    "externalId": "pop7-17",
     "tcgdex_id": "pop7-17",
     "localId": "017",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "017/17",
+    "cardNumber": "17/17",
     "cardName": "Spinda",
-    "fullDisplayName": "Spinda 017/17 POP Series 7",
+    "fullDisplayName": "Spinda 17/17 POP Series 7",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-017-low.png",
-    "imageHighSrc": "cards/pop7-017-high.png"
+    "imageHighSrc": "cards/pop7-017-high.png",
+    "attacks": [
+      {
+        "name": "Dish Out",
+        "damage": null
+      },
+      {
+        "name": "Synchro Punch",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9247",
-    "externalId": null,
+    "externalId": "pop7-16",
     "tcgdex_id": "pop7-16",
     "localId": "016",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "016/17",
+    "cardNumber": "16/17",
     "cardName": "Sentret",
-    "fullDisplayName": "Sentret 016/17 POP Series 7",
+    "fullDisplayName": "Sentret 16/17 POP Series 7",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-016-low.png",
-    "imageHighSrc": "cards/pop7-016-high.png"
+    "imageHighSrc": "cards/pop7-016-high.png",
+    "attacks": [
+      {
+        "name": "Grope",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9238",
-    "externalId": null,
+    "externalId": "pop7-15",
     "tcgdex_id": "pop7-15",
     "localId": "015",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "015/17",
+    "cardNumber": "15/17",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts 015/17 POP Series 7",
+    "fullDisplayName": "Ralts 15/17 POP Series 7",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-015-low.png",
-    "imageHighSrc": "cards/pop7-015-high.png"
+    "imageHighSrc": "cards/pop7-015-high.png",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "10"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9229",
-    "externalId": null,
+    "externalId": "pop7-14",
     "tcgdex_id": "pop7-14",
     "localId": "014",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "014/17",
+    "cardNumber": "14/17",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 014/17 POP Series 7",
+    "fullDisplayName": "Mareep 14/17 POP Series 7",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +159,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-014-low.png",
-    "imageHighSrc": "cards/pop7-014-high.png"
+    "imageHighSrc": "cards/pop7-014-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9220",
-    "externalId": null,
+    "externalId": "pop7-13",
     "tcgdex_id": "pop7-13",
     "localId": "013",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "013/17",
+    "cardNumber": "13/17",
     "cardName": "Corsola",
-    "fullDisplayName": "Corsola 013/17 POP Series 7",
+    "fullDisplayName": "Corsola 13/17 POP Series 7",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +202,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-013-low.png",
-    "imageHighSrc": "cards/pop7-013-high.png"
+    "imageHighSrc": "cards/pop7-013-high.png",
+    "attacks": [
+      {
+        "name": "Rally",
+        "damage": null
+      },
+      {
+        "name": "Hook",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9214",
-    "externalId": null,
+    "externalId": "pop7-12",
     "tcgdex_id": "pop7-12",
     "localId": "012",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "012/17",
+    "cardNumber": "12/17",
     "cardName": "Burmy Sandy Cloak",
-    "fullDisplayName": "Burmy Sandy Cloak 012/17 POP Series 7",
+    "fullDisplayName": "Burmy Sandy Cloak 12/17 POP Series 7",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +245,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-012-low.png",
-    "imageHighSrc": "cards/pop7-012-high.png"
+    "imageHighSrc": "cards/pop7-012-high.png",
+    "attacks": [
+      {
+        "name": "Sandy Cloak Tackle",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9206",
-    "externalId": null,
+    "externalId": "pop7-11",
     "tcgdex_id": "pop7-11",
     "localId": "011",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "011/17",
+    "cardNumber": "11/17",
     "cardName": "Burmy Plant Cloak",
-    "fullDisplayName": "Burmy Plant Cloak 011/17 POP Series 7",
+    "fullDisplayName": "Burmy Plant Cloak 11/17 POP Series 7",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +284,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-011-low.png",
-    "imageHighSrc": "cards/pop7-011-high.png"
+    "imageHighSrc": "cards/pop7-011-high.png",
+    "attacks": [
+      {
+        "name": "Plant Cloak Tackle",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9197",
-    "externalId": null,
+    "externalId": "pop7-10",
     "tcgdex_id": "pop7-10",
     "localId": "010",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "010/17",
+    "cardNumber": "10/17",
     "cardName": "Wormadam Sandy Cloak",
-    "fullDisplayName": "Wormadam Sandy Cloak 010/17 POP Series 7",
+    "fullDisplayName": "Wormadam Sandy Cloak 10/17 POP Series 7",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -261,18 +323,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-010-low.png",
-    "imageHighSrc": "cards/pop7-010-high.png"
+    "imageHighSrc": "cards/pop7-010-high.png",
+    "attacks": [
+      {
+        "name": "Push Over",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "9189",
-    "externalId": null,
+    "externalId": "pop7-9",
     "tcgdex_id": "pop7-9",
     "localId": "009",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "009/17",
+    "cardNumber": "9/17",
     "cardName": "Stantler",
-    "fullDisplayName": "Stantler 009/17 POP Series 7",
+    "fullDisplayName": "Stantler 9/17 POP Series 7",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +362,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-009-low.png",
-    "imageHighSrc": "cards/pop7-009-high.png"
+    "imageHighSrc": "cards/pop7-009-high.png",
+    "attacks": [
+      {
+        "name": "Lead",
+        "damage": null
+      },
+      {
+        "name": "Frighten Horn",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9180",
-    "externalId": null,
+    "externalId": "pop7-8",
     "tcgdex_id": "pop7-8",
     "localId": "008",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "008/17",
+    "cardNumber": "8/17",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 008/17 POP Series 7",
+    "fullDisplayName": "Kirlia 8/17 POP Series 7",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -327,18 +405,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-008-low.png",
-    "imageHighSrc": "cards/pop7-008-high.png"
+    "imageHighSrc": "cards/pop7-008-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Research",
+        "damage": null
+      },
+      {
+        "name": "Telekinesis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9171",
-    "externalId": null,
+    "externalId": "pop7-7",
     "tcgdex_id": "pop7-7",
     "localId": "007",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "007/17",
+    "cardNumber": "7/17",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 007/17 POP Series 7",
+    "fullDisplayName": "Flaaffy 7/17 POP Series 7",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -360,18 +448,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-007-low.png",
-    "imageHighSrc": "cards/pop7-007-high.png"
+    "imageHighSrc": "cards/pop7-007-high.png",
+    "attacks": [
+      {
+        "name": "Attract Current",
+        "damage": "10"
+      },
+      {
+        "name": "Electromagnetic Kick",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9162",
-    "externalId": null,
+    "externalId": "pop7-6",
     "tcgdex_id": "pop7-6",
     "localId": "006",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "006/17",
+    "cardNumber": "6/17",
     "cardName": "Delibird",
-    "fullDisplayName": "Delibird 006/17 POP Series 7",
+    "fullDisplayName": "Delibird 6/17 POP Series 7",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,18 +491,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-006-low.png",
-    "imageHighSrc": "cards/pop7-006-high.png"
+    "imageHighSrc": "cards/pop7-006-high.png",
+    "attacks": [
+      {
+        "name": "Present",
+        "damage": null
+      },
+      {
+        "name": "Ice Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9152",
-    "externalId": null,
+    "externalId": "pop7-5",
     "tcgdex_id": "pop7-5",
     "localId": "005",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "005/17",
+    "cardNumber": "5/17",
     "cardName": "Mothim",
-    "fullDisplayName": "Mothim 005/17 POP Series 7",
+    "fullDisplayName": "Mothim 5/17 POP Series 7",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -426,18 +534,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-005-low.png",
-    "imageHighSrc": "cards/pop7-005-high.png"
+    "imageHighSrc": "cards/pop7-005-high.png",
+    "attacks": [
+      {
+        "name": "Silver Wind",
+        "damage": null
+      },
+      {
+        "name": "Raging Scales",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "9143",
-    "externalId": null,
+    "externalId": "pop7-4",
     "tcgdex_id": "pop7-4",
     "localId": "004",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "004/17",
+    "cardNumber": "4/17",
     "cardName": "Latios",
-    "fullDisplayName": "Latios 004/17 POP Series 7",
+    "fullDisplayName": "Latios 4/17 POP Series 7",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -459,18 +577,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-004-low.png",
-    "imageHighSrc": "cards/pop7-004-high.png"
+    "imageHighSrc": "cards/pop7-004-high.png",
+    "attacks": [
+      {
+        "name": "Energy Draw",
+        "damage": "10"
+      },
+      {
+        "name": "Luster Purge",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9133",
-    "externalId": null,
+    "externalId": "pop7-3",
     "tcgdex_id": "pop7-3",
     "localId": "003",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "003/17",
+    "cardNumber": "3/17",
     "cardName": "Latias",
-    "fullDisplayName": "Latias 003/17 POP Series 7",
+    "fullDisplayName": "Latias 3/17 POP Series 7",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,18 +620,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-003-low.png",
-    "imageHighSrc": "cards/pop7-003-high.png"
+    "imageHighSrc": "cards/pop7-003-high.png",
+    "attacks": [
+      {
+        "name": "Miraculous Light",
+        "damage": "10"
+      },
+      {
+        "name": "Mist Ball",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9120",
-    "externalId": null,
+    "externalId": "pop7-2",
     "tcgdex_id": "pop7-2",
     "localId": "002",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "002/17",
+    "cardNumber": "2/17",
     "cardName": "Gallade",
-    "fullDisplayName": "Gallade 002/17 POP Series 7",
+    "fullDisplayName": "Gallade 2/17 POP Series 7",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -525,18 +663,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-002-low.png",
-    "imageHighSrc": "cards/pop7-002-high.png"
+    "imageHighSrc": "cards/pop7-002-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Blade",
+        "damage": null
+      },
+      {
+        "name": "Psychic Cut",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "9113",
-    "externalId": null,
+    "externalId": "pop7-1",
     "tcgdex_id": "pop7-1",
     "localId": "001",
     "setCode": "pop7",
     "setTcgdexId": "pop7",
-    "cardNumber": "001/17",
+    "cardNumber": "1/17",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 001/17 POP Series 7",
+    "fullDisplayName": "Ampharos 1/17 POP Series 7",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -558,6 +706,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop7-001-low.png",
-    "imageHighSrc": "cards/pop7-001-high.png"
+    "imageHighSrc": "cards/pop7-001-high.png",
+    "attacks": [
+      {
+        "name": "Cluster Bolt",
+        "damage": "70"
+      }
+    ]
   }
 ]

@@ -275,6 +275,41 @@ final class CardDataService {
         return await linearSubstringSearch(normalizedQuery: q)
     }
 
+    /// Partial token overlap (not strict intersection). Best for long **trainer rules** text when OCR only matches part of the catalog `rules` field.
+    func searchSoftTokenMatch(query: String) async -> [Card] {
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !q.isEmpty else { return [] }
+
+        await searchIndex.prepare(sets: sets) { [weak self] setCode in
+            guard let self else { return [] }
+            return await self.loadCards(forSetCode: setCode)
+        }
+        isSearchIndexReady = searchIndex.isReady
+
+        guard searchIndex.isReady else {
+            return await linearSubstringSearch(normalizedQuery: q)
+        }
+
+        let ranked = searchIndex.softMatchRefs(normalizedQuery: q)
+        guard !ranked.isEmpty else { return [] }
+        return await cardsPreservingSoftMatchOrder(ranked)
+    }
+
+    private func cardsPreservingSoftMatchOrder(_ ranked: [(ref: CardRef, tokenHits: Int)]) async -> [Card] {
+        var bySet: [String: Set<String>] = [:]
+        for row in ranked {
+            bySet[row.ref.setCode, default: []].insert(row.ref.masterCardId)
+        }
+        var cardByKey: [String: Card] = [:]
+        for (setCode, ids) in bySet {
+            let loaded = await loadCards(forSetCode: setCode)
+            for c in loaded where ids.contains(c.masterCardId) {
+                cardByKey["\(c.setCode)|\(c.masterCardId)"] = c
+            }
+        }
+        return ranked.compactMap { cardByKey["\($0.ref.setCode)|\($0.ref.masterCardId)"] }
+    }
+
     private func cards(for refs: Set<CardRef>) async -> [Card] {
         var bySet: [String: Set<String>] = [:]
         for ref in refs {
@@ -294,9 +329,8 @@ final class CardDataService {
             let code = set.setCode
             let cards = await loadCards(forSetCode: code)
             for card in cards {
-                if card.cardName.lowercased().contains(q)
-                    || card.cardNumber.lowercased().contains(q)
-                    || card.fullDisplayName?.lowercased().contains(q) == true {
+                let blob = card.searchIndexBlob.lowercased()
+                if blob.contains(q) {
                     results.append(card)
                 }
             }

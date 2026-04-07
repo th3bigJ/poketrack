@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "1714",
-    "externalId": null,
+    "externalId": "base4-130",
     "tcgdex_id": "base4-130",
     "localId": "130",
     "setCode": "base4",
@@ -30,7 +30,7 @@
   },
   {
     "masterCardId": "1713",
-    "externalId": null,
+    "externalId": "base4-129",
     "tcgdex_id": "base4-129",
     "localId": "129",
     "setCode": "base4",
@@ -59,7 +59,7 @@
   },
   {
     "masterCardId": "1712",
-    "externalId": null,
+    "externalId": "base4-128",
     "tcgdex_id": "base4-128",
     "localId": "128",
     "setCode": "base4",
@@ -88,7 +88,7 @@
   },
   {
     "masterCardId": "1711",
-    "externalId": null,
+    "externalId": "base4-127",
     "tcgdex_id": "base4-127",
     "localId": "127",
     "setCode": "base4",
@@ -117,7 +117,7 @@
   },
   {
     "masterCardId": "1710",
-    "externalId": null,
+    "externalId": "base4-126",
     "tcgdex_id": "base4-126",
     "localId": "126",
     "setCode": "base4",
@@ -146,7 +146,7 @@
   },
   {
     "masterCardId": "1709",
-    "externalId": null,
+    "externalId": "base4-125",
     "tcgdex_id": "base4-125",
     "localId": "125",
     "setCode": "base4",
@@ -175,7 +175,7 @@
   },
   {
     "masterCardId": "1708",
-    "externalId": null,
+    "externalId": "base4-124",
     "tcgdex_id": "base4-124",
     "localId": "124",
     "setCode": "base4",
@@ -200,11 +200,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-124-low.png",
-    "imageHighSrc": "cards/base4-124-high.png"
+    "imageHighSrc": "cards/base4-124-high.png",
+    "rules": "Provides Colorless Colorless energy. Doesn't count as a basic Energy card."
   },
   {
     "masterCardId": "1707",
-    "externalId": null,
+    "externalId": "base4-123",
     "tcgdex_id": "base4-123",
     "localId": "123",
     "setCode": "base4",
@@ -227,11 +228,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-123-low.png",
-    "imageHighSrc": "cards/base4-123-high.png"
+    "imageHighSrc": "cards/base4-123-high.png",
+    "rules": "Switch 1 of your Benched Pokémon with your Active Pokémon."
   },
   {
     "masterCardId": "1706",
-    "externalId": null,
+    "externalId": "base4-122",
     "tcgdex_id": "base4-122",
     "localId": "122",
     "setCode": "base4",
@@ -254,11 +256,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-122-low.png",
-    "imageHighSrc": "cards/base4-122-high.png"
+    "imageHighSrc": "cards/base4-122-high.png",
+    "rules": "Remove up to 2 damage counters from 1 of your Pokémon."
   },
   {
     "masterCardId": "1705",
-    "externalId": null,
+    "externalId": "base4-121",
     "tcgdex_id": "base4-121",
     "localId": "121",
     "setCode": "base4",
@@ -281,11 +284,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-121-low.png",
-    "imageHighSrc": "cards/base4-121-high.png"
+    "imageHighSrc": "cards/base4-121-high.png",
+    "rules": "Flip a coin. If heads, you may search your deck for any Basic Pokémon or Evolution card. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "1704",
-    "externalId": null,
+    "externalId": "base4-120",
     "tcgdex_id": "base4-120",
     "localId": "120",
     "setCode": "base4",
@@ -308,11 +312,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-120-low.png",
-    "imageHighSrc": "cards/base4-120-high.png"
+    "imageHighSrc": "cards/base4-120-high.png",
+    "rules": "Choose 1 of your opponent's Benched Pokémon and switch it with his or her Active Pokémon."
   },
   {
     "masterCardId": "1703",
-    "externalId": null,
+    "externalId": "base4-119",
     "tcgdex_id": "base4-119",
     "localId": "119",
     "setCode": "base4",
@@ -335,11 +340,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-119-low.png",
-    "imageHighSrc": "cards/base4-119-high.png"
+    "imageHighSrc": "cards/base4-119-high.png",
+    "rules": "Choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it."
   },
   {
     "masterCardId": "1702",
-    "externalId": null,
+    "externalId": "base4-118",
     "tcgdex_id": "base4-118",
     "localId": "118",
     "setCode": "base4",
@@ -362,11 +368,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-118-low.png",
-    "imageHighSrc": "cards/base4-118-high.png"
+    "imageHighSrc": "cards/base4-118-high.png",
+    "rules": "Draw 2 cards."
   },
   {
     "masterCardId": "1701",
-    "externalId": null,
+    "externalId": "base4-117",
     "tcgdex_id": "base4-117",
     "localId": "117",
     "setCode": "base4",
@@ -389,11 +396,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-117-low.png",
-    "imageHighSrc": "cards/base4-117-high.png"
+    "imageHighSrc": "cards/base4-117-high.png",
+    "rules": "Discard 1 Energy card attached to 1 of your own Pokémon in order to remove up to 4 damage counters from that Pokémon."
   },
   {
     "masterCardId": "1700",
-    "externalId": null,
+    "externalId": "base4-116",
     "tcgdex_id": "base4-116",
     "localId": "116",
     "setCode": "base4",
@@ -416,11 +424,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-116-low.png",
-    "imageHighSrc": "cards/base4-116-high.png"
+    "imageHighSrc": "cards/base4-116-high.png",
+    "rules": "Discard your hand, then draw 7 cards."
   },
   {
     "masterCardId": "1699",
-    "externalId": null,
+    "externalId": "base4-115",
     "tcgdex_id": "base4-115",
     "localId": "115",
     "setCode": "base4",
@@ -443,11 +452,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-115-low.png",
-    "imageHighSrc": "cards/base4-115-high.png"
+    "imageHighSrc": "cards/base4-115-high.png",
+    "rules": "Look at up to 5 cards from the top of your deck and rearrange them as you like."
   },
   {
     "masterCardId": "1698",
-    "externalId": null,
+    "externalId": "base4-114",
     "tcgdex_id": "base4-114",
     "localId": "114",
     "setCode": "base4",
@@ -470,11 +480,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-114-low.png",
-    "imageHighSrc": "cards/base4-114-high.png"
+    "imageHighSrc": "cards/base4-114-high.png",
+    "rules": "Remove all damage counters from all of your own Pokémon with damage counters on them, then discard all Energy cards attached to those Pokémon."
   },
   {
     "masterCardId": "1697",
-    "externalId": null,
+    "externalId": "base4-113",
     "tcgdex_id": "base4-113",
     "localId": "113",
     "setCode": "base4",
@@ -497,11 +508,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-113-low.png",
-    "imageHighSrc": "cards/base4-113-high.png"
+    "imageHighSrc": "cards/base4-113-high.png",
+    "rules": "Attach PlusPower to your Active Pokémon. At the end of your turn, discard PlusPower. If this Pokémon's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), the attack does 10 more damage to the Defending Pokémon."
   },
   {
     "masterCardId": "1696",
-    "externalId": null,
+    "externalId": "base4-112",
     "tcgdex_id": "base4-112",
     "localId": "112",
     "setCode": "base4",
@@ -524,11 +536,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-112-low.png",
-    "imageHighSrc": "cards/base4-112-high.png"
+    "imageHighSrc": "cards/base4-112-high.png",
+    "rules": "Shuffle 2 of the other cards from your hand into your deck in order to draw a card."
   },
   {
     "masterCardId": "1695",
-    "externalId": null,
+    "externalId": "base4-111",
     "tcgdex_id": "base4-111",
     "localId": "111",
     "setCode": "base4",
@@ -551,11 +564,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-111-low.png",
-    "imageHighSrc": "cards/base4-111-high.png"
+    "imageHighSrc": "cards/base4-111-high.png",
+    "rules": "Your Active Pokémon is no longer Asleep, Confused, Paralyzed, or Poisoned."
   },
   {
     "masterCardId": "1694",
-    "externalId": null,
+    "externalId": "base4-110",
     "tcgdex_id": "base4-110",
     "localId": "110",
     "setCode": "base4",
@@ -578,11 +592,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-110-low.png",
-    "imageHighSrc": "cards/base4-110-high.png"
+    "imageHighSrc": "cards/base4-110-high.png",
+    "rules": "Trade 1 of the other cards in your hand for up to 2 basic Energy cards from your discard pile."
   },
   {
     "masterCardId": "1693",
-    "externalId": null,
+    "externalId": "base4-109",
     "tcgdex_id": "base4-109",
     "localId": "109",
     "setCode": "base4",
@@ -605,11 +620,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-109-low.png",
-    "imageHighSrc": "cards/base4-109-high.png"
+    "imageHighSrc": "cards/base4-109-high.png",
+    "rules": "Attach Defender to 1 of your Pokémon. At the end of your opponent's next turn, discard Defender. Damage done to that Pokémon by attacks is reduced by 20 (after applying Weakness and Resistance)."
   },
   {
     "masterCardId": "1692",
-    "externalId": null,
+    "externalId": "base4-108",
     "tcgdex_id": "base4-108",
     "localId": "108",
     "setCode": "base4",
@@ -632,11 +648,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-108-low.png",
-    "imageHighSrc": "cards/base4-108-high.png"
+    "imageHighSrc": "cards/base4-108-high.png",
+    "rules": "Discard 1 Energy card attached to 1 of your own Pokémon in order to choose 1 of your opponent's Pokémon and up to 2 Energy cards attached to it. Discard those Energy cards."
   },
   {
     "masterCardId": "1691",
-    "externalId": null,
+    "externalId": "base4-107",
     "tcgdex_id": "base4-107",
     "localId": "107",
     "setCode": "base4",
@@ -659,11 +676,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-107-low.png",
-    "imageHighSrc": "cards/base4-107-high.png"
+    "imageHighSrc": "cards/base4-107-high.png",
+    "rules": "Choose 1 of your Pokémon in play and return its Basic Pokémon card to your hand. (Discard all cards attached to that card.)"
   },
   {
     "masterCardId": "1690",
-    "externalId": null,
+    "externalId": "base4-106",
     "tcgdex_id": "base4-106",
     "localId": "106",
     "setCode": "base4",
@@ -686,11 +704,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-106-low.png",
-    "imageHighSrc": "cards/base4-106-high.png"
+    "imageHighSrc": "cards/base4-106-high.png",
+    "rules": "Trade 1 of the Basic Pokémon or Evolution cards in your hand for 1 of the Basic Pokémon or Evolution cards from your deck. Show both cards to your opponent. Shuffle your deck afterward."
   },
   {
     "masterCardId": "1689",
-    "externalId": null,
+    "externalId": "base4-105",
     "tcgdex_id": "base4-105",
     "localId": "105",
     "setCode": "base4",
@@ -713,11 +732,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-105-low.png",
-    "imageHighSrc": "cards/base4-105-high.png"
+    "imageHighSrc": "cards/base4-105-high.png",
+    "rules": "Put a Stage 2 Evolution card from your hand on the matching Basic Pokémon. You can only play this card when you would be allowed to evolve that Pokémon anyway."
   },
   {
     "masterCardId": "1688",
-    "externalId": null,
+    "externalId": "base4-104",
     "tcgdex_id": "base4-104",
     "localId": "104",
     "setCode": "base4",
@@ -740,11 +760,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-104-low.png",
-    "imageHighSrc": "cards/base4-104-high.png"
+    "imageHighSrc": "cards/base4-104-high.png",
+    "rules": "You and your opponent show each other your hands, then shuffle all the Trainer cards from your hands into your decks."
   },
   {
     "masterCardId": "1687",
-    "externalId": null,
+    "externalId": "base4-103",
     "tcgdex_id": "base4-103",
     "localId": "103",
     "setCode": "base4",
@@ -767,11 +788,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-103-low.png",
-    "imageHighSrc": "cards/base4-103-high.png"
+    "imageHighSrc": "cards/base4-103-high.png",
+    "rules": "Discard 2 of the other cards from your hand in order to put a Trainer card from your discard pile into your hand."
   },
   {
     "masterCardId": "1686",
-    "externalId": null,
+    "externalId": "base4-102",
     "tcgdex_id": "base4-102",
     "localId": "102",
     "setCode": "base4",
@@ -794,11 +816,12 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/base4-102-low.png",
-    "imageHighSrc": "cards/base4-102-high.png"
+    "imageHighSrc": "cards/base4-102-high.png",
+    "rules": "Your opponent shuffles his or her hand into his or her deck, then draws 7 cards."
   },
   {
     "masterCardId": "1685",
-    "externalId": null,
+    "externalId": "base4-101",
     "tcgdex_id": "base4-101",
     "localId": "101",
     "setCode": "base4",
@@ -821,11 +844,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-101-low.png",
-    "imageHighSrc": "cards/base4-101-high.png"
+    "imageHighSrc": "cards/base4-101-high.png",
+    "rules": "Discard 2 of the other cards from your hand in order to search your deck for any card and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "1684",
-    "externalId": null,
+    "externalId": "base4-100",
     "tcgdex_id": "base4-100",
     "localId": "100",
     "setCode": "base4",
@@ -854,18 +878,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-100-low.png",
-    "imageHighSrc": "cards/base4-100-high.png"
+    "imageHighSrc": "cards/base4-100-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1683",
-    "externalId": null,
+    "externalId": "base4-99",
     "tcgdex_id": "base4-99",
     "localId": "099",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "099/130",
+    "cardNumber": "99/130",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 099/130 Base Set 2",
+    "fullDisplayName": "Vulpix 99/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -887,18 +917,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-099-low.png",
-    "imageHighSrc": "cards/base4-099-high.png"
+    "imageHighSrc": "cards/base4-099-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1682",
-    "externalId": null,
+    "externalId": "base4-98",
     "tcgdex_id": "base4-98",
     "localId": "098",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "098/130",
+    "cardNumber": "98/130",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 098/130 Base Set 2",
+    "fullDisplayName": "Voltorb 98/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -920,18 +956,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-098-low.png",
-    "imageHighSrc": "cards/base4-098-high.png"
+    "imageHighSrc": "cards/base4-098-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1681",
-    "externalId": null,
+    "externalId": "base4-97",
     "tcgdex_id": "base4-97",
     "localId": "097",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "097/130",
+    "cardNumber": "97/130",
     "cardName": "Venonat",
-    "fullDisplayName": "Venonat 097/130 Base Set 2",
+    "fullDisplayName": "Venonat 97/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -953,18 +995,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-097-low.png",
-    "imageHighSrc": "cards/base4-097-high.png"
+    "imageHighSrc": "cards/base4-097-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": "10"
+      },
+      {
+        "name": "Leech Life",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1680",
-    "externalId": null,
+    "externalId": "base4-96",
     "tcgdex_id": "base4-96",
     "localId": "096",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "096/130",
+    "cardNumber": "96/130",
     "cardName": "Tangela",
-    "fullDisplayName": "Tangela 096/130 Base Set 2",
+    "fullDisplayName": "Tangela 96/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -986,18 +1038,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-096-low.png",
-    "imageHighSrc": "cards/base4-096-high.png"
+    "imageHighSrc": "cards/base4-096-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "20"
+      },
+      {
+        "name": "Poisonpowder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1679",
-    "externalId": null,
+    "externalId": "base4-95",
     "tcgdex_id": "base4-95",
     "localId": "095",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "095/130",
+    "cardNumber": "95/130",
     "cardName": "Staryu",
-    "fullDisplayName": "Staryu 095/130 Base Set 2",
+    "fullDisplayName": "Staryu 95/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1019,18 +1081,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-095-low.png",
-    "imageHighSrc": "cards/base4-095-high.png"
+    "imageHighSrc": "cards/base4-095-high.png",
+    "attacks": [
+      {
+        "name": "Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1678",
-    "externalId": null,
+    "externalId": "base4-94",
     "tcgdex_id": "base4-94",
     "localId": "094",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "094/130",
+    "cardNumber": "94/130",
     "cardName": "Starmie",
-    "fullDisplayName": "Starmie 094/130 Base Set 2",
+    "fullDisplayName": "Starmie 94/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1052,18 +1120,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-094-low.png",
-    "imageHighSrc": "cards/base4-094-high.png"
+    "imageHighSrc": "cards/base4-094-high.png",
+    "attacks": [
+      {
+        "name": "Recover",
+        "damage": null
+      },
+      {
+        "name": "Star Freeze",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1677",
-    "externalId": null,
+    "externalId": "base4-93",
     "tcgdex_id": "base4-93",
     "localId": "093",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "093/130",
+    "cardNumber": "93/130",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 093/130 Base Set 2",
+    "fullDisplayName": "Squirtle 93/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1085,18 +1163,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-093-low.png",
-    "imageHighSrc": "cards/base4-093-high.png"
+    "imageHighSrc": "cards/base4-093-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      },
+      {
+        "name": "Withdraw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1676",
-    "externalId": null,
+    "externalId": "base4-92",
     "tcgdex_id": "base4-92",
     "localId": "092",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "092/130",
+    "cardNumber": "92/130",
     "cardName": "Spearow",
-    "fullDisplayName": "Spearow 092/130 Base Set 2",
+    "fullDisplayName": "Spearow 92/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1118,18 +1206,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-092-low.png",
-    "imageHighSrc": "cards/base4-092-high.png"
+    "imageHighSrc": "cards/base4-092-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Mirror Move",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1675",
-    "externalId": null,
+    "externalId": "base4-91",
     "tcgdex_id": "base4-91",
     "localId": "091",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "091/130",
+    "cardNumber": "91/130",
     "cardName": "Sandshrew",
-    "fullDisplayName": "Sandshrew 091/130 Base Set 2",
+    "fullDisplayName": "Sandshrew 91/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1151,18 +1249,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-091-low.png",
-    "imageHighSrc": "cards/base4-091-high.png"
+    "imageHighSrc": "cards/base4-091-high.png",
+    "attacks": [
+      {
+        "name": "Sand-attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1674",
-    "externalId": null,
+    "externalId": "base4-90",
     "tcgdex_id": "base4-90",
     "localId": "090",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "090/130",
+    "cardNumber": "90/130",
     "cardName": "Rhyhorn",
-    "fullDisplayName": "Rhyhorn 090/130 Base Set 2",
+    "fullDisplayName": "Rhyhorn 90/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1184,18 +1288,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-090-low.png",
-    "imageHighSrc": "cards/base4-090-high.png"
+    "imageHighSrc": "cards/base4-090-high.png",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Horn Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1673",
-    "externalId": null,
+    "externalId": "base4-89",
     "tcgdex_id": "base4-89",
     "localId": "089",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "089/130",
+    "cardNumber": "89/130",
     "cardName": "Rattata",
-    "fullDisplayName": "Rattata 089/130 Base Set 2",
+    "fullDisplayName": "Rattata 89/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1217,18 +1331,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-089-low.png",
-    "imageHighSrc": "cards/base4-089-high.png"
+    "imageHighSrc": "cards/base4-089-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1672",
-    "externalId": null,
+    "externalId": "base4-88",
     "tcgdex_id": "base4-88",
     "localId": "088",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "088/130",
+    "cardNumber": "88/130",
     "cardName": "Poliwag",
-    "fullDisplayName": "Poliwag 088/130 Base Set 2",
+    "fullDisplayName": "Poliwag 88/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1250,18 +1370,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-088-low.png",
-    "imageHighSrc": "cards/base4-088-high.png"
+    "imageHighSrc": "cards/base4-088-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1671",
-    "externalId": null,
+    "externalId": "base4-87",
     "tcgdex_id": "base4-87",
     "localId": "087",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "087/130",
+    "cardNumber": "87/130",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 087/130 Base Set 2",
+    "fullDisplayName": "Pikachu 87/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1283,18 +1409,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-087-low.png",
-    "imageHighSrc": "cards/base4-087-high.png"
+    "imageHighSrc": "cards/base4-087-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1670",
-    "externalId": null,
+    "externalId": "base4-86",
     "tcgdex_id": "base4-86",
     "localId": "086",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "086/130",
+    "cardNumber": "86/130",
     "cardName": "Pidgey",
-    "fullDisplayName": "Pidgey 086/130 Base Set 2",
+    "fullDisplayName": "Pidgey 86/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1316,18 +1452,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-086-low.png",
-    "imageHighSrc": "cards/base4-086-high.png"
+    "imageHighSrc": "cards/base4-086-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1669",
-    "externalId": null,
+    "externalId": "base4-85",
     "tcgdex_id": "base4-85",
     "localId": "085",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "085/130",
+    "cardNumber": "85/130",
     "cardName": "Paras",
-    "fullDisplayName": "Paras 085/130 Base Set 2",
+    "fullDisplayName": "Paras 85/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1349,18 +1491,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-085-low.png",
-    "imageHighSrc": "cards/base4-085-high.png"
+    "imageHighSrc": "cards/base4-085-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Spore",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1668",
-    "externalId": null,
+    "externalId": "base4-84",
     "tcgdex_id": "base4-84",
     "localId": "084",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "084/130",
+    "cardNumber": "84/130",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 084/130 Base Set 2",
+    "fullDisplayName": "Onix 84/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1382,18 +1534,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-084-low.png",
-    "imageHighSrc": "cards/base4-084-high.png"
+    "imageHighSrc": "cards/base4-084-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "10"
+      },
+      {
+        "name": "Harden",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1667",
-    "externalId": null,
+    "externalId": "base4-83",
     "tcgdex_id": "base4-83",
     "localId": "083",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "083/130",
+    "cardNumber": "83/130",
     "cardName": "Nidoran ♂",
-    "fullDisplayName": "Nidoran ♂ 083/130 Base Set 2",
+    "fullDisplayName": "Nidoran ♂ 83/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1415,18 +1577,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/base4-083-low.png",
-    "imageHighSrc": "cards/base4-083-high.png"
+    "imageHighSrc": "cards/base4-083-high.png",
+    "attacks": [
+      {
+        "name": "Horn Hazard",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1666",
-    "externalId": null,
+    "externalId": "base4-82",
     "tcgdex_id": "base4-82",
     "localId": "082",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "082/130",
+    "cardNumber": "82/130",
     "cardName": "Nidoran ♀",
-    "fullDisplayName": "Nidoran ♀ 082/130 Base Set 2",
+    "fullDisplayName": "Nidoran ♀ 82/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1448,18 +1616,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/base4-082-low.png",
-    "imageHighSrc": "cards/base4-082-high.png"
+    "imageHighSrc": "cards/base4-082-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      },
+      {
+        "name": "Call for Family",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1665",
-    "externalId": null,
+    "externalId": "base4-81",
     "tcgdex_id": "base4-81",
     "localId": "081",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "081/130",
+    "cardNumber": "81/130",
     "cardName": "Metapod",
-    "fullDisplayName": "Metapod 081/130 Base Set 2",
+    "fullDisplayName": "Metapod 81/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1481,18 +1659,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-081-low.png",
-    "imageHighSrc": "cards/base4-081-high.png"
+    "imageHighSrc": "cards/base4-081-high.png",
+    "attacks": [
+      {
+        "name": "Stiffen",
+        "damage": null
+      },
+      {
+        "name": "Stun Spore",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1664",
-    "externalId": null,
+    "externalId": "base4-80",
     "tcgdex_id": "base4-80",
     "localId": "080",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "080/130",
+    "cardNumber": "80/130",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 080/130 Base Set 2",
+    "fullDisplayName": "Meowth 80/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1514,18 +1702,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-080-low.png",
-    "imageHighSrc": "cards/base4-080-high.png"
+    "imageHighSrc": "cards/base4-080-high.png",
+    "attacks": [
+      {
+        "name": "Pay Day",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1663",
-    "externalId": null,
+    "externalId": "base4-79",
     "tcgdex_id": "base4-79",
     "localId": "079",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "079/130",
+    "cardNumber": "79/130",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 079/130 Base Set 2",
+    "fullDisplayName": "Magnemite 79/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1547,18 +1741,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-079-low.png",
-    "imageHighSrc": "cards/base4-079-high.png"
+    "imageHighSrc": "cards/base4-079-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": "10"
+      },
+      {
+        "name": "Selfdestruct",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1662",
-    "externalId": null,
+    "externalId": "base4-78",
     "tcgdex_id": "base4-78",
     "localId": "078",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "078/130",
+    "cardNumber": "78/130",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 078/130 Base Set 2",
+    "fullDisplayName": "Machop 78/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1580,18 +1784,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-078-low.png",
-    "imageHighSrc": "cards/base4-078-high.png"
+    "imageHighSrc": "cards/base4-078-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1661",
-    "externalId": null,
+    "externalId": "base4-77",
     "tcgdex_id": "base4-77",
     "localId": "077",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "077/130",
+    "cardNumber": "77/130",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 077/130 Base Set 2",
+    "fullDisplayName": "Jigglypuff 77/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1613,18 +1823,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-077-low.png",
-    "imageHighSrc": "cards/base4-077-high.png"
+    "imageHighSrc": "cards/base4-077-high.png",
+    "attacks": [
+      {
+        "name": "Lullaby",
+        "damage": null
+      },
+      {
+        "name": "Pound",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1660",
-    "externalId": null,
+    "externalId": "base4-76",
     "tcgdex_id": "base4-76",
     "localId": "076",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "076/130",
+    "cardNumber": "76/130",
     "cardName": "Goldeen",
-    "fullDisplayName": "Goldeen 076/130 Base Set 2",
+    "fullDisplayName": "Goldeen 76/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1646,18 +1866,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-076-low.png",
-    "imageHighSrc": "cards/base4-076-high.png"
+    "imageHighSrc": "cards/base4-076-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1659",
-    "externalId": null,
+    "externalId": "base4-75",
     "tcgdex_id": "base4-75",
     "localId": "075",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "075/130",
+    "cardNumber": "75/130",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 075/130 Base Set 2",
+    "fullDisplayName": "Gastly 75/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1679,18 +1905,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-075-low.png",
-    "imageHighSrc": "cards/base4-075-high.png"
+    "imageHighSrc": "cards/base4-075-high.png",
+    "attacks": [
+      {
+        "name": "Sleeping Gas",
+        "damage": null
+      },
+      {
+        "name": "Destiny Bond",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1658",
-    "externalId": null,
+    "externalId": "base4-74",
     "tcgdex_id": "base4-74",
     "localId": "074",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "074/130",
+    "cardNumber": "74/130",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 074/130 Base Set 2",
+    "fullDisplayName": "Exeggcute 74/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1712,18 +1948,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-074-low.png",
-    "imageHighSrc": "cards/base4-074-high.png"
+    "imageHighSrc": "cards/base4-074-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Leech Seed",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1657",
-    "externalId": null,
+    "externalId": "base4-73",
     "tcgdex_id": "base4-73",
     "localId": "073",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "073/130",
+    "cardNumber": "73/130",
     "cardName": "Drowzee",
-    "fullDisplayName": "Drowzee 073/130 Base Set 2",
+    "fullDisplayName": "Drowzee 73/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1745,18 +1991,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-073-low.png",
-    "imageHighSrc": "cards/base4-073-high.png"
+    "imageHighSrc": "cards/base4-073-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1656",
-    "externalId": null,
+    "externalId": "base4-72",
     "tcgdex_id": "base4-72",
     "localId": "072",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "072/130",
+    "cardNumber": "72/130",
     "cardName": "Doduo",
-    "fullDisplayName": "Doduo 072/130 Base Set 2",
+    "fullDisplayName": "Doduo 72/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1778,18 +2034,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-072-low.png",
-    "imageHighSrc": "cards/base4-072-high.png"
+    "imageHighSrc": "cards/base4-072-high.png",
+    "attacks": [
+      {
+        "name": "Fury Attack",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "1655",
-    "externalId": null,
+    "externalId": "base4-71",
     "tcgdex_id": "base4-71",
     "localId": "071",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "071/130",
+    "cardNumber": "71/130",
     "cardName": "Diglett",
-    "fullDisplayName": "Diglett 071/130 Base Set 2",
+    "fullDisplayName": "Diglett 71/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1811,18 +2073,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-071-low.png",
-    "imageHighSrc": "cards/base4-071-high.png"
+    "imageHighSrc": "cards/base4-071-high.png",
+    "attacks": [
+      {
+        "name": "Dig",
+        "damage": "10"
+      },
+      {
+        "name": "Mud Slap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1654",
-    "externalId": null,
+    "externalId": "base4-70",
     "tcgdex_id": "base4-70",
     "localId": "070",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "070/130",
+    "cardNumber": "70/130",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 070/130 Base Set 2",
+    "fullDisplayName": "Cubone 70/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1844,18 +2116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-070-low.png",
-    "imageHighSrc": "cards/base4-070-high.png"
+    "imageHighSrc": "cards/base4-070-high.png",
+    "attacks": [
+      {
+        "name": "Snivel",
+        "damage": null
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1653",
-    "externalId": null,
+    "externalId": "base4-69",
     "tcgdex_id": "base4-69",
     "localId": "069",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "069/130",
+    "cardNumber": "69/130",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 069/130 Base Set 2",
+    "fullDisplayName": "Charmander 69/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1877,18 +2159,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-069-low.png",
-    "imageHighSrc": "cards/base4-069-high.png"
+    "imageHighSrc": "cards/base4-069-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1652",
-    "externalId": null,
+    "externalId": "base4-68",
     "tcgdex_id": "base4-68",
     "localId": "068",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "068/130",
+    "cardNumber": "68/130",
     "cardName": "Caterpie",
-    "fullDisplayName": "Caterpie 068/130 Base Set 2",
+    "fullDisplayName": "Caterpie 68/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1910,18 +2202,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-068-low.png",
-    "imageHighSrc": "cards/base4-068-high.png"
+    "imageHighSrc": "cards/base4-068-high.png",
+    "attacks": [
+      {
+        "name": "String Shot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1651",
-    "externalId": null,
+    "externalId": "base4-67",
     "tcgdex_id": "base4-67",
     "localId": "067",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "067/130",
+    "cardNumber": "67/130",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 067/130 Base Set 2",
+    "fullDisplayName": "Bulbasaur 67/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1943,18 +2241,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-067-low.png",
-    "imageHighSrc": "cards/base4-067-high.png"
+    "imageHighSrc": "cards/base4-067-high.png",
+    "attacks": [
+      {
+        "name": "Leech Seed",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1650",
-    "externalId": null,
+    "externalId": "base4-66",
     "tcgdex_id": "base4-66",
     "localId": "066",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "066/130",
+    "cardNumber": "66/130",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 066/130 Base Set 2",
+    "fullDisplayName": "Bellsprout 66/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1976,18 +2280,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-066-low.png",
-    "imageHighSrc": "cards/base4-066-high.png"
+    "imageHighSrc": "cards/base4-066-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "10"
+      },
+      {
+        "name": "Call for Family",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1649",
-    "externalId": null,
+    "externalId": "base4-65",
     "tcgdex_id": "base4-65",
     "localId": "065",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "065/130",
+    "cardNumber": "65/130",
     "cardName": "Abra",
-    "fullDisplayName": "Abra 065/130 Base Set 2",
+    "fullDisplayName": "Abra 65/130 Base Set 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2009,18 +2323,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-065-low.png",
-    "imageHighSrc": "cards/base4-065-high.png"
+    "imageHighSrc": "cards/base4-065-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1648",
-    "externalId": null,
+    "externalId": "base4-64",
     "tcgdex_id": "base4-64",
     "localId": "064",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "064/130",
+    "cardNumber": "64/130",
     "cardName": "Weepinbell",
-    "fullDisplayName": "Weepinbell 064/130 Base Set 2",
+    "fullDisplayName": "Weepinbell 64/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2042,18 +2362,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-064-low.png",
-    "imageHighSrc": "cards/base4-064-high.png"
+    "imageHighSrc": "cards/base4-064-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1647",
-    "externalId": null,
+    "externalId": "base4-63",
     "tcgdex_id": "base4-63",
     "localId": "063",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "063/130",
+    "cardNumber": "63/130",
     "cardName": "Wartortle",
-    "fullDisplayName": "Wartortle 063/130 Base Set 2",
+    "fullDisplayName": "Wartortle 63/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2075,18 +2405,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-063-low.png",
-    "imageHighSrc": "cards/base4-063-high.png"
+    "imageHighSrc": "cards/base4-063-high.png",
+    "attacks": [
+      {
+        "name": "Withdraw",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1646",
-    "externalId": null,
+    "externalId": "base4-62",
     "tcgdex_id": "base4-62",
     "localId": "062",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "062/130",
+    "cardNumber": "62/130",
     "cardName": "Tauros",
-    "fullDisplayName": "Tauros 062/130 Base Set 2",
+    "fullDisplayName": "Tauros 62/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2108,18 +2448,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-062-low.png",
-    "imageHighSrc": "cards/base4-062-high.png"
+    "imageHighSrc": "cards/base4-062-high.png",
+    "attacks": [
+      {
+        "name": "Stomp",
+        "damage": "20+"
+      },
+      {
+        "name": "Rampage",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "1645",
-    "externalId": null,
+    "externalId": "base4-61",
     "tcgdex_id": "base4-61",
     "localId": "061",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "061/130",
+    "cardNumber": "61/130",
     "cardName": "Seel",
-    "fullDisplayName": "Seel 061/130 Base Set 2",
+    "fullDisplayName": "Seel 61/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2141,18 +2491,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-061-low.png",
-    "imageHighSrc": "cards/base4-061-high.png"
+    "imageHighSrc": "cards/base4-061-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1644",
-    "externalId": null,
+    "externalId": "base4-60",
     "tcgdex_id": "base4-60",
     "localId": "060",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "060/130",
+    "cardNumber": "60/130",
     "cardName": "Seaking",
-    "fullDisplayName": "Seaking 060/130 Base Set 2",
+    "fullDisplayName": "Seaking 60/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2174,18 +2530,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-060-low.png",
-    "imageHighSrc": "cards/base4-060-high.png"
+    "imageHighSrc": "cards/base4-060-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Waterfall",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1643",
-    "externalId": null,
+    "externalId": "base4-59",
     "tcgdex_id": "base4-59",
     "localId": "059",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "059/130",
+    "cardNumber": "59/130",
     "cardName": "Rhydon",
-    "fullDisplayName": "Rhydon 059/130 Base Set 2",
+    "fullDisplayName": "Rhydon 59/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2207,18 +2573,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-059-low.png",
-    "imageHighSrc": "cards/base4-059-high.png"
+    "imageHighSrc": "cards/base4-059-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "30"
+      },
+      {
+        "name": "Ram",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1642",
-    "externalId": null,
+    "externalId": "base4-58",
     "tcgdex_id": "base4-58",
     "localId": "058",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "058/130",
+    "cardNumber": "58/130",
     "cardName": "Raticate",
-    "fullDisplayName": "Raticate 058/130 Base Set 2",
+    "fullDisplayName": "Raticate 58/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2240,18 +2616,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-058-low.png",
-    "imageHighSrc": "cards/base4-058-high.png"
+    "imageHighSrc": "cards/base4-058-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Super Fang",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1641",
-    "externalId": null,
+    "externalId": "base4-57",
     "tcgdex_id": "base4-57",
     "localId": "057",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "057/130",
+    "cardNumber": "57/130",
     "cardName": "Poliwhirl",
-    "fullDisplayName": "Poliwhirl 057/130 Base Set 2",
+    "fullDisplayName": "Poliwhirl 57/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2273,18 +2659,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-057-low.png",
-    "imageHighSrc": "cards/base4-057-high.png"
+    "imageHighSrc": "cards/base4-057-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": null
+      },
+      {
+        "name": "Doubleslap",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "1640",
-    "externalId": null,
+    "externalId": "base4-56",
     "tcgdex_id": "base4-56",
     "localId": "056",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "056/130",
+    "cardNumber": "56/130",
     "cardName": "Persian",
-    "fullDisplayName": "Persian 056/130 Base Set 2",
+    "fullDisplayName": "Persian 56/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2306,18 +2702,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-056-low.png",
-    "imageHighSrc": "cards/base4-056-high.png"
+    "imageHighSrc": "cards/base4-056-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Pounce",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1639",
-    "externalId": null,
+    "externalId": "base4-55",
     "tcgdex_id": "base4-55",
     "localId": "055",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "055/130",
+    "cardNumber": "55/130",
     "cardName": "Parasect",
-    "fullDisplayName": "Parasect 055/130 Base Set 2",
+    "fullDisplayName": "Parasect 55/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2339,18 +2745,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-055-low.png",
-    "imageHighSrc": "cards/base4-055-high.png"
+    "imageHighSrc": "cards/base4-055-high.png",
+    "attacks": [
+      {
+        "name": "Spore",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1638",
-    "externalId": null,
+    "externalId": "base4-54",
     "tcgdex_id": "base4-54",
     "localId": "054",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "054/130",
+    "cardNumber": "54/130",
     "cardName": "Nidorino",
-    "fullDisplayName": "Nidorino 054/130 Base Set 2",
+    "fullDisplayName": "Nidorino 54/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2372,18 +2788,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-054-low.png",
-    "imageHighSrc": "cards/base4-054-high.png"
+    "imageHighSrc": "cards/base4-054-high.png",
+    "attacks": [
+      {
+        "name": "Double Kick",
+        "damage": "30×"
+      },
+      {
+        "name": "Horn Drill",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1637",
-    "externalId": null,
+    "externalId": "base4-53",
     "tcgdex_id": "base4-53",
     "localId": "053",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "053/130",
+    "cardNumber": "53/130",
     "cardName": "Nidorina",
-    "fullDisplayName": "Nidorina 053/130 Base Set 2",
+    "fullDisplayName": "Nidorina 53/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2405,18 +2831,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-053-low.png",
-    "imageHighSrc": "cards/base4-053-high.png"
+    "imageHighSrc": "cards/base4-053-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Double Kick",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "1636",
-    "externalId": null,
+    "externalId": "base4-52",
     "tcgdex_id": "base4-52",
     "localId": "052",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "052/130",
+    "cardNumber": "52/130",
     "cardName": "Marowak",
-    "fullDisplayName": "Marowak 052/130 Base Set 2",
+    "fullDisplayName": "Marowak 52/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2438,18 +2874,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-052-low.png",
-    "imageHighSrc": "cards/base4-052-high.png"
+    "imageHighSrc": "cards/base4-052-high.png",
+    "attacks": [
+      {
+        "name": "Bonemerang",
+        "damage": "30×"
+      },
+      {
+        "name": "Call for Friend",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1635",
-    "externalId": null,
+    "externalId": "base4-51",
     "tcgdex_id": "base4-51",
     "localId": "051",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "051/130",
+    "cardNumber": "51/130",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 051/130 Base Set 2",
+    "fullDisplayName": "Magmar 51/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2471,18 +2917,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-051-low.png",
-    "imageHighSrc": "cards/base4-051-high.png"
+    "imageHighSrc": "cards/base4-051-high.png",
+    "attacks": [
+      {
+        "name": "Fire Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1634",
-    "externalId": null,
+    "externalId": "base4-50",
     "tcgdex_id": "base4-50",
     "localId": "050",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "050/130",
+    "cardNumber": "50/130",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 050/130 Base Set 2",
+    "fullDisplayName": "Magikarp 50/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2504,18 +2960,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-050-low.png",
-    "imageHighSrc": "cards/base4-050-high.png"
+    "imageHighSrc": "cards/base4-050-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "1633",
-    "externalId": null,
+    "externalId": "base4-49",
     "tcgdex_id": "base4-49",
     "localId": "049",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "049/130",
+    "cardNumber": "49/130",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 049/130 Base Set 2",
+    "fullDisplayName": "Machoke 49/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2537,18 +3003,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-049-low.png",
-    "imageHighSrc": "cards/base4-049-high.png"
+    "imageHighSrc": "cards/base4-049-high.png",
+    "attacks": [
+      {
+        "name": "Karate Chop",
+        "damage": "50-"
+      },
+      {
+        "name": "Submission",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1632",
-    "externalId": null,
+    "externalId": "base4-48",
     "tcgdex_id": "base4-48",
     "localId": "048",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "048/130",
+    "cardNumber": "48/130",
     "cardName": "Lickitung",
-    "fullDisplayName": "Lickitung 048/130 Base Set 2",
+    "fullDisplayName": "Lickitung 48/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2570,18 +3046,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-048-low.png",
-    "imageHighSrc": "cards/base4-048-high.png"
+    "imageHighSrc": "cards/base4-048-high.png",
+    "attacks": [
+      {
+        "name": "Tongue Wrap",
+        "damage": "10"
+      },
+      {
+        "name": "Supersonic",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1631",
-    "externalId": null,
+    "externalId": "base4-47",
     "tcgdex_id": "base4-47",
     "localId": "047",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "047/130",
+    "cardNumber": "47/130",
     "cardName": "Kakuna",
-    "fullDisplayName": "Kakuna 047/130 Base Set 2",
+    "fullDisplayName": "Kakuna 47/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2603,18 +3089,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-047-low.png",
-    "imageHighSrc": "cards/base4-047-high.png"
+    "imageHighSrc": "cards/base4-047-high.png",
+    "attacks": [
+      {
+        "name": "Stiffen",
+        "damage": null
+      },
+      {
+        "name": "Poisonpowder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1630",
-    "externalId": null,
+    "externalId": "base4-46",
     "tcgdex_id": "base4-46",
     "localId": "046",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "046/130",
+    "cardNumber": "46/130",
     "cardName": "Kadabra",
-    "fullDisplayName": "Kadabra 046/130 Base Set 2",
+    "fullDisplayName": "Kadabra 46/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2636,18 +3132,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-046-low.png",
-    "imageHighSrc": "cards/base4-046-high.png"
+    "imageHighSrc": "cards/base4-046-high.png",
+    "attacks": [
+      {
+        "name": "Recover",
+        "damage": null
+      },
+      {
+        "name": "Super Psy",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1629",
-    "externalId": null,
+    "externalId": "base4-45",
     "tcgdex_id": "base4-45",
     "localId": "045",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "045/130",
+    "cardNumber": "45/130",
     "cardName": "Jynx",
-    "fullDisplayName": "Jynx 045/130 Base Set 2",
+    "fullDisplayName": "Jynx 45/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2669,18 +3175,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-045-low.png",
-    "imageHighSrc": "cards/base4-045-high.png"
+    "imageHighSrc": "cards/base4-045-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "10×"
+      },
+      {
+        "name": "Meditate",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "1628",
-    "externalId": null,
+    "externalId": "base4-44",
     "tcgdex_id": "base4-44",
     "localId": "044",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "044/130",
+    "cardNumber": "44/130",
     "cardName": "Ivysaur",
-    "fullDisplayName": "Ivysaur 044/130 Base Set 2",
+    "fullDisplayName": "Ivysaur 44/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2702,18 +3218,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-044-low.png",
-    "imageHighSrc": "cards/base4-044-high.png"
+    "imageHighSrc": "cards/base4-044-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "30"
+      },
+      {
+        "name": "Poisonpowder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1627",
-    "externalId": null,
+    "externalId": "base4-43",
     "tcgdex_id": "base4-43",
     "localId": "043",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "043/130",
+    "cardNumber": "43/130",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 043/130 Base Set 2",
+    "fullDisplayName": "Haunter 43/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2735,18 +3261,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-043-low.png",
-    "imageHighSrc": "cards/base4-043-high.png"
+    "imageHighSrc": "cards/base4-043-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Dream Eater",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1626",
-    "externalId": null,
+    "externalId": "base4-42",
     "tcgdex_id": "base4-42",
     "localId": "042",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "042/130",
+    "cardNumber": "42/130",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 042/130 Base Set 2",
+    "fullDisplayName": "Growlithe 42/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2768,18 +3304,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-042-low.png",
-    "imageHighSrc": "cards/base4-042-high.png"
+    "imageHighSrc": "cards/base4-042-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1625",
-    "externalId": null,
+    "externalId": "base4-41",
     "tcgdex_id": "base4-41",
     "localId": "041",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "041/130",
+    "cardNumber": "41/130",
     "cardName": "Fearow",
-    "fullDisplayName": "Fearow 041/130 Base Set 2",
+    "fullDisplayName": "Fearow 41/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2801,18 +3343,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-041-low.png",
-    "imageHighSrc": "cards/base4-041-high.png"
+    "imageHighSrc": "cards/base4-041-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "20"
+      },
+      {
+        "name": "Drill Peck",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1624",
-    "externalId": null,
+    "externalId": "base4-40",
     "tcgdex_id": "base4-40",
     "localId": "040",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "040/130",
+    "cardNumber": "40/130",
     "cardName": "Farfetch'd",
-    "fullDisplayName": "Farfetch'd 040/130 Base Set 2",
+    "fullDisplayName": "Farfetch'd 40/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2834,18 +3386,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-040-low.png",
-    "imageHighSrc": "cards/base4-040-high.png"
+    "imageHighSrc": "cards/base4-040-high.png",
+    "attacks": [
+      {
+        "name": "Leek Slap",
+        "damage": "30"
+      },
+      {
+        "name": "Pot Smash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1623",
-    "externalId": null,
+    "externalId": "base4-39",
     "tcgdex_id": "base4-39",
     "localId": "039",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "039/130",
+    "cardNumber": "39/130",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 039/130 Base Set 2",
+    "fullDisplayName": "Exeggutor 39/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2867,18 +3429,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-039-low.png",
-    "imageHighSrc": "cards/base4-039-high.png"
+    "imageHighSrc": "cards/base4-039-high.png",
+    "attacks": [
+      {
+        "name": "Teleport",
+        "damage": null
+      },
+      {
+        "name": "Big Eggsplosion",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "1622",
-    "externalId": null,
+    "externalId": "base4-38",
     "tcgdex_id": "base4-38",
     "localId": "038",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "038/130",
+    "cardNumber": "38/130",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 038/130 Base Set 2",
+    "fullDisplayName": "Dratini 38/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2900,18 +3472,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-038-low.png",
-    "imageHighSrc": "cards/base4-038-high.png"
+    "imageHighSrc": "cards/base4-038-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1621",
-    "externalId": null,
+    "externalId": "base4-37",
     "tcgdex_id": "base4-37",
     "localId": "037",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "037/130",
+    "cardNumber": "37/130",
     "cardName": "Dodrio",
-    "fullDisplayName": "Dodrio 037/130 Base Set 2",
+    "fullDisplayName": "Dodrio 37/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2933,18 +3511,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-037-low.png",
-    "imageHighSrc": "cards/base4-037-high.png"
+    "imageHighSrc": "cards/base4-037-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1620",
-    "externalId": null,
+    "externalId": "base4-36",
     "tcgdex_id": "base4-36",
     "localId": "036",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "036/130",
+    "cardNumber": "36/130",
     "cardName": "Dewgong",
-    "fullDisplayName": "Dewgong 036/130 Base Set 2",
+    "fullDisplayName": "Dewgong 36/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2966,18 +3550,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-036-low.png",
-    "imageHighSrc": "cards/base4-036-high.png"
+    "imageHighSrc": "cards/base4-036-high.png",
+    "attacks": [
+      {
+        "name": "Aurora Beam",
+        "damage": "50"
+      },
+      {
+        "name": "Ice Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1619",
-    "externalId": null,
+    "externalId": "base4-35",
     "tcgdex_id": "base4-35",
     "localId": "035",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "035/130",
+    "cardNumber": "35/130",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 035/130 Base Set 2",
+    "fullDisplayName": "Charmeleon 35/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2999,18 +3593,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-035-low.png",
-    "imageHighSrc": "cards/base4-035-high.png"
+    "imageHighSrc": "cards/base4-035-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "30"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1618",
-    "externalId": null,
+    "externalId": "base4-34",
     "tcgdex_id": "base4-34",
     "localId": "034",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "034/130",
+    "cardNumber": "34/130",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 034/130 Base Set 2",
+    "fullDisplayName": "Butterfree 34/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3032,18 +3636,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-034-low.png",
-    "imageHighSrc": "cards/base4-034-high.png"
+    "imageHighSrc": "cards/base4-034-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "20"
+      },
+      {
+        "name": "Mega Drain",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1617",
-    "externalId": null,
+    "externalId": "base4-33",
     "tcgdex_id": "base4-33",
     "localId": "033",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "033/130",
+    "cardNumber": "33/130",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 033/130 Base Set 2",
+    "fullDisplayName": "Arcanine 33/130 Base Set 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3065,18 +3679,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-033-low.png",
-    "imageHighSrc": "cards/base4-033-high.png"
+    "imageHighSrc": "cards/base4-033-high.png",
+    "attacks": [
+      {
+        "name": "Flamethrower",
+        "damage": "50"
+      },
+      {
+        "name": "Take Down",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "1616",
-    "externalId": null,
+    "externalId": "base4-32",
     "tcgdex_id": "base4-32",
     "localId": "032",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "032/130",
+    "cardNumber": "32/130",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel 032/130 Base Set 2",
+    "fullDisplayName": "Victreebel 32/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3098,18 +3722,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-032-low.png",
-    "imageHighSrc": "cards/base4-032-high.png"
+    "imageHighSrc": "cards/base4-032-high.png",
+    "attacks": [
+      {
+        "name": "Lure",
+        "damage": null
+      },
+      {
+        "name": "Acid",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1615",
-    "externalId": null,
+    "externalId": "base4-31",
     "tcgdex_id": "base4-31",
     "localId": "031",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "031/130",
+    "cardNumber": "31/130",
     "cardName": "Venomoth",
-    "fullDisplayName": "Venomoth 031/130 Base Set 2",
+    "fullDisplayName": "Venomoth 31/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3131,18 +3765,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-031-low.png",
-    "imageHighSrc": "cards/base4-031-high.png"
+    "imageHighSrc": "cards/base4-031-high.png",
+    "attacks": [
+      {
+        "name": "Venom Powder",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "1614",
-    "externalId": null,
+    "externalId": "base4-30",
     "tcgdex_id": "base4-30",
     "localId": "030",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "030/130",
+    "cardNumber": "30/130",
     "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 030/130 Base Set 2",
+    "fullDisplayName": "Snorlax 30/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3164,18 +3804,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-030-low.png",
-    "imageHighSrc": "cards/base4-030-high.png"
+    "imageHighSrc": "cards/base4-030-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1613",
-    "externalId": null,
+    "externalId": "base4-29",
     "tcgdex_id": "base4-29",
     "localId": "029",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "029/130",
+    "cardNumber": "29/130",
     "cardName": "Pinsir",
-    "fullDisplayName": "Pinsir 029/130 Base Set 2",
+    "fullDisplayName": "Pinsir 29/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3197,18 +3843,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-029-low.png",
-    "imageHighSrc": "cards/base4-029-high.png"
+    "imageHighSrc": "cards/base4-029-high.png",
+    "attacks": [
+      {
+        "name": "Irongrip",
+        "damage": "20"
+      },
+      {
+        "name": "Guillotine",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1612",
-    "externalId": null,
+    "externalId": "base4-28",
     "tcgdex_id": "base4-28",
     "localId": "028",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "028/130",
+    "cardNumber": "28/130",
     "cardName": "Pidgeotto",
-    "fullDisplayName": "Pidgeotto 028/130 Base Set 2",
+    "fullDisplayName": "Pidgeotto 28/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3230,18 +3886,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-028-low.png",
-    "imageHighSrc": "cards/base4-028-high.png"
+    "imageHighSrc": "cards/base4-028-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "20"
+      },
+      {
+        "name": "Mirror Move",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1611",
-    "externalId": null,
+    "externalId": "base4-27",
     "tcgdex_id": "base4-27",
     "localId": "027",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "027/130",
+    "cardNumber": "27/130",
     "cardName": "Mr. Mime",
-    "fullDisplayName": "Mr. Mime 027/130 Base Set 2",
+    "fullDisplayName": "Mr. Mime 27/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3263,18 +3929,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-027-low.png",
-    "imageHighSrc": "cards/base4-027-high.png"
+    "imageHighSrc": "cards/base4-027-high.png",
+    "attacks": [
+      {
+        "name": "Meditate",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1610",
-    "externalId": null,
+    "externalId": "base4-26",
     "tcgdex_id": "base4-26",
     "localId": "026",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "026/130",
+    "cardNumber": "26/130",
     "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 026/130 Base Set 2",
+    "fullDisplayName": "Kangaskhan 26/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3296,18 +3968,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-026-low.png",
-    "imageHighSrc": "cards/base4-026-high.png"
+    "imageHighSrc": "cards/base4-026-high.png",
+    "attacks": [
+      {
+        "name": "Fetch",
+        "damage": null
+      },
+      {
+        "name": "Comet Punch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "1609",
-    "externalId": null,
+    "externalId": "base4-25",
     "tcgdex_id": "base4-25",
     "localId": "025",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "025/130",
+    "cardNumber": "25/130",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 025/130 Base Set 2",
+    "fullDisplayName": "Electrode 25/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3329,18 +4011,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-025-low.png",
-    "imageHighSrc": "cards/base4-025-high.png"
+    "imageHighSrc": "cards/base4-025-high.png",
+    "attacks": [
+      {
+        "name": "Electric Shock",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1608",
-    "externalId": null,
+    "externalId": "base4-24",
     "tcgdex_id": "base4-24",
     "localId": "024",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "024/130",
+    "cardNumber": "24/130",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 024/130 Base Set 2",
+    "fullDisplayName": "Electabuzz 24/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3362,18 +4050,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-024-low.png",
-    "imageHighSrc": "cards/base4-024-high.png"
+    "imageHighSrc": "cards/base4-024-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Thunderpunch",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "1607",
-    "externalId": null,
+    "externalId": "base4-23",
     "tcgdex_id": "base4-23",
     "localId": "023",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "023/130",
+    "cardNumber": "23/130",
     "cardName": "Dugtrio",
-    "fullDisplayName": "Dugtrio 023/130 Base Set 2",
+    "fullDisplayName": "Dugtrio 23/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3395,18 +4093,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-023-low.png",
-    "imageHighSrc": "cards/base4-023-high.png"
+    "imageHighSrc": "cards/base4-023-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "40"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1606",
-    "externalId": null,
+    "externalId": "base4-22",
     "tcgdex_id": "base4-22",
     "localId": "022",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "022/130",
+    "cardNumber": "22/130",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 022/130 Base Set 2",
+    "fullDisplayName": "Dragonair 22/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3428,18 +4136,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-022-low.png",
-    "imageHighSrc": "cards/base4-022-high.png"
+    "imageHighSrc": "cards/base4-022-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "30×"
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1605",
-    "externalId": null,
+    "externalId": "base4-21",
     "tcgdex_id": "base4-21",
     "localId": "021",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "021/130",
+    "cardNumber": "21/130",
     "cardName": "Beedrill",
-    "fullDisplayName": "Beedrill 021/130 Base Set 2",
+    "fullDisplayName": "Beedrill 21/130 Base Set 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3461,18 +4179,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-021-low.png",
-    "imageHighSrc": "cards/base4-021-high.png"
+    "imageHighSrc": "cards/base4-021-high.png",
+    "attacks": [
+      {
+        "name": "Twineedle",
+        "damage": "30×"
+      },
+      {
+        "name": "Poison Sting",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1604",
-    "externalId": null,
+    "externalId": "base4-20",
     "tcgdex_id": "base4-20",
     "localId": "020",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "020/130",
+    "cardNumber": "20/130",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 020/130 Base Set 2",
+    "fullDisplayName": "Zapdos 20/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3494,18 +4222,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-020-low.png",
-    "imageHighSrc": "cards/base4-020-high.png"
+    "imageHighSrc": "cards/base4-020-high.png",
+    "attacks": [
+      {
+        "name": "Thunder",
+        "damage": "60"
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "1603",
-    "externalId": null,
+    "externalId": "base4-19",
     "tcgdex_id": "base4-19",
     "localId": "019",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "019/130",
+    "cardNumber": "19/130",
     "cardName": "Wigglytuff",
-    "fullDisplayName": "Wigglytuff 019/130 Base Set 2",
+    "fullDisplayName": "Wigglytuff 19/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3527,18 +4265,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-019-low.png",
-    "imageHighSrc": "cards/base4-019-high.png"
+    "imageHighSrc": "cards/base4-019-high.png",
+    "attacks": [
+      {
+        "name": "Lullaby",
+        "damage": null
+      },
+      {
+        "name": "Do the Wave",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1602",
-    "externalId": null,
+    "externalId": "base4-18",
     "tcgdex_id": "base4-18",
     "localId": "018",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "018/130",
+    "cardNumber": "18/130",
     "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 018/130 Base Set 2",
+    "fullDisplayName": "Venusaur 18/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3560,18 +4308,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-018-low.png",
-    "imageHighSrc": "cards/base4-018-high.png"
+    "imageHighSrc": "cards/base4-018-high.png",
+    "attacks": [
+      {
+        "name": "Solarbeam",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1601",
-    "externalId": null,
+    "externalId": "base4-17",
     "tcgdex_id": "base4-17",
     "localId": "017",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "017/130",
+    "cardNumber": "17/130",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 017/130 Base Set 2",
+    "fullDisplayName": "Scyther 17/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3593,18 +4347,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-017-low.png",
-    "imageHighSrc": "cards/base4-017-high.png"
+    "imageHighSrc": "cards/base4-017-high.png",
+    "attacks": [
+      {
+        "name": "Swords Dance",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1600",
-    "externalId": null,
+    "externalId": "base4-16",
     "tcgdex_id": "base4-16",
     "localId": "016",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "016/130",
+    "cardNumber": "16/130",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 016/130 Base Set 2",
+    "fullDisplayName": "Raichu 16/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3626,18 +4390,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-016-low.png",
-    "imageHighSrc": "cards/base4-016-high.png"
+    "imageHighSrc": "cards/base4-016-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "20"
+      },
+      {
+        "name": "Thunder",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1599",
-    "externalId": null,
+    "externalId": "base4-15",
     "tcgdex_id": "base4-15",
     "localId": "015",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "015/130",
+    "cardNumber": "15/130",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 015/130 Base Set 2",
+    "fullDisplayName": "Poliwrath 15/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3659,18 +4433,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-015-low.png",
-    "imageHighSrc": "cards/base4-015-high.png"
+    "imageHighSrc": "cards/base4-015-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30+"
+      },
+      {
+        "name": "Whirlpool",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1598",
-    "externalId": null,
+    "externalId": "base4-14",
     "tcgdex_id": "base4-14",
     "localId": "014",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "014/130",
+    "cardNumber": "14/130",
     "cardName": "Pidgeot",
-    "fullDisplayName": "Pidgeot 014/130 Base Set 2",
+    "fullDisplayName": "Pidgeot 14/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3692,18 +4476,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-014-low.png",
-    "imageHighSrc": "cards/base4-014-high.png"
+    "imageHighSrc": "cards/base4-014-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Hurricane",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1597",
-    "externalId": null,
+    "externalId": "base4-13",
     "tcgdex_id": "base4-13",
     "localId": "013",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "013/130",
+    "cardNumber": "13/130",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 013/130 Base Set 2",
+    "fullDisplayName": "Ninetales 13/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3725,18 +4519,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-013-low.png",
-    "imageHighSrc": "cards/base4-013-high.png"
+    "imageHighSrc": "cards/base4-013-high.png",
+    "attacks": [
+      {
+        "name": "Lure",
+        "damage": null
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "1596",
-    "externalId": null,
+    "externalId": "base4-12",
     "tcgdex_id": "base4-12",
     "localId": "012",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "012/130",
+    "cardNumber": "12/130",
     "cardName": "Nidoqueen",
-    "fullDisplayName": "Nidoqueen 012/130 Base Set 2",
+    "fullDisplayName": "Nidoqueen 12/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3758,18 +4562,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-012-low.png",
-    "imageHighSrc": "cards/base4-012-high.png"
+    "imageHighSrc": "cards/base4-012-high.png",
+    "attacks": [
+      {
+        "name": "Boyfriends",
+        "damage": "20+"
+      },
+      {
+        "name": "Mega Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1595",
-    "externalId": null,
+    "externalId": "base4-11",
     "tcgdex_id": "base4-11",
     "localId": "011",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "011/130",
+    "cardNumber": "11/130",
     "cardName": "Nidoking",
-    "fullDisplayName": "Nidoking 011/130 Base Set 2",
+    "fullDisplayName": "Nidoking 11/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3791,18 +4605,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-011-low.png",
-    "imageHighSrc": "cards/base4-011-high.png"
+    "imageHighSrc": "cards/base4-011-high.png",
+    "attacks": [
+      {
+        "name": "Thrash",
+        "damage": "30+"
+      },
+      {
+        "name": "Toxic",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1594",
-    "externalId": null,
+    "externalId": "base4-10",
     "tcgdex_id": "base4-10",
     "localId": "010",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "010/130",
+    "cardNumber": "10/130",
     "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 010/130 Base Set 2",
+    "fullDisplayName": "Mewtwo 10/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3824,18 +4648,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-010-low.png",
-    "imageHighSrc": "cards/base4-010-high.png"
+    "imageHighSrc": "cards/base4-010-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "10+"
+      },
+      {
+        "name": "Barrier",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1593",
-    "externalId": null,
+    "externalId": "base4-9",
     "tcgdex_id": "base4-9",
     "localId": "009",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "009/130",
+    "cardNumber": "9/130",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 009/130 Base Set 2",
+    "fullDisplayName": "Magneton 9/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3857,18 +4691,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-009-low.png",
-    "imageHighSrc": "cards/base4-009-high.png"
+    "imageHighSrc": "cards/base4-009-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": "30"
+      },
+      {
+        "name": "Selfdestruct",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "1592",
-    "externalId": null,
+    "externalId": "base4-8",
     "tcgdex_id": "base4-8",
     "localId": "008",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "008/130",
+    "cardNumber": "8/130",
     "cardName": "Hitmonchan",
-    "fullDisplayName": "Hitmonchan 008/130 Base Set 2",
+    "fullDisplayName": "Hitmonchan 8/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3890,18 +4734,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-008-low.png",
-    "imageHighSrc": "cards/base4-008-high.png"
+    "imageHighSrc": "cards/base4-008-high.png",
+    "attacks": [
+      {
+        "name": "Jab",
+        "damage": "20"
+      },
+      {
+        "name": "Special Punch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1591",
-    "externalId": null,
+    "externalId": "base4-7",
     "tcgdex_id": "base4-7",
     "localId": "007",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "007/130",
+    "cardNumber": "7/130",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 007/130 Base Set 2",
+    "fullDisplayName": "Gyarados 7/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3923,18 +4777,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-007-low.png",
-    "imageHighSrc": "cards/base4-007-high.png"
+    "imageHighSrc": "cards/base4-007-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Rage",
+        "damage": "50"
+      },
+      {
+        "name": "Bubblebeam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1590",
-    "externalId": null,
+    "externalId": "base4-6",
     "tcgdex_id": "base4-6",
     "localId": "006",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "006/130",
+    "cardNumber": "6/130",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 006/130 Base Set 2",
+    "fullDisplayName": "Clefairy 6/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3956,18 +4820,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-006-low.png",
-    "imageHighSrc": "cards/base4-006-high.png"
+    "imageHighSrc": "cards/base4-006-high.png",
+    "attacks": [
+      {
+        "name": "Sing",
+        "damage": null
+      },
+      {
+        "name": "Metronome",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1589",
-    "externalId": null,
+    "externalId": "base4-5",
     "tcgdex_id": "base4-5",
     "localId": "005",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "005/130",
+    "cardNumber": "5/130",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 005/130 Base Set 2",
+    "fullDisplayName": "Clefable 5/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3989,18 +4863,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-005-low.png",
-    "imageHighSrc": "cards/base4-005-high.png"
+    "imageHighSrc": "cards/base4-005-high.png",
+    "attacks": [
+      {
+        "name": "Metronome",
+        "damage": null
+      },
+      {
+        "name": "Minimize",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1588",
-    "externalId": null,
+    "externalId": "base4-4",
     "tcgdex_id": "base4-4",
     "localId": "004",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "004/130",
+    "cardNumber": "4/130",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 004/130 Base Set 2",
+    "fullDisplayName": "Charizard 4/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4022,18 +4906,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-004-low.png",
-    "imageHighSrc": "cards/base4-004-high.png"
+    "imageHighSrc": "cards/base4-004-high.png",
+    "attacks": [
+      {
+        "name": "Fire Spin",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "1587",
-    "externalId": null,
+    "externalId": "base4-3",
     "tcgdex_id": "base4-3",
     "localId": "003",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "003/130",
+    "cardNumber": "3/130",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 003/130 Base Set 2",
+    "fullDisplayName": "Chansey 3/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4055,18 +4945,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-003-low.png",
-    "imageHighSrc": "cards/base4-003-high.png"
+    "imageHighSrc": "cards/base4-003-high.png",
+    "attacks": [
+      {
+        "name": "Scrunch",
+        "damage": null
+      },
+      {
+        "name": "Double-edge",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "1586",
-    "externalId": null,
+    "externalId": "base4-2",
     "tcgdex_id": "base4-2",
     "localId": "002",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "002/130",
+    "cardNumber": "2/130",
     "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 002/130 Base Set 2",
+    "fullDisplayName": "Blastoise 2/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4088,18 +4988,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-002-low.png",
-    "imageHighSrc": "cards/base4-002-high.png"
+    "imageHighSrc": "cards/base4-002-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "1585",
-    "externalId": null,
+    "externalId": "base4-1",
     "tcgdex_id": "base4-1",
     "localId": "001",
     "setCode": "base4",
     "setTcgdexId": "base4",
-    "cardNumber": "001/130",
+    "cardNumber": "1/130",
     "cardName": "Alakazam",
-    "fullDisplayName": "Alakazam 001/130 Base Set 2",
+    "fullDisplayName": "Alakazam 1/130 Base Set 2",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4121,6 +5027,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/base4-001-low.png",
-    "imageHighSrc": "cards/base4-001-high.png"
+    "imageHighSrc": "cards/base4-001-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "30"
+      }
+    ]
   }
 ]

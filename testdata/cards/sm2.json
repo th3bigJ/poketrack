@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "10738",
-    "externalId": null,
+    "externalId": "sm2-169",
     "tcgdex_id": "sm2-169",
     "localId": "169",
     "setCode": "sm2",
@@ -30,7 +30,7 @@
   },
   {
     "masterCardId": "10733",
-    "externalId": null,
+    "externalId": "sm2-168",
     "tcgdex_id": "sm2-168",
     "localId": "168",
     "setCode": "sm2",
@@ -59,7 +59,7 @@
   },
   {
     "masterCardId": "10728",
-    "externalId": null,
+    "externalId": "sm2-167",
     "tcgdex_id": "sm2-167",
     "localId": "167",
     "setCode": "sm2",
@@ -88,7 +88,7 @@
   },
   {
     "masterCardId": "10722",
-    "externalId": null,
+    "externalId": "sm2-166",
     "tcgdex_id": "sm2-166",
     "localId": "166",
     "setCode": "sm2",
@@ -113,11 +113,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-166-low.png",
-    "imageHighSrc": "cards/sm2-166-high.png"
+    "imageHighSrc": "cards/sm2-166-high.png",
+    "rules": "Double Colorless Energy provides ColorlessColorless Energy."
   },
   {
     "masterCardId": "10716",
-    "externalId": null,
+    "externalId": "sm2-165",
     "tcgdex_id": "sm2-165",
     "localId": "165",
     "setCode": "sm2",
@@ -142,11 +143,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-165-low.png",
-    "imageHighSrc": "cards/sm2-165-high.png"
+    "imageHighSrc": "cards/sm2-165-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card onto the Basic Pokémon to evolve it. You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10710",
-    "externalId": null,
+    "externalId": "sm2-164",
     "tcgdex_id": "sm2-164",
     "localId": "164",
     "setCode": "sm2",
@@ -171,11 +173,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-164-low.png",
-    "imageHighSrc": "cards/sm2-164-high.png"
+    "imageHighSrc": "cards/sm2-164-high.png",
+    "rules": "Heal all damage from 1 of your Pokémon. If you do, discard all Energy from that Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10705",
-    "externalId": null,
+    "externalId": "sm2-163",
     "tcgdex_id": "sm2-163",
     "localId": "163",
     "setCode": "sm2",
@@ -200,11 +203,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-163-low.png",
-    "imageHighSrc": "cards/sm2-163-high.png"
+    "imageHighSrc": "cards/sm2-163-high.png",
+    "rules": "Choose up to 2 in any combination of Pokémon Tool cards and Stadium cards in play (yours or your opponent's) and discard them.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10698",
-    "externalId": null,
+    "externalId": "sm2-162",
     "tcgdex_id": "sm2-162",
     "localId": "162",
     "setCode": "sm2",
@@ -229,11 +233,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-162-low.png",
-    "imageHighSrc": "cards/sm2-162-high.png"
+    "imageHighSrc": "cards/sm2-162-high.png",
+    "rules": "Discard a Special Energy from 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10692",
-    "externalId": null,
+    "externalId": "sm2-161",
     "tcgdex_id": "sm2-161",
     "localId": "161",
     "setCode": "sm2",
@@ -258,11 +263,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-161-low.png",
-    "imageHighSrc": "cards/sm2-161-high.png"
+    "imageHighSrc": "cards/sm2-161-high.png",
+    "rules": "Attach a Water Energy card from your discard pile to 1 of your Benched Water Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10686",
-    "externalId": null,
+    "externalId": "sm2-160",
     "tcgdex_id": "sm2-160",
     "localId": "160",
     "setCode": "sm2",
@@ -292,11 +298,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-160-low.png",
-    "imageHighSrc": "cards/sm2-160-high.png"
+    "imageHighSrc": "cards/sm2-160-high.png",
+    "attacks": [
+      {
+        "name": "Righteous Edge",
+        "damage": "20"
+      },
+      {
+        "name": "Berserk",
+        "damage": "80+"
+      },
+      {
+        "name": "Big Wheel-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10680",
-    "externalId": null,
+    "externalId": "sm2-159",
     "tcgdex_id": "sm2-159",
     "localId": "159",
     "setCode": "sm2",
@@ -326,11 +347,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-159-low.png",
-    "imageHighSrc": "cards/sm2-159-high.png"
+    "imageHighSrc": "cards/sm2-159-high.png",
+    "attacks": [
+      {
+        "name": "Adamantine Press",
+        "damage": "30"
+      },
+      {
+        "name": "Shred",
+        "damage": "130"
+      },
+      {
+        "name": "Ultra Uppercut-GX",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10673",
-    "externalId": null,
+    "externalId": "sm2-158",
     "tcgdex_id": "sm2-158",
     "localId": "158",
     "setCode": "sm2",
@@ -360,18 +396,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-158-low.png",
-    "imageHighSrc": "cards/sm2-158-high.png"
+    "imageHighSrc": "cards/sm2-158-high.png",
+    "attacks": [
+      {
+        "name": "Magical Ribbon",
+        "damage": null
+      },
+      {
+        "name": "Fairy Wind",
+        "damage": "110"
+      },
+      {
+        "name": "Plea-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10667",
-    "externalId": null,
+    "externalId": "sm2-157",
     "tcgdex_id": "sm2-157",
     "localId": "157",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "157a/145",
+    "cardNumber": "157/145",
     "cardName": "Metagross-GX",
-    "fullDisplayName": "Metagross-GX 157a/145 Guardians Rising",
+    "fullDisplayName": "Metagross-GX 157/145 Guardians Rising",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -394,11 +445,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-157a-low.png",
-    "imageHighSrc": "cards/sm2-157a-high.png"
+    "imageHighSrc": "cards/sm2-157a-high.png",
+    "attacks": [
+      {
+        "name": "Giga Hammer",
+        "damage": "150"
+      },
+      {
+        "name": "Algorithm-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10661",
-    "externalId": null,
+    "externalId": "sm2-157",
     "tcgdex_id": "sm2-157",
     "localId": "157",
     "setCode": "sm2",
@@ -428,11 +490,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-157-low.png",
-    "imageHighSrc": "cards/sm2-157-high.png"
+    "imageHighSrc": "cards/sm2-157-high.png",
+    "attacks": [
+      {
+        "name": "Giga Hammer",
+        "damage": "150"
+      },
+      {
+        "name": "Algorithm-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10655",
-    "externalId": null,
+    "externalId": "sm2-156",
     "tcgdex_id": "sm2-156",
     "localId": "156",
     "setCode": "sm2",
@@ -462,11 +535,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-156-low.png",
-    "imageHighSrc": "cards/sm2-156-high.png"
+    "imageHighSrc": "cards/sm2-156-high.png",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "110"
+      },
+      {
+        "name": "Dangerous Rogue-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10649",
-    "externalId": null,
+    "externalId": "sm2-155",
     "tcgdex_id": "sm2-155",
     "localId": "155",
     "setCode": "sm2",
@@ -496,11 +580,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-155-low.png",
-    "imageHighSrc": "cards/sm2-155-high.png"
+    "imageHighSrc": "cards/sm2-155-high.png",
+    "attacks": [
+      {
+        "name": "Energy Drive",
+        "damage": "20×"
+      },
+      {
+        "name": "Tapu Cure-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10643",
-    "externalId": null,
+    "externalId": "sm2-154",
     "tcgdex_id": "sm2-154",
     "localId": "154",
     "setCode": "sm2",
@@ -530,11 +625,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-154-low.png",
-    "imageHighSrc": "cards/sm2-154-high.png"
+    "imageHighSrc": "cards/sm2-154-high.png",
+    "attacks": [
+      {
+        "name": "Spike Cannon",
+        "damage": "30×"
+      },
+      {
+        "name": "Super Intense Poison",
+        "damage": null
+      },
+      {
+        "name": "Total Shelter-GX",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10637",
-    "externalId": null,
+    "externalId": "sm2-153",
     "tcgdex_id": "sm2-153",
     "localId": "153",
     "setCode": "sm2",
@@ -564,11 +674,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-153-low.png",
-    "imageHighSrc": "cards/sm2-153-high.png"
+    "imageHighSrc": "cards/sm2-153-high.png",
+    "attacks": [
+      {
+        "name": "Sky-High Claws",
+        "damage": "130"
+      },
+      {
+        "name": "Tapu Thunder-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10631",
-    "externalId": null,
+    "externalId": "sm2-152",
     "tcgdex_id": "sm2-152",
     "localId": "152",
     "setCode": "sm2",
@@ -598,11 +719,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-152-low.png",
-    "imageHighSrc": "cards/sm2-152-high.png"
+    "imageHighSrc": "cards/sm2-152-high.png",
+    "attacks": [
+      {
+        "name": "Charge Beam",
+        "damage": "50"
+      },
+      {
+        "name": "Super Zap Cannon",
+        "damage": "180"
+      },
+      {
+        "name": "Gigatron-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10625",
-    "externalId": null,
+    "externalId": "sm2-151",
     "tcgdex_id": "sm2-151",
     "localId": "151",
     "setCode": "sm2",
@@ -632,11 +768,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-151-low.png",
-    "imageHighSrc": "cards/sm2-151-high.png"
+    "imageHighSrc": "cards/sm2-151-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "20"
+      },
+      {
+        "name": "Torrential Vortex",
+        "damage": "120"
+      },
+      {
+        "name": "Blue Surge-GX",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10619",
-    "externalId": null,
+    "externalId": "sm2-150",
     "tcgdex_id": "sm2-150",
     "localId": "150",
     "setCode": "sm2",
@@ -666,11 +817,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-150-low.png",
-    "imageHighSrc": "cards/sm2-150-high.png"
+    "imageHighSrc": "cards/sm2-150-high.png",
+    "attacks": [
+      {
+        "name": "Ice Blade",
+        "damage": null
+      },
+      {
+        "name": "Blizzard Edge",
+        "damage": "160"
+      },
+      {
+        "name": "Ice Path-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10614",
-    "externalId": null,
+    "externalId": "sm2-149",
     "tcgdex_id": "sm2-149",
     "localId": "149",
     "setCode": "sm2",
@@ -700,11 +866,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-149-low.png",
-    "imageHighSrc": "cards/sm2-149-high.png"
+    "imageHighSrc": "cards/sm2-149-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Beat",
+        "damage": "10+"
+      },
+      {
+        "name": "Roaring Seas",
+        "damage": "120"
+      },
+      {
+        "name": "Grand Echo-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10608",
-    "externalId": null,
+    "externalId": "sm2-148",
     "tcgdex_id": "sm2-148",
     "localId": "148",
     "setCode": "sm2",
@@ -734,11 +915,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-148-low.png",
-    "imageHighSrc": "cards/sm2-148-high.png"
+    "imageHighSrc": "cards/sm2-148-high.png",
+    "attacks": [
+      {
+        "name": "Shell Trap",
+        "damage": "20"
+      },
+      {
+        "name": "Bright Flame",
+        "damage": "160"
+      },
+      {
+        "name": "Nitro Tank-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10602",
-    "externalId": null,
+    "externalId": "sm2-147",
     "tcgdex_id": "sm2-147",
     "localId": "147",
     "setCode": "sm2",
@@ -768,11 +964,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-147-low.png",
-    "imageHighSrc": "cards/sm2-147-high.png"
+    "imageHighSrc": "cards/sm2-147-high.png",
+    "attacks": [
+      {
+        "name": "Hustling Strike",
+        "damage": "10+"
+      },
+      {
+        "name": "Tiger Swing",
+        "damage": "80+"
+      },
+      {
+        "name": "Burning Slam-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10596",
-    "externalId": null,
+    "externalId": "sm2-146",
     "tcgdex_id": "sm2-146",
     "localId": "146",
     "setCode": "sm2",
@@ -802,11 +1013,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-146-low.png",
-    "imageHighSrc": "cards/sm2-146-high.png"
+    "imageHighSrc": "cards/sm2-146-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "90"
+      },
+      {
+        "name": "Hollow Hunt-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10590",
-    "externalId": null,
+    "externalId": "sm2-145",
     "tcgdex_id": "sm2-145",
     "localId": "145",
     "setCode": "sm2",
@@ -831,11 +1053,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-145-low.png",
-    "imageHighSrc": "cards/sm2-145-high.png"
+    "imageHighSrc": "cards/sm2-145-high.png",
+    "rules": "Search your deck for 2 cards, shuffle your deck, then put those cards on top of it in any order.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10584",
-    "externalId": null,
+    "externalId": "sm2-144",
     "tcgdex_id": "sm2-144",
     "localId": "144",
     "setCode": "sm2",
@@ -860,11 +1083,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-144-low.png",
-    "imageHighSrc": "cards/sm2-144-high.png"
+    "imageHighSrc": "cards/sm2-144-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10578",
-    "externalId": null,
+    "externalId": "sm2-143",
     "tcgdex_id": "sm2-143",
     "localId": "143",
     "setCode": "sm2",
@@ -889,11 +1113,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-143-low.png",
-    "imageHighSrc": "cards/sm2-143-high.png"
+    "imageHighSrc": "cards/sm2-143-high.png",
+    "rules": "Shuffle your hand into your deck. If you have used your GX attack, draw 7 cards. If not, draw 4 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10573",
-    "externalId": null,
+    "externalId": "sm2-142",
     "tcgdex_id": "sm2-142",
     "localId": "142",
     "setCode": "sm2",
@@ -923,11 +1148,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-142-low.png",
-    "imageHighSrc": "cards/sm2-142-high.png"
+    "imageHighSrc": "cards/sm2-142-high.png",
+    "attacks": [
+      {
+        "name": "Righteous Edge",
+        "damage": "20"
+      },
+      {
+        "name": "Berserk",
+        "damage": "80+"
+      },
+      {
+        "name": "Big Wheel-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10567",
-    "externalId": null,
+    "externalId": "sm2-141",
     "tcgdex_id": "sm2-141",
     "localId": "141",
     "setCode": "sm2",
@@ -957,11 +1197,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-141-low.png",
-    "imageHighSrc": "cards/sm2-141-high.png"
+    "imageHighSrc": "cards/sm2-141-high.png",
+    "attacks": [
+      {
+        "name": "Adamantine Press",
+        "damage": "30"
+      },
+      {
+        "name": "Shred",
+        "damage": "130"
+      },
+      {
+        "name": "Ultra Uppercut-GX",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10561",
-    "externalId": null,
+    "externalId": "sm2-140",
     "tcgdex_id": "sm2-140",
     "localId": "140",
     "setCode": "sm2",
@@ -991,11 +1246,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-140-low.png",
-    "imageHighSrc": "cards/sm2-140-high.png"
+    "imageHighSrc": "cards/sm2-140-high.png",
+    "attacks": [
+      {
+        "name": "Magical Ribbon",
+        "damage": null
+      },
+      {
+        "name": "Fairy Wind",
+        "damage": "110"
+      },
+      {
+        "name": "Plea-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10556",
-    "externalId": null,
+    "externalId": "sm2-139",
     "tcgdex_id": "sm2-139",
     "localId": "139",
     "setCode": "sm2",
@@ -1025,11 +1295,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-139-low.png",
-    "imageHighSrc": "cards/sm2-139-high.png"
+    "imageHighSrc": "cards/sm2-139-high.png",
+    "attacks": [
+      {
+        "name": "Giga Hammer",
+        "damage": "150"
+      },
+      {
+        "name": "Algorithm-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10550",
-    "externalId": null,
+    "externalId": "sm2-138",
     "tcgdex_id": "sm2-138",
     "localId": "138",
     "setCode": "sm2",
@@ -1059,11 +1340,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-138-low.png",
-    "imageHighSrc": "cards/sm2-138-high.png"
+    "imageHighSrc": "cards/sm2-138-high.png",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "110"
+      },
+      {
+        "name": "Dangerous Rogue-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10544",
-    "externalId": null,
+    "externalId": "sm2-137",
     "tcgdex_id": "sm2-137",
     "localId": "137",
     "setCode": "sm2",
@@ -1093,11 +1385,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-137-low.png",
-    "imageHighSrc": "cards/sm2-137-high.png"
+    "imageHighSrc": "cards/sm2-137-high.png",
+    "attacks": [
+      {
+        "name": "Energy Drive",
+        "damage": "20×"
+      },
+      {
+        "name": "Tapu Cure-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10540",
-    "externalId": null,
+    "externalId": "sm2-136",
     "tcgdex_id": "sm2-136",
     "localId": "136",
     "setCode": "sm2",
@@ -1127,11 +1430,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-136-low.png",
-    "imageHighSrc": "cards/sm2-136-high.png"
+    "imageHighSrc": "cards/sm2-136-high.png",
+    "attacks": [
+      {
+        "name": "Spike Cannon",
+        "damage": "30×"
+      },
+      {
+        "name": "Super Intense Poison",
+        "damage": null
+      },
+      {
+        "name": "Total Shelter-GX",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10534",
-    "externalId": null,
+    "externalId": "sm2-135",
     "tcgdex_id": "sm2-135",
     "localId": "135",
     "setCode": "sm2",
@@ -1161,11 +1479,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-135-low.png",
-    "imageHighSrc": "cards/sm2-135-high.png"
+    "imageHighSrc": "cards/sm2-135-high.png",
+    "attacks": [
+      {
+        "name": "Sky-High Claws",
+        "damage": "130"
+      },
+      {
+        "name": "Tapu Thunder-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10529",
-    "externalId": null,
+    "externalId": "sm2-134",
     "tcgdex_id": "sm2-134",
     "localId": "134",
     "setCode": "sm2",
@@ -1195,11 +1524,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-134-low.png",
-    "imageHighSrc": "cards/sm2-134-high.png"
+    "imageHighSrc": "cards/sm2-134-high.png",
+    "attacks": [
+      {
+        "name": "Charge Beam",
+        "damage": "50"
+      },
+      {
+        "name": "Super Zap Cannon",
+        "damage": "180"
+      },
+      {
+        "name": "Gigatron-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10522",
-    "externalId": null,
+    "externalId": "sm2-133",
     "tcgdex_id": "sm2-133",
     "localId": "133",
     "setCode": "sm2",
@@ -1229,11 +1573,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-133-low.png",
-    "imageHighSrc": "cards/sm2-133-high.png"
+    "imageHighSrc": "cards/sm2-133-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "20"
+      },
+      {
+        "name": "Torrential Vortex",
+        "damage": "120"
+      },
+      {
+        "name": "Blue Surge-GX",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10517",
-    "externalId": null,
+    "externalId": "sm2-132",
     "tcgdex_id": "sm2-132",
     "localId": "132",
     "setCode": "sm2",
@@ -1263,11 +1622,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-132-low.png",
-    "imageHighSrc": "cards/sm2-132-high.png"
+    "imageHighSrc": "cards/sm2-132-high.png",
+    "attacks": [
+      {
+        "name": "Ice Blade",
+        "damage": null
+      },
+      {
+        "name": "Blizzard Edge",
+        "damage": "160"
+      },
+      {
+        "name": "Ice Path-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10511",
-    "externalId": null,
+    "externalId": "sm2-131",
     "tcgdex_id": "sm2-131",
     "localId": "131",
     "setCode": "sm2",
@@ -1297,18 +1671,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-131-low.png",
-    "imageHighSrc": "cards/sm2-131-high.png"
+    "imageHighSrc": "cards/sm2-131-high.png",
+    "attacks": [
+      {
+        "name": "Shell Trap",
+        "damage": "20"
+      },
+      {
+        "name": "Bright Flame",
+        "damage": "160"
+      },
+      {
+        "name": "Nitro Tank-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10505",
-    "externalId": null,
+    "externalId": "sm2-130",
     "tcgdex_id": "sm2-130",
     "localId": "130",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "130a/145",
+    "cardNumber": "130/145",
     "cardName": "Rescue Stretcher",
-    "fullDisplayName": "Rescue Stretcher 130a/145 Guardians Rising",
+    "fullDisplayName": "Rescue Stretcher 130/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1326,11 +1715,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-130a-low.png",
-    "imageHighSrc": "cards/sm2-130a-high.png"
+    "imageHighSrc": "cards/sm2-130a-high.png",
+    "rules": "Choose 1:\n• Put a Pokémon from your discard pile into your hand.\n• Shuffle 3 Pokémon from your discard pile into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10499",
-    "externalId": null,
+    "externalId": "sm2-130",
     "tcgdex_id": "sm2-130",
     "localId": "130",
     "setCode": "sm2",
@@ -1355,11 +1745,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-130-low.png",
-    "imageHighSrc": "cards/sm2-130-high.png"
+    "imageHighSrc": "cards/sm2-130-high.png",
+    "rules": "Choose 1:\n• Put a Pokémon from your discard pile into your hand.\n• Shuffle 3 Pokémon from your discard pile into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10493",
-    "externalId": null,
+    "externalId": "sm2-129",
     "tcgdex_id": "sm2-129",
     "localId": "129",
     "setCode": "sm2",
@@ -1384,18 +1775,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-129-low.png",
-    "imageHighSrc": "cards/sm2-129-high.png"
+    "imageHighSrc": "cards/sm2-129-high.png",
+    "rules": "Move an Energy from 1 of your Benched Pokémon to your Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10487",
-    "externalId": null,
+    "externalId": "sm2-128",
     "tcgdex_id": "sm2-128",
     "localId": "128",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "128a/145",
+    "cardNumber": "128/145",
     "cardName": "Max Potion",
-    "fullDisplayName": "Max Potion 128a/145 Guardians Rising",
+    "fullDisplayName": "Max Potion 128/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1413,11 +1805,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-128a-low.png",
-    "imageHighSrc": "cards/sm2-128a-high.png"
+    "imageHighSrc": "cards/sm2-128a-high.png",
+    "rules": "Heal all damage from 1 of your Pokémon. If you do, discard all Energy from that Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10481",
-    "externalId": null,
+    "externalId": "sm2-128",
     "tcgdex_id": "sm2-128",
     "localId": "128",
     "setCode": "sm2",
@@ -1442,11 +1835,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-128-low.png",
-    "imageHighSrc": "cards/sm2-128-high.png"
+    "imageHighSrc": "cards/sm2-128-high.png",
+    "rules": "Heal all damage from 1 of your Pokémon. If you do, discard all Energy from that Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10474",
-    "externalId": null,
+    "externalId": "sm2-127",
     "tcgdex_id": "sm2-127",
     "localId": "127",
     "setCode": "sm2",
@@ -1471,11 +1865,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-127-low.png",
-    "imageHighSrc": "cards/sm2-127-high.png"
+    "imageHighSrc": "cards/sm2-127-high.png",
+    "rules": "Search your deck for 2 cards, shuffle your deck, and put those cards on top of your deck in any order.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10469",
-    "externalId": null,
+    "externalId": "sm2-126",
     "tcgdex_id": "sm2-126",
     "localId": "126",
     "setCode": "sm2",
@@ -1500,18 +1895,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-126-low.png",
-    "imageHighSrc": "cards/sm2-126-high.png"
+    "imageHighSrc": "cards/sm2-126-high.png",
+    "rules": "Shuffle your hand into your deck. If you have used your GX attack, draw 7 cards. If not, draw 4 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10463",
-    "externalId": null,
+    "externalId": "sm2-125",
     "tcgdex_id": "sm2-125",
     "localId": "125",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "125a/145",
+    "cardNumber": "125/145",
     "cardName": "Field Blower",
-    "fullDisplayName": "Field Blower 125a/145 Guardians Rising",
+    "fullDisplayName": "Field Blower 125/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1529,11 +1925,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-125a-low.png",
-    "imageHighSrc": "cards/sm2-125a-high.png"
+    "imageHighSrc": "cards/sm2-125a-high.png",
+    "rules": "Choose up to 2 in any combination of Pokémon Tool cards and Stadium cards in play (yours or your opponent's) and discard them.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10457",
-    "externalId": null,
+    "externalId": "sm2-125",
     "tcgdex_id": "sm2-125",
     "localId": "125",
     "setCode": "sm2",
@@ -1558,18 +1955,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-125-low.png",
-    "imageHighSrc": "cards/sm2-125-high.png"
+    "imageHighSrc": "cards/sm2-125-high.png",
+    "rules": "Choose up to 2 in any combination of Pokémon Tool cards and Stadium cards in play (yours or your opponent's) and discard them.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10451",
-    "externalId": null,
+    "externalId": "sm2-124",
     "tcgdex_id": "sm2-124",
     "localId": "124",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "124a/145",
+    "cardNumber": "124/145",
     "cardName": "Enhanced Hammer",
-    "fullDisplayName": "Enhanced Hammer 124a/145 Guardians Rising",
+    "fullDisplayName": "Enhanced Hammer 124/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1587,11 +1985,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-124a-low.png",
-    "imageHighSrc": "cards/sm2-124a-high.png"
+    "imageHighSrc": "cards/sm2-124a-high.png",
+    "rules": "Discard a Special Energy from 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10445",
-    "externalId": null,
+    "externalId": "sm2-124",
     "tcgdex_id": "sm2-124",
     "localId": "124",
     "setCode": "sm2",
@@ -1616,11 +2015,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-124-low.png",
-    "imageHighSrc": "cards/sm2-124-high.png"
+    "imageHighSrc": "cards/sm2-124-high.png",
+    "rules": "Discard a Special Energy from 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10439",
-    "externalId": null,
+    "externalId": "sm2-123",
     "tcgdex_id": "sm2-123",
     "localId": "123",
     "setCode": "sm2",
@@ -1645,11 +2045,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-123-low.png",
-    "imageHighSrc": "cards/sm2-123-high.png"
+    "imageHighSrc": "cards/sm2-123-high.png",
+    "rules": "Shuffle 5 basic Energy cards from your discard pile into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10434",
-    "externalId": null,
+    "externalId": "sm2-122",
     "tcgdex_id": "sm2-122",
     "localId": "122",
     "setCode": "sm2",
@@ -1674,18 +2075,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-122-low.png",
-    "imageHighSrc": "cards/sm2-122-high.png"
+    "imageHighSrc": "cards/sm2-122-high.png",
+    "rules": "Look at the top 7 cards of your deck. You may reveal an Energy card you find there and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10427",
-    "externalId": null,
+    "externalId": "sm2-121",
     "tcgdex_id": "sm2-121",
     "localId": "121",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "121a/145",
+    "cardNumber": "121/145",
     "cardName": "Choice Band",
-    "fullDisplayName": "Choice Band 121a/145 Guardians Rising",
+    "fullDisplayName": "Choice Band 121/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1703,11 +2105,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-121a-low.png",
-    "imageHighSrc": "cards/sm2-121a-high.png"
+    "imageHighSrc": "cards/sm2-121a-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe attacks of the Pokémon this card is attached to do 30 more damage to your opponent's Active Pokémon-GX or Active Pokémon-EX (before applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10422",
-    "externalId": null,
+    "externalId": "sm2-121",
     "tcgdex_id": "sm2-121",
     "localId": "121",
     "setCode": "sm2",
@@ -1732,11 +2135,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-121-low.png",
-    "imageHighSrc": "cards/sm2-121-high.png"
+    "imageHighSrc": "cards/sm2-121-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe attacks of the Pokémon this card is attached to do 30 more damage to your opponent's Active Pokémon-GX or Active Pokémon-EX (before applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10415",
-    "externalId": null,
+    "externalId": "sm2-120",
     "tcgdex_id": "sm2-120",
     "localId": "120",
     "setCode": "sm2",
@@ -1761,11 +2165,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-120-low.png",
-    "imageHighSrc": "cards/sm2-120-high.png"
+    "imageHighSrc": "cards/sm2-120-high.png",
+    "rules": "Once during each player's turn, that player may search their deck for a Basic Water Pokémon or Basic Fighting Pokémon and, put it onto their Bench, and shuffle their deck.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10407",
-    "externalId": null,
+    "externalId": "sm2-119",
     "tcgdex_id": "sm2-119",
     "localId": "119",
     "setCode": "sm2",
@@ -1790,11 +2195,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-119-low.png",
-    "imageHighSrc": "cards/sm2-119-high.png"
+    "imageHighSrc": "cards/sm2-119-high.png",
+    "rules": "Attach a Water Energy card from your discard pile to 1 of your Benched Water Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10398",
-    "externalId": null,
+    "externalId": "sm2-118",
     "tcgdex_id": "sm2-118",
     "localId": "118",
     "setCode": "sm2",
@@ -1819,11 +2225,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-118-low.png",
-    "imageHighSrc": "cards/sm2-118-high.png"
+    "imageHighSrc": "cards/sm2-118-high.png",
+    "rules": "Fire Pokémon and Metal Pokémon (both yours and your opponent's) have no Weakness.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10391",
-    "externalId": null,
+    "externalId": "sm2-117",
     "tcgdex_id": "sm2-117",
     "localId": "117",
     "setCode": "sm2",
@@ -1848,11 +2255,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-117-low.png",
-    "imageHighSrc": "cards/sm2-117-high.png"
+    "imageHighSrc": "cards/sm2-117-high.png",
+    "rules": "The Retreat Cost of each Pokémon (both yours and your opponent's) that has any Psychic or Darkness Energy attached to it is ColorlessColorless less.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10378",
-    "externalId": null,
+    "externalId": "sm2-116",
     "tcgdex_id": "sm2-116",
     "localId": "116",
     "setCode": "sm2",
@@ -1877,11 +2285,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-116-low.png",
-    "imageHighSrc": "cards/sm2-116-high.png"
+    "imageHighSrc": "cards/sm2-116-high.png",
+    "rules": "Basic Grass and Basic Lightning Pokémon (both yours and your opponent's) take 30 less damage from the opponent's attacks (after applying Weakness and Resistance).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10372",
-    "externalId": null,
+    "externalId": "sm2-115",
     "tcgdex_id": "sm2-115",
     "localId": "115",
     "setCode": "sm2",
@@ -1911,11 +2320,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-115-low.png",
-    "imageHighSrc": "cards/sm2-115-high.png"
+    "imageHighSrc": "cards/sm2-115-high.png",
+    "attacks": [
+      {
+        "name": "Righteous Edge",
+        "damage": "20"
+      },
+      {
+        "name": "Berserk",
+        "damage": "80+"
+      },
+      {
+        "name": "Big Wheel-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10365",
-    "externalId": null,
+    "externalId": "sm2-114",
     "tcgdex_id": "sm2-114",
     "localId": "114",
     "setCode": "sm2",
@@ -1944,11 +2368,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-114-low.png",
-    "imageHighSrc": "cards/sm2-114-high.png"
+    "imageHighSrc": "cards/sm2-114-high.png",
+    "attacks": [
+      {
+        "name": "Hypno Roll",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "10357",
-    "externalId": null,
+    "externalId": "sm2-113",
     "tcgdex_id": "sm2-113",
     "localId": "113",
     "setCode": "sm2",
@@ -1977,11 +2407,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-113-low.png",
-    "imageHighSrc": "cards/sm2-113-high.png"
+    "imageHighSrc": "cards/sm2-113-high.png",
+    "attacks": [
+      {
+        "name": "Dangerous Blow",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "10348",
-    "externalId": null,
+    "externalId": "sm2-112",
     "tcgdex_id": "sm2-112",
     "localId": "112",
     "setCode": "sm2",
@@ -2010,11 +2446,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-112-low.png",
-    "imageHighSrc": "cards/sm2-112-high.png"
+    "imageHighSrc": "cards/sm2-112-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10342",
-    "externalId": null,
+    "externalId": "sm2-111",
     "tcgdex_id": "sm2-111",
     "localId": "111",
     "setCode": "sm2",
@@ -2043,11 +2489,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-111-low.png",
-    "imageHighSrc": "cards/sm2-111-high.png"
+    "imageHighSrc": "cards/sm2-111-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": "30"
+      },
+      {
+        "name": "Loop-the-Loop",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10334",
-    "externalId": null,
+    "externalId": "sm2-110",
     "tcgdex_id": "sm2-110",
     "localId": "110",
     "setCode": "sm2",
@@ -2076,11 +2532,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-110-low.png",
-    "imageHighSrc": "cards/sm2-110-high.png"
+    "imageHighSrc": "cards/sm2-110-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "20"
+      },
+      {
+        "name": "Razor Wind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10327",
-    "externalId": null,
+    "externalId": "sm2-109",
     "tcgdex_id": "sm2-109",
     "localId": "109",
     "setCode": "sm2",
@@ -2109,11 +2575,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-109-low.png",
-    "imageHighSrc": "cards/sm2-109-high.png"
+    "imageHighSrc": "cards/sm2-109-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Flap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10320",
-    "externalId": null,
+    "externalId": "sm2-108",
     "tcgdex_id": "sm2-108",
     "localId": "108",
     "setCode": "sm2",
@@ -2142,11 +2618,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-108-low.png",
-    "imageHighSrc": "cards/sm2-108-high.png"
+    "imageHighSrc": "cards/sm2-108-high.png",
+    "attacks": [
+      {
+        "name": "Scrutinize",
+        "damage": null
+      },
+      {
+        "name": "Slam",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "10315",
-    "externalId": null,
+    "externalId": "sm2-107",
     "tcgdex_id": "sm2-107",
     "localId": "107",
     "setCode": "sm2",
@@ -2175,11 +2661,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-107-low.png",
-    "imageHighSrc": "cards/sm2-107-high.png"
+    "imageHighSrc": "cards/sm2-107-high.png",
+    "attacks": [
+      {
+        "name": "Glance",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10308",
-    "externalId": null,
+    "externalId": "sm2-106",
     "tcgdex_id": "sm2-106",
     "localId": "106",
     "setCode": "sm2",
@@ -2208,11 +2704,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-106-low.png",
-    "imageHighSrc": "cards/sm2-106-high.png"
+    "imageHighSrc": "cards/sm2-106-high.png",
+    "attacks": [
+      {
+        "name": "Turbo Storm",
+        "damage": "30"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "10302",
-    "externalId": null,
+    "externalId": "sm2-105",
     "tcgdex_id": "sm2-105",
     "localId": "105",
     "setCode": "sm2",
@@ -2241,11 +2747,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-105-low.png",
-    "imageHighSrc": "cards/sm2-105-high.png"
+    "imageHighSrc": "cards/sm2-105-high.png",
+    "attacks": [
+      {
+        "name": "Weather Teller",
+        "damage": null
+      },
+      {
+        "name": "Water Pulse",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10298",
-    "externalId": null,
+    "externalId": "sm2-104",
     "tcgdex_id": "sm2-104",
     "localId": "104",
     "setCode": "sm2",
@@ -2274,11 +2790,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-104-low.png",
-    "imageHighSrc": "cards/sm2-104-high.png"
+    "imageHighSrc": "cards/sm2-104-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "20"
+      },
+      {
+        "name": "Swallow Dive",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "10292",
-    "externalId": null,
+    "externalId": "sm2-103",
     "tcgdex_id": "sm2-103",
     "localId": "103",
     "setCode": "sm2",
@@ -2307,11 +2833,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-103-low.png",
-    "imageHighSrc": "cards/sm2-103-high.png"
+    "imageHighSrc": "cards/sm2-103-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10286",
-    "externalId": null,
+    "externalId": "sm2-102",
     "tcgdex_id": "sm2-102",
     "localId": "102",
     "setCode": "sm2",
@@ -2340,11 +2872,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-102-low.png",
-    "imageHighSrc": "cards/sm2-102-high.png"
+    "imageHighSrc": "cards/sm2-102-high.png",
+    "attacks": [
+      {
+        "name": "Double-Edge",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "10278",
-    "externalId": null,
+    "externalId": "sm2-101",
     "tcgdex_id": "sm2-101",
     "localId": "101",
     "setCode": "sm2",
@@ -2373,11 +2911,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-101-low.png",
-    "imageHighSrc": "cards/sm2-101-high.png"
+    "imageHighSrc": "cards/sm2-101-high.png",
+    "attacks": [
+      {
+        "name": "Bind Wound",
+        "damage": null
+      },
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "10273",
-    "externalId": null,
+    "externalId": "sm2-100",
     "tcgdex_id": "sm2-100",
     "localId": "100",
     "setCode": "sm2",
@@ -2407,18 +2955,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-100-low.png",
-    "imageHighSrc": "cards/sm2-100-high.png"
+    "imageHighSrc": "cards/sm2-100-high.png",
+    "attacks": [
+      {
+        "name": "Adamantine Press",
+        "damage": "30"
+      },
+      {
+        "name": "Shred",
+        "damage": "130"
+      },
+      {
+        "name": "Ultra Uppercut-GX",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10266",
-    "externalId": null,
+    "externalId": "sm2-99",
     "tcgdex_id": "sm2-99",
     "localId": "99",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "099/145",
+    "cardNumber": "99/145",
     "cardName": "Hakamo-o",
-    "fullDisplayName": "Hakamo-o 099/145 Guardians Rising",
+    "fullDisplayName": "Hakamo-o 99/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2440,18 +3003,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-099-low.png",
-    "imageHighSrc": "cards/sm2-099-high.png"
+    "imageHighSrc": "cards/sm2-099-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "10261",
-    "externalId": null,
+    "externalId": "sm2-98",
     "tcgdex_id": "sm2-98",
     "localId": "98",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "098/145",
+    "cardNumber": "98/145",
     "cardName": "Jangmo-o",
-    "fullDisplayName": "Jangmo-o 098/145 Guardians Rising",
+    "fullDisplayName": "Jangmo-o 98/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2473,18 +3046,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-098-low.png",
-    "imageHighSrc": "cards/sm2-098-high.png"
+    "imageHighSrc": "cards/sm2-098-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10256",
-    "externalId": null,
+    "externalId": "sm2-97",
     "tcgdex_id": "sm2-97",
     "localId": "97",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "097/145",
+    "cardNumber": "97/145",
     "cardName": "Drampa",
-    "fullDisplayName": "Drampa 097/145 Guardians Rising",
+    "fullDisplayName": "Drampa 97/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2506,18 +3085,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-097-low.png",
-    "imageHighSrc": "cards/sm2-097-high.png"
+    "imageHighSrc": "cards/sm2-097-high.png",
+    "attacks": [
+      {
+        "name": "Amass",
+        "damage": null
+      },
+      {
+        "name": "Power Cyclone",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "10250",
-    "externalId": null,
+    "externalId": "sm2-96",
     "tcgdex_id": "sm2-96",
     "localId": "96",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "096/145",
+    "cardNumber": "96/145",
     "cardName": "Goodra",
-    "fullDisplayName": "Goodra 096/145 Guardians Rising",
+    "fullDisplayName": "Goodra 96/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2539,18 +3128,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-096-low.png",
-    "imageHighSrc": "cards/sm2-096-high.png"
+    "imageHighSrc": "cards/sm2-096-high.png",
+    "attacks": [
+      {
+        "name": "Power Whip",
+        "damage": null
+      },
+      {
+        "name": "Beat Slider",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "10243",
-    "externalId": null,
+    "externalId": "sm2-95",
     "tcgdex_id": "sm2-95",
     "localId": "95",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "095/145",
+    "cardNumber": "95/145",
     "cardName": "Sliggoo",
-    "fullDisplayName": "Sliggoo 095/145 Guardians Rising",
+    "fullDisplayName": "Sliggoo 95/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2572,18 +3171,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-095-low.png",
-    "imageHighSrc": "cards/sm2-095-high.png"
+    "imageHighSrc": "cards/sm2-095-high.png",
+    "attacks": [
+      {
+        "name": "Division",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10235",
-    "externalId": null,
+    "externalId": "sm2-94",
     "tcgdex_id": "sm2-94",
     "localId": "94",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "094/145",
+    "cardNumber": "94/145",
     "cardName": "Goomy",
-    "fullDisplayName": "Goomy 094/145 Guardians Rising",
+    "fullDisplayName": "Goomy 94/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2605,18 +3214,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-094-low.png",
-    "imageHighSrc": "cards/sm2-094-high.png"
+    "imageHighSrc": "cards/sm2-094-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10228",
-    "externalId": null,
+    "externalId": "sm2-93",
     "tcgdex_id": "sm2-93",
     "localId": "93",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "093/145",
+    "cardNumber": "93/145",
     "cardName": "Comfey",
-    "fullDisplayName": "Comfey 093/145 Guardians Rising",
+    "fullDisplayName": "Comfey 93/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2638,18 +3257,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-093-low.png",
-    "imageHighSrc": "cards/sm2-093-high.png"
+    "imageHighSrc": "cards/sm2-093-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Kiss",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10221",
-    "externalId": null,
+    "externalId": "sm2-92",
     "tcgdex_id": "sm2-92",
     "localId": "92",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "92a/145",
+    "cardNumber": "92/145",
     "cardName": "Sylveon-GX",
-    "fullDisplayName": "Sylveon-GX 92a/145 Guardians Rising",
+    "fullDisplayName": "Sylveon-GX 92/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2672,18 +3297,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-92a-low.png",
-    "imageHighSrc": "cards/sm2-92a-high.png"
+    "imageHighSrc": "cards/sm2-92a-high.png",
+    "attacks": [
+      {
+        "name": "Magical Ribbon",
+        "damage": null
+      },
+      {
+        "name": "Fairy Wind",
+        "damage": "110"
+      },
+      {
+        "name": "Plea-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10214",
-    "externalId": null,
+    "externalId": "sm2-92",
     "tcgdex_id": "sm2-92",
     "localId": "92",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "092/145",
+    "cardNumber": "92/145",
     "cardName": "Sylveon-GX",
-    "fullDisplayName": "Sylveon-GX 092/145 Guardians Rising",
+    "fullDisplayName": "Sylveon-GX 92/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2706,18 +3346,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-092-low.png",
-    "imageHighSrc": "cards/sm2-092-high.png"
+    "imageHighSrc": "cards/sm2-092-high.png",
+    "attacks": [
+      {
+        "name": "Magical Ribbon",
+        "damage": null
+      },
+      {
+        "name": "Fairy Wind",
+        "damage": "110"
+      },
+      {
+        "name": "Plea-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10208",
-    "externalId": null,
+    "externalId": "sm2-91",
     "tcgdex_id": "sm2-91",
     "localId": "91",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "091/145",
+    "cardNumber": "91/145",
     "cardName": "Whimsicott",
-    "fullDisplayName": "Whimsicott 091/145 Guardians Rising",
+    "fullDisplayName": "Whimsicott 91/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2739,18 +3394,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-091-low.png",
-    "imageHighSrc": "cards/sm2-091-high.png"
+    "imageHighSrc": "cards/sm2-091-high.png",
+    "attacks": [
+      {
+        "name": "The Wages of Fluff",
+        "damage": null
+      },
+      {
+        "name": "Fairy Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10201",
-    "externalId": null,
+    "externalId": "sm2-90",
     "tcgdex_id": "sm2-90",
     "localId": "90",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "090/145",
+    "cardNumber": "90/145",
     "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 090/145 Guardians Rising",
+    "fullDisplayName": "Cottonee 90/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2772,18 +3437,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-090-low.png",
-    "imageHighSrc": "cards/sm2-090-high.png"
+    "imageHighSrc": "cards/sm2-090-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Tumble",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "10193",
-    "externalId": null,
+    "externalId": "sm2-89",
     "tcgdex_id": "sm2-89",
     "localId": "89",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "089/145",
+    "cardNumber": "89/145",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 089/145 Guardians Rising",
+    "fullDisplayName": "Clefable 89/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2805,18 +3476,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-089-low.png",
-    "imageHighSrc": "cards/sm2-089-high.png"
+    "imageHighSrc": "cards/sm2-089-high.png",
+    "attacks": [
+      {
+        "name": "Lullaby",
+        "damage": "20"
+      },
+      {
+        "name": "Meteor Mash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10189",
-    "externalId": null,
+    "externalId": "sm2-88",
     "tcgdex_id": "sm2-88",
     "localId": "88",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "088/145",
+    "cardNumber": "88/145",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 088/145 Guardians Rising",
+    "fullDisplayName": "Clefairy 88/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2838,18 +3519,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-088-low.png",
-    "imageHighSrc": "cards/sm2-088-high.png"
+    "imageHighSrc": "cards/sm2-088-high.png",
+    "attacks": [
+      {
+        "name": "Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Follow Me",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10181",
-    "externalId": null,
+    "externalId": "sm2-87",
     "tcgdex_id": "sm2-87",
     "localId": "87",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "087/145",
+    "cardNumber": "87/145",
     "cardName": "Solgaleo",
-    "fullDisplayName": "Solgaleo 087/145 Guardians Rising",
+    "fullDisplayName": "Solgaleo 87/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2871,18 +3562,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-087-low.png",
-    "imageHighSrc": "cards/sm2-087-high.png"
+    "imageHighSrc": "cards/sm2-087-high.png",
+    "attacks": [
+      {
+        "name": "Shining Arrow",
+        "damage": null
+      },
+      {
+        "name": "Fangs of the Sunne",
+        "damage": "170"
+      }
+    ]
   },
   {
     "masterCardId": "10174",
-    "externalId": null,
+    "externalId": "sm2-86",
     "tcgdex_id": "sm2-86",
     "localId": "86",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "086/145",
+    "cardNumber": "86/145",
     "cardName": "Probopass",
-    "fullDisplayName": "Probopass 086/145 Guardians Rising",
+    "fullDisplayName": "Probopass 86/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2904,18 +3605,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-086-low.png",
-    "imageHighSrc": "cards/sm2-086-high.png"
+    "imageHighSrc": "cards/sm2-086-high.png",
+    "attacks": [
+      {
+        "name": "Energy Link",
+        "damage": "30"
+      },
+      {
+        "name": "Power Gem",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10168",
-    "externalId": null,
+    "externalId": "sm2-85",
     "tcgdex_id": "sm2-85",
     "localId": "85",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "085/145",
+    "cardNumber": "85/145",
     "cardName": "Metagross-GX",
-    "fullDisplayName": "Metagross-GX 085/145 Guardians Rising",
+    "fullDisplayName": "Metagross-GX 85/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2938,18 +3649,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-085-low.png",
-    "imageHighSrc": "cards/sm2-085-high.png"
+    "imageHighSrc": "cards/sm2-085-high.png",
+    "attacks": [
+      {
+        "name": "Giga Hammer",
+        "damage": "150"
+      },
+      {
+        "name": "Algorithm-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10160",
-    "externalId": null,
+    "externalId": "sm2-84",
     "tcgdex_id": "sm2-84",
     "localId": "84",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "084/145",
+    "cardNumber": "84/145",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 084/145 Guardians Rising",
+    "fullDisplayName": "Metang 84/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2971,18 +3693,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-084-low.png",
-    "imageHighSrc": "cards/sm2-084-high.png"
+    "imageHighSrc": "cards/sm2-084-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Core Beam",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "10153",
-    "externalId": null,
+    "externalId": "sm2-83",
     "tcgdex_id": "sm2-83",
     "localId": "83",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "083/145",
+    "cardNumber": "83/145",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 083/145 Guardians Rising",
+    "fullDisplayName": "Beldum 83/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3004,18 +3736,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-083-low.png",
-    "imageHighSrc": "cards/sm2-083-high.png"
+    "imageHighSrc": "cards/sm2-083-high.png",
+    "attacks": [
+      {
+        "name": "Core Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10147",
-    "externalId": null,
+    "externalId": "sm2-82",
     "tcgdex_id": "sm2-82",
     "localId": "82",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "082/145",
+    "cardNumber": "82/145",
     "cardName": "Pangoro",
-    "fullDisplayName": "Pangoro 082/145 Guardians Rising",
+    "fullDisplayName": "Pangoro 82/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3037,18 +3775,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-082-low.png",
-    "imageHighSrc": "cards/sm2-082-high.png"
+    "imageHighSrc": "cards/sm2-082-high.png",
+    "attacks": [
+      {
+        "name": "Sky Uppercut",
+        "damage": "70"
+      },
+      {
+        "name": "Magnum Punch",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "10143",
-    "externalId": null,
+    "externalId": "sm2-81",
     "tcgdex_id": "sm2-81",
     "localId": "81",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "081/145",
+    "cardNumber": "81/145",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 081/145 Guardians Rising",
+    "fullDisplayName": "Absol 81/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3070,18 +3818,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-081-low.png",
-    "imageHighSrc": "cards/sm2-081-high.png"
+    "imageHighSrc": "cards/sm2-081-high.png",
+    "attacks": [
+      {
+        "name": "Future Sight",
+        "damage": null
+      },
+      {
+        "name": "Doom News",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10137",
-    "externalId": null,
+    "externalId": "sm2-80",
     "tcgdex_id": "sm2-80",
     "localId": "80",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "080/145",
+    "cardNumber": "80/145",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 080/145 Guardians Rising",
+    "fullDisplayName": "Sableye 80/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3103,18 +3861,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-080-low.png",
-    "imageHighSrc": "cards/sm2-080-high.png"
+    "imageHighSrc": "cards/sm2-080-high.png",
+    "attacks": [
+      {
+        "name": "Limitation",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10132",
-    "externalId": null,
+    "externalId": "sm2-79",
     "tcgdex_id": "sm2-79",
     "localId": "79",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "079/145",
+    "cardNumber": "79/145",
     "cardName": "Honchkrow",
-    "fullDisplayName": "Honchkrow 079/145 Guardians Rising",
+    "fullDisplayName": "Honchkrow 79/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3136,18 +3904,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-079-low.png",
-    "imageHighSrc": "cards/sm2-079-high.png"
+    "imageHighSrc": "cards/sm2-079-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      },
+      {
+        "name": "Raven's Claw",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "10125",
-    "externalId": null,
+    "externalId": "sm2-78",
     "tcgdex_id": "sm2-78",
     "localId": "78",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "078/145",
+    "cardNumber": "78/145",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 078/145 Guardians Rising",
+    "fullDisplayName": "Murkrow 78/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3169,18 +3947,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-078-low.png",
-    "imageHighSrc": "cards/sm2-078-high.png"
+    "imageHighSrc": "cards/sm2-078-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10117",
-    "externalId": null,
+    "externalId": "sm2-77",
     "tcgdex_id": "sm2-77",
     "localId": "77",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "077/145",
+    "cardNumber": "77/145",
     "cardName": "Minior",
-    "fullDisplayName": "Minior 077/145 Guardians Rising",
+    "fullDisplayName": "Minior 77/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3202,18 +3986,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-077-low.png",
-    "imageHighSrc": "cards/sm2-077-high.png"
+    "imageHighSrc": "cards/sm2-077-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "20"
+      },
+      {
+        "name": "Cosmicsplosion",
+        "damage": "190"
+      }
+    ]
   },
   {
     "masterCardId": "10108",
-    "externalId": null,
+    "externalId": "sm2-76",
     "tcgdex_id": "sm2-76",
     "localId": "76",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "076/145",
+    "cardNumber": "76/145",
     "cardName": "Mudsdale",
-    "fullDisplayName": "Mudsdale 076/145 Guardians Rising",
+    "fullDisplayName": "Mudsdale 76/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3235,18 +4029,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-076-low.png",
-    "imageHighSrc": "cards/sm2-076-high.png"
+    "imageHighSrc": "cards/sm2-076-high.png",
+    "attacks": [
+      {
+        "name": "Enhanced Stomp",
+        "damage": "60+"
+      },
+      {
+        "name": "High Horsepower",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "10101",
-    "externalId": null,
+    "externalId": "sm2-75",
     "tcgdex_id": "sm2-75",
     "localId": "75",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "075/145",
+    "cardNumber": "75/145",
     "cardName": "Mudbray",
-    "fullDisplayName": "Mudbray 075/145 Guardians Rising",
+    "fullDisplayName": "Mudbray 75/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3268,18 +4072,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-075-low.png",
-    "imageHighSrc": "cards/sm2-075-high.png"
+    "imageHighSrc": "cards/sm2-075-high.png",
+    "attacks": [
+      {
+        "name": "Double Kick",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "10089",
-    "externalId": null,
+    "externalId": "sm2-74",
     "tcgdex_id": "sm2-74",
     "localId": "74",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "074/145",
+    "cardNumber": "74/145",
     "cardName": "Lycanroc-GX",
-    "fullDisplayName": "Lycanroc-GX 074/145 Guardians Rising",
+    "fullDisplayName": "Lycanroc-GX 74/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3302,18 +4112,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-074-low.png",
-    "imageHighSrc": "cards/sm2-074-high.png"
+    "imageHighSrc": "cards/sm2-074-high.png",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "110"
+      },
+      {
+        "name": "Dangerous Rogue-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10082",
-    "externalId": null,
+    "externalId": "sm2-73",
     "tcgdex_id": "sm2-73",
     "localId": "73",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "073/145",
+    "cardNumber": "73/145",
     "cardName": "Rockruff",
-    "fullDisplayName": "Rockruff 073/145 Guardians Rising",
+    "fullDisplayName": "Rockruff 73/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3335,18 +4156,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-073-low.png",
-    "imageHighSrc": "cards/sm2-073-high.png"
+    "imageHighSrc": "cards/sm2-073-high.png",
+    "attacks": [
+      {
+        "name": "Corner",
+        "damage": null
+      },
+      {
+        "name": "Wild Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10075",
-    "externalId": null,
+    "externalId": "sm2-72",
     "tcgdex_id": "sm2-72",
     "localId": "72",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "072/145",
+    "cardNumber": "72/145",
     "cardName": "Pancham",
-    "fullDisplayName": "Pancham 072/145 Guardians Rising",
+    "fullDisplayName": "Pancham 72/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3368,18 +4199,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-072-low.png",
-    "imageHighSrc": "cards/sm2-072-high.png"
+    "imageHighSrc": "cards/sm2-072-high.png",
+    "attacks": [
+      {
+        "name": "Karate Chop",
+        "damage": "60-"
+      }
+    ]
   },
   {
     "masterCardId": "10068",
-    "externalId": null,
+    "externalId": "sm2-71",
     "tcgdex_id": "sm2-71",
     "localId": "71",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "071/145",
+    "cardNumber": "71/145",
     "cardName": "Whiscash",
-    "fullDisplayName": "Whiscash 071/145 Guardians Rising",
+    "fullDisplayName": "Whiscash 71/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3401,18 +4238,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-071-low.png",
-    "imageHighSrc": "cards/sm2-071-high.png"
+    "imageHighSrc": "cards/sm2-071-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "60"
+      },
+      {
+        "name": "Landslip",
+        "damage": "100×"
+      }
+    ]
   },
   {
     "masterCardId": "10061",
-    "externalId": null,
+    "externalId": "sm2-70",
     "tcgdex_id": "sm2-70",
     "localId": "70",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "070/145",
+    "cardNumber": "70/145",
     "cardName": "Barboach",
-    "fullDisplayName": "Barboach 070/145 Guardians Rising",
+    "fullDisplayName": "Barboach 70/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3434,18 +4281,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-070-low.png",
-    "imageHighSrc": "cards/sm2-070-high.png"
+    "imageHighSrc": "cards/sm2-070-high.png",
+    "attacks": [
+      {
+        "name": "Hook",
+        "damage": "10"
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10052",
-    "externalId": null,
+    "externalId": "sm2-69",
     "tcgdex_id": "sm2-69",
     "localId": "69",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "069/145",
+    "cardNumber": "69/145",
     "cardName": "Nosepass",
-    "fullDisplayName": "Nosepass 069/145 Guardians Rising",
+    "fullDisplayName": "Nosepass 69/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3467,18 +4324,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-069-low.png",
-    "imageHighSrc": "cards/sm2-069-high.png"
+    "imageHighSrc": "cards/sm2-069-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Rising Lunge",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "10043",
-    "externalId": null,
+    "externalId": "sm2-68",
     "tcgdex_id": "sm2-68",
     "localId": "68",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "068/145",
+    "cardNumber": "68/145",
     "cardName": "Gliscor",
-    "fullDisplayName": "Gliscor 068/145 Guardians Rising",
+    "fullDisplayName": "Gliscor 68/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3500,18 +4367,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-068-low.png",
-    "imageHighSrc": "cards/sm2-068-high.png"
+    "imageHighSrc": "cards/sm2-068-high.png",
+    "attacks": [
+      {
+        "name": "Finishing Stinger",
+        "damage": "70"
+      },
+      {
+        "name": "Guillotine",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10036",
-    "externalId": null,
+    "externalId": "sm2-67",
     "tcgdex_id": "sm2-67",
     "localId": "67",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "067/145",
+    "cardNumber": "67/145",
     "cardName": "Gligar",
-    "fullDisplayName": "Gligar 067/145 Guardians Rising",
+    "fullDisplayName": "Gligar 67/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3533,18 +4410,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-067-low.png",
-    "imageHighSrc": "cards/sm2-067-high.png"
+    "imageHighSrc": "cards/sm2-067-high.png",
+    "attacks": [
+      {
+        "name": "Double Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10027",
-    "externalId": null,
+    "externalId": "sm2-66",
     "tcgdex_id": "sm2-66",
     "localId": "66",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "066/145",
+    "cardNumber": "66/145",
     "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo 066/145 Guardians Rising",
+    "fullDisplayName": "Sudowoodo 66/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3566,18 +4449,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-066-low.png",
-    "imageHighSrc": "cards/sm2-066-high.png"
+    "imageHighSrc": "cards/sm2-066-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10019",
-    "externalId": null,
+    "externalId": "sm2-65",
     "tcgdex_id": "sm2-65",
     "localId": "65",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "065/145",
+    "cardNumber": "65/145",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 065/145 Guardians Rising",
+    "fullDisplayName": "Machamp 65/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3599,18 +4488,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-065-low.png",
-    "imageHighSrc": "cards/sm2-065-high.png"
+    "imageHighSrc": "cards/sm2-065-high.png",
+    "attacks": [
+      {
+        "name": "Settle the Score",
+        "damage": "20+"
+      },
+      {
+        "name": "Submission",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "10011",
-    "externalId": null,
+    "externalId": "sm2-64",
     "tcgdex_id": "sm2-64",
     "localId": "64",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "064/145",
+    "cardNumber": "64/145",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 064/145 Guardians Rising",
+    "fullDisplayName": "Machoke 64/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3632,18 +4531,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-064-low.png",
-    "imageHighSrc": "cards/sm2-064-high.png"
+    "imageHighSrc": "cards/sm2-064-high.png",
+    "attacks": [
+      {
+        "name": "Cross Chop",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "10004",
-    "externalId": null,
+    "externalId": "sm2-63",
     "tcgdex_id": "sm2-63",
     "localId": "63",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "063/145",
+    "cardNumber": "63/145",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 063/145 Guardians Rising",
+    "fullDisplayName": "Machop 63/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3665,18 +4570,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-063-low.png",
-    "imageHighSrc": "cards/sm2-063-high.png"
+    "imageHighSrc": "cards/sm2-063-high.png",
+    "attacks": [
+      {
+        "name": "Dynamic Chop",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9996",
-    "externalId": null,
+    "externalId": "sm2-62",
     "tcgdex_id": "sm2-62",
     "localId": "62",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "062/145",
+    "cardNumber": "62/145",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 062/145 Guardians Rising",
+    "fullDisplayName": "Machop 62/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3698,18 +4609,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-062-low.png",
-    "imageHighSrc": "cards/sm2-062-high.png"
+    "imageHighSrc": "cards/sm2-062-high.png",
+    "attacks": [
+      {
+        "name": "Dual Chop",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "9985",
-    "externalId": null,
+    "externalId": "sm2-61",
     "tcgdex_id": "sm2-61",
     "localId": "61",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "061/145",
+    "cardNumber": "61/145",
     "cardName": "Lunala",
-    "fullDisplayName": "Lunala 061/145 Guardians Rising",
+    "fullDisplayName": "Lunala 61/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3731,18 +4648,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-061-low.png",
-    "imageHighSrc": "cards/sm2-061-high.png"
+    "imageHighSrc": "cards/sm2-061-high.png",
+    "attacks": [
+      {
+        "name": "Shatter Shot",
+        "damage": "40×"
+      },
+      {
+        "name": "Wings of the Moone",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "9976",
-    "externalId": null,
+    "externalId": "sm2-60",
     "tcgdex_id": "sm2-60",
     "localId": "60",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "60a/145",
+    "cardNumber": "60/145",
     "cardName": "Tapu Lele-GX",
-    "fullDisplayName": "Tapu Lele-GX 60a/145 Guardians Rising",
+    "fullDisplayName": "Tapu Lele-GX 60/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3765,18 +4692,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-60a-low.png",
-    "imageHighSrc": "cards/sm2-60a-high.png"
+    "imageHighSrc": "cards/sm2-60a-high.png",
+    "attacks": [
+      {
+        "name": "Energy Drive",
+        "damage": "20×"
+      },
+      {
+        "name": "Tapu Cure-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9968",
-    "externalId": null,
+    "externalId": "sm2-60",
     "tcgdex_id": "sm2-60",
     "localId": "60",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "060/145",
+    "cardNumber": "60/145",
     "cardName": "Tapu Lele-GX",
-    "fullDisplayName": "Tapu Lele-GX 060/145 Guardians Rising",
+    "fullDisplayName": "Tapu Lele-GX 60/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3799,18 +4737,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-060-low.png",
-    "imageHighSrc": "cards/sm2-060-high.png"
+    "imageHighSrc": "cards/sm2-060-high.png",
+    "attacks": [
+      {
+        "name": "Energy Drive",
+        "damage": "20×"
+      },
+      {
+        "name": "Tapu Cure-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9959",
-    "externalId": null,
+    "externalId": "sm2-59",
     "tcgdex_id": "sm2-59",
     "localId": "59",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "059/145",
+    "cardNumber": "59/145",
     "cardName": "Dhelmise",
-    "fullDisplayName": "Dhelmise 059/145 Guardians Rising",
+    "fullDisplayName": "Dhelmise 59/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3832,18 +4781,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-059-low.png",
-    "imageHighSrc": "cards/sm2-059-high.png"
+    "imageHighSrc": "cards/sm2-059-high.png",
+    "attacks": [
+      {
+        "name": "Anchor Shot",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9948",
-    "externalId": null,
+    "externalId": "sm2-58",
     "tcgdex_id": "sm2-58",
     "localId": "58",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "058/145",
+    "cardNumber": "58/145",
     "cardName": "Mimikyu",
-    "fullDisplayName": "Mimikyu 058/145 Guardians Rising",
+    "fullDisplayName": "Mimikyu 58/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3865,18 +4820,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-058-low.png",
-    "imageHighSrc": "cards/sm2-058-high.png"
+    "imageHighSrc": "cards/sm2-058-high.png",
+    "attacks": [
+      {
+        "name": "Filch",
+        "damage": null
+      },
+      {
+        "name": "Copycat",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9940",
-    "externalId": null,
+    "externalId": "sm2-57",
     "tcgdex_id": "sm2-57",
     "localId": "57",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "057/145",
+    "cardNumber": "57/145",
     "cardName": "Toxapex-GX",
-    "fullDisplayName": "Toxapex-GX 057/145 Guardians Rising",
+    "fullDisplayName": "Toxapex-GX 57/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3899,18 +4864,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-057-low.png",
-    "imageHighSrc": "cards/sm2-057-high.png"
+    "imageHighSrc": "cards/sm2-057-high.png",
+    "attacks": [
+      {
+        "name": "Spike Cannon",
+        "damage": "30×"
+      },
+      {
+        "name": "Super Intense Poison",
+        "damage": null
+      },
+      {
+        "name": "Total Shelter-GX",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9932",
-    "externalId": null,
+    "externalId": "sm2-56",
     "tcgdex_id": "sm2-56",
     "localId": "56",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "056/145",
+    "cardNumber": "56/145",
     "cardName": "Oricorio",
-    "fullDisplayName": "Oricorio 056/145 Guardians Rising",
+    "fullDisplayName": "Oricorio 56/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3932,18 +4912,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-056-low.png",
-    "imageHighSrc": "cards/sm2-056-high.png"
+    "imageHighSrc": "cards/sm2-056-high.png",
+    "attacks": [
+      {
+        "name": "Supernatural Dance",
+        "damage": null
+      },
+      {
+        "name": "Revelation Dance",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9923",
-    "externalId": null,
+    "externalId": "sm2-55",
     "tcgdex_id": "sm2-55",
     "localId": "55",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "055/145",
+    "cardNumber": "55/145",
     "cardName": "Oricorio",
-    "fullDisplayName": "Oricorio 055/145 Guardians Rising",
+    "fullDisplayName": "Oricorio 55/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3965,18 +4955,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-055-low.png",
-    "imageHighSrc": "cards/sm2-055-high.png"
+    "imageHighSrc": "cards/sm2-055-high.png",
+    "attacks": [
+      {
+        "name": "Casual Slap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9915",
-    "externalId": null,
+    "externalId": "sm2-54",
     "tcgdex_id": "sm2-54",
     "localId": "54",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "054/145",
+    "cardNumber": "54/145",
     "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 054/145 Guardians Rising",
+    "fullDisplayName": "Gothitelle 54/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3998,18 +4994,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-054-low.png",
-    "imageHighSrc": "cards/sm2-054-high.png"
+    "imageHighSrc": "cards/sm2-054-high.png",
+    "attacks": [
+      {
+        "name": "Tractorbeam",
+        "damage": null
+      },
+      {
+        "name": "Link Blast",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "9906",
-    "externalId": null,
+    "externalId": "sm2-53",
     "tcgdex_id": "sm2-53",
     "localId": "53",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "053/145",
+    "cardNumber": "53/145",
     "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 053/145 Guardians Rising",
+    "fullDisplayName": "Gothorita 53/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4031,18 +5037,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-053-low.png",
-    "imageHighSrc": "cards/sm2-053-high.png"
+    "imageHighSrc": "cards/sm2-053-high.png",
+    "attacks": [
+      {
+        "name": "Slap",
+        "damage": "20"
+      },
+      {
+        "name": "Psybeam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9898",
-    "externalId": null,
+    "externalId": "sm2-52",
     "tcgdex_id": "sm2-52",
     "localId": "52",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "052/145",
+    "cardNumber": "52/145",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 052/145 Guardians Rising",
+    "fullDisplayName": "Gothita 52/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4064,18 +5080,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-052-low.png",
-    "imageHighSrc": "cards/sm2-052-high.png"
+    "imageHighSrc": "cards/sm2-052-high.png",
+    "attacks": [
+      {
+        "name": "Blown Kiss",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9891",
-    "externalId": null,
+    "externalId": "sm2-51",
     "tcgdex_id": "sm2-51",
     "localId": "51",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "51a/145",
+    "cardNumber": "51/145",
     "cardName": "Garbodor",
-    "fullDisplayName": "Garbodor 51a/145 Guardians Rising",
+    "fullDisplayName": "Garbodor 51/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4097,18 +5119,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-51a-low.png",
-    "imageHighSrc": "cards/sm2-51a-high.png"
+    "imageHighSrc": "cards/sm2-51a-high.png",
+    "attacks": [
+      {
+        "name": "Trashalanche",
+        "damage": "20×"
+      },
+      {
+        "name": "Acid Spray",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9882",
-    "externalId": null,
+    "externalId": "sm2-51",
     "tcgdex_id": "sm2-51",
     "localId": "51",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "051/145",
+    "cardNumber": "51/145",
     "cardName": "Garbodor",
-    "fullDisplayName": "Garbodor 051/145 Guardians Rising",
+    "fullDisplayName": "Garbodor 51/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4130,18 +5162,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-051-low.png",
-    "imageHighSrc": "cards/sm2-051-high.png"
+    "imageHighSrc": "cards/sm2-051-high.png",
+    "attacks": [
+      {
+        "name": "Trashalanche",
+        "damage": "20×"
+      },
+      {
+        "name": "Acid Spray",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9874",
-    "externalId": null,
+    "externalId": "sm2-50",
     "tcgdex_id": "sm2-50",
     "localId": "50",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "050/145",
+    "cardNumber": "50/145",
     "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 050/145 Guardians Rising",
+    "fullDisplayName": "Trubbish 50/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4163,18 +5205,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-050-low.png",
-    "imageHighSrc": "cards/sm2-050-high.png"
+    "imageHighSrc": "cards/sm2-050-high.png",
+    "attacks": [
+      {
+        "name": "Stomp Off",
+        "damage": null
+      },
+      {
+        "name": "Drool",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9865",
-    "externalId": null,
+    "externalId": "sm2-49",
     "tcgdex_id": "sm2-49",
     "localId": "49",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "049/145",
+    "cardNumber": "49/145",
     "cardName": "Slowbro",
-    "fullDisplayName": "Slowbro 049/145 Guardians Rising",
+    "fullDisplayName": "Slowbro 49/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4196,18 +5248,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-049-low.png",
-    "imageHighSrc": "cards/sm2-049-high.png"
+    "imageHighSrc": "cards/sm2-049-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": "20"
+      },
+      {
+        "name": "Facade",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "9859",
-    "externalId": null,
+    "externalId": "sm2-48",
     "tcgdex_id": "sm2-48",
     "localId": "48",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "048/145",
+    "cardNumber": "48/145",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 048/145 Guardians Rising",
+    "fullDisplayName": "Slowpoke 48/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4229,18 +5291,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-048-low.png",
-    "imageHighSrc": "cards/sm2-048-high.png"
+    "imageHighSrc": "cards/sm2-048-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Whimsy Tackle",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9851",
-    "externalId": null,
+    "externalId": "sm2-47",
     "tcgdex_id": "sm2-47",
     "localId": "47",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "047/145",
+    "cardNumber": "47/145",
     "cardName": "Tapu Koko-GX",
-    "fullDisplayName": "Tapu Koko-GX 047/145 Guardians Rising",
+    "fullDisplayName": "Tapu Koko-GX 47/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4263,18 +5335,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-047-low.png",
-    "imageHighSrc": "cards/sm2-047-high.png"
+    "imageHighSrc": "cards/sm2-047-high.png",
+    "attacks": [
+      {
+        "name": "Sky-High Claws",
+        "damage": "130"
+      },
+      {
+        "name": "Tapu Thunder-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9841",
-    "externalId": null,
+    "externalId": "sm2-46",
     "tcgdex_id": "sm2-46",
     "localId": "46",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "046/145",
+    "cardNumber": "46/145",
     "cardName": "Oricorio",
-    "fullDisplayName": "Oricorio 046/145 Guardians Rising",
+    "fullDisplayName": "Oricorio 46/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4296,18 +5379,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-046-low.png",
-    "imageHighSrc": "cards/sm2-046-high.png"
+    "imageHighSrc": "cards/sm2-046-high.png",
+    "attacks": [
+      {
+        "name": "Feather Dance",
+        "damage": null
+      },
+      {
+        "name": "Pom-Pom Punch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9832",
-    "externalId": null,
+    "externalId": "sm2-45",
     "tcgdex_id": "sm2-45",
     "localId": "45",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "045/145",
+    "cardNumber": "45/145",
     "cardName": "Vikavolt-GX",
-    "fullDisplayName": "Vikavolt-GX 045/145 Guardians Rising",
+    "fullDisplayName": "Vikavolt-GX 45/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4330,18 +5423,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-045-low.png",
-    "imageHighSrc": "cards/sm2-045-high.png"
+    "imageHighSrc": "cards/sm2-045-high.png",
+    "attacks": [
+      {
+        "name": "Charge Beam",
+        "damage": "50"
+      },
+      {
+        "name": "Super Zap Cannon",
+        "damage": "180"
+      },
+      {
+        "name": "Gigatron-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9823",
-    "externalId": null,
+    "externalId": "sm2-44",
     "tcgdex_id": "sm2-44",
     "localId": "44",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "044/145",
+    "cardNumber": "44/145",
     "cardName": "Heliolisk",
-    "fullDisplayName": "Heliolisk 044/145 Guardians Rising",
+    "fullDisplayName": "Heliolisk 44/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4363,18 +5471,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-044-low.png",
-    "imageHighSrc": "cards/sm2-044-high.png"
+    "imageHighSrc": "cards/sm2-044-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      },
+      {
+        "name": "Raging Thunder",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9815",
-    "externalId": null,
+    "externalId": "sm2-43",
     "tcgdex_id": "sm2-43",
     "localId": "43",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "043/145",
+    "cardNumber": "43/145",
     "cardName": "Helioptile",
-    "fullDisplayName": "Helioptile 043/145 Guardians Rising",
+    "fullDisplayName": "Helioptile 43/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4396,18 +5514,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-043-low.png",
-    "imageHighSrc": "cards/sm2-043-high.png"
+    "imageHighSrc": "cards/sm2-043-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Shock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9806",
-    "externalId": null,
+    "externalId": "sm2-42",
     "tcgdex_id": "sm2-42",
     "localId": "42",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "042/145",
+    "cardNumber": "42/145",
     "cardName": "Alolan Golem",
-    "fullDisplayName": "Alolan Golem 042/145 Guardians Rising",
+    "fullDisplayName": "Alolan Golem 42/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4429,18 +5553,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-042-low.png",
-    "imageHighSrc": "cards/sm2-042-high.png"
+    "imageHighSrc": "cards/sm2-042-high.png",
+    "attacks": [
+      {
+        "name": "Electromagnetic Rock Wrecker",
+        "damage": "80×"
+      },
+      {
+        "name": "Heavy Slam",
+        "damage": "200-"
+      }
+    ]
   },
   {
     "masterCardId": "9798",
-    "externalId": null,
+    "externalId": "sm2-41",
     "tcgdex_id": "sm2-41",
     "localId": "41",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "041/145",
+    "cardNumber": "41/145",
     "cardName": "Alolan Graveler",
-    "fullDisplayName": "Alolan Graveler 041/145 Guardians Rising",
+    "fullDisplayName": "Alolan Graveler 41/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4462,18 +5596,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-041-low.png",
-    "imageHighSrc": "cards/sm2-041-high.png"
+    "imageHighSrc": "cards/sm2-041-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Punch",
+        "damage": "50+"
+      },
+      {
+        "name": "Electrobullet",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9792",
-    "externalId": null,
+    "externalId": "sm2-40",
     "tcgdex_id": "sm2-40",
     "localId": "40",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "040/145",
+    "cardNumber": "40/145",
     "cardName": "Alolan Geodude",
-    "fullDisplayName": "Alolan Geodude 040/145 Guardians Rising",
+    "fullDisplayName": "Alolan Geodude 40/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4495,18 +5639,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-040-low.png",
-    "imageHighSrc": "cards/sm2-040-high.png"
+    "imageHighSrc": "cards/sm2-040-high.png",
+    "attacks": [
+      {
+        "name": "Rock Polish",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9784",
-    "externalId": null,
+    "externalId": "sm2-39",
     "tcgdex_id": "sm2-39",
     "localId": "39",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "039/145",
+    "cardNumber": "39/145",
     "cardName": "Mareanie",
-    "fullDisplayName": "Mareanie 039/145 Guardians Rising",
+    "fullDisplayName": "Mareanie 39/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4528,18 +5682,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-039-low.png",
-    "imageHighSrc": "cards/sm2-039-high.png"
+    "imageHighSrc": "cards/sm2-039-high.png",
+    "attacks": [
+      {
+        "name": "Bail Out",
+        "damage": null
+      },
+      {
+        "name": "Rain Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9776",
-    "externalId": null,
+    "externalId": "sm2-38",
     "tcgdex_id": "sm2-38",
     "localId": "38",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "038/145",
+    "cardNumber": "38/145",
     "cardName": "Wishiwashi-GX",
-    "fullDisplayName": "Wishiwashi-GX 038/145 Guardians Rising",
+    "fullDisplayName": "Wishiwashi-GX 38/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4562,18 +5726,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-038-low.png",
-    "imageHighSrc": "cards/sm2-038-high.png"
+    "imageHighSrc": "cards/sm2-038-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "20"
+      },
+      {
+        "name": "Torrential Vortex",
+        "damage": "120"
+      },
+      {
+        "name": "Blue Surge-GX",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9766",
-    "externalId": null,
+    "externalId": "sm2-37",
     "tcgdex_id": "sm2-37",
     "localId": "37",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "037/145",
+    "cardNumber": "37/145",
     "cardName": "Wishiwashi",
-    "fullDisplayName": "Wishiwashi 037/145 Guardians Rising",
+    "fullDisplayName": "Wishiwashi 37/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4595,18 +5774,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-037-low.png",
-    "imageHighSrc": "cards/sm2-037-high.png"
+    "imageHighSrc": "cards/sm2-037-high.png",
+    "attacks": [
+      {
+        "name": "Sharpshooting",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9755",
-    "externalId": null,
+    "externalId": "sm2-36",
     "tcgdex_id": "sm2-36",
     "localId": "36",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "036/145",
+    "cardNumber": "36/145",
     "cardName": "Alomomola",
-    "fullDisplayName": "Alomomola 036/145 Guardians Rising",
+    "fullDisplayName": "Alomomola 36/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4628,18 +5813,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-036-low.png",
-    "imageHighSrc": "cards/sm2-036-high.png"
+    "imageHighSrc": "cards/sm2-036-high.png",
+    "attacks": [
+      {
+        "name": "Borne Ashore",
+        "damage": null
+      },
+      {
+        "name": "Hydro Splash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9747",
-    "externalId": null,
+    "externalId": "sm2-35",
     "tcgdex_id": "sm2-35",
     "localId": "35",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "035/145",
+    "cardNumber": "35/145",
     "cardName": "Vanilluxe",
-    "fullDisplayName": "Vanilluxe 035/145 Guardians Rising",
+    "fullDisplayName": "Vanilluxe 35/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4661,18 +5856,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-035-low.png",
-    "imageHighSrc": "cards/sm2-035-high.png"
+    "imageHighSrc": "cards/sm2-035-high.png",
+    "attacks": [
+      {
+        "name": "Hail",
+        "damage": null
+      },
+      {
+        "name": "Frozen Breath",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9739",
-    "externalId": null,
+    "externalId": "sm2-34",
     "tcgdex_id": "sm2-34",
     "localId": "34",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "034/145",
+    "cardNumber": "34/145",
     "cardName": "Vanillish",
-    "fullDisplayName": "Vanillish 034/145 Guardians Rising",
+    "fullDisplayName": "Vanillish 34/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4694,18 +5899,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-034-low.png",
-    "imageHighSrc": "cards/sm2-034-high.png"
+    "imageHighSrc": "cards/sm2-034-high.png",
+    "attacks": [
+      {
+        "name": "Ice Shard",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "9732",
-    "externalId": null,
+    "externalId": "sm2-33",
     "tcgdex_id": "sm2-33",
     "localId": "33",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "033/145",
+    "cardNumber": "33/145",
     "cardName": "Vanillite",
-    "fullDisplayName": "Vanillite 033/145 Guardians Rising",
+    "fullDisplayName": "Vanillite 33/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4727,18 +5938,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-033-low.png",
-    "imageHighSrc": "cards/sm2-033-high.png"
+    "imageHighSrc": "cards/sm2-033-high.png",
+    "attacks": [
+      {
+        "name": "Triple Spin",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "9723",
-    "externalId": null,
+    "externalId": "sm2-32",
     "tcgdex_id": "sm2-32",
     "localId": "32",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "032/145",
+    "cardNumber": "32/145",
     "cardName": "Glalie",
-    "fullDisplayName": "Glalie 032/145 Guardians Rising",
+    "fullDisplayName": "Glalie 32/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4760,18 +5977,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-032-low.png",
-    "imageHighSrc": "cards/sm2-032-high.png"
+    "imageHighSrc": "cards/sm2-032-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "40"
+      },
+      {
+        "name": "Raging Floe",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "9714",
-    "externalId": null,
+    "externalId": "sm2-31",
     "tcgdex_id": "sm2-31",
     "localId": "31",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "031/145",
+    "cardNumber": "31/145",
     "cardName": "Snorunt",
-    "fullDisplayName": "Snorunt 031/145 Guardians Rising",
+    "fullDisplayName": "Snorunt 31/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4793,18 +6020,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-031-low.png",
-    "imageHighSrc": "cards/sm2-031-high.png"
+    "imageHighSrc": "cards/sm2-031-high.png",
+    "attacks": [
+      {
+        "name": "Chilly",
+        "damage": "10"
+      },
+      {
+        "name": "Frost Breath",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9705",
-    "externalId": null,
+    "externalId": "sm2-30",
     "tcgdex_id": "sm2-30",
     "localId": "30",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "030/145",
+    "cardNumber": "30/145",
     "cardName": "Wailord",
-    "fullDisplayName": "Wailord 030/145 Guardians Rising",
+    "fullDisplayName": "Wailord 30/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4826,18 +6063,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-030-low.png",
-    "imageHighSrc": "cards/sm2-030-high.png"
+    "imageHighSrc": "cards/sm2-030-high.png",
+    "attacks": [
+      {
+        "name": "Dive",
+        "damage": "40"
+      },
+      {
+        "name": "Open Sea",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9697",
-    "externalId": null,
+    "externalId": "sm2-29",
     "tcgdex_id": "sm2-29",
     "localId": "29",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "029/145",
+    "cardNumber": "29/145",
     "cardName": "Wailmer",
-    "fullDisplayName": "Wailmer 029/145 Guardians Rising",
+    "fullDisplayName": "Wailmer 29/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4859,18 +6106,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-029-low.png",
-    "imageHighSrc": "cards/sm2-029-high.png"
+    "imageHighSrc": "cards/sm2-029-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "20"
+      },
+      {
+        "name": "Surf",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9688",
-    "externalId": null,
+    "externalId": "sm2-28",
     "tcgdex_id": "sm2-28",
     "localId": "28",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "028/145",
+    "cardNumber": "28/145",
     "cardName": "Sharpedo",
-    "fullDisplayName": "Sharpedo 028/145 Guardians Rising",
+    "fullDisplayName": "Sharpedo 28/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4892,18 +6149,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-028-low.png",
-    "imageHighSrc": "cards/sm2-028-high.png"
+    "imageHighSrc": "cards/sm2-028-high.png",
+    "attacks": [
+      {
+        "name": "Jet Headbutt",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9681",
-    "externalId": null,
+    "externalId": "sm2-27",
     "tcgdex_id": "sm2-27",
     "localId": "27",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "027/145",
+    "cardNumber": "27/145",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 027/145 Guardians Rising",
+    "fullDisplayName": "Carvanha 27/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4925,18 +6188,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-027-low.png",
-    "imageHighSrc": "cards/sm2-027-high.png"
+    "imageHighSrc": "cards/sm2-027-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9673",
-    "externalId": null,
+    "externalId": "sm2-26",
     "tcgdex_id": "sm2-26",
     "localId": "26",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "026/145",
+    "cardNumber": "26/145",
     "cardName": "Delibird",
-    "fullDisplayName": "Delibird 026/145 Guardians Rising",
+    "fullDisplayName": "Delibird 26/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4958,18 +6227,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-026-low.png",
-    "imageHighSrc": "cards/sm2-026-high.png"
+    "imageHighSrc": "cards/sm2-026-high.png",
+    "attacks": [
+      {
+        "name": "All the Presents",
+        "damage": null
+      },
+      {
+        "name": "Surprise Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9663",
-    "externalId": null,
+    "externalId": "sm2-25",
     "tcgdex_id": "sm2-25",
     "localId": "25",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "025/145",
+    "cardNumber": "25/145",
     "cardName": "Politoed",
-    "fullDisplayName": "Politoed 025/145 Guardians Rising",
+    "fullDisplayName": "Politoed 25/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4991,18 +6270,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-025-low.png",
-    "imageHighSrc": "cards/sm2-025-high.png"
+    "imageHighSrc": "cards/sm2-025-high.png",
+    "attacks": [
+      {
+        "name": "Roll Call",
+        "damage": null
+      },
+      {
+        "name": "Hyper Jump",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9654",
-    "externalId": null,
+    "externalId": "sm2-24",
     "tcgdex_id": "sm2-24",
     "localId": "24",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "024/145",
+    "cardNumber": "24/145",
     "cardName": "Tentacruel",
-    "fullDisplayName": "Tentacruel 024/145 Guardians Rising",
+    "fullDisplayName": "Tentacruel 24/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5024,18 +6313,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-024-low.png",
-    "imageHighSrc": "cards/sm2-024-high.png"
+    "imageHighSrc": "cards/sm2-024-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "30"
+      },
+      {
+        "name": "Seething Tentacles",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "9647",
-    "externalId": null,
+    "externalId": "sm2-23",
     "tcgdex_id": "sm2-23",
     "localId": "23",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "023/145",
+    "cardNumber": "23/145",
     "cardName": "Tentacool",
-    "fullDisplayName": "Tentacool 023/145 Guardians Rising",
+    "fullDisplayName": "Tentacool 23/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5057,18 +6356,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-023-low.png",
-    "imageHighSrc": "cards/sm2-023-high.png"
+    "imageHighSrc": "cards/sm2-023-high.png",
+    "attacks": [
+      {
+        "name": "Sludge Shock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9637",
-    "externalId": null,
+    "externalId": "sm2-22",
     "tcgdex_id": "sm2-22",
     "localId": "22",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "022/145",
+    "cardNumber": "22/145",
     "cardName": "Alolan Ninetales-GX",
-    "fullDisplayName": "Alolan Ninetales-GX 022/145 Guardians Rising",
+    "fullDisplayName": "Alolan Ninetales-GX 22/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5091,18 +6396,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-022-low.png",
-    "imageHighSrc": "cards/sm2-022-high.png"
+    "imageHighSrc": "cards/sm2-022-high.png",
+    "attacks": [
+      {
+        "name": "Ice Blade",
+        "damage": null
+      },
+      {
+        "name": "Blizzard Edge",
+        "damage": "160"
+      },
+      {
+        "name": "Ice Path-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9626",
-    "externalId": null,
+    "externalId": "sm2-21",
     "tcgdex_id": "sm2-21",
     "localId": "21",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "21a/145",
+    "cardNumber": "21/145",
     "cardName": "Alolan Vulpix",
-    "fullDisplayName": "Alolan Vulpix 21a/145 Guardians Rising",
+    "fullDisplayName": "Alolan Vulpix 21/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5124,18 +6444,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-21a-low.png",
-    "imageHighSrc": "cards/sm2-21a-high.png"
+    "imageHighSrc": "cards/sm2-21a-high.png",
+    "attacks": [
+      {
+        "name": "Beacon",
+        "damage": null
+      },
+      {
+        "name": "Icy Snow",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9618",
-    "externalId": null,
+    "externalId": "sm2-21",
     "tcgdex_id": "sm2-21",
     "localId": "21",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "021/145",
+    "cardNumber": "21/145",
     "cardName": "Alolan Vulpix",
-    "fullDisplayName": "Alolan Vulpix 021/145 Guardians Rising",
+    "fullDisplayName": "Alolan Vulpix 21/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5157,18 +6487,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-021-low.png",
-    "imageHighSrc": "cards/sm2-021-high.png"
+    "imageHighSrc": "cards/sm2-021-high.png",
+    "attacks": [
+      {
+        "name": "Beacon",
+        "damage": null
+      },
+      {
+        "name": "Icy Snow",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9611",
-    "externalId": null,
+    "externalId": "sm2-20",
     "tcgdex_id": "sm2-20",
     "localId": "20",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "020/145",
+    "cardNumber": "20/145",
     "cardName": "Alolan Sandslash",
-    "fullDisplayName": "Alolan Sandslash 020/145 Guardians Rising",
+    "fullDisplayName": "Alolan Sandslash 20/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5190,18 +6530,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-020-low.png",
-    "imageHighSrc": "cards/sm2-020-high.png"
+    "imageHighSrc": "cards/sm2-020-high.png",
+    "attacks": [
+      {
+        "name": "Smash Turn",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9599",
-    "externalId": null,
+    "externalId": "sm2-19",
     "tcgdex_id": "sm2-19",
     "localId": "19",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "19a/145",
+    "cardNumber": "19/145",
     "cardName": "Alolan Sandshrew",
-    "fullDisplayName": "Alolan Sandshrew 19a/145 Guardians Rising",
+    "fullDisplayName": "Alolan Sandshrew 19/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5223,18 +6569,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-19a-low.png",
-    "imageHighSrc": "cards/sm2-19a-high.png"
+    "imageHighSrc": "cards/sm2-19a-high.png",
+    "attacks": [
+      {
+        "name": "Defense Curl",
+        "damage": null
+      },
+      {
+        "name": "Ice Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9590",
-    "externalId": null,
+    "externalId": "sm2-19",
     "tcgdex_id": "sm2-19",
     "localId": "19",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "019/145",
+    "cardNumber": "19/145",
     "cardName": "Alolan Sandshrew",
-    "fullDisplayName": "Alolan Sandshrew 019/145 Guardians Rising",
+    "fullDisplayName": "Alolan Sandshrew 19/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5256,18 +6612,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-019-low.png",
-    "imageHighSrc": "cards/sm2-019-high.png"
+    "imageHighSrc": "cards/sm2-019-high.png",
+    "attacks": [
+      {
+        "name": "Defense Curl",
+        "damage": null
+      },
+      {
+        "name": "Ice Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9580",
-    "externalId": null,
+    "externalId": "sm2-18",
     "tcgdex_id": "sm2-18",
     "localId": "18",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "018/145",
+    "cardNumber": "18/145",
     "cardName": "Turtonator-GX",
-    "fullDisplayName": "Turtonator-GX 018/145 Guardians Rising",
+    "fullDisplayName": "Turtonator-GX 18/145 Guardians Rising",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5290,18 +6656,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-018-low.png",
-    "imageHighSrc": "cards/sm2-018-high.png"
+    "imageHighSrc": "cards/sm2-018-high.png",
+    "attacks": [
+      {
+        "name": "Shell Trap",
+        "damage": "20"
+      },
+      {
+        "name": "Bright Flame",
+        "damage": "160"
+      },
+      {
+        "name": "Nitro Tank-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9572",
-    "externalId": null,
+    "externalId": "sm2-17",
     "tcgdex_id": "sm2-17",
     "localId": "17",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "017/145",
+    "cardNumber": "17/145",
     "cardName": "Turtonator",
-    "fullDisplayName": "Turtonator 017/145 Guardians Rising",
+    "fullDisplayName": "Turtonator 17/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5323,18 +6704,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-017-low.png",
-    "imageHighSrc": "cards/sm2-017-high.png"
+    "imageHighSrc": "cards/sm2-017-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "30"
+      },
+      {
+        "name": "Heat Blast",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9563",
-    "externalId": null,
+    "externalId": "sm2-16",
     "tcgdex_id": "sm2-16",
     "localId": "16",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "016/145",
+    "cardNumber": "16/145",
     "cardName": "Salazzle",
-    "fullDisplayName": "Salazzle 016/145 Guardians Rising",
+    "fullDisplayName": "Salazzle 16/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5356,18 +6747,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-016-low.png",
-    "imageHighSrc": "cards/sm2-016-high.png"
+    "imageHighSrc": "cards/sm2-016-high.png",
+    "attacks": [
+      {
+        "name": "Flamethrower",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9553",
-    "externalId": null,
+    "externalId": "sm2-15",
     "tcgdex_id": "sm2-15",
     "localId": "15",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "015/145",
+    "cardNumber": "15/145",
     "cardName": "Salandit",
-    "fullDisplayName": "Salandit 015/145 Guardians Rising",
+    "fullDisplayName": "Salandit 15/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5389,18 +6786,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-015-low.png",
-    "imageHighSrc": "cards/sm2-015-high.png"
+    "imageHighSrc": "cards/sm2-015-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Venoshock",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9543",
-    "externalId": null,
+    "externalId": "sm2-14",
     "tcgdex_id": "sm2-14",
     "localId": "14",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "014/145",
+    "cardNumber": "14/145",
     "cardName": "Oricorio",
-    "fullDisplayName": "Oricorio 014/145 Guardians Rising",
+    "fullDisplayName": "Oricorio 14/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5422,18 +6829,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-014-low.png",
-    "imageHighSrc": "cards/sm2-014-high.png"
+    "imageHighSrc": "cards/sm2-014-high.png",
+    "attacks": [
+      {
+        "name": "Passionate Dance",
+        "damage": null
+      },
+      {
+        "name": "Kindle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9535",
-    "externalId": null,
+    "externalId": "sm2-13",
     "tcgdex_id": "sm2-13",
     "localId": "13",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "013/145",
+    "cardNumber": "13/145",
     "cardName": "Chandelure",
-    "fullDisplayName": "Chandelure 013/145 Guardians Rising",
+    "fullDisplayName": "Chandelure 13/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5455,18 +6872,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-013-low.png",
-    "imageHighSrc": "cards/sm2-013-high.png"
+    "imageHighSrc": "cards/sm2-013-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9526",
-    "externalId": null,
+    "externalId": "sm2-12",
     "tcgdex_id": "sm2-12",
     "localId": "12",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "012/145",
+    "cardNumber": "12/145",
     "cardName": "Lampent",
-    "fullDisplayName": "Lampent 012/145 Guardians Rising",
+    "fullDisplayName": "Lampent 12/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5488,18 +6911,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-012-low.png",
-    "imageHighSrc": "cards/sm2-012-high.png"
+    "imageHighSrc": "cards/sm2-012-high.png",
+    "attacks": [
+      {
+        "name": "Will-O-Wisp",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9518",
-    "externalId": null,
+    "externalId": "sm2-11",
     "tcgdex_id": "sm2-11",
     "localId": "11",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "011/145",
+    "cardNumber": "11/145",
     "cardName": "Litwick",
-    "fullDisplayName": "Litwick 011/145 Guardians Rising",
+    "fullDisplayName": "Litwick 11/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5521,18 +6950,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-011-low.png",
-    "imageHighSrc": "cards/sm2-011-high.png"
+    "imageHighSrc": "cards/sm2-011-high.png",
+    "attacks": [
+      {
+        "name": "Flickering Flames",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9497",
-    "externalId": null,
+    "externalId": "sm2-10",
     "tcgdex_id": "sm2-10",
     "localId": "10",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "010/145",
+    "cardNumber": "10/145",
     "cardName": "Victini",
-    "fullDisplayName": "Victini 010/145 Guardians Rising",
+    "fullDisplayName": "Victini 10/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5554,18 +6989,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-010-low.png",
-    "imageHighSrc": "cards/sm2-010-high.png"
+    "imageHighSrc": "cards/sm2-010-high.png",
+    "attacks": [
+      {
+        "name": "V-Flame",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9487",
-    "externalId": null,
+    "externalId": "sm2-9",
     "tcgdex_id": "sm2-9",
     "localId": "9",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "009/145",
+    "cardNumber": "9/145",
     "cardName": "Golisopod",
-    "fullDisplayName": "Golisopod 009/145 Guardians Rising",
+    "fullDisplayName": "Golisopod 9/145 Guardians Rising",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5587,18 +7028,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-009-low.png",
-    "imageHighSrc": "cards/sm2-009-high.png"
+    "imageHighSrc": "cards/sm2-009-high.png",
+    "attacks": [
+      {
+        "name": "Resolute Claws",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "9479",
-    "externalId": null,
+    "externalId": "sm2-8",
     "tcgdex_id": "sm2-8",
     "localId": "8",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "008/145",
+    "cardNumber": "8/145",
     "cardName": "Wimpod",
-    "fullDisplayName": "Wimpod 008/145 Guardians Rising",
+    "fullDisplayName": "Wimpod 8/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5620,18 +7067,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-008-low.png",
-    "imageHighSrc": "cards/sm2-008-high.png"
+    "imageHighSrc": "cards/sm2-008-high.png",
+    "attacks": [
+      {
+        "name": "Scamper Away",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9470",
-    "externalId": null,
+    "externalId": "sm2-7",
     "tcgdex_id": "sm2-7",
     "localId": "7",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "007/145",
+    "cardNumber": "7/145",
     "cardName": "Trevenant",
-    "fullDisplayName": "Trevenant 007/145 Guardians Rising",
+    "fullDisplayName": "Trevenant 7/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5653,18 +7110,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-007-low.png",
-    "imageHighSrc": "cards/sm2-007-high.png"
+    "imageHighSrc": "cards/sm2-007-high.png",
+    "attacks": [
+      {
+        "name": "Poltergeist",
+        "damage": "30×"
+      },
+      {
+        "name": "Horn Leech",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9462",
-    "externalId": null,
+    "externalId": "sm2-6",
     "tcgdex_id": "sm2-6",
     "localId": "6",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "006/145",
+    "cardNumber": "6/145",
     "cardName": "Phantump",
-    "fullDisplayName": "Phantump 006/145 Guardians Rising",
+    "fullDisplayName": "Phantump 6/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5686,18 +7153,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-006-low.png",
-    "imageHighSrc": "cards/sm2-006-high.png"
+    "imageHighSrc": "cards/sm2-006-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9453",
-    "externalId": null,
+    "externalId": "sm2-5",
     "tcgdex_id": "sm2-5",
     "localId": "5",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "005/145",
+    "cardNumber": "5/145",
     "cardName": "Lilligant",
-    "fullDisplayName": "Lilligant 005/145 Guardians Rising",
+    "fullDisplayName": "Lilligant 5/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5719,18 +7196,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-005-low.png",
-    "imageHighSrc": "cards/sm2-005-high.png"
+    "imageHighSrc": "cards/sm2-005-high.png",
+    "attacks": [
+      {
+        "name": "Petal Blizzard",
+        "damage": null
+      },
+      {
+        "name": "Petal Dance",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "9444",
-    "externalId": null,
+    "externalId": "sm2-4",
     "tcgdex_id": "sm2-4",
     "localId": "4",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "004/145",
+    "cardNumber": "4/145",
     "cardName": "Petilil",
-    "fullDisplayName": "Petilil 004/145 Guardians Rising",
+    "fullDisplayName": "Petilil 4/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5752,18 +7239,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-004-low.png",
-    "imageHighSrc": "cards/sm2-004-high.png"
+    "imageHighSrc": "cards/sm2-004-high.png",
+    "attacks": [
+      {
+        "name": "Blot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9436",
-    "externalId": null,
+    "externalId": "sm2-3",
     "tcgdex_id": "sm2-3",
     "localId": "3",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "003/145",
+    "cardNumber": "3/145",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel 003/145 Guardians Rising",
+    "fullDisplayName": "Victreebel 3/145 Guardians Rising",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5785,18 +7278,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-003-low.png",
-    "imageHighSrc": "cards/sm2-003-high.png"
+    "imageHighSrc": "cards/sm2-003-high.png",
+    "attacks": [
+      {
+        "name": "Pollen Hazard",
+        "damage": "20"
+      },
+      {
+        "name": "Stick and Absorb",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9428",
-    "externalId": null,
+    "externalId": "sm2-2",
     "tcgdex_id": "sm2-2",
     "localId": "2",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "002/145",
+    "cardNumber": "2/145",
     "cardName": "Weepinbell",
-    "fullDisplayName": "Weepinbell 002/145 Guardians Rising",
+    "fullDisplayName": "Weepinbell 2/145 Guardians Rising",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5818,18 +7321,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-002-low.png",
-    "imageHighSrc": "cards/sm2-002-high.png"
+    "imageHighSrc": "cards/sm2-002-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Acid",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9418",
-    "externalId": null,
+    "externalId": "sm2-1",
     "tcgdex_id": "sm2-1",
     "localId": "1",
     "setCode": "sm2",
     "setTcgdexId": "sm2",
-    "cardNumber": "001/145",
+    "cardNumber": "1/145",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 001/145 Guardians Rising",
+    "fullDisplayName": "Bellsprout 1/145 Guardians Rising",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5851,6 +7360,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm2-001-low.png",
-    "imageHighSrc": "cards/sm2-001-high.png"
+    "imageHighSrc": "cards/sm2-001-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "30"
+      }
+    ]
   }
 ]

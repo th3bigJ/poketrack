@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "6074",
-    "externalId": null,
+    "externalId": "ex12-93",
     "tcgdex_id": "ex12-93",
     "localId": "093",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "093/92",
+    "cardNumber": "93/92",
     "cardName": "Pikachu δ",
-    "fullDisplayName": "Pikachu δ 093/92 Legend Maker",
+    "fullDisplayName": "Pikachu δ 93/92 Legend Maker",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-093-low.png",
-    "imageHighSrc": "cards/ex12-093-high.png"
+    "imageHighSrc": "cards/ex12-093-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Iron Tail",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "6065",
-    "externalId": null,
+    "externalId": "ex12-92",
     "tcgdex_id": "ex12-92",
     "localId": "092",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "092/92",
+    "cardNumber": "92/92",
     "cardName": "Registeel ★",
-    "fullDisplayName": "Registeel ★ 092/92 Legend Maker",
+    "fullDisplayName": "Registeel ★ 92/92 Legend Maker",
     "rarity": "Rare Holo Star",
     "category": "Pokémon",
     "stage": "Basic",
@@ -64,18 +74,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-092-low.png",
-    "imageHighSrc": "cards/ex12-092-high.png"
+    "imageHighSrc": "cards/ex12-092-high.png",
+    "attacks": [
+      {
+        "name": "Barrier Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Final Laser",
+        "damage": null
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6056",
-    "externalId": null,
+    "externalId": "ex12-91",
     "tcgdex_id": "ex12-91",
     "localId": "091",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "091/92",
+    "cardNumber": "91/92",
     "cardName": "Regirock ★",
-    "fullDisplayName": "Regirock ★ 091/92 Legend Maker",
+    "fullDisplayName": "Regirock ★ 91/92 Legend Maker",
     "rarity": "Rare Holo Star",
     "category": "Pokémon",
     "stage": "Basic",
@@ -98,18 +119,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-091-low.png",
-    "imageHighSrc": "cards/ex12-091-high.png"
+    "imageHighSrc": "cards/ex12-091-high.png",
+    "attacks": [
+      {
+        "name": "Dig Drain",
+        "damage": "10"
+      },
+      {
+        "name": "Final Blast",
+        "damage": "30"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6047",
-    "externalId": null,
+    "externalId": "ex12-90",
     "tcgdex_id": "ex12-90",
     "localId": "090",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "090/92",
+    "cardNumber": "90/92",
     "cardName": "Regice ★",
-    "fullDisplayName": "Regice ★ 090/92 Legend Maker",
+    "fullDisplayName": "Regice ★ 90/92 Legend Maker",
     "rarity": "Rare Holo Star",
     "category": "Pokémon",
     "stage": "Basic",
@@ -132,18 +164,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-090-low.png",
-    "imageHighSrc": "cards/ex12-090-high.png"
+    "imageHighSrc": "cards/ex12-090-high.png",
+    "attacks": [
+      {
+        "name": "Ice Barrier",
+        "damage": "10"
+      },
+      {
+        "name": "Final Blizzard",
+        "damage": "30"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6039",
-    "externalId": null,
+    "externalId": "ex12-89",
     "tcgdex_id": "ex12-89",
     "localId": "089",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "089/92",
+    "cardNumber": "89/92",
     "cardName": "Walrein ex",
-    "fullDisplayName": "Walrein ex 089/92 Legend Maker",
+    "fullDisplayName": "Walrein ex 89/92 Legend Maker",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -166,18 +209,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-089-low.png",
-    "imageHighSrc": "cards/ex12-089-high.png"
+    "imageHighSrc": "cards/ex12-089-high.png",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null
+      },
+      {
+        "name": "Ice Throw",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6030",
-    "externalId": null,
+    "externalId": "ex12-88",
     "tcgdex_id": "ex12-88",
     "localId": "088",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "088/92",
+    "cardNumber": "88/92",
     "cardName": "Mew ex",
-    "fullDisplayName": "Mew ex 088/92 Legend Maker",
+    "fullDisplayName": "Mew ex 88/92 Legend Maker",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -200,18 +254,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-088-low.png",
-    "imageHighSrc": "cards/ex12-088-high.png"
+    "imageHighSrc": "cards/ex12-088-high.png",
+    "attacks": [
+      {
+        "name": "Power Move",
+        "damage": null
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6021",
-    "externalId": null,
+    "externalId": "ex12-87",
     "tcgdex_id": "ex12-87",
     "localId": "087",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "087/92",
+    "cardNumber": "87/92",
     "cardName": "Flygon ex",
-    "fullDisplayName": "Flygon ex 087/92 Legend Maker",
+    "fullDisplayName": "Flygon ex 87/92 Legend Maker",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -234,18 +295,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-087-low.png",
-    "imageHighSrc": "cards/ex12-087-high.png"
+    "imageHighSrc": "cards/ex12-087-high.png",
+    "attacks": [
+      {
+        "name": "Reactive Blast",
+        "damage": "40+"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "100"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6012",
-    "externalId": null,
+    "externalId": "ex12-86",
     "tcgdex_id": "ex12-86",
     "localId": "086",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "086/92",
+    "cardNumber": "86/92",
     "cardName": "Dustox ex",
-    "fullDisplayName": "Dustox ex 086/92 Legend Maker",
+    "fullDisplayName": "Dustox ex 86/92 Legend Maker",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -268,18 +340,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-086-low.png",
-    "imageHighSrc": "cards/ex12-086-high.png"
+    "imageHighSrc": "cards/ex12-086-high.png",
+    "attacks": [
+      {
+        "name": "Silver Wind",
+        "damage": "40"
+      },
+      {
+        "name": "Cutting Wind",
+        "damage": "70"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6003",
-    "externalId": null,
+    "externalId": "ex12-85",
     "tcgdex_id": "ex12-85",
     "localId": "085",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "085/92",
+    "cardNumber": "85/92",
     "cardName": "Banette ex",
-    "fullDisplayName": "Banette ex 085/92 Legend Maker",
+    "fullDisplayName": "Banette ex 85/92 Legend Maker",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -302,18 +385,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-085-low.png",
-    "imageHighSrc": "cards/ex12-085-high.png"
+    "imageHighSrc": "cards/ex12-085-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Chant",
+        "damage": "30+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "5994",
-    "externalId": null,
+    "externalId": "ex12-84",
     "tcgdex_id": "ex12-84",
     "localId": "084",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "084/92",
+    "cardNumber": "84/92",
     "cardName": "Armaldo ex",
-    "fullDisplayName": "Armaldo ex 084/92 Legend Maker",
+    "fullDisplayName": "Armaldo ex 84/92 Legend Maker",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -336,18 +426,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-084-low.png",
-    "imageHighSrc": "cards/ex12-084-high.png"
+    "imageHighSrc": "cards/ex12-084-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "40"
+      },
+      {
+        "name": "Vortex Chop",
+        "damage": "70"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "5985",
-    "externalId": null,
+    "externalId": "ex12-83",
     "tcgdex_id": "ex12-83",
     "localId": "083",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "083/92",
+    "cardNumber": "83/92",
     "cardName": "Arcanine ex",
-    "fullDisplayName": "Arcanine ex 083/92 Legend Maker",
+    "fullDisplayName": "Arcanine ex 83/92 Legend Maker",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -370,18 +471,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-083-low.png",
-    "imageHighSrc": "cards/ex12-083-high.png"
+    "imageHighSrc": "cards/ex12-083-high.png",
+    "attacks": [
+      {
+        "name": "Overrun",
+        "damage": "30"
+      },
+      {
+        "name": "Flame Swirl",
+        "damage": "100"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "5977",
-    "externalId": null,
+    "externalId": "ex12-82",
     "tcgdex_id": "ex12-82",
     "localId": "082",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "082/92",
+    "cardNumber": "82/92",
     "cardName": "React Energy",
-    "fullDisplayName": "React Energy 082/92 Legend Maker",
+    "fullDisplayName": "React Energy 82/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -399,18 +511,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-082-low.png",
-    "imageHighSrc": "cards/ex12-082-high.png"
+    "imageHighSrc": "cards/ex12-082-high.png",
+    "rules": "React Energy provides Colorless Energy."
   },
   {
     "masterCardId": "5967",
-    "externalId": null,
+    "externalId": "ex12-81",
     "tcgdex_id": "ex12-81",
     "localId": "081",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "081/92",
+    "cardNumber": "81/92",
     "cardName": "Rainbow Energy",
-    "fullDisplayName": "Rainbow Energy 081/92 Legend Maker",
+    "fullDisplayName": "Rainbow Energy 81/92 Legend Maker",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -428,18 +541,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-081-low.png",
-    "imageHighSrc": "cards/ex12-081-high.png"
+    "imageHighSrc": "cards/ex12-081-high.png",
+    "rules": "Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.) When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon."
   },
   {
     "masterCardId": "5958",
-    "externalId": null,
+    "externalId": "ex12-80",
     "tcgdex_id": "ex12-80",
     "localId": "080",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "080/92",
+    "cardNumber": "80/92",
     "cardName": "Root Fossil",
-    "fullDisplayName": "Root Fossil 080/92 Legend Maker",
+    "fullDisplayName": "Root Fossil 80/92 Legend Maker",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -457,18 +571,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-080-low.png",
-    "imageHighSrc": "cards/ex12-080-high.png"
+    "imageHighSrc": "cards/ex12-080-high.png",
+    "rules": "Play Root Fossil as if it were a Basic Pokémon. While in play, Root Fossil counts as a Colorless Pokémon (as well as a Trainer card). Root Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Root Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Root Fossil from play."
   },
   {
     "masterCardId": "5950",
-    "externalId": null,
+    "externalId": "ex12-79",
     "tcgdex_id": "ex12-79",
     "localId": "079",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "079/92",
+    "cardNumber": "79/92",
     "cardName": "Mysterious Fossil",
-    "fullDisplayName": "Mysterious Fossil 079/92 Legend Maker",
+    "fullDisplayName": "Mysterious Fossil 79/92 Legend Maker",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -486,18 +601,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-079-low.png",
-    "imageHighSrc": "cards/ex12-079-high.png"
+    "imageHighSrc": "cards/ex12-079-high.png",
+    "rules": "Play Mysterious Fossil as if it were a Basic Pokémon. While in play, Mysterious Fossil counts as a Colorless Pokémon (as well as a Trainer card). Mysterious Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Mysterious Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Mysterious Fossil from play."
   },
   {
     "masterCardId": "5941",
-    "externalId": null,
+    "externalId": "ex12-78",
     "tcgdex_id": "ex12-78",
     "localId": "078",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "078/92",
+    "cardNumber": "78/92",
     "cardName": "Claw Fossil",
-    "fullDisplayName": "Claw Fossil 078/92 Legend Maker",
+    "fullDisplayName": "Claw Fossil 78/92 Legend Maker",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -515,18 +631,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-078-low.png",
-    "imageHighSrc": "cards/ex12-078-high.png"
+    "imageHighSrc": "cards/ex12-078-high.png",
+    "rules": "Play Claw Fossil as if it were a Basic Pokémon. While in play, Claw Fossil counts as a Colorless Pokémon (as well as a Trainer card). Claw Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Claw Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Claw Fossil from play."
   },
   {
     "masterCardId": "5933",
-    "externalId": null,
+    "externalId": "ex12-77",
     "tcgdex_id": "ex12-77",
     "localId": "077",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "077/92",
+    "cardNumber": "77/92",
     "cardName": "Strange Cave",
-    "fullDisplayName": "Strange Cave 077/92 Legend Maker",
+    "fullDisplayName": "Strange Cave 77/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -544,18 +661,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-077-low.png",
-    "imageHighSrc": "cards/ex12-077-high.png"
+    "imageHighSrc": "cards/ex12-077-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nOnce during each player's turn, that player may put an Omanyte, Kabuto, Aerodactyl, Aerodactyl ex, Lileep, or Anorith onto his or her Bench from his or her hand. Treat the new Benched Pokémon as Basic Pokémon."
   },
   {
     "masterCardId": "5924",
-    "externalId": null,
+    "externalId": "ex12-76",
     "tcgdex_id": "ex12-76",
     "localId": "076",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "076/92",
+    "cardNumber": "76/92",
     "cardName": "Power Tree",
-    "fullDisplayName": "Power Tree 076/92 Legend Maker",
+    "fullDisplayName": "Power Tree 76/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -573,18 +691,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-076-low.png",
-    "imageHighSrc": "cards/ex12-076-high.png"
+    "imageHighSrc": "cards/ex12-076-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nOnce during each player's turn, if the player has no Special Energy cards in his or her discard pile, that player searches his or her discard pile for a basic Energy card, show it to the opponent, and put it into his or her hand."
   },
   {
     "masterCardId": "5915",
-    "externalId": null,
+    "externalId": "ex12-75",
     "tcgdex_id": "ex12-75",
     "localId": "075",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "075/92",
+    "cardNumber": "75/92",
     "cardName": "Giant Stump",
-    "fullDisplayName": "Giant Stump 075/92 Legend Maker",
+    "fullDisplayName": "Giant Stump 75/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -602,18 +721,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-075-low.png",
-    "imageHighSrc": "cards/ex12-075-high.png"
+    "imageHighSrc": "cards/ex12-075-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach player can't have more than 3 Benched Pokémon.\n\nWhen Giant Stump comes into play, each player discards Benched Pokémon and any cards attached to them until he or she has 3 Benched Pokémon. (You discard your Pokémon first.)"
   },
   {
     "masterCardId": "5905",
-    "externalId": null,
+    "externalId": "ex12-74",
     "tcgdex_id": "ex12-74",
     "localId": "074",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "074/92",
+    "cardNumber": "74/92",
     "cardName": "Full Flame",
-    "fullDisplayName": "Full Flame 074/92 Legend Maker",
+    "fullDisplayName": "Full Flame 74/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -631,18 +751,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-074-low.png",
-    "imageHighSrc": "cards/ex12-074-high.png"
+    "imageHighSrc": "cards/ex12-074-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nPut 4 damage counters instead of 2 on each Burned Pokémon between turns. The Special Condition Burned can't be removed by evolving or devolving the Burned Pokémon."
   },
   {
     "masterCardId": "5896",
-    "externalId": null,
+    "externalId": "ex12-73",
     "tcgdex_id": "ex12-73",
     "localId": "073",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "073/92",
+    "cardNumber": "73/92",
     "cardName": "Fieldworker",
-    "fullDisplayName": "Fieldworker 073/92 Legend Maker",
+    "fullDisplayName": "Fieldworker 73/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -660,18 +781,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-073-low.png",
-    "imageHighSrc": "cards/ex12-073-high.png"
+    "imageHighSrc": "cards/ex12-073-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 3 cards. Your opponent may also draw a card."
   },
   {
     "masterCardId": "5888",
-    "externalId": null,
+    "externalId": "ex12-72",
     "tcgdex_id": "ex12-72",
     "localId": "072",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "072/92",
+    "cardNumber": "72/92",
     "cardName": "Cursed Stone",
-    "fullDisplayName": "Cursed Stone 072/92 Legend Maker",
+    "fullDisplayName": "Cursed Stone 72/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -689,18 +811,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-072-low.png",
-    "imageHighSrc": "cards/ex12-072-high.png"
+    "imageHighSrc": "cards/ex12-072-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nAt any time between turns, each player puts 1 damage counter on his or her Pokémon that has a Poké-Power."
   },
   {
     "masterCardId": "5879",
-    "externalId": null,
+    "externalId": "ex12-71",
     "tcgdex_id": "ex12-71",
     "localId": "071",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "071/92",
+    "cardNumber": "71/92",
     "cardName": "Wynaut",
-    "fullDisplayName": "Wynaut 071/92 Legend Maker",
+    "fullDisplayName": "Wynaut 71/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -722,18 +845,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-071-low.png",
-    "imageHighSrc": "cards/ex12-071-high.png"
+    "imageHighSrc": "cards/ex12-071-high.png",
+    "attacks": [
+      {
+        "name": "Confusion Wave",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5869",
-    "externalId": null,
+    "externalId": "ex12-70",
     "tcgdex_id": "ex12-70",
     "localId": "070",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "070/92",
+    "cardNumber": "70/92",
     "cardName": "Wurmple",
-    "fullDisplayName": "Wurmple 070/92 Legend Maker",
+    "fullDisplayName": "Wurmple 70/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -755,18 +884,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-070-low.png",
-    "imageHighSrc": "cards/ex12-070-high.png"
+    "imageHighSrc": "cards/ex12-070-high.png",
+    "attacks": [
+      {
+        "name": "String Pull",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5860",
-    "externalId": null,
+    "externalId": "ex12-69",
     "tcgdex_id": "ex12-69",
     "localId": "069",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "069/92",
+    "cardNumber": "69/92",
     "cardName": "Wailmer",
-    "fullDisplayName": "Wailmer 069/92 Legend Maker",
+    "fullDisplayName": "Wailmer 69/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -788,18 +923,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-069-low.png",
-    "imageHighSrc": "cards/ex12-069-high.png"
+    "imageHighSrc": "cards/ex12-069-high.png",
+    "attacks": [
+      {
+        "name": "Double Tackle",
+        "damage": null
+      },
+      {
+        "name": "Whirlpool",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5851",
-    "externalId": null,
+    "externalId": "ex12-68",
     "tcgdex_id": "ex12-68",
     "localId": "068",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "068/92",
+    "cardNumber": "68/92",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 068/92 Legend Maker",
+    "fullDisplayName": "Voltorb 68/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -821,18 +966,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-068-low.png",
-    "imageHighSrc": "cards/ex12-068-high.png"
+    "imageHighSrc": "cards/ex12-068-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Bouncing Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5843",
-    "externalId": null,
+    "externalId": "ex12-67",
     "tcgdex_id": "ex12-67",
     "localId": "067",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "067/92",
+    "cardNumber": "67/92",
     "cardName": "Trapinch",
-    "fullDisplayName": "Trapinch 067/92 Legend Maker",
+    "fullDisplayName": "Trapinch 67/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -854,18 +1009,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-067-low.png",
-    "imageHighSrc": "cards/ex12-067-high.png"
+    "imageHighSrc": "cards/ex12-067-high.png",
+    "attacks": [
+      {
+        "name": "Pebble Throw",
+        "damage": null
+      },
+      {
+        "name": "Double Pinchers",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "5830",
-    "externalId": null,
+    "externalId": "ex12-66",
     "tcgdex_id": "ex12-66",
     "localId": "066",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "066/92",
+    "cardNumber": "66/92",
     "cardName": "Tentacool",
-    "fullDisplayName": "Tentacool 066/92 Legend Maker",
+    "fullDisplayName": "Tentacool 66/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -887,18 +1052,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-066-low.png",
-    "imageHighSrc": "cards/ex12-066-high.png"
+    "imageHighSrc": "cards/ex12-066-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5821",
-    "externalId": null,
+    "externalId": "ex12-65",
     "tcgdex_id": "ex12-65",
     "localId": "065",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "065/92",
+    "cardNumber": "65/92",
     "cardName": "Spheal",
-    "fullDisplayName": "Spheal 065/92 Legend Maker",
+    "fullDisplayName": "Spheal 65/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -920,18 +1091,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-065-low.png",
-    "imageHighSrc": "cards/ex12-065-high.png"
+    "imageHighSrc": "cards/ex12-065-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5812",
-    "externalId": null,
+    "externalId": "ex12-64",
     "tcgdex_id": "ex12-64",
     "localId": "064",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "064/92",
+    "cardNumber": "64/92",
     "cardName": "Skitty",
-    "fullDisplayName": "Skitty 064/92 Legend Maker",
+    "fullDisplayName": "Skitty 64/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -953,18 +1130,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-064-low.png",
-    "imageHighSrc": "cards/ex12-064-high.png"
+    "imageHighSrc": "cards/ex12-064-high.png",
+    "attacks": [
+      {
+        "name": "Important Errands",
+        "damage": null
+      },
+      {
+        "name": "Jump On",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5804",
-    "externalId": null,
+    "externalId": "ex12-63",
     "tcgdex_id": "ex12-63",
     "localId": "063",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "063/92",
+    "cardNumber": "63/92",
     "cardName": "Shuppet",
-    "fullDisplayName": "Shuppet 063/92 Legend Maker",
+    "fullDisplayName": "Shuppet 63/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -986,18 +1173,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-063-low.png",
-    "imageHighSrc": "cards/ex12-063-high.png"
+    "imageHighSrc": "cards/ex12-063-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Will-o'-the-wisp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5795",
-    "externalId": null,
+    "externalId": "ex12-62",
     "tcgdex_id": "ex12-62",
     "localId": "062",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "062/92",
+    "cardNumber": "62/92",
     "cardName": "Sentret",
-    "fullDisplayName": "Sentret 062/92 Legend Maker",
+    "fullDisplayName": "Sentret 62/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1019,18 +1216,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-062-low.png",
-    "imageHighSrc": "cards/ex12-062-high.png"
+    "imageHighSrc": "cards/ex12-062-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5787",
-    "externalId": null,
+    "externalId": "ex12-61",
     "tcgdex_id": "ex12-61",
     "localId": "061",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "061/92",
+    "cardNumber": "61/92",
     "cardName": "Seedot",
-    "fullDisplayName": "Seedot 061/92 Legend Maker",
+    "fullDisplayName": "Seedot 61/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1052,18 +1259,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-061-low.png",
-    "imageHighSrc": "cards/ex12-061-high.png"
+    "imageHighSrc": "cards/ex12-061-high.png",
+    "attacks": [
+      {
+        "name": "Drawup Power",
+        "damage": null
+      },
+      {
+        "name": "Continuous Tumble",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5778",
-    "externalId": null,
+    "externalId": "ex12-60",
     "tcgdex_id": "ex12-60",
     "localId": "060",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "060/92",
+    "cardNumber": "60/92",
     "cardName": "Omanyte",
-    "fullDisplayName": "Omanyte 060/92 Legend Maker",
+    "fullDisplayName": "Omanyte 60/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1085,18 +1302,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-060-low.png",
-    "imageHighSrc": "cards/ex12-060-high.png"
+    "imageHighSrc": "cards/ex12-060-high.png",
+    "attacks": [
+      {
+        "name": "Rising Lunge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5770",
-    "externalId": null,
+    "externalId": "ex12-59",
     "tcgdex_id": "ex12-59",
     "localId": "059",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "059/92",
+    "cardNumber": "59/92",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 059/92 Legend Maker",
+    "fullDisplayName": "Magnemite 59/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1118,18 +1341,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-059-low.png",
-    "imageHighSrc": "cards/ex12-059-high.png"
+    "imageHighSrc": "cards/ex12-059-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Swirl",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5761",
-    "externalId": null,
+    "externalId": "ex12-58",
     "tcgdex_id": "ex12-58",
     "localId": "058",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "058/92",
+    "cardNumber": "58/92",
     "cardName": "Magby",
-    "fullDisplayName": "Magby 058/92 Legend Maker",
+    "fullDisplayName": "Magby 58/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1151,18 +1380,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-058-low.png",
-    "imageHighSrc": "cards/ex12-058-high.png"
+    "imageHighSrc": "cards/ex12-058-high.png",
+    "attacks": [
+      {
+        "name": "Ignite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5752",
-    "externalId": null,
+    "externalId": "ex12-57",
     "tcgdex_id": "ex12-57",
     "localId": "057",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "057/92",
+    "cardNumber": "57/92",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 057/92 Legend Maker",
+    "fullDisplayName": "Machop 57/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1184,18 +1419,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-057-low.png",
-    "imageHighSrc": "cards/ex12-057-high.png"
+    "imageHighSrc": "cards/ex12-057-high.png",
+    "attacks": [
+      {
+        "name": "Mach Punch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5743",
-    "externalId": null,
+    "externalId": "ex12-56",
     "tcgdex_id": "ex12-56",
     "localId": "056",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "056/92",
+    "cardNumber": "56/92",
     "cardName": "Lileep",
-    "fullDisplayName": "Lileep 056/92 Legend Maker",
+    "fullDisplayName": "Lileep 56/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1217,18 +1458,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-056-low.png",
-    "imageHighSrc": "cards/ex12-056-high.png"
+    "imageHighSrc": "cards/ex12-056-high.png",
+    "attacks": [
+      {
+        "name": "Tender Tentacles",
+        "damage": "20"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5734",
-    "externalId": null,
+    "externalId": "ex12-55",
     "tcgdex_id": "ex12-55",
     "localId": "055",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "055/92",
+    "cardNumber": "55/92",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 055/92 Legend Maker",
+    "fullDisplayName": "Growlithe 55/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1250,18 +1501,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-055-low.png",
-    "imageHighSrc": "cards/ex12-055-high.png"
+    "imageHighSrc": "cards/ex12-055-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "10"
+      },
+      {
+        "name": "Firebreathing",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5724",
-    "externalId": null,
+    "externalId": "ex12-54",
     "tcgdex_id": "ex12-54",
     "localId": "054",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "054/92",
+    "cardNumber": "54/92",
     "cardName": "Grimer",
-    "fullDisplayName": "Grimer 054/92 Legend Maker",
+    "fullDisplayName": "Grimer 54/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1283,18 +1544,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-054-low.png",
-    "imageHighSrc": "cards/ex12-054-high.png"
+    "imageHighSrc": "cards/ex12-054-high.png",
+    "attacks": [
+      {
+        "name": "Ascension",
+        "damage": null
+      },
+      {
+        "name": "Sludge Toss",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5715",
-    "externalId": null,
+    "externalId": "ex12-53",
     "tcgdex_id": "ex12-53",
     "localId": "053",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "053/92",
+    "cardNumber": "53/92",
     "cardName": "Geodude",
-    "fullDisplayName": "Geodude 053/92 Legend Maker",
+    "fullDisplayName": "Geodude 53/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1316,18 +1587,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-053-low.png",
-    "imageHighSrc": "cards/ex12-053-high.png"
+    "imageHighSrc": "cards/ex12-053-high.png",
+    "attacks": [
+      {
+        "name": "Selfdestruct",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5706",
-    "externalId": null,
+    "externalId": "ex12-52",
     "tcgdex_id": "ex12-52",
     "localId": "052",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "052/92",
+    "cardNumber": "52/92",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 052/92 Legend Maker",
+    "fullDisplayName": "Gastly 52/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1349,18 +1626,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-052-low.png",
-    "imageHighSrc": "cards/ex12-052-high.png"
+    "imageHighSrc": "cards/ex12-052-high.png",
+    "attacks": [
+      {
+        "name": "Lick",
+        "damage": null
+      },
+      {
+        "name": "Smog",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5698",
-    "externalId": null,
+    "externalId": "ex12-51",
     "tcgdex_id": "ex12-51",
     "localId": "051",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "051/92",
+    "cardNumber": "51/92",
     "cardName": "Clamperl",
-    "fullDisplayName": "Clamperl 051/92 Legend Maker",
+    "fullDisplayName": "Clamperl 51/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1382,18 +1669,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-051-low.png",
-    "imageHighSrc": "cards/ex12-051-high.png"
+    "imageHighSrc": "cards/ex12-051-high.png",
+    "attacks": [
+      {
+        "name": "Iron Defense",
+        "damage": null
+      },
+      {
+        "name": "Clamp Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5689",
-    "externalId": null,
+    "externalId": "ex12-50",
     "tcgdex_id": "ex12-50",
     "localId": "050",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "050/92",
+    "cardNumber": "50/92",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 050/92 Legend Maker",
+    "fullDisplayName": "Chinchou 50/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1415,18 +1712,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-050-low.png",
-    "imageHighSrc": "cards/ex12-050-high.png"
+    "imageHighSrc": "cards/ex12-050-high.png",
+    "attacks": [
+      {
+        "name": "Random Spark",
+        "damage": null
+      },
+      {
+        "name": "Lightning Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5680",
-    "externalId": null,
+    "externalId": "ex12-49",
     "tcgdex_id": "ex12-49",
     "localId": "049",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "049/92",
+    "cardNumber": "49/92",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 049/92 Legend Maker",
+    "fullDisplayName": "Bellsprout 49/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1448,18 +1755,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-049-low.png",
-    "imageHighSrc": "cards/ex12-049-high.png"
+    "imageHighSrc": "cards/ex12-049-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5671",
-    "externalId": null,
+    "externalId": "ex12-48",
     "tcgdex_id": "ex12-48",
     "localId": "048",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "048/92",
+    "cardNumber": "48/92",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 048/92 Legend Maker",
+    "fullDisplayName": "Aron 48/92 Legend Maker",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1481,18 +1794,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-048-low.png",
-    "imageHighSrc": "cards/ex12-048-high.png"
+    "imageHighSrc": "cards/ex12-048-high.png",
+    "attacks": [
+      {
+        "name": "Self Charge",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5663",
-    "externalId": null,
+    "externalId": "ex12-47",
     "tcgdex_id": "ex12-47",
     "localId": "047",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "047/92",
+    "cardNumber": "47/92",
     "cardName": "Weepinbell",
-    "fullDisplayName": "Weepinbell 047/92 Legend Maker",
+    "fullDisplayName": "Weepinbell 47/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1514,18 +1837,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-047-low.png",
-    "imageHighSrc": "cards/ex12-047-high.png"
+    "imageHighSrc": "cards/ex12-047-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Seed",
+        "damage": "20"
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5655",
-    "externalId": null,
+    "externalId": "ex12-46",
     "tcgdex_id": "ex12-46",
     "localId": "046",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "046/92",
+    "cardNumber": "46/92",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 046/92 Legend Maker",
+    "fullDisplayName": "Vibrava 46/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1547,18 +1880,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-046-low.png",
-    "imageHighSrc": "cards/ex12-046-high.png"
+    "imageHighSrc": "cards/ex12-046-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Bi-Blast",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5645",
-    "externalId": null,
+    "externalId": "ex12-45",
     "tcgdex_id": "ex12-45",
     "localId": "045",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "045/92",
+    "cardNumber": "45/92",
     "cardName": "Tentacruel",
-    "fullDisplayName": "Tentacruel 045/92 Legend Maker",
+    "fullDisplayName": "Tentacruel 45/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1580,18 +1923,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-045-low.png",
-    "imageHighSrc": "cards/ex12-045-high.png"
+    "imageHighSrc": "cards/ex12-045-high.png",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null
+      },
+      {
+        "name": "Fury Strikes",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "5636",
-    "externalId": null,
+    "externalId": "ex12-44",
     "tcgdex_id": "ex12-44",
     "localId": "044",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "044/92",
+    "cardNumber": "44/92",
     "cardName": "Tangela",
-    "fullDisplayName": "Tangela 044/92 Legend Maker",
+    "fullDisplayName": "Tangela 44/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1613,18 +1966,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-044-low.png",
-    "imageHighSrc": "cards/ex12-044-high.png"
+    "imageHighSrc": "cards/ex12-044-high.png",
+    "attacks": [
+      {
+        "name": "Entangling Vines",
+        "damage": "10"
+      },
+      {
+        "name": "Gentle Wrap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5627",
-    "externalId": null,
+    "externalId": "ex12-43",
     "tcgdex_id": "ex12-43",
     "localId": "043",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "043/92",
+    "cardNumber": "43/92",
     "cardName": "Sealeo",
-    "fullDisplayName": "Sealeo 043/92 Legend Maker",
+    "fullDisplayName": "Sealeo 43/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1646,18 +2009,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-043-low.png",
-    "imageHighSrc": "cards/ex12-043-high.png"
+    "imageHighSrc": "cards/ex12-043-high.png",
+    "attacks": [
+      {
+        "name": "Lunge Out",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5618",
-    "externalId": null,
+    "externalId": "ex12-42",
     "tcgdex_id": "ex12-42",
     "localId": "042",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "042/92",
+    "cardNumber": "42/92",
     "cardName": "Roselia",
-    "fullDisplayName": "Roselia 042/92 Legend Maker",
+    "fullDisplayName": "Roselia 42/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1679,18 +2048,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-042-low.png",
-    "imageHighSrc": "cards/ex12-042-high.png"
+    "imageHighSrc": "cards/ex12-042-high.png",
+    "attacks": [
+      {
+        "name": "Flick Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5609",
-    "externalId": null,
+    "externalId": "ex12-41",
     "tcgdex_id": "ex12-41",
     "localId": "041",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "041/92",
+    "cardNumber": "41/92",
     "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 041/92 Legend Maker",
+    "fullDisplayName": "Nuzleaf 41/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1712,18 +2087,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-041-low.png",
-    "imageHighSrc": "cards/ex12-041-high.png"
+    "imageHighSrc": "cards/ex12-041-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Plunder",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5600",
-    "externalId": null,
+    "externalId": "ex12-40",
     "tcgdex_id": "ex12-40",
     "localId": "040",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "040/92",
+    "cardNumber": "40/92",
     "cardName": "Misdreavus",
-    "fullDisplayName": "Misdreavus 040/92 Legend Maker",
+    "fullDisplayName": "Misdreavus 40/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1745,18 +2130,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-040-low.png",
-    "imageHighSrc": "cards/ex12-040-high.png"
+    "imageHighSrc": "cards/ex12-040-high.png",
+    "attacks": [
+      {
+        "name": "Return Trance",
+        "damage": null
+      },
+      {
+        "name": "Dream Eater",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5593",
-    "externalId": null,
+    "externalId": "ex12-39",
     "tcgdex_id": "ex12-39",
     "localId": "039",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "039/92",
+    "cardNumber": "39/92",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 039/92 Legend Maker",
+    "fullDisplayName": "Machoke 39/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1778,18 +2173,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-039-low.png",
-    "imageHighSrc": "cards/ex12-039-high.png"
+    "imageHighSrc": "cards/ex12-039-high.png",
+    "attacks": [
+      {
+        "name": "Split Kick",
+        "damage": null
+      },
+      {
+        "name": "Magnum Punch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5584",
-    "externalId": null,
+    "externalId": "ex12-38",
     "tcgdex_id": "ex12-38",
     "localId": "038",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "038/92",
+    "cardNumber": "38/92",
     "cardName": "Lairon",
-    "fullDisplayName": "Lairon 038/92 Legend Maker",
+    "fullDisplayName": "Lairon 38/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1811,18 +2216,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-038-low.png",
-    "imageHighSrc": "cards/ex12-038-high.png"
+    "imageHighSrc": "cards/ex12-038-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      },
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5576",
-    "externalId": null,
+    "externalId": "ex12-37",
     "tcgdex_id": "ex12-37",
     "localId": "037",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "037/92",
+    "cardNumber": "37/92",
     "cardName": "Kecleon",
-    "fullDisplayName": "Kecleon 037/92 Legend Maker",
+    "fullDisplayName": "Kecleon 37/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1844,18 +2259,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-037-low.png",
-    "imageHighSrc": "cards/ex12-037-high.png"
+    "imageHighSrc": "cards/ex12-037-high.png",
+    "attacks": [
+      {
+        "name": "Tongue Whip",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5568",
-    "externalId": null,
+    "externalId": "ex12-36",
     "tcgdex_id": "ex12-36",
     "localId": "036",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "036/92",
+    "cardNumber": "36/92",
     "cardName": "Kabuto",
-    "fullDisplayName": "Kabuto 036/92 Legend Maker",
+    "fullDisplayName": "Kabuto 36/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1877,18 +2302,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-036-low.png",
-    "imageHighSrc": "cards/ex12-036-high.png"
+    "imageHighSrc": "cards/ex12-036-high.png",
+    "attacks": [
+      {
+        "name": "Granite Head",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5559",
-    "externalId": null,
+    "externalId": "ex12-35",
     "tcgdex_id": "ex12-35",
     "localId": "035",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "035/92",
+    "cardNumber": "35/92",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 035/92 Legend Maker",
+    "fullDisplayName": "Haunter 35/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1910,18 +2341,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-035-low.png",
-    "imageHighSrc": "cards/ex12-035-high.png"
+    "imageHighSrc": "cards/ex12-035-high.png",
+    "attacks": [
+      {
+        "name": "Time Spiral",
+        "damage": null
+      },
+      {
+        "name": "Haunt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5551",
-    "externalId": null,
+    "externalId": "ex12-34",
     "tcgdex_id": "ex12-34",
     "localId": "034",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "034/92",
+    "cardNumber": "34/92",
     "cardName": "Graveler",
-    "fullDisplayName": "Graveler 034/92 Legend Maker",
+    "fullDisplayName": "Graveler 34/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1943,18 +2384,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-034-low.png",
-    "imageHighSrc": "cards/ex12-034-high.png"
+    "imageHighSrc": "cards/ex12-034-high.png",
+    "attacks": [
+      {
+        "name": "Rock Slide",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5542",
-    "externalId": null,
+    "externalId": "ex12-33",
     "tcgdex_id": "ex12-33",
     "localId": "033",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "033/92",
+    "cardNumber": "33/92",
     "cardName": "Furret",
-    "fullDisplayName": "Furret 033/92 Legend Maker",
+    "fullDisplayName": "Furret 33/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1976,18 +2423,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-033-low.png",
-    "imageHighSrc": "cards/ex12-033-high.png"
+    "imageHighSrc": "cards/ex12-033-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      },
+      {
+        "name": "Do the Wave",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5532",
-    "externalId": null,
+    "externalId": "ex12-32",
     "tcgdex_id": "ex12-32",
     "localId": "032",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "032/92",
+    "cardNumber": "32/92",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 032/92 Legend Maker",
+    "fullDisplayName": "Electrode 32/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2009,18 +2466,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-032-low.png",
-    "imageHighSrc": "cards/ex12-032-high.png"
+    "imageHighSrc": "cards/ex12-032-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": "10"
+      },
+      {
+        "name": "Tumbling Attack",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5523",
-    "externalId": null,
+    "externalId": "ex12-31",
     "tcgdex_id": "ex12-31",
     "localId": "031",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "031/92",
+    "cardNumber": "31/92",
     "cardName": "Dunsparce",
-    "fullDisplayName": "Dunsparce 031/92 Legend Maker",
+    "fullDisplayName": "Dunsparce 31/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2042,18 +2509,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-031-low.png",
-    "imageHighSrc": "cards/ex12-031-high.png"
+    "imageHighSrc": "cards/ex12-031-high.png",
+    "attacks": [
+      {
+        "name": "Down Draw",
+        "damage": null
+      },
+      {
+        "name": "Tripping Turn",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5514",
-    "externalId": null,
+    "externalId": "ex12-30",
     "tcgdex_id": "ex12-30",
     "localId": "030",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "030/92",
+    "cardNumber": "30/92",
     "cardName": "Cascoon",
-    "fullDisplayName": "Cascoon 030/92 Legend Maker",
+    "fullDisplayName": "Cascoon 30/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2075,18 +2552,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-030-low.png",
-    "imageHighSrc": "cards/ex12-030-high.png"
+    "imageHighSrc": "cards/ex12-030-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5506",
-    "externalId": null,
+    "externalId": "ex12-29",
     "tcgdex_id": "ex12-29",
     "localId": "029",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "029/92",
+    "cardNumber": "29/92",
     "cardName": "Anorith",
-    "fullDisplayName": "Anorith 029/92 Legend Maker",
+    "fullDisplayName": "Anorith 29/92 Legend Maker",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2108,18 +2591,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-029-low.png",
-    "imageHighSrc": "cards/ex12-029-high.png"
+    "imageHighSrc": "cards/ex12-029-high.png",
+    "attacks": [
+      {
+        "name": "Influence",
+        "damage": null
+      },
+      {
+        "name": "Stretch Claws",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5496",
-    "externalId": null,
+    "externalId": "ex12-28",
     "tcgdex_id": "ex12-28",
     "localId": "028",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "028/92",
+    "cardNumber": "28/92",
     "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet 028/92 Legend Maker",
+    "fullDisplayName": "Wobbuffet 28/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2141,18 +2634,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-028-low.png",
-    "imageHighSrc": "cards/ex12-028-high.png"
+    "imageHighSrc": "cards/ex12-028-high.png",
+    "attacks": [
+      {
+        "name": "Grind",
+        "damage": "10×"
+      },
+      {
+        "name": "Shadow Tag",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5490",
-    "externalId": null,
+    "externalId": "ex12-27",
     "tcgdex_id": "ex12-27",
     "localId": "027",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "027/92",
+    "cardNumber": "27/92",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 027/92 Legend Maker",
+    "fullDisplayName": "Torkoal 27/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2174,18 +2677,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-027-low.png",
-    "imageHighSrc": "cards/ex12-027-high.png"
+    "imageHighSrc": "cards/ex12-027-high.png",
+    "attacks": [
+      {
+        "name": "Cry for Help",
+        "damage": null
+      },
+      {
+        "name": "Fireworks",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5481",
-    "externalId": null,
+    "externalId": "ex12-26",
     "tcgdex_id": "ex12-26",
     "localId": "026",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "026/92",
+    "cardNumber": "26/92",
     "cardName": "Spinda",
-    "fullDisplayName": "Spinda 026/92 Legend Maker",
+    "fullDisplayName": "Spinda 26/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2207,18 +2720,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-026-low.png",
-    "imageHighSrc": "cards/ex12-026-high.png"
+    "imageHighSrc": "cards/ex12-026-high.png",
+    "attacks": [
+      {
+        "name": "Whimsy Draw",
+        "damage": null
+      },
+      {
+        "name": "Double-edge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5472",
-    "externalId": null,
+    "externalId": "ex12-25",
     "tcgdex_id": "ex12-25",
     "localId": "025",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "025/92",
+    "cardNumber": "25/92",
     "cardName": "Solrock",
-    "fullDisplayName": "Solrock 025/92 Legend Maker",
+    "fullDisplayName": "Solrock 25/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2240,18 +2763,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-025-low.png",
-    "imageHighSrc": "cards/ex12-025-high.png"
+    "imageHighSrc": "cards/ex12-025-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5463",
-    "externalId": null,
+    "externalId": "ex12-24",
     "tcgdex_id": "ex12-24",
     "localId": "024",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "024/92",
+    "cardNumber": "24/92",
     "cardName": "Pinsir",
-    "fullDisplayName": "Pinsir 024/92 Legend Maker",
+    "fullDisplayName": "Pinsir 24/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2273,18 +2806,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-024-low.png",
-    "imageHighSrc": "cards/ex12-024-high.png"
+    "imageHighSrc": "cards/ex12-024-high.png",
+    "attacks": [
+      {
+        "name": "Cry for Help",
+        "damage": null
+      },
+      {
+        "name": "Overhead Toss",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5454",
-    "externalId": null,
+    "externalId": "ex12-23",
     "tcgdex_id": "ex12-23",
     "localId": "023",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "023/92",
+    "cardNumber": "23/92",
     "cardName": "Omastar",
-    "fullDisplayName": "Omastar 023/92 Legend Maker",
+    "fullDisplayName": "Omastar 23/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2306,18 +2849,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-023-low.png",
-    "imageHighSrc": "cards/ex12-023-high.png"
+    "imageHighSrc": "cards/ex12-023-high.png",
+    "attacks": [
+      {
+        "name": "Drag Off",
+        "damage": "10"
+      },
+      {
+        "name": "Hydro Splash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5445",
-    "externalId": null,
+    "externalId": "ex12-22",
     "tcgdex_id": "ex12-22",
     "localId": "022",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "022/92",
+    "cardNumber": "22/92",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 022/92 Legend Maker",
+    "fullDisplayName": "Magneton 22/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2339,18 +2892,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-022-low.png",
-    "imageHighSrc": "cards/ex12-022-high.png"
+    "imageHighSrc": "cards/ex12-022-high.png",
+    "attacks": [
+      {
+        "name": "Multiple Force",
+        "damage": "30+"
+      },
+      {
+        "name": "Magnetic Blast",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5436",
-    "externalId": null,
+    "externalId": "ex12-21",
     "tcgdex_id": "ex12-21",
     "localId": "021",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "021/92",
+    "cardNumber": "21/92",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 021/92 Legend Maker",
+    "fullDisplayName": "Magmar 21/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2372,18 +2935,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-021-low.png",
-    "imageHighSrc": "cards/ex12-021-high.png"
+    "imageHighSrc": "cards/ex12-021-high.png",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Burning Sensation",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5428",
-    "externalId": null,
+    "externalId": "ex12-20",
     "tcgdex_id": "ex12-20",
     "localId": "020",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "020/92",
+    "cardNumber": "20/92",
     "cardName": "Lunatone",
-    "fullDisplayName": "Lunatone 020/92 Legend Maker",
+    "fullDisplayName": "Lunatone 20/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2405,18 +2978,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-020-low.png",
-    "imageHighSrc": "cards/ex12-020-high.png"
+    "imageHighSrc": "cards/ex12-020-high.png",
+    "attacks": [
+      {
+        "name": "Moon Guidance",
+        "damage": null
+      },
+      {
+        "name": "Psyshock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5419",
-    "externalId": null,
+    "externalId": "ex12-19",
     "tcgdex_id": "ex12-19",
     "localId": "019",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "019/92",
+    "cardNumber": "19/92",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 019/92 Legend Maker",
+    "fullDisplayName": "Lanturn 19/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2438,18 +3021,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-019-low.png",
-    "imageHighSrc": "cards/ex12-019-high.png"
+    "imageHighSrc": "cards/ex12-019-high.png",
+    "attacks": [
+      {
+        "name": "Razor Fin",
+        "damage": "30"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5410",
-    "externalId": null,
+    "externalId": "ex12-18",
     "tcgdex_id": "ex12-18",
     "localId": "018",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "018/92",
+    "cardNumber": "18/92",
     "cardName": "Huntail",
-    "fullDisplayName": "Huntail 018/92 Legend Maker",
+    "fullDisplayName": "Huntail 18/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2471,18 +3064,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-018-low.png",
-    "imageHighSrc": "cards/ex12-018-high.png"
+    "imageHighSrc": "cards/ex12-018-high.png",
+    "attacks": [
+      {
+        "name": "Bite Off",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5401",
-    "externalId": null,
+    "externalId": "ex12-17",
     "tcgdex_id": "ex12-17",
     "localId": "017",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "017/92",
+    "cardNumber": "17/92",
     "cardName": "Gorebyss",
-    "fullDisplayName": "Gorebyss 017/92 Legend Maker",
+    "fullDisplayName": "Gorebyss 17/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2504,18 +3103,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-017-low.png",
-    "imageHighSrc": "cards/ex12-017-high.png"
+    "imageHighSrc": "cards/ex12-017-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5393",
-    "externalId": null,
+    "externalId": "ex12-16",
     "tcgdex_id": "ex12-16",
     "localId": "016",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "016/92",
+    "cardNumber": "16/92",
     "cardName": "Girafarig",
-    "fullDisplayName": "Girafarig 016/92 Legend Maker",
+    "fullDisplayName": "Girafarig 16/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2537,18 +3142,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-016-low.png",
-    "imageHighSrc": "cards/ex12-016-high.png"
+    "imageHighSrc": "cards/ex12-016-high.png",
+    "attacks": [
+      {
+        "name": "Foresight",
+        "damage": null
+      },
+      {
+        "name": "Disorder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5384",
-    "externalId": null,
+    "externalId": "ex12-15",
     "tcgdex_id": "ex12-15",
     "localId": "015",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "015/92",
+    "cardNumber": "15/92",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 015/92 Legend Maker",
+    "fullDisplayName": "Absol 15/92 Legend Maker",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2570,18 +3185,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-015-low.png",
-    "imageHighSrc": "cards/ex12-015-high.png"
+    "imageHighSrc": "cards/ex12-015-high.png",
+    "attacks": [
+      {
+        "name": "Extra Call",
+        "damage": null
+      },
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5375",
-    "externalId": null,
+    "externalId": "ex12-14",
     "tcgdex_id": "ex12-14",
     "localId": "014",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "014/92",
+    "cardNumber": "14/92",
     "cardName": "Wailord",
-    "fullDisplayName": "Wailord 014/92 Legend Maker",
+    "fullDisplayName": "Wailord 14/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2603,18 +3228,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-014-low.png",
-    "imageHighSrc": "cards/ex12-014-high.png"
+    "imageHighSrc": "cards/ex12-014-high.png",
+    "attacks": [
+      {
+        "name": "Hypno Splash",
+        "damage": "40"
+      },
+      {
+        "name": "Rely on Friends",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5366",
-    "externalId": null,
+    "externalId": "ex12-13",
     "tcgdex_id": "ex12-13",
     "localId": "013",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "013/92",
+    "cardNumber": "13/92",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel 013/92 Legend Maker",
+    "fullDisplayName": "Victreebel 13/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2636,18 +3271,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-013-low.png",
-    "imageHighSrc": "cards/ex12-013-high.png"
+    "imageHighSrc": "cards/ex12-013-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": "10"
+      },
+      {
+        "name": "Sharp Leaf",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5357",
-    "externalId": null,
+    "externalId": "ex12-12",
     "tcgdex_id": "ex12-12",
     "localId": "012",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "012/92",
+    "cardNumber": "12/92",
     "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 012/92 Legend Maker",
+    "fullDisplayName": "Shiftry 12/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2669,18 +3314,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-012-low.png",
-    "imageHighSrc": "cards/ex12-012-high.png"
+    "imageHighSrc": "cards/ex12-012-high.png",
+    "attacks": [
+      {
+        "name": "Reactive Beating",
+        "damage": "30"
+      },
+      {
+        "name": "Cross-Cut",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5348",
-    "externalId": null,
+    "externalId": "ex12-11",
     "tcgdex_id": "ex12-11",
     "localId": "011",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "011/92",
+    "cardNumber": "11/92",
     "cardName": "Muk",
-    "fullDisplayName": "Muk 011/92 Legend Maker",
+    "fullDisplayName": "Muk 11/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2702,18 +3357,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-011-low.png",
-    "imageHighSrc": "cards/ex12-011-high.png"
+    "imageHighSrc": "cards/ex12-011-high.png",
+    "attacks": [
+      {
+        "name": "Poison Ring",
+        "damage": "20"
+      },
+      {
+        "name": "Sludge Toss",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5339",
-    "externalId": null,
+    "externalId": "ex12-10",
     "tcgdex_id": "ex12-10",
     "localId": "010",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "010/92",
+    "cardNumber": "10/92",
     "cardName": "Mew",
-    "fullDisplayName": "Mew 010/92 Legend Maker",
+    "fullDisplayName": "Mew 10/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2735,18 +3400,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-010-low.png",
-    "imageHighSrc": "cards/ex12-010-high.png"
+    "imageHighSrc": "cards/ex12-010-high.png",
+    "attacks": [
+      {
+        "name": "Link Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5332",
-    "externalId": null,
+    "externalId": "ex12-9",
     "tcgdex_id": "ex12-9",
     "localId": "009",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "009/92",
+    "cardNumber": "9/92",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 009/92 Legend Maker",
+    "fullDisplayName": "Machamp 9/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2768,18 +3439,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-009-low.png",
-    "imageHighSrc": "cards/ex12-009-high.png"
+    "imageHighSrc": "cards/ex12-009-high.png",
+    "attacks": [
+      {
+        "name": "Derail",
+        "damage": "40"
+      },
+      {
+        "name": "Swift Blow",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "5325",
-    "externalId": null,
+    "externalId": "ex12-8",
     "tcgdex_id": "ex12-8",
     "localId": "008",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "008/92",
+    "cardNumber": "8/92",
     "cardName": "Lapras",
-    "fullDisplayName": "Lapras 008/92 Legend Maker",
+    "fullDisplayName": "Lapras 8/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2801,18 +3482,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-008-low.png",
-    "imageHighSrc": "cards/ex12-008-high.png"
+    "imageHighSrc": "cards/ex12-008-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5315",
-    "externalId": null,
+    "externalId": "ex12-7",
     "tcgdex_id": "ex12-7",
     "localId": "007",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "007/92",
+    "cardNumber": "7/92",
     "cardName": "Kabutops",
-    "fullDisplayName": "Kabutops 007/92 Legend Maker",
+    "fullDisplayName": "Kabutops 7/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2834,18 +3521,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-007-low.png",
-    "imageHighSrc": "cards/ex12-007-high.png"
+    "imageHighSrc": "cards/ex12-007-high.png",
+    "attacks": [
+      {
+        "name": "Energy Stream",
+        "damage": "30"
+      },
+      {
+        "name": "Extra Claws",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5307",
-    "externalId": null,
+    "externalId": "ex12-6",
     "tcgdex_id": "ex12-6",
     "localId": "006",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "006/92",
+    "cardNumber": "6/92",
     "cardName": "Golem",
-    "fullDisplayName": "Golem 006/92 Legend Maker",
+    "fullDisplayName": "Golem 6/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2867,18 +3564,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-006-low.png",
-    "imageHighSrc": "cards/ex12-006-high.png"
+    "imageHighSrc": "cards/ex12-006-high.png",
+    "attacks": [
+      {
+        "name": "Mend",
+        "damage": null
+      },
+      {
+        "name": "Enraged Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Rock Tumble",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "5300",
-    "externalId": null,
+    "externalId": "ex12-5",
     "tcgdex_id": "ex12-5",
     "localId": "005",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "005/92",
+    "cardNumber": "5/92",
     "cardName": "Gengar",
-    "fullDisplayName": "Gengar 005/92 Legend Maker",
+    "fullDisplayName": "Gengar 5/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2900,18 +3611,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-005-low.png",
-    "imageHighSrc": "cards/ex12-005-high.png"
+    "imageHighSrc": "cards/ex12-005-high.png",
+    "attacks": [
+      {
+        "name": "Cursed Reaction",
+        "damage": null
+      },
+      {
+        "name": "Super Psy Bolt",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5293",
-    "externalId": null,
+    "externalId": "ex12-4",
     "tcgdex_id": "ex12-4",
     "localId": "004",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "004/92",
+    "cardNumber": "4/92",
     "cardName": "Delcatty",
-    "fullDisplayName": "Delcatty 004/92 Legend Maker",
+    "fullDisplayName": "Delcatty 4/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2933,18 +3654,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-004-low.png",
-    "imageHighSrc": "cards/ex12-004-high.png"
+    "imageHighSrc": "cards/ex12-004-high.png",
+    "attacks": [
+      {
+        "name": "Energy Link",
+        "damage": "20"
+      },
+      {
+        "name": "Tail Whap",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5277",
-    "externalId": null,
+    "externalId": "ex12-3",
     "tcgdex_id": "ex12-3",
     "localId": "003",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "003/92",
+    "cardNumber": "3/92",
     "cardName": "Cradily",
-    "fullDisplayName": "Cradily 003/92 Legend Maker",
+    "fullDisplayName": "Cradily 3/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2966,18 +3697,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-003-low.png",
-    "imageHighSrc": "cards/ex12-003-high.png"
+    "imageHighSrc": "cards/ex12-003-high.png",
+    "attacks": [
+      {
+        "name": "Devolution Wave",
+        "damage": null
+      },
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Mud Shot",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5265",
-    "externalId": null,
+    "externalId": "ex12-2",
     "tcgdex_id": "ex12-2",
     "localId": "002",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "002/92",
+    "cardNumber": "2/92",
     "cardName": "Aggron",
-    "fullDisplayName": "Aggron 002/92 Legend Maker",
+    "fullDisplayName": "Aggron 2/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2999,18 +3744,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-002-low.png",
-    "imageHighSrc": "cards/ex12-002-high.png"
+    "imageHighSrc": "cards/ex12-002-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Blow",
+        "damage": "70-"
+      },
+      {
+        "name": "Bound Crush",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5255",
-    "externalId": null,
+    "externalId": "ex12-1",
     "tcgdex_id": "ex12-1",
     "localId": "001",
     "setCode": "ex12",
     "setTcgdexId": "ex12",
-    "cardNumber": "001/92",
+    "cardNumber": "1/92",
     "cardName": "Aerodactyl",
-    "fullDisplayName": "Aerodactyl 001/92 Legend Maker",
+    "fullDisplayName": "Aerodactyl 1/92 Legend Maker",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3032,6 +3787,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex12-001-low.png",
-    "imageHighSrc": "cards/ex12-001-high.png"
+    "imageHighSrc": "cards/ex12-001-high.png",
+    "attacks": [
+      {
+        "name": "Power Blow",
+        "damage": "10+"
+      },
+      {
+        "name": "Speed Stroke",
+        "damage": "40"
+      }
+    ]
   }
 ]

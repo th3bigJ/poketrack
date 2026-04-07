@@ -32,7 +32,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/me3-124-low.png",
-    "imageHighSrc": "cards/me3-124-high.png"
+    "imageHighSrc": "cards/me3-124-high.png",
+    "attacks": [
+      {
+        "name": "Gaia Wave",
+        "damage": "200"
+      },
+      {
+        "name": "Nullifying Zero",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21972",
@@ -63,7 +74,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-123-low.png",
-    "imageHighSrc": "cards/me3-123-high.png"
+    "imageHighSrc": "cards/me3-123-high.png",
+    "rules": "You can use this card only if you have more Prize cards remaining than your opponent.  Attach up to 2 Basic Energy cards from your discard pile to 1 of your Stage 2 Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21971",
@@ -94,7 +106,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-122-low.png",
-    "imageHighSrc": "cards/me3-122-high.png"
+    "imageHighSrc": "cards/me3-122-high.png",
+    "rules": "Heal 150 damage from 1 of your Psychic Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21970",
@@ -128,7 +141,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-121-low.png",
-    "imageHighSrc": "cards/me3-121-high.png"
+    "imageHighSrc": "cards/me3-121-high.png",
+    "attacks": [
+      {
+        "name": "Tuck Tail",
+        "damage": "60"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21969",
@@ -163,7 +183,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-120-low.png",
-    "imageHighSrc": "cards/me3-120-high.png"
+    "imageHighSrc": "cards/me3-120-high.png",
+    "attacks": [
+      {
+        "name": "Gaia Wave",
+        "damage": "200"
+      },
+      {
+        "name": "Nullifying Zero",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21968",
@@ -198,7 +229,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-119-low.png",
-    "imageHighSrc": "cards/me3-119-high.png"
+    "imageHighSrc": "cards/me3-119-high.png",
+    "attacks": [
+      {
+        "name": "Shooting Moons",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21967",
@@ -233,7 +271,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-118-low.png",
-    "imageHighSrc": "cards/me3-118-high.png"
+    "imageHighSrc": "cards/me3-118-high.png",
+    "attacks": [
+      {
+        "name": "Jetting Blow",
+        "damage": "120"
+      },
+      {
+        "name": "Nebula Beam",
+        "damage": "210"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21966",
@@ -264,7 +313,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-117-low.png",
-    "imageHighSrc": "cards/me3-117-high.png"
+    "imageHighSrc": "cards/me3-117-high.png",
+    "rules": "Attach a Basic Psychic Energy card from your discard pile to 1 of your Benched Psychic Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21965",
@@ -295,7 +345,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-116-low.png",
-    "imageHighSrc": "cards/me3-116-high.png"
+    "imageHighSrc": "cards/me3-116-high.png",
+    "rules": "Put up to 4 in any combination of Fighting Pokémon and Basic Fighting Energy cards from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21964",
@@ -326,7 +377,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-115-low.png",
-    "imageHighSrc": "cards/me3-115-high.png"
+    "imageHighSrc": "cards/me3-115-high.png",
+    "rules": "Shuffle up to 5 Pokémon from your discard pile into your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21963",
@@ -357,7 +409,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-114-low.png",
-    "imageHighSrc": "cards/me3-114-high.png"
+    "imageHighSrc": "cards/me3-114-high.png",
+    "rules": "You can use this card only if you have more Prize cards remaining than your opponent.  Attach up to 2 Basic Energy cards from your discard pile to 1 of your Stage 2 Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21962",
@@ -388,7 +441,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-113-low.png",
-    "imageHighSrc": "cards/me3-113-high.png"
+    "imageHighSrc": "cards/me3-113-high.png",
+    "rules": "Search your deck for a Pokémon that doesn't have a Rule Box, reveal it, and put it into your hand. Then, shuffle your deck. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21961",
@@ -419,7 +473,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-112-low.png",
-    "imageHighSrc": "cards/me3-112-high.png"
+    "imageHighSrc": "cards/me3-112-high.png",
+    "rules": "Draw cards until you have 5 cards in your hand. Before drawing cards, you may discard any number of cards from your hand. (If you can't draw any cards in this way, you can't use this card.)\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21960",
@@ -450,7 +505,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-111-low.png",
-    "imageHighSrc": "cards/me3-111-high.png"
+    "imageHighSrc": "cards/me3-111-high.png",
+    "rules": "Once during each player's turn, that player may search their deck for a Basic Pokémon and put it onto their Bench. Then, that player shuffles their deck. If a player searches their deck in this way, their turn ends.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "21959",
@@ -481,7 +537,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-110-low.png",
-    "imageHighSrc": "cards/me3-110-high.png"
+    "imageHighSrc": "cards/me3-110-high.png",
+    "rules": "Heal 150 damage from 1 of your Psychic Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21958",
@@ -512,7 +569,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-109-low.png",
-    "imageHighSrc": "cards/me3-109-high.png"
+    "imageHighSrc": "cards/me3-109-high.png",
+    "rules": "Each player's Grass Pokémon can evolve into Grass Pokémon during the turn they play those Pokémon, except during their first turn.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "21957",
@@ -543,7 +601,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-108-low.png",
-    "imageHighSrc": "cards/me3-108-high.png"
+    "imageHighSrc": "cards/me3-108-high.png",
+    "rules": "Shuffle up to 5 Basic Energy cards from your discard pile into your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21956",
@@ -577,7 +636,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-107-low.png",
-    "imageHighSrc": "cards/me3-107-high.png"
+    "imageHighSrc": "cards/me3-107-high.png",
+    "attacks": [
+      {
+        "name": "Tuck Tail",
+        "damage": "60"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21955",
@@ -612,7 +678,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-106-low.png",
-    "imageHighSrc": "cards/me3-106-high.png"
+    "imageHighSrc": "cards/me3-106-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Ripper",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21954",
@@ -646,7 +719,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-105-low.png",
-    "imageHighSrc": "cards/me3-105-high.png"
+    "imageHighSrc": "cards/me3-105-high.png",
+    "attacks": [
+      {
+        "name": "Soul Destroyer",
+        "damage": null
+      },
+      {
+        "name": "Dark Strike",
+        "damage": "210"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21953",
@@ -681,7 +765,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-104-low.png",
-    "imageHighSrc": "cards/me3-104-high.png"
+    "imageHighSrc": "cards/me3-104-high.png",
+    "attacks": [
+      {
+        "name": "Gaia Wave",
+        "damage": "200"
+      },
+      {
+        "name": "Nullifying Zero",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21952",
@@ -716,7 +811,14 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/me3-103-low.png",
-    "imageHighSrc": "cards/me3-103-high.png"
+    "imageHighSrc": "cards/me3-103-high.png",
+    "attacks": [
+      {
+        "name": "Shooting Moons",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21951",
@@ -751,7 +853,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-102-low.png",
-    "imageHighSrc": "cards/me3-102-high.png"
+    "imageHighSrc": "cards/me3-102-high.png",
+    "attacks": [
+      {
+        "name": "Jetting Blow",
+        "damage": "120"
+      },
+      {
+        "name": "Nebula Beam",
+        "damage": "210"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21950",
@@ -785,7 +898,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/me3-101-low.png",
-    "imageHighSrc": "cards/me3-101-high.png"
+    "imageHighSrc": "cards/me3-101-high.png",
+    "attacks": [
+      {
+        "name": "Nasty Plot",
+        "damage": null
+      },
+      {
+        "name": "Dire Nails",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21949",
@@ -819,7 +943,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-100-low.png",
-    "imageHighSrc": "cards/me3-100-high.png"
+    "imageHighSrc": "cards/me3-100-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Arrow",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21948",
@@ -852,7 +983,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-099-low.png",
-    "imageHighSrc": "cards/me3-099-high.png"
+    "imageHighSrc": "cards/me3-099-high.png",
+    "attacks": [
+      {
+        "name": "Scrape Off",
+        "damage": "20"
+      },
+      {
+        "name": "Retaliatory Incisors",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "21947",
@@ -885,7 +1026,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-098-low.png",
-    "imageHighSrc": "cards/me3-098-high.png"
+    "imageHighSrc": "cards/me3-098-high.png",
+    "attacks": [
+      {
+        "name": "Weaponized Swords",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "21946",
@@ -918,7 +1065,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-097-low.png",
-    "imageHighSrc": "cards/me3-097-high.png"
+    "imageHighSrc": "cards/me3-097-high.png",
+    "attacks": [
+      {
+        "name": "Wrack Down",
+        "damage": "60"
+      },
+      {
+        "name": "Hazardous Tail",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "21945",
@@ -951,7 +1108,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-096-low.png",
-    "imageHighSrc": "cards/me3-096-high.png"
+    "imageHighSrc": "cards/me3-096-high.png",
+    "attacks": [
+      {
+        "name": "Rolling Rocks",
+        "damage": "60"
+      },
+      {
+        "name": "Obliterating Nose",
+        "damage": "260"
+      }
+    ]
   },
   {
     "masterCardId": "21944",
@@ -984,7 +1151,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-095-low.png",
-    "imageHighSrc": "cards/me3-095-high.png"
+    "imageHighSrc": "cards/me3-095-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Stampede",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21943",
@@ -1017,7 +1194,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-094-low.png",
-    "imageHighSrc": "cards/me3-094-high.png"
+    "imageHighSrc": "cards/me3-094-high.png",
+    "attacks": [
+      {
+        "name": "Follow Me",
+        "damage": null
+      },
+      {
+        "name": "Flop",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21942",
@@ -1050,7 +1237,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-093-low.png",
-    "imageHighSrc": "cards/me3-093-high.png"
+    "imageHighSrc": "cards/me3-093-high.png",
+    "attacks": [
+      {
+        "name": "Tail Generator",
+        "damage": null
+      },
+      {
+        "name": "Thunder Shock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21941",
@@ -1083,7 +1280,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-092-low.png",
-    "imageHighSrc": "cards/me3-092-high.png"
+    "imageHighSrc": "cards/me3-092-high.png",
+    "attacks": [
+      {
+        "name": "Freezing Chill",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "21940",
@@ -1116,7 +1319,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-091-low.png",
-    "imageHighSrc": "cards/me3-091-high.png"
+    "imageHighSrc": "cards/me3-091-high.png",
+    "attacks": [
+      {
+        "name": "Fire Wing",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "21939",
@@ -1149,7 +1358,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-090-low.png",
-    "imageHighSrc": "cards/me3-090-high.png"
+    "imageHighSrc": "cards/me3-090-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21938",
@@ -1182,7 +1401,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-089-low.png",
-    "imageHighSrc": "cards/me3-089-high.png"
+    "imageHighSrc": "cards/me3-089-high.png",
+    "attacks": [
+      {
+        "name": "Hide",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21937",
@@ -1213,7 +1438,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-088-low.png",
-    "imageHighSrc": "cards/me3-088-high.png"
+    "imageHighSrc": "cards/me3-088-high.png",
+    "rules": "As long as this card is attached to a Pokémon, it provides Psychic Energy. When you attach this card from your hand to a Psychic Pokémon, search your deck for up to 2 Basic Psychic Pokémon and put them onto your Bench. Then, shuffle your deck."
   },
   {
     "masterCardId": "21936",
@@ -1244,7 +1470,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-087-low.png",
-    "imageHighSrc": "cards/me3-087-high.png"
+    "imageHighSrc": "cards/me3-087-high.png",
+    "rules": "As long as this card is attached to a Pokémon, it provides Fighting Energy. Prevent all effects of attacks used by your opponent's Pokémon done to the Fighting Pokémon this card is attached to. (Existing effects are not removed. Damage is not an effect.)"
   },
   {
     "masterCardId": "21935",
@@ -1275,7 +1502,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-086-low.png",
-    "imageHighSrc": "cards/me3-086-high.png"
+    "imageHighSrc": "cards/me3-086-high.png",
+    "rules": "As long as this card is attached to a Pokémon, it provides Grass Energy. The Grass Pokémon this card is attached to gets +20 HP."
   },
   {
     "masterCardId": "21934",
@@ -1306,7 +1534,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-085-low.png",
-    "imageHighSrc": "cards/me3-085-high.png"
+    "imageHighSrc": "cards/me3-085-high.png",
+    "rules": "Put up to 4 in any combination of Fighting Pokémon and Basic Fighting Energy cards from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21933",
@@ -1337,7 +1566,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-084-low.png",
-    "imageHighSrc": "cards/me3-084-high.png"
+    "imageHighSrc": "cards/me3-084-high.png",
+    "rules": "You can use this card only if you have more Prize cards remaining than your opponent.  Attach up to 2 Basic Energy cards from your discard pile to 1 of your Stage 2 Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21932",
@@ -1368,7 +1598,8 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/me3-083-low.png",
-    "imageHighSrc": "cards/me3-083-high.png"
+    "imageHighSrc": "cards/me3-083-high.png",
+    "rules": "Heal 30 damage from 1 of your Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21931",
@@ -1399,7 +1630,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-082-low.png",
-    "imageHighSrc": "cards/me3-082-high.png"
+    "imageHighSrc": "cards/me3-082-high.png",
+    "rules": "Flip a coin. If heads, switch in 1 of your opponent's Benched Pokémon to the Active Spot.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21930",
@@ -1430,7 +1662,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-081-low.png",
-    "imageHighSrc": "cards/me3-081-high.png"
+    "imageHighSrc": "cards/me3-081-high.png",
+    "rules": "Search your deck for a Pokémon that doesn't have a Rule Box, reveal it, and put it into your hand. Then, shuffle your deck. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21929",
@@ -1461,7 +1694,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-080-low.png",
-    "imageHighSrc": "cards/me3-080-high.png"
+    "imageHighSrc": "cards/me3-080-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21928",
@@ -1492,7 +1726,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-079-low.png",
-    "imageHighSrc": "cards/me3-079-high.png"
+    "imageHighSrc": "cards/me3-079-high.png",
+    "rules": "Draw cards until you have 5 cards in your hand. Before drawing cards, you may discard any number of cards from your hand. (If you can't draw any cards in this way, you can't use this card.)\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21927",
@@ -1523,7 +1758,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-078-low.png",
-    "imageHighSrc": "cards/me3-078-high.png"
+    "imageHighSrc": "cards/me3-078-high.png",
+    "rules": "Heal 20 damage and remove a Special Condition from your Active Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21926",
@@ -1554,7 +1790,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-077-low.png",
-    "imageHighSrc": "cards/me3-077-high.png"
+    "imageHighSrc": "cards/me3-077-high.png",
+    "rules": "Once during each player's turn, that player may search their deck for a Basic Pokémon and put it onto their Bench. Then, that player shuffles their deck. If a player searches their deck in this way, their turn ends.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "21925",
@@ -1585,7 +1822,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-076-low.png",
-    "imageHighSrc": "cards/me3-076-high.png"
+    "imageHighSrc": "cards/me3-076-high.png",
+    "rules": "Each player shuffles their hand into their deck and draws 4 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21924",
@@ -1616,7 +1854,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-075-low.png",
-    "imageHighSrc": "cards/me3-075-high.png"
+    "imageHighSrc": "cards/me3-075-high.png",
+    "rules": "Heal 150 damage from 1 of your Psychic Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "21923",
@@ -1647,7 +1886,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-074-low.png",
-    "imageHighSrc": "cards/me3-074-high.png"
+    "imageHighSrc": "cards/me3-074-high.png",
+    "rules": "Discard the top 2 cards of your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21922",
@@ -1678,7 +1918,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-073-low.png",
-    "imageHighSrc": "cards/me3-073-high.png"
+    "imageHighSrc": "cards/me3-073-high.png",
+    "rules": "Your opponent reveals their hand, and you choose an Energy card you find there and put it on the bottom of their deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21921",
@@ -1709,7 +1950,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-072-low.png",
-    "imageHighSrc": "cards/me3-072-high.png"
+    "imageHighSrc": "cards/me3-072-high.png",
+    "rules": "Search your deck for a Basic Energy card, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21920",
@@ -1740,7 +1982,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-071-low.png",
-    "imageHighSrc": "cards/me3-071-high.png"
+    "imageHighSrc": "cards/me3-071-high.png",
+    "rules": "Flip a coin. If heads, discard an Energy from 1 of your opponent's Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21919",
@@ -1771,7 +2014,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-070-low.png",
-    "imageHighSrc": "cards/me3-070-high.png"
+    "imageHighSrc": "cards/me3-070-high.png",
+    "attacks": [
+      {
+        "name": "Geobuster",
+        "damage": "350"
+      }
+    ],
+    "rules": "The Mega Zygarde ex this card is attached to can use the attack on this card. (You still need the necessary Energy to use this attack.)\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "21918",
@@ -1802,7 +2052,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-069-low.png",
-    "imageHighSrc": "cards/me3-069-high.png"
+    "imageHighSrc": "cards/me3-069-high.png",
+    "rules": "Play this card as if it were a 60-HP Basic Colorless Pokémon. This card can't be affected by any Special Conditions and can't retreat.  At any time during your turn, you may discard this card from play.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21917",
@@ -1833,7 +2084,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-068-low.png",
-    "imageHighSrc": "cards/me3-068-high.png"
+    "imageHighSrc": "cards/me3-068-high.png",
+    "rules": "Play this card as if it were a 60-HP Basic Colorless Pokémon. This card can't be affected by any Special Conditions and can't retreat.  At any time during your turn, you may discard this card from play.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "21916",
@@ -1866,7 +2118,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-067-low.png",
-    "imageHighSrc": "cards/me3-067-high.png"
+    "imageHighSrc": "cards/me3-067-high.png",
+    "attacks": [
+      {
+        "name": "Hand Trim",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21915",
@@ -1899,7 +2161,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-066-low.png",
-    "imageHighSrc": "cards/me3-066-high.png"
+    "imageHighSrc": "cards/me3-066-high.png",
+    "attacks": [
+      {
+        "name": "Chirp",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21914",
@@ -1932,7 +2204,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-065-low.png",
-    "imageHighSrc": "cards/me3-065-high.png"
+    "imageHighSrc": "cards/me3-065-high.png",
+    "attacks": [
+      {
+        "name": "Earthquake",
+        "damage": "140"
+      },
+      {
+        "name": "Whap Down",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "21913",
@@ -1965,7 +2247,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-064-low.png",
-    "imageHighSrc": "cards/me3-064-high.png"
+    "imageHighSrc": "cards/me3-064-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21912",
@@ -1998,7 +2286,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-063-low.png",
-    "imageHighSrc": "cards/me3-063-high.png"
+    "imageHighSrc": "cards/me3-063-high.png",
+    "attacks": [
+      {
+        "name": "Gormandizer",
+        "damage": null
+      },
+      {
+        "name": "Collapse",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "21911",
@@ -2032,7 +2330,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-062-low.png",
-    "imageHighSrc": "cards/me3-062-high.png"
+    "imageHighSrc": "cards/me3-062-high.png",
+    "attacks": [
+      {
+        "name": "Tuck Tail",
+        "damage": "60"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21910",
@@ -2065,7 +2370,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-061-low.png",
-    "imageHighSrc": "cards/me3-061-high.png"
+    "imageHighSrc": "cards/me3-061-high.png",
+    "attacks": [
+      {
+        "name": "Scrape Off",
+        "damage": "20"
+      },
+      {
+        "name": "Retaliatory Incisors",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "21909",
@@ -2098,7 +2413,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-060-low.png",
-    "imageHighSrc": "cards/me3-060-high.png"
+    "imageHighSrc": "cards/me3-060-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21908",
@@ -2131,7 +2452,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-059-low.png",
-    "imageHighSrc": "cards/me3-059-high.png"
+    "imageHighSrc": "cards/me3-059-high.png",
+    "attacks": [
+      {
+        "name": "Memory Lock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21907",
@@ -2164,7 +2491,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-058-low.png",
-    "imageHighSrc": "cards/me3-058-high.png"
+    "imageHighSrc": "cards/me3-058-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "80"
+      },
+      {
+        "name": "Metal Slash",
+        "damage": "230"
+      }
+    ]
   },
   {
     "masterCardId": "21906",
@@ -2197,7 +2534,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-057-low.png",
-    "imageHighSrc": "cards/me3-057-high.png"
+    "imageHighSrc": "cards/me3-057-high.png",
+    "attacks": [
+      {
+        "name": "Weaponized Swords",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "21905",
@@ -2230,7 +2573,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-056-low.png",
-    "imageHighSrc": "cards/me3-056-high.png"
+    "imageHighSrc": "cards/me3-056-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21904",
@@ -2265,7 +2614,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-055-low.png",
-    "imageHighSrc": "cards/me3-055-high.png"
+    "imageHighSrc": "cards/me3-055-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Ripper",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21903",
@@ -2298,7 +2654,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-054-low.png",
-    "imageHighSrc": "cards/me3-054-high.png"
+    "imageHighSrc": "cards/me3-054-high.png",
+    "attacks": [
+      {
+        "name": "Strafe",
+        "damage": "20"
+      },
+      {
+        "name": "Rising Blade",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "21902",
@@ -2332,7 +2698,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-053-low.png",
-    "imageHighSrc": "cards/me3-053-high.png"
+    "imageHighSrc": "cards/me3-053-high.png",
+    "attacks": [
+      {
+        "name": "Soul Destroyer",
+        "damage": null
+      },
+      {
+        "name": "Dark Strike",
+        "damage": "210"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21901",
@@ -2365,7 +2742,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-052-low.png",
-    "imageHighSrc": "cards/me3-052-high.png"
+    "imageHighSrc": "cards/me3-052-high.png",
+    "attacks": [
+      {
+        "name": "Wrack Down",
+        "damage": "60"
+      },
+      {
+        "name": "Hazardous Tail",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "21900",
@@ -2398,7 +2785,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-051-low.png",
-    "imageHighSrc": "cards/me3-051-high.png"
+    "imageHighSrc": "cards/me3-051-high.png",
+    "attacks": [
+      {
+        "name": "Poison Jab",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21899",
@@ -2431,7 +2824,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-050-low.png",
-    "imageHighSrc": "cards/me3-050-high.png"
+    "imageHighSrc": "cards/me3-050-high.png",
+    "attacks": [
+      {
+        "name": "Mind Jack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "21898",
@@ -2464,7 +2863,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-049-low.png",
-    "imageHighSrc": "cards/me3-049-high.png"
+    "imageHighSrc": "cards/me3-049-high.png",
+    "attacks": [
+      {
+        "name": "Haunt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21897",
@@ -2497,7 +2902,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-048-low.png",
-    "imageHighSrc": "cards/me3-048-high.png"
+    "imageHighSrc": "cards/me3-048-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21896",
@@ -2532,7 +2943,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-047-low.png",
-    "imageHighSrc": "cards/me3-047-high.png"
+    "imageHighSrc": "cards/me3-047-high.png",
+    "attacks": [
+      {
+        "name": "Gaia Wave",
+        "damage": "200"
+      },
+      {
+        "name": "Nullifying Zero",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21895",
@@ -2565,7 +2987,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-046-low.png",
-    "imageHighSrc": "cards/me3-046-high.png"
+    "imageHighSrc": "cards/me3-046-high.png",
+    "attacks": [
+      {
+        "name": "Vengeful Kick",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "21894",
@@ -2598,7 +3026,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-045-low.png",
-    "imageHighSrc": "cards/me3-045-high.png"
+    "imageHighSrc": "cards/me3-045-high.png",
+    "attacks": [
+      {
+        "name": "Wreak Havoc",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "21893",
@@ -2631,7 +3065,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-044-low.png",
-    "imageHighSrc": "cards/me3-044-high.png"
+    "imageHighSrc": "cards/me3-044-high.png",
+    "attacks": [
+      {
+        "name": "Get Angry",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "21892",
@@ -2664,7 +3104,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-043-low.png",
-    "imageHighSrc": "cards/me3-043-high.png"
+    "imageHighSrc": "cards/me3-043-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "21891",
@@ -2697,7 +3143,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-042-low.png",
-    "imageHighSrc": "cards/me3-042-high.png"
+    "imageHighSrc": "cards/me3-042-high.png",
+    "attacks": [
+      {
+        "name": "Double Draw",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21890",
@@ -2730,7 +3186,17 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/me3-041-low.png",
-    "imageHighSrc": "cards/me3-041-high.png"
+    "imageHighSrc": "cards/me3-041-high.png",
+    "attacks": [
+      {
+        "name": "Rock Tumble",
+        "damage": "50"
+      },
+      {
+        "name": "Screw Knuckle",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "21889",
@@ -2763,7 +3229,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-040-low.png",
-    "imageHighSrc": "cards/me3-040-high.png"
+    "imageHighSrc": "cards/me3-040-high.png",
+    "attacks": [
+      {
+        "name": "Twister Spewing",
+        "damage": "80"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "21888",
@@ -2796,7 +3272,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-039-low.png",
-    "imageHighSrc": "cards/me3-039-high.png"
+    "imageHighSrc": "cards/me3-039-high.png",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "21887",
@@ -2829,7 +3315,17 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/me3-038-low.png",
-    "imageHighSrc": "cards/me3-038-high.png"
+    "imageHighSrc": "cards/me3-038-high.png",
+    "attacks": [
+      {
+        "name": "Rolling Rocks",
+        "damage": "60"
+      },
+      {
+        "name": "Obliterating Nose",
+        "damage": "260"
+      }
+    ]
   },
   {
     "masterCardId": "21886",
@@ -2862,7 +3358,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-037-low.png",
-    "imageHighSrc": "cards/me3-037-high.png"
+    "imageHighSrc": "cards/me3-037-high.png",
+    "attacks": [
+      {
+        "name": "Rolling Rocks",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "21885",
@@ -2895,7 +3397,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-036-low.png",
-    "imageHighSrc": "cards/me3-036-high.png"
+    "imageHighSrc": "cards/me3-036-high.png",
+    "attacks": [
+      {
+        "name": "Draining Kiss",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "21884",
@@ -2928,7 +3436,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-035-low.png",
-    "imageHighSrc": "cards/me3-035-high.png"
+    "imageHighSrc": "cards/me3-035-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Scent",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21883",
@@ -2961,7 +3479,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-034-low.png",
-    "imageHighSrc": "cards/me3-034-high.png"
+    "imageHighSrc": "cards/me3-034-high.png",
+    "attacks": [
+      {
+        "name": "Perplex",
+        "damage": null
+      },
+      {
+        "name": "Psychic",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "21882",
@@ -2994,7 +3522,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-033-low.png",
-    "imageHighSrc": "cards/me3-033-high.png"
+    "imageHighSrc": "cards/me3-033-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Stampede",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21881",
@@ -3027,7 +3565,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-032-low.png",
-    "imageHighSrc": "cards/me3-032-high.png"
+    "imageHighSrc": "cards/me3-032-high.png",
+    "attacks": [
+      {
+        "name": "Double Eater",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "21880",
@@ -3062,7 +3606,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-031-low.png",
-    "imageHighSrc": "cards/me3-031-high.png"
+    "imageHighSrc": "cards/me3-031-high.png",
+    "attacks": [
+      {
+        "name": "Shooting Moons",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21879",
@@ -3095,7 +3646,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-030-low.png",
-    "imageHighSrc": "cards/me3-030-high.png"
+    "imageHighSrc": "cards/me3-030-high.png",
+    "attacks": [
+      {
+        "name": "Follow Me",
+        "damage": null
+      },
+      {
+        "name": "Flop",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21878",
@@ -3128,7 +3689,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-029-low.png",
-    "imageHighSrc": "cards/me3-029-high.png"
+    "imageHighSrc": "cards/me3-029-high.png",
+    "attacks": [
+      {
+        "name": "Tail Generator",
+        "damage": null
+      },
+      {
+        "name": "Thunder Shock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21877",
@@ -3161,7 +3732,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-028-low.png",
-    "imageHighSrc": "cards/me3-028-high.png"
+    "imageHighSrc": "cards/me3-028-high.png",
+    "attacks": [
+      {
+        "name": "Incessant Onslaught",
+        "damage": "70×"
+      },
+      {
+        "name": "Strong Volt",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "21876",
@@ -3194,7 +3775,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-027-low.png",
-    "imageHighSrc": "cards/me3-027-high.png"
+    "imageHighSrc": "cards/me3-027-high.png",
+    "attacks": [
+      {
+        "name": "Static Shock",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "21875",
@@ -3227,7 +3814,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-026-low.png",
-    "imageHighSrc": "cards/me3-026-high.png"
+    "imageHighSrc": "cards/me3-026-high.png",
+    "attacks": [
+      {
+        "name": "Double Scratch",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "21874",
@@ -3260,7 +3853,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-025-low.png",
-    "imageHighSrc": "cards/me3-025-high.png"
+    "imageHighSrc": "cards/me3-025-high.png",
+    "attacks": [
+      {
+        "name": "Strength",
+        "damage": "50"
+      },
+      {
+        "name": "Powerful Steam",
+        "damage": "90×"
+      }
+    ]
   },
   {
     "masterCardId": "21873",
@@ -3293,7 +3896,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-024-low.png",
-    "imageHighSrc": "cards/me3-024-high.png"
+    "imageHighSrc": "cards/me3-024-high.png",
+    "attacks": [
+      {
+        "name": "Freezing Chill",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "21872",
@@ -3326,7 +3935,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-023-low.png",
-    "imageHighSrc": "cards/me3-023-high.png"
+    "imageHighSrc": "cards/me3-023-high.png",
+    "attacks": [
+      {
+        "name": "Icy Wind",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "21871",
@@ -3360,7 +3975,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-022-low.png",
-    "imageHighSrc": "cards/me3-022-high.png"
+    "imageHighSrc": "cards/me3-022-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Turn",
+        "damage": "30×"
+      },
+      {
+        "name": "Surf",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21870",
@@ -3395,7 +4021,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-021-low.png",
-    "imageHighSrc": "cards/me3-021-high.png"
+    "imageHighSrc": "cards/me3-021-high.png",
+    "attacks": [
+      {
+        "name": "Jetting Blow",
+        "damage": "120"
+      },
+      {
+        "name": "Nebula Beam",
+        "damage": "210"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21869",
@@ -3428,7 +4065,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-020-low.png",
-    "imageHighSrc": "cards/me3-020-high.png"
+    "imageHighSrc": "cards/me3-020-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21868",
@@ -3461,7 +4104,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-019-low.png",
-    "imageHighSrc": "cards/me3-019-high.png"
+    "imageHighSrc": "cards/me3-019-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "21867",
@@ -3494,7 +4143,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-018-low.png",
-    "imageHighSrc": "cards/me3-018-high.png"
+    "imageHighSrc": "cards/me3-018-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21866",
@@ -3527,7 +4186,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-017-low.png",
-    "imageHighSrc": "cards/me3-017-high.png"
+    "imageHighSrc": "cards/me3-017-high.png",
+    "attacks": [
+      {
+        "name": "Heat Breath",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "21865",
@@ -3561,7 +4226,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-016-low.png",
-    "imageHighSrc": "cards/me3-016-high.png"
+    "imageHighSrc": "cards/me3-016-high.png",
+    "attacks": [
+      {
+        "name": "Nasty Plot",
+        "damage": null
+      },
+      {
+        "name": "Dire Nails",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21864",
@@ -3594,7 +4270,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-015-low.png",
-    "imageHighSrc": "cards/me3-015-high.png"
+    "imageHighSrc": "cards/me3-015-high.png",
+    "attacks": [
+      {
+        "name": "Fire Claws",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21863",
@@ -3627,7 +4309,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-014-low.png",
-    "imageHighSrc": "cards/me3-014-high.png"
+    "imageHighSrc": "cards/me3-014-high.png",
+    "attacks": [
+      {
+        "name": "Fire Wing",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "21862",
@@ -3660,7 +4348,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-013-low.png",
-    "imageHighSrc": "cards/me3-013-high.png"
+    "imageHighSrc": "cards/me3-013-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "21861",
@@ -3694,7 +4388,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-012-low.png",
-    "imageHighSrc": "cards/me3-012-high.png"
+    "imageHighSrc": "cards/me3-012-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Arrow",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21860",
@@ -3727,7 +4428,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-011-low.png",
-    "imageHighSrc": "cards/me3-011-high.png"
+    "imageHighSrc": "cards/me3-011-high.png",
+    "attacks": [
+      {
+        "name": "Leafage",
+        "damage": "20"
+      },
+      {
+        "name": "Feather Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21859",
@@ -3760,7 +4471,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-010-low.png",
-    "imageHighSrc": "cards/me3-010-high.png"
+    "imageHighSrc": "cards/me3-010-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21858",
@@ -3793,7 +4514,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-009-low.png",
-    "imageHighSrc": "cards/me3-009-high.png"
+    "imageHighSrc": "cards/me3-009-high.png",
+    "attacks": [
+      {
+        "name": "Blow Through",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "21857",
@@ -3826,7 +4553,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-008-low.png",
-    "imageHighSrc": "cards/me3-008-high.png"
+    "imageHighSrc": "cards/me3-008-high.png",
+    "attacks": [
+      {
+        "name": "Hide",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21856",
@@ -3859,7 +4592,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-007-low.png",
-    "imageHighSrc": "cards/me3-007-high.png"
+    "imageHighSrc": "cards/me3-007-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21855",
@@ -3892,7 +4631,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-006-low.png",
-    "imageHighSrc": "cards/me3-006-high.png"
+    "imageHighSrc": "cards/me3-006-high.png",
+    "attacks": [
+      {
+        "name": "Regal Command",
+        "damage": "20×"
+      },
+      {
+        "name": "Solar Coiling",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "21854",
@@ -3925,7 +4674,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-005-low.png",
-    "imageHighSrc": "cards/me3-005-high.png"
+    "imageHighSrc": "cards/me3-005-high.png",
+    "attacks": [
+      {
+        "name": "Solar Cutter",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "21853",
@@ -3958,7 +4713,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-004-low.png",
-    "imageHighSrc": "cards/me3-004-high.png"
+    "imageHighSrc": "cards/me3-004-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21852",
@@ -3991,7 +4752,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-003-low.png",
-    "imageHighSrc": "cards/me3-003-high.png"
+    "imageHighSrc": "cards/me3-003-high.png",
+    "attacks": [
+      {
+        "name": "Send Flowers",
+        "damage": null
+      },
+      {
+        "name": "Leaf Step",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21851",
@@ -4024,7 +4795,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-002-low.png",
-    "imageHighSrc": "cards/me3-002-high.png"
+    "imageHighSrc": "cards/me3-002-high.png",
+    "attacks": [
+      {
+        "name": "Poison Ring",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "21850",
@@ -4057,6 +4834,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me3-001-low.png",
-    "imageHighSrc": "cards/me3-001-high.png"
+    "imageHighSrc": "cards/me3-001-high.png",
+    "attacks": [
+      {
+        "name": "Gooey Thread",
+        "damage": "10"
+      }
+    ]
   }
 ]

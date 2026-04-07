@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "7308",
-    "externalId": null,
+    "externalId": "mcd19-12",
     "tcgdex_id": "2019sm-12",
     "localId": "012",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "012/12",
+    "cardNumber": "12/12",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 012/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Eevee 12/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-012-low.png",
-    "imageHighSrc": "cards/mcd19-012-high.png"
+    "imageHighSrc": "cards/mcd19-012-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7303",
-    "externalId": null,
+    "externalId": "mcd19-11",
     "tcgdex_id": "2019sm-11",
     "localId": "011",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "011/12",
+    "cardNumber": "11/12",
     "cardName": "Alolan Dugtrio",
-    "fullDisplayName": "Alolan Dugtrio 011/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Alolan Dugtrio 11/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -63,18 +69,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-011-low.png",
-    "imageHighSrc": "cards/mcd19-011-high.png"
+    "imageHighSrc": "cards/mcd19-011-high.png",
+    "attacks": [
+      {
+        "name": "Gold Rush",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7298",
-    "externalId": null,
+    "externalId": "mcd19-10",
     "tcgdex_id": "2019sm-10",
     "localId": "010",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "010/12",
+    "cardNumber": "10/12",
     "cardName": "Alolan Meowth",
-    "fullDisplayName": "Alolan Meowth 010/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Alolan Meowth 10/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +108,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-010-low.png",
-    "imageHighSrc": "cards/mcd19-010-high.png"
+    "imageHighSrc": "cards/mcd19-010-high.png",
+    "attacks": [
+      {
+        "name": "Spoil the Fun",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7293",
-    "externalId": null,
+    "externalId": "mcd19-9",
     "tcgdex_id": "2019sm-9",
     "localId": "009",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "009/12",
+    "cardNumber": "9/12",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 009/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Onix 9/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +147,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-009-low.png",
-    "imageHighSrc": "cards/mcd19-009-high.png"
+    "imageHighSrc": "cards/mcd19-009-high.png",
+    "attacks": [
+      {
+        "name": "Screech",
+        "damage": null
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7288",
-    "externalId": null,
+    "externalId": "mcd19-8",
     "tcgdex_id": "2019sm-8",
     "localId": "008",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "008/12",
+    "cardNumber": "8/12",
     "cardName": "Mankey",
-    "fullDisplayName": "Mankey 008/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Mankey 8/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +190,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-008-low.png",
-    "imageHighSrc": "cards/mcd19-008-high.png"
+    "imageHighSrc": "cards/mcd19-008-high.png",
+    "attacks": [
+      {
+        "name": "Three-Step Strike",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7283",
-    "externalId": null,
+    "externalId": "mcd19-7",
     "tcgdex_id": "2019sm-7",
     "localId": "007",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "007/12",
+    "cardNumber": "7/12",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 007/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Gastly 7/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +229,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-007-low.png",
-    "imageHighSrc": "cards/mcd19-007-high.png"
+    "imageHighSrc": "cards/mcd19-007-high.png",
+    "attacks": [
+      {
+        "name": "Ominous Eyes",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7278",
-    "externalId": null,
+    "externalId": "mcd19-6",
     "tcgdex_id": "2019sm-6",
     "localId": "006",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "006/12",
+    "cardNumber": "6/12",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 006/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Pikachu 6/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +268,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-006-low.png",
-    "imageHighSrc": "cards/mcd19-006-high.png"
+    "imageHighSrc": "cards/mcd19-006-high.png",
+    "attacks": [
+      {
+        "name": "Iron Tail",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7272",
-    "externalId": null,
+    "externalId": "mcd19-5",
     "tcgdex_id": "2019sm-5",
     "localId": "005",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "005/12",
+    "cardNumber": "5/12",
     "cardName": "Lapras",
-    "fullDisplayName": "Lapras 005/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Lapras 5/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +307,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-005-low.png",
-    "imageHighSrc": "cards/mcd19-005-high.png"
+    "imageHighSrc": "cards/mcd19-005-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Bullet",
+        "damage": "20"
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "7266",
-    "externalId": null,
+    "externalId": "mcd19-4",
     "tcgdex_id": "2019sm-4",
     "localId": "004",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "004/12",
+    "cardNumber": "4/12",
     "cardName": "Alolan Sandshrew",
-    "fullDisplayName": "Alolan Sandshrew 004/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Alolan Sandshrew 4/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +350,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-004-low.png",
-    "imageHighSrc": "cards/mcd19-004-high.png"
+    "imageHighSrc": "cards/mcd19-004-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7254",
-    "externalId": null,
+    "externalId": "mcd19-3",
     "tcgdex_id": "2019sm-3",
     "localId": "003",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "003/12",
+    "cardNumber": "3/12",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 003/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Magmar 3/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +389,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-003-low.png",
-    "imageHighSrc": "cards/mcd19-003-high.png"
+    "imageHighSrc": "cards/mcd19-003-high.png",
+    "attacks": [
+      {
+        "name": "Controlled Burn",
+        "damage": null
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "7239",
-    "externalId": null,
+    "externalId": "mcd19-2",
     "tcgdex_id": "2019sm-2",
     "localId": "002",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "002/12",
+    "cardNumber": "2/12",
     "cardName": "Alolan Exeggutor",
-    "fullDisplayName": "Alolan Exeggutor 002/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Alolan Exeggutor 2/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -360,18 +432,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-002-low.png",
-    "imageHighSrc": "cards/mcd19-002-high.png"
+    "imageHighSrc": "cards/mcd19-002-high.png",
+    "attacks": [
+      {
+        "name": "Tropical Shake",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7225",
-    "externalId": null,
+    "externalId": "mcd19-1",
     "tcgdex_id": "2019sm-1",
     "localId": "001",
     "setCode": "2019sm",
     "setTcgdexId": "2019sm",
-    "cardNumber": "001/12",
+    "cardNumber": "1/12",
     "cardName": "Caterpie",
-    "fullDisplayName": "Caterpie 001/12 Macdonald's Collection 2019",
+    "fullDisplayName": "Caterpie 1/12 Macdonald's Collection 2019",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,6 +471,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd19-001-low.png",
-    "imageHighSrc": "cards/mcd19-001-high.png"
+    "imageHighSrc": "cards/mcd19-001-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      }
+    ]
   }
 ]

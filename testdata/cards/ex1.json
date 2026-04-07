@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "4953",
-    "externalId": null,
+    "externalId": "ex1-109",
     "tcgdex_id": "ex1-109",
     "localId": "109",
     "setCode": "ex1",
@@ -30,7 +30,7 @@
   },
   {
     "masterCardId": "4946",
-    "externalId": null,
+    "externalId": "ex1-108",
     "tcgdex_id": "ex1-108",
     "localId": "108",
     "setCode": "ex1",
@@ -59,7 +59,7 @@
   },
   {
     "masterCardId": "4939",
-    "externalId": null,
+    "externalId": "ex1-107",
     "tcgdex_id": "ex1-107",
     "localId": "107",
     "setCode": "ex1",
@@ -88,7 +88,7 @@
   },
   {
     "masterCardId": "4932",
-    "externalId": null,
+    "externalId": "ex1-106",
     "tcgdex_id": "ex1-106",
     "localId": "106",
     "setCode": "ex1",
@@ -117,7 +117,7 @@
   },
   {
     "masterCardId": "4925",
-    "externalId": null,
+    "externalId": "ex1-105",
     "tcgdex_id": "ex1-105",
     "localId": "105",
     "setCode": "ex1",
@@ -146,7 +146,7 @@
   },
   {
     "masterCardId": "4917",
-    "externalId": null,
+    "externalId": "ex1-104",
     "tcgdex_id": "ex1-104",
     "localId": "104",
     "setCode": "ex1",
@@ -175,7 +175,7 @@
   },
   {
     "masterCardId": "4909",
-    "externalId": null,
+    "externalId": "ex1-103",
     "tcgdex_id": "ex1-103",
     "localId": "103",
     "setCode": "ex1",
@@ -205,11 +205,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-103-low.png",
-    "imageHighSrc": "cards/ex1-103-high.png"
+    "imageHighSrc": "cards/ex1-103-high.png",
+    "attacks": [
+      {
+        "name": "Double Scratch",
+        "damage": "10×"
+      },
+      {
+        "name": "Beat Up",
+        "damage": "20×"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4902",
-    "externalId": null,
+    "externalId": "ex1-102",
     "tcgdex_id": "ex1-102",
     "localId": "102",
     "setCode": "ex1",
@@ -239,11 +250,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-102-low.png",
-    "imageHighSrc": "cards/ex1-102-high.png"
+    "imageHighSrc": "cards/ex1-102-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "50"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4894",
-    "externalId": null,
+    "externalId": "ex1-101",
     "tcgdex_id": "ex1-101",
     "localId": "101",
     "setCode": "ex1",
@@ -273,11 +295,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-101-low.png",
-    "imageHighSrc": "cards/ex1-101-high.png"
+    "imageHighSrc": "cards/ex1-101-high.png",
+    "attacks": [
+      {
+        "name": "Energy Absorption",
+        "damage": null
+      },
+      {
+        "name": "Psyburn",
+        "damage": "60"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4887",
-    "externalId": null,
+    "externalId": "ex1-100",
     "tcgdex_id": "ex1-100",
     "localId": "100",
     "setCode": "ex1",
@@ -307,18 +340,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-100-low.png",
-    "imageHighSrc": "cards/ex1-100-high.png"
+    "imageHighSrc": "cards/ex1-100-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "10"
+      },
+      {
+        "name": "Super Singe",
+        "damage": "40"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4878",
-    "externalId": null,
+    "externalId": "ex1-99",
     "tcgdex_id": "ex1-99",
     "localId": "099",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "099/109",
+    "cardNumber": "99/109",
     "cardName": "Lapras ex",
-    "fullDisplayName": "Lapras ex 099/109 Ruby & Sapphire",
+    "fullDisplayName": "Lapras ex 99/109 Ruby & Sapphire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -341,18 +385,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-099-low.png",
-    "imageHighSrc": "cards/ex1-099-high.png"
+    "imageHighSrc": "cards/ex1-099-high.png",
+    "attacks": [
+      {
+        "name": "Energy Ball",
+        "damage": "10+"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "30"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4872",
-    "externalId": null,
+    "externalId": "ex1-98",
     "tcgdex_id": "ex1-98",
     "localId": "098",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "098/109",
+    "cardNumber": "98/109",
     "cardName": "Hitmonchan ex",
-    "fullDisplayName": "Hitmonchan ex 098/109 Ruby & Sapphire",
+    "fullDisplayName": "Hitmonchan ex 98/109 Ruby & Sapphire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -375,18 +430,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-098-low.png",
-    "imageHighSrc": "cards/ex1-098-high.png"
+    "imageHighSrc": "cards/ex1-098-high.png",
+    "attacks": [
+      {
+        "name": "Steady Punch",
+        "damage": "10+"
+      },
+      {
+        "name": "Sky Uppercut",
+        "damage": "50"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4865",
-    "externalId": null,
+    "externalId": "ex1-97",
     "tcgdex_id": "ex1-97",
     "localId": "097",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "097/109",
+    "cardNumber": "97/109",
     "cardName": "Electabuzz ex",
-    "fullDisplayName": "Electabuzz ex 097/109 Ruby & Sapphire",
+    "fullDisplayName": "Electabuzz ex 97/109 Ruby & Sapphire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -409,18 +475,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-097-low.png",
-    "imageHighSrc": "cards/ex1-097-high.png"
+    "imageHighSrc": "cards/ex1-097-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "40+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4858",
-    "externalId": null,
+    "externalId": "ex1-96",
     "tcgdex_id": "ex1-96",
     "localId": "096",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "096/109",
+    "cardNumber": "96/109",
     "cardName": "Chansey ex",
-    "fullDisplayName": "Chansey ex 096/109 Ruby & Sapphire",
+    "fullDisplayName": "Chansey ex 96/109 Ruby & Sapphire",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -443,18 +520,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-096-low.png",
-    "imageHighSrc": "cards/ex1-096-high.png"
+    "imageHighSrc": "cards/ex1-096-high.png",
+    "attacks": [
+      {
+        "name": "Healing Egg",
+        "damage": null
+      },
+      {
+        "name": "Double-edge",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4850",
-    "externalId": null,
+    "externalId": "ex1-95",
     "tcgdex_id": "ex1-95",
     "localId": "095",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "095/109",
+    "cardNumber": "95/109",
     "cardName": "Rainbow Energy",
-    "fullDisplayName": "Rainbow Energy 095/109 Ruby & Sapphire",
+    "fullDisplayName": "Rainbow Energy 95/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -472,18 +560,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-095-low.png",
-    "imageHighSrc": "cards/ex1-095-high.png"
+    "imageHighSrc": "cards/ex1-095-high.png",
+    "rules": "Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon."
   },
   {
     "masterCardId": "4842",
-    "externalId": null,
+    "externalId": "ex1-94",
     "tcgdex_id": "ex1-94",
     "localId": "094",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "094/109",
+    "cardNumber": "94/109",
     "cardName": "Metal Energy",
-    "fullDisplayName": "Metal Energy 094/109 Ruby & Sapphire",
+    "fullDisplayName": "Metal Energy 94/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -501,18 +590,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-094-low.png",
-    "imageHighSrc": "cards/ex1-094-high.png"
+    "imageHighSrc": "cards/ex1-094-high.png",
+    "rules": "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't Metal. Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4835",
-    "externalId": null,
+    "externalId": "ex1-93",
     "tcgdex_id": "ex1-93",
     "localId": "093",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "093/109",
+    "cardNumber": "93/109",
     "cardName": "Darkness Energy",
-    "fullDisplayName": "Darkness Energy 093/109 Ruby & Sapphire",
+    "fullDisplayName": "Darkness Energy 93/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -530,18 +620,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-093-low.png",
-    "imageHighSrc": "cards/ex1-093-high.png"
+    "imageHighSrc": "cards/ex1-093-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect unless the Attacking Pokémon is Darkness or has Dark in its name. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4827",
-    "externalId": null,
+    "externalId": "ex1-92",
     "tcgdex_id": "ex1-92",
     "localId": "092",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "092/109",
+    "cardNumber": "92/109",
     "cardName": "Switch",
-    "fullDisplayName": "Switch 092/109 Ruby & Sapphire",
+    "fullDisplayName": "Switch 92/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -559,18 +650,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-092-low.png",
-    "imageHighSrc": "cards/ex1-092-high.png"
+    "imageHighSrc": "cards/ex1-092-high.png",
+    "rules": "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "4819",
-    "externalId": null,
+    "externalId": "ex1-91",
     "tcgdex_id": "ex1-91",
     "localId": "091",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "091/109",
+    "cardNumber": "91/109",
     "cardName": "Potion",
-    "fullDisplayName": "Potion 091/109 Ruby & Sapphire",
+    "fullDisplayName": "Potion 91/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -588,18 +680,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-091-low.png",
-    "imageHighSrc": "cards/ex1-091-high.png"
+    "imageHighSrc": "cards/ex1-091-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "4812",
-    "externalId": null,
+    "externalId": "ex1-90",
     "tcgdex_id": "ex1-90",
     "localId": "090",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "090/109",
+    "cardNumber": "90/109",
     "cardName": "Energy Search",
-    "fullDisplayName": "Energy Search 090/109 Ruby & Sapphire",
+    "fullDisplayName": "Energy Search 90/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -617,18 +710,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-090-low.png",
-    "imageHighSrc": "cards/ex1-090-high.png"
+    "imageHighSrc": "cards/ex1-090-high.png",
+    "rules": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4804",
-    "externalId": null,
+    "externalId": "ex1-89",
     "tcgdex_id": "ex1-89",
     "localId": "089",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "089/109",
+    "cardNumber": "89/109",
     "cardName": "Professor Birch",
-    "fullDisplayName": "Professor Birch 089/109 Ruby & Sapphire",
+    "fullDisplayName": "Professor Birch 89/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -646,18 +740,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-089-low.png",
-    "imageHighSrc": "cards/ex1-089-high.png"
+    "imageHighSrc": "cards/ex1-089-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw cards from your deck until you have 6 cards in your hand."
   },
   {
     "masterCardId": "4794",
-    "externalId": null,
+    "externalId": "ex1-88",
     "tcgdex_id": "ex1-88",
     "localId": "088",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "088/109",
+    "cardNumber": "88/109",
     "cardName": "PokéNav",
-    "fullDisplayName": "PokéNav 088/109 Ruby & Sapphire",
+    "fullDisplayName": "PokéNav 88/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -675,18 +770,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-088-low.png",
-    "imageHighSrc": "cards/ex1-088-high.png"
+    "imageHighSrc": "cards/ex1-088-high.png",
+    "rules": "Look at the top 3 cards of your deck, and choose a Basic Pokémon, Evolution card, or Energy card. Show it to your opponent and put it into your hand. Put the 2 other cards back on top of your deck in any order."
   },
   {
     "masterCardId": "4787",
-    "externalId": null,
+    "externalId": "ex1-87",
     "tcgdex_id": "ex1-87",
     "localId": "087",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "087/109",
+    "cardNumber": "87/109",
     "cardName": "Pokémon Reversal",
-    "fullDisplayName": "Pokémon Reversal 087/109 Ruby & Sapphire",
+    "fullDisplayName": "Pokémon Reversal 87/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -704,18 +800,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-087-low.png",
-    "imageHighSrc": "cards/ex1-087-high.png"
+    "imageHighSrc": "cards/ex1-087-high.png",
+    "rules": "Flip a coin. If heads, your opponent switches 1 of his or her Active Pokémon with 1 of his or her Benched Pokémon."
   },
   {
     "masterCardId": "4780",
-    "externalId": null,
+    "externalId": "ex1-86",
     "tcgdex_id": "ex1-86",
     "localId": "086",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "086/109",
+    "cardNumber": "86/109",
     "cardName": "Poké Ball",
-    "fullDisplayName": "Poké Ball 086/109 Ruby & Sapphire",
+    "fullDisplayName": "Poké Ball 86/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -733,18 +830,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-086-low.png",
-    "imageHighSrc": "cards/ex1-086-high.png"
+    "imageHighSrc": "cards/ex1-086-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Basic Pokémon or Evolution card, show it to your opponent and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4773",
-    "externalId": null,
+    "externalId": "ex1-85",
     "tcgdex_id": "ex1-85",
     "localId": "085",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "085/109",
+    "cardNumber": "85/109",
     "cardName": "Oran Berry",
-    "fullDisplayName": "Oran Berry 085/109 Ruby & Sapphire",
+    "fullDisplayName": "Oran Berry 85/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -762,18 +860,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-085-low.png",
-    "imageHighSrc": "cards/ex1-085-high.png"
+    "imageHighSrc": "cards/ex1-085-high.png",
+    "rules": "Attach Oran Berry to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nAt any time between turns, if the Pokémon this card is attached to has at least 2 damage counters on it, remove 2 damage counters from it. Then discard Oran Berry."
   },
   {
     "masterCardId": "4766",
-    "externalId": null,
+    "externalId": "ex1-84",
     "tcgdex_id": "ex1-84",
     "localId": "084",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "084/109",
+    "cardNumber": "84/109",
     "cardName": "Lum Berry",
-    "fullDisplayName": "Lum Berry 084/109 Ruby & Sapphire",
+    "fullDisplayName": "Lum Berry 84/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -791,18 +890,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-084-low.png",
-    "imageHighSrc": "cards/ex1-084-high.png"
+    "imageHighSrc": "cards/ex1-084-high.png",
+    "rules": "Attach Lum Berry to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nAt any time between turns, if the Pokémon this card is attached to is affected by any Special Conditions, remove all of them. Then discard Lum Berry."
   },
   {
     "masterCardId": "4755",
-    "externalId": null,
+    "externalId": "ex1-83",
     "tcgdex_id": "ex1-83",
     "localId": "083",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "083/109",
+    "cardNumber": "83/109",
     "cardName": "Lady Outing",
-    "fullDisplayName": "Lady Outing 083/109 Ruby & Sapphire",
+    "fullDisplayName": "Lady Outing 83/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -820,18 +920,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-083-low.png",
-    "imageHighSrc": "cards/ex1-083-high.png"
+    "imageHighSrc": "cards/ex1-083-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 3 different types of basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4748",
-    "externalId": null,
+    "externalId": "ex1-82",
     "tcgdex_id": "ex1-82",
     "localId": "082",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "082/109",
+    "cardNumber": "82/109",
     "cardName": "Energy Switch",
-    "fullDisplayName": "Energy Switch 082/109 Ruby & Sapphire",
+    "fullDisplayName": "Energy Switch 82/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -849,18 +950,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-082-low.png",
-    "imageHighSrc": "cards/ex1-082-high.png"
+    "imageHighSrc": "cards/ex1-082-high.png",
+    "rules": "Move a basic Energy card attached to 1 of your Pokémon to another of your Pokémon."
   },
   {
     "masterCardId": "4739",
-    "externalId": null,
+    "externalId": "ex1-81",
     "tcgdex_id": "ex1-81",
     "localId": "081",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "081/109",
+    "cardNumber": "81/109",
     "cardName": "Energy Restore",
-    "fullDisplayName": "Energy Restore 081/109 Ruby & Sapphire",
+    "fullDisplayName": "Energy Restore 81/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -878,18 +980,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-081-low.png",
-    "imageHighSrc": "cards/ex1-081-high.png"
+    "imageHighSrc": "cards/ex1-081-high.png",
+    "rules": "Flip 3 coins. For each heads, put a Basic Energy card from your discard pile into your hand. If you don't have that many basic Energy cards in your discard pile, put all of them into your hand."
   },
   {
     "masterCardId": "4734",
-    "externalId": null,
+    "externalId": "ex1-80",
     "tcgdex_id": "ex1-80",
     "localId": "080",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "080/109",
+    "cardNumber": "80/109",
     "cardName": "Energy Removal 2",
-    "fullDisplayName": "Energy Removal 2 080/109 Ruby & Sapphire",
+    "fullDisplayName": "Energy Removal 2 80/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -907,18 +1010,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-080-low.png",
-    "imageHighSrc": "cards/ex1-080-high.png"
+    "imageHighSrc": "cards/ex1-080-high.png",
+    "rules": "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it."
   },
   {
     "masterCardId": "4724",
-    "externalId": null,
+    "externalId": "ex1-79",
     "tcgdex_id": "ex1-79",
     "localId": "079",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "079/109",
+    "cardNumber": "79/109",
     "cardName": "Zigzagoon",
-    "fullDisplayName": "Zigzagoon 079/109 Ruby & Sapphire",
+    "fullDisplayName": "Zigzagoon 79/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -940,18 +1044,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-079-low.png",
-    "imageHighSrc": "cards/ex1-079-high.png"
+    "imageHighSrc": "cards/ex1-079-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4718",
-    "externalId": null,
+    "externalId": "ex1-78",
     "tcgdex_id": "ex1-78",
     "localId": "078",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "078/109",
+    "cardNumber": "78/109",
     "cardName": "Wurmple",
-    "fullDisplayName": "Wurmple 078/109 Ruby & Sapphire",
+    "fullDisplayName": "Wurmple 78/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -973,18 +1083,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-078-low.png",
-    "imageHighSrc": "cards/ex1-078-high.png"
+    "imageHighSrc": "cards/ex1-078-high.png",
+    "attacks": [
+      {
+        "name": "Signs of Evolution",
+        "damage": null
+      },
+      {
+        "name": "Poison Barb",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4713",
-    "externalId": null,
+    "externalId": "ex1-77",
     "tcgdex_id": "ex1-77",
     "localId": "077",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "077/109",
+    "cardNumber": "77/109",
     "cardName": "Wingull",
-    "fullDisplayName": "Wingull 077/109 Ruby & Sapphire",
+    "fullDisplayName": "Wingull 77/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1006,18 +1126,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-077-low.png",
-    "imageHighSrc": "cards/ex1-077-high.png"
+    "imageHighSrc": "cards/ex1-077-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4706",
-    "externalId": null,
+    "externalId": "ex1-76",
     "tcgdex_id": "ex1-76",
     "localId": "076",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "076/109",
+    "cardNumber": "76/109",
     "cardName": "Treecko",
-    "fullDisplayName": "Treecko 076/109 Ruby & Sapphire",
+    "fullDisplayName": "Treecko 76/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1039,18 +1165,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-076-low.png",
-    "imageHighSrc": "cards/ex1-076-high.png"
+    "imageHighSrc": "cards/ex1-076-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4699",
-    "externalId": null,
+    "externalId": "ex1-75",
     "tcgdex_id": "ex1-75",
     "localId": "075",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "075/109",
+    "cardNumber": "75/109",
     "cardName": "Treecko",
-    "fullDisplayName": "Treecko 075/109 Ruby & Sapphire",
+    "fullDisplayName": "Treecko 75/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1072,18 +1208,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-075-low.png",
-    "imageHighSrc": "cards/ex1-075-high.png"
+    "imageHighSrc": "cards/ex1-075-high.png",
+    "attacks": [
+      {
+        "name": "Poison Breath",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4690",
-    "externalId": null,
+    "externalId": "ex1-74",
     "tcgdex_id": "ex1-74",
     "localId": "074",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "074/109",
+    "cardNumber": "74/109",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 074/109 Ruby & Sapphire",
+    "fullDisplayName": "Torchic 74/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1105,18 +1247,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-074-low.png",
-    "imageHighSrc": "cards/ex1-074-high.png"
+    "imageHighSrc": "cards/ex1-074-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4682",
-    "externalId": null,
+    "externalId": "ex1-73",
     "tcgdex_id": "ex1-73",
     "localId": "073",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "073/109",
+    "cardNumber": "73/109",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 073/109 Ruby & Sapphire",
+    "fullDisplayName": "Torchic 73/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1138,18 +1286,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-073-low.png",
-    "imageHighSrc": "cards/ex1-073-high.png"
+    "imageHighSrc": "cards/ex1-073-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Fireworks",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4674",
-    "externalId": null,
+    "externalId": "ex1-72",
     "tcgdex_id": "ex1-72",
     "localId": "072",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "072/109",
+    "cardNumber": "72/109",
     "cardName": "Taillow",
-    "fullDisplayName": "Taillow 072/109 Ruby & Sapphire",
+    "fullDisplayName": "Taillow 72/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1171,18 +1329,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-072-low.png",
-    "imageHighSrc": "cards/ex1-072-high.png"
+    "imageHighSrc": "cards/ex1-072-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4666",
-    "externalId": null,
+    "externalId": "ex1-71",
     "tcgdex_id": "ex1-71",
     "localId": "071",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "071/109",
+    "cardNumber": "71/109",
     "cardName": "Skitty",
-    "fullDisplayName": "Skitty 071/109 Ruby & Sapphire",
+    "fullDisplayName": "Skitty 71/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1204,18 +1372,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-071-low.png",
-    "imageHighSrc": "cards/ex1-071-high.png"
+    "imageHighSrc": "cards/ex1-071-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Lunge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4659",
-    "externalId": null,
+    "externalId": "ex1-70",
     "tcgdex_id": "ex1-70",
     "localId": "070",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "070/109",
+    "cardNumber": "70/109",
     "cardName": "Skitty",
-    "fullDisplayName": "Skitty 070/109 Ruby & Sapphire",
+    "fullDisplayName": "Skitty 70/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1237,18 +1415,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-070-low.png",
-    "imageHighSrc": "cards/ex1-070-high.png"
+    "imageHighSrc": "cards/ex1-070-high.png",
+    "attacks": [
+      {
+        "name": "Plus Energy",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4651",
-    "externalId": null,
+    "externalId": "ex1-69",
     "tcgdex_id": "ex1-69",
     "localId": "069",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "069/109",
+    "cardNumber": "69/109",
     "cardName": "Shroomish",
-    "fullDisplayName": "Shroomish 069/109 Ruby & Sapphire",
+    "fullDisplayName": "Shroomish 69/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1270,18 +1458,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-069-low.png",
-    "imageHighSrc": "cards/ex1-069-high.png"
+    "imageHighSrc": "cards/ex1-069-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4642",
-    "externalId": null,
+    "externalId": "ex1-68",
     "tcgdex_id": "ex1-68",
     "localId": "068",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "068/109",
+    "cardNumber": "68/109",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts 068/109 Ruby & Sapphire",
+    "fullDisplayName": "Ralts 68/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1303,18 +1497,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-068-low.png",
-    "imageHighSrc": "cards/ex1-068-high.png"
+    "imageHighSrc": "cards/ex1-068-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Link Blast",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4635",
-    "externalId": null,
+    "externalId": "ex1-67",
     "tcgdex_id": "ex1-67",
     "localId": "067",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "067/109",
+    "cardNumber": "67/109",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts 067/109 Ruby & Sapphire",
+    "fullDisplayName": "Ralts 67/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1336,18 +1540,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-067-low.png",
-    "imageHighSrc": "cards/ex1-067-high.png"
+    "imageHighSrc": "cards/ex1-067-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Hypnoblast",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4627",
-    "externalId": null,
+    "externalId": "ex1-66",
     "tcgdex_id": "ex1-66",
     "localId": "066",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "066/109",
+    "cardNumber": "66/109",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts 066/109 Ruby & Sapphire",
+    "fullDisplayName": "Ralts 66/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1369,18 +1583,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-066-low.png",
-    "imageHighSrc": "cards/ex1-066-high.png"
+    "imageHighSrc": "cards/ex1-066-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4619",
-    "externalId": null,
+    "externalId": "ex1-65",
     "tcgdex_id": "ex1-65",
     "localId": "065",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "065/109",
+    "cardNumber": "65/109",
     "cardName": "Poochyena",
-    "fullDisplayName": "Poochyena 065/109 Ruby & Sapphire",
+    "fullDisplayName": "Poochyena 65/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1402,18 +1622,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-065-low.png",
-    "imageHighSrc": "cards/ex1-065-high.png"
+    "imageHighSrc": "cards/ex1-065-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Bind",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4611",
-    "externalId": null,
+    "externalId": "ex1-64",
     "tcgdex_id": "ex1-64",
     "localId": "064",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "064/109",
+    "cardNumber": "64/109",
     "cardName": "Poochyena",
-    "fullDisplayName": "Poochyena 064/109 Ruby & Sapphire",
+    "fullDisplayName": "Poochyena 64/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1435,18 +1661,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-064-low.png",
-    "imageHighSrc": "cards/ex1-064-high.png"
+    "imageHighSrc": "cards/ex1-064-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": null
+      },
+      {
+        "name": "Rear Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4603",
-    "externalId": null,
+    "externalId": "ex1-63",
     "tcgdex_id": "ex1-63",
     "localId": "063",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "063/109",
+    "cardNumber": "63/109",
     "cardName": "Poochyena",
-    "fullDisplayName": "Poochyena 063/109 Ruby & Sapphire",
+    "fullDisplayName": "Poochyena 63/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1468,18 +1704,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-063-low.png",
-    "imageHighSrc": "cards/ex1-063-high.png"
+    "imageHighSrc": "cards/ex1-063-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4597",
-    "externalId": null,
+    "externalId": "ex1-62",
     "tcgdex_id": "ex1-62",
     "localId": "062",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "062/109",
+    "cardNumber": "62/109",
     "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 062/109 Ruby & Sapphire",
+    "fullDisplayName": "Phanpy 62/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1501,18 +1743,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-062-low.png",
-    "imageHighSrc": "cards/ex1-062-high.png"
+    "imageHighSrc": "cards/ex1-062-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Trembler",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4589",
-    "externalId": null,
+    "externalId": "ex1-61",
     "tcgdex_id": "ex1-61",
     "localId": "061",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "061/109",
+    "cardNumber": "61/109",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 061/109 Ruby & Sapphire",
+    "fullDisplayName": "Numel 61/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1534,18 +1786,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-061-low.png",
-    "imageHighSrc": "cards/ex1-061-high.png"
+    "imageHighSrc": "cards/ex1-061-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Burn Off",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4581",
-    "externalId": null,
+    "externalId": "ex1-60",
     "tcgdex_id": "ex1-60",
     "localId": "060",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "060/109",
+    "cardNumber": "60/109",
     "cardName": "Mudkip",
-    "fullDisplayName": "Mudkip 060/109 Ruby & Sapphire",
+    "fullDisplayName": "Mudkip 60/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1567,18 +1829,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-060-low.png",
-    "imageHighSrc": "cards/ex1-060-high.png"
+    "imageHighSrc": "cards/ex1-060-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4573",
-    "externalId": null,
+    "externalId": "ex1-59",
     "tcgdex_id": "ex1-59",
     "localId": "059",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "059/109",
+    "cardNumber": "59/109",
     "cardName": "Mudkip",
-    "fullDisplayName": "Mudkip 059/109 Ruby & Sapphire",
+    "fullDisplayName": "Mudkip 59/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1600,18 +1872,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-059-low.png",
-    "imageHighSrc": "cards/ex1-059-high.png"
+    "imageHighSrc": "cards/ex1-059-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4565",
-    "externalId": null,
+    "externalId": "ex1-58",
     "tcgdex_id": "ex1-58",
     "localId": "058",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "058/109",
+    "cardNumber": "58/109",
     "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 058/109 Ruby & Sapphire",
+    "fullDisplayName": "Makuhita 58/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1633,18 +1911,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-058-low.png",
-    "imageHighSrc": "cards/ex1-058-high.png"
+    "imageHighSrc": "cards/ex1-058-high.png",
+    "attacks": [
+      {
+        "name": "Fake Out",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4556",
-    "externalId": null,
+    "externalId": "ex1-57",
     "tcgdex_id": "ex1-57",
     "localId": "057",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "057/109",
+    "cardNumber": "57/109",
     "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 057/109 Ruby & Sapphire",
+    "fullDisplayName": "Makuhita 57/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1666,18 +1950,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-057-low.png",
-    "imageHighSrc": "cards/ex1-057-high.png"
+    "imageHighSrc": "cards/ex1-057-high.png",
+    "attacks": [
+      {
+        "name": "Fling",
+        "damage": null
+      },
+      {
+        "name": "Low Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4547",
-    "externalId": null,
+    "externalId": "ex1-56",
     "tcgdex_id": "ex1-56",
     "localId": "056",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "056/109",
+    "cardNumber": "56/109",
     "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 056/109 Ruby & Sapphire",
+    "fullDisplayName": "Makuhita 56/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1699,18 +1993,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-056-low.png",
-    "imageHighSrc": "cards/ex1-056-high.png"
+    "imageHighSrc": "cards/ex1-056-high.png",
+    "attacks": [
+      {
+        "name": "Slap Push",
+        "damage": "10"
+      },
+      {
+        "name": "Lunge Out",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4538",
-    "externalId": null,
+    "externalId": "ex1-55",
     "tcgdex_id": "ex1-55",
     "localId": "055",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "055/109",
+    "cardNumber": "55/109",
     "cardName": "Goldeen",
-    "fullDisplayName": "Goldeen 055/109 Ruby & Sapphire",
+    "fullDisplayName": "Goldeen 55/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1732,18 +2036,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-055-low.png",
-    "imageHighSrc": "cards/ex1-055-high.png"
+    "imageHighSrc": "cards/ex1-055-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4529",
-    "externalId": null,
+    "externalId": "ex1-54",
     "tcgdex_id": "ex1-54",
     "localId": "054",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "054/109",
+    "cardNumber": "54/109",
     "cardName": "Koffing",
-    "fullDisplayName": "Koffing 054/109 Ruby & Sapphire",
+    "fullDisplayName": "Koffing 54/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1765,18 +2075,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-054-low.png",
-    "imageHighSrc": "cards/ex1-054-high.png"
+    "imageHighSrc": "cards/ex1-054-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Double-edge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4520",
-    "externalId": null,
+    "externalId": "ex1-53",
     "tcgdex_id": "ex1-53",
     "localId": "053",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "053/109",
+    "cardNumber": "53/109",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 053/109 Ruby & Sapphire",
+    "fullDisplayName": "Electrike 53/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1798,18 +2118,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-053-low.png",
-    "imageHighSrc": "cards/ex1-053-high.png"
+    "imageHighSrc": "cards/ex1-053-high.png",
+    "attacks": [
+      {
+        "name": "Super Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4511",
-    "externalId": null,
+    "externalId": "ex1-52",
     "tcgdex_id": "ex1-52",
     "localId": "052",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "052/109",
+    "cardNumber": "52/109",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 052/109 Ruby & Sapphire",
+    "fullDisplayName": "Electrike 52/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1831,18 +2161,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-052-low.png",
-    "imageHighSrc": "cards/ex1-052-high.png"
+    "imageHighSrc": "cards/ex1-052-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4502",
-    "externalId": null,
+    "externalId": "ex1-51",
     "tcgdex_id": "ex1-51",
     "localId": "051",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "051/109",
+    "cardNumber": "51/109",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 051/109 Ruby & Sapphire",
+    "fullDisplayName": "Carvanha 51/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1864,18 +2200,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-051-low.png",
-    "imageHighSrc": "cards/ex1-051-high.png"
+    "imageHighSrc": "cards/ex1-051-high.png",
+    "attacks": [
+      {
+        "name": "Big Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4495",
-    "externalId": null,
+    "externalId": "ex1-50",
     "tcgdex_id": "ex1-50",
     "localId": "050",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "050/109",
+    "cardNumber": "50/109",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 050/109 Ruby & Sapphire",
+    "fullDisplayName": "Aron 50/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1897,18 +2239,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-050-low.png",
-    "imageHighSrc": "cards/ex1-050-high.png"
+    "imageHighSrc": "cards/ex1-050-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4485",
-    "externalId": null,
+    "externalId": "ex1-49",
     "tcgdex_id": "ex1-49",
     "localId": "049",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "049/109",
+    "cardNumber": "49/109",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 049/109 Ruby & Sapphire",
+    "fullDisplayName": "Aron 49/109 Ruby & Sapphire",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1930,18 +2278,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-049-low.png",
-    "imageHighSrc": "cards/ex1-049-high.png"
+    "imageHighSrc": "cards/ex1-049-high.png",
+    "attacks": [
+      {
+        "name": "Teary Eyes",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4476",
-    "externalId": null,
+    "externalId": "ex1-48",
     "tcgdex_id": "ex1-48",
     "localId": "048",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "048/109",
+    "cardNumber": "48/109",
     "cardName": "Wailmer",
-    "fullDisplayName": "Wailmer 048/109 Ruby & Sapphire",
+    "fullDisplayName": "Wailmer 48/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1963,18 +2321,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-048-low.png",
-    "imageHighSrc": "cards/ex1-048-high.png"
+    "imageHighSrc": "cards/ex1-048-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      },
+      {
+        "name": "Water Gun",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4466",
-    "externalId": null,
+    "externalId": "ex1-47",
     "tcgdex_id": "ex1-47",
     "localId": "047",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "047/109",
+    "cardNumber": "47/109",
     "cardName": "Vigoroth",
-    "fullDisplayName": "Vigoroth 047/109 Ruby & Sapphire",
+    "fullDisplayName": "Vigoroth 47/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1996,18 +2364,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-047-low.png",
-    "imageHighSrc": "cards/ex1-047-high.png"
+    "imageHighSrc": "cards/ex1-047-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      },
+      {
+        "name": "Rage",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4457",
-    "externalId": null,
+    "externalId": "ex1-46",
     "tcgdex_id": "ex1-46",
     "localId": "046",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "046/109",
+    "cardNumber": "46/109",
     "cardName": "Swellow",
-    "fullDisplayName": "Swellow 046/109 Ruby & Sapphire",
+    "fullDisplayName": "Swellow 46/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2029,18 +2407,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-046-low.png",
-    "imageHighSrc": "cards/ex1-046-high.png"
+    "imageHighSrc": "cards/ex1-046-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4449",
-    "externalId": null,
+    "externalId": "ex1-45",
     "tcgdex_id": "ex1-45",
     "localId": "045",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "045/109",
+    "cardNumber": "45/109",
     "cardName": "Slakoth",
-    "fullDisplayName": "Slakoth 045/109 Ruby & Sapphire",
+    "fullDisplayName": "Slakoth 45/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2062,18 +2446,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-045-low.png",
-    "imageHighSrc": "cards/ex1-045-high.png"
+    "imageHighSrc": "cards/ex1-045-high.png",
+    "attacks": [
+      {
+        "name": "Claw",
+        "damage": "20"
+      },
+      {
+        "name": "Slack Off",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4440",
-    "externalId": null,
+    "externalId": "ex1-44",
     "tcgdex_id": "ex1-44",
     "localId": "044",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "044/109",
+    "cardNumber": "44/109",
     "cardName": "Skitty",
-    "fullDisplayName": "Skitty 044/109 Ruby & Sapphire",
+    "fullDisplayName": "Skitty 44/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2095,18 +2489,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-044-low.png",
-    "imageHighSrc": "cards/ex1-044-high.png"
+    "imageHighSrc": "cards/ex1-044-high.png",
+    "attacks": [
+      {
+        "name": "Minor Errand-Running",
+        "damage": null
+      },
+      {
+        "name": "Lullaby",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4432",
-    "externalId": null,
+    "externalId": "ex1-43",
     "tcgdex_id": "ex1-43",
     "localId": "043",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "043/109",
+    "cardNumber": "43/109",
     "cardName": "Silcoon",
-    "fullDisplayName": "Silcoon 043/109 Ruby & Sapphire",
+    "fullDisplayName": "Silcoon 43/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2128,18 +2532,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-043-low.png",
-    "imageHighSrc": "cards/ex1-043-high.png"
+    "imageHighSrc": "cards/ex1-043-high.png",
+    "attacks": [
+      {
+        "name": "Gooey Thread",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4423",
-    "externalId": null,
+    "externalId": "ex1-42",
     "tcgdex_id": "ex1-42",
     "localId": "042",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "042/109",
+    "cardNumber": "42/109",
     "cardName": "Mightyena",
-    "fullDisplayName": "Mightyena 042/109 Ruby & Sapphire",
+    "fullDisplayName": "Mightyena 42/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2161,18 +2571,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-042-low.png",
-    "imageHighSrc": "cards/ex1-042-high.png"
+    "imageHighSrc": "cards/ex1-042-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Ambush",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4414",
-    "externalId": null,
+    "externalId": "ex1-41",
     "tcgdex_id": "ex1-41",
     "localId": "041",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "041/109",
+    "cardNumber": "41/109",
     "cardName": "Marshtomp",
-    "fullDisplayName": "Marshtomp 041/109 Ruby & Sapphire",
+    "fullDisplayName": "Marshtomp 41/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2194,18 +2614,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-041-low.png",
-    "imageHighSrc": "cards/ex1-041-high.png"
+    "imageHighSrc": "cards/ex1-041-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Sonic",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4407",
-    "externalId": null,
+    "externalId": "ex1-40",
     "tcgdex_id": "ex1-40",
     "localId": "040",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "040/109",
+    "cardNumber": "40/109",
     "cardName": "Marshtomp",
-    "fullDisplayName": "Marshtomp 040/109 Ruby & Sapphire",
+    "fullDisplayName": "Marshtomp 40/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2227,18 +2653,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-040-low.png",
-    "imageHighSrc": "cards/ex1-040-high.png"
+    "imageHighSrc": "cards/ex1-040-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4398",
-    "externalId": null,
+    "externalId": "ex1-39",
     "tcgdex_id": "ex1-39",
     "localId": "039",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "039/109",
+    "cardNumber": "39/109",
     "cardName": "Manectric",
-    "fullDisplayName": "Manectric 039/109 Ruby & Sapphire",
+    "fullDisplayName": "Manectric 39/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2260,18 +2696,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-039-low.png",
-    "imageHighSrc": "cards/ex1-039-high.png"
+    "imageHighSrc": "cards/ex1-039-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      },
+      {
+        "name": "Gigashock",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4389",
-    "externalId": null,
+    "externalId": "ex1-38",
     "tcgdex_id": "ex1-38",
     "localId": "038",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "038/109",
+    "cardNumber": "38/109",
     "cardName": "Linoone",
-    "fullDisplayName": "Linoone 038/109 Ruby & Sapphire",
+    "fullDisplayName": "Linoone 38/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2293,18 +2739,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-038-low.png",
-    "imageHighSrc": "cards/ex1-038-high.png"
+    "imageHighSrc": "cards/ex1-038-high.png",
+    "attacks": [
+      {
+        "name": "Seek Out",
+        "damage": null
+      },
+      {
+        "name": "Continuous Headbutt",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "4381",
-    "externalId": null,
+    "externalId": "ex1-37",
     "tcgdex_id": "ex1-37",
     "localId": "037",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "037/109",
+    "cardNumber": "37/109",
     "cardName": "Lairon",
-    "fullDisplayName": "Lairon 037/109 Ruby & Sapphire",
+    "fullDisplayName": "Lairon 37/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2326,18 +2782,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-037-low.png",
-    "imageHighSrc": "cards/ex1-037-high.png"
+    "imageHighSrc": "cards/ex1-037-high.png",
+    "attacks": [
+      {
+        "name": "Magnitude",
+        "damage": "20"
+      },
+      {
+        "name": "One-Two Strike",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4372",
-    "externalId": null,
+    "externalId": "ex1-36",
     "tcgdex_id": "ex1-36",
     "localId": "036",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "036/109",
+    "cardNumber": "36/109",
     "cardName": "Lairon",
-    "fullDisplayName": "Lairon 036/109 Ruby & Sapphire",
+    "fullDisplayName": "Lairon 36/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2359,18 +2825,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-036-low.png",
-    "imageHighSrc": "cards/ex1-036-high.png"
+    "imageHighSrc": "cards/ex1-036-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4363",
-    "externalId": null,
+    "externalId": "ex1-35",
     "tcgdex_id": "ex1-35",
     "localId": "035",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "035/109",
+    "cardNumber": "35/109",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 035/109 Ruby & Sapphire",
+    "fullDisplayName": "Kirlia 35/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2392,18 +2868,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-035-low.png",
-    "imageHighSrc": "cards/ex1-035-high.png"
+    "imageHighSrc": "cards/ex1-035-high.png",
+    "attacks": [
+      {
+        "name": "Dazzle Dance",
+        "damage": null
+      },
+      {
+        "name": "Life Drain",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4354",
-    "externalId": null,
+    "externalId": "ex1-34",
     "tcgdex_id": "ex1-34",
     "localId": "034",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "034/109",
+    "cardNumber": "34/109",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 034/109 Ruby & Sapphire",
+    "fullDisplayName": "Kirlia 34/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2425,18 +2911,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-034-low.png",
-    "imageHighSrc": "cards/ex1-034-high.png"
+    "imageHighSrc": "cards/ex1-034-high.png",
+    "attacks": [
+      {
+        "name": "Removal Beam",
+        "damage": "10"
+      },
+      {
+        "name": "Super Psy",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4347",
-    "externalId": null,
+    "externalId": "ex1-33",
     "tcgdex_id": "ex1-33",
     "localId": "033",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "033/109",
+    "cardNumber": "33/109",
     "cardName": "Hariyama",
-    "fullDisplayName": "Hariyama 033/109 Ruby & Sapphire",
+    "fullDisplayName": "Hariyama 33/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2458,18 +2954,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-033-low.png",
-    "imageHighSrc": "cards/ex1-033-high.png"
+    "imageHighSrc": "cards/ex1-033-high.png",
+    "attacks": [
+      {
+        "name": "Shove",
+        "damage": "20"
+      },
+      {
+        "name": "Slap Down",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4337",
-    "externalId": null,
+    "externalId": "ex1-32",
     "tcgdex_id": "ex1-32",
     "localId": "032",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "032/109",
+    "cardNumber": "32/109",
     "cardName": "Grovyle",
-    "fullDisplayName": "Grovyle 032/109 Ruby & Sapphire",
+    "fullDisplayName": "Grovyle 32/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2491,18 +2997,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-032-low.png",
-    "imageHighSrc": "cards/ex1-032-high.png"
+    "imageHighSrc": "cards/ex1-032-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4329",
-    "externalId": null,
+    "externalId": "ex1-31",
     "tcgdex_id": "ex1-31",
     "localId": "031",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "031/109",
+    "cardNumber": "31/109",
     "cardName": "Grovyle",
-    "fullDisplayName": "Grovyle 031/109 Ruby & Sapphire",
+    "fullDisplayName": "Grovyle 31/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2524,18 +3036,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-031-low.png",
-    "imageHighSrc": "cards/ex1-031-high.png"
+    "imageHighSrc": "cards/ex1-031-high.png",
+    "attacks": [
+      {
+        "name": "Poison Breath",
+        "damage": null
+      },
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4318",
-    "externalId": null,
+    "externalId": "ex1-30",
     "tcgdex_id": "ex1-30",
     "localId": "030",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "030/109",
+    "cardNumber": "30/109",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 030/109 Ruby & Sapphire",
+    "fullDisplayName": "Electrike 30/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2557,18 +3079,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-030-low.png",
-    "imageHighSrc": "cards/ex1-030-high.png"
+    "imageHighSrc": "cards/ex1-030-high.png",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4309",
-    "externalId": null,
+    "externalId": "ex1-29",
     "tcgdex_id": "ex1-29",
     "localId": "029",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "029/109",
+    "cardNumber": "29/109",
     "cardName": "Delcatty",
-    "fullDisplayName": "Delcatty 029/109 Ruby & Sapphire",
+    "fullDisplayName": "Delcatty 29/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2590,18 +3122,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-029-low.png",
-    "imageHighSrc": "cards/ex1-029-high.png"
+    "imageHighSrc": "cards/ex1-029-high.png",
+    "attacks": [
+      {
+        "name": "Energy Call",
+        "damage": "10"
+      },
+      {
+        "name": "Cannonball",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4300",
-    "externalId": null,
+    "externalId": "ex1-28",
     "tcgdex_id": "ex1-28",
     "localId": "028",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "028/109",
+    "cardNumber": "28/109",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 028/109 Ruby & Sapphire",
+    "fullDisplayName": "Combusken 28/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2623,18 +3165,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-028-low.png",
-    "imageHighSrc": "cards/ex1-028-high.png"
+    "imageHighSrc": "cards/ex1-028-high.png",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4293",
-    "externalId": null,
+    "externalId": "ex1-27",
     "tcgdex_id": "ex1-27",
     "localId": "027",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "027/109",
+    "cardNumber": "27/109",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 027/109 Ruby & Sapphire",
+    "fullDisplayName": "Combusken 27/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2656,18 +3204,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-027-low.png",
-    "imageHighSrc": "cards/ex1-027-high.png"
+    "imageHighSrc": "cards/ex1-027-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      },
+      {
+        "name": "Double Kick",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "4284",
-    "externalId": null,
+    "externalId": "ex1-26",
     "tcgdex_id": "ex1-26",
     "localId": "026",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "026/109",
+    "cardNumber": "26/109",
     "cardName": "Cascoon",
-    "fullDisplayName": "Cascoon 026/109 Ruby & Sapphire",
+    "fullDisplayName": "Cascoon 26/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2689,18 +3247,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-026-low.png",
-    "imageHighSrc": "cards/ex1-026-high.png"
+    "imageHighSrc": "cards/ex1-026-high.png",
+    "attacks": [
+      {
+        "name": "Poison Thread",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4275",
-    "externalId": null,
+    "externalId": "ex1-25",
     "tcgdex_id": "ex1-25",
     "localId": "025",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "025/109",
+    "cardNumber": "25/109",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 025/109 Ruby & Sapphire",
+    "fullDisplayName": "Aron 25/109 Ruby & Sapphire",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2722,18 +3286,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-025-low.png",
-    "imageHighSrc": "cards/ex1-025-high.png"
+    "imageHighSrc": "cards/ex1-025-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Double Stab",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4267",
-    "externalId": null,
+    "externalId": "ex1-24",
     "tcgdex_id": "ex1-24",
     "localId": "024",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "024/109",
+    "cardNumber": "24/109",
     "cardName": "Weezing",
-    "fullDisplayName": "Weezing 024/109 Ruby & Sapphire",
+    "fullDisplayName": "Weezing 24/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2755,18 +3329,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-024-low.png",
-    "imageHighSrc": "cards/ex1-024-high.png"
+    "imageHighSrc": "cards/ex1-024-high.png",
+    "attacks": [
+      {
+        "name": "Confusion Gas",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Smog",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4258",
-    "externalId": null,
+    "externalId": "ex1-23",
     "tcgdex_id": "ex1-23",
     "localId": "023",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "023/109",
+    "cardNumber": "23/109",
     "cardName": "Swampert",
-    "fullDisplayName": "Swampert 023/109 Ruby & Sapphire",
+    "fullDisplayName": "Swampert 23/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2788,18 +3372,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-023-low.png",
-    "imageHighSrc": "cards/ex1-023-high.png"
+    "imageHighSrc": "cards/ex1-023-high.png",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null
+      },
+      {
+        "name": "Waterfall",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4249",
-    "externalId": null,
+    "externalId": "ex1-22",
     "tcgdex_id": "ex1-22",
     "localId": "022",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "022/109",
+    "cardNumber": "22/109",
     "cardName": "Sharpedo",
-    "fullDisplayName": "Sharpedo 022/109 Ruby & Sapphire",
+    "fullDisplayName": "Sharpedo 22/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2821,18 +3415,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-022-low.png",
-    "imageHighSrc": "cards/ex1-022-high.png"
+    "imageHighSrc": "cards/ex1-022-high.png",
+    "attacks": [
+      {
+        "name": "Dark Slash",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4240",
-    "externalId": null,
+    "externalId": "ex1-21",
     "tcgdex_id": "ex1-21",
     "localId": "021",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "021/109",
+    "cardNumber": "21/109",
     "cardName": "Seaking",
-    "fullDisplayName": "Seaking 021/109 Ruby & Sapphire",
+    "fullDisplayName": "Seaking 21/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2854,18 +3454,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-021-low.png",
-    "imageHighSrc": "cards/ex1-021-high.png"
+    "imageHighSrc": "cards/ex1-021-high.png",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null
+      },
+      {
+        "name": "Fast Stream",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4231",
-    "externalId": null,
+    "externalId": "ex1-20",
     "tcgdex_id": "ex1-20",
     "localId": "020",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "020/109",
+    "cardNumber": "20/109",
     "cardName": "Sceptile",
-    "fullDisplayName": "Sceptile 020/109 Ruby & Sapphire",
+    "fullDisplayName": "Sceptile 20/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2887,18 +3497,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-020-low.png",
-    "imageHighSrc": "cards/ex1-020-high.png"
+    "imageHighSrc": "cards/ex1-020-high.png",
+    "attacks": [
+      {
+        "name": "Tail Rap",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "4220",
-    "externalId": null,
+    "externalId": "ex1-19",
     "tcgdex_id": "ex1-19",
     "localId": "019",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "019/109",
+    "cardNumber": "19/109",
     "cardName": "Pelipper",
-    "fullDisplayName": "Pelipper 019/109 Ruby & Sapphire",
+    "fullDisplayName": "Pelipper 19/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2920,18 +3536,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-019-low.png",
-    "imageHighSrc": "cards/ex1-019-high.png"
+    "imageHighSrc": "cards/ex1-019-high.png",
+    "attacks": [
+      {
+        "name": "Stockpile",
+        "damage": null
+      },
+      {
+        "name": "Spit Up",
+        "damage": "30"
+      },
+      {
+        "name": "Swallow",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4212",
-    "externalId": null,
+    "externalId": "ex1-18",
     "tcgdex_id": "ex1-18",
     "localId": "018",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "018/109",
+    "cardNumber": "18/109",
     "cardName": "Nosepass",
-    "fullDisplayName": "Nosepass 018/109 Ruby & Sapphire",
+    "fullDisplayName": "Nosepass 18/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2953,18 +3583,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-018-low.png",
-    "imageHighSrc": "cards/ex1-018-high.png"
+    "imageHighSrc": "cards/ex1-018-high.png",
+    "attacks": [
+      {
+        "name": "Invisible Hand",
+        "damage": null
+      },
+      {
+        "name": "Repulsion",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4203",
-    "externalId": null,
+    "externalId": "ex1-17",
     "tcgdex_id": "ex1-17",
     "localId": "017",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "017/109",
+    "cardNumber": "17/109",
     "cardName": "Donphan",
-    "fullDisplayName": "Donphan 017/109 Ruby & Sapphire",
+    "fullDisplayName": "Donphan 17/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2986,18 +3626,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-017-low.png",
-    "imageHighSrc": "cards/ex1-017-high.png"
+    "imageHighSrc": "cards/ex1-017-high.png",
+    "attacks": [
+      {
+        "name": "Rend",
+        "damage": "20+"
+      },
+      {
+        "name": "Double Spin",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "4195",
-    "externalId": null,
+    "externalId": "ex1-16",
     "tcgdex_id": "ex1-16",
     "localId": "016",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "016/109",
+    "cardNumber": "16/109",
     "cardName": "Breloom",
-    "fullDisplayName": "Breloom 016/109 Ruby & Sapphire",
+    "fullDisplayName": "Breloom 16/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3019,18 +3669,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-016-low.png",
-    "imageHighSrc": "cards/ex1-016-high.png"
+    "imageHighSrc": "cards/ex1-016-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Battle Blast",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4185",
-    "externalId": null,
+    "externalId": "ex1-15",
     "tcgdex_id": "ex1-15",
     "localId": "015",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "015/109",
+    "cardNumber": "15/109",
     "cardName": "Blaziken",
-    "fullDisplayName": "Blaziken 015/109 Ruby & Sapphire",
+    "fullDisplayName": "Blaziken 15/109 Ruby & Sapphire",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3052,18 +3712,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-015-low.png",
-    "imageHighSrc": "cards/ex1-015-high.png"
+    "imageHighSrc": "cards/ex1-015-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "20"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "4176",
-    "externalId": null,
+    "externalId": "ex1-14",
     "tcgdex_id": "ex1-14",
     "localId": "014",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "014/109",
+    "cardNumber": "14/109",
     "cardName": "Wailord",
-    "fullDisplayName": "Wailord 014/109 Ruby & Sapphire",
+    "fullDisplayName": "Wailord 14/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3085,18 +3755,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-014-low.png",
-    "imageHighSrc": "cards/ex1-014-high.png"
+    "imageHighSrc": "cards/ex1-014-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "50"
+      },
+      {
+        "name": "Surf",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4168",
-    "externalId": null,
+    "externalId": "ex1-13",
     "tcgdex_id": "ex1-13",
     "localId": "013",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "013/109",
+    "cardNumber": "13/109",
     "cardName": "Swampert",
-    "fullDisplayName": "Swampert 013/109 Ruby & Sapphire",
+    "fullDisplayName": "Swampert 13/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3118,18 +3798,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-013-low.png",
-    "imageHighSrc": "cards/ex1-013-high.png"
+    "imageHighSrc": "cards/ex1-013-high.png",
+    "attacks": [
+      {
+        "name": "Hypno Splash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4160",
-    "externalId": null,
+    "externalId": "ex1-12",
     "tcgdex_id": "ex1-12",
     "localId": "012",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "012/109",
+    "cardNumber": "12/109",
     "cardName": "Slaking",
-    "fullDisplayName": "Slaking 012/109 Ruby & Sapphire",
+    "fullDisplayName": "Slaking 12/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3151,18 +3837,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-012-low.png",
-    "imageHighSrc": "cards/ex1-012-high.png"
+    "imageHighSrc": "cards/ex1-012-high.png",
+    "attacks": [
+      {
+        "name": "Critical Move",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4149",
-    "externalId": null,
+    "externalId": "ex1-11",
     "tcgdex_id": "ex1-11",
     "localId": "011",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "011/109",
+    "cardNumber": "11/109",
     "cardName": "Sceptile",
-    "fullDisplayName": "Sceptile 011/109 Ruby & Sapphire",
+    "fullDisplayName": "Sceptile 11/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3184,18 +3876,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-011-low.png",
-    "imageHighSrc": "cards/ex1-011-high.png"
+    "imageHighSrc": "cards/ex1-011-high.png",
+    "attacks": [
+      {
+        "name": "Lizard Poison",
+        "damage": "20"
+      },
+      {
+        "name": "Solarbeam",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4139",
-    "externalId": null,
+    "externalId": "ex1-10",
     "tcgdex_id": "ex1-10",
     "localId": "010",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "010/109",
+    "cardNumber": "10/109",
     "cardName": "Mightyena",
-    "fullDisplayName": "Mightyena 010/109 Ruby & Sapphire",
+    "fullDisplayName": "Mightyena 10/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3217,18 +3919,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-010-low.png",
-    "imageHighSrc": "cards/ex1-010-high.png"
+    "imageHighSrc": "cards/ex1-010-high.png",
+    "attacks": [
+      {
+        "name": "Shakedown",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4130",
-    "externalId": null,
+    "externalId": "ex1-9",
     "tcgdex_id": "ex1-9",
     "localId": "009",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "009/109",
+    "cardNumber": "9/109",
     "cardName": "Manectric",
-    "fullDisplayName": "Manectric 009/109 Ruby & Sapphire",
+    "fullDisplayName": "Manectric 9/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3250,18 +3958,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-009-low.png",
-    "imageHighSrc": "cards/ex1-009-high.png"
+    "imageHighSrc": "cards/ex1-009-high.png",
+    "attacks": [
+      {
+        "name": "Attract Current",
+        "damage": "10"
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4123",
-    "externalId": null,
+    "externalId": "ex1-8",
     "tcgdex_id": "ex1-8",
     "localId": "008",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "008/109",
+    "cardNumber": "8/109",
     "cardName": "Hariyama",
-    "fullDisplayName": "Hariyama 008/109 Ruby & Sapphire",
+    "fullDisplayName": "Hariyama 8/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3283,18 +4001,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-008-low.png",
-    "imageHighSrc": "cards/ex1-008-high.png"
+    "imageHighSrc": "cards/ex1-008-high.png",
+    "attacks": [
+      {
+        "name": "Super Slap Push",
+        "damage": null
+      },
+      {
+        "name": "Mega Throw",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4114",
-    "externalId": null,
+    "externalId": "ex1-7",
     "tcgdex_id": "ex1-7",
     "localId": "007",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "007/109",
+    "cardNumber": "7/109",
     "cardName": "Gardevoir",
-    "fullDisplayName": "Gardevoir 007/109 Ruby & Sapphire",
+    "fullDisplayName": "Gardevoir 7/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3316,18 +4044,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-007-low.png",
-    "imageHighSrc": "cards/ex1-007-high.png"
+    "imageHighSrc": "cards/ex1-007-high.png",
+    "attacks": [
+      {
+        "name": "Energy Burst",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4106",
-    "externalId": null,
+    "externalId": "ex1-6",
     "tcgdex_id": "ex1-6",
     "localId": "006",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "006/109",
+    "cardNumber": "6/109",
     "cardName": "Dustox",
-    "fullDisplayName": "Dustox 006/109 Ruby & Sapphire",
+    "fullDisplayName": "Dustox 6/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3349,18 +4083,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-006-low.png",
-    "imageHighSrc": "cards/ex1-006-high.png"
+    "imageHighSrc": "cards/ex1-006-high.png",
+    "attacks": [
+      {
+        "name": "Toxic",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4095",
-    "externalId": null,
+    "externalId": "ex1-5",
     "tcgdex_id": "ex1-5",
     "localId": "005",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "005/109",
+    "cardNumber": "5/109",
     "cardName": "Delcatty",
-    "fullDisplayName": "Delcatty 005/109 Ruby & Sapphire",
+    "fullDisplayName": "Delcatty 5/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3382,18 +4126,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-005-low.png",
-    "imageHighSrc": "cards/ex1-005-high.png"
+    "imageHighSrc": "cards/ex1-005-high.png",
+    "attacks": [
+      {
+        "name": "Max Energy Source",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4087",
-    "externalId": null,
+    "externalId": "ex1-4",
     "tcgdex_id": "ex1-4",
     "localId": "004",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "004/109",
+    "cardNumber": "4/109",
     "cardName": "Camerupt",
-    "fullDisplayName": "Camerupt 004/109 Ruby & Sapphire",
+    "fullDisplayName": "Camerupt 4/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3415,18 +4165,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-004-low.png",
-    "imageHighSrc": "cards/ex1-004-high.png"
+    "imageHighSrc": "cards/ex1-004-high.png",
+    "attacks": [
+      {
+        "name": "Lava Burn",
+        "damage": "20"
+      },
+      {
+        "name": "Fire Spin",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4079",
-    "externalId": null,
+    "externalId": "ex1-3",
     "tcgdex_id": "ex1-3",
     "localId": "003",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "003/109",
+    "cardNumber": "3/109",
     "cardName": "Blaziken",
-    "fullDisplayName": "Blaziken 003/109 Ruby & Sapphire",
+    "fullDisplayName": "Blaziken 3/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3448,18 +4208,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-003-low.png",
-    "imageHighSrc": "cards/ex1-003-high.png"
+    "imageHighSrc": "cards/ex1-003-high.png",
+    "attacks": [
+      {
+        "name": "Fire Stream",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4071",
-    "externalId": null,
+    "externalId": "ex1-2",
     "tcgdex_id": "ex1-2",
     "localId": "002",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "002/109",
+    "cardNumber": "2/109",
     "cardName": "Beautifly",
-    "fullDisplayName": "Beautifly 002/109 Ruby & Sapphire",
+    "fullDisplayName": "Beautifly 2/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3481,18 +4247,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-002-low.png",
-    "imageHighSrc": "cards/ex1-002-high.png"
+    "imageHighSrc": "cards/ex1-002-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": "20"
+      },
+      {
+        "name": "Parallel Gain",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4066",
-    "externalId": null,
+    "externalId": "ex1-1",
     "tcgdex_id": "ex1-1",
     "localId": "001",
     "setCode": "ex1",
     "setTcgdexId": "ex1",
-    "cardNumber": "001/109",
+    "cardNumber": "1/109",
     "cardName": "Aggron",
-    "fullDisplayName": "Aggron 001/109 Ruby & Sapphire",
+    "fullDisplayName": "Aggron 1/109 Ruby & Sapphire",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3514,6 +4290,20 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex1-001-low.png",
-    "imageHighSrc": "cards/ex1-001-high.png"
+    "imageHighSrc": "cards/ex1-001-high.png",
+    "attacks": [
+      {
+        "name": "Retaliate",
+        "damage": "10×"
+      },
+      {
+        "name": "Mega Punch",
+        "damage": "40"
+      },
+      {
+        "name": "Double Lariat",
+        "damage": "70×"
+      }
+    ]
   }
 ]

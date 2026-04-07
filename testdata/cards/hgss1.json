@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "7223",
-    "externalId": null,
+    "externalId": "hgss1-ONE",
     "tcgdex_id": "hgss1-ONE",
     "localId": "ONE",
     "setCode": "hgss1",
@@ -26,11 +26,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-ONE-low.png",
-    "imageHighSrc": "cards/hgss1-ONE-high.png"
+    "imageHighSrc": "cards/hgss1-ONE-high.png",
+    "rules": "Look at your opponent's hand!"
   },
   {
     "masterCardId": "7222",
-    "externalId": null,
+    "externalId": "hgss1-123",
     "tcgdex_id": "hgss1-123",
     "localId": "123",
     "setCode": "hgss1",
@@ -59,11 +60,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-123-low.png",
-    "imageHighSrc": "cards/hgss1-123-high.png"
+    "imageHighSrc": "cards/hgss1-123-high.png",
+    "attacks": [
+      {
+        "name": "Thrash",
+        "damage": "30+"
+      },
+      {
+        "name": "Heavy Storm",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7221",
-    "externalId": null,
+    "externalId": "hgss1-122",
     "tcgdex_id": "hgss1-122",
     "localId": "122",
     "setCode": "hgss1",
@@ -92,7 +103,7 @@
   },
   {
     "masterCardId": "7220",
-    "externalId": null,
+    "externalId": "hgss1-121",
     "tcgdex_id": "hgss1-121",
     "localId": "121",
     "setCode": "hgss1",
@@ -121,7 +132,7 @@
   },
   {
     "masterCardId": "7219",
-    "externalId": null,
+    "externalId": "hgss1-120",
     "tcgdex_id": "hgss1-120",
     "localId": "120",
     "setCode": "hgss1",
@@ -150,7 +161,7 @@
   },
   {
     "masterCardId": "7218",
-    "externalId": null,
+    "externalId": "hgss1-119",
     "tcgdex_id": "hgss1-119",
     "localId": "119",
     "setCode": "hgss1",
@@ -179,7 +190,7 @@
   },
   {
     "masterCardId": "7217",
-    "externalId": null,
+    "externalId": "hgss1-118",
     "tcgdex_id": "hgss1-118",
     "localId": "118",
     "setCode": "hgss1",
@@ -208,7 +219,7 @@
   },
   {
     "masterCardId": "7216",
-    "externalId": null,
+    "externalId": "hgss1-117",
     "tcgdex_id": "hgss1-117",
     "localId": "117",
     "setCode": "hgss1",
@@ -237,7 +248,7 @@
   },
   {
     "masterCardId": "7215",
-    "externalId": null,
+    "externalId": "hgss1-116",
     "tcgdex_id": "hgss1-116",
     "localId": "116",
     "setCode": "hgss1",
@@ -266,7 +277,7 @@
   },
   {
     "masterCardId": "7214",
-    "externalId": null,
+    "externalId": "hgss1-115",
     "tcgdex_id": "hgss1-115",
     "localId": "115",
     "setCode": "hgss1",
@@ -295,7 +306,7 @@
   },
   {
     "masterCardId": "7213",
-    "externalId": null,
+    "externalId": "hgss1-114",
     "tcgdex_id": "hgss1-114",
     "localId": "114",
     "setCode": "hgss1",
@@ -324,11 +335,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-114-low.png",
-    "imageHighSrc": "cards/hgss1-114-high.png"
+    "imageHighSrc": "cards/hgss1-114-high.png",
+    "attacks": [
+      {
+        "name": "Elemental Blast",
+        "damage": "200"
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Lugia LEGEND."
   },
   {
     "masterCardId": "7212",
-    "externalId": null,
+    "externalId": "hgss1-113",
     "tcgdex_id": "hgss1-113",
     "localId": "113",
     "setCode": "hgss1",
@@ -357,11 +375,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-113-low.png",
-    "imageHighSrc": "cards/hgss1-113-high.png"
+    "imageHighSrc": "cards/hgss1-113-high.png",
+    "attacks": [
+      {
+        "name": "Elemental Blast",
+        "damage": "200"
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Lugia LEGEND."
   },
   {
     "masterCardId": "7211",
-    "externalId": null,
+    "externalId": "hgss1-112",
     "tcgdex_id": "hgss1-112",
     "localId": "112",
     "setCode": "hgss1",
@@ -390,11 +415,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-112-low.png",
-    "imageHighSrc": "cards/hgss1-112-high.png"
+    "imageHighSrc": "cards/hgss1-112-high.png",
+    "attacks": [
+      {
+        "name": "Bright Wing",
+        "damage": "100"
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Ho-Oh LEGEND."
   },
   {
     "masterCardId": "7210",
-    "externalId": null,
+    "externalId": "hgss1-111",
     "tcgdex_id": "hgss1-111",
     "localId": "111",
     "setCode": "hgss1",
@@ -423,11 +455,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-111-low.png",
-    "imageHighSrc": "cards/hgss1-111-high.png"
+    "imageHighSrc": "cards/hgss1-111-high.png",
+    "attacks": [
+      {
+        "name": "Bright Wing",
+        "damage": "100"
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Ho-Oh LEGEND."
   },
   {
     "masterCardId": "7209",
-    "externalId": null,
+    "externalId": "hgss1-110",
     "tcgdex_id": "hgss1-110",
     "localId": "110",
     "setCode": "hgss1",
@@ -457,11 +496,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-110-low.png",
-    "imageHighSrc": "cards/hgss1-110-high.png"
+    "imageHighSrc": "cards/hgss1-110-high.png",
+    "attacks": [
+      {
+        "name": "Flare Destroy",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7208",
-    "externalId": null,
+    "externalId": "hgss1-109",
     "tcgdex_id": "hgss1-109",
     "localId": "109",
     "setCode": "hgss1",
@@ -491,11 +536,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-109-low.png",
-    "imageHighSrc": "cards/hgss1-109-high.png"
+    "imageHighSrc": "cards/hgss1-109-high.png",
+    "attacks": [
+      {
+        "name": "Solarbeam",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "7207",
-    "externalId": null,
+    "externalId": "hgss1-108",
     "tcgdex_id": "hgss1-108",
     "localId": "108",
     "setCode": "hgss1",
@@ -525,11 +576,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-108-low.png",
-    "imageHighSrc": "cards/hgss1-108-high.png"
+    "imageHighSrc": "cards/hgss1-108-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Crunch",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "7206",
-    "externalId": null,
+    "externalId": "hgss1-107",
     "tcgdex_id": "hgss1-107",
     "localId": "107",
     "setCode": "hgss1",
@@ -559,11 +616,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-107-low.png",
-    "imageHighSrc": "cards/hgss1-107-high.png"
+    "imageHighSrc": "cards/hgss1-107-high.png",
+    "attacks": [
+      {
+        "name": "Earthquake",
+        "damage": "60"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "7205",
-    "externalId": null,
+    "externalId": "hgss1-106",
     "tcgdex_id": "hgss1-106",
     "localId": "106",
     "setCode": "hgss1",
@@ -593,11 +660,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-106-low.png",
-    "imageHighSrc": "cards/hgss1-106-high.png"
+    "imageHighSrc": "cards/hgss1-106-high.png",
+    "attacks": [
+      {
+        "name": "Strength",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7204",
-    "externalId": null,
+    "externalId": "hgss1-105",
     "tcgdex_id": "hgss1-105",
     "localId": "105",
     "setCode": "hgss1",
@@ -627,11 +700,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-105-low.png",
-    "imageHighSrc": "cards/hgss1-105-high.png"
+    "imageHighSrc": "cards/hgss1-105-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Crush",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "7203",
-    "externalId": null,
+    "externalId": "hgss1-104",
     "tcgdex_id": "hgss1-104",
     "localId": "104",
     "setCode": "hgss1",
@@ -656,11 +735,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-104-low.png",
-    "imageHighSrc": "cards/hgss1-104-high.png"
+    "imageHighSrc": "cards/hgss1-104-high.png",
+    "rules": "Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.) When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon. (While not in play, Rainbow Energy counts as Colorless Energy.)"
   },
   {
     "masterCardId": "7202",
-    "externalId": null,
+    "externalId": "hgss1-103",
     "tcgdex_id": "hgss1-103",
     "localId": "103",
     "setCode": "hgss1",
@@ -685,11 +765,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-103-low.png",
-    "imageHighSrc": "cards/hgss1-103-high.png"
+    "imageHighSrc": "cards/hgss1-103-high.png",
+    "rules": "Double Colorless Energy provides ColorlessColorless Energy."
   },
   {
     "masterCardId": "7200",
-    "externalId": null,
+    "externalId": "hgss1-102",
     "tcgdex_id": "hgss1-102",
     "localId": "102",
     "setCode": "hgss1",
@@ -714,11 +795,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-102-low.png",
-    "imageHighSrc": "cards/hgss1-102-high.png"
+    "imageHighSrc": "cards/hgss1-102-high.png",
+    "rules": "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "7198",
-    "externalId": null,
+    "externalId": "hgss1-101",
     "tcgdex_id": "hgss1-101",
     "localId": "101",
     "setCode": "hgss1",
@@ -743,11 +825,12 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss1-101-low.png",
-    "imageHighSrc": "cards/hgss1-101-high.png"
+    "imageHighSrc": "cards/hgss1-101-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nShuffle your hand into your deck. Then, draw 6 cards."
   },
   {
     "masterCardId": "7196",
-    "externalId": null,
+    "externalId": "hgss1-100",
     "tcgdex_id": "hgss1-100",
     "localId": "100",
     "setCode": "hgss1",
@@ -772,18 +855,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss1-100-low.png",
-    "imageHighSrc": "cards/hgss1-100-high.png"
+    "imageHighSrc": "cards/hgss1-100-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for an Evolution card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "7194",
-    "externalId": null,
+    "externalId": "hgss1-99",
     "tcgdex_id": "hgss1-99",
     "localId": "099",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "099/123",
+    "cardNumber": "99/123",
     "cardName": "Pokémon Reversal",
-    "fullDisplayName": "Pokémon Reversal 099/123 HeartGold SoulSilver",
+    "fullDisplayName": "Pokémon Reversal 99/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -801,18 +885,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-099-low.png",
-    "imageHighSrc": "cards/hgss1-099-high.png"
+    "imageHighSrc": "cards/hgss1-099-high.png",
+    "rules": "Flip a coin. If heads, choose 1 of your opponent's Benched Pokémon, and switch it with your opponent's Active Pokémon."
   },
   {
     "masterCardId": "7192",
-    "externalId": null,
+    "externalId": "hgss1-98",
     "tcgdex_id": "hgss1-98",
     "localId": "098",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "098/123",
+    "cardNumber": "98/123",
     "cardName": "Pokémon Communication",
-    "fullDisplayName": "Pokémon Communication 098/123 HeartGold SoulSilver",
+    "fullDisplayName": "Pokémon Communication 98/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -830,18 +915,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-098-low.png",
-    "imageHighSrc": "cards/hgss1-098-high.png"
+    "imageHighSrc": "cards/hgss1-098-high.png",
+    "rules": "Choose 1 Pokémon in your hand, show it to your opponent, and put it on top of your deck. If you do, search your deck for a Pokémon, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "7190",
-    "externalId": null,
+    "externalId": "hgss1-97",
     "tcgdex_id": "hgss1-97",
     "localId": "097",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "097/123",
+    "cardNumber": "97/123",
     "cardName": "Pokémon Collector",
-    "fullDisplayName": "Pokémon Collector 097/123 HeartGold SoulSilver",
+    "fullDisplayName": "Pokémon Collector 97/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -859,18 +945,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-097-low.png",
-    "imageHighSrc": "cards/hgss1-097-high.png"
+    "imageHighSrc": "cards/hgss1-097-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 3 Basic Pokémon, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "7188",
-    "externalId": null,
+    "externalId": "hgss1-96",
     "tcgdex_id": "hgss1-96",
     "localId": "096",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "096/123",
+    "cardNumber": "96/123",
     "cardName": "Pokégear 3.0",
-    "fullDisplayName": "Pokégear 3.0 096/123 HeartGold SoulSilver",
+    "fullDisplayName": "Pokégear 3.0 96/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -888,18 +975,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss1-096-low.png",
-    "imageHighSrc": "cards/hgss1-096-high.png"
+    "imageHighSrc": "cards/hgss1-096-high.png",
+    "rules": "Look at the top 7 cards of your deck. Choose a Supporter card you find there, show it to your opponent, and put it into your hand. Shuffle the other cards back into your deck."
   },
   {
     "masterCardId": "7186",
-    "externalId": null,
+    "externalId": "hgss1-95",
     "tcgdex_id": "hgss1-95",
     "localId": "095",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "095/123",
+    "cardNumber": "95/123",
     "cardName": "Poké Ball",
-    "fullDisplayName": "Poké Ball 095/123 HeartGold SoulSilver",
+    "fullDisplayName": "Poké Ball 95/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -917,18 +1005,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-095-low.png",
-    "imageHighSrc": "cards/hgss1-095-high.png"
+    "imageHighSrc": "cards/hgss1-095-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "7184",
-    "externalId": null,
+    "externalId": "hgss1-94",
     "tcgdex_id": "hgss1-94",
     "localId": "094",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "094/123",
+    "cardNumber": "94/123",
     "cardName": "Moomoo Milk",
-    "fullDisplayName": "Moomoo Milk 094/123 HeartGold SoulSilver",
+    "fullDisplayName": "Moomoo Milk 94/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -946,18 +1035,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-094-low.png",
-    "imageHighSrc": "cards/hgss1-094-high.png"
+    "imageHighSrc": "cards/hgss1-094-high.png",
+    "rules": "Choose 1 of your Pokémon. Flip 2 coins. For each heads, remove 3 damage counters from that Pokémon."
   },
   {
     "masterCardId": "7181",
-    "externalId": null,
+    "externalId": "hgss1-93",
     "tcgdex_id": "hgss1-93",
     "localId": "093",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "093/123",
+    "cardNumber": "93/123",
     "cardName": "Full Heal",
-    "fullDisplayName": "Full Heal 093/123 HeartGold SoulSilver",
+    "fullDisplayName": "Full Heal 93/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -975,18 +1065,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-093-low.png",
-    "imageHighSrc": "cards/hgss1-093-high.png"
+    "imageHighSrc": "cards/hgss1-093-high.png",
+    "rules": "Remove all Special Conditions from your Active Pokémon."
   },
   {
     "masterCardId": "7178",
-    "externalId": null,
+    "externalId": "hgss1-92",
     "tcgdex_id": "hgss1-92",
     "localId": "092",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "092/123",
+    "cardNumber": "92/123",
     "cardName": "Fisherman",
-    "fullDisplayName": "Fisherman 092/123 HeartGold SoulSilver",
+    "fullDisplayName": "Fisherman 92/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1004,18 +1095,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-092-low.png",
-    "imageHighSrc": "cards/hgss1-092-high.png"
+    "imageHighSrc": "cards/hgss1-092-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your discard pile for 4 basic Energy cards, show them to your opponent, and put them into your hand."
   },
   {
     "masterCardId": "7174",
-    "externalId": null,
+    "externalId": "hgss1-91",
     "tcgdex_id": "hgss1-91",
     "localId": "091",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "091/123",
+    "cardNumber": "91/123",
     "cardName": "Energy Switch",
-    "fullDisplayName": "Energy Switch 091/123 HeartGold SoulSilver",
+    "fullDisplayName": "Energy Switch 91/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1033,18 +1125,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-091-low.png",
-    "imageHighSrc": "cards/hgss1-091-high.png"
+    "imageHighSrc": "cards/hgss1-091-high.png",
+    "rules": "Move a basic Energy card attached 1 of your Pokémon to another of your Pokémon."
   },
   {
     "masterCardId": "7171",
-    "externalId": null,
+    "externalId": "hgss1-90",
     "tcgdex_id": "hgss1-90",
     "localId": "090",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "090/123",
+    "cardNumber": "90/123",
     "cardName": "Copycat",
-    "fullDisplayName": "Copycat 090/123 HeartGold SoulSilver",
+    "fullDisplayName": "Copycat 90/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1062,18 +1155,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-090-low.png",
-    "imageHighSrc": "cards/hgss1-090-high.png"
+    "imageHighSrc": "cards/hgss1-090-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nShuffle your hand into your deck. Then, draw a number of cards equal to the number of cards in your opponent's hand."
   },
   {
     "masterCardId": "7167",
-    "externalId": null,
+    "externalId": "hgss1-89",
     "tcgdex_id": "hgss1-89",
     "localId": "089",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "089/123",
+    "cardNumber": "89/123",
     "cardName": "Bill",
-    "fullDisplayName": "Bill 089/123 HeartGold SoulSilver",
+    "fullDisplayName": "Bill 89/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1091,18 +1185,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-089-low.png",
-    "imageHighSrc": "cards/hgss1-089-high.png"
+    "imageHighSrc": "cards/hgss1-089-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 2 cards."
   },
   {
     "masterCardId": "7163",
-    "externalId": null,
+    "externalId": "hgss1-88",
     "tcgdex_id": "hgss1-88",
     "localId": "088",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "088/123",
+    "cardNumber": "88/123",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper 088/123 HeartGold SoulSilver",
+    "fullDisplayName": "Wooper 88/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1124,18 +1219,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-088-low.png",
-    "imageHighSrc": "cards/hgss1-088-high.png"
+    "imageHighSrc": "cards/hgss1-088-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whip",
+        "damage": null
+      },
+      {
+        "name": "Watering",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7159",
-    "externalId": null,
+    "externalId": "hgss1-87",
     "tcgdex_id": "hgss1-87",
     "localId": "087",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "087/123",
+    "cardNumber": "87/123",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 087/123 HeartGold SoulSilver",
+    "fullDisplayName": "Vulpix 87/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1157,18 +1262,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-087-low.png",
-    "imageHighSrc": "cards/hgss1-087-high.png"
+    "imageHighSrc": "cards/hgss1-087-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7155",
-    "externalId": null,
+    "externalId": "hgss1-86",
     "tcgdex_id": "hgss1-86",
     "localId": "086",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "086/123",
+    "cardNumber": "86/123",
     "cardName": "Totodile",
-    "fullDisplayName": "Totodile 086/123 HeartGold SoulSilver",
+    "fullDisplayName": "Totodile 86/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1190,18 +1305,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-086-low.png",
-    "imageHighSrc": "cards/hgss1-086-high.png"
+    "imageHighSrc": "cards/hgss1-086-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7151",
-    "externalId": null,
+    "externalId": "hgss1-85",
     "tcgdex_id": "hgss1-85",
     "localId": "085",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "085/123",
+    "cardNumber": "85/123",
     "cardName": "Sunkern",
-    "fullDisplayName": "Sunkern 085/123 HeartGold SoulSilver",
+    "fullDisplayName": "Sunkern 85/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1223,18 +1348,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-085-low.png",
-    "imageHighSrc": "cards/hgss1-085-high.png"
+    "imageHighSrc": "cards/hgss1-085-high.png",
+    "attacks": [
+      {
+        "name": "Cure Kernels",
+        "damage": null
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7147",
-    "externalId": null,
+    "externalId": "hgss1-84",
     "tcgdex_id": "hgss1-84",
     "localId": "084",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "084/123",
+    "cardNumber": "84/123",
     "cardName": "Staryu",
-    "fullDisplayName": "Staryu 084/123 HeartGold SoulSilver",
+    "fullDisplayName": "Staryu 84/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1256,18 +1391,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-084-low.png",
-    "imageHighSrc": "cards/hgss1-084-high.png"
+    "imageHighSrc": "cards/hgss1-084-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7143",
-    "externalId": null,
+    "externalId": "hgss1-83",
     "tcgdex_id": "hgss1-83",
     "localId": "083",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "083/123",
+    "cardNumber": "83/123",
     "cardName": "Spinarak",
-    "fullDisplayName": "Spinarak 083/123 HeartGold SoulSilver",
+    "fullDisplayName": "Spinarak 83/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1289,18 +1430,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-083-low.png",
-    "imageHighSrc": "cards/hgss1-083-high.png"
+    "imageHighSrc": "cards/hgss1-083-high.png",
+    "attacks": [
+      {
+        "name": "Hang Down",
+        "damage": "10"
+      },
+      {
+        "name": "Spider Web",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7139",
-    "externalId": null,
+    "externalId": "hgss1-82",
     "tcgdex_id": "hgss1-82",
     "localId": "082",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "082/123",
+    "cardNumber": "82/123",
     "cardName": "Snubbull",
-    "fullDisplayName": "Snubbull 082/123 HeartGold SoulSilver",
+    "fullDisplayName": "Snubbull 82/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1322,18 +1473,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-082-low.png",
-    "imageHighSrc": "cards/hgss1-082-high.png"
+    "imageHighSrc": "cards/hgss1-082-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7135",
-    "externalId": null,
+    "externalId": "hgss1-81",
     "tcgdex_id": "hgss1-81",
     "localId": "081",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "081/123",
+    "cardNumber": "81/123",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 081/123 HeartGold SoulSilver",
+    "fullDisplayName": "Slowpoke 81/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1355,18 +1516,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-081-low.png",
-    "imageHighSrc": "cards/hgss1-081-high.png"
+    "imageHighSrc": "cards/hgss1-081-high.png",
+    "attacks": [
+      {
+        "name": "Whimsy Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7131",
-    "externalId": null,
+    "externalId": "hgss1-80",
     "tcgdex_id": "hgss1-80",
     "localId": "080",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "080/123",
+    "cardNumber": "80/123",
     "cardName": "Sentret",
-    "fullDisplayName": "Sentret 080/123 HeartGold SoulSilver",
+    "fullDisplayName": "Sentret 80/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1388,18 +1555,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-080-low.png",
-    "imageHighSrc": "cards/hgss1-080-high.png"
+    "imageHighSrc": "cards/hgss1-080-high.png",
+    "attacks": [
+      {
+        "name": "Scout",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7127",
-    "externalId": null,
+    "externalId": "hgss1-79",
     "tcgdex_id": "hgss1-79",
     "localId": "079",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "079/123",
+    "cardNumber": "79/123",
     "cardName": "Sandshrew",
-    "fullDisplayName": "Sandshrew 079/123 HeartGold SoulSilver",
+    "fullDisplayName": "Sandshrew 79/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1421,18 +1598,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-079-low.png",
-    "imageHighSrc": "cards/hgss1-079-high.png"
+    "imageHighSrc": "cards/hgss1-079-high.png",
+    "attacks": [
+      {
+        "name": "Defense Curl",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7123",
-    "externalId": null,
+    "externalId": "hgss1-78",
     "tcgdex_id": "hgss1-78",
     "localId": "078",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "078/123",
+    "cardNumber": "78/123",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 078/123 HeartGold SoulSilver",
+    "fullDisplayName": "Pikachu 78/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1454,18 +1641,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-078-low.png",
-    "imageHighSrc": "cards/hgss1-078-high.png"
+    "imageHighSrc": "cards/hgss1-078-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7119",
-    "externalId": null,
+    "externalId": "hgss1-77",
     "tcgdex_id": "hgss1-77",
     "localId": "077",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "077/123",
+    "cardNumber": "77/123",
     "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 077/123 HeartGold SoulSilver",
+    "fullDisplayName": "Phanpy 77/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1487,18 +1684,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-077-low.png",
-    "imageHighSrc": "cards/hgss1-077-high.png"
+    "imageHighSrc": "cards/hgss1-077-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7114",
-    "externalId": null,
+    "externalId": "hgss1-76",
     "tcgdex_id": "hgss1-76",
     "localId": "076",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "076/123",
+    "cardNumber": "76/123",
     "cardName": "Paras",
-    "fullDisplayName": "Paras 076/123 HeartGold SoulSilver",
+    "fullDisplayName": "Paras 76/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1520,18 +1723,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-076-low.png",
-    "imageHighSrc": "cards/hgss1-076-high.png"
+    "imageHighSrc": "cards/hgss1-076-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Double-edge Claw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7109",
-    "externalId": null,
+    "externalId": "hgss1-75",
     "tcgdex_id": "hgss1-75",
     "localId": "075",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "075/123",
+    "cardNumber": "75/123",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 075/123 HeartGold SoulSilver",
+    "fullDisplayName": "Meowth 75/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1553,18 +1766,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-075-low.png",
-    "imageHighSrc": "cards/hgss1-075-high.png"
+    "imageHighSrc": "cards/hgss1-075-high.png",
+    "attacks": [
+      {
+        "name": "Pay Day",
+        "damage": "10"
+      },
+      {
+        "name": "Dig Claws",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7106",
-    "externalId": null,
+    "externalId": "hgss1-74",
     "tcgdex_id": "hgss1-74",
     "localId": "074",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "074/123",
+    "cardNumber": "74/123",
     "cardName": "Marill",
-    "fullDisplayName": "Marill 074/123 HeartGold SoulSilver",
+    "fullDisplayName": "Marill 74/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1586,18 +1809,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-074-low.png",
-    "imageHighSrc": "cards/hgss1-074-high.png"
+    "imageHighSrc": "cards/hgss1-074-high.png",
+    "attacks": [
+      {
+        "name": "Water Splash",
+        "damage": "10+"
+      },
+      {
+        "name": "Tail Slap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7101",
-    "externalId": null,
+    "externalId": "hgss1-73",
     "tcgdex_id": "hgss1-73",
     "localId": "073",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "073/123",
+    "cardNumber": "73/123",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 073/123 HeartGold SoulSilver",
+    "fullDisplayName": "Mareep 73/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1619,18 +1852,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-073-low.png",
-    "imageHighSrc": "cards/hgss1-073-high.png"
+    "imageHighSrc": "cards/hgss1-073-high.png",
+    "attacks": [
+      {
+        "name": "Static Electricity",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7097",
-    "externalId": null,
+    "externalId": "hgss1-72",
     "tcgdex_id": "hgss1-72",
     "localId": "072",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "072/123",
+    "cardNumber": "72/123",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 072/123 HeartGold SoulSilver",
+    "fullDisplayName": "Magikarp 72/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1652,18 +1895,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-072-low.png",
-    "imageHighSrc": "cards/hgss1-072-high.png"
+    "imageHighSrc": "cards/hgss1-072-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7093",
-    "externalId": null,
+    "externalId": "hgss1-71",
     "tcgdex_id": "hgss1-71",
     "localId": "071",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "071/123",
+    "cardNumber": "71/123",
     "cardName": "Ledyba",
-    "fullDisplayName": "Ledyba 071/123 HeartGold SoulSilver",
+    "fullDisplayName": "Ledyba 71/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1685,18 +1934,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-071-low.png",
-    "imageHighSrc": "cards/hgss1-071-high.png"
+    "imageHighSrc": "cards/hgss1-071-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Comet Punch",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7088",
-    "externalId": null,
+    "externalId": "hgss1-70",
     "tcgdex_id": "hgss1-70",
     "localId": "070",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "070/123",
+    "cardNumber": "70/123",
     "cardName": "Koffing",
-    "fullDisplayName": "Koffing 070/123 HeartGold SoulSilver",
+    "fullDisplayName": "Koffing 70/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1718,18 +1977,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-070-low.png",
-    "imageHighSrc": "cards/hgss1-070-high.png"
+    "imageHighSrc": "cards/hgss1-070-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "10"
+      },
+      {
+        "name": "Suffocating Gas",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7084",
-    "externalId": null,
+    "externalId": "hgss1-69",
     "tcgdex_id": "hgss1-69",
     "localId": "069",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "069/123",
+    "cardNumber": "69/123",
     "cardName": "Jynx",
-    "fullDisplayName": "Jynx 069/123 HeartGold SoulSilver",
+    "fullDisplayName": "Jynx 69/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1751,18 +2020,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-069-low.png",
-    "imageHighSrc": "cards/hgss1-069-high.png"
+    "imageHighSrc": "cards/hgss1-069-high.png",
+    "attacks": [
+      {
+        "name": "Mimic",
+        "damage": null
+      },
+      {
+        "name": "Lick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7080",
-    "externalId": null,
+    "externalId": "hgss1-68",
     "tcgdex_id": "hgss1-68",
     "localId": "068",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "068/123",
+    "cardNumber": "68/123",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 068/123 HeartGold SoulSilver",
+    "fullDisplayName": "Jigglypuff 68/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1784,18 +2063,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-068-low.png",
-    "imageHighSrc": "cards/hgss1-068-high.png"
+    "imageHighSrc": "cards/hgss1-068-high.png",
+    "attacks": [
+      {
+        "name": "Hypnoblast",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7076",
-    "externalId": null,
+    "externalId": "hgss1-67",
     "tcgdex_id": "hgss1-67",
     "localId": "067",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "067/123",
+    "cardNumber": "67/123",
     "cardName": "Hoppip",
-    "fullDisplayName": "Hoppip 067/123 HeartGold SoulSilver",
+    "fullDisplayName": "Hoppip 67/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1817,18 +2102,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-067-low.png",
-    "imageHighSrc": "cards/hgss1-067-high.png"
+    "imageHighSrc": "cards/hgss1-067-high.png",
+    "attacks": [
+      {
+        "name": "Bounce",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7072",
-    "externalId": null,
+    "externalId": "hgss1-66",
     "tcgdex_id": "hgss1-66",
     "localId": "066",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "066/123",
+    "cardNumber": "66/123",
     "cardName": "Hoothoot",
-    "fullDisplayName": "Hoothoot 066/123 HeartGold SoulSilver",
+    "fullDisplayName": "Hoothoot 66/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1850,18 +2141,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-066-low.png",
-    "imageHighSrc": "cards/hgss1-066-high.png"
+    "imageHighSrc": "cards/hgss1-066-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7068",
-    "externalId": null,
+    "externalId": "hgss1-65",
     "tcgdex_id": "hgss1-65",
     "localId": "065",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "065/123",
+    "cardNumber": "65/123",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 065/123 HeartGold SoulSilver",
+    "fullDisplayName": "Growlithe 65/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1883,18 +2184,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-065-low.png",
-    "imageHighSrc": "cards/hgss1-065-high.png"
+    "imageHighSrc": "cards/hgss1-065-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Combustion",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7064",
-    "externalId": null,
+    "externalId": "hgss1-64",
     "tcgdex_id": "hgss1-64",
     "localId": "064",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "064/123",
+    "cardNumber": "64/123",
     "cardName": "Girafarig",
-    "fullDisplayName": "Girafarig 064/123 HeartGold SoulSilver",
+    "fullDisplayName": "Girafarig 64/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1916,18 +2227,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-064-low.png",
-    "imageHighSrc": "cards/hgss1-064-high.png"
+    "imageHighSrc": "cards/hgss1-064-high.png",
+    "attacks": [
+      {
+        "name": "Show Off",
+        "damage": null
+      },
+      {
+        "name": "Psyshot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7060",
-    "externalId": null,
+    "externalId": "hgss1-63",
     "tcgdex_id": "hgss1-63",
     "localId": "063",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "063/123",
+    "cardNumber": "63/123",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 063/123 HeartGold SoulSilver",
+    "fullDisplayName": "Exeggcute 63/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1949,18 +2270,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-063-low.png",
-    "imageHighSrc": "cards/hgss1-063-high.png"
+    "imageHighSrc": "cards/hgss1-063-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Eggsplosion",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7056",
-    "externalId": null,
+    "externalId": "hgss1-62",
     "tcgdex_id": "hgss1-62",
     "localId": "062",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "062/123",
+    "cardNumber": "62/123",
     "cardName": "Drowzee",
-    "fullDisplayName": "Drowzee 062/123 HeartGold SoulSilver",
+    "fullDisplayName": "Drowzee 62/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1982,18 +2309,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-062-low.png",
-    "imageHighSrc": "cards/hgss1-062-high.png"
+    "imageHighSrc": "cards/hgss1-062-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Inducer",
+        "damage": null
+      },
+      {
+        "name": "Gentle Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7052",
-    "externalId": null,
+    "externalId": "hgss1-61",
     "tcgdex_id": "hgss1-61",
     "localId": "061",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "061/123",
+    "cardNumber": "61/123",
     "cardName": "Cyndaquil",
-    "fullDisplayName": "Cyndaquil 061/123 HeartGold SoulSilver",
+    "fullDisplayName": "Cyndaquil 61/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2015,18 +2352,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-061-low.png",
-    "imageHighSrc": "cards/hgss1-061-high.png"
+    "imageHighSrc": "cards/hgss1-061-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7048",
-    "externalId": null,
+    "externalId": "hgss1-60",
     "tcgdex_id": "hgss1-60",
     "localId": "060",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "060/123",
+    "cardNumber": "60/123",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 060/123 HeartGold SoulSilver",
+    "fullDisplayName": "Clefairy 60/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2048,18 +2395,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-060-low.png",
-    "imageHighSrc": "cards/hgss1-060-high.png"
+    "imageHighSrc": "cards/hgss1-060-high.png",
+    "attacks": [
+      {
+        "name": "Minimize",
+        "damage": null
+      },
+      {
+        "name": "Slap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7044",
-    "externalId": null,
+    "externalId": "hgss1-59",
     "tcgdex_id": "hgss1-59",
     "localId": "059",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "059/123",
+    "cardNumber": "59/123",
     "cardName": "Chikorita",
-    "fullDisplayName": "Chikorita 059/123 HeartGold SoulSilver",
+    "fullDisplayName": "Chikorita 59/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2081,18 +2438,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-059-low.png",
-    "imageHighSrc": "cards/hgss1-059-high.png"
+    "imageHighSrc": "cards/hgss1-059-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7040",
-    "externalId": null,
+    "externalId": "hgss1-58",
     "tcgdex_id": "hgss1-58",
     "localId": "058",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "058/123",
+    "cardNumber": "58/123",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 058/123 HeartGold SoulSilver",
+    "fullDisplayName": "Chansey 58/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2114,18 +2481,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-058-low.png",
-    "imageHighSrc": "cards/hgss1-058-high.png"
+    "imageHighSrc": "cards/hgss1-058-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Happy Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7037",
-    "externalId": null,
+    "externalId": "hgss1-57",
     "tcgdex_id": "hgss1-57",
     "localId": "057",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "057/123",
+    "cardNumber": "57/123",
     "cardName": "Caterpie",
-    "fullDisplayName": "Caterpie 057/123 HeartGold SoulSilver",
+    "fullDisplayName": "Caterpie 57/123 HeartGold SoulSilver",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2147,18 +2524,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-057-low.png",
-    "imageHighSrc": "cards/hgss1-057-high.png"
+    "imageHighSrc": "cards/hgss1-057-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7032",
-    "externalId": null,
+    "externalId": "hgss1-56",
     "tcgdex_id": "hgss1-56",
     "localId": "056",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "056/123",
+    "cardNumber": "56/123",
     "cardName": "Wigglytuff",
-    "fullDisplayName": "Wigglytuff 056/123 HeartGold SoulSilver",
+    "fullDisplayName": "Wigglytuff 56/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2180,18 +2563,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-056-low.png",
-    "imageHighSrc": "cards/hgss1-056-high.png"
+    "imageHighSrc": "cards/hgss1-056-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "40×"
+      },
+      {
+        "name": "Expand",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7028",
-    "externalId": null,
+    "externalId": "hgss1-55",
     "tcgdex_id": "hgss1-55",
     "localId": "055",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "055/123",
+    "cardNumber": "55/123",
     "cardName": "Unown",
-    "fullDisplayName": "Unown 055/123 HeartGold SoulSilver",
+    "fullDisplayName": "Unown 55/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2213,18 +2606,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-055-low.png",
-    "imageHighSrc": "cards/hgss1-055-high.png"
+    "imageHighSrc": "cards/hgss1-055-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7024",
-    "externalId": null,
+    "externalId": "hgss1-54",
     "tcgdex_id": "hgss1-54",
     "localId": "054",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "054/123",
+    "cardNumber": "54/123",
     "cardName": "Unown",
-    "fullDisplayName": "Unown 054/123 HeartGold SoulSilver",
+    "fullDisplayName": "Unown 54/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2246,18 +2645,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-054-low.png",
-    "imageHighSrc": "cards/hgss1-054-high.png"
+    "imageHighSrc": "cards/hgss1-054-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7019",
-    "externalId": null,
+    "externalId": "hgss1-53",
     "tcgdex_id": "hgss1-53",
     "localId": "053",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "053/123",
+    "cardNumber": "53/123",
     "cardName": "Starmie",
-    "fullDisplayName": "Starmie 053/123 HeartGold SoulSilver",
+    "fullDisplayName": "Starmie 53/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2279,18 +2684,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-053-low.png",
-    "imageHighSrc": "cards/hgss1-053-high.png"
+    "imageHighSrc": "cards/hgss1-053-high.png",
+    "attacks": [
+      {
+        "name": "Cosmic Cyclone",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7015",
-    "externalId": null,
+    "externalId": "hgss1-52",
     "tcgdex_id": "hgss1-52",
     "localId": "052",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "052/123",
+    "cardNumber": "52/123",
     "cardName": "Slowbro",
-    "fullDisplayName": "Slowbro 052/123 HeartGold SoulSilver",
+    "fullDisplayName": "Slowbro 52/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2312,18 +2723,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-052-low.png",
-    "imageHighSrc": "cards/hgss1-052-high.png"
+    "imageHighSrc": "cards/hgss1-052-high.png",
+    "attacks": [
+      {
+        "name": "Big Yawn",
+        "damage": "30"
+      },
+      {
+        "name": "Madkinesis",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "7011",
-    "externalId": null,
+    "externalId": "hgss1-51",
     "tcgdex_id": "hgss1-51",
     "localId": "051",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "051/123",
+    "cardNumber": "51/123",
     "cardName": "Skiploom",
-    "fullDisplayName": "Skiploom 051/123 HeartGold SoulSilver",
+    "fullDisplayName": "Skiploom 51/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2345,18 +2766,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-051-low.png",
-    "imageHighSrc": "cards/hgss1-051-high.png"
+    "imageHighSrc": "cards/hgss1-051-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7007",
-    "externalId": null,
+    "externalId": "hgss1-50",
     "tcgdex_id": "hgss1-50",
     "localId": "050",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "050/123",
+    "cardNumber": "50/123",
     "cardName": "Qwilfish",
-    "fullDisplayName": "Qwilfish 050/123 HeartGold SoulSilver",
+    "fullDisplayName": "Qwilfish 50/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2378,18 +2805,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-050-low.png",
-    "imageHighSrc": "cards/hgss1-050-high.png"
+    "imageHighSrc": "cards/hgss1-050-high.png",
+    "attacks": [
+      {
+        "name": "Offensive Needle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7002",
-    "externalId": null,
+    "externalId": "hgss1-49",
     "tcgdex_id": "hgss1-49",
     "localId": "049",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "049/123",
+    "cardNumber": "49/123",
     "cardName": "Quilava",
-    "fullDisplayName": "Quilava 049/123 HeartGold SoulSilver",
+    "fullDisplayName": "Quilava 49/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2411,18 +2844,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-049-low.png",
-    "imageHighSrc": "cards/hgss1-049-high.png"
+    "imageHighSrc": "cards/hgss1-049-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "30"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6998",
-    "externalId": null,
+    "externalId": "hgss1-48",
     "tcgdex_id": "hgss1-48",
     "localId": "048",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "048/123",
+    "cardNumber": "48/123",
     "cardName": "Parasect",
-    "fullDisplayName": "Parasect 048/123 HeartGold SoulSilver",
+    "fullDisplayName": "Parasect 48/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2444,18 +2887,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-048-low.png",
-    "imageHighSrc": "cards/hgss1-048-high.png"
+    "imageHighSrc": "cards/hgss1-048-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Drain",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6994",
-    "externalId": null,
+    "externalId": "hgss1-47",
     "tcgdex_id": "hgss1-47",
     "localId": "047",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "047/123",
+    "cardNumber": "47/123",
     "cardName": "Miltank",
-    "fullDisplayName": "Miltank 047/123 HeartGold SoulSilver",
+    "fullDisplayName": "Miltank 47/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2477,18 +2930,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-047-low.png",
-    "imageHighSrc": "cards/hgss1-047-high.png"
+    "imageHighSrc": "cards/hgss1-047-high.png",
+    "attacks": [
+      {
+        "name": "Moomoo Squeeze",
+        "damage": null
+      },
+      {
+        "name": "Body Slam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6989",
-    "externalId": null,
+    "externalId": "hgss1-46",
     "tcgdex_id": "hgss1-46",
     "localId": "046",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "046/123",
+    "cardNumber": "46/123",
     "cardName": "Metapod",
-    "fullDisplayName": "Metapod 046/123 HeartGold SoulSilver",
+    "fullDisplayName": "Metapod 46/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2510,18 +2973,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-046-low.png",
-    "imageHighSrc": "cards/hgss1-046-high.png"
+    "imageHighSrc": "cards/hgss1-046-high.png",
+    "attacks": [
+      {
+        "name": "Sharpen",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6985",
-    "externalId": null,
+    "externalId": "hgss1-45",
     "tcgdex_id": "hgss1-45",
     "localId": "045",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "045/123",
+    "cardNumber": "45/123",
     "cardName": "Mantine",
-    "fullDisplayName": "Mantine 045/123 HeartGold SoulSilver",
+    "fullDisplayName": "Mantine 45/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2543,18 +3012,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-045-low.png",
-    "imageHighSrc": "cards/hgss1-045-high.png"
+    "imageHighSrc": "cards/hgss1-045-high.png",
+    "attacks": [
+      {
+        "name": "Group Swim",
+        "damage": null
+      },
+      {
+        "name": "Aqua Slash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6981",
-    "externalId": null,
+    "externalId": "hgss1-44",
     "tcgdex_id": "hgss1-44",
     "localId": "044",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "044/123",
+    "cardNumber": "44/123",
     "cardName": "Igglybuff",
-    "fullDisplayName": "Igglybuff 044/123 HeartGold SoulSilver",
+    "fullDisplayName": "Igglybuff 44/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2576,18 +3055,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-044-low.png",
-    "imageHighSrc": "cards/hgss1-044-high.png"
+    "imageHighSrc": "cards/hgss1-044-high.png",
+    "attacks": [
+      {
+        "name": "Graffiti",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6978",
-    "externalId": null,
+    "externalId": "hgss1-43",
     "tcgdex_id": "hgss1-43",
     "localId": "043",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "043/123",
+    "cardNumber": "43/123",
     "cardName": "Heracross",
-    "fullDisplayName": "Heracross 043/123 HeartGold SoulSilver",
+    "fullDisplayName": "Heracross 43/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2609,18 +3094,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-043-low.png",
-    "imageHighSrc": "cards/hgss1-043-high.png"
+    "imageHighSrc": "cards/hgss1-043-high.png",
+    "attacks": [
+      {
+        "name": "Green Draw",
+        "damage": null
+      },
+      {
+        "name": "Double Headbutt",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "6974",
-    "externalId": null,
+    "externalId": "hgss1-42",
     "tcgdex_id": "hgss1-42",
     "localId": "042",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "042/123",
+    "cardNumber": "42/123",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 042/123 HeartGold SoulSilver",
+    "fullDisplayName": "Flaaffy 42/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2642,18 +3137,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-042-low.png",
-    "imageHighSrc": "cards/hgss1-042-high.png"
+    "imageHighSrc": "cards/hgss1-042-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Spear",
+        "damage": null
+      },
+      {
+        "name": "Thundershock",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6970",
-    "externalId": null,
+    "externalId": "hgss1-41",
     "tcgdex_id": "hgss1-41",
     "localId": "041",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "041/123",
+    "cardNumber": "41/123",
     "cardName": "Dunsparce",
-    "fullDisplayName": "Dunsparce 041/123 HeartGold SoulSilver",
+    "fullDisplayName": "Dunsparce 41/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2675,18 +3180,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-041-low.png",
-    "imageHighSrc": "cards/hgss1-041-high.png"
+    "imageHighSrc": "cards/hgss1-041-high.png",
+    "attacks": [
+      {
+        "name": "Glare",
+        "damage": null
+      },
+      {
+        "name": "Fade Out",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6966",
-    "externalId": null,
+    "externalId": "hgss1-40",
     "tcgdex_id": "hgss1-40",
     "localId": "040",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "040/123",
+    "cardNumber": "40/123",
     "cardName": "Donphan",
-    "fullDisplayName": "Donphan 040/123 HeartGold SoulSilver",
+    "fullDisplayName": "Donphan 40/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2708,18 +3223,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-040-low.png",
-    "imageHighSrc": "cards/hgss1-040-high.png"
+    "imageHighSrc": "cards/hgss1-040-high.png",
+    "attacks": [
+      {
+        "name": "Rock Hurl",
+        "damage": "50"
+      },
+      {
+        "name": "Double Spin",
+        "damage": "70×"
+      }
+    ]
   },
   {
     "masterCardId": "6962",
-    "externalId": null,
+    "externalId": "hgss1-39",
     "tcgdex_id": "hgss1-39",
     "localId": "039",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "039/123",
+    "cardNumber": "39/123",
     "cardName": "Delibird",
-    "fullDisplayName": "Delibird 039/123 HeartGold SoulSilver",
+    "fullDisplayName": "Delibird 39/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2741,18 +3266,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-039-low.png",
-    "imageHighSrc": "cards/hgss1-039-high.png"
+    "imageHighSrc": "cards/hgss1-039-high.png",
+    "attacks": [
+      {
+        "name": "Snowy Present",
+        "damage": null
+      },
+      {
+        "name": "Hail",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6958",
-    "externalId": null,
+    "externalId": "hgss1-38",
     "tcgdex_id": "hgss1-38",
     "localId": "038",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "038/123",
+    "cardNumber": "38/123",
     "cardName": "Croconaw",
-    "fullDisplayName": "Croconaw 038/123 HeartGold SoulSilver",
+    "fullDisplayName": "Croconaw 38/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2774,18 +3309,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-038-low.png",
-    "imageHighSrc": "cards/hgss1-038-high.png"
+    "imageHighSrc": "cards/hgss1-038-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "30"
+      },
+      {
+        "name": "Big Bite",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6954",
-    "externalId": null,
+    "externalId": "hgss1-37",
     "tcgdex_id": "hgss1-37",
     "localId": "037",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "037/123",
+    "cardNumber": "37/123",
     "cardName": "Corsola",
-    "fullDisplayName": "Corsola 037/123 HeartGold SoulSilver",
+    "fullDisplayName": "Corsola 37/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2807,18 +3352,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-037-low.png",
-    "imageHighSrc": "cards/hgss1-037-high.png"
+    "imageHighSrc": "cards/hgss1-037-high.png",
+    "attacks": [
+      {
+        "name": "Recover",
+        "damage": null
+      },
+      {
+        "name": "Hyper Cannon",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "6950",
-    "externalId": null,
+    "externalId": "hgss1-36",
     "tcgdex_id": "hgss1-36",
     "localId": "036",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "036/123",
+    "cardNumber": "36/123",
     "cardName": "Blissey",
-    "fullDisplayName": "Blissey 036/123 HeartGold SoulSilver",
+    "fullDisplayName": "Blissey 36/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2840,18 +3395,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-036-low.png",
-    "imageHighSrc": "cards/hgss1-036-high.png"
+    "imageHighSrc": "cards/hgss1-036-high.png",
+    "attacks": [
+      {
+        "name": "Energy Link",
+        "damage": "10"
+      },
+      {
+        "name": "Double-edge",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6946",
-    "externalId": null,
+    "externalId": "hgss1-35",
     "tcgdex_id": "hgss1-35",
     "localId": "035",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "035/123",
+    "cardNumber": "35/123",
     "cardName": "Bayleef",
-    "fullDisplayName": "Bayleef 035/123 HeartGold SoulSilver",
+    "fullDisplayName": "Bayleef 35/123 HeartGold SoulSilver",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2873,18 +3438,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-035-low.png",
-    "imageHighSrc": "cards/hgss1-035-high.png"
+    "imageHighSrc": "cards/hgss1-035-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "20"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6942",
-    "externalId": null,
+    "externalId": "hgss1-34",
     "tcgdex_id": "hgss1-34",
     "localId": "034",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "034/123",
+    "cardNumber": "34/123",
     "cardName": "Weezing",
-    "fullDisplayName": "Weezing 034/123 HeartGold SoulSilver",
+    "fullDisplayName": "Weezing 34/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2906,18 +3481,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-034-low.png",
-    "imageHighSrc": "cards/hgss1-034-high.png"
+    "imageHighSrc": "cards/hgss1-034-high.png",
+    "attacks": [
+      {
+        "name": "Super Poison Breath",
+        "damage": null
+      },
+      {
+        "name": "Super Explosion",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "6938",
-    "externalId": null,
+    "externalId": "hgss1-33",
     "tcgdex_id": "hgss1-33",
     "localId": "033",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "033/123",
+    "cardNumber": "33/123",
     "cardName": "Tyrogue",
-    "fullDisplayName": "Tyrogue 033/123 HeartGold SoulSilver",
+    "fullDisplayName": "Tyrogue 33/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2939,18 +3524,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-033-low.png",
-    "imageHighSrc": "cards/hgss1-033-high.png"
+    "imageHighSrc": "cards/hgss1-033-high.png",
+    "attacks": [
+      {
+        "name": "Mischievous Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6934",
-    "externalId": null,
+    "externalId": "hgss1-32",
     "tcgdex_id": "hgss1-32",
     "localId": "032",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "032/123",
+    "cardNumber": "32/123",
     "cardName": "Typhlosion",
-    "fullDisplayName": "Typhlosion 032/123 HeartGold SoulSilver",
+    "fullDisplayName": "Typhlosion 32/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2972,18 +3563,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-032-low.png",
-    "imageHighSrc": "cards/hgss1-032-high.png"
+    "imageHighSrc": "cards/hgss1-032-high.png",
+    "attacks": [
+      {
+        "name": "Magma Punch",
+        "damage": "50"
+      },
+      {
+        "name": "Fire Spin",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "6930",
-    "externalId": null,
+    "externalId": "hgss1-31",
     "tcgdex_id": "hgss1-31",
     "localId": "031",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "031/123",
+    "cardNumber": "31/123",
     "cardName": "Sunflora",
-    "fullDisplayName": "Sunflora 031/123 HeartGold SoulSilver",
+    "fullDisplayName": "Sunflora 31/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3005,18 +3606,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-031-low.png",
-    "imageHighSrc": "cards/hgss1-031-high.png"
+    "imageHighSrc": "cards/hgss1-031-high.png",
+    "attacks": [
+      {
+        "name": "Blade Arms",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6925",
-    "externalId": null,
+    "externalId": "hgss1-30",
     "tcgdex_id": "hgss1-30",
     "localId": "030",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "030/123",
+    "cardNumber": "30/123",
     "cardName": "Smoochum",
-    "fullDisplayName": "Smoochum 030/123 HeartGold SoulSilver",
+    "fullDisplayName": "Smoochum 30/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3038,18 +3645,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-030-low.png",
-    "imageHighSrc": "cards/hgss1-030-high.png"
+    "imageHighSrc": "cards/hgss1-030-high.png",
+    "attacks": [
+      {
+        "name": "Energy Antics",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6922",
-    "externalId": null,
+    "externalId": "hgss1-29",
     "tcgdex_id": "hgss1-29",
     "localId": "029",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "029/123",
+    "cardNumber": "29/123",
     "cardName": "Sandslash",
-    "fullDisplayName": "Sandslash 029/123 HeartGold SoulSilver",
+    "fullDisplayName": "Sandslash 29/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3071,18 +3684,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-029-low.png",
-    "imageHighSrc": "cards/hgss1-029-high.png"
+    "imageHighSrc": "cards/hgss1-029-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "30"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "6917",
-    "externalId": null,
+    "externalId": "hgss1-28",
     "tcgdex_id": "hgss1-28",
     "localId": "028",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "028/123",
+    "cardNumber": "28/123",
     "cardName": "Pichu",
-    "fullDisplayName": "Pichu 028/123 HeartGold SoulSilver",
+    "fullDisplayName": "Pichu 28/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3104,18 +3727,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-028-low.png",
-    "imageHighSrc": "cards/hgss1-028-high.png"
+    "imageHighSrc": "cards/hgss1-028-high.png",
+    "attacks": [
+      {
+        "name": "Playground",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6913",
-    "externalId": null,
+    "externalId": "hgss1-27",
     "tcgdex_id": "hgss1-27",
     "localId": "027",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "027/123",
+    "cardNumber": "27/123",
     "cardName": "Persian",
-    "fullDisplayName": "Persian 027/123 HeartGold SoulSilver",
+    "fullDisplayName": "Persian 27/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3137,18 +3766,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-027-low.png",
-    "imageHighSrc": "cards/hgss1-027-high.png"
+    "imageHighSrc": "cards/hgss1-027-high.png",
+    "attacks": [
+      {
+        "name": "Sharpen Claws",
+        "damage": null
+      },
+      {
+        "name": "Sneaky Attack",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "6910",
-    "externalId": null,
+    "externalId": "hgss1-26",
     "tcgdex_id": "hgss1-26",
     "localId": "026",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "026/123",
+    "cardNumber": "26/123",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium 026/123 HeartGold SoulSilver",
+    "fullDisplayName": "Meganium 26/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3170,18 +3809,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-026-low.png",
-    "imageHighSrc": "cards/hgss1-026-high.png"
+    "imageHighSrc": "cards/hgss1-026-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "30"
+      },
+      {
+        "name": "Giant Bloom",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6906",
-    "externalId": null,
+    "externalId": "hgss1-25",
     "tcgdex_id": "hgss1-25",
     "localId": "025",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "025/123",
+    "cardNumber": "25/123",
     "cardName": "Ledian",
-    "fullDisplayName": "Ledian 025/123 HeartGold SoulSilver",
+    "fullDisplayName": "Ledian 25/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3203,18 +3852,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-025-low.png",
-    "imageHighSrc": "cards/hgss1-025-high.png"
+    "imageHighSrc": "cards/hgss1-025-high.png",
+    "attacks": [
+      {
+        "name": "Quick Draw",
+        "damage": "10"
+      },
+      {
+        "name": "Swift",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6902",
-    "externalId": null,
+    "externalId": "hgss1-24",
     "tcgdex_id": "hgss1-24",
     "localId": "024",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "024/123",
+    "cardNumber": "24/123",
     "cardName": "Lapras",
-    "fullDisplayName": "Lapras 024/123 HeartGold SoulSilver",
+    "fullDisplayName": "Lapras 24/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3236,18 +3895,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-024-low.png",
-    "imageHighSrc": "cards/hgss1-024-high.png"
+    "imageHighSrc": "cards/hgss1-024-high.png",
+    "attacks": [
+      {
+        "name": "Ice Beam",
+        "damage": "20"
+      },
+      {
+        "name": "Ice Blade",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6897",
-    "externalId": null,
+    "externalId": "hgss1-23",
     "tcgdex_id": "hgss1-23",
     "localId": "023",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "023/123",
+    "cardNumber": "23/123",
     "cardName": "Hypno",
-    "fullDisplayName": "Hypno 023/123 HeartGold SoulSilver",
+    "fullDisplayName": "Hypno 23/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3269,18 +3938,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-023-low.png",
-    "imageHighSrc": "cards/hgss1-023-high.png"
+    "imageHighSrc": "cards/hgss1-023-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Shot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6892",
-    "externalId": null,
+    "externalId": "hgss1-22",
     "tcgdex_id": "hgss1-22",
     "localId": "022",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "022/123",
+    "cardNumber": "22/123",
     "cardName": "Granbull",
-    "fullDisplayName": "Granbull 022/123 HeartGold SoulSilver",
+    "fullDisplayName": "Granbull 22/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3302,18 +3977,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-022-low.png",
-    "imageHighSrc": "cards/hgss1-022-high.png"
+    "imageHighSrc": "cards/hgss1-022-high.png",
+    "attacks": [
+      {
+        "name": "Timid Tackle",
+        "damage": "50"
+      },
+      {
+        "name": "Chomp",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "6887",
-    "externalId": null,
+    "externalId": "hgss1-21",
     "tcgdex_id": "hgss1-21",
     "localId": "021",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "021/123",
+    "cardNumber": "21/123",
     "cardName": "Furret",
-    "fullDisplayName": "Furret 021/123 HeartGold SoulSilver",
+    "fullDisplayName": "Furret 21/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3335,18 +4020,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-021-low.png",
-    "imageHighSrc": "cards/hgss1-021-high.png"
+    "imageHighSrc": "cards/hgss1-021-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      },
+      {
+        "name": "Quick Blow",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "6882",
-    "externalId": null,
+    "externalId": "hgss1-20",
     "tcgdex_id": "hgss1-20",
     "localId": "020",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "020/123",
+    "cardNumber": "20/123",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 020/123 HeartGold SoulSilver",
+    "fullDisplayName": "Feraligatr 20/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3368,18 +4063,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-020-low.png",
-    "imageHighSrc": "cards/hgss1-020-high.png"
+    "imageHighSrc": "cards/hgss1-020-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Tail",
+        "damage": null
+      },
+      {
+        "name": "Surf",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6877",
-    "externalId": null,
+    "externalId": "hgss1-19",
     "tcgdex_id": "hgss1-19",
     "localId": "019",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "019/123",
+    "cardNumber": "19/123",
     "cardName": "Farfetch'd",
-    "fullDisplayName": "Farfetch'd 019/123 HeartGold SoulSilver",
+    "fullDisplayName": "Farfetch'd 19/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3401,18 +4106,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss1-019-low.png",
-    "imageHighSrc": "cards/hgss1-019-high.png"
+    "imageHighSrc": "cards/hgss1-019-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Spin Turn",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6872",
-    "externalId": null,
+    "externalId": "hgss1-18",
     "tcgdex_id": "hgss1-18",
     "localId": "018",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "018/123",
+    "cardNumber": "18/123",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 018/123 HeartGold SoulSilver",
+    "fullDisplayName": "Exeggutor 18/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3434,18 +4149,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-018-low.png",
-    "imageHighSrc": "cards/hgss1-018-high.png"
+    "imageHighSrc": "cards/hgss1-018-high.png",
+    "attacks": [
+      {
+        "name": "Energy Absorption",
+        "damage": null
+      },
+      {
+        "name": "Big Eggsplosion",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "6866",
-    "externalId": null,
+    "externalId": "hgss1-17",
     "tcgdex_id": "hgss1-17",
     "localId": "017",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "017/123",
+    "cardNumber": "17/123",
     "cardName": "Cleffa",
-    "fullDisplayName": "Cleffa 017/123 HeartGold SoulSilver",
+    "fullDisplayName": "Cleffa 17/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3467,18 +4192,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-017-low.png",
-    "imageHighSrc": "cards/hgss1-017-high.png"
+    "imageHighSrc": "cards/hgss1-017-high.png",
+    "attacks": [
+      {
+        "name": "Eeeeeeek",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6861",
-    "externalId": null,
+    "externalId": "hgss1-16",
     "tcgdex_id": "hgss1-16",
     "localId": "016",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "016/123",
+    "cardNumber": "16/123",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 016/123 HeartGold SoulSilver",
+    "fullDisplayName": "Butterfree 16/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3500,18 +4231,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-016-low.png",
-    "imageHighSrc": "cards/hgss1-016-high.png"
+    "imageHighSrc": "cards/hgss1-016-high.png",
+    "attacks": [
+      {
+        "name": "Cure Powder",
+        "damage": null
+      },
+      {
+        "name": "Whirlwind",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6856",
-    "externalId": null,
+    "externalId": "hgss1-15",
     "tcgdex_id": "hgss1-15",
     "localId": "015",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "015/123",
+    "cardNumber": "15/123",
     "cardName": "Ariados",
-    "fullDisplayName": "Ariados 015/123 HeartGold SoulSilver",
+    "fullDisplayName": "Ariados 15/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3533,18 +4274,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-015-low.png",
-    "imageHighSrc": "cards/hgss1-015-high.png"
+    "imageHighSrc": "cards/hgss1-015-high.png",
+    "attacks": [
+      {
+        "name": "Leech Life",
+        "damage": "30"
+      },
+      {
+        "name": "Poisonous Saliva",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6851",
-    "externalId": null,
+    "externalId": "hgss1-14",
     "tcgdex_id": "hgss1-14",
     "localId": "014",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "014/123",
+    "cardNumber": "14/123",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 014/123 HeartGold SoulSilver",
+    "fullDisplayName": "Ampharos 14/123 HeartGold SoulSilver",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3566,18 +4317,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-014-low.png",
-    "imageHighSrc": "cards/hgss1-014-high.png"
+    "imageHighSrc": "cards/hgss1-014-high.png",
+    "attacks": [
+      {
+        "name": "Acceleration Bolt",
+        "damage": "30"
+      },
+      {
+        "name": "Thunder",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6846",
-    "externalId": null,
+    "externalId": "hgss1-13",
     "tcgdex_id": "hgss1-13",
     "localId": "013",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "013/123",
+    "cardNumber": "13/123",
     "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet 013/123 HeartGold SoulSilver",
+    "fullDisplayName": "Wobbuffet 13/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3599,18 +4360,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-013-low.png",
-    "imageHighSrc": "cards/hgss1-013-high.png"
+    "imageHighSrc": "cards/hgss1-013-high.png",
+    "attacks": [
+      {
+        "name": "Double Return",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "6840",
-    "externalId": null,
+    "externalId": "hgss1-12",
     "tcgdex_id": "hgss1-12",
     "localId": "012",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "012/123",
+    "cardNumber": "12/123",
     "cardName": "Slowking",
-    "fullDisplayName": "Slowking 012/123 HeartGold SoulSilver",
+    "fullDisplayName": "Slowking 12/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3632,18 +4399,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-012-low.png",
-    "imageHighSrc": "cards/hgss1-012-high.png"
+    "imageHighSrc": "cards/hgss1-012-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6833",
-    "externalId": null,
+    "externalId": "hgss1-11",
     "tcgdex_id": "hgss1-11",
     "localId": "011",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "011/123",
+    "cardNumber": "11/123",
     "cardName": "Shuckle",
-    "fullDisplayName": "Shuckle 011/123 HeartGold SoulSilver",
+    "fullDisplayName": "Shuckle 11/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3665,18 +4438,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-011-low.png",
-    "imageHighSrc": "cards/hgss1-011-high.png"
+    "imageHighSrc": "cards/hgss1-011-high.png",
+    "attacks": [
+      {
+        "name": "Poison Jab",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6827",
-    "externalId": null,
+    "externalId": "hgss1-10",
     "tcgdex_id": "hgss1-10",
     "localId": "010",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "010/123",
+    "cardNumber": "10/123",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 010/123 HeartGold SoulSilver",
+    "fullDisplayName": "Raichu 10/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3698,18 +4477,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-010-low.png",
-    "imageHighSrc": "cards/hgss1-010-high.png"
+    "imageHighSrc": "cards/hgss1-010-high.png",
+    "attacks": [
+      {
+        "name": "Iron Tail",
+        "damage": "30×"
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "6820",
-    "externalId": null,
+    "externalId": "hgss1-9",
     "tcgdex_id": "hgss1-9",
     "localId": "009",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "009/123",
+    "cardNumber": "9/123",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 009/123 HeartGold SoulSilver",
+    "fullDisplayName": "Quagsire 9/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3731,18 +4520,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-009-low.png",
-    "imageHighSrc": "cards/hgss1-009-high.png"
+    "imageHighSrc": "cards/hgss1-009-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "40"
+      },
+      {
+        "name": "Mud Shot",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6814",
-    "externalId": null,
+    "externalId": "hgss1-8",
     "tcgdex_id": "hgss1-8",
     "localId": "008",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "008/123",
+    "cardNumber": "8/123",
     "cardName": "Noctowl",
-    "fullDisplayName": "Noctowl 008/123 HeartGold SoulSilver",
+    "fullDisplayName": "Noctowl 8/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3764,18 +4563,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-008-low.png",
-    "imageHighSrc": "cards/hgss1-008-high.png"
+    "imageHighSrc": "cards/hgss1-008-high.png",
+    "attacks": [
+      {
+        "name": "Extrasensory",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "6807",
-    "externalId": null,
+    "externalId": "hgss1-7",
     "tcgdex_id": "hgss1-7",
     "localId": "007",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "007/123",
+    "cardNumber": "7/123",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 007/123 HeartGold SoulSilver",
+    "fullDisplayName": "Ninetales 7/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3797,18 +4602,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-007-low.png",
-    "imageHighSrc": "cards/hgss1-007-high.png"
+    "imageHighSrc": "cards/hgss1-007-high.png",
+    "attacks": [
+      {
+        "name": "Will-o'-the-wisp",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6797",
-    "externalId": null,
+    "externalId": "hgss1-6",
     "tcgdex_id": "hgss1-6",
     "localId": "006",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "006/123",
+    "cardNumber": "6/123",
     "cardName": "Jumpluff",
-    "fullDisplayName": "Jumpluff 006/123 HeartGold SoulSilver",
+    "fullDisplayName": "Jumpluff 6/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3830,18 +4641,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-006-low.png",
-    "imageHighSrc": "cards/hgss1-006-high.png"
+    "imageHighSrc": "cards/hgss1-006-high.png",
+    "attacks": [
+      {
+        "name": "Mass Attack",
+        "damage": "10×"
+      },
+      {
+        "name": "Leaf Guard",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6789",
-    "externalId": null,
+    "externalId": "hgss1-5",
     "tcgdex_id": "hgss1-5",
     "localId": "005",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "005/123",
+    "cardNumber": "5/123",
     "cardName": "Hitmontop",
-    "fullDisplayName": "Hitmontop 005/123 HeartGold SoulSilver",
+    "fullDisplayName": "Hitmontop 5/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3863,18 +4684,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-005-low.png",
-    "imageHighSrc": "cards/hgss1-005-high.png"
+    "imageHighSrc": "cards/hgss1-005-high.png",
+    "attacks": [
+      {
+        "name": "Triple Kick",
+        "damage": "20×"
+      },
+      {
+        "name": "Close Combat",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6782",
-    "externalId": null,
+    "externalId": "hgss1-4",
     "tcgdex_id": "hgss1-4",
     "localId": "004",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "004/123",
+    "cardNumber": "4/123",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 004/123 HeartGold SoulSilver",
+    "fullDisplayName": "Gyarados 4/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3896,18 +4727,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-004-low.png",
-    "imageHighSrc": "cards/hgss1-004-high.png"
+    "imageHighSrc": "cards/hgss1-004-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Splash",
+        "damage": "50"
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6767",
-    "externalId": null,
+    "externalId": "hgss1-3",
     "tcgdex_id": "hgss1-3",
     "localId": "003",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "003/123",
+    "cardNumber": "3/123",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 003/123 HeartGold SoulSilver",
+    "fullDisplayName": "Clefable 3/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3929,18 +4770,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-003-low.png",
-    "imageHighSrc": "cards/hgss1-003-high.png"
+    "imageHighSrc": "cards/hgss1-003-high.png",
+    "attacks": [
+      {
+        "name": "Fairy Power",
+        "damage": null
+      },
+      {
+        "name": "Moon Impact",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6753",
-    "externalId": null,
+    "externalId": "hgss1-2",
     "tcgdex_id": "hgss1-2",
     "localId": "002",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "002/123",
+    "cardNumber": "2/123",
     "cardName": "Azumarill",
-    "fullDisplayName": "Azumarill 002/123 HeartGold SoulSilver",
+    "fullDisplayName": "Azumarill 2/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3962,18 +4813,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-002-low.png",
-    "imageHighSrc": "cards/hgss1-002-high.png"
+    "imageHighSrc": "cards/hgss1-002-high.png",
+    "attacks": [
+      {
+        "name": "Waterfall",
+        "damage": "40"
+      },
+      {
+        "name": "Bubblebeam",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6741",
-    "externalId": null,
+    "externalId": "hgss1-1",
     "tcgdex_id": "hgss1-1",
     "localId": "001",
     "setCode": "hgss1",
     "setTcgdexId": "hgss1",
-    "cardNumber": "001/123",
+    "cardNumber": "1/123",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 001/123 HeartGold SoulSilver",
+    "fullDisplayName": "Arcanine 1/123 HeartGold SoulSilver",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3995,6 +4856,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss1-001-low.png",
-    "imageHighSrc": "cards/hgss1-001-high.png"
+    "imageHighSrc": "cards/hgss1-001-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "50"
+      },
+      {
+        "name": "Fire Mane",
+        "damage": "90"
+      }
+    ]
   }
 ]

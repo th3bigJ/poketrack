@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9251",
-    "externalId": null,
+    "externalId": "ru1-16",
     "tcgdex_id": "ru1-16",
     "localId": "016",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "016/16",
+    "cardNumber": "16/16",
     "cardName": "Bibarel",
-    "fullDisplayName": "Bibarel 016/16 Pokémon Rumble",
+    "fullDisplayName": "Bibarel 16/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -30,18 +30,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-016-low.png",
-    "imageHighSrc": "cards/ru1-016-high.png"
+    "imageHighSrc": "cards/ru1-016-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9241",
-    "externalId": null,
+    "externalId": "ru1-15",
     "tcgdex_id": "ru1-15",
     "localId": "015",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "015/16",
+    "cardNumber": "15/16",
     "cardName": "Rattata",
-    "fullDisplayName": "Rattata 015/16 Pokémon Rumble",
+    "fullDisplayName": "Rattata 15/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +69,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-015-low.png",
-    "imageHighSrc": "cards/ru1-015-high.png"
+    "imageHighSrc": "cards/ru1-015-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9232",
-    "externalId": null,
+    "externalId": "ru1-14",
     "tcgdex_id": "ru1-14",
     "localId": "014",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "014/16",
+    "cardNumber": "14/16",
     "cardName": "Bastiodon",
-    "fullDisplayName": "Bastiodon 014/16 Pokémon Rumble",
+    "fullDisplayName": "Bastiodon 14/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -96,18 +108,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-014-low.png",
-    "imageHighSrc": "cards/ru1-014-high.png"
+    "imageHighSrc": "cards/ru1-014-high.png",
+    "attacks": [
+      {
+        "name": "Strength",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9223",
-    "externalId": null,
+    "externalId": "ru1-13",
     "tcgdex_id": "ru1-13",
     "localId": "013",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "013/16",
+    "cardNumber": "13/16",
     "cardName": "Skuntank",
-    "fullDisplayName": "Skuntank 013/16 Pokémon Rumble",
+    "fullDisplayName": "Skuntank 13/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -129,18 +147,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-013-low.png",
-    "imageHighSrc": "cards/ru1-013-high.png"
+    "imageHighSrc": "cards/ru1-013-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9213",
-    "externalId": null,
+    "externalId": "ru1-12",
     "tcgdex_id": "ru1-12",
     "localId": "012",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "012/16",
+    "cardNumber": "12/16",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario 012/16 Pokémon Rumble",
+    "fullDisplayName": "Lucario 12/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -162,18 +186,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-012-low.png",
-    "imageHighSrc": "cards/ru1-012-high.png"
+    "imageHighSrc": "cards/ru1-012-high.png",
+    "attacks": [
+      {
+        "name": "Metal Claw",
+        "damage": "40"
+      },
+      {
+        "name": "Pulse Blast",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9204",
-    "externalId": null,
+    "externalId": "ru1-11",
     "tcgdex_id": "ru1-11",
     "localId": "011",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "011/16",
+    "cardNumber": "11/16",
     "cardName": "Diglett",
-    "fullDisplayName": "Diglett 011/16 Pokémon Rumble",
+    "fullDisplayName": "Diglett 11/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +229,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-011-low.png",
-    "imageHighSrc": "cards/ru1-011-high.png"
+    "imageHighSrc": "cards/ru1-011-high.png",
+    "attacks": [
+      {
+        "name": "Dig",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9195",
-    "externalId": null,
+    "externalId": "ru1-10",
     "tcgdex_id": "ru1-10",
     "localId": "010",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "010/16",
+    "cardNumber": "10/16",
     "cardName": "Mew",
-    "fullDisplayName": "Mew 010/16 Pokémon Rumble",
+    "fullDisplayName": "Mew 10/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +268,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-010-low.png",
-    "imageHighSrc": "cards/ru1-010-high.png"
+    "imageHighSrc": "cards/ru1-010-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "30"
+      },
+      {
+        "name": "Will-o'-the-wisp",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9183",
-    "externalId": null,
+    "externalId": "ru1-9",
     "tcgdex_id": "ru1-9",
     "localId": "009",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "009/16",
+    "cardNumber": "9/16",
     "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 009/16 Pokémon Rumble",
+    "fullDisplayName": "Mewtwo 9/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +311,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-009-low.png",
-    "imageHighSrc": "cards/ru1-009-high.png"
+    "imageHighSrc": "cards/ru1-009-high.png",
+    "attacks": [
+      {
+        "name": "Super Psy Bolt",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9175",
-    "externalId": null,
+    "externalId": "ru1-8",
     "tcgdex_id": "ru1-8",
     "localId": "008",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "008/16",
+    "cardNumber": "8/16",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 008/16 Pokémon Rumble",
+    "fullDisplayName": "Zapdos 8/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +350,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-008-low.png",
-    "imageHighSrc": "cards/ru1-008-high.png"
+    "imageHighSrc": "cards/ru1-008-high.png",
+    "attacks": [
+      {
+        "name": "Drill Peck",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9166",
-    "externalId": null,
+    "externalId": "ru1-7",
     "tcgdex_id": "ru1-7",
     "localId": "007",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "007/16",
+    "cardNumber": "7/16",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 007/16 Pokémon Rumble",
+    "fullDisplayName": "Pikachu 7/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +389,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-007-low.png",
-    "imageHighSrc": "cards/ru1-007-high.png"
+    "imageHighSrc": "cards/ru1-007-high.png",
+    "attacks": [
+      {
+        "name": "Volt Tackle",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9157",
-    "externalId": null,
+    "externalId": "ru1-6",
     "tcgdex_id": "ru1-6",
     "localId": "006",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "006/16",
+    "cardNumber": "6/16",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 006/16 Pokémon Rumble",
+    "fullDisplayName": "Gyarados 6/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -360,18 +428,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-006-low.png",
-    "imageHighSrc": "cards/ru1-006-high.png"
+    "imageHighSrc": "cards/ru1-006-high.png",
+    "attacks": [
+      {
+        "name": "Thrash Tackle",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9149",
-    "externalId": null,
+    "externalId": "ru1-5",
     "tcgdex_id": "ru1-5",
     "localId": "005",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "005/16",
+    "cardNumber": "5/16",
     "cardName": "Starmie",
-    "fullDisplayName": "Starmie 005/16 Pokémon Rumble",
+    "fullDisplayName": "Starmie 5/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -393,18 +467,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-005-low.png",
-    "imageHighSrc": "cards/ru1-005-high.png"
+    "imageHighSrc": "cards/ru1-005-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9138",
-    "externalId": null,
+    "externalId": "ru1-4",
     "tcgdex_id": "ru1-4",
     "localId": "004",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "004/16",
+    "cardNumber": "4/16",
     "cardName": "Heatran",
-    "fullDisplayName": "Heatran 004/16 Pokémon Rumble",
+    "fullDisplayName": "Heatran 4/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -426,18 +506,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-004-low.png",
-    "imageHighSrc": "cards/ru1-004-high.png"
+    "imageHighSrc": "cards/ru1-004-high.png",
+    "attacks": [
+      {
+        "name": "Heat Boiler",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "9129",
-    "externalId": null,
+    "externalId": "ru1-3",
     "tcgdex_id": "ru1-3",
     "localId": "003",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "003/16",
+    "cardNumber": "3/16",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 003/16 Pokémon Rumble",
+    "fullDisplayName": "Ninetales 3/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -459,18 +545,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-003-low.png",
-    "imageHighSrc": "cards/ru1-003-high.png"
+    "imageHighSrc": "cards/ru1-003-high.png",
+    "attacks": [
+      {
+        "name": "Flame Tail",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9121",
-    "externalId": null,
+    "externalId": "ru1-2",
     "tcgdex_id": "ru1-2",
     "localId": "002",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "002/16",
+    "cardNumber": "2/16",
     "cardName": "Cherrim",
-    "fullDisplayName": "Cherrim 002/16 Pokémon Rumble",
+    "fullDisplayName": "Cherrim 2/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -492,18 +584,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-002-low.png",
-    "imageHighSrc": "cards/ru1-002-high.png"
+    "imageHighSrc": "cards/ru1-002-high.png",
+    "attacks": [
+      {
+        "name": "Solarbeam",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9114",
-    "externalId": null,
+    "externalId": "ru1-1",
     "tcgdex_id": "ru1-1",
     "localId": "001",
     "setCode": "ru1",
     "setTcgdexId": "ru1",
-    "cardNumber": "001/16",
+    "cardNumber": "1/16",
     "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 001/16 Pokémon Rumble",
+    "fullDisplayName": "Venusaur 1/16 Pokémon Rumble",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -525,6 +623,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ru1-001-low.png",
-    "imageHighSrc": "cards/ru1-001-high.png"
+    "imageHighSrc": "cards/ru1-001-high.png",
+    "attacks": [
+      {
+        "name": "Giga Drain",
+        "damage": "50"
+      }
+    ]
   }
 ]

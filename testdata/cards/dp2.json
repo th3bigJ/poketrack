@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "4042",
-    "externalId": null,
+    "externalId": "dp2-124",
     "tcgdex_id": "dp2-124",
     "localId": "124",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "124/122",
+    "cardNumber": "124/123",
     "cardName": "Time-Space Distortion",
-    "fullDisplayName": "Time-Space Distortion 124/122 Mysterious Treasures",
+    "fullDisplayName": "Time-Space Distortion 124/123 Mysterious Treasures",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -26,18 +26,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-124-low.png",
-    "imageHighSrc": "cards/dp2-124-high.png"
+    "imageHighSrc": "cards/dp2-124-high.png",
+    "rules": "Flip 3 coins. For each heads, search your discard pile for a Pokémon, show it to your opponent, and put it into your hand."
   },
   {
     "masterCardId": "4038",
-    "externalId": null,
+    "externalId": "dp2-123",
     "tcgdex_id": "dp2-123",
     "localId": "123",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "123/122",
+    "cardNumber": "123/123",
     "cardName": "Magmortar LV.X",
-    "fullDisplayName": "Magmortar LV.X 123/122 Mysterious Treasures",
+    "fullDisplayName": "Magmortar LV.X 123/123 Mysterious Treasures",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -59,18 +60,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-123-low.png",
-    "imageHighSrc": "cards/dp2-123-high.png"
+    "imageHighSrc": "cards/dp2-123-high.png",
+    "attacks": [
+      {
+        "name": "Flame Bluster",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Magmortar. Magmortar LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4035",
-    "externalId": null,
+    "externalId": "dp2-122",
     "tcgdex_id": "dp2-122",
     "localId": "122",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "122/122",
+    "cardNumber": "122/123",
     "cardName": "Lucario LV.X",
-    "fullDisplayName": "Lucario LV.X 122/122 Mysterious Treasures",
+    "fullDisplayName": "Lucario LV.X 122/123 Mysterious Treasures",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -92,18 +100,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-122-low.png",
-    "imageHighSrc": "cards/dp2-122-high.png"
+    "imageHighSrc": "cards/dp2-122-high.png",
+    "attacks": [
+      {
+        "name": "Close Combat",
+        "damage": "80"
+      }
+    ],
+    "rules": "Put this card onto your Active Lucario. Lucario LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4033",
-    "externalId": null,
+    "externalId": "dp2-121",
     "tcgdex_id": "dp2-121",
     "localId": "121",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "121/122",
+    "cardNumber": "121/123",
     "cardName": "Electivire LV.X",
-    "fullDisplayName": "Electivire LV.X 121/122 Mysterious Treasures",
+    "fullDisplayName": "Electivire LV.X 121/123 Mysterious Treasures",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -125,18 +140,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-121-low.png",
-    "imageHighSrc": "cards/dp2-121-high.png"
+    "imageHighSrc": "cards/dp2-121-high.png",
+    "attacks": [
+      {
+        "name": "Pulse Barrier",
+        "damage": "50"
+      }
+    ],
+    "rules": "Put this card onto your Active Electivire. Electivire LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4031",
-    "externalId": null,
+    "externalId": "dp2-120",
     "tcgdex_id": "dp2-120",
     "localId": "120",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "120/122",
+    "cardNumber": "120/123",
     "cardName": "Metal Energy",
-    "fullDisplayName": "Metal Energy 120/122 Mysterious Treasures",
+    "fullDisplayName": "Metal Energy 120/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -154,18 +176,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-120-low.png",
-    "imageHighSrc": "cards/dp2-120-high.png"
+    "imageHighSrc": "cards/dp2-120-high.png",
+    "rules": "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't Metal. Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4028",
-    "externalId": null,
+    "externalId": "dp2-119",
     "tcgdex_id": "dp2-119",
     "localId": "119",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "119/122",
+    "cardNumber": "119/123",
     "cardName": "Darkness Energy",
-    "fullDisplayName": "Darkness Energy 119/122 Mysterious Treasures",
+    "fullDisplayName": "Darkness Energy 119/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -183,18 +206,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-119-low.png",
-    "imageHighSrc": "cards/dp2-119-high.png"
+    "imageHighSrc": "cards/dp2-119-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect if the Pokémon that Darkness Energy is attached to isn't Darkness. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4025",
-    "externalId": null,
+    "externalId": "dp2-118",
     "tcgdex_id": "dp2-118",
     "localId": "118",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "118/122",
+    "cardNumber": "118/123",
     "cardName": "Multi Energy",
-    "fullDisplayName": "Multi Energy 118/122 Mysterious Treasures",
+    "fullDisplayName": "Multi Energy 118/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -212,18 +236,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-118-low.png",
-    "imageHighSrc": "cards/dp2-118-high.png"
+    "imageHighSrc": "cards/dp2-118-high.png",
+    "rules": "Attach Multi Energy to 1 of your Pokémon. While in play, Multi Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.) Multi Energy provides Colorless Energy when attached to a Pokémon that already has Special Energy cards attached to it."
   },
   {
     "masterCardId": "4022",
-    "externalId": null,
+    "externalId": "dp2-117",
     "tcgdex_id": "dp2-117",
     "localId": "117",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "117/122",
+    "cardNumber": "117/123",
     "cardName": "Skull Fossil",
-    "fullDisplayName": "Skull Fossil 117/122 Mysterious Treasures",
+    "fullDisplayName": "Skull Fossil 117/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -241,18 +266,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-117-low.png",
-    "imageHighSrc": "cards/dp2-117-high.png"
+    "imageHighSrc": "cards/dp2-117-high.png",
+    "rules": "Play Skull Fossil as if it were a Colorless Basic Pokémon. (Skull Fossil counts as a Trainer card as well, but if Skull Fossil is Knocked Out, this counts as a Knocked Out Pokémon.) Skull Fossil can't be affected by any Special Conditions and can't retreat. At any time during your turn before your attack, you may discard Skull Fossil from play. (This doesn't count as a Knocked Out Pokémon.)"
   },
   {
     "masterCardId": "4019",
-    "externalId": null,
+    "externalId": "dp2-116",
     "tcgdex_id": "dp2-116",
     "localId": "116",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "116/122",
+    "cardNumber": "116/123",
     "cardName": "Armor Fossil",
-    "fullDisplayName": "Armor Fossil 116/122 Mysterious Treasures",
+    "fullDisplayName": "Armor Fossil 116/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -270,18 +296,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-116-low.png",
-    "imageHighSrc": "cards/dp2-116-high.png"
+    "imageHighSrc": "cards/dp2-116-high.png",
+    "rules": "Play Armor Fossil as if it were a Colorless Basic Pokémon. (Armor Fossil counts as a Trainer card as well, but if Armor Fossil is Knocked Out, this counts as a Knocked Out Pokémon.) Armor Fossil can't be affected by any Special Conditions and can't retreat. At any time during your turn before your attack, you may discard Armor Fossil from play. (This doesn't count as a Knocked Out Pokémon.)"
   },
   {
     "masterCardId": "4016",
-    "externalId": null,
+    "externalId": "dp2-115",
     "tcgdex_id": "dp2-115",
     "localId": "115",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "115/122",
+    "cardNumber": "115/123",
     "cardName": "Team Galactic's Wager",
-    "fullDisplayName": "Team Galactic's Wager 115/122 Mysterious Treasures",
+    "fullDisplayName": "Team Galactic's Wager 115/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -299,18 +326,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-115-low.png",
-    "imageHighSrc": "cards/dp2-115-high.png"
+    "imageHighSrc": "cards/dp2-115-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nEach player shuffles his or her hand into his or her deck, and you and your opponent play \"Rock-Paper-Scissors.\" The player who wins draws up to 6 cards. The player who loses draws up to 3 cards. (You draw your cards first.)"
   },
   {
     "masterCardId": "4013",
-    "externalId": null,
+    "externalId": "dp2-114",
     "tcgdex_id": "dp2-114",
     "localId": "114",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "114/122",
+    "cardNumber": "114/123",
     "cardName": "Quick Ball",
-    "fullDisplayName": "Quick Ball 114/122 Mysterious Treasures",
+    "fullDisplayName": "Quick Ball 114/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -328,18 +356,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-114-low.png",
-    "imageHighSrc": "cards/dp2-114-high.png"
+    "imageHighSrc": "cards/dp2-114-high.png",
+    "rules": "Reveal cards from your deck until you reveal a Pokémon. Show that Pokémon to your opponent and put it into your hand. Shuffle the other revealed cards back into your deck. (If you don't reveal a Pokémon, shuffle all the revealed cards back into your deck.)"
   },
   {
     "masterCardId": "4010",
-    "externalId": null,
+    "externalId": "dp2-113",
     "tcgdex_id": "dp2-113",
     "localId": "113",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "113/122",
+    "cardNumber": "113/123",
     "cardName": "Night Maintenance",
-    "fullDisplayName": "Night Maintenance 113/122 Mysterious Treasures",
+    "fullDisplayName": "Night Maintenance 113/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -357,18 +386,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-113-low.png",
-    "imageHighSrc": "cards/dp2-113-high.png"
+    "imageHighSrc": "cards/dp2-113-high.png",
+    "rules": "Search your discard pile for up to 3 in any combination of Pokémon and basic Energy cards. Show them to your opponent and shuffle them into your deck."
   },
   {
     "masterCardId": "4007",
-    "externalId": null,
+    "externalId": "dp2-112",
     "tcgdex_id": "dp2-112",
     "localId": "112",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "112/122",
+    "cardNumber": "112/123",
     "cardName": "Lake Boundary",
-    "fullDisplayName": "Lake Boundary 112/122 Mysterious Treasures",
+    "fullDisplayName": "Lake Boundary 112/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -386,18 +416,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-112-low.png",
-    "imageHighSrc": "cards/dp2-112-high.png"
+    "imageHighSrc": "cards/dp2-112-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nApply Weakness for each Pokémon (both yours and your opponent's) as ×2 instead."
   },
   {
     "masterCardId": "4004",
-    "externalId": null,
+    "externalId": "dp2-111",
     "tcgdex_id": "dp2-111",
     "localId": "111",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "111/122",
+    "cardNumber": "111/123",
     "cardName": "Fossil Excavator",
-    "fullDisplayName": "Fossil Excavator 111/122 Mysterious Treasures",
+    "fullDisplayName": "Fossil Excavator 111/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -415,18 +446,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-111-low.png",
-    "imageHighSrc": "cards/dp2-111-high.png"
+    "imageHighSrc": "cards/dp2-111-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck or discard pile for a Trainer card that has Fossil in its name or a Stage 1 or Stage 2 Evolution card that evolves from a Fossil. Show it to your opponent and put it into your hand. If you searched your deck, shuffle your deck afterward."
   },
   {
     "masterCardId": "4001",
-    "externalId": null,
+    "externalId": "dp2-110",
     "tcgdex_id": "dp2-110",
     "localId": "110",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "110/122",
+    "cardNumber": "110/123",
     "cardName": "Dusk Ball",
-    "fullDisplayName": "Dusk Ball 110/122 Mysterious Treasures",
+    "fullDisplayName": "Dusk Ball 110/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -444,18 +476,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-110-low.png",
-    "imageHighSrc": "cards/dp2-110-high.png"
+    "imageHighSrc": "cards/dp2-110-high.png",
+    "rules": "Look at the 7 cards from the bottom of your deck. Choose 1 Pokémon you find there, show it to your opponent, and put it into your hand. Put the remaining cards back on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "3998",
-    "externalId": null,
+    "externalId": "dp2-109",
     "tcgdex_id": "dp2-109",
     "localId": "109",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "109/122",
+    "cardNumber": "109/123",
     "cardName": "Bebe's Search",
-    "fullDisplayName": "Bebe's Search 109/122 Mysterious Treasures",
+    "fullDisplayName": "Bebe's Search 109/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -473,18 +506,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-109-low.png",
-    "imageHighSrc": "cards/dp2-109-high.png"
+    "imageHighSrc": "cards/dp2-109-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nChoose a card from your hand and put it on top of your deck. Search your deck for a Pokémon, show it to your opponent, and put it into your hand. Shuffle your deck afterward. (If this is the only card in your hand, you can't play this card.)"
   },
   {
     "masterCardId": "3995",
-    "externalId": null,
+    "externalId": "dp2-108",
     "tcgdex_id": "dp2-108",
     "localId": "108",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "108/122",
+    "cardNumber": "108/123",
     "cardName": "Zubat",
-    "fullDisplayName": "Zubat 108/122 Mysterious Treasures",
+    "fullDisplayName": "Zubat 108/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -506,18 +540,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-108-low.png",
-    "imageHighSrc": "cards/dp2-108-high.png"
+    "imageHighSrc": "cards/dp2-108-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3992",
-    "externalId": null,
+    "externalId": "dp2-107",
     "tcgdex_id": "dp2-107",
     "localId": "107",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "107/122",
+    "cardNumber": "107/123",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 107/122 Mysterious Treasures",
+    "fullDisplayName": "Vulpix 107/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -539,18 +583,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-107-low.png",
-    "imageHighSrc": "cards/dp2-107-high.png"
+    "imageHighSrc": "cards/dp2-107-high.png",
+    "attacks": [
+      {
+        "name": "Fire Soul",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3988",
-    "externalId": null,
+    "externalId": "dp2-106",
     "tcgdex_id": "dp2-106",
     "localId": "106",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "106/122",
+    "cardNumber": "106/123",
     "cardName": "Totodile",
-    "fullDisplayName": "Totodile 106/122 Mysterious Treasures",
+    "fullDisplayName": "Totodile 106/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -572,18 +622,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-106-low.png",
-    "imageHighSrc": "cards/dp2-106-high.png"
+    "imageHighSrc": "cards/dp2-106-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Shining Fang",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3984",
-    "externalId": null,
+    "externalId": "dp2-105",
     "tcgdex_id": "dp2-105",
     "localId": "105",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "105/122",
+    "cardNumber": "105/123",
     "cardName": "Teddiursa",
-    "fullDisplayName": "Teddiursa 105/122 Mysterious Treasures",
+    "fullDisplayName": "Teddiursa 105/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -605,18 +665,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-105-low.png",
-    "imageHighSrc": "cards/dp2-105-high.png"
+    "imageHighSrc": "cards/dp2-105-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      },
+      {
+        "name": "Sweet Palm",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3980",
-    "externalId": null,
+    "externalId": "dp2-104",
     "tcgdex_id": "dp2-104",
     "localId": "104",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "104/122",
+    "cardNumber": "104/123",
     "cardName": "Surskit",
-    "fullDisplayName": "Surskit 104/122 Mysterious Treasures",
+    "fullDisplayName": "Surskit 104/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -638,18 +708,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-104-low.png",
-    "imageHighSrc": "cards/dp2-104-high.png"
+    "imageHighSrc": "cards/dp2-104-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Inducer",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3976",
-    "externalId": null,
+    "externalId": "dp2-103",
     "tcgdex_id": "dp2-103",
     "localId": "103",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "103/122",
+    "cardNumber": "103/123",
     "cardName": "Spinarak",
-    "fullDisplayName": "Spinarak 103/122 Mysterious Treasures",
+    "fullDisplayName": "Spinarak 103/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -671,18 +747,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-103-low.png",
-    "imageHighSrc": "cards/dp2-103-high.png"
+    "imageHighSrc": "cards/dp2-103-high.png",
+    "attacks": [
+      {
+        "name": "Impound",
+        "damage": null
+      },
+      {
+        "name": "Double Scratch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3972",
-    "externalId": null,
+    "externalId": "dp2-102",
     "tcgdex_id": "dp2-102",
     "localId": "102",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "102/122",
+    "cardNumber": "102/123",
     "cardName": "Spheal",
-    "fullDisplayName": "Spheal 102/122 Mysterious Treasures",
+    "fullDisplayName": "Spheal 102/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -704,18 +790,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-102-low.png",
-    "imageHighSrc": "cards/dp2-102-high.png"
+    "imageHighSrc": "cards/dp2-102-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Willpower",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3968",
-    "externalId": null,
+    "externalId": "dp2-101",
     "tcgdex_id": "dp2-101",
     "localId": "101",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "101/122",
+    "cardNumber": "101/123",
     "cardName": "Snover",
-    "fullDisplayName": "Snover 101/122 Mysterious Treasures",
+    "fullDisplayName": "Snover 101/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -737,18 +833,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-101-low.png",
-    "imageHighSrc": "cards/dp2-101-high.png"
+    "imageHighSrc": "cards/dp2-101-high.png",
+    "attacks": [
+      {
+        "name": "Curiosity",
+        "damage": null
+      },
+      {
+        "name": "Snowball Fight",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3965",
-    "externalId": null,
+    "externalId": "dp2-100",
     "tcgdex_id": "dp2-100",
     "localId": "100",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "100/122",
+    "cardNumber": "100/123",
     "cardName": "Snorunt",
-    "fullDisplayName": "Snorunt 100/122 Mysterious Treasures",
+    "fullDisplayName": "Snorunt 100/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -770,18 +876,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-100-low.png",
-    "imageHighSrc": "cards/dp2-100-high.png"
+    "imageHighSrc": "cards/dp2-100-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Snowball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3961",
-    "externalId": null,
+    "externalId": "dp2-99",
     "tcgdex_id": "dp2-99",
     "localId": "099",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "099/122",
+    "cardNumber": "99/123",
     "cardName": "Slakoth",
-    "fullDisplayName": "Slakoth 099/122 Mysterious Treasures",
+    "fullDisplayName": "Slakoth 99/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -803,18 +919,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-099-low.png",
-    "imageHighSrc": "cards/dp2-099-high.png"
+    "imageHighSrc": "cards/dp2-099-high.png",
+    "attacks": [
+      {
+        "name": "Drowsy",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3957",
-    "externalId": null,
+    "externalId": "dp2-98",
     "tcgdex_id": "dp2-98",
     "localId": "098",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "098/122",
+    "cardNumber": "98/123",
     "cardName": "Shinx",
-    "fullDisplayName": "Shinx 098/122 Mysterious Treasures",
+    "fullDisplayName": "Shinx 98/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -836,18 +958,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-098-low.png",
-    "imageHighSrc": "cards/dp2-098-high.png"
+    "imageHighSrc": "cards/dp2-098-high.png",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "10"
+      }
+    ],
+    "rules": "Rawst Berry: If Shinx is Burned, remove the Special Condition Burned from Shinx at the end of each player's turn."
   },
   {
     "masterCardId": "3953",
-    "externalId": null,
+    "externalId": "dp2-97",
     "tcgdex_id": "dp2-97",
     "localId": "097",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "097/122",
+    "cardNumber": "97/123",
     "cardName": "Seel",
-    "fullDisplayName": "Seel 097/122 Mysterious Treasures",
+    "fullDisplayName": "Seel 97/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -869,18 +998,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-097-low.png",
-    "imageHighSrc": "cards/dp2-097-high.png"
+    "imageHighSrc": "cards/dp2-097-high.png",
+    "attacks": [
+      {
+        "name": "Freezing Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3948",
-    "externalId": null,
+    "externalId": "dp2-96",
     "tcgdex_id": "dp2-96",
     "localId": "096",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "096/122",
+    "cardNumber": "96/123",
     "cardName": "Sandshrew",
-    "fullDisplayName": "Sandshrew 096/122 Mysterious Treasures",
+    "fullDisplayName": "Sandshrew 96/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -902,18 +1037,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-096-low.png",
-    "imageHighSrc": "cards/dp2-096-high.png"
+    "imageHighSrc": "cards/dp2-096-high.png",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3945",
-    "externalId": null,
+    "externalId": "dp2-95",
     "tcgdex_id": "dp2-95",
     "localId": "095",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "095/122",
+    "cardNumber": "95/123",
     "cardName": "Remoraid",
-    "fullDisplayName": "Remoraid 095/122 Mysterious Treasures",
+    "fullDisplayName": "Remoraid 95/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -935,18 +1080,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-095-low.png",
-    "imageHighSrc": "cards/dp2-095-high.png"
+    "imageHighSrc": "cards/dp2-095-high.png",
+    "attacks": [
+      {
+        "name": "Sharpshooting",
+        "damage": null
+      },
+      {
+        "name": "Numbing Water",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3941",
-    "externalId": null,
+    "externalId": "dp2-94",
     "tcgdex_id": "dp2-94",
     "localId": "094",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "094/122",
+    "cardNumber": "94/123",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 094/122 Mysterious Treasures",
+    "fullDisplayName": "Pikachu 94/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -968,18 +1123,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-094-low.png",
-    "imageHighSrc": "cards/dp2-094-high.png"
+    "imageHighSrc": "cards/dp2-094-high.png",
+    "attacks": [
+      {
+        "name": "BikaBika",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3937",
-    "externalId": null,
+    "externalId": "dp2-93",
     "tcgdex_id": "dp2-93",
     "localId": "093",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "093/122",
+    "cardNumber": "93/123",
     "cardName": "Pichu",
-    "fullDisplayName": "Pichu 093/122 Mysterious Treasures",
+    "fullDisplayName": "Pichu 93/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1001,18 +1162,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-093-low.png",
-    "imageHighSrc": "cards/dp2-093-high.png"
+    "imageHighSrc": "cards/dp2-093-high.png",
+    "attacks": [
+      {
+        "name": "Chupi",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3934",
-    "externalId": null,
+    "externalId": "dp2-92",
     "tcgdex_id": "dp2-92",
     "localId": "092",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "092/122",
+    "cardNumber": "92/123",
     "cardName": "Paras",
-    "fullDisplayName": "Paras 092/122 Mysterious Treasures",
+    "fullDisplayName": "Paras 92/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1034,18 +1201,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-092-low.png",
-    "imageHighSrc": "cards/dp2-092-high.png"
+    "imageHighSrc": "cards/dp2-092-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Mushroom Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3930",
-    "externalId": null,
+    "externalId": "dp2-91",
     "tcgdex_id": "dp2-91",
     "localId": "091",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "091/122",
+    "cardNumber": "91/123",
     "cardName": "Nidoran ♀",
-    "fullDisplayName": "Nidoran ♀ 091/122 Mysterious Treasures",
+    "fullDisplayName": "Nidoran ♀ 91/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1067,18 +1244,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp2-091-low.png",
-    "imageHighSrc": "cards/dp2-091-high.png"
+    "imageHighSrc": "cards/dp2-091-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3926",
-    "externalId": null,
+    "externalId": "dp2-90",
     "tcgdex_id": "dp2-90",
     "localId": "090",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "090/122",
+    "cardNumber": "90/123",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 090/122 Mysterious Treasures",
+    "fullDisplayName": "Murkrow 90/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1100,18 +1287,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-090-low.png",
-    "imageHighSrc": "cards/dp2-090-high.png"
+    "imageHighSrc": "cards/dp2-090-high.png",
+    "attacks": [
+      {
+        "name": "Swarm",
+        "damage": null
+      },
+      {
+        "name": "Hide Crowd",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3922",
-    "externalId": null,
+    "externalId": "dp2-89",
     "tcgdex_id": "dp2-89",
     "localId": "089",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "089/122",
+    "cardNumber": "89/123",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 089/122 Mysterious Treasures",
+    "fullDisplayName": "Magikarp 89/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1133,18 +1330,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-089-low.png",
-    "imageHighSrc": "cards/dp2-089-high.png"
+    "imageHighSrc": "cards/dp2-089-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Dragon Rage",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3919",
-    "externalId": null,
+    "externalId": "dp2-88",
     "tcgdex_id": "dp2-88",
     "localId": "088",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "088/122",
+    "cardNumber": "88/123",
     "cardName": "Magby",
-    "fullDisplayName": "Magby 088/122 Mysterious Treasures",
+    "fullDisplayName": "Magby 88/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1166,18 +1373,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-088-low.png",
-    "imageHighSrc": "cards/dp2-088-high.png"
+    "imageHighSrc": "cards/dp2-088-high.png",
+    "attacks": [
+      {
+        "name": "Scorch",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3915",
-    "externalId": null,
+    "externalId": "dp2-87",
     "tcgdex_id": "dp2-87",
     "localId": "087",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "087/122",
+    "cardNumber": "87/123",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 087/122 Mysterious Treasures",
+    "fullDisplayName": "Larvitar 87/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1199,18 +1412,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-087-low.png",
-    "imageHighSrc": "cards/dp2-087-high.png"
+    "imageHighSrc": "cards/dp2-087-high.png",
+    "attacks": [
+      {
+        "name": "Mountain Bite",
+        "damage": "10+"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3911",
-    "externalId": null,
+    "externalId": "dp2-86",
     "tcgdex_id": "dp2-86",
     "localId": "086",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "086/122",
+    "cardNumber": "86/123",
     "cardName": "Kricketot",
-    "fullDisplayName": "Kricketot 086/122 Mysterious Treasures",
+    "fullDisplayName": "Kricketot 86/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1232,18 +1455,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-086-low.png",
-    "imageHighSrc": "cards/dp2-086-high.png"
+    "imageHighSrc": "cards/dp2-086-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Sling",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3907",
-    "externalId": null,
+    "externalId": "dp2-85",
     "tcgdex_id": "dp2-85",
     "localId": "085",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "085/122",
+    "cardNumber": "85/123",
     "cardName": "Gible",
-    "fullDisplayName": "Gible 085/122 Mysterious Treasures",
+    "fullDisplayName": "Gible 85/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1265,18 +1498,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-085-low.png",
-    "imageHighSrc": "cards/dp2-085-high.png"
+    "imageHighSrc": "cards/dp2-085-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3903",
-    "externalId": null,
+    "externalId": "dp2-84",
     "tcgdex_id": "dp2-84",
     "localId": "084",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "084/122",
+    "cardNumber": "84/123",
     "cardName": "Geodude",
-    "fullDisplayName": "Geodude 084/122 Mysterious Treasures",
+    "fullDisplayName": "Geodude 84/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1298,18 +1537,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-084-low.png",
-    "imageHighSrc": "cards/dp2-084-high.png"
+    "imageHighSrc": "cards/dp2-084-high.png",
+    "attacks": [
+      {
+        "name": "Stone Throw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3898",
-    "externalId": null,
+    "externalId": "dp2-83",
     "tcgdex_id": "dp2-83",
     "localId": "083",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "083/122",
+    "cardNumber": "83/123",
     "cardName": "Finneon",
-    "fullDisplayName": "Finneon 083/122 Mysterious Treasures",
+    "fullDisplayName": "Finneon 83/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1331,18 +1576,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-083-low.png",
-    "imageHighSrc": "cards/dp2-083-high.png"
+    "imageHighSrc": "cards/dp2-083-high.png",
+    "attacks": [
+      {
+        "name": "Elegant Swim",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3895",
-    "externalId": null,
+    "externalId": "dp2-82",
     "tcgdex_id": "dp2-82",
     "localId": "082",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "082/122",
+    "cardNumber": "82/123",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 082/122 Mysterious Treasures",
+    "fullDisplayName": "Exeggcute 82/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1364,18 +1619,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-082-low.png",
-    "imageHighSrc": "cards/dp2-082-high.png"
+    "imageHighSrc": "cards/dp2-082-high.png",
+    "attacks": [
+      {
+        "name": "Direct-hit Bomb",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3891",
-    "externalId": null,
+    "externalId": "dp2-81",
     "tcgdex_id": "dp2-81",
     "localId": "081",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "081/122",
+    "cardNumber": "81/123",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 081/122 Mysterious Treasures",
+    "fullDisplayName": "Electrike 81/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1397,18 +1658,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-081-low.png",
-    "imageHighSrc": "cards/dp2-081-high.png"
+    "imageHighSrc": "cards/dp2-081-high.png",
+    "attacks": [
+      {
+        "name": "Electromagnetic Jam",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3887",
-    "externalId": null,
+    "externalId": "dp2-80",
     "tcgdex_id": "dp2-80",
     "localId": "080",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "080/122",
+    "cardNumber": "80/123",
     "cardName": "Doduo",
-    "fullDisplayName": "Doduo 080/122 Mysterious Treasures",
+    "fullDisplayName": "Doduo 80/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1430,18 +1697,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-080-low.png",
-    "imageHighSrc": "cards/dp2-080-high.png"
+    "imageHighSrc": "cards/dp2-080-high.png",
+    "attacks": [
+      {
+        "name": "Double Stab",
+        "damage": "10×"
+      },
+      {
+        "name": "Accelerating Stab",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3883",
-    "externalId": null,
+    "externalId": "dp2-79",
     "tcgdex_id": "dp2-79",
     "localId": "079",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "079/122",
+    "cardNumber": "79/123",
     "cardName": "Cyndaquil",
-    "fullDisplayName": "Cyndaquil 079/122 Mysterious Treasures",
+    "fullDisplayName": "Cyndaquil 79/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1463,18 +1740,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-079-low.png",
-    "imageHighSrc": "cards/dp2-079-high.png"
+    "imageHighSrc": "cards/dp2-079-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3880",
-    "externalId": null,
+    "externalId": "dp2-78",
     "tcgdex_id": "dp2-78",
     "localId": "078",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "078/122",
+    "cardNumber": "78/123",
     "cardName": "Croagunk",
-    "fullDisplayName": "Croagunk 078/122 Mysterious Treasures",
+    "fullDisplayName": "Croagunk 78/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1496,18 +1783,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-078-low.png",
-    "imageHighSrc": "cards/dp2-078-high.png"
+    "imageHighSrc": "cards/dp2-078-high.png",
+    "attacks": [
+      {
+        "name": "Ghastly Sound",
+        "damage": null
+      },
+      {
+        "name": "Finger Poke",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3876",
-    "externalId": null,
+    "externalId": "dp2-77",
     "tcgdex_id": "dp2-77",
     "localId": "077",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "077/122",
+    "cardNumber": "77/123",
     "cardName": "Chikorita",
-    "fullDisplayName": "Chikorita 077/122 Mysterious Treasures",
+    "fullDisplayName": "Chikorita 77/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1529,18 +1826,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-077-low.png",
-    "imageHighSrc": "cards/dp2-077-high.png"
+    "imageHighSrc": "cards/dp2-077-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Scent",
+        "damage": null
+      },
+      {
+        "name": "Jump On",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3872",
-    "externalId": null,
+    "externalId": "dp2-76",
     "tcgdex_id": "dp2-76",
     "localId": "076",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "076/122",
+    "cardNumber": "76/123",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 076/122 Mysterious Treasures",
+    "fullDisplayName": "Chansey 76/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1562,18 +1869,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-076-low.png",
-    "imageHighSrc": "cards/dp2-076-high.png"
+    "imageHighSrc": "cards/dp2-076-high.png",
+    "attacks": [
+      {
+        "name": "Scrunch",
+        "damage": null
+      },
+      {
+        "name": "Double-edge",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3868",
-    "externalId": null,
+    "externalId": "dp2-75",
     "tcgdex_id": "dp2-75",
     "localId": "075",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "075/122",
+    "cardNumber": "75/123",
     "cardName": "Buizel",
-    "fullDisplayName": "Buizel 075/122 Mysterious Treasures",
+    "fullDisplayName": "Buizel 75/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1595,18 +1912,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-075-low.png",
-    "imageHighSrc": "cards/dp2-075-high.png"
+    "imageHighSrc": "cards/dp2-075-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ],
+    "rules": "Chesto Berry: If Buizel is Asleep, remove the Special Condition Asleep from Buizel at the end of each player's turn."
   },
   {
     "masterCardId": "3863",
-    "externalId": null,
+    "externalId": "dp2-74",
     "tcgdex_id": "dp2-74",
     "localId": "074",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "074/122",
+    "cardNumber": "74/123",
     "cardName": "Bronzor",
-    "fullDisplayName": "Bronzor 074/122 Mysterious Treasures",
+    "fullDisplayName": "Bronzor 74/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1628,18 +1952,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-074-low.png",
-    "imageHighSrc": "cards/dp2-074-high.png"
+    "imageHighSrc": "cards/dp2-074-high.png",
+    "attacks": [
+      {
+        "name": "Dull Light",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3858",
-    "externalId": null,
+    "externalId": "dp2-73",
     "tcgdex_id": "dp2-73",
     "localId": "073",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "073/122",
+    "cardNumber": "73/123",
     "cardName": "Bidoof",
-    "fullDisplayName": "Bidoof 073/122 Mysterious Treasures",
+    "fullDisplayName": "Bidoof 73/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1661,18 +1991,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-073-low.png",
-    "imageHighSrc": "cards/dp2-073-high.png"
+    "imageHighSrc": "cards/dp2-073-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ],
+    "rules": "Wacan Berry: Any damage done to Bidoof by attacks from Lightning Pokémon is reduced by 20 (after applying Weakness and Resistance)."
   },
   {
     "masterCardId": "3854",
-    "externalId": null,
+    "externalId": "dp2-72",
     "tcgdex_id": "dp2-72",
     "localId": "072",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "072/122",
+    "cardNumber": "72/123",
     "cardName": "Barboach",
-    "fullDisplayName": "Barboach 072/122 Mysterious Treasures",
+    "fullDisplayName": "Barboach 72/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1694,18 +2031,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-072-low.png",
-    "imageHighSrc": "cards/dp2-072-high.png"
+    "imageHighSrc": "cards/dp2-072-high.png",
+    "attacks": [
+      {
+        "name": "Mud Spit",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3850",
-    "externalId": null,
+    "externalId": "dp2-71",
     "tcgdex_id": "dp2-71",
     "localId": "071",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "071/122",
+    "cardNumber": "71/123",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 071/122 Mysterious Treasures",
+    "fullDisplayName": "Aron 71/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1727,18 +2070,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-071-low.png",
-    "imageHighSrc": "cards/dp2-071-high.png"
+    "imageHighSrc": "cards/dp2-071-high.png",
+    "attacks": [
+      {
+        "name": "Steel Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3846",
-    "externalId": null,
+    "externalId": "dp2-70",
     "tcgdex_id": "dp2-70",
     "localId": "070",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "070/122",
+    "cardNumber": "70/123",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 070/122 Mysterious Treasures",
+    "fullDisplayName": "Aipom 70/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1760,18 +2109,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-070-low.png",
-    "imageHighSrc": "cards/dp2-070-high.png"
+    "imageHighSrc": "cards/dp2-070-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "10"
+      },
+      {
+        "name": "Throw Off",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3842",
-    "externalId": null,
+    "externalId": "dp2-69",
     "tcgdex_id": "dp2-69",
     "localId": "069",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "069/122",
+    "cardNumber": "69/123",
     "cardName": "Abra",
-    "fullDisplayName": "Abra 069/122 Mysterious Treasures",
+    "fullDisplayName": "Abra 69/123 Mysterious Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1793,18 +2152,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-069-low.png",
-    "imageHighSrc": "cards/dp2-069-high.png"
+    "imageHighSrc": "cards/dp2-069-high.png",
+    "attacks": [
+      {
+        "name": "Play Search",
+        "damage": null
+      },
+      {
+        "name": "Ultra Evolution",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3839",
-    "externalId": null,
+    "externalId": "dp2-68",
     "tcgdex_id": "dp2-68",
     "localId": "068",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "068/122",
+    "cardNumber": "68/123",
     "cardName": "Vigoroth",
-    "fullDisplayName": "Vigoroth 068/122 Mysterious Treasures",
+    "fullDisplayName": "Vigoroth 68/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1826,18 +2195,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-068-low.png",
-    "imageHighSrc": "cards/dp2-068-high.png"
+    "imageHighSrc": "cards/dp2-068-high.png",
+    "attacks": [
+      {
+        "name": "Wake-up Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "3835",
-    "externalId": null,
+    "externalId": "dp2-67",
     "tcgdex_id": "dp2-67",
     "localId": "067",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "067/122",
+    "cardNumber": "67/123",
     "cardName": "Unown [T]",
-    "fullDisplayName": "Unown [T] 067/122 Mysterious Treasures",
+    "fullDisplayName": "Unown [T] 67/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1859,18 +2238,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp2-067-low.png",
-    "imageHighSrc": "cards/dp2-067-high.png"
+    "imageHighSrc": "cards/dp2-067-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3830",
-    "externalId": null,
+    "externalId": "dp2-66",
     "tcgdex_id": "dp2-66",
     "localId": "066",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "066/122",
+    "cardNumber": "66/123",
     "cardName": "Unown [M]",
-    "fullDisplayName": "Unown [M] 066/122 Mysterious Treasures",
+    "fullDisplayName": "Unown [M] 66/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1892,18 +2277,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp2-066-low.png",
-    "imageHighSrc": "cards/dp2-066-high.png"
+    "imageHighSrc": "cards/dp2-066-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3827",
-    "externalId": null,
+    "externalId": "dp2-65",
     "tcgdex_id": "dp2-65",
     "localId": "065",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "065/122",
+    "cardNumber": "65/123",
     "cardName": "Unown [E]",
-    "fullDisplayName": "Unown [E] 065/122 Mysterious Treasures",
+    "fullDisplayName": "Unown [E] 65/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1925,18 +2316,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp2-065-low.png",
-    "imageHighSrc": "cards/dp2-065-high.png"
+    "imageHighSrc": "cards/dp2-065-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3823",
-    "externalId": null,
+    "externalId": "dp2-64",
     "tcgdex_id": "dp2-64",
     "localId": "064",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "064/122",
+    "cardNumber": "64/123",
     "cardName": "Tropius",
-    "fullDisplayName": "Tropius 064/122 Mysterious Treasures",
+    "fullDisplayName": "Tropius 64/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1958,18 +2355,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-064-low.png",
-    "imageHighSrc": "cards/dp2-064-high.png"
+    "imageHighSrc": "cards/dp2-064-high.png",
+    "attacks": [
+      {
+        "name": "Bonus Leaf",
+        "damage": null
+      },
+      {
+        "name": "Whirlwind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3819",
-    "externalId": null,
+    "externalId": "dp2-63",
     "tcgdex_id": "dp2-63",
     "localId": "063",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "063/122",
+    "cardNumber": "63/123",
     "cardName": "Shieldon",
-    "fullDisplayName": "Shieldon 063/122 Mysterious Treasures",
+    "fullDisplayName": "Shieldon 63/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1991,18 +2398,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-063-low.png",
-    "imageHighSrc": "cards/dp2-063-high.png"
+    "imageHighSrc": "cards/dp2-063-high.png",
+    "attacks": [
+      {
+        "name": "Hard Face",
+        "damage": "20"
+      },
+      {
+        "name": "Shield Attack",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3815",
-    "externalId": null,
+    "externalId": "dp2-62",
     "tcgdex_id": "dp2-62",
     "localId": "062",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "062/122",
+    "cardNumber": "62/123",
     "cardName": "Sealeo",
-    "fullDisplayName": "Sealeo 062/122 Mysterious Treasures",
+    "fullDisplayName": "Sealeo 62/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2024,18 +2441,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-062-low.png",
-    "imageHighSrc": "cards/dp2-062-high.png"
+    "imageHighSrc": "cards/dp2-062-high.png",
+    "attacks": [
+      {
+        "name": "Ice Rider",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3811",
-    "externalId": null,
+    "externalId": "dp2-61",
     "tcgdex_id": "dp2-61",
     "localId": "061",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "061/122",
+    "cardNumber": "61/123",
     "cardName": "Sandslash",
-    "fullDisplayName": "Sandslash 061/122 Mysterious Treasures",
+    "fullDisplayName": "Sandslash 61/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2057,18 +2480,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-061-low.png",
-    "imageHighSrc": "cards/dp2-061-high.png"
+    "imageHighSrc": "cards/dp2-061-high.png",
+    "attacks": [
+      {
+        "name": "Spike Armor",
+        "damage": null
+      },
+      {
+        "name": "Poison Spike",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3807",
-    "externalId": null,
+    "externalId": "dp2-60",
     "tcgdex_id": "dp2-60",
     "localId": "060",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "060/122",
+    "cardNumber": "60/123",
     "cardName": "Quilava",
-    "fullDisplayName": "Quilava 060/122 Mysterious Treasures",
+    "fullDisplayName": "Quilava 60/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2090,18 +2523,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-060-low.png",
-    "imageHighSrc": "cards/dp2-060-high.png"
+    "imageHighSrc": "cards/dp2-060-high.png",
+    "attacks": [
+      {
+        "name": "Fireworks",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3803",
-    "externalId": null,
+    "externalId": "dp2-59",
     "tcgdex_id": "dp2-59",
     "localId": "059",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "059/122",
+    "cardNumber": "59/123",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 059/122 Mysterious Treasures",
+    "fullDisplayName": "Pupitar 59/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2123,18 +2562,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-059-low.png",
-    "imageHighSrc": "cards/dp2-059-high.png"
+    "imageHighSrc": "cards/dp2-059-high.png",
+    "attacks": [
+      {
+        "name": "Pressurized Gas",
+        "damage": null
+      },
+      {
+        "name": "Rocket Tackle",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3799",
-    "externalId": null,
+    "externalId": "dp2-58",
     "tcgdex_id": "dp2-58",
     "localId": "058",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "058/122",
+    "cardNumber": "58/123",
     "cardName": "Parasect",
-    "fullDisplayName": "Parasect 058/122 Mysterious Treasures",
+    "fullDisplayName": "Parasect 58/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2156,18 +2605,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-058-low.png",
-    "imageHighSrc": "cards/dp2-058-high.png"
+    "imageHighSrc": "cards/dp2-058-high.png",
+    "attacks": [
+      {
+        "name": "Wild Spores",
+        "damage": "20"
+      },
+      {
+        "name": "Extend Fungus",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3795",
-    "externalId": null,
+    "externalId": "dp2-57",
     "tcgdex_id": "dp2-57",
     "localId": "057",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "057/122",
+    "cardNumber": "57/123",
     "cardName": "Octillery",
-    "fullDisplayName": "Octillery 057/122 Mysterious Treasures",
+    "fullDisplayName": "Octillery 57/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2189,18 +2648,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-057-low.png",
-    "imageHighSrc": "cards/dp2-057-high.png"
+    "imageHighSrc": "cards/dp2-057-high.png",
+    "attacks": [
+      {
+        "name": "Crash Bomber",
+        "damage": "30+"
+      },
+      {
+        "name": "Aqua Liner",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3791",
-    "externalId": null,
+    "externalId": "dp2-56",
     "tcgdex_id": "dp2-56",
     "localId": "056",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "056/122",
+    "cardNumber": "56/123",
     "cardName": "Nidorina",
-    "fullDisplayName": "Nidorina 056/122 Mysterious Treasures",
+    "fullDisplayName": "Nidorina 56/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2222,18 +2691,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-056-low.png",
-    "imageHighSrc": "cards/dp2-056-high.png"
+    "imageHighSrc": "cards/dp2-056-high.png",
+    "attacks": [
+      {
+        "name": "Rescue",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3787",
-    "externalId": null,
+    "externalId": "dp2-55",
     "tcgdex_id": "dp2-55",
     "localId": "055",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "055/122",
+    "cardNumber": "55/123",
     "cardName": "Masquerain",
-    "fullDisplayName": "Masquerain 055/122 Mysterious Treasures",
+    "fullDisplayName": "Masquerain 55/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2255,18 +2734,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-055-low.png",
-    "imageHighSrc": "cards/dp2-055-high.png"
+    "imageHighSrc": "cards/dp2-055-high.png",
+    "attacks": [
+      {
+        "name": "Centrifugal Force",
+        "damage": "20×"
+      },
+      {
+        "name": "Swirling Ripple",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3783",
-    "externalId": null,
+    "externalId": "dp2-54",
     "tcgdex_id": "dp2-54",
     "localId": "054",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "054/122",
+    "cardNumber": "54/123",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 054/122 Mysterious Treasures",
+    "fullDisplayName": "Magmar 54/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2288,18 +2777,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-054-low.png",
-    "imageHighSrc": "cards/dp2-054-high.png"
+    "imageHighSrc": "cards/dp2-054-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3779",
-    "externalId": null,
+    "externalId": "dp2-53",
     "tcgdex_id": "dp2-53",
     "localId": "053",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "053/122",
+    "cardNumber": "53/123",
     "cardName": "Lairon",
-    "fullDisplayName": "Lairon 053/122 Mysterious Treasures",
+    "fullDisplayName": "Lairon 53/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2321,18 +2820,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-053-low.png",
-    "imageHighSrc": "cards/dp2-053-high.png"
+    "imageHighSrc": "cards/dp2-053-high.png",
+    "attacks": [
+      {
+        "name": "Mend",
+        "damage": null
+      },
+      {
+        "name": "Confront",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3775",
-    "externalId": null,
+    "externalId": "dp2-52",
     "tcgdex_id": "dp2-52",
     "localId": "052",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "052/122",
+    "cardNumber": "52/123",
     "cardName": "Happiny",
-    "fullDisplayName": "Happiny 052/122 Mysterious Treasures",
+    "fullDisplayName": "Happiny 52/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2354,18 +2863,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-052-low.png",
-    "imageHighSrc": "cards/dp2-052-high.png"
+    "imageHighSrc": "cards/dp2-052-high.png",
+    "attacks": [
+      {
+        "name": "Lively",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3771",
-    "externalId": null,
+    "externalId": "dp2-51",
     "tcgdex_id": "dp2-51",
     "localId": "051",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "051/122",
+    "cardNumber": "51/123",
     "cardName": "Graveler",
-    "fullDisplayName": "Graveler 051/122 Mysterious Treasures",
+    "fullDisplayName": "Graveler 51/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2387,18 +2902,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-051-low.png",
-    "imageHighSrc": "cards/dp2-051-high.png"
+    "imageHighSrc": "cards/dp2-051-high.png",
+    "attacks": [
+      {
+        "name": "Rock Cannon",
+        "damage": "30×"
+      },
+      {
+        "name": "Rock Slide",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3766",
-    "externalId": null,
+    "externalId": "dp2-50",
     "tcgdex_id": "dp2-50",
     "localId": "050",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "050/122",
+    "cardNumber": "50/123",
     "cardName": "Golbat",
-    "fullDisplayName": "Golbat 050/122 Mysterious Treasures",
+    "fullDisplayName": "Golbat 50/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2420,18 +2945,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-050-low.png",
-    "imageHighSrc": "cards/dp2-050-high.png"
+    "imageHighSrc": "cards/dp2-050-high.png",
+    "attacks": [
+      {
+        "name": "Pulse Search",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3762",
-    "externalId": null,
+    "externalId": "dp2-49",
     "tcgdex_id": "dp2-49",
     "localId": "049",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "049/122",
+    "cardNumber": "49/123",
     "cardName": "Girafarig",
-    "fullDisplayName": "Girafarig 049/122 Mysterious Treasures",
+    "fullDisplayName": "Girafarig 49/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2453,18 +2984,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-049-low.png",
-    "imageHighSrc": "cards/dp2-049-high.png"
+    "imageHighSrc": "cards/dp2-049-high.png",
+    "attacks": [
+      {
+        "name": "Crane Neck",
+        "damage": null
+      },
+      {
+        "name": "Psybeam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3758",
-    "externalId": null,
+    "externalId": "dp2-48",
     "tcgdex_id": "dp2-48",
     "localId": "048",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "048/122",
+    "cardNumber": "48/123",
     "cardName": "Gabite",
-    "fullDisplayName": "Gabite 048/122 Mysterious Treasures",
+    "fullDisplayName": "Gabite 48/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2486,18 +3027,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-048-low.png",
-    "imageHighSrc": "cards/dp2-048-high.png"
+    "imageHighSrc": "cards/dp2-048-high.png",
+    "attacks": [
+      {
+        "name": "Gather Up",
+        "damage": null
+      },
+      {
+        "name": "Marvelous Shine",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3755",
-    "externalId": null,
+    "externalId": "dp2-47",
     "tcgdex_id": "dp2-47",
     "localId": "047",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "047/122",
+    "cardNumber": "47/123",
     "cardName": "Dunsparce",
-    "fullDisplayName": "Dunsparce 047/122 Mysterious Treasures",
+    "fullDisplayName": "Dunsparce 47/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2519,18 +3070,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-047-low.png",
-    "imageHighSrc": "cards/dp2-047-high.png"
+    "imageHighSrc": "cards/dp2-047-high.png",
+    "attacks": [
+      {
+        "name": "Snake Hook",
+        "damage": null
+      },
+      {
+        "name": "Bite and Run",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3750",
-    "externalId": null,
+    "externalId": "dp2-46",
     "tcgdex_id": "dp2-46",
     "localId": "046",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "046/122",
+    "cardNumber": "46/123",
     "cardName": "Dodrio",
-    "fullDisplayName": "Dodrio 046/122 Mysterious Treasures",
+    "fullDisplayName": "Dodrio 46/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2552,18 +3113,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-046-low.png",
-    "imageHighSrc": "cards/dp2-046-high.png"
+    "imageHighSrc": "cards/dp2-046-high.png",
+    "attacks": [
+      {
+        "name": "Fury Attack",
+        "damage": "10×"
+      },
+      {
+        "name": "Triple Pick",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3746",
-    "externalId": null,
+    "externalId": "dp2-45",
     "tcgdex_id": "dp2-45",
     "localId": "045",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "045/122",
+    "cardNumber": "45/123",
     "cardName": "Dewgong",
-    "fullDisplayName": "Dewgong 045/122 Mysterious Treasures",
+    "fullDisplayName": "Dewgong 45/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2585,18 +3156,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-045-low.png",
-    "imageHighSrc": "cards/dp2-045-high.png"
+    "imageHighSrc": "cards/dp2-045-high.png",
+    "attacks": [
+      {
+        "name": "Collapse",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3743",
-    "externalId": null,
+    "externalId": "dp2-44",
     "tcgdex_id": "dp2-44",
     "localId": "044",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "044/122",
+    "cardNumber": "44/123",
     "cardName": "Croconaw",
-    "fullDisplayName": "Croconaw 044/122 Mysterious Treasures",
+    "fullDisplayName": "Croconaw 44/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2618,18 +3195,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-044-low.png",
-    "imageHighSrc": "cards/dp2-044-high.png"
+    "imageHighSrc": "cards/dp2-044-high.png",
+    "attacks": [
+      {
+        "name": "Hover Over",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3739",
-    "externalId": null,
+    "externalId": "dp2-43",
     "tcgdex_id": "dp2-43",
     "localId": "043",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "043/122",
+    "cardNumber": "43/123",
     "cardName": "Cranidos",
-    "fullDisplayName": "Cranidos 043/122 Mysterious Treasures",
+    "fullDisplayName": "Cranidos 43/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2651,18 +3234,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-043-low.png",
-    "imageHighSrc": "cards/dp2-043-high.png"
+    "imageHighSrc": "cards/dp2-043-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Steamroll",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3735",
-    "externalId": null,
+    "externalId": "dp2-42",
     "tcgdex_id": "dp2-42",
     "localId": "042",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "042/122",
+    "cardNumber": "42/123",
     "cardName": "Chingling",
-    "fullDisplayName": "Chingling 042/122 Mysterious Treasures",
+    "fullDisplayName": "Chingling 42/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2684,18 +3277,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-042-low.png",
-    "imageHighSrc": "cards/dp2-042-high.png"
+    "imageHighSrc": "cards/dp2-042-high.png",
+    "attacks": [
+      {
+        "name": "Inviting Bell",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3731",
-    "externalId": null,
+    "externalId": "dp2-41",
     "tcgdex_id": "dp2-41",
     "localId": "041",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "041/122",
+    "cardNumber": "41/123",
     "cardName": "Bayleef",
-    "fullDisplayName": "Bayleef 041/122 Mysterious Treasures",
+    "fullDisplayName": "Bayleef 41/123 Mysterious Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2717,18 +3316,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-041-low.png",
-    "imageHighSrc": "cards/dp2-041-high.png"
+    "imageHighSrc": "cards/dp2-041-high.png",
+    "attacks": [
+      {
+        "name": "Evolution Impulse",
+        "damage": null
+      },
+      {
+        "name": "Leaf Boomerang",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "3727",
-    "externalId": null,
+    "externalId": "dp2-40",
     "tcgdex_id": "dp2-40",
     "localId": "040",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "040/122",
+    "cardNumber": "40/123",
     "cardName": "Whiscash",
-    "fullDisplayName": "Whiscash 040/122 Mysterious Treasures",
+    "fullDisplayName": "Whiscash 40/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2750,18 +3359,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-040-low.png",
-    "imageHighSrc": "cards/dp2-040-high.png"
+    "imageHighSrc": "cards/dp2-040-high.png",
+    "attacks": [
+      {
+        "name": "Fury",
+        "damage": "20×"
+      },
+      {
+        "name": "Magnitude",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3722",
-    "externalId": null,
+    "externalId": "dp2-39",
     "tcgdex_id": "dp2-39",
     "localId": "039",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "039/122",
+    "cardNumber": "39/123",
     "cardName": "Walrein",
-    "fullDisplayName": "Walrein 039/122 Mysterious Treasures",
+    "fullDisplayName": "Walrein 39/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2783,18 +3402,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-039-low.png",
-    "imageHighSrc": "cards/dp2-039-high.png"
+    "imageHighSrc": "cards/dp2-039-high.png",
+    "attacks": [
+      {
+        "name": "Ice Bind",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3718",
-    "externalId": null,
+    "externalId": "dp2-38",
     "tcgdex_id": "dp2-38",
     "localId": "038",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "038/122",
+    "cardNumber": "38/123",
     "cardName": "Ursaring",
-    "fullDisplayName": "Ursaring 038/122 Mysterious Treasures",
+    "fullDisplayName": "Ursaring 38/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2816,18 +3441,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-038-low.png",
-    "imageHighSrc": "cards/dp2-038-high.png"
+    "imageHighSrc": "cards/dp2-038-high.png",
+    "attacks": [
+      {
+        "name": "Bad Temper",
+        "damage": "30"
+      },
+      {
+        "name": "Defensive Claw",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3714",
-    "externalId": null,
+    "externalId": "dp2-37",
     "tcgdex_id": "dp2-37",
     "localId": "037",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "037/122",
+    "cardNumber": "37/123",
     "cardName": "Unown [I]",
-    "fullDisplayName": "Unown [I] 037/122 Mysterious Treasures",
+    "fullDisplayName": "Unown [I] 37/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2849,18 +3484,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp2-037-low.png",
-    "imageHighSrc": "cards/dp2-037-high.png"
+    "imageHighSrc": "cards/dp2-037-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3710",
-    "externalId": null,
+    "externalId": "dp2-36",
     "tcgdex_id": "dp2-36",
     "localId": "036",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "036/122",
+    "cardNumber": "36/123",
     "cardName": "Toxicroak",
-    "fullDisplayName": "Toxicroak 036/122 Mysterious Treasures",
+    "fullDisplayName": "Toxicroak 36/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2882,18 +3523,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-036-low.png",
-    "imageHighSrc": "cards/dp2-036-high.png"
+    "imageHighSrc": "cards/dp2-036-high.png",
+    "attacks": [
+      {
+        "name": "Knuckle Claws",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3706",
-    "externalId": null,
+    "externalId": "dp2-35",
     "tcgdex_id": "dp2-35",
     "localId": "035",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "035/122",
+    "cardNumber": "35/123",
     "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo 035/122 Mysterious Treasures",
+    "fullDisplayName": "Sudowoodo 35/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2915,18 +3562,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-035-low.png",
-    "imageHighSrc": "cards/dp2-035-high.png"
+    "imageHighSrc": "cards/dp2-035-high.png",
+    "attacks": [
+      {
+        "name": "Sidestep",
+        "damage": "20"
+      },
+      {
+        "name": "Persuade",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3703",
-    "externalId": null,
+    "externalId": "dp2-34",
     "tcgdex_id": "dp2-34",
     "localId": "034",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "034/122",
+    "cardNumber": "34/123",
     "cardName": "Slaking",
-    "fullDisplayName": "Slaking 034/122 Mysterious Treasures",
+    "fullDisplayName": "Slaking 34/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2948,18 +3605,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-034-low.png",
-    "imageHighSrc": "cards/dp2-034-high.png"
+    "imageHighSrc": "cards/dp2-034-high.png",
+    "attacks": [
+      {
+        "name": "Lazy Blow",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3698",
-    "externalId": null,
+    "externalId": "dp2-33",
     "tcgdex_id": "dp2-33",
     "localId": "033",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "033/122",
+    "cardNumber": "33/123",
     "cardName": "Rampardos",
-    "fullDisplayName": "Rampardos 033/122 Mysterious Treasures",
+    "fullDisplayName": "Rampardos 33/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2981,18 +3644,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-033-low.png",
-    "imageHighSrc": "cards/dp2-033-high.png"
+    "imageHighSrc": "cards/dp2-033-high.png",
+    "attacks": [
+      {
+        "name": "Assurance",
+        "damage": "30"
+      },
+      {
+        "name": "Hasty Headbutt",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3693",
-    "externalId": null,
+    "externalId": "dp2-32",
     "tcgdex_id": "dp2-32",
     "localId": "032",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "032/122",
+    "cardNumber": "32/123",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 032/122 Mysterious Treasures",
+    "fullDisplayName": "Ninetales 32/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3014,18 +3687,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-032-low.png",
-    "imageHighSrc": "cards/dp2-032-high.png"
+    "imageHighSrc": "cards/dp2-032-high.png",
+    "attacks": [
+      {
+        "name": "Fire Blast",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3688",
-    "externalId": null,
+    "externalId": "dp2-31",
     "tcgdex_id": "dp2-31",
     "localId": "031",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "031/122",
+    "cardNumber": "31/123",
     "cardName": "Nidoqueen",
-    "fullDisplayName": "Nidoqueen 031/122 Mysterious Treasures",
+    "fullDisplayName": "Nidoqueen 31/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3047,18 +3726,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-031-low.png",
-    "imageHighSrc": "cards/dp2-031-high.png"
+    "imageHighSrc": "cards/dp2-031-high.png",
+    "attacks": [
+      {
+        "name": "Give Aid",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3683",
-    "externalId": null,
+    "externalId": "dp2-30",
     "tcgdex_id": "dp2-30",
     "localId": "030",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "030/122",
+    "cardNumber": "30/123",
     "cardName": "Mr. Mime",
-    "fullDisplayName": "Mr. Mime 030/122 Mysterious Treasures",
+    "fullDisplayName": "Mr. Mime 30/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3080,18 +3765,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-030-low.png",
-    "imageHighSrc": "cards/dp2-030-high.png"
+    "imageHighSrc": "cards/dp2-030-high.png",
+    "attacks": [
+      {
+        "name": "Trick Play",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3677",
-    "externalId": null,
+    "externalId": "dp2-29",
     "tcgdex_id": "dp2-29",
     "localId": "029",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "029/122",
+    "cardNumber": "29/123",
     "cardName": "Mantine",
-    "fullDisplayName": "Mantine 029/122 Mysterious Treasures",
+    "fullDisplayName": "Mantine 29/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3113,18 +3804,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-029-low.png",
-    "imageHighSrc": "cards/dp2-029-high.png"
+    "imageHighSrc": "cards/dp2-029-high.png",
+    "attacks": [
+      {
+        "name": "Giant Wave",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3673",
-    "externalId": null,
+    "externalId": "dp2-28",
     "tcgdex_id": "dp2-28",
     "localId": "028",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "028/122",
+    "cardNumber": "28/123",
     "cardName": "Manectric",
-    "fullDisplayName": "Manectric 028/122 Mysterious Treasures",
+    "fullDisplayName": "Manectric 28/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3146,18 +3843,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-028-low.png",
-    "imageHighSrc": "cards/dp2-028-high.png"
+    "imageHighSrc": "cards/dp2-028-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Twister",
+        "damage": "20×"
+      },
+      {
+        "name": "Chain Lightning",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3668",
-    "externalId": null,
+    "externalId": "dp2-27",
     "tcgdex_id": "dp2-27",
     "localId": "027",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "027/122",
+    "cardNumber": "27/123",
     "cardName": "Kricketune",
-    "fullDisplayName": "Kricketune 027/122 Mysterious Treasures",
+    "fullDisplayName": "Kricketune 27/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3179,18 +3886,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-027-low.png",
-    "imageHighSrc": "cards/dp2-027-high.png"
+    "imageHighSrc": "cards/dp2-027-high.png",
+    "attacks": [
+      {
+        "name": "Sore Performance",
+        "damage": "20"
+      },
+      {
+        "name": "Concerto",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3663",
-    "externalId": null,
+    "externalId": "dp2-26",
     "tcgdex_id": "dp2-26",
     "localId": "026",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "026/122",
+    "cardNumber": "26/123",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 026/122 Mysterious Treasures",
+    "fullDisplayName": "Gyarados 26/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3212,18 +3929,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-026-low.png",
-    "imageHighSrc": "cards/dp2-026-high.png"
+    "imageHighSrc": "cards/dp2-026-high.png",
+    "attacks": [
+      {
+        "name": "Enrage",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3658",
-    "externalId": null,
+    "externalId": "dp2-25",
     "tcgdex_id": "dp2-25",
     "localId": "025",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "025/122",
+    "cardNumber": "25/123",
     "cardName": "Glalie",
-    "fullDisplayName": "Glalie 025/122 Mysterious Treasures",
+    "fullDisplayName": "Glalie 25/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3245,18 +3968,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-025-low.png",
-    "imageHighSrc": "cards/dp2-025-high.png"
+    "imageHighSrc": "cards/dp2-025-high.png",
+    "attacks": [
+      {
+        "name": "Intimidation Pebble",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3653",
-    "externalId": null,
+    "externalId": "dp2-24",
     "tcgdex_id": "dp2-24",
     "localId": "024",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "024/122",
+    "cardNumber": "24/123",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 024/122 Mysterious Treasures",
+    "fullDisplayName": "Exeggutor 24/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3278,18 +4007,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-024-low.png",
-    "imageHighSrc": "cards/dp2-024-high.png"
+    "imageHighSrc": "cards/dp2-024-high.png",
+    "attacks": [
+      {
+        "name": "String Bomb",
+        "damage": "30×"
+      },
+      {
+        "name": "Nutritional Support",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3648",
-    "externalId": null,
+    "externalId": "dp2-23",
     "tcgdex_id": "dp2-23",
     "localId": "023",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "023/122",
+    "cardNumber": "23/123",
     "cardName": "Crobat",
-    "fullDisplayName": "Crobat 023/122 Mysterious Treasures",
+    "fullDisplayName": "Crobat 23/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3311,18 +4050,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-023-low.png",
-    "imageHighSrc": "cards/dp2-023-high.png"
+    "imageHighSrc": "cards/dp2-023-high.png",
+    "attacks": [
+      {
+        "name": "Strike and Fade",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3644",
-    "externalId": null,
+    "externalId": "dp2-22",
     "tcgdex_id": "dp2-22",
     "localId": "022",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "022/122",
+    "cardNumber": "22/123",
     "cardName": "Chimecho",
-    "fullDisplayName": "Chimecho 022/122 Mysterious Treasures",
+    "fullDisplayName": "Chimecho 22/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3344,18 +4089,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-022-low.png",
-    "imageHighSrc": "cards/dp2-022-high.png"
+    "imageHighSrc": "cards/dp2-022-high.png",
+    "attacks": [
+      {
+        "name": "Call In",
+        "damage": null
+      },
+      {
+        "name": "Strange Bell",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3637",
-    "externalId": null,
+    "externalId": "dp2-21",
     "tcgdex_id": "dp2-21",
     "localId": "021",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "021/122",
+    "cardNumber": "21/123",
     "cardName": "Bastiodon",
-    "fullDisplayName": "Bastiodon 021/122 Mysterious Treasures",
+    "fullDisplayName": "Bastiodon 21/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3377,18 +4132,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-021-low.png",
-    "imageHighSrc": "cards/dp2-021-high.png"
+    "imageHighSrc": "cards/dp2-021-high.png",
+    "attacks": [
+      {
+        "name": "Anger Revenge",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3634",
-    "externalId": null,
+    "externalId": "dp2-20",
     "tcgdex_id": "dp2-20",
     "localId": "020",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "020/122",
+    "cardNumber": "20/123",
     "cardName": "Ariados",
-    "fullDisplayName": "Ariados 020/122 Mysterious Treasures",
+    "fullDisplayName": "Ariados 20/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3410,18 +4171,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-020-low.png",
-    "imageHighSrc": "cards/dp2-020-high.png"
+    "imageHighSrc": "cards/dp2-020-high.png",
+    "attacks": [
+      {
+        "name": "Offensive Needle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3629",
-    "externalId": null,
+    "externalId": "dp2-19",
     "tcgdex_id": "dp2-19",
     "localId": "019",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "019/122",
+    "cardNumber": "19/123",
     "cardName": "Abomasnow",
-    "fullDisplayName": "Abomasnow 019/122 Mysterious Treasures",
+    "fullDisplayName": "Abomasnow 19/123 Mysterious Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3443,18 +4210,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-019-low.png",
-    "imageHighSrc": "cards/dp2-019-high.png"
+    "imageHighSrc": "cards/dp2-019-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Blizzard",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3624",
-    "externalId": null,
+    "externalId": "dp2-18",
     "tcgdex_id": "dp2-18",
     "localId": "018",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "018/122",
+    "cardNumber": "18/123",
     "cardName": "Uxie",
-    "fullDisplayName": "Uxie 018/122 Mysterious Treasures",
+    "fullDisplayName": "Uxie 18/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3476,18 +4249,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-018-low.png",
-    "imageHighSrc": "cards/dp2-018-high.png"
+    "imageHighSrc": "cards/dp2-018-high.png",
+    "attacks": [
+      {
+        "name": "Mind Off",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3618",
-    "externalId": null,
+    "externalId": "dp2-17",
     "tcgdex_id": "dp2-17",
     "localId": "017",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "017/122",
+    "cardNumber": "17/123",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 017/122 Mysterious Treasures",
+    "fullDisplayName": "Tyranitar 17/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3509,18 +4288,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-017-low.png",
-    "imageHighSrc": "cards/dp2-017-high.png"
+    "imageHighSrc": "cards/dp2-017-high.png",
+    "attacks": [
+      {
+        "name": "Payback",
+        "damage": "40+"
+      },
+      {
+        "name": "Ground Burn",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3612",
-    "externalId": null,
+    "externalId": "dp2-16",
     "tcgdex_id": "dp2-16",
     "localId": "016",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "016/122",
+    "cardNumber": "16/123",
     "cardName": "Typhlosion",
-    "fullDisplayName": "Typhlosion 016/122 Mysterious Treasures",
+    "fullDisplayName": "Typhlosion 16/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3542,18 +4331,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-016-low.png",
-    "imageHighSrc": "cards/dp2-016-high.png"
+    "imageHighSrc": "cards/dp2-016-high.png",
+    "attacks": [
+      {
+        "name": "Evaporating Heat",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3607",
-    "externalId": null,
+    "externalId": "dp2-15",
     "tcgdex_id": "dp2-15",
     "localId": "015",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "015/122",
+    "cardNumber": "15/123",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 015/122 Mysterious Treasures",
+    "fullDisplayName": "Raichu 15/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3575,18 +4370,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-015-low.png",
-    "imageHighSrc": "cards/dp2-015-high.png"
+    "imageHighSrc": "cards/dp2-015-high.png",
+    "attacks": [
+      {
+        "name": "Electromagnetic Induction",
+        "damage": null
+      },
+      {
+        "name": "Explosive Thunder",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "3601",
-    "externalId": null,
+    "externalId": "dp2-14",
     "tcgdex_id": "dp2-14",
     "localId": "014",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "014/122",
+    "cardNumber": "14/123",
     "cardName": "Mesprit",
-    "fullDisplayName": "Mesprit 014/122 Mysterious Treasures",
+    "fullDisplayName": "Mesprit 14/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3608,18 +4413,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-014-low.png",
-    "imageHighSrc": "cards/dp2-014-high.png"
+    "imageHighSrc": "cards/dp2-014-high.png",
+    "attacks": [
+      {
+        "name": "Teleportation Burst",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3595",
-    "externalId": null,
+    "externalId": "dp2-13",
     "tcgdex_id": "dp2-13",
     "localId": "013",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "013/122",
+    "cardNumber": "13/123",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium 013/122 Mysterious Treasures",
+    "fullDisplayName": "Meganium 13/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3641,18 +4452,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-013-low.png",
-    "imageHighSrc": "cards/dp2-013-high.png"
+    "imageHighSrc": "cards/dp2-013-high.png",
+    "attacks": [
+      {
+        "name": "Ultra Powder",
+        "damage": "20"
+      },
+      {
+        "name": "Fire Counterattack",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3589",
-    "externalId": null,
+    "externalId": "dp2-12",
     "tcgdex_id": "dp2-12",
     "localId": "012",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "012/122",
+    "cardNumber": "12/123",
     "cardName": "Magmortar",
-    "fullDisplayName": "Magmortar 012/122 Mysterious Treasures",
+    "fullDisplayName": "Magmortar 12/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3674,18 +4495,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-012-low.png",
-    "imageHighSrc": "cards/dp2-012-high.png"
+    "imageHighSrc": "cards/dp2-012-high.png",
+    "attacks": [
+      {
+        "name": "Smoke Bomb",
+        "damage": "30"
+      },
+      {
+        "name": "Flame Drum",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3583",
-    "externalId": null,
+    "externalId": "dp2-11",
     "tcgdex_id": "dp2-11",
     "localId": "011",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "011/122",
+    "cardNumber": "11/123",
     "cardName": "Lumineon",
-    "fullDisplayName": "Lumineon 011/122 Mysterious Treasures",
+    "fullDisplayName": "Lumineon 11/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3707,18 +4538,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-011-low.png",
-    "imageHighSrc": "cards/dp2-011-high.png"
+    "imageHighSrc": "cards/dp2-011-high.png",
+    "attacks": [
+      {
+        "name": "Reverse Stream",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3577",
-    "externalId": null,
+    "externalId": "dp2-10",
     "tcgdex_id": "dp2-10",
     "localId": "010",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "010/122",
+    "cardNumber": "10/123",
     "cardName": "Honchkrow",
-    "fullDisplayName": "Honchkrow 010/122 Mysterious Treasures",
+    "fullDisplayName": "Honchkrow 10/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3740,18 +4577,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-010-low.png",
-    "imageHighSrc": "cards/dp2-010-high.png"
+    "imageHighSrc": "cards/dp2-010-high.png",
+    "attacks": [
+      {
+        "name": "Dark Wing Flaps",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3571",
-    "externalId": null,
+    "externalId": "dp2-9",
     "tcgdex_id": "dp2-9",
     "localId": "009",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "009/122",
+    "cardNumber": "9/123",
     "cardName": "Garchomp",
-    "fullDisplayName": "Garchomp 009/122 Mysterious Treasures",
+    "fullDisplayName": "Garchomp 9/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3773,18 +4616,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-009-low.png",
-    "imageHighSrc": "cards/dp2-009-high.png"
+    "imageHighSrc": "cards/dp2-009-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Fang",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3565",
-    "externalId": null,
+    "externalId": "dp2-8",
     "tcgdex_id": "dp2-8",
     "localId": "008",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "008/122",
+    "cardNumber": "8/123",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 008/122 Mysterious Treasures",
+    "fullDisplayName": "Feraligatr 8/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3806,18 +4655,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-008-low.png",
-    "imageHighSrc": "cards/dp2-008-high.png"
+    "imageHighSrc": "cards/dp2-008-high.png",
+    "attacks": [
+      {
+        "name": "Energy Cyclone",
+        "damage": "20×"
+      },
+      {
+        "name": "Breaking Tail",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3559",
-    "externalId": null,
+    "externalId": "dp2-7",
     "tcgdex_id": "dp2-7",
     "localId": "007",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "007/122",
+    "cardNumber": "7/123",
     "cardName": "Celebi",
-    "fullDisplayName": "Celebi 007/122 Mysterious Treasures",
+    "fullDisplayName": "Celebi 7/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3839,18 +4698,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-007-low.png",
-    "imageHighSrc": "cards/dp2-007-high.png"
+    "imageHighSrc": "cards/dp2-007-high.png",
+    "attacks": [
+      {
+        "name": "Sprouting",
+        "damage": null
+      },
+      {
+        "name": "Leaf Tornado",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3553",
-    "externalId": null,
+    "externalId": "dp2-6",
     "tcgdex_id": "dp2-6",
     "localId": "006",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "006/122",
+    "cardNumber": "6/123",
     "cardName": "Bronzong",
-    "fullDisplayName": "Bronzong 006/122 Mysterious Treasures",
+    "fullDisplayName": "Bronzong 6/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3872,18 +4741,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-006-low.png",
-    "imageHighSrc": "cards/dp2-006-high.png"
+    "imageHighSrc": "cards/dp2-006-high.png",
+    "attacks": [
+      {
+        "name": "Shady Stamp",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3547",
-    "externalId": null,
+    "externalId": "dp2-5",
     "tcgdex_id": "dp2-5",
     "localId": "005",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "005/122",
+    "cardNumber": "5/123",
     "cardName": "Blissey",
-    "fullDisplayName": "Blissey 005/122 Mysterious Treasures",
+    "fullDisplayName": "Blissey 5/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3905,18 +4780,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-005-low.png",
-    "imageHighSrc": "cards/dp2-005-high.png"
+    "imageHighSrc": "cards/dp2-005-high.png",
+    "attacks": [
+      {
+        "name": "Happy Chance",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3541",
-    "externalId": null,
+    "externalId": "dp2-4",
     "tcgdex_id": "dp2-4",
     "localId": "004",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "004/122",
+    "cardNumber": "4/123",
     "cardName": "Azelf",
-    "fullDisplayName": "Azelf 004/122 Mysterious Treasures",
+    "fullDisplayName": "Azelf 4/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3938,18 +4819,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-004-low.png",
-    "imageHighSrc": "cards/dp2-004-high.png"
+    "imageHighSrc": "cards/dp2-004-high.png",
+    "attacks": [
+      {
+        "name": "Bind Pulse",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3535",
-    "externalId": null,
+    "externalId": "dp2-3",
     "tcgdex_id": "dp2-3",
     "localId": "003",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "003/122",
+    "cardNumber": "3/123",
     "cardName": "Ambipom",
-    "fullDisplayName": "Ambipom 003/122 Mysterious Treasures",
+    "fullDisplayName": "Ambipom 3/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3971,18 +4858,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-003-low.png",
-    "imageHighSrc": "cards/dp2-003-high.png"
+    "imageHighSrc": "cards/dp2-003-high.png",
+    "attacks": [
+      {
+        "name": "Tail Influence",
+        "damage": "30"
+      },
+      {
+        "name": "Charity Tail",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3526",
-    "externalId": null,
+    "externalId": "dp2-2",
     "tcgdex_id": "dp2-2",
     "localId": "002",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "002/122",
+    "cardNumber": "2/123",
     "cardName": "Alakazam",
-    "fullDisplayName": "Alakazam 002/122 Mysterious Treasures",
+    "fullDisplayName": "Alakazam 2/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4004,18 +4901,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-002-low.png",
-    "imageHighSrc": "cards/dp2-002-high.png"
+    "imageHighSrc": "cards/dp2-002-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Guard",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3520",
-    "externalId": null,
+    "externalId": "dp2-1",
     "tcgdex_id": "dp2-1",
     "localId": "001",
     "setCode": "dp2",
     "setTcgdexId": "dp2",
-    "cardNumber": "001/122",
+    "cardNumber": "1/123",
     "cardName": "Aggron",
-    "fullDisplayName": "Aggron 001/122 Mysterious Treasures",
+    "fullDisplayName": "Aggron 1/123 Mysterious Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4037,6 +4940,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp2-001-low.png",
-    "imageHighSrc": "cards/dp2-001-high.png"
+    "imageHighSrc": "cards/dp2-001-high.png",
+    "attacks": [
+      {
+        "name": "Heap Up",
+        "damage": "40+"
+      },
+      {
+        "name": "Hard Metal",
+        "damage": "60+"
+      }
+    ]
   }
 ]

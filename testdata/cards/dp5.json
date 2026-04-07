@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "4921",
-    "externalId": null,
+    "externalId": "dp5-100",
     "tcgdex_id": "dp5-100",
     "localId": "100",
     "setCode": "dp5",
@@ -30,18 +30,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-100-low.png",
-    "imageHighSrc": "cards/dp5-100-high.png"
+    "imageHighSrc": "cards/dp5-100-high.png",
+    "rules": "Put this card onto your Active Porygon-Z. Porygon-Z LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4910",
-    "externalId": null,
+    "externalId": "dp5-99",
     "tcgdex_id": "dp5-99",
     "localId": "099",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "099/100",
+    "cardNumber": "99/100",
     "cardName": "Leafeon LV.X",
-    "fullDisplayName": "Leafeon LV.X 099/100 Majestic Dawn",
+    "fullDisplayName": "Leafeon LV.X 99/100 Majestic Dawn",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -63,18 +64,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-099-low.png",
-    "imageHighSrc": "cards/dp5-099-high.png"
+    "imageHighSrc": "cards/dp5-099-high.png",
+    "attacks": [
+      {
+        "name": "Verdant Dance",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Put this card onto your Active Leafeon. Leafeon LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4901",
-    "externalId": null,
+    "externalId": "dp5-98",
     "tcgdex_id": "dp5-98",
     "localId": "098",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "098/100",
+    "cardNumber": "98/100",
     "cardName": "Glaceon LV.X",
-    "fullDisplayName": "Glaceon LV.X 098/100 Majestic Dawn",
+    "fullDisplayName": "Glaceon LV.X 98/100 Majestic Dawn",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -96,18 +104,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-098-low.png",
-    "imageHighSrc": "cards/dp5-098-high.png"
+    "imageHighSrc": "cards/dp5-098-high.png",
+    "attacks": [
+      {
+        "name": "Avalanche",
+        "damage": "70"
+      }
+    ],
+    "rules": "Put this card onto your Active Glaceon. Glaceon LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4893",
-    "externalId": null,
+    "externalId": "dp5-97",
     "tcgdex_id": "dp5-97",
     "localId": "097",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "097/100",
+    "cardNumber": "97/100",
     "cardName": "Garchomp LV.X",
-    "fullDisplayName": "Garchomp LV.X 097/100 Majestic Dawn",
+    "fullDisplayName": "Garchomp LV.X 97/100 Majestic Dawn",
     "rarity": "Rare Holo LV.X",
     "category": "Pokémon",
     "stage": "Level-Up",
@@ -129,18 +144,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-097-low.png",
-    "imageHighSrc": "cards/dp5-097-high.png"
+    "imageHighSrc": "cards/dp5-097-high.png",
+    "attacks": [
+      {
+        "name": "Restore",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Garchomp. Garchomp LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4885",
-    "externalId": null,
+    "externalId": "dp5-96",
     "tcgdex_id": "dp5-96",
     "localId": "096",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "096/100",
+    "cardNumber": "96/100",
     "cardName": "Recover Energy",
-    "fullDisplayName": "Recover Energy 096/100 Majestic Dawn",
+    "fullDisplayName": "Recover Energy 96/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -158,18 +180,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-096-low.png",
-    "imageHighSrc": "cards/dp5-096-high.png"
+    "imageHighSrc": "cards/dp5-096-high.png",
+    "rules": "Recover Energy provides Colorless Energy. When you attach this card from your hand to 1 of your Pokémon, remove all Special Conditions from that Pokémon."
   },
   {
     "masterCardId": "4877",
-    "externalId": null,
+    "externalId": "dp5-95",
     "tcgdex_id": "dp5-95",
     "localId": "095",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "095/100",
+    "cardNumber": "95/100",
     "cardName": "Metal Energy",
-    "fullDisplayName": "Metal Energy 095/100 Majestic Dawn",
+    "fullDisplayName": "Metal Energy 95/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -187,18 +210,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-095-low.png",
-    "imageHighSrc": "cards/dp5-095-high.png"
+    "imageHighSrc": "cards/dp5-095-high.png",
+    "rules": "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't Metal. Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4870",
-    "externalId": null,
+    "externalId": "dp5-94",
     "tcgdex_id": "dp5-94",
     "localId": "094",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "094/100",
+    "cardNumber": "94/100",
     "cardName": "Health Energy",
-    "fullDisplayName": "Health Energy 094/100 Majestic Dawn",
+    "fullDisplayName": "Health Energy 94/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -216,18 +240,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-094-low.png",
-    "imageHighSrc": "cards/dp5-094-high.png"
+    "imageHighSrc": "cards/dp5-094-high.png",
+    "rules": "Health Energy provides Colorless Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter from that Pokémon."
   },
   {
     "masterCardId": "4862",
-    "externalId": null,
+    "externalId": "dp5-93",
     "tcgdex_id": "dp5-93",
     "localId": "093",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "093/100",
+    "cardNumber": "93/100",
     "cardName": "Darkness Energy",
-    "fullDisplayName": "Darkness Energy 093/100 Majestic Dawn",
+    "fullDisplayName": "Darkness Energy 93/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -245,18 +270,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-093-low.png",
-    "imageHighSrc": "cards/dp5-093-high.png"
+    "imageHighSrc": "cards/dp5-093-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect if the Pokémon that Darkness Energy is attached to isn't Darkness. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4857",
-    "externalId": null,
+    "externalId": "dp5-92",
     "tcgdex_id": "dp5-92",
     "localId": "092",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "092/100",
+    "cardNumber": "92/100",
     "cardName": "Call Energy",
-    "fullDisplayName": "Call Energy 092/100 Majestic Dawn",
+    "fullDisplayName": "Call Energy 92/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -274,18 +300,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-092-low.png",
-    "imageHighSrc": "cards/dp5-092-high.png"
+    "imageHighSrc": "cards/dp5-092-high.png",
+    "rules": "Call Energy provides Colorless Energy. Once during your turn, if the Pokémon Call Energy is attached to is your Active Pokémon, you may search your deck for up to 2 Basic Pokémon and put them onto your Bench. If you do, shuffle your deck and your turn ends."
   },
   {
     "masterCardId": "4849",
-    "externalId": null,
+    "externalId": "dp5-91",
     "tcgdex_id": "dp5-91",
     "localId": "091",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "091/100",
+    "cardNumber": "91/100",
     "cardName": "Helix Fossil",
-    "fullDisplayName": "Helix Fossil 091/100 Majestic Dawn",
+    "fullDisplayName": "Helix Fossil 91/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -303,18 +330,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-091-low.png",
-    "imageHighSrc": "cards/dp5-091-high.png"
+    "imageHighSrc": "cards/dp5-091-high.png",
+    "rules": "Play Helix Fossil as if it were a Colorless Basic Pokémon. (Helix Fossil counts as a Trainer card as well, but if Helix Fossil is Knocked Out, this counts as a Knocked Out Pokémon.) Helix Fossil can't be affected by any Special Conditions and can't retreat. At any time during your turn before your attack, you may discard Helix Fossil from play. (This doesn't count as a Knocked Out Pokémon.)"
   },
   {
     "masterCardId": "4841",
-    "externalId": null,
+    "externalId": "dp5-90",
     "tcgdex_id": "dp5-90",
     "localId": "090",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "090/100",
+    "cardNumber": "90/100",
     "cardName": "Energy Search",
-    "fullDisplayName": "Energy Search 090/100 Majestic Dawn",
+    "fullDisplayName": "Energy Search 90/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -332,18 +360,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-090-low.png",
-    "imageHighSrc": "cards/dp5-090-high.png"
+    "imageHighSrc": "cards/dp5-090-high.png",
+    "rules": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4833",
-    "externalId": null,
+    "externalId": "dp5-89",
     "tcgdex_id": "dp5-89",
     "localId": "089",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "089/100",
+    "cardNumber": "89/100",
     "cardName": "Dome Fossil",
-    "fullDisplayName": "Dome Fossil 089/100 Majestic Dawn",
+    "fullDisplayName": "Dome Fossil 89/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -361,18 +390,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-089-low.png",
-    "imageHighSrc": "cards/dp5-089-high.png"
+    "imageHighSrc": "cards/dp5-089-high.png",
+    "rules": "Play Dome Fossil as if it were a Colorless Basic Pokémon. (Dome Fossil counts as a Trainer card as well, but if Dome Fossil is Knocked Out, this counts as a Knocked Out Pokémon.) Dome Fossil can't be affected by any Special Conditions and can't retreat. At any time during your turn before your attack, you may discard Dome Fossil from play. (This doesn't count as a Knocked Out Pokémon.)"
   },
   {
     "masterCardId": "4825",
-    "externalId": null,
+    "externalId": "dp5-88",
     "tcgdex_id": "dp5-88",
     "localId": "088",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "088/100",
+    "cardNumber": "88/100",
     "cardName": "Warp Point",
-    "fullDisplayName": "Warp Point 088/100 Majestic Dawn",
+    "fullDisplayName": "Warp Point 88/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -390,18 +420,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-088-low.png",
-    "imageHighSrc": "cards/dp5-088-high.png"
+    "imageHighSrc": "cards/dp5-088-high.png",
+    "rules": "Your opponent switches 1 of his or her Defending Pokémon with 1 of his or her Benched Pokémon, if any. You switch 1 of your Active Pokémon with 1 of your Benched Pokémon, if any."
   },
   {
     "masterCardId": "4817",
-    "externalId": null,
+    "externalId": "dp5-87",
     "tcgdex_id": "dp5-87",
     "localId": "087",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "087/100",
+    "cardNumber": "87/100",
     "cardName": "Super Scoop Up",
-    "fullDisplayName": "Super Scoop Up 087/100 Majestic Dawn",
+    "fullDisplayName": "Super Scoop Up 87/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -419,18 +450,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-087-low.png",
-    "imageHighSrc": "cards/dp5-087-high.png"
+    "imageHighSrc": "cards/dp5-087-high.png",
+    "rules": "Flip a coin. If heads, return 1 of your Pokémon and all cards attached to it to your hand."
   },
   {
     "masterCardId": "4809",
-    "externalId": null,
+    "externalId": "dp5-86",
     "tcgdex_id": "dp5-86",
     "localId": "086",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "086/100",
+    "cardNumber": "86/100",
     "cardName": "Quick Ball",
-    "fullDisplayName": "Quick Ball 086/100 Majestic Dawn",
+    "fullDisplayName": "Quick Ball 86/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -448,18 +480,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-086-low.png",
-    "imageHighSrc": "cards/dp5-086-high.png"
+    "imageHighSrc": "cards/dp5-086-high.png",
+    "rules": "Reveal cards from your deck until you reveal a Pokémon. Show that Pokémon to your opponent and put it into your hand. Shuffle the other revealed cards back into your deck. (If you don't reveal a Pokémon, shuffle all the revealed cards back into your deck.)"
   },
   {
     "masterCardId": "4801",
-    "externalId": null,
+    "externalId": "dp5-85",
     "tcgdex_id": "dp5-85",
     "localId": "085",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "085/100",
+    "cardNumber": "85/100",
     "cardName": "Poké Ball",
-    "fullDisplayName": "Poké Ball 085/100 Majestic Dawn",
+    "fullDisplayName": "Poké Ball 85/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -477,18 +510,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-085-low.png",
-    "imageHighSrc": "cards/dp5-085-high.png"
+    "imageHighSrc": "cards/dp5-085-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4793",
-    "externalId": null,
+    "externalId": "dp5-84",
     "tcgdex_id": "dp5-84",
     "localId": "084",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "084/100",
+    "cardNumber": "84/100",
     "cardName": "Old Amber",
-    "fullDisplayName": "Old Amber 084/100 Majestic Dawn",
+    "fullDisplayName": "Old Amber 84/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -506,18 +540,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-084-low.png",
-    "imageHighSrc": "cards/dp5-084-high.png"
+    "imageHighSrc": "cards/dp5-084-high.png",
+    "rules": "Play Old Amber as if it were a Colorless Basic Pokémon. (Old Amber counts as a Trainer card as well, but if Old Amber is Knocked Out, this counts as a Knocked Out Pokémon.) Old Amber can't be affected by any Special Conditions and can't retreat. At any time during your turn before your attack, you may discard Old Amber from play. (This doesn't count as a Knocked Out Pokémon.)"
   },
   {
     "masterCardId": "4785",
-    "externalId": null,
+    "externalId": "dp5-83",
     "tcgdex_id": "dp5-83",
     "localId": "083",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "083/100",
+    "cardNumber": "83/100",
     "cardName": "Mom's Kindness",
-    "fullDisplayName": "Mom's Kindness 083/100 Majestic Dawn",
+    "fullDisplayName": "Mom's Kindness 83/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -535,18 +570,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-083-low.png",
-    "imageHighSrc": "cards/dp5-083-high.png"
+    "imageHighSrc": "cards/dp5-083-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 2 cards."
   },
   {
     "masterCardId": "4776",
-    "externalId": null,
+    "externalId": "dp5-82",
     "tcgdex_id": "dp5-82",
     "localId": "082",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "082/100",
+    "cardNumber": "82/100",
     "cardName": "Fossil Excavator",
-    "fullDisplayName": "Fossil Excavator 082/100 Majestic Dawn",
+    "fullDisplayName": "Fossil Excavator 82/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -564,18 +600,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-082-low.png",
-    "imageHighSrc": "cards/dp5-082-high.png"
+    "imageHighSrc": "cards/dp5-082-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck or discard pile for a Trainer card that has Fossil in its name or a Stage 1 or Stage 2 Evolution card that evolves from a Fossil. Show it to your opponent and put it into your hand. If you searched your deck, shuffle your deck afterward."
   },
   {
     "masterCardId": "4768",
-    "externalId": null,
+    "externalId": "dp5-81",
     "tcgdex_id": "dp5-81",
     "localId": "081",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "081/100",
+    "cardNumber": "81/100",
     "cardName": "Energy Restore",
-    "fullDisplayName": "Energy Restore 081/100 Majestic Dawn",
+    "fullDisplayName": "Energy Restore 81/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -593,18 +630,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-081-low.png",
-    "imageHighSrc": "cards/dp5-081-high.png"
+    "imageHighSrc": "cards/dp5-081-high.png",
+    "rules": "Flip 3 coins. For each heads, put a Basic Energy card from your discard pile into your hand. If you don't have that many basic Energy cards in your discard pile, put all of them into your hand."
   },
   {
     "masterCardId": "4759",
-    "externalId": null,
+    "externalId": "dp5-80",
     "tcgdex_id": "dp5-80",
     "localId": "080",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "080/100",
+    "cardNumber": "80/100",
     "cardName": "Dusk Ball",
-    "fullDisplayName": "Dusk Ball 080/100 Majestic Dawn",
+    "fullDisplayName": "Dusk Ball 80/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -622,18 +660,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-080-low.png",
-    "imageHighSrc": "cards/dp5-080-high.png"
+    "imageHighSrc": "cards/dp5-080-high.png",
+    "rules": "Look at the 7 cards from the bottom of your deck. Choose 1 Pokémon you find there, show it to your opponent, and put it into your hand. Put the remaining cards back on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4751",
-    "externalId": null,
+    "externalId": "dp5-79",
     "tcgdex_id": "dp5-79",
     "localId": "079",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "079/100",
+    "cardNumber": "79/100",
     "cardName": "Dawn Stadium",
-    "fullDisplayName": "Dawn Stadium 079/100 Majestic Dawn",
+    "fullDisplayName": "Dawn Stadium 79/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -651,18 +690,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-079-low.png",
-    "imageHighSrc": "cards/dp5-079-high.png"
+    "imageHighSrc": "cards/dp5-079-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nWhenever any player attaches an Energy card from his or her hand to Grass Pokémon or Water Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon."
   },
   {
     "masterCardId": "4742",
-    "externalId": null,
+    "externalId": "dp5-78",
     "tcgdex_id": "dp5-78",
     "localId": "078",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "078/100",
+    "cardNumber": "78/100",
     "cardName": "Turtwig",
-    "fullDisplayName": "Turtwig 078/100 Majestic Dawn",
+    "fullDisplayName": "Turtwig 78/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -684,18 +724,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-078-low.png",
-    "imageHighSrc": "cards/dp5-078-high.png"
+    "imageHighSrc": "cards/dp5-078-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30"
+      }
+    ],
+    "rules": "Persim Berry: If Turtwig is Confused, remove the Special Condition Confused from Turtwig at the end of each player's turn."
   },
   {
     "masterCardId": "4733",
-    "externalId": null,
+    "externalId": "dp5-77",
     "tcgdex_id": "dp5-77",
     "localId": "077",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "077/100",
+    "cardNumber": "77/100",
     "cardName": "Turtwig",
-    "fullDisplayName": "Turtwig 077/100 Majestic Dawn",
+    "fullDisplayName": "Turtwig 77/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -717,18 +764,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-077-low.png",
-    "imageHighSrc": "cards/dp5-077-high.png"
+    "imageHighSrc": "cards/dp5-077-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4726",
-    "externalId": null,
+    "externalId": "dp5-76",
     "tcgdex_id": "dp5-76",
     "localId": "076",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "076/100",
+    "cardNumber": "76/100",
     "cardName": "Stunky",
-    "fullDisplayName": "Stunky 076/100 Majestic Dawn",
+    "fullDisplayName": "Stunky 76/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -750,18 +807,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-076-low.png",
-    "imageHighSrc": "cards/dp5-076-high.png"
+    "imageHighSrc": "cards/dp5-076-high.png",
+    "attacks": [
+      {
+        "name": "Poison Gas",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4716",
-    "externalId": null,
+    "externalId": "dp5-75",
     "tcgdex_id": "dp5-75",
     "localId": "075",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "075/100",
+    "cardNumber": "75/100",
     "cardName": "Starly",
-    "fullDisplayName": "Starly 075/100 Majestic Dawn",
+    "fullDisplayName": "Starly 75/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -783,18 +850,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-075-low.png",
-    "imageHighSrc": "cards/dp5-075-high.png"
+    "imageHighSrc": "cards/dp5-075-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "10"
+      },
+      {
+        "name": "Flap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4711",
-    "externalId": null,
+    "externalId": "dp5-74",
     "tcgdex_id": "dp5-74",
     "localId": "074",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "074/100",
+    "cardNumber": "74/100",
     "cardName": "Spearow",
-    "fullDisplayName": "Spearow 074/100 Majestic Dawn",
+    "fullDisplayName": "Spearow 74/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -816,18 +893,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-074-low.png",
-    "imageHighSrc": "cards/dp5-074-high.png"
+    "imageHighSrc": "cards/dp5-074-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Claw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4705",
-    "externalId": null,
+    "externalId": "dp5-73",
     "tcgdex_id": "dp5-73",
     "localId": "073",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "073/100",
+    "cardNumber": "73/100",
     "cardName": "Shellos East Sea",
-    "fullDisplayName": "Shellos East Sea 073/100 Majestic Dawn",
+    "fullDisplayName": "Shellos East Sea 73/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -849,18 +936,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-073-low.png",
-    "imageHighSrc": "cards/dp5-073-high.png"
+    "imageHighSrc": "cards/dp5-073-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "10"
+      },
+      {
+        "name": "Muddy Water",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4697",
-    "externalId": null,
+    "externalId": "dp5-72",
     "tcgdex_id": "dp5-72",
     "localId": "072",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "072/100",
+    "cardNumber": "72/100",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 072/100 Majestic Dawn",
+    "fullDisplayName": "Piplup 72/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -882,18 +979,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-072-low.png",
-    "imageHighSrc": "cards/dp5-072-high.png"
+    "imageHighSrc": "cards/dp5-072-high.png",
+    "attacks": [
+      {
+        "name": "Splatter",
+        "damage": null
+      }
+    ],
+    "rules": "Pecha Berry: If Piplup is Poisoned, remove the Special Condition Poisoned from Piplup at the end of each player's turn."
   },
   {
     "masterCardId": "4688",
-    "externalId": null,
+    "externalId": "dp5-71",
     "tcgdex_id": "dp5-71",
     "localId": "071",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "071/100",
+    "cardNumber": "71/100",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 071/100 Majestic Dawn",
+    "fullDisplayName": "Piplup 71/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -915,18 +1019,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-071-low.png",
-    "imageHighSrc": "cards/dp5-071-high.png"
+    "imageHighSrc": "cards/dp5-071-high.png",
+    "attacks": [
+      {
+        "name": "Water Splash",
+        "damage": "10+"
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4680",
-    "externalId": null,
+    "externalId": "dp5-70",
     "tcgdex_id": "dp5-70",
     "localId": "070",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "070/100",
+    "cardNumber": "70/100",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 070/100 Majestic Dawn",
+    "fullDisplayName": "Pikachu 70/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -948,18 +1062,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-070-low.png",
-    "imageHighSrc": "cards/dp5-070-high.png"
+    "imageHighSrc": "cards/dp5-070-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Volt Tackle",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4671",
-    "externalId": null,
+    "externalId": "dp5-69",
     "tcgdex_id": "dp5-69",
     "localId": "069",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "069/100",
+    "cardNumber": "69/100",
     "cardName": "Omanyte",
-    "fullDisplayName": "Omanyte 069/100 Majestic Dawn",
+    "fullDisplayName": "Omanyte 69/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -981,18 +1105,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-069-low.png",
-    "imageHighSrc": "cards/dp5-069-high.png"
+    "imageHighSrc": "cards/dp5-069-high.png",
+    "attacks": [
+      {
+        "name": "Wash Over",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4661",
-    "externalId": null,
+    "externalId": "dp5-68",
     "tcgdex_id": "dp5-68",
     "localId": "068",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "068/100",
+    "cardNumber": "68/100",
     "cardName": "Munchlax",
-    "fullDisplayName": "Munchlax 068/100 Majestic Dawn",
+    "fullDisplayName": "Munchlax 68/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1014,18 +1144,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-068-low.png",
-    "imageHighSrc": "cards/dp5-068-high.png"
+    "imageHighSrc": "cards/dp5-068-high.png",
+    "attacks": [
+      {
+        "name": "Lick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4653",
-    "externalId": null,
+    "externalId": "dp5-67",
     "tcgdex_id": "dp5-67",
     "localId": "067",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "067/100",
+    "cardNumber": "67/100",
     "cardName": "Kabuto",
-    "fullDisplayName": "Kabuto 067/100 Majestic Dawn",
+    "fullDisplayName": "Kabuto 67/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1047,18 +1183,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-067-low.png",
-    "imageHighSrc": "cards/dp5-067-high.png"
+    "imageHighSrc": "cards/dp5-067-high.png",
+    "attacks": [
+      {
+        "name": "Shell Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4644",
-    "externalId": null,
+    "externalId": "dp5-66",
     "tcgdex_id": "dp5-66",
     "localId": "066",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "066/100",
+    "cardNumber": "66/100",
     "cardName": "Hippopotas",
-    "fullDisplayName": "Hippopotas 066/100 Majestic Dawn",
+    "fullDisplayName": "Hippopotas 66/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1080,18 +1222,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-066-low.png",
-    "imageHighSrc": "cards/dp5-066-high.png"
+    "imageHighSrc": "cards/dp5-066-high.png",
+    "attacks": [
+      {
+        "name": "Grainy Sand",
+        "damage": "10+"
+      },
+      {
+        "name": "Double-edge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4636",
-    "externalId": null,
+    "externalId": "dp5-65",
     "tcgdex_id": "dp5-65",
     "localId": "065",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "065/100",
+    "cardNumber": "65/100",
     "cardName": "Glameow",
-    "fullDisplayName": "Glameow 065/100 Majestic Dawn",
+    "fullDisplayName": "Glameow 65/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1113,18 +1265,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-065-low.png",
-    "imageHighSrc": "cards/dp5-065-high.png"
+    "imageHighSrc": "cards/dp5-065-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Rip Claw",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4628",
-    "externalId": null,
+    "externalId": "dp5-64",
     "tcgdex_id": "dp5-64",
     "localId": "064",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "064/100",
+    "cardNumber": "64/100",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 064/100 Majestic Dawn",
+    "fullDisplayName": "Electrike 64/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1146,18 +1308,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-064-low.png",
-    "imageHighSrc": "cards/dp5-064-high.png"
+    "imageHighSrc": "cards/dp5-064-high.png",
+    "attacks": [
+      {
+        "name": "Random Spark",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4621",
-    "externalId": null,
+    "externalId": "dp5-63",
     "tcgdex_id": "dp5-63",
     "localId": "063",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "063/100",
+    "cardNumber": "63/100",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 063/100 Majestic Dawn",
+    "fullDisplayName": "Eevee 63/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1179,18 +1351,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-063-low.png",
-    "imageHighSrc": "cards/dp5-063-high.png"
+    "imageHighSrc": "cards/dp5-063-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Sand Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4613",
-    "externalId": null,
+    "externalId": "dp5-62",
     "tcgdex_id": "dp5-62",
     "localId": "062",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "062/100",
+    "cardNumber": "62/100",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 062/100 Majestic Dawn",
+    "fullDisplayName": "Eevee 62/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1212,18 +1394,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-062-low.png",
-    "imageHighSrc": "cards/dp5-062-high.png"
+    "imageHighSrc": "cards/dp5-062-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Lunge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4605",
-    "externalId": null,
+    "externalId": "dp5-61",
     "tcgdex_id": "dp5-61",
     "localId": "061",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "061/100",
+    "cardNumber": "61/100",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 061/100 Majestic Dawn",
+    "fullDisplayName": "Drifloon 61/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1245,18 +1437,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-061-low.png",
-    "imageHighSrc": "cards/dp5-061-high.png"
+    "imageHighSrc": "cards/dp5-061-high.png",
+    "attacks": [
+      {
+        "name": "Delivery",
+        "damage": null
+      },
+      {
+        "name": "Reaction",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4596",
-    "externalId": null,
+    "externalId": "dp5-60",
     "tcgdex_id": "dp5-60",
     "localId": "060",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "060/100",
+    "cardNumber": "60/100",
     "cardName": "Croagunk",
-    "fullDisplayName": "Croagunk 060/100 Majestic Dawn",
+    "fullDisplayName": "Croagunk 60/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1278,18 +1480,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-060-low.png",
-    "imageHighSrc": "cards/dp5-060-high.png"
+    "imageHighSrc": "cards/dp5-060-high.png",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Sting",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4588",
-    "externalId": null,
+    "externalId": "dp5-59",
     "tcgdex_id": "dp5-59",
     "localId": "059",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "059/100",
+    "cardNumber": "59/100",
     "cardName": "Combee",
-    "fullDisplayName": "Combee 059/100 Majestic Dawn",
+    "fullDisplayName": "Combee 59/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1311,18 +1523,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-059-low.png",
-    "imageHighSrc": "cards/dp5-059-high.png"
+    "imageHighSrc": "cards/dp5-059-high.png",
+    "attacks": [
+      {
+        "name": "Honey Scent",
+        "damage": null
+      },
+      {
+        "name": "Flitter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4580",
-    "externalId": null,
+    "externalId": "dp5-58",
     "tcgdex_id": "dp5-58",
     "localId": "058",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "058/100",
+    "cardNumber": "58/100",
     "cardName": "Chingling",
-    "fullDisplayName": "Chingling 058/100 Majestic Dawn",
+    "fullDisplayName": "Chingling 58/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1344,18 +1566,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-058-low.png",
-    "imageHighSrc": "cards/dp5-058-high.png"
+    "imageHighSrc": "cards/dp5-058-high.png",
+    "attacks": [
+      {
+        "name": "Uproar",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4572",
-    "externalId": null,
+    "externalId": "dp5-57",
     "tcgdex_id": "dp5-57",
     "localId": "057",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "057/100",
+    "cardNumber": "57/100",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 057/100 Majestic Dawn",
+    "fullDisplayName": "Chimchar 57/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1377,18 +1605,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-057-low.png",
-    "imageHighSrc": "cards/dp5-057-high.png"
+    "imageHighSrc": "cards/dp5-057-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ],
+    "rules": "Cheri Berry: If Chimchar is Paralyzed, remove the Special Condition Paralyzed from Chimchar at the end of each player's turn."
   },
   {
     "masterCardId": "4564",
-    "externalId": null,
+    "externalId": "dp5-56",
     "tcgdex_id": "dp5-56",
     "localId": "056",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "056/100",
+    "cardNumber": "56/100",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 056/100 Majestic Dawn",
+    "fullDisplayName": "Chimchar 56/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1410,18 +1645,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-056-low.png",
-    "imageHighSrc": "cards/dp5-056-high.png"
+    "imageHighSrc": "cards/dp5-056-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      },
+      {
+        "name": "Lunge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4555",
-    "externalId": null,
+    "externalId": "dp5-55",
     "tcgdex_id": "dp5-55",
     "localId": "055",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "055/100",
+    "cardNumber": "55/100",
     "cardName": "Chatot",
-    "fullDisplayName": "Chatot 055/100 Majestic Dawn",
+    "fullDisplayName": "Chatot 55/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1443,18 +1688,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-055-low.png",
-    "imageHighSrc": "cards/dp5-055-high.png"
+    "imageHighSrc": "cards/dp5-055-high.png",
+    "attacks": [
+      {
+        "name": "Mimic",
+        "damage": null
+      },
+      {
+        "name": "Chatter",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4546",
-    "externalId": null,
+    "externalId": "dp5-54",
     "tcgdex_id": "dp5-54",
     "localId": "054",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "054/100",
+    "cardNumber": "54/100",
     "cardName": "Burmy Sandy Cloak",
-    "fullDisplayName": "Burmy Sandy Cloak 054/100 Majestic Dawn",
+    "fullDisplayName": "Burmy Sandy Cloak 54/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1476,18 +1731,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-054-low.png",
-    "imageHighSrc": "cards/dp5-054-high.png"
+    "imageHighSrc": "cards/dp5-054-high.png",
+    "attacks": [
+      {
+        "name": "Iron Defense",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4537",
-    "externalId": null,
+    "externalId": "dp5-53",
     "tcgdex_id": "dp5-53",
     "localId": "053",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "053/100",
+    "cardNumber": "53/100",
     "cardName": "Buneary",
-    "fullDisplayName": "Buneary 053/100 Majestic Dawn",
+    "fullDisplayName": "Buneary 53/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1509,18 +1774,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-053-low.png",
-    "imageHighSrc": "cards/dp5-053-high.png"
+    "imageHighSrc": "cards/dp5-053-high.png",
+    "attacks": [
+      {
+        "name": "Drawup Power",
+        "damage": null
+      },
+      {
+        "name": "Extend Ears",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4528",
-    "externalId": null,
+    "externalId": "dp5-52",
     "tcgdex_id": "dp5-52",
     "localId": "052",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "052/100",
+    "cardNumber": "52/100",
     "cardName": "Bronzor",
-    "fullDisplayName": "Bronzor 052/100 Majestic Dawn",
+    "fullDisplayName": "Bronzor 52/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1542,18 +1817,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-052-low.png",
-    "imageHighSrc": "cards/dp5-052-high.png"
+    "imageHighSrc": "cards/dp5-052-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4519",
-    "externalId": null,
+    "externalId": "dp5-51",
     "tcgdex_id": "dp5-51",
     "localId": "051",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "051/100",
+    "cardNumber": "51/100",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 051/100 Majestic Dawn",
+    "fullDisplayName": "Aipom 51/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1575,18 +1860,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-051-low.png",
-    "imageHighSrc": "cards/dp5-051-high.png"
+    "imageHighSrc": "cards/dp5-051-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Last Resort",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4510",
-    "externalId": null,
+    "externalId": "dp5-50",
     "tcgdex_id": "dp5-50",
     "localId": "050",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "050/100",
+    "cardNumber": "50/100",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 050/100 Majestic Dawn",
+    "fullDisplayName": "Aipom 50/100 Majestic Dawn",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1608,18 +1903,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-050-low.png",
-    "imageHighSrc": "cards/dp5-050-high.png"
+    "imageHighSrc": "cards/dp5-050-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Hand Trick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4501",
-    "externalId": null,
+    "externalId": "dp5-49",
     "tcgdex_id": "dp5-49",
     "localId": "049",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "049/100",
+    "cardNumber": "49/100",
     "cardName": "Unown [Q]",
-    "fullDisplayName": "Unown [Q] 049/100 Majestic Dawn",
+    "fullDisplayName": "Unown [Q] 49/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1641,18 +1946,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp5-049-low.png",
-    "imageHighSrc": "cards/dp5-049-high.png"
+    "imageHighSrc": "cards/dp5-049-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4490",
-    "externalId": null,
+    "externalId": "dp5-48",
     "tcgdex_id": "dp5-48",
     "localId": "048",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "048/100",
+    "cardNumber": "48/100",
     "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo 048/100 Majestic Dawn",
+    "fullDisplayName": "Sudowoodo 48/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1674,18 +1985,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-048-low.png",
-    "imageHighSrc": "cards/dp5-048-high.png"
+    "imageHighSrc": "cards/dp5-048-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Wood Hammer",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4481",
-    "externalId": null,
+    "externalId": "dp5-47",
     "tcgdex_id": "dp5-47",
     "localId": "047",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "047/100",
+    "cardNumber": "47/100",
     "cardName": "Staravia",
-    "fullDisplayName": "Staravia 047/100 Majestic Dawn",
+    "fullDisplayName": "Staravia 47/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1707,18 +2028,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-047-low.png",
-    "imageHighSrc": "cards/dp5-047-high.png"
+    "imageHighSrc": "cards/dp5-047-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Drill Peck",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4473",
-    "externalId": null,
+    "externalId": "dp5-46",
     "tcgdex_id": "dp5-46",
     "localId": "046",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "046/100",
+    "cardNumber": "46/100",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 046/100 Majestic Dawn",
+    "fullDisplayName": "Scyther 46/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1740,18 +2071,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-046-low.png",
-    "imageHighSrc": "cards/dp5-046-high.png"
+    "imageHighSrc": "cards/dp5-046-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "10"
+      },
+      {
+        "name": "Fury Cutter",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4463",
-    "externalId": null,
+    "externalId": "dp5-45",
     "tcgdex_id": "dp5-45",
     "localId": "045",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "045/100",
+    "cardNumber": "45/100",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 045/100 Majestic Dawn",
+    "fullDisplayName": "Raichu 45/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1773,18 +2114,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-045-low.png",
-    "imageHighSrc": "cards/dp5-045-high.png"
+    "imageHighSrc": "cards/dp5-045-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "20"
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4454",
-    "externalId": null,
+    "externalId": "dp5-44",
     "tcgdex_id": "dp5-44",
     "localId": "044",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "044/100",
+    "cardNumber": "44/100",
     "cardName": "Prinplup",
-    "fullDisplayName": "Prinplup 044/100 Majestic Dawn",
+    "fullDisplayName": "Prinplup 44/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1806,18 +2157,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-044-low.png",
-    "imageHighSrc": "cards/dp5-044-high.png"
+    "imageHighSrc": "cards/dp5-044-high.png",
+    "attacks": [
+      {
+        "name": "Ice Blade",
+        "damage": null
+      },
+      {
+        "name": "Wash Over",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4447",
-    "externalId": null,
+    "externalId": "dp5-43",
     "tcgdex_id": "dp5-43",
     "localId": "043",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "043/100",
+    "cardNumber": "43/100",
     "cardName": "Pachirisu",
-    "fullDisplayName": "Pachirisu 043/100 Majestic Dawn",
+    "fullDisplayName": "Pachirisu 43/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1839,18 +2200,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-043-low.png",
-    "imageHighSrc": "cards/dp5-043-high.png"
+    "imageHighSrc": "cards/dp5-043-high.png",
+    "attacks": [
+      {
+        "name": "Trans Tail",
+        "damage": null
+      },
+      {
+        "name": "Thundershock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4438",
-    "externalId": null,
+    "externalId": "dp5-42",
     "tcgdex_id": "dp5-42",
     "localId": "042",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "042/100",
+    "cardNumber": "42/100",
     "cardName": "Mothim",
-    "fullDisplayName": "Mothim 042/100 Majestic Dawn",
+    "fullDisplayName": "Mothim 42/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1872,18 +2243,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-042-low.png",
-    "imageHighSrc": "cards/dp5-042-high.png"
+    "imageHighSrc": "cards/dp5-042-high.png",
+    "attacks": [
+      {
+        "name": "Get Help",
+        "damage": "30×"
+      },
+      {
+        "name": "Quick Touch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4430",
-    "externalId": null,
+    "externalId": "dp5-41",
     "tcgdex_id": "dp5-41",
     "localId": "041",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "041/100",
+    "cardNumber": "41/100",
     "cardName": "Monferno",
-    "fullDisplayName": "Monferno 041/100 Majestic Dawn",
+    "fullDisplayName": "Monferno 41/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1905,18 +2286,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-041-low.png",
-    "imageHighSrc": "cards/dp5-041-high.png"
+    "imageHighSrc": "cards/dp5-041-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Mid-air Strike",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4421",
-    "externalId": null,
+    "externalId": "dp5-40",
     "tcgdex_id": "dp5-40",
     "localId": "040",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "040/100",
+    "cardNumber": "40/100",
     "cardName": "Manectric",
-    "fullDisplayName": "Manectric 040/100 Majestic Dawn",
+    "fullDisplayName": "Manectric 40/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1938,18 +2329,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-040-low.png",
-    "imageHighSrc": "cards/dp5-040-high.png"
+    "imageHighSrc": "cards/dp5-040-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": "30"
+      },
+      {
+        "name": "Volt Crush",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4412",
-    "externalId": null,
+    "externalId": "dp5-39",
     "tcgdex_id": "dp5-39",
     "localId": "039",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "039/100",
+    "cardNumber": "39/100",
     "cardName": "Lickitung",
-    "fullDisplayName": "Lickitung 039/100 Majestic Dawn",
+    "fullDisplayName": "Lickitung 39/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1971,18 +2372,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-039-low.png",
-    "imageHighSrc": "cards/dp5-039-high.png"
+    "imageHighSrc": "cards/dp5-039-high.png",
+    "attacks": [
+      {
+        "name": "Lap Up",
+        "damage": null
+      },
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4405",
-    "externalId": null,
+    "externalId": "dp5-38",
     "tcgdex_id": "dp5-38",
     "localId": "038",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "038/100",
+    "cardNumber": "38/100",
     "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 038/100 Majestic Dawn",
+    "fullDisplayName": "Kangaskhan 38/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2004,18 +2415,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-038-low.png",
-    "imageHighSrc": "cards/dp5-038-high.png"
+    "imageHighSrc": "cards/dp5-038-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Comet Punch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4397",
-    "externalId": null,
+    "externalId": "dp5-37",
     "tcgdex_id": "dp5-37",
     "localId": "037",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "037/100",
+    "cardNumber": "37/100",
     "cardName": "Grotle",
-    "fullDisplayName": "Grotle 037/100 Majestic Dawn",
+    "fullDisplayName": "Grotle 37/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2037,18 +2458,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-037-low.png",
-    "imageHighSrc": "cards/dp5-037-high.png"
+    "imageHighSrc": "cards/dp5-037-high.png",
+    "attacks": [
+      {
+        "name": "Planting",
+        "damage": "20"
+      },
+      {
+        "name": "Body Slam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4388",
-    "externalId": null,
+    "externalId": "dp5-36",
     "tcgdex_id": "dp5-36",
     "localId": "036",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "036/100",
+    "cardNumber": "36/100",
     "cardName": "Fearow",
-    "fullDisplayName": "Fearow 036/100 Majestic Dawn",
+    "fullDisplayName": "Fearow 36/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2070,18 +2501,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-036-low.png",
-    "imageHighSrc": "cards/dp5-036-high.png"
+    "imageHighSrc": "cards/dp5-036-high.png",
+    "attacks": [
+      {
+        "name": "Fury Attack",
+        "damage": "20×"
+      },
+      {
+        "name": "Drill Peck",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4377",
-    "externalId": null,
+    "externalId": "dp5-35",
     "tcgdex_id": "dp5-35",
     "localId": "035",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "035/100",
+    "cardNumber": "35/100",
     "cardName": "Ambipom",
-    "fullDisplayName": "Ambipom 035/100 Majestic Dawn",
+    "fullDisplayName": "Ambipom 35/100 Majestic Dawn",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2103,18 +2544,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-035-low.png",
-    "imageHighSrc": "cards/dp5-035-high.png"
+    "imageHighSrc": "cards/dp5-035-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": "20"
+      },
+      {
+        "name": "Hang High",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4370",
-    "externalId": null,
+    "externalId": "dp5-34",
     "tcgdex_id": "dp5-34",
     "localId": "034",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "034/100",
+    "cardNumber": "34/100",
     "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 034/100 Majestic Dawn",
+    "fullDisplayName": "Vaporeon 34/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2136,18 +2587,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-034-low.png",
-    "imageHighSrc": "cards/dp5-034-high.png"
+    "imageHighSrc": "cards/dp5-034-high.png",
+    "attacks": [
+      {
+        "name": "Cleanse Away",
+        "damage": "30"
+      },
+      {
+        "name": "Hyper Whirlpool",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4361",
-    "externalId": null,
+    "externalId": "dp5-33",
     "tcgdex_id": "dp5-33",
     "localId": "033",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "033/100",
+    "cardNumber": "33/100",
     "cardName": "Unown [P]",
-    "fullDisplayName": "Unown [P] 033/100 Majestic Dawn",
+    "fullDisplayName": "Unown [P] 33/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2169,18 +2630,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp5-033-low.png",
-    "imageHighSrc": "cards/dp5-033-high.png"
+    "imageHighSrc": "cards/dp5-033-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4352",
-    "externalId": null,
+    "externalId": "dp5-32",
     "tcgdex_id": "dp5-32",
     "localId": "032",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "032/100",
+    "cardNumber": "32/100",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon 032/100 Majestic Dawn",
+    "fullDisplayName": "Umbreon 32/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2202,18 +2669,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-032-low.png",
-    "imageHighSrc": "cards/dp5-032-high.png"
+    "imageHighSrc": "cards/dp5-032-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4343",
-    "externalId": null,
+    "externalId": "dp5-31",
     "tcgdex_id": "dp5-31",
     "localId": "031",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "031/100",
+    "cardNumber": "31/100",
     "cardName": "Toxicroak",
-    "fullDisplayName": "Toxicroak 031/100 Majestic Dawn",
+    "fullDisplayName": "Toxicroak 31/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2235,18 +2708,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-031-low.png",
-    "imageHighSrc": "cards/dp5-031-high.png"
+    "imageHighSrc": "cards/dp5-031-high.png",
+    "attacks": [
+      {
+        "name": "Paralyze Poison",
+        "damage": "20"
+      },
+      {
+        "name": "Slash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4335",
-    "externalId": null,
+    "externalId": "dp5-30",
     "tcgdex_id": "dp5-30",
     "localId": "030",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "030/100",
+    "cardNumber": "30/100",
     "cardName": "Torterra",
-    "fullDisplayName": "Torterra 030/100 Majestic Dawn",
+    "fullDisplayName": "Torterra 30/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2268,18 +2751,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-030-low.png",
-    "imageHighSrc": "cards/dp5-030-high.png"
+    "imageHighSrc": "cards/dp5-030-high.png",
+    "attacks": [
+      {
+        "name": "Earthquake",
+        "damage": "60"
+      },
+      {
+        "name": "Frenzy Plant",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4325",
-    "externalId": null,
+    "externalId": "dp5-29",
     "tcgdex_id": "dp5-29",
     "localId": "029",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "029/100",
+    "cardNumber": "29/100",
     "cardName": "Scizor",
-    "fullDisplayName": "Scizor 029/100 Majestic Dawn",
+    "fullDisplayName": "Scizor 29/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2301,18 +2794,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-029-low.png",
-    "imageHighSrc": "cards/dp5-029-high.png"
+    "imageHighSrc": "cards/dp5-029-high.png",
+    "attacks": [
+      {
+        "name": "Special Blow",
+        "damage": "30+"
+      },
+      {
+        "name": "X-Scissor",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4315",
-    "externalId": null,
+    "externalId": "dp5-28",
     "tcgdex_id": "dp5-28",
     "localId": "028",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "028/100",
+    "cardNumber": "28/100",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 028/100 Majestic Dawn",
+    "fullDisplayName": "Plusle 28/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2334,18 +2837,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-028-low.png",
-    "imageHighSrc": "cards/dp5-028-high.png"
+    "imageHighSrc": "cards/dp5-028-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "– Boost",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4306",
-    "externalId": null,
+    "externalId": "dp5-27",
     "tcgdex_id": "dp5-27",
     "localId": "027",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "027/100",
+    "cardNumber": "27/100",
     "cardName": "Phione",
-    "fullDisplayName": "Phione 027/100 Majestic Dawn",
+    "fullDisplayName": "Phione 27/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2367,18 +2880,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-027-low.png",
-    "imageHighSrc": "cards/dp5-027-high.png"
+    "imageHighSrc": "cards/dp5-027-high.png",
+    "attacks": [
+      {
+        "name": "Charm",
+        "damage": null
+      },
+      {
+        "name": "Whirlpool",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4296",
-    "externalId": null,
+    "externalId": "dp5-26",
     "tcgdex_id": "dp5-26",
     "localId": "026",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "026/100",
+    "cardNumber": "26/100",
     "cardName": "Omastar",
-    "fullDisplayName": "Omastar 026/100 Majestic Dawn",
+    "fullDisplayName": "Omastar 26/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2400,18 +2923,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-026-low.png",
-    "imageHighSrc": "cards/dp5-026-high.png"
+    "imageHighSrc": "cards/dp5-026-high.png",
+    "attacks": [
+      {
+        "name": "Send Back",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4287",
-    "externalId": null,
+    "externalId": "dp5-25",
     "tcgdex_id": "dp5-25",
     "localId": "025",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "025/100",
+    "cardNumber": "25/100",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 025/100 Majestic Dawn",
+    "fullDisplayName": "Minun 25/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2433,18 +2962,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-025-low.png",
-    "imageHighSrc": "cards/dp5-025-high.png"
+    "imageHighSrc": "cards/dp5-025-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "(+) Spark",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4278",
-    "externalId": null,
+    "externalId": "dp5-24",
     "tcgdex_id": "dp5-24",
     "localId": "024",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "024/100",
+    "cardNumber": "24/100",
     "cardName": "Leafeon",
-    "fullDisplayName": "Leafeon 024/100 Majestic Dawn",
+    "fullDisplayName": "Leafeon 24/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2466,18 +3005,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-024-low.png",
-    "imageHighSrc": "cards/dp5-024-high.png"
+    "imageHighSrc": "cards/dp5-024-high.png",
+    "attacks": [
+      {
+        "name": "Sprial Drain",
+        "damage": "40"
+      },
+      {
+        "name": "Leaf Blade",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4269",
-    "externalId": null,
+    "externalId": "dp5-23",
     "tcgdex_id": "dp5-23",
     "localId": "023",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "023/100",
+    "cardNumber": "23/100",
     "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 023/100 Majestic Dawn",
+    "fullDisplayName": "Jolteon 23/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2499,18 +3048,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-023-low.png",
-    "imageHighSrc": "cards/dp5-023-high.png"
+    "imageHighSrc": "cards/dp5-023-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Fang",
+        "damage": "20"
+      },
+      {
+        "name": "Lightning Strike",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4260",
-    "externalId": null,
+    "externalId": "dp5-22",
     "tcgdex_id": "dp5-22",
     "localId": "022",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "022/100",
+    "cardNumber": "22/100",
     "cardName": "Infernape",
-    "fullDisplayName": "Infernape 022/100 Majestic Dawn",
+    "fullDisplayName": "Infernape 22/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2532,18 +3091,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-022-low.png",
-    "imageHighSrc": "cards/dp5-022-high.png"
+    "imageHighSrc": "cards/dp5-022-high.png",
+    "attacks": [
+      {
+        "name": "Mach Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Mega Bravo",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "4251",
-    "externalId": null,
+    "externalId": "dp5-21",
     "tcgdex_id": "dp5-21",
     "localId": "021",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "021/100",
+    "cardNumber": "21/100",
     "cardName": "Hippowdon",
-    "fullDisplayName": "Hippowdon 021/100 Majestic Dawn",
+    "fullDisplayName": "Hippowdon 21/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2565,18 +3134,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-021-low.png",
-    "imageHighSrc": "cards/dp5-021-high.png"
+    "imageHighSrc": "cards/dp5-021-high.png",
+    "attacks": [
+      {
+        "name": "Vacuum Sand",
+        "damage": "20"
+      },
+      {
+        "name": "Sand Impact",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4242",
-    "externalId": null,
+    "externalId": "dp5-20",
     "tcgdex_id": "dp5-20",
     "localId": "020",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "020/100",
+    "cardNumber": "20/100",
     "cardName": "Glaceon",
-    "fullDisplayName": "Glaceon 020/100 Majestic Dawn",
+    "fullDisplayName": "Glaceon 20/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2598,18 +3177,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-020-low.png",
-    "imageHighSrc": "cards/dp5-020-high.png"
+    "imageHighSrc": "cards/dp5-020-high.png",
+    "attacks": [
+      {
+        "name": "Ice Shot",
+        "damage": "30"
+      },
+      {
+        "name": "Icy Wind",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4233",
-    "externalId": null,
+    "externalId": "dp5-19",
     "tcgdex_id": "dp5-19",
     "localId": "019",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "019/100",
+    "cardNumber": "19/100",
     "cardName": "Flareon",
-    "fullDisplayName": "Flareon 019/100 Majestic Dawn",
+    "fullDisplayName": "Flareon 19/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2631,18 +3220,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-019-low.png",
-    "imageHighSrc": "cards/dp5-019-high.png"
+    "imageHighSrc": "cards/dp5-019-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Kindle",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4224",
-    "externalId": null,
+    "externalId": "dp5-18",
     "tcgdex_id": "dp5-18",
     "localId": "018",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "018/100",
+    "cardNumber": "18/100",
     "cardName": "Espeon",
-    "fullDisplayName": "Espeon 018/100 Majestic Dawn",
+    "fullDisplayName": "Espeon 18/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2664,18 +3263,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-018-low.png",
-    "imageHighSrc": "cards/dp5-018-high.png"
+    "imageHighSrc": "cards/dp5-018-high.png",
+    "attacks": [
+      {
+        "name": "Morning Sun",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4215",
-    "externalId": null,
+    "externalId": "dp5-17",
     "tcgdex_id": "dp5-17",
     "localId": "017",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "017/100",
+    "cardNumber": "17/100",
     "cardName": "Empoleon",
-    "fullDisplayName": "Empoleon 017/100 Majestic Dawn",
+    "fullDisplayName": "Empoleon 17/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2697,18 +3302,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-017-low.png",
-    "imageHighSrc": "cards/dp5-017-high.png"
+    "imageHighSrc": "cards/dp5-017-high.png",
+    "attacks": [
+      {
+        "name": "Dual Splash",
+        "damage": null
+      },
+      {
+        "name": "Surf Together",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4207",
-    "externalId": null,
+    "externalId": "dp5-16",
     "tcgdex_id": "dp5-16",
     "localId": "016",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "016/100",
+    "cardNumber": "16/100",
     "cardName": "Bronzong",
-    "fullDisplayName": "Bronzong 016/100 Majestic Dawn",
+    "fullDisplayName": "Bronzong 16/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2730,18 +3345,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-016-low.png",
-    "imageHighSrc": "cards/dp5-016-high.png"
+    "imageHighSrc": "cards/dp5-016-high.png",
+    "attacks": [
+      {
+        "name": "Pain Amplifier",
+        "damage": null
+      },
+      {
+        "name": "Coating",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4199",
-    "externalId": null,
+    "externalId": "dp5-15",
     "tcgdex_id": "dp5-15",
     "localId": "015",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "015/100",
+    "cardNumber": "15/100",
     "cardName": "Aerodactyl",
-    "fullDisplayName": "Aerodactyl 015/100 Majestic Dawn",
+    "fullDisplayName": "Aerodactyl 15/100 Majestic Dawn",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2763,18 +3388,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-015-low.png",
-    "imageHighSrc": "cards/dp5-015-high.png"
+    "imageHighSrc": "cards/dp5-015-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4190",
-    "externalId": null,
+    "externalId": "dp5-14",
     "tcgdex_id": "dp5-14",
     "localId": "014",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "014/100",
+    "cardNumber": "14/100",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 014/100 Majestic Dawn",
+    "fullDisplayName": "Zapdos 14/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2796,18 +3427,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-014-low.png",
-    "imageHighSrc": "cards/dp5-014-high.png"
+    "imageHighSrc": "cards/dp5-014-high.png",
+    "attacks": [
+      {
+        "name": "Raging Thunder",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "4181",
-    "externalId": null,
+    "externalId": "dp5-13",
     "tcgdex_id": "dp5-13",
     "localId": "013",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "013/100",
+    "cardNumber": "13/100",
     "cardName": "Rotom",
-    "fullDisplayName": "Rotom 013/100 Majestic Dawn",
+    "fullDisplayName": "Rotom 13/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2829,18 +3466,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-013-low.png",
-    "imageHighSrc": "cards/dp5-013-high.png"
+    "imageHighSrc": "cards/dp5-013-high.png",
+    "attacks": [
+      {
+        "name": "Dual Trans",
+        "damage": null
+      },
+      {
+        "name": "Reflect Energy",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4172",
-    "externalId": null,
+    "externalId": "dp5-12",
     "tcgdex_id": "dp5-12",
     "localId": "012",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "012/100",
+    "cardNumber": "12/100",
     "cardName": "Phione",
-    "fullDisplayName": "Phione 012/100 Majestic Dawn",
+    "fullDisplayName": "Phione 12/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2862,18 +3509,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-012-low.png",
-    "imageHighSrc": "cards/dp5-012-high.png"
+    "imageHighSrc": "cards/dp5-012-high.png",
+    "attacks": [
+      {
+        "name": "Evolution Wish",
+        "damage": null
+      },
+      {
+        "name": "Water Pulse",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4164",
-    "externalId": null,
+    "externalId": "dp5-11",
     "tcgdex_id": "dp5-11",
     "localId": "011",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "011/100",
+    "cardNumber": "11/100",
     "cardName": "Palkia",
-    "fullDisplayName": "Palkia 011/100 Majestic Dawn",
+    "fullDisplayName": "Palkia 11/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2895,18 +3552,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-011-low.png",
-    "imageHighSrc": "cards/dp5-011-high.png"
+    "imageHighSrc": "cards/dp5-011-high.png",
+    "attacks": [
+      {
+        "name": "Zone Shift",
+        "damage": null
+      },
+      {
+        "name": "Pearl Blast",
+        "damage": "60"
+      }
+    ],
+    "rules": "Lustrous Orb: If an Active Pokémon has Weakness to Water type, Palkia's attacks do 20 more damage to that Pokémon (before applying Weakness and Resistance)."
   },
   {
     "masterCardId": "4155",
-    "externalId": null,
+    "externalId": "dp5-10",
     "tcgdex_id": "dp5-10",
     "localId": "010",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "010/100",
+    "cardNumber": "10/100",
     "cardName": "Moltres",
-    "fullDisplayName": "Moltres 010/100 Majestic Dawn",
+    "fullDisplayName": "Moltres 10/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2928,18 +3596,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-010-low.png",
-    "imageHighSrc": "cards/dp5-010-high.png"
+    "imageHighSrc": "cards/dp5-010-high.png",
+    "attacks": [
+      {
+        "name": "Scorching Wing",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4146",
-    "externalId": null,
+    "externalId": "dp5-9",
     "tcgdex_id": "dp5-9",
     "localId": "009",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "009/100",
+    "cardNumber": "9/100",
     "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 009/100 Majestic Dawn",
+    "fullDisplayName": "Mewtwo 9/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2961,18 +3635,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-009-low.png",
-    "imageHighSrc": "cards/dp5-009-high.png"
+    "imageHighSrc": "cards/dp5-009-high.png",
+    "attacks": [
+      {
+        "name": "Energy Absorption",
+        "damage": null
+      },
+      {
+        "name": "Recover",
+        "damage": null
+      },
+      {
+        "name": "Psyburn",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4137",
-    "externalId": null,
+    "externalId": "dp5-8",
     "tcgdex_id": "dp5-8",
     "localId": "008",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "008/100",
+    "cardNumber": "8/100",
     "cardName": "Manaphy",
-    "fullDisplayName": "Manaphy 008/100 Majestic Dawn",
+    "fullDisplayName": "Manaphy 8/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2994,18 +3682,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-008-low.png",
-    "imageHighSrc": "cards/dp5-008-high.png"
+    "imageHighSrc": "cards/dp5-008-high.png",
+    "attacks": [
+      {
+        "name": "Chase Up",
+        "damage": null
+      },
+      {
+        "name": "Fountain",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4128",
-    "externalId": null,
+    "externalId": "dp5-7",
     "tcgdex_id": "dp5-7",
     "localId": "007",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "007/100",
+    "cardNumber": "7/100",
     "cardName": "Leafeon",
-    "fullDisplayName": "Leafeon 007/100 Majestic Dawn",
+    "fullDisplayName": "Leafeon 7/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3027,18 +3725,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-007-low.png",
-    "imageHighSrc": "cards/dp5-007-high.png"
+    "imageHighSrc": "cards/dp5-007-high.png",
+    "attacks": [
+      {
+        "name": "Bind Down",
+        "damage": "30"
+      },
+      {
+        "name": "Leaf Guard",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4118",
-    "externalId": null,
+    "externalId": "dp5-6",
     "tcgdex_id": "dp5-6",
     "localId": "006",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "006/100",
+    "cardNumber": "6/100",
     "cardName": "Kabutops",
-    "fullDisplayName": "Kabutops 006/100 Majestic Dawn",
+    "fullDisplayName": "Kabutops 6/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3060,18 +3768,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-006-low.png",
-    "imageHighSrc": "cards/dp5-006-high.png"
+    "imageHighSrc": "cards/dp5-006-high.png",
+    "attacks": [
+      {
+        "name": "Chop Up",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4109",
-    "externalId": null,
+    "externalId": "dp5-5",
     "tcgdex_id": "dp5-5",
     "localId": "005",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "005/100",
+    "cardNumber": "5/100",
     "cardName": "Glaceon",
-    "fullDisplayName": "Glaceon 005/100 Majestic Dawn",
+    "fullDisplayName": "Glaceon 5/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3093,18 +3807,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-005-low.png",
-    "imageHighSrc": "cards/dp5-005-high.png"
+    "imageHighSrc": "cards/dp5-005-high.png",
+    "attacks": [
+      {
+        "name": "Snow Cloak",
+        "damage": "30"
+      },
+      {
+        "name": "Speed Slide",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4099",
-    "externalId": null,
+    "externalId": "dp5-4",
     "tcgdex_id": "dp5-4",
     "localId": "004",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "004/100",
+    "cardNumber": "4/100",
     "cardName": "Dialga",
-    "fullDisplayName": "Dialga 004/100 Majestic Dawn",
+    "fullDisplayName": "Dialga 4/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3126,18 +3850,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-004-low.png",
-    "imageHighSrc": "cards/dp5-004-high.png"
+    "imageHighSrc": "cards/dp5-004-high.png",
+    "attacks": [
+      {
+        "name": "Time Shift",
+        "damage": null
+      },
+      {
+        "name": "Diamond Blast",
+        "damage": "60+"
+      }
+    ],
+    "rules": "Adamant Orb: If an Active Pokémon has Weakness to Metal type, Dialga's attacks do 20 more damage to that Pokémon (before applying Weakness and Resistance)."
   },
   {
     "masterCardId": "4090",
-    "externalId": null,
+    "externalId": "dp5-3",
     "tcgdex_id": "dp5-3",
     "localId": "003",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "003/100",
+    "cardNumber": "3/100",
     "cardName": "Darkrai",
-    "fullDisplayName": "Darkrai 003/100 Majestic Dawn",
+    "fullDisplayName": "Darkrai 3/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3159,18 +3894,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-003-low.png",
-    "imageHighSrc": "cards/dp5-003-high.png"
+    "imageHighSrc": "cards/dp5-003-high.png",
+    "attacks": [
+      {
+        "name": "Dark Slumber",
+        "damage": "10"
+      },
+      {
+        "name": "Dark Resolve",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4076",
-    "externalId": null,
+    "externalId": "dp5-2",
     "tcgdex_id": "dp5-2",
     "localId": "002",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "002/100",
+    "cardNumber": "2/100",
     "cardName": "Cresselia",
-    "fullDisplayName": "Cresselia 002/100 Majestic Dawn",
+    "fullDisplayName": "Cresselia 2/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3192,18 +3937,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-002-low.png",
-    "imageHighSrc": "cards/dp5-002-high.png"
+    "imageHighSrc": "cards/dp5-002-high.png",
+    "attacks": [
+      {
+        "name": "Future Sight",
+        "damage": null
+      },
+      {
+        "name": "Healing Light",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4068",
-    "externalId": null,
+    "externalId": "dp5-1",
     "tcgdex_id": "dp5-1",
     "localId": "001",
     "setCode": "dp5",
     "setTcgdexId": "dp5",
-    "cardNumber": "001/100",
+    "cardNumber": "1/100",
     "cardName": "Articuno",
-    "fullDisplayName": "Articuno 001/100 Majestic Dawn",
+    "fullDisplayName": "Articuno 1/100 Majestic Dawn",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3225,6 +3980,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp5-001-low.png",
-    "imageHighSrc": "cards/dp5-001-high.png"
+    "imageHighSrc": "cards/dp5-001-high.png",
+    "attacks": [
+      {
+        "name": "Blizzard",
+        "damage": "60"
+      }
+    ]
   }
 ]

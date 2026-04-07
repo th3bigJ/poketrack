@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "12060",
-    "externalId": null,
+    "externalId": "sm7-183",
     "tcgdex_id": "sm7-183",
     "localId": "183",
     "setCode": "sm7",
@@ -26,11 +26,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-183-low.png",
-    "imageHighSrc": "cards/sm7-183-high.png"
+    "imageHighSrc": "cards/sm7-183-high.png",
+    "rules": "This card provides Colorless Energy. While in play, this card provides every type of Energy but provides only 1 Energy at a time. When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon."
   },
   {
     "masterCardId": "12057",
-    "externalId": null,
+    "externalId": "sm7-182",
     "tcgdex_id": "sm7-182",
     "localId": "182",
     "setCode": "sm7",
@@ -55,11 +56,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-182-low.png",
-    "imageHighSrc": "cards/sm7-182-high.png"
+    "imageHighSrc": "cards/sm7-182-high.png",
+    "rules": "Choose an Energy card attached to 1 of your Pokémon. Search your deck for a basic Energy card and switch it with that card. Shuffle the first Energy card into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "12053",
-    "externalId": null,
+    "externalId": "sm7-181",
     "tcgdex_id": "sm7-181",
     "localId": "181",
     "setCode": "sm7",
@@ -84,11 +86,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-181-low.png",
-    "imageHighSrc": "cards/sm7-181-high.png"
+    "imageHighSrc": "cards/sm7-181-high.png",
+    "rules": "Look at the top 3 cards of your deck. You may reveal a Pokémon or Energy card you find there and put it into your hand. Put the other cards back in any order.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "12049",
-    "externalId": null,
+    "externalId": "sm7-180",
     "tcgdex_id": "sm7-180",
     "localId": "180",
     "setCode": "sm7",
@@ -113,11 +116,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-180-low.png",
-    "imageHighSrc": "cards/sm7-180-high.png"
+    "imageHighSrc": "cards/sm7-180-high.png",
+    "rules": "Flip a coin. If heads, heal 60 damage and remove all Special Conditions from 1 of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "12045",
-    "externalId": null,
+    "externalId": "sm7-179",
     "tcgdex_id": "sm7-179",
     "localId": "179",
     "setCode": "sm7",
@@ -142,11 +146,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-179-low.png",
-    "imageHighSrc": "cards/sm7-179-high.png"
+    "imageHighSrc": "cards/sm7-179-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to has 30 HP or less remaining and has any damage counters on it, its attacks do 60 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "12041",
-    "externalId": null,
+    "externalId": "sm7-178",
     "tcgdex_id": "sm7-178",
     "localId": "178",
     "setCode": "sm7",
@@ -171,18 +176,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-178-low.png",
-    "imageHighSrc": "cards/sm7-178-high.png"
+    "imageHighSrc": "cards/sm7-178-high.png",
+    "rules": "Look at the top 2 cards of your deck and put 1 of them into your hand. Discard the other card.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "12038",
-    "externalId": null,
+    "externalId": "sm7-177",
     "tcgdex_id": "sm7-177",
     "localId": "177",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "177a/168",
+    "cardNumber": "177/168",
     "cardName": "Rayquaza-GX",
-    "fullDisplayName": "Rayquaza-GX 177a/168 Celestial Storm",
+    "fullDisplayName": "Rayquaza-GX 177/168 Celestial Storm",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -205,11 +211,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-177a-low.png",
-    "imageHighSrc": "cards/sm7-177a-high.png"
+    "imageHighSrc": "cards/sm7-177a-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Break",
+        "damage": "30×"
+      },
+      {
+        "name": "Tempest-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12034",
-    "externalId": null,
+    "externalId": "sm7-177",
     "tcgdex_id": "sm7-177",
     "localId": "177",
     "setCode": "sm7",
@@ -239,11 +256,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-177-low.png",
-    "imageHighSrc": "cards/sm7-177-high.png"
+    "imageHighSrc": "cards/sm7-177-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Break",
+        "damage": "30×"
+      },
+      {
+        "name": "Tempest-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12030",
-    "externalId": null,
+    "externalId": "sm7-176",
     "tcgdex_id": "sm7-176",
     "localId": "176",
     "setCode": "sm7",
@@ -274,11 +302,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-176-low.png",
-    "imageHighSrc": "cards/sm7-176-high.png"
+    "imageHighSrc": "cards/sm7-176-high.png",
+    "attacks": [
+      {
+        "name": "Gigaton Stomp",
+        "damage": "120"
+      },
+      {
+        "name": "Assembly-GX",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12026",
-    "externalId": null,
+    "externalId": "sm7-175",
     "tcgdex_id": "sm7-175",
     "localId": "175",
     "setCode": "sm7",
@@ -308,11 +347,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-175-low.png",
-    "imageHighSrc": "cards/sm7-175-high.png"
+    "imageHighSrc": "cards/sm7-175-high.png",
+    "attacks": [
+      {
+        "name": "Steel Wing",
+        "damage": "80"
+      },
+      {
+        "name": "Cross-Cut-GX",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12022",
-    "externalId": null,
+    "externalId": "sm7-174",
     "tcgdex_id": "sm7-174",
     "localId": "174",
     "setCode": "sm7",
@@ -342,11 +392,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-174-low.png",
-    "imageHighSrc": "cards/sm7-174-high.png"
+    "imageHighSrc": "cards/sm7-174-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Chant",
+        "damage": "30+"
+      },
+      {
+        "name": "Tomb Hunt-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12019",
-    "externalId": null,
+    "externalId": "sm7-173",
     "tcgdex_id": "sm7-173",
     "localId": "173",
     "setCode": "sm7",
@@ -376,11 +437,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-173-low.png",
-    "imageHighSrc": "cards/sm7-173-high.png"
+    "imageHighSrc": "cards/sm7-173-high.png",
+    "attacks": [
+      {
+        "name": "Breakdown",
+        "damage": null
+      },
+      {
+        "name": "Life Trick-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12015",
-    "externalId": null,
+    "externalId": "sm7-172",
     "tcgdex_id": "sm7-172",
     "localId": "172",
     "setCode": "sm7",
@@ -410,11 +482,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-172-low.png",
-    "imageHighSrc": "cards/sm7-172-high.png"
+    "imageHighSrc": "cards/sm7-172-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "50"
+      },
+      {
+        "name": "Crush and Burn-GX",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12011",
-    "externalId": null,
+    "externalId": "sm7-171",
     "tcgdex_id": "sm7-171",
     "localId": "171",
     "setCode": "sm7",
@@ -444,11 +527,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-171-low.png",
-    "imageHighSrc": "cards/sm7-171-high.png"
+    "imageHighSrc": "cards/sm7-171-high.png",
+    "attacks": [
+      {
+        "name": "Ice Wing",
+        "damage": "130"
+      },
+      {
+        "name": "Cold Crush-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12006",
-    "externalId": null,
+    "externalId": "sm7-170",
     "tcgdex_id": "sm7-170",
     "localId": "170",
     "setCode": "sm7",
@@ -478,11 +572,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-170-low.png",
-    "imageHighSrc": "cards/sm7-170-high.png"
+    "imageHighSrc": "cards/sm7-170-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "60"
+      },
+      {
+        "name": "Explosive Kick",
+        "damage": "210"
+      },
+      {
+        "name": "Blaze Out-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12002",
-    "externalId": null,
+    "externalId": "sm7-169",
     "tcgdex_id": "sm7-169",
     "localId": "169",
     "setCode": "sm7",
@@ -512,11 +621,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-169-low.png",
-    "imageHighSrc": "cards/sm7-169-high.png"
+    "imageHighSrc": "cards/sm7-169-high.png",
+    "attacks": [
+      {
+        "name": "Perplex",
+        "damage": "40"
+      },
+      {
+        "name": "Extrasensory",
+        "damage": "90+"
+      },
+      {
+        "name": "Den of Iniquity-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11999",
-    "externalId": null,
+    "externalId": "sm7-168",
     "tcgdex_id": "sm7-168",
     "localId": "168",
     "setCode": "sm7",
@@ -541,11 +665,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-168-low.png",
-    "imageHighSrc": "cards/sm7-168-high.png"
+    "imageHighSrc": "cards/sm7-168-high.png",
+    "rules": "Look at the bottom 4 cards of your deck and put 2 of them into your hand. Put the other cards back on the bottom of your deck in any order.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11995",
-    "externalId": null,
+    "externalId": "sm7-167",
     "tcgdex_id": "sm7-167",
     "localId": "167",
     "setCode": "sm7",
@@ -570,11 +695,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-167-low.png",
-    "imageHighSrc": "cards/sm7-167-high.png"
+    "imageHighSrc": "cards/sm7-167-high.png",
+    "rules": "Draw 3 cards. Then, discard a card from your hand. If you have no cards in your deck, you can't play this card.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11991",
-    "externalId": null,
+    "externalId": "sm7-166",
     "tcgdex_id": "sm7-166",
     "localId": "166",
     "setCode": "sm7",
@@ -599,11 +725,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-166-low.png",
-    "imageHighSrc": "cards/sm7-166-high.png"
+    "imageHighSrc": "cards/sm7-166-high.png",
+    "rules": "Choose 1:\n• Shuffle your hand into your deck then draw 5 cards.\n• Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11987",
-    "externalId": null,
+    "externalId": "sm7-165",
     "tcgdex_id": "sm7-165",
     "localId": "165",
     "setCode": "sm7",
@@ -628,11 +755,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-165-low.png",
-    "imageHighSrc": "cards/sm7-165-high.png"
+    "imageHighSrc": "cards/sm7-165-high.png",
+    "rules": "Search your deck for up to 3 cards and put them into your hand. Then, shuffle your deck. Your turn ends.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11983",
-    "externalId": null,
+    "externalId": "sm7-164",
     "tcgdex_id": "sm7-164",
     "localId": "164",
     "setCode": "sm7",
@@ -657,11 +785,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-164-low.png",
-    "imageHighSrc": "cards/sm7-164-high.png"
+    "imageHighSrc": "cards/sm7-164-high.png",
+    "rules": "Search your deck for up to 2 ◇ (Prism Star) cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11979",
-    "externalId": null,
+    "externalId": "sm7-163",
     "tcgdex_id": "sm7-163",
     "localId": "163",
     "setCode": "sm7",
@@ -686,11 +815,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-163-low.png",
-    "imageHighSrc": "cards/sm7-163-high.png"
+    "imageHighSrc": "cards/sm7-163-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw a card for each card in your opponent's hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11976",
-    "externalId": null,
+    "externalId": "sm7-162",
     "tcgdex_id": "sm7-162",
     "localId": "162",
     "setCode": "sm7",
@@ -715,11 +845,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-162-low.png",
-    "imageHighSrc": "cards/sm7-162-high.png"
+    "imageHighSrc": "cards/sm7-162-high.png",
+    "rules": "Shuffle a card from your hand into your deck. If you do, draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11971",
-    "externalId": null,
+    "externalId": "sm7-161",
     "tcgdex_id": "sm7-161",
     "localId": "161",
     "setCode": "sm7",
@@ -744,11 +875,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-161-low.png",
-    "imageHighSrc": "cards/sm7-161-high.png"
+    "imageHighSrc": "cards/sm7-161-high.png",
+    "rules": "Search your deck for up to 2 Item cards that have the word \"Ball\" in their name, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11967",
-    "externalId": null,
+    "externalId": "sm7-160",
     "tcgdex_id": "sm7-160",
     "localId": "160",
     "setCode": "sm7",
@@ -778,11 +910,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-160-low.png",
-    "imageHighSrc": "cards/sm7-160-high.png"
+    "imageHighSrc": "cards/sm7-160-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Break",
+        "damage": "30×"
+      },
+      {
+        "name": "Tempest-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11964",
-    "externalId": null,
+    "externalId": "sm7-159",
     "tcgdex_id": "sm7-159",
     "localId": "159",
     "setCode": "sm7",
@@ -813,11 +956,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-159-low.png",
-    "imageHighSrc": "cards/sm7-159-high.png"
+    "imageHighSrc": "cards/sm7-159-high.png",
+    "attacks": [
+      {
+        "name": "Gigaton Stomp",
+        "damage": "120"
+      },
+      {
+        "name": "Assembly-GX",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11960",
-    "externalId": null,
+    "externalId": "sm7-158",
     "tcgdex_id": "sm7-158",
     "localId": "158",
     "setCode": "sm7",
@@ -847,11 +1001,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-158-low.png",
-    "imageHighSrc": "cards/sm7-158-high.png"
+    "imageHighSrc": "cards/sm7-158-high.png",
+    "attacks": [
+      {
+        "name": "Steel Wing",
+        "damage": "80"
+      },
+      {
+        "name": "Cross-Cut-GX",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11956",
-    "externalId": null,
+    "externalId": "sm7-157",
     "tcgdex_id": "sm7-157",
     "localId": "157",
     "setCode": "sm7",
@@ -881,11 +1046,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-157-low.png",
-    "imageHighSrc": "cards/sm7-157-high.png"
+    "imageHighSrc": "cards/sm7-157-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Chant",
+        "damage": "30+"
+      },
+      {
+        "name": "Tomb Hunt-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11952",
-    "externalId": null,
+    "externalId": "sm7-156",
     "tcgdex_id": "sm7-156",
     "localId": "156",
     "setCode": "sm7",
@@ -915,11 +1091,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-156-low.png",
-    "imageHighSrc": "cards/sm7-156-high.png"
+    "imageHighSrc": "cards/sm7-156-high.png",
+    "attacks": [
+      {
+        "name": "Breakdown",
+        "damage": null
+      },
+      {
+        "name": "Life Trick-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11948",
-    "externalId": null,
+    "externalId": "sm7-155",
     "tcgdex_id": "sm7-155",
     "localId": "155",
     "setCode": "sm7",
@@ -949,11 +1136,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-155-low.png",
-    "imageHighSrc": "cards/sm7-155-high.png"
+    "imageHighSrc": "cards/sm7-155-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "50"
+      },
+      {
+        "name": "Crush and Burn-GX",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11944",
-    "externalId": null,
+    "externalId": "sm7-154",
     "tcgdex_id": "sm7-154",
     "localId": "154",
     "setCode": "sm7",
@@ -983,11 +1181,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-154-low.png",
-    "imageHighSrc": "cards/sm7-154-high.png"
+    "imageHighSrc": "cards/sm7-154-high.png",
+    "attacks": [
+      {
+        "name": "Ice Wing",
+        "damage": "130"
+      },
+      {
+        "name": "Cold Crush-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11940",
-    "externalId": null,
+    "externalId": "sm7-153",
     "tcgdex_id": "sm7-153",
     "localId": "153",
     "setCode": "sm7",
@@ -1017,11 +1226,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-153-low.png",
-    "imageHighSrc": "cards/sm7-153-high.png"
+    "imageHighSrc": "cards/sm7-153-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "60"
+      },
+      {
+        "name": "Explosive Kick",
+        "damage": "210"
+      },
+      {
+        "name": "Blaze Out-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11935",
-    "externalId": null,
+    "externalId": "sm7-152",
     "tcgdex_id": "sm7-152",
     "localId": "152",
     "setCode": "sm7",
@@ -1051,11 +1275,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-152-low.png",
-    "imageHighSrc": "cards/sm7-152-high.png"
+    "imageHighSrc": "cards/sm7-152-high.png",
+    "attacks": [
+      {
+        "name": "Perplex",
+        "damage": "40"
+      },
+      {
+        "name": "Extrasensory",
+        "damage": "90+"
+      },
+      {
+        "name": "Den of Iniquity-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11931",
-    "externalId": null,
+    "externalId": "sm7-151",
     "tcgdex_id": "sm7-151",
     "localId": "151",
     "setCode": "sm7",
@@ -1080,11 +1319,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-151-low.png",
-    "imageHighSrc": "cards/sm7-151-high.png"
+    "imageHighSrc": "cards/sm7-151-high.png",
+    "rules": "This card provides Colorless Energy. While in play, this card provides every type of Energy but provides only 1 Energy at a time. When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon."
   },
   {
     "masterCardId": "11927",
-    "externalId": null,
+    "externalId": "sm7-150",
     "tcgdex_id": "sm7-150",
     "localId": "150",
     "setCode": "sm7",
@@ -1109,11 +1349,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-150-low.png",
-    "imageHighSrc": "cards/sm7-150-high.png"
+    "imageHighSrc": "cards/sm7-150-high.png",
+    "rules": "Look at the bottom 4 cards of your deck and put 2 of them into your hand. Put the other cards back on the bottom of your deck in any order.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11922",
-    "externalId": null,
+    "externalId": "sm7-149",
     "tcgdex_id": "sm7-149",
     "localId": "149",
     "setCode": "sm7",
@@ -1138,18 +1379,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-149-low.png",
-    "imageHighSrc": "cards/sm7-149-high.png"
+    "imageHighSrc": "cards/sm7-149-high.png",
+    "rules": "Draw 3 cards. Then, discard a card from your hand. If you have no cards in your deck, you can't play this card.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11917",
-    "externalId": null,
+    "externalId": "sm7-148",
     "tcgdex_id": "sm7-148",
     "localId": "148",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "148a/168",
+    "cardNumber": "148/168",
     "cardName": "Tate & Liza",
-    "fullDisplayName": "Tate & Liza 148a/168 Celestial Storm",
+    "fullDisplayName": "Tate & Liza 148/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1167,11 +1409,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-148a-low.png",
-    "imageHighSrc": "cards/sm7-148a-high.png"
+    "imageHighSrc": "cards/sm7-148a-high.png",
+    "rules": "Choose 1:\n• Shuffle your hand into your deck then draw 5 cards.\n• Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11913",
-    "externalId": null,
+    "externalId": "sm7-148",
     "tcgdex_id": "sm7-148",
     "localId": "148",
     "setCode": "sm7",
@@ -1196,11 +1439,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-148-low.png",
-    "imageHighSrc": "cards/sm7-148-high.png"
+    "imageHighSrc": "cards/sm7-148-high.png",
+    "rules": "Choose 1:\n• Shuffle your hand into your deck then draw 5 cards.\n• Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11908",
-    "externalId": null,
+    "externalId": "sm7-147",
     "tcgdex_id": "sm7-147",
     "localId": "147",
     "setCode": "sm7",
@@ -1225,11 +1469,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-147-low.png",
-    "imageHighSrc": "cards/sm7-147-high.png"
+    "imageHighSrc": "cards/sm7-147-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11904",
-    "externalId": null,
+    "externalId": "sm7-146",
     "tcgdex_id": "sm7-146",
     "localId": "146",
     "setCode": "sm7",
@@ -1254,11 +1499,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-146-low.png",
-    "imageHighSrc": "cards/sm7-146-high.png"
+    "imageHighSrc": "cards/sm7-146-high.png",
+    "rules": "Flip a coin. If heads, put 1 of your Pokémon and all cards attached to it into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11900",
-    "externalId": null,
+    "externalId": "sm7-145",
     "tcgdex_id": "sm7-145",
     "localId": "145",
     "setCode": "sm7",
@@ -1283,11 +1529,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-145-low.png",
-    "imageHighSrc": "cards/sm7-145-high.png"
+    "imageHighSrc": "cards/sm7-145-high.png",
+    "rules": "Search your deck for up to 3 cards and put them into your hand. Then, shuffle your deck. Your turn ends.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11895",
-    "externalId": null,
+    "externalId": "sm7-144",
     "tcgdex_id": "sm7-144",
     "localId": "144",
     "setCode": "sm7",
@@ -1312,11 +1559,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-144-low.png",
-    "imageHighSrc": "cards/sm7-144-high.png"
+    "imageHighSrc": "cards/sm7-144-high.png",
+    "rules": "Prevent all effects of the opponent's attacks, including damage, done to Benched Pokémon (both yours and your opponent's).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "11890",
-    "externalId": null,
+    "externalId": "sm7-143",
     "tcgdex_id": "sm7-143",
     "localId": "143",
     "setCode": "sm7",
@@ -1341,11 +1589,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-143-low.png",
-    "imageHighSrc": "cards/sm7-143-high.png"
+    "imageHighSrc": "cards/sm7-143-high.png",
+    "rules": "Between turns, put 1 damage counter on each Pokémon-GX and Pokémon-EX (both yours and your opponent's).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "11885",
-    "externalId": null,
+    "externalId": "sm7-142",
     "tcgdex_id": "sm7-142",
     "localId": "142",
     "setCode": "sm7",
@@ -1370,11 +1619,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-142-low.png",
-    "imageHighSrc": "cards/sm7-142-high.png"
+    "imageHighSrc": "cards/sm7-142-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card onto the Basic Pokémon to evolve it. You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11880",
-    "externalId": null,
+    "externalId": "sm7-141",
     "tcgdex_id": "sm7-141",
     "localId": "141",
     "setCode": "sm7",
@@ -1399,11 +1649,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-141-low.png",
-    "imageHighSrc": "cards/sm7-141-high.png"
+    "imageHighSrc": "cards/sm7-141-high.png",
+    "rules": "Choose an Energy card attached to 1 of your Pokémon. Search your deck for a basic Energy card and switch it with that card. Shuffle the first Energy card into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11875",
-    "externalId": null,
+    "externalId": "sm7-140",
     "tcgdex_id": "sm7-140",
     "localId": "140",
     "setCode": "sm7",
@@ -1428,11 +1679,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-140-low.png",
-    "imageHighSrc": "cards/sm7-140-high.png"
+    "imageHighSrc": "cards/sm7-140-high.png",
+    "rules": "Look at the top 3 cards of your deck. You may reveal a Pokémon or Energy card you find there and put it into your hand. Put the other cards back in any order.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11870",
-    "externalId": null,
+    "externalId": "sm7-139",
     "tcgdex_id": "sm7-139",
     "localId": "139",
     "setCode": "sm7",
@@ -1457,11 +1709,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-139-low.png",
-    "imageHighSrc": "cards/sm7-139-high.png"
+    "imageHighSrc": "cards/sm7-139-high.png",
+    "rules": "Attach a basic Energy card from your hand to one of your Stage 2 Grass, Fire, or Water Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11865",
-    "externalId": null,
+    "externalId": "sm7-138",
     "tcgdex_id": "sm7-138",
     "localId": "138",
     "setCode": "sm7",
@@ -1486,11 +1739,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-138-low.png",
-    "imageHighSrc": "cards/sm7-138-high.png"
+    "imageHighSrc": "cards/sm7-138-high.png",
+    "rules": "Flip 3 coins. For each heads, put an Evolution Pokémon from your discard pile into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11860",
-    "externalId": null,
+    "externalId": "sm7-137",
     "tcgdex_id": "sm7-137",
     "localId": "137",
     "setCode": "sm7",
@@ -1515,11 +1769,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-137-low.png",
-    "imageHighSrc": "cards/sm7-137-high.png"
+    "imageHighSrc": "cards/sm7-137-high.png",
+    "rules": "Search your deck for up to 2 ◇ (Prism Star) cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11855",
-    "externalId": null,
+    "externalId": "sm7-136",
     "tcgdex_id": "sm7-136",
     "localId": "136",
     "setCode": "sm7",
@@ -1544,11 +1799,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-136-low.png",
-    "imageHighSrc": "cards/sm7-136-high.png"
+    "imageHighSrc": "cards/sm7-136-high.png",
+    "rules": "Flip a coin. If heads, heal 60 damage and remove all Special Conditions from 1 of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11850",
-    "externalId": null,
+    "externalId": "sm7-135",
     "tcgdex_id": "sm7-135",
     "localId": "135",
     "setCode": "sm7",
@@ -1573,11 +1829,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-135-low.png",
-    "imageHighSrc": "cards/sm7-135-high.png"
+    "imageHighSrc": "cards/sm7-135-high.png",
+    "rules": "Heal 120 damage from 1 of your Pokémon that has 30 HP or less remaining.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11845",
-    "externalId": null,
+    "externalId": "sm7-134",
     "tcgdex_id": "sm7-134",
     "localId": "134",
     "setCode": "sm7",
@@ -1602,11 +1859,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-134-low.png",
-    "imageHighSrc": "cards/sm7-134-high.png"
+    "imageHighSrc": "cards/sm7-134-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to has 30 HP or less remaining and has any damage counters on it, its attacks do 60 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11840",
-    "externalId": null,
+    "externalId": "sm7-133",
     "tcgdex_id": "sm7-133",
     "localId": "133",
     "setCode": "sm7",
@@ -1631,11 +1889,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-133-low.png",
-    "imageHighSrc": "cards/sm7-133-high.png"
+    "imageHighSrc": "cards/sm7-133-high.png",
+    "rules": "Look at the top 5 cards of either player's deck and choose 1 of them. That player shuffles the other cards back into their deck. Then, put the card you chose on top of that deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11835",
-    "externalId": null,
+    "externalId": "sm7-132",
     "tcgdex_id": "sm7-132",
     "localId": "132",
     "setCode": "sm7",
@@ -1660,11 +1919,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-132-low.png",
-    "imageHighSrc": "cards/sm7-132-high.png"
+    "imageHighSrc": "cards/sm7-132-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11830",
-    "externalId": null,
+    "externalId": "sm7-131",
     "tcgdex_id": "sm7-131",
     "localId": "131",
     "setCode": "sm7",
@@ -1689,11 +1949,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-131-low.png",
-    "imageHighSrc": "cards/sm7-131-high.png"
+    "imageHighSrc": "cards/sm7-131-high.png",
+    "rules": "Search your deck for a Pokémon with the same type as 1 of your opponent's Pokémon in play, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11825",
-    "externalId": null,
+    "externalId": "sm7-130",
     "tcgdex_id": "sm7-130",
     "localId": "130",
     "setCode": "sm7",
@@ -1718,11 +1979,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-130-low.png",
-    "imageHighSrc": "cards/sm7-130-high.png"
+    "imageHighSrc": "cards/sm7-130-high.png",
+    "rules": "Put 4 basic Energy cards from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11821",
-    "externalId": null,
+    "externalId": "sm7-129",
     "tcgdex_id": "sm7-129",
     "localId": "129",
     "setCode": "sm7",
@@ -1747,11 +2009,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-129-low.png",
-    "imageHighSrc": "cards/sm7-129-high.png"
+    "imageHighSrc": "cards/sm7-129-high.png",
+    "rules": "Move a basic Energy from 1 of your Pokémon to another of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11816",
-    "externalId": null,
+    "externalId": "sm7-128",
     "tcgdex_id": "sm7-128",
     "localId": "128",
     "setCode": "sm7",
@@ -1776,11 +2039,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-128-low.png",
-    "imageHighSrc": "cards/sm7-128-high.png"
+    "imageHighSrc": "cards/sm7-128-high.png",
+    "rules": "Choose 1:\n• Put a basic Energy card from your discard pile into your hand.\n• Shuffle 3 basic Energy cards from your discard pile into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11812",
-    "externalId": null,
+    "externalId": "sm7-127",
     "tcgdex_id": "sm7-127",
     "localId": "127",
     "setCode": "sm7",
@@ -1805,11 +2069,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-127-low.png",
-    "imageHighSrc": "cards/sm7-127-high.png"
+    "imageHighSrc": "cards/sm7-127-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw a card for each card in your opponent's hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11807",
-    "externalId": null,
+    "externalId": "sm7-126",
     "tcgdex_id": "sm7-126",
     "localId": "126",
     "setCode": "sm7",
@@ -1834,11 +2099,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-126-low.png",
-    "imageHighSrc": "cards/sm7-126-high.png"
+    "imageHighSrc": "cards/sm7-126-high.png",
+    "rules": "Shuffle a card from your hand into your deck. If you do, draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11802",
-    "externalId": null,
+    "externalId": "sm7-125",
     "tcgdex_id": "sm7-125",
     "localId": "125",
     "setCode": "sm7",
@@ -1863,11 +2129,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-125-low.png",
-    "imageHighSrc": "cards/sm7-125-high.png"
+    "imageHighSrc": "cards/sm7-125-high.png",
+    "rules": "Look at your face-down Prize cards. You may reveal an Ultra Beast card you find there, put it into your hand, and put this Beast Ball in its place. (If you don't reveal an Ultra Beast card, put this card in the discard pile.) Then, shuffle your face-down Prize cards.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11797",
-    "externalId": null,
+    "externalId": "sm7-124",
     "tcgdex_id": "sm7-124",
     "localId": "124",
     "setCode": "sm7",
@@ -1892,18 +2159,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-124-low.png",
-    "imageHighSrc": "cards/sm7-124-high.png"
+    "imageHighSrc": "cards/sm7-124-high.png",
+    "rules": "Search your deck for up to 2 Item cards that have the word \"Ball\" in their name, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11792",
-    "externalId": null,
+    "externalId": "sm7-123",
     "tcgdex_id": "sm7-123",
     "localId": "123",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "123a/168",
+    "cardNumber": "123/168",
     "cardName": "Acro Bike",
-    "fullDisplayName": "Acro Bike 123a/168 Celestial Storm",
+    "fullDisplayName": "Acro Bike 123/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1921,11 +2189,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-123a-low.png",
-    "imageHighSrc": "cards/sm7-123a-high.png"
+    "imageHighSrc": "cards/sm7-123a-high.png",
+    "rules": "Look at the top 2 cards of your deck and put 1 of them into your hand. Discard the other card.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11787",
-    "externalId": null,
+    "externalId": "sm7-123",
     "tcgdex_id": "sm7-123",
     "localId": "123",
     "setCode": "sm7",
@@ -1950,11 +2219,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-123-low.png",
-    "imageHighSrc": "cards/sm7-123-high.png"
+    "imageHighSrc": "cards/sm7-123-high.png",
+    "rules": "Look at the top 2 cards of your deck and put 1 of them into your hand. Discard the other card.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11783",
-    "externalId": null,
+    "externalId": "sm7-122",
     "tcgdex_id": "sm7-122",
     "localId": "122",
     "setCode": "sm7",
@@ -1983,11 +2253,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-122-low.png",
-    "imageHighSrc": "cards/sm7-122-high.png"
+    "imageHighSrc": "cards/sm7-122-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11778",
-    "externalId": null,
+    "externalId": "sm7-121",
     "tcgdex_id": "sm7-121",
     "localId": "121",
     "setCode": "sm7",
@@ -2016,11 +2292,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-121-low.png",
-    "imageHighSrc": "cards/sm7-121-high.png"
+    "imageHighSrc": "cards/sm7-121-high.png",
+    "attacks": [
+      {
+        "name": "Cat Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "11772",
-    "externalId": null,
+    "externalId": "sm7-120",
     "tcgdex_id": "sm7-120",
     "localId": "120",
     "setCode": "sm7",
@@ -2049,11 +2331,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-120-low.png",
-    "imageHighSrc": "cards/sm7-120-high.png"
+    "imageHighSrc": "cards/sm7-120-high.png",
+    "attacks": [
+      {
+        "name": "Fake Out",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11759",
-    "externalId": null,
+    "externalId": "sm7-119",
     "tcgdex_id": "sm7-119",
     "localId": "119",
     "setCode": "sm7",
@@ -2082,11 +2370,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-119-low.png",
-    "imageHighSrc": "cards/sm7-119-high.png"
+    "imageHighSrc": "cards/sm7-119-high.png",
+    "attacks": [
+      {
+        "name": "Dangerous Concert",
+        "damage": "80"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "11754",
-    "externalId": null,
+    "externalId": "sm7-118",
     "tcgdex_id": "sm7-118",
     "localId": "118",
     "setCode": "sm7",
@@ -2115,11 +2413,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-118-low.png",
-    "imageHighSrc": "cards/sm7-118-high.png"
+    "imageHighSrc": "cards/sm7-118-high.png",
+    "attacks": [
+      {
+        "name": "Cracking Voice",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "11749",
-    "externalId": null,
+    "externalId": "sm7-117",
     "tcgdex_id": "sm7-117",
     "localId": "117",
     "setCode": "sm7",
@@ -2148,11 +2452,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-117-low.png",
-    "imageHighSrc": "cards/sm7-117-high.png"
+    "imageHighSrc": "cards/sm7-117-high.png",
+    "attacks": [
+      {
+        "name": "Wail",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "11744",
-    "externalId": null,
+    "externalId": "sm7-116",
     "tcgdex_id": "sm7-116",
     "localId": "116",
     "setCode": "sm7",
@@ -2181,11 +2491,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-116-low.png",
-    "imageHighSrc": "cards/sm7-116-high.png"
+    "imageHighSrc": "cards/sm7-116-high.png",
+    "attacks": [
+      {
+        "name": "Bawl",
+        "damage": null
+      },
+      {
+        "name": "Pound",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11739",
-    "externalId": null,
+    "externalId": "sm7-115",
     "tcgdex_id": "sm7-115",
     "localId": "115",
     "setCode": "sm7",
@@ -2214,11 +2534,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-115-low.png",
-    "imageHighSrc": "cards/sm7-115-high.png"
+    "imageHighSrc": "cards/sm7-115-high.png",
+    "attacks": [
+      {
+        "name": "Critical Move",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "11733",
-    "externalId": null,
+    "externalId": "sm7-114",
     "tcgdex_id": "sm7-114",
     "localId": "114",
     "setCode": "sm7",
@@ -2247,11 +2573,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-114-low.png",
-    "imageHighSrc": "cards/sm7-114-high.png"
+    "imageHighSrc": "cards/sm7-114-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      },
+      {
+        "name": "Rage",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "11728",
-    "externalId": null,
+    "externalId": "sm7-113",
     "tcgdex_id": "sm7-113",
     "localId": "113",
     "setCode": "sm7",
@@ -2280,11 +2616,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-113-low.png",
-    "imageHighSrc": "cards/sm7-113-high.png"
+    "imageHighSrc": "cards/sm7-113-high.png",
+    "attacks": [
+      {
+        "name": "Claw",
+        "damage": "20"
+      },
+      {
+        "name": "Slack Off",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11723",
-    "externalId": null,
+    "externalId": "sm7-112",
     "tcgdex_id": "sm7-112",
     "localId": "112",
     "setCode": "sm7",
@@ -2313,11 +2659,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-112-low.png",
-    "imageHighSrc": "cards/sm7-112-high.png"
+    "imageHighSrc": "cards/sm7-112-high.png",
+    "attacks": [
+      {
+        "name": "Firefighting",
+        "damage": "30"
+      },
+      {
+        "name": "Water Pulse",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11718",
-    "externalId": null,
+    "externalId": "sm7-111",
     "tcgdex_id": "sm7-111",
     "localId": "111",
     "setCode": "sm7",
@@ -2346,11 +2702,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-111-low.png",
-    "imageHighSrc": "cards/sm7-111-high.png"
+    "imageHighSrc": "cards/sm7-111-high.png",
+    "attacks": [
+      {
+        "name": "Glide",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11712",
-    "externalId": null,
+    "externalId": "sm7-110",
     "tcgdex_id": "sm7-110",
     "localId": "110",
     "setCode": "sm7",
@@ -2379,11 +2741,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-110-low.png",
-    "imageHighSrc": "cards/sm7-110-high.png"
+    "imageHighSrc": "cards/sm7-110-high.png",
+    "attacks": [
+      {
+        "name": "Strike and Run",
+        "damage": null
+      },
+      {
+        "name": "Sudden Flash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11708",
-    "externalId": null,
+    "externalId": "sm7-109",
     "tcgdex_id": "sm7-109",
     "localId": "109",
     "setCode": "sm7",
@@ -2413,11 +2785,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-109-low.png",
-    "imageHighSrc": "cards/sm7-109-high.png"
+    "imageHighSrc": "cards/sm7-109-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Break",
+        "damage": "30×"
+      },
+      {
+        "name": "Tempest-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11703",
-    "externalId": null,
+    "externalId": "sm7-108",
     "tcgdex_id": "sm7-108",
     "localId": "108",
     "setCode": "sm7",
@@ -2447,11 +2830,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-108-low.png",
-    "imageHighSrc": "cards/sm7-108-high.png"
+    "imageHighSrc": "cards/sm7-108-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Fleet",
+        "damage": "50×"
+      }
+    ],
+    "rules": "◇ (Prism Star) Rule: You can't have more than 1 ◇ card with the same name in your deck. If a ◇ card would go to the discard pile, put it in the Lost Zone instead."
   },
   {
     "masterCardId": "11699",
-    "externalId": null,
+    "externalId": "sm7-107",
     "tcgdex_id": "sm7-107",
     "localId": "107",
     "setCode": "sm7",
@@ -2481,11 +2871,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-107-low.png",
-    "imageHighSrc": "cards/sm7-107-high.png"
+    "imageHighSrc": "cards/sm7-107-high.png",
+    "attacks": [
+      {
+        "name": "Dreamy Mist",
+        "damage": "30"
+      }
+    ],
+    "rules": "◇ (Prism Star) Rule: You can't have more than 1 ◇ card with the same name in your deck. If a ◇ card would go to the discard pile, put it in the Lost Zone instead."
   },
   {
     "masterCardId": "11695",
-    "externalId": null,
+    "externalId": "sm7-106",
     "tcgdex_id": "sm7-106",
     "localId": "106",
     "setCode": "sm7",
@@ -2514,11 +2911,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-106-low.png",
-    "imageHighSrc": "cards/sm7-106-high.png"
+    "imageHighSrc": "cards/sm7-106-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "11692",
-    "externalId": null,
+    "externalId": "sm7-105",
     "tcgdex_id": "sm7-105",
     "localId": "105",
     "setCode": "sm7",
@@ -2547,11 +2950,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-105-low.png",
-    "imageHighSrc": "cards/sm7-105-high.png"
+    "imageHighSrc": "cards/sm7-105-high.png",
+    "attacks": [
+      {
+        "name": "Raging Blade",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "11688",
-    "externalId": null,
+    "externalId": "sm7-104",
     "tcgdex_id": "sm7-104",
     "localId": "104",
     "setCode": "sm7",
@@ -2580,11 +2989,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-104-low.png",
-    "imageHighSrc": "cards/sm7-104-high.png"
+    "imageHighSrc": "cards/sm7-104-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "11684",
-    "externalId": null,
+    "externalId": "sm7-103",
     "tcgdex_id": "sm7-103",
     "localId": "103",
     "setCode": "sm7",
@@ -2613,11 +3028,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-103-low.png",
-    "imageHighSrc": "cards/sm7-103-high.png"
+    "imageHighSrc": "cards/sm7-103-high.png",
+    "attacks": [
+      {
+        "name": "Rock Head",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11679",
-    "externalId": null,
+    "externalId": "sm7-102",
     "tcgdex_id": "sm7-102",
     "localId": "102",
     "setCode": "sm7",
@@ -2648,11 +3069,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-102-low.png",
-    "imageHighSrc": "cards/sm7-102-high.png"
+    "imageHighSrc": "cards/sm7-102-high.png",
+    "attacks": [
+      {
+        "name": "Gigaton Stomp",
+        "damage": "120"
+      },
+      {
+        "name": "Assembly-GX",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11675",
-    "externalId": null,
+    "externalId": "sm7-101",
     "tcgdex_id": "sm7-101",
     "localId": "101",
     "setCode": "sm7",
@@ -2682,11 +3114,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-101-low.png",
-    "imageHighSrc": "cards/sm7-101-high.png"
+    "imageHighSrc": "cards/sm7-101-high.png",
+    "attacks": [
+      {
+        "name": "Divine Paper",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "11670",
-    "externalId": null,
+    "externalId": "sm7-100",
     "tcgdex_id": "sm7-100",
     "localId": "100",
     "setCode": "sm7",
@@ -2716,18 +3154,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-100-low.png",
-    "imageHighSrc": "cards/sm7-100-high.png"
+    "imageHighSrc": "cards/sm7-100-high.png",
+    "attacks": [
+      {
+        "name": "Moon Raker",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "11665",
-    "externalId": null,
+    "externalId": "sm7-99",
     "tcgdex_id": "sm7-99",
     "localId": "99",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "099/168",
+    "cardNumber": "99/168",
     "cardName": "Solgaleo",
-    "fullDisplayName": "Solgaleo 099/168 Celestial Storm",
+    "fullDisplayName": "Solgaleo 99/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2749,18 +3193,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-099-low.png",
-    "imageHighSrc": "cards/sm7-099-high.png"
+    "imageHighSrc": "cards/sm7-099-high.png",
+    "attacks": [
+      {
+        "name": "Rising Dash",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "11660",
-    "externalId": null,
+    "externalId": "sm7-98",
     "tcgdex_id": "sm7-98",
     "localId": "98",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "098/168",
+    "cardNumber": "98/168",
     "cardName": "Heatran",
-    "fullDisplayName": "Heatran 098/168 Celestial Storm",
+    "fullDisplayName": "Heatran 98/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2782,18 +3232,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-098-low.png",
-    "imageHighSrc": "cards/sm7-098-high.png"
+    "imageHighSrc": "cards/sm7-098-high.png",
+    "attacks": [
+      {
+        "name": "Steelworks",
+        "damage": null
+      },
+      {
+        "name": "Steel Tackle",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "11655",
-    "externalId": null,
+    "externalId": "sm7-97",
     "tcgdex_id": "sm7-97",
     "localId": "97",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "097/168",
+    "cardNumber": "97/168",
     "cardName": "Jirachi ◇",
-    "fullDisplayName": "Jirachi ◇ 097/168 Celestial Storm",
+    "fullDisplayName": "Jirachi ◇ 97/168 Celestial Storm",
     "rarity": "Rare Prism Star",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2816,18 +3276,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-097-low.png",
-    "imageHighSrc": "cards/sm7-097-high.png"
+    "imageHighSrc": "cards/sm7-097-high.png",
+    "attacks": [
+      {
+        "name": "Perish Dream",
+        "damage": "10"
+      }
+    ],
+    "rules": "◇ (Prism Star) Rule: You can't have more than 1 ◇ card with the same name in your deck. If a ◇ card would go to the discard pile, put it in the Lost Zone instead."
   },
   {
     "masterCardId": "11650",
-    "externalId": null,
+    "externalId": "sm7-96",
     "tcgdex_id": "sm7-96",
     "localId": "96",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "096/168",
+    "cardNumber": "96/168",
     "cardName": "Registeel",
-    "fullDisplayName": "Registeel 096/168 Celestial Storm",
+    "fullDisplayName": "Registeel 96/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2849,18 +3316,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-096-low.png",
-    "imageHighSrc": "cards/sm7-096-high.png"
+    "imageHighSrc": "cards/sm7-096-high.png",
+    "attacks": [
+      {
+        "name": "Silver Fist",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "11645",
-    "externalId": null,
+    "externalId": "sm7-95",
     "tcgdex_id": "sm7-95",
     "localId": "95",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "095/168",
+    "cardNumber": "95/168",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross 095/168 Celestial Storm",
+    "fullDisplayName": "Metagross 95/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2882,18 +3355,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-095-low.png",
-    "imageHighSrc": "cards/sm7-095-high.png"
+    "imageHighSrc": "cards/sm7-095-high.png",
+    "attacks": [
+      {
+        "name": "Meteor Mash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "11639",
-    "externalId": null,
+    "externalId": "sm7-94",
     "tcgdex_id": "sm7-94",
     "localId": "94",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "094/168",
+    "cardNumber": "94/168",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 094/168 Celestial Storm",
+    "fullDisplayName": "Metang 94/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2915,18 +3394,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-094-low.png",
-    "imageHighSrc": "cards/sm7-094-high.png"
+    "imageHighSrc": "cards/sm7-094-high.png",
+    "attacks": [
+      {
+        "name": "Bullet Punch",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "11634",
-    "externalId": null,
+    "externalId": "sm7-93",
     "tcgdex_id": "sm7-93",
     "localId": "93",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "093/168",
+    "cardNumber": "93/168",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 093/168 Celestial Storm",
+    "fullDisplayName": "Beldum 93/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2948,18 +3433,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-093-low.png",
-    "imageHighSrc": "cards/sm7-093-high.png"
+    "imageHighSrc": "cards/sm7-093-high.png",
+    "attacks": [
+      {
+        "name": "Single Smash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "11629",
-    "externalId": null,
+    "externalId": "sm7-92",
     "tcgdex_id": "sm7-92",
     "localId": "92",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "092/168",
+    "cardNumber": "92/168",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 092/168 Celestial Storm",
+    "fullDisplayName": "Beldum 92/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2981,18 +3472,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-092-low.png",
-    "imageHighSrc": "cards/sm7-092-high.png"
+    "imageHighSrc": "cards/sm7-092-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11621",
-    "externalId": null,
+    "externalId": "sm7-91",
     "tcgdex_id": "sm7-91",
     "localId": "91",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "091/168",
+    "cardNumber": "91/168",
     "cardName": "Mawile",
-    "fullDisplayName": "Mawile 091/168 Celestial Storm",
+    "fullDisplayName": "Mawile 91/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3014,18 +3511,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-091-low.png",
-    "imageHighSrc": "cards/sm7-091-high.png"
+    "imageHighSrc": "cards/sm7-091-high.png",
+    "attacks": [
+      {
+        "name": "Mining",
+        "damage": null
+      },
+      {
+        "name": "Bite Off",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "11615",
-    "externalId": null,
+    "externalId": "sm7-90",
     "tcgdex_id": "sm7-90",
     "localId": "90",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "090/168",
+    "cardNumber": "90/168",
     "cardName": "Scizor-GX",
-    "fullDisplayName": "Scizor-GX 090/168 Celestial Storm",
+    "fullDisplayName": "Scizor-GX 90/168 Celestial Storm",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3048,18 +3555,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-090-low.png",
-    "imageHighSrc": "cards/sm7-090-high.png"
+    "imageHighSrc": "cards/sm7-090-high.png",
+    "attacks": [
+      {
+        "name": "Steel Wing",
+        "damage": "80"
+      },
+      {
+        "name": "Cross-Cut-GX",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11608",
-    "externalId": null,
+    "externalId": "sm7-89",
     "tcgdex_id": "sm7-89",
     "localId": "89",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "089/168",
+    "cardNumber": "89/168",
     "cardName": "Steelix",
-    "fullDisplayName": "Steelix 089/168 Celestial Storm",
+    "fullDisplayName": "Steelix 89/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3081,18 +3599,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-089-low.png",
-    "imageHighSrc": "cards/sm7-089-high.png"
+    "imageHighSrc": "cards/sm7-089-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      },
+      {
+        "name": "Tail Crush",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "11603",
-    "externalId": null,
+    "externalId": "sm7-88",
     "tcgdex_id": "sm7-88",
     "localId": "88",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "088/168",
+    "cardNumber": "88/168",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 088/168 Celestial Storm",
+    "fullDisplayName": "Sableye 88/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3114,18 +3642,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-088-low.png",
-    "imageHighSrc": "cards/sm7-088-high.png"
+    "imageHighSrc": "cards/sm7-088-high.png",
+    "attacks": [
+      {
+        "name": "Disable",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11597",
-    "externalId": null,
+    "externalId": "sm7-87",
     "tcgdex_id": "sm7-87",
     "localId": "87",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "087/168",
+    "cardNumber": "87/168",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 087/168 Celestial Storm",
+    "fullDisplayName": "Tyranitar 87/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3147,18 +3681,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-087-low.png",
-    "imageHighSrc": "cards/sm7-087-high.png"
+    "imageHighSrc": "cards/sm7-087-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "60×"
+      },
+      {
+        "name": "Trample",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "11586",
-    "externalId": null,
+    "externalId": "sm7-86",
     "tcgdex_id": "sm7-86",
     "localId": "86",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "086/168",
+    "cardNumber": "86/168",
     "cardName": "Sneasel",
-    "fullDisplayName": "Sneasel 086/168 Celestial Storm",
+    "fullDisplayName": "Sneasel 86/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3180,18 +3724,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-086-low.png",
-    "imageHighSrc": "cards/sm7-086-high.png"
+    "imageHighSrc": "cards/sm7-086-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      },
+      {
+        "name": "Beat Up",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "11581",
-    "externalId": null,
+    "externalId": "sm7-85",
     "tcgdex_id": "sm7-85",
     "localId": "85",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "085/168",
+    "cardNumber": "85/168",
     "cardName": "Alolan Raticate-GX",
-    "fullDisplayName": "Alolan Raticate-GX 085/168 Celestial Storm",
+    "fullDisplayName": "Alolan Raticate-GX 85/168 Celestial Storm",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3214,18 +3768,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-085-low.png",
-    "imageHighSrc": "cards/sm7-085-high.png"
+    "imageHighSrc": "cards/sm7-085-high.png",
+    "attacks": [
+      {
+        "name": "Chuck Away",
+        "damage": "40×"
+      },
+      {
+        "name": "Hyper Fang",
+        "damage": "150"
+      },
+      {
+        "name": "Item Maniac-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11576",
-    "externalId": null,
+    "externalId": "sm7-84",
     "tcgdex_id": "sm7-84",
     "localId": "84",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "084/168",
+    "cardNumber": "84/168",
     "cardName": "Alolan Rattata",
-    "fullDisplayName": "Alolan Rattata 084/168 Celestial Storm",
+    "fullDisplayName": "Alolan Rattata 84/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3247,18 +3816,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-084-low.png",
-    "imageHighSrc": "cards/sm7-084-high.png"
+    "imageHighSrc": "cards/sm7-084-high.png",
+    "attacks": [
+      {
+        "name": "Call for the Boss",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11570",
-    "externalId": null,
+    "externalId": "sm7-83",
     "tcgdex_id": "sm7-83",
     "localId": "83",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "083/168",
+    "cardNumber": "83/168",
     "cardName": "Minior",
-    "fullDisplayName": "Minior 083/168 Celestial Storm",
+    "fullDisplayName": "Minior 83/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3280,18 +3859,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-083-low.png",
-    "imageHighSrc": "cards/sm7-083-high.png"
+    "imageHighSrc": "cards/sm7-083-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11564",
-    "externalId": null,
+    "externalId": "sm7-82",
     "tcgdex_id": "sm7-82",
     "localId": "82",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "082/168",
+    "cardNumber": "82/168",
     "cardName": "Palossand-GX",
-    "fullDisplayName": "Palossand-GX 082/168 Celestial Storm",
+    "fullDisplayName": "Palossand-GX 82/168 Celestial Storm",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3314,18 +3899,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-082-low.png",
-    "imageHighSrc": "cards/sm7-082-high.png"
+    "imageHighSrc": "cards/sm7-082-high.png",
+    "attacks": [
+      {
+        "name": "Eerie Light",
+        "damage": "60"
+      },
+      {
+        "name": "Absorb Life",
+        "damage": "100"
+      },
+      {
+        "name": "Sandy Fear-GX",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11558",
-    "externalId": null,
+    "externalId": "sm7-81",
     "tcgdex_id": "sm7-81",
     "localId": "81",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "081/168",
+    "cardNumber": "81/168",
     "cardName": "Groudon",
-    "fullDisplayName": "Groudon 081/168 Celestial Storm",
+    "fullDisplayName": "Groudon 81/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3347,18 +3947,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-081-low.png",
-    "imageHighSrc": "cards/sm7-081-high.png"
+    "imageHighSrc": "cards/sm7-081-high.png",
+    "attacks": [
+      {
+        "name": "Wreck",
+        "damage": "50+"
+      },
+      {
+        "name": "Ground Slash",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "11547",
-    "externalId": null,
+    "externalId": "sm7-80",
     "tcgdex_id": "sm7-80",
     "localId": "80",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "080/168",
+    "cardNumber": "80/168",
     "cardName": "Regirock",
-    "fullDisplayName": "Regirock 080/168 Celestial Storm",
+    "fullDisplayName": "Regirock 80/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3380,18 +3990,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-080-low.png",
-    "imageHighSrc": "cards/sm7-080-high.png"
+    "imageHighSrc": "cards/sm7-080-high.png",
+    "attacks": [
+      {
+        "name": "Enhanced Stomp",
+        "damage": "20+"
+      },
+      {
+        "name": "Hammer Arm",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "11542",
-    "externalId": null,
+    "externalId": "sm7-79",
     "tcgdex_id": "sm7-79",
     "localId": "79",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "079/168",
+    "cardNumber": "79/168",
     "cardName": "Claydol",
-    "fullDisplayName": "Claydol 079/168 Celestial Storm",
+    "fullDisplayName": "Claydol 79/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3413,18 +4033,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-079-low.png",
-    "imageHighSrc": "cards/sm7-079-high.png"
+    "imageHighSrc": "cards/sm7-079-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "20"
+      },
+      {
+        "name": "Miraculous Spin",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "11535",
-    "externalId": null,
+    "externalId": "sm7-78",
     "tcgdex_id": "sm7-78",
     "localId": "78",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "078/168",
+    "cardNumber": "78/168",
     "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 078/168 Celestial Storm",
+    "fullDisplayName": "Baltoy 78/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3446,18 +4076,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-078-low.png",
-    "imageHighSrc": "cards/sm7-078-high.png"
+    "imageHighSrc": "cards/sm7-078-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11528",
-    "externalId": null,
+    "externalId": "sm7-77",
     "tcgdex_id": "sm7-77",
     "localId": "77",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "077/168",
+    "cardNumber": "77/168",
     "cardName": "Medicham",
-    "fullDisplayName": "Medicham 077/168 Celestial Storm",
+    "fullDisplayName": "Medicham 77/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3479,18 +4115,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-077-low.png",
-    "imageHighSrc": "cards/sm7-077-high.png"
+    "imageHighSrc": "cards/sm7-077-high.png",
+    "attacks": [
+      {
+        "name": "Strike of Enlightenment",
+        "damage": "10+"
+      },
+      {
+        "name": "Spinning Kick",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "11521",
-    "externalId": null,
+    "externalId": "sm7-76",
     "tcgdex_id": "sm7-76",
     "localId": "76",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "076/168",
+    "cardNumber": "76/168",
     "cardName": "Meditite",
-    "fullDisplayName": "Meditite 076/168 Celestial Storm",
+    "fullDisplayName": "Meditite 76/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3512,18 +4158,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-076-low.png",
-    "imageHighSrc": "cards/sm7-076-high.png"
+    "imageHighSrc": "cards/sm7-076-high.png",
+    "attacks": [
+      {
+        "name": "Bide",
+        "damage": null
+      },
+      {
+        "name": "Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11513",
-    "externalId": null,
+    "externalId": "sm7-75",
     "tcgdex_id": "sm7-75",
     "localId": "75",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "075/168",
+    "cardNumber": "75/168",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 075/168 Celestial Storm",
+    "fullDisplayName": "Pupitar 75/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3545,18 +4201,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-075-low.png",
-    "imageHighSrc": "cards/sm7-075-high.png"
+    "imageHighSrc": "cards/sm7-075-high.png",
+    "attacks": [
+      {
+        "name": "Skull Bash",
+        "damage": "20"
+      },
+      {
+        "name": "Dust Devil",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11506",
-    "externalId": null,
+    "externalId": "sm7-74",
     "tcgdex_id": "sm7-74",
     "localId": "74",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "074/168",
+    "cardNumber": "74/168",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 074/168 Celestial Storm",
+    "fullDisplayName": "Larvitar 74/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3578,18 +4244,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-074-low.png",
-    "imageHighSrc": "cards/sm7-074-high.png"
+    "imageHighSrc": "cards/sm7-074-high.png",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Rock Throw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11501",
-    "externalId": null,
+    "externalId": "sm7-73",
     "tcgdex_id": "sm7-73",
     "localId": "73",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "073/168",
+    "cardNumber": "73/168",
     "cardName": "Donphan",
-    "fullDisplayName": "Donphan 073/168 Celestial Storm",
+    "fullDisplayName": "Donphan 73/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3611,18 +4287,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-073-low.png",
-    "imageHighSrc": "cards/sm7-073-high.png"
+    "imageHighSrc": "cards/sm7-073-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Rapid Spin",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "11494",
-    "externalId": null,
+    "externalId": "sm7-72",
     "tcgdex_id": "sm7-72",
     "localId": "72",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "072/168",
+    "cardNumber": "72/168",
     "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 072/168 Celestial Storm",
+    "fullDisplayName": "Phanpy 72/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3644,18 +4330,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-072-low.png",
-    "imageHighSrc": "cards/sm7-072-high.png"
+    "imageHighSrc": "cards/sm7-072-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Endure",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11487",
-    "externalId": null,
+    "externalId": "sm7-71",
     "tcgdex_id": "sm7-71",
     "localId": "71",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "071/168",
+    "cardNumber": "71/168",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 071/168 Celestial Storm",
+    "fullDisplayName": "Onix 71/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3677,18 +4373,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-071-low.png",
-    "imageHighSrc": "cards/sm7-071-high.png"
+    "imageHighSrc": "cards/sm7-071-high.png",
+    "attacks": [
+      {
+        "name": "Screech",
+        "damage": null
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "11480",
-    "externalId": null,
+    "externalId": "sm7-70",
     "tcgdex_id": "sm7-70",
     "localId": "70",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "070/168",
+    "cardNumber": "70/168",
     "cardName": "Lunala",
-    "fullDisplayName": "Lunala 070/168 Celestial Storm",
+    "fullDisplayName": "Lunala 70/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3710,18 +4416,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-070-low.png",
-    "imageHighSrc": "cards/sm7-070-high.png"
+    "imageHighSrc": "cards/sm7-070-high.png",
+    "attacks": [
+      {
+        "name": "Full Moon Ray",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "11473",
-    "externalId": null,
+    "externalId": "sm7-69",
     "tcgdex_id": "sm7-69",
     "localId": "69",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "069/168",
+    "cardNumber": "69/168",
     "cardName": "Deoxys",
-    "fullDisplayName": "Deoxys 069/168 Celestial Storm",
+    "fullDisplayName": "Deoxys 69/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3743,18 +4455,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-069-low.png",
-    "imageHighSrc": "cards/sm7-069-high.png"
+    "imageHighSrc": "cards/sm7-069-high.png",
+    "attacks": [
+      {
+        "name": "Teleportation Burst",
+        "damage": "20"
+      },
+      {
+        "name": "Spear Dive",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11466",
-    "externalId": null,
+    "externalId": "sm7-68",
     "tcgdex_id": "sm7-68",
     "localId": "68",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "068/168",
+    "cardNumber": "68/168",
     "cardName": "Deoxys",
-    "fullDisplayName": "Deoxys 068/168 Celestial Storm",
+    "fullDisplayName": "Deoxys 68/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3776,18 +4498,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-068-low.png",
-    "imageHighSrc": "cards/sm7-068-high.png"
+    "imageHighSrc": "cards/sm7-068-high.png",
+    "attacks": [
+      {
+        "name": "Reflect",
+        "damage": null
+      },
+      {
+        "name": "Psychic Corkscrew",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11460",
-    "externalId": null,
+    "externalId": "sm7-67",
     "tcgdex_id": "sm7-67",
     "localId": "67",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "067/168",
+    "cardNumber": "67/168",
     "cardName": "Deoxys",
-    "fullDisplayName": "Deoxys 067/168 Celestial Storm",
+    "fullDisplayName": "Deoxys 67/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3809,18 +4541,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-067-low.png",
-    "imageHighSrc": "cards/sm7-067-high.png"
+    "imageHighSrc": "cards/sm7-067-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "20+"
+      },
+      {
+        "name": "Power Blast",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "11453",
-    "externalId": null,
+    "externalId": "sm7-66",
     "tcgdex_id": "sm7-66",
     "localId": "66",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "066/168",
+    "cardNumber": "66/168",
     "cardName": "Banette-GX",
-    "fullDisplayName": "Banette-GX 066/168 Celestial Storm",
+    "fullDisplayName": "Banette-GX 66/168 Celestial Storm",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3843,18 +4585,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-066-low.png",
-    "imageHighSrc": "cards/sm7-066-high.png"
+    "imageHighSrc": "cards/sm7-066-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Chant",
+        "damage": "30+"
+      },
+      {
+        "name": "Tomb Hunt-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11446",
-    "externalId": null,
+    "externalId": "sm7-65",
     "tcgdex_id": "sm7-65",
     "localId": "65",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "065/168",
+    "cardNumber": "65/168",
     "cardName": "Banette",
-    "fullDisplayName": "Banette 065/168 Celestial Storm",
+    "fullDisplayName": "Banette 65/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3876,18 +4629,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-065-low.png",
-    "imageHighSrc": "cards/sm7-065-high.png"
+    "imageHighSrc": "cards/sm7-065-high.png",
+    "attacks": [
+      {
+        "name": "Enemy Show",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11439",
-    "externalId": null,
+    "externalId": "sm7-64",
     "tcgdex_id": "sm7-64",
     "localId": "64",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "064/168",
+    "cardNumber": "64/168",
     "cardName": "Shuppet",
-    "fullDisplayName": "Shuppet 064/168 Celestial Storm",
+    "fullDisplayName": "Shuppet 64/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3909,18 +4668,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-064-low.png",
-    "imageHighSrc": "cards/sm7-064-high.png"
+    "imageHighSrc": "cards/sm7-064-high.png",
+    "attacks": [
+      {
+        "name": "Perplex",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11433",
-    "externalId": null,
+    "externalId": "sm7-63",
     "tcgdex_id": "sm7-63",
     "localId": "63",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "063/168",
+    "cardNumber": "63/168",
     "cardName": "Shuppet",
-    "fullDisplayName": "Shuppet 063/168 Celestial Storm",
+    "fullDisplayName": "Shuppet 63/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3942,18 +4707,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-063-low.png",
-    "imageHighSrc": "cards/sm7-063-high.png"
+    "imageHighSrc": "cards/sm7-063-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11426",
-    "externalId": null,
+    "externalId": "sm7-62",
     "tcgdex_id": "sm7-62",
     "localId": "62",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "062/168",
+    "cardNumber": "62/168",
     "cardName": "Solrock",
-    "fullDisplayName": "Solrock 062/168 Celestial Storm",
+    "fullDisplayName": "Solrock 62/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3975,18 +4750,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-062-low.png",
-    "imageHighSrc": "cards/sm7-062-high.png"
+    "imageHighSrc": "cards/sm7-062-high.png",
+    "attacks": [
+      {
+        "name": "Scorching Light",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11419",
-    "externalId": null,
+    "externalId": "sm7-61",
     "tcgdex_id": "sm7-61",
     "localId": "61",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "061/168",
+    "cardNumber": "61/168",
     "cardName": "Lunatone",
-    "fullDisplayName": "Lunatone 061/168 Celestial Storm",
+    "fullDisplayName": "Lunatone 61/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4008,18 +4789,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-061-low.png",
-    "imageHighSrc": "cards/sm7-061-high.png"
+    "imageHighSrc": "cards/sm7-061-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11413",
-    "externalId": null,
+    "externalId": "sm7-60",
     "tcgdex_id": "sm7-60",
     "localId": "60",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "060/168",
+    "cardNumber": "60/168",
     "cardName": "Grumpig",
-    "fullDisplayName": "Grumpig 060/168 Celestial Storm",
+    "fullDisplayName": "Grumpig 60/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4041,18 +4828,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-060-low.png",
-    "imageHighSrc": "cards/sm7-060-high.png"
+    "imageHighSrc": "cards/sm7-060-high.png",
+    "attacks": [
+      {
+        "name": "Mirror Step",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "11406",
-    "externalId": null,
+    "externalId": "sm7-59",
     "tcgdex_id": "sm7-59",
     "localId": "59",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "059/168",
+    "cardNumber": "59/168",
     "cardName": "Spoink",
-    "fullDisplayName": "Spoink 059/168 Celestial Storm",
+    "fullDisplayName": "Spoink 59/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4074,18 +4867,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-059-low.png",
-    "imageHighSrc": "cards/sm7-059-high.png"
+    "imageHighSrc": "cards/sm7-059-high.png",
+    "attacks": [
+      {
+        "name": "Bounce",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11399",
-    "externalId": null,
+    "externalId": "sm7-58",
     "tcgdex_id": "sm7-58",
     "localId": "58",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "058/168",
+    "cardNumber": "58/168",
     "cardName": "Swalot",
-    "fullDisplayName": "Swalot 058/168 Celestial Storm",
+    "fullDisplayName": "Swalot 58/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4107,18 +4906,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-058-low.png",
-    "imageHighSrc": "cards/sm7-058-high.png"
+    "imageHighSrc": "cards/sm7-058-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": "30"
+      },
+      {
+        "name": "Swallow Up",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "11392",
-    "externalId": null,
+    "externalId": "sm7-57",
     "tcgdex_id": "sm7-57",
     "localId": "57",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "057/168",
+    "cardNumber": "57/168",
     "cardName": "Gulpin",
-    "fullDisplayName": "Gulpin 057/168 Celestial Storm",
+    "fullDisplayName": "Gulpin 57/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4140,18 +4949,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-057-low.png",
-    "imageHighSrc": "cards/sm7-057-high.png"
+    "imageHighSrc": "cards/sm7-057-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      },
+      {
+        "name": "Spit Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11385",
-    "externalId": null,
+    "externalId": "sm7-56",
     "tcgdex_id": "sm7-56",
     "localId": "56",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "056/168",
+    "cardNumber": "56/168",
     "cardName": "Mr. Mime-GX",
-    "fullDisplayName": "Mr. Mime-GX 056/168 Celestial Storm",
+    "fullDisplayName": "Mr. Mime-GX 56/168 Celestial Storm",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4174,18 +4993,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-056-low.png",
-    "imageHighSrc": "cards/sm7-056-high.png"
+    "imageHighSrc": "cards/sm7-056-high.png",
+    "attacks": [
+      {
+        "name": "Breakdown",
+        "damage": null
+      },
+      {
+        "name": "Life Trick-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11378",
-    "externalId": null,
+    "externalId": "sm7-55",
     "tcgdex_id": "sm7-55",
     "localId": "55",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "055/168",
+    "cardNumber": "55/168",
     "cardName": "Oricorio",
-    "fullDisplayName": "Oricorio 055/168 Celestial Storm",
+    "fullDisplayName": "Oricorio 55/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4207,18 +5037,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-055-low.png",
-    "imageHighSrc": "cards/sm7-055-high.png"
+    "imageHighSrc": "cards/sm7-055-high.png",
+    "attacks": [
+      {
+        "name": "Zappy Pom-Poms",
+        "damage": null
+      },
+      {
+        "name": "Electric Ball",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "11371",
-    "externalId": null,
+    "externalId": "sm7-54",
     "tcgdex_id": "sm7-54",
     "localId": "54",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "054/168",
+    "cardNumber": "54/168",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 054/168 Celestial Storm",
+    "fullDisplayName": "Minun 54/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4240,18 +5080,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-054-low.png",
-    "imageHighSrc": "cards/sm7-054-high.png"
+    "imageHighSrc": "cards/sm7-054-high.png",
+    "attacks": [
+      {
+        "name": "Ditch and Draw",
+        "damage": null
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11363",
-    "externalId": null,
+    "externalId": "sm7-53",
     "tcgdex_id": "sm7-53",
     "localId": "53",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "053/168",
+    "cardNumber": "53/168",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 053/168 Celestial Storm",
+    "fullDisplayName": "Plusle 53/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4273,18 +5123,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-053-low.png",
-    "imageHighSrc": "cards/sm7-053-high.png"
+    "imageHighSrc": "cards/sm7-053-high.png",
+    "attacks": [
+      {
+        "name": "Draw for Everybody",
+        "damage": null
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11357",
-    "externalId": null,
+    "externalId": "sm7-52",
     "tcgdex_id": "sm7-52",
     "localId": "52",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "052/168",
+    "cardNumber": "52/168",
     "cardName": "Manectric",
-    "fullDisplayName": "Manectric 052/168 Celestial Storm",
+    "fullDisplayName": "Manectric 52/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4306,18 +5166,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-052-low.png",
-    "imageHighSrc": "cards/sm7-052-high.png"
+    "imageHighSrc": "cards/sm7-052-high.png",
+    "attacks": [
+      {
+        "name": "Double Charge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "11350",
-    "externalId": null,
+    "externalId": "sm7-51",
     "tcgdex_id": "sm7-51",
     "localId": "51",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "051/168",
+    "cardNumber": "51/168",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 051/168 Celestial Storm",
+    "fullDisplayName": "Electrike 51/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4339,18 +5205,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-051-low.png",
-    "imageHighSrc": "cards/sm7-051-high.png"
+    "imageHighSrc": "cards/sm7-051-high.png",
+    "attacks": [
+      {
+        "name": "Zap Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11344",
-    "externalId": null,
+    "externalId": "sm7-50",
     "tcgdex_id": "sm7-50",
     "localId": "50",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "050/168",
+    "cardNumber": "50/168",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 050/168 Celestial Storm",
+    "fullDisplayName": "Lanturn 50/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4372,18 +5244,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-050-low.png",
-    "imageHighSrc": "cards/sm7-050-high.png"
+    "imageHighSrc": "cards/sm7-050-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Strike",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "11336",
-    "externalId": null,
+    "externalId": "sm7-49",
     "tcgdex_id": "sm7-49",
     "localId": "49",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "049/168",
+    "cardNumber": "49/168",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 049/168 Celestial Storm",
+    "fullDisplayName": "Chinchou 49/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4405,18 +5283,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-049-low.png",
-    "imageHighSrc": "cards/sm7-049-high.png"
+    "imageHighSrc": "cards/sm7-049-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Spark",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11329",
-    "externalId": null,
+    "externalId": "sm7-48",
     "tcgdex_id": "sm7-48",
     "localId": "48",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "048/168",
+    "cardNumber": "48/168",
     "cardName": "Electrode-GX",
-    "fullDisplayName": "Electrode-GX 048/168 Celestial Storm",
+    "fullDisplayName": "Electrode-GX 48/168 Celestial Storm",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4439,18 +5327,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-048-low.png",
-    "imageHighSrc": "cards/sm7-048-high.png"
+    "imageHighSrc": "cards/sm7-048-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "50"
+      },
+      {
+        "name": "Crush and Burn-GX",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11323",
-    "externalId": null,
+    "externalId": "sm7-47",
     "tcgdex_id": "sm7-47",
     "localId": "47",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "047/168",
+    "cardNumber": "47/168",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 047/168 Celestial Storm",
+    "fullDisplayName": "Voltorb 47/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4472,18 +5371,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-047-low.png",
-    "imageHighSrc": "cards/sm7-047-high.png"
+    "imageHighSrc": "cards/sm7-047-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11316",
-    "externalId": null,
+    "externalId": "sm7-46",
     "tcgdex_id": "sm7-46",
     "localId": "46",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "046/168",
+    "cardNumber": "46/168",
     "cardName": "Kyogre",
-    "fullDisplayName": "Kyogre 046/168 Celestial Storm",
+    "fullDisplayName": "Kyogre 46/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4505,18 +5410,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-046-low.png",
-    "imageHighSrc": "cards/sm7-046-high.png"
+    "imageHighSrc": "cards/sm7-046-high.png",
+    "attacks": [
+      {
+        "name": "Dual Splash",
+        "damage": null
+      },
+      {
+        "name": "Grand Wave",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "11308",
-    "externalId": null,
+    "externalId": "sm7-45",
     "tcgdex_id": "sm7-45",
     "localId": "45",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "045/168",
+    "cardNumber": "45/168",
     "cardName": "Regice",
-    "fullDisplayName": "Regice 045/168 Celestial Storm",
+    "fullDisplayName": "Regice 45/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4538,18 +5453,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-045-low.png",
-    "imageHighSrc": "cards/sm7-045-high.png"
+    "imageHighSrc": "cards/sm7-045-high.png",
+    "attacks": [
+      {
+        "name": "Icy Wind",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "11301",
-    "externalId": null,
+    "externalId": "sm7-44",
     "tcgdex_id": "sm7-44",
     "localId": "44",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "044/168",
+    "cardNumber": "44/168",
     "cardName": "Luvdisc",
-    "fullDisplayName": "Luvdisc 044/168 Celestial Storm",
+    "fullDisplayName": "Luvdisc 44/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4571,18 +5492,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-044-low.png",
-    "imageHighSrc": "cards/sm7-044-high.png"
+    "imageHighSrc": "cards/sm7-044-high.png",
+    "attacks": [
+      {
+        "name": "Even Game",
+        "damage": null
+      },
+      {
+        "name": "Water Pulse",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11294",
-    "externalId": null,
+    "externalId": "sm7-43",
     "tcgdex_id": "sm7-43",
     "localId": "43",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "043/168",
+    "cardNumber": "43/168",
     "cardName": "Gorebyss",
-    "fullDisplayName": "Gorebyss 043/168 Celestial Storm",
+    "fullDisplayName": "Gorebyss 43/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4604,18 +5535,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-043-low.png",
-    "imageHighSrc": "cards/sm7-043-high.png"
+    "imageHighSrc": "cards/sm7-043-high.png",
+    "attacks": [
+      {
+        "name": "Deflecting Splash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11287",
-    "externalId": null,
+    "externalId": "sm7-42",
     "tcgdex_id": "sm7-42",
     "localId": "42",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "042/168",
+    "cardNumber": "42/168",
     "cardName": "Huntail",
-    "fullDisplayName": "Huntail 042/168 Celestial Storm",
+    "fullDisplayName": "Huntail 42/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4637,18 +5574,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-042-low.png",
-    "imageHighSrc": "cards/sm7-042-high.png"
+    "imageHighSrc": "cards/sm7-042-high.png",
+    "attacks": [
+      {
+        "name": "Big Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Dangerous Bite",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "11280",
-    "externalId": null,
+    "externalId": "sm7-41",
     "tcgdex_id": "sm7-41",
     "localId": "41",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "041/168",
+    "cardNumber": "41/168",
     "cardName": "Clamperl",
-    "fullDisplayName": "Clamperl 041/168 Celestial Storm",
+    "fullDisplayName": "Clamperl 41/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4670,18 +5617,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-041-low.png",
-    "imageHighSrc": "cards/sm7-041-high.png"
+    "imageHighSrc": "cards/sm7-041-high.png",
+    "attacks": [
+      {
+        "name": "Sparkling Pearl",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11273",
-    "externalId": null,
+    "externalId": "sm7-40",
     "tcgdex_id": "sm7-40",
     "localId": "40",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "040/168",
+    "cardNumber": "40/168",
     "cardName": "Wailord",
-    "fullDisplayName": "Wailord 040/168 Celestial Storm",
+    "fullDisplayName": "Wailord 40/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4703,18 +5656,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-040-low.png",
-    "imageHighSrc": "cards/sm7-040-high.png"
+    "imageHighSrc": "cards/sm7-040-high.png",
+    "attacks": [
+      {
+        "name": "Dwindling Wave",
+        "damage": "200-"
+      }
+    ]
   },
   {
     "masterCardId": "11265",
-    "externalId": null,
+    "externalId": "sm7-39",
     "tcgdex_id": "sm7-39",
     "localId": "39",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "039/168",
+    "cardNumber": "39/168",
     "cardName": "Wailmer",
-    "fullDisplayName": "Wailmer 039/168 Celestial Storm",
+    "fullDisplayName": "Wailmer 39/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4736,18 +5695,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-039-low.png",
-    "imageHighSrc": "cards/sm7-039-high.png"
+    "imageHighSrc": "cards/sm7-039-high.png",
+    "attacks": [
+      {
+        "name": "Wave Swallower",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "11259",
-    "externalId": null,
+    "externalId": "sm7-38",
     "tcgdex_id": "sm7-38",
     "localId": "38",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "038/168",
+    "cardNumber": "38/168",
     "cardName": "Ludicolo",
-    "fullDisplayName": "Ludicolo 038/168 Celestial Storm",
+    "fullDisplayName": "Ludicolo 38/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4769,18 +5734,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-038-low.png",
-    "imageHighSrc": "cards/sm7-038-high.png"
+    "imageHighSrc": "cards/sm7-038-high.png",
+    "attacks": [
+      {
+        "name": "Circular Steps",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "11251",
-    "externalId": null,
+    "externalId": "sm7-37",
     "tcgdex_id": "sm7-37",
     "localId": "37",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "037/168",
+    "cardNumber": "37/168",
     "cardName": "Lombre",
-    "fullDisplayName": "Lombre 037/168 Celestial Storm",
+    "fullDisplayName": "Lombre 37/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4802,18 +5773,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-037-low.png",
-    "imageHighSrc": "cards/sm7-037-high.png"
+    "imageHighSrc": "cards/sm7-037-high.png",
+    "attacks": [
+      {
+        "name": "Ambush",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "11244",
-    "externalId": null,
+    "externalId": "sm7-36",
     "tcgdex_id": "sm7-36",
     "localId": "36",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "036/168",
+    "cardNumber": "36/168",
     "cardName": "Lotad",
-    "fullDisplayName": "Lotad 036/168 Celestial Storm",
+    "fullDisplayName": "Lotad 36/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4835,18 +5812,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-036-low.png",
-    "imageHighSrc": "cards/sm7-036-high.png"
+    "imageHighSrc": "cards/sm7-036-high.png",
+    "attacks": [
+      {
+        "name": "Surprise",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11237",
-    "externalId": null,
+    "externalId": "sm7-35",
     "tcgdex_id": "sm7-35",
     "localId": "35",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "035/168",
+    "cardNumber": "35/168",
     "cardName": "Swampert",
-    "fullDisplayName": "Swampert 035/168 Celestial Storm",
+    "fullDisplayName": "Swampert 35/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4868,18 +5851,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-035-low.png",
-    "imageHighSrc": "cards/sm7-035-high.png"
+    "imageHighSrc": "cards/sm7-035-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "11231",
-    "externalId": null,
+    "externalId": "sm7-34",
     "tcgdex_id": "sm7-34",
     "localId": "34",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "034/168",
+    "cardNumber": "34/168",
     "cardName": "Marshtomp",
-    "fullDisplayName": "Marshtomp 034/168 Celestial Storm",
+    "fullDisplayName": "Marshtomp 34/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4901,18 +5890,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-034-low.png",
-    "imageHighSrc": "cards/sm7-034-high.png"
+    "imageHighSrc": "cards/sm7-034-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "20"
+      },
+      {
+        "name": "Surf",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "11224",
-    "externalId": null,
+    "externalId": "sm7-33",
     "tcgdex_id": "sm7-33",
     "localId": "33",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "033/168",
+    "cardNumber": "33/168",
     "cardName": "Mudkip",
-    "fullDisplayName": "Mudkip 033/168 Celestial Storm",
+    "fullDisplayName": "Mudkip 33/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4934,18 +5933,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-033-low.png",
-    "imageHighSrc": "cards/sm7-033-high.png"
+    "imageHighSrc": "cards/sm7-033-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11217",
-    "externalId": null,
+    "externalId": "sm7-32",
     "tcgdex_id": "sm7-32",
     "localId": "32",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "032/168",
+    "cardNumber": "32/168",
     "cardName": "Mudkip",
-    "fullDisplayName": "Mudkip 032/168 Celestial Storm",
+    "fullDisplayName": "Mudkip 32/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4967,18 +5976,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-032-low.png",
-    "imageHighSrc": "cards/sm7-032-high.png"
+    "imageHighSrc": "cards/sm7-032-high.png",
+    "attacks": [
+      {
+        "name": "Water Reserve",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11210",
-    "externalId": null,
+    "externalId": "sm7-31",
     "tcgdex_id": "sm7-31",
     "localId": "31",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "031/168",
+    "cardNumber": "31/168",
     "cardName": "Articuno-GX",
-    "fullDisplayName": "Articuno-GX 031/168 Celestial Storm",
+    "fullDisplayName": "Articuno-GX 31/168 Celestial Storm",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5001,18 +6016,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-031-low.png",
-    "imageHighSrc": "cards/sm7-031-high.png"
+    "imageHighSrc": "cards/sm7-031-high.png",
+    "attacks": [
+      {
+        "name": "Ice Wing",
+        "damage": "130"
+      },
+      {
+        "name": "Cold Crush-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11203",
-    "externalId": null,
+    "externalId": "sm7-30",
     "tcgdex_id": "sm7-30",
     "localId": "30",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "030/168",
+    "cardNumber": "30/168",
     "cardName": "Oricorio",
-    "fullDisplayName": "Oricorio 030/168 Celestial Storm",
+    "fullDisplayName": "Oricorio 30/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5034,18 +6060,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-030-low.png",
-    "imageHighSrc": "cards/sm7-030-high.png"
+    "imageHighSrc": "cards/sm7-030-high.png",
+    "attacks": [
+      {
+        "name": "Captivating Salsa",
+        "damage": null
+      },
+      {
+        "name": "Heat Blast",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "11196",
-    "externalId": null,
+    "externalId": "sm7-29",
     "tcgdex_id": "sm7-29",
     "localId": "29",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "029/168",
+    "cardNumber": "29/168",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 029/168 Celestial Storm",
+    "fullDisplayName": "Torkoal 29/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5067,18 +6103,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-029-low.png",
-    "imageHighSrc": "cards/sm7-029-high.png"
+    "imageHighSrc": "cards/sm7-029-high.png",
+    "attacks": [
+      {
+        "name": "Flaming Honk",
+        "damage": "30"
+      },
+      {
+        "name": "Searing Flame",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11189",
-    "externalId": null,
+    "externalId": "sm7-28",
     "tcgdex_id": "sm7-28",
     "localId": "28",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "028/168",
+    "cardNumber": "28/168",
     "cardName": "Blaziken-GX",
-    "fullDisplayName": "Blaziken-GX 028/168 Celestial Storm",
+    "fullDisplayName": "Blaziken-GX 28/168 Celestial Storm",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5101,18 +6147,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-028-low.png",
-    "imageHighSrc": "cards/sm7-028-high.png"
+    "imageHighSrc": "cards/sm7-028-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "60"
+      },
+      {
+        "name": "Explosive Kick",
+        "damage": "210"
+      },
+      {
+        "name": "Blaze Out-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11183",
-    "externalId": null,
+    "externalId": "sm7-27",
     "tcgdex_id": "sm7-27",
     "localId": "27",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "027/168",
+    "cardNumber": "27/168",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 027/168 Celestial Storm",
+    "fullDisplayName": "Combusken 27/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5134,18 +6195,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-027-low.png",
-    "imageHighSrc": "cards/sm7-027-high.png"
+    "imageHighSrc": "cards/sm7-027-high.png",
+    "attacks": [
+      {
+        "name": "Double Kick",
+        "damage": "30×"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11176",
-    "externalId": null,
+    "externalId": "sm7-26",
     "tcgdex_id": "sm7-26",
     "localId": "26",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "026/168",
+    "cardNumber": "26/168",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 026/168 Celestial Storm",
+    "fullDisplayName": "Torchic 26/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5167,18 +6238,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-026-low.png",
-    "imageHighSrc": "cards/sm7-026-high.png"
+    "imageHighSrc": "cards/sm7-026-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11170",
-    "externalId": null,
+    "externalId": "sm7-25",
     "tcgdex_id": "sm7-25",
     "localId": "25",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "025/168",
+    "cardNumber": "25/168",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 025/168 Celestial Storm",
+    "fullDisplayName": "Torchic 25/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5200,18 +6281,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-025-low.png",
-    "imageHighSrc": "cards/sm7-025-high.png"
+    "imageHighSrc": "cards/sm7-025-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11163",
-    "externalId": null,
+    "externalId": "sm7-24",
     "tcgdex_id": "sm7-24",
     "localId": "24",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "024/168",
+    "cardNumber": "24/168",
     "cardName": "Magcargo",
-    "fullDisplayName": "Magcargo 024/168 Celestial Storm",
+    "fullDisplayName": "Magcargo 24/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5233,18 +6320,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-024-low.png",
-    "imageHighSrc": "cards/sm7-024-high.png"
+    "imageHighSrc": "cards/sm7-024-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "11157",
-    "externalId": null,
+    "externalId": "sm7-23",
     "tcgdex_id": "sm7-23",
     "localId": "23",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "023/168",
+    "cardNumber": "23/168",
     "cardName": "Slugma",
-    "fullDisplayName": "Slugma 023/168 Celestial Storm",
+    "fullDisplayName": "Slugma 23/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5266,18 +6359,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-023-low.png",
-    "imageHighSrc": "cards/sm7-023-high.png"
+    "imageHighSrc": "cards/sm7-023-high.png",
+    "attacks": [
+      {
+        "name": "Magma Ring",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11148",
-    "externalId": null,
+    "externalId": "sm7-22",
     "tcgdex_id": "sm7-22",
     "localId": "22",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "022/168",
+    "cardNumber": "22/168",
     "cardName": "Dhelmise",
-    "fullDisplayName": "Dhelmise 022/168 Celestial Storm",
+    "fullDisplayName": "Dhelmise 22/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5299,18 +6402,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-022-low.png",
-    "imageHighSrc": "cards/sm7-022-high.png"
+    "imageHighSrc": "cards/sm7-022-high.png",
+    "attacks": [
+      {
+        "name": "Giga Drain",
+        "damage": "30"
+      },
+      {
+        "name": "Powerful Spin",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "11141",
-    "externalId": null,
+    "externalId": "sm7-21",
     "tcgdex_id": "sm7-21",
     "localId": "21",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "021/168",
+    "cardNumber": "21/168",
     "cardName": "Tropius",
-    "fullDisplayName": "Tropius 021/168 Celestial Storm",
+    "fullDisplayName": "Tropius 21/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5332,18 +6445,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-021-low.png",
-    "imageHighSrc": "cards/sm7-021-high.png"
+    "imageHighSrc": "cards/sm7-021-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      },
+      {
+        "name": "Solar Beam",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "11134",
-    "externalId": null,
+    "externalId": "sm7-20",
     "tcgdex_id": "sm7-20",
     "localId": "20",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "020/168",
+    "cardNumber": "20/168",
     "cardName": "Cacturne",
-    "fullDisplayName": "Cacturne 020/168 Celestial Storm",
+    "fullDisplayName": "Cacturne 20/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5365,18 +6488,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-020-low.png",
-    "imageHighSrc": "cards/sm7-020-high.png"
+    "imageHighSrc": "cards/sm7-020-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11127",
-    "externalId": null,
+    "externalId": "sm7-19",
     "tcgdex_id": "sm7-19",
     "localId": "19",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "019/168",
+    "cardNumber": "19/168",
     "cardName": "Cacnea",
-    "fullDisplayName": "Cacnea 019/168 Celestial Storm",
+    "fullDisplayName": "Cacnea 19/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5398,18 +6527,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-019-low.png",
-    "imageHighSrc": "cards/sm7-019-high.png"
+    "imageHighSrc": "cards/sm7-019-high.png",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11120",
-    "externalId": null,
+    "externalId": "sm7-18",
     "tcgdex_id": "sm7-18",
     "localId": "18",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "018/168",
+    "cardNumber": "18/168",
     "cardName": "Illumise",
-    "fullDisplayName": "Illumise 018/168 Celestial Storm",
+    "fullDisplayName": "Illumise 18/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5431,18 +6566,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-018-low.png",
-    "imageHighSrc": "cards/sm7-018-high.png"
+    "imageHighSrc": "cards/sm7-018-high.png",
+    "attacks": [
+      {
+        "name": "Pheromone Signals",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11113",
-    "externalId": null,
+    "externalId": "sm7-17",
     "tcgdex_id": "sm7-17",
     "localId": "17",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "017/168",
+    "cardNumber": "17/168",
     "cardName": "Volbeat",
-    "fullDisplayName": "Volbeat 017/168 Celestial Storm",
+    "fullDisplayName": "Volbeat 17/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5464,18 +6605,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-017-low.png",
-    "imageHighSrc": "cards/sm7-017-high.png"
+    "imageHighSrc": "cards/sm7-017-high.png",
+    "attacks": [
+      {
+        "name": "Pheromone Catch",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "11106",
-    "externalId": null,
+    "externalId": "sm7-16",
     "tcgdex_id": "sm7-16",
     "localId": "16",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "016/168",
+    "cardNumber": "16/168",
     "cardName": "Masquerain",
-    "fullDisplayName": "Masquerain 016/168 Celestial Storm",
+    "fullDisplayName": "Masquerain 16/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5497,18 +6644,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-016-low.png",
-    "imageHighSrc": "cards/sm7-016-high.png"
+    "imageHighSrc": "cards/sm7-016-high.png",
+    "attacks": [
+      {
+        "name": "Surprising Pattern",
+        "damage": null
+      },
+      {
+        "name": "Hurricane Wing",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "11099",
-    "externalId": null,
+    "externalId": "sm7-15",
     "tcgdex_id": "sm7-15",
     "localId": "15",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "015/168",
+    "cardNumber": "15/168",
     "cardName": "Surskit",
-    "fullDisplayName": "Surskit 015/168 Celestial Storm",
+    "fullDisplayName": "Surskit 15/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5530,18 +6687,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-015-low.png",
-    "imageHighSrc": "cards/sm7-015-high.png"
+    "imageHighSrc": "cards/sm7-015-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11091",
-    "externalId": null,
+    "externalId": "sm7-14",
     "tcgdex_id": "sm7-14",
     "localId": "14",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "014/168",
+    "cardNumber": "14/168",
     "cardName": "Shiftry-GX",
-    "fullDisplayName": "Shiftry-GX 014/168 Celestial Storm",
+    "fullDisplayName": "Shiftry-GX 14/168 Celestial Storm",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5564,18 +6727,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-014-low.png",
-    "imageHighSrc": "cards/sm7-014-high.png"
+    "imageHighSrc": "cards/sm7-014-high.png",
+    "attacks": [
+      {
+        "name": "Perplex",
+        "damage": "40"
+      },
+      {
+        "name": "Extrasensory",
+        "damage": "90+"
+      },
+      {
+        "name": "Den of Iniquity-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11084",
-    "externalId": null,
+    "externalId": "sm7-13",
     "tcgdex_id": "sm7-13",
     "localId": "13",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "013/168",
+    "cardNumber": "13/168",
     "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 013/168 Celestial Storm",
+    "fullDisplayName": "Nuzleaf 13/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5597,18 +6775,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-013-low.png",
-    "imageHighSrc": "cards/sm7-013-high.png"
+    "imageHighSrc": "cards/sm7-013-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Clear the Room",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11077",
-    "externalId": null,
+    "externalId": "sm7-12",
     "tcgdex_id": "sm7-12",
     "localId": "12",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "012/168",
+    "cardNumber": "12/168",
     "cardName": "Seedot",
-    "fullDisplayName": "Seedot 012/168 Celestial Storm",
+    "fullDisplayName": "Seedot 12/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5630,18 +6818,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-012-low.png",
-    "imageHighSrc": "cards/sm7-012-high.png"
+    "imageHighSrc": "cards/sm7-012-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11071",
-    "externalId": null,
+    "externalId": "sm7-11",
     "tcgdex_id": "sm7-11",
     "localId": "11",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "011/168",
+    "cardNumber": "11/168",
     "cardName": "Seedot",
-    "fullDisplayName": "Seedot 011/168 Celestial Storm",
+    "fullDisplayName": "Seedot 11/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5663,18 +6857,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-011-low.png",
-    "imageHighSrc": "cards/sm7-011-high.png"
+    "imageHighSrc": "cards/sm7-011-high.png",
+    "attacks": [
+      {
+        "name": "Hang Down",
+        "damage": "10"
+      },
+      {
+        "name": "Harden",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11064",
-    "externalId": null,
+    "externalId": "sm7-10",
     "tcgdex_id": "sm7-10",
     "localId": "10",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "10a/168",
+    "cardNumber": "10/168",
     "cardName": "Sceptile",
-    "fullDisplayName": "Sceptile 10a/168 Celestial Storm",
+    "fullDisplayName": "Sceptile 10/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5696,18 +6900,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-10a-low.png",
-    "imageHighSrc": "cards/sm7-10a-high.png"
+    "imageHighSrc": "cards/sm7-10a-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Storm",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "11057",
-    "externalId": null,
+    "externalId": "sm7-10",
     "tcgdex_id": "sm7-10",
     "localId": "10",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "010/168",
+    "cardNumber": "10/168",
     "cardName": "Sceptile",
-    "fullDisplayName": "Sceptile 010/168 Celestial Storm",
+    "fullDisplayName": "Sceptile 10/168 Celestial Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5729,18 +6939,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-010-low.png",
-    "imageHighSrc": "cards/sm7-010-high.png"
+    "imageHighSrc": "cards/sm7-010-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Storm",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "11050",
-    "externalId": null,
+    "externalId": "sm7-9",
     "tcgdex_id": "sm7-9",
     "localId": "9",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "009/168",
+    "cardNumber": "9/168",
     "cardName": "Grovyle",
-    "fullDisplayName": "Grovyle 009/168 Celestial Storm",
+    "fullDisplayName": "Grovyle 9/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5762,18 +6978,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-009-low.png",
-    "imageHighSrc": "cards/sm7-009-high.png"
+    "imageHighSrc": "cards/sm7-009-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Blade",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "11043",
-    "externalId": null,
+    "externalId": "sm7-8",
     "tcgdex_id": "sm7-8",
     "localId": "8",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "008/168",
+    "cardNumber": "8/168",
     "cardName": "Treecko",
-    "fullDisplayName": "Treecko 008/168 Celestial Storm",
+    "fullDisplayName": "Treecko 8/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5795,18 +7017,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-008-low.png",
-    "imageHighSrc": "cards/sm7-008-high.png"
+    "imageHighSrc": "cards/sm7-008-high.png",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Whap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11037",
-    "externalId": null,
+    "externalId": "sm7-7",
     "tcgdex_id": "sm7-7",
     "localId": "7",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "007/168",
+    "cardNumber": "7/168",
     "cardName": "Treecko",
-    "fullDisplayName": "Treecko 007/168 Celestial Storm",
+    "fullDisplayName": "Treecko 7/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5828,18 +7060,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-007-low.png",
-    "imageHighSrc": "cards/sm7-007-high.png"
+    "imageHighSrc": "cards/sm7-007-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11030",
-    "externalId": null,
+    "externalId": "sm7-6",
     "tcgdex_id": "sm7-6",
     "localId": "6",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "006/168",
+    "cardNumber": "6/168",
     "cardName": "Ariados",
-    "fullDisplayName": "Ariados 006/168 Celestial Storm",
+    "fullDisplayName": "Ariados 6/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5861,18 +7099,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-006-low.png",
-    "imageHighSrc": "cards/sm7-006-high.png"
+    "imageHighSrc": "cards/sm7-006-high.png",
+    "attacks": [
+      {
+        "name": "Reactive Poison",
+        "damage": "20+"
+      },
+      {
+        "name": "Spider Trap",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11023",
-    "externalId": null,
+    "externalId": "sm7-5",
     "tcgdex_id": "sm7-5",
     "localId": "5",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "005/168",
+    "cardNumber": "5/168",
     "cardName": "Spinarak",
-    "fullDisplayName": "Spinarak 005/168 Celestial Storm",
+    "fullDisplayName": "Spinarak 5/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5894,18 +7142,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-005-low.png",
-    "imageHighSrc": "cards/sm7-005-high.png"
+    "imageHighSrc": "cards/sm7-005-high.png",
+    "attacks": [
+      {
+        "name": "Stun Poison",
+        "damage": null
+      },
+      {
+        "name": "Pierce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11017",
-    "externalId": null,
+    "externalId": "sm7-4",
     "tcgdex_id": "sm7-4",
     "localId": "4",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "004/168",
+    "cardNumber": "4/168",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 004/168 Celestial Storm",
+    "fullDisplayName": "Scyther 4/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5927,18 +7185,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-004-low.png",
-    "imageHighSrc": "cards/sm7-004-high.png"
+    "imageHighSrc": "cards/sm7-004-high.png",
+    "attacks": [
+      {
+        "name": "Twin Play",
+        "damage": null
+      },
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11010",
-    "externalId": null,
+    "externalId": "sm7-3",
     "tcgdex_id": "sm7-3",
     "localId": "3",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "003/168",
+    "cardNumber": "3/168",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel 003/168 Celestial Storm",
+    "fullDisplayName": "Victreebel 3/168 Celestial Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5960,18 +7228,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-003-low.png",
-    "imageHighSrc": "cards/sm7-003-high.png"
+    "imageHighSrc": "cards/sm7-003-high.png",
+    "attacks": [
+      {
+        "name": "Corrosive Acid",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11004",
-    "externalId": null,
+    "externalId": "sm7-2",
     "tcgdex_id": "sm7-2",
     "localId": "2",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "002/168",
+    "cardNumber": "2/168",
     "cardName": "Weepinbell",
-    "fullDisplayName": "Weepinbell 002/168 Celestial Storm",
+    "fullDisplayName": "Weepinbell 2/168 Celestial Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5993,18 +7267,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-002-low.png",
-    "imageHighSrc": "cards/sm7-002-high.png"
+    "imageHighSrc": "cards/sm7-002-high.png",
+    "attacks": [
+      {
+        "name": "Growth",
+        "damage": null
+      },
+      {
+        "name": "Double Razor Leaf",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "10997",
-    "externalId": null,
+    "externalId": "sm7-1",
     "tcgdex_id": "sm7-1",
     "localId": "1",
     "setCode": "sm7",
     "setTcgdexId": "sm7",
-    "cardNumber": "001/168",
+    "cardNumber": "1/168",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 001/168 Celestial Storm",
+    "fullDisplayName": "Bellsprout 1/168 Celestial Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6026,6 +7310,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm7-001-low.png",
-    "imageHighSrc": "cards/sm7-001-high.png"
+    "imageHighSrc": "cards/sm7-001-high.png",
+    "attacks": [
+      {
+        "name": "Blot",
+        "damage": "20"
+      }
+    ]
   }
 ]

@@ -6,9 +6,9 @@
     "localId": "015",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "015/15",
+    "cardNumber": "015/015",
     "cardName": "Drampa",
-    "fullDisplayName": "Drampa 015/15 McDonald's Collection 2024",
+    "fullDisplayName": "Drampa 015/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,7 +30,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-015-low.jpg",
-    "imageHighSrc": "cards/2024sv-015-low.jpg"
+    "imageHighSrc": "cards/2024sv-015-low.jpg",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "20"
+      },
+      {
+        "name": "Raging Cannon",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "22374",
@@ -39,9 +49,9 @@
     "localId": "014",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "014/15",
+    "cardNumber": "014/015",
     "cardName": "Rayquaza",
-    "fullDisplayName": "Rayquaza 014/15 McDonald's Collection 2024",
+    "fullDisplayName": "Rayquaza 014/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,7 +73,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-014-low.jpg",
-    "imageHighSrc": "cards/2024sv-014-low.jpg"
+    "imageHighSrc": "cards/2024sv-014-low.jpg",
+    "attacks": [
+      {
+        "name": "Jaw Lock",
+        "damage": "30"
+      },
+      {
+        "name": "Power Blast",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "22373",
@@ -72,9 +92,9 @@
     "localId": "013",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "013/15",
+    "cardNumber": "013/015",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 013/15 McDonald's Collection 2024",
+    "fullDisplayName": "Eevee 013/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,7 +116,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-013-low.jpg",
-    "imageHighSrc": "cards/2024sv-013-low.jpg"
+    "imageHighSrc": "cards/2024sv-013-low.jpg",
+    "attacks": [
+      {
+        "name": "Continuous Steps",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "22372",
@@ -105,9 +131,9 @@
     "localId": "012",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "012/15",
+    "cardNumber": "012/015",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 012/15 McDonald's Collection 2024",
+    "fullDisplayName": "Dragonite 012/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -129,7 +155,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-012-low.jpg",
-    "imageHighSrc": "cards/2024sv-012-low.jpg"
+    "imageHighSrc": "cards/2024sv-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Dragon Pulse",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "22371",
@@ -138,9 +170,9 @@
     "localId": "011",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "011/15",
+    "cardNumber": "011/015",
     "cardName": "Roaring Moon",
-    "fullDisplayName": "Roaring Moon 011/15 McDonald's Collection 2024",
+    "fullDisplayName": "Roaring Moon 011/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,7 +194,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-011-low.jpg",
-    "imageHighSrc": "cards/2024sv-011-low.jpg"
+    "imageHighSrc": "cards/2024sv-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Vengeance Fletching",
+        "damage": "70+"
+      },
+      {
+        "name": "Speed Wing",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "22370",
@@ -171,9 +213,9 @@
     "localId": "010",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "010/15",
+    "cardNumber": "010/015",
     "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 010/15 McDonald's Collection 2024",
+    "fullDisplayName": "Hydreigon 010/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -195,7 +237,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-010-low.jpg",
-    "imageHighSrc": "cards/2024sv-010-low.jpg"
+    "imageHighSrc": "cards/2024sv-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Dark Cutter",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "22369",
@@ -204,9 +252,9 @@
     "localId": "009",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "009/15",
+    "cardNumber": "009/015",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon 009/15 McDonald's Collection 2024",
+    "fullDisplayName": "Umbreon 009/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -228,7 +276,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-009-low.jpg",
-    "imageHighSrc": "cards/2024sv-009-low.jpg"
+    "imageHighSrc": "cards/2024sv-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Blindside",
+        "damage": null
+      },
+      {
+        "name": "Moon Mirage",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "22368",
@@ -237,9 +295,9 @@
     "localId": "008",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "008/15",
+    "cardNumber": "008/015",
     "cardName": "Koraidon",
-    "fullDisplayName": "Koraidon 008/15 McDonald's Collection 2024",
+    "fullDisplayName": "Koraidon 008/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,7 +319,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-008-low.jpg",
-    "imageHighSrc": "cards/2024sv-008-low.jpg"
+    "imageHighSrc": "cards/2024sv-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "70"
+      },
+      {
+        "name": "Rampaging Fang",
+        "damage": "190"
+      }
+    ]
   },
   {
     "masterCardId": "22367",
@@ -270,9 +338,9 @@
     "localId": "007",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "007/15",
+    "cardNumber": "007/015",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 007/15 McDonald's Collection 2024",
+    "fullDisplayName": "Quagsire 007/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -294,7 +362,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-007-low.jpg",
-    "imageHighSrc": "cards/2024sv-007-low.jpg"
+    "imageHighSrc": "cards/2024sv-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "30"
+      },
+      {
+        "name": "Fickle Impact",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "22366",
@@ -303,9 +381,9 @@
     "localId": "006",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "006/15",
+    "cardNumber": "006/015",
     "cardName": "Dragapult",
-    "fullDisplayName": "Dragapult 006/15 McDonald's Collection 2024",
+    "fullDisplayName": "Dragapult 006/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -327,7 +405,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-006-low.jpg",
-    "imageHighSrc": "cards/2024sv-006-low.jpg"
+    "imageHighSrc": "cards/2024sv-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Dragon Launcher",
+        "damage": null
+      },
+      {
+        "name": "Spooky Shot",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "22365",
@@ -336,9 +424,9 @@
     "localId": "005",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "005/15",
+    "cardNumber": "005/015",
     "cardName": "Hatenna",
-    "fullDisplayName": "Hatenna 005/15 McDonald's Collection 2024",
+    "fullDisplayName": "Hatenna 005/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,7 +448,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-005-low.jpg",
-    "imageHighSrc": "cards/2024sv-005-low.jpg"
+    "imageHighSrc": "cards/2024sv-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "22364",
@@ -369,9 +467,9 @@
     "localId": "004",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "004/15",
+    "cardNumber": "004/015",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 004/15 McDonald's Collection 2024",
+    "fullDisplayName": "Jigglypuff 004/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,7 +491,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-004-low.jpg",
-    "imageHighSrc": "cards/2024sv-004-low.jpg"
+    "imageHighSrc": "cards/2024sv-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Let's All Rollout",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "22363",
@@ -402,9 +510,9 @@
     "localId": "003",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "003/15",
+    "cardNumber": "003/015",
     "cardName": "Miraidon",
-    "fullDisplayName": "Miraidon 003/15 McDonald's Collection 2024",
+    "fullDisplayName": "Miraidon 003/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -426,7 +534,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-003-low.jpg",
-    "imageHighSrc": "cards/2024sv-003-low.jpg"
+    "imageHighSrc": "cards/2024sv-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Lightning Laser",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "22362",
@@ -435,9 +553,9 @@
     "localId": "002",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "002/15",
+    "cardNumber": "002/015",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 002/15 McDonald's Collection 2024",
+    "fullDisplayName": "Pikachu 002/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -459,7 +577,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-002-low.jpg",
-    "imageHighSrc": "cards/2024sv-002-low.jpg"
+    "imageHighSrc": "cards/2024sv-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Pika Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "22361",
@@ -468,9 +596,9 @@
     "localId": "001",
     "setCode": "2024sv",
     "setTcgdexId": "2024sv",
-    "cardNumber": "001/15",
+    "cardNumber": "001/015",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 001/15 McDonald's Collection 2024",
+    "fullDisplayName": "Charizard 001/015 McDonald's Collection 2024",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -492,6 +620,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2024sv-001-low.jpg",
-    "imageHighSrc": "cards/2024sv-001-low.jpg"
+    "imageHighSrc": "cards/2024sv-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Royal Blaze",
+        "damage": "100+"
+      }
+    ]
   }
 ]

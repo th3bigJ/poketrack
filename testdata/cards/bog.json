@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "1969",
-    "externalId": null,
+    "externalId": "bp-9",
     "tcgdex_id": "bog-9",
     "localId": "009",
     "setCode": "bog",
     "setTcgdexId": "bog",
-    "cardNumber": "009/9",
+    "cardNumber": "9",
     "cardName": "Rocket's Hitmonchan",
-    "fullDisplayName": "Rocket's Hitmonchan 009/9 Best of game",
+    "fullDisplayName": "Rocket's Hitmonchan 9 Best of game",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bp-009-low.png",
-    "imageHighSrc": "cards/bp-009-high.png"
+    "imageHighSrc": "cards/bp-009-high.png",
+    "attacks": [
+      {
+        "name": "Crosscounter",
+        "damage": null
+      },
+      {
+        "name": "Magnum Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1968",
-    "externalId": null,
+    "externalId": "bp-8",
     "tcgdex_id": "bog-8",
     "localId": "008",
     "setCode": "bog",
     "setTcgdexId": "bog",
-    "cardNumber": "008/9",
+    "cardNumber": "8",
     "cardName": "Rocket's Mewtwo",
-    "fullDisplayName": "Rocket's Mewtwo 008/9 Best of game",
+    "fullDisplayName": "Rocket's Mewtwo 8 Best of game",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,32 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bp-008-low.png",
-    "imageHighSrc": "cards/bp-008-high.png"
+    "imageHighSrc": "cards/bp-008-high.png",
+    "attacks": [
+      {
+        "name": "Juxtapose",
+        "damage": null
+      },
+      {
+        "name": "Hypnoblast",
+        "damage": "20"
+      },
+      {
+        "name": "Psyburn",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1967",
-    "externalId": null,
+    "externalId": "bp-7",
     "tcgdex_id": "bog-7",
     "localId": "007",
     "setCode": "bog",
     "setTcgdexId": "bog",
-    "cardNumber": "007/9",
+    "cardNumber": "7",
     "cardName": "Dark Venusaur",
-    "fullDisplayName": "Dark Venusaur 007/9 Best of game",
+    "fullDisplayName": "Dark Venusaur 7 Best of game",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -96,18 +120,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bp-007-low.png",
-    "imageHighSrc": "cards/bp-007-high.png"
+    "imageHighSrc": "cards/bp-007-high.png",
+    "attacks": [
+      {
+        "name": "Horrid Pollen",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1966",
-    "externalId": null,
+    "externalId": "bp-6",
     "tcgdex_id": "bog-6",
     "localId": "006",
     "setCode": "bog",
     "setTcgdexId": "bog",
-    "cardNumber": "006/9",
+    "cardNumber": "6",
     "cardName": "Dark Ivysaur",
-    "fullDisplayName": "Dark Ivysaur 006/9 Best of game",
+    "fullDisplayName": "Dark Ivysaur 6 Best of game",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -129,18 +159,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bp-006-low.png",
-    "imageHighSrc": "cards/bp-006-high.png"
+    "imageHighSrc": "cards/bp-006-high.png",
+    "attacks": [
+      {
+        "name": "Fury Strikes",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "1965",
-    "externalId": null,
+    "externalId": "bp-5",
     "tcgdex_id": "bog-5",
     "localId": "005",
     "setCode": "bog",
     "setTcgdexId": "bog",
-    "cardNumber": "005/9",
+    "cardNumber": "5",
     "cardName": "Rocket's Sneasel",
-    "fullDisplayName": "Rocket's Sneasel 005/9 Best of game",
+    "fullDisplayName": "Rocket's Sneasel 5 Best of game",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +198,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bp-005-low.png",
-    "imageHighSrc": "cards/bp-005-high.png"
+    "imageHighSrc": "cards/bp-005-high.png",
+    "attacks": [
+      {
+        "name": "Entrap",
+        "damage": null
+      },
+      {
+        "name": "Continuous Scratch",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "1964",
-    "externalId": null,
+    "externalId": "bp-4",
     "tcgdex_id": "bog-4",
     "localId": "004",
     "setCode": "bog",
     "setTcgdexId": "bog",
-    "cardNumber": "004/9",
+    "cardNumber": "4",
     "cardName": "Rocket's Scizor",
-    "fullDisplayName": "Rocket's Scizor 004/9 Best of game",
+    "fullDisplayName": "Rocket's Scizor 4 Best of game",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +241,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bp-004-low.png",
-    "imageHighSrc": "cards/bp-004-high.png"
+    "imageHighSrc": "cards/bp-004-high.png",
+    "attacks": [
+      {
+        "name": "Focus",
+        "damage": null
+      },
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1963",
-    "externalId": null,
+    "externalId": "bp-3",
     "tcgdex_id": "bog-3",
     "localId": "003",
     "setCode": "bog",
     "setTcgdexId": "bog",
-    "cardNumber": "003/9",
+    "cardNumber": "3",
     "cardName": "Professor Elm",
-    "fullDisplayName": "Professor Elm 003/9 Best of game",
+    "fullDisplayName": "Professor Elm 3 Best of game",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -222,18 +278,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bp-003-low.png",
-    "imageHighSrc": "cards/bp-003-high.png"
+    "imageHighSrc": "cards/bp-003-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw 7 cards. You can't play any more Trainer cards this turn."
   },
   {
     "masterCardId": "1962",
-    "externalId": null,
+    "externalId": "bp-2",
     "tcgdex_id": "bog-2",
     "localId": "002",
     "setCode": "bog",
     "setTcgdexId": "bog",
-    "cardNumber": "002/9",
+    "cardNumber": "2",
     "cardName": "Hitmonchan",
-    "fullDisplayName": "Hitmonchan 002/9 Best of game",
+    "fullDisplayName": "Hitmonchan 2 Best of game",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -255,18 +312,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bp-002-low.png",
-    "imageHighSrc": "cards/bp-002-high.png"
+    "imageHighSrc": "cards/bp-002-high.png",
+    "attacks": [
+      {
+        "name": "Jab",
+        "damage": "20"
+      },
+      {
+        "name": "Special Punch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "1961",
-    "externalId": null,
+    "externalId": "bp-1",
     "tcgdex_id": "bog-1",
     "localId": "001",
     "setCode": "bog",
     "setTcgdexId": "bog",
-    "cardNumber": "001/9",
+    "cardNumber": "1",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 001/9 Best of game",
+    "fullDisplayName": "Electabuzz 1 Best of game",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -288,6 +355,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bp-001-low.png",
-    "imageHighSrc": "cards/bp-001-high.png"
+    "imageHighSrc": "cards/bp-001-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Thunderpunch",
+        "damage": "30+"
+      }
+    ]
   }
 ]

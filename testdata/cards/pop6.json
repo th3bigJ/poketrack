@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9254",
-    "externalId": null,
+    "externalId": "pop6-17",
     "tcgdex_id": "pop6-17",
     "localId": "017",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "017/17",
+    "cardNumber": "17/17",
     "cardName": "Turtwig",
-    "fullDisplayName": "Turtwig 017/17 POP Series 6",
+    "fullDisplayName": "Turtwig 17/17 POP Series 6",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-017-low.png",
-    "imageHighSrc": "cards/pop6-017-high.png"
+    "imageHighSrc": "cards/pop6-017-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9244",
-    "externalId": null,
+    "externalId": "pop6-16",
     "tcgdex_id": "pop6-16",
     "localId": "016",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "016/17",
+    "cardNumber": "16/17",
     "cardName": "Starly",
-    "fullDisplayName": "Starly 016/17 POP Series 6",
+    "fullDisplayName": "Starly 16/17 POP Series 6",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-016-low.png",
-    "imageHighSrc": "cards/pop6-016-high.png"
+    "imageHighSrc": "cards/pop6-016-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9236",
-    "externalId": null,
+    "externalId": "pop6-15",
     "tcgdex_id": "pop6-15",
     "localId": "015",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "015/17",
+    "cardNumber": "15/17",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 015/17 POP Series 6",
+    "fullDisplayName": "Piplup 15/17 POP Series 6",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-015-low.png",
-    "imageHighSrc": "cards/pop6-015-high.png"
+    "imageHighSrc": "cards/pop6-015-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Water Spash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9227",
-    "externalId": null,
+    "externalId": "pop6-14",
     "tcgdex_id": "pop6-14",
     "localId": "014",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "014/17",
+    "cardNumber": "14/17",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 014/17 POP Series 6",
+    "fullDisplayName": "Chimchar 14/17 POP Series 6",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +159,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-014-low.png",
-    "imageHighSrc": "cards/pop6-014-high.png"
+    "imageHighSrc": "cards/pop6-014-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9218",
-    "externalId": null,
+    "externalId": "pop6-13",
     "tcgdex_id": "pop6-13",
     "localId": "013",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "013/17",
+    "cardNumber": "13/17",
     "cardName": "Cherubi",
-    "fullDisplayName": "Cherubi 013/17 POP Series 6",
+    "fullDisplayName": "Cherubi 13/17 POP Series 6",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +202,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-013-low.png",
-    "imageHighSrc": "cards/pop6-013-high.png"
+    "imageHighSrc": "cards/pop6-013-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": null
+      },
+      {
+        "name": "Leech Seed",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9209",
-    "externalId": null,
+    "externalId": "pop6-12",
     "tcgdex_id": "pop6-12",
     "localId": "012",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "012/17",
+    "cardNumber": "12/17",
     "cardName": "Buneary",
-    "fullDisplayName": "Buneary 012/17 POP Series 6",
+    "fullDisplayName": "Buneary 12/17 POP Series 6",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +245,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-012-low.png",
-    "imageHighSrc": "cards/pop6-012-high.png"
+    "imageHighSrc": "cards/pop6-012-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Jump Kick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9200",
-    "externalId": null,
+    "externalId": "pop6-11",
     "tcgdex_id": "pop6-11",
     "localId": "011",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "011/17",
+    "cardNumber": "11/17",
     "cardName": "Bidoof",
-    "fullDisplayName": "Bidoof 011/17 POP Series 6",
+    "fullDisplayName": "Bidoof 11/17 POP Series 6",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +288,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-011-low.png",
-    "imageHighSrc": "cards/pop6-011-high.png"
+    "imageHighSrc": "cards/pop6-011-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": null
+      },
+      {
+        "name": "Scavenge",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9190",
-    "externalId": null,
+    "externalId": "pop6-10",
     "tcgdex_id": "pop6-10",
     "localId": "010",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "010/17",
+    "cardNumber": "10/17",
     "cardName": "Staravia",
-    "fullDisplayName": "Staravia 010/17 POP Series 6",
+    "fullDisplayName": "Staravia 10/17 POP Series 6",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -261,18 +331,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-010-low.png",
-    "imageHighSrc": "cards/pop6-010-high.png"
+    "imageHighSrc": "cards/pop6-010-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "20"
+      },
+      {
+        "name": "Clutch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9181",
-    "externalId": null,
+    "externalId": "pop6-9",
     "tcgdex_id": "pop6-9",
     "localId": "009",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "009/17",
+    "cardNumber": "9/17",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 009/17 POP Series 6",
+    "fullDisplayName": "Pikachu 9/17 POP Series 6",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +374,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-009-low.png",
-    "imageHighSrc": "cards/pop6-009-high.png"
+    "imageHighSrc": "cards/pop6-009-high.png",
+    "attacks": [
+      {
+        "name": "Spark",
+        "damage": "10"
+      }
+    ],
+    "rules": "Oran Berry: Remove 1 damage counter from Pikachu at the end of your turn."
   },
   {
     "masterCardId": "9172",
-    "externalId": null,
+    "externalId": "pop6-8",
     "tcgdex_id": "pop6-8",
     "localId": "008",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "008/17",
+    "cardNumber": "8/17",
     "cardName": "Riolu",
-    "fullDisplayName": "Riolu 008/17 POP Series 6",
+    "fullDisplayName": "Riolu 8/17 POP Series 6",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +414,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-008-low.png",
-    "imageHighSrc": "cards/pop6-008-high.png"
+    "imageHighSrc": "cards/pop6-008-high.png",
+    "attacks": [
+      {
+        "name": "Wild Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9164",
-    "externalId": null,
+    "externalId": "pop6-7",
     "tcgdex_id": "pop6-7",
     "localId": "007",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "007/17",
+    "cardNumber": "7/17",
     "cardName": "Gible",
-    "fullDisplayName": "Gible 007/17 POP Series 6",
+    "fullDisplayName": "Gible 7/17 POP Series 6",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +453,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-007-low.png",
-    "imageHighSrc": "cards/pop6-007-high.png"
+    "imageHighSrc": "cards/pop6-007-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "30"
+      }
+    ],
+    "rules": "Oran Berry: Remove 1 damage counter from Gible at the end of your turn."
   },
   {
     "masterCardId": "9159",
-    "externalId": null,
+    "externalId": "pop6-6",
     "tcgdex_id": "pop6-6",
     "localId": "006",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "006/17",
+    "cardNumber": "6/17",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 006/17 POP Series 6",
+    "fullDisplayName": "Drifloon 6/17 POP Series 6",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,18 +493,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-006-low.png",
-    "imageHighSrc": "cards/pop6-006-high.png"
+    "imageHighSrc": "cards/pop6-006-high.png",
+    "attacks": [
+      {
+        "name": "Blowing Wind",
+        "damage": null
+      },
+      {
+        "name": "Ominous Wind",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9148",
-    "externalId": null,
+    "externalId": "pop6-5",
     "tcgdex_id": "pop6-5",
     "localId": "005",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "005/17",
+    "cardNumber": "5/17",
     "cardName": "Rampardos",
-    "fullDisplayName": "Rampardos 005/17 POP Series 6",
+    "fullDisplayName": "Rampardos 5/17 POP Series 6",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -426,18 +536,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-005-low.png",
-    "imageHighSrc": "cards/pop6-005-high.png"
+    "imageHighSrc": "cards/pop6-005-high.png",
+    "attacks": [
+      {
+        "name": "Assurance",
+        "damage": "30"
+      },
+      {
+        "name": "Hasty Headbutt",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9141",
-    "externalId": null,
+    "externalId": "pop6-4",
     "tcgdex_id": "pop6-4",
     "localId": "004",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "004/17",
+    "cardNumber": "4/17",
     "cardName": "Pachirisu",
-    "fullDisplayName": "Pachirisu 004/17 POP Series 6",
+    "fullDisplayName": "Pachirisu 4/17 POP Series 6",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -459,18 +579,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-004-low.png",
-    "imageHighSrc": "cards/pop6-004-high.png"
+    "imageHighSrc": "cards/pop6-004-high.png",
+    "attacks": [
+      {
+        "name": "Minor Errand-Running",
+        "damage": null
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9132",
-    "externalId": null,
+    "externalId": "pop6-3",
     "tcgdex_id": "pop6-3",
     "localId": "003",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "003/17",
+    "cardNumber": "3/17",
     "cardName": "Manaphy",
-    "fullDisplayName": "Manaphy 003/17 POP Series 6",
+    "fullDisplayName": "Manaphy 3/17 POP Series 6",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,18 +622,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-003-low.png",
-    "imageHighSrc": "cards/pop6-003-high.png"
+    "imageHighSrc": "cards/pop6-003-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Aqua Ring",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9124",
-    "externalId": null,
+    "externalId": "pop6-2",
     "tcgdex_id": "pop6-2",
     "localId": "002",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "002/17",
+    "cardNumber": "2/17",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario 002/17 POP Series 6",
+    "fullDisplayName": "Lucario 2/17 POP Series 6",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -525,18 +665,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-002-low.png",
-    "imageHighSrc": "cards/pop6-002-high.png"
+    "imageHighSrc": "cards/pop6-002-high.png",
+    "attacks": [
+      {
+        "name": "Feint",
+        "damage": "30"
+      },
+      {
+        "name": "Aura Sphere",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9108",
-    "externalId": null,
+    "externalId": "pop6-1",
     "tcgdex_id": "pop6-1",
     "localId": "001",
     "setCode": "pop6",
     "setTcgdexId": "pop6",
-    "cardNumber": "001/17",
+    "cardNumber": "1/17",
     "cardName": "Bastiodon",
-    "fullDisplayName": "Bastiodon 001/17 POP Series 6",
+    "fullDisplayName": "Bastiodon 1/17 POP Series 6",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -558,6 +708,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop6-001-low.png",
-    "imageHighSrc": "cards/pop6-001-high.png"
+    "imageHighSrc": "cards/pop6-001-high.png",
+    "attacks": [
+      {
+        "name": "Anger Revenge",
+        "damage": "60"
+      }
+    ]
   }
 ]

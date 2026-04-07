@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9107",
-    "externalId": null,
+    "externalId": "pl3-SH9",
     "tcgdex_id": "pl3-SH9",
     "localId": "SH9",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "SH9/147",
+    "cardNumber": "SH9",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma SH9/147 Supreme Victors",
+    "fullDisplayName": "Yanma SH9 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-SH9-low.png",
-    "imageHighSrc": "cards/pl3-SH9-high.png"
+    "imageHighSrc": "cards/pl3-SH9-high.png",
+    "attacks": [
+      {
+        "name": "Sonicboom",
+        "damage": "10"
+      },
+      {
+        "name": "Baton Pass",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9106",
-    "externalId": null,
+    "externalId": "pl3-SH8",
     "tcgdex_id": "pl3-SH8",
     "localId": "SH8",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "SH8/147",
+    "cardNumber": "SH8",
     "cardName": "Relicanth",
-    "fullDisplayName": "Relicanth SH8/147 Supreme Victors",
+    "fullDisplayName": "Relicanth SH8 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-SH8-low.png",
-    "imageHighSrc": "cards/pl3-SH8-high.png"
+    "imageHighSrc": "cards/pl3-SH8-high.png",
+    "attacks": [
+      {
+        "name": "Deep Sea Pressure",
+        "damage": "20"
+      },
+      {
+        "name": "Aqua Wave",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "9105",
-    "externalId": null,
+    "externalId": "pl3-SH7",
     "tcgdex_id": "pl3-SH7",
     "localId": "SH7",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "SH7/147",
+    "cardNumber": "SH7",
     "cardName": "Milotic",
-    "fullDisplayName": "Milotic SH7/147 Supreme Victors",
+    "fullDisplayName": "Milotic SH7 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -96,11 +116,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-SH7-low.png",
-    "imageHighSrc": "cards/pl3-SH7-high.png"
+    "imageHighSrc": "cards/pl3-SH7-high.png",
+    "attacks": [
+      {
+        "name": "Dwindling Wave",
+        "damage": "80-"
+      }
+    ]
   },
   {
     "masterCardId": "9104",
-    "externalId": null,
+    "externalId": "pl3-150",
     "tcgdex_id": "pl3-150",
     "localId": "150",
     "setCode": "pl3",
@@ -129,11 +155,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-150-low.png",
-    "imageHighSrc": "cards/pl3-150-high.png"
+    "imageHighSrc": "cards/pl3-150-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Burn",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9103",
-    "externalId": null,
+    "externalId": "pl3-149",
     "tcgdex_id": "pl3-149",
     "localId": "149",
     "setCode": "pl3",
@@ -162,11 +194,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-149-low.png",
-    "imageHighSrc": "cards/pl3-149-high.png"
+    "imageHighSrc": "cards/pl3-149-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Flame",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9102",
-    "externalId": null,
+    "externalId": "pl3-148",
     "tcgdex_id": "pl3-148",
     "localId": "148",
     "setCode": "pl3",
@@ -195,11 +233,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-148-low.png",
-    "imageHighSrc": "cards/pl3-148-high.png"
+    "imageHighSrc": "cards/pl3-148-high.png",
+    "attacks": [
+      {
+        "name": "Diamond Dust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9101",
-    "externalId": null,
+    "externalId": "pl3-147",
     "tcgdex_id": "pl3-147",
     "localId": "147",
     "setCode": "pl3",
@@ -229,11 +273,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-147-low.png",
-    "imageHighSrc": "cards/pl3-147-high.png"
+    "imageHighSrc": "cards/pl3-147-high.png",
+    "attacks": [
+      {
+        "name": "Defog",
+        "damage": "40"
+      }
+    ],
+    "rules": "Put this card onto your Active Staraptor FB. Staraptor FB LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9100",
-    "externalId": null,
+    "externalId": "pl3-146",
     "tcgdex_id": "pl3-146",
     "localId": "146",
     "setCode": "pl3",
@@ -263,11 +314,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-146-low.png",
-    "imageHighSrc": "cards/pl3-146-high.png"
+    "imageHighSrc": "cards/pl3-146-high.png",
+    "attacks": [
+      {
+        "name": "Final Blowup",
+        "damage": "200"
+      }
+    ],
+    "rules": "Put this card onto your Active Rayquaza C. Rayquaza C LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9099",
-    "externalId": null,
+    "externalId": "pl3-145",
     "tcgdex_id": "pl3-145",
     "localId": "145",
     "setCode": "pl3",
@@ -297,11 +355,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-145-low.png",
-    "imageHighSrc": "cards/pl3-145-high.png"
+    "imageHighSrc": "cards/pl3-145-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Rush",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Garchomp C. Garchomp C LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9098",
-    "externalId": null,
+    "externalId": "pl3-144",
     "tcgdex_id": "pl3-144",
     "localId": "144",
     "setCode": "pl3",
@@ -331,11 +396,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-144-low.png",
-    "imageHighSrc": "cards/pl3-144-high.png"
+    "imageHighSrc": "cards/pl3-144-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Spark",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Put this card onto your Active Electivire FB. Electivire FB LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9097",
-    "externalId": null,
+    "externalId": "pl3-143",
     "tcgdex_id": "pl3-143",
     "localId": "143",
     "setCode": "pl3",
@@ -365,11 +437,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-143-low.png",
-    "imageHighSrc": "cards/pl3-143-high.png"
+    "imageHighSrc": "cards/pl3-143-high.png",
+    "attacks": [
+      {
+        "name": "Malevolent Fire",
+        "damage": "150"
+      }
+    ],
+    "rules": "Put this card onto your Active Charizard G. Charizard G LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9096",
-    "externalId": null,
+    "externalId": "pl3-142",
     "tcgdex_id": "pl3-142",
     "localId": "142",
     "setCode": "pl3",
@@ -399,11 +478,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-142-low.png",
-    "imageHighSrc": "cards/pl3-142-high.png"
+    "imageHighSrc": "cards/pl3-142-high.png",
+    "attacks": [
+      {
+        "name": "Jet Shoot",
+        "damage": "80"
+      }
+    ],
+    "rules": "Put this card onto your Active Blaziken FB. Blaziken FB LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9095",
-    "externalId": null,
+    "externalId": "pl3-141",
     "tcgdex_id": "pl3-141",
     "localId": "141",
     "setCode": "pl3",
@@ -433,11 +519,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-141-low.png",
-    "imageHighSrc": "cards/pl3-141-high.png"
+    "imageHighSrc": "cards/pl3-141-high.png",
+    "attacks": [
+      {
+        "name": "Darkness Slugger",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Put this card onto your Active Absol G. Absol G LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "9094",
-    "externalId": null,
+    "externalId": "pl3-140",
     "tcgdex_id": "pl3-140",
     "localId": "140",
     "setCode": "pl3",
@@ -462,11 +555,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-140-low.png",
-    "imageHighSrc": "cards/pl3-140-high.png"
+    "imageHighSrc": "cards/pl3-140-high.png",
+    "rules": "Search your discard pile for a Supporter card, show it to your opponent, and put it into your hand."
   },
   {
     "masterCardId": "9093",
-    "externalId": null,
+    "externalId": "pl3-139",
     "tcgdex_id": "pl3-139",
     "localId": "139",
     "setCode": "pl3",
@@ -491,11 +585,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-139-low.png",
-    "imageHighSrc": "cards/pl3-139-high.png"
+    "imageHighSrc": "cards/pl3-139-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your discard pile for up to 5 in any combination of Pokémon and basic Energy cards. Show them to your opponent and shuffle them into your deck."
   },
   {
     "masterCardId": "9092",
-    "externalId": null,
+    "externalId": "pl3-138",
     "tcgdex_id": "pl3-138",
     "localId": "138",
     "setCode": "pl3",
@@ -520,11 +615,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-138-low.png",
-    "imageHighSrc": "cards/pl3-138-high.png"
+    "imageHighSrc": "cards/pl3-138-high.png",
+    "rules": "Flip a coin. If heads, put all cards in your hand on top of your deck. Then, search your deck for any 1 card and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "9091",
-    "externalId": null,
+    "externalId": "pl3-137",
     "tcgdex_id": "pl3-137",
     "localId": "137",
     "setCode": "pl3",
@@ -549,11 +645,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-137-low.png",
-    "imageHighSrc": "cards/pl3-137-high.png"
+    "imageHighSrc": "cards/pl3-137-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nFlip 2 coins. If either of them is heads, look at your opponent's hand. For each heads, choose 1 card from your opponent's hand and put it on the bottom of your opponent's deck in any order."
   },
   {
     "masterCardId": "9089",
-    "externalId": null,
+    "externalId": "pl3-136",
     "tcgdex_id": "pl3-136",
     "localId": "136",
     "setCode": "pl3",
@@ -578,11 +675,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-136-low.png",
-    "imageHighSrc": "cards/pl3-136-high.png"
+    "imageHighSrc": "cards/pl3-136-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nLook at the top 7 cards of your deck, choose 1 of them, and put it into your hand. Put the other cards back on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "9088",
-    "externalId": null,
+    "externalId": "pl3-135",
     "tcgdex_id": "pl3-135",
     "localId": "135",
     "setCode": "pl3",
@@ -607,11 +705,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-135-low.png",
-    "imageHighSrc": "cards/pl3-135-high.png"
+    "imageHighSrc": "cards/pl3-135-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nThe Retreat cost for each Pokémon SP (both yours and your opponent's) is Colorless less."
   },
   {
     "masterCardId": "9086",
-    "externalId": null,
+    "externalId": "pl3-134",
     "tcgdex_id": "pl3-134",
     "localId": "134",
     "setCode": "pl3",
@@ -636,11 +735,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-134-low.png",
-    "imageHighSrc": "cards/pl3-134-high.png"
+    "imageHighSrc": "cards/pl3-134-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nWhenever any player plays any Pokémon from his or her hand to Level-Up 1 of his or her Pokémon, remove 4 damage counters from that Pokémon."
   },
   {
     "masterCardId": "9084",
-    "externalId": null,
+    "externalId": "pl3-133",
     "tcgdex_id": "pl3-133",
     "localId": "133",
     "setCode": "pl3",
@@ -669,11 +769,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-133-low.png",
-    "imageHighSrc": "cards/pl3-133-high.png"
+    "imageHighSrc": "cards/pl3-133-high.png",
+    "attacks": [
+      {
+        "name": "Quick Turn",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "9082",
-    "externalId": null,
+    "externalId": "pl3-132",
     "tcgdex_id": "pl3-132",
     "localId": "132",
     "setCode": "pl3",
@@ -702,11 +808,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-132-low.png",
-    "imageHighSrc": "cards/pl3-132-high.png"
+    "imageHighSrc": "cards/pl3-132-high.png",
+    "attacks": [
+      {
+        "name": "Tone-Deaf",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9079",
-    "externalId": null,
+    "externalId": "pl3-131",
     "tcgdex_id": "pl3-131",
     "localId": "131",
     "setCode": "pl3",
@@ -735,11 +851,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-131-low.png",
-    "imageHighSrc": "cards/pl3-131-high.png"
+    "imageHighSrc": "cards/pl3-131-high.png",
+    "attacks": [
+      {
+        "name": "Shell Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Stomp",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9077",
-    "externalId": null,
+    "externalId": "pl3-130",
     "tcgdex_id": "pl3-130",
     "localId": "130",
     "setCode": "pl3",
@@ -768,11 +894,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-130-low.png",
-    "imageHighSrc": "cards/pl3-130-high.png"
+    "imageHighSrc": "cards/pl3-130-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9075",
-    "externalId": null,
+    "externalId": "pl3-129",
     "tcgdex_id": "pl3-129",
     "localId": "129",
     "setCode": "pl3",
@@ -801,11 +933,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-129-low.png",
-    "imageHighSrc": "cards/pl3-129-high.png"
+    "imageHighSrc": "cards/pl3-129-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9073",
-    "externalId": null,
+    "externalId": "pl3-128",
     "tcgdex_id": "pl3-128",
     "localId": "128",
     "setCode": "pl3",
@@ -834,11 +972,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-128-low.png",
-    "imageHighSrc": "cards/pl3-128-high.png"
+    "imageHighSrc": "cards/pl3-128-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Smash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9071",
-    "externalId": null,
+    "externalId": "pl3-127",
     "tcgdex_id": "pl3-127",
     "localId": "127",
     "setCode": "pl3",
@@ -867,11 +1015,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-127-low.png",
-    "imageHighSrc": "cards/pl3-127-high.png"
+    "imageHighSrc": "cards/pl3-127-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9069",
-    "externalId": null,
+    "externalId": "pl3-126",
     "tcgdex_id": "pl3-126",
     "localId": "126",
     "setCode": "pl3",
@@ -900,11 +1058,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-126-low.png",
-    "imageHighSrc": "cards/pl3-126-high.png"
+    "imageHighSrc": "cards/pl3-126-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9067",
-    "externalId": null,
+    "externalId": "pl3-125",
     "tcgdex_id": "pl3-125",
     "localId": "125",
     "setCode": "pl3",
@@ -933,11 +1097,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-125-low.png",
-    "imageHighSrc": "cards/pl3-125-high.png"
+    "imageHighSrc": "cards/pl3-125-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Icy Wind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9065",
-    "externalId": null,
+    "externalId": "pl3-124",
     "tcgdex_id": "pl3-124",
     "localId": "124",
     "setCode": "pl3",
@@ -966,11 +1140,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-124-low.png",
-    "imageHighSrc": "cards/pl3-124-high.png"
+    "imageHighSrc": "cards/pl3-124-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9063",
-    "externalId": null,
+    "externalId": "pl3-123",
     "tcgdex_id": "pl3-123",
     "localId": "123",
     "setCode": "pl3",
@@ -999,11 +1179,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-123-low.png",
-    "imageHighSrc": "cards/pl3-123-high.png"
+    "imageHighSrc": "cards/pl3-123-high.png",
+    "attacks": [
+      {
+        "name": "Vine Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Spit Poison",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9061",
-    "externalId": null,
+    "externalId": "pl3-122",
     "tcgdex_id": "pl3-122",
     "localId": "122",
     "setCode": "pl3",
@@ -1032,11 +1222,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-122-low.png",
-    "imageHighSrc": "cards/pl3-122-high.png"
+    "imageHighSrc": "cards/pl3-122-high.png",
+    "attacks": [
+      {
+        "name": "Stomp",
+        "damage": "10+"
+      },
+      {
+        "name": "Horn Drill",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9059",
-    "externalId": null,
+    "externalId": "pl3-121",
     "tcgdex_id": "pl3-121",
     "localId": "121",
     "setCode": "pl3",
@@ -1065,11 +1265,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-121-low.png",
-    "imageHighSrc": "cards/pl3-121-high.png"
+    "imageHighSrc": "cards/pl3-121-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Surf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9057",
-    "externalId": null,
+    "externalId": "pl3-120",
     "tcgdex_id": "pl3-120",
     "localId": "120",
     "setCode": "pl3",
@@ -1098,11 +1308,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-120-low.png",
-    "imageHighSrc": "cards/pl3-120-high.png"
+    "imageHighSrc": "cards/pl3-120-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9055",
-    "externalId": null,
+    "externalId": "pl3-119",
     "tcgdex_id": "pl3-119",
     "localId": "119",
     "setCode": "pl3",
@@ -1131,11 +1351,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-119-low.png",
-    "imageHighSrc": "cards/pl3-119-high.png"
+    "imageHighSrc": "cards/pl3-119-high.png",
+    "attacks": [
+      {
+        "name": "Spore",
+        "damage": null
+      },
+      {
+        "name": "Stomp",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9053",
-    "externalId": null,
+    "externalId": "pl3-118",
     "tcgdex_id": "pl3-118",
     "localId": "118",
     "setCode": "pl3",
@@ -1164,11 +1394,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-118-low.png",
-    "imageHighSrc": "cards/pl3-118-high.png"
+    "imageHighSrc": "cards/pl3-118-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Pachi",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9051",
-    "externalId": null,
+    "externalId": "pl3-117",
     "tcgdex_id": "pl3-117",
     "localId": "117",
     "setCode": "pl3",
@@ -1197,11 +1437,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-117-low.png",
-    "imageHighSrc": "cards/pl3-117-high.png"
+    "imageHighSrc": "cards/pl3-117-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Dash Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9048",
-    "externalId": null,
+    "externalId": "pl3-116",
     "tcgdex_id": "pl3-116",
     "localId": "116",
     "setCode": "pl3",
@@ -1230,11 +1480,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-116-low.png",
-    "imageHighSrc": "cards/pl3-116-high.png"
+    "imageHighSrc": "cards/pl3-116-high.png",
+    "attacks": [
+      {
+        "name": "Mud Sport",
+        "damage": "10+"
+      },
+      {
+        "name": "Surf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9045",
-    "externalId": null,
+    "externalId": "pl3-115",
     "tcgdex_id": "pl3-115",
     "localId": "115",
     "setCode": "pl3",
@@ -1263,11 +1523,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-115-low.png",
-    "imageHighSrc": "cards/pl3-115-high.png"
+    "imageHighSrc": "cards/pl3-115-high.png",
+    "attacks": [
+      {
+        "name": "Encore",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9042",
-    "externalId": null,
+    "externalId": "pl3-114",
     "tcgdex_id": "pl3-114",
     "localId": "114",
     "setCode": "pl3",
@@ -1296,11 +1562,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-114-low.png",
-    "imageHighSrc": "cards/pl3-114-high.png"
+    "imageHighSrc": "cards/pl3-114-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Double Kick",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "9038",
-    "externalId": null,
+    "externalId": "pl3-113",
     "tcgdex_id": "pl3-113",
     "localId": "113",
     "setCode": "pl3",
@@ -1329,11 +1605,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-113-low.png",
-    "imageHighSrc": "cards/pl3-113-high.png"
+    "imageHighSrc": "cards/pl3-113-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "10"
+      },
+      {
+        "name": "Karate Chop",
+        "damage": "30-"
+      }
+    ]
   },
   {
     "masterCardId": "9034",
-    "externalId": null,
+    "externalId": "pl3-112",
     "tcgdex_id": "pl3-112",
     "localId": "112",
     "setCode": "pl3",
@@ -1362,11 +1648,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-112-low.png",
-    "imageHighSrc": "cards/pl3-112-high.png"
+    "imageHighSrc": "cards/pl3-112-high.png",
+    "attacks": [
+      {
+        "name": "Extra Punch",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9030",
-    "externalId": null,
+    "externalId": "pl3-111",
     "tcgdex_id": "pl3-111",
     "localId": "111",
     "setCode": "pl3",
@@ -1395,11 +1687,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-111-low.png",
-    "imageHighSrc": "cards/pl3-111-high.png"
+    "imageHighSrc": "cards/pl3-111-high.png",
+    "attacks": [
+      {
+        "name": "Speed Ball",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9026",
-    "externalId": null,
+    "externalId": "pl3-110",
     "tcgdex_id": "pl3-110",
     "localId": "110",
     "setCode": "pl3",
@@ -1428,11 +1730,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-110-low.png",
-    "imageHighSrc": "cards/pl3-110-high.png"
+    "imageHighSrc": "cards/pl3-110-high.png",
+    "attacks": [
+      {
+        "name": "Flail Around",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "9022",
-    "externalId": null,
+    "externalId": "pl3-109",
     "tcgdex_id": "pl3-109",
     "localId": "109",
     "setCode": "pl3",
@@ -1461,11 +1769,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-109-low.png",
-    "imageHighSrc": "cards/pl3-109-high.png"
+    "imageHighSrc": "cards/pl3-109-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Beat",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9017",
-    "externalId": null,
+    "externalId": "pl3-108",
     "tcgdex_id": "pl3-108",
     "localId": "108",
     "setCode": "pl3",
@@ -1494,11 +1812,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-108-low.png",
-    "imageHighSrc": "cards/pl3-108-high.png"
+    "imageHighSrc": "cards/pl3-108-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Fireworks",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9012",
-    "externalId": null,
+    "externalId": "pl3-107",
     "tcgdex_id": "pl3-107",
     "localId": "107",
     "setCode": "pl3",
@@ -1527,11 +1855,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-107-low.png",
-    "imageHighSrc": "cards/pl3-107-high.png"
+    "imageHighSrc": "cards/pl3-107-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Fury Attack",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "9007",
-    "externalId": null,
+    "externalId": "pl3-106",
     "tcgdex_id": "pl3-106",
     "localId": "106",
     "setCode": "pl3",
@@ -1560,11 +1898,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-106-low.png",
-    "imageHighSrc": "cards/pl3-106-high.png"
+    "imageHighSrc": "cards/pl3-106-high.png",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9002",
-    "externalId": null,
+    "externalId": "pl3-105",
     "tcgdex_id": "pl3-105",
     "localId": "105",
     "setCode": "pl3",
@@ -1593,11 +1941,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-105-low.png",
-    "imageHighSrc": "cards/pl3-105-high.png"
+    "imageHighSrc": "cards/pl3-105-high.png",
+    "attacks": [
+      {
+        "name": "Knuckle Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Focus Fist",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8997",
-    "externalId": null,
+    "externalId": "pl3-104",
     "tcgdex_id": "pl3-104",
     "localId": "104",
     "setCode": "pl3",
@@ -1626,11 +1984,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-104-low.png",
-    "imageHighSrc": "cards/pl3-104-high.png"
+    "imageHighSrc": "cards/pl3-104-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Count and Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8991",
-    "externalId": null,
+    "externalId": "pl3-103",
     "tcgdex_id": "pl3-103",
     "localId": "103",
     "setCode": "pl3",
@@ -1659,11 +2027,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-103-low.png",
-    "imageHighSrc": "cards/pl3-103-high.png"
+    "imageHighSrc": "cards/pl3-103-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "20"
+      },
+      {
+        "name": "Collect",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8986",
-    "externalId": null,
+    "externalId": "pl3-102",
     "tcgdex_id": "pl3-102",
     "localId": "102",
     "setCode": "pl3",
@@ -1692,11 +2070,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-102-low.png",
-    "imageHighSrc": "cards/pl3-102-high.png"
+    "imageHighSrc": "cards/pl3-102-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8981",
-    "externalId": null,
+    "externalId": "pl3-101",
     "tcgdex_id": "pl3-101",
     "localId": "101",
     "setCode": "pl3",
@@ -1725,11 +2109,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-101-low.png",
-    "imageHighSrc": "cards/pl3-101-high.png"
+    "imageHighSrc": "cards/pl3-101-high.png",
+    "attacks": [
+      {
+        "name": "Hook",
+        "damage": "10"
+      },
+      {
+        "name": "Corkscrew Punch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8976",
-    "externalId": null,
+    "externalId": "pl3-100",
     "tcgdex_id": "pl3-100",
     "localId": "100",
     "setCode": "pl3",
@@ -1758,18 +2152,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-100-low.png",
-    "imageHighSrc": "cards/pl3-100-high.png"
+    "imageHighSrc": "cards/pl3-100-high.png",
+    "attacks": [
+      {
+        "name": "Crabhammer",
+        "damage": "10"
+      },
+      {
+        "name": "Sharp Pincers",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8971",
-    "externalId": null,
+    "externalId": "pl3-99",
     "tcgdex_id": "pl3-99",
     "localId": "099",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "099/147",
+    "cardNumber": "99/147",
     "cardName": "Combee",
-    "fullDisplayName": "Combee 099/147 Supreme Victors",
+    "fullDisplayName": "Combee 99/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1791,18 +2195,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-099-low.png",
-    "imageHighSrc": "cards/pl3-099-high.png"
+    "imageHighSrc": "cards/pl3-099-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Zzzt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8966",
-    "externalId": null,
+    "externalId": "pl3-98",
     "tcgdex_id": "pl3-98",
     "localId": "098",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "098/147",
+    "cardNumber": "98/147",
     "cardName": "Chingling",
-    "fullDisplayName": "Chingling 098/147 Supreme Victors",
+    "fullDisplayName": "Chingling 98/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1824,18 +2238,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-098-low.png",
-    "imageHighSrc": "cards/pl3-098-high.png"
+    "imageHighSrc": "cards/pl3-098-high.png",
+    "attacks": [
+      {
+        "name": "Chime",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8961",
-    "externalId": null,
+    "externalId": "pl3-97",
     "tcgdex_id": "pl3-97",
     "localId": "097",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "097/147",
+    "cardNumber": "97/147",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 097/147 Supreme Victors",
+    "fullDisplayName": "Chimchar 97/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1857,18 +2277,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-097-low.png",
-    "imageHighSrc": "cards/pl3-097-high.png"
+    "imageHighSrc": "cards/pl3-097-high.png",
+    "attacks": [
+      {
+        "name": "Chop",
+        "damage": "10"
+      },
+      {
+        "name": "Jump On",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8955",
-    "externalId": null,
+    "externalId": "pl3-96",
     "tcgdex_id": "pl3-96",
     "localId": "096",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "096/147",
+    "cardNumber": "96/147",
     "cardName": "Cherubi",
-    "fullDisplayName": "Cherubi 096/147 Supreme Victors",
+    "fullDisplayName": "Cherubi 96/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1890,18 +2320,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-096-low.png",
-    "imageHighSrc": "cards/pl3-096-high.png"
+    "imageHighSrc": "cards/pl3-096-high.png",
+    "attacks": [
+      {
+        "name": "Growth",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8950",
-    "externalId": null,
+    "externalId": "pl3-95",
     "tcgdex_id": "pl3-95",
     "localId": "095",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "095/147",
+    "cardNumber": "95/147",
     "cardName": "Chatot",
-    "fullDisplayName": "Chatot 095/147 Supreme Victors",
+    "fullDisplayName": "Chatot 95/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1923,18 +2363,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-095-low.png",
-    "imageHighSrc": "cards/pl3-095-high.png"
+    "imageHighSrc": "cards/pl3-095-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Nosedive",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8945",
-    "externalId": null,
+    "externalId": "pl3-94",
     "tcgdex_id": "pl3-94",
     "localId": "094",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "094/147",
+    "cardNumber": "94/147",
     "cardName": "Buneary",
-    "fullDisplayName": "Buneary 094/147 Supreme Victors",
+    "fullDisplayName": "Buneary 94/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1956,18 +2406,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-094-low.png",
-    "imageHighSrc": "cards/pl3-094-high.png"
+    "imageHighSrc": "cards/pl3-094-high.png",
+    "attacks": [
+      {
+        "name": "Bounce",
+        "damage": null
+      },
+      {
+        "name": "Mini Drain",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8941",
-    "externalId": null,
+    "externalId": "pl3-93",
     "tcgdex_id": "pl3-93",
     "localId": "093",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "093/147",
+    "cardNumber": "93/147",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 093/147 Supreme Victors",
+    "fullDisplayName": "Bulbasaur 93/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1989,18 +2449,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-093-low.png",
-    "imageHighSrc": "cards/pl3-093-high.png"
+    "imageHighSrc": "cards/pl3-093-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8936",
-    "externalId": null,
+    "externalId": "pl3-92",
     "tcgdex_id": "pl3-92",
     "localId": "092",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "092/147",
+    "cardNumber": "92/147",
     "cardName": "Buizel",
-    "fullDisplayName": "Buizel 092/147 Supreme Victors",
+    "fullDisplayName": "Buizel 92/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2022,18 +2492,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-092-low.png",
-    "imageHighSrc": "cards/pl3-092-high.png"
+    "imageHighSrc": "cards/pl3-092-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8931",
-    "externalId": null,
+    "externalId": "pl3-91",
     "tcgdex_id": "pl3-91",
     "localId": "091",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "091/147",
+    "cardNumber": "91/147",
     "cardName": "Bidoof",
-    "fullDisplayName": "Bidoof 091/147 Supreme Victors",
+    "fullDisplayName": "Bidoof 91/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2055,18 +2535,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-091-low.png",
-    "imageHighSrc": "cards/pl3-091-high.png"
+    "imageHighSrc": "cards/pl3-091-high.png",
+    "attacks": [
+      {
+        "name": "Whimsy Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8926",
-    "externalId": null,
+    "externalId": "pl3-90",
     "tcgdex_id": "pl3-90",
     "localId": "090",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "090/147",
+    "cardNumber": "90/147",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 090/147 Supreme Victors",
+    "fullDisplayName": "Beldum 90/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2088,18 +2574,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-090-low.png",
-    "imageHighSrc": "cards/pl3-090-high.png"
+    "imageHighSrc": "cards/pl3-090-high.png",
+    "attacks": [
+      {
+        "name": "Pit Search",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8920",
-    "externalId": null,
+    "externalId": "pl3-89",
     "tcgdex_id": "pl3-89",
     "localId": "089",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "089/147",
+    "cardNumber": "89/147",
     "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 089/147 Supreme Victors",
+    "fullDisplayName": "Baltoy 89/147 Supreme Victors",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2121,18 +2617,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-089-low.png",
-    "imageHighSrc": "cards/pl3-089-high.png"
+    "imageHighSrc": "cards/pl3-089-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Turn",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "8915",
-    "externalId": null,
+    "externalId": "pl3-88",
     "tcgdex_id": "pl3-88",
     "localId": "088",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "088/147",
+    "cardNumber": "88/147",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma 088/147 Supreme Victors",
+    "fullDisplayName": "Yanma 88/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2154,18 +2660,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-088-low.png",
-    "imageHighSrc": "cards/pl3-088-high.png"
+    "imageHighSrc": "cards/pl3-088-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Air Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8910",
-    "externalId": null,
+    "externalId": "pl3-87",
     "tcgdex_id": "pl3-87",
     "localId": "087",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "087/147",
+    "cardNumber": "87/147",
     "cardName": "Wailmer",
-    "fullDisplayName": "Wailmer 087/147 Supreme Victors",
+    "fullDisplayName": "Wailmer 87/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2187,18 +2703,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-087-low.png",
-    "imageHighSrc": "cards/pl3-087-high.png"
+    "imageHighSrc": "cards/pl3-087-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "20+"
+      },
+      {
+        "name": "Take Down",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8904",
-    "externalId": null,
+    "externalId": "pl3-86",
     "tcgdex_id": "pl3-86",
     "localId": "086",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "086/147",
+    "cardNumber": "86/147",
     "cardName": "Togekiss C",
-    "fullDisplayName": "Togekiss C 086/147 Supreme Victors",
+    "fullDisplayName": "Togekiss C 86/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2221,18 +2747,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-086-low.png",
-    "imageHighSrc": "cards/pl3-086-high.png"
+    "imageHighSrc": "cards/pl3-086-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8899",
-    "externalId": null,
+    "externalId": "pl3-85",
     "tcgdex_id": "pl3-85",
     "localId": "085",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "085/147",
+    "cardNumber": "85/147",
     "cardName": "Staravia",
-    "fullDisplayName": "Staravia 085/147 Supreme Victors",
+    "fullDisplayName": "Staravia 85/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2254,18 +2790,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-085-low.png",
-    "imageHighSrc": "cards/pl3-085-high.png"
+    "imageHighSrc": "cards/pl3-085-high.png",
+    "attacks": [
+      {
+        "name": "Double Peck",
+        "damage": "20×"
+      },
+      {
+        "name": "Air Crash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8895",
-    "externalId": null,
+    "externalId": "pl3-84",
     "tcgdex_id": "pl3-84",
     "localId": "084",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "084/147",
+    "cardNumber": "84/147",
     "cardName": "Spiritomb C",
-    "fullDisplayName": "Spiritomb C 084/147 Supreme Victors",
+    "fullDisplayName": "Spiritomb C 84/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2288,18 +2834,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-084-low.png",
-    "imageHighSrc": "cards/pl3-084-high.png"
+    "imageHighSrc": "cards/pl3-084-high.png",
+    "attacks": [
+      {
+        "name": "Sharpshooting",
+        "damage": null
+      },
+      {
+        "name": "Lock Up",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8889",
-    "externalId": null,
+    "externalId": "pl3-83",
     "tcgdex_id": "pl3-83",
     "localId": "083",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "083/147",
+    "cardNumber": "83/147",
     "cardName": "Skarmory FB",
-    "fullDisplayName": "Skarmory FB 083/147 Supreme Victors",
+    "fullDisplayName": "Skarmory FB 83/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2322,18 +2878,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-083-low.png",
-    "imageHighSrc": "cards/pl3-083-high.png"
+    "imageHighSrc": "cards/pl3-083-high.png",
+    "attacks": [
+      {
+        "name": "Silver Feather",
+        "damage": "20"
+      },
+      {
+        "name": "Metal Max",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8883",
-    "externalId": null,
+    "externalId": "pl3-82",
     "tcgdex_id": "pl3-82",
     "localId": "082",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "082/147",
+    "cardNumber": "82/147",
     "cardName": "Rotom",
-    "fullDisplayName": "Rotom 082/147 Supreme Victors",
+    "fullDisplayName": "Rotom 82/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2355,18 +2921,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-082-low.png",
-    "imageHighSrc": "cards/pl3-082-high.png"
+    "imageHighSrc": "cards/pl3-082-high.png",
+    "attacks": [
+      {
+        "name": "Discharge",
+        "damage": "40×"
+      },
+      {
+        "name": "Uproar",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8877",
-    "externalId": null,
+    "externalId": "pl3-81",
     "tcgdex_id": "pl3-81",
     "localId": "081",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "081/147",
+    "cardNumber": "81/147",
     "cardName": "Roserade",
-    "fullDisplayName": "Roserade 081/147 Supreme Victors",
+    "fullDisplayName": "Roserade 81/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2388,18 +2964,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-081-low.png",
-    "imageHighSrc": "cards/pl3-081-high.png"
+    "imageHighSrc": "cards/pl3-081-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "20"
+      },
+      {
+        "name": "Poison Seed",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8871",
-    "externalId": null,
+    "externalId": "pl3-80",
     "tcgdex_id": "pl3-80",
     "localId": "080",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "080/147",
+    "cardNumber": "80/147",
     "cardName": "Rhydon",
-    "fullDisplayName": "Rhydon 080/147 Supreme Victors",
+    "fullDisplayName": "Rhydon 80/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2421,18 +3007,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-080-low.png",
-    "imageHighSrc": "cards/pl3-080-high.png"
+    "imageHighSrc": "cards/pl3-080-high.png",
+    "attacks": [
+      {
+        "name": "Fury Attack",
+        "damage": "20×"
+      },
+      {
+        "name": "Rock Tumble",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8865",
-    "externalId": null,
+    "externalId": "pl3-79",
     "tcgdex_id": "pl3-79",
     "localId": "079",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "079/147",
+    "cardNumber": "79/147",
     "cardName": "Relicanth",
-    "fullDisplayName": "Relicanth 079/147 Supreme Victors",
+    "fullDisplayName": "Relicanth 79/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2454,18 +3050,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-079-low.png",
-    "imageHighSrc": "cards/pl3-079-high.png"
+    "imageHighSrc": "cards/pl3-079-high.png",
+    "attacks": [
+      {
+        "name": "Grand Swell",
+        "damage": null
+      },
+      {
+        "name": "Amnesia",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8860",
-    "externalId": null,
+    "externalId": "pl3-78",
     "tcgdex_id": "pl3-78",
     "localId": "078",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "078/147",
+    "cardNumber": "78/147",
     "cardName": "Raticate G",
-    "fullDisplayName": "Raticate G 078/147 Supreme Victors",
+    "fullDisplayName": "Raticate G 78/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2488,18 +3094,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-078-low.png",
-    "imageHighSrc": "cards/pl3-078-high.png"
+    "imageHighSrc": "cards/pl3-078-high.png",
+    "attacks": [
+      {
+        "name": "Find",
+        "damage": null
+      },
+      {
+        "name": "Biting Fang",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8854",
-    "externalId": null,
+    "externalId": "pl3-77",
     "tcgdex_id": "pl3-77",
     "localId": "077",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "077/147",
+    "cardNumber": "77/147",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 077/147 Supreme Victors",
+    "fullDisplayName": "Raichu 77/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2521,18 +3137,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-077-low.png",
-    "imageHighSrc": "cards/pl3-077-high.png"
+    "imageHighSrc": "cards/pl3-077-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Gigashock",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8848",
-    "externalId": null,
+    "externalId": "pl3-76",
     "tcgdex_id": "pl3-76",
     "localId": "076",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "076/147",
+    "cardNumber": "76/147",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 076/147 Supreme Victors",
+    "fullDisplayName": "Plusle 76/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2554,18 +3180,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-076-low.png",
-    "imageHighSrc": "cards/pl3-076-high.png"
+    "imageHighSrc": "cards/pl3-076-high.png",
+    "attacks": [
+      {
+        "name": "Greedy Draw",
+        "damage": null
+      },
+      {
+        "name": "Hand Charge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8842",
-    "externalId": null,
+    "externalId": "pl3-75",
     "tcgdex_id": "pl3-75",
     "localId": "075",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "075/147",
+    "cardNumber": "75/147",
     "cardName": "Pinsir",
-    "fullDisplayName": "Pinsir 075/147 Supreme Victors",
+    "fullDisplayName": "Pinsir 75/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2587,18 +3223,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-075-low.png",
-    "imageHighSrc": "cards/pl3-075-high.png"
+    "imageHighSrc": "cards/pl3-075-high.png",
+    "attacks": [
+      {
+        "name": "Gripthrow",
+        "damage": null
+      },
+      {
+        "name": "Sever",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "8836",
-    "externalId": null,
+    "externalId": "pl3-74",
     "tcgdex_id": "pl3-74",
     "localId": "074",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "074/147",
+    "cardNumber": "74/147",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 074/147 Supreme Victors",
+    "fullDisplayName": "Numel 74/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2620,18 +3266,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-074-low.png",
-    "imageHighSrc": "cards/pl3-074-high.png"
+    "imageHighSrc": "cards/pl3-074-high.png",
+    "attacks": [
+      {
+        "name": "Draw In",
+        "damage": null
+      },
+      {
+        "name": "Combustion",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8830",
-    "externalId": null,
+    "externalId": "pl3-73",
     "tcgdex_id": "pl3-73",
     "localId": "073",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "073/147",
+    "cardNumber": "73/147",
     "cardName": "Ninjask",
-    "fullDisplayName": "Ninjask 073/147 Supreme Victors",
+    "fullDisplayName": "Ninjask 73/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2653,18 +3309,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-073-low.png",
-    "imageHighSrc": "cards/pl3-073-high.png"
+    "imageHighSrc": "cards/pl3-073-high.png",
+    "attacks": [
+      {
+        "name": "Circling Dive",
+        "damage": null
+      },
+      {
+        "name": "Parallel Drain",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8824",
-    "externalId": null,
+    "externalId": "pl3-72",
     "tcgdex_id": "pl3-72",
     "localId": "072",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "072/147",
+    "cardNumber": "72/147",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 072/147 Supreme Victors",
+    "fullDisplayName": "Murkrow 72/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2686,18 +3352,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-072-low.png",
-    "imageHighSrc": "cards/pl3-072-high.png"
+    "imageHighSrc": "cards/pl3-072-high.png",
+    "attacks": [
+      {
+        "name": "Switcheroo",
+        "damage": null
+      },
+      {
+        "name": "Flap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8818",
-    "externalId": null,
+    "externalId": "pl3-71",
     "tcgdex_id": "pl3-71",
     "localId": "071",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "071/147",
+    "cardNumber": "71/147",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 071/147 Supreme Victors",
+    "fullDisplayName": "Minun 71/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2719,18 +3395,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-071-low.png",
-    "imageHighSrc": "cards/pl3-071-high.png"
+    "imageHighSrc": "cards/pl3-071-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Trash Charge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8812",
-    "externalId": null,
+    "externalId": "pl3-70",
     "tcgdex_id": "pl3-70",
     "localId": "070",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "070/147",
+    "cardNumber": "70/147",
     "cardName": "Milotic",
-    "fullDisplayName": "Milotic 070/147 Supreme Victors",
+    "fullDisplayName": "Milotic 70/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2752,18 +3438,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-070-low.png",
-    "imageHighSrc": "cards/pl3-070-high.png"
+    "imageHighSrc": "cards/pl3-070-high.png",
+    "attacks": [
+      {
+        "name": "Cleansing Ring",
+        "damage": "20"
+      },
+      {
+        "name": "Scale Blow",
+        "damage": "90-"
+      }
+    ]
   },
   {
     "masterCardId": "8807",
-    "externalId": null,
+    "externalId": "pl3-69",
     "tcgdex_id": "pl3-69",
     "localId": "069",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "069/147",
+    "cardNumber": "69/147",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 069/147 Supreme Victors",
+    "fullDisplayName": "Metang 69/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2785,18 +3481,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-069-low.png",
-    "imageHighSrc": "cards/pl3-069-high.png"
+    "imageHighSrc": "cards/pl3-069-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "8801",
-    "externalId": null,
+    "externalId": "pl3-68",
     "tcgdex_id": "pl3-68",
     "localId": "068",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "068/147",
+    "cardNumber": "68/147",
     "cardName": "Masquerain",
-    "fullDisplayName": "Masquerain 068/147 Supreme Victors",
+    "fullDisplayName": "Masquerain 68/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2818,18 +3520,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-068-low.png",
-    "imageHighSrc": "cards/pl3-068-high.png"
+    "imageHighSrc": "cards/pl3-068-high.png",
+    "attacks": [
+      {
+        "name": "Skim Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8795",
-    "externalId": null,
+    "externalId": "pl3-67",
     "tcgdex_id": "pl3-67",
     "localId": "067",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "067/147",
+    "cardNumber": "67/147",
     "cardName": "Marshtomp",
-    "fullDisplayName": "Marshtomp 067/147 Supreme Victors",
+    "fullDisplayName": "Marshtomp 67/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2851,18 +3559,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-067-low.png",
-    "imageHighSrc": "cards/pl3-067-high.png"
+    "imageHighSrc": "cards/pl3-067-high.png",
+    "attacks": [
+      {
+        "name": "Mud Shot",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8789",
-    "externalId": null,
+    "externalId": "pl3-66",
     "tcgdex_id": "pl3-66",
     "localId": "066",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "066/147",
+    "cardNumber": "66/147",
     "cardName": "Manectric G",
-    "fullDisplayName": "Manectric G 066/147 Supreme Victors",
+    "fullDisplayName": "Manectric G 66/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2885,18 +3599,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-066-low.png",
-    "imageHighSrc": "cards/pl3-066-high.png"
+    "imageHighSrc": "cards/pl3-066-high.png",
+    "attacks": [
+      {
+        "name": "Energy Absorption",
+        "damage": null
+      },
+      {
+        "name": "Thunder Fang",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8783",
-    "externalId": null,
+    "externalId": "pl3-65",
     "tcgdex_id": "pl3-65",
     "localId": "065",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "065/147",
+    "cardNumber": "65/147",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 065/147 Supreme Victors",
+    "fullDisplayName": "Magmar 65/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2918,18 +3642,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-065-low.png",
-    "imageHighSrc": "cards/pl3-065-high.png"
+    "imageHighSrc": "cards/pl3-065-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": null
+      },
+      {
+        "name": "Fireworks",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8777",
-    "externalId": null,
+    "externalId": "pl3-64",
     "tcgdex_id": "pl3-64",
     "localId": "064",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "064/147",
+    "cardNumber": "64/147",
     "cardName": "Loudred",
-    "fullDisplayName": "Loudred 064/147 Supreme Victors",
+    "fullDisplayName": "Loudred 64/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2951,18 +3685,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-064-low.png",
-    "imageHighSrc": "cards/pl3-064-high.png"
+    "imageHighSrc": "cards/pl3-064-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Stomp Off",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8771",
-    "externalId": null,
+    "externalId": "pl3-63",
     "tcgdex_id": "pl3-63",
     "localId": "063",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "063/147",
+    "cardNumber": "63/147",
     "cardName": "Lopunny",
-    "fullDisplayName": "Lopunny 063/147 Supreme Victors",
+    "fullDisplayName": "Lopunny 63/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2984,18 +3728,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-063-low.png",
-    "imageHighSrc": "cards/pl3-063-high.png"
+    "imageHighSrc": "cards/pl3-063-high.png",
+    "attacks": [
+      {
+        "name": "Ice Beam",
+        "damage": "20"
+      },
+      {
+        "name": "Rear Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8767",
-    "externalId": null,
+    "externalId": "pl3-62",
     "tcgdex_id": "pl3-62",
     "localId": "062",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "062/147",
+    "cardNumber": "62/147",
     "cardName": "Ivysaur",
-    "fullDisplayName": "Ivysaur 062/147 Supreme Victors",
+    "fullDisplayName": "Ivysaur 62/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3017,18 +3771,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-062-low.png",
-    "imageHighSrc": "cards/pl3-062-high.png"
+    "imageHighSrc": "cards/pl3-062-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8761",
-    "externalId": null,
+    "externalId": "pl3-61",
     "tcgdex_id": "pl3-61",
     "localId": "061",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "061/147",
+    "cardNumber": "61/147",
     "cardName": "Hippopotas",
-    "fullDisplayName": "Hippopotas 061/147 Supreme Victors",
+    "fullDisplayName": "Hippopotas 61/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3050,18 +3810,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-061-low.png",
-    "imageHighSrc": "cards/pl3-061-high.png"
+    "imageHighSrc": "cards/pl3-061-high.png",
+    "attacks": [
+      {
+        "name": "Double Headbutt",
+        "damage": "10×"
+      },
+      {
+        "name": "Mud Shot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8757",
-    "externalId": null,
+    "externalId": "pl3-60",
     "tcgdex_id": "pl3-60",
     "localId": "060",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "060/147",
+    "cardNumber": "60/147",
     "cardName": "Garchomp C",
-    "fullDisplayName": "Garchomp C 060/147 Supreme Victors",
+    "fullDisplayName": "Garchomp C 60/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3084,18 +3854,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-060-low.png",
-    "imageHighSrc": "cards/pl3-060-high.png"
+    "imageHighSrc": "cards/pl3-060-high.png",
+    "attacks": [
+      {
+        "name": "Claw Swipe",
+        "damage": "30"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8751",
-    "externalId": null,
+    "externalId": "pl3-59",
     "tcgdex_id": "pl3-59",
     "localId": "059",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "059/147",
+    "cardNumber": "59/147",
     "cardName": "Gabite",
-    "fullDisplayName": "Gabite 059/147 Supreme Victors",
+    "fullDisplayName": "Gabite 59/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3117,18 +3897,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-059-low.png",
-    "imageHighSrc": "cards/pl3-059-high.png"
+    "imageHighSrc": "cards/pl3-059-high.png",
+    "attacks": [
+      {
+        "name": "Healing Scale",
+        "damage": null
+      },
+      {
+        "name": "Sand Tomb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8741",
-    "externalId": null,
+    "externalId": "pl3-58",
     "tcgdex_id": "pl3-58",
     "localId": "058",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "058/147",
+    "cardNumber": "58/147",
     "cardName": "Floatzel",
-    "fullDisplayName": "Floatzel 058/147 Supreme Victors",
+    "fullDisplayName": "Floatzel 58/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3150,18 +3940,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-058-low.png",
-    "imageHighSrc": "cards/pl3-058-high.png"
+    "imageHighSrc": "cards/pl3-058-high.png",
+    "attacks": [
+      {
+        "name": "Razor Fin",
+        "damage": "20"
+      },
+      {
+        "name": "Jet Screw",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8735",
-    "externalId": null,
+    "externalId": "pl3-57",
     "tcgdex_id": "pl3-57",
     "localId": "057",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "057/147",
+    "cardNumber": "57/147",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 057/147 Supreme Victors",
+    "fullDisplayName": "Drifblim 57/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3183,18 +3983,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-057-low.png",
-    "imageHighSrc": "cards/pl3-057-high.png"
+    "imageHighSrc": "cards/pl3-057-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Gust",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8731",
-    "externalId": null,
+    "externalId": "pl3-56",
     "tcgdex_id": "pl3-56",
     "localId": "056",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "056/147",
+    "cardNumber": "56/147",
     "cardName": "Dragonite FB",
-    "fullDisplayName": "Dragonite FB 056/147 Supreme Victors",
+    "fullDisplayName": "Dragonite FB 56/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3217,18 +4027,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-056-low.png",
-    "imageHighSrc": "cards/pl3-056-high.png"
+    "imageHighSrc": "cards/pl3-056-high.png",
+    "attacks": [
+      {
+        "name": "Mach Blow",
+        "damage": "20"
+      },
+      {
+        "name": "Giant Tail",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "8725",
-    "externalId": null,
+    "externalId": "pl3-55",
     "tcgdex_id": "pl3-55",
     "localId": "055",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "055/147",
+    "cardNumber": "55/147",
     "cardName": "Cherrim",
-    "fullDisplayName": "Cherrim 055/147 Supreme Victors",
+    "fullDisplayName": "Cherrim 55/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3250,18 +4070,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-055-low.png",
-    "imageHighSrc": "cards/pl3-055-high.png"
+    "imageHighSrc": "cards/pl3-055-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Petal Dance",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "8719",
-    "externalId": null,
+    "externalId": "pl3-54",
     "tcgdex_id": "pl3-54",
     "localId": "054",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "054/147",
+    "cardNumber": "54/147",
     "cardName": "Chatot G",
-    "fullDisplayName": "Chatot G 054/147 Supreme Victors",
+    "fullDisplayName": "Chatot G 54/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3284,18 +4114,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-054-low.png",
-    "imageHighSrc": "cards/pl3-054-high.png"
+    "imageHighSrc": "cards/pl3-054-high.png",
+    "attacks": [
+      {
+        "name": "Search and Escape",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8713",
-    "externalId": null,
+    "externalId": "pl3-53",
     "tcgdex_id": "pl3-53",
     "localId": "053",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "053/147",
+    "cardNumber": "53/147",
     "cardName": "Carnivine",
-    "fullDisplayName": "Carnivine 053/147 Supreme Victors",
+    "fullDisplayName": "Carnivine 53/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3317,18 +4153,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-053-low.png",
-    "imageHighSrc": "cards/pl3-053-high.png"
+    "imageHighSrc": "cards/pl3-053-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "20"
+      },
+      {
+        "name": "Swallow",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8705",
-    "externalId": null,
+    "externalId": "pl3-52",
     "tcgdex_id": "pl3-52",
     "localId": "052",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "052/147",
+    "cardNumber": "52/147",
     "cardName": "Breloom",
-    "fullDisplayName": "Breloom 052/147 Supreme Victors",
+    "fullDisplayName": "Breloom 52/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3350,18 +4196,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-052-low.png",
-    "imageHighSrc": "cards/pl3-052-high.png"
+    "imageHighSrc": "cards/pl3-052-high.png",
+    "attacks": [
+      {
+        "name": "Hover Hit",
+        "damage": "40"
+      },
+      {
+        "name": "Crash Bomber",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8695",
-    "externalId": null,
+    "externalId": "pl3-51",
     "tcgdex_id": "pl3-51",
     "localId": "051",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "051/147",
+    "cardNumber": "51/147",
     "cardName": "Bibarel",
-    "fullDisplayName": "Bibarel 051/147 Supreme Victors",
+    "fullDisplayName": "Bibarel 51/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3383,18 +4239,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-051-low.png",
-    "imageHighSrc": "cards/pl3-051-high.png"
+    "imageHighSrc": "cards/pl3-051-high.png",
+    "attacks": [
+      {
+        "name": "Rolling Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Tail Rap",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "8690",
-    "externalId": null,
+    "externalId": "pl3-50",
     "tcgdex_id": "pl3-50",
     "localId": "050",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "050/147",
+    "cardNumber": "50/147",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 050/147 Supreme Victors",
+    "fullDisplayName": "Arcanine 50/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3416,18 +4282,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-050-low.png",
-    "imageHighSrc": "cards/pl3-050-high.png"
+    "imageHighSrc": "cards/pl3-050-high.png",
+    "attacks": [
+      {
+        "name": "Overrun",
+        "damage": "20"
+      },
+      {
+        "name": "Combustion",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8685",
-    "externalId": null,
+    "externalId": "pl3-49",
     "tcgdex_id": "pl3-49",
     "localId": "049",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "049/147",
+    "cardNumber": "49/147",
     "cardName": "Altaria C",
-    "fullDisplayName": "Altaria C 049/147 Supreme Victors",
+    "fullDisplayName": "Altaria C 49/147 Supreme Victors",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3450,18 +4326,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-049-low.png",
-    "imageHighSrc": "cards/pl3-049-high.png"
+    "imageHighSrc": "cards/pl3-049-high.png",
+    "attacks": [
+      {
+        "name": "Sing",
+        "damage": "20"
+      },
+      {
+        "name": "Sonic Wing",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8680",
-    "externalId": null,
+    "externalId": "pl3-48",
     "tcgdex_id": "pl3-48",
     "localId": "048",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "048/147",
+    "cardNumber": "48/147",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 048/147 Supreme Victors",
+    "fullDisplayName": "Zapdos 48/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3483,18 +4369,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-048-low.png",
-    "imageHighSrc": "cards/pl3-048-high.png"
+    "imageHighSrc": "cards/pl3-048-high.png",
+    "attacks": [
+      {
+        "name": "Drill Peck",
+        "damage": "30"
+      },
+      {
+        "name": "Lightning Wing",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "8674",
-    "externalId": null,
+    "externalId": "pl3-47",
     "tcgdex_id": "pl3-47",
     "localId": "047",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "047/147",
+    "cardNumber": "47/147",
     "cardName": "Wailord",
-    "fullDisplayName": "Wailord 047/147 Supreme Victors",
+    "fullDisplayName": "Wailord 47/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3516,18 +4412,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-047-low.png",
-    "imageHighSrc": "cards/pl3-047-high.png"
+    "imageHighSrc": "cards/pl3-047-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      },
+      {
+        "name": "Giant Wave",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "8669",
-    "externalId": null,
+    "externalId": "pl3-46",
     "tcgdex_id": "pl3-46",
     "localId": "046",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "046/147",
+    "cardNumber": "46/147",
     "cardName": "Spinda",
-    "fullDisplayName": "Spinda 046/147 Supreme Victors",
+    "fullDisplayName": "Spinda 46/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3549,18 +4455,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-046-low.png",
-    "imageHighSrc": "cards/pl3-046-high.png"
+    "imageHighSrc": "cards/pl3-046-high.png",
+    "attacks": [
+      {
+        "name": "Synchro Removal",
+        "damage": null
+      },
+      {
+        "name": "Pulled Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8657",
-    "externalId": null,
+    "externalId": "pl3-45",
     "tcgdex_id": "pl3-45",
     "localId": "045",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "045/147",
+    "cardNumber": "45/147",
     "cardName": "Solrock",
-    "fullDisplayName": "Solrock 045/147 Supreme Victors",
+    "fullDisplayName": "Solrock 45/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3582,18 +4498,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-045-low.png",
-    "imageHighSrc": "cards/pl3-045-high.png"
+    "imageHighSrc": "cards/pl3-045-high.png",
+    "attacks": [
+      {
+        "name": "Luna Turn",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8652",
-    "externalId": null,
+    "externalId": "pl3-44",
     "tcgdex_id": "pl3-44",
     "localId": "044",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "044/147",
+    "cardNumber": "44/147",
     "cardName": "Shedinja",
-    "fullDisplayName": "Shedinja 044/147 Supreme Victors",
+    "fullDisplayName": "Shedinja 44/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3615,18 +4537,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-044-low.png",
-    "imageHighSrc": "cards/pl3-044-high.png"
+    "imageHighSrc": "cards/pl3-044-high.png",
+    "attacks": [
+      {
+        "name": "Spike Wound",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8638",
-    "externalId": null,
+    "externalId": "pl3-43",
     "tcgdex_id": "pl3-43",
     "localId": "043",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "043/147",
+    "cardNumber": "43/147",
     "cardName": "Seaking",
-    "fullDisplayName": "Seaking 043/147 Supreme Victors",
+    "fullDisplayName": "Seaking 43/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3648,18 +4576,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-043-low.png",
-    "imageHighSrc": "cards/pl3-043-high.png"
+    "imageHighSrc": "cards/pl3-043-high.png",
+    "attacks": [
+      {
+        "name": "Horn Pierce",
+        "damage": "90"
+      },
+      {
+        "name": "Endure",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8631",
-    "externalId": null,
+    "externalId": "pl3-42",
     "tcgdex_id": "pl3-42",
     "localId": "042",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "042/147",
+    "cardNumber": "42/147",
     "cardName": "Sandslash",
-    "fullDisplayName": "Sandslash 042/147 Supreme Victors",
+    "fullDisplayName": "Sandslash 42/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3681,18 +4619,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-042-low.png",
-    "imageHighSrc": "cards/pl3-042-high.png"
+    "imageHighSrc": "cards/pl3-042-high.png",
+    "attacks": [
+      {
+        "name": "Needle",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8624",
-    "externalId": null,
+    "externalId": "pl3-41",
     "tcgdex_id": "pl3-41",
     "localId": "041",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "041/147",
+    "cardNumber": "41/147",
     "cardName": "Sableye G",
-    "fullDisplayName": "Sableye G 041/147 Supreme Victors",
+    "fullDisplayName": "Sableye G 41/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3715,18 +4659,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-041-low.png",
-    "imageHighSrc": "cards/pl3-041-high.png"
+    "imageHighSrc": "cards/pl3-041-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Astonish",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8619",
-    "externalId": null,
+    "externalId": "pl3-40",
     "tcgdex_id": "pl3-40",
     "localId": "040",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "040/147",
+    "cardNumber": "40/147",
     "cardName": "Roserade C",
-    "fullDisplayName": "Roserade C 040/147 Supreme Victors",
+    "fullDisplayName": "Roserade C 40/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3749,18 +4703,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-040-low.png",
-    "imageHighSrc": "cards/pl3-040-high.png"
+    "imageHighSrc": "cards/pl3-040-high.png",
+    "attacks": [
+      {
+        "name": "Magical Leaf",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "8613",
-    "externalId": null,
+    "externalId": "pl3-39",
     "tcgdex_id": "pl3-39",
     "localId": "039",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "039/147",
+    "cardNumber": "39/147",
     "cardName": "Primeape",
-    "fullDisplayName": "Primeape 039/147 Supreme Victors",
+    "fullDisplayName": "Primeape 39/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3782,18 +4742,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-039-low.png",
-    "imageHighSrc": "cards/pl3-039-high.png"
+    "imageHighSrc": "cards/pl3-039-high.png",
+    "attacks": [
+      {
+        "name": "Top Drop",
+        "damage": null
+      },
+      {
+        "name": "Brick Break",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8606",
-    "externalId": null,
+    "externalId": "pl3-38",
     "tcgdex_id": "pl3-38",
     "localId": "038",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "038/147",
+    "cardNumber": "38/147",
     "cardName": "Parasect",
-    "fullDisplayName": "Parasect 038/147 Supreme Victors",
+    "fullDisplayName": "Parasect 38/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3815,18 +4785,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-038-low.png",
-    "imageHighSrc": "cards/pl3-038-high.png"
+    "imageHighSrc": "cards/pl3-038-high.png",
+    "attacks": [
+      {
+        "name": "Nutritional Support",
+        "damage": null
+      },
+      {
+        "name": "Hibernation Spore",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8598",
-    "externalId": null,
+    "externalId": "pl3-37",
     "tcgdex_id": "pl3-37",
     "localId": "037",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "037/147",
+    "cardNumber": "37/147",
     "cardName": "Mr. Mime",
-    "fullDisplayName": "Mr. Mime 037/147 Supreme Victors",
+    "fullDisplayName": "Mr. Mime 37/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3848,18 +4828,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-037-low.png",
-    "imageHighSrc": "cards/pl3-037-high.png"
+    "imageHighSrc": "cards/pl3-037-high.png",
+    "attacks": [
+      {
+        "name": "Desperate Slap",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8592",
-    "externalId": null,
+    "externalId": "pl3-36",
     "tcgdex_id": "pl3-36",
     "localId": "036",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "036/147",
+    "cardNumber": "36/147",
     "cardName": "Moltres",
-    "fullDisplayName": "Moltres 036/147 Supreme Victors",
+    "fullDisplayName": "Moltres 36/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3881,18 +4867,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-036-low.png",
-    "imageHighSrc": "cards/pl3-036-high.png"
+    "imageHighSrc": "cards/pl3-036-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Sky Attack",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "8583",
-    "externalId": null,
+    "externalId": "pl3-35",
     "tcgdex_id": "pl3-35",
     "localId": "035",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "035/147",
+    "cardNumber": "35/147",
     "cardName": "Milotic C",
-    "fullDisplayName": "Milotic C 035/147 Supreme Victors",
+    "fullDisplayName": "Milotic C 35/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3915,18 +4911,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-035-low.png",
-    "imageHighSrc": "cards/pl3-035-high.png"
+    "imageHighSrc": "cards/pl3-035-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Tail",
+        "damage": "10+"
+      },
+      {
+        "name": "Wrap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8576",
-    "externalId": null,
+    "externalId": "pl3-34",
     "tcgdex_id": "pl3-34",
     "localId": "034",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "034/147",
+    "cardNumber": "34/147",
     "cardName": "Medicham",
-    "fullDisplayName": "Medicham 034/147 Supreme Victors",
+    "fullDisplayName": "Medicham 34/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3948,18 +4954,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-034-low.png",
-    "imageHighSrc": "cards/pl3-034-high.png"
+    "imageHighSrc": "cards/pl3-034-high.png",
+    "attacks": [
+      {
+        "name": "Channeling",
+        "damage": "60"
+      },
+      {
+        "name": "Chakra Points",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8570",
-    "externalId": null,
+    "externalId": "pl3-33",
     "tcgdex_id": "pl3-33",
     "localId": "033",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "033/147",
+    "cardNumber": "33/147",
     "cardName": "Mawile",
-    "fullDisplayName": "Mawile 033/147 Supreme Victors",
+    "fullDisplayName": "Mawile 33/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3981,18 +4997,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-033-low.png",
-    "imageHighSrc": "cards/pl3-033-high.png"
+    "imageHighSrc": "cards/pl3-033-high.png",
+    "attacks": [
+      {
+        "name": "Turnaround Standby",
+        "damage": null
+      },
+      {
+        "name": "Swallow",
+        "damage": "20"
+      },
+      {
+        "name": "Bite",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8564",
-    "externalId": null,
+    "externalId": "pl3-32",
     "tcgdex_id": "pl3-32",
     "localId": "032",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "032/147",
+    "cardNumber": "32/147",
     "cardName": "Lunatone",
-    "fullDisplayName": "Lunatone 032/147 Supreme Victors",
+    "fullDisplayName": "Lunatone 32/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4014,18 +5044,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-032-low.png",
-    "imageHighSrc": "cards/pl3-032-high.png"
+    "imageHighSrc": "cards/pl3-032-high.png",
+    "attacks": [
+      {
+        "name": "Gravity Wave",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8555",
-    "externalId": null,
+    "externalId": "pl3-31",
     "tcgdex_id": "pl3-31",
     "localId": "031",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "031/147",
+    "cardNumber": "31/147",
     "cardName": "Lucario C",
-    "fullDisplayName": "Lucario C 031/147 Supreme Victors",
+    "fullDisplayName": "Lucario C 31/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4048,18 +5084,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-031-low.png",
-    "imageHighSrc": "cards/pl3-031-high.png"
+    "imageHighSrc": "cards/pl3-031-high.png",
+    "attacks": [
+      {
+        "name": "Metal Claw",
+        "damage": "20"
+      },
+      {
+        "name": "Mid-air Strike",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8549",
-    "externalId": null,
+    "externalId": "pl3-30",
     "tcgdex_id": "pl3-30",
     "localId": "030",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "030/147",
+    "cardNumber": "30/147",
     "cardName": "Lickilicky C",
-    "fullDisplayName": "Lickilicky C 030/147 Supreme Victors",
+    "fullDisplayName": "Lickilicky C 30/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4082,18 +5128,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-030-low.png",
-    "imageHighSrc": "cards/pl3-030-high.png"
+    "imageHighSrc": "cards/pl3-030-high.png",
+    "attacks": [
+      {
+        "name": "Licking-Licking Heal",
+        "damage": null
+      },
+      {
+        "name": "Return",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8544",
-    "externalId": null,
+    "externalId": "pl3-29",
     "tcgdex_id": "pl3-29",
     "localId": "029",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "029/147",
+    "cardNumber": "29/147",
     "cardName": "Honchkrow",
-    "fullDisplayName": "Honchkrow 029/147 Supreme Victors",
+    "fullDisplayName": "Honchkrow 29/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4115,18 +5171,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-029-low.png",
-    "imageHighSrc": "cards/pl3-029-high.png"
+    "imageHighSrc": "cards/pl3-029-high.png",
+    "attacks": [
+      {
+        "name": "Riot",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8538",
-    "externalId": null,
+    "externalId": "pl3-28",
     "tcgdex_id": "pl3-28",
     "localId": "028",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "028/147",
+    "cardNumber": "28/147",
     "cardName": "Exploud",
-    "fullDisplayName": "Exploud 028/147 Supreme Victors",
+    "fullDisplayName": "Exploud 28/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4148,18 +5210,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-028-low.png",
-    "imageHighSrc": "cards/pl3-028-high.png"
+    "imageHighSrc": "cards/pl3-028-high.png",
+    "attacks": [
+      {
+        "name": "Knock Back",
+        "damage": "40"
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8532",
-    "externalId": null,
+    "externalId": "pl3-27",
     "tcgdex_id": "pl3-27",
     "localId": "027",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "027/147",
+    "cardNumber": "27/147",
     "cardName": "Empoleon FB",
-    "fullDisplayName": "Empoleon FB 027/147 Supreme Victors",
+    "fullDisplayName": "Empoleon FB 27/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4182,18 +5254,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-027-low.png",
-    "imageHighSrc": "cards/pl3-027-high.png"
+    "imageHighSrc": "cards/pl3-027-high.png",
+    "attacks": [
+      {
+        "name": "Rushing Water",
+        "damage": "20"
+      },
+      {
+        "name": "Escort",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "8525",
-    "externalId": null,
+    "externalId": "pl3-26",
     "tcgdex_id": "pl3-26",
     "localId": "026",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "026/147",
+    "cardNumber": "26/147",
     "cardName": "Dusknoir FB",
-    "fullDisplayName": "Dusknoir FB 026/147 Supreme Victors",
+    "fullDisplayName": "Dusknoir FB 26/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4216,18 +5298,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-026-low.png",
-    "imageHighSrc": "cards/pl3-026-high.png"
+    "imageHighSrc": "cards/pl3-026-high.png",
+    "attacks": [
+      {
+        "name": "Ghost Hand",
+        "damage": "30"
+      },
+      {
+        "name": "Cursed Wrath",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "8518",
-    "externalId": null,
+    "externalId": "pl3-25",
     "tcgdex_id": "pl3-25",
     "localId": "025",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "025/147",
+    "cardNumber": "25/147",
     "cardName": "Dodrio",
-    "fullDisplayName": "Dodrio 025/147 Supreme Victors",
+    "fullDisplayName": "Dodrio 25/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4249,18 +5341,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-025-low.png",
-    "imageHighSrc": "cards/pl3-025-high.png"
+    "imageHighSrc": "cards/pl3-025-high.png",
+    "attacks": [
+      {
+        "name": "Drill Peck",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8512",
-    "externalId": null,
+    "externalId": "pl3-24",
     "tcgdex_id": "pl3-24",
     "localId": "024",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "024/147",
+    "cardNumber": "24/147",
     "cardName": "Dewgong",
-    "fullDisplayName": "Dewgong 024/147 Supreme Victors",
+    "fullDisplayName": "Dewgong 24/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4282,18 +5380,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-024-low.png",
-    "imageHighSrc": "cards/pl3-024-high.png"
+    "imageHighSrc": "cards/pl3-024-high.png",
+    "attacks": [
+      {
+        "name": "Ice Shard",
+        "damage": "30"
+      },
+      {
+        "name": "Aurora Beam",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "8505",
-    "externalId": null,
+    "externalId": "pl3-23",
     "tcgdex_id": "pl3-23",
     "localId": "023",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "023/147",
+    "cardNumber": "23/147",
     "cardName": "Crawdaunt G",
-    "fullDisplayName": "Crawdaunt G 023/147 Supreme Victors",
+    "fullDisplayName": "Crawdaunt G 23/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4316,18 +5424,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-023-low.png",
-    "imageHighSrc": "cards/pl3-023-high.png"
+    "imageHighSrc": "cards/pl3-023-high.png",
+    "attacks": [
+      {
+        "name": "Smash Turn",
+        "damage": "10"
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8496",
-    "externalId": null,
+    "externalId": "pl3-22",
     "tcgdex_id": "pl3-22",
     "localId": "022",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "022/147",
+    "cardNumber": "22/147",
     "cardName": "Claydol",
-    "fullDisplayName": "Claydol 022/147 Supreme Victors",
+    "fullDisplayName": "Claydol 22/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4349,18 +5467,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-022-low.png",
-    "imageHighSrc": "cards/pl3-022-high.png"
+    "imageHighSrc": "cards/pl3-022-high.png",
+    "attacks": [
+      {
+        "name": "Antique Magic",
+        "damage": null
+      },
+      {
+        "name": "Synchro Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8491",
-    "externalId": null,
+    "externalId": "pl3-21",
     "tcgdex_id": "pl3-21",
     "localId": "021",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "021/147",
+    "cardNumber": "21/147",
     "cardName": "Chimecho",
-    "fullDisplayName": "Chimecho 021/147 Supreme Victors",
+    "fullDisplayName": "Chimecho 21/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4382,18 +5510,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-021-low.png",
-    "imageHighSrc": "cards/pl3-021-high.png"
+    "imageHighSrc": "cards/pl3-021-high.png",
+    "attacks": [
+      {
+        "name": "Heal Bell",
+        "damage": null
+      },
+      {
+        "name": "Super Psywave",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8484",
-    "externalId": null,
+    "externalId": "pl3-20",
     "tcgdex_id": "pl3-20",
     "localId": "020",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "020/147",
+    "cardNumber": "20/147",
     "cardName": "Charizard G",
-    "fullDisplayName": "Charizard G 020/147 Supreme Victors",
+    "fullDisplayName": "Charizard G 20/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4416,18 +5554,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-020-low.png",
-    "imageHighSrc": "cards/pl3-020-high.png"
+    "imageHighSrc": "cards/pl3-020-high.png",
+    "attacks": [
+      {
+        "name": "Flame Jet",
+        "damage": null
+      },
+      {
+        "name": "Heat Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8472",
-    "externalId": null,
+    "externalId": "pl3-19",
     "tcgdex_id": "pl3-19",
     "localId": "019",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "019/147",
+    "cardNumber": "19/147",
     "cardName": "Camerupt G",
-    "fullDisplayName": "Camerupt G 019/147 Supreme Victors",
+    "fullDisplayName": "Camerupt G 19/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4450,18 +5598,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-019-low.png",
-    "imageHighSrc": "cards/pl3-019-high.png"
+    "imageHighSrc": "cards/pl3-019-high.png",
+    "attacks": [
+      {
+        "name": "Searing Flame",
+        "damage": "20"
+      },
+      {
+        "name": "Earth Power",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8469",
-    "externalId": null,
+    "externalId": "pl3-18",
     "tcgdex_id": "pl3-18",
     "localId": "018",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "018/147",
+    "cardNumber": "18/147",
     "cardName": "Camerupt",
-    "fullDisplayName": "Camerupt 018/147 Supreme Victors",
+    "fullDisplayName": "Camerupt 18/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4483,18 +5641,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-018-low.png",
-    "imageHighSrc": "cards/pl3-018-high.png"
+    "imageHighSrc": "cards/pl3-018-high.png",
+    "attacks": [
+      {
+        "name": "Moving Fire",
+        "damage": "30"
+      },
+      {
+        "name": "Volcanic Crash",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "8462",
-    "externalId": null,
+    "externalId": "pl3-17",
     "tcgdex_id": "pl3-17",
     "localId": "017",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "017/147",
+    "cardNumber": "17/147",
     "cardName": "Butterfree FB",
-    "fullDisplayName": "Butterfree FB 017/147 Supreme Victors",
+    "fullDisplayName": "Butterfree FB 17/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4517,18 +5685,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-017-low.png",
-    "imageHighSrc": "cards/pl3-017-high.png"
+    "imageHighSrc": "cards/pl3-017-high.png",
+    "attacks": [
+      {
+        "name": "Select Powder",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8453",
-    "externalId": null,
+    "externalId": "pl3-16",
     "tcgdex_id": "pl3-16",
     "localId": "016",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "016/147",
+    "cardNumber": "16/147",
     "cardName": "Articuno",
-    "fullDisplayName": "Articuno 016/147 Supreme Victors",
+    "fullDisplayName": "Articuno 16/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4550,18 +5724,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-016-low.png",
-    "imageHighSrc": "cards/pl3-016-high.png"
+    "imageHighSrc": "cards/pl3-016-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Beak",
+        "damage": "30+"
+      },
+      {
+        "name": "Ice Beam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8441",
-    "externalId": null,
+    "externalId": "pl3-15",
     "tcgdex_id": "pl3-15",
     "localId": "015",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "015/147",
+    "cardNumber": "15/147",
     "cardName": "Arcanine G",
-    "fullDisplayName": "Arcanine G 015/147 Supreme Victors",
+    "fullDisplayName": "Arcanine G 15/147 Supreme Victors",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4584,18 +5768,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-015-low.png",
-    "imageHighSrc": "cards/pl3-015-high.png"
+    "imageHighSrc": "cards/pl3-015-high.png",
+    "attacks": [
+      {
+        "name": "Overrun",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8433",
-    "externalId": null,
+    "externalId": "pl3-14",
     "tcgdex_id": "pl3-14",
     "localId": "014",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "014/147",
+    "cardNumber": "14/147",
     "cardName": "Yanmega",
-    "fullDisplayName": "Yanmega 014/147 Supreme Victors",
+    "fullDisplayName": "Yanmega 14/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4617,18 +5807,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-014-low.png",
-    "imageHighSrc": "cards/pl3-014-high.png"
+    "imageHighSrc": "cards/pl3-014-high.png",
+    "attacks": [
+      {
+        "name": "Wind Return",
+        "damage": "20+"
+      },
+      {
+        "name": "Speed Dive",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "8415",
-    "externalId": null,
+    "externalId": "pl3-13",
     "tcgdex_id": "pl3-13",
     "localId": "013",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "013/147",
+    "cardNumber": "13/147",
     "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 013/147 Supreme Victors",
+    "fullDisplayName": "Venusaur 13/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4650,18 +5850,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-013-low.png",
-    "imageHighSrc": "cards/pl3-013-high.png"
+    "imageHighSrc": "cards/pl3-013-high.png",
+    "attacks": [
+      {
+        "name": "Desperate Pollen",
+        "damage": "30"
+      },
+      {
+        "name": "Special Reaction",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "8406",
-    "externalId": null,
+    "externalId": "pl3-12",
     "tcgdex_id": "pl3-12",
     "localId": "012",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "012/147",
+    "cardNumber": "12/147",
     "cardName": "Swampert",
-    "fullDisplayName": "Swampert 012/147 Supreme Victors",
+    "fullDisplayName": "Swampert 12/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4683,18 +5893,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-012-low.png",
-    "imageHighSrc": "cards/pl3-012-high.png"
+    "imageHighSrc": "cards/pl3-012-high.png",
+    "attacks": [
+      {
+        "name": "Drag Off",
+        "damage": "30"
+      },
+      {
+        "name": "Push Over",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "8397",
-    "externalId": null,
+    "externalId": "pl3-11",
     "tcgdex_id": "pl3-11",
     "localId": "011",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "011/147",
+    "cardNumber": "11/147",
     "cardName": "Staraptor FB",
-    "fullDisplayName": "Staraptor FB 011/147 Supreme Victors",
+    "fullDisplayName": "Staraptor FB 11/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4717,18 +5937,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-011-low.png",
-    "imageHighSrc": "cards/pl3-011-high.png"
+    "imageHighSrc": "cards/pl3-011-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Whirlwind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8388",
-    "externalId": null,
+    "externalId": "pl3-10",
     "tcgdex_id": "pl3-10",
     "localId": "010",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "010/147",
+    "cardNumber": "10/147",
     "cardName": "Rhyperior",
-    "fullDisplayName": "Rhyperior 010/147 Supreme Victors",
+    "fullDisplayName": "Rhyperior 10/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4750,18 +5980,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-010-low.png",
-    "imageHighSrc": "cards/pl3-010-high.png"
+    "imageHighSrc": "cards/pl3-010-high.png",
+    "attacks": [
+      {
+        "name": "Raging Drill",
+        "damage": "30+"
+      },
+      {
+        "name": "Deep Scrap",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8379",
-    "externalId": null,
+    "externalId": "pl3-9",
     "tcgdex_id": "pl3-9",
     "localId": "009",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "009/147",
+    "cardNumber": "9/147",
     "cardName": "Regigigas FB",
-    "fullDisplayName": "Regigigas FB 009/147 Supreme Victors",
+    "fullDisplayName": "Regigigas FB 9/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4784,18 +6024,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-009-low.png",
-    "imageHighSrc": "cards/pl3-009-high.png"
+    "imageHighSrc": "cards/pl3-009-high.png",
+    "attacks": [
+      {
+        "name": "Drain Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Rainbow Lariat",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "8373",
-    "externalId": null,
+    "externalId": "pl3-8",
     "tcgdex_id": "pl3-8",
     "localId": "008",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "008/147",
+    "cardNumber": "8/147",
     "cardName": "Rayquaza C",
-    "fullDisplayName": "Rayquaza C 008/147 Supreme Victors",
+    "fullDisplayName": "Rayquaza C 8/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4818,18 +6068,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-008-low.png",
-    "imageHighSrc": "cards/pl3-008-high.png"
+    "imageHighSrc": "cards/pl3-008-high.png",
+    "attacks": [
+      {
+        "name": "Trash Burst",
+        "damage": "10+"
+      },
+      {
+        "name": "Twister",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8365",
-    "externalId": null,
+    "externalId": "pl3-7",
     "tcgdex_id": "pl3-7",
     "localId": "007",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "007/147",
+    "cardNumber": "7/147",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross 007/147 Supreme Victors",
+    "fullDisplayName": "Metagross 7/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4851,18 +6111,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-007-low.png",
-    "imageHighSrc": "cards/pl3-007-high.png"
+    "imageHighSrc": "cards/pl3-007-high.png",
+    "attacks": [
+      {
+        "name": "Geo Impact",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8355",
-    "externalId": null,
+    "externalId": "pl3-6",
     "tcgdex_id": "pl3-6",
     "localId": "006",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "006/147",
+    "cardNumber": "6/147",
     "cardName": "Magmortar",
-    "fullDisplayName": "Magmortar 006/147 Supreme Victors",
+    "fullDisplayName": "Magmortar 6/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4884,18 +6150,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-006-low.png",
-    "imageHighSrc": "cards/pl3-006-high.png"
+    "imageHighSrc": "cards/pl3-006-high.png",
+    "attacks": [
+      {
+        "name": "Fire Arrow",
+        "damage": null
+      },
+      {
+        "name": "Flame Ball",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "8345",
-    "externalId": null,
+    "externalId": "pl3-5",
     "tcgdex_id": "pl3-5",
     "localId": "005",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "005/147",
+    "cardNumber": "5/147",
     "cardName": "Garchomp",
-    "fullDisplayName": "Garchomp 005/147 Supreme Victors",
+    "fullDisplayName": "Garchomp 5/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4917,18 +6193,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pl3-005-low.png",
-    "imageHighSrc": "cards/pl3-005-high.png"
+    "imageHighSrc": "cards/pl3-005-high.png",
+    "attacks": [
+      {
+        "name": "Guard Claw",
+        "damage": "40"
+      },
+      {
+        "name": "Speed Impact",
+        "damage": "120-"
+      }
+    ]
   },
   {
     "masterCardId": "8335",
-    "externalId": null,
+    "externalId": "pl3-4",
     "tcgdex_id": "pl3-4",
     "localId": "004",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "004/147",
+    "cardNumber": "4/147",
     "cardName": "Electivire FB",
-    "fullDisplayName": "Electivire FB 004/147 Supreme Victors",
+    "fullDisplayName": "Electivire FB 4/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4951,18 +6237,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-004-low.png",
-    "imageHighSrc": "cards/pl3-004-high.png"
+    "imageHighSrc": "cards/pl3-004-high.png",
+    "attacks": [
+      {
+        "name": "Dump and Draw",
+        "damage": null
+      },
+      {
+        "name": "Electric Current",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8326",
-    "externalId": null,
+    "externalId": "pl3-3",
     "tcgdex_id": "pl3-3",
     "localId": "003",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "003/147",
+    "cardNumber": "3/147",
     "cardName": "Drifblim FB",
-    "fullDisplayName": "Drifblim FB 003/147 Supreme Victors",
+    "fullDisplayName": "Drifblim FB 3/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4985,18 +6281,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-003-low.png",
-    "imageHighSrc": "cards/pl3-003-high.png"
+    "imageHighSrc": "cards/pl3-003-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Ball",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8315",
-    "externalId": null,
+    "externalId": "pl3-2",
     "tcgdex_id": "pl3-2",
     "localId": "002",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "002/147",
+    "cardNumber": "2/147",
     "cardName": "Blaziken FB",
-    "fullDisplayName": "Blaziken FB 002/147 Supreme Victors",
+    "fullDisplayName": "Blaziken FB 2/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5019,18 +6321,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-002-low.png",
-    "imageHighSrc": "cards/pl3-002-high.png"
+    "imageHighSrc": "cards/pl3-002-high.png",
+    "attacks": [
+      {
+        "name": "Luring Flame",
+        "damage": null
+      },
+      {
+        "name": "Vapor Kick",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "8308",
-    "externalId": null,
+    "externalId": "pl3-1",
     "tcgdex_id": "pl3-1",
     "localId": "001",
     "setCode": "pl3",
     "setTcgdexId": "pl3",
-    "cardNumber": "001/147",
+    "cardNumber": "1/147",
     "cardName": "Absol G",
-    "fullDisplayName": "Absol G 001/147 Supreme Victors",
+    "fullDisplayName": "Absol G 1/147 Supreme Victors",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5053,6 +6365,16 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pl3-001-low.png",
-    "imageHighSrc": "cards/pl3-001-high.png"
+    "imageHighSrc": "cards/pl3-001-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      },
+      {
+        "name": "Doom News",
+        "damage": null
+      }
+    ]
   }
 ]

@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9253",
-    "externalId": null,
+    "externalId": "pop4-17",
     "tcgdex_id": "pop4-17",
     "localId": "017",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "017/17",
+    "cardNumber": "17/17",
     "cardName": "Deoxys ex",
-    "fullDisplayName": "Deoxys ex 017/17 POP Series 4",
+    "fullDisplayName": "Deoxys ex 17/17 POP Series 4",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -31,18 +31,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-017-low.png",
-    "imageHighSrc": "cards/pop4-017-high.png"
+    "imageHighSrc": "cards/pop4-017-high.png",
+    "attacks": [
+      {
+        "name": "Fastwave",
+        "damage": "50"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9245",
-    "externalId": null,
+    "externalId": "pop4-16",
     "tcgdex_id": "pop4-16",
     "localId": "016",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "016/17",
+    "cardNumber": "16/17",
     "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet 016/17 POP Series 4",
+    "fullDisplayName": "Wobbuffet 16/17 POP Series 4",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -64,18 +71,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-016-low.png",
-    "imageHighSrc": "cards/pop4-016-high.png"
+    "imageHighSrc": "cards/pop4-016-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Expand",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9234",
-    "externalId": null,
+    "externalId": "pop4-15",
     "tcgdex_id": "pop4-15",
     "localId": "015",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "015/17",
+    "cardNumber": "15/17",
     "cardName": "Treecko δ",
-    "fullDisplayName": "Treecko δ 015/17 POP Series 4",
+    "fullDisplayName": "Treecko δ 15/17 POP Series 4",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -97,18 +114,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-015-low.png",
-    "imageHighSrc": "cards/pop4-015-high.png"
+    "imageHighSrc": "cards/pop4-015-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Shining Claws",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9225",
-    "externalId": null,
+    "externalId": "pop4-14",
     "tcgdex_id": "pop4-14",
     "localId": "014",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "014/17",
+    "cardNumber": "14/17",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 014/17 POP Series 4",
+    "fullDisplayName": "Squirtle 14/17 POP Series 4",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -130,18 +157,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-014-low.png",
-    "imageHighSrc": "cards/pop4-014-high.png"
+    "imageHighSrc": "cards/pop4-014-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9217",
-    "externalId": null,
+    "externalId": "pop4-13",
     "tcgdex_id": "pop4-13",
     "localId": "013",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "013/17",
+    "cardNumber": "13/17",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 013/17 POP Series 4",
+    "fullDisplayName": "Pikachu 13/17 POP Series 4",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -163,18 +196,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-013-low.png",
-    "imageHighSrc": "cards/pop4-013-high.png"
+    "imageHighSrc": "cards/pop4-013-high.png",
+    "attacks": [
+      {
+        "name": "Spark",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9208",
-    "externalId": null,
+    "externalId": "pop4-12",
     "tcgdex_id": "pop4-12",
     "localId": "012",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "012/17",
+    "cardNumber": "12/17",
     "cardName": "Pidgey",
-    "fullDisplayName": "Pidgey 012/17 POP Series 4",
+    "fullDisplayName": "Pidgey 12/17 POP Series 4",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -196,18 +235,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-012-low.png",
-    "imageHighSrc": "cards/pop4-012-high.png"
+    "imageHighSrc": "cards/pop4-012-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9199",
-    "externalId": null,
+    "externalId": "pop4-11",
     "tcgdex_id": "pop4-11",
     "localId": "011",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "011/17",
+    "cardNumber": "11/17",
     "cardName": "Mudkip",
-    "fullDisplayName": "Mudkip 011/17 POP Series 4",
+    "fullDisplayName": "Mudkip 11/17 POP Series 4",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -229,18 +274,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-011-low.png",
-    "imageHighSrc": "cards/pop4-011-high.png"
+    "imageHighSrc": "cards/pop4-011-high.png",
+    "attacks": [
+      {
+        "name": "Super Hypno Wave",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9191",
-    "externalId": null,
+    "externalId": "pop4-10",
     "tcgdex_id": "pop4-10",
     "localId": "010",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "010/17",
+    "cardNumber": "10/17",
     "cardName": "Scramble Energy",
-    "fullDisplayName": "Scramble Energy 010/17 POP Series 4",
+    "fullDisplayName": "Scramble Energy 10/17 POP Series 4",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -258,18 +309,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-010-low.png",
-    "imageHighSrc": "cards/pop4-010-high.png"
+    "imageHighSrc": "cards/pop4-010-high.png",
+    "rules": "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides Colorless Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy."
   },
   {
     "masterCardId": "9182",
-    "externalId": null,
+    "externalId": "pop4-9",
     "tcgdex_id": "pop4-9",
     "localId": "009",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "009/17",
+    "cardNumber": "9/17",
     "cardName": "Pokémon Fan Club",
-    "fullDisplayName": "Pokémon Fan Club 009/17 POP Series 4",
+    "fullDisplayName": "Pokémon Fan Club 9/17 POP Series 4",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -287,18 +339,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-009-low.png",
-    "imageHighSrc": "cards/pop4-009-high.png"
+    "imageHighSrc": "cards/pop4-009-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 Basic Pokémon and put them onto your Bench. Shuffle your deck afterward."
   },
   {
     "masterCardId": "9173",
-    "externalId": null,
+    "externalId": "pop4-8",
     "tcgdex_id": "pop4-8",
     "localId": "008",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "008/17",
+    "cardNumber": "8/17",
     "cardName": "Heal Energy",
-    "fullDisplayName": "Heal Energy 008/17 POP Series 4",
+    "fullDisplayName": "Heal Energy 8/17 POP Series 4",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -316,18 +369,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-008-low.png",
-    "imageHighSrc": "cards/pop4-008-high.png"
+    "imageHighSrc": "cards/pop4-008-high.png",
+    "rules": "Heal Energy provides Colorless Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
   },
   {
     "masterCardId": "9163",
-    "externalId": null,
+    "externalId": "pop4-7",
     "tcgdex_id": "pop4-7",
     "localId": "007",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "007/17",
+    "cardNumber": "7/17",
     "cardName": "Grovyle",
-    "fullDisplayName": "Grovyle 007/17 POP Series 4",
+    "fullDisplayName": "Grovyle 7/17 POP Series 4",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -349,18 +403,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-007-low.png",
-    "imageHighSrc": "cards/pop4-007-high.png"
+    "imageHighSrc": "cards/pop4-007-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Blot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9155",
-    "externalId": null,
+    "externalId": "pop4-6",
     "tcgdex_id": "pop4-6",
     "localId": "006",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "006/17",
+    "cardNumber": "6/17",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 006/17 POP Series 4",
+    "fullDisplayName": "Combusken 6/17 POP Series 4",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -382,18 +446,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-006-low.png",
-    "imageHighSrc": "cards/pop4-006-high.png"
+    "imageHighSrc": "cards/pop4-006-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "10"
+      },
+      {
+        "name": "Sky Uppercut",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9146",
-    "externalId": null,
+    "externalId": "pop4-5",
     "tcgdex_id": "pop4-5",
     "localId": "005",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "005/17",
+    "cardNumber": "5/17",
     "cardName": "Sceptile",
-    "fullDisplayName": "Sceptile 005/17 POP Series 4",
+    "fullDisplayName": "Sceptile 5/17 POP Series 4",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -415,18 +489,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-005-low.png",
-    "imageHighSrc": "cards/pop4-005-high.png"
+    "imageHighSrc": "cards/pop4-005-high.png",
+    "attacks": [
+      {
+        "name": "Tail Rap",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "9136",
-    "externalId": null,
+    "externalId": "pop4-4",
     "tcgdex_id": "pop4-4",
     "localId": "004",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "004/17",
+    "cardNumber": "4/17",
     "cardName": "Mew",
-    "fullDisplayName": "Mew 004/17 POP Series 4",
+    "fullDisplayName": "Mew 4/17 POP Series 4",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -448,18 +528,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-004-low.png",
-    "imageHighSrc": "cards/pop4-004-high.png"
+    "imageHighSrc": "cards/pop4-004-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9127",
-    "externalId": null,
+    "externalId": "pop4-3",
     "tcgdex_id": "pop4-3",
     "localId": "003",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "003/17",
+    "cardNumber": "3/17",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 003/17 POP Series 4",
+    "fullDisplayName": "Flygon 3/17 POP Series 4",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -481,18 +567,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-003-low.png",
-    "imageHighSrc": "cards/pop4-003-high.png"
+    "imageHighSrc": "cards/pop4-003-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Sand Pit",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9117",
-    "externalId": null,
+    "externalId": "pop4-2",
     "tcgdex_id": "pop4-2",
     "localId": "002",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "002/17",
+    "cardNumber": "2/17",
     "cardName": "Deoxys δ",
-    "fullDisplayName": "Deoxys δ 002/17 POP Series 4",
+    "fullDisplayName": "Deoxys δ 2/17 POP Series 4",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -514,18 +610,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-002-low.png",
-    "imageHighSrc": "cards/pop4-002-high.png"
+    "imageHighSrc": "cards/pop4-002-high.png",
+    "attacks": [
+      {
+        "name": "Crystal Laser",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9111",
-    "externalId": null,
+    "externalId": "pop4-1",
     "tcgdex_id": "pop4-1",
     "localId": "001",
     "setCode": "pop4",
     "setTcgdexId": "pop4",
-    "cardNumber": "001/17",
+    "cardNumber": "1/17",
     "cardName": "Chimecho δ",
-    "fullDisplayName": "Chimecho δ 001/17 POP Series 4",
+    "fullDisplayName": "Chimecho δ 1/17 POP Series 4",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -547,6 +649,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop4-001-low.png",
-    "imageHighSrc": "cards/pop4-001-high.png"
+    "imageHighSrc": "cards/pop4-001-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": null
+      },
+      {
+        "name": "Sonicboom",
+        "damage": "30"
+      }
+    ]
   }
 ]

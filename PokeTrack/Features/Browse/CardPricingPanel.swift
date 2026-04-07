@@ -81,9 +81,17 @@ struct CardPricingPanel: View {
         return trends.changes(for: variant, grade: grade)
     }
 
-    // Picker keys: history variants if available, else scrydex keys
+    // Picker keys: merge history + Scrydex so labels like `specialIllustrationRare` (history) and `holofoil` (Scrydex) both appear.
     private var displayedVariants: [String] {
-        historyVariants.isEmpty ? variantKeys : historyVariants
+        if variantKeys.isEmpty { return historyVariants }
+        if historyVariants.isEmpty { return variantKeys }
+        var seen = Set<String>()
+        var out: [String] = []
+        for k in historyVariants + variantKeys where !seen.contains(k) {
+            out.append(k)
+            seen.insert(k)
+        }
+        return out
     }
 
     var body: some View {
@@ -439,11 +447,22 @@ struct CardPricingPanel: View {
             let v = key.components(separatedBy: "/").first ?? key
             if !historyVariantsSeen.contains(v) { historyVariantsSeen.append(v) }
         }
-        let availableVariants = historyVariantsSeen.isEmpty ? keys : historyVariantsSeen
+        let scrydexKeys = Set(keys)
 
-        // Pick default variant
+        // Pick default variant: prefer labels that exist in **both** history and Scrydex so the chart and market
+        // price refer to the same product line (history-only labels like `specialIllustrationRare` often differ from Scrydex).
         let preferredVariants = ["holofoil", "normal", "reverseHolofoil"]
-        let defaultVariant = preferredVariants.first(where: { availableVariants.contains($0) }) ?? availableVariants.first
+        let defaultVariant: String?
+        if !historyVariantsSeen.isEmpty, !scrydexKeys.isEmpty {
+            defaultVariant = preferredVariants.first(where: { historyVariantsSeen.contains($0) && scrydexKeys.contains($0) })
+                ?? historyVariantsSeen.first(where: { scrydexKeys.contains($0) })
+                ?? preferredVariants.first(where: { scrydexKeys.contains($0) })
+                ?? historyVariantsSeen.first
+        } else if !historyVariantsSeen.isEmpty {
+            defaultVariant = preferredVariants.first(where: { historyVariantsSeen.contains($0) }) ?? historyVariantsSeen.first
+        } else {
+            defaultVariant = preferredVariants.first(where: { keys.contains($0) }) ?? keys.first
+        }
         selectedVariant = defaultVariant
 
         // Pick default grade directly (don't rely on onChange firing in time)

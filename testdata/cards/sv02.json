@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "14390",
-    "externalId": null,
+    "externalId": "sv2-279",
     "tcgdex_id": "sv02-279",
     "localId": "279",
     "setCode": "sv02",
@@ -30,7 +30,7 @@
   },
   {
     "masterCardId": "14388",
-    "externalId": null,
+    "externalId": "sv2-278",
     "tcgdex_id": "sv02-278",
     "localId": "278",
     "setCode": "sv02",
@@ -59,7 +59,7 @@
   },
   {
     "masterCardId": "14386",
-    "externalId": null,
+    "externalId": "sv2-277",
     "tcgdex_id": "sv02-277",
     "localId": "277",
     "setCode": "sv02",
@@ -84,11 +84,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-277-low.png",
-    "imageHighSrc": "cards/sv2-277-high.png"
+    "imageHighSrc": "cards/sv2-277-high.png",
+    "rules": "You can use this card only if you discard 2 other cards from your hand.Put up to 4 Basic Energy cards from your discard pile into your hand. (You can't choose a card you discarded with the effect of this card.)\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "14384",
-    "externalId": null,
+    "externalId": "sv2-276",
     "tcgdex_id": "sv02-276",
     "localId": "276",
     "setCode": "sv02",
@@ -113,11 +114,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-276-low.png",
-    "imageHighSrc": "cards/sv2-276-high.png"
+    "imageHighSrc": "cards/sv2-276-high.png",
+    "rules": "Shuffle up to 3 in any combination of Pokémon and Basic Energy cards from your discard pile into your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "14383",
-    "externalId": null,
+    "externalId": "sv2-275",
     "tcgdex_id": "sv02-275",
     "localId": "275",
     "setCode": "sv02",
@@ -147,11 +149,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-275-low.png",
-    "imageHighSrc": "cards/sv2-275-high.png"
+    "imageHighSrc": "cards/sv2-275-high.png",
+    "attacks": [
+      {
+        "name": "Land Scoop",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14381",
-    "externalId": null,
+    "externalId": "sv2-274",
     "tcgdex_id": "sv02-274",
     "localId": "274",
     "setCode": "sv02",
@@ -181,11 +190,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-274-low.png",
-    "imageHighSrc": "cards/sv2-274-high.png"
+    "imageHighSrc": "cards/sv2-274-high.png",
+    "attacks": [
+      {
+        "name": "Hail Blade",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14379",
-    "externalId": null,
+    "externalId": "sv2-273",
     "tcgdex_id": "sv02-273",
     "localId": "273",
     "setCode": "sv02",
@@ -215,11 +231,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-273-low.png",
-    "imageHighSrc": "cards/sv2-273-high.png"
+    "imageHighSrc": "cards/sv2-273-high.png",
+    "attacks": [
+      {
+        "name": "Exciting Dance",
+        "damage": "60"
+      },
+      {
+        "name": "Spiral Shot",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14377",
-    "externalId": null,
+    "externalId": "sv2-272",
     "tcgdex_id": "sv02-272",
     "localId": "272",
     "setCode": "sv02",
@@ -249,11 +276,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-272-low.png",
-    "imageHighSrc": "cards/sv2-272-high.png"
+    "imageHighSrc": "cards/sv2-272-high.png",
+    "attacks": [
+      {
+        "name": "Vitality Song",
+        "damage": "50"
+      },
+      {
+        "name": "Burning Voice",
+        "damage": "270-"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14374",
-    "externalId": null,
+    "externalId": "sv2-271",
     "tcgdex_id": "sv02-271",
     "localId": "271",
     "setCode": "sv02",
@@ -283,11 +321,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-271-low.png",
-    "imageHighSrc": "cards/sv2-271-high.png"
+    "imageHighSrc": "cards/sv2-271-high.png",
+    "attacks": [
+      {
+        "name": "Scratching Nails",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14372",
-    "externalId": null,
+    "externalId": "sv2-270",
     "tcgdex_id": "sv02-270",
     "localId": "270",
     "setCode": "sv02",
@@ -312,11 +357,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-270-low.png",
-    "imageHighSrc": "cards/sv2-270-high.png"
+    "imageHighSrc": "cards/sv2-270-high.png",
+    "rules": "Choose up to 2 of your Pokémon and heal 50 damage from each of them.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14370",
-    "externalId": null,
+    "externalId": "sv2-269",
     "tcgdex_id": "sv02-269",
     "localId": "269",
     "setCode": "sv02",
@@ -341,11 +387,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-269-low.png",
-    "imageHighSrc": "cards/sv2-269-high.png"
+    "imageHighSrc": "cards/sv2-269-high.png",
+    "rules": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player draws a card for each of their remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14368",
-    "externalId": null,
+    "externalId": "sv2-268",
     "tcgdex_id": "sv02-268",
     "localId": "268",
     "setCode": "sv02",
@@ -370,11 +417,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-268-low.png",
-    "imageHighSrc": "cards/sv2-268-high.png"
+    "imageHighSrc": "cards/sv2-268-high.png",
+    "rules": "Draw cards until you have 5 cards in your hand. If none of your Pokémon have any Energy attached, draw cards until you have 7 cards in your hand instead.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14366",
-    "externalId": null,
+    "externalId": "sv2-267",
     "tcgdex_id": "sv02-267",
     "localId": "267",
     "setCode": "sv02",
@@ -399,11 +447,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-267-low.png",
-    "imageHighSrc": "cards/sv2-267-high.png"
+    "imageHighSrc": "cards/sv2-267-high.png",
+    "rules": "Discard a Special Energy from each of your opponent's Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14364",
-    "externalId": null,
+    "externalId": "sv2-266",
     "tcgdex_id": "sv02-266",
     "localId": "266",
     "setCode": "sv02",
@@ -428,11 +477,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-266-low.png",
-    "imageHighSrc": "cards/sv2-266-high.png"
+    "imageHighSrc": "cards/sv2-266-high.png",
+    "rules": "Put a card from your hand on the bottom of your deck. If you do, draw cards until you have 5 cards in your hand. (If you have no other cards in your hand, you can't use this card.)\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14362",
-    "externalId": null,
+    "externalId": "sv2-265",
     "tcgdex_id": "sv02-265",
     "localId": "265",
     "setCode": "sv02",
@@ -457,11 +507,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-265-low.png",
-    "imageHighSrc": "cards/sv2-265-high.png"
+    "imageHighSrc": "cards/sv2-265-high.png",
+    "rules": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14360",
-    "externalId": null,
+    "externalId": "sv2-264",
     "tcgdex_id": "sv02-264",
     "localId": "264",
     "setCode": "sv02",
@@ -491,11 +542,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-264-low.png",
-    "imageHighSrc": "cards/sv2-264-high.png"
+    "imageHighSrc": "cards/sv2-264-high.png",
+    "attacks": [
+      {
+        "name": "Motivate",
+        "damage": "20"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14358",
-    "externalId": null,
+    "externalId": "sv2-263",
     "tcgdex_id": "sv02-263",
     "localId": "263",
     "setCode": "sv02",
@@ -525,11 +583,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-263-low.png",
-    "imageHighSrc": "cards/sv2-263-high.png"
+    "imageHighSrc": "cards/sv2-263-high.png",
+    "attacks": [
+      {
+        "name": "Land Scoop",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14356",
-    "externalId": null,
+    "externalId": "sv2-262",
     "tcgdex_id": "sv02-262",
     "localId": "262",
     "setCode": "sv02",
@@ -559,11 +624,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-262-low.png",
-    "imageHighSrc": "cards/sv2-262-high.png"
+    "imageHighSrc": "cards/sv2-262-high.png",
+    "attacks": [
+      {
+        "name": "Big Hammer",
+        "damage": "30×"
+      },
+      {
+        "name": "Pulverizing Press",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14353",
-    "externalId": null,
+    "externalId": "sv2-261",
     "tcgdex_id": "sv02-261",
     "localId": "261",
     "setCode": "sv02",
@@ -593,11 +669,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-261-low.png",
-    "imageHighSrc": "cards/sv2-261-high.png"
+    "imageHighSrc": "cards/sv2-261-high.png",
+    "attacks": [
+      {
+        "name": "Hail Blade",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14350",
-    "externalId": null,
+    "externalId": "sv2-260",
     "tcgdex_id": "sv02-260",
     "localId": "260",
     "setCode": "sv02",
@@ -627,11 +710,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-260-low.png",
-    "imageHighSrc": "cards/sv2-260-high.png"
+    "imageHighSrc": "cards/sv2-260-high.png",
+    "attacks": [
+      {
+        "name": "Exciting Dance",
+        "damage": "60"
+      },
+      {
+        "name": "Spiral Shot",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14347",
-    "externalId": null,
+    "externalId": "sv2-259",
     "tcgdex_id": "sv02-259",
     "localId": "259",
     "setCode": "sv02",
@@ -661,11 +755,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-259-low.png",
-    "imageHighSrc": "cards/sv2-259-high.png"
+    "imageHighSrc": "cards/sv2-259-high.png",
+    "attacks": [
+      {
+        "name": "Jealously Singe",
+        "damage": null
+      },
+      {
+        "name": "Flame Surge",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14345",
-    "externalId": null,
+    "externalId": "sv2-258",
     "tcgdex_id": "sv02-258",
     "localId": "258",
     "setCode": "sv02",
@@ -695,11 +800,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-258-low.png",
-    "imageHighSrc": "cards/sv2-258-high.png"
+    "imageHighSrc": "cards/sv2-258-high.png",
+    "attacks": [
+      {
+        "name": "Vitality Song",
+        "damage": "50"
+      },
+      {
+        "name": "Burning Voice",
+        "damage": "270-"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14343",
-    "externalId": null,
+    "externalId": "sv2-257",
     "tcgdex_id": "sv02-257",
     "localId": "257",
     "setCode": "sv02",
@@ -729,11 +845,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-257-low.png",
-    "imageHighSrc": "cards/sv2-257-high.png"
+    "imageHighSrc": "cards/sv2-257-high.png",
+    "attacks": [
+      {
+        "name": "Covetous Ivy",
+        "damage": null
+      },
+      {
+        "name": "Forest Blast",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14340",
-    "externalId": null,
+    "externalId": "sv2-256",
     "tcgdex_id": "sv02-256",
     "localId": "256",
     "setCode": "sv02",
@@ -763,11 +890,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-256-low.png",
-    "imageHighSrc": "cards/sv2-256-high.png"
+    "imageHighSrc": "cards/sv2-256-high.png",
+    "attacks": [
+      {
+        "name": "Scratching Nails",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14337",
-    "externalId": null,
+    "externalId": "sv2-255",
     "tcgdex_id": "sv02-255",
     "localId": "255",
     "setCode": "sv02",
@@ -792,11 +926,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-255-low.png",
-    "imageHighSrc": "cards/sv2-255-high.png"
+    "imageHighSrc": "cards/sv2-255-high.png",
+    "rules": "Choose up to 2 of your Pokémon and heal 50 damage from each of them.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14334",
-    "externalId": null,
+    "externalId": "sv2-254",
     "tcgdex_id": "sv02-254",
     "localId": "254",
     "setCode": "sv02",
@@ -821,11 +956,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-254-low.png",
-    "imageHighSrc": "cards/sv2-254-high.png"
+    "imageHighSrc": "cards/sv2-254-high.png",
+    "rules": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player draws a card for each of their remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14331",
-    "externalId": null,
+    "externalId": "sv2-253",
     "tcgdex_id": "sv02-253",
     "localId": "253",
     "setCode": "sv02",
@@ -850,11 +986,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-253-low.png",
-    "imageHighSrc": "cards/sv2-253-high.png"
+    "imageHighSrc": "cards/sv2-253-high.png",
+    "rules": "Draw cards until you have 5 cards in your hand. If none of your Pokémon have any Energy attached, draw cards until you have 7 cards in your hand instead.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14328",
-    "externalId": null,
+    "externalId": "sv2-252",
     "tcgdex_id": "sv02-252",
     "localId": "252",
     "setCode": "sv02",
@@ -879,11 +1016,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-252-low.png",
-    "imageHighSrc": "cards/sv2-252-high.png"
+    "imageHighSrc": "cards/sv2-252-high.png",
+    "rules": "Discard a Special Energy from each of your opponent's Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14326",
-    "externalId": null,
+    "externalId": "sv2-251",
     "tcgdex_id": "sv02-251",
     "localId": "251",
     "setCode": "sv02",
@@ -908,11 +1046,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-251-low.png",
-    "imageHighSrc": "cards/sv2-251-high.png"
+    "imageHighSrc": "cards/sv2-251-high.png",
+    "rules": "Draw 2 cards. If you have a Stadium in play, draw 2 more cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14323",
-    "externalId": null,
+    "externalId": "sv2-250",
     "tcgdex_id": "sv02-250",
     "localId": "250",
     "setCode": "sv02",
@@ -937,11 +1076,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-250-low.png",
-    "imageHighSrc": "cards/sv2-250-high.png"
+    "imageHighSrc": "cards/sv2-250-high.png",
+    "rules": "Put a card from your hand on the bottom of your deck. If you do, draw cards until you have 5 cards in your hand. (If you have no other cards in your hand, you can't use this card.)\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14320",
-    "externalId": null,
+    "externalId": "sv2-249",
     "tcgdex_id": "sv02-249",
     "localId": "249",
     "setCode": "sv02",
@@ -966,11 +1106,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-249-low.png",
-    "imageHighSrc": "cards/sv2-249-high.png"
+    "imageHighSrc": "cards/sv2-249-high.png",
+    "rules": "Search your deck for up to 3 Basic Pokémon with 120 HP or less, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14317",
-    "externalId": null,
+    "externalId": "sv2-248",
     "tcgdex_id": "sv02-248",
     "localId": "248",
     "setCode": "sv02",
@@ -995,11 +1136,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-248-low.png",
-    "imageHighSrc": "cards/sv2-248-high.png"
+    "imageHighSrc": "cards/sv2-248-high.png",
+    "rules": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "14315",
-    "externalId": null,
+    "externalId": "sv2-247",
     "tcgdex_id": "sv02-247",
     "localId": "247",
     "setCode": "sv02",
@@ -1029,11 +1171,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-247-low.png",
-    "imageHighSrc": "cards/sv2-247-high.png"
+    "imageHighSrc": "cards/sv2-247-high.png",
+    "attacks": [
+      {
+        "name": "Motivate",
+        "damage": "20"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14312",
-    "externalId": null,
+    "externalId": "sv2-246",
     "tcgdex_id": "sv02-246",
     "localId": "246",
     "setCode": "sv02",
@@ -1063,11 +1212,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-246-low.png",
-    "imageHighSrc": "cards/sv2-246-high.png"
+    "imageHighSrc": "cards/sv2-246-high.png",
+    "attacks": [
+      {
+        "name": "Covert Flight",
+        "damage": "70"
+      },
+      {
+        "name": "Dominating Echo",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14309",
-    "externalId": null,
+    "externalId": "sv2-245",
     "tcgdex_id": "sv02-245",
     "localId": "245",
     "setCode": "sv02",
@@ -1097,11 +1257,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-245-low.png",
-    "imageHighSrc": "cards/sv2-245-high.png"
+    "imageHighSrc": "cards/sv2-245-high.png",
+    "attacks": [
+      {
+        "name": "Nosequake",
+        "damage": "260"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14306",
-    "externalId": null,
+    "externalId": "sv2-244",
     "tcgdex_id": "sv02-244",
     "localId": "244",
     "setCode": "sv02",
@@ -1131,11 +1298,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-244-low.png",
-    "imageHighSrc": "cards/sv2-244-high.png"
+    "imageHighSrc": "cards/sv2-244-high.png",
+    "attacks": [
+      {
+        "name": "Needle Bone",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14303",
-    "externalId": null,
+    "externalId": "sv2-243",
     "tcgdex_id": "sv02-243",
     "localId": "243",
     "setCode": "sv02",
@@ -1165,11 +1339,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-243-low.png",
-    "imageHighSrc": "cards/sv2-243-high.png"
+    "imageHighSrc": "cards/sv2-243-high.png",
+    "attacks": [
+      {
+        "name": "Land Scoop",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14300",
-    "externalId": null,
+    "externalId": "sv2-242",
     "tcgdex_id": "sv02-242",
     "localId": "242",
     "setCode": "sv02",
@@ -1199,11 +1380,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-242-low.png",
-    "imageHighSrc": "cards/sv2-242-high.png"
+    "imageHighSrc": "cards/sv2-242-high.png",
+    "attacks": [
+      {
+        "name": "Angry Grudge",
+        "damage": "20×"
+      },
+      {
+        "name": "Seismic Toss",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14297",
-    "externalId": null,
+    "externalId": "sv2-241",
     "tcgdex_id": "sv02-241",
     "localId": "241",
     "setCode": "sv02",
@@ -1233,11 +1425,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-241-low.png",
-    "imageHighSrc": "cards/sv2-241-high.png"
+    "imageHighSrc": "cards/sv2-241-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "40"
+      },
+      {
+        "name": "Scary Fangs",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14294",
-    "externalId": null,
+    "externalId": "sv2-240",
     "tcgdex_id": "sv02-240",
     "localId": "240",
     "setCode": "sv02",
@@ -1267,11 +1470,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-240-low.png",
-    "imageHighSrc": "cards/sv2-240-high.png"
+    "imageHighSrc": "cards/sv2-240-high.png",
+    "attacks": [
+      {
+        "name": "Big Hammer",
+        "damage": "30×"
+      },
+      {
+        "name": "Pulverizing Press",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14290",
-    "externalId": null,
+    "externalId": "sv2-239",
     "tcgdex_id": "sv02-239",
     "localId": "239",
     "setCode": "sv02",
@@ -1302,11 +1516,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-239-low.png",
-    "imageHighSrc": "cards/sv2-239-high.png"
+    "imageHighSrc": "cards/sv2-239-high.png",
+    "attacks": [
+      {
+        "name": "Tail Swap",
+        "damage": null
+      },
+      {
+        "name": "Wondrous Shot",
+        "damage": "170"
+      }
+    ],
+    "rules": "Tera: As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14286",
-    "externalId": null,
+    "externalId": "sv2-238",
     "tcgdex_id": "sv02-238",
     "localId": "238",
     "setCode": "sv02",
@@ -1337,11 +1562,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-238-low.png",
-    "imageHighSrc": "cards/sv2-238-high.png"
+    "imageHighSrc": "cards/sv2-238-high.png",
+    "attacks": [
+      {
+        "name": "Profound Knowledge",
+        "damage": "30"
+      },
+      {
+        "name": "Wise Headbutt",
+        "damage": "130"
+      }
+    ],
+    "rules": "Tera: As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14282",
-    "externalId": null,
+    "externalId": "sv2-237",
     "tcgdex_id": "sv02-237",
     "localId": "237",
     "setCode": "sv02",
@@ -1371,11 +1607,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-237-low.png",
-    "imageHighSrc": "cards/sv2-237-high.png"
+    "imageHighSrc": "cards/sv2-237-high.png",
+    "attacks": [
+      {
+        "name": "Jumping Press",
+        "damage": null
+      },
+      {
+        "name": "Paralyzing Ball",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14277",
-    "externalId": null,
+    "externalId": "sv2-236",
     "tcgdex_id": "sv02-236",
     "localId": "236",
     "setCode": "sv02",
@@ -1405,11 +1652,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-236-low.png",
-    "imageHighSrc": "cards/sv2-236-high.png"
+    "imageHighSrc": "cards/sv2-236-high.png",
+    "attacks": [
+      {
+        "name": "Hail Blade",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14271",
-    "externalId": null,
+    "externalId": "sv2-235",
     "tcgdex_id": "sv02-235",
     "localId": "235",
     "setCode": "sv02",
@@ -1439,11 +1693,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-235-low.png",
-    "imageHighSrc": "cards/sv2-235-high.png"
+    "imageHighSrc": "cards/sv2-235-high.png",
+    "attacks": [
+      {
+        "name": "Exciting Dance",
+        "damage": "60"
+      },
+      {
+        "name": "Spiral Shot",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14268",
-    "externalId": null,
+    "externalId": "sv2-234",
     "tcgdex_id": "sv02-234",
     "localId": "234",
     "setCode": "sv02",
@@ -1473,11 +1738,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-234-low.png",
-    "imageHighSrc": "cards/sv2-234-high.png"
+    "imageHighSrc": "cards/sv2-234-high.png",
+    "attacks": [
+      {
+        "name": "Jealously Singe",
+        "damage": null
+      },
+      {
+        "name": "Flame Surge",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14263",
-    "externalId": null,
+    "externalId": "sv2-233",
     "tcgdex_id": "sv02-233",
     "localId": "233",
     "setCode": "sv02",
@@ -1507,11 +1783,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-233-low.png",
-    "imageHighSrc": "cards/sv2-233-high.png"
+    "imageHighSrc": "cards/sv2-233-high.png",
+    "attacks": [
+      {
+        "name": "Vitality Song",
+        "damage": "50"
+      },
+      {
+        "name": "Burning Voice",
+        "damage": "270-"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14258",
-    "externalId": null,
+    "externalId": "sv2-232",
     "tcgdex_id": "sv02-232",
     "localId": "232",
     "setCode": "sv02",
@@ -1541,11 +1828,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-232-low.png",
-    "imageHighSrc": "cards/sv2-232-high.png"
+    "imageHighSrc": "cards/sv2-232-high.png",
+    "attacks": [
+      {
+        "name": "Covetous Ivy",
+        "damage": null
+      },
+      {
+        "name": "Forest Blast",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14252",
-    "externalId": null,
+    "externalId": "sv2-231",
     "tcgdex_id": "sv02-231",
     "localId": "231",
     "setCode": "sv02",
@@ -1575,11 +1873,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-231-low.png",
-    "imageHighSrc": "cards/sv2-231-high.png"
+    "imageHighSrc": "cards/sv2-231-high.png",
+    "attacks": [
+      {
+        "name": "Scratching Nails",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14249",
-    "externalId": null,
+    "externalId": "sv2-230",
     "tcgdex_id": "sv02-230",
     "localId": "230",
     "setCode": "sv02",
@@ -1610,11 +1915,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-230-low.png",
-    "imageHighSrc": "cards/sv2-230-high.png"
+    "imageHighSrc": "cards/sv2-230-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "120"
+      }
+    ],
+    "rules": "Tera: As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "14244",
-    "externalId": null,
+    "externalId": "sv2-229",
     "tcgdex_id": "sv02-229",
     "localId": "229",
     "setCode": "sv02",
@@ -1643,11 +1955,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-229-low.png",
-    "imageHighSrc": "cards/sv2-229-high.png"
+    "imageHighSrc": "cards/sv2-229-high.png",
+    "attacks": [
+      {
+        "name": "Mud-Slap",
+        "damage": "30"
+      },
+      {
+        "name": "Dig Away Flash",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "14239",
-    "externalId": null,
+    "externalId": "sv2-228",
     "tcgdex_id": "sv02-228",
     "localId": "228",
     "setCode": "sv02",
@@ -1676,11 +1998,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-228-low.png",
-    "imageHighSrc": "cards/sv2-228-high.png"
+    "imageHighSrc": "cards/sv2-228-high.png",
+    "attacks": [
+      {
+        "name": "Either Face",
+        "damage": null
+      },
+      {
+        "name": "Power Beam",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "14235",
-    "externalId": null,
+    "externalId": "sv2-227",
     "tcgdex_id": "sv02-227",
     "localId": "227",
     "setCode": "sv02",
@@ -1709,11 +2041,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-227-low.png",
-    "imageHighSrc": "cards/sv2-227-high.png"
+    "imageHighSrc": "cards/sv2-227-high.png",
+    "attacks": [
+      {
+        "name": "United Wings",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "14230",
-    "externalId": null,
+    "externalId": "sv2-226",
     "tcgdex_id": "sv02-226",
     "localId": "226",
     "setCode": "sv02",
@@ -1742,11 +2080,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-226-low.png",
-    "imageHighSrc": "cards/sv2-226-high.png"
+    "imageHighSrc": "cards/sv2-226-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "50"
+      },
+      {
+        "name": "Gnaw Relentlessly",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "14225",
-    "externalId": null,
+    "externalId": "sv2-225",
     "tcgdex_id": "sv02-225",
     "localId": "225",
     "setCode": "sv02",
@@ -1775,11 +2123,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-225-low.png",
-    "imageHighSrc": "cards/sv2-225-high.png"
+    "imageHighSrc": "cards/sv2-225-high.png",
+    "attacks": [
+      {
+        "name": "Send Back",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "14221",
-    "externalId": null,
+    "externalId": "sv2-224",
     "tcgdex_id": "sv02-224",
     "localId": "224",
     "setCode": "sv02",
@@ -1808,11 +2162,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-224-low.png",
-    "imageHighSrc": "cards/sv2-224-high.png"
+    "imageHighSrc": "cards/sv2-224-high.png",
+    "attacks": [
+      {
+        "name": "Shoot Through",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "14215",
-    "externalId": null,
+    "externalId": "sv2-223",
     "tcgdex_id": "sv02-223",
     "localId": "223",
     "setCode": "sv02",
@@ -1841,11 +2201,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-223-low.png",
-    "imageHighSrc": "cards/sv2-223-high.png"
+    "imageHighSrc": "cards/sv2-223-high.png",
+    "attacks": [
+      {
+        "name": "Spit Poison",
+        "damage": null
+      },
+      {
+        "name": "Colorful Graffiti",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "14209",
-    "externalId": null,
+    "externalId": "sv2-222",
     "tcgdex_id": "sv02-222",
     "localId": "222",
     "setCode": "sv02",
@@ -1874,11 +2244,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-222-low.png",
-    "imageHighSrc": "cards/sv2-222-high.png"
+    "imageHighSrc": "cards/sv2-222-high.png",
+    "attacks": [
+      {
+        "name": "Rout",
+        "damage": "30+"
+      },
+      {
+        "name": "Dread Mountain",
+        "damage": "230"
+      }
+    ]
   },
   {
     "masterCardId": "14203",
-    "externalId": null,
+    "externalId": "sv2-221",
     "tcgdex_id": "sv02-221",
     "localId": "221",
     "setCode": "sv02",
@@ -1907,11 +2287,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-221-low.png",
-    "imageHighSrc": "cards/sv2-221-high.png"
+    "imageHighSrc": "cards/sv2-221-high.png",
+    "attacks": [
+      {
+        "name": "Find a Home",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "14196",
-    "externalId": null,
+    "externalId": "sv2-220",
     "tcgdex_id": "sv02-220",
     "localId": "220",
     "setCode": "sv02",
@@ -1940,11 +2330,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-220-low.png",
-    "imageHighSrc": "cards/sv2-220-high.png"
+    "imageHighSrc": "cards/sv2-220-high.png",
+    "attacks": [
+      {
+        "name": "Salt Coating",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "14189",
-    "externalId": null,
+    "externalId": "sv2-219",
     "tcgdex_id": "sv02-219",
     "localId": "219",
     "setCode": "sv02",
@@ -1973,11 +2373,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-219-low.png",
-    "imageHighSrc": "cards/sv2-219-high.png"
+    "imageHighSrc": "cards/sv2-219-high.png",
+    "attacks": [
+      {
+        "name": "Hit and Hide",
+        "damage": "20"
+      },
+      {
+        "name": "Elbow Strike",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "14182",
-    "externalId": null,
+    "externalId": "sv2-218",
     "tcgdex_id": "sv02-218",
     "localId": "218",
     "setCode": "sv02",
@@ -2006,11 +2416,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-218-low.png",
-    "imageHighSrc": "cards/sv2-218-high.png"
+    "imageHighSrc": "cards/sv2-218-high.png",
+    "attacks": [
+      {
+        "name": "Raging Horns",
+        "damage": "20+"
+      },
+      {
+        "name": "Combat Tackle",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "14176",
-    "externalId": null,
+    "externalId": "sv2-217",
     "tcgdex_id": "sv02-217",
     "localId": "217",
     "setCode": "sv02",
@@ -2039,11 +2459,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-217-low.png",
-    "imageHighSrc": "cards/sv2-217-high.png"
+    "imageHighSrc": "cards/sv2-217-high.png",
+    "attacks": [
+      {
+        "name": "Play Rough",
+        "damage": "30+"
+      },
+      {
+        "name": "Pulverizing Press",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "14169",
-    "externalId": null,
+    "externalId": "sv2-216",
     "tcgdex_id": "sv02-216",
     "localId": "216",
     "setCode": "sv02",
@@ -2072,11 +2502,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-216-low.png",
-    "imageHighSrc": "cards/sv2-216-high.png"
+    "imageHighSrc": "cards/sv2-216-high.png",
+    "attacks": [
+      {
+        "name": "Scrap Pickup",
+        "damage": null
+      },
+      {
+        "name": "Fairy Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "14164",
-    "externalId": null,
+    "externalId": "sv2-215",
     "tcgdex_id": "sv02-215",
     "localId": "215",
     "setCode": "sv02",
@@ -2105,11 +2545,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-215-low.png",
-    "imageHighSrc": "cards/sv2-215-high.png"
+    "imageHighSrc": "cards/sv2-215-high.png",
+    "attacks": [
+      {
+        "name": "Revival Blessing",
+        "damage": null
+      },
+      {
+        "name": "Psybeam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "14158",
-    "externalId": null,
+    "externalId": "sv2-214",
     "tcgdex_id": "sv02-214",
     "localId": "214",
     "setCode": "sv02",
@@ -2138,11 +2588,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-214-low.png",
-    "imageHighSrc": "cards/sv2-214-high.png"
+    "imageHighSrc": "cards/sv2-214-high.png",
+    "attacks": [
+      {
+        "name": "Mumble",
+        "damage": "20"
+      },
+      {
+        "name": "Mud Shot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "14150",
-    "externalId": null,
+    "externalId": "sv2-213",
     "tcgdex_id": "sv02-213",
     "localId": "213",
     "setCode": "sv02",
@@ -2171,11 +2631,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-213-low.png",
-    "imageHighSrc": "cards/sv2-213-high.png"
+    "imageHighSrc": "cards/sv2-213-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "20"
+      },
+      {
+        "name": "Super Psy Bolt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "14145",
-    "externalId": null,
+    "externalId": "sv2-212",
     "tcgdex_id": "sv02-212",
     "localId": "212",
     "setCode": "sv02",
@@ -2204,11 +2674,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-212-low.png",
-    "imageHighSrc": "cards/sv2-212-high.png"
+    "imageHighSrc": "cards/sv2-212-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Sphere",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "14139",
-    "externalId": null,
+    "externalId": "sv2-211",
     "tcgdex_id": "sv02-211",
     "localId": "211",
     "setCode": "sv02",
@@ -2237,11 +2713,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-211-low.png",
-    "imageHighSrc": "cards/sv2-211-high.png"
+    "imageHighSrc": "cards/sv2-211-high.png",
+    "attacks": [
+      {
+        "name": "Electrocharge",
+        "damage": null
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "14133",
-    "externalId": null,
+    "externalId": "sv2-210",
     "tcgdex_id": "sv02-210",
     "localId": "210",
     "setCode": "sv02",
@@ -2270,11 +2756,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-210-low.png",
-    "imageHighSrc": "cards/sv2-210-high.png"
+    "imageHighSrc": "cards/sv2-210-high.png",
+    "attacks": [
+      {
+        "name": "Buster Tail",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "14126",
-    "externalId": null,
+    "externalId": "sv2-209",
     "tcgdex_id": "sv02-209",
     "localId": "209",
     "setCode": "sv02",
@@ -2303,11 +2795,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-209-low.png",
-    "imageHighSrc": "cards/sv2-209-high.png"
+    "imageHighSrc": "cards/sv2-209-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fin",
+        "damage": "40"
+      },
+      {
+        "name": "Frost Smash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "14118",
-    "externalId": null,
+    "externalId": "sv2-208",
     "tcgdex_id": "sv02-208",
     "localId": "208",
     "setCode": "sv02",
@@ -2336,11 +2838,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-208-low.png",
-    "imageHighSrc": "cards/sv2-208-high.png"
+    "imageHighSrc": "cards/sv2-208-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "14112",
-    "externalId": null,
+    "externalId": "sv2-207",
     "tcgdex_id": "sv02-207",
     "localId": "207",
     "setCode": "sv02",
@@ -2369,11 +2877,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-207-low.png",
-    "imageHighSrc": "cards/sv2-207-high.png"
+    "imageHighSrc": "cards/sv2-207-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "14107",
-    "externalId": null,
+    "externalId": "sv2-206",
     "tcgdex_id": "sv02-206",
     "localId": "206",
     "setCode": "sv02",
@@ -2402,11 +2920,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-206-low.png",
-    "imageHighSrc": "cards/sv2-206-high.png"
+    "imageHighSrc": "cards/sv2-206-high.png",
+    "attacks": [
+      {
+        "name": "Apply Gel",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "14100",
-    "externalId": null,
+    "externalId": "sv2-205",
     "tcgdex_id": "sv02-205",
     "localId": "205",
     "setCode": "sv02",
@@ -2435,11 +2959,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-205-low.png",
-    "imageHighSrc": "cards/sv2-205-high.png"
+    "imageHighSrc": "cards/sv2-205-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Frigid Block",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "14092",
-    "externalId": null,
+    "externalId": "sv2-204",
     "tcgdex_id": "sv02-204",
     "localId": "204",
     "setCode": "sv02",
@@ -2468,11 +3002,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-204-low.png",
-    "imageHighSrc": "cards/sv2-204-high.png"
+    "imageHighSrc": "cards/sv2-204-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Drain",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "14080",
-    "externalId": null,
+    "externalId": "sv2-203",
     "tcgdex_id": "sv02-203",
     "localId": "203",
     "setCode": "sv02",
@@ -2501,11 +3041,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-203-low.png",
-    "imageHighSrc": "cards/sv2-203-high.png"
+    "imageHighSrc": "cards/sv2-203-high.png",
+    "attacks": [
+      {
+        "name": "Expert Splasher",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "14073",
-    "externalId": null,
+    "externalId": "sv2-202",
     "tcgdex_id": "sv02-202",
     "localId": "202",
     "setCode": "sv02",
@@ -2534,11 +3080,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-202-low.png",
-    "imageHighSrc": "cards/sv2-202-high.png"
+    "imageHighSrc": "cards/sv2-202-high.png",
+    "attacks": [
+      {
+        "name": "Steady Firebreathing",
+        "damage": "30"
+      },
+      {
+        "name": "Hyper Voice",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "14065",
-    "externalId": null,
+    "externalId": "sv2-201",
     "tcgdex_id": "sv02-201",
     "localId": "201",
     "setCode": "sv02",
@@ -2567,11 +3123,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-201-low.png",
-    "imageHighSrc": "cards/sv2-201-high.png"
+    "imageHighSrc": "cards/sv2-201-high.png",
+    "attacks": [
+      {
+        "name": "Spacing Out",
+        "damage": null
+      },
+      {
+        "name": "Flare",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "14056",
-    "externalId": null,
+    "externalId": "sv2-200",
     "tcgdex_id": "sv02-200",
     "localId": "200",
     "setCode": "sv02",
@@ -2600,11 +3166,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-200-low.png",
-    "imageHighSrc": "cards/sv2-200-high.png"
+    "imageHighSrc": "cards/sv2-200-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Overrun",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "14046",
-    "externalId": null,
+    "externalId": "sv2-199",
     "tcgdex_id": "sv02-199",
     "localId": "199",
     "setCode": "sv02",
@@ -2633,11 +3209,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-199-low.png",
-    "imageHighSrc": "cards/sv2-199-high.png"
+    "imageHighSrc": "cards/sv2-199-high.png",
+    "attacks": [
+      {
+        "name": "Heat Dive",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "14038",
-    "externalId": null,
+    "externalId": "sv2-198",
     "tcgdex_id": "sv02-198",
     "localId": "198",
     "setCode": "sv02",
@@ -2666,11 +3248,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-198-low.png",
-    "imageHighSrc": "cards/sv2-198-high.png"
+    "imageHighSrc": "cards/sv2-198-high.png",
+    "attacks": [
+      {
+        "name": "Blot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "14030",
-    "externalId": null,
+    "externalId": "sv2-197",
     "tcgdex_id": "sv02-197",
     "localId": "197",
     "setCode": "sv02",
@@ -2699,11 +3287,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-197-low.png",
-    "imageHighSrc": "cards/sv2-197-high.png"
+    "imageHighSrc": "cards/sv2-197-high.png",
+    "attacks": [
+      {
+        "name": "Seed Bomb",
+        "damage": "30"
+      },
+      {
+        "name": "Magic Whip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "14021",
-    "externalId": null,
+    "externalId": "sv2-196",
     "tcgdex_id": "sv02-196",
     "localId": "196",
     "setCode": "sv02",
@@ -2732,11 +3330,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-196-low.png",
-    "imageHighSrc": "cards/sv2-196-high.png"
+    "imageHighSrc": "cards/sv2-196-high.png",
+    "attacks": [
+      {
+        "name": "Gather Sunlight",
+        "damage": null
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "14011",
-    "externalId": null,
+    "externalId": "sv2-195",
     "tcgdex_id": "sv02-195",
     "localId": "195",
     "setCode": "sv02",
@@ -2765,11 +3373,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-195-low.png",
-    "imageHighSrc": "cards/sv2-195-high.png"
+    "imageHighSrc": "cards/sv2-195-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Drain",
+        "damage": "20"
+      },
+      {
+        "name": "Tropic Breeze",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "14002",
-    "externalId": null,
+    "externalId": "sv2-194",
     "tcgdex_id": "sv02-194",
     "localId": "194",
     "setCode": "sv02",
@@ -2798,11 +3416,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-194-low.png",
-    "imageHighSrc": "cards/sv2-194-high.png"
+    "imageHighSrc": "cards/sv2-194-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "50"
+      },
+      {
+        "name": "Smashing Horn",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "13996",
-    "externalId": null,
+    "externalId": "sv2-193",
     "tcgdex_id": "sv02-193",
     "localId": "193",
     "setCode": "sv02",
@@ -2829,11 +3457,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-193-low.png",
-    "imageHighSrc": "cards/sv2-193-high.png"
+    "imageHighSrc": "cards/sv2-193-high.png",
+    "rules": "As long as this card is attached to a Pokémon, it provides Colorless Energy.The Pokémon this card is attached to recovers from being Asleep, Confused, or Paralyzed and can't be affected by those Special Conditions."
   },
   {
     "masterCardId": "13986",
-    "externalId": null,
+    "externalId": "sv2-192",
     "tcgdex_id": "sv02-192",
     "localId": "192",
     "setCode": "sv02",
@@ -2858,11 +3487,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-192-low.png",
-    "imageHighSrc": "cards/sv2-192-high.png"
+    "imageHighSrc": "cards/sv2-192-high.png",
+    "rules": "As long as this card is attached to a Pokémon, it provides Colorless Energy.If you have more Prize cards remaining than your opponent, and if this card is attached to an Evolution Pokémon that doesn't have a Rule Box (Pokémon ex, Pokémon V, etc. have Rule Boxes), this card provides every type of Energy but provides only 3 Energy at a time."
   },
   {
     "masterCardId": "13975",
-    "externalId": null,
+    "externalId": "sv2-191",
     "tcgdex_id": "sv02-191",
     "localId": "191",
     "setCode": "sv02",
@@ -2887,11 +3517,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-191-low.png",
-    "imageHighSrc": "cards/sv2-191-high.png"
+    "imageHighSrc": "cards/sv2-191-high.png",
+    "rules": "As long as this card is attached to a Pokémon, it provides every type of Energy but provides only 1 Energy at a time.If the Pokémon this card is attached to has any other Special Energy attached, this card provides Colorless Energy instead."
   },
   {
     "masterCardId": "13968",
-    "externalId": null,
+    "externalId": "sv2-190",
     "tcgdex_id": "sv02-190",
     "localId": "190",
     "setCode": "sv02",
@@ -2918,11 +3549,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-190-low.png",
-    "imageHighSrc": "cards/sv2-190-high.png"
+    "imageHighSrc": "cards/sv2-190-high.png",
+    "rules": "As long as this card is attached to a Pokémon, it provides Colorless Energy. When you attach this card from your hand to 1 of your Benched Pokémon, switch that Pokémon with your Active Pokémon."
   },
   {
     "masterCardId": "13959",
-    "externalId": null,
+    "externalId": "sv2-189",
     "tcgdex_id": "sv02-189",
     "localId": "189",
     "setCode": "sv02",
@@ -2947,11 +3579,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-189-low.png",
-    "imageHighSrc": "cards/sv2-189-high.png"
+    "imageHighSrc": "cards/sv2-189-high.png",
+    "rules": "You can use this card only if you discard 2 other cards from your hand.Put up to 4 Basic Energy cards from your discard pile into your hand. (You can't choose a card you discarded with the effect of this card.)\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "13948",
-    "externalId": null,
+    "externalId": "sv2-188",
     "tcgdex_id": "sv02-188",
     "localId": "188",
     "setCode": "sv02",
@@ -2976,11 +3609,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-188-low.png",
-    "imageHighSrc": "cards/sv2-188-high.png"
+    "imageHighSrc": "cards/sv2-188-high.png",
+    "rules": "Shuffle up to 3 in any combination of Pokémon and Basic Energy cards from your discard pile into your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "13939",
-    "externalId": null,
+    "externalId": "sv2-187",
     "tcgdex_id": "sv02-187",
     "localId": "187",
     "setCode": "sv02",
@@ -3005,11 +3639,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-187-low.png",
-    "imageHighSrc": "cards/sv2-187-high.png"
+    "imageHighSrc": "cards/sv2-187-high.png",
+    "rules": "Choose up to 2 of your Pokémon and heal 50 damage from each of them.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13930",
-    "externalId": null,
+    "externalId": "sv2-186",
     "tcgdex_id": "sv02-186",
     "localId": "186",
     "setCode": "sv02",
@@ -3034,11 +3669,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-186-low.png",
-    "imageHighSrc": "cards/sv2-186-high.png"
+    "imageHighSrc": "cards/sv2-186-high.png",
+    "rules": "The attacks of Stage 1 Pokémon (both yours and your opponent's) do 10 more damage to the opponent's Active Pokémon (before applying Weakness and Resistance).\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "13921",
-    "externalId": null,
+    "externalId": "sv2-185",
     "tcgdex_id": "sv02-185",
     "localId": "185",
     "setCode": "sv02",
@@ -3063,11 +3699,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-185-low.png",
-    "imageHighSrc": "cards/sv2-185-high.png"
+    "imageHighSrc": "cards/sv2-185-high.png",
+    "rules": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player draws a card for each of their remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13911",
-    "externalId": null,
+    "externalId": "sv2-184",
     "tcgdex_id": "sv02-184",
     "localId": "184",
     "setCode": "sv02",
@@ -3092,11 +3729,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-184-low.png",
-    "imageHighSrc": "cards/sv2-184-high.png"
+    "imageHighSrc": "cards/sv2-184-high.png",
+    "rules": "Draw cards until you have 5 cards in your hand. If none of your Pokémon have any Energy attached, draw cards until you have 7 cards in your hand instead.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13901",
-    "externalId": null,
+    "externalId": "sv2-183",
     "tcgdex_id": "sv02-183",
     "localId": "183",
     "setCode": "sv02",
@@ -3121,11 +3759,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-183-low.png",
-    "imageHighSrc": "cards/sv2-183-high.png"
+    "imageHighSrc": "cards/sv2-183-high.png",
+    "rules": "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "13892",
-    "externalId": null,
+    "externalId": "sv2-182",
     "tcgdex_id": "sv02-182",
     "localId": "182",
     "setCode": "sv02",
@@ -3150,11 +3789,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-182-low.png",
-    "imageHighSrc": "cards/sv2-182-high.png"
+    "imageHighSrc": "cards/sv2-182-high.png",
+    "rules": "Discard a Special Energy from each of your opponent's Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13884",
-    "externalId": null,
+    "externalId": "sv2-181",
     "tcgdex_id": "sv02-181",
     "localId": "181",
     "setCode": "sv02",
@@ -3179,11 +3819,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-181-low.png",
-    "imageHighSrc": "cards/sv2-181-high.png"
+    "imageHighSrc": "cards/sv2-181-high.png",
+    "rules": "You can use this card only if you have more Prize cards remaining than your opponent.Heal 60 damage from 1 of your Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "13876",
-    "externalId": null,
+    "externalId": "sv2-180",
     "tcgdex_id": "sv02-180",
     "localId": "180",
     "setCode": "sv02",
@@ -3208,11 +3849,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-180-low.png",
-    "imageHighSrc": "cards/sv2-180-high.png"
+    "imageHighSrc": "cards/sv2-180-high.png",
+    "rules": "Draw 2 cards. If you have a Stadium in play, draw 2 more cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13867",
-    "externalId": null,
+    "externalId": "sv2-179",
     "tcgdex_id": "sv02-179",
     "localId": "179",
     "setCode": "sv02",
@@ -3237,11 +3879,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-179-low.png",
-    "imageHighSrc": "cards/sv2-179-high.png"
+    "imageHighSrc": "cards/sv2-179-high.png",
+    "rules": "Put a card from your hand on the bottom of your deck. If you do, draw cards until you have 5 cards in your hand. (If you have no other cards in your hand, you can't use this card.)\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13859",
-    "externalId": null,
+    "externalId": "sv2-178",
     "tcgdex_id": "sv02-178",
     "localId": "178",
     "setCode": "sv02",
@@ -3266,11 +3909,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-178-low.png",
-    "imageHighSrc": "cards/sv2-178-high.png"
+    "imageHighSrc": "cards/sv2-178-high.png",
+    "rules": "Flip 2 coins. If both of them are heads, search your deck for a card and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "13850",
-    "externalId": null,
+    "externalId": "sv2-177",
     "tcgdex_id": "sv02-177",
     "localId": "177",
     "setCode": "sv02",
@@ -3295,11 +3939,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-177-low.png",
-    "imageHighSrc": "cards/sv2-177-high.png"
+    "imageHighSrc": "cards/sv2-177-high.png",
+    "rules": "Search your deck for up to 3 Basic Pokémon with 120 HP or less, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13841",
-    "externalId": null,
+    "externalId": "sv2-176",
     "tcgdex_id": "sv02-176",
     "localId": "176",
     "setCode": "sv02",
@@ -3324,11 +3969,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-176-low.png",
-    "imageHighSrc": "cards/sv2-176-high.png"
+    "imageHighSrc": "cards/sv2-176-high.png",
+    "rules": "The attacks of the Pokémon this card is attached to do 30 more damage to your opponent's Active Pokémon V (before applying Weakness and Resistance).\n\nAttach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached."
   },
   {
     "masterCardId": "13832",
-    "externalId": null,
+    "externalId": "sv2-175",
     "tcgdex_id": "sv02-175",
     "localId": "175",
     "setCode": "sv02",
@@ -3353,11 +3999,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-175-low.png",
-    "imageHighSrc": "cards/sv2-175-high.png"
+    "imageHighSrc": "cards/sv2-175-high.png",
+    "rules": "The Retreat Cost of each Basic non-Fighting Pokémon in play (both yours and your opponent's) is Colorless more.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "13822",
-    "externalId": null,
+    "externalId": "sv2-174",
     "tcgdex_id": "sv02-174",
     "localId": "174",
     "setCode": "sv02",
@@ -3382,11 +4029,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-174-low.png",
-    "imageHighSrc": "cards/sv2-174-high.png"
+    "imageHighSrc": "cards/sv2-174-high.png",
+    "rules": "Whenever any player attaches an Energy card from their hand to 1 of their Basic non-Water Pokémon, put 2 damage counters on that Pokémon.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "13812",
-    "externalId": null,
+    "externalId": "sv2-173",
     "tcgdex_id": "sv02-173",
     "localId": "173",
     "setCode": "sv02",
@@ -3411,11 +4059,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-173-low.png",
-    "imageHighSrc": "cards/sv2-173-high.png"
+    "imageHighSrc": "cards/sv2-173-high.png",
+    "rules": "The Basic Pokémon this card is attached to gets +50 HP.\n\nAttach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached."
   },
   {
     "masterCardId": "13802",
-    "externalId": null,
+    "externalId": "sv2-172",
     "tcgdex_id": "sv02-172",
     "localId": "172",
     "setCode": "sv02",
@@ -3440,11 +4089,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-172-low.png",
-    "imageHighSrc": "cards/sv2-172-high.png"
+    "imageHighSrc": "cards/sv2-172-high.png",
+    "rules": "Switch in 1 of your opponent's Benched Pokémon to the Active Spot.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13791",
-    "externalId": null,
+    "externalId": "sv2-171",
     "tcgdex_id": "sv02-171",
     "localId": "171",
     "setCode": "sv02",
@@ -3469,11 +4119,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-171-low.png",
-    "imageHighSrc": "cards/sv2-171-high.png"
+    "imageHighSrc": "cards/sv2-171-high.png",
+    "rules": "Once during each player's turn, that player may search their deck for a Basic Pokémon that doesn't have a Rule Box and put it onto their Bench. Then, that player shuffles their deck. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "13783",
-    "externalId": null,
+    "externalId": "sv2-170",
     "tcgdex_id": "sv02-170",
     "localId": "170",
     "setCode": "sv02",
@@ -3502,11 +4153,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-170-low.png",
-    "imageHighSrc": "cards/sv2-170-high.png"
+    "imageHighSrc": "cards/sv2-170-high.png",
+    "attacks": [
+      {
+        "name": "United Wings",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "13774",
-    "externalId": null,
+    "externalId": "sv2-169",
     "tcgdex_id": "sv02-169",
     "localId": "169",
     "setCode": "sv02",
@@ -3536,11 +4193,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-169-low.png",
-    "imageHighSrc": "cards/sv2-169-high.png"
+    "imageHighSrc": "cards/sv2-169-high.png",
+    "attacks": [
+      {
+        "name": "Motivate",
+        "damage": "20"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13765",
-    "externalId": null,
+    "externalId": "sv2-168",
     "tcgdex_id": "sv02-168",
     "localId": "168",
     "setCode": "sv02",
@@ -3569,11 +4233,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-168-low.png",
-    "imageHighSrc": "cards/sv2-168-high.png"
+    "imageHighSrc": "cards/sv2-168-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "50"
+      },
+      {
+        "name": "Gnaw Relentlessly",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "13756",
-    "externalId": null,
+    "externalId": "sv2-167",
     "tcgdex_id": "sv02-167",
     "localId": "167",
     "setCode": "sv02",
@@ -3602,11 +4276,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-167-low.png",
-    "imageHighSrc": "cards/sv2-167-high.png"
+    "imageHighSrc": "cards/sv2-167-high.png",
+    "attacks": [
+      {
+        "name": "Attach",
+        "damage": "10"
+      },
+      {
+        "name": "Smash Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "13743",
-    "externalId": null,
+    "externalId": "sv2-166",
     "tcgdex_id": "sv02-166",
     "localId": "166",
     "setCode": "sv02",
@@ -3635,11 +4319,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-166-low.png",
-    "imageHighSrc": "cards/sv2-166-high.png"
+    "imageHighSrc": "cards/sv2-166-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Gentle Slap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "13733",
-    "externalId": null,
+    "externalId": "sv2-165",
     "tcgdex_id": "sv02-165",
     "localId": "165",
     "setCode": "sv02",
@@ -3668,11 +4362,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-165-low.png",
-    "imageHighSrc": "cards/sv2-165-high.png"
+    "imageHighSrc": "cards/sv2-165-high.png",
+    "attacks": [
+      {
+        "name": "Glide",
+        "damage": "20"
+      },
+      {
+        "name": "Clutch",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "13724",
-    "externalId": null,
+    "externalId": "sv2-164",
     "tcgdex_id": "sv02-164",
     "localId": "164",
     "setCode": "sv02",
@@ -3701,11 +4405,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-164-low.png",
-    "imageHighSrc": "cards/sv2-164-high.png"
+    "imageHighSrc": "cards/sv2-164-high.png",
+    "attacks": [
+      {
+        "name": "Send Back",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "13715",
-    "externalId": null,
+    "externalId": "sv2-163",
     "tcgdex_id": "sv02-163",
     "localId": "163",
     "setCode": "sv02",
@@ -3734,11 +4444,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-163-low.png",
-    "imageHighSrc": "cards/sv2-163-high.png"
+    "imageHighSrc": "cards/sv2-163-high.png",
+    "attacks": [
+      {
+        "name": "Nosedive",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "13706",
-    "externalId": null,
+    "externalId": "sv2-162",
     "tcgdex_id": "sv02-162",
     "localId": "162",
     "setCode": "sv02",
@@ -3767,11 +4483,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-162-low.png",
-    "imageHighSrc": "cards/sv2-162-high.png"
+    "imageHighSrc": "cards/sv2-162-high.png",
+    "attacks": [
+      {
+        "name": "Slacker's Headstrike",
+        "damage": "240"
+      }
+    ]
   },
   {
     "masterCardId": "13699",
-    "externalId": null,
+    "externalId": "sv2-161",
     "tcgdex_id": "sv02-161",
     "localId": "161",
     "setCode": "sv02",
@@ -3800,11 +4522,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-161-low.png",
-    "imageHighSrc": "cards/sv2-161-high.png"
+    "imageHighSrc": "cards/sv2-161-high.png",
+    "attacks": [
+      {
+        "name": "Confront",
+        "damage": "40"
+      },
+      {
+        "name": "Sharp Claws",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "13690",
-    "externalId": null,
+    "externalId": "sv2-160",
     "tcgdex_id": "sv02-160",
     "localId": "160",
     "setCode": "sv02",
@@ -3833,11 +4565,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-160-low.png",
-    "imageHighSrc": "cards/sv2-160-high.png"
+    "imageHighSrc": "cards/sv2-160-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "13680",
-    "externalId": null,
+    "externalId": "sv2-159",
     "tcgdex_id": "sv02-159",
     "localId": "159",
     "setCode": "sv02",
@@ -3866,11 +4604,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-159-low.png",
-    "imageHighSrc": "cards/sv2-159-high.png"
+    "imageHighSrc": "cards/sv2-159-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "13672",
-    "externalId": null,
+    "externalId": "sv2-158",
     "tcgdex_id": "sv02-158",
     "localId": "158",
     "setCode": "sv02",
@@ -3899,11 +4643,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-158-low.png",
-    "imageHighSrc": "cards/sv2-158-high.png"
+    "imageHighSrc": "cards/sv2-158-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "13663",
-    "externalId": null,
+    "externalId": "sv2-157",
     "tcgdex_id": "sv02-157",
     "localId": "157",
     "setCode": "sv02",
@@ -3932,11 +4682,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-157-low.png",
-    "imageHighSrc": "cards/sv2-157-high.png"
+    "imageHighSrc": "cards/sv2-157-high.png",
+    "attacks": [
+      {
+        "name": "Mud-Slap",
+        "damage": "30"
+      },
+      {
+        "name": "Dig Away Flash",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "13654",
-    "externalId": null,
+    "externalId": "sv2-156",
     "tcgdex_id": "sv02-156",
     "localId": "156",
     "setCode": "sv02",
@@ -3965,11 +4725,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-156-low.png",
-    "imageHighSrc": "cards/sv2-156-high.png"
+    "imageHighSrc": "cards/sv2-156-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "13645",
-    "externalId": null,
+    "externalId": "sv2-155",
     "tcgdex_id": "sv02-155",
     "localId": "155",
     "setCode": "sv02",
@@ -3998,11 +4768,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-155-low.png",
-    "imageHighSrc": "cards/sv2-155-high.png"
+    "imageHighSrc": "cards/sv2-155-high.png",
+    "attacks": [
+      {
+        "name": "Either Face",
+        "damage": null
+      },
+      {
+        "name": "Power Beam",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "13636",
-    "externalId": null,
+    "externalId": "sv2-154",
     "tcgdex_id": "sv02-154",
     "localId": "154",
     "setCode": "sv02",
@@ -4031,11 +4811,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-154-low.png",
-    "imageHighSrc": "cards/sv2-154-high.png"
+    "imageHighSrc": "cards/sv2-154-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "30"
+      },
+      {
+        "name": "Headbang",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "13627",
-    "externalId": null,
+    "externalId": "sv2-153",
     "tcgdex_id": "sv02-153",
     "localId": "153",
     "setCode": "sv02",
@@ -4065,11 +4855,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-153-low.png",
-    "imageHighSrc": "cards/sv2-153-high.png"
+    "imageHighSrc": "cards/sv2-153-high.png",
+    "attacks": [
+      {
+        "name": "Covert Flight",
+        "damage": "70"
+      },
+      {
+        "name": "Dominating Echo",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13618",
-    "externalId": null,
+    "externalId": "sv2-152",
     "tcgdex_id": "sv02-152",
     "localId": "152",
     "setCode": "sv02",
@@ -4098,11 +4899,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-152-low.png",
-    "imageHighSrc": "cards/sv2-152-high.png"
+    "imageHighSrc": "cards/sv2-152-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "13611",
-    "externalId": null,
+    "externalId": "sv2-151",
     "tcgdex_id": "sv02-151",
     "localId": "151",
     "setCode": "sv02",
@@ -4131,11 +4938,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-151-low.png",
-    "imageHighSrc": "cards/sv2-151-high.png"
+    "imageHighSrc": "cards/sv2-151-high.png",
+    "attacks": [
+      {
+        "name": "Shoot Through",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "13602",
-    "externalId": null,
+    "externalId": "sv2-150",
     "tcgdex_id": "sv02-150",
     "localId": "150",
     "setCode": "sv02",
@@ -4165,11 +4978,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-150-low.png",
-    "imageHighSrc": "cards/sv2-150-high.png"
+    "imageHighSrc": "cards/sv2-150-high.png",
+    "attacks": [
+      {
+        "name": "Nosequake",
+        "damage": "260"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13593",
-    "externalId": null,
+    "externalId": "sv2-149",
     "tcgdex_id": "sv02-149",
     "localId": "149",
     "setCode": "sv02",
@@ -4198,11 +5018,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-149-low.png",
-    "imageHighSrc": "cards/sv2-149-high.png"
+    "imageHighSrc": "cards/sv2-149-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "13584",
-    "externalId": null,
+    "externalId": "sv2-148",
     "tcgdex_id": "sv02-148",
     "localId": "148",
     "setCode": "sv02",
@@ -4231,11 +5057,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-148-low.png",
-    "imageHighSrc": "cards/sv2-148-high.png"
+    "imageHighSrc": "cards/sv2-148-high.png",
+    "attacks": [
+      {
+        "name": "Accelerate",
+        "damage": "50"
+      },
+      {
+        "name": "Spinning Bird",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "13575",
-    "externalId": null,
+    "externalId": "sv2-147",
     "tcgdex_id": "sv02-147",
     "localId": "147",
     "setCode": "sv02",
@@ -4264,11 +5100,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-147-low.png",
-    "imageHighSrc": "cards/sv2-147-high.png"
+    "imageHighSrc": "cards/sv2-147-high.png",
+    "attacks": [
+      {
+        "name": "Delivery Pocket",
+        "damage": null
+      },
+      {
+        "name": "Dark Edge",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "13571",
-    "externalId": null,
+    "externalId": "sv2-146",
     "tcgdex_id": "sv02-146",
     "localId": "146",
     "setCode": "sv02",
@@ -4297,11 +5143,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-146-low.png",
-    "imageHighSrc": "cards/sv2-146-high.png"
+    "imageHighSrc": "cards/sv2-146-high.png",
+    "attacks": [
+      {
+        "name": "Spit Poison",
+        "damage": null
+      },
+      {
+        "name": "Colorful Graffiti",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "13562",
-    "externalId": null,
+    "externalId": "sv2-145",
     "tcgdex_id": "sv02-145",
     "localId": "145",
     "setCode": "sv02",
@@ -4330,11 +5186,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-145-low.png",
-    "imageHighSrc": "cards/sv2-145-high.png"
+    "imageHighSrc": "cards/sv2-145-high.png",
+    "attacks": [
+      {
+        "name": "Spit Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "13553",
-    "externalId": null,
+    "externalId": "sv2-144",
     "tcgdex_id": "sv02-144",
     "localId": "144",
     "setCode": "sv02",
@@ -4363,11 +5225,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-144-low.png",
-    "imageHighSrc": "cards/sv2-144-high.png"
+    "imageHighSrc": "cards/sv2-144-high.png",
+    "attacks": [
+      {
+        "name": "Berry Search",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "13544",
-    "externalId": null,
+    "externalId": "sv2-143",
     "tcgdex_id": "sv02-143",
     "localId": "143",
     "setCode": "sv02",
@@ -4396,11 +5268,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-143-low.png",
-    "imageHighSrc": "cards/sv2-143-high.png"
+    "imageHighSrc": "cards/sv2-143-high.png",
+    "attacks": [
+      {
+        "name": "Comeuppance",
+        "damage": "20"
+      },
+      {
+        "name": "Darkness Fang",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "13535",
-    "externalId": null,
+    "externalId": "sv2-142",
     "tcgdex_id": "sv02-142",
     "localId": "142",
     "setCode": "sv02",
@@ -4429,11 +5311,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-142-low.png",
-    "imageHighSrc": "cards/sv2-142-high.png"
+    "imageHighSrc": "cards/sv2-142-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "13526",
-    "externalId": null,
+    "externalId": "sv2-141",
     "tcgdex_id": "sv02-141",
     "localId": "141",
     "setCode": "sv02",
@@ -4462,11 +5354,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-141-low.png",
-    "imageHighSrc": "cards/sv2-141-high.png"
+    "imageHighSrc": "cards/sv2-141-high.png",
+    "attacks": [
+      {
+        "name": "Ambush",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "13517",
-    "externalId": null,
+    "externalId": "sv2-140",
     "tcgdex_id": "sv02-140",
     "localId": "140",
     "setCode": "sv02",
@@ -4495,11 +5393,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-140-low.png",
-    "imageHighSrc": "cards/sv2-140-high.png"
+    "imageHighSrc": "cards/sv2-140-high.png",
+    "attacks": [
+      {
+        "name": "Dark Cutter",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "13509",
-    "externalId": null,
+    "externalId": "sv2-139",
     "tcgdex_id": "sv02-139",
     "localId": "139",
     "setCode": "sv02",
@@ -4528,11 +5432,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-139-low.png",
-    "imageHighSrc": "cards/sv2-139-high.png"
+    "imageHighSrc": "cards/sv2-139-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      },
+      {
+        "name": "Headbutt Bounce",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "13501",
-    "externalId": null,
+    "externalId": "sv2-138",
     "tcgdex_id": "sv02-138",
     "localId": "138",
     "setCode": "sv02",
@@ -4561,11 +5475,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-138-low.png",
-    "imageHighSrc": "cards/sv2-138-high.png"
+    "imageHighSrc": "cards/sv2-138-high.png",
+    "attacks": [
+      {
+        "name": "Ambush",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "13492",
-    "externalId": null,
+    "externalId": "sv2-137",
     "tcgdex_id": "sv02-137",
     "localId": "137",
     "setCode": "sv02",
@@ -4594,11 +5514,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-137-low.png",
-    "imageHighSrc": "cards/sv2-137-high.png"
+    "imageHighSrc": "cards/sv2-137-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "20"
+      },
+      {
+        "name": "Cross-Cut",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "13483",
-    "externalId": null,
+    "externalId": "sv2-136",
     "tcgdex_id": "sv02-136",
     "localId": "136",
     "setCode": "sv02",
@@ -4627,11 +5557,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-136-low.png",
-    "imageHighSrc": "cards/sv2-136-high.png"
+    "imageHighSrc": "cards/sv2-136-high.png",
+    "attacks": [
+      {
+        "name": "Night Eyes",
+        "damage": null
+      },
+      {
+        "name": "Unseen Claw",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "13475",
-    "externalId": null,
+    "externalId": "sv2-135",
     "tcgdex_id": "sv02-135",
     "localId": "135",
     "setCode": "sv02",
@@ -4660,11 +5600,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-135-low.png",
-    "imageHighSrc": "cards/sv2-135-high.png"
+    "imageHighSrc": "cards/sv2-135-high.png",
+    "attacks": [
+      {
+        "name": "Rout",
+        "damage": "30+"
+      },
+      {
+        "name": "Dread Mountain",
+        "damage": "230"
+      }
+    ]
   },
   {
     "masterCardId": "13466",
-    "externalId": null,
+    "externalId": "sv2-134",
     "tcgdex_id": "sv02-134",
     "localId": "134",
     "setCode": "sv02",
@@ -4693,11 +5643,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-134-low.png",
-    "imageHighSrc": "cards/sv2-134-high.png"
+    "imageHighSrc": "cards/sv2-134-high.png",
+    "attacks": [
+      {
+        "name": "Slashing Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "13458",
-    "externalId": null,
+    "externalId": "sv2-133",
     "tcgdex_id": "sv02-133",
     "localId": "133",
     "setCode": "sv02",
@@ -4726,11 +5682,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-133-low.png",
-    "imageHighSrc": "cards/sv2-133-high.png"
+    "imageHighSrc": "cards/sv2-133-high.png",
+    "attacks": [
+      {
+        "name": "Dig Claws",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "13449",
-    "externalId": null,
+    "externalId": "sv2-132",
     "tcgdex_id": "sv02-132",
     "localId": "132",
     "setCode": "sv02",
@@ -4759,11 +5721,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-132-low.png",
-    "imageHighSrc": "cards/sv2-132-high.png"
+    "imageHighSrc": "cards/sv2-132-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "30"
+      },
+      {
+        "name": "Dirty Throw",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "13440",
-    "externalId": null,
+    "externalId": "sv2-131",
     "tcgdex_id": "sv02-131",
     "localId": "131",
     "setCode": "sv02",
@@ -4792,11 +5764,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-131-low.png",
-    "imageHighSrc": "cards/sv2-131-high.png"
+    "imageHighSrc": "cards/sv2-131-high.png",
+    "attacks": [
+      {
+        "name": "Spin Turn",
+        "damage": "10"
+      },
+      {
+        "name": "United Wings",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "13431",
-    "externalId": null,
+    "externalId": "sv2-130",
     "tcgdex_id": "sv02-130",
     "localId": "130",
     "setCode": "sv02",
@@ -4826,11 +5808,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-130-low.png",
-    "imageHighSrc": "cards/sv2-130-high.png"
+    "imageHighSrc": "cards/sv2-130-high.png",
+    "attacks": [
+      {
+        "name": "Needle Bone",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13422",
-    "externalId": null,
+    "externalId": "sv2-129",
     "tcgdex_id": "sv02-129",
     "localId": "129",
     "setCode": "sv02",
@@ -4859,11 +5848,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-129-low.png",
-    "imageHighSrc": "cards/sv2-129-high.png"
+    "imageHighSrc": "cards/sv2-129-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Playful Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "13411",
-    "externalId": null,
+    "externalId": "sv2-128",
     "tcgdex_id": "sv02-128",
     "localId": "128",
     "setCode": "sv02",
@@ -4892,11 +5891,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-128-low.png",
-    "imageHighSrc": "cards/sv2-128-high.png"
+    "imageHighSrc": "cards/sv2-128-high.png",
+    "attacks": [
+      {
+        "name": "Find a Home",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "13402",
-    "externalId": null,
+    "externalId": "sv2-127",
     "tcgdex_id": "sv02-127",
     "localId": "127",
     "setCode": "sv02",
@@ -4926,11 +5935,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-127-low.png",
-    "imageHighSrc": "cards/sv2-127-high.png"
+    "imageHighSrc": "cards/sv2-127-high.png",
+    "attacks": [
+      {
+        "name": "Land Scoop",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13393",
-    "externalId": null,
+    "externalId": "sv2-126",
     "tcgdex_id": "sv02-126",
     "localId": "126",
     "setCode": "sv02",
@@ -4959,11 +5975,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-126-low.png",
-    "imageHighSrc": "cards/sv2-126-high.png"
+    "imageHighSrc": "cards/sv2-126-high.png",
+    "attacks": [
+      {
+        "name": "Poison Petals",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "13386",
-    "externalId": null,
+    "externalId": "sv2-125",
     "tcgdex_id": "sv02-125",
     "localId": "125",
     "setCode": "sv02",
@@ -4992,11 +6014,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-125-low.png",
-    "imageHighSrc": "cards/sv2-125-high.png"
+    "imageHighSrc": "cards/sv2-125-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "13377",
-    "externalId": null,
+    "externalId": "sv2-124",
     "tcgdex_id": "sv02-124",
     "localId": "124",
     "setCode": "sv02",
@@ -5025,11 +6053,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-124-low.png",
-    "imageHighSrc": "cards/sv2-124-high.png"
+    "imageHighSrc": "cards/sv2-124-high.png",
+    "attacks": [
+      {
+        "name": "Ascension",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "13368",
-    "externalId": null,
+    "externalId": "sv2-123",
     "tcgdex_id": "sv02-123",
     "localId": "123",
     "setCode": "sv02",
@@ -5058,11 +6092,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-123-low.png",
-    "imageHighSrc": "cards/sv2-123-high.png"
+    "imageHighSrc": "cards/sv2-123-high.png",
+    "attacks": [
+      {
+        "name": "Knocking Hammer",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "13359",
-    "externalId": null,
+    "externalId": "sv2-122",
     "tcgdex_id": "sv02-122",
     "localId": "122",
     "setCode": "sv02",
@@ -5091,11 +6131,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-122-low.png",
-    "imageHighSrc": "cards/sv2-122-high.png"
+    "imageHighSrc": "cards/sv2-122-high.png",
+    "attacks": [
+      {
+        "name": "Salt Cannon",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "13351",
-    "externalId": null,
+    "externalId": "sv2-121",
     "tcgdex_id": "sv02-121",
     "localId": "121",
     "setCode": "sv02",
@@ -5124,11 +6170,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-121-low.png",
-    "imageHighSrc": "cards/sv2-121-high.png"
+    "imageHighSrc": "cards/sv2-121-high.png",
+    "attacks": [
+      {
+        "name": "Salt Coating",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "13342",
-    "externalId": null,
+    "externalId": "sv2-120",
     "tcgdex_id": "sv02-120",
     "localId": "120",
     "setCode": "sv02",
@@ -5157,11 +6213,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-120-low.png",
-    "imageHighSrc": "cards/sv2-120-high.png"
+    "imageHighSrc": "cards/sv2-120-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "13333",
-    "externalId": null,
+    "externalId": "sv2-119",
     "tcgdex_id": "sv02-119",
     "localId": "119",
     "setCode": "sv02",
@@ -5190,11 +6252,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-119-low.png",
-    "imageHighSrc": "cards/sv2-119-high.png"
+    "imageHighSrc": "cards/sv2-119-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Reckless Charge Together",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "13323",
-    "externalId": null,
+    "externalId": "sv2-118",
     "tcgdex_id": "sv02-118",
     "localId": "118",
     "setCode": "sv02",
@@ -5223,11 +6295,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-118-low.png",
-    "imageHighSrc": "cards/sv2-118-high.png"
+    "imageHighSrc": "cards/sv2-118-high.png",
+    "attacks": [
+      {
+        "name": "Make the Assist",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "13314",
-    "externalId": null,
+    "externalId": "sv2-117",
     "tcgdex_id": "sv02-117",
     "localId": "117",
     "setCode": "sv02",
@@ -5257,11 +6335,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-117-low.png",
-    "imageHighSrc": "cards/sv2-117-high.png"
+    "imageHighSrc": "cards/sv2-117-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "40"
+      },
+      {
+        "name": "Scary Fangs",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13304",
-    "externalId": null,
+    "externalId": "sv2-116",
     "tcgdex_id": "sv02-116",
     "localId": "116",
     "setCode": "sv02",
@@ -5290,11 +6379,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-116-low.png",
-    "imageHighSrc": "cards/sv2-116-high.png"
+    "imageHighSrc": "cards/sv2-116-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "13295",
-    "externalId": null,
+    "externalId": "sv2-115",
     "tcgdex_id": "sv02-115",
     "localId": "115",
     "setCode": "sv02",
@@ -5323,11 +6422,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-115-low.png",
-    "imageHighSrc": "cards/sv2-115-high.png"
+    "imageHighSrc": "cards/sv2-115-high.png",
+    "attacks": [
+      {
+        "name": "Pierce",
+        "damage": "30"
+      },
+      {
+        "name": "Knuckle Claws",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "13286",
-    "externalId": null,
+    "externalId": "sv2-114",
     "tcgdex_id": "sv02-114",
     "localId": "114",
     "setCode": "sv02",
@@ -5356,11 +6465,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-114-low.png",
-    "imageHighSrc": "cards/sv2-114-high.png"
+    "imageHighSrc": "cards/sv2-114-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "13277",
-    "externalId": null,
+    "externalId": "sv2-113",
     "tcgdex_id": "sv02-113",
     "localId": "113",
     "setCode": "sv02",
@@ -5389,11 +6504,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-113-low.png",
-    "imageHighSrc": "cards/sv2-113-high.png"
+    "imageHighSrc": "cards/sv2-113-high.png",
+    "attacks": [
+      {
+        "name": "Rocket Slap",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "13270",
-    "externalId": null,
+    "externalId": "sv2-112",
     "tcgdex_id": "sv02-112",
     "localId": "112",
     "setCode": "sv02",
@@ -5422,11 +6543,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-112-low.png",
-    "imageHighSrc": "cards/sv2-112-high.png"
+    "imageHighSrc": "cards/sv2-112-high.png",
+    "attacks": [
+      {
+        "name": "Slap Push",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "13261",
-    "externalId": null,
+    "externalId": "sv2-111",
     "tcgdex_id": "sv02-111",
     "localId": "111",
     "setCode": "sv02",
@@ -5455,11 +6582,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-111-low.png",
-    "imageHighSrc": "cards/sv2-111-high.png"
+    "imageHighSrc": "cards/sv2-111-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt Bounce",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "13253",
-    "externalId": null,
+    "externalId": "sv2-110",
     "tcgdex_id": "sv02-110",
     "localId": "110",
     "setCode": "sv02",
@@ -5488,11 +6621,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-110-low.png",
-    "imageHighSrc": "cards/sv2-110-high.png"
+    "imageHighSrc": "cards/sv2-110-high.png",
+    "attacks": [
+      {
+        "name": "Double Stab",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "13244",
-    "externalId": null,
+    "externalId": "sv2-109",
     "tcgdex_id": "sv02-109",
     "localId": "109",
     "setCode": "sv02",
@@ -5521,11 +6660,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-109-low.png",
-    "imageHighSrc": "cards/sv2-109-high.png"
+    "imageHighSrc": "cards/sv2-109-high.png",
+    "attacks": [
+      {
+        "name": "Hit and Hide",
+        "damage": "20"
+      },
+      {
+        "name": "Elbow Strike",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "13234",
-    "externalId": null,
+    "externalId": "sv2-108",
     "tcgdex_id": "sv02-108",
     "localId": "108",
     "setCode": "sv02",
@@ -5554,11 +6703,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-108-low.png",
-    "imageHighSrc": "cards/sv2-108-high.png"
+    "imageHighSrc": "cards/sv2-108-high.png",
+    "attacks": [
+      {
+        "name": "Raging Horns",
+        "damage": "20+"
+      },
+      {
+        "name": "Combat Tackle",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "13225",
-    "externalId": null,
+    "externalId": "sv2-107",
     "tcgdex_id": "sv02-107",
     "localId": "107",
     "setCode": "sv02",
@@ -5587,11 +6746,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-107-low.png",
-    "imageHighSrc": "cards/sv2-107-high.png"
+    "imageHighSrc": "cards/sv2-107-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Pummel",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "13215",
-    "externalId": null,
+    "externalId": "sv2-106",
     "tcgdex_id": "sv02-106",
     "localId": "106",
     "setCode": "sv02",
@@ -5620,11 +6789,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-106-low.png",
-    "imageHighSrc": "cards/sv2-106-high.png"
+    "imageHighSrc": "cards/sv2-106-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Hang Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "13206",
-    "externalId": null,
+    "externalId": "sv2-105",
     "tcgdex_id": "sv02-105",
     "localId": "105",
     "setCode": "sv02",
@@ -5653,11 +6832,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-105-low.png",
-    "imageHighSrc": "cards/sv2-105-high.png"
+    "imageHighSrc": "cards/sv2-105-high.png",
+    "attacks": [
+      {
+        "name": "Special Hammer",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "13196",
-    "externalId": null,
+    "externalId": "sv2-104",
     "tcgdex_id": "sv02-104",
     "localId": "104",
     "setCode": "sv02",
@@ -5686,11 +6871,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-104-low.png",
-    "imageHighSrc": "cards/sv2-104-high.png"
+    "imageHighSrc": "cards/sv2-104-high.png",
+    "attacks": [
+      {
+        "name": "Play Rough",
+        "damage": "30+"
+      },
+      {
+        "name": "Pulverizing Press",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "13187",
-    "externalId": null,
+    "externalId": "sv2-103",
     "tcgdex_id": "sv02-103",
     "localId": "103",
     "setCode": "sv02",
@@ -5719,11 +6914,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-103-low.png",
-    "imageHighSrc": "cards/sv2-103-high.png"
+    "imageHighSrc": "cards/sv2-103-high.png",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Boundless Power",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "13179",
-    "externalId": null,
+    "externalId": "sv2-102",
     "tcgdex_id": "sv02-102",
     "localId": "102",
     "setCode": "sv02",
@@ -5752,11 +6957,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-102-low.png",
-    "imageHighSrc": "cards/sv2-102-high.png"
+    "imageHighSrc": "cards/sv2-102-high.png",
+    "attacks": [
+      {
+        "name": "Brutal Swing",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "13171",
-    "externalId": null,
+    "externalId": "sv2-101",
     "tcgdex_id": "sv02-101",
     "localId": "101",
     "setCode": "sv02",
@@ -5785,11 +6996,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-101-low.png",
-    "imageHighSrc": "cards/sv2-101-high.png"
+    "imageHighSrc": "cards/sv2-101-high.png",
+    "attacks": [
+      {
+        "name": "Scrap Pickup",
+        "damage": null
+      },
+      {
+        "name": "Fairy Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "13162",
-    "externalId": null,
+    "externalId": "sv2-100",
     "tcgdex_id": "sv02-100",
     "localId": "100",
     "setCode": "sv02",
@@ -5818,11 +7039,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-100-low.png",
-    "imageHighSrc": "cards/sv2-100-high.png"
+    "imageHighSrc": "cards/sv2-100-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Corkscrew Punch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "13152",
-    "externalId": null,
+    "externalId": "sv2-99",
     "tcgdex_id": "sv02-099",
     "localId": "099",
     "setCode": "sv02",
@@ -5851,11 +7082,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-099-low.png",
-    "imageHighSrc": "cards/sv2-099-high.png"
+    "imageHighSrc": "cards/sv2-099-high.png",
+    "attacks": [
+      {
+        "name": "Revival Blessing",
+        "damage": null
+      },
+      {
+        "name": "Psybeam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "13142",
-    "externalId": null,
+    "externalId": "sv2-98",
     "tcgdex_id": "sv02-098",
     "localId": "098",
     "setCode": "sv02",
@@ -5884,11 +7125,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-098-low.png",
-    "imageHighSrc": "cards/sv2-098-high.png"
+    "imageHighSrc": "cards/sv2-098-high.png",
+    "attacks": [
+      {
+        "name": "Life Sucker",
+        "damage": "50"
+      },
+      {
+        "name": "Fighting Sword",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "13133",
-    "externalId": null,
+    "externalId": "sv2-97",
     "tcgdex_id": "sv02-097",
     "localId": "097",
     "setCode": "sv02",
@@ -5917,11 +7168,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-097-low.png",
-    "imageHighSrc": "cards/sv2-097-high.png"
+    "imageHighSrc": "cards/sv2-097-high.png",
+    "attacks": [
+      {
+        "name": "Ghost Eye",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "13124",
-    "externalId": null,
+    "externalId": "sv2-96",
     "tcgdex_id": "sv02-096",
     "localId": "096",
     "setCode": "sv02",
@@ -5950,11 +7207,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-096-low.png",
-    "imageHighSrc": "cards/sv2-096-high.png"
+    "imageHighSrc": "cards/sv2-096-high.png",
+    "attacks": [
+      {
+        "name": "Spooky Shot",
+        "damage": "40"
+      },
+      {
+        "name": "Earthen Power",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "13115",
-    "externalId": null,
+    "externalId": "sv2-95",
     "tcgdex_id": "sv02-095",
     "localId": "095",
     "setCode": "sv02",
@@ -5983,11 +7250,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-095-low.png",
-    "imageHighSrc": "cards/sv2-095-high.png"
+    "imageHighSrc": "cards/sv2-095-high.png",
+    "attacks": [
+      {
+        "name": "Mumble",
+        "damage": "20"
+      },
+      {
+        "name": "Mud Shot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "13106",
-    "externalId": null,
+    "externalId": "sv2-94",
     "tcgdex_id": "sv02-094",
     "localId": "094",
     "setCode": "sv02",
@@ -6016,11 +7293,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-094-low.png",
-    "imageHighSrc": "cards/sv2-094-high.png"
+    "imageHighSrc": "cards/sv2-094-high.png",
+    "attacks": [
+      {
+        "name": "Plotter's Command",
+        "damage": "30"
+      },
+      {
+        "name": "Super Psy Bolt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "13097",
-    "externalId": null,
+    "externalId": "sv2-93",
     "tcgdex_id": "sv02-093",
     "localId": "093",
     "setCode": "sv02",
@@ -6051,11 +7338,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-093-low.png",
-    "imageHighSrc": "cards/sv2-093-high.png"
+    "imageHighSrc": "cards/sv2-093-high.png",
+    "attacks": [
+      {
+        "name": "Tail Swap",
+        "damage": null
+      },
+      {
+        "name": "Wondrous Shot",
+        "damage": "170"
+      }
+    ],
+    "rules": "Tera: As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13087",
-    "externalId": null,
+    "externalId": "sv2-92",
     "tcgdex_id": "sv02-092",
     "localId": "092",
     "setCode": "sv02",
@@ -6084,11 +7382,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-092-low.png",
-    "imageHighSrc": "cards/sv2-092-high.png"
+    "imageHighSrc": "cards/sv2-092-high.png",
+    "attacks": [
+      {
+        "name": "Psych Out",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "13078",
-    "externalId": null,
+    "externalId": "sv2-91",
     "tcgdex_id": "sv02-091",
     "localId": "091",
     "setCode": "sv02",
@@ -6117,11 +7421,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-091-low.png",
-    "imageHighSrc": "cards/sv2-091-high.png"
+    "imageHighSrc": "cards/sv2-091-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "20"
+      },
+      {
+        "name": "Super Psy Bolt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "13069",
-    "externalId": null,
+    "externalId": "sv2-90",
     "tcgdex_id": "sv02-090",
     "localId": "090",
     "setCode": "sv02",
@@ -6150,11 +7464,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-090-low.png",
-    "imageHighSrc": "cards/sv2-090-high.png"
+    "imageHighSrc": "cards/sv2-090-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Eerie Wave",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "13058",
-    "externalId": null,
+    "externalId": "sv2-89",
     "tcgdex_id": "sv02-089",
     "localId": "089",
     "setCode": "sv02",
@@ -6183,11 +7507,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-089-low.png",
-    "imageHighSrc": "cards/sv2-089-high.png"
+    "imageHighSrc": "cards/sv2-089-high.png",
+    "attacks": [
+      {
+        "name": "Fade Out",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "13048",
-    "externalId": null,
+    "externalId": "sv2-88",
     "tcgdex_id": "sv02-088",
     "localId": "088",
     "setCode": "sv02",
@@ -6216,11 +7546,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-088-low.png",
-    "imageHighSrc": "cards/sv2-088-high.png"
+    "imageHighSrc": "cards/sv2-088-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Sphere",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "13038",
-    "externalId": null,
+    "externalId": "sv2-87",
     "tcgdex_id": "sv02-087",
     "localId": "087",
     "setCode": "sv02",
@@ -6249,11 +7585,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-087-low.png",
-    "imageHighSrc": "cards/sv2-087-high.png"
+    "imageHighSrc": "cards/sv2-087-high.png",
+    "attacks": [
+      {
+        "name": "Hypnoblast",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "13030",
-    "externalId": null,
+    "externalId": "sv2-86",
     "tcgdex_id": "sv02-086",
     "localId": "086",
     "setCode": "sv02",
@@ -6284,11 +7626,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-086-low.png",
-    "imageHighSrc": "cards/sv2-086-high.png"
+    "imageHighSrc": "cards/sv2-086-high.png",
+    "attacks": [
+      {
+        "name": "Profound Knowledge",
+        "damage": "30"
+      },
+      {
+        "name": "Wise Headbutt",
+        "damage": "130"
+      }
+    ],
+    "rules": "Tera: As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13020",
-    "externalId": null,
+    "externalId": "sv2-85",
     "tcgdex_id": "sv02-085",
     "localId": "085",
     "setCode": "sv02",
@@ -6317,11 +7670,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-085-low.png",
-    "imageHighSrc": "cards/sv2-085-high.png"
+    "imageHighSrc": "cards/sv2-085-high.png",
+    "attacks": [
+      {
+        "name": "Tail-Fishing",
+        "damage": null
+      },
+      {
+        "name": "Zen Headbutt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "13010",
-    "externalId": null,
+    "externalId": "sv2-84",
     "tcgdex_id": "sv02-084",
     "localId": "084",
     "setCode": "sv02",
@@ -6350,11 +7713,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-084-low.png",
-    "imageHighSrc": "cards/sv2-084-high.png"
+    "imageHighSrc": "cards/sv2-084-high.png",
+    "attacks": [
+      {
+        "name": "Magical Shot",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "13000",
-    "externalId": null,
+    "externalId": "sv2-83",
     "tcgdex_id": "sv02-083",
     "localId": "083",
     "setCode": "sv02",
@@ -6383,11 +7752,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-083-low.png",
-    "imageHighSrc": "cards/sv2-083-high.png"
+    "imageHighSrc": "cards/sv2-083-high.png",
+    "attacks": [
+      {
+        "name": "Sing",
+        "damage": null
+      },
+      {
+        "name": "Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12991",
-    "externalId": null,
+    "externalId": "sv2-82",
     "tcgdex_id": "sv02-082",
     "localId": "082",
     "setCode": "sv02",
@@ -6416,11 +7795,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-082-low.png",
-    "imageHighSrc": "cards/sv2-082-high.png"
+    "imageHighSrc": "cards/sv2-082-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "20"
+      },
+      {
+        "name": "Jet Wing",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "12982",
-    "externalId": null,
+    "externalId": "sv2-81",
     "tcgdex_id": "sv02-081",
     "localId": "081",
     "setCode": "sv02",
@@ -6449,11 +7838,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-081-low.png",
-    "imageHighSrc": "cards/sv2-081-high.png"
+    "imageHighSrc": "cards/sv2-081-high.png",
+    "attacks": [
+      {
+        "name": "Devastating Wind",
+        "damage": null
+      },
+      {
+        "name": "Flap",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "12972",
-    "externalId": null,
+    "externalId": "sv2-80",
     "tcgdex_id": "sv02-080",
     "localId": "080",
     "setCode": "sv02",
@@ -6482,11 +7881,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-080-low.png",
-    "imageHighSrc": "cards/sv2-080-high.png"
+    "imageHighSrc": "cards/sv2-080-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "United Wings",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "12962",
-    "externalId": null,
+    "externalId": "sv2-79",
     "tcgdex_id": "sv02-079",
     "localId": "079",
     "setCode": "sv02",
@@ -6516,11 +7925,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-079-low.png",
-    "imageHighSrc": "cards/sv2-079-high.png"
+    "imageHighSrc": "cards/sv2-079-high.png",
+    "attacks": [
+      {
+        "name": "Jumping Press",
+        "damage": null
+      },
+      {
+        "name": "Paralyzing Ball",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12952",
-    "externalId": null,
+    "externalId": "sv2-78",
     "tcgdex_id": "sv02-078",
     "localId": "078",
     "setCode": "sv02",
@@ -6549,11 +7969,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-078-low.png",
-    "imageHighSrc": "cards/sv2-078-high.png"
+    "imageHighSrc": "cards/sv2-078-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Static Shock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12943",
-    "externalId": null,
+    "externalId": "sv2-77",
     "tcgdex_id": "sv02-077",
     "localId": "077",
     "setCode": "sv02",
@@ -6582,11 +8012,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-077-low.png",
-    "imageHighSrc": "cards/sv2-077-high.png"
+    "imageHighSrc": "cards/sv2-077-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12936",
-    "externalId": null,
+    "externalId": "sv2-76",
     "tcgdex_id": "sv02-076",
     "localId": "076",
     "setCode": "sv02",
@@ -6615,11 +8051,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-076-low.png",
-    "imageHighSrc": "cards/sv2-076-high.png"
+    "imageHighSrc": "cards/sv2-076-high.png",
+    "attacks": [
+      {
+        "name": "Mach Bolt",
+        "damage": "40"
+      },
+      {
+        "name": "Electric Fist",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "12924",
-    "externalId": null,
+    "externalId": "sv2-75",
     "tcgdex_id": "sv02-075",
     "localId": "075",
     "setCode": "sv02",
@@ -6648,11 +8094,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-075-low.png",
-    "imageHighSrc": "cards/sv2-075-high.png"
+    "imageHighSrc": "cards/sv2-075-high.png",
+    "attacks": [
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      },
+      {
+        "name": "Electrobullet",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12914",
-    "externalId": null,
+    "externalId": "sv2-74",
     "tcgdex_id": "sv02-074",
     "localId": "074",
     "setCode": "sv02",
@@ -6681,11 +8137,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-074-low.png",
-    "imageHighSrc": "cards/sv2-074-high.png"
+    "imageHighSrc": "cards/sv2-074-high.png",
+    "attacks": [
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12904",
-    "externalId": null,
+    "externalId": "sv2-73",
     "tcgdex_id": "sv02-073",
     "localId": "073",
     "setCode": "sv02",
@@ -6714,11 +8176,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-073-low.png",
-    "imageHighSrc": "cards/sv2-073-high.png"
+    "imageHighSrc": "cards/sv2-073-high.png",
+    "attacks": [
+      {
+        "name": "Stun Needle",
+        "damage": "20"
+      },
+      {
+        "name": "Follow-Up Kerzap",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "12894",
-    "externalId": null,
+    "externalId": "sv2-72",
     "tcgdex_id": "sv02-072",
     "localId": "072",
     "setCode": "sv02",
@@ -6747,11 +8219,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-072-low.png",
-    "imageHighSrc": "cards/sv2-072-high.png"
+    "imageHighSrc": "cards/sv2-072-high.png",
+    "attacks": [
+      {
+        "name": "Needle Crush",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "12884",
-    "externalId": null,
+    "externalId": "sv2-71",
     "tcgdex_id": "sv02-071",
     "localId": "071",
     "setCode": "sv02",
@@ -6780,11 +8258,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-071-low.png",
-    "imageHighSrc": "cards/sv2-071-high.png"
+    "imageHighSrc": "cards/sv2-071-high.png",
+    "attacks": [
+      {
+        "name": "Wild Charge",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "12874",
-    "externalId": null,
+    "externalId": "sv2-70",
     "tcgdex_id": "sv02-070",
     "localId": "070",
     "setCode": "sv02",
@@ -6813,11 +8297,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-070-low.png",
-    "imageHighSrc": "cards/sv2-070-high.png"
+    "imageHighSrc": "cards/sv2-070-high.png",
+    "attacks": [
+      {
+        "name": "Zap Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Head Bolt",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "12865",
-    "externalId": null,
+    "externalId": "sv2-69",
     "tcgdex_id": "sv02-069",
     "localId": "069",
     "setCode": "sv02",
@@ -6846,11 +8340,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-069-low.png",
-    "imageHighSrc": "cards/sv2-069-high.png"
+    "imageHighSrc": "cards/sv2-069-high.png",
+    "attacks": [
+      {
+        "name": "Wild Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12855",
-    "externalId": null,
+    "externalId": "sv2-68",
     "tcgdex_id": "sv02-068",
     "localId": "068",
     "setCode": "sv02",
@@ -6879,11 +8379,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-068-low.png",
-    "imageHighSrc": "cards/sv2-068-high.png"
+    "imageHighSrc": "cards/sv2-068-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12845",
-    "externalId": null,
+    "externalId": "sv2-67",
     "tcgdex_id": "sv02-067",
     "localId": "067",
     "setCode": "sv02",
@@ -6912,11 +8418,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-067-low.png",
-    "imageHighSrc": "cards/sv2-067-high.png"
+    "imageHighSrc": "cards/sv2-067-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Ball",
+        "damage": "60"
+      },
+      {
+        "name": "Rolling Tackle",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "12835",
-    "externalId": null,
+    "externalId": "sv2-66",
     "tcgdex_id": "sv02-066",
     "localId": "066",
     "setCode": "sv02",
@@ -6945,11 +8461,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-066-low.png",
-    "imageHighSrc": "cards/sv2-066-high.png"
+    "imageHighSrc": "cards/sv2-066-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Ball",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12825",
-    "externalId": null,
+    "externalId": "sv2-65",
     "tcgdex_id": "sv02-065",
     "localId": "065",
     "setCode": "sv02",
@@ -6978,11 +8504,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-065-low.png",
-    "imageHighSrc": "cards/sv2-065-high.png"
+    "imageHighSrc": "cards/sv2-065-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Charge",
+        "damage": null
+      },
+      {
+        "name": "Speed Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12815",
-    "externalId": null,
+    "externalId": "sv2-64",
     "tcgdex_id": "sv02-064",
     "localId": "064",
     "setCode": "sv02",
@@ -7011,11 +8547,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-064-low.png",
-    "imageHighSrc": "cards/sv2-064-high.png"
+    "imageHighSrc": "cards/sv2-064-high.png",
+    "attacks": [
+      {
+        "name": "Electrocharge",
+        "damage": null
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "12806",
-    "externalId": null,
+    "externalId": "sv2-63",
     "tcgdex_id": "sv02-063",
     "localId": "063",
     "setCode": "sv02",
@@ -7045,11 +8591,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-063-low.png",
-    "imageHighSrc": "cards/sv2-063-high.png"
+    "imageHighSrc": "cards/sv2-063-high.png",
+    "attacks": [
+      {
+        "name": "Pika Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Dynamic Bolt",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12796",
-    "externalId": null,
+    "externalId": "sv2-62",
     "tcgdex_id": "sv02-062",
     "localId": "062",
     "setCode": "sv02",
@@ -7078,11 +8635,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-062-low.png",
-    "imageHighSrc": "cards/sv2-062-high.png"
+    "imageHighSrc": "cards/sv2-062-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Pika Bolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12787",
-    "externalId": null,
+    "externalId": "sv2-61",
     "tcgdex_id": "sv02-061",
     "localId": "061",
     "setCode": "sv02",
@@ -7112,11 +8679,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-061-low.png",
-    "imageHighSrc": "cards/sv2-061-high.png"
+    "imageHighSrc": "cards/sv2-061-high.png",
+    "attacks": [
+      {
+        "name": "Hail Blade",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12778",
-    "externalId": null,
+    "externalId": "sv2-60",
     "tcgdex_id": "sv02-060",
     "localId": "060",
     "setCode": "sv02",
@@ -7145,11 +8719,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-060-low.png",
-    "imageHighSrc": "cards/sv2-060-high.png"
+    "imageHighSrc": "cards/sv2-060-high.png",
+    "attacks": [
+      {
+        "name": "Buster Tail",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "12767",
-    "externalId": null,
+    "externalId": "sv2-59",
     "tcgdex_id": "sv02-059",
     "localId": "059",
     "setCode": "sv02",
@@ -7178,11 +8758,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-059-low.png",
-    "imageHighSrc": "cards/sv2-059-high.png"
+    "imageHighSrc": "cards/sv2-059-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fin",
+        "damage": "40"
+      },
+      {
+        "name": "Frost Smash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "12755",
-    "externalId": null,
+    "externalId": "sv2-58",
     "tcgdex_id": "sv02-058",
     "localId": "058",
     "setCode": "sv02",
@@ -7211,11 +8801,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-058-low.png",
-    "imageHighSrc": "cards/sv2-058-high.png"
+    "imageHighSrc": "cards/sv2-058-high.png",
+    "attacks": [
+      {
+        "name": "Chilly",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12747",
-    "externalId": null,
+    "externalId": "sv2-57",
     "tcgdex_id": "sv02-057",
     "localId": "057",
     "setCode": "sv02",
@@ -7244,11 +8844,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-057-low.png",
-    "imageHighSrc": "cards/sv2-057-high.png"
+    "imageHighSrc": "cards/sv2-057-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12736",
-    "externalId": null,
+    "externalId": "sv2-56",
     "tcgdex_id": "sv02-056",
     "localId": "056",
     "setCode": "sv02",
@@ -7277,11 +8883,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-056-low.png",
-    "imageHighSrc": "cards/sv2-056-high.png"
+    "imageHighSrc": "cards/sv2-056-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Slim Screw",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "12726",
-    "externalId": null,
+    "externalId": "sv2-55",
     "tcgdex_id": "sv02-055",
     "localId": "055",
     "setCode": "sv02",
@@ -7310,11 +8926,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-055-low.png",
-    "imageHighSrc": "cards/sv2-055-high.png"
+    "imageHighSrc": "cards/sv2-055-high.png",
+    "attacks": [
+      {
+        "name": "Icicle Missile",
+        "damage": "50"
+      },
+      {
+        "name": "Special Horn",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "12715",
-    "externalId": null,
+    "externalId": "sv2-54",
     "tcgdex_id": "sv02-054",
     "localId": "054",
     "setCode": "sv02",
@@ -7343,11 +8969,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-054-low.png",
-    "imageHighSrc": "cards/sv2-054-high.png"
+    "imageHighSrc": "cards/sv2-054-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      },
+      {
+        "name": "Double-Edge",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12704",
-    "externalId": null,
+    "externalId": "sv2-53",
     "tcgdex_id": "sv02-053",
     "localId": "053",
     "setCode": "sv02",
@@ -7376,11 +9012,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-053-low.png",
-    "imageHighSrc": "cards/sv2-053-high.png"
+    "imageHighSrc": "cards/sv2-053-high.png",
+    "attacks": [
+      {
+        "name": "Avalanche",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12695",
-    "externalId": null,
+    "externalId": "sv2-52",
     "tcgdex_id": "sv02-052",
     "localId": "052",
     "setCode": "sv02",
@@ -7410,11 +9052,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-052-low.png",
-    "imageHighSrc": "cards/sv2-052-high.png"
+    "imageHighSrc": "cards/sv2-052-high.png",
+    "attacks": [
+      {
+        "name": "Exciting Dance",
+        "damage": "60"
+      },
+      {
+        "name": "Spiral Shot",
+        "damage": "230"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12685",
-    "externalId": null,
+    "externalId": "sv2-51",
     "tcgdex_id": "sv02-051",
     "localId": "051",
     "setCode": "sv02",
@@ -7443,11 +9096,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-051-low.png",
-    "imageHighSrc": "cards/sv2-051-high.png"
+    "imageHighSrc": "cards/sv2-051-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12675",
-    "externalId": null,
+    "externalId": "sv2-50",
     "tcgdex_id": "sv02-050",
     "localId": "050",
     "setCode": "sv02",
@@ -7476,11 +9139,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-050-low.png",
-    "imageHighSrc": "cards/sv2-050-high.png"
+    "imageHighSrc": "cards/sv2-050-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12665",
-    "externalId": null,
+    "externalId": "sv2-49",
     "tcgdex_id": "sv02-049",
     "localId": "049",
     "setCode": "sv02",
@@ -7509,11 +9178,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-049-low.png",
-    "imageHighSrc": "cards/sv2-049-high.png"
+    "imageHighSrc": "cards/sv2-049-high.png",
+    "attacks": [
+      {
+        "name": "Apply Gel",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12655",
-    "externalId": null,
+    "externalId": "sv2-48",
     "tcgdex_id": "sv02-048",
     "localId": "048",
     "setCode": "sv02",
@@ -7542,11 +9217,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-048-low.png",
-    "imageHighSrc": "cards/sv2-048-high.png"
+    "imageHighSrc": "cards/sv2-048-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Frigid Block",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "12645",
-    "externalId": null,
+    "externalId": "sv2-47",
     "tcgdex_id": "sv02-047",
     "localId": "047",
     "setCode": "sv02",
@@ -7575,11 +9260,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-047-low.png",
-    "imageHighSrc": "cards/sv2-047-high.png"
+    "imageHighSrc": "cards/sv2-047-high.png",
+    "attacks": [
+      {
+        "name": "Matching",
+        "damage": null
+      },
+      {
+        "name": "Water Pulse",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12635",
-    "externalId": null,
+    "externalId": "sv2-46",
     "tcgdex_id": "sv02-046",
     "localId": "046",
     "setCode": "sv02",
@@ -7608,11 +9303,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-046-low.png",
-    "imageHighSrc": "cards/sv2-046-high.png"
+    "imageHighSrc": "cards/sv2-046-high.png",
+    "attacks": [
+      {
+        "name": "Double Draw",
+        "damage": null
+      },
+      {
+        "name": "Ice Wing",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12626",
-    "externalId": null,
+    "externalId": "sv2-45",
     "tcgdex_id": "sv02-045",
     "localId": "045",
     "setCode": "sv02",
@@ -7641,11 +9346,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-045-low.png",
-    "imageHighSrc": "cards/sv2-045-high.png"
+    "imageHighSrc": "cards/sv2-045-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Drain",
+        "damage": "50"
+      },
+      {
+        "name": "Slam",
+        "damage": "100×"
+      }
+    ]
   },
   {
     "masterCardId": "12617",
-    "externalId": null,
+    "externalId": "sv2-44",
     "tcgdex_id": "sv02-044",
     "localId": "044",
     "setCode": "sv02",
@@ -7674,11 +9389,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-044-low.png",
-    "imageHighSrc": "cards/sv2-044-high.png"
+    "imageHighSrc": "cards/sv2-044-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Drain",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12607",
-    "externalId": null,
+    "externalId": "sv2-43",
     "tcgdex_id": "sv02-043",
     "localId": "043",
     "setCode": "sv02",
@@ -7707,11 +9428,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-043-low.png",
-    "imageHighSrc": "cards/sv2-043-high.png"
+    "imageHighSrc": "cards/sv2-043-high.png",
+    "attacks": [
+      {
+        "name": "Revengeful Storm",
+        "damage": "80+"
+      },
+      {
+        "name": "Berserker Tackle",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "12597",
-    "externalId": null,
+    "externalId": "sv2-42",
     "tcgdex_id": "sv02-042",
     "localId": "042",
     "setCode": "sv02",
@@ -7740,11 +9471,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-042-low.png",
-    "imageHighSrc": "cards/sv2-042-high.png"
+    "imageHighSrc": "cards/sv2-042-high.png",
+    "attacks": [
+      {
+        "name": "Expert Splasher",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "12587",
-    "externalId": null,
+    "externalId": "sv2-41",
     "tcgdex_id": "sv02-041",
     "localId": "041",
     "setCode": "sv02",
@@ -7773,11 +9510,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-041-low.png",
-    "imageHighSrc": "cards/sv2-041-high.png"
+    "imageHighSrc": "cards/sv2-041-high.png",
+    "attacks": [
+      {
+        "name": "Raging Horns",
+        "damage": "20+"
+      },
+      {
+        "name": "Aqua Dive",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "12577",
-    "externalId": null,
+    "externalId": "sv2-40",
     "tcgdex_id": "sv02-040",
     "localId": "040",
     "setCode": "sv02",
@@ -7807,11 +9554,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-040-low.png",
-    "imageHighSrc": "cards/sv2-040-high.png"
+    "imageHighSrc": "cards/sv2-040-high.png",
+    "attacks": [
+      {
+        "name": "Jealously Singe",
+        "damage": null
+      },
+      {
+        "name": "Flame Surge",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12567",
-    "externalId": null,
+    "externalId": "sv2-39",
     "tcgdex_id": "sv02-039",
     "localId": "039",
     "setCode": "sv02",
@@ -7840,11 +9598,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-039-low.png",
-    "imageHighSrc": "cards/sv2-039-high.png"
+    "imageHighSrc": "cards/sv2-039-high.png",
+    "attacks": [
+      {
+        "name": "Live Coal",
+        "damage": "10"
+      },
+      {
+        "name": "Magnum Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12557",
-    "externalId": null,
+    "externalId": "sv2-38",
     "tcgdex_id": "sv02-038",
     "localId": "038",
     "setCode": "sv02",
@@ -7873,11 +9641,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-038-low.png",
-    "imageHighSrc": "cards/sv2-038-high.png"
+    "imageHighSrc": "cards/sv2-038-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12544",
-    "externalId": null,
+    "externalId": "sv2-37",
     "tcgdex_id": "sv02-037",
     "localId": "037",
     "setCode": "sv02",
@@ -7907,11 +9681,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-037-low.png",
-    "imageHighSrc": "cards/sv2-037-high.png"
+    "imageHighSrc": "cards/sv2-037-high.png",
+    "attacks": [
+      {
+        "name": "Vitality Song",
+        "damage": "50"
+      },
+      {
+        "name": "Burning Voice",
+        "damage": "270-"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12535",
-    "externalId": null,
+    "externalId": "sv2-36",
     "tcgdex_id": "sv02-036",
     "localId": "036",
     "setCode": "sv02",
@@ -7940,11 +9725,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-036-low.png",
-    "imageHighSrc": "cards/sv2-036-high.png"
+    "imageHighSrc": "cards/sv2-036-high.png",
+    "attacks": [
+      {
+        "name": "Steady Firebreathing",
+        "damage": "30"
+      },
+      {
+        "name": "Hyper Voice",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "12524",
-    "externalId": null,
+    "externalId": "sv2-35",
     "tcgdex_id": "sv02-035",
     "localId": "035",
     "setCode": "sv02",
@@ -7973,11 +9768,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-035-low.png",
-    "imageHighSrc": "cards/sv2-035-high.png"
+    "imageHighSrc": "cards/sv2-035-high.png",
+    "attacks": [
+      {
+        "name": "Spacing Out",
+        "damage": null
+      },
+      {
+        "name": "Flare",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12516",
-    "externalId": null,
+    "externalId": "sv2-34",
     "tcgdex_id": "sv02-034",
     "localId": "034",
     "setCode": "sv02",
@@ -8006,11 +9811,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-034-low.png",
-    "imageHighSrc": "cards/sv2-034-high.png"
+    "imageHighSrc": "cards/sv2-034-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12508",
-    "externalId": null,
+    "externalId": "sv2-33",
     "tcgdex_id": "sv02-033",
     "localId": "033",
     "setCode": "sv02",
@@ -8039,11 +9850,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-033-low.png",
-    "imageHighSrc": "cards/sv2-033-high.png"
+    "imageHighSrc": "cards/sv2-033-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12498",
-    "externalId": null,
+    "externalId": "sv2-32",
     "tcgdex_id": "sv02-032",
     "localId": "032",
     "setCode": "sv02",
@@ -8072,11 +9889,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-032-low.png",
-    "imageHighSrc": "cards/sv2-032-high.png"
+    "imageHighSrc": "cards/sv2-032-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Overrun",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "12490",
-    "externalId": null,
+    "externalId": "sv2-31",
     "tcgdex_id": "sv02-031",
     "localId": "031",
     "setCode": "sv02",
@@ -8105,11 +9932,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-031-low.png",
-    "imageHighSrc": "cards/sv2-031-high.png"
+    "imageHighSrc": "cards/sv2-031-high.png",
+    "attacks": [
+      {
+        "name": "Blazing Destruction",
+        "damage": null
+      },
+      {
+        "name": "Live Coal",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12481",
-    "externalId": null,
+    "externalId": "sv2-30",
     "tcgdex_id": "sv02-030",
     "localId": "030",
     "setCode": "sv02",
@@ -8138,11 +9975,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-030-low.png",
-    "imageHighSrc": "cards/sv2-030-high.png"
+    "imageHighSrc": "cards/sv2-030-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "50"
+      },
+      {
+        "name": "Fiery Breeze",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "12471",
-    "externalId": null,
+    "externalId": "sv2-29",
     "tcgdex_id": "sv02-029",
     "localId": "029",
     "setCode": "sv02",
@@ -8171,11 +10018,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-029-low.png",
-    "imageHighSrc": "cards/sv2-029-high.png"
+    "imageHighSrc": "cards/sv2-029-high.png",
+    "attacks": [
+      {
+        "name": "Heat Dive",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12461",
-    "externalId": null,
+    "externalId": "sv2-28",
     "tcgdex_id": "sv02-028",
     "localId": "028",
     "setCode": "sv02",
@@ -8204,11 +10057,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-028-low.png",
-    "imageHighSrc": "cards/sv2-028-high.png"
+    "imageHighSrc": "cards/sv2-028-high.png",
+    "attacks": [
+      {
+        "name": "Raging Horns",
+        "damage": "20+"
+      },
+      {
+        "name": "Blaze Dash",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "12450",
-    "externalId": null,
+    "externalId": "sv2-27",
     "tcgdex_id": "sv02-027",
     "localId": "027",
     "setCode": "sv02",
@@ -8238,11 +10101,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-027-low.png",
-    "imageHighSrc": "cards/sv2-027-high.png"
+    "imageHighSrc": "cards/sv2-027-high.png",
+    "attacks": [
+      {
+        "name": "Covetous Ivy",
+        "damage": null
+      },
+      {
+        "name": "Forest Blast",
+        "damage": "220"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12440",
-    "externalId": null,
+    "externalId": "sv2-26",
     "tcgdex_id": "sv02-026",
     "localId": "026",
     "setCode": "sv02",
@@ -8271,11 +10145,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-026-low.png",
-    "imageHighSrc": "cards/sv2-026-high.png"
+    "imageHighSrc": "cards/sv2-026-high.png",
+    "attacks": [
+      {
+        "name": "Ball Roll",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "12431",
-    "externalId": null,
+    "externalId": "sv2-25",
     "tcgdex_id": "sv02-025",
     "localId": "025",
     "setCode": "sv02",
@@ -8304,11 +10184,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-025-low.png",
-    "imageHighSrc": "cards/sv2-025-high.png"
+    "imageHighSrc": "cards/sv2-025-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12423",
-    "externalId": null,
+    "externalId": "sv2-24",
     "tcgdex_id": "sv02-024",
     "localId": "024",
     "setCode": "sv02",
@@ -8337,11 +10223,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-024-low.png",
-    "imageHighSrc": "cards/sv2-024-high.png"
+    "imageHighSrc": "cards/sv2-024-high.png",
+    "attacks": [
+      {
+        "name": "Absorb Life",
+        "damage": "30"
+      },
+      {
+        "name": "Dead Wood Detention",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "12413",
-    "externalId": null,
+    "externalId": "sv2-23",
     "tcgdex_id": "sv02-023",
     "localId": "023",
     "setCode": "sv02",
@@ -8370,11 +10266,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-023-low.png",
-    "imageHighSrc": "cards/sv2-023-high.png"
+    "imageHighSrc": "cards/sv2-023-high.png",
+    "attacks": [
+      {
+        "name": "Blot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12403",
-    "externalId": null,
+    "externalId": "sv2-22",
     "tcgdex_id": "sv02-022",
     "localId": "022",
     "setCode": "sv02",
@@ -8403,11 +10305,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-022-low.png",
-    "imageHighSrc": "cards/sv2-022-high.png"
+    "imageHighSrc": "cards/sv2-022-high.png",
+    "attacks": [
+      {
+        "name": "Ride the Wind",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12393",
-    "externalId": null,
+    "externalId": "sv2-21",
     "tcgdex_id": "sv02-021",
     "localId": "021",
     "setCode": "sv02",
@@ -8436,11 +10344,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-021-low.png",
-    "imageHighSrc": "cards/sv2-021-high.png"
+    "imageHighSrc": "cards/sv2-021-high.png",
+    "attacks": [
+      {
+        "name": "Assaulting Kick",
+        "damage": "30+"
+      },
+      {
+        "name": "Speed Attack",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "12384",
-    "externalId": null,
+    "externalId": "sv2-20",
     "tcgdex_id": "sv02-020",
     "localId": "020",
     "setCode": "sv02",
@@ -8469,11 +10387,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-020-low.png",
-    "imageHighSrc": "cards/sv2-020-high.png"
+    "imageHighSrc": "cards/sv2-020-high.png",
+    "attacks": [
+      {
+        "name": "Wild Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12374",
-    "externalId": null,
+    "externalId": "sv2-19",
     "tcgdex_id": "sv02-019",
     "localId": "019",
     "setCode": "sv02",
@@ -8502,11 +10426,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-019-low.png",
-    "imageHighSrc": "cards/sv2-019-high.png"
+    "imageHighSrc": "cards/sv2-019-high.png",
+    "attacks": [
+      {
+        "name": "Slight Splash",
+        "damage": null
+      },
+      {
+        "name": "Bug Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12364",
-    "externalId": null,
+    "externalId": "sv2-18",
     "tcgdex_id": "sv02-018",
     "localId": "018",
     "setCode": "sv02",
@@ -8535,11 +10469,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-018-low.png",
-    "imageHighSrc": "cards/sv2-018-high.png"
+    "imageHighSrc": "cards/sv2-018-high.png",
+    "attacks": [
+      {
+        "name": "Entangling Trap",
+        "damage": null
+      },
+      {
+        "name": "Hammer In",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "12355",
-    "externalId": null,
+    "externalId": "sv2-17",
     "tcgdex_id": "sv02-017",
     "localId": "017",
     "setCode": "sv02",
@@ -8568,11 +10512,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-017-low.png",
-    "imageHighSrc": "cards/sv2-017-high.png"
+    "imageHighSrc": "cards/sv2-017-high.png",
+    "attacks": [
+      {
+        "name": "Hook",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "12343",
-    "externalId": null,
+    "externalId": "sv2-16",
     "tcgdex_id": "sv02-016",
     "localId": "016",
     "setCode": "sv02",
@@ -8601,11 +10551,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-016-low.png",
-    "imageHighSrc": "cards/sv2-016-high.png"
+    "imageHighSrc": "cards/sv2-016-high.png",
+    "attacks": [
+      {
+        "name": "Bind Down",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12336",
-    "externalId": null,
+    "externalId": "sv2-15",
     "tcgdex_id": "sv02-015",
     "localId": "015",
     "setCode": "sv02",
@@ -8635,11 +10591,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-015-low.png",
-    "imageHighSrc": "cards/sv2-015-high.png"
+    "imageHighSrc": "cards/sv2-015-high.png",
+    "attacks": [
+      {
+        "name": "Scratching Nails",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12326",
-    "externalId": null,
+    "externalId": "sv2-14",
     "tcgdex_id": "sv02-014",
     "localId": "014",
     "setCode": "sv02",
@@ -8668,11 +10631,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-014-low.png",
-    "imageHighSrc": "cards/sv2-014-high.png"
+    "imageHighSrc": "cards/sv2-014-high.png",
+    "attacks": [
+      {
+        "name": "Seed Bomb",
+        "damage": "30"
+      },
+      {
+        "name": "Magic Whip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12316",
-    "externalId": null,
+    "externalId": "sv2-13",
     "tcgdex_id": "sv02-013",
     "localId": "013",
     "setCode": "sv02",
@@ -8701,11 +10674,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-013-low.png",
-    "imageHighSrc": "cards/sv2-013-high.png"
+    "imageHighSrc": "cards/sv2-013-high.png",
+    "attacks": [
+      {
+        "name": "Dig Claws",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12306",
-    "externalId": null,
+    "externalId": "sv2-12",
     "tcgdex_id": "sv02-012",
     "localId": "012",
     "setCode": "sv02",
@@ -8734,11 +10713,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-012-low.png",
-    "imageHighSrc": "cards/sv2-012-high.png"
+    "imageHighSrc": "cards/sv2-012-high.png",
+    "attacks": [
+      {
+        "name": "Gather Sunlight",
+        "damage": null
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12296",
-    "externalId": null,
+    "externalId": "sv2-11",
     "tcgdex_id": "sv02-011",
     "localId": "011",
     "setCode": "sv02",
@@ -8767,11 +10756,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-011-low.png",
-    "imageHighSrc": "cards/sv2-011-high.png"
+    "imageHighSrc": "cards/sv2-011-high.png",
+    "attacks": [
+      {
+        "name": "Magnum Punch",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "12287",
-    "externalId": null,
+    "externalId": "sv2-10",
     "tcgdex_id": "sv02-010",
     "localId": "010",
     "setCode": "sv02",
@@ -8800,11 +10795,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-010-low.png",
-    "imageHighSrc": "cards/sv2-010-high.png"
+    "imageHighSrc": "cards/sv2-010-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12276",
-    "externalId": null,
+    "externalId": "sv2-9",
     "tcgdex_id": "sv02-009",
     "localId": "009",
     "setCode": "sv02",
@@ -8833,11 +10834,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-009-low.png",
-    "imageHighSrc": "cards/sv2-009-high.png"
+    "imageHighSrc": "cards/sv2-009-high.png",
+    "attacks": [
+      {
+        "name": "Double Stab",
+        "damage": "30×"
+      },
+      {
+        "name": "Order a Raid",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "12265",
-    "externalId": null,
+    "externalId": "sv2-8",
     "tcgdex_id": "sv02-008",
     "localId": "008",
     "setCode": "sv02",
@@ -8866,11 +10877,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-008-low.png",
-    "imageHighSrc": "cards/sv2-008-high.png"
+    "imageHighSrc": "cards/sv2-008-high.png",
+    "attacks": [
+      {
+        "name": "Double Spin",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "12256",
-    "externalId": null,
+    "externalId": "sv2-7",
     "tcgdex_id": "sv02-007",
     "localId": "007",
     "setCode": "sv02",
@@ -8899,11 +10916,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-007-low.png",
-    "imageHighSrc": "cards/sv2-007-high.png"
+    "imageHighSrc": "cards/sv2-007-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Drain",
+        "damage": "20"
+      },
+      {
+        "name": "Tropic Breeze",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "12244",
-    "externalId": null,
+    "externalId": "sv2-6",
     "tcgdex_id": "sv02-006",
     "localId": "006",
     "setCode": "sv02",
@@ -8932,11 +10959,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-006-low.png",
-    "imageHighSrc": "cards/sv2-006-high.png"
+    "imageHighSrc": "cards/sv2-006-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "50"
+      },
+      {
+        "name": "Smashing Horn",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "12235",
-    "externalId": null,
+    "externalId": "sv2-5",
     "tcgdex_id": "sv02-005",
     "localId": "005",
     "setCode": "sv02",
@@ -8967,11 +11004,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-005-low.png",
-    "imageHighSrc": "cards/sv2-005-high.png"
+    "imageHighSrc": "cards/sv2-005-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "120"
+      }
+    ],
+    "rules": "Tera: As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12224",
-    "externalId": null,
+    "externalId": "sv2-4",
     "tcgdex_id": "sv02-004",
     "localId": "004",
     "setCode": "sv02",
@@ -9000,11 +11044,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-004-low.png",
-    "imageHighSrc": "cards/sv2-004-high.png"
+    "imageHighSrc": "cards/sv2-004-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12214",
-    "externalId": null,
+    "externalId": "sv2-3",
     "tcgdex_id": "sv02-003",
     "localId": "003",
     "setCode": "sv02",
@@ -9033,11 +11083,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-003-low.png",
-    "imageHighSrc": "cards/sv2-003-high.png"
+    "imageHighSrc": "cards/sv2-003-high.png",
+    "attacks": [
+      {
+        "name": "Fluffy Breeze",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "12206",
-    "externalId": null,
+    "externalId": "sv2-2",
     "tcgdex_id": "sv02-002",
     "localId": "002",
     "setCode": "sv02",
@@ -9066,11 +11122,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-002-low.png",
-    "imageHighSrc": "cards/sv2-002-high.png"
+    "imageHighSrc": "cards/sv2-002-high.png",
+    "attacks": [
+      {
+        "name": "Flowery Zephyr",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12199",
-    "externalId": null,
+    "externalId": "sv2-1",
     "tcgdex_id": "sv02-001",
     "localId": "001",
     "setCode": "sv02",
@@ -9099,6 +11161,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv2-001-low.png",
-    "imageHighSrc": "cards/sv2-001-high.png"
+    "imageHighSrc": "cards/sv2-001-high.png",
+    "attacks": [
+      {
+        "name": "Splashing Dodge",
+        "damage": "10"
+      }
+    ]
   }
 ]

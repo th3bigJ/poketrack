@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "8455",
-    "externalId": null,
+    "externalId": "pop1-17",
     "tcgdex_id": "pop1-17",
     "localId": "017",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "017/17",
+    "cardNumber": "17/17",
     "cardName": "Tyranitar ex",
-    "fullDisplayName": "Tyranitar ex 017/17 POP Series 1",
+    "fullDisplayName": "Tyranitar ex 17/17 POP Series 1",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -31,18 +31,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-017-low.png",
-    "imageHighSrc": "cards/pop1-017-high.png"
+    "imageHighSrc": "cards/pop1-017-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Critical Crush",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "8445",
-    "externalId": null,
+    "externalId": "pop1-16",
     "tcgdex_id": "pop1-16",
     "localId": "016",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "016/17",
+    "cardNumber": "16/17",
     "cardName": "Armaldo ex",
-    "fullDisplayName": "Armaldo ex 016/17 POP Series 1",
+    "fullDisplayName": "Armaldo ex 16/17 POP Series 1",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -65,18 +76,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-016-low.png",
-    "imageHighSrc": "cards/pop1-016-high.png"
+    "imageHighSrc": "cards/pop1-016-high.png",
+    "attacks": [
+      {
+        "name": "Twin-blade",
+        "damage": null
+      },
+      {
+        "name": "Supersonic Claws",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "8435",
-    "externalId": null,
+    "externalId": "pop1-15",
     "tcgdex_id": "pop1-15",
     "localId": "015",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "015/17",
+    "cardNumber": "15/17",
     "cardName": "Swellow",
-    "fullDisplayName": "Swellow 015/17 POP Series 1",
+    "fullDisplayName": "Swellow 15/17 POP Series 1",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -98,18 +120,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-015-low.png",
-    "imageHighSrc": "cards/pop1-015-high.png"
+    "imageHighSrc": "cards/pop1-015-high.png",
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "damage": null
+      },
+      {
+        "name": "Agility",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8426",
-    "externalId": null,
+    "externalId": "pop1-14",
     "tcgdex_id": "pop1-14",
     "localId": "014",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "014/17",
+    "cardNumber": "14/17",
     "cardName": "Surskit",
-    "fullDisplayName": "Surskit 014/17 POP Series 1",
+    "fullDisplayName": "Surskit 14/17 POP Series 1",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -131,18 +163,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-014-low.png",
-    "imageHighSrc": "cards/pop1-014-high.png"
+    "imageHighSrc": "cards/pop1-014-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8419",
-    "externalId": null,
+    "externalId": "pop1-13",
     "tcgdex_id": "pop1-13",
     "localId": "013",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "013/17",
+    "cardNumber": "13/17",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 013/17 POP Series 1",
+    "fullDisplayName": "Plusle 13/17 POP Series 1",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -164,18 +202,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-013-low.png",
-    "imageHighSrc": "cards/pop1-013-high.png"
+    "imageHighSrc": "cards/pop1-013-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8411",
-    "externalId": null,
+    "externalId": "pop1-12",
     "tcgdex_id": "pop1-12",
     "localId": "012",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "012/17",
+    "cardNumber": "12/17",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 012/17 POP Series 1",
+    "fullDisplayName": "Minun 12/17 POP Series 1",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -197,18 +245,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-012-low.png",
-    "imageHighSrc": "cards/pop1-012-high.png"
+    "imageHighSrc": "cards/pop1-012-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": "10"
+      },
+      {
+        "name": "Spark",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8402",
-    "externalId": null,
+    "externalId": "pop1-11",
     "tcgdex_id": "pop1-11",
     "localId": "011",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "011/17",
+    "cardNumber": "11/17",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 011/17 POP Series 1",
+    "fullDisplayName": "Larvitar 11/17 POP Series 1",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -230,18 +288,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-011-low.png",
-    "imageHighSrc": "cards/pop1-011-high.png"
+    "imageHighSrc": "cards/pop1-011-high.png",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8394",
-    "externalId": null,
+    "externalId": "pop1-10",
     "tcgdex_id": "pop1-10",
     "localId": "010",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "010/17",
+    "cardNumber": "10/17",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 010/17 POP Series 1",
+    "fullDisplayName": "Torkoal 10/17 POP Series 1",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -263,18 +327,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-010-low.png",
-    "imageHighSrc": "cards/pop1-010-high.png"
+    "imageHighSrc": "cards/pop1-010-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": null
+      },
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8386",
-    "externalId": null,
+    "externalId": "pop1-9",
     "tcgdex_id": "pop1-9",
     "localId": "009",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "009/17",
+    "cardNumber": "9/17",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 009/17 POP Series 1",
+    "fullDisplayName": "Pupitar 9/17 POP Series 1",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -296,18 +370,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-009-low.png",
-    "imageHighSrc": "cards/pop1-009-high.png"
+    "imageHighSrc": "cards/pop1-009-high.png",
+    "attacks": [
+      {
+        "name": "Rock Smash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8377",
-    "externalId": null,
+    "externalId": "pop1-8",
     "tcgdex_id": "pop1-8",
     "localId": "008",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "008/17",
+    "cardNumber": "8/17",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 008/17 POP Series 1",
+    "fullDisplayName": "Murkrow 8/17 POP Series 1",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -329,18 +409,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-008-low.png",
-    "imageHighSrc": "cards/pop1-008-high.png"
+    "imageHighSrc": "cards/pop1-008-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8360",
-    "externalId": null,
+    "externalId": "pop1-7",
     "tcgdex_id": "pop1-7",
     "localId": "007",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "007/17",
+    "cardNumber": "7/17",
     "cardName": "Masquerain",
-    "fullDisplayName": "Masquerain 007/17 POP Series 1",
+    "fullDisplayName": "Masquerain 7/17 POP Series 1",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -362,18 +448,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-007-low.png",
-    "imageHighSrc": "cards/pop1-007-high.png"
+    "imageHighSrc": "cards/pop1-007-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Gust",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8349",
-    "externalId": null,
+    "externalId": "pop1-6",
     "tcgdex_id": "pop1-6",
     "localId": "006",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "006/17",
+    "cardNumber": "6/17",
     "cardName": "Beautifly",
-    "fullDisplayName": "Beautifly 006/17 POP Series 1",
+    "fullDisplayName": "Beautifly 6/17 POP Series 1",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -395,18 +491,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-006-low.png",
-    "imageHighSrc": "cards/pop1-006-high.png"
+    "imageHighSrc": "cards/pop1-006-high.png",
+    "attacks": [
+      {
+        "name": "Blot",
+        "damage": "30"
+      },
+      {
+        "name": "Whirlwind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8338",
-    "externalId": null,
+    "externalId": "pop1-5",
     "tcgdex_id": "pop1-5",
     "localId": "005",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "005/17",
+    "cardNumber": "5/17",
     "cardName": "Swampert",
-    "fullDisplayName": "Swampert 005/17 POP Series 1",
+    "fullDisplayName": "Swampert 5/17 POP Series 1",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -428,18 +534,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-005-low.png",
-    "imageHighSrc": "cards/pop1-005-high.png"
+    "imageHighSrc": "cards/pop1-005-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "20"
+      },
+      {
+        "name": "Mud Splash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8329",
-    "externalId": null,
+    "externalId": "pop1-4",
     "tcgdex_id": "pop1-4",
     "localId": "004",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "004/17",
+    "cardNumber": "4/17",
     "cardName": "Sceptile",
-    "fullDisplayName": "Sceptile 004/17 POP Series 1",
+    "fullDisplayName": "Sceptile 4/17 POP Series 1",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -461,18 +577,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-004-low.png",
-    "imageHighSrc": "cards/pop1-004-high.png"
+    "imageHighSrc": "cards/pop1-004-high.png",
+    "attacks": [
+      {
+        "name": "Cling",
+        "damage": "20"
+      },
+      {
+        "name": "Leaf Blade",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "8319",
-    "externalId": null,
+    "externalId": "pop1-3",
     "tcgdex_id": "pop1-3",
     "localId": "003",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "003/17",
+    "cardNumber": "3/17",
     "cardName": "Rayquaza",
-    "fullDisplayName": "Rayquaza 003/17 POP Series 1",
+    "fullDisplayName": "Rayquaza 3/17 POP Series 1",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -494,18 +620,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-003-low.png",
-    "imageHighSrc": "cards/pop1-003-high.png"
+    "imageHighSrc": "cards/pop1-003-high.png",
+    "attacks": [
+      {
+        "name": "Fly",
+        "damage": "10"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8310",
-    "externalId": null,
+    "externalId": "pop1-2",
     "tcgdex_id": "pop1-2",
     "localId": "002",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "002/17",
+    "cardNumber": "2/17",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross 002/17 POP Series 1",
+    "fullDisplayName": "Metagross 2/17 POP Series 1",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -527,18 +663,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-002-low.png",
-    "imageHighSrc": "cards/pop1-002-high.png"
+    "imageHighSrc": "cards/pop1-002-high.png",
+    "attacks": [
+      {
+        "name": "Metal Claw",
+        "damage": "30"
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8302",
-    "externalId": null,
+    "externalId": "pop1-1",
     "tcgdex_id": "pop1-1",
     "localId": "001",
     "setCode": "pop1",
     "setTcgdexId": "pop1",
-    "cardNumber": "001/17",
+    "cardNumber": "1/17",
     "cardName": "Blaziken",
-    "fullDisplayName": "Blaziken 001/17 POP Series 1",
+    "fullDisplayName": "Blaziken 1/17 POP Series 1",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -560,6 +706,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop1-001-low.png",
-    "imageHighSrc": "cards/pop1-001-high.png"
+    "imageHighSrc": "cards/pop1-001-high.png",
+    "attacks": [
+      {
+        "name": "Fire Punch",
+        "damage": "40"
+      },
+      {
+        "name": "Double Kick",
+        "damage": "50×"
+      }
+    ]
   }
 ]

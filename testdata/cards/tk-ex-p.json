@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "18810",
-    "externalId": null,
+    "externalId": "tk2a-12",
     "tcgdex_id": "tk-ex-p-12",
     "localId": "012",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "012/12",
+    "cardNumber": "12/12",
     "cardName": "Psychic Energy",
-    "fullDisplayName": "Psychic Energy 012/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Psychic Energy 12/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Energy",
     "stage": "Basic",
@@ -30,14 +30,14 @@
   },
   {
     "masterCardId": "18807",
-    "externalId": null,
+    "externalId": "tk2a-11",
     "tcgdex_id": "tk-ex-p-11",
     "localId": "011",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "011/12",
+    "cardNumber": "11/12",
     "cardName": "Lightning Energy",
-    "fullDisplayName": "Lightning Energy 011/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Lightning Energy 11/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Energy",
     "stage": "Basic",
@@ -59,14 +59,14 @@
   },
   {
     "masterCardId": "18802",
-    "externalId": null,
+    "externalId": "tk2a-10",
     "tcgdex_id": "tk-ex-p-10",
     "localId": "010",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "010/12",
+    "cardNumber": "10/12",
     "cardName": "Professor Cozmo's Discovery",
-    "fullDisplayName": "Professor Cozmo's Discovery 010/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Professor Cozmo's Discovery 10/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -84,18 +84,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-010-low.png",
-    "imageHighSrc": "cards/tk2a-010-high.png"
+    "imageHighSrc": "cards/tk2a-010-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nFlip a coin. If heads, draw the bottom 3 cards of your deck. If tails, draw the top 2 cards of your deck."
   },
   {
     "masterCardId": "18798",
-    "externalId": null,
+    "externalId": "tk2a-9",
     "tcgdex_id": "tk-ex-p-9",
     "localId": "009",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "009/12",
+    "cardNumber": "9/12",
     "cardName": "Potion",
-    "fullDisplayName": "Potion 009/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Potion 9/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -113,18 +114,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-009-low.png",
-    "imageHighSrc": "cards/tk2a-009-high.png"
+    "imageHighSrc": "cards/tk2a-009-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "18795",
-    "externalId": null,
+    "externalId": "tk2a-8",
     "tcgdex_id": "tk-ex-p-8",
     "localId": "008",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "008/12",
+    "cardNumber": "8/12",
     "cardName": "Energy Search",
-    "fullDisplayName": "Energy Search 008/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Energy Search 8/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -142,18 +144,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-008-low.png",
-    "imageHighSrc": "cards/tk2a-008-high.png"
+    "imageHighSrc": "cards/tk2a-008-high.png",
+    "rules": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward"
   },
   {
     "masterCardId": "18791",
-    "externalId": null,
+    "externalId": "tk2a-7",
     "tcgdex_id": "tk-ex-p-7",
     "localId": "007",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "007/12",
+    "cardNumber": "7/12",
     "cardName": "Spoink",
-    "fullDisplayName": "Spoink 007/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Spoink 7/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -175,18 +178,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-007-low.png",
-    "imageHighSrc": "cards/tk2a-007-high.png"
+    "imageHighSrc": "cards/tk2a-007-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "18787",
-    "externalId": null,
+    "externalId": "tk2a-6",
     "tcgdex_id": "tk-ex-p-6",
     "localId": "006",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "006/12",
+    "cardNumber": "6/12",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 006/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Plusle 6/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -208,18 +217,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-006-low.png",
-    "imageHighSrc": "cards/tk2a-006-high.png"
+    "imageHighSrc": "cards/tk2a-006-high.png",
+    "attacks": [
+      {
+        "name": "Pickup Power",
+        "damage": null
+      },
+      {
+        "name": "Rear Spark",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "18783",
-    "externalId": null,
+    "externalId": "tk2a-5",
     "tcgdex_id": "tk-ex-p-5",
     "localId": "005",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "005/12",
+    "cardNumber": "5/12",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 005/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Metang 5/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -241,18 +260,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-005-low.png",
-    "imageHighSrc": "cards/tk2a-005-high.png"
+    "imageHighSrc": "cards/tk2a-005-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Boom",
+        "damage": "10+"
+      },
+      {
+        "name": "Quick Blow",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "18779",
-    "externalId": null,
+    "externalId": "tk2a-4",
     "tcgdex_id": "tk-ex-p-4",
     "localId": "004",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "004/12",
+    "cardNumber": "4/12",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 004/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Meowth 4/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -274,18 +303,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-004-low.png",
-    "imageHighSrc": "cards/tk2a-004-high.png"
+    "imageHighSrc": "cards/tk2a-004-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Cat Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "18775",
-    "externalId": null,
+    "externalId": "tk2a-3",
     "tcgdex_id": "tk-ex-p-3",
     "localId": "003",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "003/12",
+    "cardNumber": "3/12",
     "cardName": "Grumpig",
-    "fullDisplayName": "Grumpig 003/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Grumpig 3/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -307,18 +346,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-003-low.png",
-    "imageHighSrc": "cards/tk2a-003-high.png"
+    "imageHighSrc": "cards/tk2a-003-high.png",
+    "attacks": [
+      {
+        "name": "Snap Tail",
+        "damage": null
+      },
+      {
+        "name": "Psypunch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "18772",
-    "externalId": null,
+    "externalId": "tk2a-2",
     "tcgdex_id": "tk-ex-p-2",
     "localId": "002",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "002/12",
+    "cardNumber": "2/12",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 002/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Electrike 2/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -340,18 +389,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-002-low.png",
-    "imageHighSrc": "cards/tk2a-002-high.png"
+    "imageHighSrc": "cards/tk2a-002-high.png",
+    "attacks": [
+      {
+        "name": "Recharge",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "18765",
-    "externalId": null,
+    "externalId": "tk2a-1",
     "tcgdex_id": "tk-ex-p-1",
     "localId": "001",
     "setCode": "tk-ex-p",
     "setTcgdexId": "tk-ex-p",
-    "cardNumber": "001/12",
+    "cardNumber": "1/12",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 001/12 EX trainer Kit 2 (Plusle)",
+    "fullDisplayName": "Beldum 1/12 EX trainer Kit 2 (Plusle)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -373,6 +432,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk2a-001-low.png",
-    "imageHighSrc": "cards/tk2a-001-high.png"
+    "imageHighSrc": "cards/tk2a-001-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Metal Ball",
+        "damage": null
+      }
+    ]
   }
 ]

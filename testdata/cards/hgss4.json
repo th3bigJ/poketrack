@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "7201",
-    "externalId": null,
+    "externalId": "hgss4-FOUR",
     "tcgdex_id": "hgss4-FOUR",
     "localId": "FOUR",
     "setCode": "hgss4",
@@ -26,11 +26,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-FOUR-low.png",
-    "imageHighSrc": "cards/hgss4-FOUR-high.png"
+    "imageHighSrc": "cards/hgss4-FOUR-high.png",
+    "rules": "LOOK AT ALL OF YOUR FACE DOWN PRIZE CARDS!"
   },
   {
     "masterCardId": "7199",
-    "externalId": null,
+    "externalId": "hgss4-102",
     "tcgdex_id": "hgss4-102",
     "localId": "102",
     "setCode": "hgss4",
@@ -61,11 +62,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-102-low.png",
-    "imageHighSrc": "cards/hgss4-102-high.png"
+    "imageHighSrc": "cards/hgss4-102-high.png",
+    "attacks": [
+      {
+        "name": "Sudden Delete",
+        "damage": null
+      },
+      {
+        "name": "Time Control",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Palkia & Dialga LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7197",
-    "externalId": null,
+    "externalId": "hgss4-101",
     "tcgdex_id": "hgss4-101",
     "localId": "101",
     "setCode": "hgss4",
@@ -96,11 +108,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-101-low.png",
-    "imageHighSrc": "cards/hgss4-101-high.png"
+    "imageHighSrc": "cards/hgss4-101-high.png",
+    "attacks": [
+      {
+        "name": "Sudden Delete",
+        "damage": null
+      },
+      {
+        "name": "Time Control",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Palkia & Dialga LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7195",
-    "externalId": null,
+    "externalId": "hgss4-100",
     "tcgdex_id": "hgss4-100",
     "localId": "100",
     "setCode": "hgss4",
@@ -131,18 +154,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-100-low.png",
-    "imageHighSrc": "cards/hgss4-100-high.png"
+    "imageHighSrc": "cards/hgss4-100-high.png",
+    "attacks": [
+      {
+        "name": "Lost Crisis",
+        "damage": "100"
+      },
+      {
+        "name": "Moon's Invite",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Darkrai & Cresselia LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7193",
-    "externalId": null,
+    "externalId": "hgss4-99",
     "tcgdex_id": "hgss4-99",
     "localId": "099",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "099/102",
+    "cardNumber": "99/102",
     "cardName": "Darkrai & Cresselia LEGEND",
-    "fullDisplayName": "Darkrai & Cresselia LEGEND 099/102 Triumphant",
+    "fullDisplayName": "Darkrai & Cresselia LEGEND 99/102 Triumphant",
     "rarity": "LEGEND",
     "category": "Pokémon",
     "stage": "Basic",
@@ -166,18 +200,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-099-low.png",
-    "imageHighSrc": "cards/hgss4-099-high.png"
+    "imageHighSrc": "cards/hgss4-099-high.png",
+    "attacks": [
+      {
+        "name": "Lost Crisis",
+        "damage": "100"
+      },
+      {
+        "name": "Moon's Invite",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Darkrai & Cresselia LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7191",
-    "externalId": null,
+    "externalId": "hgss4-98",
     "tcgdex_id": "hgss4-98",
     "localId": "098",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "098/102",
+    "cardNumber": "98/102",
     "cardName": "Yanmega",
-    "fullDisplayName": "Yanmega 098/102 Triumphant",
+    "fullDisplayName": "Yanmega 98/102 Triumphant",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -200,18 +245,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-098-low.png",
-    "imageHighSrc": "cards/hgss4-098-high.png"
+    "imageHighSrc": "cards/hgss4-098-high.png",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Sonicboom",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7189",
-    "externalId": null,
+    "externalId": "hgss4-97",
     "tcgdex_id": "hgss4-97",
     "localId": "097",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "097/102",
+    "cardNumber": "97/102",
     "cardName": "Mew",
-    "fullDisplayName": "Mew 097/102 Triumphant",
+    "fullDisplayName": "Mew 97/102 Triumphant",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Basic",
@@ -234,18 +289,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-097-low.png",
-    "imageHighSrc": "cards/hgss4-097-high.png"
+    "imageHighSrc": "cards/hgss4-097-high.png",
+    "attacks": [
+      {
+        "name": "See Off",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7187",
-    "externalId": null,
+    "externalId": "hgss4-96",
     "tcgdex_id": "hgss4-96",
     "localId": "096",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "096/102",
+    "cardNumber": "96/102",
     "cardName": "Magnezone",
-    "fullDisplayName": "Magnezone 096/102 Triumphant",
+    "fullDisplayName": "Magnezone 96/102 Triumphant",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -268,18 +329,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-096-low.png",
-    "imageHighSrc": "cards/hgss4-096-high.png"
+    "imageHighSrc": "cards/hgss4-096-high.png",
+    "attacks": [
+      {
+        "name": "Lost Burn",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "7185",
-    "externalId": null,
+    "externalId": "hgss4-95",
     "tcgdex_id": "hgss4-95",
     "localId": "095",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "095/102",
+    "cardNumber": "95/102",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 095/102 Triumphant",
+    "fullDisplayName": "Machamp 95/102 Triumphant",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -302,18 +369,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-095-low.png",
-    "imageHighSrc": "cards/hgss4-095-high.png"
+    "imageHighSrc": "cards/hgss4-095-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Punch",
+        "damage": "60"
+      },
+      {
+        "name": "Champ Buster",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "7182",
-    "externalId": null,
+    "externalId": "hgss4-94",
     "tcgdex_id": "hgss4-94",
     "localId": "094",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "094/102",
+    "cardNumber": "94/102",
     "cardName": "Gengar",
-    "fullDisplayName": "Gengar 094/102 Triumphant",
+    "fullDisplayName": "Gengar 94/102 Triumphant",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -336,18 +413,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-094-low.png",
-    "imageHighSrc": "cards/hgss4-094-high.png"
+    "imageHighSrc": "cards/hgss4-094-high.png",
+    "attacks": [
+      {
+        "name": "Hurl into Darkness",
+        "damage": null
+      },
+      {
+        "name": "Cursed Drop",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7179",
-    "externalId": null,
+    "externalId": "hgss4-93",
     "tcgdex_id": "hgss4-93",
     "localId": "093",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "093/102",
+    "cardNumber": "93/102",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 093/102 Triumphant",
+    "fullDisplayName": "Electrode 93/102 Triumphant",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -370,18 +457,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-093-low.png",
-    "imageHighSrc": "cards/hgss4-093-high.png"
+    "imageHighSrc": "cards/hgss4-093-high.png",
+    "attacks": [
+      {
+        "name": "Gigashock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7176",
-    "externalId": null,
+    "externalId": "hgss4-92",
     "tcgdex_id": "hgss4-92",
     "localId": "092",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "092/102",
+    "cardNumber": "92/102",
     "cardName": "Celebi",
-    "fullDisplayName": "Celebi 092/102 Triumphant",
+    "fullDisplayName": "Celebi 92/102 Triumphant",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Basic",
@@ -404,18 +497,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-092-low.png",
-    "imageHighSrc": "cards/hgss4-092-high.png"
+    "imageHighSrc": "cards/hgss4-092-high.png",
+    "attacks": [
+      {
+        "name": "Time Circle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7173",
-    "externalId": null,
+    "externalId": "hgss4-91",
     "tcgdex_id": "hgss4-91",
     "localId": "091",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "091/102",
+    "cardNumber": "91/102",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 091/102 Triumphant",
+    "fullDisplayName": "Absol 91/102 Triumphant",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Basic",
@@ -438,18 +537,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-091-low.png",
-    "imageHighSrc": "cards/hgss4-091-high.png"
+    "imageHighSrc": "cards/hgss4-091-high.png",
+    "attacks": [
+      {
+        "name": "Vicious Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7170",
-    "externalId": null,
+    "externalId": "hgss4-90",
     "tcgdex_id": "hgss4-90",
     "localId": "090",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "090/102",
+    "cardNumber": "90/102",
     "cardName": "Rescue Energy",
-    "fullDisplayName": "Rescue Energy 090/102 Triumphant",
+    "fullDisplayName": "Rescue Energy 90/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -467,18 +572,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-090-low.png",
-    "imageHighSrc": "cards/hgss4-090-high.png"
+    "imageHighSrc": "cards/hgss4-090-high.png",
+    "rules": "Rescue Energy provides Colorless Energy. If the Pokémon this card is attached to is Knocked Out by damage from an attack, put that Pokémon back into your hand. (Discard all cards attached to that Pokémon.)"
   },
   {
     "masterCardId": "7165",
-    "externalId": null,
+    "externalId": "hgss4-89",
     "tcgdex_id": "hgss4-89",
     "localId": "089",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "089/102",
+    "cardNumber": "89/102",
     "cardName": "Twins",
-    "fullDisplayName": "Twins 089/102 Triumphant",
+    "fullDisplayName": "Twins 89/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -496,18 +602,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-089-low.png",
-    "imageHighSrc": "cards/hgss4-089-high.png"
+    "imageHighSrc": "cards/hgss4-089-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nYou may use this card only if you have more Prize cards left than your opponent. Search your deck for any 2 cards and put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "7162",
-    "externalId": null,
+    "externalId": "hgss4-88",
     "tcgdex_id": "hgss4-88",
     "localId": "088",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "088/102",
+    "cardNumber": "88/102",
     "cardName": "Seeker",
-    "fullDisplayName": "Seeker 088/102 Triumphant",
+    "fullDisplayName": "Seeker 88/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -525,18 +632,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-088-low.png",
-    "imageHighSrc": "cards/hgss4-088-high.png"
+    "imageHighSrc": "cards/hgss4-088-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nEach player returns 1 of his or her Benched Pokémon and all cards attached to it to his or her hand. (You return your Pokémon first.)"
   },
   {
     "masterCardId": "7158",
-    "externalId": null,
+    "externalId": "hgss4-87",
     "tcgdex_id": "hgss4-87",
     "localId": "087",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "087/102",
+    "cardNumber": "87/102",
     "cardName": "Junk Arm",
-    "fullDisplayName": "Junk Arm 087/102 Triumphant",
+    "fullDisplayName": "Junk Arm 87/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -554,18 +662,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-087-low.png",
-    "imageHighSrc": "cards/hgss4-087-high.png"
+    "imageHighSrc": "cards/hgss4-087-high.png",
+    "rules": "Discard 2 cards from your hand. Search your discard pile for a Trainer card, show it to your opponent, and put it into your hand. You can't choose Junk Arm with the effect of this card."
   },
   {
     "masterCardId": "7154",
-    "externalId": null,
+    "externalId": "hgss4-86",
     "tcgdex_id": "hgss4-86",
     "localId": "086",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "086/102",
+    "cardNumber": "86/102",
     "cardName": "Indigo Plateau",
-    "fullDisplayName": "Indigo Plateau 086/102 Triumphant",
+    "fullDisplayName": "Indigo Plateau 86/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -583,18 +692,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-086-low.png",
-    "imageHighSrc": "cards/hgss4-086-high.png"
+    "imageHighSrc": "cards/hgss4-086-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach Pokémon LEGEND in play (both yours and your opponent's) gets +30 HP."
   },
   {
     "masterCardId": "7150",
-    "externalId": null,
+    "externalId": "hgss4-85",
     "tcgdex_id": "hgss4-85",
     "localId": "085",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "085/102",
+    "cardNumber": "85/102",
     "cardName": "Black Belt",
-    "fullDisplayName": "Black Belt 085/102 Triumphant",
+    "fullDisplayName": "Black Belt 85/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -612,18 +722,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-085-low.png",
-    "imageHighSrc": "cards/hgss4-085-high.png"
+    "imageHighSrc": "cards/hgss4-085-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nYou may use this card only if you have more Prize cards left than your opponent. During this turn, each of your Active Pokémon's attacks does 40 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance)."
   },
   {
     "masterCardId": "7146",
-    "externalId": null,
+    "externalId": "hgss4-84",
     "tcgdex_id": "hgss4-84",
     "localId": "084",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "084/102",
+    "cardNumber": "84/102",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma 084/102 Triumphant",
+    "fullDisplayName": "Yanma 84/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -645,18 +756,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-084-low.png",
-    "imageHighSrc": "cards/hgss4-084-high.png"
+    "imageHighSrc": "cards/hgss4-084-high.png",
+    "attacks": [
+      {
+        "name": "Dive",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7142",
-    "externalId": null,
+    "externalId": "hgss4-83",
     "tcgdex_id": "hgss4-83",
     "localId": "083",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "083/102",
+    "cardNumber": "83/102",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 083/102 Triumphant",
+    "fullDisplayName": "Voltorb 83/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -678,18 +795,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-083-low.png",
-    "imageHighSrc": "cards/hgss4-083-high.png"
+    "imageHighSrc": "cards/hgss4-083-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Bomb",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7138",
-    "externalId": null,
+    "externalId": "hgss4-82",
     "tcgdex_id": "hgss4-82",
     "localId": "082",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "082/102",
+    "cardNumber": "82/102",
     "cardName": "Volbeat",
-    "fullDisplayName": "Volbeat 082/102 Triumphant",
+    "fullDisplayName": "Volbeat 82/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -711,18 +834,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-082-low.png",
-    "imageHighSrc": "cards/hgss4-082-high.png"
+    "imageHighSrc": "cards/hgss4-082-high.png",
+    "attacks": [
+      {
+        "name": "Illumisile",
+        "damage": null
+      },
+      {
+        "name": "Firefly Light",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7134",
-    "externalId": null,
+    "externalId": "hgss4-81",
     "tcgdex_id": "hgss4-81",
     "localId": "081",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "081/102",
+    "cardNumber": "81/102",
     "cardName": "Venonat",
-    "fullDisplayName": "Venonat 081/102 Triumphant",
+    "fullDisplayName": "Venonat 81/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -744,18 +877,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-081-low.png",
-    "imageHighSrc": "cards/hgss4-081-high.png"
+    "imageHighSrc": "cards/hgss4-081-high.png",
+    "attacks": [
+      {
+        "name": "Leech Life",
+        "damage": "10"
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7130",
-    "externalId": null,
+    "externalId": "hgss4-80",
     "tcgdex_id": "hgss4-80",
     "localId": "080",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "080/102",
+    "cardNumber": "80/102",
     "cardName": "Tentacool",
-    "fullDisplayName": "Tentacool 080/102 Triumphant",
+    "fullDisplayName": "Tentacool 80/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -777,18 +920,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-080-low.png",
-    "imageHighSrc": "cards/hgss4-080-high.png"
+    "imageHighSrc": "cards/hgss4-080-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Wrap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7126",
-    "externalId": null,
+    "externalId": "hgss4-79",
     "tcgdex_id": "hgss4-79",
     "localId": "079",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "079/102",
+    "cardNumber": "79/102",
     "cardName": "Swinub",
-    "fullDisplayName": "Swinub 079/102 Triumphant",
+    "fullDisplayName": "Swinub 79/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -810,18 +959,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-079-low.png",
-    "imageHighSrc": "cards/hgss4-079-high.png"
+    "imageHighSrc": "cards/hgss4-079-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Ice Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7121",
-    "externalId": null,
+    "externalId": "hgss4-78",
     "tcgdex_id": "hgss4-78",
     "localId": "078",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "078/102",
+    "cardNumber": "78/102",
     "cardName": "Swablu",
-    "fullDisplayName": "Swablu 078/102 Triumphant",
+    "fullDisplayName": "Swablu 78/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -843,18 +1002,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-078-low.png",
-    "imageHighSrc": "cards/hgss4-078-high.png"
+    "imageHighSrc": "cards/hgss4-078-high.png",
+    "attacks": [
+      {
+        "name": "Wing Flick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7118",
-    "externalId": null,
+    "externalId": "hgss4-77",
     "tcgdex_id": "hgss4-77",
     "localId": "077",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "077/102",
+    "cardNumber": "77/102",
     "cardName": "Spoink",
-    "fullDisplayName": "Spoink 077/102 Triumphant",
+    "fullDisplayName": "Spoink 77/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -876,18 +1041,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-077-low.png",
-    "imageHighSrc": "cards/hgss4-077-high.png"
+    "imageHighSrc": "cards/hgss4-077-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Pearl",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7115",
-    "externalId": null,
+    "externalId": "hgss4-76",
     "tcgdex_id": "hgss4-76",
     "localId": "076",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "076/102",
+    "cardNumber": "76/102",
     "cardName": "Skorupi",
-    "fullDisplayName": "Skorupi 076/102 Triumphant",
+    "fullDisplayName": "Skorupi 76/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -909,18 +1080,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-076-low.png",
-    "imageHighSrc": "cards/hgss4-076-high.png"
+    "imageHighSrc": "cards/hgss4-076-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Clamp",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7111",
-    "externalId": null,
+    "externalId": "hgss4-75",
     "tcgdex_id": "hgss4-75",
     "localId": "075",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "075/102",
+    "cardNumber": "75/102",
     "cardName": "Shuppet",
-    "fullDisplayName": "Shuppet 075/102 Triumphant",
+    "fullDisplayName": "Shuppet 75/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -942,18 +1119,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-075-low.png",
-    "imageHighSrc": "cards/hgss4-075-high.png"
+    "imageHighSrc": "cards/hgss4-075-high.png",
+    "attacks": [
+      {
+        "name": "Disable",
+        "damage": null
+      },
+      {
+        "name": "Haunt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7107",
-    "externalId": null,
+    "externalId": "hgss4-74",
     "tcgdex_id": "hgss4-74",
     "localId": "074",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "074/102",
+    "cardNumber": "74/102",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 074/102 Triumphant",
+    "fullDisplayName": "Psyduck 74/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -975,18 +1162,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-074-low.png",
-    "imageHighSrc": "cards/hgss4-074-high.png"
+    "imageHighSrc": "cards/hgss4-074-high.png",
+    "attacks": [
+      {
+        "name": "Tripping Headbutt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7103",
-    "externalId": null,
+    "externalId": "hgss4-73",
     "tcgdex_id": "hgss4-73",
     "localId": "073",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "073/102",
+    "cardNumber": "73/102",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon 073/102 Triumphant",
+    "fullDisplayName": "Porygon 73/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1008,18 +1201,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-073-low.png",
-    "imageHighSrc": "cards/hgss4-073-high.png"
+    "imageHighSrc": "cards/hgss4-073-high.png",
+    "attacks": [
+      {
+        "name": "Sharpen",
+        "damage": "10"
+      },
+      {
+        "name": "Recover",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7099",
-    "externalId": null,
+    "externalId": "hgss4-72",
     "tcgdex_id": "hgss4-72",
     "localId": "072",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "072/102",
+    "cardNumber": "72/102",
     "cardName": "Ponyta",
-    "fullDisplayName": "Ponyta 072/102 Triumphant",
+    "fullDisplayName": "Ponyta 72/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1041,18 +1244,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-072-low.png",
-    "imageHighSrc": "cards/hgss4-072-high.png"
+    "imageHighSrc": "cards/hgss4-072-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7095",
-    "externalId": null,
+    "externalId": "hgss4-71",
     "tcgdex_id": "hgss4-71",
     "localId": "071",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "071/102",
+    "cardNumber": "71/102",
     "cardName": "Pidgey",
-    "fullDisplayName": "Pidgey 071/102 Triumphant",
+    "fullDisplayName": "Pidgey 71/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1074,18 +1287,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-071-low.png",
-    "imageHighSrc": "cards/hgss4-071-high.png"
+    "imageHighSrc": "cards/hgss4-071-high.png",
+    "attacks": [
+      {
+        "name": "Messenger",
+        "damage": null
+      },
+      {
+        "name": "Glide",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7091",
-    "externalId": null,
+    "externalId": "hgss4-70",
     "tcgdex_id": "hgss4-70",
     "localId": "070",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "070/102",
+    "cardNumber": "70/102",
     "cardName": "Nidoran ♂",
-    "fullDisplayName": "Nidoran ♂ 070/102 Triumphant",
+    "fullDisplayName": "Nidoran ♂ 70/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1107,18 +1330,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss4-070-low.png",
-    "imageHighSrc": "cards/hgss4-070-high.png"
+    "imageHighSrc": "cards/hgss4-070-high.png",
+    "attacks": [
+      {
+        "name": "Pheromone Poison",
+        "damage": "10"
+      },
+      {
+        "name": "Horn Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7087",
-    "externalId": null,
+    "externalId": "hgss4-69",
     "tcgdex_id": "hgss4-69",
     "localId": "069",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "069/102",
+    "cardNumber": "69/102",
     "cardName": "Nidoran ♀",
-    "fullDisplayName": "Nidoran ♀ 069/102 Triumphant",
+    "fullDisplayName": "Nidoran ♀ 69/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1140,18 +1373,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss4-069-low.png",
-    "imageHighSrc": "cards/hgss4-069-high.png"
+    "imageHighSrc": "cards/hgss4-069-high.png",
+    "attacks": [
+      {
+        "name": "Friend Search",
+        "damage": null
+      },
+      {
+        "name": "Double Kick",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7083",
-    "externalId": null,
+    "externalId": "hgss4-68",
     "tcgdex_id": "hgss4-68",
     "localId": "068",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "068/102",
+    "cardNumber": "68/102",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 068/102 Triumphant",
+    "fullDisplayName": "Magnemite 68/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1173,18 +1416,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-068-low.png",
-    "imageHighSrc": "cards/hgss4-068-high.png"
+    "imageHighSrc": "cards/hgss4-068-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Switch",
+        "damage": null
+      },
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7079",
-    "externalId": null,
+    "externalId": "hgss4-67",
     "tcgdex_id": "hgss4-67",
     "localId": "067",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "067/102",
+    "cardNumber": "67/102",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 067/102 Triumphant",
+    "fullDisplayName": "Machop 67/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1206,18 +1459,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-067-low.png",
-    "imageHighSrc": "cards/hgss4-067-high.png"
+    "imageHighSrc": "cards/hgss4-067-high.png",
+    "attacks": [
+      {
+        "name": "Steady Punch",
+        "damage": "10+"
+      },
+      {
+        "name": "Mach Cross",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7075",
-    "externalId": null,
+    "externalId": "hgss4-66",
     "tcgdex_id": "hgss4-66",
     "localId": "066",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "066/102",
+    "cardNumber": "66/102",
     "cardName": "Lickitung",
-    "fullDisplayName": "Lickitung 066/102 Triumphant",
+    "fullDisplayName": "Lickitung 66/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1239,18 +1502,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-066-low.png",
-    "imageHighSrc": "cards/hgss4-066-high.png"
+    "imageHighSrc": "cards/hgss4-066-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Tongue Whip",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7071",
-    "externalId": null,
+    "externalId": "hgss4-65",
     "tcgdex_id": "hgss4-65",
     "localId": "065",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "065/102",
+    "cardNumber": "65/102",
     "cardName": "Kricketot",
-    "fullDisplayName": "Kricketot 065/102 Triumphant",
+    "fullDisplayName": "Kricketot 65/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1272,18 +1545,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-065-low.png",
-    "imageHighSrc": "cards/hgss4-065-high.png"
+    "imageHighSrc": "cards/hgss4-065-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7067",
-    "externalId": null,
+    "externalId": "hgss4-64",
     "tcgdex_id": "hgss4-64",
     "localId": "064",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "064/102",
+    "cardNumber": "64/102",
     "cardName": "Illumise",
-    "fullDisplayName": "Illumise 064/102 Triumphant",
+    "fullDisplayName": "Illumise 64/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1305,18 +1584,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-064-low.png",
-    "imageHighSrc": "cards/hgss4-064-high.png"
+    "imageHighSrc": "cards/hgss4-064-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Scent",
+        "damage": null
+      },
+      {
+        "name": "Vulcan Beat",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7063",
-    "externalId": null,
+    "externalId": "hgss4-63",
     "tcgdex_id": "hgss4-63",
     "localId": "063",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "063/102",
+    "cardNumber": "63/102",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 063/102 Triumphant",
+    "fullDisplayName": "Gastly 63/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1338,18 +1627,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-063-low.png",
-    "imageHighSrc": "cards/hgss4-063-high.png"
+    "imageHighSrc": "cards/hgss4-063-high.png",
+    "attacks": [
+      {
+        "name": "Sneaky Placement",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7059",
-    "externalId": null,
+    "externalId": "hgss4-62",
     "tcgdex_id": "hgss4-62",
     "localId": "062",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "062/102",
+    "cardNumber": "62/102",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 062/102 Triumphant",
+    "fullDisplayName": "Dratini 62/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1371,18 +1666,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-062-low.png",
-    "imageHighSrc": "cards/hgss4-062-high.png"
+    "imageHighSrc": "cards/hgss4-062-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Wrap",
+        "damage": "10"
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7055",
-    "externalId": null,
+    "externalId": "hgss4-61",
     "tcgdex_id": "hgss4-61",
     "localId": "061",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "061/102",
+    "cardNumber": "61/102",
     "cardName": "Diglett",
-    "fullDisplayName": "Diglett 061/102 Triumphant",
+    "fullDisplayName": "Diglett 61/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1404,18 +1709,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-061-low.png",
-    "imageHighSrc": "cards/hgss4-061-high.png"
+    "imageHighSrc": "cards/hgss4-061-high.png",
+    "attacks": [
+      {
+        "name": "Sand Veil",
+        "damage": null
+      },
+      {
+        "name": "Mini Earthquake",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7051",
-    "externalId": null,
+    "externalId": "hgss4-60",
     "tcgdex_id": "hgss4-60",
     "localId": "060",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "060/102",
+    "cardNumber": "60/102",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 060/102 Triumphant",
+    "fullDisplayName": "Cubone 60/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1437,18 +1752,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-060-low.png",
-    "imageHighSrc": "cards/hgss4-060-high.png"
+    "imageHighSrc": "cards/hgss4-060-high.png",
+    "attacks": [
+      {
+        "name": "Bone Rush",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7047",
-    "externalId": null,
+    "externalId": "hgss4-59",
     "tcgdex_id": "hgss4-59",
     "localId": "059",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "059/102",
+    "cardNumber": "59/102",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 059/102 Triumphant",
+    "fullDisplayName": "Carvanha 59/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1470,18 +1791,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-059-low.png",
-    "imageHighSrc": "cards/hgss4-059-high.png"
+    "imageHighSrc": "cards/hgss4-059-high.png",
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7043",
-    "externalId": null,
+    "externalId": "hgss4-58",
     "tcgdex_id": "hgss4-58",
     "localId": "058",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "058/102",
+    "cardNumber": "58/102",
     "cardName": "Bronzor",
-    "fullDisplayName": "Bronzor 058/102 Triumphant",
+    "fullDisplayName": "Bronzor 58/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1503,18 +1834,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-058-low.png",
-    "imageHighSrc": "cards/hgss4-058-high.png"
+    "imageHighSrc": "cards/hgss4-058-high.png",
+    "attacks": [
+      {
+        "name": "Iron Defense",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7039",
-    "externalId": null,
+    "externalId": "hgss4-57",
     "tcgdex_id": "hgss4-57",
     "localId": "057",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "057/102",
+    "cardNumber": "57/102",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 057/102 Triumphant",
+    "fullDisplayName": "Bellsprout 57/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1536,18 +1877,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-057-low.png",
-    "imageHighSrc": "cards/hgss4-057-high.png"
+    "imageHighSrc": "cards/hgss4-057-high.png",
+    "attacks": [
+      {
+        "name": "Inviting Scent",
+        "damage": null
+      },
+      {
+        "name": "Careless Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7035",
-    "externalId": null,
+    "externalId": "hgss4-56",
     "tcgdex_id": "hgss4-56",
     "localId": "056",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "056/102",
+    "cardNumber": "56/102",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 056/102 Triumphant",
+    "fullDisplayName": "Aron 56/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1569,18 +1920,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-056-low.png",
-    "imageHighSrc": "cards/hgss4-056-high.png"
+    "imageHighSrc": "cards/hgss4-056-high.png",
+    "attacks": [
+      {
+        "name": "Mountain Eater",
+        "damage": null
+      },
+      {
+        "name": "Confront",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7031",
-    "externalId": null,
+    "externalId": "hgss4-55",
     "tcgdex_id": "hgss4-55",
     "localId": "055",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "055/102",
+    "cardNumber": "55/102",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 055/102 Triumphant",
+    "fullDisplayName": "Aipom 55/102 Triumphant",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1602,18 +1963,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-055-low.png",
-    "imageHighSrc": "cards/hgss4-055-high.png"
+    "imageHighSrc": "cards/hgss4-055-high.png",
+    "attacks": [
+      {
+        "name": "Imitate",
+        "damage": null
+      },
+      {
+        "name": "Tail Punch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7027",
-    "externalId": null,
+    "externalId": "hgss4-54",
     "tcgdex_id": "hgss4-54",
     "localId": "054",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "054/102",
+    "cardNumber": "54/102",
     "cardName": "Yanmega",
-    "fullDisplayName": "Yanmega 054/102 Triumphant",
+    "fullDisplayName": "Yanmega 54/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1635,18 +2006,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-054-low.png",
-    "imageHighSrc": "cards/hgss4-054-high.png"
+    "imageHighSrc": "cards/hgss4-054-high.png",
+    "attacks": [
+      {
+        "name": "Shoot Through",
+        "damage": "20"
+      },
+      {
+        "name": "U-turn",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7023",
-    "externalId": null,
+    "externalId": "hgss4-53",
     "tcgdex_id": "hgss4-53",
     "localId": "053",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "053/102",
+    "cardNumber": "53/102",
     "cardName": "Weepinbell",
-    "fullDisplayName": "Weepinbell 053/102 Triumphant",
+    "fullDisplayName": "Weepinbell 53/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1668,18 +2049,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-053-low.png",
-    "imageHighSrc": "cards/hgss4-053-high.png"
+    "imageHighSrc": "cards/hgss4-053-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": null
+      },
+      {
+        "name": "Corrode Target",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7020",
-    "externalId": null,
+    "externalId": "hgss4-52",
     "tcgdex_id": "hgss4-52",
     "localId": "052",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "052/102",
+    "cardNumber": "52/102",
     "cardName": "Wailmer",
-    "fullDisplayName": "Wailmer 052/102 Triumphant",
+    "fullDisplayName": "Wailmer 52/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1701,18 +2092,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-052-low.png",
-    "imageHighSrc": "cards/hgss4-052-high.png"
+    "imageHighSrc": "cards/hgss4-052-high.png",
+    "attacks": [
+      {
+        "name": "Double Attack",
+        "damage": null
+      },
+      {
+        "name": "Surf",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7016",
-    "externalId": null,
+    "externalId": "hgss4-51",
     "tcgdex_id": "hgss4-51",
     "localId": "051",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "051/102",
+    "cardNumber": "51/102",
     "cardName": "Unown",
-    "fullDisplayName": "Unown 051/102 Triumphant",
+    "fullDisplayName": "Unown 51/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1734,18 +2135,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-051-low.png",
-    "imageHighSrc": "cards/hgss4-051-high.png"
+    "imageHighSrc": "cards/hgss4-051-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7012",
-    "externalId": null,
+    "externalId": "hgss4-50",
     "tcgdex_id": "hgss4-50",
     "localId": "050",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "050/102",
+    "cardNumber": "50/102",
     "cardName": "Tentacruel",
-    "fullDisplayName": "Tentacruel 050/102 Triumphant",
+    "fullDisplayName": "Tentacruel 50/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1767,18 +2174,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-050-low.png",
-    "imageHighSrc": "cards/hgss4-050-high.png"
+    "imageHighSrc": "cards/hgss4-050-high.png",
+    "attacks": [
+      {
+        "name": "Tentavolve",
+        "damage": "20"
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7008",
-    "externalId": null,
+    "externalId": "hgss4-49",
     "tcgdex_id": "hgss4-49",
     "localId": "049",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "049/102",
+    "cardNumber": "49/102",
     "cardName": "Porygon2",
-    "fullDisplayName": "Porygon2 049/102 Triumphant",
+    "fullDisplayName": "Porygon2 49/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1800,18 +2217,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-049-low.png",
-    "imageHighSrc": "cards/hgss4-049-high.png"
+    "imageHighSrc": "cards/hgss4-049-high.png",
+    "attacks": [
+      {
+        "name": "3-D Attack",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7004",
-    "externalId": null,
+    "externalId": "hgss4-48",
     "tcgdex_id": "hgss4-48",
     "localId": "048",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "048/102",
+    "cardNumber": "48/102",
     "cardName": "Piloswine",
-    "fullDisplayName": "Piloswine 048/102 Triumphant",
+    "fullDisplayName": "Piloswine 48/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1833,18 +2256,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-048-low.png",
-    "imageHighSrc": "cards/hgss4-048-high.png"
+    "imageHighSrc": "cards/hgss4-048-high.png",
+    "attacks": [
+      {
+        "name": "Blizzard",
+        "damage": "40"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7000",
-    "externalId": null,
+    "externalId": "hgss4-47",
     "tcgdex_id": "hgss4-47",
     "localId": "047",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "047/102",
+    "cardNumber": "47/102",
     "cardName": "Pidgeotto",
-    "fullDisplayName": "Pidgeotto 047/102 Triumphant",
+    "fullDisplayName": "Pidgeotto 47/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1866,18 +2299,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-047-low.png",
-    "imageHighSrc": "cards/hgss4-047-high.png"
+    "imageHighSrc": "cards/hgss4-047-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "20"
+      },
+      {
+        "name": "Twister",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6996",
-    "externalId": null,
+    "externalId": "hgss4-46",
     "tcgdex_id": "hgss4-46",
     "localId": "046",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "046/102",
+    "cardNumber": "46/102",
     "cardName": "Nidorino",
-    "fullDisplayName": "Nidorino 046/102 Triumphant",
+    "fullDisplayName": "Nidorino 46/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1899,18 +2342,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-046-low.png",
-    "imageHighSrc": "cards/hgss4-046-high.png"
+    "imageHighSrc": "cards/hgss4-046-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "30"
+      },
+      {
+        "name": "Lunge",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6992",
-    "externalId": null,
+    "externalId": "hgss4-45",
     "tcgdex_id": "hgss4-45",
     "localId": "045",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "045/102",
+    "cardNumber": "45/102",
     "cardName": "Nidorina",
-    "fullDisplayName": "Nidorina 045/102 Triumphant",
+    "fullDisplayName": "Nidorina 45/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1932,18 +2385,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-045-low.png",
-    "imageHighSrc": "cards/hgss4-045-high.png"
+    "imageHighSrc": "cards/hgss4-045-high.png",
+    "attacks": [
+      {
+        "name": "Quick Blow",
+        "damage": "20+"
+      },
+      {
+        "name": "Tail Slap",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6988",
-    "externalId": null,
+    "externalId": "hgss4-44",
     "tcgdex_id": "hgss4-44",
     "localId": "044",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "044/102",
+    "cardNumber": "44/102",
     "cardName": "Marowak",
-    "fullDisplayName": "Marowak 044/102 Triumphant",
+    "fullDisplayName": "Marowak 44/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1965,18 +2428,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-044-low.png",
-    "imageHighSrc": "cards/hgss4-044-high.png"
+    "imageHighSrc": "cards/hgss4-044-high.png",
+    "attacks": [
+      {
+        "name": "Bonemerang",
+        "damage": "60×"
+      },
+      {
+        "name": "Bone Impact",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "6984",
-    "externalId": null,
+    "externalId": "hgss4-43",
     "tcgdex_id": "hgss4-43",
     "localId": "043",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "043/102",
+    "cardNumber": "43/102",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 043/102 Triumphant",
+    "fullDisplayName": "Magneton 43/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1998,18 +2471,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-043-low.png",
-    "imageHighSrc": "cards/hgss4-043-high.png"
+    "imageHighSrc": "cards/hgss4-043-high.png",
+    "attacks": [
+      {
+        "name": "Speed Ball",
+        "damage": "20"
+      },
+      {
+        "name": "Tri Attack",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "6980",
-    "externalId": null,
+    "externalId": "hgss4-42",
     "tcgdex_id": "hgss4-42",
     "localId": "042",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "042/102",
+    "cardNumber": "42/102",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 042/102 Triumphant",
+    "fullDisplayName": "Magmar 42/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2031,18 +2514,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-042-low.png",
-    "imageHighSrc": "cards/hgss4-042-high.png"
+    "imageHighSrc": "cards/hgss4-042-high.png",
+    "attacks": [
+      {
+        "name": "Eruption",
+        "damage": "20×"
+      },
+      {
+        "name": "Combustion",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6976",
-    "externalId": null,
+    "externalId": "hgss4-41",
     "tcgdex_id": "hgss4-41",
     "localId": "041",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "041/102",
+    "cardNumber": "41/102",
     "cardName": "Magby",
-    "fullDisplayName": "Magby 041/102 Triumphant",
+    "fullDisplayName": "Magby 41/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2064,18 +2557,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-041-low.png",
-    "imageHighSrc": "cards/hgss4-041-high.png"
+    "imageHighSrc": "cards/hgss4-041-high.png",
+    "attacks": [
+      {
+        "name": "Play with Fire",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6972",
-    "externalId": null,
+    "externalId": "hgss4-40",
     "tcgdex_id": "hgss4-40",
     "localId": "040",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "040/102",
+    "cardNumber": "40/102",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 040/102 Triumphant",
+    "fullDisplayName": "Machoke 40/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2097,18 +2596,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-040-low.png",
-    "imageHighSrc": "cards/hgss4-040-high.png"
+    "imageHighSrc": "cards/hgss4-040-high.png",
+    "attacks": [
+      {
+        "name": "Knuckle Down",
+        "damage": "30"
+      },
+      {
+        "name": "Strength",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6968",
-    "externalId": null,
+    "externalId": "hgss4-39",
     "tcgdex_id": "hgss4-39",
     "localId": "039",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "039/102",
+    "cardNumber": "39/102",
     "cardName": "Luvdisc",
-    "fullDisplayName": "Luvdisc 039/102 Triumphant",
+    "fullDisplayName": "Luvdisc 39/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2130,18 +2639,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-039-low.png",
-    "imageHighSrc": "cards/hgss4-039-high.png"
+    "imageHighSrc": "cards/hgss4-039-high.png",
+    "attacks": [
+      {
+        "name": "Rendezvous Draw",
+        "damage": null
+      },
+      {
+        "name": "Distorted Wave",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6964",
-    "externalId": null,
+    "externalId": "hgss4-38",
     "tcgdex_id": "hgss4-38",
     "localId": "038",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "038/102",
+    "cardNumber": "38/102",
     "cardName": "Lickilicky",
-    "fullDisplayName": "Lickilicky 038/102 Triumphant",
+    "fullDisplayName": "Lickilicky 38/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2163,18 +2682,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-038-low.png",
-    "imageHighSrc": "cards/hgss4-038-high.png"
+    "imageHighSrc": "cards/hgss4-038-high.png",
+    "attacks": [
+      {
+        "name": "Licking Shot",
+        "damage": null
+      },
+      {
+        "name": "Stick and Absorb",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6960",
-    "externalId": null,
+    "externalId": "hgss4-37",
     "tcgdex_id": "hgss4-37",
     "localId": "037",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "037/102",
+    "cardNumber": "37/102",
     "cardName": "Lairon",
-    "fullDisplayName": "Lairon 037/102 Triumphant",
+    "fullDisplayName": "Lairon 37/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2196,18 +2725,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-037-low.png",
-    "imageHighSrc": "cards/hgss4-037-high.png"
+    "imageHighSrc": "cards/hgss4-037-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6956",
-    "externalId": null,
+    "externalId": "hgss4-36",
     "tcgdex_id": "hgss4-36",
     "localId": "036",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "036/102",
+    "cardNumber": "36/102",
     "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 036/102 Triumphant",
+    "fullDisplayName": "Kangaskhan 36/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2229,18 +2764,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-036-low.png",
-    "imageHighSrc": "cards/hgss4-036-high.png"
+    "imageHighSrc": "cards/hgss4-036-high.png",
+    "attacks": [
+      {
+        "name": "Split Spiral Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Dizzy Punch",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "6952",
-    "externalId": null,
+    "externalId": "hgss4-35",
     "tcgdex_id": "hgss4-35",
     "localId": "035",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "035/102",
+    "cardNumber": "35/102",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 035/102 Triumphant",
+    "fullDisplayName": "Haunter 35/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2262,18 +2807,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-035-low.png",
-    "imageHighSrc": "cards/hgss4-035-high.png"
+    "imageHighSrc": "cards/hgss4-035-high.png",
+    "attacks": [
+      {
+        "name": "Sneaky Placement",
+        "damage": null
+      },
+      {
+        "name": "Sleep Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6948",
-    "externalId": null,
+    "externalId": "hgss4-34",
     "tcgdex_id": "hgss4-34",
     "localId": "034",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "034/102",
+    "cardNumber": "34/102",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 034/102 Triumphant",
+    "fullDisplayName": "Electrode 34/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2295,18 +2850,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-034-low.png",
-    "imageHighSrc": "cards/hgss4-034-high.png"
+    "imageHighSrc": "cards/hgss4-034-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "20"
+      },
+      {
+        "name": "Lightning Strike",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "6944",
-    "externalId": null,
+    "externalId": "hgss4-33",
     "tcgdex_id": "hgss4-33",
     "localId": "033",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "033/102",
+    "cardNumber": "33/102",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 033/102 Triumphant",
+    "fullDisplayName": "Electabuzz 33/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2328,18 +2893,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-033-low.png",
-    "imageHighSrc": "cards/hgss4-033-high.png"
+    "imageHighSrc": "cards/hgss4-033-high.png",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Shock Bolt",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6940",
-    "externalId": null,
+    "externalId": "hgss4-32",
     "tcgdex_id": "hgss4-32",
     "localId": "032",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "032/102",
+    "cardNumber": "32/102",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 032/102 Triumphant",
+    "fullDisplayName": "Dragonair 32/102 Triumphant",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2361,18 +2936,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-032-low.png",
-    "imageHighSrc": "cards/hgss4-032-high.png"
+    "imageHighSrc": "cards/hgss4-032-high.png",
+    "attacks": [
+      {
+        "name": "Search and Invite",
+        "damage": null
+      },
+      {
+        "name": "Slam",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "6936",
-    "externalId": null,
+    "externalId": "hgss4-31",
     "tcgdex_id": "hgss4-31",
     "localId": "031",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "031/102",
+    "cardNumber": "31/102",
     "cardName": "Wailord",
-    "fullDisplayName": "Wailord 031/102 Triumphant",
+    "fullDisplayName": "Wailord 31/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2394,18 +2979,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-031-low.png",
-    "imageHighSrc": "cards/hgss4-031-high.png"
+    "imageHighSrc": "cards/hgss4-031-high.png",
+    "attacks": [
+      {
+        "name": "Underwater Dive",
+        "damage": null
+      },
+      {
+        "name": "Swallow Up",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "6932",
-    "externalId": null,
+    "externalId": "hgss4-30",
     "tcgdex_id": "hgss4-30",
     "localId": "030",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "030/102",
+    "cardNumber": "30/102",
     "cardName": "Sharpedo",
-    "fullDisplayName": "Sharpedo 030/102 Triumphant",
+    "fullDisplayName": "Sharpedo 30/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2427,18 +3022,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-030-low.png",
-    "imageHighSrc": "cards/hgss4-030-high.png"
+    "imageHighSrc": "cards/hgss4-030-high.png",
+    "attacks": [
+      {
+        "name": "Strip Bare",
+        "damage": "20"
+      },
+      {
+        "name": "Rage",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "6928",
-    "externalId": null,
+    "externalId": "hgss4-29",
     "tcgdex_id": "hgss4-29",
     "localId": "029",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "029/102",
+    "cardNumber": "29/102",
     "cardName": "Pidgeot",
-    "fullDisplayName": "Pidgeot 029/102 Triumphant",
+    "fullDisplayName": "Pidgeot 29/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2460,18 +3065,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-029-low.png",
-    "imageHighSrc": "cards/hgss4-029-high.png"
+    "imageHighSrc": "cards/hgss4-029-high.png",
+    "attacks": [
+      {
+        "name": "Headwind",
+        "damage": "20"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "6924",
-    "externalId": null,
+    "externalId": "hgss4-28",
     "tcgdex_id": "hgss4-28",
     "localId": "028",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "028/102",
+    "cardNumber": "28/102",
     "cardName": "Nidoqueen",
-    "fullDisplayName": "Nidoqueen 028/102 Triumphant",
+    "fullDisplayName": "Nidoqueen 28/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2493,18 +3108,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-028-low.png",
-    "imageHighSrc": "cards/hgss4-028-high.png"
+    "imageHighSrc": "cards/hgss4-028-high.png",
+    "attacks": [
+      {
+        "name": "Return",
+        "damage": "30"
+      },
+      {
+        "name": "Prize Count",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "6920",
-    "externalId": null,
+    "externalId": "hgss4-27",
     "tcgdex_id": "hgss4-27",
     "localId": "027",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "027/102",
+    "cardNumber": "27/102",
     "cardName": "Magmortar",
-    "fullDisplayName": "Magmortar 027/102 Triumphant",
+    "fullDisplayName": "Magmortar 27/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2526,18 +3151,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-027-low.png",
-    "imageHighSrc": "cards/hgss4-027-high.png"
+    "imageHighSrc": "cards/hgss4-027-high.png",
+    "attacks": [
+      {
+        "name": "Top Burner",
+        "damage": null
+      },
+      {
+        "name": "Burst Punch",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6916",
-    "externalId": null,
+    "externalId": "hgss4-26",
     "tcgdex_id": "hgss4-26",
     "localId": "026",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "026/102",
+    "cardNumber": "26/102",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 026/102 Triumphant",
+    "fullDisplayName": "Machamp 26/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2559,18 +3194,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-026-low.png",
-    "imageHighSrc": "cards/hgss4-026-high.png"
+    "imageHighSrc": "cards/hgss4-026-high.png",
+    "attacks": [
+      {
+        "name": "Vital Throw",
+        "damage": "40+"
+      },
+      {
+        "name": "Hundred Furious Punches",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "6912",
-    "externalId": null,
+    "externalId": "hgss4-25",
     "tcgdex_id": "hgss4-25",
     "localId": "025",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "025/102",
+    "cardNumber": "25/102",
     "cardName": "Lunatone",
-    "fullDisplayName": "Lunatone 025/102 Triumphant",
+    "fullDisplayName": "Lunatone 25/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2592,18 +3237,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-025-low.png",
-    "imageHighSrc": "cards/hgss4-025-high.png"
+    "imageHighSrc": "cards/hgss4-025-high.png",
+    "attacks": [
+      {
+        "name": "Lunar Blast",
+        "damage": "20"
+      },
+      {
+        "name": "Selfdestruct",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6908",
-    "externalId": null,
+    "externalId": "hgss4-24",
     "tcgdex_id": "hgss4-24",
     "localId": "024",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "024/102",
+    "cardNumber": "24/102",
     "cardName": "Kricketune",
-    "fullDisplayName": "Kricketune 024/102 Triumphant",
+    "fullDisplayName": "Kricketune 24/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2625,18 +3280,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-024-low.png",
-    "imageHighSrc": "cards/hgss4-024-high.png"
+    "imageHighSrc": "cards/hgss4-024-high.png",
+    "attacks": [
+      {
+        "name": "Entrancing Melody",
+        "damage": "30"
+      },
+      {
+        "name": "Fury Cutter",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "6904",
-    "externalId": null,
+    "externalId": "hgss4-23",
     "tcgdex_id": "hgss4-23",
     "localId": "023",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "023/102",
+    "cardNumber": "23/102",
     "cardName": "Grumpig",
-    "fullDisplayName": "Grumpig 023/102 Triumphant",
+    "fullDisplayName": "Grumpig 23/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2658,18 +3323,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-023-low.png",
-    "imageHighSrc": "cards/hgss4-023-high.png"
+    "imageHighSrc": "cards/hgss4-023-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Lock",
+        "damage": "20"
+      },
+      {
+        "name": "Bench Manipulation",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "6899",
-    "externalId": null,
+    "externalId": "hgss4-22",
     "tcgdex_id": "hgss4-22",
     "localId": "022",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "022/102",
+    "cardNumber": "22/102",
     "cardName": "Golduck",
-    "fullDisplayName": "Golduck 022/102 Triumphant",
+    "fullDisplayName": "Golduck 22/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2691,18 +3366,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-022-low.png",
-    "imageHighSrc": "cards/hgss4-022-high.png"
+    "imageHighSrc": "cards/hgss4-022-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Splash",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "6894",
-    "externalId": null,
+    "externalId": "hgss4-21",
     "tcgdex_id": "hgss4-21",
     "localId": "021",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "021/102",
+    "cardNumber": "21/102",
     "cardName": "Elekid",
-    "fullDisplayName": "Elekid 021/102 Triumphant",
+    "fullDisplayName": "Elekid 21/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2724,18 +3405,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-021-low.png",
-    "imageHighSrc": "cards/hgss4-021-high.png"
+    "imageHighSrc": "cards/hgss4-021-high.png",
+    "attacks": [
+      {
+        "name": "Sparking Ball",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6889",
-    "externalId": null,
+    "externalId": "hgss4-20",
     "tcgdex_id": "hgss4-20",
     "localId": "020",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "020/102",
+    "cardNumber": "20/102",
     "cardName": "Electivire",
-    "fullDisplayName": "Electivire 020/102 Triumphant",
+    "fullDisplayName": "Electivire 20/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2757,18 +3444,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-020-low.png",
-    "imageHighSrc": "cards/hgss4-020-high.png"
+    "imageHighSrc": "cards/hgss4-020-high.png",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "30"
+      },
+      {
+        "name": "Thunder Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6884",
-    "externalId": null,
+    "externalId": "hgss4-19",
     "tcgdex_id": "hgss4-19",
     "localId": "019",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "019/102",
+    "cardNumber": "19/102",
     "cardName": "Dugtrio",
-    "fullDisplayName": "Dugtrio 019/102 Triumphant",
+    "fullDisplayName": "Dugtrio 19/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2790,18 +3487,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-019-low.png",
-    "imageHighSrc": "cards/hgss4-019-high.png"
+    "imageHighSrc": "cards/hgss4-019-high.png",
+    "attacks": [
+      {
+        "name": "Dig",
+        "damage": "30"
+      },
+      {
+        "name": "Sand Impact",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "6879",
-    "externalId": null,
+    "externalId": "hgss4-18",
     "tcgdex_id": "hgss4-18",
     "localId": "018",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "018/102",
+    "cardNumber": "18/102",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 018/102 Triumphant",
+    "fullDisplayName": "Dragonite 18/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2823,18 +3530,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-018-low.png",
-    "imageHighSrc": "cards/hgss4-018-high.png"
+    "imageHighSrc": "cards/hgss4-018-high.png",
+    "attacks": [
+      {
+        "name": "Calming Wind",
+        "damage": "50"
+      },
+      {
+        "name": "Dragon Stamp",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6874",
-    "externalId": null,
+    "externalId": "hgss4-17",
     "tcgdex_id": "hgss4-17",
     "localId": "017",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "017/102",
+    "cardNumber": "17/102",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 017/102 Triumphant",
+    "fullDisplayName": "Ditto 17/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2856,18 +3573,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-017-low.png",
-    "imageHighSrc": "cards/hgss4-017-high.png"
+    "imageHighSrc": "cards/hgss4-017-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Point",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6869",
-    "externalId": null,
+    "externalId": "hgss4-16",
     "tcgdex_id": "hgss4-16",
     "localId": "016",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "016/102",
+    "cardNumber": "16/102",
     "cardName": "Carnivine",
-    "fullDisplayName": "Carnivine 016/102 Triumphant",
+    "fullDisplayName": "Carnivine 16/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2889,18 +3612,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-016-low.png",
-    "imageHighSrc": "cards/hgss4-016-high.png"
+    "imageHighSrc": "cards/hgss4-016-high.png",
+    "attacks": [
+      {
+        "name": "Saliva Lure",
+        "damage": null
+      },
+      {
+        "name": "Stick and Absorb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6864",
-    "externalId": null,
+    "externalId": "hgss4-15",
     "tcgdex_id": "hgss4-15",
     "localId": "015",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "015/102",
+    "cardNumber": "15/102",
     "cardName": "Bronzong",
-    "fullDisplayName": "Bronzong 015/102 Triumphant",
+    "fullDisplayName": "Bronzong 15/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2922,18 +3655,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-015-low.png",
-    "imageHighSrc": "cards/hgss4-015-high.png"
+    "imageHighSrc": "cards/hgss4-015-high.png",
+    "attacks": [
+      {
+        "name": "Legend Ceremony",
+        "damage": null
+      },
+      {
+        "name": "Reflect Energy",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6859",
-    "externalId": null,
+    "externalId": "hgss4-14",
     "tcgdex_id": "hgss4-14",
     "localId": "014",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "014/102",
+    "cardNumber": "14/102",
     "cardName": "Banette",
-    "fullDisplayName": "Banette 014/102 Triumphant",
+    "fullDisplayName": "Banette 14/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2955,18 +3698,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-014-low.png",
-    "imageHighSrc": "cards/hgss4-014-high.png"
+    "imageHighSrc": "cards/hgss4-014-high.png",
+    "attacks": [
+      {
+        "name": "Lost Crush",
+        "damage": null
+      },
+      {
+        "name": "Breakdown",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6854",
-    "externalId": null,
+    "externalId": "hgss4-13",
     "tcgdex_id": "hgss4-13",
     "localId": "013",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "013/102",
+    "cardNumber": "13/102",
     "cardName": "Ambipom",
-    "fullDisplayName": "Ambipom 013/102 Triumphant",
+    "fullDisplayName": "Ambipom 13/102 Triumphant",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2988,18 +3741,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-013-low.png",
-    "imageHighSrc": "cards/hgss4-013-high.png"
+    "imageHighSrc": "cards/hgss4-013-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": "20"
+      },
+      {
+        "name": "Tail Spank",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6848",
-    "externalId": null,
+    "externalId": "hgss4-12",
     "tcgdex_id": "hgss4-12",
     "localId": "012",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "012/102",
+    "cardNumber": "12/102",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel 012/102 Triumphant",
+    "fullDisplayName": "Victreebel 12/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3021,18 +3784,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-012-low.png",
-    "imageHighSrc": "cards/hgss4-012-high.png"
+    "imageHighSrc": "cards/hgss4-012-high.png",
+    "attacks": [
+      {
+        "name": "Acidic Drain",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6843",
-    "externalId": null,
+    "externalId": "hgss4-11",
     "tcgdex_id": "hgss4-11",
     "localId": "011",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "011/102",
+    "cardNumber": "11/102",
     "cardName": "Venomoth",
-    "fullDisplayName": "Venomoth 011/102 Triumphant",
+    "fullDisplayName": "Venomoth 11/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3054,18 +3823,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-011-low.png",
-    "imageHighSrc": "cards/hgss4-011-high.png"
+    "imageHighSrc": "cards/hgss4-011-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6836",
-    "externalId": null,
+    "externalId": "hgss4-10",
     "tcgdex_id": "hgss4-10",
     "localId": "010",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "010/102",
+    "cardNumber": "10/102",
     "cardName": "Spiritomb",
-    "fullDisplayName": "Spiritomb 010/102 Triumphant",
+    "fullDisplayName": "Spiritomb 10/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3087,18 +3862,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-010-low.png",
-    "imageHighSrc": "cards/hgss4-010-high.png"
+    "imageHighSrc": "cards/hgss4-010-high.png",
+    "attacks": [
+      {
+        "name": "Color Tag",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6829",
-    "externalId": null,
+    "externalId": "hgss4-9",
     "tcgdex_id": "hgss4-9",
     "localId": "009",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "009/102",
+    "cardNumber": "9/102",
     "cardName": "Solrock",
-    "fullDisplayName": "Solrock 009/102 Triumphant",
+    "fullDisplayName": "Solrock 9/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3120,18 +3901,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-009-low.png",
-    "imageHighSrc": "cards/hgss4-009-high.png"
+    "imageHighSrc": "cards/hgss4-009-high.png",
+    "attacks": [
+      {
+        "name": "Sun Flash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6822",
-    "externalId": null,
+    "externalId": "hgss4-8",
     "tcgdex_id": "hgss4-8",
     "localId": "008",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "008/102",
+    "cardNumber": "8/102",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 008/102 Triumphant",
+    "fullDisplayName": "Rapidash 8/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3153,18 +3940,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-008-low.png",
-    "imageHighSrc": "cards/hgss4-008-high.png"
+    "imageHighSrc": "cards/hgss4-008-high.png",
+    "attacks": [
+      {
+        "name": "Ring of Fire",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6815",
-    "externalId": null,
+    "externalId": "hgss4-7",
     "tcgdex_id": "hgss4-7",
     "localId": "007",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "007/102",
+    "cardNumber": "7/102",
     "cardName": "Porygon-Z",
-    "fullDisplayName": "Porygon-Z 007/102 Triumphant",
+    "fullDisplayName": "Porygon-Z 7/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3186,18 +3979,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-007-low.png",
-    "imageHighSrc": "cards/hgss4-007-high.png"
+    "imageHighSrc": "cards/hgss4-007-high.png",
+    "attacks": [
+      {
+        "name": "Suspicious Beam β",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6808",
-    "externalId": null,
+    "externalId": "hgss4-6",
     "tcgdex_id": "hgss4-6",
     "localId": "006",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "006/102",
+    "cardNumber": "6/102",
     "cardName": "Nidoking",
-    "fullDisplayName": "Nidoking 006/102 Triumphant",
+    "fullDisplayName": "Nidoking 6/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3219,18 +4018,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-006-low.png",
-    "imageHighSrc": "cards/hgss4-006-high.png"
+    "imageHighSrc": "cards/hgss4-006-high.png",
+    "attacks": [
+      {
+        "name": "Venomous Horn",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6799",
-    "externalId": null,
+    "externalId": "hgss4-5",
     "tcgdex_id": "hgss4-5",
     "localId": "005",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "005/102",
+    "cardNumber": "5/102",
     "cardName": "Mamoswine",
-    "fullDisplayName": "Mamoswine 005/102 Triumphant",
+    "fullDisplayName": "Mamoswine 5/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3252,18 +4057,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-005-low.png",
-    "imageHighSrc": "cards/hgss4-005-high.png"
+    "imageHighSrc": "cards/hgss4-005-high.png",
+    "attacks": [
+      {
+        "name": "Icy Wind",
+        "damage": "40"
+      },
+      {
+        "name": "Snowstorm",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "6791",
-    "externalId": null,
+    "externalId": "hgss4-4",
     "tcgdex_id": "hgss4-4",
     "localId": "004",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "004/102",
+    "cardNumber": "4/102",
     "cardName": "Drapion",
-    "fullDisplayName": "Drapion 004/102 Triumphant",
+    "fullDisplayName": "Drapion 4/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3285,18 +4100,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-004-low.png",
-    "imageHighSrc": "cards/hgss4-004-high.png"
+    "imageHighSrc": "cards/hgss4-004-high.png",
+    "attacks": [
+      {
+        "name": "Toxic Fang",
+        "damage": "40"
+      },
+      {
+        "name": "Land Crush",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6778",
-    "externalId": null,
+    "externalId": "hgss4-3",
     "tcgdex_id": "hgss4-3",
     "localId": "003",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "003/102",
+    "cardNumber": "3/102",
     "cardName": "Celebi",
-    "fullDisplayName": "Celebi 003/102 Triumphant",
+    "fullDisplayName": "Celebi 3/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3318,18 +4143,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-003-low.png",
-    "imageHighSrc": "cards/hgss4-003-high.png"
+    "imageHighSrc": "cards/hgss4-003-high.png",
+    "attacks": [
+      {
+        "name": "Future Sight",
+        "damage": null
+      },
+      {
+        "name": "Leaf Bind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6763",
-    "externalId": null,
+    "externalId": "hgss4-2",
     "tcgdex_id": "hgss4-2",
     "localId": "002",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "002/102",
+    "cardNumber": "2/102",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 002/102 Triumphant",
+    "fullDisplayName": "Altaria 2/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3351,18 +4186,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-002-low.png",
-    "imageHighSrc": "cards/hgss4-002-high.png"
+    "imageHighSrc": "cards/hgss4-002-high.png",
+    "attacks": [
+      {
+        "name": "Midnight Eyes",
+        "damage": "20"
+      },
+      {
+        "name": "Stadium Power",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "6745",
-    "externalId": null,
+    "externalId": "hgss4-1",
     "tcgdex_id": "hgss4-1",
     "localId": "001",
     "setCode": "hgss4",
     "setTcgdexId": "hgss4",
-    "cardNumber": "001/102",
+    "cardNumber": "1/102",
     "cardName": "Aggron",
-    "fullDisplayName": "Aggron 001/102 Triumphant",
+    "fullDisplayName": "Aggron 1/102 Triumphant",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3384,6 +4229,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss4-001-low.png",
-    "imageHighSrc": "cards/hgss4-001-high.png"
+    "imageHighSrc": "cards/hgss4-001-high.png",
+    "attacks": [
+      {
+        "name": "Second Strike",
+        "damage": "40"
+      },
+      {
+        "name": "Guard Claw",
+        "damage": "60"
+      }
+    ]
   }
 ]

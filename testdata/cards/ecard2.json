@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "5249",
-    "externalId": null,
+    "externalId": "ecard2-H32",
     "tcgdex_id": "ecard2-H32",
     "localId": "H32",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H32/147",
+    "cardNumber": "H32/H32",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos H32/147 Aquapolis",
+    "fullDisplayName": "Zapdos H32/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H32-low.png",
-    "imageHighSrc": "cards/ecard2-H32-high.png"
+    "imageHighSrc": "cards/ecard2-H32-high.png",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "10"
+      },
+      {
+        "name": "Lightning Storm",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5247",
-    "externalId": null,
+    "externalId": "ecard2-H31",
     "tcgdex_id": "ecard2-H31",
     "localId": "H31",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H31/147",
+    "cardNumber": "H31/H32",
     "cardName": "Vileplume",
-    "fullDisplayName": "Vileplume H31/147 Aquapolis",
+    "fullDisplayName": "Vileplume H31/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H31-low.png",
-    "imageHighSrc": "cards/ecard2-H31-high.png"
+    "imageHighSrc": "cards/ecard2-H31-high.png",
+    "attacks": [
+      {
+        "name": "Poison Scent",
+        "damage": null
+      },
+      {
+        "name": "Addictive Pollen",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5245",
-    "externalId": null,
+    "externalId": "ecard2-H30",
     "tcgdex_id": "ecard2-H30",
     "localId": "H30",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H30/147",
+    "cardNumber": "H30/H32",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel H30/147 Aquapolis",
+    "fullDisplayName": "Victreebel H30/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -96,18 +116,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H30-low.png",
-    "imageHighSrc": "cards/ecard2-H30-high.png"
+    "imageHighSrc": "cards/ecard2-H30-high.png",
+    "attacks": [
+      {
+        "name": "Corrosive Acid",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5243",
-    "externalId": null,
+    "externalId": "ecard2-H29",
     "tcgdex_id": "ecard2-H29",
     "localId": "H29",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H29/147",
+    "cardNumber": "H29/H32",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon H29/147 Aquapolis",
+    "fullDisplayName": "Umbreon H29/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -129,18 +155,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H29-low.png",
-    "imageHighSrc": "cards/ecard2-H29-high.png"
+    "imageHighSrc": "cards/ecard2-H29-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Bind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5241",
-    "externalId": null,
+    "externalId": "ecard2-H28",
     "tcgdex_id": "ecard2-H28",
     "localId": "H28",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H28/147",
+    "cardNumber": "H28/H32",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar H28/147 Aquapolis",
+    "fullDisplayName": "Tyranitar H28/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -162,18 +194,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H28-low.png",
-    "imageHighSrc": "cards/ecard2-H28-high.png"
+    "imageHighSrc": "cards/ecard2-H28-high.png",
+    "attacks": [
+      {
+        "name": "Destructive Roar",
+        "damage": null
+      },
+      {
+        "name": "Tail Slap",
+        "damage": "30"
+      },
+      {
+        "name": "Gigacrush",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5239",
-    "externalId": null,
+    "externalId": "ecard2-H27",
     "tcgdex_id": "ecard2-H27",
     "localId": "H27",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H27/147",
+    "cardNumber": "H27/H32",
     "cardName": "Togetic",
-    "fullDisplayName": "Togetic H27/147 Aquapolis",
+    "fullDisplayName": "Togetic H27/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -195,18 +241,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H27-low.png",
-    "imageHighSrc": "cards/ecard2-H27-high.png"
+    "imageHighSrc": "cards/ecard2-H27-high.png",
+    "attacks": [
+      {
+        "name": "Mini-Metronome",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5237",
-    "externalId": null,
+    "externalId": "ecard2-H26",
     "tcgdex_id": "ecard2-H26",
     "localId": "H26",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H26/147",
+    "cardNumber": "H26/H32",
     "cardName": "Tentacruel",
-    "fullDisplayName": "Tentacruel H26/147 Aquapolis",
+    "fullDisplayName": "Tentacruel H26/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -228,18 +280,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H26-low.png",
-    "imageHighSrc": "cards/ecard2-H26-high.png"
+    "imageHighSrc": "cards/ecard2-H26-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5235",
-    "externalId": null,
+    "externalId": "ecard2-H25",
     "tcgdex_id": "ecard2-H25",
     "localId": "H25",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H25/147",
+    "cardNumber": "H25/H32",
     "cardName": "Suicune",
-    "fullDisplayName": "Suicune H25/147 Aquapolis",
+    "fullDisplayName": "Suicune H25/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +319,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H25-low.png",
-    "imageHighSrc": "cards/ecard2-H25-high.png"
+    "imageHighSrc": "cards/ecard2-H25-high.png",
+    "attacks": [
+      {
+        "name": "Hypno Wave",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5233",
-    "externalId": null,
+    "externalId": "ecard2-H24",
     "tcgdex_id": "ecard2-H24",
     "localId": "H24",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H24/147",
+    "cardNumber": "H24/H32",
     "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo H24/147 Aquapolis",
+    "fullDisplayName": "Sudowoodo H24/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +358,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H24-low.png",
-    "imageHighSrc": "cards/ecard2-H24-high.png"
+    "imageHighSrc": "cards/ecard2-H24-high.png",
+    "attacks": [
+      {
+        "name": "Copy",
+        "damage": null
+      },
+      {
+        "name": "Energy Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5231",
-    "externalId": null,
+    "externalId": "ecard2-H23",
     "tcgdex_id": "ecard2-H23",
     "localId": "H23",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H23/147",
+    "cardNumber": "H23/H32",
     "cardName": "Steelix",
-    "fullDisplayName": "Steelix H23/147 Aquapolis",
+    "fullDisplayName": "Steelix H23/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -327,18 +401,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H23-low.png",
-    "imageHighSrc": "cards/ecard2-H23-high.png"
+    "imageHighSrc": "cards/ecard2-H23-high.png",
+    "attacks": [
+      {
+        "name": "Earth Rift",
+        "damage": "10"
+      },
+      {
+        "name": "Iron Smash",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5229",
-    "externalId": null,
+    "externalId": "ecard2-H22",
     "tcgdex_id": "ecard2-H22",
     "localId": "H22",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H22/147",
+    "cardNumber": "H22/H32",
     "cardName": "Slowking",
-    "fullDisplayName": "Slowking H22/147 Aquapolis",
+    "fullDisplayName": "Slowking H22/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -360,18 +444,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H22-low.png",
-    "imageHighSrc": "cards/ecard2-H22-high.png"
+    "imageHighSrc": "cards/ecard2-H22-high.png",
+    "attacks": [
+      {
+        "name": "Bursting Hand",
+        "damage": "10×"
+      },
+      {
+        "name": "Shuffle Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5227",
-    "externalId": null,
+    "externalId": "ecard2-H21",
     "tcgdex_id": "ecard2-H21",
     "localId": "H21",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H21/147",
+    "cardNumber": "H21/H32",
     "cardName": "Scizor",
-    "fullDisplayName": "Scizor H21/147 Aquapolis",
+    "fullDisplayName": "Scizor H21/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -393,18 +487,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H21-low.png",
-    "imageHighSrc": "cards/ecard2-H21-high.png"
+    "imageHighSrc": "cards/ecard2-H21-high.png",
+    "attacks": [
+      {
+        "name": "Snatch",
+        "damage": "20"
+      },
+      {
+        "name": "Heavy Metal",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5225",
-    "externalId": null,
+    "externalId": "ecard2-H20",
     "tcgdex_id": "ecard2-H20",
     "localId": "H20",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H20/147",
+    "cardNumber": "H20/H32",
     "cardName": "Octillery",
-    "fullDisplayName": "Octillery H20/147 Aquapolis",
+    "fullDisplayName": "Octillery H20/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -426,18 +530,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H20-low.png",
-    "imageHighSrc": "cards/ecard2-H20-high.png"
+    "imageHighSrc": "cards/ecard2-H20-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5223",
-    "externalId": null,
+    "externalId": "ecard2-H19",
     "tcgdex_id": "ecard2-H19",
     "localId": "H19",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H19/147",
+    "cardNumber": "H19/H32",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales H19/147 Aquapolis",
+    "fullDisplayName": "Ninetales H19/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -459,18 +569,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H19-low.png",
-    "imageHighSrc": "cards/ecard2-H19-high.png"
+    "imageHighSrc": "cards/ecard2-H19-high.png",
+    "attacks": [
+      {
+        "name": "Miracle Tail",
+        "damage": "10"
+      },
+      {
+        "name": "Roasting Heat",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5221",
-    "externalId": null,
+    "externalId": "ecard2-H18",
     "tcgdex_id": "ecard2-H18",
     "localId": "H18",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H18/147",
+    "cardNumber": "H18/H32",
     "cardName": "Nidoking",
-    "fullDisplayName": "Nidoking H18/147 Aquapolis",
+    "fullDisplayName": "Nidoking H18/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -492,18 +612,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H18-low.png",
-    "imageHighSrc": "cards/ecard2-H18-high.png"
+    "imageHighSrc": "cards/ecard2-H18-high.png",
+    "attacks": [
+      {
+        "name": "Giant Horn",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5218",
-    "externalId": null,
+    "externalId": "ecard2-H17",
     "tcgdex_id": "ecard2-H17",
     "localId": "H17",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H17/147",
+    "cardNumber": "H17/H32",
     "cardName": "Muk",
-    "fullDisplayName": "Muk H17/147 Aquapolis",
+    "fullDisplayName": "Muk H17/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -525,18 +651,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H17-low.png",
-    "imageHighSrc": "cards/ecard2-H17-high.png"
+    "imageHighSrc": "cards/ecard2-H17-high.png",
+    "attacks": [
+      {
+        "name": "Burning Sludge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5215",
-    "externalId": null,
+    "externalId": "ecard2-H16",
     "tcgdex_id": "ecard2-H16",
     "localId": "H16",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H16/147",
+    "cardNumber": "H16/H32",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton H16/147 Aquapolis",
+    "fullDisplayName": "Magneton H16/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -558,18 +690,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H16-low.png",
-    "imageHighSrc": "cards/ecard2-H16-high.png"
+    "imageHighSrc": "cards/ecard2-H16-high.png",
+    "attacks": [
+      {
+        "name": "Steel Wave",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5212",
-    "externalId": null,
+    "externalId": "ecard2-H15",
     "tcgdex_id": "ecard2-H15",
     "localId": "H15",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H15/147",
+    "cardNumber": "H15/H32",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn H15/147 Aquapolis",
+    "fullDisplayName": "Lanturn H15/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -591,18 +729,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H15-low.png",
-    "imageHighSrc": "cards/ecard2-H15-high.png"
+    "imageHighSrc": "cards/ecard2-H15-high.png",
+    "attacks": [
+      {
+        "name": "Electric Tackle",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5209",
-    "externalId": null,
+    "externalId": "ecard2-H14",
     "tcgdex_id": "ecard2-H14",
     "localId": "H14",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H14/147",
+    "cardNumber": "H14/H32",
     "cardName": "Kingdra",
-    "fullDisplayName": "Kingdra H14/147 Aquapolis",
+    "fullDisplayName": "Kingdra H14/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -624,18 +768,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H14-low.png",
-    "imageHighSrc": "cards/ecard2-H14-high.png"
+    "imageHighSrc": "cards/ecard2-H14-high.png",
+    "attacks": [
+      {
+        "name": "Rapids",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5206",
-    "externalId": null,
+    "externalId": "ecard2-H13",
     "tcgdex_id": "ecard2-H13",
     "localId": "H13",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H13/147",
+    "cardNumber": "H13/H32",
     "cardName": "Jumpluff",
-    "fullDisplayName": "Jumpluff H13/147 Aquapolis",
+    "fullDisplayName": "Jumpluff H13/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -657,18 +807,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H13-low.png",
-    "imageHighSrc": "cards/ecard2-H13-high.png"
+    "imageHighSrc": "cards/ecard2-H13-high.png",
+    "attacks": [
+      {
+        "name": "Cotton Punch",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "5203",
-    "externalId": null,
+    "externalId": "ecard2-H12",
     "tcgdex_id": "ecard2-H12",
     "localId": "H12",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H12/147",
+    "cardNumber": "H12/H32",
     "cardName": "Hypno",
-    "fullDisplayName": "Hypno H12/147 Aquapolis",
+    "fullDisplayName": "Hypno H12/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -690,18 +846,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H12-low.png",
-    "imageHighSrc": "cards/ecard2-H12-high.png"
+    "imageHighSrc": "cards/ecard2-H12-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Aura",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5201",
-    "externalId": null,
+    "externalId": "ecard2-H11",
     "tcgdex_id": "ecard2-H11",
     "localId": "H11",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H11/147",
+    "cardNumber": "H11/H32",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom H11/147 Aquapolis",
+    "fullDisplayName": "Houndoom H11/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -723,18 +885,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H11-low.png",
-    "imageHighSrc": "cards/ecard2-H11-high.png"
+    "imageHighSrc": "cards/ecard2-H11-high.png",
+    "attacks": [
+      {
+        "name": "Fireworks",
+        "damage": "30"
+      },
+      {
+        "name": "Dark Impact",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5198",
-    "externalId": null,
+    "externalId": "ecard2-H10",
     "tcgdex_id": "ecard2-H10",
     "localId": "H10",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "H10/147",
+    "cardNumber": "H10/H32",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor H10/147 Aquapolis",
+    "fullDisplayName": "Exeggutor H10/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -756,11 +928,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-H10-low.png",
-    "imageHighSrc": "cards/ecard2-H10-high.png"
+    "imageHighSrc": "cards/ecard2-H10-high.png",
+    "attacks": [
+      {
+        "name": "Super Eggsplosion",
+        "damage": "40×"
+      },
+      {
+        "name": "Called Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5168",
-    "externalId": null,
+    "externalId": "ecard2-150",
     "tcgdex_id": "ecard2-150",
     "localId": "150",
     "setCode": "ecard2",
@@ -789,11 +971,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-150-low.png",
-    "imageHighSrc": "cards/ecard2-150-high.png"
+    "imageHighSrc": "cards/ecard2-150-high.png",
+    "attacks": [
+      {
+        "name": "Poison Horn",
+        "damage": "20"
+      },
+      {
+        "name": "Rolling Thunder",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5164",
-    "externalId": null,
+    "externalId": "ecard2-149",
     "tcgdex_id": "ecard2-149",
     "localId": "149",
     "setCode": "ecard2",
@@ -822,11 +1014,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-149-low.png",
-    "imageHighSrc": "cards/ecard2-149-high.png"
+    "imageHighSrc": "cards/ecard2-149-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "10×"
+      },
+      {
+        "name": "Steam Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5160",
-    "externalId": null,
+    "externalId": "ecard2-148",
     "tcgdex_id": "ecard2-148",
     "localId": "148",
     "setCode": "ecard2",
@@ -855,11 +1057,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-148-low.png",
-    "imageHighSrc": "cards/ecard2-148-high.png"
+    "imageHighSrc": "cards/ecard2-148-high.png",
+    "attacks": [
+      {
+        "name": "Aquabomb",
+        "damage": "40"
+      },
+      {
+        "name": "Dual Burn",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5156",
-    "externalId": null,
+    "externalId": "ecard2-147",
     "tcgdex_id": "ecard2-147",
     "localId": "147",
     "setCode": "ecard2",
@@ -884,11 +1096,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-147-low.png",
-    "imageHighSrc": "cards/ecard2-147-high.png"
+    "imageHighSrc": "cards/ecard2-147-high.png",
+    "rules": "Warp Energy provides 1 Colorless Energy. When you attach Warp Energy from your hand to your Active Pokémon, switch your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "5152",
-    "externalId": null,
+    "externalId": "ecard2-146",
     "tcgdex_id": "ecard2-146",
     "localId": "146",
     "setCode": "ecard2",
@@ -913,11 +1126,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-146-low.png",
-    "imageHighSrc": "cards/ecard2-146-high.png"
+    "imageHighSrc": "cards/ecard2-146-high.png",
+    "rules": "Crystal Energy provides 1 Energy of all types (colors) of basic Energy cards attached to the Pokémon Crystal Energy is attached to. If there are no basic Energy cards attached to the Pokémon Crystal Energy is attached to, Crystal Energy provides Colorless Energy."
   },
   {
     "masterCardId": "5147",
-    "externalId": null,
+    "externalId": "ecard2-145",
     "tcgdex_id": "ecard2-145",
     "localId": "145",
     "setCode": "ecard2",
@@ -942,11 +1156,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-145-low.png",
-    "imageHighSrc": "cards/ecard2-145-high.png"
+    "imageHighSrc": "cards/ecard2-145-high.png",
+    "rules": "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. When the Pokémon Boost Energy is attached to is no longer an Evolved Pokémon, discard Boost Energy."
   },
   {
     "masterCardId": "5142",
-    "externalId": null,
+    "externalId": "ecard2-144",
     "tcgdex_id": "ecard2-144",
     "localId": "144",
     "setCode": "ecard2",
@@ -971,11 +1186,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-144-low.png",
-    "imageHighSrc": "cards/ecard2-144-high.png"
+    "imageHighSrc": "cards/ecard2-144-high.png",
+    "rules": "Attach Rainbow Energy to 1 of your Pokémon. While in play, Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play.) When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon."
   },
   {
     "masterCardId": "5137",
-    "externalId": null,
+    "externalId": "ecard2-143",
     "tcgdex_id": "ecard2-143",
     "localId": "143",
     "setCode": "ecard2",
@@ -1000,11 +1216,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-143-low.png",
-    "imageHighSrc": "cards/ecard2-143-high.png"
+    "imageHighSrc": "cards/ecard2-143-high.png",
+    "rules": "Damage done to the Pokémon Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). If the Pokémon Metal Energy is attached to isn't Metal, whenever it damages a Pokémon, reduce that damage by 10 (before applying Weakness and Resistance). Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "5132",
-    "externalId": null,
+    "externalId": "ecard2-142",
     "tcgdex_id": "ecard2-142",
     "localId": "142",
     "setCode": "ecard2",
@@ -1029,11 +1246,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-142-low.png",
-    "imageHighSrc": "cards/ecard2-142-high.png"
+    "imageHighSrc": "cards/ecard2-142-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to damages the Defending Pokémon (after applying Weakness and Resistance), the attack does 10 more damage to the Defending Pokémon. At the end of every turn, put 1 damage counter on the Pokémon Darkness Energy is attached to, unless it's Darkness or has Dark in its name. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "5127",
-    "externalId": null,
+    "externalId": "ecard2-141",
     "tcgdex_id": "ecard2-141",
     "localId": "141",
     "setCode": "ecard2",
@@ -1056,11 +1274,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-141-low.png",
-    "imageHighSrc": "cards/ecard2-141-high.png"
+    "imageHighSrc": "cards/ecard2-141-high.png",
+    "rules": "Attach this card to 1 of your Pokémon. Discard it at the end of your opponent's next turn.\n\nAs long as this card is attached, this Pokémon has no Weakness."
   },
   {
     "masterCardId": "5122",
-    "externalId": null,
+    "externalId": "ecard2-140",
     "tcgdex_id": "ecard2-140",
     "localId": "140",
     "setCode": "ecard2",
@@ -1085,11 +1304,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-140-low.png",
-    "imageHighSrc": "cards/ecard2-140-high.png"
+    "imageHighSrc": "cards/ecard2-140-high.png",
+    "attacks": [
+      {
+        "name": "Splatter",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Water Pokémon in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Water Cube 01."
   },
   {
     "masterCardId": "5117",
-    "externalId": null,
+    "externalId": "ecard2-139",
     "tcgdex_id": "ecard2-139",
     "localId": "139",
     "setCode": "ecard2",
@@ -1114,11 +1340,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-139-low.png",
-    "imageHighSrc": "cards/ecard2-139-high.png"
+    "imageHighSrc": "cards/ecard2-139-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nOnce during each of his or her turns, a player may discard a basic Energy card from his or her hand. If that player does, he or she chooses a basic Energy card from his or her discard pile, shows it to his or her opponent, and then puts it into his or her hand."
   },
   {
     "masterCardId": "5112",
-    "externalId": null,
+    "externalId": "ecard2-138",
     "tcgdex_id": "ecard2-138",
     "localId": "138",
     "setCode": "ecard2",
@@ -1143,11 +1370,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-138-low.png",
-    "imageHighSrc": "cards/ecard2-138-high.png"
+    "imageHighSrc": "cards/ecard2-138-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nOnce during each player's turn (before attacking), that player may flip a coin. If heads, that player chooses 1 of his or her Evolved Pokémon in play and discards the top Evolution card from that Pokémon, devolving it."
   },
   {
     "masterCardId": "5107",
-    "externalId": null,
+    "externalId": "ecard2-137",
     "tcgdex_id": "ecard2-137",
     "localId": "137",
     "setCode": "ecard2",
@@ -1172,11 +1400,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-137-low.png",
-    "imageHighSrc": "cards/ecard2-137-high.png"
+    "imageHighSrc": "cards/ecard2-137-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 Technical Machine and/or Pokémon Tool cards, show them to your opponent, and then put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "5102",
-    "externalId": null,
+    "externalId": "ecard2-136",
     "tcgdex_id": "ecard2-136",
     "localId": "136",
     "setCode": "ecard2",
@@ -1201,11 +1430,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-136-low.png",
-    "imageHighSrc": "cards/ecard2-136-high.png"
+    "imageHighSrc": "cards/ecard2-136-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nTake 5 Baby Pokémon, Basic Pokémon, Evolution, and/or basic Energy cards from your discard pile and then show them to your opponent. Shuffle them into your deck."
   },
   {
     "masterCardId": "5097",
-    "externalId": null,
+    "externalId": "ecard2-135",
     "tcgdex_id": "ecard2-135",
     "localId": "135",
     "setCode": "ecard2",
@@ -1230,11 +1460,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-135-low.png",
-    "imageHighSrc": "cards/ecard2-135-high.png"
+    "imageHighSrc": "cards/ecard2-135-high.png",
+    "rules": "Attach Time Shard to 1 of your Pokémon that doesn't already have a Pokémon Tool card attached to it. If that Pokémon is Knocked Out, discard this card.\n\nIf the Pokémon this card is attached to is Knocked Out by damage from the Defending Pokémon's attack during your opponent's turn, you may return up to 2 basic Energy cards attached to that Pokémon to your hand."
   },
   {
     "masterCardId": "5093",
-    "externalId": null,
+    "externalId": "ecard2-134",
     "tcgdex_id": "ecard2-134",
     "localId": "134",
     "setCode": "ecard2",
@@ -1257,11 +1488,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-134-low.png",
-    "imageHighSrc": "cards/ecard2-134-high.png"
+    "imageHighSrc": "cards/ecard2-134-high.png",
+    "rules": "Flip 2 coins. If both are heads, discard all Energy cards attached to the Defending Pokémon. If both are tails, discard all Energy cards attached to your Active Pokémon. If 1 is heads and 1 is tails, this card does nothing."
   },
   {
     "masterCardId": "5087",
-    "externalId": null,
+    "externalId": "ecard2-133",
     "tcgdex_id": "ecard2-133",
     "localId": "133",
     "setCode": "ecard2",
@@ -1286,11 +1518,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-133-low.png",
-    "imageHighSrc": "cards/ecard2-133-high.png"
+    "imageHighSrc": "cards/ecard2-133-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nLook at the top 6 cards of your deck. Take all Basic Energy cards you find there, show them to your opponent, and then put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "5082",
-    "externalId": null,
+    "externalId": "ecard2-132",
     "tcgdex_id": "ecard2-132",
     "localId": "132",
     "setCode": "ecard2",
@@ -1315,11 +1548,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-132-low.png",
-    "imageHighSrc": "cards/ecard2-132-high.png"
+    "imageHighSrc": "cards/ecard2-132-high.png",
+    "attacks": [
+      {
+        "name": "Psy Confuse",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Psychic Pokémon in play. That Pokémon may us this card's attack instead of its own. At the end of your turn, discard Psychic Cube 01."
   },
   {
     "masterCardId": "5078",
-    "externalId": null,
+    "externalId": "ecard2-131",
     "tcgdex_id": "ecard2-131",
     "localId": "131",
     "setCode": "ecard2",
@@ -1344,11 +1584,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-131-low.png",
-    "imageHighSrc": "cards/ecard2-131-high.png"
+    "imageHighSrc": "cards/ecard2-131-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nOnce during each of his or her turns, whenever a player attaches an Energy card from his or her hand to 1 of his or her Benched Pokémon, he or she removes 1 damage counter, if any, from that Pokémon."
   },
   {
     "masterCardId": "5073",
-    "externalId": null,
+    "externalId": "ecard2-130",
     "tcgdex_id": "ecard2-130",
     "localId": "130",
     "setCode": "ecard2",
@@ -1373,11 +1614,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-130-low.png",
-    "imageHighSrc": "cards/ecard2-130-high.png"
+    "imageHighSrc": "cards/ecard2-130-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 Baby Pokémon and/or Basic Pokémon cards and put them onto your bench. Shuffle your deck afterward."
   },
   {
     "masterCardId": "5068",
-    "externalId": null,
+    "externalId": "ecard2-129",
     "tcgdex_id": "ecard2-129",
     "localId": "129",
     "setCode": "ecard2",
@@ -1402,11 +1644,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-129-low.png",
-    "imageHighSrc": "cards/ecard2-129-high.png"
+    "imageHighSrc": "cards/ecard2-129-high.png",
+    "attacks": [
+      {
+        "name": "Metal Reversal",
+        "damage": "10"
+      }
+    ],
+    "rules": "Attach this card to 1 of your Metal Pokémon in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Metal Cube 01."
   },
   {
     "masterCardId": "5063",
-    "externalId": null,
+    "externalId": "ecard2-128",
     "tcgdex_id": "ecard2-128",
     "localId": "128",
     "setCode": "ecard2",
@@ -1431,11 +1680,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-128-low.png",
-    "imageHighSrc": "cards/ecard2-128-high.png"
+    "imageHighSrc": "cards/ecard2-128-high.png",
+    "rules": "Attach Memory Berry to 1 of your Pokémon that doesn't have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nThe Pokémon this card is attached to can use any attack from its Basic Pokémon card or any Evolution card from which the Pokémon evolved. (You still have to pay for that attack's Energy cost.) Discard this card at the end of any turn the Pokémon attacks."
   },
   {
     "masterCardId": "5058",
-    "externalId": null,
+    "externalId": "ecard2-127",
     "tcgdex_id": "ecard2-127",
     "localId": "127",
     "setCode": "ecard2",
@@ -1460,11 +1710,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-127-low.png",
-    "imageHighSrc": "cards/ecard2-127-high.png"
+    "imageHighSrc": "cards/ecard2-127-high.png",
+    "attacks": [
+      {
+        "name": "Discharge",
+        "damage": "40×"
+      }
+    ],
+    "rules": "Attach this card to 1 of your Lightning Pokémon in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Lightning Cube 01."
   },
   {
     "masterCardId": "5054",
-    "externalId": null,
+    "externalId": "ecard2-126",
     "tcgdex_id": "ecard2-126",
     "localId": "126",
     "setCode": "ecard2",
@@ -1489,11 +1746,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-126-low.png",
-    "imageHighSrc": "cards/ecard2-126-high.png"
+    "imageHighSrc": "cards/ecard2-126-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDiscard up to 2 basic Energy cards from your hand. If you discarded 1 basic Energy card, draw 3 cards. If you discarded 2 basic Energy cards, draw 5 cards."
   },
   {
     "masterCardId": "5049",
-    "externalId": null,
+    "externalId": "ecard2-125",
     "tcgdex_id": "ecard2-125",
     "localId": "125",
     "setCode": "ecard2",
@@ -1518,11 +1776,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-125-low.png",
-    "imageHighSrc": "cards/ecard2-125-high.png"
+    "imageHighSrc": "cards/ecard2-125-high.png",
+    "rules": "Attach Healing Berry to 1 of your Pokémon that doesn't already have a Pokémon Tool card attached to it. If that Pokémon is Knocked Out, discard this card.\n\nAt the end of any turn, if the Pokémon this card is attached to has 20 HP or less, remove 3 damage counters from that Pokémon and discard this card."
   },
   {
     "masterCardId": "5044",
-    "externalId": null,
+    "externalId": "ecard2-124",
     "tcgdex_id": "ecard2-124",
     "localId": "124",
     "setCode": "ecard2",
@@ -1547,11 +1806,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-124-low.png",
-    "imageHighSrc": "cards/ecard2-124-high.png"
+    "imageHighSrc": "cards/ecard2-124-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Grass Pokémon in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Grass Cube 01."
   },
   {
     "masterCardId": "5039",
-    "externalId": null,
+    "externalId": "ecard2-123",
     "tcgdex_id": "ecard2-123",
     "localId": "123",
     "setCode": "ecard2",
@@ -1576,11 +1842,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-123-low.png",
-    "imageHighSrc": "cards/ecard2-123-high.png"
+    "imageHighSrc": "cards/ecard2-123-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nShuffle your deck. Then, look at the top 7 cards of your deck. Choose 1 of those cards and put it into your hand. Shuffle the rest into your deck afterward."
   },
   {
     "masterCardId": "5034",
-    "externalId": null,
+    "externalId": "ecard2-122",
     "tcgdex_id": "ecard2-122",
     "localId": "122",
     "setCode": "ecard2",
@@ -1605,11 +1872,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-122-low.png",
-    "imageHighSrc": "cards/ecard2-122-high.png"
+    "imageHighSrc": "cards/ecard2-122-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Fire Pokémon in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Fire Cube 01."
   },
   {
     "masterCardId": "5029",
-    "externalId": null,
+    "externalId": "ecard2-121",
     "tcgdex_id": "ecard2-121",
     "localId": "121",
     "setCode": "ecard2",
@@ -1634,11 +1908,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-121-low.png",
-    "imageHighSrc": "cards/ecard2-121-high.png"
+    "imageHighSrc": "cards/ecard2-121-high.png",
+    "attacks": [
+      {
+        "name": "Violent Rage",
+        "damage": "10×"
+      }
+    ],
+    "rules": "Attach this card to 1 of your Fighting Pokémon in play. That Pokémon my use this card's attack instead of its own. At the end of your turn, discard Fighting Cube 01."
   },
   {
     "masterCardId": "5024",
-    "externalId": null,
+    "externalId": "ecard2-120",
     "tcgdex_id": "ecard2-120",
     "localId": "120",
     "setCode": "ecard2",
@@ -1661,11 +1942,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-120-low.png",
-    "imageHighSrc": "cards/ecard2-120-high.png"
+    "imageHighSrc": "cards/ecard2-120-high.png",
+    "rules": "Move a basic Energy card attached to 1 of your Pokémon to another of your Pokémon."
   },
   {
     "masterCardId": "5019",
-    "externalId": null,
+    "externalId": "ecard2-119",
     "tcgdex_id": "ecard2-119",
     "localId": "119",
     "setCode": "ecard2",
@@ -1690,11 +1972,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-119-low.png",
-    "imageHighSrc": "cards/ecard2-119-high.png"
+    "imageHighSrc": "cards/ecard2-119-high.png",
+    "attacks": [
+      {
+        "name": "Plunder",
+        "damage": "10"
+      }
+    ],
+    "rules": "Attach this card to 1 of your Darkness Pokémon in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Darkness Cube 01."
   },
   {
     "masterCardId": "5014",
-    "externalId": null,
+    "externalId": "ecard2-118",
     "tcgdex_id": "ecard2-118",
     "localId": "118",
     "setCode": "ecard2",
@@ -1719,11 +2008,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-118-low.png",
-    "imageHighSrc": "cards/ecard2-118-high.png"
+    "imageHighSrc": "cards/ecard2-118-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nOnce during each player's turn (before attacking), if that player's Bench isn't full, that player flips a coin. If heads, that player shows his or her opponent a basic Energy card from his or her hand. Then, that player searches his or her deck for a Basic Pokémon card of the same type (color) as the revealed Energy card and puts it onto his or her Bench. The player shuffles his or her deck afterward."
   },
   {
     "masterCardId": "5009",
-    "externalId": null,
+    "externalId": "ecard2-117",
     "tcgdex_id": "ecard2-117",
     "localId": "117",
     "setCode": "ecard2",
@@ -1752,11 +2042,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-117-low.png",
-    "imageHighSrc": "cards/ecard2-117-high.png"
+    "imageHighSrc": "cards/ecard2-117-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5004",
-    "externalId": null,
+    "externalId": "ecard2-116",
     "tcgdex_id": "ecard2-116",
     "localId": "116",
     "setCode": "ecard2",
@@ -1785,11 +2085,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-116-low.png",
-    "imageHighSrc": "cards/ecard2-116-high.png"
+    "imageHighSrc": "cards/ecard2-116-high.png",
+    "attacks": [
+      {
+        "name": "Collect Fire",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4999",
-    "externalId": null,
+    "externalId": "ecard2-115",
     "tcgdex_id": "ecard2-115",
     "localId": "115",
     "setCode": "ecard2",
@@ -1818,11 +2124,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-115-low.png",
-    "imageHighSrc": "cards/ecard2-115-high.png"
+    "imageHighSrc": "cards/ecard2-115-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4994",
-    "externalId": null,
+    "externalId": "ecard2-114",
     "tcgdex_id": "ecard2-114",
     "localId": "114",
     "setCode": "ecard2",
@@ -1851,11 +2163,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-114-low.png",
-    "imageHighSrc": "cards/ecard2-114-high.png"
+    "imageHighSrc": "cards/ecard2-114-high.png",
+    "attacks": [
+      {
+        "name": "Minor Errand-Running",
+        "damage": null
+      },
+      {
+        "name": "Pound",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4989",
-    "externalId": null,
+    "externalId": "ecard2-113",
     "tcgdex_id": "ecard2-113",
     "localId": "113",
     "setCode": "ecard2",
@@ -1884,11 +2206,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-113-low.png",
-    "imageHighSrc": "cards/ecard2-113-high.png"
+    "imageHighSrc": "cards/ecard2-113-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      },
+      {
+        "name": "Recover",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4984",
-    "externalId": null,
+    "externalId": "ecard2-112",
     "tcgdex_id": "ecard2-112",
     "localId": "112",
     "setCode": "ecard2",
@@ -1917,11 +2249,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-112-low.png",
-    "imageHighSrc": "cards/ecard2-112-high.png"
+    "imageHighSrc": "cards/ecard2-112-high.png",
+    "attacks": [
+      {
+        "name": "Tickling Vines",
+        "damage": "10"
+      },
+      {
+        "name": "Double Kick",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "4979",
-    "externalId": null,
+    "externalId": "ecard2-111",
     "tcgdex_id": "ecard2-111",
     "localId": "111",
     "setCode": "ecard2",
@@ -1950,11 +2292,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-111-low.png",
-    "imageHighSrc": "cards/ecard2-111-high.png"
+    "imageHighSrc": "cards/ecard2-111-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Stinger",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4974",
-    "externalId": null,
+    "externalId": "ecard2-110",
     "tcgdex_id": "ecard2-110",
     "localId": "110",
     "setCode": "ecard2",
@@ -1983,11 +2331,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-110-low.png",
-    "imageHighSrc": "cards/ecard2-110-high.png"
+    "imageHighSrc": "cards/ecard2-110-high.png",
+    "attacks": [
+      {
+        "name": "Rob",
+        "damage": null
+      },
+      {
+        "name": "Claw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4969",
-    "externalId": null,
+    "externalId": "ecard2-109",
     "tcgdex_id": "ecard2-109",
     "localId": "109",
     "setCode": "ecard2",
@@ -2016,11 +2374,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-109-low.png",
-    "imageHighSrc": "cards/ecard2-109-high.png"
+    "imageHighSrc": "cards/ecard2-109-high.png",
+    "attacks": [
+      {
+        "name": "Paint Trick",
+        "damage": null
+      },
+      {
+        "name": "Doublslap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4964",
-    "externalId": null,
+    "externalId": "ecard2-108",
     "tcgdex_id": "ecard2-108",
     "localId": "108",
     "setCode": "ecard2",
@@ -2049,11 +2417,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-108-low.png",
-    "imageHighSrc": "cards/ecard2-108-high.png"
+    "imageHighSrc": "cards/ecard2-108-high.png",
+    "attacks": [
+      {
+        "name": "Fishing Tail",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4958",
-    "externalId": null,
+    "externalId": "ecard2-107",
     "tcgdex_id": "ecard2-107",
     "localId": "107",
     "setCode": "ecard2",
@@ -2082,11 +2460,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-107-low.png",
-    "imageHighSrc": "cards/ecard2-107-high.png"
+    "imageHighSrc": "cards/ecard2-107-high.png",
+    "attacks": [
+      {
+        "name": "Spy",
+        "damage": null
+      },
+      {
+        "name": "Double Scratch",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4949",
-    "externalId": null,
+    "externalId": "ecard2-106",
     "tcgdex_id": "ecard2-106",
     "localId": "106",
     "setCode": "ecard2",
@@ -2115,11 +2503,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-106-low.png",
-    "imageHighSrc": "cards/ecard2-106-high.png"
+    "imageHighSrc": "cards/ecard2-106-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "10"
+      },
+      {
+        "name": "Swift",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4941",
-    "externalId": null,
+    "externalId": "ecard2-105",
     "tcgdex_id": "ecard2-105",
     "localId": "105",
     "setCode": "ecard2",
@@ -2148,11 +2546,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-105-low.png",
-    "imageHighSrc": "cards/ecard2-105-high.png"
+    "imageHighSrc": "cards/ecard2-105-high.png",
+    "attacks": [
+      {
+        "name": "Splatter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4936",
-    "externalId": null,
+    "externalId": "ecard2-104",
     "tcgdex_id": "ecard2-104",
     "localId": "104",
     "setCode": "ecard2",
@@ -2181,18 +2585,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-104-low.png",
-    "imageHighSrc": "cards/ecard2-104-high.png"
+    "imageHighSrc": "cards/ecard2-104-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4927",
-    "externalId": null,
+    "externalId": "ecard2-103",
     "tcgdex_id": "ecard2-103a",
     "localId": "103a",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "103a/147",
+    "cardNumber": "103/147",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon 103a/147 Aquapolis",
+    "fullDisplayName": "Porygon 103/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2214,7 +2628,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-103-low.png",
-    "imageHighSrc": "cards/ecard2-103-high.png"
+    "imageHighSrc": "cards/ecard2-103-high.png",
+    "attacks": [
+      {
+        "name": "Data Sort",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "22544",
@@ -2247,11 +2671,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-103-low.jpg",
-    "imageHighSrc": "cards/ecard2-103-low.jpg"
+    "imageHighSrc": "cards/ecard2-103-low.jpg",
+    "attacks": [
+      {
+        "name": "Data Sort",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4920",
-    "externalId": null,
+    "externalId": "ecard2-102",
     "tcgdex_id": "ecard2-102",
     "localId": "102",
     "setCode": "ecard2",
@@ -2280,11 +2714,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-102-low.png",
-    "imageHighSrc": "cards/ecard2-102-high.png"
+    "imageHighSrc": "cards/ecard2-102-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4911",
-    "externalId": null,
+    "externalId": "ecard2-101",
     "tcgdex_id": "ecard2-101",
     "localId": "101",
     "setCode": "ecard2",
@@ -2313,11 +2757,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-101-low.png",
-    "imageHighSrc": "cards/ecard2-101-high.png"
+    "imageHighSrc": "cards/ecard2-101-high.png",
+    "attacks": [
+      {
+        "name": "Horn Grab",
+        "damage": "20"
+      },
+      {
+        "name": "Super Slice",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "4904",
-    "externalId": null,
+    "externalId": "ecard2-100",
     "tcgdex_id": "ecard2-100",
     "localId": "100",
     "setCode": "ecard2",
@@ -2346,18 +2800,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-100-low.png",
-    "imageHighSrc": "cards/ecard2-100-high.png"
+    "imageHighSrc": "cards/ecard2-100-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4895",
-    "externalId": null,
+    "externalId": "ecard2-99",
     "tcgdex_id": "ecard2-99",
     "localId": "99",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "099/147",
+    "cardNumber": "99/147",
     "cardName": "Paras",
-    "fullDisplayName": "Paras 099/147 Aquapolis",
+    "fullDisplayName": "Paras 99/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2379,18 +2843,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-099-low.png",
-    "imageHighSrc": "cards/ecard2-099-high.png"
+    "imageHighSrc": "cards/ecard2-099-high.png",
+    "attacks": [
+      {
+        "name": "Spore",
+        "damage": null
+      },
+      {
+        "name": "Spore Evolution",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4886",
-    "externalId": null,
+    "externalId": "ecard2-98",
     "tcgdex_id": "ecard2-98",
     "localId": "98",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "098/147",
+    "cardNumber": "98/147",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 098/147 Aquapolis",
+    "fullDisplayName": "Onix 98/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2412,18 +2886,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-098-low.png",
-    "imageHighSrc": "cards/ecard2-098-high.png"
+    "imageHighSrc": "cards/ecard2-098-high.png",
+    "attacks": [
+      {
+        "name": "Crush",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4880",
-    "externalId": null,
+    "externalId": "ecard2-97",
     "tcgdex_id": "ecard2-97",
     "localId": "97",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "097/147",
+    "cardNumber": "97/147",
     "cardName": "Oddish",
-    "fullDisplayName": "Oddish 097/147 Aquapolis",
+    "fullDisplayName": "Oddish 97/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2445,18 +2925,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-097-low.png",
-    "imageHighSrc": "cards/ecard2-097-high.png"
+    "imageHighSrc": "cards/ecard2-097-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4869",
-    "externalId": null,
+    "externalId": "ecard2-96",
     "tcgdex_id": "ecard2-96",
     "localId": "96",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "096/147",
+    "cardNumber": "96/147",
     "cardName": "Nidoran ♂",
-    "fullDisplayName": "Nidoran ♂ 096/147 Aquapolis",
+    "fullDisplayName": "Nidoran ♂ 96/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2478,18 +2968,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ecard2-096-low.png",
-    "imageHighSrc": "cards/ecard2-096-high.png"
+    "imageHighSrc": "cards/ecard2-096-high.png",
+    "attacks": [
+      {
+        "name": "Poison Horn",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4861",
-    "externalId": null,
+    "externalId": "ecard2-95",
     "tcgdex_id": "ecard2-95a",
     "localId": "95a",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "95a/147",
+    "cardNumber": "95/147",
     "cardName": "Mr. Mime",
-    "fullDisplayName": "Mr. Mime 95a/147 Aquapolis",
+    "fullDisplayName": "Mr. Mime 95/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2511,18 +3011,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-095-low.png",
-    "imageHighSrc": "cards/ecard2-095-high.png"
+    "imageHighSrc": "cards/ecard2-095-high.png",
+    "attacks": [
+      {
+        "name": "Mind Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4853",
-    "externalId": null,
+    "externalId": "ecard2-94",
     "tcgdex_id": "ecard2-94",
     "localId": "94",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "094/147",
+    "cardNumber": "94/147",
     "cardName": "Miltank",
-    "fullDisplayName": "Miltank 094/147 Aquapolis",
+    "fullDisplayName": "Miltank 94/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2544,18 +3050,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-094-low.png",
-    "imageHighSrc": "cards/ecard2-094-high.png"
+    "imageHighSrc": "cards/ecard2-094-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Continuous Tumble",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4847",
-    "externalId": null,
+    "externalId": "ecard2-93",
     "tcgdex_id": "ecard2-93",
     "localId": "93",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "093/147",
+    "cardNumber": "93/147",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 093/147 Aquapolis",
+    "fullDisplayName": "Mareep 93/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2577,18 +3093,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-093-low.png",
-    "imageHighSrc": "cards/ecard2-093-high.png"
+    "imageHighSrc": "cards/ecard2-093-high.png",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Tail Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4840",
-    "externalId": null,
+    "externalId": "ecard2-92",
     "tcgdex_id": "ecard2-92",
     "localId": "92",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "092/147",
+    "cardNumber": "92/147",
     "cardName": "Mankey",
-    "fullDisplayName": "Mankey 092/147 Aquapolis",
+    "fullDisplayName": "Mankey 92/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2610,18 +3136,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-092-low.png",
-    "imageHighSrc": "cards/ecard2-092-high.png"
+    "imageHighSrc": "cards/ecard2-092-high.png",
+    "attacks": [
+      {
+        "name": "Mug",
+        "damage": "10"
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4831",
-    "externalId": null,
+    "externalId": "ecard2-91",
     "tcgdex_id": "ecard2-91",
     "localId": "91",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "091/147",
+    "cardNumber": "91/147",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 091/147 Aquapolis",
+    "fullDisplayName": "Magnemite 91/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2643,18 +3179,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-091-low.png",
-    "imageHighSrc": "cards/ecard2-091-high.png"
+    "imageHighSrc": "cards/ecard2-091-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Bomb",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4823",
-    "externalId": null,
+    "externalId": "ecard2-90",
     "tcgdex_id": "ecard2-90",
     "localId": "90",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "090/147",
+    "cardNumber": "90/147",
     "cardName": "Lickitung",
-    "fullDisplayName": "Lickitung 090/147 Aquapolis",
+    "fullDisplayName": "Lickitung 90/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2676,18 +3218,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-090-low.png",
-    "imageHighSrc": "cards/ecard2-090-high.png"
+    "imageHighSrc": "cards/ecard2-090-high.png",
+    "attacks": [
+      {
+        "name": "Long Tongue",
+        "damage": null
+      },
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4816",
-    "externalId": null,
+    "externalId": "ecard2-89",
     "tcgdex_id": "ecard2-89",
     "localId": "89",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "089/147",
+    "cardNumber": "89/147",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 089/147 Aquapolis",
+    "fullDisplayName": "Larvitar 89/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2709,18 +3261,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-089-low.png",
-    "imageHighSrc": "cards/ecard2-089-high.png"
+    "imageHighSrc": "cards/ecard2-089-high.png",
+    "attacks": [
+      {
+        "name": "Mountain Eater",
+        "damage": null
+      },
+      {
+        "name": "Rising Lunge",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4808",
-    "externalId": null,
+    "externalId": "ecard2-88",
     "tcgdex_id": "ecard2-88",
     "localId": "88",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "088/147",
+    "cardNumber": "88/147",
     "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 088/147 Aquapolis",
+    "fullDisplayName": "Kangaskhan 88/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2742,18 +3304,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-088-low.png",
-    "imageHighSrc": "cards/ecard2-088-high.png"
+    "imageHighSrc": "cards/ecard2-088-high.png",
+    "attacks": [
+      {
+        "name": "Baby Outing",
+        "damage": null
+      },
+      {
+        "name": "Mega Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4798",
-    "externalId": null,
+    "externalId": "ecard2-87",
     "tcgdex_id": "ecard2-87",
     "localId": "87",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "087/147",
+    "cardNumber": "87/147",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 087/147 Aquapolis",
+    "fullDisplayName": "Houndour 87/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2775,18 +3347,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-087-low.png",
-    "imageHighSrc": "cards/ecard2-087-high.png"
+    "imageHighSrc": "cards/ecard2-087-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4790",
-    "externalId": null,
+    "externalId": "ecard2-86",
     "tcgdex_id": "ecard2-86",
     "localId": "86",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "086/147",
+    "cardNumber": "86/147",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 086/147 Aquapolis",
+    "fullDisplayName": "Houndour 86/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2808,18 +3386,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-086-low.png",
-    "imageHighSrc": "cards/ecard2-086-high.png"
+    "imageHighSrc": "cards/ecard2-086-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4784",
-    "externalId": null,
+    "externalId": "ecard2-85",
     "tcgdex_id": "ecard2-85",
     "localId": "85",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "085/147",
+    "cardNumber": "85/147",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 085/147 Aquapolis",
+    "fullDisplayName": "Horsea 85/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2841,18 +3429,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-085-low.png",
-    "imageHighSrc": "cards/ecard2-085-high.png"
+    "imageHighSrc": "cards/ecard2-085-high.png",
+    "attacks": [
+      {
+        "name": "Reverse Thrust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4777",
-    "externalId": null,
+    "externalId": "ecard2-84",
     "tcgdex_id": "ecard2-84",
     "localId": "84",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "084/147",
+    "cardNumber": "84/147",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 084/147 Aquapolis",
+    "fullDisplayName": "Horsea 84/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2874,18 +3468,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-084-low.png",
-    "imageHighSrc": "cards/ecard2-084-high.png"
+    "imageHighSrc": "cards/ecard2-084-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4769",
-    "externalId": null,
+    "externalId": "ecard2-83",
     "tcgdex_id": "ecard2-83",
     "localId": "83",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "083/147",
+    "cardNumber": "83/147",
     "cardName": "Hoppip",
-    "fullDisplayName": "Hoppip 083/147 Aquapolis",
+    "fullDisplayName": "Hoppip 83/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2907,18 +3507,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-083-low.png",
-    "imageHighSrc": "cards/ecard2-083-high.png"
+    "imageHighSrc": "cards/ecard2-083-high.png",
+    "attacks": [
+      {
+        "name": "Careless Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4761",
-    "externalId": null,
+    "externalId": "ecard2-82",
     "tcgdex_id": "ecard2-82",
     "localId": "82",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "082/147",
+    "cardNumber": "82/147",
     "cardName": "Hitmontop",
-    "fullDisplayName": "Hitmontop 082/147 Aquapolis",
+    "fullDisplayName": "Hitmontop 82/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2940,18 +3546,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-082-low.png",
-    "imageHighSrc": "cards/ecard2-082-high.png"
+    "imageHighSrc": "cards/ecard2-082-high.png",
+    "attacks": [
+      {
+        "name": "Double Kick",
+        "damage": "20×"
+      },
+      {
+        "name": "Triple Spin",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4752",
-    "externalId": null,
+    "externalId": "ecard2-81",
     "tcgdex_id": "ecard2-81",
     "localId": "81",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "081/147",
+    "cardNumber": "81/147",
     "cardName": "Hitmonchan",
-    "fullDisplayName": "Hitmonchan 081/147 Aquapolis",
+    "fullDisplayName": "Hitmonchan 81/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2973,18 +3589,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-081-low.png",
-    "imageHighSrc": "cards/ecard2-081-high.png"
+    "imageHighSrc": "cards/ecard2-081-high.png",
+    "attacks": [
+      {
+        "name": "Rush",
+        "damage": "10×"
+      },
+      {
+        "name": "Smash Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4744",
-    "externalId": null,
+    "externalId": "ecard2-80",
     "tcgdex_id": "ecard2-80",
     "localId": "80",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "080/147",
+    "cardNumber": "80/147",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 080/147 Aquapolis",
+    "fullDisplayName": "Growlithe 80/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3006,18 +3632,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-080-low.png",
-    "imageHighSrc": "cards/ecard2-080-high.png"
+    "imageHighSrc": "cards/ecard2-080-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Firebreathing",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4736",
-    "externalId": null,
+    "externalId": "ecard2-79",
     "tcgdex_id": "ecard2-79",
     "localId": "79",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "079/147",
+    "cardNumber": "79/147",
     "cardName": "Grimer",
-    "fullDisplayName": "Grimer 079/147 Aquapolis",
+    "fullDisplayName": "Grimer 79/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3039,18 +3675,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-079-low.png",
-    "imageHighSrc": "cards/ecard2-079-high.png"
+    "imageHighSrc": "cards/ecard2-079-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sludge",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4729",
-    "externalId": null,
+    "externalId": "ecard2-78",
     "tcgdex_id": "ecard2-78",
     "localId": "78",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "078/147",
+    "cardNumber": "78/147",
     "cardName": "Goldeen",
-    "fullDisplayName": "Goldeen 078/147 Aquapolis",
+    "fullDisplayName": "Goldeen 78/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3072,18 +3714,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-078-low.png",
-    "imageHighSrc": "cards/ecard2-078-high.png"
+    "imageHighSrc": "cards/ecard2-078-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4721",
-    "externalId": null,
+    "externalId": "ecard2-77",
     "tcgdex_id": "ecard2-77",
     "localId": "77",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "077/147",
+    "cardNumber": "77/147",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 077/147 Aquapolis",
+    "fullDisplayName": "Exeggcute 77/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3105,18 +3753,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-077-low.png",
-    "imageHighSrc": "cards/ecard2-077-high.png"
+    "imageHighSrc": "cards/ecard2-077-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Eggsplosion",
+        "damage": "10×"
+      },
+      {
+        "name": "Energy Support",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4714",
-    "externalId": null,
+    "externalId": "ecard2-76",
     "tcgdex_id": "ecard2-76",
     "localId": "76",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "076/147",
+    "cardNumber": "76/147",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 076/147 Aquapolis",
+    "fullDisplayName": "Exeggcute 76/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3138,18 +3796,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-076-low.png",
-    "imageHighSrc": "cards/ecard2-076-high.png"
+    "imageHighSrc": "cards/ecard2-076-high.png",
+    "attacks": [
+      {
+        "name": "Growth Spurt",
+        "damage": null
+      },
+      {
+        "name": "Sleep Powder",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4707",
-    "externalId": null,
+    "externalId": "ecard2-75",
     "tcgdex_id": "ecard2-75",
     "localId": "75",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "075/147",
+    "cardNumber": "75/147",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 075/147 Aquapolis",
+    "fullDisplayName": "Eevee 75/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3171,18 +3839,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-075-low.png",
-    "imageHighSrc": "cards/ecard2-075-high.png"
+    "imageHighSrc": "cards/ecard2-075-high.png",
+    "attacks": [
+      {
+        "name": "Charge Up",
+        "damage": null
+      },
+      {
+        "name": "Lunge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4698",
-    "externalId": null,
+    "externalId": "ecard2-74",
     "tcgdex_id": "ecard2-74a",
     "localId": "74a",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "74a/147",
+    "cardNumber": "74/147",
     "cardName": "Drowzee",
-    "fullDisplayName": "Drowzee 74a/147 Aquapolis",
+    "fullDisplayName": "Drowzee 74/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3204,18 +3882,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-074-low.png",
-    "imageHighSrc": "cards/ecard2-074-high.png"
+    "imageHighSrc": "cards/ecard2-074-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Inducer",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4691",
-    "externalId": null,
+    "externalId": "ecard2-73",
     "tcgdex_id": "ecard2-73",
     "localId": "73",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "073/147",
+    "cardNumber": "73/147",
     "cardName": "Doduo",
-    "fullDisplayName": "Doduo 073/147 Aquapolis",
+    "fullDisplayName": "Doduo 73/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3237,18 +3925,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-073-low.png",
-    "imageHighSrc": "cards/ecard2-073-high.png"
+    "imageHighSrc": "cards/ecard2-073-high.png",
+    "attacks": [
+      {
+        "name": "Super Speed",
+        "damage": null
+      },
+      {
+        "name": "Rear Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4684",
-    "externalId": null,
+    "externalId": "ecard2-72",
     "tcgdex_id": "ecard2-72",
     "localId": "72",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "072/147",
+    "cardNumber": "72/147",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 072/147 Aquapolis",
+    "fullDisplayName": "Cubone 72/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3270,18 +3968,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-072-low.png",
-    "imageHighSrc": "cards/ecard2-072-high.png"
+    "imageHighSrc": "cards/ecard2-072-high.png",
+    "attacks": [
+      {
+        "name": "Teary Eyes",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4676",
-    "externalId": null,
+    "externalId": "ecard2-71",
     "tcgdex_id": "ecard2-71",
     "localId": "71",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "071/147",
+    "cardNumber": "71/147",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 071/147 Aquapolis",
+    "fullDisplayName": "Chinchou 71/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3303,18 +4011,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-071-low.png",
-    "imageHighSrc": "cards/ecard2-071-high.png"
+    "imageHighSrc": "cards/ecard2-071-high.png",
+    "attacks": [
+      {
+        "name": "Jolt",
+        "damage": null
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4668",
-    "externalId": null,
+    "externalId": "ecard2-70",
     "tcgdex_id": "ecard2-70",
     "localId": "70",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "070/147",
+    "cardNumber": "70/147",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 070/147 Aquapolis",
+    "fullDisplayName": "Chinchou 70/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3336,18 +4054,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-070-low.png",
-    "imageHighSrc": "cards/ecard2-070-high.png"
+    "imageHighSrc": "cards/ecard2-070-high.png",
+    "attacks": [
+      {
+        "name": "Float",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4658",
-    "externalId": null,
+    "externalId": "ecard2-69",
     "tcgdex_id": "ecard2-69",
     "localId": "69",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "069/147",
+    "cardNumber": "69/147",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 069/147 Aquapolis",
+    "fullDisplayName": "Chansey 69/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3369,18 +4097,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-069-low.png",
-    "imageHighSrc": "cards/ecard2-069-high.png"
+    "imageHighSrc": "cards/ecard2-069-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Double-edge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4650",
-    "externalId": null,
+    "externalId": "ecard2-68",
     "tcgdex_id": "ecard2-68",
     "localId": "68",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "068/147",
+    "cardNumber": "68/147",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 068/147 Aquapolis",
+    "fullDisplayName": "Bellsprout 68/147 Aquapolis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3402,18 +4140,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-068-low.png",
-    "imageHighSrc": "cards/ecard2-068-high.png"
+    "imageHighSrc": "cards/ecard2-068-high.png",
+    "attacks": [
+      {
+        "name": "Poison Vine",
+        "damage": null
+      },
+      {
+        "name": "Sharp Leaf",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4639",
-    "externalId": null,
+    "externalId": "ecard2-66",
     "tcgdex_id": "ecard2-66",
     "localId": "66",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "066/147",
+    "cardNumber": "66/147",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper 066/147 Aquapolis",
+    "fullDisplayName": "Wooper 66/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3435,18 +4183,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-066-low.png",
-    "imageHighSrc": "cards/ecard2-066-high.png"
+    "imageHighSrc": "cards/ecard2-066-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "10"
+      },
+      {
+        "name": "Deep Dive",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4630",
-    "externalId": null,
+    "externalId": "ecard2-65",
     "tcgdex_id": "ecard2-65",
     "localId": "65",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "065/147",
+    "cardNumber": "65/147",
     "cardName": "Weepinbell",
-    "fullDisplayName": "Weepinbell 065/147 Aquapolis",
+    "fullDisplayName": "Weepinbell 65/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3468,18 +4226,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-065-low.png",
-    "imageHighSrc": "cards/ecard2-065-high.png"
+    "imageHighSrc": "cards/ecard2-065-high.png",
+    "attacks": [
+      {
+        "name": "Growth",
+        "damage": null
+      },
+      {
+        "name": "Double Razor Leaf",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "4622",
-    "externalId": null,
+    "externalId": "ecard2-64",
     "tcgdex_id": "ecard2-64",
     "localId": "64",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "064/147",
+    "cardNumber": "64/147",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 064/147 Aquapolis",
+    "fullDisplayName": "Voltorb 64/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3501,18 +4269,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-064-low.png",
-    "imageHighSrc": "cards/ecard2-064-high.png"
+    "imageHighSrc": "cards/ecard2-064-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4614",
-    "externalId": null,
+    "externalId": "ecard2-63",
     "tcgdex_id": "ecard2-63",
     "localId": "63",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "063/147",
+    "cardNumber": "63/147",
     "cardName": "Tyrogue",
-    "fullDisplayName": "Tyrogue 063/147 Aquapolis",
+    "fullDisplayName": "Tyrogue 63/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3534,18 +4312,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-063-low.png",
-    "imageHighSrc": "cards/ecard2-063-high.png"
+    "imageHighSrc": "cards/ecard2-063-high.png",
+    "attacks": [
+      {
+        "name": "Energy Punch",
+        "damage": "10"
+      }
+    ],
+    "rules": "If your Active Pokémon is a Baby Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
   },
   {
     "masterCardId": "4606",
-    "externalId": null,
+    "externalId": "ecard2-62",
     "tcgdex_id": "ecard2-62",
     "localId": "62",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "062/147",
+    "cardNumber": "62/147",
     "cardName": "Spinarak",
-    "fullDisplayName": "Spinarak 062/147 Aquapolis",
+    "fullDisplayName": "Spinarak 62/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3567,18 +4352,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-062-low.png",
-    "imageHighSrc": "cards/ecard2-062-high.png"
+    "imageHighSrc": "cards/ecard2-062-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Gooey Thread",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4598",
-    "externalId": null,
+    "externalId": "ecard2-61",
     "tcgdex_id": "ecard2-61",
     "localId": "61",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "061/147",
+    "cardNumber": "61/147",
     "cardName": "Smoochum",
-    "fullDisplayName": "Smoochum 061/147 Aquapolis",
+    "fullDisplayName": "Smoochum 61/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3600,18 +4395,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-061-low.png",
-    "imageHighSrc": "cards/ecard2-061-high.png"
+    "imageHighSrc": "cards/ecard2-061-high.png",
+    "attacks": [
+      {
+        "name": "Energy Kiss",
+        "damage": "10×"
+      }
+    ],
+    "rules": "If your Active Pokémon is a Baby Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
   },
   {
     "masterCardId": "4590",
-    "externalId": null,
+    "externalId": "ecard2-60",
     "tcgdex_id": "ecard2-60",
     "localId": "60",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "060/147",
+    "cardNumber": "60/147",
     "cardName": "Skiploom",
-    "fullDisplayName": "Skiploom 060/147 Aquapolis",
+    "fullDisplayName": "Skiploom 60/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3633,18 +4435,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-060-low.png",
-    "imageHighSrc": "cards/ecard2-060-high.png"
+    "imageHighSrc": "cards/ecard2-060-high.png",
+    "attacks": [
+      {
+        "name": "Break Powder",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4583",
-    "externalId": null,
+    "externalId": "ecard2-59",
     "tcgdex_id": "ecard2-59",
     "localId": "59",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "059/147",
+    "cardNumber": "59/147",
     "cardName": "Seaking",
-    "fullDisplayName": "Seaking 059/147 Aquapolis",
+    "fullDisplayName": "Seaking 59/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3666,18 +4474,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-059-low.png",
-    "imageHighSrc": "cards/ecard2-059-high.png"
+    "imageHighSrc": "cards/ecard2-059-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Undulate",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4574",
-    "externalId": null,
+    "externalId": "ecard2-58",
     "tcgdex_id": "ecard2-58",
     "localId": "58",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "058/147",
+    "cardNumber": "58/147",
     "cardName": "Seadra",
-    "fullDisplayName": "Seadra 058/147 Aquapolis",
+    "fullDisplayName": "Seadra 58/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3699,18 +4517,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-058-low.png",
-    "imageHighSrc": "cards/ecard2-058-high.png"
+    "imageHighSrc": "cards/ecard2-058-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      },
+      {
+        "name": "Water Bullet",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4567",
-    "externalId": null,
+    "externalId": "ecard2-57",
     "tcgdex_id": "ecard2-57",
     "localId": "57",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "057/147",
+    "cardNumber": "57/147",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 057/147 Aquapolis",
+    "fullDisplayName": "Scyther 57/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3732,18 +4560,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-057-low.png",
-    "imageHighSrc": "cards/ecard2-057-high.png"
+    "imageHighSrc": "cards/ecard2-057-high.png",
+    "attacks": [
+      {
+        "name": "Quick Turn",
+        "damage": "10×"
+      },
+      {
+        "name": "Cross-Cut",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4558",
-    "externalId": null,
+    "externalId": "ecard2-56",
     "tcgdex_id": "ecard2-56",
     "localId": "56",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "056/147",
+    "cardNumber": "56/147",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 056/147 Aquapolis",
+    "fullDisplayName": "Pupitar 56/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3765,18 +4603,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-056-low.png",
-    "imageHighSrc": "cards/ecard2-056-high.png"
+    "imageHighSrc": "cards/ecard2-056-high.png",
+    "attacks": [
+      {
+        "name": "Thrash",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4549",
-    "externalId": null,
+    "externalId": "ecard2-55",
     "tcgdex_id": "ecard2-55",
     "localId": "55",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "055/147",
+    "cardNumber": "55/147",
     "cardName": "Nidorino",
-    "fullDisplayName": "Nidorino 055/147 Aquapolis",
+    "fullDisplayName": "Nidorino 55/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3798,18 +4642,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-055-low.png",
-    "imageHighSrc": "cards/ecard2-055-high.png"
+    "imageHighSrc": "cards/ecard2-055-high.png",
+    "attacks": [
+      {
+        "name": "Poison Horn",
+        "damage": "10"
+      },
+      {
+        "name": "Take Down",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4540",
-    "externalId": null,
+    "externalId": "ecard2-54",
     "tcgdex_id": "ecard2-54",
     "localId": "54",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "054/147",
+    "cardNumber": "54/147",
     "cardName": "Marowak",
-    "fullDisplayName": "Marowak 054/147 Aquapolis",
+    "fullDisplayName": "Marowak 54/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3831,18 +4685,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-054-low.png",
-    "imageHighSrc": "cards/ecard2-054-high.png"
+    "imageHighSrc": "cards/ecard2-054-high.png",
+    "attacks": [
+      {
+        "name": "Triple Bone",
+        "damage": null
+      },
+      {
+        "name": "Bone Rush",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "4531",
-    "externalId": null,
+    "externalId": "ecard2-53",
     "tcgdex_id": "ecard2-53",
     "localId": "53",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "053/147",
+    "cardNumber": "53/147",
     "cardName": "Marill",
-    "fullDisplayName": "Marill 053/147 Aquapolis",
+    "fullDisplayName": "Marill 53/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3864,18 +4728,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-053-low.png",
-    "imageHighSrc": "cards/ecard2-053-high.png"
+    "imageHighSrc": "cards/ecard2-053-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Sleepy Ball",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4523",
-    "externalId": null,
+    "externalId": "ecard2-52",
     "tcgdex_id": "ecard2-52",
     "localId": "52",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "052/147",
+    "cardNumber": "52/147",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 052/147 Aquapolis",
+    "fullDisplayName": "Magnemite 52/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3897,18 +4771,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-052-low.png",
-    "imageHighSrc": "cards/ecard2-052-high.png"
+    "imageHighSrc": "cards/ecard2-052-high.png",
+    "attacks": [
+      {
+        "name": "Attract",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4515",
-    "externalId": null,
+    "externalId": "ecard2-51",
     "tcgdex_id": "ecard2-51",
     "localId": "51",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "051/147",
+    "cardNumber": "51/147",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 051/147 Aquapolis",
+    "fullDisplayName": "Growlithe 51/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3930,18 +4814,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-051-low.png",
-    "imageHighSrc": "cards/ecard2-051-high.png"
+    "imageHighSrc": "cards/ecard2-051-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4505",
-    "externalId": null,
+    "externalId": "ecard2-50",
     "tcgdex_id": "ecard2-50a",
     "localId": "50a",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "50a/147",
+    "cardNumber": "50/147",
     "cardName": "Golduck",
-    "fullDisplayName": "Golduck 50a/147 Aquapolis",
+    "fullDisplayName": "Golduck 50/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage1",
@@ -3963,18 +4853,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-050-low.png",
-    "imageHighSrc": "cards/ecard2-050-high.png"
+    "imageHighSrc": "cards/ecard2-050-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      },
+      {
+        "name": "Distortion Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4499",
-    "externalId": null,
+    "externalId": "ecard2-49",
     "tcgdex_id": "ecard2-49",
     "localId": "49",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "049/147",
+    "cardNumber": "49/147",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 049/147 Aquapolis",
+    "fullDisplayName": "Gloom 49/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3996,18 +4896,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-049-low.png",
-    "imageHighSrc": "cards/ecard2-049-high.png"
+    "imageHighSrc": "cards/ecard2-049-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Sap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4488",
-    "externalId": null,
+    "externalId": "ecard2-48",
     "tcgdex_id": "ecard2-48",
     "localId": "48",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "048/147",
+    "cardNumber": "48/147",
     "cardName": "Furret",
-    "fullDisplayName": "Furret 048/147 Aquapolis",
+    "fullDisplayName": "Furret 48/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4029,18 +4935,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-048-low.png",
-    "imageHighSrc": "cards/ecard2-048-high.png"
+    "imageHighSrc": "cards/ecard2-048-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4477",
-    "externalId": null,
+    "externalId": "ecard2-47",
     "tcgdex_id": "ecard2-47",
     "localId": "47",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "047/147",
+    "cardNumber": "47/147",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 047/147 Aquapolis",
+    "fullDisplayName": "Flaaffy 47/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4062,18 +4974,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-047-low.png",
-    "imageHighSrc": "cards/ecard2-047-high.png"
+    "imageHighSrc": "cards/ecard2-047-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Spark",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4468",
-    "externalId": null,
+    "externalId": "ecard2-46",
     "tcgdex_id": "ecard2-46",
     "localId": "46",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "046/147",
+    "cardNumber": "46/147",
     "cardName": "Dodrio",
-    "fullDisplayName": "Dodrio 046/147 Aquapolis",
+    "fullDisplayName": "Dodrio 46/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4095,18 +5017,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-046-low.png",
-    "imageHighSrc": "cards/ecard2-046-high.png"
+    "imageHighSrc": "cards/ecard2-046-high.png",
+    "attacks": [
+      {
+        "name": "Tri Attack",
+        "damage": "10×"
+      },
+      {
+        "name": "Peck Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4460",
-    "externalId": null,
+    "externalId": "ecard2-45",
     "tcgdex_id": "ecard2-45",
     "localId": "45",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "045/147",
+    "cardNumber": "45/147",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 045/147 Aquapolis",
+    "fullDisplayName": "Bellsprout 45/147 Aquapolis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4128,18 +5060,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-045-low.png",
-    "imageHighSrc": "cards/ecard2-045-high.png"
+    "imageHighSrc": "cards/ecard2-045-high.png",
+    "attacks": [
+      {
+        "name": "Blot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4452",
-    "externalId": null,
+    "externalId": "ecard2-44",
     "tcgdex_id": "ecard2-44",
     "localId": "44",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "044/147",
+    "cardNumber": "44/147",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 044/147 Aquapolis",
+    "fullDisplayName": "Zapdos 44/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4161,18 +5099,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-044-low.png",
-    "imageHighSrc": "cards/ecard2-044-high.png"
+    "imageHighSrc": "cards/ecard2-044-high.png",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "10"
+      },
+      {
+        "name": "Lightning Storm",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4442",
-    "externalId": null,
+    "externalId": "ecard2-43",
     "tcgdex_id": "ecard2-43",
     "localId": "43",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "043/147",
+    "cardNumber": "43/147",
     "cardName": "Vileplume",
-    "fullDisplayName": "Vileplume 043/147 Aquapolis",
+    "fullDisplayName": "Vileplume 43/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4194,18 +5142,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-043-low.png",
-    "imageHighSrc": "cards/ecard2-043-high.png"
+    "imageHighSrc": "cards/ecard2-043-high.png",
+    "attacks": [
+      {
+        "name": "Poison Scent",
+        "damage": null
+      },
+      {
+        "name": "Addictive Pollen",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4434",
-    "externalId": null,
+    "externalId": "ecard2-42",
     "tcgdex_id": "ecard2-42",
     "localId": "42",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "042/147",
+    "cardNumber": "42/147",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel 042/147 Aquapolis",
+    "fullDisplayName": "Victreebel 42/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4227,18 +5185,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-042-low.png",
-    "imageHighSrc": "cards/ecard2-042-high.png"
+    "imageHighSrc": "cards/ecard2-042-high.png",
+    "attacks": [
+      {
+        "name": "Corrosive Acid",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4427",
-    "externalId": null,
+    "externalId": "ecard2-41",
     "tcgdex_id": "ecard2-41",
     "localId": "41",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "041/147",
+    "cardNumber": "41/147",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon 041/147 Aquapolis",
+    "fullDisplayName": "Umbreon 41/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4260,18 +5224,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-041-low.png",
-    "imageHighSrc": "cards/ecard2-041-high.png"
+    "imageHighSrc": "cards/ecard2-041-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Bind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4418",
-    "externalId": null,
+    "externalId": "ecard2-40",
     "tcgdex_id": "ecard2-40",
     "localId": "40",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "040/147",
+    "cardNumber": "40/147",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 040/147 Aquapolis",
+    "fullDisplayName": "Tyranitar 40/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4293,18 +5263,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-040-low.png",
-    "imageHighSrc": "cards/ecard2-040-high.png"
+    "imageHighSrc": "cards/ecard2-040-high.png",
+    "attacks": [
+      {
+        "name": "Destructive Roar",
+        "damage": null
+      },
+      {
+        "name": "Tail Slap",
+        "damage": "30"
+      },
+      {
+        "name": "Gigacrush",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4409",
-    "externalId": null,
+    "externalId": "ecard2-39",
     "tcgdex_id": "ecard2-39",
     "localId": "39",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "039/147",
+    "cardNumber": "39/147",
     "cardName": "Togetic",
-    "fullDisplayName": "Togetic 039/147 Aquapolis",
+    "fullDisplayName": "Togetic 39/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4326,18 +5310,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-039-low.png",
-    "imageHighSrc": "cards/ecard2-039-high.png"
+    "imageHighSrc": "cards/ecard2-039-high.png",
+    "attacks": [
+      {
+        "name": "Mini-Metronome",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4400",
-    "externalId": null,
+    "externalId": "ecard2-38",
     "tcgdex_id": "ecard2-38",
     "localId": "38",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "038/147",
+    "cardNumber": "38/147",
     "cardName": "Tentacruel",
-    "fullDisplayName": "Tentacruel 038/147 Aquapolis",
+    "fullDisplayName": "Tentacruel 38/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4359,18 +5349,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-038-low.png",
-    "imageHighSrc": "cards/ecard2-038-high.png"
+    "imageHighSrc": "cards/ecard2-038-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4392",
-    "externalId": null,
+    "externalId": "ecard2-37",
     "tcgdex_id": "ecard2-37",
     "localId": "37",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "037/147",
+    "cardNumber": "37/147",
     "cardName": "Suicune",
-    "fullDisplayName": "Suicune 037/147 Aquapolis",
+    "fullDisplayName": "Suicune 37/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4392,18 +5388,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-037-low.png",
-    "imageHighSrc": "cards/ecard2-037-high.png"
+    "imageHighSrc": "cards/ecard2-037-high.png",
+    "attacks": [
+      {
+        "name": "Hypno Wave",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4383",
-    "externalId": null,
+    "externalId": "ecard2-36",
     "tcgdex_id": "ecard2-36",
     "localId": "36",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "036/147",
+    "cardNumber": "36/147",
     "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo 036/147 Aquapolis",
+    "fullDisplayName": "Sudowoodo 36/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4425,18 +5427,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-036-low.png",
-    "imageHighSrc": "cards/ecard2-036-high.png"
+    "imageHighSrc": "cards/ecard2-036-high.png",
+    "attacks": [
+      {
+        "name": "Copy",
+        "damage": null
+      },
+      {
+        "name": "Energy Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4374",
-    "externalId": null,
+    "externalId": "ecard2-35",
     "tcgdex_id": "ecard2-35",
     "localId": "35",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "035/147",
+    "cardNumber": "35/147",
     "cardName": "Steelix",
-    "fullDisplayName": "Steelix 035/147 Aquapolis",
+    "fullDisplayName": "Steelix 35/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4458,18 +5470,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-035-low.png",
-    "imageHighSrc": "cards/ecard2-035-high.png"
+    "imageHighSrc": "cards/ecard2-035-high.png",
+    "attacks": [
+      {
+        "name": "Earth Rift",
+        "damage": "10"
+      },
+      {
+        "name": "Iron Smash",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4366",
-    "externalId": null,
+    "externalId": "ecard2-34",
     "tcgdex_id": "ecard2-34",
     "localId": "34",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "034/147",
+    "cardNumber": "34/147",
     "cardName": "Slowking",
-    "fullDisplayName": "Slowking 034/147 Aquapolis",
+    "fullDisplayName": "Slowking 34/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4491,18 +5513,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-034-low.png",
-    "imageHighSrc": "cards/ecard2-034-high.png"
+    "imageHighSrc": "cards/ecard2-034-high.png",
+    "attacks": [
+      {
+        "name": "Bursting Hand",
+        "damage": "10×"
+      },
+      {
+        "name": "Shuffle Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4356",
-    "externalId": null,
+    "externalId": "ecard2-33",
     "tcgdex_id": "ecard2-33",
     "localId": "33",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "033/147",
+    "cardNumber": "33/147",
     "cardName": "Slowbro",
-    "fullDisplayName": "Slowbro 033/147 Aquapolis",
+    "fullDisplayName": "Slowbro 33/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4524,18 +5556,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-033-low.png",
-    "imageHighSrc": "cards/ecard2-033-high.png"
+    "imageHighSrc": "cards/ecard2-033-high.png",
+    "attacks": [
+      {
+        "name": "Energy Cannon",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4348",
-    "externalId": null,
+    "externalId": "ecard2-32",
     "tcgdex_id": "ecard2-32",
     "localId": "32",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "032/147",
+    "cardNumber": "32/147",
     "cardName": "Scizor",
-    "fullDisplayName": "Scizor 032/147 Aquapolis",
+    "fullDisplayName": "Scizor 32/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4557,18 +5595,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-032-low.png",
-    "imageHighSrc": "cards/ecard2-032-high.png"
+    "imageHighSrc": "cards/ecard2-032-high.png",
+    "attacks": [
+      {
+        "name": "Snatch",
+        "damage": "20"
+      },
+      {
+        "name": "Heavy Metal",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4339",
-    "externalId": null,
+    "externalId": "ecard2-31",
     "tcgdex_id": "ecard2-31",
     "localId": "31",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "031/147",
+    "cardNumber": "31/147",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 031/147 Aquapolis",
+    "fullDisplayName": "Rapidash 31/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4590,18 +5638,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-031-low.png",
-    "imageHighSrc": "cards/ecard2-031-high.png"
+    "imageHighSrc": "cards/ecard2-031-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "10"
+      },
+      {
+        "name": "Gallop",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4330",
-    "externalId": null,
+    "externalId": "ecard2-30",
     "tcgdex_id": "ecard2-30",
     "localId": "30",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "030/147",
+    "cardNumber": "30/147",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 030/147 Aquapolis",
+    "fullDisplayName": "Quagsire 30/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4623,18 +5681,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-030-low.png",
-    "imageHighSrc": "cards/ecard2-030-high.png"
+    "imageHighSrc": "cards/ecard2-030-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "20+"
+      },
+      {
+        "name": "Slam",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "4321",
-    "externalId": null,
+    "externalId": "ecard2-29",
     "tcgdex_id": "ecard2-29",
     "localId": "29",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "029/147",
+    "cardNumber": "29/147",
     "cardName": "Primeape",
-    "fullDisplayName": "Primeape 029/147 Aquapolis",
+    "fullDisplayName": "Primeape 29/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4656,18 +5724,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-029-low.png",
-    "imageHighSrc": "cards/ecard2-029-high.png"
+    "imageHighSrc": "cards/ecard2-029-high.png",
+    "attacks": [
+      {
+        "name": "Karate Chop",
+        "damage": "40-"
+      },
+      {
+        "name": "Sudden Charge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4311",
-    "externalId": null,
+    "externalId": "ecard2-28",
     "tcgdex_id": "ecard2-28",
     "localId": "28",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "028/147",
+    "cardNumber": "28/147",
     "cardName": "Porygon2",
-    "fullDisplayName": "Porygon2 028/147 Aquapolis",
+    "fullDisplayName": "Porygon2 28/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4689,18 +5767,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-028-low.png",
-    "imageHighSrc": "cards/ecard2-028-high.png"
+    "imageHighSrc": "cards/ecard2-028-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Ray",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4303",
-    "externalId": null,
+    "externalId": "ecard2-27",
     "tcgdex_id": "ecard2-27",
     "localId": "27",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "027/147",
+    "cardNumber": "27/147",
     "cardName": "Parasect",
-    "fullDisplayName": "Parasect 027/147 Aquapolis",
+    "fullDisplayName": "Parasect 27/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4722,18 +5806,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-027-low.png",
-    "imageHighSrc": "cards/ecard2-027-high.png"
+    "imageHighSrc": "cards/ecard2-027-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Inducer",
+        "damage": null
+      },
+      {
+        "name": "Rapture Pollen",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4292",
-    "externalId": null,
+    "externalId": "ecard2-26",
     "tcgdex_id": "ecard2-26",
     "localId": "26",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "026/147",
+    "cardNumber": "26/147",
     "cardName": "Octillery",
-    "fullDisplayName": "Octillery 026/147 Aquapolis",
+    "fullDisplayName": "Octillery 26/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4755,18 +5849,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-026-low.png",
-    "imageHighSrc": "cards/ecard2-026-high.png"
+    "imageHighSrc": "cards/ecard2-026-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4283",
-    "externalId": null,
+    "externalId": "ecard2-25",
     "tcgdex_id": "ecard2-25",
     "localId": "25",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "025/147",
+    "cardNumber": "25/147",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 025/147 Aquapolis",
+    "fullDisplayName": "Ninetales 25/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4788,18 +5888,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-025-low.png",
-    "imageHighSrc": "cards/ecard2-025-high.png"
+    "imageHighSrc": "cards/ecard2-025-high.png",
+    "attacks": [
+      {
+        "name": "Miracle Tail",
+        "damage": "10"
+      },
+      {
+        "name": "Roasting Heat",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4274",
-    "externalId": null,
+    "externalId": "ecard2-24",
     "tcgdex_id": "ecard2-24",
     "localId": "24",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "024/147",
+    "cardNumber": "24/147",
     "cardName": "Nidoking",
-    "fullDisplayName": "Nidoking 024/147 Aquapolis",
+    "fullDisplayName": "Nidoking 24/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4821,18 +5931,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-024-low.png",
-    "imageHighSrc": "cards/ecard2-024-high.png"
+    "imageHighSrc": "cards/ecard2-024-high.png",
+    "attacks": [
+      {
+        "name": "Giant Horn",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4265",
-    "externalId": null,
+    "externalId": "ecard2-23",
     "tcgdex_id": "ecard2-23",
     "localId": "23",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "023/147",
+    "cardNumber": "23/147",
     "cardName": "Muk",
-    "fullDisplayName": "Muk 023/147 Aquapolis",
+    "fullDisplayName": "Muk 23/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4854,18 +5970,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-023-low.png",
-    "imageHighSrc": "cards/ecard2-023-high.png"
+    "imageHighSrc": "cards/ecard2-023-high.png",
+    "attacks": [
+      {
+        "name": "Burning Sludge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4255",
-    "externalId": null,
+    "externalId": "ecard2-22",
     "tcgdex_id": "ecard2-22",
     "localId": "22",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "022/147",
+    "cardNumber": "22/147",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 022/147 Aquapolis",
+    "fullDisplayName": "Magneton 22/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4887,18 +6009,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-022-low.png",
-    "imageHighSrc": "cards/ecard2-022-high.png"
+    "imageHighSrc": "cards/ecard2-022-high.png",
+    "attacks": [
+      {
+        "name": "Steel Wave",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4247",
-    "externalId": null,
+    "externalId": "ecard2-21",
     "tcgdex_id": "ecard2-21",
     "localId": "21",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "021/147",
+    "cardNumber": "21/147",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 021/147 Aquapolis",
+    "fullDisplayName": "Lanturn 21/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4920,18 +6048,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-021-low.png",
-    "imageHighSrc": "cards/ecard2-021-high.png"
+    "imageHighSrc": "cards/ecard2-021-high.png",
+    "attacks": [
+      {
+        "name": "Electric Tackle",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4237",
-    "externalId": null,
+    "externalId": "ecard2-20",
     "tcgdex_id": "ecard2-20",
     "localId": "20",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "020/147",
+    "cardNumber": "20/147",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 020/147 Aquapolis",
+    "fullDisplayName": "Lanturn 20/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4953,18 +6087,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-020-low.png",
-    "imageHighSrc": "cards/ecard2-020-high.png"
+    "imageHighSrc": "cards/ecard2-020-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Ball",
+        "damage": "20"
+      },
+      {
+        "name": "Conduction",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4228",
-    "externalId": null,
+    "externalId": "ecard2-19",
     "tcgdex_id": "ecard2-19",
     "localId": "19",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "019/147",
+    "cardNumber": "19/147",
     "cardName": "Kingdra",
-    "fullDisplayName": "Kingdra 019/147 Aquapolis",
+    "fullDisplayName": "Kingdra 19/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4986,18 +6130,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-019-low.png",
-    "imageHighSrc": "cards/ecard2-019-high.png"
+    "imageHighSrc": "cards/ecard2-019-high.png",
+    "attacks": [
+      {
+        "name": "Rapids",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4222",
-    "externalId": null,
+    "externalId": "ecard2-18",
     "tcgdex_id": "ecard2-18",
     "localId": "18",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "018/147",
+    "cardNumber": "18/147",
     "cardName": "Jynx",
-    "fullDisplayName": "Jynx 018/147 Aquapolis",
+    "fullDisplayName": "Jynx 18/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5019,18 +6169,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-018-low.png",
-    "imageHighSrc": "cards/ecard2-018-high.png"
+    "imageHighSrc": "cards/ecard2-018-high.png",
+    "attacks": [
+      {
+        "name": "Meditate",
+        "damage": "10+"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4213",
-    "externalId": null,
+    "externalId": "ecard2-17",
     "tcgdex_id": "ecard2-17",
     "localId": "17",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "017/147",
+    "cardNumber": "17/147",
     "cardName": "Jumpluff",
-    "fullDisplayName": "Jumpluff 017/147 Aquapolis",
+    "fullDisplayName": "Jumpluff 17/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5052,18 +6212,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-017-low.png",
-    "imageHighSrc": "cards/ecard2-017-high.png"
+    "imageHighSrc": "cards/ecard2-017-high.png",
+    "attacks": [
+      {
+        "name": "Cotton Punch",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "4204",
-    "externalId": null,
+    "externalId": "ecard2-16",
     "tcgdex_id": "ecard2-16",
     "localId": "16",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "016/147",
+    "cardNumber": "16/147",
     "cardName": "Hypno",
-    "fullDisplayName": "Hypno 016/147 Aquapolis",
+    "fullDisplayName": "Hypno 16/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5085,18 +6251,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-016-low.png",
-    "imageHighSrc": "cards/ecard2-016-high.png"
+    "imageHighSrc": "cards/ecard2-016-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Aura",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4194",
-    "externalId": null,
+    "externalId": "ecard2-15",
     "tcgdex_id": "ecard2-15",
     "localId": "15",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "015/147",
+    "cardNumber": "15/147",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 015/147 Aquapolis",
+    "fullDisplayName": "Houndoom 15/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5118,18 +6290,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-015-low.png",
-    "imageHighSrc": "cards/ecard2-015-high.png"
+    "imageHighSrc": "cards/ecard2-015-high.png",
+    "attacks": [
+      {
+        "name": "Fireworks",
+        "damage": "30"
+      },
+      {
+        "name": "Dark Impact",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4186",
-    "externalId": null,
+    "externalId": "ecard2-14",
     "tcgdex_id": "ecard2-14",
     "localId": "14",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "014/147",
+    "cardNumber": "14/147",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 014/147 Aquapolis",
+    "fullDisplayName": "Houndoom 14/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5151,18 +6333,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-014-low.png",
-    "imageHighSrc": "cards/ecard2-014-high.png"
+    "imageHighSrc": "cards/ecard2-014-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "10"
+      },
+      {
+        "name": "Burn Up",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4175",
-    "externalId": null,
+    "externalId": "ecard2-13",
     "tcgdex_id": "ecard2-13",
     "localId": "13",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "013/147",
+    "cardNumber": "13/147",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 013/147 Aquapolis",
+    "fullDisplayName": "Exeggutor 13/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5184,18 +6376,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-013-low.png",
-    "imageHighSrc": "cards/ecard2-013-high.png"
+    "imageHighSrc": "cards/ecard2-013-high.png",
+    "attacks": [
+      {
+        "name": "Big Eggsplosion",
+        "damage": "20×"
+      },
+      {
+        "name": "Lateral Eggsplosion",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4167",
-    "externalId": null,
+    "externalId": "ecard2-12",
     "tcgdex_id": "ecard2-12",
     "localId": "12",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "012/147",
+    "cardNumber": "12/147",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 012/147 Aquapolis",
+    "fullDisplayName": "Exeggutor 12/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5217,18 +6419,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-012-low.png",
-    "imageHighSrc": "cards/ecard2-012-high.png"
+    "imageHighSrc": "cards/ecard2-012-high.png",
+    "attacks": [
+      {
+        "name": "Super Eggsplosion",
+        "damage": "40×"
+      },
+      {
+        "name": "Called Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4157",
-    "externalId": null,
+    "externalId": "ecard2-11",
     "tcgdex_id": "ecard2-11",
     "localId": "11",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "011/147",
+    "cardNumber": "11/147",
     "cardName": "Espeon",
-    "fullDisplayName": "Espeon 011/147 Aquapolis",
+    "fullDisplayName": "Espeon 11/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5250,18 +6462,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-011-low.png",
-    "imageHighSrc": "cards/ecard2-011-high.png"
+    "imageHighSrc": "cards/ecard2-011-high.png",
+    "attacks": [
+      {
+        "name": "Damage Blast",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4150",
-    "externalId": null,
+    "externalId": "ecard2-10",
     "tcgdex_id": "ecard2-10",
     "localId": "10",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "010/147",
+    "cardNumber": "10/147",
     "cardName": "Entei",
-    "fullDisplayName": "Entei 010/147 Aquapolis",
+    "fullDisplayName": "Entei 10/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5283,18 +6501,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-010-low.png",
-    "imageHighSrc": "cards/ecard2-010-high.png"
+    "imageHighSrc": "cards/ecard2-010-high.png",
+    "attacks": [
+      {
+        "name": "Burning Fang",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4142",
-    "externalId": null,
+    "externalId": "ecard2-9",
     "tcgdex_id": "ecard2-9",
     "localId": "9",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "009/147",
+    "cardNumber": "9/147",
     "cardName": "Elekid",
-    "fullDisplayName": "Elekid 009/147 Aquapolis",
+    "fullDisplayName": "Elekid 9/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5316,18 +6540,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-009-low.png",
-    "imageHighSrc": "cards/ecard2-009-high.png"
+    "imageHighSrc": "cards/ecard2-009-high.png",
+    "attacks": [
+      {
+        "name": "Energy Kick",
+        "damage": null
+      }
+    ],
+    "rules": "If your Active Pokémon is a Baby Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
   },
   {
     "masterCardId": "4133",
-    "externalId": null,
+    "externalId": "ecard2-8",
     "tcgdex_id": "ecard2-8",
     "localId": "8",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "008/147",
+    "cardNumber": "8/147",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 008/147 Aquapolis",
+    "fullDisplayName": "Electrode 8/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5349,18 +6580,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-008-low.png",
-    "imageHighSrc": "cards/ecard2-008-high.png"
+    "imageHighSrc": "cards/ecard2-008-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4122",
-    "externalId": null,
+    "externalId": "ecard2-7",
     "tcgdex_id": "ecard2-7",
     "localId": "7",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "007/147",
+    "cardNumber": "7/147",
     "cardName": "Donphan",
-    "fullDisplayName": "Donphan 007/147 Aquapolis",
+    "fullDisplayName": "Donphan 7/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5382,18 +6619,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-007-low.png",
-    "imageHighSrc": "cards/ecard2-007-high.png"
+    "imageHighSrc": "cards/ecard2-007-high.png",
+    "attacks": [
+      {
+        "name": "Earthquake",
+        "damage": "30"
+      },
+      {
+        "name": "Double Stab",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "4113",
-    "externalId": null,
+    "externalId": "ecard2-6",
     "tcgdex_id": "ecard2-6",
     "localId": "6",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "006/147",
+    "cardNumber": "6/147",
     "cardName": "Blissey",
-    "fullDisplayName": "Blissey 006/147 Aquapolis",
+    "fullDisplayName": "Blissey 6/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5415,18 +6662,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-006-low.png",
-    "imageHighSrc": "cards/ecard2-006-high.png"
+    "imageHighSrc": "cards/ecard2-006-high.png",
+    "attacks": [
+      {
+        "name": "Smash Bomber",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4102",
-    "externalId": null,
+    "externalId": "ecard2-5",
     "tcgdex_id": "ecard2-5",
     "localId": "5",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "005/147",
+    "cardNumber": "5/147",
     "cardName": "Bellossom",
-    "fullDisplayName": "Bellossom 005/147 Aquapolis",
+    "fullDisplayName": "Bellossom 5/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5448,18 +6701,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-005-low.png",
-    "imageHighSrc": "cards/ecard2-005-high.png"
+    "imageHighSrc": "cards/ecard2-005-high.png",
+    "attacks": [
+      {
+        "name": "Knife Leaf",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "4093",
-    "externalId": null,
+    "externalId": "ecard2-4",
     "tcgdex_id": "ecard2-4",
     "localId": "4",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "004/147",
+    "cardNumber": "4/147",
     "cardName": "Azumarill",
-    "fullDisplayName": "Azumarill 004/147 Aquapolis",
+    "fullDisplayName": "Azumarill 4/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5481,18 +6740,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-004-low.png",
-    "imageHighSrc": "cards/ecard2-004-high.png"
+    "imageHighSrc": "cards/ecard2-004-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Sonic",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4083",
-    "externalId": null,
+    "externalId": "ecard2-3",
     "tcgdex_id": "ecard2-3",
     "localId": "3",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "003/147",
+    "cardNumber": "3/147",
     "cardName": "Ariados",
-    "fullDisplayName": "Ariados 003/147 Aquapolis",
+    "fullDisplayName": "Ariados 3/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5514,18 +6779,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-003-low.png",
-    "imageHighSrc": "cards/ecard2-003-high.png"
+    "imageHighSrc": "cards/ecard2-003-high.png",
+    "attacks": [
+      {
+        "name": "Spider Force",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4075",
-    "externalId": null,
+    "externalId": "ecard2-2",
     "tcgdex_id": "ecard2-2",
     "localId": "2",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "002/147",
+    "cardNumber": "2/147",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 002/147 Aquapolis",
+    "fullDisplayName": "Arcanine 2/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5547,18 +6818,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-002-low.png",
-    "imageHighSrc": "cards/ecard2-002-high.png"
+    "imageHighSrc": "cards/ecard2-002-high.png",
+    "attacks": [
+      {
+        "name": "Fire Blow",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4067",
-    "externalId": null,
+    "externalId": "ecard2-1",
     "tcgdex_id": "ecard2-1",
     "localId": "1",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "001/147",
+    "cardNumber": "1/147",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 001/147 Aquapolis",
+    "fullDisplayName": "Ampharos 1/147 Aquapolis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5580,18 +6857,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-001-low.png",
-    "imageHighSrc": "cards/ecard2-001-high.png"
+    "imageHighSrc": "cards/ecard2-001-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      },
+      {
+        "name": "Reflect Energy",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5195",
-    "externalId": null,
+    "externalId": "ecard2-H9",
     "tcgdex_id": "ecard2-H09",
     "localId": "H09",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "0H9/147",
+    "cardNumber": "H9/H32",
     "cardName": "Espeon",
-    "fullDisplayName": "Espeon 0H9/147 Aquapolis",
+    "fullDisplayName": "Espeon H9/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5613,18 +6900,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-0H9-low.png",
-    "imageHighSrc": "cards/ecard2-0H9-high.png"
+    "imageHighSrc": "cards/ecard2-0H9-high.png",
+    "attacks": [
+      {
+        "name": "Damage Blast",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5192",
-    "externalId": null,
+    "externalId": "ecard2-H8",
     "tcgdex_id": "ecard2-H08",
     "localId": "H08",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "0H8/147",
+    "cardNumber": "H8/H32",
     "cardName": "Entei",
-    "fullDisplayName": "Entei 0H8/147 Aquapolis",
+    "fullDisplayName": "Entei H8/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5646,18 +6939,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-0H8-low.png",
-    "imageHighSrc": "cards/ecard2-0H8-high.png"
+    "imageHighSrc": "cards/ecard2-0H8-high.png",
+    "attacks": [
+      {
+        "name": "Burning Fang",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5190",
-    "externalId": null,
+    "externalId": "ecard2-H7",
     "tcgdex_id": "ecard2-H07",
     "localId": "H07",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "0H7/147",
+    "cardNumber": "H7/H32",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 0H7/147 Aquapolis",
+    "fullDisplayName": "Electrode H7/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5679,18 +6978,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-0H7-low.png",
-    "imageHighSrc": "cards/ecard2-0H7-high.png"
+    "imageHighSrc": "cards/ecard2-0H7-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5187",
-    "externalId": null,
+    "externalId": "ecard2-H6",
     "tcgdex_id": "ecard2-H06",
     "localId": "H06",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "0H6/147",
+    "cardNumber": "H6/H32",
     "cardName": "Blissey",
-    "fullDisplayName": "Blissey 0H6/147 Aquapolis",
+    "fullDisplayName": "Blissey H6/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5712,18 +7017,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-0H6-low.png",
-    "imageHighSrc": "cards/ecard2-0H6-high.png"
+    "imageHighSrc": "cards/ecard2-0H6-high.png",
+    "attacks": [
+      {
+        "name": "Smash Bomber",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5184",
-    "externalId": null,
+    "externalId": "ecard2-H5",
     "tcgdex_id": "ecard2-H05",
     "localId": "H05",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "0H5/147",
+    "cardNumber": "H5/H32",
     "cardName": "Bellossom",
-    "fullDisplayName": "Bellossom 0H5/147 Aquapolis",
+    "fullDisplayName": "Bellossom H5/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5745,18 +7056,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-0H5-low.png",
-    "imageHighSrc": "cards/ecard2-0H5-high.png"
+    "imageHighSrc": "cards/ecard2-0H5-high.png",
+    "attacks": [
+      {
+        "name": "Knife Leaf",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "5181",
-    "externalId": null,
+    "externalId": "ecard2-H4",
     "tcgdex_id": "ecard2-H04",
     "localId": "H04",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "0H4/147",
+    "cardNumber": "H4/H32",
     "cardName": "Azumarill",
-    "fullDisplayName": "Azumarill 0H4/147 Aquapolis",
+    "fullDisplayName": "Azumarill H4/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5778,18 +7095,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-0H4-low.png",
-    "imageHighSrc": "cards/ecard2-0H4-high.png"
+    "imageHighSrc": "cards/ecard2-0H4-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Sonic",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5178",
-    "externalId": null,
+    "externalId": "ecard2-H3",
     "tcgdex_id": "ecard2-H03",
     "localId": "H03",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "0H3/147",
+    "cardNumber": "H3/H32",
     "cardName": "Ariados",
-    "fullDisplayName": "Ariados 0H3/147 Aquapolis",
+    "fullDisplayName": "Ariados H3/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5811,18 +7134,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-0H3-low.png",
-    "imageHighSrc": "cards/ecard2-0H3-high.png"
+    "imageHighSrc": "cards/ecard2-0H3-high.png",
+    "attacks": [
+      {
+        "name": "Spider Force",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5175",
-    "externalId": null,
+    "externalId": "ecard2-H2",
     "tcgdex_id": "ecard2-H02",
     "localId": "H02",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "0H2/147",
+    "cardNumber": "H2/H32",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 0H2/147 Aquapolis",
+    "fullDisplayName": "Arcanine H2/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5844,18 +7173,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-0H2-low.png",
-    "imageHighSrc": "cards/ecard2-0H2-high.png"
+    "imageHighSrc": "cards/ecard2-0H2-high.png",
+    "attacks": [
+      {
+        "name": "Fire Blow",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5172",
-    "externalId": null,
+    "externalId": "ecard2-H1",
     "tcgdex_id": "ecard2-H01",
     "localId": "H01",
     "setCode": "ecard2",
     "setTcgdexId": "ecard2",
-    "cardNumber": "0H1/147",
+    "cardNumber": "H1/H32",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 0H1/147 Aquapolis",
+    "fullDisplayName": "Ampharos H1/H32 Aquapolis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5877,6 +7212,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard2-0H1-low.png",
-    "imageHighSrc": "cards/ecard2-0H1-high.png"
+    "imageHighSrc": "cards/ecard2-0H1-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      },
+      {
+        "name": "Reflect Energy",
+        "damage": "50"
+      }
+    ]
   }
 ]

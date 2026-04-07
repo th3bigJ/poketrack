@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "5015",
-    "externalId": null,
+    "externalId": "ex10-117",
     "tcgdex_id": "ex10-117",
     "localId": "117",
     "setCode": "ex10",
@@ -31,11 +31,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-117-low.png",
-    "imageHighSrc": "cards/ex10-117-high.png"
+    "imageHighSrc": "cards/ex10-117-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Leaf",
+        "damage": null
+      },
+      {
+        "name": "Time Trap",
+        "damage": "30"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "5010",
-    "externalId": null,
+    "externalId": "ex10-116",
     "tcgdex_id": "ex10-116",
     "localId": "116",
     "setCode": "ex10",
@@ -65,11 +76,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-116-low.png",
-    "imageHighSrc": "cards/ex10-116-high.png"
+    "imageHighSrc": "cards/ex10-116-high.png",
+    "attacks": [
+      {
+        "name": "Toxic Claws",
+        "damage": "20"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "5005",
-    "externalId": null,
+    "externalId": "ex10-115",
     "tcgdex_id": "ex10-115",
     "localId": "115",
     "setCode": "ex10",
@@ -99,11 +117,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-115-low.png",
-    "imageHighSrc": "cards/ex10-115-high.png"
+    "imageHighSrc": "cards/ex10-115-high.png",
+    "attacks": [
+      {
+        "name": "Splashing Turn",
+        "damage": "20"
+      },
+      {
+        "name": "Cross Wind",
+        "damage": "70"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "5000",
-    "externalId": null,
+    "externalId": "ex10-114",
     "tcgdex_id": "ex10-114",
     "localId": "114",
     "setCode": "ex10",
@@ -133,11 +162,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-114-low.png",
-    "imageHighSrc": "cards/ex10-114-high.png"
+    "imageHighSrc": "cards/ex10-114-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Turn",
+        "damage": "20"
+      },
+      {
+        "name": "Meta Voltage",
+        "damage": "70"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "4995",
-    "externalId": null,
+    "externalId": "ex10-113",
     "tcgdex_id": "ex10-113",
     "localId": "113",
     "setCode": "ex10",
@@ -167,11 +207,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-113-low.png",
-    "imageHighSrc": "cards/ex10-113-high.png"
+    "imageHighSrc": "cards/ex10-113-high.png",
+    "attacks": [
+      {
+        "name": "Burning Turn",
+        "damage": "20"
+      },
+      {
+        "name": "Detonation",
+        "damage": "70"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "4990",
-    "externalId": null,
+    "externalId": "ex10-112",
     "tcgdex_id": "ex10-112",
     "localId": "112",
     "setCode": "ex10",
@@ -201,11 +252,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-112-low.png",
-    "imageHighSrc": "cards/ex10-112-high.png"
+    "imageHighSrc": "cards/ex10-112-high.png",
+    "attacks": [
+      {
+        "name": "Black Cry",
+        "damage": "20"
+      },
+      {
+        "name": "Darkness Fang",
+        "damage": "60"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4985",
-    "externalId": null,
+    "externalId": "ex10-111",
     "tcgdex_id": "ex10-111",
     "localId": "111",
     "setCode": "ex10",
@@ -235,11 +297,30 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-111-low.png",
-    "imageHighSrc": "cards/ex10-111-high.png"
+    "imageHighSrc": "cards/ex10-111-high.png",
+    "attacks": [
+      {
+        "name": "Shatter",
+        "damage": "30"
+      },
+      {
+        "name": "Derail",
+        "damage": "30"
+      },
+      {
+        "name": "Mix-Up",
+        "damage": "70"
+      },
+      {
+        "name": "Losing Control",
+        "damage": "120"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4980",
-    "externalId": null,
+    "externalId": "ex10-110",
     "tcgdex_id": "ex10-110",
     "localId": "110",
     "setCode": "ex10",
@@ -269,11 +350,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-110-low.png",
-    "imageHighSrc": "cards/ex10-110-high.png"
+    "imageHighSrc": "cards/ex10-110-high.png",
+    "attacks": [
+      {
+        "name": "Kindle",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4975",
-    "externalId": null,
+    "externalId": "ex10-109",
     "tcgdex_id": "ex10-109",
     "localId": "109",
     "setCode": "ex10",
@@ -303,11 +391,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-109-low.png",
-    "imageHighSrc": "cards/ex10-109-high.png"
+    "imageHighSrc": "cards/ex10-109-high.png",
+    "attacks": [
+      {
+        "name": "Metal Charge",
+        "damage": "70"
+      },
+      {
+        "name": "Mudslide",
+        "damage": null
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4970",
-    "externalId": null,
+    "externalId": "ex10-108",
     "tcgdex_id": "ex10-108",
     "localId": "108",
     "setCode": "ex10",
@@ -337,11 +436,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-108-low.png",
-    "imageHighSrc": "cards/ex10-108-high.png"
+    "imageHighSrc": "cards/ex10-108-high.png",
+    "attacks": [
+      {
+        "name": "Steel Wing",
+        "damage": "40"
+      },
+      {
+        "name": "Cross-Cut",
+        "damage": "50+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4965",
-    "externalId": null,
+    "externalId": "ex10-107",
     "tcgdex_id": "ex10-107",
     "localId": "107",
     "setCode": "ex10",
@@ -371,11 +481,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-107-low.png",
-    "imageHighSrc": "cards/ex10-107-high.png"
+    "imageHighSrc": "cards/ex10-107-high.png",
+    "attacks": [
+      {
+        "name": "Upward Lick",
+        "damage": null
+      },
+      {
+        "name": "Punch and Run",
+        "damage": "40"
+      },
+      {
+        "name": "Swallow Up",
+        "damage": "70"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4959",
-    "externalId": null,
+    "externalId": "ex10-106",
     "tcgdex_id": "ex10-106",
     "localId": "106",
     "setCode": "ex10",
@@ -405,11 +530,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-106-low.png",
-    "imageHighSrc": "cards/ex10-106-high.png"
+    "imageHighSrc": "cards/ex10-106-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "50"
+      },
+      {
+        "name": "Power Poison",
+        "damage": "90"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4951",
-    "externalId": null,
+    "externalId": "ex10-105",
     "tcgdex_id": "ex10-105",
     "localId": "105",
     "setCode": "ex10",
@@ -439,11 +575,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-105-low.png",
-    "imageHighSrc": "cards/ex10-105-high.png"
+    "imageHighSrc": "cards/ex10-105-high.png",
+    "attacks": [
+      {
+        "name": "Elemental Blast",
+        "damage": "200"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4943",
-    "externalId": null,
+    "externalId": "ex10-104",
     "tcgdex_id": "ex10-104",
     "localId": "104",
     "setCode": "ex10",
@@ -473,11 +616,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-104-low.png",
-    "imageHighSrc": "cards/ex10-104-high.png"
+    "imageHighSrc": "cards/ex10-104-high.png",
+    "attacks": [
+      {
+        "name": "Rainbow Burn",
+        "damage": "10+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4934",
-    "externalId": null,
+    "externalId": "ex10-103",
     "tcgdex_id": "ex10-103",
     "localId": "103",
     "setCode": "ex10",
@@ -507,11 +657,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-103-low.png",
-    "imageHighSrc": "cards/ex10-103-high.png"
+    "imageHighSrc": "cards/ex10-103-high.png",
+    "attacks": [
+      {
+        "name": "Tsunami",
+        "damage": "30"
+      },
+      {
+        "name": "Sore Spot",
+        "damage": "70+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4929",
-    "externalId": null,
+    "externalId": "ex10-102",
     "tcgdex_id": "ex10-102",
     "localId": "102",
     "setCode": "ex10",
@@ -541,11 +702,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-102-low.png",
-    "imageHighSrc": "cards/ex10-102-high.png"
+    "imageHighSrc": "cards/ex10-102-high.png",
+    "attacks": [
+      {
+        "name": "Snap Tail",
+        "damage": null
+      },
+      {
+        "name": "Psyloop",
+        "damage": "60+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4918",
-    "externalId": null,
+    "externalId": "ex10-101",
     "tcgdex_id": "ex10-101",
     "localId": "101",
     "setCode": "ex10",
@@ -575,11 +747,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-101-low.png",
-    "imageHighSrc": "cards/ex10-101-high.png"
+    "imageHighSrc": "cards/ex10-101-high.png",
+    "attacks": [
+      {
+        "name": "Energy Absorption",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "60"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "4913",
-    "externalId": null,
+    "externalId": "ex10-100",
     "tcgdex_id": "ex10-100",
     "localId": "100",
     "setCode": "ex10",
@@ -604,18 +787,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-100-low.png",
-    "imageHighSrc": "cards/ex10-100-high.png"
+    "imageHighSrc": "cards/ex10-100-high.png",
+    "rules": "Warp Energy provides Colorless Energy. When you attach this card from your hand to your Active Pokémon, switch that Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "4905",
-    "externalId": null,
+    "externalId": "ex10-99",
     "tcgdex_id": "ex10-99",
     "localId": "99",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "099/115",
+    "cardNumber": "99/115",
     "cardName": "Cyclone Energy",
-    "fullDisplayName": "Cyclone Energy 099/115 Unseen Forces",
+    "fullDisplayName": "Cyclone Energy 99/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -633,18 +817,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-099-low.png",
-    "imageHighSrc": "cards/ex10-099-high.png"
+    "imageHighSrc": "cards/ex10-099-high.png",
+    "rules": "Cyclone Energy provides Colorless Energy. When you attach this card from your hand to your Active Pokémon, switch 1 of the Defending Pokémon with 1 of your opponent's Benched Pokémon. Your opponent chooses the Benched Pokémon to switch."
   },
   {
     "masterCardId": "4897",
-    "externalId": null,
+    "externalId": "ex10-98",
     "tcgdex_id": "ex10-98",
     "localId": "98",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "098/115",
+    "cardNumber": "98/115",
     "cardName": "Boost Energy",
-    "fullDisplayName": "Boost Energy 098/115 Unseen Forces",
+    "fullDisplayName": "Boost Energy 98/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -662,18 +847,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-098-low.png",
-    "imageHighSrc": "cards/ex10-098-high.png"
+    "imageHighSrc": "cards/ex10-098-high.png",
+    "rules": "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy."
   },
   {
     "masterCardId": "4889",
-    "externalId": null,
+    "externalId": "ex10-97",
     "tcgdex_id": "ex10-97",
     "localId": "97",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "097/115",
+    "cardNumber": "97/115",
     "cardName": "Metal Energy",
-    "fullDisplayName": "Metal Energy 097/115 Unseen Forces",
+    "fullDisplayName": "Metal Energy 97/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -691,18 +877,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-097-low.png",
-    "imageHighSrc": "cards/ex10-097-high.png"
+    "imageHighSrc": "cards/ex10-097-high.png",
+    "rules": "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't Metal. Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4879",
-    "externalId": null,
+    "externalId": "ex10-96",
     "tcgdex_id": "ex10-96",
     "localId": "96",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "096/115",
+    "cardNumber": "96/115",
     "cardName": "Darkness Energy",
-    "fullDisplayName": "Darkness Energy 096/115 Unseen Forces",
+    "fullDisplayName": "Darkness Energy 96/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -720,18 +907,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-096-low.png",
-    "imageHighSrc": "cards/ex10-096-high.png"
+    "imageHighSrc": "cards/ex10-096-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to attack, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect unless the Attacking Pokémon is Darkness or has Dark in its name. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4874",
-    "externalId": null,
+    "externalId": "ex10-95",
     "tcgdex_id": "ex10-95",
     "localId": "95",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "095/115",
+    "cardNumber": "95/115",
     "cardName": "Potion",
-    "fullDisplayName": "Potion 095/115 Unseen Forces",
+    "fullDisplayName": "Potion 95/115 Unseen Forces",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -749,18 +937,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-095-low.png",
-    "imageHighSrc": "cards/ex10-095-high.png"
+    "imageHighSrc": "cards/ex10-095-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "4866",
-    "externalId": null,
+    "externalId": "ex10-94",
     "tcgdex_id": "ex10-94",
     "localId": "94",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "094/115",
+    "cardNumber": "94/115",
     "cardName": "Energy Search",
-    "fullDisplayName": "Energy Search 094/115 Unseen Forces",
+    "fullDisplayName": "Energy Search 94/115 Unseen Forces",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -778,18 +967,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-094-low.png",
-    "imageHighSrc": "cards/ex10-094-high.png"
+    "imageHighSrc": "cards/ex10-094-high.png",
+    "rules": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4854",
-    "externalId": null,
+    "externalId": "ex10-93",
     "tcgdex_id": "ex10-93",
     "localId": "93",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "093/115",
+    "cardNumber": "93/115",
     "cardName": "Warp Point",
-    "fullDisplayName": "Warp Point 093/115 Unseen Forces",
+    "fullDisplayName": "Warp Point 93/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -807,18 +997,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-093-low.png",
-    "imageHighSrc": "cards/ex10-093-high.png"
+    "imageHighSrc": "cards/ex10-093-high.png",
+    "rules": "Your opponent switches 1 of his or her Defending Pokémon with 1 of his or her Benched Pokémon, if any. You switch 1 of your Active Pokémon with 1 of your Benched Pokémon, if any."
   },
   {
     "masterCardId": "4845",
-    "externalId": null,
+    "externalId": "ex10-92",
     "tcgdex_id": "ex10-92",
     "localId": "92",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "092/115",
+    "cardNumber": "92/115",
     "cardName": "Solid Rage",
-    "fullDisplayName": "Solid Rage 092/115 Unseen Forces",
+    "fullDisplayName": "Solid Rage 92/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -836,18 +1027,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-092-low.png",
-    "imageHighSrc": "cards/ex10-092-high.png"
+    "imageHighSrc": "cards/ex10-092-high.png",
+    "rules": "Attach Solid Rage to 1 of your Evolved Pokémon (excluding Pokémon-ex) that doesn't already have a Pokémon Tool attached to it. If the Pokémon Solid Rage is attached to is a Basic Pokémon or Pokémon-ex, discard Solid Rage.\n\nIf you have more Prize cards left than your opponent, the Pokémon that Solid Rage is attached to does 20 more damage to the Active Pokémon (before applying Weakness and Resistance)."
   },
   {
     "masterCardId": "4837",
-    "externalId": null,
+    "externalId": "ex10-91",
     "tcgdex_id": "ex10-91",
     "localId": "91",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "091/115",
+    "cardNumber": "91/115",
     "cardName": "Sitrus Berry",
-    "fullDisplayName": "Sitrus Berry 091/115 Unseen Forces",
+    "fullDisplayName": "Sitrus Berry 91/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -865,18 +1057,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-091-low.png",
-    "imageHighSrc": "cards/ex10-091-high.png"
+    "imageHighSrc": "cards/ex10-091-high.png",
+    "rules": "Attach Sitrus Berry to 1 of your Pokémon (excluding Pokémon-ex and Pokémon that has Dark or an owner in its name) that doesn't already have a Pokémon Tool attached to it. If the Pokémon Sitrus Berry is attached to is Pokémon-ex or has Dark or an owner in its name, discard Sitrus Berry.\n\nAt any time between turns, if the Pokémon this card is attached to has at least 3 damage counters on it, remove 3 damage counters from it. Then, discard Sitrus Berry."
   },
   {
     "masterCardId": "4829",
-    "externalId": null,
+    "externalId": "ex10-90",
     "tcgdex_id": "ex10-90",
     "localId": "90",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "090/115",
+    "cardNumber": "90/115",
     "cardName": "Protective Orb",
-    "fullDisplayName": "Protective Orb 090/115 Unseen Forces",
+    "fullDisplayName": "Protective Orb 90/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -894,18 +1087,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-090-low.png",
-    "imageHighSrc": "cards/ex10-090-high.png"
+    "imageHighSrc": "cards/ex10-090-high.png",
+    "rules": "Attach Protective Orb to 1 of your Evolved Pokémon (excluding Pokémon-ex) that doesn't already have a Pokémon Tool attached to it. If the Pokémon Protective Orb is attached to is a Basic Pokémon or Pokémon-ex, discard Protective Orb.\n\nAs long as Protective Orb is attached to a Pokémon, that Pokémon has no Weakness."
   },
   {
     "masterCardId": "4821",
-    "externalId": null,
+    "externalId": "ex10-89",
     "tcgdex_id": "ex10-89",
     "localId": "89",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "089/115",
+    "cardNumber": "89/115",
     "cardName": "Professor Elm's Training Method",
-    "fullDisplayName": "Professor Elm's Training Method 089/115 Unseen Forces",
+    "fullDisplayName": "Professor Elm's Training Method 89/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -923,18 +1117,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-089-low.png",
-    "imageHighSrc": "cards/ex10-089-high.png"
+    "imageHighSrc": "cards/ex10-089-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for an Evolution card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4813",
-    "externalId": null,
+    "externalId": "ex10-88",
     "tcgdex_id": "ex10-88",
     "localId": "88",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "088/115",
+    "cardNumber": "88/115",
     "cardName": "Pokémon Reversal",
-    "fullDisplayName": "Pokémon Reversal 088/115 Unseen Forces",
+    "fullDisplayName": "Pokémon Reversal 88/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -952,18 +1147,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-088-low.png",
-    "imageHighSrc": "cards/ex10-088-high.png"
+    "imageHighSrc": "cards/ex10-088-high.png",
+    "rules": "Flip a coin. If heads, choose 1 of your opponent's Benched Pokémon and switch it with 1 of the Defending Pokémon. Your opponent chooses the Defending Pokémon to switch."
   },
   {
     "masterCardId": "4805",
-    "externalId": null,
+    "externalId": "ex10-87",
     "tcgdex_id": "ex10-87",
     "localId": "87",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "087/115",
+    "cardNumber": "87/115",
     "cardName": "Poké Ball",
-    "fullDisplayName": "Poké Ball 087/115 Unseen Forces",
+    "fullDisplayName": "Poké Ball 87/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -981,18 +1177,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-087-low.png",
-    "imageHighSrc": "cards/ex10-087-high.png"
+    "imageHighSrc": "cards/ex10-087-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Basic Pokémon or Evolution card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4797",
-    "externalId": null,
+    "externalId": "ex10-86",
     "tcgdex_id": "ex10-86",
     "localId": "86",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "086/115",
+    "cardNumber": "86/115",
     "cardName": "Mary's Request",
-    "fullDisplayName": "Mary's Request 086/115 Unseen Forces",
+    "fullDisplayName": "Mary's Request 86/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1010,18 +1207,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-086-low.png",
-    "imageHighSrc": "cards/ex10-086-high.png"
+    "imageHighSrc": "cards/ex10-086-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw a card. If you don't have any Stage 2 Evolved Pokémon in play, draw 2 more cards."
   },
   {
     "masterCardId": "4789",
-    "externalId": null,
+    "externalId": "ex10-85",
     "tcgdex_id": "ex10-85",
     "localId": "85",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "085/115",
+    "cardNumber": "85/115",
     "cardName": "Fluffy Berry",
-    "fullDisplayName": "Fluffy Berry 085/115 Unseen Forces",
+    "fullDisplayName": "Fluffy Berry 85/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1039,18 +1237,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-085-low.png",
-    "imageHighSrc": "cards/ex10-085-high.png"
+    "imageHighSrc": "cards/ex10-085-high.png",
+    "rules": "Attach Fluffy Berry to 1 of your Pokémon (excluding Pokémon-ex and Pokémon that has Dark or an owner in its name) that doesn't already have a Pokémon Tool attached to it. If the Pokémon Fluffy Berry is attached to is Pokémon-ex or has Dark or an owner in its name, discard Fluffy Berry.\n\nAs long as Fluffy Berry is attached to a Pokémon, that Pokémon's Retreat Cost is 0."
   },
   {
     "masterCardId": "4782",
-    "externalId": null,
+    "externalId": "ex10-84",
     "tcgdex_id": "ex10-84",
     "localId": "84",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "084/115",
+    "cardNumber": "84/115",
     "cardName": "Energy Switch",
-    "fullDisplayName": "Energy Switch 084/115 Unseen Forces",
+    "fullDisplayName": "Energy Switch 84/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1068,18 +1267,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-084-low.png",
-    "imageHighSrc": "cards/ex10-084-high.png"
+    "imageHighSrc": "cards/ex10-084-high.png",
+    "rules": "Move a basic Energy card attached to 1 of your Pokémon to another of your Pokémon."
   },
   {
     "masterCardId": "4774",
-    "externalId": null,
+    "externalId": "ex10-83",
     "tcgdex_id": "ex10-83",
     "localId": "83",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "083/115",
+    "cardNumber": "83/115",
     "cardName": "Energy Root",
-    "fullDisplayName": "Energy Root 083/115 Unseen Forces",
+    "fullDisplayName": "Energy Root 83/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1097,18 +1297,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-083-low.png",
-    "imageHighSrc": "cards/ex10-083-high.png"
+    "imageHighSrc": "cards/ex10-083-high.png",
+    "rules": "Attach Energy Root to 1 of your Pokémon (excluding Pokémon-ex and Pokémon that has Dark or an owner in its name) that doesn't already have a Pokémon Tool attached to it. If the Pokémon Energy Root is attached to is Pokémon-ex or has Dark or an owner in its name, discard Energy Root.\n\nAs long as Energy Root is attached to a Pokémon, that Pokémon gets +20 HP and can't use any Poké-Powers or Poké-Bodies."
   },
   {
     "masterCardId": "4767",
-    "externalId": null,
+    "externalId": "ex10-82",
     "tcgdex_id": "ex10-82",
     "localId": "82",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "082/115",
+    "cardNumber": "82/115",
     "cardName": "Energy Removal 2",
-    "fullDisplayName": "Energy Removal 2 082/115 Unseen Forces",
+    "fullDisplayName": "Energy Removal 2 82/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1126,18 +1327,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-082-low.png",
-    "imageHighSrc": "cards/ex10-082-high.png"
+    "imageHighSrc": "cards/ex10-082-high.png",
+    "rules": "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it."
   },
   {
     "masterCardId": "4760",
-    "externalId": null,
+    "externalId": "ex10-81",
     "tcgdex_id": "ex10-81",
     "localId": "81",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "081/115",
+    "cardNumber": "81/115",
     "cardName": "Energy Recycle System",
-    "fullDisplayName": "Energy Recycle System 081/115 Unseen Forces",
+    "fullDisplayName": "Energy Recycle System 81/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1155,18 +1357,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-081-low.png",
-    "imageHighSrc": "cards/ex10-081-high.png"
+    "imageHighSrc": "cards/ex10-081-high.png",
+    "rules": "Search your discard pile for basic Energy cards. You may either show 1 basic Energy card to your opponent and put it into your hand, or show 3 basic Energy cards to your opponent and shuffle them into your deck."
   },
   {
     "masterCardId": "4753",
-    "externalId": null,
+    "externalId": "ex10-80",
     "tcgdex_id": "ex10-80",
     "localId": "80",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "080/115",
+    "cardNumber": "80/115",
     "cardName": "Curse Powder",
-    "fullDisplayName": "Curse Powder 080/115 Unseen Forces",
+    "fullDisplayName": "Curse Powder 80/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1184,18 +1387,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-080-low.png",
-    "imageHighSrc": "cards/ex10-080-high.png"
+    "imageHighSrc": "cards/ex10-080-high.png",
+    "rules": "Attach Curse Powder to 1 of your Evolved Pokémon (excluding Pokémon-ex) that doesn't already have a Pokémon Tool attached to it. If the Pokémon Curse Powder is attached to is a Basic Pokémon or Pokémon-ex, discard Curse Powder.\n\nIf the Pokémon that Curse Powder is attached to is your Active Pokémon and is Knocked Out by damage from an opponent's attack, put 3 damage counters on the Attacking Pokémon."
   },
   {
     "masterCardId": "4745",
-    "externalId": null,
+    "externalId": "ex10-79",
     "tcgdex_id": "ex10-79",
     "localId": "79",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "079/115",
+    "cardNumber": "79/115",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper 079/115 Unseen Forces",
+    "fullDisplayName": "Wooper 79/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1217,18 +1421,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-079-low.png",
-    "imageHighSrc": "cards/ex10-079-high.png"
+    "imageHighSrc": "cards/ex10-079-high.png",
+    "attacks": [
+      {
+        "name": "Mud Shot",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Whap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4737",
-    "externalId": null,
+    "externalId": "ex10-78",
     "tcgdex_id": "ex10-78",
     "localId": "78",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "078/115",
+    "cardNumber": "78/115",
     "cardName": "Totodile",
-    "fullDisplayName": "Totodile 078/115 Unseen Forces",
+    "fullDisplayName": "Totodile 78/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1250,18 +1464,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-078-low.png",
-    "imageHighSrc": "cards/ex10-078-high.png"
+    "imageHighSrc": "cards/ex10-078-high.png",
+    "attacks": [
+      {
+        "name": "Splatter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4728",
-    "externalId": null,
+    "externalId": "ex10-77",
     "tcgdex_id": "ex10-77",
     "localId": "77",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "077/115",
+    "cardNumber": "77/115",
     "cardName": "Teddiursa",
-    "fullDisplayName": "Teddiursa 077/115 Unseen Forces",
+    "fullDisplayName": "Teddiursa 77/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1283,18 +1503,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-077-low.png",
-    "imageHighSrc": "cards/ex10-077-high.png"
+    "imageHighSrc": "cards/ex10-077-high.png",
+    "attacks": [
+      {
+        "name": "Teary Eyes",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4719",
-    "externalId": null,
+    "externalId": "ex10-76",
     "tcgdex_id": "ex10-76",
     "localId": "76",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "076/115",
+    "cardNumber": "76/115",
     "cardName": "Sunkern",
-    "fullDisplayName": "Sunkern 076/115 Unseen Forces",
+    "fullDisplayName": "Sunkern 76/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1316,18 +1546,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-076-low.png",
-    "imageHighSrc": "cards/ex10-076-high.png"
+    "imageHighSrc": "cards/ex10-076-high.png",
+    "attacks": [
+      {
+        "name": "Minor Errand-Running",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4712",
-    "externalId": null,
+    "externalId": "ex10-75",
     "tcgdex_id": "ex10-75",
     "localId": "75",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "075/115",
+    "cardNumber": "75/115",
     "cardName": "Spinarak",
-    "fullDisplayName": "Spinarak 075/115 Unseen Forces",
+    "fullDisplayName": "Spinarak 75/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1349,18 +1589,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-075-low.png",
-    "imageHighSrc": "cards/ex10-075-high.png"
+    "imageHighSrc": "cards/ex10-075-high.png",
+    "attacks": [
+      {
+        "name": "Stun Poison",
+        "damage": null
+      },
+      {
+        "name": "Pierce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4703",
-    "externalId": null,
+    "externalId": "ex10-74",
     "tcgdex_id": "ex10-74",
     "localId": "74",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "074/115",
+    "cardNumber": "74/115",
     "cardName": "Snubbull",
-    "fullDisplayName": "Snubbull 074/115 Unseen Forces",
+    "fullDisplayName": "Snubbull 74/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1382,18 +1632,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-074-low.png",
-    "imageHighSrc": "cards/ex10-074-high.png"
+    "imageHighSrc": "cards/ex10-074-high.png",
+    "attacks": [
+      {
+        "name": "Lick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4695",
-    "externalId": null,
+    "externalId": "ex10-73",
     "tcgdex_id": "ex10-73",
     "localId": "73",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "073/115",
+    "cardNumber": "73/115",
     "cardName": "Slugma",
-    "fullDisplayName": "Slugma 073/115 Unseen Forces",
+    "fullDisplayName": "Slugma 73/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1415,18 +1671,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-073-low.png",
-    "imageHighSrc": "cards/ex10-073-high.png"
+    "imageHighSrc": "cards/ex10-073-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4687",
-    "externalId": null,
+    "externalId": "ex10-72",
     "tcgdex_id": "ex10-72",
     "localId": "72",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "072/115",
+    "cardNumber": "72/115",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 072/115 Unseen Forces",
+    "fullDisplayName": "Slowpoke 72/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1448,18 +1714,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-072-low.png",
-    "imageHighSrc": "cards/ex10-072-high.png"
+    "imageHighSrc": "cards/ex10-072-high.png",
+    "attacks": [
+      {
+        "name": "Fishing Tail",
+        "damage": null
+      },
+      {
+        "name": "Trip Over",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4679",
-    "externalId": null,
+    "externalId": "ex10-71",
     "tcgdex_id": "ex10-71",
     "localId": "71",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "071/115",
+    "cardNumber": "71/115",
     "cardName": "Remoraid",
-    "fullDisplayName": "Remoraid 071/115 Unseen Forces",
+    "fullDisplayName": "Remoraid 71/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1481,18 +1757,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-071-low.png",
-    "imageHighSrc": "cards/ex10-071-high.png"
+    "imageHighSrc": "cards/ex10-071-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4670",
-    "externalId": null,
+    "externalId": "ex10-70",
     "tcgdex_id": "ex10-70",
     "localId": "70",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "070/115",
+    "cardNumber": "70/115",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 070/115 Unseen Forces",
+    "fullDisplayName": "Pupitar 70/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1514,18 +1800,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-070-low.png",
-    "imageHighSrc": "cards/ex10-070-high.png"
+    "imageHighSrc": "cards/ex10-070-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      },
+      {
+        "name": "Rock Throw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4662",
-    "externalId": null,
+    "externalId": "ex10-69",
     "tcgdex_id": "ex10-69",
     "localId": "69",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "069/115",
+    "cardNumber": "69/115",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon 069/115 Unseen Forces",
+    "fullDisplayName": "Porygon 69/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1547,18 +1843,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-069-low.png",
-    "imageHighSrc": "cards/ex10-069-high.png"
+    "imageHighSrc": "cards/ex10-069-high.png",
+    "attacks": [
+      {
+        "name": "3-D Attack",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4655",
-    "externalId": null,
+    "externalId": "ex10-68",
     "tcgdex_id": "ex10-68",
     "localId": "68",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "068/115",
+    "cardNumber": "68/115",
     "cardName": "Poliwhirl",
-    "fullDisplayName": "Poliwhirl 068/115 Unseen Forces",
+    "fullDisplayName": "Poliwhirl 68/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1580,18 +1882,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-068-low.png",
-    "imageHighSrc": "cards/ex10-068-high.png"
+    "imageHighSrc": "cards/ex10-068-high.png",
+    "attacks": [
+      {
+        "name": "Energy Ball",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4646",
-    "externalId": null,
+    "externalId": "ex10-67",
     "tcgdex_id": "ex10-67",
     "localId": "67",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "067/115",
+    "cardNumber": "67/115",
     "cardName": "Poliwag",
-    "fullDisplayName": "Poliwag 067/115 Unseen Forces",
+    "fullDisplayName": "Poliwag 67/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1613,18 +1921,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-067-low.png",
-    "imageHighSrc": "cards/ex10-067-high.png"
+    "imageHighSrc": "cards/ex10-067-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4640",
-    "externalId": null,
+    "externalId": "ex10-66",
     "tcgdex_id": "ex10-66",
     "localId": "66",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "066/115",
+    "cardNumber": "66/115",
     "cardName": "Pineco",
-    "fullDisplayName": "Pineco 066/115 Unseen Forces",
+    "fullDisplayName": "Pineco 66/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1646,18 +1964,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-066-low.png",
-    "imageHighSrc": "cards/ex10-066-high.png"
+    "imageHighSrc": "cards/ex10-066-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4632",
-    "externalId": null,
+    "externalId": "ex10-65",
     "tcgdex_id": "ex10-65",
     "localId": "65",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "065/115",
+    "cardNumber": "65/115",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 065/115 Unseen Forces",
+    "fullDisplayName": "Onix 65/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1679,18 +2003,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-065-low.png",
-    "imageHighSrc": "cards/ex10-065-high.png"
+    "imageHighSrc": "cards/ex10-065-high.png",
+    "attacks": [
+      {
+        "name": "Dig Deep",
+        "damage": null
+      },
+      {
+        "name": "Mud Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4624",
-    "externalId": null,
+    "externalId": "ex10-64",
     "tcgdex_id": "ex10-64",
     "localId": "64",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "064/115",
+    "cardNumber": "64/115",
     "cardName": "Oddish",
-    "fullDisplayName": "Oddish 064/115 Unseen Forces",
+    "fullDisplayName": "Oddish 64/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1712,18 +2046,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-064-low.png",
-    "imageHighSrc": "cards/ex10-064-high.png"
+    "imageHighSrc": "cards/ex10-064-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4615",
-    "externalId": null,
+    "externalId": "ex10-63",
     "tcgdex_id": "ex10-63",
     "localId": "63",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "063/115",
+    "cardNumber": "63/115",
     "cardName": "Natu",
-    "fullDisplayName": "Natu 063/115 Unseen Forces",
+    "fullDisplayName": "Natu 63/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1745,18 +2085,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-063-low.png",
-    "imageHighSrc": "cards/ex10-063-high.png"
+    "imageHighSrc": "cards/ex10-063-high.png",
+    "attacks": [
+      {
+        "name": "Telekinesis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4607",
-    "externalId": null,
+    "externalId": "ex10-62",
     "tcgdex_id": "ex10-62",
     "localId": "62",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "062/115",
+    "cardNumber": "62/115",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 062/115 Unseen Forces",
+    "fullDisplayName": "Mareep 62/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1778,18 +2124,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-062-low.png",
-    "imageHighSrc": "cards/ex10-062-high.png"
+    "imageHighSrc": "cards/ex10-062-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4599",
-    "externalId": null,
+    "externalId": "ex10-61",
     "tcgdex_id": "ex10-61",
     "localId": "61",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "061/115",
+    "cardNumber": "61/115",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 061/115 Unseen Forces",
+    "fullDisplayName": "Larvitar 61/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1811,18 +2163,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-061-low.png",
-    "imageHighSrc": "cards/ex10-061-high.png"
+    "imageHighSrc": "cards/ex10-061-high.png",
+    "attacks": [
+      {
+        "name": "Retaliate",
+        "damage": "10×"
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4591",
-    "externalId": null,
+    "externalId": "ex10-60",
     "tcgdex_id": "ex10-60",
     "localId": "60",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "060/115",
+    "cardNumber": "60/115",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 060/115 Unseen Forces",
+    "fullDisplayName": "Houndour 60/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1844,18 +2206,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-060-low.png",
-    "imageHighSrc": "cards/ex10-060-high.png"
+    "imageHighSrc": "cards/ex10-060-high.png",
+    "attacks": [
+      {
+        "name": "Smog",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4582",
-    "externalId": null,
+    "externalId": "ex10-59",
     "tcgdex_id": "ex10-59",
     "localId": "59",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "059/115",
+    "cardNumber": "59/115",
     "cardName": "Hoothoot",
-    "fullDisplayName": "Hoothoot 059/115 Unseen Forces",
+    "fullDisplayName": "Hoothoot 59/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1877,18 +2245,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-059-low.png",
-    "imageHighSrc": "cards/ex10-059-high.png"
+    "imageHighSrc": "cards/ex10-059-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4575",
-    "externalId": null,
+    "externalId": "ex10-58",
     "tcgdex_id": "ex10-58",
     "localId": "58",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "058/115",
+    "cardNumber": "58/115",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 058/115 Unseen Forces",
+    "fullDisplayName": "Gloom 58/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1910,18 +2288,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-058-low.png",
-    "imageHighSrc": "cards/ex10-058-high.png"
+    "imageHighSrc": "cards/ex10-058-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4566",
-    "externalId": null,
+    "externalId": "ex10-57",
     "tcgdex_id": "ex10-57",
     "localId": "57",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "057/115",
+    "cardNumber": "57/115",
     "cardName": "Gligar",
-    "fullDisplayName": "Gligar 057/115 Unseen Forces",
+    "fullDisplayName": "Gligar 57/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1943,18 +2327,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-057-low.png",
-    "imageHighSrc": "cards/ex10-057-high.png"
+    "imageHighSrc": "cards/ex10-057-high.png",
+    "attacks": [
+      {
+        "name": "Toxic Grip",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4557",
-    "externalId": null,
+    "externalId": "ex10-56",
     "tcgdex_id": "ex10-56",
     "localId": "56",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "056/115",
+    "cardNumber": "56/115",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 056/115 Unseen Forces",
+    "fullDisplayName": "Flaaffy 56/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1976,18 +2366,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-056-low.png",
-    "imageHighSrc": "cards/ex10-056-high.png"
+    "imageHighSrc": "cards/ex10-056-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": "10"
+      },
+      {
+        "name": "Thunder",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4548",
-    "externalId": null,
+    "externalId": "ex10-55",
     "tcgdex_id": "ex10-55",
     "localId": "55",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "055/115",
+    "cardNumber": "55/115",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 055/115 Unseen Forces",
+    "fullDisplayName": "Eevee 55/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2009,18 +2409,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-055-low.png",
-    "imageHighSrc": "cards/ex10-055-high.png"
+    "imageHighSrc": "cards/ex10-055-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4539",
-    "externalId": null,
+    "externalId": "ex10-54",
     "tcgdex_id": "ex10-54",
     "localId": "54",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "054/115",
+    "cardNumber": "54/115",
     "cardName": "Cyndaquil",
-    "fullDisplayName": "Cyndaquil 054/115 Unseen Forces",
+    "fullDisplayName": "Cyndaquil 54/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2042,18 +2448,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-054-low.png",
-    "imageHighSrc": "cards/ex10-054-high.png"
+    "imageHighSrc": "cards/ex10-054-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Fireworks",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4530",
-    "externalId": null,
+    "externalId": "ex10-53",
     "tcgdex_id": "ex10-53",
     "localId": "53",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "053/115",
+    "cardNumber": "53/115",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 053/115 Unseen Forces",
+    "fullDisplayName": "Clefairy 53/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2075,18 +2491,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-053-low.png",
-    "imageHighSrc": "cards/ex10-053-high.png"
+    "imageHighSrc": "cards/ex10-053-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Lullaby",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4521",
-    "externalId": null,
+    "externalId": "ex10-52",
     "tcgdex_id": "ex10-52",
     "localId": "52",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "052/115",
+    "cardNumber": "52/115",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 052/115 Unseen Forces",
+    "fullDisplayName": "Chinchou 52/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2108,18 +2534,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-052-low.png",
-    "imageHighSrc": "cards/ex10-052-high.png"
+    "imageHighSrc": "cards/ex10-052-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Razor Fin",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4513",
-    "externalId": null,
+    "externalId": "ex10-51",
     "tcgdex_id": "ex10-51",
     "localId": "51",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "051/115",
+    "cardNumber": "51/115",
     "cardName": "Chikorita",
-    "fullDisplayName": "Chikorita 051/115 Unseen Forces",
+    "fullDisplayName": "Chikorita 51/115 Unseen Forces",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2141,18 +2577,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-051-low.png",
-    "imageHighSrc": "cards/ex10-051-high.png"
+    "imageHighSrc": "cards/ex10-051-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4503",
-    "externalId": null,
+    "externalId": "ex10-50",
     "tcgdex_id": "ex10-50",
     "localId": "50",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "050/115",
+    "cardNumber": "50/115",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma 050/115 Unseen Forces",
+    "fullDisplayName": "Yanma 50/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2174,18 +2620,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-050-low.png",
-    "imageHighSrc": "cards/ex10-050-high.png"
+    "imageHighSrc": "cards/ex10-050-high.png",
+    "attacks": [
+      {
+        "name": "Grand Loop",
+        "damage": null
+      },
+      {
+        "name": "Spinning Tail",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4494",
-    "externalId": null,
+    "externalId": "ex10-49",
     "tcgdex_id": "ex10-49",
     "localId": "49",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "049/115",
+    "cardNumber": "49/115",
     "cardName": "Xatu",
-    "fullDisplayName": "Xatu 049/115 Unseen Forces",
+    "fullDisplayName": "Xatu 49/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2207,18 +2663,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-049-low.png",
-    "imageHighSrc": "cards/ex10-049-high.png"
+    "imageHighSrc": "cards/ex10-049-high.png",
+    "attacks": [
+      {
+        "name": "Telekinesis",
+        "damage": null
+      },
+      {
+        "name": "Psyshock",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4484",
-    "externalId": null,
+    "externalId": "ex10-48",
     "tcgdex_id": "ex10-48",
     "localId": "48",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "048/115",
+    "cardNumber": "48/115",
     "cardName": "Smeargle",
-    "fullDisplayName": "Smeargle 048/115 Unseen Forces",
+    "fullDisplayName": "Smeargle 48/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2240,18 +2706,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-048-low.png",
-    "imageHighSrc": "cards/ex10-048-high.png"
+    "imageHighSrc": "cards/ex10-048-high.png",
+    "attacks": [
+      {
+        "name": "Split Spiral Punch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4475",
-    "externalId": null,
+    "externalId": "ex10-47",
     "tcgdex_id": "ex10-47",
     "localId": "47",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "047/115",
+    "cardNumber": "47/115",
     "cardName": "Shuckle",
-    "fullDisplayName": "Shuckle 047/115 Unseen Forces",
+    "fullDisplayName": "Shuckle 47/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2273,18 +2745,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-047-low.png",
-    "imageHighSrc": "cards/ex10-047-high.png"
+    "imageHighSrc": "cards/ex10-047-high.png",
+    "attacks": [
+      {
+        "name": "Toxic",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4467",
-    "externalId": null,
+    "externalId": "ex10-46",
     "tcgdex_id": "ex10-46",
     "localId": "46",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "046/115",
+    "cardNumber": "46/115",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 046/115 Unseen Forces",
+    "fullDisplayName": "Scyther 46/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2306,18 +2784,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-046-low.png",
-    "imageHighSrc": "cards/ex10-046-high.png"
+    "imageHighSrc": "cards/ex10-046-high.png",
+    "attacks": [
+      {
+        "name": "Twin Play",
+        "damage": null
+      },
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4458",
-    "externalId": null,
+    "externalId": "ex10-45",
     "tcgdex_id": "ex10-45",
     "localId": "45",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "045/115",
+    "cardNumber": "45/115",
     "cardName": "Quilava",
-    "fullDisplayName": "Quilava 045/115 Unseen Forces",
+    "fullDisplayName": "Quilava 45/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2339,18 +2827,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-045-low.png",
-    "imageHighSrc": "cards/ex10-045-high.png"
+    "imageHighSrc": "cards/ex10-045-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "20"
+      },
+      {
+        "name": "Tackle",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4450",
-    "externalId": null,
+    "externalId": "ex10-44",
     "tcgdex_id": "ex10-44",
     "localId": "44",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "044/115",
+    "cardNumber": "44/115",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 044/115 Unseen Forces",
+    "fullDisplayName": "Quagsire 44/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2372,18 +2870,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-044-low.png",
-    "imageHighSrc": "cards/ex10-044-high.png"
+    "imageHighSrc": "cards/ex10-044-high.png",
+    "attacks": [
+      {
+        "name": "Mud Shot",
+        "damage": "20"
+      },
+      {
+        "name": "Rock Hurl",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4441",
-    "externalId": null,
+    "externalId": "ex10-43",
     "tcgdex_id": "ex10-43",
     "localId": "43",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "043/115",
+    "cardNumber": "43/115",
     "cardName": "Noctowl",
-    "fullDisplayName": "Noctowl 043/115 Unseen Forces",
+    "fullDisplayName": "Noctowl 43/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2405,18 +2913,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-043-low.png",
-    "imageHighSrc": "cards/ex10-043-high.png"
+    "imageHighSrc": "cards/ex10-043-high.png",
+    "attacks": [
+      {
+        "name": "Spearhead",
+        "damage": null
+      },
+      {
+        "name": "Surprise",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4431",
-    "externalId": null,
+    "externalId": "ex10-42",
     "tcgdex_id": "ex10-42",
     "localId": "42",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "042/115",
+    "cardNumber": "42/115",
     "cardName": "Miltank",
-    "fullDisplayName": "Miltank 042/115 Unseen Forces",
+    "fullDisplayName": "Miltank 42/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2438,18 +2956,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-042-low.png",
-    "imageHighSrc": "cards/ex10-042-high.png"
+    "imageHighSrc": "cards/ex10-042-high.png",
+    "attacks": [
+      {
+        "name": "Healing Milk",
+        "damage": null
+      },
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4422",
-    "externalId": null,
+    "externalId": "ex10-41",
     "tcgdex_id": "ex10-41",
     "localId": "41",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "041/115",
+    "cardNumber": "41/115",
     "cardName": "Magcargo",
-    "fullDisplayName": "Magcargo 041/115 Unseen Forces",
+    "fullDisplayName": "Magcargo 41/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2471,18 +2999,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-041-low.png",
-    "imageHighSrc": "cards/ex10-041-high.png"
+    "imageHighSrc": "cards/ex10-041-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "30"
+      },
+      {
+        "name": "Extra Flame",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4413",
-    "externalId": null,
+    "externalId": "ex10-40",
     "tcgdex_id": "ex10-40",
     "localId": "40",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "040/115",
+    "cardNumber": "40/115",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 040/115 Unseen Forces",
+    "fullDisplayName": "Lanturn 40/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2504,18 +3042,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-040-low.png",
-    "imageHighSrc": "cards/ex10-040-high.png"
+    "imageHighSrc": "cards/ex10-040-high.png",
+    "attacks": [
+      {
+        "name": "Energy Stream",
+        "damage": "20"
+      },
+      {
+        "name": "Take Down",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4404",
-    "externalId": null,
+    "externalId": "ex10-39",
     "tcgdex_id": "ex10-39",
     "localId": "39",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "039/115",
+    "cardNumber": "39/115",
     "cardName": "Granbull",
-    "fullDisplayName": "Granbull 039/115 Unseen Forces",
+    "fullDisplayName": "Granbull 39/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2537,18 +3085,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-039-low.png",
-    "imageHighSrc": "cards/ex10-039-high.png"
+    "imageHighSrc": "cards/ex10-039-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Blow",
+        "damage": "30"
+      },
+      {
+        "name": "Double Lariat",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "4396",
-    "externalId": null,
+    "externalId": "ex10-38",
     "tcgdex_id": "ex10-38",
     "localId": "38",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "038/115",
+    "cardNumber": "38/115",
     "cardName": "Croconaw",
-    "fullDisplayName": "Croconaw 038/115 Unseen Forces",
+    "fullDisplayName": "Croconaw 38/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2570,18 +3128,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-038-low.png",
-    "imageHighSrc": "cards/ex10-038-high.png"
+    "imageHighSrc": "cards/ex10-038-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Aqua Sonic",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4387",
-    "externalId": null,
+    "externalId": "ex10-37",
     "tcgdex_id": "ex10-37",
     "localId": "37",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "037/115",
+    "cardNumber": "37/115",
     "cardName": "Corsola",
-    "fullDisplayName": "Corsola 037/115 Unseen Forces",
+    "fullDisplayName": "Corsola 37/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2603,18 +3171,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-037-low.png",
-    "imageHighSrc": "cards/ex10-037-high.png"
+    "imageHighSrc": "cards/ex10-037-high.png",
+    "attacks": [
+      {
+        "name": "Cry for Help",
+        "damage": null
+      },
+      {
+        "name": "Double Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4378",
-    "externalId": null,
+    "externalId": "ex10-36",
     "tcgdex_id": "ex10-36",
     "localId": "36",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "036/115",
+    "cardNumber": "36/115",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 036/115 Unseen Forces",
+    "fullDisplayName": "Clefable 36/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2636,18 +3214,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-036-low.png",
-    "imageHighSrc": "cards/ex10-036-high.png"
+    "imageHighSrc": "cards/ex10-036-high.png",
+    "attacks": [
+      {
+        "name": "Shining Fingers",
+        "damage": "10"
+      },
+      {
+        "name": "Extra Comet Punch",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4371",
-    "externalId": null,
+    "externalId": "ex10-35",
     "tcgdex_id": "ex10-35",
     "localId": "35",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "035/115",
+    "cardNumber": "35/115",
     "cardName": "Bayleef",
-    "fullDisplayName": "Bayleef 035/115 Unseen Forces",
+    "fullDisplayName": "Bayleef 35/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2669,18 +3257,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-035-low.png",
-    "imageHighSrc": "cards/ex10-035-high.png"
+    "imageHighSrc": "cards/ex10-035-high.png",
+    "attacks": [
+      {
+        "name": "Soothing Scent",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4362",
-    "externalId": null,
+    "externalId": "ex10-34",
     "tcgdex_id": "ex10-34",
     "localId": "34",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "034/115",
+    "cardNumber": "34/115",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 034/115 Unseen Forces",
+    "fullDisplayName": "Aipom 34/115 Unseen Forces",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2702,18 +3300,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-034-low.png",
-    "imageHighSrc": "cards/ex10-034-high.png"
+    "imageHighSrc": "cards/ex10-034-high.png",
+    "attacks": [
+      {
+        "name": "Snap Tail",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4353",
-    "externalId": null,
+    "externalId": "ex10-33",
     "tcgdex_id": "ex10-33",
     "localId": "33",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "033/115",
+    "cardNumber": "33/115",
     "cardName": "Tyrogue",
-    "fullDisplayName": "Tyrogue 033/115 Unseen Forces",
+    "fullDisplayName": "Tyrogue 33/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2735,18 +3339,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-033-low.png",
-    "imageHighSrc": "cards/ex10-033-high.png"
+    "imageHighSrc": "cards/ex10-033-high.png",
+    "attacks": [
+      {
+        "name": "Desperate Punch",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4344",
-    "externalId": null,
+    "externalId": "ex10-32",
     "tcgdex_id": "ex10-32",
     "localId": "32",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "032/115",
+    "cardNumber": "32/115",
     "cardName": "Stantler",
-    "fullDisplayName": "Stantler 032/115 Unseen Forces",
+    "fullDisplayName": "Stantler 32/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2768,18 +3378,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-032-low.png",
-    "imageHighSrc": "cards/ex10-032-high.png"
+    "imageHighSrc": "cards/ex10-032-high.png",
+    "attacks": [
+      {
+        "name": "Screechy Voice",
+        "damage": "10"
+      },
+      {
+        "name": "Push Away",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4331",
-    "externalId": null,
+    "externalId": "ex10-31",
     "tcgdex_id": "ex10-31",
     "localId": "31",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "031/115",
+    "cardNumber": "31/115",
     "cardName": "Smoochum",
-    "fullDisplayName": "Smoochum 031/115 Unseen Forces",
+    "fullDisplayName": "Smoochum 31/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2801,18 +3421,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-031-low.png",
-    "imageHighSrc": "cards/ex10-031-high.png"
+    "imageHighSrc": "cards/ex10-031-high.png",
+    "attacks": [
+      {
+        "name": "Blown Kiss",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4322",
-    "externalId": null,
+    "externalId": "ex10-30",
     "tcgdex_id": "ex10-30",
     "localId": "30",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "030/115",
+    "cardNumber": "30/115",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 030/115 Unseen Forces",
+    "fullDisplayName": "Murkrow 30/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2834,18 +3460,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-030-low.png",
-    "imageHighSrc": "cards/ex10-030-high.png"
+    "imageHighSrc": "cards/ex10-030-high.png",
+    "attacks": [
+      {
+        "name": "Night Song",
+        "damage": null
+      },
+      {
+        "name": "Plunder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4314",
-    "externalId": null,
+    "externalId": "ex10-29",
     "tcgdex_id": "ex10-29",
     "localId": "29",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "029/115",
+    "cardNumber": "29/115",
     "cardName": "Lugia",
-    "fullDisplayName": "Lugia 029/115 Unseen Forces",
+    "fullDisplayName": "Lugia 29/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2867,18 +3503,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-029-low.png",
-    "imageHighSrc": "cards/ex10-029-high.png"
+    "imageHighSrc": "cards/ex10-029-high.png",
+    "attacks": [
+      {
+        "name": "Aeroblast",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4304",
-    "externalId": null,
+    "externalId": "ex10-28",
     "tcgdex_id": "ex10-28",
     "localId": "28",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "028/115",
+    "cardNumber": "28/115",
     "cardName": "Jynx",
-    "fullDisplayName": "Jynx 028/115 Unseen Forces",
+    "fullDisplayName": "Jynx 28/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2900,18 +3542,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-028-low.png",
-    "imageHighSrc": "cards/ex10-028-high.png"
+    "imageHighSrc": "cards/ex10-028-high.png",
+    "attacks": [
+      {
+        "name": "Freeze Light",
+        "damage": null
+      },
+      {
+        "name": "Pure Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4295",
-    "externalId": null,
+    "externalId": "ex10-27",
     "tcgdex_id": "ex10-27",
     "localId": "27",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "027/115",
+    "cardNumber": "27/115",
     "cardName": "Ho-Oh",
-    "fullDisplayName": "Ho-Oh 027/115 Unseen Forces",
+    "fullDisplayName": "Ho-Oh 27/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2933,18 +3585,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-027-low.png",
-    "imageHighSrc": "cards/ex10-027-high.png"
+    "imageHighSrc": "cards/ex10-027-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "20"
+      },
+      {
+        "name": "Sacred Fire",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4286",
-    "externalId": null,
+    "externalId": "ex10-26",
     "tcgdex_id": "ex10-26",
     "localId": "26",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "026/115",
+    "cardNumber": "26/115",
     "cardName": "Hitmontop",
-    "fullDisplayName": "Hitmontop 026/115 Unseen Forces",
+    "fullDisplayName": "Hitmontop 26/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2966,18 +3628,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-026-low.png",
-    "imageHighSrc": "cards/ex10-026-high.png"
+    "imageHighSrc": "cards/ex10-026-high.png",
+    "attacks": [
+      {
+        "name": "Upward Kick",
+        "damage": "20+"
+      },
+      {
+        "name": "Spiral Kick",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4277",
-    "externalId": null,
+    "externalId": "ex10-25",
     "tcgdex_id": "ex10-25",
     "localId": "25",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "025/115",
+    "cardNumber": "25/115",
     "cardName": "Hitmonlee",
-    "fullDisplayName": "Hitmonlee 025/115 Unseen Forces",
+    "fullDisplayName": "Hitmonlee 25/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2999,18 +3671,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-025-low.png",
-    "imageHighSrc": "cards/ex10-025-high.png"
+    "imageHighSrc": "cards/ex10-025-high.png",
+    "attacks": [
+      {
+        "name": "Stretch Kick",
+        "damage": null
+      },
+      {
+        "name": "Mega Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4268",
-    "externalId": null,
+    "externalId": "ex10-24",
     "tcgdex_id": "ex10-24",
     "localId": "24",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "024/115",
+    "cardNumber": "24/115",
     "cardName": "Hitmonchan",
-    "fullDisplayName": "Hitmonchan 024/115 Unseen Forces",
+    "fullDisplayName": "Hitmonchan 24/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3032,18 +3714,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-024-low.png",
-    "imageHighSrc": "cards/ex10-024-high.png"
+    "imageHighSrc": "cards/ex10-024-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Punch",
+        "damage": "10×"
+      },
+      {
+        "name": "Speedy Uppercut",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4259",
-    "externalId": null,
+    "externalId": "ex10-23",
     "tcgdex_id": "ex10-23",
     "localId": "23",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "023/115",
+    "cardNumber": "23/115",
     "cardName": "Elekid",
-    "fullDisplayName": "Elekid 023/115 Unseen Forces",
+    "fullDisplayName": "Elekid 23/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3065,18 +3757,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-023-low.png",
-    "imageHighSrc": "cards/ex10-023-high.png"
+    "imageHighSrc": "cards/ex10-023-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Trip",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4250",
-    "externalId": null,
+    "externalId": "ex10-22",
     "tcgdex_id": "ex10-22",
     "localId": "22",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "022/115",
+    "cardNumber": "22/115",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 022/115 Unseen Forces",
+    "fullDisplayName": "Electabuzz 22/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3098,18 +3796,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-022-low.png",
-    "imageHighSrc": "cards/ex10-022-high.png"
+    "imageHighSrc": "cards/ex10-022-high.png",
+    "attacks": [
+      {
+        "name": "Double Shock",
+        "damage": "10×"
+      },
+      {
+        "name": "Luster Blast",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4241",
-    "externalId": null,
+    "externalId": "ex10-21",
     "tcgdex_id": "ex10-21",
     "localId": "21",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "021/115",
+    "cardNumber": "21/115",
     "cardName": "Cleffa",
-    "fullDisplayName": "Cleffa 021/115 Unseen Forces",
+    "fullDisplayName": "Cleffa 21/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3131,18 +3839,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-021-low.png",
-    "imageHighSrc": "cards/ex10-021-high.png"
+    "imageHighSrc": "cards/ex10-021-high.png",
+    "attacks": [
+      {
+        "name": "Eeeeeeek",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4232",
-    "externalId": null,
+    "externalId": "ex10-20",
     "tcgdex_id": "ex10-20",
     "localId": "20",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "020/115",
+    "cardNumber": "20/115",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 020/115 Unseen Forces",
+    "fullDisplayName": "Chansey 20/115 Unseen Forces",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3164,18 +3878,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-020-low.png",
-    "imageHighSrc": "cards/ex10-020-high.png"
+    "imageHighSrc": "cards/ex10-020-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Healing",
+        "damage": null
+      },
+      {
+        "name": "Double Tack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4223",
-    "externalId": null,
+    "externalId": "ex10-19",
     "tcgdex_id": "ex10-19",
     "localId": "19",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "019/115",
+    "cardNumber": "19/115",
     "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 019/115 Unseen Forces",
+    "fullDisplayName": "Vaporeon 19/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3197,18 +3921,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-019-low.png",
-    "imageHighSrc": "cards/ex10-019-high.png"
+    "imageHighSrc": "cards/ex10-019-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Supply",
+        "damage": "20"
+      },
+      {
+        "name": "Multi Bubble",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4214",
-    "externalId": null,
+    "externalId": "ex10-18",
     "tcgdex_id": "ex10-18",
     "localId": "18",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "018/115",
+    "cardNumber": "18/115",
     "cardName": "Ursaring",
-    "fullDisplayName": "Ursaring 018/115 Unseen Forces",
+    "fullDisplayName": "Ursaring 18/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3230,18 +3964,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-018-low.png",
-    "imageHighSrc": "cards/ex10-018-high.png"
+    "imageHighSrc": "cards/ex10-018-high.png",
+    "attacks": [
+      {
+        "name": "Drag Off",
+        "damage": "20"
+      },
+      {
+        "name": "Rock Smash",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4205",
-    "externalId": null,
+    "externalId": "ex10-17",
     "tcgdex_id": "ex10-17",
     "localId": "17",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "017/115",
+    "cardNumber": "17/115",
     "cardName": "Typhlosion",
-    "fullDisplayName": "Typhlosion 017/115 Unseen Forces",
+    "fullDisplayName": "Typhlosion 17/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3263,18 +4007,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-017-low.png",
-    "imageHighSrc": "cards/ex10-017-high.png"
+    "imageHighSrc": "cards/ex10-017-high.png",
+    "attacks": [
+      {
+        "name": "Flickering Flames",
+        "damage": "20"
+      },
+      {
+        "name": "Rage",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4197",
-    "externalId": null,
+    "externalId": "ex10-16",
     "tcgdex_id": "ex10-16",
     "localId": "16",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "016/115",
+    "cardNumber": "16/115",
     "cardName": "Sunflora",
-    "fullDisplayName": "Sunflora 016/115 Unseen Forces",
+    "fullDisplayName": "Sunflora 16/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3296,18 +4050,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-016-low.png",
-    "imageHighSrc": "cards/ex10-016-high.png"
+    "imageHighSrc": "cards/ex10-016-high.png",
+    "attacks": [
+      {
+        "name": "Dazzle Dance",
+        "damage": null
+      },
+      {
+        "name": "Green Blast",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4189",
-    "externalId": null,
+    "externalId": "ex10-15",
     "tcgdex_id": "ex10-15",
     "localId": "15",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "015/115",
+    "cardNumber": "15/115",
     "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo 015/115 Unseen Forces",
+    "fullDisplayName": "Sudowoodo 15/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3329,18 +4093,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-015-low.png",
-    "imageHighSrc": "cards/ex10-015-high.png"
+    "imageHighSrc": "cards/ex10-015-high.png",
+    "attacks": [
+      {
+        "name": "Copy",
+        "damage": null
+      },
+      {
+        "name": "Karate Chop",
+        "damage": "50-"
+      }
+    ]
   },
   {
     "masterCardId": "4180",
-    "externalId": null,
+    "externalId": "ex10-14",
     "tcgdex_id": "ex10-14",
     "localId": "14",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "014/115",
+    "cardNumber": "14/115",
     "cardName": "Slowking",
-    "fullDisplayName": "Slowking 014/115 Unseen Forces",
+    "fullDisplayName": "Slowking 14/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3362,18 +4136,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-014-low.png",
-    "imageHighSrc": "cards/ex10-014-high.png"
+    "imageHighSrc": "cards/ex10-014-high.png",
+    "attacks": [
+      {
+        "name": "Aftermath",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4170",
-    "externalId": null,
+    "externalId": "ex10-13",
     "tcgdex_id": "ex10-13",
     "localId": "13",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "013/115",
+    "cardNumber": "13/115",
     "cardName": "Slowbro",
-    "fullDisplayName": "Slowbro 013/115 Unseen Forces",
+    "fullDisplayName": "Slowbro 13/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3395,18 +4175,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-013-low.png",
-    "imageHighSrc": "cards/ex10-013-high.png"
+    "imageHighSrc": "cards/ex10-013-high.png",
+    "attacks": [
+      {
+        "name": "Parallel Gain",
+        "damage": "20"
+      },
+      {
+        "name": "Rolling Tackle",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4161",
-    "externalId": null,
+    "externalId": "ex10-12",
     "tcgdex_id": "ex10-12",
     "localId": "12",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "012/115",
+    "cardNumber": "12/115",
     "cardName": "Porygon2",
-    "fullDisplayName": "Porygon2 012/115 Unseen Forces",
+    "fullDisplayName": "Porygon2 12/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3428,18 +4218,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-012-low.png",
-    "imageHighSrc": "cards/ex10-012-high.png"
+    "imageHighSrc": "cards/ex10-012-high.png",
+    "attacks": [
+      {
+        "name": "Data Retrieval",
+        "damage": null
+      },
+      {
+        "name": "Scramble Trip",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4152",
-    "externalId": null,
+    "externalId": "ex10-11",
     "tcgdex_id": "ex10-11",
     "localId": "11",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "011/115",
+    "cardNumber": "11/115",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 011/115 Unseen Forces",
+    "fullDisplayName": "Poliwrath 11/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3461,18 +4261,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-011-low.png",
-    "imageHighSrc": "cards/ex10-011-high.png"
+    "imageHighSrc": "cards/ex10-011-high.png",
+    "attacks": [
+      {
+        "name": "Beatdown",
+        "damage": "40+"
+      },
+      {
+        "name": "Hyper Splash",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4143",
-    "externalId": null,
+    "externalId": "ex10-10",
     "tcgdex_id": "ex10-10",
     "localId": "10",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "010/115",
+    "cardNumber": "10/115",
     "cardName": "Octillery",
-    "fullDisplayName": "Octillery 010/115 Unseen Forces",
+    "fullDisplayName": "Octillery 10/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3494,18 +4304,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-010-low.png",
-    "imageHighSrc": "cards/ex10-010-high.png"
+    "imageHighSrc": "cards/ex10-010-high.png",
+    "attacks": [
+      {
+        "name": "Standing By",
+        "damage": null
+      },
+      {
+        "name": "Pulse Blast",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4136",
-    "externalId": null,
+    "externalId": "ex10-9",
     "tcgdex_id": "ex10-9",
     "localId": "9",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "009/115",
+    "cardNumber": "9/115",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium 009/115 Unseen Forces",
+    "fullDisplayName": "Meganium 9/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3527,18 +4347,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-009-low.png",
-    "imageHighSrc": "cards/ex10-009-high.png"
+    "imageHighSrc": "cards/ex10-009-high.png",
+    "attacks": [
+      {
+        "name": "Bouncy Move",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4127",
-    "externalId": null,
+    "externalId": "ex10-8",
     "tcgdex_id": "ex10-8",
     "localId": "8",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "008/115",
+    "cardNumber": "8/115",
     "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 008/115 Unseen Forces",
+    "fullDisplayName": "Jolteon 8/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3560,18 +4386,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-008-low.png",
-    "imageHighSrc": "cards/ex10-008-high.png"
+    "imageHighSrc": "cards/ex10-008-high.png",
+    "attacks": [
+      {
+        "name": "Attract Current",
+        "damage": "20"
+      },
+      {
+        "name": "Multi Pulse",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4119",
-    "externalId": null,
+    "externalId": "ex10-7",
     "tcgdex_id": "ex10-7",
     "localId": "7",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "007/115",
+    "cardNumber": "7/115",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 007/115 Unseen Forces",
+    "fullDisplayName": "Houndoom 7/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3593,18 +4429,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-007-low.png",
-    "imageHighSrc": "cards/ex10-007-high.png"
+    "imageHighSrc": "cards/ex10-007-high.png",
+    "attacks": [
+      {
+        "name": "Tight Jaw",
+        "damage": "20"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4110",
-    "externalId": null,
+    "externalId": "ex10-6",
     "tcgdex_id": "ex10-6",
     "localId": "6",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "006/115",
+    "cardNumber": "6/115",
     "cardName": "Forretress",
-    "fullDisplayName": "Forretress 006/115 Unseen Forces",
+    "fullDisplayName": "Forretress 6/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3626,18 +4472,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-006-low.png",
-    "imageHighSrc": "cards/ex10-006-high.png"
+    "imageHighSrc": "cards/ex10-006-high.png",
+    "attacks": [
+      {
+        "name": "Spiky Shell",
+        "damage": "20"
+      },
+      {
+        "name": "Pop",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4101",
-    "externalId": null,
+    "externalId": "ex10-5",
     "tcgdex_id": "ex10-5",
     "localId": "5",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "005/115",
+    "cardNumber": "5/115",
     "cardName": "Flareon",
-    "fullDisplayName": "Flareon 005/115 Unseen Forces",
+    "fullDisplayName": "Flareon 5/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3659,18 +4515,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-005-low.png",
-    "imageHighSrc": "cards/ex10-005-high.png"
+    "imageHighSrc": "cards/ex10-005-high.png",
+    "attacks": [
+      {
+        "name": "Fire Dance",
+        "damage": "20"
+      },
+      {
+        "name": "Multi Burn",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4091",
-    "externalId": null,
+    "externalId": "ex10-4",
     "tcgdex_id": "ex10-4",
     "localId": "4",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "004/115",
+    "cardNumber": "4/115",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 004/115 Unseen Forces",
+    "fullDisplayName": "Feraligatr 4/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3692,18 +4558,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-004-low.png",
-    "imageHighSrc": "cards/ex10-004-high.png"
+    "imageHighSrc": "cards/ex10-004-high.png",
+    "attacks": [
+      {
+        "name": "Pull Away",
+        "damage": "30"
+      },
+      {
+        "name": "Tonnage",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4082",
-    "externalId": null,
+    "externalId": "ex10-3",
     "tcgdex_id": "ex10-3",
     "localId": "3",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "003/115",
+    "cardNumber": "3/115",
     "cardName": "Bellossom",
-    "fullDisplayName": "Bellossom 003/115 Unseen Forces",
+    "fullDisplayName": "Bellossom 3/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3725,18 +4601,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-003-low.png",
-    "imageHighSrc": "cards/ex10-003-high.png"
+    "imageHighSrc": "cards/ex10-003-high.png",
+    "attacks": [
+      {
+        "name": "Green Dance",
+        "damage": null
+      },
+      {
+        "name": "Full Bloom",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4073",
-    "externalId": null,
+    "externalId": "ex10-2",
     "tcgdex_id": "ex10-2",
     "localId": "2",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "002/115",
+    "cardNumber": "2/115",
     "cardName": "Ariados",
-    "fullDisplayName": "Ariados 002/115 Unseen Forces",
+    "fullDisplayName": "Ariados 2/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3758,18 +4644,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-002-low.png",
-    "imageHighSrc": "cards/ex10-002-high.png"
+    "imageHighSrc": "cards/ex10-002-high.png",
+    "attacks": [
+      {
+        "name": "Reactive Poison",
+        "damage": "10+"
+      },
+      {
+        "name": "Spider Trap",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4062",
-    "externalId": null,
+    "externalId": "ex10-1",
     "tcgdex_id": "ex10-1",
     "localId": "1",
     "setCode": "ex10",
     "setTcgdexId": "ex10",
-    "cardNumber": "001/115",
+    "cardNumber": "1/115",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 001/115 Unseen Forces",
+    "fullDisplayName": "Ampharos 1/115 Unseen Forces",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3791,6 +4687,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex10-001-low.png",
-    "imageHighSrc": "cards/ex10-001-high.png"
+    "imageHighSrc": "cards/ex10-001-high.png",
+    "attacks": [
+      {
+        "name": "Miraculous Thunder",
+        "damage": "50"
+      }
+    ]
   }
 ]

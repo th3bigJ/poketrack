@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "3162",
-    "externalId": null,
+    "externalId": "bw8-138",
     "tcgdex_id": "bw8-138",
     "localId": "138",
     "setCode": "bw8",
@@ -26,11 +26,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-138-low.png",
-    "imageHighSrc": "cards/bw8-138-high.png"
+    "imageHighSrc": "cards/bw8-138-high.png",
+    "rules": "Reveal cards from the top of your deck until you reveal a Supporter card. Put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3161",
-    "externalId": null,
+    "externalId": "bw8-137",
     "tcgdex_id": "bw8-137",
     "localId": "137",
     "setCode": "bw8",
@@ -59,11 +60,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-137-low.png",
-    "imageHighSrc": "cards/bw8-137-high.png"
+    "imageHighSrc": "cards/bw8-137-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3160",
-    "externalId": null,
+    "externalId": "bw8-136",
     "tcgdex_id": "bw8-136",
     "localId": "136",
     "setCode": "bw8",
@@ -92,11 +99,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-136-low.png",
-    "imageHighSrc": "cards/bw8-136-high.png"
+    "imageHighSrc": "cards/bw8-136-high.png",
+    "attacks": [
+      {
+        "name": "Split Bomb",
+        "damage": null
+      },
+      {
+        "name": "Scorching Fire",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "3159",
-    "externalId": null,
+    "externalId": "bw8-135",
     "tcgdex_id": "bw8-135",
     "localId": "135",
     "setCode": "bw8",
@@ -122,11 +139,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-135-low.png",
-    "imageHighSrc": "cards/bw8-135-high.png"
+    "imageHighSrc": "cards/bw8-135-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw a number of cards equal to the number of Benched Pokémon (both yours and your opponent's).\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3158",
-    "externalId": null,
+    "externalId": "bw8-134",
     "tcgdex_id": "bw8-134",
     "localId": "134",
     "setCode": "bw8",
@@ -157,11 +175,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-134-low.png",
-    "imageHighSrc": "cards/bw8-134-high.png"
+    "imageHighSrc": "cards/bw8-134-high.png",
+    "attacks": [
+      {
+        "name": "Plasma Gale",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3157",
-    "externalId": null,
+    "externalId": "bw8-133",
     "tcgdex_id": "bw8-133",
     "localId": "133",
     "setCode": "bw8",
@@ -191,11 +216,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-133-low.png",
-    "imageHighSrc": "cards/bw8-133-high.png"
+    "imageHighSrc": "cards/bw8-133-high.png",
+    "attacks": [
+      {
+        "name": "Righteous Edge",
+        "damage": "30"
+      },
+      {
+        "name": "Steel Bullet",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3156",
-    "externalId": null,
+    "externalId": "bw8-132",
     "tcgdex_id": "bw8-132",
     "localId": "132",
     "setCode": "bw8",
@@ -226,11 +262,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-132-low.png",
-    "imageHighSrc": "cards/bw8-132-high.png"
+    "imageHighSrc": "cards/bw8-132-high.png",
+    "attacks": [
+      {
+        "name": "Blizzard",
+        "damage": "60"
+      },
+      {
+        "name": "Frost Prison",
+        "damage": "80"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3155",
-    "externalId": null,
+    "externalId": "bw8-131",
     "tcgdex_id": "bw8-131",
     "localId": "131",
     "setCode": "bw8",
@@ -260,11 +307,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-131-low.png",
-    "imageHighSrc": "cards/bw8-131-high.png"
+    "imageHighSrc": "cards/bw8-131-high.png",
+    "attacks": [
+      {
+        "name": "Turbo Energize",
+        "damage": null
+      },
+      {
+        "name": "Intensifying Burn",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3154",
-    "externalId": null,
+    "externalId": "bw8-130",
     "tcgdex_id": "bw8-130",
     "localId": "130",
     "setCode": "bw8",
@@ -290,11 +348,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-130-low.png",
-    "imageHighSrc": "cards/bw8-130-high.png"
+    "imageHighSrc": "cards/bw8-130-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf this card is attached to Victini-EX, Victini-EX can use its attacks regardless of the amount or type of Energy attached to it.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
   },
   {
     "masterCardId": "3153",
-    "externalId": null,
+    "externalId": "bw8-129",
     "tcgdex_id": "bw8-129",
     "localId": "129",
     "setCode": "bw8",
@@ -320,11 +379,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-129-low.png",
-    "imageHighSrc": "cards/bw8-129-high.png"
+    "imageHighSrc": "cards/bw8-129-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon. Then, you may move as many Energy attached to the old Active Pokémon to the new Active Pokémon as you like.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
   },
   {
     "masterCardId": "3152",
-    "externalId": null,
+    "externalId": "bw8-128",
     "tcgdex_id": "bw8-128",
     "localId": "128",
     "setCode": "bw8",
@@ -350,11 +410,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-128-low.png",
-    "imageHighSrc": "cards/bw8-128-high.png"
+    "imageHighSrc": "cards/bw8-128-high.png",
+    "rules": "Discard 2 cards from your hand. (If you can't discard 2 cards, you can't play this card.) Put a Trainer card from your discard pile into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
   },
   {
     "masterCardId": "3151",
-    "externalId": null,
+    "externalId": "bw8-127",
     "tcgdex_id": "bw8-127",
     "localId": "127",
     "setCode": "bw8",
@@ -380,11 +441,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-127-low.png",
-    "imageHighSrc": "cards/bw8-127-high.png"
+    "imageHighSrc": "cards/bw8-127-high.png",
+    "rules": "This card provides Colorless Energy."
   },
   {
     "masterCardId": "3150",
-    "externalId": null,
+    "externalId": "bw8-126",
     "tcgdex_id": "bw8-126",
     "localId": "126",
     "setCode": "bw8",
@@ -409,11 +471,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-126-low.png",
-    "imageHighSrc": "cards/bw8-126-high.png"
+    "imageHighSrc": "cards/bw8-126-high.png",
+    "rules": "Put 2 more damage counters on Poisoned Pokémon (both yours and your opponent's) between turns.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "3149",
-    "externalId": null,
+    "externalId": "bw8-125",
     "tcgdex_id": "bw8-125",
     "localId": "125",
     "setCode": "bw8",
@@ -439,11 +502,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-125-low.png",
-    "imageHighSrc": "cards/bw8-125-high.png"
+    "imageHighSrc": "cards/bw8-125-high.png",
+    "rules": "Discard a Team Plasma card from your card. (if you can't discard a Team Plasma card, you can't play this card.) Draw 4 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3148",
-    "externalId": null,
+    "externalId": "bw8-124",
     "tcgdex_id": "bw8-124",
     "localId": "124",
     "setCode": "bw8",
@@ -469,11 +533,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-124-low.png",
-    "imageHighSrc": "cards/bw8-124-high.png"
+    "imageHighSrc": "cards/bw8-124-high.png",
+    "rules": "Each Pokémon that has any Plasma Energy attached to it (both yours and your opponent's) has no Weakness.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "3147",
-    "externalId": null,
+    "externalId": "bw8-123",
     "tcgdex_id": "bw8-123",
     "localId": "123",
     "setCode": "bw8",
@@ -499,11 +564,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-123-low.png",
-    "imageHighSrc": "cards/bw8-123-high.png"
+    "imageHighSrc": "cards/bw8-123-high.png",
+    "rules": "Your opponent's Active Pokémon is now Poisoned. Flip a coin. If heads, your opponent's Active Pokémon is also Asleep.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3146",
-    "externalId": null,
+    "externalId": "bw8-122",
     "tcgdex_id": "bw8-122",
     "localId": "122",
     "setCode": "bw8",
@@ -528,11 +594,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-122-low.png",
-    "imageHighSrc": "cards/bw8-122-high.png"
+    "imageHighSrc": "cards/bw8-122-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is a Basic Pokémon, any damage done to this Pokémon by attacks is reduced by 20 (after applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3145",
-    "externalId": null,
+    "externalId": "bw8-121",
     "tcgdex_id": "bw8-121",
     "localId": "121",
     "setCode": "bw8",
@@ -557,11 +624,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-121-low.png",
-    "imageHighSrc": "cards/bw8-121-high.png"
+    "imageHighSrc": "cards/bw8-121-high.png",
+    "rules": "Reveal the top card of your deck. If that card is a basic Energy card, attach it to 1 of your Pokémon. If it is not a basic Energy card, return it to the top of your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3144",
-    "externalId": null,
+    "externalId": "bw8-120",
     "tcgdex_id": "bw8-120",
     "localId": "120",
     "setCode": "bw8",
@@ -586,11 +654,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-120-low.png",
-    "imageHighSrc": "cards/bw8-120-high.png"
+    "imageHighSrc": "cards/bw8-120-high.png",
+    "rules": "Each player switches his or her Active Pokémon with 1 of his or her Benched Pokémon. (Your opponent switches first. If a player does not have a Benched Pokémon, he or she doesn't switch Pokémon.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3143",
-    "externalId": null,
+    "externalId": "bw8-119",
     "tcgdex_id": "bw8-119",
     "localId": "119",
     "setCode": "bw8",
@@ -616,11 +685,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-119-low.png",
-    "imageHighSrc": "cards/bw8-119-high.png"
+    "imageHighSrc": "cards/bw8-119-high.png",
+    "rules": "Search your deck for a Plasma Energy card and attach it to 1 of your Team Plasma Pokémon. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3142",
-    "externalId": null,
+    "externalId": "bw8-118",
     "tcgdex_id": "bw8-118",
     "localId": "118",
     "setCode": "bw8",
@@ -646,11 +716,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-118-low.png",
-    "imageHighSrc": "cards/bw8-118-high.png"
+    "imageHighSrc": "cards/bw8-118-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw a number of cards equal to the number of Benched Pokémon (both yours and your opponent's).\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3141",
-    "externalId": null,
+    "externalId": "bw8-117",
     "tcgdex_id": "bw8-117",
     "localId": "117",
     "setCode": "bw8",
@@ -675,11 +746,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-117-low.png",
-    "imageHighSrc": "cards/bw8-117-high.png"
+    "imageHighSrc": "cards/bw8-117-high.png",
+    "rules": "Draw cards until you have 4 cards in your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3140",
-    "externalId": null,
+    "externalId": "bw8-116",
     "tcgdex_id": "bw8-116",
     "localId": "116",
     "setCode": "bw8",
@@ -708,11 +780,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-116-low.png",
-    "imageHighSrc": "cards/bw8-116-high.png"
+    "imageHighSrc": "cards/bw8-116-high.png",
+    "attacks": [
+      {
+        "name": "Wild Edge",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3139",
-    "externalId": null,
+    "externalId": "bw8-115",
     "tcgdex_id": "bw8-115",
     "localId": "115",
     "setCode": "bw8",
@@ -741,11 +819,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-115-low.png",
-    "imageHighSrc": "cards/bw8-115-high.png"
+    "imageHighSrc": "cards/bw8-115-high.png",
+    "attacks": [
+      {
+        "name": "Incessant Peck",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3138",
-    "externalId": null,
+    "externalId": "bw8-114",
     "tcgdex_id": "bw8-114",
     "localId": "114",
     "setCode": "bw8",
@@ -775,11 +859,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-114-low.png",
-    "imageHighSrc": "cards/bw8-114-high.png"
+    "imageHighSrc": "cards/bw8-114-high.png",
+    "attacks": [
+      {
+        "name": "Tool Breaker",
+        "damage": null
+      },
+      {
+        "name": "Hammer In",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3137",
-    "externalId": null,
+    "externalId": "bw8-113",
     "tcgdex_id": "bw8-113",
     "localId": "113",
     "setCode": "bw8",
@@ -809,11 +903,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-113-low.png",
-    "imageHighSrc": "cards/bw8-113-high.png"
+    "imageHighSrc": "cards/bw8-113-high.png",
+    "attacks": [
+      {
+        "name": "Second Bite",
+        "damage": "20+"
+      },
+      {
+        "name": "Low Kick",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3136",
-    "externalId": null,
+    "externalId": "bw8-112",
     "tcgdex_id": "bw8-112",
     "localId": "112",
     "setCode": "bw8",
@@ -843,11 +947,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-112-low.png",
-    "imageHighSrc": "cards/bw8-112-high.png"
+    "imageHighSrc": "cards/bw8-112-high.png",
+    "attacks": [
+      {
+        "name": "Fast Swipe",
+        "damage": null
+      },
+      {
+        "name": "Biting Fang",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3135",
-    "externalId": null,
+    "externalId": "bw8-111",
     "tcgdex_id": "bw8-111",
     "localId": "111",
     "setCode": "bw8",
@@ -876,11 +990,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-111-low.png",
-    "imageHighSrc": "cards/bw8-111-high.png"
+    "imageHighSrc": "cards/bw8-111-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3134",
-    "externalId": null,
+    "externalId": "bw8-110",
     "tcgdex_id": "bw8-110",
     "localId": "110",
     "setCode": "bw8",
@@ -909,11 +1033,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-110-low.png",
-    "imageHighSrc": "cards/bw8-110-high.png"
+    "imageHighSrc": "cards/bw8-110-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3133",
-    "externalId": null,
+    "externalId": "bw8-109",
     "tcgdex_id": "bw8-109",
     "localId": "109",
     "setCode": "bw8",
@@ -942,11 +1072,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-109-low.png",
-    "imageHighSrc": "cards/bw8-109-high.png"
+    "imageHighSrc": "cards/bw8-109-high.png",
+    "attacks": [
+      {
+        "name": "Triple Slap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3132",
-    "externalId": null,
+    "externalId": "bw8-108",
     "tcgdex_id": "bw8-108",
     "localId": "108",
     "setCode": "bw8",
@@ -977,11 +1113,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-108-low.png",
-    "imageHighSrc": "cards/bw8-108-high.png"
+    "imageHighSrc": "cards/bw8-108-high.png",
+    "attacks": [
+      {
+        "name": "Plasma Gale",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3131",
-    "externalId": null,
+    "externalId": "bw8-107",
     "tcgdex_id": "bw8-107",
     "localId": "107",
     "setCode": "bw8",
@@ -1010,11 +1153,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-107-low.png",
-    "imageHighSrc": "cards/bw8-107-high.png"
+    "imageHighSrc": "cards/bw8-107-high.png",
+    "attacks": [
+      {
+        "name": "Destructive Sound",
+        "damage": null
+      },
+      {
+        "name": "Round",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "3130",
-    "externalId": null,
+    "externalId": "bw8-106",
     "tcgdex_id": "bw8-106",
     "localId": "106",
     "setCode": "bw8",
@@ -1043,11 +1196,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-106-low.png",
-    "imageHighSrc": "cards/bw8-106-high.png"
+    "imageHighSrc": "cards/bw8-106-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Hyper Voice",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3129",
-    "externalId": null,
+    "externalId": "bw8-105",
     "tcgdex_id": "bw8-105",
     "localId": "105",
     "setCode": "bw8",
@@ -1076,11 +1239,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-105-low.png",
-    "imageHighSrc": "cards/bw8-105-high.png"
+    "imageHighSrc": "cards/bw8-105-high.png",
+    "attacks": [
+      {
+        "name": "Shout",
+        "damage": null
+      },
+      {
+        "name": "Hyper Voice",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3128",
-    "externalId": null,
+    "externalId": "bw8-104",
     "tcgdex_id": "bw8-104",
     "localId": "104",
     "setCode": "bw8",
@@ -1109,11 +1282,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-104-low.png",
-    "imageHighSrc": "cards/bw8-104-high.png"
+    "imageHighSrc": "cards/bw8-104-high.png",
+    "attacks": [
+      {
+        "name": "Return",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3127",
-    "externalId": null,
+    "externalId": "bw8-103",
     "tcgdex_id": "bw8-103",
     "localId": "103",
     "setCode": "bw8",
@@ -1142,11 +1321,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-103-low.png",
-    "imageHighSrc": "cards/bw8-103-high.png"
+    "imageHighSrc": "cards/bw8-103-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Kiss",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3126",
-    "externalId": null,
+    "externalId": "bw8-102",
     "tcgdex_id": "bw8-102",
     "localId": "102",
     "setCode": "bw8",
@@ -1175,11 +1360,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-102-low.png",
-    "imageHighSrc": "cards/bw8-102-high.png"
+    "imageHighSrc": "cards/bw8-102-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3125",
-    "externalId": null,
+    "externalId": "bw8-101",
     "tcgdex_id": "bw8-101",
     "localId": "101",
     "setCode": "bw8",
@@ -1209,11 +1400,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-101-low.png",
-    "imageHighSrc": "cards/bw8-101-high.png"
+    "imageHighSrc": "cards/bw8-101-high.png",
+    "attacks": [
+      {
+        "name": "Teampact",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "3124",
-    "externalId": null,
+    "externalId": "bw8-100",
     "tcgdex_id": "bw8-100",
     "localId": "100",
     "setCode": "bw8",
@@ -1242,18 +1439,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-100-low.png",
-    "imageHighSrc": "cards/bw8-100-high.png"
+    "imageHighSrc": "cards/bw8-100-high.png",
+    "attacks": [
+      {
+        "name": "Raging Pecks",
+        "damage": "30×"
+      },
+      {
+        "name": "Drill Peck",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3123",
-    "externalId": null,
+    "externalId": "bw8-99",
     "tcgdex_id": "bw8-99",
     "localId": "099",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "099/135",
+    "cardNumber": "99/135",
     "cardName": "Doduo",
-    "fullDisplayName": "Doduo 099/135 Plasma Storm",
+    "fullDisplayName": "Doduo 99/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1275,18 +1482,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-099-low.png",
-    "imageHighSrc": "cards/bw8-099-high.png"
+    "imageHighSrc": "cards/bw8-099-high.png",
+    "attacks": [
+      {
+        "name": "Gatling Peck",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3122",
-    "externalId": null,
+    "externalId": "bw8-98",
     "tcgdex_id": "bw8-98",
     "localId": "098",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "098/135",
+    "cardNumber": "98/135",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 098/135 Plasma Storm",
+    "fullDisplayName": "Clefable 98/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1308,18 +1521,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-098-low.png",
-    "imageHighSrc": "cards/bw8-098-high.png"
+    "imageHighSrc": "cards/bw8-098-high.png",
+    "attacks": [
+      {
+        "name": "Moon Impact",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3121",
-    "externalId": null,
+    "externalId": "bw8-97",
     "tcgdex_id": "bw8-97",
     "localId": "097",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "097/135",
+    "cardNumber": "97/135",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 097/135 Plasma Storm",
+    "fullDisplayName": "Clefairy 97/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1341,18 +1560,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-097-low.png",
-    "imageHighSrc": "cards/bw8-097-high.png"
+    "imageHighSrc": "cards/bw8-097-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Double Slap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3120",
-    "externalId": null,
+    "externalId": "bw8-96",
     "tcgdex_id": "bw8-96",
     "localId": "096",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "096/135",
+    "cardNumber": "96/135",
     "cardName": "White Kyurem-EX",
-    "fullDisplayName": "White Kyurem-EX 096/135 Plasma Storm",
+    "fullDisplayName": "White Kyurem-EX 96/135 Plasma Storm",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1375,18 +1604,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-096-low.png",
-    "imageHighSrc": "cards/bw8-096-high.png"
+    "imageHighSrc": "cards/bw8-096-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "60"
+      },
+      {
+        "name": "White Inferno",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3119",
-    "externalId": null,
+    "externalId": "bw8-95",
     "tcgdex_id": "bw8-95",
     "localId": "095",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "095/135",
+    "cardNumber": "95/135",
     "cardName": "Black Kyurem-EX",
-    "fullDisplayName": "Black Kyurem-EX 095/135 Plasma Storm",
+    "fullDisplayName": "Black Kyurem-EX 95/135 Plasma Storm",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1409,18 +1649,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-095-low.png",
-    "imageHighSrc": "cards/bw8-095-high.png"
+    "imageHighSrc": "cards/bw8-095-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "60"
+      },
+      {
+        "name": "Black Ballista",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3118",
-    "externalId": null,
+    "externalId": "bw8-94",
     "tcgdex_id": "bw8-94",
     "localId": "094",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "094/135",
+    "cardNumber": "94/135",
     "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon 094/135 Plasma Storm",
+    "fullDisplayName": "Druddigon 94/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1443,18 +1694,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-094-low.png",
-    "imageHighSrc": "cards/bw8-094-high.png"
+    "imageHighSrc": "cards/bw8-094-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "20"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3117",
-    "externalId": null,
+    "externalId": "bw8-93",
     "tcgdex_id": "bw8-93",
     "localId": "093",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "093/135",
+    "cardNumber": "93/135",
     "cardName": "Cobalion-EX",
-    "fullDisplayName": "Cobalion-EX 093/135 Plasma Storm",
+    "fullDisplayName": "Cobalion-EX 93/135 Plasma Storm",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1477,18 +1738,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-093-low.png",
-    "imageHighSrc": "cards/bw8-093-high.png"
+    "imageHighSrc": "cards/bw8-093-high.png",
+    "attacks": [
+      {
+        "name": "Righteous Edge",
+        "damage": "30"
+      },
+      {
+        "name": "Steel Bullet",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3116",
-    "externalId": null,
+    "externalId": "bw8-92",
     "tcgdex_id": "bw8-92",
     "localId": "092",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "092/135",
+    "cardNumber": "92/135",
     "cardName": "Durant",
-    "fullDisplayName": "Durant 092/135 Plasma Storm",
+    "fullDisplayName": "Durant 92/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1511,18 +1783,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-092-low.png",
-    "imageHighSrc": "cards/bw8-092-high.png"
+    "imageHighSrc": "cards/bw8-092-high.png",
+    "attacks": [
+      {
+        "name": "Call for Backup",
+        "damage": null
+      },
+      {
+        "name": "Metal Jail",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3115",
-    "externalId": null,
+    "externalId": "bw8-91",
     "tcgdex_id": "bw8-91",
     "localId": "091",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "091/135",
+    "cardNumber": "91/135",
     "cardName": "Durant",
-    "fullDisplayName": "Durant 091/135 Plasma Storm",
+    "fullDisplayName": "Durant 91/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1545,18 +1827,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-091-low.png",
-    "imageHighSrc": "cards/bw8-091-high.png"
+    "imageHighSrc": "cards/bw8-091-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      },
+      {
+        "name": "Hard Crunch",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3114",
-    "externalId": null,
+    "externalId": "bw8-90",
     "tcgdex_id": "bw8-90",
     "localId": "090",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "090/135",
+    "cardNumber": "90/135",
     "cardName": "Klinklang",
-    "fullDisplayName": "Klinklang 090/135 Plasma Storm",
+    "fullDisplayName": "Klinklang 90/135 Plasma Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1579,18 +1871,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-090-low.png",
-    "imageHighSrc": "cards/bw8-090-high.png"
+    "imageHighSrc": "cards/bw8-090-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Bullet",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3113",
-    "externalId": null,
+    "externalId": "bw8-89",
     "tcgdex_id": "bw8-89",
     "localId": "089",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "089/135",
+    "cardNumber": "89/135",
     "cardName": "Klang",
-    "fullDisplayName": "Klang 089/135 Plasma Storm",
+    "fullDisplayName": "Klang 89/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1612,18 +1910,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-089-low.png",
-    "imageHighSrc": "cards/bw8-089-high.png"
+    "imageHighSrc": "cards/bw8-089-high.png",
+    "attacks": [
+      {
+        "name": "Vice Grip",
+        "damage": "20"
+      },
+      {
+        "name": "Gear Smash",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3112",
-    "externalId": null,
+    "externalId": "bw8-88",
     "tcgdex_id": "bw8-88",
     "localId": "088",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "088/135",
+    "cardNumber": "88/135",
     "cardName": "Klink",
-    "fullDisplayName": "Klink 088/135 Plasma Storm",
+    "fullDisplayName": "Klink 88/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1645,18 +1953,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-088-low.png",
-    "imageHighSrc": "cards/bw8-088-high.png"
+    "imageHighSrc": "cards/bw8-088-high.png",
+    "attacks": [
+      {
+        "name": "Rigidify",
+        "damage": null
+      },
+      {
+        "name": "Vice Grip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3111",
-    "externalId": null,
+    "externalId": "bw8-87",
     "tcgdex_id": "bw8-87",
     "localId": "087",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "087/135",
+    "cardNumber": "87/135",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 087/135 Plasma Storm",
+    "fullDisplayName": "Skarmory 87/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1679,18 +1997,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-087-low.png",
-    "imageHighSrc": "cards/bw8-087-high.png"
+    "imageHighSrc": "cards/bw8-087-high.png",
+    "attacks": [
+      {
+        "name": "Cargo Jet",
+        "damage": null
+      },
+      {
+        "name": "Steel Wing",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3110",
-    "externalId": null,
+    "externalId": "bw8-86",
     "tcgdex_id": "bw8-86",
     "localId": "086",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "086/135",
+    "cardNumber": "86/135",
     "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 086/135 Plasma Storm",
+    "fullDisplayName": "Scrafty 86/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1713,18 +2041,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-086-low.png",
-    "imageHighSrc": "cards/bw8-086-high.png"
+    "imageHighSrc": "cards/bw8-086-high.png",
+    "attacks": [
+      {
+        "name": "Kick Away",
+        "damage": "30"
+      },
+      {
+        "name": "Reinforced Headbutt",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "3109",
-    "externalId": null,
+    "externalId": "bw8-85",
     "tcgdex_id": "bw8-85",
     "localId": "085",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "085/135",
+    "cardNumber": "85/135",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 085/135 Plasma Storm",
+    "fullDisplayName": "Scraggy 85/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1746,18 +2084,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-085-low.png",
-    "imageHighSrc": "cards/bw8-085-high.png"
+    "imageHighSrc": "cards/bw8-085-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Low Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3108",
-    "externalId": null,
+    "externalId": "bw8-84",
     "tcgdex_id": "bw8-84",
     "localId": "084",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "084/135",
+    "cardNumber": "84/135",
     "cardName": "Liepard",
-    "fullDisplayName": "Liepard 084/135 Plasma Storm",
+    "fullDisplayName": "Liepard 84/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1780,18 +2128,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-084-low.png",
-    "imageHighSrc": "cards/bw8-084-high.png"
+    "imageHighSrc": "cards/bw8-084-high.png",
+    "attacks": [
+      {
+        "name": "Silent Claw",
+        "damage": null
+      },
+      {
+        "name": "Fake Out",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3107",
-    "externalId": null,
+    "externalId": "bw8-83",
     "tcgdex_id": "bw8-83",
     "localId": "083",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "083/135",
+    "cardNumber": "83/135",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 083/135 Plasma Storm",
+    "fullDisplayName": "Purrloin 83/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1813,18 +2171,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-083-low.png",
-    "imageHighSrc": "cards/bw8-083-high.png"
+    "imageHighSrc": "cards/bw8-083-high.png",
+    "attacks": [
+      {
+        "name": "Scout",
+        "damage": null
+      },
+      {
+        "name": "Fasten Claws",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3106",
-    "externalId": null,
+    "externalId": "bw8-82",
     "tcgdex_id": "bw8-82",
     "localId": "082",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "082/135",
+    "cardNumber": "82/135",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 082/135 Plasma Storm",
+    "fullDisplayName": "Purrloin 82/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1846,18 +2214,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-082-low.png",
-    "imageHighSrc": "cards/bw8-082-high.png"
+    "imageHighSrc": "cards/bw8-082-high.png",
+    "attacks": [
+      {
+        "name": "Tail Trickery",
+        "damage": null
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3105",
-    "externalId": null,
+    "externalId": "bw8-81",
     "tcgdex_id": "bw8-81",
     "localId": "081",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "081/135",
+    "cardNumber": "81/135",
     "cardName": "Conkeldurr",
-    "fullDisplayName": "Conkeldurr 081/135 Plasma Storm",
+    "fullDisplayName": "Conkeldurr 81/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1879,18 +2257,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-081-low.png",
-    "imageHighSrc": "cards/bw8-081-high.png"
+    "imageHighSrc": "cards/bw8-081-high.png",
+    "attacks": [
+      {
+        "name": "Facade",
+        "damage": "60+"
+      },
+      {
+        "name": "Drain Punch",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3104",
-    "externalId": null,
+    "externalId": "bw8-80",
     "tcgdex_id": "bw8-80",
     "localId": "080",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "080/135",
+    "cardNumber": "80/135",
     "cardName": "Gurdurr",
-    "fullDisplayName": "Gurdurr 080/135 Plasma Storm",
+    "fullDisplayName": "Gurdurr 80/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1912,18 +2300,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-080-low.png",
-    "imageHighSrc": "cards/bw8-080-high.png"
+    "imageHighSrc": "cards/bw8-080-high.png",
+    "attacks": [
+      {
+        "name": "Dynamic Punch",
+        "damage": "40+"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3103",
-    "externalId": null,
+    "externalId": "bw8-79",
     "tcgdex_id": "bw8-79",
     "localId": "079",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "079/135",
+    "cardNumber": "79/135",
     "cardName": "Timburr",
-    "fullDisplayName": "Timburr 079/135 Plasma Storm",
+    "fullDisplayName": "Timburr 79/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1945,18 +2343,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-079-low.png",
-    "imageHighSrc": "cards/bw8-079-high.png"
+    "imageHighSrc": "cards/bw8-079-high.png",
+    "attacks": [
+      {
+        "name": "Knock Back",
+        "damage": "20"
+      },
+      {
+        "name": "Low Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3102",
-    "externalId": null,
+    "externalId": "bw8-78",
     "tcgdex_id": "bw8-78",
     "localId": "078",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "078/135",
+    "cardNumber": "78/135",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario 078/135 Plasma Storm",
+    "fullDisplayName": "Lucario 78/135 Plasma Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1978,18 +2386,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-078-low.png",
-    "imageHighSrc": "cards/bw8-078-high.png"
+    "imageHighSrc": "cards/bw8-078-high.png",
+    "attacks": [
+      {
+        "name": "Hurricane Kick",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3101",
-    "externalId": null,
+    "externalId": "bw8-77",
     "tcgdex_id": "bw8-77",
     "localId": "077",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "077/135",
+    "cardNumber": "77/135",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario 077/135 Plasma Storm",
+    "fullDisplayName": "Lucario 77/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2011,18 +2425,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-077-low.png",
-    "imageHighSrc": "cards/bw8-077-high.png"
+    "imageHighSrc": "cards/bw8-077-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Mach Cross",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3100",
-    "externalId": null,
+    "externalId": "bw8-76",
     "tcgdex_id": "bw8-76",
     "localId": "076",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "076/135",
+    "cardNumber": "76/135",
     "cardName": "Riolu",
-    "fullDisplayName": "Riolu 076/135 Plasma Storm",
+    "fullDisplayName": "Riolu 76/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2044,18 +2468,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-076-low.png",
-    "imageHighSrc": "cards/bw8-076-high.png"
+    "imageHighSrc": "cards/bw8-076-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Feint",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3099",
-    "externalId": null,
+    "externalId": "bw8-75",
     "tcgdex_id": "bw8-75",
     "localId": "075",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "075/135",
+    "cardNumber": "75/135",
     "cardName": "Riolu",
-    "fullDisplayName": "Riolu 075/135 Plasma Storm",
+    "fullDisplayName": "Riolu 75/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2077,18 +2511,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-075-low.png",
-    "imageHighSrc": "cards/bw8-075-high.png"
+    "imageHighSrc": "cards/bw8-075-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3098",
-    "externalId": null,
+    "externalId": "bw8-74",
     "tcgdex_id": "bw8-74",
     "localId": "074",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "074/135",
+    "cardNumber": "74/135",
     "cardName": "Solrock",
-    "fullDisplayName": "Solrock 074/135 Plasma Storm",
+    "fullDisplayName": "Solrock 74/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2110,18 +2554,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-074-low.png",
-    "imageHighSrc": "cards/bw8-074-high.png"
+    "imageHighSrc": "cards/bw8-074-high.png",
+    "attacks": [
+      {
+        "name": "Heat Burn",
+        "damage": "20"
+      },
+      {
+        "name": "Explosion",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3097",
-    "externalId": null,
+    "externalId": "bw8-73",
     "tcgdex_id": "bw8-73",
     "localId": "073",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "073/135",
+    "cardNumber": "73/135",
     "cardName": "Lunatone",
-    "fullDisplayName": "Lunatone 073/135 Plasma Storm",
+    "fullDisplayName": "Lunatone 73/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2143,18 +2597,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-073-low.png",
-    "imageHighSrc": "cards/bw8-073-high.png"
+    "imageHighSrc": "cards/bw8-073-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3096",
-    "externalId": null,
+    "externalId": "bw8-72",
     "tcgdex_id": "bw8-72",
     "localId": "072",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "072/135",
+    "cardNumber": "72/135",
     "cardName": "Donphan",
-    "fullDisplayName": "Donphan 072/135 Plasma Storm",
+    "fullDisplayName": "Donphan 72/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2176,18 +2636,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-072-low.png",
-    "imageHighSrc": "cards/bw8-072-high.png"
+    "imageHighSrc": "cards/bw8-072-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Turn",
+        "damage": "40"
+      },
+      {
+        "name": "Wreck",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3095",
-    "externalId": null,
+    "externalId": "bw8-71",
     "tcgdex_id": "bw8-71",
     "localId": "071",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "071/135",
+    "cardNumber": "71/135",
     "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 071/135 Plasma Storm",
+    "fullDisplayName": "Phanpy 71/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2209,18 +2679,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-071-low.png",
-    "imageHighSrc": "cards/bw8-071-high.png"
+    "imageHighSrc": "cards/bw8-071-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3094",
-    "externalId": null,
+    "externalId": "bw8-70",
     "tcgdex_id": "bw8-70",
     "localId": "070",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "070/135",
+    "cardNumber": "70/135",
     "cardName": "Beheeyem",
-    "fullDisplayName": "Beheeyem 070/135 Plasma Storm",
+    "fullDisplayName": "Beheeyem 70/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2243,18 +2723,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-070-low.png",
-    "imageHighSrc": "cards/bw8-070-high.png"
+    "imageHighSrc": "cards/bw8-070-high.png",
+    "attacks": [
+      {
+        "name": "Lock Up",
+        "damage": "20"
+      },
+      {
+        "name": "Damakinesis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3093",
-    "externalId": null,
+    "externalId": "bw8-69",
     "tcgdex_id": "bw8-69",
     "localId": "069",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "069/135",
+    "cardNumber": "69/135",
     "cardName": "Elgyem",
-    "fullDisplayName": "Elgyem 069/135 Plasma Storm",
+    "fullDisplayName": "Elgyem 69/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2276,18 +2766,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-069-low.png",
-    "imageHighSrc": "cards/bw8-069-high.png"
+    "imageHighSrc": "cards/bw8-069-high.png",
+    "attacks": [
+      {
+        "name": "Reflect",
+        "damage": null
+      },
+      {
+        "name": "Smash Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3092",
-    "externalId": null,
+    "externalId": "bw8-68",
     "tcgdex_id": "bw8-68",
     "localId": "068",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "068/135",
+    "cardNumber": "68/135",
     "cardName": "Elgyem",
-    "fullDisplayName": "Elgyem 068/135 Plasma Storm",
+    "fullDisplayName": "Elgyem 68/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2309,18 +2809,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-068-low.png",
-    "imageHighSrc": "cards/bw8-068-high.png"
+    "imageHighSrc": "cards/bw8-068-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3091",
-    "externalId": null,
+    "externalId": "bw8-67",
     "tcgdex_id": "bw8-67",
     "localId": "067",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "067/135",
+    "cardNumber": "67/135",
     "cardName": "Garbodor",
-    "fullDisplayName": "Garbodor 067/135 Plasma Storm",
+    "fullDisplayName": "Garbodor 67/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2343,18 +2849,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-067-low.png",
-    "imageHighSrc": "cards/bw8-067-high.png"
+    "imageHighSrc": "cards/bw8-067-high.png",
+    "attacks": [
+      {
+        "name": "Ensnarl",
+        "damage": "20×"
+      },
+      {
+        "name": "Double Ducts",
+        "damage": "80×"
+      }
+    ]
   },
   {
     "masterCardId": "3090",
-    "externalId": null,
+    "externalId": "bw8-66",
     "tcgdex_id": "bw8-66",
     "localId": "066",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "066/135",
+    "cardNumber": "66/135",
     "cardName": "Garbodor",
-    "fullDisplayName": "Garbodor 066/135 Plasma Storm",
+    "fullDisplayName": "Garbodor 66/135 Plasma Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2377,18 +2893,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-066-low.png",
-    "imageHighSrc": "cards/bw8-066-high.png"
+    "imageHighSrc": "cards/bw8-066-high.png",
+    "attacks": [
+      {
+        "name": "Biosmog",
+        "damage": "20"
+      },
+      {
+        "name": "Sludge Bomb",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3089",
-    "externalId": null,
+    "externalId": "bw8-65",
     "tcgdex_id": "bw8-65",
     "localId": "065",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "065/135",
+    "cardNumber": "65/135",
     "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 065/135 Plasma Storm",
+    "fullDisplayName": "Trubbish 65/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2410,18 +2936,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-065-low.png",
-    "imageHighSrc": "cards/bw8-065-high.png"
+    "imageHighSrc": "cards/bw8-065-high.png",
+    "attacks": [
+      {
+        "name": "Tool Drop",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3088",
-    "externalId": null,
+    "externalId": "bw8-64",
     "tcgdex_id": "bw8-64",
     "localId": "064",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "064/135",
+    "cardNumber": "64/135",
     "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 064/135 Plasma Storm",
+    "fullDisplayName": "Trubbish 64/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2443,18 +2975,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-064-low.png",
-    "imageHighSrc": "cards/bw8-064-high.png"
+    "imageHighSrc": "cards/bw8-064-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Sludge Bomb",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3087",
-    "externalId": null,
+    "externalId": "bw8-63",
     "tcgdex_id": "bw8-63",
     "localId": "063",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "063/135",
+    "cardNumber": "63/135",
     "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 063/135 Plasma Storm",
+    "fullDisplayName": "Trubbish 63/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2476,18 +3018,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-063-low.png",
-    "imageHighSrc": "cards/bw8-063-high.png"
+    "imageHighSrc": "cards/bw8-063-high.png",
+    "attacks": [
+      {
+        "name": "Pile Up",
+        "damage": null
+      },
+      {
+        "name": "Sludge Toss",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3086",
-    "externalId": null,
+    "externalId": "bw8-62",
     "tcgdex_id": "bw8-62",
     "localId": "062",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "062/135",
+    "cardNumber": "62/135",
     "cardName": "Giratina",
-    "fullDisplayName": "Giratina 062/135 Plasma Storm",
+    "fullDisplayName": "Giratina 62/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2510,18 +3062,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-062-low.png",
-    "imageHighSrc": "cards/bw8-062-high.png"
+    "imageHighSrc": "cards/bw8-062-high.png",
+    "attacks": [
+      {
+        "name": "Hex",
+        "damage": "50+"
+      },
+      {
+        "name": "Shadow Claw",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3085",
-    "externalId": null,
+    "externalId": "bw8-61",
     "tcgdex_id": "bw8-61",
     "localId": "061",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "061/135",
+    "cardNumber": "61/135",
     "cardName": "Gallade",
-    "fullDisplayName": "Gallade 061/135 Plasma Storm",
+    "fullDisplayName": "Gallade 61/135 Plasma Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2543,18 +3105,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-061-low.png",
-    "imageHighSrc": "cards/bw8-061-high.png"
+    "imageHighSrc": "cards/bw8-061-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Storm",
+        "damage": "20×"
+      },
+      {
+        "name": "Swift Lunge",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3084",
-    "externalId": null,
+    "externalId": "bw8-60",
     "tcgdex_id": "bw8-60",
     "localId": "060",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "060/135",
+    "cardNumber": "60/135",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 060/135 Plasma Storm",
+    "fullDisplayName": "Kirlia 60/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2576,18 +3148,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-060-low.png",
-    "imageHighSrc": "cards/bw8-060-high.png"
+    "imageHighSrc": "cards/bw8-060-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3083",
-    "externalId": null,
+    "externalId": "bw8-59",
     "tcgdex_id": "bw8-59",
     "localId": "059",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "059/135",
+    "cardNumber": "59/135",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts 059/135 Plasma Storm",
+    "fullDisplayName": "Ralts 59/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2609,18 +3187,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-059-low.png",
-    "imageHighSrc": "cards/bw8-059-high.png"
+    "imageHighSrc": "cards/bw8-059-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3082",
-    "externalId": null,
+    "externalId": "bw8-58",
     "tcgdex_id": "bw8-58",
     "localId": "058",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "058/135",
+    "cardNumber": "58/135",
     "cardName": "Weezing",
-    "fullDisplayName": "Weezing 058/135 Plasma Storm",
+    "fullDisplayName": "Weezing 58/135 Plasma Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2643,18 +3227,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-058-low.png",
-    "imageHighSrc": "cards/bw8-058-high.png"
+    "imageHighSrc": "cards/bw8-058-high.png",
+    "attacks": [
+      {
+        "name": "Smogbank",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3081",
-    "externalId": null,
+    "externalId": "bw8-57",
     "tcgdex_id": "bw8-57",
     "localId": "057",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "057/135",
+    "cardNumber": "57/135",
     "cardName": "Koffing",
-    "fullDisplayName": "Koffing 057/135 Plasma Storm",
+    "fullDisplayName": "Koffing 57/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2676,18 +3266,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-057-low.png",
-    "imageHighSrc": "cards/bw8-057-high.png"
+    "imageHighSrc": "cards/bw8-057-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3080",
-    "externalId": null,
+    "externalId": "bw8-56",
     "tcgdex_id": "bw8-56",
     "localId": "056",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "056/135",
+    "cardNumber": "56/135",
     "cardName": "Koffing",
-    "fullDisplayName": "Koffing 056/135 Plasma Storm",
+    "fullDisplayName": "Koffing 56/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2709,18 +3305,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-056-low.png",
-    "imageHighSrc": "cards/bw8-056-high.png"
+    "imageHighSrc": "cards/bw8-056-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Double Spin",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3079",
-    "externalId": null,
+    "externalId": "bw8-55",
     "tcgdex_id": "bw8-55",
     "localId": "055",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "055/135",
+    "cardNumber": "55/135",
     "cardName": "Crobat",
-    "fullDisplayName": "Crobat 055/135 Plasma Storm",
+    "fullDisplayName": "Crobat 55/135 Plasma Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2743,18 +3349,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-055-low.png",
-    "imageHighSrc": "cards/bw8-055-high.png"
+    "imageHighSrc": "cards/bw8-055-high.png",
+    "attacks": [
+      {
+        "name": "Ultra-Toxic Fang",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3078",
-    "externalId": null,
+    "externalId": "bw8-54",
     "tcgdex_id": "bw8-54",
     "localId": "054",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "054/135",
+    "cardNumber": "54/135",
     "cardName": "Golbat",
-    "fullDisplayName": "Golbat 054/135 Plasma Storm",
+    "fullDisplayName": "Golbat 54/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2776,18 +3388,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-054-low.png",
-    "imageHighSrc": "cards/bw8-054-high.png"
+    "imageHighSrc": "cards/bw8-054-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3077",
-    "externalId": null,
+    "externalId": "bw8-53",
     "tcgdex_id": "bw8-53",
     "localId": "053",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "053/135",
+    "cardNumber": "53/135",
     "cardName": "Zubat",
-    "fullDisplayName": "Zubat 053/135 Plasma Storm",
+    "fullDisplayName": "Zubat 53/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2809,18 +3427,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-053-low.png",
-    "imageHighSrc": "cards/bw8-053-high.png"
+    "imageHighSrc": "cards/bw8-053-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3076",
-    "externalId": null,
+    "externalId": "bw8-52",
     "tcgdex_id": "bw8-52",
     "localId": "052",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "052/135",
+    "cardNumber": "52/135",
     "cardName": "Zubat",
-    "fullDisplayName": "Zubat 052/135 Plasma Storm",
+    "fullDisplayName": "Zubat 52/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2842,18 +3466,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-052-low.png",
-    "imageHighSrc": "cards/bw8-052-high.png"
+    "imageHighSrc": "cards/bw8-052-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3075",
-    "externalId": null,
+    "externalId": "bw8-51",
     "tcgdex_id": "bw8-51",
     "localId": "051",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "051/135",
+    "cardNumber": "51/135",
     "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 051/135 Plasma Storm",
+    "fullDisplayName": "Galvantula 51/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2875,18 +3505,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-051-low.png",
-    "imageHighSrc": "cards/bw8-051-high.png"
+    "imageHighSrc": "cards/bw8-051-high.png",
+    "attacks": [
+      {
+        "name": "Discharge",
+        "damage": "30×"
+      },
+      {
+        "name": "Signal Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3074",
-    "externalId": null,
+    "externalId": "bw8-50",
     "tcgdex_id": "bw8-50",
     "localId": "050",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "050/135",
+    "cardNumber": "50/135",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 050/135 Plasma Storm",
+    "fullDisplayName": "Joltik 50/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2908,18 +3548,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-050-low.png",
-    "imageHighSrc": "cards/bw8-050-high.png"
+    "imageHighSrc": "cards/bw8-050-high.png",
+    "attacks": [
+      {
+        "name": "Jump On",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3073",
-    "externalId": null,
+    "externalId": "bw8-49",
     "tcgdex_id": "bw8-49",
     "localId": "049",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "049/135",
+    "cardNumber": "49/135",
     "cardName": "Rotom",
-    "fullDisplayName": "Rotom 049/135 Plasma Storm",
+    "fullDisplayName": "Rotom 49/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2942,18 +3588,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-049-low.png",
-    "imageHighSrc": "cards/bw8-049-high.png"
+    "imageHighSrc": "cards/bw8-049-high.png",
+    "attacks": [
+      {
+        "name": "Electribonus",
+        "damage": null
+      },
+      {
+        "name": "Poltergeist",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3072",
-    "externalId": null,
+    "externalId": "bw8-48",
     "tcgdex_id": "bw8-48",
     "localId": "048",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "048/135",
+    "cardNumber": "48/135",
     "cardName": "Zapdos-EX",
-    "fullDisplayName": "Zapdos-EX 048/135 Plasma Storm",
+    "fullDisplayName": "Zapdos-EX 48/135 Plasma Storm",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2977,18 +3633,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-048-low.png",
-    "imageHighSrc": "cards/bw8-048-high.png"
+    "imageHighSrc": "cards/bw8-048-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "30"
+      },
+      {
+        "name": "Powervolt",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3071",
-    "externalId": null,
+    "externalId": "bw8-47",
     "tcgdex_id": "bw8-47",
     "localId": "047",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "047/135",
+    "cardNumber": "47/135",
     "cardName": "Magnezone",
-    "fullDisplayName": "Magnezone 047/135 Plasma Storm",
+    "fullDisplayName": "Magnezone 47/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3010,18 +3677,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-047-low.png",
-    "imageHighSrc": "cards/bw8-047-high.png"
+    "imageHighSrc": "cards/bw8-047-high.png",
+    "attacks": [
+      {
+        "name": "Double Assist",
+        "damage": "30"
+      },
+      {
+        "name": "Tumbling Attack",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "3070",
-    "externalId": null,
+    "externalId": "bw8-46",
     "tcgdex_id": "bw8-46",
     "localId": "046",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "046/135",
+    "cardNumber": "46/135",
     "cardName": "Magnezone",
-    "fullDisplayName": "Magnezone 046/135 Plasma Storm",
+    "fullDisplayName": "Magnezone 46/135 Plasma Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3044,18 +3721,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-046-low.png",
-    "imageHighSrc": "cards/bw8-046-high.png"
+    "imageHighSrc": "cards/bw8-046-high.png",
+    "attacks": [
+      {
+        "name": "Gyro Ball",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3069",
-    "externalId": null,
+    "externalId": "bw8-45",
     "tcgdex_id": "bw8-45",
     "localId": "045",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "045/135",
+    "cardNumber": "45/135",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 045/135 Plasma Storm",
+    "fullDisplayName": "Magneton 45/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3077,18 +3760,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-045-low.png",
-    "imageHighSrc": "cards/bw8-045-high.png"
+    "imageHighSrc": "cards/bw8-045-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3068",
-    "externalId": null,
+    "externalId": "bw8-44",
     "tcgdex_id": "bw8-44",
     "localId": "044",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "044/135",
+    "cardNumber": "44/135",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 044/135 Plasma Storm",
+    "fullDisplayName": "Magneton 44/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3110,18 +3799,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-044-low.png",
-    "imageHighSrc": "cards/bw8-044-high.png"
+    "imageHighSrc": "cards/bw8-044-high.png",
+    "attacks": [
+      {
+        "name": "Metal Sound",
+        "damage": null
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3067",
-    "externalId": null,
+    "externalId": "bw8-43",
     "tcgdex_id": "bw8-43",
     "localId": "043",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "043/135",
+    "cardNumber": "43/135",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 043/135 Plasma Storm",
+    "fullDisplayName": "Magnemite 43/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3143,18 +3842,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-043-low.png",
-    "imageHighSrc": "cards/bw8-043-high.png"
+    "imageHighSrc": "cards/bw8-043-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3066",
-    "externalId": null,
+    "externalId": "bw8-42",
     "tcgdex_id": "bw8-42",
     "localId": "042",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "042/135",
+    "cardNumber": "42/135",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 042/135 Plasma Storm",
+    "fullDisplayName": "Magnemite 42/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3176,18 +3881,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-042-low.png",
-    "imageHighSrc": "cards/bw8-042-high.png"
+    "imageHighSrc": "cards/bw8-042-high.png",
+    "attacks": [
+      {
+        "name": "Metal Sound",
+        "damage": null
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3065",
-    "externalId": null,
+    "externalId": "bw8-41",
     "tcgdex_id": "bw8-41",
     "localId": "041",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "041/135",
+    "cardNumber": "41/135",
     "cardName": "Beartic",
-    "fullDisplayName": "Beartic 041/135 Plasma Storm",
+    "fullDisplayName": "Beartic 41/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3210,18 +3925,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-041-low.png",
-    "imageHighSrc": "cards/bw8-041-high.png"
+    "imageHighSrc": "cards/bw8-041-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Rage",
+        "damage": "20×"
+      },
+      {
+        "name": "Glacier Drop",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3064",
-    "externalId": null,
+    "externalId": "bw8-40",
     "tcgdex_id": "bw8-40",
     "localId": "040",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "040/135",
+    "cardNumber": "40/135",
     "cardName": "Cubchoo",
-    "fullDisplayName": "Cubchoo 040/135 Plasma Storm",
+    "fullDisplayName": "Cubchoo 40/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3243,18 +3968,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-040-low.png",
-    "imageHighSrc": "cards/bw8-040-high.png"
+    "imageHighSrc": "cards/bw8-040-high.png",
+    "attacks": [
+      {
+        "name": "Hail",
+        "damage": null
+      },
+      {
+        "name": "Icy Snow",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3063",
-    "externalId": null,
+    "externalId": "bw8-39",
     "tcgdex_id": "bw8-39",
     "localId": "039",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "039/135",
+    "cardNumber": "39/135",
     "cardName": "Jellicent",
-    "fullDisplayName": "Jellicent 039/135 Plasma Storm",
+    "fullDisplayName": "Jellicent 39/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3277,18 +4012,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-039-low.png",
-    "imageHighSrc": "cards/bw8-039-high.png"
+    "imageHighSrc": "cards/bw8-039-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Bullet",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3062",
-    "externalId": null,
+    "externalId": "bw8-38",
     "tcgdex_id": "bw8-38",
     "localId": "038",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "038/135",
+    "cardNumber": "38/135",
     "cardName": "Frillish",
-    "fullDisplayName": "Frillish 038/135 Plasma Storm",
+    "fullDisplayName": "Frillish 38/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3310,18 +4051,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-038-low.png",
-    "imageHighSrc": "cards/bw8-038-high.png"
+    "imageHighSrc": "cards/bw8-038-high.png",
+    "attacks": [
+      {
+        "name": "Absorb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3061",
-    "externalId": null,
+    "externalId": "bw8-37",
     "tcgdex_id": "bw8-37",
     "localId": "037",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "037/135",
+    "cardNumber": "37/135",
     "cardName": "Vanilluxe",
-    "fullDisplayName": "Vanilluxe 037/135 Plasma Storm",
+    "fullDisplayName": "Vanilluxe 37/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3343,18 +4090,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-037-low.png",
-    "imageHighSrc": "cards/bw8-037-high.png"
+    "imageHighSrc": "cards/bw8-037-high.png",
+    "attacks": [
+      {
+        "name": "Enefountain",
+        "damage": "30"
+      },
+      {
+        "name": "Blizzard",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3060",
-    "externalId": null,
+    "externalId": "bw8-36",
     "tcgdex_id": "bw8-36",
     "localId": "036",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "036/135",
+    "cardNumber": "36/135",
     "cardName": "Vanillish",
-    "fullDisplayName": "Vanillish 036/135 Plasma Storm",
+    "fullDisplayName": "Vanillish 36/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3376,18 +4133,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-036-low.png",
-    "imageHighSrc": "cards/bw8-036-high.png"
+    "imageHighSrc": "cards/bw8-036-high.png",
+    "attacks": [
+      {
+        "name": "Icy Snow",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3059",
-    "externalId": null,
+    "externalId": "bw8-35",
     "tcgdex_id": "bw8-35",
     "localId": "035",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "035/135",
+    "cardNumber": "35/135",
     "cardName": "Vanillite",
-    "fullDisplayName": "Vanillite 035/135 Plasma Storm",
+    "fullDisplayName": "Vanillite 35/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3409,18 +4172,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-035-low.png",
-    "imageHighSrc": "cards/bw8-035-high.png"
+    "imageHighSrc": "cards/bw8-035-high.png",
+    "attacks": [
+      {
+        "name": "Snow Squall",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3058",
-    "externalId": null,
+    "externalId": "bw8-34",
     "tcgdex_id": "bw8-34",
     "localId": "034",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "034/135",
+    "cardNumber": "34/135",
     "cardName": "Manaphy",
-    "fullDisplayName": "Manaphy 034/135 Plasma Storm",
+    "fullDisplayName": "Manaphy 34/135 Plasma Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3442,18 +4211,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-034-low.png",
-    "imageHighSrc": "cards/bw8-034-high.png"
+    "imageHighSrc": "cards/bw8-034-high.png",
+    "attacks": [
+      {
+        "name": "Seafaring",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3057",
-    "externalId": null,
+    "externalId": "bw8-33",
     "tcgdex_id": "bw8-33",
     "localId": "033",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "033/135",
+    "cardNumber": "33/135",
     "cardName": "Sharpedo",
-    "fullDisplayName": "Sharpedo 033/135 Plasma Storm",
+    "fullDisplayName": "Sharpedo 33/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3476,18 +4251,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-033-low.png",
-    "imageHighSrc": "cards/bw8-033-high.png"
+    "imageHighSrc": "cards/bw8-033-high.png",
+    "attacks": [
+      {
+        "name": "Hard Bite",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3056",
-    "externalId": null,
+    "externalId": "bw8-32",
     "tcgdex_id": "bw8-32",
     "localId": "032",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "032/135",
+    "cardNumber": "32/135",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 032/135 Plasma Storm",
+    "fullDisplayName": "Carvanha 32/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3509,18 +4290,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-032-low.png",
-    "imageHighSrc": "cards/bw8-032-high.png"
+    "imageHighSrc": "cards/bw8-032-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3055",
-    "externalId": null,
+    "externalId": "bw8-31",
     "tcgdex_id": "bw8-31",
     "localId": "031",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "031/135",
+    "cardNumber": "31/135",
     "cardName": "Ludicolo",
-    "fullDisplayName": "Ludicolo 031/135 Plasma Storm",
+    "fullDisplayName": "Ludicolo 31/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3542,18 +4329,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-031-low.png",
-    "imageHighSrc": "cards/bw8-031-high.png"
+    "imageHighSrc": "cards/bw8-031-high.png",
+    "attacks": [
+      {
+        "name": "Groovy Dance",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3054",
-    "externalId": null,
+    "externalId": "bw8-30",
     "tcgdex_id": "bw8-30",
     "localId": "030",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "030/135",
+    "cardNumber": "30/135",
     "cardName": "Lombre",
-    "fullDisplayName": "Lombre 030/135 Plasma Storm",
+    "fullDisplayName": "Lombre 30/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3575,18 +4368,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-030-low.png",
-    "imageHighSrc": "cards/bw8-030-high.png"
+    "imageHighSrc": "cards/bw8-030-high.png",
+    "attacks": [
+      {
+        "name": "Jump On",
+        "damage": "20+"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3053",
-    "externalId": null,
+    "externalId": "bw8-29",
     "tcgdex_id": "bw8-29",
     "localId": "029",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "029/135",
+    "cardNumber": "29/135",
     "cardName": "Lotad",
-    "fullDisplayName": "Lotad 029/135 Plasma Storm",
+    "fullDisplayName": "Lotad 29/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3608,18 +4411,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-029-low.png",
-    "imageHighSrc": "cards/bw8-029-high.png"
+    "imageHighSrc": "cards/bw8-029-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3052",
-    "externalId": null,
+    "externalId": "bw8-28",
     "tcgdex_id": "bw8-28",
     "localId": "028",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "028/135",
+    "cardNumber": "28/135",
     "cardName": "Mamoswine",
-    "fullDisplayName": "Mamoswine 028/135 Plasma Storm",
+    "fullDisplayName": "Mamoswine 28/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3641,18 +4450,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-028-low.png",
-    "imageHighSrc": "cards/bw8-028-high.png"
+    "imageHighSrc": "cards/bw8-028-high.png",
+    "attacks": [
+      {
+        "name": "Frost Stone",
+        "damage": "50+"
+      },
+      {
+        "name": "Continuous Headbutt",
+        "damage": "90×"
+      }
+    ]
   },
   {
     "masterCardId": "3051",
-    "externalId": null,
+    "externalId": "bw8-27",
     "tcgdex_id": "bw8-27",
     "localId": "027",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "027/135",
+    "cardNumber": "27/135",
     "cardName": "Piloswine",
-    "fullDisplayName": "Piloswine 027/135 Plasma Storm",
+    "fullDisplayName": "Piloswine 27/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3674,18 +4493,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-027-low.png",
-    "imageHighSrc": "cards/bw8-027-high.png"
+    "imageHighSrc": "cards/bw8-027-high.png",
+    "attacks": [
+      {
+        "name": "Ice Beam",
+        "damage": "20"
+      },
+      {
+        "name": "Quintuple Headbutt",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "3050",
-    "externalId": null,
+    "externalId": "bw8-26",
     "tcgdex_id": "bw8-26",
     "localId": "026",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "026/135",
+    "cardNumber": "26/135",
     "cardName": "Swinub",
-    "fullDisplayName": "Swinub 026/135 Plasma Storm",
+    "fullDisplayName": "Swinub 26/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3707,18 +4536,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-026-low.png",
-    "imageHighSrc": "cards/bw8-026-high.png"
+    "imageHighSrc": "cards/bw8-026-high.png",
+    "attacks": [
+      {
+        "name": "Double Headbutt",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3049",
-    "externalId": null,
+    "externalId": "bw8-25",
     "tcgdex_id": "bw8-25",
     "localId": "025",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "025/135",
+    "cardNumber": "25/135",
     "cardName": "Articuno-EX",
-    "fullDisplayName": "Articuno-EX 025/135 Plasma Storm",
+    "fullDisplayName": "Articuno-EX 25/135 Plasma Storm",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3742,18 +4577,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-025-low.png",
-    "imageHighSrc": "cards/bw8-025-high.png"
+    "imageHighSrc": "cards/bw8-025-high.png",
+    "attacks": [
+      {
+        "name": "Blizzard",
+        "damage": "60"
+      },
+      {
+        "name": "Frost Prison",
+        "damage": "80"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3048",
-    "externalId": null,
+    "externalId": "bw8-24",
     "tcgdex_id": "bw8-24",
     "localId": "024",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "024/135",
+    "cardNumber": "24/135",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 024/135 Plasma Storm",
+    "fullDisplayName": "Squirtle 24/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3775,18 +4621,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-024-low.png",
-    "imageHighSrc": "cards/bw8-024-high.png"
+    "imageHighSrc": "cards/bw8-024-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3047",
-    "externalId": null,
+    "externalId": "bw8-23",
     "tcgdex_id": "bw8-23",
     "localId": "023",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "023/135",
+    "cardNumber": "23/135",
     "cardName": "Heatmor",
-    "fullDisplayName": "Heatmor 023/135 Plasma Storm",
+    "fullDisplayName": "Heatmor 23/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3808,18 +4660,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-023-low.png",
-    "imageHighSrc": "cards/bw8-023-high.png"
+    "imageHighSrc": "cards/bw8-023-high.png",
+    "attacks": [
+      {
+        "name": "Luring Flame",
+        "damage": null
+      },
+      {
+        "name": "Fiery Licks",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "3046",
-    "externalId": null,
+    "externalId": "bw8-22",
     "tcgdex_id": "bw8-22",
     "localId": "022",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "022/135",
+    "cardNumber": "22/135",
     "cardName": "Lampent",
-    "fullDisplayName": "Lampent 022/135 Plasma Storm",
+    "fullDisplayName": "Lampent 22/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3841,18 +4703,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-022-low.png",
-    "imageHighSrc": "cards/bw8-022-high.png"
+    "imageHighSrc": "cards/bw8-022-high.png",
+    "attacks": [
+      {
+        "name": "Will-O-Wisp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3045",
-    "externalId": null,
+    "externalId": "bw8-21",
     "tcgdex_id": "bw8-21",
     "localId": "021",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "021/135",
+    "cardNumber": "21/135",
     "cardName": "Litwick",
-    "fullDisplayName": "Litwick 021/135 Plasma Storm",
+    "fullDisplayName": "Litwick 21/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3874,18 +4742,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-021-low.png",
-    "imageHighSrc": "cards/bw8-021-high.png"
+    "imageHighSrc": "cards/bw8-021-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3044",
-    "externalId": null,
+    "externalId": "bw8-20",
     "tcgdex_id": "bw8-20",
     "localId": "020",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "020/135",
+    "cardNumber": "20/135",
     "cardName": "Simisear",
-    "fullDisplayName": "Simisear 020/135 Plasma Storm",
+    "fullDisplayName": "Simisear 20/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3907,18 +4781,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-020-low.png",
-    "imageHighSrc": "cards/bw8-020-high.png"
+    "imageHighSrc": "cards/bw8-020-high.png",
+    "attacks": [
+      {
+        "name": "Searing Flame",
+        "damage": "20"
+      },
+      {
+        "name": "Flame Blast",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3043",
-    "externalId": null,
+    "externalId": "bw8-19",
     "tcgdex_id": "bw8-19",
     "localId": "019",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "019/135",
+    "cardNumber": "19/135",
     "cardName": "Pansear",
-    "fullDisplayName": "Pansear 019/135 Plasma Storm",
+    "fullDisplayName": "Pansear 19/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3940,18 +4824,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-019-low.png",
-    "imageHighSrc": "cards/bw8-019-high.png"
+    "imageHighSrc": "cards/bw8-019-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Double Fire",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "3042",
-    "externalId": null,
+    "externalId": "bw8-18",
     "tcgdex_id": "bw8-18",
     "localId": "018",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "018/135",
+    "cardNumber": "18/135",
     "cardName": "Victini-EX",
-    "fullDisplayName": "Victini-EX 018/135 Plasma Storm",
+    "fullDisplayName": "Victini-EX 18/135 Plasma Storm",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3974,18 +4868,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-018-low.png",
-    "imageHighSrc": "cards/bw8-018-high.png"
+    "imageHighSrc": "cards/bw8-018-high.png",
+    "attacks": [
+      {
+        "name": "Turbo Energize",
+        "damage": null
+      },
+      {
+        "name": "Intensifying Burn",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3041",
-    "externalId": null,
+    "externalId": "bw8-17",
     "tcgdex_id": "bw8-17",
     "localId": "017",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "017/135",
+    "cardNumber": "17/135",
     "cardName": "Infernape",
-    "fullDisplayName": "Infernape 017/135 Plasma Storm",
+    "fullDisplayName": "Infernape 17/135 Plasma Storm",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4008,18 +4913,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-017-low.png",
-    "imageHighSrc": "cards/bw8-017-high.png"
+    "imageHighSrc": "cards/bw8-017-high.png",
+    "attacks": [
+      {
+        "name": "Torment",
+        "damage": "30"
+      },
+      {
+        "name": "Malevolent Fire",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "3040",
-    "externalId": null,
+    "externalId": "bw8-16",
     "tcgdex_id": "bw8-16",
     "localId": "016",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "016/135",
+    "cardNumber": "16/135",
     "cardName": "Monferno",
-    "fullDisplayName": "Monferno 016/135 Plasma Storm",
+    "fullDisplayName": "Monferno 16/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4041,18 +4956,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-016-low.png",
-    "imageHighSrc": "cards/bw8-016-high.png"
+    "imageHighSrc": "cards/bw8-016-high.png",
+    "attacks": [
+      {
+        "name": "Loud Howl",
+        "damage": null
+      },
+      {
+        "name": "Fire Tail Slap",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3039",
-    "externalId": null,
+    "externalId": "bw8-15",
     "tcgdex_id": "bw8-15",
     "localId": "015",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "015/135",
+    "cardNumber": "15/135",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 015/135 Plasma Storm",
+    "fullDisplayName": "Chimchar 15/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4074,18 +4999,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-015-low.png",
-    "imageHighSrc": "cards/bw8-015-high.png"
+    "imageHighSrc": "cards/bw8-015-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3038",
-    "externalId": null,
+    "externalId": "bw8-14",
     "tcgdex_id": "bw8-14",
     "localId": "014",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "014/135",
+    "cardNumber": "14/135",
     "cardName": "Moltres-EX",
-    "fullDisplayName": "Moltres-EX 014/135 Plasma Storm",
+    "fullDisplayName": "Moltres-EX 14/135 Plasma Storm",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4109,18 +5040,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw8-014-low.png",
-    "imageHighSrc": "cards/bw8-014-high.png"
+    "imageHighSrc": "cards/bw8-014-high.png",
+    "attacks": [
+      {
+        "name": "Destructive Flame",
+        "damage": "30"
+      },
+      {
+        "name": "Power Flame",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3037",
-    "externalId": null,
+    "externalId": "bw8-13",
     "tcgdex_id": "bw8-13",
     "localId": "013",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "013/135",
+    "cardNumber": "13/135",
     "cardName": "Amoonguss",
-    "fullDisplayName": "Amoonguss 013/135 Plasma Storm",
+    "fullDisplayName": "Amoonguss 13/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4143,18 +5085,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-013-low.png",
-    "imageHighSrc": "cards/bw8-013-high.png"
+    "imageHighSrc": "cards/bw8-013-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      },
+      {
+        "name": "Miracle Powder",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3036",
-    "externalId": null,
+    "externalId": "bw8-12",
     "tcgdex_id": "bw8-12",
     "localId": "012",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "012/135",
+    "cardNumber": "12/135",
     "cardName": "Foongus",
-    "fullDisplayName": "Foongus 012/135 Plasma Storm",
+    "fullDisplayName": "Foongus 12/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4176,18 +5128,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-012-low.png",
-    "imageHighSrc": "cards/bw8-012-high.png"
+    "imageHighSrc": "cards/bw8-012-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3035",
-    "externalId": null,
+    "externalId": "bw8-11",
     "tcgdex_id": "bw8-11",
     "localId": "011",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "011/135",
+    "cardNumber": "11/135",
     "cardName": "Maractus",
-    "fullDisplayName": "Maractus 011/135 Plasma Storm",
+    "fullDisplayName": "Maractus 11/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4209,18 +5167,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-011-low.png",
-    "imageHighSrc": "cards/bw8-011-high.png"
+    "imageHighSrc": "cards/bw8-011-high.png",
+    "attacks": [
+      {
+        "name": "Dazzle Dance",
+        "damage": "10"
+      },
+      {
+        "name": "Ambush",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3034",
-    "externalId": null,
+    "externalId": "bw8-10",
     "tcgdex_id": "bw8-10",
     "localId": "010",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "010/135",
+    "cardNumber": "10/135",
     "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 010/135 Plasma Storm",
+    "fullDisplayName": "Leavanny 10/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4242,18 +5210,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-010-low.png",
-    "imageHighSrc": "cards/bw8-010-high.png"
+    "imageHighSrc": "cards/bw8-010-high.png",
+    "attacks": [
+      {
+        "name": "Cleave",
+        "damage": "30"
+      },
+      {
+        "name": "Leaf Blade",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "3033",
-    "externalId": null,
+    "externalId": "bw8-9",
     "tcgdex_id": "bw8-9",
     "localId": "009",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "009/135",
+    "cardNumber": "9/135",
     "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 009/135 Plasma Storm",
+    "fullDisplayName": "Swadloon 9/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4275,18 +5253,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-009-low.png",
-    "imageHighSrc": "cards/bw8-009-high.png"
+    "imageHighSrc": "cards/bw8-009-high.png",
+    "attacks": [
+      {
+        "name": "Swaddle Guard",
+        "damage": null
+      },
+      {
+        "name": "Surprise Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3032",
-    "externalId": null,
+    "externalId": "bw8-8",
     "tcgdex_id": "bw8-8",
     "localId": "008",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "008/135",
+    "cardNumber": "8/135",
     "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 008/135 Plasma Storm",
+    "fullDisplayName": "Sewaddle 8/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4308,18 +5296,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-008-low.png",
-    "imageHighSrc": "cards/bw8-008-high.png"
+    "imageHighSrc": "cards/bw8-008-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3031",
-    "externalId": null,
+    "externalId": "bw8-7",
     "tcgdex_id": "bw8-7",
     "localId": "007",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "007/135",
+    "cardNumber": "7/135",
     "cardName": "Cherrim",
-    "fullDisplayName": "Cherrim 007/135 Plasma Storm",
+    "fullDisplayName": "Cherrim 7/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4341,18 +5335,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-007-low.png",
-    "imageHighSrc": "cards/bw8-007-high.png"
+    "imageHighSrc": "cards/bw8-007-high.png",
+    "attacks": [
+      {
+        "name": "Random Peck",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3030",
-    "externalId": null,
+    "externalId": "bw8-6",
     "tcgdex_id": "bw8-6",
     "localId": "006",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "006/135",
+    "cardNumber": "6/135",
     "cardName": "Cherubi",
-    "fullDisplayName": "Cherubi 006/135 Plasma Storm",
+    "fullDisplayName": "Cherubi 6/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4374,18 +5374,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-006-low.png",
-    "imageHighSrc": "cards/bw8-006-high.png"
+    "imageHighSrc": "cards/bw8-006-high.png",
+    "attacks": [
+      {
+        "name": "Leech Seed",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3029",
-    "externalId": null,
+    "externalId": "bw8-5",
     "tcgdex_id": "bw8-5",
     "localId": "005",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "005/135",
+    "cardNumber": "5/135",
     "cardName": "Vespiquen",
-    "fullDisplayName": "Vespiquen 005/135 Plasma Storm",
+    "fullDisplayName": "Vespiquen 5/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4407,18 +5413,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-005-low.png",
-    "imageHighSrc": "cards/bw8-005-high.png"
+    "imageHighSrc": "cards/bw8-005-high.png",
+    "attacks": [
+      {
+        "name": "Gather Order",
+        "damage": null
+      },
+      {
+        "name": "Damage Beat",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3028",
-    "externalId": null,
+    "externalId": "bw8-4",
     "tcgdex_id": "bw8-4",
     "localId": "004",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "004/135",
+    "cardNumber": "4/135",
     "cardName": "Combee",
-    "fullDisplayName": "Combee 004/135 Plasma Storm",
+    "fullDisplayName": "Combee 4/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4440,18 +5456,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-004-low.png",
-    "imageHighSrc": "cards/bw8-004-high.png"
+    "imageHighSrc": "cards/bw8-004-high.png",
+    "attacks": [
+      {
+        "name": "Sting Missile",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3027",
-    "externalId": null,
+    "externalId": "bw8-3",
     "tcgdex_id": "bw8-3",
     "localId": "003",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "003/135",
+    "cardNumber": "3/135",
     "cardName": "Torterra",
-    "fullDisplayName": "Torterra 003/135 Plasma Storm",
+    "fullDisplayName": "Torterra 3/135 Plasma Storm",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4474,18 +5496,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-003-low.png",
-    "imageHighSrc": "cards/bw8-003-high.png"
+    "imageHighSrc": "cards/bw8-003-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "60"
+      },
+      {
+        "name": "Rumble Stomp",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3026",
-    "externalId": null,
+    "externalId": "bw8-2",
     "tcgdex_id": "bw8-2",
     "localId": "002",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "002/135",
+    "cardNumber": "2/135",
     "cardName": "Grotle",
-    "fullDisplayName": "Grotle 002/135 Plasma Storm",
+    "fullDisplayName": "Grotle 2/135 Plasma Storm",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4507,18 +5539,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-002-low.png",
-    "imageHighSrc": "cards/bw8-002-high.png"
+    "imageHighSrc": "cards/bw8-002-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3025",
-    "externalId": null,
+    "externalId": "bw8-1",
     "tcgdex_id": "bw8-1",
     "localId": "001",
     "setCode": "bw8",
     "setTcgdexId": "bw8",
-    "cardNumber": "001/135",
+    "cardNumber": "1/135",
     "cardName": "Turtwig",
-    "fullDisplayName": "Turtwig 001/135 Plasma Storm",
+    "fullDisplayName": "Turtwig 1/135 Plasma Storm",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4540,6 +5578,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw8-001-low.png",
-    "imageHighSrc": "cards/bw8-001-high.png"
+    "imageHighSrc": "cards/bw8-001-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      }
+    ]
   }
 ]

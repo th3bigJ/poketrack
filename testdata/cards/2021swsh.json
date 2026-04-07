@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "7349",
-    "externalId": null,
+    "externalId": "mcd21-25",
     "tcgdex_id": "2021swsh-25",
     "localId": "025",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "025/25",
+    "cardNumber": "25/25",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 025/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Pikachu 25/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-025-low.png",
-    "imageHighSrc": "cards/mcd21-025-high.png"
+    "imageHighSrc": "cards/mcd21-025-high.png",
+    "attacks": [
+      {
+        "name": "Meal Time",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7346",
-    "externalId": null,
+    "externalId": "mcd21-24",
     "tcgdex_id": "2021swsh-24",
     "localId": "024",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "024/25",
+    "cardNumber": "24/25",
     "cardName": "Sobble",
-    "fullDisplayName": "Sobble 024/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Sobble 24/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-024-low.png",
-    "imageHighSrc": "cards/mcd21-024-high.png"
+    "imageHighSrc": "cards/mcd21-024-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7343",
-    "externalId": null,
+    "externalId": "mcd21-23",
     "tcgdex_id": "2021swsh-23",
     "localId": "023",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "023/25",
+    "cardNumber": "23/25",
     "cardName": "Popplio",
-    "fullDisplayName": "Popplio 023/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Popplio 23/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +112,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-023-low.png",
-    "imageHighSrc": "cards/mcd21-023-high.png"
+    "imageHighSrc": "cards/mcd21-023-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7340",
-    "externalId": null,
+    "externalId": "mcd21-22",
     "tcgdex_id": "2021swsh-22",
     "localId": "022",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "022/25",
+    "cardNumber": "22/25",
     "cardName": "Froakie",
-    "fullDisplayName": "Froakie 022/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Froakie 22/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +155,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-022-low.png",
-    "imageHighSrc": "cards/mcd21-022-high.png"
+    "imageHighSrc": "cards/mcd21-022-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Water Drip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7337",
-    "externalId": null,
+    "externalId": "mcd21-21",
     "tcgdex_id": "2021swsh-21",
     "localId": "021",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "021/25",
+    "cardNumber": "21/25",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott 021/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Oshawott 21/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +198,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-021-low.png",
-    "imageHighSrc": "cards/mcd21-021-high.png"
+    "imageHighSrc": "cards/mcd21-021-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7334",
-    "externalId": null,
+    "externalId": "mcd21-20",
     "tcgdex_id": "2021swsh-20",
     "localId": "020",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "020/25",
+    "cardNumber": "20/25",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 020/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Piplup 20/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +237,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-020-low.png",
-    "imageHighSrc": "cards/mcd21-020-high.png"
+    "imageHighSrc": "cards/mcd21-020-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7331",
-    "externalId": null,
+    "externalId": "mcd21-19",
     "tcgdex_id": "2021swsh-19",
     "localId": "019",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "019/25",
+    "cardNumber": "19/25",
     "cardName": "Mudkip",
-    "fullDisplayName": "Mudkip 019/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Mudkip 19/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +280,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-019-low.png",
-    "imageHighSrc": "cards/mcd21-019-high.png"
+    "imageHighSrc": "cards/mcd21-019-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7326",
-    "externalId": null,
+    "externalId": "mcd21-18",
     "tcgdex_id": "2021swsh-18",
     "localId": "018",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "018/25",
+    "cardNumber": "18/25",
     "cardName": "Totodile",
-    "fullDisplayName": "Totodile 018/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Totodile 18/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +323,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-018-low.png",
-    "imageHighSrc": "cards/mcd21-018-high.png"
+    "imageHighSrc": "cards/mcd21-018-high.png",
+    "attacks": [
+      {
+        "name": "Fury Strikes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7323",
-    "externalId": null,
+    "externalId": "mcd21-17",
     "tcgdex_id": "2021swsh-17",
     "localId": "017",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "017/25",
+    "cardNumber": "17/25",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 017/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Squirtle 17/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +362,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-017-low.png",
-    "imageHighSrc": "cards/mcd21-017-high.png"
+    "imageHighSrc": "cards/mcd21-017-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7320",
-    "externalId": null,
+    "externalId": "mcd21-16",
     "tcgdex_id": "2021swsh-16",
     "localId": "016",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "016/25",
+    "cardNumber": "16/25",
     "cardName": "Scorbunny",
-    "fullDisplayName": "Scorbunny 016/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Scorbunny 16/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +401,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-016-low.png",
-    "imageHighSrc": "cards/mcd21-016-high.png"
+    "imageHighSrc": "cards/mcd21-016-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7317",
-    "externalId": null,
+    "externalId": "mcd21-15",
     "tcgdex_id": "2021swsh-15",
     "localId": "015",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "015/25",
+    "cardNumber": "15/25",
     "cardName": "Litten",
-    "fullDisplayName": "Litten 015/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Litten 15/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +440,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-015-low.png",
-    "imageHighSrc": "cards/mcd21-015-high.png"
+    "imageHighSrc": "cards/mcd21-015-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7314",
-    "externalId": null,
+    "externalId": "mcd21-14",
     "tcgdex_id": "2021swsh-14",
     "localId": "014",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "014/25",
+    "cardNumber": "14/25",
     "cardName": "Fennekin",
-    "fullDisplayName": "Fennekin 014/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Fennekin 14/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,18 +483,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-014-low.png",
-    "imageHighSrc": "cards/mcd21-014-high.png"
+    "imageHighSrc": "cards/mcd21-014-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7310",
-    "externalId": null,
+    "externalId": "mcd21-13",
     "tcgdex_id": "2021swsh-13",
     "localId": "013",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "013/25",
+    "cardNumber": "13/25",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig 013/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Tepig 13/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -426,18 +526,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-013-low.png",
-    "imageHighSrc": "cards/mcd21-013-high.png"
+    "imageHighSrc": "cards/mcd21-013-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7305",
-    "externalId": null,
+    "externalId": "mcd21-12",
     "tcgdex_id": "2021swsh-12",
     "localId": "012",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "012/25",
+    "cardNumber": "12/25",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 012/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Chimchar 12/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -459,18 +565,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-012-low.png",
-    "imageHighSrc": "cards/mcd21-012-high.png"
+    "imageHighSrc": "cards/mcd21-012-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7300",
-    "externalId": null,
+    "externalId": "mcd21-11",
     "tcgdex_id": "2021swsh-11",
     "localId": "011",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "011/25",
+    "cardNumber": "11/25",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 011/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Torchic 11/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,18 +604,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-011-low.png",
-    "imageHighSrc": "cards/mcd21-011-high.png"
+    "imageHighSrc": "cards/mcd21-011-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7295",
-    "externalId": null,
+    "externalId": "mcd21-10",
     "tcgdex_id": "2021swsh-10",
     "localId": "010",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "010/25",
+    "cardNumber": "10/25",
     "cardName": "Cyndaquil",
-    "fullDisplayName": "Cyndaquil 010/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Cyndaquil 10/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -525,18 +643,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-010-low.png",
-    "imageHighSrc": "cards/mcd21-010-high.png"
+    "imageHighSrc": "cards/mcd21-010-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7290",
-    "externalId": null,
+    "externalId": "mcd21-9",
     "tcgdex_id": "2021swsh-9",
     "localId": "009",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "009/25",
+    "cardNumber": "9/25",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 009/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Charmander 9/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -558,18 +682,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-009-low.png",
-    "imageHighSrc": "cards/mcd21-009-high.png"
+    "imageHighSrc": "cards/mcd21-009-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Flame Tail",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7285",
-    "externalId": null,
+    "externalId": "mcd21-8",
     "tcgdex_id": "2021swsh-8",
     "localId": "008",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "008/25",
+    "cardNumber": "8/25",
     "cardName": "Grookey",
-    "fullDisplayName": "Grookey 008/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Grookey 8/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -591,18 +725,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-008-low.png",
-    "imageHighSrc": "cards/mcd21-008-high.png"
+    "imageHighSrc": "cards/mcd21-008-high.png",
+    "attacks": [
+      {
+        "name": "Branch Poke",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7280",
-    "externalId": null,
+    "externalId": "mcd21-7",
     "tcgdex_id": "2021swsh-7",
     "localId": "007",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "007/25",
+    "cardNumber": "7/25",
     "cardName": "Rowlet",
-    "fullDisplayName": "Rowlet 007/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Rowlet 7/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -624,18 +764,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-007-low.png",
-    "imageHighSrc": "cards/mcd21-007-high.png"
+    "imageHighSrc": "cards/mcd21-007-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Leafage",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7275",
-    "externalId": null,
+    "externalId": "mcd21-6",
     "tcgdex_id": "2021swsh-6",
     "localId": "006",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "006/25",
+    "cardNumber": "6/25",
     "cardName": "Chespin",
-    "fullDisplayName": "Chespin 006/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Chespin 6/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -657,18 +807,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-006-low.png",
-    "imageHighSrc": "cards/mcd21-006-high.png"
+    "imageHighSrc": "cards/mcd21-006-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "10"
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7270",
-    "externalId": null,
+    "externalId": "mcd21-5",
     "tcgdex_id": "2021swsh-5",
     "localId": "005",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "005/25",
+    "cardNumber": "5/25",
     "cardName": "Snivy",
-    "fullDisplayName": "Snivy 005/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Snivy 5/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -690,18 +850,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-005-low.png",
-    "imageHighSrc": "cards/mcd21-005-high.png"
+    "imageHighSrc": "cards/mcd21-005-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7263",
-    "externalId": null,
+    "externalId": "mcd21-4",
     "tcgdex_id": "2021swsh-4",
     "localId": "004",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "004/25",
+    "cardNumber": "4/25",
     "cardName": "Turtwig",
-    "fullDisplayName": "Turtwig 004/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Turtwig 4/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -723,18 +889,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-004-low.png",
-    "imageHighSrc": "cards/mcd21-004-high.png"
+    "imageHighSrc": "cards/mcd21-004-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7251",
-    "externalId": null,
+    "externalId": "mcd21-3",
     "tcgdex_id": "2021swsh-3",
     "localId": "003",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "003/25",
+    "cardNumber": "3/25",
     "cardName": "Treecko",
-    "fullDisplayName": "Treecko 003/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Treecko 3/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -756,18 +932,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-003-low.png",
-    "imageHighSrc": "cards/mcd21-003-high.png"
+    "imageHighSrc": "cards/mcd21-003-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7238",
-    "externalId": null,
+    "externalId": "mcd21-2",
     "tcgdex_id": "2021swsh-2",
     "localId": "002",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "002/25",
+    "cardNumber": "2/25",
     "cardName": "Chikorita",
-    "fullDisplayName": "Chikorita 002/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Chikorita 2/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -789,18 +971,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-002-low.png",
-    "imageHighSrc": "cards/mcd21-002-high.png"
+    "imageHighSrc": "cards/mcd21-002-high.png",
+    "attacks": [
+      {
+        "name": "Mini Drain",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7226",
-    "externalId": null,
+    "externalId": "mcd21-1",
     "tcgdex_id": "2021swsh-1",
     "localId": "001",
     "setCode": "2021swsh",
     "setTcgdexId": "2021swsh",
-    "cardNumber": "001/25",
+    "cardNumber": "1/25",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 001/25 Macdonald's Collection 2021",
+    "fullDisplayName": "Bulbasaur 1/25 Macdonald's Collection 2021",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -822,6 +1010,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd21-001-low.png",
-    "imageHighSrc": "cards/mcd21-001-high.png"
+    "imageHighSrc": "cards/mcd21-001-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      }
+    ]
   }
 ]

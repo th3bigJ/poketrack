@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "21974",
-    "externalId": "mep-070",
+    "externalId": "mep-70",
     "tcgdex_id": null,
     "localId": "070",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "70",
+    "cardNumber": "070",
     "cardName": "Tyrunt",
-    "fullDisplayName": "Tyrunt 070/10 MEP Black Star Promos",
+    "fullDisplayName": "Tyrunt 070 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/mep-070-low.png",
-    "imageHighSrc": "cards/mep-070-high.png"
+    "imageHighSrc": "cards/mep-070-high.png",
+    "attacks": [
+      {
+        "name": "Get Angry",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "21975",
-    "externalId": "mep-069",
+    "externalId": "mep-69",
     "tcgdex_id": null,
     "localId": "069",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "69",
+    "cardNumber": "069",
     "cardName": "Chikorita",
-    "fullDisplayName": "Chikorita 069/10 MEP Black Star Promos",
+    "fullDisplayName": "Chikorita 069 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +69,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/mep-069-low.png",
-    "imageHighSrc": "cards/mep-069-high.png"
+    "imageHighSrc": "cards/mep-069-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21976",
-    "externalId": "mep-068",
+    "externalId": "mep-68",
     "tcgdex_id": null,
     "localId": "068",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "68",
+    "cardNumber": "068",
     "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 068/10 MEP Black Star Promos",
+    "fullDisplayName": "Makuhita 068 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +108,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/mep-068-low.png",
-    "imageHighSrc": "cards/mep-068-high.png"
+    "imageHighSrc": "cards/mep-068-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Confront",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21849",
-    "externalId": "mep-067",
+    "externalId": "mep-67",
     "tcgdex_id": null,
     "localId": "067",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "67",
+    "cardNumber": "067",
     "cardName": "Doublade",
-    "fullDisplayName": "Doublade 067/10 MEP Black Star Promos",
+    "fullDisplayName": "Doublade 067 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -129,18 +151,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/mep-067-low.png",
-    "imageHighSrc": "cards/mep-067-high.png"
+    "imageHighSrc": "cards/mep-067-high.png",
+    "attacks": [
+      {
+        "name": "Weaponized Swords",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "21848",
-    "externalId": "mep-066",
+    "externalId": "mep-66",
     "tcgdex_id": null,
     "localId": "066",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "66",
+    "cardNumber": "066",
     "cardName": "Tyrantrum",
-    "fullDisplayName": "Tyrantrum 066/10 MEP Black Star Promos",
+    "fullDisplayName": "Tyrantrum 066 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -162,18 +190,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/mep-066-low.png",
-    "imageHighSrc": "cards/mep-066-high.png"
+    "imageHighSrc": "cards/mep-066-high.png",
+    "attacks": [
+      {
+        "name": "Wreak Havoc",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "21847",
-    "externalId": "mep-065",
+    "externalId": "mep-65",
     "tcgdex_id": null,
     "localId": "065",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "65",
+    "cardNumber": "065",
     "cardName": "Barbaracle",
-    "fullDisplayName": "Barbaracle 065/10 MEP Black Star Promos",
+    "fullDisplayName": "Barbaracle 065 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -195,18 +229,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/mep-065-low.png",
-    "imageHighSrc": "cards/mep-065-high.png"
+    "imageHighSrc": "cards/mep-065-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "21846",
-    "externalId": "mep-064",
+    "externalId": "mep-64",
     "tcgdex_id": null,
     "localId": "064",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "64",
+    "cardNumber": "064",
     "cardName": "Serperior",
-    "fullDisplayName": "Serperior 064/10 MEP Black Star Promos",
+    "fullDisplayName": "Serperior 064 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -228,18 +268,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/mep-064-low.png",
-    "imageHighSrc": "cards/mep-064-high.png"
+    "imageHighSrc": "cards/mep-064-high.png",
+    "attacks": [
+      {
+        "name": "Regal Command",
+        "damage": "20×"
+      },
+      {
+        "name": "Solar Coiling",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "21845",
-    "externalId": "mep-045",
+    "externalId": "mep-45",
     "tcgdex_id": null,
     "localId": "045",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "45",
+    "cardNumber": "045",
     "cardName": "Popplio",
-    "fullDisplayName": "Popplio 045/10 MEP Black Star Promos",
+    "fullDisplayName": "Popplio 045 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +311,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-045-low.png",
-    "imageHighSrc": "cards/mep-045-high.png"
+    "imageHighSrc": "cards/mep-045-high.png",
+    "attacks": [
+      {
+        "name": "Disarming Voice",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21844",
-    "externalId": "mep-044",
+    "externalId": "mep-44",
     "tcgdex_id": null,
     "localId": "044",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "44",
+    "cardNumber": "044",
     "cardName": "Litten",
-    "fullDisplayName": "Litten 044/10 MEP Black Star Promos",
+    "fullDisplayName": "Litten 044 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +350,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-044-low.png",
-    "imageHighSrc": "cards/mep-044-high.png"
+    "imageHighSrc": "cards/mep-044-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21843",
-    "externalId": "mep-043",
+    "externalId": "mep-43",
     "tcgdex_id": null,
     "localId": "043",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "43",
+    "cardNumber": "043",
     "cardName": "Rowlet",
-    "fullDisplayName": "Rowlet 043/10 MEP Black Star Promos",
+    "fullDisplayName": "Rowlet 043 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +389,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-043-low.png",
-    "imageHighSrc": "cards/mep-043-high.png"
+    "imageHighSrc": "cards/mep-043-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21842",
-    "externalId": "mep-042",
+    "externalId": "mep-42",
     "tcgdex_id": null,
     "localId": "042",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "42",
+    "cardNumber": "042",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 042/10 MEP Black Star Promos",
+    "fullDisplayName": "Piplup 042 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +428,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-042-low.png",
-    "imageHighSrc": "cards/mep-042-high.png"
+    "imageHighSrc": "cards/mep-042-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21841",
-    "externalId": "mep-041",
+    "externalId": "mep-41",
     "tcgdex_id": null,
     "localId": "041",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "41",
+    "cardNumber": "041",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 041/10 MEP Black Star Promos",
+    "fullDisplayName": "Chimchar 041 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,18 +467,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-041-low.png",
-    "imageHighSrc": "cards/mep-041-high.png"
+    "imageHighSrc": "cards/mep-041-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "21840",
-    "externalId": "mep-040",
+    "externalId": "mep-40",
     "tcgdex_id": null,
     "localId": "040",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "40",
+    "cardNumber": "040",
     "cardName": "Turtwig",
-    "fullDisplayName": "Turtwig 040/10 MEP Black Star Promos",
+    "fullDisplayName": "Turtwig 040 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -426,18 +506,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-040-low.png",
-    "imageHighSrc": "cards/mep-040-high.png"
+    "imageHighSrc": "cards/mep-040-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "21839",
-    "externalId": "mep-039",
+    "externalId": "mep-39",
     "tcgdex_id": null,
     "localId": "039",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "39",
+    "cardNumber": "039",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 039/10 MEP Black Star Promos",
+    "fullDisplayName": "Squirtle 039 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -459,18 +545,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-039-low.png",
-    "imageHighSrc": "cards/mep-039-high.png"
+    "imageHighSrc": "cards/mep-039-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21838",
-    "externalId": "mep-038",
+    "externalId": "mep-38",
     "tcgdex_id": null,
     "localId": "038",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "38",
+    "cardNumber": "038",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 038/10 MEP Black Star Promos",
+    "fullDisplayName": "Charmander 038 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,18 +584,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-038-low.png",
-    "imageHighSrc": "cards/mep-038-high.png"
+    "imageHighSrc": "cards/mep-038-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21837",
-    "externalId": "mep-037",
+    "externalId": "mep-37",
     "tcgdex_id": null,
     "localId": "037",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "37",
+    "cardNumber": "037",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 037/10 MEP Black Star Promos",
+    "fullDisplayName": "Bulbasaur 037 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -525,18 +623,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-037-low.png",
-    "imageHighSrc": "cards/mep-037-high.png"
+    "imageHighSrc": "cards/mep-037-high.png",
+    "attacks": [
+      {
+        "name": "Leech Seed",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21836",
-    "externalId": "mep-033",
+    "externalId": "mep-33",
     "tcgdex_id": null,
     "localId": "033",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "33",
+    "cardNumber": "033",
     "cardName": "Mega Lucario ex",
-    "fullDisplayName": "Mega Lucario ex 033/10 MEP Black Star Promos",
+    "fullDisplayName": "Mega Lucario ex 033 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -558,18 +662,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/mep-033-low.png",
-    "imageHighSrc": "cards/mep-033-high.png"
+    "imageHighSrc": "cards/mep-033-high.png",
+    "attacks": [
+      {
+        "name": "Aura Jab",
+        "damage": "130"
+      },
+      {
+        "name": "Mega Brave",
+        "damage": "270"
+      }
+    ]
   },
   {
     "masterCardId": "21835",
-    "externalId": "mep-032",
+    "externalId": "mep-32",
     "tcgdex_id": null,
     "localId": "032",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "32",
+    "cardNumber": "032",
     "cardName": "Mega Gardevoir ex",
-    "fullDisplayName": "Mega Gardevoir ex 032/10 MEP Black Star Promos",
+    "fullDisplayName": "Mega Gardevoir ex 032 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -591,18 +705,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/mep-032-low.png",
-    "imageHighSrc": "cards/mep-032-high.png"
+    "imageHighSrc": "cards/mep-032-high.png",
+    "attacks": [
+      {
+        "name": "Overflowing Wishes",
+        "damage": null
+      },
+      {
+        "name": "Mega Symphonia",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "21834",
-    "externalId": "mep-031",
+    "externalId": "mep-31",
     "tcgdex_id": null,
     "localId": "031",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "31",
+    "cardNumber": "031",
     "cardName": "N's Zekrom",
-    "fullDisplayName": "N's Zekrom 031/10 MEP Black Star Promos",
+    "fullDisplayName": "N's Zekrom 031 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -624,18 +748,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-031-low.png",
-    "imageHighSrc": "cards/mep-031-high.png"
+    "imageHighSrc": "cards/mep-031-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "70"
+      },
+      {
+        "name": "Rampaging Thunder",
+        "damage": "250"
+      }
+    ]
   },
   {
     "masterCardId": "21833",
-    "externalId": "mep-030",
+    "externalId": "mep-30",
     "tcgdex_id": null,
     "localId": "030",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "30",
+    "cardNumber": "030",
     "cardName": "Mega Charizard Y ex",
-    "fullDisplayName": "Mega Charizard Y ex 030/10 MEP Black Star Promos",
+    "fullDisplayName": "Mega Charizard Y ex 030 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -657,18 +791,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-030-low.png",
-    "imageHighSrc": "cards/mep-030-high.png"
+    "imageHighSrc": "cards/mep-030-high.png",
+    "attacks": [
+      {
+        "name": "Explosion Y",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21832",
-    "externalId": "mep-029",
+    "externalId": "mep-29",
     "tcgdex_id": null,
     "localId": "029",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "29",
+    "cardNumber": "029",
     "cardName": "Mega Charizard X ex",
-    "fullDisplayName": "Mega Charizard X ex 029/10 MEP Black Star Promos",
+    "fullDisplayName": "Mega Charizard X ex 029 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -690,18 +830,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-029-low.png",
-    "imageHighSrc": "cards/mep-029-high.png"
+    "imageHighSrc": "cards/mep-029-high.png",
+    "attacks": [
+      {
+        "name": "Inferno X",
+        "damage": "90×"
+      }
+    ]
   },
   {
     "masterCardId": "21831",
-    "externalId": "mep-028",
+    "externalId": "mep-28",
     "tcgdex_id": null,
     "localId": "028",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "28",
+    "cardNumber": "028",
     "cardName": "Celebratory Fanfare",
-    "fullDisplayName": "Celebratory Fanfare 028/10 MEP Black Star Promos",
+    "fullDisplayName": "Celebratory Fanfare 028 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -719,18 +865,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-028-low.png",
-    "imageHighSrc": "cards/mep-028-high.png"
+    "imageHighSrc": "cards/mep-028-high.png",
+    "rules": "Once during each player's turn, that player may heal 10 damage from each of their Pokémon. If a player healed any damage in this way, their turn ends.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "21830",
-    "externalId": "mep-027",
+    "externalId": "mep-27",
     "tcgdex_id": null,
     "localId": "027",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "27",
+    "cardNumber": "027",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 027/10 MEP Black Star Promos",
+    "fullDisplayName": "Haunter 027 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -750,18 +897,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-027-low.png",
-    "imageHighSrc": "cards/mep-027-high.png"
+    "imageHighSrc": "cards/mep-027-high.png",
+    "attacks": [
+      {
+        "name": "Spooky Shot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "21829",
-    "externalId": "mep-026",
+    "externalId": "mep-26",
     "tcgdex_id": null,
     "localId": "026",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "26",
+    "cardNumber": "026",
     "cardName": "Meloetta",
-    "fullDisplayName": "Meloetta 026/10 MEP Black Star Promos",
+    "fullDisplayName": "Meloetta 026 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -781,18 +934,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-026-low.png",
-    "imageHighSrc": "cards/mep-026-high.png"
+    "imageHighSrc": "cards/mep-026-high.png",
+    "attacks": [
+      {
+        "name": "Soothing Melody",
+        "damage": null
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "21828",
-    "externalId": "mep-025",
+    "externalId": "mep-25",
     "tcgdex_id": null,
     "localId": "025",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "25",
+    "cardNumber": "025",
     "cardName": "Mega Kangaskhan ex",
-    "fullDisplayName": "Mega Kangaskhan ex 025/10 MEP Black Star Promos",
+    "fullDisplayName": "Mega Kangaskhan ex 025 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -812,18 +975,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-025-low.png",
-    "imageHighSrc": "cards/mep-025-high.png"
+    "imageHighSrc": "cards/mep-025-high.png",
+    "attacks": [
+      {
+        "name": "Rapid-Fire Combo",
+        "damage": "200+"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21827",
-    "externalId": "mep-024",
+    "externalId": "mep-24",
     "tcgdex_id": null,
     "localId": "024",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "24",
+    "cardNumber": "024",
     "cardName": "Oricorio ex",
-    "fullDisplayName": "Oricorio ex 024/10 MEP Black Star Promos",
+    "fullDisplayName": "Oricorio ex 024 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -843,18 +1013,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-024-low.png",
-    "imageHighSrc": "cards/mep-024-high.png"
+    "imageHighSrc": "cards/mep-024-high.png",
+    "attacks": [
+      {
+        "name": "Fire Wing",
+        "damage": "110"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "21826",
-    "externalId": "mep-023",
+    "externalId": "mep-23",
     "tcgdex_id": null,
     "localId": "023",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "23",
+    "cardNumber": "023",
     "cardName": "Mega Charizard X ex",
-    "fullDisplayName": "Mega Charizard X ex 023/10 MEP Black Star Promos",
+    "fullDisplayName": "Mega Charizard X ex 023 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -876,18 +1053,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-023-low.png",
-    "imageHighSrc": "cards/mep-023-high.png"
+    "imageHighSrc": "cards/mep-023-high.png",
+    "attacks": [
+      {
+        "name": "Inferno X",
+        "damage": "90×"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21825",
-    "externalId": "mep-022",
+    "externalId": "mep-22",
     "tcgdex_id": null,
     "localId": "022",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "22",
+    "cardNumber": "022",
     "cardName": "Charcadet",
-    "fullDisplayName": "Charcadet 022/10 MEP Black Star Promos",
+    "fullDisplayName": "Charcadet 022 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -907,18 +1091,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-022-low.png",
-    "imageHighSrc": "cards/mep-022-high.png"
+    "imageHighSrc": "cards/mep-022-high.png",
+    "attacks": [
+      {
+        "name": "Gather Strength",
+        "damage": null
+      },
+      {
+        "name": "Chop",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21824",
-    "externalId": "mep-021",
+    "externalId": "mep-21",
     "tcgdex_id": null,
     "localId": "021",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "21",
+    "cardNumber": "021",
     "cardName": "Weavile",
-    "fullDisplayName": "Weavile 021/10 MEP Black Star Promos",
+    "fullDisplayName": "Weavile 021 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -938,18 +1132,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-021-low.png",
-    "imageHighSrc": "cards/mep-021-high.png"
+    "imageHighSrc": "cards/mep-021-high.png",
+    "attacks": [
+      {
+        "name": "Retaliatory Claw",
+        "damage": "20+"
+      },
+      {
+        "name": "Cut",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "21823",
-    "externalId": "mep-020",
+    "externalId": "mep-20",
     "tcgdex_id": null,
     "localId": "020",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "20",
+    "cardNumber": "020",
     "cardName": "Sneasel",
-    "fullDisplayName": "Sneasel 020/10 MEP Black Star Promos",
+    "fullDisplayName": "Sneasel 020 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -969,18 +1173,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-020-low.png",
-    "imageHighSrc": "cards/mep-020-high.png"
+    "imageHighSrc": "cards/mep-020-high.png",
+    "attacks": [
+      {
+        "name": "Dig Claws",
+        "damage": "10"
+      },
+      {
+        "name": "Scratch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21822",
-    "externalId": "mep-019",
+    "externalId": "mep-19",
     "tcgdex_id": null,
     "localId": "019",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "19",
+    "cardNumber": "019",
     "cardName": "Whimsicott",
-    "fullDisplayName": "Whimsicott 019/10 MEP Black Star Promos",
+    "fullDisplayName": "Whimsicott 019 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1000,18 +1214,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-019-low.png",
-    "imageHighSrc": "cards/mep-019-high.png"
+    "imageHighSrc": "cards/mep-019-high.png",
+    "attacks": [
+      {
+        "name": "Healing Fluff",
+        "damage": null
+      },
+      {
+        "name": "U-turn",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "21821",
-    "externalId": "mep-018",
+    "externalId": "mep-18",
     "tcgdex_id": null,
     "localId": "018",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "18",
+    "cardNumber": "018",
     "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 018/10 MEP Black Star Promos",
+    "fullDisplayName": "Cottonee 018 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1031,18 +1255,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-018-low.png",
-    "imageHighSrc": "cards/mep-018-high.png"
+    "imageHighSrc": "cards/mep-018-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21820",
-    "externalId": "mep-017",
+    "externalId": "mep-17",
     "tcgdex_id": null,
     "localId": "017",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "17",
+    "cardNumber": "017",
     "cardName": "Toxtricity",
-    "fullDisplayName": "Toxtricity 017/10 MEP Black Star Promos",
+    "fullDisplayName": "Toxtricity 017 MEP Black Star Promos",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1062,18 +1292,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-017-low.png",
-    "imageHighSrc": "cards/mep-017-high.png"
+    "imageHighSrc": "cards/mep-017-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "21819",
-    "externalId": "mep-016",
+    "externalId": "mep-16",
     "tcgdex_id": null,
     "localId": "016",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "16",
+    "cardNumber": "016",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 016/10 MEP Black Star Promos",
+    "fullDisplayName": "Flygon 016 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1093,18 +1329,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-016-low.png",
-    "imageHighSrc": "cards/mep-016-high.png"
+    "imageHighSrc": "cards/mep-016-high.png",
+    "attacks": [
+      {
+        "name": "Cutting Wind",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "21818",
-    "externalId": "mep-015",
+    "externalId": "mep-15",
     "tcgdex_id": null,
     "localId": "015",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "15",
+    "cardNumber": "015",
     "cardName": "Zacian",
-    "fullDisplayName": "Zacian 015/10 MEP Black Star Promos",
+    "fullDisplayName": "Zacian 015 MEP Black Star Promos",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1124,18 +1366,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-015-low.png",
-    "imageHighSrc": "cards/mep-015-high.png"
+    "imageHighSrc": "cards/mep-015-high.png",
+    "attacks": [
+      {
+        "name": "Limit Break",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "21817",
-    "externalId": "mep-014",
+    "externalId": "mep-14",
     "tcgdex_id": null,
     "localId": "014",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "14",
+    "cardNumber": "014",
     "cardName": "Ceruledge",
-    "fullDisplayName": "Ceruledge 014/10 MEP Black Star Promos",
+    "fullDisplayName": "Ceruledge 014 MEP Black Star Promos",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1155,18 +1403,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-014-low.png",
-    "imageHighSrc": "cards/mep-014-high.png"
+    "imageHighSrc": "cards/mep-014-high.png",
+    "attacks": [
+      {
+        "name": "Infernal Slash",
+        "damage": "220"
+      }
+    ]
   },
   {
     "masterCardId": "21816",
-    "externalId": "mep-013",
+    "externalId": "mep-13",
     "tcgdex_id": null,
     "localId": "013",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "13",
+    "cardNumber": "013",
     "cardName": "Mega Venusaur ex",
-    "fullDisplayName": "Mega Venusaur ex 013/10 MEP Black Star Promos",
+    "fullDisplayName": "Mega Venusaur ex 013 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1186,18 +1440,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-013-low.png",
-    "imageHighSrc": "cards/mep-013-high.png"
+    "imageHighSrc": "cards/mep-013-high.png",
+    "attacks": [
+      {
+        "name": "Jungle Dump",
+        "damage": "240"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21815",
-    "externalId": "mep-012",
+    "externalId": "mep-12",
     "tcgdex_id": null,
     "localId": "012",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "12",
+    "cardNumber": "012",
     "cardName": "Mega Lucario ex",
-    "fullDisplayName": "Mega Lucario ex 012/10 MEP Black Star Promos",
+    "fullDisplayName": "Mega Lucario ex 012 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1219,18 +1480,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-012-low.png",
-    "imageHighSrc": "cards/mep-012-high.png"
+    "imageHighSrc": "cards/mep-012-high.png",
+    "attacks": [
+      {
+        "name": "Aura Jab",
+        "damage": "130"
+      },
+      {
+        "name": "Mega Brave",
+        "damage": "270"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21814",
-    "externalId": "mep-011",
+    "externalId": "mep-11",
     "tcgdex_id": null,
     "localId": "011",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "11",
+    "cardNumber": "011",
     "cardName": "Mega Latias ex",
-    "fullDisplayName": "Mega Latias ex 011/10 MEP Black Star Promos",
+    "fullDisplayName": "Mega Latias ex 011 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1250,18 +1522,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-011-low.png",
-    "imageHighSrc": "cards/mep-011-high.png"
+    "imageHighSrc": "cards/mep-011-high.png",
+    "attacks": [
+      {
+        "name": "Strafe",
+        "damage": "40"
+      },
+      {
+        "name": "Illusory Impulse",
+        "damage": "300"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "21813",
-    "externalId": null,
+    "externalId": "mep-10",
     "tcgdex_id": "mep-010",
     "localId": "010",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "010/10",
+    "cardNumber": "010",
     "cardName": "Riolu",
-    "fullDisplayName": "Riolu 010/10 MEP Black Star Promos",
+    "fullDisplayName": "Riolu 010 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1281,18 +1564,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-010-low.png",
-    "imageHighSrc": "cards/mep-010-high.png"
+    "imageHighSrc": "cards/mep-010-high.png",
+    "attacks": [
+      {
+        "name": "Accelerating Stab",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "21812",
-    "externalId": null,
+    "externalId": "mep-9",
     "tcgdex_id": "mep-009",
     "localId": "009",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "009/10",
+    "cardNumber": "009",
     "cardName": "Alakazam",
-    "fullDisplayName": "Alakazam 009/10 MEP Black Star Promos",
+    "fullDisplayName": "Alakazam 009 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1312,18 +1601,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-009-low.png",
-    "imageHighSrc": "cards/mep-009-high.png"
+    "imageHighSrc": "cards/mep-009-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Hand",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21811",
-    "externalId": null,
+    "externalId": "mep-8",
     "tcgdex_id": "mep-008",
     "localId": "008",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "008/10",
+    "cardNumber": "008",
     "cardName": "Golduck",
-    "fullDisplayName": "Golduck 008/10 MEP Black Star Promos",
+    "fullDisplayName": "Golduck 008 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1343,18 +1638,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-008-low.png",
-    "imageHighSrc": "cards/mep-008-high.png"
+    "imageHighSrc": "cards/mep-008-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "21810",
-    "externalId": null,
+    "externalId": "mep-7",
     "tcgdex_id": "mep-007",
     "localId": "007",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "007/10",
+    "cardNumber": "007",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 007/10 MEP Black Star Promos",
+    "fullDisplayName": "Psyduck 007 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1374,18 +1675,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-007-low.png",
-    "imageHighSrc": "cards/mep-007-high.png"
+    "imageHighSrc": "cards/mep-007-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21809",
-    "externalId": null,
+    "externalId": "mep-6",
     "tcgdex_id": "mep-006",
     "localId": "006",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "006/10",
+    "cardNumber": "006",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 006/10 MEP Black Star Promos",
+    "fullDisplayName": "Drifblim 006 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1405,18 +1712,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-006-low.png",
-    "imageHighSrc": "cards/mep-006-high.png"
+    "imageHighSrc": "cards/mep-006-high.png",
+    "attacks": [
+      {
+        "name": "Creepy Wind",
+        "damage": null
+      },
+      {
+        "name": "Balloon Return",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "21808",
-    "externalId": null,
+    "externalId": "mep-5",
     "tcgdex_id": "mep-005",
     "localId": "005",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "005/10",
+    "cardNumber": "005",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 005/10 MEP Black Star Promos",
+    "fullDisplayName": "Drifloon 005 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1436,18 +1753,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-005-low.png",
-    "imageHighSrc": "cards/mep-005-high.png"
+    "imageHighSrc": "cards/mep-005-high.png",
+    "attacks": [
+      {
+        "name": "Pull",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21807",
-    "externalId": null,
+    "externalId": "mep-4",
     "tcgdex_id": "mep-004",
     "localId": "004",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "004/10",
+    "cardNumber": "004",
     "cardName": "Lunatone",
-    "fullDisplayName": "Lunatone 004/10 MEP Black Star Promos",
+    "fullDisplayName": "Lunatone 004 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1467,18 +1790,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-004-low.png",
-    "imageHighSrc": "cards/mep-004-high.png"
+    "imageHighSrc": "cards/mep-004-high.png",
+    "attacks": [
+      {
+        "name": "Power Gem",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "21806",
-    "externalId": null,
+    "externalId": "mep-3",
     "tcgdex_id": "mep-003",
     "localId": "003",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "003/10",
+    "cardNumber": "003",
     "cardName": "Alakazam",
-    "fullDisplayName": "Alakazam 003/10 MEP Black Star Promos",
+    "fullDisplayName": "Alakazam 003 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1498,18 +1827,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-003-low.png",
-    "imageHighSrc": "cards/mep-003-high.png"
+    "imageHighSrc": "cards/mep-003-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Hand",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21805",
-    "externalId": null,
+    "externalId": "mep-2",
     "tcgdex_id": "mep-002",
     "localId": "002",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "002/10",
+    "cardNumber": "002",
     "cardName": "Inteleon",
-    "fullDisplayName": "Inteleon 002/10 MEP Black Star Promos",
+    "fullDisplayName": "Inteleon 002 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1529,18 +1864,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-002-low.png",
-    "imageHighSrc": "cards/mep-002-high.png"
+    "imageHighSrc": "cards/mep-002-high.png",
+    "attacks": [
+      {
+        "name": "Bring Down",
+        "damage": null
+      },
+      {
+        "name": "Water Shot",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "21804",
-    "externalId": null,
+    "externalId": "mep-1",
     "tcgdex_id": "mep-001",
     "localId": "001",
     "setCode": "mep",
     "setTcgdexId": "mep",
-    "cardNumber": "001/10",
+    "cardNumber": "001",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium 001/10 MEP Black Star Promos",
+    "fullDisplayName": "Meganium 001 MEP Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1560,6 +1905,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mep-001-low.png",
-    "imageHighSrc": "cards/mep-001-high.png"
+    "imageHighSrc": "cards/mep-001-high.png",
+    "attacks": [
+      {
+        "name": "Solar Beam",
+        "damage": "140"
+      }
+    ]
   }
 ]

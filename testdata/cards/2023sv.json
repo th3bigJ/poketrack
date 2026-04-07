@@ -6,9 +6,9 @@
     "localId": "015",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "015/15",
+    "cardNumber": "015/015",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 015/15 McDonald's Collection 2023",
+    "fullDisplayName": "Kirlia 015/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -30,7 +30,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-015-low.jpg",
-    "imageHighSrc": "cards/2023sv-015-low.jpg"
+    "imageHighSrc": "cards/2023sv-015-low.jpg",
+    "attacks": [
+      {
+        "name": "Magical Shot",
+        "damage": "30"
+      },
+      {
+        "name": "Psychic",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "22359",
@@ -39,9 +49,9 @@
     "localId": "014",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "014/15",
+    "cardNumber": "014/015",
     "cardName": "Cyclizar",
-    "fullDisplayName": "Cyclizar 014/15 McDonald's Collection 2023",
+    "fullDisplayName": "Cyclizar 014/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,7 +73,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-014-low.jpg",
-    "imageHighSrc": "cards/2023sv-014-low.jpg"
+    "imageHighSrc": "cards/2023sv-014-low.jpg",
+    "attacks": [
+      {
+        "name": "Touring",
+        "damage": null
+      },
+      {
+        "name": "Speed Attack",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "22358",
@@ -72,9 +92,9 @@
     "localId": "013",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "013/15",
+    "cardNumber": "013/015",
     "cardName": "Tandemaus",
-    "fullDisplayName": "Tandemaus 013/15 McDonald's Collection 2023",
+    "fullDisplayName": "Tandemaus 013/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,7 +116,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-013-low.jpg",
-    "imageHighSrc": "cards/2023sv-013-low.jpg"
+    "imageHighSrc": "cards/2023sv-013-low.jpg",
+    "attacks": [
+      {
+        "name": "Double Hit",
+        "damage": "30x"
+      }
+    ]
   },
   {
     "masterCardId": "22357",
@@ -105,9 +131,9 @@
     "localId": "012",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "012/15",
+    "cardNumber": "012/015",
     "cardName": "Blissey",
-    "fullDisplayName": "Blissey 012/15 McDonald's Collection 2023",
+    "fullDisplayName": "Blissey 012/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -129,7 +155,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-012-low.jpg",
-    "imageHighSrc": "cards/2023sv-012-low.jpg"
+    "imageHighSrc": "cards/2023sv-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Happy Cyclone",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "22356",
@@ -138,9 +170,9 @@
     "localId": "011",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "011/15",
+    "cardNumber": "011/015",
     "cardName": "Klawf",
-    "fullDisplayName": "Klawf 011/15 McDonald's Collection 2023",
+    "fullDisplayName": "Klawf 011/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,7 +194,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-011-low.jpg",
-    "imageHighSrc": "cards/2023sv-011-low.jpg"
+    "imageHighSrc": "cards/2023sv-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Vise Grip",
+        "damage": "50"
+      },
+      {
+        "name": "Adrenaline Hammer",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "22355",
@@ -171,9 +213,9 @@
     "localId": "010",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "010/15",
+    "cardNumber": "010/015",
     "cardName": "Sandaconda",
-    "fullDisplayName": "Sandaconda 010/15 McDonald's Collection 2023",
+    "fullDisplayName": "Sandaconda 010/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -195,7 +237,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-010-low.jpg",
-    "imageHighSrc": "cards/2023sv-010-low.jpg"
+    "imageHighSrc": "cards/2023sv-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Skull Bash",
+        "damage": "120"
+      },
+      {
+        "name": "Sandstorm Spray",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "22354",
@@ -204,9 +256,9 @@
     "localId": "009",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "009/15",
+    "cardNumber": "009/015",
     "cardName": "Flittle",
-    "fullDisplayName": "Flittle 009/15 McDonald's Collection 2023",
+    "fullDisplayName": "Flittle 009/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,7 +280,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-009-low.jpg",
-    "imageHighSrc": "cards/2023sv-009-low.jpg"
+    "imageHighSrc": "cards/2023sv-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "22353",
@@ -237,9 +295,9 @@
     "localId": "008",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "008/15",
+    "cardNumber": "008/015",
     "cardName": "Kilowattrel",
-    "fullDisplayName": "Kilowattrel 008/15 McDonald's Collection 2023",
+    "fullDisplayName": "Kilowattrel 008/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -261,7 +319,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-008-low.jpg",
-    "imageHighSrc": "cards/2023sv-008-low.jpg"
+    "imageHighSrc": "cards/2023sv-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Skill Dive",
+        "damage": null
+      },
+      {
+        "name": "Thunder Blast",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "22352",
@@ -270,9 +338,9 @@
     "localId": "007",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "007/15",
+    "cardNumber": "007/015",
     "cardName": "Pawmi",
-    "fullDisplayName": "Pawmi 007/15 McDonald's Collection 2023",
+    "fullDisplayName": "Pawmi 007/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,7 +362,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-007-low.jpg",
-    "imageHighSrc": "cards/2023sv-007-low.jpg"
+    "imageHighSrc": "cards/2023sv-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Zap Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22351",
@@ -303,9 +381,9 @@
     "localId": "006",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "006/15",
+    "cardNumber": "006/015",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 006/15 McDonald's Collection 2023",
+    "fullDisplayName": "Pikachu 006/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,7 +405,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-006-low.jpg",
-    "imageHighSrc": "cards/2023sv-006-low.jpg"
+    "imageHighSrc": "cards/2023sv-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Pika Bolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "22350",
@@ -336,9 +424,9 @@
     "localId": "005",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "005/15",
+    "cardNumber": "005/015",
     "cardName": "Cetitan",
-    "fullDisplayName": "Cetitan 005/15 McDonald's Collection 2023",
+    "fullDisplayName": "Cetitan 005/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -360,7 +448,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-005-low.jpg",
-    "imageHighSrc": "cards/2023sv-005-low.jpg"
+    "imageHighSrc": "cards/2023sv-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "50"
+      },
+      {
+        "name": "Sweeping Tackle",
+        "damage": "200-"
+      }
+    ]
   },
   {
     "masterCardId": "22349",
@@ -369,9 +467,9 @@
     "localId": "004",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "004/15",
+    "cardNumber": "004/015",
     "cardName": "Cetoddle",
-    "fullDisplayName": "Cetoddle 004/15 McDonald's Collection 2023",
+    "fullDisplayName": "Cetoddle 004/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,7 +491,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-004-low.jpg",
-    "imageHighSrc": "cards/2023sv-004-low.jpg"
+    "imageHighSrc": "cards/2023sv-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Icicle",
+        "damage": "10"
+      },
+      {
+        "name": "Sharp Fin",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "22348",
@@ -402,9 +510,9 @@
     "localId": "003",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "003/15",
+    "cardNumber": "003/015",
     "cardName": "Quaxly",
-    "fullDisplayName": "Quaxly 003/15 McDonald's Collection 2023",
+    "fullDisplayName": "Quaxly 003/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -426,7 +534,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-003-low.jpg",
-    "imageHighSrc": "cards/2023sv-003-low.jpg"
+    "imageHighSrc": "cards/2023sv-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22347",
@@ -435,9 +553,9 @@
     "localId": "002",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "002/15",
+    "cardNumber": "002/015",
     "cardName": "Fuecoco",
-    "fullDisplayName": "Fuecoco 002/15 McDonald's Collection 2023",
+    "fullDisplayName": "Fuecoco 002/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -459,7 +577,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-002-low.jpg",
-    "imageHighSrc": "cards/2023sv-002-low.jpg"
+    "imageHighSrc": "cards/2023sv-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Combustion",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "22346",
@@ -468,9 +596,9 @@
     "localId": "001",
     "setCode": "2023sv",
     "setTcgdexId": "2023sv",
-    "cardNumber": "001/15",
+    "cardNumber": "001/015",
     "cardName": "Sprigatito",
-    "fullDisplayName": "Sprigatito 001/15 McDonald's Collection 2023",
+    "fullDisplayName": "Sprigatito 001/015 McDonald's Collection 2023",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,6 +620,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2023sv-001-low.jpg",
-    "imageHighSrc": "cards/2023sv-001-low.jpg"
+    "imageHighSrc": "cards/2023sv-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Leafage",
+        "damage": "20"
+      }
+    ]
   }
 ]

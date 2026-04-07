@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "21988",
-    "externalId": null,
+    "externalId": "mcd18-12",
     "tcgdex_id": "2018sm-12",
     "localId": "012",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "012/12",
+    "cardNumber": "12/12",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon 012/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Porygon 12/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-012-low.jpg",
-    "imageHighSrc": "cards/2018sm-012-low.jpg"
+    "imageHighSrc": "cards/2018sm-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Code Check",
+        "damage": null
+      },
+      {
+        "name": "Beam",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21987",
-    "externalId": null,
+    "externalId": "mcd18-11",
     "tcgdex_id": "2018sm-11",
     "localId": "011",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "011/12",
+    "cardNumber": "11/12",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 011/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Eevee 11/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-011-low.jpg",
-    "imageHighSrc": "cards/2018sm-011-low.jpg"
+    "imageHighSrc": "cards/2018sm-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Quick Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21986",
-    "externalId": null,
+    "externalId": "mcd18-10",
     "tcgdex_id": "2018sm-10",
     "localId": "010",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "010/12",
+    "cardNumber": "10/12",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 010/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Chansey 10/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +112,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-010-low.jpg",
-    "imageHighSrc": "cards/2018sm-010-low.jpg"
+    "imageHighSrc": "cards/2018sm-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Bind Wound",
+        "damage": null
+      },
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "21985",
-    "externalId": null,
+    "externalId": "mcd18-9",
     "tcgdex_id": "2018sm-9",
     "localId": "009",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "009/12",
+    "cardNumber": "9/12",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 009/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Dratini 9/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +155,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-009-low.jpg",
-    "imageHighSrc": "cards/2018sm-009-low.jpg"
+    "imageHighSrc": "cards/2018sm-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Signs of Evolution",
+        "damage": null
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21984",
-    "externalId": null,
+    "externalId": "mcd18-8",
     "tcgdex_id": "2018sm-8",
     "localId": "008",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "008/12",
+    "cardNumber": "8/12",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 008/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Magnemite 8/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +198,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-008-low.jpg",
-    "imageHighSrc": "cards/2018sm-008-low.jpg"
+    "imageHighSrc": "cards/2018sm-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Searching Magnet",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21983",
-    "externalId": null,
+    "externalId": "mcd18-7",
     "tcgdex_id": "2018sm-7",
     "localId": "007",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "007/12",
+    "cardNumber": "7/12",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 007/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Cubone 7/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +241,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-007-low.jpg",
-    "imageHighSrc": "cards/2018sm-007-low.jpg"
+    "imageHighSrc": "cards/2018sm-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21982",
-    "externalId": null,
+    "externalId": "mcd18-6",
     "tcgdex_id": "2018sm-6",
     "localId": "006",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "006/12",
+    "cardNumber": "6/12",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 006/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Machop 6/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +284,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-006-low.jpg",
-    "imageHighSrc": "cards/2018sm-006-low.jpg"
+    "imageHighSrc": "cards/2018sm-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Dynamic Chop",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "21981",
-    "externalId": null,
+    "externalId": "mcd18-5",
     "tcgdex_id": "2018sm-5",
     "localId": "005",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "005/12",
+    "cardNumber": "5/12",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 005/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Slowpoke 5/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +323,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-005-low.jpg",
-    "imageHighSrc": "cards/2018sm-005-low.jpg"
+    "imageHighSrc": "cards/2018sm-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Whimsy Tackle",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "21980",
-    "externalId": null,
+    "externalId": "mcd18-4",
     "tcgdex_id": "2018sm-4",
     "localId": "004",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "004/12",
+    "cardNumber": "4/12",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 004/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Pikachu 4/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +366,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-004-low.jpg",
-    "imageHighSrc": "cards/2018sm-004-low.jpg"
+    "imageHighSrc": "cards/2018sm-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Pika Draw",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "21979",
-    "externalId": null,
+    "externalId": "mcd18-3",
     "tcgdex_id": "2018sm-3",
     "localId": "003",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "003/12",
+    "cardNumber": "3/12",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 003/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Horsea 3/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +409,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-003-low.jpg",
-    "imageHighSrc": "cards/2018sm-003-low.jpg"
+    "imageHighSrc": "cards/2018sm-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21978",
-    "externalId": null,
+    "externalId": "mcd18-2",
     "tcgdex_id": "2018sm-2",
     "localId": "002",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "002/12",
+    "cardNumber": "2/12",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 002/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Psyduck 2/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +448,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-002-low.jpg",
-    "imageHighSrc": "cards/2018sm-002-low.jpg"
+    "imageHighSrc": "cards/2018sm-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Confusion Wave",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21977",
-    "externalId": null,
+    "externalId": "mcd18-1",
     "tcgdex_id": "2018sm-1",
     "localId": "001",
     "setCode": "2018sm",
     "setTcgdexId": "2018sm",
-    "cardNumber": "001/12",
+    "cardNumber": "1/12",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 001/12 Macdonald's Collection 2018",
+    "fullDisplayName": "Growlithe 1/12 Macdonald's Collection 2018",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,6 +487,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2018sm-001-low.jpg",
-    "imageHighSrc": "cards/2018sm-001-low.jpg"
+    "imageHighSrc": "cards/2018sm-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "60"
+      }
+    ]
   }
 ]

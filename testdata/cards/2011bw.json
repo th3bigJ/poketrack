@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "6841",
-    "externalId": null,
+    "externalId": "mcd11-12",
     "tcgdex_id": "2011bw-12",
     "localId": "012",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "012/12",
+    "cardNumber": "12/12",
     "cardName": "Audino",
-    "fullDisplayName": "Audino 012/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Audino 12/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-012-low.png",
-    "imageHighSrc": "cards/mcd11-012-high.png"
+    "imageHighSrc": "cards/mcd11-012-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "6834",
-    "externalId": null,
+    "externalId": "mcd11-11",
     "tcgdex_id": "2011bw-11",
     "localId": "011",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "011/12",
+    "cardNumber": "11/12",
     "cardName": "Pidove",
-    "fullDisplayName": "Pidove 011/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Pidove 11/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +69,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-011-low.png",
-    "imageHighSrc": "cards/mcd11-011-high.png"
+    "imageHighSrc": "cards/mcd11-011-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6826",
-    "externalId": null,
+    "externalId": "mcd11-10",
     "tcgdex_id": "2011bw-10",
     "localId": "010",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "010/12",
+    "cardNumber": "10/12",
     "cardName": "Klink",
-    "fullDisplayName": "Klink 010/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Klink 10/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +112,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-010-low.png",
-    "imageHighSrc": "cards/mcd11-010-high.png"
+    "imageHighSrc": "cards/mcd11-010-high.png",
+    "attacks": [
+      {
+        "name": "Charge Beam",
+        "damage": "10"
+      },
+      {
+        "name": "Irongrip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6818",
-    "externalId": null,
+    "externalId": "mcd11-9",
     "tcgdex_id": "2011bw-9",
     "localId": "009",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "009/12",
+    "cardNumber": "9/12",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 009/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Zorua 9/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +155,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-009-low.png",
-    "imageHighSrc": "cards/mcd11-009-high.png"
+    "imageHighSrc": "cards/mcd11-009-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "6812",
-    "externalId": null,
+    "externalId": "mcd11-8",
     "tcgdex_id": "2011bw-8",
     "localId": "008",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "008/12",
+    "cardNumber": "8/12",
     "cardName": "Sandile",
-    "fullDisplayName": "Sandile 008/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Sandile 8/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +198,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-008-low.png",
-    "imageHighSrc": "cards/mcd11-008-high.png"
+    "imageHighSrc": "cards/mcd11-008-high.png",
+    "attacks": [
+      {
+        "name": "Sand Tomb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6804",
-    "externalId": null,
+    "externalId": "mcd11-7",
     "tcgdex_id": "2011bw-7",
     "localId": "007",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "007/12",
+    "cardNumber": "7/12",
     "cardName": "Munna",
-    "fullDisplayName": "Munna 007/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Munna 7/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +237,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-007-low.png",
-    "imageHighSrc": "cards/mcd11-007-high.png"
+    "imageHighSrc": "cards/mcd11-007-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6795",
-    "externalId": null,
+    "externalId": "mcd11-6",
     "tcgdex_id": "2011bw-6",
     "localId": "006",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "006/12",
+    "cardNumber": "6/12",
     "cardName": "Blitzle",
-    "fullDisplayName": "Blitzle 006/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Blitzle 6/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +276,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-006-low.png",
-    "imageHighSrc": "cards/mcd11-006-high.png"
+    "imageHighSrc": "cards/mcd11-006-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6788",
-    "externalId": null,
+    "externalId": "mcd11-5",
     "tcgdex_id": "2011bw-5",
     "localId": "005",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "005/12",
+    "cardNumber": "5/12",
     "cardName": "Alomomola",
-    "fullDisplayName": "Alomomola 005/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Alomomola 5/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +315,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-005-low.png",
-    "imageHighSrc": "cards/mcd11-005-high.png"
+    "imageHighSrc": "cards/mcd11-005-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6781",
-    "externalId": null,
+    "externalId": "mcd11-4",
     "tcgdex_id": "2011bw-4",
     "localId": "004",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "004/12",
+    "cardNumber": "4/12",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott 004/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Oshawott 4/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +358,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-004-low.png",
-    "imageHighSrc": "cards/mcd11-004-high.png"
+    "imageHighSrc": "cards/mcd11-004-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6766",
-    "externalId": null,
+    "externalId": "mcd11-3",
     "tcgdex_id": "2011bw-3",
     "localId": "003",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "003/12",
+    "cardNumber": "3/12",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig 003/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Tepig 3/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +397,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-003-low.png",
-    "imageHighSrc": "cards/mcd11-003-high.png"
+    "imageHighSrc": "cards/mcd11-003-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6752",
-    "externalId": null,
+    "externalId": "mcd11-2",
     "tcgdex_id": "2011bw-2",
     "localId": "002",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "002/12",
+    "cardNumber": "2/12",
     "cardName": "Maractus",
-    "fullDisplayName": "Maractus 002/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Maractus 2/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +436,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-002-low.png",
-    "imageHighSrc": "cards/mcd11-002-high.png"
+    "imageHighSrc": "cards/mcd11-002-high.png",
+    "attacks": [
+      {
+        "name": "Mega Drain",
+        "damage": "20"
+      },
+      {
+        "name": "Pin Missile",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "6738",
-    "externalId": null,
+    "externalId": "mcd11-1",
     "tcgdex_id": "2011bw-1",
     "localId": "001",
     "setCode": "2011bw",
     "setTcgdexId": "2011bw",
-    "cardNumber": "001/12",
+    "cardNumber": "1/12",
     "cardName": "Snivy",
-    "fullDisplayName": "Snivy 001/12 Macdonald's Collection 2011",
+    "fullDisplayName": "Snivy 1/12 Macdonald's Collection 2011",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,6 +479,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd11-001-low.png",
-    "imageHighSrc": "cards/mcd11-001-high.png"
+    "imageHighSrc": "cards/mcd11-001-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   }
 ]

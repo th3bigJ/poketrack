@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "20029",
-    "externalId": null,
+    "externalId": "xy3-113",
     "tcgdex_id": "xy3-113",
     "localId": "113",
     "setCode": "xy3",
@@ -31,11 +31,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-113-low.png",
-    "imageHighSrc": "cards/xy3-113-high.png"
+    "imageHighSrc": "cards/xy3-113-high.png",
+    "attacks": [
+      {
+        "name": "Rising Fist",
+        "damage": "140"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20022",
-    "externalId": null,
+    "externalId": "xy3-112",
     "tcgdex_id": "xy3-112",
     "localId": "112",
     "setCode": "xy3",
@@ -65,11 +72,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-112-low.png",
-    "imageHighSrc": "cards/xy3-112-high.png"
+    "imageHighSrc": "cards/xy3-112-high.png",
+    "attacks": [
+      {
+        "name": "Big Bang Horn",
+        "damage": "180-"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20013",
-    "externalId": null,
+    "externalId": "xy3-111",
     "tcgdex_id": "xy3-111",
     "localId": "111",
     "setCode": "xy3",
@@ -94,11 +108,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-111-low.png",
-    "imageHighSrc": "cards/xy3-111-high.png"
+    "imageHighSrc": "cards/xy3-111-high.png",
+    "rules": "Search your deck for a Fighting Pokémon and an Item card, reveal them, and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20005",
-    "externalId": null,
+    "externalId": "xy3-110",
     "tcgdex_id": "xy3-110",
     "localId": "110",
     "setCode": "xy3",
@@ -123,11 +138,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-110-low.png",
-    "imageHighSrc": "cards/xy3-110-high.png"
+    "imageHighSrc": "cards/xy3-110-high.png",
+    "rules": "Search your deck for up to 2 in any combination of Amaura or Tyrunt and put them onto your bench. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19995",
-    "externalId": null,
+    "externalId": "xy3-109",
     "tcgdex_id": "xy3-109",
     "localId": "109",
     "setCode": "xy3",
@@ -152,11 +168,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-109-low.png",
-    "imageHighSrc": "cards/xy3-109-high.png"
+    "imageHighSrc": "cards/xy3-109-high.png",
+    "rules": "Draw cards until you have the same number of cards in your hand as your opponent.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19986",
-    "externalId": null,
+    "externalId": "xy3-108",
     "tcgdex_id": "xy3-108",
     "localId": "108",
     "setCode": "xy3",
@@ -186,11 +203,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-108-low.png",
-    "imageHighSrc": "cards/xy3-108-high.png"
+    "imageHighSrc": "cards/xy3-108-high.png",
+    "attacks": [
+      {
+        "name": "Jet Sonic",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19977",
-    "externalId": null,
+    "externalId": "xy3-107",
     "tcgdex_id": "xy3-107",
     "localId": "107",
     "setCode": "xy3",
@@ -220,11 +244,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-107-low.png",
-    "imageHighSrc": "cards/xy3-107-high.png"
+    "imageHighSrc": "cards/xy3-107-high.png",
+    "attacks": [
+      {
+        "name": "Missile Jab",
+        "damage": "30"
+      },
+      {
+        "name": "Corkscrew Smash",
+        "damage": "60"
+      },
+      {
+        "name": "Somersault Kick",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19968",
-    "externalId": null,
+    "externalId": "xy3-106",
     "tcgdex_id": "xy3-106",
     "localId": "106",
     "setCode": "xy3",
@@ -254,11 +293,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-106-low.png",
-    "imageHighSrc": "cards/xy3-106-high.png"
+    "imageHighSrc": "cards/xy3-106-high.png",
+    "attacks": [
+      {
+        "name": "Quaking Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Grenade Hammer",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19960",
-    "externalId": null,
+    "externalId": "xy3-105",
     "tcgdex_id": "xy3-105",
     "localId": "105",
     "setCode": "xy3",
@@ -288,11 +338,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-105-low.png",
-    "imageHighSrc": "cards/xy3-105-high.png"
+    "imageHighSrc": "cards/xy3-105-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "40"
+      },
+      {
+        "name": "Giga Power",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19951",
-    "externalId": null,
+    "externalId": "xy3-104",
     "tcgdex_id": "xy3-104",
     "localId": "104",
     "setCode": "xy3",
@@ -317,11 +378,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-104-low.png",
-    "imageHighSrc": "cards/xy3-104-high.png"
+    "imageHighSrc": "cards/xy3-104-high.png",
+    "rules": "This card can only be attached to Fighting Pokémon. This card provides Fighting Energy only while this card is attached to a Fighting Pokémon.\n\nThe attacks of the Fighting Pokémon this card is attached to do 20 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).\n\n(If this card is attached to anything other than a Fighting Pokémon, discard this card.)"
   },
   {
     "masterCardId": "19942",
-    "externalId": null,
+    "externalId": "xy3-103",
     "tcgdex_id": "xy3-103",
     "localId": "103",
     "setCode": "xy3",
@@ -346,11 +408,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-103-low.png",
-    "imageHighSrc": "cards/xy3-103-high.png"
+    "imageHighSrc": "cards/xy3-103-high.png",
+    "rules": "This card can only be attached to Grass Pokémon. This card provides Grass Energy only while this card is attached to a Grass Pokémon.\n\nWhen you attach this card from your hand to 1 of your Grass Pokémon, heal 30 damage from that Pokémon.\n\n(If this card is attached to anything other than a Grass Pokémon, discard this card.)"
   },
   {
     "masterCardId": "19933",
-    "externalId": null,
+    "externalId": "xy3-102",
     "tcgdex_id": "xy3-102",
     "localId": "102",
     "setCode": "xy3",
@@ -375,11 +438,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-102-low.png",
-    "imageHighSrc": "cards/xy3-102-high.png"
+    "imageHighSrc": "cards/xy3-102-high.png",
+    "rules": "Each Stage 1 and Stage 2 Pokémon in play (both yours and your opponent's) gets +30 HP.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "19924",
-    "externalId": null,
+    "externalId": "xy3-101",
     "tcgdex_id": "xy3-101",
     "localId": "101",
     "setCode": "xy3",
@@ -404,11 +468,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-101-low.png",
-    "imageHighSrc": "cards/xy3-101-high.png"
+    "imageHighSrc": "cards/xy3-101-high.png",
+    "rules": "Choose up to 2 Pokémon Tool cards attached to your Pokémon and put them into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19914",
-    "externalId": null,
+    "externalId": "xy3-100",
     "tcgdex_id": "xy3-100",
     "localId": "100",
     "setCode": "xy3",
@@ -433,18 +498,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-100-low.png",
-    "imageHighSrc": "cards/xy3-100-high.png"
+    "imageHighSrc": "cards/xy3-100-high.png",
+    "rules": "Flip a coin. If heads, put 1 of your Pokémon and all cards attached to it into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19904",
-    "externalId": null,
+    "externalId": "xy3-99",
     "tcgdex_id": "xy3-99",
     "localId": "099",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "099/111",
+    "cardNumber": "99/111",
     "cardName": "Sparkling Robe",
-    "fullDisplayName": "Sparkling Robe 099/111 Furious Fists",
+    "fullDisplayName": "Sparkling Robe 99/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -462,18 +528,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-099-low.png",
-    "imageHighSrc": "cards/xy3-099-high.png"
+    "imageHighSrc": "cards/xy3-099-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Pokémon this card is attached to can't be affected by any Special Conditions. (Remove any Special Conditions affecting that Pokémon.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19897",
-    "externalId": null,
+    "externalId": "xy3-98",
     "tcgdex_id": "xy3-98",
     "localId": "098",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "098/111",
+    "cardNumber": "98/111",
     "cardName": "Sail Fossil",
-    "fullDisplayName": "Sail Fossil 098/111 Furious Fists",
+    "fullDisplayName": "Sail Fossil 98/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -491,18 +558,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-098-low.png",
-    "imageHighSrc": "cards/xy3-098-high.png"
+    "imageHighSrc": "cards/xy3-098-high.png",
+    "rules": "Look at the bottom 7 cards of your deck. You may reveal an Amaura you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19888",
-    "externalId": null,
+    "externalId": "xy3-97",
     "tcgdex_id": "xy3-97",
     "localId": "097",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "097/111",
+    "cardNumber": "97/111",
     "cardName": "Mountain Ring",
-    "fullDisplayName": "Mountain Ring 097/111 Furious Fists",
+    "fullDisplayName": "Mountain Ring 97/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -520,18 +588,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-097-low.png",
-    "imageHighSrc": "cards/xy3-097-high.png"
+    "imageHighSrc": "cards/xy3-097-high.png",
+    "rules": "Prevent all damage done to Benched Pokémon by attacks (both yours and your opponent's).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "19879",
-    "externalId": null,
+    "externalId": "xy3-96",
     "tcgdex_id": "xy3-96",
     "localId": "096",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "096/111",
+    "cardNumber": "96/111",
     "cardName": "Maintenance",
-    "fullDisplayName": "Maintenance 096/111 Furious Fists",
+    "fullDisplayName": "Maintenance 96/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -549,18 +618,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-096-low.png",
-    "imageHighSrc": "cards/xy3-096-high.png"
+    "imageHighSrc": "cards/xy3-096-high.png",
+    "rules": "Shuffle 2 cards from your hand into your deck. (If you can't shuffle 2 cards into your deck, you can't play this card.) Then, draw a card.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19870",
-    "externalId": null,
+    "externalId": "xy3-95",
     "tcgdex_id": "xy3-95",
     "localId": "095",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "095/111",
+    "cardNumber": "95/111",
     "cardName": "Korrina",
-    "fullDisplayName": "Korrina 095/111 Furious Fists",
+    "fullDisplayName": "Korrina 95/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -578,18 +648,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-095-low.png",
-    "imageHighSrc": "cards/xy3-095-high.png"
+    "imageHighSrc": "cards/xy3-095-high.png",
+    "rules": "Search your deck for a Fighting Pokémon and an Item card, reveal them, and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19862",
-    "externalId": null,
+    "externalId": "xy3-94",
     "tcgdex_id": "xy3-94",
     "localId": "094",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "094/111",
+    "cardNumber": "94/111",
     "cardName": "Jaw Fossil",
-    "fullDisplayName": "Jaw Fossil 094/111 Furious Fists",
+    "fullDisplayName": "Jaw Fossil 94/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -607,18 +678,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-094-low.png",
-    "imageHighSrc": "cards/xy3-094-high.png"
+    "imageHighSrc": "cards/xy3-094-high.png",
+    "rules": "Look at the bottom 7 cards of your deck. You may reveal a Tyrunt you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19852",
-    "externalId": null,
+    "externalId": "xy3-93",
     "tcgdex_id": "xy3-93",
     "localId": "093",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "093/111",
+    "cardNumber": "93/111",
     "cardName": "Full Heal",
-    "fullDisplayName": "Full Heal 093/111 Furious Fists",
+    "fullDisplayName": "Full Heal 93/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -636,18 +708,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-093-low.png",
-    "imageHighSrc": "cards/xy3-093-high.png"
+    "imageHighSrc": "cards/xy3-093-high.png",
+    "rules": "Remove all Special Conditions from your Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19843",
-    "externalId": null,
+    "externalId": "xy3-92",
     "tcgdex_id": "xy3-92",
     "localId": "092",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "092/111",
+    "cardNumber": "92/111",
     "cardName": "Fossil Researcher",
-    "fullDisplayName": "Fossil Researcher 092/111 Furious Fists",
+    "fullDisplayName": "Fossil Researcher 92/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -665,18 +738,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-092-low.png",
-    "imageHighSrc": "cards/xy3-092-high.png"
+    "imageHighSrc": "cards/xy3-092-high.png",
+    "rules": "Search your deck for up to 2 in any combination of Amaura or Tyrunt and put them onto your bench. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19834",
-    "externalId": null,
+    "externalId": "xy3-91",
     "tcgdex_id": "xy3-91",
     "localId": "091",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "091/111",
+    "cardNumber": "91/111",
     "cardName": "Focus Sash",
-    "fullDisplayName": "Focus Sash 091/111 Furious Fists",
+    "fullDisplayName": "Focus Sash 91/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -694,18 +768,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-091-low.png",
-    "imageHighSrc": "cards/xy3-091-high.png"
+    "imageHighSrc": "cards/xy3-091-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Fighting Pokémon this card is attached to has full HP and would be Knocked Out by damage from an opponent's attack, that Pokémon is not Knocked Out and its remaining HP becomes 10 instead. Then, discard this card.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19825",
-    "externalId": null,
+    "externalId": "xy3-90",
     "tcgdex_id": "xy3-90",
     "localId": "090",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "090/111",
+    "cardNumber": "90/111",
     "cardName": "Fighting Stadium",
-    "fullDisplayName": "Fighting Stadium 090/111 Furious Fists",
+    "fullDisplayName": "Fighting Stadium 90/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -723,18 +798,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-090-low.png",
-    "imageHighSrc": "cards/xy3-090-high.png"
+    "imageHighSrc": "cards/xy3-090-high.png",
+    "rules": "The attacks of each Fighting Pokémon in play (both yours and your opponent's) do 20 more damage to the Defending Pokémon-EX (before applying Weakness and Resistance).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "19816",
-    "externalId": null,
+    "externalId": "xy3-89",
     "tcgdex_id": "xy3-89",
     "localId": "089",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "089/111",
+    "cardNumber": "89/111",
     "cardName": "Energy Switch",
-    "fullDisplayName": "Energy Switch 089/111 Furious Fists",
+    "fullDisplayName": "Energy Switch 89/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -752,18 +828,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-089-low.png",
-    "imageHighSrc": "cards/xy3-089-high.png"
+    "imageHighSrc": "cards/xy3-089-high.png",
+    "rules": "Move a basic Energy from 1 of your Pokémon to another of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19807",
-    "externalId": null,
+    "externalId": "xy3-88",
     "tcgdex_id": "xy3-88",
     "localId": "088",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "088/111",
+    "cardNumber": "88/111",
     "cardName": "Battle Reporter",
-    "fullDisplayName": "Battle Reporter 088/111 Furious Fists",
+    "fullDisplayName": "Battle Reporter 88/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -781,18 +858,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-088-low.png",
-    "imageHighSrc": "cards/xy3-088-high.png"
+    "imageHighSrc": "cards/xy3-088-high.png",
+    "rules": "Draw cards until you have the same number of cards in your hand as your opponent.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19798",
-    "externalId": null,
+    "externalId": "xy3-87",
     "tcgdex_id": "xy3-87",
     "localId": "087",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "087/111",
+    "cardNumber": "87/111",
     "cardName": "Noibat",
-    "fullDisplayName": "Noibat 087/111 Furious Fists",
+    "fullDisplayName": "Noibat 87/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -814,18 +892,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-087-low.png",
-    "imageHighSrc": "cards/xy3-087-high.png"
+    "imageHighSrc": "cards/xy3-087-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19789",
-    "externalId": null,
+    "externalId": "xy3-86",
     "tcgdex_id": "xy3-86",
     "localId": "086",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "086/111",
+    "cardNumber": "86/111",
     "cardName": "Tornadus",
-    "fullDisplayName": "Tornadus 086/111 Furious Fists",
+    "fullDisplayName": "Tornadus 86/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -847,18 +935,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-086-low.png",
-    "imageHighSrc": "cards/xy3-086-high.png"
+    "imageHighSrc": "cards/xy3-086-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "20"
+      },
+      {
+        "name": "Twister Throw",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19780",
-    "externalId": null,
+    "externalId": "xy3-85",
     "tcgdex_id": "xy3-85",
     "localId": "085",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "085/111",
+    "cardNumber": "85/111",
     "cardName": "Watchog",
-    "fullDisplayName": "Watchog 085/111 Furious Fists",
+    "fullDisplayName": "Watchog 85/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -880,18 +978,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-085-low.png",
-    "imageHighSrc": "cards/xy3-085-high.png"
+    "imageHighSrc": "cards/xy3-085-high.png",
+    "attacks": [
+      {
+        "name": "Held-Item Inspection",
+        "damage": null
+      },
+      {
+        "name": "Thorough Crunch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19771",
-    "externalId": null,
+    "externalId": "xy3-84",
     "tcgdex_id": "xy3-84",
     "localId": "084",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "084/111",
+    "cardNumber": "84/111",
     "cardName": "Patrat",
-    "fullDisplayName": "Patrat 084/111 Furious Fists",
+    "fullDisplayName": "Patrat 84/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -913,18 +1021,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-084-low.png",
-    "imageHighSrc": "cards/xy3-084-high.png"
+    "imageHighSrc": "cards/xy3-084-high.png",
+    "attacks": [
+      {
+        "name": "Safety Check",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19762",
-    "externalId": null,
+    "externalId": "xy3-83",
     "tcgdex_id": "xy3-83",
     "localId": "083",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "083/111",
+    "cardNumber": "83/111",
     "cardName": "Slaking",
-    "fullDisplayName": "Slaking 083/111 Furious Fists",
+    "fullDisplayName": "Slaking 83/111 Furious Fists",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -946,18 +1060,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-083-low.png",
-    "imageHighSrc": "cards/xy3-083-high.png"
+    "imageHighSrc": "cards/xy3-083-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": "50"
+      },
+      {
+        "name": "Knuckle Sandwich",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "19753",
-    "externalId": null,
+    "externalId": "xy3-82",
     "tcgdex_id": "xy3-82",
     "localId": "082",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "082/111",
+    "cardNumber": "82/111",
     "cardName": "Vigoroth",
-    "fullDisplayName": "Vigoroth 082/111 Furious Fists",
+    "fullDisplayName": "Vigoroth 82/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -979,18 +1103,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-082-low.png",
-    "imageHighSrc": "cards/xy3-082-high.png"
+    "imageHighSrc": "cards/xy3-082-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19745",
-    "externalId": null,
+    "externalId": "xy3-81",
     "tcgdex_id": "xy3-81",
     "localId": "081",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "081/111",
+    "cardNumber": "81/111",
     "cardName": "Slakoth",
-    "fullDisplayName": "Slakoth 081/111 Furious Fists",
+    "fullDisplayName": "Slakoth 81/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1012,18 +1146,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-081-low.png",
-    "imageHighSrc": "cards/xy3-081-high.png"
+    "imageHighSrc": "cards/xy3-081-high.png",
+    "attacks": [
+      {
+        "name": "Big Yawn",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19735",
-    "externalId": null,
+    "externalId": "xy3-80",
     "tcgdex_id": "xy3-80",
     "localId": "080",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "080/111",
+    "cardNumber": "80/111",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 080/111 Furious Fists",
+    "fullDisplayName": "Eevee 80/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1045,18 +1185,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-080-low.png",
-    "imageHighSrc": "cards/xy3-080-high.png"
+    "imageHighSrc": "cards/xy3-080-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19726",
-    "externalId": null,
+    "externalId": "xy3-79",
     "tcgdex_id": "xy3-79",
     "localId": "079",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "079/111",
+    "cardNumber": "79/111",
     "cardName": "Lickilicky",
-    "fullDisplayName": "Lickilicky 079/111 Furious Fists",
+    "fullDisplayName": "Lickilicky 79/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1078,18 +1224,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-079-low.png",
-    "imageHighSrc": "cards/xy3-079-high.png"
+    "imageHighSrc": "cards/xy3-079-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "50"
+      },
+      {
+        "name": "Lickichop",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19717",
-    "externalId": null,
+    "externalId": "xy3-78",
     "tcgdex_id": "xy3-78",
     "localId": "078",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "078/111",
+    "cardNumber": "78/111",
     "cardName": "Lickitung",
-    "fullDisplayName": "Lickitung 078/111 Furious Fists",
+    "fullDisplayName": "Lickitung 78/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1111,18 +1267,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-078-low.png",
-    "imageHighSrc": "cards/xy3-078-high.png"
+    "imageHighSrc": "cards/xy3-078-high.png",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "19708",
-    "externalId": null,
+    "externalId": "xy3-77",
     "tcgdex_id": "xy3-77",
     "localId": "077",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "077/111",
+    "cardNumber": "77/111",
     "cardName": "Noivern",
-    "fullDisplayName": "Noivern 077/111 Furious Fists",
+    "fullDisplayName": "Noivern 77/111 Furious Fists",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1144,18 +1306,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-077-low.png",
-    "imageHighSrc": "cards/xy3-077-high.png"
+    "imageHighSrc": "cards/xy3-077-high.png",
+    "attacks": [
+      {
+        "name": "Boomburst",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19700",
-    "externalId": null,
+    "externalId": "xy3-76",
     "tcgdex_id": "xy3-76",
     "localId": "076",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "076/111",
+    "cardNumber": "76/111",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 076/111 Furious Fists",
+    "fullDisplayName": "Flygon 76/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1177,18 +1345,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-076-low.png",
-    "imageHighSrc": "cards/xy3-076-high.png"
+    "imageHighSrc": "cards/xy3-076-high.png",
+    "attacks": [
+      {
+        "name": "Rainbow Shower",
+        "damage": null
+      },
+      {
+        "name": "Sand Sweep",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19691",
-    "externalId": null,
+    "externalId": "xy3-75",
     "tcgdex_id": "xy3-75",
     "localId": "075",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "075/111",
+    "cardNumber": "75/111",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 075/111 Furious Fists",
+    "fullDisplayName": "Vibrava 75/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1210,18 +1388,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-075-low.png",
-    "imageHighSrc": "cards/xy3-075-high.png"
+    "imageHighSrc": "cards/xy3-075-high.png",
+    "attacks": [
+      {
+        "name": "Charge Energy",
+        "damage": null
+      },
+      {
+        "name": "Vibration",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19682",
-    "externalId": null,
+    "externalId": "xy3-74",
     "tcgdex_id": "xy3-74",
     "localId": "074",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "074/111",
+    "cardNumber": "74/111",
     "cardName": "Dragonite-EX",
-    "fullDisplayName": "Dragonite-EX 074/111 Furious Fists",
+    "fullDisplayName": "Dragonite-EX 74/111 Furious Fists",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1244,18 +1432,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-074-low.png",
-    "imageHighSrc": "cards/xy3-074-high.png"
+    "imageHighSrc": "cards/xy3-074-high.png",
+    "attacks": [
+      {
+        "name": "Jet Sonic",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19674",
-    "externalId": null,
+    "externalId": "xy3-73",
     "tcgdex_id": "xy3-73",
     "localId": "073",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "073/111",
+    "cardNumber": "73/111",
     "cardName": "Klefki",
-    "fullDisplayName": "Klefki 073/111 Furious Fists",
+    "fullDisplayName": "Klefki 73/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1277,18 +1472,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-073-low.png",
-    "imageHighSrc": "cards/xy3-073-high.png"
+    "imageHighSrc": "cards/xy3-073-high.png",
+    "attacks": [
+      {
+        "name": "Fairy Lock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19666",
-    "externalId": null,
+    "externalId": "xy3-72",
     "tcgdex_id": "xy3-72",
     "localId": "072",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "072/111",
+    "cardNumber": "72/111",
     "cardName": "Sylveon",
-    "fullDisplayName": "Sylveon 072/111 Furious Fists",
+    "fullDisplayName": "Sylveon 72/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1310,18 +1511,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-072-low.png",
-    "imageHighSrc": "cards/xy3-072-high.png"
+    "imageHighSrc": "cards/xy3-072-high.png",
+    "attacks": [
+      {
+        "name": "Curly Ribbon",
+        "damage": "30"
+      },
+      {
+        "name": "Echoed Voice",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "19656",
-    "externalId": null,
+    "externalId": "xy3-71",
     "tcgdex_id": "xy3-71",
     "localId": "071",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "071/111",
+    "cardNumber": "71/111",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 071/111 Furious Fists",
+    "fullDisplayName": "Clefable 71/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1343,18 +1554,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-071-low.png",
-    "imageHighSrc": "cards/xy3-071-high.png"
+    "imageHighSrc": "cards/xy3-071-high.png",
+    "attacks": [
+      {
+        "name": "Follow Me",
+        "damage": null
+      },
+      {
+        "name": "Moonblast",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19646",
-    "externalId": null,
+    "externalId": "xy3-70",
     "tcgdex_id": "xy3-70",
     "localId": "070",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "070/111",
+    "cardNumber": "70/111",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 070/111 Furious Fists",
+    "fullDisplayName": "Clefairy 70/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1376,18 +1597,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-070-low.png",
-    "imageHighSrc": "cards/xy3-070-high.png"
+    "imageHighSrc": "cards/xy3-070-high.png",
+    "attacks": [
+      {
+        "name": "Moonblast",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19640",
-    "externalId": null,
+    "externalId": "xy3-69",
     "tcgdex_id": "xy3-69",
     "localId": "069",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "069/111",
+    "cardNumber": "69/111",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 069/111 Furious Fists",
+    "fullDisplayName": "Clefairy 69/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1409,18 +1636,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-069-low.png",
-    "imageHighSrc": "cards/xy3-069-high.png"
+    "imageHighSrc": "cards/xy3-069-high.png",
+    "attacks": [
+      {
+        "name": "Moonlight",
+        "damage": null
+      },
+      {
+        "name": "Pound",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19630",
-    "externalId": null,
+    "externalId": "xy3-68",
     "tcgdex_id": "xy3-68",
     "localId": "068",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "068/111",
+    "cardNumber": "68/111",
     "cardName": "Pangoro",
-    "fullDisplayName": "Pangoro 068/111 Furious Fists",
+    "fullDisplayName": "Pangoro 68/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1442,18 +1679,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-068-low.png",
-    "imageHighSrc": "cards/xy3-068-high.png"
+    "imageHighSrc": "cards/xy3-068-high.png",
+    "attacks": [
+      {
+        "name": "Clobber",
+        "damage": "30+"
+      },
+      {
+        "name": "Hammer Arm",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19622",
-    "externalId": null,
+    "externalId": "xy3-67",
     "tcgdex_id": "xy3-67",
     "localId": "067",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "067/111",
+    "cardNumber": "67/111",
     "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 067/111 Furious Fists",
+    "fullDisplayName": "Scrafty 67/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1475,18 +1722,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-067-low.png",
-    "imageHighSrc": "cards/xy3-067-high.png"
+    "imageHighSrc": "cards/xy3-067-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Machine Gun Headbutt",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "19612",
-    "externalId": null,
+    "externalId": "xy3-66",
     "tcgdex_id": "xy3-66",
     "localId": "066",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "066/111",
+    "cardNumber": "66/111",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 066/111 Furious Fists",
+    "fullDisplayName": "Scraggy 66/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1508,18 +1765,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-066-low.png",
-    "imageHighSrc": "cards/xy3-066-high.png"
+    "imageHighSrc": "cards/xy3-066-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19603",
-    "externalId": null,
+    "externalId": "xy3-65",
     "tcgdex_id": "xy3-65",
     "localId": "065",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "065/111",
+    "cardNumber": "65/111",
     "cardName": "Drapion",
-    "fullDisplayName": "Drapion 065/111 Furious Fists",
+    "fullDisplayName": "Drapion 65/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1541,18 +1804,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-065-low.png",
-    "imageHighSrc": "cards/xy3-065-high.png"
+    "imageHighSrc": "cards/xy3-065-high.png",
+    "attacks": [
+      {
+        "name": "Venoshock",
+        "damage": "20+"
+      },
+      {
+        "name": "Venomous Fang",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19593",
-    "externalId": null,
+    "externalId": "xy3-64",
     "tcgdex_id": "xy3-64",
     "localId": "064",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "064/111",
+    "cardNumber": "64/111",
     "cardName": "Hawlucha-EX",
-    "fullDisplayName": "Hawlucha-EX 064/111 Furious Fists",
+    "fullDisplayName": "Hawlucha-EX 64/111 Furious Fists",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1575,18 +1848,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-064-low.png",
-    "imageHighSrc": "cards/xy3-064-high.png"
+    "imageHighSrc": "cards/xy3-064-high.png",
+    "attacks": [
+      {
+        "name": "Moonsault Stomp",
+        "damage": "60+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19587",
-    "externalId": null,
+    "externalId": "xy3-63",
     "tcgdex_id": "xy3-63",
     "localId": "063",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "063/111",
+    "cardNumber": "63/111",
     "cardName": "Hawlucha",
-    "fullDisplayName": "Hawlucha 063/111 Furious Fists",
+    "fullDisplayName": "Hawlucha 63/111 Furious Fists",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1608,18 +1888,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-063-low.png",
-    "imageHighSrc": "cards/xy3-063-high.png"
+    "imageHighSrc": "cards/xy3-063-high.png",
+    "attacks": [
+      {
+        "name": "Flying Press",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19576",
-    "externalId": null,
+    "externalId": "xy3-62",
     "tcgdex_id": "xy3-62",
     "localId": "062",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "062/111",
+    "cardNumber": "62/111",
     "cardName": "Tyrantrum",
-    "fullDisplayName": "Tyrantrum 062/111 Furious Fists",
+    "fullDisplayName": "Tyrantrum 62/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1641,18 +1927,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-062-low.png",
-    "imageHighSrc": "cards/xy3-062-high.png"
+    "imageHighSrc": "cards/xy3-062-high.png",
+    "attacks": [
+      {
+        "name": "Chew Up",
+        "damage": "60+"
+      },
+      {
+        "name": "Giga Impact",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "19567",
-    "externalId": null,
+    "externalId": "xy3-61",
     "tcgdex_id": "xy3-61",
     "localId": "061",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "061/111",
+    "cardNumber": "61/111",
     "cardName": "Tyrunt",
-    "fullDisplayName": "Tyrunt 061/111 Furious Fists",
+    "fullDisplayName": "Tyrunt 61/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "RESTORED",
@@ -1674,18 +1970,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-061-low.png",
-    "imageHighSrc": "cards/xy3-061-high.png"
+    "imageHighSrc": "cards/xy3-061-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "30"
+      },
+      {
+        "name": "Crunch",
+        "damage": "50"
+      }
+    ],
+    "rules": "Put this card onto your Bench only with the effect of Jaw Fossil"
   },
   {
     "masterCardId": "19560",
-    "externalId": null,
+    "externalId": "xy3-60",
     "tcgdex_id": "xy3-60",
     "localId": "060",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "060/111",
+    "cardNumber": "60/111",
     "cardName": "Pancham",
-    "fullDisplayName": "Pancham 060/111 Furious Fists",
+    "fullDisplayName": "Pancham 60/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1707,18 +2014,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-060-low.png",
-    "imageHighSrc": "cards/xy3-060-high.png"
+    "imageHighSrc": "cards/xy3-060-high.png",
+    "attacks": [
+      {
+        "name": "Comet Punch",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "19546",
-    "externalId": null,
+    "externalId": "xy3-59",
     "tcgdex_id": "xy3-59",
     "localId": "059",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "059/111",
+    "cardNumber": "59/111",
     "cardName": "Pancham",
-    "fullDisplayName": "Pancham 059/111 Furious Fists",
+    "fullDisplayName": "Pancham 59/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1740,18 +2053,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-059-low.png",
-    "imageHighSrc": "cards/xy3-059-high.png"
+    "imageHighSrc": "cards/xy3-059-high.png",
+    "attacks": [
+      {
+        "name": "Bad-Influence Evolution",
+        "damage": null
+      },
+      {
+        "name": "Confront",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19537",
-    "externalId": null,
+    "externalId": "xy3-58",
     "tcgdex_id": "xy3-58",
     "localId": "058",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "058/111",
+    "cardNumber": "58/111",
     "cardName": "Landorus",
-    "fullDisplayName": "Landorus 058/111 Furious Fists",
+    "fullDisplayName": "Landorus 58/111 Furious Fists",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1773,18 +2096,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-058-low.png",
-    "imageHighSrc": "cards/xy3-058-high.png"
+    "imageHighSrc": "cards/xy3-058-high.png",
+    "attacks": [
+      {
+        "name": "Shout of Power",
+        "damage": "20"
+      },
+      {
+        "name": "Sky Lariat",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "19528",
-    "externalId": null,
+    "externalId": "xy3-57",
     "tcgdex_id": "xy3-57",
     "localId": "057",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "057/111",
+    "cardNumber": "57/111",
     "cardName": "Mienshao",
-    "fullDisplayName": "Mienshao 057/111 Furious Fists",
+    "fullDisplayName": "Mienshao 57/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1806,18 +2139,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-057-low.png",
-    "imageHighSrc": "cards/xy3-057-high.png"
+    "imageHighSrc": "cards/xy3-057-high.png",
+    "attacks": [
+      {
+        "name": "Aero Turn",
+        "damage": "40"
+      },
+      {
+        "name": "High Jump Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19520",
-    "externalId": null,
+    "externalId": "xy3-56",
     "tcgdex_id": "xy3-56",
     "localId": "056",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "056/111",
+    "cardNumber": "56/111",
     "cardName": "Mienfoo",
-    "fullDisplayName": "Mienfoo 056/111 Furious Fists",
+    "fullDisplayName": "Mienfoo 56/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1839,11 +2182,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-056-low.png",
-    "imageHighSrc": "cards/xy3-056-high.png"
+    "imageHighSrc": "cards/xy3-056-high.png",
+    "attacks": [
+      {
+        "name": "Flop",
+        "damage": "10"
+      },
+      {
+        "name": "Lunge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19511",
-    "externalId": null,
+    "externalId": "xy3-55a",
     "tcgdex_id": "xy3-55a",
     "localId": "55a",
     "setCode": "xy3",
@@ -1873,18 +2226,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/xy3-55a-low.png",
-    "imageHighSrc": "cards/xy3-55a-high.png"
+    "imageHighSrc": "cards/xy3-55a-high.png",
+    "attacks": [
+      {
+        "name": "Rising Fist",
+        "damage": "140"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19503",
-    "externalId": null,
+    "externalId": "xy3-55",
     "tcgdex_id": "xy3-55",
     "localId": "055",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "055/111",
+    "cardNumber": "55/111",
     "cardName": "M Lucario-EX",
-    "fullDisplayName": "M Lucario-EX 055/111 Furious Fists",
+    "fullDisplayName": "M Lucario-EX 55/111 Furious Fists",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -1907,18 +2267,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-055-low.png",
-    "imageHighSrc": "cards/xy3-055-high.png"
+    "imageHighSrc": "cards/xy3-055-high.png",
+    "attacks": [
+      {
+        "name": "Rising Fist",
+        "damage": "140"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19494",
-    "externalId": null,
+    "externalId": "xy3-54",
     "tcgdex_id": "xy3-54",
     "localId": "054",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "054/111",
+    "cardNumber": "54/111",
     "cardName": "Lucario-EX",
-    "fullDisplayName": "Lucario-EX 054/111 Furious Fists",
+    "fullDisplayName": "Lucario-EX 54/111 Furious Fists",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1941,18 +2308,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-054-low.png",
-    "imageHighSrc": "cards/xy3-054-high.png"
+    "imageHighSrc": "cards/xy3-054-high.png",
+    "attacks": [
+      {
+        "name": "Missile Jab",
+        "damage": "30"
+      },
+      {
+        "name": "Corkscrew Smash",
+        "damage": "60"
+      },
+      {
+        "name": "Somersault Kick",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19485",
-    "externalId": null,
+    "externalId": "xy3-53",
     "tcgdex_id": "xy3-53",
     "localId": "053",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "053/111",
+    "cardNumber": "53/111",
     "cardName": "Trapinch",
-    "fullDisplayName": "Trapinch 053/111 Furious Fists",
+    "fullDisplayName": "Trapinch 53/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1974,18 +2356,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-053-low.png",
-    "imageHighSrc": "cards/xy3-053-high.png"
+    "imageHighSrc": "cards/xy3-053-high.png",
+    "attacks": [
+      {
+        "name": "Mountain Munch",
+        "damage": null
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19476",
-    "externalId": null,
+    "externalId": "xy3-52",
     "tcgdex_id": "xy3-52",
     "localId": "052",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "052/111",
+    "cardNumber": "52/111",
     "cardName": "Hariyama",
-    "fullDisplayName": "Hariyama 052/111 Furious Fists",
+    "fullDisplayName": "Hariyama 52/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2007,18 +2399,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-052-low.png",
-    "imageHighSrc": "cards/xy3-052-high.png"
+    "imageHighSrc": "cards/xy3-052-high.png",
+    "attacks": [
+      {
+        "name": "Rocket Slap",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19468",
-    "externalId": null,
+    "externalId": "xy3-51",
     "tcgdex_id": "xy3-51",
     "localId": "051",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "051/111",
+    "cardNumber": "51/111",
     "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 051/111 Furious Fists",
+    "fullDisplayName": "Makuhita 51/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2040,18 +2438,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-051-low.png",
-    "imageHighSrc": "cards/xy3-051-high.png"
+    "imageHighSrc": "cards/xy3-051-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Strength",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19460",
-    "externalId": null,
+    "externalId": "xy3-50",
     "tcgdex_id": "xy3-50",
     "localId": "050",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "050/111",
+    "cardNumber": "50/111",
     "cardName": "Breloom",
-    "fullDisplayName": "Breloom 050/111 Furious Fists",
+    "fullDisplayName": "Breloom 50/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2073,18 +2481,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-050-low.png",
-    "imageHighSrc": "cards/xy3-050-high.png"
+    "imageHighSrc": "cards/xy3-050-high.png",
+    "attacks": [
+      {
+        "name": "Giga Drain",
+        "damage": "20"
+      },
+      {
+        "name": "Sky Uppercut",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19449",
-    "externalId": null,
+    "externalId": "xy3-49",
     "tcgdex_id": "xy3-49",
     "localId": "049",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "049/111",
+    "cardNumber": "49/111",
     "cardName": "Hitmontop",
-    "fullDisplayName": "Hitmontop 049/111 Furious Fists",
+    "fullDisplayName": "Hitmontop 49/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2106,18 +2524,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-049-low.png",
-    "imageHighSrc": "cards/xy3-049-high.png"
+    "imageHighSrc": "cards/xy3-049-high.png",
+    "attacks": [
+      {
+        "name": "Quick Draw",
+        "damage": null
+      },
+      {
+        "name": "Helicoptero",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19442",
-    "externalId": null,
+    "externalId": "xy3-48",
     "tcgdex_id": "xy3-48",
     "localId": "048",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "048/111",
+    "cardNumber": "48/111",
     "cardName": "Hitmonchan",
-    "fullDisplayName": "Hitmonchan 048/111 Furious Fists",
+    "fullDisplayName": "Hitmonchan 48/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2139,18 +2567,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-048-low.png",
-    "imageHighSrc": "cards/xy3-048-high.png"
+    "imageHighSrc": "cards/xy3-048-high.png",
+    "attacks": [
+      {
+        "name": "Bullet Punch",
+        "damage": "20+"
+      },
+      {
+        "name": "Mach Cross",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19433",
-    "externalId": null,
+    "externalId": "xy3-47",
     "tcgdex_id": "xy3-47",
     "localId": "047",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "047/111",
+    "cardNumber": "47/111",
     "cardName": "Hitmonlee",
-    "fullDisplayName": "Hitmonlee 047/111 Furious Fists",
+    "fullDisplayName": "Hitmonlee 47/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2172,18 +2610,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-047-low.png",
-    "imageHighSrc": "cards/xy3-047-high.png"
+    "imageHighSrc": "cards/xy3-047-high.png",
+    "attacks": [
+      {
+        "name": "Stretch Kick",
+        "damage": null
+      },
+      {
+        "name": "Spiral Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19424",
-    "externalId": null,
+    "externalId": "xy3-46",
     "tcgdex_id": "xy3-46",
     "localId": "046",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "046/111",
+    "cardNumber": "46/111",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 046/111 Furious Fists",
+    "fullDisplayName": "Machamp 46/111 Furious Fists",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2205,18 +2653,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-046-low.png",
-    "imageHighSrc": "cards/xy3-046-high.png"
+    "imageHighSrc": "cards/xy3-046-high.png",
+    "attacks": [
+      {
+        "name": "Machamp Crush",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19415",
-    "externalId": null,
+    "externalId": "xy3-45",
     "tcgdex_id": "xy3-45",
     "localId": "045",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "045/111",
+    "cardNumber": "45/111",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 045/111 Furious Fists",
+    "fullDisplayName": "Machoke 45/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2238,18 +2692,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-045-low.png",
-    "imageHighSrc": "cards/xy3-045-high.png"
+    "imageHighSrc": "cards/xy3-045-high.png",
+    "attacks": [
+      {
+        "name": "Beatdown",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19406",
-    "externalId": null,
+    "externalId": "xy3-44",
     "tcgdex_id": "xy3-44",
     "localId": "044",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "044/111",
+    "cardNumber": "44/111",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 044/111 Furious Fists",
+    "fullDisplayName": "Machop 44/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2271,18 +2731,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-044-low.png",
-    "imageHighSrc": "cards/xy3-044-high.png"
+    "imageHighSrc": "cards/xy3-044-high.png",
+    "attacks": [
+      {
+        "name": "Knuckle Punch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19397",
-    "externalId": null,
+    "externalId": "xy3-43",
     "tcgdex_id": "xy3-43",
     "localId": "043",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "043/111",
+    "cardNumber": "43/111",
     "cardName": "Golurk",
-    "fullDisplayName": "Golurk 043/111 Furious Fists",
+    "fullDisplayName": "Golurk 43/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2304,18 +2770,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-043-low.png",
-    "imageHighSrc": "cards/xy3-043-high.png"
+    "imageHighSrc": "cards/xy3-043-high.png",
+    "attacks": [
+      {
+        "name": "Wreck",
+        "damage": "60+"
+      },
+      {
+        "name": "Golurk Hammer",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "19388",
-    "externalId": null,
+    "externalId": "xy3-42",
     "tcgdex_id": "xy3-42",
     "localId": "042",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "042/111",
+    "cardNumber": "42/111",
     "cardName": "Golett",
-    "fullDisplayName": "Golett 042/111 Furious Fists",
+    "fullDisplayName": "Golett 42/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2337,18 +2813,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-042-low.png",
-    "imageHighSrc": "cards/xy3-042-high.png"
+    "imageHighSrc": "cards/xy3-042-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Rock Smash",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "19379",
-    "externalId": null,
+    "externalId": "xy3-41",
     "tcgdex_id": "xy3-41",
     "localId": "041",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "041/111",
+    "cardNumber": "41/111",
     "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 041/111 Furious Fists",
+    "fullDisplayName": "Gothitelle 41/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2370,18 +2856,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-041-low.png",
-    "imageHighSrc": "cards/xy3-041-high.png"
+    "imageHighSrc": "cards/xy3-041-high.png",
+    "attacks": [
+      {
+        "name": "Psy Report",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19368",
-    "externalId": null,
+    "externalId": "xy3-40",
     "tcgdex_id": "xy3-40",
     "localId": "040",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "040/111",
+    "cardNumber": "40/111",
     "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 040/111 Furious Fists",
+    "fullDisplayName": "Gothorita 40/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2403,18 +2895,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-040-low.png",
-    "imageHighSrc": "cards/xy3-040-high.png"
+    "imageHighSrc": "cards/xy3-040-high.png",
+    "attacks": [
+      {
+        "name": "Fortunate Eye",
+        "damage": null
+      },
+      {
+        "name": "Smack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19358",
-    "externalId": null,
+    "externalId": "xy3-39",
     "tcgdex_id": "xy3-39",
     "localId": "039",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "039/111",
+    "cardNumber": "39/111",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 039/111 Furious Fists",
+    "fullDisplayName": "Gothita 39/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2436,18 +2938,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-039-low.png",
-    "imageHighSrc": "cards/xy3-039-high.png"
+    "imageHighSrc": "cards/xy3-039-high.png",
+    "attacks": [
+      {
+        "name": "Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Psy Bolt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19348",
-    "externalId": null,
+    "externalId": "xy3-38",
     "tcgdex_id": "xy3-38",
     "localId": "038",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "038/111",
+    "cardNumber": "38/111",
     "cardName": "Skorupi",
-    "fullDisplayName": "Skorupi 038/111 Furious Fists",
+    "fullDisplayName": "Skorupi 38/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2469,18 +2981,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-038-low.png",
-    "imageHighSrc": "cards/xy3-038-high.png"
+    "imageHighSrc": "cards/xy3-038-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      },
+      {
+        "name": "Pierce",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19339",
-    "externalId": null,
+    "externalId": "xy3-37",
     "tcgdex_id": "xy3-37",
     "localId": "037",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "037/111",
+    "cardNumber": "37/111",
     "cardName": "Jynx",
-    "fullDisplayName": "Jynx 037/111 Furious Fists",
+    "fullDisplayName": "Jynx 37/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2502,18 +3024,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-037-low.png",
-    "imageHighSrc": "cards/xy3-037-high.png"
+    "imageHighSrc": "cards/xy3-037-high.png",
+    "attacks": [
+      {
+        "name": "Hug",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19329",
-    "externalId": null,
+    "externalId": "xy3-36",
     "tcgdex_id": "xy3-36",
     "localId": "036",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "036/111",
+    "cardNumber": "36/111",
     "cardName": "Hypno",
-    "fullDisplayName": "Hypno 036/111 Furious Fists",
+    "fullDisplayName": "Hypno 36/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2535,18 +3063,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-036-low.png",
-    "imageHighSrc": "cards/xy3-036-high.png"
+    "imageHighSrc": "cards/xy3-036-high.png",
+    "attacks": [
+      {
+        "name": "Hand Control",
+        "damage": null
+      },
+      {
+        "name": "Hypnoblast",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19320",
-    "externalId": null,
+    "externalId": "xy3-35",
     "tcgdex_id": "xy3-35",
     "localId": "035",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "035/111",
+    "cardNumber": "35/111",
     "cardName": "Drowzee",
-    "fullDisplayName": "Drowzee 035/111 Furious Fists",
+    "fullDisplayName": "Drowzee 35/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2568,18 +3106,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-035-low.png",
-    "imageHighSrc": "cards/xy3-035-high.png"
+    "imageHighSrc": "cards/xy3-035-high.png",
+    "attacks": [
+      {
+        "name": "Sinister Suggestion",
+        "damage": null
+      },
+      {
+        "name": "Psyshot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19312",
-    "externalId": null,
+    "externalId": "xy3-34",
     "tcgdex_id": "xy3-34",
     "localId": "034",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "034/111",
+    "cardNumber": "34/111",
     "cardName": "Dedenne",
-    "fullDisplayName": "Dedenne 034/111 Furious Fists",
+    "fullDisplayName": "Dedenne 34/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2601,18 +3149,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-034-low.png",
-    "imageHighSrc": "cards/xy3-034-high.png"
+    "imageHighSrc": "cards/xy3-034-high.png",
+    "attacks": [
+      {
+        "name": "Entrainment",
+        "damage": null
+      },
+      {
+        "name": "Energy Short",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "19301",
-    "externalId": null,
+    "externalId": "xy3-33",
     "tcgdex_id": "xy3-33",
     "localId": "033",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "033/111",
+    "cardNumber": "33/111",
     "cardName": "Thundurus",
-    "fullDisplayName": "Thundurus 033/111 Furious Fists",
+    "fullDisplayName": "Thundurus 33/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2634,18 +3192,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-033-low.png",
-    "imageHighSrc": "cards/xy3-033-high.png"
+    "imageHighSrc": "cards/xy3-033-high.png",
+    "attacks": [
+      {
+        "name": "Raging Thunder Punch",
+        "damage": "30+"
+      },
+      {
+        "name": "Lightning Slam",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "19291",
-    "externalId": null,
+    "externalId": "xy3-32",
     "tcgdex_id": "xy3-32",
     "localId": "032",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "032/111",
+    "cardNumber": "32/111",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 032/111 Furious Fists",
+    "fullDisplayName": "Minun 32/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2667,18 +3235,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-032-low.png",
-    "imageHighSrc": "cards/xy3-032-high.png"
+    "imageHighSrc": "cards/xy3-032-high.png",
+    "attacks": [
+      {
+        "name": "Negative Discard",
+        "damage": null
+      },
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19281",
-    "externalId": null,
+    "externalId": "xy3-31",
     "tcgdex_id": "xy3-31",
     "localId": "031",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "031/111",
+    "cardNumber": "31/111",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 031/111 Furious Fists",
+    "fullDisplayName": "Plusle 31/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2700,18 +3278,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-031-low.png",
-    "imageHighSrc": "cards/xy3-031-high.png"
+    "imageHighSrc": "cards/xy3-031-high.png",
+    "attacks": [
+      {
+        "name": "Positive Hand",
+        "damage": null
+      },
+      {
+        "name": "Electric Tail",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19271",
-    "externalId": null,
+    "externalId": "xy3-30",
     "tcgdex_id": "xy3-30",
     "localId": "030",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "030/111",
+    "cardNumber": "30/111",
     "cardName": "Electivire",
-    "fullDisplayName": "Electivire 030/111 Furious Fists",
+    "fullDisplayName": "Electivire 30/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2733,18 +3321,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-030-low.png",
-    "imageHighSrc": "cards/xy3-030-high.png"
+    "imageHighSrc": "cards/xy3-030-high.png",
+    "attacks": [
+      {
+        "name": "Tag Team Spark",
+        "damage": "20+"
+      },
+      {
+        "name": "Gigavolt",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19261",
-    "externalId": null,
+    "externalId": "xy3-29",
     "tcgdex_id": "xy3-29",
     "localId": "029",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "029/111",
+    "cardNumber": "29/111",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 029/111 Furious Fists",
+    "fullDisplayName": "Electabuzz 29/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2766,18 +3364,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-029-low.png",
-    "imageHighSrc": "cards/xy3-029-high.png"
+    "imageHighSrc": "cards/xy3-029-high.png",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Ambush",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19253",
-    "externalId": null,
+    "externalId": "xy3-28",
     "tcgdex_id": "xy3-28",
     "localId": "028",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "028/111",
+    "cardNumber": "28/111",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 028/111 Furious Fists",
+    "fullDisplayName": "Raichu 28/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2799,18 +3407,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-028-low.png",
-    "imageHighSrc": "cards/xy3-028-high.png"
+    "imageHighSrc": "cards/xy3-028-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Shock",
+        "damage": "30"
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19243",
-    "externalId": null,
+    "externalId": "xy3-27",
     "tcgdex_id": "xy3-27",
     "localId": "027",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "027/111",
+    "cardNumber": "27/111",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 027/111 Furious Fists",
+    "fullDisplayName": "Pikachu 27/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2832,18 +3450,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-027-low.png",
-    "imageHighSrc": "cards/xy3-027-high.png"
+    "imageHighSrc": "cards/xy3-027-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19233",
-    "externalId": null,
+    "externalId": "xy3-26",
     "tcgdex_id": "xy3-26",
     "localId": "026",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "026/111",
+    "cardNumber": "26/111",
     "cardName": "Aurorus",
-    "fullDisplayName": "Aurorus 026/111 Furious Fists",
+    "fullDisplayName": "Aurorus 26/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2865,18 +3489,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-026-low.png",
-    "imageHighSrc": "cards/xy3-026-high.png"
+    "imageHighSrc": "cards/xy3-026-high.png",
+    "attacks": [
+      {
+        "name": "Icy Wind",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19224",
-    "externalId": null,
+    "externalId": "xy3-25",
     "tcgdex_id": "xy3-25",
     "localId": "025",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "025/111",
+    "cardNumber": "25/111",
     "cardName": "Amaura",
-    "fullDisplayName": "Amaura 025/111 Furious Fists",
+    "fullDisplayName": "Amaura 25/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "RESTORED",
@@ -2898,18 +3528,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-025-low.png",
-    "imageHighSrc": "cards/xy3-025-high.png"
+    "imageHighSrc": "cards/xy3-025-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "20"
+      },
+      {
+        "name": "Aurora Beam",
+        "damage": "50"
+      }
+    ],
+    "rules": "Put this card onto your Bench only with the effect of Sail Fossil"
   },
   {
     "masterCardId": "19214",
-    "externalId": null,
+    "externalId": "xy3-24",
     "tcgdex_id": "xy3-24",
     "localId": "024",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "024/111",
+    "cardNumber": "24/111",
     "cardName": "Clawitzer",
-    "fullDisplayName": "Clawitzer 024/111 Furious Fists",
+    "fullDisplayName": "Clawitzer 24/111 Furious Fists",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2931,18 +3572,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-024-low.png",
-    "imageHighSrc": "cards/xy3-024-high.png"
+    "imageHighSrc": "cards/xy3-024-high.png",
+    "attacks": [
+      {
+        "name": "Reverse Thrust",
+        "damage": "30"
+      },
+      {
+        "name": "Splash Cannon",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "19204",
-    "externalId": null,
+    "externalId": "xy3-23",
     "tcgdex_id": "xy3-23",
     "localId": "023",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "023/111",
+    "cardNumber": "23/111",
     "cardName": "Clauncher",
-    "fullDisplayName": "Clauncher 023/111 Furious Fists",
+    "fullDisplayName": "Clauncher 23/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2964,18 +3615,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-023-low.png",
-    "imageHighSrc": "cards/xy3-023-high.png"
+    "imageHighSrc": "cards/xy3-023-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": null
+      },
+      {
+        "name": "Crabhammer",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19194",
-    "externalId": null,
+    "externalId": "xy3-22",
     "tcgdex_id": "xy3-22",
     "localId": "022",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "022/111",
+    "cardNumber": "22/111",
     "cardName": "Beartic",
-    "fullDisplayName": "Beartic 022/111 Furious Fists",
+    "fullDisplayName": "Beartic 22/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2997,18 +3658,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-022-low.png",
-    "imageHighSrc": "cards/xy3-022-high.png"
+    "imageHighSrc": "cards/xy3-022-high.png",
+    "attacks": [
+      {
+        "name": "Igloo Hold",
+        "damage": "20+"
+      },
+      {
+        "name": "Mountain Drop",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "19185",
-    "externalId": null,
+    "externalId": "xy3-21",
     "tcgdex_id": "xy3-21",
     "localId": "021",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "021/111",
+    "cardNumber": "21/111",
     "cardName": "Cubchoo",
-    "fullDisplayName": "Cubchoo 021/111 Furious Fists",
+    "fullDisplayName": "Cubchoo 21/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3030,18 +3701,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-021-low.png",
-    "imageHighSrc": "cards/xy3-021-high.png"
+    "imageHighSrc": "cards/xy3-021-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      },
+      {
+        "name": "Frost Breath",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19175",
-    "externalId": null,
+    "externalId": "xy3-20",
     "tcgdex_id": "xy3-20",
     "localId": "020",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "020/111",
+    "cardNumber": "20/111",
     "cardName": "Seismitoad-EX",
-    "fullDisplayName": "Seismitoad-EX 020/111 Furious Fists",
+    "fullDisplayName": "Seismitoad-EX 20/111 Furious Fists",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3064,18 +3745,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-020-low.png",
-    "imageHighSrc": "cards/xy3-020-high.png"
+    "imageHighSrc": "cards/xy3-020-high.png",
+    "attacks": [
+      {
+        "name": "Quaking Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Grenade Hammer",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19165",
-    "externalId": null,
+    "externalId": "xy3-19",
     "tcgdex_id": "xy3-19",
     "localId": "019",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "019/111",
+    "cardNumber": "19/111",
     "cardName": "Glaceon",
-    "fullDisplayName": "Glaceon 019/111 Furious Fists",
+    "fullDisplayName": "Glaceon 19/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3097,18 +3789,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-019-low.png",
-    "imageHighSrc": "cards/xy3-019-high.png"
+    "imageHighSrc": "cards/xy3-019-high.png",
+    "attacks": [
+      {
+        "name": "Blizzard",
+        "damage": "30"
+      },
+      {
+        "name": "Ice Edge",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19155",
-    "externalId": null,
+    "externalId": "xy3-18",
     "tcgdex_id": "xy3-18",
     "localId": "018",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "018/111",
+    "cardNumber": "18/111",
     "cardName": "Politoed",
-    "fullDisplayName": "Politoed 018/111 Furious Fists",
+    "fullDisplayName": "Politoed 18/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3130,18 +3832,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-018-low.png",
-    "imageHighSrc": "cards/xy3-018-high.png"
+    "imageHighSrc": "cards/xy3-018-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Voice",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19146",
-    "externalId": null,
+    "externalId": "xy3-17",
     "tcgdex_id": "xy3-17",
     "localId": "017",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "017/111",
+    "cardNumber": "17/111",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 017/111 Furious Fists",
+    "fullDisplayName": "Poliwrath 17/111 Furious Fists",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3163,18 +3871,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-017-low.png",
-    "imageHighSrc": "cards/xy3-017-high.png"
+    "imageHighSrc": "cards/xy3-017-high.png",
+    "attacks": [
+      {
+        "name": "Steamroll",
+        "damage": "60"
+      },
+      {
+        "name": "Submission",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "19136",
-    "externalId": null,
+    "externalId": "xy3-16",
     "tcgdex_id": "xy3-16",
     "localId": "016",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "016/111",
+    "cardNumber": "16/111",
     "cardName": "Poliwhirl",
-    "fullDisplayName": "Poliwhirl 016/111 Furious Fists",
+    "fullDisplayName": "Poliwhirl 16/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3196,18 +3914,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-016-low.png",
-    "imageHighSrc": "cards/xy3-016-high.png"
+    "imageHighSrc": "cards/xy3-016-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "20"
+      },
+      {
+        "name": "Finishing Blow",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "19126",
-    "externalId": null,
+    "externalId": "xy3-15",
     "tcgdex_id": "xy3-15",
     "localId": "015",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "015/111",
+    "cardNumber": "15/111",
     "cardName": "Poliwag",
-    "fullDisplayName": "Poliwag 015/111 Furious Fists",
+    "fullDisplayName": "Poliwag 15/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3229,18 +3957,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-015-low.png",
-    "imageHighSrc": "cards/xy3-015-high.png"
+    "imageHighSrc": "cards/xy3-015-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Spiral Current",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19116",
-    "externalId": null,
+    "externalId": "xy3-14",
     "tcgdex_id": "xy3-14",
     "localId": "014",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "014/111",
+    "cardNumber": "14/111",
     "cardName": "Blaziken",
-    "fullDisplayName": "Blaziken 014/111 Furious Fists",
+    "fullDisplayName": "Blaziken 14/111 Furious Fists",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3262,18 +4000,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-014-low.png",
-    "imageHighSrc": "cards/xy3-014-high.png"
+    "imageHighSrc": "cards/xy3-014-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "50"
+      },
+      {
+        "name": "Burning Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19107",
-    "externalId": null,
+    "externalId": "xy3-13",
     "tcgdex_id": "xy3-13",
     "localId": "013",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "013/111",
+    "cardNumber": "13/111",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 013/111 Furious Fists",
+    "fullDisplayName": "Combusken 13/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3295,18 +4043,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-013-low.png",
-    "imageHighSrc": "cards/xy3-013-high.png"
+    "imageHighSrc": "cards/xy3-013-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "30"
+      },
+      {
+        "name": "Midair Strike",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "19097",
-    "externalId": null,
+    "externalId": "xy3-12",
     "tcgdex_id": "xy3-12",
     "localId": "012",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "012/111",
+    "cardNumber": "12/111",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 012/111 Furious Fists",
+    "fullDisplayName": "Torchic 12/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3328,18 +4086,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-012-low.png",
-    "imageHighSrc": "cards/xy3-012-high.png"
+    "imageHighSrc": "cards/xy3-012-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "19087",
-    "externalId": null,
+    "externalId": "xy3-11",
     "tcgdex_id": "xy3-11",
     "localId": "011",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "011/111",
+    "cardNumber": "11/111",
     "cardName": "Magmortar",
-    "fullDisplayName": "Magmortar 011/111 Furious Fists",
+    "fullDisplayName": "Magmortar 11/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3361,18 +4125,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-011-low.png",
-    "imageHighSrc": "cards/xy3-011-high.png"
+    "imageHighSrc": "cards/xy3-011-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": "30"
+      },
+      {
+        "name": "Twin Bursts",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "19078",
-    "externalId": null,
+    "externalId": "xy3-10",
     "tcgdex_id": "xy3-10",
     "localId": "010",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "010/111",
+    "cardNumber": "10/111",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 010/111 Furious Fists",
+    "fullDisplayName": "Magmar 10/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3394,18 +4168,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-010-low.png",
-    "imageHighSrc": "cards/xy3-010-high.png"
+    "imageHighSrc": "cards/xy3-010-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19068",
-    "externalId": null,
+    "externalId": "xy3-9",
     "tcgdex_id": "xy3-9",
     "localId": "009",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "009/111",
+    "cardNumber": "9/111",
     "cardName": "Accelgor",
-    "fullDisplayName": "Accelgor 009/111 Furious Fists",
+    "fullDisplayName": "Accelgor 9/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3427,18 +4211,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-009-low.png",
-    "imageHighSrc": "cards/xy3-009-high.png"
+    "imageHighSrc": "cards/xy3-009-high.png",
+    "attacks": [
+      {
+        "name": "Raid",
+        "damage": "20+"
+      },
+      {
+        "name": "Afterimage Strike",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19058",
-    "externalId": null,
+    "externalId": "xy3-8",
     "tcgdex_id": "xy3-8",
     "localId": "008",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "008/111",
+    "cardNumber": "8/111",
     "cardName": "Shelmet",
-    "fullDisplayName": "Shelmet 008/111 Furious Fists",
+    "fullDisplayName": "Shelmet 8/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3460,18 +4254,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-008-low.png",
-    "imageHighSrc": "cards/xy3-008-high.png"
+    "imageHighSrc": "cards/xy3-008-high.png",
+    "attacks": [
+      {
+        "name": "Jump On",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "19049",
-    "externalId": null,
+    "externalId": "xy3-7",
     "tcgdex_id": "xy3-7",
     "localId": "007",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "007/111",
+    "cardNumber": "7/111",
     "cardName": "Leafeon",
-    "fullDisplayName": "Leafeon 007/111 Furious Fists",
+    "fullDisplayName": "Leafeon 7/111 Furious Fists",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3493,18 +4293,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-007-low.png",
-    "imageHighSrc": "cards/xy3-007-high.png"
+    "imageHighSrc": "cards/xy3-007-high.png",
+    "attacks": [
+      {
+        "name": "Soothing Scent",
+        "damage": "30"
+      },
+      {
+        "name": "Magical Leaf",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "19038",
-    "externalId": null,
+    "externalId": "xy3-6",
     "tcgdex_id": "xy3-6",
     "localId": "006",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "006/111",
+    "cardNumber": "6/111",
     "cardName": "Shroomish",
-    "fullDisplayName": "Shroomish 006/111 Furious Fists",
+    "fullDisplayName": "Shroomish 6/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3526,18 +4336,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-006-low.png",
-    "imageHighSrc": "cards/xy3-006-high.png"
+    "imageHighSrc": "cards/xy3-006-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19029",
-    "externalId": null,
+    "externalId": "xy3-5",
     "tcgdex_id": "xy3-5",
     "localId": "005",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "005/111",
+    "cardNumber": "5/111",
     "cardName": "M Heracross-EX",
-    "fullDisplayName": "M Heracross-EX 005/111 Furious Fists",
+    "fullDisplayName": "M Heracross-EX 5/111 Furious Fists",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -3560,18 +4376,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-005-low.png",
-    "imageHighSrc": "cards/xy3-005-high.png"
+    "imageHighSrc": "cards/xy3-005-high.png",
+    "attacks": [
+      {
+        "name": "Big Bang Horn",
+        "damage": "180-"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19019",
-    "externalId": null,
+    "externalId": "xy3-4",
     "tcgdex_id": "xy3-4",
     "localId": "004",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "004/111",
+    "cardNumber": "4/111",
     "cardName": "Heracross-EX",
-    "fullDisplayName": "Heracross-EX 004/111 Furious Fists",
+    "fullDisplayName": "Heracross-EX 4/111 Furious Fists",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3594,18 +4417,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-004-low.png",
-    "imageHighSrc": "cards/xy3-004-high.png"
+    "imageHighSrc": "cards/xy3-004-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "40"
+      },
+      {
+        "name": "Giga Power",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19007",
-    "externalId": null,
+    "externalId": "xy3-3",
     "tcgdex_id": "xy3-3",
     "localId": "003",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "003/111",
+    "cardNumber": "3/111",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel 003/111 Furious Fists",
+    "fullDisplayName": "Victreebel 3/111 Furious Fists",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3627,18 +4461,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-003-low.png",
-    "imageHighSrc": "cards/xy3-003-high.png"
+    "imageHighSrc": "cards/xy3-003-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "18998",
-    "externalId": null,
+    "externalId": "xy3-2",
     "tcgdex_id": "xy3-2",
     "localId": "002",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "002/111",
+    "cardNumber": "2/111",
     "cardName": "Weepinbell",
-    "fullDisplayName": "Weepinbell 002/111 Furious Fists",
+    "fullDisplayName": "Weepinbell 2/111 Furious Fists",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3660,18 +4500,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-002-low.png",
-    "imageHighSrc": "cards/xy3-002-high.png"
+    "imageHighSrc": "cards/xy3-002-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "20"
+      },
+      {
+        "name": "Spit Poison",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "18990",
-    "externalId": null,
+    "externalId": "xy3-1",
     "tcgdex_id": "xy3-1",
     "localId": "001",
     "setCode": "xy3",
     "setTcgdexId": "xy3",
-    "cardNumber": "001/111",
+    "cardNumber": "1/111",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 001/111 Furious Fists",
+    "fullDisplayName": "Bellsprout 1/111 Furious Fists",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3693,6 +4543,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy3-001-low.png",
-    "imageHighSrc": "cards/xy3-001-high.png"
+    "imageHighSrc": "cards/xy3-001-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "10"
+      },
+      {
+        "name": "Knock Off",
+        "damage": null
+      }
+    ]
   }
 ]

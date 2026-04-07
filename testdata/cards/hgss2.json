@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "7183",
-    "externalId": null,
+    "externalId": "hgss2-TWO",
     "tcgdex_id": "hgss2-TWO",
     "localId": "TWO",
     "setCode": "hgss2",
@@ -26,18 +26,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-TWO-low.png",
-    "imageHighSrc": "cards/hgss2-TWO-high.png"
+    "imageHighSrc": "cards/hgss2-TWO-high.png",
+    "rules": "Shuffle your deck!"
   },
   {
     "masterCardId": "7180",
-    "externalId": null,
+    "externalId": "hgss2-95",
     "tcgdex_id": "hgss2-95",
     "localId": "095",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "095/95",
+    "cardNumber": "95/95",
     "cardName": "Suicune & Entei LEGEND",
-    "fullDisplayName": "Suicune & Entei LEGEND 095/95 Unleashed",
+    "fullDisplayName": "Suicune & Entei LEGEND 95/95 Unleashed",
     "rarity": "LEGEND",
     "category": "Pokémon",
     "stage": "Basic",
@@ -61,18 +62,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-095-low.png",
-    "imageHighSrc": "cards/hgss2-095-high.png"
+    "imageHighSrc": "cards/hgss2-095-high.png",
+    "attacks": [
+      {
+        "name": "Torrent Blade",
+        "damage": null
+      },
+      {
+        "name": "Bursting Inferno",
+        "damage": "80"
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Suicune & Entei LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7177",
-    "externalId": null,
+    "externalId": "hgss2-94",
     "tcgdex_id": "hgss2-94",
     "localId": "094",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "094/95",
+    "cardNumber": "94/95",
     "cardName": "Suicune & Entei LEGEND",
-    "fullDisplayName": "Suicune & Entei LEGEND 094/95 Unleashed",
+    "fullDisplayName": "Suicune & Entei LEGEND 94/95 Unleashed",
     "rarity": "LEGEND",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +108,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-094-low.png",
-    "imageHighSrc": "cards/hgss2-094-high.png"
+    "imageHighSrc": "cards/hgss2-094-high.png",
+    "attacks": [
+      {
+        "name": "Torrent Blade",
+        "damage": null
+      },
+      {
+        "name": "Bursting Inferno",
+        "damage": "80"
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Suicune & Entei LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7175",
-    "externalId": null,
+    "externalId": "hgss2-93",
     "tcgdex_id": "hgss2-93",
     "localId": "093",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "093/95",
+    "cardNumber": "93/95",
     "cardName": "Raikou & Suicune LEGEND",
-    "fullDisplayName": "Raikou & Suicune LEGEND 093/95 Unleashed",
+    "fullDisplayName": "Raikou & Suicune LEGEND 93/95 Unleashed",
     "rarity": "LEGEND",
     "category": "Pokémon",
     "stage": "Basic",
@@ -131,18 +154,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-093-low.png",
-    "imageHighSrc": "cards/hgss2-093-high.png"
+    "imageHighSrc": "cards/hgss2-093-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt Spear",
+        "damage": "150"
+      },
+      {
+        "name": "Aurora Gain",
+        "damage": "50"
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Raikou & Suicune LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7172",
-    "externalId": null,
+    "externalId": "hgss2-92",
     "tcgdex_id": "hgss2-92",
     "localId": "092",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "092/95",
+    "cardNumber": "92/95",
     "cardName": "Raikou & Suicune LEGEND",
-    "fullDisplayName": "Raikou & Suicune LEGEND 092/95 Unleashed",
+    "fullDisplayName": "Raikou & Suicune LEGEND 92/95 Unleashed",
     "rarity": "LEGEND",
     "category": "Pokémon",
     "stage": "Basic",
@@ -166,18 +200,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-092-low.png",
-    "imageHighSrc": "cards/hgss2-092-high.png"
+    "imageHighSrc": "cards/hgss2-092-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt Spear",
+        "damage": "150"
+      },
+      {
+        "name": "Aurora Gain",
+        "damage": "50"
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Raikou & Suicune LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7168",
-    "externalId": null,
+    "externalId": "hgss2-91",
     "tcgdex_id": "hgss2-91",
     "localId": "091",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "091/95",
+    "cardNumber": "91/95",
     "cardName": "Entei & Raikou LEGEND",
-    "fullDisplayName": "Entei & Raikou LEGEND 091/95 Unleashed",
+    "fullDisplayName": "Entei & Raikou LEGEND 91/95 Unleashed",
     "rarity": "LEGEND",
     "category": "Pokémon",
     "stage": "Basic",
@@ -201,18 +246,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-091-low.png",
-    "imageHighSrc": "cards/hgss2-091-high.png"
+    "imageHighSrc": "cards/hgss2-091-high.png",
+    "attacks": [
+      {
+        "name": "Detonation Spin",
+        "damage": "90"
+      },
+      {
+        "name": "Thunder Fall",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Entei & Raikou LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7164",
-    "externalId": null,
+    "externalId": "hgss2-90",
     "tcgdex_id": "hgss2-90",
     "localId": "090",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "090/95",
+    "cardNumber": "90/95",
     "cardName": "Entei & Raikou LEGEND",
-    "fullDisplayName": "Entei & Raikou LEGEND 090/95 Unleashed",
+    "fullDisplayName": "Entei & Raikou LEGEND 90/95 Unleashed",
     "rarity": "LEGEND",
     "category": "Pokémon",
     "stage": "Basic",
@@ -236,18 +292,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-090-low.png",
-    "imageHighSrc": "cards/hgss2-090-high.png"
+    "imageHighSrc": "cards/hgss2-090-high.png",
+    "attacks": [
+      {
+        "name": "Detonation Spin",
+        "damage": "90"
+      },
+      {
+        "name": "Thunder Fall",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card from your hand onto your Bench only with the other half of Entei & Raikou LEGEND.\n\nWhen this Pokémon has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7160",
-    "externalId": null,
+    "externalId": "hgss2-89",
     "tcgdex_id": "hgss2-89",
     "localId": "089",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "089/95",
+    "cardNumber": "89/95",
     "cardName": "Ursaring",
-    "fullDisplayName": "Ursaring 089/95 Unleashed",
+    "fullDisplayName": "Ursaring 89/95 Unleashed",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -270,18 +337,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-089-low.png",
-    "imageHighSrc": "cards/hgss2-089-high.png"
+    "imageHighSrc": "cards/hgss2-089-high.png",
+    "attacks": [
+      {
+        "name": "Hammer Arm",
+        "damage": "30"
+      },
+      {
+        "name": "Megaton Lariat",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7156",
-    "externalId": null,
+    "externalId": "hgss2-88",
     "tcgdex_id": "hgss2-88",
     "localId": "088",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "088/95",
+    "cardNumber": "88/95",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 088/95 Unleashed",
+    "fullDisplayName": "Tyranitar 88/95 Unleashed",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -304,18 +381,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-088-low.png",
-    "imageHighSrc": "cards/hgss2-088-high.png"
+    "imageHighSrc": "cards/hgss2-088-high.png",
+    "attacks": [
+      {
+        "name": "Darkness Howl",
+        "damage": null
+      },
+      {
+        "name": "Power Claw",
+        "damage": "60"
+      },
+      {
+        "name": "Megaton Tail",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "7152",
-    "externalId": null,
+    "externalId": "hgss2-87",
     "tcgdex_id": "hgss2-87",
     "localId": "087",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "087/95",
+    "cardNumber": "87/95",
     "cardName": "Steelix",
-    "fullDisplayName": "Steelix 087/95 Unleashed",
+    "fullDisplayName": "Steelix 87/95 Unleashed",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -338,18 +429,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-087-low.png",
-    "imageHighSrc": "cards/hgss2-087-high.png"
+    "imageHighSrc": "cards/hgss2-087-high.png",
+    "attacks": [
+      {
+        "name": "Energy Stream",
+        "damage": "30"
+      },
+      {
+        "name": "Gaia Crush",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "7148",
-    "externalId": null,
+    "externalId": "hgss2-86",
     "tcgdex_id": "hgss2-86",
     "localId": "086",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "086/95",
+    "cardNumber": "86/95",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 086/95 Unleashed",
+    "fullDisplayName": "Lanturn 86/95 Unleashed",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -372,18 +473,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-086-low.png",
-    "imageHighSrc": "cards/hgss2-086-high.png"
+    "imageHighSrc": "cards/hgss2-086-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Spark",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "7144",
-    "externalId": null,
+    "externalId": "hgss2-85",
     "tcgdex_id": "hgss2-85",
     "localId": "085",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "085/95",
+    "cardNumber": "85/95",
     "cardName": "Kingdra",
-    "fullDisplayName": "Kingdra 085/95 Unleashed",
+    "fullDisplayName": "Kingdra 85/95 Unleashed",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -406,18 +513,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-085-low.png",
-    "imageHighSrc": "cards/hgss2-085-high.png"
+    "imageHighSrc": "cards/hgss2-085-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Steam",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7140",
-    "externalId": null,
+    "externalId": "hgss2-84",
     "tcgdex_id": "hgss2-84",
     "localId": "084",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "084/95",
+    "cardNumber": "84/95",
     "cardName": "Crobat",
-    "fullDisplayName": "Crobat 084/95 Unleashed",
+    "fullDisplayName": "Crobat 84/95 Unleashed",
     "rarity": "Rare Prime",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -440,18 +553,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-084-low.png",
-    "imageHighSrc": "cards/hgss2-084-high.png"
+    "imageHighSrc": "cards/hgss2-084-high.png",
+    "attacks": [
+      {
+        "name": "Severe Poison",
+        "damage": null
+      },
+      {
+        "name": "Skill Dive",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7136",
-    "externalId": null,
+    "externalId": "hgss2-83",
     "tcgdex_id": "hgss2-83",
     "localId": "083",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "083/95",
+    "cardNumber": "83/95",
     "cardName": "Super Scoop Up",
-    "fullDisplayName": "Super Scoop Up 083/95 Unleashed",
+    "fullDisplayName": "Super Scoop Up 83/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -469,18 +592,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-083-low.png",
-    "imageHighSrc": "cards/hgss2-083-high.png"
+    "imageHighSrc": "cards/hgss2-083-high.png",
+    "rules": "Flip a coin. If heads, return 1 of your Pokémon and all cards attached to it to your hand."
   },
   {
     "masterCardId": "7132",
-    "externalId": null,
+    "externalId": "hgss2-82",
     "tcgdex_id": "hgss2-82",
     "localId": "082",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "082/95",
+    "cardNumber": "82/95",
     "cardName": "Rare Candy",
-    "fullDisplayName": "Rare Candy 082/95 Unleashed",
+    "fullDisplayName": "Rare Candy 82/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -498,18 +622,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-082-low.png",
-    "imageHighSrc": "cards/hgss2-082-high.png"
+    "imageHighSrc": "cards/hgss2-082-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pokémon in your hand, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.) If you choose a Stage 2 Pokémon in your hand, put that Pokémon on the Basic Pokémon instead of on a Stage 1 Pokémon."
   },
   {
     "masterCardId": "7128",
-    "externalId": null,
+    "externalId": "hgss2-81",
     "tcgdex_id": "hgss2-81",
     "localId": "081",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "081/95",
+    "cardNumber": "81/95",
     "cardName": "Pokémon Circulator",
-    "fullDisplayName": "Pokémon Circulator 081/95 Unleashed",
+    "fullDisplayName": "Pokémon Circulator 81/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -527,18 +652,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-081-low.png",
-    "imageHighSrc": "cards/hgss2-081-high.png"
+    "imageHighSrc": "cards/hgss2-081-high.png",
+    "rules": "Your opponent switches his or her Active Pokémon with 1 of his or her Benched Pokémon."
   },
   {
     "masterCardId": "7124",
-    "externalId": null,
+    "externalId": "hgss2-80",
     "tcgdex_id": "hgss2-80",
     "localId": "080",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "080/95",
+    "cardNumber": "80/95",
     "cardName": "PlusPower",
-    "fullDisplayName": "PlusPower 080/95 Unleashed",
+    "fullDisplayName": "PlusPower 80/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -556,18 +682,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-080-low.png",
-    "imageHighSrc": "cards/hgss2-080-high.png"
+    "imageHighSrc": "cards/hgss2-080-high.png",
+    "rules": "Attach PlusPower to 1 of your Pokémon. Discard this card at the end of your turn.\n\nIf the Pokémon PlusPower is attached to attacks, the attack does 10 more damage to the Defending Pokémon (before applying Weakness and Resistance)."
   },
   {
     "masterCardId": "7120",
-    "externalId": null,
+    "externalId": "hgss2-79",
     "tcgdex_id": "hgss2-79",
     "localId": "079",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "079/95",
+    "cardNumber": "79/95",
     "cardName": "Life Herb",
-    "fullDisplayName": "Life Herb 079/95 Unleashed",
+    "fullDisplayName": "Life Herb 79/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -585,18 +712,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-079-low.png",
-    "imageHighSrc": "cards/hgss2-079-high.png"
+    "imageHighSrc": "cards/hgss2-079-high.png",
+    "rules": "Flip a coin. If heads, choose 1 of your Pokémon, and remove all Special Conditions and 6 damage counters from that Pokémon (all if there are less than 6)."
   },
   {
     "masterCardId": "7116",
-    "externalId": null,
+    "externalId": "hgss2-78",
     "tcgdex_id": "hgss2-78",
     "localId": "078",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "078/95",
+    "cardNumber": "78/95",
     "cardName": "Judge",
-    "fullDisplayName": "Judge 078/95 Unleashed",
+    "fullDisplayName": "Judge 78/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -614,18 +742,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-078-low.png",
-    "imageHighSrc": "cards/hgss2-078-high.png"
+    "imageHighSrc": "cards/hgss2-078-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nEach player shuffles his or her hand into his or her deck and draws 4 cards."
   },
   {
     "masterCardId": "7112",
-    "externalId": null,
+    "externalId": "hgss2-77",
     "tcgdex_id": "hgss2-77",
     "localId": "077",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "077/95",
+    "cardNumber": "77/95",
     "cardName": "Interviewer's Questions",
-    "fullDisplayName": "Interviewer's Questions 077/95 Unleashed",
+    "fullDisplayName": "Interviewer's Questions 77/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -643,18 +772,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss2-077-low.png",
-    "imageHighSrc": "cards/hgss2-077-high.png"
+    "imageHighSrc": "cards/hgss2-077-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nLook at the top 8 cards of your deck. Choose as many Energy cards as you like, show them to your opponent, and put them into your hand. Shuffle the other cards back into your deck."
   },
   {
     "masterCardId": "7108",
-    "externalId": null,
+    "externalId": "hgss2-76",
     "tcgdex_id": "hgss2-76",
     "localId": "076",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "076/95",
+    "cardNumber": "76/95",
     "cardName": "Good Rod",
-    "fullDisplayName": "Good Rod 076/95 Unleashed",
+    "fullDisplayName": "Good Rod 76/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -672,18 +802,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-076-low.png",
-    "imageHighSrc": "cards/hgss2-076-high.png"
+    "imageHighSrc": "cards/hgss2-076-high.png",
+    "rules": "Flip a coin. If heads, search your discard pile for a Pokémon, show it to your opponent, and put it on top of your deck. If tails, search your discard pile for a Trainer card, show it to your opponent, and put it on top of your deck."
   },
   {
     "masterCardId": "7104",
-    "externalId": null,
+    "externalId": "hgss2-75",
     "tcgdex_id": "hgss2-75",
     "localId": "075",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "075/95",
+    "cardNumber": "75/95",
     "cardName": "Engineer's Adjustments",
-    "fullDisplayName": "Engineer's Adjustments 075/95 Unleashed",
+    "fullDisplayName": "Engineer's Adjustments 75/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -701,18 +832,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss2-075-low.png",
-    "imageHighSrc": "cards/hgss2-075-high.png"
+    "imageHighSrc": "cards/hgss2-075-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDiscard an Energy card from your hand. Then, draw 4 cards."
   },
   {
     "masterCardId": "7100",
-    "externalId": null,
+    "externalId": "hgss2-74",
     "tcgdex_id": "hgss2-74",
     "localId": "074",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "074/95",
+    "cardNumber": "74/95",
     "cardName": "Energy Returner",
-    "fullDisplayName": "Energy Returner 074/95 Unleashed",
+    "fullDisplayName": "Energy Returner 74/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -730,18 +862,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-074-low.png",
-    "imageHighSrc": "cards/hgss2-074-high.png"
+    "imageHighSrc": "cards/hgss2-074-high.png",
+    "rules": "Search your discard pile for 4 basic Energy cards, show them to your opponent, and shuffle them into your deck."
   },
   {
     "masterCardId": "7096",
-    "externalId": null,
+    "externalId": "hgss2-73",
     "tcgdex_id": "hgss2-73",
     "localId": "073",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "073/95",
+    "cardNumber": "73/95",
     "cardName": "Emcee's Chatter",
-    "fullDisplayName": "Emcee's Chatter 073/95 Unleashed",
+    "fullDisplayName": "Emcee's Chatter 73/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -759,18 +892,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss2-073-low.png",
-    "imageHighSrc": "cards/hgss2-073-high.png"
+    "imageHighSrc": "cards/hgss2-073-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nFlip a coin. If heads, draw 3 cards. If tails, draw 2 cards."
   },
   {
     "masterCardId": "7092",
-    "externalId": null,
+    "externalId": "hgss2-72",
     "tcgdex_id": "hgss2-72",
     "localId": "072",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "072/95",
+    "cardNumber": "72/95",
     "cardName": "Dual Ball",
-    "fullDisplayName": "Dual Ball 072/95 Unleashed",
+    "fullDisplayName": "Dual Ball 72/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -788,18 +922,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-072-low.png",
-    "imageHighSrc": "cards/hgss2-072-high.png"
+    "imageHighSrc": "cards/hgss2-072-high.png",
+    "rules": "Flip 2 coins. For each heads, search your deck for a Basic Pokémon, show it to your opponent, and put it into your hand. If you do, shuffle your deck afterward."
   },
   {
     "masterCardId": "7089",
-    "externalId": null,
+    "externalId": "hgss2-71",
     "tcgdex_id": "hgss2-71",
     "localId": "071",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "071/95",
+    "cardNumber": "71/95",
     "cardName": "Cheerleader's Cheer",
-    "fullDisplayName": "Cheerleader's Cheer 071/95 Unleashed",
+    "fullDisplayName": "Cheerleader's Cheer 71/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -817,18 +952,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hgss2-071-low.png",
-    "imageHighSrc": "cards/hgss2-071-high.png"
+    "imageHighSrc": "cards/hgss2-071-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 3 cards. Your opponent may draw a card."
   },
   {
     "masterCardId": "7085",
-    "externalId": null,
+    "externalId": "hgss2-70",
     "tcgdex_id": "hgss2-70",
     "localId": "070",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "070/95",
+    "cardNumber": "70/95",
     "cardName": "Zubat",
-    "fullDisplayName": "Zubat 070/95 Unleashed",
+    "fullDisplayName": "Zubat 70/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -850,18 +986,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-070-low.png",
-    "imageHighSrc": "cards/hgss2-070-high.png"
+    "imageHighSrc": "cards/hgss2-070-high.png",
+    "attacks": [
+      {
+        "name": "Glide",
+        "damage": "10"
+      },
+      {
+        "name": "Double Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7081",
-    "externalId": null,
+    "externalId": "hgss2-69",
     "tcgdex_id": "hgss2-69",
     "localId": "069",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "069/95",
+    "cardNumber": "69/95",
     "cardName": "Weedle",
-    "fullDisplayName": "Weedle 069/95 Unleashed",
+    "fullDisplayName": "Weedle 69/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -883,18 +1029,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-069-low.png",
-    "imageHighSrc": "cards/hgss2-069-high.png"
+    "imageHighSrc": "cards/hgss2-069-high.png",
+    "attacks": [
+      {
+        "name": "Speed Evolution",
+        "damage": null
+      },
+      {
+        "name": "Sting",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7077",
-    "externalId": null,
+    "externalId": "hgss2-68",
     "tcgdex_id": "hgss2-68",
     "localId": "068",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "068/95",
+    "cardNumber": "68/95",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 068/95 Unleashed",
+    "fullDisplayName": "Vulpix 68/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -916,18 +1072,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-068-low.png",
-    "imageHighSrc": "cards/hgss2-068-high.png"
+    "imageHighSrc": "cards/hgss2-068-high.png",
+    "attacks": [
+      {
+        "name": "Fireworks",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7073",
-    "externalId": null,
+    "externalId": "hgss2-67",
     "tcgdex_id": "hgss2-67",
     "localId": "067",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "067/95",
+    "cardNumber": "67/95",
     "cardName": "Turtwig",
-    "fullDisplayName": "Turtwig 067/95 Unleashed",
+    "fullDisplayName": "Turtwig 67/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -949,18 +1111,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-067-low.png",
-    "imageHighSrc": "cards/hgss2-067-high.png"
+    "imageHighSrc": "cards/hgss2-067-high.png",
+    "attacks": [
+      {
+        "name": "Leech Seed",
+        "damage": "10"
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7069",
-    "externalId": null,
+    "externalId": "hgss2-66",
     "tcgdex_id": "hgss2-66",
     "localId": "066",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "066/95",
+    "cardNumber": "66/95",
     "cardName": "Tropius",
-    "fullDisplayName": "Tropius 066/95 Unleashed",
+    "fullDisplayName": "Tropius 66/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -982,18 +1154,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-066-low.png",
-    "imageHighSrc": "cards/hgss2-066-high.png"
+    "imageHighSrc": "cards/hgss2-066-high.png",
+    "attacks": [
+      {
+        "name": "Green Call",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7065",
-    "externalId": null,
+    "externalId": "hgss2-65",
     "tcgdex_id": "hgss2-65",
     "localId": "065",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "065/95",
+    "cardNumber": "65/95",
     "cardName": "Teddiursa",
-    "fullDisplayName": "Teddiursa 065/95 Unleashed",
+    "fullDisplayName": "Teddiursa 65/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1015,18 +1197,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-065-low.png",
-    "imageHighSrc": "cards/hgss2-065-high.png"
+    "imageHighSrc": "cards/hgss2-065-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7061",
-    "externalId": null,
+    "externalId": "hgss2-64",
     "tcgdex_id": "hgss2-64",
     "localId": "064",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "064/95",
+    "cardNumber": "64/95",
     "cardName": "Stantler",
-    "fullDisplayName": "Stantler 064/95 Unleashed",
+    "fullDisplayName": "Stantler 64/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1048,18 +1236,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-064-low.png",
-    "imageHighSrc": "cards/hgss2-064-high.png"
+    "imageHighSrc": "cards/hgss2-064-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Mystifying Horns",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7057",
-    "externalId": null,
+    "externalId": "hgss2-63",
     "tcgdex_id": "hgss2-63",
     "localId": "063",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "063/95",
+    "cardNumber": "63/95",
     "cardName": "Squirtle",
-    "fullDisplayName": "Squirtle 063/95 Unleashed",
+    "fullDisplayName": "Squirtle 63/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1081,18 +1279,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-063-low.png",
-    "imageHighSrc": "cards/hgss2-063-high.png"
+    "imageHighSrc": "cards/hgss2-063-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Shell Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7054",
-    "externalId": null,
+    "externalId": "hgss2-62",
     "tcgdex_id": "hgss2-62",
     "localId": "062",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "062/95",
+    "cardNumber": "62/95",
     "cardName": "Spearow",
-    "fullDisplayName": "Spearow 062/95 Unleashed",
+    "fullDisplayName": "Spearow 62/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1114,18 +1322,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-062-low.png",
-    "imageHighSrc": "cards/hgss2-062-high.png"
+    "imageHighSrc": "cards/hgss2-062-high.png",
+    "attacks": [
+      {
+        "name": "Roost",
+        "damage": null
+      },
+      {
+        "name": "Flap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7050",
-    "externalId": null,
+    "externalId": "hgss2-61",
     "tcgdex_id": "hgss2-61",
     "localId": "061",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "061/95",
+    "cardNumber": "61/95",
     "cardName": "Roselia",
-    "fullDisplayName": "Roselia 061/95 Unleashed",
+    "fullDisplayName": "Roselia 61/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1147,18 +1365,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-061-low.png",
-    "imageHighSrc": "cards/hgss2-061-high.png"
+    "imageHighSrc": "cards/hgss2-061-high.png",
+    "attacks": [
+      {
+        "name": "Petal Dance",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7046",
-    "externalId": null,
+    "externalId": "hgss2-60",
     "tcgdex_id": "hgss2-60",
     "localId": "060",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "060/95",
+    "cardNumber": "60/95",
     "cardName": "Riolu",
-    "fullDisplayName": "Riolu 060/95 Unleashed",
+    "fullDisplayName": "Riolu 60/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1180,18 +1404,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-060-low.png",
-    "imageHighSrc": "cards/hgss2-060-high.png"
+    "imageHighSrc": "cards/hgss2-060-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Double Chop",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7042",
-    "externalId": null,
+    "externalId": "hgss2-59",
     "tcgdex_id": "hgss2-59",
     "localId": "059",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "059/95",
+    "cardNumber": "59/95",
     "cardName": "Remoraid",
-    "fullDisplayName": "Remoraid 059/95 Unleashed",
+    "fullDisplayName": "Remoraid 59/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1213,18 +1447,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-059-low.png",
-    "imageHighSrc": "cards/hgss2-059-high.png"
+    "imageHighSrc": "cards/hgss2-059-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Water Arrow",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7038",
-    "externalId": null,
+    "externalId": "hgss2-58",
     "tcgdex_id": "hgss2-58",
     "localId": "058",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "058/95",
+    "cardNumber": "58/95",
     "cardName": "Poliwag",
-    "fullDisplayName": "Poliwag 058/95 Unleashed",
+    "fullDisplayName": "Poliwag 58/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1246,18 +1490,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-058-low.png",
-    "imageHighSrc": "cards/hgss2-058-high.png"
+    "imageHighSrc": "cards/hgss2-058-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Razor Fin",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7034",
-    "externalId": null,
+    "externalId": "hgss2-57",
     "tcgdex_id": "hgss2-57",
     "localId": "057",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "057/95",
+    "cardNumber": "57/95",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 057/95 Unleashed",
+    "fullDisplayName": "Onix 57/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1279,18 +1533,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-057-low.png",
-    "imageHighSrc": "cards/hgss2-057-high.png"
+    "imageHighSrc": "cards/hgss2-057-high.png",
+    "attacks": [
+      {
+        "name": "Swing Around",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7029",
-    "externalId": null,
+    "externalId": "hgss2-56",
     "tcgdex_id": "hgss2-56",
     "localId": "056",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "056/95",
+    "cardNumber": "56/95",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 056/95 Unleashed",
+    "fullDisplayName": "Onix 56/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1312,18 +1572,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-056-low.png",
-    "imageHighSrc": "cards/hgss2-056-high.png"
+    "imageHighSrc": "cards/hgss2-056-high.png",
+    "attacks": [
+      {
+        "name": "Boundless Power",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "7025",
-    "externalId": null,
+    "externalId": "hgss2-55",
     "tcgdex_id": "hgss2-55",
     "localId": "055",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "055/95",
+    "cardNumber": "55/95",
     "cardName": "Natu",
-    "fullDisplayName": "Natu 055/95 Unleashed",
+    "fullDisplayName": "Natu 55/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1345,18 +1611,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-055-low.png",
-    "imageHighSrc": "cards/hgss2-055-high.png"
+    "imageHighSrc": "cards/hgss2-055-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Teleport",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7021",
-    "externalId": null,
+    "externalId": "hgss2-54",
     "tcgdex_id": "hgss2-54",
     "localId": "054",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "054/95",
+    "cardNumber": "54/95",
     "cardName": "Misdreavus",
-    "fullDisplayName": "Misdreavus 054/95 Unleashed",
+    "fullDisplayName": "Misdreavus 54/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1378,18 +1654,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-054-low.png",
-    "imageHighSrc": "cards/hgss2-054-high.png"
+    "imageHighSrc": "cards/hgss2-054-high.png",
+    "attacks": [
+      {
+        "name": "Sharpshooting",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7017",
-    "externalId": null,
+    "externalId": "hgss2-53",
     "tcgdex_id": "hgss2-53",
     "localId": "053",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "053/95",
+    "cardNumber": "53/95",
     "cardName": "Mankey",
-    "fullDisplayName": "Mankey 053/95 Unleashed",
+    "fullDisplayName": "Mankey 53/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1411,18 +1693,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-053-low.png",
-    "imageHighSrc": "cards/hgss2-053-high.png"
+    "imageHighSrc": "cards/hgss2-053-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Karate Chop",
+        "damage": "40-"
+      }
+    ]
   },
   {
     "masterCardId": "7013",
-    "externalId": null,
+    "externalId": "hgss2-52",
     "tcgdex_id": "hgss2-52",
     "localId": "052",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "052/95",
+    "cardNumber": "52/95",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 052/95 Unleashed",
+    "fullDisplayName": "Magmar 52/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1444,18 +1736,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-052-low.png",
-    "imageHighSrc": "cards/hgss2-052-high.png"
+    "imageHighSrc": "cards/hgss2-052-high.png",
+    "attacks": [
+      {
+        "name": "Live Coal",
+        "damage": "10"
+      },
+      {
+        "name": "Magma Punch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7009",
-    "externalId": null,
+    "externalId": "hgss2-51",
     "tcgdex_id": "hgss2-51",
     "localId": "051",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "051/95",
+    "cardNumber": "51/95",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 051/95 Unleashed",
+    "fullDisplayName": "Larvitar 51/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1477,18 +1779,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-051-low.png",
-    "imageHighSrc": "cards/hgss2-051-high.png"
+    "imageHighSrc": "cards/hgss2-051-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Knuckle Punch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7005",
-    "externalId": null,
+    "externalId": "hgss2-50",
     "tcgdex_id": "hgss2-50",
     "localId": "050",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "050/95",
+    "cardNumber": "50/95",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 050/95 Unleashed",
+    "fullDisplayName": "Larvitar 50/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1510,18 +1822,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-050-low.png",
-    "imageHighSrc": "cards/hgss2-050-high.png"
+    "imageHighSrc": "cards/hgss2-050-high.png",
+    "attacks": [
+      {
+        "name": "Mountain Eater",
+        "damage": null
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7001",
-    "externalId": null,
+    "externalId": "hgss2-49",
     "tcgdex_id": "hgss2-49",
     "localId": "049",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "049/95",
+    "cardNumber": "49/95",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 049/95 Unleashed",
+    "fullDisplayName": "Horsea 49/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1543,18 +1865,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-049-low.png",
-    "imageHighSrc": "cards/hgss2-049-high.png"
+    "imageHighSrc": "cards/hgss2-049-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Fin Smack",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "6997",
-    "externalId": null,
+    "externalId": "hgss2-48",
     "tcgdex_id": "hgss2-48",
     "localId": "048",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "048/95",
+    "cardNumber": "48/95",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 048/95 Unleashed",
+    "fullDisplayName": "Chinchou 48/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1576,18 +1908,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-048-low.png",
-    "imageHighSrc": "cards/hgss2-048-high.png"
+    "imageHighSrc": "cards/hgss2-048-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Lightning Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6993",
-    "externalId": null,
+    "externalId": "hgss2-47",
     "tcgdex_id": "hgss2-47",
     "localId": "047",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "047/95",
+    "cardNumber": "47/95",
     "cardName": "Cherubi",
-    "fullDisplayName": "Cherubi 047/95 Unleashed",
+    "fullDisplayName": "Cherubi 47/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1609,18 +1951,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-047-low.png",
-    "imageHighSrc": "cards/hgss2-047-high.png"
+    "imageHighSrc": "cards/hgss2-047-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6990",
-    "externalId": null,
+    "externalId": "hgss2-46",
     "tcgdex_id": "hgss2-46",
     "localId": "046",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "046/95",
+    "cardNumber": "46/95",
     "cardName": "Carnivine",
-    "fullDisplayName": "Carnivine 046/95 Unleashed",
+    "fullDisplayName": "Carnivine 46/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1642,18 +1990,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-046-low.png",
-    "imageHighSrc": "cards/hgss2-046-high.png"
+    "imageHighSrc": "cards/hgss2-046-high.png",
+    "attacks": [
+      {
+        "name": "Drawup Power",
+        "damage": null
+      },
+      {
+        "name": "Spit Up",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6986",
-    "externalId": null,
+    "externalId": "hgss2-45",
     "tcgdex_id": "hgss2-45",
     "localId": "045",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "045/95",
+    "cardNumber": "45/95",
     "cardName": "Buizel",
-    "fullDisplayName": "Buizel 045/95 Unleashed",
+    "fullDisplayName": "Buizel 45/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1675,18 +2033,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-045-low.png",
-    "imageHighSrc": "cards/hgss2-045-high.png"
+    "imageHighSrc": "cards/hgss2-045-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6982",
-    "externalId": null,
+    "externalId": "hgss2-44",
     "tcgdex_id": "hgss2-44",
     "localId": "044",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "044/95",
+    "cardNumber": "44/95",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 044/95 Unleashed",
+    "fullDisplayName": "Beldum 44/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1708,18 +2072,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-044-low.png",
-    "imageHighSrc": "cards/hgss2-044-high.png"
+    "imageHighSrc": "cards/hgss2-044-high.png",
+    "attacks": [
+      {
+        "name": "Reaction",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6977",
-    "externalId": null,
+    "externalId": "hgss2-43",
     "tcgdex_id": "hgss2-43",
     "localId": "043",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "043/95",
+    "cardNumber": "43/95",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 043/95 Unleashed",
+    "fullDisplayName": "Aipom 43/95 Unleashed",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1741,18 +2111,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-043-low.png",
-    "imageHighSrc": "cards/hgss2-043-high.png"
+    "imageHighSrc": "cards/hgss2-043-high.png",
+    "attacks": [
+      {
+        "name": "Tail Code",
+        "damage": null
+      },
+      {
+        "name": "Tail Smash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6973",
-    "externalId": null,
+    "externalId": "hgss2-42",
     "tcgdex_id": "hgss2-42",
     "localId": "042",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "042/95",
+    "cardNumber": "42/95",
     "cardName": "Wartortle",
-    "fullDisplayName": "Wartortle 042/95 Unleashed",
+    "fullDisplayName": "Wartortle 42/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1774,18 +2154,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-042-low.png",
-    "imageHighSrc": "cards/hgss2-042-high.png"
+    "imageHighSrc": "cards/hgss2-042-high.png",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null
+      },
+      {
+        "name": "Surf",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6969",
-    "externalId": null,
+    "externalId": "hgss2-41",
     "tcgdex_id": "hgss2-41",
     "localId": "041",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "041/95",
+    "cardNumber": "41/95",
     "cardName": "Tauros",
-    "fullDisplayName": "Tauros 041/95 Unleashed",
+    "fullDisplayName": "Tauros 41/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1807,18 +2197,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-041-low.png",
-    "imageHighSrc": "cards/hgss2-041-high.png"
+    "imageHighSrc": "cards/hgss2-041-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Crimson Bull",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "6965",
-    "externalId": null,
+    "externalId": "hgss2-40",
     "tcgdex_id": "hgss2-40",
     "localId": "040",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "040/95",
+    "cardNumber": "40/95",
     "cardName": "Seadra",
-    "fullDisplayName": "Seadra 040/95 Unleashed",
+    "fullDisplayName": "Seadra 40/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1840,18 +2240,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-040-low.png",
-    "imageHighSrc": "cards/hgss2-040-high.png"
+    "imageHighSrc": "cards/hgss2-040-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "20"
+      },
+      {
+        "name": "Razor Fin",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6961",
-    "externalId": null,
+    "externalId": "hgss2-39",
     "tcgdex_id": "hgss2-39",
     "localId": "039",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "039/95",
+    "cardNumber": "39/95",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 039/95 Unleashed",
+    "fullDisplayName": "Pupitar 39/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1873,18 +2283,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-039-low.png",
-    "imageHighSrc": "cards/hgss2-039-high.png"
+    "imageHighSrc": "cards/hgss2-039-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "30"
+      },
+      {
+        "name": "Speed Attack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6957",
-    "externalId": null,
+    "externalId": "hgss2-38",
     "tcgdex_id": "hgss2-38",
     "localId": "038",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "038/95",
+    "cardNumber": "38/95",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 038/95 Unleashed",
+    "fullDisplayName": "Pupitar 38/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1906,18 +2326,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-038-low.png",
-    "imageHighSrc": "cards/hgss2-038-high.png"
+    "imageHighSrc": "cards/hgss2-038-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "6953",
-    "externalId": null,
+    "externalId": "hgss2-37",
     "tcgdex_id": "hgss2-37",
     "localId": "037",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "037/95",
+    "cardNumber": "37/95",
     "cardName": "Poliwhirl",
-    "fullDisplayName": "Poliwhirl 037/95 Unleashed",
+    "fullDisplayName": "Poliwhirl 37/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1939,18 +2365,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-037-low.png",
-    "imageHighSrc": "cards/hgss2-037-high.png"
+    "imageHighSrc": "cards/hgss2-037-high.png",
+    "attacks": [
+      {
+        "name": "Hypnoblast",
+        "damage": "20"
+      },
+      {
+        "name": "Light Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6949",
-    "externalId": null,
+    "externalId": "hgss2-36",
     "tcgdex_id": "hgss2-36",
     "localId": "036",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "036/95",
+    "cardNumber": "36/95",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 036/95 Unleashed",
+    "fullDisplayName": "Plusle 36/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1972,18 +2408,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-036-low.png",
-    "imageHighSrc": "cards/hgss2-036-high.png"
+    "imageHighSrc": "cards/hgss2-036-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6945",
-    "externalId": null,
+    "externalId": "hgss2-35",
     "tcgdex_id": "hgss2-35",
     "localId": "035",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "035/95",
+    "cardNumber": "35/95",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 035/95 Unleashed",
+    "fullDisplayName": "Numel 35/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2005,18 +2451,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-035-low.png",
-    "imageHighSrc": "cards/hgss2-035-high.png"
+    "imageHighSrc": "cards/hgss2-035-high.png",
+    "attacks": [
+      {
+        "name": "Flare Bonus",
+        "damage": null
+      },
+      {
+        "name": "Combustion",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6941",
-    "externalId": null,
+    "externalId": "hgss2-34",
     "tcgdex_id": "hgss2-34",
     "localId": "034",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "034/95",
+    "cardNumber": "34/95",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 034/95 Unleashed",
+    "fullDisplayName": "Minun 34/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2038,18 +2494,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-034-low.png",
-    "imageHighSrc": "cards/hgss2-034-high.png"
+    "imageHighSrc": "cards/hgss2-034-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Tag Team Boost",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6937",
-    "externalId": null,
+    "externalId": "hgss2-33",
     "tcgdex_id": "hgss2-33",
     "localId": "033",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "033/95",
+    "cardNumber": "33/95",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 033/95 Unleashed",
+    "fullDisplayName": "Metang 33/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2071,18 +2537,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-033-low.png",
-    "imageHighSrc": "cards/hgss2-033-high.png"
+    "imageHighSrc": "cards/hgss2-033-high.png",
+    "attacks": [
+      {
+        "name": "Energy Crane",
+        "damage": null
+      },
+      {
+        "name": "Psypunch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6933",
-    "externalId": null,
+    "externalId": "hgss2-32",
     "tcgdex_id": "hgss2-32",
     "localId": "032",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "032/95",
+    "cardNumber": "32/95",
     "cardName": "Kakuna",
-    "fullDisplayName": "Kakuna 032/95 Unleashed",
+    "fullDisplayName": "Kakuna 32/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2104,18 +2580,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-032-low.png",
-    "imageHighSrc": "cards/hgss2-032-high.png"
+    "imageHighSrc": "cards/hgss2-032-high.png",
+    "attacks": [
+      {
+        "name": "Speed Evolution",
+        "damage": null
+      },
+      {
+        "name": "Poison Sting",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6929",
-    "externalId": null,
+    "externalId": "hgss2-31",
     "tcgdex_id": "hgss2-31",
     "localId": "031",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "031/95",
+    "cardNumber": "31/95",
     "cardName": "Grotle",
-    "fullDisplayName": "Grotle 031/95 Unleashed",
+    "fullDisplayName": "Grotle 31/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2137,18 +2623,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-031-low.png",
-    "imageHighSrc": "cards/hgss2-031-high.png"
+    "imageHighSrc": "cards/hgss2-031-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      },
+      {
+        "name": "Sleep Powder",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6926",
-    "externalId": null,
+    "externalId": "hgss2-30",
     "tcgdex_id": "hgss2-30",
     "localId": "030",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "030/95",
+    "cardNumber": "30/95",
     "cardName": "Golbat",
-    "fullDisplayName": "Golbat 030/95 Unleashed",
+    "fullDisplayName": "Golbat 30/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2170,18 +2666,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-030-low.png",
-    "imageHighSrc": "cards/hgss2-030-high.png"
+    "imageHighSrc": "cards/hgss2-030-high.png",
+    "attacks": [
+      {
+        "name": "Mean Look",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6921",
-    "externalId": null,
+    "externalId": "hgss2-29",
     "tcgdex_id": "hgss2-29",
     "localId": "029",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "029/95",
+    "cardNumber": "29/95",
     "cardName": "Dunsparce",
-    "fullDisplayName": "Dunsparce 029/95 Unleashed",
+    "fullDisplayName": "Dunsparce 29/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2203,18 +2705,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-029-low.png",
-    "imageHighSrc": "cards/hgss2-029-high.png"
+    "imageHighSrc": "cards/hgss2-029-high.png",
+    "attacks": [
+      {
+        "name": "Return",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6918",
-    "externalId": null,
+    "externalId": "hgss2-28",
     "tcgdex_id": "hgss2-28",
     "localId": "028",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "028/95",
+    "cardNumber": "28/95",
     "cardName": "Cherrim",
-    "fullDisplayName": "Cherrim 028/95 Unleashed",
+    "fullDisplayName": "Cherrim 28/95 Unleashed",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2236,18 +2744,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-028-low.png",
-    "imageHighSrc": "cards/hgss2-028-high.png"
+    "imageHighSrc": "cards/hgss2-028-high.png",
+    "attacks": [
+      {
+        "name": "Seed Bomb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6914",
-    "externalId": null,
+    "externalId": "hgss2-27",
     "tcgdex_id": "hgss2-27",
     "localId": "027",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "027/95",
+    "cardNumber": "27/95",
     "cardName": "Ursaring",
-    "fullDisplayName": "Ursaring 027/95 Unleashed",
+    "fullDisplayName": "Ursaring 27/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2269,18 +2783,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-027-low.png",
-    "imageHighSrc": "cards/hgss2-027-high.png"
+    "imageHighSrc": "cards/hgss2-027-high.png",
+    "attacks": [
+      {
+        "name": "Confront",
+        "damage": "20"
+      },
+      {
+        "name": "Cross Chop",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "6909",
-    "externalId": null,
+    "externalId": "hgss2-26",
     "tcgdex_id": "hgss2-26",
     "localId": "026",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "026/95",
+    "cardNumber": "26/95",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 026/95 Unleashed",
+    "fullDisplayName": "Tyranitar 26/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2302,18 +2826,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-026-low.png",
-    "imageHighSrc": "cards/hgss2-026-high.png"
+    "imageHighSrc": "cards/hgss2-026-high.png",
+    "attacks": [
+      {
+        "name": "Tail Crush",
+        "damage": "40+"
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6905",
-    "externalId": null,
+    "externalId": "hgss2-25",
     "tcgdex_id": "hgss2-25",
     "localId": "025",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "025/95",
+    "cardNumber": "25/95",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 025/95 Unleashed",
+    "fullDisplayName": "Torkoal 25/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2335,18 +2869,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-025-low.png",
-    "imageHighSrc": "cards/hgss2-025-high.png"
+    "imageHighSrc": "cards/hgss2-025-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6901",
-    "externalId": null,
+    "externalId": "hgss2-24",
     "tcgdex_id": "hgss2-24",
     "localId": "024",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "024/95",
+    "cardNumber": "24/95",
     "cardName": "Steelix",
-    "fullDisplayName": "Steelix 024/95 Unleashed",
+    "fullDisplayName": "Steelix 24/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2368,18 +2908,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-024-low.png",
-    "imageHighSrc": "cards/hgss2-024-high.png"
+    "imageHighSrc": "cards/hgss2-024-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "40"
+      },
+      {
+        "name": "Steel Swing",
+        "damage": "80×"
+      }
+    ]
   },
   {
     "masterCardId": "6896",
-    "externalId": null,
+    "externalId": "hgss2-23",
     "tcgdex_id": "hgss2-23",
     "localId": "023",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "023/95",
+    "cardNumber": "23/95",
     "cardName": "Roserade",
-    "fullDisplayName": "Roserade 023/95 Unleashed",
+    "fullDisplayName": "Roserade 23/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2401,18 +2951,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-023-low.png",
-    "imageHighSrc": "cards/hgss2-023-high.png"
+    "imageHighSrc": "cards/hgss2-023-high.png",
+    "attacks": [
+      {
+        "name": "Power Blow",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "6891",
-    "externalId": null,
+    "externalId": "hgss2-22",
     "tcgdex_id": "hgss2-22",
     "localId": "022",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "022/95",
+    "cardNumber": "22/95",
     "cardName": "Primeape",
-    "fullDisplayName": "Primeape 022/95 Unleashed",
+    "fullDisplayName": "Primeape 22/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2434,18 +2990,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-022-low.png",
-    "imageHighSrc": "cards/hgss2-022-high.png"
+    "imageHighSrc": "cards/hgss2-022-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Bebop Punch",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6886",
-    "externalId": null,
+    "externalId": "hgss2-21",
     "tcgdex_id": "hgss2-21",
     "localId": "021",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "021/95",
+    "cardNumber": "21/95",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 021/95 Unleashed",
+    "fullDisplayName": "Poliwrath 21/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2467,18 +3033,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-021-low.png",
-    "imageHighSrc": "cards/hgss2-021-high.png"
+    "imageHighSrc": "cards/hgss2-021-high.png",
+    "attacks": [
+      {
+        "name": "Steamroll",
+        "damage": "40"
+      },
+      {
+        "name": "Dynamic Punch",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "6881",
-    "externalId": null,
+    "externalId": "hgss2-20",
     "tcgdex_id": "hgss2-20",
     "localId": "020",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "020/95",
+    "cardNumber": "20/95",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 020/95 Unleashed",
+    "fullDisplayName": "Ninetales 20/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2500,18 +3076,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-020-low.png",
-    "imageHighSrc": "cards/hgss2-020-high.png"
+    "imageHighSrc": "cards/hgss2-020-high.png",
+    "attacks": [
+      {
+        "name": "Heat Acceleration",
+        "damage": null
+      },
+      {
+        "name": "Searing Flame",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6876",
-    "externalId": null,
+    "externalId": "hgss2-19",
     "tcgdex_id": "hgss2-19",
     "localId": "019",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "019/95",
+    "cardNumber": "19/95",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario 019/95 Unleashed",
+    "fullDisplayName": "Lucario 19/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2533,18 +3119,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-019-low.png",
-    "imageHighSrc": "cards/hgss2-019-high.png"
+    "imageHighSrc": "cards/hgss2-019-high.png",
+    "attacks": [
+      {
+        "name": "Bulk Up",
+        "damage": "30"
+      },
+      {
+        "name": "Magnum Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6871",
-    "externalId": null,
+    "externalId": "hgss2-18",
     "tcgdex_id": "hgss2-18",
     "localId": "018",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "018/95",
+    "cardNumber": "18/95",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 018/95 Unleashed",
+    "fullDisplayName": "Lanturn 18/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2566,18 +3162,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-018-low.png",
-    "imageHighSrc": "cards/hgss2-018-high.png"
+    "imageHighSrc": "cards/hgss2-018-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "20"
+      },
+      {
+        "name": "Reflect Energy",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6865",
-    "externalId": null,
+    "externalId": "hgss2-17",
     "tcgdex_id": "hgss2-17",
     "localId": "017",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "017/95",
+    "cardNumber": "17/95",
     "cardName": "Kingdra",
-    "fullDisplayName": "Kingdra 017/95 Unleashed",
+    "fullDisplayName": "Kingdra 17/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2599,18 +3205,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-017-low.png",
-    "imageHighSrc": "cards/hgss2-017-high.png"
+    "imageHighSrc": "cards/hgss2-017-high.png",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null
+      },
+      {
+        "name": "Stream Pump",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "6860",
-    "externalId": null,
+    "externalId": "hgss2-16",
     "tcgdex_id": "hgss2-16",
     "localId": "016",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "016/95",
+    "cardNumber": "16/95",
     "cardName": "Floatzel",
-    "fullDisplayName": "Floatzel 016/95 Unleashed",
+    "fullDisplayName": "Floatzel 16/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2632,18 +3248,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-016-low.png",
-    "imageHighSrc": "cards/hgss2-016-high.png"
+    "imageHighSrc": "cards/hgss2-016-high.png",
+    "attacks": [
+      {
+        "name": "Waterfall",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6855",
-    "externalId": null,
+    "externalId": "hgss2-15",
     "tcgdex_id": "hgss2-15",
     "localId": "015",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "015/95",
+    "cardNumber": "15/95",
     "cardName": "Fearow",
-    "fullDisplayName": "Fearow 015/95 Unleashed",
+    "fullDisplayName": "Fearow 15/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2665,18 +3287,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-015-low.png",
-    "imageHighSrc": "cards/hgss2-015-high.png"
+    "imageHighSrc": "cards/hgss2-015-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "30"
+      },
+      {
+        "name": "Repeating Drill",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "6850",
-    "externalId": null,
+    "externalId": "hgss2-14",
     "tcgdex_id": "hgss2-14",
     "localId": "014",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "014/95",
+    "cardNumber": "14/95",
     "cardName": "Crobat",
-    "fullDisplayName": "Crobat 014/95 Unleashed",
+    "fullDisplayName": "Crobat 14/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2698,18 +3330,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-014-low.png",
-    "imageHighSrc": "cards/hgss2-014-high.png"
+    "imageHighSrc": "cards/hgss2-014-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": "30"
+      },
+      {
+        "name": "Hurricane Wing",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "6845",
-    "externalId": null,
+    "externalId": "hgss2-13",
     "tcgdex_id": "hgss2-13",
     "localId": "013",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "013/95",
+    "cardNumber": "13/95",
     "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 013/95 Unleashed",
+    "fullDisplayName": "Blastoise 13/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2731,18 +3373,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-013-low.png",
-    "imageHighSrc": "cards/hgss2-013-high.png"
+    "imageHighSrc": "cards/hgss2-013-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Launcher",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6838",
-    "externalId": null,
+    "externalId": "hgss2-12",
     "tcgdex_id": "hgss2-12",
     "localId": "012",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "012/95",
+    "cardNumber": "12/95",
     "cardName": "Beedrill",
-    "fullDisplayName": "Beedrill 012/95 Unleashed",
+    "fullDisplayName": "Beedrill 12/95 Unleashed",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2764,18 +3412,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-012-low.png",
-    "imageHighSrc": "cards/hgss2-012-high.png"
+    "imageHighSrc": "cards/hgss2-012-high.png",
+    "attacks": [
+      {
+        "name": "Twineedle",
+        "damage": "50×"
+      },
+      {
+        "name": "Paralyze Poison",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6832",
-    "externalId": null,
+    "externalId": "hgss2-11",
     "tcgdex_id": "hgss2-11",
     "localId": "011",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "011/95",
+    "cardNumber": "11/95",
     "cardName": "Xatu",
-    "fullDisplayName": "Xatu 011/95 Unleashed",
+    "fullDisplayName": "Xatu 11/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2797,18 +3455,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-011-low.png",
-    "imageHighSrc": "cards/hgss2-011-high.png"
+    "imageHighSrc": "cards/hgss2-011-high.png",
+    "attacks": [
+      {
+        "name": "Psywave",
+        "damage": "20×"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6825",
-    "externalId": null,
+    "externalId": "hgss2-10",
     "tcgdex_id": "hgss2-10",
     "localId": "010",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "010/95",
+    "cardNumber": "10/95",
     "cardName": "Torterra",
-    "fullDisplayName": "Torterra 010/95 Unleashed",
+    "fullDisplayName": "Torterra 10/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2830,18 +3498,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-010-low.png",
-    "imageHighSrc": "cards/hgss2-010-high.png"
+    "imageHighSrc": "cards/hgss2-010-high.png",
+    "attacks": [
+      {
+        "name": "Giga Drain",
+        "damage": "40"
+      },
+      {
+        "name": "Land Crush",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6819",
-    "externalId": null,
+    "externalId": "hgss2-9",
     "tcgdex_id": "hgss2-9",
     "localId": "009",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "009/95",
+    "cardNumber": "9/95",
     "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo 009/95 Unleashed",
+    "fullDisplayName": "Sudowoodo 9/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2863,18 +3541,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-009-low.png",
-    "imageHighSrc": "cards/hgss2-009-high.png"
+    "imageHighSrc": "cards/hgss2-009-high.png",
+    "attacks": [
+      {
+        "name": "Push Over",
+        "damage": "20×"
+      },
+      {
+        "name": "Rumble",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6811",
-    "externalId": null,
+    "externalId": "hgss2-8",
     "tcgdex_id": "hgss2-8",
     "localId": "008",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "008/95",
+    "cardNumber": "8/95",
     "cardName": "Shaymin",
-    "fullDisplayName": "Shaymin 008/95 Unleashed",
+    "fullDisplayName": "Shaymin 8/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2896,18 +3584,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-008-low.png",
-    "imageHighSrc": "cards/hgss2-008-high.png"
+    "imageHighSrc": "cards/hgss2-008-high.png",
+    "attacks": [
+      {
+        "name": "Energy Bloom",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6803",
-    "externalId": null,
+    "externalId": "hgss2-7",
     "tcgdex_id": "hgss2-7",
     "localId": "007",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "007/95",
+    "cardNumber": "7/95",
     "cardName": "Politoed",
-    "fullDisplayName": "Politoed 007/95 Unleashed",
+    "fullDisplayName": "Politoed 7/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2929,18 +3623,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-007-low.png",
-    "imageHighSrc": "cards/hgss2-007-high.png"
+    "imageHighSrc": "cards/hgss2-007-high.png",
+    "attacks": [
+      {
+        "name": "Big Chorus",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "6798",
-    "externalId": null,
+    "externalId": "hgss2-6",
     "tcgdex_id": "hgss2-6",
     "localId": "006",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "006/95",
+    "cardNumber": "6/95",
     "cardName": "Octillery",
-    "fullDisplayName": "Octillery 006/95 Unleashed",
+    "fullDisplayName": "Octillery 6/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2962,18 +3662,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-006-low.png",
-    "imageHighSrc": "cards/hgss2-006-high.png"
+    "imageHighSrc": "cards/hgss2-006-high.png",
+    "attacks": [
+      {
+        "name": "Switch Cannon",
+        "damage": null
+      },
+      {
+        "name": "Ink Bomb",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6793",
-    "externalId": null,
+    "externalId": "hgss2-5",
     "tcgdex_id": "hgss2-5",
     "localId": "005",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "005/95",
+    "cardNumber": "5/95",
     "cardName": "Mismagius",
-    "fullDisplayName": "Mismagius 005/95 Unleashed",
+    "fullDisplayName": "Mismagius 5/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2995,18 +3705,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-005-low.png",
-    "imageHighSrc": "cards/hgss2-005-high.png"
+    "imageHighSrc": "cards/hgss2-005-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Pulse",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6785",
-    "externalId": null,
+    "externalId": "hgss2-4",
     "tcgdex_id": "hgss2-4",
     "localId": "004",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "004/95",
+    "cardNumber": "4/95",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross 004/95 Unleashed",
+    "fullDisplayName": "Metagross 4/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3028,18 +3744,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-004-low.png",
-    "imageHighSrc": "cards/hgss2-004-high.png"
+    "imageHighSrc": "cards/hgss2-004-high.png",
+    "attacks": [
+      {
+        "name": "Pulse Blast",
+        "damage": "60"
+      },
+      {
+        "name": "Double Leg Hammer",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6772",
-    "externalId": null,
+    "externalId": "hgss2-3",
     "tcgdex_id": "hgss2-3",
     "localId": "003",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "003/95",
+    "cardNumber": "3/95",
     "cardName": "Manaphy",
-    "fullDisplayName": "Manaphy 003/95 Unleashed",
+    "fullDisplayName": "Manaphy 3/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3061,18 +3787,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-003-low.png",
-    "imageHighSrc": "cards/hgss2-003-high.png"
+    "imageHighSrc": "cards/hgss2-003-high.png",
+    "attacks": [
+      {
+        "name": "Deep Sea Swirl",
+        "damage": null
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6751",
-    "externalId": null,
+    "externalId": "hgss2-2",
     "tcgdex_id": "hgss2-2",
     "localId": "002",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "002/95",
+    "cardNumber": "2/95",
     "cardName": "Magmortar",
-    "fullDisplayName": "Magmortar 002/95 Unleashed",
+    "fullDisplayName": "Magmortar 2/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3094,18 +3830,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-002-low.png",
-    "imageHighSrc": "cards/hgss2-002-high.png"
+    "imageHighSrc": "cards/hgss2-002-high.png",
+    "attacks": [
+      {
+        "name": "Hard Crush",
+        "damage": "50×"
+      },
+      {
+        "name": "Mantle Bazooka",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "6737",
-    "externalId": null,
+    "externalId": "hgss2-1",
     "tcgdex_id": "hgss2-1",
     "localId": "001",
     "setCode": "hgss2",
     "setTcgdexId": "hgss2",
-    "cardNumber": "001/95",
+    "cardNumber": "1/95",
     "cardName": "Jirachi",
-    "fullDisplayName": "Jirachi 001/95 Unleashed",
+    "fullDisplayName": "Jirachi 1/95 Unleashed",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3127,6 +3873,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgss2-001-low.png",
-    "imageHighSrc": "cards/hgss2-001-high.png"
+    "imageHighSrc": "cards/hgss2-001-high.png",
+    "attacks": [
+      {
+        "name": "Time Hollow",
+        "damage": null
+      }
+    ]
   }
 ]

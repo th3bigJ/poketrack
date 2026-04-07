@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "2427",
-    "externalId": null,
+    "externalId": "bw2-98",
     "tcgdex_id": "bw2-98",
     "localId": "098",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "098/98",
+    "cardNumber": "98/98",
     "cardName": "Tornadus",
-    "fullDisplayName": "Tornadus 098/98 Emerging Powers",
+    "fullDisplayName": "Tornadus 98/98 Emerging Powers",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-098-low.png",
-    "imageHighSrc": "cards/bw2-098-high.png"
+    "imageHighSrc": "cards/bw2-098-high.png",
+    "attacks": [
+      {
+        "name": "Energy Wheel",
+        "damage": null
+      },
+      {
+        "name": "Hurricane",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2426",
-    "externalId": null,
+    "externalId": "bw2-97",
     "tcgdex_id": "bw2-97",
     "localId": "097",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "097/98",
+    "cardNumber": "97/98",
     "cardName": "Thundurus",
-    "fullDisplayName": "Thundurus 097/98 Emerging Powers",
+    "fullDisplayName": "Thundurus 97/98 Emerging Powers",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-097-low.png",
-    "imageHighSrc": "cards/bw2-097-high.png"
+    "imageHighSrc": "cards/bw2-097-high.png",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Disaster Volt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2425",
-    "externalId": null,
+    "externalId": "bw2-96",
     "tcgdex_id": "bw2-96",
     "localId": "096",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "096/98",
+    "cardNumber": "96/98",
     "cardName": "Recycle",
-    "fullDisplayName": "Recycle 096/98 Emerging Powers",
+    "fullDisplayName": "Recycle 96/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -92,18 +112,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-096-low.png",
-    "imageHighSrc": "cards/bw2-096-high.png"
+    "imageHighSrc": "cards/bw2-096-high.png",
+    "rules": "Flip a coin. If heads, put a card from your discard pile on top of your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2424",
-    "externalId": null,
+    "externalId": "bw2-95",
     "tcgdex_id": "bw2-95",
     "localId": "095",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "095/98",
+    "cardNumber": "95/98",
     "cardName": "Pokémon Catcher",
-    "fullDisplayName": "Pokémon Catcher 095/98 Emerging Powers",
+    "fullDisplayName": "Pokémon Catcher 95/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -121,18 +142,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-095-low.png",
-    "imageHighSrc": "cards/bw2-095-high.png"
+    "imageHighSrc": "cards/bw2-095-high.png",
+    "rules": "Switch your opponent's Active Pokémon with 1 of his or her Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2423",
-    "externalId": null,
+    "externalId": "bw2-94",
     "tcgdex_id": "bw2-94",
     "localId": "094",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "094/98",
+    "cardNumber": "94/98",
     "cardName": "Max Potion",
-    "fullDisplayName": "Max Potion 094/98 Emerging Powers",
+    "fullDisplayName": "Max Potion 94/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -150,18 +172,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-094-low.png",
-    "imageHighSrc": "cards/bw2-094-high.png"
+    "imageHighSrc": "cards/bw2-094-high.png",
+    "rules": "Heal all damage from 1 of your Pokémon. Then, discard all Energy attached to that Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2422",
-    "externalId": null,
+    "externalId": "bw2-93",
     "tcgdex_id": "bw2-93",
     "localId": "093",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "093/98",
+    "cardNumber": "93/98",
     "cardName": "Great Ball",
-    "fullDisplayName": "Great Ball 093/98 Emerging Powers",
+    "fullDisplayName": "Great Ball 93/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -179,18 +202,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-093-low.png",
-    "imageHighSrc": "cards/bw2-093-high.png"
+    "imageHighSrc": "cards/bw2-093-high.png",
+    "rules": "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2421",
-    "externalId": null,
+    "externalId": "bw2-92",
     "tcgdex_id": "bw2-92",
     "localId": "092",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "092/98",
+    "cardNumber": "92/98",
     "cardName": "Crushing Hammer",
-    "fullDisplayName": "Crushing Hammer 092/98 Emerging Powers",
+    "fullDisplayName": "Crushing Hammer 92/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -208,18 +232,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-092-low.png",
-    "imageHighSrc": "cards/bw2-092-high.png"
+    "imageHighSrc": "cards/bw2-092-high.png",
+    "rules": "Flip a coin. If heads, discard an Energy attached to 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2420",
-    "externalId": null,
+    "externalId": "bw2-91",
     "tcgdex_id": "bw2-91",
     "localId": "091",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "091/98",
+    "cardNumber": "91/98",
     "cardName": "Cheren",
-    "fullDisplayName": "Cheren 091/98 Emerging Powers",
+    "fullDisplayName": "Cheren 91/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -237,18 +262,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-091-low.png",
-    "imageHighSrc": "cards/bw2-091-high.png"
+    "imageHighSrc": "cards/bw2-091-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2419",
-    "externalId": null,
+    "externalId": "bw2-90",
     "tcgdex_id": "bw2-90",
     "localId": "090",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "090/98",
+    "cardNumber": "90/98",
     "cardName": "Bianca",
-    "fullDisplayName": "Bianca 090/98 Emerging Powers",
+    "fullDisplayName": "Bianca 90/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -266,18 +292,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-090-low.png",
-    "imageHighSrc": "cards/bw2-090-high.png"
+    "imageHighSrc": "cards/bw2-090-high.png",
+    "rules": "Draw cards until you have 6 cards in your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2418",
-    "externalId": null,
+    "externalId": "bw2-89",
     "tcgdex_id": "bw2-89",
     "localId": "089",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "089/98",
+    "cardNumber": "89/98",
     "cardName": "Tornadus",
-    "fullDisplayName": "Tornadus 089/98 Emerging Powers",
+    "fullDisplayName": "Tornadus 89/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -299,18 +326,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-089-low.png",
-    "imageHighSrc": "cards/bw2-089-high.png"
+    "imageHighSrc": "cards/bw2-089-high.png",
+    "attacks": [
+      {
+        "name": "Energy Wheel",
+        "damage": null
+      },
+      {
+        "name": "Hurricane",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2417",
-    "externalId": null,
+    "externalId": "bw2-88",
     "tcgdex_id": "bw2-88",
     "localId": "088",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "088/98",
+    "cardNumber": "88/98",
     "cardName": "Braviary",
-    "fullDisplayName": "Braviary 088/98 Emerging Powers",
+    "fullDisplayName": "Braviary 88/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -332,18 +369,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-088-low.png",
-    "imageHighSrc": "cards/bw2-088-high.png"
+    "imageHighSrc": "cards/bw2-088-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "40"
+      },
+      {
+        "name": "Brave Bird",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2416",
-    "externalId": null,
+    "externalId": "bw2-87",
     "tcgdex_id": "bw2-87",
     "localId": "087",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "087/98",
+    "cardNumber": "87/98",
     "cardName": "Rufflet",
-    "fullDisplayName": "Rufflet 087/98 Emerging Powers",
+    "fullDisplayName": "Rufflet 87/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -365,18 +412,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-087-low.png",
-    "imageHighSrc": "cards/bw2-087-high.png"
+    "imageHighSrc": "cards/bw2-087-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Claw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2415",
-    "externalId": null,
+    "externalId": "bw2-86",
     "tcgdex_id": "bw2-86",
     "localId": "086",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "086/98",
+    "cardNumber": "86/98",
     "cardName": "Rufflet",
-    "fullDisplayName": "Rufflet 086/98 Emerging Powers",
+    "fullDisplayName": "Rufflet 86/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -398,18 +455,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-086-low.png",
-    "imageHighSrc": "cards/bw2-086-high.png"
+    "imageHighSrc": "cards/bw2-086-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2414",
-    "externalId": null,
+    "externalId": "bw2-85",
     "tcgdex_id": "bw2-85",
     "localId": "085",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "085/98",
+    "cardNumber": "85/98",
     "cardName": "Cinccino",
-    "fullDisplayName": "Cinccino 085/98 Emerging Powers",
+    "fullDisplayName": "Cinccino 85/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -431,18 +498,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-085-low.png",
-    "imageHighSrc": "cards/bw2-085-high.png"
+    "imageHighSrc": "cards/bw2-085-high.png",
+    "attacks": [
+      {
+        "name": "Captivate",
+        "damage": null
+      },
+      {
+        "name": "Fluffy Tail",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2413",
-    "externalId": null,
+    "externalId": "bw2-84",
     "tcgdex_id": "bw2-84",
     "localId": "084",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "084/98",
+    "cardNumber": "84/98",
     "cardName": "Minccino",
-    "fullDisplayName": "Minccino 084/98 Emerging Powers",
+    "fullDisplayName": "Minccino 84/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -464,18 +541,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-084-low.png",
-    "imageHighSrc": "cards/bw2-084-high.png"
+    "imageHighSrc": "cards/bw2-084-high.png",
+    "attacks": [
+      {
+        "name": "Last Resort",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2412",
-    "externalId": null,
+    "externalId": "bw2-83",
     "tcgdex_id": "bw2-83",
     "localId": "083",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "083/98",
+    "cardNumber": "83/98",
     "cardName": "Audino",
-    "fullDisplayName": "Audino 083/98 Emerging Powers",
+    "fullDisplayName": "Audino 83/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -497,18 +580,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-083-low.png",
-    "imageHighSrc": "cards/bw2-083-high.png"
+    "imageHighSrc": "cards/bw2-083-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Slap",
+        "damage": "40×"
+      },
+      {
+        "name": "Heal Pulse",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2411",
-    "externalId": null,
+    "externalId": "bw2-82",
     "tcgdex_id": "bw2-82",
     "localId": "082",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "082/98",
+    "cardNumber": "82/98",
     "cardName": "Unfezant",
-    "fullDisplayName": "Unfezant 082/98 Emerging Powers",
+    "fullDisplayName": "Unfezant 82/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -530,18 +623,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-082-low.png",
-    "imageHighSrc": "cards/bw2-082-high.png"
+    "imageHighSrc": "cards/bw2-082-high.png",
+    "attacks": [
+      {
+        "name": "Tailwind",
+        "damage": null
+      },
+      {
+        "name": "Feather Strike",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2410",
-    "externalId": null,
+    "externalId": "bw2-81",
     "tcgdex_id": "bw2-81",
     "localId": "081",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "081/98",
+    "cardNumber": "81/98",
     "cardName": "Tranquill",
-    "fullDisplayName": "Tranquill 081/98 Emerging Powers",
+    "fullDisplayName": "Tranquill 81/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -563,18 +666,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-081-low.png",
-    "imageHighSrc": "cards/bw2-081-high.png"
+    "imageHighSrc": "cards/bw2-081-high.png",
+    "attacks": [
+      {
+        "name": "Claw",
+        "damage": "30"
+      },
+      {
+        "name": "Wing Attack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2409",
-    "externalId": null,
+    "externalId": "bw2-80",
     "tcgdex_id": "bw2-80",
     "localId": "080",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "080/98",
+    "cardNumber": "80/98",
     "cardName": "Pidove",
-    "fullDisplayName": "Pidove 080/98 Emerging Powers",
+    "fullDisplayName": "Pidove 80/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -596,18 +709,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-080-low.png",
-    "imageHighSrc": "cards/bw2-080-high.png"
+    "imageHighSrc": "cards/bw2-080-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2408",
-    "externalId": null,
+    "externalId": "bw2-79",
     "tcgdex_id": "bw2-79",
     "localId": "079",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "079/98",
+    "cardNumber": "79/98",
     "cardName": "Watchog",
-    "fullDisplayName": "Watchog 079/98 Emerging Powers",
+    "fullDisplayName": "Watchog 79/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -629,18 +748,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-079-low.png",
-    "imageHighSrc": "cards/bw2-079-high.png"
+    "imageHighSrc": "cards/bw2-079-high.png",
+    "attacks": [
+      {
+        "name": "Watcheck",
+        "damage": null
+      },
+      {
+        "name": "Quick Tail Smash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2407",
-    "externalId": null,
+    "externalId": "bw2-78",
     "tcgdex_id": "bw2-78",
     "localId": "078",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "078/98",
+    "cardNumber": "78/98",
     "cardName": "Patrat",
-    "fullDisplayName": "Patrat 078/98 Emerging Powers",
+    "fullDisplayName": "Patrat 78/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -662,18 +791,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-078-low.png",
-    "imageHighSrc": "cards/bw2-078-high.png"
+    "imageHighSrc": "cards/bw2-078-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Fang",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2406",
-    "externalId": null,
+    "externalId": "bw2-77",
     "tcgdex_id": "bw2-77",
     "localId": "077",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "077/98",
+    "cardNumber": "77/98",
     "cardName": "Cobalion",
-    "fullDisplayName": "Cobalion 077/98 Emerging Powers",
+    "fullDisplayName": "Cobalion 77/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -695,18 +830,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-077-low.png",
-    "imageHighSrc": "cards/bw2-077-high.png"
+    "imageHighSrc": "cards/bw2-077-high.png",
+    "attacks": [
+      {
+        "name": "Metal Horns",
+        "damage": "30"
+      },
+      {
+        "name": "Sacred Sword",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "2405",
-    "externalId": null,
+    "externalId": "bw2-76",
     "tcgdex_id": "bw2-76",
     "localId": "076",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "076/98",
+    "cardNumber": "76/98",
     "cardName": "Klinklang",
-    "fullDisplayName": "Klinklang 076/98 Emerging Powers",
+    "fullDisplayName": "Klinklang 76/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -728,18 +873,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-076-low.png",
-    "imageHighSrc": "cards/bw2-076-high.png"
+    "imageHighSrc": "cards/bw2-076-high.png",
+    "attacks": [
+      {
+        "name": "Charge Beam",
+        "damage": "30"
+      },
+      {
+        "name": "Zap Cannon",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2404",
-    "externalId": null,
+    "externalId": "bw2-75",
     "tcgdex_id": "bw2-75",
     "localId": "075",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "075/98",
+    "cardNumber": "75/98",
     "cardName": "Klang",
-    "fullDisplayName": "Klang 075/98 Emerging Powers",
+    "fullDisplayName": "Klang 75/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -761,18 +916,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-075-low.png",
-    "imageHighSrc": "cards/bw2-075-high.png"
+    "imageHighSrc": "cards/bw2-075-high.png",
+    "attacks": [
+      {
+        "name": "Metal Sound",
+        "damage": null
+      },
+      {
+        "name": "Guard Press",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2403",
-    "externalId": null,
+    "externalId": "bw2-74",
     "tcgdex_id": "bw2-74",
     "localId": "074",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "074/98",
+    "cardNumber": "74/98",
     "cardName": "Klink",
-    "fullDisplayName": "Klink 074/98 Emerging Powers",
+    "fullDisplayName": "Klink 74/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -794,18 +959,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-074-low.png",
-    "imageHighSrc": "cards/bw2-074-high.png"
+    "imageHighSrc": "cards/bw2-074-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Gear Grind",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "2402",
-    "externalId": null,
+    "externalId": "bw2-73",
     "tcgdex_id": "bw2-73",
     "localId": "073",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "073/98",
+    "cardNumber": "73/98",
     "cardName": "Ferrothorn",
-    "fullDisplayName": "Ferrothorn 073/98 Emerging Powers",
+    "fullDisplayName": "Ferrothorn 73/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -827,18 +1002,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-073-low.png",
-    "imageHighSrc": "cards/bw2-073-high.png"
+    "imageHighSrc": "cards/bw2-073-high.png",
+    "attacks": [
+      {
+        "name": "Iron Defense",
+        "damage": null
+      },
+      {
+        "name": "Power Whip",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2401",
-    "externalId": null,
+    "externalId": "bw2-72",
     "tcgdex_id": "bw2-72",
     "localId": "072",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "072/98",
+    "cardNumber": "72/98",
     "cardName": "Ferrothorn",
-    "fullDisplayName": "Ferrothorn 072/98 Emerging Powers",
+    "fullDisplayName": "Ferrothorn 72/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -860,18 +1045,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-072-low.png",
-    "imageHighSrc": "cards/bw2-072-high.png"
+    "imageHighSrc": "cards/bw2-072-high.png",
+    "attacks": [
+      {
+        "name": "Steel Feelers",
+        "damage": "30×"
+      },
+      {
+        "name": "Gyro Ball",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2400",
-    "externalId": null,
+    "externalId": "bw2-71",
     "tcgdex_id": "bw2-71",
     "localId": "071",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "071/98",
+    "cardNumber": "71/98",
     "cardName": "Ferroseed",
-    "fullDisplayName": "Ferroseed 071/98 Emerging Powers",
+    "fullDisplayName": "Ferroseed 71/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -893,18 +1088,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-071-low.png",
-    "imageHighSrc": "cards/bw2-071-high.png"
+    "imageHighSrc": "cards/bw2-071-high.png",
+    "attacks": [
+      {
+        "name": "Pierce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2399",
-    "externalId": null,
+    "externalId": "bw2-70",
     "tcgdex_id": "bw2-70",
     "localId": "070",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "070/98",
+    "cardNumber": "70/98",
     "cardName": "Ferroseed",
-    "fullDisplayName": "Ferroseed 070/98 Emerging Powers",
+    "fullDisplayName": "Ferroseed 70/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -926,18 +1127,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-070-low.png",
-    "imageHighSrc": "cards/bw2-070-high.png"
+    "imageHighSrc": "cards/bw2-070-high.png",
+    "attacks": [
+      {
+        "name": "Pin Missile",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2398",
-    "externalId": null,
+    "externalId": "bw2-69",
     "tcgdex_id": "bw2-69",
     "localId": "069",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "069/98",
+    "cardNumber": "69/98",
     "cardName": "Mandibuzz",
-    "fullDisplayName": "Mandibuzz 069/98 Emerging Powers",
+    "fullDisplayName": "Mandibuzz 69/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -959,18 +1166,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-069-low.png",
-    "imageHighSrc": "cards/bw2-069-high.png"
+    "imageHighSrc": "cards/bw2-069-high.png",
+    "attacks": [
+      {
+        "name": "Bone Rush",
+        "damage": "30×"
+      },
+      {
+        "name": "Dark Pulse",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2397",
-    "externalId": null,
+    "externalId": "bw2-68",
     "tcgdex_id": "bw2-68",
     "localId": "068",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "068/98",
+    "cardNumber": "68/98",
     "cardName": "Vullaby",
-    "fullDisplayName": "Vullaby 068/98 Emerging Powers",
+    "fullDisplayName": "Vullaby 68/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -992,18 +1209,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-068-low.png",
-    "imageHighSrc": "cards/bw2-068-high.png"
+    "imageHighSrc": "cards/bw2-068-high.png",
+    "attacks": [
+      {
+        "name": "Rear Guard",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2396",
-    "externalId": null,
+    "externalId": "bw2-67",
     "tcgdex_id": "bw2-67",
     "localId": "067",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "067/98",
+    "cardNumber": "67/98",
     "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark 067/98 Emerging Powers",
+    "fullDisplayName": "Zoroark 67/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1025,18 +1252,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-067-low.png",
-    "imageHighSrc": "cards/bw2-067-high.png"
+    "imageHighSrc": "cards/bw2-067-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      },
+      {
+        "name": "Night Daze",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2395",
-    "externalId": null,
+    "externalId": "bw2-66",
     "tcgdex_id": "bw2-66",
     "localId": "066",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "066/98",
+    "cardNumber": "66/98",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 066/98 Emerging Powers",
+    "fullDisplayName": "Zorua 66/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1058,18 +1295,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-066-low.png",
-    "imageHighSrc": "cards/bw2-066-high.png"
+    "imageHighSrc": "cards/bw2-066-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Rising Lunge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2394",
-    "externalId": null,
+    "externalId": "bw2-65",
     "tcgdex_id": "bw2-65",
     "localId": "065",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "065/98",
+    "cardNumber": "65/98",
     "cardName": "Liepard",
-    "fullDisplayName": "Liepard 065/98 Emerging Powers",
+    "fullDisplayName": "Liepard 65/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1091,18 +1338,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-065-low.png",
-    "imageHighSrc": "cards/bw2-065-high.png"
+    "imageHighSrc": "cards/bw2-065-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      },
+      {
+        "name": "Claw Rend",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2393",
-    "externalId": null,
+    "externalId": "bw2-64",
     "tcgdex_id": "bw2-64",
     "localId": "064",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "064/98",
+    "cardNumber": "64/98",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 064/98 Emerging Powers",
+    "fullDisplayName": "Purrloin 64/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1124,18 +1381,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-064-low.png",
-    "imageHighSrc": "cards/bw2-064-high.png"
+    "imageHighSrc": "cards/bw2-064-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2392",
-    "externalId": null,
+    "externalId": "bw2-63",
     "tcgdex_id": "bw2-63",
     "localId": "063",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "063/98",
+    "cardNumber": "63/98",
     "cardName": "Terrakion",
-    "fullDisplayName": "Terrakion 063/98 Emerging Powers",
+    "fullDisplayName": "Terrakion 63/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1157,18 +1420,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-063-low.png",
-    "imageHighSrc": "cards/bw2-063-high.png"
+    "imageHighSrc": "cards/bw2-063-high.png",
+    "attacks": [
+      {
+        "name": "Boulder Crush",
+        "damage": "40"
+      },
+      {
+        "name": "Sacred Sword",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "2391",
-    "externalId": null,
+    "externalId": "bw2-62",
     "tcgdex_id": "bw2-62",
     "localId": "062",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "062/98",
+    "cardNumber": "62/98",
     "cardName": "Krookodile",
-    "fullDisplayName": "Krookodile 062/98 Emerging Powers",
+    "fullDisplayName": "Krookodile 62/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1190,18 +1463,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-062-low.png",
-    "imageHighSrc": "cards/bw2-062-high.png"
+    "imageHighSrc": "cards/bw2-062-high.png",
+    "attacks": [
+      {
+        "name": "Thrash",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "2390",
-    "externalId": null,
+    "externalId": "bw2-61",
     "tcgdex_id": "bw2-61",
     "localId": "061",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "061/98",
+    "cardNumber": "61/98",
     "cardName": "Krokorok",
-    "fullDisplayName": "Krokorok 061/98 Emerging Powers",
+    "fullDisplayName": "Krokorok 61/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1223,18 +1502,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-061-low.png",
-    "imageHighSrc": "cards/bw2-061-high.png"
+    "imageHighSrc": "cards/bw2-061-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Crunch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2389",
-    "externalId": null,
+    "externalId": "bw2-60",
     "tcgdex_id": "bw2-60",
     "localId": "060",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "060/98",
+    "cardNumber": "60/98",
     "cardName": "Sandile",
-    "fullDisplayName": "Sandile 060/98 Emerging Powers",
+    "fullDisplayName": "Sandile 60/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1256,18 +1545,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-060-low.png",
-    "imageHighSrc": "cards/bw2-060-high.png"
+    "imageHighSrc": "cards/bw2-060-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2388",
-    "externalId": null,
+    "externalId": "bw2-59",
     "tcgdex_id": "bw2-59",
     "localId": "059",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "059/98",
+    "cardNumber": "59/98",
     "cardName": "Sawk",
-    "fullDisplayName": "Sawk 059/98 Emerging Powers",
+    "fullDisplayName": "Sawk 59/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1289,18 +1584,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-059-low.png",
-    "imageHighSrc": "cards/bw2-059-high.png"
+    "imageHighSrc": "cards/bw2-059-high.png",
+    "attacks": [
+      {
+        "name": "Five Fierce Chops",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2387",
-    "externalId": null,
+    "externalId": "bw2-58",
     "tcgdex_id": "bw2-58",
     "localId": "058",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "058/98",
+    "cardNumber": "58/98",
     "cardName": "Throh",
-    "fullDisplayName": "Throh 058/98 Emerging Powers",
+    "fullDisplayName": "Throh 58/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1322,18 +1623,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-058-low.png",
-    "imageHighSrc": "cards/bw2-058-high.png"
+    "imageHighSrc": "cards/bw2-058-high.png",
+    "attacks": [
+      {
+        "name": "Scarf Hold",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2386",
-    "externalId": null,
+    "externalId": "bw2-57",
     "tcgdex_id": "bw2-57",
     "localId": "057",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "057/98",
+    "cardNumber": "57/98",
     "cardName": "Excadrill",
-    "fullDisplayName": "Excadrill 057/98 Emerging Powers",
+    "fullDisplayName": "Excadrill 57/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1355,18 +1662,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-057-low.png",
-    "imageHighSrc": "cards/bw2-057-high.png"
+    "imageHighSrc": "cards/bw2-057-high.png",
+    "attacks": [
+      {
+        "name": "Dig",
+        "damage": "30"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2385",
-    "externalId": null,
+    "externalId": "bw2-56",
     "tcgdex_id": "bw2-56",
     "localId": "056",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "056/98",
+    "cardNumber": "56/98",
     "cardName": "Excadrill",
-    "fullDisplayName": "Excadrill 056/98 Emerging Powers",
+    "fullDisplayName": "Excadrill 56/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1388,18 +1705,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-056-low.png",
-    "imageHighSrc": "cards/bw2-056-high.png"
+    "imageHighSrc": "cards/bw2-056-high.png",
+    "attacks": [
+      {
+        "name": "Metal Claw",
+        "damage": "30"
+      },
+      {
+        "name": "Drill Run",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2384",
-    "externalId": null,
+    "externalId": "bw2-55",
     "tcgdex_id": "bw2-55",
     "localId": "055",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "055/98",
+    "cardNumber": "55/98",
     "cardName": "Drilbur",
-    "fullDisplayName": "Drilbur 055/98 Emerging Powers",
+    "fullDisplayName": "Drilbur 55/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1421,18 +1748,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-055-low.png",
-    "imageHighSrc": "cards/bw2-055-high.png"
+    "imageHighSrc": "cards/bw2-055-high.png",
+    "attacks": [
+      {
+        "name": "Mud-Slap",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2383",
-    "externalId": null,
+    "externalId": "bw2-54",
     "tcgdex_id": "bw2-54",
     "localId": "054",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "054/98",
+    "cardNumber": "54/98",
     "cardName": "Drilbur",
-    "fullDisplayName": "Drilbur 054/98 Emerging Powers",
+    "fullDisplayName": "Drilbur 54/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1454,18 +1787,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-054-low.png",
-    "imageHighSrc": "cards/bw2-054-high.png"
+    "imageHighSrc": "cards/bw2-054-high.png",
+    "attacks": [
+      {
+        "name": "Hone Claws",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2382",
-    "externalId": null,
+    "externalId": "bw2-53",
     "tcgdex_id": "bw2-53",
     "localId": "053",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "053/98",
+    "cardNumber": "53/98",
     "cardName": "Gigalith",
-    "fullDisplayName": "Gigalith 053/98 Emerging Powers",
+    "fullDisplayName": "Gigalith 53/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1487,18 +1830,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-053-low.png",
-    "imageHighSrc": "cards/bw2-053-high.png"
+    "imageHighSrc": "cards/bw2-053-high.png",
+    "attacks": [
+      {
+        "name": "Shear",
+        "damage": null
+      },
+      {
+        "name": "Rock Bullet",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2381",
-    "externalId": null,
+    "externalId": "bw2-52",
     "tcgdex_id": "bw2-52",
     "localId": "052",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "052/98",
+    "cardNumber": "52/98",
     "cardName": "Boldore",
-    "fullDisplayName": "Boldore 052/98 Emerging Powers",
+    "fullDisplayName": "Boldore 52/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1520,18 +1873,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-052-low.png",
-    "imageHighSrc": "cards/bw2-052-high.png"
+    "imageHighSrc": "cards/bw2-052-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      },
+      {
+        "name": "Hard Crash",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2380",
-    "externalId": null,
+    "externalId": "bw2-51",
     "tcgdex_id": "bw2-51",
     "localId": "051",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "051/98",
+    "cardNumber": "51/98",
     "cardName": "Boldore",
-    "fullDisplayName": "Boldore 051/98 Emerging Powers",
+    "fullDisplayName": "Boldore 51/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1553,18 +1916,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-051-low.png",
-    "imageHighSrc": "cards/bw2-051-high.png"
+    "imageHighSrc": "cards/bw2-051-high.png",
+    "attacks": [
+      {
+        "name": "Smack Down",
+        "damage": "20+"
+      },
+      {
+        "name": "Power Gem",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2379",
-    "externalId": null,
+    "externalId": "bw2-50",
     "tcgdex_id": "bw2-50",
     "localId": "050",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "050/98",
+    "cardNumber": "50/98",
     "cardName": "Roggenrola",
-    "fullDisplayName": "Roggenrola 050/98 Emerging Powers",
+    "fullDisplayName": "Roggenrola 50/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1586,18 +1959,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-050-low.png",
-    "imageHighSrc": "cards/bw2-050-high.png"
+    "imageHighSrc": "cards/bw2-050-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2378",
-    "externalId": null,
+    "externalId": "bw2-49",
     "tcgdex_id": "bw2-49",
     "localId": "049",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "049/98",
+    "cardNumber": "49/98",
     "cardName": "Roggenrola",
-    "fullDisplayName": "Roggenrola 049/98 Emerging Powers",
+    "fullDisplayName": "Roggenrola 49/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1619,18 +2002,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-049-low.png",
-    "imageHighSrc": "cards/bw2-049-high.png"
+    "imageHighSrc": "cards/bw2-049-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2377",
-    "externalId": null,
+    "externalId": "bw2-48",
     "tcgdex_id": "bw2-48",
     "localId": "048",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "048/98",
+    "cardNumber": "48/98",
     "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 048/98 Emerging Powers",
+    "fullDisplayName": "Gothitelle 48/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1652,18 +2045,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-048-low.png",
-    "imageHighSrc": "cards/bw2-048-high.png"
+    "imageHighSrc": "cards/bw2-048-high.png",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "30"
+      },
+      {
+        "name": "Mental Shock",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2376",
-    "externalId": null,
+    "externalId": "bw2-47",
     "tcgdex_id": "bw2-47",
     "localId": "047",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "047/98",
+    "cardNumber": "47/98",
     "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 047/98 Emerging Powers",
+    "fullDisplayName": "Gothitelle 47/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1685,18 +2088,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-047-low.png",
-    "imageHighSrc": "cards/bw2-047-high.png"
+    "imageHighSrc": "cards/bw2-047-high.png",
+    "attacks": [
+      {
+        "name": "Madkinesis",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2375",
-    "externalId": null,
+    "externalId": "bw2-46",
     "tcgdex_id": "bw2-46",
     "localId": "046",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "046/98",
+    "cardNumber": "46/98",
     "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 046/98 Emerging Powers",
+    "fullDisplayName": "Gothorita 46/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1718,18 +2127,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-046-low.png",
-    "imageHighSrc": "cards/bw2-046-high.png"
+    "imageHighSrc": "cards/bw2-046-high.png",
+    "attacks": [
+      {
+        "name": "Deleting Glare",
+        "damage": null
+      },
+      {
+        "name": "Super Psy Bolt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2374",
-    "externalId": null,
+    "externalId": "bw2-45",
     "tcgdex_id": "bw2-45",
     "localId": "045",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "045/98",
+    "cardNumber": "45/98",
     "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 045/98 Emerging Powers",
+    "fullDisplayName": "Gothorita 45/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1751,18 +2170,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-045-low.png",
-    "imageHighSrc": "cards/bw2-045-high.png"
+    "imageHighSrc": "cards/bw2-045-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "20×"
+      },
+      {
+        "name": "Psybeam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2373",
-    "externalId": null,
+    "externalId": "bw2-44",
     "tcgdex_id": "bw2-44",
     "localId": "044",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "044/98",
+    "cardNumber": "44/98",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 044/98 Emerging Powers",
+    "fullDisplayName": "Gothita 44/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1784,18 +2213,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-044-low.png",
-    "imageHighSrc": "cards/bw2-044-high.png"
+    "imageHighSrc": "cards/bw2-044-high.png",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2372",
-    "externalId": null,
+    "externalId": "bw2-43",
     "tcgdex_id": "bw2-43",
     "localId": "043",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "043/98",
+    "cardNumber": "43/98",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 043/98 Emerging Powers",
+    "fullDisplayName": "Gothita 43/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1817,18 +2252,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-043-low.png",
-    "imageHighSrc": "cards/bw2-043-high.png"
+    "imageHighSrc": "cards/bw2-043-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Gaze",
+        "damage": null
+      },
+      {
+        "name": "Double Slap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2371",
-    "externalId": null,
+    "externalId": "bw2-42",
     "tcgdex_id": "bw2-42",
     "localId": "042",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "042/98",
+    "cardNumber": "42/98",
     "cardName": "Sigilyph",
-    "fullDisplayName": "Sigilyph 042/98 Emerging Powers",
+    "fullDisplayName": "Sigilyph 42/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1850,18 +2295,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-042-low.png",
-    "imageHighSrc": "cards/bw2-042-high.png"
+    "imageHighSrc": "cards/bw2-042-high.png",
+    "attacks": [
+      {
+        "name": "Quick Turn",
+        "damage": "10×"
+      },
+      {
+        "name": "Psychic Assault",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2370",
-    "externalId": null,
+    "externalId": "bw2-41",
     "tcgdex_id": "bw2-41",
     "localId": "041",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "041/98",
+    "cardNumber": "41/98",
     "cardName": "Sigilyph",
-    "fullDisplayName": "Sigilyph 041/98 Emerging Powers",
+    "fullDisplayName": "Sigilyph 41/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1883,18 +2338,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-041-low.png",
-    "imageHighSrc": "cards/bw2-041-high.png"
+    "imageHighSrc": "cards/bw2-041-high.png",
+    "attacks": [
+      {
+        "name": "Reflect",
+        "damage": null
+      },
+      {
+        "name": "Telekinesis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2369",
-    "externalId": null,
+    "externalId": "bw2-40",
     "tcgdex_id": "bw2-40",
     "localId": "040",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "040/98",
+    "cardNumber": "40/98",
     "cardName": "Scolipede",
-    "fullDisplayName": "Scolipede 040/98 Emerging Powers",
+    "fullDisplayName": "Scolipede 40/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1916,18 +2381,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-040-low.png",
-    "imageHighSrc": "cards/bw2-040-high.png"
+    "imageHighSrc": "cards/bw2-040-high.png",
+    "attacks": [
+      {
+        "name": "Toxic Claws",
+        "damage": "30"
+      },
+      {
+        "name": "Wild Horn",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2368",
-    "externalId": null,
+    "externalId": "bw2-39",
     "tcgdex_id": "bw2-39",
     "localId": "039",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "039/98",
+    "cardNumber": "39/98",
     "cardName": "Whirlipede",
-    "fullDisplayName": "Whirlipede 039/98 Emerging Powers",
+    "fullDisplayName": "Whirlipede 39/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1949,18 +2424,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-039-low.png",
-    "imageHighSrc": "cards/bw2-039-high.png"
+    "imageHighSrc": "cards/bw2-039-high.png",
+    "attacks": [
+      {
+        "name": "Venoshock",
+        "damage": "10+"
+      },
+      {
+        "name": "Steamroller",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2367",
-    "externalId": null,
+    "externalId": "bw2-38",
     "tcgdex_id": "bw2-38",
     "localId": "038",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "038/98",
+    "cardNumber": "38/98",
     "cardName": "Venipede",
-    "fullDisplayName": "Venipede 038/98 Emerging Powers",
+    "fullDisplayName": "Venipede 38/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1982,18 +2467,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-038-low.png",
-    "imageHighSrc": "cards/bw2-038-high.png"
+    "imageHighSrc": "cards/bw2-038-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2366",
-    "externalId": null,
+    "externalId": "bw2-37",
     "tcgdex_id": "bw2-37",
     "localId": "037",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "037/98",
+    "cardNumber": "37/98",
     "cardName": "Swoobat",
-    "fullDisplayName": "Swoobat 037/98 Emerging Powers",
+    "fullDisplayName": "Swoobat 37/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2015,18 +2510,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-037-low.png",
-    "imageHighSrc": "cards/bw2-037-high.png"
+    "imageHighSrc": "cards/bw2-037-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "30"
+      },
+      {
+        "name": "Phat Sound",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2365",
-    "externalId": null,
+    "externalId": "bw2-36",
     "tcgdex_id": "bw2-36",
     "localId": "036",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "036/98",
+    "cardNumber": "36/98",
     "cardName": "Woobat",
-    "fullDisplayName": "Woobat 036/98 Emerging Powers",
+    "fullDisplayName": "Woobat 36/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2048,18 +2553,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-036-low.png",
-    "imageHighSrc": "cards/bw2-036-high.png"
+    "imageHighSrc": "cards/bw2-036-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2364",
-    "externalId": null,
+    "externalId": "bw2-35",
     "tcgdex_id": "bw2-35",
     "localId": "035",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "035/98",
+    "cardNumber": "35/98",
     "cardName": "Thundurus",
-    "fullDisplayName": "Thundurus 035/98 Emerging Powers",
+    "fullDisplayName": "Thundurus 35/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2081,18 +2592,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-035-low.png",
-    "imageHighSrc": "cards/bw2-035-high.png"
+    "imageHighSrc": "cards/bw2-035-high.png",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Disaster Volt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2363",
-    "externalId": null,
+    "externalId": "bw2-34",
     "tcgdex_id": "bw2-34",
     "localId": "034",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "034/98",
+    "cardNumber": "34/98",
     "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 034/98 Emerging Powers",
+    "fullDisplayName": "Galvantula 34/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2114,18 +2635,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-034-low.png",
-    "imageHighSrc": "cards/bw2-034-high.png"
+    "imageHighSrc": "cards/bw2-034-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      },
+      {
+        "name": "Stun Needle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2362",
-    "externalId": null,
+    "externalId": "bw2-33",
     "tcgdex_id": "bw2-33",
     "localId": "033",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "033/98",
+    "cardNumber": "33/98",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 033/98 Emerging Powers",
+    "fullDisplayName": "Joltik 33/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2147,18 +2678,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-033-low.png",
-    "imageHighSrc": "cards/bw2-033-high.png"
+    "imageHighSrc": "cards/bw2-033-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2361",
-    "externalId": null,
+    "externalId": "bw2-32",
     "tcgdex_id": "bw2-32",
     "localId": "032",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "032/98",
+    "cardNumber": "32/98",
     "cardName": "Emolga",
-    "fullDisplayName": "Emolga 032/98 Emerging Powers",
+    "fullDisplayName": "Emolga 32/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2180,18 +2717,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-032-low.png",
-    "imageHighSrc": "cards/bw2-032-high.png"
+    "imageHighSrc": "cards/bw2-032-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Acrobatics",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2360",
-    "externalId": null,
+    "externalId": "bw2-31",
     "tcgdex_id": "bw2-31",
     "localId": "031",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "031/98",
+    "cardNumber": "31/98",
     "cardName": "Beartic",
-    "fullDisplayName": "Beartic 031/98 Emerging Powers",
+    "fullDisplayName": "Beartic 31/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2213,18 +2760,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-031-low.png",
-    "imageHighSrc": "cards/bw2-031-high.png"
+    "imageHighSrc": "cards/bw2-031-high.png",
+    "attacks": [
+      {
+        "name": "Icy Wind",
+        "damage": "30"
+      },
+      {
+        "name": "Superpower",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2359",
-    "externalId": null,
+    "externalId": "bw2-30",
     "tcgdex_id": "bw2-30",
     "localId": "030",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "030/98",
+    "cardNumber": "30/98",
     "cardName": "Beartic",
-    "fullDisplayName": "Beartic 030/98 Emerging Powers",
+    "fullDisplayName": "Beartic 30/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2246,18 +2803,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-030-low.png",
-    "imageHighSrc": "cards/bw2-030-high.png"
+    "imageHighSrc": "cards/bw2-030-high.png",
+    "attacks": [
+      {
+        "name": "Sheer Cold",
+        "damage": "50"
+      },
+      {
+        "name": "Icicle Crash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2358",
-    "externalId": null,
+    "externalId": "bw2-29",
     "tcgdex_id": "bw2-29",
     "localId": "029",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "029/98",
+    "cardNumber": "29/98",
     "cardName": "Cubchoo",
-    "fullDisplayName": "Cubchoo 029/98 Emerging Powers",
+    "fullDisplayName": "Cubchoo 29/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2279,18 +2846,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-029-low.png",
-    "imageHighSrc": "cards/bw2-029-high.png"
+    "imageHighSrc": "cards/bw2-029-high.png",
+    "attacks": [
+      {
+        "name": "Icicle Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2357",
-    "externalId": null,
+    "externalId": "bw2-28",
     "tcgdex_id": "bw2-28",
     "localId": "028",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "028/98",
+    "cardNumber": "28/98",
     "cardName": "Cubchoo",
-    "fullDisplayName": "Cubchoo 028/98 Emerging Powers",
+    "fullDisplayName": "Cubchoo 28/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2312,18 +2885,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-028-low.png",
-    "imageHighSrc": "cards/bw2-028-high.png"
+    "imageHighSrc": "cards/bw2-028-high.png",
+    "attacks": [
+      {
+        "name": "Powder Snow",
+        "damage": "10"
+      },
+      {
+        "name": "Rest",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2356",
-    "externalId": null,
+    "externalId": "bw2-27",
     "tcgdex_id": "bw2-27",
     "localId": "027",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "027/98",
+    "cardNumber": "27/98",
     "cardName": "Swanna",
-    "fullDisplayName": "Swanna 027/98 Emerging Powers",
+    "fullDisplayName": "Swanna 27/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2345,18 +2928,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-027-low.png",
-    "imageHighSrc": "cards/bw2-027-high.png"
+    "imageHighSrc": "cards/bw2-027-high.png",
+    "attacks": [
+      {
+        "name": "Wing Dance",
+        "damage": "30"
+      },
+      {
+        "name": "Air Slash",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2355",
-    "externalId": null,
+    "externalId": "bw2-26",
     "tcgdex_id": "bw2-26",
     "localId": "026",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "026/98",
+    "cardNumber": "26/98",
     "cardName": "Ducklett",
-    "fullDisplayName": "Ducklett 026/98 Emerging Powers",
+    "fullDisplayName": "Ducklett 26/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2378,18 +2971,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-026-low.png",
-    "imageHighSrc": "cards/bw2-026-high.png"
+    "imageHighSrc": "cards/bw2-026-high.png",
+    "attacks": [
+      {
+        "name": "Roost",
+        "damage": null
+      },
+      {
+        "name": "Rain Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2354",
-    "externalId": null,
+    "externalId": "bw2-25",
     "tcgdex_id": "bw2-25",
     "localId": "025",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "025/98",
+    "cardNumber": "25/98",
     "cardName": "Basculin",
-    "fullDisplayName": "Basculin 025/98 Emerging Powers",
+    "fullDisplayName": "Basculin 25/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2411,18 +3014,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-025-low.png",
-    "imageHighSrc": "cards/bw2-025-high.png"
+    "imageHighSrc": "cards/bw2-025-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Splatter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2353",
-    "externalId": null,
+    "externalId": "bw2-24",
     "tcgdex_id": "bw2-24",
     "localId": "024",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "024/98",
+    "cardNumber": "24/98",
     "cardName": "Basculin",
-    "fullDisplayName": "Basculin 024/98 Emerging Powers",
+    "fullDisplayName": "Basculin 24/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2444,18 +3057,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-024-low.png",
-    "imageHighSrc": "cards/bw2-024-high.png"
+    "imageHighSrc": "cards/bw2-024-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Final Gambit",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2352",
-    "externalId": null,
+    "externalId": "bw2-23",
     "tcgdex_id": "bw2-23",
     "localId": "023",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "023/98",
+    "cardNumber": "23/98",
     "cardName": "Simipour",
-    "fullDisplayName": "Simipour 023/98 Emerging Powers",
+    "fullDisplayName": "Simipour 23/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2477,18 +3100,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-023-low.png",
-    "imageHighSrc": "cards/bw2-023-high.png"
+    "imageHighSrc": "cards/bw2-023-high.png",
+    "attacks": [
+      {
+        "name": "Grass' Power",
+        "damage": "30"
+      },
+      {
+        "name": "Rushing Water",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2351",
-    "externalId": null,
+    "externalId": "bw2-22",
     "tcgdex_id": "bw2-22",
     "localId": "022",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "022/98",
+    "cardNumber": "22/98",
     "cardName": "Panpour",
-    "fullDisplayName": "Panpour 022/98 Emerging Powers",
+    "fullDisplayName": "Panpour 22/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2510,18 +3143,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-022-low.png",
-    "imageHighSrc": "cards/bw2-022-high.png"
+    "imageHighSrc": "cards/bw2-022-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2350",
-    "externalId": null,
+    "externalId": "bw2-21",
     "tcgdex_id": "bw2-21",
     "localId": "021",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "021/98",
+    "cardNumber": "21/98",
     "cardName": "Darmanitan",
-    "fullDisplayName": "Darmanitan 021/98 Emerging Powers",
+    "fullDisplayName": "Darmanitan 21/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2543,18 +3186,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-021-low.png",
-    "imageHighSrc": "cards/bw2-021-high.png"
+    "imageHighSrc": "cards/bw2-021-high.png",
+    "attacks": [
+      {
+        "name": "Rock Smash",
+        "damage": "20+"
+      },
+      {
+        "name": "Fire Punch",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2349",
-    "externalId": null,
+    "externalId": "bw2-20",
     "tcgdex_id": "bw2-20",
     "localId": "020",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "020/98",
+    "cardNumber": "20/98",
     "cardName": "Darumaka",
-    "fullDisplayName": "Darumaka 020/98 Emerging Powers",
+    "fullDisplayName": "Darumaka 20/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2576,18 +3229,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-020-low.png",
-    "imageHighSrc": "cards/bw2-020-high.png"
+    "imageHighSrc": "cards/bw2-020-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Combustion",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2348",
-    "externalId": null,
+    "externalId": "bw2-19",
     "tcgdex_id": "bw2-19",
     "localId": "019",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "019/98",
+    "cardNumber": "19/98",
     "cardName": "Simisear",
-    "fullDisplayName": "Simisear 019/98 Emerging Powers",
+    "fullDisplayName": "Simisear 19/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2609,18 +3272,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-019-low.png",
-    "imageHighSrc": "cards/bw2-019-high.png"
+    "imageHighSrc": "cards/bw2-019-high.png",
+    "attacks": [
+      {
+        "name": "Water's Power",
+        "damage": "30"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2347",
-    "externalId": null,
+    "externalId": "bw2-18",
     "tcgdex_id": "bw2-18",
     "localId": "018",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "018/98",
+    "cardNumber": "18/98",
     "cardName": "Pansear",
-    "fullDisplayName": "Pansear 018/98 Emerging Powers",
+    "fullDisplayName": "Pansear 18/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2642,18 +3315,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-018-low.png",
-    "imageHighSrc": "cards/bw2-018-high.png"
+    "imageHighSrc": "cards/bw2-018-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2346",
-    "externalId": null,
+    "externalId": "bw2-17",
     "tcgdex_id": "bw2-17",
     "localId": "017",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "017/98",
+    "cardNumber": "17/98",
     "cardName": "Virizion",
-    "fullDisplayName": "Virizion 017/98 Emerging Powers",
+    "fullDisplayName": "Virizion 17/98 Emerging Powers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2675,18 +3358,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-017-low.png",
-    "imageHighSrc": "cards/bw2-017-high.png"
+    "imageHighSrc": "cards/bw2-017-high.png",
+    "attacks": [
+      {
+        "name": "Giga Drain",
+        "damage": "30"
+      },
+      {
+        "name": "Sacred Sword",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "2345",
-    "externalId": null,
+    "externalId": "bw2-16",
     "tcgdex_id": "bw2-16",
     "localId": "016",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "016/98",
+    "cardNumber": "16/98",
     "cardName": "Sawsbuck",
-    "fullDisplayName": "Sawsbuck 016/98 Emerging Powers",
+    "fullDisplayName": "Sawsbuck 16/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2708,18 +3401,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-016-low.png",
-    "imageHighSrc": "cards/bw2-016-high.png"
+    "imageHighSrc": "cards/bw2-016-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "30"
+      },
+      {
+        "name": "Take Down",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2344",
-    "externalId": null,
+    "externalId": "bw2-15",
     "tcgdex_id": "bw2-15",
     "localId": "015",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "015/98",
+    "cardNumber": "15/98",
     "cardName": "Deerling",
-    "fullDisplayName": "Deerling 015/98 Emerging Powers",
+    "fullDisplayName": "Deerling 15/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2741,18 +3444,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-015-low.png",
-    "imageHighSrc": "cards/bw2-015-high.png"
+    "imageHighSrc": "cards/bw2-015-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Wild Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2343",
-    "externalId": null,
+    "externalId": "bw2-14",
     "tcgdex_id": "bw2-14",
     "localId": "014",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "014/98",
+    "cardNumber": "14/98",
     "cardName": "Lilligant",
-    "fullDisplayName": "Lilligant 014/98 Emerging Powers",
+    "fullDisplayName": "Lilligant 14/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2774,18 +3487,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-014-low.png",
-    "imageHighSrc": "cards/bw2-014-high.png"
+    "imageHighSrc": "cards/bw2-014-high.png",
+    "attacks": [
+      {
+        "name": "Bemusing Aroma",
+        "damage": "20"
+      },
+      {
+        "name": "Cut",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2342",
-    "externalId": null,
+    "externalId": "bw2-13",
     "tcgdex_id": "bw2-13",
     "localId": "013",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "013/98",
+    "cardNumber": "13/98",
     "cardName": "Petilil",
-    "fullDisplayName": "Petilil 013/98 Emerging Powers",
+    "fullDisplayName": "Petilil 13/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2807,18 +3530,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-013-low.png",
-    "imageHighSrc": "cards/bw2-013-high.png"
+    "imageHighSrc": "cards/bw2-013-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": null
+      },
+      {
+        "name": "Cut",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2341",
-    "externalId": null,
+    "externalId": "bw2-12",
     "tcgdex_id": "bw2-12",
     "localId": "012",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "012/98",
+    "cardNumber": "12/98",
     "cardName": "Whimsicott",
-    "fullDisplayName": "Whimsicott 012/98 Emerging Powers",
+    "fullDisplayName": "Whimsicott 12/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2840,18 +3573,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-012-low.png",
-    "imageHighSrc": "cards/bw2-012-high.png"
+    "imageHighSrc": "cards/bw2-012-high.png",
+    "attacks": [
+      {
+        "name": "Encore",
+        "damage": "20"
+      },
+      {
+        "name": "U-turn",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2340",
-    "externalId": null,
+    "externalId": "bw2-11",
     "tcgdex_id": "bw2-11",
     "localId": "011",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "011/98",
+    "cardNumber": "11/98",
     "cardName": "Whimsicott",
-    "fullDisplayName": "Whimsicott 011/98 Emerging Powers",
+    "fullDisplayName": "Whimsicott 11/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2873,18 +3616,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-011-low.png",
-    "imageHighSrc": "cards/bw2-011-high.png"
+    "imageHighSrc": "cards/bw2-011-high.png",
+    "attacks": [
+      {
+        "name": "Helping Hand",
+        "damage": null
+      },
+      {
+        "name": "Cotton Guard",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2339",
-    "externalId": null,
+    "externalId": "bw2-10",
     "tcgdex_id": "bw2-10",
     "localId": "010",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "010/98",
+    "cardNumber": "10/98",
     "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 010/98 Emerging Powers",
+    "fullDisplayName": "Cottonee 10/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2906,18 +3659,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-010-low.png",
-    "imageHighSrc": "cards/bw2-010-high.png"
+    "imageHighSrc": "cards/bw2-010-high.png",
+    "attacks": [
+      {
+        "name": "Cotton Guard",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2338",
-    "externalId": null,
+    "externalId": "bw2-9",
     "tcgdex_id": "bw2-9",
     "localId": "009",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "009/98",
+    "cardNumber": "9/98",
     "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 009/98 Emerging Powers",
+    "fullDisplayName": "Cottonee 9/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2939,18 +3698,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-009-low.png",
-    "imageHighSrc": "cards/bw2-009-high.png"
+    "imageHighSrc": "cards/bw2-009-high.png",
+    "attacks": [
+      {
+        "name": "Absorb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2337",
-    "externalId": null,
+    "externalId": "bw2-8",
     "tcgdex_id": "bw2-8",
     "localId": "008",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "008/98",
+    "cardNumber": "8/98",
     "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 008/98 Emerging Powers",
+    "fullDisplayName": "Leavanny 8/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2972,18 +3737,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-008-low.png",
-    "imageHighSrc": "cards/bw2-008-high.png"
+    "imageHighSrc": "cards/bw2-008-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "30"
+      },
+      {
+        "name": "Triple Cutter",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "2336",
-    "externalId": null,
+    "externalId": "bw2-7",
     "tcgdex_id": "bw2-7",
     "localId": "007",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "007/98",
+    "cardNumber": "7/98",
     "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 007/98 Emerging Powers",
+    "fullDisplayName": "Leavanny 7/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3005,18 +3780,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-007-low.png",
-    "imageHighSrc": "cards/bw2-007-high.png"
+    "imageHighSrc": "cards/bw2-007-high.png",
+    "attacks": [
+      {
+        "name": "Nurturing",
+        "damage": null
+      },
+      {
+        "name": "X-Scissor",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2335",
-    "externalId": null,
+    "externalId": "bw2-6",
     "tcgdex_id": "bw2-6",
     "localId": "006",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "006/98",
+    "cardNumber": "6/98",
     "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 006/98 Emerging Powers",
+    "fullDisplayName": "Swadloon 6/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3038,18 +3823,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-006-low.png",
-    "imageHighSrc": "cards/bw2-006-high.png"
+    "imageHighSrc": "cards/bw2-006-high.png",
+    "attacks": [
+      {
+        "name": "Grass Cocooning",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2334",
-    "externalId": null,
+    "externalId": "bw2-5",
     "tcgdex_id": "bw2-5",
     "localId": "005",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "005/98",
+    "cardNumber": "5/98",
     "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 005/98 Emerging Powers",
+    "fullDisplayName": "Swadloon 5/98 Emerging Powers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3071,18 +3866,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-005-low.png",
-    "imageHighSrc": "cards/bw2-005-high.png"
+    "imageHighSrc": "cards/bw2-005-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      },
+      {
+        "name": "Double Razor Leaf",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "2333",
-    "externalId": null,
+    "externalId": "bw2-4",
     "tcgdex_id": "bw2-4",
     "localId": "004",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "004/98",
+    "cardNumber": "4/98",
     "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 004/98 Emerging Powers",
+    "fullDisplayName": "Sewaddle 4/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3104,18 +3909,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-004-low.png",
-    "imageHighSrc": "cards/bw2-004-high.png"
+    "imageHighSrc": "cards/bw2-004-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2332",
-    "externalId": null,
+    "externalId": "bw2-3",
     "tcgdex_id": "bw2-3",
     "localId": "003",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "003/98",
+    "cardNumber": "3/98",
     "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 003/98 Emerging Powers",
+    "fullDisplayName": "Sewaddle 3/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3137,18 +3952,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-003-low.png",
-    "imageHighSrc": "cards/bw2-003-high.png"
+    "imageHighSrc": "cards/bw2-003-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "String Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2331",
-    "externalId": null,
+    "externalId": "bw2-2",
     "tcgdex_id": "bw2-2",
     "localId": "002",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "002/98",
+    "cardNumber": "2/98",
     "cardName": "Simisage",
-    "fullDisplayName": "Simisage 002/98 Emerging Powers",
+    "fullDisplayName": "Simisage 2/98 Emerging Powers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3170,18 +3995,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-002-low.png",
-    "imageHighSrc": "cards/bw2-002-high.png"
+    "imageHighSrc": "cards/bw2-002-high.png",
+    "attacks": [
+      {
+        "name": "Fire's Power",
+        "damage": "30"
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2330",
-    "externalId": null,
+    "externalId": "bw2-1",
     "tcgdex_id": "bw2-1",
     "localId": "001",
     "setCode": "bw2",
     "setTcgdexId": "bw2",
-    "cardNumber": "001/98",
+    "cardNumber": "1/98",
     "cardName": "Pansage",
-    "fullDisplayName": "Pansage 001/98 Emerging Powers",
+    "fullDisplayName": "Pansage 1/98 Emerging Powers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3203,6 +4038,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw2-001-low.png",
-    "imageHighSrc": "cards/bw2-001-high.png"
+    "imageHighSrc": "cards/bw2-001-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   }
 ]

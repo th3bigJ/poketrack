@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "6839",
-    "externalId": null,
+    "externalId": "mcd12-12",
     "tcgdex_id": "2012bw-12",
     "localId": "012",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "012/12",
+    "cardNumber": "12/12",
     "cardName": "Axew",
-    "fullDisplayName": "Axew 012/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Axew 12/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-012-low.png",
-    "imageHighSrc": "cards/mcd12-012-high.png"
+    "imageHighSrc": "cards/mcd12-012-high.png",
+    "attacks": [
+      {
+        "name": "Dual Chop",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "6831",
-    "externalId": null,
+    "externalId": "mcd12-11",
     "tcgdex_id": "2012bw-11",
     "localId": "011",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "011/12",
+    "cardNumber": "11/12",
     "cardName": "Klang",
-    "fullDisplayName": "Klang 011/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Klang 11/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -63,18 +69,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-011-low.png",
-    "imageHighSrc": "cards/mcd12-011-high.png"
+    "imageHighSrc": "cards/mcd12-011-high.png",
+    "attacks": [
+      {
+        "name": "Metal Sound",
+        "damage": null
+      },
+      {
+        "name": "Guard Press",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6824",
-    "externalId": null,
+    "externalId": "mcd12-10",
     "tcgdex_id": "2012bw-10",
     "localId": "010",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "010/12",
+    "cardNumber": "10/12",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 010/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Scraggy 10/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +112,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-010-low.png",
-    "imageHighSrc": "cards/mcd12-010-high.png"
+    "imageHighSrc": "cards/mcd12-010-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6817",
-    "externalId": null,
+    "externalId": "mcd12-9",
     "tcgdex_id": "2012bw-9",
     "localId": "009",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "009/12",
+    "cardNumber": "9/12",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 009/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Purrloin 9/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +151,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-009-low.png",
-    "imageHighSrc": "cards/mcd12-009-high.png"
+    "imageHighSrc": "cards/mcd12-009-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6810",
-    "externalId": null,
+    "externalId": "mcd12-8",
     "tcgdex_id": "2012bw-8",
     "localId": "008",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "008/12",
+    "cardNumber": "8/12",
     "cardName": "Drilbur",
-    "fullDisplayName": "Drilbur 008/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Drilbur 8/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +190,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-008-low.png",
-    "imageHighSrc": "cards/mcd12-008-high.png"
+    "imageHighSrc": "cards/mcd12-008-high.png",
+    "attacks": [
+      {
+        "name": "Hone ClawsScratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6805",
-    "externalId": null,
+    "externalId": "mcd12-7",
     "tcgdex_id": "2012bw-7",
     "localId": "007",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "007/12",
+    "cardNumber": "7/12",
     "cardName": "Woobat",
-    "fullDisplayName": "Woobat 007/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Woobat 7/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +229,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-007-low.png",
-    "imageHighSrc": "cards/mcd12-007-high.png"
+    "imageHighSrc": "cards/mcd12-007-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6800",
-    "externalId": null,
+    "externalId": "mcd12-6",
     "tcgdex_id": "2012bw-6",
     "localId": "006",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "006/12",
+    "cardNumber": "6/12",
     "cardName": "Emolga",
-    "fullDisplayName": "Emolga 006/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Emolga 6/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +268,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-006-low.png",
-    "imageHighSrc": "cards/mcd12-006-high.png"
+    "imageHighSrc": "cards/mcd12-006-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Acrobatics",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6792",
-    "externalId": null,
+    "externalId": "mcd12-5",
     "tcgdex_id": "2012bw-5",
     "localId": "005",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "005/12",
+    "cardNumber": "5/12",
     "cardName": "Dewott",
-    "fullDisplayName": "Dewott 005/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Dewott 5/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -261,18 +311,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-005-low.png",
-    "imageHighSrc": "cards/mcd12-005-high.png"
+    "imageHighSrc": "cards/mcd12-005-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      },
+      {
+        "name": "Razor Shell",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "6783",
-    "externalId": null,
+    "externalId": "mcd12-4",
     "tcgdex_id": "2012bw-4",
     "localId": "004",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "004/12",
+    "cardNumber": "4/12",
     "cardName": "Pignite",
-    "fullDisplayName": "Pignite 004/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Pignite 4/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -294,18 +354,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-004-low.png",
-    "imageHighSrc": "cards/mcd12-004-high.png"
+    "imageHighSrc": "cards/mcd12-004-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": null
+      },
+      {
+        "name": "Heat Crash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6769",
-    "externalId": null,
+    "externalId": "mcd12-3",
     "tcgdex_id": "2012bw-3",
     "localId": "003",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "003/12",
+    "cardNumber": "3/12",
     "cardName": "Dwebble",
-    "fullDisplayName": "Dwebble 003/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Dwebble 3/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +397,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-003-low.png",
-    "imageHighSrc": "cards/mcd12-003-high.png"
+    "imageHighSrc": "cards/mcd12-003-high.png",
+    "attacks": [
+      {
+        "name": "Withdraw",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6756",
-    "externalId": null,
+    "externalId": "mcd12-2",
     "tcgdex_id": "2012bw-2",
     "localId": "002",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "002/12",
+    "cardNumber": "2/12",
     "cardName": "Pansage",
-    "fullDisplayName": "Pansage 002/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Pansage 2/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +440,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-002-low.png",
-    "imageHighSrc": "cards/mcd12-002-high.png"
+    "imageHighSrc": "cards/mcd12-002-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6740",
-    "externalId": null,
+    "externalId": "mcd12-1",
     "tcgdex_id": "2012bw-1",
     "localId": "001",
     "setCode": "2012bw",
     "setTcgdexId": "2012bw",
-    "cardNumber": "001/12",
+    "cardNumber": "1/12",
     "cardName": "Servine",
-    "fullDisplayName": "Servine 001/12 Macdonald's Collection 2012",
+    "fullDisplayName": "Servine 1/12 Macdonald's Collection 2012",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -393,6 +483,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/mcd12-001-low.png",
-    "imageHighSrc": "cards/mcd12-001-high.png"
+    "imageHighSrc": "cards/mcd12-001-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "20"
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   }
 ]

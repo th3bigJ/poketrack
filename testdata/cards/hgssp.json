@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "6900",
-    "externalId": null,
+    "externalId": "hsp-HGSS25",
     "tcgdex_id": "hgssp-HGSS25",
     "localId": "HGSS25",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS25/25",
+    "cardNumber": "HGSS25",
     "cardName": "Hitmonlee",
-    "fullDisplayName": "Hitmonlee HGSS25/25 HGSS Black Star Promos",
+    "fullDisplayName": "Hitmonlee HGSS25 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS25-low.png",
-    "imageHighSrc": "cards/hsp-HGSS25-high.png"
+    "imageHighSrc": "cards/hsp-HGSS25-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "20"
+      },
+      {
+        "name": "High Jump Kick",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6895",
-    "externalId": null,
+    "externalId": "hsp-HGSS24",
     "tcgdex_id": "hgssp-HGSS24",
     "localId": "HGSS24",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS24/25",
+    "cardNumber": "HGSS24",
     "cardName": "Hitmonchan",
-    "fullDisplayName": "Hitmonchan HGSS24/25 HGSS Black Star Promos",
+    "fullDisplayName": "Hitmonchan HGSS24 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS24-low.png",
-    "imageHighSrc": "cards/hsp-HGSS24-high.png"
+    "imageHighSrc": "cards/hsp-HGSS24-high.png",
+    "attacks": [
+      {
+        "name": "Detect",
+        "damage": null
+      },
+      {
+        "name": "Sky Uppercut",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6890",
-    "externalId": null,
+    "externalId": "hsp-HGSS23",
     "tcgdex_id": "hgssp-HGSS23",
     "localId": "HGSS23",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS23/25",
+    "cardNumber": "HGSS23",
     "cardName": "Porygon2",
-    "fullDisplayName": "Porygon2 HGSS23/25 HGSS Black Star Promos",
+    "fullDisplayName": "Porygon2 HGSS23 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -96,18 +116,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS23-low.png",
-    "imageHighSrc": "cards/hsp-HGSS23-high.png"
+    "imageHighSrc": "cards/hsp-HGSS23-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6885",
-    "externalId": null,
+    "externalId": "hsp-HGSS22",
     "tcgdex_id": "hgssp-HGSS22",
     "localId": "HGSS22",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS22/25",
+    "cardNumber": "HGSS22",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon HGSS22/25 HGSS Black Star Promos",
+    "fullDisplayName": "Porygon HGSS22 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +155,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS22-low.png",
-    "imageHighSrc": "cards/hsp-HGSS22-high.png"
+    "imageHighSrc": "cards/hsp-HGSS22-high.png",
+    "attacks": [
+      {
+        "name": "Stiffen",
+        "damage": null
+      },
+      {
+        "name": "Version Update",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6880",
-    "externalId": null,
+    "externalId": "hsp-HGSS21",
     "tcgdex_id": "hgssp-HGSS21",
     "localId": "HGSS21",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS21/25",
+    "cardNumber": "HGSS21",
     "cardName": "Suicune",
-    "fullDisplayName": "Suicune HGSS21/25 HGSS Black Star Promos",
+    "fullDisplayName": "Suicune HGSS21 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +198,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS21-low.png",
-    "imageHighSrc": "cards/hsp-HGSS21-high.png"
+    "imageHighSrc": "cards/hsp-HGSS21-high.png",
+    "attacks": [
+      {
+        "name": "Sheer Cold",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "6875",
-    "externalId": null,
+    "externalId": "hsp-HGSS20",
     "tcgdex_id": "hgssp-HGSS20",
     "localId": "HGSS20",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS20/25",
+    "cardNumber": "HGSS20",
     "cardName": "Entei",
-    "fullDisplayName": "Entei HGSS20/25 HGSS Black Star Promos",
+    "fullDisplayName": "Entei HGSS20 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +237,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS20-low.png",
-    "imageHighSrc": "cards/hsp-HGSS20-high.png"
+    "imageHighSrc": "cards/hsp-HGSS20-high.png",
+    "attacks": [
+      {
+        "name": "Flare Blitz",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6870",
-    "externalId": null,
+    "externalId": "hsp-HGSS19",
     "tcgdex_id": "hgssp-HGSS19",
     "localId": "HGSS19",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS19/25",
+    "cardNumber": "HGSS19",
     "cardName": "Raikou",
-    "fullDisplayName": "Raikou HGSS19/25 HGSS Black Star Promos",
+    "fullDisplayName": "Raikou HGSS19 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,7 +276,13 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS19-low.png",
-    "imageHighSrc": "cards/hsp-HGSS19-high.png"
+    "imageHighSrc": "cards/hsp-HGSS19-high.png",
+    "attacks": [
+      {
+        "name": "Zap Cannon",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "22542",
@@ -237,9 +291,9 @@
     "localId": "HGSS18",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS18/25",
+    "cardNumber": "HGSS18",
     "cardName": "Tropical Tidal Wave",
-    "fullDisplayName": "Tropical Tidal Wave HGSS18/25 HGSS Black Star Promos",
+    "fullDisplayName": "Tropical Tidal Wave HGSS18 HGSS Black Star Promos",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -262,18 +316,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/hgssp-HGSS18-low.jpg",
-    "imageHighSrc": "cards/hgssp-HGSS18-low.jpg"
+    "imageHighSrc": "cards/hgssp-HGSS18-low.jpg",
+    "rules": "Flip a coin. If heads, discard all Trainer and Stadium cards your opponent has in play. If tails, discard all Trainer and Stadium cards you have in play."
   },
   {
     "masterCardId": "6863",
-    "externalId": null,
+    "externalId": "hsp-HGSS17",
     "tcgdex_id": "hgssp-HGSS17",
     "localId": "HGSS17",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS17/25",
+    "cardNumber": "HGSS17",
     "cardName": "Minun",
-    "fullDisplayName": "Minun HGSS17/25 HGSS Black Star Promos",
+    "fullDisplayName": "Minun HGSS17 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -295,18 +350,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS17-low.png",
-    "imageHighSrc": "cards/hsp-HGSS17-high.png"
+    "imageHighSrc": "cards/hsp-HGSS17-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Tag Team Boost",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "6858",
-    "externalId": null,
+    "externalId": "hsp-HGSS16",
     "tcgdex_id": "hgssp-HGSS16",
     "localId": "HGSS16",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS16/25",
+    "cardNumber": "HGSS16",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle HGSS16/25 HGSS Black Star Promos",
+    "fullDisplayName": "Plusle HGSS16 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -328,18 +393,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS16-low.png",
-    "imageHighSrc": "cards/hsp-HGSS16-high.png"
+    "imageHighSrc": "cards/hsp-HGSS16-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6853",
-    "externalId": null,
+    "externalId": "hsp-HGSS15",
     "tcgdex_id": "hgssp-HGSS15",
     "localId": "HGSS15",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS15/25",
+    "cardNumber": "HGSS15",
     "cardName": "Shuckle",
-    "fullDisplayName": "Shuckle HGSS15/25 HGSS Black Star Promos",
+    "fullDisplayName": "Shuckle HGSS15 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -361,18 +436,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS15-low.png",
-    "imageHighSrc": "cards/hsp-HGSS15-high.png"
+    "imageHighSrc": "cards/hsp-HGSS15-high.png",
+    "attacks": [
+      {
+        "name": "Shell Stunner",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "6849",
-    "externalId": null,
+    "externalId": "hsp-HGSS14",
     "tcgdex_id": "hgssp-HGSS14",
     "localId": "HGSS14",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS14/25",
+    "cardNumber": "HGSS14",
     "cardName": "Lapras",
-    "fullDisplayName": "Lapras HGSS14/25 HGSS Black Star Promos",
+    "fullDisplayName": "Lapras HGSS14 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -394,18 +475,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS14-low.png",
-    "imageHighSrc": "cards/hsp-HGSS14-high.png"
+    "imageHighSrc": "cards/hsp-HGSS14-high.png",
+    "attacks": [
+      {
+        "name": "Ferry",
+        "damage": null
+      },
+      {
+        "name": "Surf",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6844",
-    "externalId": null,
+    "externalId": "hsp-HGSS13",
     "tcgdex_id": "hgssp-HGSS13",
     "localId": "HGSS13",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS13/25",
+    "cardNumber": "HGSS13",
     "cardName": "Smoochum",
-    "fullDisplayName": "Smoochum HGSS13/25 HGSS Black Star Promos",
+    "fullDisplayName": "Smoochum HGSS13 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -427,18 +518,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS13-low.png",
-    "imageHighSrc": "cards/hsp-HGSS13-high.png"
+    "imageHighSrc": "cards/hsp-HGSS13-high.png",
+    "attacks": [
+      {
+        "name": "Energy Antics",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6837",
-    "externalId": null,
+    "externalId": "hsp-HGSS12",
     "tcgdex_id": "hgssp-HGSS12",
     "localId": "HGSS12",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS12/25",
+    "cardNumber": "HGSS12",
     "cardName": "Cleffa",
-    "fullDisplayName": "Cleffa HGSS12/25 HGSS Black Star Promos",
+    "fullDisplayName": "Cleffa HGSS12 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -460,18 +557,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS12-low.png",
-    "imageHighSrc": "cards/hsp-HGSS12-high.png"
+    "imageHighSrc": "cards/hsp-HGSS12-high.png",
+    "attacks": [
+      {
+        "name": "Eeeeeeek",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6830",
-    "externalId": null,
+    "externalId": "hsp-HGSS11",
     "tcgdex_id": "hgssp-HGSS11",
     "localId": "HGSS11",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS11/25",
+    "cardNumber": "HGSS11",
     "cardName": "Latios",
-    "fullDisplayName": "Latios HGSS11/25 HGSS Black Star Promos",
+    "fullDisplayName": "Latios HGSS11 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -493,18 +596,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS11-low.png",
-    "imageHighSrc": "cards/hsp-HGSS11-high.png"
+    "imageHighSrc": "cards/hsp-HGSS11-high.png",
+    "attacks": [
+      {
+        "name": "Infinite Wing",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6823",
-    "externalId": null,
+    "externalId": "hsp-HGSS10",
     "tcgdex_id": "hgssp-HGSS10",
     "localId": "HGSS10",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS10/25",
+    "cardNumber": "HGSS10",
     "cardName": "Latias",
-    "fullDisplayName": "Latias HGSS10/25 HGSS Black Star Promos",
+    "fullDisplayName": "Latias HGSS10 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -526,18 +635,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS10-low.png",
-    "imageHighSrc": "cards/hsp-HGSS10-high.png"
+    "imageHighSrc": "cards/hsp-HGSS10-high.png",
+    "attacks": [
+      {
+        "name": "Energy Assist",
+        "damage": "10"
+      },
+      {
+        "name": "Infinite Wind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6816",
-    "externalId": null,
+    "externalId": "hsp-HGSS09",
     "tcgdex_id": "hgssp-HGSS09",
     "localId": "HGSS09",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS09/25",
+    "cardNumber": "HGSS09",
     "cardName": "Typhlosion",
-    "fullDisplayName": "Typhlosion HGSS09/25 HGSS Black Star Promos",
+    "fullDisplayName": "Typhlosion HGSS09 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -560,18 +679,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS09-low.png",
-    "imageHighSrc": "cards/hsp-HGSS09-high.png"
+    "imageHighSrc": "cards/hsp-HGSS09-high.png",
+    "attacks": [
+      {
+        "name": "Flare Destroy",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "6809",
-    "externalId": null,
+    "externalId": "hsp-HGSS08",
     "tcgdex_id": "hgssp-HGSS08",
     "localId": "HGSS08",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS08/25",
+    "cardNumber": "HGSS08",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium HGSS08/25 HGSS Black Star Promos",
+    "fullDisplayName": "Meganium HGSS08 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -594,18 +719,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS08-low.png",
-    "imageHighSrc": "cards/hsp-HGSS08-high.png"
+    "imageHighSrc": "cards/hsp-HGSS08-high.png",
+    "attacks": [
+      {
+        "name": "Solarbeam",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "6802",
-    "externalId": null,
+    "externalId": "hsp-HGSS07",
     "tcgdex_id": "hgssp-HGSS07",
     "localId": "HGSS07",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS07/25",
+    "cardNumber": "HGSS07",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr HGSS07/25 HGSS Black Star Promos",
+    "fullDisplayName": "Feraligatr HGSS07 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -628,18 +759,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS07-low.png",
-    "imageHighSrc": "cards/hsp-HGSS07-high.png"
+    "imageHighSrc": "cards/hsp-HGSS07-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Crunch",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "6796",
-    "externalId": null,
+    "externalId": "hsp-HGSS06",
     "tcgdex_id": "hgssp-HGSS06",
     "localId": "HGSS06",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS06/25",
+    "cardNumber": "HGSS06",
     "cardName": "Noctowl",
-    "fullDisplayName": "Noctowl HGSS06/25 HGSS Black Star Promos",
+    "fullDisplayName": "Noctowl HGSS06 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -661,18 +798,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS06-low.png",
-    "imageHighSrc": "cards/hsp-HGSS06-high.png"
+    "imageHighSrc": "cards/hsp-HGSS06-high.png",
+    "attacks": [
+      {
+        "name": "Hypnoblast",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "6790",
-    "externalId": null,
+    "externalId": "hsp-HGSS05",
     "tcgdex_id": "hgssp-HGSS05",
     "localId": "HGSS05",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS05/25",
+    "cardNumber": "HGSS05",
     "cardName": "Hoothoot",
-    "fullDisplayName": "Hoothoot HGSS05/25 HGSS Black Star Promos",
+    "fullDisplayName": "Hoothoot HGSS05 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -694,18 +837,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS05-low.png",
-    "imageHighSrc": "cards/hsp-HGSS05-high.png"
+    "imageHighSrc": "cards/hsp-HGSS05-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6784",
-    "externalId": null,
+    "externalId": "hsp-HGSS04",
     "tcgdex_id": "hgssp-HGSS04",
     "localId": "HGSS04",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS04/25",
+    "cardNumber": "HGSS04",
     "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet HGSS04/25 HGSS Black Star Promos",
+    "fullDisplayName": "Wobbuffet HGSS04 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -727,18 +876,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS04-low.png",
-    "imageHighSrc": "cards/hsp-HGSS04-high.png"
+    "imageHighSrc": "cards/hsp-HGSS04-high.png",
+    "attacks": [
+      {
+        "name": "Trip Over",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "6771",
-    "externalId": null,
+    "externalId": "hsp-HGSS03",
     "tcgdex_id": "hgssp-HGSS03",
     "localId": "HGSS03",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS03/25",
+    "cardNumber": "HGSS03",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu HGSS03/25 HGSS Black Star Promos",
+    "fullDisplayName": "Pikachu HGSS03 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -760,18 +915,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS03-low.png",
-    "imageHighSrc": "cards/hsp-HGSS03-high.png"
+    "imageHighSrc": "cards/hsp-HGSS03-high.png",
+    "attacks": [
+      {
+        "name": "Recharge",
+        "damage": null
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "6757",
-    "externalId": null,
+    "externalId": "hsp-HGSS02",
     "tcgdex_id": "hgssp-HGSS02",
     "localId": "HGSS02",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS02/25",
+    "cardNumber": "HGSS02",
     "cardName": "Lugia",
-    "fullDisplayName": "Lugia HGSS02/25 HGSS Black Star Promos",
+    "fullDisplayName": "Lugia HGSS02 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -793,18 +958,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS02-low.png",
-    "imageHighSrc": "cards/hsp-HGSS02-high.png"
+    "imageHighSrc": "cards/hsp-HGSS02-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      },
+      {
+        "name": "Aeroblast",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "6742",
-    "externalId": null,
+    "externalId": "hsp-HGSS01",
     "tcgdex_id": "hgssp-HGSS01",
     "localId": "HGSS01",
     "setCode": "hgssp",
     "setTcgdexId": "hgssp",
-    "cardNumber": "HGSS01/25",
+    "cardNumber": "HGSS01",
     "cardName": "Ho-Oh",
-    "fullDisplayName": "Ho-Oh HGSS01/25 HGSS Black Star Promos",
+    "fullDisplayName": "Ho-Oh HGSS01 HGSS Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -826,6 +1001,16 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/hsp-HGSS01-low.png",
-    "imageHighSrc": "cards/hsp-HGSS01-high.png"
+    "imageHighSrc": "cards/hsp-HGSS01-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "20"
+      },
+      {
+        "name": "Sacred Fire",
+        "damage": null
+      }
+    ]
   }
 ]

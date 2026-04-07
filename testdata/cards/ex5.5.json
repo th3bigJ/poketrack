@@ -30,7 +30,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5.5-005-low.jpg",
-    "imageHighSrc": "cards/ex5.5-005-low.jpg"
+    "imageHighSrc": "cards/ex5.5-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Shock Bolt",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "22379",
@@ -63,7 +73,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5.5-004-low.jpg",
-    "imageHighSrc": "cards/ex5.5-004-low.jpg"
+    "imageHighSrc": "cards/ex5.5-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Tail Rap",
+        "damage": "10x"
+      },
+      {
+        "name": "Hypno Splash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "22378",
@@ -96,7 +116,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5.5-003-low.jpg",
-    "imageHighSrc": "cards/ex5.5-003-low.jpg"
+    "imageHighSrc": "cards/ex5.5-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "10"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "22377",
@@ -129,7 +159,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5.5-002-low.jpg",
-    "imageHighSrc": "cards/ex5.5-002-low.jpg"
+    "imageHighSrc": "cards/ex5.5-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Gooey Thread",
+        "damage": "10"
+      },
+      {
+        "name": "Lunge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "22376",
@@ -162,6 +202,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5.5-001-low.jpg",
-    "imageHighSrc": "cards/ex5.5-001-low.jpg"
+    "imageHighSrc": "cards/ex5.5-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Claws",
+        "damage": "30"
+      }
+    ]
   }
 ]

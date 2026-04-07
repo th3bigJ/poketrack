@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "11644",
-    "externalId": null,
+    "externalId": "sma-SV94",
     "tcgdex_id": "sma-SV94",
     "localId": "SV94",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV94/94",
+    "cardNumber": "SV94/SV94",
     "cardName": "Tapu Lele-GX",
-    "fullDisplayName": "Tapu Lele-GX SV94/94 Yellow A Alternate",
+    "fullDisplayName": "Tapu Lele-GX SV94/SV94 Yellow A Alternate",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Basic",
@@ -31,18 +31,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV94-low.png",
-    "imageHighSrc": "cards/sma-SV94-high.png"
+    "imageHighSrc": "cards/sma-SV94-high.png",
+    "attacks": [
+      {
+        "name": "Energy Drive",
+        "damage": "20×"
+      },
+      {
+        "name": "Tapu Cure-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11638",
-    "externalId": null,
+    "externalId": "sma-SV93",
     "tcgdex_id": "sma-SV93",
     "localId": "SV93",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV93/94",
+    "cardNumber": "SV93/SV94",
     "cardName": "Tapu Koko-GX",
-    "fullDisplayName": "Tapu Koko-GX SV93/94 Yellow A Alternate",
+    "fullDisplayName": "Tapu Koko-GX SV93/SV94 Yellow A Alternate",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Basic",
@@ -65,18 +76,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV93-low.png",
-    "imageHighSrc": "cards/sma-SV93-high.png"
+    "imageHighSrc": "cards/sma-SV93-high.png",
+    "attacks": [
+      {
+        "name": "Sky-High Claws",
+        "damage": "130"
+      },
+      {
+        "name": "Tapu Thunder-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11631",
-    "externalId": null,
+    "externalId": "sma-SV92",
     "tcgdex_id": "sma-SV92",
     "localId": "SV92",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV92/94",
+    "cardNumber": "SV92/SV94",
     "cardName": "Tapu Fini-GX",
-    "fullDisplayName": "Tapu Fini-GX SV92/94 Yellow A Alternate",
+    "fullDisplayName": "Tapu Fini-GX SV92/SV94 Yellow A Alternate",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Basic",
@@ -99,18 +121,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV92-low.png",
-    "imageHighSrc": "cards/sma-SV92-high.png"
+    "imageHighSrc": "cards/sma-SV92-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Ring",
+        "damage": "20"
+      },
+      {
+        "name": "Hydro Shot",
+        "damage": null
+      },
+      {
+        "name": "Tapu Storm-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11625",
-    "externalId": null,
+    "externalId": "sma-SV91",
     "tcgdex_id": "sma-SV91",
     "localId": "SV91",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV91/94",
+    "cardNumber": "SV91/SV94",
     "cardName": "Tapu Bulu-GX",
-    "fullDisplayName": "Tapu Bulu-GX SV91/94 Yellow A Alternate",
+    "fullDisplayName": "Tapu Bulu-GX SV91/SV94 Yellow A Alternate",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Basic",
@@ -133,18 +170,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV91-low.png",
-    "imageHighSrc": "cards/sma-SV91-high.png"
+    "imageHighSrc": "cards/sma-SV91-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "30"
+      },
+      {
+        "name": "Nature's Judgment",
+        "damage": "120+"
+      },
+      {
+        "name": "Tapu Wilderness-GX",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11619",
-    "externalId": null,
+    "externalId": "sma-SV90",
     "tcgdex_id": "sma-SV90",
     "localId": "SV90",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV90/94",
+    "cardNumber": "SV90/SV94",
     "cardName": "Shrine of Punishment",
-    "fullDisplayName": "Shrine of Punishment SV90/94 Yellow A Alternate",
+    "fullDisplayName": "Shrine of Punishment SV90/SV94 Yellow A Alternate",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -162,18 +214,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV90-low.png",
-    "imageHighSrc": "cards/sma-SV90-high.png"
+    "imageHighSrc": "cards/sma-SV90-high.png",
+    "rules": "Between turns, put 1 damage counter on each Pokémon-GX and Pokémon-EX (both yours and your opponent's).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "11613",
-    "externalId": null,
+    "externalId": "sma-SV89",
     "tcgdex_id": "sma-SV89",
     "localId": "SV89",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV89/94",
+    "cardNumber": "SV89/SV94",
     "cardName": "Mt. Coronet",
-    "fullDisplayName": "Mt. Coronet SV89/94 Yellow A Alternate",
+    "fullDisplayName": "Mt. Coronet SV89/SV94 Yellow A Alternate",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -191,18 +244,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV89-low.png",
-    "imageHighSrc": "cards/sma-SV89-high.png"
+    "imageHighSrc": "cards/sma-SV89-high.png",
+    "rules": "Once during each player's turn, that player may put 2 Metal Energy cards from their discard pile into their hand.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "11607",
-    "externalId": null,
+    "externalId": "sma-SV88",
     "tcgdex_id": "sma-SV88",
     "localId": "SV88",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV88/94",
+    "cardNumber": "SV88/SV94",
     "cardName": "Brooklet Hill",
-    "fullDisplayName": "Brooklet Hill SV88/94 Yellow A Alternate",
+    "fullDisplayName": "Brooklet Hill SV88/SV94 Yellow A Alternate",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -220,18 +274,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV88-low.png",
-    "imageHighSrc": "cards/sma-SV88-high.png"
+    "imageHighSrc": "cards/sma-SV88-high.png",
+    "rules": "Once during each player's turn, that player may search their deck for a Basic Water Pokémon or Basic Fighting Pokémon and, put it onto their Bench, and shuffle their deck.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "11602",
-    "externalId": null,
+    "externalId": "sma-SV87",
     "tcgdex_id": "sma-SV87",
     "localId": "SV87",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV87/94",
+    "cardNumber": "SV87/SV94",
     "cardName": "Aether Paradise Conservation Area",
-    "fullDisplayName": "Aether Paradise Conservation Area SV87/94 Yellow A Alternate",
+    "fullDisplayName": "Aether Paradise Conservation Area SV87/SV94 Yellow A Alternate",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -249,18 +304,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV87-low.png",
-    "imageHighSrc": "cards/sma-SV87-high.png"
+    "imageHighSrc": "cards/sma-SV87-high.png",
+    "rules": "Basic Grass and Basic Lightning Pokémon (both yours and your opponent's) take 30 less damage from the opponent's attacks (after applying Weakness and Resistance).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "11593",
-    "externalId": null,
+    "externalId": "sma-SV86",
     "tcgdex_id": "sma-SV86",
     "localId": "SV86",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV86/94",
+    "cardNumber": "SV86/SV94",
     "cardName": "Lady",
-    "fullDisplayName": "Lady SV86/94 Yellow A Alternate",
+    "fullDisplayName": "Lady SV86/SV94 Yellow A Alternate",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -278,18 +334,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV86-low.png",
-    "imageHighSrc": "cards/sma-SV86-high.png"
+    "imageHighSrc": "cards/sma-SV86-high.png",
+    "rules": "Search your deck for up to 4 basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11587",
-    "externalId": null,
+    "externalId": "sma-SV85",
     "tcgdex_id": "sma-SV85",
     "localId": "SV85",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV85/94",
+    "cardNumber": "SV85/SV94",
     "cardName": "Hiker",
-    "fullDisplayName": "Hiker SV85/94 Yellow A Alternate",
+    "fullDisplayName": "Hiker SV85/SV94 Yellow A Alternate",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -307,18 +364,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV85-low.png",
-    "imageHighSrc": "cards/sma-SV85-high.png"
+    "imageHighSrc": "cards/sma-SV85-high.png",
+    "rules": "Look at the top 5 cards of either player's deck and choose 1 of them. That player shuffles the other cards back into their deck. Then, put the card you chose on top of that deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11580",
-    "externalId": null,
+    "externalId": "sma-SV84",
     "tcgdex_id": "sma-SV84",
     "localId": "SV84",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV84/94",
+    "cardNumber": "SV84/SV94",
     "cardName": "Guzma",
-    "fullDisplayName": "Guzma SV84/94 Yellow A Alternate",
+    "fullDisplayName": "Guzma SV84/SV94 Yellow A Alternate",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -336,18 +394,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV84-low.png",
-    "imageHighSrc": "cards/sma-SV84-high.png"
+    "imageHighSrc": "cards/sma-SV84-high.png",
+    "rules": "Switch 1 of your opponent's Benched Pokémon with their Active Pokémon. If you do, switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11575",
-    "externalId": null,
+    "externalId": "sma-SV83",
     "tcgdex_id": "sma-SV83",
     "localId": "SV83",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV83/94",
+    "cardNumber": "SV83/SV94",
     "cardName": "Fisherman",
-    "fullDisplayName": "Fisherman SV83/94 Yellow A Alternate",
+    "fullDisplayName": "Fisherman SV83/SV94 Yellow A Alternate",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -365,18 +424,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV83-low.png",
-    "imageHighSrc": "cards/sma-SV83-high.png"
+    "imageHighSrc": "cards/sma-SV83-high.png",
+    "rules": "Put 4 basic Energy cards from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11569",
-    "externalId": null,
+    "externalId": "sma-SV82",
     "tcgdex_id": "sma-SV82",
     "localId": "SV82",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV82/94",
+    "cardNumber": "SV82/SV94",
     "cardName": "Cynthia",
-    "fullDisplayName": "Cynthia SV82/94 Yellow A Alternate",
+    "fullDisplayName": "Cynthia SV82/SV94 Yellow A Alternate",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -394,18 +454,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV82-low.png",
-    "imageHighSrc": "cards/sma-SV82-high.png"
+    "imageHighSrc": "cards/sma-SV82-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw 6 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11563",
-    "externalId": null,
+    "externalId": "sma-SV81",
     "tcgdex_id": "sma-SV81",
     "localId": "SV81",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV81/94",
+    "cardNumber": "SV81/SV94",
     "cardName": "Aether Foundation Employee",
-    "fullDisplayName": "Aether Foundation Employee SV81/94 Yellow A Alternate",
+    "fullDisplayName": "Aether Foundation Employee SV81/SV94 Yellow A Alternate",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -423,18 +484,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV81-low.png",
-    "imageHighSrc": "cards/sma-SV81-high.png"
+    "imageHighSrc": "cards/sma-SV81-high.png",
+    "rules": "Put 3 Pokémon that have \"Alolan\" in their names from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11557",
-    "externalId": null,
+    "externalId": "sma-SV80",
     "tcgdex_id": "sma-SV80",
     "localId": "SV80",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV80/94",
+    "cardNumber": "SV80/SV94",
     "cardName": "Drampa-GX",
-    "fullDisplayName": "Drampa-GX SV80/94 Yellow A Alternate",
+    "fullDisplayName": "Drampa-GX SV80/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -457,18 +519,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV80-low.png",
-    "imageHighSrc": "cards/sma-SV80-high.png"
+    "imageHighSrc": "cards/sma-SV80-high.png",
+    "attacks": [
+      {
+        "name": "Righteous Edge",
+        "damage": "20"
+      },
+      {
+        "name": "Berserk",
+        "damage": "80+"
+      },
+      {
+        "name": "Big Wheel-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11551",
-    "externalId": null,
+    "externalId": "sma-SV79",
     "tcgdex_id": "sma-SV79",
     "localId": "SV79",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV79/94",
+    "cardNumber": "SV79/SV94",
     "cardName": "Silvally-GX",
-    "fullDisplayName": "Silvally-GX SV79/94 Yellow A Alternate",
+    "fullDisplayName": "Silvally-GX SV79/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -491,18 +568,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV79-low.png",
-    "imageHighSrc": "cards/sma-SV79-high.png"
+    "imageHighSrc": "cards/sma-SV79-high.png",
+    "attacks": [
+      {
+        "name": "Turbo Drive",
+        "damage": "120"
+      },
+      {
+        "name": "Rebel-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11545",
-    "externalId": null,
+    "externalId": "sma-SV78",
     "tcgdex_id": "sma-SV78",
     "localId": "SV78",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV78/94",
+    "cardNumber": "SV78/SV94",
     "cardName": "Noivern-GX",
-    "fullDisplayName": "Noivern-GX SV78/94 Yellow A Alternate",
+    "fullDisplayName": "Noivern-GX SV78/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -525,18 +613,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV78-low.png",
-    "imageHighSrc": "cards/sma-SV78-high.png"
+    "imageHighSrc": "cards/sma-SV78-high.png",
+    "attacks": [
+      {
+        "name": "Distort",
+        "damage": "50"
+      },
+      {
+        "name": "Sonic Volume",
+        "damage": "120"
+      },
+      {
+        "name": "Boomburst-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11539",
-    "externalId": null,
+    "externalId": "sma-SV77",
     "tcgdex_id": "sma-SV77",
     "localId": "SV77",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV77/94",
+    "cardNumber": "SV77/SV94",
     "cardName": "Altaria-GX",
-    "fullDisplayName": "Altaria-GX SV77/94 Yellow A Alternate",
+    "fullDisplayName": "Altaria-GX SV77/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -559,18 +662,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV77-low.png",
-    "imageHighSrc": "cards/sma-SV77-high.png"
+    "imageHighSrc": "cards/sma-SV77-high.png",
+    "attacks": [
+      {
+        "name": "Bright Tone",
+        "damage": "50"
+      },
+      {
+        "name": "Sonic Edge",
+        "damage": "110"
+      },
+      {
+        "name": "Euphoria-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11532",
-    "externalId": null,
+    "externalId": "sma-SV76",
     "tcgdex_id": "sma-SV76",
     "localId": "SV76",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV76/94",
+    "cardNumber": "SV76/SV94",
     "cardName": "Sylveon-GX",
-    "fullDisplayName": "Sylveon-GX SV76/94 Yellow A Alternate",
+    "fullDisplayName": "Sylveon-GX SV76/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -593,18 +711,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV76-low.png",
-    "imageHighSrc": "cards/sma-SV76-high.png"
+    "imageHighSrc": "cards/sma-SV76-high.png",
+    "attacks": [
+      {
+        "name": "Magical Ribbon",
+        "damage": null
+      },
+      {
+        "name": "Fairy Wind",
+        "damage": "110"
+      },
+      {
+        "name": "Plea-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11525",
-    "externalId": null,
+    "externalId": "sma-SV75",
     "tcgdex_id": "sma-SV75",
     "localId": "SV75",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV75/94",
+    "cardNumber": "SV75/SV94",
     "cardName": "Gardevoir-GX",
-    "fullDisplayName": "Gardevoir-GX SV75/94 Yellow A Alternate",
+    "fullDisplayName": "Gardevoir-GX SV75/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -627,18 +760,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV75-low.png",
-    "imageHighSrc": "cards/sma-SV75-high.png"
+    "imageHighSrc": "cards/sma-SV75-high.png",
+    "attacks": [
+      {
+        "name": "Infinite Force",
+        "damage": "30×"
+      },
+      {
+        "name": "Twilight-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11518",
-    "externalId": null,
+    "externalId": "sma-SV74",
     "tcgdex_id": "sma-SV74",
     "localId": "SV74",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV74/94",
+    "cardNumber": "SV74/SV94",
     "cardName": "Stakataka-GX",
-    "fullDisplayName": "Stakataka-GX SV74/94 Yellow A Alternate",
+    "fullDisplayName": "Stakataka-GX SV74/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -662,18 +806,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV74-low.png",
-    "imageHighSrc": "cards/sma-SV74-high.png"
+    "imageHighSrc": "cards/sma-SV74-high.png",
+    "attacks": [
+      {
+        "name": "Gigaton Stomp",
+        "damage": "120"
+      },
+      {
+        "name": "Assembly-GX",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11512",
-    "externalId": null,
+    "externalId": "sma-SV73",
     "tcgdex_id": "sma-SV73",
     "localId": "SV73",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV73/94",
+    "cardNumber": "SV73/SV94",
     "cardName": "Kartana-GX",
-    "fullDisplayName": "Kartana-GX SV73/94 Yellow A Alternate",
+    "fullDisplayName": "Kartana-GX SV73/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -697,18 +852,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV73-low.png",
-    "imageHighSrc": "cards/sma-SV73-high.png"
+    "imageHighSrc": "cards/sma-SV73-high.png",
+    "attacks": [
+      {
+        "name": "Gale Blade",
+        "damage": "70"
+      },
+      {
+        "name": "Blade-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11505",
-    "externalId": null,
+    "externalId": "sma-SV72",
     "tcgdex_id": "sma-SV72",
     "localId": "SV72",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV72/94",
+    "cardNumber": "SV72/SV94",
     "cardName": "Scizor-GX",
-    "fullDisplayName": "Scizor-GX SV72/94 Yellow A Alternate",
+    "fullDisplayName": "Scizor-GX SV72/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -731,18 +897,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV72-low.png",
-    "imageHighSrc": "cards/sma-SV72-high.png"
+    "imageHighSrc": "cards/sma-SV72-high.png",
+    "attacks": [
+      {
+        "name": "Steel Wing",
+        "damage": "80"
+      },
+      {
+        "name": "Cross-Cut-GX",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11498",
-    "externalId": null,
+    "externalId": "sma-SV71",
     "tcgdex_id": "sma-SV71",
     "localId": "SV71",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV71/94",
+    "cardNumber": "SV71/SV94",
     "cardName": "Guzzlord-GX",
-    "fullDisplayName": "Guzzlord-GX SV71/94 Yellow A Alternate",
+    "fullDisplayName": "Guzzlord-GX SV71/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -766,18 +943,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV71-low.png",
-    "imageHighSrc": "cards/sma-SV71-high.png"
+    "imageHighSrc": "cards/sma-SV71-high.png",
+    "attacks": [
+      {
+        "name": "Eat Sloppily",
+        "damage": null
+      },
+      {
+        "name": "Tyrannical Hole",
+        "damage": "180"
+      },
+      {
+        "name": "Glutton-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11491",
-    "externalId": null,
+    "externalId": "sma-SV70",
     "tcgdex_id": "sma-SV70",
     "localId": "SV70",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV70/94",
+    "cardNumber": "SV70/SV94",
     "cardName": "Darkrai-GX",
-    "fullDisplayName": "Darkrai-GX SV70/94 Yellow A Alternate",
+    "fullDisplayName": "Darkrai-GX SV70/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -800,18 +992,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV70-low.png",
-    "imageHighSrc": "cards/sma-SV70-high.png"
+    "imageHighSrc": "cards/sma-SV70-high.png",
+    "attacks": [
+      {
+        "name": "Dark Cleave",
+        "damage": "130"
+      },
+      {
+        "name": "Dead End-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11484",
-    "externalId": null,
+    "externalId": "sma-SV69",
     "tcgdex_id": "sma-SV69",
     "localId": "SV69",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV69/94",
+    "cardNumber": "SV69/SV94",
     "cardName": "Umbreon-GX",
-    "fullDisplayName": "Umbreon-GX SV69/94 Yellow A Alternate",
+    "fullDisplayName": "Umbreon-GX SV69/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -834,18 +1037,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV69-low.png",
-    "imageHighSrc": "cards/sma-SV69-high.png"
+    "imageHighSrc": "cards/sma-SV69-high.png",
+    "attacks": [
+      {
+        "name": "Strafe",
+        "damage": "30"
+      },
+      {
+        "name": "Shadow Bullet",
+        "damage": "90"
+      },
+      {
+        "name": "Dark Call-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11477",
-    "externalId": null,
+    "externalId": "sma-SV68",
     "tcgdex_id": "sma-SV68",
     "localId": "SV68",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV68/94",
+    "cardNumber": "SV68/SV94",
     "cardName": "Buzzwole-GX",
-    "fullDisplayName": "Buzzwole-GX SV68/94 Yellow A Alternate",
+    "fullDisplayName": "Buzzwole-GX SV68/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -869,18 +1087,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV68-low.png",
-    "imageHighSrc": "cards/sma-SV68-high.png"
+    "imageHighSrc": "cards/sma-SV68-high.png",
+    "attacks": [
+      {
+        "name": "Jet Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Knuckle Impact",
+        "damage": "160"
+      },
+      {
+        "name": "Absorption-GX",
+        "damage": "40×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11470",
-    "externalId": null,
+    "externalId": "sma-SV67",
     "tcgdex_id": "sma-SV67",
     "localId": "SV67",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV67/94",
+    "cardNumber": "SV67/SV94",
     "cardName": "Lycanroc-GX",
-    "fullDisplayName": "Lycanroc-GX SV67/94 Yellow A Alternate",
+    "fullDisplayName": "Lycanroc-GX SV67/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -903,18 +1136,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV67-low.png",
-    "imageHighSrc": "cards/sma-SV67-high.png"
+    "imageHighSrc": "cards/sma-SV67-high.png",
+    "attacks": [
+      {
+        "name": "Accelerock",
+        "damage": "120"
+      },
+      {
+        "name": "Splintered Shards-GX",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11463",
-    "externalId": null,
+    "externalId": "sma-SV66",
     "tcgdex_id": "sma-SV66",
     "localId": "SV66",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV66/94",
+    "cardNumber": "SV66/SV94",
     "cardName": "Lycanroc-GX",
-    "fullDisplayName": "Lycanroc-GX SV66/94 Yellow A Alternate",
+    "fullDisplayName": "Lycanroc-GX SV66/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -937,18 +1181,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV66-low.png",
-    "imageHighSrc": "cards/sma-SV66-high.png"
+    "imageHighSrc": "cards/sma-SV66-high.png",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "110"
+      },
+      {
+        "name": "Dangerous Rogue-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11456",
-    "externalId": null,
+    "externalId": "sma-SV65",
     "tcgdex_id": "sma-SV65",
     "localId": "SV65",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV65/94",
+    "cardNumber": "SV65/SV94",
     "cardName": "Zygarde-GX",
-    "fullDisplayName": "Zygarde-GX SV65/94 Yellow A Alternate",
+    "fullDisplayName": "Zygarde-GX SV65/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -971,18 +1226,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV65-low.png",
-    "imageHighSrc": "cards/sma-SV65-high.png"
+    "imageHighSrc": "cards/sma-SV65-high.png",
+    "attacks": [
+      {
+        "name": "Cell Connector",
+        "damage": "50"
+      },
+      {
+        "name": "Land's Wrath",
+        "damage": "130"
+      },
+      {
+        "name": "Verdict-GX",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11449",
-    "externalId": null,
+    "externalId": "sma-SV64",
     "tcgdex_id": "sma-SV64",
     "localId": "SV64",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV64/94",
+    "cardNumber": "SV64/SV94",
     "cardName": "Lucario-GX",
-    "fullDisplayName": "Lucario-GX SV64/94 Yellow A Alternate",
+    "fullDisplayName": "Lucario-GX SV64/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1005,18 +1275,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV64-low.png",
-    "imageHighSrc": "cards/sma-SV64-high.png"
+    "imageHighSrc": "cards/sma-SV64-high.png",
+    "attacks": [
+      {
+        "name": "Aura Strike",
+        "damage": "30+"
+      },
+      {
+        "name": "Cyclone Kick",
+        "damage": "130"
+      },
+      {
+        "name": "Cantankerous Beatdown-GX",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11442",
-    "externalId": null,
+    "externalId": "sma-SV63",
     "tcgdex_id": "sma-SV63",
     "localId": "SV63",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV63/94",
+    "cardNumber": "SV63/SV94",
     "cardName": "Naganadel-GX",
-    "fullDisplayName": "Naganadel-GX SV63/94 Yellow A Alternate",
+    "fullDisplayName": "Naganadel-GX SV63/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1040,18 +1325,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV63-low.png",
-    "imageHighSrc": "cards/sma-SV63-high.png"
+    "imageHighSrc": "cards/sma-SV63-high.png",
+    "attacks": [
+      {
+        "name": "Beast Raid",
+        "damage": "20×"
+      },
+      {
+        "name": "Jet Needle",
+        "damage": "110"
+      },
+      {
+        "name": "Stinger-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11436",
-    "externalId": null,
+    "externalId": "sma-SV62",
     "tcgdex_id": "sma-SV62",
     "localId": "SV62",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV62/94",
+    "cardNumber": "SV62/SV94",
     "cardName": "Nihilego-GX",
-    "fullDisplayName": "Nihilego-GX SV62/94 Yellow A Alternate",
+    "fullDisplayName": "Nihilego-GX SV62/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1075,18 +1375,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV62-low.png",
-    "imageHighSrc": "cards/sma-SV62-high.png"
+    "imageHighSrc": "cards/sma-SV62-high.png",
+    "attacks": [
+      {
+        "name": "Lock Up",
+        "damage": "120"
+      },
+      {
+        "name": "Symbiont-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11429",
-    "externalId": null,
+    "externalId": "sma-SV61",
     "tcgdex_id": "sma-SV61",
     "localId": "SV61",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV61/94",
+    "cardNumber": "SV61/SV94",
     "cardName": "Banette-GX",
-    "fullDisplayName": "Banette-GX SV61/94 Yellow A Alternate",
+    "fullDisplayName": "Banette-GX SV61/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1109,18 +1420,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV61-low.png",
-    "imageHighSrc": "cards/sma-SV61-high.png"
+    "imageHighSrc": "cards/sma-SV61-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Chant",
+        "damage": "30+"
+      },
+      {
+        "name": "Tomb Hunt-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11423",
-    "externalId": null,
+    "externalId": "sma-SV60",
     "tcgdex_id": "sma-SV60",
     "localId": "SV60",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV60/94",
+    "cardNumber": "SV60/SV94",
     "cardName": "Espeon-GX",
-    "fullDisplayName": "Espeon-GX SV60/94 Yellow A Alternate",
+    "fullDisplayName": "Espeon-GX SV60/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1143,18 +1465,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV60-low.png",
-    "imageHighSrc": "cards/sma-SV60-high.png"
+    "imageHighSrc": "cards/sma-SV60-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": "30"
+      },
+      {
+        "name": "Psychic",
+        "damage": "60+"
+      },
+      {
+        "name": "Divide-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11417",
-    "externalId": null,
+    "externalId": "sma-SV59",
     "tcgdex_id": "sma-SV59",
     "localId": "SV59",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV59/94",
+    "cardNumber": "SV59/SV94",
     "cardName": "Mewtwo-GX",
-    "fullDisplayName": "Mewtwo-GX SV59/94 Yellow A Alternate",
+    "fullDisplayName": "Mewtwo-GX SV59/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1177,18 +1514,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV59-low.png",
-    "imageHighSrc": "cards/sma-SV59-high.png"
+    "imageHighSrc": "cards/sma-SV59-high.png",
+    "attacks": [
+      {
+        "name": "Full Burst",
+        "damage": "30×"
+      },
+      {
+        "name": "Super Absorption",
+        "damage": "60"
+      },
+      {
+        "name": "Psystrike-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11410",
-    "externalId": null,
+    "externalId": "sma-SV58",
     "tcgdex_id": "sma-SV58",
     "localId": "SV58",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV58/94",
+    "cardNumber": "SV58/SV94",
     "cardName": "Xurkitree-GX",
-    "fullDisplayName": "Xurkitree-GX SV58/94 Yellow A Alternate",
+    "fullDisplayName": "Xurkitree-GX SV58/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1212,18 +1564,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV58-low.png",
-    "imageHighSrc": "cards/sma-SV58-high.png"
+    "imageHighSrc": "cards/sma-SV58-high.png",
+    "attacks": [
+      {
+        "name": "Rumbling Wires",
+        "damage": "100"
+      },
+      {
+        "name": "Lighting-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11403",
-    "externalId": null,
+    "externalId": "sma-SV57",
     "tcgdex_id": "sma-SV57",
     "localId": "SV57",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV57/94",
+    "cardNumber": "SV57/SV94",
     "cardName": "Electrode-GX",
-    "fullDisplayName": "Electrode-GX SV57/94 Yellow A Alternate",
+    "fullDisplayName": "Electrode-GX SV57/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1246,18 +1609,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV57-low.png",
-    "imageHighSrc": "cards/sma-SV57-high.png"
+    "imageHighSrc": "cards/sma-SV57-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "50"
+      },
+      {
+        "name": "Crush and Burn-GX",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11396",
-    "externalId": null,
+    "externalId": "sma-SV56",
     "tcgdex_id": "sma-SV56",
     "localId": "SV56",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV56/94",
+    "cardNumber": "SV56/SV94",
     "cardName": "Greninja-GX",
-    "fullDisplayName": "Greninja-GX SV56/94 Yellow A Alternate",
+    "fullDisplayName": "Greninja-GX SV56/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1280,18 +1654,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV56-low.png",
-    "imageHighSrc": "cards/sma-SV56-high.png"
+    "imageHighSrc": "cards/sma-SV56-high.png",
+    "attacks": [
+      {
+        "name": "Haze Slash",
+        "damage": "110"
+      },
+      {
+        "name": "Shadowy Hunter-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11390",
-    "externalId": null,
+    "externalId": "sma-SV55",
     "tcgdex_id": "sma-SV55",
     "localId": "SV55",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV55/94",
+    "cardNumber": "SV55/SV94",
     "cardName": "Glaceon-GX",
-    "fullDisplayName": "Glaceon-GX SV55/94 Yellow A Alternate",
+    "fullDisplayName": "Glaceon-GX SV55/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1314,18 +1699,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV55-low.png",
-    "imageHighSrc": "cards/sma-SV55-high.png"
+    "imageHighSrc": "cards/sma-SV55-high.png",
+    "attacks": [
+      {
+        "name": "Frost Bullet",
+        "damage": "90"
+      },
+      {
+        "name": "Polar Spear-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11383",
-    "externalId": null,
+    "externalId": "sma-SV54",
     "tcgdex_id": "sma-SV54",
     "localId": "SV54",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV54/94",
+    "cardNumber": "SV54/SV94",
     "cardName": "Articuno-GX",
-    "fullDisplayName": "Articuno-GX SV54/94 Yellow A Alternate",
+    "fullDisplayName": "Articuno-GX SV54/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1348,18 +1744,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV54-low.png",
-    "imageHighSrc": "cards/sma-SV54-high.png"
+    "imageHighSrc": "cards/sma-SV54-high.png",
+    "attacks": [
+      {
+        "name": "Ice Wing",
+        "damage": "130"
+      },
+      {
+        "name": "Cold Crush-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11375",
-    "externalId": null,
+    "externalId": "sma-SV53",
     "tcgdex_id": "sma-SV53",
     "localId": "SV53",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV53/94",
+    "cardNumber": "SV53/SV94",
     "cardName": "Alolan Ninetales-GX",
-    "fullDisplayName": "Alolan Ninetales-GX SV53/94 Yellow A Alternate",
+    "fullDisplayName": "Alolan Ninetales-GX SV53/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1382,18 +1789,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV53-low.png",
-    "imageHighSrc": "cards/sma-SV53-high.png"
+    "imageHighSrc": "cards/sma-SV53-high.png",
+    "attacks": [
+      {
+        "name": "Ice Blade",
+        "damage": null
+      },
+      {
+        "name": "Blizzard Edge",
+        "damage": "160"
+      },
+      {
+        "name": "Ice Path-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11365",
-    "externalId": null,
+    "externalId": "sma-SV52",
     "tcgdex_id": "sma-SV52",
     "localId": "SV52",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV52/94",
+    "cardNumber": "SV52/SV94",
     "cardName": "Turtonator-GX",
-    "fullDisplayName": "Turtonator-GX SV52/94 Yellow A Alternate",
+    "fullDisplayName": "Turtonator-GX SV52/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1416,18 +1838,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV52-low.png",
-    "imageHighSrc": "cards/sma-SV52-high.png"
+    "imageHighSrc": "cards/sma-SV52-high.png",
+    "attacks": [
+      {
+        "name": "Shell Trap",
+        "damage": "20"
+      },
+      {
+        "name": "Bright Flame",
+        "damage": "160"
+      },
+      {
+        "name": "Nitro Tank-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11358",
-    "externalId": null,
+    "externalId": "sma-SV51",
     "tcgdex_id": "sma-SV51",
     "localId": "SV51",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV51/94",
+    "cardNumber": "SV51/SV94",
     "cardName": "Reshiram-GX",
-    "fullDisplayName": "Reshiram-GX SV51/94 Yellow A Alternate",
+    "fullDisplayName": "Reshiram-GX SV51/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1450,18 +1887,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV51-low.png",
-    "imageHighSrc": "cards/sma-SV51-high.png"
+    "imageHighSrc": "cards/sma-SV51-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": null
+      },
+      {
+        "name": "Scorching Column",
+        "damage": "110"
+      },
+      {
+        "name": "Vermilion-GX",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11347",
-    "externalId": null,
+    "externalId": "sma-SV50",
     "tcgdex_id": "sma-SV50",
     "localId": "SV50",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV50/94",
+    "cardNumber": "SV50/SV94",
     "cardName": "Ho-Oh-GX",
-    "fullDisplayName": "Ho-Oh-GX SV50/94 Yellow A Alternate",
+    "fullDisplayName": "Ho-Oh-GX SV50/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1484,18 +1936,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV50-low.png",
-    "imageHighSrc": "cards/sma-SV50-high.png"
+    "imageHighSrc": "cards/sma-SV50-high.png",
+    "attacks": [
+      {
+        "name": "Sacred Fire",
+        "damage": null
+      },
+      {
+        "name": "Phoenix Burn",
+        "damage": "180"
+      },
+      {
+        "name": "Eternal Light-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11341",
-    "externalId": null,
+    "externalId": "sma-SV49",
     "tcgdex_id": "sma-SV49",
     "localId": "SV49",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV49/94",
+    "cardNumber": "SV49/SV94",
     "cardName": "Charizard-GX",
-    "fullDisplayName": "Charizard-GX SV49/94 Yellow A Alternate",
+    "fullDisplayName": "Charizard-GX SV49/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1518,18 +1985,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV49-low.png",
-    "imageHighSrc": "cards/sma-SV49-high.png"
+    "imageHighSrc": "cards/sma-SV49-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "70"
+      },
+      {
+        "name": "Crimson Storm",
+        "damage": "300"
+      },
+      {
+        "name": "Raging Out-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11334",
-    "externalId": null,
+    "externalId": "sma-SV48",
     "tcgdex_id": "sma-SV48",
     "localId": "SV48",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV48/94",
+    "cardNumber": "SV48/SV94",
     "cardName": "Golisopod-GX",
-    "fullDisplayName": "Golisopod-GX SV48/94 Yellow A Alternate",
+    "fullDisplayName": "Golisopod-GX SV48/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1552,18 +2034,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV48-low.png",
-    "imageHighSrc": "cards/sma-SV48-high.png"
+    "imageHighSrc": "cards/sma-SV48-high.png",
+    "attacks": [
+      {
+        "name": "First Impression",
+        "damage": "30+"
+      },
+      {
+        "name": "Armor Press",
+        "damage": "100"
+      },
+      {
+        "name": "Crossing Cut-GX",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11326",
-    "externalId": null,
+    "externalId": "sma-SV47",
     "tcgdex_id": "sma-SV47",
     "localId": "SV47",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV47/94",
+    "cardNumber": "SV47/SV94",
     "cardName": "Decidueye-GX",
-    "fullDisplayName": "Decidueye-GX SV47/94 Yellow A Alternate",
+    "fullDisplayName": "Decidueye-GX SV47/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1586,18 +2083,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV47-low.png",
-    "imageHighSrc": "cards/sma-SV47-high.png"
+    "imageHighSrc": "cards/sma-SV47-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "90"
+      },
+      {
+        "name": "Hollow Hunt-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11320",
-    "externalId": null,
+    "externalId": "sma-SV46",
     "tcgdex_id": "sma-SV46",
     "localId": "SV46",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV46/94",
+    "cardNumber": "SV46/SV94",
     "cardName": "Leafeon-GX",
-    "fullDisplayName": "Leafeon-GX SV46/94 Yellow A Alternate",
+    "fullDisplayName": "Leafeon-GX SV46/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1620,18 +2128,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV46-low.png",
-    "imageHighSrc": "cards/sma-SV46-high.png"
+    "imageHighSrc": "cards/sma-SV46-high.png",
+    "attacks": [
+      {
+        "name": "Solar Beam",
+        "damage": "110"
+      },
+      {
+        "name": "Grand Bloom-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11310",
-    "externalId": null,
+    "externalId": "sma-SV45",
     "tcgdex_id": "sma-SV45",
     "localId": "SV45",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV45/94",
+    "cardNumber": "SV45/SV94",
     "cardName": "Type: Null",
-    "fullDisplayName": "Type: Null SV45/94 Yellow A Alternate",
+    "fullDisplayName": "Type: Null SV45/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1653,18 +2172,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV45-low.png",
-    "imageHighSrc": "cards/sma-SV45-high.png"
+    "imageHighSrc": "cards/sma-SV45-high.png",
+    "attacks": [
+      {
+        "name": "Armor Press",
+        "damage": "30"
+      },
+      {
+        "name": "Slashing Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "11304",
-    "externalId": null,
+    "externalId": "sma-SV44",
     "tcgdex_id": "sma-SV44",
     "localId": "SV44",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV44/94",
+    "cardNumber": "SV44/SV94",
     "cardName": "Oranguru",
-    "fullDisplayName": "Oranguru SV44/94 Yellow A Alternate",
+    "fullDisplayName": "Oranguru SV44/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1686,18 +2215,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV44-low.png",
-    "imageHighSrc": "cards/sma-SV44-high.png"
+    "imageHighSrc": "cards/sma-SV44-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "11297",
-    "externalId": null,
+    "externalId": "sma-SV43",
     "tcgdex_id": "sma-SV43",
     "localId": "SV43",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV43/94",
+    "cardNumber": "SV43/SV94",
     "cardName": "Noibat",
-    "fullDisplayName": "Noibat SV43/94 Yellow A Alternate",
+    "fullDisplayName": "Noibat SV43/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1719,18 +2254,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV43-low.png",
-    "imageHighSrc": "cards/sma-SV43-high.png"
+    "imageHighSrc": "cards/sma-SV43-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11290",
-    "externalId": null,
+    "externalId": "sma-SV42",
     "tcgdex_id": "sma-SV42",
     "localId": "SV42",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV42/94",
+    "cardNumber": "SV42/SV94",
     "cardName": "Swablu",
-    "fullDisplayName": "Swablu SV42/94 Yellow A Alternate",
+    "fullDisplayName": "Swablu SV42/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1752,18 +2293,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV42-low.png",
-    "imageHighSrc": "cards/sma-SV42-high.png"
+    "imageHighSrc": "cards/sma-SV42-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11283",
-    "externalId": null,
+    "externalId": "sma-SV41",
     "tcgdex_id": "sma-SV41",
     "localId": "SV41",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV41/94",
+    "cardNumber": "SV41/SV94",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee SV41/94 Yellow A Alternate",
+    "fullDisplayName": "Eevee SV41/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1785,18 +2336,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV41-low.png",
-    "imageHighSrc": "cards/sma-SV41-high.png"
+    "imageHighSrc": "cards/sma-SV41-high.png",
+    "attacks": [
+      {
+        "name": "Quick Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11276",
-    "externalId": null,
+    "externalId": "sma-SV40",
     "tcgdex_id": "sma-SV40",
     "localId": "SV40",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV40/94",
+    "cardNumber": "SV40/SV94",
     "cardName": "Garchomp",
-    "fullDisplayName": "Garchomp SV40/94 Yellow A Alternate",
+    "fullDisplayName": "Garchomp SV40/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1818,18 +2375,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV40-low.png",
-    "imageHighSrc": "cards/sma-SV40-high.png"
+    "imageHighSrc": "cards/sma-SV40-high.png",
+    "attacks": [
+      {
+        "name": "Quick Dive",
+        "damage": null
+      },
+      {
+        "name": "Royal Blades",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "11269",
-    "externalId": null,
+    "externalId": "sma-SV39",
     "tcgdex_id": "sma-SV39",
     "localId": "SV39",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV39/94",
+    "cardNumber": "SV39/SV94",
     "cardName": "Gabite",
-    "fullDisplayName": "Gabite SV39/94 Yellow A Alternate",
+    "fullDisplayName": "Gabite SV39/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1851,18 +2418,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV39-low.png",
-    "imageHighSrc": "cards/sma-SV39-high.png"
+    "imageHighSrc": "cards/sma-SV39-high.png",
+    "attacks": [
+      {
+        "name": "Ascension",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "11262",
-    "externalId": null,
+    "externalId": "sma-SV38",
     "tcgdex_id": "sma-SV38",
     "localId": "SV38",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV38/94",
+    "cardNumber": "SV38/SV94",
     "cardName": "Gible",
-    "fullDisplayName": "Gible SV38/94 Yellow A Alternate",
+    "fullDisplayName": "Gible SV38/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1884,18 +2461,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV38-low.png",
-    "imageHighSrc": "cards/sma-SV38-high.png"
+    "imageHighSrc": "cards/sma-SV38-high.png",
+    "attacks": [
+      {
+        "name": "Ascension",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11255",
-    "externalId": null,
+    "externalId": "sma-SV37",
     "tcgdex_id": "sma-SV37",
     "localId": "SV37",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV37/94",
+    "cardNumber": "SV37/SV94",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria SV37/94 Yellow A Alternate",
+    "fullDisplayName": "Altaria SV37/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1917,18 +2500,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV37-low.png",
-    "imageHighSrc": "cards/sma-SV37-high.png"
+    "imageHighSrc": "cards/sma-SV37-high.png",
+    "attacks": [
+      {
+        "name": "Pierce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11248",
-    "externalId": null,
+    "externalId": "sma-SV36",
     "tcgdex_id": "sma-SV36",
     "localId": "SV36",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV36/94",
+    "cardNumber": "SV36/SV94",
     "cardName": "Diancie",
-    "fullDisplayName": "Diancie SV36/94 Yellow A Alternate",
+    "fullDisplayName": "Diancie SV36/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1950,18 +2539,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV36-low.png",
-    "imageHighSrc": "cards/sma-SV36-high.png"
+    "imageHighSrc": "cards/sma-SV36-high.png",
+    "attacks": [
+      {
+        "name": "Sparkling Wish",
+        "damage": null
+      },
+      {
+        "name": "Diamond Storm",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11241",
-    "externalId": null,
+    "externalId": "sma-SV35",
     "tcgdex_id": "sma-SV35",
     "localId": "SV35",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV35/94",
+    "cardNumber": "SV35/SV94",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia SV35/94 Yellow A Alternate",
+    "fullDisplayName": "Kirlia SV35/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1983,18 +2582,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV35-low.png",
-    "imageHighSrc": "cards/sma-SV35-high.png"
+    "imageHighSrc": "cards/sma-SV35-high.png",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "20"
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11234",
-    "externalId": null,
+    "externalId": "sma-SV34",
     "tcgdex_id": "sma-SV34",
     "localId": "SV34",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV34/94",
+    "cardNumber": "SV34/SV94",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts SV34/94 Yellow A Alternate",
+    "fullDisplayName": "Ralts SV34/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2016,18 +2625,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV34-low.png",
-    "imageHighSrc": "cards/sma-SV34-high.png"
+    "imageHighSrc": "cards/sma-SV34-high.png",
+    "attacks": [
+      {
+        "name": "Draining Kiss",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11227",
-    "externalId": null,
+    "externalId": "sma-SV33",
     "tcgdex_id": "sma-SV33",
     "localId": "SV33",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV33/94",
+    "cardNumber": "SV33/SV94",
     "cardName": "Kartana",
-    "fullDisplayName": "Kartana SV33/94 Yellow A Alternate",
+    "fullDisplayName": "Kartana SV33/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2050,18 +2665,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV33-low.png",
-    "imageHighSrc": "cards/sma-SV33-high.png"
+    "imageHighSrc": "cards/sma-SV33-high.png",
+    "attacks": [
+      {
+        "name": "Divine Paper",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "11220",
-    "externalId": null,
+    "externalId": "sma-SV32",
     "tcgdex_id": "sma-SV32",
     "localId": "SV32",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV32/94",
+    "cardNumber": "SV32/SV94",
     "cardName": "Celesteela",
-    "fullDisplayName": "Celesteela SV32/94 Yellow A Alternate",
+    "fullDisplayName": "Celesteela SV32/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2084,18 +2705,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV32-low.png",
-    "imageHighSrc": "cards/sma-SV32-high.png"
+    "imageHighSrc": "cards/sma-SV32-high.png",
+    "attacks": [
+      {
+        "name": "Moon Raker",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "11213",
-    "externalId": null,
+    "externalId": "sma-SV31",
     "tcgdex_id": "sma-SV31",
     "localId": "SV31",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV31/94",
+    "cardNumber": "SV31/SV94",
     "cardName": "Metang",
-    "fullDisplayName": "Metang SV31/94 Yellow A Alternate",
+    "fullDisplayName": "Metang SV31/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2117,18 +2744,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV31-low.png",
-    "imageHighSrc": "cards/sma-SV31-high.png"
+    "imageHighSrc": "cards/sma-SV31-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Core Beam",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11206",
-    "externalId": null,
+    "externalId": "sma-SV30",
     "tcgdex_id": "sma-SV30",
     "localId": "SV30",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV30/94",
+    "cardNumber": "SV30/SV94",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum SV30/94 Yellow A Alternate",
+    "fullDisplayName": "Beldum SV30/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2150,18 +2787,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV30-low.png",
-    "imageHighSrc": "cards/sma-SV30-high.png"
+    "imageHighSrc": "cards/sma-SV30-high.png",
+    "attacks": [
+      {
+        "name": "Core Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11199",
-    "externalId": null,
+    "externalId": "sma-SV29",
     "tcgdex_id": "sma-SV29",
     "localId": "SV29",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV29/94",
+    "cardNumber": "SV29/SV94",
     "cardName": "Magnezone",
-    "fullDisplayName": "Magnezone SV29/94 Yellow A Alternate",
+    "fullDisplayName": "Magnezone SV29/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2183,18 +2826,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV29-low.png",
-    "imageHighSrc": "cards/sma-SV29-high.png"
+    "imageHighSrc": "cards/sma-SV29-high.png",
+    "attacks": [
+      {
+        "name": "Zap Cannon",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "11192",
-    "externalId": null,
+    "externalId": "sma-SV28",
     "tcgdex_id": "sma-SV28",
     "localId": "SV28",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV28/94",
+    "cardNumber": "SV28/SV94",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton SV28/94 Yellow A Alternate",
+    "fullDisplayName": "Magneton SV28/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2216,18 +2865,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV28-low.png",
-    "imageHighSrc": "cards/sma-SV28-high.png"
+    "imageHighSrc": "cards/sma-SV28-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Zap Cannon",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11185",
-    "externalId": null,
+    "externalId": "sma-SV27",
     "tcgdex_id": "sma-SV27",
     "localId": "SV27",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV27/94",
+    "cardNumber": "SV27/SV94",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite SV27/94 Yellow A Alternate",
+    "fullDisplayName": "Magnemite SV27/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2249,18 +2908,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV27-low.png",
-    "imageHighSrc": "cards/sma-SV27-high.png"
+    "imageHighSrc": "cards/sma-SV27-high.png",
+    "attacks": [
+      {
+        "name": "Searching Magnet",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11178",
-    "externalId": null,
+    "externalId": "sma-SV26",
     "tcgdex_id": "sma-SV26",
     "localId": "SV26",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV26/94",
+    "cardNumber": "SV26/SV94",
     "cardName": "Guzzlord",
-    "fullDisplayName": "Guzzlord SV26/94 Yellow A Alternate",
+    "fullDisplayName": "Guzzlord SV26/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2283,18 +2952,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV26-low.png",
-    "imageHighSrc": "cards/sma-SV26-high.png"
+    "imageHighSrc": "cards/sma-SV26-high.png",
+    "attacks": [
+      {
+        "name": "Lord's Valley",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "11167",
-    "externalId": null,
+    "externalId": "sma-SV25",
     "tcgdex_id": "sma-SV25",
     "localId": "SV25",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV25/94",
+    "cardNumber": "SV25/SV94",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua SV25/94 Yellow A Alternate",
+    "fullDisplayName": "Zorua SV25/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2316,18 +2991,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV25-low.png",
-    "imageHighSrc": "cards/sma-SV25-high.png"
+    "imageHighSrc": "cards/sma-SV25-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11159",
-    "externalId": null,
+    "externalId": "sma-SV24",
     "tcgdex_id": "sma-SV24",
     "localId": "SV24",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV24/94",
+    "cardNumber": "SV24/SV94",
     "cardName": "Buzzwole",
-    "fullDisplayName": "Buzzwole SV24/94 Yellow A Alternate",
+    "fullDisplayName": "Buzzwole SV24/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2350,18 +3035,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV24-low.png",
-    "imageHighSrc": "cards/sma-SV24-high.png"
+    "imageHighSrc": "cards/sma-SV24-high.png",
+    "attacks": [
+      {
+        "name": "Sledgehammer",
+        "damage": "30+"
+      },
+      {
+        "name": "Swing Around",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "11152",
-    "externalId": null,
+    "externalId": "sma-SV23",
     "tcgdex_id": "sma-SV23",
     "localId": "SV23",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV23/94",
+    "cardNumber": "SV23/SV94",
     "cardName": "Rockruff",
-    "fullDisplayName": "Rockruff SV23/94 Yellow A Alternate",
+    "fullDisplayName": "Rockruff SV23/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2383,18 +3078,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV23-low.png",
-    "imageHighSrc": "cards/sma-SV23-high.png"
+    "imageHighSrc": "cards/sma-SV23-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "11145",
-    "externalId": null,
+    "externalId": "sma-SV22",
     "tcgdex_id": "sma-SV22",
     "localId": "SV22",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV22/94",
+    "cardNumber": "SV22/SV94",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario SV22/94 Yellow A Alternate",
+    "fullDisplayName": "Lucario SV22/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2416,18 +3117,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV22-low.png",
-    "imageHighSrc": "cards/sma-SV22-high.png"
+    "imageHighSrc": "cards/sma-SV22-high.png",
+    "attacks": [
+      {
+        "name": "Missile Jab",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "11138",
-    "externalId": null,
+    "externalId": "sma-SV21",
     "tcgdex_id": "sma-SV21",
     "localId": "SV21",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV21/94",
+    "cardNumber": "SV21/SV94",
     "cardName": "Riolu",
-    "fullDisplayName": "Riolu SV21/94 Yellow A Alternate",
+    "fullDisplayName": "Riolu SV21/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2449,18 +3156,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV21-low.png",
-    "imageHighSrc": "cards/sma-SV21-high.png"
+    "imageHighSrc": "cards/sma-SV21-high.png",
+    "attacks": [
+      {
+        "name": "Detect",
+        "damage": null
+      },
+      {
+        "name": "Jab",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11131",
-    "externalId": null,
+    "externalId": "sma-SV20",
     "tcgdex_id": "sma-SV20",
     "localId": "SV20",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV20/94",
+    "cardNumber": "SV20/SV94",
     "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo SV20/94 Yellow A Alternate",
+    "fullDisplayName": "Sudowoodo SV20/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2482,18 +3199,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV20-low.png",
-    "imageHighSrc": "cards/sma-SV20-high.png"
+    "imageHighSrc": "cards/sma-SV20-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "11124",
-    "externalId": null,
+    "externalId": "sma-SV19",
     "tcgdex_id": "sma-SV19",
     "localId": "SV19",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV19/94",
+    "cardNumber": "SV19/SV94",
     "cardName": "Poipole",
-    "fullDisplayName": "Poipole SV19/94 Yellow A Alternate",
+    "fullDisplayName": "Poipole SV19/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2516,18 +3239,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV19-low.png",
-    "imageHighSrc": "cards/sma-SV19-high.png"
+    "imageHighSrc": "cards/sma-SV19-high.png",
+    "attacks": [
+      {
+        "name": "Spit Poison",
+        "damage": null
+      },
+      {
+        "name": "Knockout Reviver",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11117",
-    "externalId": null,
+    "externalId": "sma-SV18",
     "tcgdex_id": "sma-SV18",
     "localId": "SV18",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV18/94",
+    "cardNumber": "SV18/SV94",
     "cardName": "Malamar",
-    "fullDisplayName": "Malamar SV18/94 Yellow A Alternate",
+    "fullDisplayName": "Malamar SV18/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2549,18 +3282,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV18-low.png",
-    "imageHighSrc": "cards/sma-SV18-high.png"
+    "imageHighSrc": "cards/sma-SV18-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Sphere",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "11110",
-    "externalId": null,
+    "externalId": "sma-SV17",
     "tcgdex_id": "sma-SV17",
     "localId": "SV17",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV17/94",
+    "cardNumber": "SV17/SV94",
     "cardName": "Inkay",
-    "fullDisplayName": "Inkay SV17/94 Yellow A Alternate",
+    "fullDisplayName": "Inkay SV17/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2582,18 +3321,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV17-low.png",
-    "imageHighSrc": "cards/sma-SV17-high.png"
+    "imageHighSrc": "cards/sma-SV17-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11103",
-    "externalId": null,
+    "externalId": "sma-SV16",
     "tcgdex_id": "sma-SV16",
     "localId": "SV16",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV16/94",
+    "cardNumber": "SV16/SV94",
     "cardName": "Shuppet",
-    "fullDisplayName": "Shuppet SV16/94 Yellow A Alternate",
+    "fullDisplayName": "Shuppet SV16/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2615,18 +3360,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV16-low.png",
-    "imageHighSrc": "cards/sma-SV16-high.png"
+    "imageHighSrc": "cards/sma-SV16-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Will-O-Wisp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11096",
-    "externalId": null,
+    "externalId": "sma-SV15",
     "tcgdex_id": "sma-SV15",
     "localId": "SV15",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV15/94",
+    "cardNumber": "SV15/SV94",
     "cardName": "Seviper",
-    "fullDisplayName": "Seviper SV15/94 Yellow A Alternate",
+    "fullDisplayName": "Seviper SV15/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2648,18 +3403,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV15-low.png",
-    "imageHighSrc": "cards/sma-SV15-high.png"
+    "imageHighSrc": "cards/sma-SV15-high.png",
+    "attacks": [
+      {
+        "name": "Venomous Fang",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11090",
-    "externalId": null,
+    "externalId": "sma-SV14",
     "tcgdex_id": "sma-SV14",
     "localId": "SV14",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV14/94",
+    "cardNumber": "SV14/SV94",
     "cardName": "Xurkitree",
-    "fullDisplayName": "Xurkitree SV14/94 Yellow A Alternate",
+    "fullDisplayName": "Xurkitree SV14/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2682,18 +3443,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV14-low.png",
-    "imageHighSrc": "cards/sma-SV14-high.png"
+    "imageHighSrc": "cards/sma-SV14-high.png",
+    "attacks": [
+      {
+        "name": "Dazzle Blast",
+        "damage": "20"
+      },
+      {
+        "name": "Cablegram",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "11083",
-    "externalId": null,
+    "externalId": "sma-SV13",
     "tcgdex_id": "sma-SV13",
     "localId": "SV13",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV13/94",
+    "cardNumber": "SV13/SV94",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb SV13/94 Yellow A Alternate",
+    "fullDisplayName": "Voltorb SV13/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2715,18 +3486,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV13-low.png",
-    "imageHighSrc": "cards/sma-SV13-high.png"
+    "imageHighSrc": "cards/sma-SV13-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11076",
-    "externalId": null,
+    "externalId": "sma-SV12",
     "tcgdex_id": "sma-SV12",
     "localId": "SV12",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV12/94",
+    "cardNumber": "SV12/SV94",
     "cardName": "Frogadier",
-    "fullDisplayName": "Frogadier SV12/94 Yellow A Alternate",
+    "fullDisplayName": "Frogadier SV12/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2748,18 +3525,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV12-low.png",
-    "imageHighSrc": "cards/sma-SV12-high.png"
+    "imageHighSrc": "cards/sma-SV12-high.png",
+    "attacks": [
+      {
+        "name": "Water Drip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11069",
-    "externalId": null,
+    "externalId": "sma-SV11",
     "tcgdex_id": "sma-SV11",
     "localId": "SV11",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV11/94",
+    "cardNumber": "SV11/SV94",
     "cardName": "Froakie",
-    "fullDisplayName": "Froakie SV11/94 Yellow A Alternate",
+    "fullDisplayName": "Froakie SV11/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2781,18 +3564,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV11-low.png",
-    "imageHighSrc": "cards/sma-SV11-high.png"
+    "imageHighSrc": "cards/sma-SV11-high.png",
+    "attacks": [
+      {
+        "name": "Flop",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11062",
-    "externalId": null,
+    "externalId": "sma-SV10",
     "tcgdex_id": "sma-SV10",
     "localId": "SV10",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV10/94",
+    "cardNumber": "SV10/SV94",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire SV10/94 Yellow A Alternate",
+    "fullDisplayName": "Quagsire SV10/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2814,18 +3603,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV10-low.png",
-    "imageHighSrc": "cards/sma-SV10-high.png"
+    "imageHighSrc": "cards/sma-SV10-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "11055",
-    "externalId": null,
+    "externalId": "sma-SV9",
     "tcgdex_id": "sma-SV9",
     "localId": "SV9",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV9/94",
+    "cardNumber": "SV9/SV94",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper SV9/94 Yellow A Alternate",
+    "fullDisplayName": "Wooper SV9/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2847,18 +3642,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV9-low.png",
-    "imageHighSrc": "cards/sma-SV9-high.png"
+    "imageHighSrc": "cards/sma-SV9-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Rain Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11048",
-    "externalId": null,
+    "externalId": "sma-SV8",
     "tcgdex_id": "sma-SV8",
     "localId": "SV8",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV8/94",
+    "cardNumber": "SV8/SV94",
     "cardName": "Alolan Vulpix",
-    "fullDisplayName": "Alolan Vulpix SV8/94 Yellow A Alternate",
+    "fullDisplayName": "Alolan Vulpix SV8/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2880,18 +3685,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV8-low.png",
-    "imageHighSrc": "cards/sma-SV8-high.png"
+    "imageHighSrc": "cards/sma-SV8-high.png",
+    "attacks": [
+      {
+        "name": "Beacon",
+        "damage": null
+      },
+      {
+        "name": "Icy Snow",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11042",
-    "externalId": null,
+    "externalId": "sma-SV7",
     "tcgdex_id": "sma-SV7",
     "localId": "SV7",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV7/94",
+    "cardNumber": "SV7/SV94",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon SV7/94 Yellow A Alternate",
+    "fullDisplayName": "Charmeleon SV7/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2913,18 +3728,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV7-low.png",
-    "imageHighSrc": "cards/sma-SV7-high.png"
+    "imageHighSrc": "cards/sma-SV7-high.png",
+    "attacks": [
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11035",
-    "externalId": null,
+    "externalId": "sma-SV6",
     "tcgdex_id": "sma-SV6",
     "localId": "SV6",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV6/94",
+    "cardNumber": "SV6/SV94",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander SV6/94 Yellow A Alternate",
+    "fullDisplayName": "Charmander SV6/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2946,18 +3767,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV6-low.png",
-    "imageHighSrc": "cards/sma-SV6-high.png"
+    "imageHighSrc": "cards/sma-SV6-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11028",
-    "externalId": null,
+    "externalId": "sma-SV5",
     "tcgdex_id": "sma-SV5",
     "localId": "SV5",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV5/94",
+    "cardNumber": "SV5/SV94",
     "cardName": "Pheromosa",
-    "fullDisplayName": "Pheromosa SV5/94 Yellow A Alternate",
+    "fullDisplayName": "Pheromosa SV5/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2980,18 +3807,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV5-low.png",
-    "imageHighSrc": "cards/sma-SV5-high.png"
+    "imageHighSrc": "cards/sma-SV5-high.png",
+    "attacks": [
+      {
+        "name": "High Jump Kick",
+        "damage": "20"
+      },
+      {
+        "name": "White Ray",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "11021",
-    "externalId": null,
+    "externalId": "sma-SV4",
     "tcgdex_id": "sma-SV4",
     "localId": "SV4",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV4/94",
+    "cardNumber": "SV4/SV94",
     "cardName": "Wimpod",
-    "fullDisplayName": "Wimpod SV4/94 Yellow A Alternate",
+    "fullDisplayName": "Wimpod SV4/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3013,18 +3850,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV4-low.png",
-    "imageHighSrc": "cards/sma-SV4-high.png"
+    "imageHighSrc": "cards/sma-SV4-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11014",
-    "externalId": null,
+    "externalId": "sma-SV3",
     "tcgdex_id": "sma-SV3",
     "localId": "SV3",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV3/94",
+    "cardNumber": "SV3/SV94",
     "cardName": "Dartrix",
-    "fullDisplayName": "Dartrix SV3/94 Yellow A Alternate",
+    "fullDisplayName": "Dartrix SV3/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3046,18 +3889,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV3-low.png",
-    "imageHighSrc": "cards/sma-SV3-high.png"
+    "imageHighSrc": "cards/sma-SV3-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Blade Quill",
+        "damage": null
+      },
+      {
+        "name": "Leaf Blade",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "11003",
-    "externalId": null,
+    "externalId": "sma-SV2",
     "tcgdex_id": "sma-SV2",
     "localId": "SV2",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV2/94",
+    "cardNumber": "SV2/SV94",
     "cardName": "Rowlet",
-    "fullDisplayName": "Rowlet SV2/94 Yellow A Alternate",
+    "fullDisplayName": "Rowlet SV2/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3079,18 +3932,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV2-low.png",
-    "imageHighSrc": "cards/sma-SV2-high.png"
+    "imageHighSrc": "cards/sma-SV2-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Leafage",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10999",
-    "externalId": null,
+    "externalId": "sma-SV1",
     "tcgdex_id": "sma-SV1",
     "localId": "SV1",
     "setCode": "sma",
     "setTcgdexId": "sma",
-    "cardNumber": "SV1/94",
+    "cardNumber": "SV1/SV94",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther SV1/94 Yellow A Alternate",
+    "fullDisplayName": "Scyther SV1/SV94 Yellow A Alternate",
     "rarity": "Rare Shiny",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3112,6 +3975,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sma-SV1-low.png",
-    "imageHighSrc": "cards/sma-SV1-high.png"
+    "imageHighSrc": "cards/sma-SV1-high.png",
+    "attacks": [
+      {
+        "name": "Twin Play",
+        "damage": null
+      },
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   }
 ]

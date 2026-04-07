@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "4054",
-    "externalId": null,
+    "externalId": "dp1-130",
     "tcgdex_id": "dp1-130",
     "localId": "130",
     "setCode": "dp1",
@@ -30,7 +30,7 @@
   },
   {
     "masterCardId": "4052",
-    "externalId": null,
+    "externalId": "dp1-129",
     "tcgdex_id": "dp1-129",
     "localId": "129",
     "setCode": "dp1",
@@ -59,7 +59,7 @@
   },
   {
     "masterCardId": "4050",
-    "externalId": null,
+    "externalId": "dp1-128",
     "tcgdex_id": "dp1-128",
     "localId": "128",
     "setCode": "dp1",
@@ -88,7 +88,7 @@
   },
   {
     "masterCardId": "4048",
-    "externalId": null,
+    "externalId": "dp1-127",
     "tcgdex_id": "dp1-127",
     "localId": "127",
     "setCode": "dp1",
@@ -117,7 +117,7 @@
   },
   {
     "masterCardId": "4046",
-    "externalId": null,
+    "externalId": "dp1-126",
     "tcgdex_id": "dp1-126",
     "localId": "126",
     "setCode": "dp1",
@@ -146,7 +146,7 @@
   },
   {
     "masterCardId": "4044",
-    "externalId": null,
+    "externalId": "dp1-125",
     "tcgdex_id": "dp1-125",
     "localId": "125",
     "setCode": "dp1",
@@ -175,7 +175,7 @@
   },
   {
     "masterCardId": "4041",
-    "externalId": null,
+    "externalId": "dp1-124",
     "tcgdex_id": "dp1-124",
     "localId": "124",
     "setCode": "dp1",
@@ -204,7 +204,7 @@
   },
   {
     "masterCardId": "4039",
-    "externalId": null,
+    "externalId": "dp1-123",
     "tcgdex_id": "dp1-123",
     "localId": "123",
     "setCode": "dp1",
@@ -233,7 +233,7 @@
   },
   {
     "masterCardId": "4036",
-    "externalId": null,
+    "externalId": "dp1-122",
     "tcgdex_id": "dp1-122",
     "localId": "122",
     "setCode": "dp1",
@@ -262,11 +262,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-122-low.png",
-    "imageHighSrc": "cards/dp1-122-high.png"
+    "imageHighSrc": "cards/dp1-122-high.png",
+    "attacks": [
+      {
+        "name": "Vigorous Dash",
+        "damage": "100"
+      }
+    ],
+    "rules": "Put this card onto your Active Torterra. Torterra LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4032",
-    "externalId": null,
+    "externalId": "dp1-121",
     "tcgdex_id": "dp1-121",
     "localId": "121",
     "setCode": "dp1",
@@ -295,11 +302,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-121-low.png",
-    "imageHighSrc": "cards/dp1-121-high.png"
+    "imageHighSrc": "cards/dp1-121-high.png",
+    "attacks": [
+      {
+        "name": "Flare Up",
+        "damage": "150"
+      }
+    ],
+    "rules": "Put this card onto your Active Infernape. Infernape LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4029",
-    "externalId": null,
+    "externalId": "dp1-120",
     "tcgdex_id": "dp1-120",
     "localId": "120",
     "setCode": "dp1",
@@ -328,11 +342,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-120-low.png",
-    "imageHighSrc": "cards/dp1-120-high.png"
+    "imageHighSrc": "cards/dp1-120-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Impact",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Empoleon. Empoleon LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4026",
-    "externalId": null,
+    "externalId": "dp1-119",
     "tcgdex_id": "dp1-119",
     "localId": "119",
     "setCode": "dp1",
@@ -357,11 +378,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-119-low.png",
-    "imageHighSrc": "cards/dp1-119-high.png"
+    "imageHighSrc": "cards/dp1-119-high.png",
+    "rules": "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "4023",
-    "externalId": null,
+    "externalId": "dp1-118",
     "tcgdex_id": "dp1-118",
     "localId": "118",
     "setCode": "dp1",
@@ -386,11 +408,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-118-low.png",
-    "imageHighSrc": "cards/dp1-118-high.png"
+    "imageHighSrc": "cards/dp1-118-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "4020",
-    "externalId": null,
+    "externalId": "dp1-117",
     "tcgdex_id": "dp1-117",
     "localId": "117",
     "setCode": "dp1",
@@ -415,11 +438,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-117-low.png",
-    "imageHighSrc": "cards/dp1-117-high.png"
+    "imageHighSrc": "cards/dp1-117-high.png",
+    "rules": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4017",
-    "externalId": null,
+    "externalId": "dp1-116",
     "tcgdex_id": "dp1-116",
     "localId": "116",
     "setCode": "dp1",
@@ -444,11 +468,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-116-low.png",
-    "imageHighSrc": "cards/dp1-116-high.png"
+    "imageHighSrc": "cards/dp1-116-high.png",
+    "rules": "Your opponent switches 1 of his or her Defending Pokémon with 1 of his or her Benched Pokémon, if any. You switch 1 of your Active Pokémon with 1 of your Benched Pokémon, if any."
   },
   {
     "masterCardId": "4014",
-    "externalId": null,
+    "externalId": "dp1-115",
     "tcgdex_id": "dp1-115",
     "localId": "115",
     "setCode": "dp1",
@@ -473,11 +498,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-115-low.png",
-    "imageHighSrc": "cards/dp1-115-high.png"
+    "imageHighSrc": "cards/dp1-115-high.png",
+    "rules": "Flip a coin. If heads, return 1 of your Pokémon and all cards attached to it to your hand."
   },
   {
     "masterCardId": "4011",
-    "externalId": null,
+    "externalId": "dp1-114",
     "tcgdex_id": "dp1-114",
     "localId": "114",
     "setCode": "dp1",
@@ -502,11 +528,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-114-low.png",
-    "imageHighSrc": "cards/dp1-114-high.png"
+    "imageHighSrc": "cards/dp1-114-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nOnce during each player's turn, the player may flip a coin until he or she gets tails. For each heads, that player draws a card."
   },
   {
     "masterCardId": "4008",
-    "externalId": null,
+    "externalId": "dp1-113",
     "tcgdex_id": "dp1-113",
     "localId": "113",
     "setCode": "dp1",
@@ -531,11 +558,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-113-low.png",
-    "imageHighSrc": "cards/dp1-113-high.png"
+    "imageHighSrc": "cards/dp1-113-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nReveal the top 5 cards of your deck. Your opponent chooses 3 of those cards. Put those cards into your hand and put other 2 cards on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4005",
-    "externalId": null,
+    "externalId": "dp1-112",
     "tcgdex_id": "dp1-112",
     "localId": "112",
     "setCode": "dp1",
@@ -560,11 +588,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-112-low.png",
-    "imageHighSrc": "cards/dp1-112-high.png"
+    "imageHighSrc": "cards/dp1-112-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nChoose 1 card in your hand and shuffle the rest of your cards into your deck. Then, draw 4 cards. (If this is the only card in your hand, you can't play this card.)"
   },
   {
     "masterCardId": "4002",
-    "externalId": null,
+    "externalId": "dp1-111",
     "tcgdex_id": "dp1-111",
     "localId": "111",
     "setCode": "dp1",
@@ -589,11 +618,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-111-low.png",
-    "imageHighSrc": "cards/dp1-111-high.png"
+    "imageHighSrc": "cards/dp1-111-high.png",
+    "rules": "Look at the top 2 cards of your deck, choose 1 of them, and put it into your hand. Put the other card on the bottom of your deck."
   },
   {
     "masterCardId": "3999",
-    "externalId": null,
+    "externalId": "dp1-110",
     "tcgdex_id": "dp1-110",
     "localId": "110",
     "setCode": "dp1",
@@ -618,11 +648,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-110-low.png",
-    "imageHighSrc": "cards/dp1-110-high.png"
+    "imageHighSrc": "cards/dp1-110-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "3996",
-    "externalId": null,
+    "externalId": "dp1-109",
     "tcgdex_id": "dp1-109",
     "localId": "109",
     "setCode": "dp1",
@@ -647,11 +678,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-109-low.png",
-    "imageHighSrc": "cards/dp1-109-high.png"
+    "imageHighSrc": "cards/dp1-109-high.png",
+    "rules": "Attach PlusPower to 1 of your Pokémon. Discard this card at the end of your turn.\n\nIf the Pokémon PlusPower is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance)."
   },
   {
     "masterCardId": "3993",
-    "externalId": null,
+    "externalId": "dp1-108",
     "tcgdex_id": "dp1-108",
     "localId": "108",
     "setCode": "dp1",
@@ -676,11 +708,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-108-low.png",
-    "imageHighSrc": "cards/dp1-108-high.png"
+    "imageHighSrc": "cards/dp1-108-high.png",
+    "rules": "Choose 1 of your Pokémon. Flip 2 coins. If both are heads, remove all damage counters from that Pokémon. If both are tails, discard all Energy cards attached to that Pokémon."
   },
   {
     "masterCardId": "3990",
-    "externalId": null,
+    "externalId": "dp1-107",
     "tcgdex_id": "dp1-107",
     "localId": "107",
     "setCode": "dp1",
@@ -705,11 +738,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-107-low.png",
-    "imageHighSrc": "cards/dp1-107-high.png"
+    "imageHighSrc": "cards/dp1-107-high.png",
+    "rules": "Move a basic Energy card attached to 1 of your Pokémon to another of your Pokémon."
   },
   {
     "masterCardId": "3987",
-    "externalId": null,
+    "externalId": "dp1-106",
     "tcgdex_id": "dp1-106",
     "localId": "106",
     "setCode": "dp1",
@@ -734,11 +768,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-106-low.png",
-    "imageHighSrc": "cards/dp1-106-high.png"
+    "imageHighSrc": "cards/dp1-106-high.png",
+    "rules": "Flip 3 coins. For each heads, put a basic Energy card from your discard pile into your hand. If you don't have that many basic Energy cards in your discard pile, put all of them into your hand."
   },
   {
     "masterCardId": "3983",
-    "externalId": null,
+    "externalId": "dp1-105",
     "tcgdex_id": "dp1-105",
     "localId": "105",
     "setCode": "dp1",
@@ -763,11 +798,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-105-low.png",
-    "imageHighSrc": "cards/dp1-105-high.png"
+    "imageHighSrc": "cards/dp1-105-high.png",
+    "rules": "Remove all Special Conditions from each of your Active Pokémon."
   },
   {
     "masterCardId": "3979",
-    "externalId": null,
+    "externalId": "dp1-104",
     "tcgdex_id": "dp1-104",
     "localId": "104",
     "setCode": "dp1",
@@ -796,11 +832,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-104-low.png",
-    "imageHighSrc": "cards/dp1-104-high.png"
+    "imageHighSrc": "cards/dp1-104-high.png",
+    "attacks": [
+      {
+        "name": "Needling Sting",
+        "damage": "10+"
+      },
+      {
+        "name": "String Shot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3975",
-    "externalId": null,
+    "externalId": "dp1-103",
     "tcgdex_id": "dp1-103",
     "localId": "103",
     "setCode": "dp1",
@@ -829,11 +875,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-103-low.png",
-    "imageHighSrc": "cards/dp1-103-high.png"
+    "imageHighSrc": "cards/dp1-103-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3971",
-    "externalId": null,
+    "externalId": "dp1-102",
     "tcgdex_id": "dp1-102",
     "localId": "102",
     "setCode": "dp1",
@@ -862,11 +918,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-102-low.png",
-    "imageHighSrc": "cards/dp1-102-high.png"
+    "imageHighSrc": "cards/dp1-102-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Severe Gas",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3967",
-    "externalId": null,
+    "externalId": "dp1-101",
     "tcgdex_id": "dp1-101",
     "localId": "101",
     "setCode": "dp1",
@@ -895,11 +961,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-101-low.png",
-    "imageHighSrc": "cards/dp1-101-high.png"
+    "imageHighSrc": "cards/dp1-101-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3963",
-    "externalId": null,
+    "externalId": "dp1-100",
     "tcgdex_id": "dp1-100",
     "localId": "100",
     "setCode": "dp1",
@@ -928,18 +1004,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-100-low.png",
-    "imageHighSrc": "cards/dp1-100-high.png"
+    "imageHighSrc": "cards/dp1-100-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "10×"
+      },
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3960",
-    "externalId": null,
+    "externalId": "dp1-99",
     "tcgdex_id": "dp1-99",
     "localId": "099",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "099/130",
+    "cardNumber": "99/130",
     "cardName": "Skorupi",
-    "fullDisplayName": "Skorupi 099/130 Diamond & Pearl",
+    "fullDisplayName": "Skorupi 99/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -961,18 +1047,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-099-low.png",
-    "imageHighSrc": "cards/dp1-099-high.png"
+    "imageHighSrc": "cards/dp1-099-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      },
+      {
+        "name": "Pin Missile",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3956",
-    "externalId": null,
+    "externalId": "dp1-98",
     "tcgdex_id": "dp1-98",
     "localId": "098",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "098/130",
+    "cardNumber": "98/130",
     "cardName": "Shinx",
-    "fullDisplayName": "Shinx 098/130 Diamond & Pearl",
+    "fullDisplayName": "Shinx 98/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -994,18 +1090,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-098-low.png",
-    "imageHighSrc": "cards/dp1-098-high.png"
+    "imageHighSrc": "cards/dp1-098-high.png",
+    "attacks": [
+      {
+        "name": "Spark",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3952",
-    "externalId": null,
+    "externalId": "dp1-97",
     "tcgdex_id": "dp1-97",
     "localId": "097",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "097/130",
+    "cardNumber": "97/130",
     "cardName": "Seedot",
-    "fullDisplayName": "Seedot 097/130 Diamond & Pearl",
+    "fullDisplayName": "Seedot 97/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1027,18 +1129,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-097-low.png",
-    "imageHighSrc": "cards/dp1-097-high.png"
+    "imageHighSrc": "cards/dp1-097-high.png",
+    "attacks": [
+      {
+        "name": "Bide",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3949",
-    "externalId": null,
+    "externalId": "dp1-96",
     "tcgdex_id": "dp1-96",
     "localId": "096",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "096/130",
+    "cardNumber": "96/130",
     "cardName": "Roselia",
-    "fullDisplayName": "Roselia 096/130 Diamond & Pearl",
+    "fullDisplayName": "Roselia 96/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1060,18 +1172,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-096-low.png",
-    "imageHighSrc": "cards/dp1-096-high.png"
+    "imageHighSrc": "cards/dp1-096-high.png",
+    "attacks": [
+      {
+        "name": "Toxic Spikes",
+        "damage": null
+      },
+      {
+        "name": "Sweet Spike",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3944",
-    "externalId": null,
+    "externalId": "dp1-95",
     "tcgdex_id": "dp1-95",
     "localId": "095",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "095/130",
+    "cardNumber": "95/130",
     "cardName": "Rhyhorn",
-    "fullDisplayName": "Rhyhorn 095/130 Diamond & Pearl",
+    "fullDisplayName": "Rhyhorn 95/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1093,18 +1215,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-095-low.png",
-    "imageHighSrc": "cards/dp1-095-high.png"
+    "imageHighSrc": "cards/dp1-095-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3940",
-    "externalId": null,
+    "externalId": "dp1-94",
     "tcgdex_id": "dp1-94",
     "localId": "094",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "094/130",
+    "cardNumber": "94/130",
     "cardName": "Ponyta",
-    "fullDisplayName": "Ponyta 094/130 Diamond & Pearl",
+    "fullDisplayName": "Ponyta 94/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1126,18 +1258,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-094-low.png",
-    "imageHighSrc": "cards/dp1-094-high.png"
+    "imageHighSrc": "cards/dp1-094-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Flame Tail",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3936",
-    "externalId": null,
+    "externalId": "dp1-93",
     "tcgdex_id": "dp1-93",
     "localId": "093",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "093/130",
+    "cardNumber": "93/130",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 093/130 Diamond & Pearl",
+    "fullDisplayName": "Piplup 93/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1159,18 +1301,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-093-low.png",
-    "imageHighSrc": "cards/dp1-093-high.png"
+    "imageHighSrc": "cards/dp1-093-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Water Splash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3931",
-    "externalId": null,
+    "externalId": "dp1-92",
     "tcgdex_id": "dp1-92",
     "localId": "092",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "092/130",
+    "cardNumber": "92/130",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 092/130 Diamond & Pearl",
+    "fullDisplayName": "Onix 92/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1192,18 +1344,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-092-low.png",
-    "imageHighSrc": "cards/dp1-092-high.png"
+    "imageHighSrc": "cards/dp1-092-high.png",
+    "attacks": [
+      {
+        "name": "Tunneling",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3927",
-    "externalId": null,
+    "externalId": "dp1-91",
     "tcgdex_id": "dp1-91",
     "localId": "091",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "091/130",
+    "cardNumber": "91/130",
     "cardName": "Misdreavus",
-    "fullDisplayName": "Misdreavus 091/130 Diamond & Pearl",
+    "fullDisplayName": "Misdreavus 91/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1225,18 +1387,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-091-low.png",
-    "imageHighSrc": "cards/dp1-091-high.png"
+    "imageHighSrc": "cards/dp1-091-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3923",
-    "externalId": null,
+    "externalId": "dp1-90",
     "tcgdex_id": "dp1-90",
     "localId": "090",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "090/130",
+    "cardNumber": "90/130",
     "cardName": "Mime Jr.",
-    "fullDisplayName": "Mime Jr. 090/130 Diamond & Pearl",
+    "fullDisplayName": "Mime Jr. 90/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1258,18 +1430,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-090-low.png",
-    "imageHighSrc": "cards/dp1-090-high.png"
+    "imageHighSrc": "cards/dp1-090-high.png",
+    "attacks": [
+      {
+        "name": "Mime",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3918",
-    "externalId": null,
+    "externalId": "dp1-89",
     "tcgdex_id": "dp1-89",
     "localId": "089",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "089/130",
+    "cardNumber": "89/130",
     "cardName": "Meditite",
-    "fullDisplayName": "Meditite 089/130 Diamond & Pearl",
+    "fullDisplayName": "Meditite 89/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1291,18 +1469,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-089-low.png",
-    "imageHighSrc": "cards/dp1-089-high.png"
+    "imageHighSrc": "cards/dp1-089-high.png",
+    "attacks": [
+      {
+        "name": "Detect",
+        "damage": null
+      },
+      {
+        "name": "Meditate",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3914",
-    "externalId": null,
+    "externalId": "dp1-88",
     "tcgdex_id": "dp1-88",
     "localId": "088",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "088/130",
+    "cardNumber": "88/130",
     "cardName": "Marill",
-    "fullDisplayName": "Marill 088/130 Diamond & Pearl",
+    "fullDisplayName": "Marill 88/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1324,18 +1512,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-088-low.png",
-    "imageHighSrc": "cards/dp1-088-high.png"
+    "imageHighSrc": "cards/dp1-088-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10+"
+      },
+      {
+        "name": "Splashing Turn",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3910",
-    "externalId": null,
+    "externalId": "dp1-87",
     "tcgdex_id": "dp1-87",
     "localId": "087",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "087/130",
+    "cardNumber": "87/130",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 087/130 Diamond & Pearl",
+    "fullDisplayName": "Magnemite 87/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1357,18 +1555,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-087-low.png",
-    "imageHighSrc": "cards/dp1-087-high.png"
+    "imageHighSrc": "cards/dp1-087-high.png",
+    "attacks": [
+      {
+        "name": "Metal Sound",
+        "damage": null
+      },
+      {
+        "name": "Resonance",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3906",
-    "externalId": null,
+    "externalId": "dp1-86",
     "tcgdex_id": "dp1-86",
     "localId": "086",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "086/130",
+    "cardNumber": "86/130",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 086/130 Diamond & Pearl",
+    "fullDisplayName": "Machop 86/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1390,18 +1598,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-086-low.png",
-    "imageHighSrc": "cards/dp1-086-high.png"
+    "imageHighSrc": "cards/dp1-086-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3902",
-    "externalId": null,
+    "externalId": "dp1-85",
     "tcgdex_id": "dp1-85",
     "localId": "085",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "085/130",
+    "cardNumber": "85/130",
     "cardName": "Hoothoot",
-    "fullDisplayName": "Hoothoot 085/130 Diamond & Pearl",
+    "fullDisplayName": "Hoothoot 85/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1423,18 +1637,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-085-low.png",
-    "imageHighSrc": "cards/dp1-085-high.png"
+    "imageHighSrc": "cards/dp1-085-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Kick Shot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3899",
-    "externalId": null,
+    "externalId": "dp1-84",
     "tcgdex_id": "dp1-84",
     "localId": "084",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "084/130",
+    "cardNumber": "84/130",
     "cardName": "Goldeen",
-    "fullDisplayName": "Goldeen 084/130 Diamond & Pearl",
+    "fullDisplayName": "Goldeen 84/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1456,18 +1680,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-084-low.png",
-    "imageHighSrc": "cards/dp1-084-high.png"
+    "imageHighSrc": "cards/dp1-084-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3894",
-    "externalId": null,
+    "externalId": "dp1-83",
     "tcgdex_id": "dp1-83",
     "localId": "083",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "083/130",
+    "cardNumber": "83/130",
     "cardName": "Glameow",
-    "fullDisplayName": "Glameow 083/130 Diamond & Pearl",
+    "fullDisplayName": "Glameow 83/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1489,18 +1723,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-083-low.png",
-    "imageHighSrc": "cards/dp1-083-high.png"
+    "imageHighSrc": "cards/dp1-083-high.png",
+    "attacks": [
+      {
+        "name": "Charm",
+        "damage": null
+      },
+      {
+        "name": "Pose",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3889",
-    "externalId": null,
+    "externalId": "dp1-82",
     "tcgdex_id": "dp1-82",
     "localId": "082",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "082/130",
+    "cardNumber": "82/130",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 082/130 Diamond & Pearl",
+    "fullDisplayName": "Gastly 82/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1522,18 +1766,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-082-low.png",
-    "imageHighSrc": "cards/dp1-082-high.png"
+    "imageHighSrc": "cards/dp1-082-high.png",
+    "attacks": [
+      {
+        "name": "Pain Payback",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3886",
-    "externalId": null,
+    "externalId": "dp1-81",
     "tcgdex_id": "dp1-81",
     "localId": "081",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "081/130",
+    "cardNumber": "81/130",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 081/130 Diamond & Pearl",
+    "fullDisplayName": "Electabuzz 81/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1555,18 +1805,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-081-low.png",
-    "imageHighSrc": "cards/dp1-081-high.png"
+    "imageHighSrc": "cards/dp1-081-high.png",
+    "attacks": [
+      {
+        "name": "Thunderpunch",
+        "damage": "30+"
+      },
+      {
+        "name": "Shock Wave",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3881",
-    "externalId": null,
+    "externalId": "dp1-80",
     "tcgdex_id": "dp1-80",
     "localId": "080",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "080/130",
+    "cardNumber": "80/130",
     "cardName": "Duskull",
-    "fullDisplayName": "Duskull 080/130 Diamond & Pearl",
+    "fullDisplayName": "Duskull 80/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1588,18 +1848,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-080-low.png",
-    "imageHighSrc": "cards/dp1-080-high.png"
+    "imageHighSrc": "cards/dp1-080-high.png",
+    "attacks": [
+      {
+        "name": "Disable",
+        "damage": null
+      },
+      {
+        "name": "Night Shade",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3877",
-    "externalId": null,
+    "externalId": "dp1-79",
     "tcgdex_id": "dp1-79",
     "localId": "079",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "079/130",
+    "cardNumber": "79/130",
     "cardName": "Combee",
-    "fullDisplayName": "Combee 079/130 Diamond & Pearl",
+    "fullDisplayName": "Combee 79/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1621,18 +1891,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-079-low.png",
-    "imageHighSrc": "cards/dp1-079-high.png"
+    "imageHighSrc": "cards/dp1-079-high.png",
+    "attacks": [
+      {
+        "name": "Soliciting Nectar",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3874",
-    "externalId": null,
+    "externalId": "dp1-78",
     "tcgdex_id": "dp1-78",
     "localId": "078",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "078/130",
+    "cardNumber": "78/130",
     "cardName": "Cleffa",
-    "fullDisplayName": "Cleffa 078/130 Diamond & Pearl",
+    "fullDisplayName": "Cleffa 78/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1654,18 +1934,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-078-low.png",
-    "imageHighSrc": "cards/dp1-078-high.png"
+    "imageHighSrc": "cards/dp1-078-high.png",
+    "attacks": [
+      {
+        "name": "Eeek",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3870",
-    "externalId": null,
+    "externalId": "dp1-77",
     "tcgdex_id": "dp1-77",
     "localId": "077",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "077/130",
+    "cardNumber": "77/130",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 077/130 Diamond & Pearl",
+    "fullDisplayName": "Clefairy 77/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1687,18 +1973,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-077-low.png",
-    "imageHighSrc": "cards/dp1-077-high.png"
+    "imageHighSrc": "cards/dp1-077-high.png",
+    "attacks": [
+      {
+        "name": "Sing",
+        "damage": null
+      },
+      {
+        "name": "Moon Impact",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3867",
-    "externalId": null,
+    "externalId": "dp1-76",
     "tcgdex_id": "dp1-76",
     "localId": "076",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "076/130",
+    "cardNumber": "76/130",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 076/130 Diamond & Pearl",
+    "fullDisplayName": "Chimchar 76/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1720,18 +2016,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-076-low.png",
-    "imageHighSrc": "cards/dp1-076-high.png"
+    "imageHighSrc": "cards/dp1-076-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3864",
-    "externalId": null,
+    "externalId": "dp1-75",
     "tcgdex_id": "dp1-75",
     "localId": "075",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "075/130",
+    "cardNumber": "75/130",
     "cardName": "Cherubi",
-    "fullDisplayName": "Cherubi 075/130 Diamond & Pearl",
+    "fullDisplayName": "Cherubi 75/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1753,18 +2059,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-075-low.png",
-    "imageHighSrc": "cards/dp1-075-high.png"
+    "imageHighSrc": "cards/dp1-075-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": null
+      },
+      {
+        "name": "Leech Seed",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3860",
-    "externalId": null,
+    "externalId": "dp1-74",
     "tcgdex_id": "dp1-74",
     "localId": "074",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "074/130",
+    "cardNumber": "74/130",
     "cardName": "Chatot",
-    "fullDisplayName": "Chatot 074/130 Diamond & Pearl",
+    "fullDisplayName": "Chatot 74/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1786,18 +2102,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-074-low.png",
-    "imageHighSrc": "cards/dp1-074-high.png"
+    "imageHighSrc": "cards/dp1-074-high.png",
+    "attacks": [
+      {
+        "name": "Me First",
+        "damage": null
+      },
+      {
+        "name": "Tone-Deaf",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3856",
-    "externalId": null,
+    "externalId": "dp1-73",
     "tcgdex_id": "dp1-73",
     "localId": "073",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "073/130",
+    "cardNumber": "73/130",
     "cardName": "Buneary",
-    "fullDisplayName": "Buneary 073/130 Diamond & Pearl",
+    "fullDisplayName": "Buneary 73/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1819,18 +2145,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-073-low.png",
-    "imageHighSrc": "cards/dp1-073-high.png"
+    "imageHighSrc": "cards/dp1-073-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Jump Kick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3852",
-    "externalId": null,
+    "externalId": "dp1-72",
     "tcgdex_id": "dp1-72",
     "localId": "072",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "072/130",
+    "cardNumber": "72/130",
     "cardName": "Buizel",
-    "fullDisplayName": "Buizel 072/130 Diamond & Pearl",
+    "fullDisplayName": "Buizel 72/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1852,18 +2188,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-072-low.png",
-    "imageHighSrc": "cards/dp1-072-high.png"
+    "imageHighSrc": "cards/dp1-072-high.png",
+    "attacks": [
+      {
+        "name": "Splash About",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3848",
-    "externalId": null,
+    "externalId": "dp1-71",
     "tcgdex_id": "dp1-71",
     "localId": "071",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "071/130",
+    "cardNumber": "71/130",
     "cardName": "Bonsly",
-    "fullDisplayName": "Bonsly 071/130 Diamond & Pearl",
+    "fullDisplayName": "Bonsly 71/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1885,18 +2227,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-071-low.png",
-    "imageHighSrc": "cards/dp1-071-high.png"
+    "imageHighSrc": "cards/dp1-071-high.png",
+    "attacks": [
+      {
+        "name": "Fake Tears",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3843",
-    "externalId": null,
+    "externalId": "dp1-70",
     "tcgdex_id": "dp1-70",
     "localId": "070",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "070/130",
+    "cardNumber": "70/130",
     "cardName": "Bidoof",
-    "fullDisplayName": "Bidoof 070/130 Diamond & Pearl",
+    "fullDisplayName": "Bidoof 70/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1918,18 +2266,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-070-low.png",
-    "imageHighSrc": "cards/dp1-070-high.png"
+    "imageHighSrc": "cards/dp1-070-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": null
+      },
+      {
+        "name": "Scavenge",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3838",
-    "externalId": null,
+    "externalId": "dp1-69",
     "tcgdex_id": "dp1-69",
     "localId": "069",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "069/130",
+    "cardNumber": "69/130",
     "cardName": "Azurill",
-    "fullDisplayName": "Azurill 069/130 Diamond & Pearl",
+    "fullDisplayName": "Azurill 69/130 Diamond & Pearl",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1951,18 +2309,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-069-low.png",
-    "imageHighSrc": "cards/dp1-069-high.png"
+    "imageHighSrc": "cards/dp1-069-high.png",
+    "attacks": [
+      {
+        "name": "Delivery",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3834",
-    "externalId": null,
+    "externalId": "dp1-68",
     "tcgdex_id": "dp1-68",
     "localId": "068",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "068/130",
+    "cardNumber": "68/130",
     "cardName": "Unown [D]",
-    "fullDisplayName": "Unown [D] 068/130 Diamond & Pearl",
+    "fullDisplayName": "Unown [D] 68/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1984,18 +2348,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp1-068-low.png",
-    "imageHighSrc": "cards/dp1-068-high.png"
+    "imageHighSrc": "cards/dp1-068-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3831",
-    "externalId": null,
+    "externalId": "dp1-67",
     "tcgdex_id": "dp1-67",
     "localId": "067",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "067/130",
+    "cardNumber": "67/130",
     "cardName": "Unown [C]",
-    "fullDisplayName": "Unown [C] 067/130 Diamond & Pearl",
+    "fullDisplayName": "Unown [C] 67/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2017,18 +2387,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp1-067-low.png",
-    "imageHighSrc": "cards/dp1-067-high.png"
+    "imageHighSrc": "cards/dp1-067-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3826",
-    "externalId": null,
+    "externalId": "dp1-66",
     "tcgdex_id": "dp1-66",
     "localId": "066",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "066/130",
+    "cardNumber": "66/130",
     "cardName": "Unown [B]",
-    "fullDisplayName": "Unown [B] 066/130 Diamond & Pearl",
+    "fullDisplayName": "Unown [B] 66/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2050,18 +2426,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp1-066-low.png",
-    "imageHighSrc": "cards/dp1-066-high.png"
+    "imageHighSrc": "cards/dp1-066-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3822",
-    "externalId": null,
+    "externalId": "dp1-65",
     "tcgdex_id": "dp1-65",
     "localId": "065",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "065/130",
+    "cardNumber": "65/130",
     "cardName": "Unown [A]",
-    "fullDisplayName": "Unown [A] 065/130 Diamond & Pearl",
+    "fullDisplayName": "Unown [A] 65/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2083,18 +2465,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp1-065-low.png",
-    "imageHighSrc": "cards/dp1-065-high.png"
+    "imageHighSrc": "cards/dp1-065-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3818",
-    "externalId": null,
+    "externalId": "dp1-64",
     "tcgdex_id": "dp1-64",
     "localId": "064",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "064/130",
+    "cardNumber": "64/130",
     "cardName": "Staravia",
-    "fullDisplayName": "Staravia 064/130 Diamond & Pearl",
+    "fullDisplayName": "Staravia 64/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2116,18 +2504,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-064-low.png",
-    "imageHighSrc": "cards/dp1-064-high.png"
+    "imageHighSrc": "cards/dp1-064-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "20"
+      },
+      {
+        "name": "Clutch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3814",
-    "externalId": null,
+    "externalId": "dp1-63",
     "tcgdex_id": "dp1-63",
     "localId": "063",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "063/130",
+    "cardNumber": "63/130",
     "cardName": "Silcoon",
-    "fullDisplayName": "Silcoon 063/130 Diamond & Pearl",
+    "fullDisplayName": "Silcoon 63/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2149,18 +2547,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-063-low.png",
-    "imageHighSrc": "cards/dp1-063-high.png"
+    "imageHighSrc": "cards/dp1-063-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Entangling String",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3810",
-    "externalId": null,
+    "externalId": "dp1-62",
     "tcgdex_id": "dp1-62",
     "localId": "062",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "062/130",
+    "cardNumber": "62/130",
     "cardName": "Seaking",
-    "fullDisplayName": "Seaking 062/130 Diamond & Pearl",
+    "fullDisplayName": "Seaking 62/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2182,18 +2590,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-062-low.png",
-    "imageHighSrc": "cards/dp1-062-high.png"
+    "imageHighSrc": "cards/dp1-062-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Horn Drill",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3806",
-    "externalId": null,
+    "externalId": "dp1-61",
     "tcgdex_id": "dp1-61",
     "localId": "061",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "061/130",
+    "cardNumber": "61/130",
     "cardName": "Riolu",
-    "fullDisplayName": "Riolu 061/130 Diamond & Pearl",
+    "fullDisplayName": "Riolu 61/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2215,18 +2633,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-061-low.png",
-    "imageHighSrc": "cards/dp1-061-high.png"
+    "imageHighSrc": "cards/dp1-061-high.png",
+    "attacks": [
+      {
+        "name": "Wild Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3802",
-    "externalId": null,
+    "externalId": "dp1-60",
     "tcgdex_id": "dp1-60",
     "localId": "060",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "060/130",
+    "cardNumber": "60/130",
     "cardName": "Rhydon",
-    "fullDisplayName": "Rhydon 060/130 Diamond & Pearl",
+    "fullDisplayName": "Rhydon 60/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2248,18 +2672,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-060-low.png",
-    "imageHighSrc": "cards/dp1-060-high.png"
+    "imageHighSrc": "cards/dp1-060-high.png",
+    "attacks": [
+      {
+        "name": "Storm Up",
+        "damage": "30+"
+      },
+      {
+        "name": "Crash Impact",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3798",
-    "externalId": null,
+    "externalId": "dp1-59",
     "tcgdex_id": "dp1-59",
     "localId": "059",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "059/130",
+    "cardNumber": "59/130",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 059/130 Diamond & Pearl",
+    "fullDisplayName": "Rapidash 59/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2281,18 +2715,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-059-low.png",
-    "imageHighSrc": "cards/dp1-059-high.png"
+    "imageHighSrc": "cards/dp1-059-high.png",
+    "attacks": [
+      {
+        "name": "Overrun",
+        "damage": "20"
+      },
+      {
+        "name": "Blaze Up",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3794",
-    "externalId": null,
+    "externalId": "dp1-58",
     "tcgdex_id": "dp1-58",
     "localId": "058",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "058/130",
+    "cardNumber": "58/130",
     "cardName": "Prinplup",
-    "fullDisplayName": "Prinplup 058/130 Diamond & Pearl",
+    "fullDisplayName": "Prinplup 58/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2314,18 +2758,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-058-low.png",
-    "imageHighSrc": "cards/dp1-058-high.png"
+    "imageHighSrc": "cards/dp1-058-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Shower",
+        "damage": null
+      },
+      {
+        "name": "Brine",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3790",
-    "externalId": null,
+    "externalId": "dp1-57",
     "tcgdex_id": "dp1-57",
     "localId": "057",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "057/130",
+    "cardNumber": "57/130",
     "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 057/130 Diamond & Pearl",
+    "fullDisplayName": "Nuzleaf 57/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2347,18 +2801,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-057-low.png",
-    "imageHighSrc": "cards/dp1-057-high.png"
+    "imageHighSrc": "cards/dp1-057-high.png",
+    "attacks": [
+      {
+        "name": "Dirty Trick",
+        "damage": null
+      },
+      {
+        "name": "Razor Wind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3786",
-    "externalId": null,
+    "externalId": "dp1-56",
     "tcgdex_id": "dp1-56",
     "localId": "056",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "056/130",
+    "cardNumber": "56/130",
     "cardName": "Monferno",
-    "fullDisplayName": "Monferno 056/130 Diamond & Pearl",
+    "fullDisplayName": "Monferno 56/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2380,18 +2844,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-056-low.png",
-    "imageHighSrc": "cards/dp1-056-high.png"
+    "imageHighSrc": "cards/dp1-056-high.png",
+    "attacks": [
+      {
+        "name": "Flame Dance",
+        "damage": "30"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3782",
-    "externalId": null,
+    "externalId": "dp1-55",
     "tcgdex_id": "dp1-55",
     "localId": "055",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "055/130",
+    "cardNumber": "55/130",
     "cardName": "Mantyke",
-    "fullDisplayName": "Mantyke 055/130 Diamond & Pearl",
+    "fullDisplayName": "Mantyke 55/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2413,18 +2887,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-055-low.png",
-    "imageHighSrc": "cards/dp1-055-high.png"
+    "imageHighSrc": "cards/dp1-055-high.png",
+    "attacks": [
+      {
+        "name": "Call for Friends",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3778",
-    "externalId": null,
+    "externalId": "dp1-54",
     "tcgdex_id": "dp1-54",
     "localId": "054",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "054/130",
+    "cardNumber": "54/130",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 054/130 Diamond & Pearl",
+    "fullDisplayName": "Magneton 54/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2446,18 +2926,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-054-low.png",
-    "imageHighSrc": "cards/dp1-054-high.png"
+    "imageHighSrc": "cards/dp1-054-high.png",
+    "attacks": [
+      {
+        "name": "Tri Attack",
+        "damage": "20×"
+      },
+      {
+        "name": "Magnetic Ray",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3774",
-    "externalId": null,
+    "externalId": "dp1-53",
     "tcgdex_id": "dp1-53",
     "localId": "053",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "053/130",
+    "cardNumber": "53/130",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 053/130 Diamond & Pearl",
+    "fullDisplayName": "Machoke 53/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2479,18 +2969,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-053-low.png",
-    "imageHighSrc": "cards/dp1-053-high.png"
+    "imageHighSrc": "cards/dp1-053-high.png",
+    "attacks": [
+      {
+        "name": "Karate Chop",
+        "damage": "40-"
+      },
+      {
+        "name": "Seismic Toss",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3770",
-    "externalId": null,
+    "externalId": "dp1-52",
     "tcgdex_id": "dp1-52",
     "localId": "052",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "052/130",
+    "cardNumber": "52/130",
     "cardName": "Luxio",
-    "fullDisplayName": "Luxio 052/130 Diamond & Pearl",
+    "fullDisplayName": "Luxio 52/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2512,18 +3012,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-052-low.png",
-    "imageHighSrc": "cards/dp1-052-high.png"
+    "imageHighSrc": "cards/dp1-052-high.png",
+    "attacks": [
+      {
+        "name": "Fasten Claws",
+        "damage": "10+"
+      },
+      {
+        "name": "Thunder Fang",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3767",
-    "externalId": null,
+    "externalId": "dp1-51",
     "tcgdex_id": "dp1-51",
     "localId": "051",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "051/130",
+    "cardNumber": "51/130",
     "cardName": "Hippopotas",
-    "fullDisplayName": "Hippopotas 051/130 Diamond & Pearl",
+    "fullDisplayName": "Hippopotas 51/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2545,18 +3055,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-051-low.png",
-    "imageHighSrc": "cards/dp1-051-high.png"
+    "imageHighSrc": "cards/dp1-051-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      },
+      {
+        "name": "Sand Attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3763",
-    "externalId": null,
+    "externalId": "dp1-50",
     "tcgdex_id": "dp1-50",
     "localId": "050",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "050/130",
+    "cardNumber": "50/130",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 050/130 Diamond & Pearl",
+    "fullDisplayName": "Haunter 50/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2578,18 +3098,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-050-low.png",
-    "imageHighSrc": "cards/dp1-050-high.png"
+    "imageHighSrc": "cards/dp1-050-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Dream Eater",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3759",
-    "externalId": null,
+    "externalId": "dp1-49",
     "tcgdex_id": "dp1-49",
     "localId": "049",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "049/130",
+    "cardNumber": "49/130",
     "cardName": "Grotle",
-    "fullDisplayName": "Grotle 049/130 Diamond & Pearl",
+    "fullDisplayName": "Grotle 49/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2611,18 +3141,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-049-low.png",
-    "imageHighSrc": "cards/dp1-049-high.png"
+    "imageHighSrc": "cards/dp1-049-high.png",
+    "attacks": [
+      {
+        "name": "Synthesis",
+        "damage": null
+      },
+      {
+        "name": "Cut",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3754",
-    "externalId": null,
+    "externalId": "dp1-48",
     "tcgdex_id": "dp1-48",
     "localId": "048",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "048/130",
+    "cardNumber": "48/130",
     "cardName": "Elekid",
-    "fullDisplayName": "Elekid 048/130 Diamond & Pearl",
+    "fullDisplayName": "Elekid 48/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2644,18 +3184,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-048-low.png",
-    "imageHighSrc": "cards/dp1-048-high.png"
+    "imageHighSrc": "cards/dp1-048-high.png",
+    "attacks": [
+      {
+        "name": "Outlet",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3751",
-    "externalId": null,
+    "externalId": "dp1-47",
     "tcgdex_id": "dp1-47",
     "localId": "047",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "047/130",
+    "cardNumber": "47/130",
     "cardName": "Dusclops",
-    "fullDisplayName": "Dusclops 047/130 Diamond & Pearl",
+    "fullDisplayName": "Dusclops 47/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2677,18 +3223,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-047-low.png",
-    "imageHighSrc": "cards/dp1-047-high.png"
+    "imageHighSrc": "cards/dp1-047-high.png",
+    "attacks": [
+      {
+        "name": "Roam",
+        "damage": null
+      },
+      {
+        "name": "Gravity Wave",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3747",
-    "externalId": null,
+    "externalId": "dp1-46",
     "tcgdex_id": "dp1-46",
     "localId": "046",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "046/130",
+    "cardNumber": "46/130",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 046/130 Diamond & Pearl",
+    "fullDisplayName": "Drifloon 46/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2710,18 +3266,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-046-low.png",
-    "imageHighSrc": "cards/dp1-046-high.png"
+    "imageHighSrc": "cards/dp1-046-high.png",
+    "attacks": [
+      {
+        "name": "Blowing Wind",
+        "damage": null
+      },
+      {
+        "name": "Ominous Wind",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3742",
-    "externalId": null,
+    "externalId": "dp1-45",
     "tcgdex_id": "dp1-45",
     "localId": "045",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "045/130",
+    "cardNumber": "45/130",
     "cardName": "Cherrim",
-    "fullDisplayName": "Cherrim 045/130 Diamond & Pearl",
+    "fullDisplayName": "Cherrim 45/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2743,18 +3309,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-045-low.png",
-    "imageHighSrc": "cards/dp1-045-high.png"
+    "imageHighSrc": "cards/dp1-045-high.png",
+    "attacks": [
+      {
+        "name": "Worry Seed",
+        "damage": "20"
+      },
+      {
+        "name": "Magical Leaf",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3738",
-    "externalId": null,
+    "externalId": "dp1-44",
     "tcgdex_id": "dp1-44",
     "localId": "044",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "044/130",
+    "cardNumber": "44/130",
     "cardName": "Cascoon",
-    "fullDisplayName": "Cascoon 044/130 Diamond & Pearl",
+    "fullDisplayName": "Cascoon 44/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2776,18 +3352,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-044-low.png",
-    "imageHighSrc": "cards/dp1-044-high.png"
+    "imageHighSrc": "cards/dp1-044-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Gooey Thread",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3734",
-    "externalId": null,
+    "externalId": "dp1-43",
     "tcgdex_id": "dp1-43",
     "localId": "043",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "043/130",
+    "cardNumber": "43/130",
     "cardName": "Budew",
-    "fullDisplayName": "Budew 043/130 Diamond & Pearl",
+    "fullDisplayName": "Budew 43/130 Diamond & Pearl",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2809,18 +3395,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-043-low.png",
-    "imageHighSrc": "cards/dp1-043-high.png"
+    "imageHighSrc": "cards/dp1-043-high.png",
+    "attacks": [
+      {
+        "name": "Errand-Running",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3730",
-    "externalId": null,
+    "externalId": "dp1-42",
     "tcgdex_id": "dp1-42",
     "localId": "042",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "042/130",
+    "cardNumber": "42/130",
     "cardName": "Wynaut",
-    "fullDisplayName": "Wynaut 042/130 Diamond & Pearl",
+    "fullDisplayName": "Wynaut 42/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2842,18 +3434,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-042-low.png",
-    "imageHighSrc": "cards/dp1-042-high.png"
+    "imageHighSrc": "cards/dp1-042-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3726",
-    "externalId": null,
+    "externalId": "dp1-41",
     "tcgdex_id": "dp1-41",
     "localId": "041",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "041/130",
+    "cardNumber": "41/130",
     "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet 041/130 Diamond & Pearl",
+    "fullDisplayName": "Wobbuffet 41/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2875,18 +3473,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-041-low.png",
-    "imageHighSrc": "cards/dp1-041-high.png"
+    "imageHighSrc": "cards/dp1-041-high.png",
+    "attacks": [
+      {
+        "name": "Countercharge",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3723",
-    "externalId": null,
+    "externalId": "dp1-40",
     "tcgdex_id": "dp1-40",
     "localId": "040",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "040/130",
+    "cardNumber": "40/130",
     "cardName": "Weavile",
-    "fullDisplayName": "Weavile 040/130 Diamond & Pearl",
+    "fullDisplayName": "Weavile 40/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2908,18 +3512,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-040-low.png",
-    "imageHighSrc": "cards/dp1-040-high.png"
+    "imageHighSrc": "cards/dp1-040-high.png",
+    "attacks": [
+      {
+        "name": "Nasty Plot",
+        "damage": null
+      },
+      {
+        "name": "Dark Pulse",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3719",
-    "externalId": null,
+    "externalId": "dp1-39",
     "tcgdex_id": "dp1-39",
     "localId": "039",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "039/130",
+    "cardNumber": "39/130",
     "cardName": "Vespiquen",
-    "fullDisplayName": "Vespiquen 039/130 Diamond & Pearl",
+    "fullDisplayName": "Vespiquen 39/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2941,18 +3555,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-039-low.png",
-    "imageHighSrc": "cards/dp1-039-high.png"
+    "imageHighSrc": "cards/dp1-039-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Honey",
+        "damage": null
+      },
+      {
+        "name": "Attack Order",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3715",
-    "externalId": null,
+    "externalId": "dp1-38",
     "tcgdex_id": "dp1-38",
     "localId": "038",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "038/130",
+    "cardNumber": "38/130",
     "cardName": "Steelix",
-    "fullDisplayName": "Steelix 038/130 Diamond & Pearl",
+    "fullDisplayName": "Steelix 38/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2974,18 +3598,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-038-low.png",
-    "imageHighSrc": "cards/dp1-038-high.png"
+    "imageHighSrc": "cards/dp1-038-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "30×"
+      },
+      {
+        "name": "Metal Slash",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3711",
-    "externalId": null,
+    "externalId": "dp1-37",
     "tcgdex_id": "dp1-37",
     "localId": "037",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "037/130",
+    "cardNumber": "37/130",
     "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 037/130 Diamond & Pearl",
+    "fullDisplayName": "Snorlax 37/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3007,18 +3641,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-037-low.png",
-    "imageHighSrc": "cards/dp1-037-high.png"
+    "imageHighSrc": "cards/dp1-037-high.png",
+    "attacks": [
+      {
+        "name": "Block",
+        "damage": null
+      },
+      {
+        "name": "Ease Up",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3707",
-    "externalId": null,
+    "externalId": "dp1-36",
     "tcgdex_id": "dp1-36",
     "localId": "036",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "036/130",
+    "cardNumber": "36/130",
     "cardName": "Purugly",
-    "fullDisplayName": "Purugly 036/130 Diamond & Pearl",
+    "fullDisplayName": "Purugly 36/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3040,18 +3684,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-036-low.png",
-    "imageHighSrc": "cards/dp1-036-high.png"
+    "imageHighSrc": "cards/dp1-036-high.png",
+    "attacks": [
+      {
+        "name": "High Hat",
+        "damage": null
+      },
+      {
+        "name": "Body Slam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3702",
-    "externalId": null,
+    "externalId": "dp1-35",
     "tcgdex_id": "dp1-35",
     "localId": "035",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "035/130",
+    "cardNumber": "35/130",
     "cardName": "Pachirisu",
-    "fullDisplayName": "Pachirisu 035/130 Diamond & Pearl",
+    "fullDisplayName": "Pachirisu 35/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3073,18 +3727,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-035-low.png",
-    "imageHighSrc": "cards/dp1-035-high.png"
+    "imageHighSrc": "cards/dp1-035-high.png",
+    "attacks": [
+      {
+        "name": "Minor Errand-Running",
+        "damage": null
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3699",
-    "externalId": null,
+    "externalId": "dp1-34",
     "tcgdex_id": "dp1-34",
     "localId": "034",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "034/130",
+    "cardNumber": "34/130",
     "cardName": "Noctowl",
-    "fullDisplayName": "Noctowl 034/130 Diamond & Pearl",
+    "fullDisplayName": "Noctowl 34/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3106,18 +3770,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-034-low.png",
-    "imageHighSrc": "cards/dp1-034-high.png"
+    "imageHighSrc": "cards/dp1-034-high.png",
+    "attacks": [
+      {
+        "name": "See Beyond",
+        "damage": null
+      },
+      {
+        "name": "Extrasensory",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3694",
-    "externalId": null,
+    "externalId": "dp1-33",
     "tcgdex_id": "dp1-33",
     "localId": "033",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "033/130",
+    "cardNumber": "33/130",
     "cardName": "Munchlax",
-    "fullDisplayName": "Munchlax 033/130 Diamond & Pearl",
+    "fullDisplayName": "Munchlax 33/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3139,18 +3813,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-033-low.png",
-    "imageHighSrc": "cards/dp1-033-high.png"
+    "imageHighSrc": "cards/dp1-033-high.png",
+    "attacks": [
+      {
+        "name": "Heave",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "3689",
-    "externalId": null,
+    "externalId": "dp1-32",
     "tcgdex_id": "dp1-32",
     "localId": "032",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "032/130",
+    "cardNumber": "32/130",
     "cardName": "Medicham",
-    "fullDisplayName": "Medicham 032/130 Diamond & Pearl",
+    "fullDisplayName": "Medicham 32/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3172,18 +3852,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-032-low.png",
-    "imageHighSrc": "cards/dp1-032-high.png"
+    "imageHighSrc": "cards/dp1-032-high.png",
+    "attacks": [
+      {
+        "name": "Force Palm",
+        "damage": null
+      },
+      {
+        "name": "Spinning Kick",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3684",
-    "externalId": null,
+    "externalId": "dp1-31",
     "tcgdex_id": "dp1-31",
     "localId": "031",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "031/130",
+    "cardNumber": "31/130",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 031/130 Diamond & Pearl",
+    "fullDisplayName": "Machamp 31/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3205,18 +3895,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-031-low.png",
-    "imageHighSrc": "cards/dp1-031-high.png"
+    "imageHighSrc": "cards/dp1-031-high.png",
+    "attacks": [
+      {
+        "name": "Revenge",
+        "damage": "20+"
+      },
+      {
+        "name": "Dynamic Punch",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3679",
-    "externalId": null,
+    "externalId": "dp1-30",
     "tcgdex_id": "dp1-30",
     "localId": "030",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "030/130",
+    "cardNumber": "30/130",
     "cardName": "Lopunny",
-    "fullDisplayName": "Lopunny 030/130 Diamond & Pearl",
+    "fullDisplayName": "Lopunny 30/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3238,18 +3938,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-030-low.png",
-    "imageHighSrc": "cards/dp1-030-high.png"
+    "imageHighSrc": "cards/dp1-030-high.png",
+    "attacks": [
+      {
+        "name": "Healing Wish",
+        "damage": null
+      },
+      {
+        "name": "Flop",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3674",
-    "externalId": null,
+    "externalId": "dp1-29",
     "tcgdex_id": "dp1-29",
     "localId": "029",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "029/130",
+    "cardNumber": "29/130",
     "cardName": "Hippowdon",
-    "fullDisplayName": "Hippowdon 029/130 Diamond & Pearl",
+    "fullDisplayName": "Hippowdon 29/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3271,18 +3981,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-029-low.png",
-    "imageHighSrc": "cards/dp1-029-high.png"
+    "imageHighSrc": "cards/dp1-029-high.png",
+    "attacks": [
+      {
+        "name": "Vacuum Up",
+        "damage": "40"
+      },
+      {
+        "name": "Sand Eject",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3667",
-    "externalId": null,
+    "externalId": "dp1-28",
     "tcgdex_id": "dp1-28",
     "localId": "028",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "028/130",
+    "cardNumber": "28/130",
     "cardName": "Heracross",
-    "fullDisplayName": "Heracross 028/130 Diamond & Pearl",
+    "fullDisplayName": "Heracross 28/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3304,18 +4024,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-028-low.png",
-    "imageHighSrc": "cards/dp1-028-high.png"
+    "imageHighSrc": "cards/dp1-028-high.png",
+    "attacks": [
+      {
+        "name": "Pitch",
+        "damage": "10"
+      },
+      {
+        "name": "Horn Slash",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3662",
-    "externalId": null,
+    "externalId": "dp1-27",
     "tcgdex_id": "dp1-27",
     "localId": "027",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "027/130",
+    "cardNumber": "27/130",
     "cardName": "Gengar",
-    "fullDisplayName": "Gengar 027/130 Diamond & Pearl",
+    "fullDisplayName": "Gengar 27/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3337,18 +4067,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-027-low.png",
-    "imageHighSrc": "cards/dp1-027-high.png"
+    "imageHighSrc": "cards/dp1-027-high.png",
+    "attacks": [
+      {
+        "name": "Life Drain",
+        "damage": null
+      },
+      {
+        "name": "Shadow Dance",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3657",
-    "externalId": null,
+    "externalId": "dp1-26",
     "tcgdex_id": "dp1-26",
     "localId": "026",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "026/130",
+    "cardNumber": "26/130",
     "cardName": "Floatzel",
-    "fullDisplayName": "Floatzel 026/130 Diamond & Pearl",
+    "fullDisplayName": "Floatzel 26/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3370,18 +4110,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-026-low.png",
-    "imageHighSrc": "cards/dp1-026-high.png"
+    "imageHighSrc": "cards/dp1-026-high.png",
+    "attacks": [
+      {
+        "name": "Screw Tail",
+        "damage": "30"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3652",
-    "externalId": null,
+    "externalId": "dp1-25",
     "tcgdex_id": "dp1-25",
     "localId": "025",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "025/130",
+    "cardNumber": "25/130",
     "cardName": "Dustox",
-    "fullDisplayName": "Dustox 025/130 Diamond & Pearl",
+    "fullDisplayName": "Dustox 25/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3403,18 +4153,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-025-low.png",
-    "imageHighSrc": "cards/dp1-025-high.png"
+    "imageHighSrc": "cards/dp1-025-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": "30"
+      },
+      {
+        "name": "Toxic Dust",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3647",
-    "externalId": null,
+    "externalId": "dp1-24",
     "tcgdex_id": "dp1-24",
     "localId": "024",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "024/130",
+    "cardNumber": "24/130",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 024/130 Diamond & Pearl",
+    "fullDisplayName": "Drifblim 24/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3436,18 +4196,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-024-low.png",
-    "imageHighSrc": "cards/dp1-024-high.png"
+    "imageHighSrc": "cards/dp1-024-high.png",
+    "attacks": [
+      {
+        "name": "Wind Wave",
+        "damage": null
+      },
+      {
+        "name": "Explosive Smoke",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3643",
-    "externalId": null,
+    "externalId": "dp1-23",
     "tcgdex_id": "dp1-23",
     "localId": "023",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "023/130",
+    "cardNumber": "23/130",
     "cardName": "Drapion",
-    "fullDisplayName": "Drapion 023/130 Diamond & Pearl",
+    "fullDisplayName": "Drapion 23/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3469,18 +4239,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-023-low.png",
-    "imageHighSrc": "cards/dp1-023-high.png"
+    "imageHighSrc": "cards/dp1-023-high.png",
+    "attacks": [
+      {
+        "name": "Stomp",
+        "damage": "20+"
+      },
+      {
+        "name": "Poison Claws",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3635",
-    "externalId": null,
+    "externalId": "dp1-22",
     "tcgdex_id": "dp1-22",
     "localId": "022",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "022/130",
+    "cardNumber": "22/130",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 022/130 Diamond & Pearl",
+    "fullDisplayName": "Clefable 22/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3502,18 +4282,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-022-low.png",
-    "imageHighSrc": "cards/dp1-022-high.png"
+    "imageHighSrc": "cards/dp1-022-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "30×"
+      },
+      {
+        "name": "Metronome",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3630",
-    "externalId": null,
+    "externalId": "dp1-21",
     "tcgdex_id": "dp1-21",
     "localId": "021",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "021/130",
+    "cardNumber": "21/130",
     "cardName": "Carnivine",
-    "fullDisplayName": "Carnivine 021/130 Diamond & Pearl",
+    "fullDisplayName": "Carnivine 21/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3535,18 +4325,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-021-low.png",
-    "imageHighSrc": "cards/dp1-021-high.png"
+    "imageHighSrc": "cards/dp1-021-high.png",
+    "attacks": [
+      {
+        "name": "Swallow Up",
+        "damage": "30"
+      },
+      {
+        "name": "Wring Out",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3625",
-    "externalId": null,
+    "externalId": "dp1-20",
     "tcgdex_id": "dp1-20",
     "localId": "020",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "020/130",
+    "cardNumber": "20/130",
     "cardName": "Bibarel",
-    "fullDisplayName": "Bibarel 020/130 Diamond & Pearl",
+    "fullDisplayName": "Bibarel 20/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3568,18 +4368,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-020-low.png",
-    "imageHighSrc": "cards/dp1-020-high.png"
+    "imageHighSrc": "cards/dp1-020-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      },
+      {
+        "name": "Take Down",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3619",
-    "externalId": null,
+    "externalId": "dp1-19",
     "tcgdex_id": "dp1-19",
     "localId": "019",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "019/130",
+    "cardNumber": "19/130",
     "cardName": "Beautifly",
-    "fullDisplayName": "Beautifly 019/130 Diamond & Pearl",
+    "fullDisplayName": "Beautifly 19/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3601,18 +4411,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-019-low.png",
-    "imageHighSrc": "cards/dp1-019-high.png"
+    "imageHighSrc": "cards/dp1-019-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "30"
+      },
+      {
+        "name": "Giga Drain",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3613",
-    "externalId": null,
+    "externalId": "dp1-18",
     "tcgdex_id": "dp1-18",
     "localId": "018",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "018/130",
+    "cardNumber": "18/130",
     "cardName": "Azumarill",
-    "fullDisplayName": "Azumarill 018/130 Diamond & Pearl",
+    "fullDisplayName": "Azumarill 18/130 Diamond & Pearl",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3634,18 +4454,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-018-low.png",
-    "imageHighSrc": "cards/dp1-018-high.png"
+    "imageHighSrc": "cards/dp1-018-high.png",
+    "attacks": [
+      {
+        "name": "Defense Curl",
+        "damage": null
+      },
+      {
+        "name": "Bubble Pump",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3608",
-    "externalId": null,
+    "externalId": "dp1-17",
     "tcgdex_id": "dp1-17",
     "localId": "017",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "017/130",
+    "cardNumber": "17/130",
     "cardName": "Torterra",
-    "fullDisplayName": "Torterra 017/130 Diamond & Pearl",
+    "fullDisplayName": "Torterra 17/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3667,18 +4497,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-017-low.png",
-    "imageHighSrc": "cards/dp1-017-high.png"
+    "imageHighSrc": "cards/dp1-017-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "30"
+      },
+      {
+        "name": "Leaf Storm",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3602",
-    "externalId": null,
+    "externalId": "dp1-16",
     "tcgdex_id": "dp1-16",
     "localId": "016",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "016/130",
+    "cardNumber": "16/130",
     "cardName": "Staraptor",
-    "fullDisplayName": "Staraptor 016/130 Diamond & Pearl",
+    "fullDisplayName": "Staraptor 16/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3700,18 +4540,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-016-low.png",
-    "imageHighSrc": "cards/dp1-016-high.png"
+    "imageHighSrc": "cards/dp1-016-high.png",
+    "attacks": [
+      {
+        "name": "Accelerative Dive",
+        "damage": "30"
+      },
+      {
+        "name": "Brave Heart",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3596",
-    "externalId": null,
+    "externalId": "dp1-15",
     "tcgdex_id": "dp1-15",
     "localId": "015",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "015/130",
+    "cardNumber": "15/130",
     "cardName": "Skuntank",
-    "fullDisplayName": "Skuntank 015/130 Diamond & Pearl",
+    "fullDisplayName": "Skuntank 15/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3733,18 +4583,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-015-low.png",
-    "imageHighSrc": "cards/dp1-015-high.png"
+    "imageHighSrc": "cards/dp1-015-high.png",
+    "attacks": [
+      {
+        "name": "Frustration",
+        "damage": null
+      },
+      {
+        "name": "Toxic Cloud",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3593",
-    "externalId": null,
+    "externalId": "dp1-14",
     "tcgdex_id": "dp1-14",
     "localId": "014",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "014/130",
+    "cardNumber": "14/130",
     "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 014/130 Diamond & Pearl",
+    "fullDisplayName": "Shiftry 14/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3766,18 +4626,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-014-low.png",
-    "imageHighSrc": "cards/dp1-014-high.png"
+    "imageHighSrc": "cards/dp1-014-high.png",
+    "attacks": [
+      {
+        "name": "Spirit Dance",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "3587",
-    "externalId": null,
+    "externalId": "dp1-13",
     "tcgdex_id": "dp1-13",
     "localId": "013",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "013/130",
+    "cardNumber": "13/130",
     "cardName": "Roserade",
-    "fullDisplayName": "Roserade 013/130 Diamond & Pearl",
+    "fullDisplayName": "Roserade 13/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3799,18 +4665,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-013-low.png",
-    "imageHighSrc": "cards/dp1-013-high.png"
+    "imageHighSrc": "cards/dp1-013-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "30"
+      },
+      {
+        "name": "Spike Whip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3581",
-    "externalId": null,
+    "externalId": "dp1-12",
     "tcgdex_id": "dp1-12",
     "localId": "012",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "012/130",
+    "cardNumber": "12/130",
     "cardName": "Rhyperior",
-    "fullDisplayName": "Rhyperior 012/130 Diamond & Pearl",
+    "fullDisplayName": "Rhyperior 12/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3832,18 +4708,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-012-low.png",
-    "imageHighSrc": "cards/dp1-012-high.png"
+    "imageHighSrc": "cards/dp1-012-high.png",
+    "attacks": [
+      {
+        "name": "Rock Wrecker",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3575",
-    "externalId": null,
+    "externalId": "dp1-11",
     "tcgdex_id": "dp1-11",
     "localId": "011",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "011/130",
+    "cardNumber": "11/130",
     "cardName": "Palkia",
-    "fullDisplayName": "Palkia 011/130 Diamond & Pearl",
+    "fullDisplayName": "Palkia 11/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3865,18 +4747,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-011-low.png",
-    "imageHighSrc": "cards/dp1-011-high.png"
+    "imageHighSrc": "cards/dp1-011-high.png",
+    "attacks": [
+      {
+        "name": "Spacial Rend",
+        "damage": "10"
+      },
+      {
+        "name": "Transback",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3569",
-    "externalId": null,
+    "externalId": "dp1-10",
     "tcgdex_id": "dp1-10",
     "localId": "010",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "010/130",
+    "cardNumber": "10/130",
     "cardName": "Mismagius",
-    "fullDisplayName": "Mismagius 010/130 Diamond & Pearl",
+    "fullDisplayName": "Mismagius 10/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3898,18 +4790,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-010-low.png",
-    "imageHighSrc": "cards/dp1-010-high.png"
+    "imageHighSrc": "cards/dp1-010-high.png",
+    "attacks": [
+      {
+        "name": "Avenge",
+        "damage": null
+      },
+      {
+        "name": "Psywave",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3563",
-    "externalId": null,
+    "externalId": "dp1-9",
     "tcgdex_id": "dp1-9",
     "localId": "009",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "009/130",
+    "cardNumber": "9/130",
     "cardName": "Manaphy",
-    "fullDisplayName": "Manaphy 009/130 Diamond & Pearl",
+    "fullDisplayName": "Manaphy 9/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3931,18 +4833,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-009-low.png",
-    "imageHighSrc": "cards/dp1-009-high.png"
+    "imageHighSrc": "cards/dp1-009-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Aqua Ring",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3557",
-    "externalId": null,
+    "externalId": "dp1-8",
     "tcgdex_id": "dp1-8",
     "localId": "008",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "008/130",
+    "cardNumber": "8/130",
     "cardName": "Magnezone",
-    "fullDisplayName": "Magnezone 008/130 Diamond & Pearl",
+    "fullDisplayName": "Magnezone 8/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3964,18 +4876,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-008-low.png",
-    "imageHighSrc": "cards/dp1-008-high.png"
+    "imageHighSrc": "cards/dp1-008-high.png",
+    "attacks": [
+      {
+        "name": "Metal Blast",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "3551",
-    "externalId": null,
+    "externalId": "dp1-7",
     "tcgdex_id": "dp1-7",
     "localId": "007",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "007/130",
+    "cardNumber": "7/130",
     "cardName": "Luxray",
-    "fullDisplayName": "Luxray 007/130 Diamond & Pearl",
+    "fullDisplayName": "Luxray 7/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3997,18 +4915,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-007-low.png",
-    "imageHighSrc": "cards/dp1-007-high.png"
+    "imageHighSrc": "cards/dp1-007-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Star",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3544",
-    "externalId": null,
+    "externalId": "dp1-6",
     "tcgdex_id": "dp1-6",
     "localId": "006",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "006/130",
+    "cardNumber": "6/130",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario 006/130 Diamond & Pearl",
+    "fullDisplayName": "Lucario 6/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4030,18 +4954,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-006-low.png",
-    "imageHighSrc": "cards/dp1-006-high.png"
+    "imageHighSrc": "cards/dp1-006-high.png",
+    "attacks": [
+      {
+        "name": "Feint",
+        "damage": "30"
+      },
+      {
+        "name": "Aura Sphere",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3539",
-    "externalId": null,
+    "externalId": "dp1-5",
     "tcgdex_id": "dp1-5",
     "localId": "005",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "005/130",
+    "cardNumber": "5/130",
     "cardName": "Infernape",
-    "fullDisplayName": "Infernape 005/130 Diamond & Pearl",
+    "fullDisplayName": "Infernape 5/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4063,18 +4997,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-005-low.png",
-    "imageHighSrc": "cards/dp1-005-high.png"
+    "imageHighSrc": "cards/dp1-005-high.png",
+    "attacks": [
+      {
+        "name": "Meteor Punch",
+        "damage": "30×"
+      },
+      {
+        "name": "Flare Blitz",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3533",
-    "externalId": null,
+    "externalId": "dp1-4",
     "tcgdex_id": "dp1-4",
     "localId": "004",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "004/130",
+    "cardNumber": "4/130",
     "cardName": "Empoleon",
-    "fullDisplayName": "Empoleon 004/130 Diamond & Pearl",
+    "fullDisplayName": "Empoleon 4/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4096,18 +5040,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-004-low.png",
-    "imageHighSrc": "cards/dp1-004-high.png"
+    "imageHighSrc": "cards/dp1-004-high.png",
+    "attacks": [
+      {
+        "name": "Ice Blade",
+        "damage": null
+      },
+      {
+        "name": "Aqua Jet",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3527",
-    "externalId": null,
+    "externalId": "dp1-3",
     "tcgdex_id": "dp1-3",
     "localId": "003",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "003/130",
+    "cardNumber": "3/130",
     "cardName": "Electivire",
-    "fullDisplayName": "Electivire 003/130 Diamond & Pearl",
+    "fullDisplayName": "Electivire 3/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4129,18 +5083,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-003-low.png",
-    "imageHighSrc": "cards/dp1-003-high.png"
+    "imageHighSrc": "cards/dp1-003-high.png",
+    "attacks": [
+      {
+        "name": "Giga Impact",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3523",
-    "externalId": null,
+    "externalId": "dp1-2",
     "tcgdex_id": "dp1-2",
     "localId": "002",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "002/130",
+    "cardNumber": "2/130",
     "cardName": "Dusknoir",
-    "fullDisplayName": "Dusknoir 002/130 Diamond & Pearl",
+    "fullDisplayName": "Dusknoir 2/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4162,18 +5122,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-002-low.png",
-    "imageHighSrc": "cards/dp1-002-high.png"
+    "imageHighSrc": "cards/dp1-002-high.png",
+    "attacks": [
+      {
+        "name": "Hard Feelings",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3518",
-    "externalId": null,
+    "externalId": "dp1-1",
     "tcgdex_id": "dp1-1",
     "localId": "001",
     "setCode": "dp1",
     "setTcgdexId": "dp1",
-    "cardNumber": "001/130",
+    "cardNumber": "1/130",
     "cardName": "Dialga",
-    "fullDisplayName": "Dialga 001/130 Diamond & Pearl",
+    "fullDisplayName": "Dialga 1/130 Diamond & Pearl",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4195,6 +5161,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp1-001-low.png",
-    "imageHighSrc": "cards/dp1-001-high.png"
+    "imageHighSrc": "cards/dp1-001-high.png",
+    "attacks": [
+      {
+        "name": "Time Bellow",
+        "damage": "10"
+      },
+      {
+        "name": "Flash Cannon",
+        "damage": "40"
+      }
+    ]
   }
 ]

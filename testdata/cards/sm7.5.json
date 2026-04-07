@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "11537",
-    "externalId": null,
+    "externalId": "sm75-78",
     "tcgdex_id": "sm7.5-78",
     "localId": "78",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "078/70",
+    "cardNumber": "78/70",
     "cardName": "Ultra Necrozma-GX",
-    "fullDisplayName": "Ultra Necrozma-GX 078/70 Dragon Majesty",
+    "fullDisplayName": "Ultra Necrozma-GX 78/70 Dragon Majesty",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Basic",
@@ -32,18 +32,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-078-low.png",
-    "imageHighSrc": "cards/sm75-078-high.png"
+    "imageHighSrc": "cards/sm75-078-high.png",
+    "attacks": [
+      {
+        "name": "Photon Geyser",
+        "damage": "20+"
+      },
+      {
+        "name": "Sky-Scorching Light-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11530",
-    "externalId": null,
+    "externalId": "sm75-77",
     "tcgdex_id": "sm7.5-77",
     "localId": "77",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "077/70",
+    "cardNumber": "77/70",
     "cardName": "Switch Raft",
-    "fullDisplayName": "Switch Raft 077/70 Dragon Majesty",
+    "fullDisplayName": "Switch Raft 77/70 Dragon Majesty",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -61,18 +72,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-077-low.png",
-    "imageHighSrc": "cards/sm75-077-high.png"
+    "imageHighSrc": "cards/sm75-077-high.png",
+    "rules": "Switch your Active Water Pokémon with 1 of your Benched Pokémon. If you do, heal 30 damage from the Pokémon you moved to your Bench.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11523",
-    "externalId": null,
+    "externalId": "sm75-76",
     "tcgdex_id": "sm7.5-76",
     "localId": "76",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "076/70",
+    "cardNumber": "76/70",
     "cardName": "Fiery Flint",
-    "fullDisplayName": "Fiery Flint 076/70 Dragon Majesty",
+    "fullDisplayName": "Fiery Flint 76/70 Dragon Majesty",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -90,18 +102,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-076-low.png",
-    "imageHighSrc": "cards/sm75-076-high.png"
+    "imageHighSrc": "cards/sm75-076-high.png",
+    "rules": "You can play this card only if you discard 2 other cards from your hand.\n\nSearch your deck for up to 4 Fire Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11516",
-    "externalId": null,
+    "externalId": "sm75-75",
     "tcgdex_id": "sm7.5-75",
     "localId": "75",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "075/70",
+    "cardNumber": "75/70",
     "cardName": "Dragon Talon",
-    "fullDisplayName": "Dragon Talon 075/70 Dragon Majesty",
+    "fullDisplayName": "Dragon Talon 75/70 Dragon Majesty",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -119,18 +132,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-075-low.png",
-    "imageHighSrc": "cards/sm75-075-high.png"
+    "imageHighSrc": "cards/sm75-075-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Dragon Pokémon this card is attached to is your Active Pokémon and is damaged by an opponent's attack (even if that Pokémon is Knocked Out), put 3 damage counters on the Attacking Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11510",
-    "externalId": null,
+    "externalId": "sm75-74",
     "tcgdex_id": "sm7.5-74",
     "localId": "74",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "074/70",
+    "cardNumber": "74/70",
     "cardName": "White Kyurem-GX",
-    "fullDisplayName": "White Kyurem-GX 074/70 Dragon Majesty",
+    "fullDisplayName": "White Kyurem-GX 74/70 Dragon Majesty",
     "rarity": "Rare Rainbow",
     "category": "Pokémon",
     "stage": "Basic",
@@ -153,18 +167,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-074-low.png",
-    "imageHighSrc": "cards/sm75-074-high.png"
+    "imageHighSrc": "cards/sm75-074-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "40"
+      },
+      {
+        "name": "Raging Blade",
+        "damage": "80+"
+      },
+      {
+        "name": "Dragon Nova-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11504",
-    "externalId": null,
+    "externalId": "sm75-73",
     "tcgdex_id": "sm7.5-73",
     "localId": "73",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "073/70",
+    "cardNumber": "73/70",
     "cardName": "Salamence-GX",
-    "fullDisplayName": "Salamence-GX 073/70 Dragon Majesty",
+    "fullDisplayName": "Salamence-GX 73/70 Dragon Majesty",
     "rarity": "Rare Rainbow",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -187,18 +216,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-073-low.png",
-    "imageHighSrc": "cards/sm75-073-high.png"
+    "imageHighSrc": "cards/sm75-073-high.png",
+    "attacks": [
+      {
+        "name": "Bright Flame",
+        "damage": "200"
+      },
+      {
+        "name": "Flame Jet-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11497",
-    "externalId": null,
+    "externalId": "sm75-72",
     "tcgdex_id": "sm7.5-72",
     "localId": "72",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "072/70",
+    "cardNumber": "72/70",
     "cardName": "Altaria-GX",
-    "fullDisplayName": "Altaria-GX 072/70 Dragon Majesty",
+    "fullDisplayName": "Altaria-GX 72/70 Dragon Majesty",
     "rarity": "Rare Rainbow",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -221,18 +261,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-072-low.png",
-    "imageHighSrc": "cards/sm75-072-high.png"
+    "imageHighSrc": "cards/sm75-072-high.png",
+    "attacks": [
+      {
+        "name": "Bright Tone",
+        "damage": "50"
+      },
+      {
+        "name": "Sonic Edge",
+        "damage": "110"
+      },
+      {
+        "name": "Euphoria-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11490",
-    "externalId": null,
+    "externalId": "sm75-71",
     "tcgdex_id": "sm7.5-71",
     "localId": "71",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "071/70",
+    "cardNumber": "71/70",
     "cardName": "Reshiram-GX",
-    "fullDisplayName": "Reshiram-GX 071/70 Dragon Majesty",
+    "fullDisplayName": "Reshiram-GX 71/70 Dragon Majesty",
     "rarity": "Rare Rainbow",
     "category": "Pokémon",
     "stage": "Basic",
@@ -255,18 +310,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-071-low.png",
-    "imageHighSrc": "cards/sm75-071-high.png"
+    "imageHighSrc": "cards/sm75-071-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": null
+      },
+      {
+        "name": "Scorching Column",
+        "damage": "110"
+      },
+      {
+        "name": "Vermilion-GX",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11483",
-    "externalId": null,
+    "externalId": "sm75-70",
     "tcgdex_id": "sm7.5-70",
     "localId": "70",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "070/70",
+    "cardNumber": "70/70",
     "cardName": "Zinnia",
-    "fullDisplayName": "Zinnia 070/70 Dragon Majesty",
+    "fullDisplayName": "Zinnia 70/70 Dragon Majesty",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -284,18 +354,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-070-low.png",
-    "imageHighSrc": "cards/sm75-070-high.png"
+    "imageHighSrc": "cards/sm75-070-high.png",
+    "rules": "You can play this card only if 1 of your Pokémon was Knocked Out during your opponent's last turn.\n\nAttach up to 2 basic Energy cards from your hand to 1 of your Dragon Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11476",
-    "externalId": null,
+    "externalId": "sm75-69",
     "tcgdex_id": "sm7.5-69",
     "localId": "69",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "069/70",
+    "cardNumber": "69/70",
     "cardName": "Blaine's Last Stand",
-    "fullDisplayName": "Blaine's Last Stand 069/70 Dragon Majesty",
+    "fullDisplayName": "Blaine's Last Stand 69/70 Dragon Majesty",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -313,18 +384,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/sm75-069-low.png",
-    "imageHighSrc": "cards/sm75-069-high.png"
+    "imageHighSrc": "cards/sm75-069-high.png",
+    "rules": "You can play this card only when it is the last card in your hand.\n\nDraw 2 cards for each Fire Pokémon you have in play.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11469",
-    "externalId": null,
+    "externalId": "sm75-68",
     "tcgdex_id": "sm7.5-68",
     "localId": "68",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "068/70",
+    "cardNumber": "68/70",
     "cardName": "Altaria-GX",
-    "fullDisplayName": "Altaria-GX 068/70 Dragon Majesty",
+    "fullDisplayName": "Altaria-GX 68/70 Dragon Majesty",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -347,18 +419,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-068-low.png",
-    "imageHighSrc": "cards/sm75-068-high.png"
+    "imageHighSrc": "cards/sm75-068-high.png",
+    "attacks": [
+      {
+        "name": "Bright Tone",
+        "damage": "50"
+      },
+      {
+        "name": "Sonic Edge",
+        "damage": "110"
+      },
+      {
+        "name": "Euphoria-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11462",
-    "externalId": null,
+    "externalId": "sm75-67",
     "tcgdex_id": "sm7.5-67",
     "localId": "67",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "067/70",
+    "cardNumber": "67/70",
     "cardName": "Dragonite-GX",
-    "fullDisplayName": "Dragonite-GX 067/70 Dragon Majesty",
+    "fullDisplayName": "Dragonite-GX 67/70 Dragon Majesty",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -381,18 +468,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-067-low.png",
-    "imageHighSrc": "cards/sm75-067-high.png"
+    "imageHighSrc": "cards/sm75-067-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "70"
+      },
+      {
+        "name": "Giga Impact",
+        "damage": "200"
+      },
+      {
+        "name": "Dragonporter-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11455",
-    "externalId": null,
+    "externalId": "sm75-66",
     "tcgdex_id": "sm7.5-66",
     "localId": "66",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "066/70",
+    "cardNumber": "66/70",
     "cardName": "Kingdra-GX",
-    "fullDisplayName": "Kingdra-GX 066/70 Dragon Majesty",
+    "fullDisplayName": "Kingdra-GX 66/70 Dragon Majesty",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -415,18 +517,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-066-low.png",
-    "imageHighSrc": "cards/sm75-066-high.png"
+    "imageHighSrc": "cards/sm75-066-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "10+"
+      },
+      {
+        "name": "Reverse Thrust",
+        "damage": "30"
+      },
+      {
+        "name": "Maelstrom-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11448",
-    "externalId": null,
+    "externalId": "sm75-65",
     "tcgdex_id": "sm7.5-65",
     "localId": "65",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "065/70",
+    "cardNumber": "65/70",
     "cardName": "Reshiram-GX",
-    "fullDisplayName": "Reshiram-GX 065/70 Dragon Majesty",
+    "fullDisplayName": "Reshiram-GX 65/70 Dragon Majesty",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -449,18 +566,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-065-low.png",
-    "imageHighSrc": "cards/sm75-065-high.png"
+    "imageHighSrc": "cards/sm75-065-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": null
+      },
+      {
+        "name": "Scorching Column",
+        "damage": "110"
+      },
+      {
+        "name": "Vermilion-GX",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11441",
-    "externalId": null,
+    "externalId": "sm75-64",
     "tcgdex_id": "sm7.5-64",
     "localId": "64",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "064/70",
+    "cardNumber": "64/70",
     "cardName": "Zinnia",
-    "fullDisplayName": "Zinnia 064/70 Dragon Majesty",
+    "fullDisplayName": "Zinnia 64/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -478,18 +610,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-064-low.png",
-    "imageHighSrc": "cards/sm75-064-high.png"
+    "imageHighSrc": "cards/sm75-064-high.png",
+    "rules": "You can play this card only if 1 of your Pokémon was Knocked Out during your opponent's last turn.\n\nAttach up to 2 basic Energy cards from your hand to 1 of your Dragon Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11434",
-    "externalId": null,
+    "externalId": "sm75-63",
     "tcgdex_id": "sm7.5-63",
     "localId": "63",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "063/70",
+    "cardNumber": "63/70",
     "cardName": "Wela Volcano Park",
-    "fullDisplayName": "Wela Volcano Park 063/70 Dragon Majesty",
+    "fullDisplayName": "Wela Volcano Park 63/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -507,18 +640,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-063-low.png",
-    "imageHighSrc": "cards/sm75-063-high.png"
+    "imageHighSrc": "cards/sm75-063-high.png",
+    "rules": "Whenever a player flips a coin for the Special Condition Burned between turns, that Special Condition isn't removed even if the result is heads.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "11428",
-    "externalId": null,
+    "externalId": "sm75-62",
     "tcgdex_id": "sm7.5-62",
     "localId": "62",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "062/70",
+    "cardNumber": "62/70",
     "cardName": "Switch Raft",
-    "fullDisplayName": "Switch Raft 062/70 Dragon Majesty",
+    "fullDisplayName": "Switch Raft 62/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -536,18 +670,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-062-low.png",
-    "imageHighSrc": "cards/sm75-062-high.png"
+    "imageHighSrc": "cards/sm75-062-high.png",
+    "rules": "Switch your Active Water Pokémon with 1 of your Benched Pokémon. If you do, heal 30 damage from the Pokémon you moved to your Bench.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11422",
-    "externalId": null,
+    "externalId": "sm75-61",
     "tcgdex_id": "sm7.5-61",
     "localId": "61",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "061/70",
+    "cardNumber": "61/70",
     "cardName": "Lance ◇",
-    "fullDisplayName": "Lance ◇ 061/70 Dragon Majesty",
+    "fullDisplayName": "Lance ◇ 61/70 Dragon Majesty",
     "rarity": "Rare Prism Star",
     "category": "Trainer",
     "stage": null,
@@ -566,18 +701,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/sm75-061-low.png",
-    "imageHighSrc": "cards/sm75-061-high.png"
+    "imageHighSrc": "cards/sm75-061-high.png",
+    "rules": "You can play this card only if 1 of your Pokémon was Knocked Out during your opponent's last turn.\n\nSearch your deck for up to 2 Dragon Pokémon and put them onto your Bench. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack).\n\n◇ (Prism Star) Rule: You can't have more than 1 ◇ card with the same name in your deck. If a ◇ card would go to the discard pile, put it in the Lost Zone instead."
   },
   {
     "masterCardId": "11415",
-    "externalId": null,
+    "externalId": "sm75-60",
     "tcgdex_id": "sm7.5-60",
     "localId": "60",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "60a/70",
+    "cardNumber": "60/70",
     "cardName": "Fiery Flint",
-    "fullDisplayName": "Fiery Flint 60a/70 Dragon Majesty",
+    "fullDisplayName": "Fiery Flint 60/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -595,18 +731,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-60a-low.png",
-    "imageHighSrc": "cards/sm75-60a-high.png"
+    "imageHighSrc": "cards/sm75-60a-high.png",
+    "rules": "You can play this card only if you discard 2 other cards from your hand.\n\nSearch your deck for up to 4 Fire Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11408",
-    "externalId": null,
+    "externalId": "sm75-60",
     "tcgdex_id": "sm7.5-60",
     "localId": "60",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "060/70",
+    "cardNumber": "60/70",
     "cardName": "Fiery Flint",
-    "fullDisplayName": "Fiery Flint 060/70 Dragon Majesty",
+    "fullDisplayName": "Fiery Flint 60/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -624,18 +761,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-060-low.png",
-    "imageHighSrc": "cards/sm75-060-high.png"
+    "imageHighSrc": "cards/sm75-060-high.png",
+    "rules": "You can play this card only if you discard 2 other cards from your hand.\n\nSearch your deck for up to 4 Fire Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11401",
-    "externalId": null,
+    "externalId": "sm75-59",
     "tcgdex_id": "sm7.5-59",
     "localId": "59",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "059/70",
+    "cardNumber": "59/70",
     "cardName": "Dragon Talon",
-    "fullDisplayName": "Dragon Talon 059/70 Dragon Majesty",
+    "fullDisplayName": "Dragon Talon 59/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -653,18 +791,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-059-low.png",
-    "imageHighSrc": "cards/sm75-059-high.png"
+    "imageHighSrc": "cards/sm75-059-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Dragon Pokémon this card is attached to is your Active Pokémon and is damaged by an opponent's attack (even if that Pokémon is Knocked Out), put 3 damage counters on the Attacking Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "11394",
-    "externalId": null,
+    "externalId": "sm75-58",
     "tcgdex_id": "sm7.5-58",
     "localId": "58",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "058/70",
+    "cardNumber": "58/70",
     "cardName": "Blaine's Last Stand",
-    "fullDisplayName": "Blaine's Last Stand 058/70 Dragon Majesty",
+    "fullDisplayName": "Blaine's Last Stand 58/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -682,18 +821,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/sm75-058-low.png",
-    "imageHighSrc": "cards/sm75-058-high.png"
+    "imageHighSrc": "cards/sm75-058-high.png",
+    "rules": "You can play this card only when it is the last card in your hand.\n\nDraw 2 cards for each Fire Pokémon you have in play.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "11389",
-    "externalId": null,
+    "externalId": "sm75-57",
     "tcgdex_id": "sm7.5-57",
     "localId": "57",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "057/70",
+    "cardNumber": "57/70",
     "cardName": "Swablu",
-    "fullDisplayName": "Swablu 057/70 Dragon Majesty",
+    "fullDisplayName": "Swablu 57/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -715,18 +855,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-057-low.png",
-    "imageHighSrc": "cards/sm75-057-high.png"
+    "imageHighSrc": "cards/sm75-057-high.png",
+    "attacks": [
+      {
+        "name": "Sing",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11382",
-    "externalId": null,
+    "externalId": "sm75-56",
     "tcgdex_id": "sm7.5-56",
     "localId": "56",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "056/70",
+    "cardNumber": "56/70",
     "cardName": "Swablu",
-    "fullDisplayName": "Swablu 056/70 Dragon Majesty",
+    "fullDisplayName": "Swablu 56/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -748,18 +894,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-056-low.png",
-    "imageHighSrc": "cards/sm75-056-high.png"
+    "imageHighSrc": "cards/sm75-056-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11376",
-    "externalId": null,
+    "externalId": "sm75-55",
     "tcgdex_id": "sm7.5-55",
     "localId": "55",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "055/70",
+    "cardNumber": "55/70",
     "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 055/70 Dragon Majesty",
+    "fullDisplayName": "Kangaskhan 55/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -781,18 +937,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-055-low.png",
-    "imageHighSrc": "cards/sm75-055-high.png"
+    "imageHighSrc": "cards/sm75-055-high.png",
+    "attacks": [
+      {
+        "name": "Fetch",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      },
+      {
+        "name": "One-Two Punch",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "11368",
-    "externalId": null,
+    "externalId": "sm75-54",
     "tcgdex_id": "sm7.5-54",
     "localId": "54",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "054/70",
+    "cardNumber": "54/70",
     "cardName": "Kommo-o",
-    "fullDisplayName": "Kommo-o 054/70 Dragon Majesty",
+    "fullDisplayName": "Kommo-o 54/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -814,18 +984,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-054-low.png",
-    "imageHighSrc": "cards/sm75-054-high.png"
+    "imageHighSrc": "cards/sm75-054-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "60"
+      },
+      {
+        "name": "Raging Uppercut",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "11361",
-    "externalId": null,
+    "externalId": "sm75-53",
     "tcgdex_id": "sm7.5-53",
     "localId": "53",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "053/70",
+    "cardNumber": "53/70",
     "cardName": "Hakamo-o",
-    "fullDisplayName": "Hakamo-o 053/70 Dragon Majesty",
+    "fullDisplayName": "Hakamo-o 53/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -847,18 +1027,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-053-low.png",
-    "imageHighSrc": "cards/sm75-053-high.png"
+    "imageHighSrc": "cards/sm75-053-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "30"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "11354",
-    "externalId": null,
+    "externalId": "sm75-52",
     "tcgdex_id": "sm7.5-52",
     "localId": "52",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "052/70",
+    "cardNumber": "52/70",
     "cardName": "Jangmo-o",
-    "fullDisplayName": "Jangmo-o 052/70 Dragon Majesty",
+    "fullDisplayName": "Jangmo-o 52/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -880,18 +1070,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-052-low.png",
-    "imageHighSrc": "cards/sm75-052-high.png"
+    "imageHighSrc": "cards/sm75-052-high.png",
+    "attacks": [
+      {
+        "name": "Rigidify",
+        "damage": null
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11349",
-    "externalId": null,
+    "externalId": "sm75-51",
     "tcgdex_id": "sm7.5-51",
     "localId": "51",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "051/70",
+    "cardNumber": "51/70",
     "cardName": "Drampa",
-    "fullDisplayName": "Drampa 051/70 Dragon Majesty",
+    "fullDisplayName": "Drampa 51/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -913,18 +1113,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-051-low.png",
-    "imageHighSrc": "cards/sm75-051-high.png"
+    "imageHighSrc": "cards/sm75-051-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Wisdom",
+        "damage": "20"
+      },
+      {
+        "name": "Hyper Voice",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11339",
-    "externalId": null,
+    "externalId": "sm75-50",
     "tcgdex_id": "sm7.5-50",
     "localId": "50",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "050/70",
+    "cardNumber": "50/70",
     "cardName": "Turtonator",
-    "fullDisplayName": "Turtonator 050/70 Dragon Majesty",
+    "fullDisplayName": "Turtonator 50/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -946,18 +1156,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-050-low.png",
-    "imageHighSrc": "cards/sm75-050-high.png"
+    "imageHighSrc": "cards/sm75-050-high.png",
+    "attacks": [
+      {
+        "name": "Explosive Jet",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "11332",
-    "externalId": null,
+    "externalId": "sm75-49",
     "tcgdex_id": "sm7.5-49",
     "localId": "49",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "049/70",
+    "cardNumber": "49/70",
     "cardName": "Zygarde",
-    "fullDisplayName": "Zygarde 049/70 Dragon Majesty",
+    "fullDisplayName": "Zygarde 49/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -979,18 +1195,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-049-low.png",
-    "imageHighSrc": "cards/sm75-049-high.png"
+    "imageHighSrc": "cards/sm75-049-high.png",
+    "attacks": [
+      {
+        "name": "Rumble",
+        "damage": "20"
+      },
+      {
+        "name": "Raging Blade",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "11325",
-    "externalId": null,
+    "externalId": "sm75-48",
     "tcgdex_id": "sm7.5-48",
     "localId": "48",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "048/70",
+    "cardNumber": "48/70",
     "cardName": "White Kyurem-GX",
-    "fullDisplayName": "White Kyurem-GX 048/70 Dragon Majesty",
+    "fullDisplayName": "White Kyurem-GX 48/70 Dragon Majesty",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1013,18 +1239,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-048-low.png",
-    "imageHighSrc": "cards/sm75-048-high.png"
+    "imageHighSrc": "cards/sm75-048-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "40"
+      },
+      {
+        "name": "Raging Blade",
+        "damage": "80+"
+      },
+      {
+        "name": "Dragon Nova-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11318",
-    "externalId": null,
+    "externalId": "sm75-47",
     "tcgdex_id": "sm7.5-47",
     "localId": "47",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "047/70",
+    "cardNumber": "47/70",
     "cardName": "Kyurem",
-    "fullDisplayName": "Kyurem 047/70 Dragon Majesty",
+    "fullDisplayName": "Kyurem 47/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1046,18 +1287,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-047-low.png",
-    "imageHighSrc": "cards/sm75-047-high.png"
+    "imageHighSrc": "cards/sm75-047-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Frost Spear",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "11312",
-    "externalId": null,
+    "externalId": "sm75-46",
     "tcgdex_id": "sm7.5-46",
     "localId": "46",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "046/70",
+    "cardNumber": "46/70",
     "cardName": "Zekrom",
-    "fullDisplayName": "Zekrom 046/70 Dragon Majesty",
+    "fullDisplayName": "Zekrom 46/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1079,18 +1330,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-046-low.png",
-    "imageHighSrc": "cards/sm75-046-high.png"
+    "imageHighSrc": "cards/sm75-046-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "70"
+      },
+      {
+        "name": "Bolt Strike",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "11305",
-    "externalId": null,
+    "externalId": "sm75-45",
     "tcgdex_id": "sm7.5-45",
     "localId": "45",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "045/70",
+    "cardNumber": "45/70",
     "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon 045/70 Dragon Majesty",
+    "fullDisplayName": "Druddigon 45/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1112,18 +1373,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-045-low.png",
-    "imageHighSrc": "cards/sm75-045-high.png"
+    "imageHighSrc": "cards/sm75-045-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "11298",
-    "externalId": null,
+    "externalId": "sm75-44",
     "tcgdex_id": "sm7.5-44",
     "localId": "44",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "044/70",
+    "cardNumber": "44/70",
     "cardName": "Salamence-GX",
-    "fullDisplayName": "Salamence-GX 044/70 Dragon Majesty",
+    "fullDisplayName": "Salamence-GX 44/70 Dragon Majesty",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1146,18 +1413,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-044-low.png",
-    "imageHighSrc": "cards/sm75-044-high.png"
+    "imageHighSrc": "cards/sm75-044-high.png",
+    "attacks": [
+      {
+        "name": "Bright Flame",
+        "damage": "200"
+      },
+      {
+        "name": "Flame Jet-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11291",
-    "externalId": null,
+    "externalId": "sm75-43",
     "tcgdex_id": "sm7.5-43",
     "localId": "43",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "043/70",
+    "cardNumber": "43/70",
     "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 043/70 Dragon Majesty",
+    "fullDisplayName": "Shelgon 43/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1179,18 +1457,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-043-low.png",
-    "imageHighSrc": "cards/sm75-043-high.png"
+    "imageHighSrc": "cards/sm75-043-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11286",
-    "externalId": null,
+    "externalId": "sm75-42",
     "tcgdex_id": "sm7.5-42",
     "localId": "42",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "042/70",
+    "cardNumber": "42/70",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 042/70 Dragon Majesty",
+    "fullDisplayName": "Bagon 42/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1212,18 +1496,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-042-low.png",
-    "imageHighSrc": "cards/sm75-042-high.png"
+    "imageHighSrc": "cards/sm75-042-high.png",
+    "attacks": [
+      {
+        "name": "Risky Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Dragon Eye",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11279",
-    "externalId": null,
+    "externalId": "sm75-41",
     "tcgdex_id": "sm7.5-41",
     "localId": "41",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "041/70",
+    "cardNumber": "41/70",
     "cardName": "Altaria-GX",
-    "fullDisplayName": "Altaria-GX 041/70 Dragon Majesty",
+    "fullDisplayName": "Altaria-GX 41/70 Dragon Majesty",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1246,18 +1540,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-041-low.png",
-    "imageHighSrc": "cards/sm75-041-high.png"
+    "imageHighSrc": "cards/sm75-041-high.png",
+    "attacks": [
+      {
+        "name": "Bright Tone",
+        "damage": "50"
+      },
+      {
+        "name": "Sonic Edge",
+        "damage": "110"
+      },
+      {
+        "name": "Euphoria-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11272",
-    "externalId": null,
+    "externalId": "sm75-40",
     "tcgdex_id": "sm7.5-40",
     "localId": "40",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "40a/70",
+    "cardNumber": "40/70",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 40a/70 Dragon Majesty",
+    "fullDisplayName": "Altaria 40/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1279,18 +1588,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-40a-low.png",
-    "imageHighSrc": "cards/sm75-40a-high.png"
+    "imageHighSrc": "cards/sm75-40a-high.png",
+    "attacks": [
+      {
+        "name": "Pierce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11266",
-    "externalId": null,
+    "externalId": "sm75-40",
     "tcgdex_id": "sm7.5-40",
     "localId": "40",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "040/70",
+    "cardNumber": "40/70",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 040/70 Dragon Majesty",
+    "fullDisplayName": "Altaria 40/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1312,18 +1627,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-040-low.png",
-    "imageHighSrc": "cards/sm75-040-high.png"
+    "imageHighSrc": "cards/sm75-040-high.png",
+    "attacks": [
+      {
+        "name": "Pierce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11258",
-    "externalId": null,
+    "externalId": "sm75-39",
     "tcgdex_id": "sm7.5-39",
     "localId": "39",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "039/70",
+    "cardNumber": "39/70",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 039/70 Dragon Majesty",
+    "fullDisplayName": "Flygon 39/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1345,18 +1666,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-039-low.png",
-    "imageHighSrc": "cards/sm75-039-high.png"
+    "imageHighSrc": "cards/sm75-039-high.png",
+    "attacks": [
+      {
+        "name": "Sand Tomb",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "11252",
-    "externalId": null,
+    "externalId": "sm75-38",
     "tcgdex_id": "sm7.5-38",
     "localId": "38",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "038/70",
+    "cardNumber": "38/70",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 038/70 Dragon Majesty",
+    "fullDisplayName": "Vibrava 38/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1378,18 +1705,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-038-low.png",
-    "imageHighSrc": "cards/sm75-038-high.png"
+    "imageHighSrc": "cards/sm75-038-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Edge",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "11245",
-    "externalId": null,
+    "externalId": "sm75-37",
     "tcgdex_id": "sm7.5-37",
     "localId": "37",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "037/70",
+    "cardNumber": "37/70",
     "cardName": "Dragonite-GX",
-    "fullDisplayName": "Dragonite-GX 037/70 Dragon Majesty",
+    "fullDisplayName": "Dragonite-GX 37/70 Dragon Majesty",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1412,18 +1745,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-037-low.png",
-    "imageHighSrc": "cards/sm75-037-high.png"
+    "imageHighSrc": "cards/sm75-037-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "70"
+      },
+      {
+        "name": "Giga Impact",
+        "damage": "200"
+      },
+      {
+        "name": "Dragonporter-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11239",
-    "externalId": null,
+    "externalId": "sm75-36",
     "tcgdex_id": "sm7.5-36",
     "localId": "36",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "036/70",
+    "cardNumber": "36/70",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 036/70 Dragon Majesty",
+    "fullDisplayName": "Dragonair 36/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1445,18 +1793,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-036-low.png",
-    "imageHighSrc": "cards/sm75-036-high.png"
+    "imageHighSrc": "cards/sm75-036-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Tail",
+        "damage": "60×"
+      },
+      {
+        "name": "Waterfall",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11232",
-    "externalId": null,
+    "externalId": "sm75-35",
     "tcgdex_id": "sm7.5-35",
     "localId": "35",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "035/70",
+    "cardNumber": "35/70",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 035/70 Dragon Majesty",
+    "fullDisplayName": "Dratini 35/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1478,18 +1836,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-035-low.png",
-    "imageHighSrc": "cards/sm75-035-high.png"
+    "imageHighSrc": "cards/sm75-035-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11226",
-    "externalId": null,
+    "externalId": "sm75-34",
     "tcgdex_id": "sm7.5-34",
     "localId": "34",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "034/70",
+    "cardNumber": "34/70",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 034/70 Dragon Majesty",
+    "fullDisplayName": "Dratini 34/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1511,18 +1875,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-034-low.png",
-    "imageHighSrc": "cards/sm75-034-high.png"
+    "imageHighSrc": "cards/sm75-034-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11219",
-    "externalId": null,
+    "externalId": "sm75-33",
     "tcgdex_id": "sm7.5-33",
     "localId": "33",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "033/70",
+    "cardNumber": "33/70",
     "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 033/70 Dragon Majesty",
+    "fullDisplayName": "Hydreigon 33/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1544,18 +1914,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-033-low.png",
-    "imageHighSrc": "cards/sm75-033-high.png"
+    "imageHighSrc": "cards/sm75-033-high.png",
+    "attacks": [
+      {
+        "name": "Dark Destruction",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "11212",
-    "externalId": null,
+    "externalId": "sm75-32",
     "tcgdex_id": "sm7.5-32",
     "localId": "32",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "032/70",
+    "cardNumber": "32/70",
     "cardName": "Trapinch",
-    "fullDisplayName": "Trapinch 032/70 Dragon Majesty",
+    "fullDisplayName": "Trapinch 32/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1577,18 +1953,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-032-low.png",
-    "imageHighSrc": "cards/sm75-032-high.png"
+    "imageHighSrc": "cards/sm75-032-high.png",
+    "attacks": [
+      {
+        "name": "Mini Earthquake",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11205",
-    "externalId": null,
+    "externalId": "sm75-31",
     "tcgdex_id": "sm7.5-31",
     "localId": "31",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "031/70",
+    "cardNumber": "31/70",
     "cardName": "Wishiwashi",
-    "fullDisplayName": "Wishiwashi 031/70 Dragon Majesty",
+    "fullDisplayName": "Wishiwashi 31/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1610,18 +1992,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-031-low.png",
-    "imageHighSrc": "cards/sm75-031-high.png"
+    "imageHighSrc": "cards/sm75-031-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11198",
-    "externalId": null,
+    "externalId": "sm75-30",
     "tcgdex_id": "sm7.5-30",
     "localId": "30",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "030/70",
+    "cardNumber": "30/70",
     "cardName": "Phione",
-    "fullDisplayName": "Phione 030/70 Dragon Majesty",
+    "fullDisplayName": "Phione 30/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1643,18 +2031,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-030-low.png",
-    "imageHighSrc": "cards/sm75-030-high.png"
+    "imageHighSrc": "cards/sm75-030-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "11191",
-    "externalId": null,
+    "externalId": "sm75-29",
     "tcgdex_id": "sm7.5-29",
     "localId": "29",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "029/70",
+    "cardNumber": "29/70",
     "cardName": "Milotic",
-    "fullDisplayName": "Milotic 029/70 Dragon Majesty",
+    "fullDisplayName": "Milotic 29/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1676,18 +2070,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-029-low.png",
-    "imageHighSrc": "cards/sm75-029-high.png"
+    "imageHighSrc": "cards/sm75-029-high.png",
+    "attacks": [
+      {
+        "name": "Aurora Wave",
+        "damage": "30"
+      },
+      {
+        "name": "Aqua Split",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "11184",
-    "externalId": null,
+    "externalId": "sm75-28",
     "tcgdex_id": "sm7.5-28",
     "localId": "28",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "028/70",
+    "cardNumber": "28/70",
     "cardName": "Feebas",
-    "fullDisplayName": "Feebas 028/70 Dragon Majesty",
+    "fullDisplayName": "Feebas 28/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1709,18 +2113,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-028-low.png",
-    "imageHighSrc": "cards/sm75-028-high.png"
+    "imageHighSrc": "cards/sm75-028-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "11177",
-    "externalId": null,
+    "externalId": "sm75-27",
     "tcgdex_id": "sm7.5-27",
     "localId": "27",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "027/70",
+    "cardNumber": "27/70",
     "cardName": "Corsola",
-    "fullDisplayName": "Corsola 027/70 Dragon Majesty",
+    "fullDisplayName": "Corsola 27/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1742,18 +2152,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-027-low.png",
-    "imageHighSrc": "cards/sm75-027-high.png"
+    "imageHighSrc": "cards/sm75-027-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Shoot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11171",
-    "externalId": null,
+    "externalId": "sm75-26",
     "tcgdex_id": "sm7.5-26",
     "localId": "26",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "026/70",
+    "cardNumber": "26/70",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 026/70 Dragon Majesty",
+    "fullDisplayName": "Quagsire 26/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1775,18 +2191,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-026-low.png",
-    "imageHighSrc": "cards/sm75-026-high.png"
+    "imageHighSrc": "cards/sm75-026-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "11164",
-    "externalId": null,
+    "externalId": "sm75-25",
     "tcgdex_id": "sm7.5-25",
     "localId": "25",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "025/70",
+    "cardNumber": "25/70",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper 025/70 Dragon Majesty",
+    "fullDisplayName": "Wooper 25/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1808,18 +2230,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-025-low.png",
-    "imageHighSrc": "cards/sm75-025-high.png"
+    "imageHighSrc": "cards/sm75-025-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Rain Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11156",
-    "externalId": null,
+    "externalId": "sm75-24",
     "tcgdex_id": "sm7.5-24",
     "localId": "24",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "024/70",
+    "cardNumber": "24/70",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 024/70 Dragon Majesty",
+    "fullDisplayName": "Feraligatr 24/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1841,18 +2273,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-024-low.png",
-    "imageHighSrc": "cards/sm75-024-high.png"
+    "imageHighSrc": "cards/sm75-024-high.png",
+    "attacks": [
+      {
+        "name": "Riptide",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "11150",
-    "externalId": null,
+    "externalId": "sm75-23",
     "tcgdex_id": "sm7.5-23",
     "localId": "23",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "023/70",
+    "cardNumber": "23/70",
     "cardName": "Croconaw",
-    "fullDisplayName": "Croconaw 023/70 Dragon Majesty",
+    "fullDisplayName": "Croconaw 23/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1874,18 +2312,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-023-low.png",
-    "imageHighSrc": "cards/sm75-023-high.png"
+    "imageHighSrc": "cards/sm75-023-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      },
+      {
+        "name": "Sweep Away",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "11144",
-    "externalId": null,
+    "externalId": "sm75-22",
     "tcgdex_id": "sm7.5-22",
     "localId": "22",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "022/70",
+    "cardNumber": "22/70",
     "cardName": "Totodile",
-    "fullDisplayName": "Totodile 022/70 Dragon Majesty",
+    "fullDisplayName": "Totodile 22/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1907,18 +2355,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-022-low.png",
-    "imageHighSrc": "cards/sm75-022-high.png"
+    "imageHighSrc": "cards/sm75-022-high.png",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "11137",
-    "externalId": null,
+    "externalId": "sm75-21",
     "tcgdex_id": "sm7.5-21",
     "localId": "21",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "021/70",
+    "cardNumber": "21/70",
     "cardName": "Lapras",
-    "fullDisplayName": "Lapras 021/70 Dragon Majesty",
+    "fullDisplayName": "Lapras 21/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1940,18 +2398,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-021-low.png",
-    "imageHighSrc": "cards/sm75-021-high.png"
+    "imageHighSrc": "cards/sm75-021-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Bullet",
+        "damage": "20"
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "11130",
-    "externalId": null,
+    "externalId": "sm75-20",
     "tcgdex_id": "sm7.5-20",
     "localId": "20",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "020/70",
+    "cardNumber": "20/70",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 020/70 Dragon Majesty",
+    "fullDisplayName": "Gyarados 20/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1973,18 +2441,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-020-low.png",
-    "imageHighSrc": "cards/sm75-020-high.png"
+    "imageHighSrc": "cards/sm75-020-high.png",
+    "attacks": [
+      {
+        "name": "Wild Tail",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "11123",
-    "externalId": null,
+    "externalId": "sm75-19",
     "tcgdex_id": "sm7.5-19",
     "localId": "19",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "019/70",
+    "cardNumber": "19/70",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 019/70 Dragon Majesty",
+    "fullDisplayName": "Magikarp 19/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2006,18 +2480,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-019-low.png",
-    "imageHighSrc": "cards/sm75-019-high.png"
+    "imageHighSrc": "cards/sm75-019-high.png",
+    "attacks": [
+      {
+        "name": "Water Splash",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "11116",
-    "externalId": null,
+    "externalId": "sm75-18",
     "tcgdex_id": "sm7.5-18",
     "localId": "18",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "018/70",
+    "cardNumber": "18/70",
     "cardName": "Kingdra-GX",
-    "fullDisplayName": "Kingdra-GX 018/70 Dragon Majesty",
+    "fullDisplayName": "Kingdra-GX 18/70 Dragon Majesty",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2040,18 +2520,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-018-low.png",
-    "imageHighSrc": "cards/sm75-018-high.png"
+    "imageHighSrc": "cards/sm75-018-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "10+"
+      },
+      {
+        "name": "Reverse Thrust",
+        "damage": "30"
+      },
+      {
+        "name": "Maelstrom-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11109",
-    "externalId": null,
+    "externalId": "sm75-17",
     "tcgdex_id": "sm7.5-17",
     "localId": "17",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "017/70",
+    "cardNumber": "17/70",
     "cardName": "Seadra",
-    "fullDisplayName": "Seadra 017/70 Dragon Majesty",
+    "fullDisplayName": "Seadra 17/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2073,18 +2568,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-017-low.png",
-    "imageHighSrc": "cards/sm75-017-high.png"
+    "imageHighSrc": "cards/sm75-017-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "11102",
-    "externalId": null,
+    "externalId": "sm75-16",
     "tcgdex_id": "sm7.5-16",
     "localId": "16",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "016/70",
+    "cardNumber": "16/70",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 016/70 Dragon Majesty",
+    "fullDisplayName": "Horsea 16/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2106,18 +2607,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-016-low.png",
-    "imageHighSrc": "cards/sm75-016-high.png"
+    "imageHighSrc": "cards/sm75-016-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "11094",
-    "externalId": null,
+    "externalId": "sm75-15",
     "tcgdex_id": "sm7.5-15",
     "localId": "15",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "015/70",
+    "cardNumber": "15/70",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 015/70 Dragon Majesty",
+    "fullDisplayName": "Horsea 15/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2139,18 +2646,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-015-low.png",
-    "imageHighSrc": "cards/sm75-015-high.png"
+    "imageHighSrc": "cards/sm75-015-high.png",
+    "attacks": [
+      {
+        "name": "Splatter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11088",
-    "externalId": null,
+    "externalId": "sm75-14",
     "tcgdex_id": "sm7.5-14",
     "localId": "14",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "014/70",
+    "cardNumber": "14/70",
     "cardName": "Salazzle",
-    "fullDisplayName": "Salazzle 014/70 Dragon Majesty",
+    "fullDisplayName": "Salazzle 14/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2172,18 +2685,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-014-low.png",
-    "imageHighSrc": "cards/sm75-014-high.png"
+    "imageHighSrc": "cards/sm75-014-high.png",
+    "attacks": [
+      {
+        "name": "Ring of Fire",
+        "damage": "20"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11080",
-    "externalId": null,
+    "externalId": "sm75-13",
     "tcgdex_id": "sm7.5-13",
     "localId": "13",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "013/70",
+    "cardNumber": "13/70",
     "cardName": "Salandit",
-    "fullDisplayName": "Salandit 013/70 Dragon Majesty",
+    "fullDisplayName": "Salandit 13/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2205,18 +2728,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-013-low.png",
-    "imageHighSrc": "cards/sm75-013-high.png"
+    "imageHighSrc": "cards/sm75-013-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Dig Claws",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "11074",
-    "externalId": null,
+    "externalId": "sm75-12",
     "tcgdex_id": "sm7.5-12",
     "localId": "12",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "012/70",
+    "cardNumber": "12/70",
     "cardName": "Litten",
-    "fullDisplayName": "Litten 012/70 Dragon Majesty",
+    "fullDisplayName": "Litten 12/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2238,18 +2771,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-012-low.png",
-    "imageHighSrc": "cards/sm75-012-high.png"
+    "imageHighSrc": "cards/sm75-012-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "11067",
-    "externalId": null,
+    "externalId": "sm75-11",
     "tcgdex_id": "sm7.5-11",
     "localId": "11",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "011/70",
+    "cardNumber": "11/70",
     "cardName": "Reshiram-GX",
-    "fullDisplayName": "Reshiram-GX 011/70 Dragon Majesty",
+    "fullDisplayName": "Reshiram-GX 11/70 Dragon Majesty",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2272,18 +2811,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-011-low.png",
-    "imageHighSrc": "cards/sm75-011-high.png"
+    "imageHighSrc": "cards/sm75-011-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": null
+      },
+      {
+        "name": "Scorching Column",
+        "damage": "110"
+      },
+      {
+        "name": "Vermilion-GX",
+        "damage": "180"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "11060",
-    "externalId": null,
+    "externalId": "sm75-10",
     "tcgdex_id": "sm7.5-10",
     "localId": "10",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "010/70",
+    "cardNumber": "10/70",
     "cardName": "Heatmor",
-    "fullDisplayName": "Heatmor 010/70 Dragon Majesty",
+    "fullDisplayName": "Heatmor 10/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2305,18 +2859,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-010-low.png",
-    "imageHighSrc": "cards/sm75-010-high.png"
+    "imageHighSrc": "cards/sm75-010-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Charring Breath",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "11054",
-    "externalId": null,
+    "externalId": "sm75-9",
     "tcgdex_id": "sm7.5-9",
     "localId": "9",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "009/70",
+    "cardNumber": "9/70",
     "cardName": "Darmanitan",
-    "fullDisplayName": "Darmanitan 009/70 Dragon Majesty",
+    "fullDisplayName": "Darmanitan 9/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2338,18 +2902,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-009-low.png",
-    "imageHighSrc": "cards/sm75-009-high.png"
+    "imageHighSrc": "cards/sm75-009-high.png",
+    "attacks": [
+      {
+        "name": "Heat Assist",
+        "damage": null
+      },
+      {
+        "name": "Darmani-Hands",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "11047",
-    "externalId": null,
+    "externalId": "sm75-8",
     "tcgdex_id": "sm7.5-8",
     "localId": "8",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "008/70",
+    "cardNumber": "8/70",
     "cardName": "Darumaka",
-    "fullDisplayName": "Darumaka 008/70 Dragon Majesty",
+    "fullDisplayName": "Darumaka 8/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2371,18 +2945,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-008-low.png",
-    "imageHighSrc": "cards/sm75-008-high.png"
+    "imageHighSrc": "cards/sm75-008-high.png",
+    "attacks": [
+      {
+        "name": "Damage Rush",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "11041",
-    "externalId": null,
+    "externalId": "sm75-7",
     "tcgdex_id": "sm7.5-7",
     "localId": "7",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "007/70",
+    "cardNumber": "7/70",
     "cardName": "Victini ◇",
-    "fullDisplayName": "Victini ◇ 007/70 Dragon Majesty",
+    "fullDisplayName": "Victini ◇ 7/70 Dragon Majesty",
     "rarity": "Rare Prism Star",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2405,18 +2985,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-007-low.png",
-    "imageHighSrc": "cards/sm75-007-high.png"
+    "imageHighSrc": "cards/sm75-007-high.png",
+    "attacks": [
+      {
+        "name": "Infinity",
+        "damage": "20×"
+      }
+    ],
+    "rules": "◇ (Prism Star) Rule: You can't have more than 1 ◇ card with the same name in your deck. If a ◇ card would go to the discard pile, put it in the Lost Zone instead."
   },
   {
     "masterCardId": "11034",
-    "externalId": null,
+    "externalId": "sm75-6",
     "tcgdex_id": "sm7.5-6",
     "localId": "6",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "006/70",
+    "cardNumber": "6/70",
     "cardName": "Blaziken",
-    "fullDisplayName": "Blaziken 006/70 Dragon Majesty",
+    "fullDisplayName": "Blaziken 6/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2438,18 +3025,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-006-low.png",
-    "imageHighSrc": "cards/sm75-006-high.png"
+    "imageHighSrc": "cards/sm75-006-high.png",
+    "attacks": [
+      {
+        "name": "Fire Stream",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "11024",
-    "externalId": null,
+    "externalId": "sm75-5",
     "tcgdex_id": "sm7.5-5",
     "localId": "5",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "005/70",
+    "cardNumber": "5/70",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 005/70 Dragon Majesty",
+    "fullDisplayName": "Combusken 5/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2471,18 +3064,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-005-low.png",
-    "imageHighSrc": "cards/sm75-005-high.png"
+    "imageHighSrc": "cards/sm75-005-high.png",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "11018",
-    "externalId": null,
+    "externalId": "sm75-4",
     "tcgdex_id": "sm7.5-4",
     "localId": "4",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "004/70",
+    "cardNumber": "4/70",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 004/70 Dragon Majesty",
+    "fullDisplayName": "Torchic 4/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2504,18 +3103,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-004-low.png",
-    "imageHighSrc": "cards/sm75-004-high.png"
+    "imageHighSrc": "cards/sm75-004-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "11012",
-    "externalId": null,
+    "externalId": "sm75-3",
     "tcgdex_id": "sm7.5-3",
     "localId": "3",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "003/70",
+    "cardNumber": "3/70",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 003/70 Dragon Majesty",
+    "fullDisplayName": "Charizard 3/70 Dragon Majesty",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2537,18 +3142,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-003-low.png",
-    "imageHighSrc": "cards/sm75-003-high.png"
+    "imageHighSrc": "cards/sm75-003-high.png",
+    "attacks": [
+      {
+        "name": "Fiery Blast",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "11006",
-    "externalId": null,
+    "externalId": "sm75-2",
     "tcgdex_id": "sm7.5-2",
     "localId": "2",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "002/70",
+    "cardNumber": "2/70",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 002/70 Dragon Majesty",
+    "fullDisplayName": "Charmeleon 2/70 Dragon Majesty",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2570,18 +3181,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-002-low.png",
-    "imageHighSrc": "cards/sm75-002-high.png"
+    "imageHighSrc": "cards/sm75-002-high.png",
+    "attacks": [
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "11000",
-    "externalId": null,
+    "externalId": "sm75-1",
     "tcgdex_id": "sm7.5-1",
     "localId": "1",
     "setCode": "sm7.5",
     "setTcgdexId": "sm7.5",
-    "cardNumber": "001/70",
+    "cardNumber": "1/70",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 001/70 Dragon Majesty",
+    "fullDisplayName": "Charmander 1/70 Dragon Majesty",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2603,6 +3220,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm75-001-low.png",
-    "imageHighSrc": "cards/sm75-001-high.png"
+    "imageHighSrc": "cards/sm75-001-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "20"
+      }
+    ]
   }
 ]

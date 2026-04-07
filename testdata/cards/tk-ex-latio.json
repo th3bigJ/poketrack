@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "18804",
-    "externalId": null,
+    "externalId": "tk1b-10",
     "tcgdex_id": "tk-ex-latio-10",
     "localId": "010",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "010/10",
+    "cardNumber": "10/10",
     "cardName": "Lightning Energy",
-    "fullDisplayName": "Lightning Energy 010/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Lightning Energy 10/10 EX trainer Kit (Latios)",
     "rarity": "Common",
     "category": "Energy",
     "stage": "Basic",
@@ -30,14 +30,14 @@
   },
   {
     "masterCardId": "18800",
-    "externalId": null,
+    "externalId": "tk1b-9",
     "tcgdex_id": "tk-ex-latio-9",
     "localId": "009",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "009/10",
+    "cardNumber": "9/10",
     "cardName": "Energy Search",
-    "fullDisplayName": "Energy Search 009/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Energy Search 9/10 EX trainer Kit (Latios)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -55,18 +55,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1b-009-low.png",
-    "imageHighSrc": "cards/tk1b-009-high.png"
+    "imageHighSrc": "cards/tk1b-009-high.png",
+    "rules": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward"
   },
   {
     "masterCardId": "18796",
-    "externalId": null,
+    "externalId": "tk1b-8",
     "tcgdex_id": "tk-ex-latio-8",
     "localId": "008",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "008/10",
+    "cardNumber": "8/10",
     "cardName": "Potion",
-    "fullDisplayName": "Potion 008/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Potion 8/10 EX trainer Kit (Latios)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -84,18 +85,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1b-008-low.png",
-    "imageHighSrc": "cards/tk1b-008-high.png"
+    "imageHighSrc": "cards/tk1b-008-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "18792",
-    "externalId": null,
+    "externalId": "tk1b-7",
     "tcgdex_id": "tk-ex-latio-7",
     "localId": "007",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "007/10",
+    "cardNumber": "7/10",
     "cardName": "Zigzagoon",
-    "fullDisplayName": "Zigzagoon 007/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Zigzagoon 7/10 EX trainer Kit (Latios)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -117,18 +119,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1b-007-low.png",
-    "imageHighSrc": "cards/tk1b-007-high.png"
+    "imageHighSrc": "cards/tk1b-007-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "18788",
-    "externalId": null,
+    "externalId": "tk1b-6",
     "tcgdex_id": "tk-ex-latio-6",
     "localId": "006",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "006/10",
+    "cardNumber": "6/10",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 006/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Pikachu 6/10 EX trainer Kit (Latios)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -150,18 +158,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1b-006-low.png",
-    "imageHighSrc": "cards/tk1b-006-high.png"
+    "imageHighSrc": "cards/tk1b-006-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Pika Bolt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "18784",
-    "externalId": null,
+    "externalId": "tk1b-5",
     "tcgdex_id": "tk-ex-latio-5",
     "localId": "005",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "005/10",
+    "cardNumber": "5/10",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 005/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Magneton 5/10 EX trainer Kit (Latios)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -183,18 +201,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1b-005-low.png",
-    "imageHighSrc": "cards/tk1b-005-high.png"
+    "imageHighSrc": "cards/tk1b-005-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Triple Smash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "18780",
-    "externalId": null,
+    "externalId": "tk1b-4",
     "tcgdex_id": "tk-ex-latio-4",
     "localId": "004",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "004/10",
+    "cardNumber": "4/10",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 004/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Magnemite 4/10 EX trainer Kit (Latios)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -216,18 +244,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1b-004-low.png",
-    "imageHighSrc": "cards/tk1b-004-high.png"
+    "imageHighSrc": "cards/tk1b-004-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Hook",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "18776",
-    "externalId": null,
+    "externalId": "tk1b-3",
     "tcgdex_id": "tk-ex-latio-3",
     "localId": "003",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "003/10",
+    "cardNumber": "3/10",
     "cardName": "Linoone",
-    "fullDisplayName": "Linoone 003/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Linoone 3/10 EX trainer Kit (Latios)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -249,18 +287,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1b-003-low.png",
-    "imageHighSrc": "cards/tk1b-003-high.png"
+    "imageHighSrc": "cards/tk1b-003-high.png",
+    "attacks": [
+      {
+        "name": "Seek Out",
+        "damage": null
+      },
+      {
+        "name": "Continuous Headbutt",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "18771",
-    "externalId": null,
+    "externalId": "tk1b-2",
     "tcgdex_id": "tk-ex-latio-2",
     "localId": "002",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "002/10",
+    "cardNumber": "2/10",
     "cardName": "Latios",
-    "fullDisplayName": "Latios 002/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Latios 2/10 EX trainer Kit (Latios)",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -282,18 +330,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1b-002-low.png",
-    "imageHighSrc": "cards/tk1b-002-high.png"
+    "imageHighSrc": "cards/tk1b-002-high.png",
+    "attacks": [
+      {
+        "name": "Gather Energy",
+        "damage": "20"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "18766",
-    "externalId": null,
+    "externalId": "tk1b-1",
     "tcgdex_id": "tk-ex-latio-1",
     "localId": "001",
     "setCode": "tk-ex-latio",
     "setTcgdexId": "tk-ex-latio",
-    "cardNumber": "001/10",
+    "cardNumber": "1/10",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 001/10 EX trainer Kit (Latios)",
+    "fullDisplayName": "Electrike 1/10 EX trainer Kit (Latios)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -315,6 +373,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1b-001-low.png",
-    "imageHighSrc": "cards/tk1b-001-high.png"
+    "imageHighSrc": "cards/tk1b-001-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   }
 ]

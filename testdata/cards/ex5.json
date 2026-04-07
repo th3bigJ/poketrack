@@ -30,11 +30,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-102-low.jpg",
-    "imageHighSrc": "cards/ex5-102-low.jpg"
+    "imageHighSrc": "cards/ex5-102-low.jpg",
+    "attacks": [
+      {
+        "name": "Mud Shot",
+        "damage": "20"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "6149",
-    "externalId": null,
+    "externalId": "ex5-101",
     "tcgdex_id": "ex5-101",
     "localId": "101",
     "setCode": "ex5",
@@ -64,11 +74,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-101-low.png",
-    "imageHighSrc": "cards/ex5-101-high.png"
+    "imageHighSrc": "cards/ex5-101-high.png",
+    "attacks": [
+      {
+        "name": "Sleepy Song",
+        "damage": "30"
+      },
+      {
+        "name": "Do the Wave",
+        "damage": "30+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6145",
-    "externalId": null,
+    "externalId": "ex5-100",
     "tcgdex_id": "ex5-100",
     "localId": "100",
     "setCode": "ex5",
@@ -98,18 +119,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-100-low.png",
-    "imageHighSrc": "cards/ex5-100-high.png"
+    "imageHighSrc": "cards/ex5-100-high.png",
+    "attacks": [
+      {
+        "name": "Special Formula",
+        "damage": "50"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6138",
-    "externalId": null,
+    "externalId": "ex5-99",
     "tcgdex_id": "ex5-99",
     "localId": "099",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "099/101",
+    "cardNumber": "99/101",
     "cardName": "Registeel ex",
-    "fullDisplayName": "Registeel ex 099/101 Hidden Legends",
+    "fullDisplayName": "Registeel ex 99/101 Hidden Legends",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -132,18 +160,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-099-low.png",
-    "imageHighSrc": "cards/ex5-099-high.png"
+    "imageHighSrc": "cards/ex5-099-high.png",
+    "attacks": [
+      {
+        "name": "Steel Wave",
+        "damage": "50"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6130",
-    "externalId": null,
+    "externalId": "ex5-98",
     "tcgdex_id": "ex5-98",
     "localId": "098",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "098/101",
+    "cardNumber": "98/101",
     "cardName": "Regirock ex",
-    "fullDisplayName": "Regirock ex 098/101 Hidden Legends",
+    "fullDisplayName": "Regirock ex 98/101 Hidden Legends",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -166,18 +201,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-098-low.png",
-    "imageHighSrc": "cards/ex5-098-high.png"
+    "imageHighSrc": "cards/ex5-098-high.png",
+    "attacks": [
+      {
+        "name": "Tonnage",
+        "damage": "60+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6125",
-    "externalId": null,
+    "externalId": "ex5-97",
     "tcgdex_id": "ex5-97",
     "localId": "097",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "097/101",
+    "cardNumber": "97/101",
     "cardName": "Regice ex",
-    "fullDisplayName": "Regice ex 097/101 Hidden Legends",
+    "fullDisplayName": "Regice ex 97/101 Hidden Legends",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -200,18 +242,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-097-low.png",
-    "imageHighSrc": "cards/ex5-097-high.png"
+    "imageHighSrc": "cards/ex5-097-high.png",
+    "attacks": [
+      {
+        "name": "Freeze Lock",
+        "damage": "60"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6117",
-    "externalId": null,
+    "externalId": "ex5-96",
     "tcgdex_id": "ex5-96",
     "localId": "096",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "096/101",
+    "cardNumber": "96/101",
     "cardName": "Ninetales ex",
-    "fullDisplayName": "Ninetales ex 096/101 Hidden Legends",
+    "fullDisplayName": "Ninetales ex 96/101 Hidden Legends",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -234,18 +283,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-096-low.png",
-    "imageHighSrc": "cards/ex5-096-high.png"
+    "imageHighSrc": "cards/ex5-096-high.png",
+    "attacks": [
+      {
+        "name": "Intense Glare",
+        "damage": null
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "100"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6110",
-    "externalId": null,
+    "externalId": "ex5-95",
     "tcgdex_id": "ex5-95",
     "localId": "095",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "095/101",
+    "cardNumber": "95/101",
     "cardName": "Metagross ex",
-    "fullDisplayName": "Metagross ex 095/101 Hidden Legends",
+    "fullDisplayName": "Metagross ex 95/101 Hidden Legends",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -268,18 +328,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-095-low.png",
-    "imageHighSrc": "cards/ex5-095-high.png"
+    "imageHighSrc": "cards/ex5-095-high.png",
+    "attacks": [
+      {
+        "name": "Metal Reversal",
+        "damage": "40"
+      },
+      {
+        "name": "Extra Comet Punch",
+        "damage": "50+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6102",
-    "externalId": null,
+    "externalId": "ex5-94",
     "tcgdex_id": "ex5-94",
     "localId": "094",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "094/101",
+    "cardNumber": "94/101",
     "cardName": "Kyogre ex",
-    "fullDisplayName": "Kyogre ex 094/101 Hidden Legends",
+    "fullDisplayName": "Kyogre ex 94/101 Hidden Legends",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -302,18 +373,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-094-low.png",
-    "imageHighSrc": "cards/ex5-094-high.png"
+    "imageHighSrc": "cards/ex5-094-high.png",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null
+      },
+      {
+        "name": "Super Tidal Wave",
+        "damage": "50+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6095",
-    "externalId": null,
+    "externalId": "ex5-93",
     "tcgdex_id": "ex5-93",
     "localId": "093",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "093/101",
+    "cardNumber": "93/101",
     "cardName": "Groudon ex",
-    "fullDisplayName": "Groudon ex 093/101 Hidden Legends",
+    "fullDisplayName": "Groudon ex 93/101 Hidden Legends",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -336,18 +418,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-093-low.png",
-    "imageHighSrc": "cards/ex5-093-high.png"
+    "imageHighSrc": "cards/ex5-093-high.png",
+    "attacks": [
+      {
+        "name": "Rock Tumble",
+        "damage": "30"
+      },
+      {
+        "name": "Crushing Mantle",
+        "damage": "50+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6087",
-    "externalId": null,
+    "externalId": "ex5-92",
     "tcgdex_id": "ex5-92",
     "localId": "092",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "092/101",
+    "cardNumber": "92/101",
     "cardName": "Steven's Advice",
-    "fullDisplayName": "Steven's Advice 092/101 Hidden Legends",
+    "fullDisplayName": "Steven's Advice 92/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -365,18 +458,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-092-low.png",
-    "imageHighSrc": "cards/ex5-092-high.png"
+    "imageHighSrc": "cards/ex5-092-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw a number of cards up to the number of your opponent's Pokémon in play.\n\nIf you have more than 7 cards (including this one) in your hand, you can't play this card."
   },
   {
     "masterCardId": "6079",
-    "externalId": null,
+    "externalId": "ex5-91",
     "tcgdex_id": "ex5-91",
     "localId": "091",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "091/101",
+    "cardNumber": "91/101",
     "cardName": "Magnetic Storm",
-    "fullDisplayName": "Magnetic Storm 091/101 Hidden Legends",
+    "fullDisplayName": "Magnetic Storm 91/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -394,18 +488,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-091-low.png",
-    "imageHighSrc": "cards/ex5-091-high.png"
+    "imageHighSrc": "cards/ex5-091-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nAny damage done by attacks from Psychic Pokémon and Fighting Pokémon (both yours and your opponent's) is not affected by Resistance."
   },
   {
     "masterCardId": "6070",
-    "externalId": null,
+    "externalId": "ex5-90",
     "tcgdex_id": "ex5-90",
     "localId": "090",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "090/101",
+    "cardNumber": "90/101",
     "cardName": "Life Herb",
-    "fullDisplayName": "Life Herb 090/101 Hidden Legends",
+    "fullDisplayName": "Life Herb 90/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -423,18 +518,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-090-low.png",
-    "imageHighSrc": "cards/ex5-090-high.png"
+    "imageHighSrc": "cards/ex5-090-high.png",
+    "rules": "Flip a coin. If heads, choose 1 of your Pokémon (excluding Pokémon-ex). Remove all Special Conditions and 6 damage counters from that Pokémon (all if there are less than 6)."
   },
   {
     "masterCardId": "6061",
-    "externalId": null,
+    "externalId": "ex5-89",
     "tcgdex_id": "ex5-89",
     "localId": "089",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "089/101",
+    "cardNumber": "89/101",
     "cardName": "Island Cave",
-    "fullDisplayName": "Island Cave 089/101 Hidden Legends",
+    "fullDisplayName": "Island Cave 89/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -452,18 +548,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-089-low.png",
-    "imageHighSrc": "cards/ex5-089-high.png"
+    "imageHighSrc": "cards/ex5-089-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nWhenever any player attaches an Energy card from his or her hand to Water Pokémon, Fighting Pokémon, or Metal Pokémon, remove any Special Conditions from that Pokémon."
   },
   {
     "masterCardId": "6051",
-    "externalId": null,
+    "externalId": "ex5-88",
     "tcgdex_id": "ex5-88",
     "localId": "088",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "088/101",
+    "cardNumber": "88/101",
     "cardName": "Desert Ruins",
-    "fullDisplayName": "Desert Ruins 088/101 Hidden Legends",
+    "fullDisplayName": "Desert Ruins 88/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -481,18 +578,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-088-low.png",
-    "imageHighSrc": "cards/ex5-088-high.png"
+    "imageHighSrc": "cards/ex5-088-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nAt any time between turns, each player puts 1 damage counter on his or her Pokémon-ex with maximum HP of at least 100."
   },
   {
     "masterCardId": "6043",
-    "externalId": null,
+    "externalId": "ex5-87",
     "tcgdex_id": "ex5-87",
     "localId": "087",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "087/101",
+    "cardNumber": "87/101",
     "cardName": "Ancient Tomb",
-    "fullDisplayName": "Ancient Tomb 087/101 Hidden Legends",
+    "fullDisplayName": "Ancient Tomb 87/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -510,18 +608,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-087-low.png",
-    "imageHighSrc": "cards/ex5-087-high.png"
+    "imageHighSrc": "cards/ex5-087-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nDon't apply Weakness for all Pokémon in play (excluding Pokémon-ex and Pokémon that has an owner in its name)."
   },
   {
     "masterCardId": "6034",
-    "externalId": null,
+    "externalId": "ex5-86",
     "tcgdex_id": "ex5-86",
     "localId": "086",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "086/101",
+    "cardNumber": "86/101",
     "cardName": "Ancient Technical Machine [Steel]",
-    "fullDisplayName": "Ancient Technical Machine [Steel] 086/101 Hidden Legends",
+    "fullDisplayName": "Ancient Technical Machine [Steel] 86/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -539,18 +638,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex5-086-low.png",
-    "imageHighSrc": "cards/ex5-086-high.png"
+    "imageHighSrc": "cards/ex5-086-high.png",
+    "attacks": [
+      {
+        "name": "Steel Generator",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Ancient Technical Machine [Steel]."
   },
   {
     "masterCardId": "6025",
-    "externalId": null,
+    "externalId": "ex5-85",
     "tcgdex_id": "ex5-85",
     "localId": "085",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "085/101",
+    "cardNumber": "85/101",
     "cardName": "Ancient Technical Machine [Rock]",
-    "fullDisplayName": "Ancient Technical Machine [Rock] 085/101 Hidden Legends",
+    "fullDisplayName": "Ancient Technical Machine [Rock] 85/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -568,18 +674,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex5-085-low.png",
-    "imageHighSrc": "cards/ex5-085-high.png"
+    "imageHighSrc": "cards/ex5-085-high.png",
+    "attacks": [
+      {
+        "name": "Stone Generator",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Ancient Technical Machine [Rock]."
   },
   {
     "masterCardId": "6016",
-    "externalId": null,
+    "externalId": "ex5-84",
     "tcgdex_id": "ex5-84",
     "localId": "084",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "084/101",
+    "cardNumber": "84/101",
     "cardName": "Ancient Technical Machine [Ice]",
-    "fullDisplayName": "Ancient Technical Machine [Ice] 084/101 Hidden Legends",
+    "fullDisplayName": "Ancient Technical Machine [Ice] 84/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -597,18 +710,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex5-084-low.png",
-    "imageHighSrc": "cards/ex5-084-high.png"
+    "imageHighSrc": "cards/ex5-084-high.png",
+    "attacks": [
+      {
+        "name": "Ice Generator",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Evolved Pokémon (excluding Pokémon-ex and Pokémon that has an owner in its name) in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Ancient Technical Machine [Ice]."
   },
   {
     "masterCardId": "6007",
-    "externalId": null,
+    "externalId": "ex5-83",
     "tcgdex_id": "ex5-83",
     "localId": "083",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "083/101",
+    "cardNumber": "83/101",
     "cardName": "Zubat",
-    "fullDisplayName": "Zubat 083/101 Hidden Legends",
+    "fullDisplayName": "Zubat 83/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -630,18 +750,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-083-low.png",
-    "imageHighSrc": "cards/ex5-083-high.png"
+    "imageHighSrc": "cards/ex5-083-high.png",
+    "attacks": [
+      {
+        "name": "Quick Turn",
+        "damage": "10×"
+      },
+      {
+        "name": "Surprise",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5998",
-    "externalId": null,
+    "externalId": "ex5-82",
     "tcgdex_id": "ex5-82",
     "localId": "082",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "082/101",
+    "cardNumber": "82/101",
     "cardName": "Whismur",
-    "fullDisplayName": "Whismur 082/101 Hidden Legends",
+    "fullDisplayName": "Whismur 82/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -663,18 +793,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-082-low.png",
-    "imageHighSrc": "cards/ex5-082-high.png"
+    "imageHighSrc": "cards/ex5-082-high.png",
+    "attacks": [
+      {
+        "name": "Wail",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5989",
-    "externalId": null,
+    "externalId": "ex5-81",
     "tcgdex_id": "ex5-81",
     "localId": "081",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "081/101",
+    "cardNumber": "81/101",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 081/101 Hidden Legends",
+    "fullDisplayName": "Vulpix 81/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -696,18 +832,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-081-low.png",
-    "imageHighSrc": "cards/ex5-081-high.png"
+    "imageHighSrc": "cards/ex5-081-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Ascension",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5980",
-    "externalId": null,
+    "externalId": "ex5-80",
     "tcgdex_id": "ex5-80",
     "localId": "080",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "080/101",
+    "cardNumber": "80/101",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 080/101 Hidden Legends",
+    "fullDisplayName": "Voltorb 80/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -729,18 +875,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-080-low.png",
-    "imageHighSrc": "cards/ex5-080-high.png"
+    "imageHighSrc": "cards/ex5-080-high.png",
+    "attacks": [
+      {
+        "name": "Recharge",
+        "damage": null
+      },
+      {
+        "name": "Rolling Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5971",
-    "externalId": null,
+    "externalId": "ex5-79",
     "tcgdex_id": "ex5-79",
     "localId": "079",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "079/101",
+    "cardNumber": "79/101",
     "cardName": "Totodile",
-    "fullDisplayName": "Totodile 079/101 Hidden Legends",
+    "fullDisplayName": "Totodile 79/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -762,18 +918,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-079-low.png",
-    "imageHighSrc": "cards/ex5-079-high.png"
+    "imageHighSrc": "cards/ex5-079-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5962",
-    "externalId": null,
+    "externalId": "ex5-78",
     "tcgdex_id": "ex5-78",
     "localId": "078",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "078/101",
+    "cardNumber": "78/101",
     "cardName": "Togepi",
-    "fullDisplayName": "Togepi 078/101 Hidden Legends",
+    "fullDisplayName": "Togepi 78/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -795,18 +961,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-078-low.png",
-    "imageHighSrc": "cards/ex5-078-high.png"
+    "imageHighSrc": "cards/ex5-078-high.png",
+    "attacks": [
+      {
+        "name": "Sleepy Song",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5954",
-    "externalId": null,
+    "externalId": "ex5-77",
     "tcgdex_id": "ex5-77",
     "localId": "077",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "077/101",
+    "cardNumber": "77/101",
     "cardName": "Tentacool",
-    "fullDisplayName": "Tentacool 077/101 Hidden Legends",
+    "fullDisplayName": "Tentacool 77/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -828,18 +1000,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-077-low.png",
-    "imageHighSrc": "cards/ex5-077-high.png"
+    "imageHighSrc": "cards/ex5-077-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5944",
-    "externalId": null,
+    "externalId": "ex5-76",
     "tcgdex_id": "ex5-76",
     "localId": "076",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "076/101",
+    "cardNumber": "76/101",
     "cardName": "Surskit",
-    "fullDisplayName": "Surskit 076/101 Hidden Legends",
+    "fullDisplayName": "Surskit 76/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -861,18 +1039,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-076-low.png",
-    "imageHighSrc": "cards/ex5-076-high.png"
+    "imageHighSrc": "cards/ex5-076-high.png",
+    "attacks": [
+      {
+        "name": "Splash About",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5935",
-    "externalId": null,
+    "externalId": "ex5-75",
     "tcgdex_id": "ex5-75",
     "localId": "075",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "075/101",
+    "cardNumber": "75/101",
     "cardName": "Staryu",
-    "fullDisplayName": "Staryu 075/101 Hidden Legends",
+    "fullDisplayName": "Staryu 75/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -894,18 +1078,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-075-low.png",
-    "imageHighSrc": "cards/ex5-075-high.png"
+    "imageHighSrc": "cards/ex5-075-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5925",
-    "externalId": null,
+    "externalId": "ex5-74",
     "tcgdex_id": "ex5-74",
     "localId": "074",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "074/101",
+    "cardNumber": "74/101",
     "cardName": "Spheal",
-    "fullDisplayName": "Spheal 074/101 Hidden Legends",
+    "fullDisplayName": "Spheal 74/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -927,18 +1117,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-074-low.png",
-    "imageHighSrc": "cards/ex5-074-high.png"
+    "imageHighSrc": "cards/ex5-074-high.png",
+    "attacks": [
+      {
+        "name": "Freezing Breath",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5916",
-    "externalId": null,
+    "externalId": "ex5-73",
     "tcgdex_id": "ex5-73",
     "localId": "073",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "073/101",
+    "cardNumber": "73/101",
     "cardName": "Snorunt",
-    "fullDisplayName": "Snorunt 073/101 Hidden Legends",
+    "fullDisplayName": "Snorunt 73/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -960,18 +1156,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-073-low.png",
-    "imageHighSrc": "cards/ex5-073-high.png"
+    "imageHighSrc": "cards/ex5-073-high.png",
+    "attacks": [
+      {
+        "name": "Ice Breath",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5908",
-    "externalId": null,
+    "externalId": "ex5-72",
     "tcgdex_id": "ex5-72",
     "localId": "072",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "072/101",
+    "cardNumber": "72/101",
     "cardName": "Shuppet",
-    "fullDisplayName": "Shuppet 072/101 Hidden Legends",
+    "fullDisplayName": "Shuppet 72/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -993,18 +1199,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-072-low.png",
-    "imageHighSrc": "cards/ex5-072-high.png"
+    "imageHighSrc": "cards/ex5-072-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Crush",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5898",
-    "externalId": null,
+    "externalId": "ex5-71",
     "tcgdex_id": "ex5-71",
     "localId": "071",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "071/101",
+    "cardNumber": "71/101",
     "cardName": "Seedot",
-    "fullDisplayName": "Seedot 071/101 Hidden Legends",
+    "fullDisplayName": "Seedot 71/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1026,18 +1238,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-071-low.png",
-    "imageHighSrc": "cards/ex5-071-high.png"
+    "imageHighSrc": "cards/ex5-071-high.png",
+    "attacks": [
+      {
+        "name": "Growth Spurt",
+        "damage": null
+      },
+      {
+        "name": "Trip Over",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5889",
-    "externalId": null,
+    "externalId": "ex5-70",
     "tcgdex_id": "ex5-70",
     "localId": "070",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "070/101",
+    "cardNumber": "70/101",
     "cardName": "Rhyhorn",
-    "fullDisplayName": "Rhyhorn 070/101 Hidden Legends",
+    "fullDisplayName": "Rhyhorn 70/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1059,18 +1281,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-070-low.png",
-    "imageHighSrc": "cards/ex5-070-high.png"
+    "imageHighSrc": "cards/ex5-070-high.png",
+    "attacks": [
+      {
+        "name": "Double Stab",
+        "damage": "10×"
+      },
+      {
+        "name": "Take Down",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5880",
-    "externalId": null,
+    "externalId": "ex5-69",
     "tcgdex_id": "ex5-69",
     "localId": "069",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "069/101",
+    "cardNumber": "69/101",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 069/101 Hidden Legends",
+    "fullDisplayName": "Plusle 69/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1092,18 +1324,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-069-low.png",
-    "imageHighSrc": "cards/ex5-069-high.png"
+    "imageHighSrc": "cards/ex5-069-high.png",
+    "attacks": [
+      {
+        "name": "Plus Energy",
+        "damage": null
+      },
+      {
+        "name": "Dazzle Blast",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5871",
-    "externalId": null,
+    "externalId": "ex5-68",
     "tcgdex_id": "ex5-68",
     "localId": "068",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "068/101",
+    "cardNumber": "68/101",
     "cardName": "Oddish",
-    "fullDisplayName": "Oddish 068/101 Hidden Legends",
+    "fullDisplayName": "Oddish 68/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1125,18 +1367,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-068-low.png",
-    "imageHighSrc": "cards/ex5-068-high.png"
+    "imageHighSrc": "cards/ex5-068-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5862",
-    "externalId": null,
+    "externalId": "ex5-67",
     "tcgdex_id": "ex5-67",
     "localId": "067",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "067/101",
+    "cardNumber": "67/101",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 067/101 Hidden Legends",
+    "fullDisplayName": "Minun 67/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1158,18 +1410,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-067-low.png",
-    "imageHighSrc": "cards/ex5-067-high.png"
+    "imageHighSrc": "cards/ex5-067-high.png",
+    "attacks": [
+      {
+        "name": "Minus Energy",
+        "damage": "10"
+      },
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5852",
-    "externalId": null,
+    "externalId": "ex5-66",
     "tcgdex_id": "ex5-66",
     "localId": "066",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "066/101",
+    "cardNumber": "66/101",
     "cardName": "Meditite",
-    "fullDisplayName": "Meditite 066/101 Hidden Legends",
+    "fullDisplayName": "Meditite 66/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1191,18 +1453,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-066-low.png",
-    "imageHighSrc": "cards/ex5-066-high.png"
+    "imageHighSrc": "cards/ex5-066-high.png",
+    "attacks": [
+      {
+        "name": "Jab",
+        "damage": "10"
+      },
+      {
+        "name": "Steady Punch",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5842",
-    "externalId": null,
+    "externalId": "ex5-65",
     "tcgdex_id": "ex5-65",
     "localId": "065",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "065/101",
+    "cardNumber": "65/101",
     "cardName": "Meditite",
-    "fullDisplayName": "Meditite 065/101 Hidden Legends",
+    "fullDisplayName": "Meditite 65/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1224,18 +1496,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-065-low.png",
-    "imageHighSrc": "cards/ex5-065-high.png"
+    "imageHighSrc": "cards/ex5-065-high.png",
+    "attacks": [
+      {
+        "name": "Double Chop",
+        "damage": "10×"
+      },
+      {
+        "name": "Calm Mind",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5834",
-    "externalId": null,
+    "externalId": "ex5-64",
     "tcgdex_id": "ex5-64",
     "localId": "064",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "064/101",
+    "cardNumber": "64/101",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 064/101 Hidden Legends",
+    "fullDisplayName": "Machop 64/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1257,18 +1539,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-064-low.png",
-    "imageHighSrc": "cards/ex5-064-high.png"
+    "imageHighSrc": "cards/ex5-064-high.png",
+    "attacks": [
+      {
+        "name": "Knuckle Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Karate Chop",
+        "damage": "30-"
+      }
+    ]
   },
   {
     "masterCardId": "5825",
-    "externalId": null,
+    "externalId": "ex5-63",
     "tcgdex_id": "ex5-63",
     "localId": "063",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "063/101",
+    "cardNumber": "63/101",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 063/101 Hidden Legends",
+    "fullDisplayName": "Jigglypuff 63/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1290,18 +1582,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-063-low.png",
-    "imageHighSrc": "cards/ex5-063-high.png"
+    "imageHighSrc": "cards/ex5-063-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Sleepy Song",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5816",
-    "externalId": null,
+    "externalId": "ex5-62",
     "tcgdex_id": "ex5-62",
     "localId": "062",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "062/101",
+    "cardNumber": "62/101",
     "cardName": "Gulpin",
-    "fullDisplayName": "Gulpin 062/101 Hidden Legends",
+    "fullDisplayName": "Gulpin 62/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1323,18 +1625,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-062-low.png",
-    "imageHighSrc": "cards/ex5-062-high.png"
+    "imageHighSrc": "cards/ex5-062-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      },
+      {
+        "name": "Spit Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5807",
-    "externalId": null,
+    "externalId": "ex5-61",
     "tcgdex_id": "ex5-61",
     "localId": "061",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "061/101",
+    "cardNumber": "61/101",
     "cardName": "Feebas",
-    "fullDisplayName": "Feebas 061/101 Hidden Legends",
+    "fullDisplayName": "Feebas 61/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1356,18 +1668,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-061-low.png",
-    "imageHighSrc": "cards/ex5-061-high.png"
+    "imageHighSrc": "cards/ex5-061-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Ascension",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5798",
-    "externalId": null,
+    "externalId": "ex5-60",
     "tcgdex_id": "ex5-60",
     "localId": "060",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "060/101",
+    "cardNumber": "60/101",
     "cardName": "Doduo",
-    "fullDisplayName": "Doduo 060/101 Hidden Legends",
+    "fullDisplayName": "Doduo 60/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1389,18 +1711,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-060-low.png",
-    "imageHighSrc": "cards/ex5-060-high.png"
+    "imageHighSrc": "cards/ex5-060-high.png",
+    "attacks": [
+      {
+        "name": "Drill Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5789",
-    "externalId": null,
+    "externalId": "ex5-59",
     "tcgdex_id": "ex5-59",
     "localId": "059",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "059/101",
+    "cardNumber": "59/101",
     "cardName": "Cyndaquil",
-    "fullDisplayName": "Cyndaquil 059/101 Hidden Legends",
+    "fullDisplayName": "Cyndaquil 59/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1422,18 +1750,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-059-low.png",
-    "imageHighSrc": "cards/ex5-059-high.png"
+    "imageHighSrc": "cards/ex5-059-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "10"
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5780",
-    "externalId": null,
+    "externalId": "ex5-58",
     "tcgdex_id": "ex5-58",
     "localId": "058",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "058/101",
+    "cardNumber": "58/101",
     "cardName": "Clamperl",
-    "fullDisplayName": "Clamperl 058/101 Hidden Legends",
+    "fullDisplayName": "Clamperl 58/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1455,18 +1793,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-058-low.png",
-    "imageHighSrc": "cards/ex5-058-high.png"
+    "imageHighSrc": "cards/ex5-058-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5771",
-    "externalId": null,
+    "externalId": "ex5-57",
     "tcgdex_id": "ex5-57",
     "localId": "057",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "057/101",
+    "cardNumber": "57/101",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 057/101 Hidden Legends",
+    "fullDisplayName": "Chinchou 57/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1488,18 +1832,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-057-low.png",
-    "imageHighSrc": "cards/ex5-057-high.png"
+    "imageHighSrc": "cards/ex5-057-high.png",
+    "attacks": [
+      {
+        "name": "Random Spark",
+        "damage": null
+      },
+      {
+        "name": "Lightning Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5762",
-    "externalId": null,
+    "externalId": "ex5-56",
     "tcgdex_id": "ex5-56",
     "localId": "056",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "056/101",
+    "cardNumber": "56/101",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 056/101 Hidden Legends",
+    "fullDisplayName": "Chinchou 56/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1521,18 +1875,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-056-low.png",
-    "imageHighSrc": "cards/ex5-056-high.png"
+    "imageHighSrc": "cards/ex5-056-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Spark",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5753",
-    "externalId": null,
+    "externalId": "ex5-55",
     "tcgdex_id": "ex5-55",
     "localId": "055",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "055/101",
+    "cardNumber": "55/101",
     "cardName": "Chikorita",
-    "fullDisplayName": "Chikorita 055/101 Hidden Legends",
+    "fullDisplayName": "Chikorita 55/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1554,18 +1918,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-055-low.png",
-    "imageHighSrc": "cards/ex5-055-high.png"
+    "imageHighSrc": "cards/ex5-055-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5744",
-    "externalId": null,
+    "externalId": "ex5-54",
     "tcgdex_id": "ex5-54",
     "localId": "054",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "054/101",
+    "cardNumber": "54/101",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 054/101 Hidden Legends",
+    "fullDisplayName": "Beldum 54/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1587,18 +1957,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-054-low.png",
-    "imageHighSrc": "cards/ex5-054-high.png"
+    "imageHighSrc": "cards/ex5-054-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Metal Ball",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5735",
-    "externalId": null,
+    "externalId": "ex5-53",
     "tcgdex_id": "ex5-53",
     "localId": "053",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "053/101",
+    "cardNumber": "53/101",
     "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 053/101 Hidden Legends",
+    "fullDisplayName": "Baltoy 53/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1620,18 +2000,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-053-low.png",
-    "imageHighSrc": "cards/ex5-053-high.png"
+    "imageHighSrc": "cards/ex5-053-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Mud Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5726",
-    "externalId": null,
+    "externalId": "ex5-52",
     "tcgdex_id": "ex5-52",
     "localId": "052",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "052/101",
+    "cardNumber": "52/101",
     "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 052/101 Hidden Legends",
+    "fullDisplayName": "Baltoy 52/101 Hidden Legends",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1653,18 +2043,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-052-low.png",
-    "imageHighSrc": "cards/ex5-052-high.png"
+    "imageHighSrc": "cards/ex5-052-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5717",
-    "externalId": null,
+    "externalId": "ex5-51",
     "tcgdex_id": "ex5-51",
     "localId": "051",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "051/101",
+    "cardNumber": "51/101",
     "cardName": "Tentacruel",
-    "fullDisplayName": "Tentacruel 051/101 Hidden Legends",
+    "fullDisplayName": "Tentacruel 51/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1686,18 +2082,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-051-low.png",
-    "imageHighSrc": "cards/ex5-051-high.png"
+    "imageHighSrc": "cards/ex5-051-high.png",
+    "attacks": [
+      {
+        "name": "Long Tentacle",
+        "damage": null
+      },
+      {
+        "name": "Toxic",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5709",
-    "externalId": null,
+    "externalId": "ex5-50",
     "tcgdex_id": "ex5-50",
     "localId": "050",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "050/101",
+    "cardNumber": "50/101",
     "cardName": "Swalot",
-    "fullDisplayName": "Swalot 050/101 Hidden Legends",
+    "fullDisplayName": "Swalot 50/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1719,18 +2125,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-050-low.png",
-    "imageHighSrc": "cards/ex5-050-high.png"
+    "imageHighSrc": "cards/ex5-050-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": "10"
+      },
+      {
+        "name": "Swallow Up",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5697",
-    "externalId": null,
+    "externalId": "ex5-49",
     "tcgdex_id": "ex5-49",
     "localId": "049",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "049/101",
+    "cardNumber": "49/101",
     "cardName": "Starmie",
-    "fullDisplayName": "Starmie 049/101 Hidden Legends",
+    "fullDisplayName": "Starmie 49/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1752,18 +2168,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-049-low.png",
-    "imageHighSrc": "cards/ex5-049-high.png"
+    "imageHighSrc": "cards/ex5-049-high.png",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null
+      },
+      {
+        "name": "Rainbow Star",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5688",
-    "externalId": null,
+    "externalId": "ex5-48",
     "tcgdex_id": "ex5-48",
     "localId": "048",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "048/101",
+    "cardNumber": "48/101",
     "cardName": "Spinda",
-    "fullDisplayName": "Spinda 048/101 Hidden Legends",
+    "fullDisplayName": "Spinda 48/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1785,18 +2211,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-048-low.png",
-    "imageHighSrc": "cards/ex5-048-high.png"
+    "imageHighSrc": "cards/ex5-048-high.png",
+    "attacks": [
+      {
+        "name": "The Hula-la",
+        "damage": null
+      },
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5679",
-    "externalId": null,
+    "externalId": "ex5-47",
     "tcgdex_id": "ex5-47",
     "localId": "047",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "047/101",
+    "cardNumber": "47/101",
     "cardName": "Sealeo",
-    "fullDisplayName": "Sealeo 047/101 Hidden Legends",
+    "fullDisplayName": "Sealeo 47/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1818,18 +2254,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-047-low.png",
-    "imageHighSrc": "cards/ex5-047-high.png"
+    "imageHighSrc": "cards/ex5-047-high.png",
+    "attacks": [
+      {
+        "name": "Super Icy Wind",
+        "damage": null
+      },
+      {
+        "name": "Skull Bash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5670",
-    "externalId": null,
+    "externalId": "ex5-46",
     "tcgdex_id": "ex5-46",
     "localId": "046",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "046/101",
+    "cardNumber": "46/101",
     "cardName": "Rhydon",
-    "fullDisplayName": "Rhydon 046/101 Hidden Legends",
+    "fullDisplayName": "Rhydon 46/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1851,18 +2297,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-046-low.png",
-    "imageHighSrc": "cards/ex5-046-high.png"
+    "imageHighSrc": "cards/ex5-046-high.png",
+    "attacks": [
+      {
+        "name": "Horn Drill",
+        "damage": "20"
+      },
+      {
+        "name": "Hyper Tail",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5661",
-    "externalId": null,
+    "externalId": "ex5-45",
     "tcgdex_id": "ex5-45",
     "localId": "045",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "045/101",
+    "cardNumber": "45/101",
     "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 045/101 Hidden Legends",
+    "fullDisplayName": "Nuzleaf 45/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1884,18 +2340,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-045-low.png",
-    "imageHighSrc": "cards/ex5-045-high.png"
+    "imageHighSrc": "cards/ex5-045-high.png",
+    "attacks": [
+      {
+        "name": "Upper Hand",
+        "damage": null
+      },
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5653",
-    "externalId": null,
+    "externalId": "ex5-44",
     "tcgdex_id": "ex5-44",
     "localId": "044",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "044/101",
+    "cardNumber": "44/101",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 044/101 Hidden Legends",
+    "fullDisplayName": "Metang 44/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1917,18 +2383,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-044-low.png",
-    "imageHighSrc": "cards/ex5-044-high.png"
+    "imageHighSrc": "cards/ex5-044-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5643",
-    "externalId": null,
+    "externalId": "ex5-43",
     "tcgdex_id": "ex5-43",
     "localId": "043",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "043/101",
+    "cardNumber": "43/101",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 043/101 Hidden Legends",
+    "fullDisplayName": "Metang 43/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1950,18 +2422,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-043-low.png",
-    "imageHighSrc": "cards/ex5-043-high.png"
+    "imageHighSrc": "cards/ex5-043-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "20"
+      },
+      {
+        "name": "Metal Ball",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5633",
-    "externalId": null,
+    "externalId": "ex5-42",
     "tcgdex_id": "ex5-42",
     "localId": "042",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "042/101",
+    "cardNumber": "42/101",
     "cardName": "Medicham",
-    "fullDisplayName": "Medicham 042/101 Hidden Legends",
+    "fullDisplayName": "Medicham 42/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1983,18 +2465,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-042-low.png",
-    "imageHighSrc": "cards/ex5-042-high.png"
+    "imageHighSrc": "cards/ex5-042-high.png",
+    "attacks": [
+      {
+        "name": "Steady Punch",
+        "damage": "20+"
+      },
+      {
+        "name": "Power Heal",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5624",
-    "externalId": null,
+    "externalId": "ex5-41",
     "tcgdex_id": "ex5-41",
     "localId": "041",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "041/101",
+    "cardNumber": "41/101",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 041/101 Hidden Legends",
+    "fullDisplayName": "Machoke 41/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2016,18 +2508,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-041-low.png",
-    "imageHighSrc": "cards/ex5-041-high.png"
+    "imageHighSrc": "cards/ex5-041-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5616",
-    "externalId": null,
+    "externalId": "ex5-40",
     "tcgdex_id": "ex5-40",
     "localId": "040",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "040/101",
+    "cardNumber": "40/101",
     "cardName": "Luvdisc",
-    "fullDisplayName": "Luvdisc 040/101 Hidden Legends",
+    "fullDisplayName": "Luvdisc 40/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2049,18 +2547,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-040-low.png",
-    "imageHighSrc": "cards/ex5-040-high.png"
+    "imageHighSrc": "cards/ex5-040-high.png",
+    "attacks": [
+      {
+        "name": "Loving Draw",
+        "damage": null
+      },
+      {
+        "name": "Sweet Temptation",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5605",
-    "externalId": null,
+    "externalId": "ex5-39",
     "tcgdex_id": "ex5-39",
     "localId": "039",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "039/101",
+    "cardNumber": "39/101",
     "cardName": "Loudred",
-    "fullDisplayName": "Loudred 039/101 Hidden Legends",
+    "fullDisplayName": "Loudred 39/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2082,18 +2590,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-039-low.png",
-    "imageHighSrc": "cards/ex5-039-high.png"
+    "imageHighSrc": "cards/ex5-039-high.png",
+    "attacks": [
+      {
+        "name": "Cracking Voice",
+        "damage": "20"
+      },
+      {
+        "name": "Light Punch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5596",
-    "externalId": null,
+    "externalId": "ex5-38",
     "tcgdex_id": "ex5-38",
     "localId": "038",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "038/101",
+    "cardNumber": "38/101",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 038/101 Hidden Legends",
+    "fullDisplayName": "Lanturn 38/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2115,18 +2633,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-038-low.png",
-    "imageHighSrc": "cards/ex5-038-high.png"
+    "imageHighSrc": "cards/ex5-038-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Strike",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5586",
-    "externalId": null,
+    "externalId": "ex5-37",
     "tcgdex_id": "ex5-37",
     "localId": "037",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "037/101",
+    "cardNumber": "37/101",
     "cardName": "Igglybuff",
-    "fullDisplayName": "Igglybuff 037/101 Hidden Legends",
+    "fullDisplayName": "Igglybuff 37/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2148,18 +2672,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-037-low.png",
-    "imageHighSrc": "cards/ex5-037-high.png"
+    "imageHighSrc": "cards/ex5-037-high.png",
+    "attacks": [
+      {
+        "name": "Set Song",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5572",
-    "externalId": null,
+    "externalId": "ex5-36",
     "tcgdex_id": "ex5-36",
     "localId": "036",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "036/101",
+    "cardNumber": "36/101",
     "cardName": "Golbat",
-    "fullDisplayName": "Golbat 036/101 Hidden Legends",
+    "fullDisplayName": "Golbat 36/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2181,18 +2711,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-036-low.png",
-    "imageHighSrc": "cards/ex5-036-high.png"
+    "imageHighSrc": "cards/ex5-036-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5563",
-    "externalId": null,
+    "externalId": "ex5-35",
     "tcgdex_id": "ex5-35",
     "localId": "035",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "035/101",
+    "cardNumber": "35/101",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 035/101 Hidden Legends",
+    "fullDisplayName": "Gloom 35/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2214,18 +2754,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-035-low.png",
-    "imageHighSrc": "cards/ex5-035-high.png"
+    "imageHighSrc": "cards/ex5-035-high.png",
+    "attacks": [
+      {
+        "name": "Cling",
+        "damage": "20"
+      },
+      {
+        "name": "Double Razor Leaf",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "5554",
-    "externalId": null,
+    "externalId": "ex5-34",
     "tcgdex_id": "ex5-34",
     "localId": "034",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "034/101",
+    "cardNumber": "34/101",
     "cardName": "Glalie",
-    "fullDisplayName": "Glalie 034/101 Hidden Legends",
+    "fullDisplayName": "Glalie 34/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2247,18 +2797,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-034-low.png",
-    "imageHighSrc": "cards/ex5-034-high.png"
+    "imageHighSrc": "cards/ex5-034-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Blizzard",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5545",
-    "externalId": null,
+    "externalId": "ex5-33",
     "tcgdex_id": "ex5-33",
     "localId": "033",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "033/101",
+    "cardNumber": "33/101",
     "cardName": "Dodrio",
-    "fullDisplayName": "Dodrio 033/101 Hidden Legends",
+    "fullDisplayName": "Dodrio 33/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2280,18 +2836,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-033-low.png",
-    "imageHighSrc": "cards/ex5-033-high.png"
+    "imageHighSrc": "cards/ex5-033-high.png",
+    "attacks": [
+      {
+        "name": "Retaliate",
+        "damage": "10×"
+      },
+      {
+        "name": "Slashing Strike",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5536",
-    "externalId": null,
+    "externalId": "ex5-32",
     "tcgdex_id": "ex5-32",
     "localId": "032",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "032/101",
+    "cardNumber": "32/101",
     "cardName": "Corsola",
-    "fullDisplayName": "Corsola 032/101 Hidden Legends",
+    "fullDisplayName": "Corsola 32/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2313,18 +2879,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-032-low.png",
-    "imageHighSrc": "cards/ex5-032-high.png"
+    "imageHighSrc": "cards/ex5-032-high.png",
+    "attacks": [
+      {
+        "name": "Coral Glow",
+        "damage": null
+      },
+      {
+        "name": "Surf",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5527",
-    "externalId": null,
+    "externalId": "ex5-31",
     "tcgdex_id": "ex5-31",
     "localId": "031",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "031/101",
+    "cardNumber": "31/101",
     "cardName": "Claydol",
-    "fullDisplayName": "Claydol 031/101 Hidden Legends",
+    "fullDisplayName": "Claydol 31/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2346,18 +2922,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-031-low.png",
-    "imageHighSrc": "cards/ex5-031-high.png"
+    "imageHighSrc": "cards/ex5-031-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "20"
+      },
+      {
+        "name": "Ram",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5516",
-    "externalId": null,
+    "externalId": "ex5-30",
     "tcgdex_id": "ex5-30",
     "localId": "030",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "030/101",
+    "cardNumber": "30/101",
     "cardName": "Castform",
-    "fullDisplayName": "Castform 030/101 Hidden Legends",
+    "fullDisplayName": "Castform 30/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2379,18 +2965,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-030-low.png",
-    "imageHighSrc": "cards/ex5-030-high.png"
+    "imageHighSrc": "cards/ex5-030-high.png",
+    "attacks": [
+      {
+        "name": "Forecast",
+        "damage": null
+      },
+      {
+        "name": "Extra Ball",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5507",
-    "externalId": null,
+    "externalId": "ex5-29",
     "tcgdex_id": "ex5-29",
     "localId": "029",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "029/101",
+    "cardNumber": "29/101",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 029/101 Hidden Legends",
+    "fullDisplayName": "Beldum 29/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2412,18 +3008,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-029-low.png",
-    "imageHighSrc": "cards/ex5-029-high.png"
+    "imageHighSrc": "cards/ex5-029-high.png",
+    "attacks": [
+      {
+        "name": "Metal Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5498",
-    "externalId": null,
+    "externalId": "ex5-28",
     "tcgdex_id": "ex5-28",
     "localId": "028",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "028/101",
+    "cardNumber": "28/101",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 028/101 Hidden Legends",
+    "fullDisplayName": "Beldum 28/101 Hidden Legends",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2445,18 +3047,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-028-low.png",
-    "imageHighSrc": "cards/ex5-028-high.png"
+    "imageHighSrc": "cards/ex5-028-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5487",
-    "externalId": null,
+    "externalId": "ex5-27",
     "tcgdex_id": "ex5-27",
     "localId": "027",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "027/101",
+    "cardNumber": "27/101",
     "cardName": "Tropius",
-    "fullDisplayName": "Tropius 027/101 Hidden Legends",
+    "fullDisplayName": "Tropius 27/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2478,18 +3086,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-027-low.png",
-    "imageHighSrc": "cards/ex5-027-high.png"
+    "imageHighSrc": "cards/ex5-027-high.png",
+    "attacks": [
+      {
+        "name": "Fruition",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5479",
-    "externalId": null,
+    "externalId": "ex5-26",
     "tcgdex_id": "ex5-26",
     "localId": "026",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "026/101",
+    "cardNumber": "26/101",
     "cardName": "Sunny Castform",
-    "fullDisplayName": "Sunny Castform 026/101 Hidden Legends",
+    "fullDisplayName": "Sunny Castform 26/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2511,18 +3129,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-026-low.png",
-    "imageHighSrc": "cards/ex5-026-high.png"
+    "imageHighSrc": "cards/ex5-026-high.png",
+    "attacks": [
+      {
+        "name": "Sunshine",
+        "damage": null
+      },
+      {
+        "name": "Sunburn",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5469",
-    "externalId": null,
+    "externalId": "ex5-25",
     "tcgdex_id": "ex5-25",
     "localId": "025",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "025/101",
+    "cardNumber": "25/101",
     "cardName": "Snow-cloud Castform",
-    "fullDisplayName": "Snow-cloud Castform 025/101 Hidden Legends",
+    "fullDisplayName": "Snow-cloud Castform 25/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2544,18 +3172,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-025-low.png",
-    "imageHighSrc": "cards/ex5-025-high.png"
+    "imageHighSrc": "cards/ex5-025-high.png",
+    "attacks": [
+      {
+        "name": "Flurries",
+        "damage": null
+      },
+      {
+        "name": "White Snow",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5462",
-    "externalId": null,
+    "externalId": "ex5-24",
     "tcgdex_id": "ex5-24",
     "localId": "024",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "024/101",
+    "cardNumber": "24/101",
     "cardName": "Relicanth",
-    "fullDisplayName": "Relicanth 024/101 Hidden Legends",
+    "fullDisplayName": "Relicanth 24/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2577,18 +3215,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-024-low.png",
-    "imageHighSrc": "cards/ex5-024-high.png"
+    "imageHighSrc": "cards/ex5-024-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5453",
-    "externalId": null,
+    "externalId": "ex5-23",
     "tcgdex_id": "ex5-23",
     "localId": "023",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "023/101",
+    "cardNumber": "23/101",
     "cardName": "Rain Castform",
-    "fullDisplayName": "Rain Castform 023/101 Hidden Legends",
+    "fullDisplayName": "Rain Castform 23/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2610,18 +3254,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-023-low.png",
-    "imageHighSrc": "cards/ex5-023-high.png"
+    "imageHighSrc": "cards/ex5-023-high.png",
+    "attacks": [
+      {
+        "name": "Scattered Shower",
+        "damage": null
+      },
+      {
+        "name": "Rainy Day Blues",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5444",
-    "externalId": null,
+    "externalId": "ex5-22",
     "tcgdex_id": "ex5-22",
     "localId": "022",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "022/101",
+    "cardNumber": "22/101",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 022/101 Hidden Legends",
+    "fullDisplayName": "Ninetales 22/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2643,18 +3297,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-022-low.png",
-    "imageHighSrc": "cards/ex5-022-high.png"
+    "imageHighSrc": "cards/ex5-022-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      },
+      {
+        "name": "Will-o'-the-wisp",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5434",
-    "externalId": null,
+    "externalId": "ex5-21",
     "tcgdex_id": "ex5-21",
     "localId": "021",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "021/101",
+    "cardNumber": "21/101",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 021/101 Hidden Legends",
+    "fullDisplayName": "Metang 21/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2676,18 +3340,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-021-low.png",
-    "imageHighSrc": "cards/ex5-021-high.png"
+    "imageHighSrc": "cards/ex5-021-high.png",
+    "attacks": [
+      {
+        "name": "Metal Load",
+        "damage": null
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5425",
-    "externalId": null,
+    "externalId": "ex5-20",
     "tcgdex_id": "ex5-20",
     "localId": "020",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "020/101",
+    "cardNumber": "20/101",
     "cardName": "Masquerain",
-    "fullDisplayName": "Masquerain 020/101 Hidden Legends",
+    "fullDisplayName": "Masquerain 20/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2709,18 +3383,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-020-low.png",
-    "imageHighSrc": "cards/ex5-020-high.png"
+    "imageHighSrc": "cards/ex5-020-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "20"
+      },
+      {
+        "name": "Silver Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5414",
-    "externalId": null,
+    "externalId": "ex5-19",
     "tcgdex_id": "ex5-19",
     "localId": "019",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "019/101",
+    "cardNumber": "19/101",
     "cardName": "Huntail",
-    "fullDisplayName": "Huntail 019/101 Hidden Legends",
+    "fullDisplayName": "Huntail 19/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2742,18 +3426,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-019-low.png",
-    "imageHighSrc": "cards/ex5-019-high.png"
+    "imageHighSrc": "cards/ex5-019-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Dark Splash",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5404",
-    "externalId": null,
+    "externalId": "ex5-18",
     "tcgdex_id": "ex5-18",
     "localId": "018",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "018/101",
+    "cardNumber": "18/101",
     "cardName": "Gorebyss",
-    "fullDisplayName": "Gorebyss 018/101 Hidden Legends",
+    "fullDisplayName": "Gorebyss 18/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2775,18 +3469,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-018-low.png",
-    "imageHighSrc": "cards/ex5-018-high.png"
+    "imageHighSrc": "cards/ex5-018-high.png",
+    "attacks": [
+      {
+        "name": "Stun Needle",
+        "damage": "10"
+      },
+      {
+        "name": "Mystic Water",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5397",
-    "externalId": null,
+    "externalId": "ex5-17",
     "tcgdex_id": "ex5-17",
     "localId": "017",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "017/101",
+    "cardNumber": "17/101",
     "cardName": "Chimecho",
-    "fullDisplayName": "Chimecho 017/101 Hidden Legends",
+    "fullDisplayName": "Chimecho 17/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2808,18 +3512,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-017-low.png",
-    "imageHighSrc": "cards/ex5-017-high.png"
+    "imageHighSrc": "cards/ex5-017-high.png",
+    "attacks": [
+      {
+        "name": "Chime",
+        "damage": null
+      },
+      {
+        "name": "Psychic Boom",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5386",
-    "externalId": null,
+    "externalId": "ex5-16",
     "tcgdex_id": "ex5-16",
     "localId": "016",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "016/101",
+    "cardNumber": "16/101",
     "cardName": "Bellossom",
-    "fullDisplayName": "Bellossom 016/101 Hidden Legends",
+    "fullDisplayName": "Bellossom 16/101 Hidden Legends",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2841,18 +3555,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-016-low.png",
-    "imageHighSrc": "cards/ex5-016-high.png"
+    "imageHighSrc": "cards/ex5-016-high.png",
+    "attacks": [
+      {
+        "name": "Miracle Powder",
+        "damage": "10"
+      },
+      {
+        "name": "Solarbeam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5377",
-    "externalId": null,
+    "externalId": "ex5-15",
     "tcgdex_id": "ex5-15",
     "localId": "015",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "015/101",
+    "cardNumber": "15/101",
     "cardName": "Walrein",
-    "fullDisplayName": "Walrein 015/101 Hidden Legends",
+    "fullDisplayName": "Walrein 15/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2874,18 +3598,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-015-low.png",
-    "imageHighSrc": "cards/ex5-015-high.png"
+    "imageHighSrc": "cards/ex5-015-high.png",
+    "attacks": [
+      {
+        "name": "Sheer Cold",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5367",
-    "externalId": null,
+    "externalId": "ex5-14",
     "tcgdex_id": "ex5-14",
     "localId": "014",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "014/101",
+    "cardNumber": "14/101",
     "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 014/101 Hidden Legends",
+    "fullDisplayName": "Shiftry 14/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2907,18 +3637,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-014-low.png",
-    "imageHighSrc": "cards/ex5-014-high.png"
+    "imageHighSrc": "cards/ex5-014-high.png",
+    "attacks": [
+      {
+        "name": "Push Aside",
+        "damage": "30"
+      },
+      {
+        "name": "Supernatural Power",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5359",
-    "externalId": null,
+    "externalId": "ex5-13",
     "tcgdex_id": "ex5-13",
     "localId": "013",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "013/101",
+    "cardNumber": "13/101",
     "cardName": "Pinsir",
-    "fullDisplayName": "Pinsir 013/101 Hidden Legends",
+    "fullDisplayName": "Pinsir 13/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2940,18 +3680,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-013-low.png",
-    "imageHighSrc": "cards/ex5-013-high.png"
+    "imageHighSrc": "cards/ex5-013-high.png",
+    "attacks": [
+      {
+        "name": "Sonicboom",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5352",
-    "externalId": null,
+    "externalId": "ex5-12",
     "tcgdex_id": "ex5-12",
     "localId": "012",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "012/101",
+    "cardNumber": "12/101",
     "cardName": "Milotic",
-    "fullDisplayName": "Milotic 012/101 Hidden Legends",
+    "fullDisplayName": "Milotic 12/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2973,18 +3719,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-012-low.png",
-    "imageHighSrc": "cards/ex5-012-high.png"
+    "imageHighSrc": "cards/ex5-012-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "30"
+      },
+      {
+        "name": "Distorted Wave",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "5344",
-    "externalId": null,
+    "externalId": "ex5-11",
     "tcgdex_id": "ex5-11",
     "localId": "011",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "011/101",
+    "cardNumber": "11/101",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross 011/101 Hidden Legends",
+    "fullDisplayName": "Metagross 11/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3007,18 +3763,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-011-low.png",
-    "imageHighSrc": "cards/ex5-011-high.png"
+    "imageHighSrc": "cards/ex5-011-high.png",
+    "attacks": [
+      {
+        "name": "Squared Attack",
+        "damage": "30×"
+      }
+    ],
+    "rules": "This Pokémon is both Psychic Metal type."
   },
   {
     "masterCardId": "5335",
-    "externalId": null,
+    "externalId": "ex5-10",
     "tcgdex_id": "ex5-10",
     "localId": "010",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "010/101",
+    "cardNumber": "10/101",
     "cardName": "Medicham",
-    "fullDisplayName": "Medicham 010/101 Hidden Legends",
+    "fullDisplayName": "Medicham 10/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3040,18 +3803,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-010-low.png",
-    "imageHighSrc": "cards/ex5-010-high.png"
+    "imageHighSrc": "cards/ex5-010-high.png",
+    "attacks": [
+      {
+        "name": "Meditate",
+        "damage": "20+"
+      },
+      {
+        "name": "Chakra Points",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5324",
-    "externalId": null,
+    "externalId": "ex5-9",
     "tcgdex_id": "ex5-9",
     "localId": "009",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "009/101",
+    "cardNumber": "9/101",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 009/101 Hidden Legends",
+    "fullDisplayName": "Machamp 9/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3073,18 +3846,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-009-low.png",
-    "imageHighSrc": "cards/ex5-009-high.png"
+    "imageHighSrc": "cards/ex5-009-high.png",
+    "attacks": [
+      {
+        "name": "Brick Smash",
+        "damage": "40"
+      },
+      {
+        "name": "Cross Chop",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "5316",
-    "externalId": null,
+    "externalId": "ex5-8",
     "tcgdex_id": "ex5-8",
     "localId": "008",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "008/101",
+    "cardNumber": "8/101",
     "cardName": "Jirachi",
-    "fullDisplayName": "Jirachi 008/101 Hidden Legends",
+    "fullDisplayName": "Jirachi 8/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3107,18 +3890,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-008-low.png",
-    "imageHighSrc": "cards/ex5-008-high.png"
+    "imageHighSrc": "cards/ex5-008-high.png",
+    "attacks": [
+      {
+        "name": "Make a Wish",
+        "damage": null
+      },
+      {
+        "name": "Mind Bend",
+        "damage": "30"
+      }
+    ],
+    "rules": "This Pokémon is both Psychic Metal type."
   },
   {
     "masterCardId": "5305",
-    "externalId": null,
+    "externalId": "ex5-7",
     "tcgdex_id": "ex5-7",
     "localId": "007",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "007/101",
+    "cardNumber": "7/101",
     "cardName": "Heracross",
-    "fullDisplayName": "Heracross 007/101 Hidden Legends",
+    "fullDisplayName": "Heracross 7/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3140,18 +3934,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-007-low.png",
-    "imageHighSrc": "cards/ex5-007-high.png"
+    "imageHighSrc": "cards/ex5-007-high.png",
+    "attacks": [
+      {
+        "name": "Extra Draw",
+        "damage": null
+      },
+      {
+        "name": "Sonicboom",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5298",
-    "externalId": null,
+    "externalId": "ex5-6",
     "tcgdex_id": "ex5-6",
     "localId": "006",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "006/101",
+    "cardNumber": "6/101",
     "cardName": "Exploud",
-    "fullDisplayName": "Exploud 006/101 Hidden Legends",
+    "fullDisplayName": "Exploud 6/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3173,18 +3977,36 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-006-low.png",
-    "imageHighSrc": "cards/ex5-006-high.png"
+    "imageHighSrc": "cards/ex5-006-high.png",
+    "attacks": [
+      {
+        "name": "Breaking Sound",
+        "damage": null
+      },
+      {
+        "name": "Bass Control",
+        "damage": null
+      },
+      {
+        "name": "Thunderous Roar",
+        "damage": "30"
+      },
+      {
+        "name": "Hyper Voice",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5289",
-    "externalId": null,
+    "externalId": "ex5-5",
     "tcgdex_id": "ex5-5",
     "localId": "005",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "005/101",
+    "cardNumber": "5/101",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 005/101 Hidden Legends",
+    "fullDisplayName": "Electrode 5/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3206,18 +4028,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-005-low.png",
-    "imageHighSrc": "cards/ex5-005-high.png"
+    "imageHighSrc": "cards/ex5-005-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "30"
+      },
+      {
+        "name": "Mass Destruction",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5281",
-    "externalId": null,
+    "externalId": "ex5-4",
     "tcgdex_id": "ex5-4",
     "localId": "004",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "004/101",
+    "cardNumber": "4/101",
     "cardName": "Dark Celebi",
-    "fullDisplayName": "Dark Celebi 004/101 Hidden Legends",
+    "fullDisplayName": "Dark Celebi 4/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3240,18 +4072,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-004-low.png",
-    "imageHighSrc": "cards/ex5-004-high.png"
+    "imageHighSrc": "cards/ex5-004-high.png",
+    "attacks": [
+      {
+        "name": "Dark Provide",
+        "damage": null
+      },
+      {
+        "name": "Leaf Poison",
+        "damage": "20"
+      }
+    ],
+    "rules": "This Pokémon is both GrassDarkness type."
   },
   {
     "masterCardId": "5275",
-    "externalId": null,
+    "externalId": "ex5-3",
     "tcgdex_id": "ex5-3",
     "localId": "003",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "003/101",
+    "cardNumber": "3/101",
     "cardName": "Crobat",
-    "fullDisplayName": "Crobat 003/101 Hidden Legends",
+    "fullDisplayName": "Crobat 3/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3273,18 +4116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-003-low.png",
-    "imageHighSrc": "cards/ex5-003-high.png"
+    "imageHighSrc": "cards/ex5-003-high.png",
+    "attacks": [
+      {
+        "name": "Flutter Trick",
+        "damage": "20"
+      },
+      {
+        "name": "Triple Poison",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5267",
-    "externalId": null,
+    "externalId": "ex5-2",
     "tcgdex_id": "ex5-2",
     "localId": "002",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "002/101",
+    "cardNumber": "2/101",
     "cardName": "Claydol",
-    "fullDisplayName": "Claydol 002/101 Hidden Legends",
+    "fullDisplayName": "Claydol 2/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3306,18 +4159,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-002-low.png",
-    "imageHighSrc": "cards/ex5-002-high.png"
+    "imageHighSrc": "cards/ex5-002-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Eye",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5252",
-    "externalId": null,
+    "externalId": "ex5-1",
     "tcgdex_id": "ex5-1",
     "localId": "001",
     "setCode": "ex5",
     "setTcgdexId": "ex5",
-    "cardNumber": "001/101",
+    "cardNumber": "1/101",
     "cardName": "Banette",
-    "fullDisplayName": "Banette 001/101 Hidden Legends",
+    "fullDisplayName": "Banette 1/101 Hidden Legends",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3339,6 +4198,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex5-001-low.png",
-    "imageHighSrc": "cards/ex5-001-high.png"
+    "imageHighSrc": "cards/ex5-001-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Steal",
+        "damage": "10+"
+      },
+      {
+        "name": "Darkness Chant",
+        "damage": null
+      }
+    ]
   }
 ]

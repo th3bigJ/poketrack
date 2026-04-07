@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "8138",
-    "externalId": null,
+    "externalId": "neo1-111",
     "tcgdex_id": "neo1-111",
     "localId": "111",
     "setCode": "neo1",
@@ -30,7 +30,7 @@
   },
   {
     "masterCardId": "8134",
-    "externalId": null,
+    "externalId": "neo1-110",
     "tcgdex_id": "neo1-110",
     "localId": "110",
     "setCode": "neo1",
@@ -59,7 +59,7 @@
   },
   {
     "masterCardId": "8131",
-    "externalId": null,
+    "externalId": "neo1-109",
     "tcgdex_id": "neo1-109",
     "localId": "109",
     "setCode": "neo1",
@@ -88,7 +88,7 @@
   },
   {
     "masterCardId": "8128",
-    "externalId": null,
+    "externalId": "neo1-108",
     "tcgdex_id": "neo1-108",
     "localId": "108",
     "setCode": "neo1",
@@ -117,7 +117,7 @@
   },
   {
     "masterCardId": "8125",
-    "externalId": null,
+    "externalId": "neo1-107",
     "tcgdex_id": "neo1-107",
     "localId": "107",
     "setCode": "neo1",
@@ -146,7 +146,7 @@
   },
   {
     "masterCardId": "8123",
-    "externalId": null,
+    "externalId": "neo1-106",
     "tcgdex_id": "neo1-106",
     "localId": "106",
     "setCode": "neo1",
@@ -175,7 +175,7 @@
   },
   {
     "masterCardId": "8119",
-    "externalId": null,
+    "externalId": "neo1-105",
     "tcgdex_id": "neo1-105",
     "localId": "105",
     "setCode": "neo1",
@@ -200,11 +200,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-105-low.png",
-    "imageHighSrc": "cards/neo1-105-high.png"
+    "imageHighSrc": "cards/neo1-105-high.png",
+    "rules": "Recycle Energy provides Colorless Energy. (Doesn't count as a basic Energy card.)\n\nIf this card is put into your discard pile from play, return it to your hand."
   },
   {
     "masterCardId": "8117",
-    "externalId": null,
+    "externalId": "neo1-104",
     "tcgdex_id": "neo1-104",
     "localId": "104",
     "setCode": "neo1",
@@ -229,11 +230,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-104-low.png",
-    "imageHighSrc": "cards/neo1-104-high.png"
+    "imageHighSrc": "cards/neo1-104-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to damages the Defending Pokémon (after applying Weakness and Resistance), the attack does 10 more damage to the Defending Pokémon. At the end of every turn, put 1 damage counter on the Pokémon Darkness Energy is attached to, unless it's Darkness or has Dark in its name.\nDarkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "8114",
-    "externalId": null,
+    "externalId": "neo1-103",
     "tcgdex_id": "neo1-103",
     "localId": "103",
     "setCode": "neo1",
@@ -256,11 +258,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-103-low.png",
-    "imageHighSrc": "cards/neo1-103-high.png"
+    "imageHighSrc": "cards/neo1-103-high.png",
+    "rules": "Flip a coin. If heads, put an Evolution card from your discard pile, if any, into your hand. If tails, put a Basic Pokémon card from your discard pile, if any, into your hand."
   },
   {
     "masterCardId": "8110",
-    "externalId": null,
+    "externalId": "neo1-102",
     "tcgdex_id": "neo1-102",
     "localId": "102",
     "setCode": "neo1",
@@ -283,11 +286,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-102-low.png",
-    "imageHighSrc": "cards/neo1-102-high.png"
+    "imageHighSrc": "cards/neo1-102-high.png",
+    "rules": "Your opponent may search his or her deck for 1 Basic Pokémon card and put it onto his or her Bench. Then, you may search your deck for 1 Basic Pokémon card and put it onto your Bench. Then, each player shuffles his or her deck. (A player can't do any of this if his or her Bench is full.)"
   },
   {
     "masterCardId": "8107",
-    "externalId": null,
+    "externalId": "neo1-101",
     "tcgdex_id": "neo1-101",
     "localId": "101",
     "setCode": "neo1",
@@ -310,11 +314,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-101-low.png",
-    "imageHighSrc": "cards/neo1-101-high.png"
+    "imageHighSrc": "cards/neo1-101-high.png",
+    "rules": "Choose 1 of your Pokémon. Flip 2 coins. Remove 2 damage counters times the number of heads from that Pokémon. If the Pokémon has fewer damage counters than that, remove all of them."
   },
   {
     "masterCardId": "8104",
-    "externalId": null,
+    "externalId": "neo1-100",
     "tcgdex_id": "neo1-100",
     "localId": "100",
     "setCode": "neo1",
@@ -337,18 +342,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-100-low.png",
-    "imageHighSrc": "cards/neo1-100-high.png"
+    "imageHighSrc": "cards/neo1-100-high.png",
+    "rules": "If you have any Benched Pokémon, your opponent chooses 1 of them and switches it with your Active Pokémon. Then, if your opponent has any Benched Pokémon, choose 1 of them and switch it with his or her Active Pokémon."
   },
   {
     "masterCardId": "8101",
-    "externalId": null,
+    "externalId": "neo1-99",
     "tcgdex_id": "neo1-99",
     "localId": "099",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "099/111",
+    "cardNumber": "99/111",
     "cardName": "Berry",
-    "fullDisplayName": "Berry 099/111 Neo Genesis",
+    "fullDisplayName": "Berry 99/111 Neo Genesis",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -366,18 +372,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-099-low.png",
-    "imageHighSrc": "cards/neo1-099-high.png"
+    "imageHighSrc": "cards/neo1-099-high.png",
+    "rules": "Attach Berry to 1 of your Pokémon that doesn't have a Pokémon Tool attached to it.\n\nAt any time between turns, if there are at least 2 damage counters on the Pokémon Berry is attached to, you may remove 2 of them and discard Berry. At the start of each turn, if there are at least 2 damage counters on the Pokémon Berry is attached to, remove 2 of them and discard Berry."
   },
   {
     "masterCardId": "8097",
-    "externalId": null,
+    "externalId": "neo1-98",
     "tcgdex_id": "neo1-98",
     "localId": "098",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "098/111",
+    "cardNumber": "98/111",
     "cardName": "Super Scoop Up",
-    "fullDisplayName": "Super Scoop Up 098/111 Neo Genesis",
+    "fullDisplayName": "Super Scoop Up 98/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -393,18 +400,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-098-low.png",
-    "imageHighSrc": "cards/neo1-098-high.png"
+    "imageHighSrc": "cards/neo1-098-high.png",
+    "rules": "Flip a coin. If heads, return 1 of your Pokémon and all cards attached to it to your hand."
   },
   {
     "masterCardId": "8093",
-    "externalId": null,
+    "externalId": "neo1-97",
     "tcgdex_id": "neo1-97",
     "localId": "097",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "097/111",
+    "cardNumber": "97/111",
     "cardName": "Sprout Tower",
-    "fullDisplayName": "Sprout Tower 097/111 Neo Genesis",
+    "fullDisplayName": "Sprout Tower 97/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -422,18 +430,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-097-low.png",
-    "imageHighSrc": "cards/neo1-097-high.png"
+    "imageHighSrc": "cards/neo1-097-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nAll damage done by Colorless Pokémon's attacks is reduced by 30 (after applying Weakness and Resistance)."
   },
   {
     "masterCardId": "8089",
-    "externalId": null,
+    "externalId": "neo1-96",
     "tcgdex_id": "neo1-96",
     "localId": "096",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "096/111",
+    "cardNumber": "96/111",
     "cardName": "Professor Elm",
-    "fullDisplayName": "Professor Elm 096/111 Neo Genesis",
+    "fullDisplayName": "Professor Elm 96/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -449,18 +458,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-096-low.png",
-    "imageHighSrc": "cards/neo1-096-high.png"
+    "imageHighSrc": "cards/neo1-096-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw 7 cards. You can't play any more Trainer cards this turn."
   },
   {
     "masterCardId": "8085",
-    "externalId": null,
+    "externalId": "neo1-95",
     "tcgdex_id": "neo1-95",
     "localId": "095",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "095/111",
+    "cardNumber": "95/111",
     "cardName": "New Pokédex",
-    "fullDisplayName": "New Pokédex 095/111 Neo Genesis",
+    "fullDisplayName": "New Pokédex 95/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -476,18 +486,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-095-low.png",
-    "imageHighSrc": "cards/neo1-095-high.png"
+    "imageHighSrc": "cards/neo1-095-high.png",
+    "rules": "Shuffle your deck. Then, look at up to 5 cards from the top of your deck and rearrange them as you like."
   },
   {
     "masterCardId": "8081",
-    "externalId": null,
+    "externalId": "neo1-94",
     "tcgdex_id": "neo1-94",
     "localId": "094",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "094/111",
+    "cardNumber": "94/111",
     "cardName": "Miracle Berry",
-    "fullDisplayName": "Miracle Berry 094/111 Neo Genesis",
+    "fullDisplayName": "Miracle Berry 94/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -505,18 +516,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-094-low.png",
-    "imageHighSrc": "cards/neo1-094-high.png"
+    "imageHighSrc": "cards/neo1-094-high.png",
+    "rules": "Attach Miracle Berry to 1 of your Pokémon that doesn't have a Pokémon Tool attached to it.\n\nAt any time between turns, if the Pokémon Miracle Berry is attached to is Asleep, Confused, Paralyzed, or Poisoned, you may remove all those effects from that Pokémon and discard Miracle Berry. At the start of each turn, if the Pokémon Miracle Berry is attached to is Asleep, Confused, Paralyzed, or Poisoned, remove all of those effects from that Pokémon and discard Miracle Berry."
   },
   {
     "masterCardId": "8077",
-    "externalId": null,
+    "externalId": "neo1-93",
     "tcgdex_id": "neo1-93",
     "localId": "093",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "093/111",
+    "cardNumber": "93/111",
     "cardName": "Gold Berry",
-    "fullDisplayName": "Gold Berry 093/111 Neo Genesis",
+    "fullDisplayName": "Gold Berry 93/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -534,18 +546,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-093-low.png",
-    "imageHighSrc": "cards/neo1-093-high.png"
+    "imageHighSrc": "cards/neo1-093-high.png",
+    "rules": "Attach Gold Berry to 1 of your Pokémon that doesn't have a Pokémon Tool attached to it.\n\nAt any time between turns, if there are at least 4 damage counters on the Pokémon Gold Berry is attached to, you may remove 4 of them and discard Gold Berry. At the start of each turn, if there are at least 4 damage counters on the Pokémon Gold Berry is attached to, remove 4 of them and discard Gold Berry."
   },
   {
     "masterCardId": "8073",
-    "externalId": null,
+    "externalId": "neo1-92",
     "tcgdex_id": "neo1-92",
     "localId": "092",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "092/111",
+    "cardNumber": "92/111",
     "cardName": "Card-Flip Game",
-    "fullDisplayName": "Card-Flip Game 092/111 Neo Genesis",
+    "fullDisplayName": "Card-Flip Game 92/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -563,18 +576,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-092-low.png",
-    "imageHighSrc": "cards/neo1-092-high.png"
+    "imageHighSrc": "cards/neo1-092-high.png",
+    "rules": "Choose 1 of your opponent's face-down Prizes. Guess whether it is an Energy card, a Trainer card, or a Pokémon (Basic or Evolution) card. Flip the card face up (and leave it face up). If you guessed right, draw 2 cards."
   },
   {
     "masterCardId": "8069",
-    "externalId": null,
+    "externalId": "neo1-91",
     "tcgdex_id": "neo1-91",
     "localId": "091",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "091/111",
+    "cardNumber": "91/111",
     "cardName": "Bill's Teleporter",
-    "fullDisplayName": "Bill's Teleporter 091/111 Neo Genesis",
+    "fullDisplayName": "Bill's Teleporter 91/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -590,18 +604,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-091-low.png",
-    "imageHighSrc": "cards/neo1-091-high.png"
+    "imageHighSrc": "cards/neo1-091-high.png",
+    "rules": "Flip a coin. If heads, draw 4 cards."
   },
   {
     "masterCardId": "8063",
-    "externalId": null,
+    "externalId": "neo1-90",
     "tcgdex_id": "neo1-90",
     "localId": "090",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "090/111",
+    "cardNumber": "90/111",
     "cardName": "Time Capsule",
-    "fullDisplayName": "Time Capsule 090/111 Neo Genesis",
+    "fullDisplayName": "Time Capsule 90/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -617,18 +632,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-090-low.png",
-    "imageHighSrc": "cards/neo1-090-high.png"
+    "imageHighSrc": "cards/neo1-090-high.png",
+    "rules": "Your opponent may choose 5 Basic Pokémon, Evolution, and/or basic Energy cards in his or her discard pile. (If your opponent doesn't have that many, he or she chooses all or none of them.) If your opponent chooses any cards, he or she shuffles them into his or her deck. Either way, you may do the same, and you can't play any more Trainer cards this turn."
   },
   {
     "masterCardId": "8059",
-    "externalId": null,
+    "externalId": "neo1-89",
     "tcgdex_id": "neo1-89",
     "localId": "089",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "089/111",
+    "cardNumber": "89/111",
     "cardName": "Super Energy Retrieval",
-    "fullDisplayName": "Super Energy Retrieval 089/111 Neo Genesis",
+    "fullDisplayName": "Super Energy Retrieval 89/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -644,18 +660,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-089-low.png",
-    "imageHighSrc": "cards/neo1-089-high.png"
+    "imageHighSrc": "cards/neo1-089-high.png",
+    "rules": "Trade 2 of the other cards in your hand for 4 basic Energy cards from your discard pile. If you have fewer than 4 basic Energy cards there, take all of them."
   },
   {
     "masterCardId": "8055",
-    "externalId": null,
+    "externalId": "neo1-88",
     "tcgdex_id": "neo1-88",
     "localId": "088",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "088/111",
+    "cardNumber": "88/111",
     "cardName": "PokéGear",
-    "fullDisplayName": "PokéGear 088/111 Neo Genesis",
+    "fullDisplayName": "PokéGear 88/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -671,18 +688,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-088-low.png",
-    "imageHighSrc": "cards/neo1-088-high.png"
+    "imageHighSrc": "cards/neo1-088-high.png",
+    "rules": "Look at the top 7 cards of your deck. If any of them are Trainer cards, you may show 1 of them to your opponent and put it into your hand. Shuffle your deck afterward. You can't play any more Trainer cards this turn."
   },
   {
     "masterCardId": "8052",
-    "externalId": null,
+    "externalId": "neo1-87",
     "tcgdex_id": "neo1-87",
     "localId": "087",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "087/111",
+    "cardNumber": "87/111",
     "cardName": "Mary",
-    "fullDisplayName": "Mary 087/111 Neo Genesis",
+    "fullDisplayName": "Mary 87/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -698,18 +716,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-087-low.png",
-    "imageHighSrc": "cards/neo1-087-high.png"
+    "imageHighSrc": "cards/neo1-087-high.png",
+    "rules": "Draw 2 cards. Then, shuffle 2 cards from your hand into your deck."
   },
   {
     "masterCardId": "8048",
-    "externalId": null,
+    "externalId": "neo1-86",
     "tcgdex_id": "neo1-86",
     "localId": "086",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "086/111",
+    "cardNumber": "86/111",
     "cardName": "Focus Band",
-    "fullDisplayName": "Focus Band 086/111 Neo Genesis",
+    "fullDisplayName": "Focus Band 86/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -727,18 +746,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-086-low.png",
-    "imageHighSrc": "cards/neo1-086-high.png"
+    "imageHighSrc": "cards/neo1-086-high.png",
+    "rules": "Attach Focus Band to 1 of your Pokémon that doesn't have a Pokémon Tool attached to it.\n\nIf the Pokémon Focus Band is attached to would be Knocked Out by your opponent's attack, flip a coin. If heads, that Pokémon is not Knocked Out and its remaining HP become 10 instead. Then, discard Focus Band."
   },
   {
     "masterCardId": "8044",
-    "externalId": null,
+    "externalId": "neo1-85",
     "tcgdex_id": "neo1-85",
     "localId": "085",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "085/111",
+    "cardNumber": "85/111",
     "cardName": "Energy Charge",
-    "fullDisplayName": "Energy Charge 085/111 Neo Genesis",
+    "fullDisplayName": "Energy Charge 85/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -754,18 +774,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-085-low.png",
-    "imageHighSrc": "cards/neo1-085-high.png"
+    "imageHighSrc": "cards/neo1-085-high.png",
+    "rules": "Flip a coin. If heads, shuffle up to 2 Energy cards from your discard pile into your deck."
   },
   {
     "masterCardId": "8040",
-    "externalId": null,
+    "externalId": "neo1-84",
     "tcgdex_id": "neo1-84",
     "localId": "084",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "084/111",
+    "cardNumber": "84/111",
     "cardName": "Ecogym",
-    "fullDisplayName": "Ecogym 084/111 Neo Genesis",
+    "fullDisplayName": "Ecogym 84/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -783,18 +804,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-084-low.png",
-    "imageHighSrc": "cards/neo1-084-high.png"
+    "imageHighSrc": "cards/neo1-084-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nWhenever an attack, Pokémon Power, or Trainer card discards another player's non-Colorless Energy card from a Pokémon, return that Energy card to its owner's hand. (Energy cards that are discarded when that Pokémon is Knocked Out don't count.)"
   },
   {
     "masterCardId": "8036",
-    "externalId": null,
+    "externalId": "neo1-83",
     "tcgdex_id": "neo1-83",
     "localId": "083",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "083/111",
+    "cardNumber": "83/111",
     "cardName": "Arcade Game",
-    "fullDisplayName": "Arcade Game 083/111 Neo Genesis",
+    "fullDisplayName": "Arcade Game 83/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -812,18 +834,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-083-low.png",
-    "imageHighSrc": "cards/neo1-083-high.png"
+    "imageHighSrc": "cards/neo1-083-high.png",
+    "rules": "Shuffle your deck, then reveal the top 3 cards of it. If at least 2 of those cards share the same name, put all the ones with that name into your hand and shuffle the rest into your deck. If none of them do, shuffle all 3 into your deck."
   },
   {
     "masterCardId": "8032",
-    "externalId": null,
+    "externalId": "neo1-82",
     "tcgdex_id": "neo1-82",
     "localId": "082",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "082/111",
+    "cardNumber": "82/111",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper 082/111 Neo Genesis",
+    "fullDisplayName": "Wooper 82/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -845,18 +868,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-082-low.png",
-    "imageHighSrc": "cards/neo1-082-high.png"
+    "imageHighSrc": "cards/neo1-082-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": null
+      },
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "8028",
-    "externalId": null,
+    "externalId": "neo1-81",
     "tcgdex_id": "neo1-81",
     "localId": "081",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "081/111",
+    "cardNumber": "81/111",
     "cardName": "Totodile",
-    "fullDisplayName": "Totodile 081/111 Neo Genesis",
+    "fullDisplayName": "Totodile 81/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -878,18 +911,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-081-low.png",
-    "imageHighSrc": "cards/neo1-081-high.png"
+    "imageHighSrc": "cards/neo1-081-high.png",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "8024",
-    "externalId": null,
+    "externalId": "neo1-80",
     "tcgdex_id": "neo1-80",
     "localId": "080",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "080/111",
+    "cardNumber": "80/111",
     "cardName": "Totodile",
-    "fullDisplayName": "Totodile 080/111 Neo Genesis",
+    "fullDisplayName": "Totodile 80/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -911,18 +954,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-080-low.png",
-    "imageHighSrc": "cards/neo1-080-high.png"
+    "imageHighSrc": "cards/neo1-080-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8020",
-    "externalId": null,
+    "externalId": "neo1-79",
     "tcgdex_id": "neo1-79",
     "localId": "079",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "079/111",
+    "cardNumber": "79/111",
     "cardName": "Swinub",
-    "fullDisplayName": "Swinub 079/111 Neo Genesis",
+    "fullDisplayName": "Swinub 79/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -944,18 +997,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-079-low.png",
-    "imageHighSrc": "cards/neo1-079-high.png"
+    "imageHighSrc": "cards/neo1-079-high.png",
+    "attacks": [
+      {
+        "name": "Powder Snow",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8016",
-    "externalId": null,
+    "externalId": "neo1-78",
     "tcgdex_id": "neo1-78",
     "localId": "078",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "078/111",
+    "cardNumber": "78/111",
     "cardName": "Sunkern",
-    "fullDisplayName": "Sunkern 078/111 Neo Genesis",
+    "fullDisplayName": "Sunkern 78/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -977,18 +1036,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-078-low.png",
-    "imageHighSrc": "cards/neo1-078-high.png"
+    "imageHighSrc": "cards/neo1-078-high.png",
+    "attacks": [
+      {
+        "name": "Growth",
+        "damage": null
+      },
+      {
+        "name": "Mega Drain",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8012",
-    "externalId": null,
+    "externalId": "neo1-77",
     "tcgdex_id": "neo1-77",
     "localId": "077",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "077/111",
+    "cardNumber": "77/111",
     "cardName": "Sudowoodo",
-    "fullDisplayName": "Sudowoodo 077/111 Neo Genesis",
+    "fullDisplayName": "Sudowoodo 77/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1010,18 +1079,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-077-low.png",
-    "imageHighSrc": "cards/neo1-077-high.png"
+    "imageHighSrc": "cards/neo1-077-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Rock Throw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8008",
-    "externalId": null,
+    "externalId": "neo1-76",
     "tcgdex_id": "neo1-76",
     "localId": "076",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "076/111",
+    "cardNumber": "76/111",
     "cardName": "Stantler",
-    "fullDisplayName": "Stantler 076/111 Neo Genesis",
+    "fullDisplayName": "Stantler 76/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1043,18 +1122,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-076-low.png",
-    "imageHighSrc": "cards/neo1-076-high.png"
+    "imageHighSrc": "cards/neo1-076-high.png",
+    "attacks": [
+      {
+        "name": "Stomp",
+        "damage": "20+"
+      },
+      {
+        "name": "Mystifying Horns",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8004",
-    "externalId": null,
+    "externalId": "neo1-75",
     "tcgdex_id": "neo1-75",
     "localId": "075",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "075/111",
+    "cardNumber": "75/111",
     "cardName": "Spinarak",
-    "fullDisplayName": "Spinarak 075/111 Neo Genesis",
+    "fullDisplayName": "Spinarak 75/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1076,18 +1165,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-075-low.png",
-    "imageHighSrc": "cards/neo1-075-high.png"
+    "imageHighSrc": "cards/neo1-075-high.png",
+    "attacks": [
+      {
+        "name": "Scary Face",
+        "damage": null
+      },
+      {
+        "name": "String Shot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7999",
-    "externalId": null,
+    "externalId": "neo1-74",
     "tcgdex_id": "neo1-74",
     "localId": "074",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "074/111",
+    "cardNumber": "74/111",
     "cardName": "Snubbull",
-    "fullDisplayName": "Snubbull 074/111 Neo Genesis",
+    "fullDisplayName": "Snubbull 74/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1109,18 +1208,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-074-low.png",
-    "imageHighSrc": "cards/neo1-074-high.png"
+    "imageHighSrc": "cards/neo1-074-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Lick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7994",
-    "externalId": null,
+    "externalId": "neo1-73",
     "tcgdex_id": "neo1-73",
     "localId": "073",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "073/111",
+    "cardNumber": "73/111",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 073/111 Neo Genesis",
+    "fullDisplayName": "Slowpoke 73/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1142,18 +1251,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-073-low.png",
-    "imageHighSrc": "cards/neo1-073-high.png"
+    "imageHighSrc": "cards/neo1-073-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "10"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7989",
-    "externalId": null,
+    "externalId": "neo1-72",
     "tcgdex_id": "neo1-72",
     "localId": "072",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "072/111",
+    "cardNumber": "72/111",
     "cardName": "Shuckle",
-    "fullDisplayName": "Shuckle 072/111 Neo Genesis",
+    "fullDisplayName": "Shuckle 72/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1175,18 +1294,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-072-low.png",
-    "imageHighSrc": "cards/neo1-072-high.png"
+    "imageHighSrc": "cards/neo1-072-high.png",
+    "attacks": [
+      {
+        "name": "Withdraw",
+        "damage": null
+      },
+      {
+        "name": "Wrap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7984",
-    "externalId": null,
+    "externalId": "neo1-71",
     "tcgdex_id": "neo1-71",
     "localId": "071",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "071/111",
+    "cardNumber": "71/111",
     "cardName": "Sentret",
-    "fullDisplayName": "Sentret 071/111 Neo Genesis",
+    "fullDisplayName": "Sentret 71/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1208,18 +1337,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-071-low.png",
-    "imageHighSrc": "cards/neo1-071-high.png"
+    "imageHighSrc": "cards/neo1-071-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7979",
-    "externalId": null,
+    "externalId": "neo1-70",
     "tcgdex_id": "neo1-70",
     "localId": "070",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "070/111",
+    "cardNumber": "70/111",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 070/111 Neo Genesis",
+    "fullDisplayName": "Pikachu 70/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1241,18 +1376,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-070-low.png",
-    "imageHighSrc": "cards/neo1-070-high.png"
+    "imageHighSrc": "cards/neo1-070-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7974",
-    "externalId": null,
+    "externalId": "neo1-69",
     "tcgdex_id": "neo1-69",
     "localId": "069",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "069/111",
+    "cardNumber": "69/111",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 069/111 Neo Genesis",
+    "fullDisplayName": "Onix 69/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1274,18 +1419,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-069-low.png",
-    "imageHighSrc": "cards/neo1-069-high.png"
+    "imageHighSrc": "cards/neo1-069-high.png",
+    "attacks": [
+      {
+        "name": "Screech",
+        "damage": null
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7969",
-    "externalId": null,
+    "externalId": "neo1-68",
     "tcgdex_id": "neo1-68",
     "localId": "068",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "068/111",
+    "cardNumber": "68/111",
     "cardName": "Oddish",
-    "fullDisplayName": "Oddish 068/111 Neo Genesis",
+    "fullDisplayName": "Oddish 68/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1307,18 +1462,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-068-low.png",
-    "imageHighSrc": "cards/neo1-068-high.png"
+    "imageHighSrc": "cards/neo1-068-high.png",
+    "attacks": [
+      {
+        "name": "Hide",
+        "damage": null
+      },
+      {
+        "name": "Absorb",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7965",
-    "externalId": null,
+    "externalId": "neo1-67",
     "tcgdex_id": "neo1-67",
     "localId": "067",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "067/111",
+    "cardNumber": "67/111",
     "cardName": "Natu",
-    "fullDisplayName": "Natu 067/111 Neo Genesis",
+    "fullDisplayName": "Natu 67/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1340,18 +1505,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-067-low.png",
-    "imageHighSrc": "cards/neo1-067-high.png"
+    "imageHighSrc": "cards/neo1-067-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Telekinesis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7960",
-    "externalId": null,
+    "externalId": "neo1-66",
     "tcgdex_id": "neo1-66",
     "localId": "066",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "066/111",
+    "cardNumber": "66/111",
     "cardName": "Marill",
-    "fullDisplayName": "Marill 066/111 Neo Genesis",
+    "fullDisplayName": "Marill 66/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1373,18 +1548,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-066-low.png",
-    "imageHighSrc": "cards/neo1-066-high.png"
+    "imageHighSrc": "cards/neo1-066-high.png",
+    "attacks": [
+      {
+        "name": "Defense Curl",
+        "damage": null
+      },
+      {
+        "name": "Bubble Bomb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7955",
-    "externalId": null,
+    "externalId": "neo1-65",
     "tcgdex_id": "neo1-65",
     "localId": "065",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "065/111",
+    "cardNumber": "65/111",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 065/111 Neo Genesis",
+    "fullDisplayName": "Mareep 65/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1406,18 +1591,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-065-low.png",
-    "imageHighSrc": "cards/neo1-065-high.png"
+    "imageHighSrc": "cards/neo1-065-high.png",
+    "attacks": [
+      {
+        "name": "Static Electricity",
+        "damage": null
+      },
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7950",
-    "externalId": null,
+    "externalId": "neo1-64",
     "tcgdex_id": "neo1-64",
     "localId": "064",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "064/111",
+    "cardNumber": "64/111",
     "cardName": "Mantine",
-    "fullDisplayName": "Mantine 064/111 Neo Genesis",
+    "fullDisplayName": "Mantine 64/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1439,18 +1634,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-064-low.png",
-    "imageHighSrc": "cards/neo1-064-high.png"
+    "imageHighSrc": "cards/neo1-064-high.png",
+    "attacks": [
+      {
+        "name": "Undulate",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7945",
-    "externalId": null,
+    "externalId": "neo1-63",
     "tcgdex_id": "neo1-63",
     "localId": "063",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "063/111",
+    "cardNumber": "63/111",
     "cardName": "Ledyba",
-    "fullDisplayName": "Ledyba 063/111 Neo Genesis",
+    "fullDisplayName": "Ledyba 63/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1472,18 +1673,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-063-low.png",
-    "imageHighSrc": "cards/neo1-063-high.png"
+    "imageHighSrc": "cards/neo1-063-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Comet Punch",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7940",
-    "externalId": null,
+    "externalId": "neo1-62",
     "tcgdex_id": "neo1-62",
     "localId": "062",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "062/111",
+    "cardNumber": "62/111",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 062/111 Neo Genesis",
+    "fullDisplayName": "Horsea 62/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1505,18 +1716,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-062-low.png",
-    "imageHighSrc": "cards/neo1-062-high.png"
+    "imageHighSrc": "cards/neo1-062-high.png",
+    "attacks": [
+      {
+        "name": "Fin Slap",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7935",
-    "externalId": null,
+    "externalId": "neo1-61",
     "tcgdex_id": "neo1-61",
     "localId": "061",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "061/111",
+    "cardNumber": "61/111",
     "cardName": "Hoppip",
-    "fullDisplayName": "Hoppip 061/111 Neo Genesis",
+    "fullDisplayName": "Hoppip 61/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1538,18 +1755,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-061-low.png",
-    "imageHighSrc": "cards/neo1-061-high.png"
+    "imageHighSrc": "cards/neo1-061-high.png",
+    "attacks": [
+      {
+        "name": "Hop",
+        "damage": "10"
+      },
+      {
+        "name": "Sprout",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7930",
-    "externalId": null,
+    "externalId": "neo1-60",
     "tcgdex_id": "neo1-60",
     "localId": "060",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "060/111",
+    "cardNumber": "60/111",
     "cardName": "Hoothoot",
-    "fullDisplayName": "Hoothoot 060/111 Neo Genesis",
+    "fullDisplayName": "Hoothoot 60/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1571,18 +1798,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-060-low.png",
-    "imageHighSrc": "cards/neo1-060-high.png"
+    "imageHighSrc": "cards/neo1-060-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7925",
-    "externalId": null,
+    "externalId": "neo1-59",
     "tcgdex_id": "neo1-59",
     "localId": "059",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "059/111",
+    "cardNumber": "59/111",
     "cardName": "Gligar",
-    "fullDisplayName": "Gligar 059/111 Neo Genesis",
+    "fullDisplayName": "Gligar 59/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1604,18 +1841,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-059-low.png",
-    "imageHighSrc": "cards/neo1-059-high.png"
+    "imageHighSrc": "cards/neo1-059-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7920",
-    "externalId": null,
+    "externalId": "neo1-58",
     "tcgdex_id": "neo1-58",
     "localId": "058",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "058/111",
+    "cardNumber": "58/111",
     "cardName": "Girafarig",
-    "fullDisplayName": "Girafarig 058/111 Neo Genesis",
+    "fullDisplayName": "Girafarig 58/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1637,18 +1884,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-058-low.png",
-    "imageHighSrc": "cards/neo1-058-high.png"
+    "imageHighSrc": "cards/neo1-058-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "10"
+      },
+      {
+        "name": "Psybeam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7916",
-    "externalId": null,
+    "externalId": "neo1-57",
     "tcgdex_id": "neo1-57",
     "localId": "057",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "057/111",
+    "cardNumber": "57/111",
     "cardName": "Cyndaquil",
-    "fullDisplayName": "Cyndaquil 057/111 Neo Genesis",
+    "fullDisplayName": "Cyndaquil 57/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1670,18 +1927,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-057-low.png",
-    "imageHighSrc": "cards/neo1-057-high.png"
+    "imageHighSrc": "cards/neo1-057-high.png",
+    "attacks": [
+      {
+        "name": "Fireworks",
+        "damage": "20"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7911",
-    "externalId": null,
+    "externalId": "neo1-56",
     "tcgdex_id": "neo1-56",
     "localId": "056",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "056/111",
+    "cardNumber": "56/111",
     "cardName": "Cyndaquil",
-    "fullDisplayName": "Cyndaquil 056/111 Neo Genesis",
+    "fullDisplayName": "Cyndaquil 56/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1703,18 +1970,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-056-low.png",
-    "imageHighSrc": "cards/neo1-056-high.png"
+    "imageHighSrc": "cards/neo1-056-high.png",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Swift",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7906",
-    "externalId": null,
+    "externalId": "neo1-55",
     "tcgdex_id": "neo1-55",
     "localId": "055",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "055/111",
+    "cardNumber": "55/111",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 055/111 Neo Genesis",
+    "fullDisplayName": "Chinchou 55/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1736,18 +2013,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-055-low.png",
-    "imageHighSrc": "cards/neo1-055-high.png"
+    "imageHighSrc": "cards/neo1-055-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7901",
-    "externalId": null,
+    "externalId": "neo1-54",
     "tcgdex_id": "neo1-54",
     "localId": "054",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "054/111",
+    "cardNumber": "54/111",
     "cardName": "Chikorita",
-    "fullDisplayName": "Chikorita 054/111 Neo Genesis",
+    "fullDisplayName": "Chikorita 54/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1769,18 +2056,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-054-low.png",
-    "imageHighSrc": "cards/neo1-054-high.png"
+    "imageHighSrc": "cards/neo1-054-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7896",
-    "externalId": null,
+    "externalId": "neo1-53",
     "tcgdex_id": "neo1-53",
     "localId": "053",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "053/111",
+    "cardNumber": "53/111",
     "cardName": "Chikorita",
-    "fullDisplayName": "Chikorita 053/111 Neo Genesis",
+    "fullDisplayName": "Chikorita 53/111 Neo Genesis",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1802,18 +2099,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-053-low.png",
-    "imageHighSrc": "cards/neo1-053-high.png"
+    "imageHighSrc": "cards/neo1-053-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Deflector",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7891",
-    "externalId": null,
+    "externalId": "neo1-52",
     "tcgdex_id": "neo1-52",
     "localId": "052",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "052/111",
+    "cardNumber": "52/111",
     "cardName": "Xatu",
-    "fullDisplayName": "Xatu 052/111 Neo Genesis",
+    "fullDisplayName": "Xatu 52/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1835,18 +2142,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-052-low.png",
-    "imageHighSrc": "cards/neo1-052-high.png"
+    "imageHighSrc": "cards/neo1-052-high.png",
+    "attacks": [
+      {
+        "name": "Prophecy",
+        "damage": null
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7886",
-    "externalId": null,
+    "externalId": "neo1-51",
     "tcgdex_id": "neo1-51",
     "localId": "051",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "051/111",
+    "cardNumber": "51/111",
     "cardName": "Togepi",
-    "fullDisplayName": "Togepi 051/111 Neo Genesis",
+    "fullDisplayName": "Togepi 51/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1868,18 +2185,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-051-low.png",
-    "imageHighSrc": "cards/neo1-051-high.png"
+    "imageHighSrc": "cards/neo1-051-high.png",
+    "attacks": [
+      {
+        "name": "Poison Barb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7882",
-    "externalId": null,
+    "externalId": "neo1-50",
     "tcgdex_id": "neo1-50",
     "localId": "050",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "050/111",
+    "cardNumber": "50/111",
     "cardName": "Sunflora",
-    "fullDisplayName": "Sunflora 050/111 Neo Genesis",
+    "fullDisplayName": "Sunflora 50/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1901,18 +2224,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-050-low.png",
-    "imageHighSrc": "cards/neo1-050-high.png"
+    "imageHighSrc": "cards/neo1-050-high.png",
+    "attacks": [
+      {
+        "name": "Petal Dance",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7877",
-    "externalId": null,
+    "externalId": "neo1-49",
     "tcgdex_id": "neo1-49",
     "localId": "049",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "049/111",
+    "cardNumber": "49/111",
     "cardName": "Skiploom",
-    "fullDisplayName": "Skiploom 049/111 Neo Genesis",
+    "fullDisplayName": "Skiploom 49/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1934,18 +2263,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-049-low.png",
-    "imageHighSrc": "cards/neo1-049-high.png"
+    "imageHighSrc": "cards/neo1-049-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "10"
+      },
+      {
+        "name": "Stun Spore",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7872",
-    "externalId": null,
+    "externalId": "neo1-48",
     "tcgdex_id": "neo1-48",
     "localId": "048",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "048/111",
+    "cardNumber": "48/111",
     "cardName": "Seadra",
-    "fullDisplayName": "Seadra 048/111 Neo Genesis",
+    "fullDisplayName": "Seadra 48/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1967,18 +2306,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-048-low.png",
-    "imageHighSrc": "cards/neo1-048-high.png"
+    "imageHighSrc": "cards/neo1-048-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      },
+      {
+        "name": "Mud Splash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7867",
-    "externalId": null,
+    "externalId": "neo1-47",
     "tcgdex_id": "neo1-47",
     "localId": "047",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "047/111",
+    "cardNumber": "47/111",
     "cardName": "Quilava",
-    "fullDisplayName": "Quilava 047/111 Neo Genesis",
+    "fullDisplayName": "Quilava 47/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2000,18 +2349,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-047-low.png",
-    "imageHighSrc": "cards/neo1-047-high.png"
+    "imageHighSrc": "cards/neo1-047-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "20"
+      },
+      {
+        "name": "Char",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7862",
-    "externalId": null,
+    "externalId": "neo1-46",
     "tcgdex_id": "neo1-46",
     "localId": "046",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "046/111",
+    "cardNumber": "46/111",
     "cardName": "Quilava",
-    "fullDisplayName": "Quilava 046/111 Neo Genesis",
+    "fullDisplayName": "Quilava 46/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2033,18 +2392,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-046-low.png",
-    "imageHighSrc": "cards/neo1-046-high.png"
+    "imageHighSrc": "cards/neo1-046-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      },
+      {
+        "name": "Fire Wind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7858",
-    "externalId": null,
+    "externalId": "neo1-45",
     "tcgdex_id": "neo1-45",
     "localId": "045",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "045/111",
+    "cardNumber": "45/111",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 045/111 Neo Genesis",
+    "fullDisplayName": "Quagsire 45/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2066,18 +2435,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-045-low.png",
-    "imageHighSrc": "cards/neo1-045-high.png"
+    "imageHighSrc": "cards/neo1-045-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "30"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7853",
-    "externalId": null,
+    "externalId": "neo1-44",
     "tcgdex_id": "neo1-44",
     "localId": "044",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "044/111",
+    "cardNumber": "44/111",
     "cardName": "Piloswine",
-    "fullDisplayName": "Piloswine 044/111 Neo Genesis",
+    "fullDisplayName": "Piloswine 44/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2099,18 +2478,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-044-low.png",
-    "imageHighSrc": "cards/neo1-044-high.png"
+    "imageHighSrc": "cards/neo1-044-high.png",
+    "attacks": [
+      {
+        "name": "Freeze",
+        "damage": "10"
+      },
+      {
+        "name": "Blizzard",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7848",
-    "externalId": null,
+    "externalId": "neo1-43",
     "tcgdex_id": "neo1-43",
     "localId": "043",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "043/111",
+    "cardNumber": "43/111",
     "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 043/111 Neo Genesis",
+    "fullDisplayName": "Phanpy 43/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2132,18 +2521,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-043-low.png",
-    "imageHighSrc": "cards/neo1-043-high.png"
+    "imageHighSrc": "cards/neo1-043-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Endure",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7843",
-    "externalId": null,
+    "externalId": "neo1-42",
     "tcgdex_id": "neo1-42",
     "localId": "042",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "042/111",
+    "cardNumber": "42/111",
     "cardName": "Noctowl",
-    "fullDisplayName": "Noctowl 042/111 Neo Genesis",
+    "fullDisplayName": "Noctowl 42/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2165,18 +2564,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-042-low.png",
-    "imageHighSrc": "cards/neo1-042-high.png"
+    "imageHighSrc": "cards/neo1-042-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7838",
-    "externalId": null,
+    "externalId": "neo1-41",
     "tcgdex_id": "neo1-41",
     "localId": "041",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "041/111",
+    "cardNumber": "41/111",
     "cardName": "Miltank",
-    "fullDisplayName": "Miltank 041/111 Neo Genesis",
+    "fullDisplayName": "Miltank 41/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2198,18 +2603,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-041-low.png",
-    "imageHighSrc": "cards/neo1-041-high.png"
+    "imageHighSrc": "cards/neo1-041-high.png",
+    "attacks": [
+      {
+        "name": "Milk Drink",
+        "damage": null
+      },
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7833",
-    "externalId": null,
+    "externalId": "neo1-40",
     "tcgdex_id": "neo1-40",
     "localId": "040",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "040/111",
+    "cardNumber": "40/111",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 040/111 Neo Genesis",
+    "fullDisplayName": "Magmar 40/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2231,18 +2646,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-040-low.png",
-    "imageHighSrc": "cards/neo1-040-high.png"
+    "imageHighSrc": "cards/neo1-040-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "20"
+      },
+      {
+        "name": "Magma Punch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7828",
-    "externalId": null,
+    "externalId": "neo1-39",
     "tcgdex_id": "neo1-39",
     "localId": "039",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "039/111",
+    "cardNumber": "39/111",
     "cardName": "Ledian",
-    "fullDisplayName": "Ledian 039/111 Neo Genesis",
+    "fullDisplayName": "Ledian 39/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2264,18 +2689,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-039-low.png",
-    "imageHighSrc": "cards/neo1-039-high.png"
+    "imageHighSrc": "cards/neo1-039-high.png",
+    "attacks": [
+      {
+        "name": "Baton Pass",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7823",
-    "externalId": null,
+    "externalId": "neo1-38",
     "tcgdex_id": "neo1-38",
     "localId": "038",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "038/111",
+    "cardNumber": "38/111",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 038/111 Neo Genesis",
+    "fullDisplayName": "Lanturn 38/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2297,18 +2728,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-038-low.png",
-    "imageHighSrc": "cards/neo1-038-high.png"
+    "imageHighSrc": "cards/neo1-038-high.png",
+    "attacks": [
+      {
+        "name": "Floodlight",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7818",
-    "externalId": null,
+    "externalId": "neo1-37",
     "tcgdex_id": "neo1-37",
     "localId": "037",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "037/111",
+    "cardNumber": "37/111",
     "cardName": "Granbull",
-    "fullDisplayName": "Granbull 037/111 Neo Genesis",
+    "fullDisplayName": "Granbull 37/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2330,18 +2767,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-037-low.png",
-    "imageHighSrc": "cards/neo1-037-high.png"
+    "imageHighSrc": "cards/neo1-037-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Raging Charge",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7813",
-    "externalId": null,
+    "externalId": "neo1-36",
     "tcgdex_id": "neo1-36",
     "localId": "036",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "036/111",
+    "cardNumber": "36/111",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 036/111 Neo Genesis",
+    "fullDisplayName": "Gloom 36/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2363,18 +2810,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-036-low.png",
-    "imageHighSrc": "cards/neo1-036-high.png"
+    "imageHighSrc": "cards/neo1-036-high.png",
+    "attacks": [
+      {
+        "name": "Strange Powder",
+        "damage": "20"
+      },
+      {
+        "name": "Sticky Nectar",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7808",
-    "externalId": null,
+    "externalId": "neo1-35",
     "tcgdex_id": "neo1-35",
     "localId": "035",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "035/111",
+    "cardNumber": "35/111",
     "cardName": "Furret",
-    "fullDisplayName": "Furret 035/111 Neo Genesis",
+    "fullDisplayName": "Furret 35/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2396,18 +2853,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-035-low.png",
-    "imageHighSrc": "cards/neo1-035-high.png"
+    "imageHighSrc": "cards/neo1-035-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      },
+      {
+        "name": "Slam",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7803",
-    "externalId": null,
+    "externalId": "neo1-34",
     "tcgdex_id": "neo1-34",
     "localId": "034",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "034/111",
+    "cardNumber": "34/111",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 034/111 Neo Genesis",
+    "fullDisplayName": "Flaaffy 34/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2429,18 +2896,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-034-low.png",
-    "imageHighSrc": "cards/neo1-034-high.png"
+    "imageHighSrc": "cards/neo1-034-high.png",
+    "attacks": [
+      {
+        "name": "Discharge",
+        "damage": "30×"
+      },
+      {
+        "name": "Electric Current",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7798",
-    "externalId": null,
+    "externalId": "neo1-33",
     "tcgdex_id": "neo1-33",
     "localId": "033",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "033/111",
+    "cardNumber": "33/111",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 033/111 Neo Genesis",
+    "fullDisplayName": "Electabuzz 33/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2462,18 +2939,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-033-low.png",
-    "imageHighSrc": "cards/neo1-033-high.png"
+    "imageHighSrc": "cards/neo1-033-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7794",
-    "externalId": null,
+    "externalId": "neo1-32",
     "tcgdex_id": "neo1-32",
     "localId": "032",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "032/111",
+    "cardNumber": "32/111",
     "cardName": "Croconaw",
-    "fullDisplayName": "Croconaw 032/111 Neo Genesis",
+    "fullDisplayName": "Croconaw 32/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2495,18 +2982,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-032-low.png",
-    "imageHighSrc": "cards/neo1-032-high.png"
+    "imageHighSrc": "cards/neo1-032-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Sweep Away",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7789",
-    "externalId": null,
+    "externalId": "neo1-31",
     "tcgdex_id": "neo1-31",
     "localId": "031",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "031/111",
+    "cardNumber": "31/111",
     "cardName": "Croconaw",
-    "fullDisplayName": "Croconaw 031/111 Neo Genesis",
+    "fullDisplayName": "Croconaw 31/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2528,18 +3025,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-031-low.png",
-    "imageHighSrc": "cards/neo1-031-high.png"
+    "imageHighSrc": "cards/neo1-031-high.png",
+    "attacks": [
+      {
+        "name": "Screech",
+        "damage": null
+      },
+      {
+        "name": "Jaw Clamp",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7783",
-    "externalId": null,
+    "externalId": "neo1-30",
     "tcgdex_id": "neo1-30",
     "localId": "030",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "030/111",
+    "cardNumber": "30/111",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 030/111 Neo Genesis",
+    "fullDisplayName": "Clefairy 30/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2561,18 +3068,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-030-low.png",
-    "imageHighSrc": "cards/neo1-030-high.png"
+    "imageHighSrc": "cards/neo1-030-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "10×"
+      },
+      {
+        "name": "Squaredance",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7776",
-    "externalId": null,
+    "externalId": "neo1-29",
     "tcgdex_id": "neo1-29",
     "localId": "029",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "029/111",
+    "cardNumber": "29/111",
     "cardName": "Bayleef",
-    "fullDisplayName": "Bayleef 029/111 Neo Genesis",
+    "fullDisplayName": "Bayleef 29/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2594,18 +3111,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-029-low.png",
-    "imageHighSrc": "cards/neo1-029-high.png"
+    "imageHighSrc": "cards/neo1-029-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Scent",
+        "damage": null
+      },
+      {
+        "name": "Double Razor Leaf",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "7771",
-    "externalId": null,
+    "externalId": "neo1-28",
     "tcgdex_id": "neo1-28",
     "localId": "028",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "028/111",
+    "cardNumber": "28/111",
     "cardName": "Bayleef",
-    "fullDisplayName": "Bayleef 028/111 Neo Genesis",
+    "fullDisplayName": "Bayleef 28/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2627,18 +3154,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-028-low.png",
-    "imageHighSrc": "cards/neo1-028-high.png"
+    "imageHighSrc": "cards/neo1-028-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "20"
+      },
+      {
+        "name": "Pollen Shield",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7767",
-    "externalId": null,
+    "externalId": "neo1-27",
     "tcgdex_id": "neo1-27",
     "localId": "027",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "027/111",
+    "cardNumber": "27/111",
     "cardName": "Ariados",
-    "fullDisplayName": "Ariados 027/111 Neo Genesis",
+    "fullDisplayName": "Ariados 27/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2660,18 +3197,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-027-low.png",
-    "imageHighSrc": "cards/neo1-027-high.png"
+    "imageHighSrc": "cards/neo1-027-high.png",
+    "attacks": [
+      {
+        "name": "Spider Web",
+        "damage": null
+      },
+      {
+        "name": "Poison Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7761",
-    "externalId": null,
+    "externalId": "neo1-26",
     "tcgdex_id": "neo1-26",
     "localId": "026",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "026/111",
+    "cardNumber": "26/111",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 026/111 Neo Genesis",
+    "fullDisplayName": "Aipom 26/111 Neo Genesis",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2693,18 +3240,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-026-low.png",
-    "imageHighSrc": "cards/neo1-026-high.png"
+    "imageHighSrc": "cards/neo1-026-high.png",
+    "attacks": [
+      {
+        "name": "Pilfer",
+        "damage": null
+      },
+      {
+        "name": "Tail Rap",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7757",
-    "externalId": null,
+    "externalId": "neo1-25",
     "tcgdex_id": "neo1-25",
     "localId": "025",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "025/111",
+    "cardNumber": "25/111",
     "cardName": "Sneasel",
-    "fullDisplayName": "Sneasel 025/111 Neo Genesis",
+    "fullDisplayName": "Sneasel 25/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2726,18 +3283,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-025-low.png",
-    "imageHighSrc": "cards/neo1-025-high.png"
+    "imageHighSrc": "cards/neo1-025-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      },
+      {
+        "name": "Beat Up",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7752",
-    "externalId": null,
+    "externalId": "neo1-24",
     "tcgdex_id": "neo1-24",
     "localId": "024",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "024/111",
+    "cardNumber": "24/111",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 024/111 Neo Genesis",
+    "fullDisplayName": "Murkrow 24/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2759,18 +3326,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-024-low.png",
-    "imageHighSrc": "cards/neo1-024-high.png"
+    "imageHighSrc": "cards/neo1-024-high.png",
+    "attacks": [
+      {
+        "name": "Mean Look",
+        "damage": null
+      },
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7747",
-    "externalId": null,
+    "externalId": "neo1-23",
     "tcgdex_id": "neo1-23",
     "localId": "023",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "023/111",
+    "cardNumber": "23/111",
     "cardName": "Magby",
-    "fullDisplayName": "Magby 023/111 Neo Genesis",
+    "fullDisplayName": "Magby 23/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2792,18 +3369,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-023-low.png",
-    "imageHighSrc": "cards/neo1-023-high.png"
+    "imageHighSrc": "cards/neo1-023-high.png",
+    "attacks": [
+      {
+        "name": "Sputter",
+        "damage": "10"
+      }
+    ],
+    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent tries to attack, your opponent flips a coin (before doing anything required in order to use that attack). If tails, your opponent's turn ends without an attack."
   },
   {
     "masterCardId": "7742",
-    "externalId": null,
+    "externalId": "neo1-22",
     "tcgdex_id": "neo1-22",
     "localId": "022",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "022/111",
+    "cardNumber": "22/111",
     "cardName": "Elekid",
-    "fullDisplayName": "Elekid 022/111 Neo Genesis",
+    "fullDisplayName": "Elekid 22/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2825,18 +3409,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-022-low.png",
-    "imageHighSrc": "cards/neo1-022-high.png"
+    "imageHighSrc": "cards/neo1-022-high.png",
+    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent tries to attack, your opponent flips a coin (before doing anything required in order to use that attack). If tails, your opponent's turn ends without an attack."
   },
   {
     "masterCardId": "7736",
-    "externalId": null,
+    "externalId": "neo1-21",
     "tcgdex_id": "neo1-21",
     "localId": "021",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "021/111",
+    "cardNumber": "21/111",
     "cardName": "Donphan",
-    "fullDisplayName": "Donphan 021/111 Neo Genesis",
+    "fullDisplayName": "Donphan 21/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2858,18 +3443,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-021-low.png",
-    "imageHighSrc": "cards/neo1-021-high.png"
+    "imageHighSrc": "cards/neo1-021-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Rapid Spin",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7730",
-    "externalId": null,
+    "externalId": "neo1-20",
     "tcgdex_id": "neo1-20",
     "localId": "020",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "020/111",
+    "cardNumber": "20/111",
     "cardName": "Cleffa",
-    "fullDisplayName": "Cleffa 020/111 Neo Genesis",
+    "fullDisplayName": "Cleffa 20/111 Neo Genesis",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2891,18 +3486,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-020-low.png",
-    "imageHighSrc": "cards/neo1-020-high.png"
+    "imageHighSrc": "cards/neo1-020-high.png",
+    "attacks": [
+      {
+        "name": "Eeeeeeek",
+        "damage": null
+      }
+    ],
+    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent tries to attack, your opponent flips a coin (before doing anything required in order to use that attack). If tails, your opponent's turn ends without an attack."
   },
   {
     "masterCardId": "7724",
-    "externalId": null,
+    "externalId": "neo1-19",
     "tcgdex_id": "neo1-19",
     "localId": "019",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "019/111",
+    "cardNumber": "19/111",
     "cardName": "Metal Energy",
-    "fullDisplayName": "Metal Energy 019/111 Neo Genesis",
+    "fullDisplayName": "Metal Energy 19/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Energy",
     "stage": null,
@@ -2920,18 +3522,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-019-low.png",
-    "imageHighSrc": "cards/neo1-019-high.png"
+    "imageHighSrc": "cards/neo1-019-high.png",
+    "rules": "Damage done to the Pokémon Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). If the Pokémon Metal Energy is attached to isn't Metal, whenever it damages a Pokémon, reduce that damage by 10 (before applying Weakness and Resistance).\nMetal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "7719",
-    "externalId": null,
+    "externalId": "neo1-18",
     "tcgdex_id": "neo1-18",
     "localId": "018",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "018/111",
+    "cardNumber": "18/111",
     "cardName": "Typhlosion",
-    "fullDisplayName": "Typhlosion 018/111 Neo Genesis",
+    "fullDisplayName": "Typhlosion 18/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2953,18 +3556,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-018-low.png",
-    "imageHighSrc": "cards/neo1-018-high.png"
+    "imageHighSrc": "cards/neo1-018-high.png",
+    "attacks": [
+      {
+        "name": "Flame Wheel",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "7713",
-    "externalId": null,
+    "externalId": "neo1-17",
     "tcgdex_id": "neo1-17",
     "localId": "017",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "017/111",
+    "cardNumber": "17/111",
     "cardName": "Typhlosion",
-    "fullDisplayName": "Typhlosion 017/111 Neo Genesis",
+    "fullDisplayName": "Typhlosion 17/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2986,18 +3595,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-017-low.png",
-    "imageHighSrc": "cards/neo1-017-high.png"
+    "imageHighSrc": "cards/neo1-017-high.png",
+    "attacks": [
+      {
+        "name": "Flame Burst",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "7707",
-    "externalId": null,
+    "externalId": "neo1-16",
     "tcgdex_id": "neo1-16",
     "localId": "016",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "016/111",
+    "cardNumber": "16/111",
     "cardName": "Togetic",
-    "fullDisplayName": "Togetic 016/111 Neo Genesis",
+    "fullDisplayName": "Togetic 16/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3019,18 +3634,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-016-low.png",
-    "imageHighSrc": "cards/neo1-016-high.png"
+    "imageHighSrc": "cards/neo1-016-high.png",
+    "attacks": [
+      {
+        "name": "Super Metronome",
+        "damage": null
+      },
+      {
+        "name": "Fly",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7701",
-    "externalId": null,
+    "externalId": "neo1-15",
     "tcgdex_id": "neo1-15",
     "localId": "015",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "015/111",
+    "cardNumber": "15/111",
     "cardName": "Steelix",
-    "fullDisplayName": "Steelix 015/111 Neo Genesis",
+    "fullDisplayName": "Steelix 15/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3052,18 +3677,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-015-low.png",
-    "imageHighSrc": "cards/neo1-015-high.png"
+    "imageHighSrc": "cards/neo1-015-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Tail Crush",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "7695",
-    "externalId": null,
+    "externalId": "neo1-14",
     "tcgdex_id": "neo1-14",
     "localId": "014",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "014/111",
+    "cardNumber": "14/111",
     "cardName": "Slowking",
-    "fullDisplayName": "Slowking 014/111 Neo Genesis",
+    "fullDisplayName": "Slowking 14/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3085,18 +3720,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-014-low.png",
-    "imageHighSrc": "cards/neo1-014-high.png"
+    "imageHighSrc": "cards/neo1-014-high.png",
+    "attacks": [
+      {
+        "name": "Mind Blast",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7690",
-    "externalId": null,
+    "externalId": "neo1-13",
     "tcgdex_id": "neo1-13",
     "localId": "013",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "013/111",
+    "cardNumber": "13/111",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 013/111 Neo Genesis",
+    "fullDisplayName": "Skarmory 13/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3118,18 +3759,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-013-low.png",
-    "imageHighSrc": "cards/neo1-013-high.png"
+    "imageHighSrc": "cards/neo1-013-high.png",
+    "attacks": [
+      {
+        "name": "Claw",
+        "damage": "20"
+      },
+      {
+        "name": "Steel Wing",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7684",
-    "externalId": null,
+    "externalId": "neo1-12",
     "tcgdex_id": "neo1-12",
     "localId": "012",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "012/111",
+    "cardNumber": "12/111",
     "cardName": "Pichu",
-    "fullDisplayName": "Pichu 012/111 Neo Genesis",
+    "fullDisplayName": "Pichu 12/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3151,18 +3802,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-012-low.png",
-    "imageHighSrc": "cards/neo1-012-high.png"
+    "imageHighSrc": "cards/neo1-012-high.png",
+    "attacks": [
+      {
+        "name": "Zzzap",
+        "damage": null
+      }
+    ],
+    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent tries to attack, your opponent flips a coin (before doing anything required in order to use that attack). If tails, your opponent's turn ends without an attack."
   },
   {
     "masterCardId": "7677",
-    "externalId": null,
+    "externalId": "neo1-11",
     "tcgdex_id": "neo1-11",
     "localId": "011",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "011/111",
+    "cardNumber": "11/111",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium 011/111 Neo Genesis",
+    "fullDisplayName": "Meganium 11/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3184,18 +3842,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-011-low.png",
-    "imageHighSrc": "cards/neo1-011-high.png"
+    "imageHighSrc": "cards/neo1-011-high.png",
+    "attacks": [
+      {
+        "name": "Soothing Scent",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7671",
-    "externalId": null,
+    "externalId": "neo1-10",
     "tcgdex_id": "neo1-10",
     "localId": "010",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "010/111",
+    "cardNumber": "10/111",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium 010/111 Neo Genesis",
+    "fullDisplayName": "Meganium 10/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3217,18 +3881,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-010-low.png",
-    "imageHighSrc": "cards/neo1-010-high.png"
+    "imageHighSrc": "cards/neo1-010-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7666",
-    "externalId": null,
+    "externalId": "neo1-9",
     "tcgdex_id": "neo1-9",
     "localId": "009",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "009/111",
+    "cardNumber": "9/111",
     "cardName": "Lugia",
-    "fullDisplayName": "Lugia 009/111 Neo Genesis",
+    "fullDisplayName": "Lugia 9/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3250,18 +3920,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-009-low.png",
-    "imageHighSrc": "cards/neo1-009-high.png"
+    "imageHighSrc": "cards/neo1-009-high.png",
+    "attacks": [
+      {
+        "name": "Elemental Blast",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "7662",
-    "externalId": null,
+    "externalId": "neo1-8",
     "tcgdex_id": "neo1-8",
     "localId": "008",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "008/111",
+    "cardNumber": "8/111",
     "cardName": "Kingdra",
-    "fullDisplayName": "Kingdra 008/111 Neo Genesis",
+    "fullDisplayName": "Kingdra 8/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3283,18 +3959,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-008-low.png",
-    "imageHighSrc": "cards/neo1-008-high.png"
+    "imageHighSrc": "cards/neo1-008-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "30"
+      },
+      {
+        "name": "Dragon Tornado",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7655",
-    "externalId": null,
+    "externalId": "neo1-7",
     "tcgdex_id": "neo1-7",
     "localId": "007",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "007/111",
+    "cardNumber": "7/111",
     "cardName": "Jumpluff",
-    "fullDisplayName": "Jumpluff 007/111 Neo Genesis",
+    "fullDisplayName": "Jumpluff 7/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3316,18 +4002,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-007-low.png",
-    "imageHighSrc": "cards/neo1-007-high.png"
+    "imageHighSrc": "cards/neo1-007-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "20"
+      },
+      {
+        "name": "Leech Seed",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7646",
-    "externalId": null,
+    "externalId": "neo1-6",
     "tcgdex_id": "neo1-6",
     "localId": "006",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "006/111",
+    "cardNumber": "6/111",
     "cardName": "Heracross",
-    "fullDisplayName": "Heracross 006/111 Neo Genesis",
+    "fullDisplayName": "Heracross 6/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3349,18 +4045,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-006-low.png",
-    "imageHighSrc": "cards/neo1-006-high.png"
+    "imageHighSrc": "cards/neo1-006-high.png",
+    "attacks": [
+      {
+        "name": "Megahorn",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7640",
-    "externalId": null,
+    "externalId": "neo1-5",
     "tcgdex_id": "neo1-5",
     "localId": "005",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "005/111",
+    "cardNumber": "5/111",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 005/111 Neo Genesis",
+    "fullDisplayName": "Feraligatr 5/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3382,18 +4084,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-005-low.png",
-    "imageHighSrc": "cards/neo1-005-high.png"
+    "imageHighSrc": "cards/neo1-005-high.png",
+    "attacks": [
+      {
+        "name": "Riptide",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7634",
-    "externalId": null,
+    "externalId": "neo1-4",
     "tcgdex_id": "neo1-4",
     "localId": "004",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "004/111",
+    "cardNumber": "4/111",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 004/111 Neo Genesis",
+    "fullDisplayName": "Feraligatr 4/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3415,18 +4123,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-004-low.png",
-    "imageHighSrc": "cards/neo1-004-high.png"
+    "imageHighSrc": "cards/neo1-004-high.png",
+    "attacks": [
+      {
+        "name": "Chomp",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "7630",
-    "externalId": null,
+    "externalId": "neo1-3",
     "tcgdex_id": "neo1-3",
     "localId": "003",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "003/111",
+    "cardNumber": "3/111",
     "cardName": "Bellossom",
-    "fullDisplayName": "Bellossom 003/111 Neo Genesis",
+    "fullDisplayName": "Bellossom 3/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3448,18 +4162,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-003-low.png",
-    "imageHighSrc": "cards/neo1-003-high.png"
+    "imageHighSrc": "cards/neo1-003-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Nectar",
+        "damage": null
+      },
+      {
+        "name": "Flower Dance",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7621",
-    "externalId": null,
+    "externalId": "neo1-2",
     "tcgdex_id": "neo1-2",
     "localId": "002",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "002/111",
+    "cardNumber": "2/111",
     "cardName": "Azumarill",
-    "fullDisplayName": "Azumarill 002/111 Neo Genesis",
+    "fullDisplayName": "Azumarill 2/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3481,18 +4205,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-002-low.png",
-    "imageHighSrc": "cards/neo1-002-high.png"
+    "imageHighSrc": "cards/neo1-002-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Bubble Shower",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7616",
-    "externalId": null,
+    "externalId": "neo1-1",
     "tcgdex_id": "neo1-1",
     "localId": "001",
     "setCode": "neo1",
     "setTcgdexId": "neo1",
-    "cardNumber": "001/111",
+    "cardNumber": "1/111",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 001/111 Neo Genesis",
+    "fullDisplayName": "Ampharos 1/111 Neo Genesis",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3514,6 +4248,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo1-001-low.png",
-    "imageHighSrc": "cards/neo1-001-high.png"
+    "imageHighSrc": "cards/neo1-001-high.png",
+    "attacks": [
+      {
+        "name": "Gigaspark",
+        "damage": "40"
+      }
+    ]
   }
 ]

@@ -47,9 +47,13 @@ final class CardSearchIndex {
         self.fileURL = dir.appendingPathComponent("inverted.json")
     }
 
+    /// Bump when searchable fields on `Card` change (e.g. attacks/rules) so the inverted index rebuilds.
+    private static let indexSchemaVersion = "3"
+
     static func versionSignature(for sets: [TCGSet]) -> String {
         let codes = sets.map(\.setCode).sorted().joined(separator: "|")
-        let digest = SHA256.hash(data: Data(codes.utf8))
+        let payload = "\(indexSchemaVersion)|\(codes)"
+        let digest = SHA256.hash(data: Data(payload.utf8))
         return digest.map { String(format: "%02x", $0) }.joined()
     }
 
@@ -97,6 +101,35 @@ final class CardSearchIndex {
         return intersection ?? []
     }
 
+    /// **Partial** match: cards that contain at least `minimumHits` of the query tokens (good for long trainer **rules** where OCR only captures part of the text). Results sorted by hit count descending.
+    func softMatchRefs(normalizedQuery: String, minimumTokenLength: Int = 3) -> [(ref: CardRef, tokenHits: Int)] {
+        guard !inverted.isEmpty else { return [] }
+        let tokens = SearchTokenizer.tokens(from: normalizedQuery).filter { $0.count >= minimumTokenLength }
+        guard tokens.count >= 2 else { return [] }
+
+        var counts: [CardRef: Int] = [:]
+        for t in tokens {
+            for ref in inverted[t] ?? [] {
+                counts[ref, default: 0] += 1
+            }
+        }
+
+        // Require a modest fraction of tokens (rules are long; OCR rarely yields every word).
+        let minHits = softMatchMinimumHits(tokenCount: tokens.count)
+        return counts
+            .filter { $0.value >= minHits }
+            .sorted { a, b in
+                if a.value != b.value { return a.value > b.value }
+                return a.key.masterCardId < b.key.masterCardId
+            }
+            .map { (ref: $0.key, tokenHits: $0.value) }
+    }
+
+    /// At least 2 hits; scale up slightly with query length but stay permissive for noisy OCR.
+    private func softMatchMinimumHits(tokenCount: Int) -> Int {
+        max(2, min(8, tokenCount / 4))
+    }
+
     private func rebuild(
         versionSignature: String,
         sets: [TCGSet],
@@ -107,7 +140,7 @@ final class CardSearchIndex {
             if Task.isCancelled { return }
             let cards = await loadCards(set.setCode)
             for card in cards {
-                let blob = "\(card.cardName) \(card.cardNumber) \(card.fullDisplayName ?? "") \(card.setCode)"
+                let blob = card.searchIndexBlob
                 let tokens = SearchTokenizer.tokens(from: blob)
                 let ref = CardRef(masterCardId: card.masterCardId, setCode: card.setCode)
                 for t in tokens {

@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "6173",
-    "externalId": null,
+    "externalId": "ex13-111",
     "tcgdex_id": "ex13-111",
     "localId": "111",
     "setCode": "ex13",
@@ -30,11 +30,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-111-low.png",
-    "imageHighSrc": "cards/ex13-111-high.png"
+    "imageHighSrc": "cards/ex13-111-high.png",
+    "attacks": [
+      {
+        "name": "Super Psywave",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6171",
-    "externalId": null,
+    "externalId": "ex13-110",
     "tcgdex_id": "ex13-110",
     "localId": "110",
     "setCode": "ex13",
@@ -63,7 +69,7 @@
   },
   {
     "masterCardId": "6169",
-    "externalId": null,
+    "externalId": "ex13-109",
     "tcgdex_id": "ex13-109",
     "localId": "109",
     "setCode": "ex13",
@@ -92,7 +98,7 @@
   },
   {
     "masterCardId": "6166",
-    "externalId": null,
+    "externalId": "ex13-108",
     "tcgdex_id": "ex13-108",
     "localId": "108",
     "setCode": "ex13",
@@ -121,7 +127,7 @@
   },
   {
     "masterCardId": "6163",
-    "externalId": null,
+    "externalId": "ex13-107",
     "tcgdex_id": "ex13-107",
     "localId": "107",
     "setCode": "ex13",
@@ -150,7 +156,7 @@
   },
   {
     "masterCardId": "6160",
-    "externalId": null,
+    "externalId": "ex13-106",
     "tcgdex_id": "ex13-106",
     "localId": "106",
     "setCode": "ex13",
@@ -179,7 +185,7 @@
   },
   {
     "masterCardId": "6157",
-    "externalId": null,
+    "externalId": "ex13-105",
     "tcgdex_id": "ex13-105",
     "localId": "105",
     "setCode": "ex13",
@@ -208,7 +214,7 @@
   },
   {
     "masterCardId": "6154",
-    "externalId": null,
+    "externalId": "ex13-104",
     "tcgdex_id": "ex13-104",
     "localId": "104",
     "setCode": "ex13",
@@ -238,11 +244,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-104-low.png",
-    "imageHighSrc": "cards/ex13-104-high.png"
+    "imageHighSrc": "cards/ex13-104-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Spring Back",
+        "damage": "20+"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6148",
-    "externalId": null,
+    "externalId": "ex13-103",
     "tcgdex_id": "ex13-103",
     "localId": "103",
     "setCode": "ex13",
@@ -272,11 +289,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-103-low.png",
-    "imageHighSrc": "cards/ex13-103-high.png"
+    "imageHighSrc": "cards/ex13-103-high.png",
+    "attacks": [
+      {
+        "name": "Energy Absorption",
+        "damage": null
+      },
+      {
+        "name": "Psychic Star",
+        "damage": "50+"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6144",
-    "externalId": null,
+    "externalId": "ex13-102",
     "tcgdex_id": "ex13-102",
     "localId": "102",
     "setCode": "ex13",
@@ -305,11 +333,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex13-102-low.png",
-    "imageHighSrc": "cards/ex13-102-high.png"
+    "imageHighSrc": "cards/ex13-102-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Growth",
+        "damage": "20"
+      },
+      {
+        "name": "All-out Blast",
+        "damage": "50+"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6139",
-    "externalId": null,
+    "externalId": "ex13-101",
     "tcgdex_id": "ex13-101",
     "localId": "101",
     "setCode": "ex13",
@@ -339,11 +378,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-101-low.png",
-    "imageHighSrc": "cards/ex13-101-high.png"
+    "imageHighSrc": "cards/ex13-101-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Hyper Claws",
+        "damage": "50+"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6132",
-    "externalId": null,
+    "externalId": "ex13-100",
     "tcgdex_id": "ex13-100",
     "localId": "100",
     "setCode": "ex13",
@@ -373,18 +423,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-100-low.png",
-    "imageHighSrc": "cards/ex13-100-high.png"
+    "imageHighSrc": "cards/ex13-100-high.png",
+    "attacks": [
+      {
+        "name": "Super Psy Bolt",
+        "damage": "30"
+      },
+      {
+        "name": "Devo Crush",
+        "damage": "50"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6124",
-    "externalId": null,
+    "externalId": "ex13-99",
     "tcgdex_id": "ex13-99",
     "localId": "99",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "099/110",
+    "cardNumber": "99/110",
     "cardName": "Crawdaunt ex",
-    "fullDisplayName": "Crawdaunt ex 099/110 Holon Phantoms",
+    "fullDisplayName": "Crawdaunt ex 99/110 Holon Phantoms",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -407,18 +468,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-099-low.png",
-    "imageHighSrc": "cards/ex13-099-high.png"
+    "imageHighSrc": "cards/ex13-099-high.png",
+    "attacks": [
+      {
+        "name": "Power Blow",
+        "damage": "20×"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6116",
-    "externalId": null,
+    "externalId": "ex13-98",
     "tcgdex_id": "ex13-98",
     "localId": "98",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "098/110",
+    "cardNumber": "98/110",
     "cardName": "δ Rainbow Energy",
-    "fullDisplayName": "δ Rainbow Energy 098/110 Holon Phantoms",
+    "fullDisplayName": "δ Rainbow Energy 98/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -436,18 +504,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex13-098-low.png",
-    "imageHighSrc": "cards/ex13-098-high.png"
+    "imageHighSrc": "cards/ex13-098-high.png",
+    "rules": "δ Rainbow Energy provides Colorless Energy. While attached to a Pokémon that has δ on its card, δ Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.)"
   },
   {
     "masterCardId": "6109",
-    "externalId": null,
+    "externalId": "ex13-97",
     "tcgdex_id": "ex13-97",
     "localId": "97",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "097/110",
+    "cardNumber": "97/110",
     "cardName": "Dark Metal Energy",
-    "fullDisplayName": "Dark Metal Energy 097/110 Holon Phantoms",
+    "fullDisplayName": "Dark Metal Energy 97/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -465,18 +534,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-097-low.png",
-    "imageHighSrc": "cards/ex13-097-high.png"
+    "imageHighSrc": "cards/ex13-097-high.png",
+    "rules": "Attach Dark Metal Energy to 1 of your Pokémon. While in play, Dark Metal Energy provides Darkness Energy and Metal Energy, but provides only 1 Energy at a time. (Doesn't count as a basic Energy card when not in play and has no effect other than providing Energy.)"
   },
   {
     "masterCardId": "6103",
-    "externalId": null,
+    "externalId": "ex13-96",
     "tcgdex_id": "ex13-96",
     "localId": "96",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "096/110",
+    "cardNumber": "96/110",
     "cardName": "Multi Energy",
-    "fullDisplayName": "Multi Energy 096/110 Holon Phantoms",
+    "fullDisplayName": "Multi Energy 96/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -494,18 +564,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-096-low.png",
-    "imageHighSrc": "cards/ex13-096-high.png"
+    "imageHighSrc": "cards/ex13-096-high.png",
+    "rules": "Attach Multi Energy to 1 of your Pokémon. While in play, Multi Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.) Multi Energy provides Colorless Energy when attached to a Pokémon that already has Special Energy cards attached to it."
   },
   {
     "masterCardId": "6093",
-    "externalId": null,
+    "externalId": "ex13-95",
     "tcgdex_id": "ex13-95",
     "localId": "95",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "095/110",
+    "cardNumber": "95/110",
     "cardName": "Metal Energy",
-    "fullDisplayName": "Metal Energy 095/110 Holon Phantoms",
+    "fullDisplayName": "Metal Energy 95/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -523,18 +594,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-095-low.png",
-    "imageHighSrc": "cards/ex13-095-high.png"
+    "imageHighSrc": "cards/ex13-095-high.png",
+    "rules": "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't Metal. Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "6085",
-    "externalId": null,
+    "externalId": "ex13-94",
     "tcgdex_id": "ex13-94",
     "localId": "94",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "094/110",
+    "cardNumber": "94/110",
     "cardName": "Darkness Energy",
-    "fullDisplayName": "Darkness Energy 094/110 Holon Phantoms",
+    "fullDisplayName": "Darkness Energy 94/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -552,18 +624,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-094-low.png",
-    "imageHighSrc": "cards/ex13-094-high.png"
+    "imageHighSrc": "cards/ex13-094-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect unless the Attacking Pokémon is Darkness or has Dark in its name. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "6077",
-    "externalId": null,
+    "externalId": "ex13-93",
     "tcgdex_id": "ex13-93",
     "localId": "93",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "093/110",
+    "cardNumber": "93/110",
     "cardName": "Root Fossil",
-    "fullDisplayName": "Root Fossil 093/110 Holon Phantoms",
+    "fullDisplayName": "Root Fossil 93/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -581,18 +654,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-093-low.png",
-    "imageHighSrc": "cards/ex13-093-high.png"
+    "imageHighSrc": "cards/ex13-093-high.png",
+    "rules": "Play Root Fossil as if it were a Basic Pokémon. While in play, Root Fossil counts as a Colorless Pokémon (as well as a Trainer card). Root Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Root Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Root Fossil from play."
   },
   {
     "masterCardId": "6068",
-    "externalId": null,
+    "externalId": "ex13-92",
     "tcgdex_id": "ex13-92",
     "localId": "92",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "092/110",
+    "cardNumber": "92/110",
     "cardName": "Mysterious Fossil",
-    "fullDisplayName": "Mysterious Fossil 092/110 Holon Phantoms",
+    "fullDisplayName": "Mysterious Fossil 92/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -610,18 +684,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-092-low.png",
-    "imageHighSrc": "cards/ex13-092-high.png"
+    "imageHighSrc": "cards/ex13-092-high.png",
+    "rules": "Play Mysterious Fossil as if it were a Basic Pokémon. While in play, Mysterious Fossil counts as a Colorless Pokémon (as well as a Trainer card). Mysterious Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Mysterious Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Mysterious Fossil from play."
   },
   {
     "masterCardId": "6060",
-    "externalId": null,
+    "externalId": "ex13-91",
     "tcgdex_id": "ex13-91",
     "localId": "91",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "091/110",
+    "cardNumber": "91/110",
     "cardName": "Claw Fossil",
-    "fullDisplayName": "Claw Fossil 091/110 Holon Phantoms",
+    "fullDisplayName": "Claw Fossil 91/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -639,18 +714,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-091-low.png",
-    "imageHighSrc": "cards/ex13-091-high.png"
+    "imageHighSrc": "cards/ex13-091-high.png",
+    "rules": "Play Claw Fossil as if it were a Basic Pokémon. While in play, Claw Fossil counts as a Colorless Pokémon (as well as a Trainer card). Claw Fossil has no attacks of its own, can't retreat, and can't be affected by any Special Conditions. If Claw Fossil is Knocked Out, it doesn't count as a Knocked Out Pokémon. (Discard it anyway.) At any time during your turn before your attack, you may discard Claw Fossil from play."
   },
   {
     "masterCardId": "6052",
-    "externalId": null,
+    "externalId": "ex13-90",
     "tcgdex_id": "ex13-90",
     "localId": "90",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "090/110",
+    "cardNumber": "90/110",
     "cardName": "Rare Candy",
-    "fullDisplayName": "Rare Candy 090/110 Holon Phantoms",
+    "fullDisplayName": "Rare Candy 90/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -668,18 +744,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-090-low.png",
-    "imageHighSrc": "cards/ex13-090-high.png"
+    "imageHighSrc": "cards/ex13-090-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pokémon in your hand, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.)"
   },
   {
     "masterCardId": "6041",
-    "externalId": null,
+    "externalId": "ex13-89",
     "tcgdex_id": "ex13-89",
     "localId": "89",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "089/110",
+    "cardNumber": "89/110",
     "cardName": "Professor Cozmo's Discovery",
-    "fullDisplayName": "Professor Cozmo's Discovery 089/110 Holon Phantoms",
+    "fullDisplayName": "Professor Cozmo's Discovery 89/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -697,18 +774,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-089-low.png",
-    "imageHighSrc": "cards/ex13-089-high.png"
+    "imageHighSrc": "cards/ex13-089-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nFlip a coin. If heads, draw the bottom 3 cards of your deck. If tails, draw the top 2 cards of your deck."
   },
   {
     "masterCardId": "6032",
-    "externalId": null,
+    "externalId": "ex13-88",
     "tcgdex_id": "ex13-88",
     "localId": "88",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "088/110",
+    "cardNumber": "88/110",
     "cardName": "Mr. Stone's Project",
-    "fullDisplayName": "Mr. Stone's Project 088/110 Holon Phantoms",
+    "fullDisplayName": "Mr. Stone's Project 88/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -726,18 +804,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-088-low.png",
-    "imageHighSrc": "cards/ex13-088-high.png"
+    "imageHighSrc": "cards/ex13-088-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. Or, search your discard pile for up to 2 basic Energy cards, show them to your opponent, and put them into your hand."
   },
   {
     "masterCardId": "6024",
-    "externalId": null,
+    "externalId": "ex13-87",
     "tcgdex_id": "ex13-87",
     "localId": "87",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "087/110",
+    "cardNumber": "87/110",
     "cardName": "Holon Lake",
-    "fullDisplayName": "Holon Lake 087/110 Holon Phantoms",
+    "fullDisplayName": "Holon Lake 87/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -755,18 +834,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-087-low.png",
-    "imageHighSrc": "cards/ex13-087-high.png"
+    "imageHighSrc": "cards/ex13-087-high.png",
+    "attacks": [
+      {
+        "name": "Delta Call",
+        "damage": null
+      }
+    ],
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach player's Pokémon that has δ on its card can use attacks on this card instead of its own."
   },
   {
     "masterCardId": "6015",
-    "externalId": null,
+    "externalId": "ex13-86",
     "tcgdex_id": "ex13-86",
     "localId": "86",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "086/110",
+    "cardNumber": "86/110",
     "cardName": "Holon Fossil",
-    "fullDisplayName": "Holon Fossil 086/110 Holon Phantoms",
+    "fullDisplayName": "Holon Fossil 86/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -784,18 +870,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-086-low.png",
-    "imageHighSrc": "cards/ex13-086-high.png"
+    "imageHighSrc": "cards/ex13-086-high.png",
+    "rules": "Flip a coin. If heads, search your deck for an Omanyte, Kabuto, Aerodactyl, Aerodactyl ex, Lileep, or Anorith and put it onto your Bench. Shuffle your deck afterward. If tails, put an Omanyte, Kabuto, Aerodactyl, Aerodactyl ex, Lileep, or Anorith from your hand onto your Bench. Treat the new Benched Pokémon as a Basic Pokémon."
   },
   {
     "masterCardId": "6006",
-    "externalId": null,
+    "externalId": "ex13-85",
     "tcgdex_id": "ex13-85",
     "localId": "85",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "085/110",
+    "cardNumber": "85/110",
     "cardName": "Holon Adventurer",
-    "fullDisplayName": "Holon Adventurer 085/110 Holon Phantoms",
+    "fullDisplayName": "Holon Adventurer 85/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -813,18 +900,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-085-low.png",
-    "imageHighSrc": "cards/ex13-085-high.png"
+    "imageHighSrc": "cards/ex13-085-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDiscard a card from your hand. If you can't discard a card from your hand, you can't play this card.\n\nDraw 3 cards. If you discarded a Pokémon that has δ on its card, draw 4 cards instead."
   },
   {
     "masterCardId": "5997",
-    "externalId": null,
+    "externalId": "ex13-84",
     "tcgdex_id": "ex13-84",
     "localId": "84",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "084/110",
+    "cardNumber": "84/110",
     "cardName": "Trapinch δ",
-    "fullDisplayName": "Trapinch δ 084/110 Holon Phantoms",
+    "fullDisplayName": "Trapinch δ 84/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -846,18 +934,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-084-low.png",
-    "imageHighSrc": "cards/ex13-084-high.png"
+    "imageHighSrc": "cards/ex13-084-high.png",
+    "attacks": [
+      {
+        "name": "Big Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Mud Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5988",
-    "externalId": null,
+    "externalId": "ex13-83",
     "tcgdex_id": "ex13-83",
     "localId": "83",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "083/110",
+    "cardNumber": "83/110",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 083/110 Holon Phantoms",
+    "fullDisplayName": "Torchic 83/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -879,18 +977,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-083-low.png",
-    "imageHighSrc": "cards/ex13-083-high.png"
+    "imageHighSrc": "cards/ex13-083-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5979",
-    "externalId": null,
+    "externalId": "ex13-82",
     "tcgdex_id": "ex13-82",
     "localId": "82",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "082/110",
+    "cardNumber": "82/110",
     "cardName": "Surskit",
-    "fullDisplayName": "Surskit 082/110 Holon Phantoms",
+    "fullDisplayName": "Surskit 82/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -912,18 +1020,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-082-low.png",
-    "imageHighSrc": "cards/ex13-082-high.png"
+    "imageHighSrc": "cards/ex13-082-high.png",
+    "attacks": [
+      {
+        "name": "Super Hypno Wave",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5970",
-    "externalId": null,
+    "externalId": "ex13-81",
     "tcgdex_id": "ex13-81",
     "localId": "81",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "081/110",
+    "cardNumber": "81/110",
     "cardName": "Psyduck δ",
-    "fullDisplayName": "Psyduck δ 081/110 Holon Phantoms",
+    "fullDisplayName": "Psyduck δ 81/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -945,18 +1059,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-081-low.png",
-    "imageHighSrc": "cards/ex13-081-high.png"
+    "imageHighSrc": "cards/ex13-081-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Disable",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5961",
-    "externalId": null,
+    "externalId": "ex13-80",
     "tcgdex_id": "ex13-80",
     "localId": "80",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "080/110",
+    "cardNumber": "80/110",
     "cardName": "Poochyena",
-    "fullDisplayName": "Poochyena 080/110 Holon Phantoms",
+    "fullDisplayName": "Poochyena 80/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -978,18 +1102,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-080-low.png",
-    "imageHighSrc": "cards/ex13-080-high.png"
+    "imageHighSrc": "cards/ex13-080-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Smash Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5952",
-    "externalId": null,
+    "externalId": "ex13-79",
     "tcgdex_id": "ex13-79",
     "localId": "79",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "079/110",
+    "cardNumber": "79/110",
     "cardName": "Pikachu δ",
-    "fullDisplayName": "Pikachu δ 079/110 Holon Phantoms",
+    "fullDisplayName": "Pikachu δ 79/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1011,18 +1145,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-079-low.png",
-    "imageHighSrc": "cards/ex13-079-high.png"
+    "imageHighSrc": "cards/ex13-079-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "10"
+      },
+      {
+        "name": "Steel Headbutt",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5943",
-    "externalId": null,
+    "externalId": "ex13-78",
     "tcgdex_id": "ex13-78",
     "localId": "78",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "078/110",
+    "cardNumber": "78/110",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 078/110 Holon Phantoms",
+    "fullDisplayName": "Pikachu 78/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1044,18 +1188,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-078-low.png",
-    "imageHighSrc": "cards/ex13-078-high.png"
+    "imageHighSrc": "cards/ex13-078-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5934",
-    "externalId": null,
+    "externalId": "ex13-77",
     "tcgdex_id": "ex13-77",
     "localId": "77",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "077/110",
+    "cardNumber": "77/110",
     "cardName": "Pidgey δ",
-    "fullDisplayName": "Pidgey δ 077/110 Holon Phantoms",
+    "fullDisplayName": "Pidgey δ 77/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1077,18 +1231,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-077-low.png",
-    "imageHighSrc": "cards/ex13-077-high.png"
+    "imageHighSrc": "cards/ex13-077-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5926",
-    "externalId": null,
+    "externalId": "ex13-76",
     "tcgdex_id": "ex13-76",
     "localId": "76",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "076/110",
+    "cardNumber": "76/110",
     "cardName": "Pichu δ",
-    "fullDisplayName": "Pichu δ 076/110 Holon Phantoms",
+    "fullDisplayName": "Pichu δ 76/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1110,18 +1270,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-076-low.png",
-    "imageHighSrc": "cards/ex13-076-high.png"
+    "imageHighSrc": "cards/ex13-076-high.png",
+    "attacks": [
+      {
+        "name": "Paste",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5917",
-    "externalId": null,
+    "externalId": "ex13-75",
     "tcgdex_id": "ex13-75",
     "localId": "75",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "075/110",
+    "cardNumber": "75/110",
     "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 075/110 Holon Phantoms",
+    "fullDisplayName": "Phanpy 75/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1143,18 +1309,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-075-low.png",
-    "imageHighSrc": "cards/ex13-075-high.png"
+    "imageHighSrc": "cards/ex13-075-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      },
+      {
+        "name": "Mud Slap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5907",
-    "externalId": null,
+    "externalId": "ex13-74",
     "tcgdex_id": "ex13-74",
     "localId": "74",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "074/110",
+    "cardNumber": "74/110",
     "cardName": "Omanyte δ",
-    "fullDisplayName": "Omanyte δ 074/110 Holon Phantoms",
+    "fullDisplayName": "Omanyte δ 74/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1176,18 +1352,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-074-low.png",
-    "imageHighSrc": "cards/ex13-074-high.png"
+    "imageHighSrc": "cards/ex13-074-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Water Arrow",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5899",
-    "externalId": null,
+    "externalId": "ex13-73",
     "tcgdex_id": "ex13-73",
     "localId": "73",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "073/110",
+    "cardNumber": "73/110",
     "cardName": "Oddish δ",
-    "fullDisplayName": "Oddish δ 073/110 Holon Phantoms",
+    "fullDisplayName": "Oddish δ 73/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1209,18 +1395,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-073-low.png",
-    "imageHighSrc": "cards/ex13-073-high.png"
+    "imageHighSrc": "cards/ex13-073-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Blot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5890",
-    "externalId": null,
+    "externalId": "ex13-72",
     "tcgdex_id": "ex13-72",
     "localId": "72",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "072/110",
+    "cardNumber": "72/110",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 072/110 Holon Phantoms",
+    "fullDisplayName": "Numel 72/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1242,18 +1438,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-072-low.png",
-    "imageHighSrc": "cards/ex13-072-high.png"
+    "imageHighSrc": "cards/ex13-072-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5881",
-    "externalId": null,
+    "externalId": "ex13-71",
     "tcgdex_id": "ex13-71",
     "localId": "71",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "071/110",
+    "cardNumber": "71/110",
     "cardName": "Meowth δ",
-    "fullDisplayName": "Meowth δ 071/110 Holon Phantoms",
+    "fullDisplayName": "Meowth δ 71/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1276,18 +1482,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-071-low.png",
-    "imageHighSrc": "cards/ex13-071-high.png"
+    "imageHighSrc": "cards/ex13-071-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "10"
+      },
+      {
+        "name": "Pay Day",
+        "damage": "10"
+      }
+    ],
+    "rules": "This Pokémon is both Darkness Metal type."
   },
   {
     "masterCardId": "5872",
-    "externalId": null,
+    "externalId": "ex13-70",
     "tcgdex_id": "ex13-70",
     "localId": "70",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "070/110",
+    "cardNumber": "70/110",
     "cardName": "Mankey δ",
-    "fullDisplayName": "Mankey δ 070/110 Holon Phantoms",
+    "fullDisplayName": "Mankey δ 70/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1309,18 +1526,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-070-low.png",
-    "imageHighSrc": "cards/ex13-070-high.png"
+    "imageHighSrc": "cards/ex13-070-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Low Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5864",
-    "externalId": null,
+    "externalId": "ex13-69",
     "tcgdex_id": "ex13-69",
     "localId": "69",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "069/110",
+    "cardNumber": "69/110",
     "cardName": "Magikarp δ",
-    "fullDisplayName": "Magikarp δ 069/110 Holon Phantoms",
+    "fullDisplayName": "Magikarp δ 69/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1342,18 +1569,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-069-low.png",
-    "imageHighSrc": "cards/ex13-069-high.png"
+    "imageHighSrc": "cards/ex13-069-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5855",
-    "externalId": null,
+    "externalId": "ex13-68",
     "tcgdex_id": "ex13-68",
     "localId": "68",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "068/110",
+    "cardNumber": "68/110",
     "cardName": "Lileep δ",
-    "fullDisplayName": "Lileep δ 068/110 Holon Phantoms",
+    "fullDisplayName": "Lileep δ 68/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1375,18 +1608,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-068-low.png",
-    "imageHighSrc": "cards/ex13-068-high.png"
+    "imageHighSrc": "cards/ex13-068-high.png",
+    "attacks": [
+      {
+        "name": "Poison Tentacles",
+        "damage": null
+      },
+      {
+        "name": "Mud Shot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5845",
-    "externalId": null,
+    "externalId": "ex13-67",
     "tcgdex_id": "ex13-67",
     "localId": "67",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "067/110",
+    "cardNumber": "67/110",
     "cardName": "Kabuto δ",
-    "fullDisplayName": "Kabuto δ 067/110 Holon Phantoms",
+    "fullDisplayName": "Kabuto δ 67/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1408,18 +1651,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-067-low.png",
-    "imageHighSrc": "cards/ex13-067-high.png"
+    "imageHighSrc": "cards/ex13-067-high.png",
+    "attacks": [
+      {
+        "name": "Eerie Light",
+        "damage": null
+      },
+      {
+        "name": "Shell Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5836",
-    "externalId": null,
+    "externalId": "ex13-66",
     "tcgdex_id": "ex13-66",
     "localId": "66",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "066/110",
+    "cardNumber": "66/110",
     "cardName": "Horsea δ",
-    "fullDisplayName": "Horsea δ 066/110 Holon Phantoms",
+    "fullDisplayName": "Horsea δ 66/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1441,18 +1694,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-066-low.png",
-    "imageHighSrc": "cards/ex13-066-high.png"
+    "imageHighSrc": "cards/ex13-066-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Steady Firebreathing",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5827",
-    "externalId": null,
+    "externalId": "ex13-65",
     "tcgdex_id": "ex13-65",
     "localId": "65",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "065/110",
+    "cardNumber": "65/110",
     "cardName": "Exeggcute δ",
-    "fullDisplayName": "Exeggcute δ 065/110 Holon Phantoms",
+    "fullDisplayName": "Exeggcute δ 65/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1474,18 +1737,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-065-low.png",
-    "imageHighSrc": "cards/ex13-065-high.png"
+    "imageHighSrc": "cards/ex13-065-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Pebble Throw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5817",
-    "externalId": null,
+    "externalId": "ex13-64",
     "tcgdex_id": "ex13-64",
     "localId": "64",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "064/110",
+    "cardNumber": "64/110",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 064/110 Holon Phantoms",
+    "fullDisplayName": "Electrike 64/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1507,18 +1780,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-064-low.png",
-    "imageHighSrc": "cards/ex13-064-high.png"
+    "imageHighSrc": "cards/ex13-064-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5808",
-    "externalId": null,
+    "externalId": "ex13-63",
     "tcgdex_id": "ex13-63",
     "localId": "63",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "063/110",
+    "cardNumber": "63/110",
     "cardName": "Corphish",
-    "fullDisplayName": "Corphish 063/110 Holon Phantoms",
+    "fullDisplayName": "Corphish 63/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1540,18 +1819,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-063-low.png",
-    "imageHighSrc": "cards/ex13-063-high.png"
+    "imageHighSrc": "cards/ex13-063-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Crabhammer",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5799",
-    "externalId": null,
+    "externalId": "ex13-62",
     "tcgdex_id": "ex13-62",
     "localId": "62",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "062/110",
+    "cardNumber": "62/110",
     "cardName": "Corphish",
-    "fullDisplayName": "Corphish 062/110 Holon Phantoms",
+    "fullDisplayName": "Corphish 62/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1573,18 +1862,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-062-low.png",
-    "imageHighSrc": "cards/ex13-062-high.png"
+    "imageHighSrc": "cards/ex13-062-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Guillotine",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5791",
-    "externalId": null,
+    "externalId": "ex13-61",
     "tcgdex_id": "ex13-61",
     "localId": "61",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "061/110",
+    "cardNumber": "61/110",
     "cardName": "Carvanha δ",
-    "fullDisplayName": "Carvanha δ 061/110 Holon Phantoms",
+    "fullDisplayName": "Carvanha δ 61/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1606,18 +1905,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-061-low.png",
-    "imageHighSrc": "cards/ex13-061-high.png"
+    "imageHighSrc": "cards/ex13-061-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5781",
-    "externalId": null,
+    "externalId": "ex13-60",
     "tcgdex_id": "ex13-60",
     "localId": "60",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "060/110",
+    "cardNumber": "60/110",
     "cardName": "Barboach",
-    "fullDisplayName": "Barboach 060/110 Holon Phantoms",
+    "fullDisplayName": "Barboach 60/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1639,18 +1948,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-060-low.png",
-    "imageHighSrc": "cards/ex13-060-high.png"
+    "imageHighSrc": "cards/ex13-060-high.png",
+    "attacks": [
+      {
+        "name": "Waterfall",
+        "damage": "10"
+      },
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5773",
-    "externalId": null,
+    "externalId": "ex13-59",
     "tcgdex_id": "ex13-59",
     "localId": "59",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "059/110",
+    "cardNumber": "59/110",
     "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 059/110 Holon Phantoms",
+    "fullDisplayName": "Baltoy 59/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1672,18 +1991,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-059-low.png",
-    "imageHighSrc": "cards/ex13-059-high.png"
+    "imageHighSrc": "cards/ex13-059-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Doubleslap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "5764",
-    "externalId": null,
+    "externalId": "ex13-58",
     "tcgdex_id": "ex13-58",
     "localId": "58",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "058/110",
+    "cardNumber": "58/110",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 058/110 Holon Phantoms",
+    "fullDisplayName": "Aron 58/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1705,18 +2034,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-058-low.png",
-    "imageHighSrc": "cards/ex13-058-high.png"
+    "imageHighSrc": "cards/ex13-058-high.png",
+    "attacks": [
+      {
+        "name": "Mud Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5755",
-    "externalId": null,
+    "externalId": "ex13-57",
     "tcgdex_id": "ex13-57",
     "localId": "57",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "057/110",
+    "cardNumber": "57/110",
     "cardName": "Anorith δ",
-    "fullDisplayName": "Anorith δ 057/110 Holon Phantoms",
+    "fullDisplayName": "Anorith δ 57/110 Holon Phantoms",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1738,18 +2077,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-057-low.png",
-    "imageHighSrc": "cards/ex13-057-high.png"
+    "imageHighSrc": "cards/ex13-057-high.png",
+    "attacks": [
+      {
+        "name": "Metal Claw",
+        "damage": "20"
+      },
+      {
+        "name": "Rising Lunge",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5746",
-    "externalId": null,
+    "externalId": "ex13-56",
     "tcgdex_id": "ex13-56",
     "localId": "56",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "056/110",
+    "cardNumber": "56/110",
     "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet 056/110 Holon Phantoms",
+    "fullDisplayName": "Wobbuffet 56/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1771,18 +2120,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-056-low.png",
-    "imageHighSrc": "cards/ex13-056-high.png"
+    "imageHighSrc": "cards/ex13-056-high.png",
+    "attacks": [
+      {
+        "name": "Call for Friends",
+        "damage": null
+      },
+      {
+        "name": "Retaliate",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5737",
-    "externalId": null,
+    "externalId": "ex13-55",
     "tcgdex_id": "ex13-55",
     "localId": "55",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "055/110",
+    "cardNumber": "55/110",
     "cardName": "Whiscash",
-    "fullDisplayName": "Whiscash 055/110 Holon Phantoms",
+    "fullDisplayName": "Whiscash 55/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1804,18 +2163,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-055-low.png",
-    "imageHighSrc": "cards/ex13-055-high.png"
+    "imageHighSrc": "cards/ex13-055-high.png",
+    "attacks": [
+      {
+        "name": "Pebble Hurl",
+        "damage": "20"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5728",
-    "externalId": null,
+    "externalId": "ex13-54",
     "tcgdex_id": "ex13-54",
     "localId": "54",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "054/110",
+    "cardNumber": "54/110",
     "cardName": "Vibrava δ",
-    "fullDisplayName": "Vibrava δ 054/110 Holon Phantoms",
+    "fullDisplayName": "Vibrava δ 54/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1837,18 +2206,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-054-low.png",
-    "imageHighSrc": "cards/ex13-054-high.png"
+    "imageHighSrc": "cards/ex13-054-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "20+"
+      },
+      {
+        "name": "Cutting Wind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5719",
-    "externalId": null,
+    "externalId": "ex13-53",
     "tcgdex_id": "ex13-53",
     "localId": "53",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "053/110",
+    "cardNumber": "53/110",
     "cardName": "Sharpedo δ",
-    "fullDisplayName": "Sharpedo δ 053/110 Holon Phantoms",
+    "fullDisplayName": "Sharpedo δ 53/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1870,18 +2249,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-053-low.png",
-    "imageHighSrc": "cards/ex13-053-high.png"
+    "imageHighSrc": "cards/ex13-053-high.png",
+    "attacks": [
+      {
+        "name": "Brush Aside",
+        "damage": "30"
+      },
+      {
+        "name": "Swift Turn",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5710",
-    "externalId": null,
+    "externalId": "ex13-52",
     "tcgdex_id": "ex13-52",
     "localId": "52",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "052/110",
+    "cardNumber": "52/110",
     "cardName": "Seadra δ",
-    "fullDisplayName": "Seadra δ 052/110 Holon Phantoms",
+    "fullDisplayName": "Seadra δ 52/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1903,18 +2292,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-052-low.png",
-    "imageHighSrc": "cards/ex13-052-high.png"
+    "imageHighSrc": "cards/ex13-052-high.png",
+    "attacks": [
+      {
+        "name": "Searing Flame",
+        "damage": "10"
+      },
+      {
+        "name": "Combustion",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5701",
-    "externalId": null,
+    "externalId": "ex13-51",
     "tcgdex_id": "ex13-51",
     "localId": "51",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "051/110",
+    "cardNumber": "51/110",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 051/110 Holon Phantoms",
+    "fullDisplayName": "Raichu 51/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1936,18 +2335,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-051-low.png",
-    "imageHighSrc": "cards/ex13-051-high.png"
+    "imageHighSrc": "cards/ex13-051-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      },
+      {
+        "name": "Pika Bolt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5692",
-    "externalId": null,
+    "externalId": "ex13-50",
     "tcgdex_id": "ex13-50",
     "localId": "50",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "050/110",
+    "cardNumber": "50/110",
     "cardName": "Primeape δ",
-    "fullDisplayName": "Primeape δ 050/110 Holon Phantoms",
+    "fullDisplayName": "Primeape δ 50/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1969,18 +2378,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-050-low.png",
-    "imageHighSrc": "cards/ex13-050-high.png"
+    "imageHighSrc": "cards/ex13-050-high.png",
+    "attacks": [
+      {
+        "name": "Wreck",
+        "damage": "30+"
+      },
+      {
+        "name": "Flames of Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5683",
-    "externalId": null,
+    "externalId": "ex13-49",
     "tcgdex_id": "ex13-49",
     "localId": "49",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "049/110",
+    "cardNumber": "49/110",
     "cardName": "Pidgeotto δ",
-    "fullDisplayName": "Pidgeotto δ 049/110 Holon Phantoms",
+    "fullDisplayName": "Pidgeotto δ 49/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2002,18 +2421,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-049-low.png",
-    "imageHighSrc": "cards/ex13-049-high.png"
+    "imageHighSrc": "cards/ex13-049-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5674",
-    "externalId": null,
+    "externalId": "ex13-48",
     "tcgdex_id": "ex13-48",
     "localId": "48",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "048/110",
+    "cardNumber": "48/110",
     "cardName": "Persian δ",
-    "fullDisplayName": "Persian δ 048/110 Holon Phantoms",
+    "fullDisplayName": "Persian δ 48/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2036,18 +2461,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-048-low.png",
-    "imageHighSrc": "cards/ex13-048-high.png"
+    "imageHighSrc": "cards/ex13-048-high.png",
+    "attacks": [
+      {
+        "name": "Scratch and Draw",
+        "damage": "30"
+      },
+      {
+        "name": "Deceive",
+        "damage": null
+      }
+    ],
+    "rules": "This Pokémon is both Darkness Metal type."
   },
   {
     "masterCardId": "5665",
-    "externalId": null,
+    "externalId": "ex13-47",
     "tcgdex_id": "ex13-47",
     "localId": "47",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "047/110",
+    "cardNumber": "47/110",
     "cardName": "Masquerain",
-    "fullDisplayName": "Masquerain 047/110 Holon Phantoms",
+    "fullDisplayName": "Masquerain 47/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2069,18 +2505,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-047-low.png",
-    "imageHighSrc": "cards/ex13-047-high.png"
+    "imageHighSrc": "cards/ex13-047-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Scent",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5656",
-    "externalId": null,
+    "externalId": "ex13-46",
     "tcgdex_id": "ex13-46",
     "localId": "46",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "046/110",
+    "cardNumber": "46/110",
     "cardName": "Manectric",
-    "fullDisplayName": "Manectric 046/110 Holon Phantoms",
+    "fullDisplayName": "Manectric 46/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2102,18 +2548,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-046-low.png",
-    "imageHighSrc": "cards/ex13-046-high.png"
+    "imageHighSrc": "cards/ex13-046-high.png",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "20"
+      },
+      {
+        "name": "Quick Blow",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5647",
-    "externalId": null,
+    "externalId": "ex13-45",
     "tcgdex_id": "ex13-45",
     "localId": "45",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "045/110",
+    "cardNumber": "45/110",
     "cardName": "Lairon",
-    "fullDisplayName": "Lairon 045/110 Holon Phantoms",
+    "fullDisplayName": "Lairon 45/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2135,18 +2591,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-045-low.png",
-    "imageHighSrc": "cards/ex13-045-high.png"
+    "imageHighSrc": "cards/ex13-045-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Iron Head",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "5638",
-    "externalId": null,
+    "externalId": "ex13-44",
     "tcgdex_id": "ex13-44",
     "localId": "44",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "044/110",
+    "cardNumber": "44/110",
     "cardName": "Holon's Castform",
-    "fullDisplayName": "Holon's Castform 044/110 Holon Phantoms",
+    "fullDisplayName": "Holon's Castform 44/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2168,18 +2634,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-044-low.png",
-    "imageHighSrc": "cards/ex13-044-high.png"
+    "imageHighSrc": "cards/ex13-044-high.png",
+    "attacks": [
+      {
+        "name": "Delta Draw",
+        "damage": null
+      }
+    ],
+    "rules": "You may attach this as an Energy card from your hand to 1 of your Pokémon that already has an Energy card attached to it. When you attach this card, return an Energy card attached to that Pokémon to your hand. While attached, this card is a Special Energy card and provides every type of Energy but 2 Energy at a time. (Has no effect other than providing Energy.)"
   },
   {
     "masterCardId": "5630",
-    "externalId": null,
+    "externalId": "ex13-43",
     "tcgdex_id": "ex13-43",
     "localId": "43",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "043/110",
+    "cardNumber": "43/110",
     "cardName": "Golduck δ",
-    "fullDisplayName": "Golduck δ 043/110 Holon Phantoms",
+    "fullDisplayName": "Golduck δ 43/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2201,18 +2674,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-043-low.png",
-    "imageHighSrc": "cards/ex13-043-high.png"
+    "imageHighSrc": "cards/ex13-043-high.png",
+    "attacks": [
+      {
+        "name": "Mind Play",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5621",
-    "externalId": null,
+    "externalId": "ex13-42",
     "tcgdex_id": "ex13-42",
     "localId": "42",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "042/110",
+    "cardNumber": "42/110",
     "cardName": "Gloom δ",
-    "fullDisplayName": "Gloom δ 042/110 Holon Phantoms",
+    "fullDisplayName": "Gloom δ 42/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2234,18 +2713,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-042-low.png",
-    "imageHighSrc": "cards/ex13-042-high.png"
+    "imageHighSrc": "cards/ex13-042-high.png",
+    "attacks": [
+      {
+        "name": "Drool",
+        "damage": "20"
+      },
+      {
+        "name": "Acid",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5613",
-    "externalId": null,
+    "externalId": "ex13-41",
     "tcgdex_id": "ex13-41",
     "localId": "41",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "041/110",
+    "cardNumber": "41/110",
     "cardName": "Exeggutor δ",
-    "fullDisplayName": "Exeggutor δ 041/110 Holon Phantoms",
+    "fullDisplayName": "Exeggutor δ 41/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2267,18 +2756,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-041-low.png",
-    "imageHighSrc": "cards/ex13-041-high.png"
+    "imageHighSrc": "cards/ex13-041-high.png",
+    "attacks": [
+      {
+        "name": "Delta Circle",
+        "damage": "10+"
+      },
+      {
+        "name": "Split Bomb",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5603",
-    "externalId": null,
+    "externalId": "ex13-40",
     "tcgdex_id": "ex13-40",
     "localId": "40",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "040/110",
+    "cardNumber": "40/110",
     "cardName": "Donphan",
-    "fullDisplayName": "Donphan 040/110 Holon Phantoms",
+    "fullDisplayName": "Donphan 40/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2300,18 +2799,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-040-low.png",
-    "imageHighSrc": "cards/ex13-040-high.png"
+    "imageHighSrc": "cards/ex13-040-high.png",
+    "attacks": [
+      {
+        "name": "Rock Hurl",
+        "damage": "20"
+      },
+      {
+        "name": "Double Spin",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "5595",
-    "externalId": null,
+    "externalId": "ex13-39",
     "tcgdex_id": "ex13-39",
     "localId": "39",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "039/110",
+    "cardNumber": "39/110",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 039/110 Holon Phantoms",
+    "fullDisplayName": "Combusken 39/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2333,18 +2842,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-039-low.png",
-    "imageHighSrc": "cards/ex13-039-high.png"
+    "imageHighSrc": "cards/ex13-039-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      },
+      {
+        "name": "Super Singe",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5587",
-    "externalId": null,
+    "externalId": "ex13-38",
     "tcgdex_id": "ex13-38",
     "localId": "38",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "038/110",
+    "cardNumber": "38/110",
     "cardName": "Claydol",
-    "fullDisplayName": "Claydol 038/110 Holon Phantoms",
+    "fullDisplayName": "Claydol 38/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2366,18 +2885,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-038-low.png",
-    "imageHighSrc": "cards/ex13-038-high.png"
+    "imageHighSrc": "cards/ex13-038-high.png",
+    "attacks": [
+      {
+        "name": "Wide Laser",
+        "damage": null
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5578",
-    "externalId": null,
+    "externalId": "ex13-37",
     "tcgdex_id": "ex13-37",
     "localId": "37",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "037/110",
+    "cardNumber": "37/110",
     "cardName": "Chimecho δ",
-    "fullDisplayName": "Chimecho δ 037/110 Holon Phantoms",
+    "fullDisplayName": "Chimecho δ 37/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2399,18 +2928,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-037-low.png",
-    "imageHighSrc": "cards/ex13-037-high.png"
+    "imageHighSrc": "cards/ex13-037-high.png",
+    "attacks": [
+      {
+        "name": "Hook",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5569",
-    "externalId": null,
+    "externalId": "ex13-36",
     "tcgdex_id": "ex13-36",
     "localId": "36",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "036/110",
+    "cardNumber": "36/110",
     "cardName": "Camerupt",
-    "fullDisplayName": "Camerupt 036/110 Holon Phantoms",
+    "fullDisplayName": "Camerupt 36/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2432,18 +2967,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-036-low.png",
-    "imageHighSrc": "cards/ex13-036-high.png"
+    "imageHighSrc": "cards/ex13-036-high.png",
+    "attacks": [
+      {
+        "name": "Magnitude",
+        "damage": "20"
+      },
+      {
+        "name": "Take Down",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5560",
-    "externalId": null,
+    "externalId": "ex13-35",
     "tcgdex_id": "ex13-35",
     "localId": "35",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "035/110",
+    "cardNumber": "35/110",
     "cardName": "Aerodactyl δ",
-    "fullDisplayName": "Aerodactyl δ 035/110 Holon Phantoms",
+    "fullDisplayName": "Aerodactyl δ 35/110 Holon Phantoms",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2465,18 +3010,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-035-low.png",
-    "imageHighSrc": "cards/ex13-035-high.png"
+    "imageHighSrc": "cards/ex13-035-high.png",
+    "attacks": [
+      {
+        "name": "Granite Head",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5550",
-    "externalId": null,
+    "externalId": "ex13-34",
     "tcgdex_id": "ex13-34",
     "localId": "34",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "034/110",
+    "cardNumber": "34/110",
     "cardName": "Zangoose",
-    "fullDisplayName": "Zangoose 034/110 Holon Phantoms",
+    "fullDisplayName": "Zangoose 34/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2498,18 +3049,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-034-low.png",
-    "imageHighSrc": "cards/ex13-034-high.png"
+    "imageHighSrc": "cards/ex13-034-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Fury Cutter",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5541",
-    "externalId": null,
+    "externalId": "ex13-33",
     "tcgdex_id": "ex13-33",
     "localId": "33",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "033/110",
+    "cardNumber": "33/110",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 033/110 Holon Phantoms",
+    "fullDisplayName": "Torkoal 33/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2531,18 +3092,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-033-low.png",
-    "imageHighSrc": "cards/ex13-033-high.png"
+    "imageHighSrc": "cards/ex13-033-high.png",
+    "attacks": [
+      {
+        "name": "Grind",
+        "damage": "10×"
+      },
+      {
+        "name": "Combustion",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5533",
-    "externalId": null,
+    "externalId": "ex13-32",
     "tcgdex_id": "ex13-32",
     "localId": "32",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "032/110",
+    "cardNumber": "32/110",
     "cardName": "Seviper",
-    "fullDisplayName": "Seviper 032/110 Holon Phantoms",
+    "fullDisplayName": "Seviper 32/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2564,18 +3135,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-032-low.png",
-    "imageHighSrc": "cards/ex13-032-high.png"
+    "imageHighSrc": "cards/ex13-032-high.png",
+    "attacks": [
+      {
+        "name": "Poison Fang",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5524",
-    "externalId": null,
+    "externalId": "ex13-31",
     "tcgdex_id": "ex13-31",
     "localId": "31",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "031/110",
+    "cardNumber": "31/110",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 031/110 Holon Phantoms",
+    "fullDisplayName": "Sableye 31/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2597,18 +3178,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-031-low.png",
-    "imageHighSrc": "cards/ex13-031-high.png"
+    "imageHighSrc": "cards/ex13-031-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Knock Off",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5515",
-    "externalId": null,
+    "externalId": "ex13-30",
     "tcgdex_id": "ex13-30",
     "localId": "30",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "030/110",
+    "cardNumber": "30/110",
     "cardName": "Relicanth",
-    "fullDisplayName": "Relicanth 030/110 Holon Phantoms",
+    "fullDisplayName": "Relicanth 30/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2630,18 +3221,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-030-low.png",
-    "imageHighSrc": "cards/ex13-030-high.png"
+    "imageHighSrc": "cards/ex13-030-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5505",
-    "externalId": null,
+    "externalId": "ex13-29",
     "tcgdex_id": "ex13-29",
     "localId": "29",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "029/110",
+    "cardNumber": "29/110",
     "cardName": "Registeel",
-    "fullDisplayName": "Registeel 029/110 Holon Phantoms",
+    "fullDisplayName": "Registeel 29/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2663,18 +3260,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-029-low.png",
-    "imageHighSrc": "cards/ex13-029-high.png"
+    "imageHighSrc": "cards/ex13-029-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5497",
-    "externalId": null,
+    "externalId": "ex13-28",
     "tcgdex_id": "ex13-28",
     "localId": "28",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "028/110",
+    "cardNumber": "28/110",
     "cardName": "Regirock",
-    "fullDisplayName": "Regirock 028/110 Holon Phantoms",
+    "fullDisplayName": "Regirock 28/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2696,18 +3299,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-028-low.png",
-    "imageHighSrc": "cards/ex13-028-high.png"
+    "imageHighSrc": "cards/ex13-028-high.png",
+    "attacks": [
+      {
+        "name": "Rock Slide",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5488",
-    "externalId": null,
+    "externalId": "ex13-27",
     "tcgdex_id": "ex13-27",
     "localId": "27",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "027/110",
+    "cardNumber": "27/110",
     "cardName": "Regice",
-    "fullDisplayName": "Regice 027/110 Holon Phantoms",
+    "fullDisplayName": "Regice 27/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2729,18 +3338,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-027-low.png",
-    "imageHighSrc": "cards/ex13-027-high.png"
+    "imageHighSrc": "cards/ex13-027-high.png",
+    "attacks": [
+      {
+        "name": "Icy Wind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5478",
-    "externalId": null,
+    "externalId": "ex13-26",
     "tcgdex_id": "ex13-26",
     "localId": "26",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "026/110",
+    "cardNumber": "26/110",
     "cardName": "Rayquaza δ",
-    "fullDisplayName": "Rayquaza δ 026/110 Holon Phantoms",
+    "fullDisplayName": "Rayquaza δ 26/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2762,18 +3377,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-026-low.png",
-    "imageHighSrc": "cards/ex13-026-high.png"
+    "imageHighSrc": "cards/ex13-026-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "10+"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5470",
-    "externalId": null,
+    "externalId": "ex13-25",
     "tcgdex_id": "ex13-25",
     "localId": "25",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "025/110",
+    "cardNumber": "25/110",
     "cardName": "Nosepass",
-    "fullDisplayName": "Nosepass 025/110 Holon Phantoms",
+    "fullDisplayName": "Nosepass 25/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2795,18 +3420,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-025-low.png",
-    "imageHighSrc": "cards/ex13-025-high.png"
+    "imageHighSrc": "cards/ex13-025-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": "10"
+      },
+      {
+        "name": "Rock Slide",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5460",
-    "externalId": null,
+    "externalId": "ex13-24",
     "tcgdex_id": "ex13-24",
     "localId": "24",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "024/110",
+    "cardNumber": "24/110",
     "cardName": "Mewtwo δ",
-    "fullDisplayName": "Mewtwo δ 024/110 Holon Phantoms",
+    "fullDisplayName": "Mewtwo δ 24/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2828,18 +3463,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-024-low.png",
-    "imageHighSrc": "cards/ex13-024-high.png"
+    "imageHighSrc": "cards/ex13-024-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Erase",
+        "damage": null
+      },
+      {
+        "name": "Swift",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5451",
-    "externalId": null,
+    "externalId": "ex13-23",
     "tcgdex_id": "ex13-23",
     "localId": "23",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "023/110",
+    "cardNumber": "23/110",
     "cardName": "Mawile",
-    "fullDisplayName": "Mawile 023/110 Holon Phantoms",
+    "fullDisplayName": "Mawile 23/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2861,18 +3506,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-023-low.png",
-    "imageHighSrc": "cards/ex13-023-high.png"
+    "imageHighSrc": "cards/ex13-023-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      },
+      {
+        "name": "Surprise",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5443",
-    "externalId": null,
+    "externalId": "ex13-22",
     "tcgdex_id": "ex13-22",
     "localId": "22",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "022/110",
+    "cardNumber": "22/110",
     "cardName": "Latios δ",
-    "fullDisplayName": "Latios δ 022/110 Holon Phantoms",
+    "fullDisplayName": "Latios δ 22/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2894,18 +3549,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-022-low.png",
-    "imageHighSrc": "cards/ex13-022-high.png"
+    "imageHighSrc": "cards/ex13-022-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Wave",
+        "damage": "10+"
+      },
+      {
+        "name": "Dragonbreath",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5435",
-    "externalId": null,
+    "externalId": "ex13-21",
     "tcgdex_id": "ex13-21",
     "localId": "21",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "021/110",
+    "cardNumber": "21/110",
     "cardName": "Latias δ",
-    "fullDisplayName": "Latias δ 021/110 Holon Phantoms",
+    "fullDisplayName": "Latias δ 21/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2927,18 +3592,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-021-low.png",
-    "imageHighSrc": "cards/ex13-021-high.png"
+    "imageHighSrc": "cards/ex13-021-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "20"
+      },
+      {
+        "name": "Super Singe",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5426",
-    "externalId": null,
+    "externalId": "ex13-20",
     "tcgdex_id": "ex13-20",
     "localId": "20",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "020/110",
+    "cardNumber": "20/110",
     "cardName": "Blaziken",
-    "fullDisplayName": "Blaziken 020/110 Holon Phantoms",
+    "fullDisplayName": "Blaziken 20/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2960,18 +3635,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-020-low.png",
-    "imageHighSrc": "cards/ex13-020-high.png"
+    "imageHighSrc": "cards/ex13-020-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "30"
+      },
+      {
+        "name": "Blaze Kick",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5417",
-    "externalId": null,
+    "externalId": "ex13-19",
     "tcgdex_id": "ex13-19",
     "localId": "19",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "019/110",
+    "cardNumber": "19/110",
     "cardName": "Bellossom δ",
-    "fullDisplayName": "Bellossom δ 019/110 Holon Phantoms",
+    "fullDisplayName": "Bellossom δ 19/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2993,18 +3678,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-019-low.png",
-    "imageHighSrc": "cards/ex13-019-high.png"
+    "imageHighSrc": "cards/ex13-019-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Flower",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5407",
-    "externalId": null,
+    "externalId": "ex13-18",
     "tcgdex_id": "ex13-18",
     "localId": "18",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "018/110",
+    "cardNumber": "18/110",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 018/110 Holon Phantoms",
+    "fullDisplayName": "Absol 18/110 Holon Phantoms",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3026,18 +3717,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-018-low.png",
-    "imageHighSrc": "cards/ex13-018-high.png"
+    "imageHighSrc": "cards/ex13-018-high.png",
+    "attacks": [
+      {
+        "name": "Foresight",
+        "damage": null
+      },
+      {
+        "name": "Overrun",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5399",
-    "externalId": null,
+    "externalId": "ex13-17",
     "tcgdex_id": "ex13-17",
     "localId": "17",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "017/110",
+    "cardNumber": "17/110",
     "cardName": "Vileplume δ",
-    "fullDisplayName": "Vileplume δ 017/110 Holon Phantoms",
+    "fullDisplayName": "Vileplume δ 17/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3060,18 +3761,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-017-low.png",
-    "imageHighSrc": "cards/ex13-017-high.png"
+    "imageHighSrc": "cards/ex13-017-high.png",
+    "attacks": [
+      {
+        "name": "Poltergeist",
+        "damage": "30+"
+      }
+    ],
+    "rules": "This Pokémon is both Psychic Metal type."
   },
   {
     "masterCardId": "5389",
-    "externalId": null,
+    "externalId": "ex13-16",
     "tcgdex_id": "ex13-16",
     "localId": "16",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "016/110",
+    "cardNumber": "16/110",
     "cardName": "Rayquaza δ",
-    "fullDisplayName": "Rayquaza δ 016/110 Holon Phantoms",
+    "fullDisplayName": "Rayquaza δ 16/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3094,18 +3802,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-016-low.png",
-    "imageHighSrc": "cards/ex13-016-high.png"
+    "imageHighSrc": "cards/ex13-016-high.png",
+    "attacks": [
+      {
+        "name": "Delta Search",
+        "damage": null
+      },
+      {
+        "name": "Ozone Flare",
+        "damage": "60"
+      }
+    ],
+    "rules": "This Pokémon is both Water Metal type."
   },
   {
     "masterCardId": "5381",
-    "externalId": null,
+    "externalId": "ex13-15",
     "tcgdex_id": "ex13-15",
     "localId": "15",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "015/110",
+    "cardNumber": "15/110",
     "cardName": "Raichu δ",
-    "fullDisplayName": "Raichu δ 015/110 Holon Phantoms",
+    "fullDisplayName": "Raichu δ 15/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3127,18 +3846,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-015-low.png",
-    "imageHighSrc": "cards/ex13-015-high.png"
+    "imageHighSrc": "cards/ex13-015-high.png",
+    "attacks": [
+      {
+        "name": "Zzzap",
+        "damage": null
+      },
+      {
+        "name": "Metallic Thunder",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5372",
-    "externalId": null,
+    "externalId": "ex13-14",
     "tcgdex_id": "ex13-14",
     "localId": "14",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "014/110",
+    "cardNumber": "14/110",
     "cardName": "Pidgeot δ",
-    "fullDisplayName": "Pidgeot δ 014/110 Holon Phantoms",
+    "fullDisplayName": "Pidgeot δ 14/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3161,18 +3890,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-014-low.png",
-    "imageHighSrc": "cards/ex13-014-high.png"
+    "imageHighSrc": "cards/ex13-014-high.png",
+    "attacks": [
+      {
+        "name": "Rotating Claws",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Lightning Metal type."
   },
   {
     "masterCardId": "5363",
-    "externalId": null,
+    "externalId": "ex13-13",
     "tcgdex_id": "ex13-13",
     "localId": "13",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "013/110",
+    "cardNumber": "13/110",
     "cardName": "Omastar δ",
-    "fullDisplayName": "Omastar δ 013/110 Holon Phantoms",
+    "fullDisplayName": "Omastar δ 13/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3194,18 +3930,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-013-low.png",
-    "imageHighSrc": "cards/ex13-013-high.png"
+    "imageHighSrc": "cards/ex13-013-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "30"
+      },
+      {
+        "name": "Vengeful Spikes",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5354",
-    "externalId": null,
+    "externalId": "ex13-12",
     "tcgdex_id": "ex13-12",
     "localId": "12",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "012/110",
+    "cardNumber": "12/110",
     "cardName": "Latios δ",
-    "fullDisplayName": "Latios δ 012/110 Holon Phantoms",
+    "fullDisplayName": "Latios δ 12/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3227,18 +3973,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-012-low.png",
-    "imageHighSrc": "cards/ex13-012-high.png"
+    "imageHighSrc": "cards/ex13-012-high.png",
+    "attacks": [
+      {
+        "name": "Dive",
+        "damage": "10"
+      },
+      {
+        "name": "Aqua Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5345",
-    "externalId": null,
+    "externalId": "ex13-11",
     "tcgdex_id": "ex13-11",
     "localId": "11",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "011/110",
+    "cardNumber": "11/110",
     "cardName": "Latias δ",
-    "fullDisplayName": "Latias δ 011/110 Holon Phantoms",
+    "fullDisplayName": "Latias δ 11/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3260,18 +4016,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-011-low.png",
-    "imageHighSrc": "cards/ex13-011-high.png"
+    "imageHighSrc": "cards/ex13-011-high.png",
+    "attacks": [
+      {
+        "name": "Spearhead",
+        "damage": null
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5336",
-    "externalId": null,
+    "externalId": "ex13-10",
     "tcgdex_id": "ex13-10",
     "localId": "10",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "010/110",
+    "cardNumber": "10/110",
     "cardName": "Kingdra δ",
-    "fullDisplayName": "Kingdra δ 010/110 Holon Phantoms",
+    "fullDisplayName": "Kingdra δ 10/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3294,18 +4060,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-010-low.png",
-    "imageHighSrc": "cards/ex13-010-high.png"
+    "imageHighSrc": "cards/ex13-010-high.png",
+    "attacks": [
+      {
+        "name": "Extra Flame",
+        "damage": "30+"
+      },
+      {
+        "name": "Heat Blast",
+        "damage": "80"
+      }
+    ],
+    "rules": "This Pokémon is both Fire Metal type."
   },
   {
     "masterCardId": "5322",
-    "externalId": null,
+    "externalId": "ex13-9",
     "tcgdex_id": "ex13-9",
     "localId": "9",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "009/110",
+    "cardNumber": "9/110",
     "cardName": "Kabutops δ",
-    "fullDisplayName": "Kabutops δ 009/110 Holon Phantoms",
+    "fullDisplayName": "Kabutops δ 9/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3327,18 +4104,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-009-low.png",
-    "imageHighSrc": "cards/ex13-009-high.png"
+    "imageHighSrc": "cards/ex13-009-high.png",
+    "attacks": [
+      {
+        "name": "Vital Drain",
+        "damage": "30"
+      },
+      {
+        "name": "Thunderous Blow",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5313",
-    "externalId": null,
+    "externalId": "ex13-8",
     "tcgdex_id": "ex13-8",
     "localId": "8",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "008/110",
+    "cardNumber": "8/110",
     "cardName": "Gyarados δ",
-    "fullDisplayName": "Gyarados δ 008/110 Holon Phantoms",
+    "fullDisplayName": "Gyarados δ 8/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3361,18 +4148,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-008-low.png",
-    "imageHighSrc": "cards/ex13-008-high.png"
+    "imageHighSrc": "cards/ex13-008-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "20"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "80"
+      }
+    ],
+    "rules": "This Pokémon is both Lightning Metal type."
   },
   {
     "masterCardId": "5304",
-    "externalId": null,
+    "externalId": "ex13-7",
     "tcgdex_id": "ex13-7",
     "localId": "7",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "007/110",
+    "cardNumber": "7/110",
     "cardName": "Flygon δ",
-    "fullDisplayName": "Flygon δ 007/110 Holon Phantoms",
+    "fullDisplayName": "Flygon δ 7/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3395,18 +4193,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-007-low.png",
-    "imageHighSrc": "cards/ex13-007-high.png"
+    "imageHighSrc": "cards/ex13-007-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "60"
+      }
+    ],
+    "rules": "This Pokémon is both Grass Metal type."
   },
   {
     "masterCardId": "5297",
-    "externalId": null,
+    "externalId": "ex13-6",
     "tcgdex_id": "ex13-6",
     "localId": "6",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "006/110",
+    "cardNumber": "6/110",
     "cardName": "Deoxys δ",
-    "fullDisplayName": "Deoxys δ 006/110 Holon Phantoms",
+    "fullDisplayName": "Deoxys δ 6/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3428,18 +4233,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-006-low.png",
-    "imageHighSrc": "cards/ex13-006-high.png"
+    "imageHighSrc": "cards/ex13-006-high.png",
+    "attacks": [
+      {
+        "name": "Teleportation Burst",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5288",
-    "externalId": null,
+    "externalId": "ex13-5",
     "tcgdex_id": "ex13-5",
     "localId": "5",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "005/110",
+    "cardNumber": "5/110",
     "cardName": "Deoxys δ",
-    "fullDisplayName": "Deoxys δ 005/110 Holon Phantoms",
+    "fullDisplayName": "Deoxys δ 5/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3461,18 +4272,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-005-low.png",
-    "imageHighSrc": "cards/ex13-005-high.png"
+    "imageHighSrc": "cards/ex13-005-high.png",
+    "attacks": [
+      {
+        "name": "Crystal Laser",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5280",
-    "externalId": null,
+    "externalId": "ex13-4",
     "tcgdex_id": "ex13-4",
     "localId": "4",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "004/110",
+    "cardNumber": "4/110",
     "cardName": "Deoxys δ",
-    "fullDisplayName": "Deoxys δ 004/110 Holon Phantoms",
+    "fullDisplayName": "Deoxys δ 4/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3494,18 +4311,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-004-low.png",
-    "imageHighSrc": "cards/ex13-004-high.png"
+    "imageHighSrc": "cards/ex13-004-high.png",
+    "attacks": [
+      {
+        "name": "Delta Reduction",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5273",
-    "externalId": null,
+    "externalId": "ex13-3",
     "tcgdex_id": "ex13-3",
     "localId": "3",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "003/110",
+    "cardNumber": "3/110",
     "cardName": "Deoxys δ",
-    "fullDisplayName": "Deoxys δ 003/110 Holon Phantoms",
+    "fullDisplayName": "Deoxys δ 3/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3527,18 +4350,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-003-low.png",
-    "imageHighSrc": "cards/ex13-003-high.png"
+    "imageHighSrc": "cards/ex13-003-high.png",
+    "attacks": [
+      {
+        "name": "Energy Loop",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5266",
-    "externalId": null,
+    "externalId": "ex13-2",
     "tcgdex_id": "ex13-2",
     "localId": "2",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "002/110",
+    "cardNumber": "2/110",
     "cardName": "Cradily δ",
-    "fullDisplayName": "Cradily δ 002/110 Holon Phantoms",
+    "fullDisplayName": "Cradily δ 2/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3561,18 +4390,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-002-low.png",
-    "imageHighSrc": "cards/ex13-002-high.png"
+    "imageHighSrc": "cards/ex13-002-high.png",
+    "attacks": [
+      {
+        "name": "Harsh Fluid",
+        "damage": "20"
+      },
+      {
+        "name": "Poison Tentacles",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Darkness Metal type."
   },
   {
     "masterCardId": "5259",
-    "externalId": null,
+    "externalId": "ex13-1",
     "tcgdex_id": "ex13-1",
     "localId": "1",
     "setCode": "ex13",
     "setTcgdexId": "ex13",
-    "cardNumber": "001/110",
+    "cardNumber": "1/110",
     "cardName": "Armaldo δ",
-    "fullDisplayName": "Armaldo δ 001/110 Holon Phantoms",
+    "fullDisplayName": "Armaldo δ 1/110 Holon Phantoms",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3595,6 +4435,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex13-001-low.png",
-    "imageHighSrc": "cards/ex13-001-high.png"
+    "imageHighSrc": "cards/ex13-001-high.png",
+    "attacks": [
+      {
+        "name": "Delta Edge",
+        "damage": "70"
+      },
+      {
+        "name": "Fossil Charge",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Fighting Metal type."
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "6177",
-    "externalId": null,
+    "externalId": "ex11-114",
     "tcgdex_id": "ex11-114",
     "localId": "114",
     "setCode": "ex11",
@@ -30,11 +30,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-114-low.png",
-    "imageHighSrc": "cards/ex11-114-high.png"
+    "imageHighSrc": "cards/ex11-114-high.png",
+    "attacks": [
+      {
+        "name": "Bubblebeam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "6176",
-    "externalId": null,
+    "externalId": "ex11-113",
     "tcgdex_id": "ex11-113",
     "localId": "113",
     "setCode": "ex11",
@@ -64,11 +70,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-113-low.png",
-    "imageHighSrc": "cards/ex11-113-high.png"
+    "imageHighSrc": "cards/ex11-113-high.png",
+    "attacks": [
+      {
+        "name": "Critical Collection",
+        "damage": "10"
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "50"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6175",
-    "externalId": null,
+    "externalId": "ex11-112",
     "tcgdex_id": "ex11-112",
     "localId": "112",
     "setCode": "ex11",
@@ -98,11 +115,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-112-low.png",
-    "imageHighSrc": "cards/ex11-112-high.png"
+    "imageHighSrc": "cards/ex11-112-high.png",
+    "attacks": [
+      {
+        "name": "Critical Collection",
+        "damage": "10"
+      },
+      {
+        "name": "Sheer Cold",
+        "damage": "60"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6174",
-    "externalId": null,
+    "externalId": "ex11-111",
     "tcgdex_id": "ex11-111",
     "localId": "111",
     "setCode": "ex11",
@@ -132,11 +160,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-111-low.png",
-    "imageHighSrc": "cards/ex11-111-high.png"
+    "imageHighSrc": "cards/ex11-111-high.png",
+    "attacks": [
+      {
+        "name": "Critical Collection",
+        "damage": "10"
+      },
+      {
+        "name": "Ground Slash",
+        "damage": "80"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6172",
-    "externalId": null,
+    "externalId": "ex11-110",
     "tcgdex_id": "ex11-110",
     "localId": "110",
     "setCode": "ex11",
@@ -166,11 +205,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-110-low.png",
-    "imageHighSrc": "cards/ex11-110-high.png"
+    "imageHighSrc": "cards/ex11-110-high.png",
+    "attacks": [
+      {
+        "name": "Fastwave",
+        "damage": "40"
+      },
+      {
+        "name": "Hydrosplash",
+        "damage": "60"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6170",
-    "externalId": null,
+    "externalId": "ex11-109",
     "tcgdex_id": "ex11-109",
     "localId": "109",
     "setCode": "ex11",
@@ -200,11 +250,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-109-low.png",
-    "imageHighSrc": "cards/ex11-109-high.png"
+    "imageHighSrc": "cards/ex11-109-high.png",
+    "attacks": [
+      {
+        "name": "Second Bite",
+        "damage": "20+"
+      },
+      {
+        "name": "Thunder Blast",
+        "damage": "70"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6167",
-    "externalId": null,
+    "externalId": "ex11-108",
     "tcgdex_id": "ex11-108",
     "localId": "108",
     "setCode": "ex11",
@@ -234,11 +295,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-108-low.png",
-    "imageHighSrc": "cards/ex11-108-high.png"
+    "imageHighSrc": "cards/ex11-108-high.png",
+    "attacks": [
+      {
+        "name": "Flame Screen",
+        "damage": "30"
+      },
+      {
+        "name": "Heat Tackle",
+        "damage": "70"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6164",
-    "externalId": null,
+    "externalId": "ex11-107",
     "tcgdex_id": "ex11-107",
     "localId": "107",
     "setCode": "ex11",
@@ -263,11 +335,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-107-low.png",
-    "imageHighSrc": "cards/ex11-107-high.png"
+    "imageHighSrc": "cards/ex11-107-high.png",
+    "rules": "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't Metal. Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "6161",
-    "externalId": null,
+    "externalId": "ex11-106",
     "tcgdex_id": "ex11-106",
     "localId": "106",
     "setCode": "ex11",
@@ -292,11 +365,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-106-low.png",
-    "imageHighSrc": "cards/ex11-106-high.png"
+    "imageHighSrc": "cards/ex11-106-high.png",
+    "rules": "Holon Energy WP provides Colorless Energy.\n\nIf the Pokémon that Holon Energy WP is attached to also has a basic Water Energy card attached to it, prevent all effects, excluding damage, done to that Pokémon by your opponent's Pokémon. If the Pokémon that Holon Energy WP is attached to also has a basic Psychic Energy card attached to it, that Pokémon's Retreat Cost is 0. Ignore these effects if Holon Energy WP is attached to Pokémon-ex."
   },
   {
     "masterCardId": "6158",
-    "externalId": null,
+    "externalId": "ex11-105",
     "tcgdex_id": "ex11-105",
     "localId": "105",
     "setCode": "ex11",
@@ -321,11 +395,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-105-low.png",
-    "imageHighSrc": "cards/ex11-105-high.png"
+    "imageHighSrc": "cards/ex11-105-high.png",
+    "rules": "Holon Energy GL provides Colorless Energy.\n\nIf the Pokémon that Holon Energy GL is attached to also has a basic Grass Energy card attached to it, that Pokémon can't be affected by any Special Conditions. If the Pokémon that Holon Energy GL is attached to also has a basic Lightning Energy card attached to it, damage done by your opponent's Pokémon-ex is reduced by 10. Ignore these effects if Holon Energy GL is attached to Pokémon-ex."
   },
   {
     "masterCardId": "6155",
-    "externalId": null,
+    "externalId": "ex11-104",
     "tcgdex_id": "ex11-104",
     "localId": "104",
     "setCode": "ex11",
@@ -350,11 +425,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-104-low.png",
-    "imageHighSrc": "cards/ex11-104-high.png"
+    "imageHighSrc": "cards/ex11-104-high.png",
+    "rules": "Holon Energy FF provides Colorless Energy.\n\nIf the Pokémon that Holon Energy FF is attached to also has a basic Fire Energy card attached to it, that Pokémon has no Weakness. If the Pokémon that Holon Energy FF is attached to also has a basic Fighting Energy card attached to it, damage done by that Pokémon's attack isn't affected by Resistance. Ignore these effects if Holon Energy FF is attached to Pokémon-ex."
   },
   {
     "masterCardId": "6151",
-    "externalId": null,
+    "externalId": "ex11-103",
     "tcgdex_id": "ex11-103",
     "localId": "103",
     "setCode": "ex11",
@@ -379,11 +455,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-103-low.png",
-    "imageHighSrc": "cards/ex11-103-high.png"
+    "imageHighSrc": "cards/ex11-103-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect unless the Attacking Pokémon is Darkness or has Dark in its name. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "6147",
-    "externalId": null,
+    "externalId": "ex11-102",
     "tcgdex_id": "ex11-102",
     "localId": "102",
     "setCode": "ex11",
@@ -408,11 +485,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-102-low.png",
-    "imageHighSrc": "cards/ex11-102-high.png"
+    "imageHighSrc": "cards/ex11-102-high.png",
+    "rules": "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "6142",
-    "externalId": null,
+    "externalId": "ex11-101",
     "tcgdex_id": "ex11-101",
     "localId": "101",
     "setCode": "ex11",
@@ -437,11 +515,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-101-low.png",
-    "imageHighSrc": "cards/ex11-101-high.png"
+    "imageHighSrc": "cards/ex11-101-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "6135",
-    "externalId": null,
+    "externalId": "ex11-100",
     "tcgdex_id": "ex11-100",
     "localId": "100",
     "setCode": "ex11",
@@ -466,18 +545,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-100-low.png",
-    "imageHighSrc": "cards/ex11-100-high.png"
+    "imageHighSrc": "cards/ex11-100-high.png",
+    "rules": "Flip a coin. If heads, return 1 of your Pokémon and all cards attached to it to your hand."
   },
   {
     "masterCardId": "6128",
-    "externalId": null,
+    "externalId": "ex11-99",
     "tcgdex_id": "ex11-99",
     "localId": "099",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "099/113",
+    "cardNumber": "99/113",
     "cardName": "Master Ball",
-    "fullDisplayName": "Master Ball 099/113 Delta Species",
+    "fullDisplayName": "Master Ball 99/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -495,18 +575,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-099-low.png",
-    "imageHighSrc": "cards/ex11-099-high.png"
+    "imageHighSrc": "cards/ex11-099-high.png",
+    "rules": "Look at the top 7 cards from your deck. Choose a Basic Pokémon or Evolution card from those cards, show it to your opponent, and put it into your hand. Put the other 6 cards back on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6122",
-    "externalId": null,
+    "externalId": "ex11-98",
     "tcgdex_id": "ex11-98",
     "localId": "098",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "098/113",
+    "cardNumber": "98/113",
     "cardName": "Holon Transceiver",
-    "fullDisplayName": "Holon Transceiver 098/113 Delta Species",
+    "fullDisplayName": "Holon Transceiver 98/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -524,18 +605,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-098-low.png",
-    "imageHighSrc": "cards/ex11-098-high.png"
+    "imageHighSrc": "cards/ex11-098-high.png",
+    "rules": "Search your deck for a Supporter card that has Holon in its name, show it to your opponent, and put it into your hand. Shuffle your deck afterward. Or, search your discard pile for a Supporter card that has Holon in its name, show it to your opponent, and put it into your hand."
   },
   {
     "masterCardId": "6114",
-    "externalId": null,
+    "externalId": "ex11-97",
     "tcgdex_id": "ex11-97",
     "localId": "097",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "097/113",
+    "cardNumber": "97/113",
     "cardName": "Holon Scientist",
-    "fullDisplayName": "Holon Scientist 097/113 Delta Species",
+    "fullDisplayName": "Holon Scientist 97/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -553,18 +635,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-097-low.png",
-    "imageHighSrc": "cards/ex11-097-high.png"
+    "imageHighSrc": "cards/ex11-097-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDiscard a card from your hand. If you can't discard a card from your hand, you can't play this card.\n\nIf you have less cards in your hand than your opponent, draw cards until you have the same number of cards as your opponent."
   },
   {
     "masterCardId": "6108",
-    "externalId": null,
+    "externalId": "ex11-96",
     "tcgdex_id": "ex11-96",
     "localId": "096",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "096/113",
+    "cardNumber": "96/113",
     "cardName": "Holon Ruins",
-    "fullDisplayName": "Holon Ruins 096/113 Delta Species",
+    "fullDisplayName": "Holon Ruins 96/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -582,18 +665,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-096-low.png",
-    "imageHighSrc": "cards/ex11-096-high.png"
+    "imageHighSrc": "cards/ex11-096-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach player that has any Pokémon in play that has δ on its card may draw a card once during his or her turn. If the player does, he or she discards a card from his or her hand."
   },
   {
     "masterCardId": "6099",
-    "externalId": null,
+    "externalId": "ex11-95",
     "tcgdex_id": "ex11-95",
     "localId": "095",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "095/113",
+    "cardNumber": "95/113",
     "cardName": "Holon Researcher",
-    "fullDisplayName": "Holon Researcher 095/113 Delta Species",
+    "fullDisplayName": "Holon Researcher 95/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -611,18 +695,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-095-low.png",
-    "imageHighSrc": "cards/ex11-095-high.png"
+    "imageHighSrc": "cards/ex11-095-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDiscard a card from your hand. If you can't discard a card from your hand, you can't play this card.\n\nSearch your deck for a Metal Energy card or a Basic Pokémon (or Evolution card) that has δ on its card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6091",
-    "externalId": null,
+    "externalId": "ex11-94",
     "tcgdex_id": "ex11-94",
     "localId": "094",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "094/113",
+    "cardNumber": "94/113",
     "cardName": "Holon Research Tower",
-    "fullDisplayName": "Holon Research Tower 094/113 Delta Species",
+    "fullDisplayName": "Holon Research Tower 94/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -640,18 +725,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-094-low.png",
-    "imageHighSrc": "cards/ex11-094-high.png"
+    "imageHighSrc": "cards/ex11-094-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach player's basic Energy cards attached to Pokémon that has δ on its card are both their usual Energy type and Metal type but provide only 1 Energy at a time. (Has no effect other than providing Energy.)"
   },
   {
     "masterCardId": "6083",
-    "externalId": null,
+    "externalId": "ex11-93",
     "tcgdex_id": "ex11-93",
     "localId": "093",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "093/113",
+    "cardNumber": "93/113",
     "cardName": "Holon Mentor",
-    "fullDisplayName": "Holon Mentor 093/113 Delta Species",
+    "fullDisplayName": "Holon Mentor 93/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -669,18 +755,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-093-low.png",
-    "imageHighSrc": "cards/ex11-093-high.png"
+    "imageHighSrc": "cards/ex11-093-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDiscard a card from your hand. If you can't discard a card from your hand, you can't play this card.\n\nSearch your deck for up to 3 Basic Pokémon that each has 100 HP or less, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6075",
-    "externalId": null,
+    "externalId": "ex11-92",
     "tcgdex_id": "ex11-92",
     "localId": "092",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "092/113",
+    "cardNumber": "92/113",
     "cardName": "Holon Lass",
-    "fullDisplayName": "Holon Lass 092/113 Delta Species",
+    "fullDisplayName": "Holon Lass 92/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -698,18 +785,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-092-low.png",
-    "imageHighSrc": "cards/ex11-092-high.png"
+    "imageHighSrc": "cards/ex11-092-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDiscard a card from your hand. If you can't discard a card from your hand, you can't play this card.\n\nCount the total number of Prize cards left (both yours and your opponent's). Look at that many cards from the top of your deck, choose as many Energy cards as you like, show them to your opponent, and put them into your hand. Put the other cards back on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6066",
-    "externalId": null,
+    "externalId": "ex11-91",
     "tcgdex_id": "ex11-91",
     "localId": "091",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "091/113",
+    "cardNumber": "91/113",
     "cardName": "Holon Farmer",
-    "fullDisplayName": "Holon Farmer 091/113 Delta Species",
+    "fullDisplayName": "Holon Farmer 91/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -727,18 +815,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-091-low.png",
-    "imageHighSrc": "cards/ex11-091-high.png"
+    "imageHighSrc": "cards/ex11-091-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDiscard a card from your hand. If you can't discard a card from your hand, you can't play this card.\n\nSearch your discard pile for 3 basic Energy cards and any combination of 3 Basic Pokémon or Evolution cards, show them to your opponent, and put them on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6057",
-    "externalId": null,
+    "externalId": "ex11-90",
     "tcgdex_id": "ex11-90",
     "localId": "090",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "090/113",
+    "cardNumber": "90/113",
     "cardName": "Great Ball",
-    "fullDisplayName": "Great Ball 090/113 Delta Species",
+    "fullDisplayName": "Great Ball 90/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -756,18 +845,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-090-low.png",
-    "imageHighSrc": "cards/ex11-090-high.png"
+    "imageHighSrc": "cards/ex11-090-high.png",
+    "rules": "Search your deck for a Basic Pokémon (excluding Pokémon-ex) and put it onto your Bench. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6048",
-    "externalId": null,
+    "externalId": "ex11-89",
     "tcgdex_id": "ex11-89",
     "localId": "089",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "089/113",
+    "cardNumber": "89/113",
     "cardName": "Dual Ball",
-    "fullDisplayName": "Dual Ball 089/113 Delta Species",
+    "fullDisplayName": "Dual Ball 89/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -785,18 +875,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-089-low.png",
-    "imageHighSrc": "cards/ex11-089-high.png"
+    "imageHighSrc": "cards/ex11-089-high.png",
+    "rules": "Flip 2 coins. For each heads, search your deck for a Basic Pokémon card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "6040",
-    "externalId": null,
+    "externalId": "ex11-88",
     "tcgdex_id": "ex11-88",
     "localId": "088",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "088/113",
+    "cardNumber": "88/113",
     "cardName": "Zubat",
-    "fullDisplayName": "Zubat 088/113 Delta Species",
+    "fullDisplayName": "Zubat 88/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -818,18 +909,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-088-low.png",
-    "imageHighSrc": "cards/ex11-088-high.png"
+    "imageHighSrc": "cards/ex11-088-high.png",
+    "attacks": [
+      {
+        "name": "Poison Fang",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6031",
-    "externalId": null,
+    "externalId": "ex11-87",
     "tcgdex_id": "ex11-87",
     "localId": "087",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "087/113",
+    "cardNumber": "87/113",
     "cardName": "Weedle",
-    "fullDisplayName": "Weedle 087/113 Delta Species",
+    "fullDisplayName": "Weedle 87/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -851,18 +948,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-087-low.png",
-    "imageHighSrc": "cards/ex11-087-high.png"
+    "imageHighSrc": "cards/ex11-087-high.png",
+    "attacks": [
+      {
+        "name": "String Shot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "6022",
-    "externalId": null,
+    "externalId": "ex11-86",
     "tcgdex_id": "ex11-86",
     "localId": "086",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "086/113",
+    "cardNumber": "86/113",
     "cardName": "Taillow",
-    "fullDisplayName": "Taillow 086/113 Delta Species",
+    "fullDisplayName": "Taillow 86/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -884,18 +987,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-086-low.png",
-    "imageHighSrc": "cards/ex11-086-high.png"
+    "imageHighSrc": "cards/ex11-086-high.png",
+    "attacks": [
+      {
+        "name": "Skill Dive",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6013",
-    "externalId": null,
+    "externalId": "ex11-85",
     "tcgdex_id": "ex11-85",
     "localId": "085",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "085/113",
+    "cardNumber": "85/113",
     "cardName": "Staryu",
-    "fullDisplayName": "Staryu 085/113 Delta Species",
+    "fullDisplayName": "Staryu 85/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -917,18 +1026,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-085-low.png",
-    "imageHighSrc": "cards/ex11-085-high.png"
+    "imageHighSrc": "cards/ex11-085-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Recover",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "6004",
-    "externalId": null,
+    "externalId": "ex11-84",
     "tcgdex_id": "ex11-84",
     "localId": "084",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "084/113",
+    "cardNumber": "84/113",
     "cardName": "Staryu",
-    "fullDisplayName": "Staryu 084/113 Delta Species",
+    "fullDisplayName": "Staryu 84/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -950,18 +1069,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-084-low.png",
-    "imageHighSrc": "cards/ex11-084-high.png"
+    "imageHighSrc": "cards/ex11-084-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Spinning Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5995",
-    "externalId": null,
+    "externalId": "ex11-83",
     "tcgdex_id": "ex11-83",
     "localId": "083",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "083/113",
+    "cardNumber": "83/113",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 083/113 Delta Species",
+    "fullDisplayName": "Slowpoke 83/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -983,18 +1112,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-083-low.png",
-    "imageHighSrc": "cards/ex11-083-high.png"
+    "imageHighSrc": "cards/ex11-083-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5986",
-    "externalId": null,
+    "externalId": "ex11-82",
     "tcgdex_id": "ex11-82",
     "localId": "082",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "082/113",
+    "cardNumber": "82/113",
     "cardName": "Sandshrew",
-    "fullDisplayName": "Sandshrew 082/113 Delta Species",
+    "fullDisplayName": "Sandshrew 82/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1016,18 +1155,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-082-low.png",
-    "imageHighSrc": "cards/ex11-082-high.png"
+    "imageHighSrc": "cards/ex11-082-high.png",
+    "attacks": [
+      {
+        "name": "Dig Under",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5978",
-    "externalId": null,
+    "externalId": "ex11-81",
     "tcgdex_id": "ex11-81",
     "localId": "081",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "081/113",
+    "cardNumber": "81/113",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts 081/113 Delta Species",
+    "fullDisplayName": "Ralts 81/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1049,18 +1198,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-081-low.png",
-    "imageHighSrc": "cards/ex11-081-high.png"
+    "imageHighSrc": "cards/ex11-081-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Quick Blow",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5969",
-    "externalId": null,
+    "externalId": "ex11-80",
     "tcgdex_id": "ex11-80",
     "localId": "080",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "080/113",
+    "cardNumber": "80/113",
     "cardName": "Porygon",
-    "fullDisplayName": "Porygon 080/113 Delta Species",
+    "fullDisplayName": "Porygon 80/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1082,18 +1241,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-080-low.png",
-    "imageHighSrc": "cards/ex11-080-high.png"
+    "imageHighSrc": "cards/ex11-080-high.png",
+    "attacks": [
+      {
+        "name": "Sharpen",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5959",
-    "externalId": null,
+    "externalId": "ex11-79",
     "tcgdex_id": "ex11-79",
     "localId": "079",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "079/113",
+    "cardNumber": "79/113",
     "cardName": "Poochyena",
-    "fullDisplayName": "Poochyena 079/113 Delta Species",
+    "fullDisplayName": "Poochyena 79/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1115,18 +1280,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-079-low.png",
-    "imageHighSrc": "cards/ex11-079-high.png"
+    "imageHighSrc": "cards/ex11-079-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Ambush",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5949",
-    "externalId": null,
+    "externalId": "ex11-78",
     "tcgdex_id": "ex11-78",
     "localId": "078",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "078/113",
+    "cardNumber": "78/113",
     "cardName": "Ponyta",
-    "fullDisplayName": "Ponyta 078/113 Delta Species",
+    "fullDisplayName": "Ponyta 78/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1148,18 +1323,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-078-low.png",
-    "imageHighSrc": "cards/ex11-078-high.png"
+    "imageHighSrc": "cards/ex11-078-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5940",
-    "externalId": null,
+    "externalId": "ex11-77",
     "tcgdex_id": "ex11-77",
     "localId": "077",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "077/113",
+    "cardNumber": "77/113",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 077/113 Delta Species",
+    "fullDisplayName": "Meowth 77/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1181,18 +1362,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-077-low.png",
-    "imageHighSrc": "cards/ex11-077-high.png"
+    "imageHighSrc": "cards/ex11-077-high.png",
+    "attacks": [
+      {
+        "name": "Pickup Power",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5931",
-    "externalId": null,
+    "externalId": "ex11-76",
     "tcgdex_id": "ex11-76",
     "localId": "076",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "076/113",
+    "cardNumber": "76/113",
     "cardName": "Marill",
-    "fullDisplayName": "Marill 076/113 Delta Species",
+    "fullDisplayName": "Marill 76/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1214,18 +1405,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-076-low.png",
-    "imageHighSrc": "cards/ex11-076-high.png"
+    "imageHighSrc": "cards/ex11-076-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Jump On",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5923",
-    "externalId": null,
+    "externalId": "ex11-75",
     "tcgdex_id": "ex11-75",
     "localId": "075",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "075/113",
+    "cardNumber": "75/113",
     "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 075/113 Delta Species",
+    "fullDisplayName": "Makuhita 75/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1247,18 +1448,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-075-low.png",
-    "imageHighSrc": "cards/ex11-075-high.png"
+    "imageHighSrc": "cards/ex11-075-high.png",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5914",
-    "externalId": null,
+    "externalId": "ex11-74",
     "tcgdex_id": "ex11-74",
     "localId": "074",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "074/113",
+    "cardNumber": "74/113",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 074/113 Delta Species",
+    "fullDisplayName": "Magnemite 74/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1280,18 +1487,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-074-low.png",
-    "imageHighSrc": "cards/ex11-074-high.png"
+    "imageHighSrc": "cards/ex11-074-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Magnetic Blast",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5906",
-    "externalId": null,
+    "externalId": "ex11-73",
     "tcgdex_id": "ex11-73",
     "localId": "073",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "073/113",
+    "cardNumber": "73/113",
     "cardName": "Larvitar δ",
-    "fullDisplayName": "Larvitar δ 073/113 Delta Species",
+    "fullDisplayName": "Larvitar δ 73/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1313,18 +1530,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-073-low.png",
-    "imageHighSrc": "cards/ex11-073-high.png"
+    "imageHighSrc": "cards/ex11-073-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Rising Lunge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5897",
-    "externalId": null,
+    "externalId": "ex11-72",
     "tcgdex_id": "ex11-72",
     "localId": "072",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "072/113",
+    "cardNumber": "72/113",
     "cardName": "Koffing",
-    "fullDisplayName": "Koffing 072/113 Delta Species",
+    "fullDisplayName": "Koffing 72/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1346,18 +1573,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-072-low.png",
-    "imageHighSrc": "cards/ex11-072-high.png"
+    "imageHighSrc": "cards/ex11-072-high.png",
+    "attacks": [
+      {
+        "name": "Confusion Gas",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5887",
-    "externalId": null,
+    "externalId": "ex11-71",
     "tcgdex_id": "ex11-71",
     "localId": "071",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "071/113",
+    "cardNumber": "71/113",
     "cardName": "Holon's Voltorb",
-    "fullDisplayName": "Holon's Voltorb 071/113 Delta Species",
+    "fullDisplayName": "Holon's Voltorb 71/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1379,18 +1616,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-071-low.png",
-    "imageHighSrc": "cards/ex11-071-high.png"
+    "imageHighSrc": "cards/ex11-071-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may attach this as an Energy card from your hand to 1 of your Pokémon. While attached, this card is a Special Energy card and provides Colorless Energy."
   },
   {
     "masterCardId": "5877",
-    "externalId": null,
+    "externalId": "ex11-70",
     "tcgdex_id": "ex11-70",
     "localId": "070",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "070/113",
+    "cardNumber": "70/113",
     "cardName": "Holon's Magnemite",
-    "fullDisplayName": "Holon's Magnemite 070/113 Delta Species",
+    "fullDisplayName": "Holon's Magnemite 70/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1412,18 +1656,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-070-low.png",
-    "imageHighSrc": "cards/ex11-070-high.png"
+    "imageHighSrc": "cards/ex11-070-high.png",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      }
+    ],
+    "rules": "You may attach this as an Energy card from your hand to 1 of your Pokémon. While attached, this card is a Special Energy card and provides Colorless Energy."
   },
   {
     "masterCardId": "5868",
-    "externalId": null,
+    "externalId": "ex11-69",
     "tcgdex_id": "ex11-69",
     "localId": "069",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "069/113",
+    "cardNumber": "69/113",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 069/113 Delta Species",
+    "fullDisplayName": "Eevee 69/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1445,18 +1696,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-069-low.png",
-    "imageHighSrc": "cards/ex11-069-high.png"
+    "imageHighSrc": "cards/ex11-069-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Rear Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5859",
-    "externalId": null,
+    "externalId": "ex11-68",
     "tcgdex_id": "ex11-68",
     "localId": "068",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "068/113",
+    "cardNumber": "68/113",
     "cardName": "Eevee δ",
-    "fullDisplayName": "Eevee δ 068/113 Delta Species",
+    "fullDisplayName": "Eevee δ 68/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1478,18 +1739,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-068-low.png",
-    "imageHighSrc": "cards/ex11-068-high.png"
+    "imageHighSrc": "cards/ex11-068-high.png",
+    "attacks": [
+      {
+        "name": "Metal Scoop",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5848",
-    "externalId": null,
+    "externalId": "ex11-67",
     "tcgdex_id": "ex11-67",
     "localId": "067",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "067/113",
+    "cardNumber": "67/113",
     "cardName": "Drowzee",
-    "fullDisplayName": "Drowzee 067/113 Delta Species",
+    "fullDisplayName": "Drowzee 67/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1511,18 +1778,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-067-low.png",
-    "imageHighSrc": "cards/ex11-067-high.png"
+    "imageHighSrc": "cards/ex11-067-high.png",
+    "attacks": [
+      {
+        "name": "Disable",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5841",
-    "externalId": null,
+    "externalId": "ex11-66",
     "tcgdex_id": "ex11-66",
     "localId": "066",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "066/113",
+    "cardNumber": "66/113",
     "cardName": "Dratini δ",
-    "fullDisplayName": "Dratini δ 066/113 Delta Species",
+    "fullDisplayName": "Dratini δ 66/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1544,18 +1821,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-066-low.png",
-    "imageHighSrc": "cards/ex11-066-high.png"
+    "imageHighSrc": "cards/ex11-066-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5833",
-    "externalId": null,
+    "externalId": "ex11-65",
     "tcgdex_id": "ex11-65",
     "localId": "065",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "065/113",
+    "cardNumber": "65/113",
     "cardName": "Dratini δ",
-    "fullDisplayName": "Dratini δ 065/113 Delta Species",
+    "fullDisplayName": "Dratini δ 65/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1577,18 +1860,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-065-low.png",
-    "imageHighSrc": "cards/ex11-065-high.png"
+    "imageHighSrc": "cards/ex11-065-high.png",
+    "attacks": [
+      {
+        "name": "Hook",
+        "damage": "10"
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5823",
-    "externalId": null,
+    "externalId": "ex11-64",
     "tcgdex_id": "ex11-64",
     "localId": "064",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "064/113",
+    "cardNumber": "64/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 064/113 Delta Species",
+    "fullDisplayName": "Ditto 64/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1610,18 +1903,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-064-low.png",
-    "imageHighSrc": "cards/ex11-064-high.png"
+    "imageHighSrc": "cards/ex11-064-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5814",
-    "externalId": null,
+    "externalId": "ex11-63",
     "tcgdex_id": "ex11-63",
     "localId": "063",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "063/113",
+    "cardNumber": "63/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 063/113 Delta Species",
+    "fullDisplayName": "Ditto 63/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1643,18 +1942,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-063-low.png",
-    "imageHighSrc": "cards/ex11-063-high.png"
+    "imageHighSrc": "cards/ex11-063-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5805",
-    "externalId": null,
+    "externalId": "ex11-62",
     "tcgdex_id": "ex11-62",
     "localId": "062",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "062/113",
+    "cardNumber": "62/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 062/113 Delta Species",
+    "fullDisplayName": "Ditto 62/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1676,18 +1981,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-062-low.png",
-    "imageHighSrc": "cards/ex11-062-high.png"
+    "imageHighSrc": "cards/ex11-062-high.png",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5796",
-    "externalId": null,
+    "externalId": "ex11-61",
     "tcgdex_id": "ex11-61",
     "localId": "061",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "061/113",
+    "cardNumber": "61/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 061/113 Delta Species",
+    "fullDisplayName": "Ditto 61/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1709,18 +2020,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-061-low.png",
-    "imageHighSrc": "cards/ex11-061-high.png"
+    "imageHighSrc": "cards/ex11-061-high.png",
+    "attacks": [
+      {
+        "name": "Fireworks",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5786",
-    "externalId": null,
+    "externalId": "ex11-60",
     "tcgdex_id": "ex11-60",
     "localId": "060",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "060/113",
+    "cardNumber": "60/113",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 060/113 Delta Species",
+    "fullDisplayName": "Cubone 60/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1742,18 +2059,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-060-low.png",
-    "imageHighSrc": "cards/ex11-060-high.png"
+    "imageHighSrc": "cards/ex11-060-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5777",
-    "externalId": null,
+    "externalId": "ex11-59",
     "tcgdex_id": "ex11-59",
     "localId": "059",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "059/113",
+    "cardNumber": "59/113",
     "cardName": "Beldum δ",
-    "fullDisplayName": "Beldum δ 059/113 Delta Species",
+    "fullDisplayName": "Beldum δ 59/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1775,18 +2102,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-059-low.png",
-    "imageHighSrc": "cards/ex11-059-high.png"
+    "imageHighSrc": "cards/ex11-059-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5768",
-    "externalId": null,
+    "externalId": "ex11-58",
     "tcgdex_id": "ex11-58",
     "localId": "058",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "058/113",
+    "cardNumber": "58/113",
     "cardName": "Bagon δ",
-    "fullDisplayName": "Bagon δ 058/113 Delta Species",
+    "fullDisplayName": "Bagon δ 58/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1808,18 +2141,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-058-low.png",
-    "imageHighSrc": "cards/ex11-058-high.png"
+    "imageHighSrc": "cards/ex11-058-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5759",
-    "externalId": null,
+    "externalId": "ex11-57",
     "tcgdex_id": "ex11-57",
     "localId": "057",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "057/113",
+    "cardNumber": "57/113",
     "cardName": "Bagon δ",
-    "fullDisplayName": "Bagon δ 057/113 Delta Species",
+    "fullDisplayName": "Bagon δ 57/113 Delta Species",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1841,18 +2180,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-057-low.png",
-    "imageHighSrc": "cards/ex11-057-high.png"
+    "imageHighSrc": "cards/ex11-057-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5750",
-    "externalId": null,
+    "externalId": "ex11-56",
     "tcgdex_id": "ex11-56",
     "localId": "056",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "056/113",
+    "cardNumber": "56/113",
     "cardName": "Volbeat",
-    "fullDisplayName": "Volbeat 056/113 Delta Species",
+    "fullDisplayName": "Volbeat 56/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1874,18 +2219,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-056-low.png",
-    "imageHighSrc": "cards/ex11-056-high.png"
+    "imageHighSrc": "cards/ex11-056-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5741",
-    "externalId": null,
+    "externalId": "ex11-55",
     "tcgdex_id": "ex11-55",
     "localId": "055",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "055/113",
+    "cardNumber": "55/113",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 055/113 Delta Species",
+    "fullDisplayName": "Skarmory 55/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1907,18 +2258,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-055-low.png",
-    "imageHighSrc": "cards/ex11-055-high.png"
+    "imageHighSrc": "cards/ex11-055-high.png",
+    "attacks": [
+      {
+        "name": "Cry for Help",
+        "damage": null
+      },
+      {
+        "name": "Steel Wing",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5732",
-    "externalId": null,
+    "externalId": "ex11-54",
     "tcgdex_id": "ex11-54",
     "localId": "054",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "054/113",
+    "cardNumber": "54/113",
     "cardName": "Shelgon δ",
-    "fullDisplayName": "Shelgon δ 054/113 Delta Species",
+    "fullDisplayName": "Shelgon δ 54/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1940,18 +2301,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-054-low.png",
-    "imageHighSrc": "cards/ex11-054-high.png"
+    "imageHighSrc": "cards/ex11-054-high.png",
+    "attacks": [
+      {
+        "name": "Heat Blast",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5723",
-    "externalId": null,
+    "externalId": "ex11-53",
     "tcgdex_id": "ex11-53",
     "localId": "053",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "053/113",
+    "cardNumber": "53/113",
     "cardName": "Shelgon δ",
-    "fullDisplayName": "Shelgon δ 053/113 Delta Species",
+    "fullDisplayName": "Shelgon δ 53/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1973,18 +2340,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-053-low.png",
-    "imageHighSrc": "cards/ex11-053-high.png"
+    "imageHighSrc": "cards/ex11-053-high.png",
+    "attacks": [
+      {
+        "name": "Tight Jaw",
+        "damage": "10"
+      },
+      {
+        "name": "Combustion",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5714",
-    "externalId": null,
+    "externalId": "ex11-52",
     "tcgdex_id": "ex11-52",
     "localId": "052",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "052/113",
+    "cardNumber": "52/113",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 052/113 Delta Species",
+    "fullDisplayName": "Rapidash 52/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2006,18 +2383,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-052-low.png",
-    "imageHighSrc": "cards/ex11-052-high.png"
+    "imageHighSrc": "cards/ex11-052-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": null
+      },
+      {
+        "name": "Stomp",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5705",
-    "externalId": null,
+    "externalId": "ex11-51",
     "tcgdex_id": "ex11-51",
     "localId": "051",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "051/113",
+    "cardNumber": "51/113",
     "cardName": "Pupitar δ",
-    "fullDisplayName": "Pupitar δ 051/113 Delta Species",
+    "fullDisplayName": "Pupitar δ 51/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2039,18 +2426,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-051-low.png",
-    "imageHighSrc": "cards/ex11-051-high.png"
+    "imageHighSrc": "cards/ex11-051-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Double-edge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5696",
-    "externalId": null,
+    "externalId": "ex11-50",
     "tcgdex_id": "ex11-50",
     "localId": "050",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "050/113",
+    "cardNumber": "50/113",
     "cardName": "Persian",
-    "fullDisplayName": "Persian 050/113 Delta Species",
+    "fullDisplayName": "Persian 50/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2072,18 +2469,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-050-low.png",
-    "imageHighSrc": "cards/ex11-050-high.png"
+    "imageHighSrc": "cards/ex11-050-high.png",
+    "attacks": [
+      {
+        "name": "Snap Tail",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5687",
-    "externalId": null,
+    "externalId": "ex11-49",
     "tcgdex_id": "ex11-49",
     "localId": "049",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "049/113",
+    "cardNumber": "49/113",
     "cardName": "Metang δ",
-    "fullDisplayName": "Metang δ 049/113 Delta Species",
+    "fullDisplayName": "Metang δ 49/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2105,18 +2508,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-049-low.png",
-    "imageHighSrc": "cards/ex11-049-high.png"
+    "imageHighSrc": "cards/ex11-049-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Claws",
+        "damage": "20+"
+      },
+      {
+        "name": "Magnetic Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5678",
-    "externalId": null,
+    "externalId": "ex11-48",
     "tcgdex_id": "ex11-48",
     "localId": "048",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "048/113",
+    "cardNumber": "48/113",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 048/113 Delta Species",
+    "fullDisplayName": "Magneton 48/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2138,18 +2551,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-048-low.png",
-    "imageHighSrc": "cards/ex11-048-high.png"
+    "imageHighSrc": "cards/ex11-048-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": "20"
+      },
+      {
+        "name": "Speed Ball",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5669",
-    "externalId": null,
+    "externalId": "ex11-47",
     "tcgdex_id": "ex11-47",
     "localId": "047",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "047/113",
+    "cardNumber": "47/113",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 047/113 Delta Species",
+    "fullDisplayName": "Kirlia 47/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2171,18 +2594,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-047-low.png",
-    "imageHighSrc": "cards/ex11-047-high.png"
+    "imageHighSrc": "cards/ex11-047-high.png",
+    "attacks": [
+      {
+        "name": "Calm Mind",
+        "damage": null
+      },
+      {
+        "name": "Psychic Boom",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5660",
-    "externalId": null,
+    "externalId": "ex11-46",
     "tcgdex_id": "ex11-46",
     "localId": "046",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "046/113",
+    "cardNumber": "46/113",
     "cardName": "Kakuna",
-    "fullDisplayName": "Kakuna 046/113 Delta Species",
+    "fullDisplayName": "Kakuna 46/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2204,18 +2637,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-046-low.png",
-    "imageHighSrc": "cards/ex11-046-high.png"
+    "imageHighSrc": "cards/ex11-046-high.png",
+    "attacks": [
+      {
+        "name": "Fast Evolution",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5651",
-    "externalId": null,
+    "externalId": "ex11-45",
     "tcgdex_id": "ex11-45",
     "localId": "045",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "045/113",
+    "cardNumber": "45/113",
     "cardName": "Illumise",
-    "fullDisplayName": "Illumise 045/113 Delta Species",
+    "fullDisplayName": "Illumise 45/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2237,18 +2680,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-045-low.png",
-    "imageHighSrc": "cards/ex11-045-high.png"
+    "imageHighSrc": "cards/ex11-045-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Strange Rasping",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5642",
-    "externalId": null,
+    "externalId": "ex11-44",
     "tcgdex_id": "ex11-44",
     "localId": "044",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "044/113",
+    "cardNumber": "44/113",
     "cardName": "Hariyama",
-    "fullDisplayName": "Hariyama 044/113 Delta Species",
+    "fullDisplayName": "Hariyama 44/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2270,18 +2723,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-044-low.png",
-    "imageHighSrc": "cards/ex11-044-high.png"
+    "imageHighSrc": "cards/ex11-044-high.png",
+    "attacks": [
+      {
+        "name": "Slap Push",
+        "damage": "30"
+      },
+      {
+        "name": "Brick Smash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5635",
-    "externalId": null,
+    "externalId": "ex11-43",
     "tcgdex_id": "ex11-43",
     "localId": "043",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "043/113",
+    "cardNumber": "43/113",
     "cardName": "Golbat",
-    "fullDisplayName": "Golbat 043/113 Delta Species",
+    "fullDisplayName": "Golbat 43/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2303,18 +2766,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-043-low.png",
-    "imageHighSrc": "cards/ex11-043-high.png"
+    "imageHighSrc": "cards/ex11-043-high.png",
+    "attacks": [
+      {
+        "name": "Super Poison Breath",
+        "damage": null
+      },
+      {
+        "name": "Sonic Signal",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5626",
-    "externalId": null,
+    "externalId": "ex11-42",
     "tcgdex_id": "ex11-42",
     "localId": "042",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "042/113",
+    "cardNumber": "42/113",
     "cardName": "Dragonair δ",
-    "fullDisplayName": "Dragonair δ 042/113 Delta Species",
+    "fullDisplayName": "Dragonair δ 42/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2336,18 +2809,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-042-low.png",
-    "imageHighSrc": "cards/ex11-042-high.png"
+    "imageHighSrc": "cards/ex11-042-high.png",
+    "attacks": [
+      {
+        "name": "Twister",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5617",
-    "externalId": null,
+    "externalId": "ex11-41",
     "tcgdex_id": "ex11-41",
     "localId": "041",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "041/113",
+    "cardNumber": "41/113",
     "cardName": "Dragonair δ",
-    "fullDisplayName": "Dragonair δ 041/113 Delta Species",
+    "fullDisplayName": "Dragonair δ 41/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2369,18 +2848,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-041-low.png",
-    "imageHighSrc": "cards/ex11-041-high.png"
+    "imageHighSrc": "cards/ex11-041-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "20×"
+      },
+      {
+        "name": "Dragon Rage",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5608",
-    "externalId": null,
+    "externalId": "ex11-40",
     "tcgdex_id": "ex11-40",
     "localId": "040",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "040/113",
+    "cardNumber": "40/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 040/113 Delta Species",
+    "fullDisplayName": "Ditto 40/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2402,18 +2891,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-040-low.png",
-    "imageHighSrc": "cards/ex11-040-high.png"
+    "imageHighSrc": "cards/ex11-040-high.png",
+    "attacks": [
+      {
+        "name": "Smash Turn",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5599",
-    "externalId": null,
+    "externalId": "ex11-39",
     "tcgdex_id": "ex11-39",
     "localId": "039",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "039/113",
+    "cardNumber": "39/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 039/113 Delta Species",
+    "fullDisplayName": "Ditto 39/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2435,18 +2930,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-039-low.png",
-    "imageHighSrc": "cards/ex11-039-high.png"
+    "imageHighSrc": "cards/ex11-039-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5590",
-    "externalId": null,
+    "externalId": "ex11-38",
     "tcgdex_id": "ex11-38",
     "localId": "038",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "038/113",
+    "cardNumber": "38/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 038/113 Delta Species",
+    "fullDisplayName": "Ditto 38/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2468,18 +2969,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-038-low.png",
-    "imageHighSrc": "cards/ex11-038-high.png"
+    "imageHighSrc": "cards/ex11-038-high.png",
+    "attacks": [
+      {
+        "name": "Copy",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5581",
-    "externalId": null,
+    "externalId": "ex11-37",
     "tcgdex_id": "ex11-37",
     "localId": "037",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "037/113",
+    "cardNumber": "37/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 037/113 Delta Species",
+    "fullDisplayName": "Ditto 37/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2501,18 +3008,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-037-low.png",
-    "imageHighSrc": "cards/ex11-037-high.png"
+    "imageHighSrc": "cards/ex11-037-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5573",
-    "externalId": null,
+    "externalId": "ex11-36",
     "tcgdex_id": "ex11-36",
     "localId": "036",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "036/113",
+    "cardNumber": "36/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 036/113 Delta Species",
+    "fullDisplayName": "Ditto 36/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2534,18 +3047,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-036-low.png",
-    "imageHighSrc": "cards/ex11-036-high.png"
+    "imageHighSrc": "cards/ex11-036-high.png",
+    "attacks": [
+      {
+        "name": "Toxic",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5564",
-    "externalId": null,
+    "externalId": "ex11-35",
     "tcgdex_id": "ex11-35",
     "localId": "035",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "035/113",
+    "cardNumber": "35/113",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 035/113 Delta Species",
+    "fullDisplayName": "Ditto 35/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2567,18 +3086,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-035-low.png",
-    "imageHighSrc": "cards/ex11-035-high.png"
+    "imageHighSrc": "cards/ex11-035-high.png",
+    "attacks": [
+      {
+        "name": "Energy Link",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5555",
-    "externalId": null,
+    "externalId": "ex11-34",
     "tcgdex_id": "ex11-34",
     "localId": "034",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "034/113",
+    "cardNumber": "34/113",
     "cardName": "Castform",
-    "fullDisplayName": "Castform 034/113 Delta Species",
+    "fullDisplayName": "Castform 34/113 Delta Species",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2600,18 +3125,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-034-low.png",
-    "imageHighSrc": "cards/ex11-034-high.png"
+    "imageHighSrc": "cards/ex11-034-high.png",
+    "attacks": [
+      {
+        "name": "Holon Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5546",
-    "externalId": null,
+    "externalId": "ex11-33",
     "tcgdex_id": "ex11-33",
     "localId": "033",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "033/113",
+    "cardNumber": "33/113",
     "cardName": "Weezing",
-    "fullDisplayName": "Weezing 033/113 Delta Species",
+    "fullDisplayName": "Weezing 33/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2633,18 +3164,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-033-low.png",
-    "imageHighSrc": "cards/ex11-033-high.png"
+    "imageHighSrc": "cards/ex11-033-high.png",
+    "attacks": [
+      {
+        "name": "Mist Attack",
+        "damage": null
+      },
+      {
+        "name": "Sludge Whirlpool",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5537",
-    "externalId": null,
+    "externalId": "ex11-32",
     "tcgdex_id": "ex11-32",
     "localId": "032",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "032/113",
+    "cardNumber": "32/113",
     "cardName": "Swellow",
-    "fullDisplayName": "Swellow 032/113 Delta Species",
+    "fullDisplayName": "Swellow 32/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2666,18 +3207,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-032-low.png",
-    "imageHighSrc": "cards/ex11-032-high.png"
+    "imageHighSrc": "cards/ex11-032-high.png",
+    "attacks": [
+      {
+        "name": "Steep Dive",
+        "damage": null
+      },
+      {
+        "name": "Glide",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5528",
-    "externalId": null,
+    "externalId": "ex11-31",
     "tcgdex_id": "ex11-31",
     "localId": "031",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "031/113",
+    "cardNumber": "31/113",
     "cardName": "Sunny Castform",
-    "fullDisplayName": "Sunny Castform 031/113 Delta Species",
+    "fullDisplayName": "Sunny Castform 31/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2699,18 +3250,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-031-low.png",
-    "imageHighSrc": "cards/ex11-031-high.png"
+    "imageHighSrc": "cards/ex11-031-high.png",
+    "attacks": [
+      {
+        "name": "Holon Search",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5519",
-    "externalId": null,
+    "externalId": "ex11-30",
     "tcgdex_id": "ex11-30",
     "localId": "030",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "030/113",
+    "cardNumber": "30/113",
     "cardName": "Starmie δ",
-    "fullDisplayName": "Starmie δ 030/113 Delta Species",
+    "fullDisplayName": "Starmie δ 30/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2733,18 +3290,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-030-low.png",
-    "imageHighSrc": "cards/ex11-030-high.png"
+    "imageHighSrc": "cards/ex11-030-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "20"
+      },
+      {
+        "name": "Swift",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Water Metal type."
   },
   {
     "masterCardId": "5510",
-    "externalId": null,
+    "externalId": "ex11-29",
     "tcgdex_id": "ex11-29",
     "localId": "029",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "029/113",
+    "cardNumber": "29/113",
     "cardName": "Snow-cloud Castform",
-    "fullDisplayName": "Snow-cloud Castform 029/113 Delta Species",
+    "fullDisplayName": "Snow-cloud Castform 29/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2766,18 +3334,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-029-low.png",
-    "imageHighSrc": "cards/ex11-029-high.png"
+    "imageHighSrc": "cards/ex11-029-high.png",
+    "attacks": [
+      {
+        "name": "Holon Blizzard",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5501",
-    "externalId": null,
+    "externalId": "ex11-28",
     "tcgdex_id": "ex11-28",
     "localId": "028",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "028/113",
+    "cardNumber": "28/113",
     "cardName": "Slowking",
-    "fullDisplayName": "Slowking 028/113 Delta Species",
+    "fullDisplayName": "Slowking 28/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2799,18 +3373,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-028-low.png",
-    "imageHighSrc": "cards/ex11-028-high.png"
+    "imageHighSrc": "cards/ex11-028-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Option",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5492",
-    "externalId": null,
+    "externalId": "ex11-27",
     "tcgdex_id": "ex11-27",
     "localId": "027",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "027/113",
+    "cardNumber": "27/113",
     "cardName": "Sandslash δ",
-    "fullDisplayName": "Sandslash δ 027/113 Delta Species",
+    "fullDisplayName": "Sandslash δ 27/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2833,18 +3413,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-027-low.png",
-    "imageHighSrc": "cards/ex11-027-high.png"
+    "imageHighSrc": "cards/ex11-027-high.png",
+    "attacks": [
+      {
+        "name": "Rend",
+        "damage": "20+"
+      },
+      {
+        "name": "Slash",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Fighting Metal type."
   },
   {
     "masterCardId": "5483",
-    "externalId": null,
+    "externalId": "ex11-26",
     "tcgdex_id": "ex11-26",
     "localId": "026",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "026/113",
+    "cardNumber": "26/113",
     "cardName": "Rain Castform",
-    "fullDisplayName": "Rain Castform 026/113 Delta Species",
+    "fullDisplayName": "Rain Castform 26/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2866,18 +3457,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-026-low.png",
-    "imageHighSrc": "cards/ex11-026-high.png"
+    "imageHighSrc": "cards/ex11-026-high.png",
+    "attacks": [
+      {
+        "name": "Holon Splash",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5474",
-    "externalId": null,
+    "externalId": "ex11-25",
     "tcgdex_id": "ex11-25",
     "localId": "025",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "025/113",
+    "cardNumber": "25/113",
     "cardName": "Porygon2",
-    "fullDisplayName": "Porygon2 025/113 Delta Species",
+    "fullDisplayName": "Porygon2 25/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2899,18 +3496,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-025-low.png",
-    "imageHighSrc": "cards/ex11-025-high.png"
+    "imageHighSrc": "cards/ex11-025-high.png",
+    "attacks": [
+      {
+        "name": "Machine Burst",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5465",
-    "externalId": null,
+    "externalId": "ex11-24",
     "tcgdex_id": "ex11-24",
     "localId": "024",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "024/113",
+    "cardNumber": "24/113",
     "cardName": "Mightyena δ",
-    "fullDisplayName": "Mightyena δ 024/113 Delta Species",
+    "fullDisplayName": "Mightyena δ 24/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2933,18 +3536,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-024-low.png",
-    "imageHighSrc": "cards/ex11-024-high.png"
+    "imageHighSrc": "cards/ex11-024-high.png",
+    "attacks": [
+      {
+        "name": "Delta Fang",
+        "damage": "20"
+      },
+      {
+        "name": "Gang Up",
+        "damage": "10×"
+      }
+    ],
+    "rules": "This Pokémon is both Darkness Metal type."
   },
   {
     "masterCardId": "5457",
-    "externalId": null,
+    "externalId": "ex11-23",
     "tcgdex_id": "ex11-23",
     "localId": "023",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "023/113",
+    "cardNumber": "23/113",
     "cardName": "Hypno",
-    "fullDisplayName": "Hypno 023/113 Delta Species",
+    "fullDisplayName": "Hypno 23/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2966,18 +3580,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-023-low.png",
-    "imageHighSrc": "cards/ex11-023-high.png"
+    "imageHighSrc": "cards/ex11-023-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Inducer",
+        "damage": null
+      },
+      {
+        "name": "Psyshot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5448",
-    "externalId": null,
+    "externalId": "ex11-22",
     "tcgdex_id": "ex11-22",
     "localId": "022",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "022/113",
+    "cardNumber": "22/113",
     "cardName": "Holon's Magneton",
-    "fullDisplayName": "Holon's Magneton 022/113 Delta Species",
+    "fullDisplayName": "Holon's Magneton 22/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2999,18 +3623,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-022-low.png",
-    "imageHighSrc": "cards/ex11-022-high.png"
+    "imageHighSrc": "cards/ex11-022-high.png",
+    "attacks": [
+      {
+        "name": "Extra Ball",
+        "damage": "30+"
+      }
+    ],
+    "rules": "You may attach this as an Energy card from your hand to 1 of your Pokémon that already has an Energy card attached to it. When you attach this card, return an Energy card attached to that Pokémon to your hand. While attached, this card is a Special Energy card and provides every type of Energy but 2 Energy at a time. (Has no effect other than providing Energy.)"
   },
   {
     "masterCardId": "5439",
-    "externalId": null,
+    "externalId": "ex11-21",
     "tcgdex_id": "ex11-21",
     "localId": "021",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "021/113",
+    "cardNumber": "21/113",
     "cardName": "Holon's Electrode",
-    "fullDisplayName": "Holon's Electrode 021/113 Delta Species",
+    "fullDisplayName": "Holon's Electrode 21/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3032,18 +3663,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-021-low.png",
-    "imageHighSrc": "cards/ex11-021-high.png"
+    "imageHighSrc": "cards/ex11-021-high.png",
+    "attacks": [
+      {
+        "name": "Dazzle Blast",
+        "damage": "30"
+      }
+    ],
+    "rules": "You may attach this as an Energy card from your hand to 1 of your Pokémon that already has an Energy card attached to it. When you attach this card, return an Energy card attached to that Pokémon to your hand. While attached, this card is a Special Energy card and provides every type of Energy but 2 Energy at a time. (Has no effect other than providing Energy.)"
   },
   {
     "masterCardId": "5431",
-    "externalId": null,
+    "externalId": "ex11-20",
     "tcgdex_id": "ex11-20",
     "localId": "020",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "020/113",
+    "cardNumber": "20/113",
     "cardName": "Azurill",
-    "fullDisplayName": "Azurill 020/113 Delta Species",
+    "fullDisplayName": "Azurill 20/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3065,18 +3703,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-020-low.png",
-    "imageHighSrc": "cards/ex11-020-high.png"
+    "imageHighSrc": "cards/ex11-020-high.png",
+    "attacks": [
+      {
+        "name": "Type Match",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5421",
-    "externalId": null,
+    "externalId": "ex11-19",
     "tcgdex_id": "ex11-19",
     "localId": "019",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "019/113",
+    "cardNumber": "19/113",
     "cardName": "Azumarill δ",
-    "fullDisplayName": "Azumarill δ 019/113 Delta Species",
+    "fullDisplayName": "Azumarill δ 19/113 Delta Species",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3099,18 +3743,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-019-low.png",
-    "imageHighSrc": "cards/ex11-019-high.png"
+    "imageHighSrc": "cards/ex11-019-high.png",
+    "attacks": [
+      {
+        "name": "Bubblebeam",
+        "damage": "20"
+      },
+      {
+        "name": "Rolling Tackle",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Water Metal type."
   },
   {
     "masterCardId": "5412",
-    "externalId": null,
+    "externalId": "ex11-18",
     "tcgdex_id": "ex11-18",
     "localId": "018",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "018/113",
+    "cardNumber": "18/113",
     "cardName": "Vaporeon δ",
-    "fullDisplayName": "Vaporeon δ 018/113 Delta Species",
+    "fullDisplayName": "Vaporeon δ 18/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3133,18 +3788,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-018-low.png",
-    "imageHighSrc": "cards/ex11-018-high.png"
+    "imageHighSrc": "cards/ex11-018-high.png",
+    "attacks": [
+      {
+        "name": "Delta Search",
+        "damage": "10"
+      },
+      {
+        "name": "Return Wave",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Water Metal type."
   },
   {
     "masterCardId": "5403",
-    "externalId": null,
+    "externalId": "ex11-17",
     "tcgdex_id": "ex11-17",
     "localId": "017",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "017/113",
+    "cardNumber": "17/113",
     "cardName": "Umbreon δ",
-    "fullDisplayName": "Umbreon δ 017/113 Delta Species",
+    "fullDisplayName": "Umbreon δ 17/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3167,18 +3833,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-017-low.png",
-    "imageHighSrc": "cards/ex11-017-high.png"
+    "imageHighSrc": "cards/ex11-017-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ],
+    "rules": "This Pokémon is both Darkness Metal type."
   },
   {
     "masterCardId": "5391",
-    "externalId": null,
+    "externalId": "ex11-16",
     "tcgdex_id": "ex11-16",
     "localId": "016",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "016/113",
+    "cardNumber": "16/113",
     "cardName": "Tyranitar δ",
-    "fullDisplayName": "Tyranitar δ 016/113 Delta Species",
+    "fullDisplayName": "Tyranitar δ 16/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3201,18 +3874,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-016-low.png",
-    "imageHighSrc": "cards/ex11-016-high.png"
+    "imageHighSrc": "cards/ex11-016-high.png",
+    "attacks": [
+      {
+        "name": "Delta Crush",
+        "damage": "50+"
+      }
+    ],
+    "rules": "This Pokémon is both Fire Metal type."
   },
   {
     "masterCardId": "5382",
-    "externalId": null,
+    "externalId": "ex11-15",
     "tcgdex_id": "ex11-15",
     "localId": "015",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "015/113",
+    "cardNumber": "15/113",
     "cardName": "Starmie δ",
-    "fullDisplayName": "Starmie δ 015/113 Delta Species",
+    "fullDisplayName": "Starmie δ 15/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3235,18 +3915,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-015-low.png",
-    "imageHighSrc": "cards/ex11-015-high.png"
+    "imageHighSrc": "cards/ex11-015-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Energy Loop",
+        "damage": "30"
+      }
+    ],
+    "rules": "This Pokémon is both Water Metal type."
   },
   {
     "masterCardId": "5373",
-    "externalId": null,
+    "externalId": "ex11-14",
     "tcgdex_id": "ex11-14",
     "localId": "014",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "014/113",
+    "cardNumber": "14/113",
     "cardName": "Salamence δ",
-    "fullDisplayName": "Salamence δ 014/113 Delta Species",
+    "fullDisplayName": "Salamence δ 14/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3269,18 +3960,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-014-low.png",
-    "imageHighSrc": "cards/ex11-014-high.png"
+    "imageHighSrc": "cards/ex11-014-high.png",
+    "attacks": [
+      {
+        "name": "Fire Dance",
+        "damage": "30"
+      },
+      {
+        "name": "Delta Blast",
+        "damage": "100"
+      }
+    ],
+    "rules": "This Pokémon is both Fire Metal type."
   },
   {
     "masterCardId": "5364",
-    "externalId": null,
+    "externalId": "ex11-13",
     "tcgdex_id": "ex11-13",
     "localId": "013",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "013/113",
+    "cardNumber": "13/113",
     "cardName": "Rayquaza δ",
-    "fullDisplayName": "Rayquaza δ 013/113 Delta Species",
+    "fullDisplayName": "Rayquaza δ 13/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3303,18 +4005,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-013-low.png",
-    "imageHighSrc": "cards/ex11-013-high.png"
+    "imageHighSrc": "cards/ex11-013-high.png",
+    "attacks": [
+      {
+        "name": "Power Blow",
+        "damage": "10×"
+      },
+      {
+        "name": "Lightning Storm",
+        "damage": "70"
+      }
+    ],
+    "rules": "This Pokémon is both Lightning Metal type."
   },
   {
     "masterCardId": "5355",
-    "externalId": null,
+    "externalId": "ex11-12",
     "tcgdex_id": "ex11-12",
     "localId": "012",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "012/113",
+    "cardNumber": "12/113",
     "cardName": "Mewtwo δ",
-    "fullDisplayName": "Mewtwo δ 012/113 Delta Species",
+    "fullDisplayName": "Mewtwo δ 12/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3337,18 +4050,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-012-low.png",
-    "imageHighSrc": "cards/ex11-012-high.png"
+    "imageHighSrc": "cards/ex11-012-high.png",
+    "attacks": [
+      {
+        "name": "Energy Burst",
+        "damage": "10×"
+      }
+    ],
+    "rules": "This Pokémon is both Fire Metal type."
   },
   {
     "masterCardId": "5346",
-    "externalId": null,
+    "externalId": "ex11-11",
     "tcgdex_id": "ex11-11",
     "localId": "011",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "011/113",
+    "cardNumber": "11/113",
     "cardName": "Metagross δ",
-    "fullDisplayName": "Metagross δ 011/113 Delta Species",
+    "fullDisplayName": "Metagross δ 11/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3371,18 +4091,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-011-low.png",
-    "imageHighSrc": "cards/ex11-011-high.png"
+    "imageHighSrc": "cards/ex11-011-high.png",
+    "attacks": [
+      {
+        "name": "Crush and Burn",
+        "damage": "30+"
+      }
+    ],
+    "rules": "This Pokémon is both Lightning Metal type."
   },
   {
     "masterCardId": "5337",
-    "externalId": null,
+    "externalId": "ex11-10",
     "tcgdex_id": "ex11-10",
     "localId": "010",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "010/113",
+    "cardNumber": "10/113",
     "cardName": "Marowak δ",
-    "fullDisplayName": "Marowak δ 010/113 Delta Species",
+    "fullDisplayName": "Marowak δ 10/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3405,18 +4132,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-010-low.png",
-    "imageHighSrc": "cards/ex11-010-high.png"
+    "imageHighSrc": "cards/ex11-010-high.png",
+    "attacks": [
+      {
+        "name": "Energy Bone",
+        "damage": null
+      },
+      {
+        "name": "Metal Crusher",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Fighting Metal type."
   },
   {
     "masterCardId": "5328",
-    "externalId": null,
+    "externalId": "ex11-9",
     "tcgdex_id": "ex11-9",
     "localId": "009",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "009/113",
+    "cardNumber": "9/113",
     "cardName": "Latios δ",
-    "fullDisplayName": "Latios δ 009/113 Delta Species",
+    "fullDisplayName": "Latios δ 9/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3439,18 +4177,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-009-low.png",
-    "imageHighSrc": "cards/ex11-009-high.png"
+    "imageHighSrc": "cards/ex11-009-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "20"
+      },
+      {
+        "name": "Psychic Force",
+        "damage": "80"
+      }
+    ],
+    "rules": "This Pokémon is both Lightning Metal type."
   },
   {
     "masterCardId": "5319",
-    "externalId": null,
+    "externalId": "ex11-8",
     "tcgdex_id": "ex11-8",
     "localId": "008",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "008/113",
+    "cardNumber": "8/113",
     "cardName": "Latias δ",
-    "fullDisplayName": "Latias δ 008/113 Delta Species",
+    "fullDisplayName": "Latias δ 8/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3473,18 +4222,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-008-low.png",
-    "imageHighSrc": "cards/ex11-008-high.png"
+    "imageHighSrc": "cards/ex11-008-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "20"
+      },
+      {
+        "name": "Extra Crush",
+        "damage": "80"
+      }
+    ],
+    "rules": "This Pokémon is both Lightning Metal type."
   },
   {
     "masterCardId": "5310",
-    "externalId": null,
+    "externalId": "ex11-7",
     "tcgdex_id": "ex11-7",
     "localId": "007",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "007/113",
+    "cardNumber": "7/113",
     "cardName": "Jolteon δ",
-    "fullDisplayName": "Jolteon δ 007/113 Delta Species",
+    "fullDisplayName": "Jolteon δ 7/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3507,18 +4267,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-007-low.png",
-    "imageHighSrc": "cards/ex11-007-high.png"
+    "imageHighSrc": "cards/ex11-007-high.png",
+    "attacks": [
+      {
+        "name": "Delta Search",
+        "damage": "10"
+      },
+      {
+        "name": "Return Spark",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Lightning Metal type."
   },
   {
     "masterCardId": "5302",
-    "externalId": null,
+    "externalId": "ex11-6",
     "tcgdex_id": "ex11-6",
     "localId": "006",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "006/113",
+    "cardNumber": "6/113",
     "cardName": "Gardevoir δ",
-    "fullDisplayName": "Gardevoir δ 006/113 Delta Species",
+    "fullDisplayName": "Gardevoir δ 6/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3541,18 +4312,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-006-low.png",
-    "imageHighSrc": "cards/ex11-006-high.png"
+    "imageHighSrc": "cards/ex11-006-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Rage",
+        "damage": null
+      },
+      {
+        "name": "Black Magic",
+        "damage": "10+"
+      }
+    ],
+    "rules": "This Pokémon is both Psychic Metal type."
   },
   {
     "masterCardId": "5295",
-    "externalId": null,
+    "externalId": "ex11-5",
     "tcgdex_id": "ex11-5",
     "localId": "005",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "005/113",
+    "cardNumber": "5/113",
     "cardName": "Flareon δ",
-    "fullDisplayName": "Flareon δ 005/113 Delta Species",
+    "fullDisplayName": "Flareon δ 5/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3575,18 +4357,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-005-low.png",
-    "imageHighSrc": "cards/ex11-005-high.png"
+    "imageHighSrc": "cards/ex11-005-high.png",
+    "attacks": [
+      {
+        "name": "Delta Search",
+        "damage": "10"
+      },
+      {
+        "name": "Return Burn",
+        "damage": "50"
+      }
+    ],
+    "rules": "This Pokémon is both Fire Metal type."
   },
   {
     "masterCardId": "5285",
-    "externalId": null,
+    "externalId": "ex11-4",
     "tcgdex_id": "ex11-4",
     "localId": "004",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "004/113",
+    "cardNumber": "4/113",
     "cardName": "Espeon δ",
-    "fullDisplayName": "Espeon δ 004/113 Delta Species",
+    "fullDisplayName": "Espeon δ 4/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3609,18 +4402,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-004-low.png",
-    "imageHighSrc": "cards/ex11-004-high.png"
+    "imageHighSrc": "cards/ex11-004-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "30"
+      }
+    ],
+    "rules": "This Pokémon is both Psychic Metal type."
   },
   {
     "masterCardId": "5271",
-    "externalId": null,
+    "externalId": "ex11-3",
     "tcgdex_id": "ex11-3",
     "localId": "003",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "003/113",
+    "cardNumber": "3/113",
     "cardName": "Dragonite δ",
-    "fullDisplayName": "Dragonite δ 003/113 Delta Species",
+    "fullDisplayName": "Dragonite δ 3/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3643,18 +4443,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-003-low.png",
-    "imageHighSrc": "cards/ex11-003-high.png"
+    "imageHighSrc": "cards/ex11-003-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "30"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "70"
+      }
+    ],
+    "rules": "This Pokémon is both Lightning Metal type."
   },
   {
     "masterCardId": "5263",
-    "externalId": null,
+    "externalId": "ex11-2",
     "tcgdex_id": "ex11-2",
     "localId": "002",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "002/113",
+    "cardNumber": "2/113",
     "cardName": "Crobat δ",
-    "fullDisplayName": "Crobat δ 002/113 Delta Species",
+    "fullDisplayName": "Crobat δ 2/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3677,18 +4488,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-002-low.png",
-    "imageHighSrc": "cards/ex11-002-high.png"
+    "imageHighSrc": "cards/ex11-002-high.png",
+    "attacks": [
+      {
+        "name": "Radar Jam",
+        "damage": "30"
+      },
+      {
+        "name": "Target Attack",
+        "damage": null
+      }
+    ],
+    "rules": "This Pokémon is both Grass Metal type."
   },
   {
     "masterCardId": "5253",
-    "externalId": null,
+    "externalId": "ex11-1",
     "tcgdex_id": "ex11-1",
     "localId": "001",
     "setCode": "ex11",
     "setTcgdexId": "ex11",
-    "cardNumber": "001/113",
+    "cardNumber": "1/113",
     "cardName": "Beedrill δ",
-    "fullDisplayName": "Beedrill δ 001/113 Delta Species",
+    "fullDisplayName": "Beedrill δ 1/113 Delta Species",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3711,6 +4533,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex11-001-low.png",
-    "imageHighSrc": "cards/ex11-001-high.png"
+    "imageHighSrc": "cards/ex11-001-high.png",
+    "attacks": [
+      {
+        "name": "Super Slash",
+        "damage": "50+"
+      }
+    ],
+    "rules": "This Pokémon is both Grass Metal type."
   }
 ]

@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "18764",
-    "externalId": null,
+    "externalId": "tk1a-10",
     "tcgdex_id": "tk-ex-latia-10",
     "localId": "010",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "010/10",
+    "cardNumber": "10/10",
     "cardName": "Fire Energy",
-    "fullDisplayName": "Fire Energy 010/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Fire Energy 10/10 EX trainer Kit (Latias)",
     "rarity": "Common",
     "category": "Energy",
     "stage": "Basic",
@@ -30,14 +30,14 @@
   },
   {
     "masterCardId": "18763",
-    "externalId": null,
+    "externalId": "tk1a-9",
     "tcgdex_id": "tk-ex-latia-9",
     "localId": "009",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "009/10",
+    "cardNumber": "9/10",
     "cardName": "Energy Search",
-    "fullDisplayName": "Energy Search 009/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Energy Search 9/10 EX trainer Kit (Latias)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -55,18 +55,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1a-009-low.png",
-    "imageHighSrc": "cards/tk1a-009-high.png"
+    "imageHighSrc": "cards/tk1a-009-high.png",
+    "rules": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward"
   },
   {
     "masterCardId": "18733",
-    "externalId": null,
+    "externalId": "tk1a-8",
     "tcgdex_id": "tk-ex-latia-8",
     "localId": "008",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "008/10",
+    "cardNumber": "8/10",
     "cardName": "Potion",
-    "fullDisplayName": "Potion 008/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Potion 8/10 EX trainer Kit (Latias)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -84,18 +85,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1a-008-low.png",
-    "imageHighSrc": "cards/tk1a-008-high.png"
+    "imageHighSrc": "cards/tk1a-008-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "18706",
-    "externalId": null,
+    "externalId": "tk1a-7",
     "tcgdex_id": "tk-ex-latia-7",
     "localId": "007",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "007/10",
+    "cardNumber": "7/10",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 007/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Torchic 7/10 EX trainer Kit (Latias)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -117,18 +119,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1a-007-low.png",
-    "imageHighSrc": "cards/tk1a-007-high.png"
+    "imageHighSrc": "cards/tk1a-007-high.png",
+    "attacks": [
+      {
+        "name": "Firebreathing",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "18677",
-    "externalId": null,
+    "externalId": "tk1a-6",
     "tcgdex_id": "tk-ex-latia-6",
     "localId": "006",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "006/10",
+    "cardNumber": "6/10",
     "cardName": "Skitty",
-    "fullDisplayName": "Skitty 006/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Skitty 6/10 EX trainer Kit (Latias)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -150,18 +158,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1a-006-low.png",
-    "imageHighSrc": "cards/tk1a-006-high.png"
+    "imageHighSrc": "cards/tk1a-006-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Lunge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "18644",
-    "externalId": null,
+    "externalId": "tk1a-5",
     "tcgdex_id": "tk-ex-latia-5",
     "localId": "005",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "005/10",
+    "cardNumber": "5/10",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 005/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Numel 5/10 EX trainer Kit (Latias)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -183,18 +201,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1a-005-low.png",
-    "imageHighSrc": "cards/tk1a-005-high.png"
+    "imageHighSrc": "cards/tk1a-005-high.png",
+    "attacks": [
+      {
+        "name": "Firebreathing",
+        "damage": "10+"
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "18607",
-    "externalId": null,
+    "externalId": "tk1a-4",
     "tcgdex_id": "tk-ex-latia-4",
     "localId": "004",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "004/10",
+    "cardNumber": "4/10",
     "cardName": "Latias",
-    "fullDisplayName": "Latias 004/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Latias 4/10 EX trainer Kit (Latias)",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -216,18 +244,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1a-004-low.png",
-    "imageHighSrc": "cards/tk1a-004-high.png"
+    "imageHighSrc": "cards/tk1a-004-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Dew",
+        "damage": "10"
+      },
+      {
+        "name": "Heat Blast",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "18570",
-    "externalId": null,
+    "externalId": "tk1a-3",
     "tcgdex_id": "tk-ex-latia-3",
     "localId": "003",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "003/10",
+    "cardNumber": "3/10",
     "cardName": "Delcatty",
-    "fullDisplayName": "Delcatty 003/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Delcatty 3/10 EX trainer Kit (Latias)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -249,18 +287,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1a-003-low.png",
-    "imageHighSrc": "cards/tk1a-003-high.png"
+    "imageHighSrc": "cards/tk1a-003-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "30"
+      },
+      {
+        "name": "Ultra Energy Source",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "18533",
-    "externalId": null,
+    "externalId": "tk1a-2",
     "tcgdex_id": "tk-ex-latia-2",
     "localId": "002",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "002/10",
+    "cardNumber": "2/10",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 002/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Combusken 2/10 EX trainer Kit (Latias)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -282,18 +330,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1a-002-low.png",
-    "imageHighSrc": "cards/tk1a-002-high.png"
+    "imageHighSrc": "cards/tk1a-002-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      },
+      {
+        "name": "Double Kick",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "18496",
-    "externalId": null,
+    "externalId": "tk1a-1",
     "tcgdex_id": "tk-ex-latia-1",
     "localId": "001",
     "setCode": "tk-ex-latia",
     "setTcgdexId": "tk-ex-latia",
-    "cardNumber": "001/10",
+    "cardNumber": "1/10",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 001/10 EX trainer Kit (Latias)",
+    "fullDisplayName": "Bagon 1/10 EX trainer Kit (Latias)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -315,6 +373,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/tk1a-001-low.png",
-    "imageHighSrc": "cards/tk1a-001-high.png"
+    "imageHighSrc": "cards/tk1a-001-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   }
 ]

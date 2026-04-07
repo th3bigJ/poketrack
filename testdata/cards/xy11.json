@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "20042",
-    "externalId": null,
+    "externalId": "xy11-116",
     "tcgdex_id": "xy11-116",
     "localId": "116",
     "setCode": "xy11",
@@ -31,11 +31,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-116-low.png",
-    "imageHighSrc": "cards/xy11-116-high.png"
+    "imageHighSrc": "cards/xy11-116-high.png",
+    "attacks": [
+      {
+        "name": "Link Blast",
+        "damage": "30+"
+      },
+      {
+        "name": "Luminous Blade",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20037",
-    "externalId": null,
+    "externalId": "xy11-115",
     "tcgdex_id": "xy11-115",
     "localId": "115",
     "setCode": "xy11",
@@ -66,11 +77,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-115-low.png",
-    "imageHighSrc": "cards/xy11-115-high.png"
+    "imageHighSrc": "cards/xy11-115-high.png",
+    "attacks": [
+      {
+        "name": "Volcanic Heat",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20032",
-    "externalId": null,
+    "externalId": "xy11-114",
     "tcgdex_id": "xy11-114",
     "localId": "114",
     "setCode": "xy11",
@@ -95,11 +113,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-114-low.png",
-    "imageHighSrc": "cards/xy11-114-high.png"
+    "imageHighSrc": "cards/xy11-114-high.png",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20024",
-    "externalId": null,
+    "externalId": "xy11-113",
     "tcgdex_id": "xy11-113",
     "localId": "113",
     "setCode": "xy11",
@@ -124,11 +143,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-113-low.png",
-    "imageHighSrc": "cards/xy11-113-high.png"
+    "imageHighSrc": "cards/xy11-113-high.png",
+    "rules": "Remove all effects of attacks on each player and his or her Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20016",
-    "externalId": null,
+    "externalId": "xy11-112",
     "tcgdex_id": "xy11-112",
     "localId": "112",
     "setCode": "xy11",
@@ -159,11 +179,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-112-low.png",
-    "imageHighSrc": "cards/xy11-112-high.png"
+    "imageHighSrc": "cards/xy11-112-high.png",
+    "attacks": [
+      {
+        "name": "Despair Ray",
+        "damage": "110+"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "20008",
-    "externalId": null,
+    "externalId": "xy11-111",
     "tcgdex_id": "xy11-111",
     "localId": "111",
     "setCode": "xy11",
@@ -193,11 +220,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-111-low.png",
-    "imageHighSrc": "cards/xy11-111-high.png"
+    "imageHighSrc": "cards/xy11-111-high.png",
+    "attacks": [
+      {
+        "name": "Link Blast",
+        "damage": "30+"
+      },
+      {
+        "name": "Luminous Blade",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19999",
-    "externalId": null,
+    "externalId": "xy11-110",
     "tcgdex_id": "xy11-110",
     "localId": "110",
     "setCode": "xy11",
@@ -227,11 +265,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-110-low.png",
-    "imageHighSrc": "cards/xy11-110-high.png"
+    "imageHighSrc": "cards/xy11-110-high.png",
+    "attacks": [
+      {
+        "name": "Soul Blaster",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19989",
-    "externalId": null,
+    "externalId": "xy11-109",
     "tcgdex_id": "xy11-109",
     "localId": "109",
     "setCode": "xy11",
@@ -262,11 +307,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-109-low.png",
-    "imageHighSrc": "cards/xy11-109-high.png"
+    "imageHighSrc": "cards/xy11-109-high.png",
+    "attacks": [
+      {
+        "name": "Canyon Axe",
+        "damage": "160"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19981",
-    "externalId": null,
+    "externalId": "xy11-108",
     "tcgdex_id": "xy11-108",
     "localId": "108",
     "setCode": "xy11",
@@ -296,11 +348,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-108-low.png",
-    "imageHighSrc": "cards/xy11-108-high.png"
+    "imageHighSrc": "cards/xy11-108-high.png",
+    "attacks": [
+      {
+        "name": "Wild Edge",
+        "damage": "80+"
+      },
+      {
+        "name": "Iron Tail",
+        "damage": "100×"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19972",
-    "externalId": null,
+    "externalId": "xy11-107",
     "tcgdex_id": "xy11-107",
     "localId": "107",
     "setCode": "xy11",
@@ -331,11 +394,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-107-low.png",
-    "imageHighSrc": "cards/xy11-107-high.png"
+    "imageHighSrc": "cards/xy11-107-high.png",
+    "attacks": [
+      {
+        "name": "Volcanic Heat",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19963",
-    "externalId": null,
+    "externalId": "xy11-106",
     "tcgdex_id": "xy11-106",
     "localId": "106",
     "setCode": "xy11",
@@ -360,11 +430,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-106-low.png",
-    "imageHighSrc": "cards/xy11-106-high.png"
+    "imageHighSrc": "cards/xy11-106-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nYour turn does not end if the Pokémon this card is attached to becomes M Steelix-EX.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19954",
-    "externalId": null,
+    "externalId": "xy11-105",
     "tcgdex_id": "xy11-105",
     "localId": "105",
     "setCode": "xy11",
@@ -389,11 +460,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-105-low.png",
-    "imageHighSrc": "cards/xy11-105-high.png"
+    "imageHighSrc": "cards/xy11-105-high.png",
+    "rules": "Shuffle 2 Special Energy cards from your discard pile into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19946",
-    "externalId": null,
+    "externalId": "xy11-104",
     "tcgdex_id": "xy11-104",
     "localId": "104",
     "setCode": "xy11",
@@ -418,11 +490,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-104-low.png",
-    "imageHighSrc": "cards/xy11-104-high.png"
+    "imageHighSrc": "cards/xy11-104-high.png",
+    "rules": "Remove all effects of attacks on each player and his or her Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19937",
-    "externalId": null,
+    "externalId": "xy11-103",
     "tcgdex_id": "xy11-103",
     "localId": "103",
     "setCode": "xy11",
@@ -447,11 +520,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-103-low.png",
-    "imageHighSrc": "cards/xy11-103-high.png"
+    "imageHighSrc": "cards/xy11-103-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. Search your deck for a Basic Pokémon and switch it with that Pokémon. (Any attached cards, damage counters, Special Conditions, turns in play, and any other effects remain on the new Pokémon.) Shuffle the first Pokémon into your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19928",
-    "externalId": null,
+    "externalId": "xy11-102",
     "tcgdex_id": "xy11-102",
     "localId": "102",
     "setCode": "xy11",
@@ -476,11 +550,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-102-low.png",
-    "imageHighSrc": "cards/xy11-102-high.png"
+    "imageHighSrc": "cards/xy11-102-high.png",
+    "rules": "You can play this card only if you took it as a face-down Prize card, before you put it into your hand.\n\nFlip a coin. If heads, take 1 more Prize card.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19919",
-    "externalId": null,
+    "externalId": "xy11-101",
     "tcgdex_id": "xy11-101",
     "localId": "101",
     "setCode": "xy11",
@@ -505,11 +580,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-101-low.png",
-    "imageHighSrc": "cards/xy11-101-high.png"
+    "imageHighSrc": "cards/xy11-101-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nYour turn does not end if the Pokémon this card is attached to becomes M Gardevoir-EX.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19910",
-    "externalId": null,
+    "externalId": "xy11-100",
     "tcgdex_id": "xy11-100",
     "localId": "100",
     "setCode": "xy11",
@@ -534,18 +610,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-100-low.png",
-    "imageHighSrc": "cards/xy11-100-high.png"
+    "imageHighSrc": "cards/xy11-100-high.png",
+    "rules": "Look at the bottom 7 cards of your deck. You may reveal an Anorith you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19901",
-    "externalId": null,
+    "externalId": "xy11-99",
     "tcgdex_id": "xy11-99",
     "localId": "099",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "099/114",
+    "cardNumber": "99/114",
     "cardName": "Captivating Poké Puff",
-    "fullDisplayName": "Captivating Poké Puff 099/114 Steam Siege",
+    "fullDisplayName": "Captivating Poké Puff 99/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -563,18 +640,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-099-low.png",
-    "imageHighSrc": "cards/xy11-099-high.png"
+    "imageHighSrc": "cards/xy11-099-high.png",
+    "rules": "Your opponent reveals his or her hand. Put any number of Basic Pokémon you find there onto your opponent's Bench.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19892",
-    "externalId": null,
+    "externalId": "xy11-98",
     "tcgdex_id": "xy11-98",
     "localId": "098",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "098/114",
+    "cardNumber": "98/114",
     "cardName": "Armor Fossil Shieldon",
-    "fullDisplayName": "Armor Fossil Shieldon 098/114 Steam Siege",
+    "fullDisplayName": "Armor Fossil Shieldon 98/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -592,18 +670,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-098-low.png",
-    "imageHighSrc": "cards/xy11-098-high.png"
+    "imageHighSrc": "cards/xy11-098-high.png",
+    "rules": "Look at the bottom 7 cards of your deck. You may reveal a Shieldon you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19882",
-    "externalId": null,
+    "externalId": "xy11-97",
     "tcgdex_id": "xy11-97",
     "localId": "097",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "097/114",
+    "cardNumber": "97/114",
     "cardName": "Hawlucha",
-    "fullDisplayName": "Hawlucha 097/114 Steam Siege",
+    "fullDisplayName": "Hawlucha 97/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -625,18 +704,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-097-low.png",
-    "imageHighSrc": "cards/xy11-097-high.png"
+    "imageHighSrc": "cards/xy11-097-high.png",
+    "attacks": [
+      {
+        "name": "Acrobatics",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "19873",
-    "externalId": null,
+    "externalId": "xy11-96",
     "tcgdex_id": "xy11-96",
     "localId": "096",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "096/114",
+    "cardNumber": "96/114",
     "cardName": "Talonflame",
-    "fullDisplayName": "Talonflame 096/114 Steam Siege",
+    "fullDisplayName": "Talonflame 96/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -658,18 +743,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-096-low.png",
-    "imageHighSrc": "cards/xy11-096-high.png"
+    "imageHighSrc": "cards/xy11-096-high.png",
+    "attacks": [
+      {
+        "name": "Aero Blitz",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19864",
-    "externalId": null,
+    "externalId": "xy11-95",
     "tcgdex_id": "xy11-95",
     "localId": "095",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "095/114",
+    "cardNumber": "95/114",
     "cardName": "Fletchinder",
-    "fullDisplayName": "Fletchinder 095/114 Steam Siege",
+    "fullDisplayName": "Fletchinder 95/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -691,18 +782,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-095-low.png",
-    "imageHighSrc": "cards/xy11-095-high.png"
+    "imageHighSrc": "cards/xy11-095-high.png",
+    "attacks": [
+      {
+        "name": "Glide",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19856",
-    "externalId": null,
+    "externalId": "xy11-94",
     "tcgdex_id": "xy11-94",
     "localId": "094",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "094/114",
+    "cardNumber": "94/114",
     "cardName": "Fletchling",
-    "fullDisplayName": "Fletchling 094/114 Steam Siege",
+    "fullDisplayName": "Fletchling 94/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -724,18 +821,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-094-low.png",
-    "imageHighSrc": "cards/xy11-094-high.png"
+    "imageHighSrc": "cards/xy11-094-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19847",
-    "externalId": null,
+    "externalId": "xy11-93",
     "tcgdex_id": "xy11-93",
     "localId": "093",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "093/114",
+    "cardNumber": "93/114",
     "cardName": "Braviary",
-    "fullDisplayName": "Braviary 093/114 Steam Siege",
+    "fullDisplayName": "Braviary 93/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -757,18 +860,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-093-low.png",
-    "imageHighSrc": "cards/xy11-093-high.png"
+    "imageHighSrc": "cards/xy11-093-high.png",
+    "attacks": [
+      {
+        "name": "Ambush",
+        "damage": "20+"
+      },
+      {
+        "name": "Sky Drop",
+        "damage": "120-"
+      }
+    ]
   },
   {
     "masterCardId": "19838",
-    "externalId": null,
+    "externalId": "xy11-92",
     "tcgdex_id": "xy11-92",
     "localId": "092",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "092/114",
+    "cardNumber": "92/114",
     "cardName": "Rufflet",
-    "fullDisplayName": "Rufflet 092/114 Steam Siege",
+    "fullDisplayName": "Rufflet 92/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -790,18 +903,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-092-low.png",
-    "imageHighSrc": "cards/xy11-092-high.png"
+    "imageHighSrc": "cards/xy11-092-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19830",
-    "externalId": null,
+    "externalId": "xy11-91",
     "tcgdex_id": "xy11-91",
     "localId": "091",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "091/114",
+    "cardNumber": "91/114",
     "cardName": "Ambipom",
-    "fullDisplayName": "Ambipom 091/114 Steam Siege",
+    "fullDisplayName": "Ambipom 91/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -823,18 +942,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-091-low.png",
-    "imageHighSrc": "cards/xy11-091-high.png"
+    "imageHighSrc": "cards/xy11-091-high.png",
+    "attacks": [
+      {
+        "name": "Furry Chance",
+        "damage": "20+"
+      },
+      {
+        "name": "Double Hit",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "19821",
-    "externalId": null,
+    "externalId": "xy11-90",
     "tcgdex_id": "xy11-90",
     "localId": "090",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "090/114",
+    "cardNumber": "90/114",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 090/114 Steam Siege",
+    "fullDisplayName": "Aipom 90/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -856,18 +985,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-090-low.png",
-    "imageHighSrc": "cards/xy11-090-high.png"
+    "imageHighSrc": "cards/xy11-090-high.png",
+    "attacks": [
+      {
+        "name": "Fiddle Around",
+        "damage": null
+      },
+      {
+        "name": "Tail Jab",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19812",
-    "externalId": null,
+    "externalId": "xy11-89",
     "tcgdex_id": "xy11-89",
     "localId": "089",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "089/114",
+    "cardNumber": "89/114",
     "cardName": "Persian",
-    "fullDisplayName": "Persian 089/114 Steam Siege",
+    "fullDisplayName": "Persian 89/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -889,18 +1028,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-089-low.png",
-    "imageHighSrc": "cards/xy11-089-high.png"
+    "imageHighSrc": "cards/xy11-089-high.png",
+    "attacks": [
+      {
+        "name": "Raid",
+        "damage": "30+"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "19805",
-    "externalId": null,
+    "externalId": "xy11-88",
     "tcgdex_id": "xy11-88",
     "localId": "088",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "088/114",
+    "cardNumber": "88/114",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 088/114 Steam Siege",
+    "fullDisplayName": "Meowth 88/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -922,18 +1071,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-088-low.png",
-    "imageHighSrc": "cards/xy11-088-high.png"
+    "imageHighSrc": "cards/xy11-088-high.png",
+    "attacks": [
+      {
+        "name": "Stall",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19796",
-    "externalId": null,
+    "externalId": "xy11-87",
     "tcgdex_id": "xy11-87",
     "localId": "087",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "087/114",
+    "cardNumber": "87/114",
     "cardName": "Hydreigon BREAK",
-    "fullDisplayName": "Hydreigon BREAK 087/114 Steam Siege",
+    "fullDisplayName": "Hydreigon BREAK 87/114 Steam Siege",
     "rarity": "Rare BREAK",
     "category": "Pokémon",
     "stage": "BREAK",
@@ -955,18 +1114,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-087-low.png",
-    "imageHighSrc": "cards/xy11-087-high.png"
+    "imageHighSrc": "cards/xy11-087-high.png",
+    "attacks": [
+      {
+        "name": "Calamity Blast",
+        "damage": "150"
+      }
+    ],
+    "rules": "BREAK Evolution Rule: Hydreigon BREAK retains the attacks, Abilities, Weakness, Resistance, and Retreat Cost of its previous Evolution."
   },
   {
     "masterCardId": "19787",
-    "externalId": null,
+    "externalId": "xy11-86",
     "tcgdex_id": "xy11-86",
     "localId": "086",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "086/114",
+    "cardNumber": "86/114",
     "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 086/114 Steam Siege",
+    "fullDisplayName": "Hydreigon 86/114 Steam Siege",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -988,18 +1154,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-086-low.png",
-    "imageHighSrc": "cards/xy11-086-high.png"
+    "imageHighSrc": "cards/xy11-086-high.png",
+    "attacks": [
+      {
+        "name": "Cruel Fang",
+        "damage": "40"
+      },
+      {
+        "name": "Dark Burn",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "19779",
-    "externalId": null,
+    "externalId": "xy11-85",
     "tcgdex_id": "xy11-85",
     "localId": "085",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "085/114",
+    "cardNumber": "85/114",
     "cardName": "Zweilous",
-    "fullDisplayName": "Zweilous 085/114 Steam Siege",
+    "fullDisplayName": "Zweilous 85/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1021,18 +1197,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-085-low.png",
-    "imageHighSrc": "cards/xy11-085-high.png"
+    "imageHighSrc": "cards/xy11-085-high.png",
+    "attacks": [
+      {
+        "name": "Double Hit",
+        "damage": "20×"
+      },
+      {
+        "name": "Power Breath",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19770",
-    "externalId": null,
+    "externalId": "xy11-84",
     "tcgdex_id": "xy11-84",
     "localId": "084",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "084/114",
+    "cardNumber": "84/114",
     "cardName": "Deino",
-    "fullDisplayName": "Deino 084/114 Steam Siege",
+    "fullDisplayName": "Deino 84/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1054,18 +1240,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-084-low.png",
-    "imageHighSrc": "cards/xy11-084-high.png"
+    "imageHighSrc": "cards/xy11-084-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Headbutt Bounce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19761",
-    "externalId": null,
+    "externalId": "xy11-83",
     "tcgdex_id": "xy11-83",
     "localId": "083",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "083/114",
+    "cardNumber": "83/114",
     "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon 083/114 Steam Siege",
+    "fullDisplayName": "Druddigon 83/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1087,18 +1283,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-083-low.png",
-    "imageHighSrc": "cards/xy11-083-high.png"
+    "imageHighSrc": "cards/xy11-083-high.png",
+    "attacks": [
+      {
+        "name": "Proud Fang",
+        "damage": "20+"
+      },
+      {
+        "name": "Giga Claw",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "19752",
-    "externalId": null,
+    "externalId": "xy11-82",
     "tcgdex_id": "xy11-82",
     "localId": "082",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "082/114",
+    "cardNumber": "82/114",
     "cardName": "Xerneas BREAK",
-    "fullDisplayName": "Xerneas BREAK 082/114 Steam Siege",
+    "fullDisplayName": "Xerneas BREAK 82/114 Steam Siege",
     "rarity": "Rare BREAK",
     "category": "Pokémon",
     "stage": "BREAK",
@@ -1120,18 +1326,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-082-low.png",
-    "imageHighSrc": "cards/xy11-082-high.png"
+    "imageHighSrc": "cards/xy11-082-high.png",
+    "attacks": [
+      {
+        "name": "Life Stream",
+        "damage": "20×"
+      }
+    ],
+    "rules": "BREAK Evolution Rule: Xerneas BREAK retains the attacks, Abilities, Weakness, Resistance, and Retreat Cost of its previous Evolution."
   },
   {
     "masterCardId": "19743",
-    "externalId": null,
+    "externalId": "xy11-81",
     "tcgdex_id": "xy11-81",
     "localId": "081",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "081/114",
+    "cardNumber": "81/114",
     "cardName": "Xerneas",
-    "fullDisplayName": "Xerneas 081/114 Steam Siege",
+    "fullDisplayName": "Xerneas 81/114 Steam Siege",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1153,18 +1366,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-081-low.png",
-    "imageHighSrc": "cards/xy11-081-high.png"
+    "imageHighSrc": "cards/xy11-081-high.png",
+    "attacks": [
+      {
+        "name": "Geomancy",
+        "damage": null
+      },
+      {
+        "name": "Rainbow Spear",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "19734",
-    "externalId": null,
+    "externalId": "xy11-80",
     "tcgdex_id": "xy11-80",
     "localId": "080",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "080/114",
+    "cardNumber": "80/114",
     "cardName": "Klefki",
-    "fullDisplayName": "Klefki 080/114 Steam Siege",
+    "fullDisplayName": "Klefki 80/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1186,18 +1409,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-080-low.png",
-    "imageHighSrc": "cards/xy11-080-high.png"
+    "imageHighSrc": "cards/xy11-080-high.png",
+    "attacks": [
+      {
+        "name": "Fairy Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19725",
-    "externalId": null,
+    "externalId": "xy11-79",
     "tcgdex_id": "xy11-79",
     "localId": "079",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "079/114",
+    "cardNumber": "79/114",
     "cardName": "M Gardevoir-EX",
-    "fullDisplayName": "M Gardevoir-EX 079/114 Steam Siege",
+    "fullDisplayName": "M Gardevoir-EX 79/114 Steam Siege",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -1221,18 +1450,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-079-low.png",
-    "imageHighSrc": "cards/xy11-079-high.png"
+    "imageHighSrc": "cards/xy11-079-high.png",
+    "attacks": [
+      {
+        "name": "Despair Ray",
+        "damage": "110+"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19716",
-    "externalId": null,
+    "externalId": "xy11-78",
     "tcgdex_id": "xy11-78",
     "localId": "078",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "078/114",
+    "cardNumber": "78/114",
     "cardName": "Gardevoir-EX",
-    "fullDisplayName": "Gardevoir-EX 078/114 Steam Siege",
+    "fullDisplayName": "Gardevoir-EX 78/114 Steam Siege",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1255,18 +1491,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-078-low.png",
-    "imageHighSrc": "cards/xy11-078-high.png"
+    "imageHighSrc": "cards/xy11-078-high.png",
+    "attacks": [
+      {
+        "name": "Link Blast",
+        "damage": "30+"
+      },
+      {
+        "name": "Luminous Blade",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19706",
-    "externalId": null,
+    "externalId": "xy11-77",
     "tcgdex_id": "xy11-77",
     "localId": "077",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "077/114",
+    "cardNumber": "77/114",
     "cardName": "Azumarill",
-    "fullDisplayName": "Azumarill 077/114 Steam Siege",
+    "fullDisplayName": "Azumarill 77/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1289,18 +1536,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-077-low.png",
-    "imageHighSrc": "cards/xy11-077-high.png"
+    "imageHighSrc": "cards/xy11-077-high.png",
+    "attacks": [
+      {
+        "name": "Play Rough",
+        "damage": "30+"
+      },
+      {
+        "name": "Bubble Drain",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19697",
-    "externalId": null,
+    "externalId": "xy11-76",
     "tcgdex_id": "xy11-76",
     "localId": "076",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "076/114",
+    "cardNumber": "76/114",
     "cardName": "Marill",
-    "fullDisplayName": "Marill 076/114 Steam Siege",
+    "fullDisplayName": "Marill 76/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1322,18 +1579,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-076-low.png",
-    "imageHighSrc": "cards/xy11-076-high.png"
+    "imageHighSrc": "cards/xy11-076-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Drain",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19688",
-    "externalId": null,
+    "externalId": "xy11-75",
     "tcgdex_id": "xy11-75",
     "localId": "075",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "075/114",
+    "cardNumber": "75/114",
     "cardName": "Magearna-EX",
-    "fullDisplayName": "Magearna-EX 075/114 Steam Siege",
+    "fullDisplayName": "Magearna-EX 75/114 Steam Siege",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1356,18 +1619,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-075-low.png",
-    "imageHighSrc": "cards/xy11-075-high.png"
+    "imageHighSrc": "cards/xy11-075-high.png",
+    "attacks": [
+      {
+        "name": "Soul Blaster",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19679",
-    "externalId": null,
+    "externalId": "xy11-74",
     "tcgdex_id": "xy11-74",
     "localId": "074",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "074/114",
+    "cardNumber": "74/114",
     "cardName": "Cobalion",
-    "fullDisplayName": "Cobalion 074/114 Steam Siege",
+    "fullDisplayName": "Cobalion 74/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1389,18 +1659,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-074-low.png",
-    "imageHighSrc": "cards/xy11-074-high.png"
+    "imageHighSrc": "cards/xy11-074-high.png",
+    "attacks": [
+      {
+        "name": "Quick Guard",
+        "damage": null
+      },
+      {
+        "name": "Revenge Blast",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "19670",
-    "externalId": null,
+    "externalId": "xy11-73",
     "tcgdex_id": "xy11-73",
     "localId": "073",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "073/114",
+    "cardNumber": "73/114",
     "cardName": "Klinklang",
-    "fullDisplayName": "Klinklang 073/114 Steam Siege",
+    "fullDisplayName": "Klinklang 73/114 Steam Siege",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1422,18 +1702,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-073-low.png",
-    "imageHighSrc": "cards/xy11-073-high.png"
+    "imageHighSrc": "cards/xy11-073-high.png",
+    "attacks": [
+      {
+        "name": "Gear Spinner",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19661",
-    "externalId": null,
+    "externalId": "xy11-72",
     "tcgdex_id": "xy11-72",
     "localId": "072",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "072/114",
+    "cardNumber": "72/114",
     "cardName": "Klang",
-    "fullDisplayName": "Klang 072/114 Steam Siege",
+    "fullDisplayName": "Klang 72/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1455,18 +1741,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-072-low.png",
-    "imageHighSrc": "cards/xy11-072-high.png"
+    "imageHighSrc": "cards/xy11-072-high.png",
+    "attacks": [
+      {
+        "name": "Vice Grip",
+        "damage": "30"
+      },
+      {
+        "name": "Disorderly Flip",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "19652",
-    "externalId": null,
+    "externalId": "xy11-71",
     "tcgdex_id": "xy11-71",
     "localId": "071",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "071/114",
+    "cardNumber": "71/114",
     "cardName": "Klink",
-    "fullDisplayName": "Klink 071/114 Steam Siege",
+    "fullDisplayName": "Klink 71/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1488,18 +1784,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-071-low.png",
-    "imageHighSrc": "cards/xy11-071-high.png"
+    "imageHighSrc": "cards/xy11-071-high.png",
+    "attacks": [
+      {
+        "name": "Disorderly Flip",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "19643",
-    "externalId": null,
+    "externalId": "xy11-70",
     "tcgdex_id": "xy11-70",
     "localId": "070",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "070/114",
+    "cardNumber": "70/114",
     "cardName": "Bastiodon",
-    "fullDisplayName": "Bastiodon 070/114 Steam Siege",
+    "fullDisplayName": "Bastiodon 70/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1521,18 +1823,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-070-low.png",
-    "imageHighSrc": "cards/xy11-070-high.png"
+    "imageHighSrc": "cards/xy11-070-high.png",
+    "attacks": [
+      {
+        "name": "Counter Head",
+        "damage": null
+      },
+      {
+        "name": "Fortress of Rage",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "19634",
-    "externalId": null,
+    "externalId": "xy11-69",
     "tcgdex_id": "xy11-69",
     "localId": "069",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "069/114",
+    "cardNumber": "69/114",
     "cardName": "Shieldon",
-    "fullDisplayName": "Shieldon 069/114 Steam Siege",
+    "fullDisplayName": "Shieldon 69/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "RESTORED",
@@ -1554,18 +1866,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-069-low.png",
-    "imageHighSrc": "cards/xy11-069-high.png"
+    "imageHighSrc": "cards/xy11-069-high.png",
+    "attacks": [
+      {
+        "name": "Rock Head",
+        "damage": "20"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "60"
+      }
+    ],
+    "rules": "Put this card onto your Bench only with the effect of Armor Fossil Shieldon"
   },
   {
     "masterCardId": "19625",
-    "externalId": null,
+    "externalId": "xy11-68",
     "tcgdex_id": "xy11-68",
     "localId": "068",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "068/114",
+    "cardNumber": "68/114",
     "cardName": "M Steelix-EX",
-    "fullDisplayName": "M Steelix-EX 068/114 Steam Siege",
+    "fullDisplayName": "M Steelix-EX 68/114 Steam Siege",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -1589,18 +1912,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-068-low.png",
-    "imageHighSrc": "cards/xy11-068-high.png"
+    "imageHighSrc": "cards/xy11-068-high.png",
+    "attacks": [
+      {
+        "name": "Canyon Axe",
+        "damage": "160"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19616",
-    "externalId": null,
+    "externalId": "xy11-67",
     "tcgdex_id": "xy11-67",
     "localId": "067",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "067/114",
+    "cardNumber": "67/114",
     "cardName": "Steelix-EX",
-    "fullDisplayName": "Steelix-EX 067/114 Steam Siege",
+    "fullDisplayName": "Steelix-EX 67/114 Steam Siege",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1623,18 +1953,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-067-low.png",
-    "imageHighSrc": "cards/xy11-067-high.png"
+    "imageHighSrc": "cards/xy11-067-high.png",
+    "attacks": [
+      {
+        "name": "Wild Edge",
+        "damage": "80+"
+      },
+      {
+        "name": "Iron Tail",
+        "damage": "100×"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19607",
-    "externalId": null,
+    "externalId": "xy11-66",
     "tcgdex_id": "xy11-66",
     "localId": "066",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "066/114",
+    "cardNumber": "66/114",
     "cardName": "Yveltal BREAK",
-    "fullDisplayName": "Yveltal BREAK 066/114 Steam Siege",
+    "fullDisplayName": "Yveltal BREAK 66/114 Steam Siege",
     "rarity": "Rare BREAK",
     "category": "Pokémon",
     "stage": "BREAK",
@@ -1656,18 +1997,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-066-low.png",
-    "imageHighSrc": "cards/xy11-066-high.png"
+    "imageHighSrc": "cards/xy11-066-high.png",
+    "attacks": [
+      {
+        "name": "Baleful Night",
+        "damage": "120"
+      }
+    ],
+    "rules": "BREAK Evolution Rule: Yveltal BREAK retains the attacks, Abilities, Weakness, Resistance, and Retreat Cost of its previous Evolution."
   },
   {
     "masterCardId": "19598",
-    "externalId": null,
+    "externalId": "xy11-65",
     "tcgdex_id": "xy11-65",
     "localId": "065",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "065/114",
+    "cardNumber": "65/114",
     "cardName": "Yveltal",
-    "fullDisplayName": "Yveltal 065/114 Steam Siege",
+    "fullDisplayName": "Yveltal 65/114 Steam Siege",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1689,18 +2037,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-065-low.png",
-    "imageHighSrc": "cards/xy11-065-high.png"
+    "imageHighSrc": "cards/xy11-065-high.png",
+    "attacks": [
+      {
+        "name": "Oblivion Wing",
+        "damage": "30"
+      },
+      {
+        "name": "Darkness Blade",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "19589",
-    "externalId": null,
+    "externalId": "xy11-64",
     "tcgdex_id": "xy11-64",
     "localId": "064",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "064/114",
+    "cardNumber": "64/114",
     "cardName": "Bisharp",
-    "fullDisplayName": "Bisharp 064/114 Steam Siege",
+    "fullDisplayName": "Bisharp 64/114 Steam Siege",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1723,18 +2081,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-064-low.png",
-    "imageHighSrc": "cards/xy11-064-high.png"
+    "imageHighSrc": "cards/xy11-064-high.png",
+    "attacks": [
+      {
+        "name": "Retaliate",
+        "damage": "30+"
+      },
+      {
+        "name": "Mach Claw",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19580",
-    "externalId": null,
+    "externalId": "xy11-63",
     "tcgdex_id": "xy11-63",
     "localId": "063",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "063/114",
+    "cardNumber": "63/114",
     "cardName": "Pawniard",
-    "fullDisplayName": "Pawniard 063/114 Steam Siege",
+    "fullDisplayName": "Pawniard 63/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1756,18 +2124,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-063-low.png",
-    "imageHighSrc": "cards/xy11-063-high.png"
+    "imageHighSrc": "cards/xy11-063-high.png",
+    "attacks": [
+      {
+        "name": "Charge Order",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "19571",
-    "externalId": null,
+    "externalId": "xy11-62",
     "tcgdex_id": "xy11-62",
     "localId": "062",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "062/114",
+    "cardNumber": "62/114",
     "cardName": "Spiritomb",
-    "fullDisplayName": "Spiritomb 062/114 Steam Siege",
+    "fullDisplayName": "Spiritomb 62/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1789,18 +2163,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-062-low.png",
-    "imageHighSrc": "cards/xy11-062-high.png"
+    "imageHighSrc": "cards/xy11-062-high.png",
+    "attacks": [
+      {
+        "name": "Nightmare",
+        "damage": "10"
+      },
+      {
+        "name": "Damage Play",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19562",
-    "externalId": null,
+    "externalId": "xy11-61",
     "tcgdex_id": "xy11-61",
     "localId": "061",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "061/114",
+    "cardNumber": "61/114",
     "cardName": "Weavile",
-    "fullDisplayName": "Weavile 061/114 Steam Siege",
+    "fullDisplayName": "Weavile 61/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1822,18 +2206,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-061-low.png",
-    "imageHighSrc": "cards/xy11-061-high.png"
+    "imageHighSrc": "cards/xy11-061-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19553",
-    "externalId": null,
+    "externalId": "xy11-60",
     "tcgdex_id": "xy11-60",
     "localId": "060",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "060/114",
+    "cardNumber": "60/114",
     "cardName": "Sneasel",
-    "fullDisplayName": "Sneasel 060/114 Steam Siege",
+    "fullDisplayName": "Sneasel 60/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1855,18 +2245,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-060-low.png",
-    "imageHighSrc": "cards/xy11-060-high.png"
+    "imageHighSrc": "cards/xy11-060-high.png",
+    "attacks": [
+      {
+        "name": "Nyan Roll",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19544",
-    "externalId": null,
+    "externalId": "xy11-59",
     "tcgdex_id": "xy11-59",
     "localId": "059",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "059/114",
+    "cardNumber": "59/114",
     "cardName": "Toxicroak",
-    "fullDisplayName": "Toxicroak 059/114 Steam Siege",
+    "fullDisplayName": "Toxicroak 59/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1888,18 +2284,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-059-low.png",
-    "imageHighSrc": "cards/xy11-059-high.png"
+    "imageHighSrc": "cards/xy11-059-high.png",
+    "attacks": [
+      {
+        "name": "Poison Jab",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "19535",
-    "externalId": null,
+    "externalId": "xy11-58",
     "tcgdex_id": "xy11-58",
     "localId": "058",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "058/114",
+    "cardNumber": "58/114",
     "cardName": "Croagunk",
-    "fullDisplayName": "Croagunk 058/114 Steam Siege",
+    "fullDisplayName": "Croagunk 58/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1921,18 +2323,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-058-low.png",
-    "imageHighSrc": "cards/xy11-058-high.png"
+    "imageHighSrc": "cards/xy11-058-high.png",
+    "attacks": [
+      {
+        "name": "Poison Up",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19526",
-    "externalId": null,
+    "externalId": "xy11-57",
     "tcgdex_id": "xy11-57",
     "localId": "057",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "057/114",
+    "cardNumber": "57/114",
     "cardName": "Armaldo",
-    "fullDisplayName": "Armaldo 057/114 Steam Siege",
+    "fullDisplayName": "Armaldo 57/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1954,18 +2362,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-057-low.png",
-    "imageHighSrc": "cards/xy11-057-high.png"
+    "imageHighSrc": "cards/xy11-057-high.png",
+    "attacks": [
+      {
+        "name": "Rushing Water",
+        "damage": "40"
+      },
+      {
+        "name": "Guard Claw",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "19517",
-    "externalId": null,
+    "externalId": "xy11-56",
     "tcgdex_id": "xy11-56",
     "localId": "056",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "056/114",
+    "cardNumber": "56/114",
     "cardName": "Anorith",
-    "fullDisplayName": "Anorith 056/114 Steam Siege",
+    "fullDisplayName": "Anorith 56/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "RESTORED",
@@ -1987,18 +2405,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-056-low.png",
-    "imageHighSrc": "cards/xy11-056-high.png"
+    "imageHighSrc": "cards/xy11-056-high.png",
+    "attacks": [
+      {
+        "name": "X-Scissor",
+        "damage": "20+"
+      }
+    ],
+    "rules": "Put this card onto your Bench only with the effect of Claw Fossil Anorith"
   },
   {
     "masterCardId": "19508",
-    "externalId": null,
+    "externalId": "xy11-55",
     "tcgdex_id": "xy11-55",
     "localId": "055",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "055/114",
+    "cardNumber": "55/114",
     "cardName": "Probopass",
-    "fullDisplayName": "Probopass 055/114 Steam Siege",
+    "fullDisplayName": "Probopass 55/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2020,18 +2445,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-055-low.png",
-    "imageHighSrc": "cards/xy11-055-high.png"
+    "imageHighSrc": "cards/xy11-055-high.png",
+    "attacks": [
+      {
+        "name": "Bounce Back",
+        "damage": "40"
+      },
+      {
+        "name": "Rock Tomb",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19499",
-    "externalId": null,
+    "externalId": "xy11-54",
     "tcgdex_id": "xy11-54",
     "localId": "054",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "054/114",
+    "cardNumber": "54/114",
     "cardName": "Nosepass",
-    "fullDisplayName": "Nosepass 054/114 Steam Siege",
+    "fullDisplayName": "Nosepass 54/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2053,18 +2488,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-054-low.png",
-    "imageHighSrc": "cards/xy11-054-high.png"
+    "imageHighSrc": "cards/xy11-054-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Rolling Tackle",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19490",
-    "externalId": null,
+    "externalId": "xy11-53",
     "tcgdex_id": "xy11-53",
     "localId": "053",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "053/114",
+    "cardNumber": "53/114",
     "cardName": "Primeape",
-    "fullDisplayName": "Primeape 053/114 Steam Siege",
+    "fullDisplayName": "Primeape 53/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2086,18 +2531,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-053-low.png",
-    "imageHighSrc": "cards/xy11-053-high.png"
+    "imageHighSrc": "cards/xy11-053-high.png",
+    "attacks": [
+      {
+        "name": "Swagger",
+        "damage": "20"
+      },
+      {
+        "name": "Spirited Throw",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "19481",
-    "externalId": null,
+    "externalId": "xy11-52",
     "tcgdex_id": "xy11-52",
     "localId": "052",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "052/114",
+    "cardNumber": "52/114",
     "cardName": "Mankey",
-    "fullDisplayName": "Mankey 052/114 Steam Siege",
+    "fullDisplayName": "Mankey 52/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2119,18 +2574,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-052-low.png",
-    "imageHighSrc": "cards/xy11-052-high.png"
+    "imageHighSrc": "cards/xy11-052-high.png",
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "damage": null
+      },
+      {
+        "name": "Flop",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19472",
-    "externalId": null,
+    "externalId": "xy11-51",
     "tcgdex_id": "xy11-51",
     "localId": "051",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "051/114",
+    "cardNumber": "51/114",
     "cardName": "Hoopa",
-    "fullDisplayName": "Hoopa 051/114 Steam Siege",
+    "fullDisplayName": "Hoopa 51/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2152,18 +2617,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-051-low.png",
-    "imageHighSrc": "cards/xy11-051-high.png"
+    "imageHighSrc": "cards/xy11-051-high.png",
+    "attacks": [
+      {
+        "name": "Hyperspace Punch",
+        "damage": null
+      },
+      {
+        "name": "Portal Strike",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "19463",
-    "externalId": null,
+    "externalId": "xy11-50",
     "tcgdex_id": "xy11-50",
     "localId": "050",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "050/114",
+    "cardNumber": "50/114",
     "cardName": "Chandelure",
-    "fullDisplayName": "Chandelure 050/114 Steam Siege",
+    "fullDisplayName": "Chandelure 50/114 Steam Siege",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2185,18 +2660,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-050-low.png",
-    "imageHighSrc": "cards/xy11-050-high.png"
+    "imageHighSrc": "cards/xy11-050-high.png",
+    "attacks": [
+      {
+        "name": "Past Friends",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "19454",
-    "externalId": null,
+    "externalId": "xy11-49",
     "tcgdex_id": "xy11-49",
     "localId": "049",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "049/114",
+    "cardNumber": "49/114",
     "cardName": "Lampent",
-    "fullDisplayName": "Lampent 049/114 Steam Siege",
+    "fullDisplayName": "Lampent 49/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2218,18 +2699,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-049-low.png",
-    "imageHighSrc": "cards/xy11-049-high.png"
+    "imageHighSrc": "cards/xy11-049-high.png",
+    "attacks": [
+      {
+        "name": "Mirror Mirror",
+        "damage": null
+      },
+      {
+        "name": "Flickering Flames",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19445",
-    "externalId": null,
+    "externalId": "xy11-48",
     "tcgdex_id": "xy11-48",
     "localId": "048",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "048/114",
+    "cardNumber": "48/114",
     "cardName": "Litwick",
-    "fullDisplayName": "Litwick 048/114 Steam Siege",
+    "fullDisplayName": "Litwick 48/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2251,18 +2742,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-048-low.png",
-    "imageHighSrc": "cards/xy11-048-high.png"
+    "imageHighSrc": "cards/xy11-048-high.png",
+    "attacks": [
+      {
+        "name": "Slightly Simmer",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19436",
-    "externalId": null,
+    "externalId": "xy11-47",
     "tcgdex_id": "xy11-47",
     "localId": "047",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "047/114",
+    "cardNumber": "47/114",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 047/114 Steam Siege",
+    "fullDisplayName": "Drifblim 47/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2284,18 +2781,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-047-low.png",
-    "imageHighSrc": "cards/xy11-047-high.png"
+    "imageHighSrc": "cards/xy11-047-high.png",
+    "attacks": [
+      {
+        "name": "Eerie Wave",
+        "damage": "30"
+      },
+      {
+        "name": "Burst Curse",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19427",
-    "externalId": null,
+    "externalId": "xy11-46",
     "tcgdex_id": "xy11-46",
     "localId": "046",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "046/114",
+    "cardNumber": "46/114",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 046/114 Steam Siege",
+    "fullDisplayName": "Drifloon 46/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2317,18 +2824,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-046-low.png",
-    "imageHighSrc": "cards/xy11-046-high.png"
+    "imageHighSrc": "cards/xy11-046-high.png",
+    "attacks": [
+      {
+        "name": "Transfer Pain",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19417",
-    "externalId": null,
+    "externalId": "xy11-45",
     "tcgdex_id": "xy11-45",
     "localId": "045",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "045/114",
+    "cardNumber": "45/114",
     "cardName": "Nidoking",
-    "fullDisplayName": "Nidoking 045/114 Steam Siege",
+    "fullDisplayName": "Nidoking 45/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2350,18 +2863,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-045-low.png",
-    "imageHighSrc": "cards/xy11-045-high.png"
+    "imageHighSrc": "cards/xy11-045-high.png",
+    "attacks": [
+      {
+        "name": "Power Lariat",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19408",
-    "externalId": null,
+    "externalId": "xy11-44",
     "tcgdex_id": "xy11-44",
     "localId": "044",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "044/114",
+    "cardNumber": "44/114",
     "cardName": "Nidorino",
-    "fullDisplayName": "Nidorino 044/114 Steam Siege",
+    "fullDisplayName": "Nidorino 44/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2383,18 +2902,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-044-low.png",
-    "imageHighSrc": "cards/xy11-044-high.png"
+    "imageHighSrc": "cards/xy11-044-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "20"
+      },
+      {
+        "name": "Nido Press",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "19398",
-    "externalId": null,
+    "externalId": "xy11-43",
     "tcgdex_id": "xy11-43",
     "localId": "043",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "043/114",
+    "cardNumber": "43/114",
     "cardName": "Nidoran ♂",
-    "fullDisplayName": "Nidoran ♂ 043/114 Steam Siege",
+    "fullDisplayName": "Nidoran ♂ 43/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2416,18 +2945,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/xy11-043-low.png",
-    "imageHighSrc": "cards/xy11-043-high.png"
+    "imageHighSrc": "cards/xy11-043-high.png",
+    "attacks": [
+      {
+        "name": "Come Along",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19390",
-    "externalId": null,
+    "externalId": "xy11-42",
     "tcgdex_id": "xy11-42",
     "localId": "042",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "042/114",
+    "cardNumber": "42/114",
     "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 042/114 Steam Siege",
+    "fullDisplayName": "Galvantula 42/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2450,18 +2989,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-042-low.png",
-    "imageHighSrc": "cards/xy11-042-high.png"
+    "imageHighSrc": "cards/xy11-042-high.png",
+    "attacks": [
+      {
+        "name": "Double Thread",
+        "damage": null
+      },
+      {
+        "name": "Electroweb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19381",
-    "externalId": null,
+    "externalId": "xy11-41",
     "tcgdex_id": "xy11-41",
     "localId": "041",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "041/114",
+    "cardNumber": "41/114",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 041/114 Steam Siege",
+    "fullDisplayName": "Joltik 41/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2483,18 +3032,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-041-low.png",
-    "imageHighSrc": "cards/xy11-041-high.png"
+    "imageHighSrc": "cards/xy11-041-high.png",
+    "attacks": [
+      {
+        "name": "Attach",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19373",
-    "externalId": null,
+    "externalId": "xy11-40",
     "tcgdex_id": "xy11-40",
     "localId": "040",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "040/114",
+    "cardNumber": "40/114",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 040/114 Steam Siege",
+    "fullDisplayName": "Ampharos 40/114 Steam Siege",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2516,18 +3071,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-040-low.png",
-    "imageHighSrc": "cards/xy11-040-high.png"
+    "imageHighSrc": "cards/xy11-040-high.png",
+    "attacks": [
+      {
+        "name": "Gigavolt",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "19361",
-    "externalId": null,
+    "externalId": "xy11-39",
     "tcgdex_id": "xy11-39",
     "localId": "039",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "039/114",
+    "cardNumber": "39/114",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 039/114 Steam Siege",
+    "fullDisplayName": "Flaaffy 39/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2549,18 +3110,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-039-low.png",
-    "imageHighSrc": "cards/xy11-039-high.png"
+    "imageHighSrc": "cards/xy11-039-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Thunder Shock",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "19354",
-    "externalId": null,
+    "externalId": "xy11-38",
     "tcgdex_id": "xy11-38",
     "localId": "038",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "038/114",
+    "cardNumber": "38/114",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 038/114 Steam Siege",
+    "fullDisplayName": "Mareep 38/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2582,18 +3153,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-038-low.png",
-    "imageHighSrc": "cards/xy11-038-high.png"
+    "imageHighSrc": "cards/xy11-038-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19343",
-    "externalId": null,
+    "externalId": "xy11-37",
     "tcgdex_id": "xy11-37",
     "localId": "037",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "037/114",
+    "cardNumber": "37/114",
     "cardName": "Avalugg",
-    "fullDisplayName": "Avalugg 037/114 Steam Siege",
+    "fullDisplayName": "Avalugg 37/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2615,18 +3196,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-037-low.png",
-    "imageHighSrc": "cards/xy11-037-high.png"
+    "imageHighSrc": "cards/xy11-037-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "30"
+      },
+      {
+        "name": "Melting Floe",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19334",
-    "externalId": null,
+    "externalId": "xy11-36",
     "tcgdex_id": "xy11-36",
     "localId": "036",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "036/114",
+    "cardNumber": "36/114",
     "cardName": "Bergmite",
-    "fullDisplayName": "Bergmite 036/114 Steam Siege",
+    "fullDisplayName": "Bergmite 36/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2648,18 +3239,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-036-low.png",
-    "imageHighSrc": "cards/xy11-036-high.png"
+    "imageHighSrc": "cards/xy11-036-high.png",
+    "attacks": [
+      {
+        "name": "Ice Block",
+        "damage": null
+      },
+      {
+        "name": "Icy Snow",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19325",
-    "externalId": null,
+    "externalId": "xy11-35",
     "tcgdex_id": "xy11-35",
     "localId": "035",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "035/114",
+    "cardNumber": "35/114",
     "cardName": "Clawitzer BREAK",
-    "fullDisplayName": "Clawitzer BREAK 035/114 Steam Siege",
+    "fullDisplayName": "Clawitzer BREAK 35/114 Steam Siege",
     "rarity": "Rare BREAK",
     "category": "Pokémon",
     "stage": "BREAK",
@@ -2681,18 +3282,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-035-low.png",
-    "imageHighSrc": "cards/xy11-035-high.png"
+    "imageHighSrc": "cards/xy11-035-high.png",
+    "attacks": [
+      {
+        "name": "Lock-On",
+        "damage": null
+      }
+    ],
+    "rules": "BREAK Evolution Rule: Clawitzer BREAK retains the attacks, Abilities, Weakness, Resistance, and Retreat Cost of its previous Evolution."
   },
   {
     "masterCardId": "19314",
-    "externalId": null,
+    "externalId": "xy11-34",
     "tcgdex_id": "xy11-34",
     "localId": "034",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "034/114",
+    "cardNumber": "34/114",
     "cardName": "Clawitzer",
-    "fullDisplayName": "Clawitzer 034/114 Steam Siege",
+    "fullDisplayName": "Clawitzer 34/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2714,18 +3322,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-034-low.png",
-    "imageHighSrc": "cards/xy11-034-high.png"
+    "imageHighSrc": "cards/xy11-034-high.png",
+    "attacks": [
+      {
+        "name": "Crabhammer",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19304",
-    "externalId": null,
+    "externalId": "xy11-33",
     "tcgdex_id": "xy11-33",
     "localId": "033",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "033/114",
+    "cardNumber": "33/114",
     "cardName": "Clauncher",
-    "fullDisplayName": "Clauncher 033/114 Steam Siege",
+    "fullDisplayName": "Clauncher 33/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2747,18 +3361,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-033-low.png",
-    "imageHighSrc": "cards/xy11-033-high.png"
+    "imageHighSrc": "cards/xy11-033-high.png",
+    "attacks": [
+      {
+        "name": "Double Pincers",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "19295",
-    "externalId": null,
+    "externalId": "xy11-32",
     "tcgdex_id": "xy11-32",
     "localId": "032",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "032/114",
+    "cardNumber": "32/114",
     "cardName": "Samurott",
-    "fullDisplayName": "Samurott 032/114 Steam Siege",
+    "fullDisplayName": "Samurott 32/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2780,18 +3400,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-032-low.png",
-    "imageHighSrc": "cards/xy11-032-high.png"
+    "imageHighSrc": "cards/xy11-032-high.png",
+    "attacks": [
+      {
+        "name": "Ultimate Blade",
+        "damage": "40"
+      },
+      {
+        "name": "Pike",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "19285",
-    "externalId": null,
+    "externalId": "xy11-31",
     "tcgdex_id": "xy11-31",
     "localId": "031",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "031/114",
+    "cardNumber": "31/114",
     "cardName": "Dewott",
-    "fullDisplayName": "Dewott 031/114 Steam Siege",
+    "fullDisplayName": "Dewott 31/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2813,18 +3443,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-031-low.png",
-    "imageHighSrc": "cards/xy11-031-high.png"
+    "imageHighSrc": "cards/xy11-031-high.png",
+    "attacks": [
+      {
+        "name": "Razor Shell",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "19275",
-    "externalId": null,
+    "externalId": "xy11-30",
     "tcgdex_id": "xy11-30",
     "localId": "030",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "030/114",
+    "cardNumber": "30/114",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott 030/114 Steam Siege",
+    "fullDisplayName": "Oshawott 30/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2846,18 +3482,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-030-low.png",
-    "imageHighSrc": "cards/xy11-030-high.png"
+    "imageHighSrc": "cards/xy11-030-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19265",
-    "externalId": null,
+    "externalId": "xy11-29",
     "tcgdex_id": "xy11-29",
     "localId": "029",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "029/114",
+    "cardNumber": "29/114",
     "cardName": "Gastrodon",
-    "fullDisplayName": "Gastrodon 029/114 Steam Siege",
+    "fullDisplayName": "Gastrodon 29/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2879,18 +3521,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-029-low.png",
-    "imageHighSrc": "cards/xy11-029-high.png"
+    "imageHighSrc": "cards/xy11-029-high.png",
+    "attacks": [
+      {
+        "name": "Sticky Shot",
+        "damage": "20"
+      },
+      {
+        "name": "Water Pulse",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19255",
-    "externalId": null,
+    "externalId": "xy11-28",
     "tcgdex_id": "xy11-28",
     "localId": "028",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "028/114",
+    "cardNumber": "28/114",
     "cardName": "Shellos",
-    "fullDisplayName": "Shellos 028/114 Steam Siege",
+    "fullDisplayName": "Shellos 28/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2912,18 +3564,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-028-low.png",
-    "imageHighSrc": "cards/xy11-028-high.png"
+    "imageHighSrc": "cards/xy11-028-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19245",
-    "externalId": null,
+    "externalId": "xy11-27",
     "tcgdex_id": "xy11-27",
     "localId": "027",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "027/114",
+    "cardNumber": "27/114",
     "cardName": "Mantine",
-    "fullDisplayName": "Mantine 027/114 Steam Siege",
+    "fullDisplayName": "Mantine 27/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2945,18 +3603,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-027-low.png",
-    "imageHighSrc": "cards/xy11-027-high.png"
+    "imageHighSrc": "cards/xy11-027-high.png",
+    "attacks": [
+      {
+        "name": "Healing Wave",
+        "damage": null
+      },
+      {
+        "name": "Dwindling Wave",
+        "damage": "90-"
+      }
+    ]
   },
   {
     "masterCardId": "19236",
-    "externalId": null,
+    "externalId": "xy11-26",
     "tcgdex_id": "xy11-26",
     "localId": "026",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "026/114",
+    "cardNumber": "26/114",
     "cardName": "Volcanion-EX",
-    "fullDisplayName": "Volcanion-EX 026/114 Steam Siege",
+    "fullDisplayName": "Volcanion-EX 26/114 Steam Siege",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2980,18 +3648,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-026-low.png",
-    "imageHighSrc": "cards/xy11-026-high.png"
+    "imageHighSrc": "cards/xy11-026-high.png",
+    "attacks": [
+      {
+        "name": "Volcanic Heat",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19226",
-    "externalId": null,
+    "externalId": "xy11-25",
     "tcgdex_id": "xy11-25",
     "localId": "025",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "025/114",
+    "cardNumber": "25/114",
     "cardName": "Volcanion",
-    "fullDisplayName": "Volcanion 025/114 Steam Siege",
+    "fullDisplayName": "Volcanion 25/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3013,18 +3688,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-025-low.png",
-    "imageHighSrc": "cards/xy11-025-high.png"
+    "imageHighSrc": "cards/xy11-025-high.png",
+    "attacks": [
+      {
+        "name": "Power Heater",
+        "damage": "20"
+      },
+      {
+        "name": "Steam Artillery",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "19217",
-    "externalId": null,
+    "externalId": "xy11-24",
     "tcgdex_id": "xy11-24",
     "localId": "024",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "024/114",
+    "cardNumber": "24/114",
     "cardName": "Pyroar BREAK",
-    "fullDisplayName": "Pyroar BREAK 024/114 Steam Siege",
+    "fullDisplayName": "Pyroar BREAK 24/114 Steam Siege",
     "rarity": "Rare BREAK",
     "category": "Pokémon",
     "stage": "BREAK",
@@ -3046,18 +3731,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-024-low.png",
-    "imageHighSrc": "cards/xy11-024-high.png"
+    "imageHighSrc": "cards/xy11-024-high.png",
+    "attacks": [
+      {
+        "name": "Kaiser Tackle",
+        "damage": "180"
+      }
+    ],
+    "rules": "BREAK Evolution Rule: Pyroar BREAK retains the attacks, Abilities, Weakness, Resistance, and Retreat Cost of its previous Evolution."
   },
   {
     "masterCardId": "19207",
-    "externalId": null,
+    "externalId": "xy11-23",
     "tcgdex_id": "xy11-23",
     "localId": "023",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "023/114",
+    "cardNumber": "23/114",
     "cardName": "Pyroar",
-    "fullDisplayName": "Pyroar 023/114 Steam Siege",
+    "fullDisplayName": "Pyroar 23/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3079,18 +3771,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-023-low.png",
-    "imageHighSrc": "cards/xy11-023-high.png"
+    "imageHighSrc": "cards/xy11-023-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": "60"
+      },
+      {
+        "name": "Incinerate",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "19197",
-    "externalId": null,
+    "externalId": "xy11-22",
     "tcgdex_id": "xy11-22",
     "localId": "022",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "022/114",
+    "cardNumber": "22/114",
     "cardName": "Litleo",
-    "fullDisplayName": "Litleo 022/114 Steam Siege",
+    "fullDisplayName": "Litleo 22/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3112,18 +3814,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-022-low.png",
-    "imageHighSrc": "cards/xy11-022-high.png"
+    "imageHighSrc": "cards/xy11-022-high.png",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19187",
-    "externalId": null,
+    "externalId": "xy11-21",
     "tcgdex_id": "xy11-21",
     "localId": "021",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "021/114",
+    "cardNumber": "21/114",
     "cardName": "Talonflame BREAK",
-    "fullDisplayName": "Talonflame BREAK 021/114 Steam Siege",
+    "fullDisplayName": "Talonflame BREAK 21/114 Steam Siege",
     "rarity": "Rare BREAK",
     "category": "Pokémon",
     "stage": "BREAK",
@@ -3145,18 +3853,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-021-low.png",
-    "imageHighSrc": "cards/xy11-021-high.png"
+    "imageHighSrc": "cards/xy11-021-high.png",
+    "attacks": [
+      {
+        "name": "Flare Blitz",
+        "damage": "150"
+      }
+    ],
+    "rules": "BREAK Evolution Rule: Talonflame BREAK retains the attacks, Abilities, Weakness, Resistance, and Retreat Cost of its previous Evolution."
   },
   {
     "masterCardId": "19177",
-    "externalId": null,
+    "externalId": "xy11-20",
     "tcgdex_id": "xy11-20",
     "localId": "020",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "020/114",
+    "cardNumber": "20/114",
     "cardName": "Infernape",
-    "fullDisplayName": "Infernape 020/114 Steam Siege",
+    "fullDisplayName": "Infernape 20/114 Steam Siege",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3178,18 +3893,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-020-low.png",
-    "imageHighSrc": "cards/xy11-020-high.png"
+    "imageHighSrc": "cards/xy11-020-high.png",
+    "attacks": [
+      {
+        "name": "Flare Blitz",
+        "damage": "120"
+      },
+      {
+        "name": "Flare Up",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "19166",
-    "externalId": null,
+    "externalId": "xy11-19",
     "tcgdex_id": "xy11-19",
     "localId": "019",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "019/114",
+    "cardNumber": "19/114",
     "cardName": "Monferno",
-    "fullDisplayName": "Monferno 019/114 Steam Siege",
+    "fullDisplayName": "Monferno 19/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3211,18 +3936,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-019-low.png",
-    "imageHighSrc": "cards/xy11-019-high.png"
+    "imageHighSrc": "cards/xy11-019-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Flare",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19157",
-    "externalId": null,
+    "externalId": "xy11-18",
     "tcgdex_id": "xy11-18",
     "localId": "018",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "018/114",
+    "cardNumber": "18/114",
     "cardName": "Chimchar",
-    "fullDisplayName": "Chimchar 018/114 Steam Siege",
+    "fullDisplayName": "Chimchar 18/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3244,18 +3979,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-018-low.png",
-    "imageHighSrc": "cards/xy11-018-high.png"
+    "imageHighSrc": "cards/xy11-018-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19147",
-    "externalId": null,
+    "externalId": "xy11-17",
     "tcgdex_id": "xy11-17",
     "localId": "017",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "017/114",
+    "cardNumber": "17/114",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 017/114 Steam Siege",
+    "fullDisplayName": "Rapidash 17/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3277,18 +4022,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-017-low.png",
-    "imageHighSrc": "cards/xy11-017-high.png"
+    "imageHighSrc": "cards/xy11-017-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19137",
-    "externalId": null,
+    "externalId": "xy11-16",
     "tcgdex_id": "xy11-16",
     "localId": "016",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "016/114",
+    "cardNumber": "16/114",
     "cardName": "Ponyta",
-    "fullDisplayName": "Ponyta 016/114 Steam Siege",
+    "fullDisplayName": "Ponyta 16/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3310,18 +4065,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-016-low.png",
-    "imageHighSrc": "cards/xy11-016-high.png"
+    "imageHighSrc": "cards/xy11-016-high.png",
+    "attacks": [
+      {
+        "name": "Returning Flames",
+        "damage": null
+      },
+      {
+        "name": "Live Coal",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19127",
-    "externalId": null,
+    "externalId": "xy11-15",
     "tcgdex_id": "xy11-15",
     "localId": "015",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "015/114",
+    "cardNumber": "15/114",
     "cardName": "Volcarona",
-    "fullDisplayName": "Volcarona 015/114 Steam Siege",
+    "fullDisplayName": "Volcarona 15/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3344,18 +4109,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-015-low.png",
-    "imageHighSrc": "cards/xy11-015-high.png"
+    "imageHighSrc": "cards/xy11-015-high.png",
+    "attacks": [
+      {
+        "name": "Shimmering Scales",
+        "damage": "20"
+      },
+      {
+        "name": "Power Hurricane",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "19117",
-    "externalId": null,
+    "externalId": "xy11-14",
     "tcgdex_id": "xy11-14",
     "localId": "014",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "014/114",
+    "cardNumber": "14/114",
     "cardName": "Larvesta",
-    "fullDisplayName": "Larvesta 014/114 Steam Siege",
+    "fullDisplayName": "Larvesta 14/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3377,18 +4152,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-014-low.png",
-    "imageHighSrc": "cards/xy11-014-high.png"
+    "imageHighSrc": "cards/xy11-014-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19106",
-    "externalId": null,
+    "externalId": "xy11-13",
     "tcgdex_id": "xy11-13",
     "localId": "013",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "013/114",
+    "cardNumber": "13/114",
     "cardName": "Amoonguss",
-    "fullDisplayName": "Amoonguss 013/114 Steam Siege",
+    "fullDisplayName": "Amoonguss 13/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3410,18 +4191,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-013-low.png",
-    "imageHighSrc": "cards/xy11-013-high.png"
+    "imageHighSrc": "cards/xy11-013-high.png",
+    "attacks": [
+      {
+        "name": "Crazy Spore",
+        "damage": null
+      },
+      {
+        "name": "Strange Reaction",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19096",
-    "externalId": null,
+    "externalId": "xy11-12",
     "tcgdex_id": "xy11-12",
     "localId": "012",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "012/114",
+    "cardNumber": "12/114",
     "cardName": "Foongus",
-    "fullDisplayName": "Foongus 012/114 Steam Siege",
+    "fullDisplayName": "Foongus 12/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3443,18 +4234,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-012-low.png",
-    "imageHighSrc": "cards/xy11-012-high.png"
+    "imageHighSrc": "cards/xy11-012-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19086",
-    "externalId": null,
+    "externalId": "xy11-11",
     "tcgdex_id": "xy11-11",
     "localId": "011",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "011/114",
+    "cardNumber": "11/114",
     "cardName": "Shiftry",
-    "fullDisplayName": "Shiftry 011/114 Steam Siege",
+    "fullDisplayName": "Shiftry 11/114 Steam Siege",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3477,18 +4274,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-011-low.png",
-    "imageHighSrc": "cards/xy11-011-high.png"
+    "imageHighSrc": "cards/xy11-011-high.png",
+    "attacks": [
+      {
+        "name": "Wicked Wind",
+        "damage": "40"
+      },
+      {
+        "name": "Extrasensory",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19076",
-    "externalId": null,
+    "externalId": "xy11-10",
     "tcgdex_id": "xy11-10",
     "localId": "010",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "010/114",
+    "cardNumber": "10/114",
     "cardName": "Nuzleaf",
-    "fullDisplayName": "Nuzleaf 010/114 Steam Siege",
+    "fullDisplayName": "Nuzleaf 10/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3510,18 +4317,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-010-low.png",
-    "imageHighSrc": "cards/xy11-010-high.png"
+    "imageHighSrc": "cards/xy11-010-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19067",
-    "externalId": null,
+    "externalId": "xy11-9",
     "tcgdex_id": "xy11-9",
     "localId": "009",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "009/114",
+    "cardNumber": "9/114",
     "cardName": "Seedot",
-    "fullDisplayName": "Seedot 009/114 Steam Siege",
+    "fullDisplayName": "Seedot 9/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3543,18 +4360,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-009-low.png",
-    "imageHighSrc": "cards/xy11-009-high.png"
+    "imageHighSrc": "cards/xy11-009-high.png",
+    "attacks": [
+      {
+        "name": "Bide",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19057",
-    "externalId": null,
+    "externalId": "xy11-8",
     "tcgdex_id": "xy11-8",
     "localId": "008",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "008/114",
+    "cardNumber": "8/114",
     "cardName": "Yanmega BREAK",
-    "fullDisplayName": "Yanmega BREAK 008/114 Steam Siege",
+    "fullDisplayName": "Yanmega BREAK 8/114 Steam Siege",
     "rarity": "Rare BREAK",
     "category": "Pokémon",
     "stage": "BREAK",
@@ -3576,18 +4399,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-008-low.png",
-    "imageHighSrc": "cards/xy11-008-high.png"
+    "imageHighSrc": "cards/xy11-008-high.png",
+    "attacks": [
+      {
+        "name": "Barrier Break",
+        "damage": "100"
+      }
+    ],
+    "rules": "BREAK Evolution Rule: Yanmega BREAK retains the attacks, Abilities, Weakness, Resistance, and Retreat Cost of its previous Evolution."
   },
   {
     "masterCardId": "19047",
-    "externalId": null,
+    "externalId": "xy11-7",
     "tcgdex_id": "xy11-7",
     "localId": "007",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "007/114",
+    "cardNumber": "7/114",
     "cardName": "Yanmega",
-    "fullDisplayName": "Yanmega 007/114 Steam Siege",
+    "fullDisplayName": "Yanmega 7/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3609,18 +4439,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-007-low.png",
-    "imageHighSrc": "cards/xy11-007-high.png"
+    "imageHighSrc": "cards/xy11-007-high.png",
+    "attacks": [
+      {
+        "name": "Assault Boom",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "19036",
-    "externalId": null,
+    "externalId": "xy11-6",
     "tcgdex_id": "xy11-6",
     "localId": "006",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "006/114",
+    "cardNumber": "6/114",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma 006/114 Steam Siege",
+    "fullDisplayName": "Yanma 6/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3642,18 +4478,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-006-low.png",
-    "imageHighSrc": "cards/xy11-006-high.png"
+    "imageHighSrc": "cards/xy11-006-high.png",
+    "attacks": [
+      {
+        "name": "Scout",
+        "damage": null
+      },
+      {
+        "name": "Speed Dive",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19026",
-    "externalId": null,
+    "externalId": "xy11-5",
     "tcgdex_id": "xy11-5",
     "localId": "005",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "005/114",
+    "cardNumber": "5/114",
     "cardName": "Jumpluff",
-    "fullDisplayName": "Jumpluff 005/114 Steam Siege",
+    "fullDisplayName": "Jumpluff 5/114 Steam Siege",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3675,18 +4521,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-005-low.png",
-    "imageHighSrc": "cards/xy11-005-high.png"
+    "imageHighSrc": "cards/xy11-005-high.png",
+    "attacks": [
+      {
+        "name": "Fluffy Transport",
+        "damage": null
+      },
+      {
+        "name": "Solar Step",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "19016",
-    "externalId": null,
+    "externalId": "xy11-4",
     "tcgdex_id": "xy11-4",
     "localId": "004",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "004/114",
+    "cardNumber": "4/114",
     "cardName": "Skiploom",
-    "fullDisplayName": "Skiploom 004/114 Steam Siege",
+    "fullDisplayName": "Skiploom 4/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3708,18 +4564,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-004-low.png",
-    "imageHighSrc": "cards/xy11-004-high.png"
+    "imageHighSrc": "cards/xy11-004-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19005",
-    "externalId": null,
+    "externalId": "xy11-3",
     "tcgdex_id": "xy11-3",
     "localId": "003",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "003/114",
+    "cardNumber": "3/114",
     "cardName": "Hoppip",
-    "fullDisplayName": "Hoppip 003/114 Steam Siege",
+    "fullDisplayName": "Hoppip 3/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3741,18 +4603,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-003-low.png",
-    "imageHighSrc": "cards/xy11-003-high.png"
+    "imageHighSrc": "cards/xy11-003-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "18996",
-    "externalId": null,
+    "externalId": "xy11-2",
     "tcgdex_id": "xy11-2",
     "localId": "002",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "002/114",
+    "cardNumber": "2/114",
     "cardName": "Tangrowth",
-    "fullDisplayName": "Tangrowth 002/114 Steam Siege",
+    "fullDisplayName": "Tangrowth 2/114 Steam Siege",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3774,18 +4642,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-002-low.png",
-    "imageHighSrc": "cards/xy11-002-high.png"
+    "imageHighSrc": "cards/xy11-002-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Storm",
+        "damage": "80"
+      },
+      {
+        "name": "Flog",
+        "damage": "110+"
+      }
+    ]
   },
   {
     "masterCardId": "18986",
-    "externalId": null,
+    "externalId": "xy11-1",
     "tcgdex_id": "xy11-1",
     "localId": "001",
     "setCode": "xy11",
     "setTcgdexId": "xy11",
-    "cardNumber": "001/114",
+    "cardNumber": "1/114",
     "cardName": "Tangela",
-    "fullDisplayName": "Tangela 001/114 Steam Siege",
+    "fullDisplayName": "Tangela 1/114 Steam Siege",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3807,6 +4685,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy11-001-low.png",
-    "imageHighSrc": "cards/xy11-001-high.png"
+    "imageHighSrc": "cards/xy11-001-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "30×"
+      },
+      {
+        "name": "Mega Drain",
+        "damage": "40"
+      }
+    ]
   }
 ]

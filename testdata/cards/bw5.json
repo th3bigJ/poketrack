@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "2743",
-    "externalId": null,
+    "externalId": "bw5-111",
     "tcgdex_id": "bw5-111",
     "localId": "111",
     "setCode": "bw5",
@@ -26,11 +26,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-111-low.png",
-    "imageHighSrc": "cards/bw5-111-high.png"
+    "imageHighSrc": "cards/bw5-111-high.png",
+    "rules": "Switch your opponent's Active Pokémon with 1 of his or her Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2742",
-    "externalId": null,
+    "externalId": "bw5-110",
     "tcgdex_id": "bw5-110",
     "localId": "110",
     "setCode": "bw5",
@@ -59,11 +60,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-110-low.png",
-    "imageHighSrc": "cards/bw5-110-high.png"
+    "imageHighSrc": "cards/bw5-110-high.png",
+    "attacks": [
+      {
+        "name": "Rock Slide",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2741",
-    "externalId": null,
+    "externalId": "bw5-109",
     "tcgdex_id": "bw5-109",
     "localId": "109",
     "setCode": "bw5",
@@ -92,11 +99,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-109-low.png",
-    "imageHighSrc": "cards/bw5-109-high.png"
+    "imageHighSrc": "cards/bw5-109-high.png",
+    "attacks": [
+      {
+        "name": "Mind Shock",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2740",
-    "externalId": null,
+    "externalId": "bw5-108",
     "tcgdex_id": "bw5-108",
     "localId": "108",
     "setCode": "bw5",
@@ -126,11 +139,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-108-low.png",
-    "imageHighSrc": "cards/bw5-108-high.png"
+    "imageHighSrc": "cards/bw5-108-high.png",
+    "attacks": [
+      {
+        "name": "Blow Through",
+        "damage": "30+"
+      },
+      {
+        "name": "Power Blast",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2739",
-    "externalId": null,
+    "externalId": "bw5-107",
     "tcgdex_id": "bw5-107",
     "localId": "107",
     "setCode": "bw5",
@@ -160,11 +184,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-107-low.png",
-    "imageHighSrc": "cards/bw5-107-high.png"
+    "imageHighSrc": "cards/bw5-107-high.png",
+    "attacks": [
+      {
+        "name": "Night Spear",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2738",
-    "externalId": null,
+    "externalId": "bw5-106",
     "tcgdex_id": "bw5-106",
     "localId": "106",
     "setCode": "bw5",
@@ -194,11 +225,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-106-low.png",
-    "imageHighSrc": "cards/bw5-106-high.png"
+    "imageHighSrc": "cards/bw5-106-high.png",
+    "attacks": [
+      {
+        "name": "Tromp",
+        "damage": "20"
+      },
+      {
+        "name": "Giant Claw",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2737",
-    "externalId": null,
+    "externalId": "bw5-105",
     "tcgdex_id": "bw5-105",
     "localId": "105",
     "setCode": "bw5",
@@ -228,11 +270,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-105-low.png",
-    "imageHighSrc": "cards/bw5-105-high.png"
+    "imageHighSrc": "cards/bw5-105-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Volt Bolt",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2736",
-    "externalId": null,
+    "externalId": "bw5-104",
     "tcgdex_id": "bw5-104",
     "localId": "104",
     "setCode": "bw5",
@@ -262,11 +315,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-104-low.png",
-    "imageHighSrc": "cards/bw5-104-high.png"
+    "imageHighSrc": "cards/bw5-104-high.png",
+    "attacks": [
+      {
+        "name": "Smash Turn",
+        "damage": "30"
+      },
+      {
+        "name": "Dual Splash",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2735",
-    "externalId": null,
+    "externalId": "bw5-103",
     "tcgdex_id": "bw5-103",
     "localId": "103",
     "setCode": "bw5",
@@ -296,11 +360,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-103-low.png",
-    "imageHighSrc": "cards/bw5-103-high.png"
+    "imageHighSrc": "cards/bw5-103-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Grand Flame",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2734",
-    "externalId": null,
+    "externalId": "bw5-102",
     "tcgdex_id": "bw5-102",
     "localId": "102",
     "setCode": "bw5",
@@ -325,11 +400,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-102-low.png",
-    "imageHighSrc": "cards/bw5-102-high.png"
+    "imageHighSrc": "cards/bw5-102-high.png",
+    "rules": "Discard 2 cards from your hand. (If you can't discard 2 cards, you can't play this card.) Search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2733",
-    "externalId": null,
+    "externalId": "bw5-101",
     "tcgdex_id": "bw5-101",
     "localId": "101",
     "setCode": "bw5",
@@ -354,11 +430,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-101-low.png",
-    "imageHighSrc": "cards/bw5-101-high.png"
+    "imageHighSrc": "cards/bw5-101-high.png",
+    "rules": "Once during each player's turn, that player may flip a coin. If heads, that player may play a Restored Pokémon from their hand onto their Bench.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "2732",
-    "externalId": null,
+    "externalId": "bw5-100",
     "tcgdex_id": "bw5-100",
     "localId": "100",
     "setCode": "bw5",
@@ -383,18 +460,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-100-low.png",
-    "imageHighSrc": "cards/bw5-100-high.png"
+    "imageHighSrc": "cards/bw5-100-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.) You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2731",
-    "externalId": null,
+    "externalId": "bw5-99",
     "tcgdex_id": "bw5-99",
     "localId": "099",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "099/108",
+    "cardNumber": "99/108",
     "cardName": "Random Receiver",
-    "fullDisplayName": "Random Receiver 099/108 Dark Explorers",
+    "fullDisplayName": "Random Receiver 99/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -412,18 +490,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-099-low.png",
-    "imageHighSrc": "cards/bw5-099-high.png"
+    "imageHighSrc": "cards/bw5-099-high.png",
+    "rules": "Reveal cards from the top of your deck until you reveal a Supporter card. Put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2730",
-    "externalId": null,
+    "externalId": "bw5-98",
     "tcgdex_id": "bw5-98",
     "localId": "098",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "098/108",
+    "cardNumber": "98/108",
     "cardName": "Professor Juniper",
-    "fullDisplayName": "Professor Juniper 098/108 Dark Explorers",
+    "fullDisplayName": "Professor Juniper 98/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -441,18 +520,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-098-low.png",
-    "imageHighSrc": "cards/bw5-098-high.png"
+    "imageHighSrc": "cards/bw5-098-high.png",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2729",
-    "externalId": null,
+    "externalId": "bw5-97",
     "tcgdex_id": "bw5-97",
     "localId": "097",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "097/108",
+    "cardNumber": "97/108",
     "cardName": "Old Amber Aerodactyl",
-    "fullDisplayName": "Old Amber Aerodactyl 097/108 Dark Explorers",
+    "fullDisplayName": "Old Amber Aerodactyl 97/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -470,18 +550,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-097-low.png",
-    "imageHighSrc": "cards/bw5-097-high.png"
+    "imageHighSrc": "cards/bw5-097-high.png",
+    "rules": "Look at the bottom 7 cards of your deck. You may reveal an Aerodactyl you find there and put it onto your Bench. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2728",
-    "externalId": null,
+    "externalId": "bw5-96",
     "tcgdex_id": "bw5-96",
     "localId": "096",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "096/108",
+    "cardNumber": "96/108",
     "cardName": "N",
-    "fullDisplayName": "N 096/108 Dark Explorers",
+    "fullDisplayName": "N 96/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -499,18 +580,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-096-low.png",
-    "imageHighSrc": "cards/bw5-096-high.png"
+    "imageHighSrc": "cards/bw5-096-high.png",
+    "rules": "Each player shuffles his or her hand into his or her deck. Then, each player draws a card for each of his or her remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2727",
-    "externalId": null,
+    "externalId": "bw5-95",
     "tcgdex_id": "bw5-95",
     "localId": "095",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "095/108",
+    "cardNumber": "95/108",
     "cardName": "Hooligans Jim & Cas",
-    "fullDisplayName": "Hooligans Jim & Cas 095/108 Dark Explorers",
+    "fullDisplayName": "Hooligans Jim & Cas 95/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -528,18 +610,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-095-low.png",
-    "imageHighSrc": "cards/bw5-095-high.png"
+    "imageHighSrc": "cards/bw5-095-high.png",
+    "rules": "Flip a coin. If heads, choose 3 random cards from your opponent's hand. Your opponent reveals those cards and shuffles them into his or her deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2726",
-    "externalId": null,
+    "externalId": "bw5-94",
     "tcgdex_id": "bw5-94",
     "localId": "094",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "094/108",
+    "cardNumber": "94/108",
     "cardName": "Enhanced Hammer",
-    "fullDisplayName": "Enhanced Hammer 094/108 Dark Explorers",
+    "fullDisplayName": "Enhanced Hammer 94/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -557,18 +640,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-094-low.png",
-    "imageHighSrc": "cards/bw5-094-high.png"
+    "imageHighSrc": "cards/bw5-094-high.png",
+    "rules": "Discard a Special Energy attached to 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2725",
-    "externalId": null,
+    "externalId": "bw5-93",
     "tcgdex_id": "bw5-93",
     "localId": "093",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "093/108",
+    "cardNumber": "93/108",
     "cardName": "Dark Patch",
-    "fullDisplayName": "Dark Patch 093/108 Dark Explorers",
+    "fullDisplayName": "Dark Patch 93/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -586,18 +670,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-093-low.png",
-    "imageHighSrc": "cards/bw5-093-high.png"
+    "imageHighSrc": "cards/bw5-093-high.png",
+    "rules": "Attach a basic Darkness Energy card from your discard pile to 1 of your Benched Darkness Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2724",
-    "externalId": null,
+    "externalId": "bw5-92",
     "tcgdex_id": "bw5-92",
     "localId": "092",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "092/108",
+    "cardNumber": "92/108",
     "cardName": "Dark Claw",
-    "fullDisplayName": "Dark Claw 092/108 Dark Explorers",
+    "fullDisplayName": "Dark Claw 92/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -615,18 +700,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-092-low.png",
-    "imageHighSrc": "cards/bw5-092-high.png"
+    "imageHighSrc": "cards/bw5-092-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf this card is attached to a Darkness Pokémon, each of the attacks of that Pokémon does 20 more damage to the Active Pokémon (before applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2723",
-    "externalId": null,
+    "externalId": "bw5-91",
     "tcgdex_id": "bw5-91",
     "localId": "091",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "091/108",
+    "cardNumber": "91/108",
     "cardName": "Cheren",
-    "fullDisplayName": "Cheren 091/108 Dark Explorers",
+    "fullDisplayName": "Cheren 91/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -644,18 +730,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-091-low.png",
-    "imageHighSrc": "cards/bw5-091-high.png"
+    "imageHighSrc": "cards/bw5-091-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2722",
-    "externalId": null,
+    "externalId": "bw5-90",
     "tcgdex_id": "bw5-90",
     "localId": "090",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "090/108",
+    "cardNumber": "90/108",
     "cardName": "Tornadus-EX",
-    "fullDisplayName": "Tornadus-EX 090/108 Dark Explorers",
+    "fullDisplayName": "Tornadus-EX 90/108 Dark Explorers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -678,18 +765,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-090-low.png",
-    "imageHighSrc": "cards/bw5-090-high.png"
+    "imageHighSrc": "cards/bw5-090-high.png",
+    "attacks": [
+      {
+        "name": "Blow Through",
+        "damage": "30+"
+      },
+      {
+        "name": "Power Blast",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2721",
-    "externalId": null,
+    "externalId": "bw5-89",
     "tcgdex_id": "bw5-89",
     "localId": "089",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "089/108",
+    "cardNumber": "89/108",
     "cardName": "Haxorus",
-    "fullDisplayName": "Haxorus 089/108 Dark Explorers",
+    "fullDisplayName": "Haxorus 89/108 Dark Explorers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -711,18 +809,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-089-low.png",
-    "imageHighSrc": "cards/bw5-089-high.png"
+    "imageHighSrc": "cards/bw5-089-high.png",
+    "attacks": [
+      {
+        "name": "Guillotine",
+        "damage": "60"
+      },
+      {
+        "name": "Stunning Uppercut",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2720",
-    "externalId": null,
+    "externalId": "bw5-88",
     "tcgdex_id": "bw5-88",
     "localId": "088",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "088/108",
+    "cardNumber": "88/108",
     "cardName": "Stoutland",
-    "fullDisplayName": "Stoutland 088/108 Dark Explorers",
+    "fullDisplayName": "Stoutland 88/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -744,18 +852,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-088-low.png",
-    "imageHighSrc": "cards/bw5-088-high.png"
+    "imageHighSrc": "cards/bw5-088-high.png",
+    "attacks": [
+      {
+        "name": "Special Fang",
+        "damage": "40+"
+      },
+      {
+        "name": "Ferocious Bellow",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2719",
-    "externalId": null,
+    "externalId": "bw5-87",
     "tcgdex_id": "bw5-87",
     "localId": "087",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "087/108",
+    "cardNumber": "87/108",
     "cardName": "Herdier",
-    "fullDisplayName": "Herdier 087/108 Dark Explorers",
+    "fullDisplayName": "Herdier 87/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -777,18 +895,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-087-low.png",
-    "imageHighSrc": "cards/bw5-087-high.png"
+    "imageHighSrc": "cards/bw5-087-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2718",
-    "externalId": null,
+    "externalId": "bw5-86",
     "tcgdex_id": "bw5-86",
     "localId": "086",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "086/108",
+    "cardNumber": "86/108",
     "cardName": "Lillipup",
-    "fullDisplayName": "Lillipup 086/108 Dark Explorers",
+    "fullDisplayName": "Lillipup 86/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -810,18 +938,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-086-low.png",
-    "imageHighSrc": "cards/bw5-086-high.png"
+    "imageHighSrc": "cards/bw5-086-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2717",
-    "externalId": null,
+    "externalId": "bw5-85",
     "tcgdex_id": "bw5-85",
     "localId": "085",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "085/108",
+    "cardNumber": "85/108",
     "cardName": "Chatot",
-    "fullDisplayName": "Chatot 085/108 Dark Explorers",
+    "fullDisplayName": "Chatot 85/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -843,18 +981,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-085-low.png",
-    "imageHighSrc": "cards/bw5-085-high.png"
+    "imageHighSrc": "cards/bw5-085-high.png",
+    "attacks": [
+      {
+        "name": "Tone-Deaf",
+        "damage": "10"
+      },
+      {
+        "name": "Peck",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2716",
-    "externalId": null,
+    "externalId": "bw5-84",
     "tcgdex_id": "bw5-84",
     "localId": "084",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "084/108",
+    "cardNumber": "84/108",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 084/108 Dark Explorers",
+    "fullDisplayName": "Eevee 84/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -876,18 +1024,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-084-low.png",
-    "imageHighSrc": "cards/bw5-084-high.png"
+    "imageHighSrc": "cards/bw5-084-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Whap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2715",
-    "externalId": null,
+    "externalId": "bw5-83",
     "tcgdex_id": "bw5-83",
     "localId": "083",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "083/108",
+    "cardNumber": "83/108",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 083/108 Dark Explorers",
+    "fullDisplayName": "Eevee 83/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -909,18 +1067,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-083-low.png",
-    "imageHighSrc": "cards/bw5-083-high.png"
+    "imageHighSrc": "cards/bw5-083-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2714",
-    "externalId": null,
+    "externalId": "bw5-82",
     "tcgdex_id": "bw5-82",
     "localId": "082",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "082/108",
+    "cardNumber": "82/108",
     "cardName": "Blissey",
-    "fullDisplayName": "Blissey 082/108 Dark Explorers",
+    "fullDisplayName": "Blissey 82/108 Dark Explorers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -942,18 +1106,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-082-low.png",
-    "imageHighSrc": "cards/bw5-082-high.png"
+    "imageHighSrc": "cards/bw5-082-high.png",
+    "attacks": [
+      {
+        "name": "Double-Edge",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2713",
-    "externalId": null,
+    "externalId": "bw5-81",
     "tcgdex_id": "bw5-81",
     "localId": "081",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "081/108",
+    "cardNumber": "81/108",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 081/108 Dark Explorers",
+    "fullDisplayName": "Chansey 81/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -975,18 +1145,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-081-low.png",
-    "imageHighSrc": "cards/bw5-081-high.png"
+    "imageHighSrc": "cards/bw5-081-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Tumble",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "2712",
-    "externalId": null,
+    "externalId": "bw5-80",
     "tcgdex_id": "bw5-80",
     "localId": "080",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "080/108",
+    "cardNumber": "80/108",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 080/108 Dark Explorers",
+    "fullDisplayName": "Chansey 80/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1008,18 +1184,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-080-low.png",
-    "imageHighSrc": "cards/bw5-080-high.png"
+    "imageHighSrc": "cards/bw5-080-high.png",
+    "attacks": [
+      {
+        "name": "Sing",
+        "damage": null
+      },
+      {
+        "name": "Double-Edge",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2711",
-    "externalId": null,
+    "externalId": "bw5-79",
     "tcgdex_id": "bw5-79",
     "localId": "079",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "079/108",
+    "cardNumber": "79/108",
     "cardName": "Bisharp",
-    "fullDisplayName": "Bisharp 079/108 Dark Explorers",
+    "fullDisplayName": "Bisharp 79/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1041,18 +1227,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-079-low.png",
-    "imageHighSrc": "cards/bw5-079-high.png"
+    "imageHighSrc": "cards/bw5-079-high.png",
+    "attacks": [
+      {
+        "name": "Aerial Ace",
+        "damage": "20+"
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2710",
-    "externalId": null,
+    "externalId": "bw5-78",
     "tcgdex_id": "bw5-78",
     "localId": "078",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "078/108",
+    "cardNumber": "78/108",
     "cardName": "Pawniard",
-    "fullDisplayName": "Pawniard 078/108 Dark Explorers",
+    "fullDisplayName": "Pawniard 78/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1074,18 +1270,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-078-low.png",
-    "imageHighSrc": "cards/bw5-078-high.png"
+    "imageHighSrc": "cards/bw5-078-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2709",
-    "externalId": null,
+    "externalId": "bw5-77",
     "tcgdex_id": "bw5-77",
     "localId": "077",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "077/108",
+    "cardNumber": "77/108",
     "cardName": "Klinklang",
-    "fullDisplayName": "Klinklang 077/108 Dark Explorers",
+    "fullDisplayName": "Klinklang 77/108 Dark Explorers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1107,18 +1313,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-077-low.png",
-    "imageHighSrc": "cards/bw5-077-high.png"
+    "imageHighSrc": "cards/bw5-077-high.png",
+    "attacks": [
+      {
+        "name": "Metal Blast",
+        "damage": "20+"
+      },
+      {
+        "name": "Lock Gear",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2708",
-    "externalId": null,
+    "externalId": "bw5-76",
     "tcgdex_id": "bw5-76",
     "localId": "076",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "076/108",
+    "cardNumber": "76/108",
     "cardName": "Klang",
-    "fullDisplayName": "Klang 076/108 Dark Explorers",
+    "fullDisplayName": "Klang 76/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1140,18 +1356,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-076-low.png",
-    "imageHighSrc": "cards/bw5-076-high.png"
+    "imageHighSrc": "cards/bw5-076-high.png",
+    "attacks": [
+      {
+        "name": "Charge Beam",
+        "damage": "20"
+      },
+      {
+        "name": "Vice Grip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2707",
-    "externalId": null,
+    "externalId": "bw5-75",
     "tcgdex_id": "bw5-75",
     "localId": "075",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "075/108",
+    "cardNumber": "75/108",
     "cardName": "Klink",
-    "fullDisplayName": "Klink 075/108 Dark Explorers",
+    "fullDisplayName": "Klink 75/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1173,18 +1399,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-075-low.png",
-    "imageHighSrc": "cards/bw5-075-high.png"
+    "imageHighSrc": "cards/bw5-075-high.png",
+    "attacks": [
+      {
+        "name": "Smash Turn",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2706",
-    "externalId": null,
+    "externalId": "bw5-74",
     "tcgdex_id": "bw5-74",
     "localId": "074",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "074/108",
+    "cardNumber": "74/108",
     "cardName": "Escavalier",
-    "fullDisplayName": "Escavalier 074/108 Dark Explorers",
+    "fullDisplayName": "Escavalier 74/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1206,18 +1438,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-074-low.png",
-    "imageHighSrc": "cards/bw5-074-high.png"
+    "imageHighSrc": "cards/bw5-074-high.png",
+    "attacks": [
+      {
+        "name": "Joust",
+        "damage": "30"
+      },
+      {
+        "name": "Cavalry Lance",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2705",
-    "externalId": null,
+    "externalId": "bw5-73",
     "tcgdex_id": "bw5-73",
     "localId": "073",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "073/108",
+    "cardNumber": "73/108",
     "cardName": "Vullaby",
-    "fullDisplayName": "Vullaby 073/108 Dark Explorers",
+    "fullDisplayName": "Vullaby 73/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1239,18 +1481,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-073-low.png",
-    "imageHighSrc": "cards/bw5-073-high.png"
+    "imageHighSrc": "cards/bw5-073-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2704",
-    "externalId": null,
+    "externalId": "bw5-72",
     "tcgdex_id": "bw5-72",
     "localId": "072",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "072/108",
+    "cardNumber": "72/108",
     "cardName": "Bisharp",
-    "fullDisplayName": "Bisharp 072/108 Dark Explorers",
+    "fullDisplayName": "Bisharp 72/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1272,18 +1520,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-072-low.png",
-    "imageHighSrc": "cards/bw5-072-high.png"
+    "imageHighSrc": "cards/bw5-072-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "30"
+      },
+      {
+        "name": "Fury Cutter",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2703",
-    "externalId": null,
+    "externalId": "bw5-71",
     "tcgdex_id": "bw5-71",
     "localId": "071",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "071/108",
+    "cardNumber": "71/108",
     "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark 071/108 Dark Explorers",
+    "fullDisplayName": "Zoroark 71/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1305,18 +1563,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-071-low.png",
-    "imageHighSrc": "cards/bw5-071-high.png"
+    "imageHighSrc": "cards/bw5-071-high.png",
+    "attacks": [
+      {
+        "name": "Brutal Bash",
+        "damage": "20×"
+      },
+      {
+        "name": "Dark Rush",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2702",
-    "externalId": null,
+    "externalId": "bw5-70",
     "tcgdex_id": "bw5-70",
     "localId": "070",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "070/108",
+    "cardNumber": "70/108",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 070/108 Dark Explorers",
+    "fullDisplayName": "Zorua 70/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1338,18 +1606,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-070-low.png",
-    "imageHighSrc": "cards/bw5-070-high.png"
+    "imageHighSrc": "cards/bw5-070-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Shadow Bind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2701",
-    "externalId": null,
+    "externalId": "bw5-69",
     "tcgdex_id": "bw5-69",
     "localId": "069",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "069/108",
+    "cardNumber": "69/108",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 069/108 Dark Explorers",
+    "fullDisplayName": "Zorua 69/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1371,18 +1649,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-069-low.png",
-    "imageHighSrc": "cards/bw5-069-high.png"
+    "imageHighSrc": "cards/bw5-069-high.png",
+    "attacks": [
+      {
+        "name": "Ascension",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2700",
-    "externalId": null,
+    "externalId": "bw5-68",
     "tcgdex_id": "bw5-68",
     "localId": "068",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "068/108",
+    "cardNumber": "68/108",
     "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 068/108 Dark Explorers",
+    "fullDisplayName": "Scrafty 68/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1404,18 +1692,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-068-low.png",
-    "imageHighSrc": "cards/bw5-068-high.png"
+    "imageHighSrc": "cards/bw5-068-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      },
+      {
+        "name": "Crushing Blow",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2699",
-    "externalId": null,
+    "externalId": "bw5-67",
     "tcgdex_id": "bw5-67",
     "localId": "067",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "067/108",
+    "cardNumber": "67/108",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 067/108 Dark Explorers",
+    "fullDisplayName": "Scraggy 67/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1437,18 +1735,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-067-low.png",
-    "imageHighSrc": "cards/bw5-067-high.png"
+    "imageHighSrc": "cards/bw5-067-high.png",
+    "attacks": [
+      {
+        "name": "Rising Lunge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2698",
-    "externalId": null,
+    "externalId": "bw5-66",
     "tcgdex_id": "bw5-66",
     "localId": "066",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "066/108",
+    "cardNumber": "66/108",
     "cardName": "Krookodile",
-    "fullDisplayName": "Krookodile 066/108 Dark Explorers",
+    "fullDisplayName": "Krookodile 66/108 Dark Explorers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1470,18 +1774,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-066-low.png",
-    "imageHighSrc": "cards/bw5-066-high.png"
+    "imageHighSrc": "cards/bw5-066-high.png",
+    "attacks": [
+      {
+        "name": "Dark Clamp",
+        "damage": "60"
+      },
+      {
+        "name": "Bombast",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "2697",
-    "externalId": null,
+    "externalId": "bw5-65",
     "tcgdex_id": "bw5-65",
     "localId": "065",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "065/108",
+    "cardNumber": "65/108",
     "cardName": "Krokorok",
-    "fullDisplayName": "Krokorok 065/108 Dark Explorers",
+    "fullDisplayName": "Krokorok 65/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1503,18 +1817,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-065-low.png",
-    "imageHighSrc": "cards/bw5-065-high.png"
+    "imageHighSrc": "cards/bw5-065-high.png",
+    "attacks": [
+      {
+        "name": "Mud-Slap",
+        "damage": "30"
+      },
+      {
+        "name": "Corkscrew Punch",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2696",
-    "externalId": null,
+    "externalId": "bw5-64",
     "tcgdex_id": "bw5-64",
     "localId": "064",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "064/108",
+    "cardNumber": "64/108",
     "cardName": "Sandile",
-    "fullDisplayName": "Sandile 064/108 Dark Explorers",
+    "fullDisplayName": "Sandile 64/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1536,18 +1860,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-064-low.png",
-    "imageHighSrc": "cards/bw5-064-high.png"
+    "imageHighSrc": "cards/bw5-064-high.png",
+    "attacks": [
+      {
+        "name": "Sand Dive",
+        "damage": null
+      },
+      {
+        "name": "Corkscrew Punch",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2695",
-    "externalId": null,
+    "externalId": "bw5-63",
     "tcgdex_id": "bw5-63",
     "localId": "063",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "063/108",
+    "cardNumber": "63/108",
     "cardName": "Darkrai-EX",
-    "fullDisplayName": "Darkrai-EX 063/108 Dark Explorers",
+    "fullDisplayName": "Darkrai-EX 63/108 Dark Explorers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1570,18 +1904,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-063-low.png",
-    "imageHighSrc": "cards/bw5-063-high.png"
+    "imageHighSrc": "cards/bw5-063-high.png",
+    "attacks": [
+      {
+        "name": "Night Spear",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2694",
-    "externalId": null,
+    "externalId": "bw5-62",
     "tcgdex_id": "bw5-62",
     "localId": "062",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "062/108",
+    "cardNumber": "62/108",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 062/108 Dark Explorers",
+    "fullDisplayName": "Sableye 62/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1603,18 +1944,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-062-low.png",
-    "imageHighSrc": "cards/bw5-062-high.png"
+    "imageHighSrc": "cards/bw5-062-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "10"
+      },
+      {
+        "name": "Junk Hunt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2693",
-    "externalId": null,
+    "externalId": "bw5-61",
     "tcgdex_id": "bw5-61",
     "localId": "061",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "061/108",
+    "cardNumber": "61/108",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon 061/108 Dark Explorers",
+    "fullDisplayName": "Umbreon 61/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1636,18 +1987,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-061-low.png",
-    "imageHighSrc": "cards/bw5-061-high.png"
+    "imageHighSrc": "cards/bw5-061-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "20"
+      },
+      {
+        "name": "Shadow Shutdown",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2692",
-    "externalId": null,
+    "externalId": "bw5-60",
     "tcgdex_id": "bw5-60",
     "localId": "060",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "060/108",
+    "cardNumber": "60/108",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon 060/108 Dark Explorers",
+    "fullDisplayName": "Umbreon 60/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1669,18 +2030,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-060-low.png",
-    "imageHighSrc": "cards/bw5-060-high.png"
+    "imageHighSrc": "cards/bw5-060-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Drain",
+        "damage": "30"
+      },
+      {
+        "name": "Slashing Strike",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2691",
-    "externalId": null,
+    "externalId": "bw5-59",
     "tcgdex_id": "bw5-59",
     "localId": "059",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "059/108",
+    "cardNumber": "59/108",
     "cardName": "Gurdurr",
-    "fullDisplayName": "Gurdurr 059/108 Dark Explorers",
+    "fullDisplayName": "Gurdurr 59/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1702,18 +2073,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-059-low.png",
-    "imageHighSrc": "cards/bw5-059-high.png"
+    "imageHighSrc": "cards/bw5-059-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Steel Swing",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "2690",
-    "externalId": null,
+    "externalId": "bw5-58",
     "tcgdex_id": "bw5-58",
     "localId": "058",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "058/108",
+    "cardNumber": "58/108",
     "cardName": "Timburr",
-    "fullDisplayName": "Timburr 058/108 Dark Explorers",
+    "fullDisplayName": "Timburr 58/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1735,18 +2116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-058-low.png",
-    "imageHighSrc": "cards/bw5-058-high.png"
+    "imageHighSrc": "cards/bw5-058-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2689",
-    "externalId": null,
+    "externalId": "bw5-57",
     "tcgdex_id": "bw5-57",
     "localId": "057",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "057/108",
+    "cardNumber": "57/108",
     "cardName": "Excadrill",
-    "fullDisplayName": "Excadrill 057/108 Dark Explorers",
+    "fullDisplayName": "Excadrill 57/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1768,18 +2159,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-057-low.png",
-    "imageHighSrc": "cards/bw5-057-high.png"
+    "imageHighSrc": "cards/bw5-057-high.png",
+    "attacks": [
+      {
+        "name": "Reinforced Drill",
+        "damage": "50+"
+      },
+      {
+        "name": "Mach Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2688",
-    "externalId": null,
+    "externalId": "bw5-56",
     "tcgdex_id": "bw5-56",
     "localId": "056",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "056/108",
+    "cardNumber": "56/108",
     "cardName": "Excadrill",
-    "fullDisplayName": "Excadrill 056/108 Dark Explorers",
+    "fullDisplayName": "Excadrill 56/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1801,18 +2202,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-056-low.png",
-    "imageHighSrc": "cards/bw5-056-high.png"
+    "imageHighSrc": "cards/bw5-056-high.png",
+    "attacks": [
+      {
+        "name": "Tunnel Strike",
+        "damage": null
+      },
+      {
+        "name": "Dig Uppercut",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2687",
-    "externalId": null,
+    "externalId": "bw5-55",
     "tcgdex_id": "bw5-55",
     "localId": "055",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "055/108",
+    "cardNumber": "55/108",
     "cardName": "Drilbur",
-    "fullDisplayName": "Drilbur 055/108 Dark Explorers",
+    "fullDisplayName": "Drilbur 55/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1834,18 +2245,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-055-low.png",
-    "imageHighSrc": "cards/bw5-055-high.png"
+    "imageHighSrc": "cards/bw5-055-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2686",
-    "externalId": null,
+    "externalId": "bw5-54",
     "tcgdex_id": "bw5-54",
     "localId": "054",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "054/108",
+    "cardNumber": "54/108",
     "cardName": "Groudon-EX",
-    "fullDisplayName": "Groudon-EX 054/108 Dark Explorers",
+    "fullDisplayName": "Groudon-EX 54/108 Dark Explorers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1868,18 +2285,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-054-low.png",
-    "imageHighSrc": "cards/bw5-054-high.png"
+    "imageHighSrc": "cards/bw5-054-high.png",
+    "attacks": [
+      {
+        "name": "Tromp",
+        "damage": "20"
+      },
+      {
+        "name": "Giant Claw",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2685",
-    "externalId": null,
+    "externalId": "bw5-53",
     "tcgdex_id": "bw5-53",
     "localId": "053",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "053/108",
+    "cardNumber": "53/108",
     "cardName": "Aerodactyl",
-    "fullDisplayName": "Aerodactyl 053/108 Dark Explorers",
+    "fullDisplayName": "Aerodactyl 53/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "RESTORED",
@@ -1901,18 +2329,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-053-low.png",
-    "imageHighSrc": "cards/bw5-053-high.png"
+    "imageHighSrc": "cards/bw5-053-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "40"
+      }
+    ],
+    "rules": "Put this card onto your Bench only with the effect of Old Amber Aerodactyl"
   },
   {
     "masterCardId": "2684",
-    "externalId": null,
+    "externalId": "bw5-52",
     "tcgdex_id": "bw5-52",
     "localId": "052",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "052/108",
+    "cardNumber": "52/108",
     "cardName": "Cofagrigus",
-    "fullDisplayName": "Cofagrigus 052/108 Dark Explorers",
+    "fullDisplayName": "Cofagrigus 52/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1934,18 +2369,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-052-low.png",
-    "imageHighSrc": "cards/bw5-052-high.png"
+    "imageHighSrc": "cards/bw5-052-high.png",
+    "attacks": [
+      {
+        "name": "Chuck",
+        "damage": "40×"
+      },
+      {
+        "name": "Lock Up",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2683",
-    "externalId": null,
+    "externalId": "bw5-51",
     "tcgdex_id": "bw5-51",
     "localId": "051",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "051/108",
+    "cardNumber": "51/108",
     "cardName": "Yamask",
-    "fullDisplayName": "Yamask 051/108 Dark Explorers",
+    "fullDisplayName": "Yamask 51/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1967,18 +2412,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-051-low.png",
-    "imageHighSrc": "cards/bw5-051-high.png"
+    "imageHighSrc": "cards/bw5-051-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2682",
-    "externalId": null,
+    "externalId": "bw5-50",
     "tcgdex_id": "bw5-50",
     "localId": "050",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "050/108",
+    "cardNumber": "50/108",
     "cardName": "Woobat",
-    "fullDisplayName": "Woobat 050/108 Dark Explorers",
+    "fullDisplayName": "Woobat 50/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2000,18 +2451,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-050-low.png",
-    "imageHighSrc": "cards/bw5-050-high.png"
+    "imageHighSrc": "cards/bw5-050-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Heart Stamp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2681",
-    "externalId": null,
+    "externalId": "bw5-49",
     "tcgdex_id": "bw5-49",
     "localId": "049",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "049/108",
+    "cardNumber": "49/108",
     "cardName": "Slowking",
-    "fullDisplayName": "Slowking 049/108 Dark Explorers",
+    "fullDisplayName": "Slowking 49/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2033,18 +2494,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-049-low.png",
-    "imageHighSrc": "cards/bw5-049-high.png"
+    "imageHighSrc": "cards/bw5-049-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "20"
+      },
+      {
+        "name": "Hand Press",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2680",
-    "externalId": null,
+    "externalId": "bw5-48",
     "tcgdex_id": "bw5-48",
     "localId": "048",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "048/108",
+    "cardNumber": "48/108",
     "cardName": "Espeon",
-    "fullDisplayName": "Espeon 048/108 Dark Explorers",
+    "fullDisplayName": "Espeon 48/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2066,18 +2537,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-048-low.png",
-    "imageHighSrc": "cards/bw5-048-high.png"
+    "imageHighSrc": "cards/bw5-048-high.png",
+    "attacks": [
+      {
+        "name": "Psy Report",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2679",
-    "externalId": null,
+    "externalId": "bw5-47",
     "tcgdex_id": "bw5-47",
     "localId": "047",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "047/108",
+    "cardNumber": "47/108",
     "cardName": "Eelektross",
-    "fullDisplayName": "Eelektross 047/108 Dark Explorers",
+    "fullDisplayName": "Eelektross 47/108 Dark Explorers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2099,18 +2576,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-047-low.png",
-    "imageHighSrc": "cards/bw5-047-high.png"
+    "imageHighSrc": "cards/bw5-047-high.png",
+    "attacks": [
+      {
+        "name": "Suction Heal",
+        "damage": "40"
+      },
+      {
+        "name": "Slurp Shakedown",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2678",
-    "externalId": null,
+    "externalId": "bw5-46",
     "tcgdex_id": "bw5-46",
     "localId": "046",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "046/108",
+    "cardNumber": "46/108",
     "cardName": "Eelektrik",
-    "fullDisplayName": "Eelektrik 046/108 Dark Explorers",
+    "fullDisplayName": "Eelektrik 46/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2132,18 +2619,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-046-low.png",
-    "imageHighSrc": "cards/bw5-046-high.png"
+    "imageHighSrc": "cards/bw5-046-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Shock Bolt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2677",
-    "externalId": null,
+    "externalId": "bw5-45",
     "tcgdex_id": "bw5-45",
     "localId": "045",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "045/108",
+    "cardNumber": "45/108",
     "cardName": "Tynamo",
-    "fullDisplayName": "Tynamo 045/108 Dark Explorers",
+    "fullDisplayName": "Tynamo 45/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2165,18 +2662,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-045-low.png",
-    "imageHighSrc": "cards/bw5-045-high.png"
+    "imageHighSrc": "cards/bw5-045-high.png",
+    "attacks": [
+      {
+        "name": "Spark",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2676",
-    "externalId": null,
+    "externalId": "bw5-44",
     "tcgdex_id": "bw5-44",
     "localId": "044",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "044/108",
+    "cardNumber": "44/108",
     "cardName": "Tynamo",
-    "fullDisplayName": "Tynamo 044/108 Dark Explorers",
+    "fullDisplayName": "Tynamo 44/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2198,18 +2701,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-044-low.png",
-    "imageHighSrc": "cards/bw5-044-high.png"
+    "imageHighSrc": "cards/bw5-044-high.png",
+    "attacks": [
+      {
+        "name": "Charge Beam",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2675",
-    "externalId": null,
+    "externalId": "bw5-43",
     "tcgdex_id": "bw5-43",
     "localId": "043",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "043/108",
+    "cardNumber": "43/108",
     "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 043/108 Dark Explorers",
+    "fullDisplayName": "Galvantula 43/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2231,18 +2740,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-043-low.png",
-    "imageHighSrc": "cards/bw5-043-high.png"
+    "imageHighSrc": "cards/bw5-043-high.png",
+    "attacks": [
+      {
+        "name": "Quick Turn",
+        "damage": null
+      },
+      {
+        "name": "Electrisilk",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2674",
-    "externalId": null,
+    "externalId": "bw5-42",
     "tcgdex_id": "bw5-42",
     "localId": "042",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "042/108",
+    "cardNumber": "42/108",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 042/108 Dark Explorers",
+    "fullDisplayName": "Joltik 42/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2264,18 +2783,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-042-low.png",
-    "imageHighSrc": "cards/bw5-042-high.png"
+    "imageHighSrc": "cards/bw5-042-high.png",
+    "attacks": [
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2673",
-    "externalId": null,
+    "externalId": "bw5-41",
     "tcgdex_id": "bw5-41",
     "localId": "041",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "041/108",
+    "cardNumber": "41/108",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 041/108 Dark Explorers",
+    "fullDisplayName": "Joltik 41/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2297,18 +2822,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-041-low.png",
-    "imageHighSrc": "cards/bw5-041-high.png"
+    "imageHighSrc": "cards/bw5-041-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Bug Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2672",
-    "externalId": null,
+    "externalId": "bw5-40",
     "tcgdex_id": "bw5-40",
     "localId": "040",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "040/108",
+    "cardNumber": "40/108",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 040/108 Dark Explorers",
+    "fullDisplayName": "Minun 40/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2330,18 +2865,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-040-low.png",
-    "imageHighSrc": "cards/bw5-040-high.png"
+    "imageHighSrc": "cards/bw5-040-high.png",
+    "attacks": [
+      {
+        "name": "Negative Ion",
+        "damage": null
+      },
+      {
+        "name": "Electrishower",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2671",
-    "externalId": null,
+    "externalId": "bw5-39",
     "tcgdex_id": "bw5-39",
     "localId": "039",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "039/108",
+    "cardNumber": "39/108",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 039/108 Dark Explorers",
+    "fullDisplayName": "Plusle 39/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2363,18 +2908,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-039-low.png",
-    "imageHighSrc": "cards/bw5-039-high.png"
+    "imageHighSrc": "cards/bw5-039-high.png",
+    "attacks": [
+      {
+        "name": "Tag Draw",
+        "damage": null
+      },
+      {
+        "name": "Positive Ion",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2670",
-    "externalId": null,
+    "externalId": "bw5-38",
     "tcgdex_id": "bw5-38",
     "localId": "038",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "038/108",
+    "cardNumber": "38/108",
     "cardName": "Raikou-EX",
-    "fullDisplayName": "Raikou-EX 038/108 Dark Explorers",
+    "fullDisplayName": "Raikou-EX 38/108 Dark Explorers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2397,18 +2952,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-038-low.png",
-    "imageHighSrc": "cards/bw5-038-high.png"
+    "imageHighSrc": "cards/bw5-038-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Volt Bolt",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2669",
-    "externalId": null,
+    "externalId": "bw5-37",
     "tcgdex_id": "bw5-37",
     "localId": "037",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "037/108",
+    "cardNumber": "37/108",
     "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 037/108 Dark Explorers",
+    "fullDisplayName": "Jolteon 37/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2430,18 +2996,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-037-low.png",
-    "imageHighSrc": "cards/bw5-037-high.png"
+    "imageHighSrc": "cards/bw5-037-high.png",
+    "attacks": [
+      {
+        "name": "Electrigun",
+        "damage": "20+"
+      },
+      {
+        "name": "Pin Missile",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "2668",
-    "externalId": null,
+    "externalId": "bw5-36",
     "tcgdex_id": "bw5-36",
     "localId": "036",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "036/108",
+    "cardNumber": "36/108",
     "cardName": "Swanna",
-    "fullDisplayName": "Swanna 036/108 Dark Explorers",
+    "fullDisplayName": "Swanna 36/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2463,18 +3039,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-036-low.png",
-    "imageHighSrc": "cards/bw5-036-high.png"
+    "imageHighSrc": "cards/bw5-036-high.png",
+    "attacks": [
+      {
+        "name": "Healing Dance",
+        "damage": null
+      },
+      {
+        "name": "Incessant Peck",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2667",
-    "externalId": null,
+    "externalId": "bw5-35",
     "tcgdex_id": "bw5-35",
     "localId": "035",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "035/108",
+    "cardNumber": "35/108",
     "cardName": "Ducklett",
-    "fullDisplayName": "Ducklett 035/108 Dark Explorers",
+    "fullDisplayName": "Ducklett 35/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2496,18 +3082,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-035-low.png",
-    "imageHighSrc": "cards/bw5-035-high.png"
+    "imageHighSrc": "cards/bw5-035-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2666",
-    "externalId": null,
+    "externalId": "bw5-34",
     "tcgdex_id": "bw5-34",
     "localId": "034",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "034/108",
+    "cardNumber": "34/108",
     "cardName": "Vanillish",
-    "fullDisplayName": "Vanillish 034/108 Dark Explorers",
+    "fullDisplayName": "Vanillish 34/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2529,18 +3121,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-034-low.png",
-    "imageHighSrc": "cards/bw5-034-high.png"
+    "imageHighSrc": "cards/bw5-034-high.png",
+    "attacks": [
+      {
+        "name": "Triple Spin",
+        "damage": "20×"
+      },
+      {
+        "name": "Frost Breath",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2665",
-    "externalId": null,
+    "externalId": "bw5-33",
     "tcgdex_id": "bw5-33",
     "localId": "033",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "033/108",
+    "cardNumber": "33/108",
     "cardName": "Vanillite",
-    "fullDisplayName": "Vanillite 033/108 Dark Explorers",
+    "fullDisplayName": "Vanillite 33/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2562,18 +3164,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-033-low.png",
-    "imageHighSrc": "cards/bw5-033-high.png"
+    "imageHighSrc": "cards/bw5-033-high.png",
+    "attacks": [
+      {
+        "name": "Double Spin",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2664",
-    "externalId": null,
+    "externalId": "bw5-32",
     "tcgdex_id": "bw5-32",
     "localId": "032",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "032/108",
+    "cardNumber": "32/108",
     "cardName": "Palpitoad",
-    "fullDisplayName": "Palpitoad 032/108 Dark Explorers",
+    "fullDisplayName": "Palpitoad 32/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2595,18 +3203,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-032-low.png",
-    "imageHighSrc": "cards/bw5-032-high.png"
+    "imageHighSrc": "cards/bw5-032-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2663",
-    "externalId": null,
+    "externalId": "bw5-31",
     "tcgdex_id": "bw5-31",
     "localId": "031",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "031/108",
+    "cardNumber": "31/108",
     "cardName": "Tympole",
-    "fullDisplayName": "Tympole 031/108 Dark Explorers",
+    "fullDisplayName": "Tympole 31/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2628,18 +3242,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-031-low.png",
-    "imageHighSrc": "cards/bw5-031-high.png"
+    "imageHighSrc": "cards/bw5-031-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2662",
-    "externalId": null,
+    "externalId": "bw5-30",
     "tcgdex_id": "bw5-30",
     "localId": "030",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "030/108",
+    "cardNumber": "30/108",
     "cardName": "Glaceon",
-    "fullDisplayName": "Glaceon 030/108 Dark Explorers",
+    "fullDisplayName": "Glaceon 30/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2661,18 +3281,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-030-low.png",
-    "imageHighSrc": "cards/bw5-030-high.png"
+    "imageHighSrc": "cards/bw5-030-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Reflect Energy",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2661",
-    "externalId": null,
+    "externalId": "bw5-29",
     "tcgdex_id": "bw5-29",
     "localId": "029",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "029/108",
+    "cardNumber": "29/108",
     "cardName": "Empoleon",
-    "fullDisplayName": "Empoleon 029/108 Dark Explorers",
+    "fullDisplayName": "Empoleon 29/108 Dark Explorers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2694,18 +3324,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-029-low.png",
-    "imageHighSrc": "cards/bw5-029-high.png"
+    "imageHighSrc": "cards/bw5-029-high.png",
+    "attacks": [
+      {
+        "name": "Attack Command",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2660",
-    "externalId": null,
+    "externalId": "bw5-28",
     "tcgdex_id": "bw5-28",
     "localId": "028",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "028/108",
+    "cardNumber": "28/108",
     "cardName": "Prinplup",
-    "fullDisplayName": "Prinplup 028/108 Dark Explorers",
+    "fullDisplayName": "Prinplup 28/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2727,18 +3363,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-028-low.png",
-    "imageHighSrc": "cards/bw5-028-high.png"
+    "imageHighSrc": "cards/bw5-028-high.png",
+    "attacks": [
+      {
+        "name": "Razor Wing",
+        "damage": "20"
+      },
+      {
+        "name": "Fury Attack",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "2659",
-    "externalId": null,
+    "externalId": "bw5-27",
     "tcgdex_id": "bw5-27",
     "localId": "027",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "027/108",
+    "cardNumber": "27/108",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 027/108 Dark Explorers",
+    "fullDisplayName": "Piplup 27/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2760,18 +3406,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-027-low.png",
-    "imageHighSrc": "cards/bw5-027-high.png"
+    "imageHighSrc": "cards/bw5-027-high.png",
+    "attacks": [
+      {
+        "name": "Fury Attack",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2658",
-    "externalId": null,
+    "externalId": "bw5-26",
     "tcgdex_id": "bw5-26",
     "localId": "026",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "026/108",
+    "cardNumber": "26/108",
     "cardName": "Kyogre-EX",
-    "fullDisplayName": "Kyogre-EX 026/108 Dark Explorers",
+    "fullDisplayName": "Kyogre-EX 26/108 Dark Explorers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2794,18 +3446,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-026-low.png",
-    "imageHighSrc": "cards/bw5-026-high.png"
+    "imageHighSrc": "cards/bw5-026-high.png",
+    "attacks": [
+      {
+        "name": "Smash Turn",
+        "damage": "30"
+      },
+      {
+        "name": "Dual Splash",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2657",
-    "externalId": null,
+    "externalId": "bw5-25",
     "tcgdex_id": "bw5-25",
     "localId": "025",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "025/108",
+    "cardNumber": "25/108",
     "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 025/108 Dark Explorers",
+    "fullDisplayName": "Vaporeon 25/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2827,18 +3490,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-025-low.png",
-    "imageHighSrc": "cards/bw5-025-high.png"
+    "imageHighSrc": "cards/bw5-025-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "20"
+      },
+      {
+        "name": "Spiral Drain",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2656",
-    "externalId": null,
+    "externalId": "bw5-24",
     "tcgdex_id": "bw5-24",
     "localId": "024",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "024/108",
+    "cardNumber": "24/108",
     "cardName": "Slowbro",
-    "fullDisplayName": "Slowbro 024/108 Dark Explorers",
+    "fullDisplayName": "Slowbro 24/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2860,18 +3533,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-024-low.png",
-    "imageHighSrc": "cards/bw5-024-high.png"
+    "imageHighSrc": "cards/bw5-024-high.png",
+    "attacks": [
+      {
+        "name": "Lazy Headbutt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2655",
-    "externalId": null,
+    "externalId": "bw5-23",
     "tcgdex_id": "bw5-23",
     "localId": "023",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "023/108",
+    "cardNumber": "23/108",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 023/108 Dark Explorers",
+    "fullDisplayName": "Slowpoke 23/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2893,18 +3572,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-023-low.png",
-    "imageHighSrc": "cards/bw5-023-high.png"
+    "imageHighSrc": "cards/bw5-023-high.png",
+    "attacks": [
+      {
+        "name": "Big Yawn",
+        "damage": null
+      },
+      {
+        "name": "Shot in the Dark",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2654",
-    "externalId": null,
+    "externalId": "bw5-22",
     "tcgdex_id": "bw5-22",
     "localId": "022",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "022/108",
+    "cardNumber": "22/108",
     "cardName": "Volcarona",
-    "fullDisplayName": "Volcarona 022/108 Dark Explorers",
+    "fullDisplayName": "Volcarona 22/108 Dark Explorers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2926,18 +3615,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-022-low.png",
-    "imageHighSrc": "cards/bw5-022-high.png"
+    "imageHighSrc": "cards/bw5-022-high.png",
+    "attacks": [
+      {
+        "name": "Burning Wind",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2653",
-    "externalId": null,
+    "externalId": "bw5-21",
     "tcgdex_id": "bw5-21",
     "localId": "021",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "021/108",
+    "cardNumber": "21/108",
     "cardName": "Larvesta",
-    "fullDisplayName": "Larvesta 021/108 Dark Explorers",
+    "fullDisplayName": "Larvesta 21/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2959,18 +3654,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-021-low.png",
-    "imageHighSrc": "cards/bw5-021-high.png"
+    "imageHighSrc": "cards/bw5-021-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2652",
-    "externalId": null,
+    "externalId": "bw5-20",
     "tcgdex_id": "bw5-20",
     "localId": "020",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "020/108",
+    "cardNumber": "20/108",
     "cardName": "Larvesta",
-    "fullDisplayName": "Larvesta 020/108 Dark Explorers",
+    "fullDisplayName": "Larvesta 20/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2992,18 +3693,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-020-low.png",
-    "imageHighSrc": "cards/bw5-020-high.png"
+    "imageHighSrc": "cards/bw5-020-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Flare",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2651",
-    "externalId": null,
+    "externalId": "bw5-19",
     "tcgdex_id": "bw5-19",
     "localId": "019",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "019/108",
+    "cardNumber": "19/108",
     "cardName": "Heatmor",
-    "fullDisplayName": "Heatmor 019/108 Dark Explorers",
+    "fullDisplayName": "Heatmor 19/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3025,18 +3736,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-019-low.png",
-    "imageHighSrc": "cards/bw5-019-high.png"
+    "imageHighSrc": "cards/bw5-019-high.png",
+    "attacks": [
+      {
+        "name": "Hot Lick",
+        "damage": "10"
+      },
+      {
+        "name": "Firebreathing",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2650",
-    "externalId": null,
+    "externalId": "bw5-18",
     "tcgdex_id": "bw5-18",
     "localId": "018",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "018/108",
+    "cardNumber": "18/108",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 018/108 Dark Explorers",
+    "fullDisplayName": "Torkoal 18/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3058,18 +3779,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-018-low.png",
-    "imageHighSrc": "cards/bw5-018-high.png"
+    "imageHighSrc": "cards/bw5-018-high.png",
+    "attacks": [
+      {
+        "name": "Flame Cloak",
+        "damage": "10"
+      },
+      {
+        "name": "Heat Blast",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2649",
-    "externalId": null,
+    "externalId": "bw5-17",
     "tcgdex_id": "bw5-17",
     "localId": "017",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "017/108",
+    "cardNumber": "17/108",
     "cardName": "Blaziken",
-    "fullDisplayName": "Blaziken 017/108 Dark Explorers",
+    "fullDisplayName": "Blaziken 17/108 Dark Explorers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3091,18 +3822,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-017-low.png",
-    "imageHighSrc": "cards/bw5-017-high.png"
+    "imageHighSrc": "cards/bw5-017-high.png",
+    "attacks": [
+      {
+        "name": "Blaze Kick",
+        "damage": "40+"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "2648",
-    "externalId": null,
+    "externalId": "bw5-16",
     "tcgdex_id": "bw5-16",
     "localId": "016",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "016/108",
+    "cardNumber": "16/108",
     "cardName": "Combusken",
-    "fullDisplayName": "Combusken 016/108 Dark Explorers",
+    "fullDisplayName": "Combusken 16/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3124,18 +3865,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-016-low.png",
-    "imageHighSrc": "cards/bw5-016-high.png"
+    "imageHighSrc": "cards/bw5-016-high.png",
+    "attacks": [
+      {
+        "name": "Double Kick",
+        "damage": "20×"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2647",
-    "externalId": null,
+    "externalId": "bw5-15",
     "tcgdex_id": "bw5-15",
     "localId": "015",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "015/108",
+    "cardNumber": "15/108",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 015/108 Dark Explorers",
+    "fullDisplayName": "Torchic 15/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3157,18 +3908,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-015-low.png",
-    "imageHighSrc": "cards/bw5-015-high.png"
+    "imageHighSrc": "cards/bw5-015-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2646",
-    "externalId": null,
+    "externalId": "bw5-14",
     "tcgdex_id": "bw5-14",
     "localId": "014",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "014/108",
+    "cardNumber": "14/108",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic 014/108 Dark Explorers",
+    "fullDisplayName": "Torchic 14/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3190,18 +3951,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-014-low.png",
-    "imageHighSrc": "cards/bw5-014-high.png"
+    "imageHighSrc": "cards/bw5-014-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2645",
-    "externalId": null,
+    "externalId": "bw5-13",
     "tcgdex_id": "bw5-13",
     "localId": "013",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "013/108",
+    "cardNumber": "13/108",
     "cardName": "Entei-EX",
-    "fullDisplayName": "Entei-EX 013/108 Dark Explorers",
+    "fullDisplayName": "Entei-EX 13/108 Dark Explorers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3224,18 +3991,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw5-013-low.png",
-    "imageHighSrc": "cards/bw5-013-high.png"
+    "imageHighSrc": "cards/bw5-013-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Grand Flame",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2644",
-    "externalId": null,
+    "externalId": "bw5-12",
     "tcgdex_id": "bw5-12",
     "localId": "012",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "012/108",
+    "cardNumber": "12/108",
     "cardName": "Flareon",
-    "fullDisplayName": "Flareon 012/108 Dark Explorers",
+    "fullDisplayName": "Flareon 12/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3257,18 +4035,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-012-low.png",
-    "imageHighSrc": "cards/bw5-012-high.png"
+    "imageHighSrc": "cards/bw5-012-high.png",
+    "attacks": [
+      {
+        "name": "Sand-Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Fire Slash",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2643",
-    "externalId": null,
+    "externalId": "bw5-11",
     "tcgdex_id": "bw5-11",
     "localId": "011",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "011/108",
+    "cardNumber": "11/108",
     "cardName": "Accelgor",
-    "fullDisplayName": "Accelgor 011/108 Dark Explorers",
+    "fullDisplayName": "Accelgor 11/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3290,18 +4078,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-011-low.png",
-    "imageHighSrc": "cards/bw5-011-high.png"
+    "imageHighSrc": "cards/bw5-011-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "20"
+      },
+      {
+        "name": "Deck and Cover",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2642",
-    "externalId": null,
+    "externalId": "bw5-10",
     "tcgdex_id": "bw5-10",
     "localId": "010",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "010/108",
+    "cardNumber": "10/108",
     "cardName": "Shelmet",
-    "fullDisplayName": "Shelmet 010/108 Dark Explorers",
+    "fullDisplayName": "Shelmet 10/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3323,18 +4121,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-010-low.png",
-    "imageHighSrc": "cards/bw5-010-high.png"
+    "imageHighSrc": "cards/bw5-010-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2641",
-    "externalId": null,
+    "externalId": "bw5-9",
     "tcgdex_id": "bw5-9",
     "localId": "009",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "009/108",
+    "cardNumber": "9/108",
     "cardName": "Karrablast",
-    "fullDisplayName": "Karrablast 009/108 Dark Explorers",
+    "fullDisplayName": "Karrablast 9/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3356,18 +4160,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-009-low.png",
-    "imageHighSrc": "cards/bw5-009-high.png"
+    "imageHighSrc": "cards/bw5-009-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2640",
-    "externalId": null,
+    "externalId": "bw5-8",
     "tcgdex_id": "bw5-8",
     "localId": "008",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "008/108",
+    "cardNumber": "8/108",
     "cardName": "Crustle",
-    "fullDisplayName": "Crustle 008/108 Dark Explorers",
+    "fullDisplayName": "Crustle 8/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3389,18 +4203,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-008-low.png",
-    "imageHighSrc": "cards/bw5-008-high.png"
+    "imageHighSrc": "cards/bw5-008-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "30"
+      },
+      {
+        "name": "Heavy Bullet",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2639",
-    "externalId": null,
+    "externalId": "bw5-7",
     "tcgdex_id": "bw5-7",
     "localId": "007",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "007/108",
+    "cardNumber": "7/108",
     "cardName": "Dwebble",
-    "fullDisplayName": "Dwebble 007/108 Dark Explorers",
+    "fullDisplayName": "Dwebble 7/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3422,18 +4246,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-007-low.png",
-    "imageHighSrc": "cards/bw5-007-high.png"
+    "imageHighSrc": "cards/bw5-007-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Cut",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2638",
-    "externalId": null,
+    "externalId": "bw5-6",
     "tcgdex_id": "bw5-6",
     "localId": "006",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "006/108",
+    "cardNumber": "6/108",
     "cardName": "Leafeon",
-    "fullDisplayName": "Leafeon 006/108 Dark Explorers",
+    "fullDisplayName": "Leafeon 6/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3455,18 +4289,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-006-low.png",
-    "imageHighSrc": "cards/bw5-006-high.png"
+    "imageHighSrc": "cards/bw5-006-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Energy Assist",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2637",
-    "externalId": null,
+    "externalId": "bw5-5",
     "tcgdex_id": "bw5-5",
     "localId": "005",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "005/108",
+    "cardNumber": "5/108",
     "cardName": "Carnivine",
-    "fullDisplayName": "Carnivine 005/108 Dark Explorers",
+    "fullDisplayName": "Carnivine 5/108 Dark Explorers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3488,18 +4332,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-005-low.png",
-    "imageHighSrc": "cards/bw5-005-high.png"
+    "imageHighSrc": "cards/bw5-005-high.png",
+    "attacks": [
+      {
+        "name": "Lure Poison",
+        "damage": null
+      },
+      {
+        "name": "Spit Squall",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2636",
-    "externalId": null,
+    "externalId": "bw5-4",
     "tcgdex_id": "bw5-4",
     "localId": "004",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "004/108",
+    "cardNumber": "4/108",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 004/108 Dark Explorers",
+    "fullDisplayName": "Scyther 4/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3521,18 +4375,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-004-low.png",
-    "imageHighSrc": "cards/bw5-004-high.png"
+    "imageHighSrc": "cards/bw5-004-high.png",
+    "attacks": [
+      {
+        "name": "Air Slash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2635",
-    "externalId": null,
+    "externalId": "bw5-3",
     "tcgdex_id": "bw5-3",
     "localId": "003",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "003/108",
+    "cardNumber": "3/108",
     "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 003/108 Dark Explorers",
+    "fullDisplayName": "Venusaur 3/108 Dark Explorers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3554,18 +4414,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-003-low.png",
-    "imageHighSrc": "cards/bw5-003-high.png"
+    "imageHighSrc": "cards/bw5-003-high.png",
+    "attacks": [
+      {
+        "name": "Poison Powder",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2634",
-    "externalId": null,
+    "externalId": "bw5-2",
     "tcgdex_id": "bw5-2",
     "localId": "002",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "002/108",
+    "cardNumber": "2/108",
     "cardName": "Ivysaur",
-    "fullDisplayName": "Ivysaur 002/108 Dark Explorers",
+    "fullDisplayName": "Ivysaur 2/108 Dark Explorers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3587,18 +4453,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-002-low.png",
-    "imageHighSrc": "cards/bw5-002-high.png"
+    "imageHighSrc": "cards/bw5-002-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "20"
+      },
+      {
+        "name": "Poison Powder",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2633",
-    "externalId": null,
+    "externalId": "bw5-1",
     "tcgdex_id": "bw5-1",
     "localId": "001",
     "setCode": "bw5",
     "setTcgdexId": "bw5",
-    "cardNumber": "001/108",
+    "cardNumber": "1/108",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 001/108 Dark Explorers",
+    "fullDisplayName": "Bulbasaur 1/108 Dark Explorers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3620,6 +4496,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw5-001-low.png",
-    "imageHighSrc": "cards/bw5-001-high.png"
+    "imageHighSrc": "cards/bw5-001-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      }
+    ]
   }
 ]

@@ -130,10 +130,20 @@ struct CardScannerView: View {
         ScrollView {
             VStack(alignment: .leading, spacing: 10) {
                 debugRow("captures", "\(viewModel.debugInfo.captureCount)")
-                debugRow("name", viewModel.debugInfo.extractedName ?? "—")
-                debugRow("hp", viewModel.debugInfo.extractedHP ?? "—")
-                debugRow("set#", viewModel.debugInfo.extractedSetNumber ?? "—")
-                debugRow("query", viewModel.debugInfo.searchQuery ?? "—")
+
+                Text("DETERMINED (read → use)")
+                    .font(.system(size: 10, weight: .bold, design: .monospaced))
+                    .foregroundStyle(Color(red: 1, green: 0.95, blue: 0.4))
+                Text(viewModel.debugInfo.determinedOutline.isEmpty ? "—" : viewModel.debugInfo.determinedOutline)
+                    .font(.system(size: 11, design: .monospaced))
+                    .foregroundStyle(.white)
+                    .lineSpacing(3)
+                    .multilineTextAlignment(.leading)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .textSelection(.enabled)
+
+                debugRow("search used", viewModel.debugInfo.searchQueryUsed ?? "—")
+                debugRow("tier", viewModel.debugInfo.narrowTier ?? "—")
                 debugRow("results", "\(viewModel.debugInfo.searchResultCount)")
                 debugRow("top", viewModel.debugInfo.topResult ?? "—")
                 debugRow("buffer", viewModel.debugInfo.matchBufferState.isEmpty ? "—" : viewModel.debugInfo.matchBufferState)
@@ -157,7 +167,7 @@ struct CardScannerView: View {
             .padding(16)
         }
         .frame(width: width)
-        .frame(maxHeight: 240)
+        .frame(maxHeight: 360)
         .background(
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .fill(Color.black.opacity(0.94))

@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "6143",
-    "externalId": null,
+    "externalId": "ex15-101",
     "tcgdex_id": "ex15-101",
     "localId": "101",
     "setCode": "ex15",
@@ -31,11 +31,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex15-101-low.png",
-    "imageHighSrc": "cards/ex15-101-high.png"
+    "imageHighSrc": "cards/ex15-101-high.png",
+    "attacks": [
+      {
+        "name": "Mimicry",
+        "damage": null
+      },
+      {
+        "name": "Rainbow Wave",
+        "damage": null
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6136",
-    "externalId": null,
+    "externalId": "ex15-100",
     "tcgdex_id": "ex15-100",
     "localId": "100",
     "setCode": "ex15",
@@ -65,18 +76,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex15-100-low.png",
-    "imageHighSrc": "cards/ex15-100-high.png"
+    "imageHighSrc": "cards/ex15-100-high.png",
+    "attacks": [
+      {
+        "name": "Rotating Claws",
+        "damage": "20"
+      },
+      {
+        "name": "Dark Swirl",
+        "damage": "150"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "6129",
-    "externalId": null,
+    "externalId": "ex15-99",
     "tcgdex_id": "ex15-99",
     "localId": "099",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "099/101",
+    "cardNumber": "99/101",
     "cardName": "Tyranitar ex δ",
-    "fullDisplayName": "Tyranitar ex δ 099/101 Dragon Frontiers",
+    "fullDisplayName": "Tyranitar ex δ 99/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -99,18 +121,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-099-low.png",
-    "imageHighSrc": "cards/ex15-099-high.png"
+    "imageHighSrc": "cards/ex15-099-high.png",
+    "attacks": [
+      {
+        "name": "Electromark",
+        "damage": null
+      },
+      {
+        "name": "Hyper Claws",
+        "damage": "70+"
+      },
+      {
+        "name": "Shock-wave",
+        "damage": null
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6121",
-    "externalId": null,
+    "externalId": "ex15-98",
     "tcgdex_id": "ex15-98",
     "localId": "098",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "098/101",
+    "cardNumber": "98/101",
     "cardName": "Salamence ex δ",
-    "fullDisplayName": "Salamence ex δ 098/101 Dragon Frontiers",
+    "fullDisplayName": "Salamence ex δ 98/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -133,18 +170,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-098-low.png",
-    "imageHighSrc": "cards/ex15-098-high.png"
+    "imageHighSrc": "cards/ex15-098-high.png",
+    "attacks": [
+      {
+        "name": "Claw Swipe",
+        "damage": "60"
+      },
+      {
+        "name": "Dual Stream",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6115",
-    "externalId": null,
+    "externalId": "ex15-97",
     "tcgdex_id": "ex15-97",
     "localId": "097",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "097/101",
+    "cardNumber": "97/101",
     "cardName": "Rayquaza ex δ",
-    "fullDisplayName": "Rayquaza ex δ 097/101 Dragon Frontiers",
+    "fullDisplayName": "Rayquaza ex δ 97/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -167,18 +215,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-097-low.png",
-    "imageHighSrc": "cards/ex15-097-high.png"
+    "imageHighSrc": "cards/ex15-097-high.png",
+    "attacks": [
+      {
+        "name": "Special Circuit",
+        "damage": null
+      },
+      {
+        "name": "Sky-high Claws",
+        "damage": "70"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6107",
-    "externalId": null,
+    "externalId": "ex15-96",
     "tcgdex_id": "ex15-96",
     "localId": "096",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "096/101",
+    "cardNumber": "96/101",
     "cardName": "Latios ex δ",
-    "fullDisplayName": "Latios ex δ 096/101 Dragon Frontiers",
+    "fullDisplayName": "Latios ex δ 96/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -201,18 +260,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-096-low.png",
-    "imageHighSrc": "cards/ex15-096-high.png"
+    "imageHighSrc": "cards/ex15-096-high.png",
+    "attacks": [
+      {
+        "name": "Ice Barrier",
+        "damage": "30"
+      },
+      {
+        "name": "Hydro Splash",
+        "damage": "60"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6101",
-    "externalId": null,
+    "externalId": "ex15-95",
     "tcgdex_id": "ex15-95",
     "localId": "095",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "095/101",
+    "cardNumber": "95/101",
     "cardName": "Latias ex δ",
-    "fullDisplayName": "Latias ex δ 095/101 Dragon Frontiers",
+    "fullDisplayName": "Latias ex δ 95/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -235,18 +305,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-095-low.png",
-    "imageHighSrc": "cards/ex15-095-high.png"
+    "imageHighSrc": "cards/ex15-095-high.png",
+    "attacks": [
+      {
+        "name": "Power Crush",
+        "damage": "90"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6094",
-    "externalId": null,
+    "externalId": "ex15-94",
     "tcgdex_id": "ex15-94",
     "localId": "094",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "094/101",
+    "cardNumber": "94/101",
     "cardName": "Kingdra ex δ",
-    "fullDisplayName": "Kingdra ex δ 094/101 Dragon Frontiers",
+    "fullDisplayName": "Kingdra ex δ 94/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -269,18 +346,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-094-low.png",
-    "imageHighSrc": "cards/ex15-094-high.png"
+    "imageHighSrc": "cards/ex15-094-high.png",
+    "attacks": [
+      {
+        "name": "Energy Link",
+        "damage": "40"
+      },
+      {
+        "name": "Protective Swirl",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6086",
-    "externalId": null,
+    "externalId": "ex15-93",
     "tcgdex_id": "ex15-93",
     "localId": "093",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "093/101",
+    "cardNumber": "93/101",
     "cardName": "Gardevoir ex δ",
-    "fullDisplayName": "Gardevoir ex δ 093/101 Dragon Frontiers",
+    "fullDisplayName": "Gardevoir ex δ 93/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -303,18 +391,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-093-low.png",
-    "imageHighSrc": "cards/ex15-093-high.png"
+    "imageHighSrc": "cards/ex15-093-high.png",
+    "attacks": [
+      {
+        "name": "Flame Ball",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6080",
-    "externalId": null,
+    "externalId": "ex15-92",
     "tcgdex_id": "ex15-92",
     "localId": "092",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "092/101",
+    "cardNumber": "92/101",
     "cardName": "Flygon ex δ",
-    "fullDisplayName": "Flygon ex δ 092/101 Dragon Frontiers",
+    "fullDisplayName": "Flygon ex δ 92/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -337,18 +432,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-092-low.png",
-    "imageHighSrc": "cards/ex15-092-high.png"
+    "imageHighSrc": "cards/ex15-092-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Pulse",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6071",
-    "externalId": null,
+    "externalId": "ex15-91",
     "tcgdex_id": "ex15-91",
     "localId": "091",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "091/101",
+    "cardNumber": "91/101",
     "cardName": "Dragonite ex δ",
-    "fullDisplayName": "Dragonite ex δ 091/101 Dragon Frontiers",
+    "fullDisplayName": "Dragonite ex δ 91/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -371,18 +473,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-091-low.png",
-    "imageHighSrc": "cards/ex15-091-high.png"
+    "imageHighSrc": "cards/ex15-091-high.png",
+    "attacks": [
+      {
+        "name": "Deafen",
+        "damage": "40"
+      },
+      {
+        "name": "Dragon Roar",
+        "damage": null
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6062",
-    "externalId": null,
+    "externalId": "ex15-90",
     "tcgdex_id": "ex15-90",
     "localId": "090",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "090/101",
+    "cardNumber": "90/101",
     "cardName": "Altaria ex δ",
-    "fullDisplayName": "Altaria ex δ 090/101 Dragon Frontiers",
+    "fullDisplayName": "Altaria ex δ 90/101 Dragon Frontiers",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -405,18 +518,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-090-low.png",
-    "imageHighSrc": "cards/ex15-090-high.png"
+    "imageHighSrc": "cards/ex15-090-high.png",
+    "attacks": [
+      {
+        "name": "Healing Light",
+        "damage": "60"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "6053",
-    "externalId": null,
+    "externalId": "ex15-89",
     "tcgdex_id": "ex15-89",
     "localId": "089",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "089/101",
+    "cardNumber": "89/101",
     "cardName": "Scramble Energy",
-    "fullDisplayName": "Scramble Energy 089/101 Dragon Frontiers",
+    "fullDisplayName": "Scramble Energy 89/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -434,18 +554,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-089-low.png",
-    "imageHighSrc": "cards/ex15-089-high.png"
+    "imageHighSrc": "cards/ex15-089-high.png",
+    "rules": "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides Colorless Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy."
   },
   {
     "masterCardId": "6044",
-    "externalId": null,
+    "externalId": "ex15-88",
     "tcgdex_id": "ex15-88",
     "localId": "088",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "088/101",
+    "cardNumber": "88/101",
     "cardName": "δ Rainbow Energy",
-    "fullDisplayName": "δ Rainbow Energy 088/101 Dragon Frontiers",
+    "fullDisplayName": "δ Rainbow Energy 88/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -463,18 +584,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex15-088-low.png",
-    "imageHighSrc": "cards/ex15-088-high.png"
+    "imageHighSrc": "cards/ex15-088-high.png",
+    "rules": "δ Rainbow Energy provides Colorless Energy. While attached to a Pokémon that has δ on its card, δ Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.)"
   },
   {
     "masterCardId": "6035",
-    "externalId": null,
+    "externalId": "ex15-87",
     "tcgdex_id": "ex15-87",
     "localId": "087",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "087/101",
+    "cardNumber": "87/101",
     "cardName": "Boost Energy",
-    "fullDisplayName": "Boost Energy 087/101 Dragon Frontiers",
+    "fullDisplayName": "Boost Energy 87/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -492,18 +614,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-087-low.png",
-    "imageHighSrc": "cards/ex15-087-high.png"
+    "imageHighSrc": "cards/ex15-087-high.png",
+    "rules": "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy."
   },
   {
     "masterCardId": "6027",
-    "externalId": null,
+    "externalId": "ex15-86",
     "tcgdex_id": "ex15-86",
     "localId": "086",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "086/101",
+    "cardNumber": "86/101",
     "cardName": "Holon Energy WP",
-    "fullDisplayName": "Holon Energy WP 086/101 Dragon Frontiers",
+    "fullDisplayName": "Holon Energy WP 86/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -521,18 +644,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-086-low.png",
-    "imageHighSrc": "cards/ex15-086-high.png"
+    "imageHighSrc": "cards/ex15-086-high.png",
+    "rules": "Holon Energy WP provides Colorless Energy.\n\nIf the Pokémon that Holon Energy WP is attached to also has a basic Water Energy card attached to it, prevent all effects of attacks, excluding damage, done to that Pokémon by your opponent's Pokémon. If the Pokémon that Holon Energy WP is attached to also has a basic Psychic Energy card attached to it, that Pokémon's Retreat Cost is 0. Ignore these effects if Holon Energy WP is attached to Pokémon-ex."
   },
   {
     "masterCardId": "6018",
-    "externalId": null,
+    "externalId": "ex15-85",
     "tcgdex_id": "ex15-85",
     "localId": "085",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "085/101",
+    "cardNumber": "85/101",
     "cardName": "Holon Energy GL",
-    "fullDisplayName": "Holon Energy GL 085/101 Dragon Frontiers",
+    "fullDisplayName": "Holon Energy GL 85/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -550,18 +674,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-085-low.png",
-    "imageHighSrc": "cards/ex15-085-high.png"
+    "imageHighSrc": "cards/ex15-085-high.png",
+    "rules": "Holon Energy GL provides Colorless Energy.\n\nIf the Pokémon that Holon Energy GL is attached to also has a basic Grass Energy card attached to it, that Pokémon can't be affected by any Special Conditions. If the Pokémon that Holon Energy GL is attached to also has a basic Lightning Energy card attached to it, damage done to that Pokémon by attacks from your opponent's Pokémon-ex is reduced by 10. Ignore these effects if Holon Energy GL is attached to Pokémon-ex."
   },
   {
     "masterCardId": "6009",
-    "externalId": null,
+    "externalId": "ex15-84",
     "tcgdex_id": "ex15-84",
     "localId": "084",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "084/101",
+    "cardNumber": "84/101",
     "cardName": "Holon Energy FF",
-    "fullDisplayName": "Holon Energy FF 084/101 Dragon Frontiers",
+    "fullDisplayName": "Holon Energy FF 84/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -579,18 +704,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-084-low.png",
-    "imageHighSrc": "cards/ex15-084-high.png"
+    "imageHighSrc": "cards/ex15-084-high.png",
+    "rules": "Holon Energy FF provides Colorless Energy.\n\nIf the Pokémon that Holon Energy FF is attached to also has a basic Fire Energy card attached to it, that Pokémon has no Weakness. If the Pokémon that Holon Energy FF is attached to also has a basic Fighting Energy card attached to it, damage done by that Pokémon's attack isn't affected by Resistance. Ignore these effects if Holon Energy FF is attached to Pokémon-ex."
   },
   {
     "masterCardId": "5999",
-    "externalId": null,
+    "externalId": "ex15-83",
     "tcgdex_id": "ex15-83",
     "localId": "083",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "083/101",
+    "cardNumber": "83/101",
     "cardName": "Switch",
-    "fullDisplayName": "Switch 083/101 Dragon Frontiers",
+    "fullDisplayName": "Switch 83/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -608,18 +734,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-083-low.png",
-    "imageHighSrc": "cards/ex15-083-high.png"
+    "imageHighSrc": "cards/ex15-083-high.png",
+    "rules": "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "5990",
-    "externalId": null,
+    "externalId": "ex15-82",
     "tcgdex_id": "ex15-82",
     "localId": "082",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "082/101",
+    "cardNumber": "82/101",
     "cardName": "TV Reporter",
-    "fullDisplayName": "TV Reporter 082/101 Dragon Frontiers",
+    "fullDisplayName": "TV Reporter 82/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -637,18 +764,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-082-low.png",
-    "imageHighSrc": "cards/ex15-082-high.png"
+    "imageHighSrc": "cards/ex15-082-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 3 cards. Then discard any 1 card from your hand."
   },
   {
     "masterCardId": "5981",
-    "externalId": null,
+    "externalId": "ex15-81",
     "tcgdex_id": "ex15-81",
     "localId": "081",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "081/101",
+    "cardNumber": "81/101",
     "cardName": "Strength Charm",
-    "fullDisplayName": "Strength Charm 081/101 Dragon Frontiers",
+    "fullDisplayName": "Strength Charm 81/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -666,18 +794,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-081-low.png",
-    "imageHighSrc": "cards/ex15-081-high.png"
+    "imageHighSrc": "cards/ex15-081-high.png",
+    "rules": "Attach Strength Charm to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nWhenever an attack from the Pokémon that Strength Charm is attached to does damage to the Active Pokémon, this attack does 10 more damage (before applying Weakness and Resistance). Discard Strength Charm at the end of the turn in which this Pokémon attacks."
   },
   {
     "masterCardId": "5972",
-    "externalId": null,
+    "externalId": "ex15-80",
     "tcgdex_id": "ex15-80",
     "localId": "080",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "080/101",
+    "cardNumber": "80/101",
     "cardName": "Professor Oak's Research",
-    "fullDisplayName": "Professor Oak's Research 080/101 Dragon Frontiers",
+    "fullDisplayName": "Professor Oak's Research 80/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -695,18 +824,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-080-low.png",
-    "imageHighSrc": "cards/ex15-080-high.png"
+    "imageHighSrc": "cards/ex15-080-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nShuffle your hand into your deck, then draw 5 cards."
   },
   {
     "masterCardId": "5964",
-    "externalId": null,
+    "externalId": "ex15-79",
     "tcgdex_id": "ex15-79",
     "localId": "079",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "079/101",
+    "cardNumber": "79/101",
     "cardName": "Professor Elm's Training Method",
-    "fullDisplayName": "Professor Elm's Training Method 079/101 Dragon Frontiers",
+    "fullDisplayName": "Professor Elm's Training Method 79/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -724,18 +854,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-079-low.png",
-    "imageHighSrc": "cards/ex15-079-high.png"
+    "imageHighSrc": "cards/ex15-079-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for an Evolution card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "5955",
-    "externalId": null,
+    "externalId": "ex15-78",
     "tcgdex_id": "ex15-78",
     "localId": "078",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "078/101",
+    "cardNumber": "78/101",
     "cardName": "Old Rod",
-    "fullDisplayName": "Old Rod 078/101 Dragon Frontiers",
+    "fullDisplayName": "Old Rod 78/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -753,18 +884,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-078-low.png",
-    "imageHighSrc": "cards/ex15-078-high.png"
+    "imageHighSrc": "cards/ex15-078-high.png",
+    "rules": "Flip 2 coins. If both are heads, search your discard pile for a Basic Pokémon or Evolution card, show it to your opponent, and put it into your hand. If both are tails, search your discard pile for a Trainer card, show it to your opponent, and put it into your hand."
   },
   {
     "masterCardId": "5946",
-    "externalId": null,
+    "externalId": "ex15-77",
     "tcgdex_id": "ex15-77",
     "localId": "077",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "077/101",
+    "cardNumber": "77/101",
     "cardName": "Mr. Stone's Project",
-    "fullDisplayName": "Mr. Stone's Project 077/101 Dragon Frontiers",
+    "fullDisplayName": "Mr. Stone's Project 77/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -782,18 +914,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-077-low.png",
-    "imageHighSrc": "cards/ex15-077-high.png"
+    "imageHighSrc": "cards/ex15-077-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward. Or, search your discard pile for up to 2 basic Energy cards, show them to your opponent, and put them into your hand."
   },
   {
     "masterCardId": "5937",
-    "externalId": null,
+    "externalId": "ex15-76",
     "tcgdex_id": "ex15-76",
     "localId": "076",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "076/101",
+    "cardNumber": "76/101",
     "cardName": "Island Hermit",
-    "fullDisplayName": "Island Hermit 076/101 Dragon Frontiers",
+    "fullDisplayName": "Island Hermit 76/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -811,18 +944,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-076-low.png",
-    "imageHighSrc": "cards/ex15-076-high.png"
+    "imageHighSrc": "cards/ex15-076-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nChoose up to 2 of your Prize cards and put them face up. (These cards remain face up for the rest of the game.) Draw 2 cards."
   },
   {
     "masterCardId": "5928",
-    "externalId": null,
+    "externalId": "ex15-75",
     "tcgdex_id": "ex15-75",
     "localId": "075",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "075/101",
+    "cardNumber": "75/101",
     "cardName": "Holon Mentor",
-    "fullDisplayName": "Holon Mentor 075/101 Dragon Frontiers",
+    "fullDisplayName": "Holon Mentor 75/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -840,18 +974,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-075-low.png",
-    "imageHighSrc": "cards/ex15-075-high.png"
+    "imageHighSrc": "cards/ex15-075-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDiscard a card from your hand. If you can't discard a card from your hand, you can't play this card.\n\nSearch your deck for up to 3 Basic Pokémon that each has 100 HP or less, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "5919",
-    "externalId": null,
+    "externalId": "ex15-74",
     "tcgdex_id": "ex15-74",
     "localId": "074",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "074/101",
+    "cardNumber": "74/101",
     "cardName": "Holon Legacy",
-    "fullDisplayName": "Holon Legacy 074/101 Dragon Frontiers",
+    "fullDisplayName": "Holon Legacy 74/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -869,18 +1004,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-074-low.png",
-    "imageHighSrc": "cards/ex15-074-high.png"
+    "imageHighSrc": "cards/ex15-074-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach Pokémon in play that has δ on its card (both yours and your opponent's) has no Weakness and can't use any Poké-Powers."
   },
   {
     "masterCardId": "5910",
-    "externalId": null,
+    "externalId": "ex15-73",
     "tcgdex_id": "ex15-73",
     "localId": "073",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "073/101",
+    "cardNumber": "73/101",
     "cardName": "Copycat",
-    "fullDisplayName": "Copycat 073/101 Dragon Frontiers",
+    "fullDisplayName": "Copycat 73/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -898,18 +1034,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-073-low.png",
-    "imageHighSrc": "cards/ex15-073-high.png"
+    "imageHighSrc": "cards/ex15-073-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nShuffle your hand into your deck. Then, count the number of cards in your opponent's hand and draw that many cards."
   },
   {
     "masterCardId": "5901",
-    "externalId": null,
+    "externalId": "ex15-72",
     "tcgdex_id": "ex15-72",
     "localId": "072",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "072/101",
+    "cardNumber": "72/101",
     "cardName": "Buffer Piece",
-    "fullDisplayName": "Buffer Piece 072/101 Dragon Frontiers",
+    "fullDisplayName": "Buffer Piece 72/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -927,18 +1064,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-072-low.png",
-    "imageHighSrc": "cards/ex15-072-high.png"
+    "imageHighSrc": "cards/ex15-072-high.png",
+    "rules": "Attach Buffer Piece to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nDamage done to the Pokémon Buffer Piece is attached to by an opponent's attack is reduced by 20 (after applying Weakness and Resistance). At the end of your opponent's turn after you played Buffer Piece, discard Buffer Piece."
   },
   {
     "masterCardId": "5891",
-    "externalId": null,
+    "externalId": "ex15-71",
     "tcgdex_id": "ex15-71",
     "localId": "071",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "071/101",
+    "cardNumber": "71/101",
     "cardName": "Wooper δ",
-    "fullDisplayName": "Wooper δ 071/101 Dragon Frontiers",
+    "fullDisplayName": "Wooper δ 71/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -960,18 +1098,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-071-low.png",
-    "imageHighSrc": "cards/ex15-071-high.png"
+    "imageHighSrc": "cards/ex15-071-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": null
+      },
+      {
+        "name": "Tail Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5882",
-    "externalId": null,
+    "externalId": "ex15-70",
     "tcgdex_id": "ex15-70",
     "localId": "070",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "070/101",
+    "cardNumber": "70/101",
     "cardName": "Vulpix δ",
-    "fullDisplayName": "Vulpix δ 070/101 Dragon Frontiers",
+    "fullDisplayName": "Vulpix δ 70/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -993,18 +1141,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-070-low.png",
-    "imageHighSrc": "cards/ex15-070-high.png"
+    "imageHighSrc": "cards/ex15-070-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Gaze",
+        "damage": null
+      },
+      {
+        "name": "Will-o'-the-wisp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5873",
-    "externalId": null,
+    "externalId": "ex15-69",
     "tcgdex_id": "ex15-69",
     "localId": "069",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "069/101",
+    "cardNumber": "69/101",
     "cardName": "Trapinch δ",
-    "fullDisplayName": "Trapinch δ 069/101 Dragon Frontiers",
+    "fullDisplayName": "Trapinch δ 69/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1026,18 +1184,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-069-low.png",
-    "imageHighSrc": "cards/ex15-069-high.png"
+    "imageHighSrc": "cards/ex15-069-high.png",
+    "attacks": [
+      {
+        "name": "Quick Bind",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5863",
-    "externalId": null,
+    "externalId": "ex15-68",
     "tcgdex_id": "ex15-68",
     "localId": "068",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "068/101",
+    "cardNumber": "68/101",
     "cardName": "Trapinch δ",
-    "fullDisplayName": "Trapinch δ 068/101 Dragon Frontiers",
+    "fullDisplayName": "Trapinch δ 68/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1059,18 +1223,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-068-low.png",
-    "imageHighSrc": "cards/ex15-068-high.png"
+    "imageHighSrc": "cards/ex15-068-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Dig",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5854",
-    "externalId": null,
+    "externalId": "ex15-67",
     "tcgdex_id": "ex15-67",
     "localId": "067",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "067/101",
+    "cardNumber": "67/101",
     "cardName": "Totodile δ",
-    "fullDisplayName": "Totodile δ 067/101 Dragon Frontiers",
+    "fullDisplayName": "Totodile δ 67/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1092,18 +1266,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-067-low.png",
-    "imageHighSrc": "cards/ex15-067-high.png"
+    "imageHighSrc": "cards/ex15-067-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5846",
-    "externalId": null,
+    "externalId": "ex15-66",
     "tcgdex_id": "ex15-66",
     "localId": "066",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "066/101",
+    "cardNumber": "66/101",
     "cardName": "Taillow δ",
-    "fullDisplayName": "Taillow δ 066/101 Dragon Frontiers",
+    "fullDisplayName": "Taillow δ 66/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1125,18 +1309,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-066-low.png",
-    "imageHighSrc": "cards/ex15-066-high.png"
+    "imageHighSrc": "cards/ex15-066-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5837",
-    "externalId": null,
+    "externalId": "ex15-65",
     "tcgdex_id": "ex15-65",
     "localId": "065",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "065/101",
+    "cardNumber": "65/101",
     "cardName": "Swablu δ",
-    "fullDisplayName": "Swablu δ 065/101 Dragon Frontiers",
+    "fullDisplayName": "Swablu δ 65/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1158,18 +1348,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-065-low.png",
-    "imageHighSrc": "cards/ex15-065-high.png"
+    "imageHighSrc": "cards/ex15-065-high.png",
+    "attacks": [
+      {
+        "name": "Splash About",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5826",
-    "externalId": null,
+    "externalId": "ex15-64",
     "tcgdex_id": "ex15-64",
     "localId": "064",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "064/101",
+    "cardNumber": "64/101",
     "cardName": "Smoochum δ",
-    "fullDisplayName": "Smoochum δ 064/101 Dragon Frontiers",
+    "fullDisplayName": "Smoochum δ 64/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1191,18 +1387,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-064-low.png",
-    "imageHighSrc": "cards/ex15-064-high.png"
+    "imageHighSrc": "cards/ex15-064-high.png",
+    "attacks": [
+      {
+        "name": "Alluring Kiss",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5818",
-    "externalId": null,
+    "externalId": "ex15-63",
     "tcgdex_id": "ex15-63",
     "localId": "063",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "063/101",
+    "cardNumber": "63/101",
     "cardName": "Shellder δ",
-    "fullDisplayName": "Shellder δ 063/101 Dragon Frontiers",
+    "fullDisplayName": "Shellder δ 63/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1224,18 +1426,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-063-low.png",
-    "imageHighSrc": "cards/ex15-063-high.png"
+    "imageHighSrc": "cards/ex15-063-high.png",
+    "attacks": [
+      {
+        "name": "Shell Grab",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5809",
-    "externalId": null,
+    "externalId": "ex15-62",
     "tcgdex_id": "ex15-62",
     "localId": "062",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "062/101",
+    "cardNumber": "62/101",
     "cardName": "Seel δ",
-    "fullDisplayName": "Seel δ 062/101 Dragon Frontiers",
+    "fullDisplayName": "Seel δ 62/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1257,18 +1465,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-062-low.png",
-    "imageHighSrc": "cards/ex15-062-high.png"
+    "imageHighSrc": "cards/ex15-062-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Aurora Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5801",
-    "externalId": null,
+    "externalId": "ex15-61",
     "tcgdex_id": "ex15-61",
     "localId": "061",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "061/101",
+    "cardNumber": "61/101",
     "cardName": "Ralts δ",
-    "fullDisplayName": "Ralts δ 061/101 Dragon Frontiers",
+    "fullDisplayName": "Ralts δ 61/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1290,18 +1508,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-061-low.png",
-    "imageHighSrc": "cards/ex15-061-high.png"
+    "imageHighSrc": "cards/ex15-061-high.png",
+    "attacks": [
+      {
+        "name": "Calm Mind",
+        "damage": null
+      },
+      {
+        "name": "Will-o'-the-wisp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5792",
-    "externalId": null,
+    "externalId": "ex15-60",
     "tcgdex_id": "ex15-60",
     "localId": "060",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "060/101",
+    "cardNumber": "60/101",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts 060/101 Dragon Frontiers",
+    "fullDisplayName": "Ralts 60/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1323,18 +1551,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-060-low.png",
-    "imageHighSrc": "cards/ex15-060-high.png"
+    "imageHighSrc": "cards/ex15-060-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Psychic Boom",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5784",
-    "externalId": null,
+    "externalId": "ex15-59",
     "tcgdex_id": "ex15-59",
     "localId": "059",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "059/101",
+    "cardNumber": "59/101",
     "cardName": "Pupitar δ",
-    "fullDisplayName": "Pupitar δ 059/101 Dragon Frontiers",
+    "fullDisplayName": "Pupitar δ 59/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1356,18 +1594,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-059-low.png",
-    "imageHighSrc": "cards/ex15-059-high.png"
+    "imageHighSrc": "cards/ex15-059-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5774",
-    "externalId": null,
+    "externalId": "ex15-58",
     "tcgdex_id": "ex15-58",
     "localId": "058",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "058/101",
+    "cardNumber": "58/101",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 058/101 Dragon Frontiers",
+    "fullDisplayName": "Pupitar 58/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1389,18 +1633,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-058-low.png",
-    "imageHighSrc": "cards/ex15-058-high.png"
+    "imageHighSrc": "cards/ex15-058-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5765",
-    "externalId": null,
+    "externalId": "ex15-57",
     "tcgdex_id": "ex15-57",
     "localId": "057",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "057/101",
+    "cardNumber": "57/101",
     "cardName": "Nidoran ♂ δ",
-    "fullDisplayName": "Nidoran ♂ δ 057/101 Dragon Frontiers",
+    "fullDisplayName": "Nidoran ♂ δ 57/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1422,18 +1672,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex15-057-low.png",
-    "imageHighSrc": "cards/ex15-057-high.png"
+    "imageHighSrc": "cards/ex15-057-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Horn",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5756",
-    "externalId": null,
+    "externalId": "ex15-56",
     "tcgdex_id": "ex15-56",
     "localId": "056",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "056/101",
+    "cardNumber": "56/101",
     "cardName": "Nidoran ♀ δ",
-    "fullDisplayName": "Nidoran ♀ δ 056/101 Dragon Frontiers",
+    "fullDisplayName": "Nidoran ♀ δ 56/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1455,18 +1715,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/ex15-056-low.png",
-    "imageHighSrc": "cards/ex15-056-high.png"
+    "imageHighSrc": "cards/ex15-056-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whip",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5747",
-    "externalId": null,
+    "externalId": "ex15-55",
     "tcgdex_id": "ex15-55",
     "localId": "055",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "055/101",
+    "cardNumber": "55/101",
     "cardName": "Natu δ",
-    "fullDisplayName": "Natu δ 055/101 Dragon Frontiers",
+    "fullDisplayName": "Natu δ 55/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1488,18 +1758,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-055-low.png",
-    "imageHighSrc": "cards/ex15-055-high.png"
+    "imageHighSrc": "cards/ex15-055-high.png",
+    "attacks": [
+      {
+        "name": "Flop",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5739",
-    "externalId": null,
+    "externalId": "ex15-54",
     "tcgdex_id": "ex15-54",
     "localId": "054",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "054/101",
+    "cardNumber": "54/101",
     "cardName": "Mareep δ",
-    "fullDisplayName": "Mareep δ 054/101 Dragon Frontiers",
+    "fullDisplayName": "Mareep δ 54/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1521,18 +1797,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-054-low.png",
-    "imageHighSrc": "cards/ex15-054-high.png"
+    "imageHighSrc": "cards/ex15-054-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5730",
-    "externalId": null,
+    "externalId": "ex15-53",
     "tcgdex_id": "ex15-53",
     "localId": "053",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "053/101",
+    "cardNumber": "53/101",
     "cardName": "Ledyba δ",
-    "fullDisplayName": "Ledyba δ 053/101 Dragon Frontiers",
+    "fullDisplayName": "Ledyba δ 53/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1554,18 +1836,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-053-low.png",
-    "imageHighSrc": "cards/ex15-053-high.png"
+    "imageHighSrc": "cards/ex15-053-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Supersonic",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5722",
-    "externalId": null,
+    "externalId": "ex15-52",
     "tcgdex_id": "ex15-52",
     "localId": "052",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "052/101",
+    "cardNumber": "52/101",
     "cardName": "Larvitar δ",
-    "fullDisplayName": "Larvitar δ 052/101 Dragon Frontiers",
+    "fullDisplayName": "Larvitar δ 52/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1587,18 +1879,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-052-low.png",
-    "imageHighSrc": "cards/ex15-052-high.png"
+    "imageHighSrc": "cards/ex15-052-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Horn Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5712",
-    "externalId": null,
+    "externalId": "ex15-51",
     "tcgdex_id": "ex15-51",
     "localId": "051",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "051/101",
+    "cardNumber": "51/101",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 051/101 Dragon Frontiers",
+    "fullDisplayName": "Larvitar 51/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1620,18 +1922,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-051-low.png",
-    "imageHighSrc": "cards/ex15-051-high.png"
+    "imageHighSrc": "cards/ex15-051-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Mud Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5704",
-    "externalId": null,
+    "externalId": "ex15-50",
     "tcgdex_id": "ex15-50",
     "localId": "050",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "050/101",
+    "cardNumber": "50/101",
     "cardName": "Horsea δ",
-    "fullDisplayName": "Horsea δ 050/101 Dragon Frontiers",
+    "fullDisplayName": "Horsea δ 50/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1653,18 +1965,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-050-low.png",
-    "imageHighSrc": "cards/ex15-050-high.png"
+    "imageHighSrc": "cards/ex15-050-high.png",
+    "attacks": [
+      {
+        "name": "Sleepy Ball",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5694",
-    "externalId": null,
+    "externalId": "ex15-49",
     "tcgdex_id": "ex15-49",
     "localId": "049",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "049/101",
+    "cardNumber": "49/101",
     "cardName": "Feebas δ",
-    "fullDisplayName": "Feebas δ 049/101 Dragon Frontiers",
+    "fullDisplayName": "Feebas δ 49/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1686,18 +2004,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-049-low.png",
-    "imageHighSrc": "cards/ex15-049-high.png"
+    "imageHighSrc": "cards/ex15-049-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5686",
-    "externalId": null,
+    "externalId": "ex15-48",
     "tcgdex_id": "ex15-48",
     "localId": "048",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "048/101",
+    "cardNumber": "48/101",
     "cardName": "Elekid δ",
-    "fullDisplayName": "Elekid δ 048/101 Dragon Frontiers",
+    "fullDisplayName": "Elekid δ 48/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1719,18 +2043,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-048-low.png",
-    "imageHighSrc": "cards/ex15-048-high.png"
+    "imageHighSrc": "cards/ex15-048-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Spear",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5676",
-    "externalId": null,
+    "externalId": "ex15-47",
     "tcgdex_id": "ex15-47",
     "localId": "047",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "047/101",
+    "cardNumber": "47/101",
     "cardName": "Ekans δ",
-    "fullDisplayName": "Ekans δ 047/101 Dragon Frontiers",
+    "fullDisplayName": "Ekans δ 47/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1752,18 +2082,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-047-low.png",
-    "imageHighSrc": "cards/ex15-047-high.png"
+    "imageHighSrc": "cards/ex15-047-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Snap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5667",
-    "externalId": null,
+    "externalId": "ex15-46",
     "tcgdex_id": "ex15-46",
     "localId": "046",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "046/101",
+    "cardNumber": "46/101",
     "cardName": "Dratini δ",
-    "fullDisplayName": "Dratini δ 046/101 Dragon Frontiers",
+    "fullDisplayName": "Dratini δ 46/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1785,18 +2125,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-046-low.png",
-    "imageHighSrc": "cards/ex15-046-high.png"
+    "imageHighSrc": "cards/ex15-046-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5658",
-    "externalId": null,
+    "externalId": "ex15-45",
     "tcgdex_id": "ex15-45",
     "localId": "045",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "045/101",
+    "cardNumber": "45/101",
     "cardName": "Cyndaquil δ",
-    "fullDisplayName": "Cyndaquil δ 045/101 Dragon Frontiers",
+    "fullDisplayName": "Cyndaquil δ 45/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1818,18 +2164,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-045-low.png",
-    "imageHighSrc": "cards/ex15-045-high.png"
+    "imageHighSrc": "cards/ex15-045-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5649",
-    "externalId": null,
+    "externalId": "ex15-44",
     "tcgdex_id": "ex15-44",
     "localId": "044",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "044/101",
+    "cardNumber": "44/101",
     "cardName": "Chikorita δ",
-    "fullDisplayName": "Chikorita δ 044/101 Dragon Frontiers",
+    "fullDisplayName": "Chikorita δ 44/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1851,18 +2203,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-044-low.png",
-    "imageHighSrc": "cards/ex15-044-high.png"
+    "imageHighSrc": "cards/ex15-044-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5640",
-    "externalId": null,
+    "externalId": "ex15-43",
     "tcgdex_id": "ex15-43",
     "localId": "043",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "043/101",
+    "cardNumber": "43/101",
     "cardName": "Bagon δ",
-    "fullDisplayName": "Bagon δ 043/101 Dragon Frontiers",
+    "fullDisplayName": "Bagon δ 43/101 Dragon Frontiers",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1884,18 +2246,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-043-low.png",
-    "imageHighSrc": "cards/ex15-043-high.png"
+    "imageHighSrc": "cards/ex15-043-high.png",
+    "attacks": [
+      {
+        "name": "Granite Head",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5631",
-    "externalId": null,
+    "externalId": "ex15-42",
     "tcgdex_id": "ex15-42",
     "localId": "042",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "042/101",
+    "cardNumber": "42/101",
     "cardName": "Vibrava δ",
-    "fullDisplayName": "Vibrava δ 042/101 Dragon Frontiers",
+    "fullDisplayName": "Vibrava δ 42/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1917,18 +2285,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-042-low.png",
-    "imageHighSrc": "cards/ex15-042-high.png"
+    "imageHighSrc": "cards/ex15-042-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Sonic Noise",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5622",
-    "externalId": null,
+    "externalId": "ex15-41",
     "tcgdex_id": "ex15-41",
     "localId": "041",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "041/101",
+    "cardNumber": "41/101",
     "cardName": "Togepi δ",
-    "fullDisplayName": "Togepi δ 041/101 Dragon Frontiers",
+    "fullDisplayName": "Togepi δ 41/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1950,18 +2328,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-041-low.png",
-    "imageHighSrc": "cards/ex15-041-high.png"
+    "imageHighSrc": "cards/ex15-041-high.png",
+    "attacks": [
+      {
+        "name": "Charm",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5611",
-    "externalId": null,
+    "externalId": "ex15-40",
     "tcgdex_id": "ex15-40",
     "localId": "040",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "040/101",
+    "cardNumber": "40/101",
     "cardName": "Swellow δ",
-    "fullDisplayName": "Swellow δ 040/101 Dragon Frontiers",
+    "fullDisplayName": "Swellow δ 40/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1983,18 +2367,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-040-low.png",
-    "imageHighSrc": "cards/ex15-040-high.png"
+    "imageHighSrc": "cards/ex15-040-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5604",
-    "externalId": null,
+    "externalId": "ex15-39",
     "tcgdex_id": "ex15-39",
     "localId": "039",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "039/101",
+    "cardNumber": "39/101",
     "cardName": "Smeargle δ",
-    "fullDisplayName": "Smeargle δ 039/101 Dragon Frontiers",
+    "fullDisplayName": "Smeargle δ 39/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2016,18 +2406,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-039-low.png",
-    "imageHighSrc": "cards/ex15-039-high.png"
+    "imageHighSrc": "cards/ex15-039-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Flickering Tail",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5594",
-    "externalId": null,
+    "externalId": "ex15-38",
     "tcgdex_id": "ex15-38",
     "localId": "038",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "038/101",
+    "cardNumber": "38/101",
     "cardName": "Shelgon δ",
-    "fullDisplayName": "Shelgon δ 038/101 Dragon Frontiers",
+    "fullDisplayName": "Shelgon δ 38/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2049,18 +2449,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-038-low.png",
-    "imageHighSrc": "cards/ex15-038-high.png"
+    "imageHighSrc": "cards/ex15-038-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Double-edge",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5585",
-    "externalId": null,
+    "externalId": "ex15-37",
     "tcgdex_id": "ex15-37",
     "localId": "037",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "037/101",
+    "cardNumber": "37/101",
     "cardName": "Seadra δ",
-    "fullDisplayName": "Seadra δ 037/101 Dragon Frontiers",
+    "fullDisplayName": "Seadra δ 37/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2082,18 +2492,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-037-low.png",
-    "imageHighSrc": "cards/ex15-037-high.png"
+    "imageHighSrc": "cards/ex15-037-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20"
+      },
+      {
+        "name": "Extra Ball",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5577",
-    "externalId": null,
+    "externalId": "ex15-36",
     "tcgdex_id": "ex15-36",
     "localId": "036",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "036/101",
+    "cardNumber": "36/101",
     "cardName": "Quilava δ",
-    "fullDisplayName": "Quilava δ 036/101 Dragon Frontiers",
+    "fullDisplayName": "Quilava δ 36/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2115,18 +2535,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-036-low.png",
-    "imageHighSrc": "cards/ex15-036-high.png"
+    "imageHighSrc": "cards/ex15-036-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5567",
-    "externalId": null,
+    "externalId": "ex15-35",
     "tcgdex_id": "ex15-35",
     "localId": "035",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "035/101",
+    "cardNumber": "35/101",
     "cardName": "Nidorino δ",
-    "fullDisplayName": "Nidorino δ 035/101 Dragon Frontiers",
+    "fullDisplayName": "Nidorino δ 35/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2148,18 +2578,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-035-low.png",
-    "imageHighSrc": "cards/ex15-035-high.png"
+    "imageHighSrc": "cards/ex15-035-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "10+"
+      },
+      {
+        "name": "Horn Drill",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5558",
-    "externalId": null,
+    "externalId": "ex15-34",
     "tcgdex_id": "ex15-34",
     "localId": "034",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "034/101",
+    "cardNumber": "34/101",
     "cardName": "Nidorina δ",
-    "fullDisplayName": "Nidorina δ 034/101 Dragon Frontiers",
+    "fullDisplayName": "Nidorina δ 34/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2181,18 +2621,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-034-low.png",
-    "imageHighSrc": "cards/ex15-034-high.png"
+    "imageHighSrc": "cards/ex15-034-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "10"
+      },
+      {
+        "name": "Rear Kick",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5549",
-    "externalId": null,
+    "externalId": "ex15-33",
     "tcgdex_id": "ex15-33",
     "localId": "033",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "033/101",
+    "cardNumber": "33/101",
     "cardName": "Kirlia δ",
-    "fullDisplayName": "Kirlia δ 033/101 Dragon Frontiers",
+    "fullDisplayName": "Kirlia δ 33/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2214,18 +2664,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-033-low.png",
-    "imageHighSrc": "cards/ex15-033-high.png"
+    "imageHighSrc": "cards/ex15-033-high.png",
+    "attacks": [
+      {
+        "name": "Flickering Flames",
+        "damage": "20"
+      },
+      {
+        "name": "Smack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5540",
-    "externalId": null,
+    "externalId": "ex15-32",
     "tcgdex_id": "ex15-32",
     "localId": "032",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "032/101",
+    "cardNumber": "32/101",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 032/101 Dragon Frontiers",
+    "fullDisplayName": "Kirlia 32/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2247,18 +2707,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-032-low.png",
-    "imageHighSrc": "cards/ex15-032-high.png"
+    "imageHighSrc": "cards/ex15-032-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "20"
+      },
+      {
+        "name": "Link Blast",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5531",
-    "externalId": null,
+    "externalId": "ex15-31",
     "tcgdex_id": "ex15-31",
     "localId": "031",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "031/101",
+    "cardNumber": "31/101",
     "cardName": "Horsea δ",
-    "fullDisplayName": "Horsea δ 031/101 Dragon Frontiers",
+    "fullDisplayName": "Horsea δ 31/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2280,18 +2750,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-031-low.png",
-    "imageHighSrc": "cards/ex15-031-high.png"
+    "imageHighSrc": "cards/ex15-031-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Reverse Thrust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5522",
-    "externalId": null,
+    "externalId": "ex15-30",
     "tcgdex_id": "ex15-30",
     "localId": "030",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "030/101",
+    "cardNumber": "30/101",
     "cardName": "Flaaffy δ",
-    "fullDisplayName": "Flaaffy δ 030/101 Dragon Frontiers",
+    "fullDisplayName": "Flaaffy δ 30/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2313,18 +2793,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-030-low.png",
-    "imageHighSrc": "cards/ex15-030-high.png"
+    "imageHighSrc": "cards/ex15-030-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5512",
-    "externalId": null,
+    "externalId": "ex15-29",
     "tcgdex_id": "ex15-29",
     "localId": "029",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "029/101",
+    "cardNumber": "29/101",
     "cardName": "Electabuzz δ",
-    "fullDisplayName": "Electabuzz δ 029/101 Dragon Frontiers",
+    "fullDisplayName": "Electabuzz δ 29/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2346,18 +2832,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-029-low.png",
-    "imageHighSrc": "cards/ex15-029-high.png"
+    "imageHighSrc": "cards/ex15-029-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5503",
-    "externalId": null,
+    "externalId": "ex15-28",
     "tcgdex_id": "ex15-28",
     "localId": "028",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "028/101",
+    "cardNumber": "28/101",
     "cardName": "Dragonair δ",
-    "fullDisplayName": "Dragonair δ 028/101 Dragon Frontiers",
+    "fullDisplayName": "Dragonair δ 28/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2379,18 +2871,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-028-low.png",
-    "imageHighSrc": "cards/ex15-028-high.png"
+    "imageHighSrc": "cards/ex15-028-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": null
+      },
+      {
+        "name": "Horn Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5494",
-    "externalId": null,
+    "externalId": "ex15-27",
     "tcgdex_id": "ex15-27",
     "localId": "027",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "027/101",
+    "cardNumber": "27/101",
     "cardName": "Croconaw δ",
-    "fullDisplayName": "Croconaw δ 027/101 Dragon Frontiers",
+    "fullDisplayName": "Croconaw δ 27/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2412,18 +2914,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-027-low.png",
-    "imageHighSrc": "cards/ex15-027-high.png"
+    "imageHighSrc": "cards/ex15-027-high.png",
+    "attacks": [
+      {
+        "name": "Scary Face",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "5486",
-    "externalId": null,
+    "externalId": "ex15-26",
     "tcgdex_id": "ex15-26",
     "localId": "026",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "026/101",
+    "cardNumber": "26/101",
     "cardName": "Bayleef δ",
-    "fullDisplayName": "Bayleef δ 026/101 Dragon Frontiers",
+    "fullDisplayName": "Bayleef δ 26/101 Dragon Frontiers",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2445,18 +2957,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-026-low.png",
-    "imageHighSrc": "cards/ex15-026-high.png"
+    "imageHighSrc": "cards/ex15-026-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5477",
-    "externalId": null,
+    "externalId": "ex15-25",
     "tcgdex_id": "ex15-25",
     "localId": "025",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "025/101",
+    "cardNumber": "25/101",
     "cardName": "Xatu δ",
-    "fullDisplayName": "Xatu δ 025/101 Dragon Frontiers",
+    "fullDisplayName": "Xatu δ 25/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2478,18 +2996,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-025-low.png",
-    "imageHighSrc": "cards/ex15-025-high.png"
+    "imageHighSrc": "cards/ex15-025-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5468",
-    "externalId": null,
+    "externalId": "ex15-24",
     "tcgdex_id": "ex15-24",
     "localId": "024",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "024/101",
+    "cardNumber": "24/101",
     "cardName": "Vibrava δ",
-    "fullDisplayName": "Vibrava δ 024/101 Dragon Frontiers",
+    "fullDisplayName": "Vibrava δ 24/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2511,18 +3035,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-024-low.png",
-    "imageHighSrc": "cards/ex15-024-high.png"
+    "imageHighSrc": "cards/ex15-024-high.png",
+    "attacks": [
+      {
+        "name": "Quick Blow",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "5459",
-    "externalId": null,
+    "externalId": "ex15-23",
     "tcgdex_id": "ex15-23",
     "localId": "023",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "023/101",
+    "cardNumber": "23/101",
     "cardName": "Tropius δ",
-    "fullDisplayName": "Tropius δ 023/101 Dragon Frontiers",
+    "fullDisplayName": "Tropius δ 23/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2544,18 +3074,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-023-low.png",
-    "imageHighSrc": "cards/ex15-023-high.png"
+    "imageHighSrc": "cards/ex15-023-high.png",
+    "attacks": [
+      {
+        "name": "Grind",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5452",
-    "externalId": null,
+    "externalId": "ex15-22",
     "tcgdex_id": "ex15-22",
     "localId": "022",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "022/101",
+    "cardNumber": "22/101",
     "cardName": "Seadra δ",
-    "fullDisplayName": "Seadra δ 022/101 Dragon Frontiers",
+    "fullDisplayName": "Seadra δ 22/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2577,18 +3113,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-022-low.png",
-    "imageHighSrc": "cards/ex15-022-high.png"
+    "imageHighSrc": "cards/ex15-022-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "20"
+      },
+      {
+        "name": "Razor Wing",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5442",
-    "externalId": null,
+    "externalId": "ex15-21",
     "tcgdex_id": "ex15-21",
     "localId": "021",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "021/101",
+    "cardNumber": "21/101",
     "cardName": "Quagsire δ",
-    "fullDisplayName": "Quagsire δ 021/101 Dragon Frontiers",
+    "fullDisplayName": "Quagsire δ 21/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2610,18 +3156,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-021-low.png",
-    "imageHighSrc": "cards/ex15-021-high.png"
+    "imageHighSrc": "cards/ex15-021-high.png",
+    "attacks": [
+      {
+        "name": "Pump Out",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5433",
-    "externalId": null,
+    "externalId": "ex15-20",
     "tcgdex_id": "ex15-20",
     "localId": "020",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "020/101",
+    "cardNumber": "20/101",
     "cardName": "Mantine δ",
-    "fullDisplayName": "Mantine δ 020/101 Dragon Frontiers",
+    "fullDisplayName": "Mantine δ 20/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2643,18 +3195,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-020-low.png",
-    "imageHighSrc": "cards/ex15-020-high.png"
+    "imageHighSrc": "cards/ex15-020-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5424",
-    "externalId": null,
+    "externalId": "ex15-19",
     "tcgdex_id": "ex15-19",
     "localId": "019",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "019/101",
+    "cardNumber": "19/101",
     "cardName": "Lickitung δ",
-    "fullDisplayName": "Lickitung δ 019/101 Dragon Frontiers",
+    "fullDisplayName": "Lickitung δ 19/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2676,18 +3234,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-019-low.png",
-    "imageHighSrc": "cards/ex15-019-high.png"
+    "imageHighSrc": "cards/ex15-019-high.png",
+    "attacks": [
+      {
+        "name": "Lap Up",
+        "damage": null
+      },
+      {
+        "name": "Delta Mind",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5415",
-    "externalId": null,
+    "externalId": "ex15-18",
     "tcgdex_id": "ex15-18",
     "localId": "018",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "018/101",
+    "cardNumber": "18/101",
     "cardName": "Ledian δ",
-    "fullDisplayName": "Ledian δ 018/101 Dragon Frontiers",
+    "fullDisplayName": "Ledian δ 18/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2709,18 +3277,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-018-low.png",
-    "imageHighSrc": "cards/ex15-018-high.png"
+    "imageHighSrc": "cards/ex15-018-high.png",
+    "attacks": [
+      {
+        "name": "Metal Star",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5406",
-    "externalId": null,
+    "externalId": "ex15-17",
     "tcgdex_id": "ex15-17",
     "localId": "017",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "017/101",
+    "cardNumber": "17/101",
     "cardName": "Jynx δ",
-    "fullDisplayName": "Jynx δ 017/101 Dragon Frontiers",
+    "fullDisplayName": "Jynx δ 17/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2742,18 +3316,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-017-low.png",
-    "imageHighSrc": "cards/ex15-017-high.png"
+    "imageHighSrc": "cards/ex15-017-high.png",
+    "attacks": [
+      {
+        "name": "Fire Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5395",
-    "externalId": null,
+    "externalId": "ex15-16",
     "tcgdex_id": "ex15-16",
     "localId": "016",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "016/101",
+    "cardNumber": "16/101",
     "cardName": "Gligar δ",
-    "fullDisplayName": "Gligar δ 016/101 Dragon Frontiers",
+    "fullDisplayName": "Gligar δ 16/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2775,18 +3355,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-016-low.png",
-    "imageHighSrc": "cards/ex15-016-high.png"
+    "imageHighSrc": "cards/ex15-016-high.png",
+    "attacks": [
+      {
+        "name": "Sting Turn",
+        "damage": null
+      },
+      {
+        "name": "Tail Sting",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5387",
-    "externalId": null,
+    "externalId": "ex15-15",
     "tcgdex_id": "ex15-15",
     "localId": "015",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "015/101",
+    "cardNumber": "15/101",
     "cardName": "Dewgong δ",
-    "fullDisplayName": "Dewgong δ 015/101 Dragon Frontiers",
+    "fullDisplayName": "Dewgong δ 15/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2808,18 +3398,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-015-low.png",
-    "imageHighSrc": "cards/ex15-015-high.png"
+    "imageHighSrc": "cards/ex15-015-high.png",
+    "attacks": [
+      {
+        "name": "Ice Beam",
+        "damage": "20"
+      },
+      {
+        "name": "Surge",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "5378",
-    "externalId": null,
+    "externalId": "ex15-14",
     "tcgdex_id": "ex15-14",
     "localId": "014",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "014/101",
+    "cardNumber": "14/101",
     "cardName": "Cloyster δ",
-    "fullDisplayName": "Cloyster δ 014/101 Dragon Frontiers",
+    "fullDisplayName": "Cloyster δ 14/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2841,18 +3441,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-014-low.png",
-    "imageHighSrc": "cards/ex15-014-high.png"
+    "imageHighSrc": "cards/ex15-014-high.png",
+    "attacks": [
+      {
+        "name": "Grind",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5369",
-    "externalId": null,
+    "externalId": "ex15-13",
     "tcgdex_id": "ex15-13",
     "localId": "013",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "013/101",
+    "cardNumber": "13/101",
     "cardName": "Arbok δ",
-    "fullDisplayName": "Arbok δ 013/101 Dragon Frontiers",
+    "fullDisplayName": "Arbok δ 13/101 Dragon Frontiers",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2874,18 +3480,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-013-low.png",
-    "imageHighSrc": "cards/ex15-013-high.png"
+    "imageHighSrc": "cards/ex15-013-high.png",
+    "attacks": [
+      {
+        "name": "Burning Venom",
+        "damage": null
+      },
+      {
+        "name": "Strangle",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "5360",
-    "externalId": null,
+    "externalId": "ex15-12",
     "tcgdex_id": "ex15-12",
     "localId": "012",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "012/101",
+    "cardNumber": "12/101",
     "cardName": "Typhlosion δ",
-    "fullDisplayName": "Typhlosion δ 012/101 Dragon Frontiers",
+    "fullDisplayName": "Typhlosion δ 12/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2907,18 +3523,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-012-low.png",
-    "imageHighSrc": "cards/ex15-012-high.png"
+    "imageHighSrc": "cards/ex15-012-high.png",
+    "attacks": [
+      {
+        "name": "Burning Ball",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5351",
-    "externalId": null,
+    "externalId": "ex15-11",
     "tcgdex_id": "ex15-11",
     "localId": "011",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "011/101",
+    "cardNumber": "11/101",
     "cardName": "Togetic δ",
-    "fullDisplayName": "Togetic δ 011/101 Dragon Frontiers",
+    "fullDisplayName": "Togetic δ 11/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2940,18 +3562,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-011-low.png",
-    "imageHighSrc": "cards/ex15-011-high.png"
+    "imageHighSrc": "cards/ex15-011-high.png",
+    "attacks": [
+      {
+        "name": "Delta Copy",
+        "damage": null
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5343",
-    "externalId": null,
+    "externalId": "ex15-10",
     "tcgdex_id": "ex15-10",
     "localId": "010",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "010/101",
+    "cardNumber": "10/101",
     "cardName": "Snorlax δ",
-    "fullDisplayName": "Snorlax δ 010/101 Dragon Frontiers",
+    "fullDisplayName": "Snorlax δ 10/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2977,14 +3609,14 @@
   },
   {
     "masterCardId": "5334",
-    "externalId": null,
+    "externalId": "ex15-9",
     "tcgdex_id": "ex15-9",
     "localId": "009",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "009/101",
+    "cardNumber": "9/101",
     "cardName": "Pinsir δ",
-    "fullDisplayName": "Pinsir δ 009/101 Dragon Frontiers",
+    "fullDisplayName": "Pinsir δ 9/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3006,18 +3638,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-009-low.png",
-    "imageHighSrc": "cards/ex15-009-high.png"
+    "imageHighSrc": "cards/ex15-009-high.png",
+    "attacks": [
+      {
+        "name": "Delta Call",
+        "damage": null
+      },
+      {
+        "name": "Guillotine",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5327",
-    "externalId": null,
+    "externalId": "ex15-8",
     "tcgdex_id": "ex15-8",
     "localId": "008",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "008/101",
+    "cardNumber": "8/101",
     "cardName": "Ninetales δ",
-    "fullDisplayName": "Ninetales δ 008/101 Dragon Frontiers",
+    "fullDisplayName": "Ninetales δ 8/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3039,18 +3681,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-008-low.png",
-    "imageHighSrc": "cards/ex15-008-high.png"
+    "imageHighSrc": "cards/ex15-008-high.png",
+    "attacks": [
+      {
+        "name": "Trick Tail",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5317",
-    "externalId": null,
+    "externalId": "ex15-7",
     "tcgdex_id": "ex15-7",
     "localId": "007",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "007/101",
+    "cardNumber": "7/101",
     "cardName": "Nidoqueen δ",
-    "fullDisplayName": "Nidoqueen δ 007/101 Dragon Frontiers",
+    "fullDisplayName": "Nidoqueen δ 7/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3072,18 +3720,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-007-low.png",
-    "imageHighSrc": "cards/ex15-007-high.png"
+    "imageHighSrc": "cards/ex15-007-high.png",
+    "attacks": [
+      {
+        "name": "Vengeance",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5308",
-    "externalId": null,
+    "externalId": "ex15-6",
     "tcgdex_id": "ex15-6",
     "localId": "006",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "006/101",
+    "cardNumber": "6/101",
     "cardName": "Nidoking δ",
-    "fullDisplayName": "Nidoking δ 006/101 Dragon Frontiers",
+    "fullDisplayName": "Nidoking δ 6/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3105,18 +3759,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-006-low.png",
-    "imageHighSrc": "cards/ex15-006-high.png"
+    "imageHighSrc": "cards/ex15-006-high.png",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Dark Horn",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5294",
-    "externalId": null,
+    "externalId": "ex15-5",
     "tcgdex_id": "ex15-5",
     "localId": "005",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "005/101",
+    "cardNumber": "5/101",
     "cardName": "Milotic δ",
-    "fullDisplayName": "Milotic δ 005/101 Dragon Frontiers",
+    "fullDisplayName": "Milotic δ 5/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3138,18 +3802,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-005-low.png",
-    "imageHighSrc": "cards/ex15-005-high.png"
+    "imageHighSrc": "cards/ex15-005-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5286",
-    "externalId": null,
+    "externalId": "ex15-4",
     "tcgdex_id": "ex15-4",
     "localId": "004",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "004/101",
+    "cardNumber": "4/101",
     "cardName": "Meganium δ",
-    "fullDisplayName": "Meganium δ 004/101 Dragon Frontiers",
+    "fullDisplayName": "Meganium δ 4/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3171,18 +3841,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-004-low.png",
-    "imageHighSrc": "cards/ex15-004-high.png"
+    "imageHighSrc": "cards/ex15-004-high.png",
+    "attacks": [
+      {
+        "name": "Delta Reduction",
+        "damage": "40"
+      },
+      {
+        "name": "Mega Impact",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5278",
-    "externalId": null,
+    "externalId": "ex15-3",
     "tcgdex_id": "ex15-3",
     "localId": "003",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "003/101",
+    "cardNumber": "3/101",
     "cardName": "Heracross δ",
-    "fullDisplayName": "Heracross δ 003/101 Dragon Frontiers",
+    "fullDisplayName": "Heracross δ 3/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3204,18 +3884,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-003-low.png",
-    "imageHighSrc": "cards/ex15-003-high.png"
+    "imageHighSrc": "cards/ex15-003-high.png",
+    "attacks": [
+      {
+        "name": "Dig Deep",
+        "damage": null
+      },
+      {
+        "name": "Extra Claws",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "5269",
-    "externalId": null,
+    "externalId": "ex15-2",
     "tcgdex_id": "ex15-2",
     "localId": "002",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "002/101",
+    "cardNumber": "2/101",
     "cardName": "Feraligatr δ",
-    "fullDisplayName": "Feraligatr δ 002/101 Dragon Frontiers",
+    "fullDisplayName": "Feraligatr δ 2/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3237,18 +3927,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-002-low.png",
-    "imageHighSrc": "cards/ex15-002-high.png"
+    "imageHighSrc": "cards/ex15-002-high.png",
+    "attacks": [
+      {
+        "name": "Drag Off",
+        "damage": "20"
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "5257",
-    "externalId": null,
+    "externalId": "ex15-1",
     "tcgdex_id": "ex15-1",
     "localId": "001",
     "setCode": "ex15",
     "setTcgdexId": "ex15",
-    "cardNumber": "001/101",
+    "cardNumber": "1/101",
     "cardName": "Ampharos δ",
-    "fullDisplayName": "Ampharos δ 001/101 Dragon Frontiers",
+    "fullDisplayName": "Ampharos δ 1/101 Dragon Frontiers",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3270,6 +3970,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ex15-001-low.png",
-    "imageHighSrc": "cards/ex15-001-high.png"
+    "imageHighSrc": "cards/ex15-001-high.png",
+    "attacks": [
+      {
+        "name": "Delta Circle",
+        "damage": "20+"
+      }
+    ]
   }
 ]

@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "17035",
-    "externalId": null,
+    "externalId": "swsh35-80",
     "tcgdex_id": "swsh3.5-80",
     "localId": "080",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "080/73",
+    "cardNumber": "080/073",
     "cardName": "Suspicious Food Tin",
-    "fullDisplayName": "Suspicious Food Tin 080/73 Champion's Path",
+    "fullDisplayName": "Suspicious Food Tin 080/073 Champion's Path",
     "rarity": "Rare Secret",
     "category": "Trainer",
     "stage": null,
@@ -26,18 +26,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-080-low.png",
-    "imageHighSrc": "cards/swsh35-080-high.png"
+    "imageHighSrc": "cards/swsh35-080-high.png",
+    "rules": "Heal 80 damage from 1 of your Pokémon that has at least 1 Psychic Energy attached. If you healed any damage in this way, discard a Psychic Energy from it.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "17028",
-    "externalId": null,
+    "externalId": "swsh35-79",
     "tcgdex_id": "swsh3.5-79",
     "localId": "079",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "079/73",
+    "cardNumber": "079/073",
     "cardName": "Charizard V",
-    "fullDisplayName": "Charizard V 079/73 Champion's Path",
+    "fullDisplayName": "Charizard V 079/073 Champion's Path",
     "rarity": "Rare Secret",
     "category": "Pokémon",
     "stage": "Basic",
@@ -60,18 +61,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-079-low.png",
-    "imageHighSrc": "cards/swsh35-079-high.png"
+    "imageHighSrc": "cards/swsh35-079-high.png",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "80"
+      },
+      {
+        "name": "Fire Spin",
+        "damage": "220"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "17022",
-    "externalId": null,
+    "externalId": "swsh35-78",
     "tcgdex_id": "swsh3.5-78",
     "localId": "078",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "078/73",
+    "cardNumber": "078/073",
     "cardName": "Piers",
-    "fullDisplayName": "Piers 078/73 Champion's Path",
+    "fullDisplayName": "Piers 078/073 Champion's Path",
     "rarity": "Rare Rainbow",
     "category": "Trainer",
     "stage": null,
@@ -89,18 +101,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-078-low.png",
-    "imageHighSrc": "cards/swsh35-078-high.png"
+    "imageHighSrc": "cards/swsh35-078-high.png",
+    "rules": "Search your deck for an Energy card and a Darkness Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "17015",
-    "externalId": null,
+    "externalId": "swsh35-77",
     "tcgdex_id": "swsh3.5-77",
     "localId": "077",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "077/73",
+    "cardNumber": "077/073",
     "cardName": "Kabu",
-    "fullDisplayName": "Kabu 077/73 Champion's Path",
+    "fullDisplayName": "Kabu 077/073 Champion's Path",
     "rarity": "Rare Rainbow",
     "category": "Trainer",
     "stage": null,
@@ -118,18 +131,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-077-low.png",
-    "imageHighSrc": "cards/swsh35-077-high.png"
+    "imageHighSrc": "cards/swsh35-077-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw 4 cards. If your Active Pokémon is your only Pokémon in play, draw 8 cards instead.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "17009",
-    "externalId": null,
+    "externalId": "swsh35-76",
     "tcgdex_id": "swsh3.5-76",
     "localId": "076",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "076/73",
+    "cardNumber": "076/073",
     "cardName": "Gardevoir VMAX",
-    "fullDisplayName": "Gardevoir VMAX 076/73 Champion's Path",
+    "fullDisplayName": "Gardevoir VMAX 076/073 Champion's Path",
     "rarity": "Rare Rainbow",
     "category": "Pokémon",
     "stage": "VMAX",
@@ -151,18 +165,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-076-low.png",
-    "imageHighSrc": "cards/swsh35-076-high.png"
+    "imageHighSrc": "cards/swsh35-076-high.png",
+    "attacks": [
+      {
+        "name": "Max Cure",
+        "damage": "180"
+      }
+    ],
+    "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "17003",
-    "externalId": null,
+    "externalId": "swsh35-75",
     "tcgdex_id": "swsh3.5-75",
     "localId": "075",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "075/73",
+    "cardNumber": "075/073",
     "cardName": "Drednaw VMAX",
-    "fullDisplayName": "Drednaw VMAX 075/73 Champion's Path",
+    "fullDisplayName": "Drednaw VMAX 075/073 Champion's Path",
     "rarity": "Rare Rainbow",
     "category": "Pokémon",
     "stage": "VMAX",
@@ -184,18 +205,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-075-low.png",
-    "imageHighSrc": "cards/swsh35-075-high.png"
+    "imageHighSrc": "cards/swsh35-075-high.png",
+    "attacks": [
+      {
+        "name": "G-Max Headbutt",
+        "damage": "160+"
+      }
+    ],
+    "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "16999",
-    "externalId": null,
+    "externalId": "swsh35-74",
     "tcgdex_id": "swsh3.5-74",
     "localId": "074",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "074/73",
+    "cardNumber": "074/073",
     "cardName": "Charizard VMAX",
-    "fullDisplayName": "Charizard VMAX 074/73 Champion's Path",
+    "fullDisplayName": "Charizard VMAX 074/073 Champion's Path",
     "rarity": "Rare Rainbow",
     "category": "Pokémon",
     "stage": "VMAX",
@@ -217,18 +245,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-074-low.png",
-    "imageHighSrc": "cards/swsh35-074-high.png"
+    "imageHighSrc": "cards/swsh35-074-high.png",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "100"
+      },
+      {
+        "name": "G-Max Wildfire",
+        "damage": "300"
+      }
+    ],
+    "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "16988",
-    "externalId": null,
+    "externalId": "swsh35-73",
     "tcgdex_id": "swsh3.5-73",
     "localId": "073",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "073/73",
+    "cardNumber": "073/073",
     "cardName": "Hop",
-    "fullDisplayName": "Hop 073/73 Champion's Path",
+    "fullDisplayName": "Hop 073/073 Champion's Path",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -246,18 +285,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-073-low.png",
-    "imageHighSrc": "cards/swsh35-073-high.png"
+    "imageHighSrc": "cards/swsh35-073-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16980",
-    "externalId": null,
+    "externalId": "swsh35-72",
     "tcgdex_id": "swsh3.5-72",
     "localId": "072",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "072/73",
+    "cardNumber": "072/073",
     "cardName": "Grapploct V",
-    "fullDisplayName": "Grapploct V 072/73 Champion's Path",
+    "fullDisplayName": "Grapploct V 072/073 Champion's Path",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -280,18 +320,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-072-low.png",
-    "imageHighSrc": "cards/swsh35-072-high.png"
+    "imageHighSrc": "cards/swsh35-072-high.png",
+    "attacks": [
+      {
+        "name": "Tie Up",
+        "damage": "20"
+      },
+      {
+        "name": "Moonsault Press",
+        "damage": "120+"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16976",
-    "externalId": null,
+    "externalId": "swsh35-71",
     "tcgdex_id": "swsh3.5-71",
     "localId": "071",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "071/73",
+    "cardNumber": "071/073",
     "cardName": "Galarian Cursola V",
-    "fullDisplayName": "Galarian Cursola V 071/73 Champion's Path",
+    "fullDisplayName": "Galarian Cursola V 071/073 Champion's Path",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -314,18 +365,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-071-low.png",
-    "imageHighSrc": "cards/swsh35-071-high.png"
+    "imageHighSrc": "cards/swsh35-071-high.png",
+    "attacks": [
+      {
+        "name": "Hollow Missile",
+        "damage": "60"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16970",
-    "externalId": null,
+    "externalId": "swsh35-70",
     "tcgdex_id": "swsh3.5-70",
     "localId": "070",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "070/73",
+    "cardNumber": "070/073",
     "cardName": "Gardevoir V",
-    "fullDisplayName": "Gardevoir V 070/73 Champion's Path",
+    "fullDisplayName": "Gardevoir V 070/073 Champion's Path",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -348,18 +406,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-070-low.png",
-    "imageHighSrc": "cards/swsh35-070-high.png"
+    "imageHighSrc": "cards/swsh35-070-high.png",
+    "attacks": [
+      {
+        "name": "Magical Shot",
+        "damage": "30"
+      },
+      {
+        "name": "Swelling Pulse",
+        "damage": "120+"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16963",
-    "externalId": null,
+    "externalId": "swsh35-69",
     "tcgdex_id": "swsh3.5-69",
     "localId": "069",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "069/73",
+    "cardNumber": "069/073",
     "cardName": "Drednaw V",
-    "fullDisplayName": "Drednaw V 069/73 Champion's Path",
+    "fullDisplayName": "Drednaw V 069/073 Champion's Path",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -382,18 +451,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-069-low.png",
-    "imageHighSrc": "cards/swsh35-069-high.png"
+    "imageHighSrc": "cards/swsh35-069-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Bite",
+        "damage": "130"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16955",
-    "externalId": null,
+    "externalId": "swsh35-68",
     "tcgdex_id": "swsh3.5-68",
     "localId": "068",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "068/73",
+    "cardNumber": "068/073",
     "cardName": "Turffield Stadium",
-    "fullDisplayName": "Turffield Stadium 068/73 Champion's Path",
+    "fullDisplayName": "Turffield Stadium 068/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -411,18 +487,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-068-low.png",
-    "imageHighSrc": "cards/swsh35-068-high.png"
+    "imageHighSrc": "cards/swsh35-068-high.png",
+    "rules": "Once during each player's turn, that player may search their deck for an Evolution Grass Pokémon, reveal it, and put it into their hand. Then, that player shuffles their deck.\n\nThis Stadium stays in play when you play it. Discard it if another Stadium comes into play. If a Stadium with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "16946",
-    "externalId": null,
+    "externalId": "swsh35-67",
     "tcgdex_id": "swsh3.5-67",
     "localId": "067",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "067/73",
+    "cardNumber": "067/073",
     "cardName": "Team Yell Grunt",
-    "fullDisplayName": "Team Yell Grunt 067/73 Champion's Path",
+    "fullDisplayName": "Team Yell Grunt 067/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -440,18 +517,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-067-low.png",
-    "imageHighSrc": "cards/swsh35-067-high.png"
+    "imageHighSrc": "cards/swsh35-067-high.png",
+    "rules": "Put an Energy attached to 1 of your opponent's Pokémon into their hand.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16938",
-    "externalId": null,
+    "externalId": "swsh35-66",
     "tcgdex_id": "swsh3.5-66",
     "localId": "066",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "066/73",
+    "cardNumber": "066/073",
     "cardName": "Suspicious Food Tin",
-    "fullDisplayName": "Suspicious Food Tin 066/73 Champion's Path",
+    "fullDisplayName": "Suspicious Food Tin 066/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -469,18 +547,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-066-low.png",
-    "imageHighSrc": "cards/swsh35-066-high.png"
+    "imageHighSrc": "cards/swsh35-066-high.png",
+    "rules": "Heal 80 damage from 1 of your Pokémon that has at least 1 Psychic Energy attached. If you healed any damage in this way, discard a Psychic Energy from it.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "16930",
-    "externalId": null,
+    "externalId": "swsh35-65",
     "tcgdex_id": "swsh3.5-65",
     "localId": "065",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "065/73",
+    "cardNumber": "065/073",
     "cardName": "Sonia",
-    "fullDisplayName": "Sonia 065/73 Champion's Path",
+    "fullDisplayName": "Sonia 065/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -498,18 +577,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-065-low.png",
-    "imageHighSrc": "cards/swsh35-065-high.png"
+    "imageHighSrc": "cards/swsh35-065-high.png",
+    "rules": "Search your deck for up to 2 Basic Pokémon or up to 2 basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16923",
-    "externalId": null,
+    "externalId": "swsh35-64",
     "tcgdex_id": "swsh3.5-64",
     "localId": "064",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "064/73",
+    "cardNumber": "064/073",
     "cardName": "Rotom Phone",
-    "fullDisplayName": "Rotom Phone 064/73 Champion's Path",
+    "fullDisplayName": "Rotom Phone 064/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -527,18 +607,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-064-low.png",
-    "imageHighSrc": "cards/swsh35-064-high.png"
+    "imageHighSrc": "cards/swsh35-064-high.png",
+    "rules": "Look at the top 5 cards of your deck, choose 1 of them, and shuffle the other cards back into your deck. Then, put the card you chose on top of your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "16916",
-    "externalId": null,
+    "externalId": "swsh35-63",
     "tcgdex_id": "swsh3.5-63",
     "localId": "063",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "063/73",
+    "cardNumber": "063/073",
     "cardName": "Rotom Bike",
-    "fullDisplayName": "Rotom Bike 063/73 Champion's Path",
+    "fullDisplayName": "Rotom Bike 063/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -556,18 +637,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-063-low.png",
-    "imageHighSrc": "cards/swsh35-063-high.png"
+    "imageHighSrc": "cards/swsh35-063-high.png",
+    "rules": "Draw cards until you have 6 cards in your hand. Your turn ends.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "16908",
-    "externalId": null,
+    "externalId": "swsh35-62",
     "tcgdex_id": "swsh3.5-62",
     "localId": "062",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "062/73",
+    "cardNumber": "062/073",
     "cardName": "Professor's Research (Professor Magnolia)",
-    "fullDisplayName": "Professor's Research (Professor Magnolia) 062/73 Champion's Path",
+    "fullDisplayName": "Professor's Research (Professor Magnolia) 062/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -585,18 +667,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-062-low.png",
-    "imageHighSrc": "cards/swsh35-062-high.png"
+    "imageHighSrc": "cards/swsh35-062-high.png",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16890",
-    "externalId": null,
+    "externalId": "swsh35-61",
     "tcgdex_id": "swsh3.5-61",
     "localId": "061",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "061/73",
+    "cardNumber": "061/073",
     "cardName": "Potion",
-    "fullDisplayName": "Potion 061/73 Champion's Path",
+    "fullDisplayName": "Potion 061/073 Champion's Path",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -614,18 +697,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-061-low.png",
-    "imageHighSrc": "cards/swsh35-061-high.png"
+    "imageHighSrc": "cards/swsh35-061-high.png",
+    "rules": "Heal 30 damage from 1 of your Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "16882",
-    "externalId": null,
+    "externalId": "swsh35-60",
     "tcgdex_id": "swsh3.5-60",
     "localId": "060",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "060/73",
+    "cardNumber": "060/073",
     "cardName": "Pokémon Center Lady",
-    "fullDisplayName": "Pokémon Center Lady 060/73 Champion's Path",
+    "fullDisplayName": "Pokémon Center Lady 060/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -643,18 +727,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-060-low.png",
-    "imageHighSrc": "cards/swsh35-060-high.png"
+    "imageHighSrc": "cards/swsh35-060-high.png",
+    "rules": "Heal 60 damage from 1 of your Pokémon, and it recovers from all Special Conditions.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16874",
-    "externalId": null,
+    "externalId": "swsh35-59",
     "tcgdex_id": "swsh3.5-59",
     "localId": "059",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "059/73",
+    "cardNumber": "059/073",
     "cardName": "Poké Ball",
-    "fullDisplayName": "Poké Ball 059/73 Champion's Path",
+    "fullDisplayName": "Poké Ball 059/073 Champion's Path",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -672,18 +757,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-059-low.png",
-    "imageHighSrc": "cards/swsh35-059-high.png"
+    "imageHighSrc": "cards/swsh35-059-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "16868",
-    "externalId": null,
+    "externalId": "swsh35-58",
     "tcgdex_id": "swsh3.5-58",
     "localId": "058",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "058/73",
+    "cardNumber": "058/073",
     "cardName": "Piers",
-    "fullDisplayName": "Piers 058/73 Champion's Path",
+    "fullDisplayName": "Piers 058/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -701,18 +787,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-058-low.png",
-    "imageHighSrc": "cards/swsh35-058-high.png"
+    "imageHighSrc": "cards/swsh35-058-high.png",
+    "rules": "Search your deck for an Energy card and a Darkness Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16861",
-    "externalId": null,
+    "externalId": "swsh35-57",
     "tcgdex_id": "swsh3.5-57",
     "localId": "057",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "057/73",
+    "cardNumber": "057/073",
     "cardName": "Milo",
-    "fullDisplayName": "Milo 057/73 Champion's Path",
+    "fullDisplayName": "Milo 057/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -730,18 +817,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-057-low.png",
-    "imageHighSrc": "cards/swsh35-057-high.png"
+    "imageHighSrc": "cards/swsh35-057-high.png",
+    "rules": "Discard up to 2 cards from your hand, and draw 2 cards for each card you discarded in this way.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16855",
-    "externalId": null,
+    "externalId": "swsh35-56",
     "tcgdex_id": "swsh3.5-56",
     "localId": "056",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "056/73",
+    "cardNumber": "056/073",
     "cardName": "Marnie",
-    "fullDisplayName": "Marnie 056/73 Champion's Path",
+    "fullDisplayName": "Marnie 056/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -759,18 +847,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-056-low.png",
-    "imageHighSrc": "cards/swsh35-056-high.png"
+    "imageHighSrc": "cards/swsh35-056-high.png",
+    "rules": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, you draw 5 cards, and your opponent draws 4 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16848",
-    "externalId": null,
+    "externalId": "swsh35-55",
     "tcgdex_id": "swsh3.5-55",
     "localId": "055",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "055/73",
+    "cardNumber": "055/073",
     "cardName": "Kabu",
-    "fullDisplayName": "Kabu 055/73 Champion's Path",
+    "fullDisplayName": "Kabu 055/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -788,18 +877,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-055-low.png",
-    "imageHighSrc": "cards/swsh35-055-high.png"
+    "imageHighSrc": "cards/swsh35-055-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw 4 cards. If your Active Pokémon is your only Pokémon in play, draw 8 cards instead.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16842",
-    "externalId": null,
+    "externalId": "swsh35-54",
     "tcgdex_id": "swsh3.5-54",
     "localId": "054",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "054/73",
+    "cardNumber": "054/073",
     "cardName": "Hyper Potion",
-    "fullDisplayName": "Hyper Potion 054/73 Champion's Path",
+    "fullDisplayName": "Hyper Potion 054/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -817,18 +907,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-054-low.png",
-    "imageHighSrc": "cards/swsh35-054-high.png"
+    "imageHighSrc": "cards/swsh35-054-high.png",
+    "rules": "Heal 120 damage from 1 of your Pokémon that has at least 2 Energy attached. If you healed any damage in this way, discard 2 Energy from it.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "16836",
-    "externalId": null,
+    "externalId": "swsh35-53",
     "tcgdex_id": "swsh3.5-53",
     "localId": "053",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "053/73",
+    "cardNumber": "053/073",
     "cardName": "Hop",
-    "fullDisplayName": "Hop 053/73 Champion's Path",
+    "fullDisplayName": "Hop 053/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -846,18 +937,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-053-low.png",
-    "imageHighSrc": "cards/swsh35-053-high.png"
+    "imageHighSrc": "cards/swsh35-053-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16827",
-    "externalId": null,
+    "externalId": "swsh35-52",
     "tcgdex_id": "swsh3.5-52",
     "localId": "052",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "052/73",
+    "cardNumber": "052/073",
     "cardName": "Great Ball",
-    "fullDisplayName": "Great Ball 052/73 Champion's Path",
+    "fullDisplayName": "Great Ball 052/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -875,18 +967,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-052-low.png",
-    "imageHighSrc": "cards/swsh35-052-high.png"
+    "imageHighSrc": "cards/swsh35-052-high.png",
+    "rules": "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "16821",
-    "externalId": null,
+    "externalId": "swsh35-51",
     "tcgdex_id": "swsh3.5-51",
     "localId": "051",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "051/73",
+    "cardNumber": "051/073",
     "cardName": "Full Heal",
-    "fullDisplayName": "Full Heal 051/73 Champion's Path",
+    "fullDisplayName": "Full Heal 051/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -904,18 +997,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-051-low.png",
-    "imageHighSrc": "cards/swsh35-051-high.png"
+    "imageHighSrc": "cards/swsh35-051-high.png",
+    "rules": "Remove all Special Conditions from your Active Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "16814",
-    "externalId": null,
+    "externalId": "swsh35-50",
     "tcgdex_id": "swsh3.5-50",
     "localId": "050",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "050/73",
+    "cardNumber": "050/073",
     "cardName": "Bede",
-    "fullDisplayName": "Bede 050/73 Champion's Path",
+    "fullDisplayName": "Bede 050/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -933,18 +1027,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-050-low.png",
-    "imageHighSrc": "cards/swsh35-050-high.png"
+    "imageHighSrc": "cards/swsh35-050-high.png",
+    "rules": "Attach a basic Energy card from your hand to 1 of your Benched Pokémon.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "16805",
-    "externalId": null,
+    "externalId": "swsh35-49",
     "tcgdex_id": "swsh3.5-49",
     "localId": "049",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "049/73",
+    "cardNumber": "049/073",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 049/73 Champion's Path",
+    "fullDisplayName": "Altaria 049/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -966,18 +1061,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-049-low.png",
-    "imageHighSrc": "cards/swsh35-049-high.png"
+    "imageHighSrc": "cards/swsh35-049-high.png",
+    "attacks": [
+      {
+        "name": "Speed Dive",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "16799",
-    "externalId": null,
+    "externalId": "swsh35-48",
     "tcgdex_id": "swsh3.5-48",
     "localId": "048",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "048/73",
+    "cardNumber": "048/073",
     "cardName": "Swablu",
-    "fullDisplayName": "Swablu 048/73 Champion's Path",
+    "fullDisplayName": "Swablu 048/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -999,18 +1100,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-048-low.png",
-    "imageHighSrc": "cards/swsh35-048-high.png"
+    "imageHighSrc": "cards/swsh35-048-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "16791",
-    "externalId": null,
+    "externalId": "swsh35-47",
     "tcgdex_id": "swsh3.5-47",
     "localId": "047",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "047/73",
+    "cardNumber": "047/073",
     "cardName": "Duraludon V",
-    "fullDisplayName": "Duraludon V 047/73 Champion's Path",
+    "fullDisplayName": "Duraludon V 047/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1033,18 +1140,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-047-low.png",
-    "imageHighSrc": "cards/swsh35-047-high.png"
+    "imageHighSrc": "cards/swsh35-047-high.png",
+    "attacks": [
+      {
+        "name": "Gatling Slug",
+        "damage": "10+"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16782",
-    "externalId": null,
+    "externalId": "swsh35-46",
     "tcgdex_id": "swsh3.5-46",
     "localId": "046",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "046/73",
+    "cardNumber": "046/073",
     "cardName": "Nickit",
-    "fullDisplayName": "Nickit 046/73 Champion's Path",
+    "fullDisplayName": "Nickit 046/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1066,18 +1180,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-046-low.png",
-    "imageHighSrc": "cards/swsh35-046-high.png"
+    "imageHighSrc": "cards/swsh35-046-high.png",
+    "attacks": [
+      {
+        "name": "Filch",
+        "damage": null
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "16775",
-    "externalId": null,
+    "externalId": "swsh35-45",
     "tcgdex_id": "swsh3.5-45",
     "localId": "045",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "045/73",
+    "cardNumber": "045/073",
     "cardName": "Malamar",
-    "fullDisplayName": "Malamar 045/73 Champion's Path",
+    "fullDisplayName": "Malamar 045/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1099,18 +1223,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-045-low.png",
-    "imageHighSrc": "cards/swsh35-045-high.png"
+    "imageHighSrc": "cards/swsh35-045-high.png",
+    "attacks": [
+      {
+        "name": "Eerie Wave",
+        "damage": "50"
+      },
+      {
+        "name": "Random Peck",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "16769",
-    "externalId": null,
+    "externalId": "swsh35-44",
     "tcgdex_id": "swsh3.5-44",
     "localId": "044",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "044/73",
+    "cardNumber": "044/073",
     "cardName": "Inkay",
-    "fullDisplayName": "Inkay 044/73 Champion's Path",
+    "fullDisplayName": "Inkay 044/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1132,18 +1266,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-044-low.png",
-    "imageHighSrc": "cards/swsh35-044-high.png"
+    "imageHighSrc": "cards/swsh35-044-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Attack from Behind",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "16761",
-    "externalId": null,
+    "externalId": "swsh35-43",
     "tcgdex_id": "swsh3.5-43",
     "localId": "043",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "043/73",
+    "cardNumber": "043/073",
     "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 043/73 Champion's Path",
+    "fullDisplayName": "Trubbish 043/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1165,18 +1309,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-043-low.png",
-    "imageHighSrc": "cards/swsh35-043-high.png"
+    "imageHighSrc": "cards/swsh35-043-high.png",
+    "attacks": [
+      {
+        "name": "Venoshock",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "16753",
-    "externalId": null,
+    "externalId": "swsh35-42",
     "tcgdex_id": "swsh3.5-42",
     "localId": "042",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "042/73",
+    "cardNumber": "042/073",
     "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 042/73 Champion's Path",
+    "fullDisplayName": "Scrafty 042/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1198,18 +1348,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-042-low.png",
-    "imageHighSrc": "cards/swsh35-042-high.png"
+    "imageHighSrc": "cards/swsh35-042-high.png",
+    "attacks": [
+      {
+        "name": "Corner",
+        "damage": "30"
+      },
+      {
+        "name": "Bad Brawl",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "16745",
-    "externalId": null,
+    "externalId": "swsh35-41",
     "tcgdex_id": "swsh3.5-41",
     "localId": "041",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "041/73",
+    "cardNumber": "041/073",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 041/73 Champion's Path",
+    "fullDisplayName": "Scraggy 041/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1231,18 +1391,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-041-low.png",
-    "imageHighSrc": "cards/swsh35-041-high.png"
+    "imageHighSrc": "cards/swsh35-041-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "16729",
-    "externalId": null,
+    "externalId": "swsh35-40",
     "tcgdex_id": "swsh3.5-40",
     "localId": "040",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "040/73",
+    "cardNumber": "040/073",
     "cardName": "Liepard",
-    "fullDisplayName": "Liepard 040/73 Champion's Path",
+    "fullDisplayName": "Liepard 040/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1264,18 +1434,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-040-low.png",
-    "imageHighSrc": "cards/swsh35-040-high.png"
+    "imageHighSrc": "cards/swsh35-040-high.png",
+    "attacks": [
+      {
+        "name": "Slashing Claw",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "16723",
-    "externalId": null,
+    "externalId": "swsh35-39",
     "tcgdex_id": "swsh3.5-39",
     "localId": "039",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "039/73",
+    "cardNumber": "039/073",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 039/73 Champion's Path",
+    "fullDisplayName": "Purrloin 039/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1297,18 +1473,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-039-low.png",
-    "imageHighSrc": "cards/swsh35-039-high.png"
+    "imageHighSrc": "cards/swsh35-039-high.png",
+    "attacks": [
+      {
+        "name": "Dig Claws",
+        "damage": "10"
+      },
+      {
+        "name": "Fake Out",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "16715",
-    "externalId": null,
+    "externalId": "swsh35-38",
     "tcgdex_id": "swsh3.5-38",
     "localId": "038",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "038/73",
+    "cardNumber": "038/073",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 038/73 Champion's Path",
+    "fullDisplayName": "Absol 038/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1330,18 +1516,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-038-low.png",
-    "imageHighSrc": "cards/swsh35-038-high.png"
+    "imageHighSrc": "cards/swsh35-038-high.png",
+    "attacks": [
+      {
+        "name": "Dark Cutter",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "16707",
-    "externalId": null,
+    "externalId": "swsh35-37",
     "tcgdex_id": "swsh3.5-37",
     "localId": "037",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "037/73",
+    "cardNumber": "037/073",
     "cardName": "Galarian Obstagoon",
-    "fullDisplayName": "Galarian Obstagoon 037/73 Champion's Path",
+    "fullDisplayName": "Galarian Obstagoon 037/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1363,18 +1555,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-037-low.png",
-    "imageHighSrc": "cards/swsh35-037-high.png"
+    "imageHighSrc": "cards/swsh35-037-high.png",
+    "attacks": [
+      {
+        "name": "Knuckle Impact",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "16699",
-    "externalId": null,
+    "externalId": "swsh35-36",
     "tcgdex_id": "swsh3.5-36",
     "localId": "036",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "036/73",
+    "cardNumber": "036/073",
     "cardName": "Galarian Linoone",
-    "fullDisplayName": "Galarian Linoone 036/73 Champion's Path",
+    "fullDisplayName": "Galarian Linoone 036/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1396,18 +1594,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-036-low.png",
-    "imageHighSrc": "cards/swsh35-036-high.png"
+    "imageHighSrc": "cards/swsh35-036-high.png",
+    "attacks": [
+      {
+        "name": "Double-Edge",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "16691",
-    "externalId": null,
+    "externalId": "swsh35-35",
     "tcgdex_id": "swsh3.5-35",
     "localId": "035",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "035/73",
+    "cardNumber": "035/073",
     "cardName": "Galarian Zigzagoon",
-    "fullDisplayName": "Galarian Zigzagoon 035/73 Champion's Path",
+    "fullDisplayName": "Galarian Zigzagoon 035/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1429,18 +1633,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-035-low.png",
-    "imageHighSrc": "cards/swsh35-035-high.png"
+    "imageHighSrc": "cards/swsh35-035-high.png",
+    "attacks": [
+      {
+        "name": "Pin Missile",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "16683",
-    "externalId": null,
+    "externalId": "swsh35-34",
     "tcgdex_id": "swsh3.5-34",
     "localId": "034",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "034/73",
+    "cardNumber": "034/073",
     "cardName": "Arbok",
-    "fullDisplayName": "Arbok 034/73 Champion's Path",
+    "fullDisplayName": "Arbok 034/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1462,18 +1672,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-034-low.png",
-    "imageHighSrc": "cards/swsh35-034-high.png"
+    "imageHighSrc": "cards/swsh35-034-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Tail Snap",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "16675",
-    "externalId": null,
+    "externalId": "swsh35-33",
     "tcgdex_id": "swsh3.5-33",
     "localId": "033",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "033/73",
+    "cardNumber": "033/073",
     "cardName": "Ekans",
-    "fullDisplayName": "Ekans 033/73 Champion's Path",
+    "fullDisplayName": "Ekans 033/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1495,18 +1715,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-033-low.png",
-    "imageHighSrc": "cards/swsh35-033-high.png"
+    "imageHighSrc": "cards/swsh35-033-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Snap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "16664",
-    "externalId": null,
+    "externalId": "swsh35-32",
     "tcgdex_id": "swsh3.5-32",
     "localId": "032",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "032/73",
+    "cardNumber": "032/073",
     "cardName": "Grapploct V",
-    "fullDisplayName": "Grapploct V 032/73 Champion's Path",
+    "fullDisplayName": "Grapploct V 032/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1529,18 +1759,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-032-low.png",
-    "imageHighSrc": "cards/swsh35-032-high.png"
+    "imageHighSrc": "cards/swsh35-032-high.png",
+    "attacks": [
+      {
+        "name": "Tie Up",
+        "damage": "20"
+      },
+      {
+        "name": "Moonsault Press",
+        "damage": "120+"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16656",
-    "externalId": null,
+    "externalId": "swsh35-31",
     "tcgdex_id": "swsh3.5-31",
     "localId": "031",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "031/73",
+    "cardNumber": "031/073",
     "cardName": "Rolycoly",
-    "fullDisplayName": "Rolycoly 031/73 Champion's Path",
+    "fullDisplayName": "Rolycoly 031/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1562,18 +1803,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-031-low.png",
-    "imageHighSrc": "cards/swsh35-031-high.png"
+    "imageHighSrc": "cards/swsh35-031-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "16650",
-    "externalId": null,
+    "externalId": "swsh35-30",
     "tcgdex_id": "swsh3.5-30",
     "localId": "030",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "030/73",
+    "cardNumber": "030/073",
     "cardName": "Lycanroc",
-    "fullDisplayName": "Lycanroc 030/73 Champion's Path",
+    "fullDisplayName": "Lycanroc 030/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1595,18 +1842,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-030-low.png",
-    "imageHighSrc": "cards/swsh35-030-high.png"
+    "imageHighSrc": "cards/swsh35-030-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "30"
+      },
+      {
+        "name": "Slashing Strike",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "16642",
-    "externalId": null,
+    "externalId": "swsh35-29",
     "tcgdex_id": "swsh3.5-29",
     "localId": "029",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "029/73",
+    "cardNumber": "029/073",
     "cardName": "Rockruff",
-    "fullDisplayName": "Rockruff 029/73 Champion's Path",
+    "fullDisplayName": "Rockruff 029/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1628,18 +1885,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-029-low.png",
-    "imageHighSrc": "cards/swsh35-029-high.png"
+    "imageHighSrc": "cards/swsh35-029-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "16634",
-    "externalId": null,
+    "externalId": "swsh35-28",
     "tcgdex_id": "swsh3.5-28",
     "localId": "028",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "028/73",
+    "cardNumber": "028/073",
     "cardName": "Zygarde",
-    "fullDisplayName": "Zygarde 028/73 Champion's Path",
+    "fullDisplayName": "Zygarde 028/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1661,18 +1928,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-028-low.png",
-    "imageHighSrc": "cards/swsh35-028-high.png"
+    "imageHighSrc": "cards/swsh35-028-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Power Blast",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "16627",
-    "externalId": null,
+    "externalId": "swsh35-27",
     "tcgdex_id": "swsh3.5-27",
     "localId": "027",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "027/73",
+    "cardNumber": "027/073",
     "cardName": "Lucario V",
-    "fullDisplayName": "Lucario V 027/73 Champion's Path",
+    "fullDisplayName": "Lucario V 027/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1695,18 +1972,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-027-low.png",
-    "imageHighSrc": "cards/swsh35-027-high.png"
+    "imageHighSrc": "cards/swsh35-027-high.png",
+    "attacks": [
+      {
+        "name": "Aura Sphere",
+        "damage": "40"
+      },
+      {
+        "name": "Beatdown Smash",
+        "damage": "180"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16619",
-    "externalId": null,
+    "externalId": "swsh35-26",
     "tcgdex_id": "swsh3.5-26",
     "localId": "026",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "026/73",
+    "cardNumber": "026/073",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 026/73 Champion's Path",
+    "fullDisplayName": "Machamp 026/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1728,18 +2016,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-026-low.png",
-    "imageHighSrc": "cards/swsh35-026-high.png"
+    "imageHighSrc": "cards/swsh35-026-high.png",
+    "attacks": [
+      {
+        "name": "Macho Revenge",
+        "damage": "20×"
+      },
+      {
+        "name": "Dynamite Punch",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "16611",
-    "externalId": null,
+    "externalId": "swsh35-25",
     "tcgdex_id": "swsh3.5-25",
     "localId": "025",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "025/73",
+    "cardNumber": "025/073",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 025/73 Champion's Path",
+    "fullDisplayName": "Machoke 025/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1761,18 +2059,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-025-low.png",
-    "imageHighSrc": "cards/swsh35-025-high.png"
+    "imageHighSrc": "cards/swsh35-025-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Pummel",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "16603",
-    "externalId": null,
+    "externalId": "swsh35-24",
     "tcgdex_id": "swsh3.5-24",
     "localId": "024",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "024/73",
+    "cardNumber": "024/073",
     "cardName": "Machop",
-    "fullDisplayName": "Machop 024/73 Champion's Path",
+    "fullDisplayName": "Machop 024/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1794,18 +2102,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-024-low.png",
-    "imageHighSrc": "cards/swsh35-024-high.png"
+    "imageHighSrc": "cards/swsh35-024-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Steady Punch",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "16596",
-    "externalId": null,
+    "externalId": "swsh35-23",
     "tcgdex_id": "swsh3.5-23",
     "localId": "023",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "023/73",
+    "cardNumber": "023/073",
     "cardName": "Alcremie VMAX",
-    "fullDisplayName": "Alcremie VMAX 023/73 Champion's Path",
+    "fullDisplayName": "Alcremie VMAX 023/073 Champion's Path",
     "rarity": "Rare Holo VMAX",
     "category": "Pokémon",
     "stage": "VMAX",
@@ -1827,18 +2145,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-023-low.png",
-    "imageHighSrc": "cards/swsh35-023-high.png"
+    "imageHighSrc": "cards/swsh35-023-high.png",
+    "attacks": [
+      {
+        "name": "Adornment",
+        "damage": null
+      },
+      {
+        "name": "G-Max Whisk",
+        "damage": "60×"
+      }
+    ],
+    "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "16588",
-    "externalId": null,
+    "externalId": "swsh35-22",
     "tcgdex_id": "swsh3.5-22",
     "localId": "022",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "022/73",
+    "cardNumber": "022/073",
     "cardName": "Alcremie V",
-    "fullDisplayName": "Alcremie V 022/73 Champion's Path",
+    "fullDisplayName": "Alcremie V 022/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1861,18 +2190,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-022-low.png",
-    "imageHighSrc": "cards/swsh35-022-high.png"
+    "imageHighSrc": "cards/swsh35-022-high.png",
+    "attacks": [
+      {
+        "name": "Sugary Sprinkles",
+        "damage": null
+      },
+      {
+        "name": "Sweet Splash",
+        "damage": "100"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16580",
-    "externalId": null,
+    "externalId": "swsh35-21",
     "tcgdex_id": "swsh3.5-21",
     "localId": "021",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "021/73",
+    "cardNumber": "021/073",
     "cardName": "Galarian Cursola V",
-    "fullDisplayName": "Galarian Cursola V 021/73 Champion's Path",
+    "fullDisplayName": "Galarian Cursola V 021/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1895,18 +2235,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-021-low.png",
-    "imageHighSrc": "cards/swsh35-021-high.png"
+    "imageHighSrc": "cards/swsh35-021-high.png",
+    "attacks": [
+      {
+        "name": "Hollow Missile",
+        "damage": "60"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16573",
-    "externalId": null,
+    "externalId": "swsh35-20",
     "tcgdex_id": "swsh3.5-20",
     "localId": "020",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "020/73",
+    "cardNumber": "020/073",
     "cardName": "Hatterene",
-    "fullDisplayName": "Hatterene 020/73 Champion's Path",
+    "fullDisplayName": "Hatterene 020/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1928,18 +2275,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-020-low.png",
-    "imageHighSrc": "cards/swsh35-020-high.png"
+    "imageHighSrc": "cards/swsh35-020-high.png",
+    "attacks": [
+      {
+        "name": "Life Sucker",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "16564",
-    "externalId": null,
+    "externalId": "swsh35-19",
     "tcgdex_id": "swsh3.5-19",
     "localId": "019",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "019/73",
+    "cardNumber": "019/073",
     "cardName": "Hattrem",
-    "fullDisplayName": "Hattrem 019/73 Champion's Path",
+    "fullDisplayName": "Hattrem 019/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1961,18 +2314,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-019-low.png",
-    "imageHighSrc": "cards/swsh35-019-high.png"
+    "imageHighSrc": "cards/swsh35-019-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "20"
+      },
+      {
+        "name": "Super Psy Bolt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "16557",
-    "externalId": null,
+    "externalId": "swsh35-18",
     "tcgdex_id": "swsh3.5-18",
     "localId": "018",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "018/73",
+    "cardNumber": "018/073",
     "cardName": "Hatenna",
-    "fullDisplayName": "Hatenna 018/73 Champion's Path",
+    "fullDisplayName": "Hatenna 018/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1994,18 +2357,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-018-low.png",
-    "imageHighSrc": "cards/swsh35-018-high.png"
+    "imageHighSrc": "cards/swsh35-018-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "16549",
-    "externalId": null,
+    "externalId": "swsh35-17",
     "tcgdex_id": "swsh3.5-17",
     "localId": "017",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "017/73",
+    "cardNumber": "017/073",
     "cardName": "Gardevoir VMAX",
-    "fullDisplayName": "Gardevoir VMAX 017/73 Champion's Path",
+    "fullDisplayName": "Gardevoir VMAX 017/073 Champion's Path",
     "rarity": "Rare Holo VMAX",
     "category": "Pokémon",
     "stage": "VMAX",
@@ -2027,18 +2400,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-017-low.png",
-    "imageHighSrc": "cards/swsh35-017-high.png"
+    "imageHighSrc": "cards/swsh35-017-high.png",
+    "attacks": [
+      {
+        "name": "Max Cure",
+        "damage": "180"
+      }
+    ],
+    "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "16541",
-    "externalId": null,
+    "externalId": "swsh35-16",
     "tcgdex_id": "swsh3.5-16",
     "localId": "016",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "016/73",
+    "cardNumber": "016/073",
     "cardName": "Gardevoir V",
-    "fullDisplayName": "Gardevoir V 016/73 Champion's Path",
+    "fullDisplayName": "Gardevoir V 016/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2061,18 +2441,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-016-low.png",
-    "imageHighSrc": "cards/swsh35-016-high.png"
+    "imageHighSrc": "cards/swsh35-016-high.png",
+    "attacks": [
+      {
+        "name": "Magical Shot",
+        "damage": "30"
+      },
+      {
+        "name": "Swelling Pulse",
+        "damage": "120+"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16533",
-    "externalId": null,
+    "externalId": "swsh35-15",
     "tcgdex_id": "swsh3.5-15",
     "localId": "015",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "015/73",
+    "cardNumber": "015/073",
     "cardName": "Drednaw VMAX",
-    "fullDisplayName": "Drednaw VMAX 015/73 Champion's Path",
+    "fullDisplayName": "Drednaw VMAX 015/073 Champion's Path",
     "rarity": "Rare Holo VMAX",
     "category": "Pokémon",
     "stage": "VMAX",
@@ -2094,18 +2485,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-015-low.png",
-    "imageHighSrc": "cards/swsh35-015-high.png"
+    "imageHighSrc": "cards/swsh35-015-high.png",
+    "attacks": [
+      {
+        "name": "G-Max Headbutt",
+        "damage": "160+"
+      }
+    ],
+    "rules": "VMAX rule: When your Pokémon VMAX is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "16526",
-    "externalId": null,
+    "externalId": "swsh35-14",
     "tcgdex_id": "swsh3.5-14",
     "localId": "014",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "014/73",
+    "cardNumber": "014/073",
     "cardName": "Drednaw V",
-    "fullDisplayName": "Drednaw V 014/73 Champion's Path",
+    "fullDisplayName": "Drednaw V 014/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2128,18 +2526,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-014-low.png",
-    "imageHighSrc": "cards/swsh35-014-high.png"
+    "imageHighSrc": "cards/swsh35-014-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Bite",
+        "damage": "130"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16519",
-    "externalId": null,
+    "externalId": "swsh35-13",
     "tcgdex_id": "swsh3.5-13",
     "localId": "013",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "013/73",
+    "cardNumber": "013/073",
     "cardName": "Wailord V",
-    "fullDisplayName": "Wailord V 013/73 Champion's Path",
+    "fullDisplayName": "Wailord V 013/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2162,18 +2567,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-013-low.png",
-    "imageHighSrc": "cards/swsh35-013-high.png"
+    "imageHighSrc": "cards/swsh35-013-high.png",
+    "attacks": [
+      {
+        "name": "Draw Up",
+        "damage": null
+      },
+      {
+        "name": "Ocean Waves",
+        "damage": "120×"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16507",
-    "externalId": null,
+    "externalId": "swsh35-12",
     "tcgdex_id": "swsh3.5-12",
     "localId": "012",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "012/73",
+    "cardNumber": "012/073",
     "cardName": "Sharpedo",
-    "fullDisplayName": "Sharpedo 012/73 Champion's Path",
+    "fullDisplayName": "Sharpedo 012/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2195,18 +2611,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-012-low.png",
-    "imageHighSrc": "cards/swsh35-012-high.png"
+    "imageHighSrc": "cards/swsh35-012-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Jet",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "16500",
-    "externalId": null,
+    "externalId": "swsh35-11",
     "tcgdex_id": "swsh3.5-11",
     "localId": "011",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "011/73",
+    "cardNumber": "011/073",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 011/73 Champion's Path",
+    "fullDisplayName": "Carvanha 011/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2228,18 +2650,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-011-low.png",
-    "imageHighSrc": "cards/swsh35-011-high.png"
+    "imageHighSrc": "cards/swsh35-011-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "16492",
-    "externalId": null,
+    "externalId": "swsh35-10",
     "tcgdex_id": "swsh3.5-10",
     "localId": "010",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "010/73",
+    "cardNumber": "010/073",
     "cardName": "Centiskorch",
-    "fullDisplayName": "Centiskorch 010/73 Champion's Path",
+    "fullDisplayName": "Centiskorch 010/073 Champion's Path",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2261,18 +2689,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-010-low.png",
-    "imageHighSrc": "cards/swsh35-010-high.png"
+    "imageHighSrc": "cards/swsh35-010-high.png",
+    "attacks": [
+      {
+        "name": "Searing Flame",
+        "damage": "50"
+      },
+      {
+        "name": "Heat Crawler",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "16485",
-    "externalId": null,
+    "externalId": "swsh35-9",
     "tcgdex_id": "swsh3.5-9",
     "localId": "009",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "009/73",
+    "cardNumber": "009/073",
     "cardName": "Sizzlipede",
-    "fullDisplayName": "Sizzlipede 009/73 Champion's Path",
+    "fullDisplayName": "Sizzlipede 009/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2294,18 +2732,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-009-low.png",
-    "imageHighSrc": "cards/swsh35-009-high.png"
+    "imageHighSrc": "cards/swsh35-009-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Combustion",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "16478",
-    "externalId": null,
+    "externalId": "swsh35-8",
     "tcgdex_id": "swsh3.5-8",
     "localId": "008",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "008/73",
+    "cardNumber": "008/073",
     "cardName": "Incineroar V",
-    "fullDisplayName": "Incineroar V 008/73 Champion's Path",
+    "fullDisplayName": "Incineroar V 008/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2328,18 +2776,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-008-low.png",
-    "imageHighSrc": "cards/swsh35-008-high.png"
+    "imageHighSrc": "cards/swsh35-008-high.png",
+    "attacks": [
+      {
+        "name": "Grand Flame",
+        "damage": "90"
+      },
+      {
+        "name": "Flare Blitzer",
+        "damage": "220"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16471",
-    "externalId": null,
+    "externalId": "swsh35-7",
     "tcgdex_id": "swsh3.5-7",
     "localId": "007",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "007/73",
+    "cardNumber": "007/073",
     "cardName": "Victini",
-    "fullDisplayName": "Victini 007/73 Champion's Path",
+    "fullDisplayName": "Victini 007/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2361,18 +2820,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-007-low.png",
-    "imageHighSrc": "cards/swsh35-007-high.png"
+    "imageHighSrc": "cards/swsh35-007-high.png",
+    "attacks": [
+      {
+        "name": "Quick Draw",
+        "damage": null
+      },
+      {
+        "name": "Combustion",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "16463",
-    "externalId": null,
+    "externalId": "swsh35-6",
     "tcgdex_id": "swsh3.5-6",
     "localId": "006",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "006/73",
+    "cardNumber": "006/073",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 006/73 Champion's Path",
+    "fullDisplayName": "Vulpix 006/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2394,18 +2863,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-006-low.png",
-    "imageHighSrc": "cards/swsh35-006-high.png"
+    "imageHighSrc": "cards/swsh35-006-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Singe",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "16452",
-    "externalId": null,
+    "externalId": "swsh35-5",
     "tcgdex_id": "swsh3.5-5",
     "localId": "005",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "005/73",
+    "cardNumber": "005/073",
     "cardName": "Eldegoss V",
-    "fullDisplayName": "Eldegoss V 005/73 Champion's Path",
+    "fullDisplayName": "Eldegoss V 005/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2428,18 +2907,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-005-low.png",
-    "imageHighSrc": "cards/swsh35-005-high.png"
+    "imageHighSrc": "cards/swsh35-005-high.png",
+    "attacks": [
+      {
+        "name": "Float Up",
+        "damage": "50"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "16445",
-    "externalId": null,
+    "externalId": "swsh35-4",
     "tcgdex_id": "swsh3.5-4",
     "localId": "004",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "004/73",
+    "cardNumber": "004/073",
     "cardName": "Beedrill",
-    "fullDisplayName": "Beedrill 004/73 Champion's Path",
+    "fullDisplayName": "Beedrill 004/073 Champion's Path",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2461,18 +2947,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-004-low.png",
-    "imageHighSrc": "cards/swsh35-004-high.png"
+    "imageHighSrc": "cards/swsh35-004-high.png",
+    "attacks": [
+      {
+        "name": "Poison Jab",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "16437",
-    "externalId": null,
+    "externalId": "swsh35-3",
     "tcgdex_id": "swsh3.5-3",
     "localId": "003",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "003/73",
+    "cardNumber": "003/073",
     "cardName": "Kakuna",
-    "fullDisplayName": "Kakuna 003/73 Champion's Path",
+    "fullDisplayName": "Kakuna 003/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2494,18 +2986,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-003-low.png",
-    "imageHighSrc": "cards/swsh35-003-high.png"
+    "imageHighSrc": "cards/swsh35-003-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "16429",
-    "externalId": null,
+    "externalId": "swsh35-2",
     "tcgdex_id": "swsh3.5-2",
     "localId": "002",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "002/73",
+    "cardNumber": "002/073",
     "cardName": "Weedle",
-    "fullDisplayName": "Weedle 002/73 Champion's Path",
+    "fullDisplayName": "Weedle 002/073 Champion's Path",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2527,18 +3025,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-002-low.png",
-    "imageHighSrc": "cards/swsh35-002-high.png"
+    "imageHighSrc": "cards/swsh35-002-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "16422",
-    "externalId": null,
+    "externalId": "swsh35-1",
     "tcgdex_id": "swsh3.5-1",
     "localId": "001",
     "setCode": "swsh3.5",
     "setTcgdexId": "swsh3.5",
-    "cardNumber": "001/73",
+    "cardNumber": "001/073",
     "cardName": "Venusaur V",
-    "fullDisplayName": "Venusaur V 001/73 Champion's Path",
+    "fullDisplayName": "Venusaur V 001/073 Champion's Path",
     "rarity": "Rare Holo V",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2561,6 +3065,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/swsh35-001-low.png",
-    "imageHighSrc": "cards/swsh35-001-high.png"
+    "imageHighSrc": "cards/swsh35-001-high.png",
+    "attacks": [
+      {
+        "name": "Pollen Bomb",
+        "damage": "80"
+      },
+      {
+        "name": "Solar Typhoon",
+        "damage": "220"
+      }
+    ],
+    "rules": "V rule: When your Pokémon V is Knocked Out, your opponent takes 2 Prize cards."
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "5219",
-    "externalId": null,
+    "externalId": "ecard1-165",
     "tcgdex_id": "ecard1-165",
     "localId": "165",
     "setCode": "ecard1",
@@ -30,7 +30,7 @@
   },
   {
     "masterCardId": "5216",
-    "externalId": null,
+    "externalId": "ecard1-164",
     "tcgdex_id": "ecard1-164",
     "localId": "164",
     "setCode": "ecard1",
@@ -59,7 +59,7 @@
   },
   {
     "masterCardId": "5213",
-    "externalId": null,
+    "externalId": "ecard1-163",
     "tcgdex_id": "ecard1-163",
     "localId": "163",
     "setCode": "ecard1",
@@ -88,7 +88,7 @@
   },
   {
     "masterCardId": "5210",
-    "externalId": null,
+    "externalId": "ecard1-162",
     "tcgdex_id": "ecard1-162",
     "localId": "162",
     "setCode": "ecard1",
@@ -117,7 +117,7 @@
   },
   {
     "masterCardId": "5208",
-    "externalId": null,
+    "externalId": "ecard1-161",
     "tcgdex_id": "ecard1-161",
     "localId": "161",
     "setCode": "ecard1",
@@ -146,7 +146,7 @@
   },
   {
     "masterCardId": "5205",
-    "externalId": null,
+    "externalId": "ecard1-160",
     "tcgdex_id": "ecard1-160",
     "localId": "160",
     "setCode": "ecard1",
@@ -175,7 +175,7 @@
   },
   {
     "masterCardId": "5202",
-    "externalId": null,
+    "externalId": "ecard1-159",
     "tcgdex_id": "ecard1-159",
     "localId": "159",
     "setCode": "ecard1",
@@ -200,11 +200,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-159-low.png",
-    "imageHighSrc": "cards/ecard1-159-high.png"
+    "imageHighSrc": "cards/ecard1-159-high.png",
+    "rules": "Damage done by attacks to the Pokémon Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). If the Pokémon Metal Energy is attached to isn't Metal, whenever it damages a Pokémon by an attack, reduce that damage by 10 (after applying Weakness and Resistance). Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "5199",
-    "externalId": null,
+    "externalId": "ecard1-158",
     "tcgdex_id": "ecard1-158",
     "localId": "158",
     "setCode": "ecard1",
@@ -229,11 +230,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-158-low.png",
-    "imageHighSrc": "cards/ecard1-158-high.png"
+    "imageHighSrc": "cards/ecard1-158-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to does damage with an attack (after applying Weakness and Resistance), the attack does 10 more damage. At the end of every turn, put 1 damage counter on the Pokémon Darkness Energy is attached to, unless it's Darkness or has Dark in its name. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "5196",
-    "externalId": null,
+    "externalId": "ecard1-157",
     "tcgdex_id": "ecard1-157",
     "localId": "157",
     "setCode": "ecard1",
@@ -256,11 +258,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-157-low.png",
-    "imageHighSrc": "cards/ecard1-157-high.png"
+    "imageHighSrc": "cards/ecard1-157-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "5193",
-    "externalId": null,
+    "externalId": "ecard1-156",
     "tcgdex_id": "ecard1-156",
     "localId": "156",
     "setCode": "ecard1",
@@ -283,11 +286,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-156-low.png",
-    "imageHighSrc": "cards/ecard1-156-high.png"
+    "imageHighSrc": "cards/ecard1-156-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (1 if that Pokémon has only 1)."
   },
   {
     "masterCardId": "5189",
-    "externalId": null,
+    "externalId": "ecard1-155",
     "tcgdex_id": "ecard1-155",
     "localId": "155",
     "setCode": "ecard1",
@@ -310,11 +314,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-155-low.png",
-    "imageHighSrc": "cards/ecard1-155-high.png"
+    "imageHighSrc": "cards/ecard1-155-high.png",
+    "rules": "Choose 1 of your Pokémon. Flip 2 coins. Remove 2 damage counters times the number of heads from that Pokémon. If the Pokémon has fewer damage counters than that, remove all of them."
   },
   {
     "masterCardId": "5186",
-    "externalId": null,
+    "externalId": "ecard1-154",
     "tcgdex_id": "ecard1-154",
     "localId": "154",
     "setCode": "ecard1",
@@ -337,11 +342,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-154-low.png",
-    "imageHighSrc": "cards/ecard1-154-high.png"
+    "imageHighSrc": "cards/ecard1-154-high.png",
+    "rules": "Remove all Special Conditions from your Active Pokémon."
   },
   {
     "masterCardId": "5183",
-    "externalId": null,
+    "externalId": "ecard1-153",
     "tcgdex_id": "ecard1-153",
     "localId": "153",
     "setCode": "ecard1",
@@ -364,11 +370,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-153-low.png",
-    "imageHighSrc": "cards/ecard1-153-high.png"
+    "imageHighSrc": "cards/ecard1-153-high.png",
+    "rules": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "5180",
-    "externalId": null,
+    "externalId": "ecard1-152",
     "tcgdex_id": "ecard1-152",
     "localId": "152",
     "setCode": "ecard1",
@@ -391,11 +398,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-152-low.png",
-    "imageHighSrc": "cards/ecard1-152-high.png"
+    "imageHighSrc": "cards/ecard1-152-high.png",
+    "rules": "Your opponent switches the Defending Pokémon with 1 of his or her Benched Pokémon, if any; then you switch your Active Pokémon with 1 of your Benched Pokémon, if any."
   },
   {
     "masterCardId": "5177",
-    "externalId": null,
+    "externalId": "ecard1-151",
     "tcgdex_id": "ecard1-151",
     "localId": "151",
     "setCode": "ecard1",
@@ -418,11 +426,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-151-low.png",
-    "imageHighSrc": "cards/ecard1-151-high.png"
+    "imageHighSrc": "cards/ecard1-151-high.png",
+    "rules": "Flip a coin. If heads, return 1 of your Pokémon and all cards attached to it to your hand."
   },
   {
     "masterCardId": "5174",
-    "externalId": null,
+    "externalId": "ecard1-150",
     "tcgdex_id": "ecard1-150",
     "localId": "150",
     "setCode": "ecard1",
@@ -447,11 +456,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-150-low.png",
-    "imageHighSrc": "cards/ecard1-150-high.png"
+    "imageHighSrc": "cards/ecard1-150-high.png",
+    "rules": "Attach Strength Charm to 1 of your Pokémon that doesn't have a Pokémon Tool attached to it.\n\nWhenever an attack from the Pokémon that Strength Charm is attached to does damage (after applying Weakness and Resistance), the attack does 10 more damage. At the end of your turn in which this happens, discard Strength Charm."
   },
   {
     "masterCardId": "5171",
-    "externalId": null,
+    "externalId": "ecard1-149",
     "tcgdex_id": "ecard1-149",
     "localId": "149",
     "setCode": "ecard1",
@@ -476,11 +486,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-149-low.png",
-    "imageHighSrc": "cards/ecard1-149-high.png"
+    "imageHighSrc": "cards/ecard1-149-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nShuffle your hand into your deck, then draw 5 cards."
   },
   {
     "masterCardId": "5167",
-    "externalId": null,
+    "externalId": "ecard1-148",
     "tcgdex_id": "ecard1-148",
     "localId": "148",
     "setCode": "ecard1",
@@ -505,11 +516,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-148-low.png",
-    "imageHighSrc": "cards/ecard1-148-high.png"
+    "imageHighSrc": "cards/ecard1-148-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for an Evolution card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "5163",
-    "externalId": null,
+    "externalId": "ecard1-147",
     "tcgdex_id": "ecard1-147",
     "localId": "147",
     "setCode": "ecard1",
@@ -532,11 +544,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-147-low.png",
-    "imageHighSrc": "cards/ecard1-147-high.png"
+    "imageHighSrc": "cards/ecard1-147-high.png",
+    "rules": "Flip a coin. If heads, shuffle 2 Energy cards from your discard pile into your deck (1 if you have only 1)."
   },
   {
     "masterCardId": "5159",
-    "externalId": null,
+    "externalId": "ecard1-146",
     "tcgdex_id": "ecard1-146",
     "localId": "146",
     "setCode": "ecard1",
@@ -559,11 +572,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-146-low.png",
-    "imageHighSrc": "cards/ecard1-146-high.png"
+    "imageHighSrc": "cards/ecard1-146-high.png",
+    "rules": "Choose 1 of your opponent's Benched Pokémon. Flip a coin. If heads, switch that Pokémon with the Defending Pokémon."
   },
   {
     "masterCardId": "5154",
-    "externalId": null,
+    "externalId": "ecard1-145",
     "tcgdex_id": "ecard1-145",
     "localId": "145",
     "setCode": "ecard1",
@@ -588,11 +602,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-145-low.png",
-    "imageHighSrc": "cards/ecard1-145-high.png"
+    "imageHighSrc": "cards/ecard1-145-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nRemove all damage counters from 1 of your Pokémon. Then discard all Energy cards attached to it, if any."
   },
   {
     "masterCardId": "5149",
-    "externalId": null,
+    "externalId": "ecard1-144",
     "tcgdex_id": "ecard1-144",
     "localId": "144",
     "setCode": "ecard1",
@@ -617,11 +632,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-144-low.png",
-    "imageHighSrc": "cards/ecard1-144-high.png"
+    "imageHighSrc": "cards/ecard1-144-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Pokémon in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Multi Technical Machine 01."
   },
   {
     "masterCardId": "5144",
-    "externalId": null,
+    "externalId": "ecard1-143",
     "tcgdex_id": "ecard1-143",
     "localId": "143",
     "setCode": "ecard1",
@@ -644,11 +666,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-143-low.png",
-    "imageHighSrc": "cards/ecard1-143-high.png"
+    "imageHighSrc": "cards/ecard1-143-high.png",
+    "rules": "Look at 7 cards from the top of your deck. You may choose a Basic Pokémon or Evolution card from those cards, show it your opponent, and put it into your hand. Shuffle the rest into your deck."
   },
   {
     "masterCardId": "5139",
-    "externalId": null,
+    "externalId": "ecard1-142",
     "tcgdex_id": "ecard1-142",
     "localId": "142",
     "setCode": "ecard1",
@@ -673,11 +696,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-142-low.png",
-    "imageHighSrc": "cards/ecard1-142-high.png"
+    "imageHighSrc": "cards/ecard1-142-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nFlip a coin until you get tails. For each heads, draw 2 cards."
   },
   {
     "masterCardId": "5134",
-    "externalId": null,
+    "externalId": "ecard1-141",
     "tcgdex_id": "ecard1-141",
     "localId": "141",
     "setCode": "ecard1",
@@ -700,11 +724,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-141-low.png",
-    "imageHighSrc": "cards/ecard1-141-high.png"
+    "imageHighSrc": "cards/ecard1-141-high.png",
+    "rules": "Flip 3 coins. For each heads, put a Basic Energy card from your discard pile into your hand. If you don't have that many basic Energy cards in your discard pile, put all of them into your hand."
   },
   {
     "masterCardId": "5129",
-    "externalId": null,
+    "externalId": "ecard1-140",
     "tcgdex_id": "ecard1-140",
     "localId": "140",
     "setCode": "ecard1",
@@ -727,11 +752,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-140-low.png",
-    "imageHighSrc": "cards/ecard1-140-high.png"
+    "imageHighSrc": "cards/ecard1-140-high.png",
+    "rules": "Flip a coin. If heads, choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it."
   },
   {
     "masterCardId": "5124",
-    "externalId": null,
+    "externalId": "ecard1-139",
     "tcgdex_id": "ecard1-139",
     "localId": "139",
     "setCode": "ecard1",
@@ -754,11 +780,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-139-low.png",
-    "imageHighSrc": "cards/ecard1-139-high.png"
+    "imageHighSrc": "cards/ecard1-139-high.png",
+    "rules": "Flip 2 coins. For each heads, search your deck for a Basic Pokémon card other than a Baby Pokémon card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "5119",
-    "externalId": null,
+    "externalId": "ecard1-138",
     "tcgdex_id": "ecard1-138",
     "localId": "138",
     "setCode": "ecard1",
@@ -783,11 +810,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-138-low.png",
-    "imageHighSrc": "cards/ecard1-138-high.png"
+    "imageHighSrc": "cards/ecard1-138-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nShuffle your hand into your deck. Then, count the number of cards in your opponent's hand and draw that many cards."
   },
   {
     "masterCardId": "5114",
-    "externalId": null,
+    "externalId": "ecard1-137",
     "tcgdex_id": "ecard1-137",
     "localId": "137",
     "setCode": "ecard1",
@@ -812,11 +840,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-137-low.png",
-    "imageHighSrc": "cards/ecard1-137-high.png"
+    "imageHighSrc": "cards/ecard1-137-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nIf you have any cards in your hand, shuffle 1 of them into your deck, then draw 3 cards."
   },
   {
     "masterCardId": "5109",
-    "externalId": null,
+    "externalId": "ecard1-136",
     "tcgdex_id": "ecard1-136",
     "localId": "136",
     "setCode": "ecard1",
@@ -845,11 +874,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-136-low.png",
-    "imageHighSrc": "cards/ecard1-136-high.png"
+    "imageHighSrc": "cards/ecard1-136-high.png",
+    "attacks": [
+      {
+        "name": "Tail Shake",
+        "damage": null
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5104",
-    "externalId": null,
+    "externalId": "ecard1-135",
     "tcgdex_id": "ecard1-135",
     "localId": "135",
     "setCode": "ecard1",
@@ -878,11 +917,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-135-low.png",
-    "imageHighSrc": "cards/ecard1-135-high.png"
+    "imageHighSrc": "cards/ecard1-135-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5100",
-    "externalId": null,
+    "externalId": "ecard1-134",
     "tcgdex_id": "ecard1-134",
     "localId": "134",
     "setCode": "ecard1",
@@ -911,11 +960,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-134-low.png",
-    "imageHighSrc": "cards/ecard1-134-high.png"
+    "imageHighSrc": "cards/ecard1-134-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "10"
+      },
+      {
+        "name": "Double Scratch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "5095",
-    "externalId": null,
+    "externalId": "ecard1-133",
     "tcgdex_id": "ecard1-133",
     "localId": "133",
     "setCode": "ecard1",
@@ -944,11 +1003,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-133-low.png",
-    "imageHighSrc": "cards/ecard1-133-high.png"
+    "imageHighSrc": "cards/ecard1-133-high.png",
+    "attacks": [
+      {
+        "name": "Horn Hazard",
+        "damage": "30"
+      },
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5089",
-    "externalId": null,
+    "externalId": "ecard1-132",
     "tcgdex_id": "ecard1-132",
     "localId": "132",
     "setCode": "ecard1",
@@ -977,11 +1046,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-132-low.png",
-    "imageHighSrc": "cards/ecard1-132-high.png"
+    "imageHighSrc": "cards/ecard1-132-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Bubblebeam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5085",
-    "externalId": null,
+    "externalId": "ecard1-131",
     "tcgdex_id": "ecard1-131",
     "localId": "131",
     "setCode": "ecard1",
@@ -1010,11 +1089,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-131-low.png",
-    "imageHighSrc": "cards/ecard1-131-high.png"
+    "imageHighSrc": "cards/ecard1-131-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Doubleslap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "5080",
-    "externalId": null,
+    "externalId": "ecard1-130",
     "tcgdex_id": "ecard1-130",
     "localId": "130",
     "setCode": "ecard1",
@@ -1043,11 +1132,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-130-low.png",
-    "imageHighSrc": "cards/ecard1-130-high.png"
+    "imageHighSrc": "cards/ecard1-130-high.png",
+    "attacks": [
+      {
+        "name": "Razor Wind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5074",
-    "externalId": null,
+    "externalId": "ecard1-129",
     "tcgdex_id": "ecard1-129",
     "localId": "129",
     "setCode": "ecard1",
@@ -1076,11 +1171,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-129-low.png",
-    "imageHighSrc": "cards/ecard1-129-high.png"
+    "imageHighSrc": "cards/ecard1-129-high.png",
+    "attacks": [
+      {
+        "name": "Irongrip",
+        "damage": "10"
+      },
+      {
+        "name": "Lick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5069",
-    "externalId": null,
+    "externalId": "ecard1-128",
     "tcgdex_id": "ecard1-128",
     "localId": "128",
     "setCode": "ecard1",
@@ -1109,11 +1214,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-128-low.png",
-    "imageHighSrc": "cards/ecard1-128-high.png"
+    "imageHighSrc": "cards/ecard1-128-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5064",
-    "externalId": null,
+    "externalId": "ecard1-127",
     "tcgdex_id": "ecard1-127",
     "localId": "127",
     "setCode": "ecard1",
@@ -1142,11 +1253,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-127-low.png",
-    "imageHighSrc": "cards/ecard1-127-high.png"
+    "imageHighSrc": "cards/ecard1-127-high.png",
+    "attacks": [
+      {
+        "name": "Stun Needle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5059",
-    "externalId": null,
+    "externalId": "ecard1-126",
     "tcgdex_id": "ecard1-126",
     "localId": "126",
     "setCode": "ecard1",
@@ -1175,11 +1292,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-126-low.png",
-    "imageHighSrc": "cards/ecard1-126-high.png"
+    "imageHighSrc": "cards/ecard1-126-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Smash Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5051",
-    "externalId": null,
+    "externalId": "ecard1-125",
     "tcgdex_id": "ecard1-125",
     "localId": "125",
     "setCode": "ecard1",
@@ -1208,11 +1335,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-125-low.png",
-    "imageHighSrc": "cards/ecard1-125-high.png"
+    "imageHighSrc": "cards/ecard1-125-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5046",
-    "externalId": null,
+    "externalId": "ecard1-124",
     "tcgdex_id": "ecard1-124",
     "localId": "124",
     "setCode": "ecard1",
@@ -1241,11 +1378,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-124-low.png",
-    "imageHighSrc": "cards/ecard1-124-high.png"
+    "imageHighSrc": "cards/ecard1-124-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Tail",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5041",
-    "externalId": null,
+    "externalId": "ecard1-123",
     "tcgdex_id": "ecard1-123",
     "localId": "123",
     "setCode": "ecard1",
@@ -1274,11 +1421,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-123-low.png",
-    "imageHighSrc": "cards/ecard1-123-high.png"
+    "imageHighSrc": "cards/ecard1-123-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Fury Strikes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5036",
-    "externalId": null,
+    "externalId": "ecard1-122",
     "tcgdex_id": "ecard1-122",
     "localId": "122",
     "setCode": "ecard1",
@@ -1307,11 +1464,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-122-low.png",
-    "imageHighSrc": "cards/ecard1-122-high.png"
+    "imageHighSrc": "cards/ecard1-122-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Sleep Seed",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5030",
-    "externalId": null,
+    "externalId": "ecard1-121",
     "tcgdex_id": "ecard1-121",
     "localId": "121",
     "setCode": "ecard1",
@@ -1340,11 +1507,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-121-low.png",
-    "imageHighSrc": "cards/ecard1-121-high.png"
+    "imageHighSrc": "cards/ecard1-121-high.png",
+    "attacks": [
+      {
+        "name": "Double Scratch",
+        "damage": "10×"
+      },
+      {
+        "name": "Pay Day",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5025",
-    "externalId": null,
+    "externalId": "ecard1-120",
     "tcgdex_id": "ecard1-120",
     "localId": "120",
     "setCode": "ecard1",
@@ -1373,11 +1550,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-120-low.png",
-    "imageHighSrc": "cards/ecard1-120-high.png"
+    "imageHighSrc": "cards/ecard1-120-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5020",
-    "externalId": null,
+    "externalId": "ecard1-119",
     "tcgdex_id": "ecard1-119",
     "localId": "119",
     "setCode": "ecard1",
@@ -1406,11 +1593,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-119-low.png",
-    "imageHighSrc": "cards/ecard1-119-high.png"
+    "imageHighSrc": "cards/ecard1-119-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5017",
-    "externalId": null,
+    "externalId": "ecard1-118",
     "tcgdex_id": "ecard1-118",
     "localId": "118",
     "setCode": "ecard1",
@@ -1439,11 +1632,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-118-low.png",
-    "imageHighSrc": "cards/ecard1-118-high.png"
+    "imageHighSrc": "cards/ecard1-118-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "5011",
-    "externalId": null,
+    "externalId": "ecard1-117",
     "tcgdex_id": "ecard1-117",
     "localId": "117",
     "setCode": "ecard1",
@@ -1472,11 +1671,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-117-low.png",
-    "imageHighSrc": "cards/ecard1-117-high.png"
+    "imageHighSrc": "cards/ecard1-117-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Double Chop",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "5007",
-    "externalId": null,
+    "externalId": "ecard1-116",
     "tcgdex_id": "ecard1-116",
     "localId": "116",
     "setCode": "ecard1",
@@ -1505,11 +1714,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-116-low.png",
-    "imageHighSrc": "cards/ecard1-116-high.png"
+    "imageHighSrc": "cards/ecard1-116-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Mud Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5001",
-    "externalId": null,
+    "externalId": "ecard1-115",
     "tcgdex_id": "ecard1-115",
     "localId": "115",
     "setCode": "ecard1",
@@ -1538,11 +1757,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-115-low.png",
-    "imageHighSrc": "cards/ecard1-115-high.png"
+    "imageHighSrc": "cards/ecard1-115-high.png",
+    "attacks": [
+      {
+        "name": "Crabhammer",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4996",
-    "externalId": null,
+    "externalId": "ecard1-114",
     "tcgdex_id": "ecard1-114",
     "localId": "114",
     "setCode": "ecard1",
@@ -1571,11 +1796,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-114-low.png",
-    "imageHighSrc": "cards/ecard1-114-high.png"
+    "imageHighSrc": "cards/ecard1-114-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Confusion Gas",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4991",
-    "externalId": null,
+    "externalId": "ecard1-113",
     "tcgdex_id": "ecard1-113",
     "localId": "113",
     "setCode": "ecard1",
@@ -1604,11 +1839,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-113-low.png",
-    "imageHighSrc": "cards/ecard1-113-high.png"
+    "imageHighSrc": "cards/ecard1-113-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4986",
-    "externalId": null,
+    "externalId": "ecard1-112",
     "tcgdex_id": "ecard1-112",
     "localId": "112",
     "setCode": "ecard1",
@@ -1637,11 +1878,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-112-low.png",
-    "imageHighSrc": "cards/ecard1-112-high.png"
+    "imageHighSrc": "cards/ecard1-112-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4981",
-    "externalId": null,
+    "externalId": "ecard1-111",
     "tcgdex_id": "ecard1-111",
     "localId": "111",
     "setCode": "ecard1",
@@ -1670,11 +1917,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-111-low.png",
-    "imageHighSrc": "cards/ecard1-111-high.png"
+    "imageHighSrc": "cards/ecard1-111-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4976",
-    "externalId": null,
+    "externalId": "ecard1-110",
     "tcgdex_id": "ecard1-110",
     "localId": "110",
     "setCode": "ecard1",
@@ -1703,11 +1956,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-110-low.png",
-    "imageHighSrc": "cards/ecard1-110-high.png"
+    "imageHighSrc": "cards/ecard1-110-high.png",
+    "attacks": [
+      {
+        "name": "Rock Hurl",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4971",
-    "externalId": null,
+    "externalId": "ecard1-109",
     "tcgdex_id": "ecard1-109",
     "localId": "109",
     "setCode": "ecard1",
@@ -1736,11 +1995,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-109-low.png",
-    "imageHighSrc": "cards/ecard1-109-high.png"
+    "imageHighSrc": "cards/ecard1-109-high.png",
+    "attacks": [
+      {
+        "name": "Bad Dream",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4966",
-    "externalId": null,
+    "externalId": "ecard1-108",
     "tcgdex_id": "ecard1-108",
     "localId": "108",
     "setCode": "ecard1",
@@ -1769,11 +2034,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-108-low.png",
-    "imageHighSrc": "cards/ecard1-108-high.png"
+    "imageHighSrc": "cards/ecard1-108-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4961",
-    "externalId": null,
+    "externalId": "ecard1-107",
     "tcgdex_id": "ecard1-107",
     "localId": "107",
     "setCode": "ecard1",
@@ -1802,11 +2073,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-107-low.png",
-    "imageHighSrc": "cards/ecard1-107-high.png"
+    "imageHighSrc": "cards/ecard1-107-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Smash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4955",
-    "externalId": null,
+    "externalId": "ecard1-106",
     "tcgdex_id": "ecard1-106",
     "localId": "106",
     "setCode": "ecard1",
@@ -1835,11 +2112,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-106-low.png",
-    "imageHighSrc": "cards/ecard1-106-high.png"
+    "imageHighSrc": "cards/ecard1-106-high.png",
+    "attacks": [
+      {
+        "name": "Fury Headbutt",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4948",
-    "externalId": null,
+    "externalId": "ecard1-105",
     "tcgdex_id": "ecard1-105",
     "localId": "105",
     "setCode": "ecard1",
@@ -1868,11 +2151,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-105-low.png",
-    "imageHighSrc": "cards/ecard1-105-high.png"
+    "imageHighSrc": "cards/ecard1-105-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4942",
-    "externalId": null,
+    "externalId": "ecard1-104",
     "tcgdex_id": "ecard1-104",
     "localId": "104",
     "setCode": "ecard1",
@@ -1901,11 +2194,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-104-low.png",
-    "imageHighSrc": "cards/ecard1-104-high.png"
+    "imageHighSrc": "cards/ecard1-104-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4935",
-    "externalId": null,
+    "externalId": "ecard1-103",
     "tcgdex_id": "ecard1-103",
     "localId": "103",
     "setCode": "ecard1",
@@ -1934,11 +2237,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-103-low.png",
-    "imageHighSrc": "cards/ecard1-103-high.png"
+    "imageHighSrc": "cards/ecard1-103-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Bone Smash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4928",
-    "externalId": null,
+    "externalId": "ecard1-102",
     "tcgdex_id": "ecard1-102",
     "localId": "102",
     "setCode": "ecard1",
@@ -1967,11 +2280,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-102-low.png",
-    "imageHighSrc": "cards/ecard1-102-high.png"
+    "imageHighSrc": "cards/ecard1-102-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Spike Cannon",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4922",
-    "externalId": null,
+    "externalId": "ecard1-101",
     "tcgdex_id": "ecard1-101",
     "localId": "101",
     "setCode": "ecard1",
@@ -2000,11 +2323,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-101-low.png",
-    "imageHighSrc": "cards/ecard1-101-high.png"
+    "imageHighSrc": "cards/ecard1-101-high.png",
+    "attacks": [
+      {
+        "name": "Shining Fingers",
+        "damage": null
+      },
+      {
+        "name": "Slap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4914",
-    "externalId": null,
+    "externalId": "ecard1-100",
     "tcgdex_id": "ecard1-100",
     "localId": "100",
     "setCode": "ecard1",
@@ -2033,18 +2366,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-100-low.png",
-    "imageHighSrc": "cards/ecard1-100-high.png"
+    "imageHighSrc": "cards/ecard1-100-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "10"
+      },
+      {
+        "name": "Sleep Powder",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4906",
-    "externalId": null,
+    "externalId": "ecard1-99",
     "tcgdex_id": "ecard1-99",
     "localId": "099",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "099/165",
+    "cardNumber": "99/165",
     "cardName": "Chikorita",
-    "fullDisplayName": "Chikorita 099/165 Expedition Base Set",
+    "fullDisplayName": "Chikorita 99/165 Expedition Base Set",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2066,18 +2409,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-099-low.png",
-    "imageHighSrc": "cards/ecard1-099-high.png"
+    "imageHighSrc": "cards/ecard1-099-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Gaze",
+        "damage": null
+      },
+      {
+        "name": "Double Scratch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4899",
-    "externalId": null,
+    "externalId": "ecard1-98",
     "tcgdex_id": "ecard1-98",
     "localId": "098",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "098/165",
+    "cardNumber": "98/165",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 098/165 Expedition Base Set",
+    "fullDisplayName": "Charmander 98/165 Expedition Base Set",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2099,18 +2452,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-098-low.png",
-    "imageHighSrc": "cards/ecard1-098-high.png"
+    "imageHighSrc": "cards/ecard1-098-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Searing Flame",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4890",
-    "externalId": null,
+    "externalId": "ecard1-97",
     "tcgdex_id": "ecard1-97",
     "localId": "097",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "097/165",
+    "cardNumber": "97/165",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 097/165 Expedition Base Set",
+    "fullDisplayName": "Charmander 97/165 Expedition Base Set",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2132,18 +2495,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-097-low.png",
-    "imageHighSrc": "cards/ecard1-097-high.png"
+    "imageHighSrc": "cards/ecard1-097-high.png",
+    "attacks": [
+      {
+        "name": "Tail Rap",
+        "damage": "10×"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4883",
-    "externalId": null,
+    "externalId": "ecard1-96",
     "tcgdex_id": "ecard1-96",
     "localId": "096",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "096/165",
+    "cardNumber": "96/165",
     "cardName": "Caterpie",
-    "fullDisplayName": "Caterpie 096/165 Expedition Base Set",
+    "fullDisplayName": "Caterpie 96/165 Expedition Base Set",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2165,18 +2538,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-096-low.png",
-    "imageHighSrc": "cards/ecard1-096-high.png"
+    "imageHighSrc": "cards/ecard1-096-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Entagling Thread",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4873",
-    "externalId": null,
+    "externalId": "ecard1-95",
     "tcgdex_id": "ecard1-95",
     "localId": "095",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "095/165",
+    "cardNumber": "95/165",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 095/165 Expedition Base Set",
+    "fullDisplayName": "Bulbasaur 95/165 Expedition Base Set",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2198,18 +2581,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-095-low.png",
-    "imageHighSrc": "cards/ecard1-095-high.png"
+    "imageHighSrc": "cards/ecard1-095-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Seed",
+        "damage": null
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4864",
-    "externalId": null,
+    "externalId": "ecard1-94",
     "tcgdex_id": "ecard1-94",
     "localId": "094",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "094/165",
+    "cardNumber": "94/165",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 094/165 Expedition Base Set",
+    "fullDisplayName": "Bulbasaur 94/165 Expedition Base Set",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2231,18 +2624,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-094-low.png",
-    "imageHighSrc": "cards/ecard1-094-high.png"
+    "imageHighSrc": "cards/ecard1-094-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Seed",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4856",
-    "externalId": null,
+    "externalId": "ecard1-93",
     "tcgdex_id": "ecard1-93",
     "localId": "093",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "093/165",
+    "cardNumber": "93/165",
     "cardName": "Abra",
-    "fullDisplayName": "Abra 093/165 Expedition Base Set",
+    "fullDisplayName": "Abra 93/165 Expedition Base Set",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2264,18 +2667,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-093-low.png",
-    "imageHighSrc": "cards/ecard1-093-high.png"
+    "imageHighSrc": "cards/ecard1-093-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4846",
-    "externalId": null,
+    "externalId": "ecard1-92",
     "tcgdex_id": "ecard1-92",
     "localId": "092",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "092/165",
+    "cardNumber": "92/165",
     "cardName": "Wartortle",
-    "fullDisplayName": "Wartortle 092/165 Expedition Base Set",
+    "fullDisplayName": "Wartortle 92/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2297,18 +2710,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-092-low.png",
-    "imageHighSrc": "cards/ecard1-092-high.png"
+    "imageHighSrc": "cards/ecard1-092-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "10×"
+      },
+      {
+        "name": "Giant Wave",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4839",
-    "externalId": null,
+    "externalId": "ecard1-91",
     "tcgdex_id": "ecard1-91",
     "localId": "091",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "091/165",
+    "cardNumber": "91/165",
     "cardName": "Quilava",
-    "fullDisplayName": "Quilava 091/165 Expedition Base Set",
+    "fullDisplayName": "Quilava 91/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2330,18 +2753,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-091-low.png",
-    "imageHighSrc": "cards/ecard1-091-high.png"
+    "imageHighSrc": "cards/ecard1-091-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "20"
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4832",
-    "externalId": null,
+    "externalId": "ecard1-90",
     "tcgdex_id": "ecard1-90",
     "localId": "090",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "090/165",
+    "cardNumber": "90/165",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 090/165 Expedition Base Set",
+    "fullDisplayName": "Pupitar 90/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2363,18 +2796,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-090-low.png",
-    "imageHighSrc": "cards/ecard1-090-high.png"
+    "imageHighSrc": "cards/ecard1-090-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4824",
-    "externalId": null,
+    "externalId": "ecard1-89",
     "tcgdex_id": "ecard1-89",
     "localId": "089",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "089/165",
+    "cardNumber": "89/165",
     "cardName": "Poliwhirl",
-    "fullDisplayName": "Poliwhirl 089/165 Expedition Base Set",
+    "fullDisplayName": "Poliwhirl 89/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2396,18 +2835,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-089-low.png",
-    "imageHighSrc": "cards/ecard1-089-high.png"
+    "imageHighSrc": "cards/ecard1-089-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Bubblebeam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4815",
-    "externalId": null,
+    "externalId": "ecard1-88",
     "tcgdex_id": "ecard1-88",
     "localId": "088",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "088/165",
+    "cardNumber": "88/165",
     "cardName": "Pidgeotto",
-    "fullDisplayName": "Pidgeotto 088/165 Expedition Base Set",
+    "fullDisplayName": "Pidgeotto 88/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2429,18 +2878,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-088-low.png",
-    "imageHighSrc": "cards/ecard1-088-high.png"
+    "imageHighSrc": "cards/ecard1-088-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4807",
-    "externalId": null,
+    "externalId": "ecard1-87",
     "tcgdex_id": "ecard1-87",
     "localId": "087",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "087/165",
+    "cardNumber": "87/165",
     "cardName": "Metapod",
-    "fullDisplayName": "Metapod 087/165 Expedition Base Set",
+    "fullDisplayName": "Metapod 87/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2462,18 +2917,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-087-low.png",
-    "imageHighSrc": "cards/ecard1-087-high.png"
+    "imageHighSrc": "cards/ecard1-087-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4800",
-    "externalId": null,
+    "externalId": "ecard1-86",
     "tcgdex_id": "ecard1-86",
     "localId": "086",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "086/165",
+    "cardNumber": "86/165",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 086/165 Expedition Base Set",
+    "fullDisplayName": "Magmar 86/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2495,18 +2956,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-086-low.png",
-    "imageHighSrc": "cards/ecard1-086-high.png"
+    "imageHighSrc": "cards/ecard1-086-high.png",
+    "attacks": [
+      {
+        "name": "Flaming Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Thrash",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4791",
-    "externalId": null,
+    "externalId": "ecard1-85",
     "tcgdex_id": "ecard1-85",
     "localId": "085",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "085/165",
+    "cardNumber": "85/165",
     "cardName": "Machoke",
-    "fullDisplayName": "Machoke 085/165 Expedition Base Set",
+    "fullDisplayName": "Machoke 85/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2528,18 +2999,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-085-low.png",
-    "imageHighSrc": "cards/ecard1-085-high.png"
+    "imageHighSrc": "cards/ecard1-085-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Mega Kick",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4783",
-    "externalId": null,
+    "externalId": "ecard1-84",
     "tcgdex_id": "ecard1-84",
     "localId": "084",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "084/165",
+    "cardNumber": "84/165",
     "cardName": "Kadabra",
-    "fullDisplayName": "Kadabra 084/165 Expedition Base Set",
+    "fullDisplayName": "Kadabra 84/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2561,18 +3042,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-084-low.png",
-    "imageHighSrc": "cards/ecard1-084-high.png"
+    "imageHighSrc": "cards/ecard1-084-high.png",
+    "attacks": [
+      {
+        "name": "Energy Recall",
+        "damage": null
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4775",
-    "externalId": null,
+    "externalId": "ecard1-83",
     "tcgdex_id": "ecard1-83",
     "localId": "083",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "083/165",
+    "cardNumber": "83/165",
     "cardName": "Jynx",
-    "fullDisplayName": "Jynx 083/165 Expedition Base Set",
+    "fullDisplayName": "Jynx 83/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2594,18 +3085,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-083-low.png",
-    "imageHighSrc": "cards/ecard1-083-high.png"
+    "imageHighSrc": "cards/ecard1-083-high.png",
+    "attacks": [
+      {
+        "name": "Ice Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Powder Snow",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4765",
-    "externalId": null,
+    "externalId": "ecard1-82",
     "tcgdex_id": "ecard1-82",
     "localId": "082",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "082/165",
+    "cardNumber": "82/165",
     "cardName": "Ivysaur",
-    "fullDisplayName": "Ivysaur 082/165 Expedition Base Set",
+    "fullDisplayName": "Ivysaur 82/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2627,18 +3128,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-082-low.png",
-    "imageHighSrc": "cards/ecard1-082-high.png"
+    "imageHighSrc": "cards/ecard1-082-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Seed",
+        "damage": "20"
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4758",
-    "externalId": null,
+    "externalId": "ecard1-81",
     "tcgdex_id": "ecard1-81",
     "localId": "081",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "081/165",
+    "cardNumber": "81/165",
     "cardName": "Hitmonlee",
-    "fullDisplayName": "Hitmonlee 081/165 Expedition Base Set",
+    "fullDisplayName": "Hitmonlee 81/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2660,18 +3171,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-081-low.png",
-    "imageHighSrc": "cards/ecard1-081-high.png"
+    "imageHighSrc": "cards/ecard1-081-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Stretch Kick",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4750",
-    "externalId": null,
+    "externalId": "ecard1-80",
     "tcgdex_id": "ecard1-80",
     "localId": "080",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "080/165",
+    "cardNumber": "80/165",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 080/165 Expedition Base Set",
+    "fullDisplayName": "Haunter 80/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2693,18 +3214,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-080-low.png",
-    "imageHighSrc": "cards/ecard1-080-high.png"
+    "imageHighSrc": "cards/ecard1-080-high.png",
+    "attacks": [
+      {
+        "name": "Nightmare",
+        "damage": "20"
+      },
+      {
+        "name": "Dream Eater",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4741",
-    "externalId": null,
+    "externalId": "ecard1-79",
     "tcgdex_id": "ecard1-79",
     "localId": "079",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "079/165",
+    "cardNumber": "79/165",
     "cardName": "Graveler",
-    "fullDisplayName": "Graveler 079/165 Expedition Base Set",
+    "fullDisplayName": "Graveler 79/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2726,18 +3257,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-079-low.png",
-    "imageHighSrc": "cards/ecard1-079-high.png"
+    "imageHighSrc": "cards/ecard1-079-high.png",
+    "attacks": [
+      {
+        "name": "Rock Hurl",
+        "damage": "20"
+      },
+      {
+        "name": "Rock Slide",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4732",
-    "externalId": null,
+    "externalId": "ecard1-78",
     "tcgdex_id": "ecard1-78",
     "localId": "078",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "078/165",
+    "cardNumber": "78/165",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 078/165 Expedition Base Set",
+    "fullDisplayName": "Gloom 78/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2759,18 +3300,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-078-low.png",
-    "imageHighSrc": "cards/ecard1-078-high.png"
+    "imageHighSrc": "cards/ecard1-078-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      },
+      {
+        "name": "Foul Odor",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4725",
-    "externalId": null,
+    "externalId": "ecard1-77",
     "tcgdex_id": "ecard1-77",
     "localId": "077",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "077/165",
+    "cardNumber": "77/165",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 077/165 Expedition Base Set",
+    "fullDisplayName": "Flaaffy 77/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2792,18 +3343,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-077-low.png",
-    "imageHighSrc": "cards/ecard1-077-high.png"
+    "imageHighSrc": "cards/ecard1-077-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4717",
-    "externalId": null,
+    "externalId": "ecard1-76",
     "tcgdex_id": "ecard1-76",
     "localId": "076",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "076/165",
+    "cardNumber": "76/165",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 076/165 Expedition Base Set",
+    "fullDisplayName": "Electabuzz 76/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2825,18 +3386,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-076-low.png",
-    "imageHighSrc": "cards/ecard1-076-high.png"
+    "imageHighSrc": "cards/ecard1-076-high.png",
+    "attacks": [
+      {
+        "name": "Energy Draw",
+        "damage": null
+      },
+      {
+        "name": "Reflect Energy",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4708",
-    "externalId": null,
+    "externalId": "ecard1-75",
     "tcgdex_id": "ecard1-75",
     "localId": "075",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "075/165",
+    "cardNumber": "75/165",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 075/165 Expedition Base Set",
+    "fullDisplayName": "Dragonair 75/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2858,18 +3429,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-075-low.png",
-    "imageHighSrc": "cards/ecard1-075-high.png"
+    "imageHighSrc": "cards/ecard1-075-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Wave",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4702",
-    "externalId": null,
+    "externalId": "ecard1-74",
     "tcgdex_id": "ecard1-74",
     "localId": "074",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "074/165",
+    "cardNumber": "74/165",
     "cardName": "Croconaw",
-    "fullDisplayName": "Croconaw 074/165 Expedition Base Set",
+    "fullDisplayName": "Croconaw 74/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2891,18 +3468,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-074-low.png",
-    "imageHighSrc": "cards/ecard1-074-high.png"
+    "imageHighSrc": "cards/ecard1-074-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Take Down",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4694",
-    "externalId": null,
+    "externalId": "ecard1-73",
     "tcgdex_id": "ecard1-73",
     "localId": "073",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "073/165",
+    "cardNumber": "73/165",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 073/165 Expedition Base Set",
+    "fullDisplayName": "Charmeleon 73/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2924,18 +3511,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-073-low.png",
-    "imageHighSrc": "cards/ecard1-073-high.png"
+    "imageHighSrc": "cards/ecard1-073-high.png",
+    "attacks": [
+      {
+        "name": "Double Scratch",
+        "damage": "20×"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4686",
-    "externalId": null,
+    "externalId": "ecard1-72",
     "tcgdex_id": "ecard1-72",
     "localId": "072",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "072/165",
+    "cardNumber": "72/165",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 072/165 Expedition Base Set",
+    "fullDisplayName": "Chansey 72/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2957,18 +3554,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-072-low.png",
-    "imageHighSrc": "cards/ecard1-072-high.png"
+    "imageHighSrc": "cards/ecard1-072-high.png",
+    "attacks": [
+      {
+        "name": "Bind Wound",
+        "damage": null
+      },
+      {
+        "name": "Dogpile",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4677",
-    "externalId": null,
+    "externalId": "ecard1-71",
     "tcgdex_id": "ecard1-71",
     "localId": "071",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "071/165",
+    "cardNumber": "71/165",
     "cardName": "Bayleef",
-    "fullDisplayName": "Bayleef 071/165 Expedition Base Set",
+    "fullDisplayName": "Bayleef 71/165 Expedition Base Set",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2990,18 +3597,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-071-low.png",
-    "imageHighSrc": "cards/ecard1-071-high.png"
+    "imageHighSrc": "cards/ecard1-071-high.png",
+    "attacks": [
+      {
+        "name": "Mysterious Powder",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4669",
-    "externalId": null,
+    "externalId": "ecard1-70",
     "tcgdex_id": "ecard1-70",
     "localId": "070",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "070/165",
+    "cardNumber": "70/165",
     "cardName": "Weezing",
-    "fullDisplayName": "Weezing 070/165 Expedition Base Set",
+    "fullDisplayName": "Weezing 70/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3023,18 +3640,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-070-low.png",
-    "imageHighSrc": "cards/ecard1-070-high.png"
+    "imageHighSrc": "cards/ecard1-070-high.png",
+    "attacks": [
+      {
+        "name": "Foul Gas",
+        "damage": null
+      },
+      {
+        "name": "Misfire",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4663",
-    "externalId": null,
+    "externalId": "ecard1-69",
     "tcgdex_id": "ecard1-69",
     "localId": "069",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "069/165",
+    "cardNumber": "69/165",
     "cardName": "Vileplume",
-    "fullDisplayName": "Vileplume 069/165 Expedition Base Set",
+    "fullDisplayName": "Vileplume 69/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3056,18 +3683,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-069-low.png",
-    "imageHighSrc": "cards/ecard1-069-high.png"
+    "imageHighSrc": "cards/ecard1-069-high.png",
+    "attacks": [
+      {
+        "name": "Petal Dance",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "4654",
-    "externalId": null,
+    "externalId": "ecard1-68",
     "tcgdex_id": "ecard1-68",
     "localId": "068",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "068/165",
+    "cardNumber": "68/165",
     "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 068/165 Expedition Base Set",
+    "fullDisplayName": "Venusaur 68/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3089,18 +3722,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-068-low.png",
-    "imageHighSrc": "cards/ecard1-068-high.png"
+    "imageHighSrc": "cards/ecard1-068-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4645",
-    "externalId": null,
+    "externalId": "ecard1-67",
     "tcgdex_id": "ecard1-67",
     "localId": "067",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "067/165",
+    "cardNumber": "67/165",
     "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 067/165 Expedition Base Set",
+    "fullDisplayName": "Venusaur 67/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3122,18 +3761,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-067-low.png",
-    "imageHighSrc": "cards/ecard1-067-high.png"
+    "imageHighSrc": "cards/ecard1-067-high.png",
+    "attacks": [
+      {
+        "name": "Leech Seed",
+        "damage": "20"
+      },
+      {
+        "name": "Fury Strikes",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "4637",
-    "externalId": null,
+    "externalId": "ecard1-66",
     "tcgdex_id": "ecard1-66",
     "localId": "066",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "066/165",
+    "cardNumber": "66/165",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 066/165 Expedition Base Set",
+    "fullDisplayName": "Tyranitar 66/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3155,18 +3804,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-066-low.png",
-    "imageHighSrc": "cards/ecard1-066-high.png"
+    "imageHighSrc": "cards/ecard1-066-high.png",
+    "attacks": [
+      {
+        "name": "Stamp",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4629",
-    "externalId": null,
+    "externalId": "ecard1-65",
     "tcgdex_id": "ecard1-65",
     "localId": "065",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "065/165",
+    "cardNumber": "65/165",
     "cardName": "Typhlosion",
-    "fullDisplayName": "Typhlosion 065/165 Expedition Base Set",
+    "fullDisplayName": "Typhlosion 65/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3188,18 +3843,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-065-low.png",
-    "imageHighSrc": "cards/ecard1-065-high.png"
+    "imageHighSrc": "cards/ecard1-065-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4620",
-    "externalId": null,
+    "externalId": "ecard1-64",
     "tcgdex_id": "ecard1-64",
     "localId": "064",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "064/165",
+    "cardNumber": "64/165",
     "cardName": "Typhlosion",
-    "fullDisplayName": "Typhlosion 064/165 Expedition Base Set",
+    "fullDisplayName": "Typhlosion 64/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3221,18 +3882,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-064-low.png",
-    "imageHighSrc": "cards/ecard1-064-high.png"
+    "imageHighSrc": "cards/ecard1-064-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Thermal Blast",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4612",
-    "externalId": null,
+    "externalId": "ecard1-63",
     "tcgdex_id": "ecard1-63",
     "localId": "063",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "063/165",
+    "cardNumber": "63/165",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 063/165 Expedition Base Set",
+    "fullDisplayName": "Skarmory 63/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3254,18 +3925,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-063-low.png",
-    "imageHighSrc": "cards/ecard1-063-high.png"
+    "imageHighSrc": "cards/ecard1-063-high.png",
+    "attacks": [
+      {
+        "name": "Steel Beak",
+        "damage": "20+"
+      },
+      {
+        "name": "Air Cutter",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4604",
-    "externalId": null,
+    "externalId": "ecard1-62",
     "tcgdex_id": "ecard1-62",
     "localId": "062",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "062/165",
+    "cardNumber": "62/165",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 062/165 Expedition Base Set",
+    "fullDisplayName": "Rapidash 62/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3287,18 +3968,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-062-low.png",
-    "imageHighSrc": "cards/ecard1-062-high.png"
+    "imageHighSrc": "cards/ecard1-062-high.png",
+    "attacks": [
+      {
+        "name": "Overrun",
+        "damage": "20"
+      },
+      {
+        "name": "Flame Tail",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4594",
-    "externalId": null,
+    "externalId": "ecard1-61",
     "tcgdex_id": "ecard1-61",
     "localId": "061",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "061/165",
+    "cardNumber": "61/165",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 061/165 Expedition Base Set",
+    "fullDisplayName": "Raichu 61/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3320,18 +4011,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-061-low.png",
-    "imageHighSrc": "cards/ecard1-061-high.png"
+    "imageHighSrc": "cards/ecard1-061-high.png",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "10"
+      },
+      {
+        "name": "Shock Bolt",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4584",
-    "externalId": null,
+    "externalId": "ecard1-60",
     "tcgdex_id": "ecard1-60",
     "localId": "060",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "060/165",
+    "cardNumber": "60/165",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 060/165 Expedition Base Set",
+    "fullDisplayName": "Poliwrath 60/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3353,18 +4054,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-060-low.png",
-    "imageHighSrc": "cards/ecard1-060-high.png"
+    "imageHighSrc": "cards/ecard1-060-high.png",
+    "attacks": [
+      {
+        "name": "Water Punch",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4577",
-    "externalId": null,
+    "externalId": "ecard1-59",
     "tcgdex_id": "ecard1-59",
     "localId": "059",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "059/165",
+    "cardNumber": "59/165",
     "cardName": "Pidgeot",
-    "fullDisplayName": "Pidgeot 059/165 Expedition Base Set",
+    "fullDisplayName": "Pidgeot 59/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3386,18 +4093,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-059-low.png",
-    "imageHighSrc": "cards/ecard1-059-high.png"
+    "imageHighSrc": "cards/ecard1-059-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Beak",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4570",
-    "externalId": null,
+    "externalId": "ecard1-58",
     "tcgdex_id": "ecard1-58",
     "localId": "058",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "058/165",
+    "cardNumber": "58/165",
     "cardName": "Pichu",
-    "fullDisplayName": "Pichu 058/165 Expedition Base Set",
+    "fullDisplayName": "Pichu 58/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3419,18 +4132,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-058-low.png",
-    "imageHighSrc": "cards/ecard1-058-high.png"
+    "imageHighSrc": "cards/ecard1-058-high.png",
+    "attacks": [
+      {
+        "name": "Energy Patch",
+        "damage": null
+      }
+    ],
+    "rules": "If your Active Pokémon is a Baby Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
   },
   {
     "masterCardId": "4561",
-    "externalId": null,
+    "externalId": "ecard1-57",
     "tcgdex_id": "ecard1-57",
     "localId": "057",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "057/165",
+    "cardNumber": "57/165",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 057/165 Expedition Base Set",
+    "fullDisplayName": "Ninetales 57/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3452,18 +4172,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-057-low.png",
-    "imageHighSrc": "cards/ecard1-057-high.png"
+    "imageHighSrc": "cards/ecard1-057-high.png",
+    "attacks": [
+      {
+        "name": "Mislead",
+        "damage": null
+      },
+      {
+        "name": "Ethereal Flame",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4552",
-    "externalId": null,
+    "externalId": "ecard1-56",
     "tcgdex_id": "ecard1-56",
     "localId": "056",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "056/165",
+    "cardNumber": "56/165",
     "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 056/165 Expedition Base Set",
+    "fullDisplayName": "Mewtwo 56/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3485,18 +4215,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-056-low.png",
-    "imageHighSrc": "cards/ecard1-056-high.png"
+    "imageHighSrc": "cards/ecard1-056-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Psychic",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4542",
-    "externalId": null,
+    "externalId": "ecard1-55",
     "tcgdex_id": "ecard1-55",
     "localId": "055",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "055/165",
+    "cardNumber": "55/165",
     "cardName": "Mew",
-    "fullDisplayName": "Mew 055/165 Expedition Base Set",
+    "fullDisplayName": "Mew 55/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3518,18 +4258,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-055-low.png",
-    "imageHighSrc": "cards/ecard1-055-high.png"
+    "imageHighSrc": "cards/ecard1-055-high.png",
+    "attacks": [
+      {
+        "name": "Super Psywave",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4532",
-    "externalId": null,
+    "externalId": "ecard1-54",
     "tcgdex_id": "ecard1-54",
     "localId": "054",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "054/165",
+    "cardNumber": "54/165",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium 054/165 Expedition Base Set",
+    "fullDisplayName": "Meganium 54/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3551,18 +4297,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-054-low.png",
-    "imageHighSrc": "cards/ecard1-054-high.png"
+    "imageHighSrc": "cards/ecard1-054-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4524",
-    "externalId": null,
+    "externalId": "ecard1-53",
     "tcgdex_id": "ecard1-53",
     "localId": "053",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "053/165",
+    "cardNumber": "53/165",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium 053/165 Expedition Base Set",
+    "fullDisplayName": "Meganium 53/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3584,18 +4336,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-053-low.png",
-    "imageHighSrc": "cards/ecard1-053-high.png"
+    "imageHighSrc": "cards/ecard1-053-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "20"
+      },
+      {
+        "name": "Solarbeam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4514",
-    "externalId": null,
+    "externalId": "ecard1-52",
     "tcgdex_id": "ecard1-52",
     "localId": "052",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "052/165",
+    "cardNumber": "52/165",
     "cardName": "Magby",
-    "fullDisplayName": "Magby 052/165 Expedition Base Set",
+    "fullDisplayName": "Magby 52/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3617,18 +4379,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-052-low.png",
-    "imageHighSrc": "cards/ecard1-052-high.png"
+    "imageHighSrc": "cards/ecard1-052-high.png",
+    "attacks": [
+      {
+        "name": "Energy Catch",
+        "damage": null
+      }
+    ],
+    "rules": "If your Active Pokémon is a Baby Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
   },
   {
     "masterCardId": "4506",
-    "externalId": null,
+    "externalId": "ecard1-51",
     "tcgdex_id": "ecard1-51",
     "localId": "051",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "051/165",
+    "cardNumber": "51/165",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 051/165 Expedition Base Set",
+    "fullDisplayName": "Machamp 51/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3650,18 +4419,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-051-low.png",
-    "imageHighSrc": "cards/ecard1-051-high.png"
+    "imageHighSrc": "cards/ecard1-051-high.png",
+    "attacks": [
+      {
+        "name": "Iron Fist",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4493",
-    "externalId": null,
+    "externalId": "ecard1-50",
     "tcgdex_id": "ecard1-50",
     "localId": "050",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "050/165",
+    "cardNumber": "50/165",
     "cardName": "Kingler",
-    "fullDisplayName": "Kingler 050/165 Expedition Base Set",
+    "fullDisplayName": "Kingler 50/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3683,18 +4458,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-050-low.png",
-    "imageHighSrc": "cards/ecard1-050-high.png"
+    "imageHighSrc": "cards/ecard1-050-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      },
+      {
+        "name": "Giant Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4489",
-    "externalId": null,
+    "externalId": "ecard1-49",
     "tcgdex_id": "ecard1-49",
     "localId": "049",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "049/165",
+    "cardNumber": "49/165",
     "cardName": "Golem",
-    "fullDisplayName": "Golem 049/165 Expedition Base Set",
+    "fullDisplayName": "Golem 49/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3716,18 +4501,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-049-low.png",
-    "imageHighSrc": "cards/ecard1-049-high.png"
+    "imageHighSrc": "cards/ecard1-049-high.png",
+    "attacks": [
+      {
+        "name": "Rock Tumble",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4480",
-    "externalId": null,
+    "externalId": "ecard1-48",
     "tcgdex_id": "ecard1-48",
     "localId": "048",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "048/165",
+    "cardNumber": "48/165",
     "cardName": "Gengar",
-    "fullDisplayName": "Gengar 048/165 Expedition Base Set",
+    "fullDisplayName": "Gengar 48/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3749,18 +4540,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-048-low.png",
-    "imageHighSrc": "cards/ecard1-048-high.png"
+    "imageHighSrc": "cards/ecard1-048-high.png",
+    "attacks": [
+      {
+        "name": "Hide in Shadows",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4471",
-    "externalId": null,
+    "externalId": "ecard1-47",
     "tcgdex_id": "ecard1-47",
     "localId": "047",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "047/165",
+    "cardNumber": "47/165",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 047/165 Expedition Base Set",
+    "fullDisplayName": "Feraligatr 47/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3782,18 +4579,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-047-low.png",
-    "imageHighSrc": "cards/ecard1-047-high.png"
+    "imageHighSrc": "cards/ecard1-047-high.png",
+    "attacks": [
+      {
+        "name": "Rending Jaws",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4462",
-    "externalId": null,
+    "externalId": "ecard1-46",
     "tcgdex_id": "ecard1-46",
     "localId": "046",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "046/165",
+    "cardNumber": "46/165",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 046/165 Expedition Base Set",
+    "fullDisplayName": "Feraligatr 46/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3815,18 +4618,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-046-low.png",
-    "imageHighSrc": "cards/ecard1-046-high.png"
+    "imageHighSrc": "cards/ecard1-046-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      },
+      {
+        "name": "Double Claw",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4455",
-    "externalId": null,
+    "externalId": "ecard1-45",
     "tcgdex_id": "ecard1-45",
     "localId": "045",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "045/165",
+    "cardNumber": "45/165",
     "cardName": "Fearow",
-    "fullDisplayName": "Fearow 045/165 Expedition Base Set",
+    "fullDisplayName": "Fearow 45/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3848,18 +4661,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-045-low.png",
-    "imageHighSrc": "cards/ecard1-045-high.png"
+    "imageHighSrc": "cards/ecard1-045-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "20"
+      },
+      {
+        "name": "Supersonic Flight",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4445",
-    "externalId": null,
+    "externalId": "ecard1-44",
     "tcgdex_id": "ecard1-44",
     "localId": "044",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "044/165",
+    "cardNumber": "44/165",
     "cardName": "Dugtrio",
-    "fullDisplayName": "Dugtrio 044/165 Expedition Base Set",
+    "fullDisplayName": "Dugtrio 44/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3881,18 +4704,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-044-low.png",
-    "imageHighSrc": "cards/ecard1-044-high.png"
+    "imageHighSrc": "cards/ecard1-044-high.png",
+    "attacks": [
+      {
+        "name": "Mud Slap",
+        "damage": "20"
+      },
+      {
+        "name": "Magnitude",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4436",
-    "externalId": null,
+    "externalId": "ecard1-43",
     "tcgdex_id": "ecard1-43",
     "localId": "043",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "043/165",
+    "cardNumber": "43/165",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 043/165 Expedition Base Set",
+    "fullDisplayName": "Dragonite 43/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3914,18 +4747,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-043-low.png",
-    "imageHighSrc": "cards/ecard1-043-high.png"
+    "imageHighSrc": "cards/ecard1-043-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Tail",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "4428",
-    "externalId": null,
+    "externalId": "ecard1-42",
     "tcgdex_id": "ecard1-42",
     "localId": "042",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "042/165",
+    "cardNumber": "42/165",
     "cardName": "Cloyster",
-    "fullDisplayName": "Cloyster 042/165 Expedition Base Set",
+    "fullDisplayName": "Cloyster 42/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3947,18 +4786,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-042-low.png",
-    "imageHighSrc": "cards/ecard1-042-high.png"
+    "imageHighSrc": "cards/ecard1-042-high.png",
+    "attacks": [
+      {
+        "name": "Lick",
+        "damage": "10"
+      },
+      {
+        "name": "Auto Fire",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4420",
-    "externalId": null,
+    "externalId": "ecard1-41",
     "tcgdex_id": "ecard1-41",
     "localId": "041",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "041/165",
+    "cardNumber": "41/165",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 041/165 Expedition Base Set",
+    "fullDisplayName": "Clefable 41/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3980,18 +4829,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-041-low.png",
-    "imageHighSrc": "cards/ecard1-041-high.png"
+    "imageHighSrc": "cards/ecard1-041-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4411",
-    "externalId": null,
+    "externalId": "ecard1-40",
     "tcgdex_id": "ecard1-40",
     "localId": "040",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "040/165",
+    "cardNumber": "40/165",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 040/165 Expedition Base Set",
+    "fullDisplayName": "Charizard 40/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4013,18 +4868,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-040-low.png",
-    "imageHighSrc": "cards/ecard1-040-high.png"
+    "imageHighSrc": "cards/ecard1-040-high.png",
+    "attacks": [
+      {
+        "name": "Scorching Whirlwind",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "4403",
-    "externalId": null,
+    "externalId": "ecard1-39",
     "tcgdex_id": "ecard1-39",
     "localId": "039",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "039/165",
+    "cardNumber": "39/165",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 039/165 Expedition Base Set",
+    "fullDisplayName": "Charizard 39/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4046,18 +4907,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-039-low.png",
-    "imageHighSrc": "cards/ecard1-039-high.png"
+    "imageHighSrc": "cards/ecard1-039-high.png",
+    "attacks": [
+      {
+        "name": "Tail Smash",
+        "damage": "40"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4394",
-    "externalId": null,
+    "externalId": "ecard1-38",
     "tcgdex_id": "ecard1-38",
     "localId": "038",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "038/165",
+    "cardNumber": "38/165",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 038/165 Expedition Base Set",
+    "fullDisplayName": "Butterfree 38/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4079,18 +4950,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-038-low.png",
-    "imageHighSrc": "cards/ecard1-038-high.png"
+    "imageHighSrc": "cards/ecard1-038-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4385",
-    "externalId": null,
+    "externalId": "ecard1-37",
     "tcgdex_id": "ecard1-37",
     "localId": "037",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "037/165",
+    "cardNumber": "37/165",
     "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 037/165 Expedition Base Set",
+    "fullDisplayName": "Blastoise 37/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4112,18 +4989,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-037-low.png",
-    "imageHighSrc": "cards/ecard1-037-high.png"
+    "imageHighSrc": "cards/ecard1-037-high.png",
+    "attacks": [
+      {
+        "name": "Energy Cannon",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4376",
-    "externalId": null,
+    "externalId": "ecard1-36",
     "tcgdex_id": "ecard1-36",
     "localId": "036",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "036/165",
+    "cardNumber": "36/165",
     "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 036/165 Expedition Base Set",
+    "fullDisplayName": "Blastoise 36/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4145,18 +5028,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-036-low.png",
-    "imageHighSrc": "cards/ecard1-036-high.png"
+    "imageHighSrc": "cards/ecard1-036-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "20"
+      },
+      {
+        "name": "Double Cannon",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "4368",
-    "externalId": null,
+    "externalId": "ecard1-35",
     "tcgdex_id": "ecard1-35",
     "localId": "035",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "035/165",
+    "cardNumber": "35/165",
     "cardName": "Arbok",
-    "fullDisplayName": "Arbok 035/165 Expedition Base Set",
+    "fullDisplayName": "Arbok 35/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4178,18 +5071,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-035-low.png",
-    "imageHighSrc": "cards/ecard1-035-high.png"
+    "imageHighSrc": "cards/ecard1-035-high.png",
+    "attacks": [
+      {
+        "name": "Poison Spray",
+        "damage": null
+      },
+      {
+        "name": "Poison Reaction",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4358",
-    "externalId": null,
+    "externalId": "ecard1-34",
     "tcgdex_id": "ecard1-34",
     "localId": "034",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "034/165",
+    "cardNumber": "34/165",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 034/165 Expedition Base Set",
+    "fullDisplayName": "Ampharos 34/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4211,18 +5114,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-034-low.png",
-    "imageHighSrc": "cards/ecard1-034-high.png"
+    "imageHighSrc": "cards/ecard1-034-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Strike",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4351",
-    "externalId": null,
+    "externalId": "ecard1-33",
     "tcgdex_id": "ecard1-33",
     "localId": "033",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "033/165",
+    "cardNumber": "33/165",
     "cardName": "Alakazam",
-    "fullDisplayName": "Alakazam 033/165 Expedition Base Set",
+    "fullDisplayName": "Alakazam 33/165 Expedition Base Set",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4244,18 +5153,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-033-low.png",
-    "imageHighSrc": "cards/ecard1-033-high.png"
+    "imageHighSrc": "cards/ecard1-033-high.png",
+    "attacks": [
+      {
+        "name": "Syncroblast",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "4341",
-    "externalId": null,
+    "externalId": "ecard1-32",
     "tcgdex_id": "ecard1-32",
     "localId": "032",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "032/165",
+    "cardNumber": "32/165",
     "cardName": "Weezing",
-    "fullDisplayName": "Weezing 032/165 Expedition Base Set",
+    "fullDisplayName": "Weezing 32/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4277,18 +5192,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-032-low.png",
-    "imageHighSrc": "cards/ecard1-032-high.png"
+    "imageHighSrc": "cards/ecard1-032-high.png",
+    "attacks": [
+      {
+        "name": "Foul Gas",
+        "damage": null
+      },
+      {
+        "name": "Misfire",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4333",
-    "externalId": null,
+    "externalId": "ecard1-31",
     "tcgdex_id": "ecard1-31",
     "localId": "031",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "031/165",
+    "cardNumber": "31/165",
     "cardName": "Vileplume",
-    "fullDisplayName": "Vileplume 031/165 Expedition Base Set",
+    "fullDisplayName": "Vileplume 31/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4310,18 +5235,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-031-low.png",
-    "imageHighSrc": "cards/ecard1-031-high.png"
+    "imageHighSrc": "cards/ecard1-031-high.png",
+    "attacks": [
+      {
+        "name": "Petal Dance",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "4324",
-    "externalId": null,
+    "externalId": "ecard1-30",
     "tcgdex_id": "ecard1-30",
     "localId": "030",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "030/165",
+    "cardNumber": "30/165",
     "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 030/165 Expedition Base Set",
+    "fullDisplayName": "Venusaur 30/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4343,18 +5274,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-030-low.png",
-    "imageHighSrc": "cards/ecard1-030-high.png"
+    "imageHighSrc": "cards/ecard1-030-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4316",
-    "externalId": null,
+    "externalId": "ecard1-29",
     "tcgdex_id": "ecard1-29",
     "localId": "029",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "029/165",
+    "cardNumber": "29/165",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 029/165 Expedition Base Set",
+    "fullDisplayName": "Tyranitar 29/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4376,18 +5313,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-029-low.png",
-    "imageHighSrc": "cards/ecard1-029-high.png"
+    "imageHighSrc": "cards/ecard1-029-high.png",
+    "attacks": [
+      {
+        "name": "Stamp",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4308",
-    "externalId": null,
+    "externalId": "ecard1-28",
     "tcgdex_id": "ecard1-28",
     "localId": "028",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "028/165",
+    "cardNumber": "28/165",
     "cardName": "Typhlosion",
-    "fullDisplayName": "Typhlosion 028/165 Expedition Base Set",
+    "fullDisplayName": "Typhlosion 28/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4409,18 +5352,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-028-low.png",
-    "imageHighSrc": "cards/ecard1-028-high.png"
+    "imageHighSrc": "cards/ecard1-028-high.png",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4299",
-    "externalId": null,
+    "externalId": "ecard1-27",
     "tcgdex_id": "ecard1-27",
     "localId": "027",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "027/165",
+    "cardNumber": "27/165",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 027/165 Expedition Base Set",
+    "fullDisplayName": "Skarmory 27/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4442,18 +5391,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-027-low.png",
-    "imageHighSrc": "cards/ecard1-027-high.png"
+    "imageHighSrc": "cards/ecard1-027-high.png",
+    "attacks": [
+      {
+        "name": "Steel Beak",
+        "damage": "20+"
+      },
+      {
+        "name": "Air Cutter",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4290",
-    "externalId": null,
+    "externalId": "ecard1-26",
     "tcgdex_id": "ecard1-26",
     "localId": "026",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "026/165",
+    "cardNumber": "26/165",
     "cardName": "Rapidash",
-    "fullDisplayName": "Rapidash 026/165 Expedition Base Set",
+    "fullDisplayName": "Rapidash 26/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4475,18 +5434,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-026-low.png",
-    "imageHighSrc": "cards/ecard1-026-high.png"
+    "imageHighSrc": "cards/ecard1-026-high.png",
+    "attacks": [
+      {
+        "name": "Overrun",
+        "damage": "20"
+      },
+      {
+        "name": "Flame Tail",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4282",
-    "externalId": null,
+    "externalId": "ecard1-25",
     "tcgdex_id": "ecard1-25",
     "localId": "025",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "025/165",
+    "cardNumber": "25/165",
     "cardName": "Raichu",
-    "fullDisplayName": "Raichu 025/165 Expedition Base Set",
+    "fullDisplayName": "Raichu 25/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4508,18 +5477,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-025-low.png",
-    "imageHighSrc": "cards/ecard1-025-high.png"
+    "imageHighSrc": "cards/ecard1-025-high.png",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "10"
+      },
+      {
+        "name": "Shock Bolt",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4273",
-    "externalId": null,
+    "externalId": "ecard1-24",
     "tcgdex_id": "ecard1-24",
     "localId": "024",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "024/165",
+    "cardNumber": "24/165",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 024/165 Expedition Base Set",
+    "fullDisplayName": "Poliwrath 24/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4541,18 +5520,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-024-low.png",
-    "imageHighSrc": "cards/ecard1-024-high.png"
+    "imageHighSrc": "cards/ecard1-024-high.png",
+    "attacks": [
+      {
+        "name": "Water Punch",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4264",
-    "externalId": null,
+    "externalId": "ecard1-23",
     "tcgdex_id": "ecard1-23",
     "localId": "023",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "023/165",
+    "cardNumber": "23/165",
     "cardName": "Pidgeot",
-    "fullDisplayName": "Pidgeot 023/165 Expedition Base Set",
+    "fullDisplayName": "Pidgeot 23/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4574,18 +5559,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-023-low.png",
-    "imageHighSrc": "cards/ecard1-023-high.png"
+    "imageHighSrc": "cards/ecard1-023-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Beak",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4257",
-    "externalId": null,
+    "externalId": "ecard1-22",
     "tcgdex_id": "ecard1-22",
     "localId": "022",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "022/165",
+    "cardNumber": "22/165",
     "cardName": "Pichu",
-    "fullDisplayName": "Pichu 022/165 Expedition Base Set",
+    "fullDisplayName": "Pichu 22/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4607,18 +5598,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-022-low.png",
-    "imageHighSrc": "cards/ecard1-022-high.png"
+    "imageHighSrc": "cards/ecard1-022-high.png",
+    "attacks": [
+      {
+        "name": "Energy Patch",
+        "damage": null
+      }
+    ],
+    "rules": "If your Active Pokémon is a Baby Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
   },
   {
     "masterCardId": "4248",
-    "externalId": null,
+    "externalId": "ecard1-21",
     "tcgdex_id": "ecard1-21",
     "localId": "021",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "021/165",
+    "cardNumber": "21/165",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 021/165 Expedition Base Set",
+    "fullDisplayName": "Ninetales 21/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4640,18 +5638,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-021-low.png",
-    "imageHighSrc": "cards/ecard1-021-high.png"
+    "imageHighSrc": "cards/ecard1-021-high.png",
+    "attacks": [
+      {
+        "name": "Mislead",
+        "damage": null
+      },
+      {
+        "name": "Ethereal Flame",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4239",
-    "externalId": null,
+    "externalId": "ecard1-20",
     "tcgdex_id": "ecard1-20",
     "localId": "020",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "020/165",
+    "cardNumber": "20/165",
     "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 020/165 Expedition Base Set",
+    "fullDisplayName": "Mewtwo 20/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4673,18 +5681,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-020-low.png",
-    "imageHighSrc": "cards/ecard1-020-high.png"
+    "imageHighSrc": "cards/ecard1-020-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Psychic",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4229",
-    "externalId": null,
+    "externalId": "ecard1-19",
     "tcgdex_id": "ecard1-19",
     "localId": "019",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "019/165",
+    "cardNumber": "19/165",
     "cardName": "Mew",
-    "fullDisplayName": "Mew 019/165 Expedition Base Set",
+    "fullDisplayName": "Mew 19/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4706,18 +5724,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-019-low.png",
-    "imageHighSrc": "cards/ecard1-019-high.png"
+    "imageHighSrc": "cards/ecard1-019-high.png",
+    "attacks": [
+      {
+        "name": "Super Psywave",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4219",
-    "externalId": null,
+    "externalId": "ecard1-18",
     "tcgdex_id": "ecard1-18",
     "localId": "018",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "018/165",
+    "cardNumber": "18/165",
     "cardName": "Meganium",
-    "fullDisplayName": "Meganium 018/165 Expedition Base Set",
+    "fullDisplayName": "Meganium 18/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4739,18 +5763,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-018-low.png",
-    "imageHighSrc": "cards/ecard1-018-high.png"
+    "imageHighSrc": "cards/ecard1-018-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4211",
-    "externalId": null,
+    "externalId": "ecard1-17",
     "tcgdex_id": "ecard1-17",
     "localId": "017",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "017/165",
+    "cardNumber": "17/165",
     "cardName": "Magby",
-    "fullDisplayName": "Magby 017/165 Expedition Base Set",
+    "fullDisplayName": "Magby 17/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4772,18 +5802,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-017-low.png",
-    "imageHighSrc": "cards/ecard1-017-high.png"
+    "imageHighSrc": "cards/ecard1-017-high.png",
+    "attacks": [
+      {
+        "name": "Energy Catch",
+        "damage": null
+      }
+    ],
+    "rules": "If your Active Pokémon is a Baby Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
   },
   {
     "masterCardId": "4201",
-    "externalId": null,
+    "externalId": "ecard1-16",
     "tcgdex_id": "ecard1-16",
     "localId": "016",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "016/165",
+    "cardNumber": "16/165",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 016/165 Expedition Base Set",
+    "fullDisplayName": "Machamp 16/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4805,18 +5842,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-016-low.png",
-    "imageHighSrc": "cards/ecard1-016-high.png"
+    "imageHighSrc": "cards/ecard1-016-high.png",
+    "attacks": [
+      {
+        "name": "Iron Fist",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4192",
-    "externalId": null,
+    "externalId": "ecard1-15",
     "tcgdex_id": "ecard1-15",
     "localId": "015",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "015/165",
+    "cardNumber": "15/165",
     "cardName": "Kingler",
-    "fullDisplayName": "Kingler 015/165 Expedition Base Set",
+    "fullDisplayName": "Kingler 15/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4838,18 +5881,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-015-low.png",
-    "imageHighSrc": "cards/ecard1-015-high.png"
+    "imageHighSrc": "cards/ecard1-015-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      },
+      {
+        "name": "Giant Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4183",
-    "externalId": null,
+    "externalId": "ecard1-14",
     "tcgdex_id": "ecard1-14",
     "localId": "014",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "014/165",
+    "cardNumber": "14/165",
     "cardName": "Golem",
-    "fullDisplayName": "Golem 014/165 Expedition Base Set",
+    "fullDisplayName": "Golem 14/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4871,18 +5924,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-014-low.png",
-    "imageHighSrc": "cards/ecard1-014-high.png"
+    "imageHighSrc": "cards/ecard1-014-high.png",
+    "attacks": [
+      {
+        "name": "Rock Tumble",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4174",
-    "externalId": null,
+    "externalId": "ecard1-13",
     "tcgdex_id": "ecard1-13",
     "localId": "013",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "013/165",
+    "cardNumber": "13/165",
     "cardName": "Gengar",
-    "fullDisplayName": "Gengar 013/165 Expedition Base Set",
+    "fullDisplayName": "Gengar 13/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4904,18 +5963,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-013-low.png",
-    "imageHighSrc": "cards/ecard1-013-high.png"
+    "imageHighSrc": "cards/ecard1-013-high.png",
+    "attacks": [
+      {
+        "name": "Hide in Shadows",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4165",
-    "externalId": null,
+    "externalId": "ecard1-12",
     "tcgdex_id": "ecard1-12",
     "localId": "012",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "012/165",
+    "cardNumber": "12/165",
     "cardName": "Feraligatr",
-    "fullDisplayName": "Feraligatr 012/165 Expedition Base Set",
+    "fullDisplayName": "Feraligatr 12/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4937,18 +6002,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-012-low.png",
-    "imageHighSrc": "cards/ecard1-012-high.png"
+    "imageHighSrc": "cards/ecard1-012-high.png",
+    "attacks": [
+      {
+        "name": "Rending Jaws",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4156",
-    "externalId": null,
+    "externalId": "ecard1-11",
     "tcgdex_id": "ecard1-11",
     "localId": "011",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "011/165",
+    "cardNumber": "11/165",
     "cardName": "Fearow",
-    "fullDisplayName": "Fearow 011/165 Expedition Base Set",
+    "fullDisplayName": "Fearow 11/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4970,18 +6041,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-011-low.png",
-    "imageHighSrc": "cards/ecard1-011-high.png"
+    "imageHighSrc": "cards/ecard1-011-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "20"
+      },
+      {
+        "name": "Supersonic Flight",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4147",
-    "externalId": null,
+    "externalId": "ecard1-10",
     "tcgdex_id": "ecard1-10",
     "localId": "010",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "010/165",
+    "cardNumber": "10/165",
     "cardName": "Dugtrio",
-    "fullDisplayName": "Dugtrio 010/165 Expedition Base Set",
+    "fullDisplayName": "Dugtrio 10/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5003,18 +6084,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-010-low.png",
-    "imageHighSrc": "cards/ecard1-010-high.png"
+    "imageHighSrc": "cards/ecard1-010-high.png",
+    "attacks": [
+      {
+        "name": "Mud Slap",
+        "damage": "20"
+      },
+      {
+        "name": "Magnitude",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4138",
-    "externalId": null,
+    "externalId": "ecard1-9",
     "tcgdex_id": "ecard1-9",
     "localId": "009",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "009/165",
+    "cardNumber": "9/165",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 009/165 Expedition Base Set",
+    "fullDisplayName": "Dragonite 9/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5036,18 +6127,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-009-low.png",
-    "imageHighSrc": "cards/ecard1-009-high.png"
+    "imageHighSrc": "cards/ecard1-009-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Tail",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "4129",
-    "externalId": null,
+    "externalId": "ecard1-8",
     "tcgdex_id": "ecard1-8",
     "localId": "008",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "008/165",
+    "cardNumber": "8/165",
     "cardName": "Cloyster",
-    "fullDisplayName": "Cloyster 008/165 Expedition Base Set",
+    "fullDisplayName": "Cloyster 8/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5069,18 +6166,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-008-low.png",
-    "imageHighSrc": "cards/ecard1-008-high.png"
+    "imageHighSrc": "cards/ecard1-008-high.png",
+    "attacks": [
+      {
+        "name": "Lick",
+        "damage": "10"
+      },
+      {
+        "name": "Auto Fire",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4120",
-    "externalId": null,
+    "externalId": "ecard1-7",
     "tcgdex_id": "ecard1-7",
     "localId": "007",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "007/165",
+    "cardNumber": "7/165",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 007/165 Expedition Base Set",
+    "fullDisplayName": "Clefable 7/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5102,18 +6209,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-007-low.png",
-    "imageHighSrc": "cards/ecard1-007-high.png"
+    "imageHighSrc": "cards/ecard1-007-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4111",
-    "externalId": null,
+    "externalId": "ecard1-6",
     "tcgdex_id": "ecard1-6",
     "localId": "006",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "006/165",
+    "cardNumber": "6/165",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 006/165 Expedition Base Set",
+    "fullDisplayName": "Charizard 6/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5135,18 +6248,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-006-low.png",
-    "imageHighSrc": "cards/ecard1-006-high.png"
+    "imageHighSrc": "cards/ecard1-006-high.png",
+    "attacks": [
+      {
+        "name": "Scorching Whirlwind",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "4103",
-    "externalId": null,
+    "externalId": "ecard1-5",
     "tcgdex_id": "ecard1-5",
     "localId": "005",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "005/165",
+    "cardNumber": "5/165",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 005/165 Expedition Base Set",
+    "fullDisplayName": "Butterfree 5/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5168,18 +6287,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-005-low.png",
-    "imageHighSrc": "cards/ecard1-005-high.png"
+    "imageHighSrc": "cards/ecard1-005-high.png",
+    "attacks": [
+      {
+        "name": "Spiral Drain",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4094",
-    "externalId": null,
+    "externalId": "ecard1-4",
     "tcgdex_id": "ecard1-4",
     "localId": "004",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "004/165",
+    "cardNumber": "4/165",
     "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 004/165 Expedition Base Set",
+    "fullDisplayName": "Blastoise 4/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5201,18 +6326,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-004-low.png",
-    "imageHighSrc": "cards/ecard1-004-high.png"
+    "imageHighSrc": "cards/ecard1-004-high.png",
+    "attacks": [
+      {
+        "name": "Energy Cannon",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4085",
-    "externalId": null,
+    "externalId": "ecard1-3",
     "tcgdex_id": "ecard1-3",
     "localId": "003",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "003/165",
+    "cardNumber": "3/165",
     "cardName": "Arbok",
-    "fullDisplayName": "Arbok 003/165 Expedition Base Set",
+    "fullDisplayName": "Arbok 3/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5234,18 +6365,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-003-low.png",
-    "imageHighSrc": "cards/ecard1-003-high.png"
+    "imageHighSrc": "cards/ecard1-003-high.png",
+    "attacks": [
+      {
+        "name": "Poison Spray",
+        "damage": null
+      },
+      {
+        "name": "Poison Reaction",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4077",
-    "externalId": null,
+    "externalId": "ecard1-2",
     "tcgdex_id": "ecard1-2",
     "localId": "002",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "002/165",
+    "cardNumber": "2/165",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 002/165 Expedition Base Set",
+    "fullDisplayName": "Ampharos 2/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5267,18 +6408,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-002-low.png",
-    "imageHighSrc": "cards/ecard1-002-high.png"
+    "imageHighSrc": "cards/ecard1-002-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Strike",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4069",
-    "externalId": null,
+    "externalId": "ecard1-1",
     "tcgdex_id": "ecard1-1",
     "localId": "001",
     "setCode": "ecard1",
     "setTcgdexId": "ecard1",
-    "cardNumber": "001/165",
+    "cardNumber": "1/165",
     "cardName": "Alakazam",
-    "fullDisplayName": "Alakazam 001/165 Expedition Base Set",
+    "fullDisplayName": "Alakazam 1/165 Expedition Base Set",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5300,6 +6447,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/ecard1-001-low.png",
-    "imageHighSrc": "cards/ecard1-001-high.png"
+    "imageHighSrc": "cards/ecard1-001-high.png",
+    "attacks": [
+      {
+        "name": "Syncroblast",
+        "damage": "80"
+      }
+    ]
   }
 ]

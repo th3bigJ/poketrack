@@ -6,9 +6,9 @@
     "localId": "015",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "015/15",
+    "cardNumber": "15/15",
     "cardName": "Smeargle",
-    "fullDisplayName": "Smeargle 015/15 McDonald's Collection 2022",
+    "fullDisplayName": "Smeargle 15/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,7 +30,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-015-low.jpg",
-    "imageHighSrc": "cards/2022swsh-015-low.jpg"
+    "imageHighSrc": "cards/2022swsh-015-low.jpg",
+    "attacks": [
+      {
+        "name": "Live Painting",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "22344",
@@ -39,9 +45,9 @@
     "localId": "014",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "014/15",
+    "cardNumber": "14/15",
     "cardName": "Drampa",
-    "fullDisplayName": "Drampa 014/15 McDonald's Collection 2022",
+    "fullDisplayName": "Drampa 14/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,7 +69,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-014-low.jpg",
-    "imageHighSrc": "cards/2022swsh-014-low.jpg"
+    "imageHighSrc": "cards/2022swsh-014-low.jpg",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Berserk",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "22343",
@@ -72,9 +88,9 @@
     "localId": "013",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "013/15",
+    "cardNumber": "13/15",
     "cardName": "Pangoro",
-    "fullDisplayName": "Pangoro 013/15 McDonald's Collection 2022",
+    "fullDisplayName": "Pangoro 13/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -96,7 +112,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-013-low.jpg",
-    "imageHighSrc": "cards/2022swsh-013-low.jpg"
+    "imageHighSrc": "cards/2022swsh-013-low.jpg",
+    "attacks": [
+      {
+        "name": "Knocking Hammer",
+        "damage": "90"
+      },
+      {
+        "name": "Shakedown",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "22342",
@@ -105,9 +131,9 @@
     "localId": "012",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "012/15",
+    "cardNumber": "12/15",
     "cardName": "Bewear",
-    "fullDisplayName": "Bewear 012/15 McDonald's Collection 2022",
+    "fullDisplayName": "Bewear 12/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -129,7 +155,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-012-low.jpg",
-    "imageHighSrc": "cards/2022swsh-012-low.jpg"
+    "imageHighSrc": "cards/2022swsh-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Split Spiral Punch",
+        "damage": "40"
+      },
+      {
+        "name": "Strength",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "22341",
@@ -138,9 +174,9 @@
     "localId": "011",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "011/15",
+    "cardNumber": "11/15",
     "cardName": "Cutiefly",
-    "fullDisplayName": "Cutiefly 011/15 McDonald's Collection 2022",
+    "fullDisplayName": "Cutiefly 11/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,7 +198,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-011-low.jpg",
-    "imageHighSrc": "cards/2022swsh-011-low.jpg"
+    "imageHighSrc": "cards/2022swsh-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "22340",
@@ -171,9 +213,9 @@
     "localId": "010",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "010/15",
+    "cardNumber": "10/15",
     "cardName": "Tynamo",
-    "fullDisplayName": "Tynamo 010/15 McDonald's Collection 2022",
+    "fullDisplayName": "Tynamo 10/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,7 +237,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-010-low.jpg",
-    "imageHighSrc": "cards/2022swsh-010-low.jpg"
+    "imageHighSrc": "cards/2022swsh-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Tiny Charge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "22339",
@@ -204,9 +252,9 @@
     "localId": "009",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "009/15",
+    "cardNumber": "9/15",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 009/15 McDonald's Collection 2022",
+    "fullDisplayName": "Flaaffy 9/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -228,7 +276,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-009-low.jpg",
-    "imageHighSrc": "cards/2022swsh-009-low.jpg"
+    "imageHighSrc": "cards/2022swsh-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "22338",
@@ -237,9 +291,9 @@
     "localId": "008",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "008/15",
+    "cardNumber": "8/15",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 008/15 McDonald's Collection 2022",
+    "fullDisplayName": "Chinchou 8/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,7 +315,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-008-low.jpg",
-    "imageHighSrc": "cards/2022swsh-008-low.jpg"
+    "imageHighSrc": "cards/2022swsh-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "22337",
@@ -270,9 +330,9 @@
     "localId": "007",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "007/15",
+    "cardNumber": "7/15",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 007/15 McDonald's Collection 2022",
+    "fullDisplayName": "Pikachu 7/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,7 +354,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-007-low.jpg",
-    "imageHighSrc": "cards/2022swsh-007-low.jpg"
+    "imageHighSrc": "cards/2022swsh-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Energize",
+        "damage": null
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "22336",
@@ -303,9 +373,9 @@
     "localId": "006",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "006/15",
+    "cardNumber": "6/15",
     "cardName": "Lapras",
-    "fullDisplayName": "Lapras 006/15 McDonald's Collection 2022",
+    "fullDisplayName": "Lapras 6/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,7 +397,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-006-low.jpg",
-    "imageHighSrc": "cards/2022swsh-006-low.jpg"
+    "imageHighSrc": "cards/2022swsh-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Wintry Call",
+        "damage": null
+      },
+      {
+        "name": "Icy Wind",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "22335",
@@ -336,9 +416,9 @@
     "localId": "005",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "005/15",
+    "cardNumber": "5/15",
     "cardName": "Victini",
-    "fullDisplayName": "Victini 005/15 McDonald's Collection 2022",
+    "fullDisplayName": "Victini 5/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,7 +440,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-005-low.jpg",
-    "imageHighSrc": "cards/2022swsh-005-low.jpg"
+    "imageHighSrc": "cards/2022swsh-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Victory Dive",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "22334",
@@ -369,9 +455,9 @@
     "localId": "004",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "004/15",
+    "cardNumber": "4/15",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 004/15 McDonald's Collection 2022",
+    "fullDisplayName": "Growlithe 4/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,7 +479,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-004-low.jpg",
-    "imageHighSrc": "cards/2022swsh-004-low.jpg"
+    "imageHighSrc": "cards/2022swsh-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Warm Up",
+        "damage": null
+      },
+      {
+        "name": "Combustion",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "22333",
@@ -402,9 +498,9 @@
     "localId": "003",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "003/15",
+    "cardNumber": "3/15",
     "cardName": "Gossifleur",
-    "fullDisplayName": "Gossifleur 003/15 McDonald's Collection 2022",
+    "fullDisplayName": "Gossifleur 3/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -426,7 +522,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-003-low.jpg",
-    "imageHighSrc": "cards/2022swsh-003-low.jpg"
+    "imageHighSrc": "cards/2022swsh-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Blot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "22332",
@@ -435,9 +537,9 @@
     "localId": "002",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "002/15",
+    "cardNumber": "2/15",
     "cardName": "Rowlet",
-    "fullDisplayName": "Rowlet 002/15 McDonald's Collection 2022",
+    "fullDisplayName": "Rowlet 2/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -459,7 +561,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-002-low.jpg",
-    "imageHighSrc": "cards/2022swsh-002-low.jpg"
+    "imageHighSrc": "cards/2022swsh-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Wind Shard",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "22331",
@@ -468,9 +576,9 @@
     "localId": "001",
     "setCode": "2022swsh",
     "setTcgdexId": "2022swsh",
-    "cardNumber": "001/15",
+    "cardNumber": "1/15",
     "cardName": "Ledyba",
-    "fullDisplayName": "Ledyba 001/15 McDonald's Collection 2022",
+    "fullDisplayName": "Ledyba 1/15 McDonald's Collection 2022",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,6 +600,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2022swsh-001-low.jpg",
-    "imageHighSrc": "cards/2022swsh-001-low.jpg"
+    "imageHighSrc": "cards/2022swsh-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Punch",
+        "damage": "20"
+      }
+    ]
   }
 ]

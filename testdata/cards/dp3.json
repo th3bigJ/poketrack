@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "4060",
-    "externalId": null,
+    "externalId": "dp3-132",
     "tcgdex_id": "dp3-132",
     "localId": "132",
     "setCode": "dp3",
@@ -30,11 +30,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-132-low.png",
-    "imageHighSrc": "cards/dp3-132-high.png"
+    "imageHighSrc": "cards/dp3-132-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      },
+      {
+        "name": "Darkness Wing",
+        "damage": "60"
+      }
+    ],
+    "rules": "Put this card onto your Active Honchkrow. Honchkrow LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4059",
-    "externalId": null,
+    "externalId": "dp3-131",
     "tcgdex_id": "dp3-131",
     "localId": "131",
     "setCode": "dp3",
@@ -63,11 +74,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-131-low.png",
-    "imageHighSrc": "cards/dp3-131-high.png"
+    "imageHighSrc": "cards/dp3-131-high.png",
+    "attacks": [
+      {
+        "name": "Bring Down",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Gardevoir. Gardevoir LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "4058",
-    "externalId": null,
+    "externalId": "dp3-130",
     "tcgdex_id": "dp3-130",
     "localId": "130",
     "setCode": "dp3",
@@ -92,11 +110,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-130-low.png",
-    "imageHighSrc": "cards/dp3-130-high.png"
+    "imageHighSrc": "cards/dp3-130-high.png",
+    "rules": "Damage done by attacks to the Pokémon that Metal Energy is attached to is reduced by 10 (after applying Weakness and Resistance). Ignore this effect if the Pokémon that Metal Energy is attached to isn't Metal. Metal Energy provides Metal Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4057",
-    "externalId": null,
+    "externalId": "dp3-129",
     "tcgdex_id": "dp3-129",
     "localId": "129",
     "setCode": "dp3",
@@ -121,11 +140,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-129-low.png",
-    "imageHighSrc": "cards/dp3-129-high.png"
+    "imageHighSrc": "cards/dp3-129-high.png",
+    "rules": "If the Pokémon Darkness Energy is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance). Ignore this effect if the Pokémon that Darkness Energy is attached to isn't Darkness. Darkness Energy provides Darkness Energy. (Doesn't count as a basic Energy card.)"
   },
   {
     "masterCardId": "4056",
-    "externalId": null,
+    "externalId": "dp3-128",
     "tcgdex_id": "dp3-128",
     "localId": "128",
     "setCode": "dp3",
@@ -150,11 +170,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-128-low.png",
-    "imageHighSrc": "cards/dp3-128-high.png"
+    "imageHighSrc": "cards/dp3-128-high.png",
+    "rules": "Switch 1 of your Active Pokémon with 1 of your Benched Pokémon."
   },
   {
     "masterCardId": "4055",
-    "externalId": null,
+    "externalId": "dp3-127",
     "tcgdex_id": "dp3-127",
     "localId": "127",
     "setCode": "dp3",
@@ -179,11 +200,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-127-low.png",
-    "imageHighSrc": "cards/dp3-127-high.png"
+    "imageHighSrc": "cards/dp3-127-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "4053",
-    "externalId": null,
+    "externalId": "dp3-126",
     "tcgdex_id": "dp3-126",
     "localId": "126",
     "setCode": "dp3",
@@ -208,11 +230,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-126-low.png",
-    "imageHighSrc": "cards/dp3-126-high.png"
+    "imageHighSrc": "cards/dp3-126-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 2 cards. Then, choose a card from your opponent's hand without looking and put it on the bottom of his or her deck."
   },
   {
     "masterCardId": "4051",
-    "externalId": null,
+    "externalId": "dp3-125",
     "tcgdex_id": "dp3-125",
     "localId": "125",
     "setCode": "dp3",
@@ -237,11 +260,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-125-low.png",
-    "imageHighSrc": "cards/dp3-125-high.png"
+    "imageHighSrc": "cards/dp3-125-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 in any combination of Basic Pokémon and basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4049",
-    "externalId": null,
+    "externalId": "dp3-124",
     "tcgdex_id": "dp3-124",
     "localId": "124",
     "setCode": "dp3",
@@ -266,11 +290,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-124-low.png",
-    "imageHighSrc": "cards/dp3-124-high.png"
+    "imageHighSrc": "cards/dp3-124-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nReveal the top 5 cards of your deck. Your opponent chooses 3 of those cards. Put those cards into your hand and put other 2 cards on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "4047",
-    "externalId": null,
+    "externalId": "dp3-123",
     "tcgdex_id": "dp3-123",
     "localId": "123",
     "setCode": "dp3",
@@ -295,11 +320,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-123-low.png",
-    "imageHighSrc": "cards/dp3-123-high.png"
+    "imageHighSrc": "cards/dp3-123-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nChoose 1 card in your hand and shuffle the rest of your cards into your deck. Then, draw 4 cards. (If this is the only card in your hand, you can't play this card.)"
   },
   {
     "masterCardId": "4045",
-    "externalId": null,
+    "externalId": "dp3-122",
     "tcgdex_id": "dp3-122",
     "localId": "122",
     "setCode": "dp3",
@@ -324,11 +350,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-122-low.png",
-    "imageHighSrc": "cards/dp3-122-high.png"
+    "imageHighSrc": "cards/dp3-122-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 3 cards. Then, choose a card from your hand and put it on the bottom of your deck."
   },
   {
     "masterCardId": "4043",
-    "externalId": null,
+    "externalId": "dp3-121",
     "tcgdex_id": "dp3-121",
     "localId": "121",
     "setCode": "dp3",
@@ -353,11 +380,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-121-low.png",
-    "imageHighSrc": "cards/dp3-121-high.png"
+    "imageHighSrc": "cards/dp3-121-high.png",
+    "rules": "Attach PlusPower to 1 of your Pokémon. Discard this card at the end of your turn.\n\nIf the Pokémon PlusPower is attached to attacks, the attack does 10 more damage to the Active Pokémon (before applying Weakness and Resistance)."
   },
   {
     "masterCardId": "4040",
-    "externalId": null,
+    "externalId": "dp3-120",
     "tcgdex_id": "dp3-120",
     "localId": "120",
     "setCode": "dp3",
@@ -382,11 +410,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-120-low.png",
-    "imageHighSrc": "cards/dp3-120-high.png"
+    "imageHighSrc": "cards/dp3-120-high.png",
+    "rules": "Search your discard pile for up to 3 in any combination of Pokémon and basic Energy cards. Show them to your opponent and shuffle them into your deck."
   },
   {
     "masterCardId": "4037",
-    "externalId": null,
+    "externalId": "dp3-119",
     "tcgdex_id": "dp3-119",
     "localId": "119",
     "setCode": "dp3",
@@ -411,11 +440,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-119-low.png",
-    "imageHighSrc": "cards/dp3-119-high.png"
+    "imageHighSrc": "cards/dp3-119-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nChoose a card from your hand and put it on top of your deck. Search your deck for a Pokémon, show it to your opponent, and put it into your hand. Shuffle your deck afterward. (If this is the only card in your hand, you can't play this card.)"
   },
   {
     "masterCardId": "4034",
-    "externalId": null,
+    "externalId": "dp3-118",
     "tcgdex_id": "dp3-118",
     "localId": "118",
     "setCode": "dp3",
@@ -444,11 +474,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-118-low.png",
-    "imageHighSrc": "cards/dp3-118-high.png"
+    "imageHighSrc": "cards/dp3-118-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      },
+      {
+        "name": "Splatter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4030",
-    "externalId": null,
+    "externalId": "dp3-117",
     "tcgdex_id": "dp3-117",
     "localId": "117",
     "setCode": "dp3",
@@ -477,11 +517,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-117-low.png",
-    "imageHighSrc": "cards/dp3-117-high.png"
+    "imageHighSrc": "cards/dp3-117-high.png",
+    "attacks": [
+      {
+        "name": "Speed Ball",
+        "damage": "20"
+      },
+      {
+        "name": "Big Explosion",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4027",
-    "externalId": null,
+    "externalId": "dp3-116",
     "tcgdex_id": "dp3-116",
     "localId": "116",
     "setCode": "dp3",
@@ -510,11 +560,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-116-low.png",
-    "imageHighSrc": "cards/dp3-116-high.png"
+    "imageHighSrc": "cards/dp3-116-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": null
+      },
+      {
+        "name": "Signal Beam",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4024",
-    "externalId": null,
+    "externalId": "dp3-115",
     "tcgdex_id": "dp3-115",
     "localId": "115",
     "setCode": "dp3",
@@ -543,11 +603,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-115-low.png",
-    "imageHighSrc": "cards/dp3-115-high.png"
+    "imageHighSrc": "cards/dp3-115-high.png",
+    "attacks": [
+      {
+        "name": "Inviting Trap",
+        "damage": null
+      },
+      {
+        "name": "Sand Tomb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4021",
-    "externalId": null,
+    "externalId": "dp3-114",
     "tcgdex_id": "dp3-114",
     "localId": "114",
     "setCode": "dp3",
@@ -576,11 +646,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-114-low.png",
-    "imageHighSrc": "cards/dp3-114-high.png"
+    "imageHighSrc": "cards/dp3-114-high.png",
+    "attacks": [
+      {
+        "name": "Sun Soak",
+        "damage": null
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4018",
-    "externalId": null,
+    "externalId": "dp3-113",
     "tcgdex_id": "dp3-113",
     "localId": "113",
     "setCode": "dp3",
@@ -609,11 +689,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-113-low.png",
-    "imageHighSrc": "cards/dp3-113-high.png"
+    "imageHighSrc": "cards/dp3-113-high.png",
+    "attacks": [
+      {
+        "name": "Lead",
+        "damage": null
+      },
+      {
+        "name": "Frighten Horn",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4015",
-    "externalId": null,
+    "externalId": "dp3-112",
     "tcgdex_id": "dp3-112",
     "localId": "112",
     "setCode": "dp3",
@@ -642,11 +732,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-112-low.png",
-    "imageHighSrc": "cards/dp3-112-high.png"
+    "imageHighSrc": "cards/dp3-112-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": null
+      },
+      {
+        "name": "Aqua Tail",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4012",
-    "externalId": null,
+    "externalId": "dp3-111",
     "tcgdex_id": "dp3-111",
     "localId": "111",
     "setCode": "dp3",
@@ -675,11 +775,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-111-low.png",
-    "imageHighSrc": "cards/dp3-111-high.png"
+    "imageHighSrc": "cards/dp3-111-high.png",
+    "attacks": [
+      {
+        "name": "Dish Out",
+        "damage": null
+      },
+      {
+        "name": "Synchro Punch",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4009",
-    "externalId": null,
+    "externalId": "dp3-110",
     "tcgdex_id": "dp3-110",
     "localId": "110",
     "setCode": "dp3",
@@ -708,11 +818,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-110-low.png",
-    "imageHighSrc": "cards/dp3-110-high.png"
+    "imageHighSrc": "cards/dp3-110-high.png",
+    "attacks": [
+      {
+        "name": "Gossip",
+        "damage": null
+      },
+      {
+        "name": "Hang Down",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4006",
-    "externalId": null,
+    "externalId": "dp3-109",
     "tcgdex_id": "dp3-109",
     "localId": "109",
     "setCode": "dp3",
@@ -741,11 +861,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-109-low.png",
-    "imageHighSrc": "cards/dp3-109-high.png"
+    "imageHighSrc": "cards/dp3-109-high.png",
+    "attacks": [
+      {
+        "name": "Ferment Poison",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4003",
-    "externalId": null,
+    "externalId": "dp3-108",
     "tcgdex_id": "dp3-108",
     "localId": "108",
     "setCode": "dp3",
@@ -774,11 +900,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-108-low.png",
-    "imageHighSrc": "cards/dp3-108-high.png"
+    "imageHighSrc": "cards/dp3-108-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Toxic Spore",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4000",
-    "externalId": null,
+    "externalId": "dp3-107",
     "tcgdex_id": "dp3-107",
     "localId": "107",
     "setCode": "dp3",
@@ -807,11 +943,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-107-low.png",
-    "imageHighSrc": "cards/dp3-107-high.png"
+    "imageHighSrc": "cards/dp3-107-high.png",
+    "attacks": [
+      {
+        "name": "Mud Spatter",
+        "damage": "10"
+      },
+      {
+        "name": "Recover",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3997",
-    "externalId": null,
+    "externalId": "dp3-106",
     "tcgdex_id": "dp3-106",
     "localId": "106",
     "setCode": "dp3",
@@ -840,11 +986,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-106-low.png",
-    "imageHighSrc": "cards/dp3-106-high.png"
+    "imageHighSrc": "cards/dp3-106-high.png",
+    "attacks": [
+      {
+        "name": "Shell Hunting",
+        "damage": null
+      },
+      {
+        "name": "Sprinkle Water",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3994",
-    "externalId": null,
+    "externalId": "dp3-105",
     "tcgdex_id": "dp3-105",
     "localId": "105",
     "setCode": "dp3",
@@ -873,11 +1029,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-105-low.png",
-    "imageHighSrc": "cards/dp3-105-high.png"
+    "imageHighSrc": "cards/dp3-105-high.png",
+    "attacks": [
+      {
+        "name": "Shell Rest",
+        "damage": null
+      },
+      {
+        "name": "Tongue Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3991",
-    "externalId": null,
+    "externalId": "dp3-104",
     "tcgdex_id": "dp3-104",
     "localId": "104",
     "setCode": "dp3",
@@ -906,11 +1072,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-104-low.png",
-    "imageHighSrc": "cards/dp3-104-high.png"
+    "imageHighSrc": "cards/dp3-104-high.png",
+    "attacks": [
+      {
+        "name": "Grope",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3986",
-    "externalId": null,
+    "externalId": "dp3-103",
     "tcgdex_id": "dp3-103",
     "localId": "103",
     "setCode": "dp3",
@@ -939,11 +1115,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-103-low.png",
-    "imageHighSrc": "cards/dp3-103-high.png"
+    "imageHighSrc": "cards/dp3-103-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whip",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3982",
-    "externalId": null,
+    "externalId": "dp3-102",
     "tcgdex_id": "dp3-102",
     "localId": "102",
     "setCode": "dp3",
@@ -972,11 +1158,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-102-low.png",
-    "imageHighSrc": "cards/dp3-102-high.png"
+    "imageHighSrc": "cards/dp3-102-high.png",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "10"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3978",
-    "externalId": null,
+    "externalId": "dp3-101",
     "tcgdex_id": "dp3-101",
     "localId": "101",
     "setCode": "dp3",
@@ -1005,11 +1201,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-101-low.png",
-    "imageHighSrc": "cards/dp3-101-high.png"
+    "imageHighSrc": "cards/dp3-101-high.png",
+    "attacks": [
+      {
+        "name": "Nerve Shot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3974",
-    "externalId": null,
+    "externalId": "dp3-100",
     "tcgdex_id": "dp3-100",
     "localId": "100",
     "setCode": "dp3",
@@ -1038,18 +1240,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-100-low.png",
-    "imageHighSrc": "cards/dp3-100-high.png"
+    "imageHighSrc": "cards/dp3-100-high.png",
+    "attacks": [
+      {
+        "name": "Delusion",
+        "damage": null
+      },
+      {
+        "name": "Migraine",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3970",
-    "externalId": null,
+    "externalId": "dp3-99",
     "tcgdex_id": "dp3-99",
     "localId": "099",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "099/132",
+    "cardNumber": "99/132",
     "cardName": "Pidgey",
-    "fullDisplayName": "Pidgey 099/132 Secret Wonders",
+    "fullDisplayName": "Pidgey 99/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1071,18 +1283,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-099-low.png",
-    "imageHighSrc": "cards/dp3-099-high.png"
+    "imageHighSrc": "cards/dp3-099-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3966",
-    "externalId": null,
+    "externalId": "dp3-98",
     "tcgdex_id": "dp3-98",
     "localId": "098",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "098/132",
+    "cardNumber": "98/132",
     "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 098/132 Secret Wonders",
+    "fullDisplayName": "Phanpy 98/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1104,18 +1326,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-098-low.png",
-    "imageHighSrc": "cards/dp3-098-high.png"
+    "imageHighSrc": "cards/dp3-098-high.png",
+    "attacks": [
+      {
+        "name": "Flail",
+        "damage": "10×"
+      },
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3962",
-    "externalId": null,
+    "externalId": "dp3-97",
     "tcgdex_id": "dp3-97",
     "localId": "097",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "097/132",
+    "cardNumber": "97/132",
     "cardName": "Nidoran ♂",
-    "fullDisplayName": "Nidoran ♂ 097/132 Secret Wonders",
+    "fullDisplayName": "Nidoran ♂ 97/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1137,18 +1369,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp3-097-low.png",
-    "imageHighSrc": "cards/dp3-097-high.png"
+    "imageHighSrc": "cards/dp3-097-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Poison Skin",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3958",
-    "externalId": null,
+    "externalId": "dp3-96",
     "tcgdex_id": "dp3-96",
     "localId": "096",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "096/132",
+    "cardNumber": "96/132",
     "cardName": "Natu",
-    "fullDisplayName": "Natu 096/132 Secret Wonders",
+    "fullDisplayName": "Natu 96/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1170,18 +1412,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-096-low.png",
-    "imageHighSrc": "cards/dp3-096-high.png"
+    "imageHighSrc": "cards/dp3-096-high.png",
+    "attacks": [
+      {
+        "name": "Bothering Wave",
+        "damage": "20"
+      },
+      {
+        "name": "Future Sight",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3954",
-    "externalId": null,
+    "externalId": "dp3-95",
     "tcgdex_id": "dp3-95",
     "localId": "095",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "095/132",
+    "cardNumber": "95/132",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 095/132 Secret Wonders",
+    "fullDisplayName": "Murkrow 95/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1203,18 +1455,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-095-low.png",
-    "imageHighSrc": "cards/dp3-095-high.png"
+    "imageHighSrc": "cards/dp3-095-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ],
+    "rules": "Dusk Stone: Murkrow can evolve during the turn you play it."
   },
   {
     "masterCardId": "3950",
-    "externalId": null,
+    "externalId": "dp3-94",
     "tcgdex_id": "dp3-94",
     "localId": "094",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "094/132",
+    "cardNumber": "94/132",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 094/132 Secret Wonders",
+    "fullDisplayName": "Mareep 94/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1236,18 +1495,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-094-low.png",
-    "imageHighSrc": "cards/dp3-094-high.png"
+    "imageHighSrc": "cards/dp3-094-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3946",
-    "externalId": null,
+    "externalId": "dp3-93",
     "tcgdex_id": "dp3-93",
     "localId": "093",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "093/132",
+    "cardNumber": "93/132",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 093/132 Secret Wonders",
+    "fullDisplayName": "Magmar 93/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1269,18 +1538,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-093-low.png",
-    "imageHighSrc": "cards/dp3-093-high.png"
+    "imageHighSrc": "cards/dp3-093-high.png",
+    "attacks": [
+      {
+        "name": "Fire Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Smog",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3942",
-    "externalId": null,
+    "externalId": "dp3-92",
     "tcgdex_id": "dp3-92",
     "localId": "092",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "092/132",
+    "cardNumber": "92/132",
     "cardName": "Lotad",
-    "fullDisplayName": "Lotad 092/132 Secret Wonders",
+    "fullDisplayName": "Lotad 92/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1302,18 +1581,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-092-low.png",
-    "imageHighSrc": "cards/dp3-092-high.png"
+    "imageHighSrc": "cards/dp3-092-high.png",
+    "attacks": [
+      {
+        "name": "Water Sport",
+        "damage": "10+"
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3938",
-    "externalId": null,
+    "externalId": "dp3-91",
     "tcgdex_id": "dp3-91",
     "localId": "091",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "091/132",
+    "cardNumber": "91/132",
     "cardName": "Lickitung",
-    "fullDisplayName": "Lickitung 091/132 Secret Wonders",
+    "fullDisplayName": "Lickitung 91/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1335,18 +1624,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-091-low.png",
-    "imageHighSrc": "cards/dp3-091-high.png"
+    "imageHighSrc": "cards/dp3-091-high.png",
+    "attacks": [
+      {
+        "name": "Lick",
+        "damage": "10"
+      },
+      {
+        "name": "Stomp",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3933",
-    "externalId": null,
+    "externalId": "dp3-90",
     "tcgdex_id": "dp3-90",
     "localId": "090",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "090/132",
+    "cardNumber": "90/132",
     "cardName": "Hoppip",
-    "fullDisplayName": "Hoppip 090/132 Secret Wonders",
+    "fullDisplayName": "Hoppip 90/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1368,18 +1667,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-090-low.png",
-    "imageHighSrc": "cards/dp3-090-high.png"
+    "imageHighSrc": "cards/dp3-090-high.png",
+    "attacks": [
+      {
+        "name": "Hover Heal",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3929",
-    "externalId": null,
+    "externalId": "dp3-89",
     "tcgdex_id": "dp3-89",
     "localId": "089",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "089/132",
+    "cardNumber": "89/132",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 089/132 Secret Wonders",
+    "fullDisplayName": "Growlithe 89/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1401,18 +1706,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-089-low.png",
-    "imageHighSrc": "cards/dp3-089-high.png"
+    "imageHighSrc": "cards/dp3-089-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Dig Claws",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3925",
-    "externalId": null,
+    "externalId": "dp3-88",
     "tcgdex_id": "dp3-88",
     "localId": "088",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "088/132",
+    "cardNumber": "88/132",
     "cardName": "Grimer",
-    "fullDisplayName": "Grimer 088/132 Secret Wonders",
+    "fullDisplayName": "Grimer 88/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1434,18 +1749,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-088-low.png",
-    "imageHighSrc": "cards/dp3-088-high.png"
+    "imageHighSrc": "cards/dp3-088-high.png",
+    "attacks": [
+      {
+        "name": "Mud Bomb",
+        "damage": "10"
+      },
+      {
+        "name": "Gunky",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3921",
-    "externalId": null,
+    "externalId": "dp3-87",
     "tcgdex_id": "dp3-87",
     "localId": "087",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "087/132",
+    "cardNumber": "87/132",
     "cardName": "Electabuzz",
-    "fullDisplayName": "Electabuzz 087/132 Secret Wonders",
+    "fullDisplayName": "Electabuzz 87/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1467,18 +1792,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-087-low.png",
-    "imageHighSrc": "cards/dp3-087-high.png"
+    "imageHighSrc": "cards/dp3-087-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Thunder",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3917",
-    "externalId": null,
+    "externalId": "dp3-86",
     "tcgdex_id": "dp3-86",
     "localId": "086",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "086/132",
+    "cardNumber": "86/132",
     "cardName": "Duskull",
-    "fullDisplayName": "Duskull 086/132 Secret Wonders",
+    "fullDisplayName": "Duskull 86/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1500,18 +1835,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-086-low.png",
-    "imageHighSrc": "cards/dp3-086-high.png"
+    "imageHighSrc": "cards/dp3-086-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      }
+    ],
+    "rules": "Reaper Cloth: Duskull can evolve during the turn you play it."
   },
   {
     "masterCardId": "3913",
-    "externalId": null,
+    "externalId": "dp3-85",
     "tcgdex_id": "dp3-85",
     "localId": "085",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "085/132",
+    "cardNumber": "85/132",
     "cardName": "Diglett",
-    "fullDisplayName": "Diglett 085/132 Secret Wonders",
+    "fullDisplayName": "Diglett 85/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1533,18 +1875,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-085-low.png",
-    "imageHighSrc": "cards/dp3-085-high.png"
+    "imageHighSrc": "cards/dp3-085-high.png",
+    "attacks": [
+      {
+        "name": "Down Draw",
+        "damage": null
+      },
+      {
+        "name": "Mud Spatter",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3909",
-    "externalId": null,
+    "externalId": "dp3-84",
     "tcgdex_id": "dp3-84",
     "localId": "084",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "084/132",
+    "cardNumber": "84/132",
     "cardName": "Corsola",
-    "fullDisplayName": "Corsola 084/132 Secret Wonders",
+    "fullDisplayName": "Corsola 84/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1566,18 +1918,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-084-low.png",
-    "imageHighSrc": "cards/dp3-084-high.png"
+    "imageHighSrc": "cards/dp3-084-high.png",
+    "attacks": [
+      {
+        "name": "Rally",
+        "damage": null
+      },
+      {
+        "name": "Hook",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3905",
-    "externalId": null,
+    "externalId": "dp3-83",
     "tcgdex_id": "dp3-83",
     "localId": "083",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "083/132",
+    "cardNumber": "83/132",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 083/132 Secret Wonders",
+    "fullDisplayName": "Clefairy 83/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1599,18 +1961,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-083-low.png",
-    "imageHighSrc": "cards/dp3-083-high.png"
+    "imageHighSrc": "cards/dp3-083-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "10×"
+      }
+    ],
+    "rules": "Moon Stone: Clefairy can evolve during the turn you play it."
   },
   {
     "masterCardId": "3901",
-    "externalId": null,
+    "externalId": "dp3-82",
     "tcgdex_id": "dp3-82",
     "localId": "082",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "082/132",
+    "cardNumber": "82/132",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 082/132 Secret Wonders",
+    "fullDisplayName": "Charmander 82/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1632,18 +2001,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-082-low.png",
-    "imageHighSrc": "cards/dp3-082-high.png"
+    "imageHighSrc": "cards/dp3-082-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Lava Burn",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3897",
-    "externalId": null,
+    "externalId": "dp3-81",
     "tcgdex_id": "dp3-81",
     "localId": "081",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "081/132",
+    "cardNumber": "81/132",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 081/132 Secret Wonders",
+    "fullDisplayName": "Carvanha 81/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1665,18 +2044,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-081-low.png",
-    "imageHighSrc": "cards/dp3-081-high.png"
+    "imageHighSrc": "cards/dp3-081-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "10"
+      },
+      {
+        "name": "Bite Away",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3893",
-    "externalId": null,
+    "externalId": "dp3-80",
     "tcgdex_id": "dp3-80",
     "localId": "080",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "080/132",
+    "cardNumber": "80/132",
     "cardName": "Burmy Trash Cloak",
-    "fullDisplayName": "Burmy Trash Cloak 080/132 Secret Wonders",
+    "fullDisplayName": "Burmy Trash Cloak 80/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1698,18 +2087,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-080-low.png",
-    "imageHighSrc": "cards/dp3-080-high.png"
+    "imageHighSrc": "cards/dp3-080-high.png",
+    "attacks": [
+      {
+        "name": "Trash Cloak Tackle",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3890",
-    "externalId": null,
+    "externalId": "dp3-79",
     "tcgdex_id": "dp3-79",
     "localId": "079",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "079/132",
+    "cardNumber": "79/132",
     "cardName": "Burmy Sandy Cloak",
-    "fullDisplayName": "Burmy Sandy Cloak 079/132 Secret Wonders",
+    "fullDisplayName": "Burmy Sandy Cloak 79/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1731,18 +2126,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-079-low.png",
-    "imageHighSrc": "cards/dp3-079-high.png"
+    "imageHighSrc": "cards/dp3-079-high.png",
+    "attacks": [
+      {
+        "name": "Sandy Cloak Tackle",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3885",
-    "externalId": null,
+    "externalId": "dp3-78",
     "tcgdex_id": "dp3-78",
     "localId": "078",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "078/132",
+    "cardNumber": "78/132",
     "cardName": "Burmy Plant Cloak",
-    "fullDisplayName": "Burmy Plant Cloak 078/132 Secret Wonders",
+    "fullDisplayName": "Burmy Plant Cloak 78/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1764,18 +2165,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-078-low.png",
-    "imageHighSrc": "cards/dp3-078-high.png"
+    "imageHighSrc": "cards/dp3-078-high.png",
+    "attacks": [
+      {
+        "name": "Plant Cloak Tackle",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3882",
-    "externalId": null,
+    "externalId": "dp3-77",
     "tcgdex_id": "dp3-77",
     "localId": "077",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "077/132",
+    "cardNumber": "77/132",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 077/132 Secret Wonders",
+    "fullDisplayName": "Bulbasaur 77/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1797,18 +2204,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-077-low.png",
-    "imageHighSrc": "cards/dp3-077-high.png"
+    "imageHighSrc": "cards/dp3-077-high.png",
+    "attacks": [
+      {
+        "name": "Shake Vine",
+        "damage": null
+      },
+      {
+        "name": "Bullet Seed",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3878",
-    "externalId": null,
+    "externalId": "dp3-76",
     "tcgdex_id": "dp3-76",
     "localId": "076",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "076/132",
+    "cardNumber": "76/132",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 076/132 Secret Wonders",
+    "fullDisplayName": "Bagon 76/132 Secret Wonders",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1830,18 +2247,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-076-low.png",
-    "imageHighSrc": "cards/dp3-076-high.png"
+    "imageHighSrc": "cards/dp3-076-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Rage",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3875",
-    "externalId": null,
+    "externalId": "dp3-75",
     "tcgdex_id": "dp3-75",
     "localId": "075",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "075/132",
+    "cardNumber": "75/132",
     "cardName": "Wartortle",
-    "fullDisplayName": "Wartortle 075/132 Secret Wonders",
+    "fullDisplayName": "Wartortle 75/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1863,18 +2290,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-075-low.png",
-    "imageHighSrc": "cards/dp3-075-high.png"
+    "imageHighSrc": "cards/dp3-075-high.png",
+    "attacks": [
+      {
+        "name": "Giant Wave",
+        "damage": "40"
+      },
+      {
+        "name": "Shell Attack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3871",
-    "externalId": null,
+    "externalId": "dp3-74",
     "tcgdex_id": "dp3-74",
     "localId": "074",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "074/132",
+    "cardNumber": "74/132",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 074/132 Secret Wonders",
+    "fullDisplayName": "Vibrava 74/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1896,18 +2333,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-074-low.png",
-    "imageHighSrc": "cards/dp3-074-high.png"
+    "imageHighSrc": "cards/dp3-074-high.png",
+    "attacks": [
+      {
+        "name": "Sand Wind",
+        "damage": null
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3866",
-    "externalId": null,
+    "externalId": "dp3-73",
     "tcgdex_id": "dp3-73",
     "localId": "073",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "073/132",
+    "cardNumber": "73/132",
     "cardName": "Venomoth",
-    "fullDisplayName": "Venomoth 073/132 Secret Wonders",
+    "fullDisplayName": "Venomoth 73/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1929,18 +2376,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-073-low.png",
-    "imageHighSrc": "cards/dp3-073-high.png"
+    "imageHighSrc": "cards/dp3-073-high.png",
+    "attacks": [
+      {
+        "name": "Disturbance Dive",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3862",
-    "externalId": null,
+    "externalId": "dp3-72",
     "tcgdex_id": "dp3-72",
     "localId": "072",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "072/132",
+    "cardNumber": "72/132",
     "cardName": "Unown [Z]",
-    "fullDisplayName": "Unown [Z] 072/132 Secret Wonders",
+    "fullDisplayName": "Unown [Z] 72/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1962,18 +2415,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp3-072-low.png",
-    "imageHighSrc": "cards/dp3-072-high.png"
+    "imageHighSrc": "cards/dp3-072-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3859",
-    "externalId": null,
+    "externalId": "dp3-71",
     "tcgdex_id": "dp3-71",
     "localId": "071",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "071/132",
+    "cardNumber": "71/132",
     "cardName": "Unown [X]",
-    "fullDisplayName": "Unown [X] 071/132 Secret Wonders",
+    "fullDisplayName": "Unown [X] 71/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1995,18 +2454,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp3-071-low.png",
-    "imageHighSrc": "cards/dp3-071-high.png"
+    "imageHighSrc": "cards/dp3-071-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3855",
-    "externalId": null,
+    "externalId": "dp3-70",
     "tcgdex_id": "dp3-70",
     "localId": "070",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "070/132",
+    "cardNumber": "70/132",
     "cardName": "Unown [O]",
-    "fullDisplayName": "Unown [O] 070/132 Secret Wonders",
+    "fullDisplayName": "Unown [O] 70/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2028,18 +2493,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp3-070-low.png",
-    "imageHighSrc": "cards/dp3-070-high.png"
+    "imageHighSrc": "cards/dp3-070-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3851",
-    "externalId": null,
+    "externalId": "dp3-69",
     "tcgdex_id": "dp3-69",
     "localId": "069",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "069/132",
+    "cardNumber": "69/132",
     "cardName": "Unown [N]",
-    "fullDisplayName": "Unown [N] 069/132 Secret Wonders",
+    "fullDisplayName": "Unown [N] 69/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2061,18 +2532,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp3-069-low.png",
-    "imageHighSrc": "cards/dp3-069-high.png"
+    "imageHighSrc": "cards/dp3-069-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3847",
-    "externalId": null,
+    "externalId": "dp3-68",
     "tcgdex_id": "dp3-68",
     "localId": "068",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "068/132",
+    "cardNumber": "68/132",
     "cardName": "Unown [K]",
-    "fullDisplayName": "Unown [K] 068/132 Secret Wonders",
+    "fullDisplayName": "Unown [K] 68/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2094,18 +2571,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp3-068-low.png",
-    "imageHighSrc": "cards/dp3-068-high.png"
+    "imageHighSrc": "cards/dp3-068-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3844",
-    "externalId": null,
+    "externalId": "dp3-67",
     "tcgdex_id": "dp3-67",
     "localId": "067",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "067/132",
+    "cardNumber": "67/132",
     "cardName": "Smoochum",
-    "fullDisplayName": "Smoochum 067/132 Secret Wonders",
+    "fullDisplayName": "Smoochum 67/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2127,18 +2610,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-067-low.png",
-    "imageHighSrc": "cards/dp3-067-high.png"
+    "imageHighSrc": "cards/dp3-067-high.png",
+    "attacks": [
+      {
+        "name": "Psykiss",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3840",
-    "externalId": null,
+    "externalId": "dp3-66",
     "tcgdex_id": "dp3-66",
     "localId": "066",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "066/132",
+    "cardNumber": "66/132",
     "cardName": "Smeargle",
-    "fullDisplayName": "Smeargle 066/132 Secret Wonders",
+    "fullDisplayName": "Smeargle 66/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2160,18 +2649,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-066-low.png",
-    "imageHighSrc": "cards/dp3-066-high.png"
+    "imageHighSrc": "cards/dp3-066-high.png",
+    "attacks": [
+      {
+        "name": "Color Pick",
+        "damage": null
+      },
+      {
+        "name": "Trace",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3836",
-    "externalId": null,
+    "externalId": "dp3-65",
     "tcgdex_id": "dp3-65",
     "localId": "065",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "065/132",
+    "cardNumber": "65/132",
     "cardName": "Skiploom",
-    "fullDisplayName": "Skiploom 065/132 Secret Wonders",
+    "fullDisplayName": "Skiploom 65/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2193,18 +2692,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-065-low.png",
-    "imageHighSrc": "cards/dp3-065-high.png"
+    "imageHighSrc": "cards/dp3-065-high.png",
+    "attacks": [
+      {
+        "name": "U-turn",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3832",
-    "externalId": null,
+    "externalId": "dp3-64",
     "tcgdex_id": "dp3-64",
     "localId": "064",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "064/132",
+    "cardNumber": "64/132",
     "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 064/132 Secret Wonders",
+    "fullDisplayName": "Shelgon 64/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2226,18 +2731,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-064-low.png",
-    "imageHighSrc": "cards/dp3-064-high.png"
+    "imageHighSrc": "cards/dp3-064-high.png",
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "damage": null
+      },
+      {
+        "name": "Protect Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3828",
-    "externalId": null,
+    "externalId": "dp3-63",
     "tcgdex_id": "dp3-63",
     "localId": "063",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "063/132",
+    "cardNumber": "63/132",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 063/132 Secret Wonders",
+    "fullDisplayName": "Sableye 63/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2259,18 +2774,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-063-low.png",
-    "imageHighSrc": "cards/dp3-063-high.png"
+    "imageHighSrc": "cards/dp3-063-high.png",
+    "attacks": [
+      {
+        "name": "Rummage",
+        "damage": null
+      },
+      {
+        "name": "Shadow Sneak",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3824",
-    "externalId": null,
+    "externalId": "dp3-62",
     "tcgdex_id": "dp3-62",
     "localId": "062",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "062/132",
+    "cardNumber": "62/132",
     "cardName": "Roselia",
-    "fullDisplayName": "Roselia 062/132 Secret Wonders",
+    "fullDisplayName": "Roselia 62/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2292,18 +2817,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-062-low.png",
-    "imageHighSrc": "cards/dp3-062-high.png"
+    "imageHighSrc": "cards/dp3-062-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3820",
-    "externalId": null,
+    "externalId": "dp3-61",
     "tcgdex_id": "dp3-61",
     "localId": "061",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "061/132",
+    "cardNumber": "61/132",
     "cardName": "Raticate",
-    "fullDisplayName": "Raticate 061/132 Secret Wonders",
+    "fullDisplayName": "Raticate 61/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2325,18 +2860,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-061-low.png",
-    "imageHighSrc": "cards/dp3-061-high.png"
+    "imageHighSrc": "cards/dp3-061-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw Off",
+        "damage": "10+"
+      },
+      {
+        "name": "Sneaky Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3816",
-    "externalId": null,
+    "externalId": "dp3-60",
     "tcgdex_id": "dp3-60",
     "localId": "060",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "060/132",
+    "cardNumber": "60/132",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 060/132 Secret Wonders",
+    "fullDisplayName": "Quagsire 60/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2358,18 +2903,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-060-low.png",
-    "imageHighSrc": "cards/dp3-060-high.png"
+    "imageHighSrc": "cards/dp3-060-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3812",
-    "externalId": null,
+    "externalId": "dp3-59",
     "tcgdex_id": "dp3-59",
     "localId": "059",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "059/132",
+    "cardNumber": "59/132",
     "cardName": "Pinsir",
-    "fullDisplayName": "Pinsir 059/132 Secret Wonders",
+    "fullDisplayName": "Pinsir 59/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2391,18 +2942,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-059-low.png",
-    "imageHighSrc": "cards/dp3-059-high.png"
+    "imageHighSrc": "cards/dp3-059-high.png",
+    "attacks": [
+      {
+        "name": "Grip and Squeeze",
+        "damage": "20"
+      },
+      {
+        "name": "Power Guillotine",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3808",
-    "externalId": null,
+    "externalId": "dp3-58",
     "tcgdex_id": "dp3-58",
     "localId": "058",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "058/132",
+    "cardNumber": "58/132",
     "cardName": "Pidgeotto",
-    "fullDisplayName": "Pidgeotto 058/132 Secret Wonders",
+    "fullDisplayName": "Pidgeotto 58/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2424,18 +2985,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-058-low.png",
-    "imageHighSrc": "cards/dp3-058-high.png"
+    "imageHighSrc": "cards/dp3-058-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3804",
-    "externalId": null,
+    "externalId": "dp3-57",
     "tcgdex_id": "dp3-57",
     "localId": "057",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "057/132",
+    "cardNumber": "57/132",
     "cardName": "Nidorino",
-    "fullDisplayName": "Nidorino 057/132 Secret Wonders",
+    "fullDisplayName": "Nidorino 57/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2457,18 +3028,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-057-low.png",
-    "imageHighSrc": "cards/dp3-057-high.png"
+    "imageHighSrc": "cards/dp3-057-high.png",
+    "attacks": [
+      {
+        "name": "Spirited Drill",
+        "damage": "20"
+      },
+      {
+        "name": "Poison Horn",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3801",
-    "externalId": null,
+    "externalId": "dp3-56",
     "tcgdex_id": "dp3-56",
     "localId": "056",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "056/132",
+    "cardNumber": "56/132",
     "cardName": "Muk",
-    "fullDisplayName": "Muk 056/132 Secret Wonders",
+    "fullDisplayName": "Muk 56/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2490,18 +3071,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-056-low.png",
-    "imageHighSrc": "cards/dp3-056-high.png"
+    "imageHighSrc": "cards/dp3-056-high.png",
+    "attacks": [
+      {
+        "name": "Panic Liquid",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3797",
-    "externalId": null,
+    "externalId": "dp3-55",
     "tcgdex_id": "dp3-55",
     "localId": "055",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "055/132",
+    "cardNumber": "55/132",
     "cardName": "Miltank",
-    "fullDisplayName": "Miltank 055/132 Secret Wonders",
+    "fullDisplayName": "Miltank 55/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2523,18 +3110,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-055-low.png",
-    "imageHighSrc": "cards/dp3-055-high.png"
+    "imageHighSrc": "cards/dp3-055-high.png",
+    "attacks": [
+      {
+        "name": "Healing Milk",
+        "damage": null
+      },
+      {
+        "name": "Continuous Tumble",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3793",
-    "externalId": null,
+    "externalId": "dp3-54",
     "tcgdex_id": "dp3-54",
     "localId": "054",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "054/132",
+    "cardNumber": "54/132",
     "cardName": "Lombre",
-    "fullDisplayName": "Lombre 054/132 Secret Wonders",
+    "fullDisplayName": "Lombre 54/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2556,18 +3153,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-054-low.png",
-    "imageHighSrc": "cards/dp3-054-high.png"
+    "imageHighSrc": "cards/dp3-054-high.png",
+    "attacks": [
+      {
+        "name": "Torment",
+        "damage": "20"
+      },
+      {
+        "name": "Absorb",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3789",
-    "externalId": null,
+    "externalId": "dp3-53",
     "tcgdex_id": "dp3-53",
     "localId": "053",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "053/132",
+    "cardNumber": "53/132",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 053/132 Secret Wonders",
+    "fullDisplayName": "Kirlia 53/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2589,18 +3196,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-053-low.png",
-    "imageHighSrc": "cards/dp3-053-high.png"
+    "imageHighSrc": "cards/dp3-053-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Research",
+        "damage": null
+      },
+      {
+        "name": "Telekinesis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3785",
-    "externalId": null,
+    "externalId": "dp3-52",
     "tcgdex_id": "dp3-52",
     "localId": "052",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "052/132",
+    "cardNumber": "52/132",
     "cardName": "Kecleon",
-    "fullDisplayName": "Kecleon 052/132 Secret Wonders",
+    "fullDisplayName": "Kecleon 52/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2622,18 +3239,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-052-low.png",
-    "imageHighSrc": "cards/dp3-052-high.png"
+    "imageHighSrc": "cards/dp3-052-high.png",
+    "attacks": [
+      {
+        "name": "Blind Scratch",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3781",
-    "externalId": null,
+    "externalId": "dp3-51",
     "tcgdex_id": "dp3-51",
     "localId": "051",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "051/132",
+    "cardNumber": "51/132",
     "cardName": "Ivysaur",
-    "fullDisplayName": "Ivysaur 051/132 Secret Wonders",
+    "fullDisplayName": "Ivysaur 51/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2655,18 +3278,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-051-low.png",
-    "imageHighSrc": "cards/dp3-051-high.png"
+    "imageHighSrc": "cards/dp3-051-high.png",
+    "attacks": [
+      {
+        "name": "Leech Seed",
+        "damage": "20"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3777",
-    "externalId": null,
+    "externalId": "dp3-50",
     "tcgdex_id": "dp3-50",
     "localId": "050",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "050/132",
+    "cardNumber": "50/132",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 050/132 Secret Wonders",
+    "fullDisplayName": "Flaaffy 50/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2688,18 +3321,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-050-low.png",
-    "imageHighSrc": "cards/dp3-050-high.png"
+    "imageHighSrc": "cards/dp3-050-high.png",
+    "attacks": [
+      {
+        "name": "Attract Current",
+        "damage": "10"
+      },
+      {
+        "name": "Electromagnetic Kick",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3773",
-    "externalId": null,
+    "externalId": "dp3-49",
     "tcgdex_id": "dp3-49",
     "localId": "049",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "049/132",
+    "cardNumber": "49/132",
     "cardName": "Farfetch'd",
-    "fullDisplayName": "Farfetch'd 049/132 Secret Wonders",
+    "fullDisplayName": "Farfetch'd 49/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2721,18 +3364,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-049-low.png",
-    "imageHighSrc": "cards/dp3-049-high.png"
+    "imageHighSrc": "cards/dp3-049-high.png",
+    "attacks": [
+      {
+        "name": "Swords Dance",
+        "damage": null
+      },
+      {
+        "name": "Leek Slap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3768",
-    "externalId": null,
+    "externalId": "dp3-48",
     "tcgdex_id": "dp3-48",
     "localId": "048",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "048/132",
+    "cardNumber": "48/132",
     "cardName": "Donphan",
-    "fullDisplayName": "Donphan 048/132 Secret Wonders",
+    "fullDisplayName": "Donphan 48/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2754,18 +3407,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-048-low.png",
-    "imageHighSrc": "cards/dp3-048-high.png"
+    "imageHighSrc": "cards/dp3-048-high.png",
+    "attacks": [
+      {
+        "name": "Rapid Spin",
+        "damage": "40"
+      },
+      {
+        "name": "Bash In",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "3764",
-    "externalId": null,
+    "externalId": "dp3-47",
     "tcgdex_id": "dp3-47",
     "localId": "047",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "047/132",
+    "cardNumber": "47/132",
     "cardName": "Cloyster",
-    "fullDisplayName": "Cloyster 047/132 Secret Wonders",
+    "fullDisplayName": "Cloyster 47/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2787,18 +3450,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-047-low.png",
-    "imageHighSrc": "cards/dp3-047-high.png"
+    "imageHighSrc": "cards/dp3-047-high.png",
+    "attacks": [
+      {
+        "name": "Withdraw",
+        "damage": null
+      },
+      {
+        "name": "Spine Missile",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3760",
-    "externalId": null,
+    "externalId": "dp3-46",
     "tcgdex_id": "dp3-46",
     "localId": "046",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "046/132",
+    "cardNumber": "46/132",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 046/132 Secret Wonders",
+    "fullDisplayName": "Charmeleon 46/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2820,18 +3493,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-046-low.png",
-    "imageHighSrc": "cards/dp3-046-high.png"
+    "imageHighSrc": "cards/dp3-046-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "20"
+      },
+      {
+        "name": "Flare Tail",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "3756",
-    "externalId": null,
+    "externalId": "dp3-45",
     "tcgdex_id": "dp3-45",
     "localId": "045",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "045/132",
+    "cardNumber": "45/132",
     "cardName": "Breloom",
-    "fullDisplayName": "Breloom 045/132 Secret Wonders",
+    "fullDisplayName": "Breloom 45/132 Secret Wonders",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2853,18 +3536,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-045-low.png",
-    "imageHighSrc": "cards/dp3-045-high.png"
+    "imageHighSrc": "cards/dp3-045-high.png",
+    "attacks": [
+      {
+        "name": "Drain Punch",
+        "damage": "40"
+      },
+      {
+        "name": "Homing Uppercut",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3752",
-    "externalId": null,
+    "externalId": "dp3-44",
     "tcgdex_id": "dp3-44",
     "localId": "044",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "044/132",
+    "cardNumber": "44/132",
     "cardName": "Xatu",
-    "fullDisplayName": "Xatu 044/132 Secret Wonders",
+    "fullDisplayName": "Xatu 44/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2886,18 +3579,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-044-low.png",
-    "imageHighSrc": "cards/dp3-044-high.png"
+    "imageHighSrc": "cards/dp3-044-high.png",
+    "attacks": [
+      {
+        "name": "Energy Singe",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3748",
-    "externalId": null,
+    "externalId": "dp3-43",
     "tcgdex_id": "dp3-43",
     "localId": "043",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "043/132",
+    "cardNumber": "43/132",
     "cardName": "Wormadam Trash Cloak",
-    "fullDisplayName": "Wormadam Trash Cloak 043/132 Secret Wonders",
+    "fullDisplayName": "Wormadam Trash Cloak 43/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2919,18 +3618,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-043-low.png",
-    "imageHighSrc": "cards/dp3-043-high.png"
+    "imageHighSrc": "cards/dp3-043-high.png",
+    "attacks": [
+      {
+        "name": "Iron Tackle",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3744",
-    "externalId": null,
+    "externalId": "dp3-42",
     "tcgdex_id": "dp3-42",
     "localId": "042",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "042/132",
+    "cardNumber": "42/132",
     "cardName": "Wormadam Sandy Cloak",
-    "fullDisplayName": "Wormadam Sandy Cloak 042/132 Secret Wonders",
+    "fullDisplayName": "Wormadam Sandy Cloak 42/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2952,18 +3657,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-042-low.png",
-    "imageHighSrc": "cards/dp3-042-high.png"
+    "imageHighSrc": "cards/dp3-042-high.png",
+    "attacks": [
+      {
+        "name": "Push Over",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3740",
-    "externalId": null,
+    "externalId": "dp3-41",
     "tcgdex_id": "dp3-41",
     "localId": "041",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "041/132",
+    "cardNumber": "41/132",
     "cardName": "Wormadam Plant Cloak",
-    "fullDisplayName": "Wormadam Plant Cloak 041/132 Secret Wonders",
+    "fullDisplayName": "Wormadam Plant Cloak 41/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2985,18 +3696,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-041-low.png",
-    "imageHighSrc": "cards/dp3-041-high.png"
+    "imageHighSrc": "cards/dp3-041-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Hurricane",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3736",
-    "externalId": null,
+    "externalId": "dp3-40",
     "tcgdex_id": "dp3-40",
     "localId": "040",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "040/132",
+    "cardNumber": "40/132",
     "cardName": "Weavile",
-    "fullDisplayName": "Weavile 040/132 Secret Wonders",
+    "fullDisplayName": "Weavile 40/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3018,18 +3735,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-040-low.png",
-    "imageHighSrc": "cards/dp3-040-high.png"
+    "imageHighSrc": "cards/dp3-040-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Charge",
+        "damage": null
+      },
+      {
+        "name": "Chip Off",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3732",
-    "externalId": null,
+    "externalId": "dp3-39",
     "tcgdex_id": "dp3-39",
     "localId": "039",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "039/132",
+    "cardNumber": "39/132",
     "cardName": "Unown [S]",
-    "fullDisplayName": "Unown [S] 039/132 Secret Wonders",
+    "fullDisplayName": "Unown [S] 39/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3051,18 +3778,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp3-039-low.png",
-    "imageHighSrc": "cards/dp3-039-high.png"
+    "imageHighSrc": "cards/dp3-039-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3728",
-    "externalId": null,
+    "externalId": "dp3-38",
     "tcgdex_id": "dp3-38",
     "localId": "038",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "038/132",
+    "cardNumber": "38/132",
     "cardName": "Sunflora",
-    "fullDisplayName": "Sunflora 038/132 Secret Wonders",
+    "fullDisplayName": "Sunflora 38/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3084,18 +3817,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-038-low.png",
-    "imageHighSrc": "cards/dp3-038-high.png"
+    "imageHighSrc": "cards/dp3-038-high.png",
+    "attacks": [
+      {
+        "name": "Petal Dance",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "3724",
-    "externalId": null,
+    "externalId": "dp3-37",
     "tcgdex_id": "dp3-37",
     "localId": "037",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "037/132",
+    "cardNumber": "37/132",
     "cardName": "Sharpedo",
-    "fullDisplayName": "Sharpedo 037/132 Secret Wonders",
+    "fullDisplayName": "Sharpedo 37/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3117,18 +3856,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-037-low.png",
-    "imageHighSrc": "cards/dp3-037-high.png"
+    "imageHighSrc": "cards/dp3-037-high.png",
+    "attacks": [
+      {
+        "name": "Strike Wound",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3720",
-    "externalId": null,
+    "externalId": "dp3-36",
     "tcgdex_id": "dp3-36",
     "localId": "036",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "036/132",
+    "cardNumber": "36/132",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 036/132 Secret Wonders",
+    "fullDisplayName": "Plusle 36/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3150,18 +3895,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-036-low.png",
-    "imageHighSrc": "cards/dp3-036-high.png"
+    "imageHighSrc": "cards/dp3-036-high.png",
+    "attacks": [
+      {
+        "name": "Tag Play +",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3716",
-    "externalId": null,
+    "externalId": "dp3-35",
     "tcgdex_id": "dp3-35",
     "localId": "035",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "035/132",
+    "cardNumber": "35/132",
     "cardName": "Pidgeot",
-    "fullDisplayName": "Pidgeot 035/132 Secret Wonders",
+    "fullDisplayName": "Pidgeot 35/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3183,18 +3934,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-035-low.png",
-    "imageHighSrc": "cards/dp3-035-high.png"
+    "imageHighSrc": "cards/dp3-035-high.png",
+    "attacks": [
+      {
+        "name": "Mirror Move",
+        "damage": null
+      },
+      {
+        "name": "Whirlwind",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3712",
-    "externalId": null,
+    "externalId": "dp3-34",
     "tcgdex_id": "dp3-34",
     "localId": "034",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "034/132",
+    "cardNumber": "34/132",
     "cardName": "Nidoking",
-    "fullDisplayName": "Nidoking 034/132 Secret Wonders",
+    "fullDisplayName": "Nidoking 34/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3216,18 +3977,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-034-low.png",
-    "imageHighSrc": "cards/dp3-034-high.png"
+    "imageHighSrc": "cards/dp3-034-high.png",
+    "attacks": [
+      {
+        "name": "Poison Rub",
+        "damage": "20"
+      },
+      {
+        "name": "Pride Attack",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3708",
-    "externalId": null,
+    "externalId": "dp3-33",
     "tcgdex_id": "dp3-33",
     "localId": "033",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "033/132",
+    "cardNumber": "33/132",
     "cardName": "Mothim",
-    "fullDisplayName": "Mothim 033/132 Secret Wonders",
+    "fullDisplayName": "Mothim 33/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3249,18 +4020,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-033-low.png",
-    "imageHighSrc": "cards/dp3-033-high.png"
+    "imageHighSrc": "cards/dp3-033-high.png",
+    "attacks": [
+      {
+        "name": "Silver Wind",
+        "damage": null
+      },
+      {
+        "name": "Raging Scales",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3704",
-    "externalId": null,
+    "externalId": "dp3-32",
     "tcgdex_id": "dp3-32",
     "localId": "032",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "032/132",
+    "cardNumber": "32/132",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 032/132 Secret Wonders",
+    "fullDisplayName": "Minun 32/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3282,18 +4063,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-032-low.png",
-    "imageHighSrc": "cards/dp3-032-high.png"
+    "imageHighSrc": "cards/dp3-032-high.png",
+    "attacks": [
+      {
+        "name": "Tag Play —",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3697",
-    "externalId": null,
+    "externalId": "dp3-31",
     "tcgdex_id": "dp3-31",
     "localId": "031",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "031/132",
+    "cardNumber": "31/132",
     "cardName": "Magmortar",
-    "fullDisplayName": "Magmortar 031/132 Secret Wonders",
+    "fullDisplayName": "Magmortar 31/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3315,18 +4102,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-031-low.png",
-    "imageHighSrc": "cards/dp3-031-high.png"
+    "imageHighSrc": "cards/dp3-031-high.png",
+    "attacks": [
+      {
+        "name": "Flame Blast",
+        "damage": "20×"
+      },
+      {
+        "name": "Fireball Bazooka",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3692",
-    "externalId": null,
+    "externalId": "dp3-30",
     "tcgdex_id": "dp3-30",
     "localId": "030",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "030/132",
+    "cardNumber": "30/132",
     "cardName": "Jynx",
-    "fullDisplayName": "Jynx 030/132 Secret Wonders",
+    "fullDisplayName": "Jynx 30/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3348,18 +4145,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-030-low.png",
-    "imageHighSrc": "cards/dp3-030-high.png"
+    "imageHighSrc": "cards/dp3-030-high.png",
+    "attacks": [
+      {
+        "name": "Icy Kiss",
+        "damage": "30"
+      },
+      {
+        "name": "Lovely Kiss",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3687",
-    "externalId": null,
+    "externalId": "dp3-29",
     "tcgdex_id": "dp3-29",
     "localId": "029",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "029/132",
+    "cardNumber": "29/132",
     "cardName": "Golem",
-    "fullDisplayName": "Golem 029/132 Secret Wonders",
+    "fullDisplayName": "Golem 29/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3381,18 +4188,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-029-low.png",
-    "imageHighSrc": "cards/dp3-029-high.png"
+    "imageHighSrc": "cards/dp3-029-high.png",
+    "attacks": [
+      {
+        "name": "Double Throw",
+        "damage": null
+      },
+      {
+        "name": "Megaton Rock",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3682",
-    "externalId": null,
+    "externalId": "dp3-28",
     "tcgdex_id": "dp3-28",
     "localId": "028",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "028/132",
+    "cardNumber": "28/132",
     "cardName": "Golduck",
-    "fullDisplayName": "Golduck 028/132 Secret Wonders",
+    "fullDisplayName": "Golduck 28/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3414,18 +4231,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-028-low.png",
-    "imageHighSrc": "cards/dp3-028-high.png"
+    "imageHighSrc": "cards/dp3-028-high.png",
+    "attacks": [
+      {
+        "name": "Encore",
+        "damage": "20"
+      },
+      {
+        "name": "Break Beam",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3678",
-    "externalId": null,
+    "externalId": "dp3-27",
     "tcgdex_id": "dp3-27",
     "localId": "027",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "027/132",
+    "cardNumber": "27/132",
     "cardName": "Furret",
-    "fullDisplayName": "Furret 027/132 Secret Wonders",
+    "fullDisplayName": "Furret 27/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3447,18 +4274,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-027-low.png",
-    "imageHighSrc": "cards/dp3-027-high.png"
+    "imageHighSrc": "cards/dp3-027-high.png",
+    "attacks": [
+      {
+        "name": "Keen Eye",
+        "damage": null
+      },
+      {
+        "name": "Baton Pass",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3672",
-    "externalId": null,
+    "externalId": "dp3-26",
     "tcgdex_id": "dp3-26",
     "localId": "026",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "026/132",
+    "cardNumber": "26/132",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 026/132 Secret Wonders",
+    "fullDisplayName": "Electrode 26/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3480,18 +4317,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-026-low.png",
-    "imageHighSrc": "cards/dp3-026-high.png"
+    "imageHighSrc": "cards/dp3-026-high.png",
+    "attacks": [
+      {
+        "name": "Ion Blast",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3669",
-    "externalId": null,
+    "externalId": "dp3-25",
     "tcgdex_id": "dp3-25",
     "localId": "025",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "025/132",
+    "cardNumber": "25/132",
     "cardName": "Electivire",
-    "fullDisplayName": "Electivire 025/132 Secret Wonders",
+    "fullDisplayName": "Electivire 25/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3513,18 +4356,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-025-low.png",
-    "imageHighSrc": "cards/dp3-025-high.png"
+    "imageHighSrc": "cards/dp3-025-high.png",
+    "attacks": [
+      {
+        "name": "Discharge",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "3664",
-    "externalId": null,
+    "externalId": "dp3-24",
     "tcgdex_id": "dp3-24",
     "localId": "024",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "024/132",
+    "cardNumber": "24/132",
     "cardName": "Dugtrio",
-    "fullDisplayName": "Dugtrio 024/132 Secret Wonders",
+    "fullDisplayName": "Dugtrio 24/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3546,18 +4395,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-024-low.png",
-    "imageHighSrc": "cards/dp3-024-high.png"
+    "imageHighSrc": "cards/dp3-024-high.png",
+    "attacks": [
+      {
+        "name": "Dig Trap",
+        "damage": null
+      },
+      {
+        "name": "Pit Trap",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "3659",
-    "externalId": null,
+    "externalId": "dp3-23",
     "tcgdex_id": "dp3-23",
     "localId": "023",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "023/132",
+    "cardNumber": "23/132",
     "cardName": "Banette",
-    "fullDisplayName": "Banette 023/132 Secret Wonders",
+    "fullDisplayName": "Banette 23/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3579,18 +4438,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-023-low.png",
-    "imageHighSrc": "cards/dp3-023-high.png"
+    "imageHighSrc": "cards/dp3-023-high.png",
+    "attacks": [
+      {
+        "name": "Ghost Head",
+        "damage": null
+      },
+      {
+        "name": "Spiteful Pain",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3654",
-    "externalId": null,
+    "externalId": "dp3-22",
     "tcgdex_id": "dp3-22",
     "localId": "022",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "022/132",
+    "cardNumber": "22/132",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 022/132 Secret Wonders",
+    "fullDisplayName": "Arcanine 22/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3612,18 +4481,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-022-low.png",
-    "imageHighSrc": "cards/dp3-022-high.png"
+    "imageHighSrc": "cards/dp3-022-high.png",
+    "attacks": [
+      {
+        "name": "Inferno Onrush",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "3649",
-    "externalId": null,
+    "externalId": "dp3-21",
     "tcgdex_id": "dp3-21",
     "localId": "021",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "021/132",
+    "cardNumber": "21/132",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 021/132 Secret Wonders",
+    "fullDisplayName": "Absol 21/132 Secret Wonders",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3645,18 +4520,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-021-low.png",
-    "imageHighSrc": "cards/dp3-021-high.png"
+    "imageHighSrc": "cards/dp3-021-high.png",
+    "attacks": [
+      {
+        "name": "Baleful Wind",
+        "damage": null
+      },
+      {
+        "name": "Raid",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3645",
-    "externalId": null,
+    "externalId": "dp3-20",
     "tcgdex_id": "dp3-20",
     "localId": "020",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "020/132",
+    "cardNumber": "20/132",
     "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 020/132 Secret Wonders",
+    "fullDisplayName": "Venusaur 20/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3678,18 +4563,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-020-low.png",
-    "imageHighSrc": "cards/dp3-020-high.png"
+    "imageHighSrc": "cards/dp3-020-high.png",
+    "attacks": [
+      {
+        "name": "Giant Bloom",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3640",
-    "externalId": null,
+    "externalId": "dp3-19",
     "tcgdex_id": "dp3-19",
     "localId": "019",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "019/132",
+    "cardNumber": "19/132",
     "cardName": "Suicune",
-    "fullDisplayName": "Suicune 019/132 Secret Wonders",
+    "fullDisplayName": "Suicune 19/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3711,18 +4602,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-019-low.png",
-    "imageHighSrc": "cards/dp3-019-high.png"
+    "imageHighSrc": "cards/dp3-019-high.png",
+    "attacks": [
+      {
+        "name": "Cure Stream",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3636",
-    "externalId": null,
+    "externalId": "dp3-18",
     "tcgdex_id": "dp3-18",
     "localId": "018",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "018/132",
+    "cardNumber": "18/132",
     "cardName": "Salamence",
-    "fullDisplayName": "Salamence 018/132 Secret Wonders",
+    "fullDisplayName": "Salamence 18/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3744,18 +4641,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-018-low.png",
-    "imageHighSrc": "cards/dp3-018-high.png"
+    "imageHighSrc": "cards/dp3-018-high.png",
+    "attacks": [
+      {
+        "name": "Direct Hit",
+        "damage": "50"
+      },
+      {
+        "name": "Dragon Finish",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3631",
-    "externalId": null,
+    "externalId": "dp3-17",
     "tcgdex_id": "dp3-17",
     "localId": "017",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "017/132",
+    "cardNumber": "17/132",
     "cardName": "Roserade",
-    "fullDisplayName": "Roserade 017/132 Secret Wonders",
+    "fullDisplayName": "Roserade 17/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3777,18 +4684,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-017-low.png",
-    "imageHighSrc": "cards/dp3-017-high.png"
+    "imageHighSrc": "cards/dp3-017-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": "20"
+      },
+      {
+        "name": "Magical Leaf",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3627",
-    "externalId": null,
+    "externalId": "dp3-16",
     "tcgdex_id": "dp3-16",
     "localId": "016",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "016/132",
+    "cardNumber": "16/132",
     "cardName": "Raikou",
-    "fullDisplayName": "Raikou 016/132 Secret Wonders",
+    "fullDisplayName": "Raikou 16/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3810,18 +4727,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-016-low.png",
-    "imageHighSrc": "cards/dp3-016-high.png"
+    "imageHighSrc": "cards/dp3-016-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Climb",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "3622",
-    "externalId": null,
+    "externalId": "dp3-15",
     "tcgdex_id": "dp3-15",
     "localId": "015",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "015/132",
+    "cardNumber": "15/132",
     "cardName": "Mew",
-    "fullDisplayName": "Mew 015/132 Secret Wonders",
+    "fullDisplayName": "Mew 15/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3843,18 +4766,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-015-low.png",
-    "imageHighSrc": "cards/dp3-015-high.png"
+    "imageHighSrc": "cards/dp3-015-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Balance",
+        "damage": null
+      },
+      {
+        "name": "Re-creation",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3617",
-    "externalId": null,
+    "externalId": "dp3-14",
     "tcgdex_id": "dp3-14",
     "localId": "014",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "014/132",
+    "cardNumber": "14/132",
     "cardName": "Lugia",
-    "fullDisplayName": "Lugia 014/132 Secret Wonders",
+    "fullDisplayName": "Lugia 14/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3876,18 +4809,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-014-low.png",
-    "imageHighSrc": "cards/dp3-014-high.png"
+    "imageHighSrc": "cards/dp3-014-high.png",
+    "attacks": [
+      {
+        "name": "Silver Wing",
+        "damage": "20"
+      },
+      {
+        "name": "Psychic Destruction",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "3604",
-    "externalId": null,
+    "externalId": "dp3-13",
     "tcgdex_id": "dp3-13",
     "localId": "013",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "013/132",
+    "cardNumber": "13/132",
     "cardName": "Ludicolo",
-    "fullDisplayName": "Ludicolo 013/132 Secret Wonders",
+    "fullDisplayName": "Ludicolo 13/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3909,18 +4852,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-013-low.png",
-    "imageHighSrc": "cards/dp3-013-high.png"
+    "imageHighSrc": "cards/dp3-013-high.png",
+    "attacks": [
+      {
+        "name": "Nature Power",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3599",
-    "externalId": null,
+    "externalId": "dp3-12",
     "tcgdex_id": "dp3-12",
     "localId": "012",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "012/132",
+    "cardNumber": "12/132",
     "cardName": "Lickilicky",
-    "fullDisplayName": "Lickilicky 012/132 Secret Wonders",
+    "fullDisplayName": "Lickilicky 12/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3942,18 +4891,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-012-low.png",
-    "imageHighSrc": "cards/dp3-012-high.png"
+    "imageHighSrc": "cards/dp3-012-high.png",
+    "attacks": [
+      {
+        "name": "Tongue Reel",
+        "damage": null
+      },
+      {
+        "name": "Boundless Power",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3592",
-    "externalId": null,
+    "externalId": "dp3-11",
     "tcgdex_id": "dp3-11",
     "localId": "011",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "011/132",
+    "cardNumber": "11/132",
     "cardName": "Jumpluff",
-    "fullDisplayName": "Jumpluff 011/132 Secret Wonders",
+    "fullDisplayName": "Jumpluff 11/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3975,18 +4934,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-011-low.png",
-    "imageHighSrc": "cards/dp3-011-high.png"
+    "imageHighSrc": "cards/dp3-011-high.png",
+    "attacks": [
+      {
+        "name": "Cottonweed Punch",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3585",
-    "externalId": null,
+    "externalId": "dp3-10",
     "tcgdex_id": "dp3-10",
     "localId": "010",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "010/132",
+    "cardNumber": "10/132",
     "cardName": "Ho-Oh",
-    "fullDisplayName": "Ho-Oh 010/132 Secret Wonders",
+    "fullDisplayName": "Ho-Oh 10/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4008,18 +4973,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-010-low.png",
-    "imageHighSrc": "cards/dp3-010-high.png"
+    "imageHighSrc": "cards/dp3-010-high.png",
+    "attacks": [
+      {
+        "name": "Rainbow Wing",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3580",
-    "externalId": null,
+    "externalId": "dp3-9",
     "tcgdex_id": "dp3-9",
     "localId": "009",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "009/132",
+    "cardNumber": "9/132",
     "cardName": "Gastrodon West Sea",
-    "fullDisplayName": "Gastrodon West Sea 009/132 Secret Wonders",
+    "fullDisplayName": "Gastrodon West Sea 9/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4041,18 +5012,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-009-low.png",
-    "imageHighSrc": "cards/dp3-009-high.png"
+    "imageHighSrc": "cards/dp3-009-high.png",
+    "attacks": [
+      {
+        "name": "Raging Flood",
+        "damage": "20+"
+      },
+      {
+        "name": "Wild Waves",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3573",
-    "externalId": null,
+    "externalId": "dp3-8",
     "tcgdex_id": "dp3-8",
     "localId": "008",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "008/132",
+    "cardNumber": "8/132",
     "cardName": "Gastrodon East Sea",
-    "fullDisplayName": "Gastrodon East Sea 008/132 Secret Wonders",
+    "fullDisplayName": "Gastrodon East Sea 8/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4074,18 +5055,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-008-low.png",
-    "imageHighSrc": "cards/dp3-008-high.png"
+    "imageHighSrc": "cards/dp3-008-high.png",
+    "attacks": [
+      {
+        "name": "Dwindling Wave",
+        "damage": "80-"
+      }
+    ]
   },
   {
     "masterCardId": "3568",
-    "externalId": null,
+    "externalId": "dp3-7",
     "tcgdex_id": "dp3-7",
     "localId": "007",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "007/132",
+    "cardNumber": "7/132",
     "cardName": "Gardevoir",
-    "fullDisplayName": "Gardevoir 007/132 Secret Wonders",
+    "fullDisplayName": "Gardevoir 7/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4107,18 +5094,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-007-low.png",
-    "imageHighSrc": "cards/dp3-007-high.png"
+    "imageHighSrc": "cards/dp3-007-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Lock",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3561",
-    "externalId": null,
+    "externalId": "dp3-6",
     "tcgdex_id": "dp3-6",
     "localId": "006",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "006/132",
+    "cardNumber": "6/132",
     "cardName": "Gallade",
-    "fullDisplayName": "Gallade 006/132 Secret Wonders",
+    "fullDisplayName": "Gallade 6/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4140,18 +5133,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-006-low.png",
-    "imageHighSrc": "cards/dp3-006-high.png"
+    "imageHighSrc": "cards/dp3-006-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Blade",
+        "damage": null
+      },
+      {
+        "name": "Psychic Cut",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3556",
-    "externalId": null,
+    "externalId": "dp3-5",
     "tcgdex_id": "dp3-5",
     "localId": "005",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "005/132",
+    "cardNumber": "5/132",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 005/132 Secret Wonders",
+    "fullDisplayName": "Flygon 5/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4173,18 +5176,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-005-low.png",
-    "imageHighSrc": "cards/dp3-005-high.png"
+    "imageHighSrc": "cards/dp3-005-high.png",
+    "attacks": [
+      {
+        "name": "Sand Sonic",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3550",
-    "externalId": null,
+    "externalId": "dp3-4",
     "tcgdex_id": "dp3-4",
     "localId": "004",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "004/132",
+    "cardNumber": "4/132",
     "cardName": "Entei",
-    "fullDisplayName": "Entei 004/132 Secret Wonders",
+    "fullDisplayName": "Entei 4/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4206,18 +5215,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-004-low.png",
-    "imageHighSrc": "cards/dp3-004-high.png"
+    "imageHighSrc": "cards/dp3-004-high.png",
+    "attacks": [
+      {
+        "name": "Blaze Roar",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3542",
-    "externalId": null,
+    "externalId": "dp3-3",
     "tcgdex_id": "dp3-3",
     "localId": "003",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "003/132",
+    "cardNumber": "3/132",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 003/132 Secret Wonders",
+    "fullDisplayName": "Charizard 3/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4239,18 +5254,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-003-low.png",
-    "imageHighSrc": "cards/dp3-003-high.png"
+    "imageHighSrc": "cards/dp3-003-high.png",
+    "attacks": [
+      {
+        "name": "Blast Burn",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "3537",
-    "externalId": null,
+    "externalId": "dp3-2",
     "tcgdex_id": "dp3-2",
     "localId": "002",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "002/132",
+    "cardNumber": "2/132",
     "cardName": "Blastoise",
-    "fullDisplayName": "Blastoise 002/132 Secret Wonders",
+    "fullDisplayName": "Blastoise 2/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4272,18 +5293,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-002-low.png",
-    "imageHighSrc": "cards/dp3-002-high.png"
+    "imageHighSrc": "cards/dp3-002-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "3530",
-    "externalId": null,
+    "externalId": "dp3-1",
     "tcgdex_id": "dp3-1",
     "localId": "001",
     "setCode": "dp3",
     "setTcgdexId": "dp3",
-    "cardNumber": "001/132",
+    "cardNumber": "1/132",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 001/132 Secret Wonders",
+    "fullDisplayName": "Ampharos 1/132 Secret Wonders",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4305,6 +5332,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp3-001-low.png",
-    "imageHighSrc": "cards/dp3-001-high.png"
+    "imageHighSrc": "cards/dp3-001-high.png",
+    "attacks": [
+      {
+        "name": "Cluster Bolt",
+        "damage": "70"
+      }
+    ]
   }
 ]

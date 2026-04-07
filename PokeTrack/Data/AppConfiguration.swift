@@ -257,4 +257,55 @@ enum AppConfiguration {
         }
         return nil
     }
+
+    // MARK: - Card pricing file stems
+
+    /// Stems to try for `pricing/card-pricing/{stem}.json` when catalog `setCode` does not match your export filename.
+    /// - Example: `me03` vs `me3` (leading zeros in the letter+digits prefix).
+    /// - Example: dotted TCGdex ids like **`me02.5`** vs Scrydex filenames using **`pt`** instead of **`.`** (`me2pt5.json`, `me02pt5.json`).
+    static func pricingFileStemVariants(for setCode: String) -> [String] {
+        let s = setCode.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
+        var stems: [String] = []
+        func add(_ x: String) {
+            if !stems.contains(x) { stems.append(x) }
+        }
+        add(s)
+        if let regex = try? NSRegularExpression(pattern: #"^([a-z]+)0+(\d+)$"#, options: []),
+           let m = regex.firstMatch(in: s, range: NSRange(s.startIndex..., in: s)),
+           m.numberOfRanges == 3,
+           let r1 = Range(m.range(at: 1), in: s),
+           let r2 = Range(m.range(at: 2), in: s) {
+            let letters = String(s[r1])
+            let digits = String(s[r2])
+            if let n = Int(digits) {
+                add("\(letters)\(n)")
+            }
+        }
+        for v in dottedSetCodePtNotationVariants(s) {
+            add(v)
+        }
+        return stems
+    }
+
+    /// `me02.5` → `me2pt5` (collapse trailing digits before the dot, then `pt`) and `me02pt5` (literal dot → `pt`).
+    private static func dottedSetCodePtNotationVariants(_ s: String) -> [String] {
+        guard let dot = s.firstIndex(of: ".") else { return [] }
+        let left = String(s[..<dot])
+        let right = String(s[s.index(after: dot)...])
+        guard !left.isEmpty, !right.isEmpty, right.allSatisfy(\.isNumber) else { return [] }
+        let literalPt = left + "pt" + right
+        var collapsedLeft = left
+        if let range = left.range(of: #"\d+$"#, options: .regularExpression) {
+            let prefix = String(left[..<range.lowerBound])
+            let tail = String(left[range])
+            if let n = Int(tail) {
+                collapsedLeft = prefix + String(n)
+            }
+        }
+        let collapsedPt = collapsedLeft + "pt" + right
+        if collapsedPt == literalPt {
+            return [literalPt]
+        }
+        return [collapsedPt, literalPt]
+    }
 }

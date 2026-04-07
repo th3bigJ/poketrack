@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "10979",
-    "externalId": null,
+    "externalId": "sm11-258",
     "tcgdex_id": "sm11-258",
     "localId": "258",
     "setCode": "sm11",
@@ -26,11 +26,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-258-low.png",
-    "imageHighSrc": "cards/sm11-258-high.png"
+    "imageHighSrc": "cards/sm11-258-high.png",
+    "rules": "This card provides Colorless Energy.\n\nThe Pokémon this card is attached to has no Weakness."
   },
   {
     "masterCardId": "10977",
-    "externalId": null,
+    "externalId": "sm11-257",
     "tcgdex_id": "sm11-257",
     "localId": "257",
     "setCode": "sm11",
@@ -55,11 +56,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-257-low.png",
-    "imageHighSrc": "cards/sm11-257-high.png"
+    "imageHighSrc": "cards/sm11-257-high.png",
+    "rules": "This card provides Colorless Energy.\n\nIf this card is discarded from play, put it into your hand instead of the discard pile."
   },
   {
     "masterCardId": "10975",
-    "externalId": null,
+    "externalId": "sm11-256",
     "tcgdex_id": "sm11-256",
     "localId": "256",
     "setCode": "sm11",
@@ -84,11 +86,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-256-low.png",
-    "imageHighSrc": "cards/sm11-256-high.png"
+    "imageHighSrc": "cards/sm11-256-high.png",
+    "rules": "Once during each player's turn, that player may discard a card from their hand. If they do, that player searches their deck for a basic Energy card, reveals it, and puts it into their hand. Then, that player shuffles their deck.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10973",
-    "externalId": null,
+    "externalId": "sm11-255",
     "tcgdex_id": "sm11-255",
     "localId": "255",
     "setCode": "sm11",
@@ -113,11 +116,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-255-low.png",
-    "imageHighSrc": "cards/sm11-255-high.png"
+    "imageHighSrc": "cards/sm11-255-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Retreat Cost of the Pokémon this card is attached to is Colorless less.\n\nIf this card is discarded from play, put it into your hand instead of the discard pile.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10971",
-    "externalId": null,
+    "externalId": "sm11-254",
     "tcgdex_id": "sm11-254",
     "localId": "254",
     "setCode": "sm11",
@@ -142,11 +146,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-254-low.png",
-    "imageHighSrc": "cards/sm11-254-high.png"
+    "imageHighSrc": "cards/sm11-254-high.png",
+    "rules": "Move up to 2 Energy from 1 of your TAG TEAM Pokémon to another of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10969",
-    "externalId": null,
+    "externalId": "sm11-253",
     "tcgdex_id": "sm11-253",
     "localId": "253",
     "setCode": "sm11",
@@ -171,11 +176,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-253-low.png",
-    "imageHighSrc": "cards/sm11-253-high.png"
+    "imageHighSrc": "cards/sm11-253-high.png",
+    "rules": "Your opponent shuffles their hand into their deck and draws a card for each of their remaining Prize cards.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10967",
-    "externalId": null,
+    "externalId": "sm11-252",
     "tcgdex_id": "sm11-252",
     "localId": "252",
     "setCode": "sm11",
@@ -200,11 +206,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-252-low.png",
-    "imageHighSrc": "cards/sm11-252-high.png"
+    "imageHighSrc": "cards/sm11-252-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf you have more Prize cards remaining than your opponent, the attacks of the Pokémon this card is attached to cost Fighting less.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10965",
-    "externalId": null,
+    "externalId": "sm11-251",
     "tcgdex_id": "sm11-251",
     "localId": "251",
     "setCode": "sm11",
@@ -229,11 +236,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-251-low.png",
-    "imageHighSrc": "cards/sm11-251-high.png"
+    "imageHighSrc": "cards/sm11-251-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf this card is attached to 1 of your Pokémon, discard it at the end of your opponent's turn.\n\nIf the Pokémon this card is attached to is your Active Pokémon and takes 180 or more damage from an opponent's attack (even if this Pokémon is Knocked Out), put 10 damage counters on the Attacking Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10963",
-    "externalId": null,
+    "externalId": "sm11-250",
     "tcgdex_id": "sm11-250",
     "localId": "250",
     "setCode": "sm11",
@@ -258,11 +266,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-250-low.png",
-    "imageHighSrc": "cards/sm11-250-high.png"
+    "imageHighSrc": "cards/sm11-250-high.png",
+    "rules": "Search your deck for a Pokémon-GX, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10961",
-    "externalId": null,
+    "externalId": "sm11-249",
     "tcgdex_id": "sm11-249",
     "localId": "249",
     "setCode": "sm11",
@@ -293,11 +302,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-249-low.png",
-    "imageHighSrc": "cards/sm11-249-high.png"
+    "imageHighSrc": "cards/sm11-249-high.png",
+    "attacks": [
+      {
+        "name": "Venom Shot",
+        "damage": null
+      },
+      {
+        "name": "Injection-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10959",
-    "externalId": null,
+    "externalId": "sm11-248",
     "tcgdex_id": "sm11-248",
     "localId": "248",
     "setCode": "sm11",
@@ -327,11 +347,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-248-low.png",
-    "imageHighSrc": "cards/sm11-248-high.png"
+    "imageHighSrc": "cards/sm11-248-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "130"
+      },
+      {
+        "name": "Sky Judgment",
+        "damage": "270"
+      },
+      {
+        "name": "Mach Delivery-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10957",
-    "externalId": null,
+    "externalId": "sm11-247",
     "tcgdex_id": "sm11-247",
     "localId": "247",
     "setCode": "sm11",
@@ -363,11 +398,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-247-low.png",
-    "imageHighSrc": "cards/sm11-247-high.png"
+    "imageHighSrc": "cards/sm11-247-high.png",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Calamitous Slash",
+        "damage": "160+"
+      },
+      {
+        "name": "GG End-GX",
+        "damage": null
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10956",
-    "externalId": null,
+    "externalId": "sm11-246",
     "tcgdex_id": "sm11-246",
     "localId": "246",
     "setCode": "sm11",
@@ -397,11 +447,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-246-low.png",
-    "imageHighSrc": "cards/sm11-246-high.png"
+    "imageHighSrc": "cards/sm11-246-high.png",
+    "attacks": [
+      {
+        "name": "Wily Bite",
+        "damage": "10+"
+      },
+      {
+        "name": "Big Eater-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10954",
-    "externalId": null,
+    "externalId": "sm11-245",
     "tcgdex_id": "sm11-245",
     "localId": "245",
     "setCode": "sm11",
@@ -433,11 +494,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-245-low.png",
-    "imageHighSrc": "cards/sm11-245-high.png"
+    "imageHighSrc": "cards/sm11-245-high.png",
+    "attacks": [
+      {
+        "name": "Greedy Crush",
+        "damage": "210"
+      },
+      {
+        "name": "Gigafall-GX",
+        "damage": "250"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10952",
-    "externalId": null,
+    "externalId": "sm11-244",
     "tcgdex_id": "sm11-244",
     "localId": "244",
     "setCode": "sm11",
@@ -467,11 +539,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-244-low.png",
-    "imageHighSrc": "cards/sm11-244-high.png"
+    "imageHighSrc": "cards/sm11-244-high.png",
+    "attacks": [
+      {
+        "name": "Boulder Crush",
+        "damage": "120"
+      },
+      {
+        "name": "Wild Dive-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10950",
-    "externalId": null,
+    "externalId": "sm11-243",
     "tcgdex_id": "sm11-243",
     "localId": "243",
     "setCode": "sm11",
@@ -501,11 +584,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-243-low.png",
-    "imageHighSrc": "cards/sm11-243-high.png"
+    "imageHighSrc": "cards/sm11-243-high.png",
+    "attacks": [
+      {
+        "name": "Tag Purge",
+        "damage": "120"
+      },
+      {
+        "name": "Clear Vision-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10948",
-    "externalId": null,
+    "externalId": "sm11-242",
     "tcgdex_id": "sm11-242",
     "localId": "242",
     "setCode": "sm11",
@@ -537,11 +631,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-242-low.png",
-    "imageHighSrc": "cards/sm11-242-high.png"
+    "imageHighSrc": "cards/sm11-242-high.png",
+    "attacks": [
+      {
+        "name": "Miraculous Duo-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10946",
-    "externalId": null,
+    "externalId": "sm11-241",
     "tcgdex_id": "sm11-241",
     "localId": "241",
     "setCode": "sm11",
@@ -572,11 +673,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-241-low.png",
-    "imageHighSrc": "cards/sm11-241-high.png"
+    "imageHighSrc": "cards/sm11-241-high.png",
+    "attacks": [
+      {
+        "name": "Tandem Shock",
+        "damage": "80+"
+      },
+      {
+        "name": "Lightning Ride-GX",
+        "damage": "150+"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10944",
-    "externalId": null,
+    "externalId": "sm11-240",
     "tcgdex_id": "sm11-240",
     "localId": "240",
     "setCode": "sm11",
@@ -606,11 +718,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-240-low.png",
-    "imageHighSrc": "cards/sm11-240-high.png"
+    "imageHighSrc": "cards/sm11-240-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Edge",
+        "damage": "110"
+      },
+      {
+        "name": "Resolute Blade-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10942",
-    "externalId": null,
+    "externalId": "sm11-239",
     "tcgdex_id": "sm11-239",
     "localId": "239",
     "setCode": "sm11",
@@ -642,11 +765,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-239-low.png",
-    "imageHighSrc": "cards/sm11-239-high.png"
+    "imageHighSrc": "cards/sm11-239-high.png",
+    "attacks": [
+      {
+        "name": "Ditch and Splash",
+        "damage": "40×"
+      },
+      {
+        "name": "Thrilling Times-GX",
+        "damage": "10+"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10939",
-    "externalId": null,
+    "externalId": "sm11-238",
     "tcgdex_id": "sm11-238",
     "localId": "238",
     "setCode": "sm11",
@@ -676,11 +810,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-238-low.png",
-    "imageHighSrc": "cards/sm11-238-high.png"
+    "imageHighSrc": "cards/sm11-238-high.png",
+    "attacks": [
+      {
+        "name": "Steaming Stomp",
+        "damage": "130"
+      },
+      {
+        "name": "Hot Burn-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10936",
-    "externalId": null,
+    "externalId": "sm11-237",
     "tcgdex_id": "sm11-237",
     "localId": "237",
     "setCode": "sm11",
@@ -712,11 +857,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-237-low.png",
-    "imageHighSrc": "cards/sm11-237-high.png"
+    "imageHighSrc": "cards/sm11-237-high.png",
+    "attacks": [
+      {
+        "name": "Super Growth",
+        "damage": null
+      },
+      {
+        "name": "Calming Hurricane",
+        "damage": "150"
+      },
+      {
+        "name": "Tropical Hour-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10933",
-    "externalId": null,
+    "externalId": "sm11-236",
     "tcgdex_id": "sm11-236",
     "localId": "236",
     "setCode": "sm11",
@@ -741,11 +901,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-236-low.png",
-    "imageHighSrc": "cards/sm11-236-high.png"
+    "imageHighSrc": "cards/sm11-236-high.png",
+    "rules": "Search your deck for up to 3 Pokémon that have a Retreat Cost of exactly 4, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10931",
-    "externalId": null,
+    "externalId": "sm11-235",
     "tcgdex_id": "sm11-235",
     "localId": "235",
     "setCode": "sm11",
@@ -770,11 +931,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-235-low.png",
-    "imageHighSrc": "cards/sm11-235-high.png"
+    "imageHighSrc": "cards/sm11-235-high.png",
+    "rules": "Search your deck for up to 3 Supporter cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10929",
-    "externalId": null,
+    "externalId": "sm11-234",
     "tcgdex_id": "sm11-234",
     "localId": "234",
     "setCode": "sm11",
@@ -799,11 +961,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-234-low.png",
-    "imageHighSrc": "cards/sm11-234-high.png"
+    "imageHighSrc": "cards/sm11-234-high.png",
+    "rules": "Move up to 3 damage counters from 1 of your opponent's Pokémon to another of their Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10926",
-    "externalId": null,
+    "externalId": "sm11-233",
     "tcgdex_id": "sm11-233",
     "localId": "233",
     "setCode": "sm11",
@@ -828,11 +991,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-233-low.png",
-    "imageHighSrc": "cards/sm11-233-high.png"
+    "imageHighSrc": "cards/sm11-233-high.png",
+    "rules": "Draw 2 cards. If your Active Pokémon is a TAG TEAM Pokémon, draw 2 more cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10923",
-    "externalId": null,
+    "externalId": "sm11-232",
     "tcgdex_id": "sm11-232",
     "localId": "232",
     "setCode": "sm11",
@@ -857,11 +1021,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-232-low.png",
-    "imageHighSrc": "cards/sm11-232-high.png"
+    "imageHighSrc": "cards/sm11-232-high.png",
+    "rules": "Remove all effects of attacks on you and each of your Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10919",
-    "externalId": null,
+    "externalId": "sm11-231",
     "tcgdex_id": "sm11-231",
     "localId": "231",
     "setCode": "sm11",
@@ -886,11 +1051,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-231-low.png",
-    "imageHighSrc": "cards/sm11-231-high.png"
+    "imageHighSrc": "cards/sm11-231-high.png",
+    "rules": "At the end of this turn, draw cards until you have 8 cards in your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10916",
-    "externalId": null,
+    "externalId": "sm11-230",
     "tcgdex_id": "sm11-230",
     "localId": "230",
     "setCode": "sm11",
@@ -921,11 +1087,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-230-low.png",
-    "imageHighSrc": "cards/sm11-230-high.png"
+    "imageHighSrc": "cards/sm11-230-high.png",
+    "attacks": [
+      {
+        "name": "Venom Shot",
+        "damage": null
+      },
+      {
+        "name": "Injection-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10913",
-    "externalId": null,
+    "externalId": "sm11-229",
     "tcgdex_id": "sm11-229",
     "localId": "229",
     "setCode": "sm11",
@@ -955,11 +1132,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-229-low.png",
-    "imageHighSrc": "cards/sm11-229-high.png"
+    "imageHighSrc": "cards/sm11-229-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "130"
+      },
+      {
+        "name": "Sky Judgment",
+        "damage": "270"
+      },
+      {
+        "name": "Mach Delivery-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10910",
-    "externalId": null,
+    "externalId": "sm11-228",
     "tcgdex_id": "sm11-228",
     "localId": "228",
     "setCode": "sm11",
@@ -991,11 +1183,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-228-low.png",
-    "imageHighSrc": "cards/sm11-228-high.png"
+    "imageHighSrc": "cards/sm11-228-high.png",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Calamitous Slash",
+        "damage": "160+"
+      },
+      {
+        "name": "GG End-GX",
+        "damage": null
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10907",
-    "externalId": null,
+    "externalId": "sm11-227",
     "tcgdex_id": "sm11-227",
     "localId": "227",
     "setCode": "sm11",
@@ -1025,11 +1232,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-227-low.png",
-    "imageHighSrc": "cards/sm11-227-high.png"
+    "imageHighSrc": "cards/sm11-227-high.png",
+    "attacks": [
+      {
+        "name": "Wily Bite",
+        "damage": "10+"
+      },
+      {
+        "name": "Big Eater-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10904",
-    "externalId": null,
+    "externalId": "sm11-226",
     "tcgdex_id": "sm11-226",
     "localId": "226",
     "setCode": "sm11",
@@ -1061,11 +1279,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-226-low.png",
-    "imageHighSrc": "cards/sm11-226-high.png"
+    "imageHighSrc": "cards/sm11-226-high.png",
+    "attacks": [
+      {
+        "name": "Greedy Crush",
+        "damage": "210"
+      },
+      {
+        "name": "Gigafall-GX",
+        "damage": "250"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10901",
-    "externalId": null,
+    "externalId": "sm11-225",
     "tcgdex_id": "sm11-225",
     "localId": "225",
     "setCode": "sm11",
@@ -1097,11 +1326,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-225-low.png",
-    "imageHighSrc": "cards/sm11-225-high.png"
+    "imageHighSrc": "cards/sm11-225-high.png",
+    "attacks": [
+      {
+        "name": "Greedy Crush",
+        "damage": "210"
+      },
+      {
+        "name": "Gigafall-GX",
+        "damage": "250"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10898",
-    "externalId": null,
+    "externalId": "sm11-224",
     "tcgdex_id": "sm11-224",
     "localId": "224",
     "setCode": "sm11",
@@ -1131,11 +1371,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-224-low.png",
-    "imageHighSrc": "cards/sm11-224-high.png"
+    "imageHighSrc": "cards/sm11-224-high.png",
+    "attacks": [
+      {
+        "name": "Boulder Crush",
+        "damage": "120"
+      },
+      {
+        "name": "Wild Dive-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10895",
-    "externalId": null,
+    "externalId": "sm11-223",
     "tcgdex_id": "sm11-223",
     "localId": "223",
     "setCode": "sm11",
@@ -1165,11 +1416,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-223-low.png",
-    "imageHighSrc": "cards/sm11-223-high.png"
+    "imageHighSrc": "cards/sm11-223-high.png",
+    "attacks": [
+      {
+        "name": "Tag Purge",
+        "damage": "120"
+      },
+      {
+        "name": "Clear Vision-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10892",
-    "externalId": null,
+    "externalId": "sm11-222",
     "tcgdex_id": "sm11-222",
     "localId": "222",
     "setCode": "sm11",
@@ -1201,11 +1463,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-222-low.png",
-    "imageHighSrc": "cards/sm11-222-high.png"
+    "imageHighSrc": "cards/sm11-222-high.png",
+    "attacks": [
+      {
+        "name": "Miraculous Duo-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10889",
-    "externalId": null,
+    "externalId": "sm11-221",
     "tcgdex_id": "sm11-221",
     "localId": "221",
     "setCode": "sm11",
@@ -1236,11 +1505,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-221-low.png",
-    "imageHighSrc": "cards/sm11-221-high.png"
+    "imageHighSrc": "cards/sm11-221-high.png",
+    "attacks": [
+      {
+        "name": "Tandem Shock",
+        "damage": "80+"
+      },
+      {
+        "name": "Lightning Ride-GX",
+        "damage": "150+"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10886",
-    "externalId": null,
+    "externalId": "sm11-220",
     "tcgdex_id": "sm11-220",
     "localId": "220",
     "setCode": "sm11",
@@ -1271,11 +1551,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-220-low.png",
-    "imageHighSrc": "cards/sm11-220-high.png"
+    "imageHighSrc": "cards/sm11-220-high.png",
+    "attacks": [
+      {
+        "name": "Tandem Shock",
+        "damage": "80+"
+      },
+      {
+        "name": "Lightning Ride-GX",
+        "damage": "150+"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10883",
-    "externalId": null,
+    "externalId": "sm11-219",
     "tcgdex_id": "sm11-219",
     "localId": "219",
     "setCode": "sm11",
@@ -1305,11 +1596,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-219-low.png",
-    "imageHighSrc": "cards/sm11-219-high.png"
+    "imageHighSrc": "cards/sm11-219-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Edge",
+        "damage": "110"
+      },
+      {
+        "name": "Resolute Blade-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10880",
-    "externalId": null,
+    "externalId": "sm11-218",
     "tcgdex_id": "sm11-218",
     "localId": "218",
     "setCode": "sm11",
@@ -1341,11 +1643,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-218-low.png",
-    "imageHighSrc": "cards/sm11-218-high.png"
+    "imageHighSrc": "cards/sm11-218-high.png",
+    "attacks": [
+      {
+        "name": "Ditch and Splash",
+        "damage": "40×"
+      },
+      {
+        "name": "Thrilling Times-GX",
+        "damage": "10+"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10877",
-    "externalId": null,
+    "externalId": "sm11-217",
     "tcgdex_id": "sm11-217",
     "localId": "217",
     "setCode": "sm11",
@@ -1377,11 +1690,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-217-low.png",
-    "imageHighSrc": "cards/sm11-217-high.png"
+    "imageHighSrc": "cards/sm11-217-high.png",
+    "attacks": [
+      {
+        "name": "Ditch and Splash",
+        "damage": "40×"
+      },
+      {
+        "name": "Thrilling Times-GX",
+        "damage": "10+"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10874",
-    "externalId": null,
+    "externalId": "sm11-216",
     "tcgdex_id": "sm11-216",
     "localId": "216",
     "setCode": "sm11",
@@ -1411,11 +1735,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-216-low.png",
-    "imageHighSrc": "cards/sm11-216-high.png"
+    "imageHighSrc": "cards/sm11-216-high.png",
+    "attacks": [
+      {
+        "name": "Steaming Stomp",
+        "damage": "130"
+      },
+      {
+        "name": "Hot Burn-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10871",
-    "externalId": null,
+    "externalId": "sm11-215",
     "tcgdex_id": "sm11-215",
     "localId": "215",
     "setCode": "sm11",
@@ -1447,11 +1782,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-215-low.png",
-    "imageHighSrc": "cards/sm11-215-high.png"
+    "imageHighSrc": "cards/sm11-215-high.png",
+    "attacks": [
+      {
+        "name": "Super Growth",
+        "damage": null
+      },
+      {
+        "name": "Calming Hurricane",
+        "damage": "150"
+      },
+      {
+        "name": "Tropical Hour-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10868",
-    "externalId": null,
+    "externalId": "sm11-214",
     "tcgdex_id": "sm11-214",
     "localId": "214",
     "setCode": "sm11",
@@ -1483,11 +1833,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-214-low.png",
-    "imageHighSrc": "cards/sm11-214-high.png"
+    "imageHighSrc": "cards/sm11-214-high.png",
+    "attacks": [
+      {
+        "name": "Super Growth",
+        "damage": null
+      },
+      {
+        "name": "Calming Hurricane",
+        "damage": "150"
+      },
+      {
+        "name": "Tropical Hour-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10865",
-    "externalId": null,
+    "externalId": "sm11-213",
     "tcgdex_id": "sm11-213",
     "localId": "213",
     "setCode": "sm11",
@@ -1512,11 +1877,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-213-low.png",
-    "imageHighSrc": "cards/sm11-213-high.png"
+    "imageHighSrc": "cards/sm11-213-high.png",
+    "rules": "This card provides Colorless Energy.\n\nThe Pokémon this card is attached to has no Weakness."
   },
   {
     "masterCardId": "10862",
-    "externalId": null,
+    "externalId": "sm11-212",
     "tcgdex_id": "sm11-212",
     "localId": "212",
     "setCode": "sm11",
@@ -1541,11 +1907,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-212-low.png",
-    "imageHighSrc": "cards/sm11-212-high.png"
+    "imageHighSrc": "cards/sm11-212-high.png",
+    "rules": "This card provides Colorless Energy.\n\nIf this card is discarded from play, put it into your hand instead of the discard pile."
   },
   {
     "masterCardId": "10858",
-    "externalId": null,
+    "externalId": "sm11-211",
     "tcgdex_id": "sm11-211",
     "localId": "211",
     "setCode": "sm11",
@@ -1570,11 +1937,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-211-low.png",
-    "imageHighSrc": "cards/sm11-211-high.png"
+    "imageHighSrc": "cards/sm11-211-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Retreat Cost of the Pokémon this card is attached to is Colorless less.\n\nIf this card is discarded from play, put it into your hand instead of the discard pile.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10855",
-    "externalId": null,
+    "externalId": "sm11-210",
     "tcgdex_id": "sm11-210",
     "localId": "210",
     "setCode": "sm11",
@@ -1599,11 +1967,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-210-low.png",
-    "imageHighSrc": "cards/sm11-210-high.png"
+    "imageHighSrc": "cards/sm11-210-high.png",
+    "rules": "Play this card as if it were a 60-HP Colorless Basic Pokémon. At any time during your turn (before your attack), you may discard this card from play.\n\nThis card can't retreat.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10852",
-    "externalId": null,
+    "externalId": "sm11-209",
     "tcgdex_id": "sm11-209",
     "localId": "209",
     "setCode": "sm11",
@@ -1628,11 +1997,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-209-low.png",
-    "imageHighSrc": "cards/sm11-209-high.png"
+    "imageHighSrc": "cards/sm11-209-high.png",
+    "rules": "Move up to 2 Energy from 1 of your TAG TEAM Pokémon to another of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10849",
-    "externalId": null,
+    "externalId": "sm11-208",
     "tcgdex_id": "sm11-208",
     "localId": "208",
     "setCode": "sm11",
@@ -1657,11 +2027,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-208-low.png",
-    "imageHighSrc": "cards/sm11-208-high.png"
+    "imageHighSrc": "cards/sm11-208-high.png",
+    "rules": "Flip 2 coins. For each heads, search your deck for a Stadium card, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10846",
-    "externalId": null,
+    "externalId": "sm11-207",
     "tcgdex_id": "sm11-207",
     "localId": "207",
     "setCode": "sm11",
@@ -1686,18 +2057,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-207-low.png",
-    "imageHighSrc": "cards/sm11-207-high.png"
+    "imageHighSrc": "cards/sm11-207-high.png",
+    "rules": "If a Pokémon is Asleep, its owner flips 2 coins instead of 1 for that Special Condition between turns. If either of them is tails, that Pokémon is still Asleep.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10843",
-    "externalId": null,
+    "externalId": "sm11-206",
     "tcgdex_id": "sm11-206",
     "localId": "206",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "206a/236",
+    "cardNumber": "206/236",
     "cardName": "Reset Stamp",
-    "fullDisplayName": "Reset Stamp 206a/236 Unified Minds",
+    "fullDisplayName": "Reset Stamp 206/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1715,11 +2087,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-206a-low.png",
-    "imageHighSrc": "cards/sm11-206a-high.png"
+    "imageHighSrc": "cards/sm11-206a-high.png",
+    "rules": "Your opponent shuffles their hand into their deck and draws a card for each of their remaining Prize cards.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10840",
-    "externalId": null,
+    "externalId": "sm11-206",
     "tcgdex_id": "sm11-206",
     "localId": "206",
     "setCode": "sm11",
@@ -1744,11 +2117,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-206-low.png",
-    "imageHighSrc": "cards/sm11-206-high.png"
+    "imageHighSrc": "cards/sm11-206-high.png",
+    "rules": "Your opponent shuffles their hand into their deck and draws a card for each of their remaining Prize cards.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10837",
-    "externalId": null,
+    "externalId": "sm11-205",
     "tcgdex_id": "sm11-205",
     "localId": "205",
     "setCode": "sm11",
@@ -1773,11 +2147,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-205-low.png",
-    "imageHighSrc": "cards/sm11-205-high.png"
+    "imageHighSrc": "cards/sm11-205-high.png",
+    "rules": "Once during each player's turn, that player may search their deck for up to 2 Pokémon that evolve from Unidentified Fossil, put those Pokémon onto their Bench, and shuffle their deck. If a player searches their deck in this way, their turn ends.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10834",
-    "externalId": null,
+    "externalId": "sm11-204",
     "tcgdex_id": "sm11-204",
     "localId": "204",
     "setCode": "sm11",
@@ -1802,11 +2177,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-204-low.png",
-    "imageHighSrc": "cards/sm11-204-high.png"
+    "imageHighSrc": "cards/sm11-204-high.png",
+    "rules": "Search your deck for up to 3 Pokémon that have a Retreat Cost of exactly 4, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10831",
-    "externalId": null,
+    "externalId": "sm11-203",
     "tcgdex_id": "sm11-203",
     "localId": "203",
     "setCode": "sm11",
@@ -1831,11 +2207,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-203-low.png",
-    "imageHighSrc": "cards/sm11-203-high.png"
+    "imageHighSrc": "cards/sm11-203-high.png",
+    "attacks": [
+      {
+        "name": "Barreling Blitz-GX",
+        "damage": "200+"
+      }
+    ],
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to has the Tackle attack, it can use the GX attack on this card. (You still need the necessary Energy to use this attack.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10828",
-    "externalId": null,
+    "externalId": "sm11-202",
     "tcgdex_id": "sm11-202",
     "localId": "202",
     "setCode": "sm11",
@@ -1860,11 +2243,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-202-low.png",
-    "imageHighSrc": "cards/sm11-202-high.png"
+    "imageHighSrc": "cards/sm11-202-high.png",
+    "rules": "Search your deck for up to 3 Supporter cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10825",
-    "externalId": null,
+    "externalId": "sm11-201",
     "tcgdex_id": "sm11-201",
     "localId": "201",
     "setCode": "sm11",
@@ -1889,11 +2273,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-201-low.png",
-    "imageHighSrc": "cards/sm11-201-high.png"
+    "imageHighSrc": "cards/sm11-201-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf you have more Prize cards remaining than your opponent, the attacks of the Pokémon this card is attached to cost Fighting less.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10822",
-    "externalId": null,
+    "externalId": "sm11-200",
     "tcgdex_id": "sm11-200",
     "localId": "200",
     "setCode": "sm11",
@@ -1918,11 +2303,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-200-low.png",
-    "imageHighSrc": "cards/sm11-200-high.png"
+    "imageHighSrc": "cards/sm11-200-high.png",
+    "rules": "Look at the top 6 cards of your deck and put 2 of them into your hand. Discard the other cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10819",
-    "externalId": null,
+    "externalId": "sm11-199",
     "tcgdex_id": "sm11-199",
     "localId": "199",
     "setCode": "sm11",
@@ -1947,11 +2333,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-199-low.png",
-    "imageHighSrc": "cards/sm11-199-high.png"
+    "imageHighSrc": "cards/sm11-199-high.png",
+    "rules": "Move up to 3 damage counters from 1 of your opponent's Pokémon to another of their Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10816",
-    "externalId": null,
+    "externalId": "sm11-198",
     "tcgdex_id": "sm11-198",
     "localId": "198",
     "setCode": "sm11",
@@ -1976,11 +2363,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-198-low.png",
-    "imageHighSrc": "cards/sm11-198-high.png"
+    "imageHighSrc": "cards/sm11-198-high.png",
+    "rules": "Heal 50 damage from your Active Pokémon-GX.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10813",
-    "externalId": null,
+    "externalId": "sm11-197",
     "tcgdex_id": "sm11-197",
     "localId": "197",
     "setCode": "sm11",
@@ -2005,11 +2393,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-197-low.png",
-    "imageHighSrc": "cards/sm11-197-high.png"
+    "imageHighSrc": "cards/sm11-197-high.png",
+    "rules": "Once during each player's turn, that player may discard a card from their hand. If they do, that player searches their deck for up to 2 Fire Energy cards, reveals them, and puts them into their hand. Then, that player shuffles their deck.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10810",
-    "externalId": null,
+    "externalId": "sm11-196",
     "tcgdex_id": "sm11-196",
     "localId": "196",
     "setCode": "sm11",
@@ -2034,11 +2423,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-196-low.png",
-    "imageHighSrc": "cards/sm11-196-high.png"
+    "imageHighSrc": "cards/sm11-196-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf this card is attached to 1 of your Pokémon, discard it at the end of your opponent's turn.\n\nIf the Pokémon this card is attached to is your Active Pokémon and takes 180 or more damage from an opponent's attack (even if this Pokémon is Knocked Out), put 10 damage counters on the Attacking Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10808",
-    "externalId": null,
+    "externalId": "sm11-195",
     "tcgdex_id": "sm11-195",
     "localId": "195",
     "setCode": "sm11",
@@ -2063,11 +2453,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-195-low.png",
-    "imageHighSrc": "cards/sm11-195-high.png"
+    "imageHighSrc": "cards/sm11-195-high.png",
+    "attacks": [
+      {
+        "name": "Speeding Skystrike-GX",
+        "damage": "180"
+      }
+    ],
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to has the Air Slash attack, it can use the GX attack on this card. (You still need the necessary Energy to use this attack.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10805",
-    "externalId": null,
+    "externalId": "sm11-194",
     "tcgdex_id": "sm11-194",
     "localId": "194",
     "setCode": "sm11",
@@ -2092,11 +2489,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-194-low.png",
-    "imageHighSrc": "cards/sm11-194-high.png"
+    "imageHighSrc": "cards/sm11-194-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is your Active Pokémon and is damaged by an opponent's attack (even if that Pokémon is Knocked Out), the Attacking Pokémon is now Confused.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10802",
-    "externalId": null,
+    "externalId": "sm11-193",
     "tcgdex_id": "sm11-193",
     "localId": "193",
     "setCode": "sm11",
@@ -2121,11 +2519,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-193-low.png",
-    "imageHighSrc": "cards/sm11-193-high.png"
+    "imageHighSrc": "cards/sm11-193-high.png",
+    "rules": "Basic Darkness Pokémon in play (both yours and your opponent's) have no Retreat Cost.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10799",
-    "externalId": null,
+    "externalId": "sm11-192",
     "tcgdex_id": "sm11-192",
     "localId": "192",
     "setCode": "sm11",
@@ -2150,18 +2549,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-192-low.png",
-    "imageHighSrc": "cards/sm11-192-high.png"
+    "imageHighSrc": "cards/sm11-192-high.png",
+    "rules": "Draw 2 cards. If your Active Pokémon is a TAG TEAM Pokémon, draw 2 more cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10796",
-    "externalId": null,
+    "externalId": "sm11-191",
     "tcgdex_id": "sm11-191",
     "localId": "191",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "191a/236",
+    "cardNumber": "191/236",
     "cardName": "Cherish Ball",
-    "fullDisplayName": "Cherish Ball 191a/236 Unified Minds",
+    "fullDisplayName": "Cherish Ball 191/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -2179,11 +2579,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-191a-low.png",
-    "imageHighSrc": "cards/sm11-191a-high.png"
+    "imageHighSrc": "cards/sm11-191a-high.png",
+    "rules": "Search your deck for a Pokémon-GX, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10793",
-    "externalId": null,
+    "externalId": "sm11-191",
     "tcgdex_id": "sm11-191",
     "localId": "191",
     "setCode": "sm11",
@@ -2208,11 +2609,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-191-low.png",
-    "imageHighSrc": "cards/sm11-191-high.png"
+    "imageHighSrc": "cards/sm11-191-high.png",
+    "rules": "Search your deck for a Pokémon-GX, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10790",
-    "externalId": null,
+    "externalId": "sm11-190",
     "tcgdex_id": "sm11-190",
     "localId": "190",
     "setCode": "sm11",
@@ -2237,11 +2639,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-190-low.png",
-    "imageHighSrc": "cards/sm11-190-high.png"
+    "imageHighSrc": "cards/sm11-190-high.png",
+    "rules": "Remove all effects of attacks on you and each of your Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10787",
-    "externalId": null,
+    "externalId": "sm11-189",
     "tcgdex_id": "sm11-189",
     "localId": "189",
     "setCode": "sm11",
@@ -2266,11 +2669,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-189-low.png",
-    "imageHighSrc": "cards/sm11-189-high.png"
+    "imageHighSrc": "cards/sm11-189-high.png",
+    "rules": "Draw 2 cards. Flip a coin. If heads, draw 2 more cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10784",
-    "externalId": null,
+    "externalId": "sm11-188",
     "tcgdex_id": "sm11-188",
     "localId": "188",
     "setCode": "sm11",
@@ -2295,11 +2699,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-188-low.png",
-    "imageHighSrc": "cards/sm11-188-high.png"
+    "imageHighSrc": "cards/sm11-188-high.png",
+    "rules": "At the end of this turn, draw cards until you have 8 cards in your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10781",
-    "externalId": null,
+    "externalId": "sm11-187",
     "tcgdex_id": "sm11-187",
     "localId": "187",
     "setCode": "sm11",
@@ -2324,11 +2729,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-187-low.png",
-    "imageHighSrc": "cards/sm11-187-high.png"
+    "imageHighSrc": "cards/sm11-187-high.png",
+    "rules": "Pokémon with 40 HP or less remaining (both yours and your opponent's) can't attack.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "10778",
-    "externalId": null,
+    "externalId": "sm11-186",
     "tcgdex_id": "sm11-186",
     "localId": "186",
     "setCode": "sm11",
@@ -2353,11 +2759,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-186-low.png",
-    "imageHighSrc": "cards/sm11-186-high.png"
+    "imageHighSrc": "cards/sm11-186-high.png",
+    "rules": "Put a Pokémon from your hand face down in front of you and tell your opponent the name of an attack it has. Your opponent guesses the name of that Pokémon, and then you reveal it. If your opponent guessed right, they draw 4 cards. If they guessed wrong, you draw 4 cards. Return the Pokémon to your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10775",
-    "externalId": null,
+    "externalId": "sm11-185",
     "tcgdex_id": "sm11-185",
     "localId": "185",
     "setCode": "sm11",
@@ -2386,11 +2793,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-185-low.png",
-    "imageHighSrc": "cards/sm11-185-high.png"
+    "imageHighSrc": "cards/sm11-185-high.png",
+    "attacks": [
+      {
+        "name": "Snooze",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10772",
-    "externalId": null,
+    "externalId": "sm11-184",
     "tcgdex_id": "sm11-184",
     "localId": "184",
     "setCode": "sm11",
@@ -2419,11 +2832,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-184-low.png",
-    "imageHighSrc": "cards/sm11-184-high.png"
+    "imageHighSrc": "cards/sm11-184-high.png",
+    "attacks": [
+      {
+        "name": "Avenging Heart",
+        "damage": "30+"
+      },
+      {
+        "name": "Air Slash",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10769",
-    "externalId": null,
+    "externalId": "sm11-183",
     "tcgdex_id": "sm11-183",
     "localId": "183",
     "setCode": "sm11",
@@ -2452,11 +2875,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-183-low.png",
-    "imageHighSrc": "cards/sm11-183-high.png"
+    "imageHighSrc": "cards/sm11-183-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "20"
+      },
+      {
+        "name": "Quick Blow",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "10766",
-    "externalId": null,
+    "externalId": "sm11-182",
     "tcgdex_id": "sm11-182",
     "localId": "182",
     "setCode": "sm11",
@@ -2485,11 +2918,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-182-low.png",
-    "imageHighSrc": "cards/sm11-182-high.png"
+    "imageHighSrc": "cards/sm11-182-high.png",
+    "attacks": [
+      {
+        "name": "Sage's Riddle",
+        "damage": null
+      },
+      {
+        "name": "Gentle Slap",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "10763",
-    "externalId": null,
+    "externalId": "sm11-181",
     "tcgdex_id": "sm11-181",
     "localId": "181",
     "setCode": "sm11",
@@ -2518,11 +2961,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-181-low.png",
-    "imageHighSrc": "cards/sm11-181-high.png"
+    "imageHighSrc": "cards/sm11-181-high.png",
+    "attacks": [
+      {
+        "name": "Alert Headbutt",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10760",
-    "externalId": null,
+    "externalId": "sm11-180",
     "tcgdex_id": "sm11-180",
     "localId": "180",
     "setCode": "sm11",
@@ -2551,11 +3000,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-180-low.png",
-    "imageHighSrc": "cards/sm11-180-high.png"
+    "imageHighSrc": "cards/sm11-180-high.png",
+    "attacks": [
+      {
+        "name": "Cavernous Chomp",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10757",
-    "externalId": null,
+    "externalId": "sm11-179",
     "tcgdex_id": "sm11-179",
     "localId": "179",
     "setCode": "sm11",
@@ -2584,11 +3039,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-179-low.png",
-    "imageHighSrc": "cards/sm11-179-high.png"
+    "imageHighSrc": "cards/sm11-179-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10753",
-    "externalId": null,
+    "externalId": "sm11-178",
     "tcgdex_id": "sm11-178",
     "localId": "178",
     "setCode": "sm11",
@@ -2617,11 +3078,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-178-low.png",
-    "imageHighSrc": "cards/sm11-178-high.png"
+    "imageHighSrc": "cards/sm11-178-high.png",
+    "attacks": [
+      {
+        "name": "Knuckle Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Thunderous Tornado",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "10750",
-    "externalId": null,
+    "externalId": "sm11-177",
     "tcgdex_id": "sm11-177",
     "localId": "177",
     "setCode": "sm11",
@@ -2650,11 +3121,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-177-low.png",
-    "imageHighSrc": "cards/sm11-177-high.png"
+    "imageHighSrc": "cards/sm11-177-high.png",
+    "attacks": [
+      {
+        "name": "Drain Slap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10747",
-    "externalId": null,
+    "externalId": "sm11-176",
     "tcgdex_id": "sm11-176",
     "localId": "176",
     "setCode": "sm11",
@@ -2683,11 +3160,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-176-low.png",
-    "imageHighSrc": "cards/sm11-176-high.png"
+    "imageHighSrc": "cards/sm11-176-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "40"
+      },
+      {
+        "name": "Downburst",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10743",
-    "externalId": null,
+    "externalId": "sm11-175",
     "tcgdex_id": "sm11-175",
     "localId": "175",
     "setCode": "sm11",
@@ -2716,11 +3203,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-175-low.png",
-    "imageHighSrc": "cards/sm11-175-high.png"
+    "imageHighSrc": "cards/sm11-175-high.png",
+    "attacks": [
+      {
+        "name": "Glide",
+        "damage": "20"
+      },
+      {
+        "name": "Air Slash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10739",
-    "externalId": null,
+    "externalId": "sm11-174",
     "tcgdex_id": "sm11-174",
     "localId": "174",
     "setCode": "sm11",
@@ -2749,11 +3246,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-174-low.png",
-    "imageHighSrc": "cards/sm11-174-high.png"
+    "imageHighSrc": "cards/sm11-174-high.png",
+    "attacks": [
+      {
+        "name": "Glide",
+        "damage": "10"
+      },
+      {
+        "name": "Flap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10734",
-    "externalId": null,
+    "externalId": "sm11-173",
     "tcgdex_id": "sm11-173",
     "localId": "173",
     "setCode": "sm11",
@@ -2786,7 +3293,7 @@
   },
   {
     "masterCardId": "10727",
-    "externalId": null,
+    "externalId": "sm11-172",
     "tcgdex_id": "sm11-172",
     "localId": "172",
     "setCode": "sm11",
@@ -2815,11 +3322,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-172-low.png",
-    "imageHighSrc": "cards/sm11-172-high.png"
+    "imageHighSrc": "cards/sm11-172-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10721",
-    "externalId": null,
+    "externalId": "sm11-171",
     "tcgdex_id": "sm11-171",
     "localId": "171",
     "setCode": "sm11",
@@ -2848,11 +3361,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-171-low.png",
-    "imageHighSrc": "cards/sm11-171-high.png"
+    "imageHighSrc": "cards/sm11-171-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Hyper Fang",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10715",
-    "externalId": null,
+    "externalId": "sm11-170",
     "tcgdex_id": "sm11-170",
     "localId": "170",
     "setCode": "sm11",
@@ -2881,11 +3404,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-170-low.png",
-    "imageHighSrc": "cards/sm11-170-high.png"
+    "imageHighSrc": "cards/sm11-170-high.png",
+    "attacks": [
+      {
+        "name": "Dynamic Swing",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "10709",
-    "externalId": null,
+    "externalId": "sm11-169",
     "tcgdex_id": "sm11-169",
     "localId": "169",
     "setCode": "sm11",
@@ -2914,11 +3443,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-169-low.png",
-    "imageHighSrc": "cards/sm11-169-high.png"
+    "imageHighSrc": "cards/sm11-169-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "10703",
-    "externalId": null,
+    "externalId": "sm11-168",
     "tcgdex_id": "sm11-168",
     "localId": "168",
     "setCode": "sm11",
@@ -2947,11 +3486,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-168-low.png",
-    "imageHighSrc": "cards/sm11-168-high.png"
+    "imageHighSrc": "cards/sm11-168-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "30"
+      },
+      {
+        "name": "Boundless Power",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10697",
-    "externalId": null,
+    "externalId": "sm11-167",
     "tcgdex_id": "sm11-167",
     "localId": "167",
     "setCode": "sm11",
@@ -2980,11 +3529,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-167-low.png",
-    "imageHighSrc": "cards/sm11-167-high.png"
+    "imageHighSrc": "cards/sm11-167-high.png",
+    "attacks": [
+      {
+        "name": "Lazy Howl",
+        "damage": null
+      },
+      {
+        "name": "Hang Down",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10691",
-    "externalId": null,
+    "externalId": "sm11-166",
     "tcgdex_id": "sm11-166",
     "localId": "166",
     "setCode": "sm11",
@@ -3013,11 +3572,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-166-low.png",
-    "imageHighSrc": "cards/sm11-166-high.png"
+    "imageHighSrc": "cards/sm11-166-high.png",
+    "attacks": [
+      {
+        "name": "Blindside",
+        "damage": null
+      },
+      {
+        "name": "Slashing Claw",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10685",
-    "externalId": null,
+    "externalId": "sm11-165",
     "tcgdex_id": "sm11-165",
     "localId": "165",
     "setCode": "sm11",
@@ -3046,11 +3615,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-165-low.png",
-    "imageHighSrc": "cards/sm11-165-high.png"
+    "imageHighSrc": "cards/sm11-165-high.png",
+    "attacks": [
+      {
+        "name": "Air Slash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10679",
-    "externalId": null,
+    "externalId": "sm11-164",
     "tcgdex_id": "sm11-164",
     "localId": "164",
     "setCode": "sm11",
@@ -3079,11 +3654,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-164-low.png",
-    "imageHighSrc": "cards/sm11-164-high.png"
+    "imageHighSrc": "cards/sm11-164-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Berserker Tackle",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10674",
-    "externalId": null,
+    "externalId": "sm11-163",
     "tcgdex_id": "sm11-163",
     "localId": "163",
     "setCode": "sm11",
@@ -3112,11 +3697,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-163-low.png",
-    "imageHighSrc": "cards/sm11-163-high.png"
+    "imageHighSrc": "cards/sm11-163-high.png",
+    "attacks": [
+      {
+        "name": "Double Draw",
+        "damage": null
+      },
+      {
+        "name": "Tag Impact",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "10668",
-    "externalId": null,
+    "externalId": "sm11-162",
     "tcgdex_id": "sm11-162",
     "localId": "162",
     "setCode": "sm11",
@@ -3145,11 +3740,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-162-low.png",
-    "imageHighSrc": "cards/sm11-162-high.png"
+    "imageHighSrc": "cards/sm11-162-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "40"
+      },
+      {
+        "name": "Licks Go Crazy",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10662",
-    "externalId": null,
+    "externalId": "sm11-161",
     "tcgdex_id": "sm11-161",
     "localId": "161",
     "setCode": "sm11",
@@ -3178,11 +3783,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-161-low.png",
-    "imageHighSrc": "cards/sm11-161-high.png"
+    "imageHighSrc": "cards/sm11-161-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Draw",
+        "damage": null
+      },
+      {
+        "name": "Tongue Slap",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10656",
-    "externalId": null,
+    "externalId": "sm11-160",
     "tcgdex_id": "sm11-160",
     "localId": "160",
     "setCode": "sm11",
@@ -3213,11 +3828,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-160-low.png",
-    "imageHighSrc": "cards/sm11-160-high.png"
+    "imageHighSrc": "cards/sm11-160-high.png",
+    "attacks": [
+      {
+        "name": "Venom Shot",
+        "damage": null
+      },
+      {
+        "name": "Injection-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10650",
-    "externalId": null,
+    "externalId": "sm11-159",
     "tcgdex_id": "sm11-159",
     "localId": "159",
     "setCode": "sm11",
@@ -3246,11 +3872,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-159-low.png",
-    "imageHighSrc": "cards/sm11-159-high.png"
+    "imageHighSrc": "cards/sm11-159-high.png",
+    "attacks": [
+      {
+        "name": "Boomburst",
+        "damage": null
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10644",
-    "externalId": null,
+    "externalId": "sm11-158",
     "tcgdex_id": "sm11-158",
     "localId": "158",
     "setCode": "sm11",
@@ -3279,11 +3915,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-158-low.png",
-    "imageHighSrc": "cards/sm11-158-high.png"
+    "imageHighSrc": "cards/sm11-158-high.png",
+    "attacks": [
+      {
+        "name": "Air Slash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "10638",
-    "externalId": null,
+    "externalId": "sm11-157",
     "tcgdex_id": "sm11-157",
     "localId": "157",
     "setCode": "sm11",
@@ -3312,11 +3954,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-157-low.png",
-    "imageHighSrc": "cards/sm11-157-high.png"
+    "imageHighSrc": "cards/sm11-157-high.png",
+    "attacks": [
+      {
+        "name": "Drag Off",
+        "damage": null
+      },
+      {
+        "name": "Dragon Tail",
+        "damage": "100×"
+      }
+    ]
   },
   {
     "masterCardId": "10632",
-    "externalId": null,
+    "externalId": "sm11-156",
     "tcgdex_id": "sm11-156",
     "localId": "156",
     "setCode": "sm11",
@@ -3345,11 +3997,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-156-low.png",
-    "imageHighSrc": "cards/sm11-156-high.png"
+    "imageHighSrc": "cards/sm11-156-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Axe",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "10627",
-    "externalId": null,
+    "externalId": "sm11-155",
     "tcgdex_id": "sm11-155",
     "localId": "155",
     "setCode": "sm11",
@@ -3378,11 +4036,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-155-low.png",
-    "imageHighSrc": "cards/sm11-155-high.png"
+    "imageHighSrc": "cards/sm11-155-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "30"
+      },
+      {
+        "name": "Guillotine",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "10621",
-    "externalId": null,
+    "externalId": "sm11-154",
     "tcgdex_id": "sm11-154",
     "localId": "154",
     "setCode": "sm11",
@@ -3411,11 +4079,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-154-low.png",
-    "imageHighSrc": "cards/sm11-154-high.png"
+    "imageHighSrc": "cards/sm11-154-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10615",
-    "externalId": null,
+    "externalId": "sm11-153",
     "tcgdex_id": "sm11-153",
     "localId": "153",
     "setCode": "sm11",
@@ -3444,11 +4118,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-153-low.png",
-    "imageHighSrc": "cards/sm11-153-high.png"
+    "imageHighSrc": "cards/sm11-153-high.png",
+    "attacks": [
+      {
+        "name": "Energy Arrow",
+        "damage": "20×"
+      },
+      {
+        "name": "Speed Wing",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "10609",
-    "externalId": null,
+    "externalId": "sm11-152",
     "tcgdex_id": "sm11-152",
     "localId": "152",
     "setCode": "sm11",
@@ -3478,11 +4162,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-152-low.png",
-    "imageHighSrc": "cards/sm11-152-high.png"
+    "imageHighSrc": "cards/sm11-152-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "130"
+      },
+      {
+        "name": "Sky Judgment",
+        "damage": "270"
+      },
+      {
+        "name": "Mach Delivery-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10604",
-    "externalId": null,
+    "externalId": "sm11-151",
     "tcgdex_id": "sm11-151",
     "localId": "151",
     "setCode": "sm11",
@@ -3511,11 +4210,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-151-low.png",
-    "imageHighSrc": "cards/sm11-151-high.png"
+    "imageHighSrc": "cards/sm11-151-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Impact",
+        "damage": "170"
+      }
+    ]
   },
   {
     "masterCardId": "10599",
-    "externalId": null,
+    "externalId": "sm11-150",
     "tcgdex_id": "sm11-150",
     "localId": "150",
     "setCode": "sm11",
@@ -3544,11 +4249,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-150-low.png",
-    "imageHighSrc": "cards/sm11-150-high.png"
+    "imageHighSrc": "cards/sm11-150-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "20"
+      },
+      {
+        "name": "Destructive Whirlpool",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "10593",
-    "externalId": null,
+    "externalId": "sm11-149",
     "tcgdex_id": "sm11-149",
     "localId": "149",
     "setCode": "sm11",
@@ -3577,11 +4292,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-149-low.png",
-    "imageHighSrc": "cards/sm11-149-high.png"
+    "imageHighSrc": "cards/sm11-149-high.png",
+    "attacks": [
+      {
+        "name": "Twister",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10588",
-    "externalId": null,
+    "externalId": "sm11-148",
     "tcgdex_id": "sm11-148",
     "localId": "148",
     "setCode": "sm11",
@@ -3610,11 +4331,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-148-low.png",
-    "imageHighSrc": "cards/sm11-148-high.png"
+    "imageHighSrc": "cards/sm11-148-high.png",
+    "attacks": [
+      {
+        "name": "Jump On",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "10582",
-    "externalId": null,
+    "externalId": "sm11-147",
     "tcgdex_id": "sm11-147",
     "localId": "147",
     "setCode": "sm11",
@@ -3643,11 +4370,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-147-low.png",
-    "imageHighSrc": "cards/sm11-147-high.png"
+    "imageHighSrc": "cards/sm11-147-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10574",
-    "externalId": null,
+    "externalId": "sm11-146",
     "tcgdex_id": "sm11-146",
     "localId": "146",
     "setCode": "sm11",
@@ -3679,11 +4412,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-146-low.png",
-    "imageHighSrc": "cards/sm11-146-high.png"
+    "imageHighSrc": "cards/sm11-146-high.png",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Calamitous Slash",
+        "damage": "160+"
+      },
+      {
+        "name": "GG End-GX",
+        "damage": null
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10568",
-    "externalId": null,
+    "externalId": "sm11-145",
     "tcgdex_id": "sm11-145",
     "localId": "145",
     "setCode": "sm11",
@@ -3712,11 +4460,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-145-low.png",
-    "imageHighSrc": "cards/sm11-145-high.png"
+    "imageHighSrc": "cards/sm11-145-high.png",
+    "attacks": [
+      {
+        "name": "Return",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10562",
-    "externalId": null,
+    "externalId": "sm11-144",
     "tcgdex_id": "sm11-144",
     "localId": "144",
     "setCode": "sm11",
@@ -3745,11 +4499,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-144-low.png",
-    "imageHighSrc": "cards/sm11-144-high.png"
+    "imageHighSrc": "cards/sm11-144-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10555",
-    "externalId": null,
+    "externalId": "sm11-143",
     "tcgdex_id": "sm11-143",
     "localId": "143",
     "setCode": "sm11",
@@ -3778,11 +4538,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-143-low.png",
-    "imageHighSrc": "cards/sm11-143-high.png"
+    "imageHighSrc": "cards/sm11-143-high.png",
+    "attacks": [
+      {
+        "name": "Dust Gathering",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10549",
-    "externalId": null,
+    "externalId": "sm11-142",
     "tcgdex_id": "sm11-142",
     "localId": "142",
     "setCode": "sm11",
@@ -3811,11 +4577,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-142-low.png",
-    "imageHighSrc": "cards/sm11-142-high.png"
+    "imageHighSrc": "cards/sm11-142-high.png",
+    "attacks": [
+      {
+        "name": "Discerning Spear",
+        "damage": "80"
+      },
+      {
+        "name": "Iron Lance",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10543",
-    "externalId": null,
+    "externalId": "sm11-141",
     "tcgdex_id": "sm11-141",
     "localId": "141",
     "setCode": "sm11",
@@ -3845,11 +4621,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-141-low.png",
-    "imageHighSrc": "cards/sm11-141-high.png"
+    "imageHighSrc": "cards/sm11-141-high.png",
+    "attacks": [
+      {
+        "name": "Wily Bite",
+        "damage": "10+"
+      },
+      {
+        "name": "Big Eater-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10538",
-    "externalId": null,
+    "externalId": "sm11-140",
     "tcgdex_id": "sm11-140",
     "localId": "140",
     "setCode": "sm11",
@@ -3878,11 +4665,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-140-low.png",
-    "imageHighSrc": "cards/sm11-140-high.png"
+    "imageHighSrc": "cards/sm11-140-high.png",
+    "attacks": [
+      {
+        "name": "Evil Admonition",
+        "damage": "10+"
+      },
+      {
+        "name": "Mind Shock",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "10532",
-    "externalId": null,
+    "externalId": "sm11-139",
     "tcgdex_id": "sm11-139",
     "localId": "139",
     "setCode": "sm11",
@@ -3911,11 +4708,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-139-low.png",
-    "imageHighSrc": "cards/sm11-139-high.png"
+    "imageHighSrc": "cards/sm11-139-high.png",
+    "attacks": [
+      {
+        "name": "Blow Through",
+        "damage": "20+"
+      },
+      {
+        "name": "Shadow Impact",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10527",
-    "externalId": null,
+    "externalId": "sm11-138",
     "tcgdex_id": "sm11-138",
     "localId": "138",
     "setCode": "sm11",
@@ -3944,11 +4751,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-138-low.png",
-    "imageHighSrc": "cards/sm11-138-high.png"
+    "imageHighSrc": "cards/sm11-138-high.png",
+    "attacks": [
+      {
+        "name": "Turf Raid",
+        "damage": "20+"
+      },
+      {
+        "name": "Headbang",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "10519",
-    "externalId": null,
+    "externalId": "sm11-137",
     "tcgdex_id": "sm11-137",
     "localId": "137",
     "setCode": "sm11",
@@ -3977,11 +4794,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-137-low.png",
-    "imageHighSrc": "cards/sm11-137-high.png"
+    "imageHighSrc": "cards/sm11-137-high.png",
+    "attacks": [
+      {
+        "name": "Swagger",
+        "damage": null
+      },
+      {
+        "name": "Whap Down",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "10512",
-    "externalId": null,
+    "externalId": "sm11-136",
     "tcgdex_id": "sm11-136",
     "localId": "136",
     "setCode": "sm11",
@@ -4010,11 +4837,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-136-low.png",
-    "imageHighSrc": "cards/sm11-136-high.png"
+    "imageHighSrc": "cards/sm11-136-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "40"
+      },
+      {
+        "name": "Shadow Scratch",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10506",
-    "externalId": null,
+    "externalId": "sm11-135",
     "tcgdex_id": "sm11-135",
     "localId": "135",
     "setCode": "sm11",
@@ -4043,11 +4880,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-135-low.png",
-    "imageHighSrc": "cards/sm11-135-high.png"
+    "imageHighSrc": "cards/sm11-135-high.png",
+    "attacks": [
+      {
+        "name": "Cleaning Up",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10500",
-    "externalId": null,
+    "externalId": "sm11-134",
     "tcgdex_id": "sm11-134",
     "localId": "134",
     "setCode": "sm11",
@@ -4076,11 +4919,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-134-low.png",
-    "imageHighSrc": "cards/sm11-134-high.png"
+    "imageHighSrc": "cards/sm11-134-high.png",
+    "attacks": [
+      {
+        "name": "Cross Poison",
+        "damage": "50×"
+      },
+      {
+        "name": "Slicing Blade",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10494",
-    "externalId": null,
+    "externalId": "sm11-133",
     "tcgdex_id": "sm11-133",
     "localId": "133",
     "setCode": "sm11",
@@ -4109,11 +4962,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-133-low.png",
-    "imageHighSrc": "cards/sm11-133-high.png"
+    "imageHighSrc": "cards/sm11-133-high.png",
+    "attacks": [
+      {
+        "name": "Mirror Gem",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10488",
-    "externalId": null,
+    "externalId": "sm11-132",
     "tcgdex_id": "sm11-132",
     "localId": "132",
     "setCode": "sm11",
@@ -4143,11 +5002,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-132-low.png",
-    "imageHighSrc": "cards/sm11-132-high.png"
+    "imageHighSrc": "cards/sm11-132-high.png",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "130"
+      },
+      {
+        "name": "Nocturnal Maneuvers-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10482",
-    "externalId": null,
+    "externalId": "sm11-131",
     "tcgdex_id": "sm11-131",
     "localId": "131",
     "setCode": "sm11",
@@ -4176,11 +5046,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-131-low.png",
-    "imageHighSrc": "cards/sm11-131-high.png"
+    "imageHighSrc": "cards/sm11-131-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10476",
-    "externalId": null,
+    "externalId": "sm11-130",
     "tcgdex_id": "sm11-130",
     "localId": "130",
     "setCode": "sm11",
@@ -4209,11 +5085,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-130-low.png",
-    "imageHighSrc": "cards/sm11-130-high.png"
+    "imageHighSrc": "cards/sm11-130-high.png",
+    "attacks": [
+      {
+        "name": "Sharpshooting",
+        "damage": null
+      },
+      {
+        "name": "Dark Cutter",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10470",
-    "externalId": null,
+    "externalId": "sm11-129",
     "tcgdex_id": "sm11-129",
     "localId": "129",
     "setCode": "sm11",
@@ -4242,11 +5128,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-129-low.png",
-    "imageHighSrc": "cards/sm11-129-high.png"
+    "imageHighSrc": "cards/sm11-129-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10464",
-    "externalId": null,
+    "externalId": "sm11-128",
     "tcgdex_id": "sm11-128",
     "localId": "128",
     "setCode": "sm11",
@@ -4275,11 +5167,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-128-low.png",
-    "imageHighSrc": "cards/sm11-128-high.png"
+    "imageHighSrc": "cards/sm11-128-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10458",
-    "externalId": null,
+    "externalId": "sm11-127",
     "tcgdex_id": "sm11-127",
     "localId": "127",
     "setCode": "sm11",
@@ -4308,11 +5206,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-127-low.png",
-    "imageHighSrc": "cards/sm11-127-high.png"
+    "imageHighSrc": "cards/sm11-127-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Sludge Bomb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10452",
-    "externalId": null,
+    "externalId": "sm11-126",
     "tcgdex_id": "sm11-126",
     "localId": "126",
     "setCode": "sm11",
@@ -4344,11 +5252,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-126-low.png",
-    "imageHighSrc": "cards/sm11-126-high.png"
+    "imageHighSrc": "cards/sm11-126-high.png",
+    "attacks": [
+      {
+        "name": "Greedy Crush",
+        "damage": "210"
+      },
+      {
+        "name": "Gigafall-GX",
+        "damage": "250"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10446",
-    "externalId": null,
+    "externalId": "sm11-125",
     "tcgdex_id": "sm11-125",
     "localId": "125",
     "setCode": "sm11",
@@ -4380,11 +5299,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-125-low.png",
-    "imageHighSrc": "cards/sm11-125-high.png"
+    "imageHighSrc": "cards/sm11-125-high.png",
+    "attacks": [
+      {
+        "name": "Black Lance",
+        "damage": "150"
+      },
+      {
+        "name": "Dark Moon-GX",
+        "damage": null
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10440",
-    "externalId": null,
+    "externalId": "sm11-124",
     "tcgdex_id": "sm11-124",
     "localId": "124",
     "setCode": "sm11",
@@ -4413,11 +5343,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-124-low.png",
-    "imageHighSrc": "cards/sm11-124-high.png"
+    "imageHighSrc": "cards/sm11-124-high.png",
+    "attacks": [
+      {
+        "name": "Boost Fang",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10433",
-    "externalId": null,
+    "externalId": "sm11-123",
     "tcgdex_id": "sm11-123",
     "localId": "123",
     "setCode": "sm11",
@@ -4446,11 +5382,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-123-low.png",
-    "imageHighSrc": "cards/sm11-123-high.png"
+    "imageHighSrc": "cards/sm11-123-high.png",
+    "attacks": [
+      {
+        "name": "Tag Cheer",
+        "damage": null
+      },
+      {
+        "name": "Shooting Star Pirouette",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "10428",
-    "externalId": null,
+    "externalId": "sm11-122",
     "tcgdex_id": "sm11-122",
     "localId": "122",
     "setCode": "sm11",
@@ -4479,11 +5425,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-122-low.png",
-    "imageHighSrc": "cards/sm11-122-high.png"
+    "imageHighSrc": "cards/sm11-122-high.png",
+    "attacks": [
+      {
+        "name": "Cavern Counter",
+        "damage": "50+"
+      },
+      {
+        "name": "Boulder Crush",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "10421",
-    "externalId": null,
+    "externalId": "sm11-121",
     "tcgdex_id": "sm11-121",
     "localId": "121",
     "setCode": "sm11",
@@ -4512,11 +5468,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-121-low.png",
-    "imageHighSrc": "cards/sm11-121-high.png"
+    "imageHighSrc": "cards/sm11-121-high.png",
+    "attacks": [
+      {
+        "name": "U-turn",
+        "damage": "40"
+      },
+      {
+        "name": "Hyper Beam",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "10413",
-    "externalId": null,
+    "externalId": "sm11-120",
     "tcgdex_id": "sm11-120",
     "localId": "120",
     "setCode": "sm11",
@@ -4545,11 +5511,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-120-low.png",
-    "imageHighSrc": "cards/sm11-120-high.png"
+    "imageHighSrc": "cards/sm11-120-high.png",
+    "attacks": [
+      {
+        "name": "Endeavor",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "10408",
-    "externalId": null,
+    "externalId": "sm11-119",
     "tcgdex_id": "sm11-119",
     "localId": "119",
     "setCode": "sm11",
@@ -4578,11 +5550,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-119-low.png",
-    "imageHighSrc": "cards/sm11-119-high.png"
+    "imageHighSrc": "cards/sm11-119-high.png",
+    "attacks": [
+      {
+        "name": "Rototiller",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10401",
-    "externalId": null,
+    "externalId": "sm11-118",
     "tcgdex_id": "sm11-118",
     "localId": "118",
     "setCode": "sm11",
@@ -4611,11 +5593,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-118-low.png",
-    "imageHighSrc": "cards/sm11-118-high.png"
+    "imageHighSrc": "cards/sm11-118-high.png",
+    "attacks": [
+      {
+        "name": "Dig Claws",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10394",
-    "externalId": null,
+    "externalId": "sm11-117",
     "tcgdex_id": "sm11-117",
     "localId": "117",
     "setCode": "sm11",
@@ -4644,11 +5632,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-117-low.png",
-    "imageHighSrc": "cards/sm11-117-high.png"
+    "imageHighSrc": "cards/sm11-117-high.png",
+    "attacks": [
+      {
+        "name": "Mach Cross",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10387",
-    "externalId": null,
+    "externalId": "sm11-116",
     "tcgdex_id": "sm11-116",
     "localId": "116",
     "setCode": "sm11",
@@ -4677,11 +5671,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-116-low.png",
-    "imageHighSrc": "cards/sm11-116-high.png"
+    "imageHighSrc": "cards/sm11-116-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10382",
-    "externalId": null,
+    "externalId": "sm11-115",
     "tcgdex_id": "sm11-115",
     "localId": "115",
     "setCode": "sm11",
@@ -4710,11 +5710,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-115-low.png",
-    "imageHighSrc": "cards/sm11-115-high.png"
+    "imageHighSrc": "cards/sm11-115-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10375",
-    "externalId": null,
+    "externalId": "sm11-114",
     "tcgdex_id": "sm11-114",
     "localId": "114",
     "setCode": "sm11",
@@ -4743,11 +5749,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-114-low.png",
-    "imageHighSrc": "cards/sm11-114-high.png"
+    "imageHighSrc": "cards/sm11-114-high.png",
+    "attacks": [
+      {
+        "name": "Over Slice",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "10369",
-    "externalId": null,
+    "externalId": "sm11-113",
     "tcgdex_id": "sm11-113",
     "localId": "113",
     "setCode": "sm11",
@@ -4776,11 +5788,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-113-low.png",
-    "imageHighSrc": "cards/sm11-113-high.png"
+    "imageHighSrc": "cards/sm11-113-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Sharp Scythe",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10362",
-    "externalId": null,
+    "externalId": "sm11-112",
     "tcgdex_id": "sm11-112",
     "localId": "112",
     "setCode": "sm11",
@@ -4809,11 +5831,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-112-low.png",
-    "imageHighSrc": "cards/sm11-112-high.png"
+    "imageHighSrc": "cards/sm11-112-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Headbutt Bounce",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10355",
-    "externalId": null,
+    "externalId": "sm11-111",
     "tcgdex_id": "sm11-111",
     "localId": "111",
     "setCode": "sm11",
@@ -4842,11 +5874,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-111-low.png",
-    "imageHighSrc": "cards/sm11-111-high.png"
+    "imageHighSrc": "cards/sm11-111-high.png",
+    "attacks": [
+      {
+        "name": "Deep Sea Boring",
+        "damage": null
+      },
+      {
+        "name": "Water Pulse",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10349",
-    "externalId": null,
+    "externalId": "sm11-110",
     "tcgdex_id": "sm11-110",
     "localId": "110",
     "setCode": "sm11",
@@ -4875,11 +5917,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-110-low.png",
-    "imageHighSrc": "cards/sm11-110-high.png"
+    "imageHighSrc": "cards/sm11-110-high.png",
+    "attacks": [
+      {
+        "name": "Pure Power",
+        "damage": null
+      },
+      {
+        "name": "Master Strike",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "10341",
-    "externalId": null,
+    "externalId": "sm11-109",
     "tcgdex_id": "sm11-109",
     "localId": "109",
     "setCode": "sm11",
@@ -4908,11 +5960,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-109-low.png",
-    "imageHighSrc": "cards/sm11-109-high.png"
+    "imageHighSrc": "cards/sm11-109-high.png",
+    "attacks": [
+      {
+        "name": "Spirited Headbutt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10335",
-    "externalId": null,
+    "externalId": "sm11-108",
     "tcgdex_id": "sm11-108",
     "localId": "108",
     "setCode": "sm11",
@@ -4941,11 +5999,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-108-low.png",
-    "imageHighSrc": "cards/sm11-108-high.png"
+    "imageHighSrc": "cards/sm11-108-high.png",
+    "attacks": [
+      {
+        "name": "Spore",
+        "damage": null
+      },
+      {
+        "name": "Pre-Dawn Strike",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "10328",
-    "externalId": null,
+    "externalId": "sm11-107",
     "tcgdex_id": "sm11-107",
     "localId": "107",
     "setCode": "sm11",
@@ -4974,11 +6042,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-107-low.png",
-    "imageHighSrc": "cards/sm11-107-high.png"
+    "imageHighSrc": "cards/sm11-107-high.png",
+    "attacks": [
+      {
+        "name": "Turn the Tables",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "10322",
-    "externalId": null,
+    "externalId": "sm11-106",
     "tcgdex_id": "sm11-106",
     "localId": "106",
     "setCode": "sm11",
@@ -5008,11 +6086,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-106-low.png",
-    "imageHighSrc": "cards/sm11-106-high.png"
+    "imageHighSrc": "cards/sm11-106-high.png",
+    "attacks": [
+      {
+        "name": "Boulder Crush",
+        "damage": "120"
+      },
+      {
+        "name": "Wild Dive-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10316",
-    "externalId": null,
+    "externalId": "sm11-105",
     "tcgdex_id": "sm11-105",
     "localId": "105",
     "setCode": "sm11",
@@ -5041,11 +6130,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-105-low.png",
-    "imageHighSrc": "cards/sm11-105-high.png"
+    "imageHighSrc": "cards/sm11-105-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Bonemerang",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "10310",
-    "externalId": null,
+    "externalId": "sm11-104",
     "tcgdex_id": "sm11-104",
     "localId": "104",
     "setCode": "sm11",
@@ -5074,11 +6173,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-104-low.png",
-    "imageHighSrc": "cards/sm11-104-high.png"
+    "imageHighSrc": "cards/sm11-104-high.png",
+    "attacks": [
+      {
+        "name": "Ground Stream",
+        "damage": "20"
+      },
+      {
+        "name": "Gigaton Shake",
+        "damage": "220"
+      }
+    ]
   },
   {
     "masterCardId": "10303",
-    "externalId": null,
+    "externalId": "sm11-103",
     "tcgdex_id": "sm11-103",
     "localId": "103",
     "setCode": "sm11",
@@ -5107,11 +6216,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-103-low.png",
-    "imageHighSrc": "cards/sm11-103-high.png"
+    "imageHighSrc": "cards/sm11-103-high.png",
+    "attacks": [
+      {
+        "name": "Bedrock Press",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10299",
-    "externalId": null,
+    "externalId": "sm11-102",
     "tcgdex_id": "sm11-102",
     "localId": "102",
     "setCode": "sm11",
@@ -5141,11 +6256,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-102-low.png",
-    "imageHighSrc": "cards/sm11-102-high.png"
+    "imageHighSrc": "cards/sm11-102-high.png",
+    "attacks": [
+      {
+        "name": "Belt",
+        "damage": "10"
+      },
+      {
+        "name": "Last Scene",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "10291",
-    "externalId": null,
+    "externalId": "sm11-101",
     "tcgdex_id": "sm11-101",
     "localId": "101",
     "setCode": "sm11",
@@ -5174,11 +6299,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-101-low.png",
-    "imageHighSrc": "cards/sm11-101-high.png"
+    "imageHighSrc": "cards/sm11-101-high.png",
+    "attacks": [
+      {
+        "name": "Barrier Attack",
+        "damage": "30"
+      },
+      {
+        "name": "Special Laser",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "10285",
-    "externalId": null,
+    "externalId": "sm11-100",
     "tcgdex_id": "sm11-100",
     "localId": "100",
     "setCode": "sm11",
@@ -5207,18 +6342,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-100-low.png",
-    "imageHighSrc": "cards/sm11-100-high.png"
+    "imageHighSrc": "cards/sm11-100-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10279",
-    "externalId": null,
+    "externalId": "sm11-99",
     "tcgdex_id": "sm11-99",
     "localId": "99",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "099/236",
+    "cardNumber": "99/236",
     "cardName": "Salazzle",
-    "fullDisplayName": "Salazzle 099/236 Unified Minds",
+    "fullDisplayName": "Salazzle 99/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5240,18 +6381,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-099-low.png",
-    "imageHighSrc": "cards/sm11-099-high.png"
+    "imageHighSrc": "cards/sm11-099-high.png",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "40"
+      },
+      {
+        "name": "Slashing Claw",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10274",
-    "externalId": null,
+    "externalId": "sm11-98",
     "tcgdex_id": "sm11-98",
     "localId": "98",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "098/236",
+    "cardNumber": "98/236",
     "cardName": "Salandit",
-    "fullDisplayName": "Salandit 098/236 Unified Minds",
+    "fullDisplayName": "Salandit 98/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5273,18 +6424,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-098-low.png",
-    "imageHighSrc": "cards/sm11-098-high.png"
+    "imageHighSrc": "cards/sm11-098-high.png",
+    "attacks": [
+      {
+        "name": "Suffocating Gas",
+        "damage": "10"
+      },
+      {
+        "name": "Gnaw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10267",
-    "externalId": null,
+    "externalId": "sm11-97",
     "tcgdex_id": "sm11-97",
     "localId": "97",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "097/236",
+    "cardNumber": "97/236",
     "cardName": "Toxapex",
-    "fullDisplayName": "Toxapex 097/236 Unified Minds",
+    "fullDisplayName": "Toxapex 97/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5306,18 +6467,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-097-low.png",
-    "imageHighSrc": "cards/sm11-097-high.png"
+    "imageHighSrc": "cards/sm11-097-high.png",
+    "attacks": [
+      {
+        "name": "Spike Shot",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "10262",
-    "externalId": null,
+    "externalId": "sm11-96",
     "tcgdex_id": "sm11-96",
     "localId": "96",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "096/236",
+    "cardNumber": "96/236",
     "cardName": "Mareanie",
-    "fullDisplayName": "Mareanie 096/236 Unified Minds",
+    "fullDisplayName": "Mareanie 96/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5339,18 +6506,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-096-low.png",
-    "imageHighSrc": "cards/sm11-096-high.png"
+    "imageHighSrc": "cards/sm11-096-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10257",
-    "externalId": null,
+    "externalId": "sm11-95",
     "tcgdex_id": "sm11-95",
     "localId": "95",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "095/236",
+    "cardNumber": "95/236",
     "cardName": "Aegislash",
-    "fullDisplayName": "Aegislash 095/236 Unified Minds",
+    "fullDisplayName": "Aegislash 95/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5372,18 +6545,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-095-low.png",
-    "imageHighSrc": "cards/sm11-095-high.png"
+    "imageHighSrc": "cards/sm11-095-high.png",
+    "attacks": [
+      {
+        "name": "Trash Slash",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "10251",
-    "externalId": null,
+    "externalId": "sm11-94",
     "tcgdex_id": "sm11-94",
     "localId": "94",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "094/236",
+    "cardNumber": "94/236",
     "cardName": "Doublade",
-    "fullDisplayName": "Doublade 094/236 Unified Minds",
+    "fullDisplayName": "Doublade 94/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5405,18 +6584,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-094-low.png",
-    "imageHighSrc": "cards/sm11-094-high.png"
+    "imageHighSrc": "cards/sm11-094-high.png",
+    "attacks": [
+      {
+        "name": "Slashing Cutter",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10244",
-    "externalId": null,
+    "externalId": "sm11-93",
     "tcgdex_id": "sm11-93",
     "localId": "93",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "093/236",
+    "cardNumber": "93/236",
     "cardName": "Honedge",
-    "fullDisplayName": "Honedge 093/236 Unified Minds",
+    "fullDisplayName": "Honedge 93/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5438,18 +6623,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-093-low.png",
-    "imageHighSrc": "cards/sm11-093-high.png"
+    "imageHighSrc": "cards/sm11-093-high.png",
+    "attacks": [
+      {
+        "name": "Slashing Cutter",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10236",
-    "externalId": null,
+    "externalId": "sm11-92",
     "tcgdex_id": "sm11-92",
     "localId": "92",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "092/236",
+    "cardNumber": "92/236",
     "cardName": "Honedge",
-    "fullDisplayName": "Honedge 092/236 Unified Minds",
+    "fullDisplayName": "Honedge 92/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5471,18 +6662,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-092-low.png",
-    "imageHighSrc": "cards/sm11-092-high.png"
+    "imageHighSrc": "cards/sm11-092-high.png",
+    "attacks": [
+      {
+        "name": "Lucky Find",
+        "damage": null
+      },
+      {
+        "name": "Pierce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10229",
-    "externalId": null,
+    "externalId": "sm11-91",
     "tcgdex_id": "sm11-91",
     "localId": "91",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "091/236",
+    "cardNumber": "91/236",
     "cardName": "Beheeyem",
-    "fullDisplayName": "Beheeyem 091/236 Unified Minds",
+    "fullDisplayName": "Beheeyem 91/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5504,18 +6705,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-091-low.png",
-    "imageHighSrc": "cards/sm11-091-high.png"
+    "imageHighSrc": "cards/sm11-091-high.png",
+    "attacks": [
+      {
+        "name": "Psypunch",
+        "damage": "20"
+      },
+      {
+        "name": "Mysterious Noise",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "10222",
-    "externalId": null,
+    "externalId": "sm11-90",
     "tcgdex_id": "sm11-90",
     "localId": "90",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "090/236",
+    "cardNumber": "90/236",
     "cardName": "Elgyem",
-    "fullDisplayName": "Elgyem 090/236 Unified Minds",
+    "fullDisplayName": "Elgyem 90/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5537,18 +6748,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-090-low.png",
-    "imageHighSrc": "cards/sm11-090-high.png"
+    "imageHighSrc": "cards/sm11-090-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10217",
-    "externalId": null,
+    "externalId": "sm11-89",
     "tcgdex_id": "sm11-89",
     "localId": "89",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "089/236",
+    "cardNumber": "89/236",
     "cardName": "Musharna",
-    "fullDisplayName": "Musharna 089/236 Unified Minds",
+    "fullDisplayName": "Musharna 89/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5570,18 +6787,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-089-low.png",
-    "imageHighSrc": "cards/sm11-089-high.png"
+    "imageHighSrc": "cards/sm11-089-high.png",
+    "attacks": [
+      {
+        "name": "Rest Well",
+        "damage": null
+      },
+      {
+        "name": "Zen Headbutt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "10207",
-    "externalId": null,
+    "externalId": "sm11-88",
     "tcgdex_id": "sm11-88",
     "localId": "88",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "088/236",
+    "cardNumber": "88/236",
     "cardName": "Munna",
-    "fullDisplayName": "Munna 088/236 Unified Minds",
+    "fullDisplayName": "Munna 88/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5603,18 +6830,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-088-low.png",
-    "imageHighSrc": "cards/sm11-088-high.png"
+    "imageHighSrc": "cards/sm11-088-high.png",
+    "attacks": [
+      {
+        "name": "Future Sight",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10199",
-    "externalId": null,
+    "externalId": "sm11-87",
     "tcgdex_id": "sm11-87",
     "localId": "87",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "087/236",
+    "cardNumber": "87/236",
     "cardName": "Cresselia",
-    "fullDisplayName": "Cresselia 087/236 Unified Minds",
+    "fullDisplayName": "Cresselia 87/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5636,18 +6869,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-087-low.png",
-    "imageHighSrc": "cards/sm11-087-high.png"
+    "imageHighSrc": "cards/sm11-087-high.png",
+    "attacks": [
+      {
+        "name": "Aurora Gain",
+        "damage": "60"
+      },
+      {
+        "name": "Luminous Blade",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "10178",
-    "externalId": null,
+    "externalId": "sm11-86",
     "tcgdex_id": "sm11-86",
     "localId": "86",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "086/236",
+    "cardNumber": "86/236",
     "cardName": "Giratina",
-    "fullDisplayName": "Giratina 086/236 Unified Minds",
+    "fullDisplayName": "Giratina 86/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5669,18 +6912,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-086-low.png",
-    "imageHighSrc": "cards/sm11-086-high.png"
+    "imageHighSrc": "cards/sm11-086-high.png",
+    "attacks": [
+      {
+        "name": "Fade to Black",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "10170",
-    "externalId": null,
+    "externalId": "sm11-85",
     "tcgdex_id": "sm11-85",
     "localId": "85",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "085/236",
+    "cardNumber": "85/236",
     "cardName": "Azelf",
-    "fullDisplayName": "Azelf 085/236 Unified Minds",
+    "fullDisplayName": "Azelf 85/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5702,18 +6951,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-085-low.png",
-    "imageHighSrc": "cards/sm11-085-high.png"
+    "imageHighSrc": "cards/sm11-085-high.png",
+    "attacks": [
+      {
+        "name": "Psypower",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10158",
-    "externalId": null,
+    "externalId": "sm11-84",
     "tcgdex_id": "sm11-84",
     "localId": "84",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "084/236",
+    "cardNumber": "84/236",
     "cardName": "Mesprit",
-    "fullDisplayName": "Mesprit 084/236 Unified Minds",
+    "fullDisplayName": "Mesprit 84/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5735,18 +6990,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-084-low.png",
-    "imageHighSrc": "cards/sm11-084-high.png"
+    "imageHighSrc": "cards/sm11-084-high.png",
+    "attacks": [
+      {
+        "name": "First Contact",
+        "damage": null
+      },
+      {
+        "name": "Mumble",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10151",
-    "externalId": null,
+    "externalId": "sm11-83",
     "tcgdex_id": "sm11-83",
     "localId": "83",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "083/236",
+    "cardNumber": "83/236",
     "cardName": "Uxie",
-    "fullDisplayName": "Uxie 083/236 Unified Minds",
+    "fullDisplayName": "Uxie 83/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5768,18 +7033,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-083-low.png",
-    "imageHighSrc": "cards/sm11-083-high.png"
+    "imageHighSrc": "cards/sm11-083-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10144",
-    "externalId": null,
+    "externalId": "sm11-82",
     "tcgdex_id": "sm11-82",
     "localId": "82",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "082/236",
+    "cardNumber": "82/236",
     "cardName": "Skorupi",
-    "fullDisplayName": "Skorupi 082/236 Unified Minds",
+    "fullDisplayName": "Skorupi 82/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5801,18 +7072,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-082-low.png",
-    "imageHighSrc": "cards/sm11-082-high.png"
+    "imageHighSrc": "cards/sm11-082-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": null
+      },
+      {
+        "name": "Bug Bite",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10139",
-    "externalId": null,
+    "externalId": "sm11-81",
     "tcgdex_id": "sm11-81",
     "localId": "81",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "081/236",
+    "cardNumber": "81/236",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 081/236 Unified Minds",
+    "fullDisplayName": "Drifblim 81/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5834,18 +7115,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-081-low.png",
-    "imageHighSrc": "cards/sm11-081-high.png"
+    "imageHighSrc": "cards/sm11-081-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "10133",
-    "externalId": null,
+    "externalId": "sm11-80",
     "tcgdex_id": "sm11-80",
     "localId": "80",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "080/236",
+    "cardNumber": "80/236",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 080/236 Unified Minds",
+    "fullDisplayName": "Drifloon 80/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5867,18 +7154,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-080-low.png",
-    "imageHighSrc": "cards/sm11-080-high.png"
+    "imageHighSrc": "cards/sm11-080-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10126",
-    "externalId": null,
+    "externalId": "sm11-79",
     "tcgdex_id": "sm11-79",
     "localId": "79",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "79a/236",
+    "cardNumber": "79/236",
     "cardName": "Jirachi-GX",
-    "fullDisplayName": "Jirachi-GX 79a/236 Unified Minds",
+    "fullDisplayName": "Jirachi-GX 79/236 Unified Minds",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5901,18 +7194,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-79a-low.png",
-    "imageHighSrc": "cards/sm11-79a-high.png"
+    "imageHighSrc": "cards/sm11-79a-high.png",
+    "attacks": [
+      {
+        "name": "Star Search",
+        "damage": null
+      },
+      {
+        "name": "Star Shield-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10119",
-    "externalId": null,
+    "externalId": "sm11-79",
     "tcgdex_id": "sm11-79",
     "localId": "79",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "079/236",
+    "cardNumber": "79/236",
     "cardName": "Jirachi-GX",
-    "fullDisplayName": "Jirachi-GX 079/236 Unified Minds",
+    "fullDisplayName": "Jirachi-GX 79/236 Unified Minds",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5935,18 +7239,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-079-low.png",
-    "imageHighSrc": "cards/sm11-079-high.png"
+    "imageHighSrc": "cards/sm11-079-high.png",
+    "attacks": [
+      {
+        "name": "Star Search",
+        "damage": null
+      },
+      {
+        "name": "Star Shield-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10112",
-    "externalId": null,
+    "externalId": "sm11-78",
     "tcgdex_id": "sm11-78",
     "localId": "78",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "078/236",
+    "cardNumber": "78/236",
     "cardName": "Latios-GX",
-    "fullDisplayName": "Latios-GX 078/236 Unified Minds",
+    "fullDisplayName": "Latios-GX 78/236 Unified Minds",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5969,18 +7284,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-078-low.png",
-    "imageHighSrc": "cards/sm11-078-high.png"
+    "imageHighSrc": "cards/sm11-078-high.png",
+    "attacks": [
+      {
+        "name": "Tag Purge",
+        "damage": "120"
+      },
+      {
+        "name": "Clear Vision-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10105",
-    "externalId": null,
+    "externalId": "sm11-77",
     "tcgdex_id": "sm11-77",
     "localId": "77",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "077/236",
+    "cardNumber": "77/236",
     "cardName": "Wynaut",
-    "fullDisplayName": "Wynaut 077/236 Unified Minds",
+    "fullDisplayName": "Wynaut 77/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6006,14 +7332,14 @@
   },
   {
     "masterCardId": "10098",
-    "externalId": null,
+    "externalId": "sm11-76",
     "tcgdex_id": "sm11-76",
     "localId": "76",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "076/236",
+    "cardNumber": "76/236",
     "cardName": "Jynx",
-    "fullDisplayName": "Jynx 076/236 Unified Minds",
+    "fullDisplayName": "Jynx 76/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6035,18 +7361,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-076-low.png",
-    "imageHighSrc": "cards/sm11-076-high.png"
+    "imageHighSrc": "cards/sm11-076-high.png",
+    "attacks": [
+      {
+        "name": "Attract Smack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10091",
-    "externalId": null,
+    "externalId": "sm11-75",
     "tcgdex_id": "sm11-75",
     "localId": "75",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "075/236",
+    "cardNumber": "75/236",
     "cardName": "Alolan Marowak",
-    "fullDisplayName": "Alolan Marowak 075/236 Unified Minds",
+    "fullDisplayName": "Alolan Marowak 75/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6068,18 +7400,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-075-low.png",
-    "imageHighSrc": "cards/sm11-075-high.png"
+    "imageHighSrc": "cards/sm11-075-high.png",
+    "attacks": [
+      {
+        "name": "Spirit Smash",
+        "damage": null
+      },
+      {
+        "name": "Bone Beatdown",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10084",
-    "externalId": null,
+    "externalId": "sm11-74",
     "tcgdex_id": "sm11-74",
     "localId": "74",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "074/236",
+    "cardNumber": "74/236",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 074/236 Unified Minds",
+    "fullDisplayName": "Exeggutor 74/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6101,18 +7443,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-074-low.png",
-    "imageHighSrc": "cards/sm11-074-high.png"
+    "imageHighSrc": "cards/sm11-074-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "30"
+      },
+      {
+        "name": "Full Clean",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "10076",
-    "externalId": null,
+    "externalId": "sm11-73",
     "tcgdex_id": "sm11-73",
     "localId": "73",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "073/236",
+    "cardNumber": "73/236",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 073/236 Unified Minds",
+    "fullDisplayName": "Exeggcute 73/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6134,18 +7486,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-073-low.png",
-    "imageHighSrc": "cards/sm11-073-high.png"
+    "imageHighSrc": "cards/sm11-073-high.png",
+    "attacks": [
+      {
+        "name": "Leech Seed",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10058",
-    "externalId": null,
+    "externalId": "sm11-72",
     "tcgdex_id": "sm11-72",
     "localId": "72",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "072/236",
+    "cardNumber": "72/236",
     "cardName": "Espeon & Deoxys-GX",
-    "fullDisplayName": "Espeon & Deoxys-GX 072/236 Unified Minds",
+    "fullDisplayName": "Espeon & Deoxys-GX 72/236 Unified Minds",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6170,18 +7528,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-072-low.png",
-    "imageHighSrc": "cards/sm11-072-high.png"
+    "imageHighSrc": "cards/sm11-072-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Club",
+        "damage": "10+"
+      },
+      {
+        "name": "Cross Division-GX",
+        "damage": null
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10051",
-    "externalId": null,
+    "externalId": "sm11-71",
     "tcgdex_id": "sm11-71",
     "localId": "71",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "071/236",
+    "cardNumber": "71/236",
     "cardName": "Mewtwo & Mew-GX",
-    "fullDisplayName": "Mewtwo & Mew-GX 071/236 Unified Minds",
+    "fullDisplayName": "Mewtwo & Mew-GX 71/236 Unified Minds",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6206,18 +7575,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-071-low.png",
-    "imageHighSrc": "cards/sm11-071-high.png"
+    "imageHighSrc": "cards/sm11-071-high.png",
+    "attacks": [
+      {
+        "name": "Miraculous Duo-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10045",
-    "externalId": null,
+    "externalId": "sm11-70",
     "tcgdex_id": "sm11-70",
     "localId": "70",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "070/236",
+    "cardNumber": "70/236",
     "cardName": "Xurkitree",
-    "fullDisplayName": "Xurkitree 070/236 Unified Minds",
+    "fullDisplayName": "Xurkitree 70/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6240,18 +7616,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-070-low.png",
-    "imageHighSrc": "cards/sm11-070-high.png"
+    "imageHighSrc": "cards/sm11-070-high.png",
+    "attacks": [
+      {
+        "name": "Three Mirrors",
+        "damage": "30+"
+      },
+      {
+        "name": "Signal Beam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "10035",
-    "externalId": null,
+    "externalId": "sm11-69",
     "tcgdex_id": "sm11-69",
     "localId": "69",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "069/236",
+    "cardNumber": "69/236",
     "cardName": "Tapu Koko",
-    "fullDisplayName": "Tapu Koko 069/236 Unified Minds",
+    "fullDisplayName": "Tapu Koko 69/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6273,18 +7659,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-069-low.png",
-    "imageHighSrc": "cards/sm11-069-high.png"
+    "imageHighSrc": "cards/sm11-069-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "30"
+      },
+      {
+        "name": "Nature Dive",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "10026",
-    "externalId": null,
+    "externalId": "sm11-68",
     "tcgdex_id": "sm11-68",
     "localId": "68",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "068/236",
+    "cardNumber": "68/236",
     "cardName": "Thundurus",
-    "fullDisplayName": "Thundurus 068/236 Unified Minds",
+    "fullDisplayName": "Thundurus 68/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6306,18 +7702,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-068-low.png",
-    "imageHighSrc": "cards/sm11-068-high.png"
+    "imageHighSrc": "cards/sm11-068-high.png",
+    "attacks": [
+      {
+        "name": "Thunderous Gale",
+        "damage": "20+"
+      },
+      {
+        "name": "Raging Thunder",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10015",
-    "externalId": null,
+    "externalId": "sm11-67",
     "tcgdex_id": "sm11-67",
     "localId": "67",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "067/236",
+    "cardNumber": "67/236",
     "cardName": "Stunfisk",
-    "fullDisplayName": "Stunfisk 067/236 Unified Minds",
+    "fullDisplayName": "Stunfisk 67/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6339,18 +7745,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-067-low.png",
-    "imageHighSrc": "cards/sm11-067-high.png"
+    "imageHighSrc": "cards/sm11-067-high.png",
+    "attacks": [
+      {
+        "name": "Trap Bolt",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "10007",
-    "externalId": null,
+    "externalId": "sm11-66",
     "tcgdex_id": "sm11-66",
     "localId": "66",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "066/236",
+    "cardNumber": "66/236",
     "cardName": "Eelektross",
-    "fullDisplayName": "Eelektross 066/236 Unified Minds",
+    "fullDisplayName": "Eelektross 66/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6372,18 +7784,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-066-low.png",
-    "imageHighSrc": "cards/sm11-066-high.png"
+    "imageHighSrc": "cards/sm11-066-high.png",
+    "attacks": [
+      {
+        "name": "Hover Over",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "9997",
-    "externalId": null,
+    "externalId": "sm11-65",
     "tcgdex_id": "sm11-65",
     "localId": "65",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "065/236",
+    "cardNumber": "65/236",
     "cardName": "Eelektrik",
-    "fullDisplayName": "Eelektrik 065/236 Unified Minds",
+    "fullDisplayName": "Eelektrik 65/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6405,18 +7823,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-065-low.png",
-    "imageHighSrc": "cards/sm11-065-high.png"
+    "imageHighSrc": "cards/sm11-065-high.png",
+    "attacks": [
+      {
+        "name": "Overspark",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "9988",
-    "externalId": null,
+    "externalId": "sm11-64",
     "tcgdex_id": "sm11-64",
     "localId": "64",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "064/236",
+    "cardNumber": "64/236",
     "cardName": "Tynamo",
-    "fullDisplayName": "Tynamo 064/236 Unified Minds",
+    "fullDisplayName": "Tynamo 64/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6438,18 +7862,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-064-low.png",
-    "imageHighSrc": "cards/sm11-064-high.png"
+    "imageHighSrc": "cards/sm11-064-high.png",
+    "attacks": [
+      {
+        "name": "Generate Electricity",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9980",
-    "externalId": null,
+    "externalId": "sm11-63",
     "tcgdex_id": "sm11-63",
     "localId": "63",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "063/236",
+    "cardNumber": "63/236",
     "cardName": "Tynamo",
-    "fullDisplayName": "Tynamo 063/236 Unified Minds",
+    "fullDisplayName": "Tynamo 63/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6471,18 +7901,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-063-low.png",
-    "imageHighSrc": "cards/sm11-063-high.png"
+    "imageHighSrc": "cards/sm11-063-high.png",
+    "attacks": [
+      {
+        "name": "Wild River",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9971",
-    "externalId": null,
+    "externalId": "sm11-62",
     "tcgdex_id": "sm11-62",
     "localId": "62",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "062/236",
+    "cardNumber": "62/236",
     "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 062/236 Unified Minds",
+    "fullDisplayName": "Galvantula 62/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6504,18 +7940,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-062-low.png",
-    "imageHighSrc": "cards/sm11-062-high.png"
+    "imageHighSrc": "cards/sm11-062-high.png",
+    "attacks": [
+      {
+        "name": "Live Wire",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9963",
-    "externalId": null,
+    "externalId": "sm11-61",
     "tcgdex_id": "sm11-61",
     "localId": "61",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "061/236",
+    "cardNumber": "61/236",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 061/236 Unified Minds",
+    "fullDisplayName": "Joltik 61/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6537,18 +7979,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-061-low.png",
-    "imageHighSrc": "cards/sm11-061-high.png"
+    "imageHighSrc": "cards/sm11-061-high.png",
+    "attacks": [
+      {
+        "name": "Jolt",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9955",
-    "externalId": null,
+    "externalId": "sm11-60",
     "tcgdex_id": "sm11-60",
     "localId": "60",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "060/236",
+    "cardNumber": "60/236",
     "cardName": "Magnezone",
-    "fullDisplayName": "Magnezone 060/236 Unified Minds",
+    "fullDisplayName": "Magnezone 60/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -6570,18 +8018,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-060-low.png",
-    "imageHighSrc": "cards/sm11-060-high.png"
+    "imageHighSrc": "cards/sm11-060-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Bolt",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9946",
-    "externalId": null,
+    "externalId": "sm11-59",
     "tcgdex_id": "sm11-59",
     "localId": "59",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "059/236",
+    "cardNumber": "59/236",
     "cardName": "Magneton",
-    "fullDisplayName": "Magneton 059/236 Unified Minds",
+    "fullDisplayName": "Magneton 59/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6603,18 +8057,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-059-low.png",
-    "imageHighSrc": "cards/sm11-059-high.png"
+    "imageHighSrc": "cards/sm11-059-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Ball",
+        "damage": "20"
+      },
+      {
+        "name": "Tri Attack",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "9937",
-    "externalId": null,
+    "externalId": "sm11-58",
     "tcgdex_id": "sm11-58",
     "localId": "58",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "058/236",
+    "cardNumber": "58/236",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 058/236 Unified Minds",
+    "fullDisplayName": "Magnemite 58/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6636,18 +8100,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-058-low.png",
-    "imageHighSrc": "cards/sm11-058-high.png"
+    "imageHighSrc": "cards/sm11-058-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9926",
-    "externalId": null,
+    "externalId": "sm11-57",
     "tcgdex_id": "sm11-57",
     "localId": "57",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "057/236",
+    "cardNumber": "57/236",
     "cardName": "Alolan Raichu",
-    "fullDisplayName": "Alolan Raichu 057/236 Unified Minds",
+    "fullDisplayName": "Alolan Raichu 57/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6669,18 +8139,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-057-low.png",
-    "imageHighSrc": "cards/sm11-057-high.png"
+    "imageHighSrc": "cards/sm11-057-high.png",
+    "attacks": [
+      {
+        "name": "Electro Rain",
+        "damage": null
+      },
+      {
+        "name": "Electric Ball",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9919",
-    "externalId": null,
+    "externalId": "sm11-56",
     "tcgdex_id": "sm11-56",
     "localId": "56",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "056/236",
+    "cardNumber": "56/236",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 056/236 Unified Minds",
+    "fullDisplayName": "Pikachu 56/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6702,18 +8182,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-056-low.png",
-    "imageHighSrc": "cards/sm11-056-high.png"
+    "imageHighSrc": "cards/sm11-056-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "10"
+      },
+      {
+        "name": "Electric Ball",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9910",
-    "externalId": null,
+    "externalId": "sm11-55",
     "tcgdex_id": "sm11-55",
     "localId": "55",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "055/236",
+    "cardNumber": "55/236",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 055/236 Unified Minds",
+    "fullDisplayName": "Pikachu 55/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6735,18 +8225,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-055-low.png",
-    "imageHighSrc": "cards/sm11-055-high.png"
+    "imageHighSrc": "cards/sm11-055-high.png",
+    "attacks": [
+      {
+        "name": "Meal Time",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9901",
-    "externalId": null,
+    "externalId": "sm11-54",
     "tcgdex_id": "sm11-54",
     "localId": "54",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "054/236",
+    "cardNumber": "54/236",
     "cardName": "Raichu & Alolan Raichu-GX",
-    "fullDisplayName": "Raichu & Alolan Raichu-GX 054/236 Unified Minds",
+    "fullDisplayName": "Raichu & Alolan Raichu-GX 54/236 Unified Minds",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6770,18 +8270,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-054-low.png",
-    "imageHighSrc": "cards/sm11-054-high.png"
+    "imageHighSrc": "cards/sm11-054-high.png",
+    "attacks": [
+      {
+        "name": "Tandem Shock",
+        "damage": "80+"
+      },
+      {
+        "name": "Lightning Ride-GX",
+        "damage": "150+"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "9890",
-    "externalId": null,
+    "externalId": "sm11-53",
     "tcgdex_id": "sm11-53",
     "localId": "53",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "053/236",
+    "cardNumber": "53/236",
     "cardName": "Tapu Fini",
-    "fullDisplayName": "Tapu Fini 053/236 Unified Minds",
+    "fullDisplayName": "Tapu Fini 53/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6803,18 +8314,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-053-low.png",
-    "imageHighSrc": "cards/sm11-053-high.png"
+    "imageHighSrc": "cards/sm11-053-high.png",
+    "attacks": [
+      {
+        "name": "Razor Fin",
+        "damage": "20"
+      },
+      {
+        "name": "Nature Wave",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9881",
-    "externalId": null,
+    "externalId": "sm11-52",
     "tcgdex_id": "sm11-52",
     "localId": "52",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "052/236",
+    "cardNumber": "52/236",
     "cardName": "Pyukumuku",
-    "fullDisplayName": "Pyukumuku 052/236 Unified Minds",
+    "fullDisplayName": "Pyukumuku 52/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6836,18 +8357,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-052-low.png",
-    "imageHighSrc": "cards/sm11-052-high.png"
+    "imageHighSrc": "cards/sm11-052-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Rain Splash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9872",
-    "externalId": null,
+    "externalId": "sm11-51",
     "tcgdex_id": "sm11-51",
     "localId": "51",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "051/236",
+    "cardNumber": "51/236",
     "cardName": "Golisopod",
-    "fullDisplayName": "Golisopod 051/236 Unified Minds",
+    "fullDisplayName": "Golisopod 51/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6869,18 +8400,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-051-low.png",
-    "imageHighSrc": "cards/sm11-051-high.png"
+    "imageHighSrc": "cards/sm11-051-high.png",
+    "attacks": [
+      {
+        "name": "First Impression",
+        "damage": "120+"
+      }
+    ]
   },
   {
     "masterCardId": "9863",
-    "externalId": null,
+    "externalId": "sm11-50",
     "tcgdex_id": "sm11-50",
     "localId": "50",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "050/236",
+    "cardNumber": "50/236",
     "cardName": "Wimpod",
-    "fullDisplayName": "Wimpod 050/236 Unified Minds",
+    "fullDisplayName": "Wimpod 50/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6902,18 +8439,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-050-low.png",
-    "imageHighSrc": "cards/sm11-050-high.png"
+    "imageHighSrc": "cards/sm11-050-high.png",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9856",
-    "externalId": null,
+    "externalId": "sm11-49",
     "tcgdex_id": "sm11-49",
     "localId": "49",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "049/236",
+    "cardNumber": "49/236",
     "cardName": "Araquanid",
-    "fullDisplayName": "Araquanid 049/236 Unified Minds",
+    "fullDisplayName": "Araquanid 49/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -6935,18 +8478,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-049-low.png",
-    "imageHighSrc": "cards/sm11-049-high.png"
+    "imageHighSrc": "cards/sm11-049-high.png",
+    "attacks": [
+      {
+        "name": "Tangle Drag",
+        "damage": null
+      },
+      {
+        "name": "Sticky Web",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9849",
-    "externalId": null,
+    "externalId": "sm11-48",
     "tcgdex_id": "sm11-48",
     "localId": "48",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "048/236",
+    "cardNumber": "48/236",
     "cardName": "Dewpider",
-    "fullDisplayName": "Dewpider 048/236 Unified Minds",
+    "fullDisplayName": "Dewpider 48/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -6968,18 +8521,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-048-low.png",
-    "imageHighSrc": "cards/sm11-048-high.png"
+    "imageHighSrc": "cards/sm11-048-high.png",
+    "attacks": [
+      {
+        "name": "Rain Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9842",
-    "externalId": null,
+    "externalId": "sm11-47",
     "tcgdex_id": "sm11-47",
     "localId": "47",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "047/236",
+    "cardNumber": "47/236",
     "cardName": "Keldeo-GX",
-    "fullDisplayName": "Keldeo-GX 047/236 Unified Minds",
+    "fullDisplayName": "Keldeo-GX 47/236 Unified Minds",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7002,18 +8565,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-047-low.png",
-    "imageHighSrc": "cards/sm11-047-high.png"
+    "imageHighSrc": "cards/sm11-047-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Edge",
+        "damage": "110"
+      },
+      {
+        "name": "Resolute Blade-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9833",
-    "externalId": null,
+    "externalId": "sm11-46",
     "tcgdex_id": "sm11-46",
     "localId": "46",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "046/236",
+    "cardNumber": "46/236",
     "cardName": "Cryogonal",
-    "fullDisplayName": "Cryogonal 046/236 Unified Minds",
+    "fullDisplayName": "Cryogonal 46/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7035,18 +8609,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-046-low.png",
-    "imageHighSrc": "cards/sm11-046-high.png"
+    "imageHighSrc": "cards/sm11-046-high.png",
+    "attacks": [
+      {
+        "name": "Frozen Lock",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9824",
-    "externalId": null,
+    "externalId": "sm11-45",
     "tcgdex_id": "sm11-45",
     "localId": "45",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "045/236",
+    "cardNumber": "45/236",
     "cardName": "Carracosta",
-    "fullDisplayName": "Carracosta 045/236 Unified Minds",
+    "fullDisplayName": "Carracosta 45/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -7068,18 +8648,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-045-low.png",
-    "imageHighSrc": "cards/sm11-045-high.png"
+    "imageHighSrc": "cards/sm11-045-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Impact",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "9814",
-    "externalId": null,
+    "externalId": "sm11-44",
     "tcgdex_id": "sm11-44",
     "localId": "44",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "044/236",
+    "cardNumber": "44/236",
     "cardName": "Tirtouga",
-    "fullDisplayName": "Tirtouga 044/236 Unified Minds",
+    "fullDisplayName": "Tirtouga 44/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7101,18 +8687,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-044-low.png",
-    "imageHighSrc": "cards/sm11-044-high.png"
+    "imageHighSrc": "cards/sm11-044-high.png",
+    "attacks": [
+      {
+        "name": "Shell Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Boulder Crush",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9807",
-    "externalId": null,
+    "externalId": "sm11-43",
     "tcgdex_id": "sm11-43",
     "localId": "43",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "043/236",
+    "cardNumber": "43/236",
     "cardName": "Basculin",
-    "fullDisplayName": "Basculin 043/236 Unified Minds",
+    "fullDisplayName": "Basculin 43/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7134,18 +8730,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-043-low.png",
-    "imageHighSrc": "cards/sm11-043-high.png"
+    "imageHighSrc": "cards/sm11-043-high.png",
+    "attacks": [
+      {
+        "name": "Swarming Bites",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9800",
-    "externalId": null,
+    "externalId": "sm11-42",
     "tcgdex_id": "sm11-42",
     "localId": "42",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "042/236",
+    "cardNumber": "42/236",
     "cardName": "Abomasnow",
-    "fullDisplayName": "Abomasnow 042/236 Unified Minds",
+    "fullDisplayName": "Abomasnow 42/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7167,18 +8773,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-042-low.png",
-    "imageHighSrc": "cards/sm11-042-high.png"
+    "imageHighSrc": "cards/sm11-042-high.png",
+    "attacks": [
+      {
+        "name": "Quick Freeze",
+        "damage": "70"
+      },
+      {
+        "name": "Wild Tackle",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "9791",
-    "externalId": null,
+    "externalId": "sm11-41",
     "tcgdex_id": "sm11-41",
     "localId": "41",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "041/236",
+    "cardNumber": "41/236",
     "cardName": "Snover",
-    "fullDisplayName": "Snover 041/236 Unified Minds",
+    "fullDisplayName": "Snover 41/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7200,18 +8816,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-041-low.png",
-    "imageHighSrc": "cards/sm11-041-high.png"
+    "imageHighSrc": "cards/sm11-041-high.png",
+    "attacks": [
+      {
+        "name": "Powder Snow",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9782",
-    "externalId": null,
+    "externalId": "sm11-40",
     "tcgdex_id": "sm11-40",
     "localId": "40",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "040/236",
+    "cardNumber": "40/236",
     "cardName": "Lumineon",
-    "fullDisplayName": "Lumineon 040/236 Unified Minds",
+    "fullDisplayName": "Lumineon 40/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7233,18 +8855,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-040-low.png",
-    "imageHighSrc": "cards/sm11-040-high.png"
+    "imageHighSrc": "cards/sm11-040-high.png",
+    "attacks": [
+      {
+        "name": "Neon Trickery",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9774",
-    "externalId": null,
+    "externalId": "sm11-39",
     "tcgdex_id": "sm11-39",
     "localId": "39",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "039/236",
+    "cardNumber": "39/236",
     "cardName": "Finneon",
-    "fullDisplayName": "Finneon 039/236 Unified Minds",
+    "fullDisplayName": "Finneon 39/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7266,18 +8894,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-039-low.png",
-    "imageHighSrc": "cards/sm11-039-high.png"
+    "imageHighSrc": "cards/sm11-039-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9767",
-    "externalId": null,
+    "externalId": "sm11-38",
     "tcgdex_id": "sm11-38",
     "localId": "38",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "038/236",
+    "cardNumber": "38/236",
     "cardName": "Froslass",
-    "fullDisplayName": "Froslass 038/236 Unified Minds",
+    "fullDisplayName": "Froslass 38/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7299,18 +8933,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-038-low.png",
-    "imageHighSrc": "cards/sm11-038-high.png"
+    "imageHighSrc": "cards/sm11-038-high.png",
+    "attacks": [
+      {
+        "name": "Spiteful Sigh",
+        "damage": "20×"
+      },
+      {
+        "name": "Icy Wind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9758",
-    "externalId": null,
+    "externalId": "sm11-37",
     "tcgdex_id": "sm11-37",
     "localId": "37",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "037/236",
+    "cardNumber": "37/236",
     "cardName": "Snorunt",
-    "fullDisplayName": "Snorunt 037/236 Unified Minds",
+    "fullDisplayName": "Snorunt 37/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7332,18 +8976,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-037-low.png",
-    "imageHighSrc": "cards/sm11-037-high.png"
+    "imageHighSrc": "cards/sm11-037-high.png",
+    "attacks": [
+      {
+        "name": "Icicle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9743",
-    "externalId": null,
+    "externalId": "sm11-36",
     "tcgdex_id": "sm11-36",
     "localId": "36",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "036/236",
+    "cardNumber": "36/236",
     "cardName": "Lapras",
-    "fullDisplayName": "Lapras 036/236 Unified Minds",
+    "fullDisplayName": "Lapras 36/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7365,18 +9015,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-036-low.png",
-    "imageHighSrc": "cards/sm11-036-high.png"
+    "imageHighSrc": "cards/sm11-036-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9734",
-    "externalId": null,
+    "externalId": "sm11-35",
     "tcgdex_id": "sm11-35",
     "localId": "35",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "035/236",
+    "cardNumber": "35/236",
     "cardName": "Slowpoke & Psyduck-GX",
-    "fullDisplayName": "Slowpoke & Psyduck-GX 035/236 Unified Minds",
+    "fullDisplayName": "Slowpoke & Psyduck-GX 35/236 Unified Minds",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7401,18 +9057,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-035-low.png",
-    "imageHighSrc": "cards/sm11-035-high.png"
+    "imageHighSrc": "cards/sm11-035-high.png",
+    "attacks": [
+      {
+        "name": "Ditch and Splash",
+        "damage": "40×"
+      },
+      {
+        "name": "Thrilling Times-GX",
+        "damage": "10+"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "9725",
-    "externalId": null,
+    "externalId": "sm11-34",
     "tcgdex_id": "sm11-34",
     "localId": "34",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "034/236",
+    "cardNumber": "34/236",
     "cardName": "Salazzle",
-    "fullDisplayName": "Salazzle 034/236 Unified Minds",
+    "fullDisplayName": "Salazzle 34/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7434,18 +9101,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-034-low.png",
-    "imageHighSrc": "cards/sm11-034-high.png"
+    "imageHighSrc": "cards/sm11-034-high.png",
+    "attacks": [
+      {
+        "name": "Fire Claws",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9717",
-    "externalId": null,
+    "externalId": "sm11-33",
     "tcgdex_id": "sm11-33",
     "localId": "33",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "033/236",
+    "cardNumber": "33/236",
     "cardName": "Salandit",
-    "fullDisplayName": "Salandit 033/236 Unified Minds",
+    "fullDisplayName": "Salandit 33/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7467,18 +9140,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-033-low.png",
-    "imageHighSrc": "cards/sm11-033-high.png"
+    "imageHighSrc": "cards/sm11-033-high.png",
+    "attacks": [
+      {
+        "name": "Live Coal",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9703",
-    "externalId": null,
+    "externalId": "sm11-32",
     "tcgdex_id": "sm11-32",
     "localId": "32",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "032/236",
+    "cardNumber": "32/236",
     "cardName": "Talonflame",
-    "fullDisplayName": "Talonflame 032/236 Unified Minds",
+    "fullDisplayName": "Talonflame 32/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -7500,18 +9179,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-032-low.png",
-    "imageHighSrc": "cards/sm11-032-high.png"
+    "imageHighSrc": "cards/sm11-032-high.png",
+    "attacks": [
+      {
+        "name": "Heat Wave",
+        "damage": "40"
+      },
+      {
+        "name": "Flare Raid",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9695",
-    "externalId": null,
+    "externalId": "sm11-31",
     "tcgdex_id": "sm11-31",
     "localId": "31",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "031/236",
+    "cardNumber": "31/236",
     "cardName": "Fletchinder",
-    "fullDisplayName": "Fletchinder 031/236 Unified Minds",
+    "fullDisplayName": "Fletchinder 31/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7533,18 +9222,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-031-low.png",
-    "imageHighSrc": "cards/sm11-031-high.png"
+    "imageHighSrc": "cards/sm11-031-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9685",
-    "externalId": null,
+    "externalId": "sm11-30",
     "tcgdex_id": "sm11-30",
     "localId": "30",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "030/236",
+    "cardNumber": "30/236",
     "cardName": "Chandelure",
-    "fullDisplayName": "Chandelure 030/236 Unified Minds",
+    "fullDisplayName": "Chandelure 30/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -7566,18 +9261,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-030-low.png",
-    "imageHighSrc": "cards/sm11-030-high.png"
+    "imageHighSrc": "cards/sm11-030-high.png",
+    "attacks": [
+      {
+        "name": "Spirit Burner",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9676",
-    "externalId": null,
+    "externalId": "sm11-29",
     "tcgdex_id": "sm11-29",
     "localId": "29",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "029/236",
+    "cardNumber": "29/236",
     "cardName": "Lampent",
-    "fullDisplayName": "Lampent 029/236 Unified Minds",
+    "fullDisplayName": "Lampent 29/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7599,18 +9300,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-029-low.png",
-    "imageHighSrc": "cards/sm11-029-high.png"
+    "imageHighSrc": "cards/sm11-029-high.png",
+    "attacks": [
+      {
+        "name": "Fireworks",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9667",
-    "externalId": null,
+    "externalId": "sm11-28",
     "tcgdex_id": "sm11-28",
     "localId": "28",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "028/236",
+    "cardNumber": "28/236",
     "cardName": "Litwick",
-    "fullDisplayName": "Litwick 028/236 Unified Minds",
+    "fullDisplayName": "Litwick 28/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7632,18 +9339,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-028-low.png",
-    "imageHighSrc": "cards/sm11-028-high.png"
+    "imageHighSrc": "cards/sm11-028-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9658",
-    "externalId": null,
+    "externalId": "sm11-27",
     "tcgdex_id": "sm11-27",
     "localId": "27",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "027/236",
+    "cardNumber": "27/236",
     "cardName": "Litwick",
-    "fullDisplayName": "Litwick 027/236 Unified Minds",
+    "fullDisplayName": "Litwick 27/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7665,18 +9378,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-027-low.png",
-    "imageHighSrc": "cards/sm11-027-high.png"
+    "imageHighSrc": "cards/sm11-027-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9641",
-    "externalId": null,
+    "externalId": "sm11-26",
     "tcgdex_id": "sm11-26",
     "localId": "26",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "026/236",
+    "cardNumber": "26/236",
     "cardName": "Victini",
-    "fullDisplayName": "Victini 026/236 Unified Minds",
+    "fullDisplayName": "Victini 26/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7698,18 +9417,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-026-low.png",
-    "imageHighSrc": "cards/sm11-026-high.png"
+    "imageHighSrc": "cards/sm11-026-high.png",
+    "attacks": [
+      {
+        "name": "Victory Sign",
+        "damage": null
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9633",
-    "externalId": null,
+    "externalId": "sm11-25",
     "tcgdex_id": "sm11-25",
     "localId": "25",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "025/236",
+    "cardNumber": "25/236",
     "cardName": "Heatran-GX",
-    "fullDisplayName": "Heatran-GX 025/236 Unified Minds",
+    "fullDisplayName": "Heatran-GX 25/236 Unified Minds",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7732,18 +9461,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-025-low.png",
-    "imageHighSrc": "cards/sm11-025-high.png"
+    "imageHighSrc": "cards/sm11-025-high.png",
+    "attacks": [
+      {
+        "name": "Steaming Stomp",
+        "damage": "130"
+      },
+      {
+        "name": "Hot Burn-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9624",
-    "externalId": null,
+    "externalId": "sm11-24",
     "tcgdex_id": "sm11-24",
     "localId": "24",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "024/236",
+    "cardNumber": "24/236",
     "cardName": "Camerupt",
-    "fullDisplayName": "Camerupt 024/236 Unified Minds",
+    "fullDisplayName": "Camerupt 24/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7765,18 +9505,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-024-low.png",
-    "imageHighSrc": "cards/sm11-024-high.png"
+    "imageHighSrc": "cards/sm11-024-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "50"
+      },
+      {
+        "name": "Strong Flare",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "9615",
-    "externalId": null,
+    "externalId": "sm11-23",
     "tcgdex_id": "sm11-23",
     "localId": "23",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "023/236",
+    "cardNumber": "23/236",
     "cardName": "Numel",
-    "fullDisplayName": "Numel 023/236 Unified Minds",
+    "fullDisplayName": "Numel 23/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7798,18 +9548,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-023-low.png",
-    "imageHighSrc": "cards/sm11-023-high.png"
+    "imageHighSrc": "cards/sm11-023-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9607",
-    "externalId": null,
+    "externalId": "sm11-22",
     "tcgdex_id": "sm11-22",
     "localId": "22",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "022/236",
+    "cardNumber": "22/236",
     "cardName": "Magmortar",
-    "fullDisplayName": "Magmortar 022/236 Unified Minds",
+    "fullDisplayName": "Magmortar 22/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7831,18 +9591,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-022-low.png",
-    "imageHighSrc": "cards/sm11-022-high.png"
+    "imageHighSrc": "cards/sm11-022-high.png",
+    "attacks": [
+      {
+        "name": "Smoke Bomb",
+        "damage": "50"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9593",
-    "externalId": null,
+    "externalId": "sm11-21",
     "tcgdex_id": "sm11-21",
     "localId": "21",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "021/236",
+    "cardNumber": "21/236",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 021/236 Unified Minds",
+    "fullDisplayName": "Magmar 21/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7864,18 +9634,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-021-low.png",
-    "imageHighSrc": "cards/sm11-021-high.png"
+    "imageHighSrc": "cards/sm11-021-high.png",
+    "attacks": [
+      {
+        "name": "Smoke Bomb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9584",
-    "externalId": null,
+    "externalId": "sm11-20",
     "tcgdex_id": "sm11-20",
     "localId": "20",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "020/236",
+    "cardNumber": "20/236",
     "cardName": "Dhelmise",
-    "fullDisplayName": "Dhelmise 020/236 Unified Minds",
+    "fullDisplayName": "Dhelmise 20/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7897,18 +9673,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-020-low.png",
-    "imageHighSrc": "cards/sm11-020-high.png"
+    "imageHighSrc": "cards/sm11-020-high.png",
+    "attacks": [
+      {
+        "name": "Sea Creeper Net",
+        "damage": null
+      },
+      {
+        "name": "Spinning Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9575",
-    "externalId": null,
+    "externalId": "sm11-19",
     "tcgdex_id": "sm11-19",
     "localId": "19",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "019/236",
+    "cardNumber": "19/236",
     "cardName": "Tsareena",
-    "fullDisplayName": "Tsareena 019/236 Unified Minds",
+    "fullDisplayName": "Tsareena 19/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -7930,18 +9716,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-019-low.png",
-    "imageHighSrc": "cards/sm11-019-high.png"
+    "imageHighSrc": "cards/sm11-019-high.png",
+    "attacks": [
+      {
+        "name": "High Jump Kick",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9566",
-    "externalId": null,
+    "externalId": "sm11-18",
     "tcgdex_id": "sm11-18",
     "localId": "18",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "018/236",
+    "cardNumber": "18/236",
     "cardName": "Steenee",
-    "fullDisplayName": "Steenee 018/236 Unified Minds",
+    "fullDisplayName": "Steenee 18/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -7963,18 +9755,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-018-low.png",
-    "imageHighSrc": "cards/sm11-018-high.png"
+    "imageHighSrc": "cards/sm11-018-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "30×"
+      },
+      {
+        "name": "Leaf Step",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9560",
-    "externalId": null,
+    "externalId": "sm11-17",
     "tcgdex_id": "sm11-17",
     "localId": "17",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "017/236",
+    "cardNumber": "17/236",
     "cardName": "Bounsweet",
-    "fullDisplayName": "Bounsweet 017/236 Unified Minds",
+    "fullDisplayName": "Bounsweet 17/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -7996,18 +9798,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-017-low.png",
-    "imageHighSrc": "cards/sm11-017-high.png"
+    "imageHighSrc": "cards/sm11-017-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      },
+      {
+        "name": "Spinning Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9550",
-    "externalId": null,
+    "externalId": "sm11-16",
     "tcgdex_id": "sm11-16",
     "localId": "16",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "016/236",
+    "cardNumber": "16/236",
     "cardName": "Lurantis",
-    "fullDisplayName": "Lurantis 016/236 Unified Minds",
+    "fullDisplayName": "Lurantis 16/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -8029,18 +9841,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-016-low.png",
-    "imageHighSrc": "cards/sm11-016-high.png"
+    "imageHighSrc": "cards/sm11-016-high.png",
+    "attacks": [
+      {
+        "name": "Petal Blizzard",
+        "damage": null
+      },
+      {
+        "name": "Sol Slice",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "9542",
-    "externalId": null,
+    "externalId": "sm11-15",
     "tcgdex_id": "sm11-15",
     "localId": "15",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "015/236",
+    "cardNumber": "15/236",
     "cardName": "Fomantis",
-    "fullDisplayName": "Fomantis 015/236 Unified Minds",
+    "fullDisplayName": "Fomantis 15/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8062,18 +9884,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-015-low.png",
-    "imageHighSrc": "cards/sm11-015-high.png"
+    "imageHighSrc": "cards/sm11-015-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Scent",
+        "damage": null
+      },
+      {
+        "name": "Leafage",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9534",
-    "externalId": null,
+    "externalId": "sm11-14",
     "tcgdex_id": "sm11-14",
     "localId": "14",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "014/236",
+    "cardNumber": "14/236",
     "cardName": "Amoonguss",
-    "fullDisplayName": "Amoonguss 014/236 Unified Minds",
+    "fullDisplayName": "Amoonguss 14/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -8095,18 +9927,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-014-low.png",
-    "imageHighSrc": "cards/sm11-014-high.png"
+    "imageHighSrc": "cards/sm11-014-high.png",
+    "attacks": [
+      {
+        "name": "Venoshock",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9527",
-    "externalId": null,
+    "externalId": "sm11-13",
     "tcgdex_id": "sm11-13",
     "localId": "13",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "013/236",
+    "cardNumber": "13/236",
     "cardName": "Foongus",
-    "fullDisplayName": "Foongus 013/236 Unified Minds",
+    "fullDisplayName": "Foongus 13/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8128,18 +9966,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-013-low.png",
-    "imageHighSrc": "cards/sm11-013-high.png"
+    "imageHighSrc": "cards/sm11-013-high.png",
+    "attacks": [
+      {
+        "name": "Spore",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9520",
-    "externalId": null,
+    "externalId": "sm11-12",
     "tcgdex_id": "sm11-12",
     "localId": "12",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "012/236",
+    "cardNumber": "12/236",
     "cardName": "Karrablast",
-    "fullDisplayName": "Karrablast 012/236 Unified Minds",
+    "fullDisplayName": "Karrablast 12/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8161,18 +10005,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-012-low.png",
-    "imageHighSrc": "cards/sm11-012-high.png"
+    "imageHighSrc": "cards/sm11-012-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9512",
-    "externalId": null,
+    "externalId": "sm11-11",
     "tcgdex_id": "sm11-11",
     "localId": "11",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "011/236",
+    "cardNumber": "11/236",
     "cardName": "Crustle",
-    "fullDisplayName": "Crustle 011/236 Unified Minds",
+    "fullDisplayName": "Crustle 11/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -8194,18 +10044,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-011-low.png",
-    "imageHighSrc": "cards/sm11-011-high.png"
+    "imageHighSrc": "cards/sm11-011-high.png",
+    "attacks": [
+      {
+        "name": "Fury Cutter",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "9505",
-    "externalId": null,
+    "externalId": "sm11-10",
     "tcgdex_id": "sm11-10",
     "localId": "10",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "010/236",
+    "cardNumber": "10/236",
     "cardName": "Dwebble",
-    "fullDisplayName": "Dwebble 010/236 Unified Minds",
+    "fullDisplayName": "Dwebble 10/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8227,18 +10083,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-010-low.png",
-    "imageHighSrc": "cards/sm11-010-high.png"
+    "imageHighSrc": "cards/sm11-010-high.png",
+    "attacks": [
+      {
+        "name": "Dig Claws",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9498",
-    "externalId": null,
+    "externalId": "sm11-9",
     "tcgdex_id": "sm11-9",
     "localId": "9",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "009/236",
+    "cardNumber": "9/236",
     "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 009/236 Unified Minds",
+    "fullDisplayName": "Leavanny 9/236 Unified Minds",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -8260,18 +10122,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-009-low.png",
-    "imageHighSrc": "cards/sm11-009-high.png"
+    "imageHighSrc": "cards/sm11-009-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9489",
-    "externalId": null,
+    "externalId": "sm11-8",
     "tcgdex_id": "sm11-8",
     "localId": "8",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "008/236",
+    "cardNumber": "8/236",
     "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 008/236 Unified Minds",
+    "fullDisplayName": "Swadloon 8/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -8293,18 +10161,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-008-low.png",
-    "imageHighSrc": "cards/sm11-008-high.png"
+    "imageHighSrc": "cards/sm11-008-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9480",
-    "externalId": null,
+    "externalId": "sm11-7",
     "tcgdex_id": "sm11-7",
     "localId": "7",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "007/236",
+    "cardNumber": "7/236",
     "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 007/236 Unified Minds",
+    "fullDisplayName": "Sewaddle 7/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8326,18 +10200,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-007-low.png",
-    "imageHighSrc": "cards/sm11-007-high.png"
+    "imageHighSrc": "cards/sm11-007-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9460",
-    "externalId": null,
+    "externalId": "sm11-6",
     "tcgdex_id": "sm11-6",
     "localId": "6",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "006/236",
+    "cardNumber": "6/236",
     "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 006/236 Unified Minds",
+    "fullDisplayName": "Sewaddle 6/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8359,18 +10239,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-006-low.png",
-    "imageHighSrc": "cards/sm11-006-high.png"
+    "imageHighSrc": "cards/sm11-006-high.png",
+    "attacks": [
+      {
+        "name": "Multiply",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9451",
-    "externalId": null,
+    "externalId": "sm11-5",
     "tcgdex_id": "sm11-5",
     "localId": "5",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "005/236",
+    "cardNumber": "5/236",
     "cardName": "Shroomish",
-    "fullDisplayName": "Shroomish 005/236 Unified Minds",
+    "fullDisplayName": "Shroomish 5/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8392,18 +10282,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-005-low.png",
-    "imageHighSrc": "cards/sm11-005-high.png"
+    "imageHighSrc": "cards/sm11-005-high.png",
+    "attacks": [
+      {
+        "name": "Poison Powder",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9442",
-    "externalId": null,
+    "externalId": "sm11-4",
     "tcgdex_id": "sm11-4",
     "localId": "4",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "004/236",
+    "cardNumber": "4/236",
     "cardName": "Celebi",
-    "fullDisplayName": "Celebi 004/236 Unified Minds",
+    "fullDisplayName": "Celebi 4/236 Unified Minds",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8425,18 +10321,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-004-low.png",
-    "imageHighSrc": "cards/sm11-004-high.png"
+    "imageHighSrc": "cards/sm11-004-high.png",
+    "attacks": [
+      {
+        "name": "Time Spiral",
+        "damage": null
+      },
+      {
+        "name": "Mind Bend",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9434",
-    "externalId": null,
+    "externalId": "sm11-3",
     "tcgdex_id": "sm11-3",
     "localId": "3",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "003/236",
+    "cardNumber": "3/236",
     "cardName": "Yanmega",
-    "fullDisplayName": "Yanmega 003/236 Unified Minds",
+    "fullDisplayName": "Yanmega 3/236 Unified Minds",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -8458,18 +10364,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-003-low.png",
-    "imageHighSrc": "cards/sm11-003-high.png"
+    "imageHighSrc": "cards/sm11-003-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "50"
+      },
+      {
+        "name": "Air Slash",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9427",
-    "externalId": null,
+    "externalId": "sm11-2",
     "tcgdex_id": "sm11-2",
     "localId": "2",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "002/236",
+    "cardNumber": "2/236",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma 002/236 Unified Minds",
+    "fullDisplayName": "Yanma 2/236 Unified Minds",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8491,18 +10407,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-002-low.png",
-    "imageHighSrc": "cards/sm11-002-high.png"
+    "imageHighSrc": "cards/sm11-002-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Cutting Wind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9417",
-    "externalId": null,
+    "externalId": "sm11-1",
     "tcgdex_id": "sm11-1",
     "localId": "1",
     "setCode": "sm11",
     "setTcgdexId": "sm11",
-    "cardNumber": "001/236",
+    "cardNumber": "1/236",
     "cardName": "Rowlet & Alolan Exeggutor-GX",
-    "fullDisplayName": "Rowlet & Alolan Exeggutor-GX 001/236 Unified Minds",
+    "fullDisplayName": "Rowlet & Alolan Exeggutor-GX 1/236 Unified Minds",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -8527,6 +10453,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm11-001-low.png",
-    "imageHighSrc": "cards/sm11-001-high.png"
+    "imageHighSrc": "cards/sm11-001-high.png",
+    "attacks": [
+      {
+        "name": "Super Growth",
+        "damage": null
+      },
+      {
+        "name": "Calming Hurricane",
+        "damage": "150"
+      },
+      {
+        "name": "Tropical Hour-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   }
 ]

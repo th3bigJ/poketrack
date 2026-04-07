@@ -29,7 +29,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-145-low.jpg",
-    "imageHighSrc": "cards/cel25c-145-low.jpg"
+    "imageHighSrc": "cards/cel25c-145-low.jpg",
+    "attacks": [
+      {
+        "name": "Dragon Rush",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Garchomp C. Garchomp C LV.X can use any attack, Poké-Power, or Poké-Body from its previous Level."
   },
   {
     "masterCardId": "22404",
@@ -61,7 +68,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-114-low.jpg",
-    "imageHighSrc": "cards/cel25c-114-low.jpg"
+    "imageHighSrc": "cards/cel25c-114-low.jpg",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Bolt Strike",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "22403",
@@ -93,7 +110,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-113-low.jpg",
-    "imageHighSrc": "cards/cel25c-113-low.jpg"
+    "imageHighSrc": "cards/cel25c-113-low.jpg",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Blue Flare",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "22402",
@@ -126,7 +153,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-109-low.jpg",
-    "imageHighSrc": "cards/cel25c-109-low.jpg"
+    "imageHighSrc": "cards/cel25c-109-low.jpg",
+    "attacks": [
+      {
+        "name": "Flash Impact",
+        "damage": "60"
+      }
+    ],
+    "rules": "Put this card onto your Active Luxray GL. Luxray GL LV. X can use any attack, Poké-Power, or Poké-Body from its previous Level."
   },
   {
     "masterCardId": "22401",
@@ -159,7 +193,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-107-low.jpg",
-    "imageHighSrc": "cards/cel25c-107-low.jpg"
+    "imageHighSrc": "cards/cel25c-107-low.jpg",
+    "attacks": [
+      {
+        "name": "Earthquake",
+        "damage": "60"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "22400",
@@ -192,7 +236,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-097-low.jpg",
-    "imageHighSrc": "cards/cel25c-097-low.jpg"
+    "imageHighSrc": "cards/cel25c-097-low.jpg",
+    "attacks": [
+      {
+        "name": "Break Through",
+        "damage": "60"
+      },
+      {
+        "name": "X Blast",
+        "damage": "140"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22399",
@@ -225,7 +280,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-093-low.jpg",
-    "imageHighSrc": "cards/cel25c-093-low.jpg"
+    "imageHighSrc": "cards/cel25c-093-low.jpg",
+    "attacks": [
+      {
+        "name": "Flame Ball",
+        "damage": "80"
+      }
+    ],
+    "rules": "When Pokémon-ex has been knocked out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22398",
@@ -258,7 +320,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-088-low.jpg",
-    "imageHighSrc": "cards/cel25c-088-low.jpg"
+    "imageHighSrc": "cards/cel25c-088-low.jpg",
+    "attacks": [
+      {
+        "name": "Power Move",
+        "damage": null
+      }
+    ],
+    "rules": "When Pokémon-ex has been knocked out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22397",
@@ -287,7 +356,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-086-low.jpg",
-    "imageHighSrc": "cards/cel25c-086-low.jpg"
+    "imageHighSrc": "cards/cel25c-086-low.jpg",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nEach player shuffles his or her hand into his or her deck. Then, each player counts his or her Prize cards left and draws up to that many cards. (You draw your cards first.)"
   },
   {
     "masterCardId": "22396",
@@ -320,7 +390,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-076-low.jpg",
-    "imageHighSrc": "cards/cel25c-076-low.jpg"
+    "imageHighSrc": "cards/cel25c-076-low.jpg",
+    "attacks": [
+      {
+        "name": "Emerald Break",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards.\n\nMega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends."
   },
   {
     "masterCardId": "22395",
@@ -347,7 +424,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-073-low.jpg",
-    "imageHighSrc": "cards/cel25c-073-low.jpg"
+    "imageHighSrc": "cards/cel25c-073-low.jpg",
+    "rules": "Your opponent shuffles his or her hand into his or her deck, then draws 7 cards."
   },
   {
     "masterCardId": "22394",
@@ -379,7 +457,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-066-low.jpg",
-    "imageHighSrc": "cards/cel25c-066-low.jpg"
+    "imageHighSrc": "cards/cel25c-066-low.jpg",
+    "attacks": [
+      {
+        "name": "Gold Scale",
+        "damage": null
+      },
+      {
+        "name": "Dragon Bond",
+        "damage": null
+      }
+    ],
+    "rules": "You can't have more than 1 Shining Magikarp in your deck."
   },
   {
     "masterCardId": "22393",
@@ -412,7 +501,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-060-low.jpg",
-    "imageHighSrc": "cards/cel25c-060-low.jpg"
+    "imageHighSrc": "cards/cel25c-060-low.jpg",
+    "attacks": [
+      {
+        "name": "Energy Drive",
+        "damage": "20×"
+      },
+      {
+        "name": "Tapu Cure-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22392",
@@ -445,7 +545,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-054-low.jpg",
-    "imageHighSrc": "cards/cel25c-054-low.jpg"
+    "imageHighSrc": "cards/cel25c-054-low.jpg",
+    "attacks": [
+      {
+        "name": "X Ball",
+        "damage": "20×"
+      },
+      {
+        "name": "Psydrive",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "22391",
@@ -477,7 +588,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-024-low.jpg",
-    "imageHighSrc": "cards/cel25c-024-low.jpg"
+    "imageHighSrc": "cards/cel25c-024-low.jpg",
+    "attacks": [
+      {
+        "name": "Birthday Surprise",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "22390",
@@ -508,7 +625,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-020-low.jpg",
-    "imageHighSrc": "cards/cel25c-020-low.jpg"
+    "imageHighSrc": "cards/cel25c-020-low.jpg",
+    "attacks": [
+      {
+        "name": "Eeeeeeek",
+        "damage": null
+      }
+    ],
+    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent tries to attack, your opponent flips a coin (before doing anything required in order to use that attack). If tails, your opponent's turn ends without an attack."
   },
   {
     "masterCardId": "22389",
@@ -541,7 +665,14 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-017-low.jpg",
-    "imageHighSrc": "cards/cel25c-017-low.jpg"
+    "imageHighSrc": "cards/cel25c-017-low.jpg",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "22385",
@@ -573,7 +704,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-015d-low.jpg",
-    "imageHighSrc": "cards/cel25c-015d-low.jpg"
+    "imageHighSrc": "cards/cel25c-015d-low.jpg",
+    "attacks": [
+      {
+        "name": "Solarbeam",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "22387",
@@ -605,7 +742,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-015c-low.jpg",
-    "imageHighSrc": "cards/cel25c-015c-low.jpg"
+    "imageHighSrc": "cards/cel25c-015c-low.jpg",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "20"
+      },
+      {
+        "name": "Electroburn",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "22386",
@@ -632,7 +779,8 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-015b-low.jpg",
-    "imageHighSrc": "cards/cel25c-015b-low.jpg"
+    "imageHighSrc": "cards/cel25c-015b-low.jpg",
+    "rules": "Each player plays with his or her Prize cards face up for the rest of the game."
   },
   {
     "masterCardId": "22388",
@@ -664,7 +812,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-015a-low.jpg",
-    "imageHighSrc": "cards/cel25c-015a-low.jpg"
+    "imageHighSrc": "cards/cel25c-015a-low.jpg",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "22384",
@@ -696,7 +850,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-009-low.jpg",
-    "imageHighSrc": "cards/cel25c-009-low.jpg"
+    "imageHighSrc": "cards/cel25c-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Linear Attack",
+        "damage": null
+      },
+      {
+        "name": "Pulverize",
+        "damage": "50+"
+      }
+    ],
+    "rules": "This Pokémon is both Fighting Darkness type."
   },
   {
     "masterCardId": "22383",
@@ -728,7 +893,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-008-low.jpg",
-    "imageHighSrc": "cards/cel25c-008-low.jpg"
+    "imageHighSrc": "cards/cel25c-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Ice Beam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "22382",
@@ -760,7 +931,13 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-004-low.jpg",
-    "imageHighSrc": "cards/cel25c-004-low.jpg"
+    "imageHighSrc": "cards/cel25c-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Fire Spin",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "22381",
@@ -792,6 +969,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/cel25c-002-low.jpg",
-    "imageHighSrc": "cards/cel25c-002-low.jpg"
+    "imageHighSrc": "cards/cel25c-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "40+"
+      }
+    ]
   }
 ]

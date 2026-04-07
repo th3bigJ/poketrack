@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "5169",
-    "externalId": null,
+    "externalId": "dp6-146",
     "tcgdex_id": "dp6-146",
     "localId": "146",
     "setCode": "dp6",
@@ -30,11 +30,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-146-low.png",
-    "imageHighSrc": "cards/dp6-146-high.png"
+    "imageHighSrc": "cards/dp6-146-high.png",
+    "attacks": [
+      {
+        "name": "Zen Blade",
+        "damage": "60"
+      }
+    ],
+    "rules": "Put this card onto your Active Uxie. Uxie LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "5165",
-    "externalId": null,
+    "externalId": "dp6-145",
     "tcgdex_id": "dp6-145",
     "localId": "145",
     "setCode": "dp6",
@@ -63,11 +70,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-145-low.png",
-    "imageHighSrc": "cards/dp6-145-high.png"
+    "imageHighSrc": "cards/dp6-145-high.png",
+    "attacks": [
+      {
+        "name": "Hard Crush",
+        "damage": "50×"
+      },
+      {
+        "name": "Upthrow",
+        "damage": "60"
+      }
+    ],
+    "rules": "Put this card onto your Active Rhyperior. Rhyperior LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "5161",
-    "externalId": null,
+    "externalId": "dp6-144",
     "tcgdex_id": "dp6-144",
     "localId": "144",
     "setCode": "dp6",
@@ -96,11 +114,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-144-low.png",
-    "imageHighSrc": "cards/dp6-144-high.png"
+    "imageHighSrc": "cards/dp6-144-high.png",
+    "attacks": [
+      {
+        "name": "Giga Burn",
+        "damage": "120"
+      }
+    ],
+    "rules": "Put this card onto your Active Mewtwo. Mewtwo LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "5157",
-    "externalId": null,
+    "externalId": "dp6-143",
     "tcgdex_id": "dp6-143",
     "localId": "143",
     "setCode": "dp6",
@@ -129,11 +154,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-143-low.png",
-    "imageHighSrc": "cards/dp6-143-high.png"
+    "imageHighSrc": "cards/dp6-143-high.png",
+    "attacks": [
+      {
+        "name": "Healing Look",
+        "damage": null
+      },
+      {
+        "name": "Supreme Blast",
+        "damage": "200"
+      }
+    ],
+    "rules": "Put this card onto your Active Mesprit. Mesprit LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "5150",
-    "externalId": null,
+    "externalId": "dp6-142",
     "tcgdex_id": "dp6-142",
     "localId": "142",
     "setCode": "dp6",
@@ -162,11 +198,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-142-low.png",
-    "imageHighSrc": "cards/dp6-142-high.png"
+    "imageHighSrc": "cards/dp6-142-high.png",
+    "attacks": [
+      {
+        "name": "Cyber Shock",
+        "damage": "80"
+      }
+    ],
+    "rules": "Put this card onto your Active Magnezone. Magnezone LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "5145",
-    "externalId": null,
+    "externalId": "dp6-141",
     "tcgdex_id": "dp6-141",
     "localId": "141",
     "setCode": "dp6",
@@ -195,11 +238,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-141-low.png",
-    "imageHighSrc": "cards/dp6-141-high.png"
+    "imageHighSrc": "cards/dp6-141-high.png",
+    "attacks": [
+      {
+        "name": "Night Slash",
+        "damage": "60"
+      }
+    ],
+    "rules": "Put this card onto your Active Gliscor. Gliscor LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "5140",
-    "externalId": null,
+    "externalId": "dp6-140",
     "tcgdex_id": "dp6-140",
     "localId": "140",
     "setCode": "dp6",
@@ -228,11 +278,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-140-low.png",
-    "imageHighSrc": "cards/dp6-140-high.png"
+    "imageHighSrc": "cards/dp6-140-high.png",
+    "attacks": [
+      {
+        "name": "Deep Balance",
+        "damage": null
+      }
+    ],
+    "rules": "Put this card onto your Active Azelf. Azelf LV.X can use any attack, Poké-Power, or Poké-Body from its previous level."
   },
   {
     "masterCardId": "5135",
-    "externalId": null,
+    "externalId": "dp6-139",
     "tcgdex_id": "dp6-139",
     "localId": "139",
     "setCode": "dp6",
@@ -257,11 +314,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-139-low.png",
-    "imageHighSrc": "cards/dp6-139-high.png"
+    "imageHighSrc": "cards/dp6-139-high.png",
+    "rules": "Play Root Fossil as if it were a Colorless Basic Pokémon. (Root Fossil counts as a Trainer card as well, but if Root Fossil is Knocked Out, this counts as a Knocked Out Pokémon.) Root Fossil can't be affected by any Special Conditions and can't retreat. At any time during your turn before your attack, you may discard Root Fossil from play. (This doesn't count as a Knocked Out Pokémon.)"
   },
   {
     "masterCardId": "5130",
-    "externalId": null,
+    "externalId": "dp6-138",
     "tcgdex_id": "dp6-138",
     "localId": "138",
     "setCode": "dp6",
@@ -286,11 +344,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-138-low.png",
-    "imageHighSrc": "cards/dp6-138-high.png"
+    "imageHighSrc": "cards/dp6-138-high.png",
+    "rules": "Play Claw Fossil as if it were a Colorless Basic Pokémon. (Claw Fossil counts as a Trainer card as well, but if Claw Fossil is Knocked Out, this counts as a Knocked Out Pokémon.) Claw Fossil can't be affected by any Special Conditions and can't retreat. At any time during your turn before your attack, you may discard Claw Fossil from play. (This doesn't count as a Knocked Out Pokémon.)"
   },
   {
     "masterCardId": "5125",
-    "externalId": null,
+    "externalId": "dp6-137",
     "tcgdex_id": "dp6-137",
     "localId": "137",
     "setCode": "dp6",
@@ -315,11 +374,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-137-low.png",
-    "imageHighSrc": "cards/dp6-137-high.png"
+    "imageHighSrc": "cards/dp6-137-high.png",
+    "attacks": [
+      {
+        "name": "Devoluter",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Pokémon in play. That Pokémon may use this card's attack instead of its own."
   },
   {
     "masterCardId": "5120",
-    "externalId": null,
+    "externalId": "dp6-136",
     "tcgdex_id": "dp6-136",
     "localId": "136",
     "setCode": "dp6",
@@ -344,11 +410,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-136-low.png",
-    "imageHighSrc": "cards/dp6-136-high.png"
+    "imageHighSrc": "cards/dp6-136-high.png",
+    "attacks": [
+      {
+        "name": "Evoluter",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Pokémon in play. That Pokémon may use this card's attack instead of its own."
   },
   {
     "masterCardId": "5115",
-    "externalId": null,
+    "externalId": "dp6-135",
     "tcgdex_id": "dp6-135",
     "localId": "135",
     "setCode": "dp6",
@@ -373,11 +446,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-135-low.png",
-    "imageHighSrc": "cards/dp6-135-high.png"
+    "imageHighSrc": "cards/dp6-135-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nOnce during each player's turn, that player may choose a Fire or Fighting Energy attached to 1 of his or her Pokémon and move that Energy to 1 of his or her Pokémon."
   },
   {
     "masterCardId": "5110",
-    "externalId": null,
+    "externalId": "dp6-134",
     "tcgdex_id": "dp6-134",
     "localId": "134",
     "setCode": "dp6",
@@ -402,11 +476,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-134-low.png",
-    "imageHighSrc": "cards/dp6-134-high.png"
+    "imageHighSrc": "cards/dp6-134-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nEach Pokémon that isn't an Evolved Pokémon in play (both yours and your opponent's) gets +20 HP."
   },
   {
     "masterCardId": "5105",
-    "externalId": null,
+    "externalId": "dp6-133",
     "tcgdex_id": "dp6-133",
     "localId": "133",
     "setCode": "dp6",
@@ -431,11 +506,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-133-low.png",
-    "imageHighSrc": "cards/dp6-133-high.png"
+    "imageHighSrc": "cards/dp6-133-high.png",
+    "rules": "Look at the top 5 cards of your deck, choose as many Pokémon as you like, show them to your opponent, and put them into your hand. Put the other cards back on top of your deck. Shuffle your deck afterward."
   },
   {
     "masterCardId": "5098",
-    "externalId": null,
+    "externalId": "dp6-132",
     "tcgdex_id": "dp6-132",
     "localId": "132",
     "setCode": "dp6",
@@ -460,11 +536,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-132-low.png",
-    "imageHighSrc": "cards/dp6-132-high.png"
+    "imageHighSrc": "cards/dp6-132-high.png",
+    "rules": "Flip a coin. If heads, search your discard pile for a basic Energy card and attach it to 1 of your Pokémon."
   },
   {
     "masterCardId": "5092",
-    "externalId": null,
+    "externalId": "dp6-131",
     "tcgdex_id": "dp6-131",
     "localId": "131",
     "setCode": "dp6",
@@ -489,11 +566,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-131-low.png",
-    "imageHighSrc": "cards/dp6-131-high.png"
+    "imageHighSrc": "cards/dp6-131-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nShuffle your hand into your deck. Then, draw 4 cards. If any of your Pokémon were Knocked Out during your opponent's last turn, draw 4 more cards."
   },
   {
     "masterCardId": "5088",
-    "externalId": null,
+    "externalId": "dp6-130",
     "tcgdex_id": "dp6-130",
     "localId": "130",
     "setCode": "dp6",
@@ -518,11 +596,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-130-low.png",
-    "imageHighSrc": "cards/dp6-130-high.png"
+    "imageHighSrc": "cards/dp6-130-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 2 cards. As long as Buck's Training is next to your Active Pokémon, each of your Active Pokémon's attacks does 10 more damage to the Active Pokémon (before applying Weakness and Resistance)."
   },
   {
     "masterCardId": "5083",
-    "externalId": null,
+    "externalId": "dp6-129",
     "tcgdex_id": "dp6-129",
     "localId": "129",
     "setCode": "dp6",
@@ -547,11 +626,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-129-low.png",
-    "imageHighSrc": "cards/dp6-129-high.png"
+    "imageHighSrc": "cards/dp6-129-high.png",
+    "rules": "Attach Bubble Coat to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it. If that Pokémon is Knocked Out, discard this card.\n\nAs long as Bubble Coat is attached to a Pokémon, that Pokémon has no Weakness. If that Pokémon is damaged by an opponent's attack, discard this card at the end of the turn."
   },
   {
     "masterCardId": "5077",
-    "externalId": null,
+    "externalId": "dp6-128",
     "tcgdex_id": "dp6-128",
     "localId": "128",
     "setCode": "dp6",
@@ -580,11 +660,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-128-low.png",
-    "imageHighSrc": "cards/dp6-128-high.png"
+    "imageHighSrc": "cards/dp6-128-high.png",
+    "attacks": [
+      {
+        "name": "U-turn",
+        "damage": "10"
+      },
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5072",
-    "externalId": null,
+    "externalId": "dp6-127",
     "tcgdex_id": "dp6-127",
     "localId": "127",
     "setCode": "dp6",
@@ -613,11 +703,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-127-low.png",
-    "imageHighSrc": "cards/dp6-127-high.png"
+    "imageHighSrc": "cards/dp6-127-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5067",
-    "externalId": null,
+    "externalId": "dp6-126",
     "tcgdex_id": "dp6-126",
     "localId": "126",
     "setCode": "dp6",
@@ -646,11 +746,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-126-low.png",
-    "imageHighSrc": "cards/dp6-126-high.png"
+    "imageHighSrc": "cards/dp6-126-high.png",
+    "attacks": [
+      {
+        "name": "Gut Blow",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5061",
-    "externalId": null,
+    "externalId": "dp6-125",
     "tcgdex_id": "dp6-125",
     "localId": "125",
     "setCode": "dp6",
@@ -679,11 +785,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-125-low.png",
-    "imageHighSrc": "cards/dp6-125-high.png"
+    "imageHighSrc": "cards/dp6-125-high.png",
+    "attacks": [
+      {
+        "name": "Crystal Barrier",
+        "damage": null
+      },
+      {
+        "name": "Mysterious Beam",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5056",
-    "externalId": null,
+    "externalId": "dp6-124",
     "tcgdex_id": "dp6-124",
     "localId": "124",
     "setCode": "dp6",
@@ -712,11 +828,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-124-low.png",
-    "imageHighSrc": "cards/dp6-124-high.png"
+    "imageHighSrc": "cards/dp6-124-high.png",
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5052",
-    "externalId": null,
+    "externalId": "dp6-123",
     "tcgdex_id": "dp6-123",
     "localId": "123",
     "setCode": "dp6",
@@ -745,11 +871,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-123-low.png",
-    "imageHighSrc": "cards/dp6-123-high.png"
+    "imageHighSrc": "cards/dp6-123-high.png",
+    "attacks": [
+      {
+        "name": "Sniff Out",
+        "damage": null
+      },
+      {
+        "name": "Lunge Out",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5047",
-    "externalId": null,
+    "externalId": "dp6-122",
     "tcgdex_id": "dp6-122",
     "localId": "122",
     "setCode": "dp6",
@@ -778,11 +914,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-122-low.png",
-    "imageHighSrc": "cards/dp6-122-high.png"
+    "imageHighSrc": "cards/dp6-122-high.png",
+    "attacks": [
+      {
+        "name": "Recover",
+        "damage": null
+      },
+      {
+        "name": "Spinning Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5042",
-    "externalId": null,
+    "externalId": "dp6-121",
     "tcgdex_id": "dp6-121",
     "localId": "121",
     "setCode": "dp6",
@@ -811,11 +957,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-121-low.png",
-    "imageHighSrc": "cards/dp6-121-high.png"
+    "imageHighSrc": "cards/dp6-121-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": null
+      },
+      {
+        "name": "Bounce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5037",
-    "externalId": null,
+    "externalId": "dp6-120",
     "tcgdex_id": "dp6-120",
     "localId": "120",
     "setCode": "dp6",
@@ -844,11 +1000,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-120-low.png",
-    "imageHighSrc": "cards/dp6-120-high.png"
+    "imageHighSrc": "cards/dp6-120-high.png",
+    "attacks": [
+      {
+        "name": "Rob",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "5032",
-    "externalId": null,
+    "externalId": "dp6-119",
     "tcgdex_id": "dp6-119",
     "localId": "119",
     "setCode": "dp6",
@@ -877,11 +1043,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-119-low.png",
-    "imageHighSrc": "cards/dp6-119-high.png"
+    "imageHighSrc": "cards/dp6-119-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "5027",
-    "externalId": null,
+    "externalId": "dp6-118",
     "tcgdex_id": "dp6-118",
     "localId": "118",
     "setCode": "dp6",
@@ -910,11 +1086,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-118-low.png",
-    "imageHighSrc": "cards/dp6-118-high.png"
+    "imageHighSrc": "cards/dp6-118-high.png",
+    "attacks": [
+      {
+        "name": "Recharge",
+        "damage": null
+      },
+      {
+        "name": "Double Kick",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "5022",
-    "externalId": null,
+    "externalId": "dp6-117",
     "tcgdex_id": "dp6-117",
     "localId": "117",
     "setCode": "dp6",
@@ -943,11 +1129,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-117-low.png",
-    "imageHighSrc": "cards/dp6-117-high.png"
+    "imageHighSrc": "cards/dp6-117-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Low Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "5018",
-    "externalId": null,
+    "externalId": "dp6-116",
     "tcgdex_id": "dp6-116",
     "localId": "116",
     "setCode": "dp6",
@@ -976,11 +1172,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-116-low.png",
-    "imageHighSrc": "cards/dp6-116-high.png"
+    "imageHighSrc": "cards/dp6-116-high.png",
+    "attacks": [
+      {
+        "name": "Corner",
+        "damage": null
+      },
+      {
+        "name": "Ambush",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "5013",
-    "externalId": null,
+    "externalId": "dp6-115",
     "tcgdex_id": "dp6-115",
     "localId": "115",
     "setCode": "dp6",
@@ -1009,11 +1215,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-115-low.png",
-    "imageHighSrc": "cards/dp6-115-high.png"
+    "imageHighSrc": "cards/dp6-115-high.png",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Bubblebeam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "5008",
-    "externalId": null,
+    "externalId": "dp6-114",
     "tcgdex_id": "dp6-114",
     "localId": "114",
     "setCode": "dp6",
@@ -1042,11 +1258,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-114-low.png",
-    "imageHighSrc": "cards/dp6-114-high.png"
+    "imageHighSrc": "cards/dp6-114-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Twiddle",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "5003",
-    "externalId": null,
+    "externalId": "dp6-113",
     "tcgdex_id": "dp6-113",
     "localId": "113",
     "setCode": "dp6",
@@ -1075,11 +1301,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-113-low.png",
-    "imageHighSrc": "cards/dp6-113-high.png"
+    "imageHighSrc": "cards/dp6-113-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Selfdestruct",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4998",
-    "externalId": null,
+    "externalId": "dp6-112",
     "tcgdex_id": "dp6-112",
     "localId": "112",
     "setCode": "dp6",
@@ -1108,11 +1344,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-112-low.png",
-    "imageHighSrc": "cards/dp6-112-high.png"
+    "imageHighSrc": "cards/dp6-112-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4993",
-    "externalId": null,
+    "externalId": "dp6-111",
     "tcgdex_id": "dp6-111",
     "localId": "111",
     "setCode": "dp6",
@@ -1141,11 +1387,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-111-low.png",
-    "imageHighSrc": "cards/dp6-111-high.png"
+    "imageHighSrc": "cards/dp6-111-high.png",
+    "attacks": [
+      {
+        "name": "Stun Spore",
+        "damage": null
+      },
+      {
+        "name": "Blot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4988",
-    "externalId": null,
+    "externalId": "dp6-110",
     "tcgdex_id": "dp6-110",
     "localId": "110",
     "setCode": "dp6",
@@ -1174,11 +1430,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-110-low.png",
-    "imageHighSrc": "cards/dp6-110-high.png"
+    "imageHighSrc": "cards/dp6-110-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Singe",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4983",
-    "externalId": null,
+    "externalId": "dp6-109",
     "tcgdex_id": "dp6-109",
     "localId": "109",
     "setCode": "dp6",
@@ -1207,11 +1473,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-109-low.png",
-    "imageHighSrc": "cards/dp6-109-high.png"
+    "imageHighSrc": "cards/dp6-109-high.png",
+    "attacks": [
+      {
+        "name": "Sharpen",
+        "damage": "10"
+      },
+      {
+        "name": "Nose Poke",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4978",
-    "externalId": null,
+    "externalId": "dp6-108",
     "tcgdex_id": "dp6-108",
     "localId": "108",
     "setCode": "dp6",
@@ -1240,11 +1516,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-108-low.png",
-    "imageHighSrc": "cards/dp6-108-high.png"
+    "imageHighSrc": "cards/dp6-108-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Big Bite",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4973",
-    "externalId": null,
+    "externalId": "dp6-107",
     "tcgdex_id": "dp6-107",
     "localId": "107",
     "setCode": "dp6",
@@ -1273,11 +1559,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-107-low.png",
-    "imageHighSrc": "cards/dp6-107-high.png"
+    "imageHighSrc": "cards/dp6-107-high.png",
+    "attacks": [
+      {
+        "name": "Show Off",
+        "damage": null
+      },
+      {
+        "name": "Payback",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4968",
-    "externalId": null,
+    "externalId": "dp6-106",
     "tcgdex_id": "dp6-106",
     "localId": "106",
     "setCode": "dp6",
@@ -1306,11 +1602,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-106-low.png",
-    "imageHighSrc": "cards/dp6-106-high.png"
+    "imageHighSrc": "cards/dp6-106-high.png",
+    "attacks": [
+      {
+        "name": "Pay Day",
+        "damage": "10"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4963",
-    "externalId": null,
+    "externalId": "dp6-105",
     "tcgdex_id": "dp6-105",
     "localId": "105",
     "setCode": "dp6",
@@ -1339,11 +1645,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-105-low.png",
-    "imageHighSrc": "cards/dp6-105-high.png"
+    "imageHighSrc": "cards/dp6-105-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": "20"
+      },
+      {
+        "name": "Absorb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4956",
-    "externalId": null,
+    "externalId": "dp6-104",
     "tcgdex_id": "dp6-104",
     "localId": "104",
     "setCode": "dp6",
@@ -1372,11 +1688,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-104-low.png",
-    "imageHighSrc": "cards/dp6-104-high.png"
+    "imageHighSrc": "cards/dp6-104-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Double-edge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4952",
-    "externalId": null,
+    "externalId": "dp6-103",
     "tcgdex_id": "dp6-103",
     "localId": "103",
     "setCode": "dp6",
@@ -1405,11 +1731,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-103-low.png",
-    "imageHighSrc": "cards/dp6-103-high.png"
+    "imageHighSrc": "cards/dp6-103-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4945",
-    "externalId": null,
+    "externalId": "dp6-102",
     "tcgdex_id": "dp6-102",
     "localId": "102",
     "setCode": "dp6",
@@ -1438,11 +1774,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-102-low.png",
-    "imageHighSrc": "cards/dp6-102-high.png"
+    "imageHighSrc": "cards/dp6-102-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": null
+      },
+      {
+        "name": "Reverse Thrust",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4938",
-    "externalId": null,
+    "externalId": "dp6-101",
     "tcgdex_id": "dp6-101",
     "localId": "101",
     "setCode": "dp6",
@@ -1471,11 +1817,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-101-low.png",
-    "imageHighSrc": "cards/dp6-101-high.png"
+    "imageHighSrc": "cards/dp6-101-high.png",
+    "attacks": [
+      {
+        "name": "Triple Kick",
+        "damage": "20×"
+      },
+      {
+        "name": "Gut Spin",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4931",
-    "externalId": null,
+    "externalId": "dp6-100",
     "tcgdex_id": "dp6-100",
     "localId": "100",
     "setCode": "dp6",
@@ -1504,18 +1860,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-100-low.png",
-    "imageHighSrc": "cards/dp6-100-high.png"
+    "imageHighSrc": "cards/dp6-100-high.png",
+    "attacks": [
+      {
+        "name": "Gut Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Mega Kick",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4924",
-    "externalId": null,
+    "externalId": "dp6-99",
     "tcgdex_id": "dp6-99",
     "localId": "099",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "099/146",
+    "cardNumber": "99/146",
     "cardName": "Hitmonchan",
-    "fullDisplayName": "Hitmonchan 099/146 Legends Awakened",
+    "fullDisplayName": "Hitmonchan 99/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1537,18 +1903,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-099-low.png",
-    "imageHighSrc": "cards/dp6-099-high.png"
+    "imageHighSrc": "cards/dp6-099-high.png",
+    "attacks": [
+      {
+        "name": "Counter Punch",
+        "damage": null
+      },
+      {
+        "name": "Gut Strike",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4916",
-    "externalId": null,
+    "externalId": "dp6-98",
     "tcgdex_id": "dp6-98",
     "localId": "098",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "098/146",
+    "cardNumber": "98/146",
     "cardName": "Gulpin",
-    "fullDisplayName": "Gulpin 098/146 Legends Awakened",
+    "fullDisplayName": "Gulpin 98/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1570,18 +1946,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-098-low.png",
-    "imageHighSrc": "cards/dp6-098-high.png"
+    "imageHighSrc": "cards/dp6-098-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": null
+      },
+      {
+        "name": "Gastro Acid",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4908",
-    "externalId": null,
+    "externalId": "dp6-97",
     "tcgdex_id": "dp6-97",
     "localId": "097",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "097/146",
+    "cardNumber": "97/146",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 097/146 Legends Awakened",
+    "fullDisplayName": "Gloom 97/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1603,18 +1989,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-097-low.png",
-    "imageHighSrc": "cards/dp6-097-high.png"
+    "imageHighSrc": "cards/dp6-097-high.png",
+    "attacks": [
+      {
+        "name": "Space Out",
+        "damage": null
+      },
+      {
+        "name": "Stinky Nectar",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4900",
-    "externalId": null,
+    "externalId": "dp6-96",
     "tcgdex_id": "dp6-96",
     "localId": "096",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "096/146",
+    "cardNumber": "96/146",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 096/146 Legends Awakened",
+    "fullDisplayName": "Gloom 96/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1636,18 +2032,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-096-low.png",
-    "imageHighSrc": "cards/dp6-096-high.png"
+    "imageHighSrc": "cards/dp6-096-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Powder",
+        "damage": "20"
+      },
+      {
+        "name": "Frustration",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4892",
-    "externalId": null,
+    "externalId": "dp6-95",
     "tcgdex_id": "dp6-95",
     "localId": "095",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "095/146",
+    "cardNumber": "95/146",
     "cardName": "Gligar",
-    "fullDisplayName": "Gligar 095/146 Legends Awakened",
+    "fullDisplayName": "Gligar 95/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1669,18 +2075,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-095-low.png",
-    "imageHighSrc": "cards/dp6-095-high.png"
+    "imageHighSrc": "cards/dp6-095-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4884",
-    "externalId": null,
+    "externalId": "dp6-94",
     "tcgdex_id": "dp6-94",
     "localId": "094",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "094/146",
+    "cardNumber": "94/146",
     "cardName": "Gligar",
-    "fullDisplayName": "Gligar 094/146 Legends Awakened",
+    "fullDisplayName": "Gligar 94/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1702,18 +2118,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-094-low.png",
-    "imageHighSrc": "cards/dp6-094-high.png"
+    "imageHighSrc": "cards/dp6-094-high.png",
+    "attacks": [
+      {
+        "name": "Light Poison",
+        "damage": "10"
+      },
+      {
+        "name": "Jump On",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4876",
-    "externalId": null,
+    "externalId": "dp6-93",
     "tcgdex_id": "dp6-93",
     "localId": "093",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "093/146",
+    "cardNumber": "93/146",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 093/146 Legends Awakened",
+    "fullDisplayName": "Exeggcute 93/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1735,18 +2161,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-093-low.png",
-    "imageHighSrc": "cards/dp6-093-high.png"
+    "imageHighSrc": "cards/dp6-093-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Hypnosis",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4868",
-    "externalId": null,
+    "externalId": "dp6-92",
     "tcgdex_id": "dp6-92",
     "localId": "092",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "092/146",
+    "cardNumber": "92/146",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 092/146 Legends Awakened",
+    "fullDisplayName": "Drifloon 92/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1768,18 +2204,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-092-low.png",
-    "imageHighSrc": "cards/dp6-092-high.png"
+    "imageHighSrc": "cards/dp6-092-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "10"
+      },
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4860",
-    "externalId": null,
+    "externalId": "dp6-91",
     "tcgdex_id": "dp6-91",
     "localId": "091",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "091/146",
+    "cardNumber": "91/146",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 091/146 Legends Awakened",
+    "fullDisplayName": "Dratini 91/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1801,18 +2247,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-091-low.png",
-    "imageHighSrc": "cards/dp6-091-high.png"
+    "imageHighSrc": "cards/dp6-091-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4852",
-    "externalId": null,
+    "externalId": "dp6-90",
     "tcgdex_id": "dp6-90",
     "localId": "090",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "090/146",
+    "cardNumber": "90/146",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 090/146 Legends Awakened",
+    "fullDisplayName": "Cubone 90/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1834,18 +2290,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-090-low.png",
-    "imageHighSrc": "cards/dp6-090-high.png"
+    "imageHighSrc": "cards/dp6-090-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Bonemerang",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4844",
-    "externalId": null,
+    "externalId": "dp6-89",
     "tcgdex_id": "dp6-89",
     "localId": "089",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "089/146",
+    "cardNumber": "89/146",
     "cardName": "Corphish",
-    "fullDisplayName": "Corphish 089/146 Legends Awakened",
+    "fullDisplayName": "Corphish 89/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1867,18 +2333,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-089-low.png",
-    "imageHighSrc": "cards/dp6-089-high.png"
+    "imageHighSrc": "cards/dp6-089-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": null
+      },
+      {
+        "name": "Irongrip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4836",
-    "externalId": null,
+    "externalId": "dp6-88",
     "tcgdex_id": "dp6-88",
     "localId": "088",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "088/146",
+    "cardNumber": "88/146",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 088/146 Legends Awakened",
+    "fullDisplayName": "Chinchou 88/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1900,18 +2376,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-088-low.png",
-    "imageHighSrc": "cards/dp6-088-high.png"
+    "imageHighSrc": "cards/dp6-088-high.png",
+    "attacks": [
+      {
+        "name": "Razor Fin",
+        "damage": "10"
+      },
+      {
+        "name": "Aqua Spark",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4828",
-    "externalId": null,
+    "externalId": "dp6-87",
     "tcgdex_id": "dp6-87",
     "localId": "087",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "087/146",
+    "cardNumber": "87/146",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 087/146 Legends Awakened",
+    "fullDisplayName": "Chinchou 87/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1933,18 +2419,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-087-low.png",
-    "imageHighSrc": "cards/dp6-087-high.png"
+    "imageHighSrc": "cards/dp6-087-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4820",
-    "externalId": null,
+    "externalId": "dp6-86",
     "tcgdex_id": "dp6-86",
     "localId": "086",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "086/146",
+    "cardNumber": "86/146",
     "cardName": "Buneary",
-    "fullDisplayName": "Buneary 086/146 Legends Awakened",
+    "fullDisplayName": "Buneary 86/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1966,18 +2462,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-086-low.png",
-    "imageHighSrc": "cards/dp6-086-high.png"
+    "imageHighSrc": "cards/dp6-086-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      },
+      {
+        "name": "Double Kick",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4811",
-    "externalId": null,
+    "externalId": "dp6-85",
     "tcgdex_id": "dp6-85",
     "localId": "085",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "085/146",
+    "cardNumber": "85/146",
     "cardName": "Bellsprout",
-    "fullDisplayName": "Bellsprout 085/146 Legends Awakened",
+    "fullDisplayName": "Bellsprout 85/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1999,18 +2505,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-085-low.png",
-    "imageHighSrc": "cards/dp6-085-high.png"
+    "imageHighSrc": "cards/dp6-085-high.png",
+    "attacks": [
+      {
+        "name": "Vine Bind",
+        "damage": null
+      },
+      {
+        "name": "Careless Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4802",
-    "externalId": null,
+    "externalId": "dp6-84",
     "tcgdex_id": "dp6-84",
     "localId": "084",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "084/146",
+    "cardNumber": "84/146",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 084/146 Legends Awakened",
+    "fullDisplayName": "Beldum 84/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2032,18 +2548,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-084-low.png",
-    "imageHighSrc": "cards/dp6-084-high.png"
+    "imageHighSrc": "cards/dp6-084-high.png",
+    "attacks": [
+      {
+        "name": "Allure",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4795",
-    "externalId": null,
+    "externalId": "dp6-83",
     "tcgdex_id": "dp6-83",
     "localId": "083",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "083/146",
+    "cardNumber": "83/146",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 083/146 Legends Awakened",
+    "fullDisplayName": "Beldum 83/146 Legends Awakened",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2065,18 +2591,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-083-low.png",
-    "imageHighSrc": "cards/dp6-083-high.png"
+    "imageHighSrc": "cards/dp6-083-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4786",
-    "externalId": null,
+    "externalId": "dp6-82",
     "tcgdex_id": "dp6-82",
     "localId": "082",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "082/146",
+    "cardNumber": "82/146",
     "cardName": "Unown [?]",
-    "fullDisplayName": "Unown [?] 082/146 Legends Awakened",
+    "fullDisplayName": "Unown [?] 82/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2098,18 +2630,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp6-082-low.png",
-    "imageHighSrc": "cards/dp6-082-high.png"
+    "imageHighSrc": "cards/dp6-082-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4778",
-    "externalId": null,
+    "externalId": "dp6-81",
     "tcgdex_id": "dp6-81",
     "localId": "081",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "081/146",
+    "cardNumber": "81/146",
     "cardName": "Unown [Y]",
-    "fullDisplayName": "Unown [Y] 081/146 Legends Awakened",
+    "fullDisplayName": "Unown [Y] 81/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2131,18 +2669,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp6-081-low.png",
-    "imageHighSrc": "cards/dp6-081-high.png"
+    "imageHighSrc": "cards/dp6-081-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4770",
-    "externalId": null,
+    "externalId": "dp6-80",
     "tcgdex_id": "dp6-80",
     "localId": "080",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "080/146",
+    "cardNumber": "80/146",
     "cardName": "Unown [W]",
-    "fullDisplayName": "Unown [W] 080/146 Legends Awakened",
+    "fullDisplayName": "Unown [W] 80/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2164,18 +2708,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp6-080-low.png",
-    "imageHighSrc": "cards/dp6-080-high.png"
+    "imageHighSrc": "cards/dp6-080-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4762",
-    "externalId": null,
+    "externalId": "dp6-79",
     "tcgdex_id": "dp6-79",
     "localId": "079",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "079/146",
+    "cardNumber": "79/146",
     "cardName": "Unown [V]",
-    "fullDisplayName": "Unown [V] 079/146 Legends Awakened",
+    "fullDisplayName": "Unown [V] 79/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2197,18 +2747,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp6-079-low.png",
-    "imageHighSrc": "cards/dp6-079-high.png"
+    "imageHighSrc": "cards/dp6-079-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4754",
-    "externalId": null,
+    "externalId": "dp6-78",
     "tcgdex_id": "dp6-78",
     "localId": "078",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "078/146",
+    "cardNumber": "78/146",
     "cardName": "Unown [U]",
-    "fullDisplayName": "Unown [U] 078/146 Legends Awakened",
+    "fullDisplayName": "Unown [U] 78/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2230,18 +2786,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp6-078-low.png",
-    "imageHighSrc": "cards/dp6-078-high.png"
+    "imageHighSrc": "cards/dp6-078-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4746",
-    "externalId": null,
+    "externalId": "dp6-77",
     "tcgdex_id": "dp6-77",
     "localId": "077",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "077/146",
+    "cardNumber": "77/146",
     "cardName": "Unown [R]",
-    "fullDisplayName": "Unown [R] 077/146 Legends Awakened",
+    "fullDisplayName": "Unown [R] 77/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2263,18 +2825,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp6-077-low.png",
-    "imageHighSrc": "cards/dp6-077-high.png"
+    "imageHighSrc": "cards/dp6-077-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4738",
-    "externalId": null,
+    "externalId": "dp6-76",
     "tcgdex_id": "dp6-76",
     "localId": "076",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "076/146",
+    "cardNumber": "76/146",
     "cardName": "Unown [J]",
-    "fullDisplayName": "Unown [J] 076/146 Legends Awakened",
+    "fullDisplayName": "Unown [J] 76/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2296,18 +2864,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp6-076-low.png",
-    "imageHighSrc": "cards/dp6-076-high.png"
+    "imageHighSrc": "cards/dp6-076-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "4730",
-    "externalId": null,
+    "externalId": "dp6-75",
     "tcgdex_id": "dp6-75",
     "localId": "075",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "075/146",
+    "cardNumber": "75/146",
     "cardName": "Tentacruel",
-    "fullDisplayName": "Tentacruel 075/146 Legends Awakened",
+    "fullDisplayName": "Tentacruel 75/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2329,18 +2903,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-075-low.png",
-    "imageHighSrc": "cards/dp6-075-high.png"
+    "imageHighSrc": "cards/dp6-075-high.png",
+    "attacks": [
+      {
+        "name": "Tentacle Strike",
+        "damage": null
+      },
+      {
+        "name": "Dangerous Poison",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4722",
-    "externalId": null,
+    "externalId": "dp6-74",
     "tcgdex_id": "dp6-74",
     "localId": "074",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "074/146",
+    "cardNumber": "74/146",
     "cardName": "Tauros",
-    "fullDisplayName": "Tauros 074/146 Legends Awakened",
+    "fullDisplayName": "Tauros 74/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2362,18 +2946,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-074-low.png",
-    "imageHighSrc": "cards/dp6-074-high.png"
+    "imageHighSrc": "cards/dp6-074-high.png",
+    "attacks": [
+      {
+        "name": "Herd Charge",
+        "damage": "20×"
+      },
+      {
+        "name": "Thrash",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4700",
-    "externalId": null,
+    "externalId": "dp6-73",
     "tcgdex_id": "dp6-73",
     "localId": "073",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "073/146",
+    "cardNumber": "73/146",
     "cardName": "Swellow",
-    "fullDisplayName": "Swellow 073/146 Legends Awakened",
+    "fullDisplayName": "Swellow 73/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2395,18 +2989,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-073-low.png",
-    "imageHighSrc": "cards/dp6-073-high.png"
+    "imageHighSrc": "cards/dp6-073-high.png",
+    "attacks": [
+      {
+        "name": "Mach Descent",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4692",
-    "externalId": null,
+    "externalId": "dp6-72",
     "tcgdex_id": "dp6-72",
     "localId": "072",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "072/146",
+    "cardNumber": "72/146",
     "cardName": "Swalot",
-    "fullDisplayName": "Swalot 072/146 Legends Awakened",
+    "fullDisplayName": "Swalot 72/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2428,18 +3028,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-072-low.png",
-    "imageHighSrc": "cards/dp6-072-high.png"
+    "imageHighSrc": "cards/dp6-072-high.png",
+    "attacks": [
+      {
+        "name": "Swallow Up",
+        "damage": "30"
+      },
+      {
+        "name": "Gunk Shot",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4683",
-    "externalId": null,
+    "externalId": "dp6-71",
     "tcgdex_id": "dp6-71",
     "localId": "071",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "071/146",
+    "cardNumber": "71/146",
     "cardName": "Starmie",
-    "fullDisplayName": "Starmie 071/146 Legends Awakened",
+    "fullDisplayName": "Starmie 71/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2461,18 +3071,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-071-low.png",
-    "imageHighSrc": "cards/dp6-071-high.png"
+    "imageHighSrc": "cards/dp6-071-high.png",
+    "attacks": [
+      {
+        "name": "Star Boomerang",
+        "damage": "30"
+      },
+      {
+        "name": "Core Flash",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4675",
-    "externalId": null,
+    "externalId": "dp6-70",
     "tcgdex_id": "dp6-70",
     "localId": "070",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "070/146",
+    "cardNumber": "70/146",
     "cardName": "Seadra",
-    "fullDisplayName": "Seadra 070/146 Legends Awakened",
+    "fullDisplayName": "Seadra 70/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2494,18 +3114,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-070-low.png",
-    "imageHighSrc": "cards/dp6-070-high.png"
+    "imageHighSrc": "cards/dp6-070-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Pump",
+        "damage": "30+"
+      },
+      {
+        "name": "Waterfall",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4667",
-    "externalId": null,
+    "externalId": "dp6-69",
     "tcgdex_id": "dp6-69",
     "localId": "069",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "069/146",
+    "cardNumber": "69/146",
     "cardName": "Piloswine",
-    "fullDisplayName": "Piloswine 069/146 Legends Awakened",
+    "fullDisplayName": "Piloswine 69/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2527,18 +3157,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-069-low.png",
-    "imageHighSrc": "cards/dp6-069-high.png"
+    "imageHighSrc": "cards/dp6-069-high.png",
+    "attacks": [
+      {
+        "name": "Charge Dash",
+        "damage": "30+"
+      },
+      {
+        "name": "Icy Wind",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4660",
-    "externalId": null,
+    "externalId": "dp6-68",
     "tcgdex_id": "dp6-68",
     "localId": "068",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "068/146",
+    "cardNumber": "68/146",
     "cardName": "Persian",
-    "fullDisplayName": "Persian 068/146 Legends Awakened",
+    "fullDisplayName": "Persian 68/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2560,18 +3200,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-068-low.png",
-    "imageHighSrc": "cards/dp6-068-high.png"
+    "imageHighSrc": "cards/dp6-068-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      },
+      {
+        "name": "Fasten Claws",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4652",
-    "externalId": null,
+    "externalId": "dp6-67",
     "tcgdex_id": "dp6-67",
     "localId": "067",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "067/146",
+    "cardNumber": "67/146",
     "cardName": "Ninjask",
-    "fullDisplayName": "Ninjask 067/146 Legends Awakened",
+    "fullDisplayName": "Ninjask 67/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2593,18 +3243,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-067-low.png",
-    "imageHighSrc": "cards/dp6-067-high.png"
+    "imageHighSrc": "cards/dp6-067-high.png",
+    "attacks": [
+      {
+        "name": "Chip Off",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4643",
-    "externalId": null,
+    "externalId": "dp6-66",
     "tcgdex_id": "dp6-66",
     "localId": "066",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "066/146",
+    "cardNumber": "66/146",
     "cardName": "Mightyena",
-    "fullDisplayName": "Mightyena 066/146 Legends Awakened",
+    "fullDisplayName": "Mightyena 66/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2626,18 +3282,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-066-low.png",
-    "imageHighSrc": "cards/dp6-066-high.png"
+    "imageHighSrc": "cards/dp6-066-high.png",
+    "attacks": [
+      {
+        "name": "Bite On",
+        "damage": "30"
+      },
+      {
+        "name": "Harass",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "4634",
-    "externalId": null,
+    "externalId": "dp6-65",
     "tcgdex_id": "dp6-65",
     "localId": "065",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "065/146",
+    "cardNumber": "65/146",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 065/146 Legends Awakened",
+    "fullDisplayName": "Metang 65/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2659,18 +3325,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-065-low.png",
-    "imageHighSrc": "cards/dp6-065-high.png"
+    "imageHighSrc": "cards/dp6-065-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "20"
+      },
+      {
+        "name": "Bullet Punch",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4626",
-    "externalId": null,
+    "externalId": "dp6-64",
     "tcgdex_id": "dp6-64",
     "localId": "064",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "064/146",
+    "cardNumber": "64/146",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 064/146 Legends Awakened",
+    "fullDisplayName": "Metang 64/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2692,18 +3368,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-064-low.png",
-    "imageHighSrc": "cards/dp6-064-high.png"
+    "imageHighSrc": "cards/dp6-064-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "20"
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4618",
-    "externalId": null,
+    "externalId": "dp6-63",
     "tcgdex_id": "dp6-63",
     "localId": "063",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "063/146",
+    "cardNumber": "63/146",
     "cardName": "Marowak",
-    "fullDisplayName": "Marowak 063/146 Legends Awakened",
+    "fullDisplayName": "Marowak 63/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2725,18 +3411,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-063-low.png",
-    "imageHighSrc": "cards/dp6-063-high.png"
+    "imageHighSrc": "cards/dp6-063-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Bone",
+        "damage": "40"
+      },
+      {
+        "name": "Bone Rush",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "4610",
-    "externalId": null,
+    "externalId": "dp6-62",
     "tcgdex_id": "dp6-62",
     "localId": "062",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "062/146",
+    "cardNumber": "62/146",
     "cardName": "Luxio",
-    "fullDisplayName": "Luxio 062/146 Legends Awakened",
+    "fullDisplayName": "Luxio 62/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2758,18 +3454,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-062-low.png",
-    "imageHighSrc": "cards/dp6-062-high.png"
+    "imageHighSrc": "cards/dp6-062-high.png",
+    "attacks": [
+      {
+        "name": "Spark",
+        "damage": "30"
+      },
+      {
+        "name": "Thunderous Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "4602",
-    "externalId": null,
+    "externalId": "dp6-61",
     "tcgdex_id": "dp6-61",
     "localId": "061",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "061/146",
+    "cardNumber": "61/146",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario 061/146 Legends Awakened",
+    "fullDisplayName": "Lucario 61/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2791,18 +3497,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-061-low.png",
-    "imageHighSrc": "cards/dp6-061-high.png"
+    "imageHighSrc": "cards/dp6-061-high.png",
+    "attacks": [
+      {
+        "name": "Focus Blast",
+        "damage": null
+      },
+      {
+        "name": "Spike Lariat",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4593",
-    "externalId": null,
+    "externalId": "dp6-60",
     "tcgdex_id": "dp6-60",
     "localId": "060",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "060/146",
+    "cardNumber": "60/146",
     "cardName": "Ledian",
-    "fullDisplayName": "Ledian 060/146 Legends Awakened",
+    "fullDisplayName": "Ledian 60/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2824,18 +3540,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-060-low.png",
-    "imageHighSrc": "cards/dp6-060-high.png"
+    "imageHighSrc": "cards/dp6-060-high.png",
+    "attacks": [
+      {
+        "name": "Comet Punch",
+        "damage": "20×"
+      },
+      {
+        "name": "Baton Pass",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4587",
-    "externalId": null,
+    "externalId": "dp6-59",
     "tcgdex_id": "dp6-59",
     "localId": "059",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "059/146",
+    "cardNumber": "59/146",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 059/146 Legends Awakened",
+    "fullDisplayName": "Lanturn 59/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2857,18 +3583,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-059-low.png",
-    "imageHighSrc": "cards/dp6-059-high.png"
+    "imageHighSrc": "cards/dp6-059-high.png",
+    "attacks": [
+      {
+        "name": "Energy Split",
+        "damage": null
+      },
+      {
+        "name": "Aqua Bolt",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4578",
-    "externalId": null,
+    "externalId": "dp6-58",
     "tcgdex_id": "dp6-58",
     "localId": "058",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "058/146",
+    "cardNumber": "58/146",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 058/146 Legends Awakened",
+    "fullDisplayName": "Lanturn 58/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2890,18 +3626,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-058-low.png",
-    "imageHighSrc": "cards/dp6-058-high.png"
+    "imageHighSrc": "cards/dp6-058-high.png",
+    "attacks": [
+      {
+        "name": "Rushing Water",
+        "damage": "20"
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4568",
-    "externalId": null,
+    "externalId": "dp6-57",
     "tcgdex_id": "dp6-57",
     "localId": "057",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "057/146",
+    "cardNumber": "57/146",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 057/146 Legends Awakened",
+    "fullDisplayName": "Houndoom 57/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2923,18 +3669,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-057-low.png",
-    "imageHighSrc": "cards/dp6-057-high.png"
+    "imageHighSrc": "cards/dp6-057-high.png",
+    "attacks": [
+      {
+        "name": "Burning Sensation",
+        "damage": "20"
+      },
+      {
+        "name": "Bright Flame",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4559",
-    "externalId": null,
+    "externalId": "dp6-56",
     "tcgdex_id": "dp6-56",
     "localId": "056",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "056/146",
+    "cardNumber": "56/146",
     "cardName": "Grumpig",
-    "fullDisplayName": "Grumpig 056/146 Legends Awakened",
+    "fullDisplayName": "Grumpig 56/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2956,18 +3712,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-056-low.png",
-    "imageHighSrc": "cards/dp6-056-high.png"
+    "imageHighSrc": "cards/dp6-056-high.png",
+    "attacks": [
+      {
+        "name": "Magical Step",
+        "damage": null
+      },
+      {
+        "name": "Grind",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "4551",
-    "externalId": null,
+    "externalId": "dp6-55",
     "tcgdex_id": "dp6-55",
     "localId": "055",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "055/146",
+    "cardNumber": "55/146",
     "cardName": "Gliscor",
-    "fullDisplayName": "Gliscor 055/146 Legends Awakened",
+    "fullDisplayName": "Gliscor 55/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2989,18 +3755,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-055-low.png",
-    "imageHighSrc": "cards/dp6-055-high.png"
+    "imageHighSrc": "cards/dp6-055-high.png",
+    "attacks": [
+      {
+        "name": "Poison Jab",
+        "damage": "20"
+      },
+      {
+        "name": "Sharp Tail",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4544",
-    "externalId": null,
+    "externalId": "dp6-54",
     "tcgdex_id": "dp6-54",
     "localId": "054",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "054/146",
+    "cardNumber": "54/146",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 054/146 Legends Awakened",
+    "fullDisplayName": "Exeggutor 54/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3022,18 +3798,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-054-low.png",
-    "imageHighSrc": "cards/dp6-054-high.png"
+    "imageHighSrc": "cards/dp6-054-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Strategy",
+        "damage": null
+      },
+      {
+        "name": "Super Eggsplosion",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "4535",
-    "externalId": null,
+    "externalId": "dp6-53",
     "tcgdex_id": "dp6-53",
     "localId": "053",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "053/146",
+    "cardNumber": "53/146",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 053/146 Legends Awakened",
+    "fullDisplayName": "Drifblim 53/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3055,18 +3841,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-053-low.png",
-    "imageHighSrc": "cards/dp6-053-high.png"
+    "imageHighSrc": "cards/dp6-053-high.png",
+    "attacks": [
+      {
+        "name": "Expand",
+        "damage": "30"
+      },
+      {
+        "name": "Whirlwind",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4526",
-    "externalId": null,
+    "externalId": "dp6-52",
     "tcgdex_id": "dp6-52",
     "localId": "052",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "052/146",
+    "cardNumber": "52/146",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 052/146 Legends Awakened",
+    "fullDisplayName": "Dragonair 52/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3088,18 +3884,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-052-low.png",
-    "imageHighSrc": "cards/dp6-052-high.png"
+    "imageHighSrc": "cards/dp6-052-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "20"
+      },
+      {
+        "name": "Rising Lunge",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4517",
-    "externalId": null,
+    "externalId": "dp6-51",
     "tcgdex_id": "dp6-51",
     "localId": "051",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "051/146",
+    "cardNumber": "51/146",
     "cardName": "Castform Sunny Form",
-    "fullDisplayName": "Castform Sunny Form 051/146 Legends Awakened",
+    "fullDisplayName": "Castform Sunny Form 51/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3121,18 +3927,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-051-low.png",
-    "imageHighSrc": "cards/dp6-051-high.png"
+    "imageHighSrc": "cards/dp6-051-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4508",
-    "externalId": null,
+    "externalId": "dp6-50",
     "tcgdex_id": "dp6-50",
     "localId": "050",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "050/146",
+    "cardNumber": "50/146",
     "cardName": "Castform Snow-Cloud Form",
-    "fullDisplayName": "Castform Snow-Cloud Form 050/146 Legends Awakened",
+    "fullDisplayName": "Castform Snow-Cloud Form 50/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3154,18 +3966,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp6-050-low.png",
-    "imageHighSrc": "cards/dp6-050-high.png"
+    "imageHighSrc": "cards/dp6-050-high.png",
+    "attacks": [
+      {
+        "name": "Hail",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4498",
-    "externalId": null,
+    "externalId": "dp6-49",
     "tcgdex_id": "dp6-49",
     "localId": "049",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "049/146",
+    "cardNumber": "49/146",
     "cardName": "Castform Rain Form",
-    "fullDisplayName": "Castform Rain Form 049/146 Legends Awakened",
+    "fullDisplayName": "Castform Rain Form 49/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3187,18 +4005,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-049-low.png",
-    "imageHighSrc": "cards/dp6-049-high.png"
+    "imageHighSrc": "cards/dp6-049-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4491",
-    "externalId": null,
+    "externalId": "dp6-48",
     "tcgdex_id": "dp6-48",
     "localId": "048",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "048/146",
+    "cardNumber": "48/146",
     "cardName": "Castform",
-    "fullDisplayName": "Castform 048/146 Legends Awakened",
+    "fullDisplayName": "Castform 48/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3220,18 +4044,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-048-low.png",
-    "imageHighSrc": "cards/dp6-048-high.png"
+    "imageHighSrc": "cards/dp6-048-high.png",
+    "attacks": [
+      {
+        "name": "Weather Ball",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4483",
-    "externalId": null,
+    "externalId": "dp6-47",
     "tcgdex_id": "dp6-47",
     "localId": "047",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "047/146",
+    "cardNumber": "47/146",
     "cardName": "Camerupt",
-    "fullDisplayName": "Camerupt 047/146 Legends Awakened",
+    "fullDisplayName": "Camerupt 47/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3253,18 +4083,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-047-low.png",
-    "imageHighSrc": "cards/dp6-047-high.png"
+    "imageHighSrc": "cards/dp6-047-high.png",
+    "attacks": [
+      {
+        "name": "Eruption",
+        "damage": "30+"
+      },
+      {
+        "name": "Take Down",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "4472",
-    "externalId": null,
+    "externalId": "dp6-46",
     "tcgdex_id": "dp6-46",
     "localId": "046",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "046/146",
+    "cardNumber": "46/146",
     "cardName": "Anorith",
-    "fullDisplayName": "Anorith 046/146 Legends Awakened",
+    "fullDisplayName": "Anorith 46/146 Legends Awakened",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3286,18 +4126,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-046-low.png",
-    "imageHighSrc": "cards/dp6-046-high.png"
+    "imageHighSrc": "cards/dp6-046-high.png",
+    "attacks": [
+      {
+        "name": "Guard Claw",
+        "damage": "20"
+      },
+      {
+        "name": "X-Scissor",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4464",
-    "externalId": null,
+    "externalId": "dp6-45",
     "tcgdex_id": "dp6-45",
     "localId": "045",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "045/146",
+    "cardNumber": "45/146",
     "cardName": "Vileplume",
-    "fullDisplayName": "Vileplume 045/146 Legends Awakened",
+    "fullDisplayName": "Vileplume 45/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3319,18 +4169,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-045-low.png",
-    "imageHighSrc": "cards/dp6-045-high.png"
+    "imageHighSrc": "cards/dp6-045-high.png",
+    "attacks": [
+      {
+        "name": "Disturbing Pollen",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4453",
-    "externalId": null,
+    "externalId": "dp6-44",
     "tcgdex_id": "dp6-44",
     "localId": "044",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "044/146",
+    "cardNumber": "44/146",
     "cardName": "Victreebel",
-    "fullDisplayName": "Victreebel 044/146 Legends Awakened",
+    "fullDisplayName": "Victreebel 44/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3352,18 +4208,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-044-low.png",
-    "imageHighSrc": "cards/dp6-044-high.png"
+    "imageHighSrc": "cards/dp6-044-high.png",
+    "attacks": [
+      {
+        "name": "Burning Scent",
+        "damage": null
+      },
+      {
+        "name": "Energy Dissolve",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4444",
-    "externalId": null,
+    "externalId": "dp6-43",
     "tcgdex_id": "dp6-43",
     "localId": "043",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "043/146",
+    "cardNumber": "43/146",
     "cardName": "Uxie",
-    "fullDisplayName": "Uxie 043/146 Legends Awakened",
+    "fullDisplayName": "Uxie 43/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3385,18 +4251,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-043-low.png",
-    "imageHighSrc": "cards/dp6-043-high.png"
+    "imageHighSrc": "cards/dp6-043-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Restore",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4435",
-    "externalId": null,
+    "externalId": "dp6-42",
     "tcgdex_id": "dp6-42",
     "localId": "042",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "042/146",
+    "cardNumber": "42/146",
     "cardName": "Unown [!]",
-    "fullDisplayName": "Unown [!] 042/146 Legends Awakened",
+    "fullDisplayName": "Unown [!] 42/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3418,18 +4290,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/dp6-042-low.png",
-    "imageHighSrc": "cards/dp6-042-high.png"
+    "imageHighSrc": "cards/dp6-042-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "4426",
-    "externalId": null,
+    "externalId": "dp6-41",
     "tcgdex_id": "dp6-41",
     "localId": "041",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "041/146",
+    "cardNumber": "41/146",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 041/146 Legends Awakened",
+    "fullDisplayName": "Torkoal 41/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3451,18 +4329,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-041-low.png",
-    "imageHighSrc": "cards/dp6-041-high.png"
+    "imageHighSrc": "cards/dp6-041-high.png",
+    "attacks": [
+      {
+        "name": "Black Soot",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4416",
-    "externalId": null,
+    "externalId": "dp6-40",
     "tcgdex_id": "dp6-40",
     "localId": "040",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "040/146",
+    "cardNumber": "40/146",
     "cardName": "Shedinja",
-    "fullDisplayName": "Shedinja 040/146 Legends Awakened",
+    "fullDisplayName": "Shedinja 40/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3484,18 +4368,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-040-low.png",
-    "imageHighSrc": "cards/dp6-040-high.png"
+    "imageHighSrc": "cards/dp6-040-high.png",
+    "attacks": [
+      {
+        "name": "Curse and Deceive",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4408",
-    "externalId": null,
+    "externalId": "dp6-39",
     "tcgdex_id": "dp6-39",
     "localId": "039",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "039/146",
+    "cardNumber": "39/146",
     "cardName": "Registeel",
-    "fullDisplayName": "Registeel 039/146 Legends Awakened",
+    "fullDisplayName": "Registeel 39/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3517,18 +4407,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-039-low.png",
-    "imageHighSrc": "cards/dp6-039-high.png"
+    "imageHighSrc": "cards/dp6-039-high.png",
+    "attacks": [
+      {
+        "name": "Rotating Claws",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4399",
-    "externalId": null,
+    "externalId": "dp6-38",
     "tcgdex_id": "dp6-38",
     "localId": "038",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "038/146",
+    "cardNumber": "38/146",
     "cardName": "Regirock",
-    "fullDisplayName": "Regirock 038/146 Legends Awakened",
+    "fullDisplayName": "Regirock 38/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3550,18 +4446,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-038-low.png",
-    "imageHighSrc": "cards/dp6-038-high.png"
+    "imageHighSrc": "cards/dp6-038-high.png",
+    "attacks": [
+      {
+        "name": "Stone Edge",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4390",
-    "externalId": null,
+    "externalId": "dp6-37",
     "tcgdex_id": "dp6-37",
     "localId": "037",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "037/146",
+    "cardNumber": "37/146",
     "cardName": "Regigigas",
-    "fullDisplayName": "Regigigas 037/146 Legends Awakened",
+    "fullDisplayName": "Regigigas 37/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3583,18 +4485,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-037-low.png",
-    "imageHighSrc": "cards/dp6-037-high.png"
+    "imageHighSrc": "cards/dp6-037-high.png",
+    "attacks": [
+      {
+        "name": "Gigaton Punch",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4380",
-    "externalId": null,
+    "externalId": "dp6-36",
     "tcgdex_id": "dp6-36",
     "localId": "036",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "036/146",
+    "cardNumber": "36/146",
     "cardName": "Regice",
-    "fullDisplayName": "Regice 036/146 Legends Awakened",
+    "fullDisplayName": "Regice 36/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3616,18 +4524,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-036-low.png",
-    "imageHighSrc": "cards/dp6-036-high.png"
+    "imageHighSrc": "cards/dp6-036-high.png",
+    "attacks": [
+      {
+        "name": "Ice Reflect",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4369",
-    "externalId": null,
+    "externalId": "dp6-35",
     "tcgdex_id": "dp6-35",
     "localId": "035",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "035/146",
+    "cardNumber": "35/146",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 035/146 Legends Awakened",
+    "fullDisplayName": "Poliwrath 35/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3649,18 +4563,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-035-low.png",
-    "imageHighSrc": "cards/dp6-035-high.png"
+    "imageHighSrc": "cards/dp6-035-high.png",
+    "attacks": [
+      {
+        "name": "Focus Punch",
+        "damage": "60"
+      },
+      {
+        "name": "Submission",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "4360",
-    "externalId": null,
+    "externalId": "dp6-34",
     "tcgdex_id": "dp6-34",
     "localId": "034",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "034/146",
+    "cardNumber": "34/146",
     "cardName": "Mesprit",
-    "fullDisplayName": "Mesprit 034/146 Legends Awakened",
+    "fullDisplayName": "Mesprit 34/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3682,18 +4606,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-034-low.png",
-    "imageHighSrc": "cards/dp6-034-high.png"
+    "imageHighSrc": "cards/dp6-034-high.png",
+    "attacks": [
+      {
+        "name": "Extrasensory",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "4349",
-    "externalId": null,
+    "externalId": "dp6-33",
     "tcgdex_id": "dp6-33",
     "localId": "033",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "033/146",
+    "cardNumber": "33/146",
     "cardName": "Lopunny",
-    "fullDisplayName": "Lopunny 033/146 Legends Awakened",
+    "fullDisplayName": "Lopunny 33/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3715,18 +4645,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-033-low.png",
-    "imageHighSrc": "cards/dp6-033-high.png"
+    "imageHighSrc": "cards/dp6-033-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Cross-Cut",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "4340",
-    "externalId": null,
+    "externalId": "dp6-32",
     "tcgdex_id": "dp6-32",
     "localId": "032",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "032/146",
+    "cardNumber": "32/146",
     "cardName": "Kyogre",
-    "fullDisplayName": "Kyogre 032/146 Legends Awakened",
+    "fullDisplayName": "Kyogre 32/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3748,18 +4688,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-032-low.png",
-    "imageHighSrc": "cards/dp6-032-high.png"
+    "imageHighSrc": "cards/dp6-032-high.png",
+    "attacks": [
+      {
+        "name": "Drizzle",
+        "damage": null
+      },
+      {
+        "name": "High Tide",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4332",
-    "externalId": null,
+    "externalId": "dp6-31",
     "tcgdex_id": "dp6-31",
     "localId": "031",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "031/146",
+    "cardNumber": "31/146",
     "cardName": "Jirachi",
-    "fullDisplayName": "Jirachi 031/146 Legends Awakened",
+    "fullDisplayName": "Jirachi 31/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3781,18 +4731,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-031-low.png",
-    "imageHighSrc": "cards/dp6-031-high.png"
+    "imageHighSrc": "cards/dp6-031-high.png",
+    "attacks": [
+      {
+        "name": "One Desire",
+        "damage": null
+      },
+      {
+        "name": "Doom Desire",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4323",
-    "externalId": null,
+    "externalId": "dp6-30",
     "tcgdex_id": "dp6-30",
     "localId": "030",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "030/146",
+    "cardNumber": "30/146",
     "cardName": "Heatran",
-    "fullDisplayName": "Heatran 030/146 Legends Awakened",
+    "fullDisplayName": "Heatran 30/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3814,18 +4774,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-030-low.png",
-    "imageHighSrc": "cards/dp6-030-high.png"
+    "imageHighSrc": "cards/dp6-030-high.png",
+    "attacks": [
+      {
+        "name": "Heavy Metal",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4313",
-    "externalId": null,
+    "externalId": "dp6-29",
     "tcgdex_id": "dp6-29",
     "localId": "029",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "029/146",
+    "cardNumber": "29/146",
     "cardName": "Groudon",
-    "fullDisplayName": "Groudon 029/146 Legends Awakened",
+    "fullDisplayName": "Groudon 29/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3847,18 +4813,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-029-low.png",
-    "imageHighSrc": "cards/dp6-029-high.png"
+    "imageHighSrc": "cards/dp6-029-high.png",
+    "attacks": [
+      {
+        "name": "Drought",
+        "damage": null
+      },
+      {
+        "name": "Major Earthquake",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4305",
-    "externalId": null,
+    "externalId": "dp6-28",
     "tcgdex_id": "dp6-28",
     "localId": "028",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "028/146",
+    "cardNumber": "28/146",
     "cardName": "Forretress",
-    "fullDisplayName": "Forretress 028/146 Legends Awakened",
+    "fullDisplayName": "Forretress 28/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3880,18 +4856,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-028-low.png",
-    "imageHighSrc": "cards/dp6-028-high.png"
+    "imageHighSrc": "cards/dp6-028-high.png",
+    "attacks": [
+      {
+        "name": "Explosion",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4297",
-    "externalId": null,
+    "externalId": "dp6-27",
     "tcgdex_id": "dp6-27",
     "localId": "027",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "027/146",
+    "cardNumber": "27/146",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 027/146 Legends Awakened",
+    "fullDisplayName": "Ditto 27/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3917,14 +4899,14 @@
   },
   {
     "masterCardId": "4288",
-    "externalId": null,
+    "externalId": "dp6-26",
     "tcgdex_id": "dp6-26",
     "localId": "026",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "026/146",
+    "cardNumber": "26/146",
     "cardName": "Deoxys Speed Forme",
-    "fullDisplayName": "Deoxys Speed Forme 026/146 Legends Awakened",
+    "fullDisplayName": "Deoxys Speed Forme 26/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3946,18 +4928,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-026-low.png",
-    "imageHighSrc": "cards/dp6-026-high.png"
+    "imageHighSrc": "cards/dp6-026-high.png",
+    "attacks": [
+      {
+        "name": "Speed Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4279",
-    "externalId": null,
+    "externalId": "dp6-25",
     "tcgdex_id": "dp6-25",
     "localId": "025",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "025/146",
+    "cardNumber": "25/146",
     "cardName": "Deoxys Defense Forme",
-    "fullDisplayName": "Deoxys Defense Forme 025/146 Legends Awakened",
+    "fullDisplayName": "Deoxys Defense Forme 25/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3979,18 +4967,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-025-low.png",
-    "imageHighSrc": "cards/dp6-025-high.png"
+    "imageHighSrc": "cards/dp6-025-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Defense",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4270",
-    "externalId": null,
+    "externalId": "dp6-24",
     "tcgdex_id": "dp6-24",
     "localId": "024",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "024/146",
+    "cardNumber": "24/146",
     "cardName": "Deoxys Attack Forme",
-    "fullDisplayName": "Deoxys Attack Forme 024/146 Legends Awakened",
+    "fullDisplayName": "Deoxys Attack Forme 24/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4012,18 +5006,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-024-low.png",
-    "imageHighSrc": "cards/dp6-024-high.png"
+    "imageHighSrc": "cards/dp6-024-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Boost",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "4261",
-    "externalId": null,
+    "externalId": "dp6-23",
     "tcgdex_id": "dp6-23",
     "localId": "023",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "023/146",
+    "cardNumber": "23/146",
     "cardName": "Delcatty",
-    "fullDisplayName": "Delcatty 023/146 Legends Awakened",
+    "fullDisplayName": "Delcatty 23/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4045,18 +5045,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-023-low.png",
-    "imageHighSrc": "cards/dp6-023-high.png"
+    "imageHighSrc": "cards/dp6-023-high.png",
+    "attacks": [
+      {
+        "name": "Energy Assist",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "4252",
-    "externalId": null,
+    "externalId": "dp6-22",
     "tcgdex_id": "dp6-22",
     "localId": "022",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "022/146",
+    "cardNumber": "22/146",
     "cardName": "Crawdaunt",
-    "fullDisplayName": "Crawdaunt 022/146 Legends Awakened",
+    "fullDisplayName": "Crawdaunt 22/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4078,18 +5084,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-022-low.png",
-    "imageHighSrc": "cards/dp6-022-high.png"
+    "imageHighSrc": "cards/dp6-022-high.png",
+    "attacks": [
+      {
+        "name": "Gripthrow",
+        "damage": null
+      },
+      {
+        "name": "Prop-up Pinchers",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4243",
-    "externalId": null,
+    "externalId": "dp6-21",
     "tcgdex_id": "dp6-21",
     "localId": "021",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "021/146",
+    "cardNumber": "21/146",
     "cardName": "Cradily",
-    "fullDisplayName": "Cradily 021/146 Legends Awakened",
+    "fullDisplayName": "Cradily 21/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4111,18 +5127,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-021-low.png",
-    "imageHighSrc": "cards/dp6-021-high.png"
+    "imageHighSrc": "cards/dp6-021-high.png",
+    "attacks": [
+      {
+        "name": "Drain Down",
+        "damage": "30"
+      },
+      {
+        "name": "Acid",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4234",
-    "externalId": null,
+    "externalId": "dp6-20",
     "tcgdex_id": "dp6-20",
     "localId": "020",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "020/146",
+    "cardNumber": "20/146",
     "cardName": "Bellossom",
-    "fullDisplayName": "Bellossom 020/146 Legends Awakened",
+    "fullDisplayName": "Bellossom 20/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4144,18 +5170,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-020-low.png",
-    "imageHighSrc": "cards/dp6-020-high.png"
+    "imageHighSrc": "cards/dp6-020-high.png",
+    "attacks": [
+      {
+        "name": "Parallel Gain",
+        "damage": "30"
+      },
+      {
+        "name": "Blend Pollen",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4226",
-    "externalId": null,
+    "externalId": "dp6-19",
     "tcgdex_id": "dp6-19",
     "localId": "019",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "019/146",
+    "cardNumber": "19/146",
     "cardName": "Azelf",
-    "fullDisplayName": "Azelf 019/146 Legends Awakened",
+    "fullDisplayName": "Azelf 19/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4177,18 +5213,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-019-low.png",
-    "imageHighSrc": "cards/dp6-019-high.png"
+    "imageHighSrc": "cards/dp6-019-high.png",
+    "attacks": [
+      {
+        "name": "Lock Up",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "4217",
-    "externalId": null,
+    "externalId": "dp6-18",
     "tcgdex_id": "dp6-18",
     "localId": "018",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "018/146",
+    "cardNumber": "18/146",
     "cardName": "Armaldo",
-    "fullDisplayName": "Armaldo 018/146 Legends Awakened",
+    "fullDisplayName": "Armaldo 18/146 Legends Awakened",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4210,18 +5252,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-018-low.png",
-    "imageHighSrc": "cards/dp6-018-high.png"
+    "imageHighSrc": "cards/dp6-018-high.png",
+    "attacks": [
+      {
+        "name": "Crush Claw",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4208",
-    "externalId": null,
+    "externalId": "dp6-17",
     "tcgdex_id": "dp6-17",
     "localId": "017",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "017/146",
+    "cardNumber": "17/146",
     "cardName": "Yanmega",
-    "fullDisplayName": "Yanmega 017/146 Legends Awakened",
+    "fullDisplayName": "Yanmega 17/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4243,18 +5291,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-017-low.png",
-    "imageHighSrc": "cards/dp6-017-high.png"
+    "imageHighSrc": "cards/dp6-017-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Wave",
+        "damage": "10"
+      },
+      {
+        "name": "Pursue and Turn",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4198",
-    "externalId": null,
+    "externalId": "dp6-16",
     "tcgdex_id": "dp6-16",
     "localId": "016",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "016/146",
+    "cardNumber": "16/146",
     "cardName": "Spiritomb",
-    "fullDisplayName": "Spiritomb 016/146 Legends Awakened",
+    "fullDisplayName": "Spiritomb 16/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4276,18 +5334,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-016-low.png",
-    "imageHighSrc": "cards/dp6-016-high.png"
+    "imageHighSrc": "cards/dp6-016-high.png",
+    "attacks": [
+      {
+        "name": "Transfer Pain",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4188",
-    "externalId": null,
+    "externalId": "dp6-15",
     "tcgdex_id": "dp6-15",
     "localId": "015",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "015/146",
+    "cardNumber": "15/146",
     "cardName": "Regigigas",
-    "fullDisplayName": "Regigigas 015/146 Legends Awakened",
+    "fullDisplayName": "Regigigas 15/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4309,18 +5373,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-015-low.png",
-    "imageHighSrc": "cards/dp6-015-high.png"
+    "imageHighSrc": "cards/dp6-015-high.png",
+    "attacks": [
+      {
+        "name": "Crush Grip",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "4179",
-    "externalId": null,
+    "externalId": "dp6-14",
     "tcgdex_id": "dp6-14",
     "localId": "014",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "014/146",
+    "cardNumber": "14/146",
     "cardName": "Rayquaza",
-    "fullDisplayName": "Rayquaza 014/146 Legends Awakened",
+    "fullDisplayName": "Rayquaza 14/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4342,18 +5412,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-014-low.png",
-    "imageHighSrc": "cards/dp6-014-high.png"
+    "imageHighSrc": "cards/dp6-014-high.png",
+    "attacks": [
+      {
+        "name": "Sky Judgement",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "4171",
-    "externalId": null,
+    "externalId": "dp6-13",
     "tcgdex_id": "dp6-13",
     "localId": "013",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "013/146",
+    "cardNumber": "13/146",
     "cardName": "Probopass",
-    "fullDisplayName": "Probopass 013/146 Legends Awakened",
+    "fullDisplayName": "Probopass 13/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4375,18 +5451,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-013-low.png",
-    "imageHighSrc": "cards/dp6-013-high.png"
+    "imageHighSrc": "cards/dp6-013-high.png",
+    "attacks": [
+      {
+        "name": "Metal Bomber",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "4162",
-    "externalId": null,
+    "externalId": "dp6-12",
     "tcgdex_id": "dp6-12",
     "localId": "012",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "012/146",
+    "cardNumber": "12/146",
     "cardName": "Politoed",
-    "fullDisplayName": "Politoed 012/146 Legends Awakened",
+    "fullDisplayName": "Politoed 12/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4408,18 +5490,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-012-low.png",
-    "imageHighSrc": "cards/dp6-012-high.png"
+    "imageHighSrc": "cards/dp6-012-high.png",
+    "attacks": [
+      {
+        "name": "Frog Hop",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4153",
-    "externalId": null,
+    "externalId": "dp6-11",
     "tcgdex_id": "dp6-11",
     "localId": "011",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "011/146",
+    "cardNumber": "11/146",
     "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 011/146 Legends Awakened",
+    "fullDisplayName": "Mewtwo 11/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4441,18 +5529,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-011-low.png",
-    "imageHighSrc": "cards/dp6-011-high.png"
+    "imageHighSrc": "cards/dp6-011-high.png",
+    "attacks": [
+      {
+        "name": "Hypnoblast",
+        "damage": "10"
+      },
+      {
+        "name": "Psychic",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4144",
-    "externalId": null,
+    "externalId": "dp6-10",
     "tcgdex_id": "dp6-10",
     "localId": "010",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "010/146",
+    "cardNumber": "10/146",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross 010/146 Legends Awakened",
+    "fullDisplayName": "Metagross 10/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4474,18 +5572,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-010-low.png",
-    "imageHighSrc": "cards/dp6-010-high.png"
+    "imageHighSrc": "cards/dp6-010-high.png",
+    "attacks": [
+      {
+        "name": "Extra Comet Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "4134",
-    "externalId": null,
+    "externalId": "dp6-9",
     "tcgdex_id": "dp6-9",
     "localId": "009",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "009/146",
+    "cardNumber": "9/146",
     "cardName": "Mamoswine",
-    "fullDisplayName": "Mamoswine 009/146 Legends Awakened",
+    "fullDisplayName": "Mamoswine 9/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4507,18 +5611,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-009-low.png",
-    "imageHighSrc": "cards/dp6-009-high.png"
+    "imageHighSrc": "cards/dp6-009-high.png",
+    "attacks": [
+      {
+        "name": "Ice Fang",
+        "damage": "40"
+      },
+      {
+        "name": "Charge Through",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "4125",
-    "externalId": null,
+    "externalId": "dp6-8",
     "tcgdex_id": "dp6-8",
     "localId": "008",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "008/146",
+    "cardNumber": "8/146",
     "cardName": "Luxray",
-    "fullDisplayName": "Luxray 008/146 Legends Awakened",
+    "fullDisplayName": "Luxray 8/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4540,18 +5654,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-008-low.png",
-    "imageHighSrc": "cards/dp6-008-high.png"
+    "imageHighSrc": "cards/dp6-008-high.png",
+    "attacks": [
+      {
+        "name": "Plasma",
+        "damage": "40"
+      },
+      {
+        "name": "Shock Bolt",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "4117",
-    "externalId": null,
+    "externalId": "dp6-7",
     "tcgdex_id": "dp6-7",
     "localId": "007",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "007/146",
+    "cardNumber": "7/146",
     "cardName": "Kingdra",
-    "fullDisplayName": "Kingdra 007/146 Legends Awakened",
+    "fullDisplayName": "Kingdra 7/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4573,18 +5697,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-007-low.png",
-    "imageHighSrc": "cards/dp6-007-high.png"
+    "imageHighSrc": "cards/dp6-007-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Stream",
+        "damage": "10×"
+      },
+      {
+        "name": "Dragon Pump",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4107",
-    "externalId": null,
+    "externalId": "dp6-6",
     "tcgdex_id": "dp6-6",
     "localId": "006",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "006/146",
+    "cardNumber": "6/146",
     "cardName": "Heatran",
-    "fullDisplayName": "Heatran 006/146 Legends Awakened",
+    "fullDisplayName": "Heatran 6/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4606,18 +5740,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-006-low.png",
-    "imageHighSrc": "cards/dp6-006-high.png"
+    "imageHighSrc": "cards/dp6-006-high.png",
+    "attacks": [
+      {
+        "name": "Magma Storm",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4096",
-    "externalId": null,
+    "externalId": "dp6-5",
     "tcgdex_id": "dp6-5",
     "localId": "005",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "005/146",
+    "cardNumber": "5/146",
     "cardName": "Gliscor",
-    "fullDisplayName": "Gliscor 005/146 Legends Awakened",
+    "fullDisplayName": "Gliscor 5/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4639,18 +5779,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-005-low.png",
-    "imageHighSrc": "cards/dp6-005-high.png"
+    "imageHighSrc": "cards/dp6-005-high.png",
+    "attacks": [
+      {
+        "name": "Burning Poison",
+        "damage": null
+      },
+      {
+        "name": "Pester",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "4089",
-    "externalId": null,
+    "externalId": "dp6-4",
     "tcgdex_id": "dp6-4",
     "localId": "004",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "004/146",
+    "cardNumber": "4/146",
     "cardName": "Giratina",
-    "fullDisplayName": "Giratina 004/146 Legends Awakened",
+    "fullDisplayName": "Giratina 4/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4672,18 +5822,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-004-low.png",
-    "imageHighSrc": "cards/dp6-004-high.png"
+    "imageHighSrc": "cards/dp6-004-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Force",
+        "damage": null
+      },
+      {
+        "name": "Brutal Edge",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "4081",
-    "externalId": null,
+    "externalId": "dp6-3",
     "tcgdex_id": "dp6-3",
     "localId": "003",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "003/146",
+    "cardNumber": "3/146",
     "cardName": "Froslass",
-    "fullDisplayName": "Froslass 003/146 Legends Awakened",
+    "fullDisplayName": "Froslass 3/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4705,18 +5865,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-003-low.png",
-    "imageHighSrc": "cards/dp6-003-high.png"
+    "imageHighSrc": "cards/dp6-003-high.png",
+    "attacks": [
+      {
+        "name": "Destiny Bond",
+        "damage": null
+      },
+      {
+        "name": "Icy Breath",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "4072",
-    "externalId": null,
+    "externalId": "dp6-2",
     "tcgdex_id": "dp6-2",
     "localId": "002",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "002/146",
+    "cardNumber": "2/146",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 002/146 Legends Awakened",
+    "fullDisplayName": "Dragonite 2/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4738,18 +5908,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-002-low.png",
-    "imageHighSrc": "cards/dp6-002-high.png"
+    "imageHighSrc": "cards/dp6-002-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "40"
+      },
+      {
+        "name": "Draco Meteor",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "4063",
-    "externalId": null,
+    "externalId": "dp6-1",
     "tcgdex_id": "dp6-1",
     "localId": "001",
     "setCode": "dp6",
     "setTcgdexId": "dp6",
-    "cardNumber": "001/146",
+    "cardNumber": "1/146",
     "cardName": "Deoxys Normal Forme",
-    "fullDisplayName": "Deoxys Normal Forme 001/146 Legends Awakened",
+    "fullDisplayName": "Deoxys Normal Forme 1/146 Legends Awakened",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4771,6 +5951,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dp6-001-low.png",
-    "imageHighSrc": "cards/dp6-001-high.png"
+    "imageHighSrc": "cards/dp6-001-high.png",
+    "attacks": [
+      {
+        "name": "Energy Crush",
+        "damage": "20+"
+      }
+    ]
   }
 ]

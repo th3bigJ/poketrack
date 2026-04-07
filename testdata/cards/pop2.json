@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "8461",
-    "externalId": null,
+    "externalId": "pop2-17",
     "tcgdex_id": "pop2-17",
     "localId": "017",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "017/17",
+    "cardNumber": "17/17",
     "cardName": "Celebi ex",
-    "fullDisplayName": "Celebi ex 017/17 POP Series 2",
+    "fullDisplayName": "Celebi ex 17/17 POP Series 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -31,18 +31,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-017-low.png",
-    "imageHighSrc": "cards/pop2-017-high.png"
+    "imageHighSrc": "cards/pop2-017-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Shield",
+        "damage": "30"
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "8450",
-    "externalId": null,
+    "externalId": "pop2-16",
     "tcgdex_id": "pop2-16",
     "localId": "016",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "016/17",
+    "cardNumber": "16/17",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 016/17 POP Series 2",
+    "fullDisplayName": "Pikachu 16/17 POP Series 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -64,18 +71,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-016-low.png",
-    "imageHighSrc": "cards/pop2-016-high.png"
+    "imageHighSrc": "cards/pop2-016-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8443",
-    "externalId": null,
+    "externalId": "pop2-15",
     "tcgdex_id": "pop2-15",
     "localId": "015",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "015/17",
+    "cardNumber": "15/17",
     "cardName": "Phanpy",
-    "fullDisplayName": "Phanpy 015/17 POP Series 2",
+    "fullDisplayName": "Phanpy 15/17 POP Series 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -97,18 +114,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-015-low.png",
-    "imageHighSrc": "cards/pop2-015-high.png"
+    "imageHighSrc": "cards/pop2-015-high.png",
+    "attacks": [
+      {
+        "name": "Double Spin",
+        "damage": "10×"
+      },
+      {
+        "name": "Body Slam",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8432",
-    "externalId": null,
+    "externalId": "pop2-14",
     "tcgdex_id": "pop2-14",
     "localId": "014",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "014/17",
+    "cardNumber": "14/17",
     "cardName": "Luvdisc",
-    "fullDisplayName": "Luvdisc 014/17 POP Series 2",
+    "fullDisplayName": "Luvdisc 14/17 POP Series 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -130,18 +157,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-014-low.png",
-    "imageHighSrc": "cards/pop2-014-high.png"
+    "imageHighSrc": "cards/pop2-014-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Kiss",
+        "damage": null
+      },
+      {
+        "name": "Fast Stream",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8424",
-    "externalId": null,
+    "externalId": "pop2-13",
     "tcgdex_id": "pop2-13",
     "localId": "013",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "013/17",
+    "cardNumber": "13/17",
     "cardName": "Cacnea",
-    "fullDisplayName": "Cacnea 013/17 POP Series 2",
+    "fullDisplayName": "Cacnea 13/17 POP Series 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -163,18 +200,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-013-low.png",
-    "imageHighSrc": "cards/pop2-013-high.png"
+    "imageHighSrc": "cards/pop2-013-high.png",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "8416",
-    "externalId": null,
+    "externalId": "pop2-12",
     "tcgdex_id": "pop2-12",
     "localId": "012",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "012/17",
+    "cardNumber": "12/17",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 012/17 POP Series 2",
+    "fullDisplayName": "Bulbasaur 12/17 POP Series 2",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -196,18 +239,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-012-low.png",
-    "imageHighSrc": "cards/pop2-012-high.png"
+    "imageHighSrc": "cards/pop2-012-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8408",
-    "externalId": null,
+    "externalId": "pop2-11",
     "tcgdex_id": "pop2-11",
     "localId": "011",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "011/17",
+    "cardNumber": "11/17",
     "cardName": "TV Reporter",
-    "fullDisplayName": "TV Reporter 011/17 POP Series 2",
+    "fullDisplayName": "TV Reporter 11/17 POP Series 2",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -225,18 +278,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-011-low.png",
-    "imageHighSrc": "cards/pop2-011-high.png"
+    "imageHighSrc": "cards/pop2-011-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nDraw 3 cards. Then discard any 1 card from your hand."
   },
   {
     "masterCardId": "8398",
-    "externalId": null,
+    "externalId": "pop2-10",
     "tcgdex_id": "pop2-10",
     "localId": "010",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "010/17",
+    "cardNumber": "10/17",
     "cardName": "Pokémon Park",
-    "fullDisplayName": "Pokémon Park 010/17 POP Series 2",
+    "fullDisplayName": "Pokémon Park 10/17 POP Series 2",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -254,18 +308,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-010-low.png",
-    "imageHighSrc": "cards/pop2-010-high.png"
+    "imageHighSrc": "cards/pop2-010-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card.\n\nOnce during each player's turn, when that player attaches an Energy card from his or her hand to 1 of his or her Benched Pokémon, he or she removes 1 damage counter from that Pokémon."
   },
   {
     "masterCardId": "8390",
-    "externalId": null,
+    "externalId": "pop2-9",
     "tcgdex_id": "pop2-9",
     "localId": "009",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "009/17",
+    "cardNumber": "9/17",
     "cardName": "Multi Technical Machine 01",
-    "fullDisplayName": "Multi Technical Machine 01 009/17 POP Series 2",
+    "fullDisplayName": "Multi Technical Machine 01 9/17 POP Series 2",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -283,18 +338,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-009-low.png",
-    "imageHighSrc": "cards/pop2-009-high.png"
+    "imageHighSrc": "cards/pop2-009-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      }
+    ],
+    "rules": "Attach this card to 1 of your Pokémon in play. That Pokémon may use this card's attack instead of its own. At the end of your turn, discard Multi Technical Machine 01."
   },
   {
     "masterCardId": "8382",
-    "externalId": null,
+    "externalId": "pop2-8",
     "tcgdex_id": "pop2-8",
     "localId": "008",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "008/17",
+    "cardNumber": "8/17",
     "cardName": "Mr. Briney's Compassion",
-    "fullDisplayName": "Mr. Briney's Compassion 008/17 POP Series 2",
+    "fullDisplayName": "Mr. Briney's Compassion 8/17 POP Series 2",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -312,18 +374,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pop2-008-low.png",
-    "imageHighSrc": "cards/pop2-008-high.png"
+    "imageHighSrc": "cards/pop2-008-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nChoose 1 of your Pokémon in play (excluding Pokémon-ex). Return that Pokémon and all cards attached to it to your hand."
   },
   {
     "masterCardId": "8371",
-    "externalId": null,
+    "externalId": "pop2-7",
     "tcgdex_id": "pop2-7",
     "localId": "007",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "007/17",
+    "cardNumber": "7/17",
     "cardName": "Ivysaur",
-    "fullDisplayName": "Ivysaur 007/17 POP Series 2",
+    "fullDisplayName": "Ivysaur 7/17 POP Series 2",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -345,18 +408,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-007-low.png",
-    "imageHighSrc": "cards/pop2-007-high.png"
+    "imageHighSrc": "cards/pop2-007-high.png",
+    "attacks": [
+      {
+        "name": "Poison Seed",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8359",
-    "externalId": null,
+    "externalId": "pop2-6",
     "tcgdex_id": "pop2-6",
     "localId": "006",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "006/17",
+    "cardNumber": "6/17",
     "cardName": "Venusaur",
-    "fullDisplayName": "Venusaur 006/17 POP Series 2",
+    "fullDisplayName": "Venusaur 6/17 POP Series 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -378,18 +451,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-006-low.png",
-    "imageHighSrc": "cards/pop2-006-high.png"
+    "imageHighSrc": "cards/pop2-006-high.png",
+    "attacks": [
+      {
+        "name": "Wide Solarbeam",
+        "damage": "20"
+      },
+      {
+        "name": "Hard Plant",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "8350",
-    "externalId": null,
+    "externalId": "pop2-5",
     "tcgdex_id": "pop2-5",
     "localId": "005",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "005/17",
+    "cardNumber": "5/17",
     "cardName": "Tauros",
-    "fullDisplayName": "Tauros 005/17 POP Series 2",
+    "fullDisplayName": "Tauros 5/17 POP Series 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -411,18 +494,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-005-low.png",
-    "imageHighSrc": "cards/pop2-005-high.png"
+    "imageHighSrc": "cards/pop2-005-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "10+"
+      },
+      {
+        "name": "Take Down",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8340",
-    "externalId": null,
+    "externalId": "pop2-4",
     "tcgdex_id": "pop2-4",
     "localId": "004",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "004/17",
+    "cardNumber": "4/17",
     "cardName": "Suicune",
-    "fullDisplayName": "Suicune 004/17 POP Series 2",
+    "fullDisplayName": "Suicune 4/17 POP Series 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -444,18 +537,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-004-low.png",
-    "imageHighSrc": "cards/pop2-004-high.png"
+    "imageHighSrc": "cards/pop2-004-high.png",
+    "attacks": [
+      {
+        "name": "Bubblebeam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8330",
-    "externalId": null,
+    "externalId": "pop2-3",
     "tcgdex_id": "pop2-3",
     "localId": "003",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "003/17",
+    "cardNumber": "3/17",
     "cardName": "Raikou",
-    "fullDisplayName": "Raikou 003/17 POP Series 2",
+    "fullDisplayName": "Raikou 3/17 POP Series 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -477,18 +576,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-003-low.png",
-    "imageHighSrc": "cards/pop2-003-high.png"
+    "imageHighSrc": "cards/pop2-003-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Thunder",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "8316",
-    "externalId": null,
+    "externalId": "pop2-2",
     "tcgdex_id": "pop2-2",
     "localId": "002",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "002/17",
+    "cardNumber": "2/17",
     "cardName": "Pidgeot",
-    "fullDisplayName": "Pidgeot 002/17 POP Series 2",
+    "fullDisplayName": "Pidgeot 2/17 POP Series 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -510,18 +619,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-002-low.png",
-    "imageHighSrc": "cards/pop2-002-high.png"
+    "imageHighSrc": "cards/pop2-002-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Beak",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "8299",
-    "externalId": null,
+    "externalId": "pop2-1",
     "tcgdex_id": "pop2-1",
     "localId": "001",
     "setCode": "pop2",
     "setTcgdexId": "pop2",
-    "cardNumber": "001/17",
+    "cardNumber": "1/17",
     "cardName": "Entei",
-    "fullDisplayName": "Entei 001/17 POP Series 2",
+    "fullDisplayName": "Entei 1/17 POP Series 2",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -543,6 +658,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop2-001-low.png",
-    "imageHighSrc": "cards/pop2-001-high.png"
+    "imageHighSrc": "cards/pop2-001-high.png",
+    "attacks": [
+      {
+        "name": "Stomp",
+        "damage": "10+"
+      },
+      {
+        "name": "Fire Spin",
+        "damage": "50"
+      }
+    ]
   }
 ]

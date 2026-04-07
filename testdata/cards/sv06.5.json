@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "13153",
-    "externalId": null,
+    "externalId": "sv6pt5-99",
     "tcgdex_id": "sv06.5-099",
     "localId": "099",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "099/64",
+    "cardNumber": "099/064",
     "cardName": "Basic Metal Energy",
-    "fullDisplayName": "Basic Metal Energy 099/64 Shrouded Fable",
+    "fullDisplayName": "Basic Metal Energy 099/064 Shrouded Fable",
     "rarity": "Hyper Rare",
     "category": "Energy",
     "stage": "Basic",
@@ -32,14 +32,14 @@
   },
   {
     "masterCardId": "13143",
-    "externalId": null,
+    "externalId": "sv6pt5-98",
     "tcgdex_id": "sv06.5-098",
     "localId": "098",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "098/64",
+    "cardNumber": "098/064",
     "cardName": "Basic Darkness Energy",
-    "fullDisplayName": "Basic Darkness Energy 098/64 Shrouded Fable",
+    "fullDisplayName": "Basic Darkness Energy 098/064 Shrouded Fable",
     "rarity": "Hyper Rare",
     "category": "Energy",
     "stage": "Basic",
@@ -63,14 +63,14 @@
   },
   {
     "masterCardId": "13134",
-    "externalId": null,
+    "externalId": "sv6pt5-97",
     "tcgdex_id": "sv06.5-097",
     "localId": "097",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "097/64",
+    "cardNumber": "097/064",
     "cardName": "Powerglass",
-    "fullDisplayName": "Powerglass 097/64 Shrouded Fable",
+    "fullDisplayName": "Powerglass 097/064 Shrouded Fable",
     "rarity": "Hyper Rare",
     "category": "Trainer",
     "stage": null,
@@ -88,18 +88,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-097-low.png",
-    "imageHighSrc": "cards/sv6pt5-097-high.png"
+    "imageHighSrc": "cards/sv6pt5-097-high.png",
+    "rules": "At the end of your turn (after your attack), if the Pokémon this card is attached to is in the Active Spot, you may attach a Basic Energy card from your discard pile to it.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "13123",
-    "externalId": null,
+    "externalId": "sv6pt5-96",
     "tcgdex_id": "sv06.5-096",
     "localId": "096",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "096/64",
+    "cardNumber": "096/064",
     "cardName": "Earthen Vessel",
-    "fullDisplayName": "Earthen Vessel 096/64 Shrouded Fable",
+    "fullDisplayName": "Earthen Vessel 096/064 Shrouded Fable",
     "rarity": "Hyper Rare",
     "category": "Trainer",
     "stage": null,
@@ -118,18 +119,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-096-low.png",
-    "imageHighSrc": "cards/sv6pt5-096-high.png"
+    "imageHighSrc": "cards/sv6pt5-096-high.png",
+    "rules": "You can use this card only if you discard another card from your hand.  Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "13113",
-    "externalId": null,
+    "externalId": "sv6pt5-95",
     "tcgdex_id": "sv06.5-095",
     "localId": "095",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "095/64",
+    "cardNumber": "095/064",
     "cardName": "Pecharunt ex",
-    "fullDisplayName": "Pecharunt ex 095/64 Shrouded Fable",
+    "fullDisplayName": "Pecharunt ex 095/064 Shrouded Fable",
     "rarity": "Hyper Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -152,18 +154,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-095-low.png",
-    "imageHighSrc": "cards/sv6pt5-095-high.png"
+    "imageHighSrc": "cards/sv6pt5-095-high.png",
+    "attacks": [
+      {
+        "name": "Irritated Outburst",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13104",
-    "externalId": null,
+    "externalId": "sv6pt5-94",
     "tcgdex_id": "sv06.5-094",
     "localId": "094",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "094/64",
+    "cardNumber": "094/064",
     "cardName": "Cassiopeia",
-    "fullDisplayName": "Cassiopeia 094/64 Shrouded Fable",
+    "fullDisplayName": "Cassiopeia 094/064 Shrouded Fable",
     "rarity": "Special Illustration Rare",
     "category": "Trainer",
     "stage": null,
@@ -181,18 +190,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-094-low.png",
-    "imageHighSrc": "cards/sv6pt5-094-high.png"
+    "imageHighSrc": "cards/sv6pt5-094-high.png",
+    "rules": "You can use this card only when it is the last card in your hand.  Search your deck for up to 2 cards and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13094",
-    "externalId": null,
+    "externalId": "sv6pt5-93",
     "tcgdex_id": "sv06.5-093",
     "localId": "093",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "093/64",
+    "cardNumber": "093/064",
     "cardName": "Pecharunt ex",
-    "fullDisplayName": "Pecharunt ex 093/64 Shrouded Fable",
+    "fullDisplayName": "Pecharunt ex 093/064 Shrouded Fable",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -215,18 +225,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-093-low.png",
-    "imageHighSrc": "cards/sv6pt5-093-high.png"
+    "imageHighSrc": "cards/sv6pt5-093-high.png",
+    "attacks": [
+      {
+        "name": "Irritated Outburst",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13084",
-    "externalId": null,
+    "externalId": "sv6pt5-92",
     "tcgdex_id": "sv06.5-092",
     "localId": "092",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "092/64",
+    "cardNumber": "092/064",
     "cardName": "Fezandipiti ex",
-    "fullDisplayName": "Fezandipiti ex 092/64 Shrouded Fable",
+    "fullDisplayName": "Fezandipiti ex 092/064 Shrouded Fable",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -249,18 +266,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-092-low.png",
-    "imageHighSrc": "cards/sv6pt5-092-high.png"
+    "imageHighSrc": "cards/sv6pt5-092-high.png",
+    "attacks": [
+      {
+        "name": "Cruel Arrow",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13075",
-    "externalId": null,
+    "externalId": "sv6pt5-91",
     "tcgdex_id": "sv06.5-091",
     "localId": "091",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "091/64",
+    "cardNumber": "091/064",
     "cardName": "Munkidori ex",
-    "fullDisplayName": "Munkidori ex 091/64 Shrouded Fable",
+    "fullDisplayName": "Munkidori ex 091/064 Shrouded Fable",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -283,18 +307,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-091-low.png",
-    "imageHighSrc": "cards/sv6pt5-091-high.png"
+    "imageHighSrc": "cards/sv6pt5-091-high.png",
+    "attacks": [
+      {
+        "name": "Dirty Headbutt",
+        "damage": "190"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13061",
-    "externalId": null,
+    "externalId": "sv6pt5-90",
     "tcgdex_id": "sv06.5-090",
     "localId": "090",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "090/64",
+    "cardNumber": "090/064",
     "cardName": "Okidogi ex",
-    "fullDisplayName": "Okidogi ex 090/64 Shrouded Fable",
+    "fullDisplayName": "Okidogi ex 090/064 Shrouded Fable",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -317,18 +348,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-090-low.png",
-    "imageHighSrc": "cards/sv6pt5-090-high.png"
+    "imageHighSrc": "cards/sv6pt5-090-high.png",
+    "attacks": [
+      {
+        "name": "Poisonous Musculature",
+        "damage": null
+      },
+      {
+        "name": "Chain-Crazed",
+        "damage": "130+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13053",
-    "externalId": null,
+    "externalId": "sv6pt5-89",
     "tcgdex_id": "sv06.5-089",
     "localId": "089",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "089/64",
+    "cardNumber": "089/064",
     "cardName": "Xerosic's Machinations",
-    "fullDisplayName": "Xerosic's Machinations 089/64 Shrouded Fable",
+    "fullDisplayName": "Xerosic's Machinations 089/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -346,18 +388,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-089-low.png",
-    "imageHighSrc": "cards/sv6pt5-089-high.png"
+    "imageHighSrc": "cards/sv6pt5-089-high.png",
+    "rules": "Your opponent discards cards from their hand until they have 3 cards in their hand.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13043",
-    "externalId": null,
+    "externalId": "sv6pt5-88",
     "tcgdex_id": "sv06.5-088",
     "localId": "088",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "088/64",
+    "cardNumber": "088/064",
     "cardName": "Janine's Secret Art",
-    "fullDisplayName": "Janine's Secret Art 088/64 Shrouded Fable",
+    "fullDisplayName": "Janine's Secret Art 088/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -375,18 +418,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-088-low.png",
-    "imageHighSrc": "cards/sv6pt5-088-high.png"
+    "imageHighSrc": "cards/sv6pt5-088-high.png",
+    "rules": "Choose up to 2 of your Darkness Pokémon. For each of those Pokémon, search your deck for a Basic Darkness Energy card and attach it to that Pokémon. Then, shuffle your deck. If you attached Energy to your Active Pokémon in this way, it is now Poisoned.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13033",
-    "externalId": null,
+    "externalId": "sv6pt5-87",
     "tcgdex_id": "sv06.5-087",
     "localId": "087",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "087/64",
+    "cardNumber": "087/064",
     "cardName": "Colress's Tenacity",
-    "fullDisplayName": "Colress's Tenacity 087/64 Shrouded Fable",
+    "fullDisplayName": "Colress's Tenacity 087/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -404,18 +448,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-087-low.png",
-    "imageHighSrc": "cards/sv6pt5-087-high.png"
+    "imageHighSrc": "cards/sv6pt5-087-high.png",
+    "rules": "Search your deck for a Stadium card and an Energy card, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13025",
-    "externalId": null,
+    "externalId": "sv6pt5-86",
     "tcgdex_id": "sv06.5-086",
     "localId": "086",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "086/64",
+    "cardNumber": "086/064",
     "cardName": "Cassiopeia",
-    "fullDisplayName": "Cassiopeia 086/64 Shrouded Fable",
+    "fullDisplayName": "Cassiopeia 086/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -433,18 +478,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-086-low.png",
-    "imageHighSrc": "cards/sv6pt5-086-high.png"
+    "imageHighSrc": "cards/sv6pt5-086-high.png",
+    "rules": "You can use this card only when it is the last card in your hand.  Search your deck for up to 2 cards and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "13015",
-    "externalId": null,
+    "externalId": "sv6pt5-85",
     "tcgdex_id": "sv06.5-085",
     "localId": "085",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "085/64",
+    "cardNumber": "085/064",
     "cardName": "Pecharunt ex",
-    "fullDisplayName": "Pecharunt ex 085/64 Shrouded Fable",
+    "fullDisplayName": "Pecharunt ex 085/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -467,18 +513,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-085-low.png",
-    "imageHighSrc": "cards/sv6pt5-085-high.png"
+    "imageHighSrc": "cards/sv6pt5-085-high.png",
+    "attacks": [
+      {
+        "name": "Irritated Outburst",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "13005",
-    "externalId": null,
+    "externalId": "sv6pt5-84",
     "tcgdex_id": "sv06.5-084",
     "localId": "084",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "084/64",
+    "cardNumber": "084/064",
     "cardName": "Fezandipiti ex",
-    "fullDisplayName": "Fezandipiti ex 084/64 Shrouded Fable",
+    "fullDisplayName": "Fezandipiti ex 084/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -501,18 +554,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-084-low.png",
-    "imageHighSrc": "cards/sv6pt5-084-high.png"
+    "imageHighSrc": "cards/sv6pt5-084-high.png",
+    "attacks": [
+      {
+        "name": "Cruel Arrow",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12995",
-    "externalId": null,
+    "externalId": "sv6pt5-83",
     "tcgdex_id": "sv06.5-083",
     "localId": "083",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "083/64",
+    "cardNumber": "083/064",
     "cardName": "Munkidori ex",
-    "fullDisplayName": "Munkidori ex 083/64 Shrouded Fable",
+    "fullDisplayName": "Munkidori ex 083/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -535,18 +595,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-083-low.png",
-    "imageHighSrc": "cards/sv6pt5-083-high.png"
+    "imageHighSrc": "cards/sv6pt5-083-high.png",
+    "attacks": [
+      {
+        "name": "Dirty Headbutt",
+        "damage": "190"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12987",
-    "externalId": null,
+    "externalId": "sv6pt5-82",
     "tcgdex_id": "sv06.5-082",
     "localId": "082",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "082/64",
+    "cardNumber": "082/064",
     "cardName": "Okidogi ex",
-    "fullDisplayName": "Okidogi ex 082/64 Shrouded Fable",
+    "fullDisplayName": "Okidogi ex 082/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -569,18 +636,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-082-low.png",
-    "imageHighSrc": "cards/sv6pt5-082-high.png"
+    "imageHighSrc": "cards/sv6pt5-082-high.png",
+    "attacks": [
+      {
+        "name": "Poisonous Musculature",
+        "damage": null
+      },
+      {
+        "name": "Chain-Crazed",
+        "damage": "130+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12977",
-    "externalId": null,
+    "externalId": "sv6pt5-81",
     "tcgdex_id": "sv06.5-081",
     "localId": "081",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "081/64",
+    "cardNumber": "081/064",
     "cardName": "Revavroom ex",
-    "fullDisplayName": "Revavroom ex 081/64 Shrouded Fable",
+    "fullDisplayName": "Revavroom ex 081/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -604,18 +682,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-081-low.png",
-    "imageHighSrc": "cards/sv6pt5-081-high.png"
+    "imageHighSrc": "cards/sv6pt5-081-high.png",
+    "attacks": [
+      {
+        "name": "Accelerator Flash",
+        "damage": "20+"
+      },
+      {
+        "name": "Shattering Speed",
+        "damage": "250"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12970",
-    "externalId": null,
+    "externalId": "sv6pt5-80",
     "tcgdex_id": "sv06.5-080",
     "localId": "080",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "080/64",
+    "cardNumber": "080/064",
     "cardName": "Kingdra ex",
-    "fullDisplayName": "Kingdra ex 080/64 Shrouded Fable",
+    "fullDisplayName": "Kingdra ex 080/064 Shrouded Fable",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -638,18 +727,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-080-low.png",
-    "imageHighSrc": "cards/sv6pt5-080-high.png"
+    "imageHighSrc": "cards/sv6pt5-080-high.png",
+    "attacks": [
+      {
+        "name": "King's Order",
+        "damage": null
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12960",
-    "externalId": null,
+    "externalId": "sv6pt5-79",
     "tcgdex_id": "sv06.5-079",
     "localId": "079",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "079/64",
+    "cardNumber": "079/064",
     "cardName": "Bewear",
-    "fullDisplayName": "Bewear 079/64 Shrouded Fable",
+    "fullDisplayName": "Bewear 079/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -671,18 +771,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-079-low.png",
-    "imageHighSrc": "cards/sv6pt5-079-high.png"
+    "imageHighSrc": "cards/sv6pt5-079-high.png",
+    "attacks": [
+      {
+        "name": "Power Charger",
+        "damage": "30"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "12950",
-    "externalId": null,
+    "externalId": "sv6pt5-78",
     "tcgdex_id": "sv06.5-078",
     "localId": "078",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "078/64",
+    "cardNumber": "078/064",
     "cardName": "Persian",
-    "fullDisplayName": "Persian 078/64 Shrouded Fable",
+    "fullDisplayName": "Persian 078/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -704,18 +814,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-078-low.png",
-    "imageHighSrc": "cards/sv6pt5-078-high.png"
+    "imageHighSrc": "cards/sv6pt5-078-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "50×"
+      },
+      {
+        "name": "Slashing Claw",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "12940",
-    "externalId": null,
+    "externalId": "sv6pt5-77",
     "tcgdex_id": "sv06.5-077",
     "localId": "077",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "077/64",
+    "cardNumber": "077/064",
     "cardName": "Fraxure",
-    "fullDisplayName": "Fraxure 077/64 Shrouded Fable",
+    "fullDisplayName": "Fraxure 077/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -737,18 +857,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-077-low.png",
-    "imageHighSrc": "cards/sv6pt5-077-high.png"
+    "imageHighSrc": "cards/sv6pt5-077-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Pulse",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "12932",
-    "externalId": null,
+    "externalId": "sv6pt5-76",
     "tcgdex_id": "sv06.5-076",
     "localId": "076",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "076/64",
+    "cardNumber": "076/064",
     "cardName": "Cufant",
-    "fullDisplayName": "Cufant 076/64 Shrouded Fable",
+    "fullDisplayName": "Cufant 076/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -770,18 +896,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-076-low.png",
-    "imageHighSrc": "cards/sv6pt5-076-high.png"
+    "imageHighSrc": "cards/sv6pt5-076-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      },
+      {
+        "name": "Confront",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "12921",
-    "externalId": null,
+    "externalId": "sv6pt5-75",
     "tcgdex_id": "sv06.5-075",
     "localId": "075",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "075/64",
+    "cardNumber": "075/064",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 075/64 Shrouded Fable",
+    "fullDisplayName": "Zorua 075/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -803,18 +939,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-075-low.png",
-    "imageHighSrc": "cards/sv6pt5-075-high.png"
+    "imageHighSrc": "cards/sv6pt5-075-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Double Scratch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "12913",
-    "externalId": null,
+    "externalId": "sv6pt5-74",
     "tcgdex_id": "sv06.5-074",
     "localId": "074",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "074/64",
+    "cardNumber": "074/064",
     "cardName": "Okidogi",
-    "fullDisplayName": "Okidogi 074/64 Shrouded Fable",
+    "fullDisplayName": "Okidogi 074/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -836,18 +982,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-074-low.png",
-    "imageHighSrc": "cards/sv6pt5-074-high.png"
+    "imageHighSrc": "cards/sv6pt5-074-high.png",
+    "attacks": [
+      {
+        "name": "Good Punch",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "12903",
-    "externalId": null,
+    "externalId": "sv6pt5-73",
     "tcgdex_id": "sv06.5-073",
     "localId": "073",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "073/64",
+    "cardNumber": "073/064",
     "cardName": "Fezandipiti",
-    "fullDisplayName": "Fezandipiti 073/64 Shrouded Fable",
+    "fullDisplayName": "Fezandipiti 073/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -869,18 +1021,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-073-low.png",
-    "imageHighSrc": "cards/sv6pt5-073-high.png"
+    "imageHighSrc": "cards/sv6pt5-073-high.png",
+    "attacks": [
+      {
+        "name": "Energy Feather",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "12891",
-    "externalId": null,
+    "externalId": "sv6pt5-72",
     "tcgdex_id": "sv06.5-072",
     "localId": "072",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "072/64",
+    "cardNumber": "072/064",
     "cardName": "Munkidori",
-    "fullDisplayName": "Munkidori 072/64 Shrouded Fable",
+    "fullDisplayName": "Munkidori 072/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -902,18 +1060,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-072-low.png",
-    "imageHighSrc": "cards/sv6pt5-072-high.png"
+    "imageHighSrc": "cards/sv6pt5-072-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "12882",
-    "externalId": null,
+    "externalId": "sv6pt5-71",
     "tcgdex_id": "sv06.5-071",
     "localId": "071",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "071/64",
+    "cardNumber": "071/064",
     "cardName": "Cresselia",
-    "fullDisplayName": "Cresselia 071/64 Shrouded Fable",
+    "fullDisplayName": "Cresselia 071/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -935,18 +1099,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-071-low.png",
-    "imageHighSrc": "cards/sv6pt5-071-high.png"
+    "imageHighSrc": "cards/sv6pt5-071-high.png",
+    "attacks": [
+      {
+        "name": "Healing Pirouette",
+        "damage": null
+      },
+      {
+        "name": "Crescent Purge",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "12871",
-    "externalId": null,
+    "externalId": "sv6pt5-70",
     "tcgdex_id": "sv06.5-070",
     "localId": "070",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "070/64",
+    "cardNumber": "070/064",
     "cardName": "Dusknoir",
-    "fullDisplayName": "Dusknoir 070/64 Shrouded Fable",
+    "fullDisplayName": "Dusknoir 070/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -968,18 +1142,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-070-low.png",
-    "imageHighSrc": "cards/sv6pt5-070-high.png"
+    "imageHighSrc": "cards/sv6pt5-070-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Bind",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "12862",
-    "externalId": null,
+    "externalId": "sv6pt5-69",
     "tcgdex_id": "sv06.5-069",
     "localId": "069",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "069/64",
+    "cardNumber": "069/064",
     "cardName": "Dusclops",
-    "fullDisplayName": "Dusclops 069/64 Shrouded Fable",
+    "fullDisplayName": "Dusclops 069/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1001,18 +1181,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-069-low.png",
-    "imageHighSrc": "cards/sv6pt5-069-high.png"
+    "imageHighSrc": "cards/sv6pt5-069-high.png",
+    "attacks": [
+      {
+        "name": "Will-O-Wisp",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12851",
-    "externalId": null,
+    "externalId": "sv6pt5-68",
     "tcgdex_id": "sv06.5-068",
     "localId": "068",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "068/64",
+    "cardNumber": "068/064",
     "cardName": "Duskull",
-    "fullDisplayName": "Duskull 068/64 Shrouded Fable",
+    "fullDisplayName": "Duskull 068/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1034,18 +1220,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-068-low.png",
-    "imageHighSrc": "cards/sv6pt5-068-high.png"
+    "imageHighSrc": "cards/sv6pt5-068-high.png",
+    "attacks": [
+      {
+        "name": "Come and Get You",
+        "damage": null
+      },
+      {
+        "name": "Mumble",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12841",
-    "externalId": null,
+    "externalId": "sv6pt5-67",
     "tcgdex_id": "sv06.5-067",
     "localId": "067",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "067/64",
+    "cardNumber": "067/064",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 067/64 Shrouded Fable",
+    "fullDisplayName": "Horsea 067/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1067,18 +1263,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-067-low.png",
-    "imageHighSrc": "cards/sv6pt5-067-high.png"
+    "imageHighSrc": "cards/sv6pt5-067-high.png",
+    "attacks": [
+      {
+        "name": "Hold Still",
+        "damage": null
+      },
+      {
+        "name": "Razor Fin",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12832",
-    "externalId": null,
+    "externalId": "sv6pt5-66",
     "tcgdex_id": "sv06.5-066",
     "localId": "066",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "066/64",
+    "cardNumber": "066/064",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 066/64 Shrouded Fable",
+    "fullDisplayName": "Houndoom 066/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1100,18 +1306,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-066-low.png",
-    "imageHighSrc": "cards/sv6pt5-066-high.png"
+    "imageHighSrc": "cards/sv6pt5-066-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "50"
+      },
+      {
+        "name": "Snarl",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "12821",
-    "externalId": null,
+    "externalId": "sv6pt5-65",
     "tcgdex_id": "sv06.5-065",
     "localId": "065",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "065/64",
+    "cardNumber": "065/064",
     "cardName": "Tapu Bulu",
-    "fullDisplayName": "Tapu Bulu 065/64 Shrouded Fable",
+    "fullDisplayName": "Tapu Bulu 065/064 Shrouded Fable",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1133,18 +1349,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-065-low.png",
-    "imageHighSrc": "cards/sv6pt5-065-high.png"
+    "imageHighSrc": "cards/sv6pt5-065-high.png",
+    "attacks": [
+      {
+        "name": "Wood Hammer",
+        "damage": "220"
+      }
+    ]
   },
   {
     "masterCardId": "12811",
-    "externalId": null,
+    "externalId": "sv6pt5-64",
     "tcgdex_id": "sv06.5-064",
     "localId": "064",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "064/64",
+    "cardNumber": "064/064",
     "cardName": "Xerosic's Machinations",
-    "fullDisplayName": "Xerosic's Machinations 064/64 Shrouded Fable",
+    "fullDisplayName": "Xerosic's Machinations 064/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1162,18 +1384,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-064-low.png",
-    "imageHighSrc": "cards/sv6pt5-064-high.png"
+    "imageHighSrc": "cards/sv6pt5-064-high.png",
+    "rules": "Your opponent discards cards from their hand until they have 3 cards in their hand.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "12802",
-    "externalId": null,
+    "externalId": "sv6pt5-63",
     "tcgdex_id": "sv06.5-063",
     "localId": "063",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "063/64",
+    "cardNumber": "063/064",
     "cardName": "Powerglass",
-    "fullDisplayName": "Powerglass 063/64 Shrouded Fable",
+    "fullDisplayName": "Powerglass 063/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1191,18 +1414,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-063-low.png",
-    "imageHighSrc": "cards/sv6pt5-063-high.png"
+    "imageHighSrc": "cards/sv6pt5-063-high.png",
+    "rules": "At the end of your turn (after your attack), if the Pokémon this card is attached to is in the Active Spot, you may attach a Basic Energy card from your discard pile to it.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "12791",
-    "externalId": null,
+    "externalId": "sv6pt5-62",
     "tcgdex_id": "sv06.5-062",
     "localId": "062",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "062/64",
+    "cardNumber": "062/064",
     "cardName": "Poké Vital A",
-    "fullDisplayName": "Poké Vital A 062/64 Shrouded Fable",
+    "fullDisplayName": "Poké Vital A 062/064 Shrouded Fable",
     "rarity": "ACE SPEC Rare",
     "category": "Trainer",
     "stage": null,
@@ -1221,18 +1445,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-062-low.png",
-    "imageHighSrc": "cards/sv6pt5-062-high.png"
+    "imageHighSrc": "cards/sv6pt5-062-high.png",
+    "rules": "You can't have more than 1 ACE SPEC card in your deck.\n\nHeal 150 damage from 1 of your Pokémon.    This card can't be put into your hand or deck from the discard pile.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "12781",
-    "externalId": null,
+    "externalId": "sv6pt5-61",
     "tcgdex_id": "sv06.5-061",
     "localId": "061",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "061/64",
+    "cardNumber": "061/064",
     "cardName": "Night Stretcher",
-    "fullDisplayName": "Night Stretcher 061/64 Shrouded Fable",
+    "fullDisplayName": "Night Stretcher 061/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1250,18 +1475,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-061-low.png",
-    "imageHighSrc": "cards/sv6pt5-061-high.png"
+    "imageHighSrc": "cards/sv6pt5-061-high.png",
+    "rules": "Put a Pokémon or a Basic Energy card from your discard pile into your hand.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "12772",
-    "externalId": null,
+    "externalId": "sv6pt5-60",
     "tcgdex_id": "sv06.5-060",
     "localId": "060",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "060/64",
+    "cardNumber": "060/064",
     "cardName": "Neutralization Zone",
-    "fullDisplayName": "Neutralization Zone 060/64 Shrouded Fable",
+    "fullDisplayName": "Neutralization Zone 060/064 Shrouded Fable",
     "rarity": "ACE SPEC Rare",
     "category": "Trainer",
     "stage": null,
@@ -1280,18 +1506,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-060-low.png",
-    "imageHighSrc": "cards/sv6pt5-060-high.png"
+    "imageHighSrc": "cards/sv6pt5-060-high.png",
+    "rules": "You can't have more than 1 ACE SPEC card in your deck.\n\nPrevent all damage done to Pokémon that don't have a Rule Box (both yours and your opponent's) by attacks from the opponent's Pokémon ex and Pokémon V. (Pokémon ex, Pokémon V, etc. have Rule Boxes.)    This card can't be put into your hand or deck from the discard pile.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "12763",
-    "externalId": null,
+    "externalId": "sv6pt5-59",
     "tcgdex_id": "sv06.5-059",
     "localId": "059",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "059/64",
+    "cardNumber": "059/064",
     "cardName": "Janine's Secret Art",
-    "fullDisplayName": "Janine's Secret Art 059/64 Shrouded Fable",
+    "fullDisplayName": "Janine's Secret Art 059/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1309,18 +1536,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-059-low.png",
-    "imageHighSrc": "cards/sv6pt5-059-high.png"
+    "imageHighSrc": "cards/sv6pt5-059-high.png",
+    "rules": "Choose up to 2 of your Darkness Pokémon. For each of those Pokémon, search your deck for a Basic Darkness Energy card and attach it to that Pokémon. Then, shuffle your deck. If you attached Energy to your Active Pokémon in this way, it is now Poisoned.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "12753",
-    "externalId": null,
+    "externalId": "sv6pt5-58",
     "tcgdex_id": "sv06.5-058",
     "localId": "058",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "058/64",
+    "cardNumber": "058/064",
     "cardName": "Dangerous Laser",
-    "fullDisplayName": "Dangerous Laser 058/64 Shrouded Fable",
+    "fullDisplayName": "Dangerous Laser 058/064 Shrouded Fable",
     "rarity": "ACE SPEC Rare",
     "category": "Trainer",
     "stage": null,
@@ -1339,18 +1567,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-058-low.png",
-    "imageHighSrc": "cards/sv6pt5-058-high.png"
+    "imageHighSrc": "cards/sv6pt5-058-high.png",
+    "rules": "You can't have more than 1 ACE SPEC card in your deck.\n\nYour opponent's Active Pokémon is now Burned and Confused.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "12743",
-    "externalId": null,
+    "externalId": "sv6pt5-57",
     "tcgdex_id": "sv06.5-057",
     "localId": "057",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "057/64",
+    "cardNumber": "057/064",
     "cardName": "Colress's Tenacity",
-    "fullDisplayName": "Colress's Tenacity 057/64 Shrouded Fable",
+    "fullDisplayName": "Colress's Tenacity 057/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1368,18 +1597,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-057-low.png",
-    "imageHighSrc": "cards/sv6pt5-057-high.png"
+    "imageHighSrc": "cards/sv6pt5-057-high.png",
+    "rules": "Search your deck for a Stadium card and an Energy card, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "12735",
-    "externalId": null,
+    "externalId": "sv6pt5-56",
     "tcgdex_id": "sv06.5-056",
     "localId": "056",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "056/64",
+    "cardNumber": "056/064",
     "cardName": "Cassiopeia",
-    "fullDisplayName": "Cassiopeia 056/64 Shrouded Fable",
+    "fullDisplayName": "Cassiopeia 056/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1397,18 +1627,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-056-low.png",
-    "imageHighSrc": "cards/sv6pt5-056-high.png"
+    "imageHighSrc": "cards/sv6pt5-056-high.png",
+    "rules": "You can use this card only when it is the last card in your hand.  Search your deck for up to 2 cards and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "12724",
-    "externalId": null,
+    "externalId": "sv6pt5-55",
     "tcgdex_id": "sv06.5-055",
     "localId": "055",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "055/64",
+    "cardNumber": "055/064",
     "cardName": "Binding Mochi",
-    "fullDisplayName": "Binding Mochi 055/64 Shrouded Fable",
+    "fullDisplayName": "Binding Mochi 055/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1426,18 +1657,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-055-low.png",
-    "imageHighSrc": "cards/sv6pt5-055-high.png"
+    "imageHighSrc": "cards/sv6pt5-055-high.png",
+    "rules": "Attacks used by the Poisoned Pokémon this card is attached to do 40 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "12714",
-    "externalId": null,
+    "externalId": "sv6pt5-54",
     "tcgdex_id": "sv06.5-054",
     "localId": "054",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "054/64",
+    "cardNumber": "054/064",
     "cardName": "Academy at Night",
-    "fullDisplayName": "Academy at Night 054/64 Shrouded Fable",
+    "fullDisplayName": "Academy at Night 054/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1455,18 +1687,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-054-low.png",
-    "imageHighSrc": "cards/sv6pt5-054-high.png"
+    "imageHighSrc": "cards/sv6pt5-054-high.png",
+    "rules": "Once during each player's turn, that player may put a card from their hand on top of their deck.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
   },
   {
     "masterCardId": "12706",
-    "externalId": null,
+    "externalId": "sv6pt5-53",
     "tcgdex_id": "sv06.5-053",
     "localId": "053",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "053/64",
+    "cardNumber": "053/064",
     "cardName": "Bewear",
-    "fullDisplayName": "Bewear 053/64 Shrouded Fable",
+    "fullDisplayName": "Bewear 053/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1488,18 +1721,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-053-low.png",
-    "imageHighSrc": "cards/sv6pt5-053-high.png"
+    "imageHighSrc": "cards/sv6pt5-053-high.png",
+    "attacks": [
+      {
+        "name": "Power Charger",
+        "damage": "30"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "12696",
-    "externalId": null,
+    "externalId": "sv6pt5-52",
     "tcgdex_id": "sv06.5-052",
     "localId": "052",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "052/64",
+    "cardNumber": "052/064",
     "cardName": "Stufful",
-    "fullDisplayName": "Stufful 052/64 Shrouded Fable",
+    "fullDisplayName": "Stufful 052/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1521,18 +1764,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-052-low.png",
-    "imageHighSrc": "cards/sv6pt5-052-high.png"
+    "imageHighSrc": "cards/sv6pt5-052-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12686",
-    "externalId": null,
+    "externalId": "sv6pt5-51",
     "tcgdex_id": "sv06.5-051",
     "localId": "051",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "051/64",
+    "cardNumber": "051/064",
     "cardName": "Furfrou",
-    "fullDisplayName": "Furfrou 051/64 Shrouded Fable",
+    "fullDisplayName": "Furfrou 051/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1554,18 +1803,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-051-low.png",
-    "imageHighSrc": "cards/sv6pt5-051-high.png"
+    "imageHighSrc": "cards/sv6pt5-051-high.png",
+    "attacks": [
+      {
+        "name": "Energy Assist",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12676",
-    "externalId": null,
+    "externalId": "sv6pt5-50",
     "tcgdex_id": "sv06.5-050",
     "localId": "050",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "050/64",
+    "cardNumber": "050/064",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 050/64 Shrouded Fable",
+    "fullDisplayName": "Eevee 050/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1587,18 +1842,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-050-low.png",
-    "imageHighSrc": "cards/sv6pt5-050-high.png"
+    "imageHighSrc": "cards/sv6pt5-050-high.png",
+    "attacks": [
+      {
+        "name": "Colorful Catch",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12666",
-    "externalId": null,
+    "externalId": "sv6pt5-49",
     "tcgdex_id": "sv06.5-049",
     "localId": "049",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "049/64",
+    "cardNumber": "049/064",
     "cardName": "Persian",
-    "fullDisplayName": "Persian 049/64 Shrouded Fable",
+    "fullDisplayName": "Persian 049/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1620,18 +1885,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-049-low.png",
-    "imageHighSrc": "cards/sv6pt5-049-high.png"
+    "imageHighSrc": "cards/sv6pt5-049-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "50×"
+      },
+      {
+        "name": "Slashing Claw",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "12656",
-    "externalId": null,
+    "externalId": "sv6pt5-48",
     "tcgdex_id": "sv06.5-048",
     "localId": "048",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "048/64",
+    "cardNumber": "048/064",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 048/64 Shrouded Fable",
+    "fullDisplayName": "Meowth 048/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1653,18 +1928,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-048-low.png",
-    "imageHighSrc": "cards/sv6pt5-048-high.png"
+    "imageHighSrc": "cards/sv6pt5-048-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "12647",
-    "externalId": null,
+    "externalId": "sv6pt5-47",
     "tcgdex_id": "sv06.5-047",
     "localId": "047",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "047/64",
+    "cardNumber": "047/064",
     "cardName": "Kyurem",
-    "fullDisplayName": "Kyurem 047/64 Shrouded Fable",
+    "fullDisplayName": "Kyurem 047/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1686,18 +1967,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-047-low.png",
-    "imageHighSrc": "cards/sv6pt5-047-high.png"
+    "imageHighSrc": "cards/sv6pt5-047-high.png",
+    "attacks": [
+      {
+        "name": "Trifrost",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "12637",
-    "externalId": null,
+    "externalId": "sv6pt5-46",
     "tcgdex_id": "sv06.5-046",
     "localId": "046",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "046/64",
+    "cardNumber": "046/064",
     "cardName": "Haxorus",
-    "fullDisplayName": "Haxorus 046/64 Shrouded Fable",
+    "fullDisplayName": "Haxorus 046/064 Shrouded Fable",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1719,18 +2006,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-046-low.png",
-    "imageHighSrc": "cards/sv6pt5-046-high.png"
+    "imageHighSrc": "cards/sv6pt5-046-high.png",
+    "attacks": [
+      {
+        "name": "Bring Down the Axe",
+        "damage": null
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "230"
+      }
+    ]
   },
   {
     "masterCardId": "12628",
-    "externalId": null,
+    "externalId": "sv6pt5-45",
     "tcgdex_id": "sv06.5-045",
     "localId": "045",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "045/64",
+    "cardNumber": "045/064",
     "cardName": "Fraxure",
-    "fullDisplayName": "Fraxure 045/64 Shrouded Fable",
+    "fullDisplayName": "Fraxure 045/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1752,18 +2049,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-045-low.png",
-    "imageHighSrc": "cards/sv6pt5-045-high.png"
+    "imageHighSrc": "cards/sv6pt5-045-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Pulse",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "12619",
-    "externalId": null,
+    "externalId": "sv6pt5-44",
     "tcgdex_id": "sv06.5-044",
     "localId": "044",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "044/64",
+    "cardNumber": "044/064",
     "cardName": "Axew",
-    "fullDisplayName": "Axew 044/64 Shrouded Fable",
+    "fullDisplayName": "Axew 044/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1785,18 +2088,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-044-low.png",
-    "imageHighSrc": "cards/sv6pt5-044-high.png"
+    "imageHighSrc": "cards/sv6pt5-044-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12609",
-    "externalId": null,
+    "externalId": "sv6pt5-43",
     "tcgdex_id": "sv06.5-043",
     "localId": "043",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "043/64",
+    "cardNumber": "043/064",
     "cardName": "Varoom",
-    "fullDisplayName": "Varoom 043/64 Shrouded Fable",
+    "fullDisplayName": "Varoom 043/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1818,18 +2131,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-043-low.png",
-    "imageHighSrc": "cards/sv6pt5-043-high.png"
+    "imageHighSrc": "cards/sv6pt5-043-high.png",
+    "attacks": [
+      {
+        "name": "Rigidify",
+        "damage": null
+      },
+      {
+        "name": "Headbutt Bounce",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12599",
-    "externalId": null,
+    "externalId": "sv6pt5-42",
     "tcgdex_id": "sv06.5-042",
     "localId": "042",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "042/64",
+    "cardNumber": "042/064",
     "cardName": "Copperajah",
-    "fullDisplayName": "Copperajah 042/64 Shrouded Fable",
+    "fullDisplayName": "Copperajah 042/064 Shrouded Fable",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1851,18 +2174,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-042-low.png",
-    "imageHighSrc": "cards/sv6pt5-042-high.png"
+    "imageHighSrc": "cards/sv6pt5-042-high.png",
+    "attacks": [
+      {
+        "name": "Nasal Lariat",
+        "damage": "130+"
+      }
+    ]
   },
   {
     "masterCardId": "12589",
-    "externalId": null,
+    "externalId": "sv6pt5-41",
     "tcgdex_id": "sv06.5-041",
     "localId": "041",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "041/64",
+    "cardNumber": "041/064",
     "cardName": "Cufant",
-    "fullDisplayName": "Cufant 041/64 Shrouded Fable",
+    "fullDisplayName": "Cufant 041/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1884,18 +2213,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-041-low.png",
-    "imageHighSrc": "cards/sv6pt5-041-high.png"
+    "imageHighSrc": "cards/sv6pt5-041-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      },
+      {
+        "name": "Confront",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "12579",
-    "externalId": null,
+    "externalId": "sv6pt5-40",
     "tcgdex_id": "sv06.5-040",
     "localId": "040",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "040/64",
+    "cardNumber": "040/064",
     "cardName": "Genesect",
-    "fullDisplayName": "Genesect 040/64 Shrouded Fable",
+    "fullDisplayName": "Genesect 040/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1917,18 +2256,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-040-low.png",
-    "imageHighSrc": "cards/sv6pt5-040-high.png"
+    "imageHighSrc": "cards/sv6pt5-040-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Blast",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "12570",
-    "externalId": null,
+    "externalId": "sv6pt5-39",
     "tcgdex_id": "sv06.5-039",
     "localId": "039",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "039/64",
+    "cardNumber": "039/064",
     "cardName": "Pecharunt ex",
-    "fullDisplayName": "Pecharunt ex 039/64 Shrouded Fable",
+    "fullDisplayName": "Pecharunt ex 039/064 Shrouded Fable",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1951,18 +2296,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-039-low.png",
-    "imageHighSrc": "cards/sv6pt5-039-high.png"
+    "imageHighSrc": "cards/sv6pt5-039-high.png",
+    "attacks": [
+      {
+        "name": "Irritated Outburst",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12559",
-    "externalId": null,
+    "externalId": "sv6pt5-38",
     "tcgdex_id": "sv06.5-038",
     "localId": "038",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "038/64",
+    "cardNumber": "038/064",
     "cardName": "Fezandipiti ex",
-    "fullDisplayName": "Fezandipiti ex 038/64 Shrouded Fable",
+    "fullDisplayName": "Fezandipiti ex 038/064 Shrouded Fable",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1985,18 +2337,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-038-low.png",
-    "imageHighSrc": "cards/sv6pt5-038-high.png"
+    "imageHighSrc": "cards/sv6pt5-038-high.png",
+    "attacks": [
+      {
+        "name": "Cruel Arrow",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12551",
-    "externalId": null,
+    "externalId": "sv6pt5-37",
     "tcgdex_id": "sv06.5-037",
     "localId": "037",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "037/64",
+    "cardNumber": "037/064",
     "cardName": "Munkidori ex",
-    "fullDisplayName": "Munkidori ex 037/64 Shrouded Fable",
+    "fullDisplayName": "Munkidori ex 037/064 Shrouded Fable",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2019,18 +2378,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-037-low.png",
-    "imageHighSrc": "cards/sv6pt5-037-high.png"
+    "imageHighSrc": "cards/sv6pt5-037-high.png",
+    "attacks": [
+      {
+        "name": "Dirty Headbutt",
+        "damage": "190"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12541",
-    "externalId": null,
+    "externalId": "sv6pt5-36",
     "tcgdex_id": "sv06.5-036",
     "localId": "036",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "036/64",
+    "cardNumber": "036/064",
     "cardName": "Okidogi ex",
-    "fullDisplayName": "Okidogi ex 036/64 Shrouded Fable",
+    "fullDisplayName": "Okidogi ex 036/064 Shrouded Fable",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2053,18 +2419,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-036-low.png",
-    "imageHighSrc": "cards/sv6pt5-036-high.png"
+    "imageHighSrc": "cards/sv6pt5-036-high.png",
+    "attacks": [
+      {
+        "name": "Poisonous Musculature",
+        "damage": null
+      },
+      {
+        "name": "Chain-Crazed",
+        "damage": "130+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12531",
-    "externalId": null,
+    "externalId": "sv6pt5-35",
     "tcgdex_id": "sv06.5-035",
     "localId": "035",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "035/64",
+    "cardNumber": "035/064",
     "cardName": "Yveltal",
-    "fullDisplayName": "Yveltal 035/64 Shrouded Fable",
+    "fullDisplayName": "Yveltal 035/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2086,18 +2463,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-035-low.png",
-    "imageHighSrc": "cards/sv6pt5-035-high.png"
+    "imageHighSrc": "cards/sv6pt5-035-high.png",
+    "attacks": [
+      {
+        "name": "Corrosive Winds",
+        "damage": null
+      },
+      {
+        "name": "Destructive Beam",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "12521",
-    "externalId": null,
+    "externalId": "sv6pt5-34",
     "tcgdex_id": "sv06.5-034",
     "localId": "034",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "034/64",
+    "cardNumber": "034/064",
     "cardName": "Malamar",
-    "fullDisplayName": "Malamar 034/64 Shrouded Fable",
+    "fullDisplayName": "Malamar 034/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2119,18 +2506,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-034-low.png",
-    "imageHighSrc": "cards/sv6pt5-034-high.png"
+    "imageHighSrc": "cards/sv6pt5-034-high.png",
+    "attacks": [
+      {
+        "name": "Colluding Tentacles",
+        "damage": null
+      },
+      {
+        "name": "Spinning Attack",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "12511",
-    "externalId": null,
+    "externalId": "sv6pt5-33",
     "tcgdex_id": "sv06.5-033",
     "localId": "033",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "033/64",
+    "cardNumber": "033/064",
     "cardName": "Inkay",
-    "fullDisplayName": "Inkay 033/64 Shrouded Fable",
+    "fullDisplayName": "Inkay 033/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2152,18 +2549,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-033-low.png",
-    "imageHighSrc": "cards/sv6pt5-033-high.png"
+    "imageHighSrc": "cards/sv6pt5-033-high.png",
+    "attacks": [
+      {
+        "name": "Mischievous Tentacles",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12501",
-    "externalId": null,
+    "externalId": "sv6pt5-32",
     "tcgdex_id": "sv06.5-032",
     "localId": "032",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "032/64",
+    "cardNumber": "032/064",
     "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark 032/64 Shrouded Fable",
+    "fullDisplayName": "Zoroark 032/064 Shrouded Fable",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2185,18 +2592,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-032-low.png",
-    "imageHighSrc": "cards/sv6pt5-032-high.png"
+    "imageHighSrc": "cards/sv6pt5-032-high.png",
+    "attacks": [
+      {
+        "name": "Illusory Hijacking",
+        "damage": "60×"
+      },
+      {
+        "name": "Claw Slash",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "12491",
-    "externalId": null,
+    "externalId": "sv6pt5-31",
     "tcgdex_id": "sv06.5-031",
     "localId": "031",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "031/64",
+    "cardNumber": "031/064",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 031/64 Shrouded Fable",
+    "fullDisplayName": "Zorua 031/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2218,18 +2635,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-031-low.png",
-    "imageHighSrc": "cards/sv6pt5-031-high.png"
+    "imageHighSrc": "cards/sv6pt5-031-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Double Scratch",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "12480",
-    "externalId": null,
+    "externalId": "sv6pt5-30",
     "tcgdex_id": "sv06.5-030",
     "localId": "030",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "030/64",
+    "cardNumber": "030/064",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 030/64 Shrouded Fable",
+    "fullDisplayName": "Absol 030/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2251,18 +2678,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-030-low.png",
-    "imageHighSrc": "cards/sv6pt5-030-high.png"
+    "imageHighSrc": "cards/sv6pt5-030-high.png",
+    "attacks": [
+      {
+        "name": "Darkfall",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "12469",
-    "externalId": null,
+    "externalId": "sv6pt5-29",
     "tcgdex_id": "sv06.5-029",
     "localId": "029",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "029/64",
+    "cardNumber": "029/064",
     "cardName": "Crobat",
-    "fullDisplayName": "Crobat 029/64 Shrouded Fable",
+    "fullDisplayName": "Crobat 029/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2284,18 +2717,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-029-low.png",
-    "imageHighSrc": "cards/sv6pt5-029-high.png"
+    "imageHighSrc": "cards/sv6pt5-029-high.png",
+    "attacks": [
+      {
+        "name": "Poison Fang",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "12459",
-    "externalId": null,
+    "externalId": "sv6pt5-28",
     "tcgdex_id": "sv06.5-028",
     "localId": "028",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "028/64",
+    "cardNumber": "028/064",
     "cardName": "Golbat",
-    "fullDisplayName": "Golbat 028/64 Shrouded Fable",
+    "fullDisplayName": "Golbat 028/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2317,18 +2756,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-028-low.png",
-    "imageHighSrc": "cards/sv6pt5-028-high.png"
+    "imageHighSrc": "cards/sv6pt5-028-high.png",
+    "attacks": [
+      {
+        "name": "Speed Dive",
+        "damage": "30"
+      },
+      {
+        "name": "Pitch-Black Blade",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "12451",
-    "externalId": null,
+    "externalId": "sv6pt5-27",
     "tcgdex_id": "sv06.5-027",
     "localId": "027",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "027/64",
+    "cardNumber": "027/064",
     "cardName": "Zubat",
-    "fullDisplayName": "Zubat 027/64 Shrouded Fable",
+    "fullDisplayName": "Zubat 027/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2350,18 +2799,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-027-low.png",
-    "imageHighSrc": "cards/sv6pt5-027-high.png"
+    "imageHighSrc": "cards/sv6pt5-027-high.png",
+    "attacks": [
+      {
+        "name": "Lead",
+        "damage": null
+      },
+      {
+        "name": "Darkness Fang",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12442",
-    "externalId": null,
+    "externalId": "sv6pt5-26",
     "tcgdex_id": "sv06.5-026",
     "localId": "026",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "026/64",
+    "cardNumber": "026/064",
     "cardName": "Slither Wing",
-    "fullDisplayName": "Slither Wing 026/64 Shrouded Fable",
+    "fullDisplayName": "Slither Wing 026/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2384,18 +2843,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-026-low.png",
-    "imageHighSrc": "cards/sv6pt5-026-high.png"
+    "imageHighSrc": "cards/sv6pt5-026-high.png",
+    "attacks": [
+      {
+        "name": "Iron Smasher",
+        "damage": "20+"
+      },
+      {
+        "name": "Smashing Wing",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "12434",
-    "externalId": null,
+    "externalId": "sv6pt5-25",
     "tcgdex_id": "sv06.5-025",
     "localId": "025",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "025/64",
+    "cardNumber": "025/064",
     "cardName": "Bloodmoon Ursaluna",
-    "fullDisplayName": "Bloodmoon Ursaluna 025/64 Shrouded Fable",
+    "fullDisplayName": "Bloodmoon Ursaluna 025/064 Shrouded Fable",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2417,18 +2886,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-025-low.png",
-    "imageHighSrc": "cards/sv6pt5-025-high.png"
+    "imageHighSrc": "cards/sv6pt5-025-high.png",
+    "attacks": [
+      {
+        "name": "Mad Bite",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "12424",
-    "externalId": null,
+    "externalId": "sv6pt5-24",
     "tcgdex_id": "sv06.5-024",
     "localId": "024",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "024/64",
+    "cardNumber": "024/064",
     "cardName": "Toxicroak",
-    "fullDisplayName": "Toxicroak 024/64 Shrouded Fable",
+    "fullDisplayName": "Toxicroak 024/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2450,18 +2925,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-024-low.png",
-    "imageHighSrc": "cards/sv6pt5-024-high.png"
+    "imageHighSrc": "cards/sv6pt5-024-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "50"
+      },
+      {
+        "name": "Clean Hit",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "12414",
-    "externalId": null,
+    "externalId": "sv6pt5-23",
     "tcgdex_id": "sv06.5-023",
     "localId": "023",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "023/64",
+    "cardNumber": "023/064",
     "cardName": "Croagunk",
-    "fullDisplayName": "Croagunk 023/64 Shrouded Fable",
+    "fullDisplayName": "Croagunk 023/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2483,18 +2968,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-023-low.png",
-    "imageHighSrc": "cards/sv6pt5-023-high.png"
+    "imageHighSrc": "cards/sv6pt5-023-high.png",
+    "attacks": [
+      {
+        "name": "Light Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Frog Hop",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "12404",
-    "externalId": null,
+    "externalId": "sv6pt5-22",
     "tcgdex_id": "sv06.5-022",
     "localId": "022",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "022/64",
+    "cardNumber": "022/064",
     "cardName": "Sylveon",
-    "fullDisplayName": "Sylveon 022/64 Shrouded Fable",
+    "fullDisplayName": "Sylveon 022/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2516,18 +3011,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-022-low.png",
-    "imageHighSrc": "cards/sv6pt5-022-high.png"
+    "imageHighSrc": "cards/sv6pt5-022-high.png",
+    "attacks": [
+      {
+        "name": "Mystical Return",
+        "damage": null
+      },
+      {
+        "name": "Disarming Voice",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "12396",
-    "externalId": null,
+    "externalId": "sv6pt5-21",
     "tcgdex_id": "sv06.5-021",
     "localId": "021",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "021/64",
+    "cardNumber": "021/064",
     "cardName": "Cresselia",
-    "fullDisplayName": "Cresselia 021/64 Shrouded Fable",
+    "fullDisplayName": "Cresselia 021/064 Shrouded Fable",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2549,18 +3054,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-021-low.png",
-    "imageHighSrc": "cards/sv6pt5-021-high.png"
+    "imageHighSrc": "cards/sv6pt5-021-high.png",
+    "attacks": [
+      {
+        "name": "Healing Pirouette",
+        "damage": null
+      },
+      {
+        "name": "Crescent Purge",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "12386",
-    "externalId": null,
+    "externalId": "sv6pt5-20",
     "tcgdex_id": "sv06.5-020",
     "localId": "020",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "020/64",
+    "cardNumber": "020/064",
     "cardName": "Dusknoir",
-    "fullDisplayName": "Dusknoir 020/64 Shrouded Fable",
+    "fullDisplayName": "Dusknoir 020/064 Shrouded Fable",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2582,18 +3097,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-020-low.png",
-    "imageHighSrc": "cards/sv6pt5-020-high.png"
+    "imageHighSrc": "cards/sv6pt5-020-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Bind",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "12376",
-    "externalId": null,
+    "externalId": "sv6pt5-19",
     "tcgdex_id": "sv06.5-019",
     "localId": "019",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "019/64",
+    "cardNumber": "019/064",
     "cardName": "Dusclops",
-    "fullDisplayName": "Dusclops 019/64 Shrouded Fable",
+    "fullDisplayName": "Dusclops 019/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2615,18 +3136,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-019-low.png",
-    "imageHighSrc": "cards/sv6pt5-019-high.png"
+    "imageHighSrc": "cards/sv6pt5-019-high.png",
+    "attacks": [
+      {
+        "name": "Will-O-Wisp",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12366",
-    "externalId": null,
+    "externalId": "sv6pt5-18",
     "tcgdex_id": "sv06.5-018",
     "localId": "018",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "018/64",
+    "cardNumber": "018/064",
     "cardName": "Duskull",
-    "fullDisplayName": "Duskull 018/64 Shrouded Fable",
+    "fullDisplayName": "Duskull 018/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2648,18 +3175,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-018-low.png",
-    "imageHighSrc": "cards/sv6pt5-018-high.png"
+    "imageHighSrc": "cards/sv6pt5-018-high.png",
+    "attacks": [
+      {
+        "name": "Come and Get You",
+        "damage": null
+      },
+      {
+        "name": "Mumble",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12357",
-    "externalId": null,
+    "externalId": "sv6pt5-17",
     "tcgdex_id": "sv06.5-017",
     "localId": "017",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "017/64",
+    "cardNumber": "017/064",
     "cardName": "Hypno",
-    "fullDisplayName": "Hypno 017/64 Shrouded Fable",
+    "fullDisplayName": "Hypno 017/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2681,18 +3218,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-017-low.png",
-    "imageHighSrc": "cards/sv6pt5-017-high.png"
+    "imageHighSrc": "cards/sv6pt5-017-high.png",
+    "attacks": [
+      {
+        "name": "Daydream",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "12347",
-    "externalId": null,
+    "externalId": "sv6pt5-16",
     "tcgdex_id": "sv06.5-016",
     "localId": "016",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "016/64",
+    "cardNumber": "016/064",
     "cardName": "Drowzee",
-    "fullDisplayName": "Drowzee 016/64 Shrouded Fable",
+    "fullDisplayName": "Drowzee 016/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2714,18 +3257,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-016-low.png",
-    "imageHighSrc": "cards/sv6pt5-016-high.png"
+    "imageHighSrc": "cards/sv6pt5-016-high.png",
+    "attacks": [
+      {
+        "name": "Eerie Gaze",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12339",
-    "externalId": null,
+    "externalId": "sv6pt5-15",
     "tcgdex_id": "sv06.5-015",
     "localId": "015",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "015/64",
+    "cardNumber": "015/064",
     "cardName": "Revavroom ex",
-    "fullDisplayName": "Revavroom ex 015/64 Shrouded Fable",
+    "fullDisplayName": "Revavroom ex 015/064 Shrouded Fable",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2749,18 +3298,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-015-low.png",
-    "imageHighSrc": "cards/sv6pt5-015-high.png"
+    "imageHighSrc": "cards/sv6pt5-015-high.png",
+    "attacks": [
+      {
+        "name": "Accelerator Flash",
+        "damage": "20+"
+      },
+      {
+        "name": "Shattering Speed",
+        "damage": "250"
+      }
+    ],
+    "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12328",
-    "externalId": null,
+    "externalId": "sv6pt5-14",
     "tcgdex_id": "sv06.5-014",
     "localId": "014",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "014/64",
+    "cardNumber": "014/064",
     "cardName": "Weavile",
-    "fullDisplayName": "Weavile 014/64 Shrouded Fable",
+    "fullDisplayName": "Weavile 014/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2782,18 +3342,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-014-low.png",
-    "imageHighSrc": "cards/sv6pt5-014-high.png"
+    "imageHighSrc": "cards/sv6pt5-014-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "40"
+      },
+      {
+        "name": "Hail Claw",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "12318",
-    "externalId": null,
+    "externalId": "sv6pt5-13",
     "tcgdex_id": "sv06.5-013",
     "localId": "013",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "013/64",
+    "cardNumber": "013/064",
     "cardName": "Sneasel",
-    "fullDisplayName": "Sneasel 013/64 Shrouded Fable",
+    "fullDisplayName": "Sneasel 013/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2815,18 +3385,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-013-low.png",
-    "imageHighSrc": "cards/sv6pt5-013-high.png"
+    "imageHighSrc": "cards/sv6pt5-013-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "10"
+      },
+      {
+        "name": "Beset",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12308",
-    "externalId": null,
+    "externalId": "sv6pt5-12",
     "tcgdex_id": "sv06.5-012",
     "localId": "012",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "012/64",
+    "cardNumber": "012/064",
     "cardName": "Kingdra ex",
-    "fullDisplayName": "Kingdra ex 012/64 Shrouded Fable",
+    "fullDisplayName": "Kingdra ex 012/064 Shrouded Fable",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2849,18 +3429,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-012-low.png",
-    "imageHighSrc": "cards/sv6pt5-012-high.png"
+    "imageHighSrc": "cards/sv6pt5-012-high.png",
+    "attacks": [
+      {
+        "name": "King's Order",
+        "damage": null
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "12298",
-    "externalId": null,
+    "externalId": "sv6pt5-11",
     "tcgdex_id": "sv06.5-011",
     "localId": "011",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "011/64",
+    "cardNumber": "011/064",
     "cardName": "Seadra",
-    "fullDisplayName": "Seadra 011/64 Shrouded Fable",
+    "fullDisplayName": "Seadra 011/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2882,18 +3473,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-011-low.png",
-    "imageHighSrc": "cards/sv6pt5-011-high.png"
+    "imageHighSrc": "cards/sv6pt5-011-high.png",
+    "attacks": [
+      {
+        "name": "Call for Backup",
+        "damage": null
+      },
+      {
+        "name": "Sharp Fin",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "12288",
-    "externalId": null,
+    "externalId": "sv6pt5-10",
     "tcgdex_id": "sv06.5-010",
     "localId": "010",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "010/64",
+    "cardNumber": "010/064",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 010/64 Shrouded Fable",
+    "fullDisplayName": "Horsea 010/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2915,18 +3516,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-010-low.png",
-    "imageHighSrc": "cards/sv6pt5-010-high.png"
+    "imageHighSrc": "cards/sv6pt5-010-high.png",
+    "attacks": [
+      {
+        "name": "Hold Still",
+        "damage": null
+      },
+      {
+        "name": "Razor Fin",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "12279",
-    "externalId": null,
+    "externalId": "sv6pt5-9",
     "tcgdex_id": "sv06.5-009",
     "localId": "009",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "009/64",
+    "cardNumber": "009/064",
     "cardName": "Iron Moth",
-    "fullDisplayName": "Iron Moth 009/64 Shrouded Fable",
+    "fullDisplayName": "Iron Moth 009/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2949,18 +3560,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-009-low.png",
-    "imageHighSrc": "cards/sv6pt5-009-high.png"
+    "imageHighSrc": "cards/sv6pt5-009-high.png",
+    "attacks": [
+      {
+        "name": "Suction",
+        "damage": "30"
+      },
+      {
+        "name": "Anachronism Repulsor",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "12270",
-    "externalId": null,
+    "externalId": "sv6pt5-8",
     "tcgdex_id": "sv06.5-008",
     "localId": "008",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "008/64",
+    "cardNumber": "008/064",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 008/64 Shrouded Fable",
+    "fullDisplayName": "Houndoom 008/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2982,18 +3603,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-008-low.png",
-    "imageHighSrc": "cards/sv6pt5-008-high.png"
+    "imageHighSrc": "cards/sv6pt5-008-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "50"
+      },
+      {
+        "name": "Snarl",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "12261",
-    "externalId": null,
+    "externalId": "sv6pt5-7",
     "tcgdex_id": "sv06.5-007",
     "localId": "007",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "007/64",
+    "cardNumber": "007/064",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 007/64 Shrouded Fable",
+    "fullDisplayName": "Houndour 007/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3015,18 +3646,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-007-low.png",
-    "imageHighSrc": "cards/sv6pt5-007-high.png"
+    "imageHighSrc": "cards/sv6pt5-007-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      },
+      {
+        "name": "Rear Kick",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "12251",
-    "externalId": null,
+    "externalId": "sv6pt5-6",
     "tcgdex_id": "sv06.5-006",
     "localId": "006",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "006/64",
+    "cardNumber": "006/064",
     "cardName": "Tapu Bulu",
-    "fullDisplayName": "Tapu Bulu 006/64 Shrouded Fable",
+    "fullDisplayName": "Tapu Bulu 006/064 Shrouded Fable",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3048,18 +3689,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-006-low.png",
-    "imageHighSrc": "cards/sv6pt5-006-high.png"
+    "imageHighSrc": "cards/sv6pt5-006-high.png",
+    "attacks": [
+      {
+        "name": "Wood Hammer",
+        "damage": "220"
+      }
+    ]
   },
   {
     "masterCardId": "12241",
-    "externalId": null,
+    "externalId": "sv6pt5-5",
     "tcgdex_id": "sv06.5-005",
     "localId": "005",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "005/64",
+    "cardNumber": "005/064",
     "cardName": "Decidueye",
-    "fullDisplayName": "Decidueye 005/64 Shrouded Fable",
+    "fullDisplayName": "Decidueye 005/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3081,18 +3728,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-005-low.png",
-    "imageHighSrc": "cards/sv6pt5-005-high.png"
+    "imageHighSrc": "cards/sv6pt5-005-high.png",
+    "attacks": [
+      {
+        "name": "Stock Up on Feathers",
+        "damage": null
+      },
+      {
+        "name": "Power Shot",
+        "damage": "170"
+      }
+    ]
   },
   {
     "masterCardId": "12231",
-    "externalId": null,
+    "externalId": "sv6pt5-4",
     "tcgdex_id": "sv06.5-004",
     "localId": "004",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "004/64",
+    "cardNumber": "004/064",
     "cardName": "Dartrix",
-    "fullDisplayName": "Dartrix 004/64 Shrouded Fable",
+    "fullDisplayName": "Dartrix 004/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3114,18 +3771,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-004-low.png",
-    "imageHighSrc": "cards/sv6pt5-004-high.png"
+    "imageHighSrc": "cards/sv6pt5-004-high.png",
+    "attacks": [
+      {
+        "name": "United Wings",
+        "damage": "20×"
+      },
+      {
+        "name": "Cutting Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "12221",
-    "externalId": null,
+    "externalId": "sv6pt5-3",
     "tcgdex_id": "sv06.5-003",
     "localId": "003",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "003/64",
+    "cardNumber": "003/064",
     "cardName": "Rowlet",
-    "fullDisplayName": "Rowlet 003/64 Shrouded Fable",
+    "fullDisplayName": "Rowlet 003/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3147,18 +3814,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-003-low.png",
-    "imageHighSrc": "cards/sv6pt5-003-high.png"
+    "imageHighSrc": "cards/sv6pt5-003-high.png",
+    "attacks": [
+      {
+        "name": "Add On",
+        "damage": null
+      },
+      {
+        "name": "Leafage",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "12213",
-    "externalId": null,
+    "externalId": "sv6pt5-2",
     "tcgdex_id": "sv06.5-002",
     "localId": "002",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "002/64",
+    "cardNumber": "002/064",
     "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 002/64 Shrouded Fable",
+    "fullDisplayName": "Galvantula 002/064 Shrouded Fable",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3180,18 +3857,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-002-low.png",
-    "imageHighSrc": "cards/sv6pt5-002-high.png"
+    "imageHighSrc": "cards/sv6pt5-002-high.png",
+    "attacks": [
+      {
+        "name": "Shocking Web",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "12203",
-    "externalId": null,
+    "externalId": "sv6pt5-1",
     "tcgdex_id": "sv06.5-001",
     "localId": "001",
     "setCode": "sv06.5",
     "setTcgdexId": "sv06.5",
-    "cardNumber": "001/64",
+    "cardNumber": "001/064",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 001/64 Shrouded Fable",
+    "fullDisplayName": "Joltik 001/064 Shrouded Fable",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3213,6 +3896,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sv6pt5-001-low.png",
-    "imageHighSrc": "cards/sv6pt5-001-high.png"
+    "imageHighSrc": "cards/sv6pt5-001-high.png",
+    "attacks": [
+      {
+        "name": "Splashing Dodge",
+        "damage": "10"
+      }
+    ]
   }
 ]

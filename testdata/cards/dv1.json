@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "7737",
-    "externalId": null,
+    "externalId": "dv1-21",
     "tcgdex_id": "dv1-21",
     "localId": "021",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "021/20",
+    "cardNumber": "21/20",
     "cardName": "Kyurem",
-    "fullDisplayName": "Kyurem 021/20 Dragon Vault",
+    "fullDisplayName": "Kyurem 21/20 Dragon Vault",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-021-low.png",
-    "imageHighSrc": "cards/dv1-021-high.png"
+    "imageHighSrc": "cards/dv1-021-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "60"
+      },
+      {
+        "name": "Blizzard",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "7731",
-    "externalId": null,
+    "externalId": "dv1-20",
     "tcgdex_id": "dv1-20",
     "localId": "020",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "020/20",
+    "cardNumber": "20/20",
     "cardName": "Super Rod",
-    "fullDisplayName": "Super Rod 020/20 Dragon Vault",
+    "fullDisplayName": "Super Rod 20/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -59,18 +69,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-020-low.png",
-    "imageHighSrc": "cards/dv1-020-high.png"
+    "imageHighSrc": "cards/dv1-020-high.png",
+    "rules": "Shuffle 3 in any combination of Pokémon and basic Energy cards from your discard pile back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "7725",
-    "externalId": null,
+    "externalId": "dv1-19",
     "tcgdex_id": "dv1-19",
     "localId": "019",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "019/20",
+    "cardNumber": "19/20",
     "cardName": "First Ticket",
-    "fullDisplayName": "First Ticket 019/20 Dragon Vault",
+    "fullDisplayName": "First Ticket 19/20 Dragon Vault",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -88,18 +99,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-019-low.png",
-    "imageHighSrc": "cards/dv1-019-high.png"
+    "imageHighSrc": "cards/dv1-019-high.png",
+    "rules": "Before you flip a coin to decide who goes first in a game, you may play this card. Don't flip that coin, and you go first. If both players play First Ticket, flip the coin as normal. (You may play only 1 First Ticket before you flip that coin.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "7718",
-    "externalId": null,
+    "externalId": "dv1-18",
     "tcgdex_id": "dv1-18",
     "localId": "018",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "018/20",
+    "cardNumber": "18/20",
     "cardName": "Exp. Share",
-    "fullDisplayName": "Exp. Share 018/20 Dragon Vault",
+    "fullDisplayName": "Exp. Share 18/20 Dragon Vault",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -117,18 +129,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-018-low.png",
-    "imageHighSrc": "cards/dv1-018-high.png"
+    "imageHighSrc": "cards/dv1-018-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhen your Active Pokémon is Knocked Out by damage from an opponent's attack, you may move 1 basic Energy card that was attached to that Pokémon to the Pokémon this card is attached to.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "7712",
-    "externalId": null,
+    "externalId": "dv1-17",
     "tcgdex_id": "dv1-17",
     "localId": "017",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "017/20",
+    "cardNumber": "17/20",
     "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon 017/20 Dragon Vault",
+    "fullDisplayName": "Druddigon 17/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -150,18 +163,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-017-low.png",
-    "imageHighSrc": "cards/dv1-017-high.png"
+    "imageHighSrc": "cards/dv1-017-high.png",
+    "attacks": [
+      {
+        "name": "Tight Jaw",
+        "damage": "20"
+      },
+      {
+        "name": "Dragon Tail",
+        "damage": "80×"
+      }
+    ]
   },
   {
     "masterCardId": "7706",
-    "externalId": null,
+    "externalId": "dv1-16",
     "tcgdex_id": "dv1-16",
     "localId": "016",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "016/20",
+    "cardNumber": "16/20",
     "cardName": "Haxorus",
-    "fullDisplayName": "Haxorus 016/20 Dragon Vault",
+    "fullDisplayName": "Haxorus 16/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -183,18 +206,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-016-low.png",
-    "imageHighSrc": "cards/dv1-016-high.png"
+    "imageHighSrc": "cards/dv1-016-high.png",
+    "attacks": [
+      {
+        "name": "Axe Slugger",
+        "damage": "60+"
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "7700",
-    "externalId": null,
+    "externalId": "dv1-15",
     "tcgdex_id": "dv1-15",
     "localId": "015",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "015/20",
+    "cardNumber": "15/20",
     "cardName": "Fraxure",
-    "fullDisplayName": "Fraxure 015/20 Dragon Vault",
+    "fullDisplayName": "Fraxure 15/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -216,18 +249,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-015-low.png",
-    "imageHighSrc": "cards/dv1-015-high.png"
+    "imageHighSrc": "cards/dv1-015-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7694",
-    "externalId": null,
+    "externalId": "dv1-14",
     "tcgdex_id": "dv1-14",
     "localId": "014",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "014/20",
+    "cardNumber": "14/20",
     "cardName": "Fraxure",
-    "fullDisplayName": "Fraxure 014/20 Dragon Vault",
+    "fullDisplayName": "Fraxure 14/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -249,18 +292,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-014-low.png",
-    "imageHighSrc": "cards/dv1-014-high.png"
+    "imageHighSrc": "cards/dv1-014-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7688",
-    "externalId": null,
+    "externalId": "dv1-13",
     "tcgdex_id": "dv1-13",
     "localId": "013",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "013/20",
+    "cardNumber": "13/20",
     "cardName": "Axew",
-    "fullDisplayName": "Axew 013/20 Dragon Vault",
+    "fullDisplayName": "Axew 13/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -282,18 +331,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-013-low.png",
-    "imageHighSrc": "cards/dv1-013-high.png"
+    "imageHighSrc": "cards/dv1-013-high.png",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7682",
-    "externalId": null,
+    "externalId": "dv1-12",
     "tcgdex_id": "dv1-12",
     "localId": "012",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "012/20",
+    "cardNumber": "12/20",
     "cardName": "Axew",
-    "fullDisplayName": "Axew 012/20 Dragon Vault",
+    "fullDisplayName": "Axew 12/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -315,18 +370,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-012-low.png",
-    "imageHighSrc": "cards/dv1-012-high.png"
+    "imageHighSrc": "cards/dv1-012-high.png",
+    "attacks": [
+      {
+        "name": "Signs of Evolution",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7676",
-    "externalId": null,
+    "externalId": "dv1-11",
     "tcgdex_id": "dv1-11",
     "localId": "011",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "011/20",
+    "cardNumber": "11/20",
     "cardName": "Rayquaza",
-    "fullDisplayName": "Rayquaza 011/20 Dragon Vault",
+    "fullDisplayName": "Rayquaza 11/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -348,18 +413,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-011-low.png",
-    "imageHighSrc": "cards/dv1-011-high.png"
+    "imageHighSrc": "cards/dv1-011-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Pulse",
+        "damage": "40"
+      },
+      {
+        "name": "Shred",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "7670",
-    "externalId": null,
+    "externalId": "dv1-10",
     "tcgdex_id": "dv1-10",
     "localId": "010",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "010/20",
+    "cardNumber": "10/20",
     "cardName": "Latios",
-    "fullDisplayName": "Latios 010/20 Dragon Vault",
+    "fullDisplayName": "Latios 10/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -381,18 +456,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-010-low.png",
-    "imageHighSrc": "cards/dv1-010-high.png"
+    "imageHighSrc": "cards/dv1-010-high.png",
+    "attacks": [
+      {
+        "name": "Sky Blade",
+        "damage": "20+"
+      },
+      {
+        "name": "Speed Wing",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7664",
-    "externalId": null,
+    "externalId": "dv1-9",
     "tcgdex_id": "dv1-9",
     "localId": "009",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "009/20",
+    "cardNumber": "9/20",
     "cardName": "Latias",
-    "fullDisplayName": "Latias 009/20 Dragon Vault",
+    "fullDisplayName": "Latias 9/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -414,18 +499,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-009-low.png",
-    "imageHighSrc": "cards/dv1-009-high.png"
+    "imageHighSrc": "cards/dv1-009-high.png",
+    "attacks": [
+      {
+        "name": "Energy Assist",
+        "damage": null
+      },
+      {
+        "name": "Sky Heal",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7658",
-    "externalId": null,
+    "externalId": "dv1-8",
     "tcgdex_id": "dv1-8",
     "localId": "008",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "008/20",
+    "cardNumber": "8/20",
     "cardName": "Salamence",
-    "fullDisplayName": "Salamence 008/20 Dragon Vault",
+    "fullDisplayName": "Salamence 8/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -447,18 +542,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-008-low.png",
-    "imageHighSrc": "cards/dv1-008-high.png"
+    "imageHighSrc": "cards/dv1-008-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "7652",
-    "externalId": null,
+    "externalId": "dv1-7",
     "tcgdex_id": "dv1-7",
     "localId": "007",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "007/20",
+    "cardNumber": "7/20",
     "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 007/20 Dragon Vault",
+    "fullDisplayName": "Shelgon 7/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -480,18 +581,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-007-low.png",
-    "imageHighSrc": "cards/dv1-007-high.png"
+    "imageHighSrc": "cards/dv1-007-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "10+"
+      },
+      {
+        "name": "Rollout",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7647",
-    "externalId": null,
+    "externalId": "dv1-6",
     "tcgdex_id": "dv1-6",
     "localId": "006",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "006/20",
+    "cardNumber": "6/20",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 006/20 Dragon Vault",
+    "fullDisplayName": "Bagon 6/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -513,18 +624,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-006-low.png",
-    "imageHighSrc": "cards/dv1-006-high.png"
+    "imageHighSrc": "cards/dv1-006-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7641",
-    "externalId": null,
+    "externalId": "dv1-5",
     "tcgdex_id": "dv1-5",
     "localId": "005",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "005/20",
+    "cardNumber": "5/20",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 005/20 Dragon Vault",
+    "fullDisplayName": "Dragonite 5/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -546,18 +667,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-005-low.png",
-    "imageHighSrc": "cards/dv1-005-high.png"
+    "imageHighSrc": "cards/dv1-005-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "50"
+      },
+      {
+        "name": "Hurricane Tail",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "7637",
-    "externalId": null,
+    "externalId": "dv1-4",
     "tcgdex_id": "dv1-4",
     "localId": "004",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "004/20",
+    "cardNumber": "4/20",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 004/20 Dragon Vault",
+    "fullDisplayName": "Dragonair 4/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -579,18 +710,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-004-low.png",
-    "imageHighSrc": "cards/dv1-004-high.png"
+    "imageHighSrc": "cards/dv1-004-high.png",
+    "attacks": [
+      {
+        "name": "Healing Melody",
+        "damage": null
+      },
+      {
+        "name": "Slam",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7631",
-    "externalId": null,
+    "externalId": "dv1-3",
     "tcgdex_id": "dv1-3",
     "localId": "003",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "003/20",
+    "cardNumber": "3/20",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 003/20 Dragon Vault",
+    "fullDisplayName": "Dragonair 3/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -612,18 +753,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-003-low.png",
-    "imageHighSrc": "cards/dv1-003-high.png"
+    "imageHighSrc": "cards/dv1-003-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "20"
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7625",
-    "externalId": null,
+    "externalId": "dv1-2",
     "tcgdex_id": "dv1-2",
     "localId": "002",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "002/20",
+    "cardNumber": "2/20",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 002/20 Dragon Vault",
+    "fullDisplayName": "Dratini 2/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -645,18 +796,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-002-low.png",
-    "imageHighSrc": "cards/dv1-002-high.png"
+    "imageHighSrc": "cards/dv1-002-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Gaze",
+        "damage": null
+      },
+      {
+        "name": "Tail Whap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7619",
-    "externalId": null,
+    "externalId": "dv1-1",
     "tcgdex_id": "dv1-1",
     "localId": "001",
     "setCode": "dv1",
     "setTcgdexId": "dv1",
-    "cardNumber": "001/20",
+    "cardNumber": "1/20",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 001/20 Dragon Vault",
+    "fullDisplayName": "Dratini 1/20 Dragon Vault",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -678,6 +839,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/dv1-001-low.png",
-    "imageHighSrc": "cards/dv1-001-high.png"
+    "imageHighSrc": "cards/dv1-001-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "20"
+      }
+    ]
   }
 ]

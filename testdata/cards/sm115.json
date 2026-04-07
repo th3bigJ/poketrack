@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "10039",
-    "externalId": null,
+    "externalId": "sm115-69",
     "tcgdex_id": "sm115-69",
     "localId": "069",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "069/68",
+    "cardNumber": "69/68",
     "cardName": "Moltres & Zapdos & Articuno-GX",
-    "fullDisplayName": "Moltres & Zapdos & Articuno-GX 069/68 Hidden Fates",
+    "fullDisplayName": "Moltres & Zapdos & Articuno-GX 69/68 Hidden Fates",
     "rarity": "Rare Rainbow",
     "category": "Pokémon",
     "stage": "Basic",
@@ -34,18 +34,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-069-low.png",
-    "imageHighSrc": "cards/sm115-069-high.png"
+    "imageHighSrc": "cards/sm115-069-high.png",
+    "attacks": [
+      {
+        "name": "Trinity Burn",
+        "damage": "210"
+      },
+      {
+        "name": "Sky Legends-GX",
+        "damage": null
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "10030",
-    "externalId": null,
+    "externalId": "sm115-68",
     "tcgdex_id": "sm115-68",
     "localId": "068",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "068/68",
+    "cardNumber": "68/68",
     "cardName": "Jessie & James",
-    "fullDisplayName": "Jessie & James 068/68 Hidden Fates",
+    "fullDisplayName": "Jessie & James 68/68 Hidden Fates",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -63,18 +74,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-068-low.png",
-    "imageHighSrc": "cards/sm115-068-high.png"
+    "imageHighSrc": "cards/sm115-068-high.png",
+    "rules": "Each player discards 2 cards from their hand. Your opponent discards first.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10021",
-    "externalId": null,
+    "externalId": "sm115-67",
     "tcgdex_id": "sm115-67",
     "localId": "067",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "067/68",
+    "cardNumber": "67/68",
     "cardName": "Giovanni's Exile",
-    "fullDisplayName": "Giovanni's Exile 067/68 Hidden Fates",
+    "fullDisplayName": "Giovanni's Exile 67/68 Hidden Fates",
     "rarity": "Rare Ultra",
     "category": "Trainer",
     "stage": null,
@@ -92,18 +104,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-067-low.png",
-    "imageHighSrc": "cards/sm115-067-high.png"
+    "imageHighSrc": "cards/sm115-067-high.png",
+    "rules": "Discard up to 2 of your Benched Pokémon that have no damage counters on them and all cards attached to them.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9994",
-    "externalId": null,
+    "externalId": "sm115-66",
     "tcgdex_id": "sm115-66",
     "localId": "066",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "066/68",
+    "cardNumber": "66/68",
     "cardName": "Moltres & Zapdos & Articuno-GX",
-    "fullDisplayName": "Moltres & Zapdos & Articuno-GX 066/68 Hidden Fates",
+    "fullDisplayName": "Moltres & Zapdos & Articuno-GX 66/68 Hidden Fates",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +142,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-066-low.png",
-    "imageHighSrc": "cards/sm115-066-high.png"
+    "imageHighSrc": "cards/sm115-066-high.png",
+    "attacks": [
+      {
+        "name": "Trinity Burn",
+        "damage": "210"
+      },
+      {
+        "name": "Sky Legends-GX",
+        "damage": null
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "9982",
-    "externalId": null,
+    "externalId": "sm115-65",
     "tcgdex_id": "sm115-65",
     "localId": "065",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "065/68",
+    "cardNumber": "65/68",
     "cardName": "Sabrina's Suggestion",
-    "fullDisplayName": "Sabrina's Suggestion 065/68 Hidden Fates",
+    "fullDisplayName": "Sabrina's Suggestion 65/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -158,18 +182,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-065-low.png",
-    "imageHighSrc": "cards/sm115-065-high.png"
+    "imageHighSrc": "cards/sm115-065-high.png",
+    "rules": "Your opponent reveals their hand. You may choose a Supporter card you find there and use the effect of that card as the effect of this card.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9974",
-    "externalId": null,
+    "externalId": "sm115-64",
     "tcgdex_id": "sm115-64",
     "localId": "064",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "064/68",
+    "cardNumber": "64/68",
     "cardName": "Pokémon Center Lady",
-    "fullDisplayName": "Pokémon Center Lady 064/68 Hidden Fates",
+    "fullDisplayName": "Pokémon Center Lady 64/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -187,18 +212,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-064-low.png",
-    "imageHighSrc": "cards/sm115-064-high.png"
+    "imageHighSrc": "cards/sm115-064-high.png",
+    "rules": "Heal 60 damage and remove all Special Conditions from 1 of your Pokémon.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9965",
-    "externalId": null,
+    "externalId": "sm115-63",
     "tcgdex_id": "sm115-63",
     "localId": "063",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "063/68",
+    "cardNumber": "63/68",
     "cardName": "Misty's Water Command",
-    "fullDisplayName": "Misty's Water Command 063/68 Hidden Fates",
+    "fullDisplayName": "Misty's Water Command 63/68 Hidden Fates",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -216,18 +242,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-063-low.png",
-    "imageHighSrc": "cards/sm115-063-high.png"
+    "imageHighSrc": "cards/sm115-063-high.png",
+    "rules": "Move any number of Water Energy from your Pokémon to your Psyduck, Horsea, Staryu, Starmie-GX, Magikarp, Gyarados, or Lapras in any way you like.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9956",
-    "externalId": null,
+    "externalId": "sm115-62",
     "tcgdex_id": "sm115-62",
     "localId": "062",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "062/68",
+    "cardNumber": "62/68",
     "cardName": "Misty's Determination",
-    "fullDisplayName": "Misty's Determination 062/68 Hidden Fates",
+    "fullDisplayName": "Misty's Determination 62/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -245,18 +272,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-062-low.png",
-    "imageHighSrc": "cards/sm115-062-high.png"
+    "imageHighSrc": "cards/sm115-062-high.png",
+    "rules": "Discard a card from your hand. If you do, look at the top 8 cards of your deck and put 1 of them into your hand. Shuffle the other cards back into your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9947",
-    "externalId": null,
+    "externalId": "sm115-61",
     "tcgdex_id": "sm115-61",
     "localId": "061",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "061/68",
+    "cardNumber": "61/68",
     "cardName": "Misty's Cerulean City Gym",
-    "fullDisplayName": "Misty's Cerulean City Gym 061/68 Hidden Fates",
+    "fullDisplayName": "Misty's Cerulean City Gym 61/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -274,18 +302,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-061-low.png",
-    "imageHighSrc": "cards/sm115-061-high.png"
+    "imageHighSrc": "cards/sm115-061-high.png",
+    "rules": "The attacks of Starmie-GX (both yours and your opponent's) do 40 more damage to the opponent's Active Pokémon (before applying Weakness and Resistance).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "9938",
-    "externalId": null,
+    "externalId": "sm115-60",
     "tcgdex_id": "sm115-60",
     "localId": "060",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "060/68",
+    "cardNumber": "60/68",
     "cardName": "Lt. Surge's Strategy",
-    "fullDisplayName": "Lt. Surge's Strategy 060/68 Hidden Fates",
+    "fullDisplayName": "Lt. Surge's Strategy 60/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -303,18 +332,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-060-low.png",
-    "imageHighSrc": "cards/sm115-060-high.png"
+    "imageHighSrc": "cards/sm115-060-high.png",
+    "rules": "You can play this card only if you have more Prize cards remaining than your opponent.\n\nDuring this turn, you can play 3 Supporter cards (including this card).\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9929",
-    "externalId": null,
+    "externalId": "sm115-59",
     "tcgdex_id": "sm115-59",
     "localId": "059",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "059/68",
+    "cardNumber": "59/68",
     "cardName": "Koga's Trap",
-    "fullDisplayName": "Koga's Trap 059/68 Hidden Fates",
+    "fullDisplayName": "Koga's Trap 59/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -332,18 +362,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-059-low.png",
-    "imageHighSrc": "cards/sm115-059-high.png"
+    "imageHighSrc": "cards/sm115-059-high.png",
+    "rules": "Your opponent's Active Pokémon is now Confused and Poisoned.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9920",
-    "externalId": null,
+    "externalId": "sm115-58",
     "tcgdex_id": "sm115-58",
     "localId": "058",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "058/68",
+    "cardNumber": "58/68",
     "cardName": "Jessie & James",
-    "fullDisplayName": "Jessie & James 058/68 Hidden Fates",
+    "fullDisplayName": "Jessie & James 58/68 Hidden Fates",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -361,18 +392,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-058-low.png",
-    "imageHighSrc": "cards/sm115-058-high.png"
+    "imageHighSrc": "cards/sm115-058-high.png",
+    "rules": "Each player discards 2 cards from their hand. Your opponent discards first.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9911",
-    "externalId": null,
+    "externalId": "sm115-57",
     "tcgdex_id": "sm115-57",
     "localId": "057",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "057/68",
+    "cardNumber": "57/68",
     "cardName": "Giovanni's Exile",
-    "fullDisplayName": "Giovanni's Exile 057/68 Hidden Fates",
+    "fullDisplayName": "Giovanni's Exile 57/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -390,18 +422,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-057-low.png",
-    "imageHighSrc": "cards/sm115-057-high.png"
+    "imageHighSrc": "cards/sm115-057-high.png",
+    "rules": "Discard up to 2 of your Benched Pokémon that have no damage counters on them and all cards attached to them.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9904",
-    "externalId": null,
+    "externalId": "sm115-56",
     "tcgdex_id": "sm115-56",
     "localId": "056",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "056/68",
+    "cardNumber": "56/68",
     "cardName": "Erika's Hospitality",
-    "fullDisplayName": "Erika's Hospitality 056/68 Hidden Fates",
+    "fullDisplayName": "Erika's Hospitality 56/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -419,18 +452,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-056-low.png",
-    "imageHighSrc": "cards/sm115-056-high.png"
+    "imageHighSrc": "cards/sm115-056-high.png",
+    "rules": "You can play this card only if you have 4 or fewer other cards in your hand.\n\nDraw a card for each of your opponent's Pokémon in play.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9897",
-    "externalId": null,
+    "externalId": "sm115-55",
     "tcgdex_id": "sm115-55",
     "localId": "055",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "055/68",
+    "cardNumber": "55/68",
     "cardName": "Brock's Training",
-    "fullDisplayName": "Brock's Training 055/68 Hidden Fates",
+    "fullDisplayName": "Brock's Training 55/68 Hidden Fates",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -448,18 +482,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-055-low.png",
-    "imageHighSrc": "cards/sm115-055-high.png"
+    "imageHighSrc": "cards/sm115-055-high.png",
+    "rules": "Attach an Energy card from your hand to 1 of your Geodude, Graveler, Golem, Onix-GX, Cubone, Rhyhorn, Rhydon, or Sudowoodo.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9889",
-    "externalId": null,
+    "externalId": "sm115-54",
     "tcgdex_id": "sm115-54",
     "localId": "054",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "054/68",
+    "cardNumber": "54/68",
     "cardName": "Brock's Pewter City Gym",
-    "fullDisplayName": "Brock's Pewter City Gym 054/68 Hidden Fates",
+    "fullDisplayName": "Brock's Pewter City Gym 54/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -477,18 +512,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-054-low.png",
-    "imageHighSrc": "cards/sm115-054-high.png"
+    "imageHighSrc": "cards/sm115-054-high.png",
+    "rules": "Onix-GX (both yours and your opponent's) take 40 less damage from the opponent's attacks (after applying Weakness and Resistance).\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "9879",
-    "externalId": null,
+    "externalId": "sm115-53",
     "tcgdex_id": "sm115-53",
     "localId": "053",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "053/68",
+    "cardNumber": "53/68",
     "cardName": "Brock's Grit",
-    "fullDisplayName": "Brock's Grit 053/68 Hidden Fates",
+    "fullDisplayName": "Brock's Grit 53/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -506,18 +542,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-053-low.png",
-    "imageHighSrc": "cards/sm115-053-high.png"
+    "imageHighSrc": "cards/sm115-053-high.png",
+    "rules": "Shuffle 6 in any combination of Pokémon and basic Energy cards from your discard pile into your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9873",
-    "externalId": null,
+    "externalId": "sm115-52",
     "tcgdex_id": "sm115-52",
     "localId": "052",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "052/68",
+    "cardNumber": "52/68",
     "cardName": "Blaine's Last Stand",
-    "fullDisplayName": "Blaine's Last Stand 052/68 Hidden Fates",
+    "fullDisplayName": "Blaine's Last Stand 52/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -535,18 +572,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-052-low.png",
-    "imageHighSrc": "cards/sm115-052-high.png"
+    "imageHighSrc": "cards/sm115-052-high.png",
+    "rules": "You can play this card only when it is the last card in your hand.\n\nDraw 2 cards for each Fire Pokémon you have in play.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9864",
-    "externalId": null,
+    "externalId": "sm115-51",
     "tcgdex_id": "sm115-51",
     "localId": "051",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "051/68",
+    "cardNumber": "51/68",
     "cardName": "Bill's Analysis",
-    "fullDisplayName": "Bill's Analysis 051/68 Hidden Fates",
+    "fullDisplayName": "Bill's Analysis 51/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -564,18 +602,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-051-low.png",
-    "imageHighSrc": "cards/sm115-051-high.png"
+    "imageHighSrc": "cards/sm115-051-high.png",
+    "rules": "Look at the top 7 cards of your deck. You may reveal up to 2 Trainer cards you find there and put them into your hand. Shuffle the other cards back into your deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "9855",
-    "externalId": null,
+    "externalId": "sm115-50",
     "tcgdex_id": "sm115-50",
     "localId": "050",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "050/68",
+    "cardNumber": "50/68",
     "cardName": "Snorlax",
-    "fullDisplayName": "Snorlax 050/68 Hidden Fates",
+    "fullDisplayName": "Snorlax 50/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -597,18 +636,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-050-low.png",
-    "imageHighSrc": "cards/sm115-050-high.png"
+    "imageHighSrc": "cards/sm115-050-high.png",
+    "attacks": [
+      {
+        "name": "Incredible Snore",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9846",
-    "externalId": null,
+    "externalId": "sm115-49",
     "tcgdex_id": "sm115-49",
     "localId": "049",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "049/68",
+    "cardNumber": "49/68",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 049/68 Hidden Fates",
+    "fullDisplayName": "Eevee 49/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -630,18 +675,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-049-low.png",
-    "imageHighSrc": "cards/sm115-049-high.png"
+    "imageHighSrc": "cards/sm115-049-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9837",
-    "externalId": null,
+    "externalId": "sm115-48",
     "tcgdex_id": "sm115-48",
     "localId": "048",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "048/68",
+    "cardNumber": "48/68",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 048/68 Hidden Fates",
+    "fullDisplayName": "Eevee 48/68 Hidden Fates",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -663,18 +714,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-048-low.png",
-    "imageHighSrc": "cards/sm115-048-high.png"
+    "imageHighSrc": "cards/sm115-048-high.png",
+    "attacks": [
+      {
+        "name": "Curiosity",
+        "damage": null
+      },
+      {
+        "name": "Spin Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9828",
-    "externalId": null,
+    "externalId": "sm115-47",
     "tcgdex_id": "sm115-47",
     "localId": "047",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "047/68",
+    "cardNumber": "47/68",
     "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 047/68 Hidden Fates",
+    "fullDisplayName": "Kangaskhan 47/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -696,18 +757,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-047-low.png",
-    "imageHighSrc": "cards/sm115-047-high.png"
+    "imageHighSrc": "cards/sm115-047-high.png",
+    "attacks": [
+      {
+        "name": "Parental Fury",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "9820",
-    "externalId": null,
+    "externalId": "sm115-46",
     "tcgdex_id": "sm115-46",
     "localId": "046",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "046/68",
+    "cardNumber": "46/68",
     "cardName": "Chansey",
-    "fullDisplayName": "Chansey 046/68 Hidden Fates",
+    "fullDisplayName": "Chansey 46/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -729,18 +796,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-046-low.png",
-    "imageHighSrc": "cards/sm115-046-high.png"
+    "imageHighSrc": "cards/sm115-046-high.png",
+    "attacks": [
+      {
+        "name": "Double-Edge",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9811",
-    "externalId": null,
+    "externalId": "sm115-45",
     "tcgdex_id": "sm115-45",
     "localId": "045",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "045/68",
+    "cardNumber": "45/68",
     "cardName": "Farfetch'd",
-    "fullDisplayName": "Farfetch'd 045/68 Hidden Fates",
+    "fullDisplayName": "Farfetch'd 45/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -762,18 +835,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-045-low.png",
-    "imageHighSrc": "cards/sm115-045-high.png"
+    "imageHighSrc": "cards/sm115-045-high.png",
+    "attacks": [
+      {
+        "name": "Leek Slap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9803",
-    "externalId": null,
+    "externalId": "sm115-44",
     "tcgdex_id": "sm115-44",
     "localId": "044",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "044/68",
+    "cardNumber": "44/68",
     "cardName": "Moltres & Zapdos & Articuno-GX",
-    "fullDisplayName": "Moltres & Zapdos & Articuno-GX 044/68 Hidden Fates",
+    "fullDisplayName": "Moltres & Zapdos & Articuno-GX 44/68 Hidden Fates",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -799,18 +878,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-044-low.png",
-    "imageHighSrc": "cards/sm115-044-high.png"
+    "imageHighSrc": "cards/sm115-044-high.png",
+    "attacks": [
+      {
+        "name": "Trinity Burn",
+        "damage": "210"
+      },
+      {
+        "name": "Sky Legends-GX",
+        "damage": null
+      }
+    ],
+    "rules": "TAG TEAM rule: When your TAG TEAM is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "9794",
-    "externalId": null,
+    "externalId": "sm115-43",
     "tcgdex_id": "sm115-43",
     "localId": "043",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "043/68",
+    "cardNumber": "43/68",
     "cardName": "Mr. Mime",
-    "fullDisplayName": "Mr. Mime 043/68 Hidden Fates",
+    "fullDisplayName": "Mr. Mime 43/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -832,18 +922,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-043-low.png",
-    "imageHighSrc": "cards/sm115-043-high.png"
+    "imageHighSrc": "cards/sm115-043-high.png",
+    "attacks": [
+      {
+        "name": "Happy Mime",
+        "damage": null
+      },
+      {
+        "name": "Double Slap",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "9787",
-    "externalId": null,
+    "externalId": "sm115-42",
     "tcgdex_id": "sm115-42",
     "localId": "042",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "042/68",
+    "cardNumber": "42/68",
     "cardName": "Wigglytuff-GX",
-    "fullDisplayName": "Wigglytuff-GX 042/68 Hidden Fates",
+    "fullDisplayName": "Wigglytuff-GX 42/68 Hidden Fates",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -866,18 +966,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-042-low.png",
-    "imageHighSrc": "cards/sm115-042-high.png"
+    "imageHighSrc": "cards/sm115-042-high.png",
+    "attacks": [
+      {
+        "name": "Rolling Rush",
+        "damage": "100+"
+      },
+      {
+        "name": "Lovely Star-GX",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9778",
-    "externalId": null,
+    "externalId": "sm115-41",
     "tcgdex_id": "sm115-41",
     "localId": "041",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "041/68",
+    "cardNumber": "41/68",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 041/68 Hidden Fates",
+    "fullDisplayName": "Jigglypuff 41/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -899,18 +1010,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-041-low.png",
-    "imageHighSrc": "cards/sm115-041-high.png"
+    "imageHighSrc": "cards/sm115-041-high.png",
+    "attacks": [
+      {
+        "name": "Singing Voice",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9769",
-    "externalId": null,
+    "externalId": "sm115-40",
     "tcgdex_id": "sm115-40",
     "localId": "040",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "040/68",
+    "cardNumber": "40/68",
     "cardName": "Clefable",
-    "fullDisplayName": "Clefable 040/68 Hidden Fates",
+    "fullDisplayName": "Clefable 40/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -932,18 +1053,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-040-low.png",
-    "imageHighSrc": "cards/sm115-040-high.png"
+    "imageHighSrc": "cards/sm115-040-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "40"
+      },
+      {
+        "name": "Moon Impact",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9760",
-    "externalId": null,
+    "externalId": "sm115-39",
     "tcgdex_id": "sm115-39",
     "localId": "039",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "039/68",
+    "cardNumber": "39/68",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 039/68 Hidden Fates",
+    "fullDisplayName": "Clefairy 39/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -965,18 +1096,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-039-low.png",
-    "imageHighSrc": "cards/sm115-039-high.png"
+    "imageHighSrc": "cards/sm115-039-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Moon Dance",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9751",
-    "externalId": null,
+    "externalId": "sm115-38",
     "tcgdex_id": "sm115-38",
     "localId": "038",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "038/68",
+    "cardNumber": "38/68",
     "cardName": "Clefairy",
-    "fullDisplayName": "Clefairy 038/68 Hidden Fates",
+    "fullDisplayName": "Clefairy 38/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -998,18 +1139,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-038-low.png",
-    "imageHighSrc": "cards/sm115-038-high.png"
+    "imageHighSrc": "cards/sm115-038-high.png",
+    "attacks": [
+      {
+        "name": "Lead",
+        "damage": null
+      },
+      {
+        "name": "Pound",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9744",
-    "externalId": null,
+    "externalId": "sm115-37",
     "tcgdex_id": "sm115-37",
     "localId": "037",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "037/68",
+    "cardNumber": "37/68",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 037/68 Hidden Fates",
+    "fullDisplayName": "Cubone 37/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1031,18 +1182,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-037-low.png",
-    "imageHighSrc": "cards/sm115-037-high.png"
+    "imageHighSrc": "cards/sm115-037-high.png",
+    "attacks": [
+      {
+        "name": "Sharpshooting",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9736",
-    "externalId": null,
+    "externalId": "sm115-36",
     "tcgdex_id": "sm115-36",
     "localId": "036",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "036/68",
+    "cardNumber": "36/68",
     "cardName": "Onix-GX",
-    "fullDisplayName": "Onix-GX 036/68 Hidden Fates",
+    "fullDisplayName": "Onix-GX 36/68 Hidden Fates",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1065,18 +1222,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-036-low.png",
-    "imageHighSrc": "cards/sm115-036-high.png"
+    "imageHighSrc": "cards/sm115-036-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "30"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "150"
+      },
+      {
+        "name": "Rocky Avalanche-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9713",
-    "externalId": null,
+    "externalId": "sm115-35",
     "tcgdex_id": "sm115-35",
     "localId": "035",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "035/68",
+    "cardNumber": "35/68",
     "cardName": "Golem",
-    "fullDisplayName": "Golem 035/68 Hidden Fates",
+    "fullDisplayName": "Golem 35/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1098,18 +1270,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-035-low.png",
-    "imageHighSrc": "cards/sm115-035-high.png"
+    "imageHighSrc": "cards/sm115-035-high.png",
+    "attacks": [
+      {
+        "name": "Rock Slide",
+        "damage": "60"
+      },
+      {
+        "name": "Land Crush",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "9704",
-    "externalId": null,
+    "externalId": "sm115-34",
     "tcgdex_id": "sm115-34",
     "localId": "034",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "034/68",
+    "cardNumber": "34/68",
     "cardName": "Graveler",
-    "fullDisplayName": "Graveler 034/68 Hidden Fates",
+    "fullDisplayName": "Graveler 34/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1131,18 +1313,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-034-low.png",
-    "imageHighSrc": "cards/sm115-034-high.png"
+    "imageHighSrc": "cards/sm115-034-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      },
+      {
+        "name": "Mudslide",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9694",
-    "externalId": null,
+    "externalId": "sm115-33",
     "tcgdex_id": "sm115-33",
     "localId": "033",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "033/68",
+    "cardNumber": "33/68",
     "cardName": "Geodude",
-    "fullDisplayName": "Geodude 033/68 Hidden Fates",
+    "fullDisplayName": "Geodude 33/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1164,18 +1356,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-033-low.png",
-    "imageHighSrc": "cards/sm115-033-high.png"
+    "imageHighSrc": "cards/sm115-033-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9686",
-    "externalId": null,
+    "externalId": "sm115-32",
     "tcgdex_id": "sm115-32",
     "localId": "032",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "032/68",
+    "cardNumber": "32/68",
     "cardName": "Mew",
-    "fullDisplayName": "Mew 032/68 Hidden Fates",
+    "fullDisplayName": "Mew 32/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1197,18 +1395,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-032-low.png",
-    "imageHighSrc": "cards/sm115-032-high.png"
+    "imageHighSrc": "cards/sm115-032-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9678",
-    "externalId": null,
+    "externalId": "sm115-31",
     "tcgdex_id": "sm115-31",
     "localId": "031",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "031/68",
+    "cardNumber": "31/68",
     "cardName": "Mewtwo-GX",
-    "fullDisplayName": "Mewtwo-GX 031/68 Hidden Fates",
+    "fullDisplayName": "Mewtwo-GX 31/68 Hidden Fates",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1231,18 +1435,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-031-low.png",
-    "imageHighSrc": "cards/sm115-031-high.png"
+    "imageHighSrc": "cards/sm115-031-high.png",
+    "attacks": [
+      {
+        "name": "Super Psy Bolt",
+        "damage": "110"
+      },
+      {
+        "name": "Psycrush-GX",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9668",
-    "externalId": null,
+    "externalId": "sm115-30",
     "tcgdex_id": "sm115-30",
     "localId": "030",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "030/68",
+    "cardNumber": "30/68",
     "cardName": "Jynx",
-    "fullDisplayName": "Jynx 030/68 Hidden Fates",
+    "fullDisplayName": "Jynx 30/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1264,18 +1479,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-030-low.png",
-    "imageHighSrc": "cards/sm115-030-high.png"
+    "imageHighSrc": "cards/sm115-030-high.png",
+    "attacks": [
+      {
+        "name": "Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Lovely Kiss",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9659",
-    "externalId": null,
+    "externalId": "sm115-29",
     "tcgdex_id": "sm115-29",
     "localId": "029",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "029/68",
+    "cardNumber": "29/68",
     "cardName": "Weezing",
-    "fullDisplayName": "Weezing 029/68 Hidden Fates",
+    "fullDisplayName": "Weezing 29/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1297,18 +1522,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-029-low.png",
-    "imageHighSrc": "cards/sm115-029-high.png"
+    "imageHighSrc": "cards/sm115-029-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9650",
-    "externalId": null,
+    "externalId": "sm115-28",
     "tcgdex_id": "sm115-28",
     "localId": "028",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "028/68",
+    "cardNumber": "28/68",
     "cardName": "Koffing",
-    "fullDisplayName": "Koffing 028/68 Hidden Fates",
+    "fullDisplayName": "Koffing 28/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1330,18 +1561,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-028-low.png",
-    "imageHighSrc": "cards/sm115-028-high.png"
+    "imageHighSrc": "cards/sm115-028-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9642",
-    "externalId": null,
+    "externalId": "sm115-27",
     "tcgdex_id": "sm115-27",
     "localId": "027",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "027/68",
+    "cardNumber": "27/68",
     "cardName": "Arbok",
-    "fullDisplayName": "Arbok 027/68 Hidden Fates",
+    "fullDisplayName": "Arbok 27/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1363,18 +1600,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-027-low.png",
-    "imageHighSrc": "cards/sm115-027-high.png"
+    "imageHighSrc": "cards/sm115-027-high.png",
+    "attacks": [
+      {
+        "name": "Rocket Tail",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "9634",
-    "externalId": null,
+    "externalId": "sm115-26",
     "tcgdex_id": "sm115-26",
     "localId": "026",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "026/68",
+    "cardNumber": "26/68",
     "cardName": "Ekans",
-    "fullDisplayName": "Ekans 026/68 Hidden Fates",
+    "fullDisplayName": "Ekans 26/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1396,18 +1639,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-026-low.png",
-    "imageHighSrc": "cards/sm115-026-high.png"
+    "imageHighSrc": "cards/sm115-026-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9625",
-    "externalId": null,
+    "externalId": "sm115-25",
     "tcgdex_id": "sm115-25",
     "localId": "025",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "025/68",
+    "cardNumber": "25/68",
     "cardName": "Ekans",
-    "fullDisplayName": "Ekans 025/68 Hidden Fates",
+    "fullDisplayName": "Ekans 25/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1429,18 +1678,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-025-low.png",
-    "imageHighSrc": "cards/sm115-025-high.png"
+    "imageHighSrc": "cards/sm115-025-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9617",
-    "externalId": null,
+    "externalId": "sm115-24",
     "tcgdex_id": "sm115-24",
     "localId": "024",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "024/68",
+    "cardNumber": "24/68",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 024/68 Hidden Fates",
+    "fullDisplayName": "Zapdos 24/68 Hidden Fates",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1462,18 +1717,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-024-low.png",
-    "imageHighSrc": "cards/sm115-024-high.png"
+    "imageHighSrc": "cards/sm115-024-high.png",
+    "attacks": [
+      {
+        "name": "Hurricane Call",
+        "damage": null
+      },
+      {
+        "name": "Sky-High Claws",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9609",
-    "externalId": null,
+    "externalId": "sm115-23",
     "tcgdex_id": "sm115-23",
     "localId": "023",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "023/68",
+    "cardNumber": "23/68",
     "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 023/68 Hidden Fates",
+    "fullDisplayName": "Jolteon 23/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1495,18 +1760,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-023-low.png",
-    "imageHighSrc": "cards/sm115-023-high.png"
+    "imageHighSrc": "cards/sm115-023-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9600",
-    "externalId": null,
+    "externalId": "sm115-22",
     "tcgdex_id": "sm115-22",
     "localId": "022",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "022/68",
+    "cardNumber": "22/68",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 022/68 Hidden Fates",
+    "fullDisplayName": "Electrode 22/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1528,18 +1799,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-022-low.png",
-    "imageHighSrc": "cards/sm115-022-high.png"
+    "imageHighSrc": "cards/sm115-022-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Ball",
+        "damage": "30"
+      },
+      {
+        "name": "Electroblast",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "9591",
-    "externalId": null,
+    "externalId": "sm115-21",
     "tcgdex_id": "sm115-21",
     "localId": "021",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "021/68",
+    "cardNumber": "21/68",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 021/68 Hidden Fates",
+    "fullDisplayName": "Voltorb 21/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1561,18 +1842,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-021-low.png",
-    "imageHighSrc": "cards/sm115-021-high.png"
+    "imageHighSrc": "cards/sm115-021-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Ball",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9582",
-    "externalId": null,
+    "externalId": "sm115-20",
     "tcgdex_id": "sm115-20",
     "localId": "020",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "020/68",
+    "cardNumber": "20/68",
     "cardName": "Raichu-GX",
-    "fullDisplayName": "Raichu-GX 020/68 Hidden Fates",
+    "fullDisplayName": "Raichu-GX 20/68 Hidden Fates",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1595,18 +1882,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-020-low.png",
-    "imageHighSrc": "cards/sm115-020-high.png"
+    "imageHighSrc": "cards/sm115-020-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt",
+        "damage": "120"
+      },
+      {
+        "name": "Spark Ball-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9574",
-    "externalId": null,
+    "externalId": "sm115-19",
     "tcgdex_id": "sm115-19",
     "localId": "019",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "019/68",
+    "cardNumber": "19/68",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 019/68 Hidden Fates",
+    "fullDisplayName": "Pikachu 19/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1628,18 +1926,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-019-low.png",
-    "imageHighSrc": "cards/sm115-019-high.png"
+    "imageHighSrc": "cards/sm115-019-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9564",
-    "externalId": null,
+    "externalId": "sm115-18",
     "tcgdex_id": "sm115-18",
     "localId": "018",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "018/68",
+    "cardNumber": "18/68",
     "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 018/68 Hidden Fates",
+    "fullDisplayName": "Vaporeon 18/68 Hidden Fates",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1661,18 +1969,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-018-low.png",
-    "imageHighSrc": "cards/sm115-018-high.png"
+    "imageHighSrc": "cards/sm115-018-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      },
+      {
+        "name": "Bubble Drain",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9556",
-    "externalId": null,
+    "externalId": "sm115-17",
     "tcgdex_id": "sm115-17",
     "localId": "017",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "017/68",
+    "cardNumber": "17/68",
     "cardName": "Lapras",
-    "fullDisplayName": "Lapras 017/68 Hidden Fates",
+    "fullDisplayName": "Lapras 17/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1694,18 +2012,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-017-low.png",
-    "imageHighSrc": "cards/sm115-017-high.png"
+    "imageHighSrc": "cards/sm115-017-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Wave",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9545",
-    "externalId": null,
+    "externalId": "sm115-16",
     "tcgdex_id": "sm115-16",
     "localId": "016",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "016/68",
+    "cardNumber": "16/68",
     "cardName": "Gyarados-GX",
-    "fullDisplayName": "Gyarados-GX 016/68 Hidden Fates",
+    "fullDisplayName": "Gyarados-GX 16/68 Hidden Fates",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1728,18 +2052,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-016-low.png",
-    "imageHighSrc": "cards/sm115-016-high.png"
+    "imageHighSrc": "cards/sm115-016-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Rage",
+        "damage": "130"
+      },
+      {
+        "name": "Hyper Beam-GX",
+        "damage": "240"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9537",
-    "externalId": null,
+    "externalId": "sm115-15",
     "tcgdex_id": "sm115-15",
     "localId": "015",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "015/68",
+    "cardNumber": "15/68",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 015/68 Hidden Fates",
+    "fullDisplayName": "Magikarp 15/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1761,18 +2096,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-015-low.png",
-    "imageHighSrc": "cards/sm115-015-high.png"
+    "imageHighSrc": "cards/sm115-015-high.png",
+    "attacks": [
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9528",
-    "externalId": null,
+    "externalId": "sm115-14",
     "tcgdex_id": "sm115-14",
     "localId": "014",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "014/68",
+    "cardNumber": "14/68",
     "cardName": "Starmie-GX",
-    "fullDisplayName": "Starmie-GX 014/68 Hidden Fates",
+    "fullDisplayName": "Starmie-GX 14/68 Hidden Fates",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1795,18 +2136,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-014-low.png",
-    "imageHighSrc": "cards/sm115-014-high.png"
+    "imageHighSrc": "cards/sm115-014-high.png",
+    "attacks": [
+      {
+        "name": "Star Stream",
+        "damage": "40"
+      },
+      {
+        "name": "Spinning Attack",
+        "damage": "100"
+      },
+      {
+        "name": "Hydro Pump-GX",
+        "damage": "40+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9521",
-    "externalId": null,
+    "externalId": "sm115-13",
     "tcgdex_id": "sm115-13",
     "localId": "013",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "013/68",
+    "cardNumber": "13/68",
     "cardName": "Staryu",
-    "fullDisplayName": "Staryu 013/68 Hidden Fates",
+    "fullDisplayName": "Staryu 13/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1828,18 +2184,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-013-low.png",
-    "imageHighSrc": "cards/sm115-013-high.png"
+    "imageHighSrc": "cards/sm115-013-high.png",
+    "attacks": [
+      {
+        "name": "Numbing Water",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9513",
-    "externalId": null,
+    "externalId": "sm115-12",
     "tcgdex_id": "sm115-12",
     "localId": "012",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "012/68",
+    "cardNumber": "12/68",
     "cardName": "Slowpoke",
-    "fullDisplayName": "Slowpoke 012/68 Hidden Fates",
+    "fullDisplayName": "Slowpoke 12/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1861,18 +2223,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-012-low.png",
-    "imageHighSrc": "cards/sm115-012-high.png"
+    "imageHighSrc": "cards/sm115-012-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9507",
-    "externalId": null,
+    "externalId": "sm115-11",
     "tcgdex_id": "sm115-11",
     "localId": "011",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "011/68",
+    "cardNumber": "11/68",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 011/68 Hidden Fates",
+    "fullDisplayName": "Psyduck 11/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1894,18 +2262,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-011-low.png",
-    "imageHighSrc": "cards/sm115-011-high.png"
+    "imageHighSrc": "cards/sm115-011-high.png",
+    "attacks": [
+      {
+        "name": "Headache",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9496",
-    "externalId": null,
+    "externalId": "sm115-10",
     "tcgdex_id": "sm115-10",
     "localId": "010",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "010/68",
+    "cardNumber": "10/68",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 010/68 Hidden Fates",
+    "fullDisplayName": "Magmar 10/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1927,18 +2301,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-010-low.png",
-    "imageHighSrc": "cards/sm115-010-high.png"
+    "imageHighSrc": "cards/sm115-010-high.png",
+    "attacks": [
+      {
+        "name": "Fire Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9488",
-    "externalId": null,
+    "externalId": "sm115-9",
     "tcgdex_id": "sm115-9",
     "localId": "009",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "009/68",
+    "cardNumber": "9/68",
     "cardName": "Charizard-GX",
-    "fullDisplayName": "Charizard-GX 009/68 Hidden Fates",
+    "fullDisplayName": "Charizard-GX 9/68 Hidden Fates",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1961,18 +2341,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-009-low.png",
-    "imageHighSrc": "cards/sm115-009-high.png"
+    "imageHighSrc": "cards/sm115-009-high.png",
+    "attacks": [
+      {
+        "name": "Flamethrower",
+        "damage": "140"
+      },
+      {
+        "name": "Flare Blitz-GX",
+        "damage": "300"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9481",
-    "externalId": null,
+    "externalId": "sm115-8",
     "tcgdex_id": "sm115-8",
     "localId": "008",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "008/68",
+    "cardNumber": "8/68",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 008/68 Hidden Fates",
+    "fullDisplayName": "Charmeleon 8/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1994,18 +2385,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-008-low.png",
-    "imageHighSrc": "cards/sm115-008-high.png"
+    "imageHighSrc": "cards/sm115-008-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "30"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9472",
-    "externalId": null,
+    "externalId": "sm115-7",
     "tcgdex_id": "sm115-7",
     "localId": "007",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "007/68",
+    "cardNumber": "7/68",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 007/68 Hidden Fates",
+    "fullDisplayName": "Charmander 7/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2027,18 +2428,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-007-low.png",
-    "imageHighSrc": "cards/sm115-007-high.png"
+    "imageHighSrc": "cards/sm115-007-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9465",
-    "externalId": null,
+    "externalId": "sm115-6",
     "tcgdex_id": "sm115-6",
     "localId": "006",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "006/68",
+    "cardNumber": "6/68",
     "cardName": "Pinsir-GX",
-    "fullDisplayName": "Pinsir-GX 006/68 Hidden Fates",
+    "fullDisplayName": "Pinsir-GX 6/68 Hidden Fates",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2061,18 +2472,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-006-low.png",
-    "imageHighSrc": "cards/sm115-006-high.png"
+    "imageHighSrc": "cards/sm115-006-high.png",
+    "attacks": [
+      {
+        "name": "Superpowered Horns",
+        "damage": "110"
+      },
+      {
+        "name": "Guillotine-GX",
+        "damage": "160"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9456",
-    "externalId": null,
+    "externalId": "sm115-5",
     "tcgdex_id": "sm115-5",
     "localId": "005",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "005/68",
+    "cardNumber": "5/68",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 005/68 Hidden Fates",
+    "fullDisplayName": "Scyther 5/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2094,18 +2516,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-005-low.png",
-    "imageHighSrc": "cards/sm115-005-high.png"
+    "imageHighSrc": "cards/sm115-005-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "10"
+      },
+      {
+        "name": "Sharp Scythe",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9447",
-    "externalId": null,
+    "externalId": "sm115-4",
     "tcgdex_id": "sm115-4",
     "localId": "004",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "004/68",
+    "cardNumber": "4/68",
     "cardName": "Paras",
-    "fullDisplayName": "Paras 004/68 Hidden Fates",
+    "fullDisplayName": "Paras 4/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2127,18 +2559,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-004-low.png",
-    "imageHighSrc": "cards/sm115-004-high.png"
+    "imageHighSrc": "cards/sm115-004-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9440",
-    "externalId": null,
+    "externalId": "sm115-3",
     "tcgdex_id": "sm115-3",
     "localId": "003",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "003/68",
+    "cardNumber": "3/68",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 003/68 Hidden Fates",
+    "fullDisplayName": "Butterfree 3/68 Hidden Fates",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2160,18 +2602,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-003-low.png",
-    "imageHighSrc": "cards/sm115-003-high.png"
+    "imageHighSrc": "cards/sm115-003-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9430",
-    "externalId": null,
+    "externalId": "sm115-2",
     "tcgdex_id": "sm115-2",
     "localId": "002",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "002/68",
+    "cardNumber": "2/68",
     "cardName": "Metapod",
-    "fullDisplayName": "Metapod 002/68 Hidden Fates",
+    "fullDisplayName": "Metapod 2/68 Hidden Fates",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2193,18 +2641,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-002-low.png",
-    "imageHighSrc": "cards/sm115-002-high.png"
+    "imageHighSrc": "cards/sm115-002-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9420",
-    "externalId": null,
+    "externalId": "sm115-1",
     "tcgdex_id": "sm115-1",
     "localId": "001",
     "setCode": "sm115",
     "setTcgdexId": "sm115",
-    "cardNumber": "001/68",
+    "cardNumber": "1/68",
     "cardName": "Caterpie",
-    "fullDisplayName": "Caterpie 001/68 Hidden Fates",
+    "fullDisplayName": "Caterpie 1/68 Hidden Fates",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2226,6 +2680,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm115-001-low.png",
-    "imageHighSrc": "cards/sm115-001-high.png"
+    "imageHighSrc": "cards/sm115-001-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   }
 ]

@@ -1,5 +1,12 @@
 import Foundation
 
+/// One attack line from the card (name + optional damage); used for catalog search and scanner matching.
+struct CardAttack: Codable, Hashable, Sendable {
+    let name: String
+    /// Damage as printed, e.g. `"80"`, `"120+"`, or null when none.
+    let damage: String?
+}
+
 struct Card: Codable, Identifiable, Hashable, Sendable {
     var id: String { masterCardId }
 
@@ -28,11 +35,16 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
     let noPricing: Bool
     let imageLowSrc: String
     let imageHighSrc: String?
+    /// Pokémon attacks in visual order; OCR from the center of the card can match these.
+    let attacks: [CardAttack]?
+    /// Trainer / Special Energy rules text from the center of the card.
+    let rules: String?
 
     enum CodingKeys: String, CodingKey {
         case masterCardId, externalId, tcgdex_id, tcgdexId, localId, setCode, setTcgdexId, cardNumber, cardName
         case fullDisplayName, rarity, category, stage, hp, elementTypes, dexIds, subtypes
         case trainerType, energyType, regulationMark, evolveFrom, artist, isActive, noPricing, imageLowSrc, imageHighSrc
+        case attacks, rules
     }
 
     init(from decoder: Decoder) throws {
@@ -63,6 +75,8 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         noPricing = try c.decode(Bool.self, forKey: .noPricing)
         imageLowSrc = try c.decode(String.self, forKey: .imageLowSrc)
         imageHighSrc = try c.decodeIfPresent(String.self, forKey: .imageHighSrc)
+        attacks = try c.decodeIfPresent([CardAttack].self, forKey: .attacks)
+        rules = try c.decodeIfPresent(String.self, forKey: .rules)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -92,5 +106,32 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         try c.encode(noPricing, forKey: .noPricing)
         try c.encode(imageLowSrc, forKey: .imageLowSrc)
         try c.encodeIfPresent(imageHighSrc, forKey: .imageHighSrc)
+        try c.encodeIfPresent(attacks, forKey: .attacks)
+        try c.encodeIfPresent(rules, forKey: .rules)
+    }
+
+    /// Text included in inverted-index search: name/number/set, **HP**, **attacks** (Pokémon), **rules** (Trainers — often long).
+    var searchIndexBlob: String {
+        var parts: [String] = [
+            cardName,
+            cardNumber,
+            fullDisplayName ?? "",
+            setCode,
+        ]
+        if let hp {
+            parts.append(String(hp))
+        }
+        if let rules {
+            parts.append(rules)
+        }
+        if let attacks {
+            for a in attacks {
+                parts.append(a.name)
+                if let d = a.damage {
+                    parts.append(d)
+                }
+            }
+        }
+        return parts.joined(separator: " ")
     }
 }

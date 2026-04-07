@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9416",
-    "externalId": null,
+    "externalId": "rsv10pt5-173",
     "tcgdex_id": "sv10.5w-173",
     "localId": "173",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "173/86",
+    "cardNumber": "173/086",
     "cardName": "Reshiram ex",
-    "fullDisplayName": "Reshiram ex 173/86 White Flare",
+    "fullDisplayName": "Reshiram ex 173/086 White Flare",
     "rarity": "Black White Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -31,18 +31,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-173-low.png",
-    "imageHighSrc": "cards/rsv10pt5-173-high.png"
+    "imageHighSrc": "cards/rsv10pt5-173-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "50"
+      },
+      {
+        "name": "Blazing Burst",
+        "damage": "130+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9415",
-    "externalId": null,
+    "externalId": "rsv10pt5-172",
     "tcgdex_id": "sv10.5w-172",
     "localId": "172",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "172/86",
+    "cardNumber": "172/086",
     "cardName": "Victini",
-    "fullDisplayName": "Victini 172/86 White Flare",
+    "fullDisplayName": "Victini 172/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -64,18 +75,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-172-low.png",
-    "imageHighSrc": "cards/rsv10pt5-172-high.png"
+    "imageHighSrc": "cards/rsv10pt5-172-high.png",
+    "attacks": [
+      {
+        "name": "V-Force",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9414",
-    "externalId": null,
+    "externalId": "rsv10pt5-171",
     "tcgdex_id": "sv10.5w-171",
     "localId": "171",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "171/86",
+    "cardNumber": "171/086",
     "cardName": "Hilda",
-    "fullDisplayName": "Hilda 171/86 White Flare",
+    "fullDisplayName": "Hilda 171/086 White Flare",
     "rarity": "Special Illustration Rare",
     "category": "Trainer",
     "stage": null,
@@ -93,18 +110,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-171-low.png",
-    "imageHighSrc": "cards/rsv10pt5-171-high.png"
+    "imageHighSrc": "cards/rsv10pt5-171-high.png",
+    "rules": "Search your deck for an Evolution Pokémon and an Energy card, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "9413",
-    "externalId": null,
+    "externalId": "rsv10pt5-170",
     "tcgdex_id": "sv10.5w-170",
     "localId": "170",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "170/86",
+    "cardNumber": "170/086",
     "cardName": "Bouffalant ex",
-    "fullDisplayName": "Bouffalant ex 170/86 White Flare",
+    "fullDisplayName": "Bouffalant ex 170/086 White Flare",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -127,18 +145,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-170-low.png",
-    "imageHighSrc": "cards/rsv10pt5-170-high.png"
+    "imageHighSrc": "cards/rsv10pt5-170-high.png",
+    "attacks": [
+      {
+        "name": "Gold Breaker",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9412",
-    "externalId": null,
+    "externalId": "rsv10pt5-169",
     "tcgdex_id": "sv10.5w-169",
     "localId": "169",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "169/86",
+    "cardNumber": "169/086",
     "cardName": "Hydreigon ex",
-    "fullDisplayName": "Hydreigon ex 169/86 White Flare",
+    "fullDisplayName": "Hydreigon ex 169/086 White Flare",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -161,18 +186,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-169-low.png",
-    "imageHighSrc": "cards/rsv10pt5-169-high.png"
+    "imageHighSrc": "cards/rsv10pt5-169-high.png",
+    "attacks": [
+      {
+        "name": "Dark Bite",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9411",
-    "externalId": null,
+    "externalId": "rsv10pt5-168",
     "tcgdex_id": "sv10.5w-168",
     "localId": "168",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "168/86",
+    "cardNumber": "168/086",
     "cardName": "Jellicent ex",
-    "fullDisplayName": "Jellicent ex 168/86 White Flare",
+    "fullDisplayName": "Jellicent ex 168/086 White Flare",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -195,18 +227,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-168-low.png",
-    "imageHighSrc": "cards/rsv10pt5-168-high.png"
+    "imageHighSrc": "cards/rsv10pt5-168-high.png",
+    "attacks": [
+      {
+        "name": "Power Press",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9410",
-    "externalId": null,
+    "externalId": "rsv10pt5-167",
     "tcgdex_id": "sv10.5w-167",
     "localId": "167",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "167/86",
+    "cardNumber": "167/086",
     "cardName": "Keldeo ex",
-    "fullDisplayName": "Keldeo ex 167/86 White Flare",
+    "fullDisplayName": "Keldeo ex 167/086 White Flare",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -229,18 +268,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-167-low.png",
-    "imageHighSrc": "cards/rsv10pt5-167-high.png"
+    "imageHighSrc": "cards/rsv10pt5-167-high.png",
+    "attacks": [
+      {
+        "name": "Gale Thrust",
+        "damage": "30+"
+      },
+      {
+        "name": "Sonic Edge",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9409",
-    "externalId": null,
+    "externalId": "rsv10pt5-166",
     "tcgdex_id": "sv10.5w-166",
     "localId": "166",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "166/86",
+    "cardNumber": "166/086",
     "cardName": "Reshiram ex",
-    "fullDisplayName": "Reshiram ex 166/86 White Flare",
+    "fullDisplayName": "Reshiram ex 166/086 White Flare",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -263,18 +313,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-166-low.png",
-    "imageHighSrc": "cards/rsv10pt5-166-high.png"
+    "imageHighSrc": "cards/rsv10pt5-166-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "50"
+      },
+      {
+        "name": "Blazing Burst",
+        "damage": "130+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9408",
-    "externalId": null,
+    "externalId": "rsv10pt5-165",
     "tcgdex_id": "sv10.5w-165",
     "localId": "165",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "165/86",
+    "cardNumber": "165/086",
     "cardName": "Whimsicott ex",
-    "fullDisplayName": "Whimsicott ex 165/86 White Flare",
+    "fullDisplayName": "Whimsicott ex 165/086 White Flare",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -297,18 +358,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-165-low.png",
-    "imageHighSrc": "cards/rsv10pt5-165-high.png"
+    "imageHighSrc": "cards/rsv10pt5-165-high.png",
+    "attacks": [
+      {
+        "name": "Energy Gift",
+        "damage": null
+      },
+      {
+        "name": "Wondrous Cotton",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9407",
-    "externalId": null,
+    "externalId": "rsv10pt5-164",
     "tcgdex_id": "sv10.5w-164",
     "localId": "164",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "164/86",
+    "cardNumber": "164/086",
     "cardName": "Hilda",
-    "fullDisplayName": "Hilda 164/86 White Flare",
+    "fullDisplayName": "Hilda 164/086 White Flare",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -326,18 +398,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-164-low.png",
-    "imageHighSrc": "cards/rsv10pt5-164-high.png"
+    "imageHighSrc": "cards/rsv10pt5-164-high.png",
+    "rules": "Search your deck for an Evolution Pokémon and an Energy card, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "9406",
-    "externalId": null,
+    "externalId": "rsv10pt5-163",
     "tcgdex_id": "sv10.5w-163",
     "localId": "163",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "163/86",
+    "cardNumber": "163/086",
     "cardName": "Harlequin",
-    "fullDisplayName": "Harlequin 163/86 White Flare",
+    "fullDisplayName": "Harlequin 163/086 White Flare",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -355,18 +428,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-163-low.png",
-    "imageHighSrc": "cards/rsv10pt5-163-high.png"
+    "imageHighSrc": "cards/rsv10pt5-163-high.png",
+    "rules": "Each player shuffles their hand into their deck. Then, flip a coin. If heads, you draw 5 cards, and your opponent draws 3 cards. If tails, you draw 3 cards, and your opponent draws 5 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "9405",
-    "externalId": null,
+    "externalId": "rsv10pt5-162",
     "tcgdex_id": "sv10.5w-162",
     "localId": "162",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "162/86",
+    "cardNumber": "162/086",
     "cardName": "Bouffalant ex",
-    "fullDisplayName": "Bouffalant ex 162/86 White Flare",
+    "fullDisplayName": "Bouffalant ex 162/086 White Flare",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -389,18 +463,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-162-low.png",
-    "imageHighSrc": "cards/rsv10pt5-162-high.png"
+    "imageHighSrc": "cards/rsv10pt5-162-high.png",
+    "attacks": [
+      {
+        "name": "Gold Breaker",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9404",
-    "externalId": null,
+    "externalId": "rsv10pt5-161",
     "tcgdex_id": "sv10.5w-161",
     "localId": "161",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "161/86",
+    "cardNumber": "161/086",
     "cardName": "Hydreigon ex",
-    "fullDisplayName": "Hydreigon ex 161/86 White Flare",
+    "fullDisplayName": "Hydreigon ex 161/086 White Flare",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -423,18 +504,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-161-low.png",
-    "imageHighSrc": "cards/rsv10pt5-161-high.png"
+    "imageHighSrc": "cards/rsv10pt5-161-high.png",
+    "attacks": [
+      {
+        "name": "Dark Bite",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9403",
-    "externalId": null,
+    "externalId": "rsv10pt5-160",
     "tcgdex_id": "sv10.5w-160",
     "localId": "160",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "160/86",
+    "cardNumber": "160/086",
     "cardName": "Jellicent ex",
-    "fullDisplayName": "Jellicent ex 160/86 White Flare",
+    "fullDisplayName": "Jellicent ex 160/086 White Flare",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -457,18 +545,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-160-low.png",
-    "imageHighSrc": "cards/rsv10pt5-160-high.png"
+    "imageHighSrc": "cards/rsv10pt5-160-high.png",
+    "attacks": [
+      {
+        "name": "Power Press",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9402",
-    "externalId": null,
+    "externalId": "rsv10pt5-159",
     "tcgdex_id": "sv10.5w-159",
     "localId": "159",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "159/86",
+    "cardNumber": "159/086",
     "cardName": "Keldeo ex",
-    "fullDisplayName": "Keldeo ex 159/86 White Flare",
+    "fullDisplayName": "Keldeo ex 159/086 White Flare",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -491,18 +586,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-159-low.png",
-    "imageHighSrc": "cards/rsv10pt5-159-high.png"
+    "imageHighSrc": "cards/rsv10pt5-159-high.png",
+    "attacks": [
+      {
+        "name": "Gale Thrust",
+        "damage": "30+"
+      },
+      {
+        "name": "Sonic Edge",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9401",
-    "externalId": null,
+    "externalId": "rsv10pt5-158",
     "tcgdex_id": "sv10.5w-158",
     "localId": "158",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "158/86",
+    "cardNumber": "158/086",
     "cardName": "Reshiram ex",
-    "fullDisplayName": "Reshiram ex 158/86 White Flare",
+    "fullDisplayName": "Reshiram ex 158/086 White Flare",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -525,18 +631,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-158-low.png",
-    "imageHighSrc": "cards/rsv10pt5-158-high.png"
+    "imageHighSrc": "cards/rsv10pt5-158-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "50"
+      },
+      {
+        "name": "Blazing Burst",
+        "damage": "130+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9400",
-    "externalId": null,
+    "externalId": "rsv10pt5-157",
     "tcgdex_id": "sv10.5w-157",
     "localId": "157",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "157/86",
+    "cardNumber": "157/086",
     "cardName": "Whimsicott ex",
-    "fullDisplayName": "Whimsicott ex 157/86 White Flare",
+    "fullDisplayName": "Whimsicott ex 157/086 White Flare",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -559,18 +676,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-157-low.png",
-    "imageHighSrc": "cards/rsv10pt5-157-high.png"
+    "imageHighSrc": "cards/rsv10pt5-157-high.png",
+    "attacks": [
+      {
+        "name": "Energy Gift",
+        "damage": null
+      },
+      {
+        "name": "Wondrous Cotton",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9399",
-    "externalId": null,
+    "externalId": "rsv10pt5-156",
     "tcgdex_id": "sv10.5w-156",
     "localId": "156",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "156/86",
+    "cardNumber": "156/086",
     "cardName": "Stoutland",
-    "fullDisplayName": "Stoutland 156/86 White Flare",
+    "fullDisplayName": "Stoutland 156/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -592,18 +720,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-156-low.png",
-    "imageHighSrc": "cards/rsv10pt5-156-high.png"
+    "imageHighSrc": "cards/rsv10pt5-156-high.png",
+    "attacks": [
+      {
+        "name": "Odor Sleuth",
+        "damage": null
+      },
+      {
+        "name": "Special Fang",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "9398",
-    "externalId": null,
+    "externalId": "rsv10pt5-155",
     "tcgdex_id": "sv10.5w-155",
     "localId": "155",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "155/86",
+    "cardNumber": "155/086",
     "cardName": "Herdier",
-    "fullDisplayName": "Herdier 155/86 White Flare",
+    "fullDisplayName": "Herdier 155/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -625,18 +763,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-155-low.png",
-    "imageHighSrc": "cards/rsv10pt5-155-high.png"
+    "imageHighSrc": "cards/rsv10pt5-155-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Lunge Out",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9397",
-    "externalId": null,
+    "externalId": "rsv10pt5-154",
     "tcgdex_id": "sv10.5w-154",
     "localId": "154",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "154/86",
+    "cardNumber": "154/086",
     "cardName": "Lillipup",
-    "fullDisplayName": "Lillipup 154/86 White Flare",
+    "fullDisplayName": "Lillipup 154/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -658,18 +806,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-154-low.png",
-    "imageHighSrc": "cards/rsv10pt5-154-high.png"
+    "imageHighSrc": "cards/rsv10pt5-154-high.png",
+    "attacks": [
+      {
+        "name": "Play Rough",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9396",
-    "externalId": null,
+    "externalId": "rsv10pt5-153",
     "tcgdex_id": "sv10.5w-153",
     "localId": "153",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "153/86",
+    "cardNumber": "153/086",
     "cardName": "Watchog",
-    "fullDisplayName": "Watchog 153/86 White Flare",
+    "fullDisplayName": "Watchog 153/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -691,18 +845,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-153-low.png",
-    "imageHighSrc": "cards/rsv10pt5-153-high.png"
+    "imageHighSrc": "cards/rsv10pt5-153-high.png",
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "damage": null
+      },
+      {
+        "name": "Hyper Fang",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9395",
-    "externalId": null,
+    "externalId": "rsv10pt5-152",
     "tcgdex_id": "sv10.5w-152",
     "localId": "152",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "152/86",
+    "cardNumber": "152/086",
     "cardName": "Patrat",
-    "fullDisplayName": "Patrat 152/86 White Flare",
+    "fullDisplayName": "Patrat 152/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -724,18 +888,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-152-low.png",
-    "imageHighSrc": "cards/rsv10pt5-152-high.png"
+    "imageHighSrc": "cards/rsv10pt5-152-high.png",
+    "attacks": [
+      {
+        "name": "Procurement",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9394",
-    "externalId": null,
+    "externalId": "rsv10pt5-151",
     "tcgdex_id": "sv10.5w-151",
     "localId": "151",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "151/86",
+    "cardNumber": "151/086",
     "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon 151/86 White Flare",
+    "fullDisplayName": "Druddigon 151/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -757,18 +931,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-151-low.png",
-    "imageHighSrc": "cards/rsv10pt5-151-high.png"
+    "imageHighSrc": "cards/rsv10pt5-151-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "40"
+      },
+      {
+        "name": "Ambush",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "9393",
-    "externalId": null,
+    "externalId": "rsv10pt5-150",
     "tcgdex_id": "sv10.5w-150",
     "localId": "150",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "150/86",
+    "cardNumber": "150/086",
     "cardName": "Durant",
-    "fullDisplayName": "Durant 150/86 White Flare",
+    "fullDisplayName": "Durant 150/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -790,18 +974,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-150-low.png",
-    "imageHighSrc": "cards/rsv10pt5-150-high.png"
+    "imageHighSrc": "cards/rsv10pt5-150-high.png",
+    "attacks": [
+      {
+        "name": "Bite Together",
+        "damage": "20+"
+      },
+      {
+        "name": "Vise Grip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9392",
-    "externalId": null,
+    "externalId": "rsv10pt5-149",
     "tcgdex_id": "sv10.5w-149",
     "localId": "149",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "149/86",
+    "cardNumber": "149/086",
     "cardName": "Ferrothorn",
-    "fullDisplayName": "Ferrothorn 149/86 White Flare",
+    "fullDisplayName": "Ferrothorn 149/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -823,18 +1017,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-149-low.png",
-    "imageHighSrc": "cards/rsv10pt5-149-high.png"
+    "imageHighSrc": "cards/rsv10pt5-149-high.png",
+    "attacks": [
+      {
+        "name": "Power Whip",
+        "damage": null
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "9391",
-    "externalId": null,
+    "externalId": "rsv10pt5-148",
     "tcgdex_id": "sv10.5w-148",
     "localId": "148",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "148/86",
+    "cardNumber": "148/086",
     "cardName": "Ferroseed",
-    "fullDisplayName": "Ferroseed 148/86 White Flare",
+    "fullDisplayName": "Ferroseed 148/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -856,18 +1060,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-148-low.png",
-    "imageHighSrc": "cards/rsv10pt5-148-high.png"
+    "imageHighSrc": "cards/rsv10pt5-148-high.png",
+    "attacks": [
+      {
+        "name": "Zzzt",
+        "damage": "10"
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9390",
-    "externalId": null,
+    "externalId": "rsv10pt5-147",
     "tcgdex_id": "sv10.5w-147",
     "localId": "147",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "147/86",
+    "cardNumber": "147/086",
     "cardName": "Zweilous",
-    "fullDisplayName": "Zweilous 147/86 White Flare",
+    "fullDisplayName": "Zweilous 147/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -889,18 +1103,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-147-low.png",
-    "imageHighSrc": "cards/rsv10pt5-147-high.png"
+    "imageHighSrc": "cards/rsv10pt5-147-high.png",
+    "attacks": [
+      {
+        "name": "Double Hit",
+        "damage": "40×"
+      },
+      {
+        "name": "Pitch-Black Fangs",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9389",
-    "externalId": null,
+    "externalId": "rsv10pt5-146",
     "tcgdex_id": "sv10.5w-146",
     "localId": "146",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "146/86",
+    "cardNumber": "146/086",
     "cardName": "Deino",
-    "fullDisplayName": "Deino 146/86 White Flare",
+    "fullDisplayName": "Deino 146/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -922,18 +1146,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-146-low.png",
-    "imageHighSrc": "cards/rsv10pt5-146-high.png"
+    "imageHighSrc": "cards/rsv10pt5-146-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      },
+      {
+        "name": "Darkness Fang",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9388",
-    "externalId": null,
+    "externalId": "rsv10pt5-145",
     "tcgdex_id": "sv10.5w-145",
     "localId": "145",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "145/86",
+    "cardNumber": "145/086",
     "cardName": "Mandibuzz",
-    "fullDisplayName": "Mandibuzz 145/86 White Flare",
+    "fullDisplayName": "Mandibuzz 145/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -955,18 +1189,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-145-low.png",
-    "imageHighSrc": "cards/rsv10pt5-145-high.png"
+    "imageHighSrc": "cards/rsv10pt5-145-high.png",
+    "attacks": [
+      {
+        "name": "Cutting Wind",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9387",
-    "externalId": null,
+    "externalId": "rsv10pt5-144",
     "tcgdex_id": "sv10.5w-144",
     "localId": "144",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "144/86",
+    "cardNumber": "144/086",
     "cardName": "Vullaby",
-    "fullDisplayName": "Vullaby 144/86 White Flare",
+    "fullDisplayName": "Vullaby 144/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -988,18 +1228,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-144-low.png",
-    "imageHighSrc": "cards/rsv10pt5-144-high.png"
+    "imageHighSrc": "cards/rsv10pt5-144-high.png",
+    "attacks": [
+      {
+        "name": "Playful Kick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9386",
-    "externalId": null,
+    "externalId": "rsv10pt5-143",
     "tcgdex_id": "sv10.5w-143",
     "localId": "143",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "143/86",
+    "cardNumber": "143/086",
     "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark 143/86 White Flare",
+    "fullDisplayName": "Zoroark 143/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1021,18 +1267,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-143-low.png",
-    "imageHighSrc": "cards/rsv10pt5-143-high.png"
+    "imageHighSrc": "cards/rsv10pt5-143-high.png",
+    "attacks": [
+      {
+        "name": "Mind Jack",
+        "damage": "30×"
+      },
+      {
+        "name": "Foul Play",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9385",
-    "externalId": null,
+    "externalId": "rsv10pt5-142",
     "tcgdex_id": "sv10.5w-142",
     "localId": "142",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "142/86",
+    "cardNumber": "142/086",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 142/86 White Flare",
+    "fullDisplayName": "Zorua 142/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1054,18 +1310,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-142-low.png",
-    "imageHighSrc": "cards/rsv10pt5-142-high.png"
+    "imageHighSrc": "cards/rsv10pt5-142-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9384",
-    "externalId": null,
+    "externalId": "rsv10pt5-141",
     "tcgdex_id": "sv10.5w-141",
     "localId": "141",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "141/86",
+    "cardNumber": "141/086",
     "cardName": "Garbodor",
-    "fullDisplayName": "Garbodor 141/86 White Flare",
+    "fullDisplayName": "Garbodor 141/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1087,18 +1349,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-141-low.png",
-    "imageHighSrc": "cards/rsv10pt5-141-high.png"
+    "imageHighSrc": "cards/rsv10pt5-141-high.png",
+    "attacks": [
+      {
+        "name": "Suffocating Gas",
+        "damage": "40"
+      },
+      {
+        "name": "Gunk Shot",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9383",
-    "externalId": null,
+    "externalId": "rsv10pt5-140",
     "tcgdex_id": "sv10.5w-140",
     "localId": "140",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "140/86",
+    "cardNumber": "140/086",
     "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 140/86 White Flare",
+    "fullDisplayName": "Trubbish 140/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1120,18 +1392,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-140-low.png",
-    "imageHighSrc": "cards/rsv10pt5-140-high.png"
+    "imageHighSrc": "cards/rsv10pt5-140-high.png",
+    "attacks": [
+      {
+        "name": "Drool",
+        "damage": "10"
+      },
+      {
+        "name": "Sludge Bomb",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9382",
-    "externalId": null,
+    "externalId": "rsv10pt5-139",
     "tcgdex_id": "sv10.5w-139",
     "localId": "139",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "139/86",
+    "cardNumber": "139/086",
     "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 139/86 White Flare",
+    "fullDisplayName": "Scrafty 139/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1153,18 +1435,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-139-low.png",
-    "imageHighSrc": "cards/rsv10pt5-139-high.png"
+    "imageHighSrc": "cards/rsv10pt5-139-high.png",
+    "attacks": [
+      {
+        "name": "Ruffians Attack",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "9381",
-    "externalId": null,
+    "externalId": "rsv10pt5-138",
     "tcgdex_id": "sv10.5w-138",
     "localId": "138",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "138/86",
+    "cardNumber": "138/086",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 138/86 White Flare",
+    "fullDisplayName": "Scraggy 138/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1186,18 +1474,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-138-low.png",
-    "imageHighSrc": "cards/rsv10pt5-138-high.png"
+    "imageHighSrc": "cards/rsv10pt5-138-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Invade",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9380",
-    "externalId": null,
+    "externalId": "rsv10pt5-137",
     "tcgdex_id": "sv10.5w-137",
     "localId": "137",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "137/86",
+    "cardNumber": "137/086",
     "cardName": "Liepard",
-    "fullDisplayName": "Liepard 137/86 White Flare",
+    "fullDisplayName": "Liepard 137/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1219,18 +1517,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-137-low.png",
-    "imageHighSrc": "cards/rsv10pt5-137-high.png"
+    "imageHighSrc": "cards/rsv10pt5-137-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9379",
-    "externalId": null,
+    "externalId": "rsv10pt5-136",
     "tcgdex_id": "sv10.5w-136",
     "localId": "136",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "136/86",
+    "cardNumber": "136/086",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 136/86 White Flare",
+    "fullDisplayName": "Purrloin 136/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1252,18 +1556,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-136-low.png",
-    "imageHighSrc": "cards/rsv10pt5-136-high.png"
+    "imageHighSrc": "cards/rsv10pt5-136-high.png",
+    "attacks": [
+      {
+        "name": "Invite Evil",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9378",
-    "externalId": null,
+    "externalId": "rsv10pt5-135",
     "tcgdex_id": "sv10.5w-135",
     "localId": "135",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "135/86",
+    "cardNumber": "135/086",
     "cardName": "Terrakion",
-    "fullDisplayName": "Terrakion 135/86 White Flare",
+    "fullDisplayName": "Terrakion 135/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1285,18 +1595,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-135-low.png",
-    "imageHighSrc": "cards/rsv10pt5-135-high.png"
+    "imageHighSrc": "cards/rsv10pt5-135-high.png",
+    "attacks": [
+      {
+        "name": "Retaliate",
+        "damage": "50+"
+      },
+      {
+        "name": "Land Crush",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9377",
-    "externalId": null,
+    "externalId": "rsv10pt5-134",
     "tcgdex_id": "sv10.5w-134",
     "localId": "134",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "134/86",
+    "cardNumber": "134/086",
     "cardName": "Mienshao",
-    "fullDisplayName": "Mienshao 134/86 White Flare",
+    "fullDisplayName": "Mienshao 134/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1318,18 +1638,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-134-low.png",
-    "imageHighSrc": "cards/rsv10pt5-134-high.png"
+    "imageHighSrc": "cards/rsv10pt5-134-high.png",
+    "attacks": [
+      {
+        "name": "Low Sweep",
+        "damage": "40"
+      },
+      {
+        "name": "Smash Uppercut",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9376",
-    "externalId": null,
+    "externalId": "rsv10pt5-133",
     "tcgdex_id": "sv10.5w-133",
     "localId": "133",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "133/86",
+    "cardNumber": "133/086",
     "cardName": "Mienfoo",
-    "fullDisplayName": "Mienfoo 133/86 White Flare",
+    "fullDisplayName": "Mienfoo 133/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1351,18 +1681,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-133-low.png",
-    "imageHighSrc": "cards/rsv10pt5-133-high.png"
+    "imageHighSrc": "cards/rsv10pt5-133-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9375",
-    "externalId": null,
+    "externalId": "rsv10pt5-132",
     "tcgdex_id": "sv10.5w-132",
     "localId": "132",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "132/86",
+    "cardNumber": "132/086",
     "cardName": "Archeops",
-    "fullDisplayName": "Archeops 132/86 White Flare",
+    "fullDisplayName": "Archeops 132/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1384,18 +1720,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-132-low.png",
-    "imageHighSrc": "cards/rsv10pt5-132-high.png"
+    "imageHighSrc": "cards/rsv10pt5-132-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9374",
-    "externalId": null,
+    "externalId": "rsv10pt5-131",
     "tcgdex_id": "sv10.5w-131",
     "localId": "131",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "131/86",
+    "cardNumber": "131/086",
     "cardName": "Archen",
-    "fullDisplayName": "Archen 131/86 White Flare",
+    "fullDisplayName": "Archen 131/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1417,18 +1759,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-131-low.png",
-    "imageHighSrc": "cards/rsv10pt5-131-high.png"
+    "imageHighSrc": "cards/rsv10pt5-131-high.png",
+    "attacks": [
+      {
+        "name": "Acrobatics",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "9373",
-    "externalId": null,
+    "externalId": "rsv10pt5-130",
     "tcgdex_id": "sv10.5w-130",
     "localId": "130",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "130/86",
+    "cardNumber": "130/086",
     "cardName": "Sawk",
-    "fullDisplayName": "Sawk 130/86 White Flare",
+    "fullDisplayName": "Sawk 130/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1450,18 +1798,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-130-low.png",
-    "imageHighSrc": "cards/rsv10pt5-130-high.png"
+    "imageHighSrc": "cards/rsv10pt5-130-high.png",
+    "attacks": [
+      {
+        "name": "Elbow Strike",
+        "damage": "30"
+      },
+      {
+        "name": "Rising Chop",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9372",
-    "externalId": null,
+    "externalId": "rsv10pt5-129",
     "tcgdex_id": "sv10.5w-129",
     "localId": "129",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "129/86",
+    "cardNumber": "129/086",
     "cardName": "Gigalith",
-    "fullDisplayName": "Gigalith 129/86 White Flare",
+    "fullDisplayName": "Gigalith 129/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1483,18 +1841,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-129-low.png",
-    "imageHighSrc": "cards/rsv10pt5-129-high.png"
+    "imageHighSrc": "cards/rsv10pt5-129-high.png",
+    "attacks": [
+      {
+        "name": "Vengeful Cannon",
+        "damage": "20×"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "9371",
-    "externalId": null,
+    "externalId": "rsv10pt5-128",
     "tcgdex_id": "sv10.5w-128",
     "localId": "128",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "128/86",
+    "cardNumber": "128/086",
     "cardName": "Boldore",
-    "fullDisplayName": "Boldore 128/86 White Flare",
+    "fullDisplayName": "Boldore 128/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1516,18 +1884,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-128-low.png",
-    "imageHighSrc": "cards/rsv10pt5-128-high.png"
+    "imageHighSrc": "cards/rsv10pt5-128-high.png",
+    "attacks": [
+      {
+        "name": "Smack Down",
+        "damage": "30+"
+      },
+      {
+        "name": "Power Gem",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9370",
-    "externalId": null,
+    "externalId": "rsv10pt5-127",
     "tcgdex_id": "sv10.5w-127",
     "localId": "127",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "127/86",
+    "cardNumber": "127/086",
     "cardName": "Roggenrola",
-    "fullDisplayName": "Roggenrola 127/86 White Flare",
+    "fullDisplayName": "Roggenrola 127/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1549,18 +1927,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-127-low.png",
-    "imageHighSrc": "cards/rsv10pt5-127-high.png"
+    "imageHighSrc": "cards/rsv10pt5-127-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Rolling Rocks",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9369",
-    "externalId": null,
+    "externalId": "rsv10pt5-126",
     "tcgdex_id": "sv10.5w-126",
     "localId": "126",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "126/86",
+    "cardNumber": "126/086",
     "cardName": "Frillish",
-    "fullDisplayName": "Frillish 126/86 White Flare",
+    "fullDisplayName": "Frillish 126/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1582,18 +1970,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-126-low.png",
-    "imageHighSrc": "cards/rsv10pt5-126-high.png"
+    "imageHighSrc": "cards/rsv10pt5-126-high.png",
+    "attacks": [
+      {
+        "name": "Oceanic Gloom",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9368",
-    "externalId": null,
+    "externalId": "rsv10pt5-125",
     "tcgdex_id": "sv10.5w-125",
     "localId": "125",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "125/86",
+    "cardNumber": "125/086",
     "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 125/86 White Flare",
+    "fullDisplayName": "Gothorita 125/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1615,18 +2009,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-125-low.png",
-    "imageHighSrc": "cards/rsv10pt5-125-high.png"
+    "imageHighSrc": "cards/rsv10pt5-125-high.png",
+    "attacks": [
+      {
+        "name": "Fortunate Eye",
+        "damage": null
+      },
+      {
+        "name": "Psyshot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9367",
-    "externalId": null,
+    "externalId": "rsv10pt5-124",
     "tcgdex_id": "sv10.5w-124",
     "localId": "124",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "124/86",
+    "cardNumber": "124/086",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 124/86 White Flare",
+    "fullDisplayName": "Gothita 124/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1648,18 +2052,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-124-low.png",
-    "imageHighSrc": "cards/rsv10pt5-124-high.png"
+    "imageHighSrc": "cards/rsv10pt5-124-high.png",
+    "attacks": [
+      {
+        "name": "Super Psy Bolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9366",
-    "externalId": null,
+    "externalId": "rsv10pt5-123",
     "tcgdex_id": "sv10.5w-123",
     "localId": "123",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "123/86",
+    "cardNumber": "123/086",
     "cardName": "Cofagrigus",
-    "fullDisplayName": "Cofagrigus 123/86 White Flare",
+    "fullDisplayName": "Cofagrigus 123/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1681,18 +2091,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-123-low.png",
-    "imageHighSrc": "cards/rsv10pt5-123-high.png"
+    "imageHighSrc": "cards/rsv10pt5-123-high.png",
+    "attacks": [
+      {
+        "name": "Extended Damagriiigus",
+        "damage": null
+      },
+      {
+        "name": "Perplex",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9365",
-    "externalId": null,
+    "externalId": "rsv10pt5-122",
     "tcgdex_id": "sv10.5w-122",
     "localId": "122",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "122/86",
+    "cardNumber": "122/086",
     "cardName": "Yamask",
-    "fullDisplayName": "Yamask 122/86 White Flare",
+    "fullDisplayName": "Yamask 122/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1714,18 +2134,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-122-low.png",
-    "imageHighSrc": "cards/rsv10pt5-122-high.png"
+    "imageHighSrc": "cards/rsv10pt5-122-high.png",
+    "attacks": [
+      {
+        "name": "Focused Wish",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9364",
-    "externalId": null,
+    "externalId": "rsv10pt5-121",
     "tcgdex_id": "sv10.5w-121",
     "localId": "121",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "121/86",
+    "cardNumber": "121/086",
     "cardName": "Sigilyph",
-    "fullDisplayName": "Sigilyph 121/86 White Flare",
+    "fullDisplayName": "Sigilyph 121/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1747,18 +2173,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-121-low.png",
-    "imageHighSrc": "cards/rsv10pt5-121-high.png"
+    "imageHighSrc": "cards/rsv10pt5-121-high.png",
+    "attacks": [
+      {
+        "name": "Reflect",
+        "damage": null
+      },
+      {
+        "name": "Telekinesis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9363",
-    "externalId": null,
+    "externalId": "rsv10pt5-120",
     "tcgdex_id": "sv10.5w-120",
     "localId": "120",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "120/86",
+    "cardNumber": "120/086",
     "cardName": "Swoobat",
-    "fullDisplayName": "Swoobat 120/86 White Flare",
+    "fullDisplayName": "Swoobat 120/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1780,18 +2216,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-120-low.png",
-    "imageHighSrc": "cards/rsv10pt5-120-high.png"
+    "imageHighSrc": "cards/rsv10pt5-120-high.png",
+    "attacks": [
+      {
+        "name": "Happy Return",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9362",
-    "externalId": null,
+    "externalId": "rsv10pt5-119",
     "tcgdex_id": "sv10.5w-119",
     "localId": "119",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "119/86",
+    "cardNumber": "119/086",
     "cardName": "Woobat",
-    "fullDisplayName": "Woobat 119/86 White Flare",
+    "fullDisplayName": "Woobat 119/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1813,18 +2259,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-119-low.png",
-    "imageHighSrc": "cards/rsv10pt5-119-high.png"
+    "imageHighSrc": "cards/rsv10pt5-119-high.png",
+    "attacks": [
+      {
+        "name": "Heart Stamp",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9361",
-    "externalId": null,
+    "externalId": "rsv10pt5-118",
     "tcgdex_id": "sv10.5w-118",
     "localId": "118",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "118/86",
+    "cardNumber": "118/086",
     "cardName": "Stunfisk",
-    "fullDisplayName": "Stunfisk 118/86 White Flare",
+    "fullDisplayName": "Stunfisk 118/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1846,18 +2298,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-118-low.png",
-    "imageHighSrc": "cards/rsv10pt5-118-high.png"
+    "imageHighSrc": "cards/rsv10pt5-118-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Bolt",
+        "damage": "20+"
+      },
+      {
+        "name": "Flop",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9360",
-    "externalId": null,
+    "externalId": "rsv10pt5-117",
     "tcgdex_id": "sv10.5w-117",
     "localId": "117",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "117/86",
+    "cardNumber": "117/086",
     "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 117/86 White Flare",
+    "fullDisplayName": "Galvantula 117/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1879,18 +2341,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-117-low.png",
-    "imageHighSrc": "cards/rsv10pt5-117-high.png"
+    "imageHighSrc": "cards/rsv10pt5-117-high.png",
+    "attacks": [
+      {
+        "name": "Discharge",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "9359",
-    "externalId": null,
+    "externalId": "rsv10pt5-116",
     "tcgdex_id": "sv10.5w-116",
     "localId": "116",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "116/86",
+    "cardNumber": "116/086",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 116/86 White Flare",
+    "fullDisplayName": "Joltik 116/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1912,18 +2380,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-116-low.png",
-    "imageHighSrc": "cards/rsv10pt5-116-high.png"
+    "imageHighSrc": "cards/rsv10pt5-116-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9358",
-    "externalId": null,
+    "externalId": "rsv10pt5-115",
     "tcgdex_id": "sv10.5w-115",
     "localId": "115",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "115/86",
+    "cardNumber": "115/086",
     "cardName": "Zebstrika",
-    "fullDisplayName": "Zebstrika 115/86 White Flare",
+    "fullDisplayName": "Zebstrika 115/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1945,18 +2419,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-115-low.png",
-    "imageHighSrc": "cards/rsv10pt5-115-high.png"
+    "imageHighSrc": "cards/rsv10pt5-115-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Electrobullet",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9357",
-    "externalId": null,
+    "externalId": "rsv10pt5-114",
     "tcgdex_id": "sv10.5w-114",
     "localId": "114",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "114/86",
+    "cardNumber": "114/086",
     "cardName": "Blitzle",
-    "fullDisplayName": "Blitzle 114/86 White Flare",
+    "fullDisplayName": "Blitzle 114/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1978,18 +2462,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-114-low.png",
-    "imageHighSrc": "cards/rsv10pt5-114-high.png"
+    "imageHighSrc": "cards/rsv10pt5-114-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Zap Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9356",
-    "externalId": null,
+    "externalId": "rsv10pt5-113",
     "tcgdex_id": "sv10.5w-113",
     "localId": "113",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "113/86",
+    "cardNumber": "113/086",
     "cardName": "Vanilluxe",
-    "fullDisplayName": "Vanilluxe 113/86 White Flare",
+    "fullDisplayName": "Vanilluxe 113/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2011,18 +2505,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-113-low.png",
-    "imageHighSrc": "cards/rsv10pt5-113-high.png"
+    "imageHighSrc": "cards/rsv10pt5-113-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "60"
+      },
+      {
+        "name": "Double Freeze",
+        "damage": "90×"
+      }
+    ]
   },
   {
     "masterCardId": "9355",
-    "externalId": null,
+    "externalId": "rsv10pt5-112",
     "tcgdex_id": "sv10.5w-112",
     "localId": "112",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "112/86",
+    "cardNumber": "112/086",
     "cardName": "Vanillish",
-    "fullDisplayName": "Vanillish 112/86 White Flare",
+    "fullDisplayName": "Vanillish 112/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2044,18 +2548,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-112-low.png",
-    "imageHighSrc": "cards/rsv10pt5-112-high.png"
+    "imageHighSrc": "cards/rsv10pt5-112-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "30"
+      },
+      {
+        "name": "Ice Beam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9354",
-    "externalId": null,
+    "externalId": "rsv10pt5-111",
     "tcgdex_id": "sv10.5w-111",
     "localId": "111",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "111/86",
+    "cardNumber": "111/086",
     "cardName": "Vanillite",
-    "fullDisplayName": "Vanillite 111/86 White Flare",
+    "fullDisplayName": "Vanillite 111/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2077,18 +2591,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-111-low.png",
-    "imageHighSrc": "cards/rsv10pt5-111-high.png"
+    "imageHighSrc": "cards/rsv10pt5-111-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Ice Edge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9353",
-    "externalId": null,
+    "externalId": "rsv10pt5-110",
     "tcgdex_id": "sv10.5w-110",
     "localId": "110",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "110/86",
+    "cardNumber": "110/086",
     "cardName": "Swanna",
-    "fullDisplayName": "Swanna 110/86 White Flare",
+    "fullDisplayName": "Swanna 110/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2110,18 +2634,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-110-low.png",
-    "imageHighSrc": "cards/rsv10pt5-110-high.png"
+    "imageHighSrc": "cards/rsv10pt5-110-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "30"
+      },
+      {
+        "name": "Air Slash",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9352",
-    "externalId": null,
+    "externalId": "rsv10pt5-109",
     "tcgdex_id": "sv10.5w-109",
     "localId": "109",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "109/86",
+    "cardNumber": "109/086",
     "cardName": "Ducklett",
-    "fullDisplayName": "Ducklett 109/86 White Flare",
+    "fullDisplayName": "Ducklett 109/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2143,18 +2677,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-109-low.png",
-    "imageHighSrc": "cards/rsv10pt5-109-high.png"
+    "imageHighSrc": "cards/rsv10pt5-109-high.png",
+    "attacks": [
+      {
+        "name": "Firefighting",
+        "damage": null
+      },
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9351",
-    "externalId": null,
+    "externalId": "rsv10pt5-108",
     "tcgdex_id": "sv10.5w-108",
     "localId": "108",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "108/86",
+    "cardNumber": "108/086",
     "cardName": "Basculin",
-    "fullDisplayName": "Basculin 108/86 White Flare",
+    "fullDisplayName": "Basculin 108/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2176,18 +2720,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-108-low.png",
-    "imageHighSrc": "cards/rsv10pt5-108-high.png"
+    "imageHighSrc": "cards/rsv10pt5-108-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Bared Fangs",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9350",
-    "externalId": null,
+    "externalId": "rsv10pt5-107",
     "tcgdex_id": "sv10.5w-107",
     "localId": "107",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "107/86",
+    "cardNumber": "107/086",
     "cardName": "Samurott",
-    "fullDisplayName": "Samurott 107/86 White Flare",
+    "fullDisplayName": "Samurott 107/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2209,18 +2763,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-107-low.png",
-    "imageHighSrc": "cards/rsv10pt5-107-high.png"
+    "imageHighSrc": "cards/rsv10pt5-107-high.png",
+    "attacks": [
+      {
+        "name": "Energized Slash",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "9349",
-    "externalId": null,
+    "externalId": "rsv10pt5-106",
     "tcgdex_id": "sv10.5w-106",
     "localId": "106",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "106/86",
+    "cardNumber": "106/086",
     "cardName": "Dewott",
-    "fullDisplayName": "Dewott 106/86 White Flare",
+    "fullDisplayName": "Dewott 106/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2242,18 +2802,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-106-low.png",
-    "imageHighSrc": "cards/rsv10pt5-106-high.png"
+    "imageHighSrc": "cards/rsv10pt5-106-high.png",
+    "attacks": [
+      {
+        "name": "Energized Shell",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "9348",
-    "externalId": null,
+    "externalId": "rsv10pt5-105",
     "tcgdex_id": "sv10.5w-105",
     "localId": "105",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "105/86",
+    "cardNumber": "105/086",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott 105/86 White Flare",
+    "fullDisplayName": "Oshawott 105/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2275,18 +2841,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-105-low.png",
-    "imageHighSrc": "cards/rsv10pt5-105-high.png"
+    "imageHighSrc": "cards/rsv10pt5-105-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9347",
-    "externalId": null,
+    "externalId": "rsv10pt5-104",
     "tcgdex_id": "sv10.5w-104",
     "localId": "104",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "104/86",
+    "cardNumber": "104/086",
     "cardName": "Heatmor",
-    "fullDisplayName": "Heatmor 104/86 White Flare",
+    "fullDisplayName": "Heatmor 104/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2308,18 +2884,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-104-low.png",
-    "imageHighSrc": "cards/rsv10pt5-104-high.png"
+    "imageHighSrc": "cards/rsv10pt5-104-high.png",
+    "attacks": [
+      {
+        "name": "Licking Catch",
+        "damage": null
+      },
+      {
+        "name": "Fire Claws",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9346",
-    "externalId": null,
+    "externalId": "rsv10pt5-103",
     "tcgdex_id": "sv10.5w-103",
     "localId": "103",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "103/86",
+    "cardNumber": "103/086",
     "cardName": "Chandelure",
-    "fullDisplayName": "Chandelure 103/86 White Flare",
+    "fullDisplayName": "Chandelure 103/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2341,18 +2927,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-103-low.png",
-    "imageHighSrc": "cards/rsv10pt5-103-high.png"
+    "imageHighSrc": "cards/rsv10pt5-103-high.png",
+    "attacks": [
+      {
+        "name": "Incendiary Pillar",
+        "damage": "50+"
+      },
+      {
+        "name": "Burn It All Up",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "9345",
-    "externalId": null,
+    "externalId": "rsv10pt5-102",
     "tcgdex_id": "sv10.5w-102",
     "localId": "102",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "102/86",
+    "cardNumber": "102/086",
     "cardName": "Lampent",
-    "fullDisplayName": "Lampent 102/86 White Flare",
+    "fullDisplayName": "Lampent 102/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2374,18 +2970,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-102-low.png",
-    "imageHighSrc": "cards/rsv10pt5-102-high.png"
+    "imageHighSrc": "cards/rsv10pt5-102-high.png",
+    "attacks": [
+      {
+        "name": "Fire Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9344",
-    "externalId": null,
+    "externalId": "rsv10pt5-101",
     "tcgdex_id": "sv10.5w-101",
     "localId": "101",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "101/86",
+    "cardNumber": "101/086",
     "cardName": "Litwick",
-    "fullDisplayName": "Litwick 101/86 White Flare",
+    "fullDisplayName": "Litwick 101/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2407,18 +3009,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-101-low.png",
-    "imageHighSrc": "cards/rsv10pt5-101-high.png"
+    "imageHighSrc": "cards/rsv10pt5-101-high.png",
+    "attacks": [
+      {
+        "name": "Brighten and Burn",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9343",
-    "externalId": null,
+    "externalId": "rsv10pt5-100",
     "tcgdex_id": "sv10.5w-100",
     "localId": "100",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "100/86",
+    "cardNumber": "100/086",
     "cardName": "Simisear",
-    "fullDisplayName": "Simisear 100/86 White Flare",
+    "fullDisplayName": "Simisear 100/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2440,18 +3048,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-100-low.png",
-    "imageHighSrc": "cards/rsv10pt5-100-high.png"
+    "imageHighSrc": "cards/rsv10pt5-100-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9342",
-    "externalId": null,
+    "externalId": "rsv10pt5-99",
     "tcgdex_id": "sv10.5w-099",
     "localId": "099",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "099/86",
+    "cardNumber": "099/086",
     "cardName": "Pansear",
-    "fullDisplayName": "Pansear 099/86 White Flare",
+    "fullDisplayName": "Pansear 099/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2473,18 +3087,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-099-low.png",
-    "imageHighSrc": "cards/rsv10pt5-099-high.png"
+    "imageHighSrc": "cards/rsv10pt5-099-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9341",
-    "externalId": null,
+    "externalId": "rsv10pt5-98",
     "tcgdex_id": "sv10.5w-098",
     "localId": "098",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "098/86",
+    "cardNumber": "098/086",
     "cardName": "Emboar",
-    "fullDisplayName": "Emboar 098/86 White Flare",
+    "fullDisplayName": "Emboar 098/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2506,18 +3130,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-098-low.png",
-    "imageHighSrc": "cards/rsv10pt5-098-high.png"
+    "imageHighSrc": "cards/rsv10pt5-098-high.png",
+    "attacks": [
+      {
+        "name": "Heat Crash",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9340",
-    "externalId": null,
+    "externalId": "rsv10pt5-97",
     "tcgdex_id": "sv10.5w-097",
     "localId": "097",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "097/86",
+    "cardNumber": "097/086",
     "cardName": "Pignite",
-    "fullDisplayName": "Pignite 097/86 White Flare",
+    "fullDisplayName": "Pignite 097/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2539,18 +3169,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-097-low.png",
-    "imageHighSrc": "cards/rsv10pt5-097-high.png"
+    "imageHighSrc": "cards/rsv10pt5-097-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "30"
+      },
+      {
+        "name": "Heat Crash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9339",
-    "externalId": null,
+    "externalId": "rsv10pt5-96",
     "tcgdex_id": "sv10.5w-096",
     "localId": "096",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "096/86",
+    "cardNumber": "096/086",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig 096/86 White Flare",
+    "fullDisplayName": "Tepig 096/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2572,18 +3212,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-096-low.png",
-    "imageHighSrc": "cards/rsv10pt5-096-high.png"
+    "imageHighSrc": "cards/rsv10pt5-096-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9338",
-    "externalId": null,
+    "externalId": "rsv10pt5-95",
     "tcgdex_id": "sv10.5w-095",
     "localId": "095",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "095/86",
+    "cardNumber": "095/086",
     "cardName": "Virizion",
-    "fullDisplayName": "Virizion 095/86 White Flare",
+    "fullDisplayName": "Virizion 095/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2605,18 +3255,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-095-low.png",
-    "imageHighSrc": "cards/rsv10pt5-095-high.png"
+    "imageHighSrc": "cards/rsv10pt5-095-high.png",
+    "attacks": [
+      {
+        "name": "Giga Drain",
+        "damage": "30"
+      },
+      {
+        "name": "Emerald Blade",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "9337",
-    "externalId": null,
+    "externalId": "rsv10pt5-94",
     "tcgdex_id": "sv10.5w-094",
     "localId": "094",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "094/86",
+    "cardNumber": "094/086",
     "cardName": "Accelgor",
-    "fullDisplayName": "Accelgor 094/86 White Flare",
+    "fullDisplayName": "Accelgor 094/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2638,18 +3298,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-094-low.png",
-    "imageHighSrc": "cards/rsv10pt5-094-high.png"
+    "imageHighSrc": "cards/rsv10pt5-094-high.png",
+    "attacks": [
+      {
+        "name": "Acid Spray",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9336",
-    "externalId": null,
+    "externalId": "rsv10pt5-93",
     "tcgdex_id": "sv10.5w-093",
     "localId": "093",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "093/86",
+    "cardNumber": "093/086",
     "cardName": "Shelmet",
-    "fullDisplayName": "Shelmet 093/86 White Flare",
+    "fullDisplayName": "Shelmet 093/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2671,18 +3337,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-093-low.png",
-    "imageHighSrc": "cards/rsv10pt5-093-high.png"
+    "imageHighSrc": "cards/rsv10pt5-093-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt Bounce",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9335",
-    "externalId": null,
+    "externalId": "rsv10pt5-92",
     "tcgdex_id": "sv10.5w-092",
     "localId": "092",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "092/86",
+    "cardNumber": "092/086",
     "cardName": "Sawsbuck",
-    "fullDisplayName": "Sawsbuck 092/86 White Flare",
+    "fullDisplayName": "Sawsbuck 092/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2704,18 +3376,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-092-low.png",
-    "imageHighSrc": "cards/rsv10pt5-092-high.png"
+    "imageHighSrc": "cards/rsv10pt5-092-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "50"
+      },
+      {
+        "name": "Solar Beam",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9334",
-    "externalId": null,
+    "externalId": "rsv10pt5-91",
     "tcgdex_id": "sv10.5w-091",
     "localId": "091",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "091/86",
+    "cardNumber": "091/086",
     "cardName": "Deerling",
-    "fullDisplayName": "Deerling 091/86 White Flare",
+    "fullDisplayName": "Deerling 091/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2737,18 +3419,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-091-low.png",
-    "imageHighSrc": "cards/rsv10pt5-091-high.png"
+    "imageHighSrc": "cards/rsv10pt5-091-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9333",
-    "externalId": null,
+    "externalId": "rsv10pt5-90",
     "tcgdex_id": "sv10.5w-090",
     "localId": "090",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "090/86",
+    "cardNumber": "090/086",
     "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 090/86 White Flare",
+    "fullDisplayName": "Cottonee 090/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2770,18 +3458,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-090-low.png",
-    "imageHighSrc": "cards/rsv10pt5-090-high.png"
+    "imageHighSrc": "cards/rsv10pt5-090-high.png",
+    "attacks": [
+      {
+        "name": "Absorb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9332",
-    "externalId": null,
+    "externalId": "rsv10pt5-89",
     "tcgdex_id": "sv10.5w-089",
     "localId": "089",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "089/86",
+    "cardNumber": "089/086",
     "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 089/86 White Flare",
+    "fullDisplayName": "Leavanny 089/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2803,18 +3497,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-089-low.png",
-    "imageHighSrc": "cards/rsv10pt5-089-high.png"
+    "imageHighSrc": "cards/rsv10pt5-089-high.png",
+    "attacks": [
+      {
+        "name": "Healing Wrapping",
+        "damage": null
+      },
+      {
+        "name": "X-Scissor",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "9331",
-    "externalId": null,
+    "externalId": "rsv10pt5-88",
     "tcgdex_id": "sv10.5w-088",
     "localId": "088",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "088/86",
+    "cardNumber": "088/086",
     "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 088/86 White Flare",
+    "fullDisplayName": "Swadloon 088/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2836,18 +3540,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-088-low.png",
-    "imageHighSrc": "cards/rsv10pt5-088-high.png"
+    "imageHighSrc": "cards/rsv10pt5-088-high.png",
+    "attacks": [
+      {
+        "name": "Bug Buzz",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9330",
-    "externalId": null,
+    "externalId": "rsv10pt5-87",
     "tcgdex_id": "sv10.5w-087",
     "localId": "087",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "087/86",
+    "cardNumber": "087/086",
     "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 087/86 White Flare",
+    "fullDisplayName": "Sewaddle 087/086 White Flare",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2869,18 +3579,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-087-low.png",
-    "imageHighSrc": "cards/rsv10pt5-087-high.png"
+    "imageHighSrc": "cards/rsv10pt5-087-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9329",
-    "externalId": null,
+    "externalId": "rsv10pt5-86",
     "tcgdex_id": "sv10.5w-086",
     "localId": "086",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "086/86",
+    "cardNumber": "086/086",
     "cardName": "Ignition Energy",
-    "fullDisplayName": "Ignition Energy 086/86 White Flare",
+    "fullDisplayName": "Ignition Energy 086/086 White Flare",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -2898,18 +3614,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-086-low.png",
-    "imageHighSrc": "cards/rsv10pt5-086-high.png"
+    "imageHighSrc": "cards/rsv10pt5-086-high.png",
+    "rules": "If this card is attached to 1 of your Pokémon, discard it at the end of your turn.  As long as this card is attached to a Pokémon, it provides Colorless Energy.  If this card is attached to an Evolution Pokémon, it provides ColorlessColorlessColorless Energy instead."
   },
   {
     "masterCardId": "9328",
-    "externalId": null,
+    "externalId": "rsv10pt5-85",
     "tcgdex_id": "sv10.5w-085",
     "localId": "085",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "085/86",
+    "cardNumber": "085/086",
     "cardName": "Tool Scrapper",
-    "fullDisplayName": "Tool Scrapper 085/86 White Flare",
+    "fullDisplayName": "Tool Scrapper 085/086 White Flare",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -2927,18 +3644,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-085-low.png",
-    "imageHighSrc": "cards/rsv10pt5-085-high.png"
+    "imageHighSrc": "cards/rsv10pt5-085-high.png",
+    "rules": "Choose up to 2 Pokémon Tools attached to Pokémon (yours or your opponent's) and discard them.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "9327",
-    "externalId": null,
+    "externalId": "rsv10pt5-84",
     "tcgdex_id": "sv10.5w-084",
     "localId": "084",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "084/86",
+    "cardNumber": "084/086",
     "cardName": "Hilda",
-    "fullDisplayName": "Hilda 084/86 White Flare",
+    "fullDisplayName": "Hilda 084/086 White Flare",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -2956,18 +3674,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-084-low.png",
-    "imageHighSrc": "cards/rsv10pt5-084-high.png"
+    "imageHighSrc": "cards/rsv10pt5-084-high.png",
+    "rules": "Search your deck for an Evolution Pokémon and an Energy card, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "9326",
-    "externalId": null,
+    "externalId": "rsv10pt5-83",
     "tcgdex_id": "sv10.5w-083",
     "localId": "083",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "083/86",
+    "cardNumber": "083/086",
     "cardName": "Harlequin",
-    "fullDisplayName": "Harlequin 083/86 White Flare",
+    "fullDisplayName": "Harlequin 083/086 White Flare",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -2985,18 +3704,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-083-low.png",
-    "imageHighSrc": "cards/rsv10pt5-083-high.png"
+    "imageHighSrc": "cards/rsv10pt5-083-high.png",
+    "rules": "Each player shuffles their hand into their deck. Then, flip a coin. If heads, you draw 5 cards, and your opponent draws 3 cards. If tails, you draw 3 cards, and your opponent draws 5 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "9325",
-    "externalId": null,
+    "externalId": "rsv10pt5-82",
     "tcgdex_id": "sv10.5w-082",
     "localId": "082",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "082/86",
+    "cardNumber": "082/086",
     "cardName": "Energy Retrieval",
-    "fullDisplayName": "Energy Retrieval 082/86 White Flare",
+    "fullDisplayName": "Energy Retrieval 082/086 White Flare",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -3014,18 +3734,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-082-low.png",
-    "imageHighSrc": "cards/rsv10pt5-082-high.png"
+    "imageHighSrc": "cards/rsv10pt5-082-high.png",
+    "rules": "Put up to 2 Basic Energy cards from your discard pile into your hand.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "9324",
-    "externalId": null,
+    "externalId": "rsv10pt5-81",
     "tcgdex_id": "sv10.5w-081",
     "localId": "081",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "081/86",
+    "cardNumber": "081/086",
     "cardName": "Cheren",
-    "fullDisplayName": "Cheren 081/86 White Flare",
+    "fullDisplayName": "Cheren 081/086 White Flare",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -3043,18 +3764,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-081-low.png",
-    "imageHighSrc": "cards/rsv10pt5-081-high.png"
+    "imageHighSrc": "cards/rsv10pt5-081-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "9323",
-    "externalId": null,
+    "externalId": "rsv10pt5-80",
     "tcgdex_id": "sv10.5w-080",
     "localId": "080",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "080/86",
+    "cardNumber": "080/086",
     "cardName": "Brave Bangle",
-    "fullDisplayName": "Brave Bangle 080/86 White Flare",
+    "fullDisplayName": "Brave Bangle 080/086 White Flare",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -3072,18 +3794,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-080-low.png",
-    "imageHighSrc": "cards/rsv10pt5-080-high.png"
+    "imageHighSrc": "cards/rsv10pt5-080-high.png",
+    "rules": "If the Pokémon this card is attached to doesn't have a Rule Box, the attacks it uses do 30 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance). (Pokémon ex, Pokémon V, etc. have Rule Boxes.)\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached.\n\nAttach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached."
   },
   {
     "masterCardId": "9322",
-    "externalId": null,
+    "externalId": "rsv10pt5-79",
     "tcgdex_id": "sv10.5w-079",
     "localId": "079",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "079/86",
+    "cardNumber": "079/086",
     "cardName": "Antique Plume Fossil",
-    "fullDisplayName": "Antique Plume Fossil 079/86 White Flare",
+    "fullDisplayName": "Antique Plume Fossil 079/086 White Flare",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -3101,18 +3824,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-079-low.png",
-    "imageHighSrc": "cards/rsv10pt5-079-high.png"
+    "imageHighSrc": "cards/rsv10pt5-079-high.png",
+    "rules": "Play this card as if it were a 60-HP Basic Colorless Pokémon. This card can't be affected by any Special Conditions and can't retreat.  At any time during your turn, you may discard this card from play.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "9321",
-    "externalId": null,
+    "externalId": "rsv10pt5-78",
     "tcgdex_id": "sv10.5w-078",
     "localId": "078",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "078/86",
+    "cardNumber": "078/086",
     "cardName": "Tornadus",
-    "fullDisplayName": "Tornadus 078/86 White Flare",
+    "fullDisplayName": "Tornadus 078/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3134,18 +3858,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-078-low.png",
-    "imageHighSrc": "cards/rsv10pt5-078-high.png"
+    "imageHighSrc": "cards/rsv10pt5-078-high.png",
+    "attacks": [
+      {
+        "name": "Wrapped in Wind",
+        "damage": null
+      },
+      {
+        "name": "Hurricane",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9320",
-    "externalId": null,
+    "externalId": "rsv10pt5-77",
     "tcgdex_id": "sv10.5w-077",
     "localId": "077",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "077/86",
+    "cardNumber": "077/086",
     "cardName": "Bouffalant ex",
-    "fullDisplayName": "Bouffalant ex 077/86 White Flare",
+    "fullDisplayName": "Bouffalant ex 077/086 White Flare",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3168,18 +3902,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-077-low.png",
-    "imageHighSrc": "cards/rsv10pt5-077-high.png"
+    "imageHighSrc": "cards/rsv10pt5-077-high.png",
+    "attacks": [
+      {
+        "name": "Gold Breaker",
+        "damage": "100+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9319",
-    "externalId": null,
+    "externalId": "rsv10pt5-76",
     "tcgdex_id": "sv10.5w-076",
     "localId": "076",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "076/86",
+    "cardNumber": "076/086",
     "cardName": "Stoutland",
-    "fullDisplayName": "Stoutland 076/86 White Flare",
+    "fullDisplayName": "Stoutland 076/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3201,18 +3942,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-076-low.png",
-    "imageHighSrc": "cards/rsv10pt5-076-high.png"
+    "imageHighSrc": "cards/rsv10pt5-076-high.png",
+    "attacks": [
+      {
+        "name": "Odor Sleuth",
+        "damage": null
+      },
+      {
+        "name": "Special Fang",
+        "damage": "100+"
+      }
+    ]
   },
   {
     "masterCardId": "9318",
-    "externalId": null,
+    "externalId": "rsv10pt5-75",
     "tcgdex_id": "sv10.5w-075",
     "localId": "075",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "075/86",
+    "cardNumber": "075/086",
     "cardName": "Herdier",
-    "fullDisplayName": "Herdier 075/86 White Flare",
+    "fullDisplayName": "Herdier 075/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3234,18 +3985,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-075-low.png",
-    "imageHighSrc": "cards/rsv10pt5-075-high.png"
+    "imageHighSrc": "cards/rsv10pt5-075-high.png",
+    "attacks": [
+      {
+        "name": "Roar",
+        "damage": null
+      },
+      {
+        "name": "Lunge Out",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9317",
-    "externalId": null,
+    "externalId": "rsv10pt5-74",
     "tcgdex_id": "sv10.5w-074",
     "localId": "074",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "074/86",
+    "cardNumber": "074/086",
     "cardName": "Lillipup",
-    "fullDisplayName": "Lillipup 074/86 White Flare",
+    "fullDisplayName": "Lillipup 074/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3267,18 +4028,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-074-low.png",
-    "imageHighSrc": "cards/rsv10pt5-074-high.png"
+    "imageHighSrc": "cards/rsv10pt5-074-high.png",
+    "attacks": [
+      {
+        "name": "Play Rough",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9316",
-    "externalId": null,
+    "externalId": "rsv10pt5-73",
     "tcgdex_id": "sv10.5w-073",
     "localId": "073",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "073/86",
+    "cardNumber": "073/086",
     "cardName": "Watchog",
-    "fullDisplayName": "Watchog 073/86 White Flare",
+    "fullDisplayName": "Watchog 073/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3300,18 +4067,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-073-low.png",
-    "imageHighSrc": "cards/rsv10pt5-073-high.png"
+    "imageHighSrc": "cards/rsv10pt5-073-high.png",
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "damage": null
+      },
+      {
+        "name": "Hyper Fang",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9315",
-    "externalId": null,
+    "externalId": "rsv10pt5-72",
     "tcgdex_id": "sv10.5w-072",
     "localId": "072",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "072/86",
+    "cardNumber": "072/086",
     "cardName": "Patrat",
-    "fullDisplayName": "Patrat 072/86 White Flare",
+    "fullDisplayName": "Patrat 072/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3333,18 +4110,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-072-low.png",
-    "imageHighSrc": "cards/rsv10pt5-072-high.png"
+    "imageHighSrc": "cards/rsv10pt5-072-high.png",
+    "attacks": [
+      {
+        "name": "Procurement",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9314",
-    "externalId": null,
+    "externalId": "rsv10pt5-71",
     "tcgdex_id": "sv10.5w-071",
     "localId": "071",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "071/86",
+    "cardNumber": "071/086",
     "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon 071/86 White Flare",
+    "fullDisplayName": "Druddigon 071/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3366,18 +4153,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-071-low.png",
-    "imageHighSrc": "cards/rsv10pt5-071-high.png"
+    "imageHighSrc": "cards/rsv10pt5-071-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "40"
+      },
+      {
+        "name": "Ambush",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "9313",
-    "externalId": null,
+    "externalId": "rsv10pt5-70",
     "tcgdex_id": "sv10.5w-070",
     "localId": "070",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "070/86",
+    "cardNumber": "070/086",
     "cardName": "Durant",
-    "fullDisplayName": "Durant 070/86 White Flare",
+    "fullDisplayName": "Durant 070/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3399,18 +4196,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-070-low.png",
-    "imageHighSrc": "cards/rsv10pt5-070-high.png"
+    "imageHighSrc": "cards/rsv10pt5-070-high.png",
+    "attacks": [
+      {
+        "name": "Bite Together",
+        "damage": "20+"
+      },
+      {
+        "name": "Vise Grip",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9312",
-    "externalId": null,
+    "externalId": "rsv10pt5-69",
     "tcgdex_id": "sv10.5w-069",
     "localId": "069",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "069/86",
+    "cardNumber": "069/086",
     "cardName": "Ferrothorn",
-    "fullDisplayName": "Ferrothorn 069/86 White Flare",
+    "fullDisplayName": "Ferrothorn 069/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3432,18 +4239,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-069-low.png",
-    "imageHighSrc": "cards/rsv10pt5-069-high.png"
+    "imageHighSrc": "cards/rsv10pt5-069-high.png",
+    "attacks": [
+      {
+        "name": "Power Whip",
+        "damage": null
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "9311",
-    "externalId": null,
+    "externalId": "rsv10pt5-68",
     "tcgdex_id": "sv10.5w-068",
     "localId": "068",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "068/86",
+    "cardNumber": "068/086",
     "cardName": "Ferroseed",
-    "fullDisplayName": "Ferroseed 068/86 White Flare",
+    "fullDisplayName": "Ferroseed 068/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3465,18 +4282,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-068-low.png",
-    "imageHighSrc": "cards/rsv10pt5-068-high.png"
+    "imageHighSrc": "cards/rsv10pt5-068-high.png",
+    "attacks": [
+      {
+        "name": "Zzzt",
+        "damage": "10"
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9310",
-    "externalId": null,
+    "externalId": "rsv10pt5-67",
     "tcgdex_id": "sv10.5w-067",
     "localId": "067",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "067/86",
+    "cardNumber": "067/086",
     "cardName": "Hydreigon ex",
-    "fullDisplayName": "Hydreigon ex 067/86 White Flare",
+    "fullDisplayName": "Hydreigon ex 067/086 White Flare",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3499,18 +4326,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-067-low.png",
-    "imageHighSrc": "cards/rsv10pt5-067-high.png"
+    "imageHighSrc": "cards/rsv10pt5-067-high.png",
+    "attacks": [
+      {
+        "name": "Dark Bite",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9309",
-    "externalId": null,
+    "externalId": "rsv10pt5-66",
     "tcgdex_id": "sv10.5w-066",
     "localId": "066",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "066/86",
+    "cardNumber": "066/086",
     "cardName": "Zweilous",
-    "fullDisplayName": "Zweilous 066/86 White Flare",
+    "fullDisplayName": "Zweilous 066/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3532,18 +4366,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-066-low.png",
-    "imageHighSrc": "cards/rsv10pt5-066-high.png"
+    "imageHighSrc": "cards/rsv10pt5-066-high.png",
+    "attacks": [
+      {
+        "name": "Double Hit",
+        "damage": "40×"
+      },
+      {
+        "name": "Pitch-Black Fangs",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9308",
-    "externalId": null,
+    "externalId": "rsv10pt5-65",
     "tcgdex_id": "sv10.5w-065",
     "localId": "065",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "065/86",
+    "cardNumber": "065/086",
     "cardName": "Deino",
-    "fullDisplayName": "Deino 065/86 White Flare",
+    "fullDisplayName": "Deino 065/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3565,18 +4409,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-065-low.png",
-    "imageHighSrc": "cards/rsv10pt5-065-high.png"
+    "imageHighSrc": "cards/rsv10pt5-065-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "20"
+      },
+      {
+        "name": "Darkness Fang",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9307",
-    "externalId": null,
+    "externalId": "rsv10pt5-64",
     "tcgdex_id": "sv10.5w-064",
     "localId": "064",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "064/86",
+    "cardNumber": "064/086",
     "cardName": "Mandibuzz",
-    "fullDisplayName": "Mandibuzz 064/86 White Flare",
+    "fullDisplayName": "Mandibuzz 064/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3598,18 +4452,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-064-low.png",
-    "imageHighSrc": "cards/rsv10pt5-064-high.png"
+    "imageHighSrc": "cards/rsv10pt5-064-high.png",
+    "attacks": [
+      {
+        "name": "Cutting Wind",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9306",
-    "externalId": null,
+    "externalId": "rsv10pt5-63",
     "tcgdex_id": "sv10.5w-063",
     "localId": "063",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "063/86",
+    "cardNumber": "063/086",
     "cardName": "Vullaby",
-    "fullDisplayName": "Vullaby 063/86 White Flare",
+    "fullDisplayName": "Vullaby 063/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3631,18 +4491,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-063-low.png",
-    "imageHighSrc": "cards/rsv10pt5-063-high.png"
+    "imageHighSrc": "cards/rsv10pt5-063-high.png",
+    "attacks": [
+      {
+        "name": "Playful Kick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9305",
-    "externalId": null,
+    "externalId": "rsv10pt5-62",
     "tcgdex_id": "sv10.5w-062",
     "localId": "062",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "062/86",
+    "cardNumber": "062/086",
     "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark 062/86 White Flare",
+    "fullDisplayName": "Zoroark 062/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3664,18 +4530,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-062-low.png",
-    "imageHighSrc": "cards/rsv10pt5-062-high.png"
+    "imageHighSrc": "cards/rsv10pt5-062-high.png",
+    "attacks": [
+      {
+        "name": "Mind Jack",
+        "damage": "30×"
+      },
+      {
+        "name": "Foul Play",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9304",
-    "externalId": null,
+    "externalId": "rsv10pt5-61",
     "tcgdex_id": "sv10.5w-061",
     "localId": "061",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "061/86",
+    "cardNumber": "061/086",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 061/86 White Flare",
+    "fullDisplayName": "Zorua 061/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3697,18 +4573,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-061-low.png",
-    "imageHighSrc": "cards/rsv10pt5-061-high.png"
+    "imageHighSrc": "cards/rsv10pt5-061-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9303",
-    "externalId": null,
+    "externalId": "rsv10pt5-60",
     "tcgdex_id": "sv10.5w-060",
     "localId": "060",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "060/86",
+    "cardNumber": "060/086",
     "cardName": "Garbodor",
-    "fullDisplayName": "Garbodor 060/86 White Flare",
+    "fullDisplayName": "Garbodor 060/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3730,18 +4612,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-060-low.png",
-    "imageHighSrc": "cards/rsv10pt5-060-high.png"
+    "imageHighSrc": "cards/rsv10pt5-060-high.png",
+    "attacks": [
+      {
+        "name": "Suffocating Gas",
+        "damage": "40"
+      },
+      {
+        "name": "Gunk Shot",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9302",
-    "externalId": null,
+    "externalId": "rsv10pt5-59",
     "tcgdex_id": "sv10.5w-059",
     "localId": "059",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "059/86",
+    "cardNumber": "059/086",
     "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 059/86 White Flare",
+    "fullDisplayName": "Trubbish 059/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3763,18 +4655,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-059-low.png",
-    "imageHighSrc": "cards/rsv10pt5-059-high.png"
+    "imageHighSrc": "cards/rsv10pt5-059-high.png",
+    "attacks": [
+      {
+        "name": "Drool",
+        "damage": "10"
+      },
+      {
+        "name": "Sludge Bomb",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9301",
-    "externalId": null,
+    "externalId": "rsv10pt5-58",
     "tcgdex_id": "sv10.5w-058",
     "localId": "058",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "058/86",
+    "cardNumber": "058/086",
     "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 058/86 White Flare",
+    "fullDisplayName": "Scrafty 058/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3796,18 +4698,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-058-low.png",
-    "imageHighSrc": "cards/rsv10pt5-058-high.png"
+    "imageHighSrc": "cards/rsv10pt5-058-high.png",
+    "attacks": [
+      {
+        "name": "Ruffians Attack",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "9300",
-    "externalId": null,
+    "externalId": "rsv10pt5-57",
     "tcgdex_id": "sv10.5w-057",
     "localId": "057",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "057/86",
+    "cardNumber": "057/086",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 057/86 White Flare",
+    "fullDisplayName": "Scraggy 057/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3829,18 +4737,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-057-low.png",
-    "imageHighSrc": "cards/rsv10pt5-057-high.png"
+    "imageHighSrc": "cards/rsv10pt5-057-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Invade",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9299",
-    "externalId": null,
+    "externalId": "rsv10pt5-56",
     "tcgdex_id": "sv10.5w-056",
     "localId": "056",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "056/86",
+    "cardNumber": "056/086",
     "cardName": "Liepard",
-    "fullDisplayName": "Liepard 056/86 White Flare",
+    "fullDisplayName": "Liepard 056/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3862,18 +4780,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-056-low.png",
-    "imageHighSrc": "cards/rsv10pt5-056-high.png"
+    "imageHighSrc": "cards/rsv10pt5-056-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9298",
-    "externalId": null,
+    "externalId": "rsv10pt5-55",
     "tcgdex_id": "sv10.5w-055",
     "localId": "055",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "055/86",
+    "cardNumber": "055/086",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 055/86 White Flare",
+    "fullDisplayName": "Purrloin 055/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3895,18 +4819,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-055-low.png",
-    "imageHighSrc": "cards/rsv10pt5-055-high.png"
+    "imageHighSrc": "cards/rsv10pt5-055-high.png",
+    "attacks": [
+      {
+        "name": "Invite Evil",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9297",
-    "externalId": null,
+    "externalId": "rsv10pt5-54",
     "tcgdex_id": "sv10.5w-054",
     "localId": "054",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "054/86",
+    "cardNumber": "054/086",
     "cardName": "Terrakion",
-    "fullDisplayName": "Terrakion 054/86 White Flare",
+    "fullDisplayName": "Terrakion 054/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3928,18 +4858,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-054-low.png",
-    "imageHighSrc": "cards/rsv10pt5-054-high.png"
+    "imageHighSrc": "cards/rsv10pt5-054-high.png",
+    "attacks": [
+      {
+        "name": "Retaliate",
+        "damage": "50+"
+      },
+      {
+        "name": "Land Crush",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9296",
-    "externalId": null,
+    "externalId": "rsv10pt5-53",
     "tcgdex_id": "sv10.5w-053",
     "localId": "053",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "053/86",
+    "cardNumber": "053/086",
     "cardName": "Mienshao",
-    "fullDisplayName": "Mienshao 053/86 White Flare",
+    "fullDisplayName": "Mienshao 053/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3961,18 +4901,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-053-low.png",
-    "imageHighSrc": "cards/rsv10pt5-053-high.png"
+    "imageHighSrc": "cards/rsv10pt5-053-high.png",
+    "attacks": [
+      {
+        "name": "Low Sweep",
+        "damage": "40"
+      },
+      {
+        "name": "Smash Uppercut",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9295",
-    "externalId": null,
+    "externalId": "rsv10pt5-52",
     "tcgdex_id": "sv10.5w-052",
     "localId": "052",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "052/86",
+    "cardNumber": "052/086",
     "cardName": "Mienfoo",
-    "fullDisplayName": "Mienfoo 052/86 White Flare",
+    "fullDisplayName": "Mienfoo 052/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3994,18 +4944,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-052-low.png",
-    "imageHighSrc": "cards/rsv10pt5-052-high.png"
+    "imageHighSrc": "cards/rsv10pt5-052-high.png",
+    "attacks": [
+      {
+        "name": "Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9294",
-    "externalId": null,
+    "externalId": "rsv10pt5-51",
     "tcgdex_id": "sv10.5w-051",
     "localId": "051",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "051/86",
+    "cardNumber": "051/086",
     "cardName": "Archeops",
-    "fullDisplayName": "Archeops 051/86 White Flare",
+    "fullDisplayName": "Archeops 051/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4027,18 +4983,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-051-low.png",
-    "imageHighSrc": "cards/rsv10pt5-051-high.png"
+    "imageHighSrc": "cards/rsv10pt5-051-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9293",
-    "externalId": null,
+    "externalId": "rsv10pt5-50",
     "tcgdex_id": "sv10.5w-050",
     "localId": "050",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "050/86",
+    "cardNumber": "050/086",
     "cardName": "Archen",
-    "fullDisplayName": "Archen 050/86 White Flare",
+    "fullDisplayName": "Archen 050/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4060,18 +5022,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-050-low.png",
-    "imageHighSrc": "cards/rsv10pt5-050-high.png"
+    "imageHighSrc": "cards/rsv10pt5-050-high.png",
+    "attacks": [
+      {
+        "name": "Acrobatics",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "9292",
-    "externalId": null,
+    "externalId": "rsv10pt5-49",
     "tcgdex_id": "sv10.5w-049",
     "localId": "049",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "049/86",
+    "cardNumber": "049/086",
     "cardName": "Sawk",
-    "fullDisplayName": "Sawk 049/86 White Flare",
+    "fullDisplayName": "Sawk 049/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4093,18 +5061,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-049-low.png",
-    "imageHighSrc": "cards/rsv10pt5-049-high.png"
+    "imageHighSrc": "cards/rsv10pt5-049-high.png",
+    "attacks": [
+      {
+        "name": "Elbow Strike",
+        "damage": "30"
+      },
+      {
+        "name": "Rising Chop",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9291",
-    "externalId": null,
+    "externalId": "rsv10pt5-48",
     "tcgdex_id": "sv10.5w-048",
     "localId": "048",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "048/86",
+    "cardNumber": "048/086",
     "cardName": "Gigalith",
-    "fullDisplayName": "Gigalith 048/86 White Flare",
+    "fullDisplayName": "Gigalith 048/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4126,18 +5104,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-048-low.png",
-    "imageHighSrc": "cards/rsv10pt5-048-high.png"
+    "imageHighSrc": "cards/rsv10pt5-048-high.png",
+    "attacks": [
+      {
+        "name": "Vengeful Cannon",
+        "damage": "20×"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "9290",
-    "externalId": null,
+    "externalId": "rsv10pt5-47",
     "tcgdex_id": "sv10.5w-047",
     "localId": "047",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "047/86",
+    "cardNumber": "047/086",
     "cardName": "Boldore",
-    "fullDisplayName": "Boldore 047/86 White Flare",
+    "fullDisplayName": "Boldore 047/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4159,18 +5147,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-047-low.png",
-    "imageHighSrc": "cards/rsv10pt5-047-high.png"
+    "imageHighSrc": "cards/rsv10pt5-047-high.png",
+    "attacks": [
+      {
+        "name": "Smack Down",
+        "damage": "30+"
+      },
+      {
+        "name": "Power Gem",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9289",
-    "externalId": null,
+    "externalId": "rsv10pt5-46",
     "tcgdex_id": "sv10.5w-046",
     "localId": "046",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "046/86",
+    "cardNumber": "046/086",
     "cardName": "Roggenrola",
-    "fullDisplayName": "Roggenrola 046/86 White Flare",
+    "fullDisplayName": "Roggenrola 046/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4192,18 +5190,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-046-low.png",
-    "imageHighSrc": "cards/rsv10pt5-046-high.png"
+    "imageHighSrc": "cards/rsv10pt5-046-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Rolling Rocks",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9288",
-    "externalId": null,
+    "externalId": "rsv10pt5-45",
     "tcgdex_id": "sv10.5w-045",
     "localId": "045",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "045/86",
+    "cardNumber": "045/086",
     "cardName": "Jellicent ex",
-    "fullDisplayName": "Jellicent ex 045/86 White Flare",
+    "fullDisplayName": "Jellicent ex 045/086 White Flare",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4226,18 +5234,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-045-low.png",
-    "imageHighSrc": "cards/rsv10pt5-045-high.png"
+    "imageHighSrc": "cards/rsv10pt5-045-high.png",
+    "attacks": [
+      {
+        "name": "Power Press",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9287",
-    "externalId": null,
+    "externalId": "rsv10pt5-44",
     "tcgdex_id": "sv10.5w-044",
     "localId": "044",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "044/86",
+    "cardNumber": "044/086",
     "cardName": "Frillish",
-    "fullDisplayName": "Frillish 044/86 White Flare",
+    "fullDisplayName": "Frillish 044/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4259,18 +5274,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-044-low.png",
-    "imageHighSrc": "cards/rsv10pt5-044-high.png"
+    "imageHighSrc": "cards/rsv10pt5-044-high.png",
+    "attacks": [
+      {
+        "name": "Oceanic Gloom",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9286",
-    "externalId": null,
+    "externalId": "rsv10pt5-43",
     "tcgdex_id": "sv10.5w-043",
     "localId": "043",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "043/86",
+    "cardNumber": "043/086",
     "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 043/86 White Flare",
+    "fullDisplayName": "Gothitelle 043/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4292,18 +5313,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-043-low.png",
-    "imageHighSrc": "cards/rsv10pt5-043-high.png"
+    "imageHighSrc": "cards/rsv10pt5-043-high.png",
+    "attacks": [
+      {
+        "name": "Synchro Shot",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "9285",
-    "externalId": null,
+    "externalId": "rsv10pt5-42",
     "tcgdex_id": "sv10.5w-042",
     "localId": "042",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "042/86",
+    "cardNumber": "042/086",
     "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 042/86 White Flare",
+    "fullDisplayName": "Gothorita 042/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4325,18 +5352,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-042-low.png",
-    "imageHighSrc": "cards/rsv10pt5-042-high.png"
+    "imageHighSrc": "cards/rsv10pt5-042-high.png",
+    "attacks": [
+      {
+        "name": "Fortunate Eye",
+        "damage": null
+      },
+      {
+        "name": "Psyshot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9284",
-    "externalId": null,
+    "externalId": "rsv10pt5-41",
     "tcgdex_id": "sv10.5w-041",
     "localId": "041",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "041/86",
+    "cardNumber": "041/086",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 041/86 White Flare",
+    "fullDisplayName": "Gothita 041/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4358,18 +5395,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-041-low.png",
-    "imageHighSrc": "cards/rsv10pt5-041-high.png"
+    "imageHighSrc": "cards/rsv10pt5-041-high.png",
+    "attacks": [
+      {
+        "name": "Super Psy Bolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9283",
-    "externalId": null,
+    "externalId": "rsv10pt5-40",
     "tcgdex_id": "sv10.5w-040",
     "localId": "040",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "040/86",
+    "cardNumber": "040/086",
     "cardName": "Cofagrigus",
-    "fullDisplayName": "Cofagrigus 040/86 White Flare",
+    "fullDisplayName": "Cofagrigus 040/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4391,18 +5434,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-040-low.png",
-    "imageHighSrc": "cards/rsv10pt5-040-high.png"
+    "imageHighSrc": "cards/rsv10pt5-040-high.png",
+    "attacks": [
+      {
+        "name": "Extended Damagriiigus",
+        "damage": null
+      },
+      {
+        "name": "Perplex",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9282",
-    "externalId": null,
+    "externalId": "rsv10pt5-39",
     "tcgdex_id": "sv10.5w-039",
     "localId": "039",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "039/86",
+    "cardNumber": "039/086",
     "cardName": "Yamask",
-    "fullDisplayName": "Yamask 039/86 White Flare",
+    "fullDisplayName": "Yamask 039/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4424,18 +5477,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-039-low.png",
-    "imageHighSrc": "cards/rsv10pt5-039-high.png"
+    "imageHighSrc": "cards/rsv10pt5-039-high.png",
+    "attacks": [
+      {
+        "name": "Focused Wish",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9281",
-    "externalId": null,
+    "externalId": "rsv10pt5-38",
     "tcgdex_id": "sv10.5w-038",
     "localId": "038",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "038/86",
+    "cardNumber": "038/086",
     "cardName": "Sigilyph",
-    "fullDisplayName": "Sigilyph 038/86 White Flare",
+    "fullDisplayName": "Sigilyph 038/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4457,18 +5516,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-038-low.png",
-    "imageHighSrc": "cards/rsv10pt5-038-high.png"
+    "imageHighSrc": "cards/rsv10pt5-038-high.png",
+    "attacks": [
+      {
+        "name": "Reflect",
+        "damage": null
+      },
+      {
+        "name": "Telekinesis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9280",
-    "externalId": null,
+    "externalId": "rsv10pt5-37",
     "tcgdex_id": "sv10.5w-037",
     "localId": "037",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "037/86",
+    "cardNumber": "037/086",
     "cardName": "Swoobat",
-    "fullDisplayName": "Swoobat 037/86 White Flare",
+    "fullDisplayName": "Swoobat 037/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4490,18 +5559,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-037-low.png",
-    "imageHighSrc": "cards/rsv10pt5-037-high.png"
+    "imageHighSrc": "cards/rsv10pt5-037-high.png",
+    "attacks": [
+      {
+        "name": "Happy Return",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9279",
-    "externalId": null,
+    "externalId": "rsv10pt5-36",
     "tcgdex_id": "sv10.5w-036",
     "localId": "036",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "036/86",
+    "cardNumber": "036/086",
     "cardName": "Woobat",
-    "fullDisplayName": "Woobat 036/86 White Flare",
+    "fullDisplayName": "Woobat 036/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4523,18 +5602,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-036-low.png",
-    "imageHighSrc": "cards/rsv10pt5-036-high.png"
+    "imageHighSrc": "cards/rsv10pt5-036-high.png",
+    "attacks": [
+      {
+        "name": "Heart Stamp",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9278",
-    "externalId": null,
+    "externalId": "rsv10pt5-35",
     "tcgdex_id": "sv10.5w-035",
     "localId": "035",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "035/86",
+    "cardNumber": "035/086",
     "cardName": "Stunfisk",
-    "fullDisplayName": "Stunfisk 035/86 White Flare",
+    "fullDisplayName": "Stunfisk 035/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4556,18 +5641,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-035-low.png",
-    "imageHighSrc": "cards/rsv10pt5-035-high.png"
+    "imageHighSrc": "cards/rsv10pt5-035-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Bolt",
+        "damage": "20+"
+      },
+      {
+        "name": "Flop",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9277",
-    "externalId": null,
+    "externalId": "rsv10pt5-34",
     "tcgdex_id": "sv10.5w-034",
     "localId": "034",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "034/86",
+    "cardNumber": "034/086",
     "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 034/86 White Flare",
+    "fullDisplayName": "Galvantula 034/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4589,18 +5684,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-034-low.png",
-    "imageHighSrc": "cards/rsv10pt5-034-high.png"
+    "imageHighSrc": "cards/rsv10pt5-034-high.png",
+    "attacks": [
+      {
+        "name": "Discharge",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "9276",
-    "externalId": null,
+    "externalId": "rsv10pt5-33",
     "tcgdex_id": "sv10.5w-033",
     "localId": "033",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "033/86",
+    "cardNumber": "033/086",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 033/86 White Flare",
+    "fullDisplayName": "Joltik 033/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4622,18 +5723,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-033-low.png",
-    "imageHighSrc": "cards/rsv10pt5-033-high.png"
+    "imageHighSrc": "cards/rsv10pt5-033-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9275",
-    "externalId": null,
+    "externalId": "rsv10pt5-32",
     "tcgdex_id": "sv10.5w-032",
     "localId": "032",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "032/86",
+    "cardNumber": "032/086",
     "cardName": "Zebstrika",
-    "fullDisplayName": "Zebstrika 032/86 White Flare",
+    "fullDisplayName": "Zebstrika 032/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4655,18 +5762,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-032-low.png",
-    "imageHighSrc": "cards/rsv10pt5-032-high.png"
+    "imageHighSrc": "cards/rsv10pt5-032-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Electrobullet",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9274",
-    "externalId": null,
+    "externalId": "rsv10pt5-31",
     "tcgdex_id": "sv10.5w-031",
     "localId": "031",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "031/86",
+    "cardNumber": "031/086",
     "cardName": "Blitzle",
-    "fullDisplayName": "Blitzle 031/86 White Flare",
+    "fullDisplayName": "Blitzle 031/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4688,18 +5805,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-031-low.png",
-    "imageHighSrc": "cards/rsv10pt5-031-high.png"
+    "imageHighSrc": "cards/rsv10pt5-031-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Zap Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9273",
-    "externalId": null,
+    "externalId": "rsv10pt5-30",
     "tcgdex_id": "sv10.5w-030",
     "localId": "030",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "030/86",
+    "cardNumber": "030/086",
     "cardName": "Keldeo ex",
-    "fullDisplayName": "Keldeo ex 030/86 White Flare",
+    "fullDisplayName": "Keldeo ex 030/086 White Flare",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4722,18 +5849,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-030-low.png",
-    "imageHighSrc": "cards/rsv10pt5-030-high.png"
+    "imageHighSrc": "cards/rsv10pt5-030-high.png",
+    "attacks": [
+      {
+        "name": "Gale Thrust",
+        "damage": "30+"
+      },
+      {
+        "name": "Sonic Edge",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9272",
-    "externalId": null,
+    "externalId": "rsv10pt5-29",
     "tcgdex_id": "sv10.5w-029",
     "localId": "029",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "029/86",
+    "cardNumber": "029/086",
     "cardName": "Vanilluxe",
-    "fullDisplayName": "Vanilluxe 029/86 White Flare",
+    "fullDisplayName": "Vanilluxe 029/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4755,18 +5893,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-029-low.png",
-    "imageHighSrc": "cards/rsv10pt5-029-high.png"
+    "imageHighSrc": "cards/rsv10pt5-029-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "60"
+      },
+      {
+        "name": "Double Freeze",
+        "damage": "90×"
+      }
+    ]
   },
   {
     "masterCardId": "9271",
-    "externalId": null,
+    "externalId": "rsv10pt5-28",
     "tcgdex_id": "sv10.5w-028",
     "localId": "028",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "028/86",
+    "cardNumber": "028/086",
     "cardName": "Vanillish",
-    "fullDisplayName": "Vanillish 028/86 White Flare",
+    "fullDisplayName": "Vanillish 028/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4788,18 +5936,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-028-low.png",
-    "imageHighSrc": "cards/rsv10pt5-028-high.png"
+    "imageHighSrc": "cards/rsv10pt5-028-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "30"
+      },
+      {
+        "name": "Ice Beam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9270",
-    "externalId": null,
+    "externalId": "rsv10pt5-27",
     "tcgdex_id": "sv10.5w-027",
     "localId": "027",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "027/86",
+    "cardNumber": "027/086",
     "cardName": "Vanillite",
-    "fullDisplayName": "Vanillite 027/86 White Flare",
+    "fullDisplayName": "Vanillite 027/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4821,18 +5979,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-027-low.png",
-    "imageHighSrc": "cards/rsv10pt5-027-high.png"
+    "imageHighSrc": "cards/rsv10pt5-027-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Ice Edge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9269",
-    "externalId": null,
+    "externalId": "rsv10pt5-26",
     "tcgdex_id": "sv10.5w-026",
     "localId": "026",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "026/86",
+    "cardNumber": "026/086",
     "cardName": "Swanna",
-    "fullDisplayName": "Swanna 026/86 White Flare",
+    "fullDisplayName": "Swanna 026/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4854,18 +6022,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-026-low.png",
-    "imageHighSrc": "cards/rsv10pt5-026-high.png"
+    "imageHighSrc": "cards/rsv10pt5-026-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "30"
+      },
+      {
+        "name": "Air Slash",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9268",
-    "externalId": null,
+    "externalId": "rsv10pt5-25",
     "tcgdex_id": "sv10.5w-025",
     "localId": "025",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "025/86",
+    "cardNumber": "025/086",
     "cardName": "Ducklett",
-    "fullDisplayName": "Ducklett 025/86 White Flare",
+    "fullDisplayName": "Ducklett 025/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4887,18 +6065,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-025-low.png",
-    "imageHighSrc": "cards/rsv10pt5-025-high.png"
+    "imageHighSrc": "cards/rsv10pt5-025-high.png",
+    "attacks": [
+      {
+        "name": "Firefighting",
+        "damage": null
+      },
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9267",
-    "externalId": null,
+    "externalId": "rsv10pt5-24",
     "tcgdex_id": "sv10.5w-024",
     "localId": "024",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "024/86",
+    "cardNumber": "024/086",
     "cardName": "Basculin",
-    "fullDisplayName": "Basculin 024/86 White Flare",
+    "fullDisplayName": "Basculin 024/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4920,18 +6108,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-024-low.png",
-    "imageHighSrc": "cards/rsv10pt5-024-high.png"
+    "imageHighSrc": "cards/rsv10pt5-024-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Bared Fangs",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9266",
-    "externalId": null,
+    "externalId": "rsv10pt5-23",
     "tcgdex_id": "sv10.5w-023",
     "localId": "023",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "023/86",
+    "cardNumber": "023/086",
     "cardName": "Samurott",
-    "fullDisplayName": "Samurott 023/86 White Flare",
+    "fullDisplayName": "Samurott 023/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4953,18 +6151,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-023-low.png",
-    "imageHighSrc": "cards/rsv10pt5-023-high.png"
+    "imageHighSrc": "cards/rsv10pt5-023-high.png",
+    "attacks": [
+      {
+        "name": "Energized Slash",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "9265",
-    "externalId": null,
+    "externalId": "rsv10pt5-22",
     "tcgdex_id": "sv10.5w-022",
     "localId": "022",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "022/86",
+    "cardNumber": "022/086",
     "cardName": "Dewott",
-    "fullDisplayName": "Dewott 022/86 White Flare",
+    "fullDisplayName": "Dewott 022/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4986,18 +6190,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-022-low.png",
-    "imageHighSrc": "cards/rsv10pt5-022-high.png"
+    "imageHighSrc": "cards/rsv10pt5-022-high.png",
+    "attacks": [
+      {
+        "name": "Energized Shell",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "9264",
-    "externalId": null,
+    "externalId": "rsv10pt5-21",
     "tcgdex_id": "sv10.5w-021",
     "localId": "021",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "021/86",
+    "cardNumber": "021/086",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott 021/86 White Flare",
+    "fullDisplayName": "Oshawott 021/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5019,18 +6229,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-021-low.png",
-    "imageHighSrc": "cards/rsv10pt5-021-high.png"
+    "imageHighSrc": "cards/rsv10pt5-021-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9263",
-    "externalId": null,
+    "externalId": "rsv10pt5-20",
     "tcgdex_id": "sv10.5w-020",
     "localId": "020",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "020/86",
+    "cardNumber": "020/086",
     "cardName": "Reshiram ex",
-    "fullDisplayName": "Reshiram ex 020/86 White Flare",
+    "fullDisplayName": "Reshiram ex 020/086 White Flare",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5053,18 +6273,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-020-low.png",
-    "imageHighSrc": "cards/rsv10pt5-020-high.png"
+    "imageHighSrc": "cards/rsv10pt5-020-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "50"
+      },
+      {
+        "name": "Blazing Burst",
+        "damage": "130+"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9262",
-    "externalId": null,
+    "externalId": "rsv10pt5-19",
     "tcgdex_id": "sv10.5w-019",
     "localId": "019",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "019/86",
+    "cardNumber": "019/086",
     "cardName": "Heatmor",
-    "fullDisplayName": "Heatmor 019/86 White Flare",
+    "fullDisplayName": "Heatmor 019/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5086,18 +6317,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-019-low.png",
-    "imageHighSrc": "cards/rsv10pt5-019-high.png"
+    "imageHighSrc": "cards/rsv10pt5-019-high.png",
+    "attacks": [
+      {
+        "name": "Licking Catch",
+        "damage": null
+      },
+      {
+        "name": "Fire Claws",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9261",
-    "externalId": null,
+    "externalId": "rsv10pt5-18",
     "tcgdex_id": "sv10.5w-018",
     "localId": "018",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "018/86",
+    "cardNumber": "018/086",
     "cardName": "Chandelure",
-    "fullDisplayName": "Chandelure 018/86 White Flare",
+    "fullDisplayName": "Chandelure 018/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5119,18 +6360,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-018-low.png",
-    "imageHighSrc": "cards/rsv10pt5-018-high.png"
+    "imageHighSrc": "cards/rsv10pt5-018-high.png",
+    "attacks": [
+      {
+        "name": "Incendiary Pillar",
+        "damage": "50+"
+      },
+      {
+        "name": "Burn It All Up",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "9257",
-    "externalId": null,
+    "externalId": "rsv10pt5-17",
     "tcgdex_id": "sv10.5w-017",
     "localId": "017",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "017/86",
+    "cardNumber": "017/086",
     "cardName": "Lampent",
-    "fullDisplayName": "Lampent 017/86 White Flare",
+    "fullDisplayName": "Lampent 017/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5152,18 +6403,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-017-low.png",
-    "imageHighSrc": "cards/rsv10pt5-017-high.png"
+    "imageHighSrc": "cards/rsv10pt5-017-high.png",
+    "attacks": [
+      {
+        "name": "Fire Blast",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9249",
-    "externalId": null,
+    "externalId": "rsv10pt5-16",
     "tcgdex_id": "sv10.5w-016",
     "localId": "016",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "016/86",
+    "cardNumber": "016/086",
     "cardName": "Litwick",
-    "fullDisplayName": "Litwick 016/86 White Flare",
+    "fullDisplayName": "Litwick 016/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5185,18 +6442,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-016-low.png",
-    "imageHighSrc": "cards/rsv10pt5-016-high.png"
+    "imageHighSrc": "cards/rsv10pt5-016-high.png",
+    "attacks": [
+      {
+        "name": "Brighten and Burn",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9239",
-    "externalId": null,
+    "externalId": "rsv10pt5-15",
     "tcgdex_id": "sv10.5w-015",
     "localId": "015",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "015/86",
+    "cardNumber": "015/086",
     "cardName": "Simisear",
-    "fullDisplayName": "Simisear 015/86 White Flare",
+    "fullDisplayName": "Simisear 015/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5218,18 +6481,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-015-low.png",
-    "imageHighSrc": "cards/rsv10pt5-015-high.png"
+    "imageHighSrc": "cards/rsv10pt5-015-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9230",
-    "externalId": null,
+    "externalId": "rsv10pt5-14",
     "tcgdex_id": "sv10.5w-014",
     "localId": "014",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "014/86",
+    "cardNumber": "014/086",
     "cardName": "Pansear",
-    "fullDisplayName": "Pansear 014/86 White Flare",
+    "fullDisplayName": "Pansear 014/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5251,18 +6520,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-014-low.png",
-    "imageHighSrc": "cards/rsv10pt5-014-high.png"
+    "imageHighSrc": "cards/rsv10pt5-014-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9221",
-    "externalId": null,
+    "externalId": "rsv10pt5-13",
     "tcgdex_id": "sv10.5w-013",
     "localId": "013",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "013/86",
+    "cardNumber": "013/086",
     "cardName": "Emboar",
-    "fullDisplayName": "Emboar 013/86 White Flare",
+    "fullDisplayName": "Emboar 013/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5284,18 +6563,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-013-low.png",
-    "imageHighSrc": "cards/rsv10pt5-013-high.png"
+    "imageHighSrc": "cards/rsv10pt5-013-high.png",
+    "attacks": [
+      {
+        "name": "Heat Crash",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9216",
-    "externalId": null,
+    "externalId": "rsv10pt5-12",
     "tcgdex_id": "sv10.5w-012",
     "localId": "012",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "012/86",
+    "cardNumber": "012/086",
     "cardName": "Pignite",
-    "fullDisplayName": "Pignite 012/86 White Flare",
+    "fullDisplayName": "Pignite 012/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5317,18 +6602,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-012-low.png",
-    "imageHighSrc": "cards/rsv10pt5-012-high.png"
+    "imageHighSrc": "cards/rsv10pt5-012-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "30"
+      },
+      {
+        "name": "Heat Crash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9207",
-    "externalId": null,
+    "externalId": "rsv10pt5-11",
     "tcgdex_id": "sv10.5w-011",
     "localId": "011",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "011/86",
+    "cardNumber": "011/086",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig 011/86 White Flare",
+    "fullDisplayName": "Tepig 011/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5350,18 +6645,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-011-low.png",
-    "imageHighSrc": "cards/rsv10pt5-011-high.png"
+    "imageHighSrc": "cards/rsv10pt5-011-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9198",
-    "externalId": null,
+    "externalId": "rsv10pt5-10",
     "tcgdex_id": "sv10.5w-010",
     "localId": "010",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "010/86",
+    "cardNumber": "010/086",
     "cardName": "Virizion",
-    "fullDisplayName": "Virizion 010/86 White Flare",
+    "fullDisplayName": "Virizion 010/086 White Flare",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5383,18 +6688,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-010-low.png",
-    "imageHighSrc": "cards/rsv10pt5-010-high.png"
+    "imageHighSrc": "cards/rsv10pt5-010-high.png",
+    "attacks": [
+      {
+        "name": "Giga Drain",
+        "damage": "30"
+      },
+      {
+        "name": "Emerald Blade",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "9184",
-    "externalId": null,
+    "externalId": "rsv10pt5-9",
     "tcgdex_id": "sv10.5w-009",
     "localId": "009",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "009/86",
+    "cardNumber": "009/086",
     "cardName": "Accelgor",
-    "fullDisplayName": "Accelgor 009/86 White Flare",
+    "fullDisplayName": "Accelgor 009/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5416,18 +6731,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-009-low.png",
-    "imageHighSrc": "cards/rsv10pt5-009-high.png"
+    "imageHighSrc": "cards/rsv10pt5-009-high.png",
+    "attacks": [
+      {
+        "name": "Acid Spray",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9176",
-    "externalId": null,
+    "externalId": "rsv10pt5-8",
     "tcgdex_id": "sv10.5w-008",
     "localId": "008",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "008/86",
+    "cardNumber": "008/086",
     "cardName": "Shelmet",
-    "fullDisplayName": "Shelmet 008/86 White Flare",
+    "fullDisplayName": "Shelmet 008/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5449,18 +6770,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-008-low.png",
-    "imageHighSrc": "cards/rsv10pt5-008-high.png"
+    "imageHighSrc": "cards/rsv10pt5-008-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt Bounce",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9167",
-    "externalId": null,
+    "externalId": "rsv10pt5-7",
     "tcgdex_id": "sv10.5w-007",
     "localId": "007",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "007/86",
+    "cardNumber": "007/086",
     "cardName": "Sawsbuck",
-    "fullDisplayName": "Sawsbuck 007/86 White Flare",
+    "fullDisplayName": "Sawsbuck 007/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5482,18 +6809,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-007-low.png",
-    "imageHighSrc": "cards/rsv10pt5-007-high.png"
+    "imageHighSrc": "cards/rsv10pt5-007-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "50"
+      },
+      {
+        "name": "Solar Beam",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9160",
-    "externalId": null,
+    "externalId": "rsv10pt5-6",
     "tcgdex_id": "sv10.5w-006",
     "localId": "006",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "006/86",
+    "cardNumber": "006/086",
     "cardName": "Deerling",
-    "fullDisplayName": "Deerling 006/86 White Flare",
+    "fullDisplayName": "Deerling 006/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5515,18 +6852,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-006-low.png",
-    "imageHighSrc": "cards/rsv10pt5-006-high.png"
+    "imageHighSrc": "cards/rsv10pt5-006-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9151",
-    "externalId": null,
+    "externalId": "rsv10pt5-5",
     "tcgdex_id": "sv10.5w-005",
     "localId": "005",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "005/86",
+    "cardNumber": "005/086",
     "cardName": "Whimsicott ex",
-    "fullDisplayName": "Whimsicott ex 005/86 White Flare",
+    "fullDisplayName": "Whimsicott ex 005/086 White Flare",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5549,18 +6892,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-005-low.png",
-    "imageHighSrc": "cards/rsv10pt5-005-high.png"
+    "imageHighSrc": "cards/rsv10pt5-005-high.png",
+    "attacks": [
+      {
+        "name": "Energy Gift",
+        "damage": null
+      },
+      {
+        "name": "Wondrous Cotton",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9142",
-    "externalId": null,
+    "externalId": "rsv10pt5-4",
     "tcgdex_id": "sv10.5w-004",
     "localId": "004",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "004/86",
+    "cardNumber": "004/086",
     "cardName": "Cottonee",
-    "fullDisplayName": "Cottonee 004/86 White Flare",
+    "fullDisplayName": "Cottonee 004/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5582,18 +6936,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-004-low.png",
-    "imageHighSrc": "cards/rsv10pt5-004-high.png"
+    "imageHighSrc": "cards/rsv10pt5-004-high.png",
+    "attacks": [
+      {
+        "name": "Absorb",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9134",
-    "externalId": null,
+    "externalId": "rsv10pt5-3",
     "tcgdex_id": "sv10.5w-003",
     "localId": "003",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "003/86",
+    "cardNumber": "003/086",
     "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 003/86 White Flare",
+    "fullDisplayName": "Leavanny 003/086 White Flare",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5615,18 +6975,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-003-low.png",
-    "imageHighSrc": "cards/rsv10pt5-003-high.png"
+    "imageHighSrc": "cards/rsv10pt5-003-high.png",
+    "attacks": [
+      {
+        "name": "Healing Wrapping",
+        "damage": null
+      },
+      {
+        "name": "X-Scissor",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "9125",
-    "externalId": null,
+    "externalId": "rsv10pt5-2",
     "tcgdex_id": "sv10.5w-002",
     "localId": "002",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "002/86",
+    "cardNumber": "002/086",
     "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 002/86 White Flare",
+    "fullDisplayName": "Swadloon 002/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5648,18 +7018,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-002-low.png",
-    "imageHighSrc": "cards/rsv10pt5-002-high.png"
+    "imageHighSrc": "cards/rsv10pt5-002-high.png",
+    "attacks": [
+      {
+        "name": "Bug Buzz",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9115",
-    "externalId": null,
+    "externalId": "rsv10pt5-1",
     "tcgdex_id": "sv10.5w-001",
     "localId": "001",
     "setCode": "sv10.5w",
     "setTcgdexId": "sv10.5w",
-    "cardNumber": "001/86",
+    "cardNumber": "001/086",
     "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 001/86 White Flare",
+    "fullDisplayName": "Sewaddle 001/086 White Flare",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5681,6 +7057,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/rsv10pt5-001-low.png",
-    "imageHighSrc": "cards/rsv10pt5-001-high.png"
+    "imageHighSrc": "cards/rsv10pt5-001-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "20"
+      }
+    ]
   }
 ]

@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "22024",
-    "externalId": null,
+    "externalId": "mcd14-12",
     "tcgdex_id": "2014xy-12",
     "localId": "012",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "012/12",
+    "cardNumber": "12/12",
     "cardName": "Furfrou",
-    "fullDisplayName": "Furfrou 012/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Furfrou 12/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-012-low.jpg",
-    "imageHighSrc": "cards/2014xy-012-low.jpg"
+    "imageHighSrc": "cards/2014xy-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Tight Jaw",
+        "damage": "20"
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "22023",
-    "externalId": null,
+    "externalId": "mcd14-11",
     "tcgdex_id": "2014xy-11",
     "localId": "011",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "011/12",
+    "cardNumber": "11/12",
     "cardName": "Fletchling",
-    "fullDisplayName": "Fletchling 011/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Fletchling 11/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-011-low.jpg",
-    "imageHighSrc": "cards/2014xy-011-low.jpg"
+    "imageHighSrc": "cards/2014xy-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Razor Wind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22022",
-    "externalId": null,
+    "externalId": "mcd14-10",
     "tcgdex_id": "2014xy-10",
     "localId": "010",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "010/12",
+    "cardNumber": "10/12",
     "cardName": "Bunnelby",
-    "fullDisplayName": "Bunnelby 010/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Bunnelby 10/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +112,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-010-low.jpg",
-    "imageHighSrc": "cards/2014xy-010-low.jpg"
+    "imageHighSrc": "cards/2014xy-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22021",
-    "externalId": null,
+    "externalId": "mcd14-9",
     "tcgdex_id": "2014xy-9",
     "localId": "009",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "009/12",
+    "cardNumber": "9/12",
     "cardName": "Swirlix",
-    "fullDisplayName": "Swirlix 009/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Swirlix 9/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +151,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-009-low.jpg",
-    "imageHighSrc": "cards/2014xy-009-low.jpg"
+    "imageHighSrc": "cards/2014xy-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Draining Kiss",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "22020",
-    "externalId": null,
+    "externalId": "mcd14-8",
     "tcgdex_id": "2014xy-8",
     "localId": "008",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "008/12",
+    "cardNumber": "8/12",
     "cardName": "Snubbull",
-    "fullDisplayName": "Snubbull 008/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Snubbull 8/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +190,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-008-low.jpg",
-    "imageHighSrc": "cards/2014xy-008-low.jpg"
+    "imageHighSrc": "cards/2014xy-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22019",
-    "externalId": null,
+    "externalId": "mcd14-7",
     "tcgdex_id": "2014xy-7",
     "localId": "007",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "007/12",
+    "cardNumber": "7/12",
     "cardName": "Honedge",
-    "fullDisplayName": "Honedge 007/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Honedge 7/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +229,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-007-low.jpg",
-    "imageHighSrc": "cards/2014xy-007-low.jpg"
+    "imageHighSrc": "cards/2014xy-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Continuous Slash",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "22018",
-    "externalId": null,
+    "externalId": "mcd14-6",
     "tcgdex_id": "2014xy-6",
     "localId": "006",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "006/12",
+    "cardNumber": "6/12",
     "cardName": "Inkay",
-    "fullDisplayName": "Inkay 006/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Inkay 6/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +268,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-006-low.jpg",
-    "imageHighSrc": "cards/2014xy-006-low.jpg"
+    "imageHighSrc": "cards/2014xy-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "22017",
-    "externalId": null,
+    "externalId": "mcd14-5",
     "tcgdex_id": "2014xy-5",
     "localId": "005",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "005/12",
+    "cardNumber": "5/12",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 005/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Pikachu 5/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +307,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-005-low.jpg",
-    "imageHighSrc": "cards/2014xy-005-low.jpg"
+    "imageHighSrc": "cards/2014xy-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Nuzzle",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "22016",
-    "externalId": null,
+    "externalId": "mcd14-4",
     "tcgdex_id": "2014xy-4",
     "localId": "004",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "004/12",
+    "cardNumber": "4/12",
     "cardName": "Froakie",
-    "fullDisplayName": "Froakie 004/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Froakie 4/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +350,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-004-low.jpg",
-    "imageHighSrc": "cards/2014xy-004-low.jpg"
+    "imageHighSrc": "cards/2014xy-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Water Drip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22015",
-    "externalId": null,
+    "externalId": "mcd14-3",
     "tcgdex_id": "2014xy-3",
     "localId": "003",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "003/12",
+    "cardNumber": "3/12",
     "cardName": "Fennekin",
-    "fullDisplayName": "Fennekin 003/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Fennekin 3/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +393,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-003-low.jpg",
-    "imageHighSrc": "cards/2014xy-003-low.jpg"
+    "imageHighSrc": "cards/2014xy-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22014",
-    "externalId": null,
+    "externalId": "mcd14-2",
     "tcgdex_id": "2014xy-2",
     "localId": "002",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "002/12",
+    "cardNumber": "2/12",
     "cardName": "Chespin",
-    "fullDisplayName": "Chespin 002/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Chespin 2/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +436,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-002-low.jpg",
-    "imageHighSrc": "cards/2014xy-002-low.jpg"
+    "imageHighSrc": "cards/2014xy-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "10"
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "22013",
-    "externalId": null,
+    "externalId": "mcd14-1",
     "tcgdex_id": "2014xy-1",
     "localId": "001",
     "setCode": "2014xy",
     "setTcgdexId": "2014xy",
-    "cardNumber": "001/12",
+    "cardNumber": "1/12",
     "cardName": "Weedle",
-    "fullDisplayName": "Weedle 001/12 Macdonald's Collection 2014",
+    "fullDisplayName": "Weedle 1/12 Macdonald's Collection 2014",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,6 +479,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2014xy-001-low.jpg",
-    "imageHighSrc": "cards/2014xy-001-low.jpg"
+    "imageHighSrc": "cards/2014xy-001-low.jpg",
+    "attacks": [
+      {
+        "name": "String Shot",
+        "damage": "10"
+      }
+    ]
   }
 ]

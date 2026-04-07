@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "2084",
-    "externalId": null,
+    "externalId": "bw1-115",
     "tcgdex_id": "bw1-115",
     "localId": "115",
     "setCode": "bw1",
@@ -30,11 +30,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-115-low.png",
-    "imageHighSrc": "cards/bw1-115-high.png"
+    "imageHighSrc": "cards/bw1-115-high.png",
+    "attacks": [
+      {
+        "name": "Energize",
+        "damage": null
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2083",
-    "externalId": null,
+    "externalId": "bw1-114",
     "tcgdex_id": "bw1-114",
     "localId": "114",
     "setCode": "bw1",
@@ -63,11 +73,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-114-low.png",
-    "imageHighSrc": "cards/bw1-114-high.png"
+    "imageHighSrc": "cards/bw1-114-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Bolt Strike",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2082",
-    "externalId": null,
+    "externalId": "bw1-113",
     "tcgdex_id": "bw1-113",
     "localId": "113",
     "setCode": "bw1",
@@ -96,11 +116,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-113-low.png",
-    "imageHighSrc": "cards/bw1-113-high.png"
+    "imageHighSrc": "cards/bw1-113-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Blue Flare",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2081",
-    "externalId": null,
+    "externalId": "bw1-112",
     "tcgdex_id": "bw1-112",
     "localId": "112",
     "setCode": "bw1",
@@ -129,7 +159,7 @@
   },
   {
     "masterCardId": "2080",
-    "externalId": null,
+    "externalId": "bw1-111",
     "tcgdex_id": "bw1-111",
     "localId": "111",
     "setCode": "bw1",
@@ -158,7 +188,7 @@
   },
   {
     "masterCardId": "2079",
-    "externalId": null,
+    "externalId": "bw1-110",
     "tcgdex_id": "bw1-110",
     "localId": "110",
     "setCode": "bw1",
@@ -187,7 +217,7 @@
   },
   {
     "masterCardId": "2078",
-    "externalId": null,
+    "externalId": "bw1-109",
     "tcgdex_id": "bw1-109",
     "localId": "109",
     "setCode": "bw1",
@@ -216,7 +246,7 @@
   },
   {
     "masterCardId": "2077",
-    "externalId": null,
+    "externalId": "bw1-108",
     "tcgdex_id": "bw1-108",
     "localId": "108",
     "setCode": "bw1",
@@ -245,7 +275,7 @@
   },
   {
     "masterCardId": "2076",
-    "externalId": null,
+    "externalId": "bw1-107",
     "tcgdex_id": "bw1-107",
     "localId": "107",
     "setCode": "bw1",
@@ -274,7 +304,7 @@
   },
   {
     "masterCardId": "2075",
-    "externalId": null,
+    "externalId": "bw1-106",
     "tcgdex_id": "bw1-106",
     "localId": "106",
     "setCode": "bw1",
@@ -303,7 +333,7 @@
   },
   {
     "masterCardId": "2074",
-    "externalId": null,
+    "externalId": "bw1-105",
     "tcgdex_id": "bw1-105",
     "localId": "105",
     "setCode": "bw1",
@@ -332,7 +362,7 @@
   },
   {
     "masterCardId": "2073",
-    "externalId": null,
+    "externalId": "bw1-104",
     "tcgdex_id": "bw1-104",
     "localId": "104",
     "setCode": "bw1",
@@ -357,11 +387,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-104-low.png",
-    "imageHighSrc": "cards/bw1-104-high.png"
+    "imageHighSrc": "cards/bw1-104-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2072",
-    "externalId": null,
+    "externalId": "bw1-103",
     "tcgdex_id": "bw1-103",
     "localId": "103",
     "setCode": "bw1",
@@ -386,11 +417,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-103-low.png",
-    "imageHighSrc": "cards/bw1-103-high.png"
+    "imageHighSrc": "cards/bw1-103-high.png",
+    "rules": "Flip a coin. If heads, put 1 of your Pokémon and all cards attached to it into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2071",
-    "externalId": null,
+    "externalId": "bw1-102",
     "tcgdex_id": "bw1-102",
     "localId": "102",
     "setCode": "bw1",
@@ -415,11 +447,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-102-low.png",
-    "imageHighSrc": "cards/bw1-102-high.png"
+    "imageHighSrc": "cards/bw1-102-high.png",
+    "rules": "Put a Basic Pokémon from your discard pile onto your Bench.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2070",
-    "externalId": null,
+    "externalId": "bw1-101",
     "tcgdex_id": "bw1-101",
     "localId": "101",
     "setCode": "bw1",
@@ -444,11 +477,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-101-low.png",
-    "imageHighSrc": "cards/bw1-101-high.png"
+    "imageHighSrc": "cards/bw1-101-high.png",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2069",
-    "externalId": null,
+    "externalId": "bw1-100",
     "tcgdex_id": "bw1-100",
     "localId": "100",
     "setCode": "bw1",
@@ -473,18 +507,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-100-low.png",
-    "imageHighSrc": "cards/bw1-100-high.png"
+    "imageHighSrc": "cards/bw1-100-high.png",
+    "rules": "Heal 30 damage from 1 of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2068",
-    "externalId": null,
+    "externalId": "bw1-99",
     "tcgdex_id": "bw1-99",
     "localId": "099",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "099/114",
+    "cardNumber": "99/114",
     "cardName": "Pokémon Communication",
-    "fullDisplayName": "Pokémon Communication 099/114 Black & White",
+    "fullDisplayName": "Pokémon Communication 99/114 Black & White",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -502,18 +537,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-099-low.png",
-    "imageHighSrc": "cards/bw1-099-high.png"
+    "imageHighSrc": "cards/bw1-099-high.png",
+    "rules": "Reveal a Pokémon in your hand and put it on top of your deck. If you do, search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2067",
-    "externalId": null,
+    "externalId": "bw1-98",
     "tcgdex_id": "bw1-98",
     "localId": "098",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "098/114",
+    "cardNumber": "98/114",
     "cardName": "Pokédex",
-    "fullDisplayName": "Pokédex 098/114 Black & White",
+    "fullDisplayName": "Pokédex 98/114 Black & White",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -531,18 +567,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-098-low.png",
-    "imageHighSrc": "cards/bw1-098-high.png"
+    "imageHighSrc": "cards/bw1-098-high.png",
+    "rules": "Look at the top 5 cards of your deck and put them back on top of your deck in any order.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2066",
-    "externalId": null,
+    "externalId": "bw1-97",
     "tcgdex_id": "bw1-97",
     "localId": "097",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "097/114",
+    "cardNumber": "97/114",
     "cardName": "Poké Ball",
-    "fullDisplayName": "Poké Ball 097/114 Black & White",
+    "fullDisplayName": "Poké Ball 97/114 Black & White",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -560,18 +597,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-097-low.png",
-    "imageHighSrc": "cards/bw1-097-high.png"
+    "imageHighSrc": "cards/bw1-097-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2065",
-    "externalId": null,
+    "externalId": "bw1-96",
     "tcgdex_id": "bw1-96",
     "localId": "096",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "096/114",
+    "cardNumber": "96/114",
     "cardName": "PlusPower",
-    "fullDisplayName": "PlusPower 096/114 Black & White",
+    "fullDisplayName": "PlusPower 96/114 Black & White",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -589,18 +627,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-096-low.png",
-    "imageHighSrc": "cards/bw1-096-high.png"
+    "imageHighSrc": "cards/bw1-096-high.png",
+    "rules": "During this turn, your Pokémon's attacks do 10 more damage to the Active Pokémon (before applying Weakness and Resistance).\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2064",
-    "externalId": null,
+    "externalId": "bw1-95",
     "tcgdex_id": "bw1-95",
     "localId": "095",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "095/114",
+    "cardNumber": "95/114",
     "cardName": "Full Heal",
-    "fullDisplayName": "Full Heal 095/114 Black & White",
+    "fullDisplayName": "Full Heal 95/114 Black & White",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -618,18 +657,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-095-low.png",
-    "imageHighSrc": "cards/bw1-095-high.png"
+    "imageHighSrc": "cards/bw1-095-high.png",
+    "rules": "Remove all Special Conditions from your Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2063",
-    "externalId": null,
+    "externalId": "bw1-94",
     "tcgdex_id": "bw1-94",
     "localId": "094",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "094/114",
+    "cardNumber": "94/114",
     "cardName": "Energy Switch",
-    "fullDisplayName": "Energy Switch 094/114 Black & White",
+    "fullDisplayName": "Energy Switch 94/114 Black & White",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -647,18 +687,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-094-low.png",
-    "imageHighSrc": "cards/bw1-094-high.png"
+    "imageHighSrc": "cards/bw1-094-high.png",
+    "rules": "Move a basic Energy from 1 of your Pokémon to another of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2062",
-    "externalId": null,
+    "externalId": "bw1-93",
     "tcgdex_id": "bw1-93",
     "localId": "093",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "093/114",
+    "cardNumber": "93/114",
     "cardName": "Energy Search",
-    "fullDisplayName": "Energy Search 093/114 Black & White",
+    "fullDisplayName": "Energy Search 93/114 Black & White",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -676,18 +717,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-093-low.png",
-    "imageHighSrc": "cards/bw1-093-high.png"
+    "imageHighSrc": "cards/bw1-093-high.png",
+    "rules": "Search your deck for a basic Energy card, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2061",
-    "externalId": null,
+    "externalId": "bw1-92",
     "tcgdex_id": "bw1-92",
     "localId": "092",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "092/114",
+    "cardNumber": "92/114",
     "cardName": "Energy Retrieval",
-    "fullDisplayName": "Energy Retrieval 092/114 Black & White",
+    "fullDisplayName": "Energy Retrieval 92/114 Black & White",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -705,18 +747,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-092-low.png",
-    "imageHighSrc": "cards/bw1-092-high.png"
+    "imageHighSrc": "cards/bw1-092-high.png",
+    "rules": "Put 2 basic Energy cards from your discard pile into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2060",
-    "externalId": null,
+    "externalId": "bw1-91",
     "tcgdex_id": "bw1-91",
     "localId": "091",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "091/114",
+    "cardNumber": "91/114",
     "cardName": "Bouffalant",
-    "fullDisplayName": "Bouffalant 091/114 Black & White",
+    "fullDisplayName": "Bouffalant 91/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -738,18 +781,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-091-low.png",
-    "imageHighSrc": "cards/bw1-091-high.png"
+    "imageHighSrc": "cards/bw1-091-high.png",
+    "attacks": [
+      {
+        "name": "Revenge",
+        "damage": "20+"
+      },
+      {
+        "name": "Head Charge",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2059",
-    "externalId": null,
+    "externalId": "bw1-90",
     "tcgdex_id": "bw1-90",
     "localId": "090",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "090/114",
+    "cardNumber": "90/114",
     "cardName": "Bouffalant",
-    "fullDisplayName": "Bouffalant 090/114 Black & White",
+    "fullDisplayName": "Bouffalant 90/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -771,18 +824,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-090-low.png",
-    "imageHighSrc": "cards/bw1-090-high.png"
+    "imageHighSrc": "cards/bw1-090-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Double Stomp",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2058",
-    "externalId": null,
+    "externalId": "bw1-89",
     "tcgdex_id": "bw1-89",
     "localId": "089",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "089/114",
+    "cardNumber": "89/114",
     "cardName": "Cinccino",
-    "fullDisplayName": "Cinccino 089/114 Black & White",
+    "fullDisplayName": "Cinccino 89/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -804,18 +867,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-089-low.png",
-    "imageHighSrc": "cards/bw1-089-high.png"
+    "imageHighSrc": "cards/bw1-089-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "20×"
+      },
+      {
+        "name": "Do the Wave",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2057",
-    "externalId": null,
+    "externalId": "bw1-88",
     "tcgdex_id": "bw1-88",
     "localId": "088",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "088/114",
+    "cardNumber": "88/114",
     "cardName": "Minccino",
-    "fullDisplayName": "Minccino 088/114 Black & White",
+    "fullDisplayName": "Minccino 88/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -837,18 +910,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-088-low.png",
-    "imageHighSrc": "cards/bw1-088-high.png"
+    "imageHighSrc": "cards/bw1-088-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2056",
-    "externalId": null,
+    "externalId": "bw1-87",
     "tcgdex_id": "bw1-87",
     "localId": "087",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "087/114",
+    "cardNumber": "87/114",
     "cardName": "Audino",
-    "fullDisplayName": "Audino 087/114 Black & White",
+    "fullDisplayName": "Audino 87/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -870,18 +949,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-087-low.png",
-    "imageHighSrc": "cards/bw1-087-high.png"
+    "imageHighSrc": "cards/bw1-087-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "2055",
-    "externalId": null,
+    "externalId": "bw1-86",
     "tcgdex_id": "bw1-86",
     "localId": "086",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "086/114",
+    "cardNumber": "86/114",
     "cardName": "Unfezant",
-    "fullDisplayName": "Unfezant 086/114 Black & White",
+    "fullDisplayName": "Unfezant 86/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -903,18 +988,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-086-low.png",
-    "imageHighSrc": "cards/bw1-086-high.png"
+    "imageHighSrc": "cards/bw1-086-high.png",
+    "attacks": [
+      {
+        "name": "Fly",
+        "damage": "50"
+      },
+      {
+        "name": "Cutting Wind",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2054",
-    "externalId": null,
+    "externalId": "bw1-85",
     "tcgdex_id": "bw1-85",
     "localId": "085",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "085/114",
+    "cardNumber": "85/114",
     "cardName": "Tranquill",
-    "fullDisplayName": "Tranquill 085/114 Black & White",
+    "fullDisplayName": "Tranquill 85/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -936,18 +1031,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-085-low.png",
-    "imageHighSrc": "cards/bw1-085-high.png"
+    "imageHighSrc": "cards/bw1-085-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "20"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2053",
-    "externalId": null,
+    "externalId": "bw1-84",
     "tcgdex_id": "bw1-84",
     "localId": "084",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "084/114",
+    "cardNumber": "84/114",
     "cardName": "Pidove",
-    "fullDisplayName": "Pidove 084/114 Black & White",
+    "fullDisplayName": "Pidove 84/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -969,18 +1074,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-084-low.png",
-    "imageHighSrc": "cards/bw1-084-high.png"
+    "imageHighSrc": "cards/bw1-084-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2052",
-    "externalId": null,
+    "externalId": "bw1-83",
     "tcgdex_id": "bw1-83",
     "localId": "083",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "083/114",
+    "cardNumber": "83/114",
     "cardName": "Stoutland",
-    "fullDisplayName": "Stoutland 083/114 Black & White",
+    "fullDisplayName": "Stoutland 83/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1002,18 +1113,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-083-low.png",
-    "imageHighSrc": "cards/bw1-083-high.png"
+    "imageHighSrc": "cards/bw1-083-high.png",
+    "attacks": [
+      {
+        "name": "Odor Sleuth",
+        "damage": null
+      },
+      {
+        "name": "Giga Impact",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2051",
-    "externalId": null,
+    "externalId": "bw1-82",
     "tcgdex_id": "bw1-82",
     "localId": "082",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "082/114",
+    "cardNumber": "82/114",
     "cardName": "Herdier",
-    "fullDisplayName": "Herdier 082/114 Black & White",
+    "fullDisplayName": "Herdier 82/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1035,18 +1156,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-082-low.png",
-    "imageHighSrc": "cards/bw1-082-high.png"
+    "imageHighSrc": "cards/bw1-082-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2050",
-    "externalId": null,
+    "externalId": "bw1-81",
     "tcgdex_id": "bw1-81",
     "localId": "081",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "081/114",
+    "cardNumber": "81/114",
     "cardName": "Lillipup",
-    "fullDisplayName": "Lillipup 081/114 Black & White",
+    "fullDisplayName": "Lillipup 81/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1068,18 +1199,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-081-low.png",
-    "imageHighSrc": "cards/bw1-081-high.png"
+    "imageHighSrc": "cards/bw1-081-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2049",
-    "externalId": null,
+    "externalId": "bw1-80",
     "tcgdex_id": "bw1-80",
     "localId": "080",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "080/114",
+    "cardNumber": "80/114",
     "cardName": "Lillipup",
-    "fullDisplayName": "Lillipup 080/114 Black & White",
+    "fullDisplayName": "Lillipup 80/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1101,18 +1242,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-080-low.png",
-    "imageHighSrc": "cards/bw1-080-high.png"
+    "imageHighSrc": "cards/bw1-080-high.png",
+    "attacks": [
+      {
+        "name": "Pickup",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2048",
-    "externalId": null,
+    "externalId": "bw1-79",
     "tcgdex_id": "bw1-79",
     "localId": "079",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "079/114",
+    "cardNumber": "79/114",
     "cardName": "Watchog",
-    "fullDisplayName": "Watchog 079/114 Black & White",
+    "fullDisplayName": "Watchog 79/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1134,18 +1285,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-079-low.png",
-    "imageHighSrc": "cards/bw1-079-high.png"
+    "imageHighSrc": "cards/bw1-079-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      },
+      {
+        "name": "Hyper Fang",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2047",
-    "externalId": null,
+    "externalId": "bw1-78",
     "tcgdex_id": "bw1-78",
     "localId": "078",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "078/114",
+    "cardNumber": "78/114",
     "cardName": "Patrat",
-    "fullDisplayName": "Patrat 078/114 Black & White",
+    "fullDisplayName": "Patrat 78/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1167,18 +1328,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-078-low.png",
-    "imageHighSrc": "cards/bw1-078-high.png"
+    "imageHighSrc": "cards/bw1-078-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Fang",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2046",
-    "externalId": null,
+    "externalId": "bw1-77",
     "tcgdex_id": "bw1-77",
     "localId": "077",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "077/114",
+    "cardNumber": "77/114",
     "cardName": "Patrat",
-    "fullDisplayName": "Patrat 077/114 Black & White",
+    "fullDisplayName": "Patrat 77/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1200,18 +1367,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-077-low.png",
-    "imageHighSrc": "cards/bw1-077-high.png"
+    "imageHighSrc": "cards/bw1-077-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2045",
-    "externalId": null,
+    "externalId": "bw1-76",
     "tcgdex_id": "bw1-76",
     "localId": "076",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "076/114",
+    "cardNumber": "76/114",
     "cardName": "Klinklang",
-    "fullDisplayName": "Klinklang 076/114 Black & White",
+    "fullDisplayName": "Klinklang 76/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1233,18 +1410,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-076-low.png",
-    "imageHighSrc": "cards/bw1-076-high.png"
+    "imageHighSrc": "cards/bw1-076-high.png",
+    "attacks": [
+      {
+        "name": "Gear Grind",
+        "damage": "80×"
+      }
+    ]
   },
   {
     "masterCardId": "2044",
-    "externalId": null,
+    "externalId": "bw1-75",
     "tcgdex_id": "bw1-75",
     "localId": "075",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "075/114",
+    "cardNumber": "75/114",
     "cardName": "Klang",
-    "fullDisplayName": "Klang 075/114 Black & White",
+    "fullDisplayName": "Klang 75/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1266,18 +1449,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-075-low.png",
-    "imageHighSrc": "cards/bw1-075-high.png"
+    "imageHighSrc": "cards/bw1-075-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "10"
+      },
+      {
+        "name": "Gear Grind",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "2043",
-    "externalId": null,
+    "externalId": "bw1-74",
     "tcgdex_id": "bw1-74",
     "localId": "074",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "074/114",
+    "cardNumber": "74/114",
     "cardName": "Klink",
-    "fullDisplayName": "Klink 074/114 Black & White",
+    "fullDisplayName": "Klink 74/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1299,18 +1492,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-074-low.png",
-    "imageHighSrc": "cards/bw1-074-high.png"
+    "imageHighSrc": "cards/bw1-074-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2042",
-    "externalId": null,
+    "externalId": "bw1-73",
     "tcgdex_id": "bw1-73",
     "localId": "073",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "073/114",
+    "cardNumber": "73/114",
     "cardName": "Mandibuzz",
-    "fullDisplayName": "Mandibuzz 073/114 Black & White",
+    "fullDisplayName": "Mandibuzz 73/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1332,18 +1531,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-073-low.png",
-    "imageHighSrc": "cards/bw1-073-high.png"
+    "imageHighSrc": "cards/bw1-073-high.png",
+    "attacks": [
+      {
+        "name": "Blindside",
+        "damage": null
+      },
+      {
+        "name": "Punishment",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2041",
-    "externalId": null,
+    "externalId": "bw1-72",
     "tcgdex_id": "bw1-72",
     "localId": "072",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "072/114",
+    "cardNumber": "72/114",
     "cardName": "Vullaby",
-    "fullDisplayName": "Vullaby 072/114 Black & White",
+    "fullDisplayName": "Vullaby 72/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1365,18 +1574,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-072-low.png",
-    "imageHighSrc": "cards/bw1-072-high.png"
+    "imageHighSrc": "cards/bw1-072-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2040",
-    "externalId": null,
+    "externalId": "bw1-71",
     "tcgdex_id": "bw1-71",
     "localId": "071",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "071/114",
+    "cardNumber": "71/114",
     "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark 071/114 Black & White",
+    "fullDisplayName": "Zoroark 71/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1398,18 +1613,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-071-low.png",
-    "imageHighSrc": "cards/bw1-071-high.png"
+    "imageHighSrc": "cards/bw1-071-high.png",
+    "attacks": [
+      {
+        "name": "Nasty Plot",
+        "damage": null
+      },
+      {
+        "name": "Foul Play",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2039",
-    "externalId": null,
+    "externalId": "bw1-70",
     "tcgdex_id": "bw1-70",
     "localId": "070",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "070/114",
+    "cardNumber": "70/114",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 070/114 Black & White",
+    "fullDisplayName": "Zorua 70/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1431,18 +1656,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-070-low.png",
-    "imageHighSrc": "cards/bw1-070-high.png"
+    "imageHighSrc": "cards/bw1-070-high.png",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2038",
-    "externalId": null,
+    "externalId": "bw1-69",
     "tcgdex_id": "bw1-69",
     "localId": "069",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "069/114",
+    "cardNumber": "69/114",
     "cardName": "Scrafty",
-    "fullDisplayName": "Scrafty 069/114 Black & White",
+    "fullDisplayName": "Scrafty 69/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1464,18 +1695,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-069-low.png",
-    "imageHighSrc": "cards/bw1-069-high.png"
+    "imageHighSrc": "cards/bw1-069-high.png",
+    "attacks": [
+      {
+        "name": "Spit Acid",
+        "damage": "20"
+      },
+      {
+        "name": "High Jump Kick",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2037",
-    "externalId": null,
+    "externalId": "bw1-68",
     "tcgdex_id": "bw1-68",
     "localId": "068",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "068/114",
+    "cardNumber": "68/114",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy 068/114 Black & White",
+    "fullDisplayName": "Scraggy 68/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1497,18 +1738,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-068-low.png",
-    "imageHighSrc": "cards/bw1-068-high.png"
+    "imageHighSrc": "cards/bw1-068-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2036",
-    "externalId": null,
+    "externalId": "bw1-67",
     "tcgdex_id": "bw1-67",
     "localId": "067",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "067/114",
+    "cardNumber": "67/114",
     "cardName": "Liepard",
-    "fullDisplayName": "Liepard 067/114 Black & White",
+    "fullDisplayName": "Liepard 67/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1530,18 +1777,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-067-low.png",
-    "imageHighSrc": "cards/bw1-067-high.png"
+    "imageHighSrc": "cards/bw1-067-high.png",
+    "attacks": [
+      {
+        "name": "Taunt",
+        "damage": null
+      },
+      {
+        "name": "Sucker Punch",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2035",
-    "externalId": null,
+    "externalId": "bw1-66",
     "tcgdex_id": "bw1-66",
     "localId": "066",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "066/114",
+    "cardNumber": "66/114",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin 066/114 Black & White",
+    "fullDisplayName": "Purrloin 66/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1563,18 +1820,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-066-low.png",
-    "imageHighSrc": "cards/bw1-066-high.png"
+    "imageHighSrc": "cards/bw1-066-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2034",
-    "externalId": null,
+    "externalId": "bw1-65",
     "tcgdex_id": "bw1-65",
     "localId": "065",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "065/114",
+    "cardNumber": "65/114",
     "cardName": "Krookodile",
-    "fullDisplayName": "Krookodile 065/114 Black & White",
+    "fullDisplayName": "Krookodile 65/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1596,18 +1863,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-065-low.png",
-    "imageHighSrc": "cards/bw1-065-high.png"
+    "imageHighSrc": "cards/bw1-065-high.png",
+    "attacks": [
+      {
+        "name": "Torment",
+        "damage": "30"
+      },
+      {
+        "name": "Krookoroll",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2033",
-    "externalId": null,
+    "externalId": "bw1-64",
     "tcgdex_id": "bw1-64",
     "localId": "064",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "064/114",
+    "cardNumber": "64/114",
     "cardName": "Krokorok",
-    "fullDisplayName": "Krokorok 064/114 Black & White",
+    "fullDisplayName": "Krokorok 64/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1629,18 +1906,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-064-low.png",
-    "imageHighSrc": "cards/bw1-064-high.png"
+    "imageHighSrc": "cards/bw1-064-high.png",
+    "attacks": [
+      {
+        "name": "Torment",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2032",
-    "externalId": null,
+    "externalId": "bw1-63",
     "tcgdex_id": "bw1-63",
     "localId": "063",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "063/114",
+    "cardNumber": "63/114",
     "cardName": "Sandile",
-    "fullDisplayName": "Sandile 063/114 Black & White",
+    "fullDisplayName": "Sandile 63/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1662,18 +1949,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-063-low.png",
-    "imageHighSrc": "cards/bw1-063-high.png"
+    "imageHighSrc": "cards/bw1-063-high.png",
+    "attacks": [
+      {
+        "name": "Sand Tomb",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2031",
-    "externalId": null,
+    "externalId": "bw1-62",
     "tcgdex_id": "bw1-62",
     "localId": "062",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "062/114",
+    "cardNumber": "62/114",
     "cardName": "Sawk",
-    "fullDisplayName": "Sawk 062/114 Black & White",
+    "fullDisplayName": "Sawk 62/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1695,18 +1992,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-062-low.png",
-    "imageHighSrc": "cards/bw1-062-high.png"
+    "imageHighSrc": "cards/bw1-062-high.png",
+    "attacks": [
+      {
+        "name": "Low Sweep",
+        "damage": "20"
+      },
+      {
+        "name": "Beatdown",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2030",
-    "externalId": null,
+    "externalId": "bw1-61",
     "tcgdex_id": "bw1-61",
     "localId": "061",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "061/114",
+    "cardNumber": "61/114",
     "cardName": "Throh",
-    "fullDisplayName": "Throh 061/114 Black & White",
+    "fullDisplayName": "Throh 61/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1728,18 +2035,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-061-low.png",
-    "imageHighSrc": "cards/bw1-061-high.png"
+    "imageHighSrc": "cards/bw1-061-high.png",
+    "attacks": [
+      {
+        "name": "Circle Throw",
+        "damage": "30"
+      },
+      {
+        "name": "Storm Throw",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2029",
-    "externalId": null,
+    "externalId": "bw1-60",
     "tcgdex_id": "bw1-60",
     "localId": "060",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "060/114",
+    "cardNumber": "60/114",
     "cardName": "Gurdurr",
-    "fullDisplayName": "Gurdurr 060/114 Black & White",
+    "fullDisplayName": "Gurdurr 60/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1761,18 +2078,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-060-low.png",
-    "imageHighSrc": "cards/bw1-060-high.png"
+    "imageHighSrc": "cards/bw1-060-high.png",
+    "attacks": [
+      {
+        "name": "Bulk Up",
+        "damage": "20"
+      },
+      {
+        "name": "Pound",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2028",
-    "externalId": null,
+    "externalId": "bw1-59",
     "tcgdex_id": "bw1-59",
     "localId": "059",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "059/114",
+    "cardNumber": "59/114",
     "cardName": "Timburr",
-    "fullDisplayName": "Timburr 059/114 Black & White",
+    "fullDisplayName": "Timburr 59/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1794,18 +2121,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-059-low.png",
-    "imageHighSrc": "cards/bw1-059-high.png"
+    "imageHighSrc": "cards/bw1-059-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "10"
+      },
+      {
+        "name": "Pound",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2027",
-    "externalId": null,
+    "externalId": "bw1-58",
     "tcgdex_id": "bw1-58",
     "localId": "058",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "058/114",
+    "cardNumber": "58/114",
     "cardName": "Timburr",
-    "fullDisplayName": "Timburr 058/114 Black & White",
+    "fullDisplayName": "Timburr 58/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1827,18 +2164,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-058-low.png",
-    "imageHighSrc": "cards/bw1-058-high.png"
+    "imageHighSrc": "cards/bw1-058-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2026",
-    "externalId": null,
+    "externalId": "bw1-57",
     "tcgdex_id": "bw1-57",
     "localId": "057",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "057/114",
+    "cardNumber": "57/114",
     "cardName": "Reuniclus",
-    "fullDisplayName": "Reuniclus 057/114 Black & White",
+    "fullDisplayName": "Reuniclus 57/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1860,18 +2203,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-057-low.png",
-    "imageHighSrc": "cards/bw1-057-high.png"
+    "imageHighSrc": "cards/bw1-057-high.png",
+    "attacks": [
+      {
+        "name": "Psywave",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2025",
-    "externalId": null,
+    "externalId": "bw1-56",
     "tcgdex_id": "bw1-56",
     "localId": "056",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "056/114",
+    "cardNumber": "56/114",
     "cardName": "Duosion",
-    "fullDisplayName": "Duosion 056/114 Black & White",
+    "fullDisplayName": "Duosion 56/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1893,18 +2242,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-056-low.png",
-    "imageHighSrc": "cards/bw1-056-high.png"
+    "imageHighSrc": "cards/bw1-056-high.png",
+    "attacks": [
+      {
+        "name": "Recover",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2024",
-    "externalId": null,
+    "externalId": "bw1-55",
     "tcgdex_id": "bw1-55",
     "localId": "055",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "055/114",
+    "cardNumber": "55/114",
     "cardName": "Solosis",
-    "fullDisplayName": "Solosis 055/114 Black & White",
+    "fullDisplayName": "Solosis 55/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1926,18 +2285,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-055-low.png",
-    "imageHighSrc": "cards/bw1-055-high.png"
+    "imageHighSrc": "cards/bw1-055-high.png",
+    "attacks": [
+      {
+        "name": "Cell Culture",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2023",
-    "externalId": null,
+    "externalId": "bw1-54",
     "tcgdex_id": "bw1-54",
     "localId": "054",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "054/114",
+    "cardNumber": "54/114",
     "cardName": "Scolipede",
-    "fullDisplayName": "Scolipede 054/114 Black & White",
+    "fullDisplayName": "Scolipede 54/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1959,18 +2328,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-054-low.png",
-    "imageHighSrc": "cards/bw1-054-high.png"
+    "imageHighSrc": "cards/bw1-054-high.png",
+    "attacks": [
+      {
+        "name": "Steamroller",
+        "damage": "60"
+      },
+      {
+        "name": "Poison Claws",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2022",
-    "externalId": null,
+    "externalId": "bw1-53",
     "tcgdex_id": "bw1-53",
     "localId": "053",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "053/114",
+    "cardNumber": "53/114",
     "cardName": "Whirlipede",
-    "fullDisplayName": "Whirlipede 053/114 Black & White",
+    "fullDisplayName": "Whirlipede 53/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1992,18 +2371,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-053-low.png",
-    "imageHighSrc": "cards/bw1-053-high.png"
+    "imageHighSrc": "cards/bw1-053-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      },
+      {
+        "name": "Rollout",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2021",
-    "externalId": null,
+    "externalId": "bw1-52",
     "tcgdex_id": "bw1-52",
     "localId": "052",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "052/114",
+    "cardNumber": "52/114",
     "cardName": "Venipede",
-    "fullDisplayName": "Venipede 052/114 Black & White",
+    "fullDisplayName": "Venipede 52/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2025,18 +2414,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-052-low.png",
-    "imageHighSrc": "cards/bw1-052-high.png"
+    "imageHighSrc": "cards/bw1-052-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2020",
-    "externalId": null,
+    "externalId": "bw1-51",
     "tcgdex_id": "bw1-51",
     "localId": "051",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "051/114",
+    "cardNumber": "51/114",
     "cardName": "Swoobat",
-    "fullDisplayName": "Swoobat 051/114 Black & White",
+    "fullDisplayName": "Swoobat 51/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2058,18 +2457,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-051-low.png",
-    "imageHighSrc": "cards/bw1-051-high.png"
+    "imageHighSrc": "cards/bw1-051-high.png",
+    "attacks": [
+      {
+        "name": "Attract",
+        "damage": null
+      },
+      {
+        "name": "Heart Stamp",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2019",
-    "externalId": null,
+    "externalId": "bw1-50",
     "tcgdex_id": "bw1-50",
     "localId": "050",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "050/114",
+    "cardNumber": "50/114",
     "cardName": "Woobat",
-    "fullDisplayName": "Woobat 050/114 Black & White",
+    "fullDisplayName": "Woobat 50/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2091,18 +2500,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-050-low.png",
-    "imageHighSrc": "cards/bw1-050-high.png"
+    "imageHighSrc": "cards/bw1-050-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2018",
-    "externalId": null,
+    "externalId": "bw1-49",
     "tcgdex_id": "bw1-49",
     "localId": "049",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "049/114",
+    "cardNumber": "49/114",
     "cardName": "Musharna",
-    "fullDisplayName": "Musharna 049/114 Black & White",
+    "fullDisplayName": "Musharna 49/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2124,18 +2539,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-049-low.png",
-    "imageHighSrc": "cards/bw1-049-high.png"
+    "imageHighSrc": "cards/bw1-049-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Ray",
+        "damage": "20"
+      },
+      {
+        "name": "Dream Eater",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2017",
-    "externalId": null,
+    "externalId": "bw1-48",
     "tcgdex_id": "bw1-48",
     "localId": "048",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "048/114",
+    "cardNumber": "48/114",
     "cardName": "Munna",
-    "fullDisplayName": "Munna 048/114 Black & White",
+    "fullDisplayName": "Munna 48/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2157,18 +2582,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-048-low.png",
-    "imageHighSrc": "cards/bw1-048-high.png"
+    "imageHighSrc": "cards/bw1-048-high.png",
+    "attacks": [
+      {
+        "name": "Hypnosis",
+        "damage": null
+      },
+      {
+        "name": "Dream Eater",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2016",
-    "externalId": null,
+    "externalId": "bw1-47",
     "tcgdex_id": "bw1-47",
     "localId": "047",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "047/114",
+    "cardNumber": "47/114",
     "cardName": "Zekrom",
-    "fullDisplayName": "Zekrom 047/114 Black & White",
+    "fullDisplayName": "Zekrom 47/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2190,18 +2625,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-047-low.png",
-    "imageHighSrc": "cards/bw1-047-high.png"
+    "imageHighSrc": "cards/bw1-047-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Bolt Strike",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2015",
-    "externalId": null,
+    "externalId": "bw1-46",
     "tcgdex_id": "bw1-46",
     "localId": "046",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "046/114",
+    "cardNumber": "46/114",
     "cardName": "Galvantula",
-    "fullDisplayName": "Galvantula 046/114 Black & White",
+    "fullDisplayName": "Galvantula 46/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2223,18 +2668,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-046-low.png",
-    "imageHighSrc": "cards/bw1-046-high.png"
+    "imageHighSrc": "cards/bw1-046-high.png",
+    "attacks": [
+      {
+        "name": "Electroweb",
+        "damage": "20"
+      },
+      {
+        "name": "Leech Life",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2014",
-    "externalId": null,
+    "externalId": "bw1-45",
     "tcgdex_id": "bw1-45",
     "localId": "045",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "045/114",
+    "cardNumber": "45/114",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 045/114 Black & White",
+    "fullDisplayName": "Joltik 45/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2256,18 +2711,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-045-low.png",
-    "imageHighSrc": "cards/bw1-045-high.png"
+    "imageHighSrc": "cards/bw1-045-high.png",
+    "attacks": [
+      {
+        "name": "Leech Life",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2013",
-    "externalId": null,
+    "externalId": "bw1-44",
     "tcgdex_id": "bw1-44",
     "localId": "044",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "044/114",
+    "cardNumber": "44/114",
     "cardName": "Joltik",
-    "fullDisplayName": "Joltik 044/114 Black & White",
+    "fullDisplayName": "Joltik 44/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2289,18 +2750,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-044-low.png",
-    "imageHighSrc": "cards/bw1-044-high.png"
+    "imageHighSrc": "cards/bw1-044-high.png",
+    "attacks": [
+      {
+        "name": "Stun Needle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2012",
-    "externalId": null,
+    "externalId": "bw1-43",
     "tcgdex_id": "bw1-43",
     "localId": "043",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "043/114",
+    "cardNumber": "43/114",
     "cardName": "Zebstrika",
-    "fullDisplayName": "Zebstrika 043/114 Black & White",
+    "fullDisplayName": "Zebstrika 43/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2322,18 +2789,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-043-low.png",
-    "imageHighSrc": "cards/bw1-043-high.png"
+    "imageHighSrc": "cards/bw1-043-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Electrispark",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2011",
-    "externalId": null,
+    "externalId": "bw1-42",
     "tcgdex_id": "bw1-42",
     "localId": "042",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "042/114",
+    "cardNumber": "42/114",
     "cardName": "Zebstrika",
-    "fullDisplayName": "Zebstrika 042/114 Black & White",
+    "fullDisplayName": "Zebstrika 42/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2355,18 +2832,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-042-low.png",
-    "imageHighSrc": "cards/bw1-042-high.png"
+    "imageHighSrc": "cards/bw1-042-high.png",
+    "attacks": [
+      {
+        "name": "Stomp",
+        "damage": "20+"
+      },
+      {
+        "name": "Wild Charge",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2010",
-    "externalId": null,
+    "externalId": "bw1-41",
     "tcgdex_id": "bw1-41",
     "localId": "041",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "041/114",
+    "cardNumber": "41/114",
     "cardName": "Blitzle",
-    "fullDisplayName": "Blitzle 041/114 Black & White",
+    "fullDisplayName": "Blitzle 41/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2388,18 +2875,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-041-low.png",
-    "imageHighSrc": "cards/bw1-041-high.png"
+    "imageHighSrc": "cards/bw1-041-high.png",
+    "attacks": [
+      {
+        "name": "Stomp",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2009",
-    "externalId": null,
+    "externalId": "bw1-40",
     "tcgdex_id": "bw1-40",
     "localId": "040",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "040/114",
+    "cardNumber": "40/114",
     "cardName": "Blitzle",
-    "fullDisplayName": "Blitzle 040/114 Black & White",
+    "fullDisplayName": "Blitzle 40/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2421,18 +2914,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-040-low.png",
-    "imageHighSrc": "cards/bw1-040-high.png"
+    "imageHighSrc": "cards/bw1-040-high.png",
+    "attacks": [
+      {
+        "name": "Rear Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2008",
-    "externalId": null,
+    "externalId": "bw1-39",
     "tcgdex_id": "bw1-39",
     "localId": "039",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "039/114",
+    "cardNumber": "39/114",
     "cardName": "Alomomola",
-    "fullDisplayName": "Alomomola 039/114 Black & White",
+    "fullDisplayName": "Alomomola 39/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2454,18 +2953,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-039-low.png",
-    "imageHighSrc": "cards/bw1-039-high.png"
+    "imageHighSrc": "cards/bw1-039-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "20"
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2007",
-    "externalId": null,
+    "externalId": "bw1-38",
     "tcgdex_id": "bw1-38",
     "localId": "038",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "038/114",
+    "cardNumber": "38/114",
     "cardName": "Alomomola",
-    "fullDisplayName": "Alomomola 038/114 Black & White",
+    "fullDisplayName": "Alomomola 38/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2487,18 +2996,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-038-low.png",
-    "imageHighSrc": "cards/bw1-038-high.png"
+    "imageHighSrc": "cards/bw1-038-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2006",
-    "externalId": null,
+    "externalId": "bw1-37",
     "tcgdex_id": "bw1-37",
     "localId": "037",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "037/114",
+    "cardNumber": "37/114",
     "cardName": "Swanna",
-    "fullDisplayName": "Swanna 037/114 Black & White",
+    "fullDisplayName": "Swanna 37/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2520,18 +3039,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-037-low.png",
-    "imageHighSrc": "cards/bw1-037-high.png"
+    "imageHighSrc": "cards/bw1-037-high.png",
+    "attacks": [
+      {
+        "name": "Feather Dance",
+        "damage": null
+      },
+      {
+        "name": "Aqua Ring",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2005",
-    "externalId": null,
+    "externalId": "bw1-36",
     "tcgdex_id": "bw1-36",
     "localId": "036",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "036/114",
+    "cardNumber": "36/114",
     "cardName": "Ducklett",
-    "fullDisplayName": "Ducklett 036/114 Black & White",
+    "fullDisplayName": "Ducklett 36/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2553,18 +3082,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-036-low.png",
-    "imageHighSrc": "cards/bw1-036-high.png"
+    "imageHighSrc": "cards/bw1-036-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2004",
-    "externalId": null,
+    "externalId": "bw1-35",
     "tcgdex_id": "bw1-35",
     "localId": "035",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "035/114",
+    "cardNumber": "35/114",
     "cardName": "Basculin",
-    "fullDisplayName": "Basculin 035/114 Black & White",
+    "fullDisplayName": "Basculin 35/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2586,18 +3121,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-035-low.png",
-    "imageHighSrc": "cards/bw1-035-high.png"
+    "imageHighSrc": "cards/bw1-035-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2003",
-    "externalId": null,
+    "externalId": "bw1-34",
     "tcgdex_id": "bw1-34",
     "localId": "034",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "034/114",
+    "cardNumber": "34/114",
     "cardName": "Simipour",
-    "fullDisplayName": "Simipour 034/114 Black & White",
+    "fullDisplayName": "Simipour 34/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2619,18 +3160,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-034-low.png",
-    "imageHighSrc": "cards/bw1-034-high.png"
+    "imageHighSrc": "cards/bw1-034-high.png",
+    "attacks": [
+      {
+        "name": "Scald",
+        "damage": "20"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "2002",
-    "externalId": null,
+    "externalId": "bw1-33",
     "tcgdex_id": "bw1-33",
     "localId": "033",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "033/114",
+    "cardNumber": "33/114",
     "cardName": "Panpour",
-    "fullDisplayName": "Panpour 033/114 Black & White",
+    "fullDisplayName": "Panpour 33/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2652,18 +3203,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-033-low.png",
-    "imageHighSrc": "cards/bw1-033-high.png"
+    "imageHighSrc": "cards/bw1-033-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2001",
-    "externalId": null,
+    "externalId": "bw1-32",
     "tcgdex_id": "bw1-32",
     "localId": "032",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "032/114",
+    "cardNumber": "32/114",
     "cardName": "Samurott",
-    "fullDisplayName": "Samurott 032/114 Black & White",
+    "fullDisplayName": "Samurott 32/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2685,18 +3246,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-032-low.png",
-    "imageHighSrc": "cards/bw1-032-high.png"
+    "imageHighSrc": "cards/bw1-032-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "2000",
-    "externalId": null,
+    "externalId": "bw1-31",
     "tcgdex_id": "bw1-31",
     "localId": "031",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "031/114",
+    "cardNumber": "31/114",
     "cardName": "Samurott",
-    "fullDisplayName": "Samurott 031/114 Black & White",
+    "fullDisplayName": "Samurott 31/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2718,18 +3285,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-031-low.png",
-    "imageHighSrc": "cards/bw1-031-high.png"
+    "imageHighSrc": "cards/bw1-031-high.png",
+    "attacks": [
+      {
+        "name": "Pike",
+        "damage": "30"
+      },
+      {
+        "name": "Surf",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "1999",
-    "externalId": null,
+    "externalId": "bw1-30",
     "tcgdex_id": "bw1-30",
     "localId": "030",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "030/114",
+    "cardNumber": "30/114",
     "cardName": "Dewott",
-    "fullDisplayName": "Dewott 030/114 Black & White",
+    "fullDisplayName": "Dewott 30/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2751,18 +3328,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-030-low.png",
-    "imageHighSrc": "cards/bw1-030-high.png"
+    "imageHighSrc": "cards/bw1-030-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Tail",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "1998",
-    "externalId": null,
+    "externalId": "bw1-29",
     "tcgdex_id": "bw1-29",
     "localId": "029",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "029/114",
+    "cardNumber": "29/114",
     "cardName": "Dewott",
-    "fullDisplayName": "Dewott 029/114 Black & White",
+    "fullDisplayName": "Dewott 29/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2784,18 +3367,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-029-low.png",
-    "imageHighSrc": "cards/bw1-029-high.png"
+    "imageHighSrc": "cards/bw1-029-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      },
+      {
+        "name": "Razor Shell",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "1997",
-    "externalId": null,
+    "externalId": "bw1-28",
     "tcgdex_id": "bw1-28",
     "localId": "028",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "028/114",
+    "cardNumber": "28/114",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott 028/114 Black & White",
+    "fullDisplayName": "Oshawott 28/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2817,18 +3410,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-028-low.png",
-    "imageHighSrc": "cards/bw1-028-high.png"
+    "imageHighSrc": "cards/bw1-028-high.png",
+    "attacks": [
+      {
+        "name": "Razor Shell",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "1996",
-    "externalId": null,
+    "externalId": "bw1-27",
     "tcgdex_id": "bw1-27",
     "localId": "027",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "027/114",
+    "cardNumber": "27/114",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott 027/114 Black & White",
+    "fullDisplayName": "Oshawott 27/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2850,18 +3449,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-027-low.png",
-    "imageHighSrc": "cards/bw1-027-high.png"
+    "imageHighSrc": "cards/bw1-027-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1995",
-    "externalId": null,
+    "externalId": "bw1-26",
     "tcgdex_id": "bw1-26",
     "localId": "026",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "026/114",
+    "cardNumber": "26/114",
     "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram 026/114 Black & White",
+    "fullDisplayName": "Reshiram 26/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2883,18 +3492,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-026-low.png",
-    "imageHighSrc": "cards/bw1-026-high.png"
+    "imageHighSrc": "cards/bw1-026-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Blue Flare",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "1994",
-    "externalId": null,
+    "externalId": "bw1-25",
     "tcgdex_id": "bw1-25",
     "localId": "025",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "025/114",
+    "cardNumber": "25/114",
     "cardName": "Darmanitan",
-    "fullDisplayName": "Darmanitan 025/114 Black & White",
+    "fullDisplayName": "Darmanitan 25/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2916,18 +3535,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-025-low.png",
-    "imageHighSrc": "cards/bw1-025-high.png"
+    "imageHighSrc": "cards/bw1-025-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "20"
+      },
+      {
+        "name": "Thrash",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "1993",
-    "externalId": null,
+    "externalId": "bw1-24",
     "tcgdex_id": "bw1-24",
     "localId": "024",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "024/114",
+    "cardNumber": "24/114",
     "cardName": "Darumaka",
-    "fullDisplayName": "Darumaka 024/114 Black & White",
+    "fullDisplayName": "Darumaka 24/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2949,18 +3578,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-024-low.png",
-    "imageHighSrc": "cards/bw1-024-high.png"
+    "imageHighSrc": "cards/bw1-024-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1992",
-    "externalId": null,
+    "externalId": "bw1-23",
     "tcgdex_id": "bw1-23",
     "localId": "023",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "023/114",
+    "cardNumber": "23/114",
     "cardName": "Darumaka",
-    "fullDisplayName": "Darumaka 023/114 Black & White",
+    "fullDisplayName": "Darumaka 23/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2982,18 +3621,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-023-low.png",
-    "imageHighSrc": "cards/bw1-023-high.png"
+    "imageHighSrc": "cards/bw1-023-high.png",
+    "attacks": [
+      {
+        "name": "Firebreathing",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1991",
-    "externalId": null,
+    "externalId": "bw1-22",
     "tcgdex_id": "bw1-22",
     "localId": "022",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "022/114",
+    "cardNumber": "22/114",
     "cardName": "Simisear",
-    "fullDisplayName": "Simisear 022/114 Black & White",
+    "fullDisplayName": "Simisear 22/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3015,18 +3660,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-022-low.png",
-    "imageHighSrc": "cards/bw1-022-high.png"
+    "imageHighSrc": "cards/bw1-022-high.png",
+    "attacks": [
+      {
+        "name": "Flame Burst",
+        "damage": "20"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "1990",
-    "externalId": null,
+    "externalId": "bw1-21",
     "tcgdex_id": "bw1-21",
     "localId": "021",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "021/114",
+    "cardNumber": "21/114",
     "cardName": "Pansear",
-    "fullDisplayName": "Pansear 021/114 Black & White",
+    "fullDisplayName": "Pansear 21/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3048,18 +3703,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-021-low.png",
-    "imageHighSrc": "cards/bw1-021-high.png"
+    "imageHighSrc": "cards/bw1-021-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Live Coal",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1989",
-    "externalId": null,
+    "externalId": "bw1-20",
     "tcgdex_id": "bw1-20",
     "localId": "020",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "020/114",
+    "cardNumber": "20/114",
     "cardName": "Emboar",
-    "fullDisplayName": "Emboar 020/114 Black & White",
+    "fullDisplayName": "Emboar 20/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3081,18 +3746,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-020-low.png",
-    "imageHighSrc": "cards/bw1-020-high.png"
+    "imageHighSrc": "cards/bw1-020-high.png",
+    "attacks": [
+      {
+        "name": "Heat Crash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "1988",
-    "externalId": null,
+    "externalId": "bw1-19",
     "tcgdex_id": "bw1-19",
     "localId": "019",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "019/114",
+    "cardNumber": "19/114",
     "cardName": "Emboar",
-    "fullDisplayName": "Emboar 019/114 Black & White",
+    "fullDisplayName": "Emboar 19/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3114,18 +3785,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-019-low.png",
-    "imageHighSrc": "cards/bw1-019-high.png"
+    "imageHighSrc": "cards/bw1-019-high.png",
+    "attacks": [
+      {
+        "name": "Heat Crash",
+        "damage": "50"
+      },
+      {
+        "name": "Flare Blitz",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "1987",
-    "externalId": null,
+    "externalId": "bw1-18",
     "tcgdex_id": "bw1-18",
     "localId": "018",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "018/114",
+    "cardNumber": "18/114",
     "cardName": "Pignite",
-    "fullDisplayName": "Pignite 018/114 Black & White",
+    "fullDisplayName": "Pignite 18/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3147,18 +3828,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-018-low.png",
-    "imageHighSrc": "cards/bw1-018-high.png"
+    "imageHighSrc": "cards/bw1-018-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "20"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "1986",
-    "externalId": null,
+    "externalId": "bw1-17",
     "tcgdex_id": "bw1-17",
     "localId": "017",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "017/114",
+    "cardNumber": "17/114",
     "cardName": "Pignite",
-    "fullDisplayName": "Pignite 017/114 Black & White",
+    "fullDisplayName": "Pignite 17/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3180,18 +3871,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-017-low.png",
-    "imageHighSrc": "cards/bw1-017-high.png"
+    "imageHighSrc": "cards/bw1-017-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": null
+      },
+      {
+        "name": "Heat Crash",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1985",
-    "externalId": null,
+    "externalId": "bw1-16",
     "tcgdex_id": "bw1-16",
     "localId": "016",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "016/114",
+    "cardNumber": "16/114",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig 016/114 Black & White",
+    "fullDisplayName": "Tepig 16/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3213,18 +3914,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-016-low.png",
-    "imageHighSrc": "cards/bw1-016-high.png"
+    "imageHighSrc": "cards/bw1-016-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1984",
-    "externalId": null,
+    "externalId": "bw1-15",
     "tcgdex_id": "bw1-15",
     "localId": "015",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "015/114",
+    "cardNumber": "15/114",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig 015/114 Black & White",
+    "fullDisplayName": "Tepig 15/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3246,18 +3953,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-015-low.png",
-    "imageHighSrc": "cards/bw1-015-high.png"
+    "imageHighSrc": "cards/bw1-015-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1983",
-    "externalId": null,
+    "externalId": "bw1-14",
     "tcgdex_id": "bw1-14",
     "localId": "014",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "014/114",
+    "cardNumber": "14/114",
     "cardName": "Sawsbuck",
-    "fullDisplayName": "Sawsbuck 014/114 Black & White",
+    "fullDisplayName": "Sawsbuck 14/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3279,18 +3996,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-014-low.png",
-    "imageHighSrc": "cards/bw1-014-high.png"
+    "imageHighSrc": "cards/bw1-014-high.png",
+    "attacks": [
+      {
+        "name": "Nature Power",
+        "damage": "20+"
+      },
+      {
+        "name": "Horn Leech",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1982",
-    "externalId": null,
+    "externalId": "bw1-13",
     "tcgdex_id": "bw1-13",
     "localId": "013",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "013/114",
+    "cardNumber": "13/114",
     "cardName": "Deerling",
-    "fullDisplayName": "Deerling 013/114 Black & White",
+    "fullDisplayName": "Deerling 13/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3312,18 +4039,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-013-low.png",
-    "imageHighSrc": "cards/bw1-013-high.png"
+    "imageHighSrc": "cards/bw1-013-high.png",
+    "attacks": [
+      {
+        "name": "Double Kick",
+        "damage": "10×"
+      },
+      {
+        "name": "Leech Seed",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "1981",
-    "externalId": null,
+    "externalId": "bw1-12",
     "tcgdex_id": "bw1-12",
     "localId": "012",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "012/114",
+    "cardNumber": "12/114",
     "cardName": "Maractus",
-    "fullDisplayName": "Maractus 012/114 Black & White",
+    "fullDisplayName": "Maractus 12/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3345,18 +4082,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-012-low.png",
-    "imageHighSrc": "cards/bw1-012-high.png"
+    "imageHighSrc": "cards/bw1-012-high.png",
+    "attacks": [
+      {
+        "name": "Constant Rattle",
+        "damage": null
+      },
+      {
+        "name": "Giga Drain",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "1980",
-    "externalId": null,
+    "externalId": "bw1-11",
     "tcgdex_id": "bw1-11",
     "localId": "011",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "011/114",
+    "cardNumber": "11/114",
     "cardName": "Maractus",
-    "fullDisplayName": "Maractus 011/114 Black & White",
+    "fullDisplayName": "Maractus 11/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3378,18 +4125,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-011-low.png",
-    "imageHighSrc": "cards/bw1-011-high.png"
+    "imageHighSrc": "cards/bw1-011-high.png",
+    "attacks": [
+      {
+        "name": "Mega Drain",
+        "damage": "20"
+      },
+      {
+        "name": "Pin Missile",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "1979",
-    "externalId": null,
+    "externalId": "bw1-10",
     "tcgdex_id": "bw1-10",
     "localId": "010",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "010/114",
+    "cardNumber": "10/114",
     "cardName": "Lilligant",
-    "fullDisplayName": "Lilligant 010/114 Black & White",
+    "fullDisplayName": "Lilligant 10/114 Black & White",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3411,18 +4168,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-010-low.png",
-    "imageHighSrc": "cards/bw1-010-high.png"
+    "imageHighSrc": "cards/bw1-010-high.png",
+    "attacks": [
+      {
+        "name": "Petal Dance",
+        "damage": "30×"
+      },
+      {
+        "name": "Leaf Storm",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1978",
-    "externalId": null,
+    "externalId": "bw1-9",
     "tcgdex_id": "bw1-9",
     "localId": "009",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "009/114",
+    "cardNumber": "9/114",
     "cardName": "Petilil",
-    "fullDisplayName": "Petilil 009/114 Black & White",
+    "fullDisplayName": "Petilil 9/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3444,18 +4211,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-009-low.png",
-    "imageHighSrc": "cards/bw1-009-high.png"
+    "imageHighSrc": "cards/bw1-009-high.png",
+    "attacks": [
+      {
+        "name": "Magical Leaf",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1977",
-    "externalId": null,
+    "externalId": "bw1-8",
     "tcgdex_id": "bw1-8",
     "localId": "008",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "008/114",
+    "cardNumber": "8/114",
     "cardName": "Simisage",
-    "fullDisplayName": "Simisage 008/114 Black & White",
+    "fullDisplayName": "Simisage 8/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3477,18 +4250,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-008-low.png",
-    "imageHighSrc": "cards/bw1-008-high.png"
+    "imageHighSrc": "cards/bw1-008-high.png",
+    "attacks": [
+      {
+        "name": "Seed Bomb",
+        "damage": "30"
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "1976",
-    "externalId": null,
+    "externalId": "bw1-7",
     "tcgdex_id": "bw1-7",
     "localId": "007",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "007/114",
+    "cardNumber": "7/114",
     "cardName": "Pansage",
-    "fullDisplayName": "Pansage 007/114 Black & White",
+    "fullDisplayName": "Pansage 7/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3510,18 +4293,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-007-low.png",
-    "imageHighSrc": "cards/bw1-007-high.png"
+    "imageHighSrc": "cards/bw1-007-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1975",
-    "externalId": null,
+    "externalId": "bw1-6",
     "tcgdex_id": "bw1-6",
     "localId": "006",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "006/114",
+    "cardNumber": "6/114",
     "cardName": "Serperior",
-    "fullDisplayName": "Serperior 006/114 Black & White",
+    "fullDisplayName": "Serperior 6/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3543,18 +4336,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-006-low.png",
-    "imageHighSrc": "cards/bw1-006-high.png"
+    "imageHighSrc": "cards/bw1-006-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Tornado",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1974",
-    "externalId": null,
+    "externalId": "bw1-5",
     "tcgdex_id": "bw1-5",
     "localId": "005",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "005/114",
+    "cardNumber": "5/114",
     "cardName": "Serperior",
-    "fullDisplayName": "Serperior 005/114 Black & White",
+    "fullDisplayName": "Serperior 5/114 Black & White",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3576,18 +4375,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-005-low.png",
-    "imageHighSrc": "cards/bw1-005-high.png"
+    "imageHighSrc": "cards/bw1-005-high.png",
+    "attacks": [
+      {
+        "name": "Vine Whip",
+        "damage": "40"
+      },
+      {
+        "name": "Leaf Storm",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "1973",
-    "externalId": null,
+    "externalId": "bw1-4",
     "tcgdex_id": "bw1-4",
     "localId": "004",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "004/114",
+    "cardNumber": "4/114",
     "cardName": "Servine",
-    "fullDisplayName": "Servine 004/114 Black & White",
+    "fullDisplayName": "Servine 4/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3609,18 +4418,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-004-low.png",
-    "imageHighSrc": "cards/bw1-004-high.png"
+    "imageHighSrc": "cards/bw1-004-high.png",
+    "attacks": [
+      {
+        "name": "Wring Out",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1972",
-    "externalId": null,
+    "externalId": "bw1-3",
     "tcgdex_id": "bw1-3",
     "localId": "003",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "003/114",
+    "cardNumber": "3/114",
     "cardName": "Servine",
-    "fullDisplayName": "Servine 003/114 Black & White",
+    "fullDisplayName": "Servine 3/114 Black & White",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3642,18 +4457,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-003-low.png",
-    "imageHighSrc": "cards/bw1-003-high.png"
+    "imageHighSrc": "cards/bw1-003-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "20"
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "1971",
-    "externalId": null,
+    "externalId": "bw1-2",
     "tcgdex_id": "bw1-2",
     "localId": "002",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "002/114",
+    "cardNumber": "2/114",
     "cardName": "Snivy",
-    "fullDisplayName": "Snivy 002/114 Black & White",
+    "fullDisplayName": "Snivy 2/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3675,18 +4500,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-002-low.png",
-    "imageHighSrc": "cards/bw1-002-high.png"
+    "imageHighSrc": "cards/bw1-002-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Blade",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "1970",
-    "externalId": null,
+    "externalId": "bw1-1",
     "tcgdex_id": "bw1-1",
     "localId": "001",
     "setCode": "bw1",
     "setTcgdexId": "bw1",
-    "cardNumber": "001/114",
+    "cardNumber": "1/114",
     "cardName": "Snivy",
-    "fullDisplayName": "Snivy 001/114 Black & White",
+    "fullDisplayName": "Snivy 1/114 Black & White",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3708,6 +4539,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw1-001-low.png",
-    "imageHighSrc": "cards/bw1-001-high.png"
+    "imageHighSrc": "cards/bw1-001-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "20"
+      }
+    ]
   }
 ]

@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "10732",
-    "externalId": null,
+    "externalId": "sm1-172",
     "tcgdex_id": "sm1-172",
     "localId": "172",
     "setCode": "sm1",
@@ -32,7 +32,7 @@
   },
   {
     "masterCardId": "10726",
-    "externalId": null,
+    "externalId": "sm1-171",
     "tcgdex_id": "sm1-171",
     "localId": "171",
     "setCode": "sm1",
@@ -61,7 +61,7 @@
   },
   {
     "masterCardId": "10720",
-    "externalId": null,
+    "externalId": "sm1-170",
     "tcgdex_id": "sm1-170",
     "localId": "170",
     "setCode": "sm1",
@@ -90,7 +90,7 @@
   },
   {
     "masterCardId": "10714",
-    "externalId": null,
+    "externalId": "sm1-169",
     "tcgdex_id": "sm1-169",
     "localId": "169",
     "setCode": "sm1",
@@ -119,7 +119,7 @@
   },
   {
     "masterCardId": "10708",
-    "externalId": null,
+    "externalId": "sm1-168",
     "tcgdex_id": "sm1-168",
     "localId": "168",
     "setCode": "sm1",
@@ -148,7 +148,7 @@
   },
   {
     "masterCardId": "10702",
-    "externalId": null,
+    "externalId": "sm1-167",
     "tcgdex_id": "sm1-167",
     "localId": "167",
     "setCode": "sm1",
@@ -177,7 +177,7 @@
   },
   {
     "masterCardId": "10696",
-    "externalId": null,
+    "externalId": "sm1-166",
     "tcgdex_id": "sm1-166",
     "localId": "166",
     "setCode": "sm1",
@@ -206,7 +206,7 @@
   },
   {
     "masterCardId": "10690",
-    "externalId": null,
+    "externalId": "sm1-165",
     "tcgdex_id": "sm1-165",
     "localId": "165",
     "setCode": "sm1",
@@ -235,7 +235,7 @@
   },
   {
     "masterCardId": "10684",
-    "externalId": null,
+    "externalId": "sm1-164",
     "tcgdex_id": "sm1-164",
     "localId": "164",
     "setCode": "sm1",
@@ -264,7 +264,7 @@
   },
   {
     "masterCardId": "10678",
-    "externalId": null,
+    "externalId": "sm1-163",
     "tcgdex_id": "sm1-163",
     "localId": "163",
     "setCode": "sm1",
@@ -293,7 +293,7 @@
   },
   {
     "masterCardId": "10672",
-    "externalId": null,
+    "externalId": "sm1-162",
     "tcgdex_id": "sm1-162",
     "localId": "162",
     "setCode": "sm1",
@@ -322,7 +322,7 @@
   },
   {
     "masterCardId": "10666",
-    "externalId": null,
+    "externalId": "sm1-161",
     "tcgdex_id": "sm1-161",
     "localId": "161",
     "setCode": "sm1",
@@ -347,11 +347,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-161-low.png",
-    "imageHighSrc": "cards/sm1-161-high.png"
+    "imageHighSrc": "cards/sm1-161-high.png",
+    "rules": "Discard 2 cards from your hand. If you do, search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10660",
-    "externalId": null,
+    "externalId": "sm1-160",
     "tcgdex_id": "sm1-160",
     "localId": "160",
     "setCode": "sm1",
@@ -376,11 +377,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-160-low.png",
-    "imageHighSrc": "cards/sm1-160-high.png"
+    "imageHighSrc": "cards/sm1-160-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10654",
-    "externalId": null,
+    "externalId": "sm1-159",
     "tcgdex_id": "sm1-159",
     "localId": "159",
     "setCode": "sm1",
@@ -405,11 +407,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-159-low.png",
-    "imageHighSrc": "cards/sm1-159-high.png"
+    "imageHighSrc": "cards/sm1-159-high.png",
+    "rules": "After counting your Prize cards, shuffle them into your deck. Then, take that many cards from the top of your deck and put them face down as your Prize cards.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10647",
-    "externalId": null,
+    "externalId": "sm1-158",
     "tcgdex_id": "sm1-158",
     "localId": "158",
     "setCode": "sm1",
@@ -434,11 +437,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-158-low.png",
-    "imageHighSrc": "cards/sm1-158-high.png"
+    "imageHighSrc": "cards/sm1-158-high.png",
+    "rules": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10642",
-    "externalId": null,
+    "externalId": "sm1-157",
     "tcgdex_id": "sm1-157",
     "localId": "157",
     "setCode": "sm1",
@@ -468,11 +472,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-157-low.png",
-    "imageHighSrc": "cards/sm1-157-high.png"
+    "imageHighSrc": "cards/sm1-157-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt Bounce",
+        "damage": "100"
+      },
+      {
+        "name": "Gumshoe Chance-GX",
+        "damage": "10+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10636",
-    "externalId": null,
+    "externalId": "sm1-156",
     "tcgdex_id": "sm1-156",
     "localId": "156",
     "setCode": "sm1",
@@ -502,11 +517,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-156-low.png",
-    "imageHighSrc": "cards/sm1-156-high.png"
+    "imageHighSrc": "cards/sm1-156-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "20+"
+      },
+      {
+        "name": "Horn Attack",
+        "damage": "60"
+      },
+      {
+        "name": "Mad Bull-GX",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10630",
-    "externalId": null,
+    "externalId": "sm1-155",
     "tcgdex_id": "sm1-155",
     "localId": "155",
     "setCode": "sm1",
@@ -536,11 +566,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-155-low.png",
-    "imageHighSrc": "cards/sm1-155-high.png"
+    "imageHighSrc": "cards/sm1-155-high.png",
+    "attacks": [
+      {
+        "name": "Sunsteel Strike",
+        "damage": "230"
+      },
+      {
+        "name": "Sol Burst-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10624",
-    "externalId": null,
+    "externalId": "sm1-154",
     "tcgdex_id": "sm1-154",
     "localId": "154",
     "setCode": "sm1",
@@ -570,11 +611,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-154-low.png",
-    "imageHighSrc": "cards/sm1-154-high.png"
+    "imageHighSrc": "cards/sm1-154-high.png",
+    "attacks": [
+      {
+        "name": "Strafe",
+        "damage": "30"
+      },
+      {
+        "name": "Shadow Bullet",
+        "damage": "90"
+      },
+      {
+        "name": "Dark Call-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10618",
-    "externalId": null,
+    "externalId": "sm1-153",
     "tcgdex_id": "sm1-153",
     "localId": "153",
     "setCode": "sm1",
@@ -604,11 +660,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-153-low.png",
-    "imageHighSrc": "cards/sm1-153-high.png"
+    "imageHighSrc": "cards/sm1-153-high.png",
+    "attacks": [
+      {
+        "name": "Moongeist Beam",
+        "damage": "120"
+      },
+      {
+        "name": "Lunar Fall-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10612",
-    "externalId": null,
+    "externalId": "sm1-152",
     "tcgdex_id": "sm1-152",
     "localId": "152",
     "setCode": "sm1",
@@ -638,11 +705,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-152-low.png",
-    "imageHighSrc": "cards/sm1-152-high.png"
+    "imageHighSrc": "cards/sm1-152-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": "30"
+      },
+      {
+        "name": "Psychic",
+        "damage": "60+"
+      },
+      {
+        "name": "Divide-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10606",
-    "externalId": null,
+    "externalId": "sm1-151",
     "tcgdex_id": "sm1-151",
     "localId": "151",
     "setCode": "sm1",
@@ -672,11 +754,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-151-low.png",
-    "imageHighSrc": "cards/sm1-151-high.png"
+    "imageHighSrc": "cards/sm1-151-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Blizzard Burn",
+        "damage": "160"
+      },
+      {
+        "name": "Ice Beam-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10600",
-    "externalId": null,
+    "externalId": "sm1-150",
     "tcgdex_id": "sm1-150",
     "localId": "150",
     "setCode": "sm1",
@@ -706,11 +803,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-150-low.png",
-    "imageHighSrc": "cards/sm1-150-high.png"
+    "imageHighSrc": "cards/sm1-150-high.png",
+    "attacks": [
+      {
+        "name": "Flower Supply",
+        "damage": "40"
+      },
+      {
+        "name": "Solar Blade",
+        "damage": "120"
+      },
+      {
+        "name": "Chloroscythe-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10594",
-    "externalId": null,
+    "externalId": "sm1-149",
     "tcgdex_id": "sm1-149",
     "localId": "149",
     "setCode": "sm1",
@@ -735,11 +847,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-149-low.png",
-    "imageHighSrc": "cards/sm1-149-high.png"
+    "imageHighSrc": "cards/sm1-149-high.png",
+    "rules": "Your opponent reveals their hand. Discard 2 Energy cards from it.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10587",
-    "externalId": null,
+    "externalId": "sm1-148",
     "tcgdex_id": "sm1-148",
     "localId": "148",
     "setCode": "sm1",
@@ -764,11 +877,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-148-low.png",
-    "imageHighSrc": "cards/sm1-148-high.png"
+    "imageHighSrc": "cards/sm1-148-high.png",
+    "rules": "Draw 2 cards. During this turn, your Pokémon's attacks do 20 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10581",
-    "externalId": null,
+    "externalId": "sm1-147",
     "tcgdex_id": "sm1-147",
     "localId": "147",
     "setCode": "sm1",
@@ -793,11 +907,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-147-low.png",
-    "imageHighSrc": "cards/sm1-147-high.png"
+    "imageHighSrc": "cards/sm1-147-high.png",
+    "rules": "Draw cards until you have 6 cards in your hand. If it's your first turn, draw cards until you have 8 cards in your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10575",
-    "externalId": null,
+    "externalId": "sm1-146",
     "tcgdex_id": "sm1-146",
     "localId": "146",
     "setCode": "sm1",
@@ -822,11 +937,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-146-low.png",
-    "imageHighSrc": "cards/sm1-146-high.png"
+    "imageHighSrc": "cards/sm1-146-high.png",
+    "rules": "Each player shuffles their hand into their deck and flips a coin. If heads, that player draws 6 cards. If tails, they draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10570",
-    "externalId": null,
+    "externalId": "sm1-145",
     "tcgdex_id": "sm1-145",
     "localId": "145",
     "setCode": "sm1",
@@ -856,11 +972,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-145-low.png",
-    "imageHighSrc": "cards/sm1-145-high.png"
+    "imageHighSrc": "cards/sm1-145-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt Bounce",
+        "damage": "100"
+      },
+      {
+        "name": "Gumshoe Chance-GX",
+        "damage": "10+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10564",
-    "externalId": null,
+    "externalId": "sm1-144",
     "tcgdex_id": "sm1-144",
     "localId": "144",
     "setCode": "sm1",
@@ -890,11 +1017,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-144-low.png",
-    "imageHighSrc": "cards/sm1-144-high.png"
+    "imageHighSrc": "cards/sm1-144-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "20+"
+      },
+      {
+        "name": "Horn Attack",
+        "damage": "60"
+      },
+      {
+        "name": "Mad Bull-GX",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10557",
-    "externalId": null,
+    "externalId": "sm1-143",
     "tcgdex_id": "sm1-143",
     "localId": "143",
     "setCode": "sm1",
@@ -924,11 +1066,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-143-low.png",
-    "imageHighSrc": "cards/sm1-143-high.png"
+    "imageHighSrc": "cards/sm1-143-high.png",
+    "attacks": [
+      {
+        "name": "Sunsteel Strike",
+        "damage": "230"
+      },
+      {
+        "name": "Sol Burst-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10551",
-    "externalId": null,
+    "externalId": "sm1-142",
     "tcgdex_id": "sm1-142",
     "localId": "142",
     "setCode": "sm1",
@@ -958,11 +1111,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-142-low.png",
-    "imageHighSrc": "cards/sm1-142-high.png"
+    "imageHighSrc": "cards/sm1-142-high.png",
+    "attacks": [
+      {
+        "name": "Strafe",
+        "damage": "30"
+      },
+      {
+        "name": "Shadow Bullet",
+        "damage": "90"
+      },
+      {
+        "name": "Dark Call-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10545",
-    "externalId": null,
+    "externalId": "sm1-141",
     "tcgdex_id": "sm1-141",
     "localId": "141",
     "setCode": "sm1",
@@ -992,11 +1160,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-141-low.png",
-    "imageHighSrc": "cards/sm1-141-high.png"
+    "imageHighSrc": "cards/sm1-141-high.png",
+    "attacks": [
+      {
+        "name": "Moongeist Beam",
+        "damage": "120"
+      },
+      {
+        "name": "Lunar Fall-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10536",
-    "externalId": null,
+    "externalId": "sm1-140",
     "tcgdex_id": "sm1-140",
     "localId": "140",
     "setCode": "sm1",
@@ -1026,11 +1205,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-140-low.png",
-    "imageHighSrc": "cards/sm1-140-high.png"
+    "imageHighSrc": "cards/sm1-140-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": "30"
+      },
+      {
+        "name": "Psychic",
+        "damage": "60+"
+      },
+      {
+        "name": "Divide-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10530",
-    "externalId": null,
+    "externalId": "sm1-139",
     "tcgdex_id": "sm1-139",
     "localId": "139",
     "setCode": "sm1",
@@ -1060,11 +1254,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-139-low.png",
-    "imageHighSrc": "cards/sm1-139-high.png"
+    "imageHighSrc": "cards/sm1-139-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Blizzard Burn",
+        "damage": "160"
+      },
+      {
+        "name": "Ice Beam-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10524",
-    "externalId": null,
+    "externalId": "sm1-138",
     "tcgdex_id": "sm1-138",
     "localId": "138",
     "setCode": "sm1",
@@ -1094,11 +1303,26 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-138-low.png",
-    "imageHighSrc": "cards/sm1-138-high.png"
+    "imageHighSrc": "cards/sm1-138-high.png",
+    "attacks": [
+      {
+        "name": "Flower Supply",
+        "damage": "40"
+      },
+      {
+        "name": "Solar Blade",
+        "damage": "120"
+      },
+      {
+        "name": "Chloroscythe-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10520",
-    "externalId": null,
+    "externalId": "sm1-137",
     "tcgdex_id": "sm1-137",
     "localId": "137",
     "setCode": "sm1",
@@ -1123,11 +1347,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-137-low.png",
-    "imageHighSrc": "cards/sm1-137-high.png"
+    "imageHighSrc": "cards/sm1-137-high.png",
+    "rules": "This card provides Colorless Energy. While in play, this card provides every type of Energy but provides only 1 Energy at a time. When you attach this card from your hand to 1 of your Pokémon, put 1 damage counter on that Pokémon."
   },
   {
     "masterCardId": "10514",
-    "externalId": null,
+    "externalId": "sm1-136",
     "tcgdex_id": "sm1-136",
     "localId": "136",
     "setCode": "sm1",
@@ -1152,11 +1377,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-136-low.png",
-    "imageHighSrc": "cards/sm1-136-high.png"
+    "imageHighSrc": "cards/sm1-136-high.png",
+    "rules": "Double Colorless Energy provides ColorlessColorless Energy."
   },
   {
     "masterCardId": "10508",
-    "externalId": null,
+    "externalId": "sm1-135",
     "tcgdex_id": "sm1-135",
     "localId": "135",
     "setCode": "sm1",
@@ -1181,11 +1407,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-135-low.png",
-    "imageHighSrc": "cards/sm1-135-high.png"
+    "imageHighSrc": "cards/sm1-135-high.png",
+    "rules": "Discard 2 cards from your hand. If you do, search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10502",
-    "externalId": null,
+    "externalId": "sm1-134",
     "tcgdex_id": "sm1-134",
     "localId": "134",
     "setCode": "sm1",
@@ -1210,11 +1437,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-134-low.png",
-    "imageHighSrc": "cards/sm1-134-high.png"
+    "imageHighSrc": "cards/sm1-134-high.png",
+    "rules": "Flip 2 coins. For each heads, search your deck for an Evolution Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10496",
-    "externalId": null,
+    "externalId": "sm1-133",
     "tcgdex_id": "sm1-133",
     "localId": "133",
     "setCode": "sm1",
@@ -1239,11 +1467,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-133-low.png",
-    "imageHighSrc": "cards/sm1-133-high.png"
+    "imageHighSrc": "cards/sm1-133-high.png",
+    "rules": "Your opponent reveals their hand. Discard 2 Energy cards from it.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10490",
-    "externalId": null,
+    "externalId": "sm1-132",
     "tcgdex_id": "sm1-132",
     "localId": "132",
     "setCode": "sm1",
@@ -1268,11 +1497,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-132-low.png",
-    "imageHighSrc": "cards/sm1-132-high.png"
+    "imageHighSrc": "cards/sm1-132-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10484",
-    "externalId": null,
+    "externalId": "sm1-131",
     "tcgdex_id": "sm1-131",
     "localId": "131",
     "setCode": "sm1",
@@ -1297,11 +1527,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-131-low.png",
-    "imageHighSrc": "cards/sm1-131-high.png"
+    "imageHighSrc": "cards/sm1-131-high.png",
+    "rules": "After counting your Prize cards, shuffle them into your deck. Then, take that many cards from the top of your deck and put them face down as your Prize cards.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10478",
-    "externalId": null,
+    "externalId": "sm1-130",
     "tcgdex_id": "sm1-130",
     "localId": "130",
     "setCode": "sm1",
@@ -1326,11 +1557,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-130-low.png",
-    "imageHighSrc": "cards/sm1-130-high.png"
+    "imageHighSrc": "cards/sm1-130-high.png",
+    "rules": "Your opponent switches their Active Pokémon with 1 of their Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10473",
-    "externalId": null,
+    "externalId": "sm1-129",
     "tcgdex_id": "sm1-129",
     "localId": "129",
     "setCode": "sm1",
@@ -1355,11 +1587,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-129-low.png",
-    "imageHighSrc": "cards/sm1-129-high.png"
+    "imageHighSrc": "cards/sm1-129-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 2 card in your hand that evolves from that Pokémon, put that card onto the Basic Pokémon to evolve it. You can't use this card during your first turn or on a Basic Pokémon that was put into play this turn.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10467",
-    "externalId": null,
+    "externalId": "sm1-128",
     "tcgdex_id": "sm1-128",
     "localId": "128",
     "setCode": "sm1",
@@ -1384,11 +1617,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-128-low.png",
-    "imageHighSrc": "cards/sm1-128-high.png"
+    "imageHighSrc": "cards/sm1-128-high.png",
+    "rules": "Draw 2 cards. During this turn, your Pokémon's attacks do 20 more damage to your opponent's Active Pokémon (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10461",
-    "externalId": null,
+    "externalId": "sm1-127",
     "tcgdex_id": "sm1-127",
     "localId": "127",
     "setCode": "sm1",
@@ -1413,11 +1647,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-127-low.png",
-    "imageHighSrc": "cards/sm1-127-high.png"
+    "imageHighSrc": "cards/sm1-127-high.png",
+    "rules": "Heal 30 damage from 1 of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10455",
-    "externalId": null,
+    "externalId": "sm1-126",
     "tcgdex_id": "sm1-126",
     "localId": "126",
     "setCode": "sm1",
@@ -1442,11 +1677,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-126-low.png",
-    "imageHighSrc": "cards/sm1-126-high.png"
+    "imageHighSrc": "cards/sm1-126-high.png",
+    "rules": "Flip a coin. If heads, switch 1 of your opponent's Benched Pokémon with their Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10449",
-    "externalId": null,
+    "externalId": "sm1-125",
     "tcgdex_id": "sm1-125",
     "localId": "125",
     "setCode": "sm1",
@@ -1471,11 +1707,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-125-low.png",
-    "imageHighSrc": "cards/sm1-125-high.png"
+    "imageHighSrc": "cards/sm1-125-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10443",
-    "externalId": null,
+    "externalId": "sm1-124",
     "tcgdex_id": "sm1-124",
     "localId": "124",
     "setCode": "sm1",
@@ -1500,11 +1737,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-124-low.png",
-    "imageHighSrc": "cards/sm1-124-high.png"
+    "imageHighSrc": "cards/sm1-124-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is your Active Pokémon and is damaged by an opponent's attack (even if this Pokémon is Knocked Out), the Attacking Pokémon is now Poisoned.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10438",
-    "externalId": null,
+    "externalId": "sm1-123",
     "tcgdex_id": "sm1-123",
     "localId": "123",
     "setCode": "sm1",
@@ -1529,11 +1767,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-123-low.png",
-    "imageHighSrc": "cards/sm1-123-high.png"
+    "imageHighSrc": "cards/sm1-123-high.png",
+    "rules": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10432",
-    "externalId": null,
+    "externalId": "sm1-122",
     "tcgdex_id": "sm1-122",
     "localId": "122",
     "setCode": "sm1",
@@ -1558,11 +1797,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-122-low.png",
-    "imageHighSrc": "cards/sm1-122-high.png"
+    "imageHighSrc": "cards/sm1-122-high.png",
+    "rules": "Draw cards until you have 6 cards in your hand. If it's your first turn, draw cards until you have 8 cards in your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10426",
-    "externalId": null,
+    "externalId": "sm1-121",
     "tcgdex_id": "sm1-121",
     "localId": "121",
     "setCode": "sm1",
@@ -1587,11 +1827,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-121-low.png",
-    "imageHighSrc": "cards/sm1-121-high.png"
+    "imageHighSrc": "cards/sm1-121-high.png",
+    "rules": "Each player shuffles their hand into their deck and flips a coin. If heads, that player draws 6 cards. If tails, they draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10420",
-    "externalId": null,
+    "externalId": "sm1-120",
     "tcgdex_id": "sm1-120",
     "localId": "120",
     "setCode": "sm1",
@@ -1616,11 +1857,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-120-low.png",
-    "imageHighSrc": "cards/sm1-120-high.png"
+    "imageHighSrc": "cards/sm1-120-high.png",
+    "rules": "Draw 3 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "10414",
-    "externalId": null,
+    "externalId": "sm1-119",
     "tcgdex_id": "sm1-119",
     "localId": "119",
     "setCode": "sm1",
@@ -1645,11 +1887,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-119-low.png",
-    "imageHighSrc": "cards/sm1-119-high.png"
+    "imageHighSrc": "cards/sm1-119-high.png",
+    "rules": "Look at the top 7 cards of your deck. You may reveal a Pokémon you find there and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10404",
-    "externalId": null,
+    "externalId": "sm1-118",
     "tcgdex_id": "sm1-118",
     "localId": "118",
     "setCode": "sm1",
@@ -1674,11 +1917,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-118-low.png",
-    "imageHighSrc": "cards/sm1-118-high.png"
+    "imageHighSrc": "cards/sm1-118-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhen your Active Pokémon is Knocked Out by damage from an opponent's attack, you may move 1 basic Energy card from that Pokémon to the Pokémon this card is attached to.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10397",
-    "externalId": null,
+    "externalId": "sm1-117",
     "tcgdex_id": "sm1-117",
     "localId": "117",
     "setCode": "sm1",
@@ -1703,11 +1947,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-117-low.png",
-    "imageHighSrc": "cards/sm1-117-high.png"
+    "imageHighSrc": "cards/sm1-117-high.png",
+    "rules": "Move a basic Energy from 1 of your Pokémon to another of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10389",
-    "externalId": null,
+    "externalId": "sm1-116",
     "tcgdex_id": "sm1-116",
     "localId": "116",
     "setCode": "sm1",
@@ -1732,11 +1977,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-116-low.png",
-    "imageHighSrc": "cards/sm1-116-high.png"
+    "imageHighSrc": "cards/sm1-116-high.png",
+    "rules": "Put 2 basic Energy cards from your discard pile into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10383",
-    "externalId": null,
+    "externalId": "sm1-115",
     "tcgdex_id": "sm1-115",
     "localId": "115",
     "setCode": "sm1",
@@ -1761,11 +2007,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-115-low.png",
-    "imageHighSrc": "cards/sm1-115-high.png"
+    "imageHighSrc": "cards/sm1-115-high.png",
+    "rules": "Flip a coin. If heads, discard an Energy from 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10376",
-    "externalId": null,
+    "externalId": "sm1-114",
     "tcgdex_id": "sm1-114",
     "localId": "114",
     "setCode": "sm1",
@@ -1790,11 +2037,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-114-low.png",
-    "imageHighSrc": "cards/sm1-114-high.png"
+    "imageHighSrc": "cards/sm1-114-high.png",
+    "rules": "Heal 20 damage and remove a Special Condition from your Active Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "10370",
-    "externalId": null,
+    "externalId": "sm1-113",
     "tcgdex_id": "sm1-113",
     "localId": "113",
     "setCode": "sm1",
@@ -1823,11 +2071,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-113-low.png",
-    "imageHighSrc": "cards/sm1-113-high.png"
+    "imageHighSrc": "cards/sm1-113-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "10364",
-    "externalId": null,
+    "externalId": "sm1-112",
     "tcgdex_id": "sm1-112",
     "localId": "112",
     "setCode": "sm1",
@@ -1856,11 +2110,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-112-low.png",
-    "imageHighSrc": "cards/sm1-112-high.png"
+    "imageHighSrc": "cards/sm1-112-high.png",
+    "attacks": [
+      {
+        "name": "Bear Hug",
+        "damage": "40"
+      },
+      {
+        "name": "Superpower",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "10356",
-    "externalId": null,
+    "externalId": "sm1-111",
     "tcgdex_id": "sm1-111",
     "localId": "111",
     "setCode": "sm1",
@@ -1889,11 +2153,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-111-low.png",
-    "imageHighSrc": "cards/sm1-111-high.png"
+    "imageHighSrc": "cards/sm1-111-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10351",
-    "externalId": null,
+    "externalId": "sm1-110",
     "tcgdex_id": "sm1-110",
     "localId": "110",
     "setCode": "sm1",
@@ -1923,11 +2193,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-110-low.png",
-    "imageHighSrc": "cards/sm1-110-high.png"
+    "imageHighSrc": "cards/sm1-110-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt Bounce",
+        "damage": "100"
+      },
+      {
+        "name": "Gumshoe Chance-GX",
+        "damage": "10+"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10344",
-    "externalId": null,
+    "externalId": "sm1-109",
     "tcgdex_id": "sm1-109",
     "localId": "109",
     "setCode": "sm1",
@@ -1956,11 +2237,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-109-low.png",
-    "imageHighSrc": "cards/sm1-109-high.png"
+    "imageHighSrc": "cards/sm1-109-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10337",
-    "externalId": null,
+    "externalId": "sm1-108",
     "tcgdex_id": "sm1-108",
     "localId": "108",
     "setCode": "sm1",
@@ -1989,11 +2280,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-108-low.png",
-    "imageHighSrc": "cards/sm1-108-high.png"
+    "imageHighSrc": "cards/sm1-108-high.png",
+    "attacks": [
+      {
+        "name": "Echoed Voice",
+        "damage": "60"
+      },
+      {
+        "name": "Beak Blast",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "10330",
-    "externalId": null,
+    "externalId": "sm1-107",
     "tcgdex_id": "sm1-107",
     "localId": "107",
     "setCode": "sm1",
@@ -2022,11 +2323,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-107-low.png",
-    "imageHighSrc": "cards/sm1-107-high.png"
+    "imageHighSrc": "cards/sm1-107-high.png",
+    "attacks": [
+      {
+        "name": "Bullet Seed",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "10326",
-    "externalId": null,
+    "externalId": "sm1-106",
     "tcgdex_id": "sm1-106",
     "localId": "106",
     "setCode": "sm1",
@@ -2055,11 +2362,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-106-low.png",
-    "imageHighSrc": "cards/sm1-106-high.png"
+    "imageHighSrc": "cards/sm1-106-high.png",
+    "attacks": [
+      {
+        "name": "Rock Smash",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "10319",
-    "externalId": null,
+    "externalId": "sm1-105",
     "tcgdex_id": "sm1-105",
     "localId": "105",
     "setCode": "sm1",
@@ -2088,11 +2401,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-105-low.png",
-    "imageHighSrc": "cards/sm1-105-high.png"
+    "imageHighSrc": "cards/sm1-105-high.png",
+    "attacks": [
+      {
+        "name": "Ferocious Bellow",
+        "damage": "50"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10312",
-    "externalId": null,
+    "externalId": "sm1-104",
     "tcgdex_id": "sm1-104",
     "localId": "104",
     "setCode": "sm1",
@@ -2121,11 +2444,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-104-low.png",
-    "imageHighSrc": "cards/sm1-104-high.png"
+    "imageHighSrc": "cards/sm1-104-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "10306",
-    "externalId": null,
+    "externalId": "sm1-103",
     "tcgdex_id": "sm1-103",
     "localId": "103",
     "setCode": "sm1",
@@ -2154,11 +2483,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-103-low.png",
-    "imageHighSrc": "cards/sm1-103-high.png"
+    "imageHighSrc": "cards/sm1-103-high.png",
+    "attacks": [
+      {
+        "name": "Work Up",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10295",
-    "externalId": null,
+    "externalId": "sm1-102",
     "tcgdex_id": "sm1-102",
     "localId": "102",
     "setCode": "sm1",
@@ -2187,18 +2526,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-102-low.png",
-    "imageHighSrc": "cards/sm1-102-high.png"
+    "imageHighSrc": "cards/sm1-102-high.png",
+    "attacks": [
+      {
+        "name": "Teeter Punch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10288",
-    "externalId": null,
+    "externalId": "sm1-101",
     "tcgdex_id": "sm1-101",
     "localId": "101",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "101a/149",
+    "cardNumber": "101/149",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 101a/149 Sun & Moon",
+    "fullDisplayName": "Eevee 101/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2220,11 +2565,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-101a-low.png",
-    "imageHighSrc": "cards/sm1-101a-high.png"
+    "imageHighSrc": "cards/sm1-101a-high.png",
+    "attacks": [
+      {
+        "name": "Quick Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10281",
-    "externalId": null,
+    "externalId": "sm1-101",
     "tcgdex_id": "sm1-101",
     "localId": "101",
     "setCode": "sm1",
@@ -2253,11 +2604,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-101-low.png",
-    "imageHighSrc": "cards/sm1-101-high.png"
+    "imageHighSrc": "cards/sm1-101-high.png",
+    "attacks": [
+      {
+        "name": "Quick Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10275",
-    "externalId": null,
+    "externalId": "sm1-100",
     "tcgdex_id": "sm1-100",
     "localId": "100",
     "setCode": "sm1",
@@ -2287,18 +2644,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-100-low.png",
-    "imageHighSrc": "cards/sm1-100-high.png"
+    "imageHighSrc": "cards/sm1-100-high.png",
+    "attacks": [
+      {
+        "name": "Rage",
+        "damage": "20+"
+      },
+      {
+        "name": "Horn Attack",
+        "damage": "60"
+      },
+      {
+        "name": "Mad Bull-GX",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10268",
-    "externalId": null,
+    "externalId": "sm1-99",
     "tcgdex_id": "sm1-99",
     "localId": "99",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "099/149",
+    "cardNumber": "99/149",
     "cardName": "Kangaskhan",
-    "fullDisplayName": "Kangaskhan 099/149 Sun & Moon",
+    "fullDisplayName": "Kangaskhan 99/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2320,18 +2692,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-099-low.png",
-    "imageHighSrc": "cards/sm1-099-high.png"
+    "imageHighSrc": "cards/sm1-099-high.png",
+    "attacks": [
+      {
+        "name": "Cross-Cut",
+        "damage": "30+"
+      },
+      {
+        "name": "Hurricane Punch",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "10252",
-    "externalId": null,
+    "externalId": "sm1-98",
     "tcgdex_id": "sm1-98",
     "localId": "98",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "098/149",
+    "cardNumber": "98/149",
     "cardName": "Fearow",
-    "fullDisplayName": "Fearow 098/149 Sun & Moon",
+    "fullDisplayName": "Fearow 98/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2353,18 +2735,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-098-low.png",
-    "imageHighSrc": "cards/sm1-098-high.png"
+    "imageHighSrc": "cards/sm1-098-high.png",
+    "attacks": [
+      {
+        "name": "Devastating Wind",
+        "damage": null
+      },
+      {
+        "name": "Slashing Strike",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10246",
-    "externalId": null,
+    "externalId": "sm1-97",
     "tcgdex_id": "sm1-97",
     "localId": "97",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "097/149",
+    "cardNumber": "97/149",
     "cardName": "Spearow",
-    "fullDisplayName": "Spearow 097/149 Sun & Moon",
+    "fullDisplayName": "Spearow 97/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2386,18 +2778,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-097-low.png",
-    "imageHighSrc": "cards/sm1-097-high.png"
+    "imageHighSrc": "cards/sm1-097-high.png",
+    "attacks": [
+      {
+        "name": "Peck Bugs",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "10239",
-    "externalId": null,
+    "externalId": "sm1-96",
     "tcgdex_id": "sm1-96",
     "localId": "96",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "096/149",
+    "cardNumber": "96/149",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 096/149 Sun & Moon",
+    "fullDisplayName": "Dragonite 96/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2419,18 +2817,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-096-low.png",
-    "imageHighSrc": "cards/sm1-096-high.png"
+    "imageHighSrc": "cards/sm1-096-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Wave",
+        "damage": "130"
+      },
+      {
+        "name": "Giant Tail",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "10232",
-    "externalId": null,
+    "externalId": "sm1-95",
     "tcgdex_id": "sm1-95",
     "localId": "95",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "095/149",
+    "cardNumber": "95/149",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 095/149 Sun & Moon",
+    "fullDisplayName": "Dragonair 95/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2452,18 +2860,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-095-low.png",
-    "imageHighSrc": "cards/sm1-095-high.png"
+    "imageHighSrc": "cards/sm1-095-high.png",
+    "attacks": [
+      {
+        "name": "Dragon's Wish",
+        "damage": null
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10225",
-    "externalId": null,
+    "externalId": "sm1-94",
     "tcgdex_id": "sm1-94",
     "localId": "94",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "094/149",
+    "cardNumber": "94/149",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 094/149 Sun & Moon",
+    "fullDisplayName": "Dratini 94/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2485,18 +2903,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-094-low.png",
-    "imageHighSrc": "cards/sm1-094-high.png"
+    "imageHighSrc": "cards/sm1-094-high.png",
+    "attacks": [
+      {
+        "name": "Signs of Evolution",
+        "damage": null
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10218",
-    "externalId": null,
+    "externalId": "sm1-93",
     "tcgdex_id": "sm1-93",
     "localId": "93",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "093/149",
+    "cardNumber": "93/149",
     "cardName": "Ribombee",
-    "fullDisplayName": "Ribombee 093/149 Sun & Moon",
+    "fullDisplayName": "Ribombee 93/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2518,18 +2946,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-093-low.png",
-    "imageHighSrc": "cards/sm1-093-high.png"
+    "imageHighSrc": "cards/sm1-093-high.png",
+    "attacks": [
+      {
+        "name": "Fairy Wind",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10211",
-    "externalId": null,
+    "externalId": "sm1-92",
     "tcgdex_id": "sm1-92",
     "localId": "92",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "092/149",
+    "cardNumber": "92/149",
     "cardName": "Cutiefly",
-    "fullDisplayName": "Cutiefly 092/149 Sun & Moon",
+    "fullDisplayName": "Cutiefly 92/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2551,18 +2985,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-092-low.png",
-    "imageHighSrc": "cards/sm1-092-high.png"
+    "imageHighSrc": "cards/sm1-092-high.png",
+    "attacks": [
+      {
+        "name": "Fly Around",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10204",
-    "externalId": null,
+    "externalId": "sm1-91",
     "tcgdex_id": "sm1-91",
     "localId": "91",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "091/149",
+    "cardNumber": "91/149",
     "cardName": "Granbull",
-    "fullDisplayName": "Granbull 091/149 Sun & Moon",
+    "fullDisplayName": "Granbull 91/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2584,18 +3024,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-091-low.png",
-    "imageHighSrc": "cards/sm1-091-high.png"
+    "imageHighSrc": "cards/sm1-091-high.png",
+    "attacks": [
+      {
+        "name": "Dark Clamp",
+        "damage": "30"
+      },
+      {
+        "name": "Fight Back",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "10198",
-    "externalId": null,
+    "externalId": "sm1-90",
     "tcgdex_id": "sm1-90",
     "localId": "90",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "090/149",
+    "cardNumber": "90/149",
     "cardName": "Snubbull",
-    "fullDisplayName": "Snubbull 090/149 Sun & Moon",
+    "fullDisplayName": "Snubbull 90/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2617,18 +3067,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-090-low.png",
-    "imageHighSrc": "cards/sm1-090-high.png"
+    "imageHighSrc": "cards/sm1-090-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10192",
-    "externalId": null,
+    "externalId": "sm1-89",
     "tcgdex_id": "sm1-89",
     "localId": "89",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "089/149",
+    "cardNumber": "89/149",
     "cardName": "Solgaleo-GX",
-    "fullDisplayName": "Solgaleo-GX 089/149 Sun & Moon",
+    "fullDisplayName": "Solgaleo-GX 89/149 Sun & Moon",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2651,18 +3107,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-089-low.png",
-    "imageHighSrc": "cards/sm1-089-high.png"
+    "imageHighSrc": "cards/sm1-089-high.png",
+    "attacks": [
+      {
+        "name": "Sunsteel Strike",
+        "damage": "230"
+      },
+      {
+        "name": "Sol Burst-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10186",
-    "externalId": null,
+    "externalId": "sm1-88",
     "tcgdex_id": "sm1-88",
     "localId": "88",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "088/149",
+    "cardNumber": "88/149",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 088/149 Sun & Moon",
+    "fullDisplayName": "Skarmory 88/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2684,18 +3151,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-088-low.png",
-    "imageHighSrc": "cards/sm1-088-high.png"
+    "imageHighSrc": "cards/sm1-088-high.png",
+    "attacks": [
+      {
+        "name": "Metallic Sound",
+        "damage": null
+      },
+      {
+        "name": "Aerial Ace",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "10180",
-    "externalId": null,
+    "externalId": "sm1-87",
     "tcgdex_id": "sm1-87",
     "localId": "87",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "087/149",
+    "cardNumber": "87/149",
     "cardName": "Alolan Dugtrio",
-    "fullDisplayName": "Alolan Dugtrio 087/149 Sun & Moon",
+    "fullDisplayName": "Alolan Dugtrio 87/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2717,18 +3194,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-087-low.png",
-    "imageHighSrc": "cards/sm1-087-high.png"
+    "imageHighSrc": "cards/sm1-087-high.png",
+    "attacks": [
+      {
+        "name": "Dig Under",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10173",
-    "externalId": null,
+    "externalId": "sm1-86",
     "tcgdex_id": "sm1-86",
     "localId": "86",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "086/149",
+    "cardNumber": "86/149",
     "cardName": "Alolan Diglett",
-    "fullDisplayName": "Alolan Diglett 086/149 Sun & Moon",
+    "fullDisplayName": "Alolan Diglett 86/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2750,18 +3233,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-086-low.png",
-    "imageHighSrc": "cards/sm1-086-high.png"
+    "imageHighSrc": "cards/sm1-086-high.png",
+    "attacks": [
+      {
+        "name": "Spelunk",
+        "damage": null
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "10167",
-    "externalId": null,
+    "externalId": "sm1-85",
     "tcgdex_id": "sm1-85",
     "localId": "85",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "085/149",
+    "cardNumber": "85/149",
     "cardName": "Krookodile",
-    "fullDisplayName": "Krookodile 085/149 Sun & Moon",
+    "fullDisplayName": "Krookodile 85/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2783,18 +3276,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-085-low.png",
-    "imageHighSrc": "cards/sm1-085-high.png"
+    "imageHighSrc": "cards/sm1-085-high.png",
+    "attacks": [
+      {
+        "name": "False Accusation",
+        "damage": "20+"
+      },
+      {
+        "name": "Obsidian Fang",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10162",
-    "externalId": null,
+    "externalId": "sm1-84",
     "tcgdex_id": "sm1-84",
     "localId": "84",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "084/149",
+    "cardNumber": "84/149",
     "cardName": "Krokorok",
-    "fullDisplayName": "Krokorok 084/149 Sun & Moon",
+    "fullDisplayName": "Krokorok 84/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2816,18 +3319,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-084-low.png",
-    "imageHighSrc": "cards/sm1-084-high.png"
+    "imageHighSrc": "cards/sm1-084-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "20"
+      },
+      {
+        "name": "Darkness Fang",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "10154",
-    "externalId": null,
+    "externalId": "sm1-83",
     "tcgdex_id": "sm1-83",
     "localId": "83",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "083/149",
+    "cardNumber": "83/149",
     "cardName": "Sandile",
-    "fullDisplayName": "Sandile 083/149 Sun & Moon",
+    "fullDisplayName": "Sandile 83/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2849,18 +3362,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-083-low.png",
-    "imageHighSrc": "cards/sm1-083-high.png"
+    "imageHighSrc": "cards/sm1-083-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      },
+      {
+        "name": "Crunch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10146",
-    "externalId": null,
+    "externalId": "sm1-82",
     "tcgdex_id": "sm1-82",
     "localId": "82",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "082/149",
+    "cardNumber": "82/149",
     "cardName": "Sharpedo",
-    "fullDisplayName": "Sharpedo 082/149 Sun & Moon",
+    "fullDisplayName": "Sharpedo 82/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2882,18 +3405,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-082-low.png",
-    "imageHighSrc": "cards/sm1-082-high.png"
+    "imageHighSrc": "cards/sm1-082-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Impact",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "10142",
-    "externalId": null,
+    "externalId": "sm1-81",
     "tcgdex_id": "sm1-81",
     "localId": "81",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "081/149",
+    "cardNumber": "81/149",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 081/149 Sun & Moon",
+    "fullDisplayName": "Carvanha 81/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2915,18 +3444,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-081-low.png",
-    "imageHighSrc": "cards/sm1-081-high.png"
+    "imageHighSrc": "cards/sm1-081-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw Through",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10134",
-    "externalId": null,
+    "externalId": "sm1-80",
     "tcgdex_id": "sm1-80",
     "localId": "80",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "080/149",
+    "cardNumber": "80/149",
     "cardName": "Umbreon-GX",
-    "fullDisplayName": "Umbreon-GX 080/149 Sun & Moon",
+    "fullDisplayName": "Umbreon-GX 80/149 Sun & Moon",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2949,18 +3488,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-080-low.png",
-    "imageHighSrc": "cards/sm1-080-high.png"
+    "imageHighSrc": "cards/sm1-080-high.png",
+    "attacks": [
+      {
+        "name": "Strafe",
+        "damage": "30"
+      },
+      {
+        "name": "Shadow Bullet",
+        "damage": "90"
+      },
+      {
+        "name": "Dark Call-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10127",
-    "externalId": null,
+    "externalId": "sm1-79",
     "tcgdex_id": "sm1-79",
     "localId": "79",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "079/149",
+    "cardNumber": "79/149",
     "cardName": "Alolan Persian",
-    "fullDisplayName": "Alolan Persian 079/149 Sun & Moon",
+    "fullDisplayName": "Alolan Persian 79/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2982,18 +3536,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-079-low.png",
-    "imageHighSrc": "cards/sm1-079-high.png"
+    "imageHighSrc": "cards/sm1-079-high.png",
+    "attacks": [
+      {
+        "name": "Taunt",
+        "damage": null
+      },
+      {
+        "name": "Claw Rend",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "10118",
-    "externalId": null,
+    "externalId": "sm1-78",
     "tcgdex_id": "sm1-78",
     "localId": "78",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "078/149",
+    "cardNumber": "78/149",
     "cardName": "Alolan Meowth",
-    "fullDisplayName": "Alolan Meowth 078/149 Sun & Moon",
+    "fullDisplayName": "Alolan Meowth 78/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3015,18 +3579,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-078-low.png",
-    "imageHighSrc": "cards/sm1-078-high.png"
+    "imageHighSrc": "cards/sm1-078-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "10111",
-    "externalId": null,
+    "externalId": "sm1-77",
     "tcgdex_id": "sm1-77",
     "localId": "77",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "077/149",
+    "cardNumber": "77/149",
     "cardName": "Alolan Raticate",
-    "fullDisplayName": "Alolan Raticate 077/149 Sun & Moon",
+    "fullDisplayName": "Alolan Raticate 77/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3048,18 +3618,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-077-low.png",
-    "imageHighSrc": "cards/sm1-077-high.png"
+    "imageHighSrc": "cards/sm1-077-high.png",
+    "attacks": [
+      {
+        "name": "Evil Orders",
+        "damage": null
+      },
+      {
+        "name": "Endeavor",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "10104",
-    "externalId": null,
+    "externalId": "sm1-76",
     "tcgdex_id": "sm1-76",
     "localId": "76",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "076/149",
+    "cardNumber": "76/149",
     "cardName": "Alolan Rattata",
-    "fullDisplayName": "Alolan Rattata 076/149 Sun & Moon",
+    "fullDisplayName": "Alolan Rattata 76/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3081,18 +3661,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-076-low.png",
-    "imageHighSrc": "cards/sm1-076-high.png"
+    "imageHighSrc": "cards/sm1-076-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "10096",
-    "externalId": null,
+    "externalId": "sm1-75",
     "tcgdex_id": "sm1-75",
     "localId": "75",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "075/149",
+    "cardNumber": "75/149",
     "cardName": "Palossand",
-    "fullDisplayName": "Palossand 075/149 Sun & Moon",
+    "fullDisplayName": "Palossand 75/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3114,18 +3700,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-075-low.png",
-    "imageHighSrc": "cards/sm1-075-high.png"
+    "imageHighSrc": "cards/sm1-075-high.png",
+    "attacks": [
+      {
+        "name": "Absorb Vitality",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "10090",
-    "externalId": null,
+    "externalId": "sm1-74",
     "tcgdex_id": "sm1-74",
     "localId": "74",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "074/149",
+    "cardNumber": "74/149",
     "cardName": "Sandygast",
-    "fullDisplayName": "Sandygast 074/149 Sun & Moon",
+    "fullDisplayName": "Sandygast 74/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3147,18 +3739,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-074-low.png",
-    "imageHighSrc": "cards/sm1-074-high.png"
+    "imageHighSrc": "cards/sm1-074-high.png",
+    "attacks": [
+      {
+        "name": "Shore Up",
+        "damage": null
+      },
+      {
+        "name": "Sand Tomb",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "10083",
-    "externalId": null,
+    "externalId": "sm1-73",
     "tcgdex_id": "sm1-73",
     "localId": "73",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "073/149",
+    "cardNumber": "73/149",
     "cardName": "Passimian",
-    "fullDisplayName": "Passimian 073/149 Sun & Moon",
+    "fullDisplayName": "Passimian 73/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3180,18 +3782,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-073-low.png",
-    "imageHighSrc": "cards/sm1-073-high.png"
+    "imageHighSrc": "cards/sm1-073-high.png",
+    "attacks": [
+      {
+        "name": "Fling",
+        "damage": null
+      },
+      {
+        "name": "Team Play",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "10077",
-    "externalId": null,
+    "externalId": "sm1-72",
     "tcgdex_id": "sm1-72",
     "localId": "72",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "072/149",
+    "cardNumber": "72/149",
     "cardName": "Crabrawler",
-    "fullDisplayName": "Crabrawler 072/149 Sun & Moon",
+    "fullDisplayName": "Crabrawler 72/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3213,18 +3825,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-072-low.png",
-    "imageHighSrc": "cards/sm1-072-high.png"
+    "imageHighSrc": "cards/sm1-072-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Crabhammer",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10070",
-    "externalId": null,
+    "externalId": "sm1-71",
     "tcgdex_id": "sm1-71",
     "localId": "71",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "071/149",
+    "cardNumber": "71/149",
     "cardName": "Gigalith",
-    "fullDisplayName": "Gigalith 071/149 Sun & Moon",
+    "fullDisplayName": "Gigalith 71/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3246,18 +3868,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-071-low.png",
-    "imageHighSrc": "cards/sm1-071-high.png"
+    "imageHighSrc": "cards/sm1-071-high.png",
+    "attacks": [
+      {
+        "name": "Rock Artillery",
+        "damage": "50×"
+      },
+      {
+        "name": "Rock Tumble",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "10063",
-    "externalId": null,
+    "externalId": "sm1-70",
     "tcgdex_id": "sm1-70",
     "localId": "70",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "070/149",
+    "cardNumber": "70/149",
     "cardName": "Boldore",
-    "fullDisplayName": "Boldore 070/149 Sun & Moon",
+    "fullDisplayName": "Boldore 70/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3279,18 +3911,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-070-low.png",
-    "imageHighSrc": "cards/sm1-070-high.png"
+    "imageHighSrc": "cards/sm1-070-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      },
+      {
+        "name": "Rock Hurl",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "10055",
-    "externalId": null,
+    "externalId": "sm1-69",
     "tcgdex_id": "sm1-69",
     "localId": "69",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "069/149",
+    "cardNumber": "69/149",
     "cardName": "Roggenrola",
-    "fullDisplayName": "Roggenrola 069/149 Sun & Moon",
+    "fullDisplayName": "Roggenrola 69/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3312,18 +3954,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-069-low.png",
-    "imageHighSrc": "cards/sm1-069-high.png"
+    "imageHighSrc": "cards/sm1-069-high.png",
+    "attacks": [
+      {
+        "name": "Smack Down",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "10044",
-    "externalId": null,
+    "externalId": "sm1-68",
     "tcgdex_id": "sm1-68",
     "localId": "68",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "068/149",
+    "cardNumber": "68/149",
     "cardName": "Hariyama",
-    "fullDisplayName": "Hariyama 068/149 Sun & Moon",
+    "fullDisplayName": "Hariyama 68/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3345,18 +3993,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-068-low.png",
-    "imageHighSrc": "cards/sm1-068-high.png"
+    "imageHighSrc": "cards/sm1-068-high.png",
+    "attacks": [
+      {
+        "name": "Push Out",
+        "damage": "60"
+      },
+      {
+        "name": "Megaton Slap Push",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "10034",
-    "externalId": null,
+    "externalId": "sm1-67",
     "tcgdex_id": "sm1-67",
     "localId": "67",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "067/149",
+    "cardNumber": "67/149",
     "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 067/149 Sun & Moon",
+    "fullDisplayName": "Makuhita 67/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3378,18 +4036,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-067-low.png",
-    "imageHighSrc": "cards/sm1-067-high.png"
+    "imageHighSrc": "cards/sm1-067-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Strength",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "10024",
-    "externalId": null,
+    "externalId": "sm1-66",
     "tcgdex_id": "sm1-66",
     "localId": "66",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "066/149",
+    "cardNumber": "66/149",
     "cardName": "Lunala-GX",
-    "fullDisplayName": "Lunala-GX 066/149 Sun & Moon",
+    "fullDisplayName": "Lunala-GX 66/149 Sun & Moon",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3412,18 +4080,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-066-low.png",
-    "imageHighSrc": "cards/sm1-066-high.png"
+    "imageHighSrc": "cards/sm1-066-high.png",
+    "attacks": [
+      {
+        "name": "Moongeist Beam",
+        "damage": "120"
+      },
+      {
+        "name": "Lunar Fall-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "10016",
-    "externalId": null,
+    "externalId": "sm1-65",
     "tcgdex_id": "sm1-65",
     "localId": "65",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "065/149",
+    "cardNumber": "65/149",
     "cardName": "Cosmoem",
-    "fullDisplayName": "Cosmoem 065/149 Sun & Moon",
+    "fullDisplayName": "Cosmoem 65/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3445,18 +4124,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-065-low.png",
-    "imageHighSrc": "cards/sm1-065-high.png"
+    "imageHighSrc": "cards/sm1-065-high.png",
+    "attacks": [
+      {
+        "name": "Teleport",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "10006",
-    "externalId": null,
+    "externalId": "sm1-64",
     "tcgdex_id": "sm1-64",
     "localId": "64",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "064/149",
+    "cardNumber": "64/149",
     "cardName": "Cosmog",
-    "fullDisplayName": "Cosmog 064/149 Sun & Moon",
+    "fullDisplayName": "Cosmog 64/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3478,18 +4163,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-064-low.png",
-    "imageHighSrc": "cards/sm1-064-high.png"
+    "imageHighSrc": "cards/sm1-064-high.png",
+    "attacks": [
+      {
+        "name": "Dust Gathering",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9999",
-    "externalId": null,
+    "externalId": "sm1-63",
     "tcgdex_id": "sm1-63",
     "localId": "63",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "063/149",
+    "cardNumber": "63/149",
     "cardName": "Toxapex",
-    "fullDisplayName": "Toxapex 063/149 Sun & Moon",
+    "fullDisplayName": "Toxapex 63/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3511,18 +4202,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-063-low.png",
-    "imageHighSrc": "cards/sm1-063-high.png"
+    "imageHighSrc": "cards/sm1-063-high.png",
+    "attacks": [
+      {
+        "name": "Venoshock",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "9990",
-    "externalId": null,
+    "externalId": "sm1-62",
     "tcgdex_id": "sm1-62",
     "localId": "62",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "062/149",
+    "cardNumber": "62/149",
     "cardName": "Mareanie",
-    "fullDisplayName": "Mareanie 062/149 Sun & Moon",
+    "fullDisplayName": "Mareanie 62/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3544,18 +4241,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-062-low.png",
-    "imageHighSrc": "cards/sm1-062-high.png"
+    "imageHighSrc": "cards/sm1-062-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9978",
-    "externalId": null,
+    "externalId": "sm1-61",
     "tcgdex_id": "sm1-61",
     "localId": "61",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "061/149",
+    "cardNumber": "61/149",
     "cardName": "Espeon-GX",
-    "fullDisplayName": "Espeon-GX 061/149 Sun & Moon",
+    "fullDisplayName": "Espeon-GX 61/149 Sun & Moon",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3578,18 +4281,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-061-low.png",
-    "imageHighSrc": "cards/sm1-061-high.png"
+    "imageHighSrc": "cards/sm1-061-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": "30"
+      },
+      {
+        "name": "Psychic",
+        "damage": "60+"
+      },
+      {
+        "name": "Divide-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9969",
-    "externalId": null,
+    "externalId": "sm1-60",
     "tcgdex_id": "sm1-60",
     "localId": "60",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "060/149",
+    "cardNumber": "60/149",
     "cardName": "Hypno",
-    "fullDisplayName": "Hypno 060/149 Sun & Moon",
+    "fullDisplayName": "Hypno 60/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3611,18 +4329,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-060-low.png",
-    "imageHighSrc": "cards/sm1-060-high.png"
+    "imageHighSrc": "cards/sm1-060-high.png",
+    "attacks": [
+      {
+        "name": "Meditate",
+        "damage": "20+"
+      },
+      {
+        "name": "Hypnoblast",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9960",
-    "externalId": null,
+    "externalId": "sm1-59",
     "tcgdex_id": "sm1-59",
     "localId": "59",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "059/149",
+    "cardNumber": "59/149",
     "cardName": "Drowzee",
-    "fullDisplayName": "Drowzee 059/149 Sun & Moon",
+    "fullDisplayName": "Drowzee 59/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3644,18 +4372,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-059-low.png",
-    "imageHighSrc": "cards/sm1-059-high.png"
+    "imageHighSrc": "cards/sm1-059-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Boom",
+        "damage": "10×"
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9951",
-    "externalId": null,
+    "externalId": "sm1-58",
     "tcgdex_id": "sm1-58",
     "localId": "58",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "058/149",
+    "cardNumber": "58/149",
     "cardName": "Alolan Muk",
-    "fullDisplayName": "Alolan Muk 058/149 Sun & Moon",
+    "fullDisplayName": "Alolan Muk 58/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3677,18 +4415,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-058-low.png",
-    "imageHighSrc": "cards/sm1-058-high.png"
+    "imageHighSrc": "cards/sm1-058-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9942",
-    "externalId": null,
+    "externalId": "sm1-57",
     "tcgdex_id": "sm1-57",
     "localId": "57",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "057/149",
+    "cardNumber": "57/149",
     "cardName": "Alolan Grimer",
-    "fullDisplayName": "Alolan Grimer 057/149 Sun & Moon",
+    "fullDisplayName": "Alolan Grimer 57/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3710,18 +4454,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-057-low.png",
-    "imageHighSrc": "cards/sm1-057-high.png"
+    "imageHighSrc": "cards/sm1-057-high.png",
+    "attacks": [
+      {
+        "name": "Super Poison Breath",
+        "damage": null
+      },
+      {
+        "name": "Pound",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9933",
-    "externalId": null,
+    "externalId": "sm1-56",
     "tcgdex_id": "sm1-56",
     "localId": "56",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "056/149",
+    "cardNumber": "56/149",
     "cardName": "Crobat",
-    "fullDisplayName": "Crobat 056/149 Sun & Moon",
+    "fullDisplayName": "Crobat 56/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3743,18 +4497,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-056-low.png",
-    "imageHighSrc": "cards/sm1-056-high.png"
+    "imageHighSrc": "cards/sm1-056-high.png",
+    "attacks": [
+      {
+        "name": "Triple Poison",
+        "damage": null
+      },
+      {
+        "name": "Surprise Strike",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "9925",
-    "externalId": null,
+    "externalId": "sm1-55",
     "tcgdex_id": "sm1-55",
     "localId": "55",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "055/149",
+    "cardNumber": "55/149",
     "cardName": "Golbat",
-    "fullDisplayName": "Golbat 055/149 Sun & Moon",
+    "fullDisplayName": "Golbat 55/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3776,18 +4540,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-055-low.png",
-    "imageHighSrc": "cards/sm1-055-high.png"
+    "imageHighSrc": "cards/sm1-055-high.png",
+    "attacks": [
+      {
+        "name": "Super Poison Breath",
+        "damage": null
+      },
+      {
+        "name": "Acrobatics",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9916",
-    "externalId": null,
+    "externalId": "sm1-54",
     "tcgdex_id": "sm1-54",
     "localId": "54",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "054/149",
+    "cardNumber": "54/149",
     "cardName": "Zubat",
-    "fullDisplayName": "Zubat 054/149 Sun & Moon",
+    "fullDisplayName": "Zubat 54/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3809,18 +4583,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-054-low.png",
-    "imageHighSrc": "cards/sm1-054-high.png"
+    "imageHighSrc": "cards/sm1-054-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9907",
-    "externalId": null,
+    "externalId": "sm1-53",
     "tcgdex_id": "sm1-53",
     "localId": "53",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "053/149",
+    "cardNumber": "53/149",
     "cardName": "Togedemaru",
-    "fullDisplayName": "Togedemaru 053/149 Sun & Moon",
+    "fullDisplayName": "Togedemaru 53/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3842,18 +4622,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-053-low.png",
-    "imageHighSrc": "cards/sm1-053-high.png"
+    "imageHighSrc": "cards/sm1-053-high.png",
+    "attacks": [
+      {
+        "name": "Defense Curl",
+        "damage": null
+      },
+      {
+        "name": "Discharge",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "9892",
-    "externalId": null,
+    "externalId": "sm1-52",
     "tcgdex_id": "sm1-52",
     "localId": "52",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "052/149",
+    "cardNumber": "52/149",
     "cardName": "Vikavolt",
-    "fullDisplayName": "Vikavolt 052/149 Sun & Moon",
+    "fullDisplayName": "Vikavolt 52/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3875,18 +4665,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-052-low.png",
-    "imageHighSrc": "cards/sm1-052-high.png"
+    "imageHighSrc": "cards/sm1-052-high.png",
+    "attacks": [
+      {
+        "name": "Electro Cannon",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "9883",
-    "externalId": null,
+    "externalId": "sm1-51",
     "tcgdex_id": "sm1-51",
     "localId": "51",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "051/149",
+    "cardNumber": "51/149",
     "cardName": "Charjabug",
-    "fullDisplayName": "Charjabug 051/149 Sun & Moon",
+    "fullDisplayName": "Charjabug 51/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3908,18 +4704,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-051-low.png",
-    "imageHighSrc": "cards/sm1-051-high.png"
+    "imageHighSrc": "cards/sm1-051-high.png",
+    "attacks": [
+      {
+        "name": "Shocking Jaws",
+        "damage": "20"
+      },
+      {
+        "name": "Electric Ball",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9875",
-    "externalId": null,
+    "externalId": "sm1-50",
     "tcgdex_id": "sm1-50",
     "localId": "50",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "050/149",
+    "cardNumber": "50/149",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 050/149 Sun & Moon",
+    "fullDisplayName": "Lanturn 50/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3941,18 +4747,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-050-low.png",
-    "imageHighSrc": "cards/sm1-050-high.png"
+    "imageHighSrc": "cards/sm1-050-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": null
+      },
+      {
+        "name": "Aqua Spark",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "9866",
-    "externalId": null,
+    "externalId": "sm1-49",
     "tcgdex_id": "sm1-49",
     "localId": "49",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "049/149",
+    "cardNumber": "49/149",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 049/149 Sun & Moon",
+    "fullDisplayName": "Chinchou 49/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3974,18 +4790,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-049-low.png",
-    "imageHighSrc": "cards/sm1-049-high.png"
+    "imageHighSrc": "cards/sm1-049-high.png",
+    "attacks": [
+      {
+        "name": "Searching Light",
+        "damage": null
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9853",
-    "externalId": null,
+    "externalId": "sm1-48",
     "tcgdex_id": "sm1-48",
     "localId": "48",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "048/149",
+    "cardNumber": "48/149",
     "cardName": "Bruxish",
-    "fullDisplayName": "Bruxish 048/149 Sun & Moon",
+    "fullDisplayName": "Bruxish 48/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4007,18 +4833,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-048-low.png",
-    "imageHighSrc": "cards/sm1-048-high.png"
+    "imageHighSrc": "cards/sm1-048-high.png",
+    "attacks": [
+      {
+        "name": "Vivid Charge",
+        "damage": null
+      },
+      {
+        "name": "Psychic Fangs",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9844",
-    "externalId": null,
+    "externalId": "sm1-47",
     "tcgdex_id": "sm1-47",
     "localId": "47",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "047/149",
+    "cardNumber": "47/149",
     "cardName": "Pyukumuku",
-    "fullDisplayName": "Pyukumuku 047/149 Sun & Moon",
+    "fullDisplayName": "Pyukumuku 47/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4040,18 +4876,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-047-low.png",
-    "imageHighSrc": "cards/sm1-047-high.png"
+    "imageHighSrc": "cards/sm1-047-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Tumble",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "9834",
-    "externalId": null,
+    "externalId": "sm1-46",
     "tcgdex_id": "sm1-46",
     "localId": "46",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "046/149",
+    "cardNumber": "46/149",
     "cardName": "Araquanid",
-    "fullDisplayName": "Araquanid 046/149 Sun & Moon",
+    "fullDisplayName": "Araquanid 46/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4073,18 +4915,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-046-low.png",
-    "imageHighSrc": "cards/sm1-046-high.png"
+    "imageHighSrc": "cards/sm1-046-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Edge",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9825",
-    "externalId": null,
+    "externalId": "sm1-45",
     "tcgdex_id": "sm1-45",
     "localId": "45",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "045/149",
+    "cardNumber": "45/149",
     "cardName": "Dewpider",
-    "fullDisplayName": "Dewpider 045/149 Sun & Moon",
+    "fullDisplayName": "Dewpider 45/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4106,18 +4954,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-045-low.png",
-    "imageHighSrc": "cards/sm1-045-high.png"
+    "imageHighSrc": "cards/sm1-045-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9817",
-    "externalId": null,
+    "externalId": "sm1-44",
     "tcgdex_id": "sm1-44",
     "localId": "44",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "044/149",
+    "cardNumber": "44/149",
     "cardName": "Wishiwashi",
-    "fullDisplayName": "Wishiwashi 044/149 Sun & Moon",
+    "fullDisplayName": "Wishiwashi 44/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4139,18 +4993,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-044-low.png",
-    "imageHighSrc": "cards/sm1-044-high.png"
+    "imageHighSrc": "cards/sm1-044-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9805",
-    "externalId": null,
+    "externalId": "sm1-43",
     "tcgdex_id": "sm1-43",
     "localId": "43",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "043/149",
+    "cardNumber": "43/149",
     "cardName": "Crabominable",
-    "fullDisplayName": "Crabominable 043/149 Sun & Moon",
+    "fullDisplayName": "Crabominable 43/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4172,18 +5032,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-043-low.png",
-    "imageHighSrc": "cards/sm1-043-high.png"
+    "imageHighSrc": "cards/sm1-043-high.png",
+    "attacks": [
+      {
+        "name": "Avalanche",
+        "damage": "80"
+      },
+      {
+        "name": "Ice Hammer",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "9797",
-    "externalId": null,
+    "externalId": "sm1-42",
     "tcgdex_id": "sm1-42",
     "localId": "42",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "042/149",
+    "cardNumber": "42/149",
     "cardName": "Primarina-GX",
-    "fullDisplayName": "Primarina-GX 042/149 Sun & Moon",
+    "fullDisplayName": "Primarina-GX 42/149 Sun & Moon",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4206,18 +5076,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-042-low.png",
-    "imageHighSrc": "cards/sm1-042-high.png"
+    "imageHighSrc": "cards/sm1-042-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Beat",
+        "damage": "10+"
+      },
+      {
+        "name": "Roaring Seas",
+        "damage": "120"
+      },
+      {
+        "name": "Grand Echo-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9788",
-    "externalId": null,
+    "externalId": "sm1-41",
     "tcgdex_id": "sm1-41",
     "localId": "41",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "041/149",
+    "cardNumber": "41/149",
     "cardName": "Primarina",
-    "fullDisplayName": "Primarina 041/149 Sun & Moon",
+    "fullDisplayName": "Primarina 41/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4239,18 +5124,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-041-low.png",
-    "imageHighSrc": "cards/sm1-041-high.png"
+    "imageHighSrc": "cards/sm1-041-high.png",
+    "attacks": [
+      {
+        "name": "Disarming Voice",
+        "damage": "30"
+      },
+      {
+        "name": "Sparkling Aria",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "9780",
-    "externalId": null,
+    "externalId": "sm1-40",
     "tcgdex_id": "sm1-40",
     "localId": "40",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "040/149",
+    "cardNumber": "40/149",
     "cardName": "Brionne",
-    "fullDisplayName": "Brionne 040/149 Sun & Moon",
+    "fullDisplayName": "Brionne 40/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4272,18 +5167,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-040-low.png",
-    "imageHighSrc": "cards/sm1-040-high.png"
+    "imageHighSrc": "cards/sm1-040-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "30"
+      },
+      {
+        "name": "Disarming Voice",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9771",
-    "externalId": null,
+    "externalId": "sm1-39",
     "tcgdex_id": "sm1-39",
     "localId": "39",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "039/149",
+    "cardNumber": "39/149",
     "cardName": "Popplio",
-    "fullDisplayName": "Popplio 039/149 Sun & Moon",
+    "fullDisplayName": "Popplio 39/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4305,18 +5210,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-039-low.png",
-    "imageHighSrc": "cards/sm1-039-high.png"
+    "imageHighSrc": "cards/sm1-039-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9763",
-    "externalId": null,
+    "externalId": "sm1-38",
     "tcgdex_id": "sm1-38",
     "localId": "38",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "038/149",
+    "cardNumber": "38/149",
     "cardName": "Pelipper",
-    "fullDisplayName": "Pelipper 038/149 Sun & Moon",
+    "fullDisplayName": "Pelipper 38/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4338,18 +5253,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-038-low.png",
-    "imageHighSrc": "cards/sm1-038-high.png"
+    "imageHighSrc": "cards/sm1-038-high.png",
+    "attacks": [
+      {
+        "name": "Courier",
+        "damage": null
+      },
+      {
+        "name": "Fly",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9753",
-    "externalId": null,
+    "externalId": "sm1-37",
     "tcgdex_id": "sm1-37",
     "localId": "37",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "037/149",
+    "cardNumber": "37/149",
     "cardName": "Wingull",
-    "fullDisplayName": "Wingull 037/149 Sun & Moon",
+    "fullDisplayName": "Wingull 37/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4371,18 +5296,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-037-low.png",
-    "imageHighSrc": "cards/sm1-037-high.png"
+    "imageHighSrc": "cards/sm1-037-high.png",
+    "attacks": [
+      {
+        "name": "Roost",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9735",
-    "externalId": null,
+    "externalId": "sm1-36",
     "tcgdex_id": "sm1-36",
     "localId": "36",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "036/149",
+    "cardNumber": "36/149",
     "cardName": "Corsola",
-    "fullDisplayName": "Corsola 036/149 Sun & Moon",
+    "fullDisplayName": "Corsola 36/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4404,18 +5335,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-036-low.png",
-    "imageHighSrc": "cards/sm1-036-high.png"
+    "imageHighSrc": "cards/sm1-036-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Surf",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9727",
-    "externalId": null,
+    "externalId": "sm1-35",
     "tcgdex_id": "sm1-35",
     "localId": "35",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "035/149",
+    "cardNumber": "35/149",
     "cardName": "Lapras-GX",
-    "fullDisplayName": "Lapras-GX 035/149 Sun & Moon",
+    "fullDisplayName": "Lapras-GX 35/149 Sun & Moon",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4438,18 +5379,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-035-low.png",
-    "imageHighSrc": "cards/sm1-035-high.png"
+    "imageHighSrc": "cards/sm1-035-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null
+      },
+      {
+        "name": "Blizzard Burn",
+        "damage": "160"
+      },
+      {
+        "name": "Ice Beam-GX",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9720",
-    "externalId": null,
+    "externalId": "sm1-34",
     "tcgdex_id": "sm1-34",
     "localId": "34",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "034/149",
+    "cardNumber": "34/149",
     "cardName": "Cloyster",
-    "fullDisplayName": "Cloyster 034/149 Sun & Moon",
+    "fullDisplayName": "Cloyster 34/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4471,18 +5427,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-034-low.png",
-    "imageHighSrc": "cards/sm1-034-high.png"
+    "imageHighSrc": "cards/sm1-034-high.png",
+    "attacks": [
+      {
+        "name": "Headlock",
+        "damage": "30+"
+      },
+      {
+        "name": "Guard Press",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9711",
-    "externalId": null,
+    "externalId": "sm1-33",
     "tcgdex_id": "sm1-33",
     "localId": "33",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "033/149",
+    "cardNumber": "33/149",
     "cardName": "Shellder",
-    "fullDisplayName": "Shellder 033/149 Sun & Moon",
+    "fullDisplayName": "Shellder 33/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4504,18 +5470,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-033-low.png",
-    "imageHighSrc": "cards/sm1-033-high.png"
+    "imageHighSrc": "cards/sm1-033-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9702",
-    "externalId": null,
+    "externalId": "sm1-32",
     "tcgdex_id": "sm1-32",
     "localId": "32",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "032/149",
+    "cardNumber": "32/149",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 032/149 Sun & Moon",
+    "fullDisplayName": "Poliwrath 32/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4537,18 +5509,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-032-low.png",
-    "imageHighSrc": "cards/sm1-032-high.png"
+    "imageHighSrc": "cards/sm1-032-high.png",
+    "attacks": [
+      {
+        "name": "Split Spiral Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Wake-Up Slap",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "9693",
-    "externalId": null,
+    "externalId": "sm1-31",
     "tcgdex_id": "sm1-31",
     "localId": "31",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "031/149",
+    "cardNumber": "31/149",
     "cardName": "Poliwhirl",
-    "fullDisplayName": "Poliwhirl 031/149 Sun & Moon",
+    "fullDisplayName": "Poliwhirl 31/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4570,18 +5552,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-031-low.png",
-    "imageHighSrc": "cards/sm1-031-high.png"
+    "imageHighSrc": "cards/sm1-031-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "30×"
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9684",
-    "externalId": null,
+    "externalId": "sm1-30",
     "tcgdex_id": "sm1-30",
     "localId": "30",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "030/149",
+    "cardNumber": "30/149",
     "cardName": "Poliwag",
-    "fullDisplayName": "Poliwag 030/149 Sun & Moon",
+    "fullDisplayName": "Poliwag 30/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4603,18 +5595,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-030-low.png",
-    "imageHighSrc": "cards/sm1-030-high.png"
+    "imageHighSrc": "cards/sm1-030-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10"
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "9675",
-    "externalId": null,
+    "externalId": "sm1-29",
     "tcgdex_id": "sm1-29",
     "localId": "29",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "029/149",
+    "cardNumber": "29/149",
     "cardName": "Golduck",
-    "fullDisplayName": "Golduck 029/149 Sun & Moon",
+    "fullDisplayName": "Golduck 29/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4636,18 +5638,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-029-low.png",
-    "imageHighSrc": "cards/sm1-029-high.png"
+    "imageHighSrc": "cards/sm1-029-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      },
+      {
+        "name": "Double Jet",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "9666",
-    "externalId": null,
+    "externalId": "sm1-28",
     "tcgdex_id": "sm1-28",
     "localId": "28",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "028/149",
+    "cardNumber": "28/149",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 028/149 Sun & Moon",
+    "fullDisplayName": "Psyduck 28/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4669,18 +5681,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-028-low.png",
-    "imageHighSrc": "cards/sm1-028-high.png"
+    "imageHighSrc": "cards/sm1-028-high.png",
+    "attacks": [
+      {
+        "name": "Confusion Wave",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9657",
-    "externalId": null,
+    "externalId": "sm1-27",
     "tcgdex_id": "sm1-27",
     "localId": "27",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "027/149",
+    "cardNumber": "27/149",
     "cardName": "Incineroar-GX",
-    "fullDisplayName": "Incineroar-GX 027/149 Sun & Moon",
+    "fullDisplayName": "Incineroar-GX 27/149 Sun & Moon",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4703,18 +5721,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-027-low.png",
-    "imageHighSrc": "cards/sm1-027-high.png"
+    "imageHighSrc": "cards/sm1-027-high.png",
+    "attacks": [
+      {
+        "name": "Hustling Strike",
+        "damage": "10+"
+      },
+      {
+        "name": "Tiger Swing",
+        "damage": "80+"
+      },
+      {
+        "name": "Burning Slam-GX",
+        "damage": "200"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9649",
-    "externalId": null,
+    "externalId": "sm1-26",
     "tcgdex_id": "sm1-26",
     "localId": "26",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "026/149",
+    "cardNumber": "26/149",
     "cardName": "Incineroar",
-    "fullDisplayName": "Incineroar 026/149 Sun & Moon",
+    "fullDisplayName": "Incineroar 26/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4736,18 +5769,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-026-low.png",
-    "imageHighSrc": "cards/sm1-026-high.png"
+    "imageHighSrc": "cards/sm1-026-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "30"
+      },
+      {
+        "name": "Darkest Lariat",
+        "damage": "100×"
+      }
+    ]
   },
   {
     "masterCardId": "9640",
-    "externalId": null,
+    "externalId": "sm1-25",
     "tcgdex_id": "sm1-25",
     "localId": "25",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "025/149",
+    "cardNumber": "25/149",
     "cardName": "Torracat",
-    "fullDisplayName": "Torracat 025/149 Sun & Moon",
+    "fullDisplayName": "Torracat 25/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4769,18 +5812,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-025-low.png",
-    "imageHighSrc": "cards/sm1-025-high.png"
+    "imageHighSrc": "cards/sm1-025-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "9632",
-    "externalId": null,
+    "externalId": "sm1-24",
     "tcgdex_id": "sm1-24",
     "localId": "24",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "024/149",
+    "cardNumber": "24/149",
     "cardName": "Litten",
-    "fullDisplayName": "Litten 024/149 Sun & Moon",
+    "fullDisplayName": "Litten 24/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4802,18 +5855,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-024-low.png",
-    "imageHighSrc": "cards/sm1-024-high.png"
+    "imageHighSrc": "cards/sm1-024-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9623",
-    "externalId": null,
+    "externalId": "sm1-23",
     "tcgdex_id": "sm1-23",
     "localId": "23",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "023/149",
+    "cardNumber": "23/149",
     "cardName": "Torkoal",
-    "fullDisplayName": "Torkoal 023/149 Sun & Moon",
+    "fullDisplayName": "Torkoal 23/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4835,18 +5898,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-023-low.png",
-    "imageHighSrc": "cards/sm1-023-high.png"
+    "imageHighSrc": "cards/sm1-023-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Body Slam",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9614",
-    "externalId": null,
+    "externalId": "sm1-22",
     "tcgdex_id": "sm1-22",
     "localId": "22",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "022/149",
+    "cardNumber": "22/149",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 022/149 Sun & Moon",
+    "fullDisplayName": "Arcanine 22/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4868,18 +5941,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-022-low.png",
-    "imageHighSrc": "cards/sm1-022-high.png"
+    "imageHighSrc": "cards/sm1-022-high.png",
+    "attacks": [
+      {
+        "name": "Searing Flame",
+        "damage": "60"
+      },
+      {
+        "name": "Firestorm",
+        "damage": "190"
+      }
+    ]
   },
   {
     "masterCardId": "9606",
-    "externalId": null,
+    "externalId": "sm1-21",
     "tcgdex_id": "sm1-21",
     "localId": "21",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "021/149",
+    "cardNumber": "21/149",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 021/149 Sun & Moon",
+    "fullDisplayName": "Growlithe 21/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4901,18 +5984,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-021-low.png",
-    "imageHighSrc": "cards/sm1-021-high.png"
+    "imageHighSrc": "cards/sm1-021-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "9597",
-    "externalId": null,
+    "externalId": "sm1-20",
     "tcgdex_id": "sm1-20",
     "localId": "20",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "020/149",
+    "cardNumber": "20/149",
     "cardName": "Tsareena",
-    "fullDisplayName": "Tsareena 020/149 Sun & Moon",
+    "fullDisplayName": "Tsareena 20/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4934,18 +6023,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-020-low.png",
-    "imageHighSrc": "cards/sm1-020-high.png"
+    "imageHighSrc": "cards/sm1-020-high.png",
+    "attacks": [
+      {
+        "name": "Trop Kick",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9588",
-    "externalId": null,
+    "externalId": "sm1-19",
     "tcgdex_id": "sm1-19",
     "localId": "19",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "019/149",
+    "cardNumber": "19/149",
     "cardName": "Steenee",
-    "fullDisplayName": "Steenee 019/149 Sun & Moon",
+    "fullDisplayName": "Steenee 19/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4967,18 +6062,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-019-low.png",
-    "imageHighSrc": "cards/sm1-019-high.png"
+    "imageHighSrc": "cards/sm1-019-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Scent",
+        "damage": null
+      },
+      {
+        "name": "Stomp",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "9578",
-    "externalId": null,
+    "externalId": "sm1-18",
     "tcgdex_id": "sm1-18",
     "localId": "18",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "018/149",
+    "cardNumber": "18/149",
     "cardName": "Bounsweet",
-    "fullDisplayName": "Bounsweet 018/149 Sun & Moon",
+    "fullDisplayName": "Bounsweet 18/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5000,18 +6105,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-018-low.png",
-    "imageHighSrc": "cards/sm1-018-high.png"
+    "imageHighSrc": "cards/sm1-018-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Scent",
+        "damage": null
+      },
+      {
+        "name": "Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9570",
-    "externalId": null,
+    "externalId": "sm1-17",
     "tcgdex_id": "sm1-17",
     "localId": "17",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "017/149",
+    "cardNumber": "17/149",
     "cardName": "Shiinotic",
-    "fullDisplayName": "Shiinotic 017/149 Sun & Moon",
+    "fullDisplayName": "Shiinotic 17/149 Sun & Moon",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5033,18 +6148,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-017-low.png",
-    "imageHighSrc": "cards/sm1-017-high.png"
+    "imageHighSrc": "cards/sm1-017-high.png",
+    "attacks": [
+      {
+        "name": "Flickering Spores",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9561",
-    "externalId": null,
+    "externalId": "sm1-16",
     "tcgdex_id": "sm1-16",
     "localId": "16",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "016/149",
+    "cardNumber": "16/149",
     "cardName": "Morelull",
-    "fullDisplayName": "Morelull 016/149 Sun & Moon",
+    "fullDisplayName": "Morelull 16/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5066,18 +6187,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-016-low.png",
-    "imageHighSrc": "cards/sm1-016-high.png"
+    "imageHighSrc": "cards/sm1-016-high.png",
+    "attacks": [
+      {
+        "name": "Flickering Spores",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "9552",
-    "externalId": null,
+    "externalId": "sm1-15",
     "tcgdex_id": "sm1-15",
     "localId": "15",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "015/149",
+    "cardNumber": "15/149",
     "cardName": "Lurantis-GX",
-    "fullDisplayName": "Lurantis-GX 015/149 Sun & Moon",
+    "fullDisplayName": "Lurantis-GX 15/149 Sun & Moon",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5100,18 +6231,33 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-015-low.png",
-    "imageHighSrc": "cards/sm1-015-high.png"
+    "imageHighSrc": "cards/sm1-015-high.png",
+    "attacks": [
+      {
+        "name": "Flower Supply",
+        "damage": "40"
+      },
+      {
+        "name": "Solar Blade",
+        "damage": "120"
+      },
+      {
+        "name": "Chloroscythe-GX",
+        "damage": "50×"
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9547",
-    "externalId": null,
+    "externalId": "sm1-14",
     "tcgdex_id": "sm1-14",
     "localId": "14",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "014/149",
+    "cardNumber": "14/149",
     "cardName": "Fomantis",
-    "fullDisplayName": "Fomantis 014/149 Sun & Moon",
+    "fullDisplayName": "Fomantis 14/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5133,18 +6279,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-014-low.png",
-    "imageHighSrc": "cards/sm1-014-high.png"
+    "imageHighSrc": "cards/sm1-014-high.png",
+    "attacks": [
+      {
+        "name": "Synthesis",
+        "damage": null
+      },
+      {
+        "name": "Leafage",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9539",
-    "externalId": null,
+    "externalId": "sm1-13",
     "tcgdex_id": "sm1-13",
     "localId": "13",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "013/149",
+    "cardNumber": "13/149",
     "cardName": "Grubbin",
-    "fullDisplayName": "Grubbin 013/149 Sun & Moon",
+    "fullDisplayName": "Grubbin 13/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5166,18 +6322,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-013-low.png",
-    "imageHighSrc": "cards/sm1-013-high.png"
+    "imageHighSrc": "cards/sm1-013-high.png",
+    "attacks": [
+      {
+        "name": "Vice Grip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9529",
-    "externalId": null,
+    "externalId": "sm1-12",
     "tcgdex_id": "sm1-12",
     "localId": "12",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "012/149",
+    "cardNumber": "12/149",
     "cardName": "Decidueye-GX",
-    "fullDisplayName": "Decidueye-GX 012/149 Sun & Moon",
+    "fullDisplayName": "Decidueye-GX 12/149 Sun & Moon",
     "rarity": "Rare Holo GX",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5200,18 +6362,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-012-low.png",
-    "imageHighSrc": "cards/sm1-012-high.png"
+    "imageHighSrc": "cards/sm1-012-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "90"
+      },
+      {
+        "name": "Hollow Hunt-GX",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-GX rule: When your Pokémon-GX is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "9511",
-    "externalId": null,
+    "externalId": "sm1-11",
     "tcgdex_id": "sm1-11",
     "localId": "11",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "011/149",
+    "cardNumber": "11/149",
     "cardName": "Decidueye",
-    "fullDisplayName": "Decidueye 011/149 Sun & Moon",
+    "fullDisplayName": "Decidueye 11/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5233,18 +6406,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-011-low.png",
-    "imageHighSrc": "cards/sm1-011-high.png"
+    "imageHighSrc": "cards/sm1-011-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Blade",
+        "damage": "30+"
+      },
+      {
+        "name": "Brave Bird",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "9503",
-    "externalId": null,
+    "externalId": "sm1-10",
     "tcgdex_id": "sm1-10",
     "localId": "10",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "010/149",
+    "cardNumber": "10/149",
     "cardName": "Dartrix",
-    "fullDisplayName": "Dartrix 010/149 Sun & Moon",
+    "fullDisplayName": "Dartrix 10/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5266,18 +6449,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-010-low.png",
-    "imageHighSrc": "cards/sm1-010-high.png"
+    "imageHighSrc": "cards/sm1-010-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Blade Quill",
+        "damage": null
+      },
+      {
+        "name": "Leaf Blade",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "9493",
-    "externalId": null,
+    "externalId": "sm1-9",
     "tcgdex_id": "sm1-9",
     "localId": "9",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "009/149",
+    "cardNumber": "9/149",
     "cardName": "Rowlet",
-    "fullDisplayName": "Rowlet 009/149 Sun & Moon",
+    "fullDisplayName": "Rowlet 9/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5299,18 +6492,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-009-low.png",
-    "imageHighSrc": "cards/sm1-009-high.png"
+    "imageHighSrc": "cards/sm1-009-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Leafage",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9485",
-    "externalId": null,
+    "externalId": "sm1-8",
     "tcgdex_id": "sm1-8",
     "localId": "8",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "008/149",
+    "cardNumber": "8/149",
     "cardName": "Masquerain",
-    "fullDisplayName": "Masquerain 008/149 Sun & Moon",
+    "fullDisplayName": "Masquerain 8/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5332,18 +6535,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-008-low.png",
-    "imageHighSrc": "cards/sm1-008-high.png"
+    "imageHighSrc": "cards/sm1-008-high.png",
+    "attacks": [
+      {
+        "name": "Struggle Bug",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9476",
-    "externalId": null,
+    "externalId": "sm1-7",
     "tcgdex_id": "sm1-7",
     "localId": "7",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "007/149",
+    "cardNumber": "7/149",
     "cardName": "Surskit",
-    "fullDisplayName": "Surskit 007/149 Sun & Moon",
+    "fullDisplayName": "Surskit 7/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5365,18 +6574,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-007-low.png",
-    "imageHighSrc": "cards/sm1-007-high.png"
+    "imageHighSrc": "cards/sm1-007-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9467",
-    "externalId": null,
+    "externalId": "sm1-6",
     "tcgdex_id": "sm1-6",
     "localId": "6",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "006/149",
+    "cardNumber": "6/149",
     "cardName": "Pinsir",
-    "fullDisplayName": "Pinsir 006/149 Sun & Moon",
+    "fullDisplayName": "Pinsir 6/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5398,18 +6613,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-006-low.png",
-    "imageHighSrc": "cards/sm1-006-high.png"
+    "imageHighSrc": "cards/sm1-006-high.png",
+    "attacks": [
+      {
+        "name": "Roof Fling",
+        "damage": null
+      },
+      {
+        "name": "Guillotine",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9458",
-    "externalId": null,
+    "externalId": "sm1-5",
     "tcgdex_id": "sm1-5",
     "localId": "5",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "005/149",
+    "cardNumber": "5/149",
     "cardName": "Parasect",
-    "fullDisplayName": "Parasect 005/149 Sun & Moon",
+    "fullDisplayName": "Parasect 5/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5431,18 +6656,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-005-low.png",
-    "imageHighSrc": "cards/sm1-005-high.png"
+    "imageHighSrc": "cards/sm1-005-high.png",
+    "attacks": [
+      {
+        "name": "Fury Cutter",
+        "damage": "10+"
+      },
+      {
+        "name": "Mushroom Drain",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "9450",
-    "externalId": null,
+    "externalId": "sm1-4",
     "tcgdex_id": "sm1-4",
     "localId": "4",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "004/149",
+    "cardNumber": "4/149",
     "cardName": "Paras",
-    "fullDisplayName": "Paras 004/149 Sun & Moon",
+    "fullDisplayName": "Paras 4/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5464,18 +6699,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-004-low.png",
-    "imageHighSrc": "cards/sm1-004-high.png"
+    "imageHighSrc": "cards/sm1-004-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9441",
-    "externalId": null,
+    "externalId": "sm1-3",
     "tcgdex_id": "sm1-3",
     "localId": "3",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "003/149",
+    "cardNumber": "3/149",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 003/149 Sun & Moon",
+    "fullDisplayName": "Butterfree 3/149 Sun & Moon",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -5497,18 +6738,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-003-low.png",
-    "imageHighSrc": "cards/sm1-003-high.png"
+    "imageHighSrc": "cards/sm1-003-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "30"
+      },
+      {
+        "name": "Whirlwind",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "9432",
-    "externalId": null,
+    "externalId": "sm1-2",
     "tcgdex_id": "sm1-2",
     "localId": "2",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "002/149",
+    "cardNumber": "2/149",
     "cardName": "Metapod",
-    "fullDisplayName": "Metapod 002/149 Sun & Moon",
+    "fullDisplayName": "Metapod 2/149 Sun & Moon",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -5530,18 +6781,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-002-low.png",
-    "imageHighSrc": "cards/sm1-002-high.png"
+    "imageHighSrc": "cards/sm1-002-high.png",
+    "attacks": [
+      {
+        "name": "Iron Defense",
+        "damage": null
+      },
+      {
+        "name": "Bug Bite",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9421",
-    "externalId": null,
+    "externalId": "sm1-1",
     "tcgdex_id": "sm1-1",
     "localId": "1",
     "setCode": "sm1",
     "setTcgdexId": "sm1",
-    "cardNumber": "001/149",
+    "cardNumber": "1/149",
     "cardName": "Caterpie",
-    "fullDisplayName": "Caterpie 001/149 Sun & Moon",
+    "fullDisplayName": "Caterpie 1/149 Sun & Moon",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -5563,6 +6824,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/sm1-001-low.png",
-    "imageHighSrc": "cards/sm1-001-high.png"
+    "imageHighSrc": "cards/sm1-001-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   }
 ]

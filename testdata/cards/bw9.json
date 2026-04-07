@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "3284",
-    "externalId": null,
+    "externalId": "bw9-122",
     "tcgdex_id": "bw9-122",
     "localId": "122",
     "setCode": "bw9",
@@ -26,11 +26,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-122-low.png",
-    "imageHighSrc": "cards/bw9-122-high.png"
+    "imageHighSrc": "cards/bw9-122-high.png",
+    "rules": "Discard 2 cards from your hand. (If you can't discard 2 cards, you can't play this card.) Search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3283",
-    "externalId": null,
+    "externalId": "bw9-121",
     "tcgdex_id": "bw9-121",
     "localId": "121",
     "setCode": "bw9",
@@ -55,11 +56,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-121-low.png",
-    "imageHighSrc": "cards/bw9-121-high.png"
+    "imageHighSrc": "cards/bw9-121-high.png",
+    "rules": "Heal all damage from 1 of your Pokémon. Then, discard all Energy attached to that Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3282",
-    "externalId": null,
+    "externalId": "bw9-120",
     "tcgdex_id": "bw9-120",
     "localId": "120",
     "setCode": "bw9",
@@ -88,11 +90,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-120-low.png",
-    "imageHighSrc": "cards/bw9-120-high.png"
+    "imageHighSrc": "cards/bw9-120-high.png",
+    "attacks": [
+      {
+        "name": "Mach Cut",
+        "damage": "60"
+      },
+      {
+        "name": "Dragonblade",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3281",
-    "externalId": null,
+    "externalId": "bw9-119",
     "tcgdex_id": "bw9-119",
     "localId": "119",
     "setCode": "bw9",
@@ -121,11 +133,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-119-low.png",
-    "imageHighSrc": "cards/bw9-119-high.png"
+    "imageHighSrc": "cards/bw9-119-high.png",
+    "attacks": [
+      {
+        "name": "Sludge Toss",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3280",
-    "externalId": null,
+    "externalId": "bw9-118",
     "tcgdex_id": "bw9-118",
     "localId": "118",
     "setCode": "bw9",
@@ -154,11 +172,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-118-low.png",
-    "imageHighSrc": "cards/bw9-118-high.png"
+    "imageHighSrc": "cards/bw9-118-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "3279",
-    "externalId": null,
+    "externalId": "bw9-117",
     "tcgdex_id": "bw9-117",
     "localId": "117",
     "setCode": "bw9",
@@ -187,11 +211,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-117-low.png",
-    "imageHighSrc": "cards/bw9-117-high.png"
+    "imageHighSrc": "cards/bw9-117-high.png",
+    "attacks": [
+      {
+        "name": "Attack Command",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3278",
-    "externalId": null,
+    "externalId": "bw9-116",
     "tcgdex_id": "bw9-116",
     "localId": "116",
     "setCode": "bw9",
@@ -216,11 +246,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-116-low.png",
-    "imageHighSrc": "cards/bw9-116-high.png"
+    "imageHighSrc": "cards/bw9-116-high.png",
+    "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3277",
-    "externalId": null,
+    "externalId": "bw9-115",
     "tcgdex_id": "bw9-115",
     "localId": "115",
     "setCode": "bw9",
@@ -246,11 +277,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-115-low.png",
-    "imageHighSrc": "cards/bw9-115-high.png"
+    "imageHighSrc": "cards/bw9-115-high.png",
+    "rules": "Your opponent reveals his or her hand and shuffles all Item cards found there into his or her deck. Then, draw a number of cards equal to the number of Item cards your opponent shuffled into his or her deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3276",
-    "externalId": null,
+    "externalId": "bw9-114",
     "tcgdex_id": "bw9-114",
     "localId": "114",
     "setCode": "bw9",
@@ -281,11 +313,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-114-low.png",
-    "imageHighSrc": "cards/bw9-114-high.png"
+    "imageHighSrc": "cards/bw9-114-high.png",
+    "attacks": [
+      {
+        "name": "Windfall",
+        "damage": null
+      },
+      {
+        "name": "Jet Blast",
+        "damage": "60+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3275",
-    "externalId": null,
+    "externalId": "bw9-113",
     "tcgdex_id": "bw9-113",
     "localId": "113",
     "setCode": "bw9",
@@ -315,11 +358,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-113-low.png",
-    "imageHighSrc": "cards/bw9-113-high.png"
+    "imageHighSrc": "cards/bw9-113-high.png",
+    "attacks": [
+      {
+        "name": "Mach Flight",
+        "damage": "40"
+      },
+      {
+        "name": "Luster Purge",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3274",
-    "externalId": null,
+    "externalId": "bw9-112",
     "tcgdex_id": "bw9-112",
     "localId": "112",
     "setCode": "bw9",
@@ -349,11 +403,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-112-low.png",
-    "imageHighSrc": "cards/bw9-112-high.png"
+    "imageHighSrc": "cards/bw9-112-high.png",
+    "attacks": [
+      {
+        "name": "Barrier Break",
+        "damage": "70"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3273",
-    "externalId": null,
+    "externalId": "bw9-111",
     "tcgdex_id": "bw9-111",
     "localId": "111",
     "setCode": "bw9",
@@ -384,11 +445,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-111-low.png",
-    "imageHighSrc": "cards/bw9-111-high.png"
+    "imageHighSrc": "cards/bw9-111-high.png",
+    "attacks": [
+      {
+        "name": "Helix Force",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3272",
-    "externalId": null,
+    "externalId": "bw9-110",
     "tcgdex_id": "bw9-110",
     "localId": "110",
     "setCode": "bw9",
@@ -419,11 +487,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-110-low.png",
-    "imageHighSrc": "cards/bw9-110-high.png"
+    "imageHighSrc": "cards/bw9-110-high.png",
+    "attacks": [
+      {
+        "name": "Raiden Knuckle",
+        "damage": "30"
+      },
+      {
+        "name": "Thunderous Noise",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3271",
-    "externalId": null,
+    "externalId": "bw9-109",
     "tcgdex_id": "bw9-109",
     "localId": "109",
     "setCode": "bw9",
@@ -454,11 +533,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-109-low.png",
-    "imageHighSrc": "cards/bw9-109-high.png"
+    "imageHighSrc": "cards/bw9-109-high.png",
+    "attacks": [
+      {
+        "name": "Heat Boiler",
+        "damage": "60+"
+      },
+      {
+        "name": "Dynamite Press",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3270",
-    "externalId": null,
+    "externalId": "bw9-108",
     "tcgdex_id": "bw9-108",
     "localId": "108",
     "setCode": "bw9",
@@ -484,11 +574,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-108-low.png",
-    "imageHighSrc": "cards/bw9-108-high.png"
+    "imageHighSrc": "cards/bw9-108-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is your Active Pokémon and is damaged by an opponent's attack (even if that Pokémon is Knocked Out), put 6 damage counters on the Attacking Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
   },
   {
     "masterCardId": "3269",
-    "externalId": null,
+    "externalId": "bw9-107",
     "tcgdex_id": "bw9-107",
     "localId": "107",
     "setCode": "bw9",
@@ -514,11 +605,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-107-low.png",
-    "imageHighSrc": "cards/bw9-107-high.png"
+    "imageHighSrc": "cards/bw9-107-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is Knocked Out, your opponent takes 1 fewer Prize card.\n\nYou may play as many Item cards as you like during your turn (before your attack).\n\nYou can't have more than 1 ACE SPEC card in your deck."
   },
   {
     "masterCardId": "3268",
-    "externalId": null,
+    "externalId": "bw9-106",
     "tcgdex_id": "bw9-106",
     "localId": "106",
     "setCode": "bw9",
@@ -544,11 +636,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-106-low.png",
-    "imageHighSrc": "cards/bw9-106-high.png"
+    "imageHighSrc": "cards/bw9-106-high.png",
+    "rules": "This card provides Colorless Energy."
   },
   {
     "masterCardId": "3267",
-    "externalId": null,
+    "externalId": "bw9-105",
     "tcgdex_id": "bw9-105",
     "localId": "105",
     "setCode": "bw9",
@@ -574,11 +667,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-105-low.png",
-    "imageHighSrc": "cards/bw9-105-high.png"
+    "imageHighSrc": "cards/bw9-105-high.png",
+    "rules": "Search your deck for a Team Plasma Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3266",
-    "externalId": null,
+    "externalId": "bw9-104",
     "tcgdex_id": "bw9-104",
     "localId": "104",
     "setCode": "bw9",
@@ -604,11 +698,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-104-low.png",
-    "imageHighSrc": "cards/bw9-104-high.png"
+    "imageHighSrc": "cards/bw9-104-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Pokémon this card is attached to is a Team Plasma Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3265",
-    "externalId": null,
+    "externalId": "bw9-103",
     "tcgdex_id": "bw9-103",
     "localId": "103",
     "setCode": "bw9",
@@ -633,11 +728,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-103-low.png",
-    "imageHighSrc": "cards/bw9-103-high.png"
+    "imageHighSrc": "cards/bw9-103-high.png",
+    "rules": "Discard 2 cards from your hand. (If you can't discard 2 cards, you can't play this card.) Put 4 basic Energy cards from your discard pile into your hand. (You can't choose a card you discarded with the effect of this card.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3264",
-    "externalId": null,
+    "externalId": "bw9-102",
     "tcgdex_id": "bw9-102",
     "localId": "102",
     "setCode": "bw9",
@@ -663,11 +759,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-102-low.png",
-    "imageHighSrc": "cards/bw9-102-high.png"
+    "imageHighSrc": "cards/bw9-102-high.png",
+    "rules": "Put a Team Plasma card from your discard pile into your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3263",
-    "externalId": null,
+    "externalId": "bw9-101",
     "tcgdex_id": "bw9-101",
     "localId": "101",
     "setCode": "bw9",
@@ -693,11 +790,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-101-low.png",
-    "imageHighSrc": "cards/bw9-101-high.png"
+    "imageHighSrc": "cards/bw9-101-high.png",
+    "rules": "Your opponent reveals his or her hand and shuffles all Item cards found there into his or her deck. Then, draw a number of cards equal to the number of Item cards your opponent shuffled into his or her deck.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3262",
-    "externalId": null,
+    "externalId": "bw9-100",
     "tcgdex_id": "bw9-100",
     "localId": "100",
     "setCode": "bw9",
@@ -723,18 +821,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-100-low.png",
-    "imageHighSrc": "cards/bw9-100-high.png"
+    "imageHighSrc": "cards/bw9-100-high.png",
+    "rules": "Whenever any player attaches an Energy from his or her hand to 1 of his or her Pokémon (excluding Team Plasma Pokémon) put 2 damage counters on that Pokémon.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "3261",
-    "externalId": null,
+    "externalId": "bw9-99",
     "tcgdex_id": "bw9-99",
     "localId": "099",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "099/116",
+    "cardNumber": "99/116",
     "cardName": "Float Stone",
-    "fullDisplayName": "Float Stone 099/116 Plasma Freeze",
+    "fullDisplayName": "Float Stone 99/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -752,18 +851,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-099-low.png",
-    "imageHighSrc": "cards/bw9-099-high.png"
+    "imageHighSrc": "cards/bw9-099-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Pokémon this card is attached to has no Retreat Cost.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3260",
-    "externalId": null,
+    "externalId": "bw9-98",
     "tcgdex_id": "bw9-98",
     "localId": "098",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "098/116",
+    "cardNumber": "98/116",
     "cardName": "Tornadus-EX",
-    "fullDisplayName": "Tornadus-EX 098/116 Plasma Freeze",
+    "fullDisplayName": "Tornadus-EX 98/116 Plasma Freeze",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -787,18 +887,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-098-low.png",
-    "imageHighSrc": "cards/bw9-098-high.png"
+    "imageHighSrc": "cards/bw9-098-high.png",
+    "attacks": [
+      {
+        "name": "Windfall",
+        "damage": null
+      },
+      {
+        "name": "Jet Blast",
+        "damage": "60+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3259",
-    "externalId": null,
+    "externalId": "bw9-97",
     "tcgdex_id": "bw9-97",
     "localId": "097",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "097/116",
+    "cardNumber": "97/116",
     "cardName": "Staraptor",
-    "fullDisplayName": "Staraptor 097/116 Plasma Freeze",
+    "fullDisplayName": "Staraptor 97/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -820,18 +931,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-097-low.png",
-    "imageHighSrc": "cards/bw9-097-high.png"
+    "imageHighSrc": "cards/bw9-097-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "60"
+      },
+      {
+        "name": "Strong Breeze",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3258",
-    "externalId": null,
+    "externalId": "bw9-96",
     "tcgdex_id": "bw9-96",
     "localId": "096",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "096/116",
+    "cardNumber": "96/116",
     "cardName": "Staravia",
-    "fullDisplayName": "Staravia 096/116 Plasma Freeze",
+    "fullDisplayName": "Staravia 96/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -853,18 +974,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-096-low.png",
-    "imageHighSrc": "cards/bw9-096-high.png"
+    "imageHighSrc": "cards/bw9-096-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3257",
-    "externalId": null,
+    "externalId": "bw9-95",
     "tcgdex_id": "bw9-95",
     "localId": "095",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "095/116",
+    "cardNumber": "95/116",
     "cardName": "Starly",
-    "fullDisplayName": "Starly 095/116 Plasma Freeze",
+    "fullDisplayName": "Starly 95/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -886,18 +1013,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-095-low.png",
-    "imageHighSrc": "cards/bw9-095-high.png"
+    "imageHighSrc": "cards/bw9-095-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3256",
-    "externalId": null,
+    "externalId": "bw9-94",
     "tcgdex_id": "bw9-94",
     "localId": "094",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "094/116",
+    "cardNumber": "94/116",
     "cardName": "Kecleon",
-    "fullDisplayName": "Kecleon 094/116 Plasma Freeze",
+    "fullDisplayName": "Kecleon 94/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -919,18 +1052,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-094-low.png",
-    "imageHighSrc": "cards/bw9-094-high.png"
+    "imageHighSrc": "cards/bw9-094-high.png",
+    "attacks": [
+      {
+        "name": "Imittack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3255",
-    "externalId": null,
+    "externalId": "bw9-93",
     "tcgdex_id": "bw9-93",
     "localId": "093",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "093/116",
+    "cardNumber": "93/116",
     "cardName": "Miltank",
-    "fullDisplayName": "Miltank 093/116 Plasma Freeze",
+    "fullDisplayName": "Miltank 93/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -952,18 +1091,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-093-low.png",
-    "imageHighSrc": "cards/bw9-093-high.png"
+    "imageHighSrc": "cards/bw9-093-high.png",
+    "attacks": [
+      {
+        "name": "Max Milk",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3254",
-    "externalId": null,
+    "externalId": "bw9-92",
     "tcgdex_id": "bw9-92",
     "localId": "092",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "092/116",
+    "cardNumber": "92/116",
     "cardName": "Noctowl",
-    "fullDisplayName": "Noctowl 092/116 Plasma Freeze",
+    "fullDisplayName": "Noctowl 92/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -985,18 +1134,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-092-low.png",
-    "imageHighSrc": "cards/bw9-092-high.png"
+    "imageHighSrc": "cards/bw9-092-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Vision",
+        "damage": "10×"
+      },
+      {
+        "name": "Fly",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3253",
-    "externalId": null,
+    "externalId": "bw9-91",
     "tcgdex_id": "bw9-91",
     "localId": "091",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "091/116",
+    "cardNumber": "91/116",
     "cardName": "Hoothoot",
-    "fullDisplayName": "Hoothoot 091/116 Plasma Freeze",
+    "fullDisplayName": "Hoothoot 91/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1018,18 +1177,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-091-low.png",
-    "imageHighSrc": "cards/bw9-091-high.png"
+    "imageHighSrc": "cards/bw9-091-high.png",
+    "attacks": [
+      {
+        "name": "Dual Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3252",
-    "externalId": null,
+    "externalId": "bw9-90",
     "tcgdex_id": "bw9-90",
     "localId": "090",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "090/116",
+    "cardNumber": "90/116",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 090/116 Plasma Freeze",
+    "fullDisplayName": "Eevee 90/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1051,18 +1216,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-090-low.png",
-    "imageHighSrc": "cards/bw9-090-high.png"
+    "imageHighSrc": "cards/bw9-090-high.png",
+    "attacks": [
+      {
+        "name": "Signs of Evolution",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3251",
-    "externalId": null,
+    "externalId": "bw9-89",
     "tcgdex_id": "bw9-89",
     "localId": "089",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "089/116",
+    "cardNumber": "89/116",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 089/116 Plasma Freeze",
+    "fullDisplayName": "Eevee 89/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1084,18 +1259,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-089-low.png",
-    "imageHighSrc": "cards/bw9-089-high.png"
+    "imageHighSrc": "cards/bw9-089-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3250",
-    "externalId": null,
+    "externalId": "bw9-88",
     "tcgdex_id": "bw9-88",
     "localId": "088",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "088/116",
+    "cardNumber": "88/116",
     "cardName": "Raticate",
-    "fullDisplayName": "Raticate 088/116 Plasma Freeze",
+    "fullDisplayName": "Raticate 88/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1118,18 +1303,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-088-low.png",
-    "imageHighSrc": "cards/bw9-088-high.png"
+    "imageHighSrc": "cards/bw9-088-high.png",
+    "attacks": [
+      {
+        "name": "Transfer Junk",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3249",
-    "externalId": null,
+    "externalId": "bw9-87",
     "tcgdex_id": "bw9-87",
     "localId": "087",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "087/116",
+    "cardNumber": "87/116",
     "cardName": "Rattata",
-    "fullDisplayName": "Rattata 087/116 Plasma Freeze",
+    "fullDisplayName": "Rattata 87/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1151,18 +1346,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-087-low.png",
-    "imageHighSrc": "cards/bw9-087-high.png"
+    "imageHighSrc": "cards/bw9-087-high.png",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3248",
-    "externalId": null,
+    "externalId": "bw9-86",
     "tcgdex_id": "bw9-86",
     "localId": "086",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "086/116",
+    "cardNumber": "86/116",
     "cardName": "Latios-EX",
-    "fullDisplayName": "Latios-EX 086/116 Plasma Freeze",
+    "fullDisplayName": "Latios-EX 86/116 Plasma Freeze",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1185,18 +1386,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-086-low.png",
-    "imageHighSrc": "cards/bw9-086-high.png"
+    "imageHighSrc": "cards/bw9-086-high.png",
+    "attacks": [
+      {
+        "name": "Mach Flight",
+        "damage": "40"
+      },
+      {
+        "name": "Luster Purge",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3247",
-    "externalId": null,
+    "externalId": "bw9-85",
     "tcgdex_id": "bw9-85",
     "localId": "085",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "085/116",
+    "cardNumber": "85/116",
     "cardName": "Latias-EX",
-    "fullDisplayName": "Latias-EX 085/116 Plasma Freeze",
+    "fullDisplayName": "Latias-EX 85/116 Plasma Freeze",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1219,18 +1431,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-085-low.png",
-    "imageHighSrc": "cards/bw9-085-high.png"
+    "imageHighSrc": "cards/bw9-085-high.png",
+    "attacks": [
+      {
+        "name": "Barrier Break",
+        "damage": "70"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3246",
-    "externalId": null,
+    "externalId": "bw9-84",
     "tcgdex_id": "bw9-84",
     "localId": "084",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "084/116",
+    "cardNumber": "84/116",
     "cardName": "Kingdra",
-    "fullDisplayName": "Kingdra 084/116 Plasma Freeze",
+    "fullDisplayName": "Kingdra 84/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1252,18 +1471,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-084-low.png",
-    "imageHighSrc": "cards/bw9-084-high.png"
+    "imageHighSrc": "cards/bw9-084-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Vortex",
+        "damage": "20×"
+      },
+      {
+        "name": "Tri Bullet",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3245",
-    "externalId": null,
+    "externalId": "bw9-83",
     "tcgdex_id": "bw9-83",
     "localId": "083",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "083/116",
+    "cardNumber": "83/116",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 083/116 Plasma Freeze",
+    "fullDisplayName": "Dragonite 83/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1285,18 +1514,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-083-low.png",
-    "imageHighSrc": "cards/bw9-083-high.png"
+    "imageHighSrc": "cards/bw9-083-high.png",
+    "attacks": [
+      {
+        "name": "Deafen",
+        "damage": "60"
+      },
+      {
+        "name": "Healwing",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3244",
-    "externalId": null,
+    "externalId": "bw9-82",
     "tcgdex_id": "bw9-82",
     "localId": "082",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "082/116",
+    "cardNumber": "82/116",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 082/116 Plasma Freeze",
+    "fullDisplayName": "Dragonair 82/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1318,18 +1557,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-082-low.png",
-    "imageHighSrc": "cards/bw9-082-high.png"
+    "imageHighSrc": "cards/bw9-082-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "20"
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3243",
-    "externalId": null,
+    "externalId": "bw9-81",
     "tcgdex_id": "bw9-81",
     "localId": "081",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "081/116",
+    "cardNumber": "81/116",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 081/116 Plasma Freeze",
+    "fullDisplayName": "Dratini 81/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1351,18 +1600,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-081-low.png",
-    "imageHighSrc": "cards/bw9-081-high.png"
+    "imageHighSrc": "cards/bw9-081-high.png",
+    "attacks": [
+      {
+        "name": "Shed Skin",
+        "damage": null
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3242",
-    "externalId": null,
+    "externalId": "bw9-80",
     "tcgdex_id": "bw9-80",
     "localId": "080",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "080/116",
+    "cardNumber": "80/116",
     "cardName": "Mawile",
-    "fullDisplayName": "Mawile 080/116 Plasma Freeze",
+    "fullDisplayName": "Mawile 80/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1384,18 +1643,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-080-low.png",
-    "imageHighSrc": "cards/bw9-080-high.png"
+    "imageHighSrc": "cards/bw9-080-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": null
+      },
+      {
+        "name": "Big Ol' Bite",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3241",
-    "externalId": null,
+    "externalId": "bw9-79",
     "tcgdex_id": "bw9-79",
     "localId": "079",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "079/116",
+    "cardNumber": "79/116",
     "cardName": "Steelix",
-    "fullDisplayName": "Steelix 079/116 Plasma Freeze",
+    "fullDisplayName": "Steelix 79/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1418,18 +1687,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-079-low.png",
-    "imageHighSrc": "cards/bw9-079-high.png"
+    "imageHighSrc": "cards/bw9-079-high.png",
+    "attacks": [
+      {
+        "name": "Metal Defender",
+        "damage": "50"
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3240",
-    "externalId": null,
+    "externalId": "bw9-78",
     "tcgdex_id": "bw9-78",
     "localId": "078",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "078/116",
+    "cardNumber": "78/116",
     "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 078/116 Plasma Freeze",
+    "fullDisplayName": "Hydreigon 78/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1452,18 +1731,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-078-low.png",
-    "imageHighSrc": "cards/bw9-078-high.png"
+    "imageHighSrc": "cards/bw9-078-high.png",
+    "attacks": [
+      {
+        "name": "Tractorbeam",
+        "damage": null
+      },
+      {
+        "name": "Obsidian Fang",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3239",
-    "externalId": null,
+    "externalId": "bw9-77",
     "tcgdex_id": "bw9-77",
     "localId": "077",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "077/116",
+    "cardNumber": "77/116",
     "cardName": "Zweilous",
-    "fullDisplayName": "Zweilous 077/116 Plasma Freeze",
+    "fullDisplayName": "Zweilous 77/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1485,18 +1774,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-077-low.png",
-    "imageHighSrc": "cards/bw9-077-high.png"
+    "imageHighSrc": "cards/bw9-077-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Body Slam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3238",
-    "externalId": null,
+    "externalId": "bw9-76",
     "tcgdex_id": "bw9-76",
     "localId": "076",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "076/116",
+    "cardNumber": "76/116",
     "cardName": "Deino",
-    "fullDisplayName": "Deino 076/116 Plasma Freeze",
+    "fullDisplayName": "Deino 76/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1518,18 +1817,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-076-low.png",
-    "imageHighSrc": "cards/bw9-076-high.png"
+    "imageHighSrc": "cards/bw9-076-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3237",
-    "externalId": null,
+    "externalId": "bw9-75",
     "tcgdex_id": "bw9-75",
     "localId": "075",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "075/116",
+    "cardNumber": "75/116",
     "cardName": "Deino",
-    "fullDisplayName": "Deino 075/116 Plasma Freeze",
+    "fullDisplayName": "Deino 75/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1551,18 +1856,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-075-low.png",
-    "imageHighSrc": "cards/bw9-075-high.png"
+    "imageHighSrc": "cards/bw9-075-high.png",
+    "attacks": [
+      {
+        "name": "Push Down",
+        "damage": "20"
+      },
+      {
+        "name": "Bite",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3236",
-    "externalId": null,
+    "externalId": "bw9-74",
     "tcgdex_id": "bw9-74",
     "localId": "074",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "074/116",
+    "cardNumber": "74/116",
     "cardName": "Bisharp",
-    "fullDisplayName": "Bisharp 074/116 Plasma Freeze",
+    "fullDisplayName": "Bisharp 74/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1585,18 +1900,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-074-low.png",
-    "imageHighSrc": "cards/bw9-074-high.png"
+    "imageHighSrc": "cards/bw9-074-high.png",
+    "attacks": [
+      {
+        "name": "Cut Down",
+        "damage": "30"
+      },
+      {
+        "name": "Slicing Blade",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3235",
-    "externalId": null,
+    "externalId": "bw9-73",
     "tcgdex_id": "bw9-73",
     "localId": "073",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "073/116",
+    "cardNumber": "73/116",
     "cardName": "Bisharp",
-    "fullDisplayName": "Bisharp 073/116 Plasma Freeze",
+    "fullDisplayName": "Bisharp 73/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1619,18 +1944,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-073-low.png",
-    "imageHighSrc": "cards/bw9-073-high.png"
+    "imageHighSrc": "cards/bw9-073-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "40"
+      },
+      {
+        "name": "Dragon Slayer",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3234",
-    "externalId": null,
+    "externalId": "bw9-72",
     "tcgdex_id": "bw9-72",
     "localId": "072",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "072/116",
+    "cardNumber": "72/116",
     "cardName": "Pawniard",
-    "fullDisplayName": "Pawniard 072/116 Plasma Freeze",
+    "fullDisplayName": "Pawniard 72/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1652,18 +1987,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-072-low.png",
-    "imageHighSrc": "cards/bw9-072-high.png"
+    "imageHighSrc": "cards/bw9-072-high.png",
+    "attacks": [
+      {
+        "name": "Cut",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3233",
-    "externalId": null,
+    "externalId": "bw9-71",
     "tcgdex_id": "bw9-71",
     "localId": "071",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "071/116",
+    "cardNumber": "71/116",
     "cardName": "Pawniard",
-    "fullDisplayName": "Pawniard 071/116 Plasma Freeze",
+    "fullDisplayName": "Pawniard 71/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1685,18 +2026,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-071-low.png",
-    "imageHighSrc": "cards/bw9-071-high.png"
+    "imageHighSrc": "cards/bw9-071-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3232",
-    "externalId": null,
+    "externalId": "bw9-70",
     "tcgdex_id": "bw9-70",
     "localId": "070",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "070/116",
+    "cardNumber": "70/116",
     "cardName": "Krookodile",
-    "fullDisplayName": "Krookodile 070/116 Plasma Freeze",
+    "fullDisplayName": "Krookodile 70/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1719,18 +2066,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-070-low.png",
-    "imageHighSrc": "cards/bw9-070-high.png"
+    "imageHighSrc": "cards/bw9-070-high.png",
+    "attacks": [
+      {
+        "name": "Piston Headbutt",
+        "damage": "30"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3231",
-    "externalId": null,
+    "externalId": "bw9-69",
     "tcgdex_id": "bw9-69",
     "localId": "069",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "069/116",
+    "cardNumber": "69/116",
     "cardName": "Krokorok",
-    "fullDisplayName": "Krokorok 069/116 Plasma Freeze",
+    "fullDisplayName": "Krokorok 69/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1752,18 +2109,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-069-low.png",
-    "imageHighSrc": "cards/bw9-069-high.png"
+    "imageHighSrc": "cards/bw9-069-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Corkscrew Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3230",
-    "externalId": null,
+    "externalId": "bw9-68",
     "tcgdex_id": "bw9-68",
     "localId": "068",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "068/116",
+    "cardNumber": "68/116",
     "cardName": "Sandile",
-    "fullDisplayName": "Sandile 068/116 Plasma Freeze",
+    "fullDisplayName": "Sandile 68/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1785,18 +2152,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-068-low.png",
-    "imageHighSrc": "cards/bw9-068-high.png"
+    "imageHighSrc": "cards/bw9-068-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3229",
-    "externalId": null,
+    "externalId": "bw9-67",
     "tcgdex_id": "bw9-67",
     "localId": "067",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "067/116",
+    "cardNumber": "67/116",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 067/116 Plasma Freeze",
+    "fullDisplayName": "Absol 67/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1819,18 +2192,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-067-low.png",
-    "imageHighSrc": "cards/bw9-067-high.png"
+    "imageHighSrc": "cards/bw9-067-high.png",
+    "attacks": [
+      {
+        "name": "Mind Jack",
+        "damage": "20+"
+      },
+      {
+        "name": "Fearsome Shadow",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3228",
-    "externalId": null,
+    "externalId": "bw9-66",
     "tcgdex_id": "bw9-66",
     "localId": "066",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "066/116",
+    "cardNumber": "66/116",
     "cardName": "Weavile",
-    "fullDisplayName": "Weavile 066/116 Plasma Freeze",
+    "fullDisplayName": "Weavile 66/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1853,18 +2236,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-066-low.png",
-    "imageHighSrc": "cards/bw9-066-high.png"
+    "imageHighSrc": "cards/bw9-066-high.png",
+    "attacks": [
+      {
+        "name": "Hail",
+        "damage": null
+      },
+      {
+        "name": "Vilify",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "3227",
-    "externalId": null,
+    "externalId": "bw9-65",
     "tcgdex_id": "bw9-65",
     "localId": "065",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "065/116",
+    "cardNumber": "65/116",
     "cardName": "Sneasel",
-    "fullDisplayName": "Sneasel 065/116 Plasma Freeze",
+    "fullDisplayName": "Sneasel 65/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1886,18 +2279,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-065-low.png",
-    "imageHighSrc": "cards/bw9-065-high.png"
+    "imageHighSrc": "cards/bw9-065-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3226",
-    "externalId": null,
+    "externalId": "bw9-64",
     "tcgdex_id": "bw9-64",
     "localId": "064",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "064/116",
+    "cardNumber": "64/116",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon 064/116 Plasma Freeze",
+    "fullDisplayName": "Umbreon 64/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1920,18 +2319,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-064-low.png",
-    "imageHighSrc": "cards/bw9-064-high.png"
+    "imageHighSrc": "cards/bw9-064-high.png",
+    "attacks": [
+      {
+        "name": "Darkness Fang",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3225",
-    "externalId": null,
+    "externalId": "bw9-63",
     "tcgdex_id": "bw9-63",
     "localId": "063",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "063/116",
+    "cardNumber": "63/116",
     "cardName": "Hariyama",
-    "fullDisplayName": "Hariyama 063/116 Plasma Freeze",
+    "fullDisplayName": "Hariyama 63/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1953,18 +2358,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-063-low.png",
-    "imageHighSrc": "cards/bw9-063-high.png"
+    "imageHighSrc": "cards/bw9-063-high.png",
+    "attacks": [
+      {
+        "name": "Fake Out",
+        "damage": "30"
+      },
+      {
+        "name": "Pivot Throw",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3224",
-    "externalId": null,
+    "externalId": "bw9-62",
     "tcgdex_id": "bw9-62",
     "localId": "062",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "062/116",
+    "cardNumber": "62/116",
     "cardName": "Makuhita",
-    "fullDisplayName": "Makuhita 062/116 Plasma Freeze",
+    "fullDisplayName": "Makuhita 62/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1986,18 +2401,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-062-low.png",
-    "imageHighSrc": "cards/bw9-062-high.png"
+    "imageHighSrc": "cards/bw9-062-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Slap",
+        "damage": "20×"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3223",
-    "externalId": null,
+    "externalId": "bw9-61",
     "tcgdex_id": "bw9-61",
     "localId": "061",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "061/116",
+    "cardNumber": "61/116",
     "cardName": "Onix",
-    "fullDisplayName": "Onix 061/116 Plasma Freeze",
+    "fullDisplayName": "Onix 61/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2019,18 +2444,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-061-low.png",
-    "imageHighSrc": "cards/bw9-061-high.png"
+    "imageHighSrc": "cards/bw9-061-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "30"
+      },
+      {
+        "name": "Swing Around",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "3222",
-    "externalId": null,
+    "externalId": "bw9-60",
     "tcgdex_id": "bw9-60",
     "localId": "060",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "060/116",
+    "cardNumber": "60/116",
     "cardName": "Primeape",
-    "fullDisplayName": "Primeape 060/116 Plasma Freeze",
+    "fullDisplayName": "Primeape 60/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2052,18 +2487,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-060-low.png",
-    "imageHighSrc": "cards/bw9-060-high.png"
+    "imageHighSrc": "cards/bw9-060-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "30×"
+      },
+      {
+        "name": "Karate Chop",
+        "damage": "80-"
+      }
+    ]
   },
   {
     "masterCardId": "3221",
-    "externalId": null,
+    "externalId": "bw9-59",
     "tcgdex_id": "bw9-59",
     "localId": "059",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "059/116",
+    "cardNumber": "59/116",
     "cardName": "Mankey",
-    "fullDisplayName": "Mankey 059/116 Plasma Freeze",
+    "fullDisplayName": "Mankey 59/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2085,18 +2530,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-059-low.png",
-    "imageHighSrc": "cards/bw9-059-high.png"
+    "imageHighSrc": "cards/bw9-059-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3220",
-    "externalId": null,
+    "externalId": "bw9-58",
     "tcgdex_id": "bw9-58",
     "localId": "058",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "058/116",
+    "cardNumber": "58/116",
     "cardName": "Nidoking",
-    "fullDisplayName": "Nidoking 058/116 Plasma Freeze",
+    "fullDisplayName": "Nidoking 58/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2118,18 +2569,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-058-low.png",
-    "imageHighSrc": "cards/bw9-058-high.png"
+    "imageHighSrc": "cards/bw9-058-high.png",
+    "attacks": [
+      {
+        "name": "Lovestrike",
+        "damage": "20+"
+      },
+      {
+        "name": "Horn Drill",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3219",
-    "externalId": null,
+    "externalId": "bw9-57",
     "tcgdex_id": "bw9-57",
     "localId": "057",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "057/116",
+    "cardNumber": "57/116",
     "cardName": "Cofagrigus",
-    "fullDisplayName": "Cofagrigus 057/116 Plasma Freeze",
+    "fullDisplayName": "Cofagrigus 57/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2152,18 +2613,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-057-low.png",
-    "imageHighSrc": "cards/bw9-057-high.png"
+    "imageHighSrc": "cards/bw9-057-high.png",
+    "attacks": [
+      {
+        "name": "Elongating Arms",
+        "damage": null
+      },
+      {
+        "name": "Crazy Slap",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "3218",
-    "externalId": null,
+    "externalId": "bw9-56",
     "tcgdex_id": "bw9-56",
     "localId": "056",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "056/116",
+    "cardNumber": "56/116",
     "cardName": "Cofagrigus",
-    "fullDisplayName": "Cofagrigus 056/116 Plasma Freeze",
+    "fullDisplayName": "Cofagrigus 56/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2186,18 +2657,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-056-low.png",
-    "imageHighSrc": "cards/bw9-056-high.png"
+    "imageHighSrc": "cards/bw9-056-high.png",
+    "attacks": [
+      {
+        "name": "Slap of Misfortune",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3217",
-    "externalId": null,
+    "externalId": "bw9-55",
     "tcgdex_id": "bw9-55",
     "localId": "055",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "055/116",
+    "cardNumber": "55/116",
     "cardName": "Yamask",
-    "fullDisplayName": "Yamask 055/116 Plasma Freeze",
+    "fullDisplayName": "Yamask 55/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2219,18 +2696,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-055-low.png",
-    "imageHighSrc": "cards/bw9-055-high.png"
+    "imageHighSrc": "cards/bw9-055-high.png",
+    "attacks": [
+      {
+        "name": "Will-O-Wisp",
+        "damage": "10"
+      },
+      {
+        "name": "Ram",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3216",
-    "externalId": null,
+    "externalId": "bw9-54",
     "tcgdex_id": "bw9-54",
     "localId": "054",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "054/116",
+    "cardNumber": "54/116",
     "cardName": "Yamask",
-    "fullDisplayName": "Yamask 054/116 Plasma Freeze",
+    "fullDisplayName": "Yamask 54/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2252,18 +2739,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-054-low.png",
-    "imageHighSrc": "cards/bw9-054-high.png"
+    "imageHighSrc": "cards/bw9-054-high.png",
+    "attacks": [
+      {
+        "name": "Transfer Pain",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3215",
-    "externalId": null,
+    "externalId": "bw9-53",
     "tcgdex_id": "bw9-53",
     "localId": "053",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "053/116",
+    "cardNumber": "53/116",
     "cardName": "Deoxys-EX",
-    "fullDisplayName": "Deoxys-EX 053/116 Plasma Freeze",
+    "fullDisplayName": "Deoxys-EX 53/116 Plasma Freeze",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2287,18 +2780,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-053-low.png",
-    "imageHighSrc": "cards/bw9-053-high.png"
+    "imageHighSrc": "cards/bw9-053-high.png",
+    "attacks": [
+      {
+        "name": "Helix Force",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3214",
-    "externalId": null,
+    "externalId": "bw9-52",
     "tcgdex_id": "bw9-52",
     "localId": "052",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "052/116",
+    "cardNumber": "52/116",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross 052/116 Plasma Freeze",
+    "fullDisplayName": "Metagross 52/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2321,18 +2821,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-052-low.png",
-    "imageHighSrc": "cards/bw9-052-high.png"
+    "imageHighSrc": "cards/bw9-052-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3213",
-    "externalId": null,
+    "externalId": "bw9-51",
     "tcgdex_id": "bw9-51",
     "localId": "051",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "051/116",
+    "cardNumber": "51/116",
     "cardName": "Metang",
-    "fullDisplayName": "Metang 051/116 Plasma Freeze",
+    "fullDisplayName": "Metang 51/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2354,18 +2860,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-051-low.png",
-    "imageHighSrc": "cards/bw9-051-high.png"
+    "imageHighSrc": "cards/bw9-051-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "10"
+      },
+      {
+        "name": "Psypunch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3212",
-    "externalId": null,
+    "externalId": "bw9-50",
     "tcgdex_id": "bw9-50",
     "localId": "050",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "050/116",
+    "cardNumber": "50/116",
     "cardName": "Beldum",
-    "fullDisplayName": "Beldum 050/116 Plasma Freeze",
+    "fullDisplayName": "Beldum 50/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2387,18 +2903,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-050-low.png",
-    "imageHighSrc": "cards/bw9-050-high.png"
+    "imageHighSrc": "cards/bw9-050-high.png",
+    "attacks": [
+      {
+        "name": "Calculate",
+        "damage": null
+      },
+      {
+        "name": "Psypunch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3211",
-    "externalId": null,
+    "externalId": "bw9-49",
     "tcgdex_id": "bw9-49",
     "localId": "049",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "049/116",
+    "cardNumber": "49/116",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 049/116 Plasma Freeze",
+    "fullDisplayName": "Sableye 49/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2421,18 +2947,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-049-low.png",
-    "imageHighSrc": "cards/bw9-049-high.png"
+    "imageHighSrc": "cards/bw9-049-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Shadow Cage",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3210",
-    "externalId": null,
+    "externalId": "bw9-48",
     "tcgdex_id": "bw9-48",
     "localId": "048",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "048/116",
+    "cardNumber": "48/116",
     "cardName": "Espeon",
-    "fullDisplayName": "Espeon 048/116 Plasma Freeze",
+    "fullDisplayName": "Espeon 48/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2455,18 +2991,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-048-low.png",
-    "imageHighSrc": "cards/bw9-048-high.png"
+    "imageHighSrc": "cards/bw9-048-high.png",
+    "attacks": [
+      {
+        "name": "Psy Alert",
+        "damage": "20"
+      },
+      {
+        "name": "Shadow Ball",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3209",
-    "externalId": null,
+    "externalId": "bw9-47",
     "tcgdex_id": "bw9-47",
     "localId": "047",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "047/116",
+    "cardNumber": "47/116",
     "cardName": "Mr. Mime",
-    "fullDisplayName": "Mr. Mime 047/116 Plasma Freeze",
+    "fullDisplayName": "Mr. Mime 47/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2488,18 +3034,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-047-low.png",
-    "imageHighSrc": "cards/bw9-047-high.png"
+    "imageHighSrc": "cards/bw9-047-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3208",
-    "externalId": null,
+    "externalId": "bw9-46",
     "tcgdex_id": "bw9-46",
     "localId": "046",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "046/116",
+    "cardNumber": "46/116",
     "cardName": "Muk",
-    "fullDisplayName": "Muk 046/116 Plasma Freeze",
+    "fullDisplayName": "Muk 46/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2522,18 +3074,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-046-low.png",
-    "imageHighSrc": "cards/bw9-046-high.png"
+    "imageHighSrc": "cards/bw9-046-high.png",
+    "attacks": [
+      {
+        "name": "Poison Suction",
+        "damage": "60"
+      },
+      {
+        "name": "Sludge Crash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3207",
-    "externalId": null,
+    "externalId": "bw9-45",
     "tcgdex_id": "bw9-45",
     "localId": "045",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "045/116",
+    "cardNumber": "45/116",
     "cardName": "Grimer",
-    "fullDisplayName": "Grimer 045/116 Plasma Freeze",
+    "fullDisplayName": "Grimer 45/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2555,18 +3117,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-045-low.png",
-    "imageHighSrc": "cards/bw9-045-high.png"
+    "imageHighSrc": "cards/bw9-045-high.png",
+    "attacks": [
+      {
+        "name": "Lure Poison",
+        "damage": null
+      },
+      {
+        "name": "Sludge Toss",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3206",
-    "externalId": null,
+    "externalId": "bw9-44",
     "tcgdex_id": "bw9-44",
     "localId": "044",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "044/116",
+    "cardNumber": "44/116",
     "cardName": "Nidorino",
-    "fullDisplayName": "Nidorino 044/116 Plasma Freeze",
+    "fullDisplayName": "Nidorino 44/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2588,18 +3160,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-044-low.png",
-    "imageHighSrc": "cards/bw9-044-high.png"
+    "imageHighSrc": "cards/bw9-044-high.png",
+    "attacks": [
+      {
+        "name": "Double Kick",
+        "damage": "30×"
+      },
+      {
+        "name": "Horn Attack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3205",
-    "externalId": null,
+    "externalId": "bw9-43",
     "tcgdex_id": "bw9-43",
     "localId": "043",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "043/116",
+    "cardNumber": "43/116",
     "cardName": "Nidoran ♂",
-    "fullDisplayName": "Nidoran ♂ 043/116 Plasma Freeze",
+    "fullDisplayName": "Nidoran ♂ 43/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2621,18 +3203,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-043-low.png",
-    "imageHighSrc": "cards/bw9-043-high.png"
+    "imageHighSrc": "cards/bw9-043-high.png",
+    "attacks": [
+      {
+        "name": "Hit Back",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3204",
-    "externalId": null,
+    "externalId": "bw9-42",
     "tcgdex_id": "bw9-42",
     "localId": "042",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "042/116",
+    "cardNumber": "42/116",
     "cardName": "Nidoqueen",
-    "fullDisplayName": "Nidoqueen 042/116 Plasma Freeze",
+    "fullDisplayName": "Nidoqueen 42/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2654,18 +3242,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-042-low.png",
-    "imageHighSrc": "cards/bw9-042-high.png"
+    "imageHighSrc": "cards/bw9-042-high.png",
+    "attacks": [
+      {
+        "name": "Poison Horn",
+        "damage": "50"
+      },
+      {
+        "name": "Double Stomp",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3203",
-    "externalId": null,
+    "externalId": "bw9-41",
     "tcgdex_id": "bw9-41",
     "localId": "041",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "041/116",
+    "cardNumber": "41/116",
     "cardName": "Nidorina",
-    "fullDisplayName": "Nidorina 041/116 Plasma Freeze",
+    "fullDisplayName": "Nidorina 41/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2687,18 +3285,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-041-low.png",
-    "imageHighSrc": "cards/bw9-041-high.png"
+    "imageHighSrc": "cards/bw9-041-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      },
+      {
+        "name": "Double Kick",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "3202",
-    "externalId": null,
+    "externalId": "bw9-40",
     "tcgdex_id": "bw9-40",
     "localId": "040",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "040/116",
+    "cardNumber": "40/116",
     "cardName": "Nidoran ♀",
-    "fullDisplayName": "Nidoran ♀ 040/116 Plasma Freeze",
+    "fullDisplayName": "Nidoran ♀ 40/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2720,18 +3328,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-040-low.png",
-    "imageHighSrc": "cards/bw9-040-high.png"
+    "imageHighSrc": "cards/bw9-040-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3201",
-    "externalId": null,
+    "externalId": "bw9-39",
     "tcgdex_id": "bw9-39",
     "localId": "039",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "039/116",
+    "cardNumber": "39/116",
     "cardName": "Zekrom",
-    "fullDisplayName": "Zekrom 039/116 Plasma Freeze",
+    "fullDisplayName": "Zekrom 39/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2753,18 +3367,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-039-low.png",
-    "imageHighSrc": "cards/bw9-039-high.png"
+    "imageHighSrc": "cards/bw9-039-high.png",
+    "attacks": [
+      {
+        "name": "Mach Claw",
+        "damage": "50"
+      },
+      {
+        "name": "Fusion Bolt",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3200",
-    "externalId": null,
+    "externalId": "bw9-38",
     "tcgdex_id": "bw9-38",
     "localId": "038",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "038/116",
+    "cardNumber": "38/116",
     "cardName": "Thundurus-EX",
-    "fullDisplayName": "Thundurus-EX 038/116 Plasma Freeze",
+    "fullDisplayName": "Thundurus-EX 38/116 Plasma Freeze",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2788,18 +3412,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-038-low.png",
-    "imageHighSrc": "cards/bw9-038-high.png"
+    "imageHighSrc": "cards/bw9-038-high.png",
+    "attacks": [
+      {
+        "name": "Raiden Knuckle",
+        "damage": "30"
+      },
+      {
+        "name": "Thunderous Noise",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3199",
-    "externalId": null,
+    "externalId": "bw9-37",
     "tcgdex_id": "bw9-37",
     "localId": "037",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "037/116",
+    "cardNumber": "37/116",
     "cardName": "Pachirisu",
-    "fullDisplayName": "Pachirisu 037/116 Plasma Freeze",
+    "fullDisplayName": "Pachirisu 37/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2821,18 +3456,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-037-low.png",
-    "imageHighSrc": "cards/bw9-037-high.png"
+    "imageHighSrc": "cards/bw9-037-high.png",
+    "attacks": [
+      {
+        "name": "Minor Errand-Running",
+        "damage": null
+      },
+      {
+        "name": "Electric Tail",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3198",
-    "externalId": null,
+    "externalId": "bw9-36",
     "tcgdex_id": "bw9-36",
     "localId": "036",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "036/116",
+    "cardNumber": "36/116",
     "cardName": "Lanturn",
-    "fullDisplayName": "Lanturn 036/116 Plasma Freeze",
+    "fullDisplayName": "Lanturn 36/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2854,18 +3499,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-036-low.png",
-    "imageHighSrc": "cards/bw9-036-high.png"
+    "imageHighSrc": "cards/bw9-036-high.png",
+    "attacks": [
+      {
+        "name": "Special Tackle",
+        "damage": "30+"
+      },
+      {
+        "name": "Extreme Current",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3197",
-    "externalId": null,
+    "externalId": "bw9-35",
     "tcgdex_id": "bw9-35",
     "localId": "035",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "035/116",
+    "cardNumber": "35/116",
     "cardName": "Chinchou",
-    "fullDisplayName": "Chinchou 035/116 Plasma Freeze",
+    "fullDisplayName": "Chinchou 35/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2887,18 +3542,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-035-low.png",
-    "imageHighSrc": "cards/bw9-035-high.png"
+    "imageHighSrc": "cards/bw9-035-high.png",
+    "attacks": [
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3196",
-    "externalId": null,
+    "externalId": "bw9-34",
     "tcgdex_id": "bw9-34",
     "localId": "034",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "034/116",
+    "cardNumber": "34/116",
     "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon 034/116 Plasma Freeze",
+    "fullDisplayName": "Jolteon 34/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2921,18 +3582,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-034-low.png",
-    "imageHighSrc": "cards/bw9-034-high.png"
+    "imageHighSrc": "cards/bw9-034-high.png",
+    "attacks": [
+      {
+        "name": "Pin Missile",
+        "damage": "20×"
+      },
+      {
+        "name": "Electri-Defuse",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3195",
-    "externalId": null,
+    "externalId": "bw9-33",
     "tcgdex_id": "bw9-33",
     "localId": "033",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "033/116",
+    "cardNumber": "33/116",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 033/116 Plasma Freeze",
+    "fullDisplayName": "Electrode 33/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2954,18 +3625,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-033-low.png",
-    "imageHighSrc": "cards/bw9-033-high.png"
+    "imageHighSrc": "cards/bw9-033-high.png",
+    "attacks": [
+      {
+        "name": "Electro Ball",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3194",
-    "externalId": null,
+    "externalId": "bw9-32",
     "tcgdex_id": "bw9-32",
     "localId": "032",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "032/116",
+    "cardNumber": "32/116",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 032/116 Plasma Freeze",
+    "fullDisplayName": "Voltorb 32/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2987,18 +3664,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-032-low.png",
-    "imageHighSrc": "cards/bw9-032-high.png"
+    "imageHighSrc": "cards/bw9-032-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3193",
-    "externalId": null,
+    "externalId": "bw9-31",
     "tcgdex_id": "bw9-31",
     "localId": "031",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "031/116",
+    "cardNumber": "31/116",
     "cardName": "Kyurem",
-    "fullDisplayName": "Kyurem 031/116 Plasma Freeze",
+    "fullDisplayName": "Kyurem 31/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3021,18 +3704,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-031-low.png",
-    "imageHighSrc": "cards/bw9-031-high.png"
+    "imageHighSrc": "cards/bw9-031-high.png",
+    "attacks": [
+      {
+        "name": "Frost Spear",
+        "damage": "30"
+      },
+      {
+        "name": "Blizzard Burn",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "3192",
-    "externalId": null,
+    "externalId": "bw9-30",
     "tcgdex_id": "bw9-30",
     "localId": "030",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "030/116",
+    "cardNumber": "30/116",
     "cardName": "Cryogonal",
-    "fullDisplayName": "Cryogonal 030/116 Plasma Freeze",
+    "fullDisplayName": "Cryogonal 30/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3055,18 +3748,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-030-low.png",
-    "imageHighSrc": "cards/bw9-030-high.png"
+    "imageHighSrc": "cards/bw9-030-high.png",
+    "attacks": [
+      {
+        "name": "Call Sign",
+        "damage": null
+      },
+      {
+        "name": "Cryofreeze",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3191",
-    "externalId": null,
+    "externalId": "bw9-29",
     "tcgdex_id": "bw9-29",
     "localId": "029",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "029/116",
+    "cardNumber": "29/116",
     "cardName": "Vanilluxe",
-    "fullDisplayName": "Vanilluxe 029/116 Plasma Freeze",
+    "fullDisplayName": "Vanilluxe 29/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3089,18 +3792,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-029-low.png",
-    "imageHighSrc": "cards/bw9-029-high.png"
+    "imageHighSrc": "cards/bw9-029-high.png",
+    "attacks": [
+      {
+        "name": "ChillMAX",
+        "damage": "60×"
+      },
+      {
+        "name": "Cold Breath",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3190",
-    "externalId": null,
+    "externalId": "bw9-28",
     "tcgdex_id": "bw9-28",
     "localId": "028",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "028/116",
+    "cardNumber": "28/116",
     "cardName": "Vanillish",
-    "fullDisplayName": "Vanillish 028/116 Plasma Freeze",
+    "fullDisplayName": "Vanillish 28/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3122,18 +3835,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-028-low.png",
-    "imageHighSrc": "cards/bw9-028-high.png"
+    "imageHighSrc": "cards/bw9-028-high.png",
+    "attacks": [
+      {
+        "name": "Surefire Spin",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3189",
-    "externalId": null,
+    "externalId": "bw9-27",
     "tcgdex_id": "bw9-27",
     "localId": "027",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "027/116",
+    "cardNumber": "27/116",
     "cardName": "Vanillite",
-    "fullDisplayName": "Vanillite 027/116 Plasma Freeze",
+    "fullDisplayName": "Vanillite 27/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3155,18 +3874,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-027-low.png",
-    "imageHighSrc": "cards/bw9-027-high.png"
+    "imageHighSrc": "cards/bw9-027-high.png",
+    "attacks": [
+      {
+        "name": "Jump On",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3188",
-    "externalId": null,
+    "externalId": "bw9-26",
     "tcgdex_id": "bw9-26",
     "localId": "026",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "026/116",
+    "cardNumber": "26/116",
     "cardName": "Seismitoad",
-    "fullDisplayName": "Seismitoad 026/116 Plasma Freeze",
+    "fullDisplayName": "Seismitoad 26/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3189,18 +3914,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-026-low.png",
-    "imageHighSrc": "cards/bw9-026-high.png"
+    "imageHighSrc": "cards/bw9-026-high.png",
+    "attacks": [
+      {
+        "name": "Seismic Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Splashing Turn",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3187",
-    "externalId": null,
+    "externalId": "bw9-25",
     "tcgdex_id": "bw9-25",
     "localId": "025",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "025/116",
+    "cardNumber": "25/116",
     "cardName": "Palpitoad",
-    "fullDisplayName": "Palpitoad 025/116 Plasma Freeze",
+    "fullDisplayName": "Palpitoad 25/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3222,18 +3957,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-025-low.png",
-    "imageHighSrc": "cards/bw9-025-high.png"
+    "imageHighSrc": "cards/bw9-025-high.png",
+    "attacks": [
+      {
+        "name": "Vibration",
+        "damage": "20"
+      },
+      {
+        "name": "Suspicious Soundwave",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3186",
-    "externalId": null,
+    "externalId": "bw9-24",
     "tcgdex_id": "bw9-24",
     "localId": "024",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "024/116",
+    "cardNumber": "24/116",
     "cardName": "Tympole",
-    "fullDisplayName": "Tympole 024/116 Plasma Freeze",
+    "fullDisplayName": "Tympole 24/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3255,18 +4000,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-024-low.png",
-    "imageHighSrc": "cards/bw9-024-high.png"
+    "imageHighSrc": "cards/bw9-024-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3185",
-    "externalId": null,
+    "externalId": "bw9-23",
     "tcgdex_id": "bw9-23",
     "localId": "023",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "023/116",
+    "cardNumber": "23/116",
     "cardName": "Glaceon",
-    "fullDisplayName": "Glaceon 023/116 Plasma Freeze",
+    "fullDisplayName": "Glaceon 23/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3289,18 +4040,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-023-low.png",
-    "imageHighSrc": "cards/bw9-023-high.png"
+    "imageHighSrc": "cards/bw9-023-high.png",
+    "attacks": [
+      {
+        "name": "Icy Wind",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3184",
-    "externalId": null,
+    "externalId": "bw9-22",
     "tcgdex_id": "bw9-22",
     "localId": "022",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "022/116",
+    "cardNumber": "22/116",
     "cardName": "Quagsire",
-    "fullDisplayName": "Quagsire 022/116 Plasma Freeze",
+    "fullDisplayName": "Quagsire 22/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3322,18 +4079,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-022-low.png",
-    "imageHighSrc": "cards/bw9-022-high.png"
+    "imageHighSrc": "cards/bw9-022-high.png",
+    "attacks": [
+      {
+        "name": "Mud Gun",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3183",
-    "externalId": null,
+    "externalId": "bw9-21",
     "tcgdex_id": "bw9-21",
     "localId": "021",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "021/116",
+    "cardNumber": "21/116",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper 021/116 Plasma Freeze",
+    "fullDisplayName": "Wooper 21/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3355,18 +4118,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-021-low.png",
-    "imageHighSrc": "cards/bw9-021-high.png"
+    "imageHighSrc": "cards/bw9-021-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3182",
-    "externalId": null,
+    "externalId": "bw9-20",
     "tcgdex_id": "bw9-20",
     "localId": "020",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "020/116",
+    "cardNumber": "20/116",
     "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon 020/116 Plasma Freeze",
+    "fullDisplayName": "Vaporeon 20/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3389,18 +4158,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-020-low.png",
-    "imageHighSrc": "cards/bw9-020-high.png"
+    "imageHighSrc": "cards/bw9-020-high.png",
+    "attacks": [
+      {
+        "name": "Refreshing Rain",
+        "damage": null
+      },
+      {
+        "name": "Gold Breaker",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3181",
-    "externalId": null,
+    "externalId": "bw9-19",
     "tcgdex_id": "bw9-19",
     "localId": "019",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "019/116",
+    "cardNumber": "19/116",
     "cardName": "Seadra",
-    "fullDisplayName": "Seadra 019/116 Plasma Freeze",
+    "fullDisplayName": "Seadra 19/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3422,18 +4201,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-019-low.png",
-    "imageHighSrc": "cards/bw9-019-high.png"
+    "imageHighSrc": "cards/bw9-019-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3180",
-    "externalId": null,
+    "externalId": "bw9-18",
     "tcgdex_id": "bw9-18",
     "localId": "018",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "018/116",
+    "cardNumber": "18/116",
     "cardName": "Horsea",
-    "fullDisplayName": "Horsea 018/116 Plasma Freeze",
+    "fullDisplayName": "Horsea 18/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3455,18 +4240,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-018-low.png",
-    "imageHighSrc": "cards/bw9-018-high.png"
+    "imageHighSrc": "cards/bw9-018-high.png",
+    "attacks": [
+      {
+        "name": "Fin Smack",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3179",
-    "externalId": null,
+    "externalId": "bw9-17",
     "tcgdex_id": "bw9-17",
     "localId": "017",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "017/116",
+    "cardNumber": "17/116",
     "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram 017/116 Plasma Freeze",
+    "fullDisplayName": "Reshiram 17/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3488,18 +4279,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-017-low.png",
-    "imageHighSrc": "cards/bw9-017-high.png"
+    "imageHighSrc": "cards/bw9-017-high.png",
+    "attacks": [
+      {
+        "name": "Purifying Flame",
+        "damage": "50"
+      },
+      {
+        "name": "Fusion Flare",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3178",
-    "externalId": null,
+    "externalId": "bw9-16",
     "tcgdex_id": "bw9-16",
     "localId": "016",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "016/116",
+    "cardNumber": "16/116",
     "cardName": "Chandelure",
-    "fullDisplayName": "Chandelure 016/116 Plasma Freeze",
+    "fullDisplayName": "Chandelure 16/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3522,18 +4323,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-016-low.png",
-    "imageHighSrc": "cards/bw9-016-high.png"
+    "imageHighSrc": "cards/bw9-016-high.png",
+    "attacks": [
+      {
+        "name": "Absorb Life",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3177",
-    "externalId": null,
+    "externalId": "bw9-15",
     "tcgdex_id": "bw9-15",
     "localId": "015",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "015/116",
+    "cardNumber": "15/116",
     "cardName": "Lampent",
-    "fullDisplayName": "Lampent 015/116 Plasma Freeze",
+    "fullDisplayName": "Lampent 15/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3555,18 +4362,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-015-low.png",
-    "imageHighSrc": "cards/bw9-015-high.png"
+    "imageHighSrc": "cards/bw9-015-high.png",
+    "attacks": [
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      },
+      {
+        "name": "Searing Flame",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3176",
-    "externalId": null,
+    "externalId": "bw9-14",
     "tcgdex_id": "bw9-14",
     "localId": "014",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "014/116",
+    "cardNumber": "14/116",
     "cardName": "Litwick",
-    "fullDisplayName": "Litwick 014/116 Plasma Freeze",
+    "fullDisplayName": "Litwick 14/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3588,18 +4405,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-014-low.png",
-    "imageHighSrc": "cards/bw9-014-high.png"
+    "imageHighSrc": "cards/bw9-014-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3175",
-    "externalId": null,
+    "externalId": "bw9-13",
     "tcgdex_id": "bw9-13",
     "localId": "013",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "013/116",
+    "cardNumber": "13/116",
     "cardName": "Heatran-EX",
-    "fullDisplayName": "Heatran-EX 013/116 Plasma Freeze",
+    "fullDisplayName": "Heatran-EX 13/116 Plasma Freeze",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3623,18 +4450,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw9-013-low.png",
-    "imageHighSrc": "cards/bw9-013-high.png"
+    "imageHighSrc": "cards/bw9-013-high.png",
+    "attacks": [
+      {
+        "name": "Heat Boiler",
+        "damage": "60+"
+      },
+      {
+        "name": "Dynamite Press",
+        "damage": "80+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3174",
-    "externalId": null,
+    "externalId": "bw9-12",
     "tcgdex_id": "bw9-12",
     "localId": "012",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "012/116",
+    "cardNumber": "12/116",
     "cardName": "Flareon",
-    "fullDisplayName": "Flareon 012/116 Plasma Freeze",
+    "fullDisplayName": "Flareon 12/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3657,18 +4495,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-012-low.png",
-    "imageHighSrc": "cards/bw9-012-high.png"
+    "imageHighSrc": "cards/bw9-012-high.png",
+    "attacks": [
+      {
+        "name": "Vengeance",
+        "damage": "20+"
+      },
+      {
+        "name": "Heat Tackle",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3173",
-    "externalId": null,
+    "externalId": "bw9-11",
     "tcgdex_id": "bw9-11",
     "localId": "011",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "011/116",
+    "cardNumber": "11/116",
     "cardName": "Leafeon",
-    "fullDisplayName": "Leafeon 011/116 Plasma Freeze",
+    "fullDisplayName": "Leafeon 11/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3691,18 +4539,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-011-low.png",
-    "imageHighSrc": "cards/bw9-011-high.png"
+    "imageHighSrc": "cards/bw9-011-high.png",
+    "attacks": [
+      {
+        "name": "Energy Crush",
+        "damage": "20×"
+      },
+      {
+        "name": "Leaf Blade",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3172",
-    "externalId": null,
+    "externalId": "bw9-10",
     "tcgdex_id": "bw9-10",
     "localId": "010",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "010/116",
+    "cardNumber": "10/116",
     "cardName": "Cacturne",
-    "fullDisplayName": "Cacturne 010/116 Plasma Freeze",
+    "fullDisplayName": "Cacturne 10/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3724,18 +4582,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-010-low.png",
-    "imageHighSrc": "cards/bw9-010-high.png"
+    "imageHighSrc": "cards/bw9-010-high.png",
+    "attacks": [
+      {
+        "name": "Rapid-Fire Needles",
+        "damage": "60"
+      },
+      {
+        "name": "Payback",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "3171",
-    "externalId": null,
+    "externalId": "bw9-9",
     "tcgdex_id": "bw9-9",
     "localId": "009",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "009/116",
+    "cardNumber": "9/116",
     "cardName": "Cacnea",
-    "fullDisplayName": "Cacnea 009/116 Plasma Freeze",
+    "fullDisplayName": "Cacnea 9/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3757,18 +4625,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-009-low.png",
-    "imageHighSrc": "cards/bw9-009-high.png"
+    "imageHighSrc": "cards/bw9-009-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3170",
-    "externalId": null,
+    "externalId": "bw9-8",
     "tcgdex_id": "bw9-8",
     "localId": "008",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "008/116",
+    "cardNumber": "8/116",
     "cardName": "Sceptile",
-    "fullDisplayName": "Sceptile 008/116 Plasma Freeze",
+    "fullDisplayName": "Sceptile 8/116 Plasma Freeze",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3790,18 +4664,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-008-low.png",
-    "imageHighSrc": "cards/bw9-008-high.png"
+    "imageHighSrc": "cards/bw9-008-high.png",
+    "attacks": [
+      {
+        "name": "X-Scissor",
+        "damage": "30+"
+      },
+      {
+        "name": "Energy Bloom",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3169",
-    "externalId": null,
+    "externalId": "bw9-7",
     "tcgdex_id": "bw9-7",
     "localId": "007",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "007/116",
+    "cardNumber": "7/116",
     "cardName": "Grovyle",
-    "fullDisplayName": "Grovyle 007/116 Plasma Freeze",
+    "fullDisplayName": "Grovyle 7/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3823,18 +4707,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-007-low.png",
-    "imageHighSrc": "cards/bw9-007-high.png"
+    "imageHighSrc": "cards/bw9-007-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Cut",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3168",
-    "externalId": null,
+    "externalId": "bw9-6",
     "tcgdex_id": "bw9-6",
     "localId": "006",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "006/116",
+    "cardNumber": "6/116",
     "cardName": "Treecko",
-    "fullDisplayName": "Treecko 006/116 Plasma Freeze",
+    "fullDisplayName": "Treecko 6/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3856,18 +4750,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-006-low.png",
-    "imageHighSrc": "cards/bw9-006-high.png"
+    "imageHighSrc": "cards/bw9-006-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3167",
-    "externalId": null,
+    "externalId": "bw9-5",
     "tcgdex_id": "bw9-5",
     "localId": "005",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "005/116",
+    "cardNumber": "5/116",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 005/116 Plasma Freeze",
+    "fullDisplayName": "Exeggutor 5/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3889,18 +4793,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-005-low.png",
-    "imageHighSrc": "cards/bw9-005-high.png"
+    "imageHighSrc": "cards/bw9-005-high.png",
+    "attacks": [
+      {
+        "name": "Blockade",
+        "damage": "10"
+      },
+      {
+        "name": "Stomp",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3166",
-    "externalId": null,
+    "externalId": "bw9-4",
     "tcgdex_id": "bw9-4",
     "localId": "004",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "004/116",
+    "cardNumber": "4/116",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 004/116 Plasma Freeze",
+    "fullDisplayName": "Exeggcute 4/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3922,18 +4836,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-004-low.png",
-    "imageHighSrc": "cards/bw9-004-high.png"
+    "imageHighSrc": "cards/bw9-004-high.png",
+    "attacks": [
+      {
+        "name": "Seed Bomb",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3165",
-    "externalId": null,
+    "externalId": "bw9-3",
     "tcgdex_id": "bw9-3",
     "localId": "003",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "003/116",
+    "cardNumber": "3/116",
     "cardName": "Beedrill",
-    "fullDisplayName": "Beedrill 003/116 Plasma Freeze",
+    "fullDisplayName": "Beedrill 3/116 Plasma Freeze",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3955,18 +4875,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-003-low.png",
-    "imageHighSrc": "cards/bw9-003-high.png"
+    "imageHighSrc": "cards/bw9-003-high.png",
+    "attacks": [
+      {
+        "name": "Swift Sting",
+        "damage": "20+"
+      },
+      {
+        "name": "Pierce",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3164",
-    "externalId": null,
+    "externalId": "bw9-2",
     "tcgdex_id": "bw9-2",
     "localId": "002",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "002/116",
+    "cardNumber": "2/116",
     "cardName": "Kakuna",
-    "fullDisplayName": "Kakuna 002/116 Plasma Freeze",
+    "fullDisplayName": "Kakuna 2/116 Plasma Freeze",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3988,18 +4918,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-002-low.png",
-    "imageHighSrc": "cards/bw9-002-high.png"
+    "imageHighSrc": "cards/bw9-002-high.png",
+    "attacks": [
+      {
+        "name": "Hide",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3163",
-    "externalId": null,
+    "externalId": "bw9-1",
     "tcgdex_id": "bw9-1",
     "localId": "001",
     "setCode": "bw9",
     "setTcgdexId": "bw9",
-    "cardNumber": "001/116",
+    "cardNumber": "1/116",
     "cardName": "Weedle",
-    "fullDisplayName": "Weedle 001/116 Plasma Freeze",
+    "fullDisplayName": "Weedle 1/116 Plasma Freeze",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4021,6 +4957,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw9-001-low.png",
-    "imageHighSrc": "cards/bw9-001-high.png"
+    "imageHighSrc": "cards/bw9-001-high.png",
+    "attacks": [
+      {
+        "name": "Triple Stab",
+        "damage": "10×"
+      }
+    ]
   }
 ]

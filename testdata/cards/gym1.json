@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "8185",
-    "externalId": null,
+    "externalId": "gym1-132",
     "tcgdex_id": "gym1-132",
     "localId": "132",
     "setCode": "gym1",
@@ -30,7 +30,7 @@
   },
   {
     "masterCardId": "8184",
-    "externalId": null,
+    "externalId": "gym1-131",
     "tcgdex_id": "gym1-131",
     "localId": "131",
     "setCode": "gym1",
@@ -59,7 +59,7 @@
   },
   {
     "masterCardId": "8183",
-    "externalId": null,
+    "externalId": "gym1-130",
     "tcgdex_id": "gym1-130",
     "localId": "130",
     "setCode": "gym1",
@@ -88,7 +88,7 @@
   },
   {
     "masterCardId": "8182",
-    "externalId": null,
+    "externalId": "gym1-129",
     "tcgdex_id": "gym1-129",
     "localId": "129",
     "setCode": "gym1",
@@ -117,7 +117,7 @@
   },
   {
     "masterCardId": "8181",
-    "externalId": null,
+    "externalId": "gym1-128",
     "tcgdex_id": "gym1-128",
     "localId": "128",
     "setCode": "gym1",
@@ -146,7 +146,7 @@
   },
   {
     "masterCardId": "8180",
-    "externalId": null,
+    "externalId": "gym1-127",
     "tcgdex_id": "gym1-127",
     "localId": "127",
     "setCode": "gym1",
@@ -175,7 +175,7 @@
   },
   {
     "masterCardId": "8178",
-    "externalId": null,
+    "externalId": "gym1-126",
     "tcgdex_id": "gym1-126",
     "localId": "126",
     "setCode": "gym1",
@@ -198,11 +198,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-126-low.png",
-    "imageHighSrc": "cards/gym1-126-high.png"
+    "imageHighSrc": "cards/gym1-126-high.png",
+    "rules": "Count the number of cards in your discard pile and shuffle them into your deck. Then discard that many cards from the top of your deck."
   },
   {
     "masterCardId": "8176",
-    "externalId": null,
+    "externalId": "gym1-125",
     "tcgdex_id": "gym1-125",
     "localId": "125",
     "setCode": "gym1",
@@ -225,11 +226,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-125-low.png",
-    "imageHighSrc": "cards/gym1-125-high.png"
+    "imageHighSrc": "cards/gym1-125-high.png",
+    "rules": "Each player shuffles his or her hand into his or her deck and draws a new hand of the same number of cards."
   },
   {
     "masterCardId": "8174",
-    "externalId": null,
+    "externalId": "gym1-124",
     "tcgdex_id": "gym1-124",
     "localId": "124",
     "setCode": "gym1",
@@ -254,11 +256,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-124-low.png",
-    "imageHighSrc": "cards/gym1-124-high.png"
+    "imageHighSrc": "cards/gym1-124-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nNo player may have more than 4 Pokémon on his or her Bench. When this card is played, if a player has 5 Pokémon on his or her Bench, that player chooses 1 of them and returns it and all cards attached to it to his or her hand. (If both players have to return a Pokémon, your opponent returns a Pokémon first.)"
   },
   {
     "masterCardId": "8172",
-    "externalId": null,
+    "externalId": "gym1-123",
     "tcgdex_id": "gym1-123",
     "localId": "123",
     "setCode": "gym1",
@@ -281,11 +284,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-123-low.png",
-    "imageHighSrc": "cards/gym1-123-high.png"
+    "imageHighSrc": "cards/gym1-123-high.png",
+    "rules": "You and your opponent play a game of Rock-Paper-Scissors. The winner shuffles his or her hand into his or her deck and draws a new hand of 5 cards. (If you don't know how to play Rock-Paper-Scissors, flip a coin to decide who's the winner.)"
   },
   {
     "masterCardId": "8170",
-    "externalId": null,
+    "externalId": "gym1-122",
     "tcgdex_id": "gym1-122",
     "localId": "122",
     "setCode": "gym1",
@@ -308,11 +312,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-122-low.png",
-    "imageHighSrc": "cards/gym1-122-high.png"
+    "imageHighSrc": "cards/gym1-122-high.png",
+    "rules": "For each of your Pokémon, you may return any number of Energy cards attached to it to your hand."
   },
   {
     "masterCardId": "8167",
-    "externalId": null,
+    "externalId": "gym1-121",
     "tcgdex_id": "gym1-121",
     "localId": "121",
     "setCode": "gym1",
@@ -335,11 +340,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-121-low.png",
-    "imageHighSrc": "cards/gym1-121-high.png"
+    "imageHighSrc": "cards/gym1-121-high.png",
+    "rules": "Discard any number of other cards from your hand, then flip a coin. If heads, draw twice that many cards."
   },
   {
     "masterCardId": "8165",
-    "externalId": null,
+    "externalId": "gym1-120",
     "tcgdex_id": "gym1-120",
     "localId": "120",
     "setCode": "gym1",
@@ -364,11 +370,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-120-low.png",
-    "imageHighSrc": "cards/gym1-120-high.png"
+    "imageHighSrc": "cards/gym1-120-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nWhenever a player attacks with a Pokémon with Lt. Surge in its name, he or she may flip a coin. If heads, and if that Pokémon's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), that attack does 10 more damage to the Defending Pokémon. If tails, the attacking Pokémon does 10 damage to itself in addition to whatever its attack usually does."
   },
   {
     "masterCardId": "8163",
-    "externalId": null,
+    "externalId": "gym1-119",
     "tcgdex_id": "gym1-119",
     "localId": "119",
     "setCode": "gym1",
@@ -393,11 +400,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-119-low.png",
-    "imageHighSrc": "cards/gym1-119-high.png"
+    "imageHighSrc": "cards/gym1-119-high.png",
+    "rules": "Flip a coin. If heads, your opponent sets aside all the cards in his or her hand face down. Nobody may look at those cards. At the end of your opponent's next turn, your opponent puts those cards back into his or her hand. If tails, your turn ends immediately (you can't attack this turn)."
   },
   {
     "masterCardId": "8161",
-    "externalId": null,
+    "externalId": "gym1-118",
     "tcgdex_id": "gym1-118",
     "localId": "118",
     "setCode": "gym1",
@@ -420,11 +428,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-118-low.png",
-    "imageHighSrc": "cards/gym1-118-high.png"
+    "imageHighSrc": "cards/gym1-118-high.png",
+    "rules": "Look at your opponent's hand. Then, you may discard as many other cards as you want from your hand and draw that many cards."
   },
   {
     "masterCardId": "8159",
-    "externalId": null,
+    "externalId": "gym1-117",
     "tcgdex_id": "gym1-117",
     "localId": "117",
     "setCode": "gym1",
@@ -447,11 +456,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-117-low.png",
-    "imageHighSrc": "cards/gym1-117-high.png"
+    "imageHighSrc": "cards/gym1-117-high.png",
+    "rules": "Attach Sabrina's ESP to 1 of your Pokémon with Sabrina in its name. At the end of your turn, discard Sabrina's ESP. If that Pokémon uses and attack that involves flipping coins, Sabrina's ESP lets you re-flip those coins once. If you do, re-flip all the coins."
   },
   {
     "masterCardId": "8157",
-    "externalId": null,
+    "externalId": "gym1-116",
     "tcgdex_id": "gym1-116",
     "localId": "116",
     "setCode": "gym1",
@@ -474,11 +484,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-116-low.png",
-    "imageHighSrc": "cards/gym1-116-high.png"
+    "imageHighSrc": "cards/gym1-116-high.png",
+    "rules": "For your attack this turn, your Active Pokémon can use any attack from its Basic Pokémon card or any Evolution card attached to it. (You still have to pay for that attack's Energy cost.)"
   },
   {
     "masterCardId": "8155",
-    "externalId": null,
+    "externalId": "gym1-115",
     "tcgdex_id": "gym1-115",
     "localId": "115",
     "setCode": "gym1",
@@ -503,11 +514,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-115-low.png",
-    "imageHighSrc": "cards/gym1-115-high.png"
+    "imageHighSrc": "cards/gym1-115-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nDon't apply Resistance to any attacks made by Pokémon with Brock in their names."
   },
   {
     "masterCardId": "8153",
-    "externalId": null,
+    "externalId": "gym1-114",
     "tcgdex_id": "gym1-114",
     "localId": "114",
     "setCode": "gym1",
@@ -530,11 +542,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-114-low.png",
-    "imageHighSrc": "cards/gym1-114-high.png"
+    "imageHighSrc": "cards/gym1-114-high.png",
+    "rules": "Look at the top 7 cards of your deck. Choose 2 of those cards and put them into your hand. Discard the rest."
   },
   {
     "masterCardId": "8151",
-    "externalId": null,
+    "externalId": "gym1-113",
     "tcgdex_id": "gym1-113",
     "localId": "113",
     "setCode": "gym1",
@@ -557,11 +570,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-113-low.png",
-    "imageHighSrc": "cards/gym1-113-high.png"
+    "imageHighSrc": "cards/gym1-113-high.png",
+    "rules": "Flip 2 coins. If both of them are heads, choose 1 of your opponent's Benched Pokémon and return it and all cards attached to it to his or her hand. If 1 or both of them are tails, your turn ends immediately (you can't attack this turn)."
   },
   {
     "masterCardId": "8149",
-    "externalId": null,
+    "externalId": "gym1-112",
     "tcgdex_id": "gym1-112",
     "localId": "112",
     "setCode": "gym1",
@@ -584,11 +598,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-112-low.png",
-    "imageHighSrc": "cards/gym1-112-high.png"
+    "imageHighSrc": "cards/gym1-112-high.png",
+    "rules": "Your opponent chooses 1 of the following: everyone chooses 1 of his or her own Prizes and put it into his or her hand, or you draw a card."
   },
   {
     "masterCardId": "8147",
-    "externalId": null,
+    "externalId": "gym1-111",
     "tcgdex_id": "gym1-111",
     "localId": "111",
     "setCode": "gym1",
@@ -611,11 +626,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-111-low.png",
-    "imageHighSrc": "cards/gym1-111-high.png"
+    "imageHighSrc": "cards/gym1-111-high.png",
+    "rules": "In order to play this card, you can't have any Basic Pokémon cards in your hand. Show your hand to your opponent, then search your deck for a Basic Pokémon card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "8145",
-    "externalId": null,
+    "externalId": "gym1-110",
     "tcgdex_id": "gym1-110",
     "localId": "110",
     "setCode": "gym1",
@@ -638,11 +654,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-110-low.png",
-    "imageHighSrc": "cards/gym1-110-high.png"
+    "imageHighSrc": "cards/gym1-110-high.png",
+    "rules": "Look at your opponent's hand. If he or she has any Basic Pokémon cards there, you may put any number of them onto your opponent's Bench (as long as there's room)."
   },
   {
     "masterCardId": "8143",
-    "externalId": null,
+    "externalId": "gym1-109",
     "tcgdex_id": "gym1-109",
     "localId": "109",
     "setCode": "gym1",
@@ -665,11 +682,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-109-low.png",
-    "imageHighSrc": "cards/gym1-109-high.png"
+    "imageHighSrc": "cards/gym1-109-high.png",
+    "rules": "Trade 2 of the other cards in your hand for up to 2 Basic Pokémon and/or Evolution cards with Erika in their names from your deck. Show those cards to your opponent, then put them into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "8141",
-    "externalId": null,
+    "externalId": "gym1-108",
     "tcgdex_id": "gym1-108",
     "localId": "108",
     "setCode": "gym1",
@@ -694,11 +712,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-108-low.png",
-    "imageHighSrc": "cards/gym1-108-high.png"
+    "imageHighSrc": "cards/gym1-108-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player pays Colorless less to retreat his or her Pokémon if it has Misty in its name."
   },
   {
     "masterCardId": "8139",
-    "externalId": null,
+    "externalId": "gym1-107",
     "tcgdex_id": "gym1-107",
     "localId": "107",
     "setCode": "gym1",
@@ -723,11 +742,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-107-low.png",
-    "imageHighSrc": "cards/gym1-107-high.png"
+    "imageHighSrc": "cards/gym1-107-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nDuring each player's turn, that player may choose to discard an Energy card attached to 1 of his or her Pokémon with Erika in its name. If that player does so, that Pokémon is no longer Asleep, Confused, Paralyzed, or Poisoned."
   },
   {
     "masterCardId": "8136",
-    "externalId": null,
+    "externalId": "gym1-106",
     "tcgdex_id": "gym1-106",
     "localId": "106",
     "setCode": "gym1",
@@ -750,11 +770,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-106-low.png",
-    "imageHighSrc": "cards/gym1-106-high.png"
+    "imageHighSrc": "cards/gym1-106-high.png",
+    "rules": "Search your deck for a Basic Pokémon or Evolution card with Brock in its name. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "8133",
-    "externalId": null,
+    "externalId": "gym1-105",
     "tcgdex_id": "gym1-105",
     "localId": "105",
     "setCode": "gym1",
@@ -777,11 +798,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-105-low.png",
-    "imageHighSrc": "cards/gym1-105-high.png"
+    "imageHighSrc": "cards/gym1-105-high.png",
+    "rules": "You can't play this card if you have any cards in your hand other than Blaine's Last Resort. Show your hand to your opponent, then draw 5 cards."
   },
   {
     "masterCardId": "8130",
-    "externalId": null,
+    "externalId": "gym1-104",
     "tcgdex_id": "gym1-104",
     "localId": "104",
     "setCode": "gym1",
@@ -806,11 +828,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-104-low.png",
-    "imageHighSrc": "cards/gym1-104-high.png"
+    "imageHighSrc": "cards/gym1-104-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player pays Colorless more to retreat his or her Active Pokémon."
   },
   {
     "masterCardId": "8127",
-    "externalId": null,
+    "externalId": "gym1-103",
     "tcgdex_id": "gym1-103",
     "localId": "103",
     "setCode": "gym1",
@@ -835,11 +858,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-103-low.png",
-    "imageHighSrc": "cards/gym1-103-high.png"
+    "imageHighSrc": "cards/gym1-103-high.png",
+    "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nA player must discard 2 cards from his or her hand in order to play an Energy Removal or Super Energy Removal card."
   },
   {
     "masterCardId": "8124",
-    "externalId": null,
+    "externalId": "gym1-102",
     "tcgdex_id": "gym1-102",
     "localId": "102",
     "setCode": "gym1",
@@ -862,11 +886,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-102-low.png",
-    "imageHighSrc": "cards/gym1-102-high.png"
+    "imageHighSrc": "cards/gym1-102-high.png",
+    "rules": "Discard 2 of the other cards in your hand in order to play this card. If this turn's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), and if the attacking Pokémon has Misty in its name, the attack does 20 more damage to the Defending Pokémon."
   },
   {
     "masterCardId": "8121",
-    "externalId": null,
+    "externalId": "gym1-101",
     "tcgdex_id": "gym1-101",
     "localId": "101",
     "setCode": "gym1",
@@ -889,11 +914,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-101-low.png",
-    "imageHighSrc": "cards/gym1-101-high.png"
+    "imageHighSrc": "cards/gym1-101-high.png",
+    "rules": "You can play this card only if you have at least 1 Basic Pokémon card in your hand. Put a Basic Pokémon card from your hand into play as your Active Pokémon. Put your old Active Pokémon onto your Bench. (You can't play this card if your Bench is full.)"
   },
   {
     "masterCardId": "8118",
-    "externalId": null,
+    "externalId": "gym1-100",
     "tcgdex_id": "gym1-100",
     "localId": "100",
     "setCode": "gym1",
@@ -916,18 +942,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-100-low.png",
-    "imageHighSrc": "cards/gym1-100-high.png"
+    "imageHighSrc": "cards/gym1-100-high.png",
+    "rules": "You may draw up to 3 cards, then your opponent may draw up to 3 cards."
   },
   {
     "masterCardId": "8115",
-    "externalId": null,
+    "externalId": "gym1-99",
     "tcgdex_id": "gym1-99",
     "localId": "099",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "099/132",
+    "cardNumber": "99/132",
     "cardName": "Charity",
-    "fullDisplayName": "Charity 099/132 Gym Heroes",
+    "fullDisplayName": "Charity 99/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -943,18 +970,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-099-low.png",
-    "imageHighSrc": "cards/gym1-099-high.png"
+    "imageHighSrc": "cards/gym1-099-high.png",
+    "rules": "Attach Charity to your Active Pokémon. Unless that Pokémon gets Knocked Out, return Charity to your hand at the end of your turn. If that Pokémon attacks and does damage to the Defending Pokémon, you may reduce that damage by any amount (rounded to the nearest 10)."
   },
   {
     "masterCardId": "8112",
-    "externalId": null,
+    "externalId": "gym1-98",
     "tcgdex_id": "gym1-98",
     "localId": "098",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "098/132",
+    "cardNumber": "98/132",
     "cardName": "Brock",
-    "fullDisplayName": "Brock 098/132 Gym Heroes",
+    "fullDisplayName": "Brock 98/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -970,18 +998,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-098-low.png",
-    "imageHighSrc": "cards/gym1-098-high.png"
+    "imageHighSrc": "cards/gym1-098-high.png",
+    "rules": "Remove 1 damage counter from each of your Pokémon that has any damage counters on it."
   },
   {
     "masterCardId": "8109",
-    "externalId": null,
+    "externalId": "gym1-97",
     "tcgdex_id": "gym1-97",
     "localId": "097",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "097/132",
+    "cardNumber": "97/132",
     "cardName": "Blaine's Quiz #1",
-    "fullDisplayName": "Blaine's Quiz #1 097/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Quiz #1 97/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Trainer",
     "stage": null,
@@ -997,18 +1026,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-097-low.png",
-    "imageHighSrc": "cards/gym1-097-high.png"
+    "imageHighSrc": "cards/gym1-097-high.png",
+    "rules": "Put a Basic Pokémon or Evolution card from your hand face down in front of you and tell your opponent its name. Your opponent guesses the length of that Pokémon. Flip the card over. If your opponent guessed right, he or she draws 2 cards. If your opponent guessed wrong, you draw 2 cards. Either way, return the card to your hand."
   },
   {
     "masterCardId": "8106",
-    "externalId": null,
+    "externalId": "gym1-96",
     "tcgdex_id": "gym1-96",
     "localId": "096",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "096/132",
+    "cardNumber": "96/132",
     "cardName": "Sabrina's Venonat",
-    "fullDisplayName": "Sabrina's Venonat 096/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Venonat 96/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1030,18 +1060,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-096-low.png",
-    "imageHighSrc": "cards/gym1-096-high.png"
+    "imageHighSrc": "cards/gym1-096-high.png",
+    "attacks": [
+      {
+        "name": "Poison Antennae",
+        "damage": null
+      },
+      {
+        "name": "Removal Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8103",
-    "externalId": null,
+    "externalId": "gym1-95",
     "tcgdex_id": "gym1-95",
     "localId": "095",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "095/132",
+    "cardNumber": "95/132",
     "cardName": "Sabrina's Slowpoke",
-    "fullDisplayName": "Sabrina's Slowpoke 095/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Slowpoke 95/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1063,18 +1103,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-095-low.png",
-    "imageHighSrc": "cards/gym1-095-high.png"
+    "imageHighSrc": "cards/gym1-095-high.png",
+    "attacks": [
+      {
+        "name": "Lazy Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8100",
-    "externalId": null,
+    "externalId": "gym1-94",
     "tcgdex_id": "gym1-94",
     "localId": "094",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "094/132",
+    "cardNumber": "94/132",
     "cardName": "Sabrina's Mr. Mime",
-    "fullDisplayName": "Sabrina's Mr. Mime 094/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Mr. Mime 94/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1096,18 +1142,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-094-low.png",
-    "imageHighSrc": "cards/gym1-094-high.png"
+    "imageHighSrc": "cards/gym1-094-high.png",
+    "attacks": [
+      {
+        "name": "Sleight of Hand",
+        "damage": null
+      },
+      {
+        "name": "Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8096",
-    "externalId": null,
+    "externalId": "gym1-93",
     "tcgdex_id": "gym1-93",
     "localId": "093",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "093/132",
+    "cardNumber": "93/132",
     "cardName": "Sabrina's Gastly",
-    "fullDisplayName": "Sabrina's Gastly 093/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Gastly 93/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1129,18 +1185,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-093-low.png",
-    "imageHighSrc": "cards/gym1-093-high.png"
+    "imageHighSrc": "cards/gym1-093-high.png",
+    "attacks": [
+      {
+        "name": "Spook",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8092",
-    "externalId": null,
+    "externalId": "gym1-92",
     "tcgdex_id": "gym1-92",
     "localId": "092",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "092/132",
+    "cardNumber": "92/132",
     "cardName": "Sabrina's Drowzee",
-    "fullDisplayName": "Sabrina's Drowzee 092/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Drowzee 92/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1162,18 +1224,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-092-low.png",
-    "imageHighSrc": "cards/gym1-092-high.png"
+    "imageHighSrc": "cards/gym1-092-high.png",
+    "attacks": [
+      {
+        "name": "Suggestion",
+        "damage": null
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8087",
-    "externalId": null,
+    "externalId": "gym1-91",
     "tcgdex_id": "gym1-91",
     "localId": "091",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "091/132",
+    "cardNumber": "91/132",
     "cardName": "Sabrina's Abra",
-    "fullDisplayName": "Sabrina's Abra 091/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Abra 91/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1195,18 +1267,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-091-low.png",
-    "imageHighSrc": "cards/gym1-091-high.png"
+    "imageHighSrc": "cards/gym1-091-high.png",
+    "attacks": [
+      {
+        "name": "Energy Loop",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8084",
-    "externalId": null,
+    "externalId": "gym1-90",
     "tcgdex_id": "gym1-90",
     "localId": "090",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "090/132",
+    "cardNumber": "90/132",
     "cardName": "Misty's Staryu",
-    "fullDisplayName": "Misty's Staryu 090/132 Gym Heroes",
+    "fullDisplayName": "Misty's Staryu 90/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1228,18 +1306,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-090-low.png",
-    "imageHighSrc": "cards/gym1-090-high.png"
+    "imageHighSrc": "cards/gym1-090-high.png",
+    "attacks": [
+      {
+        "name": "Swift",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8080",
-    "externalId": null,
+    "externalId": "gym1-89",
     "tcgdex_id": "gym1-89",
     "localId": "089",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "089/132",
+    "cardNumber": "89/132",
     "cardName": "Misty's Shellder",
-    "fullDisplayName": "Misty's Shellder 089/132 Gym Heroes",
+    "fullDisplayName": "Misty's Shellder 89/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1261,18 +1345,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-089-low.png",
-    "imageHighSrc": "cards/gym1-089-high.png"
+    "imageHighSrc": "cards/gym1-089-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Clamp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8076",
-    "externalId": null,
+    "externalId": "gym1-88",
     "tcgdex_id": "gym1-88",
     "localId": "088",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "088/132",
+    "cardNumber": "88/132",
     "cardName": "Misty's Seel",
-    "fullDisplayName": "Misty's Seel 088/132 Gym Heroes",
+    "fullDisplayName": "Misty's Seel 88/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1294,18 +1388,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-088-low.png",
-    "imageHighSrc": "cards/gym1-088-high.png"
+    "imageHighSrc": "cards/gym1-088-high.png",
+    "attacks": [
+      {
+        "name": "Aurora Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8072",
-    "externalId": null,
+    "externalId": "gym1-87",
     "tcgdex_id": "gym1-87",
     "localId": "087",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "087/132",
+    "cardNumber": "87/132",
     "cardName": "Misty's Poliwag",
-    "fullDisplayName": "Misty's Poliwag 087/132 Gym Heroes",
+    "fullDisplayName": "Misty's Poliwag 87/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1327,18 +1427,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-087-low.png",
-    "imageHighSrc": "cards/gym1-087-high.png"
+    "imageHighSrc": "cards/gym1-087-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Stare",
+        "damage": null
+      },
+      {
+        "name": "Tail Rap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "8064",
-    "externalId": null,
+    "externalId": "gym1-86",
     "tcgdex_id": "gym1-86",
     "localId": "086",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "086/132",
+    "cardNumber": "86/132",
     "cardName": "Misty's Horsea",
-    "fullDisplayName": "Misty's Horsea 086/132 Gym Heroes",
+    "fullDisplayName": "Misty's Horsea 86/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1360,18 +1470,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-086-low.png",
-    "imageHighSrc": "cards/gym1-086-high.png"
+    "imageHighSrc": "cards/gym1-086-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Smokescreen",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8060",
-    "externalId": null,
+    "externalId": "gym1-85",
     "tcgdex_id": "gym1-85",
     "localId": "085",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "085/132",
+    "cardNumber": "85/132",
     "cardName": "Misty's Goldeen",
-    "fullDisplayName": "Misty's Goldeen 085/132 Gym Heroes",
+    "fullDisplayName": "Misty's Goldeen 85/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1393,18 +1513,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-085-low.png",
-    "imageHighSrc": "cards/gym1-085-high.png"
+    "imageHighSrc": "cards/gym1-085-high.png",
+    "attacks": [
+      {
+        "name": "Fury Attack",
+        "damage": "10×"
+      },
+      {
+        "name": "Supersonic",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8056",
-    "externalId": null,
+    "externalId": "gym1-84",
     "tcgdex_id": "gym1-84",
     "localId": "084",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "084/132",
+    "cardNumber": "84/132",
     "cardName": "Lt. Surge's Voltorb",
-    "fullDisplayName": "Lt. Surge's Voltorb 084/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Voltorb 84/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1426,18 +1556,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-084-low.png",
-    "imageHighSrc": "cards/gym1-084-high.png"
+    "imageHighSrc": "cards/gym1-084-high.png",
+    "attacks": [
+      {
+        "name": "Spin Ball",
+        "damage": "20×"
+      },
+      {
+        "name": "Double Spin",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "8051",
-    "externalId": null,
+    "externalId": "gym1-83",
     "tcgdex_id": "gym1-83",
     "localId": "083",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "083/132",
+    "cardNumber": "83/132",
     "cardName": "Lt. Surge's Spearow",
-    "fullDisplayName": "Lt. Surge's Spearow 083/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Spearow 83/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1459,18 +1599,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-083-low.png",
-    "imageHighSrc": "cards/gym1-083-high.png"
+    "imageHighSrc": "cards/gym1-083-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "10"
+      },
+      {
+        "name": "Razor Wind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "8047",
-    "externalId": null,
+    "externalId": "gym1-82",
     "tcgdex_id": "gym1-82",
     "localId": "082",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "082/132",
+    "cardNumber": "82/132",
     "cardName": "Lt. Surge's Rattata",
-    "fullDisplayName": "Lt. Surge's Rattata 082/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Rattata 82/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1492,18 +1642,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-082-low.png",
-    "imageHighSrc": "cards/gym1-082-high.png"
+    "imageHighSrc": "cards/gym1-082-high.png",
+    "attacks": [
+      {
+        "name": "Focus Energy",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8043",
-    "externalId": null,
+    "externalId": "gym1-81",
     "tcgdex_id": "gym1-81",
     "localId": "081",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "081/132",
+    "cardNumber": "81/132",
     "cardName": "Lt. Surge's Pikachu",
-    "fullDisplayName": "Lt. Surge's Pikachu 081/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Pikachu 81/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1525,18 +1685,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-081-low.png",
-    "imageHighSrc": "cards/gym1-081-high.png"
+    "imageHighSrc": "cards/gym1-081-high.png",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Lightning Tail",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8039",
-    "externalId": null,
+    "externalId": "gym1-80",
     "tcgdex_id": "gym1-80",
     "localId": "080",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "080/132",
+    "cardNumber": "80/132",
     "cardName": "Lt. Surge's Magnemite",
-    "fullDisplayName": "Lt. Surge's Magnemite 080/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Magnemite 80/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1558,18 +1728,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-080-low.png",
-    "imageHighSrc": "cards/gym1-080-high.png"
+    "imageHighSrc": "cards/gym1-080-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8035",
-    "externalId": null,
+    "externalId": "gym1-79",
     "tcgdex_id": "gym1-79",
     "localId": "079",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "079/132",
+    "cardNumber": "79/132",
     "cardName": "Erika's Tangela",
-    "fullDisplayName": "Erika's Tangela 079/132 Gym Heroes",
+    "fullDisplayName": "Erika's Tangela 79/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1591,18 +1771,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-079-low.png",
-    "imageHighSrc": "cards/gym1-079-high.png"
+    "imageHighSrc": "cards/gym1-079-high.png",
+    "attacks": [
+      {
+        "name": "Vine Slap",
+        "damage": "10"
+      },
+      {
+        "name": "Stretch Vine",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "8031",
-    "externalId": null,
+    "externalId": "gym1-78",
     "tcgdex_id": "gym1-78",
     "localId": "078",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "078/132",
+    "cardNumber": "78/132",
     "cardName": "Erika's Oddish",
-    "fullDisplayName": "Erika's Oddish 078/132 Gym Heroes",
+    "fullDisplayName": "Erika's Oddish 78/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1624,18 +1814,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-078-low.png",
-    "imageHighSrc": "cards/gym1-078-high.png"
+    "imageHighSrc": "cards/gym1-078-high.png",
+    "attacks": [
+      {
+        "name": "Blot",
+        "damage": "10"
+      },
+      {
+        "name": "Sporadic Sponging",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8027",
-    "externalId": null,
+    "externalId": "gym1-77",
     "tcgdex_id": "gym1-77",
     "localId": "077",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "077/132",
+    "cardNumber": "77/132",
     "cardName": "Erika's Exeggcute",
-    "fullDisplayName": "Erika's Exeggcute 077/132 Gym Heroes",
+    "fullDisplayName": "Erika's Exeggcute 77/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1657,18 +1857,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-077-low.png",
-    "imageHighSrc": "cards/gym1-077-high.png"
+    "imageHighSrc": "cards/gym1-077-high.png",
+    "attacks": [
+      {
+        "name": "Eggsplosion",
+        "damage": "10×"
+      },
+      {
+        "name": "Psychic",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8023",
-    "externalId": null,
+    "externalId": "gym1-76",
     "tcgdex_id": "gym1-76",
     "localId": "076",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "076/132",
+    "cardNumber": "76/132",
     "cardName": "Erika's Bellsprout",
-    "fullDisplayName": "Erika's Bellsprout 076/132 Gym Heroes",
+    "fullDisplayName": "Erika's Bellsprout 76/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1690,18 +1900,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-076-low.png",
-    "imageHighSrc": "cards/gym1-076-high.png"
+    "imageHighSrc": "cards/gym1-076-high.png",
+    "attacks": [
+      {
+        "name": "Careless Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8019",
-    "externalId": null,
+    "externalId": "gym1-75",
     "tcgdex_id": "gym1-75",
     "localId": "075",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "075/132",
+    "cardNumber": "75/132",
     "cardName": "Erika's Bellsprout",
-    "fullDisplayName": "Erika's Bellsprout 075/132 Gym Heroes",
+    "fullDisplayName": "Erika's Bellsprout 75/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1723,18 +1939,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-075-low.png",
-    "imageHighSrc": "cards/gym1-075-high.png"
+    "imageHighSrc": "cards/gym1-075-high.png",
+    "attacks": [
+      {
+        "name": "Poison Vine",
+        "damage": "10"
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "8015",
-    "externalId": null,
+    "externalId": "gym1-74",
     "tcgdex_id": "gym1-74",
     "localId": "074",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "074/132",
+    "cardNumber": "74/132",
     "cardName": "Brock's Zubat",
-    "fullDisplayName": "Brock's Zubat 074/132 Gym Heroes",
+    "fullDisplayName": "Brock's Zubat 74/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1756,18 +1982,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-074-low.png",
-    "imageHighSrc": "cards/gym1-074-high.png"
+    "imageHighSrc": "cards/gym1-074-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Poison Fang",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8010",
-    "externalId": null,
+    "externalId": "gym1-73",
     "tcgdex_id": "gym1-73",
     "localId": "073",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "073/132",
+    "cardNumber": "73/132",
     "cardName": "Brock's Vulpix",
-    "fullDisplayName": "Brock's Vulpix 073/132 Gym Heroes",
+    "fullDisplayName": "Brock's Vulpix 73/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1789,18 +2025,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-073-low.png",
-    "imageHighSrc": "cards/gym1-073-high.png"
+    "imageHighSrc": "cards/gym1-073-high.png",
+    "attacks": [
+      {
+        "name": "Flame",
+        "damage": "20"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "8006",
-    "externalId": null,
+    "externalId": "gym1-72",
     "tcgdex_id": "gym1-72",
     "localId": "072",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "072/132",
+    "cardNumber": "72/132",
     "cardName": "Brock's Sandshrew",
-    "fullDisplayName": "Brock's Sandshrew 072/132 Gym Heroes",
+    "fullDisplayName": "Brock's Sandshrew 72/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1822,18 +2068,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-072-low.png",
-    "imageHighSrc": "cards/gym1-072-high.png"
+    "imageHighSrc": "cards/gym1-072-high.png",
+    "attacks": [
+      {
+        "name": "Sand Pit",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "8002",
-    "externalId": null,
+    "externalId": "gym1-71",
     "tcgdex_id": "gym1-71",
     "localId": "071",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "071/132",
+    "cardNumber": "71/132",
     "cardName": "Brock's Sandshrew",
-    "fullDisplayName": "Brock's Sandshrew 071/132 Gym Heroes",
+    "fullDisplayName": "Brock's Sandshrew 71/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1855,18 +2107,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-071-low.png",
-    "imageHighSrc": "cards/gym1-071-high.png"
+    "imageHighSrc": "cards/gym1-071-high.png",
+    "attacks": [
+      {
+        "name": "Defense Curl",
+        "damage": null
+      },
+      {
+        "name": "Rolling Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7997",
-    "externalId": null,
+    "externalId": "gym1-70",
     "tcgdex_id": "gym1-70",
     "localId": "070",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "070/132",
+    "cardNumber": "70/132",
     "cardName": "Brock's Rhyhorn",
-    "fullDisplayName": "Brock's Rhyhorn 070/132 Gym Heroes",
+    "fullDisplayName": "Brock's Rhyhorn 70/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1888,18 +2150,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-070-low.png",
-    "imageHighSrc": "cards/gym1-070-high.png"
+    "imageHighSrc": "cards/gym1-070-high.png",
+    "attacks": [
+      {
+        "name": "Drill Tackle",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7992",
-    "externalId": null,
+    "externalId": "gym1-69",
     "tcgdex_id": "gym1-69",
     "localId": "069",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "069/132",
+    "cardNumber": "69/132",
     "cardName": "Brock's Onix",
-    "fullDisplayName": "Brock's Onix 069/132 Gym Heroes",
+    "fullDisplayName": "Brock's Onix 69/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1921,18 +2189,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-069-low.png",
-    "imageHighSrc": "cards/gym1-069-high.png"
+    "imageHighSrc": "cards/gym1-069-high.png",
+    "attacks": [
+      {
+        "name": "Bellow",
+        "damage": null
+      },
+      {
+        "name": "Rock Throw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7986",
-    "externalId": null,
+    "externalId": "gym1-68",
     "tcgdex_id": "gym1-68",
     "localId": "068",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "068/132",
+    "cardNumber": "68/132",
     "cardName": "Brock's Mankey",
-    "fullDisplayName": "Brock's Mankey 068/132 Gym Heroes",
+    "fullDisplayName": "Brock's Mankey 68/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1954,18 +2232,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-068-low.png",
-    "imageHighSrc": "cards/gym1-068-high.png"
+    "imageHighSrc": "cards/gym1-068-high.png",
+    "attacks": [
+      {
+        "name": "Fidget",
+        "damage": null
+      },
+      {
+        "name": "Karate Chop",
+        "damage": "40-"
+      }
+    ]
   },
   {
     "masterCardId": "7980",
-    "externalId": null,
+    "externalId": "gym1-67",
     "tcgdex_id": "gym1-67",
     "localId": "067",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "067/132",
+    "cardNumber": "67/132",
     "cardName": "Brock's Mankey",
-    "fullDisplayName": "Brock's Mankey 067/132 Gym Heroes",
+    "fullDisplayName": "Brock's Mankey 67/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1987,18 +2275,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-067-low.png",
-    "imageHighSrc": "cards/gym1-067-high.png"
+    "imageHighSrc": "cards/gym1-067-high.png",
+    "attacks": [
+      {
+        "name": "Taunt",
+        "damage": null
+      },
+      {
+        "name": "Light Kick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7975",
-    "externalId": null,
+    "externalId": "gym1-66",
     "tcgdex_id": "gym1-66",
     "localId": "066",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "066/132",
+    "cardNumber": "66/132",
     "cardName": "Brock's Geodude",
-    "fullDisplayName": "Brock's Geodude 066/132 Gym Heroes",
+    "fullDisplayName": "Brock's Geodude 66/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2020,18 +2318,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-066-low.png",
-    "imageHighSrc": "cards/gym1-066-high.png"
+    "imageHighSrc": "cards/gym1-066-high.png",
+    "attacks": [
+      {
+        "name": "Call for Friend",
+        "damage": null
+      },
+      {
+        "name": "Hook Shot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7970",
-    "externalId": null,
+    "externalId": "gym1-65",
     "tcgdex_id": "gym1-65",
     "localId": "065",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "065/132",
+    "cardNumber": "65/132",
     "cardName": "Blaine's Vulpix",
-    "fullDisplayName": "Blaine's Vulpix 065/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Vulpix 65/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2053,18 +2361,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-065-low.png",
-    "imageHighSrc": "cards/gym1-065-high.png"
+    "imageHighSrc": "cards/gym1-065-high.png",
+    "attacks": [
+      {
+        "name": "Tail Fan",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7964",
-    "externalId": null,
+    "externalId": "gym1-64",
     "tcgdex_id": "gym1-64",
     "localId": "064",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "064/132",
+    "cardNumber": "64/132",
     "cardName": "Blaine's Tauros",
-    "fullDisplayName": "Blaine's Tauros 064/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Tauros 64/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2086,18 +2400,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-064-low.png",
-    "imageHighSrc": "cards/gym1-064-high.png"
+    "imageHighSrc": "cards/gym1-064-high.png",
+    "attacks": [
+      {
+        "name": "3-Pronged Tail",
+        "damage": "10×"
+      },
+      {
+        "name": "Full Speed Charge",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7959",
-    "externalId": null,
+    "externalId": "gym1-63",
     "tcgdex_id": "gym1-63",
     "localId": "063",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "063/132",
+    "cardNumber": "63/132",
     "cardName": "Blaine's Ponyta",
-    "fullDisplayName": "Blaine's Ponyta 063/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Ponyta 63/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2119,18 +2443,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-063-low.png",
-    "imageHighSrc": "cards/gym1-063-high.png"
+    "imageHighSrc": "cards/gym1-063-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7954",
-    "externalId": null,
+    "externalId": "gym1-62",
     "tcgdex_id": "gym1-62",
     "localId": "062",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "062/132",
+    "cardNumber": "62/132",
     "cardName": "Blaine's Growlithe",
-    "fullDisplayName": "Blaine's Growlithe 062/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Growlithe 62/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2152,18 +2482,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-062-low.png",
-    "imageHighSrc": "cards/gym1-062-high.png"
+    "imageHighSrc": "cards/gym1-062-high.png",
+    "attacks": [
+      {
+        "name": "Blaze",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7949",
-    "externalId": null,
+    "externalId": "gym1-61",
     "tcgdex_id": "gym1-61",
     "localId": "061",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "061/132",
+    "cardNumber": "61/132",
     "cardName": "Blaine's Charmander",
-    "fullDisplayName": "Blaine's Charmander 061/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Charmander 61/132 Gym Heroes",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2185,18 +2521,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-061-low.png",
-    "imageHighSrc": "cards/gym1-061-high.png"
+    "imageHighSrc": "cards/gym1-061-high.png",
+    "attacks": [
+      {
+        "name": "Kindle",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7944",
-    "externalId": null,
+    "externalId": "gym1-60",
     "tcgdex_id": "gym1-60",
     "localId": "060",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "060/132",
+    "cardNumber": "60/132",
     "cardName": "Sabrina's Slowbro",
-    "fullDisplayName": "Sabrina's Slowbro 060/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Slowbro 60/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2218,18 +2564,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-060-low.png",
-    "imageHighSrc": "cards/gym1-060-high.png"
+    "imageHighSrc": "cards/gym1-060-high.png",
+    "attacks": [
+      {
+        "name": "Naptime",
+        "damage": null
+      },
+      {
+        "name": "Screaming Headbutt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7938",
-    "externalId": null,
+    "externalId": "gym1-59",
     "tcgdex_id": "gym1-59",
     "localId": "059",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "059/132",
+    "cardNumber": "59/132",
     "cardName": "Sabrina's Jynx",
-    "fullDisplayName": "Sabrina's Jynx 059/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Jynx 59/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2251,18 +2607,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-059-low.png",
-    "imageHighSrc": "cards/gym1-059-high.png"
+    "imageHighSrc": "cards/gym1-059-high.png",
+    "attacks": [
+      {
+        "name": "Good Night",
+        "damage": "10"
+      },
+      {
+        "name": "Good Morning",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7931",
-    "externalId": null,
+    "externalId": "gym1-58",
     "tcgdex_id": "gym1-58",
     "localId": "058",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "058/132",
+    "cardNumber": "58/132",
     "cardName": "Sabrina's Haunter",
-    "fullDisplayName": "Sabrina's Haunter 058/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Haunter 58/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2284,18 +2650,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-058-low.png",
-    "imageHighSrc": "cards/gym1-058-high.png"
+    "imageHighSrc": "cards/gym1-058-high.png",
+    "attacks": [
+      {
+        "name": "Night Spirits",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7926",
-    "externalId": null,
+    "externalId": "gym1-57",
     "tcgdex_id": "gym1-57",
     "localId": "057",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "057/132",
+    "cardNumber": "57/132",
     "cardName": "Misty's Tentacool",
-    "fullDisplayName": "Misty's Tentacool 057/132 Gym Heroes",
+    "fullDisplayName": "Misty's Tentacool 57/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2317,18 +2689,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-057-low.png",
-    "imageHighSrc": "cards/gym1-057-high.png"
+    "imageHighSrc": "cards/gym1-057-high.png",
+    "attacks": [
+      {
+        "name": "Crystal Beam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7921",
-    "externalId": null,
+    "externalId": "gym1-56",
     "tcgdex_id": "gym1-56",
     "localId": "056",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "056/132",
+    "cardNumber": "56/132",
     "cardName": "Misty's Starmie",
-    "fullDisplayName": "Misty's Starmie 056/132 Gym Heroes",
+    "fullDisplayName": "Misty's Starmie 56/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2350,18 +2728,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-056-low.png",
-    "imageHighSrc": "cards/gym1-056-high.png"
+    "imageHighSrc": "cards/gym1-056-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10+"
+      },
+      {
+        "name": "Bubblebeam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7915",
-    "externalId": null,
+    "externalId": "gym1-55",
     "tcgdex_id": "gym1-55",
     "localId": "055",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "055/132",
+    "cardNumber": "55/132",
     "cardName": "Misty's Seaking",
-    "fullDisplayName": "Misty's Seaking 055/132 Gym Heroes",
+    "fullDisplayName": "Misty's Seaking 55/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2383,18 +2771,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-055-low.png",
-    "imageHighSrc": "cards/gym1-055-high.png"
+    "imageHighSrc": "cards/gym1-055-high.png",
+    "attacks": [
+      {
+        "name": "Horn Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Mud Splash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7910",
-    "externalId": null,
+    "externalId": "gym1-54",
     "tcgdex_id": "gym1-54",
     "localId": "054",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "054/132",
+    "cardNumber": "54/132",
     "cardName": "Misty's Psyduck",
-    "fullDisplayName": "Misty's Psyduck 054/132 Gym Heroes",
+    "fullDisplayName": "Misty's Psyduck 54/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2416,18 +2814,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-054-low.png",
-    "imageHighSrc": "cards/gym1-054-high.png"
+    "imageHighSrc": "cards/gym1-054-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Call for Friend",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7904",
-    "externalId": null,
+    "externalId": "gym1-53",
     "tcgdex_id": "gym1-53",
     "localId": "053",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "053/132",
+    "cardNumber": "53/132",
     "cardName": "Misty's Poliwhirl",
-    "fullDisplayName": "Misty's Poliwhirl 053/132 Gym Heroes",
+    "fullDisplayName": "Misty's Poliwhirl 53/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2449,18 +2857,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-053-low.png",
-    "imageHighSrc": "cards/gym1-053-high.png"
+    "imageHighSrc": "cards/gym1-053-high.png",
+    "attacks": [
+      {
+        "name": "Rapids",
+        "damage": "20"
+      },
+      {
+        "name": "Water Punch",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "7900",
-    "externalId": null,
+    "externalId": "gym1-52",
     "tcgdex_id": "gym1-52",
     "localId": "052",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "052/132",
+    "cardNumber": "52/132",
     "cardName": "Lt. Surge's Spearow",
-    "fullDisplayName": "Lt. Surge's Spearow 052/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Spearow 52/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2482,18 +2900,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-052-low.png",
-    "imageHighSrc": "cards/gym1-052-high.png"
+    "imageHighSrc": "cards/gym1-052-high.png",
+    "attacks": [
+      {
+        "name": "Drill Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7895",
-    "externalId": null,
+    "externalId": "gym1-51",
     "tcgdex_id": "gym1-51",
     "localId": "051",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "051/132",
+    "cardNumber": "51/132",
     "cardName": "Lt. Surge's Raticate",
-    "fullDisplayName": "Lt. Surge's Raticate 051/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Raticate 51/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2515,18 +2939,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-051-low.png",
-    "imageHighSrc": "cards/gym1-051-high.png"
+    "imageHighSrc": "cards/gym1-051-high.png",
+    "attacks": [
+      {
+        "name": "Super Fang",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7890",
-    "externalId": null,
+    "externalId": "gym1-50",
     "tcgdex_id": "gym1-50",
     "localId": "050",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "050/132",
+    "cardNumber": "50/132",
     "cardName": "Lt. Surge's Magnemite",
-    "fullDisplayName": "Lt. Surge's Magnemite 050/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Magnemite 50/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2548,18 +2978,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-050-low.png",
-    "imageHighSrc": "cards/gym1-050-high.png"
+    "imageHighSrc": "cards/gym1-050-high.png",
+    "attacks": [
+      {
+        "name": "Removal Pulse",
+        "damage": "10"
+      },
+      {
+        "name": "Confusion Pulse",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7885",
-    "externalId": null,
+    "externalId": "gym1-49",
     "tcgdex_id": "gym1-49",
     "localId": "049",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "049/132",
+    "cardNumber": "49/132",
     "cardName": "Erika's Weepinbell",
-    "fullDisplayName": "Erika's Weepinbell 049/132 Gym Heroes",
+    "fullDisplayName": "Erika's Weepinbell 49/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2581,18 +3021,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-049-low.png",
-    "imageHighSrc": "cards/gym1-049-high.png"
+    "imageHighSrc": "cards/gym1-049-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": null
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7880",
-    "externalId": null,
+    "externalId": "gym1-48",
     "tcgdex_id": "gym1-48",
     "localId": "048",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "048/132",
+    "cardNumber": "48/132",
     "cardName": "Erika's Weepinbell",
-    "fullDisplayName": "Erika's Weepinbell 048/132 Gym Heroes",
+    "fullDisplayName": "Erika's Weepinbell 48/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2614,18 +3064,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-048-low.png",
-    "imageHighSrc": "cards/gym1-048-high.png"
+    "imageHighSrc": "cards/gym1-048-high.png",
+    "attacks": [
+      {
+        "name": "Drool",
+        "damage": "10"
+      },
+      {
+        "name": "Flytrap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7874",
-    "externalId": null,
+    "externalId": "gym1-47",
     "tcgdex_id": "gym1-47",
     "localId": "047",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "047/132",
+    "cardNumber": "47/132",
     "cardName": "Erika's Oddish",
-    "fullDisplayName": "Erika's Oddish 047/132 Gym Heroes",
+    "fullDisplayName": "Erika's Oddish 47/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2647,18 +3107,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-047-low.png",
-    "imageHighSrc": "cards/gym1-047-high.png"
+    "imageHighSrc": "cards/gym1-047-high.png",
+    "attacks": [
+      {
+        "name": "Poisonpowder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7868",
-    "externalId": null,
+    "externalId": "gym1-46",
     "tcgdex_id": "gym1-46",
     "localId": "046",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "046/132",
+    "cardNumber": "46/132",
     "cardName": "Erika's Gloom",
-    "fullDisplayName": "Erika's Gloom 046/132 Gym Heroes",
+    "fullDisplayName": "Erika's Gloom 46/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2680,18 +3146,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-046-low.png",
-    "imageHighSrc": "cards/gym1-046-high.png"
+    "imageHighSrc": "cards/gym1-046-high.png",
+    "attacks": [
+      {
+        "name": "Dream Dance",
+        "damage": "10"
+      },
+      {
+        "name": "Vile Smell",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7863",
-    "externalId": null,
+    "externalId": "gym1-45",
     "tcgdex_id": "gym1-45",
     "localId": "045",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "045/132",
+    "cardNumber": "45/132",
     "cardName": "Erika's Gloom",
-    "fullDisplayName": "Erika's Gloom 045/132 Gym Heroes",
+    "fullDisplayName": "Erika's Gloom 45/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2713,18 +3189,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-045-low.png",
-    "imageHighSrc": "cards/gym1-045-high.png"
+    "imageHighSrc": "cards/gym1-045-high.png",
+    "attacks": [
+      {
+        "name": "Healing Pollen",
+        "damage": null
+      },
+      {
+        "name": "Magic Pollen",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7857",
-    "externalId": null,
+    "externalId": "gym1-44",
     "tcgdex_id": "gym1-44",
     "localId": "044",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "044/132",
+    "cardNumber": "44/132",
     "cardName": "Erika's Exeggutor",
-    "fullDisplayName": "Erika's Exeggutor 044/132 Gym Heroes",
+    "fullDisplayName": "Erika's Exeggutor 44/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2746,18 +3232,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-044-low.png",
-    "imageHighSrc": "cards/gym1-044-high.png"
+    "imageHighSrc": "cards/gym1-044-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Exchange",
+        "damage": null
+      },
+      {
+        "name": "Stomp",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "7852",
-    "externalId": null,
+    "externalId": "gym1-43",
     "tcgdex_id": "gym1-43",
     "localId": "043",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "043/132",
+    "cardNumber": "43/132",
     "cardName": "Erika's Exeggcute",
-    "fullDisplayName": "Erika's Exeggcute 043/132 Gym Heroes",
+    "fullDisplayName": "Erika's Exeggcute 43/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2779,18 +3275,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-043-low.png",
-    "imageHighSrc": "cards/gym1-043-high.png"
+    "imageHighSrc": "cards/gym1-043-high.png",
+    "attacks": [
+      {
+        "name": "Deflector",
+        "damage": null
+      },
+      {
+        "name": "Egg Bomb",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7847",
-    "externalId": null,
+    "externalId": "gym1-42",
     "tcgdex_id": "gym1-42",
     "localId": "042",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "042/132",
+    "cardNumber": "42/132",
     "cardName": "Erika's Dratini",
-    "fullDisplayName": "Erika's Dratini 042/132 Gym Heroes",
+    "fullDisplayName": "Erika's Dratini 42/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2812,18 +3318,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-042-low.png",
-    "imageHighSrc": "cards/gym1-042-high.png"
+    "imageHighSrc": "cards/gym1-042-high.png",
+    "attacks": [
+      {
+        "name": "Tail Strike",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7842",
-    "externalId": null,
+    "externalId": "gym1-41",
     "tcgdex_id": "gym1-41",
     "localId": "041",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "041/132",
+    "cardNumber": "41/132",
     "cardName": "Brock's Lickitung",
-    "fullDisplayName": "Brock's Lickitung 041/132 Gym Heroes",
+    "fullDisplayName": "Brock's Lickitung 41/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2845,18 +3357,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-041-low.png",
-    "imageHighSrc": "cards/gym1-041-high.png"
+    "imageHighSrc": "cards/gym1-041-high.png",
+    "attacks": [
+      {
+        "name": "Tongue Slap",
+        "damage": "20"
+      },
+      {
+        "name": "Slam",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7837",
-    "externalId": null,
+    "externalId": "gym1-40",
     "tcgdex_id": "gym1-40",
     "localId": "040",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "040/132",
+    "cardNumber": "40/132",
     "cardName": "Brock's Graveler",
-    "fullDisplayName": "Brock's Graveler 040/132 Gym Heroes",
+    "fullDisplayName": "Brock's Graveler 40/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2878,18 +3400,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-040-low.png",
-    "imageHighSrc": "cards/gym1-040-high.png"
+    "imageHighSrc": "cards/gym1-040-high.png",
+    "attacks": [
+      {
+        "name": "Rock Toss",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7832",
-    "externalId": null,
+    "externalId": "gym1-39",
     "tcgdex_id": "gym1-39",
     "localId": "039",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "039/132",
+    "cardNumber": "39/132",
     "cardName": "Brock's Golbat",
-    "fullDisplayName": "Brock's Golbat 039/132 Gym Heroes",
+    "fullDisplayName": "Brock's Golbat 39/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2911,18 +3439,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-039-low.png",
-    "imageHighSrc": "cards/gym1-039-high.png"
+    "imageHighSrc": "cards/gym1-039-high.png",
+    "attacks": [
+      {
+        "name": "Dive",
+        "damage": "20"
+      },
+      {
+        "name": "Spiral Dive",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7827",
-    "externalId": null,
+    "externalId": "gym1-38",
     "tcgdex_id": "gym1-38",
     "localId": "038",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "038/132",
+    "cardNumber": "38/132",
     "cardName": "Brock's Geodude",
-    "fullDisplayName": "Brock's Geodude 038/132 Gym Heroes",
+    "fullDisplayName": "Brock's Geodude 38/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2944,18 +3482,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-038-low.png",
-    "imageHighSrc": "cards/gym1-038-high.png"
+    "imageHighSrc": "cards/gym1-038-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Lucky Shot",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7822",
-    "externalId": null,
+    "externalId": "gym1-37",
     "tcgdex_id": "gym1-37",
     "localId": "037",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "037/132",
+    "cardNumber": "37/132",
     "cardName": "Blaine's Magmar",
-    "fullDisplayName": "Blaine's Magmar 037/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Magmar 37/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2977,18 +3525,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-037-low.png",
-    "imageHighSrc": "cards/gym1-037-high.png"
+    "imageHighSrc": "cards/gym1-037-high.png",
+    "attacks": [
+      {
+        "name": "Firebreathing",
+        "damage": "10+"
+      },
+      {
+        "name": "Lava Burst",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7817",
-    "externalId": null,
+    "externalId": "gym1-36",
     "tcgdex_id": "gym1-36",
     "localId": "036",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "036/132",
+    "cardNumber": "36/132",
     "cardName": "Blaine's Kangaskhan",
-    "fullDisplayName": "Blaine's Kangaskhan 036/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Kangaskhan 36/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3010,18 +3568,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-036-low.png",
-    "imageHighSrc": "cards/gym1-036-high.png"
+    "imageHighSrc": "cards/gym1-036-high.png",
+    "attacks": [
+      {
+        "name": "Child's Punch",
+        "damage": "10"
+      },
+      {
+        "name": "One-Two Punch",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "7812",
-    "externalId": null,
+    "externalId": "gym1-35",
     "tcgdex_id": "gym1-35",
     "localId": "035",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "035/132",
+    "cardNumber": "35/132",
     "cardName": "Blaine's Growlithe",
-    "fullDisplayName": "Blaine's Growlithe 035/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Growlithe 35/132 Gym Heroes",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3043,18 +3611,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-035-low.png",
-    "imageHighSrc": "cards/gym1-035-high.png"
+    "imageHighSrc": "cards/gym1-035-high.png",
+    "attacks": [
+      {
+        "name": "Shake",
+        "damage": "10"
+      },
+      {
+        "name": "Fire Tackle",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7807",
-    "externalId": null,
+    "externalId": "gym1-34",
     "tcgdex_id": "gym1-34",
     "localId": "034",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "034/132",
+    "cardNumber": "34/132",
     "cardName": "Sabrina's Venomoth",
-    "fullDisplayName": "Sabrina's Venomoth 034/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Venomoth 34/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3076,18 +3654,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-034-low.png",
-    "imageHighSrc": "cards/gym1-034-high.png"
+    "imageHighSrc": "cards/gym1-034-high.png",
+    "attacks": [
+      {
+        "name": "Healing Pollen",
+        "damage": null
+      },
+      {
+        "name": "Sonic Distortion",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7802",
-    "externalId": null,
+    "externalId": "gym1-33",
     "tcgdex_id": "gym1-33",
     "localId": "033",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "033/132",
+    "cardNumber": "33/132",
     "cardName": "Rocket's Snorlax",
-    "fullDisplayName": "Rocket's Snorlax 033/132 Gym Heroes",
+    "fullDisplayName": "Rocket's Snorlax 33/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3109,18 +3697,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-033-low.png",
-    "imageHighSrc": "cards/gym1-033-high.png"
+    "imageHighSrc": "cards/gym1-033-high.png",
+    "attacks": [
+      {
+        "name": "Collapse",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7797",
-    "externalId": null,
+    "externalId": "gym1-32",
     "tcgdex_id": "gym1-32",
     "localId": "032",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "032/132",
+    "cardNumber": "32/132",
     "cardName": "Misty's Tentacool",
-    "fullDisplayName": "Misty's Tentacool 032/132 Gym Heroes",
+    "fullDisplayName": "Misty's Tentacool 32/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3142,18 +3736,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-032-low.png",
-    "imageHighSrc": "cards/gym1-032-high.png"
+    "imageHighSrc": "cards/gym1-032-high.png",
+    "attacks": [
+      {
+        "name": "Mysterious Light",
+        "damage": null
+      },
+      {
+        "name": "Jellyfish Pod",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7792",
-    "externalId": null,
+    "externalId": "gym1-31",
     "tcgdex_id": "gym1-31",
     "localId": "031",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "031/132",
+    "cardNumber": "31/132",
     "cardName": "Misty's Poliwrath",
-    "fullDisplayName": "Misty's Poliwrath 031/132 Gym Heroes",
+    "fullDisplayName": "Misty's Poliwrath 31/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3175,18 +3779,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-031-low.png",
-    "imageHighSrc": "cards/gym1-031-high.png"
+    "imageHighSrc": "cards/gym1-031-high.png",
+    "attacks": [
+      {
+        "name": "Water Ring",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7787",
-    "externalId": null,
+    "externalId": "gym1-30",
     "tcgdex_id": "gym1-30",
     "localId": "030",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "030/132",
+    "cardNumber": "30/132",
     "cardName": "Misty's Goldeen",
-    "fullDisplayName": "Misty's Goldeen 030/132 Gym Heroes",
+    "fullDisplayName": "Misty's Goldeen 30/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3208,18 +3818,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-030-low.png",
-    "imageHighSrc": "cards/gym1-030-high.png"
+    "imageHighSrc": "cards/gym1-030-high.png",
+    "attacks": [
+      {
+        "name": "Horn Hazard",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7779",
-    "externalId": null,
+    "externalId": "gym1-29",
     "tcgdex_id": "gym1-29",
     "localId": "029",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "029/132",
+    "cardNumber": "29/132",
     "cardName": "Misty's Cloyster",
-    "fullDisplayName": "Misty's Cloyster 029/132 Gym Heroes",
+    "fullDisplayName": "Misty's Cloyster 29/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3241,18 +3857,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-029-low.png",
-    "imageHighSrc": "cards/gym1-029-high.png"
+    "imageHighSrc": "cards/gym1-029-high.png",
+    "attacks": [
+      {
+        "name": "Triple Cannon",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7774",
-    "externalId": null,
+    "externalId": "gym1-28",
     "tcgdex_id": "gym1-28",
     "localId": "028",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "028/132",
+    "cardNumber": "28/132",
     "cardName": "Lt. Surge's Raichu",
-    "fullDisplayName": "Lt. Surge's Raichu 028/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Raichu 28/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3274,18 +3896,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-028-low.png",
-    "imageHighSrc": "cards/gym1-028-high.png"
+    "imageHighSrc": "cards/gym1-028-high.png",
+    "attacks": [
+      {
+        "name": "Mega Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "7769",
-    "externalId": null,
+    "externalId": "gym1-27",
     "tcgdex_id": "gym1-27",
     "localId": "027",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "027/132",
+    "cardNumber": "27/132",
     "cardName": "Lt. Surge's Electabuzz",
-    "fullDisplayName": "Lt. Surge's Electabuzz 027/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Electabuzz 27/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3307,18 +3939,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-027-low.png",
-    "imageHighSrc": "cards/gym1-027-high.png"
+    "imageHighSrc": "cards/gym1-027-high.png",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Electric Current",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7764",
-    "externalId": null,
+    "externalId": "gym1-26",
     "tcgdex_id": "gym1-26",
     "localId": "026",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "026/132",
+    "cardNumber": "26/132",
     "cardName": "Erika's Victreebel",
-    "fullDisplayName": "Erika's Victreebel 026/132 Gym Heroes",
+    "fullDisplayName": "Erika's Victreebel 26/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3340,18 +3982,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-026-low.png",
-    "imageHighSrc": "cards/gym1-026-high.png"
+    "imageHighSrc": "cards/gym1-026-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7759",
-    "externalId": null,
+    "externalId": "gym1-25",
     "tcgdex_id": "gym1-25",
     "localId": "025",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "025/132",
+    "cardNumber": "25/132",
     "cardName": "Erika's Clefairy",
-    "fullDisplayName": "Erika's Clefairy 025/132 Gym Heroes",
+    "fullDisplayName": "Erika's Clefairy 25/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3373,18 +4021,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-025-low.png",
-    "imageHighSrc": "cards/gym1-025-high.png"
+    "imageHighSrc": "cards/gym1-025-high.png",
+    "attacks": [
+      {
+        "name": "Moonwatching",
+        "damage": null
+      },
+      {
+        "name": "Comet Slap",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7754",
-    "externalId": null,
+    "externalId": "gym1-24",
     "tcgdex_id": "gym1-24",
     "localId": "024",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "024/132",
+    "cardNumber": "24/132",
     "cardName": "Brock's Zubat",
-    "fullDisplayName": "Brock's Zubat 024/132 Gym Heroes",
+    "fullDisplayName": "Brock's Zubat 24/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3406,18 +4064,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-024-low.png",
-    "imageHighSrc": "cards/gym1-024-high.png"
+    "imageHighSrc": "cards/gym1-024-high.png",
+    "attacks": [
+      {
+        "name": "Alert",
+        "damage": null
+      },
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7749",
-    "externalId": null,
+    "externalId": "gym1-23",
     "tcgdex_id": "gym1-23",
     "localId": "023",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "023/132",
+    "cardNumber": "23/132",
     "cardName": "Brock's Sandslash",
-    "fullDisplayName": "Brock's Sandslash 023/132 Gym Heroes",
+    "fullDisplayName": "Brock's Sandslash 23/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3439,18 +4107,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-023-low.png",
-    "imageHighSrc": "cards/gym1-023-high.png"
+    "imageHighSrc": "cards/gym1-023-high.png",
+    "attacks": [
+      {
+        "name": "Needles",
+        "damage": "10"
+      },
+      {
+        "name": "Sandstorm",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7745",
-    "externalId": null,
+    "externalId": "gym1-22",
     "tcgdex_id": "gym1-22",
     "localId": "022",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "022/132",
+    "cardNumber": "22/132",
     "cardName": "Brock's Rhyhorn",
-    "fullDisplayName": "Brock's Rhyhorn 022/132 Gym Heroes",
+    "fullDisplayName": "Brock's Rhyhorn 22/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3472,18 +4150,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-022-low.png",
-    "imageHighSrc": "cards/gym1-022-high.png"
+    "imageHighSrc": "cards/gym1-022-high.png",
+    "attacks": [
+      {
+        "name": "Horn Toss",
+        "damage": "20"
+      },
+      {
+        "name": "Take Down",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7740",
-    "externalId": null,
+    "externalId": "gym1-21",
     "tcgdex_id": "gym1-21",
     "localId": "021",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "021/132",
+    "cardNumber": "21/132",
     "cardName": "Brock's Onix",
-    "fullDisplayName": "Brock's Onix 021/132 Gym Heroes",
+    "fullDisplayName": "Brock's Onix 21/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3505,18 +4193,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-021-low.png",
-    "imageHighSrc": "cards/gym1-021-high.png"
+    "imageHighSrc": "cards/gym1-021-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "20"
+      },
+      {
+        "name": "Tunneling",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7734",
-    "externalId": null,
+    "externalId": "gym1-20",
     "tcgdex_id": "gym1-20",
     "localId": "020",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "020/132",
+    "cardNumber": "20/132",
     "cardName": "Brock's Golem",
-    "fullDisplayName": "Brock's Golem 020/132 Gym Heroes",
+    "fullDisplayName": "Brock's Golem 20/132 Gym Heroes",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3538,18 +4236,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-020-low.png",
-    "imageHighSrc": "cards/gym1-020-high.png"
+    "imageHighSrc": "cards/gym1-020-high.png",
+    "attacks": [
+      {
+        "name": "Rock Slide",
+        "damage": "20"
+      },
+      {
+        "name": "Fissure",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7728",
-    "externalId": null,
+    "externalId": "gym1-19",
     "tcgdex_id": "gym1-19",
     "localId": "019",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "019/132",
+    "cardNumber": "19/132",
     "cardName": "The Rocket's Trap",
-    "fullDisplayName": "The Rocket's Trap 019/132 Gym Heroes",
+    "fullDisplayName": "The Rocket's Trap 19/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -3565,18 +4273,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-019-low.png",
-    "imageHighSrc": "cards/gym1-019-high.png"
+    "imageHighSrc": "cards/gym1-019-high.png",
+    "rules": "Flip a coin. If heads, choose up to 3 cards at random from your opponent's hand (don't look at them). Your opponent shuffles those cards into his or her deck."
   },
   {
     "masterCardId": "7722",
-    "externalId": null,
+    "externalId": "gym1-18",
     "tcgdex_id": "gym1-18",
     "localId": "018",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "018/132",
+    "cardNumber": "18/132",
     "cardName": "Misty",
-    "fullDisplayName": "Misty 018/132 Gym Heroes",
+    "fullDisplayName": "Misty 18/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -3592,18 +4301,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-018-low.png",
-    "imageHighSrc": "cards/gym1-018-high.png"
+    "imageHighSrc": "cards/gym1-018-high.png",
+    "rules": "Discard 2 of the other cards in your hand in order to play this card. If this turn's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), and if the attacking Pokémon has Misty in its name, the attack does 20 more damage to the Defending Pokémon."
   },
   {
     "masterCardId": "7716",
-    "externalId": null,
+    "externalId": "gym1-17",
     "tcgdex_id": "gym1-17",
     "localId": "017",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "017/132",
+    "cardNumber": "17/132",
     "cardName": "Lt. Surge",
-    "fullDisplayName": "Lt. Surge 017/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge 17/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -3619,18 +4329,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-017-low.png",
-    "imageHighSrc": "cards/gym1-017-high.png"
+    "imageHighSrc": "cards/gym1-017-high.png",
+    "rules": "You can play this card only if you have at least 1 Basic Pokémon card in your hand. Put a Basic Pokémon card from your hand into play as your Active Pokémon. Put your old Active Pokémon onto your Bench. (You can't play this card if your Bench is full.)"
   },
   {
     "masterCardId": "7710",
-    "externalId": null,
+    "externalId": "gym1-16",
     "tcgdex_id": "gym1-16",
     "localId": "016",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "016/132",
+    "cardNumber": "16/132",
     "cardName": "Erika",
-    "fullDisplayName": "Erika 016/132 Gym Heroes",
+    "fullDisplayName": "Erika 16/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -3646,18 +4357,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-016-low.png",
-    "imageHighSrc": "cards/gym1-016-high.png"
+    "imageHighSrc": "cards/gym1-016-high.png",
+    "rules": "You may draw up to 3 cards, then your opponent may draw up to 3 cards."
   },
   {
     "masterCardId": "7702",
-    "externalId": null,
+    "externalId": "gym1-15",
     "tcgdex_id": "gym1-15",
     "localId": "015",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "015/132",
+    "cardNumber": "15/132",
     "cardName": "Brock",
-    "fullDisplayName": "Brock 015/132 Gym Heroes",
+    "fullDisplayName": "Brock 15/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Trainer",
     "stage": null,
@@ -3673,18 +4385,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-015-low.png",
-    "imageHighSrc": "cards/gym1-015-high.png"
+    "imageHighSrc": "cards/gym1-015-high.png",
+    "rules": "Remove 1 damage counter from each of your Pokémon that has any damage counters on it."
   },
   {
     "masterCardId": "7696",
-    "externalId": null,
+    "externalId": "gym1-14",
     "tcgdex_id": "gym1-14",
     "localId": "014",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "014/132",
+    "cardNumber": "14/132",
     "cardName": "Sabrina's Gengar",
-    "fullDisplayName": "Sabrina's Gengar 014/132 Gym Heroes",
+    "fullDisplayName": "Sabrina's Gengar 14/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3706,18 +4419,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-014-low.png",
-    "imageHighSrc": "cards/gym1-014-high.png"
+    "imageHighSrc": "cards/gym1-014-high.png",
+    "attacks": [
+      {
+        "name": "Pain Amplifier",
+        "damage": null
+      },
+      {
+        "name": "Call of the Night",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7689",
-    "externalId": null,
+    "externalId": "gym1-13",
     "tcgdex_id": "gym1-13",
     "localId": "013",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "013/132",
+    "cardNumber": "13/132",
     "cardName": "Rocket's Scyther",
-    "fullDisplayName": "Rocket's Scyther 013/132 Gym Heroes",
+    "fullDisplayName": "Rocket's Scyther 13/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3739,18 +4462,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-013-low.png",
-    "imageHighSrc": "cards/gym1-013-high.png"
+    "imageHighSrc": "cards/gym1-013-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Images",
+        "damage": null
+      },
+      {
+        "name": "Blinding Scythe",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7683",
-    "externalId": null,
+    "externalId": "gym1-12",
     "tcgdex_id": "gym1-12",
     "localId": "012",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "012/132",
+    "cardNumber": "12/132",
     "cardName": "Rocket's Moltres",
-    "fullDisplayName": "Rocket's Moltres 012/132 Gym Heroes",
+    "fullDisplayName": "Rocket's Moltres 12/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3772,18 +4505,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-012-low.png",
-    "imageHighSrc": "cards/gym1-012-high.png"
+    "imageHighSrc": "cards/gym1-012-high.png",
+    "attacks": [
+      {
+        "name": "Fire Wall",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7678",
-    "externalId": null,
+    "externalId": "gym1-11",
     "tcgdex_id": "gym1-11",
     "localId": "011",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "011/132",
+    "cardNumber": "11/132",
     "cardName": "Rocket's Hitmonchan",
-    "fullDisplayName": "Rocket's Hitmonchan 011/132 Gym Heroes",
+    "fullDisplayName": "Rocket's Hitmonchan 11/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3805,18 +4544,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-011-low.png",
-    "imageHighSrc": "cards/gym1-011-high.png"
+    "imageHighSrc": "cards/gym1-011-high.png",
+    "attacks": [
+      {
+        "name": "Crosscounter",
+        "damage": null
+      },
+      {
+        "name": "Magnum Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7672",
-    "externalId": null,
+    "externalId": "gym1-10",
     "tcgdex_id": "gym1-10",
     "localId": "010",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "010/132",
+    "cardNumber": "10/132",
     "cardName": "Misty's Tentacruel",
-    "fullDisplayName": "Misty's Tentacruel 010/132 Gym Heroes",
+    "fullDisplayName": "Misty's Tentacruel 10/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3838,18 +4587,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-010-low.png",
-    "imageHighSrc": "cards/gym1-010-high.png"
+    "imageHighSrc": "cards/gym1-010-high.png",
+    "attacks": [
+      {
+        "name": "Jellyfish Poison",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7665",
-    "externalId": null,
+    "externalId": "gym1-9",
     "tcgdex_id": "gym1-9",
     "localId": "009",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "009/132",
+    "cardNumber": "9/132",
     "cardName": "Misty's Seadra",
-    "fullDisplayName": "Misty's Seadra 009/132 Gym Heroes",
+    "fullDisplayName": "Misty's Seadra 9/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3871,18 +4626,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-009-low.png",
-    "imageHighSrc": "cards/gym1-009-high.png"
+    "imageHighSrc": "cards/gym1-009-high.png",
+    "attacks": [
+      {
+        "name": "Tail Snap",
+        "damage": "20"
+      },
+      {
+        "name": "Knockout Needle",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "7659",
-    "externalId": null,
+    "externalId": "gym1-8",
     "tcgdex_id": "gym1-8",
     "localId": "008",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "008/132",
+    "cardNumber": "8/132",
     "cardName": "Lt. Surge's Magneton",
-    "fullDisplayName": "Lt. Surge's Magneton 008/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Magneton 8/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3904,18 +4669,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-008-low.png",
-    "imageHighSrc": "cards/gym1-008-high.png"
+    "imageHighSrc": "cards/gym1-008-high.png",
+    "attacks": [
+      {
+        "name": "Mega Shock",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7654",
-    "externalId": null,
+    "externalId": "gym1-7",
     "tcgdex_id": "gym1-7",
     "localId": "007",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "007/132",
+    "cardNumber": "7/132",
     "cardName": "Lt. Surge's Fearow",
-    "fullDisplayName": "Lt. Surge's Fearow 007/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Fearow 7/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3937,18 +4708,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-007-low.png",
-    "imageHighSrc": "cards/gym1-007-high.png"
+    "imageHighSrc": "cards/gym1-007-high.png",
+    "attacks": [
+      {
+        "name": "Repeating Drill",
+        "damage": "10×"
+      },
+      {
+        "name": "Clutch",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7648",
-    "externalId": null,
+    "externalId": "gym1-6",
     "tcgdex_id": "gym1-6",
     "localId": "006",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "006/132",
+    "cardNumber": "6/132",
     "cardName": "Lt. Surge's Electabuzz",
-    "fullDisplayName": "Lt. Surge's Electabuzz 006/132 Gym Heroes",
+    "fullDisplayName": "Lt. Surge's Electabuzz 6/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3970,18 +4751,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-006-low.png",
-    "imageHighSrc": "cards/gym1-006-high.png"
+    "imageHighSrc": "cards/gym1-006-high.png",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Discharge",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7642",
-    "externalId": null,
+    "externalId": "gym1-5",
     "tcgdex_id": "gym1-5",
     "localId": "005",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "005/132",
+    "cardNumber": "5/132",
     "cardName": "Erika's Vileplume",
-    "fullDisplayName": "Erika's Vileplume 005/132 Gym Heroes",
+    "fullDisplayName": "Erika's Vileplume 5/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4003,18 +4794,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-005-low.png",
-    "imageHighSrc": "cards/gym1-005-high.png"
+    "imageHighSrc": "cards/gym1-005-high.png",
+    "attacks": [
+      {
+        "name": "Mega Drain",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7635",
-    "externalId": null,
+    "externalId": "gym1-4",
     "tcgdex_id": "gym1-4",
     "localId": "004",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "004/132",
+    "cardNumber": "4/132",
     "cardName": "Erika's Dragonair",
-    "fullDisplayName": "Erika's Dragonair 004/132 Gym Heroes",
+    "fullDisplayName": "Erika's Dragonair 4/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4036,18 +4833,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-004-low.png",
-    "imageHighSrc": "cards/gym1-004-high.png"
+    "imageHighSrc": "cards/gym1-004-high.png",
+    "attacks": [
+      {
+        "name": "Blizzard",
+        "damage": "30"
+      },
+      {
+        "name": "Take Away",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7627",
-    "externalId": null,
+    "externalId": "gym1-3",
     "tcgdex_id": "gym1-3",
     "localId": "003",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "003/132",
+    "cardNumber": "3/132",
     "cardName": "Erika's Clefable",
-    "fullDisplayName": "Erika's Clefable 003/132 Gym Heroes",
+    "fullDisplayName": "Erika's Clefable 3/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4069,18 +4876,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-003-low.png",
-    "imageHighSrc": "cards/gym1-003-high.png"
+    "imageHighSrc": "cards/gym1-003-high.png",
+    "attacks": [
+      {
+        "name": "Fairy Power",
+        "damage": null
+      },
+      {
+        "name": "Moon Impact",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7624",
-    "externalId": null,
+    "externalId": "gym1-2",
     "tcgdex_id": "gym1-2",
     "localId": "002",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "002/132",
+    "cardNumber": "2/132",
     "cardName": "Brock's Rhydon",
-    "fullDisplayName": "Brock's Rhydon 002/132 Gym Heroes",
+    "fullDisplayName": "Brock's Rhydon 2/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4102,18 +4919,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-002-low.png",
-    "imageHighSrc": "cards/gym1-002-high.png"
+    "imageHighSrc": "cards/gym1-002-high.png",
+    "attacks": [
+      {
+        "name": "Lariat",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7618",
-    "externalId": null,
+    "externalId": "gym1-1",
     "tcgdex_id": "gym1-1",
     "localId": "001",
     "setCode": "gym1",
     "setTcgdexId": "gym1",
-    "cardNumber": "001/132",
+    "cardNumber": "1/132",
     "cardName": "Blaine's Moltres",
-    "fullDisplayName": "Blaine's Moltres 001/132 Gym Heroes",
+    "fullDisplayName": "Blaine's Moltres 1/132 Gym Heroes",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4135,6 +4958,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/gym1-001-low.png",
-    "imageHighSrc": "cards/gym1-001-high.png"
+    "imageHighSrc": "cards/gym1-001-high.png",
+    "attacks": [
+      {
+        "name": "Phoenix Flame",
+        "damage": "90"
+      }
+    ]
   }
 ]

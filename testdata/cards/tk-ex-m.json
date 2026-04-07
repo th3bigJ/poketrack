@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "18808",
-    "externalId": null,
+    "externalId": "tk2b-12",
     "tcgdex_id": "tk-ex-m-12",
     "localId": "012",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "012/12",
+    "cardNumber": "12/12",
     "cardName": "Lightning Energy",
-    "fullDisplayName": "Lightning Energy 012/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Lightning Energy 12/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Energy",
     "stage": "Basic",
@@ -30,14 +30,14 @@
   },
   {
     "masterCardId": "18805",
-    "externalId": null,
+    "externalId": "tk2b-11",
     "tcgdex_id": "tk-ex-m-11",
     "localId": "011",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "011/12",
+    "cardNumber": "11/12",
     "cardName": "Fire Energy",
-    "fullDisplayName": "Fire Energy 011/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Fire Energy 11/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Energy",
     "stage": "Basic",
@@ -59,14 +59,14 @@
   },
   {
     "masterCardId": "18801",
-    "externalId": null,
+    "externalId": "tk2b-10",
     "tcgdex_id": "tk-ex-m-10",
     "localId": "010",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "010/12",
+    "cardNumber": "10/12",
     "cardName": "Potion",
-    "fullDisplayName": "Potion 010/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Potion 10/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -84,18 +84,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-010-low.png",
-    "imageHighSrc": "cards/tk2b-010-high.png"
+    "imageHighSrc": "cards/tk2b-010-high.png",
+    "rules": "Remove 2 damage counters from 1 of your Pokémon (remove 1 damage counter if that Pokémon has only 1)."
   },
   {
     "masterCardId": "18797",
-    "externalId": null,
+    "externalId": "tk2b-9",
     "tcgdex_id": "tk-ex-m-9",
     "localId": "009",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "009/12",
+    "cardNumber": "9/12",
     "cardName": "Energy Search",
-    "fullDisplayName": "Energy Search 009/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Energy Search 9/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -113,18 +114,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-009-low.png",
-    "imageHighSrc": "cards/tk2b-009-high.png"
+    "imageHighSrc": "cards/tk2b-009-high.png",
+    "rules": "Search your deck for a basic Energy card, show it to your opponent, and put it into your hand. Shuffle your deck afterward"
   },
   {
     "masterCardId": "18793",
-    "externalId": null,
+    "externalId": "tk2b-8",
     "tcgdex_id": "tk-ex-m-8",
     "localId": "008",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "008/12",
+    "cardNumber": "8/12",
     "cardName": "Celio's Network",
-    "fullDisplayName": "Celio's Network 008/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Celio's Network 8/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -142,18 +144,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-008-low.png",
-    "imageHighSrc": "cards/tk2b-008-high.png"
+    "imageHighSrc": "cards/tk2b-008-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for a Basic Pokémon or Evolution card (excluding Pokémon-ex), show it to your opponent, and put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "18790",
-    "externalId": null,
+    "externalId": "tk2b-7",
     "tcgdex_id": "tk-ex-m-7",
     "localId": "007",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "007/12",
+    "cardNumber": "7/12",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 007/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Vulpix 7/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -175,18 +178,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-007-low.png",
-    "imageHighSrc": "cards/tk2b-007-high.png"
+    "imageHighSrc": "cards/tk2b-007-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Firebreathing",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "18786",
-    "externalId": null,
+    "externalId": "tk2b-6",
     "tcgdex_id": "tk-ex-m-6",
     "localId": "006",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "006/12",
+    "cardNumber": "6/12",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 006/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Minun 6/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -208,18 +221,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-006-low.png",
-    "imageHighSrc": "cards/tk2b-006-high.png"
+    "imageHighSrc": "cards/tk2b-006-high.png",
+    "attacks": [
+      {
+        "name": "Drawup Power",
+        "damage": null
+      },
+      {
+        "name": "Front Spark",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "18782",
-    "externalId": null,
+    "externalId": "tk2b-5",
     "tcgdex_id": "tk-ex-m-5",
     "localId": "005",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "005/12",
+    "cardNumber": "5/12",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 005/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Mareep 5/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -241,18 +264,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-005-low.png",
-    "imageHighSrc": "cards/tk2b-005-high.png"
+    "imageHighSrc": "cards/tk2b-005-high.png",
+    "attacks": [
+      {
+        "name": "Minor Errand-Running",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "18778",
-    "externalId": null,
+    "externalId": "tk2b-4",
     "tcgdex_id": "tk-ex-m-4",
     "localId": "004",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "004/12",
+    "cardNumber": "4/12",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe 004/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Growlithe 4/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -274,18 +307,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-004-low.png",
-    "imageHighSrc": "cards/tk2b-004-high.png"
+    "imageHighSrc": "cards/tk2b-004-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Flame Tail",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "18774",
-    "externalId": null,
+    "externalId": "tk2b-3",
     "tcgdex_id": "tk-ex-m-3",
     "localId": "003",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "003/12",
+    "cardNumber": "3/12",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 003/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Charmeleon 3/12 EX trainer Kit 2 (Minun)",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -307,18 +350,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-003-low.png",
-    "imageHighSrc": "cards/tk2b-003-high.png"
+    "imageHighSrc": "cards/tk2b-003-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "30"
+      },
+      {
+        "name": "Damage Burn",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "18770",
-    "externalId": null,
+    "externalId": "tk2b-2",
     "tcgdex_id": "tk-ex-m-2",
     "localId": "002",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "002/12",
+    "cardNumber": "2/12",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 002/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Charmander 2/12 EX trainer Kit 2 (Minun)",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -340,18 +393,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-002-low.png",
-    "imageHighSrc": "cards/tk2b-002-high.png"
+    "imageHighSrc": "cards/tk2b-002-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Slash",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "18767",
-    "externalId": null,
+    "externalId": "tk2b-1",
     "tcgdex_id": "tk-ex-m-1",
     "localId": "001",
     "setCode": "tk-ex-m",
     "setTcgdexId": "tk-ex-m",
-    "cardNumber": "001/12",
+    "cardNumber": "1/12",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 001/12 EX trainer Kit 2 (Minun)",
+    "fullDisplayName": "Arcanine 1/12 EX trainer Kit 2 (Minun)",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -373,6 +436,16 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/tk2b-001-low.png",
-    "imageHighSrc": "cards/tk2b-001-high.png"
+    "imageHighSrc": "cards/tk2b-001-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      },
+      {
+        "name": "Heat Tackle",
+        "damage": "70"
+      }
+    ]
   }
 ]

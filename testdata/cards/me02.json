@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "7554",
-    "externalId": null,
+    "externalId": "me2-130",
     "tcgdex_id": "me02-130",
     "localId": "130",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "130/94",
+    "cardNumber": "130/094",
     "cardName": "Mega Charizard X ex",
-    "fullDisplayName": "Mega Charizard X ex 130/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Charizard X ex 130/094 Phantasmal Flames",
     "rarity": "Mega Hyper Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -32,18 +32,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-130-low.png",
-    "imageHighSrc": "cards/me2-130-high.png"
+    "imageHighSrc": "cards/me2-130-high.png",
+    "attacks": [
+      {
+        "name": "Inferno X",
+        "damage": "90×"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7552",
-    "externalId": null,
+    "externalId": "me2-129",
     "tcgdex_id": "me02-129",
     "localId": "129",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "129/94",
+    "cardNumber": "129/094",
     "cardName": "Dawn",
-    "fullDisplayName": "Dawn 129/94 Phantasmal Flames",
+    "fullDisplayName": "Dawn 129/094 Phantasmal Flames",
     "rarity": "Special Illustration Rare",
     "category": "Trainer",
     "stage": null,
@@ -61,18 +68,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-129-low.png",
-    "imageHighSrc": "cards/me2-129-high.png"
+    "imageHighSrc": "cards/me2-129-high.png",
+    "rules": "Search your deck for a Basic Pokémon, a Stage 1 Pokémon, and a Stage 2 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "7550",
-    "externalId": null,
+    "externalId": "me2-128",
     "tcgdex_id": "me02-128",
     "localId": "128",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "128/94",
+    "cardNumber": "128/094",
     "cardName": "Mega Lopunny ex",
-    "fullDisplayName": "Mega Lopunny ex 128/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Lopunny ex 128/094 Phantasmal Flames",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -96,18 +104,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-128-low.png",
-    "imageHighSrc": "cards/me2-128-high.png"
+    "imageHighSrc": "cards/me2-128-high.png",
+    "attacks": [
+      {
+        "name": "Gale Thrust",
+        "damage": "60+"
+      },
+      {
+        "name": "Spiky Hopper",
+        "damage": "160"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7548",
-    "externalId": null,
+    "externalId": "me2-127",
     "tcgdex_id": "me02-127",
     "localId": "127",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "127/94",
+    "cardNumber": "127/094",
     "cardName": "Mega Sharpedo ex",
-    "fullDisplayName": "Mega Sharpedo ex 127/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Sharpedo ex 127/094 Phantasmal Flames",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -131,18 +150,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-127-low.png",
-    "imageHighSrc": "cards/me2-127-high.png"
+    "imageHighSrc": "cards/me2-127-high.png",
+    "attacks": [
+      {
+        "name": "Greedy Fang",
+        "damage": "70"
+      },
+      {
+        "name": "Hungry Jaws",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7546",
-    "externalId": null,
+    "externalId": "me2-126",
     "tcgdex_id": "me02-126",
     "localId": "126",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "126/94",
+    "cardNumber": "126/094",
     "cardName": "Rotom ex",
-    "fullDisplayName": "Rotom ex 126/94 Phantasmal Flames",
+    "fullDisplayName": "Rotom ex 126/094 Phantasmal Flames",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -165,18 +195,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-126-low.png",
-    "imageHighSrc": "cards/me2-126-high.png"
+    "imageHighSrc": "cards/me2-126-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7544",
-    "externalId": null,
+    "externalId": "me2-125",
     "tcgdex_id": "me02-125",
     "localId": "125",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "125/94",
+    "cardNumber": "125/094",
     "cardName": "Mega Charizard X ex",
-    "fullDisplayName": "Mega Charizard X ex 125/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Charizard X ex 125/094 Phantasmal Flames",
     "rarity": "Special Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -200,18 +237,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-125-low.png",
-    "imageHighSrc": "cards/me2-125-high.png"
+    "imageHighSrc": "cards/me2-125-high.png",
+    "attacks": [
+      {
+        "name": "Inferno X",
+        "damage": "90×"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7542",
-    "externalId": null,
+    "externalId": "me2-124",
     "tcgdex_id": "me02-124",
     "localId": "124",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "124/94",
+    "cardNumber": "124/094",
     "cardName": "Ignition Energy",
-    "fullDisplayName": "Ignition Energy 124/94 Phantasmal Flames",
+    "fullDisplayName": "Ignition Energy 124/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Energy",
     "stage": null,
@@ -229,18 +273,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-124-low.png",
-    "imageHighSrc": "cards/me2-124-high.png"
+    "imageHighSrc": "cards/me2-124-high.png",
+    "rules": "If this card is attached to 1 of your Pokémon, discard it at the end of your turn.  As long as this card is attached to a Pokémon, it provides Colorless Energy.  If this card is attached to an Evolution Pokémon, it provides ColorlessColorlessColorless Energy instead."
   },
   {
     "masterCardId": "7540",
-    "externalId": null,
+    "externalId": "me2-123",
     "tcgdex_id": "me02-123",
     "localId": "123",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "123/94",
+    "cardNumber": "123/094",
     "cardName": "Switch",
-    "fullDisplayName": "Switch 123/94 Phantasmal Flames",
+    "fullDisplayName": "Switch 123/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -258,18 +303,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-123-low.png",
-    "imageHighSrc": "cards/me2-123-high.png"
+    "imageHighSrc": "cards/me2-123-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "7538",
-    "externalId": null,
+    "externalId": "me2-122",
     "tcgdex_id": "me02-122",
     "localId": "122",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "122/94",
+    "cardNumber": "122/094",
     "cardName": "Sacred Charm",
-    "fullDisplayName": "Sacred Charm 122/94 Phantasmal Flames",
+    "fullDisplayName": "Sacred Charm 122/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -287,18 +333,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-122-low.png",
-    "imageHighSrc": "cards/me2-122-high.png"
+    "imageHighSrc": "cards/me2-122-high.png",
+    "rules": "The Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon that have an Ability (after applying Weakness and Resistance).\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "7536",
-    "externalId": null,
+    "externalId": "me2-121",
     "tcgdex_id": "me02-121",
     "localId": "121",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "121/94",
+    "cardNumber": "121/094",
     "cardName": "Punk Helmet",
-    "fullDisplayName": "Punk Helmet 121/94 Phantasmal Flames",
+    "fullDisplayName": "Punk Helmet 121/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -316,18 +363,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-121-low.png",
-    "imageHighSrc": "cards/me2-121-high.png"
+    "imageHighSrc": "cards/me2-121-high.png",
+    "rules": "If the Darkness Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), place 4 damage counters on the Attacking Pokémon.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "7534",
-    "externalId": null,
+    "externalId": "me2-120",
     "tcgdex_id": "me02-120",
     "localId": "120",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "120/94",
+    "cardNumber": "120/094",
     "cardName": "Grimsley's Move",
-    "fullDisplayName": "Grimsley's Move 120/94 Phantasmal Flames",
+    "fullDisplayName": "Grimsley's Move 120/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -345,18 +393,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-120-low.png",
-    "imageHighSrc": "cards/me2-120-high.png"
+    "imageHighSrc": "cards/me2-120-high.png",
+    "rules": "Look at the top 7 cards of your deck and put a Darkness Pokémon you find there onto your Bench. Shuffle the other cards and put them on the bottom of your deck. You can't use this card during your first turn.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "7532",
-    "externalId": null,
+    "externalId": "me2-119",
     "tcgdex_id": "me02-119",
     "localId": "119",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "119/94",
+    "cardNumber": "119/094",
     "cardName": "Firebreather",
-    "fullDisplayName": "Firebreather 119/94 Phantasmal Flames",
+    "fullDisplayName": "Firebreather 119/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -374,18 +423,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-119-low.png",
-    "imageHighSrc": "cards/me2-119-high.png"
+    "imageHighSrc": "cards/me2-119-high.png",
+    "rules": "Search your deck for up to 7 Basic Fire Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "7530",
-    "externalId": null,
+    "externalId": "me2-118",
     "tcgdex_id": "me02-118",
     "localId": "118",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "118/94",
+    "cardNumber": "118/094",
     "cardName": "Dawn",
-    "fullDisplayName": "Dawn 118/94 Phantasmal Flames",
+    "fullDisplayName": "Dawn 118/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -403,18 +453,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-118-low.png",
-    "imageHighSrc": "cards/me2-118-high.png"
+    "imageHighSrc": "cards/me2-118-high.png",
+    "rules": "Search your deck for a Basic Pokémon, a Stage 1 Pokémon, and a Stage 2 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "7528",
-    "externalId": null,
+    "externalId": "me2-117",
     "tcgdex_id": "me02-117",
     "localId": "117",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "117/94",
+    "cardNumber": "117/094",
     "cardName": "Blowtorch",
-    "fullDisplayName": "Blowtorch 117/94 Phantasmal Flames",
+    "fullDisplayName": "Blowtorch 117/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -432,18 +483,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-117-low.png",
-    "imageHighSrc": "cards/me2-117-high.png"
+    "imageHighSrc": "cards/me2-117-high.png",
+    "rules": "You can use this card only if you discard a Basic Fire Energy card from your hand.  Discard a Pokémon Tool or Special Energy card from 1 of your opponent's Pokémon, or discard a Stadium in play.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "7526",
-    "externalId": null,
+    "externalId": "me2-116",
     "tcgdex_id": "me02-116",
     "localId": "116",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "116/94",
+    "cardNumber": "116/094",
     "cardName": "Battle Cage",
-    "fullDisplayName": "Battle Cage 116/94 Phantasmal Flames",
+    "fullDisplayName": "Battle Cage 116/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Trainer",
     "stage": null,
@@ -461,18 +513,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-116-low.png",
-    "imageHighSrc": "cards/me2-116-high.png"
+    "imageHighSrc": "cards/me2-116-high.png",
+    "rules": "Prevent all damage counters from being placed on Benched Pokémon (both yours and your opponent's) by effects of attacks and Abilities from the opponent's Pokémon. (Damage from attacks is still taken.)\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "7524",
-    "externalId": null,
+    "externalId": "me2-115",
     "tcgdex_id": "me02-115",
     "localId": "115",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "115/94",
+    "cardNumber": "115/094",
     "cardName": "Mega Lopunny ex",
-    "fullDisplayName": "Mega Lopunny ex 115/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Lopunny ex 115/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -496,18 +549,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-115-low.png",
-    "imageHighSrc": "cards/me2-115-high.png"
+    "imageHighSrc": "cards/me2-115-high.png",
+    "attacks": [
+      {
+        "name": "Gale Thrust",
+        "damage": "60+"
+      },
+      {
+        "name": "Spiky Hopper",
+        "damage": "160"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7522",
-    "externalId": null,
+    "externalId": "me2-114",
     "tcgdex_id": "me02-114",
     "localId": "114",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "114/94",
+    "cardNumber": "114/094",
     "cardName": "Empoleon ex",
-    "fullDisplayName": "Empoleon ex 114/94 Phantasmal Flames",
+    "fullDisplayName": "Empoleon ex 114/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -530,18 +594,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-114-low.png",
-    "imageHighSrc": "cards/me2-114-high.png"
+    "imageHighSrc": "cards/me2-114-high.png",
+    "attacks": [
+      {
+        "name": "Iron Feathers",
+        "damage": "210"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7520",
-    "externalId": null,
+    "externalId": "me2-113",
     "tcgdex_id": "me02-113",
     "localId": "113",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "113/94",
+    "cardNumber": "113/094",
     "cardName": "Mega Sharpedo ex",
-    "fullDisplayName": "Mega Sharpedo ex 113/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Sharpedo ex 113/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -565,18 +636,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-113-low.png",
-    "imageHighSrc": "cards/me2-113-high.png"
+    "imageHighSrc": "cards/me2-113-high.png",
+    "attacks": [
+      {
+        "name": "Greedy Fang",
+        "damage": "70"
+      },
+      {
+        "name": "Hungry Jaws",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7518",
-    "externalId": null,
+    "externalId": "me2-112",
     "tcgdex_id": "me02-112",
     "localId": "112",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "112/94",
+    "cardNumber": "112/094",
     "cardName": "Mismagius ex",
-    "fullDisplayName": "Mismagius ex 112/94 Phantasmal Flames",
+    "fullDisplayName": "Mismagius ex 112/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -599,18 +681,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-112-low.png",
-    "imageHighSrc": "cards/me2-112-high.png"
+    "imageHighSrc": "cards/me2-112-high.png",
+    "attacks": [
+      {
+        "name": "Hexa-Magic",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7516",
-    "externalId": null,
+    "externalId": "me2-111",
     "tcgdex_id": "me02-111",
     "localId": "111",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "111/94",
+    "cardNumber": "111/094",
     "cardName": "Rotom ex",
-    "fullDisplayName": "Rotom ex 111/94 Phantasmal Flames",
+    "fullDisplayName": "Rotom ex 111/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -633,18 +722,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-111-low.png",
-    "imageHighSrc": "cards/me2-111-high.png"
+    "imageHighSrc": "cards/me2-111-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7514",
-    "externalId": null,
+    "externalId": "me2-110",
     "tcgdex_id": "me02-110",
     "localId": "110",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "110/94",
+    "cardNumber": "110/094",
     "cardName": "Oricorio ex",
-    "fullDisplayName": "Oricorio ex 110/94 Phantasmal Flames",
+    "fullDisplayName": "Oricorio ex 110/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -667,18 +763,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-110-low.png",
-    "imageHighSrc": "cards/me2-110-high.png"
+    "imageHighSrc": "cards/me2-110-high.png",
+    "attacks": [
+      {
+        "name": "Fire Wing",
+        "damage": "110"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7511",
-    "externalId": null,
+    "externalId": "me2-109",
     "tcgdex_id": "me02-109",
     "localId": "109",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "109/94",
+    "cardNumber": "109/094",
     "cardName": "Mega Charizard X ex",
-    "fullDisplayName": "Mega Charizard X ex 109/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Charizard X ex 109/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -702,18 +805,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-109-low.png",
-    "imageHighSrc": "cards/me2-109-high.png"
+    "imageHighSrc": "cards/me2-109-high.png",
+    "attacks": [
+      {
+        "name": "Inferno X",
+        "damage": "90×"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7509",
-    "externalId": null,
+    "externalId": "me2-108",
     "tcgdex_id": "me02-108",
     "localId": "108",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "108/94",
+    "cardNumber": "108/094",
     "cardName": "Mega Heracross ex",
-    "fullDisplayName": "Mega Heracross ex 108/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Heracross ex 108/094 Phantasmal Flames",
     "rarity": "Ultra Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -737,18 +847,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-108-low.png",
-    "imageHighSrc": "cards/me2-108-high.png"
+    "imageHighSrc": "cards/me2-108-high.png",
+    "attacks": [
+      {
+        "name": "Juggernaut Horn",
+        "damage": "100+"
+      },
+      {
+        "name": "Mountain Ramming",
+        "damage": "170"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7507",
-    "externalId": null,
+    "externalId": "me2-107",
     "tcgdex_id": "me02-107",
     "localId": "107",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "107/94",
+    "cardNumber": "107/094",
     "cardName": "Ambipom",
-    "fullDisplayName": "Ambipom 107/94 Phantasmal Flames",
+    "fullDisplayName": "Ambipom 107/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -770,18 +891,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-107-low.png",
-    "imageHighSrc": "cards/me2-107-high.png"
+    "imageHighSrc": "cards/me2-107-high.png",
+    "attacks": [
+      {
+        "name": "Slap",
+        "damage": "50"
+      },
+      {
+        "name": "Dual Tail",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7505",
-    "externalId": null,
+    "externalId": "me2-106",
     "tcgdex_id": "me02-106",
     "localId": "106",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "106/94",
+    "cardNumber": "106/094",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 106/94 Phantasmal Flames",
+    "fullDisplayName": "Meowth 106/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -803,18 +934,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-106-low.png",
-    "imageHighSrc": "cards/me2-106-high.png"
+    "imageHighSrc": "cards/me2-106-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7503",
-    "externalId": null,
+    "externalId": "me2-105",
     "tcgdex_id": "me02-105",
     "localId": "105",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "105/94",
+    "cardNumber": "105/094",
     "cardName": "Wigglytuff",
-    "fullDisplayName": "Wigglytuff 105/94 Phantasmal Flames",
+    "fullDisplayName": "Wigglytuff 105/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -836,18 +973,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-105-low.png",
-    "imageHighSrc": "cards/me2-105-high.png"
+    "imageHighSrc": "cards/me2-105-high.png",
+    "attacks": [
+      {
+        "name": "Round",
+        "damage": "40×"
+      },
+      {
+        "name": "Seismic Toss",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "7501",
-    "externalId": null,
+    "externalId": "me2-104",
     "tcgdex_id": "me02-104",
     "localId": "104",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "104/94",
+    "cardNumber": "104/094",
     "cardName": "Togedemaru",
-    "fullDisplayName": "Togedemaru 104/94 Phantasmal Flames",
+    "fullDisplayName": "Togedemaru 104/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -869,18 +1016,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-104-low.png",
-    "imageHighSrc": "cards/me2-104-high.png"
+    "imageHighSrc": "cards/me2-104-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7499",
-    "externalId": null,
+    "externalId": "me2-103",
     "tcgdex_id": "me02-103",
     "localId": "103",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "103/94",
+    "cardNumber": "103/094",
     "cardName": "Toxtricity",
-    "fullDisplayName": "Toxtricity 103/94 Phantasmal Flames",
+    "fullDisplayName": "Toxtricity 103/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -902,18 +1059,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-103-low.png",
-    "imageHighSrc": "cards/me2-103-high.png"
+    "imageHighSrc": "cards/me2-103-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "7497",
-    "externalId": null,
+    "externalId": "me2-102",
     "tcgdex_id": "me02-102",
     "localId": "102",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "102/94",
+    "cardNumber": "102/094",
     "cardName": "Paldean Wooper",
-    "fullDisplayName": "Paldean Wooper 102/94 Phantasmal Flames",
+    "fullDisplayName": "Paldean Wooper 102/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -935,18 +1098,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-102-low.png",
-    "imageHighSrc": "cards/me2-102-high.png"
+    "imageHighSrc": "cards/me2-102-high.png",
+    "attacks": [
+      {
+        "name": "Trip Over",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7495",
-    "externalId": null,
+    "externalId": "me2-101",
     "tcgdex_id": "me02-101",
     "localId": "101",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "101/94",
+    "cardNumber": "101/094",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 101/94 Phantasmal Flames",
+    "fullDisplayName": "Flygon 101/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -968,18 +1137,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-101-low.png",
-    "imageHighSrc": "cards/me2-101-high.png"
+    "imageHighSrc": "cards/me2-101-high.png",
+    "attacks": [
+      {
+        "name": "Cutting Wind",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "7493",
-    "externalId": null,
+    "externalId": "me2-100",
     "tcgdex_id": "me02-100",
     "localId": "100",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "100/94",
+    "cardNumber": "100/094",
     "cardName": "Zacian",
-    "fullDisplayName": "Zacian 100/94 Phantasmal Flames",
+    "fullDisplayName": "Zacian 100/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1001,18 +1176,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-100-low.png",
-    "imageHighSrc": "cards/me2-100-high.png"
+    "imageHighSrc": "cards/me2-100-high.png",
+    "attacks": [
+      {
+        "name": "Limit Break",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "7492",
-    "externalId": null,
+    "externalId": "me2-99",
     "tcgdex_id": "me02-099",
     "localId": "099",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "099/94",
+    "cardNumber": "099/094",
     "cardName": "Yamper",
-    "fullDisplayName": "Yamper 099/94 Phantasmal Flames",
+    "fullDisplayName": "Yamper 099/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1034,18 +1215,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-099-low.png",
-    "imageHighSrc": "cards/me2-099-high.png"
+    "imageHighSrc": "cards/me2-099-high.png",
+    "attacks": [
+      {
+        "name": "Play Rough",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7489",
-    "externalId": null,
+    "externalId": "me2-98",
     "tcgdex_id": "me02-098",
     "localId": "098",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "098/94",
+    "cardNumber": "098/094",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 098/94 Phantasmal Flames",
+    "fullDisplayName": "Piplup 098/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1067,18 +1254,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-098-low.png",
-    "imageHighSrc": "cards/me2-098-high.png"
+    "imageHighSrc": "cards/me2-098-high.png",
+    "attacks": [
+      {
+        "name": "Call for Support",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7488",
-    "externalId": null,
+    "externalId": "me2-97",
     "tcgdex_id": "me02-097",
     "localId": "097",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "097/94",
+    "cardNumber": "097/094",
     "cardName": "Dewgong",
-    "fullDisplayName": "Dewgong 097/94 Phantasmal Flames",
+    "fullDisplayName": "Dewgong 097/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1100,18 +1297,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-097-low.png",
-    "imageHighSrc": "cards/me2-097-high.png"
+    "imageHighSrc": "cards/me2-097-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "70×"
+      }
+    ]
   },
   {
     "masterCardId": "7485",
-    "externalId": null,
+    "externalId": "me2-96",
     "tcgdex_id": "me02-096",
     "localId": "096",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "096/94",
+    "cardNumber": "096/094",
     "cardName": "Nymble",
-    "fullDisplayName": "Nymble 096/94 Phantasmal Flames",
+    "fullDisplayName": "Nymble 096/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1133,18 +1336,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-096-low.png",
-    "imageHighSrc": "cards/me2-096-high.png"
+    "imageHighSrc": "cards/me2-096-high.png",
+    "attacks": [
+      {
+        "name": "Flail Around",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7484",
-    "externalId": null,
+    "externalId": "me2-95",
     "tcgdex_id": "me02-095",
     "localId": "095",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "095/94",
+    "cardNumber": "095/094",
     "cardName": "Ludicolo",
-    "fullDisplayName": "Ludicolo 095/94 Phantasmal Flames",
+    "fullDisplayName": "Ludicolo 095/094 Phantasmal Flames",
     "rarity": "Illustration Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1166,18 +1375,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-095-low.png",
-    "imageHighSrc": "cards/me2-095-high.png"
+    "imageHighSrc": "cards/me2-095-high.png",
+    "attacks": [
+      {
+        "name": "Lunge Out",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "7482",
-    "externalId": null,
+    "externalId": "me2-94",
     "tcgdex_id": "me02-094",
     "localId": "094",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "094/94",
+    "cardNumber": "094/094",
     "cardName": "Wondrous Patch",
-    "fullDisplayName": "Wondrous Patch 094/94 Phantasmal Flames",
+    "fullDisplayName": "Wondrous Patch 094/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1195,18 +1410,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-094-low.png",
-    "imageHighSrc": "cards/me2-094-high.png"
+    "imageHighSrc": "cards/me2-094-high.png",
+    "rules": "Attach a Basic Psychic Energy card from your discard pile to 1 of your Benched Psychic Pokémon.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "7480",
-    "externalId": null,
+    "externalId": "me2-93",
     "tcgdex_id": "me02-093",
     "localId": "093",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "093/94",
+    "cardNumber": "093/094",
     "cardName": "Sacred Charm",
-    "fullDisplayName": "Sacred Charm 093/94 Phantasmal Flames",
+    "fullDisplayName": "Sacred Charm 093/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1224,18 +1440,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-093-low.png",
-    "imageHighSrc": "cards/me2-093-high.png"
+    "imageHighSrc": "cards/me2-093-high.png",
+    "rules": "The Pokémon this card is attached to takes 30 less damage from attacks from your opponent's Pokémon that have an Ability (after applying Weakness and Resistance).\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "7478",
-    "externalId": null,
+    "externalId": "me2-92",
     "tcgdex_id": "me02-092",
     "localId": "092",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "092/94",
+    "cardNumber": "092/094",
     "cardName": "Punk Helmet",
-    "fullDisplayName": "Punk Helmet 092/94 Phantasmal Flames",
+    "fullDisplayName": "Punk Helmet 092/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1253,18 +1470,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-092-low.png",
-    "imageHighSrc": "cards/me2-092-high.png"
+    "imageHighSrc": "cards/me2-092-high.png",
+    "rules": "If the Darkness Pokémon this card is attached to is in the Active Spot and is damaged by an attack from your opponent's Pokémon (even if this Pokémon is Knocked Out), place 4 damage counters on the Attacking Pokémon.\n\nYou may attach any number of Pokémon Tools to your Pokémon during your turn. You may attach only 1 Pokémon Tool to each Pokémon, and it stays attached."
   },
   {
     "masterCardId": "7476",
-    "externalId": null,
+    "externalId": "me2-91",
     "tcgdex_id": "me02-091",
     "localId": "091",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "091/94",
+    "cardNumber": "091/094",
     "cardName": "Jumbo Ice Cream",
-    "fullDisplayName": "Jumbo Ice Cream 091/94 Phantasmal Flames",
+    "fullDisplayName": "Jumbo Ice Cream 091/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1282,18 +1500,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-091-low.png",
-    "imageHighSrc": "cards/me2-091-high.png"
+    "imageHighSrc": "cards/me2-091-high.png",
+    "rules": "Heal 80 damage from your Active Pokémon that has 3 or more Energy attached.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "7474",
-    "externalId": null,
+    "externalId": "me2-90",
     "tcgdex_id": "me02-090",
     "localId": "090",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "090/94",
+    "cardNumber": "090/094",
     "cardName": "Grimsley's Move",
-    "fullDisplayName": "Grimsley's Move 090/94 Phantasmal Flames",
+    "fullDisplayName": "Grimsley's Move 090/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1311,18 +1530,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-090-low.png",
-    "imageHighSrc": "cards/me2-090-high.png"
+    "imageHighSrc": "cards/me2-090-high.png",
+    "rules": "Look at the top 7 cards of your deck and put a Darkness Pokémon you find there onto your Bench. Shuffle the other cards and put them on the bottom of your deck. You can't use this card during your first turn.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "7472",
-    "externalId": null,
+    "externalId": "me2-89",
     "tcgdex_id": "me02-089",
     "localId": "089",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "089/94",
+    "cardNumber": "089/094",
     "cardName": "Firebreather",
-    "fullDisplayName": "Firebreather 089/94 Phantasmal Flames",
+    "fullDisplayName": "Firebreather 089/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1340,18 +1560,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-089-low.png",
-    "imageHighSrc": "cards/me2-089-high.png"
+    "imageHighSrc": "cards/me2-089-high.png",
+    "rules": "Search your deck for up to 7 Basic Fire Energy cards, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "7470",
-    "externalId": null,
+    "externalId": "me2-88",
     "tcgdex_id": "me02-088",
     "localId": "088",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "088/94",
+    "cardNumber": "088/094",
     "cardName": "Dizzying Valley",
-    "fullDisplayName": "Dizzying Valley 088/94 Phantasmal Flames",
+    "fullDisplayName": "Dizzying Valley 088/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1369,18 +1590,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-088-low.png",
-    "imageHighSrc": "cards/me2-088-high.png"
+    "imageHighSrc": "cards/me2-088-high.png",
+    "rules": "Confused Pokémon (both yours and your opponent's) don't recover from that Special Condition when they evolve or devolve.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "7468",
-    "externalId": null,
+    "externalId": "me2-87",
     "tcgdex_id": "me02-087",
     "localId": "087",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "087/94",
+    "cardNumber": "087/094",
     "cardName": "Dawn",
-    "fullDisplayName": "Dawn 087/94 Phantasmal Flames",
+    "fullDisplayName": "Dawn 087/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1398,18 +1620,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-087-low.png",
-    "imageHighSrc": "cards/me2-087-high.png"
+    "imageHighSrc": "cards/me2-087-high.png",
+    "rules": "Search your deck for a Basic Pokémon, a Stage 1 Pokémon, and a Stage 2 Pokémon, reveal them, and put them into your hand. Then, shuffle your deck.\n\nYou may play only 1 Supporter card during your turn."
   },
   {
     "masterCardId": "7466",
-    "externalId": null,
+    "externalId": "me2-86",
     "tcgdex_id": "me02-086",
     "localId": "086",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "086/94",
+    "cardNumber": "086/094",
     "cardName": "Blowtorch",
-    "fullDisplayName": "Blowtorch 086/94 Phantasmal Flames",
+    "fullDisplayName": "Blowtorch 086/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1427,18 +1650,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-086-low.png",
-    "imageHighSrc": "cards/me2-086-high.png"
+    "imageHighSrc": "cards/me2-086-high.png",
+    "rules": "You can use this card only if you discard a Basic Fire Energy card from your hand.  Discard a Pokémon Tool or Special Energy card from 1 of your opponent's Pokémon, or discard a Stadium in play.\n\nYou may play any number of Item cards during your turn."
   },
   {
     "masterCardId": "7465",
-    "externalId": null,
+    "externalId": "me2-85",
     "tcgdex_id": "me02-085",
     "localId": "085",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "085/94",
+    "cardNumber": "085/094",
     "cardName": "Battle Cage",
-    "fullDisplayName": "Battle Cage 085/94 Phantasmal Flames",
+    "fullDisplayName": "Battle Cage 085/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -1456,18 +1680,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-085-low.png",
-    "imageHighSrc": "cards/me2-085-high.png"
+    "imageHighSrc": "cards/me2-085-high.png",
+    "rules": "Prevent all damage counters from being placed on Benched Pokémon (both yours and your opponent's) by effects of attacks and Abilities from the opponent's Pokémon. (Damage from attacks is still taken.)\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can’t be played."
   },
   {
     "masterCardId": "7462",
-    "externalId": null,
+    "externalId": "me2-84",
     "tcgdex_id": "me02-084",
     "localId": "084",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "084/94",
+    "cardNumber": "084/094",
     "cardName": "Mega Lopunny ex",
-    "fullDisplayName": "Mega Lopunny ex 084/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Lopunny ex 084/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1491,18 +1716,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-084-low.png",
-    "imageHighSrc": "cards/me2-084-high.png"
+    "imageHighSrc": "cards/me2-084-high.png",
+    "attacks": [
+      {
+        "name": "Gale Thrust",
+        "damage": "60+"
+      },
+      {
+        "name": "Spiky Hopper",
+        "damage": "160"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7460",
-    "externalId": null,
+    "externalId": "me2-83",
     "tcgdex_id": "me02-083",
     "localId": "083",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "083/94",
+    "cardNumber": "083/094",
     "cardName": "Buneary",
-    "fullDisplayName": "Buneary 083/94 Phantasmal Flames",
+    "fullDisplayName": "Buneary 083/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1524,18 +1760,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-083-low.png",
-    "imageHighSrc": "cards/me2-083-high.png"
+    "imageHighSrc": "cards/me2-083-high.png",
+    "attacks": [
+      {
+        "name": "Run Around",
+        "damage": null
+      },
+      {
+        "name": "Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7458",
-    "externalId": null,
+    "externalId": "me2-82",
     "tcgdex_id": "me02-082",
     "localId": "082",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "082/94",
+    "cardNumber": "082/094",
     "cardName": "Linoone",
-    "fullDisplayName": "Linoone 082/94 Phantasmal Flames",
+    "fullDisplayName": "Linoone 082/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1557,18 +1803,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-082-low.png",
-    "imageHighSrc": "cards/me2-082-high.png"
+    "imageHighSrc": "cards/me2-082-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7456",
-    "externalId": null,
+    "externalId": "me2-81",
     "tcgdex_id": "me02-081",
     "localId": "081",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "081/94",
+    "cardNumber": "081/094",
     "cardName": "Zigzagoon",
-    "fullDisplayName": "Zigzagoon 081/94 Phantasmal Flames",
+    "fullDisplayName": "Zigzagoon 081/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1590,18 +1842,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-081-low.png",
-    "imageHighSrc": "cards/me2-081-high.png"
+    "imageHighSrc": "cards/me2-081-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7454",
-    "externalId": null,
+    "externalId": "me2-80",
     "tcgdex_id": "me02-080",
     "localId": "080",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "080/94",
+    "cardNumber": "080/094",
     "cardName": "Smeargle",
-    "fullDisplayName": "Smeargle 080/94 Phantasmal Flames",
+    "fullDisplayName": "Smeargle 080/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1623,18 +1881,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-080-low.png",
-    "imageHighSrc": "cards/me2-080-high.png"
+    "imageHighSrc": "cards/me2-080-high.png",
+    "attacks": [
+      {
+        "name": "Energizing Sketch",
+        "damage": null
+      },
+      {
+        "name": "Hook",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7452",
-    "externalId": null,
+    "externalId": "me2-79",
     "tcgdex_id": "me02-079",
     "localId": "079",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "079/94",
+    "cardNumber": "079/094",
     "cardName": "Ambipom",
-    "fullDisplayName": "Ambipom 079/94 Phantasmal Flames",
+    "fullDisplayName": "Ambipom 079/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1656,18 +1924,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-079-low.png",
-    "imageHighSrc": "cards/me2-079-high.png"
+    "imageHighSrc": "cards/me2-079-high.png",
+    "attacks": [
+      {
+        "name": "Slap",
+        "damage": "50"
+      },
+      {
+        "name": "Dual Tail",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7450",
-    "externalId": null,
+    "externalId": "me2-78",
     "tcgdex_id": "me02-078",
     "localId": "078",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "078/94",
+    "cardNumber": "078/094",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 078/94 Phantasmal Flames",
+    "fullDisplayName": "Aipom 078/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1689,18 +1967,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-078-low.png",
-    "imageHighSrc": "cards/me2-078-high.png"
+    "imageHighSrc": "cards/me2-078-high.png",
+    "attacks": [
+      {
+        "name": "Astonish",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7448",
-    "externalId": null,
+    "externalId": "me2-77",
     "tcgdex_id": "me02-077",
     "localId": "077",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "077/94",
+    "cardNumber": "077/094",
     "cardName": "Wigglytuff",
-    "fullDisplayName": "Wigglytuff 077/94 Phantasmal Flames",
+    "fullDisplayName": "Wigglytuff 077/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1722,18 +2006,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-077-low.png",
-    "imageHighSrc": "cards/me2-077-high.png"
+    "imageHighSrc": "cards/me2-077-high.png",
+    "attacks": [
+      {
+        "name": "Round",
+        "damage": "40×"
+      },
+      {
+        "name": "Seismic Toss",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "7446",
-    "externalId": null,
+    "externalId": "me2-76",
     "tcgdex_id": "me02-076",
     "localId": "076",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "076/94",
+    "cardNumber": "076/094",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 076/94 Phantasmal Flames",
+    "fullDisplayName": "Jigglypuff 076/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1755,18 +2049,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-076-low.png",
-    "imageHighSrc": "cards/me2-076-high.png"
+    "imageHighSrc": "cards/me2-076-high.png",
+    "attacks": [
+      {
+        "name": "Ball Roll",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7444",
-    "externalId": null,
+    "externalId": "me2-75",
     "tcgdex_id": "me02-075",
     "localId": "075",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "075/94",
+    "cardNumber": "075/094",
     "cardName": "Archaludon",
-    "fullDisplayName": "Archaludon 075/94 Phantasmal Flames",
+    "fullDisplayName": "Archaludon 075/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1788,18 +2088,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-075-low.png",
-    "imageHighSrc": "cards/me2-075-high.png"
+    "imageHighSrc": "cards/me2-075-high.png",
+    "attacks": [
+      {
+        "name": "Coated Attack",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "7443",
-    "externalId": null,
+    "externalId": "me2-74",
     "tcgdex_id": "me02-074",
     "localId": "074",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "074/94",
+    "cardNumber": "074/094",
     "cardName": "Duraludon",
-    "fullDisplayName": "Duraludon 074/94 Phantasmal Flames",
+    "fullDisplayName": "Duraludon 074/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1821,18 +2127,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-074-low.png",
-    "imageHighSrc": "cards/me2-074-high.png"
+    "imageHighSrc": "cards/me2-074-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7441",
-    "externalId": null,
+    "externalId": "me2-73",
     "tcgdex_id": "me02-073",
     "localId": "073",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "073/94",
+    "cardNumber": "073/094",
     "cardName": "Togedemaru",
-    "fullDisplayName": "Togedemaru 073/94 Phantasmal Flames",
+    "fullDisplayName": "Togedemaru 073/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1854,18 +2166,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-073-low.png",
-    "imageHighSrc": "cards/me2-073-high.png"
+    "imageHighSrc": "cards/me2-073-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      },
+      {
+        "name": "Gnaw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7439",
-    "externalId": null,
+    "externalId": "me2-72",
     "tcgdex_id": "me02-072",
     "localId": "072",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "072/94",
+    "cardNumber": "072/094",
     "cardName": "Bronzong",
-    "fullDisplayName": "Bronzong 072/94 Phantasmal Flames",
+    "fullDisplayName": "Bronzong 072/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1887,18 +2209,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-072-low.png",
-    "imageHighSrc": "cards/me2-072-high.png"
+    "imageHighSrc": "cards/me2-072-high.png",
+    "attacks": [
+      {
+        "name": "Triple Draw",
+        "damage": null
+      },
+      {
+        "name": "Tool Drop",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "7437",
-    "externalId": null,
+    "externalId": "me2-71",
     "tcgdex_id": "me02-071",
     "localId": "071",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "071/94",
+    "cardNumber": "071/094",
     "cardName": "Bronzor",
-    "fullDisplayName": "Bronzor 071/94 Phantasmal Flames",
+    "fullDisplayName": "Bronzor 071/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1920,18 +2252,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-071-low.png",
-    "imageHighSrc": "cards/me2-071-high.png"
+    "imageHighSrc": "cards/me2-071-high.png",
+    "attacks": [
+      {
+        "name": "Iron Defense",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7435",
-    "externalId": null,
+    "externalId": "me2-70",
     "tcgdex_id": "me02-070",
     "localId": "070",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "070/94",
+    "cardNumber": "070/094",
     "cardName": "Empoleon ex",
-    "fullDisplayName": "Empoleon ex 070/94 Phantasmal Flames",
+    "fullDisplayName": "Empoleon ex 070/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1954,18 +2296,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-070-low.png",
-    "imageHighSrc": "cards/me2-070-high.png"
+    "imageHighSrc": "cards/me2-070-high.png",
+    "attacks": [
+      {
+        "name": "Iron Feathers",
+        "damage": "210"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7433",
-    "externalId": null,
+    "externalId": "me2-69",
     "tcgdex_id": "me02-069",
     "localId": "069",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "069/94",
+    "cardNumber": "069/094",
     "cardName": "Eternatus",
-    "fullDisplayName": "Eternatus 069/94 Phantasmal Flames",
+    "fullDisplayName": "Eternatus 069/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1987,18 +2336,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-069-low.png",
-    "imageHighSrc": "cards/me2-069-high.png"
+    "imageHighSrc": "cards/me2-069-high.png",
+    "attacks": [
+      {
+        "name": "Shatter",
+        "damage": "50"
+      },
+      {
+        "name": "Power Rush",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "7431",
-    "externalId": null,
+    "externalId": "me2-68",
     "tcgdex_id": "me02-068",
     "localId": "068",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "068/94",
+    "cardNumber": "068/094",
     "cardName": "Toxtricity",
-    "fullDisplayName": "Toxtricity 068/94 Phantasmal Flames",
+    "fullDisplayName": "Toxtricity 068/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2020,18 +2379,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-068-low.png",
-    "imageHighSrc": "cards/me2-068-high.png"
+    "imageHighSrc": "cards/me2-068-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "7428",
-    "externalId": null,
+    "externalId": "me2-67",
     "tcgdex_id": "me02-067",
     "localId": "067",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "067/94",
+    "cardNumber": "067/094",
     "cardName": "Toxel",
-    "fullDisplayName": "Toxel 067/94 Phantasmal Flames",
+    "fullDisplayName": "Toxel 067/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2053,18 +2418,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-067-low.png",
-    "imageHighSrc": "cards/me2-067-high.png"
+    "imageHighSrc": "cards/me2-067-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Playful Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7426",
-    "externalId": null,
+    "externalId": "me2-66",
     "tcgdex_id": "me02-066",
     "localId": "066",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "066/94",
+    "cardNumber": "066/094",
     "cardName": "Krookodile",
-    "fullDisplayName": "Krookodile 066/94 Phantasmal Flames",
+    "fullDisplayName": "Krookodile 066/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2086,18 +2461,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-066-low.png",
-    "imageHighSrc": "cards/me2-066-high.png"
+    "imageHighSrc": "cards/me2-066-high.png",
+    "attacks": [
+      {
+        "name": "Vengeful Fang",
+        "damage": "60+"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "160"
+      }
+    ]
   },
   {
     "masterCardId": "7424",
-    "externalId": null,
+    "externalId": "me2-65",
     "tcgdex_id": "me02-065",
     "localId": "065",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "065/94",
+    "cardNumber": "065/094",
     "cardName": "Krokorok",
-    "fullDisplayName": "Krokorok 065/94 Phantasmal Flames",
+    "fullDisplayName": "Krokorok 065/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2119,18 +2504,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-065-low.png",
-    "imageHighSrc": "cards/me2-065-high.png"
+    "imageHighSrc": "cards/me2-065-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Confront",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7423",
-    "externalId": null,
+    "externalId": "me2-64",
     "tcgdex_id": "me02-064",
     "localId": "064",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "064/94",
+    "cardNumber": "064/094",
     "cardName": "Sandile",
-    "fullDisplayName": "Sandile 064/94 Phantasmal Flames",
+    "fullDisplayName": "Sandile 064/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2152,18 +2547,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-064-low.png",
-    "imageHighSrc": "cards/me2-064-high.png"
+    "imageHighSrc": "cards/me2-064-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "10"
+      },
+      {
+        "name": "Rear Kick",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7422",
-    "externalId": null,
+    "externalId": "me2-63",
     "tcgdex_id": "me02-063",
     "localId": "063",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "063/94",
+    "cardNumber": "063/094",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 063/94 Phantasmal Flames",
+    "fullDisplayName": "Absol 063/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2185,18 +2590,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-063-low.png",
-    "imageHighSrc": "cards/me2-063-high.png"
+    "imageHighSrc": "cards/me2-063-high.png",
+    "attacks": [
+      {
+        "name": "Allure",
+        "damage": null
+      },
+      {
+        "name": "Dark Cutter",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7420",
-    "externalId": null,
+    "externalId": "me2-62",
     "tcgdex_id": "me02-062",
     "localId": "062",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "062/94",
+    "cardNumber": "062/094",
     "cardName": "Seviper",
-    "fullDisplayName": "Seviper 062/94 Phantasmal Flames",
+    "fullDisplayName": "Seviper 062/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2218,18 +2633,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-062-low.png",
-    "imageHighSrc": "cards/me2-062-high.png"
+    "imageHighSrc": "cards/me2-062-high.png",
+    "attacks": [
+      {
+        "name": "Pitch-Black Fangs",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "7418",
-    "externalId": null,
+    "externalId": "me2-61",
     "tcgdex_id": "me02-061",
     "localId": "061",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "061/94",
+    "cardNumber": "061/094",
     "cardName": "Mega Sharpedo ex",
-    "fullDisplayName": "Mega Sharpedo ex 061/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Sharpedo ex 061/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2253,18 +2674,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-061-low.png",
-    "imageHighSrc": "cards/me2-061-high.png"
+    "imageHighSrc": "cards/me2-061-high.png",
+    "attacks": [
+      {
+        "name": "Greedy Fang",
+        "damage": "70"
+      },
+      {
+        "name": "Hungry Jaws",
+        "damage": "120+"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7416",
-    "externalId": null,
+    "externalId": "me2-60",
     "tcgdex_id": "me02-060",
     "localId": "060",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "060/94",
+    "cardNumber": "060/094",
     "cardName": "Carvanha",
-    "fullDisplayName": "Carvanha 060/94 Phantasmal Flames",
+    "fullDisplayName": "Carvanha 060/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2286,18 +2718,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-060-low.png",
-    "imageHighSrc": "cards/me2-060-high.png"
+    "imageHighSrc": "cards/me2-060-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7414",
-    "externalId": null,
+    "externalId": "me2-59",
     "tcgdex_id": "me02-059",
     "localId": "059",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "059/94",
+    "cardNumber": "059/094",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 059/94 Phantasmal Flames",
+    "fullDisplayName": "Sableye 059/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2319,18 +2757,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-059-low.png",
-    "imageHighSrc": "cards/me2-059-high.png"
+    "imageHighSrc": "cards/me2-059-high.png",
+    "attacks": [
+      {
+        "name": "Cocky Claw",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7412",
-    "externalId": null,
+    "externalId": "me2-58",
     "tcgdex_id": "me02-058",
     "localId": "058",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "058/94",
+    "cardNumber": "058/094",
     "cardName": "Honchkrow",
-    "fullDisplayName": "Honchkrow 058/94 Phantasmal Flames",
+    "fullDisplayName": "Honchkrow 058/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2352,18 +2796,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-058-low.png",
-    "imageHighSrc": "cards/me2-058-high.png"
+    "imageHighSrc": "cards/me2-058-high.png",
+    "attacks": [
+      {
+        "name": "Wind of Darkness",
+        "damage": "30"
+      },
+      {
+        "name": "Sniping Feathers",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7410",
-    "externalId": null,
+    "externalId": "me2-57",
     "tcgdex_id": "me02-057",
     "localId": "057",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "057/94",
+    "cardNumber": "057/094",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 057/94 Phantasmal Flames",
+    "fullDisplayName": "Murkrow 057/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2385,18 +2839,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-057-low.png",
-    "imageHighSrc": "cards/me2-057-high.png"
+    "imageHighSrc": "cards/me2-057-high.png",
+    "attacks": [
+      {
+        "name": "Ambush",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7408",
-    "externalId": null,
+    "externalId": "me2-56",
     "tcgdex_id": "me02-056",
     "localId": "056",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "056/94",
+    "cardNumber": "056/094",
     "cardName": "Mega Gengar ex",
-    "fullDisplayName": "Mega Gengar ex 056/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Gengar ex 056/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2420,18 +2880,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-056-low.png",
-    "imageHighSrc": "cards/me2-056-high.png"
+    "imageHighSrc": "cards/me2-056-high.png",
+    "attacks": [
+      {
+        "name": "Void Gale",
+        "damage": "230"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7406",
-    "externalId": null,
+    "externalId": "me2-55",
     "tcgdex_id": "me02-055",
     "localId": "055",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "055/94",
+    "cardNumber": "055/094",
     "cardName": "Haunter",
-    "fullDisplayName": "Haunter 055/94 Phantasmal Flames",
+    "fullDisplayName": "Haunter 055/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2453,18 +2920,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-055-low.png",
-    "imageHighSrc": "cards/me2-055-high.png"
+    "imageHighSrc": "cards/me2-055-high.png",
+    "attacks": [
+      {
+        "name": "Spooky Shot",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7404",
-    "externalId": null,
+    "externalId": "me2-54",
     "tcgdex_id": "me02-054",
     "localId": "054",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "054/94",
+    "cardNumber": "054/094",
     "cardName": "Gastly",
-    "fullDisplayName": "Gastly 054/94 Phantasmal Flames",
+    "fullDisplayName": "Gastly 054/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2486,18 +2959,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-054-low.png",
-    "imageHighSrc": "cards/me2-054-high.png"
+    "imageHighSrc": "cards/me2-054-high.png",
+    "attacks": [
+      {
+        "name": "Petty Grudge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7402",
-    "externalId": null,
+    "externalId": "me2-53",
     "tcgdex_id": "me02-053",
     "localId": "053",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "053/94",
+    "cardNumber": "053/094",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon 053/94 Phantasmal Flames",
+    "fullDisplayName": "Flygon 053/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2519,18 +2998,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-053-low.png",
-    "imageHighSrc": "cards/me2-053-high.png"
+    "imageHighSrc": "cards/me2-053-high.png",
+    "attacks": [
+      {
+        "name": "Cutting Wind",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "7400",
-    "externalId": null,
+    "externalId": "me2-52",
     "tcgdex_id": "me02-052",
     "localId": "052",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "052/94",
+    "cardNumber": "052/094",
     "cardName": "Vibrava",
-    "fullDisplayName": "Vibrava 052/94 Phantasmal Flames",
+    "fullDisplayName": "Vibrava 052/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2552,18 +3037,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-052-low.png",
-    "imageHighSrc": "cards/me2-052-high.png"
+    "imageHighSrc": "cards/me2-052-high.png",
+    "attacks": [
+      {
+        "name": "Super Vibration",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7398",
-    "externalId": null,
+    "externalId": "me2-51",
     "tcgdex_id": "me02-051",
     "localId": "051",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "051/94",
+    "cardNumber": "051/094",
     "cardName": "Trapinch",
-    "fullDisplayName": "Trapinch 051/94 Phantasmal Flames",
+    "fullDisplayName": "Trapinch 051/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2585,18 +3076,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-051-low.png",
-    "imageHighSrc": "cards/me2-051-high.png"
+    "imageHighSrc": "cards/me2-051-high.png",
+    "attacks": [
+      {
+        "name": "Double Headbutt",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7395",
-    "externalId": null,
+    "externalId": "me2-50",
     "tcgdex_id": "me02-050",
     "localId": "050",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "050/94",
+    "cardNumber": "050/094",
     "cardName": "Gliscor",
-    "fullDisplayName": "Gliscor 050/94 Phantasmal Flames",
+    "fullDisplayName": "Gliscor 050/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2618,18 +3115,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-050-low.png",
-    "imageHighSrc": "cards/me2-050-high.png"
+    "imageHighSrc": "cards/me2-050-high.png",
+    "attacks": [
+      {
+        "name": "Poison Ring",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7393",
-    "externalId": null,
+    "externalId": "me2-49",
     "tcgdex_id": "me02-049",
     "localId": "049",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "049/94",
+    "cardNumber": "049/094",
     "cardName": "Gligar",
-    "fullDisplayName": "Gligar 049/94 Phantasmal Flames",
+    "fullDisplayName": "Gligar 049/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2651,18 +3154,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-049-low.png",
-    "imageHighSrc": "cards/me2-049-high.png"
+    "imageHighSrc": "cards/me2-049-high.png",
+    "attacks": [
+      {
+        "name": "Poison Jab",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7391",
-    "externalId": null,
+    "externalId": "me2-48",
     "tcgdex_id": "me02-048",
     "localId": "048",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "048/94",
+    "cardNumber": "048/094",
     "cardName": "Paldean Tauros",
-    "fullDisplayName": "Paldean Tauros 048/94 Phantasmal Flames",
+    "fullDisplayName": "Paldean Tauros 048/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2684,18 +3193,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-048-low.png",
-    "imageHighSrc": "cards/me2-048-high.png"
+    "imageHighSrc": "cards/me2-048-high.png",
+    "attacks": [
+      {
+        "name": "Raging Charge",
+        "damage": "40×"
+      },
+      {
+        "name": "Double-Edge",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7389",
-    "externalId": null,
+    "externalId": "me2-47",
     "tcgdex_id": "me02-047",
     "localId": "047",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "047/94",
+    "cardNumber": "047/094",
     "cardName": "Brambleghast",
-    "fullDisplayName": "Brambleghast 047/94 Phantasmal Flames",
+    "fullDisplayName": "Brambleghast 047/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2717,18 +3236,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-047-low.png",
-    "imageHighSrc": "cards/me2-047-high.png"
+    "imageHighSrc": "cards/me2-047-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Sphere",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "7387",
-    "externalId": null,
+    "externalId": "me2-46",
     "tcgdex_id": "me02-046",
     "localId": "046",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "046/94",
+    "cardNumber": "046/094",
     "cardName": "Bramblin",
-    "fullDisplayName": "Bramblin 046/94 Phantasmal Flames",
+    "fullDisplayName": "Bramblin 046/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2750,18 +3275,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-046-low.png",
-    "imageHighSrc": "cards/me2-046-high.png"
+    "imageHighSrc": "cards/me2-046-high.png",
+    "attacks": [
+      {
+        "name": "Sneaky Placement",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7385",
-    "externalId": null,
+    "externalId": "me2-45",
     "tcgdex_id": "me02-045",
     "localId": "045",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "045/94",
+    "cardNumber": "045/094",
     "cardName": "Zacian",
-    "fullDisplayName": "Zacian 045/94 Phantasmal Flames",
+    "fullDisplayName": "Zacian 045/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2783,18 +3314,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-045-low.png",
-    "imageHighSrc": "cards/me2-045-high.png"
+    "imageHighSrc": "cards/me2-045-high.png",
+    "attacks": [
+      {
+        "name": "Limit Break",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "7383",
-    "externalId": null,
+    "externalId": "me2-44",
     "tcgdex_id": "me02-044",
     "localId": "044",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "044/94",
+    "cardNumber": "044/094",
     "cardName": "Alcremie",
-    "fullDisplayName": "Alcremie 044/94 Phantasmal Flames",
+    "fullDisplayName": "Alcremie 044/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2816,18 +3353,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-044-low.png",
-    "imageHighSrc": "cards/me2-044-high.png"
+    "imageHighSrc": "cards/me2-044-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Circle",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7381",
-    "externalId": null,
+    "externalId": "me2-43",
     "tcgdex_id": "me02-043",
     "localId": "043",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "043/94",
+    "cardNumber": "043/094",
     "cardName": "Milcery",
-    "fullDisplayName": "Milcery 043/94 Phantasmal Flames",
+    "fullDisplayName": "Milcery 043/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2849,18 +3392,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-043-low.png",
-    "imageHighSrc": "cards/me2-043-high.png"
+    "imageHighSrc": "cards/me2-043-high.png",
+    "attacks": [
+      {
+        "name": "Draining Kiss",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7379",
-    "externalId": null,
+    "externalId": "me2-42",
     "tcgdex_id": "me02-042",
     "localId": "042",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "042/94",
+    "cardNumber": "042/094",
     "cardName": "Mimikyu",
-    "fullDisplayName": "Mimikyu 042/94 Phantasmal Flames",
+    "fullDisplayName": "Mimikyu 042/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2882,18 +3431,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-042-low.png",
-    "imageHighSrc": "cards/me2-042-high.png"
+    "imageHighSrc": "cards/me2-042-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7377",
-    "externalId": null,
+    "externalId": "me2-41",
     "tcgdex_id": "me02-041",
     "localId": "041",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "041/94",
+    "cardNumber": "041/094",
     "cardName": "Mega Diancie ex",
-    "fullDisplayName": "Mega Diancie ex 041/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Diancie ex 041/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2917,18 +3476,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-041-low.png",
-    "imageHighSrc": "cards/me2-041-high.png"
+    "imageHighSrc": "cards/me2-041-high.png",
+    "attacks": [
+      {
+        "name": "Garland Ray",
+        "damage": "120×"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7375",
-    "externalId": null,
+    "externalId": "me2-40",
     "tcgdex_id": "me02-040",
     "localId": "040",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "040/94",
+    "cardNumber": "040/094",
     "cardName": "Meloetta",
-    "fullDisplayName": "Meloetta 040/94 Phantasmal Flames",
+    "fullDisplayName": "Meloetta 040/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2950,18 +3516,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-040-low.png",
-    "imageHighSrc": "cards/me2-040-high.png"
+    "imageHighSrc": "cards/me2-040-high.png",
+    "attacks": [
+      {
+        "name": "Soothing Melody",
+        "damage": null
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7373",
-    "externalId": null,
+    "externalId": "me2-39",
     "tcgdex_id": "me02-039",
     "localId": "039",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "039/94",
+    "cardNumber": "039/094",
     "cardName": "Cresselia",
-    "fullDisplayName": "Cresselia 039/94 Phantasmal Flames",
+    "fullDisplayName": "Cresselia 039/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2983,18 +3559,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-039-low.png",
-    "imageHighSrc": "cards/me2-039-high.png"
+    "imageHighSrc": "cards/me2-039-high.png",
+    "attacks": [
+      {
+        "name": "Swelling Light",
+        "damage": null
+      },
+      {
+        "name": "Aurora Beam",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "7371",
-    "externalId": null,
+    "externalId": "me2-38",
     "tcgdex_id": "me02-038",
     "localId": "038",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "038/94",
+    "cardNumber": "038/094",
     "cardName": "Granbull",
-    "fullDisplayName": "Granbull 038/94 Phantasmal Flames",
+    "fullDisplayName": "Granbull 038/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3016,18 +3602,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-038-low.png",
-    "imageHighSrc": "cards/me2-038-high.png"
+    "imageHighSrc": "cards/me2-038-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "50"
+      },
+      {
+        "name": "Finishing Blow",
+        "damage": "90+"
+      }
+    ]
   },
   {
     "masterCardId": "7369",
-    "externalId": null,
+    "externalId": "me2-37",
     "tcgdex_id": "me02-037",
     "localId": "037",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "037/94",
+    "cardNumber": "037/094",
     "cardName": "Snubbull",
-    "fullDisplayName": "Snubbull 037/94 Phantasmal Flames",
+    "fullDisplayName": "Snubbull 037/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3049,18 +3645,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-037-low.png",
-    "imageHighSrc": "cards/me2-037-high.png"
+    "imageHighSrc": "cards/me2-037-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7367",
-    "externalId": null,
+    "externalId": "me2-36",
     "tcgdex_id": "me02-036",
     "localId": "036",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "036/94",
+    "cardNumber": "036/094",
     "cardName": "Mismagius ex",
-    "fullDisplayName": "Mismagius ex 036/94 Phantasmal Flames",
+    "fullDisplayName": "Mismagius ex 036/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3083,18 +3685,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-036-low.png",
-    "imageHighSrc": "cards/me2-036-high.png"
+    "imageHighSrc": "cards/me2-036-high.png",
+    "attacks": [
+      {
+        "name": "Hexa-Magic",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7365",
-    "externalId": null,
+    "externalId": "me2-35",
     "tcgdex_id": "me02-035",
     "localId": "035",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "035/94",
+    "cardNumber": "035/094",
     "cardName": "Misdreavus",
-    "fullDisplayName": "Misdreavus 035/94 Phantasmal Flames",
+    "fullDisplayName": "Misdreavus 035/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3116,18 +3725,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-035-low.png",
-    "imageHighSrc": "cards/me2-035-high.png"
+    "imageHighSrc": "cards/me2-035-high.png",
+    "attacks": [
+      {
+        "name": "Petty Grudge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7363",
-    "externalId": null,
+    "externalId": "me2-34",
     "tcgdex_id": "me02-034",
     "localId": "034",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "034/94",
+    "cardNumber": "034/094",
     "cardName": "Pawmot",
-    "fullDisplayName": "Pawmot 034/94 Phantasmal Flames",
+    "fullDisplayName": "Pawmot 034/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3149,18 +3764,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-034-low.png",
-    "imageHighSrc": "cards/me2-034-high.png"
+    "imageHighSrc": "cards/me2-034-high.png",
+    "attacks": [
+      {
+        "name": "Voltaic Fist",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "7361",
-    "externalId": null,
+    "externalId": "me2-33",
     "tcgdex_id": "me02-033",
     "localId": "033",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "033/94",
+    "cardNumber": "033/094",
     "cardName": "Pawmo",
-    "fullDisplayName": "Pawmo 033/94 Phantasmal Flames",
+    "fullDisplayName": "Pawmo 033/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3182,18 +3803,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-033-low.png",
-    "imageHighSrc": "cards/me2-033-high.png"
+    "imageHighSrc": "cards/me2-033-high.png",
+    "attacks": [
+      {
+        "name": "Electric Punch",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "7359",
-    "externalId": null,
+    "externalId": "me2-32",
     "tcgdex_id": "me02-032",
     "localId": "032",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "032/94",
+    "cardNumber": "032/094",
     "cardName": "Pawmi",
-    "fullDisplayName": "Pawmi 032/94 Phantasmal Flames",
+    "fullDisplayName": "Pawmi 032/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3215,18 +3842,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-032-low.png",
-    "imageHighSrc": "cards/me2-032-high.png"
+    "imageHighSrc": "cards/me2-032-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Tiny Charge",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7357",
-    "externalId": null,
+    "externalId": "me2-31",
     "tcgdex_id": "me02-031",
     "localId": "031",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "031/94",
+    "cardNumber": "031/094",
     "cardName": "Boltund",
-    "fullDisplayName": "Boltund 031/94 Phantasmal Flames",
+    "fullDisplayName": "Boltund 031/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3248,18 +3885,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-031-low.png",
-    "imageHighSrc": "cards/me2-031-high.png"
+    "imageHighSrc": "cards/me2-031-high.png",
+    "attacks": [
+      {
+        "name": "Electric Run",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "7355",
-    "externalId": null,
+    "externalId": "me2-30",
     "tcgdex_id": "me02-030",
     "localId": "030",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "030/94",
+    "cardNumber": "030/094",
     "cardName": "Yamper",
-    "fullDisplayName": "Yamper 030/94 Phantasmal Flames",
+    "fullDisplayName": "Yamper 030/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3281,18 +3924,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-030-low.png",
-    "imageHighSrc": "cards/me2-030-high.png"
+    "imageHighSrc": "cards/me2-030-high.png",
+    "attacks": [
+      {
+        "name": "Play Rough",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7353",
-    "externalId": null,
+    "externalId": "me2-29",
     "tcgdex_id": "me02-029",
     "localId": "029",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "029/94",
+    "cardNumber": "029/094",
     "cardName": "Rotom ex",
-    "fullDisplayName": "Rotom ex 029/94 Phantasmal Flames",
+    "fullDisplayName": "Rotom ex 029/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3315,18 +3964,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-029-low.png",
-    "imageHighSrc": "cards/me2-029-high.png"
+    "imageHighSrc": "cards/me2-029-high.png",
+    "attacks": [
+      {
+        "name": "Thunderbolt",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7351",
-    "externalId": null,
+    "externalId": "me2-28",
     "tcgdex_id": "me02-028",
     "localId": "028",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "028/94",
+    "cardNumber": "028/094",
     "cardName": "Prinplup",
-    "fullDisplayName": "Prinplup 028/94 Phantasmal Flames",
+    "fullDisplayName": "Prinplup 028/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3348,18 +4004,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-028-low.png",
-    "imageHighSrc": "cards/me2-028-high.png"
+    "imageHighSrc": "cards/me2-028-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "20"
+      },
+      {
+        "name": "Targeted Dive",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7347",
-    "externalId": null,
+    "externalId": "me2-27",
     "tcgdex_id": "me02-027",
     "localId": "027",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "027/94",
+    "cardNumber": "027/094",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 027/94 Phantasmal Flames",
+    "fullDisplayName": "Piplup 027/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3381,18 +4047,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-027-low.png",
-    "imageHighSrc": "cards/me2-027-high.png"
+    "imageHighSrc": "cards/me2-027-high.png",
+    "attacks": [
+      {
+        "name": "Call for Support",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7344",
-    "externalId": null,
+    "externalId": "me2-26",
     "tcgdex_id": "me02-026",
     "localId": "026",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "026/94",
+    "cardNumber": "026/094",
     "cardName": "Suicune",
-    "fullDisplayName": "Suicune 026/94 Phantasmal Flames",
+    "fullDisplayName": "Suicune 026/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3414,18 +4090,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-026-low.png",
-    "imageHighSrc": "cards/me2-026-high.png"
+    "imageHighSrc": "cards/me2-026-high.png",
+    "attacks": [
+      {
+        "name": "Crystal Fall",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "7342",
-    "externalId": null,
+    "externalId": "me2-25",
     "tcgdex_id": "me02-025",
     "localId": "025",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "025/94",
+    "cardNumber": "025/094",
     "cardName": "Mamoswine",
-    "fullDisplayName": "Mamoswine 025/94 Phantasmal Flames",
+    "fullDisplayName": "Mamoswine 025/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3447,18 +4129,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-025-low.png",
-    "imageHighSrc": "cards/me2-025-high.png"
+    "imageHighSrc": "cards/me2-025-high.png",
+    "attacks": [
+      {
+        "name": "Wreck",
+        "damage": "120+"
+      },
+      {
+        "name": "Blizzard Edge",
+        "damage": "200"
+      }
+    ]
   },
   {
     "masterCardId": "7339",
-    "externalId": null,
+    "externalId": "me2-24",
     "tcgdex_id": "me02-024",
     "localId": "024",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "024/94",
+    "cardNumber": "024/094",
     "cardName": "Piloswine",
-    "fullDisplayName": "Piloswine 024/94 Phantasmal Flames",
+    "fullDisplayName": "Piloswine 024/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3480,18 +4172,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-024-low.png",
-    "imageHighSrc": "cards/me2-024-high.png"
+    "imageHighSrc": "cards/me2-024-high.png",
+    "attacks": [
+      {
+        "name": "Rising Lunge",
+        "damage": "30+"
+      },
+      {
+        "name": "Frost Smash",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7336",
-    "externalId": null,
+    "externalId": "me2-23",
     "tcgdex_id": "me02-023",
     "localId": "023",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "023/94",
+    "cardNumber": "023/094",
     "cardName": "Swinub",
-    "fullDisplayName": "Swinub 023/94 Phantasmal Flames",
+    "fullDisplayName": "Swinub 023/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3513,18 +4215,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-023-low.png",
-    "imageHighSrc": "cards/me2-023-high.png"
+    "imageHighSrc": "cards/me2-023-high.png",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10"
+      },
+      {
+        "name": "Icy Snow",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7333",
-    "externalId": null,
+    "externalId": "me2-22",
     "tcgdex_id": "me02-022",
     "localId": "022",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "022/94",
+    "cardNumber": "022/094",
     "cardName": "Dewgong",
-    "fullDisplayName": "Dewgong 022/94 Phantasmal Flames",
+    "fullDisplayName": "Dewgong 022/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3546,18 +4258,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-022-low.png",
-    "imageHighSrc": "cards/me2-022-high.png"
+    "imageHighSrc": "cards/me2-022-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "70×"
+      }
+    ]
   },
   {
     "masterCardId": "7330",
-    "externalId": null,
+    "externalId": "me2-21",
     "tcgdex_id": "me02-021",
     "localId": "021",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "021/94",
+    "cardNumber": "021/094",
     "cardName": "Seel",
-    "fullDisplayName": "Seel 021/94 Phantasmal Flames",
+    "fullDisplayName": "Seel 021/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3579,18 +4297,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-021-low.png",
-    "imageHighSrc": "cards/me2-021-high.png"
+    "imageHighSrc": "cards/me2-021-high.png",
+    "attacks": [
+      {
+        "name": "Bubble Drain",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7328",
-    "externalId": null,
+    "externalId": "me2-20",
     "tcgdex_id": "me02-020",
     "localId": "020",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "020/94",
+    "cardNumber": "020/094",
     "cardName": "Ceruledge",
-    "fullDisplayName": "Ceruledge 020/94 Phantasmal Flames",
+    "fullDisplayName": "Ceruledge 020/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3612,18 +4336,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-020-low.png",
-    "imageHighSrc": "cards/me2-020-high.png"
+    "imageHighSrc": "cards/me2-020-high.png",
+    "attacks": [
+      {
+        "name": "Infernal Slash",
+        "damage": "220"
+      }
+    ]
   },
   {
     "masterCardId": "7325",
-    "externalId": null,
+    "externalId": "me2-19",
     "tcgdex_id": "me02-019",
     "localId": "019",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "019/94",
+    "cardNumber": "019/094",
     "cardName": "Charcadet",
-    "fullDisplayName": "Charcadet 019/94 Phantasmal Flames",
+    "fullDisplayName": "Charcadet 019/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3645,18 +4375,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-019-low.png",
-    "imageHighSrc": "cards/me2-019-high.png"
+    "imageHighSrc": "cards/me2-019-high.png",
+    "attacks": [
+      {
+        "name": "Gather Strength",
+        "damage": null
+      },
+      {
+        "name": "Chop",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7322",
-    "externalId": null,
+    "externalId": "me2-18",
     "tcgdex_id": "me02-018",
     "localId": "018",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "018/94",
+    "cardNumber": "018/094",
     "cardName": "Oricorio ex",
-    "fullDisplayName": "Oricorio ex 018/94 Phantasmal Flames",
+    "fullDisplayName": "Oricorio ex 018/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3679,18 +4419,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-018-low.png",
-    "imageHighSrc": "cards/me2-018-high.png"
+    "imageHighSrc": "cards/me2-018-high.png",
+    "attacks": [
+      {
+        "name": "Fire Wing",
+        "damage": "110"
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "7319",
-    "externalId": null,
+    "externalId": "me2-17",
     "tcgdex_id": "me02-017",
     "localId": "017",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "017/94",
+    "cardNumber": "017/094",
     "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram 017/94 Phantasmal Flames",
+    "fullDisplayName": "Reshiram 017/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3712,18 +4459,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-017-low.png",
-    "imageHighSrc": "cards/me2-017-high.png"
+    "imageHighSrc": "cards/me2-017-high.png",
+    "attacks": [
+      {
+        "name": "Combustion",
+        "damage": "30"
+      },
+      {
+        "name": "Burning Flare",
+        "damage": "240"
+      }
+    ]
   },
   {
     "masterCardId": "7316",
-    "externalId": null,
+    "externalId": "me2-16",
     "tcgdex_id": "me02-016",
     "localId": "016",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "016/94",
+    "cardNumber": "016/094",
     "cardName": "Darmanitan",
-    "fullDisplayName": "Darmanitan 016/94 Phantasmal Flames",
+    "fullDisplayName": "Darmanitan 016/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3745,18 +4502,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-016-low.png",
-    "imageHighSrc": "cards/me2-016-high.png"
+    "imageHighSrc": "cards/me2-016-high.png",
+    "attacks": [
+      {
+        "name": "Blaze Ball",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "7313",
-    "externalId": null,
+    "externalId": "me2-15",
     "tcgdex_id": "me02-015",
     "localId": "015",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "015/94",
+    "cardNumber": "015/094",
     "cardName": "Darumaka",
-    "fullDisplayName": "Darumaka 015/94 Phantasmal Flames",
+    "fullDisplayName": "Darumaka 015/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3778,18 +4541,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-015-low.png",
-    "imageHighSrc": "cards/me2-015-high.png"
+    "imageHighSrc": "cards/me2-015-high.png",
+    "attacks": [
+      {
+        "name": "Blaze Ball",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7311",
-    "externalId": null,
+    "externalId": "me2-14",
     "tcgdex_id": "me02-014",
     "localId": "014",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "014/94",
+    "cardNumber": "014/094",
     "cardName": "Moltres",
-    "fullDisplayName": "Moltres 014/94 Phantasmal Flames",
+    "fullDisplayName": "Moltres 014/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3811,18 +4580,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-014-low.png",
-    "imageHighSrc": "cards/me2-014-high.png"
+    "imageHighSrc": "cards/me2-014-high.png",
+    "attacks": [
+      {
+        "name": "Fighting Wings",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7307",
-    "externalId": null,
+    "externalId": "me2-13",
     "tcgdex_id": "me02-013",
     "localId": "013",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "013/94",
+    "cardNumber": "013/094",
     "cardName": "Mega Charizard X ex",
-    "fullDisplayName": "Mega Charizard X ex 013/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Charizard X ex 013/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3846,18 +4621,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-013-low.png",
-    "imageHighSrc": "cards/me2-013-high.png"
+    "imageHighSrc": "cards/me2-013-high.png",
+    "attacks": [
+      {
+        "name": "Inferno X",
+        "damage": "90×"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7302",
-    "externalId": null,
+    "externalId": "me2-12",
     "tcgdex_id": "me02-012",
     "localId": "012",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "012/94",
+    "cardNumber": "012/094",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 012/94 Phantasmal Flames",
+    "fullDisplayName": "Charmeleon 012/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3879,18 +4661,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-012-low.png",
-    "imageHighSrc": "cards/me2-012-high.png"
+    "imageHighSrc": "cards/me2-012-high.png",
+    "attacks": [
+      {
+        "name": "Steady Firebreathing",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7297",
-    "externalId": null,
+    "externalId": "me2-11",
     "tcgdex_id": "me02-011",
     "localId": "011",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "011/94",
+    "cardNumber": "011/094",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 011/94 Phantasmal Flames",
+    "fullDisplayName": "Charmander 011/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3912,18 +4700,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-011-low.png",
-    "imageHighSrc": "cards/me2-011-high.png"
+    "imageHighSrc": "cards/me2-011-high.png",
+    "attacks": [
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7291",
-    "externalId": null,
+    "externalId": "me2-10",
     "tcgdex_id": "me02-010",
     "localId": "010",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "010/94",
+    "cardNumber": "010/094",
     "cardName": "Lokix",
-    "fullDisplayName": "Lokix 010/94 Phantasmal Flames",
+    "fullDisplayName": "Lokix 010/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3945,18 +4739,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-010-low.png",
-    "imageHighSrc": "cards/me2-010-high.png"
+    "imageHighSrc": "cards/me2-010-high.png",
+    "attacks": [
+      {
+        "name": "Low Kick",
+        "damage": "30"
+      },
+      {
+        "name": "Jumping Shot",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "7287",
-    "externalId": null,
+    "externalId": "me2-9",
     "tcgdex_id": "me02-009",
     "localId": "009",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "009/94",
+    "cardNumber": "009/094",
     "cardName": "Nymble",
-    "fullDisplayName": "Nymble 009/94 Phantasmal Flames",
+    "fullDisplayName": "Nymble 009/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3978,18 +4782,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-009-low.png",
-    "imageHighSrc": "cards/me2-009-high.png"
+    "imageHighSrc": "cards/me2-009-high.png",
+    "attacks": [
+      {
+        "name": "Flail Around",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "7282",
-    "externalId": null,
+    "externalId": "me2-8",
     "tcgdex_id": "me02-008",
     "localId": "008",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "008/94",
+    "cardNumber": "008/094",
     "cardName": "Genesect",
-    "fullDisplayName": "Genesect 008/94 Phantasmal Flames",
+    "fullDisplayName": "Genesect 008/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4011,18 +4821,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-008-low.png",
-    "imageHighSrc": "cards/me2-008-high.png"
+    "imageHighSrc": "cards/me2-008-high.png",
+    "attacks": [
+      {
+        "name": "Bug's Cannon",
+        "damage": null
+      },
+      {
+        "name": "Speed Attack",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "7277",
-    "externalId": null,
+    "externalId": "me2-7",
     "tcgdex_id": "me02-007",
     "localId": "007",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "007/94",
+    "cardNumber": "007/094",
     "cardName": "Ludicolo",
-    "fullDisplayName": "Ludicolo 007/94 Phantasmal Flames",
+    "fullDisplayName": "Ludicolo 007/094 Phantasmal Flames",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4044,18 +4864,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-007-low.png",
-    "imageHighSrc": "cards/me2-007-high.png"
+    "imageHighSrc": "cards/me2-007-high.png",
+    "attacks": [
+      {
+        "name": "Lunge Out",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "7273",
-    "externalId": null,
+    "externalId": "me2-6",
     "tcgdex_id": "me02-006",
     "localId": "006",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "006/94",
+    "cardNumber": "006/094",
     "cardName": "Lombre",
-    "fullDisplayName": "Lombre 006/94 Phantasmal Flames",
+    "fullDisplayName": "Lombre 006/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4077,18 +4903,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-006-low.png",
-    "imageHighSrc": "cards/me2-006-high.png"
+    "imageHighSrc": "cards/me2-006-high.png",
+    "attacks": [
+      {
+        "name": "Mega Drain",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7268",
-    "externalId": null,
+    "externalId": "me2-5",
     "tcgdex_id": "me02-005",
     "localId": "005",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "005/94",
+    "cardNumber": "005/094",
     "cardName": "Lotad",
-    "fullDisplayName": "Lotad 005/94 Phantasmal Flames",
+    "fullDisplayName": "Lotad 005/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4110,18 +4942,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-005-low.png",
-    "imageHighSrc": "cards/me2-005-high.png"
+    "imageHighSrc": "cards/me2-005-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7260",
-    "externalId": null,
+    "externalId": "me2-4",
     "tcgdex_id": "me02-004",
     "localId": "004",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "004/94",
+    "cardNumber": "004/094",
     "cardName": "Mega Heracross ex",
-    "fullDisplayName": "Mega Heracross ex 004/94 Phantasmal Flames",
+    "fullDisplayName": "Mega Heracross ex 004/094 Phantasmal Flames",
     "rarity": "Double Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4145,18 +4983,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-004-low.png",
-    "imageHighSrc": "cards/me2-004-high.png"
+    "imageHighSrc": "cards/me2-004-high.png",
+    "attacks": [
+      {
+        "name": "Juggernaut Horn",
+        "damage": "100+"
+      },
+      {
+        "name": "Mountain Ramming",
+        "damage": "170"
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
   },
   {
     "masterCardId": "7248",
-    "externalId": null,
+    "externalId": "me2-3",
     "tcgdex_id": "me02-003",
     "localId": "003",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "003/94",
+    "cardNumber": "003/094",
     "cardName": "Vileplume",
-    "fullDisplayName": "Vileplume 003/94 Phantasmal Flames",
+    "fullDisplayName": "Vileplume 003/094 Phantasmal Flames",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4178,18 +5027,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-003-low.png",
-    "imageHighSrc": "cards/me2-003-high.png"
+    "imageHighSrc": "cards/me2-003-high.png",
+    "attacks": [
+      {
+        "name": "Pollen Bomb",
+        "damage": "30"
+      },
+      {
+        "name": "Lively Flower",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "7236",
-    "externalId": null,
+    "externalId": "me2-2",
     "tcgdex_id": "me02-002",
     "localId": "002",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "002/94",
+    "cardNumber": "002/094",
     "cardName": "Gloom",
-    "fullDisplayName": "Gloom 002/94 Phantasmal Flames",
+    "fullDisplayName": "Gloom 002/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4211,18 +5070,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-002-low.png",
-    "imageHighSrc": "cards/me2-002-high.png"
+    "imageHighSrc": "cards/me2-002-high.png",
+    "attacks": [
+      {
+        "name": "Disperse Drool",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7229",
-    "externalId": null,
+    "externalId": "me2-1",
     "tcgdex_id": "me02-001",
     "localId": "001",
     "setCode": "me02",
     "setTcgdexId": "me02",
-    "cardNumber": "001/94",
+    "cardNumber": "001/094",
     "cardName": "Oddish",
-    "fullDisplayName": "Oddish 001/94 Phantasmal Flames",
+    "fullDisplayName": "Oddish 001/094 Phantasmal Flames",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4244,6 +5109,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/me2-001-low.png",
-    "imageHighSrc": "cards/me2-001-high.png"
+    "imageHighSrc": "cards/me2-001-high.png",
+    "attacks": [
+      {
+        "name": "Seed Bomb",
+        "damage": "20"
+      }
+    ]
   }
 ]

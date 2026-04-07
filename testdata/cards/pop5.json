@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "9258",
-    "externalId": null,
+    "externalId": "pop5-17",
     "tcgdex_id": "pop5-17",
     "localId": "017",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "017/17",
+    "cardNumber": "17/17",
     "cardName": "Umbreon ★",
-    "fullDisplayName": "Umbreon ★ 017/17 POP Series 5",
+    "fullDisplayName": "Umbreon ★ 17/17 POP Series 5",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -31,18 +31,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pop5-017-low.png",
-    "imageHighSrc": "cards/pop5-017-high.png"
+    "imageHighSrc": "cards/pop5-017-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "9248",
-    "externalId": null,
+    "externalId": "pop5-16",
     "tcgdex_id": "pop5-16",
     "localId": "016",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "016/17",
+    "cardNumber": "16/17",
     "cardName": "Espeon ★",
-    "fullDisplayName": "Espeon ★ 016/17 POP Series 5",
+    "fullDisplayName": "Espeon ★ 16/17 POP Series 5",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -65,18 +72,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pop5-016-low.png",
-    "imageHighSrc": "cards/pop5-016-high.png"
+    "imageHighSrc": "cards/pop5-016-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Boom",
+        "damage": "30+"
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck."
   },
   {
     "masterCardId": "9242",
-    "externalId": null,
+    "externalId": "pop5-15",
     "tcgdex_id": "pop5-15",
     "localId": "015",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "015/17",
+    "cardNumber": "15/17",
     "cardName": "Zangoose δ",
-    "fullDisplayName": "Zangoose δ 015/17 POP Series 5",
+    "fullDisplayName": "Zangoose δ 15/17 POP Series 5",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -98,18 +112,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-015-low.png",
-    "imageHighSrc": "cards/pop5-015-high.png"
+    "imageHighSrc": "cards/pop5-015-high.png",
+    "attacks": [
+      {
+        "name": "Detect",
+        "damage": null
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "9233",
-    "externalId": null,
+    "externalId": "pop5-14",
     "tcgdex_id": "pop5-14",
     "localId": "014",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "014/17",
+    "cardNumber": "14/17",
     "cardName": "Pelipper δ",
-    "fullDisplayName": "Pelipper δ 014/17 POP Series 5",
+    "fullDisplayName": "Pelipper δ 14/17 POP Series 5",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -131,18 +155,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-014-low.png",
-    "imageHighSrc": "cards/pop5-014-high.png"
+    "imageHighSrc": "cards/pop5-014-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Wing",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9224",
-    "externalId": null,
+    "externalId": "pop5-13",
     "tcgdex_id": "pop5-13",
     "localId": "013",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "013/17",
+    "cardNumber": "13/17",
     "cardName": "Pikachu δ",
-    "fullDisplayName": "Pikachu δ 013/17 POP Series 5",
+    "fullDisplayName": "Pikachu δ 13/17 POP Series 5",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -164,18 +194,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-013-low.png",
-    "imageHighSrc": "cards/pop5-013-high.png"
+    "imageHighSrc": "cards/pop5-013-high.png",
+    "attacks": [
+      {
+        "name": "Electric Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Heavy Metal",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "9211",
-    "externalId": null,
+    "externalId": "pop5-12",
     "tcgdex_id": "pop5-12",
     "localId": "012",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "012/17",
+    "cardNumber": "12/17",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 012/17 POP Series 5",
+    "fullDisplayName": "Pikachu 12/17 POP Series 5",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -197,18 +237,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-012-low.png",
-    "imageHighSrc": "cards/pop5-012-high.png"
+    "imageHighSrc": "cards/pop5-012-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Ball",
+        "damage": "10"
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9201",
-    "externalId": null,
+    "externalId": "pop5-11",
     "tcgdex_id": "pop5-11",
     "localId": "011",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "011/17",
+    "cardNumber": "11/17",
     "cardName": "Meowth δ",
-    "fullDisplayName": "Meowth δ 011/17 POP Series 5",
+    "fullDisplayName": "Meowth δ 11/17 POP Series 5",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -230,18 +280,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-011-low.png",
-    "imageHighSrc": "cards/pop5-011-high.png"
+    "imageHighSrc": "cards/pop5-011-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9192",
-    "externalId": null,
+    "externalId": "pop5-10",
     "tcgdex_id": "pop5-10",
     "localId": "010",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "010/17",
+    "cardNumber": "10/17",
     "cardName": "Charmander δ",
-    "fullDisplayName": "Charmander δ 010/17 POP Series 5",
+    "fullDisplayName": "Charmander δ 10/17 POP Series 5",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -263,18 +319,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-010-low.png",
-    "imageHighSrc": "cards/pop5-010-high.png"
+    "imageHighSrc": "cards/pop5-010-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "9185",
-    "externalId": null,
+    "externalId": "pop5-9",
     "tcgdex_id": "pop5-9",
     "localId": "009",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "009/17",
+    "cardNumber": "9/17",
     "cardName": "δ Rainbow Energy",
-    "fullDisplayName": "δ Rainbow Energy 009/17 POP Series 5",
+    "fullDisplayName": "δ Rainbow Energy 9/17 POP Series 5",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -292,18 +358,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pop5-009-low.png",
-    "imageHighSrc": "cards/pop5-009-high.png"
+    "imageHighSrc": "cards/pop5-009-high.png",
+    "rules": "δ Rainbow Energy provides Colorless Energy. While attached to a Pokémon that has δ on its card, δ Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.)"
   },
   {
     "masterCardId": "9174",
-    "externalId": null,
+    "externalId": "pop5-8",
     "tcgdex_id": "pop5-8",
     "localId": "008",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "008/17",
+    "cardNumber": "8/17",
     "cardName": "Boost Energy",
-    "fullDisplayName": "Boost Energy 008/17 POP Series 5",
+    "fullDisplayName": "Boost Energy 8/17 POP Series 5",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -321,18 +388,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-008-low.png",
-    "imageHighSrc": "cards/pop5-008-high.png"
+    "imageHighSrc": "cards/pop5-008-high.png",
+    "rules": "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy."
   },
   {
     "masterCardId": "9165",
-    "externalId": null,
+    "externalId": "pop5-7",
     "tcgdex_id": "pop5-7",
     "localId": "007",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "007/17",
+    "cardNumber": "7/17",
     "cardName": "Rare Candy",
-    "fullDisplayName": "Rare Candy 007/17 POP Series 5",
+    "fullDisplayName": "Rare Candy 7/17 POP Series 5",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -350,18 +418,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-007-low.png",
-    "imageHighSrc": "cards/pop5-007-high.png"
+    "imageHighSrc": "cards/pop5-007-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pokémon in your hand, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.)"
   },
   {
     "masterCardId": "9158",
-    "externalId": null,
+    "externalId": "pop5-6",
     "tcgdex_id": "pop5-6",
     "localId": "006",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "006/17",
+    "cardNumber": "6/17",
     "cardName": "Bill's Maintenance",
-    "fullDisplayName": "Bill's Maintenance 006/17 POP Series 5",
+    "fullDisplayName": "Bill's Maintenance 6/17 POP Series 5",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -379,18 +448,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/pop5-006-low.png",
-    "imageHighSrc": "cards/pop5-006-high.png"
+    "imageHighSrc": "cards/pop5-006-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nIf you have any cards in your hand, shuffle 1 of them into your deck, then draw 3 cards."
   },
   {
     "masterCardId": "9150",
-    "externalId": null,
+    "externalId": "pop5-5",
     "tcgdex_id": "pop5-5",
     "localId": "005",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "005/17",
+    "cardNumber": "5/17",
     "cardName": "Charmeleon δ",
-    "fullDisplayName": "Charmeleon δ 005/17 POP Series 5",
+    "fullDisplayName": "Charmeleon δ 5/17 POP Series 5",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -412,18 +482,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-005-low.png",
-    "imageHighSrc": "cards/pop5-005-high.png"
+    "imageHighSrc": "cards/pop5-005-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "9140",
-    "externalId": null,
+    "externalId": "pop5-4",
     "tcgdex_id": "pop5-4",
     "localId": "004",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "004/17",
+    "cardNumber": "4/17",
     "cardName": "Double Rainbow Energy",
-    "fullDisplayName": "Double Rainbow Energy 004/17 POP Series 5",
+    "fullDisplayName": "Double Rainbow Energy 4/17 POP Series 5",
     "rarity": "Rare",
     "category": "Energy",
     "stage": null,
@@ -441,18 +521,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-004-low.png",
-    "imageHighSrc": "cards/pop5-004-high.png"
+    "imageHighSrc": "cards/pop5-004-high.png",
+    "rules": "Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (before applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy."
   },
   {
     "masterCardId": "9131",
-    "externalId": null,
+    "externalId": "pop5-3",
     "tcgdex_id": "pop5-3",
     "localId": "003",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "003/17",
+    "cardNumber": "3/17",
     "cardName": "Mew δ",
-    "fullDisplayName": "Mew δ 003/17 POP Series 5",
+    "fullDisplayName": "Mew δ 3/17 POP Series 5",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -474,18 +555,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-003-low.png",
-    "imageHighSrc": "cards/pop5-003-high.png"
+    "imageHighSrc": "cards/pop5-003-high.png",
+    "attacks": [
+      {
+        "name": "Copy",
+        "damage": null
+      },
+      {
+        "name": "Extra Draw",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "9123",
-    "externalId": null,
+    "externalId": "pop5-2",
     "tcgdex_id": "pop5-2",
     "localId": "002",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "002/17",
+    "cardNumber": "2/17",
     "cardName": "Lugia",
-    "fullDisplayName": "Lugia 002/17 POP Series 5",
+    "fullDisplayName": "Lugia 2/17 POP Series 5",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -507,18 +598,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-002-low.png",
-    "imageHighSrc": "cards/pop5-002-high.png"
+    "imageHighSrc": "cards/pop5-002-high.png",
+    "attacks": [
+      {
+        "name": "Super Psy Bolt",
+        "damage": "20"
+      },
+      {
+        "name": "Aerowing",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "9109",
-    "externalId": null,
+    "externalId": "pop5-1",
     "tcgdex_id": "pop5-1",
     "localId": "001",
     "setCode": "pop5",
     "setTcgdexId": "pop5",
-    "cardNumber": "001/17",
+    "cardNumber": "1/17",
     "cardName": "Ho-Oh",
-    "fullDisplayName": "Ho-Oh 001/17 POP Series 5",
+    "fullDisplayName": "Ho-Oh 1/17 POP Series 5",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -540,6 +641,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/pop5-001-low.png",
-    "imageHighSrc": "cards/pop5-001-high.png"
+    "imageHighSrc": "cards/pop5-001-high.png",
+    "attacks": [
+      {
+        "name": "Fire Wing",
+        "damage": "20"
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "60"
+      }
+    ]
   }
 ]

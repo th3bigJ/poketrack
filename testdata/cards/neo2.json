@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "8000",
-    "externalId": null,
+    "externalId": "neo2-75",
     "tcgdex_id": "neo2-75",
     "localId": "075",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "075/75",
+    "cardNumber": "75/75",
     "cardName": "Energy Ark",
-    "fullDisplayName": "Energy Ark 075/75 Neo Discovery",
+    "fullDisplayName": "Energy Ark 75/75 Neo Discovery",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -24,18 +24,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-075-low.png",
-    "imageHighSrc": "cards/neo2-075-high.png"
+    "imageHighSrc": "cards/neo2-075-high.png",
+    "rules": "Flip 2 coins. For each heads, search your deck for a Basic Energy card. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward."
   },
   {
     "masterCardId": "7995",
-    "externalId": null,
+    "externalId": "neo2-74",
     "tcgdex_id": "neo2-74",
     "localId": "074",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "074/75",
+    "cardNumber": "74/75",
     "cardName": "Ruin Wall",
-    "fullDisplayName": "Ruin Wall 074/75 Neo Discovery",
+    "fullDisplayName": "Ruin Wall 74/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -51,18 +52,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-074-low.png",
-    "imageHighSrc": "cards/neo2-074-high.png"
+    "imageHighSrc": "cards/neo2-074-high.png",
+    "rules": "Search your deck for a card with Unown in its name and put it onto your Bench. Shuffle your deck afterward. (You can't play this card if your Bench is full.)"
   },
   {
     "masterCardId": "7991",
-    "externalId": null,
+    "externalId": "neo2-73",
     "tcgdex_id": "neo2-73",
     "localId": "073",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "073/75",
+    "cardNumber": "73/75",
     "cardName": "Hyper Devolution Spray",
-    "fullDisplayName": "Hyper Devolution Spray 073/75 Neo Discovery",
+    "fullDisplayName": "Hyper Devolution Spray 73/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -78,18 +80,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-073-low.png",
-    "imageHighSrc": "cards/neo2-073-high.png"
+    "imageHighSrc": "cards/neo2-073-high.png",
+    "rules": "Choose 1 of your evolved Pokémon. Take the highest Stage Evolution card from that Pokémon and put it into your hand. (You can't evolve a Pokémon the turn you devolve it.)"
   },
   {
     "masterCardId": "7987",
-    "externalId": null,
+    "externalId": "neo2-72",
     "tcgdex_id": "neo2-72",
     "localId": "072",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "072/75",
+    "cardNumber": "72/75",
     "cardName": "Fossil Egg",
-    "fullDisplayName": "Fossil Egg 072/75 Neo Discovery",
+    "fullDisplayName": "Fossil Egg 72/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -105,18 +108,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-072-low.png",
-    "imageHighSrc": "cards/neo2-072-high.png"
+    "imageHighSrc": "cards/neo2-072-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a card that evolves from Mysterious Fossil and put it onto your Bench or put a card that evolves from Mysterious Fossil from your hand onto your Bench. Either way, treat the new card as a Basic Pokémon. If you searched your deck, shuffle it. (You can't play this card if your Bench is full.)"
   },
   {
     "masterCardId": "7982",
-    "externalId": null,
+    "externalId": "neo2-71",
     "tcgdex_id": "neo2-71",
     "localId": "071",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "071/75",
+    "cardNumber": "71/75",
     "cardName": "Wooper",
-    "fullDisplayName": "Wooper 071/75 Neo Discovery",
+    "fullDisplayName": "Wooper 71/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -138,18 +142,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-071-low.png",
-    "imageHighSrc": "cards/neo2-071-high.png"
+    "imageHighSrc": "cards/neo2-071-high.png",
+    "attacks": [
+      {
+        "name": "Slime",
+        "damage": null
+      },
+      {
+        "name": "Tail Slap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7978",
-    "externalId": null,
+    "externalId": "neo2-70",
     "tcgdex_id": "neo2-70",
     "localId": "070",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "070/75",
+    "cardNumber": "70/75",
     "cardName": "Weedle",
-    "fullDisplayName": "Weedle 070/75 Neo Discovery",
+    "fullDisplayName": "Weedle 70/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -171,18 +185,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-070-low.png",
-    "imageHighSrc": "cards/neo2-070-high.png"
+    "imageHighSrc": "cards/neo2-070-high.png",
+    "attacks": [
+      {
+        "name": "Spike Stab",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7973",
-    "externalId": null,
+    "externalId": "neo2-69",
     "tcgdex_id": "neo2-69",
     "localId": "069",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "069/75",
+    "cardNumber": "69/75",
     "cardName": "Unown [O]",
-    "fullDisplayName": "Unown [O] 069/75 Neo Discovery",
+    "fullDisplayName": "Unown [O] 69/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -204,18 +224,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-069-low.png",
-    "imageHighSrc": "cards/neo2-069-high.png"
+    "imageHighSrc": "cards/neo2-069-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7968",
-    "externalId": null,
+    "externalId": "neo2-68",
     "tcgdex_id": "neo2-68",
     "localId": "068",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "068/75",
+    "cardNumber": "68/75",
     "cardName": "Unown [I]",
-    "fullDisplayName": "Unown [I] 068/75 Neo Discovery",
+    "fullDisplayName": "Unown [I] 68/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -237,18 +264,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-068-low.png",
-    "imageHighSrc": "cards/neo2-068-high.png"
+    "imageHighSrc": "cards/neo2-068-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7962",
-    "externalId": null,
+    "externalId": "neo2-67",
     "tcgdex_id": "neo2-67",
     "localId": "067",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "067/75",
+    "cardNumber": "67/75",
     "cardName": "Unown [E]",
-    "fullDisplayName": "Unown [E] 067/75 Neo Discovery",
+    "fullDisplayName": "Unown [E] 67/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -270,18 +304,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-067-low.png",
-    "imageHighSrc": "cards/neo2-067-high.png"
+    "imageHighSrc": "cards/neo2-067-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7958",
-    "externalId": null,
+    "externalId": "neo2-66",
     "tcgdex_id": "neo2-66",
     "localId": "066",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "066/75",
+    "cardNumber": "66/75",
     "cardName": "Tyrogue",
-    "fullDisplayName": "Tyrogue 066/75 Neo Discovery",
+    "fullDisplayName": "Tyrogue 66/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -303,18 +344,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-066-low.png",
-    "imageHighSrc": "cards/neo2-066-high.png"
+    "imageHighSrc": "cards/neo2-066-high.png",
+    "attacks": [
+      {
+        "name": "Smash Punch",
+        "damage": "30"
+      }
+    ],
+    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
   },
   {
     "masterCardId": "7953",
-    "externalId": null,
+    "externalId": "neo2-65",
     "tcgdex_id": "neo2-65",
     "localId": "065",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "065/75",
+    "cardNumber": "65/75",
     "cardName": "Teddiursa",
-    "fullDisplayName": "Teddiursa 065/75 Neo Discovery",
+    "fullDisplayName": "Teddiursa 65/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -336,18 +384,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-065-low.png",
-    "imageHighSrc": "cards/neo2-065-high.png"
+    "imageHighSrc": "cards/neo2-065-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10"
+      },
+      {
+        "name": "Nap Time",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7948",
-    "externalId": null,
+    "externalId": "neo2-64",
     "tcgdex_id": "neo2-64",
     "localId": "064",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "064/75",
+    "cardNumber": "64/75",
     "cardName": "Spinarak",
-    "fullDisplayName": "Spinarak 064/75 Neo Discovery",
+    "fullDisplayName": "Spinarak 64/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -369,18 +427,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-064-low.png",
-    "imageHighSrc": "cards/neo2-064-high.png"
+    "imageHighSrc": "cards/neo2-064-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7943",
-    "externalId": null,
+    "externalId": "neo2-63",
     "tcgdex_id": "neo2-63",
     "localId": "063",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "063/75",
+    "cardNumber": "63/75",
     "cardName": "Sentret",
-    "fullDisplayName": "Sentret 063/75 Neo Discovery",
+    "fullDisplayName": "Sentret 63/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -402,18 +466,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-063-low.png",
-    "imageHighSrc": "cards/neo2-063-high.png"
+    "imageHighSrc": "cards/neo2-063-high.png",
+    "attacks": [
+      {
+        "name": "Scout",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7939",
-    "externalId": null,
+    "externalId": "neo2-62",
     "tcgdex_id": "neo2-62",
     "localId": "062",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "062/75",
+    "cardNumber": "62/75",
     "cardName": "Poliwag",
-    "fullDisplayName": "Poliwag 062/75 Neo Discovery",
+    "fullDisplayName": "Poliwag 62/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -435,18 +509,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-062-low.png",
-    "imageHighSrc": "cards/neo2-062-high.png"
+    "imageHighSrc": "cards/neo2-062-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      },
+      {
+        "name": "Hypnosis",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7934",
-    "externalId": null,
+    "externalId": "neo2-61",
     "tcgdex_id": "neo2-61",
     "localId": "061",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "061/75",
+    "cardNumber": "61/75",
     "cardName": "Pineco",
-    "fullDisplayName": "Pineco 061/75 Neo Discovery",
+    "fullDisplayName": "Pineco 61/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -468,18 +552,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-061-low.png",
-    "imageHighSrc": "cards/neo2-061-high.png"
+    "imageHighSrc": "cards/neo2-061-high.png",
+    "attacks": [
+      {
+        "name": "Burst",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "7929",
-    "externalId": null,
+    "externalId": "neo2-60",
     "tcgdex_id": "neo2-60",
     "localId": "060",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "060/75",
+    "cardNumber": "60/75",
     "cardName": "Omanyte",
-    "fullDisplayName": "Omanyte 060/75 Neo Discovery",
+    "fullDisplayName": "Omanyte 60/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -501,18 +591,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-060-low.png",
-    "imageHighSrc": "cards/neo2-060-high.png"
+    "imageHighSrc": "cards/neo2-060-high.png",
+    "attacks": [
+      {
+        "name": "Bind",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7924",
-    "externalId": null,
+    "externalId": "neo2-59",
     "tcgdex_id": "neo2-59",
     "localId": "059",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "059/75",
+    "cardNumber": "59/75",
     "cardName": "Natu",
-    "fullDisplayName": "Natu 059/75 Neo Discovery",
+    "fullDisplayName": "Natu 59/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -534,18 +630,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-059-low.png",
-    "imageHighSrc": "cards/neo2-059-high.png"
+    "imageHighSrc": "cards/neo2-059-high.png",
+    "attacks": [
+      {
+        "name": "Confuse Ray",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7919",
-    "externalId": null,
+    "externalId": "neo2-58",
     "tcgdex_id": "neo2-58",
     "localId": "058",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "058/75",
+    "cardNumber": "58/75",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 058/75 Neo Discovery",
+    "fullDisplayName": "Mareep 58/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -567,18 +669,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-058-low.png",
-    "imageHighSrc": "cards/neo2-058-high.png"
+    "imageHighSrc": "cards/neo2-058-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Jolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7914",
-    "externalId": null,
+    "externalId": "neo2-57",
     "tcgdex_id": "neo2-57",
     "localId": "057",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "057/75",
+    "cardNumber": "57/75",
     "cardName": "Larvitar",
-    "fullDisplayName": "Larvitar 057/75 Neo Discovery",
+    "fullDisplayName": "Larvitar 57/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -600,18 +708,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-057-low.png",
-    "imageHighSrc": "cards/neo2-057-high.png"
+    "imageHighSrc": "cards/neo2-057-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7909",
-    "externalId": null,
+    "externalId": "neo2-56",
     "tcgdex_id": "neo2-56",
     "localId": "056",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "056/75",
+    "cardNumber": "56/75",
     "cardName": "Kabuto",
-    "fullDisplayName": "Kabuto 056/75 Neo Discovery",
+    "fullDisplayName": "Kabuto 56/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -633,18 +747,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-056-low.png",
-    "imageHighSrc": "cards/neo2-056-high.png"
+    "imageHighSrc": "cards/neo2-056-high.png",
+    "attacks": [
+      {
+        "name": "Work Together",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7905",
-    "externalId": null,
+    "externalId": "neo2-55",
     "tcgdex_id": "neo2-55",
     "localId": "055",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "055/75",
+    "cardNumber": "55/75",
     "cardName": "Hoppip",
-    "fullDisplayName": "Hoppip 055/75 Neo Discovery",
+    "fullDisplayName": "Hoppip 55/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -666,18 +786,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-055-low.png",
-    "imageHighSrc": "cards/neo2-055-high.png"
+    "imageHighSrc": "cards/neo2-055-high.png",
+    "attacks": [
+      {
+        "name": "Rolling Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7899",
-    "externalId": null,
+    "externalId": "neo2-54",
     "tcgdex_id": "neo2-54",
     "localId": "054",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "054/75",
+    "cardNumber": "54/75",
     "cardName": "Dunsparce",
-    "fullDisplayName": "Dunsparce 054/75 Neo Discovery",
+    "fullDisplayName": "Dunsparce 54/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -699,18 +825,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-054-low.png",
-    "imageHighSrc": "cards/neo2-054-high.png"
+    "imageHighSrc": "cards/neo2-054-high.png",
+    "attacks": [
+      {
+        "name": "Glare",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7894",
-    "externalId": null,
+    "externalId": "neo2-53",
     "tcgdex_id": "neo2-53",
     "localId": "053",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "053/75",
+    "cardNumber": "53/75",
     "cardName": "Caterpie",
-    "fullDisplayName": "Caterpie 053/75 Neo Discovery",
+    "fullDisplayName": "Caterpie 53/75 Neo Discovery",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -732,18 +864,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-053-low.png",
-    "imageHighSrc": "cards/neo2-053-high.png"
+    "imageHighSrc": "cards/neo2-053-high.png",
+    "attacks": [
+      {
+        "name": "Spin Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7889",
-    "externalId": null,
+    "externalId": "neo2-52",
     "tcgdex_id": "neo2-52",
     "localId": "052",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "052/75",
+    "cardNumber": "52/75",
     "cardName": "Xatu",
-    "fullDisplayName": "Xatu 052/75 Neo Discovery",
+    "fullDisplayName": "Xatu 52/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -765,18 +903,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-052-low.png",
-    "imageHighSrc": "cards/neo2-052-high.png"
+    "imageHighSrc": "cards/neo2-052-high.png",
+    "attacks": [
+      {
+        "name": "Energy Cycle",
+        "damage": null
+      },
+      {
+        "name": "Super Psy",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7884",
-    "externalId": null,
+    "externalId": "neo2-51",
     "tcgdex_id": "neo2-51",
     "localId": "051",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "051/75",
+    "cardNumber": "51/75",
     "cardName": "Unown [U]",
-    "fullDisplayName": "Unown [U] 051/75 Neo Discovery",
+    "fullDisplayName": "Unown [U] 51/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -798,18 +946,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-051-low.png",
-    "imageHighSrc": "cards/neo2-051-high.png"
+    "imageHighSrc": "cards/neo2-051-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7879",
-    "externalId": null,
+    "externalId": "neo2-50",
     "tcgdex_id": "neo2-50",
     "localId": "050",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "050/75",
+    "cardNumber": "50/75",
     "cardName": "Unown [N]",
-    "fullDisplayName": "Unown [N] 050/75 Neo Discovery",
+    "fullDisplayName": "Unown [N] 50/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -831,18 +986,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-050-low.png",
-    "imageHighSrc": "cards/neo2-050-high.png"
+    "imageHighSrc": "cards/neo2-050-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7875",
-    "externalId": null,
+    "externalId": "neo2-49",
     "tcgdex_id": "neo2-49",
     "localId": "049",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "049/75",
+    "cardNumber": "49/75",
     "cardName": "Unown [M]",
-    "fullDisplayName": "Unown [M] 049/75 Neo Discovery",
+    "fullDisplayName": "Unown [M] 49/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -864,18 +1026,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-049-low.png",
-    "imageHighSrc": "cards/neo2-049-high.png"
+    "imageHighSrc": "cards/neo2-049-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7870",
-    "externalId": null,
+    "externalId": "neo2-48",
     "tcgdex_id": "neo2-48",
     "localId": "048",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "048/75",
+    "cardNumber": "48/75",
     "cardName": "Unown [F]",
-    "fullDisplayName": "Unown [F] 048/75 Neo Discovery",
+    "fullDisplayName": "Unown [F] 48/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -897,18 +1066,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-048-low.png",
-    "imageHighSrc": "cards/neo2-048-high.png"
+    "imageHighSrc": "cards/neo2-048-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7865",
-    "externalId": null,
+    "externalId": "neo2-47",
     "tcgdex_id": "neo2-47",
     "localId": "047",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "047/75",
+    "cardNumber": "47/75",
     "cardName": "Unown [D]",
-    "fullDisplayName": "Unown [D] 047/75 Neo Discovery",
+    "fullDisplayName": "Unown [D] 47/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -930,18 +1106,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-047-low.png",
-    "imageHighSrc": "cards/neo2-047-high.png"
+    "imageHighSrc": "cards/neo2-047-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7861",
-    "externalId": null,
+    "externalId": "neo2-46",
     "tcgdex_id": "neo2-46",
     "localId": "046",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "046/75",
+    "cardNumber": "46/75",
     "cardName": "Scyther",
-    "fullDisplayName": "Scyther 046/75 Neo Discovery",
+    "fullDisplayName": "Scyther 46/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -963,18 +1146,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-046-low.png",
-    "imageHighSrc": "cards/neo2-046-high.png"
+    "imageHighSrc": "cards/neo2-046-high.png",
+    "attacks": [
+      {
+        "name": "Fury Cutter",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "7854",
-    "externalId": null,
+    "externalId": "neo2-45",
     "tcgdex_id": "neo2-45",
     "localId": "045",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "045/75",
+    "cardNumber": "45/75",
     "cardName": "Pupitar",
-    "fullDisplayName": "Pupitar 045/75 Neo Discovery",
+    "fullDisplayName": "Pupitar 45/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -996,18 +1185,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-045-low.png",
-    "imageHighSrc": "cards/neo2-045-high.png"
+    "imageHighSrc": "cards/neo2-045-high.png",
+    "attacks": [
+      {
+        "name": "Skull Bash",
+        "damage": "20"
+      },
+      {
+        "name": "Dust Devil",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7851",
-    "externalId": null,
+    "externalId": "neo2-44",
     "tcgdex_id": "neo2-44",
     "localId": "044",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "044/75",
+    "cardNumber": "44/75",
     "cardName": "Poliwhirl",
-    "fullDisplayName": "Poliwhirl 044/75 Neo Discovery",
+    "fullDisplayName": "Poliwhirl 44/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1029,18 +1228,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-044-low.png",
-    "imageHighSrc": "cards/neo2-044-high.png"
+    "imageHighSrc": "cards/neo2-044-high.png",
+    "attacks": [
+      {
+        "name": "Belly Drum",
+        "damage": null
+      },
+      {
+        "name": "Water Gun",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "7846",
-    "externalId": null,
+    "externalId": "neo2-43",
     "tcgdex_id": "neo2-43",
     "localId": "043",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "043/75",
+    "cardNumber": "43/75",
     "cardName": "Omastar",
-    "fullDisplayName": "Omastar 043/75 Neo Discovery",
+    "fullDisplayName": "Omastar 43/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1062,18 +1271,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-043-low.png",
-    "imageHighSrc": "cards/neo2-043-high.png"
+    "imageHighSrc": "cards/neo2-043-high.png",
+    "attacks": [
+      {
+        "name": "Squeeze",
+        "damage": "10+"
+      },
+      {
+        "name": "Spike Barrage",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7841",
-    "externalId": null,
+    "externalId": "neo2-42",
     "tcgdex_id": "neo2-42",
     "localId": "042",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "042/75",
+    "cardNumber": "42/75",
     "cardName": "Metapod",
-    "fullDisplayName": "Metapod 042/75 Neo Discovery",
+    "fullDisplayName": "Metapod 42/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1095,18 +1314,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-042-low.png",
-    "imageHighSrc": "cards/neo2-042-high.png"
+    "imageHighSrc": "cards/neo2-042-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Hatch",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7836",
-    "externalId": null,
+    "externalId": "neo2-41",
     "tcgdex_id": "neo2-41",
     "localId": "041",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "041/75",
+    "cardNumber": "41/75",
     "cardName": "Kakuna",
-    "fullDisplayName": "Kakuna 041/75 Neo Discovery",
+    "fullDisplayName": "Kakuna 41/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1128,18 +1357,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-041-low.png",
-    "imageHighSrc": "cards/neo2-041-high.png"
+    "imageHighSrc": "cards/neo2-041-high.png",
+    "attacks": [
+      {
+        "name": "Secrete Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7831",
-    "externalId": null,
+    "externalId": "neo2-40",
     "tcgdex_id": "neo2-40",
     "localId": "040",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "040/75",
+    "cardNumber": "40/75",
     "cardName": "Igglybuff",
-    "fullDisplayName": "Igglybuff 040/75 Neo Discovery",
+    "fullDisplayName": "Igglybuff 40/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1161,18 +1396,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-040-low.png",
-    "imageHighSrc": "cards/neo2-040-high.png"
+    "imageHighSrc": "cards/neo2-040-high.png",
+    "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
   },
   {
     "masterCardId": "7826",
-    "externalId": null,
+    "externalId": "neo2-39",
     "tcgdex_id": "neo2-39",
     "localId": "039",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "039/75",
+    "cardNumber": "39/75",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 039/75 Neo Discovery",
+    "fullDisplayName": "Houndour 39/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1194,18 +1430,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-039-low.png",
-    "imageHighSrc": "cards/neo2-039-high.png"
+    "imageHighSrc": "cards/neo2-039-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Plunder",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7821",
-    "externalId": null,
+    "externalId": "neo2-38",
     "tcgdex_id": "neo2-38",
     "localId": "038",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "038/75",
+    "cardNumber": "38/75",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee 038/75 Neo Discovery",
+    "fullDisplayName": "Eevee 38/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1227,18 +1473,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-038-low.png",
-    "imageHighSrc": "cards/neo2-038-high.png"
+    "imageHighSrc": "cards/neo2-038-high.png",
+    "attacks": [
+      {
+        "name": "Smash Kick",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "7816",
-    "externalId": null,
+    "externalId": "neo2-37",
     "tcgdex_id": "neo2-37",
     "localId": "037",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "037/75",
+    "cardNumber": "37/75",
     "cardName": "Corsola",
-    "fullDisplayName": "Corsola 037/75 Neo Discovery",
+    "fullDisplayName": "Corsola 37/75 Neo Discovery",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1260,18 +1512,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-037-low.png",
-    "imageHighSrc": "cards/neo2-037-high.png"
+    "imageHighSrc": "cards/neo2-037-high.png",
+    "attacks": [
+      {
+        "name": "Recover",
+        "damage": null
+      },
+      {
+        "name": "Spike Cannon",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7811",
-    "externalId": null,
+    "externalId": "neo2-36",
     "tcgdex_id": "neo2-36",
     "localId": "036",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "036/75",
+    "cardNumber": "36/75",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma 036/75 Neo Discovery",
+    "fullDisplayName": "Yanma 36/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1293,18 +1555,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-036-low.png",
-    "imageHighSrc": "cards/neo2-036-high.png"
+    "imageHighSrc": "cards/neo2-036-high.png",
+    "attacks": [
+      {
+        "name": "Shockwave",
+        "damage": null
+      },
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7806",
-    "externalId": null,
+    "externalId": "neo2-35",
     "tcgdex_id": "neo2-35",
     "localId": "035",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "035/75",
+    "cardNumber": "35/75",
     "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet 035/75 Neo Discovery",
+    "fullDisplayName": "Wobbuffet 35/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1326,18 +1598,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-035-low.png",
-    "imageHighSrc": "cards/neo2-035-high.png"
+    "imageHighSrc": "cards/neo2-035-high.png",
+    "attacks": [
+      {
+        "name": "Counter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7801",
-    "externalId": null,
+    "externalId": "neo2-34",
     "tcgdex_id": "neo2-34",
     "localId": "034",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "034/75",
+    "cardNumber": "34/75",
     "cardName": "Ursaring",
-    "fullDisplayName": "Ursaring 034/75 Neo Discovery",
+    "fullDisplayName": "Ursaring 34/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1359,18 +1637,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-034-low.png",
-    "imageHighSrc": "cards/neo2-034-high.png"
+    "imageHighSrc": "cards/neo2-034-high.png",
+    "attacks": [
+      {
+        "name": "Headpress",
+        "damage": "20"
+      },
+      {
+        "name": "Double Lariat",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "7796",
-    "externalId": null,
+    "externalId": "neo2-33",
     "tcgdex_id": "neo2-33",
     "localId": "033",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "033/75",
+    "cardNumber": "33/75",
     "cardName": "Unown [A]",
-    "fullDisplayName": "Unown [A] 033/75 Neo Discovery",
+    "fullDisplayName": "Unown [A] 33/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1392,18 +1680,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-033-low.png",
-    "imageHighSrc": "cards/neo2-033-high.png"
+    "imageHighSrc": "cards/neo2-033-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7791",
-    "externalId": null,
+    "externalId": "neo2-32",
     "tcgdex_id": "neo2-32",
     "localId": "032",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "032/75",
+    "cardNumber": "32/75",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon 032/75 Neo Discovery",
+    "fullDisplayName": "Umbreon 32/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1425,18 +1720,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-032-low.png",
-    "imageHighSrc": "cards/neo2-032-high.png"
+    "imageHighSrc": "cards/neo2-032-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Pursuit",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7786",
-    "externalId": null,
+    "externalId": "neo2-31",
     "tcgdex_id": "neo2-31",
     "localId": "031",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "031/75",
+    "cardNumber": "31/75",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 031/75 Neo Discovery",
+    "fullDisplayName": "Tyranitar 31/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1458,18 +1763,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-031-low.png",
-    "imageHighSrc": "cards/neo2-031-high.png"
+    "imageHighSrc": "cards/neo2-031-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "30×"
+      },
+      {
+        "name": "Trample",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7781",
-    "externalId": null,
+    "externalId": "neo2-30",
     "tcgdex_id": "neo2-30",
     "localId": "030",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "030/75",
+    "cardNumber": "30/75",
     "cardName": "Smeargle",
-    "fullDisplayName": "Smeargle 030/75 Neo Discovery",
+    "fullDisplayName": "Smeargle 30/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1491,18 +1806,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-030-low.png",
-    "imageHighSrc": "cards/neo2-030-high.png"
+    "imageHighSrc": "cards/neo2-030-high.png",
+    "attacks": [
+      {
+        "name": "Sketch",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7777",
-    "externalId": null,
+    "externalId": "neo2-29",
     "tcgdex_id": "neo2-29",
     "localId": "029",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "029/75",
+    "cardNumber": "29/75",
     "cardName": "Scizor",
-    "fullDisplayName": "Scizor 029/75 Neo Discovery",
+    "fullDisplayName": "Scizor 29/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1524,18 +1845,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-029-low.png",
-    "imageHighSrc": "cards/neo2-029-high.png"
+    "imageHighSrc": "cards/neo2-029-high.png",
+    "attacks": [
+      {
+        "name": "False Swipe",
+        "damage": null
+      },
+      {
+        "name": "Double Claw",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7772",
-    "externalId": null,
+    "externalId": "neo2-28",
     "tcgdex_id": "neo2-28",
     "localId": "028",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "028/75",
+    "cardNumber": "28/75",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 028/75 Neo Discovery",
+    "fullDisplayName": "Poliwrath 28/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1557,18 +1888,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-028-low.png",
-    "imageHighSrc": "cards/neo2-028-high.png"
+    "imageHighSrc": "cards/neo2-028-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Submission",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7766",
-    "externalId": null,
+    "externalId": "neo2-27",
     "tcgdex_id": "neo2-27",
     "localId": "027",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "027/75",
+    "cardNumber": "27/75",
     "cardName": "Politoed",
-    "fullDisplayName": "Politoed 027/75 Neo Discovery",
+    "fullDisplayName": "Politoed 27/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1590,18 +1931,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-027-low.png",
-    "imageHighSrc": "cards/neo2-027-high.png"
+    "imageHighSrc": "cards/neo2-027-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "7762",
-    "externalId": null,
+    "externalId": "neo2-26",
     "tcgdex_id": "neo2-26",
     "localId": "026",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "026/75",
+    "cardNumber": "26/75",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 026/75 Neo Discovery",
+    "fullDisplayName": "Magnemite 26/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1623,18 +1970,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-026-low.png",
-    "imageHighSrc": "cards/neo2-026-high.png"
+    "imageHighSrc": "cards/neo2-026-high.png",
+    "attacks": [
+      {
+        "name": "Lock-on",
+        "damage": null
+      },
+      {
+        "name": "Electric Bolt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7756",
-    "externalId": null,
+    "externalId": "neo2-25",
     "tcgdex_id": "neo2-25",
     "localId": "025",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "025/75",
+    "cardNumber": "25/75",
     "cardName": "Kabutops",
-    "fullDisplayName": "Kabutops 025/75 Neo Discovery",
+    "fullDisplayName": "Kabutops 25/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1656,18 +2013,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-025-low.png",
-    "imageHighSrc": "cards/neo2-025-high.png"
+    "imageHighSrc": "cards/neo2-025-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      },
+      {
+        "name": "Hydrocutter",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "7751",
-    "externalId": null,
+    "externalId": "neo2-24",
     "tcgdex_id": "neo2-24",
     "localId": "024",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "024/75",
+    "cardNumber": "24/75",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 024/75 Neo Discovery",
+    "fullDisplayName": "Houndour 24/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1689,18 +2056,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-024-low.png",
-    "imageHighSrc": "cards/neo2-024-high.png"
+    "imageHighSrc": "cards/neo2-024-high.png",
+    "attacks": [
+      {
+        "name": "Smog",
+        "damage": "10"
+      },
+      {
+        "name": "Collect Fire",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7746",
-    "externalId": null,
+    "externalId": "neo2-23",
     "tcgdex_id": "neo2-23",
     "localId": "023",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "023/75",
+    "cardNumber": "23/75",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 023/75 Neo Discovery",
+    "fullDisplayName": "Houndoom 23/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1722,18 +2099,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-023-low.png",
-    "imageHighSrc": "cards/neo2-023-high.png"
+    "imageHighSrc": "cards/neo2-023-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "30"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7741",
-    "externalId": null,
+    "externalId": "neo2-22",
     "tcgdex_id": "neo2-22",
     "localId": "022",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "022/75",
+    "cardNumber": "22/75",
     "cardName": "Hitmontop",
-    "fullDisplayName": "Hitmontop 022/75 Neo Discovery",
+    "fullDisplayName": "Hitmontop 22/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1755,18 +2142,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-022-low.png",
-    "imageHighSrc": "cards/neo2-022-high.png"
+    "imageHighSrc": "cards/neo2-022-high.png",
+    "attacks": [
+      {
+        "name": "Detect",
+        "damage": null
+      },
+      {
+        "name": "Triple Kick",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7735",
-    "externalId": null,
+    "externalId": "neo2-21",
     "tcgdex_id": "neo2-21",
     "localId": "021",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "021/75",
+    "cardNumber": "21/75",
     "cardName": "Forretress",
-    "fullDisplayName": "Forretress 021/75 Neo Discovery",
+    "fullDisplayName": "Forretress 21/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1788,18 +2185,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-021-low.png",
-    "imageHighSrc": "cards/neo2-021-high.png"
+    "imageHighSrc": "cards/neo2-021-high.png",
+    "attacks": [
+      {
+        "name": "Rapid Spin",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7729",
-    "externalId": null,
+    "externalId": "neo2-20",
     "tcgdex_id": "neo2-20",
     "localId": "020",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "020/75",
+    "cardNumber": "20/75",
     "cardName": "Espeon",
-    "fullDisplayName": "Espeon 020/75 Neo Discovery",
+    "fullDisplayName": "Espeon 20/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1821,18 +2224,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-020-low.png",
-    "imageHighSrc": "cards/neo2-020-high.png"
+    "imageHighSrc": "cards/neo2-020-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Psybeam",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7723",
-    "externalId": null,
+    "externalId": "neo2-19",
     "tcgdex_id": "neo2-19",
     "localId": "019",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "019/75",
+    "cardNumber": "19/75",
     "cardName": "Butterfree",
-    "fullDisplayName": "Butterfree 019/75 Neo Discovery",
+    "fullDisplayName": "Butterfree 19/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1854,18 +2267,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-019-low.png",
-    "imageHighSrc": "cards/neo2-019-high.png"
+    "imageHighSrc": "cards/neo2-019-high.png",
+    "attacks": [
+      {
+        "name": "Magic Dust",
+        "damage": "20"
+      },
+      {
+        "name": "Hyper Reverse",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7717",
-    "externalId": null,
+    "externalId": "neo2-18",
     "tcgdex_id": "neo2-18",
     "localId": "018",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "018/75",
+    "cardNumber": "18/75",
     "cardName": "Beedrill",
-    "fullDisplayName": "Beedrill 018/75 Neo Discovery",
+    "fullDisplayName": "Beedrill 18/75 Neo Discovery",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1887,18 +2310,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-018-low.png",
-    "imageHighSrc": "cards/neo2-018-high.png"
+    "imageHighSrc": "cards/neo2-018-high.png",
+    "attacks": [
+      {
+        "name": "Triple Poison",
+        "damage": "10"
+      },
+      {
+        "name": "Pin Missile",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "7711",
-    "externalId": null,
+    "externalId": "neo2-17",
     "tcgdex_id": "neo2-17",
     "localId": "017",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "017/75",
+    "cardNumber": "17/75",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma 017/75 Neo Discovery",
+    "fullDisplayName": "Yanma 17/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1920,18 +2353,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-017-low.png",
-    "imageHighSrc": "cards/neo2-017-high.png"
+    "imageHighSrc": "cards/neo2-017-high.png",
+    "attacks": [
+      {
+        "name": "Shockwave",
+        "damage": null
+      },
+      {
+        "name": "Swift",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7705",
-    "externalId": null,
+    "externalId": "neo2-16",
     "tcgdex_id": "neo2-16",
     "localId": "016",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "016/75",
+    "cardNumber": "16/75",
     "cardName": "Wobbuffet",
-    "fullDisplayName": "Wobbuffet 016/75 Neo Discovery",
+    "fullDisplayName": "Wobbuffet 16/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1953,18 +2396,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-016-low.png",
-    "imageHighSrc": "cards/neo2-016-high.png"
+    "imageHighSrc": "cards/neo2-016-high.png",
+    "attacks": [
+      {
+        "name": "Counter",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7699",
-    "externalId": null,
+    "externalId": "neo2-15",
     "tcgdex_id": "neo2-15",
     "localId": "015",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "015/75",
+    "cardNumber": "15/75",
     "cardName": "Ursaring",
-    "fullDisplayName": "Ursaring 015/75 Neo Discovery",
+    "fullDisplayName": "Ursaring 15/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1986,18 +2435,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-015-low.png",
-    "imageHighSrc": "cards/neo2-015-high.png"
+    "imageHighSrc": "cards/neo2-015-high.png",
+    "attacks": [
+      {
+        "name": "Headpress",
+        "damage": "20"
+      },
+      {
+        "name": "Double Lariat",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "7693",
-    "externalId": null,
+    "externalId": "neo2-14",
     "tcgdex_id": "neo2-14",
     "localId": "014",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "014/75",
+    "cardNumber": "14/75",
     "cardName": "Unown [A]",
-    "fullDisplayName": "Unown [A] 014/75 Neo Discovery",
+    "fullDisplayName": "Unown [A] 14/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2019,18 +2478,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-014-low.png",
-    "imageHighSrc": "cards/neo2-014-high.png"
+    "imageHighSrc": "cards/neo2-014-high.png",
+    "attacks": [
+      {
+        "name": "Hidden Power",
+        "damage": "10"
+      }
+    ],
+    "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
   },
   {
     "masterCardId": "7687",
-    "externalId": null,
+    "externalId": "neo2-13",
     "tcgdex_id": "neo2-13",
     "localId": "013",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "013/75",
+    "cardNumber": "13/75",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon 013/75 Neo Discovery",
+    "fullDisplayName": "Umbreon 13/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2052,18 +2518,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-013-low.png",
-    "imageHighSrc": "cards/neo2-013-high.png"
+    "imageHighSrc": "cards/neo2-013-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Feint Attack",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7681",
-    "externalId": null,
+    "externalId": "neo2-12",
     "tcgdex_id": "neo2-12",
     "localId": "012",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "012/75",
+    "cardNumber": "12/75",
     "cardName": "Tyranitar",
-    "fullDisplayName": "Tyranitar 012/75 Neo Discovery",
+    "fullDisplayName": "Tyranitar 12/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2085,18 +2561,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-012-low.png",
-    "imageHighSrc": "cards/neo2-012-high.png"
+    "imageHighSrc": "cards/neo2-012-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "30×"
+      },
+      {
+        "name": "Trample",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7675",
-    "externalId": null,
+    "externalId": "neo2-11",
     "tcgdex_id": "neo2-11",
     "localId": "011",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "011/75",
+    "cardNumber": "11/75",
     "cardName": "Smeargle",
-    "fullDisplayName": "Smeargle 011/75 Neo Discovery",
+    "fullDisplayName": "Smeargle 11/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2118,18 +2604,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-011-low.png",
-    "imageHighSrc": "cards/neo2-011-high.png"
+    "imageHighSrc": "cards/neo2-011-high.png",
+    "attacks": [
+      {
+        "name": "Sketch",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "7669",
-    "externalId": null,
+    "externalId": "neo2-10",
     "tcgdex_id": "neo2-10",
     "localId": "010",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "010/75",
+    "cardNumber": "10/75",
     "cardName": "Scizor",
-    "fullDisplayName": "Scizor 010/75 Neo Discovery",
+    "fullDisplayName": "Scizor 10/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2151,18 +2643,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-010-low.png",
-    "imageHighSrc": "cards/neo2-010-high.png"
+    "imageHighSrc": "cards/neo2-010-high.png",
+    "attacks": [
+      {
+        "name": "False Swipe",
+        "damage": null
+      },
+      {
+        "name": "Double Claw",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "7663",
-    "externalId": null,
+    "externalId": "neo2-9",
     "tcgdex_id": "neo2-9",
     "localId": "009",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "009/75",
+    "cardNumber": "9/75",
     "cardName": "Poliwrath",
-    "fullDisplayName": "Poliwrath 009/75 Neo Discovery",
+    "fullDisplayName": "Poliwrath 9/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2184,18 +2686,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-009-low.png",
-    "imageHighSrc": "cards/neo2-009-high.png"
+    "imageHighSrc": "cards/neo2-009-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "30"
+      },
+      {
+        "name": "Submission",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "7657",
-    "externalId": null,
+    "externalId": "neo2-8",
     "tcgdex_id": "neo2-8",
     "localId": "008",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "008/75",
+    "cardNumber": "8/75",
     "cardName": "Politoed",
-    "fullDisplayName": "Politoed 008/75 Neo Discovery",
+    "fullDisplayName": "Politoed 8/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2217,18 +2729,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-008-low.png",
-    "imageHighSrc": "cards/neo2-008-high.png"
+    "imageHighSrc": "cards/neo2-008-high.png",
+    "attacks": [
+      {
+        "name": "Doubleslap",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "7651",
-    "externalId": null,
+    "externalId": "neo2-7",
     "tcgdex_id": "neo2-7",
     "localId": "007",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "007/75",
+    "cardNumber": "7/75",
     "cardName": "Magnemite",
-    "fullDisplayName": "Magnemite 007/75 Neo Discovery",
+    "fullDisplayName": "Magnemite 7/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2250,18 +2768,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-007-low.png",
-    "imageHighSrc": "cards/neo2-007-high.png"
+    "imageHighSrc": "cards/neo2-007-high.png",
+    "attacks": [
+      {
+        "name": "Lock-on",
+        "damage": null
+      },
+      {
+        "name": "Electric Bolt",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7645",
-    "externalId": null,
+    "externalId": "neo2-6",
     "tcgdex_id": "neo2-6",
     "localId": "006",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "006/75",
+    "cardNumber": "6/75",
     "cardName": "Kabutops",
-    "fullDisplayName": "Kabutops 006/75 Neo Discovery",
+    "fullDisplayName": "Kabutops 6/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2283,18 +2811,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-006-low.png",
-    "imageHighSrc": "cards/neo2-006-high.png"
+    "imageHighSrc": "cards/neo2-006-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      },
+      {
+        "name": "Hydrocutter",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "7639",
-    "externalId": null,
+    "externalId": "neo2-5",
     "tcgdex_id": "neo2-5",
     "localId": "005",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "005/75",
+    "cardNumber": "5/75",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 005/75 Neo Discovery",
+    "fullDisplayName": "Houndour 5/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2316,18 +2854,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-005-low.png",
-    "imageHighSrc": "cards/neo2-005-high.png"
+    "imageHighSrc": "cards/neo2-005-high.png",
+    "attacks": [
+      {
+        "name": "Smog",
+        "damage": "10"
+      },
+      {
+        "name": "Collect Fire",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "7633",
-    "externalId": null,
+    "externalId": "neo2-4",
     "tcgdex_id": "neo2-4",
     "localId": "004",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "004/75",
+    "cardNumber": "4/75",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 004/75 Neo Discovery",
+    "fullDisplayName": "Houndoom 4/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2349,18 +2897,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-004-low.png",
-    "imageHighSrc": "cards/neo2-004-high.png"
+    "imageHighSrc": "cards/neo2-004-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "30"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "7628",
-    "externalId": null,
+    "externalId": "neo2-3",
     "tcgdex_id": "neo2-3",
     "localId": "003",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "003/75",
+    "cardNumber": "3/75",
     "cardName": "Hitmontop",
-    "fullDisplayName": "Hitmontop 003/75 Neo Discovery",
+    "fullDisplayName": "Hitmontop 3/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2382,18 +2940,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-003-low.png",
-    "imageHighSrc": "cards/neo2-003-high.png"
+    "imageHighSrc": "cards/neo2-003-high.png",
+    "attacks": [
+      {
+        "name": "Detect",
+        "damage": null
+      },
+      {
+        "name": "Triple Kick",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "7622",
-    "externalId": null,
+    "externalId": "neo2-2",
     "tcgdex_id": "neo2-2",
     "localId": "002",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "002/75",
+    "cardNumber": "2/75",
     "cardName": "Forretress",
-    "fullDisplayName": "Forretress 002/75 Neo Discovery",
+    "fullDisplayName": "Forretress 2/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2415,18 +2983,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-002-low.png",
-    "imageHighSrc": "cards/neo2-002-high.png"
+    "imageHighSrc": "cards/neo2-002-high.png",
+    "attacks": [
+      {
+        "name": "Rapid Spin",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "7617",
-    "externalId": null,
+    "externalId": "neo2-1",
     "tcgdex_id": "neo2-1",
     "localId": "001",
     "setCode": "neo2",
     "setTcgdexId": "neo2",
-    "cardNumber": "001/75",
+    "cardNumber": "1/75",
     "cardName": "Espeon",
-    "fullDisplayName": "Espeon 001/75 Neo Discovery",
+    "fullDisplayName": "Espeon 1/75 Neo Discovery",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2448,6 +3022,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/neo2-001-low.png",
-    "imageHighSrc": "cards/neo2-001-high.png"
+    "imageHighSrc": "cards/neo2-001-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "20"
+      },
+      {
+        "name": "Psychic",
+        "damage": "30+"
+      }
+    ]
   }
 ]

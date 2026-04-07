@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "20035",
-    "externalId": null,
+    "externalId": "xy6-110",
     "tcgdex_id": "xy6-110",
     "localId": "110",
     "setCode": "xy6",
@@ -26,11 +26,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-110-low.png",
-    "imageHighSrc": "cards/xy6-110-high.png"
+    "imageHighSrc": "cards/xy6-110-high.png",
+    "rules": "Put a Supporter card from your discard pile into your hand.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20028",
-    "externalId": null,
+    "externalId": "xy6-109",
     "tcgdex_id": "xy6-109",
     "localId": "109",
     "setCode": "xy6",
@@ -55,11 +56,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-109-low.png",
-    "imageHighSrc": "cards/xy6-109-high.png"
+    "imageHighSrc": "cards/xy6-109-high.png",
+    "rules": "Move a basic Energy from 1 of your Pokémon to another of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "20020",
-    "externalId": null,
+    "externalId": "xy6-108",
     "tcgdex_id": "xy6-108",
     "localId": "108",
     "setCode": "xy6",
@@ -84,11 +86,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-108-low.png",
-    "imageHighSrc": "cards/xy6-108-high.png"
+    "imageHighSrc": "cards/xy6-108-high.png",
+    "rules": "Search your deck for up to 3 Colorless Pokémon and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20011",
-    "externalId": null,
+    "externalId": "xy6-107",
     "tcgdex_id": "xy6-107",
     "localId": "107",
     "setCode": "xy6",
@@ -113,11 +116,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-107-low.png",
-    "imageHighSrc": "cards/xy6-107-high.png"
+    "imageHighSrc": "cards/xy6-107-high.png",
+    "rules": "Search your deck for a card that evolves from 1 of your Pokémon (excluding Pokémon-EX) and put it onto that Pokémon. (This counts as evolving that Pokémon.) Shuffle your deck afterward. You can use this card during your first turn or on a Pokémon that was put into play this turn.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "20002",
-    "externalId": null,
+    "externalId": "xy6-106",
     "tcgdex_id": "xy6-106",
     "localId": "106",
     "setCode": "xy6",
@@ -147,11 +151,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-106-low.png",
-    "imageHighSrc": "cards/xy6-106-high.png"
+    "imageHighSrc": "cards/xy6-106-high.png",
+    "attacks": [
+      {
+        "name": "Sky Return",
+        "damage": "30"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19993",
-    "externalId": null,
+    "externalId": "xy6-105",
     "tcgdex_id": "xy6-105",
     "localId": "105",
     "setCode": "xy6",
@@ -181,11 +192,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-105-low.png",
-    "imageHighSrc": "cards/xy6-105-high.png"
+    "imageHighSrc": "cards/xy6-105-high.png",
+    "attacks": [
+      {
+        "name": "Emerald Break",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19984",
-    "externalId": null,
+    "externalId": "xy6-104",
     "tcgdex_id": "xy6-104",
     "localId": "104",
     "setCode": "xy6",
@@ -215,11 +233,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-104-low.png",
-    "imageHighSrc": "cards/xy6-104-high.png"
+    "imageHighSrc": "cards/xy6-104-high.png",
+    "attacks": [
+      {
+        "name": "Intensifying Burn",
+        "damage": "10+"
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19975",
-    "externalId": null,
+    "externalId": "xy6-103",
     "tcgdex_id": "xy6-103",
     "localId": "103",
     "setCode": "xy6",
@@ -249,11 +278,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-103-low.png",
-    "imageHighSrc": "cards/xy6-103-high.png"
+    "imageHighSrc": "cards/xy6-103-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "80"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19966",
-    "externalId": null,
+    "externalId": "xy6-102",
     "tcgdex_id": "xy6-102",
     "localId": "102",
     "setCode": "xy6",
@@ -283,11 +319,18 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-102-low.png",
-    "imageHighSrc": "cards/xy6-102-high.png"
+    "imageHighSrc": "cards/xy6-102-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Ace",
+        "damage": null
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19957",
-    "externalId": null,
+    "externalId": "xy6-101",
     "tcgdex_id": "xy6-101",
     "localId": "101",
     "setCode": "xy6",
@@ -317,11 +360,22 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-101-low.png",
-    "imageHighSrc": "cards/xy6-101-high.png"
+    "imageHighSrc": "cards/xy6-101-high.png",
+    "attacks": [
+      {
+        "name": "Fast Raid",
+        "damage": "40"
+      },
+      {
+        "name": "Light Pulse",
+        "damage": "110"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19948",
-    "externalId": null,
+    "externalId": "xy6-100",
     "tcgdex_id": "xy6-100",
     "localId": "100",
     "setCode": "xy6",
@@ -351,18 +405,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-100-low.png",
-    "imageHighSrc": "cards/xy6-100-high.png"
+    "imageHighSrc": "cards/xy6-100-high.png",
+    "attacks": [
+      {
+        "name": "Unwavering Blade",
+        "damage": "110"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19939",
-    "externalId": null,
+    "externalId": "xy6-99",
     "tcgdex_id": "xy6-99",
     "localId": "099",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "099/108",
+    "cardNumber": "99/108",
     "cardName": "Gallade-EX",
-    "fullDisplayName": "Gallade-EX 099/108 Roaring Skies",
+    "fullDisplayName": "Gallade-EX 99/108 Roaring Skies",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -385,18 +446,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-099-low.png",
-    "imageHighSrc": "cards/xy6-099-high.png"
+    "imageHighSrc": "cards/xy6-099-high.png",
+    "attacks": [
+      {
+        "name": "Swift Lunge",
+        "damage": "30"
+      },
+      {
+        "name": "Piercing Prizes",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19930",
-    "externalId": null,
+    "externalId": "xy6-98",
     "tcgdex_id": "xy6-98",
     "localId": "098",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "098/108",
+    "cardNumber": "98/108",
     "cardName": "Thundurus-EX",
-    "fullDisplayName": "Thundurus-EX 098/108 Roaring Skies",
+    "fullDisplayName": "Thundurus-EX 98/108 Roaring Skies",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -419,18 +491,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-098-low.png",
-    "imageHighSrc": "cards/xy6-098-high.png"
+    "imageHighSrc": "cards/xy6-098-high.png",
+    "attacks": [
+      {
+        "name": "Headlock",
+        "damage": "30+"
+      },
+      {
+        "name": "Voltage Rush",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19921",
-    "externalId": null,
+    "externalId": "xy6-97",
     "tcgdex_id": "xy6-97",
     "localId": "097",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "097/108",
+    "cardNumber": "97/108",
     "cardName": "Double Dragon Energy",
-    "fullDisplayName": "Double Dragon Energy 097/108 Roaring Skies",
+    "fullDisplayName": "Double Dragon Energy 97/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Energy",
     "stage": null,
@@ -448,18 +531,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-097-low.png",
-    "imageHighSrc": "cards/xy6-097-high.png"
+    "imageHighSrc": "cards/xy6-097-high.png",
+    "rules": "This card can only be attached to Dragon Pokémon. This card provides every type of Energy, but provides only 2 Energy at a time, only while this card is attached to a Dragon Pokémon.\n\n(If this card is attached to anything other than a Dragon Pokémon, discard this card.)"
   },
   {
     "masterCardId": "19912",
-    "externalId": null,
+    "externalId": "xy6-96",
     "tcgdex_id": "xy6-96",
     "localId": "096",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "096/108",
+    "cardNumber": "96/108",
     "cardName": "Winona",
-    "fullDisplayName": "Winona 096/108 Roaring Skies",
+    "fullDisplayName": "Winona 96/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -477,18 +561,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-096-low.png",
-    "imageHighSrc": "cards/xy6-096-high.png"
+    "imageHighSrc": "cards/xy6-096-high.png",
+    "rules": "Search your deck for up to 3 Colorless Pokémon and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19902",
-    "externalId": null,
+    "externalId": "xy6-95",
     "tcgdex_id": "xy6-95",
     "localId": "095",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "095/108",
+    "cardNumber": "95/108",
     "cardName": "Wide Lens",
-    "fullDisplayName": "Wide Lens 095/108 Roaring Skies",
+    "fullDisplayName": "Wide Lens 95/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -506,18 +591,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-095-low.png",
-    "imageHighSrc": "cards/xy6-095-high.png"
+    "imageHighSrc": "cards/xy6-095-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nDamage from the attacks of the Pokémon this card is attached to is affected by Weakness and Resistance for your opponent's Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19894",
-    "externalId": null,
+    "externalId": "xy6-94",
     "tcgdex_id": "xy6-94",
     "localId": "094",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "094/108",
+    "cardNumber": "94/108",
     "cardName": "Wally",
-    "fullDisplayName": "Wally 094/108 Roaring Skies",
+    "fullDisplayName": "Wally 94/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -535,18 +621,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-094-low.png",
-    "imageHighSrc": "cards/xy6-094-high.png"
+    "imageHighSrc": "cards/xy6-094-high.png",
+    "rules": "Search your deck for a card that evolves from 1 of your Pokémon (excluding Pokémon-EX) and put it onto that Pokémon. (This counts as evolving that Pokémon.) Shuffle your deck afterward. You can use this card during your first turn or on a Pokémon that was put into play this turn.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19885",
-    "externalId": null,
+    "externalId": "xy6-93",
     "tcgdex_id": "xy6-93",
     "localId": "093",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "093/108",
+    "cardNumber": "93/108",
     "cardName": "Ultra Ball",
-    "fullDisplayName": "Ultra Ball 093/108 Roaring Skies",
+    "fullDisplayName": "Ultra Ball 93/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -564,11 +651,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-093-low.png",
-    "imageHighSrc": "cards/xy6-093-high.png"
+    "imageHighSrc": "cards/xy6-093-high.png",
+    "rules": "Discard 2 cards from your hand. (If you can't discard 2 cards, you can't play this card.) Search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19876",
-    "externalId": null,
+    "externalId": "xy6-92a",
     "tcgdex_id": "xy6-92a",
     "localId": "92a",
     "setCode": "xy6",
@@ -593,18 +681,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-92a-low.png",
-    "imageHighSrc": "cards/xy6-92a-high.png"
+    "imageHighSrc": "cards/xy6-92a-high.png",
+    "rules": "Look at the top 4 cards of your deck. You may reveal a Trainer card you find there (except Trainers' Mail) and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19867",
-    "externalId": null,
+    "externalId": "xy6-92",
     "tcgdex_id": "xy6-92",
     "localId": "092",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "092/108",
+    "cardNumber": "92/108",
     "cardName": "Trainers' Mail",
-    "fullDisplayName": "Trainers' Mail 092/108 Roaring Skies",
+    "fullDisplayName": "Trainers' Mail 92/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -622,18 +711,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-092-low.png",
-    "imageHighSrc": "cards/xy6-092-high.png"
+    "imageHighSrc": "cards/xy6-092-high.png",
+    "rules": "Look at the top 4 cards of your deck. You may reveal a Trainer card you find there (except Trainers' Mail) and put it into your hand. Shuffle the other cards back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19858",
-    "externalId": null,
+    "externalId": "xy6-91",
     "tcgdex_id": "xy6-91",
     "localId": "091",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "091/108",
+    "cardNumber": "91/108",
     "cardName": "Switch",
-    "fullDisplayName": "Switch 091/108 Roaring Skies",
+    "fullDisplayName": "Switch 91/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -651,18 +741,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-091-low.png",
-    "imageHighSrc": "cards/xy6-091-high.png"
+    "imageHighSrc": "cards/xy6-091-high.png",
+    "rules": "Switch your Active Pokémon with 1 of your Benched Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19849",
-    "externalId": null,
+    "externalId": "xy6-90",
     "tcgdex_id": "xy6-90",
     "localId": "090",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "090/108",
+    "cardNumber": "90/108",
     "cardName": "Steven",
-    "fullDisplayName": "Steven 090/108 Roaring Skies",
+    "fullDisplayName": "Steven 90/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -680,18 +771,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-090-low.png",
-    "imageHighSrc": "cards/xy6-090-high.png"
+    "imageHighSrc": "cards/xy6-090-high.png",
+    "rules": "Search your deck for a Supporter card and a basic Energy card, reveal them, and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "19839",
-    "externalId": null,
+    "externalId": "xy6-89",
     "tcgdex_id": "xy6-89",
     "localId": "089",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "089/108",
+    "cardNumber": "89/108",
     "cardName": "Sky Field",
-    "fullDisplayName": "Sky Field 089/108 Roaring Skies",
+    "fullDisplayName": "Sky Field 89/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -709,18 +801,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-089-low.png",
-    "imageHighSrc": "cards/xy6-089-high.png"
+    "imageHighSrc": "cards/xy6-089-high.png",
+    "rules": "Each player can have 8 Pokémon on his or her Bench.\n\n(When this card leaves play, each player discards Benched Pokémon until he or she has 5 Pokémon on the Bench. The owner of this card discards first.)\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "19829",
-    "externalId": null,
+    "externalId": "xy6-88",
     "tcgdex_id": "xy6-88",
     "localId": "088",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "088/108",
+    "cardNumber": "88/108",
     "cardName": "Revive",
-    "fullDisplayName": "Revive 088/108 Roaring Skies",
+    "fullDisplayName": "Revive 88/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -738,18 +831,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-088-low.png",
-    "imageHighSrc": "cards/xy6-088-high.png"
+    "imageHighSrc": "cards/xy6-088-high.png",
+    "rules": "Put a Basic Pokémon from your discard pile onto your Bench.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19820",
-    "externalId": null,
+    "externalId": "xy6-87",
     "tcgdex_id": "xy6-87",
     "localId": "087",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "087/108",
+    "cardNumber": "87/108",
     "cardName": "Rayquaza Spirit Link",
-    "fullDisplayName": "Rayquaza Spirit Link 087/108 Roaring Skies",
+    "fullDisplayName": "Rayquaza Spirit Link 87/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -767,18 +861,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-087-low.png",
-    "imageHighSrc": "cards/xy6-087-high.png"
+    "imageHighSrc": "cards/xy6-087-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nYour turn does not end if the Pokémon this card is attached to becomes M Rayquaza-EX.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19811",
-    "externalId": null,
+    "externalId": "xy6-86",
     "tcgdex_id": "xy6-86",
     "localId": "086",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "086/108",
+    "cardNumber": "86/108",
     "cardName": "Mega Turbo",
-    "fullDisplayName": "Mega Turbo 086/108 Roaring Skies",
+    "fullDisplayName": "Mega Turbo 86/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -796,18 +891,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-086-low.png",
-    "imageHighSrc": "cards/xy6-086-high.png"
+    "imageHighSrc": "cards/xy6-086-high.png",
+    "rules": "Attach a basic Energy card from your discard pile to 1 of your Mega Evolution Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19801",
-    "externalId": null,
+    "externalId": "xy6-85",
     "tcgdex_id": "xy6-85",
     "localId": "085",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "085/108",
+    "cardNumber": "85/108",
     "cardName": "Latios Spirit Link",
-    "fullDisplayName": "Latios Spirit Link 085/108 Roaring Skies",
+    "fullDisplayName": "Latios Spirit Link 85/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -825,18 +921,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-085-low.png",
-    "imageHighSrc": "cards/xy6-085-high.png"
+    "imageHighSrc": "cards/xy6-085-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nYour turn does not end if the Pokémon this card is attached to becomes M Latios-EX.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19792",
-    "externalId": null,
+    "externalId": "xy6-84",
     "tcgdex_id": "xy6-84",
     "localId": "084",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "084/108",
+    "cardNumber": "84/108",
     "cardName": "Healing Scarf",
-    "fullDisplayName": "Healing Scarf 084/108 Roaring Skies",
+    "fullDisplayName": "Healing Scarf 84/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -854,18 +951,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-084-low.png",
-    "imageHighSrc": "cards/xy6-084-high.png"
+    "imageHighSrc": "cards/xy6-084-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhenever you attach an Energy card from your hand to the Pokémon this card is attached to, heal 20 damage from it.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19783",
-    "externalId": null,
+    "externalId": "xy6-83",
     "tcgdex_id": "xy6-83",
     "localId": "083",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "083/108",
+    "cardNumber": "83/108",
     "cardName": "Gallade Spirit Link",
-    "fullDisplayName": "Gallade Spirit Link 083/108 Roaring Skies",
+    "fullDisplayName": "Gallade Spirit Link 83/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Trainer",
     "stage": null,
@@ -883,18 +981,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-083-low.png",
-    "imageHighSrc": "cards/xy6-083-high.png"
+    "imageHighSrc": "cards/xy6-083-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nYour turn does not end if the Pokémon this card is attached to becomes M Gallade-EX.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "19774",
-    "externalId": null,
+    "externalId": "xy6-82",
     "tcgdex_id": "xy6-82",
     "localId": "082",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "082/108",
+    "cardNumber": "82/108",
     "cardName": "Fletchling",
-    "fullDisplayName": "Fletchling 082/108 Roaring Skies",
+    "fullDisplayName": "Fletchling 82/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -916,18 +1015,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-082-low.png",
-    "imageHighSrc": "cards/xy6-082-high.png"
+    "imageHighSrc": "cards/xy6-082-high.png",
+    "attacks": [
+      {
+        "name": "Acrobatics",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "19765",
-    "externalId": null,
+    "externalId": "xy6-81",
     "tcgdex_id": "xy6-81",
     "localId": "081",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "081/108",
+    "cardNumber": "81/108",
     "cardName": "Unfezant",
-    "fullDisplayName": "Unfezant 081/108 Roaring Skies",
+    "fullDisplayName": "Unfezant 81/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -949,18 +1054,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-081-low.png",
-    "imageHighSrc": "cards/xy6-081-high.png"
+    "imageHighSrc": "cards/xy6-081-high.png",
+    "attacks": [
+      {
+        "name": "Feather Dance",
+        "damage": null
+      },
+      {
+        "name": "Sky Attack",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "19755",
-    "externalId": null,
+    "externalId": "xy6-80",
     "tcgdex_id": "xy6-80",
     "localId": "080",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "080/108",
+    "cardNumber": "80/108",
     "cardName": "Unfezant",
-    "fullDisplayName": "Unfezant 080/108 Roaring Skies",
+    "fullDisplayName": "Unfezant 80/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -982,18 +1097,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-080-low.png",
-    "imageHighSrc": "cards/xy6-080-high.png"
+    "imageHighSrc": "cards/xy6-080-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "30+"
+      },
+      {
+        "name": "Strong Winds",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19746",
-    "externalId": null,
+    "externalId": "xy6-79",
     "tcgdex_id": "xy6-79",
     "localId": "079",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "079/108",
+    "cardNumber": "79/108",
     "cardName": "Tranquill",
-    "fullDisplayName": "Tranquill 079/108 Roaring Skies",
+    "fullDisplayName": "Tranquill 79/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1015,18 +1140,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-079-low.png",
-    "imageHighSrc": "cards/xy6-079-high.png"
+    "imageHighSrc": "cards/xy6-079-high.png",
+    "attacks": [
+      {
+        "name": "Fly",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19737",
-    "externalId": null,
+    "externalId": "xy6-78",
     "tcgdex_id": "xy6-78",
     "localId": "078",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "078/108",
+    "cardNumber": "78/108",
     "cardName": "Pidove",
-    "fullDisplayName": "Pidove 078/108 Roaring Skies",
+    "fullDisplayName": "Pidove 78/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1048,11 +1179,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-078-low.png",
-    "imageHighSrc": "cards/xy6-078-high.png"
+    "imageHighSrc": "cards/xy6-078-high.png",
+    "attacks": [
+      {
+        "name": "Homing Pidove",
+        "damage": null
+      },
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19727",
-    "externalId": null,
+    "externalId": "xy6-77a",
     "tcgdex_id": "xy6-77a",
     "localId": "77a",
     "setCode": "xy6",
@@ -1082,18 +1223,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-77a-low.png",
-    "imageHighSrc": "cards/xy6-77a-high.png"
+    "imageHighSrc": "cards/xy6-77a-high.png",
+    "attacks": [
+      {
+        "name": "Sky Return",
+        "damage": "30"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19718",
-    "externalId": null,
+    "externalId": "xy6-77",
     "tcgdex_id": "xy6-77",
     "localId": "077",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "077/108",
+    "cardNumber": "77/108",
     "cardName": "Shaymin-EX",
-    "fullDisplayName": "Shaymin-EX 077/108 Roaring Skies",
+    "fullDisplayName": "Shaymin-EX 77/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1116,18 +1264,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-077-low.png",
-    "imageHighSrc": "cards/xy6-077-high.png"
+    "imageHighSrc": "cards/xy6-077-high.png",
+    "attacks": [
+      {
+        "name": "Sky Return",
+        "damage": "30"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19709",
-    "externalId": null,
+    "externalId": "xy6-76",
     "tcgdex_id": "xy6-76",
     "localId": "076",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "076/108",
+    "cardNumber": "76/108",
     "cardName": "M Rayquaza-EX",
-    "fullDisplayName": "M Rayquaza-EX 076/108 Roaring Skies",
+    "fullDisplayName": "M Rayquaza-EX 76/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -1150,18 +1305,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-076-low.png",
-    "imageHighSrc": "cards/xy6-076-high.png"
+    "imageHighSrc": "cards/xy6-076-high.png",
+    "attacks": [
+      {
+        "name": "Emerald Break",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19701",
-    "externalId": null,
+    "externalId": "xy6-75",
     "tcgdex_id": "xy6-75",
     "localId": "075",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "075/108",
+    "cardNumber": "75/108",
     "cardName": "Rayquaza-EX",
-    "fullDisplayName": "Rayquaza-EX 075/108 Roaring Skies",
+    "fullDisplayName": "Rayquaza-EX 75/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1184,18 +1346,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-075-low.png",
-    "imageHighSrc": "cards/xy6-075-high.png"
+    "imageHighSrc": "cards/xy6-075-high.png",
+    "attacks": [
+      {
+        "name": "Intensifying Burn",
+        "damage": "10+"
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19692",
-    "externalId": null,
+    "externalId": "xy6-74",
     "tcgdex_id": "xy6-74",
     "localId": "074",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "074/108",
+    "cardNumber": "74/108",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 074/108 Roaring Skies",
+    "fullDisplayName": "Altaria 74/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1217,18 +1390,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-074-low.png",
-    "imageHighSrc": "cards/xy6-074-high.png"
+    "imageHighSrc": "cards/xy6-074-high.png",
+    "attacks": [
+      {
+        "name": "Wing Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19683",
-    "externalId": null,
+    "externalId": "xy6-73",
     "tcgdex_id": "xy6-73",
     "localId": "073",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "073/108",
+    "cardNumber": "73/108",
     "cardName": "Swablu",
-    "fullDisplayName": "Swablu 073/108 Roaring Skies",
+    "fullDisplayName": "Swablu 73/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1250,18 +1429,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-073-low.png",
-    "imageHighSrc": "cards/xy6-073-high.png"
+    "imageHighSrc": "cards/xy6-073-high.png",
+    "attacks": [
+      {
+        "name": "Bind Wound",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19673",
-    "externalId": null,
+    "externalId": "xy6-72",
     "tcgdex_id": "xy6-72",
     "localId": "072",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "072/108",
+    "cardNumber": "72/108",
     "cardName": "Swellow",
-    "fullDisplayName": "Swellow 072/108 Roaring Skies",
+    "fullDisplayName": "Swellow 72/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1283,18 +1468,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-072-low.png",
-    "imageHighSrc": "cards/xy6-072-high.png"
+    "imageHighSrc": "cards/xy6-072-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "30"
+      },
+      {
+        "name": "Wing Attack",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "19664",
-    "externalId": null,
+    "externalId": "xy6-71",
     "tcgdex_id": "xy6-71",
     "localId": "071",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "071/108",
+    "cardNumber": "71/108",
     "cardName": "Swellow",
-    "fullDisplayName": "Swellow 071/108 Roaring Skies",
+    "fullDisplayName": "Swellow 71/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1316,18 +1511,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-071-low.png",
-    "imageHighSrc": "cards/xy6-071-high.png"
+    "imageHighSrc": "cards/xy6-071-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "20"
+      },
+      {
+        "name": "Aerial Ace",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "19655",
-    "externalId": null,
+    "externalId": "xy6-70",
     "tcgdex_id": "xy6-70",
     "localId": "070",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "070/108",
+    "cardNumber": "70/108",
     "cardName": "Taillow",
-    "fullDisplayName": "Taillow 070/108 Roaring Skies",
+    "fullDisplayName": "Taillow 70/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1349,18 +1554,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-070-low.png",
-    "imageHighSrc": "cards/xy6-070-high.png"
+    "imageHighSrc": "cards/xy6-070-high.png",
+    "attacks": [
+      {
+        "name": "Double Peck",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "19648",
-    "externalId": null,
+    "externalId": "xy6-69",
     "tcgdex_id": "xy6-69",
     "localId": "069",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "069/108",
+    "cardNumber": "69/108",
     "cardName": "Skarmory",
-    "fullDisplayName": "Skarmory 069/108 Roaring Skies",
+    "fullDisplayName": "Skarmory 69/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1382,18 +1593,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-069-low.png",
-    "imageHighSrc": "cards/xy6-069-high.png"
+    "imageHighSrc": "cards/xy6-069-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Blow Through",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "19638",
-    "externalId": null,
+    "externalId": "xy6-68",
     "tcgdex_id": "xy6-68",
     "localId": "068",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "068/108",
+    "cardNumber": "68/108",
     "cardName": "Dunsparce",
-    "fullDisplayName": "Dunsparce 068/108 Roaring Skies",
+    "fullDisplayName": "Dunsparce 68/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1415,18 +1636,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-068-low.png",
-    "imageHighSrc": "cards/xy6-068-high.png"
+    "imageHighSrc": "cards/xy6-068-high.png",
+    "attacks": [
+      {
+        "name": "Burrow",
+        "damage": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19628",
-    "externalId": null,
+    "externalId": "xy6-67",
     "tcgdex_id": "xy6-67",
     "localId": "067",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "067/108",
+    "cardNumber": "67/108",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth 067/108 Roaring Skies",
+    "fullDisplayName": "Meowth 67/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1448,18 +1679,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-067-low.png",
-    "imageHighSrc": "cards/xy6-067-high.png"
+    "imageHighSrc": "cards/xy6-067-high.png",
+    "attacks": [
+      {
+        "name": "Feelin' Fine",
+        "damage": null
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "19618",
-    "externalId": null,
+    "externalId": "xy6-66",
     "tcgdex_id": "xy6-66",
     "localId": "066",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "066/108",
+    "cardNumber": "66/108",
     "cardName": "Fearow",
-    "fullDisplayName": "Fearow 066/108 Roaring Skies",
+    "fullDisplayName": "Fearow 66/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1481,18 +1722,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-066-low.png",
-    "imageHighSrc": "cards/xy6-066-high.png"
+    "imageHighSrc": "cards/xy6-066-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "30"
+      },
+      {
+        "name": "Drill Run",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19609",
-    "externalId": null,
+    "externalId": "xy6-65",
     "tcgdex_id": "xy6-65",
     "localId": "065",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "065/108",
+    "cardNumber": "65/108",
     "cardName": "Spearow",
-    "fullDisplayName": "Spearow 065/108 Roaring Skies",
+    "fullDisplayName": "Spearow 65/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1514,18 +1765,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-065-low.png",
-    "imageHighSrc": "cards/xy6-065-high.png"
+    "imageHighSrc": "cards/xy6-065-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19600",
-    "externalId": null,
+    "externalId": "xy6-64",
     "tcgdex_id": "xy6-64",
     "localId": "064",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "064/108",
+    "cardNumber": "64/108",
     "cardName": "Zekrom",
-    "fullDisplayName": "Zekrom 064/108 Roaring Skies",
+    "fullDisplayName": "Zekrom 64/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1547,18 +1804,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-064-low.png",
-    "imageHighSrc": "cards/xy6-064-high.png"
+    "imageHighSrc": "cards/xy6-064-high.png",
+    "attacks": [
+      {
+        "name": "Energy Stream",
+        "damage": "30"
+      },
+      {
+        "name": "Electric Ball",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "19590",
-    "externalId": null,
+    "externalId": "xy6-63",
     "tcgdex_id": "xy6-63",
     "localId": "063",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "063/108",
+    "cardNumber": "63/108",
     "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram 063/108 Roaring Skies",
+    "fullDisplayName": "Reshiram 63/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1580,18 +1847,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-063-low.png",
-    "imageHighSrc": "cards/xy6-063-high.png"
+    "imageHighSrc": "cards/xy6-063-high.png",
+    "attacks": [
+      {
+        "name": "Bright Wing",
+        "damage": "110"
+      }
+    ]
   },
   {
     "masterCardId": "19581",
-    "externalId": null,
+    "externalId": "xy6-62",
     "tcgdex_id": "xy6-62",
     "localId": "062",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "062/108",
+    "cardNumber": "62/108",
     "cardName": "Hydreigon-EX",
-    "fullDisplayName": "Hydreigon-EX 062/108 Roaring Skies",
+    "fullDisplayName": "Hydreigon-EX 62/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1614,18 +1887,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-062-low.png",
-    "imageHighSrc": "cards/xy6-062-high.png"
+    "imageHighSrc": "cards/xy6-062-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "80"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19572",
-    "externalId": null,
+    "externalId": "xy6-61",
     "tcgdex_id": "xy6-61",
     "localId": "061",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "061/108",
+    "cardNumber": "61/108",
     "cardName": "M Rayquaza-EX",
-    "fullDisplayName": "M Rayquaza-EX 061/108 Roaring Skies",
+    "fullDisplayName": "M Rayquaza-EX 61/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -1648,18 +1928,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-061-low.png",
-    "imageHighSrc": "cards/xy6-061-high.png"
+    "imageHighSrc": "cards/xy6-061-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Ascent",
+        "damage": "300"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19563",
-    "externalId": null,
+    "externalId": "xy6-60",
     "tcgdex_id": "xy6-60",
     "localId": "060",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "060/108",
+    "cardNumber": "60/108",
     "cardName": "Rayquaza-EX",
-    "fullDisplayName": "Rayquaza-EX 060/108 Roaring Skies",
+    "fullDisplayName": "Rayquaza-EX 60/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1682,18 +1969,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-060-low.png",
-    "imageHighSrc": "cards/xy6-060-high.png"
+    "imageHighSrc": "cards/xy6-060-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "30"
+      },
+      {
+        "name": "Dragon Strike",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19554",
-    "externalId": null,
+    "externalId": "xy6-59",
     "tcgdex_id": "xy6-59",
     "localId": "059",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "059/108",
+    "cardNumber": "59/108",
     "cardName": "M Latios-EX",
-    "fullDisplayName": "M Latios-EX 059/108 Roaring Skies",
+    "fullDisplayName": "M Latios-EX 59/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -1716,18 +2014,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-059-low.png",
-    "imageHighSrc": "cards/xy6-059-high.png"
+    "imageHighSrc": "cards/xy6-059-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Ace",
+        "damage": null
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19545",
-    "externalId": null,
+    "externalId": "xy6-58",
     "tcgdex_id": "xy6-58",
     "localId": "058",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "058/108",
+    "cardNumber": "58/108",
     "cardName": "Latios-EX",
-    "fullDisplayName": "Latios-EX 058/108 Roaring Skies",
+    "fullDisplayName": "Latios-EX 58/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1750,18 +2055,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-058-low.png",
-    "imageHighSrc": "cards/xy6-058-high.png"
+    "imageHighSrc": "cards/xy6-058-high.png",
+    "attacks": [
+      {
+        "name": "Fast Raid",
+        "damage": "40"
+      },
+      {
+        "name": "Light Pulse",
+        "damage": "110"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19536",
-    "externalId": null,
+    "externalId": "xy6-57",
     "tcgdex_id": "xy6-57",
     "localId": "057",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "057/108",
+    "cardNumber": "57/108",
     "cardName": "Salamence",
-    "fullDisplayName": "Salamence 057/108 Roaring Skies",
+    "fullDisplayName": "Salamence 57/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1783,18 +2099,32 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-057-low.png",
-    "imageHighSrc": "cards/xy6-057-high.png"
+    "imageHighSrc": "cards/xy6-057-high.png",
+    "attacks": [
+      {
+        "name": "Shatter",
+        "damage": "60"
+      },
+      {
+        "name": "Power Howl",
+        "damage": "20×"
+      },
+      {
+        "name": "Steam Blast",
+        "damage": "170"
+      }
+    ]
   },
   {
     "masterCardId": "19527",
-    "externalId": null,
+    "externalId": "xy6-56",
     "tcgdex_id": "xy6-56",
     "localId": "056",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "056/108",
+    "cardNumber": "56/108",
     "cardName": "Shelgon",
-    "fullDisplayName": "Shelgon 056/108 Roaring Skies",
+    "fullDisplayName": "Shelgon 56/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1816,18 +2146,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-056-low.png",
-    "imageHighSrc": "cards/xy6-056-high.png"
+    "imageHighSrc": "cards/xy6-056-high.png",
+    "attacks": [
+      {
+        "name": "Rolling Tackle",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19518",
-    "externalId": null,
+    "externalId": "xy6-55",
     "tcgdex_id": "xy6-55",
     "localId": "055",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "055/108",
+    "cardNumber": "55/108",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 055/108 Roaring Skies",
+    "fullDisplayName": "Bagon 55/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1849,18 +2185,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-055-low.png",
-    "imageHighSrc": "cards/xy6-055-high.png"
+    "imageHighSrc": "cards/xy6-055-high.png",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null
+      },
+      {
+        "name": "Almost Flight",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19509",
-    "externalId": null,
+    "externalId": "xy6-54",
     "tcgdex_id": "xy6-54",
     "localId": "054",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "054/108",
+    "cardNumber": "54/108",
     "cardName": "Bagon",
-    "fullDisplayName": "Bagon 054/108 Roaring Skies",
+    "fullDisplayName": "Bagon 54/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1882,18 +2228,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-054-low.png",
-    "imageHighSrc": "cards/xy6-054-high.png"
+    "imageHighSrc": "cards/xy6-054-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Headbutt",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "19500",
-    "externalId": null,
+    "externalId": "xy6-53",
     "tcgdex_id": "xy6-53",
     "localId": "053",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "053/108",
+    "cardNumber": "53/108",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 053/108 Roaring Skies",
+    "fullDisplayName": "Altaria 53/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1915,18 +2267,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-053-low.png",
-    "imageHighSrc": "cards/xy6-053-high.png"
+    "imageHighSrc": "cards/xy6-053-high.png",
+    "attacks": [
+      {
+        "name": "Song of Echoes",
+        "damage": null
+      },
+      {
+        "name": "Midnight Eyes",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19491",
-    "externalId": null,
+    "externalId": "xy6-52",
     "tcgdex_id": "xy6-52",
     "localId": "052",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "052/108",
+    "cardNumber": "52/108",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 052/108 Roaring Skies",
+    "fullDisplayName": "Dragonite 52/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1948,18 +2310,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-052-low.png",
-    "imageHighSrc": "cards/xy6-052-high.png"
+    "imageHighSrc": "cards/xy6-052-high.png",
+    "attacks": [
+      {
+        "name": "Wrapped in Wind",
+        "damage": null
+      },
+      {
+        "name": "Heavy Impact",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "19482",
-    "externalId": null,
+    "externalId": "xy6-51",
     "tcgdex_id": "xy6-51",
     "localId": "051",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "051/108",
+    "cardNumber": "51/108",
     "cardName": "Dragonite",
-    "fullDisplayName": "Dragonite 051/108 Roaring Skies",
+    "fullDisplayName": "Dragonite 51/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1981,18 +2353,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-051-low.png",
-    "imageHighSrc": "cards/xy6-051-high.png"
+    "imageHighSrc": "cards/xy6-051-high.png",
+    "attacks": [
+      {
+        "name": "Mach Press",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19473",
-    "externalId": null,
+    "externalId": "xy6-50",
     "tcgdex_id": "xy6-50",
     "localId": "050",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "050/108",
+    "cardNumber": "50/108",
     "cardName": "Dragonair",
-    "fullDisplayName": "Dragonair 050/108 Roaring Skies",
+    "fullDisplayName": "Dragonair 50/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2014,18 +2392,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-050-low.png",
-    "imageHighSrc": "cards/xy6-050-high.png"
+    "imageHighSrc": "cards/xy6-050-high.png",
+    "attacks": [
+      {
+        "name": "Shed Skin",
+        "damage": null
+      },
+      {
+        "name": "Slam",
+        "damage": "60×"
+      }
+    ]
   },
   {
     "masterCardId": "19464",
-    "externalId": null,
+    "externalId": "xy6-49",
     "tcgdex_id": "xy6-49",
     "localId": "049",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "049/108",
+    "cardNumber": "49/108",
     "cardName": "Dratini",
-    "fullDisplayName": "Dratini 049/108 Roaring Skies",
+    "fullDisplayName": "Dratini 49/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2047,18 +2435,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-049-low.png",
-    "imageHighSrc": "cards/xy6-049-high.png"
+    "imageHighSrc": "cards/xy6-049-high.png",
+    "attacks": [
+      {
+        "name": "Hook",
+        "damage": "10"
+      },
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "19455",
-    "externalId": null,
+    "externalId": "xy6-48",
     "tcgdex_id": "xy6-48",
     "localId": "048",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "048/108",
+    "cardNumber": "48/108",
     "cardName": "Klefki",
-    "fullDisplayName": "Klefki 048/108 Roaring Skies",
+    "fullDisplayName": "Klefki 48/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2080,18 +2478,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-048-low.png",
-    "imageHighSrc": "cards/xy6-048-high.png"
+    "imageHighSrc": "cards/xy6-048-high.png",
+    "attacks": [
+      {
+        "name": "Look for Keys",
+        "damage": null
+      },
+      {
+        "name": "Play Rough",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "19446",
-    "externalId": null,
+    "externalId": "xy6-47",
     "tcgdex_id": "xy6-47",
     "localId": "047",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "047/108",
+    "cardNumber": "47/108",
     "cardName": "Carbink",
-    "fullDisplayName": "Carbink 047/108 Roaring Skies",
+    "fullDisplayName": "Carbink 47/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2113,18 +2521,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-047-low.png",
-    "imageHighSrc": "cards/xy6-047-high.png"
+    "imageHighSrc": "cards/xy6-047-high.png",
+    "attacks": [
+      {
+        "name": "Spin Tackle",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19437",
-    "externalId": null,
+    "externalId": "xy6-46",
     "tcgdex_id": "xy6-46",
     "localId": "046",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "046/108",
+    "cardNumber": "46/108",
     "cardName": "Togekiss",
-    "fullDisplayName": "Togekiss 046/108 Roaring Skies",
+    "fullDisplayName": "Togekiss 46/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2146,18 +2560,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-046-low.png",
-    "imageHighSrc": "cards/xy6-046-high.png"
+    "imageHighSrc": "cards/xy6-046-high.png",
+    "attacks": [
+      {
+        "name": "Fairy Wind",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19428",
-    "externalId": null,
+    "externalId": "xy6-45",
     "tcgdex_id": "xy6-45",
     "localId": "045",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "045/108",
+    "cardNumber": "45/108",
     "cardName": "Togekiss",
-    "fullDisplayName": "Togekiss 045/108 Roaring Skies",
+    "fullDisplayName": "Togekiss 45/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2179,18 +2599,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-045-low.png",
-    "imageHighSrc": "cards/xy6-045-high.png"
+    "imageHighSrc": "cards/xy6-045-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Slap",
+        "damage": "50×"
+      },
+      {
+        "name": "Aura Sphere",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19420",
-    "externalId": null,
+    "externalId": "xy6-44",
     "tcgdex_id": "xy6-44",
     "localId": "044",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "044/108",
+    "cardNumber": "44/108",
     "cardName": "Togetic",
-    "fullDisplayName": "Togetic 044/108 Roaring Skies",
+    "fullDisplayName": "Togetic 44/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2212,18 +2642,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-044-low.png",
-    "imageHighSrc": "cards/xy6-044-high.png"
+    "imageHighSrc": "cards/xy6-044-high.png",
+    "attacks": [
+      {
+        "name": "Go Fetch",
+        "damage": null
+      },
+      {
+        "name": "Fairy Wind",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19410",
-    "externalId": null,
+    "externalId": "xy6-43",
     "tcgdex_id": "xy6-43",
     "localId": "043",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "043/108",
+    "cardNumber": "43/108",
     "cardName": "Togepi",
-    "fullDisplayName": "Togepi 043/108 Roaring Skies",
+    "fullDisplayName": "Togepi 43/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2245,18 +2685,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-043-low.png",
-    "imageHighSrc": "cards/xy6-043-high.png"
+    "imageHighSrc": "cards/xy6-043-high.png",
+    "attacks": [
+      {
+        "name": "Sweet Kiss",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19402",
-    "externalId": null,
+    "externalId": "xy6-42",
     "tcgdex_id": "xy6-42",
     "localId": "042",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "042/108",
+    "cardNumber": "42/108",
     "cardName": "Jirachi",
-    "fullDisplayName": "Jirachi 042/108 Roaring Skies",
+    "fullDisplayName": "Jirachi 42/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2278,18 +2724,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-042-low.png",
-    "imageHighSrc": "cards/xy6-042-high.png"
+    "imageHighSrc": "cards/xy6-042-high.png",
+    "attacks": [
+      {
+        "name": "Diminutive Desire",
+        "damage": null
+      },
+      {
+        "name": "Doom Desire",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19393",
-    "externalId": null,
+    "externalId": "xy6-41",
     "tcgdex_id": "xy6-41",
     "localId": "041",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "041/108",
+    "cardNumber": "41/108",
     "cardName": "Inkay",
-    "fullDisplayName": "Inkay 041/108 Roaring Skies",
+    "fullDisplayName": "Inkay 41/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2311,18 +2767,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-041-low.png",
-    "imageHighSrc": "cards/xy6-041-high.png"
+    "imageHighSrc": "cards/xy6-041-high.png",
+    "attacks": [
+      {
+        "name": "Rip Off",
+        "damage": null
+      },
+      {
+        "name": "Psybeam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19383",
-    "externalId": null,
+    "externalId": "xy6-40",
     "tcgdex_id": "xy6-40",
     "localId": "040",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "040/108",
+    "cardNumber": "40/108",
     "cardName": "Absol",
-    "fullDisplayName": "Absol 040/108 Roaring Skies",
+    "fullDisplayName": "Absol 40/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2344,18 +2810,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-040-low.png",
-    "imageHighSrc": "cards/xy6-040-high.png"
+    "imageHighSrc": "cards/xy6-040-high.png",
+    "attacks": [
+      {
+        "name": "Mach Claw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19375",
-    "externalId": null,
+    "externalId": "xy6-39",
     "tcgdex_id": "xy6-39",
     "localId": "039",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "039/108",
+    "cardNumber": "39/108",
     "cardName": "Hawlucha",
-    "fullDisplayName": "Hawlucha 039/108 Roaring Skies",
+    "fullDisplayName": "Hawlucha 39/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2377,18 +2849,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-039-low.png",
-    "imageHighSrc": "cards/xy6-039-high.png"
+    "imageHighSrc": "cards/xy6-039-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Midair Strike",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "19365",
-    "externalId": null,
+    "externalId": "xy6-38",
     "tcgdex_id": "xy6-38",
     "localId": "038",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "038/108",
+    "cardNumber": "38/108",
     "cardName": "Binacle",
-    "fullDisplayName": "Binacle 038/108 Roaring Skies",
+    "fullDisplayName": "Binacle 38/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2410,18 +2892,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-038-low.png",
-    "imageHighSrc": "cards/xy6-038-high.png"
+    "imageHighSrc": "cards/xy6-038-high.png",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": null
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19355",
-    "externalId": null,
+    "externalId": "xy6-37",
     "tcgdex_id": "xy6-37",
     "localId": "037",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "037/108",
+    "cardNumber": "37/108",
     "cardName": "Gliscor",
-    "fullDisplayName": "Gliscor 037/108 Roaring Skies",
+    "fullDisplayName": "Gliscor 37/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2443,18 +2935,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-037-low.png",
-    "imageHighSrc": "cards/xy6-037-high.png"
+    "imageHighSrc": "cards/xy6-037-high.png",
+    "attacks": [
+      {
+        "name": "Rock Slide",
+        "damage": "20"
+      },
+      {
+        "name": "Slash",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19345",
-    "externalId": null,
+    "externalId": "xy6-36",
     "tcgdex_id": "xy6-36",
     "localId": "036",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "036/108",
+    "cardNumber": "36/108",
     "cardName": "Gligar",
-    "fullDisplayName": "Gligar 036/108 Roaring Skies",
+    "fullDisplayName": "Gligar 36/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2476,18 +2978,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-036-low.png",
-    "imageHighSrc": "cards/xy6-036-high.png"
+    "imageHighSrc": "cards/xy6-036-high.png",
+    "attacks": [
+      {
+        "name": "Stun Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19335",
-    "externalId": null,
+    "externalId": "xy6-35",
     "tcgdex_id": "xy6-35",
     "localId": "035",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "035/108",
+    "cardNumber": "35/108",
     "cardName": "M Gallade-EX",
-    "fullDisplayName": "M Gallade-EX 035/108 Roaring Skies",
+    "fullDisplayName": "M Gallade-EX 35/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "MEGA",
@@ -2510,18 +3018,25 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-035-low.png",
-    "imageHighSrc": "cards/xy6-035-high.png"
+    "imageHighSrc": "cards/xy6-035-high.png",
+    "attacks": [
+      {
+        "name": "Unwavering Blade",
+        "damage": "110"
+      }
+    ],
+    "rules": "Mega Evolution rule: When 1 of your Pokémon becomes a Mega Evolution Pokémon, your turn ends.\n\nPokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19324",
-    "externalId": null,
+    "externalId": "xy6-34",
     "tcgdex_id": "xy6-34",
     "localId": "034",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "034/108",
+    "cardNumber": "34/108",
     "cardName": "Gallade-EX",
-    "fullDisplayName": "Gallade-EX 034/108 Roaring Skies",
+    "fullDisplayName": "Gallade-EX 34/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2544,18 +3059,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-034-low.png",
-    "imageHighSrc": "cards/xy6-034-high.png"
+    "imageHighSrc": "cards/xy6-034-high.png",
+    "attacks": [
+      {
+        "name": "Swift Lunge",
+        "damage": "30"
+      },
+      {
+        "name": "Piercing Prizes",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19315",
-    "externalId": null,
+    "externalId": "xy6-33",
     "tcgdex_id": "xy6-33",
     "localId": "033",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "033/108",
+    "cardNumber": "33/108",
     "cardName": "Deoxys",
-    "fullDisplayName": "Deoxys 033/108 Roaring Skies",
+    "fullDisplayName": "Deoxys 33/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2577,18 +3103,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-033-low.png",
-    "imageHighSrc": "cards/xy6-033-high.png"
+    "imageHighSrc": "cards/xy6-033-high.png",
+    "attacks": [
+      {
+        "name": "Close Encounter",
+        "damage": null
+      },
+      {
+        "name": "Overdrive Smash",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19305",
-    "externalId": null,
+    "externalId": "xy6-32",
     "tcgdex_id": "xy6-32",
     "localId": "032",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "032/108",
+    "cardNumber": "32/108",
     "cardName": "Banette",
-    "fullDisplayName": "Banette 032/108 Roaring Skies",
+    "fullDisplayName": "Banette 32/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2610,18 +3146,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-032-low.png",
-    "imageHighSrc": "cards/xy6-032-high.png"
+    "imageHighSrc": "cards/xy6-032-high.png",
+    "attacks": [
+      {
+        "name": "Evolution Jammer",
+        "damage": "20"
+      },
+      {
+        "name": "Curse Deeply",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19294",
-    "externalId": null,
+    "externalId": "xy6-31",
     "tcgdex_id": "xy6-31",
     "localId": "031",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "031/108",
+    "cardNumber": "31/108",
     "cardName": "Banette",
-    "fullDisplayName": "Banette 031/108 Roaring Skies",
+    "fullDisplayName": "Banette 31/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2643,18 +3189,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-031-low.png",
-    "imageHighSrc": "cards/xy6-031-high.png"
+    "imageHighSrc": "cards/xy6-031-high.png",
+    "attacks": [
+      {
+        "name": "Psyshot",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19283",
-    "externalId": null,
+    "externalId": "xy6-30",
     "tcgdex_id": "xy6-30",
     "localId": "030",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "030/108",
+    "cardNumber": "30/108",
     "cardName": "Shuppet",
-    "fullDisplayName": "Shuppet 030/108 Roaring Skies",
+    "fullDisplayName": "Shuppet 30/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2676,18 +3228,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-030-low.png",
-    "imageHighSrc": "cards/xy6-030-high.png"
+    "imageHighSrc": "cards/xy6-030-high.png",
+    "attacks": [
+      {
+        "name": "Bleh",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19272",
-    "externalId": null,
+    "externalId": "xy6-29",
     "tcgdex_id": "xy6-29",
     "localId": "029",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "029/108",
+    "cardNumber": "29/108",
     "cardName": "Xatu",
-    "fullDisplayName": "Xatu 029/108 Roaring Skies",
+    "fullDisplayName": "Xatu 29/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2709,18 +3267,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-029-low.png",
-    "imageHighSrc": "cards/xy6-029-high.png"
+    "imageHighSrc": "cards/xy6-029-high.png",
+    "attacks": [
+      {
+        "name": "Future Sight",
+        "damage": null
+      },
+      {
+        "name": "Stressful Eye",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19262",
-    "externalId": null,
+    "externalId": "xy6-28",
     "tcgdex_id": "xy6-28",
     "localId": "028",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "028/108",
+    "cardNumber": "28/108",
     "cardName": "Natu",
-    "fullDisplayName": "Natu 028/108 Roaring Skies",
+    "fullDisplayName": "Natu 28/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2742,18 +3310,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-028-low.png",
-    "imageHighSrc": "cards/xy6-028-high.png"
+    "imageHighSrc": "cards/xy6-028-high.png",
+    "attacks": [
+      {
+        "name": "Psywave",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "19249",
-    "externalId": null,
+    "externalId": "xy6-27",
     "tcgdex_id": "xy6-27",
     "localId": "027",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "027/108",
+    "cardNumber": "27/108",
     "cardName": "Natu",
-    "fullDisplayName": "Natu 027/108 Roaring Skies",
+    "fullDisplayName": "Natu 27/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2775,18 +3349,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-027-low.png",
-    "imageHighSrc": "cards/xy6-027-high.png"
+    "imageHighSrc": "cards/xy6-027-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19239",
-    "externalId": null,
+    "externalId": "xy6-26",
     "tcgdex_id": "xy6-26",
     "localId": "026",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "026/108",
+    "cardNumber": "26/108",
     "cardName": "Thundurus-EX",
-    "fullDisplayName": "Thundurus-EX 026/108 Roaring Skies",
+    "fullDisplayName": "Thundurus-EX 26/108 Roaring Skies",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2809,18 +3389,29 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-026-low.png",
-    "imageHighSrc": "cards/xy6-026-high.png"
+    "imageHighSrc": "cards/xy6-026-high.png",
+    "attacks": [
+      {
+        "name": "Headlock",
+        "damage": "30+"
+      },
+      {
+        "name": "Voltage Rush",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "19230",
-    "externalId": null,
+    "externalId": "xy6-25",
     "tcgdex_id": "xy6-25",
     "localId": "025",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "025/108",
+    "cardNumber": "25/108",
     "cardName": "Manectric",
-    "fullDisplayName": "Manectric 025/108 Roaring Skies",
+    "fullDisplayName": "Manectric 25/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2842,18 +3433,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-025-low.png",
-    "imageHighSrc": "cards/xy6-025-high.png"
+    "imageHighSrc": "cards/xy6-025-high.png",
+    "attacks": [
+      {
+        "name": "Random Spark",
+        "damage": null
+      },
+      {
+        "name": "Bite",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "19220",
-    "externalId": null,
+    "externalId": "xy6-24",
     "tcgdex_id": "xy6-24",
     "localId": "024",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "024/108",
+    "cardNumber": "24/108",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 024/108 Roaring Skies",
+    "fullDisplayName": "Electrike 24/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2875,18 +3476,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-024-low.png",
-    "imageHighSrc": "cards/xy6-024-high.png"
+    "imageHighSrc": "cards/xy6-024-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19210",
-    "externalId": null,
+    "externalId": "xy6-23",
     "tcgdex_id": "xy6-23",
     "localId": "023",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "023/108",
+    "cardNumber": "23/108",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 023/108 Roaring Skies",
+    "fullDisplayName": "Zapdos 23/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2908,18 +3515,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-023-low.png",
-    "imageHighSrc": "cards/xy6-023-high.png"
+    "imageHighSrc": "cards/xy6-023-high.png",
+    "attacks": [
+      {
+        "name": "Drill Peck",
+        "damage": "20"
+      },
+      {
+        "name": "Raging Thunder",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "19200",
-    "externalId": null,
+    "externalId": "xy6-22",
     "tcgdex_id": "xy6-22",
     "localId": "022",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "022/108",
+    "cardNumber": "22/108",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode 022/108 Roaring Skies",
+    "fullDisplayName": "Electrode 22/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2941,18 +3558,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-022-low.png",
-    "imageHighSrc": "cards/xy6-022-high.png"
+    "imageHighSrc": "cards/xy6-022-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Tumble",
+        "damage": "20×"
+      },
+      {
+        "name": "Energy Bomb",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19190",
-    "externalId": null,
+    "externalId": "xy6-21",
     "tcgdex_id": "xy6-21",
     "localId": "021",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "021/108",
+    "cardNumber": "21/108",
     "cardName": "Voltorb",
-    "fullDisplayName": "Voltorb 021/108 Roaring Skies",
+    "fullDisplayName": "Voltorb 21/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2974,18 +3601,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-021-low.png",
-    "imageHighSrc": "cards/xy6-021-high.png"
+    "imageHighSrc": "cards/xy6-021-high.png",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Big Explosion",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "19180",
-    "externalId": null,
+    "externalId": "xy6-20",
     "tcgdex_id": "xy6-20",
     "localId": "020",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "020/108",
+    "cardNumber": "20/108",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 020/108 Roaring Skies",
+    "fullDisplayName": "Pikachu 20/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3007,18 +3644,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-020-low.png",
-    "imageHighSrc": "cards/xy6-020-high.png"
+    "imageHighSrc": "cards/xy6-020-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whip",
+        "damage": null
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19172",
-    "externalId": null,
+    "externalId": "xy6-19",
     "tcgdex_id": "xy6-19",
     "localId": "019",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "019/108",
+    "cardNumber": "19/108",
     "cardName": "Pelipper",
-    "fullDisplayName": "Pelipper 019/108 Roaring Skies",
+    "fullDisplayName": "Pelipper 19/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3040,18 +3687,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-019-low.png",
-    "imageHighSrc": "cards/xy6-019-high.png"
+    "imageHighSrc": "cards/xy6-019-high.png",
+    "attacks": [
+      {
+        "name": "Swallow",
+        "damage": "30"
+      },
+      {
+        "name": "Water Pulse",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "19162",
-    "externalId": null,
+    "externalId": "xy6-18",
     "tcgdex_id": "xy6-18",
     "localId": "018",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "018/108",
+    "cardNumber": "18/108",
     "cardName": "Wingull",
-    "fullDisplayName": "Wingull 018/108 Roaring Skies",
+    "fullDisplayName": "Wingull 18/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3073,18 +3730,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-018-low.png",
-    "imageHighSrc": "cards/xy6-018-high.png"
+    "imageHighSrc": "cards/xy6-018-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19151",
-    "externalId": null,
+    "externalId": "xy6-17",
     "tcgdex_id": "xy6-17",
     "localId": "017",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "017/108",
+    "cardNumber": "17/108",
     "cardName": "Articuno",
-    "fullDisplayName": "Articuno 017/108 Roaring Skies",
+    "fullDisplayName": "Articuno 17/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3106,18 +3769,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-017-low.png",
-    "imageHighSrc": "cards/xy6-017-high.png"
+    "imageHighSrc": "cards/xy6-017-high.png",
+    "attacks": [
+      {
+        "name": "Chilling Sigh",
+        "damage": null
+      },
+      {
+        "name": "Tri Edge",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "19141",
-    "externalId": null,
+    "externalId": "xy6-16",
     "tcgdex_id": "xy6-16",
     "localId": "016",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "016/108",
+    "cardNumber": "16/108",
     "cardName": "Articuno",
-    "fullDisplayName": "Articuno 016/108 Roaring Skies",
+    "fullDisplayName": "Articuno 16/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3139,18 +3812,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-016-low.png",
-    "imageHighSrc": "cards/xy6-016-high.png"
+    "imageHighSrc": "cards/xy6-016-high.png",
+    "attacks": [
+      {
+        "name": "Find Ice",
+        "damage": null
+      },
+      {
+        "name": "Freezing Wind",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "19131",
-    "externalId": null,
+    "externalId": "xy6-15",
     "tcgdex_id": "xy6-15",
     "localId": "015",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "015/108",
+    "cardNumber": "15/108",
     "cardName": "Talonflame",
-    "fullDisplayName": "Talonflame 015/108 Roaring Skies",
+    "fullDisplayName": "Talonflame 15/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3172,18 +3855,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-015-low.png",
-    "imageHighSrc": "cards/xy6-015-high.png"
+    "imageHighSrc": "cards/xy6-015-high.png",
+    "attacks": [
+      {
+        "name": "Grand Loop",
+        "damage": null
+      },
+      {
+        "name": "Brave Bird",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "19122",
-    "externalId": null,
+    "externalId": "xy6-14",
     "tcgdex_id": "xy6-14",
     "localId": "014",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "014/108",
+    "cardNumber": "14/108",
     "cardName": "Fletchinder",
-    "fullDisplayName": "Fletchinder 014/108 Roaring Skies",
+    "fullDisplayName": "Fletchinder 14/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3205,18 +3898,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-014-low.png",
-    "imageHighSrc": "cards/xy6-014-high.png"
+    "imageHighSrc": "cards/xy6-014-high.png",
+    "attacks": [
+      {
+        "name": "Peck Off",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19111",
-    "externalId": null,
+    "externalId": "xy6-13",
     "tcgdex_id": "xy6-13",
     "localId": "013",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "013/108",
+    "cardNumber": "13/108",
     "cardName": "Victini",
-    "fullDisplayName": "Victini 013/108 Roaring Skies",
+    "fullDisplayName": "Victini 13/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3238,18 +3937,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-013-low.png",
-    "imageHighSrc": "cards/xy6-013-high.png"
+    "imageHighSrc": "cards/xy6-013-high.png",
+    "attacks": [
+      {
+        "name": "Me First",
+        "damage": null
+      },
+      {
+        "name": "Psy Bolt",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19101",
-    "externalId": null,
+    "externalId": "xy6-12",
     "tcgdex_id": "xy6-12",
     "localId": "012",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "012/108",
+    "cardNumber": "12/108",
     "cardName": "Tropius",
-    "fullDisplayName": "Tropius 012/108 Roaring Skies",
+    "fullDisplayName": "Tropius 12/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3271,18 +3980,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-012-low.png",
-    "imageHighSrc": "cards/xy6-012-high.png"
+    "imageHighSrc": "cards/xy6-012-high.png",
+    "attacks": [
+      {
+        "name": "Stomp",
+        "damage": "50+"
+      },
+      {
+        "name": "Solar Beam",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19092",
-    "externalId": null,
+    "externalId": "xy6-11",
     "tcgdex_id": "xy6-11",
     "localId": "011",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "011/108",
+    "cardNumber": "11/108",
     "cardName": "Shedinja",
-    "fullDisplayName": "Shedinja 011/108 Roaring Skies",
+    "fullDisplayName": "Shedinja 11/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3304,18 +4023,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-011-low.png",
-    "imageHighSrc": "cards/xy6-011-high.png"
+    "imageHighSrc": "cards/xy6-011-high.png",
+    "attacks": [
+      {
+        "name": "Cursed Rain",
+        "damage": null
+      },
+      {
+        "name": "Hopeless Scream",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "19083",
-    "externalId": null,
+    "externalId": "xy6-10",
     "tcgdex_id": "xy6-10",
     "localId": "010",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "010/108",
+    "cardNumber": "10/108",
     "cardName": "Ninjask",
-    "fullDisplayName": "Ninjask 010/108 Roaring Skies",
+    "fullDisplayName": "Ninjask 10/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3337,18 +4066,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-010-low.png",
-    "imageHighSrc": "cards/xy6-010-high.png"
+    "imageHighSrc": "cards/xy6-010-high.png",
+    "attacks": [
+      {
+        "name": "Afterimage Assault",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "19073",
-    "externalId": null,
+    "externalId": "xy6-9",
     "tcgdex_id": "xy6-9",
     "localId": "009",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "009/108",
+    "cardNumber": "9/108",
     "cardName": "Nincada",
-    "fullDisplayName": "Nincada 009/108 Roaring Skies",
+    "fullDisplayName": "Nincada 9/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3370,18 +4105,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-009-low.png",
-    "imageHighSrc": "cards/xy6-009-high.png"
+    "imageHighSrc": "cards/xy6-009-high.png",
+    "attacks": [
+      {
+        "name": "Slight Intrusion",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19062",
-    "externalId": null,
+    "externalId": "xy6-8",
     "tcgdex_id": "xy6-8",
     "localId": "008",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "008/108",
+    "cardNumber": "8/108",
     "cardName": "Dustox",
-    "fullDisplayName": "Dustox 008/108 Roaring Skies",
+    "fullDisplayName": "Dustox 8/108 Roaring Skies",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3403,18 +4144,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-008-low.png",
-    "imageHighSrc": "cards/xy6-008-high.png"
+    "imageHighSrc": "cards/xy6-008-high.png",
+    "attacks": [
+      {
+        "name": "Flap",
+        "damage": "20"
+      },
+      {
+        "name": "Wind Shard",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19052",
-    "externalId": null,
+    "externalId": "xy6-7",
     "tcgdex_id": "xy6-7",
     "localId": "007",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "007/108",
+    "cardNumber": "7/108",
     "cardName": "Dustox",
-    "fullDisplayName": "Dustox 007/108 Roaring Skies",
+    "fullDisplayName": "Dustox 7/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3436,18 +4187,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-007-low.png",
-    "imageHighSrc": "cards/xy6-007-high.png"
+    "imageHighSrc": "cards/xy6-007-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": "30"
+      },
+      {
+        "name": "Twilight Poison",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19042",
-    "externalId": null,
+    "externalId": "xy6-6",
     "tcgdex_id": "xy6-6",
     "localId": "006",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "006/108",
+    "cardNumber": "6/108",
     "cardName": "Cascoon",
-    "fullDisplayName": "Cascoon 006/108 Roaring Skies",
+    "fullDisplayName": "Cascoon 6/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3469,18 +4230,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-006-low.png",
-    "imageHighSrc": "cards/xy6-006-high.png"
+    "imageHighSrc": "cards/xy6-006-high.png",
+    "attacks": [
+      {
+        "name": "Poison Sting",
+        "damage": null
+      },
+      {
+        "name": "Iron Defense",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "19032",
-    "externalId": null,
+    "externalId": "xy6-5",
     "tcgdex_id": "xy6-5",
     "localId": "005",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "005/108",
+    "cardNumber": "5/108",
     "cardName": "Beautifly",
-    "fullDisplayName": "Beautifly 005/108 Roaring Skies",
+    "fullDisplayName": "Beautifly 5/108 Roaring Skies",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3502,18 +4273,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-005-low.png",
-    "imageHighSrc": "cards/xy6-005-high.png"
+    "imageHighSrc": "cards/xy6-005-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "19022",
-    "externalId": null,
+    "externalId": "xy6-4",
     "tcgdex_id": "xy6-4",
     "localId": "004",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "004/108",
+    "cardNumber": "4/108",
     "cardName": "Silcoon",
-    "fullDisplayName": "Silcoon 004/108 Roaring Skies",
+    "fullDisplayName": "Silcoon 4/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3535,18 +4312,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-004-low.png",
-    "imageHighSrc": "cards/xy6-004-high.png"
+    "imageHighSrc": "cards/xy6-004-high.png",
+    "attacks": [
+      {
+        "name": "String Shot",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "19013",
-    "externalId": null,
+    "externalId": "xy6-3",
     "tcgdex_id": "xy6-3",
     "localId": "003",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "003/108",
+    "cardNumber": "3/108",
     "cardName": "Wurmple",
-    "fullDisplayName": "Wurmple 003/108 Roaring Skies",
+    "fullDisplayName": "Wurmple 3/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3568,18 +4351,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-003-low.png",
-    "imageHighSrc": "cards/xy6-003-high.png"
+    "imageHighSrc": "cards/xy6-003-high.png",
+    "attacks": [
+      {
+        "name": "Flock",
+        "damage": null
+      },
+      {
+        "name": "Tackle",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "19003",
-    "externalId": null,
+    "externalId": "xy6-2",
     "tcgdex_id": "xy6-2",
     "localId": "002",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "002/108",
+    "cardNumber": "2/108",
     "cardName": "Exeggutor",
-    "fullDisplayName": "Exeggutor 002/108 Roaring Skies",
+    "fullDisplayName": "Exeggutor 2/108 Roaring Skies",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3601,18 +4394,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-002-low.png",
-    "imageHighSrc": "cards/xy6-002-high.png"
+    "imageHighSrc": "cards/xy6-002-high.png",
+    "attacks": [
+      {
+        "name": "Shake It Off",
+        "damage": "20×"
+      },
+      {
+        "name": "Seed Bomb",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "18989",
-    "externalId": null,
+    "externalId": "xy6-1",
     "tcgdex_id": "xy6-1",
     "localId": "001",
     "setCode": "xy6",
     "setTcgdexId": "xy6",
-    "cardNumber": "001/108",
+    "cardNumber": "1/108",
     "cardName": "Exeggcute",
-    "fullDisplayName": "Exeggcute 001/108 Roaring Skies",
+    "fullDisplayName": "Exeggcute 1/108 Roaring Skies",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3634,6 +4437,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/xy6-001-low.png",
-    "imageHighSrc": "cards/xy6-001-high.png"
+    "imageHighSrc": "cards/xy6-001-high.png",
+    "attacks": [
+      {
+        "name": "Loathe",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "10"
+      }
+    ]
   }
 ]

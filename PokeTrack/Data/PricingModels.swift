@@ -1,5 +1,20 @@
 import Foundation
 
+/// Values from `JSONSerialization` are often `NSNumber`; use this instead of `as? Double` alone.
+private func jsonScalarToDouble(_ v: Any) -> Double? {
+    switch v {
+    case let d as Double: return d
+    case let f as Float: return Double(f)
+    case let i as Int: return Double(i)
+    case let n as NSNumber: return n.doubleValue
+    case let s as String:
+        let t = s.trimmingCharacters(in: .whitespacesAndNewlines)
+        return Double(t)
+    default:
+        return nil
+    }
+}
+
 typealias SetPricingMap = [String: CardPricingEntry]
 
 struct CardPricingEntry: Codable, Hashable {
@@ -78,12 +93,11 @@ struct CardPriceHistory {
     static func parse(from variantMap: [String: Any]) -> CardPriceHistory? {
         func parseSeries(_ d: [String: Any]) -> Series {
             func points(_ key: String) -> [PriceDataPoint] {
-                guard let arr = d[key] as? [[Any]] else { return [] }
-                return arr.compactMap { pair -> PriceDataPoint? in
-                    guard pair.count >= 2,
-                          let label = pair[0] as? String,
-                          let price = (pair[1] as? Double) ?? (pair[1] as? Int).map(Double.init)
-                    else { return nil }
+                guard let arr = d[key] as? [Any] else { return [] }
+                return arr.compactMap { item -> PriceDataPoint? in
+                    guard let pair = item as? [Any], pair.count >= 2 else { return nil }
+                    guard let label = pair[0] as? String else { return nil }
+                    guard let price = jsonScalarToDouble(pair[1]) else { return nil }
                     return PriceDataPoint(id: label, label: label, price: price)
                 }
             }
@@ -132,10 +146,14 @@ struct CardPriceTrends {
         let variant = d["variant"] as? String ?? ""
         let grade = d["grade"] as? String ?? "raw"
         func changePct(_ key: String) -> Double? {
-            (d[key] as? [String: Any])?["changePct"] as? Double
+            guard let inner = d[key] as? [String: Any], let raw = inner["changePct"] else { return nil }
+            return jsonScalarToDouble(raw)
         }
         func parseGradeEntry(_ g: [String: Any]) -> (change1d: Double?, change7d: Double?, change30d: Double?) {
-            func pct(_ key: String) -> Double? { (g[key] as? [String: Any])?["changePct"] as? Double }
+            func pct(_ key: String) -> Double? {
+                guard let inner = g[key] as? [String: Any], let raw = inner["changePct"] else { return nil }
+                return jsonScalarToDouble(raw)
+            }
             return (pct("daily"), pct("weekly"), pct("monthly"))
         }
         var allVariants: [String: [String: (change1d: Double?, change7d: Double?, change30d: Double?)]] = [:]

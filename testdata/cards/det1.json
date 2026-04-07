@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "3620",
-    "externalId": null,
+    "externalId": "det1-18",
     "tcgdex_id": "det1-18",
     "localId": "018",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "018/18",
+    "cardNumber": "18/18",
     "cardName": "Slaking",
-    "fullDisplayName": "Slaking 018/18 Detective Pikachu",
+    "fullDisplayName": "Slaking 18/18 Detective Pikachu",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -30,18 +30,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-018-low.png",
-    "imageHighSrc": "cards/det1-018-high.png"
+    "imageHighSrc": "cards/det1-018-high.png",
+    "attacks": [
+      {
+        "name": "Pitch",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "3614",
-    "externalId": null,
+    "externalId": "det1-17",
     "tcgdex_id": "det1-17",
     "localId": "017",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "017/18",
+    "cardNumber": "17/18",
     "cardName": "Ditto",
-    "fullDisplayName": "Ditto 017/18 Detective Pikachu",
+    "fullDisplayName": "Ditto 17/18 Detective Pikachu",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +69,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-017-low.png",
-    "imageHighSrc": "cards/det1-017-high.png"
+    "imageHighSrc": "cards/det1-017-high.png",
+    "attacks": [
+      {
+        "name": "Copy Anything",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3609",
-    "externalId": null,
+    "externalId": "det1-16",
     "tcgdex_id": "det1-16",
     "localId": "016",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "016/18",
+    "cardNumber": "16/18",
     "cardName": "Lickitung",
-    "fullDisplayName": "Lickitung 016/18 Detective Pikachu",
+    "fullDisplayName": "Lickitung 16/18 Detective Pikachu",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +108,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-016-low.png",
-    "imageHighSrc": "cards/det1-016-high.png"
+    "imageHighSrc": "cards/det1-016-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Lick",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3603",
-    "externalId": null,
+    "externalId": "det1-15",
     "tcgdex_id": "det1-15",
     "localId": "015",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "015/18",
+    "cardNumber": "15/18",
     "cardName": "Snubbull",
-    "fullDisplayName": "Snubbull 015/18 Detective Pikachu",
+    "fullDisplayName": "Snubbull 15/18 Detective Pikachu",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +147,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-015-low.png",
-    "imageHighSrc": "cards/det1-015-high.png"
+    "imageHighSrc": "cards/det1-015-high.png",
+    "attacks": [
+      {
+        "name": "Play Rough",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3597",
-    "externalId": null,
+    "externalId": "det1-14",
     "tcgdex_id": "det1-14",
     "localId": "014",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "014/18",
+    "cardNumber": "14/18",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff 014/18 Detective Pikachu",
+    "fullDisplayName": "Jigglypuff 14/18 Detective Pikachu",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +186,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-014-low.png",
-    "imageHighSrc": "cards/det1-014-high.png"
+    "imageHighSrc": "cards/det1-014-high.png",
+    "attacks": [
+      {
+        "name": "Healing Melody",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3591",
-    "externalId": null,
+    "externalId": "det1-13",
     "tcgdex_id": "det1-13",
     "localId": "013",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "013/18",
+    "cardNumber": "13/18",
     "cardName": "Machamp",
-    "fullDisplayName": "Machamp 013/18 Detective Pikachu",
+    "fullDisplayName": "Machamp 13/18 Detective Pikachu",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -195,18 +225,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-013-low.png",
-    "imageHighSrc": "cards/det1-013-high.png"
+    "imageHighSrc": "cards/det1-013-high.png",
+    "attacks": [
+      {
+        "name": "Directing Traffic",
+        "damage": null
+      },
+      {
+        "name": "Cross Chop",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3586",
-    "externalId": null,
+    "externalId": "det1-12",
     "tcgdex_id": "det1-12",
     "localId": "012",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "012/18",
+    "cardNumber": "12/18",
     "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 012/18 Detective Pikachu",
+    "fullDisplayName": "Mewtwo 12/18 Detective Pikachu",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +268,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-012-low.png",
-    "imageHighSrc": "cards/det1-012-high.png"
+    "imageHighSrc": "cards/det1-012-high.png",
+    "attacks": [
+      {
+        "name": "Psyjack",
+        "damage": "30"
+      },
+      {
+        "name": "Break Burn",
+        "damage": "130"
+      }
+    ]
   },
   {
     "masterCardId": "3578",
-    "externalId": null,
+    "externalId": "det1-11",
     "tcgdex_id": "det1-11",
     "localId": "011",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "011/18",
+    "cardNumber": "11/18",
     "cardName": "Mr. Mime",
-    "fullDisplayName": "Mr. Mime 011/18 Detective Pikachu",
+    "fullDisplayName": "Mr. Mime 11/18 Detective Pikachu",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +311,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-011-low.png",
-    "imageHighSrc": "cards/det1-011-high.png"
+    "imageHighSrc": "cards/det1-011-high.png",
+    "attacks": [
+      {
+        "name": "Juggling",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "3574",
-    "externalId": null,
+    "externalId": "det1-10",
     "tcgdex_id": "det1-10",
     "localId": "010",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "010/18",
+    "cardNumber": "10/18",
     "cardName": "Detective Pikachu",
-    "fullDisplayName": "Detective Pikachu 010/18 Detective Pikachu",
+    "fullDisplayName": "Detective Pikachu 10/18 Detective Pikachu",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +350,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-010-low.png",
-    "imageHighSrc": "cards/det1-010-high.png"
+    "imageHighSrc": "cards/det1-010-high.png",
+    "attacks": [
+      {
+        "name": "Scout",
+        "damage": null
+      },
+      {
+        "name": "Surprise Attack",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3567",
-    "externalId": null,
+    "externalId": "det1-9",
     "tcgdex_id": "det1-9",
     "localId": "009",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "009/18",
+    "cardNumber": "9/18",
     "cardName": "Greninja",
-    "fullDisplayName": "Greninja 009/18 Detective Pikachu",
+    "fullDisplayName": "Greninja 9/18 Detective Pikachu",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -327,18 +393,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-009-low.png",
-    "imageHighSrc": "cards/det1-009-high.png"
+    "imageHighSrc": "cards/det1-009-high.png",
+    "attacks": [
+      {
+        "name": "Furious Shurikens",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3562",
-    "externalId": null,
+    "externalId": "det1-8",
     "tcgdex_id": "det1-8",
     "localId": "008",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "008/18",
+    "cardNumber": "8/18",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 008/18 Detective Pikachu",
+    "fullDisplayName": "Magikarp 8/18 Detective Pikachu",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +432,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-008-low.png",
-    "imageHighSrc": "cards/det1-008-high.png"
+    "imageHighSrc": "cards/det1-008-high.png",
+    "attacks": [
+      {
+        "name": "Hold Still",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3555",
-    "externalId": null,
+    "externalId": "det1-7",
     "tcgdex_id": "det1-7",
     "localId": "007",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "007/18",
+    "cardNumber": "7/18",
     "cardName": "Psyduck",
-    "fullDisplayName": "Psyduck 007/18 Detective Pikachu",
+    "fullDisplayName": "Psyduck 7/18 Detective Pikachu",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,18 +471,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-007-low.png",
-    "imageHighSrc": "cards/det1-007-high.png"
+    "imageHighSrc": "cards/det1-007-high.png",
+    "attacks": [
+      {
+        "name": "Panic",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3549",
-    "externalId": null,
+    "externalId": "det1-6",
     "tcgdex_id": "det1-6",
     "localId": "006",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "006/18",
+    "cardNumber": "6/18",
     "cardName": "Arcanine",
-    "fullDisplayName": "Arcanine 006/18 Detective Pikachu",
+    "fullDisplayName": "Arcanine 6/18 Detective Pikachu",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -426,18 +510,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-006-low.png",
-    "imageHighSrc": "cards/det1-006-high.png"
+    "imageHighSrc": "cards/det1-006-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3545",
-    "externalId": null,
+    "externalId": "det1-5",
     "tcgdex_id": "det1-5",
     "localId": "005",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "005/18",
+    "cardNumber": "5/18",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 005/18 Detective Pikachu",
+    "fullDisplayName": "Charizard 5/18 Detective Pikachu",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -459,18 +549,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-005-low.png",
-    "imageHighSrc": "cards/det1-005-high.png"
+    "imageHighSrc": "cards/det1-005-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "70"
+      },
+      {
+        "name": "Wild Tackle",
+        "damage": "180"
+      }
+    ]
   },
   {
     "masterCardId": "3536",
-    "externalId": null,
+    "externalId": "det1-4",
     "tcgdex_id": "det1-4",
     "localId": "004",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "004/18",
+    "cardNumber": "4/18",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 004/18 Detective Pikachu",
+    "fullDisplayName": "Charmander 4/18 Detective Pikachu",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,18 +592,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-004-low.png",
-    "imageHighSrc": "cards/det1-004-high.png"
+    "imageHighSrc": "cards/det1-004-high.png",
+    "attacks": [
+      {
+        "name": "Reckless Charge",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3531",
-    "externalId": null,
+    "externalId": "det1-3",
     "tcgdex_id": "det1-3",
     "localId": "003",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "003/18",
+    "cardNumber": "3/18",
     "cardName": "Morelull",
-    "fullDisplayName": "Morelull 003/18 Detective Pikachu",
+    "fullDisplayName": "Morelull 3/18 Detective Pikachu",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -525,18 +631,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-003-low.png",
-    "imageHighSrc": "cards/det1-003-high.png"
+    "imageHighSrc": "cards/det1-003-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Spore",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3528",
-    "externalId": null,
+    "externalId": "det1-2",
     "tcgdex_id": "det1-2",
     "localId": "002",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "002/18",
+    "cardNumber": "2/18",
     "cardName": "Ludicolo",
-    "fullDisplayName": "Ludicolo 002/18 Detective Pikachu",
+    "fullDisplayName": "Ludicolo 2/18 Detective Pikachu",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -558,18 +670,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-002-low.png",
-    "imageHighSrc": "cards/det1-002-high.png"
+    "imageHighSrc": "cards/det1-002-high.png",
+    "attacks": [
+      {
+        "name": "Punch and Run",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3522",
-    "externalId": null,
+    "externalId": "det1-1",
     "tcgdex_id": "det1-1",
     "localId": "001",
     "setCode": "det1",
     "setTcgdexId": "det1",
-    "cardNumber": "001/18",
+    "cardNumber": "1/18",
     "cardName": "Bulbasaur",
-    "fullDisplayName": "Bulbasaur 001/18 Detective Pikachu",
+    "fullDisplayName": "Bulbasaur 1/18 Detective Pikachu",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -591,6 +709,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/det1-001-low.png",
-    "imageHighSrc": "cards/det1-001-high.png"
+    "imageHighSrc": "cards/det1-001-high.png",
+    "attacks": [
+      {
+        "name": "Find a Friend",
+        "damage": null
+      }
+    ]
   }
 ]

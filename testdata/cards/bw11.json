@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "2329",
-    "externalId": null,
+    "externalId": "bw11-RC25",
     "tcgdex_id": "bw11-RC25",
     "localId": "RC25",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC25/113",
+    "cardNumber": "RC25/RC25",
     "cardName": "Meloetta-EX",
-    "fullDisplayName": "Meloetta-EX RC25/113 Legendary Treasures",
+    "fullDisplayName": "Meloetta-EX RC25/RC25 Legendary Treasures",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -31,18 +31,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-RC25-low.png",
-    "imageHighSrc": "cards/bw11-RC25-high.png"
+    "imageHighSrc": "cards/bw11-RC25-high.png",
+    "attacks": [
+      {
+        "name": "Brilliant Voice",
+        "damage": "20"
+      },
+      {
+        "name": "Round",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2328",
-    "externalId": null,
+    "externalId": "bw11-RC24",
     "tcgdex_id": "bw11-RC24",
     "localId": "RC24",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC24/113",
+    "cardNumber": "RC24/RC25",
     "cardName": "Mew-EX",
-    "fullDisplayName": "Mew-EX RC24/113 Legendary Treasures",
+    "fullDisplayName": "Mew-EX RC24/RC25 Legendary Treasures",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -65,18 +76,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-RC24-low.png",
-    "imageHighSrc": "cards/bw11-RC24-high.png"
+    "imageHighSrc": "cards/bw11-RC24-high.png",
+    "attacks": [
+      {
+        "name": "Replace",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2327",
-    "externalId": null,
+    "externalId": "bw11-RC23",
     "tcgdex_id": "bw11-RC23",
     "localId": "RC23",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC23/113",
+    "cardNumber": "RC23/RC25",
     "cardName": "Emolga",
-    "fullDisplayName": "Emolga RC23/113 Legendary Treasures",
+    "fullDisplayName": "Emolga RC23/RC25 Legendary Treasures",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -98,18 +116,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC23-low.png",
-    "imageHighSrc": "cards/bw11-RC23-high.png"
+    "imageHighSrc": "cards/bw11-RC23-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2326",
-    "externalId": null,
+    "externalId": "bw11-RC22",
     "tcgdex_id": "bw11-RC22",
     "localId": "RC22",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC22/113",
+    "cardNumber": "RC22/RC25",
     "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram RC22/113 Legendary Treasures",
+    "fullDisplayName": "Reshiram RC22/RC25 Legendary Treasures",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -131,18 +159,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC22-low.png",
-    "imageHighSrc": "cards/bw11-RC22-high.png"
+    "imageHighSrc": "cards/bw11-RC22-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Blue Flare",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2325",
-    "externalId": null,
+    "externalId": "bw11-RC21",
     "tcgdex_id": "bw11-RC21",
     "localId": "RC21",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC21/113",
+    "cardNumber": "RC21/RC25",
     "cardName": "Shaymin-EX",
-    "fullDisplayName": "Shaymin-EX RC21/113 Legendary Treasures",
+    "fullDisplayName": "Shaymin-EX RC21/RC25 Legendary Treasures",
     "rarity": "Rare Ultra",
     "category": "Pokémon",
     "stage": "Basic",
@@ -165,18 +203,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-RC21-low.png",
-    "imageHighSrc": "cards/bw11-RC21-high.png"
+    "imageHighSrc": "cards/bw11-RC21-high.png",
+    "attacks": [
+      {
+        "name": "Synthesis",
+        "damage": null
+      },
+      {
+        "name": "Revenge Blast",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2324",
-    "externalId": null,
+    "externalId": "bw11-RC20",
     "tcgdex_id": "bw11-RC20",
     "localId": "RC20",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC20/113",
+    "cardNumber": "RC20/RC25",
     "cardName": "Elesa",
-    "fullDisplayName": "Elesa RC20/113 Legendary Treasures",
+    "fullDisplayName": "Elesa RC20/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Trainer",
     "stage": null,
@@ -194,18 +243,19 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC20-low.png",
-    "imageHighSrc": "cards/bw11-RC20-high.png"
+    "imageHighSrc": "cards/bw11-RC20-high.png",
+    "rules": "Search your deck for 3 Pokémon Tool cards, reveal them, and put them into your hand. Shuffle your deck afterward.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2323",
-    "externalId": null,
+    "externalId": "bw11-RC19",
     "tcgdex_id": "bw11-RC19",
     "localId": "RC19",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC19/113",
+    "cardNumber": "RC19/RC25",
     "cardName": "Cinccino",
-    "fullDisplayName": "Cinccino RC19/113 Legendary Treasures",
+    "fullDisplayName": "Cinccino RC19/RC25 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -227,18 +277,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC19-low.png",
-    "imageHighSrc": "cards/bw11-RC19-high.png"
+    "imageHighSrc": "cards/bw11-RC19-high.png",
+    "attacks": [
+      {
+        "name": "Echoed Voice",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2322",
-    "externalId": null,
+    "externalId": "bw11-RC18",
     "tcgdex_id": "bw11-RC18",
     "localId": "RC18",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC18/113",
+    "cardNumber": "RC18/RC25",
     "cardName": "Minccino",
-    "fullDisplayName": "Minccino RC18/113 Legendary Treasures",
+    "fullDisplayName": "Minccino RC18/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -260,18 +316,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC18-low.png",
-    "imageHighSrc": "cards/bw11-RC18-high.png"
+    "imageHighSrc": "cards/bw11-RC18-high.png",
+    "attacks": [
+      {
+        "name": "Tail Slap",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2321",
-    "externalId": null,
+    "externalId": "bw11-RC17",
     "tcgdex_id": "bw11-RC17",
     "localId": "RC17",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC17/113",
+    "cardNumber": "RC17/RC25",
     "cardName": "Audino",
-    "fullDisplayName": "Audino RC17/113 Legendary Treasures",
+    "fullDisplayName": "Audino RC17/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -293,18 +355,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC17-low.png",
-    "imageHighSrc": "cards/bw11-RC17-high.png"
+    "imageHighSrc": "cards/bw11-RC17-high.png",
+    "attacks": [
+      {
+        "name": "Relaxed Roll",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "2320",
-    "externalId": null,
+    "externalId": "bw11-RC16",
     "tcgdex_id": "bw11-RC16",
     "localId": "RC16",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC16/113",
+    "cardNumber": "RC16/RC25",
     "cardName": "Ursaring",
-    "fullDisplayName": "Ursaring RC16/113 Legendary Treasures",
+    "fullDisplayName": "Ursaring RC16/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -326,18 +394,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC16-low.png",
-    "imageHighSrc": "cards/bw11-RC16-high.png"
+    "imageHighSrc": "cards/bw11-RC16-high.png",
+    "attacks": [
+      {
+        "name": "Picnic Weather",
+        "damage": null
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "2319",
-    "externalId": null,
+    "externalId": "bw11-RC15",
     "tcgdex_id": "bw11-RC15",
     "localId": "RC15",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC15/113",
+    "cardNumber": "RC15/RC25",
     "cardName": "Teddiursa",
-    "fullDisplayName": "Teddiursa RC15/113 Legendary Treasures",
+    "fullDisplayName": "Teddiursa RC15/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -359,18 +437,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC15-low.png",
-    "imageHighSrc": "cards/bw11-RC15-high.png"
+    "imageHighSrc": "cards/bw11-RC15-high.png",
+    "attacks": [
+      {
+        "name": "Honey Snack",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2318",
-    "externalId": null,
+    "externalId": "bw11-RC14",
     "tcgdex_id": "bw11-RC14",
     "localId": "RC14",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC14/113",
+    "cardNumber": "RC14/RC25",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee RC14/113 Legendary Treasures",
+    "fullDisplayName": "Eevee RC14/RC25 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -392,18 +480,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC14-low.png",
-    "imageHighSrc": "cards/bw11-RC14-high.png"
+    "imageHighSrc": "cards/bw11-RC14-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2317",
-    "externalId": null,
+    "externalId": "bw11-RC13",
     "tcgdex_id": "bw11-RC13",
     "localId": "RC13",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC13/113",
+    "cardNumber": "RC13/RC25",
     "cardName": "Purrloin",
-    "fullDisplayName": "Purrloin RC13/113 Legendary Treasures",
+    "fullDisplayName": "Purrloin RC13/RC25 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -425,18 +519,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC13-low.png",
-    "imageHighSrc": "cards/bw11-RC13-high.png"
+    "imageHighSrc": "cards/bw11-RC13-high.png",
+    "attacks": [
+      {
+        "name": "Captivate",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2316",
-    "externalId": null,
+    "externalId": "bw11-RC12",
     "tcgdex_id": "bw11-RC12",
     "localId": "RC12",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC12/113",
+    "cardNumber": "RC12/RC25",
     "cardName": "Stunfisk",
-    "fullDisplayName": "Stunfisk RC12/113 Legendary Treasures",
+    "fullDisplayName": "Stunfisk RC12/RC25 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -458,18 +558,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC12-low.png",
-    "imageHighSrc": "cards/bw11-RC12-high.png"
+    "imageHighSrc": "cards/bw11-RC12-high.png",
+    "attacks": [
+      {
+        "name": "Attract",
+        "damage": null
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2315",
-    "externalId": null,
+    "externalId": "bw11-RC11",
     "tcgdex_id": "bw11-RC11",
     "localId": "RC11",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC11/113",
+    "cardNumber": "RC11/RC25",
     "cardName": "Meloetta-EX",
-    "fullDisplayName": "Meloetta-EX RC11/113 Legendary Treasures",
+    "fullDisplayName": "Meloetta-EX RC11/RC25 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -492,18 +602,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-RC11-low.png",
-    "imageHighSrc": "cards/bw11-RC11-high.png"
+    "imageHighSrc": "cards/bw11-RC11-high.png",
+    "attacks": [
+      {
+        "name": "Brilliant Voice",
+        "damage": "20"
+      },
+      {
+        "name": "Round",
+        "damage": "30×"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2314",
-    "externalId": null,
+    "externalId": "bw11-RC10",
     "tcgdex_id": "bw11-RC10",
     "localId": "RC10",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC10/113",
+    "cardNumber": "RC10/RC25",
     "cardName": "Gardevoir",
-    "fullDisplayName": "Gardevoir RC10/113 Legendary Treasures",
+    "fullDisplayName": "Gardevoir RC10/RC25 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -525,18 +646,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC10-low.png",
-    "imageHighSrc": "cards/bw11-RC10-high.png"
+    "imageHighSrc": "cards/bw11-RC10-high.png",
+    "attacks": [
+      {
+        "name": "Psybeam",
+        "damage": "40"
+      },
+      {
+        "name": "Eternal Radiance",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2313",
-    "externalId": null,
+    "externalId": "bw11-RC9",
     "tcgdex_id": "bw11-RC9",
     "localId": "RC9",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC9/113",
+    "cardNumber": "RC9/RC25",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia RC9/113 Legendary Treasures",
+    "fullDisplayName": "Kirlia RC9/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -558,18 +689,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC9-low.png",
-    "imageHighSrc": "cards/bw11-RC9-high.png"
+    "imageHighSrc": "cards/bw11-RC9-high.png",
+    "attacks": [
+      {
+        "name": "Tiptoe Step",
+        "damage": null
+      },
+      {
+        "name": "Double Slap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2312",
-    "externalId": null,
+    "externalId": "bw11-RC8",
     "tcgdex_id": "bw11-RC8",
     "localId": "RC8",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC8/113",
+    "cardNumber": "RC8/RC25",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts RC8/113 Legendary Treasures",
+    "fullDisplayName": "Ralts RC8/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -591,18 +732,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC8-low.png",
-    "imageHighSrc": "cards/bw11-RC8-high.png"
+    "imageHighSrc": "cards/bw11-RC8-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Gaze",
+        "damage": null
+      },
+      {
+        "name": "Pound",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2311",
-    "externalId": null,
+    "externalId": "bw11-RC7",
     "tcgdex_id": "bw11-RC7",
     "localId": "RC7",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC7/113",
+    "cardNumber": "RC7/RC25",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu RC7/113 Legendary Treasures",
+    "fullDisplayName": "Pikachu RC7/RC25 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -624,18 +775,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC7-low.png",
-    "imageHighSrc": "cards/bw11-RC7-high.png"
+    "imageHighSrc": "cards/bw11-RC7-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Whap",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2310",
-    "externalId": null,
+    "externalId": "bw11-RC6",
     "tcgdex_id": "bw11-RC6",
     "localId": "RC6",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC6/113",
+    "cardNumber": "RC6/RC25",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup RC6/113 Legendary Treasures",
+    "fullDisplayName": "Piplup RC6/RC25 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -657,18 +818,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC6-low.png",
-    "imageHighSrc": "cards/bw11-RC6-high.png"
+    "imageHighSrc": "cards/bw11-RC6-high.png",
+    "attacks": [
+      {
+        "name": "Charm",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2309",
-    "externalId": null,
+    "externalId": "bw11-RC5",
     "tcgdex_id": "bw11-RC5",
     "localId": "RC5",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC5/113",
+    "cardNumber": "RC5/RC25",
     "cardName": "Torchic",
-    "fullDisplayName": "Torchic RC5/113 Legendary Treasures",
+    "fullDisplayName": "Torchic RC5/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -690,18 +861,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC5-low.png",
-    "imageHighSrc": "cards/bw11-RC5-high.png"
+    "imageHighSrc": "cards/bw11-RC5-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Live Coal",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2308",
-    "externalId": null,
+    "externalId": "bw11-RC4",
     "tcgdex_id": "bw11-RC4",
     "localId": "RC4",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC4/113",
+    "cardNumber": "RC4/RC25",
     "cardName": "Growlithe",
-    "fullDisplayName": "Growlithe RC4/113 Legendary Treasures",
+    "fullDisplayName": "Growlithe RC4/RC25 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -723,18 +904,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC4-low.png",
-    "imageHighSrc": "cards/bw11-RC4-high.png"
+    "imageHighSrc": "cards/bw11-RC4-high.png",
+    "attacks": [
+      {
+        "name": "Rest",
+        "damage": null
+      },
+      {
+        "name": "Lunge",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2307",
-    "externalId": null,
+    "externalId": "bw11-RC3",
     "tcgdex_id": "bw11-RC3",
     "localId": "RC3",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC3/113",
+    "cardNumber": "RC3/RC25",
     "cardName": "Serperior",
-    "fullDisplayName": "Serperior RC3/113 Legendary Treasures",
+    "fullDisplayName": "Serperior RC3/RC25 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -756,18 +947,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC3-low.png",
-    "imageHighSrc": "cards/bw11-RC3-high.png"
+    "imageHighSrc": "cards/bw11-RC3-high.png",
+    "attacks": [
+      {
+        "name": "Solar Beam",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2306",
-    "externalId": null,
+    "externalId": "bw11-RC2",
     "tcgdex_id": "bw11-RC2",
     "localId": "RC2",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC2/113",
+    "cardNumber": "RC2/RC25",
     "cardName": "Servine",
-    "fullDisplayName": "Servine RC2/113 Legendary Treasures",
+    "fullDisplayName": "Servine RC2/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -789,18 +986,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC2-low.png",
-    "imageHighSrc": "cards/bw11-RC2-high.png"
+    "imageHighSrc": "cards/bw11-RC2-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Blade",
+        "damage": "10+"
+      },
+      {
+        "name": "Vine Whip",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2305",
-    "externalId": null,
+    "externalId": "bw11-RC1",
     "tcgdex_id": "bw11-RC1",
     "localId": "RC1",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "RC1/113",
+    "cardNumber": "RC1/RC25",
     "cardName": "Snivy",
-    "fullDisplayName": "Snivy RC1/113 Legendary Treasures",
+    "fullDisplayName": "Snivy RC1/RC25 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -822,11 +1029,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-RC1-low.png",
-    "imageHighSrc": "cards/bw11-RC1-high.png"
+    "imageHighSrc": "cards/bw11-RC1-high.png",
+    "attacks": [
+      {
+        "name": "Growth",
+        "damage": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2304",
-    "externalId": null,
+    "externalId": "bw11-115",
     "tcgdex_id": "bw11-115",
     "localId": "115",
     "setCode": "bw11",
@@ -855,11 +1072,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-115-low.png",
-    "imageHighSrc": "cards/bw11-115-high.png"
+    "imageHighSrc": "cards/bw11-115-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Bolt Strike",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2303",
-    "externalId": null,
+    "externalId": "bw11-114",
     "tcgdex_id": "bw11-114",
     "localId": "114",
     "setCode": "bw11",
@@ -888,11 +1115,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-114-low.png",
-    "imageHighSrc": "cards/bw11-114-high.png"
+    "imageHighSrc": "cards/bw11-114-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Blue Flare",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2302",
-    "externalId": null,
+    "externalId": "bw11-113",
     "tcgdex_id": "bw11-113",
     "localId": "113",
     "setCode": "bw11",
@@ -917,11 +1154,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-113-low.png",
-    "imageHighSrc": "cards/bw11-113-high.png"
+    "imageHighSrc": "cards/bw11-113-high.png",
+    "rules": "Double Colorless Energy provides ColorlessColorless Energy."
   },
   {
     "masterCardId": "2301",
-    "externalId": null,
+    "externalId": "bw11-112",
     "tcgdex_id": "bw11-112",
     "localId": "112",
     "setCode": "bw11",
@@ -946,11 +1184,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-112-low.png",
-    "imageHighSrc": "cards/bw11-112-high.png"
+    "imageHighSrc": "cards/bw11-112-high.png",
+    "rules": "Move a basic Energy from 1 of your Pokémon to another of your Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2300",
-    "externalId": null,
+    "externalId": "bw11-111",
     "tcgdex_id": "bw11-111",
     "localId": "111",
     "setCode": "bw11",
@@ -975,11 +1214,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-111-low.png",
-    "imageHighSrc": "cards/bw11-111-high.png"
+    "imageHighSrc": "cards/bw11-111-high.png",
+    "rules": "Flip a coin. If heads, discard an Energy attached to 1 of your opponent's Pokémon.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2299",
-    "externalId": null,
+    "externalId": "bw11-110",
     "tcgdex_id": "bw11-110",
     "localId": "110",
     "setCode": "bw11",
@@ -1004,11 +1244,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-110-low.png",
-    "imageHighSrc": "cards/bw11-110-high.png"
+    "imageHighSrc": "cards/bw11-110-high.png",
+    "rules": "Put a Pokémon from your hand face down in front of you and tell your opponent its name. Your opponent guesses the height of that Pokémon. Reveal that Pokémon. If your opponent guessed right, he or she draws 3 cards. If your opponent guessed wrong, you draw 3 cards. Return the Pokémon to your hand. (You can't choose a Pokémon that doesn't have the height printed on the card.)\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2298",
-    "externalId": null,
+    "externalId": "bw11-109",
     "tcgdex_id": "bw11-109",
     "localId": "109",
     "setCode": "bw11",
@@ -1033,11 +1274,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-109-low.png",
-    "imageHighSrc": "cards/bw11-109-high.png"
+    "imageHighSrc": "cards/bw11-109-high.png",
+    "rules": "Draw cards until you have 6 cards in your hand.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "2297",
-    "externalId": null,
+    "externalId": "bw11-108",
     "tcgdex_id": "bw11-108",
     "localId": "108",
     "setCode": "bw11",
@@ -1066,11 +1308,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-108-low.png",
-    "imageHighSrc": "cards/bw11-108-high.png"
+    "imageHighSrc": "cards/bw11-108-high.png",
+    "attacks": [
+      {
+        "name": "Energy Wheel",
+        "damage": null
+      },
+      {
+        "name": "Hurricane",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2296",
-    "externalId": null,
+    "externalId": "bw11-107",
     "tcgdex_id": "bw11-107",
     "localId": "107",
     "setCode": "bw11",
@@ -1099,11 +1351,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-107-low.png",
-    "imageHighSrc": "cards/bw11-107-high.png"
+    "imageHighSrc": "cards/bw11-107-high.png",
+    "attacks": [
+      {
+        "name": "Revenge",
+        "damage": "20+"
+      },
+      {
+        "name": "Head Charge",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2295",
-    "externalId": null,
+    "externalId": "bw11-106",
     "tcgdex_id": "bw11-106",
     "localId": "106",
     "setCode": "bw11",
@@ -1132,11 +1394,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-106-low.png",
-    "imageHighSrc": "cards/bw11-106-high.png"
+    "imageHighSrc": "cards/bw11-106-high.png",
+    "attacks": [
+      {
+        "name": "Clutch",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2294",
-    "externalId": null,
+    "externalId": "bw11-105",
     "tcgdex_id": "bw11-105",
     "localId": "105",
     "setCode": "bw11",
@@ -1165,11 +1433,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-105-low.png",
-    "imageHighSrc": "cards/bw11-105-high.png"
+    "imageHighSrc": "cards/bw11-105-high.png",
+    "attacks": [
+      {
+        "name": "Echoed Voice",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2293",
-    "externalId": null,
+    "externalId": "bw11-104",
     "tcgdex_id": "bw11-104",
     "localId": "104",
     "setCode": "bw11",
@@ -1198,11 +1472,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-104-low.png",
-    "imageHighSrc": "cards/bw11-104-high.png"
+    "imageHighSrc": "cards/bw11-104-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2292",
-    "externalId": null,
+    "externalId": "bw11-103",
     "tcgdex_id": "bw11-103",
     "localId": "103",
     "setCode": "bw11",
@@ -1231,11 +1515,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-103-low.png",
-    "imageHighSrc": "cards/bw11-103-high.png"
+    "imageHighSrc": "cards/bw11-103-high.png",
+    "attacks": [
+      {
+        "name": "Glare and Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2291",
-    "externalId": null,
+    "externalId": "bw11-102",
     "tcgdex_id": "bw11-102",
     "localId": "102",
     "setCode": "bw11",
@@ -1266,11 +1556,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-102-low.png",
-    "imageHighSrc": "cards/bw11-102-high.png"
+    "imageHighSrc": "cards/bw11-102-high.png",
+    "attacks": [
+      {
+        "name": "Plasma Gale",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2290",
-    "externalId": null,
+    "externalId": "bw11-101",
     "tcgdex_id": "bw11-101",
     "localId": "101",
     "setCode": "bw11",
@@ -1300,11 +1597,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-101-low.png",
-    "imageHighSrc": "cards/bw11-101-high.png"
+    "imageHighSrc": "cards/bw11-101-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Stream",
+        "damage": "60"
+      },
+      {
+        "name": "Ice Burn",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2289",
-    "externalId": null,
+    "externalId": "bw11-100",
     "tcgdex_id": "bw11-100",
     "localId": "100",
     "setCode": "bw11",
@@ -1334,18 +1642,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-100-low.png",
-    "imageHighSrc": "cards/bw11-100-high.png"
+    "imageHighSrc": "cards/bw11-100-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Fang",
+        "damage": "60"
+      },
+      {
+        "name": "Freeze Shock",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2288",
-    "externalId": null,
+    "externalId": "bw11-99",
     "tcgdex_id": "bw11-99",
     "localId": "099",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "099/113",
+    "cardNumber": "99/113",
     "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 099/113 Legendary Treasures",
+    "fullDisplayName": "Hydreigon 99/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1367,18 +1686,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-099-low.png",
-    "imageHighSrc": "cards/bw11-099-high.png"
+    "imageHighSrc": "cards/bw11-099-high.png",
+    "attacks": [
+      {
+        "name": "Dragonblast",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "2287",
-    "externalId": null,
+    "externalId": "bw11-98",
     "tcgdex_id": "bw11-98",
     "localId": "098",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "098/113",
+    "cardNumber": "98/113",
     "cardName": "Zweilous",
-    "fullDisplayName": "Zweilous 098/113 Legendary Treasures",
+    "fullDisplayName": "Zweilous 98/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1400,18 +1725,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-098-low.png",
-    "imageHighSrc": "cards/bw11-098-high.png"
+    "imageHighSrc": "cards/bw11-098-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "30"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2286",
-    "externalId": null,
+    "externalId": "bw11-97",
     "tcgdex_id": "bw11-97",
     "localId": "097",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "097/113",
+    "cardNumber": "97/113",
     "cardName": "Deino",
-    "fullDisplayName": "Deino 097/113 Legendary Treasures",
+    "fullDisplayName": "Deino 97/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1433,18 +1768,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-097-low.png",
-    "imageHighSrc": "cards/bw11-097-high.png"
+    "imageHighSrc": "cards/bw11-097-high.png",
+    "attacks": [
+      {
+        "name": "Deep Growl",
+        "damage": null
+      },
+      {
+        "name": "Power Breath",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2285",
-    "externalId": null,
+    "externalId": "bw11-96",
     "tcgdex_id": "bw11-96",
     "localId": "096",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "096/113",
+    "cardNumber": "96/113",
     "cardName": "Garchomp",
-    "fullDisplayName": "Garchomp 096/113 Legendary Treasures",
+    "fullDisplayName": "Garchomp 96/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1466,18 +1811,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-096-low.png",
-    "imageHighSrc": "cards/bw11-096-high.png"
+    "imageHighSrc": "cards/bw11-096-high.png",
+    "attacks": [
+      {
+        "name": "Mach Cut",
+        "damage": "60"
+      },
+      {
+        "name": "Dragonblade",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "2284",
-    "externalId": null,
+    "externalId": "bw11-95",
     "tcgdex_id": "bw11-95",
     "localId": "095",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "095/113",
+    "cardNumber": "95/113",
     "cardName": "Gabite",
-    "fullDisplayName": "Gabite 095/113 Legendary Treasures",
+    "fullDisplayName": "Gabite 95/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1499,18 +1854,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-095-low.png",
-    "imageHighSrc": "cards/bw11-095-high.png"
+    "imageHighSrc": "cards/bw11-095-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Shred",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2283",
-    "externalId": null,
+    "externalId": "bw11-94",
     "tcgdex_id": "bw11-94",
     "localId": "094",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "094/113",
+    "cardNumber": "94/113",
     "cardName": "Gible",
-    "fullDisplayName": "Gible 094/113 Legendary Treasures",
+    "fullDisplayName": "Gible 94/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1532,18 +1897,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-094-low.png",
-    "imageHighSrc": "cards/bw11-094-high.png"
+    "imageHighSrc": "cards/bw11-094-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2282",
-    "externalId": null,
+    "externalId": "bw11-93",
     "tcgdex_id": "bw11-93",
     "localId": "093",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "093/113",
+    "cardNumber": "93/113",
     "cardName": "Rayquaza",
-    "fullDisplayName": "Rayquaza 093/113 Legendary Treasures",
+    "fullDisplayName": "Rayquaza 93/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1565,18 +1940,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-093-low.png",
-    "imageHighSrc": "cards/bw11-093-high.png"
+    "imageHighSrc": "cards/bw11-093-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Pulse",
+        "damage": "40"
+      },
+      {
+        "name": "Shred",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2281",
-    "externalId": null,
+    "externalId": "bw11-92",
     "tcgdex_id": "bw11-92",
     "localId": "092",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "092/113",
+    "cardNumber": "92/113",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 092/113 Legendary Treasures",
+    "fullDisplayName": "Altaria 92/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1598,18 +1983,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-092-low.png",
-    "imageHighSrc": "cards/bw11-092-high.png"
+    "imageHighSrc": "cards/bw11-092-high.png",
+    "attacks": [
+      {
+        "name": "Speed Dive",
+        "damage": "20"
+      },
+      {
+        "name": "Cleave",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2280",
-    "externalId": null,
+    "externalId": "bw11-91",
     "tcgdex_id": "bw11-91",
     "localId": "091",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "091/113",
+    "cardNumber": "91/113",
     "cardName": "Cobalion",
-    "fullDisplayName": "Cobalion 091/113 Legendary Treasures",
+    "fullDisplayName": "Cobalion 91/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1631,18 +2026,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-091-low.png",
-    "imageHighSrc": "cards/bw11-091-high.png"
+    "imageHighSrc": "cards/bw11-091-high.png",
+    "attacks": [
+      {
+        "name": "Energy Press",
+        "damage": "20+"
+      },
+      {
+        "name": "Iron Breaker",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2279",
-    "externalId": null,
+    "externalId": "bw11-90",
     "tcgdex_id": "bw11-90",
     "localId": "090",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "090/113",
+    "cardNumber": "90/113",
     "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark 090/113 Legendary Treasures",
+    "fullDisplayName": "Zoroark 90/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1664,18 +2069,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-090-low.png",
-    "imageHighSrc": "cards/bw11-090-high.png"
+    "imageHighSrc": "cards/bw11-090-high.png",
+    "attacks": [
+      {
+        "name": "Brutal Bash",
+        "damage": "20×"
+      },
+      {
+        "name": "Dark Rush",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2278",
-    "externalId": null,
+    "externalId": "bw11-89",
     "tcgdex_id": "bw11-89",
     "localId": "089",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "089/113",
+    "cardNumber": "89/113",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua 089/113 Legendary Treasures",
+    "fullDisplayName": "Zorua 89/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1697,18 +2112,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-089-low.png",
-    "imageHighSrc": "cards/bw11-089-high.png"
+    "imageHighSrc": "cards/bw11-089-high.png",
+    "attacks": [
+      {
+        "name": "Ascension",
+        "damage": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2277",
-    "externalId": null,
+    "externalId": "bw11-88",
     "tcgdex_id": "bw11-88",
     "localId": "088",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "088/113",
+    "cardNumber": "88/113",
     "cardName": "Darkrai-EX",
-    "fullDisplayName": "Darkrai-EX 088/113 Legendary Treasures",
+    "fullDisplayName": "Darkrai-EX 88/113 Legendary Treasures",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1731,18 +2156,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-088-low.png",
-    "imageHighSrc": "cards/bw11-088-high.png"
+    "imageHighSrc": "cards/bw11-088-high.png",
+    "attacks": [
+      {
+        "name": "Night Spear",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2276",
-    "externalId": null,
+    "externalId": "bw11-87",
     "tcgdex_id": "bw11-87",
     "localId": "087",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "087/113",
+    "cardNumber": "87/113",
     "cardName": "Spiritomb",
-    "fullDisplayName": "Spiritomb 087/113 Legendary Treasures",
+    "fullDisplayName": "Spiritomb 87/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1764,18 +2196,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-087-low.png",
-    "imageHighSrc": "cards/bw11-087-high.png"
+    "imageHighSrc": "cards/bw11-087-high.png",
+    "attacks": [
+      {
+        "name": "Hexed Mirror",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2275",
-    "externalId": null,
+    "externalId": "bw11-86",
     "tcgdex_id": "bw11-86",
     "localId": "086",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "086/113",
+    "cardNumber": "86/113",
     "cardName": "Meloetta",
-    "fullDisplayName": "Meloetta 086/113 Legendary Treasures",
+    "fullDisplayName": "Meloetta 86/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1797,18 +2235,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-086-low.png",
-    "imageHighSrc": "cards/bw11-086-high.png"
+    "imageHighSrc": "cards/bw11-086-high.png",
+    "attacks": [
+      {
+        "name": "Magical Dance",
+        "damage": null
+      },
+      {
+        "name": "Shooting Star Pirouette",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2274",
-    "externalId": null,
+    "externalId": "bw11-85",
     "tcgdex_id": "bw11-85",
     "localId": "085",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "085/113",
+    "cardNumber": "85/113",
     "cardName": "Landorus",
-    "fullDisplayName": "Landorus 085/113 Legendary Treasures",
+    "fullDisplayName": "Landorus 85/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1830,18 +2278,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-085-low.png",
-    "imageHighSrc": "cards/bw11-085-high.png"
+    "imageHighSrc": "cards/bw11-085-high.png",
+    "attacks": [
+      {
+        "name": "Abundant Harvest",
+        "damage": null
+      },
+      {
+        "name": "Gaia Hammer",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2273",
-    "externalId": null,
+    "externalId": "bw11-84",
     "tcgdex_id": "bw11-84",
     "localId": "084",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "084/113",
+    "cardNumber": "84/113",
     "cardName": "Terrakion",
-    "fullDisplayName": "Terrakion 084/113 Legendary Treasures",
+    "fullDisplayName": "Terrakion 84/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1863,18 +2321,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-084-low.png",
-    "imageHighSrc": "cards/bw11-084-high.png"
+    "imageHighSrc": "cards/bw11-084-high.png",
+    "attacks": [
+      {
+        "name": "Retaliate",
+        "damage": "30+"
+      },
+      {
+        "name": "Land Crush",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2272",
-    "externalId": null,
+    "externalId": "bw11-83",
     "tcgdex_id": "bw11-83",
     "localId": "083",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "083/113",
+    "cardNumber": "83/113",
     "cardName": "Stunfisk",
-    "fullDisplayName": "Stunfisk 083/113 Legendary Treasures",
+    "fullDisplayName": "Stunfisk 83/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1896,18 +2364,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-083-low.png",
-    "imageHighSrc": "cards/bw11-083-high.png"
+    "imageHighSrc": "cards/bw11-083-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "20"
+      },
+      {
+        "name": "Rumble",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2271",
-    "externalId": null,
+    "externalId": "bw11-82",
     "tcgdex_id": "bw11-82",
     "localId": "082",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "082/113",
+    "cardNumber": "82/113",
     "cardName": "Excadrill-EX",
-    "fullDisplayName": "Excadrill-EX 082/113 Legendary Treasures",
+    "fullDisplayName": "Excadrill-EX 82/113 Legendary Treasures",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1930,18 +2408,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-082-low.png",
-    "imageHighSrc": "cards/bw11-082-high.png"
+    "imageHighSrc": "cards/bw11-082-high.png",
+    "attacks": [
+      {
+        "name": "Dig Out",
+        "damage": "40"
+      },
+      {
+        "name": "Break Ground",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2270",
-    "externalId": null,
+    "externalId": "bw11-81",
     "tcgdex_id": "bw11-81",
     "localId": "081",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "081/113",
+    "cardNumber": "81/113",
     "cardName": "Gallade",
-    "fullDisplayName": "Gallade 081/113 Legendary Treasures",
+    "fullDisplayName": "Gallade 81/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1963,18 +2452,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-081-low.png",
-    "imageHighSrc": "cards/bw11-081-high.png"
+    "imageHighSrc": "cards/bw11-081-high.png",
+    "attacks": [
+      {
+        "name": "Nerve Shot",
+        "damage": "30"
+      },
+      {
+        "name": "Pandemonium Blade",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2269",
-    "externalId": null,
+    "externalId": "bw11-80",
     "tcgdex_id": "bw11-80",
     "localId": "080",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "080/113",
+    "cardNumber": "80/113",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario 080/113 Legendary Treasures",
+    "fullDisplayName": "Lucario 80/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1996,18 +2495,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-080-low.png",
-    "imageHighSrc": "cards/bw11-080-high.png"
+    "imageHighSrc": "cards/bw11-080-high.png",
+    "attacks": [
+      {
+        "name": "Aura Sphere",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2268",
-    "externalId": null,
+    "externalId": "bw11-79",
     "tcgdex_id": "bw11-79",
     "localId": "079",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "079/113",
+    "cardNumber": "79/113",
     "cardName": "Riolu",
-    "fullDisplayName": "Riolu 079/113 Legendary Treasures",
+    "fullDisplayName": "Riolu 79/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2029,18 +2534,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-079-low.png",
-    "imageHighSrc": "cards/bw11-079-high.png"
+    "imageHighSrc": "cards/bw11-079-high.png",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2267",
-    "externalId": null,
+    "externalId": "bw11-78",
     "tcgdex_id": "bw11-78",
     "localId": "078",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "078/113",
+    "cardNumber": "78/113",
     "cardName": "Meloetta",
-    "fullDisplayName": "Meloetta 078/113 Legendary Treasures",
+    "fullDisplayName": "Meloetta 78/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2062,18 +2577,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-078-low.png",
-    "imageHighSrc": "cards/bw11-078-high.png"
+    "imageHighSrc": "cards/bw11-078-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "10+"
+      },
+      {
+        "name": "Echoed Voice",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2266",
-    "externalId": null,
+    "externalId": "bw11-77",
     "tcgdex_id": "bw11-77",
     "localId": "077",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "077/113",
+    "cardNumber": "77/113",
     "cardName": "Chandelure-EX",
-    "fullDisplayName": "Chandelure-EX 077/113 Legendary Treasures",
+    "fullDisplayName": "Chandelure-EX 77/113 Legendary Treasures",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2096,18 +2621,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-077-low.png",
-    "imageHighSrc": "cards/bw11-077-high.png"
+    "imageHighSrc": "cards/bw11-077-high.png",
+    "attacks": [
+      {
+        "name": "Cursed Drop",
+        "damage": null
+      },
+      {
+        "name": "Eerie Glow",
+        "damage": "70"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2265",
-    "externalId": null,
+    "externalId": "bw11-76",
     "tcgdex_id": "bw11-76",
     "localId": "076",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "076/113",
+    "cardNumber": "76/113",
     "cardName": "Reuniclus",
-    "fullDisplayName": "Reuniclus 076/113 Legendary Treasures",
+    "fullDisplayName": "Reuniclus 76/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2129,18 +2665,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-076-low.png",
-    "imageHighSrc": "cards/bw11-076-high.png"
+    "imageHighSrc": "cards/bw11-076-high.png",
+    "attacks": [
+      {
+        "name": "Future Sight",
+        "damage": null
+      },
+      {
+        "name": "Net Force",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "2264",
-    "externalId": null,
+    "externalId": "bw11-75",
     "tcgdex_id": "bw11-75",
     "localId": "075",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "075/113",
+    "cardNumber": "75/113",
     "cardName": "Duosion",
-    "fullDisplayName": "Duosion 075/113 Legendary Treasures",
+    "fullDisplayName": "Duosion 75/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2162,18 +2708,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-075-low.png",
-    "imageHighSrc": "cards/bw11-075-high.png"
+    "imageHighSrc": "cards/bw11-075-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2263",
-    "externalId": null,
+    "externalId": "bw11-74",
     "tcgdex_id": "bw11-74",
     "localId": "074",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "074/113",
+    "cardNumber": "74/113",
     "cardName": "Solosis",
-    "fullDisplayName": "Solosis 074/113 Legendary Treasures",
+    "fullDisplayName": "Solosis 74/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2195,18 +2747,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-074-low.png",
-    "imageHighSrc": "cards/bw11-074-high.png"
+    "imageHighSrc": "cards/bw11-074-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Ram",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2262",
-    "externalId": null,
+    "externalId": "bw11-73",
     "tcgdex_id": "bw11-73",
     "localId": "073",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "073/113",
+    "cardNumber": "73/113",
     "cardName": "Solosis",
-    "fullDisplayName": "Solosis 073/113 Legendary Treasures",
+    "fullDisplayName": "Solosis 73/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2228,18 +2790,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-073-low.png",
-    "imageHighSrc": "cards/bw11-073-high.png"
+    "imageHighSrc": "cards/bw11-073-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2261",
-    "externalId": null,
+    "externalId": "bw11-72",
     "tcgdex_id": "bw11-72",
     "localId": "072",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "072/113",
+    "cardNumber": "72/113",
     "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 072/113 Legendary Treasures",
+    "fullDisplayName": "Gothitelle 72/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2261,18 +2829,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-072-low.png",
-    "imageHighSrc": "cards/bw11-072-high.png"
+    "imageHighSrc": "cards/bw11-072-high.png",
+    "attacks": [
+      {
+        "name": "Madkinesis",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2260",
-    "externalId": null,
+    "externalId": "bw11-71",
     "tcgdex_id": "bw11-71",
     "localId": "071",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "071/113",
+    "cardNumber": "71/113",
     "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 071/113 Legendary Treasures",
+    "fullDisplayName": "Gothorita 71/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2294,18 +2868,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-071-low.png",
-    "imageHighSrc": "cards/bw11-071-high.png"
+    "imageHighSrc": "cards/bw11-071-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "20×"
+      },
+      {
+        "name": "Psybeam",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2259",
-    "externalId": null,
+    "externalId": "bw11-70",
     "tcgdex_id": "bw11-70",
     "localId": "070",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "070/113",
+    "cardNumber": "70/113",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 070/113 Legendary Treasures",
+    "fullDisplayName": "Gothita 70/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2327,18 +2911,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-070-low.png",
-    "imageHighSrc": "cards/bw11-070-high.png"
+    "imageHighSrc": "cards/bw11-070-high.png",
+    "attacks": [
+      {
+        "name": "Trip Over",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2258",
-    "externalId": null,
+    "externalId": "bw11-69",
     "tcgdex_id": "bw11-69",
     "localId": "069",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "069/113",
+    "cardNumber": "69/113",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 069/113 Legendary Treasures",
+    "fullDisplayName": "Gothita 69/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2360,18 +2950,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-069-low.png",
-    "imageHighSrc": "cards/bw11-069-high.png"
+    "imageHighSrc": "cards/bw11-069-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Gaze",
+        "damage": null
+      },
+      {
+        "name": "Double Slap",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2257",
-    "externalId": null,
+    "externalId": "bw11-68",
     "tcgdex_id": "bw11-68",
     "localId": "068",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "068/113",
+    "cardNumber": "68/113",
     "cardName": "Garbodor",
-    "fullDisplayName": "Garbodor 068/113 Legendary Treasures",
+    "fullDisplayName": "Garbodor 68/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2393,18 +2993,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-068-low.png",
-    "imageHighSrc": "cards/bw11-068-high.png"
+    "imageHighSrc": "cards/bw11-068-high.png",
+    "attacks": [
+      {
+        "name": "Sludge Toss",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2256",
-    "externalId": null,
+    "externalId": "bw11-67",
     "tcgdex_id": "bw11-67",
     "localId": "067",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "067/113",
+    "cardNumber": "67/113",
     "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 067/113 Legendary Treasures",
+    "fullDisplayName": "Trubbish 67/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2426,18 +3032,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-067-low.png",
-    "imageHighSrc": "cards/bw11-067-high.png"
+    "imageHighSrc": "cards/bw11-067-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Poison Gas",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2255",
-    "externalId": null,
+    "externalId": "bw11-66",
     "tcgdex_id": "bw11-66",
     "localId": "066",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "066/113",
+    "cardNumber": "66/113",
     "cardName": "Sigilyph",
-    "fullDisplayName": "Sigilyph 066/113 Legendary Treasures",
+    "fullDisplayName": "Sigilyph 66/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2459,18 +3075,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-066-low.png",
-    "imageHighSrc": "cards/bw11-066-high.png"
+    "imageHighSrc": "cards/bw11-066-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2254",
-    "externalId": null,
+    "externalId": "bw11-65",
     "tcgdex_id": "bw11-65",
     "localId": "065",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "065/113",
+    "cardNumber": "65/113",
     "cardName": "Swoobat",
-    "fullDisplayName": "Swoobat 065/113 Legendary Treasures",
+    "fullDisplayName": "Swoobat 65/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2492,18 +3114,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-065-low.png",
-    "imageHighSrc": "cards/bw11-065-high.png"
+    "imageHighSrc": "cards/bw11-065-high.png",
+    "attacks": [
+      {
+        "name": "Energy Gift",
+        "damage": null
+      },
+      {
+        "name": "Heart Stamp",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2253",
-    "externalId": null,
+    "externalId": "bw11-64",
     "tcgdex_id": "bw11-64",
     "localId": "064",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "064/113",
+    "cardNumber": "64/113",
     "cardName": "Woobat",
-    "fullDisplayName": "Woobat 064/113 Legendary Treasures",
+    "fullDisplayName": "Woobat 64/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2525,18 +3157,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-064-low.png",
-    "imageHighSrc": "cards/bw11-064-high.png"
+    "imageHighSrc": "cards/bw11-064-high.png",
+    "attacks": [
+      {
+        "name": "Dual Cut",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2252",
-    "externalId": null,
+    "externalId": "bw11-63",
     "tcgdex_id": "bw11-63",
     "localId": "063",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "063/113",
+    "cardNumber": "63/113",
     "cardName": "Toxicroak",
-    "fullDisplayName": "Toxicroak 063/113 Legendary Treasures",
+    "fullDisplayName": "Toxicroak 63/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2558,18 +3196,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-063-low.png",
-    "imageHighSrc": "cards/bw11-063-high.png"
+    "imageHighSrc": "cards/bw11-063-high.png",
+    "attacks": [
+      {
+        "name": "Revenge",
+        "damage": "20+"
+      },
+      {
+        "name": "Poison Jab",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2251",
-    "externalId": null,
+    "externalId": "bw11-62",
     "tcgdex_id": "bw11-62",
     "localId": "062",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "062/113",
+    "cardNumber": "62/113",
     "cardName": "Croagunk",
-    "fullDisplayName": "Croagunk 062/113 Legendary Treasures",
+    "fullDisplayName": "Croagunk 62/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2591,18 +3239,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-062-low.png",
-    "imageHighSrc": "cards/bw11-062-high.png"
+    "imageHighSrc": "cards/bw11-062-high.png",
+    "attacks": [
+      {
+        "name": "Poison Jab",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2250",
-    "externalId": null,
+    "externalId": "bw11-61",
     "tcgdex_id": "bw11-61",
     "localId": "061",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "061/113",
+    "cardNumber": "61/113",
     "cardName": "Sableye",
-    "fullDisplayName": "Sableye 061/113 Legendary Treasures",
+    "fullDisplayName": "Sableye 61/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2624,18 +3278,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-061-low.png",
-    "imageHighSrc": "cards/bw11-061-high.png"
+    "imageHighSrc": "cards/bw11-061-high.png",
+    "attacks": [
+      {
+        "name": "Tight Jaw",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2249",
-    "externalId": null,
+    "externalId": "bw11-60",
     "tcgdex_id": "bw11-60",
     "localId": "060",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "060/113",
+    "cardNumber": "60/113",
     "cardName": "Kirlia",
-    "fullDisplayName": "Kirlia 060/113 Legendary Treasures",
+    "fullDisplayName": "Kirlia 60/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2657,18 +3317,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-060-low.png",
-    "imageHighSrc": "cards/bw11-060-high.png"
+    "imageHighSrc": "cards/bw11-060-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "20"
+      },
+      {
+        "name": "Spinning Attack",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2248",
-    "externalId": null,
+    "externalId": "bw11-59",
     "tcgdex_id": "bw11-59",
     "localId": "059",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "059/113",
+    "cardNumber": "59/113",
     "cardName": "Ralts",
-    "fullDisplayName": "Ralts 059/113 Legendary Treasures",
+    "fullDisplayName": "Ralts 59/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2690,18 +3360,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-059-low.png",
-    "imageHighSrc": "cards/bw11-059-high.png"
+    "imageHighSrc": "cards/bw11-059-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2247",
-    "externalId": null,
+    "externalId": "bw11-58",
     "tcgdex_id": "bw11-58",
     "localId": "058",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "058/113",
+    "cardNumber": "58/113",
     "cardName": "Mismagius",
-    "fullDisplayName": "Mismagius 058/113 Legendary Treasures",
+    "fullDisplayName": "Mismagius 58/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2723,18 +3399,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-058-low.png",
-    "imageHighSrc": "cards/bw11-058-high.png"
+    "imageHighSrc": "cards/bw11-058-high.png",
+    "attacks": [
+      {
+        "name": "Absorb Life",
+        "damage": "30"
+      },
+      {
+        "name": "Spooky Shot",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2246",
-    "externalId": null,
+    "externalId": "bw11-57",
     "tcgdex_id": "bw11-57",
     "localId": "057",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "057/113",
+    "cardNumber": "57/113",
     "cardName": "Misdreavus",
-    "fullDisplayName": "Misdreavus 057/113 Legendary Treasures",
+    "fullDisplayName": "Misdreavus 57/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2756,18 +3442,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-057-low.png",
-    "imageHighSrc": "cards/bw11-057-high.png"
+    "imageHighSrc": "cards/bw11-057-high.png",
+    "attacks": [
+      {
+        "name": "Spooky Shot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2245",
-    "externalId": null,
+    "externalId": "bw11-56",
     "tcgdex_id": "bw11-56",
     "localId": "056",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "056/113",
+    "cardNumber": "56/113",
     "cardName": "Xatu",
-    "fullDisplayName": "Xatu 056/113 Legendary Treasures",
+    "fullDisplayName": "Xatu 56/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2789,18 +3481,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-056-low.png",
-    "imageHighSrc": "cards/bw11-056-high.png"
+    "imageHighSrc": "cards/bw11-056-high.png",
+    "attacks": [
+      {
+        "name": "Fortunate Draw",
+        "damage": null
+      },
+      {
+        "name": "Miracle Wing",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2244",
-    "externalId": null,
+    "externalId": "bw11-55",
     "tcgdex_id": "bw11-55",
     "localId": "055",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "055/113",
+    "cardNumber": "55/113",
     "cardName": "Natu",
-    "fullDisplayName": "Natu 055/113 Legendary Treasures",
+    "fullDisplayName": "Natu 55/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2822,18 +3524,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-055-low.png",
-    "imageHighSrc": "cards/bw11-055-high.png"
+    "imageHighSrc": "cards/bw11-055-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2243",
-    "externalId": null,
+    "externalId": "bw11-54",
     "tcgdex_id": "bw11-54",
     "localId": "054",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "054/113",
+    "cardNumber": "54/113",
     "cardName": "Mewtwo-EX",
-    "fullDisplayName": "Mewtwo-EX 054/113 Legendary Treasures",
+    "fullDisplayName": "Mewtwo-EX 54/113 Legendary Treasures",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2856,18 +3564,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-054-low.png",
-    "imageHighSrc": "cards/bw11-054-high.png"
+    "imageHighSrc": "cards/bw11-054-high.png",
+    "attacks": [
+      {
+        "name": "X Ball",
+        "damage": null
+      },
+      {
+        "name": "Psydrive",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2242",
-    "externalId": null,
+    "externalId": "bw11-53",
     "tcgdex_id": "bw11-53",
     "localId": "053",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "053/113",
+    "cardNumber": "53/113",
     "cardName": "Mewtwo",
-    "fullDisplayName": "Mewtwo 053/113 Legendary Treasures",
+    "fullDisplayName": "Mewtwo 53/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2889,18 +3608,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-053-low.png",
-    "imageHighSrc": "cards/bw11-053-high.png"
+    "imageHighSrc": "cards/bw11-053-high.png",
+    "attacks": [
+      {
+        "name": "Power Edge",
+        "damage": "30"
+      },
+      {
+        "name": "Psyslash",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2241",
-    "externalId": null,
+    "externalId": "bw11-52",
     "tcgdex_id": "bw11-52",
     "localId": "052",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "052/113",
+    "cardNumber": "52/113",
     "cardName": "Zekrom-EX",
-    "fullDisplayName": "Zekrom-EX 052/113 Legendary Treasures",
+    "fullDisplayName": "Zekrom-EX 52/113 Legendary Treasures",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2923,18 +3652,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-052-low.png",
-    "imageHighSrc": "cards/bw11-052-high.png"
+    "imageHighSrc": "cards/bw11-052-high.png",
+    "attacks": [
+      {
+        "name": "Glinting Claw",
+        "damage": "50+"
+      },
+      {
+        "name": "Strong Volt",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2240",
-    "externalId": null,
+    "externalId": "bw11-51",
     "tcgdex_id": "bw11-51",
     "localId": "051",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "051/113",
+    "cardNumber": "51/113",
     "cardName": "Zekrom",
-    "fullDisplayName": "Zekrom 051/113 Legendary Treasures",
+    "fullDisplayName": "Zekrom 51/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2956,18 +3696,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-051-low.png",
-    "imageHighSrc": "cards/bw11-051-high.png"
+    "imageHighSrc": "cards/bw11-051-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Bolt Strike",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2239",
-    "externalId": null,
+    "externalId": "bw11-50",
     "tcgdex_id": "bw11-50",
     "localId": "050",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "050/113",
+    "cardNumber": "50/113",
     "cardName": "Thundurus",
-    "fullDisplayName": "Thundurus 050/113 Legendary Treasures",
+    "fullDisplayName": "Thundurus 50/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2989,18 +3739,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-050-low.png",
-    "imageHighSrc": "cards/bw11-050-high.png"
+    "imageHighSrc": "cards/bw11-050-high.png",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Disaster Volt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2238",
-    "externalId": null,
+    "externalId": "bw11-49",
     "tcgdex_id": "bw11-49",
     "localId": "049",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "049/113",
+    "cardNumber": "49/113",
     "cardName": "Emolga",
-    "fullDisplayName": "Emolga 049/113 Legendary Treasures",
+    "fullDisplayName": "Emolga 49/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3022,18 +3782,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-049-low.png",
-    "imageHighSrc": "cards/bw11-049-high.png"
+    "imageHighSrc": "cards/bw11-049-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2237",
-    "externalId": null,
+    "externalId": "bw11-48",
     "tcgdex_id": "bw11-48",
     "localId": "048",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "048/113",
+    "cardNumber": "48/113",
     "cardName": "Minun",
-    "fullDisplayName": "Minun 048/113 Legendary Treasures",
+    "fullDisplayName": "Minun 48/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3055,18 +3825,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-048-low.png",
-    "imageHighSrc": "cards/bw11-048-high.png"
+    "imageHighSrc": "cards/bw11-048-high.png",
+    "attacks": [
+      {
+        "name": "Negative Ion",
+        "damage": null
+      },
+      {
+        "name": "Electrishower",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2236",
-    "externalId": null,
+    "externalId": "bw11-47",
     "tcgdex_id": "bw11-47",
     "localId": "047",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "047/113",
+    "cardNumber": "47/113",
     "cardName": "Plusle",
-    "fullDisplayName": "Plusle 047/113 Legendary Treasures",
+    "fullDisplayName": "Plusle 47/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3088,18 +3868,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-047-low.png",
-    "imageHighSrc": "cards/bw11-047-high.png"
+    "imageHighSrc": "cards/bw11-047-high.png",
+    "attacks": [
+      {
+        "name": "Tag Draw",
+        "damage": null
+      },
+      {
+        "name": "Positive Ion",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2235",
-    "externalId": null,
+    "externalId": "bw11-46",
     "tcgdex_id": "bw11-46",
     "localId": "046",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "046/113",
+    "cardNumber": "46/113",
     "cardName": "Zapdos",
-    "fullDisplayName": "Zapdos 046/113 Legendary Treasures",
+    "fullDisplayName": "Zapdos 46/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3121,18 +3911,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-046-low.png",
-    "imageHighSrc": "cards/bw11-046-high.png"
+    "imageHighSrc": "cards/bw11-046-high.png",
+    "attacks": [
+      {
+        "name": "Random Spark",
+        "damage": null
+      },
+      {
+        "name": "Thundering Hurricane",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "2234",
-    "externalId": null,
+    "externalId": "bw11-45",
     "tcgdex_id": "bw11-45",
     "localId": "045",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "045/113",
+    "cardNumber": "45/113",
     "cardName": "Keldeo-EX",
-    "fullDisplayName": "Keldeo-EX 045/113 Legendary Treasures",
+    "fullDisplayName": "Keldeo-EX 45/113 Legendary Treasures",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3155,18 +3955,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-045-low.png",
-    "imageHighSrc": "cards/bw11-045-high.png"
+    "imageHighSrc": "cards/bw11-045-high.png",
+    "attacks": [
+      {
+        "name": "Secret Sword",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2233",
-    "externalId": null,
+    "externalId": "bw11-44",
     "tcgdex_id": "bw11-44",
     "localId": "044",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "044/113",
+    "cardNumber": "44/113",
     "cardName": "Kyurem-EX",
-    "fullDisplayName": "Kyurem-EX 044/113 Legendary Treasures",
+    "fullDisplayName": "Kyurem-EX 44/113 Legendary Treasures",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3189,18 +3996,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-044-low.png",
-    "imageHighSrc": "cards/bw11-044-high.png"
+    "imageHighSrc": "cards/bw11-044-high.png",
+    "attacks": [
+      {
+        "name": "Frozen Wings",
+        "damage": "60"
+      },
+      {
+        "name": "Hail Blizzard",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2232",
-    "externalId": null,
+    "externalId": "bw11-43",
     "tcgdex_id": "bw11-43",
     "localId": "043",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "043/113",
+    "cardNumber": "43/113",
     "cardName": "Kyurem",
-    "fullDisplayName": "Kyurem 043/113 Legendary Treasures",
+    "fullDisplayName": "Kyurem 43/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3222,18 +4040,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-043-low.png",
-    "imageHighSrc": "cards/bw11-043-high.png"
+    "imageHighSrc": "cards/bw11-043-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Glaciate",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2231",
-    "externalId": null,
+    "externalId": "bw11-42",
     "tcgdex_id": "bw11-42",
     "localId": "042",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "042/113",
+    "cardNumber": "42/113",
     "cardName": "Seismitoad",
-    "fullDisplayName": "Seismitoad 042/113 Legendary Treasures",
+    "fullDisplayName": "Seismitoad 42/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3255,18 +4083,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-042-low.png",
-    "imageHighSrc": "cards/bw11-042-high.png"
+    "imageHighSrc": "cards/bw11-042-high.png",
+    "attacks": [
+      {
+        "name": "Round",
+        "damage": "30×"
+      },
+      {
+        "name": "Hyper Voice",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2230",
-    "externalId": null,
+    "externalId": "bw11-41",
     "tcgdex_id": "bw11-41",
     "localId": "041",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "041/113",
+    "cardNumber": "41/113",
     "cardName": "Palpitoad",
-    "fullDisplayName": "Palpitoad 041/113 Legendary Treasures",
+    "fullDisplayName": "Palpitoad 41/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3288,18 +4126,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-041-low.png",
-    "imageHighSrc": "cards/bw11-041-high.png"
+    "imageHighSrc": "cards/bw11-041-high.png",
+    "attacks": [
+      {
+        "name": "Mud Shot",
+        "damage": "20"
+      },
+      {
+        "name": "Round",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2229",
-    "externalId": null,
+    "externalId": "bw11-40",
     "tcgdex_id": "bw11-40",
     "localId": "040",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "040/113",
+    "cardNumber": "40/113",
     "cardName": "Tympole",
-    "fullDisplayName": "Tympole 040/113 Legendary Treasures",
+    "fullDisplayName": "Tympole 40/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3321,18 +4169,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-040-low.png",
-    "imageHighSrc": "cards/bw11-040-high.png"
+    "imageHighSrc": "cards/bw11-040-high.png",
+    "attacks": [
+      {
+        "name": "Vibration",
+        "damage": "10"
+      },
+      {
+        "name": "Mud Shot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2228",
-    "externalId": null,
+    "externalId": "bw11-39",
     "tcgdex_id": "bw11-39",
     "localId": "039",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "039/113",
+    "cardNumber": "39/113",
     "cardName": "Samurott",
-    "fullDisplayName": "Samurott 039/113 Legendary Treasures",
+    "fullDisplayName": "Samurott 39/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3354,18 +4212,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-039-low.png",
-    "imageHighSrc": "cards/bw11-039-high.png"
+    "imageHighSrc": "cards/bw11-039-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "2227",
-    "externalId": null,
+    "externalId": "bw11-38",
     "tcgdex_id": "bw11-38",
     "localId": "038",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "038/113",
+    "cardNumber": "38/113",
     "cardName": "Dewott",
-    "fullDisplayName": "Dewott 038/113 Legendary Treasures",
+    "fullDisplayName": "Dewott 38/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3387,18 +4251,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-038-low.png",
-    "imageHighSrc": "cards/bw11-038-high.png"
+    "imageHighSrc": "cards/bw11-038-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Tail",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2226",
-    "externalId": null,
+    "externalId": "bw11-37",
     "tcgdex_id": "bw11-37",
     "localId": "037",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "037/113",
+    "cardNumber": "37/113",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott 037/113 Legendary Treasures",
+    "fullDisplayName": "Oshawott 37/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3420,18 +4290,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-037-low.png",
-    "imageHighSrc": "cards/bw11-037-high.png"
+    "imageHighSrc": "cards/bw11-037-high.png",
+    "attacks": [
+      {
+        "name": "Razor Shell",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2225",
-    "externalId": null,
+    "externalId": "bw11-36",
     "tcgdex_id": "bw11-36",
     "localId": "036",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "036/113",
+    "cardNumber": "36/113",
     "cardName": "Phione",
-    "fullDisplayName": "Phione 036/113 Legendary Treasures",
+    "fullDisplayName": "Phione 36/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3453,18 +4329,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-036-low.png",
-    "imageHighSrc": "cards/bw11-036-high.png"
+    "imageHighSrc": "cards/bw11-036-high.png",
+    "attacks": [
+      {
+        "name": "Pull Out",
+        "damage": null
+      },
+      {
+        "name": "Aqua Boomerang",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2224",
-    "externalId": null,
+    "externalId": "bw11-35",
     "tcgdex_id": "bw11-35",
     "localId": "035",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "035/113",
+    "cardNumber": "35/113",
     "cardName": "Empoleon",
-    "fullDisplayName": "Empoleon 035/113 Legendary Treasures",
+    "fullDisplayName": "Empoleon 35/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3486,18 +4372,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-035-low.png",
-    "imageHighSrc": "cards/bw11-035-high.png"
+    "imageHighSrc": "cards/bw11-035-high.png",
+    "attacks": [
+      {
+        "name": "Surf",
+        "damage": "50"
+      },
+      {
+        "name": "Emperor's Strike",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "2223",
-    "externalId": null,
+    "externalId": "bw11-34",
     "tcgdex_id": "bw11-34",
     "localId": "034",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "034/113",
+    "cardNumber": "34/113",
     "cardName": "Prinplup",
-    "fullDisplayName": "Prinplup 034/113 Legendary Treasures",
+    "fullDisplayName": "Prinplup 34/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3519,18 +4415,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-034-low.png",
-    "imageHighSrc": "cards/bw11-034-high.png"
+    "imageHighSrc": "cards/bw11-034-high.png",
+    "attacks": [
+      {
+        "name": "Water Splash",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2222",
-    "externalId": null,
+    "externalId": "bw11-33",
     "tcgdex_id": "bw11-33",
     "localId": "033",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "033/113",
+    "cardNumber": "33/113",
     "cardName": "Piplup",
-    "fullDisplayName": "Piplup 033/113 Legendary Treasures",
+    "fullDisplayName": "Piplup 33/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3552,18 +4454,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-033-low.png",
-    "imageHighSrc": "cards/bw11-033-high.png"
+    "imageHighSrc": "cards/bw11-033-high.png",
+    "attacks": [
+      {
+        "name": "Water Splash",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2221",
-    "externalId": null,
+    "externalId": "bw11-32",
     "tcgdex_id": "bw11-32",
     "localId": "032",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "032/113",
+    "cardNumber": "32/113",
     "cardName": "Articuno",
-    "fullDisplayName": "Articuno 032/113 Legendary Treasures",
+    "fullDisplayName": "Articuno 32/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3585,18 +4493,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-032-low.png",
-    "imageHighSrc": "cards/bw11-032-high.png"
+    "imageHighSrc": "cards/bw11-032-high.png",
+    "attacks": [
+      {
+        "name": "Ice Beam",
+        "damage": "50"
+      },
+      {
+        "name": "Ice Wing",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2220",
-    "externalId": null,
+    "externalId": "bw11-31",
     "tcgdex_id": "bw11-31",
     "localId": "031",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "031/113",
+    "cardNumber": "31/113",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 031/113 Legendary Treasures",
+    "fullDisplayName": "Gyarados 31/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3618,18 +4536,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-031-low.png",
-    "imageHighSrc": "cards/bw11-031-high.png"
+    "imageHighSrc": "cards/bw11-031-high.png",
+    "attacks": [
+      {
+        "name": "Howling Rampage",
+        "damage": "20+"
+      },
+      {
+        "name": "Hydro Splash",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2219",
-    "externalId": null,
+    "externalId": "bw11-30",
     "tcgdex_id": "bw11-30",
     "localId": "030",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "030/113",
+    "cardNumber": "30/113",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 030/113 Legendary Treasures",
+    "fullDisplayName": "Magikarp 30/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3651,18 +4579,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-030-low.png",
-    "imageHighSrc": "cards/bw11-030-high.png"
+    "imageHighSrc": "cards/bw11-030-high.png",
+    "attacks": [
+      {
+        "name": "Flailing Flop",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2218",
-    "externalId": null,
+    "externalId": "bw11-29",
     "tcgdex_id": "bw11-29",
     "localId": "029",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "029/113",
+    "cardNumber": "29/113",
     "cardName": "Reshiram-EX",
-    "fullDisplayName": "Reshiram-EX 029/113 Legendary Treasures",
+    "fullDisplayName": "Reshiram-EX 29/113 Legendary Treasures",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3685,18 +4619,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-029-low.png",
-    "imageHighSrc": "cards/bw11-029-high.png"
+    "imageHighSrc": "cards/bw11-029-high.png",
+    "attacks": [
+      {
+        "name": "Glinting Claw",
+        "damage": "50+"
+      },
+      {
+        "name": "Brave Fire",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2217",
-    "externalId": null,
+    "externalId": "bw11-28",
     "tcgdex_id": "bw11-28",
     "localId": "028",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "028/113",
+    "cardNumber": "28/113",
     "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram 028/113 Legendary Treasures",
+    "fullDisplayName": "Reshiram 28/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3718,18 +4663,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-028-low.png",
-    "imageHighSrc": "cards/bw11-028-high.png"
+    "imageHighSrc": "cards/bw11-028-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Blue Flare",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2216",
-    "externalId": null,
+    "externalId": "bw11-27",
     "tcgdex_id": "bw11-27",
     "localId": "027",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "027/113",
+    "cardNumber": "27/113",
     "cardName": "Emboar",
-    "fullDisplayName": "Emboar 027/113 Legendary Treasures",
+    "fullDisplayName": "Emboar 27/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3751,18 +4706,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-027-low.png",
-    "imageHighSrc": "cards/bw11-027-high.png"
+    "imageHighSrc": "cards/bw11-027-high.png",
+    "attacks": [
+      {
+        "name": "Heat Crash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2215",
-    "externalId": null,
+    "externalId": "bw11-26",
     "tcgdex_id": "bw11-26",
     "localId": "026",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "026/113",
+    "cardNumber": "26/113",
     "cardName": "Pignite",
-    "fullDisplayName": "Pignite 026/113 Legendary Treasures",
+    "fullDisplayName": "Pignite 26/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3784,18 +4745,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-026-low.png",
-    "imageHighSrc": "cards/bw11-026-high.png"
+    "imageHighSrc": "cards/bw11-026-high.png",
+    "attacks": [
+      {
+        "name": "Rollout",
+        "damage": "20"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2214",
-    "externalId": null,
+    "externalId": "bw11-25",
     "tcgdex_id": "bw11-25",
     "localId": "025",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "025/113",
+    "cardNumber": "25/113",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig 025/113 Legendary Treasures",
+    "fullDisplayName": "Tepig 25/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3817,18 +4788,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-025-low.png",
-    "imageHighSrc": "cards/bw11-025-high.png"
+    "imageHighSrc": "cards/bw11-025-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2213",
-    "externalId": null,
+    "externalId": "bw11-24",
     "tcgdex_id": "bw11-24",
     "localId": "024",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "024/113",
+    "cardNumber": "24/113",
     "cardName": "Victini-EX",
-    "fullDisplayName": "Victini-EX 024/113 Legendary Treasures",
+    "fullDisplayName": "Victini-EX 24/113 Legendary Treasures",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3851,18 +4828,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw11-024-low.png",
-    "imageHighSrc": "cards/bw11-024-high.png"
+    "imageHighSrc": "cards/bw11-024-high.png",
+    "attacks": [
+      {
+        "name": "Turbo Energize",
+        "damage": null
+      },
+      {
+        "name": "Intensifying Burn",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2212",
-    "externalId": null,
+    "externalId": "bw11-23",
     "tcgdex_id": "bw11-23",
     "localId": "023",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "023/113",
+    "cardNumber": "23/113",
     "cardName": "Victini",
-    "fullDisplayName": "Victini 023/113 Legendary Treasures",
+    "fullDisplayName": "Victini 23/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3884,18 +4872,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-023-low.png",
-    "imageHighSrc": "cards/bw11-023-high.png"
+    "imageHighSrc": "cards/bw11-023-high.png",
+    "attacks": [
+      {
+        "name": "Stored Power",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2211",
-    "externalId": null,
+    "externalId": "bw11-22",
     "tcgdex_id": "bw11-22",
     "localId": "022",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "022/113",
+    "cardNumber": "22/113",
     "cardName": "Moltres",
-    "fullDisplayName": "Moltres 022/113 Legendary Treasures",
+    "fullDisplayName": "Moltres 22/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3917,18 +4911,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-022-low.png",
-    "imageHighSrc": "cards/bw11-022-high.png"
+    "imageHighSrc": "cards/bw11-022-high.png",
+    "attacks": [
+      {
+        "name": "Searing Flame",
+        "damage": "50"
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2210",
-    "externalId": null,
+    "externalId": "bw11-21",
     "tcgdex_id": "bw11-21",
     "localId": "021",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "021/113",
+    "cardNumber": "21/113",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 021/113 Legendary Treasures",
+    "fullDisplayName": "Ninetales 21/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3950,18 +4954,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-021-low.png",
-    "imageHighSrc": "cards/bw11-021-high.png"
+    "imageHighSrc": "cards/bw11-021-high.png",
+    "attacks": [
+      {
+        "name": "Color Coordination",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2209",
-    "externalId": null,
+    "externalId": "bw11-20",
     "tcgdex_id": "bw11-20",
     "localId": "020",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "020/113",
+    "cardNumber": "20/113",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 020/113 Legendary Treasures",
+    "fullDisplayName": "Vulpix 20/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3983,18 +4993,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-020-low.png",
-    "imageHighSrc": "cards/bw11-020-high.png"
+    "imageHighSrc": "cards/bw11-020-high.png",
+    "attacks": [
+      {
+        "name": "Firebreathing",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2208",
-    "externalId": null,
+    "externalId": "bw11-19",
     "tcgdex_id": "bw11-19",
     "localId": "019",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "019/113",
+    "cardNumber": "19/113",
     "cardName": "Charizard",
-    "fullDisplayName": "Charizard 019/113 Legendary Treasures",
+    "fullDisplayName": "Charizard 19/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4016,18 +5032,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-019-low.png",
-    "imageHighSrc": "cards/bw11-019-high.png"
+    "imageHighSrc": "cards/bw11-019-high.png",
+    "attacks": [
+      {
+        "name": "Split Bomb",
+        "damage": null
+      },
+      {
+        "name": "Scorching Fire",
+        "damage": "150"
+      }
+    ]
   },
   {
     "masterCardId": "2207",
-    "externalId": null,
+    "externalId": "bw11-18",
     "tcgdex_id": "bw11-18",
     "localId": "018",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "018/113",
+    "cardNumber": "18/113",
     "cardName": "Charmeleon",
-    "fullDisplayName": "Charmeleon 018/113 Legendary Treasures",
+    "fullDisplayName": "Charmeleon 18/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4049,18 +5075,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-018-low.png",
-    "imageHighSrc": "cards/bw11-018-high.png"
+    "imageHighSrc": "cards/bw11-018-high.png",
+    "attacks": [
+      {
+        "name": "Flare",
+        "damage": "20"
+      },
+      {
+        "name": "Raging Claws",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2206",
-    "externalId": null,
+    "externalId": "bw11-17",
     "tcgdex_id": "bw11-17",
     "localId": "017",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "017/113",
+    "cardNumber": "17/113",
     "cardName": "Charmander",
-    "fullDisplayName": "Charmander 017/113 Legendary Treasures",
+    "fullDisplayName": "Charmander 17/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4082,18 +5118,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-017-low.png",
-    "imageHighSrc": "cards/bw11-017-high.png"
+    "imageHighSrc": "cards/bw11-017-high.png",
+    "attacks": [
+      {
+        "name": "Draw In",
+        "damage": null
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2205",
-    "externalId": null,
+    "externalId": "bw11-16",
     "tcgdex_id": "bw11-16",
     "localId": "016",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "016/113",
+    "cardNumber": "16/113",
     "cardName": "Genesect",
-    "fullDisplayName": "Genesect 016/113 Legendary Treasures",
+    "fullDisplayName": "Genesect 16/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4115,11 +5161,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-016-low.png",
-    "imageHighSrc": "cards/bw11-016-high.png"
+    "imageHighSrc": "cards/bw11-016-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20"
+      },
+      {
+        "name": "Gaia Blaster",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2204",
-    "externalId": null,
+    "externalId": "bw11-15",
     "tcgdex_id": "bw11-15",
     "localId": "015",
     "setCode": "bw11",
@@ -4148,18 +5204,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-015-low.png",
-    "imageHighSrc": "cards/bw11-015-high.png"
+    "imageHighSrc": "cards/bw11-015-high.png",
+    "attacks": [
+      {
+        "name": "Double Draw",
+        "damage": null
+      },
+      {
+        "name": "Leaf Wallop",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2203",
-    "externalId": null,
+    "externalId": "bw11-14",
     "tcgdex_id": "bw11-14",
     "localId": "014",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "014/113",
+    "cardNumber": "14/113",
     "cardName": "Crustle",
-    "fullDisplayName": "Crustle 014/113 Legendary Treasures",
+    "fullDisplayName": "Crustle 14/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4181,18 +5247,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-014-low.png",
-    "imageHighSrc": "cards/bw11-014-high.png"
+    "imageHighSrc": "cards/bw11-014-high.png",
+    "attacks": [
+      {
+        "name": "Hard Press",
+        "damage": "30"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2202",
-    "externalId": null,
+    "externalId": "bw11-13",
     "tcgdex_id": "bw11-13",
     "localId": "013",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "013/113",
+    "cardNumber": "13/113",
     "cardName": "Dwebble",
-    "fullDisplayName": "Dwebble 013/113 Legendary Treasures",
+    "fullDisplayName": "Dwebble 13/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4214,18 +5290,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-013-low.png",
-    "imageHighSrc": "cards/bw11-013-high.png"
+    "imageHighSrc": "cards/bw11-013-high.png",
+    "attacks": [
+      {
+        "name": "Bug Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2201",
-    "externalId": null,
+    "externalId": "bw11-12",
     "tcgdex_id": "bw11-12",
     "localId": "012",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "012/113",
+    "cardNumber": "12/113",
     "cardName": "Leavanny",
-    "fullDisplayName": "Leavanny 012/113 Legendary Treasures",
+    "fullDisplayName": "Leavanny 12/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4247,18 +5329,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-012-low.png",
-    "imageHighSrc": "cards/bw11-012-high.png"
+    "imageHighSrc": "cards/bw11-012-high.png",
+    "attacks": [
+      {
+        "name": "Cutting Arm",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2200",
-    "externalId": null,
+    "externalId": "bw11-11",
     "tcgdex_id": "bw11-11",
     "localId": "011",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "011/113",
+    "cardNumber": "11/113",
     "cardName": "Swadloon",
-    "fullDisplayName": "Swadloon 011/113 Legendary Treasures",
+    "fullDisplayName": "Swadloon 11/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4280,18 +5368,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-011-low.png",
-    "imageHighSrc": "cards/bw11-011-high.png"
+    "imageHighSrc": "cards/bw11-011-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "String Shot",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2199",
-    "externalId": null,
+    "externalId": "bw11-10",
     "tcgdex_id": "bw11-10",
     "localId": "010",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "010/113",
+    "cardNumber": "10/113",
     "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 010/113 Legendary Treasures",
+    "fullDisplayName": "Sewaddle 10/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4313,18 +5411,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-010-low.png",
-    "imageHighSrc": "cards/bw11-010-high.png"
+    "imageHighSrc": "cards/bw11-010-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2198",
-    "externalId": null,
+    "externalId": "bw11-9",
     "tcgdex_id": "bw11-9",
     "localId": "009",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "009/113",
+    "cardNumber": "9/113",
     "cardName": "Sewaddle",
-    "fullDisplayName": "Sewaddle 009/113 Legendary Treasures",
+    "fullDisplayName": "Sewaddle 9/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4346,18 +5450,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-009-low.png",
-    "imageHighSrc": "cards/bw11-009-high.png"
+    "imageHighSrc": "cards/bw11-009-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Boomerang",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2197",
-    "externalId": null,
+    "externalId": "bw11-8",
     "tcgdex_id": "bw11-8",
     "localId": "008",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "008/113",
+    "cardNumber": "8/113",
     "cardName": "Serperior",
-    "fullDisplayName": "Serperior 008/113 Legendary Treasures",
+    "fullDisplayName": "Serperior 8/113 Legendary Treasures",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4379,18 +5489,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-008-low.png",
-    "imageHighSrc": "cards/bw11-008-high.png"
+    "imageHighSrc": "cards/bw11-008-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Tornado",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2196",
-    "externalId": null,
+    "externalId": "bw11-7",
     "tcgdex_id": "bw11-7",
     "localId": "007",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "007/113",
+    "cardNumber": "7/113",
     "cardName": "Servine",
-    "fullDisplayName": "Servine 007/113 Legendary Treasures",
+    "fullDisplayName": "Servine 7/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4412,18 +5528,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-007-low.png",
-    "imageHighSrc": "cards/bw11-007-high.png"
+    "imageHighSrc": "cards/bw11-007-high.png",
+    "attacks": [
+      {
+        "name": "Wring Out",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2195",
-    "externalId": null,
+    "externalId": "bw11-6",
     "tcgdex_id": "bw11-6",
     "localId": "006",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "006/113",
+    "cardNumber": "6/113",
     "cardName": "Snivy",
-    "fullDisplayName": "Snivy 006/113 Legendary Treasures",
+    "fullDisplayName": "Snivy 6/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4445,18 +5567,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-006-low.png",
-    "imageHighSrc": "cards/bw11-006-high.png"
+    "imageHighSrc": "cards/bw11-006-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Blade",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2194",
-    "externalId": null,
+    "externalId": "bw11-5",
     "tcgdex_id": "bw11-5",
     "localId": "005",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "005/113",
+    "cardNumber": "5/113",
     "cardName": "Carnivine",
-    "fullDisplayName": "Carnivine 005/113 Legendary Treasures",
+    "fullDisplayName": "Carnivine 5/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4478,18 +5606,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-005-low.png",
-    "imageHighSrc": "cards/bw11-005-high.png"
+    "imageHighSrc": "cards/bw11-005-high.png",
+    "attacks": [
+      {
+        "name": "Ambush Bite",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2193",
-    "externalId": null,
+    "externalId": "bw11-4",
     "tcgdex_id": "bw11-4",
     "localId": "004",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "004/113",
+    "cardNumber": "4/113",
     "cardName": "Cherubi",
-    "fullDisplayName": "Cherubi 004/113 Legendary Treasures",
+    "fullDisplayName": "Cherubi 4/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4511,18 +5645,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-004-low.png",
-    "imageHighSrc": "cards/bw11-004-high.png"
+    "imageHighSrc": "cards/bw11-004-high.png",
+    "attacks": [
+      {
+        "name": "Double Spin",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2192",
-    "externalId": null,
+    "externalId": "bw11-3",
     "tcgdex_id": "bw11-3",
     "localId": "003",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "003/113",
+    "cardNumber": "3/113",
     "cardName": "Shuckle",
-    "fullDisplayName": "Shuckle 003/113 Legendary Treasures",
+    "fullDisplayName": "Shuckle 3/113 Legendary Treasures",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4544,18 +5684,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-003-low.png",
-    "imageHighSrc": "cards/bw11-003-high.png"
+    "imageHighSrc": "cards/bw11-003-high.png",
+    "attacks": [
+      {
+        "name": "Share",
+        "damage": null
+      },
+      {
+        "name": "Double Stab",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "2191",
-    "externalId": null,
+    "externalId": "bw11-2",
     "tcgdex_id": "bw11-2",
     "localId": "002",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "002/113",
+    "cardNumber": "2/113",
     "cardName": "Tangrowth",
-    "fullDisplayName": "Tangrowth 002/113 Legendary Treasures",
+    "fullDisplayName": "Tangrowth 2/113 Legendary Treasures",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4577,18 +5727,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-002-low.png",
-    "imageHighSrc": "cards/bw11-002-high.png"
+    "imageHighSrc": "cards/bw11-002-high.png",
+    "attacks": [
+      {
+        "name": "Bind Down",
+        "damage": "30"
+      },
+      {
+        "name": "Flog",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2190",
-    "externalId": null,
+    "externalId": "bw11-1",
     "tcgdex_id": "bw11-1",
     "localId": "001",
     "setCode": "bw11",
     "setTcgdexId": "bw11",
-    "cardNumber": "001/113",
+    "cardNumber": "1/113",
     "cardName": "Tangela",
-    "fullDisplayName": "Tangela 001/113 Legendary Treasures",
+    "fullDisplayName": "Tangela 1/113 Legendary Treasures",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4610,6 +5770,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw11-001-low.png",
-    "imageHighSrc": "cards/bw11-001-high.png"
+    "imageHighSrc": "cards/bw11-001-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Flog",
+        "damage": "20+"
+      }
+    ]
   }
 ]

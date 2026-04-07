@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "3385",
-    "externalId": null,
+    "externalId": "bwp-BW101",
     "tcgdex_id": "bwp-BW101",
     "localId": "BW101",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW101/101",
+    "cardNumber": "BW101",
     "cardName": "Genesect",
-    "fullDisplayName": "Genesect BW101/101 BW Black Star Promos",
+    "fullDisplayName": "Genesect BW101 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW101-low.png",
-    "imageHighSrc": "cards/bwp-BW101-high.png"
+    "imageHighSrc": "cards/bwp-BW101-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "30"
+      },
+      {
+        "name": "Breaker Bazooka",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3384",
-    "externalId": null,
+    "externalId": "bwp-BW100",
     "tcgdex_id": "bwp-BW100",
     "localId": "BW100",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW100/101",
+    "cardNumber": "BW100",
     "cardName": "N",
-    "fullDisplayName": "N BW100/101 BW Black Star Promos",
+    "fullDisplayName": "N BW100 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -59,18 +69,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW100-low.png",
-    "imageHighSrc": "cards/bwp-BW100-high.png"
+    "imageHighSrc": "cards/bwp-BW100-high.png",
+    "rules": "Each player shuffles his or her hand into his or her deck. Then, each player draws a card for each of his or her remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn (before your attack)."
   },
   {
     "masterCardId": "3383",
-    "externalId": null,
+    "externalId": "bwp-BW99",
     "tcgdex_id": "bwp-BW99",
     "localId": "BW99",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW99/101",
+    "cardNumber": "BW99",
     "cardName": "Genesect",
-    "fullDisplayName": "Genesect BW99/101 BW Black Star Promos",
+    "fullDisplayName": "Genesect BW99 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -92,18 +103,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW99-low.png",
-    "imageHighSrc": "cards/bwp-BW99-high.png"
+    "imageHighSrc": "cards/bwp-BW99-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "30"
+      },
+      {
+        "name": "Breaker Bazooka",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3382",
-    "externalId": null,
+    "externalId": "bwp-BW98",
     "tcgdex_id": "bwp-BW98",
     "localId": "BW98",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW98/101",
+    "cardNumber": "BW98",
     "cardName": "Mew",
-    "fullDisplayName": "Mew BW98/101 BW Black Star Promos",
+    "fullDisplayName": "Mew BW98 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -125,18 +146,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW98-low.png",
-    "imageHighSrc": "cards/bwp-BW98-high.png"
+    "imageHighSrc": "cards/bwp-BW98-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Exchange",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3381",
-    "externalId": null,
+    "externalId": "bwp-BW97",
     "tcgdex_id": "bwp-BW97",
     "localId": "BW97",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW97/101",
+    "cardNumber": "BW97",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee BW97/101 BW Black Star Promos",
+    "fullDisplayName": "Eevee BW97 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -158,18 +185,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW97-low.png",
-    "imageHighSrc": "cards/bwp-BW97-high.png"
+    "imageHighSrc": "cards/bwp-BW97-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3380",
-    "externalId": null,
+    "externalId": "bwp-BW96",
     "tcgdex_id": "bwp-BW96",
     "localId": "BW96",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW96/101",
+    "cardNumber": "BW96",
     "cardName": "Tornadus-EX",
-    "fullDisplayName": "Tornadus-EX BW96/101 BW Black Star Promos",
+    "fullDisplayName": "Tornadus-EX BW96 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -192,18 +229,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW96-low.png",
-    "imageHighSrc": "cards/bwp-BW96-high.png"
+    "imageHighSrc": "cards/bwp-BW96-high.png",
+    "attacks": [
+      {
+        "name": "Blow Through",
+        "damage": "30+"
+      },
+      {
+        "name": "Power Blast",
+        "damage": "100"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3379",
-    "externalId": null,
+    "externalId": "bwp-BW95",
     "tcgdex_id": "bwp-BW95",
     "localId": "BW95",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW95/101",
+    "cardNumber": "BW95",
     "cardName": "Champions Festival",
-    "fullDisplayName": "Champions Festival BW95/101 BW Black Star Promos",
+    "fullDisplayName": "Champions Festival BW95 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -221,18 +269,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW95-low.png",
-    "imageHighSrc": "cards/bwp-BW95-high.png"
+    "imageHighSrc": "cards/bwp-BW95-high.png",
+    "rules": "Once during each player's turn, if that player has 6 Pokémon in play, he or she may heal 10 damage from each of his or her Pokémon.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "3378",
-    "externalId": null,
+    "externalId": "bwp-BW94",
     "tcgdex_id": "bwp-BW94",
     "localId": "BW94",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW94/101",
+    "cardNumber": "BW94",
     "cardName": "Eevee",
-    "fullDisplayName": "Eevee BW94/101 BW Black Star Promos",
+    "fullDisplayName": "Eevee BW94 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -254,18 +303,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW94-low.png",
-    "imageHighSrc": "cards/bwp-BW94-high.png"
+    "imageHighSrc": "cards/bwp-BW94-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3377",
-    "externalId": null,
+    "externalId": "bwp-BW93",
     "tcgdex_id": "bwp-BW93",
     "localId": "BW93",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW93/101",
+    "cardNumber": "BW93",
     "cardName": "Umbreon",
-    "fullDisplayName": "Umbreon BW93/101 BW Black Star Promos",
+    "fullDisplayName": "Umbreon BW93 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -287,18 +346,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW93-low.png",
-    "imageHighSrc": "cards/bwp-BW93-high.png"
+    "imageHighSrc": "cards/bwp-BW93-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Drain",
+        "damage": "30"
+      },
+      {
+        "name": "Slashing Strike",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3376",
-    "externalId": null,
+    "externalId": "bwp-BW92",
     "tcgdex_id": "bwp-BW92",
     "localId": "BW92",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW92/101",
+    "cardNumber": "BW92",
     "cardName": "Espeon",
-    "fullDisplayName": "Espeon BW92/101 BW Black Star Promos",
+    "fullDisplayName": "Espeon BW92 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -320,18 +389,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW92-low.png",
-    "imageHighSrc": "cards/bwp-BW92-high.png"
+    "imageHighSrc": "cards/bwp-BW92-high.png",
+    "attacks": [
+      {
+        "name": "Psy Report",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3375",
-    "externalId": null,
+    "externalId": "bwp-BW91",
     "tcgdex_id": "bwp-BW91",
     "localId": "BW91",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW91/101",
+    "cardNumber": "BW91",
     "cardName": "Jolteon",
-    "fullDisplayName": "Jolteon BW91/101 BW Black Star Promos",
+    "fullDisplayName": "Jolteon BW91 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -353,18 +428,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW91-low.png",
-    "imageHighSrc": "cards/bwp-BW91-high.png"
+    "imageHighSrc": "cards/bwp-BW91-high.png",
+    "attacks": [
+      {
+        "name": "Electrigun",
+        "damage": "20+"
+      },
+      {
+        "name": "Pin Missile",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "3374",
-    "externalId": null,
+    "externalId": "bwp-BW90",
     "tcgdex_id": "bwp-BW90",
     "localId": "BW90",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW90/101",
+    "cardNumber": "BW90",
     "cardName": "Glaceon",
-    "fullDisplayName": "Glaceon BW90/101 BW Black Star Promos",
+    "fullDisplayName": "Glaceon BW90 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -386,18 +471,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW90-low.png",
-    "imageHighSrc": "cards/bwp-BW90-high.png"
+    "imageHighSrc": "cards/bwp-BW90-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Reflect Energy",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3373",
-    "externalId": null,
+    "externalId": "bwp-BW89",
     "tcgdex_id": "bwp-BW89",
     "localId": "BW89",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW89/101",
+    "cardNumber": "BW89",
     "cardName": "Vaporeon",
-    "fullDisplayName": "Vaporeon BW89/101 BW Black Star Promos",
+    "fullDisplayName": "Vaporeon BW89 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -419,18 +514,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW89-low.png",
-    "imageHighSrc": "cards/bwp-BW89-high.png"
+    "imageHighSrc": "cards/bwp-BW89-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "20"
+      },
+      {
+        "name": "Spiral Drain",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3372",
-    "externalId": null,
+    "externalId": "bwp-BW88",
     "tcgdex_id": "bwp-BW88",
     "localId": "BW88",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW88/101",
+    "cardNumber": "BW88",
     "cardName": "Flareon",
-    "fullDisplayName": "Flareon BW88/101 BW Black Star Promos",
+    "fullDisplayName": "Flareon BW88 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -452,18 +557,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW88-low.png",
-    "imageHighSrc": "cards/bwp-BW88-high.png"
+    "imageHighSrc": "cards/bwp-BW88-high.png",
+    "attacks": [
+      {
+        "name": "Sand-Attack",
+        "damage": "20"
+      },
+      {
+        "name": "Fire Slash",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3371",
-    "externalId": null,
+    "externalId": "bwp-BW87",
     "tcgdex_id": "bwp-BW87",
     "localId": "BW87",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW87/101",
+    "cardNumber": "BW87",
     "cardName": "Leafeon",
-    "fullDisplayName": "Leafeon BW87/101 BW Black Star Promos",
+    "fullDisplayName": "Leafeon BW87 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -485,18 +600,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW87-low.png",
-    "imageHighSrc": "cards/bwp-BW87-high.png"
+    "imageHighSrc": "cards/bwp-BW87-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Energy Assist",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3370",
-    "externalId": null,
+    "externalId": "bwp-BW86",
     "tcgdex_id": "bwp-BW86",
     "localId": "BW86",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW86/101",
+    "cardNumber": "BW86",
     "cardName": "Genesect",
-    "fullDisplayName": "Genesect BW86/101 BW Black Star Promos",
+    "fullDisplayName": "Genesect BW86 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -519,18 +644,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW86-low.png",
-    "imageHighSrc": "cards/bwp-BW86-high.png"
+    "imageHighSrc": "cards/bwp-BW86-high.png",
+    "attacks": [
+      {
+        "name": "Signal Beam",
+        "damage": "30"
+      },
+      {
+        "name": "Overdrive Smash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3369",
-    "externalId": null,
+    "externalId": "bwp-BW85",
     "tcgdex_id": "bwp-BW85",
     "localId": "BW85",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW85/101",
+    "cardNumber": "BW85",
     "cardName": "Lucario",
-    "fullDisplayName": "Lucario BW85/101 BW Black Star Promos",
+    "fullDisplayName": "Lucario BW85 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -552,18 +687,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW85-low.png",
-    "imageHighSrc": "cards/bwp-BW85-high.png"
+    "imageHighSrc": "cards/bwp-BW85-high.png",
+    "attacks": [
+      {
+        "name": "Fast Punch",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3368",
-    "externalId": null,
+    "externalId": "bwp-BW84",
     "tcgdex_id": "bwp-BW84",
     "localId": "BW84",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW84/101",
+    "cardNumber": "BW84",
     "cardName": "Porygon-Z",
-    "fullDisplayName": "Porygon-Z BW84/101 BW Black Star Promos",
+    "fullDisplayName": "Porygon-Z BW84 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -586,18 +727,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW84-low.png",
-    "imageHighSrc": "cards/bwp-BW84-high.png"
+    "imageHighSrc": "cards/bwp-BW84-high.png",
+    "attacks": [
+      {
+        "name": "Tri Attack",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "3367",
-    "externalId": null,
+    "externalId": "bwp-BW83",
     "tcgdex_id": "bwp-BW83",
     "localId": "BW83",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW83/101",
+    "cardNumber": "BW83",
     "cardName": "Lugia-EX",
-    "fullDisplayName": "Lugia-EX BW83/101 BW Black Star Promos",
+    "fullDisplayName": "Lugia-EX BW83 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -621,18 +768,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW83-low.png",
-    "imageHighSrc": "cards/bwp-BW83-high.png"
+    "imageHighSrc": "cards/bwp-BW83-high.png",
+    "attacks": [
+      {
+        "name": "Plasma Gale",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3366",
-    "externalId": null,
+    "externalId": "bwp-BW82",
     "tcgdex_id": "bwp-BW82",
     "localId": "BW82",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW82/101",
+    "cardNumber": "BW82",
     "cardName": "Deoxys-EX",
-    "fullDisplayName": "Deoxys-EX BW82/101 BW Black Star Promos",
+    "fullDisplayName": "Deoxys-EX BW82 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -656,18 +810,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW82-low.png",
-    "imageHighSrc": "cards/bwp-BW82-high.png"
+    "imageHighSrc": "cards/bwp-BW82-high.png",
+    "attacks": [
+      {
+        "name": "Helix Force",
+        "damage": "30+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3365",
-    "externalId": null,
+    "externalId": "bwp-BW81",
     "tcgdex_id": "bwp-BW81",
     "localId": "BW81",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW81/101",
+    "cardNumber": "BW81",
     "cardName": "Thundurus-EX",
-    "fullDisplayName": "Thundurus-EX BW81/101 BW Black Star Promos",
+    "fullDisplayName": "Thundurus-EX BW81 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -691,18 +852,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW81-low.png",
-    "imageHighSrc": "cards/bwp-BW81-high.png"
+    "imageHighSrc": "cards/bwp-BW81-high.png",
+    "attacks": [
+      {
+        "name": "Raiden Knuckle",
+        "damage": "30"
+      },
+      {
+        "name": "Thunderous Noise",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3364",
-    "externalId": null,
+    "externalId": "bwp-BW80",
     "tcgdex_id": "bwp-BW80",
     "localId": "BW80",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW80/101",
+    "cardNumber": "BW80",
     "cardName": "Druddigon",
-    "fullDisplayName": "Druddigon BW80/101 BW Black Star Promos",
+    "fullDisplayName": "Druddigon BW80 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -725,18 +897,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW80-low.png",
-    "imageHighSrc": "cards/bwp-BW80-high.png"
+    "imageHighSrc": "cards/bwp-BW80-high.png",
+    "attacks": [
+      {
+        "name": "Taunt",
+        "damage": null
+      },
+      {
+        "name": "Boost Claw",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3363",
-    "externalId": null,
+    "externalId": "bwp-BW79",
     "tcgdex_id": "bwp-BW79",
     "localId": "BW79",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW79/101",
+    "cardNumber": "BW79",
     "cardName": "Landorus",
-    "fullDisplayName": "Landorus BW79/101 BW Black Star Promos",
+    "fullDisplayName": "Landorus BW79 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -759,11 +941,21 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW79-low.png",
-    "imageHighSrc": "cards/bwp-BW79-high.png"
+    "imageHighSrc": "cards/bwp-BW79-high.png",
+    "attacks": [
+      {
+        "name": "Extrasensory",
+        "damage": "20+"
+      },
+      {
+        "name": "Rock Tomb",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3362",
-    "externalId": null,
+    "externalId": "bwp-BW78",
     "tcgdex_id": "bwp-BW78",
     "localId": "BW78",
     "setCode": "bwp",
@@ -792,11 +984,21 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW78-low.png",
-    "imageHighSrc": "cards/bwp-BW78-high.png"
+    "imageHighSrc": "cards/bwp-BW78-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "30+"
+      },
+      {
+        "name": "Thunder Blast",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3361",
-    "externalId": null,
+    "externalId": "bwp-BW77",
     "tcgdex_id": "bwp-BW77",
     "localId": "BW77",
     "setCode": "bwp",
@@ -825,18 +1027,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW77-low.png",
-    "imageHighSrc": "cards/bwp-BW77-high.png"
+    "imageHighSrc": "cards/bwp-BW77-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "10"
+      },
+      {
+        "name": "Thundershock",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3360",
-    "externalId": null,
+    "externalId": "bwp-BW76",
     "tcgdex_id": "bwp-BW76",
     "localId": "BW76",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW76/101",
+    "cardNumber": "BW76",
     "cardName": "Electrode",
-    "fullDisplayName": "Electrode BW76/101 BW Black Star Promos",
+    "fullDisplayName": "Electrode BW76 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -859,18 +1071,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW76-low.png",
-    "imageHighSrc": "cards/bwp-BW76-high.png"
+    "imageHighSrc": "cards/bwp-BW76-high.png",
+    "attacks": [
+      {
+        "name": "Electribeam",
+        "damage": "20"
+      },
+      {
+        "name": "Self Destruct",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3359",
-    "externalId": null,
+    "externalId": "bwp-BW75",
     "tcgdex_id": "bwp-BW75",
     "localId": "BW75",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW75/101",
+    "cardNumber": "BW75",
     "cardName": "Metagross",
-    "fullDisplayName": "Metagross BW75/101 BW Black Star Promos",
+    "fullDisplayName": "Metagross BW75 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -893,18 +1115,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW75-low.png",
-    "imageHighSrc": "cards/bwp-BW75-high.png"
+    "imageHighSrc": "cards/bwp-BW75-high.png",
+    "attacks": [
+      {
+        "name": "Mind Bend",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3358",
-    "externalId": null,
+    "externalId": "bwp-BW74",
     "tcgdex_id": "bwp-BW74",
     "localId": "BW74",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW74/101",
+    "cardNumber": "BW74",
     "cardName": "Giratina",
-    "fullDisplayName": "Giratina BW74/101 BW Black Star Promos",
+    "fullDisplayName": "Giratina BW74 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -927,18 +1155,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW74-low.png",
-    "imageHighSrc": "cards/bwp-BW74-high.png"
+    "imageHighSrc": "cards/bwp-BW74-high.png",
+    "attacks": [
+      {
+        "name": "Hex",
+        "damage": "50+"
+      },
+      {
+        "name": "Shadow Claw",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3357",
-    "externalId": null,
+    "externalId": "bwp-BW73",
     "tcgdex_id": "bwp-BW73",
     "localId": "BW73",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW73/101",
+    "cardNumber": "BW73",
     "cardName": "Darkrai",
-    "fullDisplayName": "Darkrai BW73/101 BW Black Star Promos",
+    "fullDisplayName": "Darkrai BW73 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -961,18 +1199,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW73-low.png",
-    "imageHighSrc": "cards/bwp-BW73-high.png"
+    "imageHighSrc": "cards/bwp-BW73-high.png",
+    "attacks": [
+      {
+        "name": "Hide in Shadows",
+        "damage": "30"
+      },
+      {
+        "name": "Dark Hole",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "3356",
-    "externalId": null,
+    "externalId": "bwp-BW72",
     "tcgdex_id": "bwp-BW72",
     "localId": "BW72",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW72/101",
+    "cardNumber": "BW72",
     "cardName": "Cobalion",
-    "fullDisplayName": "Cobalion BW72/101 BW Black Star Promos",
+    "fullDisplayName": "Cobalion BW72 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -994,18 +1242,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW72-low.png",
-    "imageHighSrc": "cards/bwp-BW72-high.png"
+    "imageHighSrc": "cards/bwp-BW72-high.png",
+    "attacks": [
+      {
+        "name": "Iron Head",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3355",
-    "externalId": null,
+    "externalId": "bwp-BW71",
     "tcgdex_id": "bwp-BW71",
     "localId": "BW71",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW71/101",
+    "cardNumber": "BW71",
     "cardName": "Terrakion",
-    "fullDisplayName": "Terrakion BW71/101 BW Black Star Promos",
+    "fullDisplayName": "Terrakion BW71 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1027,18 +1281,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW71-low.png",
-    "imageHighSrc": "cards/bwp-BW71-high.png"
+    "imageHighSrc": "cards/bwp-BW71-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Blow",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3354",
-    "externalId": null,
+    "externalId": "bwp-BW70",
     "tcgdex_id": "bwp-BW70",
     "localId": "BW70",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW70/101",
+    "cardNumber": "BW70",
     "cardName": "Virizion",
-    "fullDisplayName": "Virizion BW70/101 BW Black Star Promos",
+    "fullDisplayName": "Virizion BW70 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1060,18 +1320,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW70-low.png",
-    "imageHighSrc": "cards/bwp-BW70-high.png"
+    "imageHighSrc": "cards/bwp-BW70-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Blade",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "3353",
-    "externalId": null,
+    "externalId": "bwp-BW69",
     "tcgdex_id": "bwp-BW69",
     "localId": "BW69",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW69/101",
+    "cardNumber": "BW69",
     "cardName": "Meloetta",
-    "fullDisplayName": "Meloetta BW69/101 BW Black Star Promos",
+    "fullDisplayName": "Meloetta BW69 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1093,18 +1359,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW69-low.png",
-    "imageHighSrc": "cards/bwp-BW69-high.png"
+    "imageHighSrc": "cards/bwp-BW69-high.png",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "10"
+      },
+      {
+        "name": "Acrobatics",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "3352",
-    "externalId": null,
+    "externalId": "bwp-BW68",
     "tcgdex_id": "bwp-BW68",
     "localId": "BW68",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW68/101",
+    "cardNumber": "BW68",
     "cardName": "Meloetta",
-    "fullDisplayName": "Meloetta BW68/101 BW Black Star Promos",
+    "fullDisplayName": "Meloetta BW68 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1126,18 +1402,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW68-low.png",
-    "imageHighSrc": "cards/bwp-BW68-high.png"
+    "imageHighSrc": "cards/bwp-BW68-high.png",
+    "attacks": [
+      {
+        "name": "Sing",
+        "damage": null
+      },
+      {
+        "name": "Psyburn",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3351",
-    "externalId": null,
+    "externalId": "bwp-BW67",
     "tcgdex_id": "bwp-BW67",
     "localId": "BW67",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW67/101",
+    "cardNumber": "BW67",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos BW67/101 BW Black Star Promos",
+    "fullDisplayName": "Ampharos BW67 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1159,18 +1445,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW67-low.png",
-    "imageHighSrc": "cards/bwp-BW67-high.png"
+    "imageHighSrc": "cards/bwp-BW67-high.png",
+    "attacks": [
+      {
+        "name": "Random Spark",
+        "damage": null
+      },
+      {
+        "name": "Electricannon",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "3350",
-    "externalId": null,
+    "externalId": "bwp-BW66",
     "tcgdex_id": "bwp-BW66",
     "localId": "BW66",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW66/101",
+    "cardNumber": "BW66",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales BW66/101 BW Black Star Promos",
+    "fullDisplayName": "Ninetales BW66 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1192,18 +1488,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW66-low.png",
-    "imageHighSrc": "cards/bwp-BW66-high.png"
+    "imageHighSrc": "cards/bwp-BW66-high.png",
+    "attacks": [
+      {
+        "name": "Hexed Flame",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3349",
-    "externalId": null,
+    "externalId": "bwp-BW65",
     "tcgdex_id": "bwp-BW65",
     "localId": "BW65",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW65/101",
+    "cardNumber": "BW65",
     "cardName": "Jigglypuff",
-    "fullDisplayName": "Jigglypuff BW65/101 BW Black Star Promos",
+    "fullDisplayName": "Jigglypuff BW65 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1225,18 +1527,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW65-low.png",
-    "imageHighSrc": "cards/bwp-BW65-high.png"
+    "imageHighSrc": "cards/bwp-BW65-high.png",
+    "attacks": [
+      {
+        "name": "Continuous Tumble",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3348",
-    "externalId": null,
+    "externalId": "bwp-BW64",
     "tcgdex_id": "bwp-BW64",
     "localId": "BW64",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW64/101",
+    "cardNumber": "BW64",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim BW64/101 BW Black Star Promos",
+    "fullDisplayName": "Drifblim BW64 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1258,18 +1566,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW64-low.png",
-    "imageHighSrc": "cards/bwp-BW64-high.png"
+    "imageHighSrc": "cards/bwp-BW64-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Steal",
+        "damage": "50×"
+      },
+      {
+        "name": "Plentiful Placement",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3347",
-    "externalId": null,
+    "externalId": "bwp-BW63",
     "tcgdex_id": "bwp-BW63",
     "localId": "BW63",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW63/101",
+    "cardNumber": "BW63",
     "cardName": "White Kyurem-EX",
-    "fullDisplayName": "White Kyurem-EX BW63/101 BW Black Star Promos",
+    "fullDisplayName": "White Kyurem-EX BW63 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1292,18 +1610,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW63-low.png",
-    "imageHighSrc": "cards/bwp-BW63-high.png"
+    "imageHighSrc": "cards/bwp-BW63-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Stream",
+        "damage": "60"
+      },
+      {
+        "name": "Ice Burn",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3346",
-    "externalId": null,
+    "externalId": "bwp-BW62",
     "tcgdex_id": "bwp-BW62",
     "localId": "BW62",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW62/101",
+    "cardNumber": "BW62",
     "cardName": "Black Kyurem-EX",
-    "fullDisplayName": "Black Kyurem-EX BW62/101 BW Black Star Promos",
+    "fullDisplayName": "Black Kyurem-EX BW62 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1326,18 +1655,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW62-low.png",
-    "imageHighSrc": "cards/bwp-BW62-high.png"
+    "imageHighSrc": "cards/bwp-BW62-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Fang",
+        "damage": "60"
+      },
+      {
+        "name": "Freeze Shock",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3345",
-    "externalId": null,
+    "externalId": "bwp-BW61",
     "tcgdex_id": "bwp-BW61",
     "localId": "BW61",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW61/101",
+    "cardNumber": "BW61",
     "cardName": "Keldeo-EX",
-    "fullDisplayName": "Keldeo-EX BW61/101 BW Black Star Promos",
+    "fullDisplayName": "Keldeo-EX BW61 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1360,18 +1700,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW61-low.png",
-    "imageHighSrc": "cards/bwp-BW61-high.png"
+    "imageHighSrc": "cards/bwp-BW61-high.png",
+    "attacks": [
+      {
+        "name": "Secret Sword",
+        "damage": "50+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3344",
-    "externalId": null,
+    "externalId": "bwp-BW60",
     "tcgdex_id": "bwp-BW60",
     "localId": "BW60",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW60/101",
+    "cardNumber": "BW60",
     "cardName": "Keldeo",
-    "fullDisplayName": "Keldeo BW60/101 BW Black Star Promos",
+    "fullDisplayName": "Keldeo BW60 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1393,18 +1740,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW60-low.png",
-    "imageHighSrc": "cards/bwp-BW60-high.png"
+    "imageHighSrc": "cards/bwp-BW60-high.png",
+    "attacks": [
+      {
+        "name": "Swords Dance",
+        "damage": null
+      },
+      {
+        "name": "Aqua Blade",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3343",
-    "externalId": null,
+    "externalId": "bwp-BW59",
     "tcgdex_id": "bwp-BW59",
     "localId": "BW59",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW59/101",
+    "cardNumber": "BW59",
     "cardName": "White Kyurem",
-    "fullDisplayName": "White Kyurem BW59/101 BW Black Star Promos",
+    "fullDisplayName": "White Kyurem BW59 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1426,18 +1783,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW59-low.png",
-    "imageHighSrc": "cards/bwp-BW59-high.png"
+    "imageHighSrc": "cards/bwp-BW59-high.png",
+    "attacks": [
+      {
+        "name": "Damage Rush",
+        "damage": "20×"
+      },
+      {
+        "name": "Cold Fire",
+        "damage": "80+"
+      }
+    ]
   },
   {
     "masterCardId": "3342",
-    "externalId": null,
+    "externalId": "bwp-BW58",
     "tcgdex_id": "bwp-BW58",
     "localId": "BW58",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW58/101",
+    "cardNumber": "BW58",
     "cardName": "Black Kyurem",
-    "fullDisplayName": "Black Kyurem BW58/101 BW Black Star Promos",
+    "fullDisplayName": "Black Kyurem BW58 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1459,18 +1826,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW58-low.png",
-    "imageHighSrc": "cards/bwp-BW58-high.png"
+    "imageHighSrc": "cards/bwp-BW58-high.png",
+    "attacks": [
+      {
+        "name": "Dual Claw",
+        "damage": "20×"
+      },
+      {
+        "name": "Flash Freeze",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "3341",
-    "externalId": null,
+    "externalId": "bwp-BW57",
     "tcgdex_id": "bwp-BW57",
     "localId": "BW57",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW57/101",
+    "cardNumber": "BW57",
     "cardName": "Haxorus",
-    "fullDisplayName": "Haxorus BW57/101 BW Black Star Promos",
+    "fullDisplayName": "Haxorus BW57 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1492,18 +1869,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW57-low.png",
-    "imageHighSrc": "cards/bwp-BW57-high.png"
+    "imageHighSrc": "cards/bwp-BW57-high.png",
+    "attacks": [
+      {
+        "name": "Armor Press",
+        "damage": "40"
+      },
+      {
+        "name": "Dual Chop",
+        "damage": "90×"
+      }
+    ]
   },
   {
     "masterCardId": "3340",
-    "externalId": null,
+    "externalId": "bwp-BW56",
     "tcgdex_id": "bwp-BW56",
     "localId": "BW56",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW56/101",
+    "cardNumber": "BW56",
     "cardName": "Empoleon",
-    "fullDisplayName": "Empoleon BW56/101 BW Black Star Promos",
+    "fullDisplayName": "Empoleon BW56 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1525,18 +1912,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW56-low.png",
-    "imageHighSrc": "cards/bwp-BW56-high.png"
+    "imageHighSrc": "cards/bwp-BW56-high.png",
+    "attacks": [
+      {
+        "name": "Fury Attack",
+        "damage": "30×"
+      },
+      {
+        "name": "Cold Crush",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3339",
-    "externalId": null,
+    "externalId": "bwp-BW55",
     "tcgdex_id": "bwp-BW55",
     "localId": "BW55",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW55/101",
+    "cardNumber": "BW55",
     "cardName": "Elgyem",
-    "fullDisplayName": "Elgyem BW55/101 BW Black Star Promos",
+    "fullDisplayName": "Elgyem BW55 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1558,18 +1955,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW55-low.png",
-    "imageHighSrc": "cards/bwp-BW55-high.png"
+    "imageHighSrc": "cards/bwp-BW55-high.png",
+    "attacks": [
+      {
+        "name": "Quick Blow",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3338",
-    "externalId": null,
+    "externalId": "bwp-BW54",
     "tcgdex_id": "bwp-BW54",
     "localId": "BW54",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW54/101",
+    "cardNumber": "BW54",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu BW54/101 BW Black Star Promos",
+    "fullDisplayName": "Pikachu BW54 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1591,18 +1994,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW54-low.png",
-    "imageHighSrc": "cards/bwp-BW54-high.png"
+    "imageHighSrc": "cards/bwp-BW54-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3337",
-    "externalId": null,
+    "externalId": "bwp-BW53",
     "tcgdex_id": "bwp-BW53",
     "localId": "BW53",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW53/101",
+    "cardNumber": "BW53",
     "cardName": "Flygon",
-    "fullDisplayName": "Flygon BW53/101 BW Black Star Promos",
+    "fullDisplayName": "Flygon BW53 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1624,18 +2037,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW53-low.png",
-    "imageHighSrc": "cards/bwp-BW53-high.png"
+    "imageHighSrc": "cards/bwp-BW53-high.png",
+    "attacks": [
+      {
+        "name": "Flying Beatdown",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3336",
-    "externalId": null,
+    "externalId": "bwp-BW52",
     "tcgdex_id": "bwp-BW52",
     "localId": "BW52",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW52/101",
+    "cardNumber": "BW52",
     "cardName": "Lillipup",
-    "fullDisplayName": "Lillipup BW52/101 BW Black Star Promos",
+    "fullDisplayName": "Lillipup BW52 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1657,18 +2076,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW52-low.png",
-    "imageHighSrc": "cards/bwp-BW52-high.png"
+    "imageHighSrc": "cards/bwp-BW52-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3335",
-    "externalId": null,
+    "externalId": "bwp-BW51",
     "tcgdex_id": "bwp-BW51",
     "localId": "BW51",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW51/101",
+    "cardNumber": "BW51",
     "cardName": "Crobat",
-    "fullDisplayName": "Crobat BW51/101 BW Black Star Promos",
+    "fullDisplayName": "Crobat BW51 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1691,18 +2116,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW51-low.png",
-    "imageHighSrc": "cards/bwp-BW51-high.png"
+    "imageHighSrc": "cards/bwp-BW51-high.png",
+    "attacks": [
+      {
+        "name": "Ultra-Toxic Fang",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3334",
-    "externalId": null,
+    "externalId": "bwp-BW50",
     "tcgdex_id": "bwp-BW50",
     "localId": "BW50",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW50/101",
+    "cardNumber": "BW50",
     "cardName": "Tropical Beach",
-    "fullDisplayName": "Tropical Beach BW50/101 BW Black Star Promos",
+    "fullDisplayName": "Tropical Beach BW50 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -1720,18 +2151,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW50-low.png",
-    "imageHighSrc": "cards/bwp-BW50-high.png"
+    "imageHighSrc": "cards/bwp-BW50-high.png",
+    "rules": "Once during each player's turn, that player may draw cards until he or she has 7 cards in his or her hand. If he or she does, that player's turn ends.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "3333",
-    "externalId": null,
+    "externalId": "bwp-BW49",
     "tcgdex_id": "bwp-BW49",
     "localId": "BW49",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW49/101",
+    "cardNumber": "BW49",
     "cardName": "Lilligant",
-    "fullDisplayName": "Lilligant BW49/101 BW Black Star Promos",
+    "fullDisplayName": "Lilligant BW49 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1753,18 +2185,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW49-low.png",
-    "imageHighSrc": "cards/bwp-BW49-high.png"
+    "imageHighSrc": "cards/bwp-BW49-high.png",
+    "attacks": [
+      {
+        "name": "Lead",
+        "damage": null
+      },
+      {
+        "name": "Dream Dance",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3332",
-    "externalId": null,
+    "externalId": "bwp-BW48",
     "tcgdex_id": "bwp-BW48",
     "localId": "BW48",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW48/101",
+    "cardNumber": "BW48",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria BW48/101 BW Black Star Promos",
+    "fullDisplayName": "Altaria BW48 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1786,18 +2228,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW48-low.png",
-    "imageHighSrc": "cards/bwp-BW48-high.png"
+    "imageHighSrc": "cards/bwp-BW48-high.png",
+    "attacks": [
+      {
+        "name": "Glide",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "3331",
-    "externalId": null,
+    "externalId": "bwp-BW47",
     "tcgdex_id": "bwp-BW47",
     "localId": "BW47",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW47/101",
+    "cardNumber": "BW47",
     "cardName": "Rayquaza-EX",
-    "fullDisplayName": "Rayquaza-EX BW47/101 BW Black Star Promos",
+    "fullDisplayName": "Rayquaza-EX BW47 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1820,18 +2268,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW47-low.png",
-    "imageHighSrc": "cards/bwp-BW47-high.png"
+    "imageHighSrc": "cards/bwp-BW47-high.png",
+    "attacks": [
+      {
+        "name": "Celestial Roar",
+        "damage": null
+      },
+      {
+        "name": "Dragon Burst",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3330",
-    "externalId": null,
+    "externalId": "bwp-BW46",
     "tcgdex_id": "bwp-BW46",
     "localId": "BW46",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW46/101",
+    "cardNumber": "BW46",
     "cardName": "Darkrai-EX",
-    "fullDisplayName": "Darkrai-EX BW46/101 BW Black Star Promos",
+    "fullDisplayName": "Darkrai-EX BW46 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1854,18 +2313,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW46-low.png",
-    "imageHighSrc": "cards/bwp-BW46-high.png"
+    "imageHighSrc": "cards/bwp-BW46-high.png",
+    "attacks": [
+      {
+        "name": "Night Spear",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3329",
-    "externalId": null,
+    "externalId": "bwp-BW45",
     "tcgdex_id": "bwp-BW45",
     "localId": "BW45",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW45/101",
+    "cardNumber": "BW45",
     "cardName": "Mewtwo-EX",
-    "fullDisplayName": "Mewtwo-EX BW45/101 BW Black Star Promos",
+    "fullDisplayName": "Mewtwo-EX BW45 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1888,18 +2354,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW45-low.png",
-    "imageHighSrc": "cards/bwp-BW45-high.png"
+    "imageHighSrc": "cards/bwp-BW45-high.png",
+    "attacks": [
+      {
+        "name": "X Ball",
+        "damage": null
+      },
+      {
+        "name": "Psydrive",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3328",
-    "externalId": null,
+    "externalId": "bwp-BW44",
     "tcgdex_id": "bwp-BW44",
     "localId": "BW44",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW44/101",
+    "cardNumber": "BW44",
     "cardName": "Kyurem",
-    "fullDisplayName": "Kyurem BW44/101 BW Black Star Promos",
+    "fullDisplayName": "Kyurem BW44 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1921,18 +2398,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW44-low.png",
-    "imageHighSrc": "cards/bwp-BW44-high.png"
+    "imageHighSrc": "cards/bwp-BW44-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Glaciate",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3327",
-    "externalId": null,
+    "externalId": "bwp-BW43",
     "tcgdex_id": "bwp-BW43",
     "localId": "BW43",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW43/101",
+    "cardNumber": "BW43",
     "cardName": "Landorus",
-    "fullDisplayName": "Landorus BW43/101 BW Black Star Promos",
+    "fullDisplayName": "Landorus BW43 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1954,18 +2441,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW43-low.png",
-    "imageHighSrc": "cards/bwp-BW43-high.png"
+    "imageHighSrc": "cards/bwp-BW43-high.png",
+    "attacks": [
+      {
+        "name": "Abundant Harvest",
+        "damage": null
+      },
+      {
+        "name": "Gaia Hammer",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3326",
-    "externalId": null,
+    "externalId": "bwp-BW42",
     "tcgdex_id": "bwp-BW42",
     "localId": "BW42",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW42/101",
+    "cardNumber": "BW42",
     "cardName": "Tornadus",
-    "fullDisplayName": "Tornadus BW42/101 BW Black Star Promos",
+    "fullDisplayName": "Tornadus BW42 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1987,18 +2484,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW42-low.png",
-    "imageHighSrc": "cards/bwp-BW42-high.png"
+    "imageHighSrc": "cards/bwp-BW42-high.png",
+    "attacks": [
+      {
+        "name": "Energy Wheel",
+        "damage": null
+      },
+      {
+        "name": "Hurricane",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3325",
-    "externalId": null,
+    "externalId": "bwp-BW41",
     "tcgdex_id": "bwp-BW41",
     "localId": "BW41",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW41/101",
+    "cardNumber": "BW41",
     "cardName": "Thundurus",
-    "fullDisplayName": "Thundurus BW41/101 BW Black Star Promos",
+    "fullDisplayName": "Thundurus BW41 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2020,18 +2527,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW41-low.png",
-    "imageHighSrc": "cards/bwp-BW41-high.png"
+    "imageHighSrc": "cards/bwp-BW41-high.png",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null
+      },
+      {
+        "name": "Disaster Volt",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3324",
-    "externalId": null,
+    "externalId": "bwp-BW40",
     "tcgdex_id": "bwp-BW40",
     "localId": "BW40",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW40/101",
+    "cardNumber": "BW40",
     "cardName": "Volcarona",
-    "fullDisplayName": "Volcarona BW40/101 BW Black Star Promos",
+    "fullDisplayName": "Volcarona BW40 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2053,18 +2570,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW40-low.png",
-    "imageHighSrc": "cards/bwp-BW40-high.png"
+    "imageHighSrc": "cards/bwp-BW40-high.png",
+    "attacks": [
+      {
+        "name": "Burning Wind",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "3323",
-    "externalId": null,
+    "externalId": "bwp-BW39",
     "tcgdex_id": "bwp-BW39",
     "localId": "BW39",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW39/101",
+    "cardNumber": "BW39",
     "cardName": "Battle City",
-    "fullDisplayName": "Battle City BW39/101 BW Black Star Promos",
+    "fullDisplayName": "Battle City BW39 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -2082,18 +2605,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW39-low.png",
-    "imageHighSrc": "cards/bwp-BW39-high.png"
+    "imageHighSrc": "cards/bwp-BW39-high.png",
+    "rules": "Once during each player's turn, that player may flip a coin. If heads, the player draws a card.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "3322",
-    "externalId": null,
+    "externalId": "bwp-BW38",
     "tcgdex_id": "bwp-BW38",
     "localId": "BW38",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW38/101",
+    "cardNumber": "BW38",
     "cardName": "Zekrom-EX",
-    "fullDisplayName": "Zekrom-EX BW38/101 BW Black Star Promos",
+    "fullDisplayName": "Zekrom-EX BW38 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2116,18 +2640,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW38-low.png",
-    "imageHighSrc": "cards/bwp-BW38-high.png"
+    "imageHighSrc": "cards/bwp-BW38-high.png",
+    "attacks": [
+      {
+        "name": "Glinting Claw",
+        "damage": "50+"
+      },
+      {
+        "name": "Strong Volt",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3321",
-    "externalId": null,
+    "externalId": "bwp-BW37",
     "tcgdex_id": "bwp-BW37",
     "localId": "BW37",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW37/101",
+    "cardNumber": "BW37",
     "cardName": "Kyurem-EX",
-    "fullDisplayName": "Kyurem-EX BW37/101 BW Black Star Promos",
+    "fullDisplayName": "Kyurem-EX BW37 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2150,18 +2685,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW37-low.png",
-    "imageHighSrc": "cards/bwp-BW37-high.png"
+    "imageHighSrc": "cards/bwp-BW37-high.png",
+    "attacks": [
+      {
+        "name": "Frozen Wings",
+        "damage": "60"
+      },
+      {
+        "name": "Hail Blizzard",
+        "damage": "120"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3320",
-    "externalId": null,
+    "externalId": "bwp-BW36",
     "tcgdex_id": "bwp-BW36",
     "localId": "BW36",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW36/101",
+    "cardNumber": "BW36",
     "cardName": "Reshiram-EX",
-    "fullDisplayName": "Reshiram-EX BW36/101 BW Black Star Promos",
+    "fullDisplayName": "Reshiram-EX BW36 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2184,18 +2730,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW36-low.png",
-    "imageHighSrc": "cards/bwp-BW36-high.png"
+    "imageHighSrc": "cards/bwp-BW36-high.png",
+    "attacks": [
+      {
+        "name": "Glinting Claw",
+        "damage": "50+"
+      },
+      {
+        "name": "Brave Fire",
+        "damage": "150"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "3319",
-    "externalId": null,
+    "externalId": "bwp-BW35",
     "tcgdex_id": "bwp-BW35",
     "localId": "BW35",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW35/101",
+    "cardNumber": "BW35",
     "cardName": "Meowth",
-    "fullDisplayName": "Meowth BW35/101 BW Black Star Promos",
+    "fullDisplayName": "Meowth BW35 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2217,18 +2774,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW35-low.png",
-    "imageHighSrc": "cards/bwp-BW35-high.png"
+    "imageHighSrc": "cards/bwp-BW35-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Jump On",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3318",
-    "externalId": null,
+    "externalId": "bwp-BW34",
     "tcgdex_id": "bwp-BW34",
     "localId": "BW34",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW34/101",
+    "cardNumber": "BW34",
     "cardName": "Luxio",
-    "fullDisplayName": "Luxio BW34/101 BW Black Star Promos",
+    "fullDisplayName": "Luxio BW34 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2250,18 +2817,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW34-low.png",
-    "imageHighSrc": "cards/bwp-BW34-high.png"
+    "imageHighSrc": "cards/bwp-BW34-high.png",
+    "attacks": [
+      {
+        "name": "Dazzle Blast",
+        "damage": "10"
+      },
+      {
+        "name": "Random Spark",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3317",
-    "externalId": null,
+    "externalId": "bwp-BW33",
     "tcgdex_id": "bwp-BW33",
     "localId": "BW33",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW33/101",
+    "cardNumber": "BW33",
     "cardName": "Riolu",
-    "fullDisplayName": "Riolu BW33/101 BW Black Star Promos",
+    "fullDisplayName": "Riolu BW33 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2283,18 +2860,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW33-low.png",
-    "imageHighSrc": "cards/bwp-BW33-high.png"
+    "imageHighSrc": "cards/bwp-BW33-high.png",
+    "attacks": [
+      {
+        "name": "Run Around",
+        "damage": null
+      },
+      {
+        "name": "Hook",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3316",
-    "externalId": null,
+    "externalId": "bwp-BW32",
     "tcgdex_id": "bwp-BW32",
     "localId": "BW32",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW32/101",
+    "cardNumber": "BW32",
     "cardName": "Victini",
-    "fullDisplayName": "Victini BW32/101 BW Black Star Promos",
+    "fullDisplayName": "Victini BW32 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2316,18 +2903,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW32-low.png",
-    "imageHighSrc": "cards/bwp-BW32-high.png"
+    "imageHighSrc": "cards/bwp-BW32-high.png",
+    "attacks": [
+      {
+        "name": "Stored Power",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3315",
-    "externalId": null,
+    "externalId": "bwp-BW31",
     "tcgdex_id": "bwp-BW31",
     "localId": "BW31",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW31/101",
+    "cardNumber": "BW31",
     "cardName": "Victory Cup",
-    "fullDisplayName": "Victory Cup BW31/101 BW Black Star Promos",
+    "fullDisplayName": "Victory Cup BW31 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -2345,18 +2938,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW31-low.png",
-    "imageHighSrc": "cards/bwp-BW31-high.png"
+    "imageHighSrc": "cards/bwp-BW31-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3314",
-    "externalId": null,
+    "externalId": "bwp-BW30",
     "tcgdex_id": "bwp-BW30",
     "localId": "BW30",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW30/101",
+    "cardNumber": "BW30",
     "cardName": "Victory Cup",
-    "fullDisplayName": "Victory Cup BW30/101 BW Black Star Promos",
+    "fullDisplayName": "Victory Cup BW30 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -2374,18 +2968,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW30-low.png",
-    "imageHighSrc": "cards/bwp-BW30-high.png"
+    "imageHighSrc": "cards/bwp-BW30-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3313",
-    "externalId": null,
+    "externalId": "bwp-BW29",
     "tcgdex_id": "bwp-BW29",
     "localId": "BW29",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW29/101",
+    "cardNumber": "BW29",
     "cardName": "Victory Cup",
-    "fullDisplayName": "Victory Cup BW29/101 BW Black Star Promos",
+    "fullDisplayName": "Victory Cup BW29 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -2403,18 +2998,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW29-low.png",
-    "imageHighSrc": "cards/bwp-BW29-high.png"
+    "imageHighSrc": "cards/bwp-BW29-high.png",
+    "rules": "Flip a coin. If heads, search your deck for a Pokémon, reveal it, and put it into your hand. Shuffle your deck afterward.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "3312",
-    "externalId": null,
+    "externalId": "bwp-BW28",
     "tcgdex_id": "bwp-BW28",
     "localId": "BW28",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW28/101",
+    "cardNumber": "BW28",
     "cardName": "Tropical Beach",
-    "fullDisplayName": "Tropical Beach BW28/101 BW Black Star Promos",
+    "fullDisplayName": "Tropical Beach BW28 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Trainer",
     "stage": null,
@@ -2432,18 +3028,19 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW28-low.png",
-    "imageHighSrc": "cards/bwp-BW28-high.png"
+    "imageHighSrc": "cards/bwp-BW28-high.png",
+    "rules": "Once during each player's turn, that player may draw cards until he or she has 7 cards in his or her hand. If he or she does, that player's turn ends.\n\nThis card stays in play when you play it. Discard this card if another Stadium card comes into play. If another card with the same name is in play, you can't play this card."
   },
   {
     "masterCardId": "3311",
-    "externalId": null,
+    "externalId": "bwp-BW27",
     "tcgdex_id": "bwp-BW27",
     "localId": "BW27",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW27/101",
+    "cardNumber": "BW27",
     "cardName": "Litwick",
-    "fullDisplayName": "Litwick BW27/101 BW Black Star Promos",
+    "fullDisplayName": "Litwick BW27 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2465,18 +3062,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW27-low.png",
-    "imageHighSrc": "cards/bwp-BW27-high.png"
+    "imageHighSrc": "cards/bwp-BW27-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Will-O-Wisp",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3310",
-    "externalId": null,
+    "externalId": "bwp-BW26",
     "tcgdex_id": "bwp-BW26",
     "localId": "BW26",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW26/101",
+    "cardNumber": "BW26",
     "cardName": "Axew",
-    "fullDisplayName": "Axew BW26/101 BW Black Star Promos",
+    "fullDisplayName": "Axew BW26 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2498,18 +3105,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW26-low.png",
-    "imageHighSrc": "cards/bwp-BW26-high.png"
+    "imageHighSrc": "cards/bwp-BW26-high.png",
+    "attacks": [
+      {
+        "name": "Big Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3309",
-    "externalId": null,
+    "externalId": "bwp-BW25",
     "tcgdex_id": "bwp-BW25",
     "localId": "BW25",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW25/101",
+    "cardNumber": "BW25",
     "cardName": "Scraggy",
-    "fullDisplayName": "Scraggy BW25/101 BW Black Star Promos",
+    "fullDisplayName": "Scraggy BW25 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2531,18 +3144,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW25-low.png",
-    "imageHighSrc": "cards/bwp-BW25-high.png"
+    "imageHighSrc": "cards/bwp-BW25-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "High Jump Kick",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3308",
-    "externalId": null,
+    "externalId": "bwp-BW24",
     "tcgdex_id": "bwp-BW24",
     "localId": "BW24",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW24/101",
+    "cardNumber": "BW24",
     "cardName": "Zekrom",
-    "fullDisplayName": "Zekrom BW24/101 BW Black Star Promos",
+    "fullDisplayName": "Zekrom BW24 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2564,18 +3187,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW24-low.png",
-    "imageHighSrc": "cards/bwp-BW24-high.png"
+    "imageHighSrc": "cards/bwp-BW24-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Bolt Strike",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "3307",
-    "externalId": null,
+    "externalId": "bwp-BW23",
     "tcgdex_id": "bwp-BW23",
     "localId": "BW23",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW23/101",
+    "cardNumber": "BW23",
     "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram BW23/101 BW Black Star Promos",
+    "fullDisplayName": "Reshiram BW23 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2597,18 +3230,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW23-low.png",
-    "imageHighSrc": "cards/bwp-BW23-high.png"
+    "imageHighSrc": "cards/bwp-BW23-high.png",
+    "attacks": [
+      {
+        "name": "Outrage",
+        "damage": "20+"
+      },
+      {
+        "name": "Blue Flare",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "3306",
-    "externalId": null,
+    "externalId": "bwp-BW22",
     "tcgdex_id": "bwp-BW22",
     "localId": "BW22",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW22/101",
+    "cardNumber": "BW22",
     "cardName": "Samurott",
-    "fullDisplayName": "Samurott BW22/101 BW Black Star Promos",
+    "fullDisplayName": "Samurott BW22 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2630,18 +3273,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW22-low.png",
-    "imageHighSrc": "cards/bwp-BW22-high.png"
+    "imageHighSrc": "cards/bwp-BW22-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "3305",
-    "externalId": null,
+    "externalId": "bwp-BW21",
     "tcgdex_id": "bwp-BW21",
     "localId": "BW21",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW21/101",
+    "cardNumber": "BW21",
     "cardName": "Emboar",
-    "fullDisplayName": "Emboar BW21/101 BW Black Star Promos",
+    "fullDisplayName": "Emboar BW21 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2663,18 +3312,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW21-low.png",
-    "imageHighSrc": "cards/bwp-BW21-high.png"
+    "imageHighSrc": "cards/bwp-BW21-high.png",
+    "attacks": [
+      {
+        "name": "Heat Crash",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "3304",
-    "externalId": null,
+    "externalId": "bwp-BW20",
     "tcgdex_id": "bwp-BW20",
     "localId": "BW20",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW20/101",
+    "cardNumber": "BW20",
     "cardName": "Serperior",
-    "fullDisplayName": "Serperior BW20/101 BW Black Star Promos",
+    "fullDisplayName": "Serperior BW20 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2696,18 +3351,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW20-low.png",
-    "imageHighSrc": "cards/bwp-BW20-high.png"
+    "imageHighSrc": "cards/bwp-BW20-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Tornado",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3303",
-    "externalId": null,
+    "externalId": "bwp-BW19",
     "tcgdex_id": "bwp-BW19",
     "localId": "BW19",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW19/101",
+    "cardNumber": "BW19",
     "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark BW19/101 BW Black Star Promos",
+    "fullDisplayName": "Zoroark BW19 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2729,18 +3390,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW19-low.png",
-    "imageHighSrc": "cards/bwp-BW19-high.png"
+    "imageHighSrc": "cards/bwp-BW19-high.png",
+    "attacks": [
+      {
+        "name": "Punishment",
+        "damage": "20+"
+      },
+      {
+        "name": "Snarl",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "3302",
-    "externalId": null,
+    "externalId": "bwp-BW18",
     "tcgdex_id": "bwp-BW18",
     "localId": "BW18",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW18/101",
+    "cardNumber": "BW18",
     "cardName": "Darumaka",
-    "fullDisplayName": "Darumaka BW18/101 BW Black Star Promos",
+    "fullDisplayName": "Darumaka BW18 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2762,18 +3433,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW18-low.png",
-    "imageHighSrc": "cards/bwp-BW18-high.png"
+    "imageHighSrc": "cards/bwp-BW18-high.png",
+    "attacks": [
+      {
+        "name": "Searing Flame",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3301",
-    "externalId": null,
+    "externalId": "bwp-BW17",
     "tcgdex_id": "bwp-BW17",
     "localId": "BW17",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW17/101",
+    "cardNumber": "BW17",
     "cardName": "Ducklett",
-    "fullDisplayName": "Ducklett BW17/101 BW Black Star Promos",
+    "fullDisplayName": "Ducklett BW17 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2795,18 +3472,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW17-low.png",
-    "imageHighSrc": "cards/bwp-BW17-high.png"
+    "imageHighSrc": "cards/bwp-BW17-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "3300",
-    "externalId": null,
+    "externalId": "bwp-BW16",
     "tcgdex_id": "bwp-BW16",
     "localId": "BW16",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW16/101",
+    "cardNumber": "BW16",
     "cardName": "Axew",
-    "fullDisplayName": "Axew BW16/101 BW Black Star Promos",
+    "fullDisplayName": "Axew BW16 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2828,18 +3511,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW16-low.png",
-    "imageHighSrc": "cards/bwp-BW16-high.png"
+    "imageHighSrc": "cards/bwp-BW16-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Rage",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3299",
-    "externalId": null,
+    "externalId": "bwp-BW15",
     "tcgdex_id": "bwp-BW15",
     "localId": "BW15",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW15/101",
+    "cardNumber": "BW15",
     "cardName": "Pidove",
-    "fullDisplayName": "Pidove BW15/101 BW Black Star Promos",
+    "fullDisplayName": "Pidove BW15 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2861,18 +3550,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW15-low.png",
-    "imageHighSrc": "cards/bwp-BW15-high.png"
+    "imageHighSrc": "cards/bwp-BW15-high.png",
+    "attacks": [
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3298",
-    "externalId": null,
+    "externalId": "bwp-BW14",
     "tcgdex_id": "bwp-BW14",
     "localId": "BW14",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW14/101",
+    "cardNumber": "BW14",
     "cardName": "Pansage",
-    "fullDisplayName": "Pansage BW14/101 BW Black Star Promos",
+    "fullDisplayName": "Pansage BW14 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2894,18 +3589,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW14-low.png",
-    "imageHighSrc": "cards/bwp-BW14-high.png"
+    "imageHighSrc": "cards/bwp-BW14-high.png",
+    "attacks": [
+      {
+        "name": "Bullet Seed",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3297",
-    "externalId": null,
+    "externalId": "bwp-BW13",
     "tcgdex_id": "bwp-BW13",
     "localId": "BW13",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW13/101",
+    "cardNumber": "BW13",
     "cardName": "Minccino",
-    "fullDisplayName": "Minccino BW13/101 BW Black Star Promos",
+    "fullDisplayName": "Minccino BW13 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2927,18 +3628,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW13-low.png",
-    "imageHighSrc": "cards/bwp-BW13-high.png"
+    "imageHighSrc": "cards/bwp-BW13-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "10"
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3296",
-    "externalId": null,
+    "externalId": "bwp-BW12",
     "tcgdex_id": "bwp-BW12",
     "localId": "BW12",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW12/101",
+    "cardNumber": "BW12",
     "cardName": "Zorua",
-    "fullDisplayName": "Zorua BW12/101 BW Black Star Promos",
+    "fullDisplayName": "Zorua BW12 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2960,18 +3671,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW12-low.png",
-    "imageHighSrc": "cards/bwp-BW12-high.png"
+    "imageHighSrc": "cards/bwp-BW12-high.png",
+    "attacks": [
+      {
+        "name": "Jump On",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "3295",
-    "externalId": null,
+    "externalId": "bwp-BW11",
     "tcgdex_id": "bwp-BW11",
     "localId": "BW11",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW11/101",
+    "cardNumber": "BW11",
     "cardName": "Pansage",
-    "fullDisplayName": "Pansage BW11/101 BW Black Star Promos",
+    "fullDisplayName": "Pansage BW11 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2993,18 +3710,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW11-low.png",
-    "imageHighSrc": "cards/bwp-BW11-high.png"
+    "imageHighSrc": "cards/bwp-BW11-high.png",
+    "attacks": [
+      {
+        "name": "Bullet Seed",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "3294",
-    "externalId": null,
+    "externalId": "bwp-BW10",
     "tcgdex_id": "bwp-BW10",
     "localId": "BW10",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW10/101",
+    "cardNumber": "BW10",
     "cardName": "Axew",
-    "fullDisplayName": "Axew BW10/101 BW Black Star Promos",
+    "fullDisplayName": "Axew BW10 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3026,18 +3749,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW10-low.png",
-    "imageHighSrc": "cards/bwp-BW10-high.png"
+    "imageHighSrc": "cards/bwp-BW10-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Rage",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "3293",
-    "externalId": null,
+    "externalId": "bwp-BW09",
     "tcgdex_id": "bwp-BW09",
     "localId": "BW09",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW09/101",
+    "cardNumber": "BW09",
     "cardName": "Zoroark",
-    "fullDisplayName": "Zoroark BW09/101 BW Black Star Promos",
+    "fullDisplayName": "Zoroark BW09 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3059,18 +3788,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW09-low.png",
-    "imageHighSrc": "cards/bwp-BW09-high.png"
+    "imageHighSrc": "cards/bwp-BW09-high.png",
+    "attacks": [
+      {
+        "name": "Nasty Plot",
+        "damage": null
+      },
+      {
+        "name": "Foul Play",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "3292",
-    "externalId": null,
+    "externalId": "bwp-BW08",
     "tcgdex_id": "bwp-BW08",
     "localId": "BW08",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW08/101",
+    "cardNumber": "BW08",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott BW08/101 BW Black Star Promos",
+    "fullDisplayName": "Oshawott BW08 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3092,18 +3831,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW08-low.png",
-    "imageHighSrc": "cards/bwp-BW08-high.png"
+    "imageHighSrc": "cards/bwp-BW08-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Pulse",
+        "damage": null
+      },
+      {
+        "name": "Surprise Attack",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3291",
-    "externalId": null,
+    "externalId": "bwp-BW07",
     "tcgdex_id": "bwp-BW07",
     "localId": "BW07",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW07/101",
+    "cardNumber": "BW07",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig BW07/101 BW Black Star Promos",
+    "fullDisplayName": "Tepig BW07 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3125,18 +3874,28 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW07-low.png",
-    "imageHighSrc": "cards/bwp-BW07-high.png"
+    "imageHighSrc": "cards/bwp-BW07-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      },
+      {
+        "name": "Firebreathing",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "3290",
-    "externalId": null,
+    "externalId": "bwp-BW06",
     "tcgdex_id": "bwp-BW06",
     "localId": "BW06",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW06/101",
+    "cardNumber": "BW06",
     "cardName": "Snivy",
-    "fullDisplayName": "Snivy BW06/101 BW Black Star Promos",
+    "fullDisplayName": "Snivy BW06 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3158,7 +3917,17 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW06-low.png",
-    "imageHighSrc": "cards/bwp-BW06-high.png"
+    "imageHighSrc": "cards/bwp-BW06-high.png",
+    "attacks": [
+      {
+        "name": "Paralyzing Gaze",
+        "damage": null
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3289",
@@ -3195,14 +3964,14 @@
   },
   {
     "masterCardId": "3288",
-    "externalId": null,
+    "externalId": "bwp-BW03",
     "tcgdex_id": "bwp-BW03",
     "localId": "BW004",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW004/101",
+    "cardNumber": "BW03",
     "cardName": "Reshiram",
-    "fullDisplayName": "Reshiram BW004/101 BW Black Star Promos",
+    "fullDisplayName": "Reshiram BW03 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3224,18 +3993,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW004-low.png",
-    "imageHighSrc": "cards/bwp-BW004-high.png"
+    "imageHighSrc": "cards/bwp-BW004-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3287",
-    "externalId": null,
+    "externalId": "bwp-BW03",
     "tcgdex_id": "bwp-BW03",
     "localId": "BW03",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW03/101",
+    "cardNumber": "BW03",
     "cardName": "Oshawott",
-    "fullDisplayName": "Oshawott BW03/101 BW Black Star Promos",
+    "fullDisplayName": "Oshawott BW03 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3257,18 +4032,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW03-low.png",
-    "imageHighSrc": "cards/bwp-BW03-high.png"
+    "imageHighSrc": "cards/bwp-BW03-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "3286",
-    "externalId": null,
+    "externalId": "bwp-BW02",
     "tcgdex_id": "bwp-BW02",
     "localId": "BW02",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW02/101",
+    "cardNumber": "BW02",
     "cardName": "Tepig",
-    "fullDisplayName": "Tepig BW02/101 BW Black Star Promos",
+    "fullDisplayName": "Tepig BW02 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3290,18 +4071,24 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW02-low.png",
-    "imageHighSrc": "cards/bwp-BW02-high.png"
+    "imageHighSrc": "cards/bwp-BW02-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "3285",
-    "externalId": null,
+    "externalId": "bwp-BW01",
     "tcgdex_id": "bwp-BW01",
     "localId": "BW01",
     "setCode": "bwp",
     "setTcgdexId": "bwp",
-    "cardNumber": "BW01/101",
+    "cardNumber": "BW01",
     "cardName": "Snivy",
-    "fullDisplayName": "Snivy BW01/101 BW Black Star Promos",
+    "fullDisplayName": "Snivy BW01 BW Black Star Promos",
     "rarity": "Promo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3323,6 +4110,12 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bwp-BW01-low.png",
-    "imageHighSrc": "cards/bwp-BW01-high.png"
+    "imageHighSrc": "cards/bwp-BW01-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "20×"
+      }
+    ]
   }
 ]

@@ -1,14 +1,14 @@
 [
   {
     "masterCardId": "22000",
-    "externalId": null,
+    "externalId": "mcd17-12",
     "tcgdex_id": "2017sm-12",
     "localId": "012",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "012/12",
+    "cardNumber": "12/12",
     "cardName": "Yungoos",
-    "fullDisplayName": "Yungoos 012/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Yungoos 12/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -30,18 +30,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-012-low.jpg",
-    "imageHighSrc": "cards/2017sm-012-low.jpg"
+    "imageHighSrc": "cards/2017sm-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Bite",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21999",
-    "externalId": null,
+    "externalId": "mcd17-11",
     "tcgdex_id": "2017sm-11",
     "localId": "011",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "011/12",
+    "cardNumber": "11/12",
     "cardName": "Pikipek",
-    "fullDisplayName": "Pikipek 011/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Pikipek 11/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -63,18 +73,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-011-low.jpg",
-    "imageHighSrc": "cards/2017sm-011-low.jpg"
+    "imageHighSrc": "cards/2017sm-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Rock Smash",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "21998",
-    "externalId": null,
+    "externalId": "mcd17-10",
     "tcgdex_id": "2017sm-10",
     "localId": "010",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "010/12",
+    "cardNumber": "10/12",
     "cardName": "Cutiefly",
-    "fullDisplayName": "Cutiefly 010/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Cutiefly 10/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -96,18 +112,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-010-low.jpg",
-    "imageHighSrc": "cards/2017sm-010-low.jpg"
+    "imageHighSrc": "cards/2017sm-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Fly Around",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21997",
-    "externalId": null,
+    "externalId": "mcd17-9",
     "tcgdex_id": "2017sm-9",
     "localId": "009",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "009/12",
+    "cardNumber": "9/12",
     "cardName": "Alolan Diglett",
-    "fullDisplayName": "Alolan Diglett 009/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Alolan Diglett 9/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -129,18 +151,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-009-low.jpg",
-    "imageHighSrc": "cards/2017sm-009-low.jpg"
+    "imageHighSrc": "cards/2017sm-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Spelunk",
+        "damage": null
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "21996",
-    "externalId": null,
+    "externalId": "mcd17-8",
     "tcgdex_id": "2017sm-8",
     "localId": "008",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "008/12",
+    "cardNumber": "8/12",
     "cardName": "Alolan Meowth",
-    "fullDisplayName": "Alolan Meowth 008/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Alolan Meowth 8/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -162,18 +194,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-008-low.jpg",
-    "imageHighSrc": "cards/2017sm-008-low.jpg"
+    "imageHighSrc": "cards/2017sm-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "21995",
-    "externalId": null,
+    "externalId": "mcd17-7",
     "tcgdex_id": "2017sm-7",
     "localId": "007",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "007/12",
+    "cardNumber": "7/12",
     "cardName": "Crabrawler",
-    "fullDisplayName": "Crabrawler 007/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Crabrawler 7/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -195,18 +233,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-007-low.jpg",
-    "imageHighSrc": "cards/2017sm-007-low.jpg"
+    "imageHighSrc": "cards/2017sm-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Punch",
+        "damage": "20"
+      },
+      {
+        "name": "Crabhammer",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "21994",
-    "externalId": null,
+    "externalId": "mcd17-6",
     "tcgdex_id": "2017sm-6",
     "localId": "006",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "006/12",
+    "cardNumber": "6/12",
     "cardName": "Cosmog",
-    "fullDisplayName": "Cosmog 006/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Cosmog 6/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -228,18 +276,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-006-low.jpg",
-    "imageHighSrc": "cards/2017sm-006-low.jpg"
+    "imageHighSrc": "cards/2017sm-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Dust Gathering",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "21993",
-    "externalId": null,
+    "externalId": "mcd17-5",
     "tcgdex_id": "2017sm-5",
     "localId": "005",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "005/12",
+    "cardNumber": "5/12",
     "cardName": "Pikachu",
-    "fullDisplayName": "Pikachu 005/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Pikachu 5/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -261,18 +315,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-005-low.jpg",
-    "imageHighSrc": "cards/2017sm-005-low.jpg"
+    "imageHighSrc": "cards/2017sm-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Thunder Wave",
+        "damage": null
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "21992",
-    "externalId": null,
+    "externalId": "mcd17-4",
     "tcgdex_id": "2017sm-4",
     "localId": "004",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "004/12",
+    "cardNumber": "4/12",
     "cardName": "Popplio",
-    "fullDisplayName": "Popplio 004/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Popplio 4/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -294,18 +358,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-004-low.jpg",
-    "imageHighSrc": "cards/2017sm-004-low.jpg"
+    "imageHighSrc": "cards/2017sm-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Water Gun",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21991",
-    "externalId": null,
+    "externalId": "mcd17-3",
     "tcgdex_id": "2017sm-3",
     "localId": "003",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "003/12",
+    "cardNumber": "3/12",
     "cardName": "Litten",
-    "fullDisplayName": "Litten 003/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Litten 3/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -327,18 +401,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-003-low.jpg",
-    "imageHighSrc": "cards/2017sm-003-low.jpg"
+    "imageHighSrc": "cards/2017sm-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Flare",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21990",
-    "externalId": null,
+    "externalId": "mcd17-2",
     "tcgdex_id": "2017sm-2",
     "localId": "002",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "002/12",
+    "cardNumber": "2/12",
     "cardName": "Grubbin",
-    "fullDisplayName": "Grubbin 002/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Grubbin 2/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -360,18 +444,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-002-low.jpg",
-    "imageHighSrc": "cards/2017sm-002-low.jpg"
+    "imageHighSrc": "cards/2017sm-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Vice Grip",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "21989",
-    "externalId": null,
+    "externalId": "mcd17-1",
     "tcgdex_id": "2017sm-1",
     "localId": "001",
     "setCode": "2017sm",
     "setTcgdexId": "2017sm",
-    "cardNumber": "001/12",
+    "cardNumber": "1/12",
     "cardName": "Rowlet",
-    "fullDisplayName": "Rowlet 001/12 Macdonald's Collection 2017",
+    "fullDisplayName": "Rowlet 1/12 Macdonald's Collection 2017",
     "rarity": "None",
     "category": "Pokémon",
     "stage": "Basic",
@@ -393,6 +483,16 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/2017sm-001-low.jpg",
-    "imageHighSrc": "cards/2017sm-001-low.jpg"
+    "imageHighSrc": "cards/2017sm-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Leafage",
+        "damage": "20"
+      }
+    ]
   }
 ]

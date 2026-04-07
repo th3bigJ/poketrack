@@ -57,7 +57,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                     let cards = try JSONDecoder().decode([Card].self, from: cData)
                     try store.insertCards(cards, setCode: code)
                 }
-                for stem in Self.pricingFileStemVariants(forSetCode: code) {
+                for stem in AppConfiguration.pricingFileStemVariants(for: code) {
                     let pURL = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
                     guard let (pData, resp) = try? await session.data(from: pURL),
                           let http = resp as? HTTPURLResponse,
@@ -97,7 +97,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         await withTaskGroup(of: (String, Data)?.self) { group in
             for set in sets {
                 let code = set.setCode
-                let stems = Self.pricingFileStemVariants(forSetCode: code)
+                let stems = AppConfiguration.pricingFileStemVariants(for: code)
                 let sess = session
                 group.addTask {
                     for stem in stems {
@@ -138,27 +138,6 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         }
     }
 
-    /// Same rules as `PricingService.pricingFileStemVariants` (e.g. `me03` vs `me3` pricing filenames).
-    private static func pricingFileStemVariants(forSetCode setCode: String) -> [String] {
-        let s = setCode.lowercased().trimmingCharacters(in: .whitespacesAndNewlines)
-        var stems: [String] = []
-        func add(_ x: String) {
-            if !stems.contains(x) { stems.append(x) }
-        }
-        add(s)
-        if let regex = try? NSRegularExpression(pattern: #"^([a-z]+)0+(\d+)$"#, options: []),
-           let m = regex.firstMatch(in: s, range: NSRange(s.startIndex..., in: s)),
-           m.numberOfRanges == 3,
-           let r1 = Range(m.range(at: 1), in: s),
-           let r2 = Range(m.range(at: 2), in: s) {
-            let letters = String(s[r1])
-            let digits = String(s[r2])
-            if let n = Int(digits) {
-                add("\(letters)\(n)")
-            }
-        }
-        return stems
-    }
 }
 
 enum DailyBlobKey {

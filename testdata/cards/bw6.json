@@ -1,7 +1,7 @@
 [
   {
     "masterCardId": "2871",
-    "externalId": null,
+    "externalId": "bw6-128",
     "tcgdex_id": "bw6-128",
     "localId": "128",
     "setCode": "bw6",
@@ -30,11 +30,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-128-low.png",
-    "imageHighSrc": "cards/bw6-128-high.png"
+    "imageHighSrc": "cards/bw6-128-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Pulse",
+        "damage": "40"
+      },
+      {
+        "name": "Shred",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2870",
-    "externalId": null,
+    "externalId": "bw6-127",
     "tcgdex_id": "bw6-127",
     "localId": "127",
     "setCode": "bw6",
@@ -63,11 +73,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-127-low.png",
-    "imageHighSrc": "cards/bw6-127-high.png"
+    "imageHighSrc": "cards/bw6-127-high.png",
+    "attacks": [
+      {
+        "name": "Dark Clamp",
+        "damage": "60"
+      },
+      {
+        "name": "Bombast",
+        "damage": "40×"
+      }
+    ]
   },
   {
     "masterCardId": "2869",
-    "externalId": null,
+    "externalId": "bw6-126",
     "tcgdex_id": "bw6-126",
     "localId": "126",
     "setCode": "bw6",
@@ -96,11 +116,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-126-low.png",
-    "imageHighSrc": "cards/bw6-126-high.png"
+    "imageHighSrc": "cards/bw6-126-high.png",
+    "attacks": [
+      {
+        "name": "Psywave",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2868",
-    "externalId": null,
+    "externalId": "bw6-125",
     "tcgdex_id": "bw6-125",
     "localId": "125",
     "setCode": "bw6",
@@ -129,11 +155,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-125-low.png",
-    "imageHighSrc": "cards/bw6-125-high.png"
+    "imageHighSrc": "cards/bw6-125-high.png",
+    "attacks": [
+      {
+        "name": "Leaf Tornado",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2867",
-    "externalId": null,
+    "externalId": "bw6-124",
     "tcgdex_id": "bw6-124",
     "localId": "124",
     "setCode": "bw6",
@@ -163,11 +195,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-124-low.png",
-    "imageHighSrc": "cards/bw6-124-high.png"
+    "imageHighSrc": "cards/bw6-124-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "90"
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2866",
-    "externalId": null,
+    "externalId": "bw6-123",
     "tcgdex_id": "bw6-123",
     "localId": "123",
     "setCode": "bw6",
@@ -197,11 +240,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-123-low.png",
-    "imageHighSrc": "cards/bw6-123-high.png"
+    "imageHighSrc": "cards/bw6-123-high.png",
+    "attacks": [
+      {
+        "name": "Celestial Roar",
+        "damage": null
+      },
+      {
+        "name": "Dragon Burst",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2865",
-    "externalId": null,
+    "externalId": "bw6-122",
     "tcgdex_id": "bw6-122",
     "localId": "122",
     "setCode": "bw6",
@@ -231,11 +285,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-122-low.png",
-    "imageHighSrc": "cards/bw6-122-high.png"
+    "imageHighSrc": "cards/bw6-122-high.png",
+    "attacks": [
+      {
+        "name": "Triple Laser",
+        "damage": null
+      },
+      {
+        "name": "Protect Charge",
+        "damage": "80"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2864",
-    "externalId": null,
+    "externalId": "bw6-121",
     "tcgdex_id": "bw6-121",
     "localId": "121",
     "setCode": "bw6",
@@ -265,11 +330,22 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-121-low.png",
-    "imageHighSrc": "cards/bw6-121-high.png"
+    "imageHighSrc": "cards/bw6-121-high.png",
+    "attacks": [
+      {
+        "name": "Rock Tumble",
+        "damage": "50"
+      },
+      {
+        "name": "Pump-up Smash",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2863",
-    "externalId": null,
+    "externalId": "bw6-120",
     "tcgdex_id": "bw6-120",
     "localId": "120",
     "setCode": "bw6",
@@ -299,11 +375,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-120-low.png",
-    "imageHighSrc": "cards/bw6-120-high.png"
+    "imageHighSrc": "cards/bw6-120-high.png",
+    "attacks": [
+      {
+        "name": "Replace",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2862",
-    "externalId": null,
+    "externalId": "bw6-119",
     "tcgdex_id": "bw6-119",
     "localId": "119",
     "setCode": "bw6",
@@ -333,11 +416,18 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-119-low.png",
-    "imageHighSrc": "cards/bw6-119-high.png"
+    "imageHighSrc": "cards/bw6-119-high.png",
+    "attacks": [
+      {
+        "name": "Rainbow Burn",
+        "damage": "20+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2861",
-    "externalId": null,
+    "externalId": "bw6-118",
     "tcgdex_id": "bw6-118",
     "localId": "118",
     "setCode": "bw6",
@@ -362,11 +452,12 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-118-low.png",
-    "imageHighSrc": "cards/bw6-118-high.png"
+    "imageHighSrc": "cards/bw6-118-high.png",
+    "rules": "This card provides Colorless Energy. When this card is attached to a Pokémon, this card provides Water, Lightning, Fighting, or Metal Energy but provides only 1 Energy at a time."
   },
   {
     "masterCardId": "2860",
-    "externalId": null,
+    "externalId": "bw6-117",
     "tcgdex_id": "bw6-117",
     "localId": "117",
     "setCode": "bw6",
@@ -391,11 +482,12 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-117-low.png",
-    "imageHighSrc": "cards/bw6-117-high.png"
+    "imageHighSrc": "cards/bw6-117-high.png",
+    "rules": "This card provides Colorless Energy. When this card is attached to a Pokémon, this card provides Grass, Fire, Psychic, or Darkness Energy but provides only 1 Energy at a time."
   },
   {
     "masterCardId": "2859",
-    "externalId": null,
+    "externalId": "bw6-116",
     "tcgdex_id": "bw6-116",
     "localId": "116",
     "setCode": "bw6",
@@ -420,11 +512,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-116-low.png",
-    "imageHighSrc": "cards/bw6-116-high.png"
+    "imageHighSrc": "cards/bw6-116-high.png",
+    "rules": "Choose up to 2 Pokémon Tool cards attached to Pokémon in play (yours or your opponent's) and discard them.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2858",
-    "externalId": null,
+    "externalId": "bw6-115",
     "tcgdex_id": "bw6-115",
     "localId": "115",
     "setCode": "bw6",
@@ -449,11 +542,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-115-low.png",
-    "imageHighSrc": "cards/bw6-115-high.png"
+    "imageHighSrc": "cards/bw6-115-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nIf the Pokémon this card is attached to is Knocked Out by damage from an attack, put that Pokémon into your hand. (Discard all cards attached to that Pokémon.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2857",
-    "externalId": null,
+    "externalId": "bw6-114",
     "tcgdex_id": "bw6-114",
     "localId": "114",
     "setCode": "bw6",
@@ -478,11 +572,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-114-low.png",
-    "imageHighSrc": "cards/bw6-114-high.png"
+    "imageHighSrc": "cards/bw6-114-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nThe Pokémon this card is attached to gets +20 HP.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2856",
-    "externalId": null,
+    "externalId": "bw6-113",
     "tcgdex_id": "bw6-113",
     "localId": "113",
     "setCode": "bw6",
@@ -507,11 +602,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-113-low.png",
-    "imageHighSrc": "cards/bw6-113-high.png"
+    "imageHighSrc": "cards/bw6-113-high.png",
+    "rules": "Devolve 1 of your evolved Pokémon and put the highest stage Evolution card on it into your hand. (That Pokémon can't evolve this turn.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
   },
   {
     "masterCardId": "2855",
-    "externalId": null,
+    "externalId": "bw6-112",
     "tcgdex_id": "bw6-112",
     "localId": "112",
     "setCode": "bw6",
@@ -540,11 +636,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-112-low.png",
-    "imageHighSrc": "cards/bw6-112-high.png"
+    "imageHighSrc": "cards/bw6-112-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "30"
+      },
+      {
+        "name": "Fury Attack",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "2854",
-    "externalId": null,
+    "externalId": "bw6-111",
     "tcgdex_id": "bw6-111",
     "localId": "111",
     "setCode": "bw6",
@@ -573,11 +679,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-111-low.png",
-    "imageHighSrc": "cards/bw6-111-high.png"
+    "imageHighSrc": "cards/bw6-111-high.png",
+    "attacks": [
+      {
+        "name": "Chirp",
+        "damage": null
+      },
+      {
+        "name": "Sharp Beak",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2853",
-    "externalId": null,
+    "externalId": "bw6-110",
     "tcgdex_id": "bw6-110",
     "localId": "110",
     "setCode": "bw6",
@@ -606,11 +722,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-110-low.png",
-    "imageHighSrc": "cards/bw6-110-high.png"
+    "imageHighSrc": "cards/bw6-110-high.png",
+    "attacks": [
+      {
+        "name": "Gold Breaker",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2852",
-    "externalId": null,
+    "externalId": "bw6-109",
     "tcgdex_id": "bw6-109",
     "localId": "109",
     "setCode": "bw6",
@@ -639,11 +761,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-109-low.png",
-    "imageHighSrc": "cards/bw6-109-high.png"
+    "imageHighSrc": "cards/bw6-109-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10"
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2851",
-    "externalId": null,
+    "externalId": "bw6-108",
     "tcgdex_id": "bw6-108",
     "localId": "108",
     "setCode": "bw6",
@@ -672,11 +804,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-108-low.png",
-    "imageHighSrc": "cards/bw6-108-high.png"
+    "imageHighSrc": "cards/bw6-108-high.png",
+    "attacks": [
+      {
+        "name": "Wake-up Beam",
+        "damage": "40"
+      },
+      {
+        "name": "Drain Slap",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2850",
-    "externalId": null,
+    "externalId": "bw6-107",
     "tcgdex_id": "bw6-107",
     "localId": "107",
     "setCode": "bw6",
@@ -705,11 +847,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-107-low.png",
-    "imageHighSrc": "cards/bw6-107-high.png"
+    "imageHighSrc": "cards/bw6-107-high.png",
+    "attacks": [
+      {
+        "name": "Amnesia",
+        "damage": "40"
+      },
+      {
+        "name": "Tumbling Tackle",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2849",
-    "externalId": null,
+    "externalId": "bw6-106",
     "tcgdex_id": "bw6-106",
     "localId": "106",
     "setCode": "bw6",
@@ -738,11 +890,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-106-low.png",
-    "imageHighSrc": "cards/bw6-106-high.png"
+    "imageHighSrc": "cards/bw6-106-high.png",
+    "attacks": [
+      {
+        "name": "Bang Heads",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2848",
-    "externalId": null,
+    "externalId": "bw6-105",
     "tcgdex_id": "bw6-105",
     "localId": "105",
     "setCode": "bw6",
@@ -771,11 +929,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-105-low.png",
-    "imageHighSrc": "cards/bw6-105-high.png"
+    "imageHighSrc": "cards/bw6-105-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2847",
-    "externalId": null,
+    "externalId": "bw6-104",
     "tcgdex_id": "bw6-104",
     "localId": "104",
     "setCode": "bw6",
@@ -804,11 +968,21 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-104-low.png",
-    "imageHighSrc": "cards/bw6-104-high.png"
+    "imageHighSrc": "cards/bw6-104-high.png",
+    "attacks": [
+      {
+        "name": "Sing",
+        "damage": null
+      },
+      {
+        "name": "Peck",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2846",
-    "externalId": null,
+    "externalId": "bw6-103",
     "tcgdex_id": "bw6-103",
     "localId": "103",
     "setCode": "bw6",
@@ -837,11 +1011,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-103-low.png",
-    "imageHighSrc": "cards/bw6-103-high.png"
+    "imageHighSrc": "cards/bw6-103-high.png",
+    "attacks": [
+      {
+        "name": "Crushing Blow",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "2845",
-    "externalId": null,
+    "externalId": "bw6-102",
     "tcgdex_id": "bw6-102",
     "localId": "102",
     "setCode": "bw6",
@@ -870,11 +1050,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-102-low.png",
-    "imageHighSrc": "cards/bw6-102-high.png"
+    "imageHighSrc": "cards/bw6-102-high.png",
+    "attacks": [
+      {
+        "name": "Ambush",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2844",
-    "externalId": null,
+    "externalId": "bw6-101",
     "tcgdex_id": "bw6-101",
     "localId": "101",
     "setCode": "bw6",
@@ -903,11 +1089,17 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-101-low.png",
-    "imageHighSrc": "cards/bw6-101-high.png"
+    "imageHighSrc": "cards/bw6-101-high.png",
+    "attacks": [
+      {
+        "name": "Smack ‘n' Slack",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2843",
-    "externalId": null,
+    "externalId": "bw6-100",
     "tcgdex_id": "bw6-100",
     "localId": "100",
     "setCode": "bw6",
@@ -936,18 +1128,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-100-low.png",
-    "imageHighSrc": "cards/bw6-100-high.png"
+    "imageHighSrc": "cards/bw6-100-high.png",
+    "attacks": [
+      {
+        "name": "Double Hit",
+        "damage": "20×"
+      },
+      {
+        "name": "Hand Fling",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2842",
-    "externalId": null,
+    "externalId": "bw6-99",
     "tcgdex_id": "bw6-99",
     "localId": "099",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "099/124",
+    "cardNumber": "99/124",
     "cardName": "Aipom",
-    "fullDisplayName": "Aipom 099/124 Dragons Exalted",
+    "fullDisplayName": "Aipom 99/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -969,18 +1171,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-099-low.png",
-    "imageHighSrc": "cards/bw6-099-high.png"
+    "imageHighSrc": "cards/bw6-099-high.png",
+    "attacks": [
+      {
+        "name": "Double Hit",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2841",
-    "externalId": null,
+    "externalId": "bw6-98",
     "tcgdex_id": "bw6-98",
     "localId": "098",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "098/124",
+    "cardNumber": "98/124",
     "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 098/124 Dragons Exalted",
+    "fullDisplayName": "Hydreigon 98/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1002,18 +1210,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-098-low.png",
-    "imageHighSrc": "cards/bw6-098-high.png"
+    "imageHighSrc": "cards/bw6-098-high.png",
+    "attacks": [
+      {
+        "name": "Consume",
+        "damage": "40"
+      },
+      {
+        "name": "Destructor Beam",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2840",
-    "externalId": null,
+    "externalId": "bw6-97",
     "tcgdex_id": "bw6-97",
     "localId": "097",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "097/124",
+    "cardNumber": "97/124",
     "cardName": "Hydreigon",
-    "fullDisplayName": "Hydreigon 097/124 Dragons Exalted",
+    "fullDisplayName": "Hydreigon 97/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1035,18 +1253,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-097-low.png",
-    "imageHighSrc": "cards/bw6-097-high.png"
+    "imageHighSrc": "cards/bw6-097-high.png",
+    "attacks": [
+      {
+        "name": "Dragonblast",
+        "damage": "140"
+      }
+    ]
   },
   {
     "masterCardId": "2839",
-    "externalId": null,
+    "externalId": "bw6-96",
     "tcgdex_id": "bw6-96",
     "localId": "096",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "096/124",
+    "cardNumber": "96/124",
     "cardName": "Zweilous",
-    "fullDisplayName": "Zweilous 096/124 Dragons Exalted",
+    "fullDisplayName": "Zweilous 96/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1068,18 +1292,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-096-low.png",
-    "imageHighSrc": "cards/bw6-096-high.png"
+    "imageHighSrc": "cards/bw6-096-high.png",
+    "attacks": [
+      {
+        "name": "Draw In",
+        "damage": null
+      },
+      {
+        "name": "Dragon Headbutt",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2838",
-    "externalId": null,
+    "externalId": "bw6-95",
     "tcgdex_id": "bw6-95",
     "localId": "095",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "095/124",
+    "cardNumber": "95/124",
     "cardName": "Zweilous",
-    "fullDisplayName": "Zweilous 095/124 Dragons Exalted",
+    "fullDisplayName": "Zweilous 95/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1101,18 +1335,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-095-low.png",
-    "imageHighSrc": "cards/bw6-095-high.png"
+    "imageHighSrc": "cards/bw6-095-high.png",
+    "attacks": [
+      {
+        "name": "Crunch",
+        "damage": "30"
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2837",
-    "externalId": null,
+    "externalId": "bw6-94",
     "tcgdex_id": "bw6-94",
     "localId": "094",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "094/124",
+    "cardNumber": "94/124",
     "cardName": "Deino",
-    "fullDisplayName": "Deino 094/124 Dragons Exalted",
+    "fullDisplayName": "Deino 94/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1134,18 +1378,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-094-low.png",
-    "imageHighSrc": "cards/bw6-094-high.png"
+    "imageHighSrc": "cards/bw6-094-high.png",
+    "attacks": [
+      {
+        "name": "Guard Press",
+        "damage": "10"
+      },
+      {
+        "name": "Headbutt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2836",
-    "externalId": null,
+    "externalId": "bw6-93",
     "tcgdex_id": "bw6-93",
     "localId": "093",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "093/124",
+    "cardNumber": "93/124",
     "cardName": "Deino",
-    "fullDisplayName": "Deino 093/124 Dragons Exalted",
+    "fullDisplayName": "Deino 93/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1167,18 +1421,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-093-low.png",
-    "imageHighSrc": "cards/bw6-093-high.png"
+    "imageHighSrc": "cards/bw6-093-high.png",
+    "attacks": [
+      {
+        "name": "Deep Growl",
+        "damage": null
+      },
+      {
+        "name": "Power Breath",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2835",
-    "externalId": null,
+    "externalId": "bw6-92",
     "tcgdex_id": "bw6-92",
     "localId": "092",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "092/124",
+    "cardNumber": "92/124",
     "cardName": "Giratina-EX",
-    "fullDisplayName": "Giratina-EX 092/124 Dragons Exalted",
+    "fullDisplayName": "Giratina-EX 92/124 Dragons Exalted",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1201,18 +1465,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-092-low.png",
-    "imageHighSrc": "cards/bw6-092-high.png"
+    "imageHighSrc": "cards/bw6-092-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "90"
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "130"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2834",
-    "externalId": null,
+    "externalId": "bw6-91",
     "tcgdex_id": "bw6-91",
     "localId": "091",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "091/124",
+    "cardNumber": "91/124",
     "cardName": "Garchomp",
-    "fullDisplayName": "Garchomp 091/124 Dragons Exalted",
+    "fullDisplayName": "Garchomp 91/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1234,18 +1509,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-091-low.png",
-    "imageHighSrc": "cards/bw6-091-high.png"
+    "imageHighSrc": "cards/bw6-091-high.png",
+    "attacks": [
+      {
+        "name": "Jet Headbutt",
+        "damage": "40"
+      },
+      {
+        "name": "Sand Tomb",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2833",
-    "externalId": null,
+    "externalId": "bw6-90",
     "tcgdex_id": "bw6-90",
     "localId": "090",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "090/124",
+    "cardNumber": "90/124",
     "cardName": "Garchomp",
-    "fullDisplayName": "Garchomp 090/124 Dragons Exalted",
+    "fullDisplayName": "Garchomp 90/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1267,18 +1552,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-090-low.png",
-    "imageHighSrc": "cards/bw6-090-high.png"
+    "imageHighSrc": "cards/bw6-090-high.png",
+    "attacks": [
+      {
+        "name": "Mach Cut",
+        "damage": "60"
+      },
+      {
+        "name": "Dragonblade",
+        "damage": "100"
+      }
+    ]
   },
   {
     "masterCardId": "2832",
-    "externalId": null,
+    "externalId": "bw6-89",
     "tcgdex_id": "bw6-89",
     "localId": "089",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "089/124",
+    "cardNumber": "89/124",
     "cardName": "Gabite",
-    "fullDisplayName": "Gabite 089/124 Dragons Exalted",
+    "fullDisplayName": "Gabite 89/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1300,18 +1595,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-089-low.png",
-    "imageHighSrc": "cards/bw6-089-high.png"
+    "imageHighSrc": "cards/bw6-089-high.png",
+    "attacks": [
+      {
+        "name": "Dragonslice",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2831",
-    "externalId": null,
+    "externalId": "bw6-88",
     "tcgdex_id": "bw6-88",
     "localId": "088",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "088/124",
+    "cardNumber": "88/124",
     "cardName": "Gabite",
-    "fullDisplayName": "Gabite 088/124 Dragons Exalted",
+    "fullDisplayName": "Gabite 88/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1333,18 +1634,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-088-low.png",
-    "imageHighSrc": "cards/bw6-088-high.png"
+    "imageHighSrc": "cards/bw6-088-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20"
+      },
+      {
+        "name": "Shred",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2830",
-    "externalId": null,
+    "externalId": "bw6-87",
     "tcgdex_id": "bw6-87",
     "localId": "087",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "087/124",
+    "cardNumber": "87/124",
     "cardName": "Gible",
-    "fullDisplayName": "Gible 087/124 Dragons Exalted",
+    "fullDisplayName": "Gible 87/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1366,18 +1677,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-087-low.png",
-    "imageHighSrc": "cards/bw6-087-high.png"
+    "imageHighSrc": "cards/bw6-087-high.png",
+    "attacks": [
+      {
+        "name": "Sand-Attack",
+        "damage": null
+      },
+      {
+        "name": "Knock Away",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2829",
-    "externalId": null,
+    "externalId": "bw6-86",
     "tcgdex_id": "bw6-86",
     "localId": "086",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "086/124",
+    "cardNumber": "86/124",
     "cardName": "Gible",
-    "fullDisplayName": "Gible 086/124 Dragons Exalted",
+    "fullDisplayName": "Gible 86/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1399,18 +1720,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-086-low.png",
-    "imageHighSrc": "cards/bw6-086-high.png"
+    "imageHighSrc": "cards/bw6-086-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Gnaw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2828",
-    "externalId": null,
+    "externalId": "bw6-85",
     "tcgdex_id": "bw6-85",
     "localId": "085",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "085/124",
+    "cardNumber": "85/124",
     "cardName": "Rayquaza-EX",
-    "fullDisplayName": "Rayquaza-EX 085/124 Dragons Exalted",
+    "fullDisplayName": "Rayquaza-EX 85/124 Dragons Exalted",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1433,18 +1764,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-085-low.png",
-    "imageHighSrc": "cards/bw6-085-high.png"
+    "imageHighSrc": "cards/bw6-085-high.png",
+    "attacks": [
+      {
+        "name": "Celestial Roar",
+        "damage": null
+      },
+      {
+        "name": "Dragon Burst",
+        "damage": "60×"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2827",
-    "externalId": null,
+    "externalId": "bw6-84",
     "tcgdex_id": "bw6-84",
     "localId": "084",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "084/124",
+    "cardNumber": "84/124",
     "cardName": "Altaria",
-    "fullDisplayName": "Altaria 084/124 Dragons Exalted",
+    "fullDisplayName": "Altaria 84/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1466,18 +1808,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-084-low.png",
-    "imageHighSrc": "cards/bw6-084-high.png"
+    "imageHighSrc": "cards/bw6-084-high.png",
+    "attacks": [
+      {
+        "name": "Glide",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2826",
-    "externalId": null,
+    "externalId": "bw6-83",
     "tcgdex_id": "bw6-83",
     "localId": "083",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "083/124",
+    "cardNumber": "83/124",
     "cardName": "Durant",
-    "fullDisplayName": "Durant 083/124 Dragons Exalted",
+    "fullDisplayName": "Durant 83/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1499,18 +1847,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-083-low.png",
-    "imageHighSrc": "cards/bw6-083-high.png"
+    "imageHighSrc": "cards/bw6-083-high.png",
+    "attacks": [
+      {
+        "name": "Pull Out",
+        "damage": null
+      },
+      {
+        "name": "Iron Head",
+        "damage": "30×"
+      }
+    ]
   },
   {
     "masterCardId": "2825",
-    "externalId": null,
+    "externalId": "bw6-82",
     "tcgdex_id": "bw6-82",
     "localId": "082",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "082/124",
+    "cardNumber": "82/124",
     "cardName": "Probopass",
-    "fullDisplayName": "Probopass 082/124 Dragons Exalted",
+    "fullDisplayName": "Probopass 82/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1532,18 +1890,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-082-low.png",
-    "imageHighSrc": "cards/bw6-082-high.png"
+    "imageHighSrc": "cards/bw6-082-high.png",
+    "attacks": [
+      {
+        "name": "Magnetic Lines",
+        "damage": "30"
+      },
+      {
+        "name": "Heavy Nose",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2824",
-    "externalId": null,
+    "externalId": "bw6-81",
     "tcgdex_id": "bw6-81",
     "localId": "081",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "081/124",
+    "cardNumber": "81/124",
     "cardName": "Registeel-EX",
-    "fullDisplayName": "Registeel-EX 081/124 Dragons Exalted",
+    "fullDisplayName": "Registeel-EX 81/124 Dragons Exalted",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1566,18 +1934,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-081-low.png",
-    "imageHighSrc": "cards/bw6-081-high.png"
+    "imageHighSrc": "cards/bw6-081-high.png",
+    "attacks": [
+      {
+        "name": "Triple Laser",
+        "damage": null
+      },
+      {
+        "name": "Protect Charge",
+        "damage": "80"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2823",
-    "externalId": null,
+    "externalId": "bw6-80",
     "tcgdex_id": "bw6-80",
     "localId": "080",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "080/124",
+    "cardNumber": "80/124",
     "cardName": "Aggron",
-    "fullDisplayName": "Aggron 080/124 Dragons Exalted",
+    "fullDisplayName": "Aggron 80/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -1599,18 +1978,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-080-low.png",
-    "imageHighSrc": "cards/bw6-080-high.png"
+    "imageHighSrc": "cards/bw6-080-high.png",
+    "attacks": [
+      {
+        "name": "Giga Horn",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2822",
-    "externalId": null,
+    "externalId": "bw6-79",
     "tcgdex_id": "bw6-79",
     "localId": "079",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "079/124",
+    "cardNumber": "79/124",
     "cardName": "Lairon",
-    "fullDisplayName": "Lairon 079/124 Dragons Exalted",
+    "fullDisplayName": "Lairon 79/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1632,18 +2017,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-079-low.png",
-    "imageHighSrc": "cards/bw6-079-high.png"
+    "imageHighSrc": "cards/bw6-079-high.png",
+    "attacks": [
+      {
+        "name": "Metal Claw",
+        "damage": "30"
+      },
+      {
+        "name": "Wreak Havoc",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2821",
-    "externalId": null,
+    "externalId": "bw6-78",
     "tcgdex_id": "bw6-78",
     "localId": "078",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "078/124",
+    "cardNumber": "78/124",
     "cardName": "Aron",
-    "fullDisplayName": "Aron 078/124 Dragons Exalted",
+    "fullDisplayName": "Aron 78/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1665,18 +2060,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-078-low.png",
-    "imageHighSrc": "cards/bw6-078-high.png"
+    "imageHighSrc": "cards/bw6-078-high.png",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2820",
-    "externalId": null,
+    "externalId": "bw6-77",
     "tcgdex_id": "bw6-77",
     "localId": "077",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "077/124",
+    "cardNumber": "77/124",
     "cardName": "Skuntank",
-    "fullDisplayName": "Skuntank 077/124 Dragons Exalted",
+    "fullDisplayName": "Skuntank 77/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1698,18 +2099,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-077-low.png",
-    "imageHighSrc": "cards/bw6-077-high.png"
+    "imageHighSrc": "cards/bw6-077-high.png",
+    "attacks": [
+      {
+        "name": "Smogscreen",
+        "damage": "20"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2819",
-    "externalId": null,
+    "externalId": "bw6-76",
     "tcgdex_id": "bw6-76",
     "localId": "076",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "076/124",
+    "cardNumber": "76/124",
     "cardName": "Stunky",
-    "fullDisplayName": "Stunky 076/124 Dragons Exalted",
+    "fullDisplayName": "Stunky 76/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1731,18 +2142,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-076-low.png",
-    "imageHighSrc": "cards/bw6-076-high.png"
+    "imageHighSrc": "cards/bw6-076-high.png",
+    "attacks": [
+      {
+        "name": "Acid Spray",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2818",
-    "externalId": null,
+    "externalId": "bw6-75",
     "tcgdex_id": "bw6-75",
     "localId": "075",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "075/124",
+    "cardNumber": "75/124",
     "cardName": "Houndoom",
-    "fullDisplayName": "Houndoom 075/124 Dragons Exalted",
+    "fullDisplayName": "Houndoom 75/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1764,18 +2181,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-075-low.png",
-    "imageHighSrc": "cards/bw6-075-high.png"
+    "imageHighSrc": "cards/bw6-075-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30"
+      },
+      {
+        "name": "Fire Fang",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2817",
-    "externalId": null,
+    "externalId": "bw6-74",
     "tcgdex_id": "bw6-74",
     "localId": "074",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "074/124",
+    "cardNumber": "74/124",
     "cardName": "Houndour",
-    "fullDisplayName": "Houndour 074/124 Dragons Exalted",
+    "fullDisplayName": "Houndour 74/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1797,18 +2224,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-074-low.png",
-    "imageHighSrc": "cards/bw6-074-high.png"
+    "imageHighSrc": "cards/bw6-074-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "10"
+      },
+      {
+        "name": "Darkness Fang",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2816",
-    "externalId": null,
+    "externalId": "bw6-73",
     "tcgdex_id": "bw6-73",
     "localId": "073",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "073/124",
+    "cardNumber": "73/124",
     "cardName": "Honchkrow",
-    "fullDisplayName": "Honchkrow 073/124 Dragons Exalted",
+    "fullDisplayName": "Honchkrow 73/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -1830,18 +2267,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-073-low.png",
-    "imageHighSrc": "cards/bw6-073-high.png"
+    "imageHighSrc": "cards/bw6-073-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "30"
+      },
+      {
+        "name": "Diving Swipe",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2815",
-    "externalId": null,
+    "externalId": "bw6-72",
     "tcgdex_id": "bw6-72",
     "localId": "072",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "072/124",
+    "cardNumber": "72/124",
     "cardName": "Murkrow",
-    "fullDisplayName": "Murkrow 072/124 Dragons Exalted",
+    "fullDisplayName": "Murkrow 72/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1863,18 +2310,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-072-low.png",
-    "imageHighSrc": "cards/bw6-072-high.png"
+    "imageHighSrc": "cards/bw6-072-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10"
+      },
+      {
+        "name": "Wing Attack",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2814",
-    "externalId": null,
+    "externalId": "bw6-71",
     "tcgdex_id": "bw6-71",
     "localId": "071",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "071/124",
+    "cardNumber": "71/124",
     "cardName": "Terrakion-EX",
-    "fullDisplayName": "Terrakion-EX 071/124 Dragons Exalted",
+    "fullDisplayName": "Terrakion-EX 71/124 Dragons Exalted",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1897,18 +2354,29 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-071-low.png",
-    "imageHighSrc": "cards/bw6-071-high.png"
+    "imageHighSrc": "cards/bw6-071-high.png",
+    "attacks": [
+      {
+        "name": "Rock Tumble",
+        "damage": "50"
+      },
+      {
+        "name": "Pump-up Smash",
+        "damage": "90"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2813",
-    "externalId": null,
+    "externalId": "bw6-70",
     "tcgdex_id": "bw6-70",
     "localId": "070",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "070/124",
+    "cardNumber": "70/124",
     "cardName": "Stunfisk",
-    "fullDisplayName": "Stunfisk 070/124 Dragons Exalted",
+    "fullDisplayName": "Stunfisk 70/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1930,18 +2398,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-070-low.png",
-    "imageHighSrc": "cards/bw6-070-high.png"
+    "imageHighSrc": "cards/bw6-070-high.png",
+    "attacks": [
+      {
+        "name": "Muddy Water",
+        "damage": "20"
+      },
+      {
+        "name": "Rumble",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2812",
-    "externalId": null,
+    "externalId": "bw6-69",
     "tcgdex_id": "bw6-69",
     "localId": "069",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "069/124",
+    "cardNumber": "69/124",
     "cardName": "Sawk",
-    "fullDisplayName": "Sawk 069/124 Dragons Exalted",
+    "fullDisplayName": "Sawk 69/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1963,18 +2441,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-069-low.png",
-    "imageHighSrc": "cards/bw6-069-high.png"
+    "imageHighSrc": "cards/bw6-069-high.png",
+    "attacks": [
+      {
+        "name": "Defensive Stance",
+        "damage": null
+      },
+      {
+        "name": "Karate Chop",
+        "damage": "70-"
+      }
+    ]
   },
   {
     "masterCardId": "2811",
-    "externalId": null,
+    "externalId": "bw6-68",
     "tcgdex_id": "bw6-68",
     "localId": "068",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "068/124",
+    "cardNumber": "68/124",
     "cardName": "Throh",
-    "fullDisplayName": "Throh 068/124 Dragons Exalted",
+    "fullDisplayName": "Throh 68/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -1996,18 +2484,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-068-low.png",
-    "imageHighSrc": "cards/bw6-068-high.png"
+    "imageHighSrc": "cards/bw6-068-high.png",
+    "attacks": [
+      {
+        "name": "Squeeze",
+        "damage": "40+"
+      },
+      {
+        "name": "Superpower",
+        "damage": "70+"
+      }
+    ]
   },
   {
     "masterCardId": "2810",
-    "externalId": null,
+    "externalId": "bw6-67",
     "tcgdex_id": "bw6-67",
     "localId": "067",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "067/124",
+    "cardNumber": "67/124",
     "cardName": "Gigalith",
-    "fullDisplayName": "Gigalith 067/124 Dragons Exalted",
+    "fullDisplayName": "Gigalith 67/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2029,18 +2527,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-067-low.png",
-    "imageHighSrc": "cards/bw6-067-high.png"
+    "imageHighSrc": "cards/bw6-067-high.png",
+    "attacks": [
+      {
+        "name": "Revenge Cannon",
+        "damage": "10+"
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "120"
+      }
+    ]
   },
   {
     "masterCardId": "2809",
-    "externalId": null,
+    "externalId": "bw6-66",
     "tcgdex_id": "bw6-66",
     "localId": "066",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "066/124",
+    "cardNumber": "66/124",
     "cardName": "Boldore",
-    "fullDisplayName": "Boldore 066/124 Dragons Exalted",
+    "fullDisplayName": "Boldore 66/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2062,18 +2570,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-066-low.png",
-    "imageHighSrc": "cards/bw6-066-high.png"
+    "imageHighSrc": "cards/bw6-066-high.png",
+    "attacks": [
+      {
+        "name": "Rock Cannon",
+        "damage": "30×"
+      },
+      {
+        "name": "Earthquake",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2808",
-    "externalId": null,
+    "externalId": "bw6-65",
     "tcgdex_id": "bw6-65",
     "localId": "065",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "065/124",
+    "cardNumber": "65/124",
     "cardName": "Roggenrola",
-    "fullDisplayName": "Roggenrola 065/124 Dragons Exalted",
+    "fullDisplayName": "Roggenrola 65/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2095,18 +2613,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-065-low.png",
-    "imageHighSrc": "cards/bw6-065-high.png"
+    "imageHighSrc": "cards/bw6-065-high.png",
+    "attacks": [
+      {
+        "name": "Stone Edge",
+        "damage": "10+"
+      },
+      {
+        "name": "Hammer In",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2807",
-    "externalId": null,
+    "externalId": "bw6-64",
     "tcgdex_id": "bw6-64",
     "localId": "064",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "064/124",
+    "cardNumber": "64/124",
     "cardName": "Claydol",
-    "fullDisplayName": "Claydol 064/124 Dragons Exalted",
+    "fullDisplayName": "Claydol 64/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2128,18 +2656,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-064-low.png",
-    "imageHighSrc": "cards/bw6-064-high.png"
+    "imageHighSrc": "cards/bw6-064-high.png",
+    "attacks": [
+      {
+        "name": "Rapid Spin",
+        "damage": "30"
+      },
+      {
+        "name": "Rock Smash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2806",
-    "externalId": null,
+    "externalId": "bw6-63",
     "tcgdex_id": "bw6-63",
     "localId": "063",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "063/124",
+    "cardNumber": "63/124",
     "cardName": "Baltoy",
-    "fullDisplayName": "Baltoy 063/124 Dragons Exalted",
+    "fullDisplayName": "Baltoy 63/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2161,18 +2699,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-063-low.png",
-    "imageHighSrc": "cards/bw6-063-high.png"
+    "imageHighSrc": "cards/bw6-063-high.png",
+    "attacks": [
+      {
+        "name": "Spinning Attack",
+        "damage": "10"
+      },
+      {
+        "name": "Reverse Spin",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2805",
-    "externalId": null,
+    "externalId": "bw6-62",
     "tcgdex_id": "bw6-62",
     "localId": "062",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "062/124",
+    "cardNumber": "62/124",
     "cardName": "Nosepass",
-    "fullDisplayName": "Nosepass 062/124 Dragons Exalted",
+    "fullDisplayName": "Nosepass 62/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2194,18 +2742,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-062-low.png",
-    "imageHighSrc": "cards/bw6-062-high.png"
+    "imageHighSrc": "cards/bw6-062-high.png",
+    "attacks": [
+      {
+        "name": "Rock Throw",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2804",
-    "externalId": null,
+    "externalId": "bw6-61",
     "tcgdex_id": "bw6-61",
     "localId": "061",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "061/124",
+    "cardNumber": "61/124",
     "cardName": "Marowak",
-    "fullDisplayName": "Marowak 061/124 Dragons Exalted",
+    "fullDisplayName": "Marowak 61/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2227,18 +2781,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-061-low.png",
-    "imageHighSrc": "cards/bw6-061-high.png"
+    "imageHighSrc": "cards/bw6-061-high.png",
+    "attacks": [
+      {
+        "name": "Bone Lock",
+        "damage": "30"
+      },
+      {
+        "name": "Vortex Chop",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2803",
-    "externalId": null,
+    "externalId": "bw6-60",
     "tcgdex_id": "bw6-60",
     "localId": "060",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "060/124",
+    "cardNumber": "60/124",
     "cardName": "Cubone",
-    "fullDisplayName": "Cubone 060/124 Dragons Exalted",
+    "fullDisplayName": "Cubone 60/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2260,18 +2824,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-060-low.png",
-    "imageHighSrc": "cards/bw6-060-high.png"
+    "imageHighSrc": "cards/bw6-060-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10"
+      },
+      {
+        "name": "Beat",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2802",
-    "externalId": null,
+    "externalId": "bw6-59",
     "tcgdex_id": "bw6-59",
     "localId": "059",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "059/124",
+    "cardNumber": "59/124",
     "cardName": "Golurk",
-    "fullDisplayName": "Golurk 059/124 Dragons Exalted",
+    "fullDisplayName": "Golurk 59/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2293,18 +2867,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-059-low.png",
-    "imageHighSrc": "cards/bw6-059-high.png"
+    "imageHighSrc": "cards/bw6-059-high.png",
+    "attacks": [
+      {
+        "name": "Devolution Punch",
+        "damage": "60"
+      },
+      {
+        "name": "Ghost Hammer",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2801",
-    "externalId": null,
+    "externalId": "bw6-58",
     "tcgdex_id": "bw6-58",
     "localId": "058",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "058/124",
+    "cardNumber": "58/124",
     "cardName": "Golett",
-    "fullDisplayName": "Golett 058/124 Dragons Exalted",
+    "fullDisplayName": "Golett 58/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2326,18 +2910,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-058-low.png",
-    "imageHighSrc": "cards/bw6-058-high.png"
+    "imageHighSrc": "cards/bw6-058-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null
+      },
+      {
+        "name": "Pound",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2800",
-    "externalId": null,
+    "externalId": "bw6-57",
     "tcgdex_id": "bw6-57",
     "localId": "057",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "057/124",
+    "cardNumber": "57/124",
     "cardName": "Gothitelle",
-    "fullDisplayName": "Gothitelle 057/124 Dragons Exalted",
+    "fullDisplayName": "Gothitelle 57/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2359,18 +2953,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-057-low.png",
-    "imageHighSrc": "cards/bw6-057-high.png"
+    "imageHighSrc": "cards/bw6-057-high.png",
+    "attacks": [
+      {
+        "name": "Doom Decree",
+        "damage": null
+      },
+      {
+        "name": "Black Magic",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2799",
-    "externalId": null,
+    "externalId": "bw6-56",
     "tcgdex_id": "bw6-56",
     "localId": "056",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "056/124",
+    "cardNumber": "56/124",
     "cardName": "Gothorita",
-    "fullDisplayName": "Gothorita 056/124 Dragons Exalted",
+    "fullDisplayName": "Gothorita 56/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2392,18 +2996,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-056-low.png",
-    "imageHighSrc": "cards/bw6-056-high.png"
+    "imageHighSrc": "cards/bw6-056-high.png",
+    "attacks": [
+      {
+        "name": "Hypnoblast",
+        "damage": "10"
+      },
+      {
+        "name": "Mind Shock",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2798",
-    "externalId": null,
+    "externalId": "bw6-55",
     "tcgdex_id": "bw6-55",
     "localId": "055",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "055/124",
+    "cardNumber": "55/124",
     "cardName": "Gothita",
-    "fullDisplayName": "Gothita 055/124 Dragons Exalted",
+    "fullDisplayName": "Gothita 55/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2425,18 +3039,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-055-low.png",
-    "imageHighSrc": "cards/bw6-055-high.png"
+    "imageHighSrc": "cards/bw6-055-high.png",
+    "attacks": [
+      {
+        "name": "Future Sight",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2797",
-    "externalId": null,
+    "externalId": "bw6-54",
     "tcgdex_id": "bw6-54",
     "localId": "054",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "054/124",
+    "cardNumber": "54/124",
     "cardName": "Garbodor",
-    "fullDisplayName": "Garbodor 054/124 Dragons Exalted",
+    "fullDisplayName": "Garbodor 54/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2458,18 +3078,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-054-low.png",
-    "imageHighSrc": "cards/bw6-054-high.png"
+    "imageHighSrc": "cards/bw6-054-high.png",
+    "attacks": [
+      {
+        "name": "Sludge Toss",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2796",
-    "externalId": null,
+    "externalId": "bw6-53",
     "tcgdex_id": "bw6-53",
     "localId": "053",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "053/124",
+    "cardNumber": "53/124",
     "cardName": "Trubbish",
-    "fullDisplayName": "Trubbish 053/124 Dragons Exalted",
+    "fullDisplayName": "Trubbish 53/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2491,18 +3117,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-053-low.png",
-    "imageHighSrc": "cards/bw6-053-high.png"
+    "imageHighSrc": "cards/bw6-053-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20"
+      },
+      {
+        "name": "Poison Gas",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2795",
-    "externalId": null,
+    "externalId": "bw6-52",
     "tcgdex_id": "bw6-52",
     "localId": "052",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "052/124",
+    "cardNumber": "52/124",
     "cardName": "Sigilyph",
-    "fullDisplayName": "Sigilyph 052/124 Dragons Exalted",
+    "fullDisplayName": "Sigilyph 52/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2524,18 +3160,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-052-low.png",
-    "imageHighSrc": "cards/bw6-052-high.png"
+    "imageHighSrc": "cards/bw6-052-high.png",
+    "attacks": [
+      {
+        "name": "Psychic",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2794",
-    "externalId": null,
+    "externalId": "bw6-51",
     "tcgdex_id": "bw6-51",
     "localId": "051",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "051/124",
+    "cardNumber": "51/124",
     "cardName": "Drifblim",
-    "fullDisplayName": "Drifblim 051/124 Dragons Exalted",
+    "fullDisplayName": "Drifblim 51/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2557,18 +3199,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-051-low.png",
-    "imageHighSrc": "cards/bw6-051-high.png"
+    "imageHighSrc": "cards/bw6-051-high.png",
+    "attacks": [
+      {
+        "name": "Shadow Steal",
+        "damage": "50×"
+      },
+      {
+        "name": "Plentiful Placement",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2793",
-    "externalId": null,
+    "externalId": "bw6-50",
     "tcgdex_id": "bw6-50",
     "localId": "050",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "050/124",
+    "cardNumber": "50/124",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 050/124 Dragons Exalted",
+    "fullDisplayName": "Drifloon 50/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2590,18 +3242,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-050-low.png",
-    "imageHighSrc": "cards/bw6-050-high.png"
+    "imageHighSrc": "cards/bw6-050-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Gust",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2792",
-    "externalId": null,
+    "externalId": "bw6-49",
     "tcgdex_id": "bw6-49",
     "localId": "049",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "049/124",
+    "cardNumber": "49/124",
     "cardName": "Drifloon",
-    "fullDisplayName": "Drifloon 049/124 Dragons Exalted",
+    "fullDisplayName": "Drifloon 49/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2623,18 +3285,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-049-low.png",
-    "imageHighSrc": "cards/bw6-049-high.png"
+    "imageHighSrc": "cards/bw6-049-high.png",
+    "attacks": [
+      {
+        "name": "Sneaky Placement",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2791",
-    "externalId": null,
+    "externalId": "bw6-48",
     "tcgdex_id": "bw6-48",
     "localId": "048",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "048/124",
+    "cardNumber": "48/124",
     "cardName": "Shedinja",
-    "fullDisplayName": "Shedinja 048/124 Dragons Exalted",
+    "fullDisplayName": "Shedinja 48/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2656,18 +3324,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-048-low.png",
-    "imageHighSrc": "cards/bw6-048-high.png"
+    "imageHighSrc": "cards/bw6-048-high.png",
+    "attacks": [
+      {
+        "name": "Cursed Drop",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2790",
-    "externalId": null,
+    "externalId": "bw6-47",
     "tcgdex_id": "bw6-47",
     "localId": "047",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "047/124",
+    "cardNumber": "47/124",
     "cardName": "Dustox",
-    "fullDisplayName": "Dustox 047/124 Dragons Exalted",
+    "fullDisplayName": "Dustox 47/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2689,18 +3363,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-047-low.png",
-    "imageHighSrc": "cards/bw6-047-high.png"
+    "imageHighSrc": "cards/bw6-047-high.png",
+    "attacks": [
+      {
+        "name": "Hazardous Scales",
+        "damage": null
+      },
+      {
+        "name": "Aerial Ace",
+        "damage": "50+"
+      }
+    ]
   },
   {
     "masterCardId": "2789",
-    "externalId": null,
+    "externalId": "bw6-46",
     "tcgdex_id": "bw6-46",
     "localId": "046",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "046/124",
+    "cardNumber": "46/124",
     "cardName": "Mew-EX",
-    "fullDisplayName": "Mew-EX 046/124 Dragons Exalted",
+    "fullDisplayName": "Mew-EX 46/124 Dragons Exalted",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2723,18 +3407,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-046-low.png",
-    "imageHighSrc": "cards/bw6-046-high.png"
+    "imageHighSrc": "cards/bw6-046-high.png",
+    "attacks": [
+      {
+        "name": "Replace",
+        "damage": null
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2788",
-    "externalId": null,
+    "externalId": "bw6-45",
     "tcgdex_id": "bw6-45",
     "localId": "045",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "045/124",
+    "cardNumber": "45/124",
     "cardName": "Emolga",
-    "fullDisplayName": "Emolga 045/124 Dragons Exalted",
+    "fullDisplayName": "Emolga 45/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2756,18 +3447,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-045-low.png",
-    "imageHighSrc": "cards/bw6-045-high.png"
+    "imageHighSrc": "cards/bw6-045-high.png",
+    "attacks": [
+      {
+        "name": "Call for Family",
+        "damage": null
+      },
+      {
+        "name": "Static Shock",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2787",
-    "externalId": null,
+    "externalId": "bw6-44",
     "tcgdex_id": "bw6-44",
     "localId": "044",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "044/124",
+    "cardNumber": "44/124",
     "cardName": "Manectric",
-    "fullDisplayName": "Manectric 044/124 Dragons Exalted",
+    "fullDisplayName": "Manectric 44/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2789,18 +3490,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-044-low.png",
-    "imageHighSrc": "cards/bw6-044-high.png"
+    "imageHighSrc": "cards/bw6-044-high.png",
+    "attacks": [
+      {
+        "name": "Energy Assist",
+        "damage": null
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2786",
-    "externalId": null,
+    "externalId": "bw6-43",
     "tcgdex_id": "bw6-43",
     "localId": "043",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "043/124",
+    "cardNumber": "43/124",
     "cardName": "Manectric",
-    "fullDisplayName": "Manectric 043/124 Dragons Exalted",
+    "fullDisplayName": "Manectric 43/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2822,18 +3533,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-043-low.png",
-    "imageHighSrc": "cards/bw6-043-high.png"
+    "imageHighSrc": "cards/bw6-043-high.png",
+    "attacks": [
+      {
+        "name": "Energy Crush",
+        "damage": "20×"
+      },
+      {
+        "name": "Flash Impact",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2785",
-    "externalId": null,
+    "externalId": "bw6-42",
     "tcgdex_id": "bw6-42",
     "localId": "042",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "042/124",
+    "cardNumber": "42/124",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 042/124 Dragons Exalted",
+    "fullDisplayName": "Electrike 42/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2855,18 +3576,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-042-low.png",
-    "imageHighSrc": "cards/bw6-042-high.png"
+    "imageHighSrc": "cards/bw6-042-high.png",
+    "attacks": [
+      {
+        "name": "Quick Turn",
+        "damage": "20×"
+      }
+    ]
   },
   {
     "masterCardId": "2784",
-    "externalId": null,
+    "externalId": "bw6-41",
     "tcgdex_id": "bw6-41",
     "localId": "041",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "041/124",
+    "cardNumber": "41/124",
     "cardName": "Electrike",
-    "fullDisplayName": "Electrike 041/124 Dragons Exalted",
+    "fullDisplayName": "Electrike 41/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2888,18 +3615,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-041-low.png",
-    "imageHighSrc": "cards/bw6-041-high.png"
+    "imageHighSrc": "cards/bw6-041-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10"
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2783",
-    "externalId": null,
+    "externalId": "bw6-40",
     "tcgdex_id": "bw6-40",
     "localId": "040",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "040/124",
+    "cardNumber": "40/124",
     "cardName": "Ampharos",
-    "fullDisplayName": "Ampharos 040/124 Dragons Exalted",
+    "fullDisplayName": "Ampharos 40/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -2921,18 +3658,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-040-low.png",
-    "imageHighSrc": "cards/bw6-040-high.png"
+    "imageHighSrc": "cards/bw6-040-high.png",
+    "attacks": [
+      {
+        "name": "Electrobullet",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2782",
-    "externalId": null,
+    "externalId": "bw6-39",
     "tcgdex_id": "bw6-39",
     "localId": "039",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "039/124",
+    "cardNumber": "39/124",
     "cardName": "Flaaffy",
-    "fullDisplayName": "Flaaffy 039/124 Dragons Exalted",
+    "fullDisplayName": "Flaaffy 39/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -2954,18 +3697,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-039-low.png",
-    "imageHighSrc": "cards/bw6-039-high.png"
+    "imageHighSrc": "cards/bw6-039-high.png",
+    "attacks": [
+      {
+        "name": "Cotton Guard",
+        "damage": "20"
+      },
+      {
+        "name": "Power Gem",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2781",
-    "externalId": null,
+    "externalId": "bw6-38",
     "tcgdex_id": "bw6-38",
     "localId": "038",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "038/124",
+    "cardNumber": "38/124",
     "cardName": "Mareep",
-    "fullDisplayName": "Mareep 038/124 Dragons Exalted",
+    "fullDisplayName": "Mareep 38/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -2987,18 +3740,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-038-low.png",
-    "imageHighSrc": "cards/bw6-038-high.png"
+    "imageHighSrc": "cards/bw6-038-high.png",
+    "attacks": [
+      {
+        "name": "Cotton Guard",
+        "damage": null
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2780",
-    "externalId": null,
+    "externalId": "bw6-37",
     "tcgdex_id": "bw6-37",
     "localId": "037",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "037/124",
+    "cardNumber": "37/124",
     "cardName": "Alomomola",
-    "fullDisplayName": "Alomomola 037/124 Dragons Exalted",
+    "fullDisplayName": "Alomomola 37/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3020,18 +3783,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-037-low.png",
-    "imageHighSrc": "cards/bw6-037-high.png"
+    "imageHighSrc": "cards/bw6-037-high.png",
+    "attacks": [
+      {
+        "name": "Mysterious Beam",
+        "damage": "30"
+      },
+      {
+        "name": "Double Slap",
+        "damage": "50×"
+      }
+    ]
   },
   {
     "masterCardId": "2779",
-    "externalId": null,
+    "externalId": "bw6-36",
     "tcgdex_id": "bw6-36",
     "localId": "036",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "036/124",
+    "cardNumber": "36/124",
     "cardName": "Seismitoad",
-    "fullDisplayName": "Seismitoad 036/124 Dragons Exalted",
+    "fullDisplayName": "Seismitoad 36/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3053,18 +3826,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-036-low.png",
-    "imageHighSrc": "cards/bw6-036-high.png"
+    "imageHighSrc": "cards/bw6-036-high.png",
+    "attacks": [
+      {
+        "name": "Echoed Voice",
+        "damage": "50"
+      },
+      {
+        "name": "Drain Punch",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2778",
-    "externalId": null,
+    "externalId": "bw6-35",
     "tcgdex_id": "bw6-35",
     "localId": "035",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "035/124",
+    "cardNumber": "35/124",
     "cardName": "Palpitoad",
-    "fullDisplayName": "Palpitoad 035/124 Dragons Exalted",
+    "fullDisplayName": "Palpitoad 35/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3086,18 +3869,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-035-low.png",
-    "imageHighSrc": "cards/bw6-035-high.png"
+    "imageHighSrc": "cards/bw6-035-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null
+      },
+      {
+        "name": "Hyper Voice",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2777",
-    "externalId": null,
+    "externalId": "bw6-34",
     "tcgdex_id": "bw6-34",
     "localId": "034",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "034/124",
+    "cardNumber": "34/124",
     "cardName": "Tympole",
-    "fullDisplayName": "Tympole 034/124 Dragons Exalted",
+    "fullDisplayName": "Tympole 34/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3119,18 +3912,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-034-low.png",
-    "imageHighSrc": "cards/bw6-034-high.png"
+    "imageHighSrc": "cards/bw6-034-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2776",
-    "externalId": null,
+    "externalId": "bw6-33",
     "tcgdex_id": "bw6-33",
     "localId": "033",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "033/124",
+    "cardNumber": "33/124",
     "cardName": "Floatzel",
-    "fullDisplayName": "Floatzel 033/124 Dragons Exalted",
+    "fullDisplayName": "Floatzel 33/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3152,18 +3951,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-033-low.png",
-    "imageHighSrc": "cards/bw6-033-high.png"
+    "imageHighSrc": "cards/bw6-033-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "20"
+      },
+      {
+        "name": "Waterfall",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2775",
-    "externalId": null,
+    "externalId": "bw6-32",
     "tcgdex_id": "bw6-32",
     "localId": "032",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "032/124",
+    "cardNumber": "32/124",
     "cardName": "Buizel",
-    "fullDisplayName": "Buizel 032/124 Dragons Exalted",
+    "fullDisplayName": "Buizel 32/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3185,18 +3994,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-032-low.png",
-    "imageHighSrc": "cards/bw6-032-high.png"
+    "imageHighSrc": "cards/bw6-032-high.png",
+    "attacks": [
+      {
+        "name": "Wave Splash",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2774",
-    "externalId": null,
+    "externalId": "bw6-31",
     "tcgdex_id": "bw6-31",
     "localId": "031",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "031/124",
+    "cardNumber": "31/124",
     "cardName": "Walrein",
-    "fullDisplayName": "Walrein 031/124 Dragons Exalted",
+    "fullDisplayName": "Walrein 31/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3218,18 +4033,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-031-low.png",
-    "imageHighSrc": "cards/bw6-031-high.png"
+    "imageHighSrc": "cards/bw6-031-high.png",
+    "attacks": [
+      {
+        "name": "Aurora Beam",
+        "damage": "80"
+      },
+      {
+        "name": "Ice Entomb",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2773",
-    "externalId": null,
+    "externalId": "bw6-30",
     "tcgdex_id": "bw6-30",
     "localId": "030",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "030/124",
+    "cardNumber": "30/124",
     "cardName": "Sealeo",
-    "fullDisplayName": "Sealeo 030/124 Dragons Exalted",
+    "fullDisplayName": "Sealeo 30/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3251,18 +4076,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-030-low.png",
-    "imageHighSrc": "cards/bw6-030-high.png"
+    "imageHighSrc": "cards/bw6-030-high.png",
+    "attacks": [
+      {
+        "name": "Ice Ball",
+        "damage": "30"
+      },
+      {
+        "name": "Aurora Beam",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2772",
-    "externalId": null,
+    "externalId": "bw6-29",
     "tcgdex_id": "bw6-29",
     "localId": "029",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "029/124",
+    "cardNumber": "29/124",
     "cardName": "Spheal",
-    "fullDisplayName": "Spheal 029/124 Dragons Exalted",
+    "fullDisplayName": "Spheal 29/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3284,18 +4119,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-029-low.png",
-    "imageHighSrc": "cards/bw6-029-high.png"
+    "imageHighSrc": "cards/bw6-029-high.png",
+    "attacks": [
+      {
+        "name": "Unstoppable Roll",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2771",
-    "externalId": null,
+    "externalId": "bw6-28",
     "tcgdex_id": "bw6-28",
     "localId": "028",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "028/124",
+    "cardNumber": "28/124",
     "cardName": "Milotic",
-    "fullDisplayName": "Milotic 028/124 Dragons Exalted",
+    "fullDisplayName": "Milotic 28/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3317,18 +4158,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-028-low.png",
-    "imageHighSrc": "cards/bw6-028-high.png"
+    "imageHighSrc": "cards/bw6-028-high.png",
+    "attacks": [
+      {
+        "name": "Clear Search",
+        "damage": null
+      },
+      {
+        "name": "Water Pulse",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2770",
-    "externalId": null,
+    "externalId": "bw6-27",
     "tcgdex_id": "bw6-27",
     "localId": "027",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "027/124",
+    "cardNumber": "27/124",
     "cardName": "Feebas",
-    "fullDisplayName": "Feebas 027/124 Dragons Exalted",
+    "fullDisplayName": "Feebas 27/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3350,18 +4201,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-027-low.png",
-    "imageHighSrc": "cards/bw6-027-high.png"
+    "imageHighSrc": "cards/bw6-027-high.png",
+    "attacks": [
+      {
+        "name": "Add-a-Dash",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2769",
-    "externalId": null,
+    "externalId": "bw6-26",
     "tcgdex_id": "bw6-26",
     "localId": "026",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "026/124",
+    "cardNumber": "26/124",
     "cardName": "Wailord",
-    "fullDisplayName": "Wailord 026/124 Dragons Exalted",
+    "fullDisplayName": "Wailord 26/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3383,18 +4240,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-026-low.png",
-    "imageHighSrc": "cards/bw6-026-high.png"
+    "imageHighSrc": "cards/bw6-026-high.png",
+    "attacks": [
+      {
+        "name": "Water Cannon",
+        "damage": "30×"
+      },
+      {
+        "name": "Giant Wave",
+        "damage": "80"
+      }
+    ]
   },
   {
     "masterCardId": "2768",
-    "externalId": null,
+    "externalId": "bw6-25",
     "tcgdex_id": "bw6-25",
     "localId": "025",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "025/124",
+    "cardNumber": "25/124",
     "cardName": "Wailmer",
-    "fullDisplayName": "Wailmer 025/124 Dragons Exalted",
+    "fullDisplayName": "Wailmer 25/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3416,18 +4283,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-025-low.png",
-    "imageHighSrc": "cards/bw6-025-high.png"
+    "imageHighSrc": "cards/bw6-025-high.png",
+    "attacks": [
+      {
+        "name": "Lullaby",
+        "damage": null
+      },
+      {
+        "name": "Water Gun",
+        "damage": "30"
+      }
+    ]
   },
   {
     "masterCardId": "2767",
-    "externalId": null,
+    "externalId": "bw6-24",
     "tcgdex_id": "bw6-24",
     "localId": "024",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "024/124",
+    "cardNumber": "24/124",
     "cardName": "Gyarados",
-    "fullDisplayName": "Gyarados 024/124 Dragons Exalted",
+    "fullDisplayName": "Gyarados 24/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3449,18 +4326,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-024-low.png",
-    "imageHighSrc": "cards/bw6-024-high.png"
+    "imageHighSrc": "cards/bw6-024-high.png",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "60"
+      },
+      {
+        "name": "Swing Around",
+        "damage": "60+"
+      }
+    ]
   },
   {
     "masterCardId": "2766",
-    "externalId": null,
+    "externalId": "bw6-23",
     "tcgdex_id": "bw6-23",
     "localId": "023",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "023/124",
+    "cardNumber": "23/124",
     "cardName": "Magikarp",
-    "fullDisplayName": "Magikarp 023/124 Dragons Exalted",
+    "fullDisplayName": "Magikarp 23/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3482,18 +4369,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-023-low.png",
-    "imageHighSrc": "cards/bw6-023-high.png"
+    "imageHighSrc": "cards/bw6-023-high.png",
+    "attacks": [
+      {
+        "name": "Soggy Rush",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2765",
-    "externalId": null,
+    "externalId": "bw6-22",
     "tcgdex_id": "bw6-22",
     "localId": "022",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "022/124",
+    "cardNumber": "22/124",
     "cardName": "Ho-Oh-EX",
-    "fullDisplayName": "Ho-Oh-EX 022/124 Dragons Exalted",
+    "fullDisplayName": "Ho-Oh-EX 22/124 Dragons Exalted",
     "rarity": "Rare Holo EX",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3516,18 +4409,25 @@
     "isActive": true,
     "noPricing": true,
     "imageLowSrc": "cards/bw6-022-low.png",
-    "imageHighSrc": "cards/bw6-022-high.png"
+    "imageHighSrc": "cards/bw6-022-high.png",
+    "attacks": [
+      {
+        "name": "Rainbow Burn",
+        "damage": "20+"
+      }
+    ],
+    "rules": "Pokémon-EX rule: When a Pokémon-EX has been Knocked Out, your opponent takes 2 Prize cards."
   },
   {
     "masterCardId": "2764",
-    "externalId": null,
+    "externalId": "bw6-21",
     "tcgdex_id": "bw6-21",
     "localId": "021",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "021/124",
+    "cardNumber": "21/124",
     "cardName": "Magmortar",
-    "fullDisplayName": "Magmortar 021/124 Dragons Exalted",
+    "fullDisplayName": "Magmortar 21/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3549,18 +4449,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-021-low.png",
-    "imageHighSrc": "cards/bw6-021-high.png"
+    "imageHighSrc": "cards/bw6-021-high.png",
+    "attacks": [
+      {
+        "name": "Flame Screen",
+        "damage": "40"
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "90"
+      }
+    ]
   },
   {
     "masterCardId": "2763",
-    "externalId": null,
+    "externalId": "bw6-20",
     "tcgdex_id": "bw6-20",
     "localId": "020",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "020/124",
+    "cardNumber": "20/124",
     "cardName": "Magmar",
-    "fullDisplayName": "Magmar 020/124 Dragons Exalted",
+    "fullDisplayName": "Magmar 20/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3582,18 +4492,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-020-low.png",
-    "imageHighSrc": "cards/bw6-020-high.png"
+    "imageHighSrc": "cards/bw6-020-high.png",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "10"
+      },
+      {
+        "name": "Magma Punch",
+        "damage": "50"
+      }
+    ]
   },
   {
     "masterCardId": "2762",
-    "externalId": null,
+    "externalId": "bw6-19",
     "tcgdex_id": "bw6-19",
     "localId": "019",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "019/124",
+    "cardNumber": "19/124",
     "cardName": "Ninetales",
-    "fullDisplayName": "Ninetales 019/124 Dragons Exalted",
+    "fullDisplayName": "Ninetales 19/124 Dragons Exalted",
     "rarity": "Rare Holo",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3615,18 +4535,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-019-low.png",
-    "imageHighSrc": "cards/bw6-019-high.png"
+    "imageHighSrc": "cards/bw6-019-high.png",
+    "attacks": [
+      {
+        "name": "Hexed Flame",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2761",
-    "externalId": null,
+    "externalId": "bw6-18",
     "tcgdex_id": "bw6-18",
     "localId": "018",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "018/124",
+    "cardNumber": "18/124",
     "cardName": "Vulpix",
-    "fullDisplayName": "Vulpix 018/124 Dragons Exalted",
+    "fullDisplayName": "Vulpix 18/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3648,18 +4574,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-018-low.png",
-    "imageHighSrc": "cards/bw6-018-high.png"
+    "imageHighSrc": "cards/bw6-018-high.png",
+    "attacks": [
+      {
+        "name": "Singe",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2760",
-    "externalId": null,
+    "externalId": "bw6-17",
     "tcgdex_id": "bw6-17",
     "localId": "017",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "017/124",
+    "cardNumber": "17/124",
     "cardName": "Foongus",
-    "fullDisplayName": "Foongus 017/124 Dragons Exalted",
+    "fullDisplayName": "Foongus 17/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3681,18 +4613,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-017-low.png",
-    "imageHighSrc": "cards/bw6-017-high.png"
+    "imageHighSrc": "cards/bw6-017-high.png",
+    "attacks": [
+      {
+        "name": "Double Spin",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2759",
-    "externalId": null,
+    "externalId": "bw6-16",
     "tcgdex_id": "bw6-16",
     "localId": "016",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "016/124",
+    "cardNumber": "16/124",
     "cardName": "Maractus",
-    "fullDisplayName": "Maractus 016/124 Dragons Exalted",
+    "fullDisplayName": "Maractus 16/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3714,18 +4652,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-016-low.png",
-    "imageHighSrc": "cards/bw6-016-high.png"
+    "imageHighSrc": "cards/bw6-016-high.png",
+    "attacks": [
+      {
+        "name": "Stun Needle",
+        "damage": "20"
+      },
+      {
+        "name": "Reinforced Needle",
+        "damage": "40+"
+      }
+    ]
   },
   {
     "masterCardId": "2758",
-    "externalId": null,
+    "externalId": "bw6-15",
     "tcgdex_id": "bw6-15",
     "localId": "015",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "015/124",
+    "cardNumber": "15/124",
     "cardName": "Roserade",
-    "fullDisplayName": "Roserade 015/124 Dragons Exalted",
+    "fullDisplayName": "Roserade 15/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3747,18 +4695,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-015-low.png",
-    "imageHighSrc": "cards/bw6-015-high.png"
+    "imageHighSrc": "cards/bw6-015-high.png",
+    "attacks": [
+      {
+        "name": "Squeeze",
+        "damage": "30+"
+      }
+    ]
   },
   {
     "masterCardId": "2757",
-    "externalId": null,
+    "externalId": "bw6-14",
     "tcgdex_id": "bw6-14",
     "localId": "014",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "014/124",
+    "cardNumber": "14/124",
     "cardName": "Roserade",
-    "fullDisplayName": "Roserade 014/124 Dragons Exalted",
+    "fullDisplayName": "Roserade 14/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3780,18 +4734,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-014-low.png",
-    "imageHighSrc": "cards/bw6-014-high.png"
+    "imageHighSrc": "cards/bw6-014-high.png",
+    "attacks": [
+      {
+        "name": "Crosswise Whip",
+        "damage": "30×"
+      },
+      {
+        "name": "Poison Point",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2756",
-    "externalId": null,
+    "externalId": "bw6-13",
     "tcgdex_id": "bw6-13",
     "localId": "013",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "013/124",
+    "cardNumber": "13/124",
     "cardName": "Roselia",
-    "fullDisplayName": "Roselia 013/124 Dragons Exalted",
+    "fullDisplayName": "Roselia 13/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3813,18 +4777,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-013-low.png",
-    "imageHighSrc": "cards/bw6-013-high.png"
+    "imageHighSrc": "cards/bw6-013-high.png",
+    "attacks": [
+      {
+        "name": "Needling Sting",
+        "damage": "10+"
+      }
+    ]
   },
   {
     "masterCardId": "2755",
-    "externalId": null,
+    "externalId": "bw6-12",
     "tcgdex_id": "bw6-12",
     "localId": "012",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "012/124",
+    "cardNumber": "12/124",
     "cardName": "Roselia",
-    "fullDisplayName": "Roselia 012/124 Dragons Exalted",
+    "fullDisplayName": "Roselia 12/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3846,18 +4816,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-012-low.png",
-    "imageHighSrc": "cards/bw6-012-high.png"
+    "imageHighSrc": "cards/bw6-012-high.png",
+    "attacks": [
+      {
+        "name": "Double Whip",
+        "damage": "10×"
+      },
+      {
+        "name": "Relaxing Fragrance",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2754",
-    "externalId": null,
+    "externalId": "bw6-11",
     "tcgdex_id": "bw6-11",
     "localId": "011",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "011/124",
+    "cardNumber": "11/124",
     "cardName": "Ninjask",
-    "fullDisplayName": "Ninjask 011/124 Dragons Exalted",
+    "fullDisplayName": "Ninjask 11/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3879,18 +4859,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-011-low.png",
-    "imageHighSrc": "cards/bw6-011-high.png"
+    "imageHighSrc": "cards/bw6-011-high.png",
+    "attacks": [
+      {
+        "name": "Night Slash",
+        "damage": "60"
+      }
+    ]
   },
   {
     "masterCardId": "2753",
-    "externalId": null,
+    "externalId": "bw6-10",
     "tcgdex_id": "bw6-10",
     "localId": "010",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "010/124",
+    "cardNumber": "10/124",
     "cardName": "Nincada",
-    "fullDisplayName": "Nincada 010/124 Dragons Exalted",
+    "fullDisplayName": "Nincada 10/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -3912,18 +4898,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-010-low.png",
-    "imageHighSrc": "cards/bw6-010-high.png"
+    "imageHighSrc": "cards/bw6-010-high.png",
+    "attacks": [
+      {
+        "name": "Dig",
+        "damage": "10"
+      }
+    ]
   },
   {
     "masterCardId": "2752",
-    "externalId": null,
+    "externalId": "bw6-9",
     "tcgdex_id": "bw6-9",
     "localId": "009",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "009/124",
+    "cardNumber": "9/124",
     "cardName": "Cascoon",
-    "fullDisplayName": "Cascoon 009/124 Dragons Exalted",
+    "fullDisplayName": "Cascoon 9/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -3945,18 +4937,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-009-low.png",
-    "imageHighSrc": "cards/bw6-009-high.png"
+    "imageHighSrc": "cards/bw6-009-high.png",
+    "attacks": [
+      {
+        "name": "Tangle Drag",
+        "damage": null
+      },
+      {
+        "name": "Spiral Drain",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2751",
-    "externalId": null,
+    "externalId": "bw6-8",
     "tcgdex_id": "bw6-8",
     "localId": "008",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "008/124",
+    "cardNumber": "8/124",
     "cardName": "Beautifly",
-    "fullDisplayName": "Beautifly 008/124 Dragons Exalted",
+    "fullDisplayName": "Beautifly 8/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -3978,18 +4980,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-008-low.png",
-    "imageHighSrc": "cards/bw6-008-high.png"
+    "imageHighSrc": "cards/bw6-008-high.png",
+    "attacks": [
+      {
+        "name": "Triple Energy",
+        "damage": null
+      },
+      {
+        "name": "Drainpour",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2750",
-    "externalId": null,
+    "externalId": "bw6-7",
     "tcgdex_id": "bw6-7",
     "localId": "007",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "007/124",
+    "cardNumber": "7/124",
     "cardName": "Silcoon",
-    "fullDisplayName": "Silcoon 007/124 Dragons Exalted",
+    "fullDisplayName": "Silcoon 7/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4011,18 +5023,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-007-low.png",
-    "imageHighSrc": "cards/bw6-007-high.png"
+    "imageHighSrc": "cards/bw6-007-high.png",
+    "attacks": [
+      {
+        "name": "Harden",
+        "damage": null
+      },
+      {
+        "name": "Bug Bite",
+        "damage": "40"
+      }
+    ]
   },
   {
     "masterCardId": "2749",
-    "externalId": null,
+    "externalId": "bw6-6",
     "tcgdex_id": "bw6-6",
     "localId": "006",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "006/124",
+    "cardNumber": "6/124",
     "cardName": "Wurmple",
-    "fullDisplayName": "Wurmple 006/124 Dragons Exalted",
+    "fullDisplayName": "Wurmple 6/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4044,18 +5066,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-006-low.png",
-    "imageHighSrc": "cards/bw6-006-high.png"
+    "imageHighSrc": "cards/bw6-006-high.png",
+    "attacks": [
+      {
+        "name": "Sleep Poison",
+        "damage": null
+      }
+    ]
   },
   {
     "masterCardId": "2748",
-    "externalId": null,
+    "externalId": "bw6-5",
     "tcgdex_id": "bw6-5",
     "localId": "005",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "005/124",
+    "cardNumber": "5/124",
     "cardName": "Yanmega",
-    "fullDisplayName": "Yanmega 005/124 Dragons Exalted",
+    "fullDisplayName": "Yanmega 5/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4077,18 +5105,28 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-005-low.png",
-    "imageHighSrc": "cards/bw6-005-high.png"
+    "imageHighSrc": "cards/bw6-005-high.png",
+    "attacks": [
+      {
+        "name": "Agility",
+        "damage": "30"
+      },
+      {
+        "name": "Cutting Wind",
+        "damage": "70"
+      }
+    ]
   },
   {
     "masterCardId": "2747",
-    "externalId": null,
+    "externalId": "bw6-4",
     "tcgdex_id": "bw6-4",
     "localId": "004",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "004/124",
+    "cardNumber": "4/124",
     "cardName": "Yanma",
-    "fullDisplayName": "Yanma 004/124 Dragons Exalted",
+    "fullDisplayName": "Yanma 4/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4110,18 +5148,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-004-low.png",
-    "imageHighSrc": "cards/bw6-004-high.png"
+    "imageHighSrc": "cards/bw6-004-high.png",
+    "attacks": [
+      {
+        "name": "Whirlwind",
+        "damage": "20"
+      }
+    ]
   },
   {
     "masterCardId": "2746",
-    "externalId": null,
+    "externalId": "bw6-3",
     "tcgdex_id": "bw6-3",
     "localId": "003",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "003/124",
+    "cardNumber": "3/124",
     "cardName": "Jumpluff",
-    "fullDisplayName": "Jumpluff 003/124 Dragons Exalted",
+    "fullDisplayName": "Jumpluff 3/124 Dragons Exalted",
     "rarity": "Rare",
     "category": "Pokémon",
     "stage": "Stage 2",
@@ -4143,18 +5187,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-003-low.png",
-    "imageHighSrc": "cards/bw6-003-high.png"
+    "imageHighSrc": "cards/bw6-003-high.png",
+    "attacks": [
+      {
+        "name": "Acrobatics",
+        "damage": "20+"
+      }
+    ]
   },
   {
     "masterCardId": "2745",
-    "externalId": null,
+    "externalId": "bw6-2",
     "tcgdex_id": "bw6-2",
     "localId": "002",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "002/124",
+    "cardNumber": "2/124",
     "cardName": "Skiploom",
-    "fullDisplayName": "Skiploom 002/124 Dragons Exalted",
+    "fullDisplayName": "Skiploom 2/124 Dragons Exalted",
     "rarity": "Uncommon",
     "category": "Pokémon",
     "stage": "Stage 1",
@@ -4176,18 +5226,24 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-002-low.png",
-    "imageHighSrc": "cards/bw6-002-high.png"
+    "imageHighSrc": "cards/bw6-002-high.png",
+    "attacks": [
+      {
+        "name": "Bullet Seed",
+        "damage": "10×"
+      }
+    ]
   },
   {
     "masterCardId": "2744",
-    "externalId": null,
+    "externalId": "bw6-1",
     "tcgdex_id": "bw6-1",
     "localId": "001",
     "setCode": "bw6",
     "setTcgdexId": "bw6",
-    "cardNumber": "001/124",
+    "cardNumber": "1/124",
     "cardName": "Hoppip",
-    "fullDisplayName": "Hoppip 001/124 Dragons Exalted",
+    "fullDisplayName": "Hoppip 1/124 Dragons Exalted",
     "rarity": "Common",
     "category": "Pokémon",
     "stage": "Basic",
@@ -4209,6 +5265,12 @@
     "isActive": true,
     "noPricing": false,
     "imageLowSrc": "cards/bw6-001-low.png",
-    "imageHighSrc": "cards/bw6-001-high.png"
+    "imageHighSrc": "cards/bw6-001-high.png",
+    "attacks": [
+      {
+        "name": "Flail Around",
+        "damage": "10×"
+      }
+    ]
   }
 ]
