@@ -44,19 +44,22 @@ enum CardOCRFieldExtractor {
     private static let hpMinusLeadingRegex = try! NSRegularExpression(pattern: #"^-(\d{2,4})$"#)
 
     private static let noiseExactNames: Set<String> = [
-        "basic", "basis", "basig", "basc", "stage", "pokémon", "pokemon", "trainer", "item", "supporter",
+        "basic", "basis", "basig", "basc",
+        "stage", "stage 1", "stage 2", "stage 3", "stage1", "stage2", "stage3",
+        "stagez", "stagex", "stage2.", "stage 2.", "stages",
+        "pokémon", "pokemon", "trainer", "item", "supporter",
         "stadium", "energy", "illus", "illustrator", "©", "®",
     ]
 
     /// Strip stage / layout words and collapse whitespace for catalog search (does not change Vision extraction).
     private static let searchNoiseWordRegex = try! NSRegularExpression(
-        pattern: #"(?i)\b(?:basic|basis)\b"#,
+        pattern: #"(?i)\b(?:basic|basis|stage\s*\d*)\b"#,
         options: []
     )
 
     /// Lines that are never the Pokémon name (stage markers, type abbreviations, etc.).
     private static let skipLineRegex = try! NSRegularExpression(
-        pattern: #"^(?:\d+|HP\s*\d+|\d+\s*HP|[A-Z]{1,2}|Stage\s*\d*|RETREAT|WEAKNESS|RESISTANCE|×\d|x\d|-\d+)$"#,
+        pattern: #"^(?:\d+|HP\s*\d+|\d+\s*HP|[A-Z]{1,2}|Stage\w*\s*[\dz]?\.?|RETREAT|WEAKNESS|RESISTANCE|×\d|x\d|-\d+)$"#,
         options: .caseInsensitive
     )
 
@@ -67,12 +70,20 @@ enum CardOCRFieldExtractor {
     )
 
     // MARK: - Spatial bands (normalized Vision space)
+    // Vision origin is bottom-left; Y=1.0 = physical top of card, Y=0.0 = physical bottom.
+    //
+    // Card layout (top→bottom):
+    //   Name + HP:   top 20%  → Vision Y > 0.80
+    //   Attacks:     50–85%   → Vision Y 0.15 … 0.50
+    //   Card number: bottom 10% → Vision Y < 0.10
 
-    /// Upper title band (name + HP). Tuned for full-card photos; adjust if you crop tight.
-    private static let topBandMinY: CGFloat = 0.38
-    /// Vertical band for attack names or **trainer rules** (below the title row, above the bottom strip).
-    private static let centerBandMinY: CGFloat = 0.10
-    private static let centerBandMaxY: CGFloat = 0.36
+    /// Upper title band (name + HP): top 20% of the card.
+    private static let topBandMinY: CGFloat = 0.80
+
+    /// Attack / trainer-rules band: 50–85% from the top.
+    private static let centerBandMinY: CGFloat = 0.15
+    private static let centerBandMaxY: CGFloat = 0.50
+
     /// Name is usually on the left side of the title row.
     private static let nameLeftMaxX: CGFloat = 0.58
     /// HP is usually on the right.
@@ -223,7 +234,7 @@ enum CardOCRFieldExtractor {
 
             let lower = line.text.lowercased()
             if noiseExactNames.contains(lower) { return false }
-            if lower.hasPrefix("stage ") { return false }
+            if lower.hasPrefix("stage") { return false }
 
             let ns = line.text as NSString
             let rAll = NSRange(location: 0, length: ns.length)

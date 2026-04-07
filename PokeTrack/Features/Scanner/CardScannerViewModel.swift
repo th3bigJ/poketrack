@@ -60,6 +60,9 @@ final class CardScannerViewModel: NSObject {
     private var cardDataService: CardDataService?
     private let photoOutput = AVCapturePhotoOutput()
     private var didConfigureSession = false
+    /// Normalized rect (0–1) of the card frame within the screen, set by the reticle view before capture.
+    /// Used to crop the full camera image down to just the card before running OCR.
+    var cardNormalizedRect: CGRect = .zero
     private var matchBuffer: [String: Int] = [:]
     private let matchThreshold = 1
     private let maxMatchesToShow = 15
@@ -177,13 +180,16 @@ final class CardScannerViewModel: NSObject {
         scanState = .scanning
         debugInfo.captureCount += 1
 
-        guard let cgImage = image.normalizedCGImage() else {
+        guard let fullCG = image.normalizedCGImage() else {
             DispatchQueue.main.async { [weak self] in
                 self?.scanState = .idle
                 self?.lastErrorMessage = "Could not read this photo. Try again."
             }
             return
         }
+
+        // Crop to just the card frame so OCR never sees text outside the reticle.
+        let cgImage = fullCG.croppedToCardRect(cardNormalizedRect, imageSize: image.size) ?? fullCG
 
         let orientation = CGImagePropertyOrientation(image.imageOrientation)
 
@@ -370,7 +376,11 @@ final class CardScannerViewModel: NSObject {
         return t
     }
 
-    /// 1) Narrow with name + HP + center text. 2) Rank by combined score: capped attack overlap + best # match (mined from all OCR) + optional ex hint.
+    /// Elimination pipeline:
+    /// 1. Search by name only → all printings of the named card.
+    /// 2. Filter by HP — only skipped for cards without HP (Trainers/Energy).
+    /// 3. Rank survivors by card number match + attack/rules overlap.
+    /// Fallback: if no name read, fall back to center-text search (Trainer/Energy no-name case).
     private func runSearch(
         cardName: String?,
         hp: String?,
@@ -384,49 +394,54 @@ final class CardScannerViewModel: NSObject {
             return
         }
 
-        let narrowOutcome = await narrowSearchWithTiers(
-            service: service,
-            cardName: cardName,
-            hp: hp,
-            centerHint: centerHint
+        let hasName = !(cardName?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
+        let hasHp   = !(hp?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
+
+        // Step 1: candidate pool — name-only search so attacks/rules can never pull in wrong-name cards.
+        var pool: [Card]
+        var tierLabel: String
+        if hasName {
+            pool = await service.searchByName(query: cardName!)
+            tierLabel = "name"
+        } else if let hint = centerHint, !hint.isEmpty {
+            // No name read (e.g. Trainer/Energy) — fall back to center-text search.
+            pool = await service.search(query: hint)
+            if pool.isEmpty { pool = await service.searchSoftTokenMatch(query: hint) }
+            tierLabel = "center-only"
+        } else {
+            pool = []
+            tierLabel = "none"
+        }
+
+        // Step 2: HP filter — eliminates wrong-HP printings.
+        // Cards without an HP field (Trainers/Energy) always pass through.
+        if hasHp, let ocrHP = Int(hp!.trimmingCharacters(in: .whitespacesAndNewlines)) {
+            let hpFiltered = pool.filter { card in
+                guard let cardHP = card.hp else { return true }  // no HP field → keep (Trainer/Energy)
+                return cardHP == ocrHP
+            }
+            if !hpFiltered.isEmpty {
+                pool = hpFiltered
+                tierLabel += "+hp"
+            }
+            // If HP filter wiped everything (OCR misread HP), keep the pre-filter pool.
+        }
+
+        // Step 3: rank survivors by card number + attack/rules overlap.
+        let ranked = ScannerCompositeRanker.rank(
+            pool,
+            ocrCenterHint: centerHint,
+            primaryCardNumber: setNumber,
+            extraNumberCandidates: numberCandidates,
+            rawOCRBlob: rawOCRBlob
         )
 
-        let ranked: [Card]
-        let tierLabel: String?
-        let usedQuery: String?
-
-        if let (label, query, candidates) = narrowOutcome {
-            tierLabel = label
-            usedQuery = query
-            ranked = ScannerCompositeRanker.rank(
-                candidates,
-                ocrCenterHint: centerHint,
-                primaryCardNumber: setNumber,
-                extraNumberCandidates: numberCandidates,
-                rawOCRBlob: rawOCRBlob
-            )
-        } else {
-            tierLabel = nil
-            usedQuery = nil
-            let alt = await fallbackMatches(
-                service: service,
-                cardName: cardName,
-                setNumber: setNumber,
-                centerHint: centerHint
-            )
-            ranked = ScannerCompositeRanker.rank(
-                alt,
-                ocrCenterHint: centerHint,
-                primaryCardNumber: setNumber,
-                extraNumberCandidates: numberCandidates,
-                rawOCRBlob: rawOCRBlob
-            )
-        }
+        let usedQuery = hasName ? cardName! : (centerHint ?? "")
 
         await MainActor.run { [weak self] in
             guard let self else { return }
             debugInfo.narrowTier = tierLabel
-            debugInfo.searchQueryUsed = usedQuery ?? (ranked.isEmpty ? nil : "fallback queries")
+            debugInfo.searchQueryUsed = usedQuery
             debugInfo.searchResultCount = ranked.count
             debugInfo.topResult = ranked.first.map { "\($0.cardName) [\($0.setCode) \($0.cardNumber)]" }
         }
@@ -456,8 +471,7 @@ final class CardScannerViewModel: NSObject {
             guard let self else { return }
             let count = (matchBuffer[top.masterCardId] ?? 0) + 1
             matchBuffer = [top.masterCardId: count]
-            let tier = tierLabel ?? "fallback"
-            debugInfo.matchBufferState = "\(tier) → \(ranked.count) · total \(topBreakdown.total) (atk \(topBreakdown.cappedAttack) + #\(topBreakdown.number) + ex \(topBreakdown.ex)) · \(top.setCode) #\(top.cardNumber)"
+            debugInfo.matchBufferState = "\(tierLabel) → \(ranked.count) · total \(topBreakdown.total) (atk \(topBreakdown.cappedAttack) + #\(topBreakdown.number) + ex \(topBreakdown.ex)) · \(top.setCode) #\(top.cardNumber)"
 
             if count >= matchThreshold {
                 searchResults = Array(ranked.prefix(maxMatchesToShow))
@@ -469,130 +483,6 @@ final class CardScannerViewModel: NSObject {
         }
     }
 
-    /// Tries **name + HP + center** (attacks or trainer **rules**) first, then relaxes. Collector number is ranked separately.
-    /// Center text uses strict token search first, then **soft** partial token overlap so long `rules` can match noisy OCR.
-    private func narrowSearchWithTiers(
-        service: CardDataService,
-        cardName: String?,
-        hp: String?,
-        centerHint: String?
-    ) async -> (tier: String, query: String, cards: [Card])? {
-        let hasName = !(cardName?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
-        let hasHp = !(hp?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
-        let hasCenter = !(centerHint?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
-
-        var tiers: [(String, String)] = []
-        if hasName, hasHp, hasCenter {
-            tiers.append(("name+hp+center", joinSearchParts(cardName, hp, centerHint)))
-        }
-        if hasName, hasCenter {
-            tiers.append(("name+center", joinSearchParts(cardName, centerHint)))
-        }
-        if hasName, hasHp {
-            tiers.append(("name+hp", joinSearchParts(cardName, hp)))
-        }
-        if hasName {
-            tiers.append(("name", joinSearchParts(cardName)))
-        }
-        if !hasName, hasHp, hasCenter {
-            tiers.append(("hp+center", joinSearchParts(hp, centerHint)))
-        }
-        if !hasName, hasHp {
-            tiers.append(("hp", joinSearchParts(hp)))
-        }
-        if hasCenter {
-            tiers.append(("center", joinSearchParts(centerHint)))
-        }
-
-        for (label, raw) in tiers {
-            let q = raw.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard !q.isEmpty else { continue }
-            let r = await tierSearch(service: service, query: q)
-            if !r.isEmpty {
-                return (label, q, r)
-            }
-        }
-        return nil
-    }
-
-    /// Strict inverted-index search, then **soft** partial token match (trainer rules / long center OCR).
-    private func tierSearch(service: CardDataService, query: String) async -> [Card] {
-        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return [] }
-        let strict = await service.search(query: trimmed)
-        if !strict.isEmpty { return strict }
-        return await service.searchSoftTokenMatch(query: trimmed)
-    }
-
-    private func joinSearchParts(_ parts: String?...) -> String {
-        parts
-            .compactMap { $0?.trimmingCharacters(in: .whitespacesAndNewlines) }
-            .filter { !$0.isEmpty }
-            .compactMap { fragment -> String? in
-                let cleaned = CardOCRFieldExtractor.filterSearchNoise(fragment) ?? fragment
-                let t = cleaned.trimmingCharacters(in: .whitespacesAndNewlines)
-                return t.isEmpty ? nil : t
-            }
-            .joined(separator: " ")
-    }
-
-    /// Broader searches when no tier matched (OCR typos). May include **card number** variants; results are still **ranked** by number elsewhere.
-    private func fallbackMatches(
-        service: CardDataService,
-        cardName: String?,
-        setNumber: String?,
-        centerHint: String?
-    ) async -> [Card] {
-        var queries: [String] = []
-        if let name = cardName, !name.isEmpty { queries.append(name) }
-        if let hint = centerHint, !hint.isEmpty {
-            queries.append(hint)
-            let firstToken = hint.split(whereSeparator: { $0.isWhitespace }).first.map(String.init) ?? ""
-            if firstToken.count >= 4 { queries.append(firstToken) }
-        }
-        if let sn = setNumber, !sn.isEmpty {
-            queries.append(sn)
-            for variant in setNumberVariants(sn) {
-                queries.append(variant)
-                if let name = cardName, !name.isEmpty {
-                    queries.append("\(name) \(variant)")
-                }
-            }
-        }
-
-        var seen = Set<String>()
-        var out: [Card] = []
-        for q in queries {
-            let r = await tierSearch(service: service, query: q)
-            for c in r {
-                if seen.insert(c.masterCardId).inserted {
-                    out.append(c)
-                    if out.count >= maxMatchesToShow { return out }
-                }
-            }
-        }
-        return out
-    }
-
-    private func setNumberVariants(_ sn: String) -> [String] {
-        let parts = sn.split(separator: "/")
-        guard parts.count == 2 else { return [] }
-        let left = String(parts[0])
-        let right = String(parts[1])
-        var v: [String] = []
-        // Common OCR: leading 1 instead of 0 (162/193 → 062/193)
-        if left.count == 3, left.first == "1", left.dropFirst().allSatisfy({ $0.isNumber }) {
-            let trimmed = String(left.dropFirst())
-            if trimmed.count == 2 {
-                v.append("0\(trimmed)/\(right)")
-                v.append("\(trimmed)/\(right)")
-            }
-        }
-        if left.count == 2, Int(left) != nil {
-            v.append("0\(left)/\(right)")
-        }
-        return v
-    }
 }
 
 // MARK: - Composite ranking (attacks + mined # + HP + ex hint)
@@ -940,6 +830,44 @@ private extension UIImage {
         return renderer.image { _ in
             draw(in: CGRect(origin: .zero, size: size))
         }.cgImage
+    }
+}
+
+// MARK: - CGImage crop helpers
+
+private extension CGImage {
+    /// Crops a full-camera CGImage to the card reticle rect.
+    ///
+    /// The camera uses `.resizeAspectFill` so the image may be larger than the screen.
+    /// `normalizedRect` is in screen-space (0–1 of screen width/height).
+    /// We map it to the actual pixel rect, accounting for the fill scale.
+    func croppedToCardRect(_ normalizedRect: CGRect, imageSize: CGSize) -> CGImage? {
+        guard !normalizedRect.isEmpty else { return nil }
+
+        let imgW = CGFloat(width)
+        let imgH = CGFloat(height)
+
+        // The camera fills the screen: compute scale factors for each axis.
+        let scaleX = imgW / imageSize.width
+        let scaleY = imgH / imageSize.height
+        // AspectFill uses the larger scale so the smaller dimension is cropped symmetrically.
+        let fillScale = max(scaleX, scaleY)
+
+        // Offset of the image relative to the screen (the cropped-away half on each axis).
+        let offsetX = (imgW - imageSize.width  * fillScale) / 2
+        let offsetY = (imgH - imageSize.height * fillScale) / 2
+
+        // Map normalised screen rect → pixel rect inside the full camera image.
+        let cropX = offsetX + normalizedRect.minX * imageSize.width  * fillScale
+        let cropY = offsetY + normalizedRect.minY * imageSize.height * fillScale
+        let cropW = normalizedRect.width  * imageSize.width  * fillScale
+        let cropH = normalizedRect.height * imageSize.height * fillScale
+
+        let pixelRect = CGRect(x: cropX, y: cropY, width: cropW, height: cropH)
+            .intersection(CGRect(x: 0, y: 0, width: imgW, height: imgH))
+
+        guard !pixelRect.isEmpty else { return nil }
+        return cropping(to: pixelRect)
     }
 }
 

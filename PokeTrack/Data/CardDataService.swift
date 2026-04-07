@@ -323,6 +323,37 @@ final class CardDataService {
         return sortCardsByReleaseDateNewestFirst(out)
     }
 
+    /// Search by card name only — never matches on attacks, rules, HP, or set code.
+    /// Used by the scanner so attack/rules text can't pull in wrong-name cards.
+    func searchByName(query: String) async -> [Card] {
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !q.isEmpty else { return [] }
+
+        await searchIndex.prepare(sets: sets) { [weak self] setCode in
+            guard let self else { return [] }
+            return await self.loadCards(forSetCode: setCode)
+        }
+        isSearchIndexReady = searchIndex.isReady
+
+        return await linearNameSearch(normalizedQuery: q)
+    }
+
+    private func linearNameSearch(normalizedQuery q: String) async -> [Card] {
+        // Fuzzy: every token in the query must appear in the card name.
+        let tokens = q.split(whereSeparator: \.isWhitespace).map(String.init)
+        var results: [Card] = []
+        for set in sets {
+            let cards = await loadCards(forSetCode: set.setCode)
+            for card in cards {
+                let name = card.cardName.lowercased()
+                if tokens.allSatisfy({ name.contains($0) }) {
+                    results.append(card)
+                }
+            }
+        }
+        return sortCardsByReleaseDateNewestFirst(results)
+    }
+
     private func linearSubstringSearch(normalizedQuery q: String) async -> [Card] {
         var results: [Card] = []
         for set in sets {
