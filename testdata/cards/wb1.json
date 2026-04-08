@@ -1,172 +1,232 @@
 [
-    {
-        "masterCardId": "22380",
-        "externalId": "wb1-5",
-        "localId": "005",
-        "setCode": "wb1",
-        "cardNumber": "005/5",
-        "cardName": "Pikachu",
-        "fullDisplayName": "Pikachu 005/5 Poké Card Creator Pack",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            25
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Sylvia Forrest",
-        "imageLowSrc": "cards/ex5.5-005-low.jpg",
-        "imageHighSrc": "cards/ex5.5-005-low.jpg",
-        "attacks": [
-            {
-                "name": "Thundershock",
-                "damage": "10"
-            },
-            {
-                "name": "Shock Bolt",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22379",
-        "externalId": "wb1-4",
-        "localId": "004",
-        "setCode": "wb1",
-        "cardNumber": "004/5",
-        "cardName": "Mudkip",
-        "fullDisplayName": "Mudkip 004/5 Poké Card Creator Pack",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            258
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Rowan Laidlaw",
-        "imageLowSrc": "cards/ex5.5-004-low.jpg",
-        "imageHighSrc": "cards/ex5.5-004-low.jpg",
-        "attacks": [
-            {
-                "name": "Tail Rap",
-                "damage": "10x"
-            },
-            {
-                "name": "Hypno Splash",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22378",
-        "externalId": "wb1-3",
-        "localId": "003",
-        "setCode": "wb1",
-        "cardNumber": "003/5",
-        "cardName": "Torchic",
-        "fullDisplayName": "Torchic 003/5 Poké Card Creator Pack",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            255
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "May Do",
-        "imageLowSrc": "cards/ex5.5-003-low.jpg",
-        "imageHighSrc": "cards/ex5.5-003-low.jpg",
-        "attacks": [
-            {
-                "name": "Super Singe",
-                "damage": "10"
-            },
-            {
-                "name": "Flamethrower",
-                "damage": "40"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22377",
-        "externalId": "wb1-2",
-        "localId": "002",
-        "setCode": "wb1",
-        "cardNumber": "002/5",
-        "cardName": "Wurmple",
-        "fullDisplayName": "Wurmple 002/5 Poké Card Creator Pack",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            265
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Katie Gross",
-        "imageLowSrc": "cards/ex5.5-002-low.jpg",
-        "imageHighSrc": "cards/ex5.5-002-low.jpg",
-        "attacks": [
-            {
-                "name": "Gooey Thread",
-                "damage": "10"
-            },
-            {
-                "name": "Lunge",
-                "damage": "40"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22376",
-        "externalId": "wb1-1",
-        "localId": "001",
-        "setCode": "wb1",
-        "cardNumber": "001/5",
-        "cardName": "Treecko",
-        "fullDisplayName": "Treecko 001/5 Poké Card Creator Pack",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            252
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mark Kraus",
-        "imageLowSrc": "cards/ex5.5-001-low.jpg",
-        "imageHighSrc": "cards/ex5.5-001-low.jpg",
-        "attacks": [
-            {
-                "name": "Tackle",
-                "damage": "10"
-            },
-            {
-                "name": "Poison Claws",
-                "damage": "30"
-            }
-        ]
-    }
+  {
+    "masterCardId": "22380",
+    "externalId": "wb1-5",
+    "localId": "005",
+    "setCode": "wb1",
+    "cardNumber": "005/5",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 005/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Sylvia Forrest",
+    "imageLowSrc": "cards/ex5.5-005-low.jpg",
+    "imageHighSrc": "cards/ex5.5-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      },
+      {
+        "name": "Shock Bolt",
+        "damage": "60",
+        "cost": [],
+        "effect": "Discard all Lightning Energy cards attached to Pikachu or this attack does nothing."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22379",
+    "externalId": "wb1-4",
+    "localId": "004",
+    "setCode": "wb1",
+    "cardNumber": "004/5",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 004/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Rowan Laidlaw",
+    "imageLowSrc": "cards/ex5.5-004-low.jpg",
+    "imageHighSrc": "cards/ex5.5-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Tail Rap",
+        "damage": "10x",
+        "cost": [],
+        "effect": "Flip 2 coins. This attack does 10 damage times the number of heads."
+      },
+      {
+        "name": "Hypno Splash",
+        "damage": "30",
+        "cost": [],
+        "effect": "The Defending Pokémon is now Asleep."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22378",
+    "externalId": "wb1-3",
+    "localId": "003",
+    "setCode": "wb1",
+    "cardNumber": "003/5",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 003/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "May Do",
+    "imageLowSrc": "cards/ex5.5-003-low.jpg",
+    "imageHighSrc": "cards/ex5.5-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Super Singe",
+        "damage": "10",
+        "cost": [],
+        "effect": "The Defending Pokémon is now Burned."
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "40",
+        "cost": [],
+        "effect": "Discard a Fire Energy card attached to Torchic."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22377",
+    "externalId": "wb1-2",
+    "localId": "002",
+    "setCode": "wb1",
+    "cardNumber": "002/5",
+    "cardName": "Wurmple",
+    "fullDisplayName": "Wurmple 002/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      265
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Katie Gross",
+    "imageLowSrc": "cards/ex5.5-002-low.jpg",
+    "imageHighSrc": "cards/ex5.5-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Gooey Thread",
+        "damage": "10",
+        "cost": [],
+        "effect": "The Defending Pokémon can't retreat until the end of your opponent's next turn."
+      },
+      {
+        "name": "Lunge",
+        "damage": "40",
+        "cost": [],
+        "effect": "Flip a coin. If tails, this attack does nothing."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22376",
+    "externalId": "wb1-1",
+    "localId": "001",
+    "setCode": "wb1",
+    "cardNumber": "001/5",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 001/5 Poké Card Creator Pack",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mark Kraus",
+    "imageLowSrc": "cards/ex5.5-001-low.jpg",
+    "imageHighSrc": "cards/ex5.5-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Poison Claws",
+        "damage": "30",
+        "cost": [],
+        "effect": "The Defending Pokémon is now Poisoned."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": "Water -30",
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  }
 ]

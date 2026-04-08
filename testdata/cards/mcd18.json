@@ -1,390 +1,524 @@
 [
-    {
-        "masterCardId": "21988",
-        "externalId": "mcd18-12",
-        "localId": "012",
-        "setCode": "mcd18",
-        "cardNumber": "12/12",
-        "cardName": "Porygon",
-        "fullDisplayName": "Porygon 12/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            137
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-012-low.jpg",
-        "imageHighSrc": "cards/2018sm-012-low.jpg",
-        "attacks": [
-            {
-                "name": "Code Check",
-                "damage": null
-            },
-            {
-                "name": "Beam",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21987",
-        "externalId": "mcd18-11",
-        "localId": "011",
-        "setCode": "mcd18",
-        "cardNumber": "11/12",
-        "cardName": "Eevee",
-        "fullDisplayName": "Eevee 11/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            133
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-011-low.jpg",
-        "imageHighSrc": "cards/2018sm-011-low.jpg",
-        "attacks": [
-            {
-                "name": "Quick Draw",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "21986",
-        "externalId": "mcd18-10",
-        "localId": "010",
-        "setCode": "mcd18",
-        "cardNumber": "10/12",
-        "cardName": "Chansey",
-        "fullDisplayName": "Chansey 10/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 110,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            113
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-010-low.jpg",
-        "imageHighSrc": "cards/2018sm-010-low.jpg",
-        "attacks": [
-            {
-                "name": "Bind Wound",
-                "damage": null
-            },
-            {
-                "name": "Hammer In",
-                "damage": "80"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21985",
-        "externalId": "mcd18-9",
-        "localId": "009",
-        "setCode": "mcd18",
-        "cardNumber": "9/12",
-        "cardName": "Dratini",
-        "fullDisplayName": "Dratini 9/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            147
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-009-low.jpg",
-        "imageHighSrc": "cards/2018sm-009-low.jpg",
-        "attacks": [
-            {
-                "name": "Signs of Evolution",
-                "damage": null
-            },
-            {
-                "name": "Tail Smack",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21984",
-        "externalId": "mcd18-8",
-        "localId": "008",
-        "setCode": "mcd18",
-        "cardNumber": "8/12",
-        "cardName": "Magnemite",
-        "fullDisplayName": "Magnemite 8/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            81
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-008-low.jpg",
-        "imageHighSrc": "cards/2018sm-008-low.jpg",
-        "attacks": [
-            {
-                "name": "Searching Magnet",
-                "damage": null
-            },
-            {
-                "name": "Tackle",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21983",
-        "externalId": "mcd18-7",
-        "localId": "007",
-        "setCode": "mcd18",
-        "cardNumber": "7/12",
-        "cardName": "Cubone",
-        "fullDisplayName": "Cubone 7/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            104
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-007-low.jpg",
-        "imageHighSrc": "cards/2018sm-007-low.jpg",
-        "attacks": [
-            {
-                "name": "Leer",
-                "damage": null
-            },
-            {
-                "name": "Headbutt",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21982",
-        "externalId": "mcd18-6",
-        "localId": "006",
-        "setCode": "mcd18",
-        "cardNumber": "6/12",
-        "cardName": "Machop",
-        "fullDisplayName": "Machop 6/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            66
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-006-low.jpg",
-        "imageHighSrc": "cards/2018sm-006-low.jpg",
-        "attacks": [
-            {
-                "name": "Dynamic Chop",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21981",
-        "externalId": "mcd18-5",
-        "localId": "005",
-        "setCode": "mcd18",
-        "cardNumber": "5/12",
-        "cardName": "Slowpoke",
-        "fullDisplayName": "Slowpoke 5/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            79
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-005-low.jpg",
-        "imageHighSrc": "cards/2018sm-005-low.jpg",
-        "attacks": [
-            {
-                "name": "Headbutt",
-                "damage": "10"
-            },
-            {
-                "name": "Whimsy Tackle",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21980",
-        "externalId": "mcd18-4",
-        "localId": "004",
-        "setCode": "mcd18",
-        "cardNumber": "4/12",
-        "cardName": "Pikachu",
-        "fullDisplayName": "Pikachu 4/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            25
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-004-low.jpg",
-        "imageHighSrc": "cards/2018sm-004-low.jpg",
-        "attacks": [
-            {
-                "name": "Pika Draw",
-                "damage": null
-            },
-            {
-                "name": "Quick Attack",
-                "damage": "20+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21979",
-        "externalId": "mcd18-3",
-        "localId": "003",
-        "setCode": "mcd18",
-        "cardNumber": "3/12",
-        "cardName": "Horsea",
-        "fullDisplayName": "Horsea 3/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            116
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-003-low.jpg",
-        "imageHighSrc": "cards/2018sm-003-low.jpg",
-        "attacks": [
-            {
-                "name": "Water Arrow",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "21978",
-        "externalId": "mcd18-2",
-        "localId": "002",
-        "setCode": "mcd18",
-        "cardNumber": "2/12",
-        "cardName": "Psyduck",
-        "fullDisplayName": "Psyduck 2/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            54
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-002-low.jpg",
-        "imageHighSrc": "cards/2018sm-002-low.jpg",
-        "attacks": [
-            {
-                "name": "Confusion Wave",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "21977",
-        "externalId": "mcd18-1",
-        "localId": "001",
-        "setCode": "mcd18",
-        "cardNumber": "1/12",
-        "cardName": "Growlithe",
-        "fullDisplayName": "Growlithe 1/12 Macdonald's Collection 2018",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            58
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2018sm-001-low.jpg",
-        "imageHighSrc": "cards/2018sm-001-low.jpg",
-        "attacks": [
-            {
-                "name": "Take Down",
-                "damage": "60"
-            }
-        ]
-    }
+  {
+    "masterCardId": "21988",
+    "externalId": "mcd18-12",
+    "localId": "012",
+    "setCode": "mcd18",
+    "cardNumber": "12/12",
+    "cardName": "Porygon",
+    "fullDisplayName": "Porygon 12/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      137
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-012-low.jpg",
+    "imageHighSrc": "cards/2018sm-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Code Check",
+        "damage": null,
+        "cost": [],
+        "effect": "Look at 1 of your opponent's face-down Prize cards."
+      },
+      {
+        "name": "Beam",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Roughly 20 years ago, it was artificially created, utilizing the latest technology of the time.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21987",
+    "externalId": "mcd18-11",
+    "localId": "011",
+    "setCode": "mcd18",
+    "cardNumber": "11/12",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 11/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-011-low.jpg",
+    "imageHighSrc": "cards/2018sm-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Quick Draw",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, draw a card."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "Possessing an unbalanced and unstable genetic makeup, it conceals many possible evolutions.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21986",
+    "externalId": "mcd18-10",
+    "localId": "010",
+    "setCode": "mcd18",
+    "cardNumber": "10/12",
+    "cardName": "Chansey",
+    "fullDisplayName": "Chansey 10/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 110,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      113
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-010-low.jpg",
+    "imageHighSrc": "cards/2018sm-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Bind Wound",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, heal 30 damage from 1 of your Pokémon."
+      },
+      {
+        "name": "Hammer In",
+        "damage": "80",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "The eggs laid by Chansey are rich in nutrients and a favorite food of many Pokémon.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21985",
+    "externalId": "mcd18-9",
+    "localId": "009",
+    "setCode": "mcd18",
+    "cardNumber": "9/12",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 9/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      147
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-009-low.jpg",
+    "imageHighSrc": "cards/2018sm-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Signs of Evolution",
+        "damage": null,
+        "cost": [],
+        "effect": "Search your deck for a Dratini, a Dragonair, and a Dragonite, reveal them, and put them into your hand. Then, shuffle your deck."
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fairy ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "After a 10-hour struggle, a fisherman was able to pull one up and confirm its existence.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21984",
+    "externalId": "mcd18-8",
+    "localId": "008",
+    "setCode": "mcd18",
+    "cardNumber": "8/12",
+    "cardName": "Magnemite",
+    "fullDisplayName": "Magnemite 8/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      81
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-008-low.jpg",
+    "imageHighSrc": "cards/2018sm-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Searching Magnet",
+        "damage": null,
+        "cost": [],
+        "effect": "Search your deck for up to 3 Metal Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
+      },
+      {
+        "name": "Tackle",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": "Psychic -20",
+    "retreatCost": 1,
+    "flavorText": "It sends out electromagnetic waves, which let it float through the air. Touching it while it's eating electricity will give you a full-body shock.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21983",
+    "externalId": "mcd18-7",
+    "localId": "007",
+    "setCode": "mcd18",
+    "cardNumber": "7/12",
+    "cardName": "Cubone",
+    "fullDisplayName": "Cubone 7/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      104
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-007-low.jpg",
+    "imageHighSrc": "cards/2018sm-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Leer",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "When it thinks of its deceased mother, it weeps loudly. Mandibuzz that hear its cries will attack it from the air.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21982",
+    "externalId": "mcd18-6",
+    "localId": "006",
+    "setCode": "mcd18",
+    "cardNumber": "6/12",
+    "cardName": "Machop",
+    "fullDisplayName": "Machop 6/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      66
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-006-low.jpg",
+    "imageHighSrc": "cards/2018sm-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Dynamic Chop",
+        "damage": "50",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It loves working out. As it gazes at its muscles, which continue to swell day by day, it becomes more and more dedicated to its training.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21981",
+    "externalId": "mcd18-5",
+    "localId": "005",
+    "setCode": "mcd18",
+    "cardNumber": "5/12",
+    "cardName": "Slowpoke",
+    "fullDisplayName": "Slowpoke 5/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      79
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-005-low.jpg",
+    "imageHighSrc": "cards/2018sm-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Whimsy Tackle",
+        "damage": "60",
+        "cost": [],
+        "effect": "Flip a coin. If tails, this attack does nothing."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "Its long tail often breaks off. It doesn't really feel any pain, though, and the tail grows back, so Slowpoke isn't particularly bothered.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21980",
+    "externalId": "mcd18-4",
+    "localId": "004",
+    "setCode": "mcd18",
+    "cardNumber": "4/12",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 4/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-004-low.jpg",
+    "imageHighSrc": "cards/2018sm-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Pika Draw",
+        "damage": null,
+        "cost": [],
+        "effect": "Draw a card."
+      },
+      {
+        "name": "Quick Attack",
+        "damage": "20+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 20 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": "Metal -20",
+    "retreatCost": 1,
+    "flavorText": "A plan was recently announced to gather many Pikachu and make an electric power plant.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21979",
+    "externalId": "mcd18-3",
+    "localId": "003",
+    "setCode": "mcd18",
+    "cardNumber": "3/12",
+    "cardName": "Horsea",
+    "fullDisplayName": "Horsea 3/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      116
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-003-low.jpg",
+    "imageHighSrc": "cards/2018sm-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Water Arrow",
+        "damage": null,
+        "cost": [],
+        "effect": "This attack does 10 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Known to shoot down flying bugs with precision blasts of ink from the surface of the water.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21978",
+    "externalId": "mcd18-2",
+    "localId": "002",
+    "setCode": "mcd18",
+    "cardNumber": "2/12",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 2/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      54
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-002-low.jpg",
+    "imageHighSrc": "cards/2018sm-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Confusion Wave",
+        "damage": null,
+        "cost": [],
+        "effect": "Both Active Pokémon are now Confused."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "As a result of headaches so fierce they cause it to cry, it sometimes uses psychokinesis without meaning to.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21977",
+    "externalId": "mcd18-1",
+    "localId": "001",
+    "setCode": "mcd18",
+    "cardNumber": "1/12",
+    "cardName": "Growlithe",
+    "fullDisplayName": "Growlithe 1/12 Macdonald's Collection 2018",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      58
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2018sm-001-low.jpg",
+    "imageHighSrc": "cards/2018sm-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "60",
+        "cost": [],
+        "effect": "This Pokémon does 20 damage to itself."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It's both clever and loyal, but if a stranger tries to invade its territory, it barks threateningly.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  }
 ]

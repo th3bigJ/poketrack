@@ -42,17 +42,17 @@ final class WishlistService {
     }
     
     /// Add a card to the wishlist
-    func addItem(cardID: String, notes: String = "") throws {
+    func addItem(cardID: String, variantKey: String, notes: String = "") throws {
         guard canAddItem else {
             throw WishlistError.limitReached
         }
         
-        // Check if already in wishlist
-        if items.contains(where: { $0.cardID == cardID }) {
+        // Check if same card + variant already in wishlist
+        if items.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey }) {
             throw WishlistError.alreadyExists
         }
         
-        let item = WishlistItem(cardID: cardID, notes: notes)
+        let item = WishlistItem(cardID: cardID, variantKey: variantKey, notes: notes)
         modelContext.insert(item)
         
         do {
@@ -86,7 +86,12 @@ final class WishlistService {
         }
     }
     
-    /// Check if a card is in the wishlist
+    /// Check if a specific card + variant is in the wishlist
+    func isInWishlist(cardID: String, variantKey: String) -> Bool {
+        items.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey })
+    }
+    
+    /// Check if any variant of a card is in the wishlist
     func isInWishlist(cardID: String) -> Bool {
         items.contains(where: { $0.cardID == cardID })
     }

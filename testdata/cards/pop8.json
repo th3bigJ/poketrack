@@ -1,529 +1,727 @@
 [
-    {
-        "masterCardId": "9259",
-        "externalId": "pop8-17",
-        "localId": "017",
-        "setCode": "pop8",
-        "cardNumber": "17/17",
-        "cardName": "Turtwig",
-        "fullDisplayName": "Turtwig 17/17 POP Series 8",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            387
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop8-017-low.png",
-        "imageHighSrc": "cards/pop8-017-high.png",
-        "attacks": [
-            {
-                "name": "Tackle",
-                "damage": "10"
-            },
-            {
-                "name": "Razor Leaf",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9252",
-        "externalId": "pop8-16",
-        "localId": "016",
-        "setCode": "pop8",
-        "cardNumber": "16/17",
-        "cardName": "Riolu",
-        "fullDisplayName": "Riolu 16/17 POP Series 8",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            447
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop8-016-low.png",
-        "imageHighSrc": "cards/pop8-016-high.png",
-        "attacks": [
-            {
-                "name": "Quick Attack",
-                "damage": "10+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9243",
-        "externalId": "pop8-15",
-        "localId": "015",
-        "setCode": "pop8",
-        "cardNumber": "15/17",
-        "cardName": "Piplup",
-        "fullDisplayName": "Piplup 15/17 POP Series 8",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            393
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Atsuko Nishida",
-        "imageLowSrc": "cards/pop8-015-low.png",
-        "imageHighSrc": "cards/pop8-015-high.png",
-        "attacks": [
-            {
-                "name": "Peck",
-                "damage": "10"
-            },
-            {
-                "name": "Water Splash",
-                "damage": "20+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9235",
-        "externalId": "pop8-14",
-        "localId": "014",
-        "setCode": "pop8",
-        "cardNumber": "14/17",
-        "cardName": "Happiny",
-        "fullDisplayName": "Happiny 14/17 POP Series 8",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            440
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Yuka Morii",
-        "imageLowSrc": "cards/pop8-014-low.png",
-        "imageHighSrc": "cards/pop8-014-high.png",
-        "attacks": [
-            {
-                "name": "Lively",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "9226",
-        "externalId": "pop8-13",
-        "localId": "013",
-        "setCode": "pop8",
-        "cardNumber": "13/17",
-        "cardName": "Croagunk",
-        "fullDisplayName": "Croagunk 13/17 POP Series 8",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            453
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/pop8-013-low.png",
-        "imageHighSrc": "cards/pop8-013-high.png",
-        "attacks": [
-            {
-                "name": "Ghastly Sound",
-                "damage": null
-            },
-            {
-                "name": "Finger Poke",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9212",
-        "externalId": "pop8-12",
-        "localId": "012",
-        "setCode": "pop8",
-        "cardNumber": "12/17",
-        "cardName": "Chimchar",
-        "fullDisplayName": "Chimchar 12/17 POP Series 8",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            390
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kagemaru Himeno",
-        "imageLowSrc": "cards/pop8-012-low.png",
-        "imageHighSrc": "cards/pop8-012-high.png",
-        "attacks": [
-            {
-                "name": "Scratch",
-                "damage": "10"
-            },
-            {
-                "name": "Ember",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9203",
-        "externalId": "pop8-11",
-        "localId": "011",
-        "setCode": "pop8",
-        "cardNumber": "11/17",
-        "cardName": "Roseanne's Research",
-        "fullDisplayName": "Roseanne's Research 11/17 POP Series 8",
-        "rarity": "Uncommon",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Supporter",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kanako Eo",
-        "imageLowSrc": "cards/pop8-011-low.png",
-        "imageHighSrc": "cards/pop8-011-high.png",
-        "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 in any combination of Basic Pokémon and basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward."
-    },
-    {
-        "masterCardId": "9194",
-        "externalId": "pop8-10",
-        "localId": "010",
-        "setCode": "pop8",
-        "cardNumber": "10/17",
-        "cardName": "Rare Candy",
-        "fullDisplayName": "Rare Candy 10/17 POP Series 8",
-        "rarity": "Uncommon",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Item",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ryo Ueda",
-        "imageLowSrc": "cards/pop8-010-low.png",
-        "imageHighSrc": "cards/pop8-010-high.png",
-        "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pokémon in your hand, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.)"
-    },
-    {
-        "masterCardId": "9187",
-        "externalId": "pop8-9",
-        "localId": "009",
-        "setCode": "pop8",
-        "cardNumber": "9/17",
-        "cardName": "Night Maintenance",
-        "fullDisplayName": "Night Maintenance 9/17 POP Series 8",
-        "rarity": "Uncommon",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Item",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ryo Ueda",
-        "imageLowSrc": "cards/pop8-009-low.png",
-        "imageHighSrc": "cards/pop8-009-high.png",
-        "rules": "Search your discard pile for up to 3 in any combination of Pokémon and basic Energy cards. Show them to your opponent and shuffle them into your deck."
-    },
-    {
-        "masterCardId": "9178",
-        "externalId": "pop8-8",
-        "localId": "008",
-        "setCode": "pop8",
-        "cardNumber": "8/17",
-        "cardName": "Luxio",
-        "fullDisplayName": "Luxio 8/17 POP Series 8",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            404
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kagemaru Himeno",
-        "imageLowSrc": "cards/pop8-008-low.png",
-        "imageHighSrc": "cards/pop8-008-high.png",
-        "attacks": [
-            {
-                "name": "Fasten Claw",
-                "damage": "10+"
-            },
-            {
-                "name": "Thunder Fang",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9169",
-        "externalId": "pop8-7",
-        "localId": "007",
-        "setCode": "pop8",
-        "cardNumber": "7/17",
-        "cardName": "Carnivine",
-        "fullDisplayName": "Carnivine 7/17 POP Series 8",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            455
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/pop8-007-low.png",
-        "imageHighSrc": "cards/pop8-007-high.png",
-        "attacks": [
-            {
-                "name": "Swallow Up",
-                "damage": "30"
-            },
-            {
-                "name": "Wring Out",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9154",
-        "externalId": "pop8-6",
-        "localId": "006",
-        "setCode": "pop8",
-        "cardNumber": "6/17",
-        "cardName": "Cherrim",
-        "fullDisplayName": "Cherrim 6/17 POP Series 8",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            421
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Atsuko Nishida",
-        "imageLowSrc": "cards/pop8-006-low.png",
-        "imageHighSrc": "cards/pop8-006-high.png",
-        "attacks": [
-            {
-                "name": "Worry Seed",
-                "damage": "20"
-            },
-            {
-                "name": "Magical Leaf",
-                "damage": "20+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9145",
-        "externalId": "pop8-5",
-        "localId": "005",
-        "setCode": "pop8",
-        "cardNumber": "5/17",
-        "cardName": "Yanmega",
-        "fullDisplayName": "Yanmega 5/17 POP Series 8",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 90,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            469
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/pop8-005-low.png",
-        "imageHighSrc": "cards/pop8-005-high.png",
-        "attacks": [
-            {
-                "name": "Supersonic",
-                "damage": null
-            },
-            {
-                "name": "Air Slash",
-                "damage": "70"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9135",
-        "externalId": "pop8-4",
-        "localId": "004",
-        "setCode": "pop8",
-        "cardNumber": "4/17",
-        "cardName": "Probopass",
-        "fullDisplayName": "Probopass 4/17 POP Series 8",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 90,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            476
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/pop8-004-low.png",
-        "imageHighSrc": "cards/pop8-004-high.png",
-        "attacks": [
-            {
-                "name": "Rock Slide",
-                "damage": "20"
-            },
-            {
-                "name": "Triple Nose",
-                "damage": "50+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9128",
-        "externalId": "pop8-3",
-        "localId": "003",
-        "setCode": "pop8",
-        "cardNumber": "3/17",
-        "cardName": "Luxray",
-        "fullDisplayName": "Luxray 3/17 POP Series 8",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 120,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            405
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/pop8-003-low.png",
-        "imageHighSrc": "cards/pop8-003-high.png",
-        "attacks": [
-            {
-                "name": "Thunder",
-                "damage": "120"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9118",
-        "externalId": "pop8-2",
-        "localId": "002",
-        "setCode": "pop8",
-        "cardNumber": "2/17",
-        "cardName": "Lucario",
-        "fullDisplayName": "Lucario 2/17 POP Series 8",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 90,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            448
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kent Kanetsuna",
-        "imageLowSrc": "cards/pop8-002-low.png",
-        "imageHighSrc": "cards/pop8-002-high.png",
-        "attacks": [
-            {
-                "name": "Blocking Punch",
-                "damage": "40"
-            },
-            {
-                "name": "Striking Kick",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9112",
-        "externalId": "pop8-1",
-        "localId": "001",
-        "setCode": "pop8",
-        "cardNumber": "1/17",
-        "cardName": "Heatran",
-        "fullDisplayName": "Heatran 1/17 POP Series 8",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            485
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/pop8-001-low.png",
-        "imageHighSrc": "cards/pop8-001-high.png",
-        "attacks": [
-            {
-                "name": "Body Slam",
-                "damage": "20"
-            },
-            {
-                "name": "Fire Spin",
-                "damage": "90"
-            }
-        ]
-    }
+  {
+    "masterCardId": "9259",
+    "externalId": "pop8-17",
+    "localId": "017",
+    "setCode": "pop8",
+    "cardNumber": "17/17",
+    "cardName": "Turtwig",
+    "fullDisplayName": "Turtwig 17/17 POP Series 8",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      387
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop8-017-low.png",
+    "imageHighSrc": "cards/pop8-017-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire +10",
+    "resistance": "Water -20",
+    "retreatCost": 2,
+    "flavorText": "Made from soil, the shell on its back hardens when it drinks water. It lives along lakes.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9252",
+    "externalId": "pop8-16",
+    "localId": "016",
+    "setCode": "pop8",
+    "cardNumber": "16/17",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 16/17 POP Series 8",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      447
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop8-016-low.png",
+    "imageHighSrc": "cards/pop8-016-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 10 damage plus 10 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic +10",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Its body is lithe yet powerful. It can crest three mountains and cross two canyons in one night.",
+    "pricingVariants": [
+      "normal",
+      "reverseHolofoil"
+    ]
+  },
+  {
+    "masterCardId": "9243",
+    "externalId": "pop8-15",
+    "localId": "015",
+    "setCode": "pop8",
+    "cardNumber": "15/17",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 15/17 POP Series 8",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Atsuko Nishida",
+    "imageLowSrc": "cards/pop8-015-low.png",
+    "imageHighSrc": "cards/pop8-015-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Water Splash",
+        "damage": "20+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 20 damage plus 10 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning +10",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Because it is very proud, it hates accepting food from people. Its thick down guards it from cold.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9235",
+    "externalId": "pop8-14",
+    "localId": "014",
+    "setCode": "pop8",
+    "cardNumber": "14/17",
+    "cardName": "Happiny",
+    "fullDisplayName": "Happiny 14/17 POP Series 8",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      440
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Yuka Morii",
+    "imageLowSrc": "cards/pop8-014-low.png",
+    "imageHighSrc": "cards/pop8-014-high.png",
+    "attacks": [
+      {
+        "name": "Lively",
+        "damage": null,
+        "cost": [],
+        "effect": "Remove 2 damage counters from 1 of your Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting +10",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It loves round white things. It carries an egg-shaped rock in imitation of CHANSEY.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9226",
+    "externalId": "pop8-13",
+    "localId": "013",
+    "setCode": "pop8",
+    "cardNumber": "13/17",
+    "cardName": "Croagunk",
+    "fullDisplayName": "Croagunk 13/17 POP Series 8",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      453
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/pop8-013-low.png",
+    "imageHighSrc": "cards/pop8-013-high.png",
+    "attacks": [
+      {
+        "name": "Ghastly Sound",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, your opponent can't play any Supporter cards from his or her hand during his or her next turn."
+      },
+      {
+        "name": "Finger Poke",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic +10",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Its cheeks hold poison sacs. It tries to catch foes off guard to jab them with toxic fingers.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9212",
+    "externalId": "pop8-12",
+    "localId": "012",
+    "setCode": "pop8",
+    "cardNumber": "12/17",
+    "cardName": "Chimchar",
+    "fullDisplayName": "Chimchar 12/17 POP Series 8",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      390
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kagemaru Himeno",
+    "imageLowSrc": "cards/pop8-012-low.png",
+    "imageHighSrc": "cards/pop8-012-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Ember",
+        "damage": "30",
+        "cost": [],
+        "effect": "Flip a coin. If tails, discard a Fire Energy attached to Chimchar."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water +10",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It agilely scales sheer cliffs to live atop craggy mountains. Its fire is put out when it sleeps.",
+    "pricingVariants": [
+      "normal",
+      "reverseHolofoil"
+    ]
+  },
+  {
+    "masterCardId": "9203",
+    "externalId": "pop8-11",
+    "localId": "011",
+    "setCode": "pop8",
+    "cardNumber": "11/17",
+    "cardName": "Roseanne's Research",
+    "fullDisplayName": "Roseanne's Research 11/17 POP Series 8",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kanako Eo",
+    "imageLowSrc": "cards/pop8-011-low.png",
+    "imageHighSrc": "cards/pop8-011-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 in any combination of Basic Pokémon and basic Energy cards, show them to your opponent, and put them into your hand. Shuffle your deck afterward.",
+    "subtype": "Supporter",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9194",
+    "externalId": "pop8-10",
+    "localId": "010",
+    "setCode": "pop8",
+    "cardNumber": "10/17",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 10/17 POP Series 8",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ryo Ueda",
+    "imageLowSrc": "cards/pop8-010-low.png",
+    "imageHighSrc": "cards/pop8-010-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pokémon in your hand, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.)",
+    "subtype": "Item",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9187",
+    "externalId": "pop8-9",
+    "localId": "009",
+    "setCode": "pop8",
+    "cardNumber": "9/17",
+    "cardName": "Night Maintenance",
+    "fullDisplayName": "Night Maintenance 9/17 POP Series 8",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ryo Ueda",
+    "imageLowSrc": "cards/pop8-009-low.png",
+    "imageHighSrc": "cards/pop8-009-high.png",
+    "rules": "Search your discard pile for up to 3 in any combination of Pokémon and basic Energy cards. Show them to your opponent and shuffle them into your deck.",
+    "subtype": "Item",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9178",
+    "externalId": "pop8-8",
+    "localId": "008",
+    "setCode": "pop8",
+    "cardNumber": "8/17",
+    "cardName": "Luxio",
+    "fullDisplayName": "Luxio 8/17 POP Series 8",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      404
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kagemaru Himeno",
+    "imageLowSrc": "cards/pop8-008-low.png",
+    "imageHighSrc": "cards/pop8-008-high.png",
+    "attacks": [
+      {
+        "name": "Fasten Claw",
+        "damage": "10+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 10 damage plus 30 more damage."
+      },
+      {
+        "name": "Thunder Fang",
+        "damage": "30",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fighting +20",
+    "resistance": "Metal -20",
+    "retreatCost": null,
+    "flavorText": "Its claws loose electricity with enough amperage to cause fainting. They live in small groups.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9169",
+    "externalId": "pop8-7",
+    "localId": "007",
+    "setCode": "pop8",
+    "cardNumber": "7/17",
+    "cardName": "Carnivine",
+    "fullDisplayName": "Carnivine 7/17 POP Series 8",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      455
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/pop8-007-low.png",
+    "imageHighSrc": "cards/pop8-007-high.png",
+    "attacks": [
+      {
+        "name": "Swallow Up",
+        "damage": "30",
+        "cost": [],
+        "effect": "Before doing damage, count the remaining HP of the Defending Pokémon and Carnivine. If the Defending Pokémon has fewer remaining HP than Carnivine's, this attack does 60 damage instead."
+      },
+      {
+        "name": "Wring Out",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed and discard an Energy card attached to the Defending Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire +20",
+    "resistance": "Water -20",
+    "retreatCost": 1,
+    "flavorText": "It attracts prey with its sweet-smelling saliva, then chomps down. It takes a whole day to eat prey.",
+    "pricingVariants": [
+      "normal",
+      "reverseHolofoil"
+    ]
+  },
+  {
+    "masterCardId": "9154",
+    "externalId": "pop8-6",
+    "localId": "006",
+    "setCode": "pop8",
+    "cardNumber": "6/17",
+    "cardName": "Cherrim",
+    "fullDisplayName": "Cherrim 6/17 POP Series 8",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      421
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Atsuko Nishida",
+    "imageLowSrc": "cards/pop8-006-low.png",
+    "imageHighSrc": "cards/pop8-006-high.png",
+    "attacks": [
+      {
+        "name": "Worry Seed",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
+      },
+      {
+        "name": "Magical Leaf",
+        "damage": "20+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 20 damage plus 20 more damage and remove 3 damage counters from Cherrim."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire +20",
+    "resistance": "Water -20",
+    "retreatCost": 2,
+    "flavorText": "It blooms during times of strong sunlight. It tries to make up for everything it endured as a bud.",
+    "pricingVariants": [
+      "normal",
+      "reverseHolofoil"
+    ]
+  },
+  {
+    "masterCardId": "9145",
+    "externalId": "pop8-5",
+    "localId": "005",
+    "setCode": "pop8",
+    "cardNumber": "5/17",
+    "cardName": "Yanmega",
+    "fullDisplayName": "Yanmega 5/17 POP Series 8",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      469
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/pop8-005-low.png",
+    "imageHighSrc": "cards/pop8-005-high.png",
+    "attacks": [
+      {
+        "name": "Supersonic",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
+      },
+      {
+        "name": "Air Slash",
+        "damage": "70",
+        "cost": [],
+        "effect": "Flip a coin. If tails, discard an Energy attached to Yanmega."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Lightning +20",
+    "resistance": "Fighting -20",
+    "retreatCost": null,
+    "flavorText": "By churning its wings, it creates shock waves that inflict critical internal injuries to foes.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9135",
+    "externalId": "pop8-4",
+    "localId": "004",
+    "setCode": "pop8",
+    "cardNumber": "4/17",
+    "cardName": "Probopass",
+    "fullDisplayName": "Probopass 4/17 POP Series 8",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 90,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      476
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/pop8-004-low.png",
+    "imageHighSrc": "cards/pop8-004-high.png",
+    "attacks": [
+      {
+        "name": "Rock Slide",
+        "damage": "20",
+        "cost": [],
+        "effect": "Does 10 damage to 2 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      },
+      {
+        "name": "Triple Nose",
+        "damage": "50+",
+        "cost": [],
+        "effect": "Flip 3 coins. This attack does 50 damage plus 20 more damage for each heads."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire +30",
+    "resistance": "Psychic -20",
+    "retreatCost": 3,
+    "flavorText": "It exudes strong magnetism from all cover. It controls three small units called Mini-Noses.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9128",
+    "externalId": "pop8-3",
+    "localId": "003",
+    "setCode": "pop8",
+    "cardNumber": "3/17",
+    "cardName": "Luxray",
+    "fullDisplayName": "Luxray 3/17 POP Series 8",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      405
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/pop8-003-low.png",
+    "imageHighSrc": "cards/pop8-003-high.png",
+    "attacks": [
+      {
+        "name": "Thunder",
+        "damage": "120",
+        "cost": [],
+        "effect": "Flip a coin. If tails, Luxray does 40 damage to itself."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Fighting +30",
+    "resistance": "Metal -20",
+    "retreatCost": 1,
+    "flavorText": "When its eyes gleam gold, it can spot hiding prey–even those taking shelter behind a wall.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9118",
+    "externalId": "pop8-2",
+    "localId": "002",
+    "setCode": "pop8",
+    "cardNumber": "2/17",
+    "cardName": "Lucario",
+    "fullDisplayName": "Lucario 2/17 POP Series 8",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 90,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kent Kanetsuna",
+    "imageLowSrc": "cards/pop8-002-low.png",
+    "imageHighSrc": "cards/pop8-002-high.png",
+    "attacks": [
+      {
+        "name": "Blocking Punch",
+        "damage": "40",
+        "cost": [],
+        "effect": "During your opponent's next turn, any damage done to Lucario by attacks is reduced by 20 (after applying Weakness and Resistance)."
+      },
+      {
+        "name": "Striking Kick",
+        "damage": "60",
+        "cost": [],
+        "effect": "This attack's damage isn't affected by Resistance, Poké-Powers, Poké-Bodies, or any other effects on the Defending Pokémon"
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Psychic +20",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "By catching the aura emanating from others, it can read their thoughts and movements.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9112",
+    "externalId": "pop8-1",
+    "localId": "001",
+    "setCode": "pop8",
+    "cardNumber": "1/17",
+    "cardName": "Heatran",
+    "fullDisplayName": "Heatran 1/17 POP Series 8",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      485
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/pop8-001-low.png",
+    "imageHighSrc": "cards/pop8-001-high.png",
+    "attacks": [
+      {
+        "name": "Body Slam",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      },
+      {
+        "name": "Fire Spin",
+        "damage": "90",
+        "cost": [],
+        "effect": "Discard 2 Basic Energy cards attached to Heatran. (If you can't discard cards, this attack does nothing."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water +30",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "It dwells in volcanic caves. It digs in with its cross-shaped feet to crawl on ceilings and walls.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  }
 ]

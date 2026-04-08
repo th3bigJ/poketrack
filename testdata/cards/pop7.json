@@ -1,564 +1,770 @@
 [
-    {
-        "masterCardId": "9256",
-        "externalId": "pop7-17",
-        "localId": "017",
-        "setCode": "pop7",
-        "cardNumber": "17/17",
-        "cardName": "Spinda",
-        "fullDisplayName": "Spinda 17/17 POP Series 7",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            327
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Atsuko Nishida",
-        "imageLowSrc": "cards/pop7-017-low.png",
-        "imageHighSrc": "cards/pop7-017-high.png",
-        "attacks": [
-            {
-                "name": "Dish Out",
-                "damage": null
-            },
-            {
-                "name": "Synchro Punch",
-                "damage": "10+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9247",
-        "externalId": "pop7-16",
-        "localId": "016",
-        "setCode": "pop7",
-        "cardNumber": "16/17",
-        "cardName": "Sentret",
-        "fullDisplayName": "Sentret 16/17 POP Series 7",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            161
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Midori Harada",
-        "imageLowSrc": "cards/pop7-016-low.png",
-        "imageHighSrc": "cards/pop7-016-high.png",
-        "attacks": [
-            {
-                "name": "Grope",
-                "damage": null
-            },
-            {
-                "name": "Scratch",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9238",
-        "externalId": "pop7-15",
-        "localId": "015",
-        "setCode": "pop7",
-        "cardNumber": "15/17",
-        "cardName": "Ralts",
-        "fullDisplayName": "Ralts 15/17 POP Series 7",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            280
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Sumiyoshi Kizuki",
-        "imageLowSrc": "cards/pop7-015-low.png",
-        "imageHighSrc": "cards/pop7-015-high.png",
-        "attacks": [
-            {
-                "name": "Smack",
-                "damage": "10"
-            },
-            {
-                "name": "Confuse Ray",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "9229",
-        "externalId": "pop7-14",
-        "localId": "014",
-        "setCode": "pop7",
-        "cardNumber": "14/17",
-        "cardName": "Mareep",
-        "fullDisplayName": "Mareep 14/17 POP Series 7",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            179
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Atsuko Nishida",
-        "imageLowSrc": "cards/pop7-014-low.png",
-        "imageHighSrc": "cards/pop7-014-high.png",
-        "attacks": [
-            {
-                "name": "Thundershock",
-                "damage": "10"
-            },
-            {
-                "name": "Static Shock",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9220",
-        "externalId": "pop7-13",
-        "localId": "013",
-        "setCode": "pop7",
-        "cardNumber": "13/17",
-        "cardName": "Corsola",
-        "fullDisplayName": "Corsola 13/17 POP Series 7",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            222
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Midori Harada",
-        "imageLowSrc": "cards/pop7-013-low.png",
-        "imageHighSrc": "cards/pop7-013-high.png",
-        "attacks": [
-            {
-                "name": "Rally",
-                "damage": null
-            },
-            {
-                "name": "Hook",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9214",
-        "externalId": "pop7-12",
-        "localId": "012",
-        "setCode": "pop7",
-        "cardNumber": "12/17",
-        "cardName": "Burmy Sandy Cloak",
-        "fullDisplayName": "Burmy Sandy Cloak 12/17 POP Series 7",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            412
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Midori Harada",
-        "imageLowSrc": "cards/pop7-012-low.png",
-        "imageHighSrc": "cards/pop7-012-high.png",
-        "attacks": [
-            {
-                "name": "Sandy Cloak Tackle",
-                "damage": "10+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9206",
-        "externalId": "pop7-11",
-        "localId": "011",
-        "setCode": "pop7",
-        "cardNumber": "11/17",
-        "cardName": "Burmy Plant Cloak",
-        "fullDisplayName": "Burmy Plant Cloak 11/17 POP Series 7",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            412
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/pop7-011-low.png",
-        "imageHighSrc": "cards/pop7-011-high.png",
-        "attacks": [
-            {
-                "name": "Plant Cloak Tackle",
-                "damage": "10+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9197",
-        "externalId": "pop7-10",
-        "localId": "010",
-        "setCode": "pop7",
-        "cardNumber": "10/17",
-        "cardName": "Wormadam Sandy Cloak",
-        "fullDisplayName": "Wormadam Sandy Cloak 10/17 POP Series 7",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            413
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kagemaru Himeno",
-        "imageLowSrc": "cards/pop7-010-low.png",
-        "imageHighSrc": "cards/pop7-010-high.png",
-        "attacks": [
-            {
-                "name": "Push Over",
-                "damage": "40+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9189",
-        "externalId": "pop7-9",
-        "localId": "009",
-        "setCode": "pop7",
-        "cardNumber": "9/17",
-        "cardName": "Stantler",
-        "fullDisplayName": "Stantler 9/17 POP Series 7",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            234
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/pop7-009-low.png",
-        "imageHighSrc": "cards/pop7-009-high.png",
-        "attacks": [
-            {
-                "name": "Lead",
-                "damage": null
-            },
-            {
-                "name": "Frighten Horn",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9180",
-        "externalId": "pop7-8",
-        "localId": "008",
-        "setCode": "pop7",
-        "cardNumber": "8/17",
-        "cardName": "Kirlia",
-        "fullDisplayName": "Kirlia 8/17 POP Series 7",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            281
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop7-008-low.png",
-        "imageHighSrc": "cards/pop7-008-high.png",
-        "attacks": [
-            {
-                "name": "Psychic Research",
-                "damage": null
-            },
-            {
-                "name": "Telekinesis",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "9171",
-        "externalId": "pop7-7",
-        "localId": "007",
-        "setCode": "pop7",
-        "cardNumber": "7/17",
-        "cardName": "Flaaffy",
-        "fullDisplayName": "Flaaffy 7/17 POP Series 7",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            180
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kagemaru Himeno",
-        "imageLowSrc": "cards/pop7-007-low.png",
-        "imageHighSrc": "cards/pop7-007-high.png",
-        "attacks": [
-            {
-                "name": "Attract Current",
-                "damage": "10"
-            },
-            {
-                "name": "Electromagnetic Kick",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9162",
-        "externalId": "pop7-6",
-        "localId": "006",
-        "setCode": "pop7",
-        "cardNumber": "6/17",
-        "cardName": "Delibird",
-        "fullDisplayName": "Delibird 6/17 POP Series 7",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            225
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop7-006-low.png",
-        "imageHighSrc": "cards/pop7-006-high.png",
-        "attacks": [
-            {
-                "name": "Present",
-                "damage": null
-            },
-            {
-                "name": "Ice Ball",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9152",
-        "externalId": "pop7-5",
-        "localId": "005",
-        "setCode": "pop7",
-        "cardNumber": "5/17",
-        "cardName": "Mothim",
-        "fullDisplayName": "Mothim 5/17 POP Series 7",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            414
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kazuyuki Kano",
-        "imageLowSrc": "cards/pop7-005-low.png",
-        "imageHighSrc": "cards/pop7-005-high.png",
-        "attacks": [
-            {
-                "name": "Silver Wind",
-                "damage": null
-            },
-            {
-                "name": "Raging Scales",
-                "damage": "30+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9143",
-        "externalId": "pop7-4",
-        "localId": "004",
-        "setCode": "pop7",
-        "cardNumber": "4/17",
-        "cardName": "Latios",
-        "fullDisplayName": "Latios 4/17 POP Series 7",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 90,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            381
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Daisuke Ito",
-        "imageLowSrc": "cards/pop7-004-low.png",
-        "imageHighSrc": "cards/pop7-004-high.png",
-        "attacks": [
-            {
-                "name": "Energy Draw",
-                "damage": "10"
-            },
-            {
-                "name": "Luster Purge",
-                "damage": "120"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9133",
-        "externalId": "pop7-3",
-        "localId": "003",
-        "setCode": "pop7",
-        "cardNumber": "3/17",
-        "cardName": "Latias",
-        "fullDisplayName": "Latias 3/17 POP Series 7",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            380
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Daisuke Ito",
-        "imageLowSrc": "cards/pop7-003-low.png",
-        "imageHighSrc": "cards/pop7-003-high.png",
-        "attacks": [
-            {
-                "name": "Miraculous Light",
-                "damage": "10"
-            },
-            {
-                "name": "Mist Ball",
-                "damage": "80"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9120",
-        "externalId": "pop7-2",
-        "localId": "002",
-        "setCode": "pop7",
-        "cardNumber": "2/17",
-        "cardName": "Gallade",
-        "fullDisplayName": "Gallade 2/17 POP Series 7",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 130,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            475
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Daisuke Ito",
-        "imageLowSrc": "cards/pop7-002-low.png",
-        "imageHighSrc": "cards/pop7-002-high.png",
-        "attacks": [
-            {
-                "name": "Sonic Blade",
-                "damage": null
-            },
-            {
-                "name": "Psychic Cut",
-                "damage": "60+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9113",
-        "externalId": "pop7-1",
-        "localId": "001",
-        "setCode": "pop7",
-        "cardNumber": "1/17",
-        "cardName": "Ampharos",
-        "fullDisplayName": "Ampharos 1/17 POP Series 7",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 130,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            181
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/pop7-001-low.png",
-        "imageHighSrc": "cards/pop7-001-high.png",
-        "attacks": [
-            {
-                "name": "Cluster Bolt",
-                "damage": "70"
-            }
-        ]
-    }
+  {
+    "masterCardId": "9256",
+    "externalId": "pop7-17",
+    "localId": "017",
+    "setCode": "pop7",
+    "cardNumber": "17/17",
+    "cardName": "Spinda",
+    "fullDisplayName": "Spinda 17/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      327
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Atsuko Nishida",
+    "imageLowSrc": "cards/pop7-017-low.png",
+    "imageHighSrc": "cards/pop7-017-high.png",
+    "attacks": [
+      {
+        "name": "Dish Out",
+        "damage": null,
+        "cost": [],
+        "effect": "Draw a card from the top and the bottom of your deck."
+      },
+      {
+        "name": "Synchro Punch",
+        "damage": "10+",
+        "cost": [],
+        "effect": "If any basic Energy card attached to Spinda is the same type as any Energy attached to the Defending Pokémon, this attack does 10 damage plus 30 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting +20",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "No two SPINDA have the same pattern of spots. Its tottering step fouls the aim of foes.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9247",
+    "externalId": "pop7-16",
+    "localId": "016",
+    "setCode": "pop7",
+    "cardNumber": "16/17",
+    "cardName": "Sentret",
+    "fullDisplayName": "Sentret 16/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      161
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Midori Harada",
+    "imageLowSrc": "cards/pop7-016-low.png",
+    "imageHighSrc": "cards/pop7-016-high.png",
+    "attacks": [
+      {
+        "name": "Grope",
+        "damage": null,
+        "cost": [],
+        "effect": "Look at the top 2 cards of your deck, choose 1 of them, and put it into your hand. Put the other card on the bottom of your deck."
+      },
+      {
+        "name": "Scratch",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting +10",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It has a very nervous nature. It stands up high on its tail so it can scan wide areas.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9238",
+    "externalId": "pop7-15",
+    "localId": "015",
+    "setCode": "pop7",
+    "cardNumber": "15/17",
+    "cardName": "Ralts",
+    "fullDisplayName": "Ralts 15/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      280
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Sumiyoshi Kizuki",
+    "imageLowSrc": "cards/pop7-015-low.png",
+    "imageHighSrc": "cards/pop7-015-high.png",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Confuse Ray",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic +10",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It uses the horns on its head to sense human emotions. It is said to appear in front of cheerful people.",
+    "pricingVariants": [
+      "jasonKlaczynski",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9229",
+    "externalId": "pop7-14",
+    "localId": "014",
+    "setCode": "pop7",
+    "cardNumber": "14/17",
+    "cardName": "Mareep",
+    "fullDisplayName": "Mareep 14/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      179
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Atsuko Nishida",
+    "imageLowSrc": "cards/pop7-014-low.png",
+    "imageHighSrc": "cards/pop7-014-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      },
+      {
+        "name": "Static Shock",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting +10",
+    "resistance": "Metal -20",
+    "retreatCost": 1,
+    "flavorText": "Its fluffy coat swells to double when static electricity builds up. Touching it can be shocking.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9220",
+    "externalId": "pop7-13",
+    "localId": "013",
+    "setCode": "pop7",
+    "cardNumber": "13/17",
+    "cardName": "Corsola",
+    "fullDisplayName": "Corsola 13/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      222
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Midori Harada",
+    "imageLowSrc": "cards/pop7-013-low.png",
+    "imageHighSrc": "cards/pop7-013-high.png",
+    "attacks": [
+      {
+        "name": "Rally",
+        "damage": null,
+        "cost": [],
+        "effect": "Search your deck for up to 3 different types of Basic Pokémon and put them onto your Bench. Shuffle your deck afterward."
+      },
+      {
+        "name": "Hook",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass +20",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Many live in the clean seas of the south. They apparently can't live in polluted waters.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9214",
+    "externalId": "pop7-12",
+    "localId": "012",
+    "setCode": "pop7",
+    "cardNumber": "12/17",
+    "cardName": "Burmy Sandy Cloak",
+    "fullDisplayName": "Burmy Sandy Cloak 12/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Midori Harada",
+    "imageLowSrc": "cards/pop7-012-low.png",
+    "imageHighSrc": "cards/pop7-012-high.png",
+    "attacks": [
+      {
+        "name": "Sandy Cloak Tackle",
+        "damage": "10+",
+        "cost": [],
+        "effect": "If Burmy Sandy Cloak has any Fighting Energy attached to it, this attack does 10 damage plus 10 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire +10",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "To shelter itself from cold, wintry winds, it covers itself with a cloak made of twigs and leaves.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9206",
+    "externalId": "pop7-11",
+    "localId": "011",
+    "setCode": "pop7",
+    "cardNumber": "11/17",
+    "cardName": "Burmy Plant Cloak",
+    "fullDisplayName": "Burmy Plant Cloak 11/17 POP Series 7",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      412
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/pop7-011-low.png",
+    "imageHighSrc": "cards/pop7-011-high.png",
+    "attacks": [
+      {
+        "name": "Plant Cloak Tackle",
+        "damage": "10+",
+        "cost": [],
+        "effect": "If Burmy Plant Cloak has any Grass Energy attached to it, this attack does 10 damage plus 10 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire +10",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "To shelter itself from cold, wintry winds, it covers itself with a cloak made of twigs and leaves.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9197",
+    "externalId": "pop7-10",
+    "localId": "010",
+    "setCode": "pop7",
+    "cardNumber": "10/17",
+    "cardName": "Wormadam Sandy Cloak",
+    "fullDisplayName": "Wormadam Sandy Cloak 10/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      413
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kagemaru Himeno",
+    "imageLowSrc": "cards/pop7-010-low.png",
+    "imageHighSrc": "cards/pop7-010-high.png",
+    "attacks": [
+      {
+        "name": "Push Over",
+        "damage": "40+",
+        "cost": [],
+        "effect": "Does 40 damage plus 10 more damage for each Fighting Energy attached to Wormadam Sandy Cloak."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire +20",
+    "resistance": "Lightning -20",
+    "retreatCost": 1,
+    "flavorText": "When BURMY evolved, it cloak became a part of this Pokémon's body. The cloak is never shed.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9189",
+    "externalId": "pop7-9",
+    "localId": "009",
+    "setCode": "pop7",
+    "cardNumber": "9/17",
+    "cardName": "Stantler",
+    "fullDisplayName": "Stantler 9/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      234
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/pop7-009-low.png",
+    "imageHighSrc": "cards/pop7-009-high.png",
+    "attacks": [
+      {
+        "name": "Lead",
+        "damage": null,
+        "cost": [],
+        "effect": "Search your deck for a Supporter card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
+      },
+      {
+        "name": "Frighten Horn",
+        "damage": "20",
+        "cost": [],
+        "effect": "If the Defending Pokémon isn't an Evolved Pokémon, that Pokémon is now Confused."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting +20",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Staring at its antlers creates an odd sensation as if one were being drawn into their centers.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9180",
+    "externalId": "pop7-8",
+    "localId": "008",
+    "setCode": "pop7",
+    "cardNumber": "8/17",
+    "cardName": "Kirlia",
+    "fullDisplayName": "Kirlia 8/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      281
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop7-008-low.png",
+    "imageHighSrc": "cards/pop7-008-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Research",
+        "damage": null,
+        "cost": [],
+        "effect": "Search your discard pile for a Supporter card and use the effect of that card as the effect of this attack. (The Supporter card remains in your discard pile.)"
+      },
+      {
+        "name": "Telekinesis",
+        "damage": null,
+        "cost": [],
+        "effect": "Choose 1 of your opponent's Pokémon. This attack does 40 damage to that Pokémon. This attack's damage isn't affected by Weakness or Resistance."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Psychic +20",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It is highly perceptive of its Trainer's feelings. It dances when it is feeling happy.",
+    "pricingVariants": [
+      "holofoil",
+      "jasonKlaczynski",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9171",
+    "externalId": "pop7-7",
+    "localId": "007",
+    "setCode": "pop7",
+    "cardNumber": "7/17",
+    "cardName": "Flaaffy",
+    "fullDisplayName": "Flaaffy 7/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      180
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kagemaru Himeno",
+    "imageLowSrc": "cards/pop7-007-low.png",
+    "imageHighSrc": "cards/pop7-007-high.png",
+    "attacks": [
+      {
+        "name": "Attract Current",
+        "damage": "10",
+        "cost": [],
+        "effect": "Search your deck for a Lightning Energy card and attach it to 1 of your Pokémon. Shuffle your deck afterward."
+      },
+      {
+        "name": "Electromagnetic Kick",
+        "damage": "60",
+        "cost": [],
+        "effect": "Flip a coin. If tails, Flaaffy does 10 damage to itself."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fighting +20",
+    "resistance": "Metal -20",
+    "retreatCost": 1,
+    "flavorText": "If its coat becomes fully charged with electricity, its tail lights up. It fire hair that zaps on impact.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9162",
+    "externalId": "pop7-6",
+    "localId": "006",
+    "setCode": "pop7",
+    "cardNumber": "6/17",
+    "cardName": "Delibird",
+    "fullDisplayName": "Delibird 6/17 POP Series 7",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      225
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop7-006-low.png",
+    "imageHighSrc": "cards/pop7-006-high.png",
+    "attacks": [
+      {
+        "name": "Present",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, search your deck for any 1 card and put it into your hand. Shuffle your deck afterward."
+      },
+      {
+        "name": "Ice Ball",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Metal +20",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It carries food rolled up in its tail. It has the habit of sharing food with people lost in mountains.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9152",
+    "externalId": "pop7-5",
+    "localId": "005",
+    "setCode": "pop7",
+    "cardNumber": "5/17",
+    "cardName": "Mothim",
+    "fullDisplayName": "Mothim 5/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      414
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kazuyuki Kano",
+    "imageLowSrc": "cards/pop7-005-low.png",
+    "imageHighSrc": "cards/pop7-005-high.png",
+    "attacks": [
+      {
+        "name": "Silver Wind",
+        "damage": null,
+        "cost": [],
+        "effect": "During your next turn, if an attack does damage to the Defending Pokémon (after applying Weakness and Resistance), that attack does 40 more damage."
+      },
+      {
+        "name": "Raging Scales",
+        "damage": "30+",
+        "cost": [],
+        "effect": "If Mothim has any damage counters on it, this attack does 30 damage plus 40 more damage."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire +20",
+    "resistance": "Fighting -20",
+    "retreatCost": null,
+    "flavorText": "It loves the honey of flowers and steals honey collected by COMBEE.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9143",
+    "externalId": "pop7-4",
+    "localId": "004",
+    "setCode": "pop7",
+    "cardNumber": "4/17",
+    "cardName": "Latios",
+    "fullDisplayName": "Latios 4/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 90,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      381
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Daisuke Ito",
+    "imageLowSrc": "cards/pop7-004-low.png",
+    "imageHighSrc": "cards/pop7-004-high.png",
+    "attacks": [
+      {
+        "name": "Energy Draw",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip a coin. If heads, search your deck for a basic Energy card and attach it to Latios. Shuffle your deck afterward."
+      },
+      {
+        "name": "Luster Purge",
+        "damage": "120",
+        "cost": [],
+        "effect": "Discard 3 Energy attached to Latios."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Colorless +20",
+    "resistance": "Fighting -20",
+    "retreatCost": 2,
+    "flavorText": "A highly intelligent Pokémon. By folding back its wings in flight, it can overtake jet planes.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9133",
+    "externalId": "pop7-3",
+    "localId": "003",
+    "setCode": "pop7",
+    "cardNumber": "3/17",
+    "cardName": "Latias",
+    "fullDisplayName": "Latias 3/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      380
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Daisuke Ito",
+    "imageLowSrc": "cards/pop7-003-low.png",
+    "imageHighSrc": "cards/pop7-003-high.png",
+    "attacks": [
+      {
+        "name": "Miraculous Light",
+        "damage": "10",
+        "cost": [],
+        "effect": "Remove 2 damage counters and all Special Conditions from Latias."
+      },
+      {
+        "name": "Mist Ball",
+        "damage": "80",
+        "cost": [],
+        "effect": "Discard a Fire and a Water Energy attached to Latias."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Colorless +20",
+    "resistance": "Fighting -20",
+    "retreatCost": 1,
+    "flavorText": "Its body is covered with a down that can refract light in such a way that it becomes invisible.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9120",
+    "externalId": "pop7-2",
+    "localId": "002",
+    "setCode": "pop7",
+    "cardNumber": "2/17",
+    "cardName": "Gallade",
+    "fullDisplayName": "Gallade 2/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      475
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Daisuke Ito",
+    "imageLowSrc": "cards/pop7-002-low.png",
+    "imageHighSrc": "cards/pop7-002-high.png",
+    "attacks": [
+      {
+        "name": "Sonic Blade",
+        "damage": null,
+        "cost": [],
+        "effect": "Put damage counters on the Defending Pokémon until it is 50 HP away from being Knocked Out. If you do, your opponent switches the Defending Pokémon with 1 of his or her Benched Pokémon."
+      },
+      {
+        "name": "Psychic Cut",
+        "damage": "60+",
+        "cost": [],
+        "effect": "You may choose as many of your face-down Prize cards as you like and put them face up. If you do, this attack does 60 damage plus 20 more damage for each Prize card you chose. (These cards remain face up for the rest of the game.)"
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Psychic +30",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "A master of courtesy and swordsmanship, it fights using extending swords on it elbows.",
+    "pricingVariants": [
+      "holofoil",
+      "jasonKlaczynski",
+      "michaelPramawat",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9113",
+    "externalId": "pop7-1",
+    "localId": "001",
+    "setCode": "pop7",
+    "cardNumber": "1/17",
+    "cardName": "Ampharos",
+    "fullDisplayName": "Ampharos 1/17 POP Series 7",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 130,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      181
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/pop7-001-low.png",
+    "imageHighSrc": "cards/pop7-001-high.png",
+    "attacks": [
+      {
+        "name": "Cluster Bolt",
+        "damage": "70",
+        "cost": [],
+        "effect": "You may discard all Lightning Energy attached to Ampharos. If you do, this attack does 20 damage to each of your opponent's Benched Pokémon that has any Energy cards attached to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Fighting +30",
+    "resistance": "Metal -20",
+    "retreatCost": 3,
+    "flavorText": "The tip of its tail shines brightly. In the olden days, people sent signals using the tail's light.",
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  }
 ]

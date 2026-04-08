@@ -18,7 +18,16 @@
         "artist": "Naoki Saito",
         "imageLowSrc": "cards/svp-224-low.jpg",
         "imageHighSrc": "cards/svp-224-low.jpg",
-        "rules": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+        "rules": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played.",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "worldChampionshipsStaffStamp",
+            "worldChampionshipsStamp"
+        ]
     },
     {
         "masterCardId": "22537",
@@ -39,7 +48,15 @@
         "artist": "Taira Akitsu",
         "imageLowSrc": "cards/svp-223-low.jpg",
         "imageHighSrc": "cards/svp-223-low.jpg",
-        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn.",
+        "subtype": "Supporter",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "normal"
+        ]
     },
     {
         "masterCardId": "22536",
@@ -60,7 +77,15 @@
         "artist": "Hideki Ishikawa",
         "imageLowSrc": "cards/svp-222-low.jpg",
         "imageHighSrc": "cards/svp-222-low.jpg",
-        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn.",
+        "subtype": "Supporter",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "normal"
+        ]
     },
     {
         "masterCardId": "22535",
@@ -81,7 +106,15 @@
         "artist": "Hideki Ishikawa",
         "imageLowSrc": "cards/svp-221-low.jpg",
         "imageHighSrc": "cards/svp-221-low.jpg",
-        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn."
+        "rules": "Discard your hand and draw 7 cards.\n\nYou may play only 1 Supporter card during your turn.",
+        "subtype": "Supporter",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "normal"
+        ]
     },
     {
         "masterCardId": "22534",
@@ -102,7 +135,15 @@
         "artist": "GOSSAN",
         "imageLowSrc": "cards/svp-220-low.jpg",
         "imageHighSrc": "cards/svp-220-low.jpg",
-        "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
+        "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn.",
+        "subtype": "Supporter",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "normal"
+        ]
     },
     {
         "masterCardId": "22533",
@@ -123,7 +164,15 @@
         "artist": "GOSSAN",
         "imageLowSrc": "cards/svp-219-low.jpg",
         "imageHighSrc": "cards/svp-219-low.jpg",
-        "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn."
+        "rules": "During this turn, attacks used by your Pokémon do 40 more damage to your opponent's Active Pokémon ex (before applying Weakness and Resistance).\n\nYou may play only 1 Supporter card during your turn.",
+        "subtype": "Supporter",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "normal"
+        ]
     },
     {
         "masterCardId": "22532",
@@ -151,14 +200,26 @@
         "attacks": [
             {
                 "name": "Haughty Order",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Reveal the top 10 cards of your opponent's deck. You may choose an attack from a Pokémon you find there and use it as this attack. Shuffle the revealed cards into your opponent's deck."
             },
             {
                 "name": "Cruel Slash",
-                "damage": "140"
+                "damage": "140",
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Confused."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "22531",
@@ -186,14 +247,26 @@
         "attacks": [
             {
                 "name": "Tainted Horn",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Poisoned. During Pokémon Checkup, put 8 damage counters on that Pokémon instead of 1."
             },
             {
                 "name": "Kingly Impact",
-                "damage": "240"
+                "damage": "240",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "22530",
@@ -221,10 +294,20 @@
         "attacks": [
             {
                 "name": "Erasure Ball",
-                "damage": "160+"
+                "damage": "160+",
+                "cost": [],
+                "effect": "You may discard up to 2 Energy from your Benched Pokémon. This attack does 60 more damage for each card you discarded in this way."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "22529",
@@ -252,10 +335,20 @@
         "attacks": [
             {
                 "name": "Strumming Thunder",
-                "damage": "240"
+                "damage": "240",
+                "cost": [],
+                "effect": "Discard 2 Energy from this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "normal"
+        ]
     },
     {
         "masterCardId": "22528",
@@ -283,8 +376,18 @@
         "attacks": [
             {
                 "name": "Unwind",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Head 20 damage from this Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+        "pricingVariants": [
+            "normal"
         ]
     },
     {
@@ -313,8 +416,18 @@
         "attacks": [
             {
                 "name": "Deep Submergence",
-                "damage": "140"
+                "damage": "140",
+                "cost": [],
+                "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all damage from and effects of attacks done to this Pokémon."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "When it bites with its massive and powerful jaws, it shakes its head and savagely tears its victim up.",
+        "pricingVariants": [
+            "normal"
         ]
     },
     {
@@ -343,12 +456,24 @@
         "attacks": [
             {
                 "name": "Cellular Ascension",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "For each of your Benched Pokémon, search your deck for a card that evolves from that Pokémon and put it onto that Pokémon to evolve it. Then, shuffle your deck."
             },
             {
                 "name": "Evo-Lariat",
-                "damage": "40+"
+                "damage": "40+",
+                "cost": [],
+                "effect": "This attack does 40 more damage for each of your Evolution Pokémon in play."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "When Reuniclus shake hands, a network forms between their brains, increasing their psychic power.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -377,8 +502,18 @@
         "attacks": [
             {
                 "name": "Synchro Shot",
-                "damage": "90+"
+                "damage": "90+",
+                "cost": [],
+                "effect": "If you have the same number of cards in your hand as your opponent, this attack does 90 more damage."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": "Starry skies thousands of light-years away are visible in the space distorted by their intense psychic power.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -407,12 +542,25 @@
         "attacks": [
             {
                 "name": "Wrapped in Wind",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Attach a Basic Energy card from your hand to this Pokémon."
             },
             {
                 "name": "Hurricane",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": "Move a Basic Energy from this Pokémon to 1 of your Benched Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "The lower half of its body is wrapped in a cloud of energy. It zooms through the sky at 200mph.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -441,12 +589,25 @@
         "attacks": [
             {
                 "name": "Charge",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for a Basic Lightning Energy card and attach it to this Pokémon. Then, shuffle your deck."
             },
             {
                 "name": "Disaster Volt",
-                "damage": "110"
+                "damage": "110",
+                "cost": [],
+                "effect": "Discard an Energy from this Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Countless charred remains mar the landscape of places through which Thundurus has passed.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -475,8 +636,18 @@
         "attacks": [
             {
                 "name": "V-Force",
-                "damage": "120"
+                "damage": "120",
+                "cost": [],
+                "effect": "If you have 4 or fewer Benched Pokémon, this attack does nothing."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This Pokémon brings victory. It is said that Trainers with Victini always win, regardless of the type of encounter.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -505,8 +676,18 @@
         "attacks": [
             {
                 "name": "Ram",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 1,
+        "flavorText": "The magnetic force generated by its body repels the ground's natural magnetism, letting it float.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -535,8 +716,18 @@
         "attacks": [
             {
                 "name": "Spiky Wheel",
-                "damage": "20+"
+                "damage": "20+",
+                "cost": [],
+                "effect": "This attack does 40 more damage for each Darkness Energy attached to this Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "Morpeko eats seeds constantly to keep its hunger at bay. If it's hungry for too long, it grows wild and brutish.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -565,10 +756,20 @@
         "attacks": [
             {
                 "name": "Erasure Ball",
-                "damage": "160+"
+                "damage": "160+",
+                "cost": [],
+                "effect": "You may discard up to 2 Energy from your Benched Pokémon. This attack does 60 more damage for each card you discarded in this way."
             }
         ],
-        "rules": "Pokémon ex Rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex Rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "22520",
@@ -596,14 +797,26 @@
         "attacks": [
             {
                 "name": "Corkscrew Dive",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": "You may draw cards until you have 6 cards in your hand."
             },
             {
                 "name": "Draconic Buster",
-                "damage": "260"
+                "damage": "260",
+                "cost": [],
+                "effect": "Discard all Energy from this Pokémon."
             }
         ],
-        "rules": "Pokémon ex Rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex Rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "22519",
@@ -631,12 +844,25 @@
         "attacks": [
             {
                 "name": "Rocket Mirror",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Move all damage counters from 1 of your Benched Team Rocket's Pokémon to your opponent's Active Pokémon."
             },
             {
                 "name": "Headbutt Bounce",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": "To keep its pitch-black tail hidden, it lives quietly in the darkness. It is never first to attack.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -665,12 +891,24 @@
         "attacks": [
             {
                 "name": "Call for Family",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck."
             },
             {
                 "name": "Mega Punch",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Although it's carrying its baby in a pouch on its belly, Kangaskhan is swift on its feet. It intimidates its opponents with quick jabs.",
+        "pricingVariants": [
+            "cosmosHolofoil"
         ]
     },
     {
@@ -699,12 +937,24 @@
         "attacks": [
             {
                 "name": "Full Speed",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Discard your hand and draw 6 cards."
             },
             {
                 "name": "Head Bolt",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Once the herd hears thunder, it chases after the storm clouds so that the Blitzle in the group can use the lightning to charge up.",
+        "pricingVariants": [
+            "cosmosHolofoil"
         ]
     },
     {
@@ -733,12 +983,24 @@
         "attacks": [
             {
                 "name": "Call for Family",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck."
             },
             {
                 "name": "Gnaw",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It can evolve into a variety of forms. Eevee's genes are the key to solving the mysteries of Pokémon evolution.",
+        "pricingVariants": [
+            "cosmosHolofoil"
         ]
     },
     {
@@ -767,12 +1029,24 @@
         "attacks": [
             {
                 "name": "Pluck Off",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for up to 3 Basic Grass Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
             },
             {
                 "name": "Hammer Whip",
-                "damage": "130"
+                "damage": "130",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Within dense forests, this Pokémon lives in a pack with others of its kind. It's incredibly aggressive, and the other Pokémon of the forest fear it.",
+        "pricingVariants": [
+            "cosmosHolofoil"
         ]
     },
     {
@@ -801,14 +1075,26 @@
         "attacks": [
             {
                 "name": "Steel Armament",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Search your deck for a Basic Metal Energy card and attach it to this Pokémon. Then, shuffle your deck."
             },
             {
                 "name": "Slashing Strike",
-                "damage": "210"
+                "damage": "210",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't use Slashing Strike."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "21004",
@@ -836,14 +1122,26 @@
         "attacks": [
             {
                 "name": "Claw Slash",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Revenge Buster",
-                "damage": "100+"
+                "damage": "100+",
+                "cost": [],
+                "effect": "If your Benched Pokémon have any damage counters on them, this attack does 120 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "22514",
@@ -871,10 +1169,21 @@
         "attacks": [
             {
                 "name": "Burning Darkness",
-                "damage": "180+"
+                "damage": "180+",
+                "cost": [],
+                "effect": "This attack does 30 more damage for each Prize card your opponent has taken."
             }
         ],
-        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, Tera, ex",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "21002",
@@ -902,10 +1211,20 @@
         "attacks": [
             {
                 "name": "Full Moon Rondo",
-                "damage": "20+"
+                "damage": "20+",
+                "cost": [],
+                "effect": "This attack does 20 more damage for each Benched Pokémon (both yours and your opponent's)."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "21001",
@@ -933,10 +1252,20 @@
         "attacks": [
             {
                 "name": "Thunderous Bolt",
-                "damage": "230"
+                "damage": "230",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "21000",
@@ -964,14 +1293,27 @@
         "attacks": [
             {
                 "name": "Insta-Strike",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "This attack also does 30 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             },
             {
                 "name": "Brave Slash",
-                "damage": "240"
+                "damage": "240",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't use Brave Slash."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "22513",
@@ -999,8 +1341,18 @@
         "attacks": [
             {
                 "name": "Tackle",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Roy's partner is lax and prone to gluttony. This Fuecoco loves to sing its heart out.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1029,12 +1381,24 @@
         "attacks": [
             {
                 "name": "Scratch",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Leafage",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": null,
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Liko's partner is quirky and has its own tempo. No one really knows what this Sprigatito is thinking.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1063,8 +1427,18 @@
         "attacks": [
             {
                 "name": "Scrappy Spark",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Flip a coin until you get tails. This attack does 30 more damage for each heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+        "pricingVariants": [
+            "normal"
         ]
     },
     {
@@ -1093,8 +1467,19 @@
         "attacks": [
             {
                 "name": "Scratch",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -1123,12 +1508,24 @@
         "attacks": [
             {
                 "name": "Nab 'n' Dash",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for a number of cards up to the number of your Benched Pokémon and put them into your hand. Then, shuffle your deck."
             },
             {
                 "name": "High Jump Kick",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1157,8 +1554,18 @@
         "attacks": [
             {
                 "name": "Gyro Shockwave",
-                "damage": "110"
+                "damage": "110",
+                "cost": [],
+                "effect": "Switch this Pokémon with 1 of your Benched Pokémon."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1187,8 +1594,18 @@
         "attacks": [
             {
                 "name": "Kick Shot",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If tails, this attack does nothing."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1217,8 +1634,18 @@
         "attacks": [
             {
                 "name": "Silent Wing",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Your opponent reveals their hand."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1247,8 +1674,19 @@
         "attacks": [
             {
                 "name": "Dynamic Press",
-                "damage": "140"
+                "damage": "140",
+                "cost": [],
+                "effect": "This Pokémon also does 80 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 4,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -1277,8 +1715,19 @@
         "attacks": [
             {
                 "name": "Magical Shot",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -1307,8 +1756,19 @@
         "attacks": [
             {
                 "name": "Mach Bolt",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -1337,12 +1797,25 @@
         "attacks": [
             {
                 "name": "Back Draft",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "This attack does 30 damage for each Basic Energy card in your opponent's discard pile."
             },
             {
                 "name": "Flamebody Cannon",
-                "damage": "90"
+                "damage": "90",
+                "cost": [],
+                "effect": "Discard all Energy from this Pokémon, and this attack also does 90 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -1371,14 +1844,26 @@
         "attacks": [
             {
                 "name": "Time Bellow",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Draw a card."
             },
             {
                 "name": "Metal Blast",
-                "damage": "100+"
+                "damage": "100+",
+                "cost": [],
+                "effect": "This attack does 20 more damage for each Metal Energy attached to this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "20986",
@@ -1406,14 +1891,26 @@
         "attacks": [
             {
                 "name": "Aurora Beam",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Rising Horns",
-                "damage": "120+"
+                "damage": "120+",
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon is a Pokémon ex, this attack does 100 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "20985",
@@ -1441,14 +1938,26 @@
         "attacks": [
             {
                 "name": "Winding Waves",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": "You may switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)"
             },
             {
                 "name": "Tidal Surge",
-                "damage": "230"
+                "damage": "230",
+                "cost": [],
+                "effect": "Discard 2 Energy from this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "20984",
@@ -1476,10 +1985,21 @@
         "attacks": [
             {
                 "name": "Blood Moon",
-                "damage": "240"
+                "damage": "240",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "22510",
@@ -1507,14 +2027,26 @@
         "attacks": [
             {
                 "name": "Moon Mirage",
-                "damage": "160"
+                "damage": "160",
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Confused."
             },
             {
                 "name": "Onyx",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Discard all Energy from this Pokémon, and take a Prize card."
             }
         ],
-        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, Tera, ex",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "22509",
@@ -1542,14 +2074,26 @@
         "attacks": [
             {
                 "name": "Psych Out",
-                "damage": "160"
+                "damage": "160",
+                "cost": [],
+                "effect": "Discard a random card from your opponent's hand."
             },
             {
                 "name": "Amazez",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Devolve each of your opponent's evolved Pokémon by shuffling the highest Stage Evolution card on it into your opponent's deck."
             }
         ],
-        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, Tera, ex",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "20983",
@@ -1577,10 +2121,20 @@
         "attacks": [
             {
                 "name": "Coruscating Quartz",
-                "damage": "200"
+                "damage": "200",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, Tera, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "20982",
@@ -1608,8 +2162,19 @@
         "attacks": [
             {
                 "name": "Reckless Charge",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "This Pokémon also does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its genetic code is irregular. It may mutate if it is exposed to radiation from element stones.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -1638,12 +2203,24 @@
         "attacks": [
             {
                 "name": "Mystical Return",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, choose 1 of your opponent's Benched Pokémon. Shuffle that Pokémon and all attached cards into their deck."
             },
             {
                 "name": "Disarming Voice",
-                "damage": "90"
+                "damage": "90",
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Confused."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Sylveon cuts an elegant figure as it dances lightly around, feelers fluttering, but its piercing moves aim straight for its opponents' weak spots.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1672,12 +2249,24 @@
         "attacks": [
             {
                 "name": "Permeating Chill",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "At the end of your opponent's next turn, put 9 damage counters on the Defending Pokémon."
             },
             {
                 "name": "Icicle Missile",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It lowers its body heat to freeze its fur. The hairs then become like needles it can fire.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1706,12 +2295,24 @@
         "attacks": [
             {
                 "name": "Leaflet Blessings",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Attach a Basic Grass Energy card from your hand to 1 of your Benched Pokémon. If you do, heal all damage from that Pokémon."
             },
             {
                 "name": "Solar Beam",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "The younger they are, the more they smell like fresh grass. With age, their fragrance takes on the odor of fallen leaves.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1740,12 +2341,24 @@
         "attacks": [
             {
                 "name": "Linear Attack",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "This attack does 30 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             },
             {
                 "name": "Fighting Lightning",
-                "damage": "90+"
+                "damage": "90+",
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon is a Pokémon ex or Pokémon V, this attack does 90 more damage."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "It concentrates the weak electric charges emitted by its cells and launches wicked lightning bolts.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1774,12 +2387,24 @@
         "attacks": [
             {
                 "name": "Spiral Drain",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Heal 30 damage from this Pokémon."
             },
             {
                 "name": "Fighting Whirlpool",
-                "damage": "90+"
+                "damage": "90+",
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon is a Pokémon ex or Pokémon V, this attack does 90 more damage."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "It lives close to water. Its long tail is ridged with a fin, which is often mistaken for a mermaid's.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1808,12 +2433,24 @@
         "attacks": [
             {
                 "name": "Destructive Flame",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon."
             },
             {
                 "name": "Fighting Blaze",
-                "damage": "90+"
+                "damage": "90+",
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon is a Pokémon ex or Pokémon V, this attack does 90 more damage."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Inhaled air is carried to its flame sac, heated, and exhaled as fire that reaches over 3,000 degrees Fahrenheit.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -1842,10 +2479,20 @@
         "attacks": [
             {
                 "name": "Myriad Leaf Shower",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "This attack does 30 more damage for each Energy attached to both Active Pokémon."
             }
         ],
-        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, Tera, ex",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "16026",
@@ -1873,14 +2520,26 @@
         "attacks": [
             {
                 "name": "Unified Beatdown",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "If you go second, you can't use this attack during your first turn. This attack does 30 damage for each of your Benched Pokémon."
             },
             {
                 "name": "Crown Opal",
-                "damage": "180"
+                "damage": "180",
+                "cost": [],
+                "effect": "During your opponent's next turn, prevent all damage done to this Pokémon by attacks from Basic non-Colorless Pokémon."
             }
         ],
-        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, Tera, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "16018",
@@ -1908,14 +2567,26 @@
         "attacks": [
             {
                 "name": "Power Splash",
-                "damage": "40×"
+                "damage": "40×",
+                "cost": [],
+                "effect": "This attack does 40 damage for each Energy attached to this Pokémon."
             },
             {
                 "name": "Larimar Rain",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Look at the top 20 cards of your deck and attach any number of Energy cards you find there to your Pokémon in any way you like. Shuffle the other cards back into your deck."
             }
         ],
-        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, Tera, ex",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "16009",
@@ -1943,14 +2614,26 @@
         "attacks": [
             {
                 "name": "Flare Strike",
-                "damage": "280"
+                "damage": "280",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't use Flare Strike."
             },
             {
                 "name": "Garnet Volley",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "This attack does 180 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
         ],
-        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, Tera, ex",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15998",
@@ -1978,10 +2661,21 @@
         "attacks": [
             {
                 "name": "Horrifying Fang",
-                "damage": "100+"
+                "damage": "100+",
+                "cost": [],
+                "effect": "Flip a coin until you get tails. This attack does 20 more damage for each heads."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "15989",
@@ -2009,14 +2703,26 @@
         "attacks": [
             {
                 "name": "Brave Wing",
-                "damage": "60+"
+                "damage": "60+",
+                "cost": [],
+                "effect": "If this Pokémon has any damage counters on it, this attack does 100 more damage."
             },
             {
                 "name": "Explosive Vortex",
-                "damage": "330"
+                "damage": "330",
+                "cost": [],
+                "effect": "Discard 3 Energy from this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15978",
@@ -2044,10 +2750,20 @@
         "attacks": [
             {
                 "name": "Motivate",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Attach up to 2 Basic Energy cards from your discard pile to 1 of your Benched Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15968",
@@ -2075,8 +2791,19 @@
         "attacks": [
             {
                 "name": "Electric Ball",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -2105,12 +2832,24 @@
         "attacks": [
             {
                 "name": "Crackling Charge",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip 3 coins. Attach a number of Basic Lightning Energy cards up to the number of heads from your discard pile to your Benched Pokémon in any way you like."
             },
             {
                 "name": "Tiny Bolt",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "A pair may be seen rubbing their cheek pouches together in an effort to share stored electricity.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -2139,12 +2878,24 @@
         "attacks": [
             {
                 "name": "Follow-Up Bolt",
-                "damage": "20+"
+                "damage": "20+",
+                "cost": [],
+                "effect": "This attack does 10 more damage for each damage counter on your opponent's Active Pokémon."
             },
             {
                 "name": "Drill Peck",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "This Pokémon has complete control over electricity. There are tales of Zapdos nesting in the dark depths of pitch-black thunderclouds.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -2173,12 +2924,24 @@
         "attacks": [
             {
                 "name": "Rollout",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Drenched Headbutt",
-                "damage": "80×"
+                "damage": "80×",
+                "cost": [],
+                "effect": "Discard the top 3 cards of your deck. This attack does 80 damage for each Energy card you discarded in this way."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "It has an easygoing nature. It doesn't care if it bumps its head on boats and boulders while swimming.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -2207,12 +2970,24 @@
         "attacks": [
             {
                 "name": "Scoop Water",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Shuffle up to 3 Basic Water Energy cards from your discard pile into your deck."
             },
             {
                 "name": "Headbutt",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This Pokémon lives in cold water. It will leave the water to search for food when it gets cold outside.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -2241,8 +3016,19 @@
         "attacks": [
             {
                 "name": "Super Psy Bolt",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "This Pokémon never leaves its Trainer's side. It predicts their actions with its psychic power and takes care of their day-to-day needs.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -2271,8 +3057,19 @@
         "attacks": [
             {
                 "name": "Electric Ball",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "They're formed by several Magnemite linked together. They frequently appear when sunspots flare up.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -2301,8 +3098,19 @@
         "attacks": [
             {
                 "name": "Icicle Loop",
-                "damage": "120"
+                "damage": "120",
+                "cost": [],
+                "effect": "Put an Energy attached to this Pokémon into your hand."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "The hatred of those who perished by the sword long ago has clad itself in snow and become a Pokémon.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -2331,12 +3139,25 @@
         "attacks": [
             {
                 "name": "Lunge Out",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Blazing Charge",
-                "damage": "100+"
+                "damage": "100+",
+                "cost": [],
+                "effect": "If your opponent has 4 or fewer Prize cards remaining, this attack does 70 more damage."
             }
+        ],
+        "subtype": "Basic, Ancient",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "There are scant few reports of this creature being sighted. One short video shows it rampaging and spouting pillars of flame.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -2358,7 +3179,16 @@
         "artist": "Naoki Saito",
         "imageLowSrc": "cards/svp-150-low.png",
         "imageHighSrc": "cards/svp-150-high.png",
-        "rules": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+        "rules": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played.",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "normal",
+            "staffStamp"
+        ]
     },
     {
         "masterCardId": "15876",
@@ -2386,8 +3216,18 @@
         "attacks": [
             {
                 "name": "Poison Chain",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Poisoned. During your opponent's next turn, that Pokémon can't retreat."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its peach-shaped shell serves as storage for a potent poison. It makes poisonous mochi and serves them to people and Pokémon.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -2416,12 +3256,25 @@
         "attacks": [
             {
                 "name": "Electric Claws",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Mach Bolt",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This seems to be the Iron Serpent mentioned in an old book. The Iron Serpent is said to have turned the land to ash with its lightning.",
+        "pricingVariants": [
+            "holofoil",
+            "pikachuStamp29"
         ]
     },
     {
@@ -2450,14 +3303,26 @@
         "attacks": [
             {
                 "name": "Repulsor Axe",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": "During your opponent's next turn, if this Pokémon is damaged by an attack (even if it is Knocked Out), put 8 damage counters on the Attacking Pokémon."
             },
             {
                 "name": "Power Stomp",
-                "damage": "200"
+                "damage": "200",
+                "cost": [],
+                "effect": "Discard 2 Energy from this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Future",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15840",
@@ -2485,10 +3350,20 @@
         "attacks": [
             {
                 "name": "Twin Shotels",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "This attack does 50 damage to 2 of your opponent's Pokémon. This attack's damage isn't affected by Weakness or Resistance, or by any effects on those Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Future",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15828",
@@ -2516,14 +3391,26 @@
         "attacks": [
             {
                 "name": "Burst Roar",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Discard your hand and draw 6 cards."
             },
             {
                 "name": "Bellowing Thunder",
-                "damage": "70×"
+                "damage": "70×",
+                "cost": [],
+                "effect": "You may discard any amount of Basic Energy from your Pokémon. This attack does 70 damage for each card you discarded in this way."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Ancient",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15818",
@@ -2551,14 +3438,26 @@
         "attacks": [
             {
                 "name": "Heat Blast",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Blaze Blitz",
-                "damage": "260"
+                "damage": "260",
+                "cost": [],
+                "effect": "This Pokémon can't use Blaze Blitz again until it leaves the Active Spot."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Ancient",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15808",
@@ -2586,14 +3485,26 @@
         "attacks": [
             {
                 "name": "Rapid Draw",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Draw 2 cards."
             },
             {
                 "name": "Techno Turbo",
-                "damage": "150"
+                "damage": "150",
+                "cost": [],
+                "effect": "Attach a Basic Lightning Energy card from your discard pile to 1 of your Benched Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15799",
@@ -2621,14 +3532,26 @@
         "attacks": [
             {
                 "name": "Strafe",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "You may switch this Pokémon with 1 of your Benched Pokémon."
             },
             {
                 "name": "Victory Flame",
-                "damage": "220"
+                "damage": "220",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15789",
@@ -2656,8 +3579,19 @@
         "attacks": [
             {
                 "name": "Speed Wing",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "Its extremely soft wings make no sound in flight. It silently sneaks up on prey without being detected.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -2686,12 +3620,24 @@
         "attacks": [
             {
                 "name": "Knock Off",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Discard a random card from your opponent's hand."
             },
             {
                 "name": "Wild Press",
-                "damage": "220"
+                "damage": "220",
+                "cost": [],
+                "effect": "This Pokémon also does 60 damage to itself."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "This intelligent Pokémon has a very daring disposition. It knocks rocks into the sky with its hammer, aiming for flying Corviknight.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -2720,8 +3666,18 @@
         "attacks": [
             {
                 "name": "Psychic Sphere",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": "It can telepathically communicate with people. It changes its appearance using its down that refracts light.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -2750,8 +3706,18 @@
         "attacks": [
             {
                 "name": "Powered Ball",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Discard an Energy from this Pokémon."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "After artificial intelligence was implemented in Porygon2, the Pokémon began using a strange language that only other Porygon2 understand.",
+        "pricingVariants": [
+            "cosmosHolofoil"
         ]
     },
     {
@@ -2780,8 +3746,18 @@
         "attacks": [
             {
                 "name": "Hook",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "They swim with dance-like motions and cause whirlpools to form. Horsea compete to see which of them can generate the biggest whirlpool.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -2810,8 +3786,19 @@
         "attacks": [
             {
                 "name": "Boundless Power",
-                "damage": "130"
+                "damage": "130",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "These Pokémon can crush a car with no more than a headbutt. Bouffalant with more hair on their heads hold higher positions within the herd.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -2840,8 +3827,19 @@
         "attacks": [
             {
                 "name": "Everyone Explode Now",
-                "damage": "50×"
+                "damage": "50×",
+                "cost": [],
+                "effect": "This attack does 50 damage for each of your Drifloon and Drifblim in play. This attack also does 30 damage to each of your Drifloon and Drifblim. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": "They carry people and Pokémon, but the wind can catch them, so there can't be a fixed destination.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -2870,8 +3868,19 @@
         "attacks": [
             {
                 "name": "Haymaker",
-                "damage": "250"
+                "damage": "250",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't use Haymaker."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "Though its punches are powerful, this Pokémon's movements are sluggish. It blows icy bubbles from its mouth to immobilize its opponents.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -2900,8 +3909,19 @@
         "attacks": [
             {
                 "name": "Swift",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": "This attack's damage isn't affected by Weakness or Resistance, or by any effects on your opponent's Active Pokémon."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "When the stars flicker in the night sky, it flutters about, scattering a glowing powder.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -2930,14 +3950,26 @@
         "attacks": [
             {
                 "name": "Stealthy Shuriken",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "This attack does 40 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             },
             {
                 "name": "Torrential Slash",
-                "damage": "120+"
+                "damage": "120+",
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 120 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15696",
@@ -2965,14 +3997,26 @@
         "attacks": [
             {
                 "name": "King's Order",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Put up to 3 Water Pokémon from your discard pile onto your Bench."
             },
             {
                 "name": "Hydro Pump",
-                "damage": "50+"
+                "damage": "50+",
+                "cost": [],
+                "effect": "This attack does 50 more damage for each Water Energy attached to this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15687",
@@ -3000,12 +4044,24 @@
         "attacks": [
             {
                 "name": "Strike Down",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon has 4 or more damage counters on it, that Pokémon is Knocked Out."
             },
             {
                 "name": "Massive Rend",
-                "damage": "140"
+                "damage": "140",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 4,
+        "flavorText": "Only a Bisharp that stands above all others in its vast army can evolve into Kingambit.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -3034,8 +4090,19 @@
         "attacks": [
             {
                 "name": "Poison Chain",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Poisoned. During your opponent's next turn, that Pokémon can't retreat."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its peach-shaped shell serves as storage for a potent poison. It makes poisonous mochi and serves them to people and Pokémon.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -3064,10 +4131,20 @@
         "attacks": [
             {
                 "name": "Prism Edge",
-                "damage": "180"
+                "damage": "180",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Future",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15659",
@@ -3095,10 +4172,20 @@
         "attacks": [
             {
                 "name": "Catharsis Roar",
-                "damage": "120+"
+                "damage": "120+",
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon is affected by a Special Condition, this attack does 120 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Ancient",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15648",
@@ -3126,10 +4213,21 @@
         "attacks": [
             {
                 "name": "Giga Impact",
-                "damage": "250"
+                "damage": "250",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "15638",
@@ -3157,10 +4255,20 @@
         "attacks": [
             {
                 "name": "Scorching Bazooka",
-                "damage": "40+"
+                "damage": "40+",
+                "cost": [],
+                "effect": "This attack does 40 more damage for each Fire Energy attached to this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15628",
@@ -3181,7 +4289,15 @@
         "artist": "yuu",
         "imageLowSrc": "cards/svp-124-low.png",
         "imageHighSrc": "cards/svp-124-high.png",
-        "rules": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player draws a card for each of their remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn."
+        "rules": "Each player shuffles their hand and puts it on the bottom of their deck. If either player put any cards on the bottom of their deck in this way, each player draws a card for each of their remaining Prize cards.\n\nYou may play only 1 Supporter card during your turn.",
+        "subtype": "Supporter",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15618",
@@ -3209,12 +4325,25 @@
         "attacks": [
             {
                 "name": "Mountain Stroll",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
             },
             {
                 "name": "Ogre Comeback",
-                "damage": "20+"
+                "damage": "20+",
+                "cost": [],
+                "effect": "This attack does 20 more damage for each of your opponent's Benched Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This mischief-loving Pokémon is full of curiosity. It battles by drawing out the type-based energy contained within its masks.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -3243,8 +4372,18 @@
         "attacks": [
             {
                 "name": "Lazy Press",
-                "damage": "120"
+                "damage": "120",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "It is not satisfied unless it eats over 880 pounds of food every day. When it is done eating, it goes promptly to sleep.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -3273,12 +4412,24 @@
         "attacks": [
             {
                 "name": "Swagger",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon."
             },
             {
                 "name": "Huge Tackle",
-                "damage": "70+"
+                "damage": "70+",
+                "cost": [],
+                "effect": "If you have more cards in your hand than your opponent, this attack does 80 more damage."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 3,
+        "flavorText": "It creates a gas out of poison and minerals from rocks. It then detonates the gas in its cylinders— now numbering eight—to generate energy.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -3307,12 +4458,24 @@
         "attacks": [
             {
                 "name": "Rock Throw",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Blasting Tackle",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": "This attack also does 20 damage to 1 of your Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This pupa flies around wildly by venting with great force the gas pressurized inside its body.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -3341,8 +4504,18 @@
         "attacks": [
             {
                 "name": "Slight Intrusion",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "This Pokémon also does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It has no problem drinking dirty water. An organ inside Toxel's body filters such water into a poisonous liquid that is harmless to Toxel.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -3371,8 +4544,19 @@
         "attacks": [
             {
                 "name": "Surf",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Tatsugiri is an extremely cunning Pokémon. It feigns weakness to lure in prey, then orders its partner to attack.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -3401,8 +4585,19 @@
         "attacks": [
             {
                 "name": "Frost Smash",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It freezes prey by blowing its −58 degree Fahrenheit breath. It is said to then secretly display its prey.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -3431,8 +4626,19 @@
         "attacks": [
             {
                 "name": "Scorching Fire",
-                "damage": "200"
+                "damage": "200",
+                "cost": [],
+                "effect": "Discard an Energy from this Pokémon."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its crown of fire is indicative of its fiery nature. It is beaten by none in terms of quickness.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -3461,8 +4667,19 @@
         "attacks": [
             {
                 "name": "Beat",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "The faster a Thwackey can beat out a rhythm with its two sticks, the more respect it wins from its peers.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -3484,7 +4701,20 @@
         "artist": "Susumu Maeya",
         "imageLowSrc": "cards/svp-114-low.png",
         "imageHighSrc": "cards/svp-114-high.png",
-        "rules": "Flip a coin. If heads, draw 4 cards. If tails, draw 2 cards.\n\nYou may play only 1 Supporter card during your turn."
+        "rules": "Flip a coin. If heads, draw 4 cards. If tails, draw 2 cards.\n\nYou may play only 1 Supporter card during your turn.",
+        "subtype": "Supporter",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "armarougeStamp34",
+            "armarougeStamp47",
+            "darkraiStamp",
+            "normal",
+            "pikachuStamp26",
+            "pikachuStamp46"
+        ]
     },
     {
         "masterCardId": "15519",
@@ -3512,12 +4742,24 @@
         "attacks": [
             {
                 "name": "Elbow Strike",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Slicing Blade",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Only a Bisharp that stands above all others in its vast army can evolve into Kingambit.",
+        "pricingVariants": [
+            "normal"
         ]
     },
     {
@@ -3546,8 +4788,18 @@
         "attacks": [
             {
                 "name": "Cut",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Bisharp mercilessly cuts its opponents to pieces with the sharp blades covering its body. It will do anything to win.",
+        "pricingVariants": [
+            "normal"
         ]
     },
     {
@@ -3576,8 +4828,18 @@
         "attacks": [
             {
                 "name": "Pierce",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Blades comprise this Pokémon's entire body. If battling dulls the blades, it sharpens them on stones by the river.",
+        "pricingVariants": [
+            "normal"
         ]
     },
     {
@@ -3606,14 +4868,26 @@
         "attacks": [
             {
                 "name": "Wind of Darkness",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Night Impact",
-                "damage": "110"
+                "damage": "110",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15481",
@@ -3641,8 +4915,19 @@
         "attacks": [
             {
                 "name": "Electric Ball",
-                "damage": "110"
+                "damage": "110",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Its tail shines bright and strong. It has been prized since long ago as a beacon for sailors.",
+        "pricingVariants": [
+            "normal",
+            "pikachuStamp47"
         ]
     },
     {
@@ -3671,12 +4956,26 @@
         "attacks": [
             {
                 "name": "Headbutt",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Electro Ball",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Its fluffy fleece easily stores electricity. Its rubbery hide keeps it from being electrocuted.",
+        "pricingVariants": [
+            "normal",
+            "pikachuStamp37",
+            "pikachuStamp53"
         ]
     },
     {
@@ -3705,12 +5004,27 @@
         "attacks": [
             {
                 "name": "Headbutt",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Lightning Ball",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Mareep's fluffy coat of wool rubs together and builds a static charge. The more static electricity is charged, the more brightly the lightbulb at the tip of its tail glows.",
+        "pricingVariants": [
+            "normal",
+            "pikachuStamp19",
+            "pikachuStamp41",
+            "pikachuStamp45"
         ]
     },
     {
@@ -3739,10 +5053,20 @@
         "attacks": [
             {
                 "name": "Thunderbolt",
-                "damage": "120"
+                "damage": "120",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15444",
@@ -3770,10 +5094,20 @@
         "attacks": [
             {
                 "name": "Armor Cannon",
-                "damage": "200"
+                "damage": "200",
+                "cost": [],
+                "effect": "Discard a Fire Energy from this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15432",
@@ -3801,14 +5135,26 @@
         "attacks": [
             {
                 "name": "Metal-bolize",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for up to 2 Basic Metal Energy cards and attach them to this Pokémon. Then, shuffle your deck."
             },
             {
                 "name": "Full Metal Knuckle",
-                "damage": "90+"
+                "damage": "90+",
+                "cost": [],
+                "effect": "This attack does 30 more damage for each Metal Energy attached to this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 4,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15422",
@@ -3836,14 +5182,26 @@
         "attacks": [
             {
                 "name": "Evil Claw",
-                "damage": "90"
+                "damage": "90",
+                "cost": [],
+                "effect": "If the Defending Pokémon is a Basic Pokémon, it can't attack during your opponent's next turn."
             },
             {
                 "name": "Hound's Fang",
-                "damage": "220"
+                "damage": "220",
+                "cost": [],
+                "effect": "This Pokémon also does 30 damage to itself."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "22508",
@@ -3871,12 +5229,24 @@
         "attacks": [
             {
                 "name": "Razor Leaf",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Grass Knot",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "This attack does 20 damage for each Colorless in your opponent's Active Pokémon's Retreat Cost."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "During the day, it stays in the cold underground to avoid the sun. It grows by bathing in moonlight.",
+        "pricingVariants": [
+            "normal"
         ]
     },
     {
@@ -3905,8 +5275,18 @@
         "attacks": [
             {
                 "name": "Scrappy Spark",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Flip a coin until you get tails. This attack does 30 more damage for each heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+        "pricingVariants": [
+            "playPokemonStamp"
         ]
     },
     {
@@ -3935,14 +5315,27 @@
         "attacks": [
             {
                 "name": "Numbing Saliva",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
             },
             {
                 "name": "Toxic Throw",
-                "damage": "180"
+                "damage": "180",
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Poisoned. During your next turn, this Pokémon can't use Toxic Throw."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "15387",
@@ -3970,12 +5363,24 @@
         "attacks": [
             {
                 "name": "Scratch",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Toxic Teeth",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Though usually a mellow Pokémon, it will sink its sharp, poison-soaked front teeth into any that anger it, causing paralysis in the object of its ire.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4004,12 +5409,25 @@
         "attacks": [
             {
                 "name": "Destructo-Press",
-                "damage": "70×"
+                "damage": "70×",
+                "cost": [],
+                "effect": "Reveal the top 5 cards of your deck. This attack does 70 damage for each Future card you find there. Then, discard those Future cards and shuffle the other cards back into your deck."
             },
             {
                 "name": "Megaton Lariat",
-                "damage": "140"
+                "damage": "140",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic, Future",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "Some of its notable features match those of an object named within a certain expedition journal as Iron Thorns.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -4038,8 +5456,19 @@
         "attacks": [
             {
                 "name": "Hex Hurl",
-                "damage": "90"
+                "damage": "90",
+                "cost": [],
+                "effect": "Put 2 damage counters on your opponent's Benched Pokémon in any way you like."
             }
+        ],
+        "subtype": "Basic, Ancient",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This Pokémon has characteristics similar to those of Flutter Mane, a creature mentioned in a certain book.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -4068,12 +5497,24 @@
         "attacks": [
             {
                 "name": "Flat-Out Dash",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin until you get tails. For each heads, draw a card."
             },
             {
                 "name": "Power Tackle",
-                "damage": "120"
+                "damage": "120",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Apparently Cyclizar has been allowing people to ride on its back since ancient times. Depictions of this have been found in 10,000-year-old murals.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4102,8 +5543,18 @@
         "attacks": [
             {
                 "name": "Twinkling Hope",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "Because of its unusual, starlike silhouette, people believe that it came here on a meteor.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4132,12 +5583,24 @@
         "attacks": [
             {
                 "name": "Thunder Wave",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
             },
             {
                 "name": "Two Bump Bolt",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "You may discard up to 2 Lightning Energy from this Pokémon. This attack does 80 more damage for each card you discarded in this way."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "When this Pokémon expands and contracts its wobbly body, the belly-button dynamo in its stomach produces a huge amount of electricity.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4166,8 +5629,18 @@
         "attacks": [
             {
                 "name": "Sharp Fang",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "These Pokémon have sharp fangs and powerful jaws. Sailors avoid Carvanha dens at all costs.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4196,12 +5669,25 @@
         "attacks": [
             {
                 "name": "Peak Acceleration",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Search your deck for up to 2 Basic Energy cards and attach them to your Future Pokémon in any way you like. Then, shuffle your deck."
             },
             {
                 "name": "Sparking Strike",
-                "damage": "160"
+                "damage": "160",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic, Future",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "This seems to be the Iron Serpent mentioned in an old book. The Iron Serpent is said to have turned the land to ash with its lightning.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -4230,12 +5716,25 @@
         "attacks": [
             {
                 "name": "Primordial Beatdown",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "This attack does 30 damage for each of your Ancient Pokémon in play."
             },
             {
                 "name": "Shred",
-                "damage": "130"
+                "damage": "130",
+                "cost": [],
+                "effect": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon."
             }
+        ],
+        "subtype": "Basic, Ancient",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "This seems to be the Winged King mentioned in an old expedition journal. It was said to have split the land with its bare fists.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -4264,8 +5763,19 @@
         "attacks": [
             {
                 "name": "Beam",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 2,
+        "flavorText": "Two Beldum have become stuck together via their own magnetic forces. With two brains, the resulting Metang has doubled psychic powers.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -4294,8 +5804,19 @@
         "attacks": [
             {
                 "name": "Giant Wave",
-                "damage": "160"
+                "damage": "160",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't use Giant Wave."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "It usually moves slowly, but it goes at blinding speed when it attacks and bites prey.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -4324,12 +5845,24 @@
         "attacks": [
             {
                 "name": "Growl",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "During your opponent's next turn, the Defending Pokémon's attacks do 20 less damage (before applying Weakness and Resistance)."
             },
             {
                 "name": "Pika Bolt",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4358,14 +5891,26 @@
         "attacks": [
             {
                 "name": "Scratch",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Magical Leaf",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": "Heal 30 damage from this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15250",
@@ -4393,14 +5938,27 @@
         "attacks": [
             {
                 "name": "Daunt",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "During your opponent's next turn, attacks used by the Defending Pokémon do 50 less damage (before applying Weakness and Resistance)."
             },
             {
                 "name": "Proud Fangs",
-                "damage": "100+"
+                "damage": "100+",
+                "cost": [],
+                "effect": "If your Benched Pokémon have any damage counters on them, this attack does 120 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "15240",
@@ -4428,8 +5986,18 @@
         "attacks": [
             {
                 "name": "Pika-Portrait",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for a Pikachu and put it onto your Bench. Then, shuffle your deck."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "When it is angered, it immediately discharges the energy stored in the pouches of its cheeks.",
+        "pricingVariants": [
+            "normal"
         ]
     },
     {
@@ -4458,14 +6026,27 @@
         "attacks": [
             {
                 "name": "Exciting Dance",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": "Switch this Pokémon with 1 of your Benched Pokémon. If you do, switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)"
             },
             {
                 "name": "Spiral Shot",
-                "damage": "230"
+                "damage": "230",
+                "cost": [],
+                "effect": "Put 2 Energy attached to this Pokémon into your hand."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "15220",
@@ -4493,12 +6074,24 @@
         "attacks": [
             {
                 "name": "Water Gun",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Wave Splash",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "These Pokémon constantly run through shallow waters to train their legs, then compete with each other to see which of them kicks most gracefully.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4527,8 +6120,18 @@
         "attacks": [
             {
                 "name": "Reckless Charge",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "This Pokémon also does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This Pokémon migrated to Paldea from distant lands long ago. The gel secreted by its feathers repels water and grime.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4557,14 +6160,27 @@
         "attacks": [
             {
                 "name": "Vitality Song",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Heal 30 damage from each of your Pokémon."
             },
             {
                 "name": "Burning Voice",
-                "damage": "270-"
+                "damage": "270-",
+                "cost": [],
+                "effect": "This attack does 10 less damage for each damage counter on this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "15191",
@@ -4592,12 +6208,24 @@
         "attacks": [
             {
                 "name": "Steady Firebreathing",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Hyper Voice",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "The combination of Crocalor's fire energy and overflowing vitality has caused an egg-shaped fireball to appear on the Pokémon's head.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4626,8 +6254,18 @@
         "attacks": [
             {
                 "name": "Tackle",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "It lies on warm rocks and uses the heat absorbed by its square-shaped scales to create fire energy.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4656,10 +6294,21 @@
         "attacks": [
             {
                 "name": "Scratching Nails",
-                "damage": "100+"
+                "damage": "100+",
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 120 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "15163",
@@ -4687,12 +6336,24 @@
         "attacks": [
             {
                 "name": "Seed Bomb",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Magic Whip",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Floragato deftly wields the vine hidden beneath its long fur, slamming the hard flower bud against its opponents.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4721,12 +6382,24 @@
         "attacks": [
             {
                 "name": "Gather Sunlight",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
             },
             {
                 "name": "Seed Bomb",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its fluffy fur is similar in composition to plants. This Pokémon frequently washes its face to keep it from drying out.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4755,8 +6428,19 @@
         "attacks": [
             {
                 "name": "Ghost Eye",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Put 7 damage counters on your opponent's Active Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This Pokémon lives in dark places untouched by sunlight. When it appears before humans, it hides itself under a cloth that resembles a Pikachu.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -4785,10 +6469,20 @@
         "attacks": [
             {
                 "name": "Burning Darkness",
-                "damage": "180+"
+                "damage": "180+",
+                "cost": [],
+                "effect": "This attack does 30 more damage for each Prize card your opponent has taken."
             }
         ],
-        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, Tera, ex",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15121",
@@ -4816,10 +6510,20 @@
         "attacks": [
             {
                 "name": "Iron-Clad Roll",
-                "damage": "150"
+                "damage": "150",
+                "cost": [],
+                "effect": "After doing damage, you may discard all Future Booster Energy Capsules from this Pokémon. If you do, during your opponent's next turn, this Pokémon takes 150 less damage from attacks (after applying Weakness and Resistance)."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Future",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15113",
@@ -4847,10 +6551,20 @@
         "attacks": [
             {
                 "name": "Great Bash",
-                "damage": "260"
+                "damage": "260",
+                "cost": [],
+                "effect": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Ancient",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 4,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "15102",
@@ -4878,8 +6592,18 @@
         "attacks": [
             {
                 "name": "Ambush",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 20 more damage."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It always scowls in an attempt to make opponents take it seriously, but even crying children will burst into laughter when they see Maschiff's face.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4908,8 +6632,18 @@
         "attacks": [
             {
                 "name": "Graveyard Gamboling",
-                "damage": "10×"
+                "damage": "10×",
+                "cost": [],
+                "effect": "This attack does 10 damage for each Psychic Pokémon in your discard pile."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": "This friendly Pokémon doesn't like being alone. Pay it even the slightest bit of attention, and it will follow you forever.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4938,8 +6672,18 @@
         "attacks": [
             {
                 "name": "Rear Kick",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This Pokémon is smooth and moist to the touch. Yeast in Fidough's breath induces fermentation in the Pokémon's vicinity.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -4968,10 +6712,21 @@
         "attacks": [
             {
                 "name": "Laser Blade",
-                "damage": "200"
+                "damage": "200",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Future",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "15065",
@@ -4999,14 +6754,27 @@
         "attacks": [
             {
                 "name": "Frenzied Gouging",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Knock Out your opponent's Active Pokémon. If your opponent's Active Pokémon is Knocked Out in this way, this Pokémon does 200 damage to itself."
             },
             {
                 "name": "Calamity Storm",
-                "damage": "100+"
+                "damage": "100+",
+                "cost": [],
+                "effect": "You may discard a Stadium in play. If you do, this attack does 120 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex, Ancient",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "15055",
@@ -5034,8 +6802,19 @@
         "attacks": [
             {
                 "name": "Refrigerated Stream",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": "If the Defending Pokémon is an Evolution Pokémon, it can't attack during your opponent's next turn."
             }
+        ],
+        "subtype": "Basic, Future",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It resembles a mysterious object mentioned in an old book. There are only two reported sightings of this Pokémon.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -5064,12 +6843,25 @@
         "attacks": [
             {
                 "name": "Slap",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Roaring Scream",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "This attack does 20 damage to 1 of your opponent's Pokémon for each damage counter on this Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Basic, Ancient",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "There has been only one reported sighting of this Pokémon. It resembles a mysterious creature depicted in an old expedition journal.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -5098,12 +6890,24 @@
         "attacks": [
             {
                 "name": "Sharp Fin",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Frost Smash",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Arctibax freezes the air around it, protecting its face with an ice mask and turning its dorsal fin into a blade of ice.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -5132,12 +6936,24 @@
         "attacks": [
             {
                 "name": "Avalanche",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "This attack also does 10 damage to each of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             },
             {
                 "name": "Rolling Slider",
-                "damage": "100×"
+                "damage": "100×",
+                "cost": [],
+                "effect": "Flip 3 coins. This attack does 100 damage for each heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 4,
+        "flavorText": "This Pokémon wanders around snowy, icy areas. It protects its body with powerful muscles and a thick layer of fat under its skin.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -5166,8 +6982,18 @@
         "attacks": [
             {
                 "name": "Cold Tea",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "The soul of someone who died alone possessed some leftover tea. This Pokémon appears in hotels and houses.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -5196,8 +7022,18 @@
         "attacks": [
             {
                 "name": "Rollout",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "It likes to make its shell thicker by adding layers of tree bark. The additional weight doesn't bother it.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -5226,8 +7062,19 @@
         "attacks": [
             {
                 "name": "Hard Bashing",
-                "damage": "120"
+                "damage": "120",
+                "cost": [],
+                "effect": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 3,
+        "flavorText": "Its potent spectral powers allow it to manipulate others. It once used its powers to force people and Pokémon to build a kingdom to its liking.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -5256,8 +7103,19 @@
         "attacks": [
             {
                 "name": "Super Psy Bolt",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "This odd Pokémon can see both the past and the future. It eyes the sun's movement all day.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -5286,8 +7144,19 @@
         "attacks": [
             {
                 "name": "Refrigerated Stream",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": "If the Defending Pokémon is an Evolution Pokémon, it can't attack during your opponent's next turn."
             }
+        ],
+        "subtype": "Basic, Future",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It resembles a mysterious object mentioned in an old book. There are only two reported sightings of this Pokémon.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -5316,12 +7185,25 @@
         "attacks": [
             {
                 "name": "Flare Bringer",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Attach up to 2 Basic Fire Energy cards from your discard pile to 1 of your Pokémon."
             },
             {
                 "name": "Megafire of Envy",
-                "damage": "50+"
+                "damage": "50+",
+                "cost": [],
+                "effect": "If any of your Pokémon were Knocked Out by damage from an attack during your opponent's last turn, this attack does 90 more damage."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It controls flames burning at over 5,400 degrees Fahrenheit. It casually swims through the sea of lava it creates by melting rock and sand.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -5350,10 +7232,20 @@
         "attacks": [
             {
                 "name": "Burning Darkness",
-                "damage": "180+"
+                "damage": "180+",
+                "cost": [],
+                "effect": "This attack does 30 more damage for each Prize card your opponent has taken."
             }
         ],
-        "rules": "Tera: As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Tera: As long as this Pokémon is on your Bench, prevent all damage done to this Pokémon by attacks (both yours and your opponent's).\n\nPokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, Tera, ex",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14947",
@@ -5381,14 +7273,26 @@
         "attacks": [
             {
                 "name": "Triple Draw",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Draw 3 cards."
             },
             {
                 "name": "Incessant Punching",
-                "damage": "100×"
+                "damage": "100×",
+                "cost": [],
+                "effect": "Flip 4 coins. This attack does 100 damage for each heads."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14936",
@@ -5416,14 +7320,26 @@
         "attacks": [
             {
                 "name": "Stealthy Shuriken",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "This attack does 40 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             },
             {
                 "name": "Torrential Slash",
-                "damage": "120+"
+                "damage": "120+",
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 120 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14926",
@@ -5451,10 +7367,20 @@
         "attacks": [
             {
                 "name": "Genome Hacking",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Choose 1 of your opponent's Active Pokémon's attacks and use it as this attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14916",
@@ -5482,12 +7408,24 @@
         "attacks": [
             {
                 "name": "Reflective Barrier",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "During your opponent's next turn, if this Pokémon is damaged by an attack (even if it is Knocked Out), put damage counters on the Attacking Pokémon equal to the damage done to this Pokémon."
             },
             {
                 "name": "Psyslash",
-                "damage": "130"
+                "damage": "130",
+                "cost": [],
+                "effect": "Discard 2 Energy from this Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": "A Pokémon created by recombining Mew's genes. It's said to have the most savage heart among Pokémon.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -5516,8 +7454,19 @@
         "attacks": [
             {
                 "name": "Thudding Press",
-                "damage": "130"
+                "damage": "130",
+                "cost": [],
+                "effect": "This Pokémon also does 30 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 4,
+        "flavorText": "This Pokémon's stomach is so strong, even eating moldy or rotten food will not affect it.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -5546,14 +7495,26 @@
         "attacks": [
             {
                 "name": "Mind Jack",
-                "damage": "90+"
+                "damage": "90+",
+                "cost": [],
+                "effect": "This attack does 30 more damage for each of your opponent's Benched Pokémon."
             },
             {
                 "name": "Dimensional Hand",
-                "damage": "120"
+                "damage": "120",
+                "cost": [],
+                "effect": "This attack can be used even if this Pokémon is on the Bench."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14889",
@@ -5581,10 +7542,21 @@
         "attacks": [
             {
                 "name": "Multishot Lightning",
-                "damage": "120"
+                "damage": "120",
+                "cost": [],
+                "effect": "This attack also does 90 damage to 1 of your opponent's Benched Pokémon that has any damage counters on it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo"
+        ]
     },
     {
         "masterCardId": "14879",
@@ -5612,8 +7584,18 @@
         "attacks": [
             {
                 "name": "Bubble",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "When it feels threatened, it draws its limbs inside its shell and sprays water from its mouth.",
+        "pricingVariants": [
+            "cosmosHolofoil"
         ]
     },
     {
@@ -5642,8 +7624,18 @@
         "attacks": [
             {
                 "name": "Ember",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Discard an Energy from this Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out.",
+        "pricingVariants": [
+            "cosmosHolofoil"
         ]
     },
     {
@@ -5672,8 +7664,18 @@
         "attacks": [
             {
                 "name": "Vine Whip",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "While it is young, it uses the nutrients that are stored in the seed on its back in order to grow.",
+        "pricingVariants": [
+            "cosmosHolofoil"
         ]
     },
     {
@@ -5695,7 +7697,16 @@
         "artist": "Naoki Saito",
         "imageLowSrc": "cards/svp-045-low.png",
         "imageHighSrc": "cards/svp-045-high.png",
-        "rules": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
+        "rules": "The Retreat Cost of each Psyduck in play (both yours and your opponent's) is Colorless less.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played.",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "normal",
+            "staffStamp"
+        ]
     },
     {
         "masterCardId": "14840",
@@ -5723,8 +7734,20 @@
         "attacks": [
             {
                 "name": "Heat Tackle",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "This Pokémon also does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "From the time it is born, a flame burns at the tip of its tail. Its life would end if the flame were to go out.",
+        "pricingVariants": [
+            "ebGamesStamp",
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -5753,12 +7776,24 @@
         "attacks": [
             {
                 "name": "Call for Family",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for a Basic Pokémon and put it onto your Bench. Then, shuffle your deck."
             },
             {
                 "name": "Tackle",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its ability to evolve into many forms allows it to adapt smoothly and perfectly to any environment.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -5787,12 +7822,24 @@
         "attacks": [
             {
                 "name": "Delve",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Put up to 2 Item cards from your discard pile into your hand."
             },
             {
                 "name": "Spooky Shot",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 3,
+        "flavorText": "Houndstone spends most of its time sleeping in graveyards. Among all the dog Pokémon, this one is most loyal to its master.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -5821,12 +7868,24 @@
         "attacks": [
             {
                 "name": "Splattering Poison",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Both Active Pokémon are now Poisoned."
             },
             {
                 "name": "Tail Whap",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "After losing a territorial struggle, Wooper began living on land. The Pokémon changed over time, developing a poisonous film to protect its body.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -5855,8 +7914,18 @@
         "attacks": [
             {
                 "name": "Static Slap",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It has underdeveloped electric sacs on its cheeks. These sacs can produce electricity only if Pawmi rubs them furiously with the pads on its forepaws.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -5885,8 +7954,19 @@
         "attacks": [
             {
                 "name": "Sharp Fang",
-                "damage": "90"
+                "damage": "90",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 1,
+        "flavorText": "It chomps with its gaping mouth. Its huge jaws are actually steel horns that have been transformed.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -5915,8 +7995,19 @@
         "attacks": [
             {
                 "name": "Power Cyclone",
-                "damage": "110"
+                "damage": "110",
+                "cost": [],
+                "effect": "Move an Energy from this Pokémon to 1 of your Benched Pokémon."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "Known as a bringer of blessings, it's been depicted on good-luck charms since ancient times.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -5945,8 +8036,19 @@
         "attacks": [
             {
                 "name": "Grasping Draw",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Draw cards until you have 7 cards in your hand."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "Because of its unusual, starlike silhouette, people believe that it came here on a meteor.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -5975,12 +8077,25 @@
         "attacks": [
             {
                 "name": "Jet Punch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "This attack also does 30 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             },
             {
                 "name": "Justice Kick",
-                "damage": "210"
+                "damage": "210",
+                "cost": [],
+                "effect": "If this Pokémon didn't move from the Bench to the Active Spot this turn, this attack does nothing."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "This Pokémon's ancient genes have awakened. It is now so extraordinarily strong that it can easily lift a cruise ship with one fin.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -6009,14 +8124,26 @@
         "attacks": [
             {
                 "name": "Exciting Dance",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": "Switch this Pokémon with 1 of your Benched Pokémon. If you do, switch out your opponent's Active Pokémon to the Bench. (Your opponent chooses the new Active Pokémon.)"
             },
             {
                 "name": "Spiral Shot",
-                "damage": "230"
+                "damage": "230",
+                "cost": [],
+                "effect": "Put 2 Energy attached to this Pokémon into your hand."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14744",
@@ -6044,14 +8171,26 @@
         "attacks": [
             {
                 "name": "Vitality Song",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Heal 30 damage from each of your Pokémon."
             },
             {
                 "name": "Burning Voice",
-                "damage": "270-"
+                "damage": "270-",
+                "cost": [],
+                "effect": "This attack does 10 less damage for each damage counter on this Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14735",
@@ -6079,10 +8218,20 @@
         "attacks": [
             {
                 "name": "Scratching Nails",
-                "damage": "100+"
+                "damage": "100+",
+                "cost": [],
+                "effect": "If your opponent's Active Pokémon already has any damage counters on it, this attack does 120 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14725",
@@ -6110,14 +8259,26 @@
         "attacks": [
             {
                 "name": "Angry Grudge",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "Put up to 12 damage counters on this Pokémon. This attack does 20 damage for each damage counter you placed in this way."
             },
             {
                 "name": "Seismic Toss",
-                "damage": "150"
+                "damage": "150",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14716",
@@ -6145,14 +8306,26 @@
         "attacks": [
             {
                 "name": "Big Hammer",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "This attack does 30 damage for each card in your hand."
             },
             {
                 "name": "Pulverizing Press",
-                "damage": "140"
+                "damage": "140",
+                "cost": [],
+                "effect": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14707",
@@ -6180,10 +8353,20 @@
         "attacks": [
             {
                 "name": "Hail Blade",
-                "damage": "60×"
+                "damage": "60×",
+                "cost": [],
+                "effect": "You may discard any amount of Water Energy from your Pokémon. This attack does 60 damage for each card you discarded in this way."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14697",
@@ -6211,10 +8394,20 @@
         "attacks": [
             {
                 "name": "Wild Impact",
-                "damage": "220"
+                "damage": "220",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14676",
@@ -6242,10 +8435,20 @@
         "attacks": [
             {
                 "name": "Photon Blaster",
-                "damage": "220"
+                "damage": "220",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil"
+        ]
     },
     {
         "masterCardId": "14664",
@@ -6273,8 +8476,19 @@
         "attacks": [
             {
                 "name": "Adventuring Together",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "This attack does 10 more damage for each of your Benched Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Pikachu seems excited to be going on an adventure, and so do its new pals, from attention-seeking Sprigatito to laid-back Fuecoco and tidy Quaxly.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -6303,8 +8517,19 @@
         "attacks": [
             {
                 "name": "Poison Gas",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 1,
+        "flavorText": "It is said that this Pokémon was born when an unknown poison Pokémon entered and inspirited an engine left at a scrap-processing factory.",
+        "pricingVariants": [
+            "cosmosHolofoil",
+            "normal"
         ]
     },
     {
@@ -6333,8 +8558,18 @@
         "attacks": [
             {
                 "name": "Smithereen Smash",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "It swings its handmade hammer around to protect itself, but the hammer is often stolen by Pokémon that eat metal.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -6363,12 +8598,24 @@
         "attacks": [
             {
                 "name": "Stoke",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for up to 2 Basic Fire Energy cards and attach them to this Pokémon. Then, shuffle your deck."
             },
             {
                 "name": "Fire Claws",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "It's very friendly and faithful to people. It will try to repel enemies by barking and biting.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -6397,12 +8644,24 @@
         "attacks": [
             {
                 "name": "Nutrients",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Heal 30 damage from 1 of your Pokémon."
             },
             {
                 "name": "Spray Fluid",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It protects itself from enemies by emitting oil from the fruit on its head. This oil is bitter and astringent enough to make someone flinch.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -6431,8 +8690,19 @@
         "attacks": [
             {
                 "name": "Wing Attack",
-                "damage": "90"
+                "damage": "90",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": "It is a flying transporter that carries small Pokémon in its beak. It bobs on the waves to rest its wings.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -6461,12 +8731,25 @@
         "attacks": [
             {
                 "name": "Spin Turn",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Switch this Pokémon with 1 of your Benched Pokémon."
             },
             {
                 "name": "United Wings",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "This attack does 20 damage for each Pokémon in your discard pile that has the United Wings attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "Feared and loathed by many, it is believed to bring misfortune to all those who see it at night.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -6495,8 +8778,19 @@
         "attacks": [
             {
                 "name": "Special Hammer",
-                "damage": "90+"
+                "damage": "90+",
+                "cost": [],
+                "effect": "If this Pokémon has any Special Energy attached, this attack does 90 more damage."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "This intelligent Pokémon has a very daring disposition. It knocks rocks into the sky with its hammer, aiming for flying Corviknight.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -6525,8 +8819,19 @@
         "attacks": [
             {
                 "name": "Buster Tail",
-                "damage": "130"
+                "damage": "130",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "This Pokémon blasts cryogenic air out from its mouth. This air can instantly freeze even liquid-hot lava.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -6555,14 +8860,28 @@
         "attacks": [
             {
                 "name": "Power Run",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Search your deck for a Basic Energy card and attach it to this Pokémon. Then, shuffle your deck."
             },
             {
                 "name": "Full Throttle",
-                "damage": "180"
+                "damage": "180",
+                "cost": [],
+                "effect": "During your next turn, this Pokémon can't attack."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo",
+            "playPokemonStampHolofoil"
+        ]
     },
     {
         "masterCardId": "14556",
@@ -6590,14 +8909,27 @@
         "attacks": [
             {
                 "name": "Low Sweep",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Aura Sphere",
-                "damage": "160"
+                "damage": "160",
+                "cost": [],
+                "effect": "This attack also does 50 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 1, ex",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "playPokemonStampHolofoil"
+        ]
     },
     {
         "masterCardId": "14547",
@@ -6625,14 +8957,27 @@
         "attacks": [
             {
                 "name": "Electro Ball",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Thunderstrike Tail",
-                "damage": "140+"
+                "damage": "140+",
+                "cost": [],
+                "effect": "You may discard 2 Energy from this Pokémon to have this attack do 100 more damage."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Stage 2, ex",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "playPokemonStamp"
+        ]
     },
     {
         "masterCardId": "14539",
@@ -6660,12 +9005,24 @@
         "attacks": [
             {
                 "name": "Static Shock",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Extreme Current",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": "Discard an Energy from this Pokémon."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "As a result of storing too much electricity, it developed patches where even downy wool won't grow.",
+        "pricingVariants": [
+            "normal"
         ]
     },
     {
@@ -6694,12 +9051,25 @@
         "attacks": [
             {
                 "name": "Claw Slash",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Rampaging Fang",
-                "damage": "190"
+                "damage": "190",
+                "cost": [],
+                "effect": "Discard 3 Energy from this Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "This seems to be the Winged King mentioned in an old expedition journal. It was said to have split the land with its bare fists.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -6728,12 +9098,25 @@
         "attacks": [
             {
                 "name": "Sharp Fang",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Lightning Laser",
-                "damage": "90"
+                "damage": "90",
+                "cost": [],
+                "effect": "This attack also does 30 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Much remains unknown about this creature. It resembles Cyclizar, but it is far more ruthless and powerful.",
+        "pricingVariants": [
+            "holofoil",
+            "pokemonCenterStamp"
         ]
     },
     {
@@ -6762,12 +9145,24 @@
         "attacks": [
             {
                 "name": "Hammer In",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Dangerous Wave",
-                "damage": "100+"
+                "damage": "100+",
+                "cost": [],
+                "effect": "Flip 2 coins. If both of them are heads, this attack does 100 more damage."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 4,
+        "flavorText": "This Pokémon is a glutton, but it's bad at getting food. It teams up with a Tatsugiri to catch prey.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -6796,12 +9191,24 @@
         "attacks": [
             {
                 "name": "Crunch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, discard an Energy from your opponent's Active Pokémon."
             },
             {
                 "name": "Fire Mane",
-                "damage": "120"
+                "damage": "120",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "An ancient picture scroll shows that people were captivated by its movement as it ran through prairies.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -6830,12 +9237,24 @@
         "attacks": [
             {
                 "name": "Aurora Gain",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Heal 30 damage from this Pokémon."
             },
             {
                 "name": "Super Psy Bolt",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Darkness ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "It immobilizes opponents by bathing them in psychic power from its large eyes. Despite its appearance, it has a vicious temperament.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -6864,12 +9283,24 @@
         "attacks": [
             {
                 "name": "String Truss",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
             },
             {
                 "name": "Jet Headbutt",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "It clings to branches and ceilings using its threads and moves without a sound. It takes out its prey before the prey even notices it.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -6898,8 +9329,19 @@
         "attacks": [
             {
                 "name": "Knock Away",
-                "damage": "90+"
+                "damage": "90+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 90 more damage."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 2,
+        "flavorText": "It creates a gas out of poison and minerals from rocks. It then detonates the gas in its cylinders— now numbering eight—to generate energy.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -6928,8 +9370,19 @@
         "attacks": [
             {
                 "name": "Wing Attack",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its elegant finishing moves—performed by nimbly leaping around using its wings—are polished in the forest where it was born and raised.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -6958,8 +9411,19 @@
         "attacks": [
             {
                 "name": "Electro Paws",
-                "damage": "230"
+                "damage": "230",
+                "cost": [],
+                "effect": "Discard all Energy from this Pokémon."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "Pawmot's fluffy fur acts as a battery. It can store the same amount of electricity as an electric car.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -6988,8 +9452,19 @@
         "attacks": [
             {
                 "name": "Hydro Kick",
-                "damage": "140"
+                "damage": "140",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "A single kick from a Quaquaval can send a truck rolling. This Pokémon uses its powerful legs to perform striking dances from far-off lands.",
+        "pricingVariants": [
+            "holofoil",
+            "staffStamp"
         ]
     },
     {
@@ -7018,14 +9493,28 @@
         "attacks": [
             {
                 "name": "Void Return",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "You may switch this Pokémon with 1 of your Benched Pokémon."
             },
             {
                 "name": "Energy Burst",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "This attack does 30 damage for each Energy attached to both Active Pokémon."
             }
         ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
+        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+        "subtype": "Basic, ex",
+        "weakness": "Metal ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "holofoil",
+            "jumbo",
+            "playPokemonStampHolofoil"
+        ]
     },
     {
         "masterCardId": "14419",
@@ -7053,8 +9542,18 @@
         "attacks": [
             {
                 "name": "Water Splash",
-                "damage": "20+"
+                "damage": "20+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 20 more damage."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "This Pokémon migrated to Paldea from distant lands long ago. The gel secreted by its feathers repels water and grime.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -7083,8 +9582,18 @@
         "attacks": [
             {
                 "name": "Super Singe",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Your opponent's Active Pokémon is now Burned."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "It lies on warm rocks and uses the heat absorbed by its square-shaped scales to create fire energy.",
+        "pricingVariants": [
+            "holofoil"
         ]
     },
     {
@@ -7113,8 +9622,18 @@
         "attacks": [
             {
                 "name": "Mini Drain",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Heal 10 damage from this Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its fluffy fur is similar in composition to plants. This Pokémon frequently washes its face to keep it from drying out.",
+        "pricingVariants": [
+            "holofoil"
         ]
     }
 ]

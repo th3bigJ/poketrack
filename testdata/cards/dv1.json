@@ -1,661 +1,910 @@
 [
-    {
-        "masterCardId": "7737",
-        "externalId": "dv1-21",
-        "localId": "021",
-        "setCode": "dv1",
-        "cardNumber": "21/20",
-        "cardName": "Kyurem",
-        "fullDisplayName": "Kyurem 21/20 Dragon Vault",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 130,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            646
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ryo Ueda",
-        "imageLowSrc": "cards/dv1-021-low.png",
-        "imageHighSrc": "cards/dv1-021-high.png",
-        "attacks": [
-            {
-                "name": "Dragon Claw",
-                "damage": "60"
-            },
-            {
-                "name": "Blizzard",
-                "damage": "90"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7731",
-        "externalId": "dv1-20",
-        "localId": "020",
-        "setCode": "dv1",
-        "cardNumber": "20/20",
-        "cardName": "Super Rod",
-        "fullDisplayName": "Super Rod 20/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Item",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "5ban Graphics",
-        "imageLowSrc": "cards/dv1-020-low.png",
-        "imageHighSrc": "cards/dv1-020-high.png",
-        "rules": "Shuffle 3 in any combination of Pokémon and basic Energy cards from your discard pile back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-    },
-    {
-        "masterCardId": "7725",
-        "externalId": "dv1-19",
-        "localId": "019",
-        "setCode": "dv1",
-        "cardNumber": "19/20",
-        "cardName": "First Ticket",
-        "fullDisplayName": "First Ticket 19/20 Dragon Vault",
-        "rarity": "Rare",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Item",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "5ban Graphics",
-        "imageLowSrc": "cards/dv1-019-low.png",
-        "imageHighSrc": "cards/dv1-019-high.png",
-        "rules": "Before you flip a coin to decide who goes first in a game, you may play this card. Don't flip that coin, and you go first. If both players play First Ticket, flip the coin as normal. (You may play only 1 First Ticket before you flip that coin.)\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-    },
-    {
-        "masterCardId": "7718",
-        "externalId": "dv1-18",
-        "localId": "018",
-        "setCode": "dv1",
-        "cardNumber": "18/20",
-        "cardName": "Exp. Share",
-        "fullDisplayName": "Exp. Share 18/20 Dragon Vault",
-        "rarity": "Rare",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Pokémon Tool",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ryo Ueda",
-        "imageLowSrc": "cards/dv1-018-low.png",
-        "imageHighSrc": "cards/dv1-018-high.png",
-        "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhen your Active Pokémon is Knocked Out by damage from an opponent's attack, you may move 1 basic Energy card that was attached to that Pokémon to the Pokémon this card is attached to.\n\nYou may play as many Item cards as you like during your turn (before your attack)."
-    },
-    {
-        "masterCardId": "7712",
-        "externalId": "dv1-17",
-        "localId": "017",
-        "setCode": "dv1",
-        "cardNumber": "17/20",
-        "cardName": "Druddigon",
-        "fullDisplayName": "Druddigon 17/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 110,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            621
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "kawayoo",
-        "imageLowSrc": "cards/dv1-017-low.png",
-        "imageHighSrc": "cards/dv1-017-high.png",
-        "attacks": [
-            {
-                "name": "Tight Jaw",
-                "damage": "20"
-            },
-            {
-                "name": "Dragon Tail",
-                "damage": "80×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7706",
-        "externalId": "dv1-16",
-        "localId": "016",
-        "setCode": "dv1",
-        "cardNumber": "16/20",
-        "cardName": "Haxorus",
-        "fullDisplayName": "Haxorus 16/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 140,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            612
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Eske Yoshinob",
-        "imageLowSrc": "cards/dv1-016-low.png",
-        "imageHighSrc": "cards/dv1-016-high.png",
-        "attacks": [
-            {
-                "name": "Axe Slugger",
-                "damage": "60+"
-            },
-            {
-                "name": "Dragon Pulse",
-                "damage": "100"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7700",
-        "externalId": "dv1-15",
-        "localId": "015",
-        "setCode": "dv1",
-        "cardNumber": "15/20",
-        "cardName": "Fraxure",
-        "fullDisplayName": "Fraxure 15/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            611
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "match",
-        "imageLowSrc": "cards/dv1-015-low.png",
-        "imageHighSrc": "cards/dv1-015-high.png",
-        "attacks": [
-            {
-                "name": "Scratch",
-                "damage": "20"
-            },
-            {
-                "name": "Sharp Fang",
-                "damage": "40"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7694",
-        "externalId": "dv1-14",
-        "localId": "014",
-        "setCode": "dv1",
-        "cardNumber": "14/20",
-        "cardName": "Fraxure",
-        "fullDisplayName": "Fraxure 14/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            611
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shin Nagasawa",
-        "imageLowSrc": "cards/dv1-014-low.png",
-        "imageHighSrc": "cards/dv1-014-high.png",
-        "attacks": [
-            {
-                "name": "Dragon Claw",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7688",
-        "externalId": "dv1-13",
-        "localId": "013",
-        "setCode": "dv1",
-        "cardNumber": "13/20",
-        "cardName": "Axew",
-        "fullDisplayName": "Axew 13/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            610
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "TOKIYA",
-        "imageLowSrc": "cards/dv1-013-low.png",
-        "imageHighSrc": "cards/dv1-013-high.png",
-        "attacks": [
-            {
-                "name": "Lunge",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7682",
-        "externalId": "dv1-12",
-        "localId": "012",
-        "setCode": "dv1",
-        "cardNumber": "12/20",
-        "cardName": "Axew",
-        "fullDisplayName": "Axew 12/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            610
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mizue",
-        "imageLowSrc": "cards/dv1-012-low.png",
-        "imageHighSrc": "cards/dv1-012-high.png",
-        "attacks": [
-            {
-                "name": "Signs of Evolution",
-                "damage": null
-            },
-            {
-                "name": "Scratch",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7676",
-        "externalId": "dv1-11",
-        "localId": "011",
-        "setCode": "dv1",
-        "cardNumber": "11/20",
-        "cardName": "Rayquaza",
-        "fullDisplayName": "Rayquaza 11/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 120,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            384
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "5ban Graphics",
-        "imageLowSrc": "cards/dv1-011-low.png",
-        "imageHighSrc": "cards/dv1-011-high.png",
-        "attacks": [
-            {
-                "name": "Dragon Pulse",
-                "damage": "40"
-            },
-            {
-                "name": "Shred",
-                "damage": "90"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7670",
-        "externalId": "dv1-10",
-        "localId": "010",
-        "setCode": "dv1",
-        "cardNumber": "10/20",
-        "cardName": "Latios",
-        "fullDisplayName": "Latios 10/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            381
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ryo Ueda",
-        "imageLowSrc": "cards/dv1-010-low.png",
-        "imageHighSrc": "cards/dv1-010-high.png",
-        "attacks": [
-            {
-                "name": "Sky Blade",
-                "damage": "20+"
-            },
-            {
-                "name": "Speed Wing",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7664",
-        "externalId": "dv1-9",
-        "localId": "009",
-        "setCode": "dv1",
-        "cardNumber": "9/20",
-        "cardName": "Latias",
-        "fullDisplayName": "Latias 9/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            380
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Hideaki Hakozaki",
-        "imageLowSrc": "cards/dv1-009-low.png",
-        "imageHighSrc": "cards/dv1-009-high.png",
-        "attacks": [
-            {
-                "name": "Energy Assist",
-                "damage": null
-            },
-            {
-                "name": "Sky Heal",
-                "damage": "40"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7658",
-        "externalId": "dv1-8",
-        "localId": "008",
-        "setCode": "dv1",
-        "cardNumber": "8/20",
-        "cardName": "Salamence",
-        "fullDisplayName": "Salamence 8/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 140,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            373
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "BERUBURI",
-        "imageLowSrc": "cards/dv1-008-low.png",
-        "imageHighSrc": "cards/dv1-008-high.png",
-        "attacks": [
-            {
-                "name": "Shred",
-                "damage": "90"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7652",
-        "externalId": "dv1-7",
-        "localId": "007",
-        "setCode": "dv1",
-        "cardNumber": "7/20",
-        "cardName": "Shelgon",
-        "fullDisplayName": "Shelgon 7/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            372
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Akira Komayama",
-        "imageLowSrc": "cards/dv1-007-low.png",
-        "imageHighSrc": "cards/dv1-007-high.png",
-        "attacks": [
-            {
-                "name": "Knock Away",
-                "damage": "10+"
-            },
-            {
-                "name": "Rollout",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7647",
-        "externalId": "dv1-6",
-        "localId": "006",
-        "setCode": "dv1",
-        "cardNumber": "6/20",
-        "cardName": "Bagon",
-        "fullDisplayName": "Bagon 6/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            371
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/dv1-006-low.png",
-        "imageHighSrc": "cards/dv1-006-high.png",
-        "attacks": [
-            {
-                "name": "Headbutt",
-                "damage": "10"
-            },
-            {
-                "name": "Dragon Claw",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7641",
-        "externalId": "dv1-5",
-        "localId": "005",
-        "setCode": "dv1",
-        "cardNumber": "5/20",
-        "cardName": "Dragonite",
-        "fullDisplayName": "Dragonite 5/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 150,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            149
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/dv1-005-low.png",
-        "imageHighSrc": "cards/dv1-005-high.png",
-        "attacks": [
-            {
-                "name": "Hyper Beam",
-                "damage": "50"
-            },
-            {
-                "name": "Hurricane Tail",
-                "damage": "60×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7637",
-        "externalId": "dv1-4",
-        "localId": "004",
-        "setCode": "dv1",
-        "cardNumber": "4/20",
-        "cardName": "Dragonair",
-        "fullDisplayName": "Dragonair 4/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            148
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kagemaru Himeno",
-        "imageLowSrc": "cards/dv1-004-low.png",
-        "imageHighSrc": "cards/dv1-004-high.png",
-        "attacks": [
-            {
-                "name": "Healing Melody",
-                "damage": null
-            },
-            {
-                "name": "Slam",
-                "damage": "30×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7631",
-        "externalId": "dv1-3",
-        "localId": "003",
-        "setCode": "dv1",
-        "cardNumber": "3/20",
-        "cardName": "Dragonair",
-        "fullDisplayName": "Dragonair 3/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            148
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Hajime Kusajima",
-        "imageLowSrc": "cards/dv1-003-low.png",
-        "imageHighSrc": "cards/dv1-003-high.png",
-        "attacks": [
-            {
-                "name": "Tail Whap",
-                "damage": "20"
-            },
-            {
-                "name": "Dragon Pulse",
-                "damage": "70"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7625",
-        "externalId": "dv1-2",
-        "localId": "002",
-        "setCode": "dv1",
-        "cardNumber": "2/20",
-        "cardName": "Dratini",
-        "fullDisplayName": "Dratini 2/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            147
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Naoki Saito",
-        "imageLowSrc": "cards/dv1-002-low.png",
-        "imageHighSrc": "cards/dv1-002-high.png",
-        "attacks": [
-            {
-                "name": "Hypnotic Gaze",
-                "damage": null
-            },
-            {
-                "name": "Tail Whap",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7619",
-        "externalId": "dv1-1",
-        "localId": "001",
-        "setCode": "dv1",
-        "cardNumber": "1/20",
-        "cardName": "Dratini",
-        "fullDisplayName": "Dratini 1/20 Dragon Vault",
-        "rarity": "Rare Holo",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            147
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/dv1-001-low.png",
-        "imageHighSrc": "cards/dv1-001-high.png",
-        "attacks": [
-            {
-                "name": "Wrap",
-                "damage": "20"
-            }
-        ]
-    }
+  {
+    "masterCardId": "7737",
+    "externalId": "dv1-21",
+    "localId": "021",
+    "setCode": "dv1",
+    "cardNumber": "21/20",
+    "cardName": "Kyurem",
+    "fullDisplayName": "Kyurem 21/20 Dragon Vault",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      646
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ryo Ueda",
+    "imageLowSrc": "cards/dv1-021-low.png",
+    "imageHighSrc": "cards/dv1-021-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "60",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Blizzard",
+        "damage": "90",
+        "cost": [],
+        "effect": "Does 10 damage to each of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It can produce ultracold air. Its body is frozen.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7731",
+    "externalId": "dv1-20",
+    "localId": "020",
+    "setCode": "dv1",
+    "cardNumber": "20/20",
+    "cardName": "Super Rod",
+    "fullDisplayName": "Super Rod 20/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "5ban Graphics",
+    "imageLowSrc": "cards/dv1-020-low.png",
+    "imageHighSrc": "cards/dv1-020-high.png",
+    "rules": "Shuffle 3 in any combination of Pokémon and basic Energy cards from your discard pile back into your deck.\n\nYou may play as many Item cards as you like during your turn (before your attack).",
+    "subtype": "Item",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "andrewEstrada",
+      "clementLamberton",
+      "holofoil",
+      "ianWhiton",
+      "michikazuTsuda"
+    ]
+  },
+  {
+    "masterCardId": "7725",
+    "externalId": "dv1-19",
+    "localId": "019",
+    "setCode": "dv1",
+    "cardNumber": "19/20",
+    "cardName": "First Ticket",
+    "fullDisplayName": "First Ticket 19/20 Dragon Vault",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "5ban Graphics",
+    "imageLowSrc": "cards/dv1-019-low.png",
+    "imageHighSrc": "cards/dv1-019-high.png",
+    "rules": "Before you flip a coin to decide who goes first in a game, you may play this card. Don't flip that coin, and you go first. If both players play First Ticket, flip the coin as normal. (You may play only 1 First Ticket before you flip that coin.)\n\nYou may play as many Item cards as you like during your turn (before your attack).",
+    "subtype": "Item",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7718",
+    "externalId": "dv1-18",
+    "localId": "018",
+    "setCode": "dv1",
+    "cardNumber": "18/20",
+    "cardName": "Exp. Share",
+    "fullDisplayName": "Exp. Share 18/20 Dragon Vault",
+    "rarity": "Rare",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Pokémon Tool",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ryo Ueda",
+    "imageLowSrc": "cards/dv1-018-low.png",
+    "imageHighSrc": "cards/dv1-018-high.png",
+    "rules": "Attach a Pokémon Tool to 1 of your Pokémon that doesn't already have a Pokémon Tool attached to it.\n\nWhen your Active Pokémon is Knocked Out by damage from an opponent's attack, you may move 1 basic Energy card that was attached to that Pokémon to the Pokémon this card is attached to.\n\nYou may play as many Item cards as you like during your turn (before your attack).",
+    "subtype": "Pokémon Tool",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7712",
+    "externalId": "dv1-17",
+    "localId": "017",
+    "setCode": "dv1",
+    "cardNumber": "17/20",
+    "cardName": "Druddigon",
+    "fullDisplayName": "Druddigon 17/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 110,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      621
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "kawayoo",
+    "imageLowSrc": "cards/dv1-017-low.png",
+    "imageHighSrc": "cards/dv1-017-high.png",
+    "attacks": [
+      {
+        "name": "Tight Jaw",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      },
+      {
+        "name": "Dragon Tail",
+        "damage": "80×",
+        "cost": [],
+        "effect": "Flip 2 coins. This attack does 80 damage times the number of heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It races through narrow caves, using its sharp claws to catch prey. The skin on its face is harder than a rock.",
+    "pricingVariants": [
+      "expansionStamp",
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7706",
+    "externalId": "dv1-16",
+    "localId": "016",
+    "setCode": "dv1",
+    "cardNumber": "16/20",
+    "cardName": "Haxorus",
+    "fullDisplayName": "Haxorus 16/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      612
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Eske Yoshinob",
+    "imageLowSrc": "cards/dv1-016-low.png",
+    "imageHighSrc": "cards/dv1-016-high.png",
+    "attacks": [
+      {
+        "name": "Axe Slugger",
+        "damage": "60+",
+        "cost": [],
+        "effect": "If the Defending Pokémon is a Colorless Pokémon, this attack does 60 more damage."
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "100",
+        "cost": [],
+        "effect": "Discard the top card of your deck."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "They are kind but can be relentless when defending territory. They challenge foes with tusks that can cut steel.",
+    "pricingVariants": [
+      "expansionStamp",
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7700",
+    "externalId": "dv1-15",
+    "localId": "015",
+    "setCode": "dv1",
+    "cardNumber": "15/20",
+    "cardName": "Fraxure",
+    "fullDisplayName": "Fraxure 15/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      611
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "match",
+    "imageLowSrc": "cards/dv1-015-low.png",
+    "imageHighSrc": "cards/dv1-015-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Sharp Fang",
+        "damage": "40",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "Their tusks can shatter rocks. Territory battles between Fraxure can be intensely violent.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7694",
+    "externalId": "dv1-14",
+    "localId": "014",
+    "setCode": "dv1",
+    "cardNumber": "14/20",
+    "cardName": "Fraxure",
+    "fullDisplayName": "Fraxure 14/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      611
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shin Nagasawa",
+    "imageLowSrc": "cards/dv1-014-low.png",
+    "imageHighSrc": "cards/dv1-014-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Claw",
+        "damage": "60",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Since a broken tusk will not grow back, they diligently sharpen their tusks on river rocks after they've been fighting.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7688",
+    "externalId": "dv1-13",
+    "localId": "013",
+    "setCode": "dv1",
+    "cardNumber": "13/20",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew 13/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      610
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "TOKIYA",
+    "imageLowSrc": "cards/dv1-013-low.png",
+    "imageHighSrc": "cards/dv1-013-high.png",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "30",
+        "cost": [],
+        "effect": "Flip a coin. If tails, this attack does nothing."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "They mark their territory by leaving gashes in trees with their tusks. If a tusk breaks, a new one grows in quickly.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7682",
+    "externalId": "dv1-12",
+    "localId": "012",
+    "setCode": "dv1",
+    "cardNumber": "12/20",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew 12/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      610
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mizue",
+    "imageLowSrc": "cards/dv1-012-low.png",
+    "imageHighSrc": "cards/dv1-012-high.png",
+    "attacks": [
+      {
+        "name": "Signs of Evolution",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, search your deck for Fraxure, reveal it, and put it into your hand, Shuffle your deck afterward."
+      },
+      {
+        "name": "Scratch",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "They use their tusks to crush the berries they eat. Repeated regrowth makes their tusks strong and sharp.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7676",
+    "externalId": "dv1-11",
+    "localId": "011",
+    "setCode": "dv1",
+    "cardNumber": "11/20",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza 11/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 120,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "5ban Graphics",
+    "imageLowSrc": "cards/dv1-011-low.png",
+    "imageHighSrc": "cards/dv1-011-high.png",
+    "attacks": [
+      {
+        "name": "Dragon Pulse",
+        "damage": "40",
+        "cost": [],
+        "effect": "Discard the top 2 cards of your deck."
+      },
+      {
+        "name": "Shred",
+        "damage": "90",
+        "cost": [],
+        "effect": "This attack's damage isn't affected by any effects on the Defending Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "It lives in the ozone layer far above the clouds and cannot be seen from the ground.",
+    "pricingVariants": [
+      "expansionStamp",
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7670",
+    "externalId": "dv1-10",
+    "localId": "010",
+    "setCode": "dv1",
+    "cardNumber": "10/20",
+    "cardName": "Latios",
+    "fullDisplayName": "Latios 10/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      381
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ryo Ueda",
+    "imageLowSrc": "cards/dv1-010-low.png",
+    "imageHighSrc": "cards/dv1-010-high.png",
+    "attacks": [
+      {
+        "name": "Sky Blade",
+        "damage": "20+",
+        "cost": [],
+        "effect": "If Latias is on your Bench, this attack does 20 more damage."
+      },
+      {
+        "name": "Speed Wing",
+        "damage": "60",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "A highly intelligent Pokémon. By folding back its wings in flight, it can overtake jet planes.",
+    "pricingVariants": [
+      "expansionStamp",
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7664",
+    "externalId": "dv1-9",
+    "localId": "009",
+    "setCode": "dv1",
+    "cardNumber": "9/20",
+    "cardName": "Latias",
+    "fullDisplayName": "Latias 9/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      380
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Hideaki Hakozaki",
+    "imageLowSrc": "cards/dv1-009-low.png",
+    "imageHighSrc": "cards/dv1-009-high.png",
+    "attacks": [
+      {
+        "name": "Energy Assist",
+        "damage": null,
+        "cost": [],
+        "effect": "Attach a basic Energy card from your discard pile to 1 of your Benched Pokémon."
+      },
+      {
+        "name": "Sky Heal",
+        "damage": "40",
+        "cost": [],
+        "effect": "If Latios is on your Bench, heal 20 damage from this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Its body is covered in a down that can refract light in such a way that it becomes invisible.",
+    "pricingVariants": [
+      "expansionStamp",
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7658",
+    "externalId": "dv1-8",
+    "localId": "008",
+    "setCode": "dv1",
+    "cardNumber": "8/20",
+    "cardName": "Salamence",
+    "fullDisplayName": "Salamence 8/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 140,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      373
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "BERUBURI",
+    "imageLowSrc": "cards/dv1-008-low.png",
+    "imageHighSrc": "cards/dv1-008-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "90",
+        "cost": [],
+        "effect": "This attack's damage isn't affected by any effects on the Defending Pokémon."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "As a result of its long-held dream of flying, its cellular structure changed, and wings grew out.",
+    "pricingVariants": [
+      "cosmosHolofoil",
+      "holofoil",
+      "leagueStamp",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "7652",
+    "externalId": "dv1-7",
+    "localId": "007",
+    "setCode": "dv1",
+    "cardNumber": "7/20",
+    "cardName": "Shelgon",
+    "fullDisplayName": "Shelgon 7/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      372
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Akira Komayama",
+    "imageLowSrc": "cards/dv1-007-low.png",
+    "imageHighSrc": "cards/dv1-007-high.png",
+    "attacks": [
+      {
+        "name": "Knock Away",
+        "damage": "10+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 20 more damage."
+      },
+      {
+        "name": "Rollout",
+        "damage": "50",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "Within its rugged shell, its cells have begun changing. The shell peels off the instant it evolves.",
+    "pricingVariants": [
+      "holofoil",
+      "leagueStamp",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "7647",
+    "externalId": "dv1-6",
+    "localId": "006",
+    "setCode": "dv1",
+    "cardNumber": "6/20",
+    "cardName": "Bagon",
+    "fullDisplayName": "Bagon 6/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      371
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/dv1-006-low.png",
+    "imageHighSrc": "cards/dv1-006-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Dragon Claw",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Dreaming of one day flying, it practices by leaping off cliffs every day.",
+    "pricingVariants": [
+      "holofoil",
+      "leagueStamp",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "7641",
+    "externalId": "dv1-5",
+    "localId": "005",
+    "setCode": "dv1",
+    "cardNumber": "5/20",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 5/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 150,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/dv1-005-low.png",
+    "imageHighSrc": "cards/dv1-005-high.png",
+    "attacks": [
+      {
+        "name": "Hyper Beam",
+        "damage": "50",
+        "cost": [],
+        "effect": "Flip a coin. If heads, discard an Energy attached to the Defending Pokémon."
+      },
+      {
+        "name": "Hurricane Tail",
+        "damage": "60×",
+        "cost": [],
+        "effect": "Flip 4 coins. This attack does 60 damage times the number of heads."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "It is said to make its home somewhere in the sea. It guides crews of shipwrecks to shore.",
+    "pricingVariants": [
+      "cosmosHolofoil",
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7637",
+    "externalId": "dv1-4",
+    "localId": "004",
+    "setCode": "dv1",
+    "cardNumber": "4/20",
+    "cardName": "Dragonair",
+    "fullDisplayName": "Dragonair 4/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      148
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kagemaru Himeno",
+    "imageLowSrc": "cards/dv1-004-low.png",
+    "imageHighSrc": "cards/dv1-004-high.png",
+    "attacks": [
+      {
+        "name": "Healing Melody",
+        "damage": null,
+        "cost": [],
+        "effect": "Heal 10 damage from each of your Pokémon."
+      },
+      {
+        "name": "Slam",
+        "damage": "30×",
+        "cost": [],
+        "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "If its body takes on an aura, the weather changes instantly. It is said to live in seas and lakes.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7631",
+    "externalId": "dv1-3",
+    "localId": "003",
+    "setCode": "dv1",
+    "cardNumber": "3/20",
+    "cardName": "Dragonair",
+    "fullDisplayName": "Dragonair 3/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      148
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Hajime Kusajima",
+    "imageLowSrc": "cards/dv1-003-low.png",
+    "imageHighSrc": "cards/dv1-003-high.png",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Dragon Pulse",
+        "damage": "70",
+        "cost": [],
+        "effect": "Discard the top card of your deck."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "If its body takes on an aura, the weather changes instantly. It is said to live in seas and lakes.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7625",
+    "externalId": "dv1-2",
+    "localId": "002",
+    "setCode": "dv1",
+    "cardNumber": "2/20",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 2/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      147
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Naoki Saito",
+    "imageLowSrc": "cards/dv1-002-low.png",
+    "imageHighSrc": "cards/dv1-002-high.png",
+    "attacks": [
+      {
+        "name": "Hypnotic Gaze",
+        "damage": null,
+        "cost": [],
+        "effect": "The Defending Pokémon is now Asleep."
+      },
+      {
+        "name": "Tail Whap",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It is called the \"Mirage Pokémon\" because so few have seen it. Its shed skin has been found.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7619",
+    "externalId": "dv1-1",
+    "localId": "001",
+    "setCode": "dv1",
+    "cardNumber": "1/20",
+    "cardName": "Dratini",
+    "fullDisplayName": "Dratini 1/20 Dragon Vault",
+    "rarity": "Rare Holo",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      147
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/dv1-001-low.png",
+    "imageHighSrc": "cards/dv1-001-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Dragon ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It is called the \"Mirage Pokémon\" because so few have seen it. Its shed skin has been found.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  }
 ]

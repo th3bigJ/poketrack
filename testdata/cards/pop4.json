@@ -1,510 +1,693 @@
 [
-    {
-        "masterCardId": "9253",
-        "externalId": "pop4-17",
-        "localId": "017",
-        "setCode": "pop4",
-        "cardNumber": "17/17",
-        "cardName": "Deoxys ex",
-        "fullDisplayName": "Deoxys ex 17/17 POP Series 4",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 110,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            386
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Hiromichi Sugiyama",
-        "imageLowSrc": "cards/pop4-017-low.png",
-        "imageHighSrc": "cards/pop4-017-high.png",
-        "attacks": [
-            {
-                "name": "Fastwave",
-                "damage": "50"
-            }
-        ],
-        "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards."
-    },
-    {
-        "masterCardId": "9245",
-        "externalId": "pop4-16",
-        "localId": "016",
-        "setCode": "pop4",
-        "cardNumber": "16/17",
-        "cardName": "Wobbuffet",
-        "fullDisplayName": "Wobbuffet 16/17 POP Series 4",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            202
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kagemaru Himeno",
-        "imageLowSrc": "cards/pop4-016-low.png",
-        "imageHighSrc": "cards/pop4-016-high.png",
-        "attacks": [
-            {
-                "name": "Nap",
-                "damage": null
-            },
-            {
-                "name": "Expand",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9234",
-        "externalId": "pop4-15",
-        "localId": "015",
-        "setCode": "pop4",
-        "cardNumber": "15/17",
-        "cardName": "Treecko δ",
-        "fullDisplayName": "Treecko δ 15/17 POP Series 4",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            252
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop4-015-low.png",
-        "imageHighSrc": "cards/pop4-015-high.png",
-        "attacks": [
-            {
-                "name": "Pound",
-                "damage": "10"
-            },
-            {
-                "name": "Shining Claws",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9225",
-        "externalId": "pop4-14",
-        "localId": "014",
-        "setCode": "pop4",
-        "cardNumber": "14/17",
-        "cardName": "Squirtle",
-        "fullDisplayName": "Squirtle 14/17 POP Series 4",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            7
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Atsuko Nishida",
-        "imageLowSrc": "cards/pop4-014-low.png",
-        "imageHighSrc": "cards/pop4-014-high.png",
-        "attacks": [
-            {
-                "name": "Tackle",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9217",
-        "externalId": "pop4-13",
-        "localId": "013",
-        "setCode": "pop4",
-        "cardNumber": "13/17",
-        "cardName": "Pikachu",
-        "fullDisplayName": "Pikachu 13/17 POP Series 4",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            25
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/pop4-013-low.png",
-        "imageHighSrc": "cards/pop4-013-high.png",
-        "attacks": [
-            {
-                "name": "Spark",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9208",
-        "externalId": "pop4-12",
-        "localId": "012",
-        "setCode": "pop4",
-        "cardNumber": "12/17",
-        "cardName": "Pidgey",
-        "fullDisplayName": "Pidgey 12/17 POP Series 4",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            16
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Hisao Nakamura",
-        "imageLowSrc": "cards/pop4-012-low.png",
-        "imageHighSrc": "cards/pop4-012-high.png",
-        "attacks": [
-            {
-                "name": "Quick Attack",
-                "damage": "20+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9199",
-        "externalId": "pop4-11",
-        "localId": "011",
-        "setCode": "pop4",
-        "cardNumber": "11/17",
-        "cardName": "Mudkip",
-        "fullDisplayName": "Mudkip 11/17 POP Series 4",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            258
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop4-011-low.png",
-        "imageHighSrc": "cards/pop4-011-high.png",
-        "attacks": [
-            {
-                "name": "Super Hypno Wave",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9191",
-        "externalId": "pop4-10",
-        "localId": "010",
-        "setCode": "pop4",
-        "cardNumber": "10/17",
-        "cardName": "Scramble Energy",
-        "fullDisplayName": "Scramble Energy 10/17 POP Series 4",
-        "rarity": "Uncommon",
-        "category": "Energy",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": "Special",
-        "regulationMark": null,
-        "artist": "Takumi Akabane",
-        "imageLowSrc": "cards/pop4-010-low.png",
-        "imageHighSrc": "cards/pop4-010-high.png",
-        "rules": "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides Colorless Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy."
-    },
-    {
-        "masterCardId": "9182",
-        "externalId": "pop4-9",
-        "localId": "009",
-        "setCode": "pop4",
-        "cardNumber": "9/17",
-        "cardName": "Pokémon Fan Club",
-        "fullDisplayName": "Pokémon Fan Club 9/17 POP Series 4",
-        "rarity": "Uncommon",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Supporter",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/pop4-009-low.png",
-        "imageHighSrc": "cards/pop4-009-high.png",
-        "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 Basic Pokémon and put them onto your Bench. Shuffle your deck afterward."
-    },
-    {
-        "masterCardId": "9173",
-        "externalId": "pop4-8",
-        "localId": "008",
-        "setCode": "pop4",
-        "cardNumber": "8/17",
-        "cardName": "Heal Energy",
-        "fullDisplayName": "Heal Energy 8/17 POP Series 4",
-        "rarity": "Uncommon",
-        "category": "Energy",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": "Special",
-        "regulationMark": null,
-        "artist": "Takumi Akabane",
-        "imageLowSrc": "cards/pop4-008-low.png",
-        "imageHighSrc": "cards/pop4-008-high.png",
-        "rules": "Heal Energy provides Colorless Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy."
-    },
-    {
-        "masterCardId": "9163",
-        "externalId": "pop4-7",
-        "localId": "007",
-        "setCode": "pop4",
-        "cardNumber": "7/17",
-        "cardName": "Grovyle",
-        "fullDisplayName": "Grovyle 7/17 POP Series 4",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            253
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/pop4-007-low.png",
-        "imageHighSrc": "cards/pop4-007-high.png",
-        "attacks": [
-            {
-                "name": "Quick Attack",
-                "damage": "10+"
-            },
-            {
-                "name": "Blot",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9155",
-        "externalId": "pop4-6",
-        "localId": "006",
-        "setCode": "pop4",
-        "cardNumber": "6/17",
-        "cardName": "Combusken",
-        "fullDisplayName": "Combusken 6/17 POP Series 4",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            256
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/pop4-006-low.png",
-        "imageHighSrc": "cards/pop4-006-high.png",
-        "attacks": [
-            {
-                "name": "Smokescreen",
-                "damage": "10"
-            },
-            {
-                "name": "Sky Uppercut",
-                "damage": "40"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9146",
-        "externalId": "pop4-5",
-        "localId": "005",
-        "setCode": "pop4",
-        "cardNumber": "5/17",
-        "cardName": "Sceptile",
-        "fullDisplayName": "Sceptile 5/17 POP Series 4",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            254
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Atsuko Nishida",
-        "imageLowSrc": "cards/pop4-005-low.png",
-        "imageHighSrc": "cards/pop4-005-high.png",
-        "attacks": [
-            {
-                "name": "Tail Rap",
-                "damage": "50×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9136",
-        "externalId": "pop4-4",
-        "localId": "004",
-        "setCode": "pop4",
-        "cardNumber": "4/17",
-        "cardName": "Mew",
-        "fullDisplayName": "Mew 4/17 POP Series 4",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            151
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Nakaoka",
-        "imageLowSrc": "cards/pop4-004-low.png",
-        "imageHighSrc": "cards/pop4-004-high.png",
-        "attacks": [
-            {
-                "name": "Psyshock",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9127",
-        "externalId": "pop4-3",
-        "localId": "003",
-        "setCode": "pop4",
-        "cardNumber": "3/17",
-        "cardName": "Flygon",
-        "fullDisplayName": "Flygon 3/17 POP Series 4",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 120,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            330
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Hisao Nakamura",
-        "imageLowSrc": "cards/pop4-003-low.png",
-        "imageHighSrc": "cards/pop4-003-high.png",
-        "attacks": [
-            {
-                "name": "Bite",
-                "damage": "30"
-            },
-            {
-                "name": "Sand Pit",
-                "damage": "70"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9117",
-        "externalId": "pop4-2",
-        "localId": "002",
-        "setCode": "pop4",
-        "cardNumber": "2/17",
-        "cardName": "Deoxys δ",
-        "fullDisplayName": "Deoxys δ 2/17 POP Series 4",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            386
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/pop4-002-low.png",
-        "imageHighSrc": "cards/pop4-002-high.png",
-        "attacks": [
-            {
-                "name": "Crystal Laser",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9111",
-        "externalId": "pop4-1",
-        "localId": "001",
-        "setCode": "pop4",
-        "cardNumber": "1/17",
-        "cardName": "Chimecho δ",
-        "fullDisplayName": "Chimecho δ 1/17 POP Series 4",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            358
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop4-001-low.png",
-        "imageHighSrc": "cards/pop4-001-high.png",
-        "attacks": [
-            {
-                "name": "Wrap",
-                "damage": null
-            },
-            {
-                "name": "Sonicboom",
-                "damage": "30"
-            }
-        ]
-    }
+  {
+    "masterCardId": "9253",
+    "externalId": "pop4-17",
+    "localId": "017",
+    "setCode": "pop4",
+    "cardNumber": "17/17",
+    "cardName": "Deoxys ex",
+    "fullDisplayName": "Deoxys ex 17/17 POP Series 4",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      386
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Hiromichi Sugiyama",
+    "imageLowSrc": "cards/pop4-017-low.png",
+    "imageHighSrc": "cards/pop4-017-high.png",
+    "attacks": [
+      {
+        "name": "Fastwave",
+        "damage": "50",
+        "cost": [],
+        "effect": "This attack's damage isn't affected by Resistance, Poké-Powers, Poké-Bodies, or any other effects on the Defending Pokémon."
+      }
+    ],
+    "rules": "When Pokémon-ex has been Knocked Out, your opponent takes 2 Prize cards.",
+    "subtype": "Basic, ex",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9245",
+    "externalId": "pop4-16",
+    "localId": "016",
+    "setCode": "pop4",
+    "cardNumber": "16/17",
+    "cardName": "Wobbuffet",
+    "fullDisplayName": "Wobbuffet 16/17 POP Series 4",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      202
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kagemaru Himeno",
+    "imageLowSrc": "cards/pop4-016-low.png",
+    "imageHighSrc": "cards/pop4-016-high.png",
+    "attacks": [
+      {
+        "name": "Nap",
+        "damage": null,
+        "cost": [],
+        "effect": "Remove 2 damage counters from Wobbuffet."
+      },
+      {
+        "name": "Expand",
+        "damage": "20",
+        "cost": [],
+        "effect": "During your opponent's next turn, any damage done to Wobbuffet is reduced by 20 (after applying Weakness and Resistance)."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9234",
+    "externalId": "pop4-15",
+    "localId": "015",
+    "setCode": "pop4",
+    "cardNumber": "15/17",
+    "cardName": "Treecko δ",
+    "fullDisplayName": "Treecko δ 15/17 POP Series 4",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      252
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop4-015-low.png",
+    "imageHighSrc": "cards/pop4-015-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Shining Claws",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": "Water -30",
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9225",
+    "externalId": "pop4-14",
+    "localId": "014",
+    "setCode": "pop4",
+    "cardNumber": "14/17",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 14/17 POP Series 4",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Atsuko Nishida",
+    "imageLowSrc": "cards/pop4-014-low.png",
+    "imageHighSrc": "cards/pop4-014-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9217",
+    "externalId": "pop4-13",
+    "localId": "013",
+    "setCode": "pop4",
+    "cardNumber": "13/17",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 13/17 POP Series 4",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/pop4-013-low.png",
+    "imageHighSrc": "cards/pop4-013-high.png",
+    "attacks": [
+      {
+        "name": "Spark",
+        "damage": "20",
+        "cost": [],
+        "effect": "Does 10 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9208",
+    "externalId": "pop4-12",
+    "localId": "012",
+    "setCode": "pop4",
+    "cardNumber": "12/17",
+    "cardName": "Pidgey",
+    "fullDisplayName": "Pidgey 12/17 POP Series 4",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      16
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Hisao Nakamura",
+    "imageLowSrc": "cards/pop4-012-low.png",
+    "imageHighSrc": "cards/pop4-012-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "20+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 20 damage plus 10 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9199",
+    "externalId": "pop4-11",
+    "localId": "011",
+    "setCode": "pop4",
+    "cardNumber": "11/17",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 11/17 POP Series 4",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop4-011-low.png",
+    "imageHighSrc": "cards/pop4-011-high.png",
+    "attacks": [
+      {
+        "name": "Super Hypno Wave",
+        "damage": "20",
+        "cost": [],
+        "effect": "The Defending Pokémon is now Asleep."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9191",
+    "externalId": "pop4-10",
+    "localId": "010",
+    "setCode": "pop4",
+    "cardNumber": "10/17",
+    "cardName": "Scramble Energy",
+    "fullDisplayName": "Scramble Energy 10/17 POP Series 4",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "artist": "Takumi Akabane",
+    "imageLowSrc": "cards/pop4-010-low.png",
+    "imageHighSrc": "cards/pop4-010-high.png",
+    "rules": "Scramble Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). Scramble Energy provides Colorless Energy. While in play, if you have more Prize cards left than your opponent, Scramble Energy provides every type of Energy but provides only 3 in any combination at a time. If the Pokémon Scramble Energy is attached to isn't an Evolved Pokémon (or evolves into Pokémon-ex), discard Scramble Energy.",
+    "subtype": "Special",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9182",
+    "externalId": "pop4-9",
+    "localId": "009",
+    "setCode": "pop4",
+    "cardNumber": "9/17",
+    "cardName": "Pokémon Fan Club",
+    "fullDisplayName": "Pokémon Fan Club 9/17 POP Series 4",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/pop4-009-low.png",
+    "imageHighSrc": "cards/pop4-009-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nSearch your deck for up to 2 Basic Pokémon and put them onto your Bench. Shuffle your deck afterward.",
+    "subtype": "Supporter",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9173",
+    "externalId": "pop4-8",
+    "localId": "008",
+    "setCode": "pop4",
+    "cardNumber": "8/17",
+    "cardName": "Heal Energy",
+    "fullDisplayName": "Heal Energy 8/17 POP Series 4",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "artist": "Takumi Akabane",
+    "imageLowSrc": "cards/pop4-008-low.png",
+    "imageHighSrc": "cards/pop4-008-high.png",
+    "rules": "Heal Energy provides Colorless Energy. When you attach this card from your hand to 1 of your Pokémon, remove 1 damage counter and all Special Conditions from that Pokémon. If Heal Energy is attached to Pokémon-ex, Heal Energy has no effect other than providing Energy.",
+    "subtype": "Special",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9163",
+    "externalId": "pop4-7",
+    "localId": "007",
+    "setCode": "pop4",
+    "cardNumber": "7/17",
+    "cardName": "Grovyle",
+    "fullDisplayName": "Grovyle 7/17 POP Series 4",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      253
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/pop4-007-low.png",
+    "imageHighSrc": "cards/pop4-007-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 10 damage plus 10 more damage."
+      },
+      {
+        "name": "Blot",
+        "damage": "20",
+        "cost": [],
+        "effect": "Remove 2 damage counters from Grovyle."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire ×2",
+    "resistance": "Water -30",
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9155",
+    "externalId": "pop4-6",
+    "localId": "006",
+    "setCode": "pop4",
+    "cardNumber": "6/17",
+    "cardName": "Combusken",
+    "fullDisplayName": "Combusken 6/17 POP Series 4",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      256
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/pop4-006-low.png",
+    "imageHighSrc": "cards/pop4-006-high.png",
+    "attacks": [
+      {
+        "name": "Smokescreen",
+        "damage": "10",
+        "cost": [],
+        "effect": "If the Defending Pokémon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing."
+      },
+      {
+        "name": "Sky Uppercut",
+        "damage": "40",
+        "cost": [],
+        "effect": "This attack's damage isn't affected by Resistance."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9146",
+    "externalId": "pop4-5",
+    "localId": "005",
+    "setCode": "pop4",
+    "cardNumber": "5/17",
+    "cardName": "Sceptile",
+    "fullDisplayName": "Sceptile 5/17 POP Series 4",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      254
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Atsuko Nishida",
+    "imageLowSrc": "cards/pop4-005-low.png",
+    "imageHighSrc": "cards/pop4-005-high.png",
+    "attacks": [
+      {
+        "name": "Tail Rap",
+        "damage": "50×",
+        "cost": [],
+        "effect": "Flip 2 coins. This attack does 50 damage times the number of heads."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Fire ×2",
+    "resistance": "Water -30",
+    "retreatCost": 3,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9136",
+    "externalId": "pop4-4",
+    "localId": "004",
+    "setCode": "pop4",
+    "cardNumber": "4/17",
+    "cardName": "Mew",
+    "fullDisplayName": "Mew 4/17 POP Series 4",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      151
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Nakaoka",
+    "imageLowSrc": "cards/pop4-004-low.png",
+    "imageHighSrc": "cards/pop4-004-high.png",
+    "attacks": [
+      {
+        "name": "Psyshock",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9127",
+    "externalId": "pop4-3",
+    "localId": "003",
+    "setCode": "pop4",
+    "cardNumber": "3/17",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 3/17 POP Series 4",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      330
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Hisao Nakamura",
+    "imageLowSrc": "cards/pop4-003-low.png",
+    "imageHighSrc": "cards/pop4-003-high.png",
+    "attacks": [
+      {
+        "name": "Bite",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Sand Pit",
+        "damage": "70",
+        "cost": [],
+        "effect": "The Defending Pokémon can't retreat during your opponent's next turn."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9117",
+    "externalId": "pop4-2",
+    "localId": "002",
+    "setCode": "pop4",
+    "cardNumber": "2/17",
+    "cardName": "Deoxys δ",
+    "fullDisplayName": "Deoxys δ 2/17 POP Series 4",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      386
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/pop4-002-low.png",
+    "imageHighSrc": "cards/pop4-002-high.png",
+    "attacks": [
+      {
+        "name": "Crystal Laser",
+        "damage": "20",
+        "cost": [],
+        "effect": "During your next turn, Deoxys's attacks do 40 more damage to the Defending Pokémon (before applying Weakness and Resistance)."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9111",
+    "externalId": "pop4-1",
+    "localId": "001",
+    "setCode": "pop4",
+    "cardNumber": "1/17",
+    "cardName": "Chimecho δ",
+    "fullDisplayName": "Chimecho δ 1/17 POP Series 4",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      358
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop4-001-low.png",
+    "imageHighSrc": "cards/pop4-001-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      },
+      {
+        "name": "Sonicboom",
+        "damage": "30",
+        "cost": [],
+        "effect": "This attack's damage isn't affected by Weakness or Resistance."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  }
 ]

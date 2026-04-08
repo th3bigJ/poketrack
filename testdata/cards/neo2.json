@@ -18,7 +18,16 @@
         "artist": "\"Big Mama\" Tagawa & Benimaru Itoh",
         "imageLowSrc": "cards/neo2-075-low.png",
         "imageHighSrc": "cards/neo2-075-high.png",
-        "rules": "Flip 2 coins. For each heads, search your deck for a Basic Energy card. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward."
+        "rules": "Flip 2 coins. For each heads, search your deck for a Basic Energy card. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7995",
@@ -39,7 +48,16 @@
         "artist": "\"Big Mama\" Tagawa, CR CG gangs",
         "imageLowSrc": "cards/neo2-074-low.png",
         "imageHighSrc": "cards/neo2-074-high.png",
-        "rules": "Search your deck for a card with Unown in its name and put it onto your Bench. Shuffle your deck afterward. (You can't play this card if your Bench is full.)"
+        "rules": "Search your deck for a card with Unown in its name and put it onto your Bench. Shuffle your deck afterward. (You can't play this card if your Bench is full.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7991",
@@ -60,7 +78,16 @@
         "artist": "K. Hoshiba, CR CG gangs",
         "imageLowSrc": "cards/neo2-073-low.png",
         "imageHighSrc": "cards/neo2-073-high.png",
-        "rules": "Choose 1 of your evolved Pokémon. Take the highest Stage Evolution card from that Pokémon and put it into your hand. (You can't evolve a Pokémon the turn you devolve it.)"
+        "rules": "Choose 1 of your evolved Pokémon. Take the highest Stage Evolution card from that Pokémon and put it into your hand. (You can't evolve a Pokémon the turn you devolve it.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7987",
@@ -81,7 +108,16 @@
         "artist": "K. Hoshiba, CR CG gangs",
         "imageLowSrc": "cards/neo2-072-low.png",
         "imageHighSrc": "cards/neo2-072-high.png",
-        "rules": "Flip a coin. If heads, search your deck for a card that evolves from Mysterious Fossil and put it onto your Bench or put a card that evolves from Mysterious Fossil from your hand onto your Bench. Either way, treat the new card as a Basic Pokémon. If you searched your deck, shuffle it. (You can't play this card if your Bench is full.)"
+        "rules": "Flip a coin. If heads, search your deck for a card that evolves from Mysterious Fossil and put it onto your Bench or put a card that evolves from Mysterious Fossil from your hand onto your Bench. Either way, treat the new card as a Basic Pokémon. If you searched your deck, shuffle it. (You can't play this card if your Bench is full.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7982",
@@ -109,12 +145,25 @@
         "attacks": [
             {
                 "name": "Slime",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If an attack would do damage to Wooper during your opponent's next turn, your opponent flips a coin. If tails, prevent all damage to Wooper from that attack. (Any other effects of that attack happen.)"
             },
             {
                 "name": "Tail Slap",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 1,
+        "flavorText": "When it walks around on the ground, it coats its body with a slimy, poisonous film.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -143,8 +192,19 @@
         "attacks": [
             {
                 "name": "Spike Stab",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned. If tails, this attack does nothing (not even damage)."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its poison stinger is very powerful. Its bright-colored body is intended to warn off its enemies.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -173,10 +233,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7968",
@@ -204,10 +275,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7962",
@@ -235,10 +317,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7958",
@@ -266,10 +359,21 @@
         "attacks": [
             {
                 "name": "Smash Punch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If tails, this attack does nothing."
             }
         ],
-        "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
+        "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends.",
+        "subtype": "Baby",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "It is always bursting with energy. To make itself stronger, it keeps on fighting even if it loses.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7953",
@@ -297,12 +401,25 @@
         "attacks": [
             {
                 "name": "Scratch",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Nap Time",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Remove all damage counters from Teddiursa. Teddiursa is now Asleep."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "If it finds honey, its crescent mark glows. It always licks its paws because they are soaked with honey.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -331,8 +448,19 @@
         "attacks": [
             {
                 "name": "Poison Sting",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It spins a web using fine – but durable – thread. It then waits patiently for prey to be trapped.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -361,12 +489,25 @@
         "attacks": [
             {
                 "name": "Scout",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Look at your opponent's hand."
             },
             {
                 "name": "Tackle",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "It stands on its tail so it can see a long way. If it spots an enemy, it cries loudly to warn its kind.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -395,12 +536,25 @@
         "attacks": [
             {
                 "name": "Rollout",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Hypnosis",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "The Defending Pokémon is now Asleep."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Because it is inept at walking on its newly grown legs, it always swims around in water.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -429,8 +583,19 @@
         "attacks": [
             {
                 "name": "Burst",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Flip a coin. If heads, Pineco does 40 damage to itself and 10 damage to each Pokémon on each player's Bench. (Don't apply Weakness and Resistance for Benched Pokémon.) Flip a coin. If tails, this attack does nothing (not even damage)."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "It likes to make its shell thicker by adding layers of tree bark. The additional weight doesn't bother it.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -459,8 +624,19 @@
         "attacks": [
             {
                 "name": "Bind",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Revived from an ancient fossil, this Pokémon uses air stored in its shell to sink and rise in water.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -489,8 +665,19 @@
         "attacks": [
             {
                 "name": "Confuse Ray",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "It usually forages for food on the ground but may, on rare occasions, hop onto branches to peck at shoots.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -519,8 +706,19 @@
         "attacks": [
             {
                 "name": "Thunder Jolt",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If tails, Mareep does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its fleece grows continually. In the summer, the fleece is fully shed, but it grows back in a week.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -549,8 +747,19 @@
         "attacks": [
             {
                 "name": "Bite",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 1,
+        "flavorText": "It feeds on soil. After it has eaten a large mountain, it will fall asleep so it can grow.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -579,8 +788,19 @@
         "attacks": [
             {
                 "name": "Work Together",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage plus 10 more damage for each Omanyte, Omastar, Kabuto, and Kabutops on your Bench."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "On rare occasions, some have been found as fossils which they became while hiding on the ocean floor.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -609,8 +829,19 @@
         "attacks": [
             {
                 "name": "Rolling Tackle",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "Its body is so light, it must grip the ground firmly with its feet to keep from being blown away.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -639,8 +870,19 @@
         "attacks": [
             {
                 "name": "Glare",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": null,
+        "flavorText": "When spotted, this Pokémon escapes backward by furiously boring into the ground with its tail.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -669,8 +911,19 @@
         "attacks": [
             {
                 "name": "Spin Tackle",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Caterpie does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "For protection, it releases a horrible stench from the antennae on its head to drive away enemies.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -699,12 +952,25 @@
         "attacks": [
             {
                 "name": "Energy Cycle",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, choose 1 Energy card attached to the Defending Pokémon and 1 of your opponent's Benched Pokémon. Attach that Energy card to that Pokémon."
             },
             {
                 "name": "Super Psy",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Psychic ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "In South America, it is said that its right eye sees the future and its left eye views the past.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -733,10 +999,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7879",
@@ -764,10 +1041,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7875",
@@ -795,10 +1083,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7870",
@@ -826,10 +1125,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7865",
@@ -857,10 +1167,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7861",
@@ -888,8 +1209,19 @@
         "attacks": [
             {
                 "name": "Fury Cutter",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Flip 4 coins. This attack does 10 damage plus 10 more damage if exactly 1 is heads, or 20 more damage if exactly 2 are heads, or 40 more damage if exactly 3 are heads, or 80 more damage if all 4 are heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "It slashes through grass with its sharp scythes, moving too fast for the human eye to track.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -918,12 +1250,25 @@
         "attacks": [
             {
                 "name": "Skull Bash",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Dust Devil",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Does 10 damage to each non-Fighting Pokémon in play. Don't apply Weakness and Resistance."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 1,
+        "flavorText": "Its shell is as hard as sheet rock, and it is also very strong. Its thrashing can topple a mountain.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -952,12 +1297,25 @@
         "attacks": [
             {
                 "name": "Belly Drum",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Put 3 damage counters on Poliwhirl. If this doesn't Knock Out Poliwhirl, search your deck for 2 Basic Energy cards and attach them to Poliwhirl. Shuffle your deck afterward."
             },
             {
                 "name": "Water Gun",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Does 30 damage plus 10 more damage for each Water Energy attached to Poliwhirl but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "The swirl on its belly undulates. Staring at it may gradually cause drowsiness.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -986,12 +1344,25 @@
         "attacks": [
             {
                 "name": "Squeeze",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage and the Defending Pokémon is now Paralyzed. If tails, this attack does 10 damage."
             },
             {
                 "name": "Spike Barrage",
-                "damage": "20+"
+                "damage": "20+",
+                "cost": [],
+                "effect": "Flip a number of coins equal to the number of Water Energy attached to Omastar. This attack does 20 damage plus 20 more damage for each heads."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Apparently, it cracked Shellder's shell with its sharp fangs and sucked out the insides.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1020,12 +1391,25 @@
         "attacks": [
             {
                 "name": "Harden",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "During your opponent's next turn, whenever 20 or less damage is done to Metapod (after applying Weakness and Resistance), prevent that damage. (Any other effects of attacks still happen)."
             },
             {
                 "name": "Hatch",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, remove all damage counters from Metapod. Then, search your deck for a card that evolves from Metapod and attach that card to Metapod. This counts as evolving Metapod. Shuffle your deck afterward."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Inside the shell, it is soft and weak as it prepares to evolve. It stays motionless in the shell.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1054,8 +1438,19 @@
         "attacks": [
             {
                 "name": "Secrete Poison",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "During your opponent's next turn, whenever your opponent's attack damages Kakuna (even if Kakuna is Knocked Out), your opponent's Active Pokémon is now Poisoned and Kakuna does 10 damage to each of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Although it is a cocoon, it can move a little. It can extend its poison barb if it is attacked.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1081,7 +1476,16 @@
         "artist": "Miki Tanaka",
         "imageLowSrc": "cards/neo2-040-low.png",
         "imageHighSrc": "cards/neo2-040-high.png",
-        "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends."
+        "rules": "If this Baby Pokémon is your Active Pokémon and your opponent announces an attack, your opponent flips a coin (before doing anything else). If tails, your opponent's turn ends.",
+        "subtype": "Baby",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "It has a very soft body. If it starts to roll, it will bounce all over and be impossible to stop.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7826",
@@ -1109,12 +1513,25 @@
         "attacks": [
             {
                 "name": "Bite",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Plunder",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Before doing damage, discard all Trainer cards attached to the Defending Pokémon (before they affect the damage)."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "It uses different kinds of cries for communicating with others of its kind and for pursuing its prey.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1143,8 +1560,19 @@
         "attacks": [
             {
                 "name": "Smash Kick",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "Its irregularly configured DNA is affected by its surroundings. It evolves if its environment changes.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1173,12 +1601,25 @@
         "attacks": [
             {
                 "name": "Recover",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Discard 1 Water Energy card attached to Corsola or this attack does nothing. Remove all damage counters from Corsola."
             },
             {
                 "name": "Spike Cannon",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It continuously sheds and grows. The tip of its head is prized as a treasure because of its beauty.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1207,12 +1648,25 @@
         "attacks": [
             {
                 "name": "Shockwave",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage to each of your opponent's Pokémon. Don't apply Weakness and Resistance. Then, if your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with the Defending Pokémon."
             },
             {
                 "name": "Swift",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "This attack's damage isn't affected by Weakness, Resistance, Pokémon Powers, or any other effects on the Defending Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "If it flaps its wings really fast, it can generate shock waves that will shatter windows in the area.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1241,8 +1695,19 @@
         "attacks": [
             {
                 "name": "Counter",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If an attack damages Wobbuffet during your opponent's next turn (even if Wobbuffet is Knocked Out), flip a coin. If heads, Wobbuffet attacks the Defending Pokémon for an equal amount of damage."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "To keep its pitch-black tail hidden, it lives quietly in the darkness. It is never first to attack.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1271,12 +1736,25 @@
         "attacks": [
             {
                 "name": "Headpress",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails, this attack does nothing (not even damage)."
             },
             {
                 "name": "Double Lariat",
-                "damage": "40×"
+                "damage": "40×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 40 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 3,
+        "flavorText": "Although it is a good climber, it prefers to snap trees with its forelegs and eat fallen berries.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1305,10 +1783,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "7791",
@@ -1336,12 +1825,25 @@
         "attacks": [
             {
                 "name": "Quick Attack",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if tails, this attack does 10 damage."
             },
             {
                 "name": "Pursuit",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "During your opponent's next turn, if the Defending Pokémon tries to retreat, do 10 damage to it. (Don't apply Weakness and Resistance.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "When agitated, this Pokémon protects itself by spraying poisonous sweat from its pores.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1370,12 +1872,25 @@
         "attacks": [
             {
                 "name": "Slam",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
             },
             {
                 "name": "Trample",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "For each Benched Pokémon in play (yours and your opponent's), flip a coin. If heads, this attack does 30 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 3,
+        "flavorText": "Its body can't be harmed by any sort of attack, so it is very eager to make challenges against enemies.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1404,8 +1919,19 @@
         "attacks": [
             {
                 "name": "Sketch",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If the Defending Pokémon attacked last turn, and Smeargle was in play during that attack, Smeargle copies that attack except for its Energy costs and anything else required in order to use that attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "A special fluid oozes from the tip of its tail. It paints the fluid everywhere to mark its territory.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1434,12 +1960,25 @@
         "attacks": [
             {
                 "name": "False Swipe",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Does damage equal to half the Defending Pokémon's remaining HP (rounded down to the nearest 10)."
             },
             {
                 "name": "Double Claw",
-                "damage": "20+"
+                "damage": "20+",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 20 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 2,
+        "flavorText": "It swings its eye patterned pincers up to scare its foes. This makes it look like it has three heads.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1468,12 +2007,25 @@
         "attacks": [
             {
                 "name": "Corkscrew Punch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Submission",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": "Poliwrath does 20 damage to itself."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Although an energetic, skilled swimmer that uses all of its muscles, it lives on dry land.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1502,8 +2054,19 @@
         "attacks": [
             {
                 "name": "Doubleslap",
-                "damage": "40×"
+                "damage": "40×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 40 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "Whenever three or more of these get together, they sing in a loud voice that sounds like bellowing.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1532,12 +2095,25 @@
         "attacks": [
             {
                 "name": "Lock-on",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "During your next turn, treat any tails flipped when using Magnemite's Electric Bolt attack as if they were heads. (Benching or evolving either Pokémon ends this effect.)"
             },
             {
                 "name": "Electric Bolt",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Flip 2 coins. If both are heads, the Defending Pokémon is now Paralyzed. If either of them is tails, this attack does nothing (not even damage)."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 1,
+        "flavorText": "These Pokémon are attracted to electrical emissions and will often follow people using PokéGear.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1566,12 +2142,25 @@
         "attacks": [
             {
                 "name": "Slash",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Hydrocutter",
-                "damage": "40×"
+                "damage": "40×",
+                "cost": [],
+                "effect": "Flip a number of coins equal to the number of Energy cards attached to Kabutops. This attack does 40 damage times the number of heads. You can't flip more than 3 coins in this way."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "In the water, it tucks its limbs to become more compact, then it wiggles its shell to swim fast.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1600,12 +2189,25 @@
         "attacks": [
             {
                 "name": "Smog",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
             },
             {
                 "name": "Collect Fire",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If there are any Fire Energy cards in your discard pile, choose 1 of them and attach it to Houndour."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "To corner prey, they check each other's location using barks that only they can understand.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1634,12 +2236,25 @@
         "attacks": [
             {
                 "name": "Crunch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Until the end of your next turn, if an attack damages the Defending Pokémon (after applying Weakness and Resistance), that attack does 20 more damage to the Defending Pokémon."
             },
             {
                 "name": "Flamethrower",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Discard 1 Fire Energy card attached to Houndoom or this attack does nothing."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "Upon hearing its eerie howls, other Pokémon get the shivers and head straight back to their nests.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1668,12 +2283,25 @@
         "attacks": [
             {
                 "name": "Detect",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all effects of attacks, including damage, done to Hitmontop."
             },
             {
                 "name": "Triple Kick",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 3 coins. This attack does 30 damage times the number of heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "If you become enchanted by its smooth, elegant, dancelike kicks, you may get drilled hard.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1702,8 +2330,19 @@
         "attacks": [
             {
                 "name": "Rapid Spin",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with his or her Active Pokémon, then, if you have any Benched Pokémon, you switch 1 of them with your Active Pokémon. (Do the damage before switching the Pokémon.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 3,
+        "flavorText": "Its entire body is shielded by a steel-hard shell. What lurks inside this shell is a total mystery.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1732,12 +2371,25 @@
         "attacks": [
             {
                 "name": "Quick Attack",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if tails, this attack does 10 damage."
             },
             {
                 "name": "Psybeam",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "By reading air currents, it can predict things such as the weather or its foe's next move.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1766,12 +2418,25 @@
         "attacks": [
             {
                 "name": "Magic Dust",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now either Asleep, Confused, Paralyzed, or Poisoned (your choice)."
             },
             {
                 "name": "Hyper Reverse",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Does 10 damage times the number of Energy attached to the Defending Pokémon. After doing damage, remove a number of damage counters from Butterfree equal to the amount of damage done to the Defending Pokémon (after applying Weakness and Resistance)."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fire ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "It collects honey every day. It rubs honey onto the hairs on its legs to carry it back to its nest.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1800,12 +2465,25 @@
         "attacks": [
             {
                 "name": "Triple Poison",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned. Your opponent now puts 3 damage counters on it instead of 1 after each player's turn (even if it was already Poisoned)."
             },
             {
                 "name": "Pin Missile",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "Flip 4 coins. This attack does 20 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fire ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "It can take down any opponent with its powerful poison stingers. It sometimes attacks in swarms.",
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1834,12 +2512,25 @@
         "attacks": [
             {
                 "name": "Shockwave",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage to each of your opponent's Pokémon. Don't apply Weakness and Resistance. Then, if your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with the Defending Pokémon."
             },
             {
                 "name": "Swift",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "This attack's damage isn't affected by Weakness, Resistance, Pokémon Powers, or any other effects on the Defending Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "If it flaps its wings really fast, it can generate shock waves that will shatter windows in the area.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -1868,8 +2559,19 @@
         "attacks": [
             {
                 "name": "Counter",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If an attack damages Wobbuffet during your opponent's next turn (even if Wobbuffet is Knocked Out), flip a coin. If heads, Wobbuffet attacks the Defending Pokémon for an equal amount of damage."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "To keep its pitch-black tail hidden, it lives quietly in the darkness. It is never first to attack.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -1898,12 +2600,25 @@
         "attacks": [
             {
                 "name": "Headpress",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails, this attack does nothing (not even damage)."
             },
             {
                 "name": "Double Lariat",
-                "damage": "40×"
+                "damage": "40×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 40 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 3,
+        "flavorText": "Although it is a good climber, it prefers to snap trees with its forelegs and eat fallen berries.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -1932,10 +2647,21 @@
         "attacks": [
             {
                 "name": "Hidden Power",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
         ],
-        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names."
+        "rules": "You may have up to 4 Basic Pokémon cards in your deck with Unown in their names.",
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Their shapes look like hieroglyphs on ancient tablets. It is said that the two are somehow related.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
+        ]
     },
     {
         "masterCardId": "7687",
@@ -1963,12 +2689,25 @@
         "attacks": [
             {
                 "name": "Bite",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Feint Attack",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "When darkness falls, the rings on the body begin to glow, striking fear in the hearts of anyone nearby.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -1997,12 +2736,25 @@
         "attacks": [
             {
                 "name": "Slam",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
             },
             {
                 "name": "Trample",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "For each Benched Pokémon in play (yours and your opponent's), flip a coin. If heads, this attack does 30 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 3,
+        "flavorText": "Its body can't be harmed by any sort of attack, so it is very eager to make challenges against enemies.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2031,8 +2783,19 @@
         "attacks": [
             {
                 "name": "Sketch",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If the Defending Pokémon attacked last turn, and Smeargle was in play during that attack, Smeargle copies that attack except for its Energy costs and anything else required in order to use that attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "A special fluid oozes from the tip of its tail. It paints the fluid everywhere to mark its territory.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2061,12 +2824,25 @@
         "attacks": [
             {
                 "name": "False Swipe",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Does damage equal to half the Defending Pokémon's remaining HP (rounded down to the nearest 10)."
             },
             {
                 "name": "Double Claw",
-                "damage": "20+"
+                "damage": "20+",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 20 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 2,
+        "flavorText": "It swings its eye patterned pincers up to scare its foes. This makes it look like it has three heads.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2095,12 +2871,25 @@
         "attacks": [
             {
                 "name": "Corkscrew Punch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Submission",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": "Poliwrath does 20 damage to itself."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Although an energetic, skilled swimmer that uses all of its muscles, it lives on dry land.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2129,8 +2918,19 @@
         "attacks": [
             {
                 "name": "Doubleslap",
-                "damage": "40×"
+                "damage": "40×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 40 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "Whenever three or more of these get together, they sing in a loud voice that sounds like bellowing.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2159,12 +2959,25 @@
         "attacks": [
             {
                 "name": "Lock-on",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "During your next turn, treat any tails flipped when using Magnemite's Electric Bolt attack as if they were heads. (Benching or evolving either Pokémon ends this effect.)"
             },
             {
                 "name": "Electric Bolt",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Flip 2 coins. If both are heads, the Defending Pokémon is now Paralyzed. If either of them is tails, this attack does nothing (not even damage)."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 1,
+        "flavorText": "These Pokémon are attracted to electrical emissions and will often follow people using PokéGear.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2193,12 +3006,25 @@
         "attacks": [
             {
                 "name": "Slash",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Hydrocutter",
-                "damage": "40×"
+                "damage": "40×",
+                "cost": [],
+                "effect": "Flip a number of coins equal to the number of Energy cards attached to Kabutops. This attack does 40 damage times the number of heads. You can't flip more than 3 coins in this way."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "In the water, it tucks its limbs to become more compact, then it wiggles its shell to swim fast.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2227,12 +3053,25 @@
         "attacks": [
             {
                 "name": "Smog",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
             },
             {
                 "name": "Collect Fire",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If there are any Fire Energy cards in your discard pile, choose 1 of them and attach it to Houndour."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "To corner prey, they check each other's location using barks that only they can understand.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2261,12 +3100,25 @@
         "attacks": [
             {
                 "name": "Crunch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Until the end of your next turn, if an attack damages the Defending Pokémon (after applying Weakness and Resistance), that attack does 20 more damage to the Defending Pokémon."
             },
             {
                 "name": "Flamethrower",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Discard 1 Fire Energy card attached to Houndoom or this attack does nothing."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "Upon hearing its eerie howls, other Pokémon get the shivers and head straight back to their nests.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2295,12 +3147,25 @@
         "attacks": [
             {
                 "name": "Detect",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all effects of attacks, including damage, done to Hitmontop."
             },
             {
                 "name": "Triple Kick",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 3 coins. This attack does 30 damage times the number of heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "If you become enchanted by its smooth, elegant, dancelike kicks, you may get drilled hard.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2329,8 +3194,19 @@
         "attacks": [
             {
                 "name": "Rapid Spin",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with his or her Active Pokémon, then, if you have any Benched Pokémon, you switch 1 of them with your Active Pokémon. (Do the damage before switching the Pokémon.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": "Grass -30",
+        "retreatCost": 3,
+        "flavorText": "Its entire body is shielded by a steel-hard shell. What lurks inside the armor is a total mystery.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -2359,12 +3235,25 @@
         "attacks": [
             {
                 "name": "Bite",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Psychic",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Does 30 damage plus 10 more damage for each Energy card attached to the Defending Pokémon."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "It uses the fine hair that covers its body to sense air currents and predict its enemy's actions.",
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     }
 ]

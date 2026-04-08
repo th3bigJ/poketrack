@@ -1,374 +1,500 @@
 [
-    {
-        "masterCardId": "7308",
-        "externalId": "mcd19-12",
-        "localId": "012",
-        "setCode": "mcd19",
-        "cardNumber": "12/12",
-        "cardName": "Eevee",
-        "fullDisplayName": "Eevee 12/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            133
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Atsuko Nishida",
-        "imageLowSrc": "cards/mcd19-012-low.png",
-        "imageHighSrc": "cards/mcd19-012-high.png",
-        "attacks": [
-            {
-                "name": "Gnaw",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7303",
-        "externalId": "mcd19-11",
-        "localId": "011",
-        "setCode": "mcd19",
-        "cardNumber": "11/12",
-        "cardName": "Alolan Dugtrio",
-        "fullDisplayName": "Alolan Dugtrio 11/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            51
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Megumi Mizutani",
-        "imageLowSrc": "cards/mcd19-011-low.png",
-        "imageHighSrc": "cards/mcd19-011-high.png",
-        "attacks": [
-            {
-                "name": "Gold Rush",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7298",
-        "externalId": "mcd19-10",
-        "localId": "010",
-        "setCode": "mcd19",
-        "cardNumber": "10/12",
-        "cardName": "Alolan Meowth",
-        "fullDisplayName": "Alolan Meowth 10/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            52
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Akira Komayama",
-        "imageLowSrc": "cards/mcd19-010-low.png",
-        "imageHighSrc": "cards/mcd19-010-high.png",
-        "attacks": [
-            {
-                "name": "Spoil the Fun",
-                "damage": "10+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7293",
-        "externalId": "mcd19-9",
-        "localId": "009",
-        "setCode": "mcd19",
-        "cardNumber": "9/12",
-        "cardName": "Onix",
-        "fullDisplayName": "Onix 9/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            95
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/mcd19-009-low.png",
-        "imageHighSrc": "cards/mcd19-009-high.png",
-        "attacks": [
-            {
-                "name": "Screech",
-                "damage": null
-            },
-            {
-                "name": "Rage",
-                "damage": "10+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7288",
-        "externalId": "mcd19-8",
-        "localId": "008",
-        "setCode": "mcd19",
-        "cardNumber": "8/12",
-        "cardName": "Mankey",
-        "fullDisplayName": "Mankey 8/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            56
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Miki Tanaka",
-        "imageLowSrc": "cards/mcd19-008-low.png",
-        "imageHighSrc": "cards/mcd19-008-high.png",
-        "attacks": [
-            {
-                "name": "Three-Step Strike",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7283",
-        "externalId": "mcd19-7",
-        "localId": "007",
-        "setCode": "mcd19",
-        "cardNumber": "7/12",
-        "cardName": "Gastly",
-        "fullDisplayName": "Gastly 7/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            92
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shibuzoh.",
-        "imageLowSrc": "cards/mcd19-007-low.png",
-        "imageHighSrc": "cards/mcd19-007-high.png",
-        "attacks": [
-            {
-                "name": "Ominous Eyes",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "7278",
-        "externalId": "mcd19-6",
-        "localId": "006",
-        "setCode": "mcd19",
-        "cardNumber": "6/12",
-        "cardName": "Pikachu",
-        "fullDisplayName": "Pikachu 6/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            25
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kagemaru Himeno",
-        "imageLowSrc": "cards/mcd19-006-low.png",
-        "imageHighSrc": "cards/mcd19-006-high.png",
-        "attacks": [
-            {
-                "name": "Iron Tail",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7272",
-        "externalId": "mcd19-5",
-        "localId": "005",
-        "setCode": "mcd19",
-        "cardNumber": "5/12",
-        "cardName": "Lapras",
-        "fullDisplayName": "Lapras 5/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 120,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            131
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saya Tsuruta",
-        "imageLowSrc": "cards/mcd19-005-low.png",
-        "imageHighSrc": "cards/mcd19-005-high.png",
-        "attacks": [
-            {
-                "name": "Aqua Bullet",
-                "damage": "20"
-            },
-            {
-                "name": "Hydro Pump",
-                "damage": "70+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7266",
-        "externalId": "mcd19-4",
-        "localId": "004",
-        "setCode": "mcd19",
-        "cardNumber": "4/12",
-        "cardName": "Alolan Sandshrew",
-        "fullDisplayName": "Alolan Sandshrew 4/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            27
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shin Nagasawa",
-        "imageLowSrc": "cards/mcd19-004-low.png",
-        "imageHighSrc": "cards/mcd19-004-high.png",
-        "attacks": [
-            {
-                "name": "Fury Swipes",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7254",
-        "externalId": "mcd19-3",
-        "localId": "003",
-        "setCode": "mcd19",
-        "cardNumber": "3/12",
-        "cardName": "Magmar",
-        "fullDisplayName": "Magmar 3/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            126
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Yumi",
-        "imageLowSrc": "cards/mcd19-003-low.png",
-        "imageHighSrc": "cards/mcd19-003-high.png",
-        "attacks": [
-            {
-                "name": "Controlled Burn",
-                "damage": null
-            },
-            {
-                "name": "Flamethrower",
-                "damage": "80"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7239",
-        "externalId": "mcd19-2",
-        "localId": "002",
-        "setCode": "mcd19",
-        "cardNumber": "2/12",
-        "cardName": "Alolan Exeggutor",
-        "fullDisplayName": "Alolan Exeggutor 2/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 160,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            103
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Satoshi Shirai",
-        "imageLowSrc": "cards/mcd19-002-low.png",
-        "imageHighSrc": "cards/mcd19-002-high.png",
-        "attacks": [
-            {
-                "name": "Tropical Shake",
-                "damage": "20+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "7225",
-        "externalId": "mcd19-1",
-        "localId": "001",
-        "setCode": "mcd19",
-        "cardNumber": "1/12",
-        "cardName": "Caterpie",
-        "fullDisplayName": "Caterpie 1/12 Macdonald's Collection 2019",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            10
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Sekio",
-        "imageLowSrc": "cards/mcd19-001-low.png",
-        "imageHighSrc": "cards/mcd19-001-high.png",
-        "attacks": [
-            {
-                "name": "Surprise Attack",
-                "damage": "20"
-            }
-        ]
-    }
+  {
+    "masterCardId": "7308",
+    "externalId": "mcd19-12",
+    "localId": "012",
+    "setCode": "mcd19",
+    "cardNumber": "12/12",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 12/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Atsuko Nishida",
+    "imageLowSrc": "cards/mcd19-012-low.png",
+    "imageHighSrc": "cards/mcd19-012-high.png",
+    "attacks": [
+      {
+        "name": "Gnaw",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Current studies show it can evolve into an incredible eight different species of Pokémon.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7303",
+    "externalId": "mcd19-11",
+    "localId": "011",
+    "setCode": "mcd19",
+    "cardNumber": "11/12",
+    "cardName": "Alolan Dugtrio",
+    "fullDisplayName": "Alolan Dugtrio 11/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      51
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Megumi Mizutani",
+    "imageLowSrc": "cards/mcd19-011-low.png",
+    "imageHighSrc": "cards/mcd19-011-high.png",
+    "attacks": [
+      {
+        "name": "Gold Rush",
+        "damage": "30",
+        "cost": [],
+        "effect": "Discard any number of Metal Energy cards from your hand. This attack does 30 damage for each card you discarded in this way."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire ×2",
+    "resistance": "Psychic -20",
+    "retreatCost": 1,
+    "flavorText": "This Pokémon are cherished in the Alola region, where they are thought to be feminine deities of the land incarnate.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7298",
+    "externalId": "mcd19-10",
+    "localId": "010",
+    "setCode": "mcd19",
+    "cardNumber": "10/12",
+    "cardName": "Alolan Meowth",
+    "fullDisplayName": "Alolan Meowth 10/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      52
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Akira Komayama",
+    "imageLowSrc": "cards/mcd19-010-low.png",
+    "imageHighSrc": "cards/mcd19-010-high.png",
+    "attacks": [
+      {
+        "name": "Spoil the Fun",
+        "damage": "10+",
+        "cost": [],
+        "effect": "If you go second, this attack does 60 more damage during your first turn."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": "Psychic -20",
+    "retreatCost": 1,
+    "flavorText": "When its delicate pride is wounded, or when the gold coin on its forehead is dirtied, it flies into a hysterical rage.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7293",
+    "externalId": "mcd19-9",
+    "localId": "009",
+    "setCode": "mcd19",
+    "cardNumber": "9/12",
+    "cardName": "Onix",
+    "fullDisplayName": "Onix 9/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      95
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/mcd19-009-low.png",
+    "imageHighSrc": "cards/mcd19-009-high.png",
+    "attacks": [
+      {
+        "name": "Screech",
+        "damage": null,
+        "cost": [],
+        "effect": "During your next turn, the Defending Pokémon takes 20 more damage from attacks (after applying Weakness and Resistance)."
+      },
+      {
+        "name": "Rage",
+        "damage": "10+",
+        "cost": [],
+        "effect": "This attack does 10 more damage for each damage counter on this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It usually lives underground. It searches for food while boring its way through the ground at 50 miles per hour.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7288",
+    "externalId": "mcd19-8",
+    "localId": "008",
+    "setCode": "mcd19",
+    "cardNumber": "8/12",
+    "cardName": "Mankey",
+    "fullDisplayName": "Mankey 8/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      56
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Miki Tanaka",
+    "imageLowSrc": "cards/mcd19-008-low.png",
+    "imageHighSrc": "cards/mcd19-008-high.png",
+    "attacks": [
+      {
+        "name": "Three-Step Strike",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip 3 coins. This attack does 10 damage for each heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It can spontaneously become enraged. Everyone near it clears out as it rampages, and the resulting loneliness makes it angrier still.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7283",
+    "externalId": "mcd19-7",
+    "localId": "007",
+    "setCode": "mcd19",
+    "cardNumber": "7/12",
+    "cardName": "Gastly",
+    "fullDisplayName": "Gastly 7/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      92
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shibuzoh.",
+    "imageLowSrc": "cards/mcd19-007-low.png",
+    "imageHighSrc": "cards/mcd19-007-high.png",
+    "attacks": [
+      {
+        "name": "Ominous Eyes",
+        "damage": null,
+        "cost": [],
+        "effect": "Put 1 damage counter on 1 of your opponent's Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Darkness ×2",
+    "resistance": "Fighting -20",
+    "retreatCost": 1,
+    "flavorText": "Should a strange light be seen flickering in an abandoned building, Gastly is lurking there.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7278",
+    "externalId": "mcd19-6",
+    "localId": "006",
+    "setCode": "mcd19",
+    "cardNumber": "6/12",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 6/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kagemaru Himeno",
+    "imageLowSrc": "cards/mcd19-006-low.png",
+    "imageHighSrc": "cards/mcd19-006-high.png",
+    "attacks": [
+      {
+        "name": "Iron Tail",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin until you get tails. This attack does 20 damage for each heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": "Metal -20",
+    "retreatCost": 1,
+    "flavorText": "A plan was recently announced to gather many Pikachu and make an electric power plant.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7272",
+    "externalId": "mcd19-5",
+    "localId": "005",
+    "setCode": "mcd19",
+    "cardNumber": "5/12",
+    "cardName": "Lapras",
+    "fullDisplayName": "Lapras 5/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      131
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saya Tsuruta",
+    "imageLowSrc": "cards/mcd19-005-low.png",
+    "imageHighSrc": "cards/mcd19-005-high.png",
+    "attacks": [
+      {
+        "name": "Aqua Bullet",
+        "damage": "20",
+        "cost": [],
+        "effect": "This attack does 20 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      },
+      {
+        "name": "Hydro Pump",
+        "damage": "70+",
+        "cost": [],
+        "effect": "This attack does 10 more damage times the amount of Water Energy attached to this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "These Pokémon were once near extinction due to poaching. Following protective regulations, there is now an overabundance of them.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7266",
+    "externalId": "mcd19-4",
+    "localId": "004",
+    "setCode": "mcd19",
+    "cardNumber": "4/12",
+    "cardName": "Alolan Sandshrew",
+    "fullDisplayName": "Alolan Sandshrew 4/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      27
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shin Nagasawa",
+    "imageLowSrc": "cards/mcd19-004-low.png",
+    "imageHighSrc": "cards/mcd19-004-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip 3 coins. This attack does 10 damage for each heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Metal ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "An ancient tradition of Alolan festivals, still carried on to this day, is a competition to slide Sandshrew across ice as far as one can.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7254",
+    "externalId": "mcd19-3",
+    "localId": "003",
+    "setCode": "mcd19",
+    "cardNumber": "3/12",
+    "cardName": "Magmar",
+    "fullDisplayName": "Magmar 3/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      126
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Yumi",
+    "imageLowSrc": "cards/mcd19-003-low.png",
+    "imageHighSrc": "cards/mcd19-003-high.png",
+    "attacks": [
+      {
+        "name": "Controlled Burn",
+        "damage": null,
+        "cost": [],
+        "effect": "Discard the top card of your opponent's deck."
+      },
+      {
+        "name": "Flamethrower",
+        "damage": "80",
+        "cost": [],
+        "effect": "Discard an Energy from this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "When angered, it spouts brilliant fire from all over its body. It doesn't calm down until its opponent has burned to ash.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7239",
+    "externalId": "mcd19-2",
+    "localId": "002",
+    "setCode": "mcd19",
+    "cardNumber": "2/12",
+    "cardName": "Alolan Exeggutor",
+    "fullDisplayName": "Alolan Exeggutor 2/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 160,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      103
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Satoshi Shirai",
+    "imageLowSrc": "cards/mcd19-002-low.png",
+    "imageHighSrc": "cards/mcd19-002-high.png",
+    "attacks": [
+      {
+        "name": "Tropical Shake",
+        "damage": "20+",
+        "cost": [],
+        "effect": "This attack does 20 more damage for each type of basic Energy card in your discard pile. You can't add more than 100 damage in this way."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "As it grew taller and taller, it outgrew its reliance on psychic powers, while within it awakened the power of the sleeping dragon.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "7225",
+    "externalId": "mcd19-1",
+    "localId": "001",
+    "setCode": "mcd19",
+    "cardNumber": "1/12",
+    "cardName": "Caterpie",
+    "fullDisplayName": "Caterpie 1/12 Macdonald's Collection 2019",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      10
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Sekio",
+    "imageLowSrc": "cards/mcd19-001-low.png",
+    "imageHighSrc": "cards/mcd19-001-high.png",
+    "attacks": [
+      {
+        "name": "Surprise Attack",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If tails, this attack does nothing."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "When attacked by bird Pokémon, it resists by releasing a terrifically strong odor from its antennae, but it often becomes their prey.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  }
 ]

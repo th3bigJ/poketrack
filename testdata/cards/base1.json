@@ -17,7 +17,17 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-102-low.png",
-        "imageHighSrc": "cards/base1-102-high.png"
+        "imageHighSrc": "cards/base1-102-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "917",
@@ -37,7 +47,17 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-101-low.png",
-        "imageHighSrc": "cards/base1-101-high.png"
+        "imageHighSrc": "cards/base1-101-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "916",
@@ -57,7 +77,17 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-100-low.png",
-        "imageHighSrc": "cards/base1-100-high.png"
+        "imageHighSrc": "cards/base1-100-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "915",
@@ -77,7 +107,17 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-099-low.png",
-        "imageHighSrc": "cards/base1-099-high.png"
+        "imageHighSrc": "cards/base1-099-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "914",
@@ -97,7 +137,17 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-098-low.png",
-        "imageHighSrc": "cards/base1-098-high.png"
+        "imageHighSrc": "cards/base1-098-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "913",
@@ -117,7 +167,17 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-097-low.png",
-        "imageHighSrc": "cards/base1-097-high.png"
+        "imageHighSrc": "cards/base1-097-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "912",
@@ -138,7 +198,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-096-low.png",
         "imageHighSrc": "cards/base1-096-high.png",
-        "rules": "Provides ColorlessColorless energy.\nDoesn't count as a basic Energy card."
+        "rules": "Provides ColorlessColorless energy.\nDoesn't count as a basic Energy card.",
+        "subtype": "Special",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "911",
@@ -159,7 +229,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-095-low.png",
         "imageHighSrc": "cards/base1-095-high.png",
-        "rules": "Switch 1 of your own Benched Pokémon with your Active Pokémon."
+        "rules": "Switch 1 of your own Benched Pokémon with your Active Pokémon.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "910",
@@ -180,7 +260,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-094-low.png",
         "imageHighSrc": "cards/base1-094-high.png",
-        "rules": "Remove up to 2 damage counters from 1 of your Pokémon."
+        "rules": "Remove up to 2 damage counters from 1 of your Pokémon.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "909",
@@ -201,7 +291,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-093-low.png",
         "imageHighSrc": "cards/base1-093-high.png",
-        "rules": "Choose 1 of your opponent's Benched Pokémon and switch it with his or her Active Pokémon."
+        "rules": "Choose 1 of your opponent's Benched Pokémon and switch it with his or her Active Pokémon.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "908",
@@ -222,7 +322,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-092-low.png",
         "imageHighSrc": "cards/base1-092-high.png",
-        "rules": "Choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it."
+        "rules": "Choose 1 Energy card attached to 1 of your opponent's Pokémon and discard it.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "907",
@@ -243,7 +353,17 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/base1-091-low.png",
         "imageHighSrc": "cards/base1-091-high.png",
-        "rules": "Draw 2 cards."
+        "rules": "Draw 2 cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "906",
@@ -264,7 +384,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-090-low.png",
         "imageHighSrc": "cards/base1-090-high.png",
-        "rules": "Discard 1 Energy card attached to your own Pokémon in order to remove up to 4 damage counters from that Pokémon."
+        "rules": "Discard 1 Energy card attached to your own Pokémon in order to remove up to 4 damage counters from that Pokémon.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "905",
@@ -285,7 +415,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-089-low.png",
         "imageHighSrc": "cards/base1-089-high.png",
-        "rules": "Put 1 Basic Pokémon card from your discard pile onto your Bench. Put damage counters on that Pokémon equal to half its HP (rounded down to the nearest 10). (You can't play Revive if your Bench is full.)"
+        "rules": "Put 1 Basic Pokémon card from your discard pile onto your Bench. Put damage counters on that Pokémon equal to half its HP (rounded down to the nearest 10). (You can't play Revive if your Bench is full.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "904",
@@ -306,7 +446,17 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/base1-088-low.png",
         "imageHighSrc": "cards/base1-088-high.png",
-        "rules": "Discard your hand, then draw 7 cards."
+        "rules": "Discard your hand, then draw 7 cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "903",
@@ -327,7 +477,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-087-low.png",
         "imageHighSrc": "cards/base1-087-high.png",
-        "rules": "Look at up to 5 cards from the top of your deck and rearrange them as you like."
+        "rules": "Look at up to 5 cards from the top of your deck and rearrange them as you like.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "902",
@@ -348,7 +508,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-086-low.png",
         "imageHighSrc": "cards/base1-086-high.png",
-        "rules": "Choose 1 Basic Pokémon card from your opponent's discard pile and put it onto his or her Bench. (You can't play Pokémon Flute if your opponent's Bench is full.)"
+        "rules": "Choose 1 Basic Pokémon card from your opponent's discard pile and put it onto his or her Bench. (You can't play Pokémon Flute if your opponent's Bench is full.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "901",
@@ -369,7 +539,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-085-low.png",
         "imageHighSrc": "cards/base1-085-high.png",
-        "rules": "Remove all damage counters from all of your own Pokémon with damage counters on them, then discard all Energy cards attached to those Pokémon."
+        "rules": "Remove all damage counters from all of your own Pokémon with damage counters on them, then discard all Energy cards attached to those Pokémon.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "900",
@@ -390,7 +570,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-084-low.png",
         "imageHighSrc": "cards/base1-084-high.png",
-        "rules": "Attach PlusPower to your Active Pokémon. At the end of your turn, discard PlusPower. If this Pokémon's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), the attack does 10 more damage to the Defending Pokémon."
+        "rules": "Attach PlusPower to your Active Pokémon. At the end of your turn, discard PlusPower. If this Pokémon's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), the attack does 10 more damage to the Defending Pokémon.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "899",
@@ -411,7 +601,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-083-low.png",
         "imageHighSrc": "cards/base1-083-high.png",
-        "rules": "Shuffle 2 of the other cards from your hand into your deck in order to draw a card."
+        "rules": "Shuffle 2 of the other cards from your hand into your deck in order to draw a card.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "898",
@@ -432,7 +632,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-082-low.png",
         "imageHighSrc": "cards/base1-082-high.png",
-        "rules": "Your Active Pokémon is no longer Asleep, Confused, Paralyzed, or Poisoned."
+        "rules": "Your Active Pokémon is no longer Asleep, Confused, Paralyzed, or Poisoned.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "897",
@@ -453,7 +663,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-081-low.png",
         "imageHighSrc": "cards/base1-081-high.png",
-        "rules": "Trade 1 of the other cards in your hand for up to 2 basic Energy cards from your discard pile."
+        "rules": "Trade 1 of the other cards in your hand for up to 2 basic Energy cards from your discard pile.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "896",
@@ -474,7 +694,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-080-low.png",
         "imageHighSrc": "cards/base1-080-high.png",
-        "rules": "Attach Defender to 1 of your Pokémon. At the end of your opponent's next turn, discard Defender. Damage done to that Pokémon by attacks is reduced by 20 (after applying Weakness and Resistance)."
+        "rules": "Attach Defender to 1 of your Pokémon. At the end of your opponent's next turn, discard Defender. Damage done to that Pokémon by attacks is reduced by 20 (after applying Weakness and Resistance).",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "895",
@@ -495,7 +725,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-079-low.png",
         "imageHighSrc": "cards/base1-079-high.png",
-        "rules": "Discard 1 Energy card attached to 1 of your Pokémon in order to choose 1 of your opponent's Pokémon and up to 2 Energy cards attached to it. Discard those Energy cards."
+        "rules": "Discard 1 Energy card attached to 1 of your Pokémon in order to choose 1 of your opponent's Pokémon and up to 2 Energy cards attached to it. Discard those Energy cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "894",
@@ -516,7 +756,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-078-low.png",
         "imageHighSrc": "cards/base1-078-high.png",
-        "rules": "Choose 1 of your Pokémon in play and return its Basic Pokémon card to your hand. (Discard all cards attached to that card.)"
+        "rules": "Choose 1 of your Pokémon in play and return its Basic Pokémon card to your hand. (Discard all cards attached to that card.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "893",
@@ -537,7 +787,17 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/base1-077-low.png",
         "imageHighSrc": "cards/base1-077-high.png",
-        "rules": "Trade 1 of the Basic Pokémon or Evolution cards in your hand for 1 of the Basic Pokémon or Evolution cards from your deck. Show both cards to your opponent. Shuffle your deck afterward."
+        "rules": "Trade 1 of the Basic Pokémon or Evolution cards in your hand for 1 of the Basic Pokémon or Evolution cards from your deck. Show both cards to your opponent. Shuffle your deck afterward.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "892",
@@ -558,7 +818,17 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/base1-076-low.png",
         "imageHighSrc": "cards/base1-076-high.png",
-        "rules": "Put a Stage 2 Evolution card from your hand on the matching Basic Pokémon. You can only play this card when you would be allowed to evolve that Pokémon anyway."
+        "rules": "Put a Stage 2 Evolution card from your hand on the matching Basic Pokémon. You can only play this card when you would be allowed to evolve that Pokémon anyway.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "891",
@@ -579,7 +849,17 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/base1-075-low.png",
         "imageHighSrc": "cards/base1-075-high.png",
-        "rules": "You and your opponent show each other your hands, then shuffle all the Trainer cards from your hands into your decks."
+        "rules": "You and your opponent show each other your hands, then shuffle all the Trainer cards from your hands into your decks.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "890",
@@ -600,7 +880,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-074-low.png",
         "imageHighSrc": "cards/base1-074-high.png",
-        "rules": "Discard 2 of the other cards from your hand in order to put a Trainer card from your discard pile into your hand."
+        "rules": "Discard 2 of the other cards from your hand in order to put a Trainer card from your discard pile into your hand.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "889",
@@ -621,7 +911,17 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/base1-073-low.png",
         "imageHighSrc": "cards/base1-073-high.png",
-        "rules": "Your opponent shuffles his or her hand into his or her deck, then draws 7 cards."
+        "rules": "Your opponent shuffles his or her hand into his or her deck, then draws 7 cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "888",
@@ -642,7 +942,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-072-low.png",
         "imageHighSrc": "cards/base1-072-high.png",
-        "rules": "Choose 1 of your own Pokémon in play and a Stage of Evolution. Discard all Evolution cards of that Stage or higher attached to that Pokémon. That Pokémon is no longer Asleep, Confused, Paralyzed, Poisoned, or anything else that might be the result of an attack (just as if you had evolved it)."
+        "rules": "Choose 1 of your own Pokémon in play and a Stage of Evolution. Discard all Evolution cards of that Stage or higher attached to that Pokémon. That Pokémon is no longer Asleep, Confused, Paralyzed, Poisoned, or anything else that might be the result of an attack (just as if you had evolved it).",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "887",
@@ -663,7 +973,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-071-low.png",
         "imageHighSrc": "cards/base1-071-high.png",
-        "rules": "Discard 2 of the other cards from your hand in order to search your deck for any card and put it into your hand. Shuffle your deck afterward."
+        "rules": "Discard 2 of the other cards from your hand in order to search your deck for any card and put it into your hand. Shuffle your deck afterward.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "886",
@@ -684,7 +1004,17 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/base1-070-low.png",
         "imageHighSrc": "cards/base1-070-high.png",
-        "rules": "Play Clefairy Doll as if it were a Basic Pokémon. While in play, Clefairy Doll counts a a Pokémon (instead of a Trainer card). Clefairy Doll has no attacks, can't retreat, and can't be Asleep, Confused, Paralyzed, or Poisoned. If Clefairy Doll is Knocked Out, it doesn't count as a Knocked Out Pokémon. At any time during your turn before your attack, you may discard Clefairy Doll."
+        "rules": "Play Clefairy Doll as if it were a Basic Pokémon. While in play, Clefairy Doll counts a a Pokémon (instead of a Trainer card). Clefairy Doll has no attacks, can't retreat, and can't be Asleep, Confused, Paralyzed, or Poisoned. If Clefairy Doll is Knocked Out, it doesn't count as a Knocked Out Pokémon. At any time during your turn before your attack, you may discard Clefairy Doll.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
+        ]
     },
     {
         "masterCardId": "885",
@@ -712,8 +1042,20 @@
         "attacks": [
             {
                 "name": "Poison Sting",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Often found in forests, eating leaves. It has a sharp, venomous stinger on its head.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -742,8 +1084,20 @@
         "attacks": [
             {
                 "name": "Confuse Ray",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "At the time of birth, it has just one tail. Its tail splits from the tip as it grows older.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -772,8 +1126,20 @@
         "attacks": [
             {
                 "name": "Tackle",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Usually found in power plants. Easily mistaken for a Monster Ball, it has zapped many people.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -802,12 +1168,26 @@
         "attacks": [
             {
                 "name": "Bind",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             },
             {
                 "name": "Poisonpowder",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "The Defending Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Its whole body is swathed with wide vines that are similar to seaweed. These vines shake as it walks.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -836,8 +1216,20 @@
         "attacks": [
             {
                 "name": "Slap",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "An enigmatic Pokémon that can effortlessly regenerate any appendage it loses in battle.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -866,12 +1258,26 @@
         "attacks": [
             {
                 "name": "Recover",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Discard 1 Water Energy card attached to Starmie in order to use this attack. Remove all damage counters from Starmie."
             },
             {
                 "name": "Star Freeze",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its central core glows with the seven colors of the rainbow. Some people value this core as a gem.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -900,12 +1306,27 @@
         "attacks": [
             {
                 "name": "Bubble",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             },
             {
                 "name": "Withdraw",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, prevent all damage done to Squirtle during your opponent's next turn. (Any other effects of attacks still happen.)"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "After birth, its back swells and hardens into a shell. It powerfully sprays foam from its mouth.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "jumbo",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -934,8 +1355,20 @@
         "attacks": [
             {
                 "name": "Sand-attack",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "If the Defending Pokémon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 1,
+        "flavorText": "Burrows deep underground in arid locations far from water. It only emerges to hunt for food.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -964,8 +1397,20 @@
         "attacks": [
             {
                 "name": "Bite",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": null,
+        "flavorText": "Bites anything when it attacks. Small and very quick, it is a common sight in many places.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -994,12 +1439,26 @@
         "attacks": [
             {
                 "name": "Smash Kick",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Flame Tail",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its hooves are 10 times harder than diamonds. It can trample anything flat in moments.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1028,8 +1487,20 @@
         "attacks": [
             {
                 "name": "Water Gun",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Does 10 damage plus 10 more damage for each Water Energy attached to Poliwag but not used to pay for this attack's Energy cost. Extra Water Energy after the 2nd don't count."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its newly grown legs prevent it from running. It appears to prefer swimming over trying to stand.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1058,12 +1529,33 @@
         "attacks": [
             {
                 "name": "Gnaw",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Thunder Jolt",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If tails, Pikachu does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "When several of these Pokémon gather, their electricity can cause lightning storms.",
+        "pricingVariants": [
+            "e3stamp",
+            "firstEditionShadowless",
+            "firstEditionShadowlessRedCheeks",
+            "jumbo",
+            "jumboAlternate",
+            "metal",
+            "pokeTourStamp",
+            "unlimited",
+            "unlimitedShadowless",
+            "unlimitedShadowlessRedCheeks"
         ]
     },
     {
@@ -1092,8 +1584,20 @@
         "attacks": [
             {
                 "name": "Whirlwind",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with the Defending Pokémon. (Do the damage before switching the Pokémon.)"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "A common sight in forests and woods. It flaps its wings at ground level to kick up blinding sand.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1122,12 +1626,26 @@
         "attacks": [
             {
                 "name": "Rock Throw",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Harden",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "During your opponent's next turn, whenever 30 or less damage is done to Onix (after applying Weakness and Resistance), prevent that damage. (Any other effects of attacks still happen.)"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "As it grows, the stone portions of its body harden to become similar to a diamond, though colored black.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1156,8 +1674,20 @@
         "attacks": [
             {
                 "name": "Horn Hazard",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If tails, this attack does nothing."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Stiffens its ears to sense danger. The larger, more powerful of its horns secretes venom.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1186,12 +1716,26 @@
         "attacks": [
             {
                 "name": "Stiffen",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, prevent all damage done to Metapod during your opponent's next turn. (Any other effects of attacks still happen.)"
             },
             {
                 "name": "Stun Spore",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "It is vulnerable to attack because its shell is soft, exposing its weak and tender body.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1220,12 +1764,26 @@
         "attacks": [
             {
                 "name": "Thunder Wave",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             },
             {
                 "name": "Selfdestruct",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Does 10 damage to each Pokémon on each player's Bench. (Don't apply Weakness and Resistance for Benched Pokémon.) Magnemite does 40 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Uses anti-gravity to stay suspended. Appears without warning and uses attacks like Thunder Wave.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1254,8 +1812,20 @@
         "attacks": [
             {
                 "name": "Low Kick",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Loves to build its muscles. It trains in all styles of martial arts to become even stronger.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1284,8 +1854,20 @@
         "attacks": [
             {
                 "name": "Foul Gas",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned; if tails, it is now Confused."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Because it stores several kinds of toxic gases in its body, it is prone to exploding without warning.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1314,12 +1896,26 @@
         "attacks": [
             {
                 "name": "Sleeping Gas",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Asleep."
             },
             {
                 "name": "Destiny Bond",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Discard 1 Psychic Energy card attached to Gastly in order to use this attack. If a Pokémon Knocks Out Gastly during your opponent's next turn, Knock Out that Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "Almost invisible, this gaseous Pokémon cloaks the target and puts it to sleep without notice.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1348,12 +1944,26 @@
         "attacks": [
             {
                 "name": "Pound",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Confuse Ray",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Puts enemies to sleep, then eats their dreams. Occasionally gets sick from eating bad dreams.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1382,8 +1992,20 @@
         "attacks": [
             {
                 "name": "Fury Attack",
-                "damage": "10×"
+                "damage": "10×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 10 damage times the number of heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "A bird that makes up for its poor flying with its fast foot speed. Leaves giant footprints.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1412,12 +2034,26 @@
         "attacks": [
             {
                 "name": "Dig",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Mud Slap",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": null,
+        "flavorText": "Lives about three feet underground, where it feeds on plant roots. It sometimes appears above ground.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1446,12 +2082,27 @@
         "attacks": [
             {
                 "name": "Scratch",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Ember",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Discard 1 Fire Energy card attached to Charmander in order to use this attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Obviously prefers hot places. If it gets caught in the rain, steam is said to spout from the tip of its tail.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "jumbo",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1480,8 +2131,20 @@
         "attacks": [
             {
                 "name": "String Shot",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its short feet are tipped with suction pads that enable it to tirelessly climb slopes and walls.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1510,8 +2173,21 @@
         "attacks": [
             {
                 "name": "Leech Seed",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Unless all damage from this attack is prevented, you may remove 1 damage counter from Bulbasaur."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "A strange seed was planted on its back at birth. Thus, a plant sprouted and now grows with this Pokémon.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "jumbo",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1540,8 +2216,20 @@
         "attacks": [
             {
                 "name": "Psyshock",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": "Using its ability to read minds, it will identify impending danger and teleport to safety.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1570,12 +2258,26 @@
         "attacks": [
             {
                 "name": "Withdraw",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, prevent all damage done to Wartortle during your opponent's next turn. (Any other effects of attacks still happen.)"
             },
             {
                 "name": "Bite",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Often hides in water to stalk unweary prey. When swimming quickly, it moves its ears to maintain balance.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1604,8 +2306,20 @@
         "attacks": [
             {
                 "name": "Headbutt",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "The protruding horn on its head is very hard. This horn is used for bashing through thick ice.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1634,12 +2348,26 @@
         "attacks": [
             {
                 "name": "Bite",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Super Fang",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Does damage to the Defending Pokémon equal to half the Defending Pokémon's remaining HP (rounded up to the nearest 10)."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "It uses its whiskers to maintain its balance. It seems to slow down if they are cut off.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1668,12 +2396,26 @@
         "attacks": [
             {
                 "name": "Conversion 1",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If the Defending Pokémon has a Weakness, you may change it to a type of your choice other than Colorless."
             },
             {
                 "name": "Conversion 2",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Change Porygon's Resistance to a type of your choice other than Colorless."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "A Pokémon that consists entirely of programming code. Capable of moving freely in cyberspace.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1702,12 +2444,26 @@
         "attacks": [
             {
                 "name": "Amnesia",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Choose 1 of the Defending Pokémon's attacks. That Pokémon can't use that attack during your opponent's next turn."
             },
             {
                 "name": "Doubleslap",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Capable of living in or out of water. When out of water, it sweats to keep its body slimy.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1736,12 +2492,26 @@
         "attacks": [
             {
                 "name": "Double Kick",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
             },
             {
                 "name": "Horn Drill",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "An aggressive Pokémon that is quick to attack. The horn on its head secretes a powerful venom.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1770,12 +2540,26 @@
         "attacks": [
             {
                 "name": "Fire Punch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Flamethrower",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Discard 1 Fire Energy card attached to Magmar in order to use this attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Its body always burns with an orange glow that enables it to hide perfectly among flames.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1804,12 +2588,26 @@
         "attacks": [
             {
                 "name": "Tackle",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Flail",
-                "damage": "10×"
+                "damage": "10×",
+                "cost": [],
+                "effect": "Does 10 damage times the number of damage counters on Magikarp."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "In the distant past, it was stronger than its horribly weak descendants that exist today.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1838,12 +2636,26 @@
         "attacks": [
             {
                 "name": "Karate Chop",
-                "damage": "50-"
+                "damage": "50-",
+                "cost": [],
+                "effect": "Does 50 damage minus 10 damage for each damage counter on Machoke."
             },
             {
                 "name": "Submission",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": "Machoke does 20 damage to itself."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "Its muscular body is so powerful that it must wear a power-save belt to help regulate its motions.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1872,12 +2684,26 @@
         "attacks": [
             {
                 "name": "Stiffen",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, prevent all damage done to Kakuna during your opponent's next turn. (Any other effects of attacks still happen.)"
             },
             {
                 "name": "Poisonpowder",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Almost incapable of moving, this Pokémon can only harden its shell to protect itself from predators.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1906,12 +2732,26 @@
         "attacks": [
             {
                 "name": "Recover",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Discard 1 Psychic Energy card attached to Kadabra in order to use this attack. Remove all damage counters from Kadabra."
             },
             {
                 "name": "Super Psy",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "It emits special alpha waves from its body that induce headaches even to those just nearby.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1940,12 +2780,26 @@
         "attacks": [
             {
                 "name": "Doubleslap",
-                "damage": "10×"
+                "damage": "10×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 10 damage times the number of heads."
             },
             {
                 "name": "Meditate",
-                "damage": "20+"
+                "damage": "20+",
+                "cost": [],
+                "effect": "Does 20 damage plus 10 more damage for each damage counter on the Defending Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Merely by meditating, the Pokémon launches a powerful psychic energy attack.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -1974,12 +2828,26 @@
         "attacks": [
             {
                 "name": "Vine Whip",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Poisonpowder",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "The Defending Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "When the bulb on its back grows large, the Pokémon seems to lose the ability to stand on its hind legs.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2008,12 +2876,26 @@
         "attacks": [
             {
                 "name": "Hypnosis",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "The Defending Pokémon is now Asleep."
             },
             {
                 "name": "Dream Eater",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "You can't use this attack unless the Defending Pokémon is Asleep."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": null,
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "Because of its ability to slip through block walls, it is said to be from another dimension.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2042,8 +2924,20 @@
         "attacks": [
             {
                 "name": "Flare",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Very protective of its territory. It will bark and bite to repel intruders from its space.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2072,12 +2966,26 @@
         "attacks": [
             {
                 "name": "Leek Slap",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If tails, this attack does nothing. Either way, you can't use this attack again as long as Farfetch'd stays in play (even putting Farfetch'd on the Bench won't let you use it again)."
             },
             {
                 "name": "Pot Smash",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "The sprig of green onions it holds is its weapon. This sprig is used much like a metal sword.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2106,8 +3014,20 @@
         "attacks": [
             {
                 "name": "Pound",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "Long considered a mythical Pokémon until recently, when a small colony was found living underwater.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2136,12 +3056,26 @@
         "attacks": [
             {
                 "name": "Aurora Beam",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Ice Beam",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "Stores thermal energy in its body. Swims at a steady 8 knots even in intensely cold waters.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2170,12 +3104,26 @@
         "attacks": [
             {
                 "name": "Slash",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Flamethrower",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Discard 1 Fire Energy card attached to Charmeleon in order to use this attack."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "When it swings its burning tail, it raises the temperature to unbearably high levels.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2204,12 +3152,26 @@
         "attacks": [
             {
                 "name": "Flamethrower",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Discard 1 Fire Energy card attached to Arcanine in order to use this attack."
             },
             {
                 "name": "Take Down",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": "Arcanine does 30 damage to itself."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "A Pokémon that has been long admired for its beauty. It runs gracefully, as if on wings.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2238,12 +3200,26 @@
         "attacks": [
             {
                 "name": "Whirlwind",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with the Defending Pokémon. (Do the damage before switching the Pokémon.)"
             },
             {
                 "name": "Mirror Move",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If Pidgeotto was attacked last turn, do the final result of that attack on Pidgeotto to the Defending Pokémon."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": "Very protective of its sprawling territory, this Pokémon will fiercely peck at any intruder.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2272,8 +3248,20 @@
         "attacks": [
             {
                 "name": "Electric Shock",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Flip a coin. If tails, Electrode does 10 damage to itself."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "It stores electrical energy under very high pressure. It often explodes with little or no provocation.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2302,12 +3290,26 @@
         "attacks": [
             {
                 "name": "Thundershock",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             },
             {
                 "name": "Thunderpunch",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if tails, this attack does 30 damage plus Electabuzz does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "Normally found near power plants, it can wander away and cause major blackouts in cities.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2336,12 +3338,26 @@
         "attacks": [
             {
                 "name": "Slash",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Earthquake",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": "Does 10 damage to each of your own Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 2,
+        "flavorText": "A team of Diglett triplets. It triggers huge earthquakes by burrowing 60 miles underground.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2370,12 +3386,26 @@
         "attacks": [
             {
                 "name": "Slam",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
             },
             {
                 "name": "Hyper Beam",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If the Defending Pokémon has any Energy cards attached to it, choose 1 of them and discard it."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 2,
+        "flavorText": "A mystical Pokémon that exudes a gentle aura. Has the ability to change climate conditions.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2404,12 +3434,26 @@
         "attacks": [
             {
                 "name": "Twineedle",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
             },
             {
                 "name": "Poison Sting",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fire ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": "Flies at high speed and attacks using the large, venomous stingers on its forelegs and tail.",
+        "pricingVariants": [
+            "firstEditionShadowless",
+            "unlimited",
+            "unlimitedShadowless"
         ]
     },
     {
@@ -2438,12 +3482,26 @@
         "attacks": [
             {
                 "name": "Thunder",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": "Flip a coin. If tails, Zapdos does 30 damage to itself."
             },
             {
                 "name": "Thunderbolt",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": "Discard all Energy cards attached to Zapdos in order to use this attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": "Fighting -30",
+        "retreatCost": 3,
+        "flavorText": "A legendary bird Pokémon said to appear from clouds while wielding enormous lightning bolts.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2472,8 +3530,20 @@
         "attacks": [
             {
                 "name": "Solarbeam",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "This plant blooms when it is absorbing solar energy. It stays on the move to seek sunlight.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2502,12 +3572,26 @@
         "attacks": [
             {
                 "name": "Agility",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all effects of attacks, including damage, done to Raichu."
             },
             {
                 "name": "Thunder",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": "Flip a coin. If tails, Raichu does 30 damage to itself."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Its long tail serves as a ground to protect itself from its own high-voltage power.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2536,12 +3620,26 @@
         "attacks": [
             {
                 "name": "Water Gun",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Does 30 damage plus 10 more damage for each Water Energy attached to Poliwrath but not used to pay for this attack's Energy cost. Extra Water Energy after the 2nd doesn't count."
             },
             {
                 "name": "Whirlpool",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "If the Defending Pokémon has any Energy cards attached to it, choose 1 of them and discard it."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "An adept swimmer at both the front crawl and breaststroke. Easily overtakes the best human swimmers.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2570,12 +3668,26 @@
         "attacks": [
             {
                 "name": "Lure",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, choose 1 of them and switch it with his or her Active Pokémon."
             },
             {
                 "name": "Fire Blast",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": "Discard 1 Fire Energy card attached to Ninetales in order to use this attack."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Very smart and very vengeful. Grabbing one of its many tails could result in a 1,000-year curse.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2604,12 +3716,26 @@
         "attacks": [
             {
                 "name": "Thrash",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if tails, this attack does 30 damage and Nidoking does 10 damage to itself."
             },
             {
                 "name": "Toxic",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "The Defending Pokémon is now Poisoned. It now takes 20 Poison damage instead of 10 after each player's turn (even if it was already Poisoned)."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "Uses its powerful tail in battle to smash, constrict, then break its prey's bones.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2638,12 +3764,26 @@
         "attacks": [
             {
                 "name": "Psychic",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Does 10 damage plus 10 more damage for each Energy card attached to the Defending Pokémon."
             },
             {
                 "name": "Barrier",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Discard 1 Psychic Energy card attached to Mewtwo in order to prevent all effects of attacks, including damage, done to Mewtwo during your opponent's next turn."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "A scientist created this Pokémon after years of horrific gene-splicing and DNA engineering experiments.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2672,12 +3812,26 @@
         "attacks": [
             {
                 "name": "Thunder Wave",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             },
             {
                 "name": "Selfdestruct",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": "Does 20 damage to each Pokémon on each player's Bench. (Don't apply Weakness and Resistance for Benched Pokémon.) Magneton does 80 damage to itself."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": "Formed by several Magnemites linked together. It frequently appears when sunspots flare up.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2706,8 +3860,19 @@
         "attacks": [
             {
                 "name": "Seismic Toss",
-                "damage": "60"
+                "damage": "60",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "Using its amazing muscles, it throws powerful punches that can knock its victim clear over the horizon.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "firstEditionUnlimitedHolofoil"
         ]
     },
     {
@@ -2736,12 +3901,26 @@
         "attacks": [
             {
                 "name": "Jab",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Special Punch",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": "While seeming to do nothing, it fires punches in lightning-fast volleys that are impossible to see.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2770,12 +3949,26 @@
         "attacks": [
             {
                 "name": "Dragon Rage",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Bubblebeam",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 3,
+        "flavorText": "Rarely seen in the wild. Huge and vicious, it is capable of destroying entire cities in a rage.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2804,12 +3997,26 @@
         "attacks": [
             {
                 "name": "Sing",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Asleep."
             },
             {
                 "name": "Metronome",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Choose 1 of the Defending Pokémon's attacks. Metronome copies that attack except for its Energy costs and anything else required in order to use that attack, such as discarding Energy cards. (No matter what type the Defending Pokémon is, Clefairy's type is still Colorless.)"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "Its magical and cute appeal has many admirers. It is rare and found only in certain areas.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2838,8 +4045,21 @@
         "attacks": [
             {
                 "name": "Fire Spin",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": "Discard 2 Energy cards attached to Charizard in order to use this attack."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Water ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 3,
+        "flavorText": "Spits fire that is hot enough to melt boulders. Known to unintentionally cause forest fires.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "metal",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2868,12 +4088,26 @@
         "attacks": [
             {
                 "name": "Scrunch",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, prevent all damage done to Chansey during your opponent's next turn. (Any other effects of attacks still happen.)"
             },
             {
                 "name": "Double-edge",
-                "damage": "80"
+                "damage": "80",
+                "cost": [],
+                "effect": "Chansey does 80 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": "A rare and elusive Pokémon that is said to bring happiness to those who manage to catch it.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2902,8 +4136,20 @@
         "attacks": [
             {
                 "name": "Hydro Pump",
-                "damage": "40+"
+                "damage": "40+",
+                "cost": [],
+                "effect": "Does 40 damage plus 10 more damage for each Water Energy attached to Blastoise but not used to pay for this attack's Energy cost. Extra Water Energy after the 2nd doesn't count."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "A brutal Pokémon with pressurized water jets on its shell. They are used for high-speed tackles.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     },
     {
@@ -2932,8 +4178,20 @@
         "attacks": [
             {
                 "name": "Confuse Ray",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": "Its brain can outperform a supercomputer. Its intelligence quotient is said to be 5000.",
+        "pricingVariants": [
+            "firstEditionShadowlessHolofoil",
+            "unlimitedHolofoil",
+            "unlimitedShadowlessHolofoil"
         ]
     }
 ]

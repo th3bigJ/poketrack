@@ -1,496 +1,668 @@
 [
-    {
-        "masterCardId": "22375",
-        "externalId": "mcd24-15",
-        "localId": "015",
-        "setCode": "mcd24",
-        "cardNumber": "015/015",
-        "cardName": "Drampa",
-        "fullDisplayName": "Drampa 015/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 120,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            780
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Toshinao Aoki",
-        "imageLowSrc": "cards/2024sv-015-low.jpg",
-        "imageHighSrc": "cards/2024sv-015-low.jpg",
-        "attacks": [
-            {
-                "name": "Gentle Slap",
-                "damage": "20"
-            },
-            {
-                "name": "Raging Cannon",
-                "damage": "100+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22374",
-        "externalId": "mcd24-14",
-        "localId": "014",
-        "setCode": "mcd24",
-        "cardNumber": "014/015",
-        "cardName": "Rayquaza",
-        "fullDisplayName": "Rayquaza 014/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 130,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            384
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "so-taro",
-        "imageLowSrc": "cards/2024sv-014-low.jpg",
-        "imageHighSrc": "cards/2024sv-014-low.jpg",
-        "attacks": [
-            {
-                "name": "Jaw Lock",
-                "damage": "30"
-            },
-            {
-                "name": "Power Blast",
-                "damage": "120"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22373",
-        "externalId": "mcd24-13",
-        "localId": "013",
-        "setCode": "mcd24",
-        "cardNumber": "013/015",
-        "cardName": "Eevee",
-        "fullDisplayName": "Eevee 013/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            133
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "0313",
-        "imageLowSrc": "cards/2024sv-013-low.jpg",
-        "imageHighSrc": "cards/2024sv-013-low.jpg",
-        "attacks": [
-            {
-                "name": "Continuous Steps",
-                "damage": "30×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22372",
-        "externalId": "mcd24-12",
-        "localId": "012",
-        "setCode": "mcd24",
-        "cardNumber": "012/015",
-        "cardName": "Dragonite",
-        "fullDisplayName": "Dragonite 012/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 160,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            149
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Sanosuke Sakuma",
-        "imageLowSrc": "cards/2024sv-012-low.jpg",
-        "imageHighSrc": "cards/2024sv-012-low.jpg",
-        "attacks": [
-            {
-                "name": "Dragon Pulse",
-                "damage": "180"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22371",
-        "externalId": "mcd24-11",
-        "localId": "011",
-        "setCode": "mcd24",
-        "cardNumber": "011/015",
-        "cardName": "Roaring Moon",
-        "fullDisplayName": "Roaring Moon 011/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 140,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            1005
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "hncl",
-        "imageLowSrc": "cards/2024sv-011-low.jpg",
-        "imageHighSrc": "cards/2024sv-011-low.jpg",
-        "attacks": [
-            {
-                "name": "Vengeance Fletching",
-                "damage": "70+"
-            },
-            {
-                "name": "Speed Wing",
-                "damage": "120"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22370",
-        "externalId": "mcd24-10",
-        "localId": "010",
-        "setCode": "mcd24",
-        "cardNumber": "010/015",
-        "cardName": "Hydreigon",
-        "fullDisplayName": "Hydreigon 010/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 170,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            635
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Teeziro",
-        "imageLowSrc": "cards/2024sv-010-low.jpg",
-        "imageHighSrc": "cards/2024sv-010-low.jpg",
-        "attacks": [
-            {
-                "name": "Dark Cutter",
-                "damage": "160"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22369",
-        "externalId": "mcd24-9",
-        "localId": "009",
-        "setCode": "mcd24",
-        "cardNumber": "009/015",
-        "cardName": "Umbreon",
-        "fullDisplayName": "Umbreon 009/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 110,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            197
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Souichirou Gunjima",
-        "imageLowSrc": "cards/2024sv-009-low.jpg",
-        "imageHighSrc": "cards/2024sv-009-low.jpg",
-        "attacks": [
-            {
-                "name": "Blindside",
-                "damage": null
-            },
-            {
-                "name": "Moon Mirage",
-                "damage": "80"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22368",
-        "externalId": "mcd24-8",
-        "localId": "008",
-        "setCode": "mcd24",
-        "cardNumber": "008/015",
-        "cardName": "Koraidon",
-        "fullDisplayName": "Koraidon 008/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 130,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            1007
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/2024sv-008-low.jpg",
-        "imageHighSrc": "cards/2024sv-008-low.jpg",
-        "attacks": [
-            {
-                "name": "Claw Slash",
-                "damage": "70"
-            },
-            {
-                "name": "Rampaging Fang",
-                "damage": "190"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22367",
-        "externalId": "mcd24-7",
-        "localId": "007",
-        "setCode": "mcd24",
-        "cardNumber": "007/015",
-        "cardName": "Quagsire",
-        "fullDisplayName": "Quagsire 007/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 120,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            195
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "otumami",
-        "imageLowSrc": "cards/2024sv-007-low.jpg",
-        "imageHighSrc": "cards/2024sv-007-low.jpg",
-        "attacks": [
-            {
-                "name": "Beat",
-                "damage": "30"
-            },
-            {
-                "name": "Fickle Impact",
-                "damage": "180"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22366",
-        "externalId": "mcd24-6",
-        "localId": "006",
-        "setCode": "mcd24",
-        "cardNumber": "006/015",
-        "cardName": "Dragapult",
-        "fullDisplayName": "Dragapult 006/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 150,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            887
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Teeziro",
-        "imageLowSrc": "cards/2024sv-006-low.jpg",
-        "imageHighSrc": "cards/2024sv-006-low.jpg",
-        "attacks": [
-            {
-                "name": "Dragon Launcher",
-                "damage": null
-            },
-            {
-                "name": "Spooky Shot",
-                "damage": "120"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22365",
-        "externalId": "mcd24-5",
-        "localId": "005",
-        "setCode": "mcd24",
-        "cardNumber": "005/015",
-        "cardName": "Hatenna",
-        "fullDisplayName": "Hatenna 005/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            856
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Akira Komayama",
-        "imageLowSrc": "cards/2024sv-005-low.jpg",
-        "imageHighSrc": "cards/2024sv-005-low.jpg",
-        "attacks": [
-            {
-                "name": "Stampede",
-                "damage": "10"
-            },
-            {
-                "name": "Magical Shot",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22364",
-        "externalId": "mcd24-4",
-        "localId": "004",
-        "setCode": "mcd24",
-        "cardNumber": "004/015",
-        "cardName": "Jigglypuff",
-        "fullDisplayName": "Jigglypuff 004/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            39
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saya Tsuruta",
-        "imageLowSrc": "cards/2024sv-004-low.jpg",
-        "imageHighSrc": "cards/2024sv-004-low.jpg",
-        "attacks": [
-            {
-                "name": "Pound",
-                "damage": "20"
-            },
-            {
-                "name": "Let's All Rollout",
-                "damage": "20×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22363",
-        "externalId": "mcd24-3",
-        "localId": "003",
-        "setCode": "mcd24",
-        "cardNumber": "003/015",
-        "cardName": "Miraidon",
-        "fullDisplayName": "Miraidon 003/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 120,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            1008
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/2024sv-003-low.jpg",
-        "imageHighSrc": "cards/2024sv-003-low.jpg",
-        "attacks": [
-            {
-                "name": "Sharp Fang",
-                "damage": "30"
-            },
-            {
-                "name": "Lightning Laser",
-                "damage": "90"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22362",
-        "externalId": "mcd24-2",
-        "localId": "002",
-        "setCode": "mcd24",
-        "cardNumber": "002/015",
-        "cardName": "Pikachu",
-        "fullDisplayName": "Pikachu 002/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            25
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Naoyo Kimura",
-        "imageLowSrc": "cards/2024sv-002-low.jpg",
-        "imageHighSrc": "cards/2024sv-002-low.jpg",
-        "attacks": [
-            {
-                "name": "Charge",
-                "damage": null
-            },
-            {
-                "name": "Pika Punch",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22361",
-        "externalId": "mcd24-1",
-        "localId": "001",
-        "setCode": "mcd24",
-        "cardNumber": "001/015",
-        "cardName": "Charizard",
-        "fullDisplayName": "Charizard 001/015 McDonald's Collection 2024",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 170,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            6
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ryuta Fuse",
-        "imageLowSrc": "cards/2024sv-001-low.jpg",
-        "imageHighSrc": "cards/2024sv-001-low.jpg",
-        "attacks": [
-            {
-                "name": "Royal Blaze",
-                "damage": "100+"
-            }
-        ]
-    }
+  {
+    "masterCardId": "22375",
+    "externalId": "mcd24-15",
+    "localId": "015",
+    "setCode": "mcd24",
+    "cardNumber": "015/015",
+    "cardName": "Drampa",
+    "fullDisplayName": "Drampa 015/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 120,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      780
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Toshinao Aoki",
+    "imageLowSrc": "cards/2024sv-015-low.jpg",
+    "imageHighSrc": "cards/2024sv-015-low.jpg",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Raging Cannon",
+        "damage": "100+",
+        "cost": [],
+        "effect": "If all of your Benched Pokémon have at least 1 damage counter on them, this attack does 120 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "The mountains it calls home are nearly two miles in height. On rare occasions, it descends to play with the children living in the towns below.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22374",
+    "externalId": "mcd24-14",
+    "localId": "014",
+    "setCode": "mcd24",
+    "cardNumber": "014/015",
+    "cardName": "Rayquaza",
+    "fullDisplayName": "Rayquaza 014/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      384
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "so-taro",
+    "imageLowSrc": "cards/2024sv-014-low.jpg",
+    "imageHighSrc": "cards/2024sv-014-low.jpg",
+    "attacks": [
+      {
+        "name": "Jaw Lock",
+        "damage": "30",
+        "cost": [],
+        "effect": "During your opponent's next turn, the Defending Pokémon can't retreat."
+      },
+      {
+        "name": "Power Blast",
+        "damage": "120",
+        "cost": [],
+        "effect": "Discard an Energy from this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 2,
+    "flavorText": "It flies in the ozone layer, way up high in the sky. Until recently, no one had ever seen it.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22373",
+    "externalId": "mcd24-13",
+    "localId": "013",
+    "setCode": "mcd24",
+    "cardNumber": "013/015",
+    "cardName": "Eevee",
+    "fullDisplayName": "Eevee 013/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      133
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "0313",
+    "imageLowSrc": "cards/2024sv-013-low.jpg",
+    "imageHighSrc": "cards/2024sv-013-low.jpg",
+    "attacks": [
+      {
+        "name": "Continuous Steps",
+        "damage": "30×",
+        "cost": [],
+        "effect": "Flip a coin until you get tails. This attack does 30 damage for each heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Thanks to its unstable genetic makeup, this special Pokémon conceals many different possible evolutions.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22372",
+    "externalId": "mcd24-12",
+    "localId": "012",
+    "setCode": "mcd24",
+    "cardNumber": "012/015",
+    "cardName": "Dragonite",
+    "fullDisplayName": "Dragonite 012/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 160,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      149
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Sanosuke Sakuma",
+    "imageLowSrc": "cards/2024sv-012-low.jpg",
+    "imageHighSrc": "cards/2024sv-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Dragon Pulse",
+        "damage": "180",
+        "cost": [],
+        "effect": "Discard the top 2 cards of your deck."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "It is said that somewhere in the ocean lies an island where these gather. Only they live there.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22371",
+    "externalId": "mcd24-11",
+    "localId": "011",
+    "setCode": "mcd24",
+    "cardNumber": "011/015",
+    "cardName": "Roaring Moon",
+    "fullDisplayName": "Roaring Moon 011/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      1005
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "hncl",
+    "imageLowSrc": "cards/2024sv-011-low.jpg",
+    "imageHighSrc": "cards/2024sv-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Vengeance Fletching",
+        "damage": "70+",
+        "cost": [],
+        "effect": "This attack does 10 more damage for each Ancient card in your discard pile."
+      },
+      {
+        "name": "Speed Wing",
+        "damage": "120",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic, Ancient",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It is possible that this is the creature listed as Roaring Moon in an expedition journal that still holds many mysteries.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22370",
+    "externalId": "mcd24-10",
+    "localId": "010",
+    "setCode": "mcd24",
+    "cardNumber": "010/015",
+    "cardName": "Hydreigon",
+    "fullDisplayName": "Hydreigon 010/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 170,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      635
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Teeziro",
+    "imageLowSrc": "cards/2024sv-010-low.jpg",
+    "imageHighSrc": "cards/2024sv-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Dark Cutter",
+        "damage": "160",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "Only the central head has a brain. It is very intelligent, but it thinks only of destruction.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22369",
+    "externalId": "mcd24-9",
+    "localId": "009",
+    "setCode": "mcd24",
+    "cardNumber": "009/015",
+    "cardName": "Umbreon",
+    "fullDisplayName": "Umbreon 009/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 110,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Souichirou Gunjima",
+    "imageLowSrc": "cards/2024sv-009-low.jpg",
+    "imageHighSrc": "cards/2024sv-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Blindside",
+        "damage": null,
+        "cost": [],
+        "effect": "This attack does 60 damage to 1 of your opponent's Pokémon that has any damage counters on it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      },
+      {
+        "name": "Moon Mirage",
+        "damage": "80",
+        "cost": [],
+        "effect": "Your opponent's Active Pokémon is now Confused."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "On the night of a full moon, or when it gets excited, the ring patterns on its body glow yellow.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22368",
+    "externalId": "mcd24-8",
+    "localId": "008",
+    "setCode": "mcd24",
+    "cardNumber": "008/015",
+    "cardName": "Koraidon",
+    "fullDisplayName": "Koraidon 008/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      1007
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/2024sv-008-low.jpg",
+    "imageHighSrc": "cards/2024sv-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Claw Slash",
+        "damage": "70",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Rampaging Fang",
+        "damage": "190",
+        "cost": [],
+        "effect": "Discard 3 Energy from this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "This seems to be the Winged King mentioned in an old expedition journal. It was said to have split the land with its bare fists.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22367",
+    "externalId": "mcd24-7",
+    "localId": "007",
+    "setCode": "mcd24",
+    "cardNumber": "007/015",
+    "cardName": "Quagsire",
+    "fullDisplayName": "Quagsire 007/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 120,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      195
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "otumami",
+    "imageLowSrc": "cards/2024sv-007-low.jpg",
+    "imageHighSrc": "cards/2024sv-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Fickle Impact",
+        "damage": "180",
+        "cost": [],
+        "effect": "If you have exactly 2, 4, or 6 Prize cards remaining, this attack does nothing."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It has an easygoing nature. It doesn't care if it bumps its head on boats and boulders while swimming.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22366",
+    "externalId": "mcd24-6",
+    "localId": "006",
+    "setCode": "mcd24",
+    "cardNumber": "006/015",
+    "cardName": "Dragapult",
+    "fullDisplayName": "Dragapult 006/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 150,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      887
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Teeziro",
+    "imageLowSrc": "cards/2024sv-006-low.jpg",
+    "imageHighSrc": "cards/2024sv-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Dragon Launcher",
+        "damage": null,
+        "cost": [],
+        "effect": "Discard a number of your Benched Pokémon up to the number of your opponent's Pokémon in play. Then, for each Dreepy you discarded in this way, choose 1 of your opponent's Pokémon and do 100 damage to it. You can't choose the same Pokémon more than once. This damage isn't affected by Weakness or Resistance."
+      },
+      {
+        "name": "Spooky Shot",
+        "damage": "120",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Darkness ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 1,
+    "flavorText": "When it isn't battling, it keeps Dreepy in the holes on its horns. Once a fight starts, it launches the Dreepy like supersonic missiles.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22365",
+    "externalId": "mcd24-5",
+    "localId": "005",
+    "setCode": "mcd24",
+    "cardNumber": "005/015",
+    "cardName": "Hatenna",
+    "fullDisplayName": "Hatenna 005/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      856
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Akira Komayama",
+    "imageLowSrc": "cards/2024sv-005-low.jpg",
+    "imageHighSrc": "cards/2024sv-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Stampede",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Darkness ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 1,
+    "flavorText": "Via the protrusion on its head, it senses other creatures' emotions. If you don't have a calm disposition, it will never warm up to you.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22364",
+    "externalId": "mcd24-4",
+    "localId": "004",
+    "setCode": "mcd24",
+    "cardNumber": "004/015",
+    "cardName": "Jigglypuff",
+    "fullDisplayName": "Jigglypuff 004/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      39
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saya Tsuruta",
+    "imageLowSrc": "cards/2024sv-004-low.jpg",
+    "imageHighSrc": "cards/2024sv-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Let's All Rollout",
+        "damage": "20×",
+        "cost": [],
+        "effect": "This attack does 20 damage for each of your Benched Pokémon that has the Let's All Rollout attack."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Metal ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "The songs they sing are totally different depending on the region they live in. Some even sound like they're shouting!",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "22363",
+    "externalId": "mcd24-3",
+    "localId": "003",
+    "setCode": "mcd24",
+    "cardNumber": "003/015",
+    "cardName": "Miraidon",
+    "fullDisplayName": "Miraidon 003/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 120,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      1008
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/2024sv-003-low.jpg",
+    "imageHighSrc": "cards/2024sv-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Sharp Fang",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Lightning Laser",
+        "damage": "90",
+        "cost": [],
+        "effect": "This attack also does 30 damage to 1 of your opponent's Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Much remains unknown about this creature. It resembles Cyclizar, but it is far more ruthless and powerful.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22362",
+    "externalId": "mcd24-2",
+    "localId": "002",
+    "setCode": "mcd24",
+    "cardNumber": "002/015",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 002/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Naoyo Kimura",
+    "imageLowSrc": "cards/2024sv-002-low.jpg",
+    "imageHighSrc": "cards/2024sv-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null,
+        "cost": [],
+        "effect": "Search your deck for a Basic Lightning Energy card and attack it to this Pokémon. Then, shuffle your deck."
+      },
+      {
+        "name": "Pika Punch",
+        "damage": "50",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": null,
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "When it is angered, it immediately discharges the energy stored in the pouches in its cheeks.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22361",
+    "externalId": "mcd24-1",
+    "localId": "001",
+    "setCode": "mcd24",
+    "cardNumber": "001/015",
+    "cardName": "Charizard",
+    "fullDisplayName": "Charizard 001/015 McDonald's Collection 2024",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 170,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ryuta Fuse",
+    "imageLowSrc": "cards/2024sv-001-low.jpg",
+    "imageHighSrc": "cards/2024sv-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Royal Blaze",
+        "damage": "100+",
+        "cost": [],
+        "effect": "This attack does 50 more damage for each Leon card in your discard pile."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.",
+    "pricingVariants": [
+      "normal"
+    ]
+  }
 ]

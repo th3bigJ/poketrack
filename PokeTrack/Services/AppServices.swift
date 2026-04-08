@@ -1,5 +1,6 @@
 import Foundation
 import Observation
+import SwiftData
 
 @Observable
 @MainActor
@@ -8,6 +9,10 @@ final class AppServices {
     let pricing = PricingService()
     let priceDisplay = PriceDisplaySettings()
     let store = StoreKitService()
+    let cloudSettings = CloudSettingsService()
+    
+    // Wishlist service - initialized after model context is available
+    private(set) var wishlist: WishlistService?
 
     private(set) var isReady = false
 
@@ -21,5 +26,11 @@ final class AppServices {
         }
         await store.checkEntitlements()
         isReady = true
+    }
+    
+    /// Call this from your root view with the model context
+    func setupWishlist(modelContext: ModelContext) {
+        guard wishlist == nil else { return }
+        wishlist = WishlistService(modelContext: modelContext, store: store)
     }
 }

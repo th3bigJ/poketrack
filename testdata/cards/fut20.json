@@ -1,162 +1,222 @@
 [
-    {
-        "masterCardId": "8232",
-        "externalId": "fut20-5",
-        "localId": "005",
-        "setCode": "fut20",
-        "cardNumber": "005/005",
-        "cardName": "Sobble on the Ball",
-        "fullDisplayName": "Sobble on the Ball 005/005 Pokémon Futsal 2020",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": [
-            816
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": "D",
-        "artist": "The Pokémon Company Art Team",
-        "imageLowSrc": "cards/fut2020-005-low.webp",
-        "imageHighSrc": "cards/fut2020-005-high.webp",
-        "attacks": [
-            {
-                "name": "Spectacular Save",
-                "damage": null
-            },
-            {
-                "name": "Rain Splash",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "8231",
-        "externalId": "fut20-4",
-        "localId": "004",
-        "setCode": "fut20",
-        "cardNumber": "004/005",
-        "cardName": "Scorbunny on the Ball",
-        "fullDisplayName": "Scorbunny on the Ball 004/005 Pokémon Futsal 2020",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": [
-            813
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": "D",
-        "artist": "The Pokémon Company Art Team",
-        "imageLowSrc": "cards/fut2020-004-low.webp",
-        "imageHighSrc": "cards/fut2020-004-high.webp",
-        "attacks": [
-            {
-                "name": "Fiery Dribbling",
-                "damage": "20×"
-            },
-            {
-                "name": "Reckless Charge",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "8230",
-        "externalId": "fut20-3",
-        "localId": "003",
-        "setCode": "fut20",
-        "cardNumber": "003/005",
-        "cardName": "Grookey on the Ball",
-        "fullDisplayName": "Grookey on the Ball 003/005 Pokémon Futsal 2020",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": [
-            810
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": "D",
-        "artist": "The Pokémon Company Art Team",
-        "imageLowSrc": "cards/fut2020-003-low.webp",
-        "imageHighSrc": "cards/fut2020-003-high.webp",
-        "attacks": [
-            {
-                "name": "Tenacious Defense",
-                "damage": null
-            },
-            {
-                "name": "Razor Leaf",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "8229",
-        "externalId": "fut20-2",
-        "localId": "002",
-        "setCode": "fut20",
-        "cardNumber": "002/005",
-        "cardName": "Eevee on the Ball",
-        "fullDisplayName": "Eevee on the Ball 002/005 Pokémon Futsal 2020",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": [
-            133
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": "D",
-        "artist": "The Pokémon Company Art Team",
-        "imageLowSrc": "cards/fut2020-002-low.webp",
-        "imageHighSrc": "cards/fut2020-002-high.webp",
-        "attacks": [
-            {
-                "name": "Make the Assist",
-                "damage": null
-            },
-            {
-                "name": "Tackle",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "8223",
-        "externalId": "fut20-1",
-        "localId": "001",
-        "setCode": "fut20",
-        "cardNumber": "001/005",
-        "cardName": "Pikachu on the Ball",
-        "fullDisplayName": "Pikachu on the Ball 001/005 Pokémon Futsal 2020",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": [
-            25
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": "D",
-        "artist": "The Pokémon Company Art Team",
-        "imageLowSrc": "cards/fut2020-001-low.webp",
-        "imageHighSrc": "cards/fut2020-001-high.webp",
-        "attacks": [
-            {
-                "name": "Tail Whap",
-                "damage": "10"
-            },
-            {
-                "name": "Lightning Shot",
-                "damage": "120"
-            }
-        ]
-    }
+  {
+    "masterCardId": "8232",
+    "externalId": "fut20-5",
+    "localId": "005",
+    "setCode": "fut20",
+    "cardNumber": "005/005",
+    "cardName": "Sobble on the Ball",
+    "fullDisplayName": "Sobble on the Ball 005/005 Pokémon Futsal 2020",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": [
+      816
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "artist": "The Pokémon Company Art Team",
+    "imageLowSrc": "cards/fut2020-005-low.webp",
+    "imageHighSrc": "cards/fut2020-005-high.webp",
+    "attacks": [
+      {
+        "name": "Spectacular Save",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all effects of attacks, including damage, done to this Pokémon."
+      },
+      {
+        "name": "Rain Splash",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "When scared, this Pokémon cries. Its tears pack the chemical punch of 100 onions, and attackers won't be able to resist weeping.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "8231",
+    "externalId": "fut20-4",
+    "localId": "004",
+    "setCode": "fut20",
+    "cardNumber": "004/005",
+    "cardName": "Scorbunny on the Ball",
+    "fullDisplayName": "Scorbunny on the Ball 004/005 Pokémon Futsal 2020",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": [
+      813
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "artist": "The Pokémon Company Art Team",
+    "imageLowSrc": "cards/fut2020-004-low.webp",
+    "imageHighSrc": "cards/fut2020-004-high.webp",
+    "attacks": [
+      {
+        "name": "Fiery Dribbling",
+        "damage": "20×",
+        "cost": [],
+        "effect": "Flip a coin until you get tails. This attack does 20 damage for each heads."
+      },
+      {
+        "name": "Reckless Charge",
+        "damage": "30",
+        "cost": [],
+        "effect": "This Pokémon also does 10 damage to itself."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "A warm-up of running around gets fire energy coursing through this Pokémon's body. Once that happens, it's ready to fight at full power.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "8230",
+    "externalId": "fut20-3",
+    "localId": "003",
+    "setCode": "fut20",
+    "cardNumber": "003/005",
+    "cardName": "Grookey on the Ball",
+    "fullDisplayName": "Grookey on the Ball 003/005 Pokémon Futsal 2020",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": [
+      810
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "artist": "The Pokémon Company Art Team",
+    "imageLowSrc": "cards/fut2020-003-low.webp",
+    "imageHighSrc": "cards/fut2020-003-high.webp",
+    "attacks": [
+      {
+        "name": "Tenacious Defense",
+        "damage": null,
+        "cost": [],
+        "effect": "During your opponent's next turn, the Defending Pokémon can't retreat."
+      },
+      {
+        "name": "Razor Leaf",
+        "damage": "50",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "When it uses its special stick to strike up a beat, the sound waves produced carry revitalizing energy to the plants and flowers in the area.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "8229",
+    "externalId": "fut20-2",
+    "localId": "002",
+    "setCode": "fut20",
+    "cardNumber": "002/005",
+    "cardName": "Eevee on the Ball",
+    "fullDisplayName": "Eevee on the Ball 002/005 Pokémon Futsal 2020",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": [
+      133
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "artist": "The Pokémon Company Art Team",
+    "imageLowSrc": "cards/fut2020-002-low.webp",
+    "imageHighSrc": "cards/fut2020-002-high.webp",
+    "attacks": [
+      {
+        "name": "Make the Assist",
+        "damage": null,
+        "cost": [],
+        "effect": "Attach a basic Energy card from your hand to 1 of your Benched Pokémon."
+      },
+      {
+        "name": "Tackle",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It has the ability to alter the composition of its body to suit its surrounding environment.",
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "8223",
+    "externalId": "fut20-1",
+    "localId": "001",
+    "setCode": "fut20",
+    "cardNumber": "001/005",
+    "cardName": "Pikachu on the Ball",
+    "fullDisplayName": "Pikachu on the Ball 001/005 Pokémon Futsal 2020",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": [
+      25
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": "D",
+    "artist": "The Pokémon Company Art Team",
+    "imageLowSrc": "cards/fut2020-001-low.webp",
+    "imageHighSrc": "cards/fut2020-001-high.webp",
+    "attacks": [
+      {
+        "name": "Tail Whap",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Lightning Shot",
+        "damage": "120",
+        "cost": [],
+        "effect": "Flip a coin. If tails, this attack does nothing."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
+    "pricingVariants": [
+      "normal"
+    ]
+  }
 ]

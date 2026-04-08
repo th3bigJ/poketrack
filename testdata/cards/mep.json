@@ -1,1475 +1,2009 @@
 [
-    {
-        "masterCardId": "21974",
-        "externalId": "mep-70",
-        "localId": "070",
-        "setCode": "mep",
-        "cardNumber": "070",
-        "cardName": "Tyrunt",
-        "fullDisplayName": "Tyrunt 070 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            696
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/mep-070-low.png",
-        "imageHighSrc": "cards/mep-070-high.png",
-        "attacks": [
-            {
-                "name": "Get Angry",
-                "damage": "20×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21975",
-        "externalId": "mep-69",
-        "localId": "069",
-        "setCode": "mep",
-        "cardNumber": "069",
-        "cardName": "Chikorita",
-        "fullDisplayName": "Chikorita 069 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            152
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/mep-069-low.png",
-        "imageHighSrc": "cards/mep-069-high.png",
-        "attacks": [
-            {
-                "name": "Razor Leaf",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21976",
-        "externalId": "mep-68",
-        "localId": "068",
-        "setCode": "mep",
-        "cardNumber": "068",
-        "cardName": "Makuhita",
-        "fullDisplayName": "Makuhita 068 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            296
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/mep-068-low.png",
-        "imageHighSrc": "cards/mep-068-high.png",
-        "attacks": [
-            {
-                "name": "Corkscrew Punch",
-                "damage": "10"
-            },
-            {
-                "name": "Confront",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21849",
-        "externalId": "mep-67",
-        "localId": "067",
-        "setCode": "mep",
-        "cardNumber": "067",
-        "cardName": "Doublade",
-        "fullDisplayName": "Doublade 067 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            680
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Yukihiro Tada",
-        "imageLowSrc": "cards/mep-067-low.png",
-        "imageHighSrc": "cards/mep-067-high.png",
-        "attacks": [
-            {
-                "name": "Weaponized Swords",
-                "damage": "60×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21848",
-        "externalId": "mep-66",
-        "localId": "066",
-        "setCode": "mep",
-        "cardNumber": "066",
-        "cardName": "Tyrantrum",
-        "fullDisplayName": "Tyrantrum 066 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 180,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            697
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Nisota Niso",
-        "imageLowSrc": "cards/mep-066-low.png",
-        "imageHighSrc": "cards/mep-066-high.png",
-        "attacks": [
-            {
-                "name": "Wreak Havoc",
-                "damage": "160"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21847",
-        "externalId": "mep-65",
-        "localId": "065",
-        "setCode": "mep",
-        "cardNumber": "065",
-        "cardName": "Barbaracle",
-        "fullDisplayName": "Barbaracle 065 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 130,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            689
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Hasuno",
-        "imageLowSrc": "cards/mep-065-low.png",
-        "imageHighSrc": "cards/mep-065-high.png",
-        "attacks": [
-            {
-                "name": "Hammer In",
-                "damage": "80"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21846",
-        "externalId": "mep-64",
-        "localId": "064",
-        "setCode": "mep",
-        "cardNumber": "064",
-        "cardName": "Serperior",
-        "fullDisplayName": "Serperior 064 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 160,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            497
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "LINNE",
-        "imageLowSrc": "cards/mep-064-low.png",
-        "imageHighSrc": "cards/mep-064-high.png",
-        "attacks": [
-            {
-                "name": "Regal Command",
-                "damage": "20×"
-            },
-            {
-                "name": "Solar Coiling",
-                "damage": "100+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21845",
-        "externalId": "mep-45",
-        "localId": "045",
-        "setCode": "mep",
-        "cardNumber": "045",
-        "cardName": "Popplio",
-        "fullDisplayName": "Popplio 045 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            728
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-045-low.png",
-        "imageHighSrc": "cards/mep-045-high.png",
-        "attacks": [
-            {
-                "name": "Disarming Voice",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21844",
-        "externalId": "mep-44",
-        "localId": "044",
-        "setCode": "mep",
-        "cardNumber": "044",
-        "cardName": "Litten",
-        "fullDisplayName": "Litten 044 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            725
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-044-low.png",
-        "imageHighSrc": "cards/mep-044-high.png",
-        "attacks": [
-            {
-                "name": "Fire Fang",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21843",
-        "externalId": "mep-43",
-        "localId": "043",
-        "setCode": "mep",
-        "cardNumber": "043",
-        "cardName": "Rowlet",
-        "fullDisplayName": "Rowlet 043 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            722
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-043-low.png",
-        "imageHighSrc": "cards/mep-043-high.png",
-        "attacks": [
-            {
-                "name": "Tackle",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21842",
-        "externalId": "mep-42",
-        "localId": "042",
-        "setCode": "mep",
-        "cardNumber": "042",
-        "cardName": "Piplup",
-        "fullDisplayName": "Piplup 042 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            393
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-042-low.png",
-        "imageHighSrc": "cards/mep-042-high.png",
-        "attacks": [
-            {
-                "name": "Peck",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21841",
-        "externalId": "mep-41",
-        "localId": "041",
-        "setCode": "mep",
-        "cardNumber": "041",
-        "cardName": "Chimchar",
-        "fullDisplayName": "Chimchar 041 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            390
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-041-low.png",
-        "imageHighSrc": "cards/mep-041-high.png",
-        "attacks": [
-            {
-                "name": "Fury Swipes",
-                "damage": "20×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21840",
-        "externalId": "mep-40",
-        "localId": "040",
-        "setCode": "mep",
-        "cardNumber": "040",
-        "cardName": "Turtwig",
-        "fullDisplayName": "Turtwig 040 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 90,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            387
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-040-low.png",
-        "imageHighSrc": "cards/mep-040-high.png",
-        "attacks": [
-            {
-                "name": "Razor Leaf",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21839",
-        "externalId": "mep-39",
-        "localId": "039",
-        "setCode": "mep",
-        "cardNumber": "039",
-        "cardName": "Squirtle",
-        "fullDisplayName": "Squirtle 039 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            7
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-039-low.png",
-        "imageHighSrc": "cards/mep-039-high.png",
-        "attacks": [
-            {
-                "name": "Bubble",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21838",
-        "externalId": "mep-38",
-        "localId": "038",
-        "setCode": "mep",
-        "cardNumber": "038",
-        "cardName": "Charmander",
-        "fullDisplayName": "Charmander 038 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            4
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-038-low.png",
-        "imageHighSrc": "cards/mep-038-high.png",
-        "attacks": [
-            {
-                "name": "Ember",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21837",
-        "externalId": "mep-37",
-        "localId": "037",
-        "setCode": "mep",
-        "cardNumber": "037",
-        "cardName": "Bulbasaur",
-        "fullDisplayName": "Bulbasaur 037 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            1
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-037-low.png",
-        "imageHighSrc": "cards/mep-037-high.png",
-        "attacks": [
-            {
-                "name": "Leech Seed",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21836",
-        "externalId": "mep-33",
-        "localId": "033",
-        "setCode": "mep",
-        "cardNumber": "033",
-        "cardName": "Mega Lucario ex",
-        "fullDisplayName": "Mega Lucario ex 033 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 340,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            448
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "5ban Graphics",
-        "imageLowSrc": "cards/mep-033-low.png",
-        "imageHighSrc": "cards/mep-033-high.png",
-        "attacks": [
-            {
-                "name": "Aura Jab",
-                "damage": "130"
-            },
-            {
-                "name": "Mega Brave",
-                "damage": "270"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21835",
-        "externalId": "mep-32",
-        "localId": "032",
-        "setCode": "mep",
-        "cardNumber": "032",
-        "cardName": "Mega Gardevoir ex",
-        "fullDisplayName": "Mega Gardevoir ex 032 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 360,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            282
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-032-low.png",
-        "imageHighSrc": "cards/mep-032-high.png",
-        "attacks": [
-            {
-                "name": "Overflowing Wishes",
-                "damage": null
-            },
-            {
-                "name": "Mega Symphonia",
-                "damage": "50×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21834",
-        "externalId": "mep-31",
-        "localId": "031",
-        "setCode": "mep",
-        "cardNumber": "031",
-        "cardName": "N's Zekrom",
-        "fullDisplayName": "N's Zekrom 031 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 130,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": [
-            644
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Bun Toujo",
-        "imageLowSrc": "cards/mep-031-low.png",
-        "imageHighSrc": "cards/mep-031-high.png",
-        "attacks": [
-            {
-                "name": "Shred",
-                "damage": "70"
-            },
-            {
-                "name": "Rampaging Thunder",
-                "damage": "250"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21833",
-        "externalId": "mep-30",
-        "localId": "030",
-        "setCode": "mep",
-        "cardNumber": "030",
-        "cardName": "Mega Charizard Y ex",
-        "fullDisplayName": "Mega Charizard Y ex 030 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 360,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            6
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ultimateinudog",
-        "imageLowSrc": "cards/mep-030-low.png",
-        "imageHighSrc": "cards/mep-030-high.png",
-        "attacks": [
-            {
-                "name": "Explosion Y",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "21832",
-        "externalId": "mep-29",
-        "localId": "029",
-        "setCode": "mep",
-        "cardNumber": "029",
-        "cardName": "Mega Charizard X ex",
-        "fullDisplayName": "Mega Charizard X ex 029 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 360,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            6
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "takuyoa",
-        "imageLowSrc": "cards/mep-029-low.png",
-        "imageHighSrc": "cards/mep-029-high.png",
-        "attacks": [
-            {
-                "name": "Inferno X",
-                "damage": "90×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21831",
-        "externalId": "mep-28",
-        "localId": "028",
-        "setCode": "mep",
-        "cardNumber": "028",
-        "cardName": "Celebratory Fanfare",
-        "fullDisplayName": "Celebratory Fanfare 028 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Stadium",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Yuu Nishida",
-        "imageLowSrc": "cards/mep-028-low.png",
-        "imageHighSrc": "cards/mep-028-high.png",
-        "rules": "Once during each player's turn, that player may heal 10 damage from each of their Pokémon. If a player healed any damage in this way, their turn ends.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played."
-    },
-    {
-        "masterCardId": "21830",
-        "externalId": "mep-27",
-        "localId": "027",
-        "setCode": "mep",
-        "cardNumber": "027",
-        "cardName": "Haunter",
-        "fullDisplayName": "Haunter 027 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Arai Kiriko",
-        "imageLowSrc": "cards/mep-027-low.png",
-        "imageHighSrc": "cards/mep-027-high.png",
-        "attacks": [
-            {
-                "name": "Spooky Shot",
-                "damage": "40"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21829",
-        "externalId": "mep-26",
-        "localId": "026",
-        "setCode": "mep",
-        "cardNumber": "026",
-        "cardName": "Meloetta",
-        "fullDisplayName": "Meloetta 026 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 90,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Keisin",
-        "imageLowSrc": "cards/mep-026-low.png",
-        "imageHighSrc": "cards/mep-026-high.png",
-        "attacks": [
-            {
-                "name": "Soothing Melody",
-                "damage": null
-            },
-            {
-                "name": "Magical Shot",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21828",
-        "externalId": "mep-25",
-        "localId": "025",
-        "setCode": "mep",
-        "cardNumber": "025",
-        "cardName": "Mega Kangaskhan ex",
-        "fullDisplayName": "Mega Kangaskhan ex 025 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 300,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "5ban Graphics",
-        "imageLowSrc": "cards/mep-025-low.png",
-        "imageHighSrc": "cards/mep-025-high.png",
-        "attacks": [
-            {
-                "name": "Rapid-Fire Combo",
-                "damage": "200+"
-            }
-        ],
-        "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
-    },
-    {
-        "masterCardId": "21827",
-        "externalId": "mep-24",
-        "localId": "024",
-        "setCode": "mep",
-        "cardNumber": "024",
-        "cardName": "Oricorio ex",
-        "fullDisplayName": "Oricorio ex 024 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 190,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shinji Kanda",
-        "imageLowSrc": "cards/mep-024-low.png",
-        "imageHighSrc": "cards/mep-024-high.png",
-        "attacks": [
-            {
-                "name": "Fire Wing",
-                "damage": "110"
-            }
-        ],
-        "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards."
-    },
-    {
-        "masterCardId": "21826",
-        "externalId": "mep-23",
-        "localId": "023",
-        "setCode": "mep",
-        "cardNumber": "023",
-        "cardName": "Mega Charizard X ex",
-        "fullDisplayName": "Mega Charizard X ex 023 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 360,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            6
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Saboteri",
-        "imageLowSrc": "cards/mep-023-low.png",
-        "imageHighSrc": "cards/mep-023-high.png",
-        "attacks": [
-            {
-                "name": "Inferno X",
-                "damage": "90×"
-            }
-        ],
-        "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
-    },
-    {
-        "masterCardId": "21825",
-        "externalId": "mep-22",
-        "localId": "022",
-        "setCode": "mep",
-        "cardNumber": "022",
-        "cardName": "Charcadet",
-        "fullDisplayName": "Charcadet 022 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Teeziro",
-        "imageLowSrc": "cards/mep-022-low.png",
-        "imageHighSrc": "cards/mep-022-high.png",
-        "attacks": [
-            {
-                "name": "Gather Strength",
-                "damage": null
-            },
-            {
-                "name": "Chop",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21824",
-        "externalId": "mep-21",
-        "localId": "021",
-        "setCode": "mep",
-        "cardNumber": "021",
-        "cardName": "Weavile",
-        "fullDisplayName": "Weavile 021 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 90,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "matazo",
-        "imageLowSrc": "cards/mep-021-low.png",
-        "imageHighSrc": "cards/mep-021-high.png",
-        "attacks": [
-            {
-                "name": "Retaliatory Claw",
-                "damage": "20+"
-            },
-            {
-                "name": "Cut",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21823",
-        "externalId": "mep-20",
-        "localId": "020",
-        "setCode": "mep",
-        "cardNumber": "020",
-        "cardName": "Sneasel",
-        "fullDisplayName": "Sneasel 020 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Souichirou Gunjima",
-        "imageLowSrc": "cards/mep-020-low.png",
-        "imageHighSrc": "cards/mep-020-high.png",
-        "attacks": [
-            {
-                "name": "Dig Claws",
-                "damage": "10"
-            },
-            {
-                "name": "Scratch",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21822",
-        "externalId": "mep-19",
-        "localId": "019",
-        "setCode": "mep",
-        "cardNumber": "019",
-        "cardName": "Whimsicott",
-        "fullDisplayName": "Whimsicott 019 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 90,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Yuka Tanaka",
-        "imageLowSrc": "cards/mep-019-low.png",
-        "imageHighSrc": "cards/mep-019-high.png",
-        "attacks": [
-            {
-                "name": "Healing Fluff",
-                "damage": null
-            },
-            {
-                "name": "U-turn",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21821",
-        "externalId": "mep-18",
-        "localId": "018",
-        "setCode": "mep",
-        "cardNumber": "018",
-        "cardName": "Cottonee",
-        "fullDisplayName": "Cottonee 018 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kariya",
-        "imageLowSrc": "cards/mep-018-low.png",
-        "imageHighSrc": "cards/mep-018-high.png",
-        "attacks": [
-            {
-                "name": "Collect",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "21820",
-        "externalId": "mep-17",
-        "localId": "017",
-        "setCode": "mep",
-        "cardNumber": "017",
-        "cardName": "Toxtricity",
-        "fullDisplayName": "Toxtricity 017 MEP Black Star Promos",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 140,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Krgc",
-        "imageLowSrc": "cards/mep-017-low.png",
-        "imageHighSrc": "cards/mep-017-high.png",
-        "attacks": [
-            {
-                "name": "Gentle Slap",
-                "damage": "100"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21819",
-        "externalId": "mep-16",
-        "localId": "016",
-        "setCode": "mep",
-        "cardNumber": "016",
-        "cardName": "Flygon",
-        "fullDisplayName": "Flygon 016 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 150,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Oswaldo KATO",
-        "imageLowSrc": "cards/mep-016-low.png",
-        "imageHighSrc": "cards/mep-016-high.png",
-        "attacks": [
-            {
-                "name": "Cutting Wind",
-                "damage": "130"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21818",
-        "externalId": "mep-15",
-        "localId": "015",
-        "setCode": "mep",
-        "cardNumber": "015",
-        "cardName": "Zacian",
-        "fullDisplayName": "Zacian 015 MEP Black Star Promos",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 130,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shiburingaru",
-        "imageLowSrc": "cards/mep-015-low.png",
-        "imageHighSrc": "cards/mep-015-high.png",
-        "attacks": [
-            {
-                "name": "Limit Break",
-                "damage": "50+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21817",
-        "externalId": "mep-14",
-        "localId": "014",
-        "setCode": "mep",
-        "cardNumber": "014",
-        "cardName": "Ceruledge",
-        "fullDisplayName": "Ceruledge 014 MEP Black Star Promos",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 140,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Anesaki Dynamic",
-        "imageLowSrc": "cards/mep-014-low.png",
-        "imageHighSrc": "cards/mep-014-high.png",
-        "attacks": [
-            {
-                "name": "Infernal Slash",
-                "damage": "220"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21816",
-        "externalId": "mep-13",
-        "localId": "013",
-        "setCode": "mep",
-        "cardNumber": "013",
-        "cardName": "Mega Venusaur ex",
-        "fullDisplayName": "Mega Venusaur ex 013 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 380,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "5ban Graphics",
-        "imageLowSrc": "cards/mep-013-low.png",
-        "imageHighSrc": "cards/mep-013-high.png",
-        "attacks": [
-            {
-                "name": "Jungle Dump",
-                "damage": "240"
-            }
-        ],
-        "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
-    },
-    {
-        "masterCardId": "21815",
-        "externalId": "mep-12",
-        "localId": "012",
-        "setCode": "mep",
-        "cardNumber": "012",
-        "cardName": "Mega Lucario ex",
-        "fullDisplayName": "Mega Lucario ex 012 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 340,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            448
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "5ban Graphics",
-        "imageLowSrc": "cards/mep-012-low.png",
-        "imageHighSrc": "cards/mep-012-high.png",
-        "attacks": [
-            {
-                "name": "Aura Jab",
-                "damage": "130"
-            },
-            {
-                "name": "Mega Brave",
-                "damage": "270"
-            }
-        ],
-        "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
-    },
-    {
-        "masterCardId": "21814",
-        "externalId": "mep-11",
-        "localId": "011",
-        "setCode": "mep",
-        "cardNumber": "011",
-        "cardName": "Mega Latias ex",
-        "fullDisplayName": "Mega Latias ex 011 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 280,
-        "elementTypes": [
-            "Dragon"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "5ban Graphics",
-        "imageLowSrc": "cards/mep-011-low.png",
-        "imageHighSrc": "cards/mep-011-high.png",
-        "attacks": [
-            {
-                "name": "Strafe",
-                "damage": "40"
-            },
-            {
-                "name": "Illusory Impulse",
-                "damage": "300"
-            }
-        ],
-        "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards."
-    },
-    {
-        "masterCardId": "21813",
-        "externalId": "mep-10",
-        "localId": "010",
-        "setCode": "mep",
-        "cardNumber": "010",
-        "cardName": "Riolu",
-        "fullDisplayName": "Riolu 010 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "GOSSAN",
-        "imageLowSrc": "cards/mep-010-low.png",
-        "imageHighSrc": "cards/mep-010-high.png",
-        "attacks": [
-            {
-                "name": "Accelerating Stab",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21812",
-        "externalId": "mep-9",
-        "localId": "009",
-        "setCode": "mep",
-        "cardNumber": "009",
-        "cardName": "Alakazam",
-        "fullDisplayName": "Alakazam 009 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 140,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Aya Kusube",
-        "imageLowSrc": "cards/mep-009-low.png",
-        "imageHighSrc": "cards/mep-009-high.png",
-        "attacks": [
-            {
-                "name": "Powerful Hand",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "21811",
-        "externalId": "mep-8",
-        "localId": "008",
-        "setCode": "mep",
-        "cardNumber": "008",
-        "cardName": "Golduck",
-        "fullDisplayName": "Golduck 008 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 120,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Jiro Sasumo",
-        "imageLowSrc": "cards/mep-008-low.png",
-        "imageHighSrc": "cards/mep-008-high.png",
-        "attacks": [
-            {
-                "name": "Hydro Pump",
-                "damage": "60+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21810",
-        "externalId": "mep-7",
-        "localId": "007",
-        "setCode": "mep",
-        "cardNumber": "007",
-        "cardName": "Psyduck",
-        "fullDisplayName": "Psyduck 007 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Jiro Sasumo",
-        "imageLowSrc": "cards/mep-007-low.png",
-        "imageHighSrc": "cards/mep-007-high.png",
-        "attacks": [
-            {
-                "name": "Ram",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21809",
-        "externalId": "mep-6",
-        "localId": "006",
-        "setCode": "mep",
-        "cardNumber": "006",
-        "cardName": "Drifblim",
-        "fullDisplayName": "Drifblim 006 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 110,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shimaris Yukichi",
-        "imageLowSrc": "cards/mep-006-low.png",
-        "imageHighSrc": "cards/mep-006-high.png",
-        "attacks": [
-            {
-                "name": "Creepy Wind",
-                "damage": null
-            },
-            {
-                "name": "Balloon Return",
-                "damage": "110"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21808",
-        "externalId": "mep-5",
-        "localId": "005",
-        "setCode": "mep",
-        "cardNumber": "005",
-        "cardName": "Drifloon",
-        "fullDisplayName": "Drifloon 005 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shimaris Yukichi",
-        "imageLowSrc": "cards/mep-005-low.png",
-        "imageHighSrc": "cards/mep-005-high.png",
-        "attacks": [
-            {
-                "name": "Pull",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "21807",
-        "externalId": "mep-4",
-        "localId": "004",
-        "setCode": "mep",
-        "cardNumber": "004",
-        "cardName": "Lunatone",
-        "fullDisplayName": "Lunatone 004 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 110,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ounishi",
-        "imageLowSrc": "cards/mep-004-low.png",
-        "imageHighSrc": "cards/mep-004-high.png",
-        "attacks": [
-            {
-                "name": "Power Gem",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21806",
-        "externalId": "mep-3",
-        "localId": "003",
-        "setCode": "mep",
-        "cardNumber": "003",
-        "cardName": "Alakazam",
-        "fullDisplayName": "Alakazam 003 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 140,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "cochi8i",
-        "imageLowSrc": "cards/mep-003-low.png",
-        "imageHighSrc": "cards/mep-003-high.png",
-        "attacks": [
-            {
-                "name": "Powerful Hand",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "21805",
-        "externalId": "mep-2",
-        "localId": "002",
-        "setCode": "mep",
-        "cardNumber": "002",
-        "cardName": "Inteleon",
-        "fullDisplayName": "Inteleon 002 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 150,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kazumasa Yasukuni",
-        "imageLowSrc": "cards/mep-002-low.png",
-        "imageHighSrc": "cards/mep-002-high.png",
-        "attacks": [
-            {
-                "name": "Bring Down",
-                "damage": null
-            },
-            {
-                "name": "Water Shot",
-                "damage": "110"
-            }
-        ]
-    },
-    {
-        "masterCardId": "21804",
-        "externalId": "mep-1",
-        "localId": "001",
-        "setCode": "mep",
-        "cardNumber": "001",
-        "cardName": "Meganium",
-        "fullDisplayName": "Meganium 001 MEP Black Star Promos",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 160,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Uninori",
-        "imageLowSrc": "cards/mep-001-low.png",
-        "imageHighSrc": "cards/mep-001-high.png",
-        "attacks": [
-            {
-                "name": "Solar Beam",
-                "damage": "140"
-            }
-        ]
-    }
+  {
+    "masterCardId": "21974",
+    "externalId": "mep-70",
+    "localId": "070",
+    "setCode": "mep",
+    "cardNumber": "070",
+    "cardName": "Tyrunt",
+    "fullDisplayName": "Tyrunt 070 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      696
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/mep-070-low.png",
+    "imageHighSrc": "cards/mep-070-high.png",
+    "attacks": [
+      {
+        "name": "Get Angry",
+        "damage": "20×",
+        "cost": [],
+        "effect": "This attack does 20 damage for each damage counter on this Pokémon."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "pokemonCenterStamp"
+    ]
+  },
+  {
+    "masterCardId": "21975",
+    "externalId": "mep-69",
+    "localId": "069",
+    "setCode": "mep",
+    "cardNumber": "069",
+    "cardName": "Chikorita",
+    "fullDisplayName": "Chikorita 069 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      152
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/mep-069-low.png",
+    "imageHighSrc": "cards/mep-069-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "default"
+    ]
+  },
+  {
+    "masterCardId": "21976",
+    "externalId": "mep-68",
+    "localId": "068",
+    "setCode": "mep",
+    "cardNumber": "068",
+    "cardName": "Makuhita",
+    "fullDisplayName": "Makuhita 068 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      296
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/mep-068-low.png",
+    "imageHighSrc": "cards/mep-068-high.png",
+    "attacks": [
+      {
+        "name": "Corkscrew Punch",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Confront",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "default"
+    ]
+  },
+  {
+    "masterCardId": "21849",
+    "externalId": "mep-67",
+    "localId": "067",
+    "setCode": "mep",
+    "cardNumber": "067",
+    "cardName": "Doublade",
+    "fullDisplayName": "Doublade 067 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      680
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Yukihiro Tada",
+    "imageLowSrc": "cards/mep-067-low.png",
+    "imageHighSrc": "cards/mep-067-high.png",
+    "attacks": [
+      {
+        "name": "Weaponized Swords",
+        "damage": "60×",
+        "cost": [],
+        "effect": "Reveal any number of Honedge, Doublade, and Aegislash from your hand, and this attack does 60 damage for each card you revealed in this way."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire ×2",
+    "resistance": "Grass -30",
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "default"
+    ]
+  },
+  {
+    "masterCardId": "21848",
+    "externalId": "mep-66",
+    "localId": "066",
+    "setCode": "mep",
+    "cardNumber": "066",
+    "cardName": "Tyrantrum",
+    "fullDisplayName": "Tyrantrum 066 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 180,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      697
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Nisota Niso",
+    "imageLowSrc": "cards/mep-066-low.png",
+    "imageHighSrc": "cards/mep-066-high.png",
+    "attacks": [
+      {
+        "name": "Wreak Havoc",
+        "damage": "160",
+        "cost": [],
+        "effect": "Flip a coin until you get tails. For each heads, discard the top card of your opponent's deck."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": null,
+    "pricingVariants": [
+      "default"
+    ]
+  },
+  {
+    "masterCardId": "21847",
+    "externalId": "mep-65",
+    "localId": "065",
+    "setCode": "mep",
+    "cardNumber": "065",
+    "cardName": "Barbaracle",
+    "fullDisplayName": "Barbaracle 065 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 130,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      689
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Hasuno",
+    "imageLowSrc": "cards/mep-065-low.png",
+    "imageHighSrc": "cards/mep-065-high.png",
+    "attacks": [
+      {
+        "name": "Hammer In",
+        "damage": "80",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "default"
+    ]
+  },
+  {
+    "masterCardId": "21846",
+    "externalId": "mep-64",
+    "localId": "064",
+    "setCode": "mep",
+    "cardNumber": "064",
+    "cardName": "Serperior",
+    "fullDisplayName": "Serperior 064 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 160,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      497
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "LINNE",
+    "imageLowSrc": "cards/mep-064-low.png",
+    "imageHighSrc": "cards/mep-064-high.png",
+    "attacks": [
+      {
+        "name": "Regal Command",
+        "damage": "20×",
+        "cost": [],
+        "effect": "This attack does 20 damage for each of your Pokémon in play."
+      },
+      {
+        "name": "Solar Coiling",
+        "damage": "100+",
+        "cost": [],
+        "effect": "If Rosa's Encouragement is in your discard pile, this attack does 150 more damage."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "default"
+    ]
+  },
+  {
+    "masterCardId": "21845",
+    "externalId": "mep-45",
+    "localId": "045",
+    "setCode": "mep",
+    "cardNumber": "045",
+    "cardName": "Popplio",
+    "fullDisplayName": "Popplio 045 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      728
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-045-low.png",
+    "imageHighSrc": "cards/mep-045-high.png",
+    "attacks": [
+      {
+        "name": "Disarming Voice",
+        "damage": "20",
+        "cost": [],
+        "effect": "Your opponent's Active Pokémon is now Confused."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21844",
+    "externalId": "mep-44",
+    "localId": "044",
+    "setCode": "mep",
+    "cardNumber": "044",
+    "cardName": "Litten",
+    "fullDisplayName": "Litten 044 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      725
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-044-low.png",
+    "imageHighSrc": "cards/mep-044-high.png",
+    "attacks": [
+      {
+        "name": "Fire Fang",
+        "damage": "20",
+        "cost": [],
+        "effect": "Your opponent's Active Pokémon is now Burned."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21843",
+    "externalId": "mep-43",
+    "localId": "043",
+    "setCode": "mep",
+    "cardNumber": "043",
+    "cardName": "Rowlet",
+    "fullDisplayName": "Rowlet 043 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      722
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-043-low.png",
+    "imageHighSrc": "cards/mep-043-high.png",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21842",
+    "externalId": "mep-42",
+    "localId": "042",
+    "setCode": "mep",
+    "cardNumber": "042",
+    "cardName": "Piplup",
+    "fullDisplayName": "Piplup 042 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      393
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-042-low.png",
+    "imageHighSrc": "cards/mep-042-high.png",
+    "attacks": [
+      {
+        "name": "Peck",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21841",
+    "externalId": "mep-41",
+    "localId": "041",
+    "setCode": "mep",
+    "cardNumber": "041",
+    "cardName": "Chimchar",
+    "fullDisplayName": "Chimchar 041 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      390
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-041-low.png",
+    "imageHighSrc": "cards/mep-041-high.png",
+    "attacks": [
+      {
+        "name": "Fury Swipes",
+        "damage": "20×",
+        "cost": [],
+        "effect": "Flip 3 coins. This attack does 20 damage for each heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21840",
+    "externalId": "mep-40",
+    "localId": "040",
+    "setCode": "mep",
+    "cardNumber": "040",
+    "cardName": "Turtwig",
+    "fullDisplayName": "Turtwig 040 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 90,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      387
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-040-low.png",
+    "imageHighSrc": "cards/mep-040-high.png",
+    "attacks": [
+      {
+        "name": "Razor Leaf",
+        "damage": "60",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21839",
+    "externalId": "mep-39",
+    "localId": "039",
+    "setCode": "mep",
+    "cardNumber": "039",
+    "cardName": "Squirtle",
+    "fullDisplayName": "Squirtle 039 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      7
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-039-low.png",
+    "imageHighSrc": "cards/mep-039-high.png",
+    "attacks": [
+      {
+        "name": "Bubble",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip a coin. If heads, your opponent's Active Pokémon is now Paralyzed."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21838",
+    "externalId": "mep-38",
+    "localId": "038",
+    "setCode": "mep",
+    "cardNumber": "038",
+    "cardName": "Charmander",
+    "fullDisplayName": "Charmander 038 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      4
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-038-low.png",
+    "imageHighSrc": "cards/mep-038-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30",
+        "cost": [],
+        "effect": "Discard an Energy from this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21837",
+    "externalId": "mep-37",
+    "localId": "037",
+    "setCode": "mep",
+    "cardNumber": "037",
+    "cardName": "Bulbasaur",
+    "fullDisplayName": "Bulbasaur 037 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      1
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-037-low.png",
+    "imageHighSrc": "cards/mep-037-high.png",
+    "attacks": [
+      {
+        "name": "Leech Seed",
+        "damage": "10",
+        "cost": [],
+        "effect": "Heal 10 damage from this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21836",
+    "externalId": "mep-33",
+    "localId": "033",
+    "setCode": "mep",
+    "cardNumber": "033",
+    "cardName": "Mega Lucario ex",
+    "fullDisplayName": "Mega Lucario ex 033 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 340,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "5ban Graphics",
+    "imageLowSrc": "cards/mep-033-low.png",
+    "imageHighSrc": "cards/mep-033-high.png",
+    "attacks": [
+      {
+        "name": "Aura Jab",
+        "damage": "130",
+        "cost": [],
+        "effect": "Attach up to 3 Basic Fighting Energy cards from your discard pile to your Benched Pokémon in any way you like."
+      },
+      {
+        "name": "Mega Brave",
+        "damage": "270",
+        "cost": [],
+        "effect": "During your next turn, this Pokémon can't use Mega Brave."
+      }
+    ],
+    "subtype": "Stage 1, MEGA, ex",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "default"
+    ]
+  },
+  {
+    "masterCardId": "21835",
+    "externalId": "mep-32",
+    "localId": "032",
+    "setCode": "mep",
+    "cardNumber": "032",
+    "cardName": "Mega Gardevoir ex",
+    "fullDisplayName": "Mega Gardevoir ex 032 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 360,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      282
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-032-low.png",
+    "imageHighSrc": "cards/mep-032-high.png",
+    "attacks": [
+      {
+        "name": "Overflowing Wishes",
+        "damage": null,
+        "cost": [],
+        "effect": "For each of your Benched Pokémon, search your deck for a Basic Psychic Energy card and attach it to that Pokémon. Then, shuffle your deck."
+      },
+      {
+        "name": "Mega Symphonia",
+        "damage": "50×",
+        "cost": [],
+        "effect": "This attack does 50 damage for each Psychic Energy attached to all of your Pokémon."
+      }
+    ],
+    "subtype": "Stage 2, MEGA, ex",
+    "weakness": "Darkness ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "default"
+    ]
+  },
+  {
+    "masterCardId": "21834",
+    "externalId": "mep-31",
+    "localId": "031",
+    "setCode": "mep",
+    "cardNumber": "031",
+    "cardName": "N's Zekrom",
+    "fullDisplayName": "N's Zekrom 031 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 130,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": [
+      644
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Bun Toujo",
+    "imageLowSrc": "cards/mep-031-low.png",
+    "imageHighSrc": "cards/mep-031-high.png",
+    "attacks": [
+      {
+        "name": "Shred",
+        "damage": "70",
+        "cost": [],
+        "effect": "This attack's damage isn't affected by any effects on your opponent's Active Pokémon."
+      },
+      {
+        "name": "Rampaging Thunder",
+        "damage": "250",
+        "cost": [],
+        "effect": "During your next turn, this Pokémon can't use attacks."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "When the interior part of its tail spins like a motor, Zekrom can generate many bolts of lightning to blast its surrounds.",
+    "pricingVariants": [
+      "holofoil",
+      "pokemonCenterStamp"
+    ]
+  },
+  {
+    "masterCardId": "21833",
+    "externalId": "mep-30",
+    "localId": "030",
+    "setCode": "mep",
+    "cardNumber": "030",
+    "cardName": "Mega Charizard Y ex",
+    "fullDisplayName": "Mega Charizard Y ex 030 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 360,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ultimateinudog",
+    "imageLowSrc": "cards/mep-030-low.png",
+    "imageHighSrc": "cards/mep-030-high.png",
+    "attacks": [
+      {
+        "name": "Explosion Y",
+        "damage": null,
+        "cost": [],
+        "effect": "Discard 3 Energy from this Pokémon, and this attack does 280 damage to 1 of your opponent's Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      }
+    ],
+    "subtype": "Stage 2, MEGA, ex",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21832",
+    "externalId": "mep-29",
+    "localId": "029",
+    "setCode": "mep",
+    "cardNumber": "029",
+    "cardName": "Mega Charizard X ex",
+    "fullDisplayName": "Mega Charizard X ex 029 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 360,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "takuyoa",
+    "imageLowSrc": "cards/mep-029-low.png",
+    "imageHighSrc": "cards/mep-029-high.png",
+    "attacks": [
+      {
+        "name": "Inferno X",
+        "damage": "90×",
+        "cost": [],
+        "effect": "Discard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way."
+      }
+    ],
+    "subtype": "Stage 2, MEGA, ex",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21831",
+    "externalId": "mep-28",
+    "localId": "028",
+    "setCode": "mep",
+    "cardNumber": "028",
+    "cardName": "Celebratory Fanfare",
+    "fullDisplayName": "Celebratory Fanfare 028 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Stadium",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Yuu Nishida",
+    "imageLowSrc": "cards/mep-028-low.png",
+    "imageHighSrc": "cards/mep-028-high.png",
+    "rules": "Once during each player's turn, that player may heal 10 damage from each of their Pokémon. If a player healed any damage in this way, their turn ends.\n\nYou may play only 1 Stadium card during your turn. Put it next to the Active Spot, and discard it if another Stadium comes into play. A Stadium with the same name can't be played.",
+    "subtype": "Stadium",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "asiachampionshipstamp",
+      "leagueStamp"
+    ]
+  },
+  {
+    "masterCardId": "21830",
+    "externalId": "mep-27",
+    "localId": "027",
+    "setCode": "mep",
+    "cardNumber": "027",
+    "cardName": "Haunter",
+    "fullDisplayName": "Haunter 027 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Arai Kiriko",
+    "imageLowSrc": "cards/mep-027-low.png",
+    "imageHighSrc": "cards/mep-027-high.png",
+    "attacks": [
+      {
+        "name": "Spooky Shot",
+        "damage": "40",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It likes to lurk in the dark and tap shoulders with a gaseous hand. Its touch causes endless shuddering.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21829",
+    "externalId": "mep-26",
+    "localId": "026",
+    "setCode": "mep",
+    "cardNumber": "026",
+    "cardName": "Meloetta",
+    "fullDisplayName": "Meloetta 026 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Keisin",
+    "imageLowSrc": "cards/mep-026-low.png",
+    "imageHighSrc": "cards/mep-026-high.png",
+    "attacks": [
+      {
+        "name": "Soothing Melody",
+        "damage": null,
+        "cost": [],
+        "effect": "Heal 120 damage from 1 of your Benched Psychic Pokémon."
+      },
+      {
+        "name": "Magical Shot",
+        "damage": "50",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Darkness ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 1,
+    "flavorText": "Its melodies are sung with a special vocalization method that can control the feelings of those who hear it.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21828",
+    "externalId": "mep-25",
+    "localId": "025",
+    "setCode": "mep",
+    "cardNumber": "025",
+    "cardName": "Mega Kangaskhan ex",
+    "fullDisplayName": "Mega Kangaskhan ex 025 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 300,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "5ban Graphics",
+    "imageLowSrc": "cards/mep-025-low.png",
+    "imageHighSrc": "cards/mep-025-high.png",
+    "attacks": [
+      {
+        "name": "Rapid-Fire Combo",
+        "damage": "200+",
+        "cost": [],
+        "effect": "Flip a coin until you get tails. This attack does 50 more damage for each heads."
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards.",
+    "subtype": "Basic, MEGA, ex",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "jumbo"
+    ]
+  },
+  {
+    "masterCardId": "21827",
+    "externalId": "mep-24",
+    "localId": "024",
+    "setCode": "mep",
+    "cardNumber": "024",
+    "cardName": "Oricorio ex",
+    "fullDisplayName": "Oricorio ex 024 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 190,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shinji Kanda",
+    "imageLowSrc": "cards/mep-024-low.png",
+    "imageHighSrc": "cards/mep-024-high.png",
+    "attacks": [
+      {
+        "name": "Fire Wing",
+        "damage": "110",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "rules": "Pokémon ex rule: When your Pokémon ex is Knocked Out, your opponent takes 2 Prize cards.",
+    "subtype": "Basic, ex",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21826",
+    "externalId": "mep-23",
+    "localId": "023",
+    "setCode": "mep",
+    "cardNumber": "023",
+    "cardName": "Mega Charizard X ex",
+    "fullDisplayName": "Mega Charizard X ex 023 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 360,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      6
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Saboteri",
+    "imageLowSrc": "cards/mep-023-low.png",
+    "imageHighSrc": "cards/mep-023-high.png",
+    "attacks": [
+      {
+        "name": "Inferno X",
+        "damage": "90×",
+        "cost": [],
+        "effect": "Discard any amount of Fire Energy from among your Pokémon, and this attack does 90 damage for each card you discarded in this way."
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards.",
+    "subtype": "Stage 2, MEGA, ex",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21825",
+    "externalId": "mep-22",
+    "localId": "022",
+    "setCode": "mep",
+    "cardNumber": "022",
+    "cardName": "Charcadet",
+    "fullDisplayName": "Charcadet 022 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Teeziro",
+    "imageLowSrc": "cards/mep-022-low.png",
+    "imageHighSrc": "cards/mep-022-high.png",
+    "attacks": [
+      {
+        "name": "Gather Strength",
+        "damage": null,
+        "cost": [],
+        "effect": "Search your deck for up to 2 Basic Energy cards, reveal them, and put them into your hand. Then, shuffle your deck."
+      },
+      {
+        "name": "Chop",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "Burnt charcoal came to life and became a Pokémon. Possessing a fiery fighting spirit, Charcadet will battle even tough opponents.",
+    "pricingVariants": [
+      "holofoil",
+      "pokemonCenterStamp"
+    ]
+  },
+  {
+    "masterCardId": "21824",
+    "externalId": "mep-21",
+    "localId": "021",
+    "setCode": "mep",
+    "cardNumber": "021",
+    "cardName": "Weavile",
+    "fullDisplayName": "Weavile 021 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 90,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "matazo",
+    "imageLowSrc": "cards/mep-021-low.png",
+    "imageHighSrc": "cards/mep-021-high.png",
+    "attacks": [
+      {
+        "name": "Retaliatory Claw",
+        "damage": "20+",
+        "cost": [],
+        "effect": "If this Pokémon's remaining HP is 50 or less, this attack does 170 more damage."
+      },
+      {
+        "name": "Cut",
+        "damage": "60",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Evolution made it even more devious. It communicates by clawing signs in boulders.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21823",
+    "externalId": "mep-20",
+    "localId": "020",
+    "setCode": "mep",
+    "cardNumber": "020",
+    "cardName": "Sneasel",
+    "fullDisplayName": "Sneasel 020 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Souichirou Gunjima",
+    "imageLowSrc": "cards/mep-020-low.png",
+    "imageHighSrc": "cards/mep-020-high.png",
+    "attacks": [
+      {
+        "name": "Dig Claws",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Scratch",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "This cunning Pokémon hides under the cover of darkness, waiting to attack its prey.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21822",
+    "externalId": "mep-19",
+    "localId": "019",
+    "setCode": "mep",
+    "cardNumber": "019",
+    "cardName": "Whimsicott",
+    "fullDisplayName": "Whimsicott 019 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 90,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Yuka Tanaka",
+    "imageLowSrc": "cards/mep-019-low.png",
+    "imageHighSrc": "cards/mep-019-high.png",
+    "attacks": [
+      {
+        "name": "Healing Fluff",
+        "damage": null,
+        "cost": [],
+        "effect": "Heal all damage from 1 of your Benched Pokémon."
+      },
+      {
+        "name": "U-turn",
+        "damage": "50",
+        "cost": [],
+        "effect": "Switch this Pokémon with 1 of your Benched Pokémon."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Metal ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Like the wind, it can slip through any gap, no matter how small. It leaves balls of white fluff behind.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21821",
+    "externalId": "mep-18",
+    "localId": "018",
+    "setCode": "mep",
+    "cardNumber": "018",
+    "cardName": "Cottonee",
+    "fullDisplayName": "Cottonee 018 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kariya",
+    "imageLowSrc": "cards/mep-018-low.png",
+    "imageHighSrc": "cards/mep-018-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null,
+        "cost": [],
+        "effect": "Draw a card."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Metal ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Pillows and beds stuffed with cotton exhaled by Cottonee are soft and puffy, light and airy— altogether top quality.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21820",
+    "externalId": "mep-17",
+    "localId": "017",
+    "setCode": "mep",
+    "cardNumber": "017",
+    "cardName": "Toxtricity",
+    "fullDisplayName": "Toxtricity 017 MEP Black Star Promos",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 140,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Krgc",
+    "imageLowSrc": "cards/mep-017-low.png",
+    "imageHighSrc": "cards/mep-017-high.png",
+    "attacks": [
+      {
+        "name": "Gentle Slap",
+        "damage": "100",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "As it scatters toxic sweat and emits electricity, a melody that sounds like it came from a guitar reverberates through the surrounding area.",
+    "pricingVariants": [
+      "holofoil",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "21819",
+    "externalId": "mep-16",
+    "localId": "016",
+    "setCode": "mep",
+    "cardNumber": "016",
+    "cardName": "Flygon",
+    "fullDisplayName": "Flygon 016 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 150,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Oswaldo KATO",
+    "imageLowSrc": "cards/mep-016-low.png",
+    "imageHighSrc": "cards/mep-016-high.png",
+    "attacks": [
+      {
+        "name": "Cutting Wind",
+        "damage": "130",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Known as the Desert Spirit, this Pokémon hides in the sandstorms it causes by beating its wings.",
+    "pricingVariants": [
+      "holofoil",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "21818",
+    "externalId": "mep-15",
+    "localId": "015",
+    "setCode": "mep",
+    "cardNumber": "015",
+    "cardName": "Zacian",
+    "fullDisplayName": "Zacian 015 MEP Black Star Promos",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 130,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shiburingaru",
+    "imageLowSrc": "cards/mep-015-low.png",
+    "imageHighSrc": "cards/mep-015-high.png",
+    "attacks": [
+      {
+        "name": "Limit Break",
+        "damage": "50+",
+        "cost": [],
+        "effect": "If your opponent has 3 or fewer Prize cards remaining, this attack does 90 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Metal ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "Able to cut down anything with a single strike, it became known as the Fairy King's Sword, and it inspired awe in friend and foe alike.",
+    "pricingVariants": [
+      "holofoil",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "21817",
+    "externalId": "mep-14",
+    "localId": "014",
+    "setCode": "mep",
+    "cardNumber": "014",
+    "cardName": "Ceruledge",
+    "fullDisplayName": "Ceruledge 014 MEP Black Star Promos",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 140,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Anesaki Dynamic",
+    "imageLowSrc": "cards/mep-014-low.png",
+    "imageHighSrc": "cards/mep-014-high.png",
+    "attacks": [
+      {
+        "name": "Infernal Slash",
+        "damage": "220",
+        "cost": [],
+        "effect": "Discard 4 Basic Fire Energy cards from your hand. If you can't discard 4 cards in this way, this attack does nothing."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "The fiery blades on its arms burn fiercely with the lingering resentment of a sword wielder who fell before accomplishing their goal.",
+    "pricingVariants": [
+      "holofoil",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "21816",
+    "externalId": "mep-13",
+    "localId": "013",
+    "setCode": "mep",
+    "cardNumber": "013",
+    "cardName": "Mega Venusaur ex",
+    "fullDisplayName": "Mega Venusaur ex 013 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 380,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "5ban Graphics",
+    "imageLowSrc": "cards/mep-013-low.png",
+    "imageHighSrc": "cards/mep-013-high.png",
+    "attacks": [
+      {
+        "name": "Jungle Dump",
+        "damage": "240",
+        "cost": [],
+        "effect": "Heal 30 damage from this Pokémon."
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards.",
+    "subtype": "Stage 2, MEGA, ex",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 4,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "jumbo"
+    ]
+  },
+  {
+    "masterCardId": "21815",
+    "externalId": "mep-12",
+    "localId": "012",
+    "setCode": "mep",
+    "cardNumber": "012",
+    "cardName": "Mega Lucario ex",
+    "fullDisplayName": "Mega Lucario ex 012 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 340,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      448
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "5ban Graphics",
+    "imageLowSrc": "cards/mep-012-low.png",
+    "imageHighSrc": "cards/mep-012-high.png",
+    "attacks": [
+      {
+        "name": "Aura Jab",
+        "damage": "130",
+        "cost": [],
+        "effect": "Attach up to 3 Basic Fighting Energy cards from your discard pile to your Benched Pokémon in any way you like."
+      },
+      {
+        "name": "Mega Brave",
+        "damage": "270",
+        "cost": [],
+        "effect": "During your next turn, this Pokémon can't use Mega Brave."
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards.",
+    "subtype": "Stage 1, MEGA, ex",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "jumbo"
+    ]
+  },
+  {
+    "masterCardId": "21814",
+    "externalId": "mep-11",
+    "localId": "011",
+    "setCode": "mep",
+    "cardNumber": "011",
+    "cardName": "Mega Latias ex",
+    "fullDisplayName": "Mega Latias ex 011 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 280,
+    "elementTypes": [
+      "Dragon"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "5ban Graphics",
+    "imageLowSrc": "cards/mep-011-low.png",
+    "imageHighSrc": "cards/mep-011-high.png",
+    "attacks": [
+      {
+        "name": "Strafe",
+        "damage": "40",
+        "cost": [],
+        "effect": "You may switch this Pokémon with 1 of your Benched Pokémon."
+      },
+      {
+        "name": "Illusory Impulse",
+        "damage": "300",
+        "cost": [],
+        "effect": "Discard all Energy from this Pokémon."
+      }
+    ],
+    "rules": "Mega Evolution ex Rule: When your Mega Evolution Pokémon ex is Knocked Out, your opponent takes 3 Prize cards.",
+    "subtype": "Basic, MEGA, ex",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "jumbo"
+    ]
+  },
+  {
+    "masterCardId": "21813",
+    "externalId": "mep-10",
+    "localId": "010",
+    "setCode": "mep",
+    "cardNumber": "010",
+    "cardName": "Riolu",
+    "fullDisplayName": "Riolu 010 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "GOSSAN",
+    "imageLowSrc": "cards/mep-010-low.png",
+    "imageHighSrc": "cards/mep-010-high.png",
+    "attacks": [
+      {
+        "name": "Accelerating Stab",
+        "damage": "30",
+        "cost": [],
+        "effect": "During your next turn, this Pokémon can't use Accelerating Stab."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "They communicate with one another using their auras. They are able to run all through the night.",
+    "pricingVariants": [
+      "holofoil",
+      "pokemonCenterStamp"
+    ]
+  },
+  {
+    "masterCardId": "21812",
+    "externalId": "mep-9",
+    "localId": "009",
+    "setCode": "mep",
+    "cardNumber": "009",
+    "cardName": "Alakazam",
+    "fullDisplayName": "Alakazam 009 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Aya Kusube",
+    "imageLowSrc": "cards/mep-009-low.png",
+    "imageHighSrc": "cards/mep-009-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Hand",
+        "damage": null,
+        "cost": [],
+        "effect": "Place 2 damage counters on your opponent's Active Pokémon for each card in your hand."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Darkness ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 1,
+    "flavorText": "Alakazam wields potent psychic powers. It's said that this Pokémon used these powers to create the spoons it holds.",
+    "pricingVariants": [
+      "holofoil",
+      "pokemonCenterStamp"
+    ]
+  },
+  {
+    "masterCardId": "21811",
+    "externalId": "mep-8",
+    "localId": "008",
+    "setCode": "mep",
+    "cardNumber": "008",
+    "cardName": "Golduck",
+    "fullDisplayName": "Golduck 008 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 120,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Jiro Sasumo",
+    "imageLowSrc": "cards/mep-008-low.png",
+    "imageHighSrc": "cards/mep-008-high.png",
+    "attacks": [
+      {
+        "name": "Hydro Pump",
+        "damage": "60+",
+        "cost": [],
+        "effect": "This attack does 20 more damage for each Water Energy attached to this Pokémon."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "When it swims at full speed using its long, webbed limbs, its forehead somehow begins to glow.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21810",
+    "externalId": "mep-7",
+    "localId": "007",
+    "setCode": "mep",
+    "cardNumber": "007",
+    "cardName": "Psyduck",
+    "fullDisplayName": "Psyduck 007 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Jiro Sasumo",
+    "imageLowSrc": "cards/mep-007-low.png",
+    "imageHighSrc": "cards/mep-007-high.png",
+    "attacks": [
+      {
+        "name": "Ram",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It is constantly wracked by a headache. When the headache turns intense, it begins using mysterious powers.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21809",
+    "externalId": "mep-6",
+    "localId": "006",
+    "setCode": "mep",
+    "cardNumber": "006",
+    "cardName": "Drifblim",
+    "fullDisplayName": "Drifblim 006 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 110,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shimaris Yukichi",
+    "imageLowSrc": "cards/mep-006-low.png",
+    "imageHighSrc": "cards/mep-006-high.png",
+    "attacks": [
+      {
+        "name": "Creepy Wind",
+        "damage": null,
+        "cost": [],
+        "effect": "Your opponent's Active Pokémon is now Confused."
+      },
+      {
+        "name": "Balloon Return",
+        "damage": "110",
+        "cost": [],
+        "effect": "Put this Pokémon and all attached cards into your hand."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Darkness ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 1,
+    "flavorText": "It can generate and release gas within its body. That's how it can control the altitude of its drift.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21808",
+    "externalId": "mep-5",
+    "localId": "005",
+    "setCode": "mep",
+    "cardNumber": "005",
+    "cardName": "Drifloon",
+    "fullDisplayName": "Drifloon 005 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shimaris Yukichi",
+    "imageLowSrc": "cards/mep-005-low.png",
+    "imageHighSrc": "cards/mep-005-high.png",
+    "attacks": [
+      {
+        "name": "Pull",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, switch in 1 of your opponent's Benched Pokémon to the Active Spot."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Darkness ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 1,
+    "flavorText": "It is whispered that any child who mistakes Drifloon for a balloon and holds on to it could wind up missing.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "21807",
+    "externalId": "mep-4",
+    "localId": "004",
+    "setCode": "mep",
+    "cardNumber": "004",
+    "cardName": "Lunatone",
+    "fullDisplayName": "Lunatone 004 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 110,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ounishi",
+    "imageLowSrc": "cards/mep-004-low.png",
+    "imageHighSrc": "cards/mep-004-high.png",
+    "attacks": [
+      {
+        "name": "Power Gem",
+        "damage": "50",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It was discovered at the site of a meteor strike 40 years ago. Its stare can lull its foes to sleep.",
+    "pricingVariants": [
+      "holofoil",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "21806",
+    "externalId": "mep-3",
+    "localId": "003",
+    "setCode": "mep",
+    "cardNumber": "003",
+    "cardName": "Alakazam",
+    "fullDisplayName": "Alakazam 003 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 140,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "cochi8i",
+    "imageLowSrc": "cards/mep-003-low.png",
+    "imageHighSrc": "cards/mep-003-high.png",
+    "attacks": [
+      {
+        "name": "Powerful Hand",
+        "damage": null,
+        "cost": [],
+        "effect": "Place 2 damage counters on your opponent's Active Pokémon for each card in your hand."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Darkness ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": 1,
+    "flavorText": "Alakazam wields potent psychic powers. It's said that this Pokémon used these powers to create the spoons it holds.",
+    "pricingVariants": [
+      "holofoil",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "21805",
+    "externalId": "mep-2",
+    "localId": "002",
+    "setCode": "mep",
+    "cardNumber": "002",
+    "cardName": "Inteleon",
+    "fullDisplayName": "Inteleon 002 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 150,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kazumasa Yasukuni",
+    "imageLowSrc": "cards/mep-002-low.png",
+    "imageHighSrc": "cards/mep-002-high.png",
+    "attacks": [
+      {
+        "name": "Bring Down",
+        "damage": null,
+        "cost": [],
+        "effect": "Choose a Pokémon in play (yours or your opponent's) that has the least HP remaining, except for this Pokémon, and it is Knocked Out."
+      },
+      {
+        "name": "Water Shot",
+        "damage": "110",
+        "cost": [],
+        "effect": "Discard an Energy from this Pokémon."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It uses special lenses in its eyes to sense things about its opponents—like their body heat—then attacks once it identifies a weak spot.",
+    "pricingVariants": [
+      "holofoil",
+      "staffStamp"
+    ]
+  },
+  {
+    "masterCardId": "21804",
+    "externalId": "mep-1",
+    "localId": "001",
+    "setCode": "mep",
+    "cardNumber": "001",
+    "cardName": "Meganium",
+    "fullDisplayName": "Meganium 001 MEP Black Star Promos",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 160,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Uninori",
+    "imageLowSrc": "cards/mep-001-low.png",
+    "imageHighSrc": "cards/mep-001-high.png",
+    "attacks": [
+      {
+        "name": "Solar Beam",
+        "damage": "140",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "Anyone who stands beside it becomes refreshed, just as if they were soaking in the soothing atmosphere of a forest.",
+    "pricingVariants": [
+      "holofoil",
+      "staffStamp"
+    ]
+  }
 ]

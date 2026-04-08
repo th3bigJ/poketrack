@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct PokeTrackApp: App {
@@ -13,5 +14,6 @@ struct PokeTrackApp: App {
         WindowGroup {
             RootView()
         }
+        .modelContainer(for: [WishlistItem.self, CollectionItem.self, TransactionRecord.self])
     }
 }

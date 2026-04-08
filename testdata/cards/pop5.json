@@ -1,501 +1,683 @@
 [
-    {
-        "masterCardId": "9258",
-        "externalId": "pop5-17",
-        "localId": "017",
-        "setCode": "pop5",
-        "cardNumber": "17/17",
-        "cardName": "Umbreon ★",
-        "fullDisplayName": "Umbreon ★ 17/17 POP Series 5",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            197
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop5-017-low.png",
-        "imageHighSrc": "cards/pop5-017-high.png",
-        "attacks": [
-            {
-                "name": "Feint Attack",
-                "damage": null
-            }
-        ],
-        "rules": "You can't have more than 1 Pokémon Star in your deck."
-    },
-    {
-        "masterCardId": "9248",
-        "externalId": "pop5-16",
-        "localId": "016",
-        "setCode": "pop5",
-        "cardNumber": "16/17",
-        "cardName": "Espeon ★",
-        "fullDisplayName": "Espeon ★ 16/17 POP Series 5",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            196
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop5-016-low.png",
-        "imageHighSrc": "cards/pop5-016-high.png",
-        "attacks": [
-            {
-                "name": "Psychic Boom",
-                "damage": "30+"
-            }
-        ],
-        "rules": "You can't have more than 1 Pokémon Star in your deck."
-    },
-    {
-        "masterCardId": "9242",
-        "externalId": "pop5-15",
-        "localId": "015",
-        "setCode": "pop5",
-        "cardNumber": "15/17",
-        "cardName": "Zangoose δ",
-        "fullDisplayName": "Zangoose δ 15/17 POP Series 5",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            335
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/pop5-015-low.png",
-        "imageHighSrc": "cards/pop5-015-high.png",
-        "attacks": [
-            {
-                "name": "Detect",
-                "damage": null
-            },
-            {
-                "name": "Metal Claw",
-                "damage": "40"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9233",
-        "externalId": "pop5-14",
-        "localId": "014",
-        "setCode": "pop5",
-        "cardNumber": "14/17",
-        "cardName": "Pelipper δ",
-        "fullDisplayName": "Pelipper δ 14/17 POP Series 5",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            279
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/pop5-014-low.png",
-        "imageHighSrc": "cards/pop5-014-high.png",
-        "attacks": [
-            {
-                "name": "Lightning Wing",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9224",
-        "externalId": "pop5-13",
-        "localId": "013",
-        "setCode": "pop5",
-        "cardNumber": "13/17",
-        "cardName": "Pikachu δ",
-        "fullDisplayName": "Pikachu δ 13/17 POP Series 5",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            25
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ryo Ueda",
-        "imageLowSrc": "cards/pop5-013-low.png",
-        "imageHighSrc": "cards/pop5-013-high.png",
-        "attacks": [
-            {
-                "name": "Electric Punch",
-                "damage": "10"
-            },
-            {
-                "name": "Heavy Metal",
-                "damage": "10+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9211",
-        "externalId": "pop5-12",
-        "localId": "012",
-        "setCode": "pop5",
-        "cardNumber": "12/17",
-        "cardName": "Pikachu",
-        "fullDisplayName": "Pikachu 12/17 POP Series 5",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            25
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Naoyo Kimura",
-        "imageLowSrc": "cards/pop5-012-low.png",
-        "imageHighSrc": "cards/pop5-012-high.png",
-        "attacks": [
-            {
-                "name": "Lightning Ball",
-                "damage": "10"
-            },
-            {
-                "name": "Thunderbolt",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9201",
-        "externalId": "pop5-11",
-        "localId": "011",
-        "setCode": "pop5",
-        "cardNumber": "11/17",
-        "cardName": "Meowth δ",
-        "fullDisplayName": "Meowth δ 11/17 POP Series 5",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            52
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/pop5-011-low.png",
-        "imageHighSrc": "cards/pop5-011-high.png",
-        "attacks": [
-            {
-                "name": "Feint Attack",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "9192",
-        "externalId": "pop5-10",
-        "localId": "010",
-        "setCode": "pop5",
-        "cardNumber": "10/17",
-        "cardName": "Charmander δ",
-        "fullDisplayName": "Charmander δ 10/17 POP Series 5",
-        "rarity": "Common",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            4
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/pop5-010-low.png",
-        "imageHighSrc": "cards/pop5-010-high.png",
-        "attacks": [
-            {
-                "name": "Scratch",
-                "damage": "10"
-            },
-            {
-                "name": "Bite",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9185",
-        "externalId": "pop5-9",
-        "localId": "009",
-        "setCode": "pop5",
-        "cardNumber": "9/17",
-        "cardName": "δ Rainbow Energy",
-        "fullDisplayName": "δ Rainbow Energy 9/17 POP Series 5",
-        "rarity": "Uncommon",
-        "category": "Energy",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": "Special",
-        "regulationMark": null,
-        "artist": "Takumi Akabane",
-        "imageLowSrc": "cards/pop5-009-low.png",
-        "imageHighSrc": "cards/pop5-009-high.png",
-        "rules": "δ Rainbow Energy provides Colorless Energy. While attached to a Pokémon that has δ on its card, δ Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.)"
-    },
-    {
-        "masterCardId": "9174",
-        "externalId": "pop5-8",
-        "localId": "008",
-        "setCode": "pop5",
-        "cardNumber": "8/17",
-        "cardName": "Boost Energy",
-        "fullDisplayName": "Boost Energy 8/17 POP Series 5",
-        "rarity": "Uncommon",
-        "category": "Energy",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": "Special",
-        "regulationMark": null,
-        "artist": "Shin-ichi Yoshikawa",
-        "imageLowSrc": "cards/pop5-008-low.png",
-        "imageHighSrc": "cards/pop5-008-high.png",
-        "rules": "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy."
-    },
-    {
-        "masterCardId": "9165",
-        "externalId": "pop5-7",
-        "localId": "007",
-        "setCode": "pop5",
-        "cardNumber": "7/17",
-        "cardName": "Rare Candy",
-        "fullDisplayName": "Rare Candy 7/17 POP Series 5",
-        "rarity": "Uncommon",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Item",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ryo Ueda",
-        "imageLowSrc": "cards/pop5-007-low.png",
-        "imageHighSrc": "cards/pop5-007-high.png",
-        "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pokémon in your hand, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.)"
-    },
-    {
-        "masterCardId": "9158",
-        "externalId": "pop5-6",
-        "localId": "006",
-        "setCode": "pop5",
-        "cardNumber": "6/17",
-        "cardName": "Bill's Maintenance",
-        "fullDisplayName": "Bill's Maintenance 6/17 POP Series 5",
-        "rarity": "Uncommon",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": "Supporter",
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/pop5-006-low.png",
-        "imageHighSrc": "cards/pop5-006-high.png",
-        "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nIf you have any cards in your hand, shuffle 1 of them into your deck, then draw 3 cards."
-    },
-    {
-        "masterCardId": "9150",
-        "externalId": "pop5-5",
-        "localId": "005",
-        "setCode": "pop5",
-        "cardNumber": "5/17",
-        "cardName": "Charmeleon δ",
-        "fullDisplayName": "Charmeleon δ 5/17 POP Series 5",
-        "rarity": "Uncommon",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            5
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/pop5-005-low.png",
-        "imageHighSrc": "cards/pop5-005-high.png",
-        "attacks": [
-            {
-                "name": "Slash",
-                "damage": "20"
-            },
-            {
-                "name": "Thunder Jolt",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9140",
-        "externalId": "pop5-4",
-        "localId": "004",
-        "setCode": "pop5",
-        "cardNumber": "4/17",
-        "cardName": "Double Rainbow Energy",
-        "fullDisplayName": "Double Rainbow Energy 4/17 POP Series 5",
-        "rarity": "Rare",
-        "category": "Energy",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": "Special",
-        "regulationMark": null,
-        "artist": "Takumi Akabane",
-        "imageLowSrc": "cards/pop5-004-low.png",
-        "imageHighSrc": "cards/pop5-004-high.png",
-        "rules": "Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (before applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy."
-    },
-    {
-        "masterCardId": "9131",
-        "externalId": "pop5-3",
-        "localId": "003",
-        "setCode": "pop5",
-        "cardNumber": "3/17",
-        "cardName": "Mew δ",
-        "fullDisplayName": "Mew δ 3/17 POP Series 5",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            151
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/pop5-003-low.png",
-        "imageHighSrc": "cards/pop5-003-high.png",
-        "attacks": [
-            {
-                "name": "Copy",
-                "damage": null
-            },
-            {
-                "name": "Extra Draw",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "9123",
-        "externalId": "pop5-2",
-        "localId": "002",
-        "setCode": "pop5",
-        "cardNumber": "2/17",
-        "cardName": "Lugia",
-        "fullDisplayName": "Lugia 2/17 POP Series 5",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            249
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/pop5-002-low.png",
-        "imageHighSrc": "cards/pop5-002-high.png",
-        "attacks": [
-            {
-                "name": "Super Psy Bolt",
-                "damage": "20"
-            },
-            {
-                "name": "Aerowing",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "9109",
-        "externalId": "pop5-1",
-        "localId": "001",
-        "setCode": "pop5",
-        "cardNumber": "1/17",
-        "cardName": "Ho-Oh",
-        "fullDisplayName": "Ho-Oh 1/17 POP Series 5",
-        "rarity": "Rare",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            250
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Mitsuhiro Arita",
-        "imageLowSrc": "cards/pop5-001-low.png",
-        "imageHighSrc": "cards/pop5-001-high.png",
-        "attacks": [
-            {
-                "name": "Fire Wing",
-                "damage": "20"
-            },
-            {
-                "name": "Fire Blast",
-                "damage": "60"
-            }
-        ]
-    }
+  {
+    "masterCardId": "9258",
+    "externalId": "pop5-17",
+    "localId": "017",
+    "setCode": "pop5",
+    "cardNumber": "17/17",
+    "cardName": "Umbreon ★",
+    "fullDisplayName": "Umbreon ★ 17/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      197
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop5-017-low.png",
+    "imageHighSrc": "cards/pop5-017-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null,
+        "cost": [],
+        "effect": "Choose 1 of your opponent's Pokémon. This attack does 30 damage to that Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, or any other effects on that Pokémon."
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck.",
+    "subtype": "Basic, Star",
+    "weakness": "Fighting ×2",
+    "resistance": "Psychic -30",
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9248",
+    "externalId": "pop5-16",
+    "localId": "016",
+    "setCode": "pop5",
+    "cardNumber": "16/17",
+    "cardName": "Espeon ★",
+    "fullDisplayName": "Espeon ★ 16/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      196
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop5-016-low.png",
+    "imageHighSrc": "cards/pop5-016-high.png",
+    "attacks": [
+      {
+        "name": "Psychic Boom",
+        "damage": "30+",
+        "cost": [],
+        "effect": "Does 30 damage plus 10 more damage for each Energy attached to the Defending Pokémon."
+      }
+    ],
+    "rules": "You can't have more than 1 Pokémon Star in your deck.",
+    "subtype": "Basic, Star",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9242",
+    "externalId": "pop5-15",
+    "localId": "015",
+    "setCode": "pop5",
+    "cardNumber": "15/17",
+    "cardName": "Zangoose δ",
+    "fullDisplayName": "Zangoose δ 15/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      335
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/pop5-015-low.png",
+    "imageHighSrc": "cards/pop5-015-high.png",
+    "attacks": [
+      {
+        "name": "Detect",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, prevent all effects of an attack, including damage, done to Zangoose during your opponent's next turn."
+      },
+      {
+        "name": "Metal Claw",
+        "damage": "40",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9233",
+    "externalId": "pop5-14",
+    "localId": "014",
+    "setCode": "pop5",
+    "cardNumber": "14/17",
+    "cardName": "Pelipper δ",
+    "fullDisplayName": "Pelipper δ 14/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      279
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/pop5-014-low.png",
+    "imageHighSrc": "cards/pop5-014-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Wing",
+        "damage": "50",
+        "cost": [],
+        "effect": "Does 10 damage to 1 of your Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Lightning ×2",
+    "resistance": "Fighting -30",
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9224",
+    "externalId": "pop5-13",
+    "localId": "013",
+    "setCode": "pop5",
+    "cardNumber": "13/17",
+    "cardName": "Pikachu δ",
+    "fullDisplayName": "Pikachu δ 13/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      25
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ryo Ueda",
+    "imageLowSrc": "cards/pop5-013-low.png",
+    "imageHighSrc": "cards/pop5-013-high.png",
+    "attacks": [
+      {
+        "name": "Electric Punch",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Heavy Metal",
+        "damage": "10+",
+        "cost": [],
+        "effect": "Flip a coin for each Metal Energy attached to Pikachu. This attack does 10 damage plus 20 more damage for each heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9211",
+    "externalId": "pop5-12",
+    "localId": "012",
+    "setCode": "pop5",
+    "cardNumber": "12/17",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 12/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Naoyo Kimura",
+    "imageLowSrc": "cards/pop5-012-low.png",
+    "imageHighSrc": "cards/pop5-012-high.png",
+    "attacks": [
+      {
+        "name": "Lightning Ball",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Thunderbolt",
+        "damage": "50",
+        "cost": [],
+        "effect": "Discard all Energy cards attached to Pikachu."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9201",
+    "externalId": "pop5-11",
+    "localId": "011",
+    "setCode": "pop5",
+    "cardNumber": "11/17",
+    "cardName": "Meowth δ",
+    "fullDisplayName": "Meowth δ 11/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      52
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/pop5-011-low.png",
+    "imageHighSrc": "cards/pop5-011-high.png",
+    "attacks": [
+      {
+        "name": "Feint Attack",
+        "damage": null,
+        "cost": [],
+        "effect": "Choose 1 of your opponent's Pokémon. This attack does 10 damage to that Pokémon. This attack's damage isn't affected by Weakness, Resistance, Poké-Powers, Poké-Bodies, or any other effects on that Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9192",
+    "externalId": "pop5-10",
+    "localId": "010",
+    "setCode": "pop5",
+    "cardNumber": "10/17",
+    "cardName": "Charmander δ",
+    "fullDisplayName": "Charmander δ 10/17 POP Series 5",
+    "rarity": "Common",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      4
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/pop5-010-low.png",
+    "imageHighSrc": "cards/pop5-010-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Bite",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9185",
+    "externalId": "pop5-9",
+    "localId": "009",
+    "setCode": "pop5",
+    "cardNumber": "9/17",
+    "cardName": "δ Rainbow Energy",
+    "fullDisplayName": "δ Rainbow Energy 9/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "artist": "Takumi Akabane",
+    "imageLowSrc": "cards/pop5-009-low.png",
+    "imageHighSrc": "cards/pop5-009-high.png",
+    "rules": "δ Rainbow Energy provides Colorless Energy. While attached to a Pokémon that has δ on its card, δ Rainbow Energy provides every type of Energy but provides only 1 Energy at a time. (Has no effect other than providing Energy.)",
+    "subtype": "Special",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9174",
+    "externalId": "pop5-8",
+    "localId": "008",
+    "setCode": "pop5",
+    "cardNumber": "8/17",
+    "cardName": "Boost Energy",
+    "fullDisplayName": "Boost Energy 8/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Energy",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "artist": "Shin-ichi Yoshikawa",
+    "imageLowSrc": "cards/pop5-008-low.png",
+    "imageHighSrc": "cards/pop5-008-high.png",
+    "rules": "Boost Energy can be attached only to an Evolved Pokémon. Discard Boost Energy at the end of the turn it was attached. Boost Energy provides ColorlessColorlessColorless Energy. The Pokémon Boost Energy is attached to can't retreat. If the Pokémon Boost Energy is attached to isn't an Evolved Pokémon, discard Boost Energy.",
+    "subtype": "Special",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9165",
+    "externalId": "pop5-7",
+    "localId": "007",
+    "setCode": "pop5",
+    "cardNumber": "7/17",
+    "cardName": "Rare Candy",
+    "fullDisplayName": "Rare Candy 7/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Item",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ryo Ueda",
+    "imageLowSrc": "cards/pop5-007-low.png",
+    "imageHighSrc": "cards/pop5-007-high.png",
+    "rules": "Choose 1 of your Basic Pokémon in play. If you have a Stage 1 or Stage 2 card that evolves from that Pokémon in your hand, put that card on the Basic Pokémon. (This counts as evolving that Pokémon.)",
+    "subtype": "Item",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9158",
+    "externalId": "pop5-6",
+    "localId": "006",
+    "setCode": "pop5",
+    "cardNumber": "6/17",
+    "cardName": "Bill's Maintenance",
+    "fullDisplayName": "Bill's Maintenance 6/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": "Supporter",
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/pop5-006-low.png",
+    "imageHighSrc": "cards/pop5-006-high.png",
+    "rules": "You can play only one Supporter card each turn. When you play this card, put it next to your Active Pokémon. When your turn ends, discard this card.\n\nIf you have any cards in your hand, shuffle 1 of them into your deck, then draw 3 cards.",
+    "subtype": "Supporter",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9150",
+    "externalId": "pop5-5",
+    "localId": "005",
+    "setCode": "pop5",
+    "cardNumber": "5/17",
+    "cardName": "Charmeleon δ",
+    "fullDisplayName": "Charmeleon δ 5/17 POP Series 5",
+    "rarity": "Uncommon",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      5
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/pop5-005-low.png",
+    "imageHighSrc": "cards/pop5-005-high.png",
+    "attacks": [
+      {
+        "name": "Slash",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Thunder Jolt",
+        "damage": "50",
+        "cost": [],
+        "effect": "Flip a coin. If tails, Charmeleon does 10 damage to itself."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9140",
+    "externalId": "pop5-4",
+    "localId": "004",
+    "setCode": "pop5",
+    "cardNumber": "4/17",
+    "cardName": "Double Rainbow Energy",
+    "fullDisplayName": "Double Rainbow Energy 4/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Energy",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": "Special",
+    "regulationMark": null,
+    "artist": "Takumi Akabane",
+    "imageLowSrc": "cards/pop5-004-low.png",
+    "imageHighSrc": "cards/pop5-004-high.png",
+    "rules": "Double Rainbow Energy can be attached only to an Evolved Pokémon (excluding Pokémon-ex). While in play, Double Rainbow Energy provides every type of Energy but provides 2 Energy at a time. (Has no effect other than providing Energy.) Damage done to your opponent's Pokémon by the Pokémon Double Rainbow Energy is attached to is reduced by 10 (before applying Weakness and Resistance). When the Pokémon Double Rainbow Energy is attached to is no longer an Evolved Pokémon, discard Double Rainbow Energy.",
+    "subtype": "Special",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9131",
+    "externalId": "pop5-3",
+    "localId": "003",
+    "setCode": "pop5",
+    "cardNumber": "3/17",
+    "cardName": "Mew δ",
+    "fullDisplayName": "Mew δ 3/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      151
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/pop5-003-low.png",
+    "imageHighSrc": "cards/pop5-003-high.png",
+    "attacks": [
+      {
+        "name": "Copy",
+        "damage": null,
+        "cost": [],
+        "effect": "Choose 1 of the Defending Pokémon's attacks. Copy copies that attack. This attack does nothing if Mew doesn't have the Energy necessary to use that attack. (You must still do anything else required for that attack.) Mew performs that attack."
+      },
+      {
+        "name": "Extra Draw",
+        "damage": null,
+        "cost": [],
+        "effect": "If your opponent has any Pokémon-ex in play, search your deck for up to 2 basic Energy cards and attach them to Mew. Shuffle your deck afterward."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9123",
+    "externalId": "pop5-2",
+    "localId": "002",
+    "setCode": "pop5",
+    "cardNumber": "2/17",
+    "cardName": "Lugia",
+    "fullDisplayName": "Lugia 2/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      249
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/pop5-002-low.png",
+    "imageHighSrc": "cards/pop5-002-high.png",
+    "attacks": [
+      {
+        "name": "Super Psy Bolt",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Aerowing",
+        "damage": "30",
+        "cost": [],
+        "effect": "Before doing damage, you may flip a coin. If tails, this attack does nothing. If heads, this attack does 60 damage instead."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  },
+  {
+    "masterCardId": "9109",
+    "externalId": "pop5-1",
+    "localId": "001",
+    "setCode": "pop5",
+    "cardNumber": "1/17",
+    "cardName": "Ho-Oh",
+    "fullDisplayName": "Ho-Oh 1/17 POP Series 5",
+    "rarity": "Rare",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      250
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Mitsuhiro Arita",
+    "imageLowSrc": "cards/pop5-001-low.png",
+    "imageHighSrc": "cards/pop5-001-high.png",
+    "attacks": [
+      {
+        "name": "Fire Wing",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Fire Blast",
+        "damage": "60",
+        "cost": [],
+        "effect": "Discard a Fire Energy attached to Ho-Oh."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "holofoil",
+      "normal"
+    ]
+  }
 ]

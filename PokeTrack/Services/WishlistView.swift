@@ -161,6 +161,10 @@ struct WishlistItemRow: View {
                         .foregroundStyle(.secondary)
                         .lineLimit(2)
                 }
+
+                Text(item.variantKey)
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
                 
                 Text("Added \(item.dateAdded.formatted(date: .abbreviated, time: .omitted))")
                     .font(.caption2)
@@ -183,7 +187,7 @@ struct WishlistItemRow: View {
     private func formatPrice(_ usd: Double) -> String {
         services.priceDisplay.currency.format(
             amountUSD: usd,
-            usdToGbp: services.pricing.usdToGbpRate
+            usdToGbp: services.pricing.usdToGbp
         )
     }
 }
@@ -195,6 +199,8 @@ struct AddToWishlistSheet: View {
     @Environment(AppServices.self) private var services
     
     @State private var cardID: String = ""
+    /// Scrydex-style key, e.g. `normal`, `holofoil` (matches card pricing JSON).
+    @State private var variantKey: String = "normal"
     @State private var notes: String = ""
     @State private var errorMessage: String?
     
@@ -203,6 +209,10 @@ struct AddToWishlistSheet: View {
             Form {
                 Section("Card") {
                     TextField("Card ID (e.g., sv3pt5-1)", text: $cardID)
+                        .textInputAutocapitalization(.never)
+                        .autocorrectionDisabled()
+
+                    TextField("Variant (e.g. normal, holofoil)", text: $variantKey)
                         .textInputAutocapitalization(.never)
                         .autocorrectionDisabled()
                     
@@ -245,7 +255,11 @@ struct AddToWishlistSheet: View {
         guard let wishlistService = services.wishlist else { return }
         
         do {
-            try wishlistService.addItem(cardID: cardID.trimmingCharacters(in: .whitespaces), notes: notes)
+            try wishlistService.addItem(
+                cardID: cardID.trimmingCharacters(in: .whitespaces),
+                variantKey: variantKey.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "normal" : variantKey.trimmingCharacters(in: .whitespacesAndNewlines),
+                notes: notes
+            )
             dismiss()
         } catch {
             errorMessage = error.localizedDescription

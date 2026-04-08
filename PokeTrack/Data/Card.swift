@@ -1,10 +1,14 @@
 import Foundation
 
-/// One attack line from the card (name + optional damage); used for catalog search and scanner matching.
+/// One attack line from the card; used for catalog search and scanner matching.
 struct CardAttack: Codable, Hashable, Sendable {
     let name: String
     /// Damage as printed, e.g. `"80"`, `"120+"`, or null when none.
     let damage: String?
+    /// Energy cost symbols, e.g. `["Fire", "Colorless"]`.
+    let cost: [String]?
+    /// Effect text describing what the attack does.
+    let effect: String?
 }
 
 struct Card: Codable, Identifiable, Hashable, Sendable {
@@ -37,12 +41,20 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
     let attacks: [CardAttack]?
     /// Trainer / Special Energy rules text from the center of the card.
     let rules: String?
+    /// Subtype as a comma-separated string, e.g. "Stage 2, MEGA, ex".
+    let subtype: String?
+    let weakness: String?
+    let resistance: String?
+    let retreatCost: Int?
+    let flavorText: String?
+    /// Available pricing variant keys for this card, e.g. ["holofoil", "reverseHolofoil"].
+    let pricingVariants: [String]?
 
     enum CodingKeys: String, CodingKey {
         case masterCardId, externalId, tcgdex_id, tcgdexId, localId, setCode, setTcgdexId, cardNumber, cardName
         case fullDisplayName, rarity, category, stage, hp, elementTypes, dexIds, subtypes
         case trainerType, energyType, regulationMark, evolveFrom, artist, imageLowSrc, imageHighSrc
-        case attacks, rules
+        case attacks, rules, subtype, weakness, resistance, retreatCost, flavorText, pricingVariants
     }
 
     init(from decoder: Decoder) throws {
@@ -73,6 +85,12 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         imageHighSrc = try c.decodeIfPresent(String.self, forKey: .imageHighSrc)
         attacks = try c.decodeIfPresent([CardAttack].self, forKey: .attacks)
         rules = try c.decodeIfPresent(String.self, forKey: .rules)
+        subtype = try c.decodeIfPresent(String.self, forKey: .subtype)
+        weakness = try c.decodeIfPresent(String.self, forKey: .weakness)
+        resistance = try c.decodeIfPresent(String.self, forKey: .resistance)
+        retreatCost = try c.decodeIfPresent(Int.self, forKey: .retreatCost)
+        flavorText = try c.decodeIfPresent(String.self, forKey: .flavorText)
+        pricingVariants = try c.decodeIfPresent([String].self, forKey: .pricingVariants)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -102,6 +120,12 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         try c.encodeIfPresent(imageHighSrc, forKey: .imageHighSrc)
         try c.encodeIfPresent(attacks, forKey: .attacks)
         try c.encodeIfPresent(rules, forKey: .rules)
+        try c.encodeIfPresent(subtype, forKey: .subtype)
+        try c.encodeIfPresent(weakness, forKey: .weakness)
+        try c.encodeIfPresent(resistance, forKey: .resistance)
+        try c.encodeIfPresent(retreatCost, forKey: .retreatCost)
+        try c.encodeIfPresent(flavorText, forKey: .flavorText)
+        try c.encodeIfPresent(pricingVariants, forKey: .pricingVariants)
     }
 
     /// Text included in inverted-index search: name/number/set, **HP**, **attacks** (Pokémon), **rules** (Trainers — often long).

@@ -1,382 +1,512 @@
 [
-    {
-        "masterCardId": "6841",
-        "externalId": "mcd11-12",
-        "localId": "012",
-        "setCode": "mcd11",
-        "cardNumber": "12/12",
-        "cardName": "Audino",
-        "fullDisplayName": "Audino 12/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            531
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "MAHOU",
-        "imageLowSrc": "cards/mcd11-012-low.png",
-        "imageHighSrc": "cards/mcd11-012-high.png",
-        "attacks": [
-            {
-                "name": "Double Slap",
-                "damage": "30×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6834",
-        "externalId": "mcd11-11",
-        "localId": "011",
-        "setCode": "mcd11",
-        "cardNumber": "11/12",
-        "cardName": "Pidove",
-        "fullDisplayName": "Pidove 11/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 40,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            519
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/mcd11-011-low.png",
-        "imageHighSrc": "cards/mcd11-011-high.png",
-        "attacks": [
-            {
-                "name": "Growl",
-                "damage": null
-            },
-            {
-                "name": "Gust",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6826",
-        "externalId": "mcd11-10",
-        "localId": "010",
-        "setCode": "mcd11",
-        "cardNumber": "10/12",
-        "cardName": "Klink",
-        "fullDisplayName": "Klink 10/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            599
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/mcd11-010-low.png",
-        "imageHighSrc": "cards/mcd11-010-high.png",
-        "attacks": [
-            {
-                "name": "Charge Beam",
-                "damage": "10"
-            },
-            {
-                "name": "Irongrip",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6818",
-        "externalId": "mcd11-9",
-        "localId": "009",
-        "setCode": "mcd11",
-        "cardNumber": "9/12",
-        "cardName": "Zorua",
-        "fullDisplayName": "Zorua 9/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            570
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/mcd11-009-low.png",
-        "imageHighSrc": "cards/mcd11-009-high.png",
-        "attacks": [
-            {
-                "name": "Scratch",
-                "damage": "10"
-            },
-            {
-                "name": "Fury Swipes",
-                "damage": "10×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6812",
-        "externalId": "mcd11-8",
-        "localId": "008",
-        "setCode": "mcd11",
-        "cardNumber": "8/12",
-        "cardName": "Sandile",
-        "fullDisplayName": "Sandile 8/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            551
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/mcd11-008-low.png",
-        "imageHighSrc": "cards/mcd11-008-high.png",
-        "attacks": [
-            {
-                "name": "Sand Tomb",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6804",
-        "externalId": "mcd11-7",
-        "localId": "007",
-        "setCode": "mcd11",
-        "cardNumber": "7/12",
-        "cardName": "Munna",
-        "fullDisplayName": "Munna 7/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            517
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/mcd11-007-low.png",
-        "imageHighSrc": "cards/mcd11-007-high.png",
-        "attacks": [
-            {
-                "name": "Yawn",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "6795",
-        "externalId": "mcd11-6",
-        "localId": "006",
-        "setCode": "mcd11",
-        "cardNumber": "6/12",
-        "cardName": "Blitzle",
-        "fullDisplayName": "Blitzle 6/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            522
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/mcd11-006-low.png",
-        "imageHighSrc": "cards/mcd11-006-high.png",
-        "attacks": [
-            {
-                "name": "Quick Attack",
-                "damage": "10+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6788",
-        "externalId": "mcd11-5",
-        "localId": "005",
-        "setCode": "mcd11",
-        "cardNumber": "5/12",
-        "cardName": "Alomomola",
-        "fullDisplayName": "Alomomola 5/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            594
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "sui",
-        "imageLowSrc": "cards/mcd11-005-low.png",
-        "imageHighSrc": "cards/mcd11-005-high.png",
-        "attacks": [
-            {
-                "name": "Pound",
-                "damage": "20"
-            },
-            {
-                "name": "Wave Splash",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6781",
-        "externalId": "mcd11-4",
-        "localId": "004",
-        "setCode": "mcd11",
-        "cardNumber": "4/12",
-        "cardName": "Oshawott",
-        "fullDisplayName": "Oshawott 4/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            501
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/mcd11-004-low.png",
-        "imageHighSrc": "cards/mcd11-004-high.png",
-        "attacks": [
-            {
-                "name": "Water Pulse",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6766",
-        "externalId": "mcd11-3",
-        "localId": "003",
-        "setCode": "mcd11",
-        "cardNumber": "3/12",
-        "cardName": "Tepig",
-        "fullDisplayName": "Tepig 3/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            498
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/mcd11-003-low.png",
-        "imageHighSrc": "cards/mcd11-003-high.png",
-        "attacks": [
-            {
-                "name": "Ember",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6752",
-        "externalId": "mcd11-2",
-        "localId": "002",
-        "setCode": "mcd11",
-        "cardNumber": "2/12",
-        "cardName": "Maractus",
-        "fullDisplayName": "Maractus 2/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            556
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kagemaru Himeno",
-        "imageLowSrc": "cards/mcd11-002-low.png",
-        "imageHighSrc": "cards/mcd11-002-high.png",
-        "attacks": [
-            {
-                "name": "Mega Drain",
-                "damage": "20"
-            },
-            {
-                "name": "Pin Missile",
-                "damage": "20×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6738",
-        "externalId": "mcd11-1",
-        "localId": "001",
-        "setCode": "mcd11",
-        "cardNumber": "1/12",
-        "cardName": "Snivy",
-        "fullDisplayName": "Snivy 1/12 Macdonald's Collection 2011",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            495
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/mcd11-001-low.png",
-        "imageHighSrc": "cards/mcd11-001-high.png",
-        "attacks": [
-            {
-                "name": "Slam",
-                "damage": "20×"
-            }
-        ]
-    }
+  {
+    "masterCardId": "6841",
+    "externalId": "mcd11-12",
+    "localId": "012",
+    "setCode": "mcd11",
+    "cardNumber": "12/12",
+    "cardName": "Audino",
+    "fullDisplayName": "Audino 12/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      531
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "MAHOU",
+    "imageLowSrc": "cards/mcd11-012-low.png",
+    "imageHighSrc": "cards/mcd11-012-high.png",
+    "attacks": [
+      {
+        "name": "Double Slap",
+        "damage": "30×",
+        "cost": [],
+        "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It touches others with the feelers on its ears, using the sound of their heartbeats to tell how they are feeling.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6834",
+    "externalId": "mcd11-11",
+    "localId": "011",
+    "setCode": "mcd11",
+    "cardNumber": "11/12",
+    "cardName": "Pidove",
+    "fullDisplayName": "Pidove 11/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 40,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      519
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/mcd11-011-low.png",
+    "imageHighSrc": "cards/mcd11-011-high.png",
+    "attacks": [
+      {
+        "name": "Growl",
+        "damage": null,
+        "cost": [],
+        "effect": "During your opponent's next turn, any damage done by attacks from the Defending Pokémon is reduced by 20 (before applying Weakness and Resistance)."
+      },
+      {
+        "name": "Gust",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": "Fighting -20",
+    "retreatCost": 1,
+    "flavorText": "These Pokémon live in cities. They are accustomed to people. Flocks often gather in parks and plazas.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6826",
+    "externalId": "mcd11-10",
+    "localId": "010",
+    "setCode": "mcd11",
+    "cardNumber": "10/12",
+    "cardName": "Klink",
+    "fullDisplayName": "Klink 10/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      599
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/mcd11-010-low.png",
+    "imageHighSrc": "cards/mcd11-010-high.png",
+    "attacks": [
+      {
+        "name": "Charge Beam",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip a coin. If heads, attach an Energy card from your discard pile to this Pokémon."
+      },
+      {
+        "name": "Irongrip",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": "Psychic -20",
+    "retreatCost": 1,
+    "flavorText": "The two minigears that mesh together are predetermined. Each will rebound from other minigears without meshing.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6818",
+    "externalId": "mcd11-9",
+    "localId": "009",
+    "setCode": "mcd11",
+    "cardNumber": "9/12",
+    "cardName": "Zorua",
+    "fullDisplayName": "Zorua 9/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      570
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/mcd11-009-low.png",
+    "imageHighSrc": "cards/mcd11-009-high.png",
+    "attacks": [
+      {
+        "name": "Scratch",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Fury Swipes",
+        "damage": "10×",
+        "cost": [],
+        "effect": "Flip 3 coins. This attack does 10 damage times the number of heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": "Psychic -20",
+    "retreatCost": 1,
+    "flavorText": "It changes into the forms of others to surprise them. Apparently, it often transforms into a silent child.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6812",
+    "externalId": "mcd11-8",
+    "localId": "008",
+    "setCode": "mcd11",
+    "cardNumber": "8/12",
+    "cardName": "Sandile",
+    "fullDisplayName": "Sandile 8/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      551
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/mcd11-008-low.png",
+    "imageHighSrc": "cards/mcd11-008-high.png",
+    "attacks": [
+      {
+        "name": "Sand Tomb",
+        "damage": "30",
+        "cost": [],
+        "effect": "The Defending Pokémon can't retreat during your opponent's next turn."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It moves along below the sand's surface, except for its nose and eyes. A dark membrane shields its eyes from the sun.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6804",
+    "externalId": "mcd11-7",
+    "localId": "007",
+    "setCode": "mcd11",
+    "cardNumber": "7/12",
+    "cardName": "Munna",
+    "fullDisplayName": "Munna 7/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      517
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/mcd11-007-low.png",
+    "imageHighSrc": "cards/mcd11-007-high.png",
+    "attacks": [
+      {
+        "name": "Yawn",
+        "damage": null,
+        "cost": [],
+        "effect": "The Defending Pokémon is now Asleep."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It eats the dreams of people and Pokémon. When it eats a pleasant dream, it expels pink-colored mist.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6795",
+    "externalId": "mcd11-6",
+    "localId": "006",
+    "setCode": "mcd11",
+    "cardNumber": "6/12",
+    "cardName": "Blitzle",
+    "fullDisplayName": "Blitzle 6/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      522
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/mcd11-006-low.png",
+    "imageHighSrc": "cards/mcd11-006-high.png",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 20 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Its mane shines when it discharges electricity. They use their flashing manes to communicate with one another.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6788",
+    "externalId": "mcd11-5",
+    "localId": "005",
+    "setCode": "mcd11",
+    "cardNumber": "5/12",
+    "cardName": "Alomomola",
+    "fullDisplayName": "Alomomola 5/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      594
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "sui",
+    "imageLowSrc": "cards/mcd11-005-low.png",
+    "imageHighSrc": "cards/mcd11-005-high.png",
+    "attacks": [
+      {
+        "name": "Pound",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Wave Splash",
+        "damage": "60",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "Floating in the open sea is how they live. When they find a wounded Pokémon, they embrace it and bring it to shore.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6781",
+    "externalId": "mcd11-4",
+    "localId": "004",
+    "setCode": "mcd11",
+    "cardNumber": "4/12",
+    "cardName": "Oshawott",
+    "fullDisplayName": "Oshawott 4/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      501
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/mcd11-004-low.png",
+    "imageHighSrc": "cards/mcd11-004-high.png",
+    "attacks": [
+      {
+        "name": "Water Pulse",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Asleep."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It fights using the scalchop on its stomach. In response to an attack, it retaliates immediately by slashing.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6766",
+    "externalId": "mcd11-3",
+    "localId": "003",
+    "setCode": "mcd11",
+    "cardNumber": "3/12",
+    "cardName": "Tepig",
+    "fullDisplayName": "Tepig 3/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      498
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/mcd11-003-low.png",
+    "imageHighSrc": "cards/mcd11-003-high.png",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "30",
+        "cost": [],
+        "effect": "Discard an Energy attached to this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "It blows fire through its nose. When it catches a cold, the fire becomes pitch-black smoke instead.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6752",
+    "externalId": "mcd11-2",
+    "localId": "002",
+    "setCode": "mcd11",
+    "cardNumber": "2/12",
+    "cardName": "Maractus",
+    "fullDisplayName": "Maractus 2/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      556
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kagemaru Himeno",
+    "imageLowSrc": "cards/mcd11-002-low.png",
+    "imageHighSrc": "cards/mcd11-002-high.png",
+    "attacks": [
+      {
+        "name": "Mega Drain",
+        "damage": "20",
+        "cost": [],
+        "effect": "Heal 20 damage from this Pokémon."
+      },
+      {
+        "name": "Pin Missile",
+        "damage": "20×",
+        "cost": [],
+        "effect": "Flip 4 coins. This attack does 20 damage times the number of heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": "Water -20",
+    "retreatCost": 2,
+    "flavorText": "It uses an up-tempo song and dance to drive away the bird Pokémon that prey on its flower seeds.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6738",
+    "externalId": "mcd11-1",
+    "localId": "001",
+    "setCode": "mcd11",
+    "cardNumber": "1/12",
+    "cardName": "Snivy",
+    "fullDisplayName": "Snivy 1/12 Macdonald's Collection 2011",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      495
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/mcd11-001-low.png",
+    "imageHighSrc": "cards/mcd11-001-high.png",
+    "attacks": [
+      {
+        "name": "Slam",
+        "damage": "20×",
+        "cost": [],
+        "effect": "Flip 2 coins. This attack does 20 damage times the number of heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": "Water -20",
+    "retreatCost": 1,
+    "flavorText": "It is very intelligent and calm. Being exposed to lots of sunlight makes its movements swifter.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  }
 ]

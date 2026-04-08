@@ -1,390 +1,524 @@
 [
-    {
-        "masterCardId": "6839",
-        "externalId": "mcd12-12",
-        "localId": "012",
-        "setCode": "mcd12",
-        "cardNumber": "12/12",
-        "cardName": "Axew",
-        "fullDisplayName": "Axew 12/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            610
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Atsuko Nishida",
-        "imageLowSrc": "cards/mcd12-012-low.png",
-        "imageHighSrc": "cards/mcd12-012-high.png",
-        "attacks": [
-            {
-                "name": "Dual Chop",
-                "damage": "10×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6831",
-        "externalId": "mcd12-11",
-        "localId": "011",
-        "setCode": "mcd12",
-        "cardNumber": "11/12",
-        "cardName": "Klang",
-        "fullDisplayName": "Klang 11/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            600
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/mcd12-011-low.png",
-        "imageHighSrc": "cards/mcd12-011-high.png",
-        "attacks": [
-            {
-                "name": "Metal Sound",
-                "damage": null
-            },
-            {
-                "name": "Guard Press",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6824",
-        "externalId": "mcd12-10",
-        "localId": "010",
-        "setCode": "mcd12",
-        "cardNumber": "10/12",
-        "cardName": "Scraggy",
-        "fullDisplayName": "Scraggy 10/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            559
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/mcd12-010-low.png",
-        "imageHighSrc": "cards/mcd12-010-high.png",
-        "attacks": [
-            {
-                "name": "Headbutt",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6817",
-        "externalId": "mcd12-9",
-        "localId": "009",
-        "setCode": "mcd12",
-        "cardNumber": "9/12",
-        "cardName": "Purrloin",
-        "fullDisplayName": "Purrloin 9/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            509
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Atsuko Nishida",
-        "imageLowSrc": "cards/mcd12-009-low.png",
-        "imageHighSrc": "cards/mcd12-009-high.png",
-        "attacks": [
-            {
-                "name": "Knock Off",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6810",
-        "externalId": "mcd12-8",
-        "localId": "008",
-        "setCode": "mcd12",
-        "cardNumber": "8/12",
-        "cardName": "Drilbur",
-        "fullDisplayName": "Drilbur 8/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            529
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "match",
-        "imageLowSrc": "cards/mcd12-008-low.png",
-        "imageHighSrc": "cards/mcd12-008-high.png",
-        "attacks": [
-            {
-                "name": "Hone ClawsScratch",
-                "damage": "10"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6805",
-        "externalId": "mcd12-7",
-        "localId": "007",
-        "setCode": "mcd12",
-        "cardNumber": "7/12",
-        "cardName": "Woobat",
-        "fullDisplayName": "Woobat 7/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            527
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/mcd12-007-low.png",
-        "imageHighSrc": "cards/mcd12-007-high.png",
-        "attacks": [
-            {
-                "name": "Psy Bolt",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6800",
-        "externalId": "mcd12-6",
-        "localId": "006",
-        "setCode": "mcd12",
-        "cardNumber": "6/12",
-        "cardName": "Emolga",
-        "fullDisplayName": "Emolga 6/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            587
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/mcd12-006-low.png",
-        "imageHighSrc": "cards/mcd12-006-high.png",
-        "attacks": [
-            {
-                "name": "Thundershock",
-                "damage": "10"
-            },
-            {
-                "name": "Acrobatics",
-                "damage": "10+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6792",
-        "externalId": "mcd12-5",
-        "localId": "005",
-        "setCode": "mcd12",
-        "cardNumber": "5/12",
-        "cardName": "Dewott",
-        "fullDisplayName": "Dewott 5/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 90,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            502
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Masakazu Fukuda",
-        "imageLowSrc": "cards/mcd12-005-low.png",
-        "imageHighSrc": "cards/mcd12-005-high.png",
-        "attacks": [
-            {
-                "name": "Water Gun",
-                "damage": "30"
-            },
-            {
-                "name": "Razor Shell",
-                "damage": "40+"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6783",
-        "externalId": "mcd12-4",
-        "localId": "004",
-        "setCode": "mcd12",
-        "cardNumber": "4/12",
-        "cardName": "Pignite",
-        "fullDisplayName": "Pignite 4/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 100,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            499
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/mcd12-004-low.png",
-        "imageHighSrc": "cards/mcd12-004-high.png",
-        "attacks": [
-            {
-                "name": "Flame Charge",
-                "damage": null
-            },
-            {
-                "name": "Heat Crash",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6769",
-        "externalId": "mcd12-3",
-        "localId": "003",
-        "setCode": "mcd12",
-        "cardNumber": "3/12",
-        "cardName": "Dwebble",
-        "fullDisplayName": "Dwebble 3/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            557
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "MAHOU",
-        "imageLowSrc": "cards/mcd12-003-low.png",
-        "imageHighSrc": "cards/mcd12-003-high.png",
-        "attacks": [
-            {
-                "name": "Withdraw",
-                "damage": null
-            },
-            {
-                "name": "Slash",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6756",
-        "externalId": "mcd12-2",
-        "localId": "002",
-        "setCode": "mcd12",
-        "cardNumber": "2/12",
-        "cardName": "Pansage",
-        "fullDisplayName": "Pansage 2/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            511
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kouki Saitou",
-        "imageLowSrc": "cards/mcd12-002-low.png",
-        "imageHighSrc": "cards/mcd12-002-high.png",
-        "attacks": [
-            {
-                "name": "Collect",
-                "damage": null
-            },
-            {
-                "name": "Scratch",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "6740",
-        "externalId": "mcd12-1",
-        "localId": "001",
-        "setCode": "mcd12",
-        "cardNumber": "1/12",
-        "cardName": "Servine",
-        "fullDisplayName": "Servine 1/12 Macdonald's Collection 2012",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            496
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Kagemaru Himeno",
-        "imageLowSrc": "cards/mcd12-001-low.png",
-        "imageHighSrc": "cards/mcd12-001-high.png",
-        "attacks": [
-            {
-                "name": "Wrap",
-                "damage": "20"
-            },
-            {
-                "name": "Tackle",
-                "damage": "30"
-            }
-        ]
-    }
+  {
+    "masterCardId": "6839",
+    "externalId": "mcd12-12",
+    "localId": "012",
+    "setCode": "mcd12",
+    "cardNumber": "12/12",
+    "cardName": "Axew",
+    "fullDisplayName": "Axew 12/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      610
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Atsuko Nishida",
+    "imageLowSrc": "cards/mcd12-012-low.png",
+    "imageHighSrc": "cards/mcd12-012-high.png",
+    "attacks": [
+      {
+        "name": "Dual Chop",
+        "damage": "10×",
+        "cost": [],
+        "effect": "Flip 2 coins. This attack does 10 damage times the number of heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "They use their tusks to crush the berries they eat. Repeated regrowth makes their tusks strong and sharp.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6831",
+    "externalId": "mcd12-11",
+    "localId": "011",
+    "setCode": "mcd12",
+    "cardNumber": "11/12",
+    "cardName": "Klang",
+    "fullDisplayName": "Klang 11/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      600
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/mcd12-011-low.png",
+    "imageHighSrc": "cards/mcd12-011-high.png",
+    "attacks": [
+      {
+        "name": "Metal Sound",
+        "damage": null,
+        "cost": [],
+        "effect": "The Defending Pokémon is now Confused."
+      },
+      {
+        "name": "Guard Press",
+        "damage": "60",
+        "cost": [],
+        "effect": "During your opponent's next turn, any damage done to this Pokémon by attacks is reduced by 20 (after applying Weakness and Resistance)."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire ×2",
+    "resistance": "Psychic -20",
+    "retreatCost": 1,
+    "flavorText": "Spinning minigears are rotated at high speed and repeatedly fired away. It is dangerous if the gears don't return.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6824",
+    "externalId": "mcd12-10",
+    "localId": "010",
+    "setCode": "mcd12",
+    "cardNumber": "10/12",
+    "cardName": "Scraggy",
+    "fullDisplayName": "Scraggy 10/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      559
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/mcd12-010-low.png",
+    "imageHighSrc": "cards/mcd12-010-high.png",
+    "attacks": [
+      {
+        "name": "Headbutt",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": "Psychic -20",
+    "retreatCost": 1,
+    "flavorText": "Its skin has a rubbery elasticity, so it can reduce damage by defensively pulling its skin up to its neck.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6817",
+    "externalId": "mcd12-9",
+    "localId": "009",
+    "setCode": "mcd12",
+    "cardNumber": "9/12",
+    "cardName": "Purrloin",
+    "fullDisplayName": "Purrloin 9/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      509
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Atsuko Nishida",
+    "imageLowSrc": "cards/mcd12-009-low.png",
+    "imageHighSrc": "cards/mcd12-009-high.png",
+    "attacks": [
+      {
+        "name": "Knock Off",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, discard a random card from your opponent's hand."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": "Psychic -20",
+    "retreatCost": 1,
+    "flavorText": "They steal from people for fun, but their victims can't help but forgive them. Their deceptively cute act is perfect.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6810",
+    "externalId": "mcd12-8",
+    "localId": "008",
+    "setCode": "mcd12",
+    "cardNumber": "8/12",
+    "cardName": "Drilbur",
+    "fullDisplayName": "Drilbur 8/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      529
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "match",
+    "imageLowSrc": "cards/mcd12-008-low.png",
+    "imageHighSrc": "cards/mcd12-008-high.png",
+    "attacks": [
+      {
+        "name": "Hone ClawsScratch",
+        "damage": "10",
+        "cost": [],
+        "effect": "During your next turn, each of this Pokémon's attacks does 30 more damage (before applying Weakness and Resistance)."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": "Lightning -20",
+    "retreatCost": 2,
+    "flavorText": "It can dig through the ground at a speed of 30 mph. It could give a car running aboveground a good race.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6805",
+    "externalId": "mcd12-7",
+    "localId": "007",
+    "setCode": "mcd12",
+    "cardNumber": "7/12",
+    "cardName": "Woobat",
+    "fullDisplayName": "Woobat 7/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      527
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/mcd12-007-low.png",
+    "imageHighSrc": "cards/mcd12-007-high.png",
+    "attacks": [
+      {
+        "name": "Psy Bolt",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Its habitat is dark forests and caves. It emits ultrasonic waves from its nose to learn about its surroundings.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6800",
+    "externalId": "mcd12-6",
+    "localId": "006",
+    "setCode": "mcd12",
+    "cardNumber": "6/12",
+    "cardName": "Emolga",
+    "fullDisplayName": "Emolga 6/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      587
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/mcd12-006-low.png",
+    "imageHighSrc": "cards/mcd12-006-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      },
+      {
+        "name": "Acrobatics",
+        "damage": "10+",
+        "cost": [],
+        "effect": "Flip 2 coins. This attack does 20 more damage for each heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": "The energy made in its cheeks' electric pouches is stored inside its membranes and released while it is gliding.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6792",
+    "externalId": "mcd12-5",
+    "localId": "005",
+    "setCode": "mcd12",
+    "cardNumber": "5/12",
+    "cardName": "Dewott",
+    "fullDisplayName": "Dewott 5/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 90,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      502
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Masakazu Fukuda",
+    "imageLowSrc": "cards/mcd12-005-low.png",
+    "imageHighSrc": "cards/mcd12-005-high.png",
+    "attacks": [
+      {
+        "name": "Water Gun",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Razor Shell",
+        "damage": "40+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 20 more damage."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Lightning ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Scalchop techniques differ from one Dewott to another. It never neglects maintaining its scalchops.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6783",
+    "externalId": "mcd12-4",
+    "localId": "004",
+    "setCode": "mcd12",
+    "cardNumber": "4/12",
+    "cardName": "Pignite",
+    "fullDisplayName": "Pignite 4/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 100,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      499
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/mcd12-004-low.png",
+    "imageHighSrc": "cards/mcd12-004-high.png",
+    "attacks": [
+      {
+        "name": "Flame Charge",
+        "damage": null,
+        "cost": [],
+        "effect": "Search your deck for a Fire Energy card and attach it to this Pokémon. Shuffle your deck afterward."
+      },
+      {
+        "name": "Heat Crash",
+        "damage": "50",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "When its internal fire flares up, its movements grow sharper and faster. When in trouble, it emits smoke.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6769",
+    "externalId": "mcd12-3",
+    "localId": "003",
+    "setCode": "mcd12",
+    "cardNumber": "3/12",
+    "cardName": "Dwebble",
+    "fullDisplayName": "Dwebble 3/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      557
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "MAHOU",
+    "imageLowSrc": "cards/mcd12-003-low.png",
+    "imageHighSrc": "cards/mcd12-003-high.png",
+    "attacks": [
+      {
+        "name": "Withdraw",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, prevent all damage done to this Pokémon by attacks during your opponent's next turn."
+      },
+      {
+        "name": "Slash",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "The Pokémon can easily melt holes in hard rocks with a liquid secreted from its mouth.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6756",
+    "externalId": "mcd12-2",
+    "localId": "002",
+    "setCode": "mcd12",
+    "cardNumber": "2/12",
+    "cardName": "Pansage",
+    "fullDisplayName": "Pansage 2/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      511
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kouki Saitou",
+    "imageLowSrc": "cards/mcd12-002-low.png",
+    "imageHighSrc": "cards/mcd12-002-high.png",
+    "attacks": [
+      {
+        "name": "Collect",
+        "damage": null,
+        "cost": [],
+        "effect": "Draw a card."
+      },
+      {
+        "name": "Scratch",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": "Water -20",
+    "retreatCost": 1,
+    "flavorText": "This Pokémon dwells deep in the forest. Eating a leaf from its head whisks weariness away as if by magic.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "6740",
+    "externalId": "mcd12-1",
+    "localId": "001",
+    "setCode": "mcd12",
+    "cardNumber": "1/12",
+    "cardName": "Servine",
+    "fullDisplayName": "Servine 1/12 Macdonald's Collection 2012",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      496
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Kagemaru Himeno",
+    "imageLowSrc": "cards/mcd12-001-low.png",
+    "imageHighSrc": "cards/mcd12-001-high.png",
+    "attacks": [
+      {
+        "name": "Wrap",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      },
+      {
+        "name": "Tackle",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire ×2",
+    "resistance": "Water -20",
+    "retreatCost": 1,
+    "flavorText": "They avoid attacks by sinking into the shadows of thick foliage. They retaliate with masterful whipping techniques.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  }
 ]

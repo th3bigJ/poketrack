@@ -12,5 +12,15 @@
 	<string>data</string>
 	<key>POKETRACK_R2_PRICING_PREFIX</key>
 	<string></string>
+	<key>NSUbiquitousContainers</key>
+	<dict>
+		<key>iCloud.app1xy.PokeTrack</key>
+		<dict>
+			<key>NSUbiquitousContainerName</key>
+			<string>PokeTrack</string>
+			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
+			<false/>
+		</dict>
+	</dict>
 </dict>
 </plist>

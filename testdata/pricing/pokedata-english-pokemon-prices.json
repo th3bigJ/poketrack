@@ -1,5 +1,5 @@
 {
-  "scrapedAt": "2026-04-07T00:05:08.965Z",
+  "scrapedAt": "2026-04-08T00:05:06.065Z",
   "sourceUrl": "https://www.pokedata.io/products",
   "sourceApiUrl": "https://www.pokedata.io/api/products",
   "priceSource": "blended_market_value",
@@ -12,13 +12,13 @@
   "prices": {
     "1": {
       "id": 1,
-      "market_value": 497.79,
+      "market_value": 499.79,
       "currency": "USD",
       "live": true
     },
     "4": {
       "id": 4,
-      "market_value": 88.49,
+      "market_value": 89.33,
       "currency": "USD",
       "live": true
     },
@@ -30,13 +30,13 @@
     },
     "6": {
       "id": 6,
-      "market_value": 92.84,
+      "market_value": 93.24,
       "currency": "USD",
       "live": true
     },
     "9": {
       "id": 9,
-      "market_value": 120.44,
+      "market_value": 120.8,
       "currency": "USD",
       "live": true
     },
@@ -60,7 +60,7 @@
     },
     "14": {
       "id": 14,
-      "market_value": 70.39,
+      "market_value": 71.59,
       "currency": "USD",
       "live": true
     },
@@ -78,7 +78,7 @@
     },
     "17": {
       "id": 17,
-      "market_value": 74.86,
+      "market_value": 74.87,
       "currency": "USD",
       "live": true
     },
@@ -90,7 +90,7 @@
     },
     "19": {
       "id": 19,
-      "market_value": 48.57,
+      "market_value": 48.25,
       "currency": "USD",
       "live": true
     },
@@ -102,7 +102,7 @@
     },
     "22": {
       "id": 22,
-      "market_value": 115.7,
+      "market_value": 116.65,
       "currency": "USD",
       "live": true
     },
@@ -168,7 +168,7 @@
     },
     "33": {
       "id": 33,
-      "market_value": 59.33,
+      "market_value": 58.49,
       "currency": "USD",
       "live": true
     },
@@ -180,7 +180,7 @@
     },
     "36": {
       "id": 36,
-      "market_value": 49.38,
+      "market_value": 49.75,
       "currency": "USD",
       "live": true
     },
@@ -198,7 +198,7 @@
     },
     "40": {
       "id": 40,
-      "market_value": 81.75,
+      "market_value": 83.37,
       "currency": "USD",
       "live": true
     },
@@ -228,7 +228,7 @@
     },
     "45": {
       "id": 45,
-      "market_value": 107.07,
+      "market_value": 107.53,
       "currency": "USD",
       "live": true
     },
@@ -288,7 +288,7 @@
     },
     "55": {
       "id": 55,
-      "market_value": 54.3,
+      "market_value": 54.4,
       "currency": "USD",
       "live": true
     },
@@ -306,7 +306,7 @@
     },
     "58": {
       "id": 58,
-      "market_value": 105.47,
+      "market_value": 104.69,
       "currency": "USD",
       "live": true
     },
@@ -384,7 +384,7 @@
     },
     "73": {
       "id": 73,
-      "market_value": 266.83,
+      "market_value": 266.94,
       "currency": "USD",
       "live": true
     },
@@ -510,13 +510,13 @@
     },
     "97": {
       "id": 97,
-      "market_value": 2596.59,
+      "market_value": 2620.59,
       "currency": "USD",
       "live": true
     },
     "98": {
       "id": 98,
-      "market_value": 505.11,
+      "market_value": 506.51,
       "currency": "USD",
       "live": true
     },
@@ -528,13 +528,13 @@
     },
     "100": {
       "id": 100,
-      "market_value": 335.04,
+      "market_value": 333.63,
       "currency": "USD",
       "live": true
     },
     "101": {
       "id": 101,
-      "market_value": 989.24,
+      "market_value": 1004.24,
       "currency": "USD",
       "live": true
     },
@@ -552,7 +552,7 @@
     },
     "104": {
       "id": 104,
-      "market_value": 154.12,
+      "market_value": 156.25,
       "currency": "USD",
       "live": true
     },
@@ -570,7 +570,7 @@
     },
     "107": {
       "id": 107,
-      "market_value": 110.78,
+      "market_value": 112.14,
       "currency": "USD",
       "live": true
     },
@@ -588,7 +588,7 @@
     },
     "110": {
       "id": 110,
-      "market_value": 123.71,
+      "market_value": 127.43,
       "currency": "USD",
       "live": true
     },
@@ -612,7 +612,7 @@
     },
     "114": {
       "id": 114,
-      "market_value": 92.17,
+      "market_value": 92.75,
       "currency": "USD",
       "live": true
     },
@@ -630,13 +630,13 @@
     },
     "117": {
       "id": 117,
-      "market_value": 245.97,
+      "market_value": 247.37,
       "currency": "USD",
       "live": true
     },
     "118": {
       "id": 118,
-      "market_value": 224.93,
+      "market_value": 227.36,
       "currency": "USD",
       "live": true
     },
@@ -660,13 +660,13 @@
     },
     "122": {
       "id": 122,
-      "market_value": 46.16,
+      "market_value": 47.41,
       "currency": "USD",
       "live": true
     },
     "123": {
       "id": 123,
-      "market_value": 55.17,
+      "market_value": 55.44,
       "currency": "USD",
       "live": true
     },
@@ -678,7 +678,7 @@
     },
     "125": {
       "id": 125,
-      "market_value": 506.79,
+      "market_value": 508.99,
       "currency": "USD",
       "live": true
     },
@@ -876,7 +876,7 @@
     },
     "161": {
       "id": 161,
-      "market_value": 443.92,
+      "market_value": 446.29,
       "currency": "USD",
       "live": true
     },
@@ -936,37 +936,37 @@
     },
     "171": {
       "id": 171,
-      "market_value": 8.61,
+      "market_value": 8.49,
       "currency": "USD",
       "live": true
     },
     "172": {
       "id": 172,
-      "market_value": 8.25,
+      "market_value": 8.17,
       "currency": "USD",
       "live": true
     },
     "173": {
       "id": 173,
-      "market_value": 8.53,
+      "market_value": 8.59,
       "currency": "USD",
       "live": true
     },
     "174": {
       "id": 174,
-      "market_value": 42.67,
+      "market_value": 42.94,
       "currency": "USD",
       "live": true
     },
     "175": {
       "id": 175,
-      "market_value": 9.72,
+      "market_value": 9.69,
       "currency": "USD",
       "live": true
     },
     "176": {
       "id": 176,
-      "market_value": 7.91,
+      "market_value": 7.75,
       "currency": "USD",
       "live": true
     },
@@ -978,13 +978,13 @@
     },
     "178": {
       "id": 178,
-      "market_value": 14.06,
+      "market_value": 14.1,
       "currency": "USD",
       "live": true
     },
     "179": {
       "id": 179,
-      "market_value": 7.39,
+      "market_value": 7.51,
       "currency": "USD",
       "live": true
     },
@@ -1332,7 +1332,7 @@
     },
     "238": {
       "id": 238,
-      "market_value": 22.56,
+      "market_value": 22.68,
       "currency": "USD",
       "live": true
     },
@@ -1518,7 +1518,7 @@
     },
     "269": {
       "id": 269,
-      "market_value": 115.66,
+      "market_value": 118.52,
       "currency": "USD",
       "live": true
     },
@@ -1584,7 +1584,7 @@
     },
     "280": {
       "id": 280,
-      "market_value": 18.89,
+      "market_value": 18.74,
       "currency": "USD",
       "live": true
     },
@@ -1614,7 +1614,7 @@
     },
     "285": {
       "id": 285,
-      "market_value": 847.47,
+      "market_value": 844.5,
       "currency": "USD",
       "live": true
     },
@@ -1626,7 +1626,7 @@
     },
     "287": {
       "id": 287,
-      "market_value": 92.2,
+      "market_value": 93.42,
       "currency": "USD",
       "live": true
     },
@@ -1728,7 +1728,7 @@
     },
     "306": {
       "id": 306,
-      "market_value": 259.19,
+      "market_value": 263.13,
       "currency": "USD",
       "live": true
     },
@@ -1824,7 +1824,7 @@
     },
     "322": {
       "id": 322,
-      "market_value": 991.25,
+      "market_value": 992.81,
       "currency": "USD",
       "live": true
     },
@@ -1932,7 +1932,7 @@
     },
     "342": {
       "id": 342,
-      "market_value": 49.8,
+      "market_value": 49.86,
       "currency": "USD",
       "live": true
     },
@@ -1986,7 +1986,7 @@
     },
     "351": {
       "id": 351,
-      "market_value": 323.9,
+      "market_value": 324.39,
       "currency": "USD",
       "live": true
     },
@@ -2004,7 +2004,7 @@
     },
     "354": {
       "id": 354,
-      "market_value": 14.97,
+      "market_value": 15.23,
       "currency": "USD",
       "live": true
     },
@@ -2022,7 +2022,7 @@
     },
     "357": {
       "id": 357,
-      "market_value": 412.62,
+      "market_value": 415.98,
       "currency": "USD",
       "live": true
     },
@@ -2046,7 +2046,7 @@
     },
     "361": {
       "id": 361,
-      "market_value": 10972.46,
+      "market_value": 11294.63,
       "currency": "USD",
       "live": true
     },
@@ -2082,7 +2082,7 @@
     },
     "367": {
       "id": 367,
-      "market_value": 1606.86,
+      "market_value": 1591.18,
       "currency": "USD",
       "live": true
     },
@@ -2094,7 +2094,7 @@
     },
     "389": {
       "id": 389,
-      "market_value": 1233.81,
+      "market_value": 1231.7666666666667,
       "currency": "USD",
       "live": true
     },
@@ -2292,7 +2292,7 @@
     },
     "424": {
       "id": 424,
-      "market_value": 81.42356798941799,
+      "market_value": 81.47503465608466,
       "currency": "USD",
       "live": true
     },
@@ -2520,7 +2520,7 @@
     },
     "462": {
       "id": 462,
-      "market_value": 247.798,
+      "market_value": 222.47833333333332,
       "currency": "USD",
       "live": true
     },
@@ -3048,7 +3048,7 @@
     },
     "551": {
       "id": 551,
-      "market_value": 459.99,
+      "market_value": 396.66,
       "currency": "USD",
       "live": true
     },
@@ -3204,7 +3204,7 @@
     },
     "577": {
       "id": 577,
-      "market_value": 140.64,
+      "market_value": 140.76,
       "currency": "USD",
       "live": true
     },
@@ -3252,13 +3252,13 @@
     },
     "585": {
       "id": 585,
-      "market_value": 47.82,
+      "market_value": 48.02,
       "currency": "USD",
       "live": true
     },
     "586": {
       "id": 586,
-      "market_value": 52.81,
+      "market_value": 53.57,
       "currency": "USD",
       "live": true
     },
@@ -3276,7 +3276,7 @@
     },
     "589": {
       "id": 589,
-      "market_value": 11.13,
+      "market_value": 11.22,
       "currency": "USD",
       "live": true
     },
@@ -3402,7 +3402,7 @@
     },
     "610": {
       "id": 610,
-      "market_value": 27.53,
+      "market_value": 27.73,
       "currency": "USD",
       "live": true
     },
@@ -3414,7 +3414,7 @@
     },
     "612": {
       "id": 612,
-      "market_value": 56,
+      "market_value": 56.28,
       "currency": "USD",
       "live": true
     },
@@ -3504,13 +3504,13 @@
     },
     "628": {
       "id": 628,
-      "market_value": 55,
+      "market_value": 61.995,
       "currency": "USD",
       "live": true
     },
     "960": {
       "id": 960,
-      "market_value": 675.13,
+      "market_value": 689.18,
       "currency": "USD",
       "live": true
     },
@@ -3552,7 +3552,7 @@
     },
     "967": {
       "id": 967,
-      "market_value": 103.57,
+      "market_value": 104.02,
       "currency": "USD",
       "live": true
     },
@@ -3564,7 +3564,7 @@
     },
     "969": {
       "id": 969,
-      "market_value": 59.32,
+      "market_value": 59.36,
       "currency": "USD",
       "live": true
     },
@@ -3576,7 +3576,7 @@
     },
     "972": {
       "id": 972,
-      "market_value": 9.4,
+      "market_value": 9.42,
       "currency": "USD",
       "live": true
     },
@@ -3618,7 +3618,7 @@
     },
     "1338": {
       "id": 1338,
-      "market_value": 64.47,
+      "market_value": 66.05,
       "currency": "USD",
       "live": true
     },
@@ -3672,7 +3672,7 @@
     },
     "1347": {
       "id": 1347,
-      "market_value": 19.17,
+      "market_value": 19.22,
       "currency": "USD",
       "live": true
     },
@@ -3696,13 +3696,13 @@
     },
     "1351": {
       "id": 1351,
-      "market_value": 54.66,
+      "market_value": 54.5,
       "currency": "USD",
       "live": true
     },
     "1352": {
       "id": 1352,
-      "market_value": 178.38,
+      "market_value": 178.79,
       "currency": "USD",
       "live": true
     },
@@ -3714,7 +3714,7 @@
     },
     "1354": {
       "id": 1354,
-      "market_value": 14.45,
+      "market_value": 14.29,
       "currency": "USD",
       "live": true
     },
@@ -3726,7 +3726,7 @@
     },
     "1356": {
       "id": 1356,
-      "market_value": 297.76,
+      "market_value": 298.56,
       "currency": "USD",
       "live": true
     },
@@ -3768,7 +3768,7 @@
     },
     "1363": {
       "id": 1363,
-      "market_value": 95.04,
+      "market_value": 97.03,
       "currency": "USD",
       "live": true
     },
@@ -3786,7 +3786,7 @@
     },
     "1366": {
       "id": 1366,
-      "market_value": 10.95,
+      "market_value": 11.96,
       "currency": "USD",
       "live": true
     },
@@ -3810,25 +3810,25 @@
     },
     "1370": {
       "id": 1370,
-      "market_value": 475.36,
+      "market_value": 479.57,
       "currency": "USD",
       "live": true
     },
     "1371": {
       "id": 1371,
-      "market_value": 104.62,
+      "market_value": 107.11,
       "currency": "USD",
       "live": true
     },
     "1372": {
       "id": 1372,
-      "market_value": 94.49,
+      "market_value": 95.54,
       "currency": "USD",
       "live": true
     },
     "1373": {
       "id": 1373,
-      "market_value": 101.57,
+      "market_value": 102.36,
       "currency": "USD",
       "live": true
     },
@@ -3864,7 +3864,7 @@
     },
     "1395": {
       "id": 1395,
-      "market_value": 127.63,
+      "market_value": 128.19,
       "currency": "USD",
       "live": true
     },
@@ -3888,7 +3888,7 @@
     },
     "1399": {
       "id": 1399,
-      "market_value": 11.01,
+      "market_value": 10.95,
       "currency": "USD",
       "live": true
     },
@@ -3942,13 +3942,13 @@
     },
     "1409": {
       "id": 1409,
-      "market_value": 468.33,
+      "market_value": 473.97,
       "currency": "USD",
       "live": true
     },
     "1410": {
       "id": 1410,
-      "market_value": 322.13,
+      "market_value": 322.05,
       "currency": "USD",
       "live": true
     },
@@ -3978,7 +3978,7 @@
     },
     "1416": {
       "id": 1416,
-      "market_value": 70.81,
+      "market_value": 70.74,
       "currency": "USD",
       "live": true
     },
@@ -4014,7 +4014,7 @@
     },
     "1422": {
       "id": 1422,
-      "market_value": 289.42,
+      "market_value": 289.02,
       "currency": "USD",
       "live": true
     },
@@ -4026,13 +4026,13 @@
     },
     "1424": {
       "id": 1424,
-      "market_value": 114.13,
+      "market_value": 114.53,
       "currency": "USD",
       "live": true
     },
     "1425": {
       "id": 1425,
-      "market_value": 254.35,
+      "market_value": 253.59,
       "currency": "USD",
       "live": true
     },
@@ -4044,7 +4044,7 @@
     },
     "1463": {
       "id": 1463,
-      "market_value": 8.54,
+      "market_value": 8.48,
       "currency": "USD",
       "live": true
     },
@@ -4080,25 +4080,25 @@
     },
     "1470": {
       "id": 1470,
-      "market_value": 11.5,
+      "market_value": 11.4,
       "currency": "USD",
       "live": true
     },
     "1471": {
       "id": 1471,
-      "market_value": 457.21,
+      "market_value": 457.33,
       "currency": "USD",
       "live": true
     },
     "1472": {
       "id": 1472,
-      "market_value": 163.67,
+      "market_value": 163.95,
       "currency": "USD",
       "live": true
     },
     "1473": {
       "id": 1473,
-      "market_value": 103.33,
+      "market_value": 103.95,
       "currency": "USD",
       "live": true
     },
@@ -4146,13 +4146,13 @@
     },
     "1483": {
       "id": 1483,
-      "market_value": 57.38,
+      "market_value": 58.53,
       "currency": "USD",
       "live": true
     },
     "1484": {
       "id": 1484,
-      "market_value": 103.07,
+      "market_value": 103.55,
       "currency": "USD",
       "live": true
     },
@@ -4164,13 +4164,13 @@
     },
     "1486": {
       "id": 1486,
-      "market_value": 241.3,
+      "market_value": 242.42,
       "currency": "USD",
       "live": true
     },
     "1487": {
       "id": 1487,
-      "market_value": 17.26,
+      "market_value": 17.21,
       "currency": "USD",
       "live": true
     },
@@ -4194,7 +4194,7 @@
     },
     "1491": {
       "id": 1491,
-      "market_value": 46.37,
+      "market_value": 46.55,
       "currency": "USD",
       "live": true
     },
@@ -4218,7 +4218,7 @@
     },
     "1499": {
       "id": 1499,
-      "market_value": 228.4,
+      "market_value": 230.04,
       "currency": "USD",
       "live": true
     },
@@ -4242,13 +4242,13 @@
     },
     "1503": {
       "id": 1503,
-      "market_value": 10.02,
+      "market_value": 10.25,
       "currency": "USD",
       "live": true
     },
     "1504": {
       "id": 1504,
-      "market_value": 78.92,
+      "market_value": 79.36,
       "currency": "USD",
       "live": true
     },
@@ -4272,7 +4272,7 @@
     },
     "1508": {
       "id": 1508,
-      "market_value": 49.05,
+      "market_value": 48.6,
       "currency": "USD",
       "live": true
     },
@@ -4296,7 +4296,7 @@
     },
     "1512": {
       "id": 1512,
-      "market_value": 625.91,
+      "market_value": 626.99,
       "currency": "USD",
       "live": true
     },
@@ -4308,7 +4308,7 @@
     },
     "1514": {
       "id": 1514,
-      "market_value": 80.95,
+      "market_value": 81.47,
       "currency": "USD",
       "live": true
     },
@@ -4320,7 +4320,7 @@
     },
     "1516": {
       "id": 1516,
-      "market_value": 182.73,
+      "market_value": 182.52,
       "currency": "USD",
       "live": true
     },
@@ -4344,25 +4344,25 @@
     },
     "1520": {
       "id": 1520,
-      "market_value": 102.43,
+      "market_value": 106.28,
       "currency": "USD",
       "live": true
     },
     "1521": {
       "id": 1521,
-      "market_value": 955.49,
+      "market_value": 974.15,
       "currency": "USD",
       "live": true
     },
     "1522": {
       "id": 1522,
-      "market_value": 450.08,
+      "market_value": 459.68,
       "currency": "USD",
       "live": true
     },
     "1523": {
       "id": 1523,
-      "market_value": 83.4,
+      "market_value": 84.76,
       "currency": "USD",
       "live": true
     },
@@ -4386,25 +4386,25 @@
     },
     "1527": {
       "id": 1527,
-      "market_value": 284.76,
+      "market_value": 285.68,
       "currency": "USD",
       "live": true
     },
     "1528": {
       "id": 1528,
-      "market_value": 111.39,
+      "market_value": 112.31,
       "currency": "USD",
       "live": true
     },
     "1529": {
       "id": 1529,
-      "market_value": 160.68,
+      "market_value": 161.08,
       "currency": "USD",
       "live": true
     },
     "1530": {
       "id": 1530,
-      "market_value": 68.67,
+      "market_value": 68.83,
       "currency": "USD",
       "live": true
     },
@@ -4458,13 +4458,13 @@
     },
     "1539": {
       "id": 1539,
-      "market_value": 394.84,
+      "market_value": 398.36,
       "currency": "USD",
       "live": true
     },
     "1540": {
       "id": 1540,
-      "market_value": 47.81,
+      "market_value": 48.51,
       "currency": "USD",
       "live": true
     },
@@ -4500,7 +4500,7 @@
     },
     "1557": {
       "id": 1557,
-      "market_value": 21.95,
+      "market_value": 22.09,
       "currency": "USD",
       "live": true
     },
@@ -4542,13 +4542,13 @@
     },
     "1564": {
       "id": 1564,
-      "market_value": 40.57,
+      "market_value": 41.03,
       "currency": "USD",
       "live": true
     },
     "1565": {
       "id": 1565,
-      "market_value": 67.46,
+      "market_value": 67.1,
       "currency": "USD",
       "live": true
     },
@@ -4674,7 +4674,7 @@
     },
     "1586": {
       "id": 1586,
-      "market_value": 100.83514285714286,
+      "market_value": 100.55657142857143,
       "currency": "USD",
       "live": true
     },
@@ -4974,13 +4974,13 @@
     },
     "1658": {
       "id": 1658,
-      "market_value": 138.87,
+      "market_value": 143.79,
       "currency": "USD",
       "live": true
     },
     "1659": {
       "id": 1659,
-      "market_value": 176.62,
+      "market_value": 176.22,
       "currency": "USD",
       "live": true
     },
@@ -5070,7 +5070,7 @@
     },
     "1674": {
       "id": 1674,
-      "market_value": 78.67,
+      "market_value": 78.66,
       "currency": "USD",
       "live": true
     },
@@ -5154,19 +5154,19 @@
     },
     "1691": {
       "id": 1691,
-      "market_value": 603.91,
+      "market_value": 607.27,
       "currency": "USD",
       "live": true
     },
     "1692": {
       "id": 1692,
-      "market_value": 18.19,
+      "market_value": 18.83,
       "currency": "USD",
       "live": true
     },
     "1693": {
       "id": 1693,
-      "market_value": 140.03,
+      "market_value": 140.67,
       "currency": "USD",
       "live": true
     },
@@ -5178,7 +5178,7 @@
     },
     "1695": {
       "id": 1695,
-      "market_value": 89.49,
+      "market_value": 90.77,
       "currency": "USD",
       "live": true
     },
@@ -5190,7 +5190,7 @@
     },
     "1697": {
       "id": 1697,
-      "market_value": 17.97,
+      "market_value": 18.05,
       "currency": "USD",
       "live": true
     },
@@ -5274,7 +5274,7 @@
     },
     "1711": {
       "id": 1711,
-      "market_value": 72.42,
+      "market_value": 74.47,
       "currency": "USD",
       "live": true
     },
@@ -5310,13 +5310,13 @@
     },
     "1717": {
       "id": 1717,
-      "market_value": 47.81,
+      "market_value": 48.51,
       "currency": "USD",
       "live": true
     },
     "1718": {
       "id": 1718,
-      "market_value": 67.59,
+      "market_value": 70.35,
       "currency": "USD",
       "live": true
     },
@@ -5346,7 +5346,7 @@
     },
     "1724": {
       "id": 1724,
-      "market_value": 64.37,
+      "market_value": 65.25,
       "currency": "USD",
       "live": true
     },
@@ -5358,7 +5358,7 @@
     },
     "1727": {
       "id": 1727,
-      "market_value": 21.34,
+      "market_value": 21.64,
       "currency": "USD",
       "live": true
     },
@@ -5388,13 +5388,13 @@
     },
     "1734": {
       "id": 1734,
-      "market_value": 10.05,
+      "market_value": 10.03,
       "currency": "USD",
       "live": true
     },
     "1735": {
       "id": 1735,
-      "market_value": 76.62,
+      "market_value": 77.59,
       "currency": "USD",
       "live": true
     },
@@ -5490,7 +5490,7 @@
     },
     "1765": {
       "id": 1765,
-      "market_value": 83.08,
+      "market_value": 84.2,
       "currency": "USD",
       "live": true
     },
@@ -5508,25 +5508,25 @@
     },
     "1768": {
       "id": 1768,
-      "market_value": 336.92,
+      "market_value": 336.64,
       "currency": "USD",
       "live": true
     },
     "1769": {
       "id": 1769,
-      "market_value": 8.07,
+      "market_value": 8.11,
       "currency": "USD",
       "live": true
     },
     "1770": {
       "id": 1770,
-      "market_value": 8.81,
+      "market_value": 8.8,
       "currency": "USD",
       "live": true
     },
     "1771": {
       "id": 1771,
-      "market_value": 30.45,
+      "market_value": 30.6,
       "currency": "USD",
       "live": true
     },
@@ -5628,7 +5628,7 @@
     },
     "1788": {
       "id": 1788,
-      "market_value": 350,
+      "market_value": 349,
       "currency": "USD",
       "live": true
     },
@@ -5688,7 +5688,7 @@
     },
     "1798": {
       "id": 1798,
-      "market_value": 50.74,
+      "market_value": 51.11,
       "currency": "USD",
       "live": true
     },
@@ -5718,7 +5718,7 @@
     },
     "1834": {
       "id": 1834,
-      "market_value": 39.57,
+      "market_value": 39.83,
       "currency": "USD",
       "live": true
     },
@@ -5790,7 +5790,7 @@
     },
     "1846": {
       "id": 1846,
-      "market_value": 87.92,
+      "market_value": 88.2,
       "currency": "USD",
       "live": true
     },
@@ -5802,7 +5802,7 @@
     },
     "1848": {
       "id": 1848,
-      "market_value": 67.11,
+      "market_value": 66.75,
       "currency": "USD",
       "live": true
     },
@@ -5820,7 +5820,7 @@
     },
     "1851": {
       "id": 1851,
-      "market_value": 36.71,
+      "market_value": 37.41,
       "currency": "USD",
       "live": true
     },
@@ -5856,13 +5856,13 @@
     },
     "1857": {
       "id": 1857,
-      "market_value": 8.85,
+      "market_value": 8.94,
       "currency": "USD",
       "live": true
     },
     "1858": {
       "id": 1858,
-      "market_value": 47.94,
+      "market_value": 47.66,
       "currency": "USD",
       "live": true
     },
@@ -5916,7 +5916,7 @@
     },
     "1869": {
       "id": 1869,
-      "market_value": 119.91,
+      "market_value": 119.5,
       "currency": "USD",
       "live": true
     },
@@ -5928,7 +5928,7 @@
     },
     "1871": {
       "id": 1871,
-      "market_value": 49.63,
+      "market_value": 49.99,
       "currency": "USD",
       "live": true
     },
@@ -5940,7 +5940,7 @@
     },
     "1873": {
       "id": 1873,
-      "market_value": 9.23,
+      "market_value": 9.19,
       "currency": "USD",
       "live": true
     },
@@ -5952,7 +5952,7 @@
     },
     "1876": {
       "id": 1876,
-      "market_value": 289.33,
+      "market_value": 289.81,
       "currency": "USD",
       "live": true
     },
@@ -6036,7 +6036,7 @@
     },
     "1890": {
       "id": 1890,
-      "market_value": 164.45,
+      "market_value": 165.9,
       "currency": "USD",
       "live": true
     },
@@ -6072,7 +6072,7 @@
     },
     "1902": {
       "id": 1902,
-      "market_value": 8.8,
+      "market_value": 8.81,
       "currency": "USD",
       "live": true
     },
@@ -6090,19 +6090,19 @@
     },
     "1905": {
       "id": 1905,
-      "market_value": 12.83,
+      "market_value": 13.26,
       "currency": "USD",
       "live": true
     },
     "1906": {
       "id": 1906,
-      "market_value": 9.09,
+      "market_value": 8.99,
       "currency": "USD",
       "live": true
     },
     "1907": {
       "id": 1907,
-      "market_value": 13.53,
+      "market_value": 13.59,
       "currency": "USD",
       "live": true
     },
@@ -6126,7 +6126,7 @@
     },
     "1911": {
       "id": 1911,
-      "market_value": 9.98,
+      "market_value": 10.02,
       "currency": "USD",
       "live": true
     },
@@ -6138,7 +6138,7 @@
     },
     "1913": {
       "id": 1913,
-      "market_value": 12.32,
+      "market_value": 12.28,
       "currency": "USD",
       "live": true
     },
@@ -6318,13 +6318,13 @@
     },
     "1951": {
       "id": 1951,
-      "market_value": 98.77,
+      "market_value": 100.37,
       "currency": "USD",
       "live": true
     },
     "1952": {
       "id": 1952,
-      "market_value": 35.05,
+      "market_value": 35.28,
       "currency": "USD",
       "live": true
     },
@@ -6342,13 +6342,13 @@
     },
     "1956": {
       "id": 1956,
-      "market_value": 11.49,
+      "market_value": 11.65,
       "currency": "USD",
       "live": true
     },
     "1957": {
       "id": 1957,
-      "market_value": 16.6,
+      "market_value": 16.96,
       "currency": "USD",
       "live": true
     },
@@ -6366,7 +6366,7 @@
     },
     "1968": {
       "id": 1968,
-      "market_value": 418.88444444444445,
+      "market_value": 419.4716666666667,
       "currency": "USD",
       "live": true
     },
@@ -6378,7 +6378,7 @@
     },
     "1970": {
       "id": 1970,
-      "market_value": 16.89,
+      "market_value": 17.15,
       "currency": "USD",
       "live": true
     },
@@ -6414,7 +6414,7 @@
     },
     "1976": {
       "id": 1976,
-      "market_value": 96.19,
+      "market_value": 95.41,
       "currency": "USD",
       "live": true
     },
@@ -6426,19 +6426,19 @@
     },
     "1978": {
       "id": 1978,
-      "market_value": 46.09,
+      "market_value": 47.02,
       "currency": "USD",
       "live": true
     },
     "1979": {
       "id": 1979,
-      "market_value": 7.18,
+      "market_value": 7.31,
       "currency": "USD",
       "live": true
     },
     "1980": {
       "id": 1980,
-      "market_value": 258.57,
+      "market_value": 252.07,
       "currency": "USD",
       "live": true
     },
@@ -6462,7 +6462,7 @@
     },
     "1987": {
       "id": 1987,
-      "market_value": 151.96,
+      "market_value": 153.17,
       "currency": "USD",
       "live": true
     },
@@ -6504,7 +6504,7 @@
     },
     "1994": {
       "id": 1994,
-      "market_value": 37.82,
+      "market_value": 38.11,
       "currency": "USD",
       "live": true
     },
@@ -6516,7 +6516,7 @@
     },
     "1996": {
       "id": 1996,
-      "market_value": 109.4185,
+      "market_value": 132.231875,
       "currency": "USD",
       "live": true
     },
@@ -6540,7 +6540,7 @@
     },
     "2000": {
       "id": 2000,
-      "market_value": 164.66,
+      "market_value": 168.34,
       "currency": "USD",
       "live": true
     },
@@ -6552,19 +6552,19 @@
     },
     "2002": {
       "id": 2002,
-      "market_value": 35.9,
+      "market_value": 35.58,
       "currency": "USD",
       "live": true
     },
     "2003": {
       "id": 2003,
-      "market_value": 87.64,
+      "market_value": 87.57,
       "currency": "USD",
       "live": true
     },
     "2004": {
       "id": 2004,
-      "market_value": 31.53,
+      "market_value": 32.37,
       "currency": "USD",
       "live": true
     },
@@ -6576,25 +6576,25 @@
     },
     "2006": {
       "id": 2006,
-      "market_value": 33.17,
+      "market_value": 33.33,
       "currency": "USD",
       "live": true
     },
     "2007": {
       "id": 2007,
-      "market_value": 24.15,
+      "market_value": 24.77,
       "currency": "USD",
       "live": true
     },
     "2009": {
       "id": 2009,
-      "market_value": 57.96,
+      "market_value": 57.11,
       "currency": "USD",
       "live": true
     },
     "2010": {
       "id": 2010,
-      "market_value": 12.6,
+      "market_value": 12.78,
       "currency": "USD",
       "live": true
     },
@@ -6612,13 +6612,13 @@
     },
     "2013": {
       "id": 2013,
-      "market_value": 40.68,
+      "market_value": 41.6,
       "currency": "USD",
       "live": true
     },
     "2014": {
       "id": 2014,
-      "market_value": 33.69,
+      "market_value": 34.33,
       "currency": "USD",
       "live": true
     },
@@ -6630,7 +6630,7 @@
     },
     "2016": {
       "id": 2016,
-      "market_value": 76.71,
+      "market_value": 76.41,
       "currency": "USD",
       "live": true
     },
@@ -6666,13 +6666,13 @@
     },
     "2026": {
       "id": 2026,
-      "market_value": 272.49,
+      "market_value": 271.99,
       "currency": "USD",
       "live": true
     },
     "2027": {
       "id": 2027,
-      "market_value": 6.11,
+      "market_value": 6.17,
       "currency": "USD",
       "live": true
     },
@@ -6702,19 +6702,19 @@
     },
     "2032": {
       "id": 2032,
-      "market_value": 105.89,
+      "market_value": 107.13,
       "currency": "USD",
       "live": true
     },
     "2033": {
       "id": 2033,
-      "market_value": 180.81,
+      "market_value": 181.65,
       "currency": "USD",
       "live": true
     },
     "2034": {
       "id": 2034,
-      "market_value": 38.3,
+      "market_value": 38.77,
       "currency": "USD",
       "live": true
     },
@@ -6726,7 +6726,7 @@
     },
     "2037": {
       "id": 2037,
-      "market_value": 257.3,
+      "market_value": 257.58,
       "currency": "USD",
       "live": true
     },
@@ -6738,25 +6738,25 @@
     },
     "2039": {
       "id": 2039,
-      "market_value": 10.14,
+      "market_value": 10.07,
       "currency": "USD",
       "live": true
     },
     "2040": {
       "id": 2040,
-      "market_value": 10.46,
+      "market_value": 10.43,
       "currency": "USD",
       "live": true
     },
     "2041": {
       "id": 2041,
-      "market_value": 20.68,
+      "market_value": 21.1,
       "currency": "USD",
       "live": true
     },
     "2042": {
       "id": 2042,
-      "market_value": 19.62,
+      "market_value": 19.3,
       "currency": "USD",
       "live": true
     },
@@ -6786,7 +6786,7 @@
     },
     "2047": {
       "id": 2047,
-      "market_value": 26.18,
+      "market_value": 26.5,
       "currency": "USD",
       "live": true
     },
@@ -6810,7 +6810,7 @@
     },
     "2051": {
       "id": 2051,
-      "market_value": 64.5,
+      "market_value": 65.04,
       "currency": "USD",
       "live": true
     },
@@ -6828,43 +6828,43 @@
     },
     "2054": {
       "id": 2054,
-      "market_value": 329.48,
+      "market_value": 331.46,
       "currency": "USD",
       "live": true
     },
     "2057": {
       "id": 2057,
-      "market_value": 8.81,
+      "market_value": 8.98,
       "currency": "USD",
       "live": true
     },
     "2058": {
       "id": 2058,
-      "market_value": 223.06,
+      "market_value": 223.23,
       "currency": "USD",
       "live": true
     },
     "2059": {
       "id": 2059,
-      "market_value": 498.95,
+      "market_value": 502.55,
       "currency": "USD",
       "live": true
     },
     "2060": {
       "id": 2060,
-      "market_value": 47.25,
+      "market_value": 47.5,
       "currency": "USD",
       "live": true
     },
     "2061": {
       "id": 2061,
-      "market_value": 62.63,
+      "market_value": 65.4,
       "currency": "USD",
       "live": true
     },
     "2063": {
       "id": 2063,
-      "market_value": 8.68,
+      "market_value": 8.69,
       "currency": "USD",
       "live": true
     },
@@ -6876,7 +6876,7 @@
     },
     "2065": {
       "id": 2065,
-      "market_value": 38.62,
+      "market_value": 38.74,
       "currency": "USD",
       "live": true
     },
@@ -6888,13 +6888,13 @@
     },
     "2068": {
       "id": 2068,
-      "market_value": 12.09,
+      "market_value": 12.11,
       "currency": "USD",
       "live": true
     },
     "2069": {
       "id": 2069,
-      "market_value": 10.75,
+      "market_value": 10.59,
       "currency": "USD",
       "live": true
     },
@@ -6918,7 +6918,7 @@
     },
     "2075": {
       "id": 2075,
-      "market_value": 595.01,
+      "market_value": 594.81,
       "currency": "USD",
       "live": true
     },
@@ -6930,13 +6930,13 @@
     },
     "2077": {
       "id": 2077,
-      "market_value": 42.37,
+      "market_value": 42.83,
       "currency": "USD",
       "live": true
     },
     "2078": {
       "id": 2078,
-      "market_value": 53.26,
+      "market_value": 53.38,
       "currency": "USD",
       "live": true
     },
@@ -6948,43 +6948,43 @@
     },
     "2080": {
       "id": 2080,
-      "market_value": 114.93,
+      "market_value": 116.18,
       "currency": "USD",
       "live": true
     },
     "2081": {
       "id": 2081,
-      "market_value": 288.65,
+      "market_value": 286.7,
       "currency": "USD",
       "live": true
     },
     "2082": {
       "id": 2082,
-      "market_value": 95.15,
+      "market_value": 96.67,
       "currency": "USD",
       "live": true
     },
     "2083": {
       "id": 2083,
-      "market_value": 218.81,
+      "market_value": 221.83,
       "currency": "USD",
       "live": true
     },
     "2084": {
       "id": 2084,
-      "market_value": 51.76,
+      "market_value": 51.48,
       "currency": "USD",
       "live": true
     },
     "2085": {
       "id": 2085,
-      "market_value": 48.47,
+      "market_value": 50.02,
       "currency": "USD",
       "live": true
     },
     "2086": {
       "id": 2086,
-      "market_value": 33.75,
+      "market_value": 33.87,
       "currency": "USD",
       "live": true
     },
@@ -6996,7 +6996,7 @@
     },
     "2089": {
       "id": 2089,
-      "market_value": 9.77,
+      "market_value": 9.74,
       "currency": "USD",
       "live": true
     },
@@ -7014,7 +7014,7 @@
     },
     "2092": {
       "id": 2092,
-      "market_value": 18.92,
+      "market_value": 19.19,
       "currency": "USD",
       "live": true
     },
@@ -7050,37 +7050,37 @@
     },
     "2100": {
       "id": 2100,
-      "market_value": 30.31,
+      "market_value": 30.27,
       "currency": "USD",
       "live": true
     },
     "2101": {
       "id": 2101,
-      "market_value": 30.78,
+      "market_value": 31.07,
       "currency": "USD",
       "live": true
     },
     "2102": {
       "id": 2102,
-      "market_value": 48.74,
+      "market_value": 49.02,
       "currency": "USD",
       "live": true
     },
     "2103": {
       "id": 2103,
-      "market_value": 79.13,
+      "market_value": 78.97,
       "currency": "USD",
       "live": true
     },
     "2108": {
       "id": 2108,
-      "market_value": 58.08,
+      "market_value": 59.47,
       "currency": "USD",
       "live": true
     },
     "2109": {
       "id": 2109,
-      "market_value": 62.01,
+      "market_value": 63.19,
       "currency": "USD",
       "live": true
     },
@@ -7098,7 +7098,7 @@
     },
     "2116": {
       "id": 2116,
-      "market_value": 56.61,
+      "market_value": 57,
       "currency": "USD",
       "live": true
     },
@@ -7122,67 +7122,67 @@
     },
     "2120": {
       "id": 2120,
-      "market_value": 227.49,
+      "market_value": 231.09,
       "currency": "USD",
       "live": true
     },
     "2122": {
       "id": 2122,
-      "market_value": 146.7,
+      "market_value": 148.35,
       "currency": "USD",
       "live": true
     },
     "2123": {
       "id": 2123,
-      "market_value": 252.71,
+      "market_value": 253.71,
       "currency": "USD",
       "live": true
     },
     "2124": {
       "id": 2124,
-      "market_value": 47.32,
+      "market_value": 48.07,
       "currency": "USD",
       "live": true
     },
     "2125": {
       "id": 2125,
-      "market_value": 297.25,
+      "market_value": 297.29,
       "currency": "USD",
       "live": true
     },
     "2126": {
       "id": 2126,
-      "market_value": 8.51,
+      "market_value": 8.64,
       "currency": "USD",
       "live": true
     },
     "2127": {
       "id": 2127,
-      "market_value": 94.25,
+      "market_value": 94.81,
       "currency": "USD",
       "live": true
     },
     "2128": {
       "id": 2128,
-      "market_value": 88.66,
+      "market_value": 87.72,
       "currency": "USD",
       "live": true
     },
     "2129": {
       "id": 2129,
-      "market_value": 285.94,
+      "market_value": 285.17,
       "currency": "USD",
       "live": true
     },
     "2130": {
       "id": 2130,
-      "market_value": 6.89,
+      "market_value": 6.97,
       "currency": "USD",
       "live": true
     },
     "2131": {
       "id": 2131,
-      "market_value": 30.49,
+      "market_value": 30.36,
       "currency": "USD",
       "live": true
     },
@@ -7194,7 +7194,7 @@
     },
     "2133": {
       "id": 2133,
-      "market_value": 48.44,
+      "market_value": 48.68,
       "currency": "USD",
       "live": true
     },
@@ -7206,7 +7206,7 @@
     },
     "2136": {
       "id": 2136,
-      "market_value": 29.36,
+      "market_value": 29.45,
       "currency": "USD",
       "live": true
     },
@@ -7218,13 +7218,13 @@
     },
     "2139": {
       "id": 2139,
-      "market_value": 12.01,
+      "market_value": 12.02,
       "currency": "USD",
       "live": true
     },
     "2140": {
       "id": 2140,
-      "market_value": 11.04,
+      "market_value": 11.08,
       "currency": "USD",
       "live": true
     },
@@ -7236,7 +7236,7 @@
     },
     "2143": {
       "id": 2143,
-      "market_value": 23.85,
+      "market_value": 24.69,
       "currency": "USD",
       "live": true
     },
@@ -7272,67 +7272,67 @@
     },
     "2152": {
       "id": 2152,
-      "market_value": 156.99,
+      "market_value": 144.985,
       "currency": "USD",
       "live": true
     },
     "2153": {
       "id": 2153,
-      "market_value": 69.23,
+      "market_value": 70.11,
       "currency": "USD",
       "live": true
     },
     "2154": {
       "id": 2154,
-      "market_value": 198.07,
+      "market_value": 197.95,
       "currency": "USD",
       "live": true
     },
     "2155": {
       "id": 2155,
-      "market_value": 77.98,
+      "market_value": 77.18,
       "currency": "USD",
       "live": true
     },
     "2156": {
       "id": 2156,
-      "market_value": 14.29,
+      "market_value": 15.01,
       "currency": "USD",
       "live": true
     },
     "2157": {
       "id": 2157,
-      "market_value": 47.28,
+      "market_value": 47.11,
       "currency": "USD",
       "live": true
     },
     "2158": {
       "id": 2158,
-      "market_value": 34.57,
+      "market_value": 34.41,
       "currency": "USD",
       "live": true
     },
     "2159": {
       "id": 2159,
-      "market_value": 5.66,
+      "market_value": 5.71,
       "currency": "USD",
       "live": true
     },
     "2160": {
       "id": 2160,
-      "market_value": 7.48,
+      "market_value": 7.46,
       "currency": "USD",
       "live": true
     },
     "2161": {
       "id": 2161,
-      "market_value": 32.83,
+      "market_value": 33.15,
       "currency": "USD",
       "live": true
     },
     "2162": {
       "id": 2162,
-      "market_value": 76.02,
+      "market_value": 77.48,
       "currency": "USD",
       "live": true
     },
@@ -7344,19 +7344,19 @@
     },
     "2164": {
       "id": 2164,
-      "market_value": 235.72,
+      "market_value": 238.06,
       "currency": "USD",
       "live": true
     },
     "2165": {
       "id": 2165,
-      "market_value": 15.15,
+      "market_value": 16.02,
       "currency": "USD",
       "live": true
     },
     "2166": {
       "id": 2166,
-      "market_value": 7.29,
+      "market_value": 7.31,
       "currency": "USD",
       "live": true
     },
@@ -7368,7 +7368,7 @@
     },
     "2168": {
       "id": 2168,
-      "market_value": 280.41,
+      "market_value": 280.62,
       "currency": "USD",
       "live": true
     },
@@ -7380,7 +7380,7 @@
     },
     "2170": {
       "id": 2170,
-      "market_value": 18.62,
+      "market_value": 18.49,
       "currency": "USD",
       "live": true
     },
@@ -7398,25 +7398,25 @@
     },
     "2173": {
       "id": 2173,
-      "market_value": 24.43,
+      "market_value": 25.07,
       "currency": "USD",
       "live": true
     },
     "2174": {
       "id": 2174,
-      "market_value": 39.38,
+      "market_value": 40.37,
       "currency": "USD",
       "live": true
     },
     "2175": {
       "id": 2175,
-      "market_value": 12.57,
+      "market_value": 12.37,
       "currency": "USD",
       "live": true
     },
     "2176": {
       "id": 2176,
-      "market_value": 39.86,
+      "market_value": 39.15,
       "currency": "USD",
       "live": true
     },
@@ -7428,7 +7428,7 @@
     },
     "2178": {
       "id": 2178,
-      "market_value": 18.36,
+      "market_value": 18.52,
       "currency": "USD",
       "live": true
     },
@@ -7440,13 +7440,13 @@
     },
     "2180": {
       "id": 2180,
-      "market_value": 39.09,
+      "market_value": 38.9,
       "currency": "USD",
       "live": true
     },
     "2181": {
       "id": 2181,
-      "market_value": 27.19,
+      "market_value": 28.04,
       "currency": "USD",
       "live": true
     },
@@ -7458,13 +7458,13 @@
     },
     "2183": {
       "id": 2183,
-      "market_value": 26.88,
+      "market_value": 27.17,
       "currency": "USD",
       "live": true
     },
     "2184": {
       "id": 2184,
-      "market_value": 105,
+      "market_value": 105.52,
       "currency": "USD",
       "live": true
     },
@@ -7500,19 +7500,19 @@
     },
     "2190": {
       "id": 2190,
-      "market_value": 39.11,
+      "market_value": 39.31,
       "currency": "USD",
       "live": true
     },
     "2191": {
       "id": 2191,
-      "market_value": 76,
+      "market_value": 76.19,
       "currency": "USD",
       "live": true
     },
     "2192": {
       "id": 2192,
-      "market_value": 256.37,
+      "market_value": 261.77,
       "currency": "USD",
       "live": true
     },
@@ -7530,13 +7530,13 @@
     },
     "2195": {
       "id": 2195,
-      "market_value": 19.58,
+      "market_value": 19.78,
       "currency": "USD",
       "live": true
     },
     "2196": {
       "id": 2196,
-      "market_value": 20.84,
+      "market_value": 21.02,
       "currency": "USD",
       "live": true
     },
@@ -7554,7 +7554,7 @@
     },
     "2199": {
       "id": 2199,
-      "market_value": 56.58,
+      "market_value": 57.06,
       "currency": "USD",
       "live": true
     },
@@ -7596,7 +7596,7 @@
     },
     "2206": {
       "id": 2206,
-      "market_value": 30.7,
+      "market_value": 30.84,
       "currency": "USD",
       "live": true
     },
@@ -7650,7 +7650,7 @@
     },
     "2215": {
       "id": 2215,
-      "market_value": 17.03,
+      "market_value": 17.18,
       "currency": "USD",
       "live": true
     },
@@ -7662,7 +7662,7 @@
     },
     "2217": {
       "id": 2217,
-      "market_value": 31.06,
+      "market_value": 34.17,
       "currency": "USD",
       "live": true
     },
@@ -7698,7 +7698,7 @@
     },
     "2224": {
       "id": 2224,
-      "market_value": 17.44,
+      "market_value": 17.34,
       "currency": "USD",
       "live": true
     },
@@ -7782,7 +7782,7 @@
     },
     "2240": {
       "id": 2240,
-      "market_value": 24.84,
+      "market_value": 24.96,
       "currency": "USD",
       "live": true
     },
@@ -7872,7 +7872,7 @@
     },
     "2257": {
       "id": 2257,
-      "market_value": 444.67,
+      "market_value": 499.99,
       "currency": "USD",
       "live": true
     },
@@ -7908,7 +7908,7 @@
     },
     "2263": {
       "id": 2263,
-      "market_value": 70.93,
+      "market_value": 71.89,
       "currency": "USD",
       "live": true
     },
@@ -7932,7 +7932,7 @@
     },
     "2267": {
       "id": 2267,
-      "market_value": 26.18,
+      "market_value": 26.5,
       "currency": "USD",
       "live": true
     },
@@ -7992,13 +7992,13 @@
     },
     "2277": {
       "id": 2277,
-      "market_value": 18.87,
+      "market_value": 19.01,
       "currency": "USD",
       "live": true
     },
     "2278": {
       "id": 2278,
-      "market_value": 17.18,
+      "market_value": 17.14,
       "currency": "USD",
       "live": true
     },
@@ -8124,13 +8124,13 @@
     },
     "2301": {
       "id": 2301,
-      "market_value": 75.21,
+      "market_value": 75.47,
       "currency": "USD",
       "live": true
     },
     "2302": {
       "id": 2302,
-      "market_value": 15.54,
+      "market_value": 15.5,
       "currency": "USD",
       "live": true
     },
@@ -8238,7 +8238,7 @@
     },
     "2322": {
       "id": 2322,
-      "market_value": 352.5,
+      "market_value": 362,
       "currency": "USD",
       "live": true
     },
@@ -8286,7 +8286,7 @@
     },
     "2331": {
       "id": 2331,
-      "market_value": 37.16,
+      "market_value": 38.53,
       "currency": "USD",
       "live": true
     },
@@ -8316,7 +8316,7 @@
     },
     "2337": {
       "id": 2337,
-      "market_value": 39.24,
+      "market_value": 39.52,
       "currency": "USD",
       "live": true
     },
@@ -8388,7 +8388,7 @@
     },
     "2351": {
       "id": 2351,
-      "market_value": 27.5,
+      "market_value": 29,
       "currency": "USD",
       "live": true
     },
@@ -8484,7 +8484,7 @@
     },
     "2370": {
       "id": 2370,
-      "market_value": 59,
+      "market_value": 61,
       "currency": "USD",
       "live": true
     },
@@ -8532,7 +8532,7 @@
     },
     "2379": {
       "id": 2379,
-      "market_value": 27.19,
+      "market_value": 27.18,
       "currency": "USD",
       "live": true
     },
@@ -8670,7 +8670,7 @@
     },
     "2404": {
       "id": 2404,
-      "market_value": 9.88,
+      "market_value": 10.25,
       "currency": "USD",
       "live": true
     },
@@ -8712,7 +8712,7 @@
     },
     "2412": {
       "id": 2412,
-      "market_value": 229.66,
+      "market_value": 238.5,
       "currency": "USD",
       "live": true
     },
@@ -8748,13 +8748,13 @@
     },
     "2419": {
       "id": 2419,
-      "market_value": 21.15,
+      "market_value": 21.2,
       "currency": "USD",
       "live": true
     },
     "2420": {
       "id": 2420,
-      "market_value": 49.63,
+      "market_value": 49.4,
       "currency": "USD",
       "live": true
     },
@@ -8796,7 +8796,7 @@
     },
     "2427": {
       "id": 2427,
-      "market_value": 28.67,
+      "market_value": 28.8,
       "currency": "USD",
       "live": true
     },
@@ -8862,7 +8862,7 @@
     },
     "2438": {
       "id": 2438,
-      "market_value": 20.38,
+      "market_value": 20.27,
       "currency": "USD",
       "live": true
     },
@@ -8940,7 +8940,7 @@
     },
     "2453": {
       "id": 2453,
-      "market_value": 27.03,
+      "market_value": 26.94,
       "currency": "USD",
       "live": true
     },
@@ -8952,7 +8952,7 @@
     },
     "2455": {
       "id": 2455,
-      "market_value": 58.43,
+      "market_value": 58.55,
       "currency": "USD",
       "live": true
     },
@@ -9210,7 +9210,7 @@
     },
     "2502": {
       "id": 2502,
-      "market_value": 346.32,
+      "market_value": 344.75,
       "currency": "USD",
       "live": true
     },
@@ -9288,55 +9288,55 @@
     },
     "2517": {
       "id": 2517,
-      "market_value": 410.94,
+      "market_value": 415.03,
       "currency": "USD",
       "live": true
     },
     "2518": {
       "id": 2518,
-      "market_value": 115.08,
+      "market_value": 116.01,
       "currency": "USD",
       "live": true
     },
     "2519": {
       "id": 2519,
-      "market_value": 58.29,
+      "market_value": 62.08,
       "currency": "USD",
       "live": true
     },
     "2520": {
       "id": 2520,
-      "market_value": 9.01,
+      "market_value": 9.15,
       "currency": "USD",
       "live": true
     },
     "2521": {
       "id": 2521,
-      "market_value": 9.31,
+      "market_value": 9.42,
       "currency": "USD",
       "live": true
     },
     "2523": {
       "id": 2523,
-      "market_value": 297.72,
+      "market_value": 299.98,
       "currency": "USD",
       "live": true
     },
     "2524": {
       "id": 2524,
-      "market_value": 49.45,
+      "market_value": 49.89,
       "currency": "USD",
       "live": true
     },
     "2525": {
       "id": 2525,
-      "market_value": 29.46,
+      "market_value": 29.48,
       "currency": "USD",
       "live": true
     },
     "2526": {
       "id": 2526,
-      "market_value": 29.91,
+      "market_value": 29.71,
       "currency": "USD",
       "live": true
     },
@@ -9348,7 +9348,7 @@
     },
     "2528": {
       "id": 2528,
-      "market_value": 9.08,
+      "market_value": 9.2,
       "currency": "USD",
       "live": true
     },
@@ -9372,7 +9372,7 @@
     },
     "2536": {
       "id": 2536,
-      "market_value": 11.25,
+      "market_value": 11.19,
       "currency": "USD",
       "live": true
     },
@@ -9390,13 +9390,13 @@
     },
     "2547": {
       "id": 2547,
-      "market_value": 39.15,
+      "market_value": 39.21,
       "currency": "USD",
       "live": true
     },
     "2548": {
       "id": 2548,
-      "market_value": 36.73,
+      "market_value": 36.95,
       "currency": "USD",
       "live": true
     },
@@ -9438,55 +9438,55 @@
     },
     "2559": {
       "id": 2559,
-      "market_value": 106.0185,
+      "market_value": 106.45136363636364,
       "currency": "USD",
       "live": true
     },
     "2561": {
       "id": 2561,
-      "market_value": 37.48,
+      "market_value": 37.98,
       "currency": "USD",
       "live": true
     },
     "2562": {
       "id": 2562,
-      "market_value": 24.73,
+      "market_value": 24.72,
       "currency": "USD",
       "live": true
     },
     "2565": {
       "id": 2565,
-      "market_value": 182.59,
+      "market_value": 183.02,
       "currency": "USD",
       "live": true
     },
     "2567": {
       "id": 2567,
-      "market_value": 29.18,
+      "market_value": 29.42,
       "currency": "USD",
       "live": true
     },
     "2568": {
       "id": 2568,
-      "market_value": 24.02,
+      "market_value": 24.19,
       "currency": "USD",
       "live": true
     },
     "2569": {
       "id": 2569,
-      "market_value": 30.85,
+      "market_value": 31.23,
       "currency": "USD",
       "live": true
     },
     "2571": {
       "id": 2571,
-      "market_value": 29.6,
+      "market_value": 30.07,
       "currency": "USD",
       "live": true
     },
     "2572": {
       "id": 2572,
-      "market_value": 28.99,
+      "market_value": 29.87,
       "currency": "USD",
       "live": true
     },
@@ -9498,25 +9498,25 @@
     },
     "2574": {
       "id": 2574,
-      "market_value": 23.91,
+      "market_value": 23.83,
       "currency": "USD",
       "live": true
     },
     "2575": {
       "id": 2575,
-      "market_value": 24.15,
+      "market_value": 24.77,
       "currency": "USD",
       "live": true
     },
     "2576": {
       "id": 2576,
-      "market_value": 27.35,
+      "market_value": 29.57,
       "currency": "USD",
       "live": true
     },
     "2583": {
       "id": 2583,
-      "market_value": 91.81,
+      "market_value": 92.83,
       "currency": "USD",
       "live": true
     },
@@ -9582,7 +9582,7 @@
     },
     "2606": {
       "id": 2606,
-      "market_value": 86.48,
+      "market_value": 91.06,
       "currency": "USD",
       "live": true
     },
@@ -9678,7 +9678,7 @@
     },
     "2633": {
       "id": 2633,
-      "market_value": 36.23,
+      "market_value": 36.45,
       "currency": "USD",
       "live": true
     },
@@ -9798,7 +9798,7 @@
     },
     "2663": {
       "id": 2663,
-      "market_value": 150.17,
+      "market_value": 151.75,
       "currency": "USD",
       "live": true
     },
@@ -9828,7 +9828,7 @@
     },
     "2671": {
       "id": 2671,
-      "market_value": 49.15,
+      "market_value": 49.88,
       "currency": "USD",
       "live": true
     },
@@ -9864,7 +9864,7 @@
     },
     "2678": {
       "id": 2678,
-      "market_value": 35.48,
+      "market_value": 36.04,
       "currency": "USD",
       "live": true
     },
@@ -9876,7 +9876,7 @@
     },
     "2680": {
       "id": 2680,
-      "market_value": 116.18,
+      "market_value": 114.31,
       "currency": "USD",
       "live": true
     },
@@ -9906,13 +9906,13 @@
     },
     "2686": {
       "id": 2686,
-      "market_value": 184.03,
+      "market_value": 184.99,
       "currency": "USD",
       "live": true
     },
     "2687": {
       "id": 2687,
-      "market_value": 48.92,
+      "market_value": 47.96,
       "currency": "USD",
       "live": true
     },
@@ -9960,13 +9960,13 @@
     },
     "2700": {
       "id": 2700,
-      "market_value": 115.94625,
+      "market_value": 119.96875,
       "currency": "USD",
       "live": true
     },
     "2701": {
       "id": 2701,
-      "market_value": 1.12,
+      "market_value": 1.13,
       "currency": "USD",
       "live": true
     },
@@ -9984,7 +9984,7 @@
     },
     "2705": {
       "id": 2705,
-      "market_value": 35.99,
+      "market_value": 36.75,
       "currency": "USD",
       "live": true
     },
@@ -9996,13 +9996,13 @@
     },
     "2707": {
       "id": 2707,
-      "market_value": 42.19,
+      "market_value": 42.75,
       "currency": "USD",
       "live": true
     },
     "2708": {
       "id": 2708,
-      "market_value": 39.1,
+      "market_value": 39.86,
       "currency": "USD",
       "live": true
     },
@@ -10026,7 +10026,7 @@
     },
     "2712": {
       "id": 2712,
-      "market_value": 40.01,
+      "market_value": 40.61,
       "currency": "USD",
       "live": true
     },
@@ -10074,7 +10074,7 @@
     },
     "2731": {
       "id": 2731,
-      "market_value": 29.41,
+      "market_value": 29.89,
       "currency": "USD",
       "live": true
     },
@@ -10182,7 +10182,7 @@
     },
     "2760": {
       "id": 2760,
-      "market_value": 4.97,
+      "market_value": 5.03,
       "currency": "USD",
       "live": true
     },
@@ -10350,7 +10350,7 @@
     },
     "2798": {
       "id": 2798,
-      "market_value": 47.64,
+      "market_value": 47.76,
       "currency": "USD",
       "live": true
     },
@@ -10374,7 +10374,7 @@
     },
     "2803": {
       "id": 2803,
-      "market_value": 38.65,
+      "market_value": 39.09,
       "currency": "USD",
       "live": true
     },
@@ -10452,7 +10452,7 @@
     },
     "2825": {
       "id": 2825,
-      "market_value": 21.44,
+      "market_value": 21.83,
       "currency": "USD",
       "live": true
     },
@@ -10464,7 +10464,7 @@
     },
     "2827": {
       "id": 2827,
-      "market_value": 67.99,
+      "market_value": 66.74,
       "currency": "USD",
       "live": true
     },
@@ -10500,7 +10500,7 @@
     },
     "2837": {
       "id": 2837,
-      "market_value": 25.79,
+      "market_value": 26.73,
       "currency": "USD",
       "live": true
     },
@@ -10512,7 +10512,7 @@
     },
     "2839": {
       "id": 2839,
-      "market_value": 24.41,
+      "market_value": 24.97,
       "currency": "USD",
       "live": true
     },
@@ -10524,7 +10524,7 @@
     },
     "2841": {
       "id": 2841,
-      "market_value": 20.7,
+      "market_value": 20.61,
       "currency": "USD",
       "live": true
     },
@@ -10560,7 +10560,7 @@
     },
     "2848": {
       "id": 2848,
-      "market_value": 26.22,
+      "market_value": 25.9,
       "currency": "USD",
       "live": true
     },
@@ -10716,13 +10716,13 @@
     },
     "2879": {
       "id": 2879,
-      "market_value": 42.67,
+      "market_value": 43.19,
       "currency": "USD",
       "live": true
     },
     "2880": {
       "id": 2880,
-      "market_value": 40.15,
+      "market_value": 40.44,
       "currency": "USD",
       "live": true
     },
@@ -10932,13 +10932,13 @@
     },
     "2934": {
       "id": 2934,
-      "market_value": 496.23,
+      "market_value": 499.03,
       "currency": "USD",
       "live": true
     },
     "2935": {
       "id": 2935,
-      "market_value": 155.95,
+      "market_value": 156.18,
       "currency": "USD",
       "live": true
     },
@@ -10968,7 +10968,7 @@
     },
     "2941": {
       "id": 2941,
-      "market_value": 916.31,
+      "market_value": 917.13,
       "currency": "USD",
       "live": true
     },
@@ -11154,7 +11154,7 @@
     },
     "2975": {
       "id": 2975,
-      "market_value": 274.995,
+      "market_value": 219.99,
       "currency": "USD",
       "live": true
     },
@@ -11382,7 +11382,7 @@
     },
     "3015": {
       "id": 3015,
-      "market_value": 63.38851851851852,
+      "market_value": 83.23380952380953,
       "currency": "USD",
       "live": true
     },
@@ -12006,7 +12006,7 @@
     },
     "3120": {
       "id": 3120,
-      "market_value": 457.99666666666667,
+      "market_value": 484.66333333333336,
       "currency": "USD",
       "live": true
     },
@@ -12054,7 +12054,7 @@
     },
     "3128": {
       "id": 3128,
-      "market_value": 219.99,
+      "market_value": 199.99,
       "currency": "USD",
       "live": true
     },
@@ -12114,7 +12114,7 @@
     },
     "3138": {
       "id": 3138,
-      "market_value": 0,
+      "market_value": 118.20666666666666,
       "currency": "USD",
       "live": true
     },
@@ -12174,7 +12174,7 @@
     },
     "3148": {
       "id": 3148,
-      "market_value": 352.75,
+      "market_value": 435.95,
       "currency": "USD",
       "live": true
     },
@@ -12294,7 +12294,7 @@
     },
     "3168": {
       "id": 3168,
-      "market_value": 182.39,
+      "market_value": 183.17,
       "currency": "USD",
       "live": true
     },
@@ -12504,7 +12504,7 @@
     },
     "3205": {
       "id": 3205,
-      "market_value": 169.14,
+      "market_value": 169.34,
       "currency": "USD",
       "live": true
     },
@@ -12780,7 +12780,7 @@
     },
     "3271": {
       "id": 3271,
-      "market_value": 51.54,
+      "market_value": 51.12,
       "currency": "USD",
       "live": true
     },
@@ -13212,7 +13212,7 @@
     },
     "3348": {
       "id": 3348,
-      "market_value": 136.22,
+      "market_value": 135.97,
       "currency": "USD",
       "live": true
     },
@@ -13452,7 +13452,7 @@
     },
     "3391": {
       "id": 3391,
-      "market_value": 200.41,
+      "market_value": 163.1023076923077,
       "currency": "USD",
       "live": true
     },
@@ -13506,7 +13506,7 @@
     },
     "3401": {
       "id": 3401,
-      "market_value": 0,
+      "market_value": 27.6475,
       "currency": "USD",
       "live": true
     },
@@ -13608,7 +13608,7 @@
     },
     "3420": {
       "id": 3420,
-      "market_value": 62.6,
+      "market_value": 88.56,
       "currency": "USD",
       "live": true
     },
@@ -13974,13 +13974,13 @@
     },
     "3492": {
       "id": 3492,
-      "market_value": 21.71,
+      "market_value": 21.32,
       "currency": "USD",
       "live": true
     },
     "3493": {
       "id": 3493,
-      "market_value": 21.01,
+      "market_value": 21.61,
       "currency": "USD",
       "live": true
     },
@@ -14046,7 +14046,7 @@
     },
     "3509": {
       "id": 3509,
-      "market_value": 32.27,
+      "market_value": 32.31,
       "currency": "USD",
       "live": true
     },
@@ -14124,103 +14124,103 @@
     },
     "3528": {
       "id": 3528,
-      "market_value": 218.18,
+      "market_value": 217.46,
       "currency": "USD",
       "live": true
     },
     "3529": {
       "id": 3529,
-      "market_value": 134.14,
+      "market_value": 138.6,
       "currency": "USD",
       "live": true
     },
     "3530": {
       "id": 3530,
-      "market_value": 11.53,
+      "market_value": 11.35,
       "currency": "USD",
       "live": true
     },
     "3531": {
       "id": 3531,
-      "market_value": 33.05,
+      "market_value": 34.17,
       "currency": "USD",
       "live": true
     },
     "3532": {
       "id": 3532,
-      "market_value": 33.54,
+      "market_value": 32.7,
       "currency": "USD",
       "live": true
     },
     "3533": {
       "id": 3533,
-      "market_value": 98.82,
+      "market_value": 96.54,
       "currency": "USD",
       "live": true
     },
     "3534": {
       "id": 3534,
-      "market_value": 116.83,
+      "market_value": 113.81,
       "currency": "USD",
       "live": true
     },
     "3535": {
       "id": 3535,
-      "market_value": 24.13,
+      "market_value": 22.91,
       "currency": "USD",
       "live": true
     },
     "3536": {
       "id": 3536,
-      "market_value": 110.31,
+      "market_value": 113.46,
       "currency": "USD",
       "live": true
     },
     "3537": {
       "id": 3537,
-      "market_value": 23.73,
+      "market_value": 23.6,
       "currency": "USD",
       "live": true
     },
     "3538": {
       "id": 3538,
-      "market_value": 395.55,
+      "market_value": 402.3,
       "currency": "USD",
       "live": true
     },
     "3539": {
       "id": 3539,
-      "market_value": 71.83,
+      "market_value": 72.25,
       "currency": "USD",
       "live": true
     },
     "3540": {
       "id": 3540,
-      "market_value": 49.95,
+      "market_value": 50.83,
       "currency": "USD",
       "live": true
     },
     "3541": {
       "id": 3541,
-      "market_value": 70.86,
+      "market_value": 71.01,
       "currency": "USD",
       "live": true
     },
     "3542": {
       "id": 3542,
-      "market_value": 70.89,
+      "market_value": 71.31,
       "currency": "USD",
       "live": true
     },
     "3543": {
       "id": 3543,
-      "market_value": 22.69,
+      "market_value": 22.67,
       "currency": "USD",
       "live": true
     },
     "3544": {
       "id": 3544,
-      "market_value": 22.5,
+      "market_value": 22.32,
       "currency": "USD",
       "live": true
     },
@@ -14232,13 +14232,13 @@
     },
     "3547": {
       "id": 3547,
-      "market_value": 22.69,
+      "market_value": 22.88,
       "currency": "USD",
       "live": true
     },
     "3548": {
       "id": 3548,
-      "market_value": 22.3,
+      "market_value": 22.29,
       "currency": "USD",
       "live": true
     },
@@ -14250,13 +14250,13 @@
     },
     "3551": {
       "id": 3551,
-      "market_value": 121.95,
+      "market_value": 123.1,
       "currency": "USD",
       "live": true
     },
     "3552": {
       "id": 3552,
-      "market_value": 25.46,
+      "market_value": 26.24,
       "currency": "USD",
       "live": true
     },
@@ -14358,7 +14358,7 @@
     },
     "7285": {
       "id": 7285,
-      "market_value": 39.79333333333334,
+      "market_value": 33.7125,
       "currency": "USD",
       "live": true
     },
@@ -14532,7 +14532,7 @@
     },
     "7315": {
       "id": 7315,
-      "market_value": 46.63,
+      "market_value": 47.16,
       "currency": "USD",
       "live": true
     },
@@ -14544,7 +14544,7 @@
     },
     "7319": {
       "id": 7319,
-      "market_value": 16.25,
+      "market_value": 16.07,
       "currency": "USD",
       "live": true
     },
@@ -14604,7 +14604,7 @@
     },
     "7330": {
       "id": 7330,
-      "market_value": 1.38,
+      "market_value": 1.34,
       "currency": "USD",
       "live": true
     },
@@ -14814,7 +14814,7 @@
     },
     "7382": {
       "id": 7382,
-      "market_value": 29.86,
+      "market_value": 30.15,
       "currency": "USD",
       "live": true
     },
@@ -14832,13 +14832,13 @@
     },
     "7388": {
       "id": 7388,
-      "market_value": 41.66,
+      "market_value": 41.63,
       "currency": "USD",
       "live": true
     },
     "7390": {
       "id": 7390,
-      "market_value": 59.41,
+      "market_value": 64.69,
       "currency": "USD",
       "live": true
     },
@@ -14904,13 +14904,13 @@
     },
     "7404": {
       "id": 7404,
-      "market_value": 63.98,
+      "market_value": 65.01,
       "currency": "USD",
       "live": true
     },
     "7405": {
       "id": 7405,
-      "market_value": 26.9,
+      "market_value": 26.64,
       "currency": "USD",
       "live": true
     },
@@ -14946,7 +14946,7 @@
     },
     "7412": {
       "id": 7412,
-      "market_value": 6.81,
+      "market_value": 6.65,
       "currency": "USD",
       "live": true
     },
@@ -14958,19 +14958,19 @@
     },
     "7414": {
       "id": 7414,
-      "market_value": 33.53,
+      "market_value": 33.27,
       "currency": "USD",
       "live": true
     },
     "7415": {
       "id": 7415,
-      "market_value": 35,
+      "market_value": 36.14,
       "currency": "USD",
       "live": true
     },
     "7416": {
       "id": 7416,
-      "market_value": 15.43,
+      "market_value": 15.25,
       "currency": "USD",
       "live": true
     },
@@ -14982,25 +14982,25 @@
     },
     "7418": {
       "id": 7418,
-      "market_value": 22.72,
+      "market_value": 22.69,
       "currency": "USD",
       "live": true
     },
     "7419": {
       "id": 7419,
-      "market_value": 200.51,
+      "market_value": 208.16,
       "currency": "USD",
       "live": true
     },
     "7421": {
       "id": 7421,
-      "market_value": 41.74,
+      "market_value": 40.08,
       "currency": "USD",
       "live": true
     },
     "7423": {
       "id": 7423,
-      "market_value": 5.94,
+      "market_value": 6.05,
       "currency": "USD",
       "live": true
     },
@@ -15012,13 +15012,13 @@
     },
     "7425": {
       "id": 7425,
-      "market_value": 49.74,
+      "market_value": 49.85,
       "currency": "USD",
       "live": true
     },
     "7426": {
       "id": 7426,
-      "market_value": 71.35,
+      "market_value": 72.99,
       "currency": "USD",
       "live": true
     },
@@ -15030,7 +15030,7 @@
     },
     "7429": {
       "id": 7429,
-      "market_value": 135.28,
+      "market_value": 134.4,
       "currency": "USD",
       "live": true
     },
@@ -15042,7 +15042,7 @@
     },
     "7432": {
       "id": 7432,
-      "market_value": 15.76,
+      "market_value": 15.82,
       "currency": "USD",
       "live": true
     },
@@ -15054,25 +15054,25 @@
     },
     "7434": {
       "id": 7434,
-      "market_value": 13.9,
+      "market_value": 13.7,
       "currency": "USD",
       "live": true
     },
     "7435": {
       "id": 7435,
-      "market_value": 9.79,
+      "market_value": 9.89,
       "currency": "USD",
       "live": true
     },
     "7437": {
       "id": 7437,
-      "market_value": 7.12,
+      "market_value": 7.4,
       "currency": "USD",
       "live": true
     },
     "7438": {
       "id": 7438,
-      "market_value": 29.53,
+      "market_value": 29.92,
       "currency": "USD",
       "live": true
     },
@@ -15084,7 +15084,7 @@
     },
     "7440": {
       "id": 7440,
-      "market_value": 52.27,
+      "market_value": 53.19,
       "currency": "USD",
       "live": true
     },
@@ -15102,13 +15102,13 @@
     },
     "7445": {
       "id": 7445,
-      "market_value": 121.31,
+      "market_value": 122.79,
       "currency": "USD",
       "live": true
     },
     "7450": {
       "id": 7450,
-      "market_value": 45.93,
+      "market_value": 45.84,
       "currency": "USD",
       "live": true
     },

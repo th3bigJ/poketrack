@@ -1,291 +1,401 @@
 [
-    {
-        "masterCardId": "1969",
-        "externalId": "bp-9",
-        "localId": "009",
-        "setCode": "bp",
-        "cardNumber": "9",
-        "cardName": "Rocket's Hitmonchan",
-        "fullDisplayName": "Rocket's Hitmonchan 9 Best of game",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            107
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/bp-009-low.png",
-        "imageHighSrc": "cards/bp-009-high.png",
-        "attacks": [
-            {
-                "name": "Crosscounter",
-                "damage": null
-            },
-            {
-                "name": "Magnum Punch",
-                "damage": "50"
-            }
-        ]
-    },
-    {
-        "masterCardId": "1968",
-        "externalId": "bp-8",
-        "localId": "008",
-        "setCode": "bp",
-        "cardNumber": "8",
-        "cardName": "Rocket's Mewtwo",
-        "fullDisplayName": "Rocket's Mewtwo 8 Best of game",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Psychic"
-        ],
-        "dexIds": [
-            150
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shin-ichi Yoshida",
-        "imageLowSrc": "cards/bp-008-low.png",
-        "imageHighSrc": "cards/bp-008-high.png",
-        "attacks": [
-            {
-                "name": "Juxtapose",
-                "damage": null
-            },
-            {
-                "name": "Hypnoblast",
-                "damage": "20"
-            },
-            {
-                "name": "Psyburn",
-                "damage": "60"
-            }
-        ]
-    },
-    {
-        "masterCardId": "1967",
-        "externalId": "bp-7",
-        "localId": "007",
-        "setCode": "bp",
-        "cardNumber": "7",
-        "cardName": "Dark Venusaur",
-        "fullDisplayName": "Dark Venusaur 7 Best of game",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            3
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shin-ichi Yoshida",
-        "imageLowSrc": "cards/bp-007-low.png",
-        "imageHighSrc": "cards/bp-007-high.png",
-        "attacks": [
-            {
-                "name": "Horrid Pollen",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "1966",
-        "externalId": "bp-6",
-        "localId": "006",
-        "setCode": "bp",
-        "cardNumber": "6",
-        "cardName": "Dark Ivysaur",
-        "fullDisplayName": "Dark Ivysaur 6 Best of game",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            2
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Shin-ichi Yoshida",
-        "imageLowSrc": "cards/bp-006-low.png",
-        "imageHighSrc": "cards/bp-006-high.png",
-        "attacks": [
-            {
-                "name": "Fury Strikes",
-                "damage": null
-            }
-        ]
-    },
-    {
-        "masterCardId": "1965",
-        "externalId": "bp-5",
-        "localId": "005",
-        "setCode": "bp",
-        "cardNumber": "5",
-        "cardName": "Rocket's Sneasel",
-        "fullDisplayName": "Rocket's Sneasel 5 Best of game",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Darkness"
-        ],
-        "dexIds": [
-            215
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Katsura Tabata",
-        "imageLowSrc": "cards/bp-005-low.png",
-        "imageHighSrc": "cards/bp-005-high.png",
-        "attacks": [
-            {
-                "name": "Entrap",
-                "damage": null
-            },
-            {
-                "name": "Continuous Scratch",
-                "damage": "10×"
-            }
-        ]
-    },
-    {
-        "masterCardId": "1964",
-        "externalId": "bp-4",
-        "localId": "004",
-        "setCode": "bp",
-        "cardNumber": "4",
-        "cardName": "Rocket's Scizor",
-        "fullDisplayName": "Rocket's Scizor 4 Best of game",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Metal"
-        ],
-        "dexIds": [
-            212
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "K Hoshiba",
-        "imageLowSrc": "cards/bp-004-low.png",
-        "imageHighSrc": "cards/bp-004-high.png",
-        "attacks": [
-            {
-                "name": "Focus",
-                "damage": null
-            },
-            {
-                "name": "Agility",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "1963",
-        "externalId": "bp-3",
-        "localId": "003",
-        "setCode": "bp",
-        "cardNumber": "3",
-        "cardName": "Professor Elm",
-        "fullDisplayName": "Professor Elm 3 Best of game",
-        "rarity": "Promo",
-        "category": "Trainer",
-        "hp": null,
-        "elementTypes": [],
-        "dexIds": null,
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/bp-003-low.png",
-        "imageHighSrc": "cards/bp-003-high.png",
-        "rules": "Shuffle your hand into your deck. Then, draw 7 cards. You can't play any more Trainer cards this turn."
-    },
-    {
-        "masterCardId": "1962",
-        "externalId": "bp-2",
-        "localId": "002",
-        "setCode": "bp",
-        "cardNumber": "2",
-        "cardName": "Hitmonchan",
-        "fullDisplayName": "Hitmonchan 2 Best of game",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            107
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/bp-002-low.png",
-        "imageHighSrc": "cards/bp-002-high.png",
-        "attacks": [
-            {
-                "name": "Jab",
-                "damage": "20"
-            },
-            {
-                "name": "Special Punch",
-                "damage": "40"
-            }
-        ]
-    },
-    {
-        "masterCardId": "1961",
-        "externalId": "bp-1",
-        "localId": "001",
-        "setCode": "bp",
-        "cardNumber": "1",
-        "cardName": "Electabuzz",
-        "fullDisplayName": "Electabuzz 1 Best of game",
-        "rarity": "Promo",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            125
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": "Ken Sugimori",
-        "imageLowSrc": "cards/bp-001-low.png",
-        "imageHighSrc": "cards/bp-001-high.png",
-        "attacks": [
-            {
-                "name": "Thundershock",
-                "damage": "10"
-            },
-            {
-                "name": "Thunderpunch",
-                "damage": "30+"
-            }
-        ]
-    }
+  {
+    "masterCardId": "1969",
+    "externalId": "bp-9",
+    "localId": "009",
+    "setCode": "bp",
+    "cardNumber": "9",
+    "cardName": "Rocket's Hitmonchan",
+    "fullDisplayName": "Rocket's Hitmonchan 9 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/bp-009-low.png",
+    "imageHighSrc": "cards/bp-009-high.png",
+    "attacks": [
+      {
+        "name": "Crosscounter",
+        "damage": null,
+        "cost": [],
+        "effect": "If an attack does damage to Rocket's Hitmonchan during your opponent's next turn (even if Rocket's Hitmonchan is Knocked Out), flip a coin. If heads, Rocket's Hitmonchan attacks your opponent's Active Pokémon for double that amount of damage. (If Rocket's Hitmonchan takes 20 damage, it does 40 damage to that Pokémon.)"
+      },
+      {
+        "name": "Magnum Punch",
+        "damage": "50",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "reverseHolofoil"
+    ]
+  },
+  {
+    "masterCardId": "1968",
+    "externalId": "bp-8",
+    "localId": "008",
+    "setCode": "bp",
+    "cardNumber": "8",
+    "cardName": "Rocket's Mewtwo",
+    "fullDisplayName": "Rocket's Mewtwo 8 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Psychic"
+    ],
+    "dexIds": [
+      150
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shin-ichi Yoshida",
+    "imageLowSrc": "cards/bp-008-low.png",
+    "imageHighSrc": "cards/bp-008-high.png",
+    "attacks": [
+      {
+        "name": "Juxtapose",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, switch the number of damage counters on Rocket's Mewtwo with the number of damage counters on the Defending Pokémon (even if it would Knock Out either Pokémon). (It's okay if 1 of the Pokémon has no damage counters on it.)"
+      },
+      {
+        "name": "Hypnoblast",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Asleep."
+      },
+      {
+        "name": "Psyburn",
+        "damage": "60",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "reverseHolofoil"
+    ]
+  },
+  {
+    "masterCardId": "1967",
+    "externalId": "bp-7",
+    "localId": "007",
+    "setCode": "bp",
+    "cardNumber": "7",
+    "cardName": "Dark Venusaur",
+    "fullDisplayName": "Dark Venusaur 7 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      3
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shin-ichi Yoshida",
+    "imageLowSrc": "cards/bp-007-low.png",
+    "imageHighSrc": "cards/bp-007-high.png",
+    "attacks": [
+      {
+        "name": "Horrid Pollen",
+        "damage": "30",
+        "cost": [],
+        "effect": "Flip 2 coins. If 1 is heads, the Defending Pokémon is now Asleep and Poisoned. If both are heads, the Defending Pokémon is now Confused and Poisoned. If both are tails, the Defending Pokémon is now Paralyzed and Poisoned."
+      }
+    ],
+    "subtype": "Stage 2",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal",
+      "winnerStamp"
+    ]
+  },
+  {
+    "masterCardId": "1966",
+    "externalId": "bp-6",
+    "localId": "006",
+    "setCode": "bp",
+    "cardNumber": "6",
+    "cardName": "Dark Ivysaur",
+    "fullDisplayName": "Dark Ivysaur 6 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      2
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Shin-ichi Yoshida",
+    "imageLowSrc": "cards/bp-006-low.png",
+    "imageHighSrc": "cards/bp-006-high.png",
+    "attacks": [
+      {
+        "name": "Fury Strikes",
+        "damage": null,
+        "cost": [],
+        "effect": "Your opponent puts 3 markers onto his or her Pokémon (divided as he or she chooses). (More than 1 marker can be put on the same Pokémon.) Then, this attack does 10 damage to each Pokémon for each marker on it. Don't apply Weakness and Resistance. Remove the markers at the end of the turn."
+      }
+    ],
+    "subtype": "Stage 1",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal",
+      "winnerStamp"
+    ]
+  },
+  {
+    "masterCardId": "1965",
+    "externalId": "bp-5",
+    "localId": "005",
+    "setCode": "bp",
+    "cardNumber": "5",
+    "cardName": "Rocket's Sneasel",
+    "fullDisplayName": "Rocket's Sneasel 5 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Darkness"
+    ],
+    "dexIds": [
+      215
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Katsura Tabata",
+    "imageLowSrc": "cards/bp-005-low.png",
+    "imageHighSrc": "cards/bp-005-high.png",
+    "attacks": [
+      {
+        "name": "Entrap",
+        "damage": null,
+        "cost": [],
+        "effect": "The Defending Pokémon can't retreat during your opponent's next turn."
+      },
+      {
+        "name": "Continuous Scratch",
+        "damage": "10×",
+        "cost": [],
+        "effect": "Flip 4 coins. This attack does 10 damage times the number of heads."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": "Psychic -30",
+    "retreatCost": 1,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal",
+      "winnerStamp"
+    ]
+  },
+  {
+    "masterCardId": "1964",
+    "externalId": "bp-4",
+    "localId": "004",
+    "setCode": "bp",
+    "cardNumber": "4",
+    "cardName": "Rocket's Scizor",
+    "fullDisplayName": "Rocket's Scizor 4 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Metal"
+    ],
+    "dexIds": [
+      212
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "K Hoshiba",
+    "imageLowSrc": "cards/bp-004-low.png",
+    "imageHighSrc": "cards/bp-004-high.png",
+    "attacks": [
+      {
+        "name": "Focus",
+        "damage": null,
+        "cost": [],
+        "effect": "During your next turn, Rocket's Scizor's Agility attack's damage is doubled."
+      },
+      {
+        "name": "Agility",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all effects of attacks, including damage, done to Rocket's Scizor."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": "Grass -30",
+    "retreatCost": 2,
+    "flavorText": null,
+    "pricingVariants": [
+      "normal",
+      "winnerStamp"
+    ]
+  },
+  {
+    "masterCardId": "1963",
+    "externalId": "bp-3",
+    "localId": "003",
+    "setCode": "bp",
+    "cardNumber": "3",
+    "cardName": "Professor Elm",
+    "fullDisplayName": "Professor Elm 3 Best of game",
+    "rarity": "Promo",
+    "category": "Trainer",
+    "hp": null,
+    "elementTypes": [],
+    "dexIds": null,
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/bp-003-low.png",
+    "imageHighSrc": "cards/bp-003-high.png",
+    "rules": "Shuffle your hand into your deck. Then, draw 7 cards. You can't play any more Trainer cards this turn.",
+    "subtype": null,
+    "weakness": null,
+    "resistance": null,
+    "retreatCost": null,
+    "flavorText": null,
+    "pricingVariants": [
+      "reverseHolofoil"
+    ]
+  },
+  {
+    "masterCardId": "1962",
+    "externalId": "bp-2",
+    "localId": "002",
+    "setCode": "bp",
+    "cardNumber": "2",
+    "cardName": "Hitmonchan",
+    "fullDisplayName": "Hitmonchan 2 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      107
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/bp-002-low.png",
+    "imageHighSrc": "cards/bp-002-high.png",
+    "attacks": [
+      {
+        "name": "Jab",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Special Punch",
+        "damage": "40",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "While seeming to do nothing, it fires punches in lightning-fast volleys that are impossible to see.",
+    "pricingVariants": [
+      "jumbo",
+      "reverseHolofoil",
+      "winnerStamp"
+    ]
+  },
+  {
+    "masterCardId": "1961",
+    "externalId": "bp-1",
+    "localId": "001",
+    "setCode": "bp",
+    "cardNumber": "1",
+    "cardName": "Electabuzz",
+    "fullDisplayName": "Electabuzz 1 Best of game",
+    "rarity": "Promo",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      125
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": "Ken Sugimori",
+    "imageLowSrc": "cards/bp-001-low.png",
+    "imageHighSrc": "cards/bp-001-high.png",
+    "attacks": [
+      {
+        "name": "Thundershock",
+        "damage": "10",
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
+      },
+      {
+        "name": "Thunderpunch",
+        "damage": "30+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if tails, this attack does 30 damage plus Electabuzz does 10 damage to itself."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 2,
+    "flavorText": "Normally found near power plants, it can wander away and cause major blackouts in cities.",
+    "pricingVariants": [
+      "jumbo",
+      "reverseHolofoil",
+      "winnerStamp"
+    ]
+  }
 ]

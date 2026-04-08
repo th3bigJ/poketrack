@@ -1,386 +1,518 @@
 [
-    {
-        "masterCardId": "22012",
-        "externalId": "mcd15-12",
-        "localId": "012",
-        "setCode": "mcd15",
-        "cardNumber": "12/12",
-        "cardName": "Skitty",
-        "fullDisplayName": "Skitty 12/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            300
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-012-low.jpg",
-        "imageHighSrc": "cards/2015xy-012-low.jpg",
-        "attacks": [
-            {
-                "name": "Charm",
-                "damage": null
-            },
-            {
-                "name": "Tail Smack",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22011",
-        "externalId": "mcd15-11",
-        "localId": "011",
-        "setCode": "mcd15",
-        "cardNumber": "11/12",
-        "cardName": "Zigzagoon",
-        "fullDisplayName": "Zigzagoon 11/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Colorless"
-        ],
-        "dexIds": [
-            263
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-011-low.jpg",
-        "imageHighSrc": "cards/2015xy-011-low.jpg",
-        "attacks": [
-            {
-                "name": "Sand Attack",
-                "damage": null
-            },
-            {
-                "name": "Headbutt",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22010",
-        "externalId": "mcd15-10",
-        "localId": "010",
-        "setCode": "mcd15",
-        "cardNumber": "10/12",
-        "cardName": "Marill",
-        "fullDisplayName": "Marill 10/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 70,
-        "elementTypes": [
-            "Fairy"
-        ],
-        "dexIds": [
-            183
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-010-low.jpg",
-        "imageHighSrc": "cards/2015xy-010-low.jpg",
-        "attacks": [
-            {
-                "name": "Tackle",
-                "damage": "10"
-            },
-            {
-                "name": "Rollout",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22009",
-        "externalId": "mcd15-9",
-        "localId": "009",
-        "setCode": "mcd15",
-        "cardNumber": "9/12",
-        "cardName": "Meditite",
-        "fullDisplayName": "Meditite 9/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 50,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            307
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-009-low.jpg",
-        "imageHighSrc": "cards/2015xy-009-low.jpg",
-        "attacks": [
-            {
-                "name": "Smack",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22008",
-        "externalId": "mcd15-8",
-        "localId": "008",
-        "setCode": "mcd15",
-        "cardNumber": "8/12",
-        "cardName": "Rhyhorn",
-        "fullDisplayName": "Rhyhorn 8/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 80,
-        "elementTypes": [
-            "Fighting"
-        ],
-        "dexIds": [
-            111
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-008-low.jpg",
-        "imageHighSrc": "cards/2015xy-008-low.jpg",
-        "attacks": [
-            {
-                "name": "Take Down",
-                "damage": "40"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22007",
-        "externalId": "mcd15-7",
-        "localId": "007",
-        "setCode": "mcd15",
-        "cardNumber": "7/12",
-        "cardName": "Electrike",
-        "fullDisplayName": "Electrike 7/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            309
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-007-low.jpg",
-        "imageHighSrc": "cards/2015xy-007-low.jpg",
-        "attacks": [
-            {
-                "name": "Charge",
-                "damage": null
-            },
-            {
-                "name": "Bite",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22006",
-        "externalId": "mcd15-6",
-        "localId": "006",
-        "setCode": "mcd15",
-        "cardNumber": "6/12",
-        "cardName": "Pikachu",
-        "fullDisplayName": "Pikachu 6/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Lightning"
-        ],
-        "dexIds": [
-            25
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-006-low.jpg",
-        "imageHighSrc": "cards/2015xy-006-low.jpg",
-        "attacks": [
-            {
-                "name": "Tail Whip",
-                "damage": null
-            },
-            {
-                "name": "Electro Ball",
-                "damage": "30"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22005",
-        "externalId": "mcd15-5",
-        "localId": "005",
-        "setCode": "mcd15",
-        "cardNumber": "5/12",
-        "cardName": "Mudkip",
-        "fullDisplayName": "Mudkip 5/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            258
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-005-low.jpg",
-        "imageHighSrc": "cards/2015xy-005-low.jpg",
-        "attacks": [
-            {
-                "name": "Tackle",
-                "damage": "10"
-            },
-            {
-                "name": "Mud-Slap",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22004",
-        "externalId": "mcd15-4",
-        "localId": "004",
-        "setCode": "mcd15",
-        "cardNumber": "4/12",
-        "cardName": "Staryu",
-        "fullDisplayName": "Staryu 4/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Water"
-        ],
-        "dexIds": [
-            120
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-004-low.jpg",
-        "imageHighSrc": "cards/2015xy-004-low.jpg",
-        "attacks": [
-            {
-                "name": "Lunge",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22003",
-        "externalId": "mcd15-3",
-        "localId": "003",
-        "setCode": "mcd15",
-        "cardNumber": "3/12",
-        "cardName": "Torchic",
-        "fullDisplayName": "Torchic 3/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Fire"
-        ],
-        "dexIds": [
-            255
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-003-low.jpg",
-        "imageHighSrc": "cards/2015xy-003-low.jpg",
-        "attacks": [
-            {
-                "name": "Ember",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22002",
-        "externalId": "mcd15-2",
-        "localId": "002",
-        "setCode": "mcd15",
-        "cardNumber": "2/12",
-        "cardName": "Lotad",
-        "fullDisplayName": "Lotad 2/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            270
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-002-low.jpg",
-        "imageHighSrc": "cards/2015xy-002-low.jpg",
-        "attacks": [
-            {
-                "name": "Beat",
-                "damage": "20"
-            }
-        ]
-    },
-    {
-        "masterCardId": "22001",
-        "externalId": "mcd15-1",
-        "localId": "001",
-        "setCode": "mcd15",
-        "cardNumber": "1/12",
-        "cardName": "Treecko",
-        "fullDisplayName": "Treecko 1/12 Macdonald's Collection 2015",
-        "rarity": "None",
-        "category": "Pokémon",
-        "hp": 60,
-        "elementTypes": [
-            "Grass"
-        ],
-        "dexIds": [
-            252
-        ],
-        "trainerType": null,
-        "energyType": null,
-        "regulationMark": null,
-        "artist": null,
-        "imageLowSrc": "cards/2015xy-001-low.jpg",
-        "imageHighSrc": "cards/2015xy-001-low.jpg",
-        "attacks": [
-            {
-                "name": "Quick Attack",
-                "damage": "10+"
-            }
-        ]
-    }
+  {
+    "masterCardId": "22012",
+    "externalId": "mcd15-12",
+    "localId": "012",
+    "setCode": "mcd15",
+    "cardNumber": "12/12",
+    "cardName": "Skitty",
+    "fullDisplayName": "Skitty 12/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      300
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-012-low.jpg",
+    "imageHighSrc": "cards/2015xy-012-low.jpg",
+    "attacks": [
+      {
+        "name": "Charm",
+        "damage": null,
+        "cost": [],
+        "effect": "During your opponent's next turn, any damage done by attacks from the Defending Pokémon is reduced by 20 (before applying Weakness and Resistance)."
+      },
+      {
+        "name": "Tail Smack",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It shows its cute side by chasing its own tail until it gets dizzy.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22011",
+    "externalId": "mcd15-11",
+    "localId": "011",
+    "setCode": "mcd15",
+    "cardNumber": "11/12",
+    "cardName": "Zigzagoon",
+    "fullDisplayName": "Zigzagoon 11/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Colorless"
+    ],
+    "dexIds": [
+      263
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-011-low.jpg",
+    "imageHighSrc": "cards/2015xy-011-low.jpg",
+    "attacks": [
+      {
+        "name": "Sand Attack",
+        "damage": null,
+        "cost": [],
+        "effect": "If the Defending Pokémon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing."
+      },
+      {
+        "name": "Headbutt",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "A Pokémon with abundant curiosity. It shows an interest in everything, so it always zigzags.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22010",
+    "externalId": "mcd15-10",
+    "localId": "010",
+    "setCode": "mcd15",
+    "cardNumber": "10/12",
+    "cardName": "Marill",
+    "fullDisplayName": "Marill 10/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 70,
+    "elementTypes": [
+      "Fairy"
+    ],
+    "dexIds": [
+      183
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-010-low.jpg",
+    "imageHighSrc": "cards/2015xy-010-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Rollout",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Metal ×2",
+    "resistance": "Darkness -20",
+    "retreatCost": 2,
+    "flavorText": "The tip of its tail is filled with oil that is lighter than water, so it acts as a float.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22009",
+    "externalId": "mcd15-9",
+    "localId": "009",
+    "setCode": "mcd15",
+    "cardNumber": "9/12",
+    "cardName": "Meditite",
+    "fullDisplayName": "Meditite 9/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 50,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      307
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-009-low.jpg",
+    "imageHighSrc": "cards/2015xy-009-low.jpg",
+    "attacks": [
+      {
+        "name": "Smack",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Psychic ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It eats just one berry a day. By enduring hunger, its spirit is tempered and made sharper.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22008",
+    "externalId": "mcd15-8",
+    "localId": "008",
+    "setCode": "mcd15",
+    "cardNumber": "8/12",
+    "cardName": "Rhyhorn",
+    "fullDisplayName": "Rhyhorn 8/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 80,
+    "elementTypes": [
+      "Fighting"
+    ],
+    "dexIds": [
+      111
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-008-low.jpg",
+    "imageHighSrc": "cards/2015xy-008-low.jpg",
+    "attacks": [
+      {
+        "name": "Take Down",
+        "damage": "40",
+        "cost": [],
+        "effect": "This Pokémon does 10 damage to itself."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 3,
+    "flavorText": "It is inept at turning because of its four short legs. It can only charge and run in one direction.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22007",
+    "externalId": "mcd15-7",
+    "localId": "007",
+    "setCode": "mcd15",
+    "cardNumber": "7/12",
+    "cardName": "Electrike",
+    "fullDisplayName": "Electrike 7/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      309
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-007-low.jpg",
+    "imageHighSrc": "cards/2015xy-007-low.jpg",
+    "attacks": [
+      {
+        "name": "Charge",
+        "damage": null,
+        "cost": [],
+        "effect": "Search your deck for a Lightning Energy card and attach it to this Pokémon. Shuffle your deck afterward."
+      },
+      {
+        "name": "Bite",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": "Metal -20",
+    "retreatCost": 1,
+    "flavorText": "It stores static electricity in its fur for discharging. It gives off sparks if a storm approaches.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22006",
+    "externalId": "mcd15-6",
+    "localId": "006",
+    "setCode": "mcd15",
+    "cardNumber": "6/12",
+    "cardName": "Pikachu",
+    "fullDisplayName": "Pikachu 6/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Lightning"
+    ],
+    "dexIds": [
+      25
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-006-low.jpg",
+    "imageHighSrc": "cards/2015xy-006-low.jpg",
+    "attacks": [
+      {
+        "name": "Tail Whip",
+        "damage": null,
+        "cost": [],
+        "effect": "Flip a coin. If heads, the Defending Pokémon can't attack during your opponent's next turn."
+      },
+      {
+        "name": "Electro Ball",
+        "damage": "30",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fighting ×2",
+    "resistance": "Metal -20",
+    "retreatCost": 1,
+    "flavorText": "It raises its tail to check its surroundings. The tail is sometimes struck by lightning in this pose.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22005",
+    "externalId": "mcd15-5",
+    "localId": "005",
+    "setCode": "mcd15",
+    "cardNumber": "5/12",
+    "cardName": "Mudkip",
+    "fullDisplayName": "Mudkip 5/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      258
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-005-low.jpg",
+    "imageHighSrc": "cards/2015xy-005-low.jpg",
+    "attacks": [
+      {
+        "name": "Tackle",
+        "damage": "10",
+        "cost": [],
+        "effect": null
+      },
+      {
+        "name": "Mud-Slap",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "To alert it, the fin on its head senses the flow of water. It has the strength to heft boulders.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22004",
+    "externalId": "mcd15-4",
+    "localId": "004",
+    "setCode": "mcd15",
+    "cardNumber": "4/12",
+    "cardName": "Staryu",
+    "fullDisplayName": "Staryu 4/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Water"
+    ],
+    "dexIds": [
+      120
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-004-low.jpg",
+    "imageHighSrc": "cards/2015xy-004-low.jpg",
+    "attacks": [
+      {
+        "name": "Lunge",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If tails, this attack does nothing."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Grass ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It appears in large numbers by seashores. At night, its central core flashes with a red light.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22003",
+    "externalId": "mcd15-3",
+    "localId": "003",
+    "setCode": "mcd15",
+    "cardNumber": "3/12",
+    "cardName": "Torchic",
+    "fullDisplayName": "Torchic 3/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Fire"
+    ],
+    "dexIds": [
+      255
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-003-low.jpg",
+    "imageHighSrc": "cards/2015xy-003-low.jpg",
+    "attacks": [
+      {
+        "name": "Ember",
+        "damage": "20",
+        "cost": [],
+        "effect": "Flip a coin. If tails, discard a Fire Energy attached to this Pokémon."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Water ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "A fire burns inside, so it feels very warm to hug. It launches fireballs of 1,800 degrees Fahrenheit.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22002",
+    "externalId": "mcd15-2",
+    "localId": "002",
+    "setCode": "mcd15",
+    "cardNumber": "2/12",
+    "cardName": "Lotad",
+    "fullDisplayName": "Lotad 2/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      270
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-002-low.jpg",
+    "imageHighSrc": "cards/2015xy-002-low.jpg",
+    "attacks": [
+      {
+        "name": "Beat",
+        "damage": "20",
+        "cost": [],
+        "effect": null
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "It searches about for clean water. If it does not drink water for too long, the leaf on its head wilts.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  },
+  {
+    "masterCardId": "22001",
+    "externalId": "mcd15-1",
+    "localId": "001",
+    "setCode": "mcd15",
+    "cardNumber": "1/12",
+    "cardName": "Treecko",
+    "fullDisplayName": "Treecko 1/12 Macdonald's Collection 2015",
+    "rarity": "None",
+    "category": "Pokémon",
+    "hp": 60,
+    "elementTypes": [
+      "Grass"
+    ],
+    "dexIds": [
+      252
+    ],
+    "trainerType": null,
+    "energyType": null,
+    "regulationMark": null,
+    "artist": null,
+    "imageLowSrc": "cards/2015xy-001-low.jpg",
+    "imageHighSrc": "cards/2015xy-001-low.jpg",
+    "attacks": [
+      {
+        "name": "Quick Attack",
+        "damage": "10+",
+        "cost": [],
+        "effect": "Flip a coin. If heads, this attack does 10 more damage."
+      }
+    ],
+    "subtype": "Basic",
+    "weakness": "Fire ×2",
+    "resistance": null,
+    "retreatCost": 1,
+    "flavorText": "Small hooks on the bottom of its feet catch on walls and ceilings. That is how it can hang from above.",
+    "pricingVariants": [
+      "holofoil"
+    ]
+  }
 ]

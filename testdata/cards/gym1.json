@@ -17,7 +17,16 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-132-low.png",
-        "imageHighSrc": "cards/gym1-132-high.png"
+        "imageHighSrc": "cards/gym1-132-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8184",
@@ -37,7 +46,16 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-131-low.png",
-        "imageHighSrc": "cards/gym1-131-high.png"
+        "imageHighSrc": "cards/gym1-131-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8183",
@@ -57,7 +75,16 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-130-low.png",
-        "imageHighSrc": "cards/gym1-130-high.png"
+        "imageHighSrc": "cards/gym1-130-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8182",
@@ -77,7 +104,16 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-129-low.png",
-        "imageHighSrc": "cards/gym1-129-high.png"
+        "imageHighSrc": "cards/gym1-129-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8181",
@@ -97,7 +133,16 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-128-low.png",
-        "imageHighSrc": "cards/gym1-128-high.png"
+        "imageHighSrc": "cards/gym1-128-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8180",
@@ -117,7 +162,16 @@
         "regulationMark": null,
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-127-low.png",
-        "imageHighSrc": "cards/gym1-127-high.png"
+        "imageHighSrc": "cards/gym1-127-high.png",
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8178",
@@ -138,7 +192,16 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-126-low.png",
         "imageHighSrc": "cards/gym1-126-high.png",
-        "rules": "Count the number of cards in your discard pile and shuffle them into your deck. Then discard that many cards from the top of your deck."
+        "rules": "Count the number of cards in your discard pile and shuffle them into your deck. Then discard that many cards from the top of your deck.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8176",
@@ -159,7 +222,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-125-low.png",
         "imageHighSrc": "cards/gym1-125-high.png",
-        "rules": "Each player shuffles his or her hand into his or her deck and draws a new hand of the same number of cards."
+        "rules": "Each player shuffles his or her hand into his or her deck and draws a new hand of the same number of cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8174",
@@ -180,7 +252,16 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-124-low.png",
         "imageHighSrc": "cards/gym1-124-high.png",
-        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nNo player may have more than 4 Pokémon on his or her Bench. When this card is played, if a player has 5 Pokémon on his or her Bench, that player chooses 1 of them and returns it and all cards attached to it to his or her hand. (If both players have to return a Pokémon, your opponent returns a Pokémon first.)"
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nNo player may have more than 4 Pokémon on his or her Bench. When this card is played, if a player has 5 Pokémon on his or her Bench, that player chooses 1 of them and returns it and all cards attached to it to his or her hand. (If both players have to return a Pokémon, your opponent returns a Pokémon first.)",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8172",
@@ -201,7 +282,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-123-low.png",
         "imageHighSrc": "cards/gym1-123-high.png",
-        "rules": "You and your opponent play a game of Rock-Paper-Scissors. The winner shuffles his or her hand into his or her deck and draws a new hand of 5 cards. (If you don't know how to play Rock-Paper-Scissors, flip a coin to decide who's the winner.)"
+        "rules": "You and your opponent play a game of Rock-Paper-Scissors. The winner shuffles his or her hand into his or her deck and draws a new hand of 5 cards. (If you don't know how to play Rock-Paper-Scissors, flip a coin to decide who's the winner.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8170",
@@ -222,7 +312,16 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-122-low.png",
         "imageHighSrc": "cards/gym1-122-high.png",
-        "rules": "For each of your Pokémon, you may return any number of Energy cards attached to it to your hand."
+        "rules": "For each of your Pokémon, you may return any number of Energy cards attached to it to your hand.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8167",
@@ -243,7 +342,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-121-low.png",
         "imageHighSrc": "cards/gym1-121-high.png",
-        "rules": "Discard any number of other cards from your hand, then flip a coin. If heads, draw twice that many cards."
+        "rules": "Discard any number of other cards from your hand, then flip a coin. If heads, draw twice that many cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8165",
@@ -264,7 +372,16 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-120-low.png",
         "imageHighSrc": "cards/gym1-120-high.png",
-        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nWhenever a player attacks with a Pokémon with Lt. Surge in its name, he or she may flip a coin. If heads, and if that Pokémon's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), that attack does 10 more damage to the Defending Pokémon. If tails, the attacking Pokémon does 10 damage to itself in addition to whatever its attack usually does."
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nWhenever a player attacks with a Pokémon with Lt. Surge in its name, he or she may flip a coin. If heads, and if that Pokémon's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), that attack does 10 more damage to the Defending Pokémon. If tails, the attacking Pokémon does 10 damage to itself in addition to whatever its attack usually does.",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8163",
@@ -285,7 +402,16 @@
         "artist": "Sumiyoshi Kizuki",
         "imageLowSrc": "cards/gym1-119-low.png",
         "imageHighSrc": "cards/gym1-119-high.png",
-        "rules": "Flip a coin. If heads, your opponent sets aside all the cards in his or her hand face down. Nobody may look at those cards. At the end of your opponent's next turn, your opponent puts those cards back into his or her hand. If tails, your turn ends immediately (you can't attack this turn)."
+        "rules": "Flip a coin. If heads, your opponent sets aside all the cards in his or her hand face down. Nobody may look at those cards. At the end of your opponent's next turn, your opponent puts those cards back into his or her hand. If tails, your turn ends immediately (you can't attack this turn).",
+        "subtype": "Rocket's Secret Machine",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8161",
@@ -306,7 +432,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-118-low.png",
         "imageHighSrc": "cards/gym1-118-high.png",
-        "rules": "Look at your opponent's hand. Then, you may discard as many other cards as you want from your hand and draw that many cards."
+        "rules": "Look at your opponent's hand. Then, you may discard as many other cards as you want from your hand and draw that many cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8159",
@@ -327,7 +462,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-117-low.png",
         "imageHighSrc": "cards/gym1-117-high.png",
-        "rules": "Attach Sabrina's ESP to 1 of your Pokémon with Sabrina in its name. At the end of your turn, discard Sabrina's ESP. If that Pokémon uses and attack that involves flipping coins, Sabrina's ESP lets you re-flip those coins once. If you do, re-flip all the coins."
+        "rules": "Attach Sabrina's ESP to 1 of your Pokémon with Sabrina in its name. At the end of your turn, discard Sabrina's ESP. If that Pokémon uses and attack that involves flipping coins, Sabrina's ESP lets you re-flip those coins once. If you do, re-flip all the coins.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8157",
@@ -348,7 +492,16 @@
         "artist": "Sumiyoshi Kizuki",
         "imageLowSrc": "cards/gym1-116-low.png",
         "imageHighSrc": "cards/gym1-116-high.png",
-        "rules": "For your attack this turn, your Active Pokémon can use any attack from its Basic Pokémon card or any Evolution card attached to it. (You still have to pay for that attack's Energy cost.)"
+        "rules": "For your attack this turn, your Active Pokémon can use any attack from its Basic Pokémon card or any Evolution card attached to it. (You still have to pay for that attack's Energy cost.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8155",
@@ -369,7 +522,16 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-115-low.png",
         "imageHighSrc": "cards/gym1-115-high.png",
-        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nDon't apply Resistance to any attacks made by Pokémon with Brock in their names."
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nDon't apply Resistance to any attacks made by Pokémon with Brock in their names.",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8153",
@@ -390,7 +552,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-114-low.png",
         "imageHighSrc": "cards/gym1-114-high.png",
-        "rules": "Look at the top 7 cards of your deck. Choose 2 of those cards and put them into your hand. Discard the rest."
+        "rules": "Look at the top 7 cards of your deck. Choose 2 of those cards and put them into your hand. Discard the rest.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8151",
@@ -411,7 +582,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-113-low.png",
         "imageHighSrc": "cards/gym1-113-high.png",
-        "rules": "Flip 2 coins. If both of them are heads, choose 1 of your opponent's Benched Pokémon and return it and all cards attached to it to his or her hand. If 1 or both of them are tails, your turn ends immediately (you can't attack this turn)."
+        "rules": "Flip 2 coins. If both of them are heads, choose 1 of your opponent's Benched Pokémon and return it and all cards attached to it to his or her hand. If 1 or both of them are tails, your turn ends immediately (you can't attack this turn).",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8149",
@@ -432,7 +612,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-112-low.png",
         "imageHighSrc": "cards/gym1-112-high.png",
-        "rules": "Your opponent chooses 1 of the following: everyone chooses 1 of his or her own Prizes and put it into his or her hand, or you draw a card."
+        "rules": "Your opponent chooses 1 of the following: everyone chooses 1 of his or her own Prizes and put it into his or her hand, or you draw a card.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8147",
@@ -453,7 +642,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-111-low.png",
         "imageHighSrc": "cards/gym1-111-high.png",
-        "rules": "In order to play this card, you can't have any Basic Pokémon cards in your hand. Show your hand to your opponent, then search your deck for a Basic Pokémon card, show it to your opponent, and put it into your hand. Shuffle your deck afterward."
+        "rules": "In order to play this card, you can't have any Basic Pokémon cards in your hand. Show your hand to your opponent, then search your deck for a Basic Pokémon card, show it to your opponent, and put it into your hand. Shuffle your deck afterward.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8145",
@@ -474,7 +672,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-110-low.png",
         "imageHighSrc": "cards/gym1-110-high.png",
-        "rules": "Look at your opponent's hand. If he or she has any Basic Pokémon cards there, you may put any number of them onto your opponent's Bench (as long as there's room)."
+        "rules": "Look at your opponent's hand. If he or she has any Basic Pokémon cards there, you may put any number of them onto your opponent's Bench (as long as there's room).",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8143",
@@ -495,7 +702,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-109-low.png",
         "imageHighSrc": "cards/gym1-109-high.png",
-        "rules": "Trade 2 of the other cards in your hand for up to 2 Basic Pokémon and/or Evolution cards with Erika in their names from your deck. Show those cards to your opponent, then put them into your hand. Shuffle your deck afterward."
+        "rules": "Trade 2 of the other cards in your hand for up to 2 Basic Pokémon and/or Evolution cards with Erika in their names from your deck. Show those cards to your opponent, then put them into your hand. Shuffle your deck afterward.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8141",
@@ -516,7 +732,16 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-108-low.png",
         "imageHighSrc": "cards/gym1-108-high.png",
-        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player pays Colorless less to retreat his or her Pokémon if it has Misty in its name."
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player pays Colorless less to retreat his or her Pokémon if it has Misty in its name.",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8139",
@@ -537,7 +762,16 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-107-low.png",
         "imageHighSrc": "cards/gym1-107-high.png",
-        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nDuring each player's turn, that player may choose to discard an Energy card attached to 1 of his or her Pokémon with Erika in its name. If that player does so, that Pokémon is no longer Asleep, Confused, Paralyzed, or Poisoned."
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nDuring each player's turn, that player may choose to discard an Energy card attached to 1 of his or her Pokémon with Erika in its name. If that player does so, that Pokémon is no longer Asleep, Confused, Paralyzed, or Poisoned.",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8136",
@@ -558,7 +792,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-106-low.png",
         "imageHighSrc": "cards/gym1-106-high.png",
-        "rules": "Search your deck for a Basic Pokémon or Evolution card with Brock in its name. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward."
+        "rules": "Search your deck for a Basic Pokémon or Evolution card with Brock in its name. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8133",
@@ -579,7 +822,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-105-low.png",
         "imageHighSrc": "cards/gym1-105-high.png",
-        "rules": "You can't play this card if you have any cards in your hand other than Blaine's Last Resort. Show your hand to your opponent, then draw 5 cards."
+        "rules": "You can't play this card if you have any cards in your hand other than Blaine's Last Resort. Show your hand to your opponent, then draw 5 cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8130",
@@ -600,7 +852,16 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-104-low.png",
         "imageHighSrc": "cards/gym1-104-high.png",
-        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player pays Colorless more to retreat his or her Active Pokémon."
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nEach player pays Colorless more to retreat his or her Active Pokémon.",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8127",
@@ -621,7 +882,16 @@
         "artist": "Keiji Kinebuchi",
         "imageLowSrc": "cards/gym1-103-low.png",
         "imageHighSrc": "cards/gym1-103-high.png",
-        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nA player must discard 2 cards from his or her hand in order to play an Energy Removal or Super Energy Removal card."
+        "rules": "This card stays in play when you play it. Discard this card if another Stadium card comes into play.\n\nA player must discard 2 cards from his or her hand in order to play an Energy Removal or Super Energy Removal card.",
+        "subtype": "Stadium",
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8124",
@@ -642,7 +912,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-102-low.png",
         "imageHighSrc": "cards/gym1-102-high.png",
-        "rules": "Discard 2 of the other cards in your hand in order to play this card. If this turn's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), and if the attacking Pokémon has Misty in its name, the attack does 20 more damage to the Defending Pokémon."
+        "rules": "Discard 2 of the other cards in your hand in order to play this card. If this turn's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), and if the attacking Pokémon has Misty in its name, the attack does 20 more damage to the Defending Pokémon.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8121",
@@ -663,7 +942,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-101-low.png",
         "imageHighSrc": "cards/gym1-101-high.png",
-        "rules": "You can play this card only if you have at least 1 Basic Pokémon card in your hand. Put a Basic Pokémon card from your hand into play as your Active Pokémon. Put your old Active Pokémon onto your Bench. (You can't play this card if your Bench is full.)"
+        "rules": "You can play this card only if you have at least 1 Basic Pokémon card in your hand. Put a Basic Pokémon card from your hand into play as your Active Pokémon. Put your old Active Pokémon onto your Bench. (You can't play this card if your Bench is full.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8118",
@@ -684,7 +972,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-100-low.png",
         "imageHighSrc": "cards/gym1-100-high.png",
-        "rules": "You may draw up to 3 cards, then your opponent may draw up to 3 cards."
+        "rules": "You may draw up to 3 cards, then your opponent may draw up to 3 cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8115",
@@ -705,7 +1002,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-099-low.png",
         "imageHighSrc": "cards/gym1-099-high.png",
-        "rules": "Attach Charity to your Active Pokémon. Unless that Pokémon gets Knocked Out, return Charity to your hand at the end of your turn. If that Pokémon attacks and does damage to the Defending Pokémon, you may reduce that damage by any amount (rounded to the nearest 10)."
+        "rules": "Attach Charity to your Active Pokémon. Unless that Pokémon gets Knocked Out, return Charity to your hand at the end of your turn. If that Pokémon attacks and does damage to the Defending Pokémon, you may reduce that damage by any amount (rounded to the nearest 10).",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8112",
@@ -726,7 +1032,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-098-low.png",
         "imageHighSrc": "cards/gym1-098-high.png",
-        "rules": "Remove 1 damage counter from each of your Pokémon that has any damage counters on it."
+        "rules": "Remove 1 damage counter from each of your Pokémon that has any damage counters on it.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8109",
@@ -747,7 +1062,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-097-low.png",
         "imageHighSrc": "cards/gym1-097-high.png",
-        "rules": "Put a Basic Pokémon or Evolution card from your hand face down in front of you and tell your opponent its name. Your opponent guesses the length of that Pokémon. Flip the card over. If your opponent guessed right, he or she draws 2 cards. If your opponent guessed wrong, you draw 2 cards. Either way, return the card to your hand."
+        "rules": "Put a Basic Pokémon or Evolution card from your hand face down in front of you and tell your opponent its name. Your opponent guesses the length of that Pokémon. Flip the card over. If your opponent guessed right, he or she draws 2 cards. If your opponent guessed wrong, you draw 2 cards. Either way, return the card to your hand.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
+        ]
     },
     {
         "masterCardId": "8106",
@@ -775,12 +1099,25 @@
         "attacks": [
             {
                 "name": "Poison Antennae",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "The Defending Pokémon is now Poisoned."
             },
             {
                 "name": "Removal Beam",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If the Defending Pokémon has any Energy cards attached to it, flip a coin. If heads, choose 1 of those Energy cards and discard it."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -809,8 +1146,19 @@
         "attacks": [
             {
                 "name": "Lazy Attack",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Sabrina's Slowpoke is now Asleep (after doing damage)."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -839,12 +1187,25 @@
         "attacks": [
             {
                 "name": "Sleight of Hand",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Choose up to 3 cards from your hand and put them on top of your deck. Then search your deck for that many basic Energy cards. Show those cards to your opponent, then put them into your hand. Shuffle your deck afterward."
             },
             {
                 "name": "Slap",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -873,8 +1234,19 @@
         "attacks": [
             {
                 "name": "Spook",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "The Defending Pokémon can't retreat during your opponent's next turn."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -903,12 +1275,25 @@
         "attacks": [
             {
                 "name": "Suggestion",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon can't attack during your opponent's next turn."
             },
             {
                 "name": "Headbutt",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -937,8 +1322,19 @@
         "attacks": [
             {
                 "name": "Energy Loop",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Return a Psychic Energy card attached to Sabrina's Abra to your hand in order to use this attack."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -967,8 +1363,19 @@
         "attacks": [
             {
                 "name": "Swift",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "This attack's damage isn't affected by Weakness, Resistance, Pokémon Powers, or any other effects on the Defending Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -997,12 +1404,25 @@
         "attacks": [
             {
                 "name": "Tackle",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Clamp",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails, this attack does nothing (not even damage)."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1031,8 +1451,19 @@
         "attacks": [
             {
                 "name": "Aurora Beam",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1061,12 +1492,25 @@
         "attacks": [
             {
                 "name": "Hypnotic Stare",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed. If tails, the Defending Pokémon is now Asleep."
             },
             {
                 "name": "Tail Rap",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 20 damage times the number of heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1095,12 +1539,25 @@
         "attacks": [
             {
                 "name": "Tackle",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Smokescreen",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If the Defending Pokémon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1129,12 +1586,25 @@
         "attacks": [
             {
                 "name": "Fury Attack",
-                "damage": "10×"
+                "damage": "10×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 10 damage times the number of heads."
             },
             {
                 "name": "Supersonic",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1163,12 +1633,25 @@
         "attacks": [
             {
                 "name": "Spin Ball",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "Flip 1 coin. This attack does 20 damage times the number of heads."
             },
             {
                 "name": "Double Spin",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 20 damage times the number of heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1197,12 +1680,25 @@
         "attacks": [
             {
                 "name": "Whirlwind",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with the Defending Pokémon. (Do the damage before switching the Pokémon.)"
             },
             {
                 "name": "Razor Wind",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Flip a coin. If tails, this attack does nothing."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1231,12 +1727,25 @@
         "attacks": [
             {
                 "name": "Focus Energy",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "During your next turn, Lt. Surge's Rattata's Gnaw attack's base damage is doubled."
             },
             {
                 "name": "Gnaw",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1265,12 +1774,25 @@
         "attacks": [
             {
                 "name": "Charge",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Take 1 Lightning Energy card from your discard pile and attach it to Lt. Surge's Pikachu."
             },
             {
                 "name": "Lightning Tail",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1299,12 +1821,25 @@
         "attacks": [
             {
                 "name": "Thundershock",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             },
             {
                 "name": "Tackle",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1333,12 +1868,25 @@
         "attacks": [
             {
                 "name": "Vine Slap",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Stretch Vine",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, choose 1 of them and this attack does 20 damage to it. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1367,12 +1915,25 @@
         "attacks": [
             {
                 "name": "Blot",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "If there are any damage counters on Erika's Oddish, remove 1 of them."
             },
             {
                 "name": "Sporadic Sponging",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If Erika's Oddish has any damage counters on it, flip a coin. If heads, remove 1 of those damage counters."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1401,12 +1962,25 @@
         "attacks": [
             {
                 "name": "Eggsplosion",
-                "damage": "10×"
+                "damage": "10×",
+                "cost": [],
+                "effect": "Flip a number of coins equal to the number of Energy attached to Erika's Exeggcute. This attack does 10 damage times the number of heads."
             },
             {
                 "name": "Psychic",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Does 10 damage plus 10 more damage for each Energy card attached to the Defending Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1435,8 +2009,19 @@
         "attacks": [
             {
                 "name": "Careless Tackle",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Erika's Bellsprout does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1465,12 +2050,25 @@
         "attacks": [
             {
                 "name": "Poison Vine",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
             },
             {
                 "name": "Vine Whip",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1499,12 +2097,25 @@
         "attacks": [
             {
                 "name": "Wing Attack",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Poison Fang",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1533,12 +2144,25 @@
         "attacks": [
             {
                 "name": "Flame",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Quick Attack",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if tails, this attack does 10 damage."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1567,8 +2191,19 @@
         "attacks": [
             {
                 "name": "Sand Pit",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "The Defending Pokémon can't retreat during your opponent's next turn."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1597,12 +2232,25 @@
         "attacks": [
             {
                 "name": "Defense Curl",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, prevent all damage done to Brock's Sandshrew during your opponent's next turn. (Any other effects of attacks still happen.)"
             },
             {
                 "name": "Rolling Attack",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1631,8 +2279,19 @@
         "attacks": [
             {
                 "name": "Drill Tackle",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": "Flip 2 coins. If 1 or both of them are tails, this attack does nothing."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1661,12 +2320,25 @@
         "attacks": [
             {
                 "name": "Bellow",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             },
             {
                 "name": "Rock Throw",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1695,12 +2367,25 @@
         "attacks": [
             {
                 "name": "Fidget",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Shuffle your deck."
             },
             {
                 "name": "Karate Chop",
-                "damage": "40-"
+                "damage": "40-",
+                "cost": [],
+                "effect": "Does 40 damage minus 10 damage for each damage counter on Brock's Mankey."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1729,12 +2414,25 @@
         "attacks": [
             {
                 "name": "Taunt",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, choose 1 of them and switch it with the Defending Pokémon."
             },
             {
                 "name": "Light Kick",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1763,12 +2461,25 @@
         "attacks": [
             {
                 "name": "Call for Friend",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, you may search your deck for a Basic Pokémon card with Brock in its name and put it onto your Bench. Shuffle your deck afterward. (You can't use this attack if your Bench is full.)"
             },
             {
                 "name": "Hook Shot",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Don't apply Resistance for this attack. (Any other effects that would happen after applying Resistance still happen.)"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1797,8 +2508,19 @@
         "attacks": [
             {
                 "name": "Tail Fan",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1827,12 +2549,25 @@
         "attacks": [
             {
                 "name": "3-Pronged Tail",
-                "damage": "10×"
+                "damage": "10×",
+                "cost": [],
+                "effect": "Flip 3 coins. This attack does 10 damage times the number of heads."
             },
             {
                 "name": "Full Speed Charge",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "Flip 4 coins. This attack does 20 damage times the number of heads to the Defending Pokémon and 20 damage times the number of tails to Blaine's Tauros."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1861,8 +2596,19 @@
         "attacks": [
             {
                 "name": "Agility",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, during your opponent's next turn, prevent all effects of attacks, including damage, done to Blaine's Ponyta."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1891,8 +2637,19 @@
         "attacks": [
             {
                 "name": "Blaze",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Does 10 damage to each Grass Pokémon on your opponent's Bench. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1921,12 +2678,25 @@
         "attacks": [
             {
                 "name": "Kindle",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Discard 1 Energy card attached to Blaine's Charmander in order to use this attack. If the Defending Pokémon has any Energy cards attached to it, choose 1 of them and discard it."
             },
             {
                 "name": "Slash",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1955,12 +2725,25 @@
         "attacks": [
             {
                 "name": "Naptime",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, remove 3 damage counters from Sabrina's Slowbro and Sabrina's Slowbro is now Asleep. If Sabrina's Slowbro has fewer damage counters than that, remove all of them."
             },
             {
                 "name": "Screaming Headbutt",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "You can't use this attack during your next turn."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -1989,12 +2772,25 @@
         "attacks": [
             {
                 "name": "Good Night",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "The Defending Pokémon is now Asleep."
             },
             {
                 "name": "Good Morning",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If the Defending Pokémon was Asleep, it is no longer Asleep."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2023,8 +2819,19 @@
         "attacks": [
             {
                 "name": "Night Spirits",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip a number of coins equal to the total number of Sabrina's Gastlys, Sabrina's Haunters, and Sabrina's Gengars you have in play. This attack does 30 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": null,
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2053,8 +2860,19 @@
         "attacks": [
             {
                 "name": "Crystal Beam",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, your opponent can't attach Energy cards to the Defending Pokémon during his or her next turn."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2083,12 +2901,25 @@
         "attacks": [
             {
                 "name": "Water Gun",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Does 10 damage plus 10 more damage for each Water Energy attached to Misty's Starmie but not used to pay for this attack's Energy cost. You can't add more than 20 damage in this way."
             },
             {
                 "name": "Bubblebeam",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2117,12 +2948,25 @@
         "attacks": [
             {
                 "name": "Horn Attack",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Mud Splash",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, choose 1 of them and flip a coin. If heads, this attack does 10 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2151,12 +2995,26 @@
         "attacks": [
             {
                 "name": "Scratch",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Call for Friend",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, you may search your deck for a Basic Pokémon with Misty in its name and put it onto your Bench. (You can't use this attack if your Bench is full.) Shuffle your deck afterward."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited",
+            "wStamp"
         ]
     },
     {
@@ -2185,12 +3043,25 @@
         "attacks": [
             {
                 "name": "Rapids",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If the Defending Pokémon has any Energy cards attached to it, flip a coin. If heads, choose 1 of those Energy cards and discard it."
             },
             {
                 "name": "Water Punch",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Flip a number of coins equal to the number of Water Energy attached to Misty's Poliwhirl. This attack does 30 damage plus 10 damage for each heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2219,8 +3090,19 @@
         "attacks": [
             {
                 "name": "Drill Peck",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2249,8 +3131,19 @@
         "attacks": [
             {
                 "name": "Super Fang",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Does damage to the Defending Pokémon equal to half the Defending Pokémon's remaining HP (rounded up to the nearest 10)."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2279,12 +3172,25 @@
         "attacks": [
             {
                 "name": "Removal Pulse",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "If the Defending Pokémon has any Energy cards attached to it, flip a coin. If heads, choose 1 of those Energy cards and discard it."
             },
             {
                 "name": "Confusion Pulse",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Confused."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2313,12 +3219,25 @@
         "attacks": [
             {
                 "name": "Sleep Poison",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "The Defending Pokémon is now Asleep and Poisoned."
             },
             {
                 "name": "Vine Whip",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2347,12 +3266,25 @@
         "attacks": [
             {
                 "name": "Drool",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Flytrap",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Before doing damage, choose 1 of your opponent's Benched Pokémon and switch it with his or her Active Pokémon. This attack can't be used if your opponent has no Benched Pokémon."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2381,8 +3313,19 @@
         "attacks": [
             {
                 "name": "Poisonpowder",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2411,12 +3354,25 @@
         "attacks": [
             {
                 "name": "Dream Dance",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Both the Defending Pokémon and Erika's Gloom are now Asleep (after doing damage)."
             },
             {
                 "name": "Vile Smell",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Both the Defending Pokémon and Erika's Gloom are now Confused (after doing damage)."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2445,12 +3401,25 @@
         "attacks": [
             {
                 "name": "Healing Pollen",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, remove 4 damage counters from Erika's Gloom. If Erika's Gloom has fewer damage counters than that, remove all of them."
             },
             {
                 "name": "Magic Pollen",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Asleep, Confused, Paralyzed, or Poisoned (your choice)."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2479,12 +3448,25 @@
         "attacks": [
             {
                 "name": "Psychic Exchange",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Shuffle your hand into your deck, then draw 5 cards."
             },
             {
                 "name": "Stomp",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if tails, this attack does 30 damage."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2513,12 +3495,25 @@
         "attacks": [
             {
                 "name": "Deflector",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "During your opponent's next turn, whenever Erika's Exeggcute takes damage, divide that damage in half (rounded down to the nearest 10). (Any other effects still happen.)"
             },
             {
                 "name": "Egg Bomb",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Flip a coin. If tails, this attack does nothing to the Defending Pokémon and Erika's Exeggcute does 20 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2547,8 +3542,19 @@
         "attacks": [
             {
                 "name": "Tail Strike",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage plus 20 more damage; if tails, this attack does 10 damage."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2577,12 +3583,25 @@
         "attacks": [
             {
                 "name": "Tongue Slap",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Slam",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Flip 2 coins. This attack does 30 damage times the number of heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2611,8 +3630,19 @@
         "attacks": [
             {
                 "name": "Rock Toss",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "Flip 3 coins. This attack does 20 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2641,12 +3671,25 @@
         "attacks": [
             {
                 "name": "Dive",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Spiral Dive",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Does 10 damage to each of your opponent's Pokémon. Don't apply Weakness and Resistance."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Psychic ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2675,12 +3718,25 @@
         "attacks": [
             {
                 "name": "Tackle",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Lucky Shot",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Choose 1 of your opponent's Benched Pokémon and flip a coin. If heads, this attack does 30 damage to that Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.) This attack can't be used if your opponent has no Benched Pokémon."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2709,12 +3765,25 @@
         "attacks": [
             {
                 "name": "Firebreathing",
-                "damage": "10+"
+                "damage": "10+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage plus 10 more damage; if tails, this attack does 10 damage."
             },
             {
                 "name": "Lava Burst",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "Discard the top 5 cards of your deck. (If there are fewer than 5 cards in your deck, discard all of them.) This attack does 20 damage for each Fire Energy card you discarded in this way."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2743,12 +3812,25 @@
         "attacks": [
             {
                 "name": "Child's Punch",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If tails, this attack does nothing."
             },
             {
                 "name": "One-Two Punch",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 30 damage plus 10 more damage; if tails, this attack does 30 damage."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2777,12 +3859,25 @@
         "attacks": [
             {
                 "name": "Shake",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with the Defending Pokémon. (Do the damage before switching the Pokémon.)"
             },
             {
                 "name": "Fire Tackle",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Blaine's Growlithe does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Water ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2811,12 +3906,25 @@
         "attacks": [
             {
                 "name": "Healing Pollen",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip 3 coins. For each heads, remove 1 damage counter from each of your Pokémon. If a Pokémon has fewer damage counters than the number of heads, remove all of them."
             },
             {
                 "name": "Sonic Distortion",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip 2 coins. If 1 or both of them are heads, the Defending Pokémon is now Confused."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fire ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2845,8 +3953,19 @@
         "attacks": [
             {
                 "name": "Collapse",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Rocket's Snorlax is now Asleep (after doing damage)."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 4,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2875,12 +3994,25 @@
         "attacks": [
             {
                 "name": "Mysterious Light",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Asleep."
             },
             {
                 "name": "Jellyfish Pod",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for any number of Pokémon named Tentacool, Tentacruel, Misty's Tentacool, and/or Misty's Tentacruel. Show those cards to your opponent, then put them into your hand. Shuffle your deck afterward."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2909,8 +4041,19 @@
         "attacks": [
             {
                 "name": "Water Ring",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Does 10 damage to each Pokémon that isn't Water on each player's Bench. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2939,8 +4082,19 @@
         "attacks": [
             {
                 "name": "Horn Hazard",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If tails, this attack does nothing."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2969,8 +4123,19 @@
         "attacks": [
             {
                 "name": "Triple Cannon",
-                "damage": "20×"
+                "damage": "20×",
+                "cost": [],
+                "effect": "Flip 3 coins. This attack does 20 damage times the number of heads."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -2999,12 +4164,25 @@
         "attacks": [
             {
                 "name": "Mega Punch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Thunderbolt",
-                "damage": "100"
+                "damage": "100",
+                "cost": [],
+                "effect": "Discard all Energy cards attached to Lt. Surge's Raichu in order to use this attack."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -3033,12 +4211,25 @@
         "attacks": [
             {
                 "name": "Charge",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Take up to 2 Lightning Energy cards from your discard pile and attach them to Lt. Surge's Electabuzz."
             },
             {
                 "name": "Electric Current",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Take 1 Lightning Energy card attached to Lt. Surge's Electabuzz and attach it to 1 of your Benched Pokémon. If you have no Benched Pokémon, discard that Energy card."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -3067,8 +4258,19 @@
         "attacks": [
             {
                 "name": "Razor Leaf",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -3097,12 +4299,25 @@
         "attacks": [
             {
                 "name": "Moonwatching",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Search your deck for a basic Energy card. Show that card to your opponent, then put it into your hand. Shuffle your deck afterward."
             },
             {
                 "name": "Comet Slap",
-                "damage": "10×"
+                "damage": "10×",
+                "cost": [],
+                "effect": "Flip 3 coins. This attack does 10 damage times the number of heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -3131,12 +4346,25 @@
         "attacks": [
             {
                 "name": "Alert",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Draw a card. Then, switch Brock's Zubat with 1 of your Benched Pokémon. You can't use this attack if your Bench is empty."
             },
             {
                 "name": "Wing Attack",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -3165,12 +4393,25 @@
         "attacks": [
             {
                 "name": "Needles",
-                "damage": "10"
+                "damage": "10",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed and Poisoned."
             },
             {
                 "name": "Sandstorm",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If the Defending Pokémon tries to attack during your opponent's next turn, your opponent flips a coin. If tails, that attack does nothing."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -3199,12 +4440,25 @@
         "attacks": [
             {
                 "name": "Horn Toss",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, he or she chooses 1 of them and switches it with the Defending Pokémon. (Do the damage before switching the Pokémon.)"
             },
             {
                 "name": "Take Down",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Brock's Rhyhorn does 10 damage to itself."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -3233,12 +4487,25 @@
         "attacks": [
             {
                 "name": "Bind",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Paralyzed."
             },
             {
                 "name": "Tunneling",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, choose up to 2 of them. This attack does 20 damage to each of them. (Don't apply Weakness and Resistance for Benched Pokémon.) Brock's Onix can't attack during your next turn."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -3267,12 +4534,25 @@
         "attacks": [
             {
                 "name": "Rock Slide",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": "If your opponent has any Benched Pokémon, choose up to 3 of them. This attack does 10 damage to each of them. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             },
             {
                 "name": "Fissure",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Grass ×2",
+        "resistance": null,
+        "retreatCost": 4,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEdition",
+            "unlimited"
         ]
     },
     {
@@ -3294,7 +4574,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-019-low.png",
         "imageHighSrc": "cards/gym1-019-high.png",
-        "rules": "Flip a coin. If heads, choose up to 3 cards at random from your opponent's hand (don't look at them). Your opponent shuffles those cards into his or her deck."
+        "rules": "Flip a coin. If heads, choose up to 3 cards at random from your opponent's hand (don't look at them). Your opponent shuffles those cards into his or her deck.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
+        ]
     },
     {
         "masterCardId": "7722",
@@ -3315,7 +4604,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-018-low.png",
         "imageHighSrc": "cards/gym1-018-high.png",
-        "rules": "Discard 2 of the other cards in your hand in order to play this card. If this turn's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), and if the attacking Pokémon has Misty in its name, the attack does 20 more damage to the Defending Pokémon."
+        "rules": "Discard 2 of the other cards in your hand in order to play this card. If this turn's attack does damage to the Defending Pokémon (after applying Weakness and Resistance), and if the attacking Pokémon has Misty in its name, the attack does 20 more damage to the Defending Pokémon.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
+        ]
     },
     {
         "masterCardId": "7716",
@@ -3336,7 +4634,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-017-low.png",
         "imageHighSrc": "cards/gym1-017-high.png",
-        "rules": "You can play this card only if you have at least 1 Basic Pokémon card in your hand. Put a Basic Pokémon card from your hand into play as your Active Pokémon. Put your old Active Pokémon onto your Bench. (You can't play this card if your Bench is full.)"
+        "rules": "You can play this card only if you have at least 1 Basic Pokémon card in your hand. Put a Basic Pokémon card from your hand into play as your Active Pokémon. Put your old Active Pokémon onto your Bench. (You can't play this card if your Bench is full.)",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
+        ]
     },
     {
         "masterCardId": "7710",
@@ -3357,7 +4664,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-016-low.png",
         "imageHighSrc": "cards/gym1-016-high.png",
-        "rules": "You may draw up to 3 cards, then your opponent may draw up to 3 cards."
+        "rules": "You may draw up to 3 cards, then your opponent may draw up to 3 cards.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
+        ]
     },
     {
         "masterCardId": "7702",
@@ -3378,7 +4694,16 @@
         "artist": "Ken Sugimori",
         "imageLowSrc": "cards/gym1-015-low.png",
         "imageHighSrc": "cards/gym1-015-high.png",
-        "rules": "Remove 1 damage counter from each of your Pokémon that has any damage counters on it."
+        "rules": "Remove 1 damage counter from each of your Pokémon that has any damage counters on it.",
+        "subtype": null,
+        "weakness": null,
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
+        ]
     },
     {
         "masterCardId": "7696",
@@ -3406,12 +4731,25 @@
         "attacks": [
             {
                 "name": "Pain Amplifier",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Put a damage counter on each of your opponent's Pokémon has already has any damage counters on it."
             },
             {
                 "name": "Call of the Night",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "Unless this attack Knocks Out the Defending Pokémon, flip 2 coins. If both of them are heads, your opponent shuffles his or her Active Pokémon and all cards attached to it into his or her deck."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": null,
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3440,12 +4778,25 @@
         "attacks": [
             {
                 "name": "Shadow Images",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Whenever Rocket's Scyther is attacked, your opponent flips a coin. If tails, that attack does no damage to Rocket's Scyther. (Any other effects of the attack still happen.) This effect lasts until Rocket's Scyther takes damage (or is Benched or is evolved)."
             },
             {
                 "name": "Blinding Scythe",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fire ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3474,8 +4825,19 @@
         "attacks": [
             {
                 "name": "Fire Wall",
-                "damage": "40"
+                "damage": "40",
+                "cost": [],
+                "effect": "If an attack does damage to Rocket's Moltres during your opponent's next turn (even if Rocket's Moltres is Knocked Out), Rocket's Moltres attacks your opponent's Active Pokémon for 10 damage. (Apply Weakness and Resistance.)"
             }
+        ],
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": "Fighting -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3504,12 +4866,26 @@
         "attacks": [
             {
                 "name": "Crosscounter",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "If an attack does damage to Rocket's Hitmonchan during your opponent's next turn (even if Rocket's Hitmonchan is Knocked Out), flip a coin. If heads, Rocket's Hitmonchan attacks your opponent's Active Pokémon for double that amount of damage. (If Rocket's Hitmonchan takes 20 damage, it does 40 damage to that Pokémon.)"
             },
             {
                 "name": "Magnum Punch",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Psychic ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "jumbo",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3538,8 +4914,19 @@
         "attacks": [
             {
                 "name": "Jellyfish Poison",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, the Defending Pokémon is now Poisoned. If tails, the Defending Pokémon is now Confused."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3568,12 +4955,26 @@
         "attacks": [
             {
                 "name": "Tail Snap",
-                "damage": "20"
+                "damage": "20",
+                "cost": [],
+                "effect": null
             },
             {
                 "name": "Knockout Needle",
-                "damage": "30+"
+                "damage": "30+",
+                "cost": [],
+                "effect": "Flip 2 coins. If both of them are heads, this attack does 30 damage plus 60 more damage. If 1 or both of them are tails, this attack does 30 damage."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": null,
+        "retreatCost": 1,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "prereleaseStamp",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3602,8 +5003,19 @@
         "attacks": [
             {
                 "name": "Mega Shock",
-                "damage": "50"
+                "damage": "50",
+                "cost": [],
+                "effect": "Flip a coin. If tails, Lt. Surge's Magneton does 20 damage to itself."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3632,12 +5044,25 @@
         "attacks": [
             {
                 "name": "Repeating Drill",
-                "damage": "10×"
+                "damage": "10×",
+                "cost": [],
+                "effect": "Flip 5 coins. This attack does 10 damage times the number of heads."
             },
             {
                 "name": "Clutch",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "The Defending Pokémon can't retreat during your opponent's next turn."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Lightning ×2",
+        "resistance": "Fighting -30",
+        "retreatCost": null,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3666,12 +5091,25 @@
         "attacks": [
             {
                 "name": "Charge",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Take up to 2 Lightning Energy cards from your discard pile and attach them to Lt. Surge's Electabuzz."
             },
             {
                 "name": "Discharge",
-                "damage": "30×"
+                "damage": "30×",
+                "cost": [],
+                "effect": "Discard all Lightning Energy cards attached to Lt. Surge's Electabuzz in order to use this attack. Flip a number of coins equal to the number of Lightning Energy cards you discarded. This attack does 30 damage times the number of heads."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": "Fighting ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3700,8 +5138,19 @@
         "attacks": [
             {
                 "name": "Mega Drain",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "If Erika's Vileplume does damage to the Defending Pokémon (after applying Weakness and Resistance), remove a number of damage counters from Erika's Vileplume equal to half the damage done to the Defending Pokémon (rounded up to the nearest 10). If Erika's Vileplume has fewer damage counters than that, remove all of them."
             }
+        ],
+        "subtype": "Stage 2",
+        "weakness": "Fire ×2",
+        "resistance": null,
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3730,12 +5179,25 @@
         "attacks": [
             {
                 "name": "Blizzard",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": "Flip a coin. If heads, this attack does 10 damage to each of your opponent's Benched Pokémon. If tails, this attack does 10 damage to each of your own Benched Pokémon. (Don't apply Weakness and Resistance for Benched Pokémon.)"
             },
             {
                 "name": "Take Away",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Shuffle Erika's Dragonair and all cards attached to it into your deck. Then, your opponent shuffles his or her Active Pokémon and all cards attached to it into his or her deck."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": null,
+        "resistance": "Psychic -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3764,12 +5226,25 @@
         "attacks": [
             {
                 "name": "Fairy Power",
-                "damage": null
+                "damage": null,
+                "cost": [],
+                "effect": "Flip a coin. If heads, you may return any number of your Pokémon in play and all cards attached to them to your hand."
             },
             {
                 "name": "Moon Impact",
-                "damage": "30"
+                "damage": "30",
+                "cost": [],
+                "effect": null
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Fighting ×2",
+        "resistance": "Psychic -30",
+        "retreatCost": 2,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3798,8 +5273,19 @@
         "attacks": [
             {
                 "name": "Lariat",
-                "damage": "70"
+                "damage": "70",
+                "cost": [],
+                "effect": "Flip a coin. If tails, this attack does nothing."
             }
+        ],
+        "subtype": "Stage 1",
+        "weakness": "Grass ×2",
+        "resistance": "Lightning -30",
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     },
     {
@@ -3828,8 +5314,19 @@
         "attacks": [
             {
                 "name": "Phoenix Flame",
-                "damage": "90"
+                "damage": "90",
+                "cost": [],
+                "effect": "Flip a coin. If tails, shuffle Blaine's Moltres and all cards attached to it into your deck (after doing damage)."
             }
+        ],
+        "subtype": "Basic",
+        "weakness": null,
+        "resistance": "Fighting -30",
+        "retreatCost": 3,
+        "flavorText": null,
+        "pricingVariants": [
+            "firstEditionHolofoil",
+            "unlimitedHolofoil"
         ]
     }
 ]
