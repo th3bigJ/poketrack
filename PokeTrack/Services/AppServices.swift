@@ -14,6 +14,9 @@ final class AppServices {
     // Wishlist service - initialized after model context is available
     private(set) var wishlist: WishlistService?
 
+    /// Collection + ledger (SwiftData) — initialized with `ModelContext`.
+    private(set) var collectionLedger: CollectionLedgerService?
+
     private(set) var isReady = false
 
     func bootstrap() async {
@@ -32,5 +35,10 @@ final class AppServices {
     func setupWishlist(modelContext: ModelContext) {
         guard wishlist == nil else { return }
         wishlist = WishlistService(modelContext: modelContext, store: store)
+    }
+
+    func setupCollectionLedger(modelContext: ModelContext) {
+        guard collectionLedger == nil else { return }
+        collectionLedger = CollectionLedgerService(modelContext: modelContext)
     }
 }

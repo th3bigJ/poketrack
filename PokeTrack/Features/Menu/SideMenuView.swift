@@ -55,6 +55,15 @@ struct SideMenuView: View {
                             selectedTab = .wishlist
                         }
 
+                        SideMenuRow(
+                            systemImage: "square.stack.3d.up.fill",
+                            title: "Collection",
+                            subtitle: "Cards you own"
+                        ) {
+                            close()
+                            selectedTab = .collection
+                        }
+
                         Divider()
                             .padding(.vertical, 12)
                             .padding(.horizontal, 4)

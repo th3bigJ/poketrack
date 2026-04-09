@@ -1,6 +1,12 @@
 import Foundation
 import Observation
 
+enum CloudSyncStatus: Equatable {
+    case cloudKitConnected
+    case cloudKitFallback
+    case iCloudAccountUnavailable
+}
+
 /// Syncs user preferences to iCloud using NSUbiquitousKeyValueStore
 @Observable
 @MainActor
@@ -37,9 +43,27 @@ final class CloudSettingsService {
         return PriceDisplayCurrency(rawValue: raw)
     }
     
-    /// Check if iCloud is available
+    var syncStatus: CloudSyncStatus {
+        if isCloudKitFallbackActive {
+            return .cloudKitFallback
+        }
+        if FileManager.default.ubiquityIdentityToken != nil {
+            return .cloudKitConnected
+        }
+        return .iCloudAccountUnavailable
+    }
+
+    /// Check if iCloud-backed sync is currently available
     var isICloudAvailable: Bool {
-        FileManager.default.ubiquityIdentityToken != nil
+        syncStatus == .cloudKitConnected
+    }
+
+    var isCloudKitFallbackActive: Bool {
+        UserDefaults.standard.bool(forKey: PokeTrackApp.cloudKitFallbackDefaultsKey)
+    }
+
+    var cloudKitDiagnostic: String? {
+        UserDefaults.standard.string(forKey: PokeTrackApp.cloudKitLastErrorDefaultsKey)
     }
     
     private func handleExternalChange() {

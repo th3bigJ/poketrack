@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>remote-notification</string>
-	</array>
+	<dict>
+		<key>CFBundleDisplayName</key>
+		<string>Bindr</string>
+		<key>UIBackgroundModes</key>
+		<array>
+			<string>remote-notification</string>
+		</array>
 	<key>NSCameraUsageDescription</key>
 	<string>PokeTrack uses the camera to identify Pokémon cards.</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
@@ -18,7 +20,7 @@
 	<string></string>
 	<key>NSUbiquitousContainers</key>
 	<dict>
-		<key>iCloud.app1xy.PokeTrack</key>
+		<key>iCloud.app1xy.PokeTrack2</key>
 		<dict>
 			<key>NSUbiquitousContainerName</key>
 			<string>PokeTrack</string>

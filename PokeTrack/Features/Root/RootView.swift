@@ -147,6 +147,10 @@ struct RootView: View {
                                     NavigationStack {
                                         WishlistView()
                                     }
+                                case .collection:
+                                    NavigationStack {
+                                        CollectionListView()
+                                    }
                                 case .account:
                                     NavigationStack {
                                         AccountView()
@@ -338,11 +342,13 @@ struct RootView: View {
             chromeScroll.configureForTab(selectedTab)
             if services.isReady {
                 services.setupWishlist(modelContext: modelContext)
+                services.setupCollectionLedger(modelContext: modelContext)
             }
         }
         .onChange(of: services.isReady) { _, ready in
             if ready {
                 services.setupWishlist(modelContext: modelContext)
+                services.setupCollectionLedger(modelContext: modelContext)
             }
         }
         .onChange(of: selectedTab) { _, tab in

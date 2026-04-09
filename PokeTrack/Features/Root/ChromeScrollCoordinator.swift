@@ -20,7 +20,7 @@ final class ChromeScrollCoordinator: ObservableObject {
         case .browse:
             acceptsScrollChromeUpdates = true
             resetForTabChange()
-        case .wishlist, .account:
+        case .wishlist, .collection, .account:
             acceptsScrollChromeUpdates = false
             forceVisible()
         }

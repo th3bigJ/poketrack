@@ -59,7 +59,7 @@ struct WishlistView: View {
             VStack(spacing: 16) {
                 Color.clear.frame(height: rootFloatingChromeInset)
 
-                if !services.cloudSettings.isICloudAvailable {
+                if services.cloudSettings.syncStatus != .cloudKitConnected {
                     iCloudBanner
                         .padding(.horizontal, 16)
                 }
@@ -82,7 +82,7 @@ struct WishlistView: View {
             VStack(spacing: 0) {
                 Color.clear.frame(height: rootFloatingChromeInset)
 
-                if !services.cloudSettings.isICloudAvailable {
+                if services.cloudSettings.syncStatus != .cloudKitConnected {
                     iCloudBanner
                         .padding(.horizontal, 16)
                         .padding(.bottom, 12)
@@ -124,9 +124,9 @@ struct WishlistView: View {
             Image(systemName: "exclamationmark.icloud")
                 .foregroundStyle(.orange)
             VStack(alignment: .leading, spacing: 4) {
-                Text("iCloud not available")
+                Text(iCloudBannerTitle)
                     .font(.headline)
-                Text("Sign into iCloud to sync your wishlist across devices")
+                Text(iCloudBannerMessage)
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -134,6 +134,28 @@ struct WishlistView: View {
         }
         .padding(12)
         .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+
+    private var iCloudBannerTitle: String {
+        switch services.cloudSettings.syncStatus {
+        case .cloudKitConnected:
+            return "iCloud connected"
+        case .cloudKitFallback:
+            return "CloudKit sync failed"
+        case .iCloudAccountUnavailable:
+            return "iCloud not available"
+        }
+    }
+
+    private var iCloudBannerMessage: String {
+        switch services.cloudSettings.syncStatus {
+        case .cloudKitConnected:
+            return "Your wishlist syncs through your private iCloud database."
+        case .cloudKitFallback:
+            return "This device is signed into iCloud, but the app could not open its CloudKit store and is using local-only storage."
+        case .iCloudAccountUnavailable:
+            return "Sign into iCloud to sync your wishlist across devices."
+        }
     }
 
     @ViewBuilder
@@ -211,7 +233,13 @@ struct WishlistView: View {
 
 private enum WishlistPreview {
     static var modelContainer: ModelContainer {
-        let schema = Schema([WishlistItem.self, CollectionItem.self, TransactionRecord.self])
+        let schema = Schema([
+            WishlistItem.self,
+            CollectionItem.self,
+            LedgerLine.self,
+            CostLot.self,
+            SaleAllocation.self,
+        ])
         let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true, cloudKitDatabase: .none)
         return try! ModelContainer(for: schema, configurations: [config])
     }

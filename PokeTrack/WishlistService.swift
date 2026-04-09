@@ -23,22 +23,27 @@ final class WishlistService {
     
     /// Load all wishlist items
     func loadItems() {
-        let descriptor = FetchDescriptor<WishlistItem>(
-            sortBy: [SortDescriptor(\.dateAdded, order: .reverse)]
-        )
         do {
-            items = try modelContext.fetch(descriptor)
+            items = try fetchItems()
         } catch {
             self.error = "Failed to load wishlist: \(error.localizedDescription)"
         }
     }
+
+    private func fetchItems() throws -> [WishlistItem] {
+        let descriptor = FetchDescriptor<WishlistItem>(
+            sortBy: [SortDescriptor(\.dateAdded, order: .reverse)]
+        )
+        return try modelContext.fetch(descriptor)
+    }
     
     /// Check if user can add more wishlist items
     var canAddItem: Bool {
+        let currentItems = (try? fetchItems()) ?? items
         if store.isPremium {
             return true // Unlimited for premium users
         }
-        return items.count < Self.freeWishlistLimit
+        return currentItems.count < Self.freeWishlistLimit
     }
     
     /// Add a card to the wishlist
@@ -48,7 +53,8 @@ final class WishlistService {
         }
         
         // Check if same card + variant already in wishlist
-        if items.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey }) {
+        let currentItems = try fetchItems()
+        if currentItems.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey }) {
             throw WishlistError.alreadyExists
         }
         
@@ -103,12 +109,14 @@ final class WishlistService {
     
     /// Check if a specific card + variant is in the wishlist
     func isInWishlist(cardID: String, variantKey: String) -> Bool {
-        items.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey })
+        let currentItems = (try? fetchItems()) ?? items
+        return currentItems.contains(where: { $0.cardID == cardID && $0.variantKey == variantKey })
     }
     
     /// Check if any variant of a card is in the wishlist
     func isInWishlist(cardID: String) -> Bool {
-        items.contains(where: { $0.cardID == cardID })
+        let currentItems = (try? fetchItems()) ?? items
+        return currentItems.contains(where: { $0.cardID == cardID })
     }
 }
 

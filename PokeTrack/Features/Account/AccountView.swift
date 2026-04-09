@@ -4,18 +4,23 @@ struct AccountView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @State private var showPaywall = false
+    @State private var showDataExport = false
 
     var body: some View {
         List {
             // iCloud Sync Status
             Section {
-                if services.cloudSettings.isICloudAvailable {
+                switch services.cloudSettings.syncStatus {
+                case .cloudKitConnected:
                     Label("iCloud connected", systemImage: "checkmark.icloud")
                         .foregroundStyle(.green)
-                } else {
+                case .cloudKitFallback:
+                    Label("CloudKit sync failed", systemImage: "exclamationmark.icloud")
+                        .foregroundStyle(.orange)
+                case .iCloudAccountUnavailable:
                     Label("iCloud not available", systemImage: "exclamationmark.icloud")
                         .foregroundStyle(.orange)
-                    
+
                     Button("Open Settings") {
                         if let url = URL(string: UIApplication.openSettingsURLString) {
                             UIApplication.shared.open(url)
@@ -25,10 +30,13 @@ struct AccountView: View {
             } header: {
                 Text("Data Sync")
             } footer: {
-                if services.cloudSettings.isICloudAvailable {
-                    Text("Your wishlists and collections sync across all devices signed into your iCloud account.")
-                } else {
-                    Text("Sign into iCloud in Settings to sync your data across devices.")
+                switch services.cloudSettings.syncStatus {
+                case .cloudKitFallback:
+                    Text("This build is using local-only storage because the CloudKit store could not be opened on this device yet.")
+                case .cloudKitConnected:
+                    Text("Your wishlist, collection, and ledger data are stored locally and synced through your private iCloud database.")
+                case .iCloudAccountUnavailable:
+                    Text("You can still use the app offline, but CloudKit sync stays off until this device is signed into iCloud.")
                 }
             }
 
@@ -64,6 +72,25 @@ struct AccountView: View {
                 }
             }
 
+            Section("Data") {
+                Button("Export Data") {
+                    showDataExport = true
+                }
+            }
+
+            if let diagnostic = services.cloudSettings.cloudKitDiagnostic,
+               services.cloudSettings.syncStatus == .cloudKitFallback {
+                Section {
+                    Text(diagnostic)
+                        .font(.caption.monospaced())
+                        .textSelection(.enabled)
+                } header: {
+                    Text("CloudKit Debug")
+                } footer: {
+                    Text("This is the last SwiftData/CloudKit container error captured during app launch.")
+                }
+            }
+
             #if DEBUG
             Section {
                 Toggle(
@@ -84,6 +111,10 @@ struct AccountView: View {
         .contentMargins(.top, rootFloatingChromeInset, for: .scrollContent)
         .sheet(isPresented: $showPaywall) {
             PaywallSheet()
+                .environment(services)
+        }
+        .sheet(isPresented: $showDataExport) {
+            DataExportView()
                 .environment(services)
         }
     }

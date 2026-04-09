@@ -1,3 +1,4 @@
+import SwiftData
 import SwiftUI
 
 struct CardBrowseDetailView: View {
@@ -13,6 +14,7 @@ struct CardBrowseDetailView: View {
     @State private var showWishlistPaywall = false
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
+    @State private var addToCollectionPayload: AddToCollectionSheetPayload?
 
     init(cards: [Card], startIndex: Int) {
         self.cards = cards
@@ -89,6 +91,10 @@ struct CardBrowseDetailView: View {
         } message: {
             Text(wishlistAlertMessage ?? "")
         }
+        .sheet(item: $addToCollectionPayload) { payload in
+            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey)
+                .environment(services)
+        }
     }
 
     private var isCurrentCardOnWishlist: Bool {
@@ -157,9 +163,9 @@ struct CardBrowseDetailView: View {
         }
     }
 
-    /// Placeholder for collection flow; variant is passed so a future implementation can add the chosen print.
     private func addToCollectionVariant(variantKey: String) {
-        _ = variantKey
+        guard let card = currentCard else { return }
+        addToCollectionPayload = AddToCollectionSheetPayload(card: card, variantKey: variantKey)
     }
 
     /// Title Case variant key for picker labels (matches pricing panel style).
@@ -361,6 +367,22 @@ struct CardBrowseDetailView: View {
 private struct CardBrowseDetailPage: View {
     let card: Card
 
+    @Environment(\.modelContext) private var modelContext
+    @Query private var collectionItems: [CollectionItem]
+
+    @State private var editingItem: CollectionItem?
+    @State private var itemPendingRemoval: CollectionItem?
+    @State private var showRemoveConfirm = false
+
+    init(card: Card) {
+        self.card = card
+        let cardID = card.masterCardId
+        _collectionItems = Query(
+            filter: #Predicate<CollectionItem> { $0.cardID == cardID },
+            sort: [SortDescriptor(\.variantKey)]
+        )
+    }
+
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
@@ -374,6 +396,12 @@ private struct CardBrowseDetailPage: View {
                 // Start below the custom header (66pt chrome + 6pt gap).
                 .padding(.top, RootChromeEnvironment.searchBarStackHeight + 6)
 
+                if !collectionItems.isEmpty {
+                    collectionInCollectionSection
+                        .padding(.horizontal, 16)
+                        .padding(.top, 16)
+                }
+
                 CardPricingPanel(card: card)
                     .padding(.top, 16)
                     .padding(.bottom, 32)
@@ -383,5 +411,155 @@ private struct CardBrowseDetailPage: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .scrollContentBackground(.hidden)
         .scrollIndicators(.hidden)
+        .sheet(isPresented: Binding(
+            get: { editingItem != nil },
+            set: { if !$0 { editingItem = nil } }
+        )) {
+            if let editingItem {
+                EditCollectionItemSheet(item: editingItem, cardDisplayName: card.cardName)
+            }
+        }
+        .confirmationDialog(
+            "Remove from collection?",
+            isPresented: $showRemoveConfirm,
+            titleVisibility: .visible
+        ) {
+            Button("Remove", role: .destructive) {
+                if let item = itemPendingRemoval {
+                    modelContext.delete(item)
+                    itemPendingRemoval = nil
+                }
+            }
+            Button("Cancel", role: .cancel) {
+                itemPendingRemoval = nil
+            }
+        } message: {
+            Text("This removes this stack from your holdings. Ledger history is kept.")
+        }
+    }
+
+    private var collectionInCollectionSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            ForEach(collectionItems, id: \.persistentModelID) { item in
+                VStack(alignment: .leading, spacing: 10) {
+                    Text("\(item.quantity) × \(collectionVariantTitle(item.variantKey)) in collection")
+                        .font(.subheadline)
+                        .foregroundStyle(.primary)
+
+                    HStack(spacing: 12) {
+                        Button("Edit") {
+                            editingItem = item
+                        }
+                        .buttonStyle(.bordered)
+
+                        Button("Remove", role: .destructive) {
+                            itemPendingRemoval = item
+                            showRemoveConfirm = true
+                        }
+                        .buttonStyle(.bordered)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(14)
+                .background {
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .fill(.ultraThinMaterial)
+                }
+                .overlay {
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
+                        .strokeBorder(Color.primary.opacity(0.08), lineWidth: 0.5)
+                }
+            }
+        }
+        .accessibilityElement(children: .contain)
+    }
+
+    /// Matches ``AddToCollectionSheet``’s variant label (title case, underscores → spaces).
+    private func collectionVariantTitle(_ variantKey: String) -> String {
+        let spaced = variantKey
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
+    }
+}
+
+// MARK: - Edit collection stack
+
+private struct EditCollectionItemSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
+    @Environment(AppServices.self) private var services
+
+    @Bindable var item: CollectionItem
+    let cardDisplayName: String
+
+    @State private var quantity: Int
+    @State private var notes: String
+    @State private var errorMessage: String?
+
+    init(item: CollectionItem, cardDisplayName: String) {
+        self.item = item
+        self.cardDisplayName = cardDisplayName
+        _quantity = State(initialValue: item.quantity)
+        _notes = State(initialValue: item.notes)
+    }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    Stepper("Quantity: \(quantity)", value: $quantity, in: 1...999)
+                }
+                Section {
+                    TextField("Notes", text: $notes, axis: .vertical)
+                        .lineLimit(3...8)
+                }
+                if let errorMessage {
+                    Section {
+                        Text(errorMessage)
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                }
+            }
+            .navigationTitle("Edit in collection")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") { save() }
+                }
+            }
+            .onAppear {
+                services.setupCollectionLedger(modelContext: modelContext)
+            }
+        }
+    }
+
+    private func save() {
+        errorMessage = nil
+        services.setupCollectionLedger(modelContext: modelContext)
+        guard let ledger = services.collectionLedger else {
+            errorMessage = "Collection isn’t ready. Try again."
+            return
+        }
+        do {
+            if quantity != item.quantity {
+                try ledger.applySingleCardStackQuantityChange(
+                    item: item,
+                    newQuantity: quantity,
+                    cardDisplayName: cardDisplayName
+                )
+            }
+            item.notes = notes
+            dismiss()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 }
