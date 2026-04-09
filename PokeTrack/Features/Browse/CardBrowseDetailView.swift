@@ -102,6 +102,10 @@ struct CardBrowseDetailView: View {
         return wl.isInWishlist(cardID: card.masterCardId)
     }
 
+    private var singleAvailableVariantKey: String? {
+        wishlistVariantKeys.count == 1 ? wishlistVariantKeys[0] : nil
+    }
+
     private func loadWishlistVariantKeys() async {
         guard let card = currentCard else { return }
         var keys = await services.pricing.variantKeys(for: card)
@@ -251,24 +255,41 @@ struct CardBrowseDetailView: View {
                 .animation(.easeInOut(duration: 0.15), value: currentCard?.cardName)
 
             HStack(spacing: 10) {
-                Menu {
-                    variantSelectionMenuContent(
-                        sectionHeader: "Select Variant to add to collection",
-                        showWishlistCheckmarks: false,
-                        onSelect: addToCollectionVariant(variantKey:)
-                    )
-                } label: {
-                    Image(systemName: "plus")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(collectionPlusGlyphColor)
-                        .modifier(ChromeGlassCircleGlyphModifier())
+                Group {
+                    if let variantKey = singleAvailableVariantKey {
+                        Button {
+                            addToCollectionVariant(variantKey: variantKey)
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(collectionPlusGlyphColor)
+                                .modifier(ChromeGlassCircleGlyphModifier())
+                        }
+                        .buttonStyle(.plain)
+                        .contentShape(Rectangle())
+                        .accessibilityLabel("Add to collection")
+                        .accessibilityHint("Adds the available print variant")
+                    } else {
+                        Menu {
+                            variantSelectionMenuContent(
+                                sectionHeader: "Select Variant to add to collection",
+                                showWishlistCheckmarks: false,
+                                onSelect: addToCollectionVariant(variantKey:)
+                            )
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(collectionPlusGlyphColor)
+                                .modifier(ChromeGlassCircleGlyphModifier())
+                        }
+                        .menuStyle(.button)
+                        .menuIndicator(.hidden)
+                        .tint(collectionPlusGlyphColor)
+                        .accessibilityLabel("Add to collection")
+                        .accessibilityHint("Choose a print variant to add")
+                    }
                 }
                 .frame(width: 48, height: 48)
-                .menuStyle(.button)
-                .menuIndicator(.hidden)
-                .tint(collectionPlusGlyphColor)
-                .accessibilityLabel("Add to collection")
-                .accessibilityHint("Choose a print variant to add")
 
                 Group {
                     if isCurrentCardOnWishlist {
@@ -283,23 +304,40 @@ struct CardBrowseDetailView: View {
                         .contentShape(Rectangle())
                         .accessibilityLabel("Remove from wishlist")
                     } else {
-                        Menu {
-                            variantSelectionMenuContent(
-                                sectionHeader: "Select Variant to add to wishlist",
-                                showWishlistCheckmarks: true,
-                                onSelect: addToWishlist(variantKey:)
-                            )
-                        } label: {
-                            Image(systemName: "star")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(Color.primary)
-                                .modifier(ChromeGlassCircleGlyphModifier())
+                        Group {
+                            if let variantKey = singleAvailableVariantKey {
+                                Button {
+                                    addToWishlist(variantKey: variantKey)
+                                } label: {
+                                    Image(systemName: "star")
+                                        .font(.system(size: 17, weight: .medium))
+                                        .foregroundStyle(Color.primary)
+                                        .modifier(ChromeGlassCircleGlyphModifier())
+                                }
+                                .buttonStyle(.plain)
+                                .contentShape(Rectangle())
+                                .accessibilityLabel("Add to wishlist")
+                                .accessibilityHint("Adds the available print variant")
+                            } else {
+                                Menu {
+                                    variantSelectionMenuContent(
+                                        sectionHeader: "Select Variant to add to wishlist",
+                                        showWishlistCheckmarks: true,
+                                        onSelect: addToWishlist(variantKey:)
+                                    )
+                                } label: {
+                                    Image(systemName: "star")
+                                        .font(.system(size: 17, weight: .medium))
+                                        .foregroundStyle(Color.primary)
+                                        .modifier(ChromeGlassCircleGlyphModifier())
+                                }
+                                .menuStyle(.button)
+                                .menuIndicator(.hidden)
+                                .accessibilityLabel("Add to wishlist")
+                                .accessibilityHint("Choose a print variant to save")
+                            }
                         }
                         .frame(width: 48, height: 48)
-                        .menuStyle(.button)
-                        .menuIndicator(.hidden)
-                        .accessibilityLabel("Add to wishlist")
-                        .accessibilityHint("Choose a print variant to save")
                     }
                 }
             }
