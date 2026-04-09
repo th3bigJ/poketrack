@@ -71,6 +71,7 @@ final class CatalogStore: @unchecked Sendable {
             PRIMARY KEY (set_code, master_card_id)
         );
         CREATE INDEX IF NOT EXISTS idx_catalog_cards_set ON catalog_cards(set_code);
+        CREATE INDEX IF NOT EXISTS idx_catalog_cards_master_id ON catalog_cards(master_card_id);
         CREATE TABLE IF NOT EXISTS card_pricing (
             set_code TEXT PRIMARY KEY NOT NULL,
             json BLOB NOT NULL,
@@ -258,6 +259,28 @@ final class CatalogStore: @unchecked Sendable {
                 out.append(card)
             }
             return out
+        }
+    }
+
+    /// Single card by catalog `masterCardId` (wishlist / deep links). `master_card_id` is unique in practice.
+    func fetchCard(masterCardId: String) throws -> Card? {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            guard sqlite3_prepare_v2(
+                db,
+                "SELECT json FROM catalog_cards WHERE master_card_id = ? LIMIT 1;",
+                -1,
+                &stmt,
+                nil
+            ) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            masterCardId.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+            guard let c = sqlite3_column_text(stmt, 0) else { return nil }
+            let s = String(cString: c)
+            guard let d = s.data(using: .utf8) else { return nil }
+            return try jsonDecoder.decode(Card.self, from: d)
         }
     }
 

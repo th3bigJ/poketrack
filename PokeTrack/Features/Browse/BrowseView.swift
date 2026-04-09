@@ -4,6 +4,8 @@ import SwiftUI
 
 struct CardGridCell: View {
     let card: Card
+    /// Optional line under the name (e.g. wishlist variant key).
+    var footnote: String? = nil
 
     var body: some View {
         VStack(spacing: 4) {
@@ -20,6 +22,13 @@ struct CardGridCell: View {
                 .lineLimit(1)
                 .multilineTextAlignment(.center)
                 .foregroundStyle(.primary)
+            if let footnote, !footnote.isEmpty {
+                Text(footnote)
+                    .font(.caption2)
+                    .lineLimit(1)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.secondary)
+            }
         }
     }
 }
@@ -175,10 +184,32 @@ struct SetCardsView: View {
         .toolbarBackground(.hidden, for: .navigationBar)
         .task {
             isLoading = true
-            cards = await services.cardData.loadCards(forSetCode: set.setCode)
+            let loaded = await services.cardData.loadCards(forSetCode: set.setCode)
+            cards = sortCardsByLocalIdHighestFirst(loaded)
             isLoading = false
         }
     }
+}
+
+/// Browse-by-set grid: highest catalog `localId` first (numeric when possible); ties and missing `localId` use `masterCardId`.
+private func sortCardsByLocalIdHighestFirst(_ cards: [Card]) -> [Card] {
+    cards.sorted { a, b in
+        let va = localIdNumericSortValue(a.localId)
+        let vb = localIdNumericSortValue(b.localId)
+        if va != vb { return va > vb }
+        return a.masterCardId > b.masterCardId
+    }
+}
+
+/// Parses `localId` like `"102"` for ordering; missing or non-numeric sorts last (same as `Int.min`).
+private func localIdNumericSortValue(_ raw: String?) -> Int {
+    guard let raw = raw?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else {
+        return Int.min
+    }
+    if let v = Int(raw) { return v }
+    let digits = raw.prefix { $0.isNumber }
+    if let v = Int(String(digits)), !digits.isEmpty { return v }
+    return Int.min
 }
 
 // MARK: - Dex cards

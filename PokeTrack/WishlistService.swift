@@ -74,6 +74,21 @@ final class WishlistService {
             throw WishlistError.saveFailed(error)
         }
     }
+
+    /// Remove every wishlist row for this card (all print variants).
+    func removeAllItems(forCardID cardID: String) throws {
+        let toRemove = items.filter { $0.cardID == cardID }
+        guard !toRemove.isEmpty else { return }
+        for item in toRemove {
+            modelContext.delete(item)
+        }
+        do {
+            try modelContext.save()
+            loadItems()
+        } catch {
+            throw WishlistError.saveFailed(error)
+        }
+    }
     
     /// Update an item's notes
     func updateNotes(for item: WishlistItem, notes: String) throws {

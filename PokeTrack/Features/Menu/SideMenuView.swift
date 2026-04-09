@@ -46,6 +46,15 @@ struct SideMenuView: View {
                             selectedTab = .browse
                         }
 
+                        SideMenuRow(
+                            systemImage: "star",
+                            title: "Wishlist",
+                            subtitle: "Cards you want to collect"
+                        ) {
+                            close()
+                            selectedTab = .wishlist
+                        }
+
                         Divider()
                             .padding(.vertical, 12)
                             .padding(.horizontal, 4)

@@ -63,6 +63,22 @@ struct AccountView: View {
                     }
                 }
             }
+
+            #if DEBUG
+            Section {
+                Toggle(
+                    "Force free tier",
+                    isOn: Binding(
+                        get: { services.store.debugForceFreeTier },
+                        set: { services.store.debugForceFreeTier = $0 }
+                    )
+                )
+            } header: {
+                Text("Testing")
+            } footer: {
+                Text("On: app acts non‑Premium (wishlist limits, etc.) while your StoreKit purchase stays active. Off: real entitlement.")
+            }
+            #endif
         }
         .toolbar(.hidden, for: .navigationBar)
         .contentMargins(.top, rootFloatingChromeInset, for: .scrollContent)

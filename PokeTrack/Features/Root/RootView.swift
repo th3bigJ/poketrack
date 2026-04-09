@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 import UIKit
 
 private enum BrowseFullScreen: String, Identifiable, Hashable {
@@ -44,6 +45,7 @@ private struct BrowseFullScreenHost: View {
 
 struct RootView: View {
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.modelContext) private var modelContext
     @State private var services = AppServices()
     @StateObject private var chromeScroll = ChromeScrollCoordinator()
     @State private var selectedTab: AppTab = .browse
@@ -140,6 +142,10 @@ struct RootView: View {
                                 case .browse:
                                     NavigationStack(path: $browseNavigationPath) {
                                         BrowseView()
+                                    }
+                                case .wishlist:
+                                    NavigationStack {
+                                        WishlistView()
                                     }
                                 case .account:
                                     NavigationStack {
@@ -330,6 +336,14 @@ struct RootView: View {
         }
         .onAppear {
             chromeScroll.configureForTab(selectedTab)
+            if services.isReady {
+                services.setupWishlist(modelContext: modelContext)
+            }
+        }
+        .onChange(of: services.isReady) { _, ready in
+            if ready {
+                services.setupWishlist(modelContext: modelContext)
+            }
         }
         .onChange(of: selectedTab) { _, tab in
             chromeScroll.configureForTab(tab)

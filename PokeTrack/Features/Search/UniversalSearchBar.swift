@@ -170,3 +170,48 @@ struct UniversalSearchBar: View {
         }
     }
 }
+
+// MARK: - Shared chrome button (matches filter / leading circle controls)
+
+/// Same circle glyph treatment as ``ChromeGlassCircleButton`` (for `Menu` labels and other non-`Button` wrappers).
+struct ChromeGlassCircleGlyphModifier: ViewModifier {
+    private var glassStroke: Color { Color.primary.opacity(0.1) }
+
+    func body(content: Content) -> some View {
+        Group {
+            if #available(iOS 26.0, *) {
+                content
+                    .frame(width: 44, height: 44)
+                    .glassEffect(.regular.interactive(), in: Circle())
+                    .contentShape(Circle())
+            } else {
+                content
+                    .frame(width: 44, height: 44)
+                    .background(.ultraThinMaterial, in: Circle())
+                    .overlay {
+                        Circle()
+                            .strokeBorder(glassStroke, lineWidth: 0.5)
+                    }
+                    .contentShape(Circle())
+            }
+        }
+    }
+}
+
+/// Same visual treatment as the filter button in ``UniversalSearchBar``: 44pt glyph, 48×48 hit area, Liquid Glass on iOS 26+ or ultra‑thin material + hairline below.
+struct ChromeGlassCircleButton<Label: View>: View {
+    let accessibilityLabel: String
+    let action: () -> Void
+    @ViewBuilder var label: () -> Label
+
+    var body: some View {
+        Button(action: action) {
+            label()
+                .modifier(ChromeGlassCircleGlyphModifier())
+        }
+        .buttonStyle(.plain)
+        .frame(width: 48, height: 48)
+        .contentShape(Rectangle())
+        .accessibilityLabel(accessibilityLabel)
+    }
+}

@@ -5,13 +5,8 @@ import Foundation
 final class ImagePrefetcher: @unchecked Sendable {
     static let shared = ImagePrefetcher()
 
-    private let session: URLSession = {
-        let config = URLSessionConfiguration.default
-        config.requestCachePolicy = .returnCacheDataElseLoad
-        // Low priority so prefetch doesn't compete with visible-cell loads.
-        config.httpMaximumConnectionsPerHost = 4
-        return URLSession(configuration: config)
-    }()
+    /// Same pool as `CachedAsyncImage` so image traffic doesn’t open two parallel session stacks to the CDN.
+    private let session = AppURLSession.images
 
     private var inFlight: [URL: Task<Void, Never>] = [:]
     private let lock = NSLock()

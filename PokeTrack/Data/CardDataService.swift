@@ -374,6 +374,25 @@ final class CardDataService {
         return try CatalogStore.shared.fetchCards(setCode: setCode)
     }
 
+    /// Resolves one card by `masterCardId` (same string as wishlist `cardID`). SQLite first, then scans loaded sets if needed.
+    func loadCard(masterCardId: String) async -> Card? {
+        do {
+            try CatalogStore.shared.open()
+            if let c = try CatalogStore.shared.fetchCard(masterCardId: masterCardId) {
+                return c
+            }
+        } catch {
+            // Fall through to linear scan.
+        }
+        for set in sets {
+            let cards = await loadCards(forSetCode: set.setCode)
+            if let c = cards.first(where: { $0.masterCardId == masterCardId }) {
+                return c
+            }
+        }
+        return nil
+    }
+
     private func loadBundledCards(setCode: String) -> [Card]? {
         guard let url = Bundle.main.url(forResource: setCode, withExtension: "json") else { return nil }
         return try? loadCardsFile(url: url)

@@ -5,13 +5,34 @@ import StoreKit
 @Observable
 @MainActor
 final class StoreKitService {
-    private(set) var isPremium = false
+    /// Raw entitlement from StoreKit (before DEBUG overrides).
+    private var premiumEntitlement = false
+
+    /// Effective premium flag for the app. In **Debug** builds, use **Force free tier** on Account to test without Premium.
+    var isPremium: Bool {
+        #if DEBUG
+        if debugForceFreeTier { return false }
+        #endif
+        return premiumEntitlement
+    }
+
     private(set) var products: [Product] = []
     private(set) var purchaseError: String?
 
     private var updatesTask: Task<Void, Never>?
 
+    #if DEBUG
+    static let forceFreeTierDefaultsKey = "PokeTrack.debug.forceFreeTier"
+    /// When `true`, the app behaves as non‑Premium for testing; StoreKit entitlements are unchanged.
+    var debugForceFreeTier = false {
+        didSet { UserDefaults.standard.set(debugForceFreeTier, forKey: Self.forceFreeTierDefaultsKey) }
+    }
+    #endif
+
     init() {
+        #if DEBUG
+        debugForceFreeTier = UserDefaults.standard.bool(forKey: Self.forceFreeTierDefaultsKey)
+        #endif
         updatesTask = Task { await observeTransactions() }
     }
 
@@ -33,7 +54,7 @@ final class StoreKitService {
                 break
             }
         }
-        isPremium = premium
+        premiumEntitlement = premium
     }
 
     func purchase() async throws {
@@ -47,7 +68,7 @@ final class StoreKitService {
         case .success(let verification):
             guard case .verified(let t) = verification else { return }
             if t.productID == AppConfiguration.premiumProductID {
-                isPremium = true
+                premiumEntitlement = true
             }
         case .userCancelled:
             break
@@ -68,7 +89,7 @@ final class StoreKitService {
         for await update in StoreKit.Transaction.updates {
             guard case .verified(let t) = update else { continue }
             if t.productID == AppConfiguration.premiumProductID {
-                isPremium = true
+                premiumEntitlement = true
             }
         }
     }

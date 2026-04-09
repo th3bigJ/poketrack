@@ -31,7 +31,7 @@ private final class ImageLoader {
 
         loadTask = Task {
             do {
-                let (data, response) = try await URLSession.shared.data(for: request)
+                let (data, response) = try await AppURLSession.images.data(for: request)
                 guard !Task.isCancelled else { return }
                 if let ui = UIImage(data: data) {
                     URLCache.shared.storeCachedResponse(

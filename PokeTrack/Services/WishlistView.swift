@@ -4,83 +4,35 @@ import SwiftData
 struct WishlistView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.presentCard) private var presentCard
+    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var items: [WishlistItem]
-    
+
+    @State private var cardsByCardID: [String: Card] = [:]
     @State private var showPaywall = false
-    @State private var showAddCard = false
     @State private var errorMessage: String?
-    
+
+    private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+
+    /// Reload when membership or card ids change.
+    private var wishlistSignature: String {
+        items.map { "\($0.cardID)|\($0.variantKey)" }.joined(separator: "§")
+    }
+
+    /// Same order as `items`, for horizontal paging in `CardBrowseDetailView`.
+    private var orderedCards: [Card] {
+        items.compactMap { cardsByCardID[$0.cardID] }
+    }
+
     var body: some View {
-        List {
-            // iCloud sync status section
-            if !services.cloudSettings.isICloudAvailable {
-                Section {
-                    HStack(spacing: 12) {
-                        Image(systemName: "exclamationmark.icloud")
-                            .foregroundStyle(.orange)
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text("iCloud not available")
-                                .font(.headline)
-                            Text("Sign into iCloud to sync your wishlist across devices")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                }
-            }
-            
-            // Wishlist items
-            Section {
-                if items.isEmpty {
-                    ContentUnavailableView(
-                        "No wishlist items",
-                        systemImage: "star.slash",
-                        description: Text("Cards you want to collect will appear here")
-                    )
-                } else {
-                    ForEach(items) { item in
-                        WishlistItemRow(item: item)
-                    }
-                    .onDelete(perform: deleteItems)
-                }
-            } header: {
-                HStack {
-                    Text("Wishlist")
-                    Spacer()
-                    if !services.store.isPremium {
-                        Text("\(items.count)/\(WishlistService.freeWishlistLimit)")
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
-                    }
-                }
-            } footer: {
-                if !services.store.isPremium && items.count >= WishlistService.freeWishlistLimit {
-                    Button("Upgrade to Premium for unlimited wishlist items") {
-                        showPaywall = true
-                    }
-                    .font(.caption)
-                }
+        Group {
+            if items.isEmpty {
+                emptyState
+            } else {
+                wishlistScrollGrid
             }
         }
-        .navigationTitle("Wishlist")
-        .toolbar {
-            ToolbarItem(placement: .primaryAction) {
-                Button {
-                    guard let wishlistService = services.wishlist else { return }
-                    
-                    if wishlistService.canAddItem {
-                        showAddCard = true
-                    } else {
-                        showPaywall = true
-                    }
-                } label: {
-                    Label("Add Card", systemImage: "plus")
-                }
-            }
-        }
-        .sheet(isPresented: $showAddCard) {
-            AddToWishlistSheet()
-        }
+        .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $showPaywall) {
             PaywallSheet()
                 .environment(services)
@@ -94,173 +46,153 @@ struct WishlistView: View {
                 Text(errorMessage)
             }
         }
+        .task(id: wishlistSignature) {
+            await resolveWishlistCards()
+        }
         .onAppear {
-            // Initialize wishlist service with model context
             services.setupWishlist(modelContext: modelContext)
         }
     }
-    
-    private func deleteItems(at offsets: IndexSet) {
-        guard let wishlistService = services.wishlist else { return }
-        
-        for index in offsets {
-            let item = items[index]
-            do {
-                try wishlistService.removeItem(item)
-            } catch {
-                errorMessage = error.localizedDescription
+
+    private var emptyState: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                Color.clear.frame(height: rootFloatingChromeInset)
+
+                if !services.cloudSettings.isICloudAvailable {
+                    iCloudBanner
+                        .padding(.horizontal, 16)
+                }
+
+                wishlistTopBar
+                    .padding(.horizontal, 16)
+
+                ContentUnavailableView(
+                    "No wishlist items",
+                    systemImage: "star.slash",
+                    description: Text("Open a card, then tap the star to add it here.")
+                )
+                .frame(minHeight: 280)
             }
         }
     }
-}
 
-// MARK: - Wishlist Item Row
+    private var wishlistScrollGrid: some View {
+        ScrollView {
+            VStack(spacing: 0) {
+                Color.clear.frame(height: rootFloatingChromeInset)
 
-struct WishlistItemRow: View {
-    @Environment(AppServices.self) private var services
-    let item: WishlistItem
-    
-    @State private var cardDetails: CardDetails?
-    
-    var body: some View {
+                if !services.cloudSettings.isICloudAvailable {
+                    iCloudBanner
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 12)
+                }
+
+                wishlistTopBar
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 12)
+
+                LazyVGrid(columns: columns, spacing: 12) {
+                    ForEach(items) { item in
+                        wishlistCell(for: item)
+                    }
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 8)
+
+                if !services.store.isPremium && items.count >= WishlistService.freeWishlistLimit {
+                    Button("Upgrade to Premium for unlimited wishlist items") {
+                        showPaywall = true
+                    }
+                    .font(.caption)
+                    .padding(.horizontal, 16)
+                    .padding(.bottom, 16)
+                }
+            }
+        }
+        .coordinateSpace(name: "wishlistScroll")
+    }
+
+    private var wishlistTopBar: some View {
+        Text("Wishlist")
+            .font(.largeTitle.bold())
+            .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var iCloudBanner: some View {
         HStack(spacing: 12) {
-            // Card image placeholder
-            RoundedRectangle(cornerRadius: 8)
-                .fill(Color.secondary.opacity(0.2))
-                .frame(width: 60, height: 84)
-                .overlay {
-                    if let cardDetails {
-                        // You'd load actual image here
-                        Text(cardDetails.number)
-                            .font(.caption)
-                    } else {
+            Image(systemName: "exclamationmark.icloud")
+                .foregroundStyle(.orange)
+            VStack(alignment: .leading, spacing: 4) {
+                Text("iCloud not available")
+                    .font(.headline)
+                Text("Sign into iCloud to sync your wishlist across devices")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+            Spacer(minLength: 0)
+        }
+        .padding(12)
+        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+    }
+
+    @ViewBuilder
+    private func wishlistCell(for item: WishlistItem) -> some View {
+        if let card = cardsByCardID[item.cardID] {
+            Button {
+                presentCard(card, orderedCards)
+            } label: {
+                CardGridCell(card: card, footnote: item.variantKey)
+            }
+            .buttonStyle(.plain)
+            .contextMenu {
+                Button("Remove from Wishlist", role: .destructive) {
+                    removeItem(item)
+                }
+            }
+            .accessibilityLabel("\(card.cardName), \(item.variantKey)")
+        } else {
+            VStack(spacing: 4) {
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color.secondary.opacity(0.15))
+                    .aspectRatio(5 / 7, contentMode: .fit)
+                    .overlay {
                         ProgressView()
                     }
-                }
-            
-            VStack(alignment: .leading, spacing: 4) {
-                Text(cardDetails?.name ?? item.cardID)
-                    .font(.headline)
-                
-                if let cardDetails {
-                    Text(cardDetails.setName)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                    
-                    // Show market price if available
-                    if let price = cardDetails.marketPrice {
-                        Text(formatPrice(price))
-                            .font(.subheadline)
-                            .foregroundStyle(.green)
-                    }
-                }
-                
-                if !item.notes.isEmpty {
-                    Text(item.notes)
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                        .lineLimit(2)
-                }
-
+                Text(item.cardID)
+                    .font(.caption2)
+                    .lineLimit(2)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.secondary)
                 Text(item.variantKey)
                     .font(.caption2)
                     .foregroundStyle(.tertiary)
-                
-                Text("Added \(item.dateAdded.formatted(date: .abbreviated, time: .omitted))")
-                    .font(.caption2)
-                    .foregroundStyle(.tertiary)
             }
-            
-            Spacer()
-        }
-        .task {
-            await loadCardDetails()
-        }
-    }
-    
-    private func loadCardDetails() async {
-        // Load card details from your existing CardDataService
-        // This is just a placeholder - integrate with your actual card loading logic
-        cardDetails = await services.cardData.loadCardDetails(cardID: item.cardID)
-    }
-    
-    private func formatPrice(_ usd: Double) -> String {
-        services.priceDisplay.currency.format(
-            amountUSD: usd,
-            usdToGbp: services.pricing.usdToGbp
-        )
-    }
-}
-
-// MARK: - Add to Wishlist Sheet
-
-struct AddToWishlistSheet: View {
-    @Environment(\.dismiss) private var dismiss
-    @Environment(AppServices.self) private var services
-    
-    @State private var cardID: String = ""
-    /// Scrydex-style key, e.g. `normal`, `holofoil` (matches card pricing JSON).
-    @State private var variantKey: String = "normal"
-    @State private var notes: String = ""
-    @State private var errorMessage: String?
-    
-    var body: some View {
-        NavigationStack {
-            Form {
-                Section("Card") {
-                    TextField("Card ID (e.g., sv3pt5-1)", text: $cardID)
-                        .textInputAutocapitalization(.never)
-                        .autocorrectionDisabled()
-
-                    TextField("Variant (e.g. normal, holofoil)", text: $variantKey)
-                        .textInputAutocapitalization(.never)
-                        .autocorrectionDisabled()
-                    
-                    // TODO: Add card search/picker here
-                }
-                
-                Section("Notes (Optional)") {
-                    TextField("Add notes...", text: $notes, axis: .vertical)
-                        .lineLimit(3...6)
-                }
-            }
-            .navigationTitle("Add to Wishlist")
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") {
-                        dismiss()
-                    }
-                }
-                ToolbarItem(placement: .confirmationAction) {
-                    Button("Add") {
-                        addToWishlist()
-                    }
-                    .disabled(cardID.isEmpty)
-                }
-            }
-            .alert("Error", isPresented: .constant(errorMessage != nil)) {
-                Button("OK") {
-                    errorMessage = nil
-                }
-            } message: {
-                if let errorMessage {
-                    Text(errorMessage)
+            .contextMenu {
+                Button("Remove from Wishlist", role: .destructive) {
+                    removeItem(item)
                 }
             }
         }
     }
-    
-    private func addToWishlist() {
+
+    private func resolveWishlistCards() async {
+        var next: [String: Card] = [:]
+        for item in items {
+            if next[item.cardID] != nil { continue }
+            if let c = await services.cardData.loadCard(masterCardId: item.cardID) {
+                next[item.cardID] = c
+            }
+        }
+        cardsByCardID = next
+        let urls = orderedCards.map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
+        ImagePrefetcher.shared.prefetch(urls)
+    }
+
+    private func removeItem(_ item: WishlistItem) {
         guard let wishlistService = services.wishlist else { return }
-        
         do {
-            try wishlistService.addItem(
-                cardID: cardID.trimmingCharacters(in: .whitespaces),
-                variantKey: variantKey.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? "normal" : variantKey.trimmingCharacters(in: .whitespacesAndNewlines),
-                notes: notes
-            )
-            dismiss()
+            try wishlistService.removeItem(item)
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -269,25 +201,18 @@ struct AddToWishlistSheet: View {
 
 // MARK: - Preview Helpers
 
-extension CardDataService {
-    // Placeholder - implement this with your actual card loading logic
-    func loadCardDetails(cardID: String) async -> CardDetails? {
-        // Your existing card loading logic here
-        return nil
-    }
-}
-
-struct CardDetails {
-    let name: String
-    let number: String
-    let setName: String
-    let marketPrice: Double?
-}
-
 #Preview("Empty Wishlist") {
     NavigationStack {
         WishlistView()
             .environment(AppServices())
-            .modelContainer(for: [WishlistItem.self, CollectionItem.self, TransactionRecord.self])
+    }
+    .modelContainer(WishlistPreview.modelContainer)
+}
+
+private enum WishlistPreview {
+    static var modelContainer: ModelContainer {
+        let schema = Schema([WishlistItem.self, CollectionItem.self, TransactionRecord.self])
+        let config = ModelConfiguration(schema: schema, isStoredInMemoryOnly: true, cloudKitDatabase: .none)
+        return try! ModelContainer(for: schema, configurations: [config])
     }
 }
