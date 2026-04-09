@@ -11,6 +11,7 @@ struct CardBrowseDetailView: View {
 
     /// Scrydex-style keys from pricing JSON for the open card (for wishlist).
     @State private var wishlistVariantKeys: [String] = ["normal"]
+    @State private var isCurrentCardWishlisted = false
     @State private var showWishlistPaywall = false
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
@@ -97,9 +98,12 @@ struct CardBrowseDetailView: View {
         }
     }
 
-    private var isCurrentCardOnWishlist: Bool {
-        guard let card = currentCard, let wl = services.wishlist else { return false }
-        return wl.isInWishlist(cardID: card.masterCardId)
+    private func refreshWishlistState() {
+        guard let card = currentCard, let wl = services.wishlist else {
+            isCurrentCardWishlisted = false
+            return
+        }
+        isCurrentCardWishlisted = wl.isInWishlist(cardID: card.masterCardId)
     }
 
     private var singleAvailableVariantKey: String? {
@@ -116,6 +120,7 @@ struct CardBrowseDetailView: View {
             keys = ["normal"]
         }
         wishlistVariantKeys = keys
+        refreshWishlistState()
     }
 
     private func addToWishlist(variantKey: String) {
@@ -127,6 +132,7 @@ struct CardBrowseDetailView: View {
         }
         do {
             try wl.addItem(cardID: card.masterCardId, variantKey: variantKey, notes: "")
+            isCurrentCardWishlisted = true
         } catch let e as WishlistError {
             switch e {
             case .limitReached:
@@ -153,6 +159,7 @@ struct CardBrowseDetailView: View {
         }
         do {
             try wl.removeAllItems(forCardID: card.masterCardId)
+            isCurrentCardWishlisted = false
         } catch let e as WishlistError {
             switch e {
             case .saveFailed(let err):
@@ -292,7 +299,7 @@ struct CardBrowseDetailView: View {
                 .frame(width: 48, height: 48)
 
                 Group {
-                    if isCurrentCardOnWishlist {
+                    if isCurrentCardWishlisted {
                         Button(action: removeCurrentCardFromWishlist) {
                             Image(systemName: "star.fill")
                                 .font(.system(size: 17, weight: .medium))

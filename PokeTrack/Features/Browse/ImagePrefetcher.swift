@@ -30,9 +30,7 @@ final class ImagePrefetcher: @unchecked Sendable {
                     URLCache.shared.storeCachedResponse(
                         CachedURLResponse(response: response, data: data), for: request)
                 } catch {}
-                self.lock.lock()
-                self.inFlight[url] = nil
-                self.lock.unlock()
+                self.finish(url)
             }
             inFlight[url] = task
             lock.unlock()
@@ -44,6 +42,22 @@ final class ImagePrefetcher: @unchecked Sendable {
         lock.lock()
         inFlight.values.forEach { $0.cancel() }
         inFlight.removeAll()
+        lock.unlock()
+    }
+
+    /// Prefetch a slice of card thumbnails, typically just ahead of the visible grid cells.
+    func prefetchCardWindow(_ cards: [Card], startingAt startIndex: Int, count: Int = 18) {
+        guard startIndex < cards.count else { return }
+        let endIndex = min(startIndex + count, cards.count)
+        let urls = cards[startIndex..<endIndex].map {
+            AppConfiguration.imageURL(relativePath: $0.imageLowSrc)
+        }
+        prefetch(urls)
+    }
+
+    private func finish(_ url: URL) {
+        lock.lock()
+        inFlight[url] = nil
         lock.unlock()
     }
 }

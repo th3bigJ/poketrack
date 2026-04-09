@@ -93,8 +93,11 @@ struct WishlistView: View {
                     .padding(.bottom, 12)
 
                 LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(items) { item in
+                    ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
                         wishlistCell(for: item)
+                            .onAppear {
+                                ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: index + 1)
+                            }
                     }
                 }
                 .padding(.horizontal, 16)
@@ -207,8 +210,7 @@ struct WishlistView: View {
             }
         }
         cardsByCardID = next
-        let urls = orderedCards.map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
-        ImagePrefetcher.shared.prefetch(urls)
+        ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: 0, count: 24)
     }
 
     private func removeItem(_ item: WishlistItem) {

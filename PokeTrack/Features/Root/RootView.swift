@@ -109,6 +109,7 @@ struct RootView: View {
             // `GeometryReader` is already laid out inside the safe area, so only a small margin below the
             // status bar — do not add `safeAreaInsets.top` here or the bar sits one notch-height too low.
             let searchBarTopInset: CGFloat = 8
+            let searchBarHiddenOffset = -(RootChromeEnvironment.searchBarStackHeight + searchBarTopInset + 18)
             // `SideMenuView` uses `.ignoresSafeArea(edges: .top)`, so it still needs the full safe inset.
             let sideMenuHeaderTopPadding = geo.safeAreaInsets.top + 8
             let edgeSwipeBelowSearchBar = searchBarTopInset + RootChromeEnvironment.searchBarStackHeight + 8
@@ -129,8 +130,7 @@ struct RootView: View {
 
             let floatingChromeInset: CGFloat = {
                 if isSearchDetailActive { return 0 }
-                if showUniversalSearchBar { return RootChromeEnvironment.searchBarStackHeight }
-                return 0
+                return RootChromeEnvironment.searchBarStackHeight
             }()
 
             ZStack(alignment: .top) {
@@ -150,6 +150,10 @@ struct RootView: View {
                                 case .collection:
                                     NavigationStack {
                                         CollectionListView()
+                                    }
+                                case .transactions:
+                                    NavigationStack {
+                                        TransactionsView()
                                     }
                                 case .account:
                                     NavigationStack {
@@ -231,51 +235,48 @@ struct RootView: View {
                 .environment(\.rootFloatingChromeInset, floatingChromeInset)
 
                 // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
-                Group {
-                    if showUniversalSearchBar, !isSearchDetailActive {
-                        UniversalSearchBar(
-                            text: $universalQuery,
-                            isFocused: $searchFieldFocused,
-                            isMenuOpen: isSideMenuOpen,
-                            isSearchOpen: isSearchExperiencePresented,
-                            onBurgerTap: {
-                                if isSearchExperiencePresented {
-                                    searchNavigationPath = NavigationPath()
-                                    universalQuery = ""
-                                    withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                                        isSearchExperiencePresented = false
-                                    }
-                                    searchFieldFocused = false
-                                    return
-                                }
-                                searchFieldFocused = false
+                UniversalSearchBar(
+                    text: $universalQuery,
+                    isFocused: $searchFieldFocused,
+                    isMenuOpen: isSideMenuOpen,
+                    isSearchOpen: isSearchExperiencePresented,
+                    onBurgerTap: {
+                        if isSearchExperiencePresented {
+                            searchNavigationPath = NavigationPath()
+                            universalQuery = ""
+                            withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
                                 isSearchExperiencePresented = false
-                                withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                                    isSideMenuOpen.toggle()
-                                }
-                            },
-                            onCamera: {
-                                searchFieldFocused = false
-                                showCardScanner = true
-                            },
-                            onFilter: {
-                                searchFieldFocused = false
-                                showFilterComingSoon = true
                             }
-                        )
-                        .frame(maxWidth: .infinity)
-                        .transition(.move(edge: .top).combined(with: .opacity))
+                            searchFieldFocused = false
+                            return
+                        }
+                        searchFieldFocused = false
+                        isSearchExperiencePresented = false
+                        withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
+                            isSideMenuOpen.toggle()
+                        }
+                    },
+                    onCamera: {
+                        searchFieldFocused = false
+                        showCardScanner = true
+                    },
+                    onFilter: {
+                        searchFieldFocused = false
+                        showFilterComingSoon = true
                     }
-                }
+                )
+                .frame(maxWidth: .infinity)
+                .offset(y: showUniversalSearchBar && !isSearchDetailActive ? 0 : searchBarHiddenOffset)
+                .opacity(showUniversalSearchBar && !isSearchDetailActive ? 1 : 0.001)
                 .padding(.horizontal, 16)
                 .padding(.top, searchBarTopInset)
                 .padding(.bottom, 10)
                 .frame(maxWidth: .infinity, alignment: .top)
+                .allowsHitTesting(showUniversalSearchBar && !isSearchDetailActive)
                 .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
                 .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSideMenuOpen)
                 .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
                 .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
-                .allowsHitTesting(true)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             // System background shows through the material where the bar is translucent.

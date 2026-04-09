@@ -87,6 +87,7 @@ struct BrowseView: View {
                 }
                 .buttonStyle(.plain)
                 .onAppear {
+                    ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: index + 1)
                     if index >= displayedCards.count - Self.prefetchBuffer {
                         Task { await loadNextPageIfNeeded() }
                     }
@@ -127,6 +128,7 @@ struct BrowseView: View {
         nextRefIndex = firstEnd
         displayedCards = await services.cardData.cardsInOrder(refs: batch)
         isLoadingInitial = false
+        ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: 0, count: 24)
         prefetchNextWindow()
     }
 
@@ -171,9 +173,12 @@ struct SetCardsView: View {
                 ProgressView().padding()
             } else {
                 LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(cards) { card in
+                    ForEach(Array(cards.enumerated()), id: \.element.id) { index, card in
                         Button { presentCard(card, cards) } label: { CardGridCell(card: card) }
                             .buttonStyle(.plain)
+                            .onAppear {
+                                ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: index + 1)
+                            }
                     }
                 }
                 .padding()
@@ -186,6 +191,7 @@ struct SetCardsView: View {
             isLoading = true
             let loaded = await services.cardData.loadCards(forSetCode: set.setCode)
             cards = sortCardsByLocalIdHighestFirst(loaded)
+            ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
             isLoading = false
         }
     }
@@ -230,9 +236,12 @@ struct DexCardsView: View {
                 ProgressView().padding()
             } else {
                 LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(cards) { card in
+                    ForEach(Array(cards.enumerated()), id: \.element.id) { index, card in
                         Button { presentCard(card, cards) } label: { CardGridCell(card: card) }
                             .buttonStyle(.plain)
+                            .onAppear {
+                                ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: index + 1)
+                            }
                     }
                 }
                 .padding()
@@ -244,6 +253,7 @@ struct DexCardsView: View {
         .task {
             isLoading = true
             cards = await services.cardData.cards(matchingNationalDex: dexId)
+            ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
             isLoading = false
         }
     }

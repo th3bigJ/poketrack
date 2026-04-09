@@ -1,0 +1,251 @@
+import SwiftData
+import SwiftUI
+
+struct TransactionsView: View {
+    @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
+
+    @Query(sort: \LedgerLine.occurredAt, order: .reverse) private var ledgerLines: [LedgerLine]
+
+    @State private var cardNamesByID: [String: String] = [:]
+
+    private var ledgerSignature: String {
+        ledgerLines.map { "\($0.id.uuidString)|\($0.occurredAt.timeIntervalSince1970)" }.joined(separator: "§")
+    }
+
+    var body: some View {
+        Group {
+            if ledgerLines.isEmpty {
+                emptyState
+            } else {
+                transactionList
+            }
+        }
+        .toolbar(.hidden, for: .navigationBar)
+        .task(id: ledgerSignature) {
+            await resolveCardNames()
+        }
+        .onAppear {
+            services.setupCollectionLedger(modelContext: modelContext)
+        }
+    }
+
+    private var emptyState: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                Color.clear.frame(height: rootFloatingChromeInset)
+
+                Text("Transactions")
+                    .font(.largeTitle.bold())
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+
+                ContentUnavailableView(
+                    "No transactions yet",
+                    systemImage: "list.bullet.rectangle",
+                    description: Text("Add cards to your collection and the ledger will appear here.")
+                )
+                .frame(minHeight: 280)
+            }
+        }
+    }
+
+    private var transactionList: some View {
+        List {
+            Section {
+                ForEach(ledgerLines, id: \.persistentModelID) { line in
+                    transactionRow(for: line)
+                        .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
+                        .listRowBackground(Color.clear)
+                }
+            } header: {
+                Text("Transactions")
+                    .font(.largeTitle.bold())
+                    .foregroundStyle(.primary)
+                    .textCase(nil)
+                    .padding(.bottom, 8)
+            }
+        }
+        .listStyle(.plain)
+        .scrollContentBackground(.hidden)
+        .contentMargins(.top, rootFloatingChromeInset, for: .scrollContent)
+    }
+
+    private func transactionRow(for line: LedgerLine) -> some View {
+        VStack(alignment: .leading, spacing: 10) {
+            HStack(alignment: .top, spacing: 12) {
+                Image(systemName: directionIcon(for: line))
+                    .font(.headline)
+                    .foregroundStyle(directionColor(for: line))
+                    .frame(width: 24, height: 24)
+
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(primaryTitle(for: line))
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+
+                    Text(secondarySubtitle(for: line))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                Spacer(minLength: 8)
+
+                Text(line.occurredAt, format: .dateTime.day().month(.abbreviated).year())
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .multilineTextAlignment(.trailing)
+            }
+
+            HStack(spacing: 8) {
+                infoChip(label: directionTitle(for: line))
+                infoChip(label: "Qty \(line.quantity)")
+                if let variant = cleaned(line.variantKey) {
+                    infoChip(label: variantTitle(variant))
+                }
+                if let value = moneySummary(for: line) {
+                    infoChip(label: value)
+                }
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .fill(.ultraThinMaterial)
+        }
+        .overlay {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .strokeBorder(Color.primary.opacity(0.08), lineWidth: 0.5)
+        }
+    }
+
+    private func infoChip(label: String) -> some View {
+        Text(label)
+            .font(.caption.weight(.medium))
+            .foregroundStyle(.secondary)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 6)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(Color.primary.opacity(0.06))
+            )
+    }
+
+    private func resolveCardNames() async {
+        var next = cardNamesByID
+        for line in ledgerLines {
+            guard let cardID = cleaned(line.cardID), next[cardID] == nil else { continue }
+            if let card = await services.cardData.loadCard(masterCardId: cardID) {
+                next[cardID] = card.cardName
+            }
+        }
+        cardNamesByID = next
+    }
+
+    private func primaryTitle(for line: LedgerLine) -> String {
+        if let cardID = cleaned(line.cardID), let name = cardNamesByID[cardID] {
+            return name
+        }
+        if let cardID = cleaned(line.cardID) {
+            return cardID
+        }
+        if !line.lineDescription.isEmpty {
+            return line.lineDescription
+        }
+        return directionTitle(for: line)
+    }
+
+    private func secondarySubtitle(for line: LedgerLine) -> String {
+        let description = cleaned(line.lineDescription)
+        let counterparty = cleaned(line.counterparty)
+
+        if let description, let counterparty, !description.contains(counterparty) {
+            return "\(description) · \(counterparty)"
+        }
+        if let description {
+            return description
+        }
+        if let counterparty {
+            return counterparty
+        }
+        return productKindTitle(for: line)
+    }
+
+    private func directionTitle(for line: LedgerLine) -> String {
+        guard let direction = LedgerDirection(rawValue: line.direction) else { return line.direction.capitalized }
+        switch direction {
+        case .bought: return "Bought"
+        case .packed: return "Packed"
+        case .sold: return "Sold"
+        case .tradedIn: return "Trade In"
+        case .tradedOut: return "Trade Out"
+        case .giftedIn: return "Gift In"
+        case .giftedOut: return "Gift Out"
+        case .adjustmentIn: return "Adjustment In"
+        case .adjustmentOut: return "Adjustment Out"
+        }
+    }
+
+    private func productKindTitle(for line: LedgerLine) -> String {
+        guard let kind = ProductKind(rawValue: line.productKind) else { return line.productKind }
+        switch kind {
+        case .singleCard: return "Single card"
+        case .gradedItem: return "Graded item"
+        case .sealedProduct: return "Sealed product"
+        case .boosterPack: return "Booster pack"
+        case .etb: return "ETB"
+        case .other: return "Other"
+        }
+    }
+
+    private func directionIcon(for line: LedgerLine) -> String {
+        guard let direction = LedgerDirection(rawValue: line.direction) else { return "arrow.left.arrow.right" }
+        switch direction {
+        case .bought: return "cart.fill"
+        case .packed: return "shippingbox.fill"
+        case .sold: return "dollarsign.circle.fill"
+        case .tradedIn, .tradedOut: return "arrow.left.arrow.right.circle.fill"
+        case .giftedIn, .giftedOut: return "gift.fill"
+        case .adjustmentIn: return "plus.circle.fill"
+        case .adjustmentOut: return "minus.circle.fill"
+        }
+    }
+
+    private func directionColor(for line: LedgerLine) -> Color {
+        guard let direction = LedgerDirection(rawValue: line.direction) else { return .secondary }
+        switch direction {
+        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn:
+            return .green
+        case .sold, .tradedOut, .giftedOut, .adjustmentOut:
+            return .orange
+        }
+    }
+
+    private func moneySummary(for line: LedgerLine) -> String? {
+        guard let unitPrice = line.unitPrice else { return nil }
+        let total = unitPrice * Double(line.quantity)
+        return total.formatted(
+            .currency(code: line.currencyCode)
+            .precision(.fractionLength(2))
+        )
+    }
+
+    private func cleaned(_ value: String?) -> String? {
+        guard let value = value?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty else {
+            return nil
+        }
+        return value
+    }
+
+    private func variantTitle(_ key: String) -> String {
+        let spaced = key
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([A-Z])", with: " $1", options: .regularExpression)
+            .trimmingCharacters(in: .whitespaces)
+        return spaced.split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
+    }
+}

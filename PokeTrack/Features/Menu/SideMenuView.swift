@@ -64,6 +64,15 @@ struct SideMenuView: View {
                             selectedTab = .collection
                         }
 
+                        SideMenuRow(
+                            systemImage: "list.bullet.rectangle",
+                            title: "Transactions",
+                            subtitle: "Your collection history"
+                        ) {
+                            close()
+                            selectedTab = .transactions
+                        }
+
                         Divider()
                             .padding(.vertical, 12)
                             .padding(.horizontal, 4)

@@ -20,7 +20,7 @@ final class ChromeScrollCoordinator: ObservableObject {
         case .browse:
             acceptsScrollChromeUpdates = true
             resetForTabChange()
-        case .wishlist, .collection, .account:
+        case .wishlist, .collection, .transactions, .account:
             acceptsScrollChromeUpdates = false
             forceVisible()
         }
@@ -58,7 +58,7 @@ final class ChromeScrollCoordinator: ObservableObject {
 
     private func setBarsVisible(_ visible: Bool) {
         guard barsVisible != visible else { return }
-        withAnimation(.spring(response: 0.38, dampingFraction: 0.88)) {
+        withAnimation(.easeInOut(duration: 0.22)) {
             barsVisible = visible
         }
     }
