@@ -153,7 +153,7 @@ struct CardScannerView: View {
                                     .strokeBorder(Color.white.opacity(0.12), lineWidth: 1)
                             )
 
-                        if viewModel.reviewStep == .zones {
+                        if viewModel.reviewStep == .flattened {
                             ScanZoneGuide(width: width, height: height)
                         }
                     }
@@ -190,19 +190,14 @@ struct CardScannerView: View {
             VStack(alignment: .leading, spacing: 12) {
                 switch viewModel.reviewStep {
                 case .flattened:
-                    stepHeader("Step 1 of 4", viewModel.reviewStep.title)
+                    stepHeader("Step 1 of 3", viewModel.reviewStep.title)
                     stepBody("The app first crops to the reticle, then tries `VNDetectRectanglesRequest` inside that crop and applies perspective correction to flatten the card before OCR.")
                     stepBody(viewModel.detectedCardQuad == nil
                              ? "Rectangle detection did not produce a better quad for this shot, so the OCR image is the cropped card."
                              : "Rectangle detection found a card outline and the corrected image above is the OCR input.")
 
-                case .zones:
-                    stepHeader("Step 2 of 4", viewModel.reviewStep.title)
-                    stepBody("These overlays are the exact OCR regions used by the extractor.")
-                    stepBody("Top band: name + HP. Middle band: attacks or trainer rules. Bottom band: card number.")
-
                 case .extractedText:
-                    stepHeader("Step 3 of 4", viewModel.reviewStep.title)
+                    stepHeader("Step 2 of 3", viewModel.reviewStep.title)
                     extractedField("Name", viewModel.debugInfo.extractedName)
                     extractedField("HP", viewModel.debugInfo.extractedHP)
                     extractedField("Set #", viewModel.debugInfo.extractedSetNumber)
@@ -212,10 +207,11 @@ struct CardScannerView: View {
                     extractedField("OCR raw", viewModel.debugInfo.rawOCRStrings.joined(separator: "\n"))
 
                 case .matchReview:
-                    stepHeader("Step 4 of 4", viewModel.reviewStep.title)
-                    extractedField("Search query", viewModel.debugInfo.searchQueryUsed)
-                    extractedField("Tier", viewModel.debugInfo.narrowTier)
-                    extractedField("Reasoning", viewModel.debugInfo.determinedOutline)
+                    stepHeader("Step 3 of 3", viewModel.reviewStep.title)
+                    stepBody("We build a candidate pool from whichever signals were read: name, HP, set number, illustrator, and center text. Missing fields are simply skipped.")
+                    extractedField("Pool query", viewModel.debugInfo.searchQueryUsed)
+                    extractedField("Pool path", viewModel.debugInfo.narrowTier)
+                    extractedField("How it works", viewModel.debugInfo.determinedOutline)
 
                     if viewModel.candidateExplanations.isEmpty {
                         extractedField("Results", viewModel.lastErrorMessage ?? "No ranked candidates.")
@@ -291,7 +287,7 @@ struct CardScannerView: View {
                 }
             }
 
-            Text("total \(explanation.totalScore) = center \(explanation.attackScore) + card# \(explanation.numberScore) + artist \(explanation.artistScore) + ex \(explanation.exScore)")
+            Text("total \(explanation.totalScore) = name \(explanation.nameScore) + hp \(explanation.hpScore) + center \(explanation.centerScore) + set \(explanation.setScore) + artist \(explanation.artistScore) + ex \(explanation.exScore)")
                 .font(.system(size: 12, design: .monospaced))
                 .foregroundStyle(.secondary)
 
@@ -528,9 +524,6 @@ private struct CardScannerReticle: View {
                             )
                             .compositingGroup()
                     )
-
-                ScanZoneGuide(width: cardW, height: cardH)
-                    .position(x: cardX, y: cardCenterY)
 
                 CornerBrackets(width: cardW, height: cardH)
                     .position(x: cardX, y: cardCenterY)

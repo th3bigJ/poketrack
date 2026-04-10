@@ -38,14 +38,12 @@ struct ScanDebugInfo {
 
 enum ScanReviewStep: Int, CaseIterable {
     case flattened
-    case zones
     case extractedText
     case matchReview
 
     var title: String {
         switch self {
         case .flattened: return "Flattened card"
-        case .zones: return "Scan zones"
         case .extractedText: return "Extracted text"
         case .matchReview: return "Match reasoning"
         }
@@ -55,8 +53,10 @@ enum ScanReviewStep: Int, CaseIterable {
 struct ScannerCandidateExplanation: Identifiable {
     let card: Card
     let totalScore: Int
-    let attackScore: Int
-    let numberScore: Int
+    let nameScore: Int
+    let hpScore: Int
+    let centerScore: Int
+    let setScore: Int
     let artistScore: Int
     let exScore: Int
 
@@ -515,15 +515,15 @@ final class CardScannerViewModel: NSObject {
         • Name: \(nameLine)
           → catalog SEARCH (tier queries: name+hp+center, …).
         • HP: \(hpLine)
-          → catalog SEARCH only (not used in attack/rank score).
+          → candidate POOL + SCORE vs catalog HP.
         • Card # (primary): \(primaryLine)
-          → RANK vs JSON cardNumber (+ mined variants below).
+          → candidate POOL + SCORE vs JSON cardNumber (+ mined variants below).
         • Card # (mined from all OCR lines): \(minedLine)
           → RANK — best match per catalog row across these strings.
         • Illustrator: \(illustratorLine)
-          → FILTER + RANK vs catalog artist when OCR catches the `Illus.` footer.
+          → candidate POOL + SCORE vs catalog artist when OCR catches the `Illus.` footer.
         • Center text (attacks / trainer rules): \(centerLine)
-          → SEARCH + RANK vs JSON attacks[].name (Pokémon) or rules (Trainers).
+          → candidate POOL + SCORE vs JSON attacks[].name (Pokémon) or rules (Trainers).
         """
     }
 
@@ -549,12 +549,14 @@ final class CardScannerViewModel: NSObject {
 
     private static func compactQuerySummary(
         cleanedName: String?,
+        hp: String?,
         setNumber: String?,
         illustrator: String?,
         centerHint: String?
     ) -> String {
         var parts: [String] = []
         if let cleanedName, !cleanedName.isEmpty { parts.append("name=\(cleanedName)") }
+        if let hp, !hp.isEmpty { parts.append("hp=\(hp)") }
         if let setNumber, !setNumber.isEmpty { parts.append("#=\(setNumber)") }
         if let illustrator, !illustrator.isEmpty { parts.append("artist=\(illustrator)") }
         if let centerHint, !centerHint.isEmpty {
@@ -567,6 +569,7 @@ final class CardScannerViewModel: NSObject {
     private func mixedFallbackPool(
         service: CardDataService,
         cleanedName: String?,
+        hp: String?,
         setNumber: String?,
         illustrator: String?,
         centerHint: String?
@@ -587,7 +590,12 @@ final class CardScannerViewModel: NSObject {
             combined.append(contentsOf: await service.searchSoftTokenMatch(query: centerHint))
         }
 
-        return Self.dedupCards(combined)
+        var deduped = Self.dedupCards(combined)
+        if let hp, let ocrHP = Int(hp.trimmingCharacters(in: .whitespacesAndNewlines)) {
+            let exactHP = deduped.filter { $0.hp == nil || $0.hp == ocrHP }
+            if !exactHP.isEmpty { deduped = exactHP }
+        }
+        return deduped
     }
 
     private static func dedupCards(_ cards: [Card]) -> [Card] {
@@ -666,6 +674,7 @@ final class CardScannerViewModel: NSObject {
             pool = await mixedFallbackPool(
                 service: service,
                 cleanedName: cleanedName,
+                hp: hp,
                 setNumber: setNumber,
                 illustrator: illustrator,
                 centerHint: centerHint
@@ -674,6 +683,7 @@ final class CardScannerViewModel: NSObject {
                 tierLabel = "fallback-mixed"
                 usedQuery = Self.compactQuerySummary(
                     cleanedName: cleanedName,
+                    hp: hp,
                     setNumber: setNumber,
                     illustrator: illustrator,
                     centerHint: centerHint
@@ -681,33 +691,11 @@ final class CardScannerViewModel: NSObject {
             }
         }
 
-        // Step 2: HP filter — eliminates wrong-HP printings.
-        // Cards without an HP field (Trainers/Energy) always pass through.
-        if hasHp, let ocrHP = Int(hp!.trimmingCharacters(in: .whitespacesAndNewlines)) {
-            let hpFiltered = pool.filter { card in
-                guard let cardHP = card.hp else { return true }  // no HP field → keep (Trainer/Energy)
-                return cardHP == ocrHP
-            }
-            if !hpFiltered.isEmpty {
-                pool = hpFiltered
-                tierLabel += "+hp"
-            }
-            // If HP filter wiped everything (OCR misread HP), keep the pre-filter pool.
-        }
-
-        if let illustrator, !illustrator.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            let artistFiltered = pool.filter { card in
-                ScannerCompositeRanker.artistScore(ocrIllustrator: illustrator, card: card) > 0
-            }
-            if !artistFiltered.isEmpty {
-                pool = artistFiltered
-                tierLabel += "+artist"
-            }
-        }
-
         // Step 3: rank survivors by card number + attack/rules overlap.
         let ranked = ScannerCompositeRanker.rank(
             pool,
+            ocrName: cleanedName ?? rawName,
+            ocrHP: hp,
             ocrCenterHint: centerHint,
             primaryCardNumber: setNumber,
             extraNumberCandidates: numberCandidates,
@@ -720,6 +708,8 @@ final class CardScannerViewModel: NSObject {
         let explanations = Array(ranked.prefix(maxMatchesToShow)).map { card -> ScannerCandidateExplanation in
             let breakdown = ScannerCompositeRanker.scoreBreakdown(
                 card: card,
+                ocrName: cleanedName ?? rawName,
+                ocrHP: hp,
                 ocrCenter: ocrCenterNorm,
                 numberCandidates: mergedNums,
                 ocrIllustrator: illustrator,
@@ -728,8 +718,10 @@ final class CardScannerViewModel: NSObject {
             return ScannerCandidateExplanation(
                 card: card,
                 totalScore: breakdown.total,
-                attackScore: breakdown.cappedAttack,
-                numberScore: breakdown.number,
+                nameScore: breakdown.name,
+                hpScore: breakdown.hp,
+                centerScore: breakdown.cappedCenter,
+                setScore: breakdown.setNumber,
                 artistScore: breakdown.artist,
                 exScore: breakdown.ex
             )
@@ -760,6 +752,8 @@ final class CardScannerViewModel: NSObject {
 
         let topBreakdown = ScannerCompositeRanker.scoreBreakdown(
             card: top,
+            ocrName: cleanedName ?? rawName,
+            ocrHP: hp,
             ocrCenter: ocrCenterNorm,
             numberCandidates: mergedNums,
             ocrIllustrator: illustrator,
@@ -769,7 +763,7 @@ final class CardScannerViewModel: NSObject {
             guard let self else { return }
             let count = (matchBuffer[top.masterCardId] ?? 0) + 1
             matchBuffer = [top.masterCardId: count]
-            debugInfo.matchBufferState = "\(tierLabel) → \(ranked.count) · total \(topBreakdown.total) (atk \(topBreakdown.cappedAttack) + #\(topBreakdown.number) + ex \(topBreakdown.ex)) · \(top.setCode) #\(top.cardNumber)"
+            debugInfo.matchBufferState = "\(tierLabel) → \(ranked.count) · total \(topBreakdown.total) (name \(topBreakdown.name) + hp \(topBreakdown.hp) + center \(topBreakdown.cappedCenter) + set \(topBreakdown.setNumber) + artist \(topBreakdown.artist) + ex \(topBreakdown.ex)) · \(top.setCode) #\(top.cardNumber)"
 
             if count >= matchThreshold {
                 searchResults = Array(ranked.prefix(maxMatchesToShow))
@@ -785,15 +779,17 @@ final class CardScannerViewModel: NSObject {
 
 // MARK: - Composite ranking (attacks + mined # + HP + ex hint)
 
-/// Combines **capped** attack/rules overlap, the **best** card-number match across all OCR fractions, **HP** alignment, and optional **ex** name hint so one signal cannot drown out the others.
+/// Combines name, HP, center text, card number, illustrator, and optional `ex` consistency so one signal cannot drown out the others.
 private enum ScannerCompositeRanker {
     /// Keeps wrong printings from winning on attack tokens alone when the real `068/167` appears elsewhere in the OCR blob.
     private static let attackContributionCap = 380_000
 
     struct ScoreBreakdown {
         let total: Int
-        let cappedAttack: Int
-        let number: Int
+        let name: Int
+        let hp: Int
+        let cappedCenter: Int
+        let setNumber: Int
         let artist: Int
         let ex: Int
     }
@@ -816,6 +812,8 @@ private enum ScannerCompositeRanker {
 
     static func rank(
         _ cards: [Card],
+        ocrName: String?,
+        ocrHP: String?,
         ocrCenterHint: String?,
         primaryCardNumber: String?,
         extraNumberCandidates: [String],
@@ -827,6 +825,8 @@ private enum ScannerCompositeRanker {
         return cards.sorted { a, b in
             let ta = totalRankScore(
                 card: a,
+                ocrName: ocrName,
+                ocrHP: ocrHP,
                 ocrCenter: ocrCenter,
                 numberCandidates: merged,
                 ocrIllustrator: ocrIllustrator,
@@ -834,6 +834,8 @@ private enum ScannerCompositeRanker {
             )
             let tb = totalRankScore(
                 card: b,
+                ocrName: ocrName,
+                ocrHP: ocrHP,
                 ocrCenter: ocrCenter,
                 numberCandidates: merged,
                 ocrIllustrator: ocrIllustrator,
@@ -846,20 +848,26 @@ private enum ScannerCompositeRanker {
 
     static func scoreBreakdown(
         card: Card,
+        ocrName: String?,
+        ocrHP: String?,
         ocrCenter: String,
         numberCandidates: [String],
         ocrIllustrator: String? = nil,
         rawOCRBlob: String?
     ) -> ScoreBreakdown {
-        let rawAttack = centerTextScore(ocrCenter: ocrCenter, card: card)
-        let capped = min(rawAttack, attackContributionCap)
+        let name = nameScore(ocrName: ocrName, card: card)
+        let hp = hpScore(ocrHP: ocrHP, card: card)
+        let rawCenter = centerTextScore(ocrCenter: ocrCenter, card: card)
+        let capped = min(rawCenter, attackContributionCap)
         let num = bestNumberScore(card: card, candidates: numberCandidates)
         let artist = artistScore(ocrIllustrator: ocrIllustrator, card: card)
         let x = exNameConsistencyScore(ocrBlob: rawOCRBlob, card: card)
         return ScoreBreakdown(
-            total: capped + num + artist + x,
-            cappedAttack: capped,
-            number: num,
+            total: name + hp + capped + num + artist + x,
+            name: name,
+            hp: hp,
+            cappedCenter: capped,
+            setNumber: num,
             artist: artist,
             ex: x
         )
@@ -867,6 +875,8 @@ private enum ScannerCompositeRanker {
 
     private static func totalRankScore(
         card: Card,
+        ocrName: String?,
+        ocrHP: String?,
         ocrCenter: String,
         numberCandidates: [String],
         ocrIllustrator: String? = nil,
@@ -874,11 +884,34 @@ private enum ScannerCompositeRanker {
     ) -> Int {
         scoreBreakdown(
             card: card,
+            ocrName: ocrName,
+            ocrHP: ocrHP,
             ocrCenter: ocrCenter,
             numberCandidates: numberCandidates,
             ocrIllustrator: ocrIllustrator,
             rawOCRBlob: rawOCRBlob
         ).total
+    }
+
+    static func nameScore(ocrName: String?, card: Card) -> Int {
+        let ocr = significantTokens(ocrName?.lowercased() ?? "")
+        let name = significantTokens(card.cardName.lowercased())
+        guard !ocr.isEmpty, !name.isEmpty else { return 0 }
+        let inter = ocr.intersection(name)
+        guard !inter.isEmpty else { return 0 }
+        if ocr == name { return 320_000 }
+        let recall = Double(inter.count) / Double(max(name.count, 1))
+        let precision = Double(inter.count) / Double(max(ocr.count, 1))
+        return Int((recall * 0.7 + precision * 0.3) * 260_000)
+    }
+
+    static func hpScore(ocrHP: String?, card: Card) -> Int {
+        guard let ocrHP = ocrHP?.trimmingCharacters(in: .whitespacesAndNewlines),
+              let hp = Int(ocrHP) else { return 0 }
+        guard let cardHP = card.hp else { return 30_000 }
+        if cardHP == hp { return 140_000 }
+        if abs(cardHP - hp) <= 10 { return 40_000 }
+        return 0
     }
 
     private static func bestNumberScore(card: Card, candidates: [String]) -> Int {
