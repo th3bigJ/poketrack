@@ -23,6 +23,8 @@ enum CardOCRFieldExtractor {
         var hp: String?
         /// e.g. `"062/193"`
         var setNumber: String?
+        /// Illustrator line near the card footer, e.g. `"Kouki Saitou"`.
+        var illustrator: String?
         /// Middle of the card: **attack names** on Pokémon, or **rules** on Trainers (often long; search uses partial token match).
         var centerSearchHint: String?
     }
@@ -42,6 +44,9 @@ enum CardOCRFieldExtractor {
     private static let hpDotLeadingRegex = try! NSRegularExpression(pattern: #"^\.(\d{2,4})$"#)
     /// "-70" when OCR captures a leading minus from the HP glyph
     private static let hpMinusLeadingRegex = try! NSRegularExpression(pattern: #"^-(\d{2,4})$"#)
+    private static let illustratorInlineRegex = try! NSRegularExpression(
+        pattern: #"(?i)^(?:illus\.?|illustrator)\s*:?\s*(.+)$"#
+    )
 
     private static let noiseExactNames: Set<String> = [
         "basic", "basis", "basig", "basc",
@@ -131,15 +136,16 @@ enum CardOCRFieldExtractor {
         }
 
         guard !lines.isEmpty else {
-            return ExtractedFields(name: nil, hp: nil, setNumber: nil, centerSearchHint: nil)
+            return ExtractedFields(name: nil, hp: nil, setNumber: nil, illustrator: nil, centerSearchHint: nil)
         }
 
         let setNumber = extractSetNumber(from: lines)
         let hp = extractHP(from: lines)
         let name = extractName(from: lines)
+        let illustrator = extractIllustrator(from: lines)
         let centerSearchHint = extractCenterSearchHint(from: lines)
 
-        return ExtractedFields(name: name, hp: hp, setNumber: setNumber, centerSearchHint: centerSearchHint)
+        return ExtractedFields(name: name, hp: hp, setNumber: setNumber, illustrator: illustrator, centerSearchHint: centerSearchHint)
     }
 
     /// Reading order for debug: top → bottom, then left → right.
@@ -316,6 +322,47 @@ enum CardOCRFieldExtractor {
         return hint.isEmpty ? nil : hint
     }
 
+    // MARK: - Illustrator
+
+    private static func extractIllustrator(from lines: [OCRLine]) -> String? {
+        let footer = lines.sorted { $0.midY < $1.midY }
+
+        for (index, line) in footer.enumerated() {
+            let text = line.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !text.isEmpty else { continue }
+            let ns = text as NSString
+            let full = NSRange(location: 0, length: ns.length)
+
+            if let match = illustratorInlineRegex.firstMatch(in: text, range: full),
+               match.numberOfRanges >= 2,
+               let range = Range(match.range(at: 1), in: text) {
+                return cleanIllustrator(String(text[range]))
+            }
+
+            let lower = text.lowercased()
+            guard lower == "illus." || lower == "illus" || lower == "illustrator" else { continue }
+
+            if let next = footer[safe: index + 1] {
+                let candidate = cleanIllustrator(next.text)
+                if candidate != nil { return candidate }
+            }
+        }
+
+        return nil
+    }
+
+    private static func cleanIllustrator(_ text: String) -> String? {
+        var t = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        t = t.replacingOccurrences(of: #"^[\.\-: ]+"#, with: "", options: .regularExpression)
+        t = t.replacingOccurrences(of: #"\s+"#, with: " ", options: .regularExpression)
+        guard t.count >= 3 else { return nil }
+        guard t.rangeOfCharacter(from: .letters) != nil else { return nil }
+        if setNumberRegex.firstMatch(in: t, range: NSRange(location: 0, length: (t as NSString).length)) != nil {
+            return nil
+        }
+        return t
+    }
+
     /// Drops lines that are mostly non–basic-Latin letters (e.g. Cyrillic mixed into English OCR).
     private static func lineLooksLikeScriptNoise(_ s: String) -> Bool {
         let letters = s.filter(\.isLetter)
@@ -335,5 +382,11 @@ enum CardOCRFieldExtractor {
             return a.area > b.area
         }
         return sorted.first?.text
+    }
+}
+
+private extension Array {
+    subscript(safe index: Int) -> Element? {
+        indices.contains(index) ? self[index] : nil
     }
 }

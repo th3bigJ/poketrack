@@ -1,4 +1,6 @@
 import AVFoundation
+import CoreImage
+import CoreImage.CIFilterBuiltins
 import UIKit
 import Vision
 import SwiftUI
@@ -17,6 +19,7 @@ struct ScanDebugInfo {
     var extractedName: String? = nil
     var extractedHP: String? = nil
     var extractedSetNumber: String? = nil
+    var extractedIllustrator: String? = nil
     /// Middle-of-card text folded into the catalog query (attacks / rules).
     var extractedCenterHint: String? = nil
     /// Human-readable **interpretation** of OCR (name, HP, #, center) after noise handling.
@@ -33,6 +36,42 @@ struct ScanDebugInfo {
     var matchBufferState: String = ""
 }
 
+enum ScanReviewStep: Int, CaseIterable {
+    case flattened
+    case zones
+    case extractedText
+    case matchReview
+
+    var title: String {
+        switch self {
+        case .flattened: return "Flattened card"
+        case .zones: return "Scan zones"
+        case .extractedText: return "Extracted text"
+        case .matchReview: return "Match reasoning"
+        }
+    }
+}
+
+struct ScannerCandidateExplanation: Identifiable {
+    let card: Card
+    let totalScore: Int
+    let attackScore: Int
+    let numberScore: Int
+    let artistScore: Int
+    let exScore: Int
+
+    var id: String { card.masterCardId }
+}
+
+struct CardQuad {
+    let topLeft: CGPoint
+    let topRight: CGPoint
+    let bottomLeft: CGPoint
+    let bottomRight: CGPoint
+
+    var pathPoints: [CGPoint] { [topLeft, topRight, bottomRight, bottomLeft] }
+}
+
 @Observable
 final class CardScannerViewModel: NSObject {
     // MARK: - Public state (read by view)
@@ -42,6 +81,12 @@ final class CardScannerViewModel: NSObject {
     var debugInfo = ScanDebugInfo()
     /// Frozen frame from the last capture; when non-nil the UI shows this instead of live preview.
     var capturedImage: UIImage?
+    /// Reticle-only crop from the captured frame.
+    var croppedCardImage: UIImage?
+    /// Crop after rectangle detection + perspective correction.
+    var flattenedCardImage: UIImage?
+    /// Best quad detected inside `croppedCardImage`, in image pixel coordinates.
+    var detectedCardQuad: CardQuad?
     /// True while the shutter pipeline is finishing (before `capturedImage` is set).
     var isCapturing = false
     /// Set after the first successful `AVCaptureSession` configuration + `startRunning()` so SwiftUI can enable the shutter (KVO on `session.isRunning` is not enough for `@Observable`).
@@ -52,6 +97,9 @@ final class CardScannerViewModel: NSObject {
     var searchResults: [Card] = []
     /// When the primary query returned nothing, broader fallbacks (name-only, number correction, etc.).
     var alternativeMatches: [Card] = []
+    /// Ranked explanations shown in the step-by-step review.
+    var candidateExplanations: [ScannerCandidateExplanation] = []
+    var reviewStep: ScanReviewStep = .flattened
 
     // MARK: - Callbacks
     var onMatch: ((Card) -> Void)?
@@ -66,6 +114,7 @@ final class CardScannerViewModel: NSObject {
     private var matchBuffer: [String: Int] = [:]
     private let matchThreshold = 1
     private let maxMatchesToShow = 15
+    private let ciContext = CIContext(options: nil)
 
     // MARK: - Setup
 
@@ -94,9 +143,14 @@ final class CardScannerViewModel: NSObject {
     /// Clears the frozen frame and restarts live preview for another attempt.
     func retake() {
         capturedImage = nil
+        croppedCardImage = nil
+        flattenedCardImage = nil
+        detectedCardQuad = nil
         lastErrorMessage = nil
         searchResults = []
         alternativeMatches = []
+        candidateExplanations = []
+        reviewStep = .flattened
         scanState = .idle
         detectedText = nil
         matchBuffer.removeAll()
@@ -121,6 +175,16 @@ final class CardScannerViewModel: NSObject {
 
         let settings = AVCapturePhotoSettings()
         photoOutput.capturePhoto(with: settings, delegate: self)
+    }
+
+    func goToNextReviewStep() {
+        guard let next = ScanReviewStep(rawValue: reviewStep.rawValue + 1) else { return }
+        reviewStep = next
+    }
+
+    func goToPreviousReviewStep() {
+        guard let previous = ScanReviewStep(rawValue: reviewStep.rawValue - 1) else { return }
+        reviewStep = previous
     }
 
     // MARK: - AVCaptureSession setup
@@ -189,9 +253,24 @@ final class CardScannerViewModel: NSObject {
         }
 
         // Crop to just the card frame so OCR never sees text outside the reticle.
-        let cgImage = fullCG.croppedToCardRect(cardNormalizedRect, imageSize: image.size) ?? fullCG
+        let croppedCG = fullCG.croppedToCardRect(cardNormalizedRect, imageSize: image.size) ?? fullCG
+        let croppedUIImage = UIImage(cgImage: croppedCG, scale: 1, orientation: .up)
 
-        let orientation = CGImagePropertyOrientation(image.imageOrientation)
+        DispatchQueue.main.async { [weak self] in
+            self?.croppedCardImage = croppedUIImage
+            self?.flattenedCardImage = croppedUIImage
+            self?.detectedCardQuad = nil
+            self?.reviewStep = .flattened
+        }
+
+        let ocrCGImage = preprocessCardForOCR(croppedCG) ?? croppedCG
+        let ocrUIImage = UIImage(cgImage: ocrCGImage, scale: 1, orientation: .up)
+
+        DispatchQueue.main.async { [weak self] in
+            self?.flattenedCardImage = ocrUIImage
+        }
+
+        let orientation: CGImagePropertyOrientation = .up
 
         let request = VNRecognizeTextRequest { [weak self] req, error in
             if let error {
@@ -203,7 +282,7 @@ final class CardScannerViewModel: NSObject {
         request.usesLanguageCorrection = false
         request.minimumTextHeight = 0.02
 
-        let handler = VNImageRequestHandler(cgImage: cgImage, orientation: orientation, options: [:])
+        let handler = VNImageRequestHandler(cgImage: ocrCGImage, orientation: orientation, options: [:])
         DispatchQueue.global(qos: .userInitiated).async {
             do {
                 try handler.perform([request])
@@ -215,6 +294,71 @@ final class CardScannerViewModel: NSObject {
                 }
             }
         }
+    }
+
+    private func preprocessCardForOCR(_ croppedCG: CGImage) -> CGImage? {
+        let inputCI = CIImage(cgImage: croppedCG)
+        guard let rectangle = detectCardRectangle(in: croppedCG) else {
+            return croppedCG
+        }
+
+        let quad = rectangle.toCardQuad(imageWidth: croppedCG.width, imageHeight: croppedCG.height)
+        DispatchQueue.main.async { [weak self] in
+            self?.detectedCardQuad = quad
+        }
+
+        let filter = CIFilter.perspectiveCorrection()
+        filter.inputImage = inputCI
+        filter.topLeft = CGPoint(x: quad.topLeft.x, y: quad.topLeft.y)
+        filter.topRight = CGPoint(x: quad.topRight.x, y: quad.topRight.y)
+        filter.bottomLeft = CGPoint(x: quad.bottomLeft.x, y: quad.bottomLeft.y)
+        filter.bottomRight = CGPoint(x: quad.bottomRight.x, y: quad.bottomRight.y)
+
+        guard let output = filter.outputImage,
+              let corrected = ciContext.createCGImage(output, from: output.extent.integral)
+        else {
+            return croppedCG
+        }
+        return corrected
+    }
+
+    private func detectCardRectangle(in image: CGImage) -> VNRectangleObservation? {
+        let request = VNDetectRectanglesRequest()
+        request.maximumObservations = 6
+        request.minimumConfidence = 0.5
+        request.minimumAspectRatio = 0.55
+        request.maximumAspectRatio = 0.9
+        request.quadratureTolerance = 18
+        request.minimumSize = 0.35
+
+        let handler = VNImageRequestHandler(cgImage: image, options: [:])
+        do {
+            try handler.perform([request])
+        } catch {
+            print("[Scanner] Rectangle detection error: \(error)")
+            return nil
+        }
+
+        let observations = request.results ?? []
+        guard !observations.isEmpty else { return nil }
+
+        let expectedAspect = 63.0 / 88.0
+        return observations.max { lhs, rhs in
+            rectangleScore(lhs, expectedAspect: expectedAspect) < rectangleScore(rhs, expectedAspect: expectedAspect)
+        }
+    }
+
+    private func rectangleScore(_ observation: VNRectangleObservation, expectedAspect: Double) -> Double {
+        let widthTop = hypot(observation.topRight.x - observation.topLeft.x, observation.topRight.y - observation.topLeft.y)
+        let widthBottom = hypot(observation.bottomRight.x - observation.bottomLeft.x, observation.bottomRight.y - observation.bottomLeft.y)
+        let heightLeft = hypot(observation.topLeft.x - observation.bottomLeft.x, observation.topLeft.y - observation.bottomLeft.y)
+        let heightRight = hypot(observation.topRight.x - observation.bottomRight.x, observation.topRight.y - observation.bottomRight.y)
+        let avgWidth = (widthTop + widthBottom) / 2
+        let avgHeight = (heightLeft + heightRight) / 2
+        let aspect = avgWidth / max(avgHeight, 0.0001)
+        let aspectPenalty = abs(aspect - expectedAspect) * 4
+        let area = Double(observation.boundingBox.width * observation.boundingBox.height)
+        return area - aspectPenalty
     }
 
     // MARK: - OCR result parsing
@@ -261,6 +405,7 @@ final class CardScannerViewModel: NSObject {
                 self?.debugInfo.extractedName = nil
                 self?.debugInfo.extractedHP = nil
                 self?.debugInfo.extractedSetNumber = nil
+                self?.debugInfo.extractedIllustrator = nil
                 self?.debugInfo.extractedCenterHint = nil
                 self?.debugInfo.matchedSummary = nil
                 self?.debugInfo.searchQueryUsed = nil
@@ -285,17 +430,20 @@ final class CardScannerViewModel: NSObject {
             debugInfo.extractedName = cardName
             debugInfo.extractedHP = fields.hp
             debugInfo.extractedSetNumber = setNumber
+            debugInfo.extractedIllustrator = fields.illustrator
             debugInfo.extractedCenterHint = centerHint
             debugInfo.matchedSummary = Self.matchedSummaryLine(
                 name: cardName,
                 hp: fields.hp,
                 setNumber: setNumber,
+                illustrator: fields.illustrator,
                 center: centerHint
             )
             debugInfo.determinedOutline = Self.determinedOutlineBlock(
                 name: cardName,
                 hp: fields.hp,
                 setNumber: setNumber,
+                illustrator: fields.illustrator,
                 centerHint: centerHint,
                 minedCardNumbers: mergedNumsPreview
             )
@@ -309,6 +457,7 @@ final class CardScannerViewModel: NSObject {
                 cardName: cardName,
                 hp: fields.hp,
                 setNumber: setNumber,
+                illustrator: fields.illustrator,
                 centerHint: centerHint,
                 numberCandidates: numberCandidates,
                 rawOCRBlob: rawBlob
@@ -316,7 +465,7 @@ final class CardScannerViewModel: NSObject {
         }
     }
 
-    private static func matchedSummaryLine(name: String?, hp: String?, setNumber: String?, center: String?) -> String {
+    private static func matchedSummaryLine(name: String?, hp: String?, setNumber: String?, illustrator: String?, center: String?) -> String {
         var parts: [String] = []
         if let n = name?.trimmingCharacters(in: .whitespacesAndNewlines), !n.isEmpty {
             parts.append("name: \(n)")
@@ -326,6 +475,9 @@ final class CardScannerViewModel: NSObject {
         }
         if let s = setNumber?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty {
             parts.append("#: \(s)")
+        }
+        if let i = illustrator?.trimmingCharacters(in: .whitespacesAndNewlines), !i.isEmpty {
+            parts.append("illus: \(i)")
         }
         if let c = center?.trimmingCharacters(in: .whitespacesAndNewlines), !c.isEmpty {
             let short = c.count > 180 ? String(c.prefix(180)) + "…" : c
@@ -339,12 +491,14 @@ final class CardScannerViewModel: NSObject {
         name: String?,
         hp: String?,
         setNumber: String?,
+        illustrator: String?,
         centerHint: String?,
         minedCardNumbers: [String]
     ) -> String {
         let nameLine = displayOrDash(name)
         let hpLine = displayOrDash(hp)
         let primaryLine = displayOrDash(setNumber)
+        let illustratorLine = displayOrDash(illustrator)
         let minedLine: String = {
             guard !minedCardNumbers.isEmpty else { return "— (none)" }
             return minedCardNumbers.joined(separator: ", ")
@@ -366,6 +520,8 @@ final class CardScannerViewModel: NSObject {
           → RANK vs JSON cardNumber (+ mined variants below).
         • Card # (mined from all OCR lines): \(minedLine)
           → RANK — best match per catalog row across these strings.
+        • Illustrator: \(illustratorLine)
+          → FILTER + RANK vs catalog artist when OCR catches the `Illus.` footer.
         • Center text (attacks / trainer rules): \(centerLine)
           → SEARCH + RANK vs JSON attacks[].name (Pokémon) or rules (Trainers).
         """
@@ -374,6 +530,75 @@ final class CardScannerViewModel: NSObject {
     private static func displayOrDash(_ s: String?) -> String {
         guard let t = s?.trimmingCharacters(in: .whitespacesAndNewlines), !t.isEmpty else { return "— (not read)" }
         return t
+    }
+
+    private static func cleanedOCRName(_ name: String?) -> String? {
+        guard var t = name?.trimmingCharacters(in: .whitespacesAndNewlines), !t.isEmpty else { return nil }
+        t = t.replacingOccurrences(of: #"[|]"#, with: " ", options: .regularExpression)
+        t = t.replacingOccurrences(of: #"^[^A-Za-z]+|[^A-Za-z]+$"#, with: "", options: .regularExpression)
+        let tokens = t.split(whereSeparator: \.isWhitespace).map(String.init)
+        let cleanedTokens = tokens.filter { token in
+            let letters = token.filter(\.isLetter)
+            guard letters.count >= 2 else { return false }
+            let ratio = Double(letters.count) / Double(max(token.count, 1))
+            return ratio >= 0.55
+        }
+        let cleaned = cleanedTokens.joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
+        return cleaned.isEmpty ? nil : cleaned
+    }
+
+    private static func compactQuerySummary(
+        cleanedName: String?,
+        setNumber: String?,
+        illustrator: String?,
+        centerHint: String?
+    ) -> String {
+        var parts: [String] = []
+        if let cleanedName, !cleanedName.isEmpty { parts.append("name=\(cleanedName)") }
+        if let setNumber, !setNumber.isEmpty { parts.append("#=\(setNumber)") }
+        if let illustrator, !illustrator.isEmpty { parts.append("artist=\(illustrator)") }
+        if let centerHint, !centerHint.isEmpty {
+            let short = centerHint.count > 80 ? String(centerHint.prefix(80)) + "…" : centerHint
+            parts.append("center=\(short)")
+        }
+        return parts.joined(separator: " | ")
+    }
+
+    private func mixedFallbackPool(
+        service: CardDataService,
+        cleanedName: String?,
+        setNumber: String?,
+        illustrator: String?,
+        centerHint: String?
+    ) async -> [Card] {
+        var combined: [Card] = []
+
+        if let cleanedName, !cleanedName.isEmpty {
+            combined.append(contentsOf: await service.searchByName(query: cleanedName))
+            combined.append(contentsOf: await service.search(query: cleanedName))
+        }
+        if let setNumber, !setNumber.isEmpty {
+            combined.append(contentsOf: await service.search(query: setNumber))
+        }
+        if let illustrator, !illustrator.isEmpty {
+            combined.append(contentsOf: await service.search(query: illustrator))
+        }
+        if let centerHint, !centerHint.isEmpty {
+            combined.append(contentsOf: await service.searchSoftTokenMatch(query: centerHint))
+        }
+
+        return Self.dedupCards(combined)
+    }
+
+    private static func dedupCards(_ cards: [Card]) -> [Card] {
+        var seen = Set<String>()
+        var out: [Card] = []
+        for card in cards {
+            if seen.insert(card.masterCardId).inserted {
+                out.append(card)
+            }
+        }
+        return out
     }
 
     /// Elimination pipeline:
@@ -385,6 +610,7 @@ final class CardScannerViewModel: NSObject {
         cardName: String?,
         hp: String?,
         setNumber: String?,
+        illustrator: String?,
         centerHint: String?,
         numberCandidates: [String],
         rawOCRBlob: String?
@@ -394,23 +620,65 @@ final class CardScannerViewModel: NSObject {
             return
         }
 
-        let hasName = !(cardName?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
+        let rawName = cardName?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedName = Self.cleanedOCRName(rawName)
+        let hasName = !(rawName?.isEmpty ?? true)
         let hasHp   = !(hp?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ?? true)
 
         // Step 1: candidate pool — name-only search so attacks/rules can never pull in wrong-name cards.
         var pool: [Card]
         var tierLabel: String
+        var usedQuery: String
         if hasName {
-            pool = await service.searchByName(query: cardName!)
+            pool = await service.searchByName(query: rawName!)
             tierLabel = "name"
+            usedQuery = rawName!
+            if pool.isEmpty,
+               let cleanedName,
+               cleanedName.caseInsensitiveCompare(rawName!) != .orderedSame {
+                pool = await service.searchByName(query: cleanedName)
+                tierLabel = "name-clean"
+                usedQuery = cleanedName
+            }
+            if pool.isEmpty, let cleanedName {
+                pool = await service.search(query: cleanedName)
+                if pool.isEmpty {
+                    pool = await service.searchSoftTokenMatch(query: cleanedName)
+                }
+                if !pool.isEmpty {
+                    tierLabel = "name-fuzzy"
+                    usedQuery = cleanedName
+                }
+            }
         } else if let hint = centerHint, !hint.isEmpty {
             // No name read (e.g. Trainer/Energy) — fall back to center-text search.
             pool = await service.search(query: hint)
             if pool.isEmpty { pool = await service.searchSoftTokenMatch(query: hint) }
             tierLabel = "center-only"
+            usedQuery = hint
         } else {
             pool = []
             tierLabel = "none"
+            usedQuery = ""
+        }
+
+        if pool.isEmpty {
+            pool = await mixedFallbackPool(
+                service: service,
+                cleanedName: cleanedName,
+                setNumber: setNumber,
+                illustrator: illustrator,
+                centerHint: centerHint
+            )
+            if !pool.isEmpty {
+                tierLabel = "fallback-mixed"
+                usedQuery = Self.compactQuerySummary(
+                    cleanedName: cleanedName,
+                    setNumber: setNumber,
+                    illustrator: illustrator,
+                    centerHint: centerHint
+                )
+            }
         }
 
         // Step 2: HP filter — eliminates wrong-HP printings.
@@ -427,16 +695,45 @@ final class CardScannerViewModel: NSObject {
             // If HP filter wiped everything (OCR misread HP), keep the pre-filter pool.
         }
 
+        if let illustrator, !illustrator.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            let artistFiltered = pool.filter { card in
+                ScannerCompositeRanker.artistScore(ocrIllustrator: illustrator, card: card) > 0
+            }
+            if !artistFiltered.isEmpty {
+                pool = artistFiltered
+                tierLabel += "+artist"
+            }
+        }
+
         // Step 3: rank survivors by card number + attack/rules overlap.
         let ranked = ScannerCompositeRanker.rank(
             pool,
             ocrCenterHint: centerHint,
             primaryCardNumber: setNumber,
             extraNumberCandidates: numberCandidates,
+            ocrIllustrator: illustrator,
             rawOCRBlob: rawOCRBlob
         )
 
-        let usedQuery = hasName ? cardName! : (centerHint ?? "")
+        let ocrCenterNorm = centerHint?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
+        let mergedNums = ScannerCompositeRanker.mergedNumberCandidates(primary: setNumber, extras: numberCandidates)
+        let explanations = Array(ranked.prefix(maxMatchesToShow)).map { card -> ScannerCandidateExplanation in
+            let breakdown = ScannerCompositeRanker.scoreBreakdown(
+                card: card,
+                ocrCenter: ocrCenterNorm,
+                numberCandidates: mergedNums,
+                ocrIllustrator: illustrator,
+                rawOCRBlob: rawOCRBlob
+            )
+            return ScannerCandidateExplanation(
+                card: card,
+                totalScore: breakdown.total,
+                attackScore: breakdown.cappedAttack,
+                numberScore: breakdown.number,
+                artistScore: breakdown.artist,
+                exScore: breakdown.ex
+            )
+        }
 
         await MainActor.run { [weak self] in
             guard let self else { return }
@@ -444,6 +741,7 @@ final class CardScannerViewModel: NSObject {
             debugInfo.searchQueryUsed = usedQuery
             debugInfo.searchResultCount = ranked.count
             debugInfo.topResult = ranked.first.map { "\($0.cardName) [\($0.setCode) \($0.cardNumber)]" }
+            candidateExplanations = explanations
         }
 
         guard let top = ranked.first else {
@@ -452,6 +750,7 @@ final class CardScannerViewModel: NSObject {
                 matchBuffer.removeAll()
                 searchResults = []
                 alternativeMatches = []
+                candidateExplanations = []
                 debugInfo.matchBufferState = "no candidates"
                 scanState = .idle
                 lastErrorMessage = "No catalog match for that text. Try Retake."
@@ -459,12 +758,11 @@ final class CardScannerViewModel: NSObject {
             return
         }
 
-        let ocrCenterNorm = centerHint?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
-        let mergedNums = ScannerCompositeRanker.mergedNumberCandidates(primary: setNumber, extras: numberCandidates)
         let topBreakdown = ScannerCompositeRanker.scoreBreakdown(
             card: top,
             ocrCenter: ocrCenterNorm,
             numberCandidates: mergedNums,
+            ocrIllustrator: illustrator,
             rawOCRBlob: rawOCRBlob
         )
         await MainActor.run { [weak self] in
@@ -496,6 +794,7 @@ private enum ScannerCompositeRanker {
         let total: Int
         let cappedAttack: Int
         let number: Int
+        let artist: Int
         let ex: Int
     }
 
@@ -520,6 +819,7 @@ private enum ScannerCompositeRanker {
         ocrCenterHint: String?,
         primaryCardNumber: String?,
         extraNumberCandidates: [String],
+        ocrIllustrator: String? = nil,
         rawOCRBlob: String?
     ) -> [Card] {
         let ocrCenter = ocrCenterHint?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased() ?? ""
@@ -529,12 +829,14 @@ private enum ScannerCompositeRanker {
                 card: a,
                 ocrCenter: ocrCenter,
                 numberCandidates: merged,
+                ocrIllustrator: ocrIllustrator,
                 rawOCRBlob: rawOCRBlob
             )
             let tb = totalRankScore(
                 card: b,
                 ocrCenter: ocrCenter,
                 numberCandidates: merged,
+                ocrIllustrator: ocrIllustrator,
                 rawOCRBlob: rawOCRBlob
             )
             if ta != tb { return ta > tb }
@@ -546,16 +848,19 @@ private enum ScannerCompositeRanker {
         card: Card,
         ocrCenter: String,
         numberCandidates: [String],
+        ocrIllustrator: String? = nil,
         rawOCRBlob: String?
     ) -> ScoreBreakdown {
         let rawAttack = centerTextScore(ocrCenter: ocrCenter, card: card)
         let capped = min(rawAttack, attackContributionCap)
         let num = bestNumberScore(card: card, candidates: numberCandidates)
+        let artist = artistScore(ocrIllustrator: ocrIllustrator, card: card)
         let x = exNameConsistencyScore(ocrBlob: rawOCRBlob, card: card)
         return ScoreBreakdown(
-            total: capped + num + x,
+            total: capped + num + artist + x,
             cappedAttack: capped,
             number: num,
+            artist: artist,
             ex: x
         )
     }
@@ -564,9 +869,16 @@ private enum ScannerCompositeRanker {
         card: Card,
         ocrCenter: String,
         numberCandidates: [String],
+        ocrIllustrator: String? = nil,
         rawOCRBlob: String?
     ) -> Int {
-        scoreBreakdown(card: card, ocrCenter: ocrCenter, numberCandidates: numberCandidates, rawOCRBlob: rawOCRBlob).total
+        scoreBreakdown(
+            card: card,
+            ocrCenter: ocrCenter,
+            numberCandidates: numberCandidates,
+            ocrIllustrator: ocrIllustrator,
+            rawOCRBlob: rawOCRBlob
+        ).total
     }
 
     private static func bestNumberScore(card: Card, candidates: [String]) -> Int {
@@ -576,6 +888,17 @@ private enum ScannerCompositeRanker {
             if s > best { best = s }
         }
         return best
+    }
+
+    static func artistScore(ocrIllustrator: String?, card: Card) -> Int {
+        let ocr = significantTokens(ocrIllustrator?.lowercased() ?? "")
+        let artist = significantTokens(card.artist?.lowercased() ?? "")
+        guard !ocr.isEmpty, !artist.isEmpty else { return 0 }
+        let inter = ocr.intersection(artist)
+        guard !inter.isEmpty else { return 0 }
+        if ocr == artist { return 260_000 }
+        let recall = Double(inter.count) / Double(max(artist.count, 1))
+        return Int(recall * 200_000)
     }
 
     /// Small boost when both the catalog name and the raw OCR mention **ex** (Pokémon ex rule box / title).
@@ -782,6 +1105,24 @@ private enum ScannerCardNumberRanker {
     }
 }
 
+private extension VNRectangleObservation {
+    func toCardQuad(imageWidth: Int, imageHeight: Int) -> CardQuad {
+        let width = CGFloat(imageWidth)
+        let height = CGFloat(imageHeight)
+
+        func denormalize(_ point: CGPoint) -> CGPoint {
+            CGPoint(x: point.x * width, y: point.y * height)
+        }
+
+        return CardQuad(
+            topLeft: denormalize(topLeft),
+            topRight: denormalize(topRight),
+            bottomLeft: denormalize(bottomLeft),
+            bottomRight: denormalize(bottomRight)
+        )
+    }
+}
+
 // MARK: - AVCapturePhotoCaptureDelegate
 
 extension CardScannerViewModel: AVCapturePhotoCaptureDelegate {
@@ -821,9 +1162,6 @@ extension CardScannerViewModel: AVCapturePhotoCaptureDelegate {
 private extension UIImage {
     /// Returns a CGImage suitable for Vision, applying `imageOrientation` into pixel data when needed.
     func normalizedCGImage() -> CGImage? {
-        if let cg = cgImage {
-            return cg
-        }
         let format = UIGraphicsImageRendererFormat.default()
         format.scale = 1
         let renderer = UIGraphicsImageRenderer(size: size, format: format)

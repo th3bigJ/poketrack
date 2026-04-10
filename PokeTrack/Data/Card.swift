@@ -150,6 +150,9 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
                 }
             }
         }
+        if let artist {
+            parts.append(artist)
+        }
         return parts.joined(separator: " ")
     }
 }

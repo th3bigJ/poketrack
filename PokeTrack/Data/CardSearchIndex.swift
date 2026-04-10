@@ -47,8 +47,8 @@ final class CardSearchIndex {
         self.fileURL = dir.appendingPathComponent("inverted.json")
     }
 
-    /// Bump when searchable fields on `Card` change (e.g. attacks/rules) so the inverted index rebuilds.
-    private static let indexSchemaVersion = "3"
+    /// Bump when searchable fields on `Card` change (e.g. attacks/rules/artist) so the inverted index rebuilds.
+    private static let indexSchemaVersion = "4"
 
     static func versionSignature(for sets: [TCGSet]) -> String {
         let codes = sets.map(\.setCode).sorted().joined(separator: "|")
