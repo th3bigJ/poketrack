@@ -10,6 +10,7 @@ struct CardScannerView: View {
     @State private var permissionDenied = false
     @State private var showDebug = true
     @State private var showPossibleMatches = false
+    @State private var torchOn = false
 
     var body: some View {
         GeometryReader { geo in
@@ -90,6 +91,17 @@ struct CardScannerView: View {
                                     .foregroundStyle(.white, .black.opacity(0.5))
                                     .padding(20)
                             }
+                        } else {
+                            Button {
+                                torchOn.toggle()
+                                setTorch(torchOn)
+                                HapticManager.impact(.light)
+                            } label: {
+                                Image(systemName: torchOn ? "bolt.fill" : "bolt.slash")
+                                    .font(.system(size: 22))
+                                    .foregroundStyle(torchOn ? .yellow : .white, .black.opacity(0.5))
+                                    .padding(20)
+                            }
                         }
                         Spacer()
                         Button(action: onDismiss) {
@@ -119,11 +131,21 @@ struct CardScannerView: View {
             }
         }
         .onDisappear {
+            if torchOn { setTorch(false) }
             viewModel.stopSession()
         }
         .onChange(of: viewModel.capturedImage) { _, new in
             if new == nil { showPossibleMatches = false }
         }
+    }
+
+    // MARK: - Torch
+
+    private func setTorch(_ on: Bool) {
+        guard let device = AVCaptureDevice.default(for: .video), device.hasTorch else { return }
+        try? device.lockForConfiguration()
+        device.torchMode = on ? .on : .off
+        device.unlockForConfiguration()
     }
 
     // MARK: - Debug panel
@@ -336,6 +358,7 @@ struct CardScannerView: View {
                     if case .found(let card) = viewModel.scanState {
                         Button {
                             viewModel.confirmOpenCard(card)
+                            HapticManager.impact(.medium)
                         } label: {
                             Label("Open card", systemImage: "rectangle.portrait.and.arrow.forward")
                                 .font(.headline)
@@ -347,6 +370,7 @@ struct CardScannerView: View {
                     }
                     Button {
                         viewModel.retake()
+                        HapticManager.impact(.light)
                     } label: {
                         Label("Retake photo", systemImage: "arrow.counterclockwise.circle.fill")
                             .font(.subheadline.weight(.semibold))
@@ -362,6 +386,7 @@ struct CardScannerView: View {
             } else {
                 Button {
                     viewModel.capturePhoto()
+                    HapticManager.impact(.medium)
                 } label: {
                     ZStack {
                         Circle()

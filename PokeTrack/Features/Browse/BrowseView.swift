@@ -7,9 +7,15 @@ struct CardGridCell: View {
     /// Optional line under the name (e.g. wishlist variant key).
     var footnote: String? = nil
 
+    /// Target size for memory-efficient downsampling (~2x display size for retina)
+    private static let thumbnailSize = CGSize(width: 220, height: 308)
+
     var body: some View {
         VStack(spacing: 4) {
-            CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: card.imageLowSrc)) { img in
+            CachedAsyncImage(
+                url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                targetSize: Self.thumbnailSize
+            ) { img in
                 img.resizable().scaledToFit()
             } placeholder: {
                 Color.gray.opacity(0.12)
@@ -33,6 +39,15 @@ struct CardGridCell: View {
     }
 }
 
+/// Subtle spring scale on press for all card grid cells — gives a premium tactile feel.
+struct CardCellButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.94 : 1.0)
+            .animation(.spring(response: 0.2, dampingFraction: 0.75), value: configuration.isPressed)
+    }
+}
+
 // MARK: - Browse feed
 
 struct BrowseView: View {
@@ -50,7 +65,7 @@ struct BrowseView: View {
 
     private static let initialBatchSize = 60
     private static let pageSize = 30
-    private static let prefetchBuffer = 9
+    private static let prefetchBuffer = 15
 
     var body: some View {
         Group {
@@ -85,7 +100,7 @@ struct BrowseView: View {
                 Button { presentCard(card, displayedCards) } label: {
                     CardGridCell(card: card)
                 }
-                .buttonStyle(.plain)
+                .buttonStyle(CardCellButtonStyle())
                 .onAppear {
                     ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: index + 1)
                     if index >= displayedCards.count - Self.prefetchBuffer {
@@ -128,7 +143,8 @@ struct BrowseView: View {
         nextRefIndex = firstEnd
         displayedCards = await services.cardData.cardsInOrder(refs: batch)
         isLoadingInitial = false
-        ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: 0, count: 24)
+        // Aggressively prefetch initial batch for instant display
+        ImagePrefetcher.shared.prefetchInitialBatch(displayedCards, count: 60)
         prefetchNextWindow()
     }
 
@@ -175,7 +191,7 @@ struct SetCardsView: View {
                 LazyVGrid(columns: columns, spacing: 12) {
                     ForEach(Array(cards.enumerated()), id: \.element.id) { index, card in
                         Button { presentCard(card, cards) } label: { CardGridCell(card: card) }
-                            .buttonStyle(.plain)
+                            .buttonStyle(CardCellButtonStyle())
                             .onAppear {
                                 ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: index + 1)
                             }
@@ -238,7 +254,7 @@ struct DexCardsView: View {
                 LazyVGrid(columns: columns, spacing: 12) {
                     ForEach(Array(cards.enumerated()), id: \.element.id) { index, card in
                         Button { presentCard(card, cards) } label: { CardGridCell(card: card) }
-                            .buttonStyle(.plain)
+                            .buttonStyle(CardCellButtonStyle())
                             .onAppear {
                                 ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: index + 1)
                             }

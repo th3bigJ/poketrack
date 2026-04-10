@@ -123,7 +123,7 @@ struct UniversalSearchResultsView: View {
                                     Button { presentCard(card, cards) } label: {
                                         CardGridCell(card: card)
                                     }
-                                    .buttonStyle(.plain)
+                                    .buttonStyle(CardCellButtonStyle())
                                 }
                             }
                             .padding(.horizontal, 16)
@@ -146,7 +146,7 @@ struct UniversalSearchResultsView: View {
             }
             isSearching = true
             defer { isSearching = false }
-            try? await Task.sleep(nanoseconds: 320_000_000)
+            try? await Task.sleep(nanoseconds: 150_000_000)
             guard !Task.isCancelled else { return }
             cards = await services.cardData.search(query: trimmed)
         }

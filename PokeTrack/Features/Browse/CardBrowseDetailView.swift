@@ -77,7 +77,10 @@ struct CardBrowseDetailView: View {
             }
             .task(id: index) {
                 await loadWishlistVariantKeys()
+                // Prefetch adjacent cards' high-res images for instant swiping
+                ImagePrefetcher.shared.prefetchHighResForDetailView(cards, currentIndex: index, window: 2)
             }
+            .onChange(of: index) { _, _ in HapticManager.selection() }
         }
         .presentationBackground(pageChromeBackground)
         .presentationDragIndicator(.visible)
@@ -133,6 +136,7 @@ struct CardBrowseDetailView: View {
         do {
             try wl.addItem(cardID: card.masterCardId, variantKey: variantKey, notes: "")
             isCurrentCardWishlisted = true
+            HapticManager.notification(.success)
         } catch let e as WishlistError {
             switch e {
             case .limitReached:
@@ -160,6 +164,7 @@ struct CardBrowseDetailView: View {
         do {
             try wl.removeAllItems(forCardID: card.masterCardId)
             isCurrentCardWishlisted = false
+            HapticManager.notification(.success)
         } catch let e as WishlistError {
             switch e {
             case .saveFailed(let err):
@@ -177,6 +182,7 @@ struct CardBrowseDetailView: View {
     private func addToCollectionVariant(variantKey: String) {
         guard let card = currentCard else { return }
         addToCollectionPayload = AddToCollectionSheetPayload(card: card, variantKey: variantKey)
+        HapticManager.impact(.medium)
     }
 
     /// Title Case variant key for picker labels (matches pricing panel style).
@@ -418,6 +424,7 @@ private struct CardBrowseDetailPage: View {
     @State private var editingItem: CollectionItem?
     @State private var itemPendingRemoval: CollectionItem?
     @State private var showRemoveConfirm = false
+    @State private var imageAppeared = false
 
     init(card: Card) {
         self.card = card
@@ -431,15 +438,21 @@ private struct CardBrowseDetailPage: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 0) {
-                AsyncImage(url: AppConfiguration.imageURL(relativePath: card.imageHighSrc ?? card.imageLowSrc)) {
-                    $0.resizable().scaledToFit()
-                } placeholder: {
+                ProgressiveAsyncImage(
+                    lowResURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                    highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) }
+                ) {
                     Color(uiColor: .tertiarySystemFill)
                         .aspectRatio(5/7, contentMode: .fit)
                 }
                 .padding(.horizontal, 16)
                 // Start below the custom header (66pt chrome + 6pt gap).
                 .padding(.top, RootChromeEnvironment.searchBarStackHeight + 6)
+                .scaleEffect(imageAppeared ? 1.0 : 0.94)
+                .onAppear {
+                    withAnimation(.spring(response: 0.45, dampingFraction: 0.82)) { imageAppeared = true }
+                }
+                .onDisappear { imageAppeared = false }
 
                 if !collectionItems.isEmpty {
                     collectionInCollectionSection

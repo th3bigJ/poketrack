@@ -91,7 +91,7 @@ struct CollectionListView: View {
             } label: {
                 CardGridCell(card: card, footnote: collectionFootnote(for: item))
             }
-            .buttonStyle(.plain)
+            .buttonStyle(CardCellButtonStyle())
             .accessibilityLabel("\(card.cardName), \(item.quantity) copies, \(item.variantKey)")
         } else {
             VStack(spacing: 4) {
@@ -117,7 +117,7 @@ struct CollectionListView: View {
     }
 
     private func resolveCollectionCards() async {
-        var next: [String: Card] = [:]
+        var next = cardsByCardID  // preserve already-resolved cards
         for item in items {
             if next[item.cardID] != nil { continue }
             if let c = await services.cardData.loadCard(masterCardId: item.cardID) {

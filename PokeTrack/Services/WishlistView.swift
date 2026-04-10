@@ -169,7 +169,7 @@ struct WishlistView: View {
             } label: {
                 CardGridCell(card: card, footnote: item.variantKey)
             }
-            .buttonStyle(.plain)
+            .buttonStyle(CardCellButtonStyle())
             .contextMenu {
                 Button("Remove from Wishlist", role: .destructive) {
                     removeItem(item)
@@ -202,7 +202,7 @@ struct WishlistView: View {
     }
 
     private func resolveWishlistCards() async {
-        var next: [String: Card] = [:]
+        var next = cardsByCardID  // preserve already-resolved cards
         for item in items {
             if next[item.cardID] != nil { continue }
             if let c = await services.cardData.loadCard(masterCardId: item.cardID) {
@@ -217,8 +217,10 @@ struct WishlistView: View {
         guard let wishlistService = services.wishlist else { return }
         do {
             try wishlistService.removeItem(item)
+            HapticManager.notification(.success)
         } catch {
             errorMessage = error.localizedDescription
+            HapticManager.notification(.error)
         }
     }
 }

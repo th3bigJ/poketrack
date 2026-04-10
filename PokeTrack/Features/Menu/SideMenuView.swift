@@ -40,7 +40,8 @@ struct SideMenuView: View {
                         SideMenuRow(
                             systemImage: "rectangle.grid.2x2",
                             title: "Cards",
-                            subtitle: "Browse all cards"
+                            subtitle: "Browse all cards",
+                            isSelected: selectedTab == .browse
                         ) {
                             close()
                             selectedTab = .browse
@@ -49,7 +50,8 @@ struct SideMenuView: View {
                         SideMenuRow(
                             systemImage: "star",
                             title: "Wishlist",
-                            subtitle: "Cards you want to collect"
+                            subtitle: "Cards you want to collect",
+                            isSelected: selectedTab == .wishlist
                         ) {
                             close()
                             selectedTab = .wishlist
@@ -58,7 +60,8 @@ struct SideMenuView: View {
                         SideMenuRow(
                             systemImage: "square.stack.3d.up.fill",
                             title: "Collection",
-                            subtitle: "Cards you own"
+                            subtitle: "Cards you own",
+                            isSelected: selectedTab == .collection
                         ) {
                             close()
                             selectedTab = .collection
@@ -67,7 +70,8 @@ struct SideMenuView: View {
                         SideMenuRow(
                             systemImage: "list.bullet.rectangle",
                             title: "Transactions",
-                            subtitle: "Your collection history"
+                            subtitle: "Your collection history",
+                            isSelected: selectedTab == .transactions
                         ) {
                             close()
                             selectedTab = .transactions
@@ -86,7 +90,8 @@ struct SideMenuView: View {
                         SideMenuRow(
                             systemImage: "person.crop.circle",
                             title: "Account",
-                            subtitle: "Profile and app preferences"
+                            subtitle: "Profile and app preferences",
+                            isSelected: selectedTab == .account
                         ) {
                             close()
                             selectedTab = .account
@@ -103,6 +108,7 @@ struct SideMenuView: View {
     }
 
     private func close() {
+        HapticManager.impact(.light)
         withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
             isPresented = false
         }
@@ -113,6 +119,7 @@ private struct SideMenuRow: View {
     let systemImage: String
     let title: String
     let subtitle: String
+    var isSelected: Bool = false
     let action: () -> Void
 
     var body: some View {
@@ -120,13 +127,13 @@ private struct SideMenuRow: View {
             HStack(alignment: .top, spacing: 14) {
                 Image(systemName: systemImage)
                     .font(.title3)
-                    .foregroundStyle(.secondary)
+                    .foregroundStyle(isSelected ? Color.accentColor : Color.secondary)
                     .symbolRenderingMode(.hierarchical)
                     .frame(width: 28, alignment: .center)
 
                 VStack(alignment: .leading, spacing: 4) {
                     Text(title)
-                        .font(.body.weight(.medium))
+                        .font(.body.weight(isSelected ? .semibold : .medium))
                         .foregroundStyle(.primary)
                         .multilineTextAlignment(.leading)
                     Text(subtitle)
@@ -136,7 +143,14 @@ private struct SideMenuRow: View {
                 }
                 Spacer(minLength: 0)
             }
-            .padding(.vertical, 12)
+            .padding(.vertical, 10)
+            .padding(.horizontal, 8)
+            .background(
+                isSelected
+                    ? RoundedRectangle(cornerRadius: 10, style: .continuous)
+                        .fill(Color.accentColor.opacity(0.1))
+                    : nil
+            )
             .contentShape(Rectangle())
         }
         .buttonStyle(.plain)
