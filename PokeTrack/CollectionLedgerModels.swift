@@ -20,16 +20,17 @@ enum LedgerDirection: String, Codable, CaseIterable, Sendable {
 }
 
 /// How the user acquired the card when adding to collection (maps to ``LedgerDirection``).
+/// Order is user-facing (e.g. segmented pickers): packed first as the common default.
 enum CollectionAcquisitionKind: String, CaseIterable, Sendable {
-    case bought
     case packed
+    case bought
     case trade
     case gifted
 
     var title: String {
         switch self {
-        case .bought: return "Bought"
         case .packed: return "Packed"
+        case .bought: return "Bought"
         case .trade: return "Trade"
         case .gifted: return "Gifted"
         }
@@ -37,8 +38,8 @@ enum CollectionAcquisitionKind: String, CaseIterable, Sendable {
 
     var ledgerDirection: LedgerDirection {
         switch self {
-        case .bought: return .bought
         case .packed: return .packed
+        case .bought: return .bought
         case .trade: return .tradedIn
         case .gifted: return .giftedIn
         }

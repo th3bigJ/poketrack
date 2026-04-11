@@ -132,6 +132,15 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         autoCaptureFrameCount = 0
     }
 
+    /// Clears the entire current scan list (e.g. after bulk-adding every card to the collection).
+    func clearAllScanResults() {
+        guard !scanResults.isEmpty else { return }
+        scanResults.removeAll()
+        autoCaptureFrameCount = 0
+        lastErrorMessage = nil
+        scanState = .idle
+    }
+
     /// Fires the still photo pipeline manually.
     func capturePhoto() {
         guard session.isRunning, !isCapturing else { return }
@@ -198,8 +207,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 if self.session.canAddOutput(self.videoOutput) { self.session.addOutput(self.videoOutput) }
 
                 // Keep preview / Vision orientation aligned with portrait UI (see captureOutput).
-                if let conn = self.videoOutput.connection(with: .video), conn.isVideoOrientationSupported {
-                    conn.videoOrientation = .portrait
+                if let conn = self.videoOutput.connection(with: .video), conn.isVideoRotationAngleSupported(90.0) {
+                    conn.videoRotationAngle = 90.0
                 }
 
                 self.session.commitConfiguration()
@@ -526,9 +535,9 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
 
         guard let pixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
 
-        // Pass the buffer directly to Vision. Orientation must match AVCaptureConnection.videoOrientation
-        // (set to portrait in setup) so bounding boxes line up with the on-screen reticle.
-        let visionOrientation = Self.cgImageOrientation(forVideoOrientation: connection.videoOrientation)
+        // Pass the buffer directly to Vision. Orientation must match AVCaptureConnection.videoRotationAngle
+        // (set to 90.0 in setup) so bounding boxes line up with the on-screen reticle.
+        let visionOrientation = Self.cgImageOrientation(forVideoRotationAngle: connection.videoRotationAngle)
         let request = VNDetectRectanglesRequest()
         request.maximumObservations = 8
         request.minimumConfidence = 0.3
@@ -568,7 +577,7 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
         guard !observations.isEmpty else { return 0 }
 
         let r = cardNormalizedRect.isEmpty
-            ? CGRect(x: 0.14, y: 0.14, width: 0.72, height: 0.72)
+            ? CGRect(x: 0.175, y: 0.175, width: 0.65, height: 0.65)
             : cardNormalizedRect
 
         let visionReticle = Self.uiKitNormalizedRectToVision(r, imageOrientation: visionOrientation)
@@ -601,22 +610,22 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
         return bestScore
     }
 
-    /// Maps `AVCaptureVideoOrientation` to the `CGImagePropertyOrientation` Vision expects for the
+    /// Maps `videoRotationAngle` to the `CGImagePropertyOrientation` Vision expects for the
     /// same preview rotation. See “Displaying camera content” / matching preview to still analysis.
-    private static func cgImageOrientation(forVideoOrientation o: AVCaptureVideoOrientation) -> CGImagePropertyOrientation {
-        switch o {
-        case .portrait: return .right
-        case .portraitUpsideDown: return .left
-        case .landscapeRight: return .up
-        case .landscapeLeft: return .down
-        @unknown default: return .right
+    private static func cgImageOrientation(forVideoRotationAngle angle: CGFloat) -> CGImagePropertyOrientation {
+        switch angle {
+        case 90.0: return .right
+        case 270.0: return .left
+        case 0.0: return .up
+        case 180.0: return .down
+        default: return .right
         }
     }
 
     /// Converts a normalized UIKit rect (origin top-left, y down) into Vision’s normalized space
     /// (origin bottom-left, y up) for the same `CGImagePropertyOrientation` passed to `VNImageRequestHandler`.
     ///
-    /// For `.right` (typical back camera + portrait `videoOrientation`), this matches the reticle mapping
+    /// For `.right` (typical back camera + portrait `videoRotationAngle`), this matches the reticle mapping
     /// used when converting CIImage / pixel buffers for Vision: x/y axes swap vs screen space.
     private static func uiKitNormalizedRectToVision(_ r: CGRect, imageOrientation: CGImagePropertyOrientation) -> CGRect {
         let x = r.minX, y = r.minY, w = r.width, h = r.height

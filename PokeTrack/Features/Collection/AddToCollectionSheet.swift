@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// Identifies which card + variant to add (sheet item).
 struct AddToCollectionSheetPayload: Identifiable {
@@ -15,18 +16,11 @@ struct AddToCollectionSheet: View {
     let card: Card
     let variantKey: String
 
-    @State private var acquisitionKind: CollectionAcquisitionKind = .bought
+    @State private var acquisitionKind: CollectionAcquisitionKind = .packed
     @State private var quantity: Int = 1
 
     // Bought
-    @State private var boughtFrom: String = ""
     @State private var priceText: String = ""
-
-    // Packed
-    @State private var packedOpenedFrom: String = ""
-
-    // Gifted
-    @State private var giftFrom: String = ""
 
     @State private var errorMessage: String?
 
@@ -69,12 +63,10 @@ struct AddToCollectionSheet: View {
                     switch acquisitionKind {
                     case .bought:
                         boughtFields
-                    case .packed:
-                        packedFields
+                    case .packed, .gifted:
+                        EmptyView()
                     case .trade:
                         tradePlaceholder
-                    case .gifted:
-                        giftedFields
                     }
                 }
 
@@ -86,6 +78,7 @@ struct AddToCollectionSheet: View {
                     }
                 }
             }
+            .scrollDismissesKeyboard(.interactively)
             .navigationTitle("Add to collection")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
@@ -96,35 +89,37 @@ struct AddToCollectionSheet: View {
                     Button("Add") { save() }
                         .disabled(acquisitionKind == .trade)
                 }
+                ToolbarItemGroup(placement: .keyboard) {
+                    Spacer()
+                    Button("Done") { dismissDecimalKeyboard() }
+                }
             }
         }
+    }
+
+    private func dismissDecimalKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
     }
 
     @ViewBuilder
     private var boughtFields: some View {
-        Section("Bought") {
-            TextField("Bought from", text: $boughtFrom)
-            HStack {
-                Text("Unit price")
+        Section {
+            HStack(alignment: .firstTextBaseline) {
+                Text("Price paid")
                 Spacer()
-                TextField("0.00", text: $priceText)
-                    .keyboardType(.decimalPad)
-                    .multilineTextAlignment(.trailing)
-                    .frame(maxWidth: 120)
-                Text(currencySymbol)
-                    .foregroundStyle(.secondary)
+                HStack(spacing: 6) {
+                    Text(currencySymbol)
+                        .foregroundStyle(.secondary)
+                    TextField("0.00", text: $priceText)
+                        .keyboardType(.decimalPad)
+                        .multilineTextAlignment(.trailing)
+                        .frame(minWidth: 72)
+                }
             }
-        }
-    }
-
-    @ViewBuilder
-    private var packedFields: some View {
-        Section("From pack") {
-            TextField("Opened from (optional)", text: $packedOpenedFrom, axis: .vertical)
-                .lineLimit(1...4)
-            Text("Later you’ll link this to a sealed product transaction.")
-                .font(.caption)
-                .foregroundStyle(.secondary)
+            .accessibilityElement(children: .combine)
+            .accessibilityLabel("Price paid")
+        } footer: {
+            Text("What you paid for this card (cost basis).")
         }
     }
 
@@ -138,13 +133,6 @@ struct AddToCollectionSheet: View {
             )
             .frame(minHeight: 120)
             .listRowInsets(EdgeInsets())
-        }
-    }
-
-    @ViewBuilder
-    private var giftedFields: some View {
-        Section("Gift") {
-            TextField("From (optional)", text: $giftFrom)
         }
     }
 
@@ -179,11 +167,6 @@ struct AddToCollectionSheet: View {
             switch acquisitionKind {
             case .bought:
                 let unit = try parseRequiredPrice(priceText)
-                let from = boughtFrom.trimmingCharacters(in: .whitespacesAndNewlines)
-                guard !from.isEmpty else {
-                    errorMessage = "Enter where you bought this card."
-                    return
-                }
                 try ledger.recordSingleCardAcquisition(
                     cardID: card.masterCardId,
                     variantKey: variantKey,
@@ -196,7 +179,7 @@ struct AddToCollectionSheet: View {
                     tradeCounterparty: nil,
                     tradeGaveAway: nil,
                     giftFrom: nil,
-                    boughtFrom: from
+                    boughtFrom: nil
                 )
             case .packed:
                 try ledger.recordSingleCardAcquisition(
@@ -207,7 +190,7 @@ struct AddToCollectionSheet: View {
                     currencyCode: currencyCode,
                     cardDisplayName: card.cardName,
                     unitPrice: nil,
-                    packedOpenedFrom: packedOpenedFrom.isEmpty ? nil : packedOpenedFrom,
+                    packedOpenedFrom: nil,
                     tradeCounterparty: nil,
                     tradeGaveAway: nil,
                     giftFrom: nil,
@@ -225,7 +208,7 @@ struct AddToCollectionSheet: View {
                     packedOpenedFrom: nil,
                     tradeCounterparty: nil,
                     tradeGaveAway: nil,
-                    giftFrom: giftFrom.isEmpty ? nil : giftFrom,
+                    giftFrom: nil,
                     boughtFrom: nil
                 )
             case .trade:

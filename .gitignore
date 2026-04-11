@@ -23,4 +23,6 @@ DerivedData/
 # Editor / tooling (SourceKit-LSP / Cursor)
 buildServer.json
 
-testdata
+/PokeTrack/testdata
+
+/PokeTrack/.cursor

@@ -16,6 +16,8 @@ struct CardPricingPanel: View {
     @Environment(AppServices.self) private var services
 
     let card: Card
+    /// Pre-select this variant when the panel first loads. If nil the panel picks its own default.
+    var initialVariant: String? = nil
 
     // Scrydex variant keys (e.g. "holofoil", "normal")
     @State private var variantKeys: [String] = []
@@ -463,10 +465,10 @@ struct CardPricingPanel: View {
         } else {
             defaultVariant = preferredVariants.first(where: { keys.contains($0) }) ?? keys.first
         }
-        selectedVariant = defaultVariant
+        selectedVariant = initialVariant ?? defaultVariant
 
         // Pick default grade directly (don't rely on onChange firing in time)
-        let grades = gradesForSelectedVariant(variant: defaultVariant)
+        let grades = gradesForSelectedVariant(variant: selectedVariant)
         selectedGrade = grades.first(where: { $0 == "raw" }) ?? grades.first
 
         await refreshPrice()

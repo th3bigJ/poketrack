@@ -402,7 +402,8 @@ struct RootView: View {
             BrowseFullScreenHost(route: route)
                 .environment(services)
         }
-        .sheet(isPresented: $showCardScanner) {
+        // Full-screen cover (not `.sheet`) so the browse tab never shows through at the top — sheets can reveal content behind near the status bar.
+        .fullScreenCover(isPresented: $showCardScanner) {
             CardScannerView(
                 onMatch: { card in
                     showCardScanner = false
@@ -415,11 +416,6 @@ struct RootView: View {
                 }
             )
             .environment(services)
-            .presentationBackground(Color.black)
-            .presentationDetents([.large])
-            .presentationCornerRadius(0)
-            .presentationDragIndicator(.hidden)
-            .interactiveDismissDisabled(true)
         }
     }
 

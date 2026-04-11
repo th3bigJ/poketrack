@@ -1,0 +1,34 @@
+---
+description: Prefer SwiftUI for UI; use UIKit bridges only when necessary
+globs: "**/*.swift"
+alwaysApply: true
+---
+
+# Prefer SwiftUI for UI
+
+When editing or adding UI in this iOS app, **default to SwiftUI**—views, layout, navigation, sheets, lists, forms, gestures, and styling.
+
+## Do this
+
+- Build screens with `View` types, `VStack` / `HStack` / `ZStack`, `NavigationStack`, `List`, `Form`, `TabView`, `sheet`, `fullScreenCover`, `popover`, etc.
+- Use SwiftUI system components first: `Button`, `Toggle`, `Picker`, `TextField`, `Searchable`, `Menu`, `ContextMenu`, `ShareLink`, `PhotosPicker`, `Color`, `Font`, `Label`.
+- Prefer SwiftUI animation and transitions (`withAnimation`, `.animation`, `matchedGeometryEffect`) over manual UIKit animation when possible.
+- Follow **Apple Human Interface Guidelines** for structure, hierarchy, and accessibility; use **Liquid Glass** materials (e.g. `.glassEffect` / relevant iOS 26+ APIs where the project’s deployment target allows) for chrome and overlays when it fits the design.
+
+## Only reach for UIKit when SwiftUI cannot do it (yet)
+
+- Use `UIViewRepresentable` / `UIViewControllerRepresentable` for **camera preview**, **MapKit** details, **complex text**, or **third-party UIKit-only** SDKs—and keep the bridge **thin**: SwiftUI owns state; UIKit is a leaf.
+- Do **not** add `UIHostingController` or storyboard-based screens for new features unless integrating legacy code.
+
+## Examples
+
+```swift
+// Prefer
+NavigationStack { List(items) { … } }
+    .searchable(text: $query)
+
+// Avoid for new code
+UINavigationController + UITableViewController in AppDelegate unless required
+```
+
+When unsure, check Apple’s **SwiftUI** documentation for the current OS APIs and pick the SwiftUI path first.

@@ -2,35 +2,32 @@ import SwiftUI
 
 struct ScanResultBar: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
 
     let result: ScanResult
     /// Only the centered page should show expanded UI; others stay compact while off-screen.
     var isCurrentPage: Bool
-    @Binding var isExpanded: Bool
-    /// Cap for the scrollable detail region when expanded (from parent `GeometryReader`).
-    var maxExpandedContentHeight: CGFloat
-    /// Called when the user picks another catalog match from “Wrong card?”.
+    /// Called when the user picks another catalog match from "Wrong card?".
     var onPickAlternative: (Card) -> Void
-
-    @State private var selectedVariant: String = ""
+    /// Opens the full card detail sheet.
+    var onOpenDetails: () -> Void
+    /// Opens the bulk add-to-collection sheet for all scanned cards.
+    var onAddAllToCollection: () -> Void
+    /// Bound to the parent so the selected variant is readable when swiping up.
+    @Binding var selectedVariant: String
     @State private var showWrongCardSheet = false
     /// Market price for `selectedVariant` (raw), formatted with `PriceDisplaySettings`.
     @State private var barVariantPriceText: String = "—"
-    @State private var addToCollectionPayload: AddToCollectionSheetPayload?
     @State private var wishlistFeedback: WishlistFeedback?
-    @State private var dragOffset: CGFloat = 0
-    /// Vertical scroll offset from `onScrollGeometryChange` — collapse only when near top.
-    @State private var expandedScrollOffsetY: CGFloat = 0
 
     private var card: Card { result.card }
 
-    private var showExpanded: Bool { isCurrentPage && isExpanded }
+    private var collectionPlusGlyphColor: Color {
+        colorScheme == .dark ? .white : Color.primary
+    }
 
     /// Filled wishlist star — matches `CardBrowseDetailView` (gold, not accent blue).
     private static let wishlistStarGold = Color(red: 0.98, green: 0.78, blue: 0.18)
-
-    /// `contentOffset.y` at/near top; allow small float / inset so we don’t collapse while scrolled.
-    private static let expandedScrollTopTolerance: CGFloat = 20
 
     private var isCurrentVariantWishlisted: Bool {
         guard let wl = services.wishlist else { return false }
@@ -73,51 +70,46 @@ struct ScanResultBar: View {
         return ["normal"]
     }
 
+    /// One print → single add; multiple → menu.
+    private var singleVariantForActions: String? {
+        variants.count == 1 ? variants.first : nil
+    }
+
     var body: some View {
         VStack(spacing: 0) {
-            handleBar
-
-            if showExpanded {
-                ScrollView(showsIndicators: false) {
-                    ScannerResultExpandedContent(card: card, topPadding: 8)
-                }
-                .frame(maxHeight: maxExpandedContentHeight)
-                .onScrollGeometryChange(for: CGFloat.self) { geo in
-                    geo.contentOffset.y
-                } action: { _, y in
-                    expandedScrollOffsetY = y
-                }
-                .transition(.opacity.combined(with: .move(edge: .bottom)))
+            // Card row
+            HStack(spacing: 14) {
+                cardThumbnail
+                cardInfo
+                Spacer(minLength: 8)
+                Text(barVariantPriceText)
+                    .font(.system(size: 16, weight: .semibold))
+                    .foregroundStyle(.primary)
+                    .monospacedDigit()
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                    .multilineTextAlignment(.trailing)
+                    .frame(maxWidth: 120, alignment: .trailing)
             }
+            .padding(.horizontal, 16)
 
-            if !showExpanded {
-                // Card row — trailing: market price for selected variant (swipe up still expands via handle / drag)
-                HStack(spacing: 14) {
-                    cardThumbnail
-                    cardInfo
-                    Spacer(minLength: 8)
-                    Text(barVariantPriceText)
-                        .font(.system(size: 16, weight: .semibold))
-                        .foregroundStyle(.white)
-                        .monospacedDigit()
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.7)
-                        .multilineTextAlignment(.trailing)
-                        .frame(maxWidth: 120, alignment: .trailing)
-                }
-                .padding(.horizontal, 16)
+            if variants.count > 1 {
+                variantPicker
+                    .padding(.top, 14)
+                    .padding(.horizontal, 16)
 
-                if variants.count > 1 {
-                    variantPicker
-                        .padding(.top, 14)
-                        .padding(.horizontal, 16)
-                }
+                Text("Select a variant before adding to collection")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.top, 6)
+                    .padding(.horizontal, 16)
             }
 
             if let feedback = wishlistFeedback {
                 HStack(spacing: 6) {
                     Image(systemName: feedback.icon).foregroundStyle(feedback.color)
-                    Text(feedback.message).font(.subheadline).foregroundStyle(.white)
+                    Text(feedback.message).font(.subheadline).foregroundStyle(.primary)
                 }
                 .frame(maxWidth: .infinity)
                 .padding(.vertical, 8)
@@ -127,24 +119,12 @@ struct ScanResultBar: View {
             }
 
             actionButtons
-                .padding(.top, showExpanded ? 10 : 14)
+                .padding(.top, 14)
                 .padding(.horizontal, 16)
-                .padding(.bottom, 20)
-        }
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 24, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 24, style: .continuous)
-                .strokeBorder(Color.white.opacity(0.12), lineWidth: 1)
-        )
-        .offset(y: showExpanded ? 0 : min(0, dragOffset))
-        // Simultaneous + axis check so parent can receive horizontal drags for multi-result paging.
-        .simultaneousGesture(barVerticalDragGesture)
-        .animation(.spring(response: 0.42, dampingFraction: 0.86), value: showExpanded)
-        .onChange(of: showExpanded) { _, expanded in
-            if expanded { expandedScrollOffsetY = 0 }
+                .padding(.bottom, 18)
         }
         .onAppear {
-            selectedVariant = variants.first ?? "normal"
+            if selectedVariant.isEmpty { selectedVariant = variants.first ?? "normal" }
         }
         .onChange(of: card.masterCardId) { _, _ in
             selectedVariant = variants.first ?? "normal"
@@ -161,76 +141,8 @@ struct ScanResultBar: View {
                 }
             )
         }
-        .sheet(item: $addToCollectionPayload) { payload in
-            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey)
-                .environment(services)
-        }
     }
 
-    private var handleBar: some View {
-        Button {
-            guard isCurrentPage else { return }
-            withAnimation(.spring(response: 0.4, dampingFraction: 0.88)) {
-                isExpanded.toggle()
-            }
-            HapticManager.impact(.light)
-        } label: {
-            VStack(spacing: 10) {
-                Capsule()
-                    .fill(Color.white.opacity(0.3))
-                    .frame(width: 36, height: 4)
-                Image(systemName: showExpanded ? "chevron.compact.down" : "chevron.compact.up")
-                    .font(.system(size: 16, weight: .semibold))
-                    .foregroundStyle(.white.opacity(0.45))
-            }
-            .padding(.top, 10)
-            .padding(.bottom, showExpanded ? 8 : 14)
-            .frame(maxWidth: .infinity)
-            .contentShape(Rectangle())
-        }
-        .buttonStyle(.plain)
-    }
-
-    private var barVerticalDragGesture: some Gesture {
-        DragGesture(minimumDistance: 14)
-            .onChanged { value in
-                guard isCurrentPage else { return }
-                // Let horizontal swipes pass through to the carousel in `CardScannerView`.
-                guard abs(value.translation.height) >= abs(value.translation.width) - 2 else { return }
-                if showExpanded { return }
-                if value.translation.height < 0 {
-                    dragOffset = value.translation.height
-                }
-            }
-            .onEnded { value in
-                guard isCurrentPage else { return }
-                let verticalIntent = abs(value.translation.height) >= abs(value.translation.width) - 2
-                if showExpanded {
-                    guard verticalIntent else { return }
-                    // Only dismiss the expanded panel when detail scroll is at the top (not mid-scroll).
-                    guard expandedScrollOffsetY <= Self.expandedScrollTopTolerance else { return }
-                    if value.translation.height > 56 || value.predictedEndTranslation.height > 120 {
-                        withAnimation(.spring(response: 0.4, dampingFraction: 0.88)) {
-                            isExpanded = false
-                        }
-                        HapticManager.impact(.light)
-                    }
-                    return
-                }
-                guard verticalIntent else { return }
-                if value.translation.height < -50 || value.predictedEndTranslation.height < -120 {
-                    dragOffset = 0
-                    HapticManager.impact(.light)
-                    withAnimation(.spring(response: 0.42, dampingFraction: 0.86)) {
-                        isExpanded = true
-                    }
-                } else {
-                    withAnimation(.spring(response: 0.3, dampingFraction: 0.75)) {
-                        dragOffset = 0
-                    }
-                }
-            }
-    }
 
     // MARK: - Thumbnail
 
@@ -245,7 +157,7 @@ struct ScanResultBar: View {
                 .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
         } placeholder: {
             RoundedRectangle(cornerRadius: 8, style: .continuous)
-                .fill(Color.white.opacity(0.08))
+                .fill(Color.primary.opacity(0.08))
                 .frame(width: 52, height: 72)
         }
         .shadow(color: .black.opacity(0.4), radius: 6, y: 3)
@@ -257,16 +169,16 @@ struct ScanResultBar: View {
         VStack(alignment: .leading, spacing: 4) {
             Text(card.cardName)
                 .font(.headline)
-                .foregroundStyle(.white)
+                .foregroundStyle(.primary)
                 .lineLimit(1)
             Text(card.setCode.uppercased() + " · #" + card.cardNumber)
                 .font(.subheadline)
-                .foregroundStyle(.white.opacity(0.65))
+                .foregroundStyle(.secondary)
                 .lineLimit(1)
             if let rarity = card.rarity {
                 Text(rarity)
                     .font(.caption)
-                    .foregroundStyle(.white.opacity(0.45))
+                    .foregroundStyle(.tertiary)
                     .lineLimit(1)
             }
         }
@@ -285,10 +197,10 @@ struct ScanResultBar: View {
                     } label: {
                         Text(variantDisplayName(key))
                             .font(.caption.weight(.semibold))
-                            .foregroundStyle(isSelected ? .black : .white.opacity(0.8))
+                            .foregroundStyle(isSelected ? Color(uiColor: .systemBackground) : .primary)
                             .padding(.horizontal, 12)
                             .padding(.vertical, 6)
-                            .background(Capsule().fill(isSelected ? Color.white : Color.white.opacity(0.12)))
+                            .background(Capsule().fill(isSelected ? Color.primary : Color.primary.opacity(0.1)))
                     }
                     .buttonStyle(.plain)
                     .animation(.spring(response: 0.25, dampingFraction: 0.8), value: selectedVariant)
@@ -301,14 +213,20 @@ struct ScanResultBar: View {
 
     private var actionButtons: some View {
         HStack(spacing: 10) {
-            actionButton(icon: "plus.circle.fill", label: "Collection", style: .secondary) {
-                addToCollectionPayload = AddToCollectionSheetPayload(card: card, variantKey: selectedVariant)
-            }
-            wishlistActionButton
-            actionButton(icon: "questionmark.circle.fill", label: "Wrong card?", style: .primary) {
+            actionButton(icon: "questionmark.circle.fill", label: "Wrong card?", style: .secondary) {
                 guard isCurrentPage else { return }
                 showWrongCardSheet = true
                 HapticManager.impact(.light)
+            }
+            actionButton(icon: "info.circle.fill", label: "Card details", style: .secondary) {
+                guard isCurrentPage else { return }
+                onOpenDetails()
+                HapticManager.impact(.light)
+            }
+            actionButton(icon: "plus.circle.fill", label: "Add", style: .primary) {
+                guard isCurrentPage else { return }
+                onAddAllToCollection()
+                HapticManager.impact(.medium)
             }
         }
     }
@@ -321,16 +239,16 @@ struct ScanResultBar: View {
             VStack(spacing: 5) {
                 Image(systemName: isCurrentVariantWishlisted ? "star.fill" : "star")
                     .font(.system(size: 20))
-                    .foregroundStyle(isCurrentVariantWishlisted ? Self.wishlistStarGold : Color.white)
+                    .foregroundStyle(isCurrentVariantWishlisted ? Self.wishlistStarGold : .primary)
                 Text("Wishlist")
                     .font(.system(size: 11, weight: .semibold))
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
-            .foregroundStyle(.white)
+            .foregroundStyle(.primary)
             .background(
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(Color.white.opacity(0.12))
+                    .fill(Color.primary.opacity(0.08))
             )
         }
         .buttonStyle(.plain)
@@ -347,10 +265,10 @@ struct ScanResultBar: View {
             }
             .frame(maxWidth: .infinity)
             .padding(.vertical, 12)
-            .foregroundStyle(style == .primary ? .black : .white)
+            .foregroundStyle(style == .primary ? Color(uiColor: .systemBackground) : .primary)
             .background(
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(style == .primary ? Color.white : Color.white.opacity(0.12))
+                    .fill(style == .primary ? Color.primary : Color.primary.opacity(0.08))
             )
         }
         .buttonStyle(.plain)
@@ -358,11 +276,22 @@ struct ScanResultBar: View {
 
     // MARK: - Wishlist
 
+    private func isVariantWishlisted(_ key: String) -> Bool {
+        guard let wl = services.wishlist else { return false }
+        _ = wl.items
+        return wl.isInWishlist(cardID: card.masterCardId, variantKey: key)
+    }
+
     private func toggleWishlist() {
+        toggleWishlist(forVariantKey: selectedVariant)
+    }
+
+    private func toggleWishlist(forVariantKey key: String) {
         guard let wishlist = services.wishlist else { return }
-        if isCurrentVariantWishlisted {
+        if isVariantWishlisted(key) {
             do {
-                try wishlist.removeCardVariant(cardID: card.masterCardId, variantKey: selectedVariant)
+                try wishlist.removeCardVariant(cardID: card.masterCardId, variantKey: key)
+                selectedVariant = key
                 show(feedback: .removed)
                 HapticManager.impact(.light)
             } catch {
@@ -371,7 +300,8 @@ struct ScanResultBar: View {
             return
         }
         do {
-            try wishlist.addItem(cardID: card.masterCardId, variantKey: selectedVariant)
+            try wishlist.addItem(cardID: card.masterCardId, variantKey: key)
+            selectedVariant = key
             show(feedback: .added)
             HapticManager.impact(.medium)
         } catch WishlistError.alreadyExists {
@@ -431,7 +361,7 @@ struct ScannerWrongCardAlternativesSheet: View {
                     ContentUnavailableView(
                         "No other matches",
                         systemImage: "rectangle.dashed",
-                        description: Text("There aren’t other catalog candidates for this scan. Try scanning again with clearer lighting or a steadier frame.")
+                        description: Text("There aren't other catalog candidates for this scan. Try scanning again with clearer lighting or a steadier frame.")
                     )
                 } else {
                     ScrollView {
