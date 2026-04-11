@@ -262,6 +262,29 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    func fetchAllCards() throws -> [Card] {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            guard sqlite3_prepare_v2(
+                db,
+                "SELECT json FROM catalog_cards ORDER BY set_code, master_card_id;",
+                -1,
+                &stmt,
+                nil
+            ) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            var out: [Card] = []
+            while sqlite3_step(stmt) == SQLITE_ROW {
+                guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                let s = String(cString: c)
+                guard let d = s.data(using: .utf8), let card = try? jsonDecoder.decode(Card.self, from: d) else { continue }
+                out.append(card)
+            }
+            return out
+        }
+    }
+
     /// Single card by catalog `masterCardId` (wishlist / deep links). `master_card_id` is unique in practice.
     func fetchCard(masterCardId: String) throws -> Card? {
         try queue.sync {

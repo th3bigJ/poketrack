@@ -63,7 +63,7 @@ final class ImagePrefetcher: @unchecked Sendable {
         let urls = cards[startIndex..<endIndex].map {
             AppConfiguration.imageURL(relativePath: $0.imageLowSrc)
         }
-        prefetch(urls, priority: .low)
+        prefetch(urls, priority: .userInitiated)
     }
 
     /// Prefetch high-res images for adjacent cards in detail view for instant swipe experience.

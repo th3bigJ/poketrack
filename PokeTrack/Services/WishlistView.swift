@@ -103,7 +103,7 @@ struct WishlistView: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 8)
 
-                if !services.store.isPremium && items.count >= WishlistService.freeWishlistLimit {
+                if !services.store.isPremium && items.count >= WishlistFreeTier.maxItems {
                     Button("Upgrade to Premium for unlimited wishlist items") {
                         showPaywall = true
                     }

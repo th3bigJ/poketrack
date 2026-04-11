@@ -15,6 +15,10 @@ final class CloudSettingsService {
     
     private enum Keys {
         static let currency = "priceDisplayCurrency"
+        static let browseShowCardName = "browseGridShowCardName"
+        static let browseShowSetName = "browseGridShowSetName"
+        static let browseShowPricing = "browseGridShowPricing"
+        static let browseColumnCount = "browseGridColumnCount"
     }
     
     init() {
@@ -42,6 +46,40 @@ final class CloudSettingsService {
         guard let raw = store.string(forKey: Keys.currency) else { return nil }
         return PriceDisplayCurrency(rawValue: raw)
     }
+
+    func saveBrowseGridOptions(_ options: BrowseGridOptions) {
+        store.set(options.showCardName, forKey: Keys.browseShowCardName)
+        store.set(options.showSetName, forKey: Keys.browseShowSetName)
+        store.set(options.showPricing, forKey: Keys.browseShowPricing)
+        store.set(Int64(options.columnCount), forKey: Keys.browseColumnCount)
+        store.synchronize()
+    }
+
+    func loadBrowseGridOptions() -> BrowseGridOptions? {
+        let hasStoredValue =
+            store.object(forKey: Keys.browseShowCardName) != nil
+            || store.object(forKey: Keys.browseShowSetName) != nil
+            || store.object(forKey: Keys.browseShowPricing) != nil
+            || store.object(forKey: Keys.browseColumnCount) != nil
+
+        guard hasStoredValue else { return nil }
+
+        let defaults = BrowseGridOptions()
+        return BrowseGridOptions(
+            showCardName: store.object(forKey: Keys.browseShowCardName) != nil
+                ? store.bool(forKey: Keys.browseShowCardName)
+                : defaults.showCardName,
+            showSetName: store.object(forKey: Keys.browseShowSetName) != nil
+                ? store.bool(forKey: Keys.browseShowSetName)
+                : defaults.showSetName,
+            showPricing: store.object(forKey: Keys.browseShowPricing) != nil
+                ? store.bool(forKey: Keys.browseShowPricing)
+                : defaults.showPricing,
+            columnCount: store.object(forKey: Keys.browseColumnCount) != nil
+                ? Int(store.longLong(forKey: Keys.browseColumnCount))
+                : defaults.columnCount
+        )
+    }
     
     var syncStatus: CloudSyncStatus {
         if isCloudKitFallbackActive {
@@ -66,8 +104,9 @@ final class CloudSettingsService {
         UserDefaults.standard.string(forKey: PokeTrackApp.cloudKitLastErrorDefaultsKey)
     }
     
-    private func handleExternalChange() {
-        // Notify observers that settings changed from another device
+    /// `NotificationCenter` delivers this on the queue passed to `addObserver` (`.main` above), but the observer
+    /// closure is still `@Sendable` / not MainActor-isolated — keep this `nonisolated` and only post notifications.
+    nonisolated private func handleExternalChange() {
         NotificationCenter.default.post(name: .cloudSettingsDidChange, object: nil)
     }
 }

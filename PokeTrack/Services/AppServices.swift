@@ -7,9 +7,10 @@ import SwiftData
 final class AppServices {
     let cardData = CardDataService()
     let pricing = PricingService()
-    let priceDisplay = PriceDisplaySettings()
+    let cloudSettings: CloudSettingsService
+    let priceDisplay: PriceDisplaySettings
+    let browseGridOptions: BrowseGridOptionsSettings
     let store = StoreKitService()
-    let cloudSettings = CloudSettingsService()
     
     // Wishlist service - initialized after model context is available
     private(set) var wishlist: WishlistService?
@@ -18,6 +19,13 @@ final class AppServices {
     private(set) var collectionLedger: CollectionLedgerService?
 
     private(set) var isReady = false
+
+    init() {
+        let cloudSettings = CloudSettingsService()
+        self.cloudSettings = cloudSettings
+        self.priceDisplay = PriceDisplaySettings(cloudSettings: cloudSettings)
+        self.browseGridOptions = BrowseGridOptionsSettings(cloudSettings: cloudSettings)
+    }
 
     func bootstrap() async {
         await CatalogSyncCoordinator.shared.syncAllIfNeeded()

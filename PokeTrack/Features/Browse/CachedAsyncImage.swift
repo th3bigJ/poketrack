@@ -16,7 +16,7 @@ private final class ImageLoader {
             return
         }
 
-        // Skip only when this URL already produced a decoded image; if `image` is nil, reload (e.g. after `.task` cancellation).
+        // Already loaded this URL — keep the existing image, no flicker.
         if url == currentURL, image != nil { return }
 
         currentURL = url
@@ -121,9 +121,6 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
         .animation(.easeOut(duration: 0.18), value: loader.image != nil)
         .task(id: url) {
             loader.load(url: url, targetSize: targetSize)
-        }
-        .onDisappear {
-            loader.cancel()
         }
     }
 }

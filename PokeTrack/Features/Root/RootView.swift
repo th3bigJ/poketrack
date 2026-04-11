@@ -51,7 +51,10 @@ struct RootView: View {
     @State private var selectedTab: AppTab = .browse
     @State private var universalQuery = ""
     @State private var showCardScanner = false
-    @State private var showFilterComingSoon = false
+    @State private var browseFilters = BrowseCardGridFilters()
+    @State private var browseFilterResultCount = 0
+    @State private var browseFilterEnergyOptions: [String] = []
+    @State private var browseFilterRarityOptions: [String] = []
     @State private var isSideMenuOpen = false
     @State private var isSearchExperiencePresented = false
     /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar`; detail uses the same `NavigationStack` bar as Browse (`DexCardsView` / `SetCardsView`).
@@ -79,6 +82,13 @@ struct RootView: View {
         !isSideMenuOpen
             && browseNavigationPath.isEmpty
             && searchNavigationPath.isEmpty
+            && browseFullScreen == nil
+    }
+
+    private var isBrowseGridFilterContextActive: Bool {
+        selectedTab == .browse
+            && browseNavigationPath.isEmpty
+            && !isSearchExperiencePresented
             && browseFullScreen == nil
     }
 
@@ -141,7 +151,17 @@ struct RootView: View {
                                 switch tab {
                                 case .browse:
                                     NavigationStack(path: $browseNavigationPath) {
-                                        BrowseView()
+                                        BrowseView(
+                                            filters: $browseFilters,
+                                            gridOptions: Binding(
+                                                get: { services.browseGridOptions.options },
+                                                set: { services.browseGridOptions.options = $0 }
+                                            ),
+                                            isFilterMenuPresented: .constant(false),
+                                            filterResultCount: $browseFilterResultCount,
+                                            filterEnergyOptions: $browseFilterEnergyOptions,
+                                            filterRarityOptions: $browseFilterRarityOptions
+                                        )
                                     }
                                 case .wishlist:
                                     NavigationStack {
@@ -240,6 +260,9 @@ struct RootView: View {
                     isFocused: $searchFieldFocused,
                     isMenuOpen: isSideMenuOpen,
                     isSearchOpen: isSearchExperiencePresented,
+                    isFilterEnabled: isBrowseGridFilterContextActive,
+                    isFilterActive: browseFilters.isVisiblyCustomized,
+                    filterMenuContent: isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent) : nil,
                     onBurgerTap: {
                         if isSearchExperiencePresented {
                             searchNavigationPath = NavigationPath()
@@ -262,7 +285,6 @@ struct RootView: View {
                     },
                     onFilter: {
                         searchFieldFocused = false
-                        showFilterComingSoon = true
                     }
                 )
                 .frame(maxWidth: .infinity)
@@ -334,6 +356,7 @@ struct RootView: View {
         .animation(.easeInOut(duration: 0.25), value: selectedCardPresentation != nil)
         .onChange(of: searchFieldFocused) { _, isFocused in
             if isFocused {
+                Haptics.lightImpact()
                 withAnimation(.spring(response: 0.38, dampingFraction: 0.88)) {
                     isSearchExperiencePresented = true
                 }
@@ -353,6 +376,7 @@ struct RootView: View {
             }
         }
         .onChange(of: selectedTab) { _, tab in
+            Haptics.selectionChanged()
             chromeScroll.configureForTab(tab)
         }
         .onChange(of: browseNavigationPath.count) { _, newCount in
@@ -394,12 +418,139 @@ struct RootView: View {
             .presentationBackground(Color.black)
             .presentationDetents([.large])
             .presentationCornerRadius(0)
+            .presentationDragIndicator(.hidden)
+            .interactiveDismissDisabled(true)
         }
-        .alert("Filters", isPresented: $showFilterComingSoon) {
-            Button("OK", role: .cancel) {}
-        } message: {
-            Text("Filter controls will be available in a future update.")
+    }
+
+    @ViewBuilder
+    private var browseFilterMenuContent: some View {
+        if browseFilters.isVisiblyCustomized {
+            Section {
+                Button("Reset filters", role: .destructive) {
+                    let currentSort = browseFilters.sortBy
+                    browseFilters = BrowseCardGridFilters()
+                    browseFilters.sortBy = currentSort
+                }
+            }
         }
+
+        Section("Sort by") {
+            Menu(menuTitle("Sort by", summary: browseFilters.sortBy.title)) {
+                Picker("Sort by", selection: $browseFilters.sortBy) {
+                    ForEach(BrowseCardGridSortOption.allCases) { option in
+                        Text(option.title).tag(option)
+                    }
+                }
+                .pickerStyle(.inline)
+                .labelsHidden()
+            }
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+        }
+
+        Section("Filters") {
+            Menu(menuTitle("Card type", summary: selectionSummary(for: browseFilters.cardTypes))) {
+                ForEach(BrowseCardTypeFilter.allCases) { type in
+                    Toggle(type.title, isOn: binding(for: type))
+                }
+            }
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+
+            Toggle("Rare + only", isOn: $browseFilters.rarePlusOnly)
+            Toggle("Hide owned", isOn: $browseFilters.hideOwned)
+
+            Menu(menuTitle("Energy", summary: selectionSummary(for: browseFilters.energyTypes))) {
+                if browseFilterEnergyOptions.isEmpty {
+                    Text("No energy types available")
+                } else {
+                    ForEach(browseFilterEnergyOptions, id: \.self) { energy in
+                        Toggle(energy, isOn: binding(for: energy, keyPath: \.energyTypes))
+                    }
+                }
+            }
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+
+            Menu(menuTitle("Rarity", summary: selectionSummary(for: browseFilters.rarities))) {
+                if browseFilterRarityOptions.isEmpty {
+                    Text("No rarities available")
+                } else {
+                    ForEach(browseFilterRarityOptions, id: \.self) { rarity in
+                        Toggle(rarity, isOn: binding(for: rarity, keyPath: \.rarities))
+                    }
+                }
+            }
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+        }
+
+        Section("Grid options") {
+            Menu("Grid options") {
+                Toggle("Show card name", isOn: gridOptionBinding(\.showCardName))
+                Toggle("Show set name", isOn: gridOptionBinding(\.showSetName))
+                Toggle("Show pricing", isOn: gridOptionBinding(\.showPricing))
+                Stepper(value: gridOptionBinding(\.columnCount), in: 1...4) {
+                    Text("Columns: \(services.browseGridOptions.options.columnCount)")
+                }
+            }
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+        }
+    }
+
+    private func binding(for type: BrowseCardTypeFilter) -> Binding<Bool> {
+        Binding(
+            get: { browseFilters.cardTypes.contains(type) },
+            set: { isOn in
+                if isOn { browseFilters.cardTypes.insert(type) }
+                else { browseFilters.cardTypes.remove(type) }
+            }
+        )
+    }
+
+    private func binding(for value: String, keyPath: WritableKeyPath<BrowseCardGridFilters, Set<String>>) -> Binding<Bool> {
+        Binding(
+            get: { browseFilters[keyPath: keyPath].contains(value) },
+            set: { isOn in
+                if isOn { browseFilters[keyPath: keyPath].insert(value) }
+                else { browseFilters[keyPath: keyPath].remove(value) }
+            }
+        )
+    }
+
+    private func menuTitle(_ title: String, summary: String?) -> String {
+        guard let summary, !summary.isEmpty else { return title }
+        return "\(title) (\(summary))"
+    }
+
+    private func gridOptionBinding(_ keyPath: WritableKeyPath<BrowseGridOptions, Bool>) -> Binding<Bool> {
+        Binding(
+            get: { services.browseGridOptions.options[keyPath: keyPath] },
+            set: { value in
+                var options = services.browseGridOptions.options
+                options[keyPath: keyPath] = value
+                services.browseGridOptions.options = options
+            }
+        )
+    }
+
+    private func gridOptionBinding(_ keyPath: WritableKeyPath<BrowseGridOptions, Int>) -> Binding<Int> {
+        Binding(
+            get: { services.browseGridOptions.options[keyPath: keyPath] },
+            set: { value in
+                var options = services.browseGridOptions.options
+                options[keyPath: keyPath] = value
+                services.browseGridOptions.options = options
+            }
+        )
+    }
+
+    private func selectionSummary<T>(for values: Set<T>) -> String? {
+        guard !values.isEmpty else { return nil }
+        if values.count == 1 { return "1 selected" }
+        return "\(values.count) selected"
     }
 }
 

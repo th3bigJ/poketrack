@@ -2,15 +2,17 @@ import Foundation
 import SwiftData
 import Observation
 
+/// Free-tier cap for wishlist rows (not on the main actor so `WishlistError` can format messages).
+enum WishlistFreeTier {
+    static let maxItems = 5
+}
+
 /// Manages wishlist operations with premium feature gating
 @Observable
 @MainActor
 final class WishlistService {
     private let modelContext: ModelContext
     private let store: StoreKitService
-    
-    // Wishlist limits
-    static let freeWishlistLimit = 5
     
     private(set) var items: [WishlistItem] = []
     private(set) var error: String?
@@ -43,7 +45,7 @@ final class WishlistService {
         if store.isPremium {
             return true // Unlimited for premium users
         }
-        return currentItems.count < Self.freeWishlistLimit
+        return currentItems.count < WishlistFreeTier.maxItems
     }
     
     /// Add a card to the wishlist
@@ -79,6 +81,12 @@ final class WishlistService {
         } catch {
             throw WishlistError.saveFailed(error)
         }
+    }
+
+    /// Removes the row for this card + variant if it exists (no-op if not wishlisted).
+    func removeCardVariant(cardID: String, variantKey: String) throws {
+        guard let item = items.first(where: { $0.cardID == cardID && $0.variantKey == variantKey }) else { return }
+        try removeItem(item)
     }
 
     /// Remove every wishlist row for this card (all print variants).
@@ -128,7 +136,7 @@ enum WishlistError: LocalizedError {
     var errorDescription: String? {
         switch self {
         case .limitReached:
-            return "Free users can save up to \(WishlistService.freeWishlistLimit) wishlist items. Upgrade to Premium for unlimited wishlists!"
+            return "Free users can save up to \(WishlistFreeTier.maxItems) wishlist items. Upgrade to Premium for unlimited wishlists!"
         case .alreadyExists:
             return "This card is already in your wishlist."
         case .saveFailed(let error):

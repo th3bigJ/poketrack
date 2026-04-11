@@ -142,6 +142,26 @@ final class CardDataService {
         }
     }
 
+    func loadAllCards() async -> [Card] {
+        do {
+            try CatalogStore.shared.open()
+            let cards = try CatalogStore.shared.fetchAllCards()
+            if !cards.isEmpty {
+                return cards
+            }
+        } catch {
+            // Fall through to in-memory / network-backed set loads.
+        }
+
+        guard !sets.isEmpty else { return [] }
+        var out: [Card] = []
+        for set in sets {
+            let cards = await loadCards(forSetCode: set.setCode)
+            out.append(contentsOf: cards)
+        }
+        return out
+    }
+
     /// Substring match on set name, code, or series (for universal search).
     func searchSets(matching query: String) -> [TCGSet] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()

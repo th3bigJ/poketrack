@@ -10,9 +10,12 @@ final class ChromeScrollCoordinator: ObservableObject {
     private(set) var acceptsScrollChromeUpdates: Bool = true
 
     private var lastOffsetY: CGFloat = 0
+    /// While the tab bar / safe area animates, `ScrollOffsetAnchor` can report a one-frame spike; ignore updates briefly so we don’t fight the layout or flicker chrome.
+    private var suppressScrollChromeUntil: Date?
 
     private let deltaThreshold: CGFloat = 8
     private let nearTopThreshold: CGFloat = 28
+    private let layoutSettleDuration: TimeInterval = 0.2
 
     /// Call from `RootView` when the selected tab changes.
     func configureForTab(_ tab: AppTab) {
@@ -28,6 +31,11 @@ final class ChromeScrollCoordinator: ObservableObject {
 
     func reportScrollOffsetY(_ y: CGFloat) {
         guard acceptsScrollChromeUpdates else { return }
+        if let until = suppressScrollChromeUntil, Date() < until {
+            lastOffsetY = y
+            return
+        }
+        suppressScrollChromeUntil = nil
         let delta = y - lastOffsetY
         lastOffsetY = y
         apply(delta: delta, offsetY: y)
@@ -35,11 +43,13 @@ final class ChromeScrollCoordinator: ObservableObject {
 
     func resetForTabChange() {
         lastOffsetY = 0
+        suppressScrollChromeUntil = nil
         setBarsVisible(true)
     }
 
     func forceVisible() {
         lastOffsetY = 0
+        suppressScrollChromeUntil = nil
         setBarsVisible(true)
     }
 
@@ -58,6 +68,7 @@ final class ChromeScrollCoordinator: ObservableObject {
 
     private func setBarsVisible(_ visible: Bool) {
         guard barsVisible != visible else { return }
+        suppressScrollChromeUntil = Date().addingTimeInterval(layoutSettleDuration)
         withAnimation(.easeInOut(duration: 0.22)) {
             barsVisible = visible
         }
