@@ -32,75 +32,29 @@ final class CardDataService {
         cardsBySet = [:]
         browseFeedSessionRefs = nil
         isSearchIndexReady = false
-        await loadSets()
+        await loadSets(preferSyncedCatalog: false)
     }
 
-    private var documentsCardsDirectory: URL {
-        let docs = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
-        let dir = docs.appendingPathComponent("cards", isDirectory: true)
-        try? fileManager.createDirectory(at: dir, withIntermediateDirectories: true)
-        return dir
-    }
-
-    func loadSets() async {
+    /// Loads the browse set list from the local SQLite catalog only (populated by ``CatalogSyncCoordinator``).
+    func loadSets(preferSyncedCatalog: Bool = false) async {
         isLoading = true
         lastError = nil
         defer { isLoading = false }
-
-        let base = AppConfiguration.r2BaseURL
-        guard base.host != "invalid.local" else {
-            lastError = "Set BINDR_R2_BASE_URL in Info.plist to your CDN root."
-            return
-        }
-
-        switch brandSettings.selectedCatalogBrand {
-        case .onePiece:
-            let url = AppConfiguration.r2OnePieceURL(path: "sets/data/sets.json")
-            do {
-                let (data, _) = try await session.data(from: url)
-                let rows = try JSONDecoder().decode([OnePieceSetRow].self, from: data)
-                sets = rows.map { $0.asTCGSet() }.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
-                lastError = nil
-                Task { await self.prepareSearchIndex() }
-                return
-            } catch {
-                lastError = error.localizedDescription
+        do {
+            try CatalogStore.shared.open()
+            let brand = brandSettings.selectedCatalogBrand
+            let rows = try CatalogStore.shared.fetchAllSets(for: brand)
+            guard !rows.isEmpty else {
+                lastError = "No \(brand.displayTitle) catalog on this device. Turn the game on under Card catalog and download while online."
                 sets = []
                 return
             }
-
-        case .pokemon:
-            let url = AppConfiguration.r2CatalogURL(path: "sets.json")
-
-            // Always prefer live `sets.json` when online so metadata like `logoSrc` matches R2. Previously we
-            // returned SQLite first and never refreshed set rows from the network, so stale/empty `logoSrc`
-            // could persist while card images (from other JSON) still loaded correctly.
-            do {
-                let (data, _) = try await session.data(from: url)
-                let decoded = try JSONDecoder().decode([TCGSet].self, from: data)
-                sets = decoded.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
-                Task { await self.prepareSearchIndex() }
-                return
-            } catch {
-                lastError = error.localizedDescription
-            }
-
-            do {
-                try CatalogStore.shared.open()
-                let fromDb = try CatalogStore.shared.fetchAllSets()
-                if !fromDb.isEmpty {
-                    sets = fromDb.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
-                    lastError = nil
-                    Task { await self.prepareSearchIndex() }
-                    return
-                }
-            } catch {
-                // Keep lastError from network attempt when offline / DB missing.
-            }
-
-            if sets.isEmpty {
-                sets = []
-            }
+            sets = rows.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+            lastError = nil
+            Task { await self.prepareSearchIndex() }
+        } catch {
+            lastError = error.localizedDescription
+            sets = []
         }
     }
 
@@ -147,68 +101,23 @@ final class CardDataService {
 
     func loadCards(forSetCode setCode: String) async -> [Card] {
         if let cached = cardsBySet[setCode] { return cached }
-
-        switch brandSettings.selectedCatalogBrand {
-        case .pokemon:
-            if let fromDb = try? await loadCardsFromDatabase(setCode: setCode), !fromDb.isEmpty {
-                cardsBySet[setCode] = fromDb
-                return fromDb
-            }
-
-            if let bundled = loadBundledCards(setCode: setCode) {
-                cardsBySet[setCode] = bundled
-                return bundled
-            }
-
-            if let disk = loadDocumentsCards(setCode: setCode) {
-                cardsBySet[setCode] = disk
-                return disk
-            }
-
-            let base = AppConfiguration.r2BaseURL
-            guard base.host != "invalid.local" else { return [] }
-
-            let url = AppConfiguration.r2CatalogURL(path: "cards/\(setCode).json")
-            do {
-                let (data, _) = try await session.data(from: url)
-                let cards = try JSONDecoder().decode([Card].self, from: data)
-                cardsBySet[setCode] = cards
-                saveDocumentsCards(setCode: setCode, data: data)
-                return cards
-            } catch {
-                lastError = error.localizedDescription
-                return []
-            }
-
-        case .onePiece:
-            let base = AppConfiguration.r2BaseURL
-            guard base.host != "invalid.local" else { return [] }
-
-            let url = AppConfiguration.r2OnePieceURL(path: "cards/data/\(setCode).json")
-            do {
-                let (data, _) = try await session.data(from: url)
-                let dtos = try JSONDecoder().decode([OnePieceCardDTO].self, from: data)
-                let cards = dtos.map { OnePieceCatalogMapping.card(from: $0) }
-                cardsBySet[setCode] = cards
-                return cards
-            } catch {
-                lastError = error.localizedDescription
-                return []
-            }
+        let brand = brandSettings.selectedCatalogBrand
+        if let fromDb = try? await loadCardsFromDatabase(setCode: setCode, brand: brand), !fromDb.isEmpty {
+            cardsBySet[setCode] = fromDb
+            return fromDb
         }
+        return []
     }
 
     func loadAllCards() async -> [Card] {
-        if brandSettings.selectedCatalogBrand == .pokemon {
-            do {
-                try CatalogStore.shared.open()
-                let cards = try CatalogStore.shared.fetchAllCards()
-                if !cards.isEmpty {
-                    return cards
-                }
-            } catch {
-                // Fall through to in-memory / network-backed set loads.
+        do {
+            try CatalogStore.shared.open()
+            let cards = try CatalogStore.shared.fetchAllCards(for: brandSettings.selectedCatalogBrand)
+            if !cards.isEmpty {
+                return cards
             }
+        } catch {
+            // Fall through.
         }
 
         guard !sets.isEmpty else { return [] }
@@ -275,16 +184,14 @@ final class CardDataService {
     }
 
     private func buildShuffledBrowseCardRefs() async -> [CardRef] {
-        if brandSettings.selectedCatalogBrand == .pokemon {
-            do {
-                try CatalogStore.shared.open()
-                let refs = try CatalogStore.shared.fetchAllCardRefs()
-                if !refs.isEmpty {
-                    return refs.shuffled()
-                }
-            } catch {
-                // Fall through.
+        do {
+            try CatalogStore.shared.open()
+            let refs = try CatalogStore.shared.fetchAllCardRefs(for: brandSettings.selectedCatalogBrand)
+            if !refs.isEmpty {
+                return refs.shuffled()
             }
+        } catch {
+            // Fall through.
         }
         guard !sets.isEmpty else { return [] }
         var all: [CardRef] = []
@@ -440,31 +347,12 @@ final class CardDataService {
 
     /// Loads set list for a brand without mutating browse state.
     func catalogSets(for brand: TCGBrand) async -> [TCGSet] {
-        let base = AppConfiguration.r2BaseURL
-        guard base.host != "invalid.local" else { return [] }
-        switch brand {
-        case .onePiece:
-            let url = AppConfiguration.r2OnePieceURL(path: "sets/data/sets.json")
-            do {
-                let (data, _) = try await session.data(from: url)
-                let rows = try JSONDecoder().decode([OnePieceSetRow].self, from: data)
-                return rows.map { $0.asTCGSet() }.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
-            } catch {
-                return []
-            }
-        case .pokemon:
-            let url = AppConfiguration.r2CatalogURL(path: "sets.json")
-            do {
-                let (data, _) = try await session.data(from: url)
-                let decoded = try JSONDecoder().decode([TCGSet].self, from: data)
-                return decoded.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
-            } catch {
-                try? CatalogStore.shared.open()
-                if let fromDb = try? CatalogStore.shared.fetchAllSets(), !fromDb.isEmpty {
-                    return fromDb.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
-                }
-                return []
-            }
+        do {
+            try CatalogStore.shared.open()
+            let rows = try CatalogStore.shared.fetchAllSets(for: brand)
+            return rows.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+        } catch {
+            return []
         }
     }
 
@@ -479,37 +367,10 @@ final class CardDataService {
         if let hit = cardsForCatalogBrandCache[cacheKey] { return hit }
 
         let cards: [Card]
-        switch catalogBrand {
-        case .pokemon:
-            if let fromDb = try? await loadCardsFromDatabase(setCode: setCode), !fromDb.isEmpty {
-                cards = fromDb
-            } else if let bundled = loadBundledCards(setCode: setCode) {
-                cards = bundled
-            } else if let disk = loadDocumentsCards(setCode: setCode) {
-                cards = disk
-            } else {
-                let base = AppConfiguration.r2BaseURL
-                guard base.host != "invalid.local" else { return [] }
-                let url = AppConfiguration.r2CatalogURL(path: "cards/\(setCode).json")
-                do {
-                    let (data, _) = try await session.data(from: url)
-                    cards = try JSONDecoder().decode([Card].self, from: data)
-                    saveDocumentsCards(setCode: setCode, data: data)
-                } catch {
-                    cards = []
-                }
-            }
-        case .onePiece:
-            let base = AppConfiguration.r2BaseURL
-            guard base.host != "invalid.local" else { return [] }
-            let url = AppConfiguration.r2OnePieceURL(path: "cards/data/\(setCode).json")
-            do {
-                let (data, _) = try await session.data(from: url)
-                let dtos = try JSONDecoder().decode([OnePieceCardDTO].self, from: data)
-                cards = dtos.map { OnePieceCatalogMapping.card(from: $0) }
-            } catch {
-                cards = []
-            }
+        if let fromDb = try? await loadCardsFromDatabase(setCode: setCode, brand: catalogBrand), !fromDb.isEmpty {
+            cards = fromDb
+        } else {
+            cards = []
         }
         cardsForCatalogBrandCache[cacheKey] = cards
         return cards
@@ -590,16 +451,17 @@ final class CardDataService {
         return ranked.compactMap { cardByKey["\($0.ref.setCode)|\($0.ref.masterCardId)"] }
     }
 
-    private func loadCardsFromDatabase(setCode: String) async throws -> [Card] {
+    private func loadCardsFromDatabase(setCode: String, brand: TCGBrand) async throws -> [Card] {
         try CatalogStore.shared.open()
-        return try CatalogStore.shared.fetchCards(setCode: setCode)
+        return try CatalogStore.shared.fetchCards(setCode: setCode, brand: brand)
     }
 
-    /// Resolves one card by `masterCardId` (same string as wishlist `cardID`). SQLite (Pokémon), then in-memory catalog for the active brand, then One Piece network lookup for `priceKey`-style ids.
+    /// Resolves one card by `masterCardId` from SQLite (franchise inferred from the id shape).
     func loadCard(masterCardId: String) async -> Card? {
+        let inferred = TCGBrand.inferredFromMasterCardId(masterCardId)
         do {
             try CatalogStore.shared.open()
-            if let c = try CatalogStore.shared.fetchCard(masterCardId: masterCardId) {
+            if let c = try CatalogStore.shared.fetchCard(masterCardId: masterCardId, brand: inferred) {
                 return c
             }
         } catch {
@@ -611,51 +473,6 @@ final class CardDataService {
                 return c
             }
         }
-        if masterCardId.contains("::") {
-            return await loadOnePieceCardFromNetworkIfNeeded(masterCardId: masterCardId)
-        }
         return nil
-    }
-
-    /// Fetches `onepiece/cards/data/{set}.json` when the wishlist holds an OP `priceKey` but the browse catalog is Pokémon (or sets list not loaded).
-    private func loadOnePieceCardFromNetworkIfNeeded(masterCardId: String) async -> Card? {
-        let parts = masterCardId.components(separatedBy: "::")
-        guard let setCode = parts.first?.trimmingCharacters(in: .whitespacesAndNewlines), !setCode.isEmpty else {
-            return nil
-        }
-        let base = AppConfiguration.r2BaseURL
-        guard base.host != "invalid.local" else { return nil }
-        let url = AppConfiguration.r2OnePieceURL(path: "cards/data/\(setCode).json")
-        do {
-            let (data, _) = try await session.data(from: url)
-            let dtos = try JSONDecoder().decode([OnePieceCardDTO].self, from: data)
-            if let dto = dtos.first(where: { $0.priceKey == masterCardId }) {
-                return OnePieceCatalogMapping.card(from: dto)
-            }
-        } catch {
-            return nil
-        }
-        return nil
-    }
-
-    private func loadBundledCards(setCode: String) -> [Card]? {
-        guard let url = Bundle.main.url(forResource: setCode, withExtension: "json") else { return nil }
-        return try? loadCardsFile(url: url)
-    }
-
-    private func loadDocumentsCards(setCode: String) -> [Card]? {
-        let url = documentsCardsDirectory.appendingPathComponent("\(setCode).json")
-        guard fileManager.fileExists(atPath: url.path) else { return nil }
-        return try? loadCardsFile(url: url)
-    }
-
-    private func loadCardsFile(url: URL) throws -> [Card] {
-        let data = try Data(contentsOf: url)
-        return try JSONDecoder().decode([Card].self, from: data)
-    }
-
-    private func saveDocumentsCards(setCode: String, data: Data) {
-        let url = documentsCardsDirectory.appendingPathComponent("\(setCode).json")
-        try? data.write(to: url, options: .atomic)
     }
 }

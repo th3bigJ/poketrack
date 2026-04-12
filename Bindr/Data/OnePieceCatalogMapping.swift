@@ -129,3 +129,39 @@ enum OnePieceCatalogMapping {
         return t.isEmpty ? nil : t
     }
 }
+
+/// On-disk ONE PIECE card JSON (`Bootstrap` prefetch + runtime cache). Pokémon uses `Documents/cards/` separately.
+enum OnePieceCatalogDiskCache {
+    static let setsManifestHashUserDefaultsKey = "onepiece_catalog_sets_sha256"
+
+    /// Cached copy of `sets/data/sets.json` so bootstrap can fill the browse list without a second download.
+    static func setsManifestURL(fileManager: FileManager = .default) -> URL {
+        let docs = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let dir = docs.appendingPathComponent("onepiece", isDirectory: true)
+        try? fileManager.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir.appendingPathComponent("sets_manifest.json")
+    }
+
+    static func writeSetsManifest(data: Data, fileManager: FileManager = .default) throws {
+        let url = setsManifestURL(fileManager: fileManager)
+        try fileManager.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try data.write(to: url, options: .atomic)
+    }
+
+    static func cardsDirectory(fileManager: FileManager = .default) -> URL {
+        let docs = fileManager.urls(for: .documentDirectory, in: .userDomainMask).first!
+        let dir = docs.appendingPathComponent("onepiece/cards", isDirectory: true)
+        try? fileManager.createDirectory(at: dir, withIntermediateDirectories: true)
+        return dir
+    }
+
+    static func cardsFileURL(setCode: String, fileManager: FileManager = .default) -> URL {
+        cardsDirectory(fileManager: fileManager).appendingPathComponent("\(setCode).json")
+    }
+
+    static func writeCards(data: Data, setCode: String, fileManager: FileManager = .default) throws {
+        let url = cardsFileURL(setCode: setCode, fileManager: fileManager)
+        try fileManager.createDirectory(at: url.deletingLastPathComponent(), withIntermediateDirectories: true)
+        try data.write(to: url, options: .atomic)
+    }
+}

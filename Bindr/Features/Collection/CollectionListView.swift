@@ -9,22 +9,30 @@ struct CollectionListView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var items: [CollectionItem]
 
+    private var visibleCollectionItems: [CollectionItem] {
+        let enabled = services.brandSettings.enabledBrands
+        return items.filter { enabled.contains(TCGBrand.inferredFromMasterCardId($0.cardID)) }
+    }
+
     @State private var cardsByCardID: [String: Card] = [:]
 
     private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
 
     private var collectionSignature: String {
-        items.map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }.joined(separator: "§")
+        let brandKey = services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
+        return visibleCollectionItems.map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }.joined(separator: "§") + "|" + brandKey
     }
 
     private var orderedCards: [Card] {
-        items.compactMap { cardsByCardID[$0.cardID] }
+        visibleCollectionItems.compactMap { cardsByCardID[$0.cardID] }
     }
 
     var body: some View {
         Group {
             if items.isEmpty {
                 emptyState
+            } else if visibleCollectionItems.isEmpty {
+                hiddenByBrandEmptyState
             } else {
                 collectionScrollGrid
             }
@@ -58,6 +66,26 @@ struct CollectionListView: View {
         }
     }
 
+    private var hiddenByBrandEmptyState: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                Color.clear.frame(height: rootFloatingChromeInset)
+
+                Text("Collection")
+                    .font(.largeTitle.bold())
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+
+                ContentUnavailableView(
+                    "No visible collection items",
+                    systemImage: "line.3.horizontal.decrease.circle",
+                    description: Text("Turn a game back on under Account → Card catalog to see collection cards for that game.")
+                )
+                .frame(minHeight: 280)
+            }
+        }
+    }
+
     private var collectionScrollGrid: some View {
         ScrollView {
             VStack(spacing: 0) {
@@ -70,7 +98,7 @@ struct CollectionListView: View {
                     .padding(.bottom, 12)
 
                 LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                    ForEach(Array(visibleCollectionItems.enumerated()), id: \.element.id) { index, item in
                         collectionCell(for: item)
                             .onAppear {
                                 ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: index + 1)
@@ -118,7 +146,7 @@ struct CollectionListView: View {
 
     private func resolveCollectionCards() async {
         var next = cardsByCardID  // preserve already-resolved cards
-        for item in items {
+        for item in visibleCollectionItems {
             if next[item.cardID] != nil { continue }
             if let c = await services.cardData.loadCard(masterCardId: item.cardID) {
                 next[item.cardID] = c

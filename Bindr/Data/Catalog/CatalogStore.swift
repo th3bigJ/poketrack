@@ -88,6 +88,82 @@ final class CatalogStore: @unchecked Sendable {
             if let e = err { sqlite3_free(e) }
             throw CatalogStoreError.migrationFailed
         }
+        try migrateBrandPartitionIfNeededLocked()
+    }
+
+    /// v2: `brand` column (`pokemon` | `onepiece`) so franchises can be purged independently.
+    private func migrateBrandPartitionIfNeededLocked() throws {
+        guard let db else { throw CatalogStoreError.notOpen }
+        if tableHasColumnLocked(db, table: "catalog_sets", column: "brand") { return }
+
+        let statements: [String] = [
+            """
+            CREATE TABLE catalog_sets_new (
+                brand TEXT NOT NULL,
+                set_code TEXT NOT NULL,
+                json TEXT NOT NULL,
+                PRIMARY KEY (brand, set_code)
+            );
+            """,
+            """
+            INSERT INTO catalog_sets_new SELECT 'pokemon', set_code, json FROM catalog_sets;
+            """,
+            "DROP TABLE catalog_sets;",
+            "ALTER TABLE catalog_sets_new RENAME TO catalog_sets;",
+
+            """
+            CREATE TABLE catalog_cards_new (
+                brand TEXT NOT NULL,
+                set_code TEXT NOT NULL,
+                master_card_id TEXT NOT NULL,
+                json TEXT NOT NULL,
+                PRIMARY KEY (brand, set_code, master_card_id)
+            );
+            """,
+            """
+            INSERT INTO catalog_cards_new SELECT 'pokemon', set_code, master_card_id, json FROM catalog_cards;
+            """,
+            "DROP TABLE catalog_cards;",
+            "ALTER TABLE catalog_cards_new RENAME TO catalog_cards;",
+
+            """
+            CREATE TABLE card_pricing_new (
+                brand TEXT NOT NULL,
+                set_code TEXT NOT NULL,
+                json BLOB NOT NULL,
+                fetched_at REAL NOT NULL,
+                PRIMARY KEY (brand, set_code)
+            );
+            """,
+            """
+            INSERT INTO card_pricing_new SELECT 'pokemon', set_code, json, fetched_at FROM card_pricing;
+            """,
+            "DROP TABLE card_pricing;",
+            "ALTER TABLE card_pricing_new RENAME TO card_pricing;",
+
+            "CREATE INDEX IF NOT EXISTS idx_catalog_cards_set ON catalog_cards(brand, set_code);",
+            "CREATE INDEX IF NOT EXISTS idx_catalog_cards_master_id ON catalog_cards(master_card_id);",
+        ]
+        for sql in statements {
+            var mErr: UnsafeMutablePointer<CChar>?
+            guard sqlite3_exec(db, sql, nil, nil, &mErr) == SQLITE_OK else {
+                if let e = mErr { sqlite3_free(e) }
+                throw CatalogStoreError.migrationFailed
+            }
+        }
+    }
+
+    private func tableHasColumnLocked(_ db: OpaquePointer, table: String, column: String) -> Bool {
+        let sql = "PRAGMA table_info(\(table));"
+        var stmt: OpaquePointer?
+        defer { sqlite3_finalize(stmt) }
+        guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { return false }
+        while sqlite3_step(stmt) == SQLITE_ROW {
+            guard sqlite3_column_text(stmt, 1) != nil else { continue }
+            let name = String(cString: sqlite3_column_text(stmt, 1))
+            if name == column { return true }
+        }
+        return false
     }
 
     // MARK: - Meta
@@ -122,111 +198,164 @@ final class CatalogStore: @unchecked Sendable {
 
     // MARK: - Catalog
 
-    func hasAnyCards() throws -> Bool {
+    func hasAnyCards(for brand: TCGBrand) throws -> Bool {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(db, "SELECT COUNT(*) FROM catalog_cards;", -1, &stmt, nil) == SQLITE_OK else {
+            let sql = "SELECT COUNT(*) FROM catalog_cards WHERE brand = ?;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
                 throw CatalogStoreError.prepareFailed
             }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
             guard sqlite3_step(stmt) == SQLITE_ROW else { return false }
             return sqlite3_column_int64(stmt, 0) > 0
         }
     }
 
-    func clearCatalog() throws {
+    /// Deletes SQLite rows for one franchise only. Does **not** clear ``sync_meta`` (hash / ETag / fingerprint).
+    /// Use before re-importing so a failed import can still resume skip logic on the next launch.
+    func purgeCatalogTables(for brand: TCGBrand) throws {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
-            sqlite3_exec(db, "DELETE FROM catalog_cards;", nil, nil, nil)
-            sqlite3_exec(db, "DELETE FROM catalog_sets;", nil, nil, nil)
-            sqlite3_exec(db, "DELETE FROM card_pricing;", nil, nil, nil)
+            let b = brand.rawValue
+            for sql in [
+                "DELETE FROM catalog_cards WHERE brand = ?;",
+                "DELETE FROM catalog_sets WHERE brand = ?;",
+                "DELETE FROM card_pricing WHERE brand = ?;",
+            ] {
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                b.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                _ = sqlite3_step(stmt)
+            }
         }
     }
 
-    func upsertSet(_ set: TCGSet) throws {
+    /// Removes all catalog + pricing rows for one franchise (toggle off / account).
+    /// Also clears brand-specific ``sync_meta`` keys so the next sync must re-fetch from the network (no skip-the-download fast path).
+    func purgeCatalogData(for brand: TCGBrand) throws {
+        try purgeCatalogTables(for: brand)
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            let keys: [String]
+            switch brand {
+            case .pokemon:
+                keys = ["catalog_sets_sha256", "catalog_etag", "catalog_import_at"]
+            case .onePiece:
+                keys = [
+                    "onepiece_catalog_sets_sha256",
+                    "onepiece_catalog_sets_etag",
+                    "onepiece_catalog_row_fingerprint",
+                ]
+            }
+            for key in keys {
+                var stmt: OpaquePointer?
+                defer { sqlite3_finalize(stmt) }
+                let sql = "DELETE FROM sync_meta WHERE key = ?;"
+                guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+                key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                _ = sqlite3_step(stmt)
+            }
+        }
+    }
+
+    func upsertSet(_ set: TCGSet, brand: TCGBrand) throws {
         try queue.sync {
             let data = try jsonEncoder.encode(set)
             guard let json = String(data: data, encoding: .utf8) else { throw CatalogStoreError.encodeFailed }
-            try upsertSetRawLocked(setCode: set.setCode, json: json)
+            try upsertSetRawLocked(brand: brand, setCode: set.setCode, json: json)
         }
     }
 
-    private func upsertSetRawLocked(setCode: String, json: String) throws {
+    private func upsertSetRawLocked(brand: TCGBrand, setCode: String, json: String) throws {
         guard let db else { throw CatalogStoreError.notOpen }
         var stmt: OpaquePointer?
         defer { sqlite3_finalize(stmt) }
-        let sql = "INSERT INTO catalog_sets(set_code, json) VALUES(?, ?) ON CONFLICT(set_code) DO UPDATE SET json = excluded.json;"
+        let sql = """
+        INSERT INTO catalog_sets(brand, set_code, json) VALUES(?, ?, ?)
+        ON CONFLICT(brand, set_code) DO UPDATE SET json = excluded.json;
+        """
         guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
-        setCode.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-        json.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+        brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+        setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+        json.withCString { _ = sqlite3_bind_text(stmt, 3, $0, -1, CatalogSQLite.transient) }
         guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
     }
 
-    func deleteCards(forSet setCode: String) throws {
+    func deleteCards(forSet setCode: String, brand: TCGBrand) throws {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(db, "DELETE FROM catalog_cards WHERE set_code = ?;", -1, &stmt, nil) == SQLITE_OK else {
+            let sql = "DELETE FROM catalog_cards WHERE brand = ? AND set_code = ?;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
                 throw CatalogStoreError.prepareFailed
             }
-            setCode.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
             _ = sqlite3_step(stmt)
         }
     }
 
-    func insertCards(_ cards: [Card], setCode: String) throws {
+    func insertCards(_ cards: [Card], setCode: String, brand: TCGBrand) throws {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
-            let sql = "INSERT OR REPLACE INTO catalog_cards(set_code, master_card_id, json) VALUES(?, ?, ?);"
+            let sql = """
+            INSERT OR REPLACE INTO catalog_cards(brand, set_code, master_card_id, json) VALUES(?, ?, ?, ?);
+            """
             guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
             for card in cards {
                 let blob = try jsonEncoder.encode(card)
                 guard let j = String(data: blob, encoding: .utf8) else { continue }
                 sqlite3_reset(stmt)
                 sqlite3_clear_bindings(stmt)
-                setCode.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
-                card.masterCardId.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
-                j.withCString { _ = sqlite3_bind_text(stmt, 3, $0, -1, CatalogSQLite.transient) }
+                brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+                setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+                card.masterCardId.withCString { _ = sqlite3_bind_text(stmt, 3, $0, -1, CatalogSQLite.transient) }
+                j.withCString { _ = sqlite3_bind_text(stmt, 4, $0, -1, CatalogSQLite.transient) }
                 guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
             }
         }
     }
 
-    func upsertPricing(setCode: String, json: Data) throws {
+    func upsertPricing(setCode: String, json: Data, brand: TCGBrand) throws {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
             let sql = """
-            INSERT INTO card_pricing(set_code, json, fetched_at) VALUES(?, ?, ?)
-            ON CONFLICT(set_code) DO UPDATE SET json = excluded.json, fetched_at = excluded.fetched_at;
+            INSERT INTO card_pricing(brand, set_code, json, fetched_at) VALUES(?, ?, ?, ?)
+            ON CONFLICT(brand, set_code) DO UPDATE SET json = excluded.json, fetched_at = excluded.fetched_at;
             """
             guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
-            setCode.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
             if json.isEmpty {
-                _ = sqlite3_bind_blob(stmt, 2, nil, 0, CatalogSQLite.transient)
+                _ = sqlite3_bind_blob(stmt, 3, nil, 0, CatalogSQLite.transient)
             } else {
                 json.withUnsafeBytes { buf in
-                    _ = sqlite3_bind_blob(stmt, 2, buf.baseAddress, Int32(json.count), CatalogSQLite.transient)
+                    _ = sqlite3_bind_blob(stmt, 3, buf.baseAddress, Int32(json.count), CatalogSQLite.transient)
                 }
             }
-            _ = sqlite3_bind_double(stmt, 3, Date().timeIntervalSince1970)
+            _ = sqlite3_bind_double(stmt, 4, Date().timeIntervalSince1970)
             guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
         }
     }
 
-    func fetchAllSets() throws -> [TCGSet] {
+    func fetchAllSets(for brand: TCGBrand) throws -> [TCGSet] {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(db, "SELECT json FROM catalog_sets ORDER BY set_code;", -1, &stmt, nil) == SQLITE_OK else {
+            let sql = "SELECT json FROM catalog_sets WHERE brand = ? ORDER BY set_code;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
                 throw CatalogStoreError.prepareFailed
             }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
             var out: [TCGSet] = []
             while sqlite3_step(stmt) == SQLITE_ROW {
                 guard let c = sqlite3_column_text(stmt, 0) else { continue }
@@ -238,19 +367,15 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
-    func fetchCards(setCode: String) throws -> [Card] {
+    func fetchCards(setCode: String, brand: TCGBrand) throws -> [Card] {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(
-                db,
-                "SELECT json FROM catalog_cards WHERE set_code = ? ORDER BY master_card_id;",
-                -1,
-                &stmt,
-                nil
-            ) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
-            setCode.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            let sql = "SELECT json FROM catalog_cards WHERE brand = ? AND set_code = ? ORDER BY master_card_id;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
             var out: [Card] = []
             while sqlite3_step(stmt) == SQLITE_ROW {
                 guard let c = sqlite3_column_text(stmt, 0) else { continue }
@@ -262,18 +387,14 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
-    func fetchAllCards() throws -> [Card] {
+    func fetchAllCards(for brand: TCGBrand) throws -> [Card] {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(
-                db,
-                "SELECT json FROM catalog_cards ORDER BY set_code, master_card_id;",
-                -1,
-                &stmt,
-                nil
-            ) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            let sql = "SELECT json FROM catalog_cards WHERE brand = ? ORDER BY set_code, master_card_id;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
             var out: [Card] = []
             while sqlite3_step(stmt) == SQLITE_ROW {
                 guard let c = sqlite3_column_text(stmt, 0) else { continue }
@@ -285,20 +406,16 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
-    /// Single card by catalog `masterCardId` (wishlist / deep links). `master_card_id` is unique in practice.
-    func fetchCard(masterCardId: String) throws -> Card? {
+    /// Single card by catalog id for a known franchise (browse / wishlist resolve).
+    func fetchCard(masterCardId: String, brand: TCGBrand) throws -> Card? {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(
-                db,
-                "SELECT json FROM catalog_cards WHERE master_card_id = ? LIMIT 1;",
-                -1,
-                &stmt,
-                nil
-            ) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
-            masterCardId.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            let sql = "SELECT json FROM catalog_cards WHERE brand = ? AND master_card_id = ? LIMIT 1;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            masterCardId.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
             guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
             guard let c = sqlite3_column_text(stmt, 0) else { return nil }
             let s = String(cString: c)
@@ -307,19 +424,14 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
-    /// Lightweight index of every card row (for browse grids, shuffles, etc.).
-    func fetchAllCardRefs() throws -> [CardRef] {
+    func fetchAllCardRefs(for brand: TCGBrand) throws -> [CardRef] {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(
-                db,
-                "SELECT set_code, master_card_id FROM catalog_cards;",
-                -1,
-                &stmt,
-                nil
-            ) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            let sql = "SELECT set_code, master_card_id FROM catalog_cards WHERE brand = ?;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
             var out: [CardRef] = []
             out.reserveCapacity(10_000)
             while sqlite3_step(stmt) == SQLITE_ROW {
@@ -330,15 +442,17 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
-    func fetchPricingData(setCode: String) -> Data? {
+    func fetchPricingData(setCode: String, brand: TCGBrand) -> Data? {
         queue.sync {
             guard let db else { return nil }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
-            guard sqlite3_prepare_v2(db, "SELECT json FROM card_pricing WHERE set_code = ? LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else {
+            let sql = "SELECT json FROM card_pricing WHERE brand = ? AND set_code = ? LIMIT 1;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
                 return nil
             }
-            setCode.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
             guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
             let n = sqlite3_column_bytes(stmt, 0)
             guard let p = sqlite3_column_blob(stmt, 0) else { return nil }
@@ -398,6 +512,20 @@ final class CatalogStore: @unchecked Sendable {
             key.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
             guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
             return Date(timeIntervalSince1970: sqlite3_column_double(stmt, 0))
+        }
+    }
+
+    /// Bumps `fetched_at` without replacing the blob (used after HTTP `304 Not Modified`).
+    func touchDailyBlobFetchedAt(key: String) throws {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = "UPDATE daily_blobs SET fetched_at = ? WHERE key = ?;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            _ = sqlite3_bind_double(stmt, 1, Date().timeIntervalSince1970)
+            key.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+            guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
         }
     }
 }

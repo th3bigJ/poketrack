@@ -10,14 +10,27 @@ struct TransactionsView: View {
 
     @State private var cardNamesByID: [String: String] = [:]
 
+    private var visibleLedgerLines: [LedgerLine] {
+        let enabled = services.brandSettings.enabledBrands
+        return ledgerLines.filter { line in
+            guard let cid = line.cardID?.trimmingCharacters(in: .whitespacesAndNewlines), !cid.isEmpty else {
+                return true
+            }
+            return enabled.contains(TCGBrand.inferredFromMasterCardId(cid))
+        }
+    }
+
     private var ledgerSignature: String {
-        ledgerLines.map { "\($0.id.uuidString)|\($0.occurredAt.timeIntervalSince1970)" }.joined(separator: "§")
+        let brandKey = services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
+        return visibleLedgerLines.map { "\($0.id.uuidString)|\($0.occurredAt.timeIntervalSince1970)" }.joined(separator: "§") + "|" + brandKey
     }
 
     var body: some View {
         Group {
             if ledgerLines.isEmpty {
                 emptyState
+            } else if visibleLedgerLines.isEmpty {
+                hiddenByBrandEmptyState
             } else {
                 transactionList
             }
@@ -51,10 +64,30 @@ struct TransactionsView: View {
         }
     }
 
+    private var hiddenByBrandEmptyState: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                Color.clear.frame(height: rootFloatingChromeInset)
+
+                Text("Transactions")
+                    .font(.largeTitle.bold())
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                    .padding(.horizontal, 16)
+
+                ContentUnavailableView(
+                    "No visible transactions",
+                    systemImage: "line.3.horizontal.decrease.circle",
+                    description: Text("Turn a game back on under Account → Card catalog to see ledger lines tied to cards from that game.")
+                )
+                .frame(minHeight: 280)
+            }
+        }
+    }
+
     private var transactionList: some View {
         List {
             Section {
-                ForEach(ledgerLines, id: \.persistentModelID) { line in
+                ForEach(visibleLedgerLines, id: \.persistentModelID) { line in
                     transactionRow(for: line)
                         .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
                         .listRowBackground(Color.clear)
@@ -143,7 +176,7 @@ struct TransactionsView: View {
 
     private func resolveCardNames() async {
         var next = cardNamesByID
-        for line in ledgerLines {
+        for line in visibleLedgerLines {
             guard let cardID = cleaned(line.cardID), next[cardID] == nil else { continue }
             if let card = await services.cardData.loadCard(masterCardId: cardID) {
                 next[cardID] = card.cardName

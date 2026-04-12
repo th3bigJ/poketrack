@@ -29,4 +29,9 @@ enum TCGBrand: String, CaseIterable, Codable, Identifiable, Sendable {
         case .onePiece: return "Color"
         }
     }
+
+    /// Catalog / wishlist / collection: ONE PIECE `priceKey`-style ids contain `::`; Pokémon ids do not.
+    static func inferredFromMasterCardId(_ masterCardId: String) -> TCGBrand {
+        masterCardId.contains("::") ? .onePiece : .pokemon
+    }
 }

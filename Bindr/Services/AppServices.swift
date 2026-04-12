@@ -21,11 +21,26 @@ final class AppServices {
 
     private(set) var isReady = false
     private(set) var isBootstrapping = false
+    /// Set in `init` when the user already completed the one-time blocking bootstrap; consumed by the first `.task` on the main UI to refresh catalogs in the background.
+    private(set) var shouldRunBackgroundCatalogRefreshOnLaunch = false
+    private var isBackgroundCatalogRefreshInFlight = false
+    /// When true, ``RootView`` shows the full ``LoadingScreen`` with byte counts; otherwise a simple indeterminate busy state until sync actually transfers data.
+    private(set) var bootstrapShowsDownloadProgressUI = false
     private(set) var bootstrapMessage = "Updating card data, please wait."
     private(set) var bootstrapStatus = "Preparing downloads…"
     private(set) var bootstrapProgress: Double = 0
     private(set) var bootstrapDownloadedBytes: Int64 = 0
     private(set) var bootstrapEstimatedTotalBytes: Int64 = 0
+
+    /// Full-screen catalog download (Account toggles on) — mirrors bootstrap progress but does not block app launch.
+    private(set) var isCatalogDownloadInProgress = false
+    /// Heavy download UI only after bytes are observed (warm re-launch may stay on a light spinner).
+    private(set) var catalogDownloadShowsByteProgressUI = false
+    private(set) var catalogDownloadMessage = "Downloading catalog data…"
+    private(set) var catalogDownloadStatus = ""
+    private(set) var catalogDownloadProgress: Double = 0
+    private(set) var catalogDownloadDownloadedBytes: Int64 = 0
+    private(set) var catalogDownloadEstimatedTotalBytes: Int64 = 0
 
     init() {
         let cloudSettings = CloudSettingsService()
@@ -35,49 +50,162 @@ final class AppServices {
         let brandSettings = BrandSettings()
         self.brandSettings = brandSettings
         self.cardData = CardDataService(brandSettings: brandSettings)
+        if brandSettings.hasCompletedBrandOnboarding && brandSettings.hasCompletedInitialAppBootstrap {
+            isReady = true
+            shouldRunBackgroundCatalogRefreshOnLaunch = true
+        }
     }
 
+    /// One-time blocking gate for brand-new users (after onboarding). Later launches use ``bootstrapCatalogInBackgroundIfNeeded()`` from the root view.
     func bootstrap() async {
         guard !isReady, !isBootstrapping else { return }
         isBootstrapping = true
-        bootstrapMessage = "Updating card data, please wait."
-        bootstrapStatus = "Preparing downloads…"
-        bootstrapProgress = 0
-        bootstrapDownloadedBytes = 0
-        bootstrapEstimatedTotalBytes = 0
+        defer { isBootstrapping = false }
+        await runStartupCatalogPipeline(updateBootstrapProgressUI: true)
+        brandSettings.markInitialAppBootstrapCompleted()
+        isReady = true
+    }
 
-        await CatalogSyncCoordinator.shared.syncAllIfNeeded { [weak self] snapshot in
-            Task { @MainActor [weak self] in
+    /// Cold-launch refresh for returning users (no full-screen loading). Safe to call once per process.
+    func bootstrapCatalogInBackgroundIfNeeded() async {
+        guard shouldRunBackgroundCatalogRefreshOnLaunch else { return }
+        shouldRunBackgroundCatalogRefreshOnLaunch = false
+        await bootstrapCatalogInBackground()
+    }
+
+    private func bootstrapCatalogInBackground() async {
+        guard !isBootstrapping else { return }
+        guard !isBackgroundCatalogRefreshInFlight else { return }
+        isBackgroundCatalogRefreshInFlight = true
+        defer { isBackgroundCatalogRefreshInFlight = false }
+        await runStartupCatalogPipeline(updateBootstrapProgressUI: false)
+    }
+
+    private func runStartupCatalogPipeline(updateBootstrapProgressUI: Bool) async {
+        if updateBootstrapProgressUI {
+            bootstrapShowsDownloadProgressUI = false
+            let enabled = brandSettings.enabledBrands
+            if enabled.count == 1, enabled.contains(.onePiece) {
+                bootstrapMessage = "Updating ONE PIECE card data…"
+            } else if enabled.count == 1, enabled.contains(.pokemon) {
+                bootstrapMessage = "Updating Pokémon card data…"
+            } else {
+                bootstrapMessage = "Updating card data, please wait."
+            }
+            bootstrapStatus = "Preparing downloads…"
+            bootstrapProgress = 0
+            bootstrapDownloadedBytes = 0
+            bootstrapEstimatedTotalBytes = 0
+            await Task.yield()
+            await Task.yield()
+        }
+
+        let weightSync: Double = 0.62
+        let weightLoadSets: Double = 0.18
+        let weightDex: Double = brandSettings.enabledBrands.contains(.pokemon) ? 0.12 : 0
+        let weightStore: Double = max(0.04, 1.0 - weightSync - weightLoadSets - weightDex)
+
+        let progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)?
+        if updateBootstrapProgressUI {
+            progressHandler = { [weak self] snapshot in
                 guard let self else { return }
+                if snapshot.downloadedBytes > 0 {
+                    self.bootstrapShowsDownloadProgressUI = true
+                }
                 self.bootstrapStatus = snapshot.status
                 self.bootstrapDownloadedBytes = snapshot.downloadedBytes
                 self.bootstrapEstimatedTotalBytes = max(snapshot.estimatedTotalBytes, snapshot.downloadedBytes)
-                self.bootstrapProgress = min(max(snapshot.fractionCompleted * 0.85, self.bootstrapProgress), 0.85)
+                self.bootstrapProgress = min(max(snapshot.fractionCompleted * weightSync, 0), weightSync)
             }
+        } else {
+            progressHandler = nil
+        }
+        await CatalogSyncCoordinator.shared.syncAllIfNeeded(
+            enabledBrands: brandSettings.enabledBrands,
+            progressHandler: progressHandler
+        )
+
+        if updateBootstrapProgressUI {
+            bootstrapProgress = weightSync
+            bootstrapStatus = "Refreshing catalog…"
+        }
+        await cardData.loadSets(preferSyncedCatalog: true)
+        if updateBootstrapProgressUI {
+            bootstrapProgress = weightSync + weightLoadSets
         }
 
-        bootstrapStatus = "Refreshing catalog…"
-        await cardData.loadSets()
-        bootstrapProgress = max(bootstrapProgress, 0.90)
-
         if brandSettings.enabledBrands.contains(.pokemon) {
-            bootstrapStatus = "Loading Pokemon index…"
+            if updateBootstrapProgressUI {
+                bootstrapStatus = "Loading Pokemon index…"
+            }
             await cardData.loadNationalDexPokemon()
         } else {
             cardData.clearNationalDexForDisabledPokemon()
         }
-        bootstrapProgress = max(bootstrapProgress, 0.95)
+        if updateBootstrapProgressUI {
+            bootstrapProgress = weightSync + weightLoadSets + weightDex
+        }
 
-        bootstrapStatus = "Checking purchases…"
+        if updateBootstrapProgressUI {
+            bootstrapStatus = "Checking purchases…"
+        }
         await pricing.refreshFXRate()
         await store.loadProducts()
         await store.checkEntitlements()
-        bootstrapProgress = 1
-        bootstrapStatus = "Card data is ready."
-        isReady = true
-        isBootstrapping = false
+        if updateBootstrapProgressUI {
+            bootstrapProgress = weightSync + weightLoadSets + weightDex + weightStore
+            bootstrapStatus = "Card data is ready."
+        }
     }
-    
+
+    /// Runs after the user turns **on** a catalog in Account: network sync + reload browse data, with UI progress (`RootView` overlay).
+    func performCatalogSyncAfterEnablingBrands() async {
+        guard !isCatalogDownloadInProgress else { return }
+        pricing.clearSetPricingMemoryCache()
+        isCatalogDownloadInProgress = true
+        catalogDownloadShowsByteProgressUI = false
+        catalogDownloadMessage = "Downloading catalog data…"
+        catalogDownloadStatus = "Preparing downloads…"
+        catalogDownloadProgress = 0
+        catalogDownloadDownloadedBytes = 0
+        catalogDownloadEstimatedTotalBytes = 0
+
+        // Let the overlay paint 0% before heavy sync work runs in the same frame.
+        await Task.yield()
+
+        /// Network import is only part of the story; reserve the tail for SQLite + dex so the bar is not stuck at 100% early.
+        let syncPhaseWeight = 0.82
+
+        await CatalogSyncCoordinator.shared.syncAllIfNeeded(enabledBrands: brandSettings.enabledBrands) { [weak self] snapshot in
+            guard let self else { return }
+            if snapshot.downloadedBytes > 0 {
+                self.catalogDownloadShowsByteProgressUI = true
+            }
+            self.catalogDownloadStatus = snapshot.status
+            self.catalogDownloadDownloadedBytes = snapshot.downloadedBytes
+            self.catalogDownloadEstimatedTotalBytes = max(snapshot.estimatedTotalBytes, snapshot.downloadedBytes)
+            let raw = min(max(snapshot.fractionCompleted, 0), 1)
+            self.catalogDownloadProgress = raw * syncPhaseWeight
+        }
+
+        catalogDownloadStatus = "Refreshing catalog…"
+        catalogDownloadProgress = 0.84
+        await cardData.loadSets(preferSyncedCatalog: true)
+
+        if brandSettings.enabledBrands.contains(.pokemon) {
+            catalogDownloadStatus = "Loading Pokémon index…"
+            catalogDownloadProgress = 0.92
+            await cardData.loadNationalDexPokemon()
+        } else {
+            cardData.clearNationalDexForDisabledPokemon()
+            catalogDownloadProgress = 0.94
+        }
+
+        catalogDownloadStatus = "Done."
+        catalogDownloadProgress = 1
+        isCatalogDownloadInProgress = false
+    }
+
     /// Call this from your root view with the model context
     func setupWishlist(modelContext: ModelContext) {
         guard wishlist == nil else { return }

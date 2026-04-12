@@ -86,7 +86,11 @@ struct BrowseView: View {
     private static let prefetchBuffer = 8
 
     private var ownedCardIDs: Set<String> {
-        Set(collectionItems.map(\.cardID))
+        let enabled = services.brandSettings.enabledBrands
+        return Set(collectionItems.compactMap { item in
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return enabled.contains(brand) ? item.cardID : nil
+        })
     }
 
     private var setNameByCode: [String: String] {

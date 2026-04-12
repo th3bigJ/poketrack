@@ -1,5 +1,60 @@
 import SwiftUI
 
+/// Indeterminate startup when the catalog is already local and no HTTP body bytes have been counted yet.
+struct StartupBusyView: View {
+    let message: String
+    let status: String
+
+    var body: some View {
+        ZStack {
+            Color(uiColor: .systemBackground)
+                .ignoresSafeArea()
+            VStack(spacing: 24) {
+                ProgressView()
+                    .controlSize(.large)
+                VStack(spacing: 8) {
+                    Text(message)
+                        .font(.headline)
+                        .foregroundStyle(.primary)
+                        .multilineTextAlignment(.center)
+                    Text(status)
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                        .multilineTextAlignment(.center)
+                }
+            }
+            .padding(.horizontal, 24)
+            .frame(maxWidth: 420)
+        }
+    }
+}
+
+/// Spinner + text on the dimmed overlay used when re-enabling a catalog without a large download.
+struct CatalogEnablingBusyView: View {
+    let message: String
+    let status: String
+
+    var body: some View {
+        VStack(spacing: 24) {
+            ProgressView()
+                .controlSize(.large)
+                .tint(.white)
+            VStack(spacing: 8) {
+                Text(message)
+                    .font(.headline)
+                    .foregroundStyle(.white)
+                    .multilineTextAlignment(.center)
+                Text(status)
+                    .font(.subheadline)
+                    .foregroundStyle(.white.opacity(0.85))
+                    .multilineTextAlignment(.center)
+            }
+        }
+        .padding(.horizontal, 24)
+        .frame(maxWidth: 420)
+    }
+}
+
 struct LoadingScreen: View {
     let message: String
     let status: String

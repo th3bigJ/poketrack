@@ -690,6 +690,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         numberCandidates: [String], rawOCRBlob: String?
     ) async {
         guard let service = cardDataService else { return }
+        /// Must match the brand the user picked in the scanner — not `BrandSettings.selectedCatalogBrand` (browse tab).
+        let brand = scanBrand
 
         let rawName = cardName?.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedName = Self.cleanedOCRName(rawName)
@@ -697,17 +699,17 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
         var pool: [Card]
         if hasName {
-            pool = await service.searchByName(query: rawName!)
+            pool = await service.searchByName(query: rawName!, catalogBrand: brand)
             if pool.isEmpty, let cleanedName, cleanedName.caseInsensitiveCompare(rawName!) != .orderedSame {
-                pool = await service.searchByName(query: cleanedName)
+                pool = await service.searchByName(query: cleanedName, catalogBrand: brand)
             }
             if pool.isEmpty, let cleanedName {
-                pool = await service.search(query: cleanedName)
-                if pool.isEmpty { pool = await service.searchSoftTokenMatch(query: cleanedName) }
+                pool = await service.search(query: cleanedName, catalogBrand: brand)
+                if pool.isEmpty { pool = await service.searchSoftTokenMatch(query: cleanedName, catalogBrand: brand) }
             }
         } else if let hint = centerHint, !hint.isEmpty {
-            pool = await service.search(query: hint)
-            if pool.isEmpty { pool = await service.searchSoftTokenMatch(query: hint) }
+            pool = await service.search(query: hint, catalogBrand: brand)
+            if pool.isEmpty { pool = await service.searchSoftTokenMatch(query: hint, catalogBrand: brand) }
         } else {
             pool = []
         }
@@ -716,7 +718,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             pool = await mixedFallbackPool(
                 service: service, cleanedName: cleanedName, hp: hp,
                 setNumber: setNumber, illustrator: illustrator, centerHint: centerHint,
-                catalogBrand: .pokemon
+                catalogBrand: brand
             )
         }
 

@@ -5,6 +5,14 @@ struct AccountView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @State private var showPaywall = false
     @State private var showDataExport = false
+    @State private var brandPendingDisable: TCGBrand?
+
+    /// Brands the user has not added yet (shown in the Add menu).
+    private var brandsAvailableToAdd: [TCGBrand] {
+        TCGBrand.allCases
+            .filter { !services.brandSettings.enabledBrands.contains($0) }
+            .sorted(by: { $0.menuOrder < $1.menuOrder })
+    }
 
     var body: some View {
         List {
@@ -86,19 +94,32 @@ struct AccountView: View {
                         Text(b.displayTitle).tag(b)
                     }
                 }
-                ForEach(TCGBrand.allCases.sorted(by: { $0.menuOrder < $1.menuOrder })) { brand in
-                    Toggle(
-                        brand.displayTitle,
-                        isOn: Binding(
-                            get: { services.brandSettings.enabledBrands.contains(brand) },
-                            set: { services.brandSettings.setEnabled(brand, isOn: $0) }
-                        )
-                    )
+                ForEach(
+                    services.brandSettings.enabledBrands.sorted(by: { $0.menuOrder < $1.menuOrder })
+                ) { brand in
+                    Text(brand.displayTitle)
                 }
+                .onDelete(perform: requestBrandRemoval)
+                .deleteDisabled(services.brandSettings.enabledBrands.count <= 1)
             } header: {
-                Text("Card catalog")
+                HStack {
+                    Text("Card catalog")
+                    Spacer(minLength: 8)
+                    Menu {
+                        ForEach(brandsAvailableToAdd) { brand in
+                            Button(brand.displayTitle) {
+                                addBrand(brand)
+                            }
+                        }
+                    } label: {
+                        Label("Add", systemImage: "plus.circle.fill")
+                    }
+                    .disabled(brandsAvailableToAdd.isEmpty)
+                    .opacity(brandsAvailableToAdd.isEmpty ? 0.35 : 1)
+                    .accessibilityHint(brandsAvailableToAdd.isEmpty ? "All available games are already in your catalog" : "Choose a game to download")
+                }
             } footer: {
-                Text("Turn off a catalog to hide it from the browse carousel. Pokémon and ONE PIECE cards can still appear in your wishlist and collection.")
+                Text("Removing a game deletes its downloaded catalog from this device and hides those cards from browse, wishlist, and collection until you add the game again and download.")
             }
 
             Section("Data") {
@@ -147,12 +168,53 @@ struct AccountView: View {
             DataExportView()
                 .environment(services)
         }
+        .alert(
+            "Remove catalog?",
+            isPresented: Binding(
+                get: { brandPendingDisable != nil },
+                set: { if !$0 { brandPendingDisable = nil } }
+            ),
+            presenting: brandPendingDisable
+        ) { brand in
+            Button("Cancel", role: .cancel) {
+                brandPendingDisable = nil
+            }
+            Button("Delete downloaded data", role: .destructive) {
+                services.brandSettings.setEnabled(brand, isOn: false)
+                do {
+                    try BrandCatalogMaintenance.purgeLocalData(for: brand)
+                } catch {
+                    // Best-effort; UI still disables the brand.
+                }
+                services.pricing.clearSetPricingMemoryCache()
+                if services.brandSettings.enabledBrands.contains(.pokemon) {
+                    Task { await services.cardData.loadNationalDexPokemon() }
+                } else {
+                    services.cardData.clearNationalDexForDisabledPokemon()
+                }
+                Task { await services.cardData.reloadAfterBrandChange() }
+                brandPendingDisable = nil
+            }
+        } message: { brand in
+            Text("This removes the \(brand.displayTitle) catalog from this device. Wishlist and collection entries for that game are hidden until you add it again and download.")
+        }
         .onChange(of: services.brandSettings.enabledBrands) { _, new in
-            if new.contains(.pokemon) {
-                Task { await services.cardData.loadNationalDexPokemon() }
-            } else {
+            if !new.contains(.pokemon) {
                 services.cardData.clearNationalDexForDisabledPokemon()
             }
         }
+    }
+
+    private func addBrand(_ brand: TCGBrand) {
+        services.brandSettings.setEnabled(brand, isOn: true)
+        Task {
+            await services.performCatalogSyncAfterEnablingBrands()
+        }
+    }
+
+    private func requestBrandRemoval(at offsets: IndexSet) {
+        let sorted = services.brandSettings.enabledBrands.sorted(by: { $0.menuOrder < $1.menuOrder })
+        guard let index = offsets.first, sorted.indices.contains(index) else { return }
+        brandPendingDisable = sorted[index]
     }
 }

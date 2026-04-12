@@ -14,6 +14,12 @@ struct BrowseAllPokemonView: View {
             if isLoading {
                 ProgressView("Loading Pokémon…")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if !services.brandSettings.enabledBrands.contains(.pokemon) {
+                ContentUnavailableView(
+                    "Pokémon catalog off",
+                    systemImage: "hare",
+                    description: Text("Turn on Pokémon under Account → Card catalog to browse by National Dex.")
+                )
             } else if rows.isEmpty {
                 ContentUnavailableView(
                     "No Pokédex list",
@@ -64,11 +70,15 @@ struct BrowseAllPokemonView: View {
         .toolbarBackground(.hidden, for: .navigationBar)
         .task {
             isLoading = true
+            defer { isLoading = false }
+            guard services.brandSettings.enabledBrands.contains(.pokemon) else {
+                rows = []
+                return
+            }
             if services.cardData.nationalDexPokemon.isEmpty {
                 await services.cardData.loadNationalDexPokemon()
             }
             rows = services.cardData.nationalDexPokemonSorted()
-            isLoading = false
         }
     }
 }

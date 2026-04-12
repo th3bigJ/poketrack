@@ -18,6 +18,11 @@ final class PricingService {
         self.fileManager = fileManager
     }
 
+    /// Drops in-memory per-set pricing maps after a catalog purge or before a full re-download so SQLite stays authoritative.
+    func clearSetPricingMemoryCache() {
+        pricingCache.removeAll(keepingCapacity: false)
+    }
+
     private var cacheDirectory: URL {
         let base = fileManager.urls(for: .cachesDirectory, in: .userDomainMask).first!
         let dir = base.appendingPathComponent("pricing", isDirectory: true)
@@ -469,11 +474,23 @@ final class PricingService {
             pricingCache.removeValue(forKey: key)
         }
 
-        if !forceNetwork, let disk = loadDiskCache(setCode: key) {
-            pricingCache[key] = (disk, Date().addingTimeInterval(cacheTTL))
-            return disk
+        // Local reads: SQLite is the catalog runtime source of truth (sync fills this). Legacy disk JSON may exist from older builds.
+        if !forceNetwork {
+            try? CatalogStore.shared.open()
+            let catalogBrand: TCGBrand = Self.isOnePiecePriceKeyCard(card) ? .onePiece : .pokemon
+            if let blob = CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: catalogBrand),
+               let map = Self.decodePricingMap(from: blob) {
+                pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
+                return map
+            }
+            if let disk = loadDiskCache(setCode: key) {
+                pricingCache[key] = (disk, Date().addingTimeInterval(cacheTTL))
+                return disk
+            }
+            return [:]
         }
 
+        // Explicit refresh: fetch R2, upsert SQLite + legacy disk cache, then return.
         let base = AppConfiguration.r2BaseURL
         if base.host != "invalid.local" {
             if Self.isOnePiecePriceKeyCard(card) {
@@ -483,7 +500,7 @@ final class PricingService {
                         pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
                         saveDiskCache(setCode: key, data: data)
                         try? CatalogStore.shared.open()
-                        try? CatalogStore.shared.upsertPricing(setCode: key, json: data)
+                        try? CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .onePiece)
                         return map
                     }
                 }
@@ -494,20 +511,19 @@ final class PricingService {
                         pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
                         saveDiskCache(setCode: key, data: data)
                         try? CatalogStore.shared.open()
-                        try? CatalogStore.shared.upsertPricing(setCode: key, json: data)
+                        try? CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .pokemon)
                         return map
                     }
                 }
             }
         }
 
-        if !forceNetwork {
-            try? CatalogStore.shared.open()
-            if let blob = CatalogStore.shared.fetchPricingData(setCode: key),
-               let map = Self.decodePricingMap(from: blob) {
-                pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
-                return map
-            }
+        try? CatalogStore.shared.open()
+        let catalogBrand: TCGBrand = Self.isOnePiecePriceKeyCard(card) ? .onePiece : .pokemon
+        if let blob = CatalogStore.shared.fetchPricingData(setCode: card.setCode, brand: catalogBrand),
+           let map = Self.decodePricingMap(from: blob) {
+            pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
+            return map
         }
 
         return [:]

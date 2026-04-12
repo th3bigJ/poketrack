@@ -8,26 +8,35 @@ struct WishlistView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var items: [WishlistItem]
 
+    /// Items for games that are still enabled in Account (same rows stay in iCloud; UI hides the rest).
+    private var visibleWishlistItems: [WishlistItem] {
+        let enabled = services.brandSettings.enabledBrands
+        return items.filter { enabled.contains(TCGBrand.inferredFromMasterCardId($0.cardID)) }
+    }
+
     @State private var cardsByCardID: [String: Card] = [:]
     @State private var showPaywall = false
     @State private var errorMessage: String?
 
     private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
 
-    /// Reload when membership or card ids change.
+    /// Reload when membership, card ids, or enabled games change.
     private var wishlistSignature: String {
-        items.map { "\($0.cardID)|\($0.variantKey)" }.joined(separator: "§")
+        let brandKey = services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
+        return visibleWishlistItems.map { "\($0.cardID)|\($0.variantKey)" }.joined(separator: "§") + "|" + brandKey
     }
 
-    /// Same order as `items`, for horizontal paging in `CardBrowseDetailView`.
+    /// Same order as `visibleWishlistItems`, for horizontal paging in `CardBrowseDetailView`.
     private var orderedCards: [Card] {
-        items.compactMap { cardsByCardID[$0.cardID] }
+        visibleWishlistItems.compactMap { cardsByCardID[$0.cardID] }
     }
 
     var body: some View {
         Group {
             if items.isEmpty {
                 emptyState
+            } else if visibleWishlistItems.isEmpty {
+                hiddenByBrandEmptyState
             } else {
                 wishlistScrollGrid
             }
@@ -77,6 +86,29 @@ struct WishlistView: View {
         }
     }
 
+    private var hiddenByBrandEmptyState: some View {
+        ScrollView {
+            VStack(spacing: 16) {
+                Color.clear.frame(height: rootFloatingChromeInset)
+
+                if services.cloudSettings.syncStatus != .cloudKitConnected {
+                    iCloudBanner
+                        .padding(.horizontal, 16)
+                }
+
+                wishlistTopBar
+                    .padding(.horizontal, 16)
+
+                ContentUnavailableView(
+                    "No visible wishlist items",
+                    systemImage: "line.3.horizontal.decrease.circle",
+                    description: Text("Turn a game back on under Account → Card catalog to see wishlist cards for that game.")
+                )
+                .frame(minHeight: 280)
+            }
+        }
+    }
+
     private var wishlistScrollGrid: some View {
         ScrollView {
             VStack(spacing: 0) {
@@ -93,7 +125,7 @@ struct WishlistView: View {
                     .padding(.bottom, 12)
 
                 LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(Array(items.enumerated()), id: \.element.id) { index, item in
+                    ForEach(Array(visibleWishlistItems.enumerated()), id: \.element.id) { index, item in
                         wishlistCell(for: item)
                             .onAppear {
                                 ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: index + 1)
@@ -203,7 +235,7 @@ struct WishlistView: View {
 
     private func resolveWishlistCards() async {
         var next = cardsByCardID  // preserve already-resolved cards
-        for item in items {
+        for item in visibleWishlistItems {
             if next[item.cardID] != nil { continue }
             if let c = await services.cardData.loadCard(masterCardId: item.cardID) {
                 next[item.cardID] = c

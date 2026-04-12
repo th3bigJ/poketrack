@@ -17,8 +17,25 @@ struct UniversalSearchResultsView: View {
         services.cardData.searchSets(matching: trimmed)
     }
 
+    private var pokemonCatalogEnabled: Bool {
+        services.brandSettings.enabledBrands.contains(.pokemon)
+    }
+
+    /// Dex matches are Pokémon-only; hide while browsing ONE PIECE (or Pokémon disabled).
+    private var showPokemonDexSection: Bool {
+        pokemonCatalogEnabled && services.brandSettings.selectedCatalogBrand == .pokemon
+    }
+
     private var matchingPokemon: [NationalDexPokemon] {
-        services.cardData.searchPokemon(matching: trimmed)
+        guard showPokemonDexSection else { return [] }
+        return services.cardData.searchPokemon(matching: trimmed)
+    }
+
+    private var emptyStateDescription: String {
+        if showPokemonDexSection {
+            return "Type to find cards, sets, and Pokémon, or open Browse sets / Browse Pokémon above."
+        }
+        return "Type to find cards and sets, or open Browse sets above."
     }
 
     private let cardColumns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
@@ -29,7 +46,7 @@ struct UniversalSearchResultsView: View {
                 ContentUnavailableView(
                     "Search",
                     systemImage: "magnifyingglass",
-                    description: Text("Type to find cards, sets, and Pokémon, or open Browse sets / Browse Pokémon above.")
+                    description: Text(emptyStateDescription)
                 )
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
@@ -141,7 +158,7 @@ struct UniversalSearchResultsView: View {
                 isSearching = false
                 return
             }
-            if services.cardData.nationalDexPokemon.isEmpty {
+            if showPokemonDexSection, services.cardData.nationalDexPokemon.isEmpty {
                 await services.cardData.loadNationalDexPokemon()
             }
             isSearching = true

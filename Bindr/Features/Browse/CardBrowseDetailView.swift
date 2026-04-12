@@ -418,6 +418,7 @@ struct CardBrowseDetailView: View {
 private struct CardBrowseDetailPage: View {
     let card: Card
 
+    @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Query private var collectionItems: [CollectionItem]
 
@@ -433,6 +434,12 @@ private struct CardBrowseDetailPage: View {
             filter: #Predicate<CollectionItem> { $0.cardID == cardID },
             sort: [SortDescriptor(\.variantKey)]
         )
+    }
+
+    private var showsCollectionSection: Bool {
+        let brand = TCGBrand.inferredFromMasterCardId(card.masterCardId)
+        guard services.brandSettings.enabledBrands.contains(brand) else { return false }
+        return !collectionItems.isEmpty
     }
 
     var body: some View {
@@ -454,7 +461,7 @@ private struct CardBrowseDetailPage: View {
                 }
                 .onDisappear { imageAppeared = false }
 
-                if !collectionItems.isEmpty {
+                if showsCollectionSection {
                     collectionInCollectionSection
                         .padding(.horizontal, 16)
                         .padding(.top, 16)

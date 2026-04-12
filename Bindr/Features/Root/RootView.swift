@@ -101,18 +101,27 @@ struct RootView: View {
                 Color(uiColor: .systemBackground)
                     .ignoresSafeArea()
                     .overlay {
-                        if services.brandSettings.hasCompletedBrandOnboarding {
-                            LoadingScreen(
-                                message: services.bootstrapMessage,
-                                status: services.bootstrapStatus,
-                                progress: services.bootstrapProgress,
-                                downloadedBytes: services.bootstrapDownloadedBytes,
-                                totalBytes: services.bootstrapEstimatedTotalBytes
-                            )
+                        if services.brandSettings.hasCompletedBrandOnboarding,
+                           !services.brandSettings.hasCompletedInitialAppBootstrap {
+                            if services.bootstrapShowsDownloadProgressUI {
+                                LoadingScreen(
+                                    message: services.bootstrapMessage,
+                                    status: services.bootstrapStatus,
+                                    progress: services.bootstrapProgress,
+                                    downloadedBytes: services.bootstrapDownloadedBytes,
+                                    totalBytes: services.bootstrapEstimatedTotalBytes
+                                )
+                            } else {
+                                StartupBusyView(
+                                    message: services.bootstrapMessage,
+                                    status: services.bootstrapStatus
+                                )
+                            }
                         }
                     }
                     .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
                         guard services.brandSettings.hasCompletedBrandOnboarding else { return }
+                        guard !services.brandSettings.hasCompletedInitialAppBootstrap else { return }
                         await services.bootstrap()
                     }
             }
@@ -126,6 +135,14 @@ struct RootView: View {
         .sheet(isPresented: $showBrandOnboarding) {
             BrandOnboardingView(isPresented: $showBrandOnboarding)
                 .environment(services)
+        }
+        .onChange(of: services.brandSettings.hasCompletedBrandOnboarding) { _, completed in
+            showBrandOnboarding = !completed
+        }
+        .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
+            guard !services.brandSettings.hasCompletedBrandOnboarding else { return }
+            await Task.yield()
+            showBrandOnboarding = true
         }
     }
 
@@ -360,6 +377,31 @@ struct RootView: View {
                 }
             }
             .zIndex(1)
+            .overlay {
+                if services.isCatalogDownloadInProgress {
+                    ZStack {
+                        Color.black.opacity(0.48)
+                            .ignoresSafeArea()
+                        if services.catalogDownloadShowsByteProgressUI {
+                            LoadingScreen(
+                                message: services.catalogDownloadMessage,
+                                status: services.catalogDownloadStatus,
+                                progress: services.catalogDownloadProgress,
+                                downloadedBytes: services.catalogDownloadDownloadedBytes,
+                                totalBytes: services.catalogDownloadEstimatedTotalBytes
+                            )
+                        } else {
+                            CatalogEnablingBusyView(
+                                message: services.catalogDownloadMessage,
+                                status: services.catalogDownloadStatus
+                            )
+                        }
+                    }
+                    .transition(.opacity)
+                    .zIndex(500)
+                }
+            }
+            .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         }
@@ -382,9 +424,6 @@ struct RootView: View {
         }
         .onAppear {
             chromeScroll.configureForTab(selectedTab)
-            if !services.brandSettings.hasCompletedBrandOnboarding {
-                showBrandOnboarding = true
-            }
             if services.isReady {
                 services.setupWishlist(modelContext: modelContext)
                 services.setupCollectionLedger(modelContext: modelContext)
@@ -395,9 +434,6 @@ struct RootView: View {
                 services.setupWishlist(modelContext: modelContext)
                 services.setupCollectionLedger(modelContext: modelContext)
             }
-        }
-        .onChange(of: services.brandSettings.hasCompletedBrandOnboarding) { _, completed in
-            showBrandOnboarding = !completed
         }
         .onChange(of: selectedTab) { _, tab in
             Haptics.selectionChanged()
@@ -439,6 +475,9 @@ struct RootView: View {
                 }
             )
             .environment(services)
+        }
+        .task {
+            await services.bootstrapCatalogInBackgroundIfNeeded()
         }
     }
 
