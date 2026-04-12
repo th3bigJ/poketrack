@@ -1,4 +1,4 @@
-# PokeTrack Data Storage Implementation Summary
+# Bindr Data Storage Implementation Summary
 
 ## 🎯 TL;DR - Your Questions Answered
 
@@ -50,7 +50,7 @@ For iCloud storage, the user's device iCloud login is all you need.
   - Example of how to use SwiftData queries
 
 ### App Setup
-- **`PokeTrackApp.swift`** (updated) - Configured SwiftData model container with CloudKit
+- **Main app entry (`BindrApp.swift`)** — `@main` `App` type; SwiftData model container with CloudKit configured
 
 ### Documentation
 - **`STORAGE_ARCHITECTURE.md`** - Complete guide to data storage strategy
@@ -65,12 +65,12 @@ For iCloud storage, the user's device iCloud login is all you need.
 ### 1. Enable iCloud in Xcode (5 minutes)
 ```
 1. Open Xcode
-2. Select your target (PokeTrack)
+2. Select the **Bindr** app target in Xcode
 3. Go to "Signing & Capabilities"
 4. Click "+ Capability"
 5. Add "iCloud"
 6. Check ✅ "CloudKit"
-7. Done! Xcode creates: iCloud.app1xy.PokeTrack
+7. Done! The app uses iCloud container: `iCloud.app1xy.bindr`
 ```
 
 ### 2. Replace Your Current AccountView (10 minutes)
@@ -120,7 +120,7 @@ NavigationLink {
 ## ⚙️ How It Works
 
 ### User's Perspective:
-1. User opens PokeTrack
+1. User opens Bindr
 2. If signed into iCloud → Data syncs automatically
 3. If not signed into iCloud → Data saves locally (syncs when they sign in)
 4. No "Sign in with Apple" button needed

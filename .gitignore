@@ -23,6 +23,8 @@ DerivedData/
 # Editor / tooling (SourceKit-LSP / Cursor)
 buildServer.json
 
-/PokeTrack/testdata
+/Bindr/testdata
 
-/PokeTrack/.cursor
+/Bindr/.cursor
+
+/onepiece

@@ -1,0 +1,83 @@
+{
+  "appPolicies" : {
+    "eula" : "",
+    "policies" : [
+      {
+        "locale" : "en_US",
+        "policyText" : "",
+        "policyURL" : ""
+      }
+    ]
+  },
+  "identifier" : "8A6CF92D",
+  "nonRenewingSubscriptions" : [
+
+  ],
+  "products" : [
+
+  ],
+  "settings" : {
+    "_askToBuyEnabled" : false,
+    "_billingGracePeriodEnabled" : false,
+    "_billingIssuesEnabled" : false,
+    "_disableDialogs" : false,
+    "_failTransactionsEnabled" : false,
+    "_locale" : "en_GB",
+    "_renewalBillingIssuesEnabled" : false,
+    "_storefront" : "GBR",
+    "_storeKitErrors" : [
+
+    ],
+    "_timeRate" : 0
+  },
+  "subscriptionGroups" : [
+    {
+      "id" : "66D52E89",
+      "localizations" : [
+
+      ],
+      "name" : "subscription",
+      "subscriptions" : [
+        {
+          "adHocOffers" : [
+
+          ],
+          "codeOffers" : [
+
+          ],
+          "displayPrice" : "2.99",
+          "familyShareable" : false,
+          "groupNumber" : 1,
+          "internalID" : "D8558961",
+          "introductoryOffers" : [
+
+          ],
+          "localizations" : [
+            {
+              "description" : "Unlimited wishlist and Premium features in Bindr.",
+              "displayName" : "Bindr Premium",
+              "locale" : "en_US"
+            },
+            {
+              "description" : "Unlimited wishlist and Premium features in Bindr.",
+              "displayName" : "Bindr Premium",
+              "locale" : "en_GB"
+            }
+          ],
+          "productID" : "app1xy.bindr.premium",
+          "recurringSubscriptionPeriod" : "P1M",
+          "referenceName" : "Bindr Premium 1 month",
+          "subscriptionGroupID" : "66D52E89",
+          "type" : "RecurringSubscription",
+          "winbackOffers" : [
+
+          ]
+        }
+      ]
+    }
+  ],
+  "version" : {
+    "major" : 5,
+    "minor" : 0
+  }
+}

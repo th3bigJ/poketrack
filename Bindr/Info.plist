@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSUbiquitousContainers</key>
+	<dict>
+		<key>iCloud.app1xy.bindr</key>
+		<dict>
+			<key>NSUbiquitousContainerIsDocumentScopePublic</key>
+			<false/>
+			<key>NSUbiquitousContainerName</key>
+			<string>Bindr</string>
+		</dict>
+	</dict>
+	<key>BINDR_R2_BASE_URL</key>
+	<string>https://pub-041bf18f03164be388647b4363f87908.r2.dev</string>
+	<key>BINDR_R2_CATALOG_PREFIX</key>
+	<string>data</string>
+	<key>BINDR_R2_PRICING_PREFIX</key>
+	<string></string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+</dict>
+</plist>

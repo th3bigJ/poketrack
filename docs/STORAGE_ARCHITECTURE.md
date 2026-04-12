@@ -1,7 +1,7 @@
-# PokeTrack Data Storage Architecture
+# Bindr Data Storage Architecture
 
 ## Overview
-This document outlines the data storage strategy for PokeTrack, including user data, settings, and iCloud sync.
+This document outlines the data storage strategy for Bindr, including user data, settings, and iCloud sync.
 
 ---
 
@@ -76,14 +76,14 @@ Your "Sign in with Apple" button is functional but **not required** for any curr
 
 ### For Users:
 1. Settings → [Their Name] → Must be signed into iCloud
-2. Settings → [Their Name] → iCloud → iCloud Drive → Enable for PokeTrack
+2. Settings → [Their Name] → iCloud → iCloud Drive → Enable for Bindr
 3. That's it! No "Sign in with Apple" needed.
 
 ### For Developers (You):
 1. **Xcode:** Enable iCloud capability
    - Target → Signing & Capabilities → + Capability → iCloud
    - Check "CloudKit"
-   - Xcode will create a default container: `iCloud.app1xy.PokeTrack`
+   - The app uses the iCloud container `iCloud.app1xy.bindr` (set in Signing & Capabilities and entitlements).
 
 2. **Info.plist:** No changes needed (Xcode handles this)
 
@@ -99,7 +99,7 @@ Your "Sign in with Apple" button is functional but **not required** for any curr
 Is it user-generated content (wishlists, collections)?
 ├─ YES → SwiftData + CloudKit
 │   └─ Should it sync across devices?
-│       ├─ YES → Enable CloudKit (already done in PokeTrackApp.swift)
+│       ├─ YES → Enable CloudKit (already wired in main app entry: `BindrApp.swift`)
 │       └─ NO → Just SwiftData (remove CloudKit container)
 │
 └─ NO → Is it a setting or preference?
@@ -150,7 +150,7 @@ var canAddItem: Bool {
 
 #### Phase 1: Wishlists (This Week)
 1. ✅ SwiftData models created (`WishlistItem.swift`)
-2. ✅ Model container added to app (`PokeTrackApp.swift`)
+2. ✅ Model container added in main app entry (`BindrApp.swift`)
 3. ✅ WishlistService with premium gating
 4. ⏳ Build wishlist UI
 5. ⏳ Test CloudKit sync
@@ -179,7 +179,7 @@ var canAddItem: Bool {
 - **StoreKit:** "Purchase history is managed by Apple"
 
 ### What Users Control:
-- iCloud sync: Settings → iCloud → iCloud Drive → PokeTrack (on/off)
+- iCloud sync: Settings → iCloud → iCloud Drive → Bindr (on/off)
 - Storage: Uses their iCloud storage quota
 
 ### Data Deletion:

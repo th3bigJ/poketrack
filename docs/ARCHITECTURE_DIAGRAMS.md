@@ -1,10 +1,10 @@
-# PokeTrack Data Flow Architecture
+# Bindr Data Flow Architecture
 
 ## System Architecture Overview
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                         PokeTrack App                            │
+│                          Bindr App                               │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                  │
 │  ┌────────────────┐     ┌────────────────┐                     │
@@ -243,7 +243,7 @@ CloudKit ──────────────────▶ Store in
 ## User Journey: First Time Setup
 
 ```
-Step 1: User downloads PokeTrack
+Step 1: User downloads Bindr
            │
            ▼
 Step 2: User opens app
@@ -400,8 +400,10 @@ Logic implemented in WishlistService.swift:
 
 ## Files You Created
 
+Source files live under the **`Bindr/`** folder; open **`Bindr.xcodeproj`** in Xcode.
+
 ```
-PokeTrack/
+Bindr/
 ├── Models/
 │   └── WishlistItem.swift ────────────┐
 │       - WishlistItem                  │
@@ -418,7 +420,7 @@ PokeTrack/
 │   └── AccountView.swift (update)     │
 │                                       │
 ├── App/                                │
-│   └── PokeTrackApp.swift (updated)───┘─ Setup
+│   └── BindrApp.swift (main App entry, `@main`)───┘─ Setup
 │
 └── Documentation/
     ├── STORAGE_ARCHITECTURE.md ─────────── Full guide
