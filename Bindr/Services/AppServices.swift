@@ -6,6 +6,8 @@ import SwiftData
 @MainActor
 final class AppServices {
     let brandSettings: BrandSettings
+    let offlineImageSettings: OfflineImageSettings
+    let offlineImageDownload: OfflineImageDownloadService
     let cardData: CardDataService
     let pricing = PricingService()
     let cloudSettings: CloudSettingsService
@@ -21,9 +23,13 @@ final class AppServices {
 
     private(set) var isReady = false
     private(set) var isBootstrapping = false
+    /// Until `true`, the root UI should not mount the main tab shell (Browse, etc.) so the cold launch catalog pipeline does not race the same SQLite + network work on the main actor.
+    private(set) var isLaunchCatalogPipelineComplete = false
     /// Set in `init` when the user already completed the one-time blocking bootstrap; consumed by the first `.task` on the main UI to refresh catalogs in the background.
     private(set) var shouldRunBackgroundCatalogRefreshOnLaunch = false
     private var isBackgroundCatalogRefreshInFlight = false
+    /// Set when a catalog pipeline run just finished; ``BrowseView`` consumes once to skip duplicate ``CardDataService/reloadAfterBrandChange()`` (same `loadSets` + search index work).
+    private var pendingLightBrowseTabEntry = false
     /// When true, ``RootView`` shows the full ``LoadingScreen`` with byte counts; otherwise a simple indeterminate busy state until sync actually transfers data.
     private(set) var bootstrapShowsDownloadProgressUI = false
     private(set) var bootstrapMessage = "Updating card data, please wait."
@@ -49,11 +55,22 @@ final class AppServices {
         self.browseGridOptions = BrowseGridOptionsSettings(cloudSettings: cloudSettings)
         let brandSettings = BrandSettings()
         self.brandSettings = brandSettings
+        let offlineImageSettings = OfflineImageSettings()
+        self.offlineImageSettings = offlineImageSettings
+        self.offlineImageDownload = OfflineImageDownloadService(settings: offlineImageSettings)
         self.cardData = CardDataService(brandSettings: brandSettings)
         if brandSettings.hasCompletedBrandOnboarding && brandSettings.hasCompletedInitialAppBootstrap {
             isReady = true
             shouldRunBackgroundCatalogRefreshOnLaunch = true
+            isLaunchCatalogPipelineComplete = false
         }
+    }
+
+    /// Browse calls this once after launch pipeline: if `true`, skip heavy reload (catalog + search index already warmed).
+    func consumeLightBrowseTabEntryIfNeeded() -> Bool {
+        guard pendingLightBrowseTabEntry else { return false }
+        pendingLightBrowseTabEntry = false
+        return true
     }
 
     /// One-time blocking gate for brand-new users (after onboarding). Later launches use ``bootstrapCatalogInBackgroundIfNeeded()`` from the root view.
@@ -63,14 +80,20 @@ final class AppServices {
         defer { isBootstrapping = false }
         await runStartupCatalogPipeline(updateBootstrapProgressUI: true)
         brandSettings.markInitialAppBootstrapCompleted()
+        pendingLightBrowseTabEntry = true
+        isLaunchCatalogPipelineComplete = true
         isReady = true
     }
 
-    /// Cold-launch refresh for returning users (no full-screen loading). Safe to call once per process.
+    /// Cold-launch refresh for returning users. Finishes before ``isLaunchCatalogPipelineComplete`` becomes `true` so the tab shell does not mount until catalog work is done.
     func bootstrapCatalogInBackgroundIfNeeded() async {
-        guard shouldRunBackgroundCatalogRefreshOnLaunch else { return }
+        guard shouldRunBackgroundCatalogRefreshOnLaunch else {
+            isLaunchCatalogPipelineComplete = true
+            return
+        }
         shouldRunBackgroundCatalogRefreshOnLaunch = false
         await bootstrapCatalogInBackground()
+        isLaunchCatalogPipelineComplete = true
     }
 
     private func bootstrapCatalogInBackground() async {
@@ -79,6 +102,7 @@ final class AppServices {
         isBackgroundCatalogRefreshInFlight = true
         defer { isBackgroundCatalogRefreshInFlight = false }
         await runStartupCatalogPipeline(updateBootstrapProgressUI: false)
+        pendingLightBrowseTabEntry = true
     }
 
     private func runStartupCatalogPipeline(updateBootstrapProgressUI: Bool) async {
@@ -156,6 +180,15 @@ final class AppServices {
             bootstrapProgress = weightSync + weightLoadSets + weightDex + weightStore
             bootstrapStatus = "Card data is ready."
         }
+
+        // Offline pack reconciliation can take a long time (Wi‑Fi gated, many files). Do not block
+        // cold launch / tab interaction on it; it runs after the pipeline yields the main actor.
+        Task { @MainActor in
+            await offlineImageDownload.reconcileAfterCatalogSync(
+                enabledBrands: brandSettings.enabledBrands,
+                nationalDexPokemon: cardData.nationalDexPokemon
+            )
+        }
     }
 
     /// Runs after the user turns **on** a catalog in Account: network sync + reload browse data, with UI progress (`RootView` overlay).
@@ -203,7 +236,15 @@ final class AppServices {
 
         catalogDownloadStatus = "Done."
         catalogDownloadProgress = 1
+
         isCatalogDownloadInProgress = false
+
+        Task { @MainActor in
+            await offlineImageDownload.reconcileAfterCatalogSync(
+                enabledBrands: brandSettings.enabledBrands,
+                nationalDexPokemon: cardData.nationalDexPokemon
+            )
+        }
     }
 
     /// Call this from your root view with the model context

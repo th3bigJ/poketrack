@@ -19,7 +19,7 @@ final class ImagePrefetcher: @unchecked Sendable {
             lock.lock()
             guard inFlight[url] == nil else { lock.unlock(); continue }
             let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-            if URLCache.shared.cachedResponse(for: request) != nil {
+            if AppURLSession.imageURLCache.cachedResponse(for: request) != nil {
                 lock.unlock()
                 continue
             }
@@ -27,7 +27,7 @@ final class ImagePrefetcher: @unchecked Sendable {
                 guard let self else { return }
                 do {
                     let (data, response) = try await self.session.data(for: request)
-                    URLCache.shared.storeCachedResponse(
+                    AppURLSession.imageURLCache.storeCachedResponse(
                         CachedURLResponse(response: response, data: data), for: request)
                 } catch {}
                 self.finish(url)

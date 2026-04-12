@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 
 /// Loads a low-resolution image immediately, then progressively loads and crossfades to high-resolution.
 /// Provides a premium, perceived-instant loading experience.
@@ -12,130 +13,257 @@ private final class ProgressiveImageLoader {
         case highReady(UIImage)
         case failed
     }
-    
+
     var state: LoadState = .idle
-    
-    private var lowLoadTask: Task<Void, Never>?
-    private var highLoadTask: Task<Void, Never>?
+
+    private var loadTask: Task<Void, Never>?
     private var currentLowURL: URL?
     private var currentHighURL: URL?
-    
-    /// Load with progressive enhancement: low-res first, then high-res
-    func load(lowResURL: URL?, highResURL: URL?) {
-        // Cancel existing tasks
-        lowLoadTask?.cancel()
-        highLoadTask?.cancel()
-        
-        // If URLs haven't changed and we have an image, keep it
-        if lowResURL == currentLowURL && highResURL == currentHighURL {
+    private var lastAppliedStrict: Bool?
+
+    func load(
+        lowResURL: URL?,
+        highResURL: URL?,
+        offlineLowRelativePath: String?,
+        offlineHighRelativePath: String?,
+        offlineBrand: TCGBrand?,
+        strictOfflineNoCDN: Bool
+    ) {
+        loadTask?.cancel()
+
+        let previousStrict = lastAppliedStrict
+        if lowResURL == currentLowURL && highResURL == currentHighURL && previousStrict == strictOfflineNoCDN {
             switch state {
             case .lowReady, .loadingHigh, .highReady:
-                return  // Already have something to show
+                return
             default:
                 break
             }
         }
-        
+        lastAppliedStrict = strictOfflineNoCDN
+
         currentLowURL = lowResURL
         currentHighURL = highResURL
-        
-        // Check cache first for instant display
-        if let highURL = highResURL {
-            let highRequest = URLRequest(url: highURL, cachePolicy: .returnCacheDataElseLoad)
-            if let cached = URLCache.shared.cachedResponse(for: highRequest),
-               let ui = UIImage(data: cached.data) {
-                state = .highReady(ui)
-                return
-            }
+
+        let capturedLow = lowResURL
+        let capturedHigh = highResURL
+        let capturedRelLow = offlineLowRelativePath
+        let capturedRelHigh = offlineHighRelativePath
+        let capturedBrand = offlineBrand
+        let capturedStrict = strictOfflineNoCDN
+
+        // Disk + URLCache + decode must not run on the main actor (grid/detail jank in offline mode).
+        loadTask = Task.detached(priority: .userInitiated) { [weak self] in
+            guard let self else { return }
+            await self.runProgressiveLoad(
+                lowResURL: capturedLow,
+                highResURL: capturedHigh,
+                offlineLowRelativePath: capturedRelLow,
+                offlineHighRelativePath: capturedRelHigh,
+                offlineBrand: capturedBrand,
+                strictOfflineNoCDN: capturedStrict
+            )
         }
-        
-        if let lowURL = lowResURL {
-            let lowRequest = URLRequest(url: lowURL, cachePolicy: .returnCacheDataElseLoad)
-            if let cached = URLCache.shared.cachedResponse(for: lowRequest),
-               let ui = UIImage(data: cached.data) {
-                // Have low-res cached, start loading high-res
-                state = .loadingHigh(ui)
-                loadHighRes(highResURL)
-                return
-            }
-        }
-        
-        // Start with low-res load
-        state = .loadingLow
-        loadLowRes(lowResURL, thenLoadHigh: highResURL)
     }
-    
-    private func loadLowRes(_ url: URL?, thenLoadHigh highURL: URL?) {
-        guard let url else {
-            // No low-res, try high-res directly
-            loadHighRes(highURL)
-            return
+
+    /// Decode pack bytes like grid thumbnails (ImageIO) so formats match `CachedAsyncImage`; fall back to `UIImage(data:)`.
+    private func decodeProgressiveDisk(data: Data) async -> UIImage? {
+        let (scale, width) = await MainActor.run {
+            (UIScreen.main.scale, UIScreen.main.bounds.width)
         }
-        
-        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-        
-        lowLoadTask = Task { [weak self] in
-            do {
-                let (data, response) = try await AppURLSession.images.data(for: request)
-                guard !Task.isCancelled else { return }
-                
-                // Store in cache
-                URLCache.shared.storeCachedResponse(
-                    CachedURLResponse(response: response, data: data), for: request)
-                
-                if let ui = UIImage(data: data) {
+        let targetW = min(width - 32, 520) * scale
+        let targetH = targetW * 7 / 5
+        let target = CGSize(width: targetW, height: targetH)
+        return ThumbnailImageDecode.downsampled(data: data, targetSize: target, scale: scale)
+            ?? UIImage(data: data)
+    }
+
+    private func runProgressiveLoad(
+        lowResURL: URL?,
+        highResURL: URL?,
+        offlineLowRelativePath: String?,
+        offlineHighRelativePath: String?,
+        offlineBrand: TCGBrand?,
+        strictOfflineNoCDN: Bool
+    ) async {
+        // 1) Offline pack: local low-res file, then optional high-res path (same keys as manifest).
+        if let brand = offlineBrand {
+            if let rel = offlineLowRelativePath, !rel.isEmpty,
+               let local = OfflineImageStore.shared.localFileURL(relativePath: rel, brand: brand),
+               let diskData = try? Data(contentsOf: local),
+               let ui = await decodeProgressiveDisk(data: diskData) {
+                if strictOfflineNoCDN {
                     await MainActor.run { [weak self] in
                         guard !Task.isCancelled else { return }
-                        self?.state = .loadingHigh(ui)
+                        self?.state = .highReady(ui)
                     }
-                    
-                    // Immediately start high-res load
-                    if let highURL = highURL, highURL != url {
-                        self?.loadHighRes(highURL)
-                    } else {
-                        // No high-res or same URL, we're done
-                        await MainActor.run { [weak self] in
-                            self?.state = .highReady(ui)
-                        }
-                    }
+                    return
                 }
-            } catch {
                 await MainActor.run { [weak self] in
                     guard !Task.isCancelled else { return }
-                    self?.state = .failed
+                    self?.state = .loadingHigh(ui)
                 }
-            }
-        }
-    }
-    
-    private func loadHighRes(_ url: URL?) {
-        guard let url else { return }
-        
-        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-        
-        highLoadTask = Task { [weak self] in
-            do {
-                let (data, response) = try await AppURLSession.images.data(for: request)
-                guard !Task.isCancelled else { return }
-                
-                URLCache.shared.storeCachedResponse(
-                    CachedURLResponse(response: response, data: data), for: request)
-                
-                if let ui = UIImage(data: data) {
+                if let high = highResURL {
+                    await loadHighResAsync(high)
+                } else {
                     await MainActor.run { [weak self] in
                         guard !Task.isCancelled else { return }
                         self?.state = .highReady(ui)
                     }
                 }
-            } catch {
-                // High-res failed, but we might have low-res still showing
+                return
+            }
+
+            if let relHigh = offlineHighRelativePath, !relHigh.isEmpty,
+               relHigh != offlineLowRelativePath,
+               let local = OfflineImageStore.shared.localFileURL(relativePath: relHigh, brand: brand),
+               let diskData = try? Data(contentsOf: local),
+               let ui = await decodeProgressiveDisk(data: diskData) {
+                await MainActor.run { [weak self] in
+                    guard !Task.isCancelled else { return }
+                    self?.state = .highReady(ui)
+                }
+                return
+            }
+        }
+
+        // 2) Strict offline: URLCache for low URL, then high (no new network; detail may have cached high only).
+        if strictOfflineNoCDN {
+            if let lowURL = lowResURL {
+                let lowRequest = URLRequest(url: lowURL, cachePolicy: .returnCacheDataElseLoad)
+                if let cached = AppURLSession.imageURLCache.cachedResponse(for: lowRequest),
+                   let ui = await decodeProgressiveDisk(data: cached.data) {
+                    await MainActor.run { [weak self] in
+                        guard !Task.isCancelled else { return }
+                        self?.state = .highReady(ui)
+                    }
+                    return
+                }
+            }
+            if let highURL = highResURL {
+                let highRequest = URLRequest(url: highURL, cachePolicy: .returnCacheDataElseLoad)
+                if let cached = AppURLSession.imageURLCache.cachedResponse(for: highRequest),
+                   let ui = await decodeProgressiveDisk(data: cached.data) {
+                    await MainActor.run { [weak self] in
+                        guard !Task.isCancelled else { return }
+                        self?.state = .highReady(ui)
+                    }
+                    return
+                }
+            }
+            await MainActor.run { [weak self] in
+                guard !Task.isCancelled else { return }
+                self?.state = .failed
+            }
+            return
+        }
+
+        if let highURL = highResURL {
+            let highRequest = URLRequest(url: highURL, cachePolicy: .returnCacheDataElseLoad)
+            if let cached = AppURLSession.imageURLCache.cachedResponse(for: highRequest),
+               let ui = UIImage(data: cached.data) {
+                await MainActor.run { [weak self] in
+                    guard !Task.isCancelled else { return }
+                    self?.state = .highReady(ui)
+                }
+                return
+            }
+        }
+
+        if let lowURL = lowResURL {
+            let lowRequest = URLRequest(url: lowURL, cachePolicy: .returnCacheDataElseLoad)
+            if let cached = AppURLSession.imageURLCache.cachedResponse(for: lowRequest),
+               let ui = UIImage(data: cached.data) {
+                await MainActor.run { [weak self] in
+                    guard !Task.isCancelled else { return }
+                    self?.state = .loadingHigh(ui)
+                }
+                if let high = highResURL {
+                    await loadHighResAsync(high)
+                } else {
+                    await MainActor.run { [weak self] in
+                        guard !Task.isCancelled else { return }
+                        self?.state = .highReady(ui)
+                    }
+                }
+                return
+            }
+        }
+
+        await MainActor.run { [weak self] in
+            guard !Task.isCancelled else { return }
+            self?.state = .loadingLow
+        }
+        await loadLowResAsync(lowResURL, thenLoadHigh: highResURL)
+    }
+
+    private func loadLowResAsync(_ url: URL?, thenLoadHigh highURL: URL?) async {
+        guard let url else {
+            await loadHighResAsync(highURL)
+            return
+        }
+
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+
+        do {
+            let (data, response) = try await AppURLSession.images.data(for: request)
+            guard !Task.isCancelled else { return }
+
+            AppURLSession.imageURLCache.storeCachedResponse(
+                CachedURLResponse(response: response, data: data), for: request)
+
+            guard let ui = UIImage(data: data) else {
+                await MainActor.run { [weak self] in
+                    guard !Task.isCancelled else { return }
+                    self?.state = .failed
+                }
+                return
+            }
+
+            await MainActor.run { [weak self] in
+                guard !Task.isCancelled else { return }
+                self?.state = .loadingHigh(ui)
+            }
+
+            if let highURL = highURL, highURL != url {
+                await loadHighResAsync(highURL)
+            } else {
+                await MainActor.run { [weak self] in
+                    guard !Task.isCancelled else { return }
+                    self?.state = .highReady(ui)
+                }
+            }
+        } catch {
+            await MainActor.run { [weak self] in
+                guard !Task.isCancelled else { return }
+                self?.state = .failed
             }
         }
     }
-    
+
+    private func loadHighResAsync(_ url: URL?) async {
+        guard let url else { return }
+
+        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+
+        do {
+            let (data, response) = try await AppURLSession.images.data(for: request)
+            guard !Task.isCancelled else { return }
+
+            AppURLSession.imageURLCache.storeCachedResponse(
+                CachedURLResponse(response: response, data: data), for: request)
+
+            if let ui = UIImage(data: data) {
+                await MainActor.run { [weak self] in
+                    guard !Task.isCancelled else { return }
+                    self?.state = .highReady(ui)
+                }
+            }
+        } catch { }
+    }
+
     func cancel() {
-        lowLoadTask?.cancel()
-        highLoadTask?.cancel()
+        loadTask?.cancel()
     }
 }
 
@@ -144,32 +272,42 @@ private final class ProgressiveImageLoader {
 struct ProgressiveAsyncImage<Placeholder: View>: View {
     let lowResURL: URL?
     let highResURL: URL?
+    let offlineLowRelativePath: String?
+    let offlineHighRelativePath: String?
+    let offlineBrand: TCGBrand?
     let placeholder: () -> Placeholder
-    
+
+    @Environment(AppServices.self) private var services
     @State private var loader = ProgressiveImageLoader()
-    
+
     init(
         lowResURL: URL?,
         highResURL: URL? = nil,
+        offlineLowRelativePath: String? = nil,
+        offlineHighRelativePath: String? = nil,
+        offlineBrand: TCGBrand? = nil,
         @ViewBuilder placeholder: @escaping () -> Placeholder
     ) {
         self.lowResURL = lowResURL
         self.highResURL = highResURL
+        self.offlineLowRelativePath = offlineLowRelativePath
+        self.offlineHighRelativePath = offlineHighRelativePath
+        self.offlineBrand = offlineBrand
         self.placeholder = placeholder
     }
-    
+
     var body: some View {
         Group {
             switch loader.state {
             case .idle, .loadingLow:
                 placeholder()
-                
+
             case .lowReady(let image), .loadingHigh(let image):
                 Image(uiImage: image)
                     .resizable()
                     .scaledToFit()
                     .transition(.opacity.animation(.easeOut(duration: 0.2)))
-                    
+
             case .highReady(let image):
                 Image(uiImage: image)
                     .resizable()
@@ -179,8 +317,26 @@ struct ProgressiveAsyncImage<Placeholder: View>: View {
                 placeholder()
             }
         }
-        .task(id: lowResURL?.absoluteString ?? "" + (highResURL?.absoluteString ?? "")) {
-            loader.load(lowResURL: lowResURL, highResURL: highResURL)
+        // `strictOfflineImageMode` is part of `task(id:)` so turning Offline mode off re-runs load and can fetch high-res (toggle is rare vs scrolling).
+        .task(id: "\(lowResURL?.absoluteString ?? "")|\(highResURL?.absoluteString ?? "")|\(offlineLowRelativePath ?? "")|\(offlineHighRelativePath ?? "")|\(offlineBrand?.rawValue ?? "")|\(services.offlineImageDownload.packDataRevision)|\(services.offlineImageSettings.strictOfflineImageMode)") {
+            loader.load(
+                lowResURL: lowResURL,
+                highResURL: highResURL,
+                offlineLowRelativePath: offlineLowRelativePath,
+                offlineHighRelativePath: offlineHighRelativePath,
+                offlineBrand: offlineBrand,
+                strictOfflineNoCDN: services.offlineImageSettings.strictOfflineImageMode
+            )
+        }
+        .onChange(of: services.offlineImageSettings.strictOfflineImageMode) { _, _ in
+            loader.load(
+                lowResURL: lowResURL,
+                highResURL: highResURL,
+                offlineLowRelativePath: offlineLowRelativePath,
+                offlineHighRelativePath: offlineHighRelativePath,
+                offlineBrand: offlineBrand,
+                strictOfflineNoCDN: services.offlineImageSettings.strictOfflineImageMode
+            )
         }
         .onDisappear {
             loader.cancel()
@@ -199,76 +355,46 @@ private final class OptimizedImageLoader {
     
     func load(url: URL?, targetSize: CGSize? = nil) {
         loadTask?.cancel()
-        
+
         guard let url else {
             currentURL = nil
             image = nil
             return
         }
-        
-        // Skip only when this URL already produced a decoded image
+
         if url == currentURL, image != nil { return }
-        
+
         currentURL = url
         self.targetSize = targetSize
         image = nil
-        
-        let request = URLRequest(url: url, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
-        
-        if let cached = URLCache.shared.cachedResponse(for: request) {
-            // Decode on background thread with optional downsampling
-            loadTask = Task.detached(priority: .userInitiated) { [weak self] in
-                let decoded = self?.decodeWithDownsampling(data: cached.data, targetSize: targetSize)
-                await MainActor.run { [weak self] in
+
+        let capturedURL = url
+        let capturedTarget = targetSize
+
+        loadTask = Task.detached(priority: .utility) { [weak self] in
+            let scale = await MainActor.run { UIScreen.main.scale }
+            let request = URLRequest(url: capturedURL, cachePolicy: .returnCacheDataElseLoad, timeoutInterval: 30)
+
+            var decoded: UIImage?
+
+            if let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
+                decoded = ThumbnailImageDecode.downsampled(data: cached.data, targetSize: capturedTarget, scale: scale)
+            } else {
+                do {
+                    let (data, response) = try await AppURLSession.images.data(for: request)
                     guard !Task.isCancelled else { return }
-                    self?.image = decoded
-                }
+                    AppURLSession.imageURLCache.storeCachedResponse(
+                        CachedURLResponse(response: response, data: data), for: request)
+                    decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: capturedTarget, scale: scale)
+                } catch { }
             }
-            return
+
+            await MainActor.run { [weak self] in
+                guard let self, !Task.isCancelled else { return }
+                guard self.currentURL == capturedURL else { return }
+                self.image = decoded
+            }
         }
-        
-        loadTask = Task { [weak self] in
-            do {
-                let (data, response) = try await AppURLSession.images.data(for: request)
-                guard !Task.isCancelled else { return }
-                
-                URLCache.shared.storeCachedResponse(
-                    CachedURLResponse(response: response, data: data), for: request)
-                
-                // Decode with downsampling on background
-                let decoded = self?.decodeWithDownsampling(data: data, targetSize: targetSize)
-                
-                await MainActor.run { [weak self] in
-                    guard !Task.isCancelled else { return }
-                    self?.image = decoded
-                }
-            } catch { }
-        }
-    }
-    
-    /// Decode image with optional downsampling to reduce memory usage
-    private func decodeWithDownsampling(data: Data, targetSize: CGSize?) -> UIImage? {
-        guard let targetSize = targetSize, targetSize.width > 0, targetSize.height > 0 else {
-            return UIImage(data: data)
-        }
-        
-        // Use ImageIO for efficient downsampling
-        guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
-            return UIImage(data: data)
-        }
-        
-        let options: [CFString: Any] = [
-            kCGImageSourceCreateThumbnailFromImageAlways: true,
-            kCGImageSourceShouldCacheImmediately: true,
-            kCGImageSourceCreateThumbnailWithTransform: true,
-            kCGImageSourceThumbnailMaxPixelSize: max(targetSize.width, targetSize.height) * UIScreen.main.scale
-        ]
-        
-        guard let cgImage = CGImageSourceCreateThumbnailAtIndex(source, 0, options as CFDictionary) else {
-            return UIImage(data: data)
-        }
-        
-        return UIImage(cgImage: cgImage, scale: UIScreen.main.scale, orientation: .up)
     }
     
     func cancel() {

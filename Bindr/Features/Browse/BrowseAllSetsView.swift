@@ -21,7 +21,7 @@ struct BrowseAllSetsView: View {
                         ForEach(sets) { set in
                             NavigationLink(value: set) {
                                 VStack(spacing: 6) {
-                                    SetLogoAsyncImage(logoSrc: set.logoSrc, height: 100)
+                                    SetLogoAsyncImage(logoSrc: set.logoSrc, height: 100, brand: services.brandSettings.selectedCatalogBrand)
                                     Text(set.name)
                                         .font(.caption2)
                                         .foregroundStyle(.primary)

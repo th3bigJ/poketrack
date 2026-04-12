@@ -5,6 +5,7 @@ enum BrandCatalogMaintenance {
     static func purgeLocalData(for brand: TCGBrand) throws {
         try CatalogStore.shared.open()
         try CatalogStore.shared.purgeCatalogData(for: brand)
+        try OfflineImageStore.shared.deleteAll(for: brand)
         if brand == .onePiece {
             let docs = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
             let dir = docs.appendingPathComponent("onepiece", isDirectory: true)

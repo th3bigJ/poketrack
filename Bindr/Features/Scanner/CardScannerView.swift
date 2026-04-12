@@ -160,6 +160,7 @@ struct CardScannerView: View {
                             currentResultIndex: $currentResultIndex,
                             barDragOffset: $barDragOffset,
                             selectedVariantsByResultID: $selectedVariantsByResultID,
+                            offlinePackBrand: viewModel.scanBrand,
                             onSwipeUp: { showDetailSheet = true },
                             onOpenDetails: { showDetailSheet = true },
                             onAddAllToCollection: { showBulkAddSheet = true },
@@ -212,6 +213,7 @@ struct CardScannerView: View {
                     results: viewModel.scanResults,
                     currentResultIndex: $currentResultIndex,
                     selectedVariantsByResultID: selectedVariantsByResultID,
+                    offlinePackBrand: viewModel.scanBrand,
                     onPickAlternative: { id, picked in
                         viewModel.replaceScanResult(id: id, with: picked)
                     }
@@ -574,6 +576,8 @@ private struct ScannerResultsOverlay: View {
     @Binding var currentResultIndex: Int
     @Binding var barDragOffset: CGFloat
     @Binding var selectedVariantsByResultID: [UUID: String]
+    /// Franchise folder for offline pack lookup (matches active scanner catalog, not only `masterCardId` shape).
+    var offlinePackBrand: TCGBrand
     var onSwipeUp: () -> Void
     var onOpenDetails: () -> Void
     var onAddAllToCollection: () -> Void
@@ -612,6 +616,7 @@ private struct ScannerResultsOverlay: View {
                     ScanResultBar(
                         result: result,
                         isCurrentPage: i == currentResultIndex,
+                        offlinePackBrand: offlinePackBrand,
                         onPickAlternative: { picked in
                             onPickAlternative(result.id, picked)
                         },
@@ -707,6 +712,7 @@ private struct ScannerDetailSheet: View {
     let results: [ScanResult]
     @Binding var currentResultIndex: Int
     let selectedVariantsByResultID: [UUID: String]
+    var offlinePackBrand: TCGBrand
     let onPickAlternative: (UUID, Card) -> Void
 
     var body: some View {
@@ -724,6 +730,7 @@ private struct ScannerDetailSheet: View {
                     ScannerDetailPage(
                         card: result.card,
                         initialVariant: selectedVariantsByResultID[result.id],
+                        offlinePackBrand: offlinePackBrand,
                         headerHeight: headerHeight
                     )
                         .tag(i)
@@ -737,8 +744,12 @@ private struct ScannerDetailSheet: View {
             // Glass header overlaid on top
             HStack(alignment: .center, spacing: 10) {
                 Group {
-                    if let set = currentSet {
-                        SetLogoAsyncImage(logoSrc: set.logoSrc, height: 26)
+                    if let set = currentSet, let card = currentCard {
+                        SetLogoAsyncImage(
+                            logoSrc: set.logoSrc,
+                            height: 26,
+                            brand: offlinePackBrand
+                        )
                             .frame(maxWidth: 72, maxHeight: headerHeight - 14)
                     } else {
                         Color.clear.frame(width: 0, height: 1)
@@ -771,6 +782,7 @@ private struct ScannerDetailSheet: View {
 private struct ScannerDetailPage: View {
     let card: Card
     var initialVariant: String? = nil
+    var offlinePackBrand: TCGBrand
     var headerHeight: CGFloat = RootChromeEnvironment.searchBarStackHeight
     @State private var imageAppeared = false
 
@@ -779,7 +791,10 @@ private struct ScannerDetailPage: View {
             VStack(spacing: 0) {
                 ProgressiveAsyncImage(
                     lowResURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                    highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) }
+                    highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) },
+                    offlineLowRelativePath: card.imageLowSrc,
+                    offlineHighRelativePath: card.imageHighSrc,
+                    offlineBrand: offlinePackBrand
                 ) {
                     Color(uiColor: .tertiarySystemFill).aspectRatio(5/7, contentMode: .fit)
                 }

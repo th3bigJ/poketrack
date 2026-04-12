@@ -21,6 +21,8 @@ final class PricingService {
     /// Drops in-memory per-set pricing maps after a catalog purge or before a full re-download so SQLite stays authoritative.
     func clearSetPricingMemoryCache() {
         pricingCache.removeAll(keepingCapacity: false)
+        historyCache.removeAll(keepingCapacity: false)
+        trendsCache.removeAll(keepingCapacity: false)
     }
 
     private var cacheDirectory: URL {
@@ -289,11 +291,8 @@ final class PricingService {
         return onePiece ? "op:\(s)" : "pk:\(s)"
     }
 
-    /// Fetches price history for a card from the per-set file, looks up by card key.
+    /// Resolves price history from the per-set file (SQLite after daily sync, else network), looks up by card key.
     func priceHistory(for card: Card) async -> CardPriceHistory? {
-        let base = AppConfiguration.r2BaseURL
-        guard base.host != "invalid.local" else { return nil }
-
         let setCode = card.setCode.lowercased()
         let onePiece = Self.isOnePiecePriceKeyCard(card)
         let setMap = await loadSetHistoryMap(setCode: setCode, onePiece: onePiece)
@@ -306,11 +305,8 @@ final class PricingService {
         return parsed
     }
 
-    /// Fetches price trends for a card from the per-set file, looks up by card key.
+    /// Resolves price trends from the per-set file (SQLite after daily sync, else network), looks up by card key.
     func priceTrends(for card: Card) async -> CardPriceTrends? {
-        let base = AppConfiguration.r2BaseURL
-        guard base.host != "invalid.local" else { return nil }
-
         let setCode = card.setCode.lowercased()
         let onePiece = Self.isOnePiecePriceKeyCard(card)
         let setMap = await loadSetTrendsMap(setCode: setCode, onePiece: onePiece)
@@ -353,6 +349,16 @@ final class PricingService {
 
     private func loadSetHistoryMap(setCode: String, onePiece: Bool) async -> [String: [String: Any]] {
         let cacheKey = Self.historyTrendsCacheKey(setCode: setCode, onePiece: onePiece)
+        let catalogBrand: TCGBrand = onePiece ? .onePiece : .pokemon
+        try? CatalogStore.shared.open()
+        if let blob = CatalogStore.shared.fetchPriceHistoryData(setCode: setCode, brand: catalogBrand),
+           let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] {
+            let typed = root.compactMapValues { $0 as? [String: Any] }
+            if !typed.isEmpty {
+                historyCache[cacheKey] = typed
+                return typed
+            }
+        }
         if let cached = historyCache[cacheKey] { return cached }
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return [:] }
         if onePiece {
@@ -379,6 +385,16 @@ final class PricingService {
 
     private func loadSetTrendsMap(setCode: String, onePiece: Bool) async -> [String: [String: Any]] {
         let cacheKey = Self.historyTrendsCacheKey(setCode: setCode, onePiece: onePiece)
+        let catalogBrand: TCGBrand = onePiece ? .onePiece : .pokemon
+        try? CatalogStore.shared.open()
+        if let blob = CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: catalogBrand),
+           let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] {
+            let typed = root.compactMapValues { $0 as? [String: Any] }
+            if !typed.isEmpty {
+                trendsCache[cacheKey] = typed
+                return typed
+            }
+        }
         if let cached = trendsCache[cacheKey] { return cached }
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return [:] }
         if onePiece {

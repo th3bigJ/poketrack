@@ -243,8 +243,8 @@ struct CardBrowseDetailView: View {
                 if let set = currentSet { navigationPath.append(set) }
             } label: {
                 Group {
-                    if let set = currentSet {
-                        SetLogoAsyncImage(logoSrc: set.logoSrc, height: 26)
+                    if let set = currentSet, let card = currentCard {
+                        SetLogoAsyncImage(logoSrc: set.logoSrc, height: 26, brand: TCGBrand.inferredFromMasterCardId(card.masterCardId))
                             .frame(maxWidth: 72, maxHeight: headerHeight - 14)
                     } else {
                         Color.clear
@@ -447,7 +447,10 @@ private struct CardBrowseDetailPage: View {
             VStack(alignment: .leading, spacing: 0) {
                 ProgressiveAsyncImage(
                     lowResURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                    highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) }
+                    highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) },
+                    offlineLowRelativePath: card.imageLowSrc,
+                    offlineHighRelativePath: card.imageHighSrc,
+                    offlineBrand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
                 ) {
                     Color(uiColor: .tertiarySystemFill)
                         .aspectRatio(5/7, contentMode: .fit)

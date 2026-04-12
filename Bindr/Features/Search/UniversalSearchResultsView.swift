@@ -59,7 +59,7 @@ struct UniversalSearchResultsView: View {
                                 ForEach(matchingSets) { set in
                                     NavigationLink(value: SearchNavRoot.set(set)) {
                                         HStack(spacing: 12) {
-                                            SetLogoAsyncImage(logoSrc: set.logoSrc, height: 36)
+                                            SetLogoAsyncImage(logoSrc: set.logoSrc, height: 36, brand: services.brandSettings.selectedCatalogBrand)
                                                 .frame(width: 72, height: 36)
                                             VStack(alignment: .leading, spacing: 2) {
                                                 Text(set.name)
@@ -95,7 +95,11 @@ struct UniversalSearchResultsView: View {
                                         )
                                     ) {
                                         HStack(spacing: 12) {
-                                            CachedAsyncImage(url: AppConfiguration.pokemonArtURL(imageFileName: mon.imageUrl)) { img in
+                                            CachedAsyncImage(
+                                                url: AppConfiguration.pokemonArtURL(imageFileName: mon.imageUrl),
+                                                offlineRelativePath: AppConfiguration.pokemonArtRelativePath(imageFileName: mon.imageUrl),
+                                                offlineBrand: .pokemon
+                                            ) { img in
                                                 img.resizable().scaledToFit()
                                             } placeholder: {
                                                 Color.gray.opacity(0.12)

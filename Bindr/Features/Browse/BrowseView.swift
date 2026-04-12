@@ -15,7 +15,9 @@ struct CardGridCell: View {
         VStack(spacing: 4) {
             CachedAsyncImage(
                 url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                targetSize: Self.thumbnailSize
+                targetSize: Self.thumbnailSize,
+                offlineRelativePath: card.imageLowSrc,
+                offlineBrand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
             ) { img in
                 img.resizable().scaledToFit()
             } placeholder: {
@@ -75,6 +77,8 @@ struct BrowseView: View {
     @State private var isLoadingInitial = true
     @State private var isLoadingMore = false
     @State private var isPreparingFilterCatalog = false
+    /// Prevents concurrent `loadAllCards()` runs (background warm vs filter feed).
+    @State private var isLoadingFullCatalog = false
 
     private var columns: [GridItem] {
         Array(repeating: GridItem(.flexible(), spacing: 12), count: gridOptions.columnCount)
@@ -105,12 +109,16 @@ struct BrowseView: View {
         usesCatalogFeed ? catalogDisplayedCards : displayedCards
     }
 
+    /// Until `loadAllCards()` runs (filtered / sorted catalog feed), derive options from what is already loaded
+    /// so we never block launch on a full-catalog query; options grow as the user scrolls the shuffle feed.
     private var energyOptions: [String] {
-        Array(Set(allBrowseCards.flatMap(resolvedEnergyTypes(for:)))).sorted()
+        let source = allBrowseCards.isEmpty ? displayedCards : allBrowseCards
+        return Array(Set(source.flatMap(resolvedEnergyTypes(for:)))).sorted()
     }
 
     private var rarityOptions: [String] {
-        Array(Set(allBrowseCards.compactMap(\.rarity).map(trimmedValue(_:)))).sorted()
+        let source = allBrowseCards.isEmpty ? displayedCards : allBrowseCards
+        return Array(Set(source.compactMap(\.rarity).map(trimmedValue(_:)))).sorted()
     }
 
     var body: some View {
@@ -136,17 +144,31 @@ struct BrowseView: View {
         }
         .toolbar(.hidden, for: .navigationBar)
         .task(id: services.brandSettings.selectedCatalogBrand) {
-            await services.cardData.reloadAfterBrandChange()
+            // Launch pipeline already ran `loadSets` + warmed search; full `reloadAfterBrandChange()` would repeat that and freeze the UI.
+            if services.consumeLightBrowseTabEntryIfNeeded() {
+                services.cardData.resetBrowseFeedSessionOnly()
+            } else {
+                await services.cardData.reloadAfterBrandChange()
+            }
+            await Task.yield()
+            await Task.yield()
             await bootstrapFeed(forceReshuffle: true)
-            await ensureAllBrowseCardsLoaded()
+            // Loading *all* cards is only required for filtered / custom-sorted feed — not the default shuffle grid.
+            // A background `loadAllCards()` on the main actor still froze the UI; filter menus use `displayedCards`
+            // until a filtered feed loads the full list.
+            if usesCatalogFeed {
+                await ensureAllBrowseCardsLoaded(showsPreparingBanner: true)
+            }
         }
         .refreshable {
             await bootstrapFeed(forceReshuffle: true)
-            await ensureAllBrowseCardsLoaded()
+            if usesCatalogFeed {
+                await ensureAllBrowseCardsLoaded(showsPreparingBanner: true)
+            }
         }
         .task(id: filters) {
             if usesCatalogFeed {
-                await ensureAllBrowseCardsLoaded()
+                await ensureAllBrowseCardsLoaded(showsPreparingBanner: true)
                 await rebuildCatalogFeedIfNeeded()
             } else {
                 catalogOrderedCards = []
@@ -295,12 +317,22 @@ struct BrowseView: View {
         }
     }
 
-    private func ensureAllBrowseCardsLoaded() async {
-        guard allBrowseCards.isEmpty, !isPreparingFilterCatalog else { return }
-        isPreparingFilterCatalog = true
+    private func ensureAllBrowseCardsLoaded(showsPreparingBanner: Bool = true) async {
+        if !allBrowseCards.isEmpty { return }
+        while isLoadingFullCatalog {
+            try? await Task.sleep(nanoseconds: 25_000_000)
+        }
+        if !allBrowseCards.isEmpty { return }
+        isLoadingFullCatalog = true
+        if showsPreparingBanner {
+            isPreparingFilterCatalog = true
+        }
         let loaded = await services.cardData.loadAllCards()
         allBrowseCards = loaded
-        isPreparingFilterCatalog = false
+        isLoadingFullCatalog = false
+        if showsPreparingBanner {
+            isPreparingFilterCatalog = false
+        }
     }
 
     private func rebuildCatalogFeedIfNeeded() async {
@@ -463,7 +495,9 @@ private struct BrowseGridCardCell: View {
         VStack(spacing: 4) {
             CachedAsyncImage(
                 url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                targetSize: imageDecodeSize
+                targetSize: imageDecodeSize,
+                offlineRelativePath: card.imageLowSrc,
+                offlineBrand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
             ) { img in
                 img.resizable().scaledToFit()
             } placeholder: {

@@ -249,6 +249,22 @@ enum AppConfiguration {
         return imageURL(relativePath: "\(folder)/\(trimmed)")
     }
 
+    /// Same path logic as ``pokemonArtURL`` but returns the catalog-relative key used for offline packs (no host).
+    static func pokemonArtRelativePath(imageFileName: String) -> String {
+        let trimmed = imageFileName.trimmingCharacters(in: .whitespacesAndNewlines)
+        if trimmed.hasPrefix("http") {
+            return trimmed
+        }
+        if trimmed.contains("/") {
+            return trimmed.hasPrefix("/") ? String(trimmed.dropFirst()) : trimmed
+        }
+        let folder = plistOrEnvTrimmed("BINDR_R2_POKEMON_IMAGE_PREFIX") ?? "images/pokemon"
+        if folder.isEmpty {
+            return trimmed
+        }
+        return "\(folder)/\(trimmed)"
+    }
+
     /// Images and logos from JSON relative paths (`cards/foo.png`, `sets/logo/...`).
     static func imageURL(relativePath: String) -> URL {
         if relativePath.hasPrefix("http") {

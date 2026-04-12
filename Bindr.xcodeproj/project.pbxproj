@@ -155,7 +155,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Bindr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Bindr uses the camera to identify Pokémon cards.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Bindr uses the camera to identify TCG cards.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -194,7 +194,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = Bindr;
 				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.reference";
-				INFOPLIST_KEY_NSCameraUsageDescription = "Bindr uses the camera to identify Pokémon cards.";
+				INFOPLIST_KEY_NSCameraUsageDescription = "Bindr uses the camera to identify TCG cards.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

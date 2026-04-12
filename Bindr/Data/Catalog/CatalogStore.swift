@@ -6,7 +6,7 @@ private enum CatalogSQLite {
     static let transient: sqlite3_destructor_type = unsafeBitCast(-1, to: sqlite3_destructor_type.self)
 }
 
-/// Local SQLite catalog: sets, cards, per-set card pricing JSON, and daily blob payloads (Pokedata / trends).
+/// Local SQLite catalog: sets, cards, per-set card pricing JSON, per-set price history/trends JSON, and daily blob payloads (Pokedata / sealed aggregates).
 ///
 /// All `sqlite3_*` calls run on a **single serial queue**. Swift’s `actor` executor can hop OS threads
 /// between calls; that still satisfies SQLite’s mutex mode but can trigger internal `SQLITE_MISUSE`
@@ -81,6 +81,20 @@ final class CatalogStore: @unchecked Sendable {
             key TEXT PRIMARY KEY NOT NULL,
             json BLOB NOT NULL,
             fetched_at REAL NOT NULL
+        );
+        CREATE TABLE IF NOT EXISTS card_price_history (
+            brand TEXT NOT NULL,
+            set_code TEXT NOT NULL,
+            json BLOB NOT NULL,
+            fetched_at REAL NOT NULL,
+            PRIMARY KEY (brand, set_code)
+        );
+        CREATE TABLE IF NOT EXISTS card_price_trends (
+            brand TEXT NOT NULL,
+            set_code TEXT NOT NULL,
+            json BLOB NOT NULL,
+            fetched_at REAL NOT NULL,
+            PRIMARY KEY (brand, set_code)
         );
         """
         var err: UnsafeMutablePointer<CChar>?
@@ -213,6 +227,34 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    /// Returns set codes that are registered in `catalog_sets` but have no rows in `catalog_cards` for the given brand.
+    /// Used to detect sets whose card download failed during a previous sync (e.g. new set added but network timed out).
+    func fetchSetCodesWithNoCards(for brand: TCGBrand) throws -> [String] {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = """
+            SELECT s.set_code FROM catalog_sets s
+            WHERE s.brand = ?
+              AND NOT EXISTS (
+                SELECT 1 FROM catalog_cards c
+                WHERE c.brand = s.brand AND c.set_code = s.set_code
+              );
+            """
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
+                throw CatalogStoreError.prepareFailed
+            }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            var out: [String] = []
+            while sqlite3_step(stmt) == SQLITE_ROW {
+                guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                out.append(String(cString: c))
+            }
+            return out
+        }
+    }
+
     /// Deletes SQLite rows for one franchise only. Does **not** clear ``sync_meta`` (hash / ETag / fingerprint).
     /// Use before re-importing so a failed import can still resume skip logic on the next launch.
     func purgeCatalogTables(for brand: TCGBrand) throws {
@@ -223,6 +265,8 @@ final class CatalogStore: @unchecked Sendable {
                 "DELETE FROM catalog_cards WHERE brand = ?;",
                 "DELETE FROM catalog_sets WHERE brand = ?;",
                 "DELETE FROM card_pricing WHERE brand = ?;",
+                "DELETE FROM card_price_history WHERE brand = ?;",
+                "DELETE FROM card_price_trends WHERE brand = ?;",
             ] {
                 var stmt: OpaquePointer?
                 defer { sqlite3_finalize(stmt) }
@@ -451,6 +495,88 @@ final class CatalogStore: @unchecked Sendable {
             guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else {
                 return nil
             }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+            guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+            let n = sqlite3_column_bytes(stmt, 0)
+            guard let p = sqlite3_column_blob(stmt, 0) else { return nil }
+            return Data(bytes: p, count: Int(n))
+        }
+    }
+
+    /// Per-set price history JSON (`pricing/price-history/…` or ONE PIECE `pricing/history/…`), refreshed with daily market pricing after 03:00 local.
+    func upsertPriceHistory(setCode: String, json: Data, brand: TCGBrand) throws {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = """
+            INSERT INTO card_price_history(brand, set_code, json, fetched_at) VALUES(?, ?, ?, ?)
+            ON CONFLICT(brand, set_code) DO UPDATE SET json = excluded.json, fetched_at = excluded.fetched_at;
+            """
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+            if json.isEmpty {
+                _ = sqlite3_bind_blob(stmt, 3, nil, 0, CatalogSQLite.transient)
+            } else {
+                json.withUnsafeBytes { buf in
+                    _ = sqlite3_bind_blob(stmt, 3, buf.baseAddress, Int32(json.count), CatalogSQLite.transient)
+                }
+            }
+            _ = sqlite3_bind_double(stmt, 4, Date().timeIntervalSince1970)
+            guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
+        }
+    }
+
+    func fetchPriceHistoryData(setCode: String, brand: TCGBrand) -> Data? {
+        queue.sync {
+            guard let db else { return nil }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = "SELECT json FROM card_price_history WHERE brand = ? AND set_code = ? LIMIT 1;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { return nil }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+            guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }
+            let n = sqlite3_column_bytes(stmt, 0)
+            guard let p = sqlite3_column_blob(stmt, 0) else { return nil }
+            return Data(bytes: p, count: Int(n))
+        }
+    }
+
+    /// Per-set price trends JSON (`pricing/price-trends/…` or ONE PIECE `pricing/trends/…`), refreshed with daily market pricing after 03:00 local.
+    func upsertPriceTrends(setCode: String, json: Data, brand: TCGBrand) throws {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = """
+            INSERT INTO card_price_trends(brand, set_code, json, fetched_at) VALUES(?, ?, ?, ?)
+            ON CONFLICT(brand, set_code) DO UPDATE SET json = excluded.json, fetched_at = excluded.fetched_at;
+            """
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
+            if json.isEmpty {
+                _ = sqlite3_bind_blob(stmt, 3, nil, 0, CatalogSQLite.transient)
+            } else {
+                json.withUnsafeBytes { buf in
+                    _ = sqlite3_bind_blob(stmt, 3, buf.baseAddress, Int32(json.count), CatalogSQLite.transient)
+                }
+            }
+            _ = sqlite3_bind_double(stmt, 4, Date().timeIntervalSince1970)
+            guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
+        }
+    }
+
+    func fetchPriceTrendsData(setCode: String, brand: TCGBrand) -> Data? {
+        queue.sync {
+            guard let db else { return nil }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = "SELECT json FROM card_price_trends WHERE brand = ? AND set_code = ? LIMIT 1;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { return nil }
             brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
             setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
             guard sqlite3_step(stmt) == SQLITE_ROW else { return nil }

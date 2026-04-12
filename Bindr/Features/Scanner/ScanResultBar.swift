@@ -7,6 +7,8 @@ struct ScanResultBar: View {
     let result: ScanResult
     /// Only the centered page should show expanded UI; others stay compact while off-screen.
     var isCurrentPage: Bool
+    /// Offline image pack folder — use active scanner franchise (matches `CatalogStore` query), not only `masterCardId` shape.
+    var offlinePackBrand: TCGBrand
     /// Called when the user picks another catalog match from "Wrong card?".
     var onPickAlternative: (Card) -> Void
     /// Opens the full card detail sheet.
@@ -135,6 +137,7 @@ struct ScanResultBar: View {
         .sheet(isPresented: $showWrongCardSheet) {
             ScannerWrongCardAlternativesSheet(
                 alternatives: result.alternativeCards,
+                offlinePackBrand: offlinePackBrand,
                 onSelect: { picked in
                     onPickAlternative(picked)
                     showWrongCardSheet = false
@@ -149,7 +152,9 @@ struct ScanResultBar: View {
     private var cardThumbnail: some View {
         CachedAsyncImage(
             url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-            targetSize: CGSize(width: 52, height: 72)
+            targetSize: CGSize(width: 52, height: 72),
+            offlineRelativePath: card.imageLowSrc,
+            offlineBrand: offlinePackBrand
         ) { img in
             img.resizable()
                 .aspectRatio(contentMode: .fill)
@@ -352,6 +357,7 @@ struct ScannerWrongCardAlternativesSheet: View {
     @Environment(\.dismiss) private var dismiss
 
     let alternatives: [Card]
+    var offlinePackBrand: TCGBrand
     let onSelect: (Card) -> Void
 
     var body: some View {
@@ -374,7 +380,9 @@ struct ScannerWrongCardAlternativesSheet: View {
                                     HStack(spacing: 14) {
                                         CachedAsyncImage(
                                             url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                                            targetSize: CGSize(width: 44, height: 62)
+                                            targetSize: CGSize(width: 44, height: 62),
+                                            offlineRelativePath: card.imageLowSrc,
+                                            offlineBrand: offlinePackBrand
                                         ) { img in
                                             img
                                                 .resizable()

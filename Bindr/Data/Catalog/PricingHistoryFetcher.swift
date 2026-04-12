@@ -1,6 +1,6 @@
 import Foundation
 
-/// Large pricing-history JSON: fetch from R2 when needed (not stored in the main SQLite catalog).
+/// Large pricing-history JSON: primary copy is stored in SQLite (`card_price_history`) during daily market sync; network fetch is fallback.
 enum PricingHistoryFetcher {
     static func fetchJSON(
         session: URLSession = .shared,

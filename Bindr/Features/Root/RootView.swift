@@ -48,7 +48,8 @@ struct RootView: View {
     @Environment(\.modelContext) private var modelContext
     @State private var services = AppServices()
     @StateObject private var chromeScroll = ChromeScrollCoordinator()
-    @State private var selectedTab: AppTab = .browse
+    @State private var selectedTab: AppTab = .dashboard
+    @State private var sideMenuSheet: SideMenuSheet?
     @State private var universalQuery = ""
     @State private var showCardScanner = false
     @State private var browseFilters = BrowseCardGridFilters()
@@ -96,7 +97,21 @@ struct RootView: View {
     var body: some View {
         Group {
             if services.isReady {
-                mainContent
+                Group {
+                    if services.isLaunchCatalogPipelineComplete {
+                        mainContent
+                    } else {
+                        StartupBusyView(
+                            message: "Preparing your card data…",
+                            status: "Checking catalog updates and prices…"
+                        )
+                    }
+                }
+                .task {
+                    await Task.yield()
+                    await Task.yield()
+                    await services.bootstrapCatalogInBackgroundIfNeeded()
+                }
             } else {
                 Color(uiColor: .systemBackground)
                     .ignoresSafeArea()
@@ -162,6 +177,7 @@ struct RootView: View {
             SideMenuView(
                 isPresented: $isSideMenuOpen,
                 selectedTab: $selectedTab,
+                presentedSheet: $sideMenuSheet,
                 headerTopPadding: sideMenuHeaderTopPadding,
                 onPickSearch: {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
@@ -184,6 +200,8 @@ struct RootView: View {
                         ForEach(AppTab.allCases) { tab in
                             Group {
                                 switch tab {
+                                case .dashboard:
+                                    DashboardPlaceholderView()
                                 case .browse:
                                     NavigationStack(path: $browseNavigationPath) {
                                         BrowseView(
@@ -206,14 +224,8 @@ struct RootView: View {
                                     NavigationStack {
                                         CollectionListView()
                                     }
-                                case .transactions:
-                                    NavigationStack {
-                                        TransactionsView()
-                                    }
-                                case .account:
-                                    NavigationStack {
-                                        AccountView()
-                                    }
+                                case .bindrs:
+                                    BindrsPlaceholderView()
                                 }
                             }
                             .toolbarBackground(.hidden, for: .navigationBar)
@@ -476,8 +488,55 @@ struct RootView: View {
             )
             .environment(services)
         }
-        .task {
-            await services.bootstrapCatalogInBackgroundIfNeeded()
+        .fullScreenCover(item: $sideMenuSheet) { destination in
+            Group {
+                switch destination {
+                case .account:
+                    AccountView()
+                case .transactions:
+                    TransactionsView()
+                }
+            }
+            .environment(services)
+            .safeAreaInset(edge: .top, spacing: 0) {
+                HStack {
+                    Text(destination == .account ? "Account" : "Transactions")
+                        .font(.headline.weight(.semibold))
+                    Spacer()
+                    Button("Done") {
+                        sideMenuSheet = nil
+                    }
+                    .fontWeight(.semibold)
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 12)
+                .frame(maxWidth: .infinity)
+                .background(.bar)
+            }
+            .overlay {
+                if services.isCatalogDownloadInProgress {
+                    ZStack {
+                        Color.black.opacity(0.48)
+                            .ignoresSafeArea()
+                        if services.catalogDownloadShowsByteProgressUI {
+                            LoadingScreen(
+                                message: services.catalogDownloadMessage,
+                                status: services.catalogDownloadStatus,
+                                progress: services.catalogDownloadProgress,
+                                downloadedBytes: services.catalogDownloadDownloadedBytes,
+                                totalBytes: services.catalogDownloadEstimatedTotalBytes
+                            )
+                        } else {
+                            CatalogEnablingBusyView(
+                                message: services.catalogDownloadMessage,
+                                status: services.catalogDownloadStatus
+                            )
+                        }
+                    }
+                    .transition(.opacity)
+                }
+            }
+            .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
         }
     }
 

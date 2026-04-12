@@ -35,6 +35,11 @@ final class CardDataService {
         await loadSets(preferSyncedCatalog: false)
     }
 
+    /// Clears only the shuffled browse feed session (e.g. right after a catalog sync that already ran ``loadSets``). Avoids duplicate SQLite + search index work on tab entry.
+    func resetBrowseFeedSessionOnly() {
+        browseFeedSessionRefs = nil
+    }
+
     /// Loads the browse set list from the local SQLite catalog only (populated by ``CatalogSyncCoordinator``).
     func loadSets(preferSyncedCatalog: Bool = false) async {
         isLoading = true

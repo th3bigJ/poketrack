@@ -280,7 +280,9 @@ private struct BulkAddCardRow: View {
             HStack(alignment: .top, spacing: 12) {
                 CachedAsyncImage(
                     url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                    targetSize: CGSize(width: 44, height: 62)
+                    targetSize: CGSize(width: 44, height: 62),
+                    offlineRelativePath: card.imageLowSrc,
+                    offlineBrand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
                 ) { img in
                     img.resizable().aspectRatio(contentMode: .fill)
                 } placeholder: {

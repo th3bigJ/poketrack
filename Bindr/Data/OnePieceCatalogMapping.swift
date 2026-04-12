@@ -29,7 +29,7 @@ struct OnePieceSetRow: Codable, Sendable {
 }
 
 struct OnePieceCardDTO: Codable, Sendable {
-    let priceKey: String
+    let priceKey: String  // derived if absent in JSON: "\(setCode)::\(cardNumber)::\(variant)"
     let cardNumber: String
     let name: String
     let setCode: String
@@ -44,7 +44,7 @@ struct OnePieceCardDTO: Codable, Sendable {
     let subtypes: [String]?
     let effect: String?
     let scrydexSlug: String?
-    let imagePath: String
+    let imagePath: String?
 
     enum CodingKeys: String, CodingKey {
         case priceKey, cardNumber, name, setCode, tcgplayerProductId
@@ -54,7 +54,6 @@ struct OnePieceCardDTO: Codable, Sendable {
 
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
-        priceKey = try c.decode(String.self, forKey: .priceKey)
         cardNumber = try c.decode(String.self, forKey: .cardNumber)
         name = try c.decode(String.self, forKey: .name)
         setCode = try c.decode(String.self, forKey: .setCode)
@@ -66,6 +65,12 @@ struct OnePieceCardDTO: Codable, Sendable {
             tcgplayerProductId = nil
         }
         variant = try c.decodeIfPresent(String.self, forKey: .variant)
+        // `priceKey` was added retroactively; fall back to the canonical derived form used by older sets.
+        if let explicit = try c.decodeIfPresent(String.self, forKey: .priceKey), !explicit.isEmpty {
+            priceKey = explicit
+        } else {
+            priceKey = "\(setCode)::\(cardNumber)::\(variant ?? "normal")"
+        }
         rarity = try c.decodeIfPresent(String.self, forKey: .rarity)
         cardType = try c.decodeIfPresent([String].self, forKey: .cardType)
         color = try c.decodeIfPresent([String].self, forKey: .color)
@@ -74,7 +79,7 @@ struct OnePieceCardDTO: Codable, Sendable {
         subtypes = try c.decodeIfPresent([String].self, forKey: .subtypes)
         effect = try c.decodeIfPresent(String.self, forKey: .effect)
         scrydexSlug = try c.decodeIfPresent(String.self, forKey: .scrydexSlug)
-        imagePath = try c.decode(String.self, forKey: .imagePath)
+        imagePath = try c.decodeIfPresent(String.self, forKey: .imagePath)
     }
 }
 
@@ -105,7 +110,7 @@ enum OnePieceCatalogMapping {
             regulationMark: nil,
             evolveFrom: nil,
             artist: nil,
-            imageLowSrc: dto.imagePath,
+            imageLowSrc: dto.imagePath ?? "",
             imageHighSrc: nil,
             attacks: nil,
             rules: dto.effect,
