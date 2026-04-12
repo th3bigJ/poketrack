@@ -5,6 +5,7 @@ import SwiftData
 @Observable
 @MainActor
 final class AppServices {
+    let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
     let offlineImageSettings: OfflineImageSettings
     let offlineImageDownload: OfflineImageDownloadService
@@ -106,6 +107,7 @@ final class AppServices {
     }
 
     private func runStartupCatalogPipeline(updateBootstrapProgressUI: Bool) async {
+        await brandsManifest.refresh()
         if updateBootstrapProgressUI {
             bootstrapShowsDownloadProgressUI = false
             let enabled = brandSettings.enabledBrands
@@ -113,6 +115,8 @@ final class AppServices {
                 bootstrapMessage = "Updating ONE PIECE card data…"
             } else if enabled.count == 1, enabled.contains(.pokemon) {
                 bootstrapMessage = "Updating Pokémon card data…"
+            } else if enabled.count == 1, enabled.contains(.lorcana) {
+                bootstrapMessage = "Updating Lorcana card data…"
             } else {
                 bootstrapMessage = "Updating card data, please wait."
             }

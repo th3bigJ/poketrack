@@ -421,6 +421,13 @@ struct BrowseView: View {
             }
             return .pokemon
         }
+        if services.brandSettings.selectedCatalogBrand == .lorcana {
+            let category = card.category?.lowercased() ?? ""
+            if category.contains("character") {
+                return .pokemon
+            }
+            return .trainer
+        }
         let category = card.category?.lowercased() ?? ""
         if category.contains("trainer") || card.trainerType != nil {
             return .trainer

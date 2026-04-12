@@ -113,6 +113,40 @@ enum AppConfiguration {
         return r2OnePieceURL(path: "pricing/trends/\(stem).json")
     }
 
+    // MARK: - Disney Lorcana (same bucket pattern as ONE PIECE; root `lorcana/`)
+
+    static let r2LorcanaCatalogRoot = "lorcana"
+
+    static func r2LorcanaURL(path: String) -> URL {
+        url(prefix: r2LorcanaCatalogRoot, path: path)
+    }
+
+    static func r2LorcanaMarketPricingSetURL(setCodeStem: String) -> URL {
+        let stem = setCodeStem.trimmingCharacters(in: .whitespacesAndNewlines)
+        return r2LorcanaURL(path: "pricing/market/\(stem).json")
+    }
+
+    static func r2LorcanaPricingHistoryURL(setCodeStem: String) -> URL {
+        let stem = setCodeStem.trimmingCharacters(in: .whitespacesAndNewlines)
+        return r2LorcanaURL(path: "pricing/history/\(stem).json")
+    }
+
+    static func r2LorcanaPriceTrendsURL(setCodeStem: String) -> URL {
+        let stem = setCodeStem.trimmingCharacters(in: .whitespacesAndNewlines)
+        return r2LorcanaURL(path: "pricing/trends/\(stem).json")
+    }
+
+    /// Hosted list of franchises (order = carousel / Account). Default: `brands/data/brands.json` under ``r2BaseURL``.
+    static var brandsManifestURL: URL {
+        if hasPlistOrEnv("BINDR_BRANDS_MANIFEST_URL"),
+           let s = plistOrEnvTrimmed("BINDR_BRANDS_MANIFEST_URL"),
+           !s.isEmpty,
+           let u = URL(string: s) {
+            return u
+        }
+        return url(prefix: "", path: "brands/data/brands.json")
+    }
+
     static func r2PricingURL(path: String) -> URL {
         url(prefix: r2PricingPathPrefix, path: path)
     }

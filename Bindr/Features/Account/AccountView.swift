@@ -7,11 +7,9 @@ struct AccountView: View {
     @State private var showDataExport = false
     @State private var brandPendingDisable: TCGBrand?
 
-    /// Brands the user has not added yet (shown in the Add menu).
+    /// Brands the user has not added yet (shown in the Add menu). Order follows the hosted `brands.json`.
     private var brandsAvailableToAdd: [TCGBrand] {
-        TCGBrand.allCases
-            .filter { !services.brandSettings.enabledBrands.contains($0) }
-            .sorted(by: { $0.menuOrder < $1.menuOrder })
+        services.brandsManifest.brandsAvailableToAdd(enabled: services.brandSettings.enabledBrands)
     }
 
     var body: some View {
@@ -164,7 +162,7 @@ struct AccountView: View {
     }
 
     private func requestBrandRemoval(at offsets: IndexSet) {
-        let sorted = services.brandSettings.enabledBrands.sorted(by: { $0.menuOrder < $1.menuOrder })
+        let sorted = services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
         guard let index = offsets.first, sorted.indices.contains(index) else { return }
         brandPendingDisable = sorted[index]
     }
@@ -195,7 +193,7 @@ private struct CatalogSection: View {
     let onDelete: (IndexSet) -> Void
 
     private var sortedEnabled: [TCGBrand] {
-        services.brandSettings.enabledBrands.sorted(by: { $0.menuOrder < $1.menuOrder })
+        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
     }
 
     var body: some View {

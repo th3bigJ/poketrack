@@ -31,7 +31,7 @@ struct CardScannerView: View {
     @State private var showOnePieceDebugSheet = false
 
     private var enabledScanBrands: [TCGBrand] {
-        services.brandSettings.enabledBrands.sorted(by: { $0.menuOrder < $1.menuOrder })
+        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
     }
 
     private var needsScanBrandPick: Bool {
@@ -500,6 +500,7 @@ private struct ScannerBrandPickPanel: View {
         switch brand {
         case .pokemon: Image("BrandPokemonLogo")
         case .onePiece: Image("BrandOnePieceLogo")
+        case .lorcana: Image("lorcana")
         }
     }
 }

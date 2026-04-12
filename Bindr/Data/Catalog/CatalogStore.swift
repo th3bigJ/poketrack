@@ -293,6 +293,12 @@ final class CatalogStore: @unchecked Sendable {
                     "onepiece_catalog_sets_etag",
                     "onepiece_catalog_row_fingerprint",
                 ]
+            case .lorcana:
+                keys = [
+                    "lorcana_catalog_sets_sha256",
+                    "lorcana_catalog_sets_etag",
+                    "lorcana_catalog_row_fingerprint",
+                ]
             }
             for key in keys {
                 var stmt: OpaquePointer?

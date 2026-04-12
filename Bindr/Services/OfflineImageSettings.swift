@@ -7,6 +7,7 @@ import Observation
 final class OfflineImageSettings {
     private static let packPokemonKey = "offline_pack_pokemon"
     private static let packOnePieceKey = "offline_pack_onepiece"
+    private static let packLorcanaKey = "offline_pack_lorcana"
     private static let strictOfflineKey = "offline_strict_no_cdn"
 
     /// When true, the user wants that brand’s images downloaded and kept on disk (Wi‑Fi only).
@@ -24,6 +25,7 @@ final class OfflineImageSettings {
         offlinePackEnabled = [
             .pokemon: d.object(forKey: Self.packPokemonKey) as? Bool ?? false,
             .onePiece: d.object(forKey: Self.packOnePieceKey) as? Bool ?? false,
+            .lorcana: d.object(forKey: Self.packLorcanaKey) as? Bool ?? false,
         ]
     }
 
@@ -36,6 +38,7 @@ final class OfflineImageSettings {
         switch brand {
         case .pokemon: UserDefaults.standard.set(enabled, forKey: Self.packPokemonKey)
         case .onePiece: UserDefaults.standard.set(enabled, forKey: Self.packOnePieceKey)
+        case .lorcana: UserDefaults.standard.set(enabled, forKey: Self.packLorcanaKey)
         }
     }
 }
@@ -46,6 +49,7 @@ enum OfflinePackDownloadSizeCopy {
         switch brand {
         case .pokemon: return "~3.5 GB"
         case .onePiece: return "~700 MB"
+        case .lorcana: return "~600 MB"
         }
     }
 }

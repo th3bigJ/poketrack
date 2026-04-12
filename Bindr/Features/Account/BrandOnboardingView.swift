@@ -9,14 +9,14 @@ struct BrandOnboardingView: View {
         NavigationStack {
             List {
                 Section {
-                    Text("Turn on each game you want in your library. Pokémon is on by default; add ONE PIECE if you collect those cards. You can change this anytime in Account.")
+                    Text("Turn on each game you want in your library. Pokémon is on by default; add other games from the list if you collect them. You can change this anytime in Account.")
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                         .listRowBackground(Color.clear)
                         .listRowInsets(EdgeInsets(top: 8, leading: 0, bottom: 8, trailing: 0))
                 }
                 Section("Catalogs") {
-                    ForEach(TCGBrand.allCases.sorted(by: { $0.menuOrder < $1.menuOrder })) { brand in
+                    ForEach(services.brandsManifest.orderedBrands) { brand in
                         Toggle(
                             brand.displayTitle,
                             isOn: Binding(
@@ -35,7 +35,7 @@ struct BrandOnboardingView: View {
                         )
                     ) {
                         ForEach(
-                            services.brandSettings.enabledBrands.sorted(by: { $0.menuOrder < $1.menuOrder })
+                            services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
                         ) { b in
                             Text(b.displayTitle).tag(b)
                         }
