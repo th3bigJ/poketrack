@@ -690,20 +690,70 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             }
         }
 
-        let mergedNumbers = ScannerCompositeRanker.mergedNumberCandidates(primary: cardNumber, extras: numberCandidates)
-        if !mergedNumbers.isEmpty {
-            let threshold = 200_000
-            let numberScores = pool.map { card in
-                (card, ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: card, candidates: mergedNumbers))
+        if let subtype, !subtype.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            let scored = pool.map { card in
+                (card, ScannerCompositeRanker.onePieceSubtypeScoreDebug(ocrSubtype: subtype, card: card))
             }
-            let filtered = numberScores.filter { $0.1 >= threshold }.map(\.0)
+            let filtered = scored.filter { $0.1 > 0 }.map(\.0)
             if !filtered.isEmpty {
-                let best = numberScores.map(\.1).max() ?? 0
-                searchPath += " → filter(cardNumber fuzzy, threshold: \(threshold), best: \(best))"
+                let best = scored.map(\.1).max() ?? 0
+                searchPath += " → filter(subtype, best: \(best))"
                 pool = filtered
-            } else if let bestMatch = numberScores.max(by: { $0.1 < $1.1 }), bestMatch.1 > 0 {
-                searchPath += " → numberHint(best: \(bestMatch.0.cardNumber), score: \(bestMatch.1))"
             }
+        }
+
+        if let effectText, !effectText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            let scored = pool.map { card in
+                (card, ScannerCompositeRanker.onePieceEffectScoreDebug(ocrEffect: effectText, card: card))
+            }
+            let filtered = scored.filter { $0.1 > 0 }.map(\.0)
+            if !filtered.isEmpty {
+                let best = scored.map(\.1).max() ?? 0
+                searchPath += " → filter(effect, best: \(best))"
+                pool = filtered
+            }
+        }
+
+        let mergedNumbers = ScannerCompositeRanker.mergedNumberCandidates(primary: cardNumber, extras: numberCandidates)
+        let rankedByNumber = pool.sorted { a, b in
+            let sa = ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: a, candidates: mergedNumbers)
+            let sb = ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: b, candidates: mergedNumbers)
+            if sa != sb { return sa > sb }
+            let ta = ScannerCompositeRanker.onePieceTotalScoreDebug(
+                card: a,
+                ocrName: preferredNameQuery,
+                ocrSupertype: rawSupertype,
+                ocrCardNumber: cardNumber,
+                ocrSubtype: subtype,
+                ocrEffect: effectText,
+                numberCandidates: numberCandidates,
+                rawOCRBlob: rawOCRBlob
+            )
+            let tb = ScannerCompositeRanker.onePieceTotalScoreDebug(
+                card: b,
+                ocrName: preferredNameQuery,
+                ocrSupertype: rawSupertype,
+                ocrCardNumber: cardNumber,
+                ocrSubtype: subtype,
+                ocrEffect: effectText,
+                numberCandidates: numberCandidates,
+                rawOCRBlob: rawOCRBlob
+            )
+            if ta != tb { return ta > tb }
+            return a.masterCardId < b.masterCardId
+        }
+
+        if !mergedNumbers.isEmpty, let bestCard = rankedByNumber.first {
+            let best = ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: bestCard, candidates: mergedNumbers)
+            searchPath += " → rank(cardNumber closest, best: \(best), top: \(bestCard.cardNumber))"
+        }
+
+        let exactHashNumber = rankedByNumber.first.flatMap { ScannerCompositeRanker.exactOnePieceCardNumber($0.cardNumber) }
+        let hashCandidates: [Card]
+        if let exactHashNumber {
+            hashCandidates = rankedByNumber.filter { ScannerCompositeRanker.exactOnePieceCardNumber($0.cardNumber) == exactHashNumber }
+        } else {
+            hashCandidates = []
         }
 
         let rankedByText = ScannerCompositeRanker.rankOnePiece(
@@ -716,12 +766,30 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             numberCandidates: numberCandidates,
             rawOCRBlob: rawOCRBlob
         )
-        let hashRerank: OnePieceArtHashRerankResult? = if let captured = onePieceHashSourceImage, pool.count > 1 {
-            await OnePieceArtHashMatcher.shared.rerank(candidates: rankedByText, capturedImage: captured)
+
+        let rankedByTextIDs = Dictionary(uniqueKeysWithValues: rankedByText.enumerated().map { ($1.masterCardId, $0) })
+        let preHashRanked = rankedByNumber.sorted { a, b in
+            let sa = ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: a, candidates: mergedNumbers)
+            let sb = ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: b, candidates: mergedNumbers)
+            if sa != sb { return sa > sb }
+            let ia = rankedByTextIDs[a.masterCardId] ?? .max
+            let ib = rankedByTextIDs[b.masterCardId] ?? .max
+            if ia != ib { return ia < ib }
+            return a.masterCardId < b.masterCardId
+        }
+
+        let hashRerank: OnePieceArtHashRerankResult? = if let captured = onePieceHashSourceImage, hashCandidates.count > 1 {
+            await OnePieceArtHashMatcher.shared.rerank(candidates: hashCandidates, capturedImage: captured)
         } else {
             nil
         }
-        let ranked = hashRerank?.ranked ?? rankedByText
+        let ranked: [Card]
+        if let hashRerank {
+            let hashedIDs = Set(hashRerank.ranked.map(\.masterCardId))
+            ranked = hashRerank.ranked + preHashRanked.filter { !hashedIDs.contains($0.masterCardId) }
+        } else {
+            ranked = preHashRanked
+        }
 
         var searchSection = "\n--- Search ---\nPath: \(searchPath.isEmpty ? "(none)" : searchPath)\nPool: \(pool.count) cards\n"
 
@@ -738,7 +806,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
         if let hashRerank, !hashRerank.matches.isEmpty {
             searchSection += "\n--- Art Hash ---\n"
-            searchSection += "Compared corrected capture against \(hashRerank.matches.count) candidate arts.\n"
+            searchSection += "Compared corrected capture against \(hashRerank.matches.count) candidate arts with exact card number \(exactHashNumber ?? "∅").\n"
             for match in hashRerank.matches.prefix(8) {
                 searchSection += "  • dHash distance \(match.distance): \(match.card.masterCardId) — \(match.card.cardName)\n"
             }
@@ -1133,6 +1201,20 @@ private enum ScannerCompositeRanker {
         bestNumberScore(card: card, candidates: candidates)
     }
 
+    static func onePieceSubtypeScoreDebug(ocrSubtype: String?, card: Card) -> Int {
+        onePieceSubtypeScore(ocrSubtype: ocrSubtype, card: card)
+    }
+
+    static func onePieceEffectScoreDebug(ocrEffect: String?, card: Card) -> Int {
+        onePieceEffectScore(ocrEffect: ocrEffect, card: card)
+    }
+
+    static func exactOnePieceCardNumber(_ text: String?) -> String? {
+        guard let text else { return nil }
+        let normalized = ScannerCardNumberRanker.normalizedOnePieceExactID(text)
+        return normalized.isEmpty ? nil : normalized
+    }
+
     private static func onePieceSupertypeScore(ocrSupertype: String?, card: Card) -> Int {
         guard let raw = ocrSupertype?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty,
               let category = card.category?.trimmingCharacters(in: .whitespacesAndNewlines), !category.isEmpty else { return 0 }
@@ -1342,6 +1424,10 @@ private enum ScannerCardNumberRanker {
             if c.hasPrefix(fragment + "/") || c.hasPrefix(fragment) { return 380_000 }
         }
         return c.contains(o) ? 40_000 : 0
+    }
+
+    static func normalizedOnePieceExactID(_ text: String) -> String {
+        normalizedOnePieceID(text)
     }
 
     private static func onePieceStyleScore(ocr: String, catalog: String) -> Int {
