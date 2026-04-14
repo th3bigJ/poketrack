@@ -134,6 +134,46 @@ final class CardDataService {
         return out
     }
 
+    func loadAllBrowseFilterCards() async -> [BrowseFilterCard] {
+        do {
+            try CatalogStore.shared.open()
+            let cards = try CatalogStore.shared.fetchAllBrowseFilterCards(for: brandSettings.selectedCatalogBrand)
+            if !cards.isEmpty {
+                return cards
+            }
+        } catch {
+            // Fall through.
+        }
+
+        guard !sets.isEmpty else { return [] }
+        var out: [BrowseFilterCard] = []
+        for set in sets {
+            let cards = await loadCards(forSetCode: set.setCode)
+            out.reserveCapacity(out.count + cards.count)
+            out.append(contentsOf: cards.map { card in
+                BrowseFilterCard(
+                    masterCardId: card.masterCardId,
+                    setCode: card.setCode,
+                    cardNumber: card.cardNumber,
+                    cardName: card.cardName,
+                    rarity: card.rarity,
+                    category: card.category,
+                    elementTypes: card.elementTypes,
+                    trainerType: card.trainerType,
+                    energyType: card.energyType,
+                    regulationMark: card.regulationMark,
+                    artist: card.artist,
+                    subtype: card.subtype,
+                    subtypes: card.subtypes,
+                    weakness: card.weakness,
+                    resistance: card.resistance,
+                    pricingVariants: card.pricingVariants
+                )
+            })
+        }
+        return out
+    }
+
     /// Substring match on set name, code, or series (for universal search).
     func searchSets(matching query: String) -> [TCGSet] {
         let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()

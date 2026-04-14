@@ -11,6 +11,32 @@ struct CardAttack: Codable, Hashable, Sendable {
     let effect: String?
 }
 
+/// Lightweight metadata row used by browse filters so the app does not have to hold full `Card` payloads in memory.
+struct BrowseFilterCard: Codable, Identifiable, Hashable, Sendable {
+    var id: String { masterCardId }
+
+    let masterCardId: String
+    let setCode: String
+    let cardNumber: String
+    let cardName: String
+    let rarity: String?
+    let category: String?
+    let elementTypes: [String]?
+    let trainerType: String?
+    let energyType: String?
+    let regulationMark: String?
+    let artist: String?
+    let subtype: String?
+    let subtypes: [String]?
+    let weakness: String?
+    let resistance: String?
+    let pricingVariants: [String]?
+
+    var ref: CardRef {
+        CardRef(masterCardId: masterCardId, setCode: setCode)
+    }
+}
+
 struct Card: Codable, Identifiable, Hashable, Sendable {
     var id: String { masterCardId }
 

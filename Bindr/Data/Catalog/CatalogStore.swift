@@ -470,6 +470,26 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    func fetchAllBrowseFilterCards(for brand: TCGBrand) throws -> [BrowseFilterCard] {
+        try queue.sync {
+            guard let db else { throw CatalogStoreError.notOpen }
+            var stmt: OpaquePointer?
+            defer { sqlite3_finalize(stmt) }
+            let sql = "SELECT json FROM catalog_cards WHERE brand = ? ORDER BY set_code, master_card_id;"
+            guard sqlite3_prepare_v2(db, sql, -1, &stmt, nil) == SQLITE_OK else { throw CatalogStoreError.prepareFailed }
+            brand.rawValue.withCString { _ = sqlite3_bind_text(stmt, 1, $0, -1, CatalogSQLite.transient) }
+            var out: [BrowseFilterCard] = []
+            while sqlite3_step(stmt) == SQLITE_ROW {
+                guard let c = sqlite3_column_text(stmt, 0) else { continue }
+                let s = String(cString: c)
+                guard let d = s.data(using: .utf8),
+                      let card = try? jsonDecoder.decode(BrowseFilterCard.self, from: d) else { continue }
+                out.append(card)
+            }
+            return out
+        }
+    }
+
     /// Single card by catalog id for a known franchise (browse / wishlist resolve).
     func fetchCard(masterCardId: String, brand: TCGBrand) throws -> Card? {
         try queue.sync {

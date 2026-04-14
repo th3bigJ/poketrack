@@ -64,19 +64,21 @@ struct BrowseView: View {
     @Binding var filterResultCount: Int
     @Binding var filterEnergyOptions: [String]
     @Binding var filterRarityOptions: [String]
+    @Binding var filterTrainerTypeOptions: [String]
 
     @State private var shuffledRefs: [CardRef] = []
     @State private var nextRefIndex = 0
     @State private var displayedCards: [Card] = []
-    @State private var allBrowseCards: [Card] = []
-    @State private var catalogOrderedCards: [Card] = []
+    @State private var allBrowseFilterCards: [BrowseFilterCard] = []
+    @State private var catalogOrderedRefs: [CardRef] = []
     @State private var catalogDisplayedCards: [Card] = []
     @State private var catalogNextIndex = 0
     @State private var isLoadingInitial = true
     @State private var isLoadingMore = false
     @State private var isPreparingFilterCatalog = false
-    /// Prevents concurrent `loadAllCards()` runs (background warm vs filter feed).
+    /// Prevents concurrent full-filter-index loads (background warm vs active filter feed).
     @State private var isLoadingFullCatalog = false
+    @State private var gridResetToken = UUID()
 
     private var columns: [GridItem] {
         Array(repeating: GridItem(.flexible(), spacing: 12), count: gridOptions.columnCount)
@@ -96,7 +98,7 @@ struct BrowseView: View {
     }
 
     private var setNameByCode: [String: String] {
-        Dictionary(uniqueKeysWithValues: services.cardData.sets.map { ($0.setCode, $0.name) })
+        firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
     }
 
     private var usesCatalogFeed: Bool {
@@ -110,13 +112,21 @@ struct BrowseView: View {
     /// Until `loadAllCards()` runs (filtered / sorted catalog feed), derive options from what is already loaded
     /// so we never block launch on a full-catalog query; options grow as the user scrolls the shuffle feed.
     private var energyOptions: [String] {
-        let source = allBrowseCards.isEmpty ? displayedCards : allBrowseCards
-        return Array(Set(source.flatMap(resolvedEnergyTypes(for:)))).sorted()
+        if allBrowseFilterCards.isEmpty {
+            return Array(Set(displayedCards.flatMap(resolvedEnergyTypes(for:)))).sorted()
+        }
+        return Array(Set(allBrowseFilterCards.flatMap(resolvedEnergyTypes(for:)))).sorted()
     }
 
     private var rarityOptions: [String] {
-        let source = allBrowseCards.isEmpty ? displayedCards : allBrowseCards
-        return Array(Set(source.compactMap(\.rarity).map(trimmedValue(_:)))).sorted()
+        if allBrowseFilterCards.isEmpty {
+            return Array(Set(displayedCards.compactMap(\.rarity).map(trimmedValue(_:)))).sorted()
+        }
+        return Array(Set(allBrowseFilterCards.compactMap(\.rarity).map(trimmedValue(_:)))).sorted()
+    }
+
+    private var trainerTypeOptions: [String] {
+        Array(Set(allBrowseFilterCards.compactMap(\.trainerType).map(trimmedValue(_:)).filter { !$0.isEmpty })).sorted()
     }
 
     var body: some View {
@@ -151,41 +161,36 @@ struct BrowseView: View {
             await Task.yield()
             await Task.yield()
             await bootstrapFeed(forceReshuffle: true)
-            // Loading *all* cards is only required for filtered / custom-sorted feed — not the default shuffle grid.
-            // A background `loadAllCards()` on the main actor still froze the UI; filter menus use `displayedCards`
-            // until a filtered feed loads the full list.
             if usesCatalogFeed {
-                await ensureAllBrowseCardsLoaded(showsPreparingBanner: true)
+                await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
+                await rebuildCatalogFeedIfNeeded()
+            } else {
+                Task {
+                    await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: false)
+                }
             }
         }
         .refreshable {
             await bootstrapFeed(forceReshuffle: true)
             if usesCatalogFeed {
-                await ensureAllBrowseCardsLoaded(showsPreparingBanner: true)
+                await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
+                await rebuildCatalogFeedIfNeeded()
+            } else {
+                Task {
+                    await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: false)
+                }
             }
         }
         .task(id: filters) {
             if usesCatalogFeed {
-                await ensureAllBrowseCardsLoaded(showsPreparingBanner: true)
+                await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
                 await rebuildCatalogFeedIfNeeded()
             } else {
-                catalogOrderedCards = []
+                catalogOrderedRefs = []
                 catalogDisplayedCards = []
                 catalogNextIndex = 0
                 syncFilterMenuState()
             }
-        }
-        .onAppear {
-            syncFilterMenuState()
-        }
-        .onChange(of: visibleCards.count) { _, _ in
-            syncFilterMenuState()
-        }
-        .onChange(of: energyOptions) { _, _ in
-            syncFilterMenuState()
-        }
-        .onChange(of: rarityOptions) { _, _ in
-            syncFilterMenuState()
         }
     }
 
@@ -252,8 +257,13 @@ struct BrowseView: View {
             }
             .tabBarChromeFromScroll()
             .coordinateSpace(name: "scroll")
-            .onChange(of: filters) { _, _ in
-                proxy.scrollTo("grid-top", anchor: .top)
+            .onChange(of: gridResetToken) { _, _ in
+                Task { @MainActor in
+                    await Task.yield()
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        proxy.scrollTo("grid-top", anchor: .top)
+                    }
+                }
             }
         }
     }
@@ -271,25 +281,28 @@ struct BrowseView: View {
         let batch = Array(refs[..<firstEnd])
         nextRefIndex = firstEnd
         displayedCards = await services.cardData.cardsInOrder(refs: batch)
-        allBrowseCards = []
-        catalogOrderedCards = []
+        allBrowseFilterCards = []
+        catalogOrderedRefs = []
         catalogDisplayedCards = []
         catalogNextIndex = 0
         isLoadingInitial = false
         ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: 0, count: 24)
         prefetchNextWindow()
+        syncFilterMenuState()
     }
 
     private func loadNextPageIfNeeded() async {
         guard !isLoadingMore else { return }
         if usesCatalogFeed {
-            guard catalogNextIndex < catalogOrderedCards.count else { return }
+            guard catalogNextIndex < catalogOrderedRefs.count else { return }
             isLoadingMore = true
-            let end = min(catalogNextIndex + Self.pageSize, catalogOrderedCards.count)
-            let batch = Array(catalogOrderedCards[catalogNextIndex..<end])
+            let end = min(catalogNextIndex + Self.pageSize, catalogOrderedRefs.count)
+            let batch = Array(catalogOrderedRefs[catalogNextIndex..<end])
             catalogNextIndex = end
-            catalogDisplayedCards.append(contentsOf: batch)
+            let more = await services.cardData.cardsInOrder(refs: batch)
+            catalogDisplayedCards.append(contentsOf: more)
             isLoadingMore = false
+            syncFilterMenuState()
             return
         }
         guard nextRefIndex < shuffledRefs.count else { return }
@@ -301,6 +314,7 @@ struct BrowseView: View {
         displayedCards.append(contentsOf: more)
         isLoadingMore = false
         prefetchNextWindow()
+        syncFilterMenuState()
     }
 
     private func prefetchNextWindow() {
@@ -315,63 +329,66 @@ struct BrowseView: View {
         }
     }
 
-    private func ensureAllBrowseCardsLoaded(showsPreparingBanner: Bool = true) async {
-        if !allBrowseCards.isEmpty { return }
+    private func ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: Bool = true) async {
+        if !allBrowseFilterCards.isEmpty { return }
         while isLoadingFullCatalog {
             try? await Task.sleep(nanoseconds: 25_000_000)
         }
-        if !allBrowseCards.isEmpty { return }
+        if !allBrowseFilterCards.isEmpty { return }
         isLoadingFullCatalog = true
         if showsPreparingBanner {
             isPreparingFilterCatalog = true
         }
-        let loaded = await services.cardData.loadAllCards()
-        allBrowseCards = loaded
+        let loaded = await services.cardData.loadAllBrowseFilterCards()
+        allBrowseFilterCards = loaded
         isLoadingFullCatalog = false
         if showsPreparingBanner {
             isPreparingFilterCatalog = false
         }
+        syncFilterMenuState()
     }
 
     private func rebuildCatalogFeedIfNeeded() async {
         if usesCatalogFeed == false {
-            catalogOrderedCards = []
+            catalogOrderedRefs = []
             catalogDisplayedCards = []
             catalogNextIndex = 0
             syncFilterMenuState()
             return
         }
-        guard !allBrowseCards.isEmpty else { return }
-        let ordered = orderedFilteredCards(from: allBrowseCards)
-        catalogOrderedCards = ordered
+        guard !allBrowseFilterCards.isEmpty else { return }
+        let ordered = orderedFilteredRefs(from: allBrowseFilterCards)
+        catalogOrderedRefs = ordered
         let initialEnd = min(Self.catalogInitialBatchSize, ordered.count)
-        catalogDisplayedCards = Array(ordered.prefix(initialEnd))
+        let initialRefs = Array(ordered.prefix(initialEnd))
+        catalogDisplayedCards = await services.cardData.cardsInOrder(refs: initialRefs)
         catalogNextIndex = initialEnd
+        gridResetToken = UUID()
         syncFilterMenuState()
     }
 
-    private func orderedFilteredCards(from cards: [Card]) -> [Card] {
+    private func orderedFilteredRefs(from cards: [BrowseFilterCard]) -> [CardRef] {
         let filtered = filterCards(cards)
         switch filters.sortBy {
         case .random:
-            // Preserve the same shuffled order used by the unfiltered feed.
-            let byID = Dictionary(uniqueKeysWithValues: filtered.map { ($0.masterCardId, $0) })
-            let shuffled = shuffledRefs.compactMap { byID[$0.masterCardId] }
-            // Fall back for any filtered cards not present in shuffledRefs.
+            let filteredIDs = Set(filtered.map(\.masterCardId))
+            let shuffled = shuffledRefs.filter { filteredIDs.contains($0.masterCardId) }
             let covered = Set(shuffled.map(\.masterCardId))
-            let remainder = filtered.filter { !covered.contains($0.masterCardId) }
+            let remainder = Array(filtered.lazy.filter { !covered.contains($0.masterCardId) }.map(\.ref))
             return shuffled + remainder
         case .newestSet:
-            return sortCardsByReleaseDateNewestFirst(filtered, sets: services.cardData.sets)
+            return sortBrowseFilterCardsByReleaseDateNewestFirst(filtered, sets: services.cardData.sets).map(\.ref)
         case .cardName:
-            return filtered.sorted { $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending }
+            return filtered
+                .sorted { $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending }
+                .map(\.ref)
         case .cardNumber:
             return filtered.sorted {
                 if $0.setCode != $1.setCode {
                     return compareReleaseDateNewestFirst(lhsSetCode: $0.setCode, rhsSetCode: $1.setCode)
                 }
                 return $0.cardNumber.localizedStandardCompare($1.cardNumber) == .orderedAscending
-            }
+            }.map(\.ref)
         case .rarity:
             return filtered.sorted {
                 let left = $0.rarity?.lowercased() ?? ""
@@ -380,11 +397,11 @@ struct BrowseView: View {
                     return left.localizedStandardCompare(right) == .orderedDescending
                 }
                 return $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending
-            }
+            }.map(\.ref)
         }
     }
 
-    private func filterCards(_ cards: [Card]) -> [Card] {
+    private func filterCards(_ cards: [BrowseFilterCard]) -> [BrowseFilterCard] {
         cards.filter { card in
             if filters.cardTypes.isEmpty == false && filters.cardTypes.contains(resolvedCardType(for: card)) == false {
                 return false
@@ -407,11 +424,17 @@ struct BrowseView: View {
                     return false
                 }
             }
+            if filters.trainerTypes.isEmpty == false {
+                let trainerType = trimmedValue(card.trainerType)
+                if trainerType.isEmpty || filters.trainerTypes.contains(trainerType) == false {
+                    return false
+                }
+            }
             return true
         }
     }
 
-    private func resolvedCardType(for card: Card) -> BrowseCardTypeFilter {
+    private func resolvedCardType(for card: BrowseFilterCard) -> BrowseCardTypeFilter {
         if services.brandSettings.selectedCatalogBrand == .onePiece {
             let category = card.category?.lowercased() ?? ""
             if category.contains("event") {
@@ -434,6 +457,23 @@ struct BrowseView: View {
             return .energy
         }
         return .pokemon
+    }
+
+    private func resolvedEnergyTypes(for card: BrowseFilterCard) -> [String] {
+        var values = Set<String>()
+        if let energyType = card.energyType {
+            let trimmed = trimmedValue(energyType)
+            if !trimmed.isEmpty {
+                values.insert(trimmed)
+            }
+        }
+        for type in card.elementTypes ?? [] {
+            let trimmed = trimmedValue(type)
+            if !trimmed.isEmpty {
+                values.insert(trimmed)
+            }
+        }
+        return Array(values)
     }
 
     private func resolvedEnergyTypes(for card: Card) -> [String] {
@@ -463,7 +503,7 @@ struct BrowseView: View {
     }
 
     private func compareReleaseDateNewestFirst(lhsSetCode: String, rhsSetCode: String) -> Bool {
-        let dates = Dictionary(uniqueKeysWithValues: services.cardData.sets.map { ($0.setCode, $0.releaseDate ?? "") })
+        let dates = firstValueMap(services.cardData.sets, key: \.setCode) { $0.releaseDate ?? "" }
         let lhs = dates[lhsSetCode] ?? ""
         let rhs = dates[rhsSetCode] ?? ""
         if lhs != rhs {
@@ -473,9 +513,10 @@ struct BrowseView: View {
     }
 
     private func syncFilterMenuState() {
-        filterResultCount = usesCatalogFeed ? catalogOrderedCards.count : visibleCards.count
+        filterResultCount = usesCatalogFeed ? catalogOrderedRefs.count : visibleCards.count
         filterEnergyOptions = energyOptions
         filterRarityOptions = rarityOptions
+        filterTrainerTypeOptions = trainerTypeOptions
     }
 }
 
@@ -595,7 +636,7 @@ private struct BrowseGridPriceText: View {
 
 private func sortCardsByReleaseDateNewestFirst(_ cards: [Card], sets: [TCGSet]) -> [Card] {
     guard !cards.isEmpty else { return cards }
-    let dates = Dictionary(uniqueKeysWithValues: sets.map { ($0.setCode, $0.releaseDate ?? "") })
+    let dates = firstValueMap(sets, key: \.setCode) { $0.releaseDate ?? "" }
     return cards.sorted { a, b in
         let da = dates[a.setCode] ?? ""
         let db = dates[b.setCode] ?? ""
@@ -607,6 +648,35 @@ private func sortCardsByReleaseDateNewestFirst(_ cards: [Card], sets: [TCGSet]) 
         }
         return a.cardNumber.localizedStandardCompare(b.cardNumber) == .orderedAscending
     }
+}
+
+private func sortBrowseFilterCardsByReleaseDateNewestFirst(_ cards: [BrowseFilterCard], sets: [TCGSet]) -> [BrowseFilterCard] {
+    guard !cards.isEmpty else { return cards }
+    let dates = firstValueMap(sets, key: \.setCode) { $0.releaseDate ?? "" }
+    return cards.sorted { a, b in
+        let da = dates[a.setCode] ?? ""
+        let db = dates[b.setCode] ?? ""
+        if da != db {
+            return da > db
+        }
+        if a.setCode != b.setCode {
+            return a.setCode.localizedStandardCompare(b.setCode) == .orderedAscending
+        }
+        return a.cardNumber.localizedStandardCompare(b.cardNumber) == .orderedAscending
+    }
+}
+
+private func firstValueMap<Input, Key: Hashable, Value>(
+    _ values: [Input],
+    key: KeyPath<Input, Key>,
+    value: (Input) -> Value
+) -> [Key: Value] {
+    var out: [Key: Value] = [:]
+    out.reserveCapacity(values.count)
+    for item in values where out[item[keyPath: key]] == nil {
+        out[item[keyPath: key]] = value(item)
+    }
+    return out
 }
 
 // MARK: - Set cards
@@ -720,7 +790,8 @@ struct DexCardsView: View {
             isFilterMenuPresented: .constant(false),
             filterResultCount: .constant(0),
             filterEnergyOptions: .constant([]),
-            filterRarityOptions: .constant([])
+            filterRarityOptions: .constant([]),
+            filterTrainerTypeOptions: .constant([])
         )
     }
         .environment(AppServices())

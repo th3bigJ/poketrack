@@ -56,6 +56,7 @@ struct RootView: View {
     @State private var browseFilterResultCount = 0
     @State private var browseFilterEnergyOptions: [String] = []
     @State private var browseFilterRarityOptions: [String] = []
+    @State private var browseFilterTrainerTypeOptions: [String] = []
     @State private var isSideMenuOpen = false
     @State private var isSearchExperiencePresented = false
     /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar`; detail uses the same `NavigationStack` bar as Browse (`DexCardsView` / `SetCardsView`).
@@ -213,7 +214,8 @@ struct RootView: View {
                                             isFilterMenuPresented: .constant(false),
                                             filterResultCount: $browseFilterResultCount,
                                             filterEnergyOptions: $browseFilterEnergyOptions,
-                                            filterRarityOptions: $browseFilterRarityOptions
+                                            filterRarityOptions: $browseFilterRarityOptions,
+                                            filterTrainerTypeOptions: $browseFilterTrainerTypeOptions
                                         )
                                     }
                                 case .wishlist:
@@ -575,9 +577,6 @@ struct RootView: View {
             .menuActionDismissBehavior(.disabled)
             .menuOrder(.fixed)
 
-            Toggle("Rare + only", isOn: $browseFilters.rarePlusOnly)
-            Toggle("Hide owned", isOn: $browseFilters.hideOwned)
-
             Menu(menuTitle(services.brandSettings.selectedCatalogBrand.energyFilterMenuTitle, summary: selectionSummary(for: browseFilters.energyTypes))) {
                 if browseFilterEnergyOptions.isEmpty {
                     Text("No options available")
@@ -601,6 +600,25 @@ struct RootView: View {
             }
             .menuActionDismissBehavior(.disabled)
             .menuOrder(.fixed)
+
+            if services.brandSettings.selectedCatalogBrand == .pokemon {
+                Menu(menuTitle("Trainer type", summary: selectionSummary(for: browseFilters.trainerTypes))) {
+                    if browseFilterTrainerTypeOptions.isEmpty {
+                        Text("No trainer types available")
+                    } else {
+                        ForEach(browseFilterTrainerTypeOptions, id: \.self) { trainerType in
+                            Toggle(trainerType, isOn: binding(for: trainerType, keyPath: \.trainerTypes))
+                        }
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+            }
+        }
+
+        Section("Collection") {
+            Toggle("Rare + only", isOn: $browseFilters.rarePlusOnly)
+            Toggle("Hide owned", isOn: $browseFilters.hideOwned)
         }
 
         Section("Grid options") {
