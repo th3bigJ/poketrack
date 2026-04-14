@@ -27,8 +27,11 @@ private final class ImageLoader {
         }
 
         let previousStrict = lastAppliedStrict
-        if url == currentURL, image != nil, previousStrict == strictOfflineNoCDN {
-            return
+        // Skip restart if: already loaded, or load in progress for same URL with same strict policy
+        if url == currentURL, previousStrict == strictOfflineNoCDN {
+            if image != nil || loadTask != nil {
+                return
+            }
         }
         lastAppliedStrict = strictOfflineNoCDN
 

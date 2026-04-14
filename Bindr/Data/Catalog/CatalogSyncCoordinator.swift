@@ -247,6 +247,8 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             try store.setMeta("catalog_import_at", String(Date().timeIntervalSince1970))
         } catch {
             // Leave DB partial or empty; UI can fall back to network.
+            // Mark sync as failed so next launch retries
+            try? store.setMeta("sync_failed", "1")
         }
     }
 
@@ -407,6 +409,8 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             try store.setMeta("onepiece_catalog_row_fingerprint", rowFingerprint)
         } catch {
             // Leave partial; browse may be empty until next sync.
+            // Mark sync as failed so next launch retries
+            try? store.setMeta("sync_failed", "1")
         }
     }
 
@@ -559,6 +563,8 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             try store.setMeta("lorcana_catalog_row_fingerprint", rowFingerprint)
         } catch {
             // Leave partial; browse may be empty until next sync.
+            // Mark sync as failed so next launch retries
+            try? store.setMeta("sync_failed", "1")
         }
     }
 

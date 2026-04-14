@@ -52,6 +52,7 @@ final class CatalogStore: @unchecked Sendable {
         }
         sqlite3_exec(db, "PRAGMA journal_mode=WAL;", nil, nil, nil)
         sqlite3_exec(db, "PRAGMA foreign_keys=ON;", nil, nil, nil)
+        sqlite3_exec(db, "PRAGMA busy_timeout = 5000;", nil, nil, nil)
     }
 
     private func migrateLocked() throws {
@@ -352,6 +353,12 @@ final class CatalogStore: @unchecked Sendable {
     func insertCards(_ cards: [Card], setCode: String, brand: TCGBrand) throws {
         try queue.sync {
             guard let db else { throw CatalogStoreError.notOpen }
+            // Begin transaction for batch insert
+            guard sqlite3_exec(db, "BEGIN IMMEDIATE;", nil, nil, nil) == SQLITE_OK else { throw CatalogStoreError.execFailed }
+            defer {
+                // Ensure transaction is ended even if we throw
+                sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+            }
             var stmt: OpaquePointer?
             defer { sqlite3_finalize(stmt) }
             let sql = """
@@ -367,7 +374,14 @@ final class CatalogStore: @unchecked Sendable {
                 setCode.withCString { _ = sqlite3_bind_text(stmt, 2, $0, -1, CatalogSQLite.transient) }
                 card.masterCardId.withCString { _ = sqlite3_bind_text(stmt, 3, $0, -1, CatalogSQLite.transient) }
                 j.withCString { _ = sqlite3_bind_text(stmt, 4, $0, -1, CatalogSQLite.transient) }
-                guard sqlite3_step(stmt) == SQLITE_DONE else { throw CatalogStoreError.execFailed }
+                guard sqlite3_step(stmt) == SQLITE_DONE else {
+                    sqlite3_exec(db, "ROLLBACK;", nil, nil, nil)
+                    throw CatalogStoreError.execFailed
+                }
+            }
+            // Commit transaction
+            guard sqlite3_exec(db, "COMMIT;", nil, nil, nil) == SQLITE_OK else {
+                throw CatalogStoreError.execFailed
             }
         }
     }
