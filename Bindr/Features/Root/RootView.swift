@@ -68,6 +68,9 @@ struct RootView: View {
     @State private var showBrandOnboarding = false
     @FocusState private var searchFieldFocused: Bool
 
+    // MARK: - Splash Flow
+    @State private var showSplash = true
+
     /// True when search has pushed into a detail view — hide the floating `UniversalSearchBar` (detail uses system nav, same as Browse Pokémon).
     private var isSearchDetailActive: Bool {
         isSearchExperiencePresented && !searchNavigationPath.isEmpty
@@ -153,12 +156,34 @@ struct RootView: View {
                 .environment(services)
         }
         .onChange(of: services.brandSettings.hasCompletedBrandOnboarding) { _, completed in
-            showBrandOnboarding = !completed
+            // Only show brand onboarding if splash has been dismissed
+            if !showSplash {
+                showBrandOnboarding = !completed
+            }
         }
         .task(id: services.brandSettings.hasCompletedBrandOnboarding) {
             guard !services.brandSettings.hasCompletedBrandOnboarding else { return }
-            await Task.yield()
-            showBrandOnboarding = true
+            // Wait for splash to be dismissed before showing onboarding
+            if !showSplash {
+                await Task.yield()
+                showBrandOnboarding = true
+            }
+        }
+        // MARK: - Splash Overlay
+        .overlay {
+            if showSplash {
+                SplashView(onGetStarted: {
+                    withAnimation(.easeInOut(duration: 0.35)) {
+                        showSplash = false
+                        // Show existing brand onboarding if not completed
+                        if !services.brandSettings.hasCompletedBrandOnboarding {
+                            showBrandOnboarding = true
+                        }
+                    }
+                })
+                .transition(.opacity)
+                .zIndex(100)
+            }
         }
     }
 
