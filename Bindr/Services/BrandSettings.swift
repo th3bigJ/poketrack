@@ -15,18 +15,25 @@ final class BrandSettings {
 
     var enabledBrands: Set<TCGBrand> {
         didSet {
-            normalizeSelectionAfterEnabledChange()
             persist()
+            // Defer normalization so it doesn't mutate @Observable properties re-entrantly while
+            // SwiftUI is mid-render observing enabledBrands — that causes AttributeGraph crashes.
+            Task { @MainActor [weak self] in self?.normalizeSelectionAfterEnabledChange() }
         }
     }
 
     /// Browse tab / card grid uses this catalog.
     var selectedCatalogBrand: TCGBrand {
         didSet {
-            if !enabledBrands.contains(selectedCatalogBrand) {
-                selectedCatalogBrand = enabledBrands.sorted(by: { $0.menuOrder < $1.menuOrder }).first ?? .pokemon
-            }
             persist()
+            guard !enabledBrands.contains(selectedCatalogBrand) else { return }
+            // Defer to avoid writing selectedCatalogBrand from its own didSet — same reentrancy risk.
+            Task { @MainActor [weak self] in
+                guard let self else { return }
+                if !self.enabledBrands.contains(self.selectedCatalogBrand) {
+                    self.selectedCatalogBrand = self.enabledBrands.sorted(by: { $0.menuOrder < $1.menuOrder }).first ?? .pokemon
+                }
+            }
         }
     }
 
@@ -157,12 +164,16 @@ final class BrandSettings {
     }
 
     private func normalizeSelectionAfterEnabledChange() {
-        if enabledBrands.isEmpty {
-            enabledBrands = [.pokemon]
+        // Compute the normalized values first, then apply in one pass to avoid chained didSet
+        // mutations — writing enabledBrands from its own didSet re-enters @Observable tracking.
+        var brands = enabledBrands
+        if brands.isEmpty { brands = [.pokemon] }
+        var selected = selectedCatalogBrand
+        if !brands.contains(selected) {
+            selected = brands.sorted(by: { $0.menuOrder < $1.menuOrder }).first ?? .pokemon
         }
-        if !enabledBrands.contains(selectedCatalogBrand) {
-            selectedCatalogBrand = enabledBrands.sorted(by: { $0.menuOrder < $1.menuOrder }).first ?? .pokemon
-        }
+        if brands != enabledBrands { enabledBrands = brands }
+        if selected != selectedCatalogBrand { selectedCatalogBrand = selected }
     }
 
     private func persist() {

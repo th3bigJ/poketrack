@@ -447,10 +447,7 @@ private struct CardBrowseDetailPage: View {
             VStack(alignment: .leading, spacing: 0) {
                 ProgressiveAsyncImage(
                     lowResURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                    highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) },
-                    offlineLowRelativePath: card.imageLowSrc,
-                    offlineHighRelativePath: card.imageHighSrc,
-                    offlineBrand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
+                    highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) }
                 ) {
                     Color(uiColor: .tertiarySystemFill)
                         .aspectRatio(5/7, contentMode: .fit)

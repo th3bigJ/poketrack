@@ -33,9 +33,7 @@ struct BrowseAllPokemonView: View {
                             NavigationLink(value: item) {
                                 VStack(spacing: 6) {
                                     CachedAsyncImage(
-                                        url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl),
-                                        offlineRelativePath: AppConfiguration.pokemonArtRelativePath(imageFileName: item.imageUrl),
-                                        offlineBrand: .pokemon
+                                        url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl)
                                     ) { img in
                                         img.resizable().scaledToFit()
                                     } placeholder: {

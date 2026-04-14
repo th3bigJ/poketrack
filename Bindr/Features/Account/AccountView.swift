@@ -40,14 +40,11 @@ struct AccountView: View {
             }
             Button("Delete downloaded data", role: .destructive) {
                 services.brandSettings.setEnabled(brand, isOn: false)
-                services.offlineImageSettings.setOfflinePackEnabled(false, for: brand)
-                services.offlineImageDownload.cancelDownload(for: brand)
                 do {
                     try BrandCatalogMaintenance.purgeLocalData(for: brand)
                 } catch {
                     // Best-effort; UI still disables the brand.
                 }
-                services.offlineImageDownload.notifyPackMutated()
                 services.pricing.clearSetPricingMemoryCache()
                 if services.brandSettings.enabledBrands.contains(.pokemon) {
                     Task { await services.cardData.loadNationalDexPokemon() }
@@ -167,23 +164,6 @@ struct AccountView: View {
         brandPendingDisable = sorted[index]
     }
 
-    private func handleOfflinePackToggle(brand: TCGBrand, enabled: Bool) async {
-        if enabled {
-            services.offlineImageSettings.setOfflinePackEnabled(true, for: brand)
-            if brand == .pokemon {
-                await services.cardData.loadNationalDexPokemon()
-            }
-            await services.offlineImageDownload.runFullDownloadIfNeeded(
-                brand: brand,
-                nationalDexPokemon: services.cardData.nationalDexPokemon
-            )
-        } else {
-            services.offlineImageDownload.cancelDownload(for: brand)
-            try? OfflineImageStore.shared.deleteAll(for: brand)
-            services.offlineImageSettings.setOfflinePackEnabled(false, for: brand)
-            services.offlineImageDownload.notifyPackMutated()
-        }
-    }
 }
 
 private struct CatalogSection: View {
@@ -214,9 +194,6 @@ private struct CatalogSection: View {
             }
             .onDelete(perform: onDelete)
             .deleteDisabled(services.brandSettings.enabledBrands.count <= 1)
-            ForEach(sortedEnabled) { brand in
-                OfflinePackRow(brand: brand)
-            }
         } header: {
             HStack {
                 Text("Card catalog")
@@ -233,55 +210,8 @@ private struct CatalogSection: View {
                 .accessibilityHint(brandsAvailableToAdd.isEmpty ? "All available games are already in your catalog" : "Choose a game to download")
             }
         } footer: {
-            Text("Removing a game deletes its downloaded catalog from this device and hides those cards from browse, wishlist, and collection until you add the game again and download. Offline image downloads use Wi‑Fi only; when new cards arrive, their images are added automatically.")
+            Text("Removing a game deletes its downloaded catalog from this device and hides those cards from browse, wishlist, and collection until you add the game again and download.")
         }
     }
 }
 
-private struct OfflinePackRow: View {
-    @Environment(AppServices.self) private var services
-    let brand: TCGBrand
-
-    var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Toggle(isOn: Binding(
-                get: { services.offlineImageSettings.isOfflinePackEnabled(for: brand) },
-                set: { newValue in
-                    Task { await handleToggle(enabled: newValue) }
-                }
-            )) {
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Download \(brand.displayTitle) images for offline")
-                    Text("About \(OfflinePackDownloadSizeCopy.approximateLabel(for: brand))")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            let status = services.offlineImageDownload.statusLine[brand] ?? ""
-            if !status.isEmpty {
-                Text(status)
-                    .font(.caption2)
-                    .foregroundStyle(.tertiary)
-            }
-        }
-        .padding(.vertical, 4)
-    }
-
-    private func handleToggle(enabled: Bool) async {
-        if enabled {
-            services.offlineImageSettings.setOfflinePackEnabled(true, for: brand)
-            if brand == .pokemon {
-                await services.cardData.loadNationalDexPokemon()
-            }
-            await services.offlineImageDownload.runFullDownloadIfNeeded(
-                brand: brand,
-                nationalDexPokemon: services.cardData.nationalDexPokemon
-            )
-        } else {
-            services.offlineImageDownload.cancelDownload(for: brand)
-            try? OfflineImageStore.shared.deleteAll(for: brand)
-            services.offlineImageSettings.setOfflinePackEnabled(false, for: brand)
-            services.offlineImageDownload.notifyPackMutated()
-        }
-    }
-}

@@ -13,9 +13,7 @@ struct SideMenuView: View {
     var onPickSearch: () -> Void
 
     var body: some View {
-        // Read here so Observation tracks `strictOfflineImageMode` and the toggle stays in sync (not only inside Binding closures).
-        let strictOfflineMode = services.offlineImageSettings.strictOfflineImageMode
-        return VStack(alignment: .leading, spacing: 0) {
+        VStack(alignment: .leading, spacing: 0) {
             // Same horizontal inset as search bar (16). Row height 48 matches `UniversalSearchBar` leading control frames (48×48). Drawer uses `ignoresSafeArea(.top)` so `headerTopPadding` (safeArea + 8) isn’t stacked with an extra safe-area inset — that was pushing “Menu” lower than the X.
             HStack(alignment: .center) {
                 Text("Menu")
@@ -102,36 +100,6 @@ struct SideMenuView: View {
                             presentedSheet = .account
                         }
 
-                        Divider()
-                            .padding(.vertical, 12)
-                            .padding(.horizontal, 4)
-
-                        Toggle(isOn: Binding(
-                            get: { strictOfflineMode },
-                            set: { newValue in
-                                guard newValue else {
-                                    services.offlineImageSettings.strictOfflineImageMode = false
-                                    return
-                                }
-                                // Strict offline only makes sense once at least one catalog game has “download images” enabled.
-                                if !Self.hasOfflinePackEnabledForAnyCatalogBrand(services: services) {
-                                    close()
-                                    presentedSheet = .account
-                                    return
-                                }
-                                services.offlineImageSettings.strictOfflineImageMode = true
-                            }
-                        )) {
-                            VStack(alignment: .leading, spacing: 4) {
-                                Text("Offline mode")
-                                    .font(.body.weight(.medium))
-                                Text("Use only downloaded images. While on, card detail won’t fetch higher-resolution art from the network.")
-                                    .font(.caption)
-                                    .foregroundStyle(.secondary)
-                            }
-                        }
-                        .padding(.horizontal, 4)
-                        .padding(.top, 4)
                     }
                     .padding(.horizontal, 20)
                     .padding(.bottom, 32)
@@ -150,12 +118,6 @@ struct SideMenuView: View {
         }
     }
 
-    /// True when at least one game in **Card catalog** has “Download … images for offline” on (Account).
-    private static func hasOfflinePackEnabledForAnyCatalogBrand(services: AppServices) -> Bool {
-        let catalog = services.brandSettings.enabledBrands
-        let brands: [TCGBrand] = catalog.isEmpty ? Array(TCGBrand.allCases) : Array(catalog)
-        return brands.contains { services.offlineImageSettings.isOfflinePackEnabled(for: $0) }
-    }
 }
 
 private struct SideMenuRow: View {

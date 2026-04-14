@@ -7,8 +7,6 @@ import SwiftData
 final class AppServices {
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
-    let offlineImageSettings: OfflineImageSettings
-    let offlineImageDownload: OfflineImageDownloadService
     let cardData: CardDataService
     let pricing = PricingService()
     let cloudSettings: CloudSettingsService
@@ -56,9 +54,6 @@ final class AppServices {
         self.browseGridOptions = BrowseGridOptionsSettings(cloudSettings: cloudSettings)
         let brandSettings = BrandSettings()
         self.brandSettings = brandSettings
-        let offlineImageSettings = OfflineImageSettings()
-        self.offlineImageSettings = offlineImageSettings
-        self.offlineImageDownload = OfflineImageDownloadService(settings: offlineImageSettings)
         self.cardData = CardDataService(brandSettings: brandSettings)
         if brandSettings.hasCompletedBrandOnboarding && brandSettings.hasCompletedInitialAppBootstrap {
             isReady = true
@@ -185,14 +180,6 @@ final class AppServices {
             bootstrapStatus = "Card data is ready."
         }
 
-        // Offline pack reconciliation can take a long time (Wi‑Fi gated, many files). Do not block
-        // cold launch / tab interaction on it; it runs after the pipeline yields the main actor.
-        Task { @MainActor in
-            await offlineImageDownload.reconcileAfterCatalogSync(
-                enabledBrands: brandSettings.enabledBrands,
-                nationalDexPokemon: cardData.nationalDexPokemon
-            )
-        }
     }
 
     /// Runs after the user turns **on** a catalog in Account: network sync + reload browse data, with UI progress (`RootView` overlay).
@@ -242,13 +229,6 @@ final class AppServices {
         catalogDownloadProgress = 1
 
         isCatalogDownloadInProgress = false
-
-        Task { @MainActor in
-            await offlineImageDownload.reconcileAfterCatalogSync(
-                enabledBrands: brandSettings.enabledBrands,
-                nationalDexPokemon: cardData.nationalDexPokemon
-            )
-        }
     }
 
     /// Call this from your root view with the model context

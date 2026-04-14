@@ -15,9 +15,7 @@ struct CardGridCell: View {
         VStack(spacing: 4) {
             CachedAsyncImage(
                 url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                targetSize: Self.thumbnailSize,
-                offlineRelativePath: card.imageLowSrc,
-                offlineBrand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
+                targetSize: Self.thumbnailSize
             ) { img in
                 img.resizable().scaledToFit()
             } placeholder: {
@@ -502,9 +500,7 @@ private struct BrowseGridCardCell: View {
         VStack(spacing: 4) {
             CachedAsyncImage(
                 url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                targetSize: imageDecodeSize,
-                offlineRelativePath: card.imageLowSrc,
-                offlineBrand: TCGBrand.inferredFromMasterCardId(card.masterCardId)
+                targetSize: imageDecodeSize
             ) { img in
                 img.resizable().scaledToFit()
             } placeholder: {

@@ -19,6 +19,9 @@ final class OfflineImageDownloadService {
     private(set) var statusLine: [TCGBrand: String] = [:]
     /// Bumped when any pack write finishes so `CachedAsyncImage` can reload from disk.
     private(set) var packDataRevision: Int = 0
+    /// Brands with an active download task. Image views use this to prefer R2/cache over disk during
+    /// the download window, avoiding blank cells for not-yet-saved files.
+    private(set) var brandsDownloadingImages: Set<TCGBrand> = []
 
     private var downloadTasks: [TCGBrand: Task<Void, Never>] = [:]
 
@@ -26,7 +29,7 @@ final class OfflineImageDownloadService {
         self.settings = settings
         wifiMonitor.pathUpdateHandler = { [weak self] path in
             let ok = path.status == .satisfied
-            Task { @MainActor in
+            Task { @MainActor [weak self] in
                 self?.isWiFiAvailable = ok
             }
         }
@@ -65,6 +68,8 @@ final class OfflineImageDownloadService {
 
     private func performDownload(brand: TCGBrand, nationalDexPokemon: [NationalDexPokemon], pruneOrphans: Bool) async {
         guard settings.isOfflinePackEnabled(for: brand) else { return }
+        brandsDownloadingImages.insert(brand)
+        defer { brandsDownloadingImages.remove(brand) }
 
         let desired: [(String, URL)]
         do {
@@ -101,10 +106,7 @@ final class OfflineImageDownloadService {
         }
 
         let wifiWait: @Sendable () async -> Void = { [weak self] in
-            while await MainActor.run(body: {
-                guard let self else { return false }
-                return !self.isWiFiAvailable
-            }) {
+            while await MainActor.run(body: { [weak self] in self?.isWiFiAvailable == false }) {
                 if Task.isCancelled { return }
                 try? await Task.sleep(nanoseconds: 1_500_000_000)
             }

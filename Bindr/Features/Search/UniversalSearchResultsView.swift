@@ -96,9 +96,7 @@ struct UniversalSearchResultsView: View {
                                     ) {
                                         HStack(spacing: 12) {
                                             CachedAsyncImage(
-                                                url: AppConfiguration.pokemonArtURL(imageFileName: mon.imageUrl),
-                                                offlineRelativePath: AppConfiguration.pokemonArtRelativePath(imageFileName: mon.imageUrl),
-                                                offlineBrand: .pokemon
+                                                url: AppConfiguration.pokemonArtURL(imageFileName: mon.imageUrl)
                                             ) { img in
                                                 img.resizable().scaledToFit()
                                             } placeholder: {

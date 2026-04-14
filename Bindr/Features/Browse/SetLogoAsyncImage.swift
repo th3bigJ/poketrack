@@ -1,12 +1,10 @@
 import SwiftUI
 
-/// Set logos from R2 — prefers downloaded offline file when present; otherwise same candidate fallback as before.
+/// Set logos from R2 with candidate URL fallback.
 struct SetLogoAsyncImage: View {
     let logoSrc: String
     let height: CGFloat
     let brand: TCGBrand
-
-    @Environment(AppServices.self) private var services
 
     @State private var candidateIndex = 0
     @State private var lastFailureHandledAtIndex: Int?
@@ -24,13 +22,6 @@ struct SetLogoAsyncImage: View {
         Group {
             if trimmed.isEmpty {
                 Color.clear
-            } else if let local = OfflineImageStore.shared.localFileURL(relativePath: trimmed, brand: brand),
-                      let ui = UIImage(contentsOfFile: local.path) {
-                Image(uiImage: ui)
-                    .resizable()
-                    .scaledToFit()
-            } else if services.offlineImageSettings.strictOfflineImageMode {
-                Color.clear
             } else if candidateIndex < urls.count, !urls.isEmpty {
                 AsyncImage(url: urls[candidateIndex]) { phase in
                     switch phase {
@@ -61,7 +52,6 @@ struct SetLogoAsyncImage: View {
                 Color.clear
             }
         }
-        .id("\(trimmed)-\(services.offlineImageDownload.packDataRevision)-\(services.offlineImageSettings.strictOfflineImageMode)")
         .frame(maxWidth: .infinity, minHeight: height, maxHeight: height)
         .onChange(of: trimmed) { _, _ in
             candidateIndex = 0
@@ -75,8 +65,6 @@ struct SetSymbolAsyncImage: View {
     let symbolSrc: String
     let height: CGFloat
     let brand: TCGBrand
-
-    @Environment(AppServices.self) private var services
 
     @State private var candidateIndex = 0
     @State private var lastFailureHandledAtIndex: Int?
@@ -94,13 +82,6 @@ struct SetSymbolAsyncImage: View {
         Group {
             if trimmed.isEmpty {
                 Color.clear
-            } else if let local = OfflineImageStore.shared.localFileURL(relativePath: trimmed, brand: brand),
-                      let ui = UIImage(contentsOfFile: local.path) {
-                Image(uiImage: ui)
-                    .resizable()
-                    .scaledToFit()
-            } else if services.offlineImageSettings.strictOfflineImageMode {
-                Color.clear
             } else if candidateIndex < urls.count, !urls.isEmpty {
                 AsyncImage(url: urls[candidateIndex]) { phase in
                     switch phase {
@@ -131,7 +112,6 @@ struct SetSymbolAsyncImage: View {
                 Color.clear
             }
         }
-        .id("\(trimmed)-\(services.offlineImageDownload.packDataRevision)-\(services.offlineImageSettings.strictOfflineImageMode)")
         .frame(maxWidth: .infinity, minHeight: height, maxHeight: height)
         .onChange(of: trimmed) { _, _ in
             candidateIndex = 0

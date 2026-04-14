@@ -5,7 +5,10 @@
       "Bash(ls /Users/jordanhardcastle/repos/PokeTrack/PokeTrack/*.xcworkspace)",
       "Bash(python3 -m json.tool)",
       "Bash(python3 -c \"import json; data=json.load\\(open\\('/Users/jordanhardcastle/repos/tcg/onepiece/cards/data/OP15.json'\\)\\); print\\(type\\(data\\), len\\(data\\) if isinstance\\(data, list\\) else 'not a list'\\); print\\(str\\(data\\)[:500]\\)\")",
-      "Bash(python3 -c ':*)"
+      "Bash(python3 -c ':*)",
+      "Bash(mv pokemonL.imageset BrandPokemonLogo.imageset)",
+      "Bash(mv onepieceL.imageset BrandOnePieceLogo.imageset)",
+      "Bash(mv lorcanaL.imageset lorcana.imageset)"
     ]
   }
 }

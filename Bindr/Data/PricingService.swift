@@ -359,8 +359,13 @@ final class PricingService {
 
     private func loadSetHistoryMap(setCode: String, catalogBrand: TCGBrand) async -> [String: [String: Any]] {
         let cacheKey = Self.historyTrendsCacheKey(setCode: setCode, catalogBrand: catalogBrand)
-        try? CatalogStore.shared.open()
-        if let blob = CatalogStore.shared.fetchPriceHistoryData(setCode: setCode, brand: catalogBrand),
+        // Move the synchronous SQLite queue.sync call off the main actor so it doesn't block the UI
+        // or serialise concurrent card detail views behind each other during catalog sync.
+        let blob = await Task.detached(priority: .userInitiated) {
+            try? CatalogStore.shared.open()
+            return CatalogStore.shared.fetchPriceHistoryData(setCode: setCode, brand: catalogBrand)
+        }.value
+        if let blob,
            let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] {
             let typed = root.compactMapValues { $0 as? [String: Any] }
             if !typed.isEmpty {
@@ -406,8 +411,12 @@ final class PricingService {
 
     private func loadSetTrendsMap(setCode: String, catalogBrand: TCGBrand) async -> [String: [String: Any]] {
         let cacheKey = Self.historyTrendsCacheKey(setCode: setCode, catalogBrand: catalogBrand)
-        try? CatalogStore.shared.open()
-        if let blob = CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: catalogBrand),
+        // Move the synchronous SQLite queue.sync call off the main actor so it doesn't block the UI.
+        let blob = await Task.detached(priority: .userInitiated) {
+            try? CatalogStore.shared.open()
+            return CatalogStore.shared.fetchPriceTrendsData(setCode: setCode, brand: catalogBrand)
+        }.value
+        if let blob,
            let root = try? JSONSerialization.jsonObject(with: blob) as? [String: Any] {
             let typed = root.compactMapValues { $0 as? [String: Any] }
             if !typed.isEmpty {

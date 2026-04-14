@@ -658,6 +658,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             searchSection += "Ranked #2: \(second.masterCardId) — \(second.cardName) (score \(s2))\n"
         }
 
+        let finalSearchSection = searchSection
         await MainActor.run { [weak self] in
             guard let self else { return }
             scanState = .idle
@@ -665,12 +666,12 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             autoCaptureFrameCount = 0
             lastAutoCaptureTime = Date()
             if let newest = scanResults.first, newest.card.masterCardId == top.masterCardId {
-                self.setOnePieceDebug(debugHeader + searchSection + "\nResult: skipped duplicate (same card as previous scan).")
+                self.setOnePieceDebug(debugHeader + finalSearchSection + "\nResult: skipped duplicate (same card as previous scan).")
                 return
             }
             let result = ScanResult(card: top, alternativeCards: alternatives)
             scanResults.insert(result, at: 0)
-            self.setOnePieceDebug(debugHeader + searchSection + "\nResult: OK — match accepted.")
+            self.setOnePieceDebug(debugHeader + finalSearchSection + "\nResult: OK — match accepted.")
             onMatch?(result)
         }
     }
