@@ -29,13 +29,17 @@ enum CardOCRFieldExtractor {
         var centerSearchHint: String?
     }
 
-    /// ONE PIECE: title strip is in the **bottom ~20%** of the card (Vision `midY` ≤ ~0.20); includes type line, name, collector id.
+    /// ONE PIECE: OCR runs on the pre-cropped **bottom ~20%** strip of the card; includes type line, name, collector id.
     struct OnePieceExtractedFields {
         var name: String?
         /// e.g. Leader, Character, Event (as printed).
         var cardType: String?
+        /// e.g. Egghead, Straw Hat Crew (as printed on the line beneath the name).
+        var subtype: String?
         /// e.g. `EB01-001`, `OP01-001`
         var cardNumber: String?
+        /// Mid-card effect text / rules box, used for ranking after footer narrowing.
+        var effectText: String?
     }
 
     // MARK: - Regex
@@ -61,10 +65,18 @@ enum CardOCRFieldExtractor {
     private static let onePieceCardIdRegex = try! NSRegularExpression(
         pattern: #"\b([A-Z]{2,4}\d{1,3}-\d{2,4}[A-Za-z]?)\b"#
     )
+    /// Same collector id but with optional OCR-inserted spaces around the prefix / hyphen.
+    private static let onePieceLooseCardIdRegex = try! NSRegularExpression(
+        pattern: #"([A-Z]{1,4})\s*(\d{1,3})\s*-\s*(\d{2,4}[A-Za-z]?)"#
+    )
 
     private static let onePieceTypeTokens: [String] = [
         "leader", "character", "event", "stage", "don", "don!!"
     ]
+
+    private static let onePieceEffectLikeWordRegex = try! NSRegularExpression(
+        pattern: #"(?i)\b(?:trigger|when|your|opponent|activate|attacks?|attack|cost|life|cards?|character(?:s)?|play(?:ed)?|turn|blocker|rush|banish|draw|rested|ko|power)\b"#
+    )
 
     private static let noiseExactNames: Set<String> = [
         "basic", "basis", "basig", "basc",
@@ -166,35 +178,37 @@ enum CardOCRFieldExtractor {
         return ExtractedFields(name: name, hp: hp, setNumber: setNumber, illustrator: illustrator, centerSearchHint: centerSearchHint)
     }
 
-    /// Vision Y is 0 at bottom, 1 at top — bottom 20% of the card is `midY` ≤ this.
-    private static let onePieceBottomBandMaxY: CGFloat = 0.22
-
-    static func extractOnePiece(from observations: [VNRecognizedTextObservation]) -> OnePieceExtractedFields {
+    static func extractOnePiece(
+        from observations: [VNRecognizedTextObservation],
+        effectObservations: [VNRecognizedTextObservation] = []
+    ) -> OnePieceExtractedFields {
         let lines: [OCRLine] = observations.compactMap { obs in
             guard let recognized = obs.topCandidates(1).first else { return nil }
             let text = recognized.string.trimmingCharacters(in: .whitespacesAndNewlines)
             guard !text.isEmpty else { return nil }
             return OCRLine(text: text, boundingBox: obs.boundingBox)
         }
-        let bottom = lines.filter { $0.midY <= onePieceBottomBandMaxY }
-        guard !bottom.isEmpty else {
-            return OnePieceExtractedFields(name: nil, cardType: nil, cardNumber: nil)
+        let effectLines: [OCRLine] = effectObservations.compactMap { obs in
+            guard let recognized = obs.topCandidates(1).first else { return nil }
+            let text = recognized.string.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !text.isEmpty else { return nil }
+            return OCRLine(text: text, boundingBox: obs.boundingBox)
+        }
+        // Still-image scanning already crops to the bottom 20% strip before Vision runs.
+        // Re-filtering by `midY` here would wrongly shrink the usable area to only the
+        // bottom edge of that strip, causing valid name/type lines to be discarded.
+        guard !lines.isEmpty else {
+            return OnePieceExtractedFields(name: nil, cardType: nil, subtype: nil, cardNumber: nil, effectText: extractOnePieceEffectHint(from: effectLines))
         }
 
         var cardNumber: String?
-        for line in bottom {
-            let ns = line.text as NSString
-            let full = NSRange(location: 0, length: ns.length)
-            if let m = onePieceCardIdRegex.firstMatch(in: line.text, range: full),
-               m.numberOfRanges >= 2,
-               let r = Range(m.range(at: 1), in: line.text) {
-                cardNumber = String(line.text[r])
-                break
-            }
+        let cardNumberLine = bestOnePieceCardNumberLine(from: lines)
+        if let numberLine = cardNumberLine {
+            cardNumber = normalizedOnePieceCardNumber(from: numberLine.text)
         }
 
         var cardType: String?
-        for line in bottom.sorted(by: { $0.midY < $1.midY }) {
+        for line in lines.sorted(by: { $0.midY > $1.midY }) {
             let t = line.text.trimmingCharacters(in: .whitespacesAndNewlines)
             let lower = t.lowercased()
             guard t.count >= 3 else { continue }
@@ -204,18 +218,29 @@ enum CardOCRFieldExtractor {
             }
         }
 
-        let nameCandidates = bottom.filter { line in
-            let t = line.text.trimmingCharacters(in: .whitespacesAndNewlines)
-            guard t.count >= 3, t.rangeOfCharacter(from: .letters) != nil else { return false }
-            let ns = t as NSString
-            if onePieceCardIdRegex.firstMatch(in: t, range: NSRange(location: 0, length: ns.length)) != nil { return false }
-            let lower = t.lowercased()
-            if onePieceTypeTokens.contains(where: { lower.hasPrefix($0) || lower == $0 }) { return false }
-            return true
+        let identityLines = lines.filter { line in
+            isOnePieceIdentityLineCandidate(line, cardNumberLine: cardNumberLine)
         }
-        let name = pickBestNameLine(from: nameCandidates)
+        let stackedIdentityLines = identityLines.sorted { a, b in
+            if abs(a.midY - b.midY) > 0.02 { return a.midY > b.midY }
+            if abs(a.midX - b.midX) > 0.02 { return a.midX < b.midX }
+            return a.area > b.area
+        }
+        let resolvedIdentity = resolveOnePieceIdentityLines(
+            stackedIdentityLines,
+            cardTypeLine: cardType.flatMap { type in
+                lines.first { $0.text.trimmingCharacters(in: .whitespacesAndNewlines) == type }
+            },
+            cardNumberLine: cardNumberLine
+        )
 
-        return OnePieceExtractedFields(name: name, cardType: cardType, cardNumber: cardNumber)
+        return OnePieceExtractedFields(
+            name: resolvedIdentity.name,
+            cardType: cardType,
+            subtype: resolvedIdentity.subtype,
+            cardNumber: cardNumber,
+            effectText: extractOnePieceEffectHint(from: effectLines)
+        )
     }
 
     /// Reading order for debug: top → bottom, then left → right.
@@ -452,6 +477,178 @@ enum CardOCRFieldExtractor {
             return a.area > b.area
         }
         return sorted.first?.text
+    }
+
+    private static func normalizedOnePieceCardNumber(from text: String) -> String? {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        let ns = trimmed as NSString
+        let range = NSRange(location: 0, length: ns.length)
+        if let m = onePieceCardIdRegex.firstMatch(in: trimmed, range: range),
+           m.numberOfRanges >= 2,
+           let r = Range(m.range(at: 1), in: trimmed) {
+            return String(trimmed[r]).uppercased()
+        }
+        if let m = onePieceLooseCardIdRegex.firstMatch(in: trimmed, range: range),
+           m.numberOfRanges >= 4,
+           let prefixRange = Range(m.range(at: 1), in: trimmed),
+           let setRange = Range(m.range(at: 2), in: trimmed),
+           let numberRange = Range(m.range(at: 3), in: trimmed) {
+            let prefix = String(trimmed[prefixRange]).uppercased()
+            let set = String(trimmed[setRange])
+            let number = String(trimmed[numberRange]).uppercased()
+            return "\(prefix)\(set)-\(number)"
+        }
+        return nil
+    }
+
+    private static func bestOnePieceCardNumberLine(from lines: [OCRLine]) -> OCRLine? {
+        let candidates = lines.compactMap { line -> (line: OCRLine, score: CGFloat)? in
+            guard let normalized = normalizedOnePieceCardNumber(from: line.text) else { return nil }
+            let text = line.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            let digitCount = text.filter(\.isNumber).count
+            guard digitCount >= 3 else { return nil }
+            var score = 0 as CGFloat
+            // Card number lives at the bottom-right of the cropped identity strip.
+            score += (1 - line.midY) * 2.2
+            score += line.midX * 1.8
+            score += normalized.contains("-") ? 0.6 : 0
+            return (line, score)
+        }
+        return candidates.max(by: { $0.score < $1.score })?.line
+    }
+
+    private static func extractOnePieceEffectHint(from lines: [OCRLine]) -> String? {
+        guard !lines.isEmpty else { return nil }
+
+        let scored: [(text: String, midY: CGFloat, midX: CGFloat)] = lines.compactMap { line in
+            let t = line.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard t.count >= 4 else { return nil }
+            let ns = t as NSString
+            let rAll = NSRange(location: 0, length: ns.length)
+            if onePieceCardIdRegex.firstMatch(in: t, range: rAll) != nil { return nil }
+            if onePieceLooseCardIdRegex.firstMatch(in: t, range: rAll) != nil { return nil }
+            if centerBandNoiseRegex.firstMatch(in: t, range: rAll) != nil { return nil }
+            let lower = t.lowercased()
+            if onePieceTypeTokens.contains(where: { lower.hasPrefix($0) || lower == $0 }) { return nil }
+            if noiseExactNames.contains(lower) { return nil }
+            if lineLooksLikeScriptNoise(t) { return nil }
+            guard t.rangeOfCharacter(from: .letters) != nil else { return nil }
+            return (t, line.midY, line.midX)
+        }
+        guard !scored.isEmpty else { return nil }
+
+        let sorted = scored.sorted { a, b in
+            if abs(a.midY - b.midY) > 0.02 { return a.midY > b.midY }
+            return a.midX < b.midX
+        }
+
+        var parts: [String] = []
+        var used = Set<String>()
+        for item in sorted.prefix(18) {
+            let key = item.text.lowercased()
+            guard !used.contains(key) else { continue }
+            used.insert(key)
+            parts.append(item.text)
+            if parts.joined(separator: " ").count > 420 { break }
+        }
+        let hint = parts.joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
+        return hint.isEmpty ? nil : hint
+    }
+
+    private static func isOnePieceIdentityLineCandidate(_ line: OCRLine, cardNumberLine: OCRLine?) -> Bool {
+        let t = line.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard t.count >= 3, t.rangeOfCharacter(from: .letters) != nil else { return false }
+        let ns = t as NSString
+        let range = NSRange(location: 0, length: ns.length)
+        if onePieceCardIdRegex.firstMatch(in: t, range: range) != nil { return false }
+        if onePieceLooseCardIdRegex.firstMatch(in: t, range: range) != nil { return false }
+        let lower = t.lowercased()
+        if onePieceTypeTokens.contains(where: { lower.hasPrefix($0) || lower == $0 }) { return false }
+        if lineLooksLikeScriptNoise(t) { return false }
+        if looksLikeOnePieceEffectText(t) { return false }
+        if t.count > 36 { return false }
+        let wordCount = t.split(whereSeparator: \.isWhitespace).count
+        if wordCount > 4 { return false }
+        if t.contains(".") || t.contains(",") { return false }
+        if let cardNumberLine, line.midY < cardNumberLine.midY + 0.015 { return false }
+        return true
+    }
+
+    private static func resolveOnePieceIdentityLines(
+        _ lines: [OCRLine],
+        cardTypeLine: OCRLine?,
+        cardNumberLine: OCRLine?
+    ) -> (name: String?, subtype: String?) {
+        guard !lines.isEmpty else { return (nil, nil) }
+
+        let typeLine = cardTypeLine
+        let filtered = lines.filter { line in
+            if let typeLine, line.text == typeLine.text { return false }
+            if let cardNumberLine, line.text == cardNumberLine.text { return false }
+            return true
+        }
+        guard !filtered.isEmpty else { return (nil, nil) }
+
+        let sorted = filtered.sorted { a, b in
+            if abs(a.midY - b.midY) > 0.02 { return a.midY > b.midY }
+            if abs(a.midX - b.midX) > 0.02 { return a.midX < b.midX }
+            return a.area > b.area
+        }
+
+        var nameLine: OCRLine?
+        var subtypeLine: OCRLine?
+
+        if let typeLine {
+            let belowType = sorted.filter { $0.midY < typeLine.midY - 0.01 }
+            if let bestName = belowType.first(where: { looksLikeOnePieceNameLine($0.text) }) ?? belowType.first {
+                nameLine = bestName
+                let belowName = belowType.filter { $0.text != bestName.text && $0.midY < bestName.midY - 0.005 }
+                subtypeLine = belowName.first(where: { looksLikeOnePieceSubtypeLine($0.text) }) ?? belowName.first
+            }
+        }
+
+        if nameLine == nil {
+            nameLine = sorted.first(where: { looksLikeOnePieceNameLine($0.text) }) ?? sorted.first
+        }
+        if subtypeLine == nil, let nameLine {
+            let remaining = sorted.filter { $0.text != nameLine.text }
+            subtypeLine = remaining.first(where: { looksLikeOnePieceSubtypeLine($0.text) }) ?? remaining.first
+        }
+
+        return (
+            nameLine?.text.trimmingCharacters(in: .whitespacesAndNewlines),
+            subtypeLine?.text.trimmingCharacters(in: .whitespacesAndNewlines)
+        )
+    }
+
+    private static func looksLikeOnePieceEffectText(_ text: String) -> Bool {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return false }
+        if trimmed.count >= 26 { return true }
+        let range = NSRange(location: 0, length: (trimmed as NSString).length)
+        if onePieceEffectLikeWordRegex.firstMatch(in: trimmed, range: range) != nil {
+            return true
+        }
+        let slashCount = trimmed.filter { $0 == "/" }.count
+        let wordCount = trimmed.split(whereSeparator: \.isWhitespace).count
+        return wordCount >= 5 && slashCount == 0
+    }
+
+    private static func looksLikeOnePieceNameLine(_ text: String) -> Bool {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return false }
+        if looksLikeOnePieceEffectText(trimmed) { return false }
+        let wordCount = trimmed.split(whereSeparator: \.isWhitespace).count
+        guard wordCount <= 4 else { return false }
+        return !trimmed.contains("/") && !trimmed.contains(",") && !trimmed.contains(".")
+    }
+
+    private static func looksLikeOnePieceSubtypeLine(_ text: String) -> Bool {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return false }
+        if looksLikeOnePieceEffectText(trimmed) { return false }
+        return trimmed.contains("/") || trimmed.contains("Pirates") || trimmed.contains("CPO") || trimmed.contains("CP0")
     }
 }
 

@@ -61,6 +61,13 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
     /// ONE PIECE only: last capture / match diagnostics for the debug “i” sheet.
     var onePieceDebugText: String = CardScannerViewModel.defaultOnePieceDebugBlurb
+    /// ONE PIECE only: last cropped card image used for OCR debug preview.
+    var onePieceDebugImage: UIImage?
+    let onePieceOCRFraction: CGFloat = 0.18
+    let onePieceEffectBandStart: CGFloat = 0.60
+    let onePieceEffectBandEnd: CGFloat = 0.82
+    /// ONE PIECE only: perspective-corrected full-card image used for late art-hash disambiguation.
+    private var onePieceHashSourceImage: UIImage?
 
     // MARK: - Callbacks
     var onMatch: ((ScanResult) -> Void)?
@@ -97,7 +104,7 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     }
 
     fileprivate static let defaultOnePieceDebugBlurb = """
-    ONE PIECE scanner uses the bottom 20% of the card frame for OCR (type, name, collector id).
+    ONE PIECE scanner uses the bottom 18% of the cropped card image for footer OCR and the 60–82% band for effect OCR.
 
     Debug output from the last capture attempt will appear here after you scan.
     """
@@ -259,30 +266,63 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
 
         let croppedCG = fullCG.croppedToCardRect(cardNormalizedRect, imageSize: image.size) ?? fullCG
-        let ocrCGImage: CGImage
         if scanBrand == .onePiece {
-            // Rules text / identity strip is along the bottom edge — OCR only that band (see `CardOCRFieldExtractor.extractOnePiece`).
-            ocrCGImage = croppedCG.croppingToBottomFraction(0.2) ?? croppedCG
+            let correctedCG = preprocessCardForOCR(croppedCG) ?? croppedCG
+            let debugImage = UIImage(cgImage: correctedCG)
+            DispatchQueue.main.async { [weak self] in
+                self?.onePieceDebugImage = debugImage
+            }
+            onePieceHashSourceImage = debugImage
+            Task { [weak self] in
+                await self?.performOnePieceOCR(on: correctedCG)
+            }
         } else {
-            ocrCGImage = preprocessCardForOCR(croppedCG) ?? croppedCG
+            let ocrCGImage = preprocessCardForOCR(croppedCG) ?? croppedCG
+            performOCR(on: ocrCGImage)
         }
-        let request = VNRecognizeTextRequest { [weak self] req, _ in
-            self?.handleTextObservations(
-                req.results as? [VNRecognizedTextObservation] ?? []
-            )
-        }
-        request.recognitionLevel = .accurate
-        request.usesLanguageCorrection = false
-        request.minimumTextHeight = 0.02
+    }
 
-        let handler = VNImageRequestHandler(cgImage: ocrCGImage, orientation: .up, options: [:])
+    private func performOnePieceOCR(on correctedCG: CGImage) async {
+        let footerCG = correctedCG.croppingToBottomFraction(onePieceOCRFraction) ?? correctedCG
+        let effectCG = correctedCG.croppingBetweenTopFractions(onePieceEffectBandStart, onePieceEffectBandEnd) ?? correctedCG
+        async let footerObs = recognizeText(in: footerCG)
+        async let effectObs = recognizeText(in: effectCG)
+        let (footerObservations, effectObservations) = await (footerObs, effectObs)
+        handleOnePieceTextObservations(footerObservations, effectObservations: effectObservations)
+    }
+
+    private func performOCR(on ocrCGImage: CGImage) {
         DispatchQueue.global(qos: .userInitiated).async {
-            do {
-                try handler.perform([request])
-            } catch {
-                DispatchQueue.main.async { [weak self] in
-                    self?.scanState = .idle
-                    self?.lastErrorMessage = "Text recognition failed. Try better light or retake."
+            Task { [weak self] in
+                let observations = await self?.recognizeText(in: ocrCGImage) ?? []
+                if observations.isEmpty, Task.isCancelled == false {
+                    DispatchQueue.main.async { [weak self] in
+                        self?.scanState = .idle
+                        self?.lastErrorMessage = "Text recognition failed. Try better light or retake."
+                    }
+                    return
+                }
+                self?.handleTextObservations(observations)
+            }
+        }
+    }
+
+    private func recognizeText(in image: CGImage) async -> [VNRecognizedTextObservation] {
+        await withCheckedContinuation { continuation in
+            let request = VNRecognizeTextRequest { req, _ in
+                let results = req.results as? [VNRecognizedTextObservation] ?? []
+                continuation.resume(returning: results)
+            }
+            request.recognitionLevel = .accurate
+            request.usesLanguageCorrection = false
+            request.minimumTextHeight = 0.02
+
+            let handler = VNImageRequestHandler(cgImage: image, orientation: .up, options: [:])
+            DispatchQueue.global(qos: .userInitiated).async {
+                do {
+                    try handler.perform([request])
+                } catch {
+                    continuation.resume(returning: [])
                 }
             }
         }
@@ -431,15 +471,22 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
     }
 
-    private func handleOnePieceTextObservations(_ observations: [VNRecognizedTextObservation]) {
+    private func handleOnePieceTextObservations(
+        _ observations: [VNRecognizedTextObservation],
+        effectObservations: [VNRecognizedTextObservation] = []
+    ) {
         let sortedLines = CardOCRFieldExtractor.sortedLinesForDebug(from: observations)
-        let fields = CardOCRFieldExtractor.extractOnePiece(from: observations)
+        let effectLines = CardOCRFieldExtractor.sortedLinesForDebug(from: effectObservations)
+        let fields = CardOCRFieldExtractor.extractOnePiece(from: observations, effectObservations: effectObservations)
         let debugHeader = Self.formatOnePieceDebugHeader(
             observationCount: observations.count,
             sortedLines: sortedLines,
             name: fields.name,
             cardType: fields.cardType,
-            cardNumber: fields.cardNumber
+            subtype: fields.subtype,
+            cardNumber: fields.cardNumber,
+            effectLines: effectLines,
+            effectText: fields.effectText
         )
 
         guard !sortedLines.isEmpty else {
@@ -452,13 +499,13 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
 
         let hasSignal = [
+            fields.cardType.map { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ?? false,
             fields.name.map { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ?? false,
             fields.cardNumber.map { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ?? false,
-            fields.cardType.map { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ?? false,
         ].contains(true)
 
         guard hasSignal else {
-            setOnePieceDebug(debugHeader + "\nResult: FAIL — no name / number / type in bottom band (midY ≤ 0.22).")
+            setOnePieceDebug(debugHeader + "\nResult: FAIL — no supertype / name / number in cropped bottom strip.")
             DispatchQueue.main.async { [weak self] in
                 self?.scanState = .idle
                 self?.lastErrorMessage = "Could not read the bottom of the card. Try again."
@@ -479,11 +526,13 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
         Task { [weak self] in
             await self?.runSearchOnePiece(
+                supertype: fields.cardType,
                 cardName: fields.name,
                 cardNumber: fields.cardNumber,
-                cardType: fields.cardType,
+                subtype: fields.subtype,
+                effectText: fields.effectText,
                 numberCandidates: numberCandidates,
-                rawOCRBlob: rawBlob,
+                rawOCRBlob: ([rawBlob] + effectLines).filter { !$0.isEmpty }.joined(separator: "\n"),
                 debugHeader: headerWithCandidates
             )
         }
@@ -494,14 +543,18 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         sortedLines: [String],
         name: String?,
         cardType: String?,
-        cardNumber: String?
+        subtype: String?,
+        cardNumber: String?,
+        effectLines: [String],
+        effectText: String?
     ) -> String {
         var s = "ONE PIECE scan debug\n"
-        s += "OCR region: bottom 20% of card crop only.\n"
+        s += "OCR regions: bottom 18% footer strip + 60–82% effect band.\n"
         s += "Vision text observations: \(observationCount)\n\n"
         s += "Extracted fields (bottom band):\n"
-        s += "  • cardType: \(cardType ?? "∅")\n"
+        s += "  • supertype: \(cardType ?? "∅")\n"
         s += "  • name: \(name ?? "∅")\n"
+        s += "  • subtype: \(subtype ?? "∅")\n"
         s += "  • cardNumber: \(cardNumber ?? "∅")\n\n"
         s += "All OCR lines (reading order):\n"
         for (i, line) in sortedLines.prefix(30).enumerated() {
@@ -510,6 +563,18 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         if sortedLines.count > 30 {
             s += "  … (\(sortedLines.count - 30) more lines)\n"
         }
+        s += "\nEffect band lines:\n"
+        if effectLines.isEmpty {
+            s += "  ∅\n"
+        } else {
+            for (i, line) in effectLines.prefix(18).enumerated() {
+                s += "  \(i + 1). \(line)\n"
+            }
+            if effectLines.count > 18 {
+                s += "  … (\(effectLines.count - 18) more lines)\n"
+            }
+        }
+        s += "Extracted effect: \(effectText ?? "∅")\n"
         return s
     }
 
@@ -525,6 +590,18 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         }
         let cleaned = cleanedTokens.joined(separator: " ").trimmingCharacters(in: .whitespacesAndNewlines)
         return cleaned.isEmpty ? nil : cleaned
+    }
+
+    private static func preferredOnePieceNameQuery(rawName: String?, cleanedName: String?) -> String? {
+        let raw = rawName?.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let cleaned = cleanedName, !cleaned.isEmpty {
+            let rawWordCount = raw?.split(whereSeparator: \.isWhitespace).count ?? 0
+            let rawLooksNoisy = (raw?.count ?? 0) > 28 || rawWordCount > 5
+            if rawLooksNoisy || cleaned.count < (raw?.count ?? .max) {
+                return cleaned
+            }
+        }
+        return raw ?? cleanedName
     }
 
     private func mixedFallbackPool(
@@ -555,9 +632,11 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
     }
 
     private func runSearchOnePiece(
+        supertype: String?,
         cardName: String?,
         cardNumber: String?,
-        cardType: String?,
+        subtype: String?,
+        effectText: String?,
         numberCandidates: [String],
         rawOCRBlob: String?,
         debugHeader: String
@@ -565,16 +644,18 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         guard let service = cardDataService else { return }
         let brand = TCGBrand.onePiece
 
+        let rawSupertype = supertype?.trimmingCharacters(in: .whitespacesAndNewlines)
         let rawName = cardName?.trimmingCharacters(in: .whitespacesAndNewlines)
         let cleanedName = Self.cleanedOCRName(rawName)
-        let hasName = !(rawName?.isEmpty ?? true)
+        let preferredNameQuery = Self.preferredOnePieceNameQuery(rawName: rawName, cleanedName: cleanedName)
+        let hasName = !(preferredNameQuery?.isEmpty ?? true)
 
         var pool: [Card] = []
         var searchPath = ""
         if hasName {
-            searchPath = "searchByName(\"\(rawName!)\")"
-            pool = await service.searchByName(query: rawName!, catalogBrand: brand)
-            if pool.isEmpty, let cleanedName, cleanedName.caseInsensitiveCompare(rawName!) != .orderedSame {
+            searchPath = "searchByName(\"\(preferredNameQuery!)\")"
+            pool = await service.searchByName(query: preferredNameQuery!, catalogBrand: brand)
+            if pool.isEmpty, let cleanedName, cleanedName.caseInsensitiveCompare(preferredNameQuery!) != .orderedSame {
                 searchPath += " → searchByName(cleaned)"
                 pool = await service.searchByName(query: cleanedName, catalogBrand: brand)
             }
@@ -586,28 +667,61 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         } else if let num = cardNumber, !num.isEmpty {
             searchPath = "search(\"\(num)\")"
             pool = await service.search(query: num, catalogBrand: brand)
-        } else if let ct = cardType, !ct.isEmpty {
-            searchPath = "search(\"\(ct)\")"
-            pool = await service.search(query: ct, catalogBrand: brand)
         }
 
         if pool.isEmpty {
             searchPath += " → mixedFallback"
             pool = await mixedFallbackPool(
                 service: service, cleanedName: cleanedName, hp: nil,
-                setNumber: cardNumber, illustrator: nil, centerHint: cardType,
+                setNumber: cardNumber, illustrator: nil, centerHint: nil,
                 catalogBrand: brand
             )
         }
 
-        let ranked = ScannerCompositeRanker.rankOnePiece(
+        if let rawSupertype, !rawSupertype.isEmpty {
+            let filtered = pool.filter { card in
+                let category = card.category?.lowercased() ?? ""
+                let needle = rawSupertype.lowercased()
+                return category.contains(needle)
+            }
+            if !filtered.isEmpty {
+                searchPath += " → filter(supertype: \(rawSupertype))"
+                pool = filtered
+            }
+        }
+
+        let mergedNumbers = ScannerCompositeRanker.mergedNumberCandidates(primary: cardNumber, extras: numberCandidates)
+        if !mergedNumbers.isEmpty {
+            let threshold = 200_000
+            let numberScores = pool.map { card in
+                (card, ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: card, candidates: mergedNumbers))
+            }
+            let filtered = numberScores.filter { $0.1 >= threshold }.map(\.0)
+            if !filtered.isEmpty {
+                let best = numberScores.map(\.1).max() ?? 0
+                searchPath += " → filter(cardNumber fuzzy, threshold: \(threshold), best: \(best))"
+                pool = filtered
+            } else if let bestMatch = numberScores.max(by: { $0.1 < $1.1 }), bestMatch.1 > 0 {
+                searchPath += " → numberHint(best: \(bestMatch.0.cardNumber), score: \(bestMatch.1))"
+            }
+        }
+
+        let rankedByText = ScannerCompositeRanker.rankOnePiece(
             pool,
-            ocrName: cleanedName ?? rawName,
+            ocrName: preferredNameQuery,
+            ocrSupertype: rawSupertype,
             ocrCardNumber: cardNumber,
-            ocrCardType: cardType,
+            ocrSubtype: subtype,
+            ocrEffect: effectText,
             numberCandidates: numberCandidates,
             rawOCRBlob: rawOCRBlob
         )
+        let hashRerank: OnePieceArtHashRerankResult? = if let captured = onePieceHashSourceImage, pool.count > 1 {
+            await OnePieceArtHashMatcher.shared.rerank(candidates: rankedByText, capturedImage: captured)
+        } else {
+            nil
+        }
+        let ranked = hashRerank?.ranked ?? rankedByText
 
         var searchSection = "\n--- Search ---\nPath: \(searchPath.isEmpty ? "(none)" : searchPath)\nPool: \(pool.count) cards\n"
 
@@ -620,6 +734,17 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 searchSection += "  • \(c.masterCardId) — \(c.cardName)\n"
             }
             searchSection += "  … (\(pool.count - 12) more)\n"
+        }
+
+        if let hashRerank, !hashRerank.matches.isEmpty {
+            searchSection += "\n--- Art Hash ---\n"
+            searchSection += "Compared corrected capture against \(hashRerank.matches.count) candidate arts.\n"
+            for match in hashRerank.matches.prefix(8) {
+                searchSection += "  • dHash distance \(match.distance): \(match.card.masterCardId) — \(match.card.cardName)\n"
+            }
+            if hashRerank.matches.count > 8 {
+                searchSection += "  … (\(hashRerank.matches.count - 8) more)\n"
+            }
         }
 
         guard let top = ranked.first else {
@@ -635,23 +760,28 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
         let topScore = ScannerCompositeRanker.onePieceTotalScoreDebug(
             card: top,
-            ocrName: cleanedName ?? rawName,
+            ocrName: preferredNameQuery,
+            ocrSupertype: rawSupertype,
             ocrCardNumber: cardNumber,
-            ocrCardType: cardType,
+            ocrSubtype: subtype,
+            ocrEffect: effectText,
             numberCandidates: numberCandidates,
             rawOCRBlob: rawOCRBlob
         )
+        let topSubtype = top.subtype ?? top.subtypes?.joined(separator: ", ") ?? "∅"
         searchSection += "\nRanked #1: \(top.masterCardId)\n"
         searchSection += "  name: \(top.cardName)\n"
-        searchSection += "  category: \(top.category ?? "∅")\n"
+        searchSection += "  subtype: \(topSubtype)\n"
         searchSection += "  composite score: \(topScore)\n"
         searchSection += "Alternatives in UI: \(alternatives.count)\n"
         if let second = ranked.dropFirst().first {
             let s2 = ScannerCompositeRanker.onePieceTotalScoreDebug(
                 card: second,
-                ocrName: cleanedName ?? rawName,
+                ocrName: preferredNameQuery,
+                ocrSupertype: rawSupertype,
                 ocrCardNumber: cardNumber,
-                ocrCardType: cardType,
+                ocrSubtype: subtype,
+                ocrEffect: effectText,
                 numberCandidates: numberCandidates,
                 rawOCRBlob: rawOCRBlob
             )
@@ -932,24 +1062,26 @@ private enum ScannerCompositeRanker {
         }
     }
 
-    /// ONE PIECE: name + collector id + `cardType` vs `Card.category` (no HP / attack center band).
+    /// ONE PIECE: filter by supertype, name, and collector id; use subtype as a secondary ranking signal.
     static func rankOnePiece(
         _ cards: [Card],
         ocrName: String?,
+        ocrSupertype: String?,
         ocrCardNumber: String?,
-        ocrCardType: String?,
+        ocrSubtype: String?,
+        ocrEffect: String?,
         numberCandidates: [String],
         rawOCRBlob: String?
     ) -> [Card] {
         let merged = mergedNumberCandidates(primary: ocrCardNumber, extras: numberCandidates)
         return cards.sorted { a, b in
             let ta = onePieceRankScore(
-                card: a, ocrName: ocrName, ocrCardType: ocrCardType,
-                numberCandidates: merged, rawOCRBlob: rawOCRBlob
+                card: a, ocrName: ocrName, ocrSupertype: ocrSupertype, ocrSubtype: ocrSubtype,
+                ocrEffect: ocrEffect, numberCandidates: merged, rawOCRBlob: rawOCRBlob
             )
             let tb = onePieceRankScore(
-                card: b, ocrName: ocrName, ocrCardType: ocrCardType,
-                numberCandidates: merged, rawOCRBlob: rawOCRBlob
+                card: b, ocrName: ocrName, ocrSupertype: ocrSupertype, ocrSubtype: ocrSubtype,
+                ocrEffect: ocrEffect, numberCandidates: merged, rawOCRBlob: rawOCRBlob
             )
             if ta != tb { return ta > tb }
             return a.masterCardId < b.masterCardId
@@ -959,33 +1091,29 @@ private enum ScannerCompositeRanker {
     private static func onePieceRankScore(
         card: Card,
         ocrName: String?,
-        ocrCardType: String?,
+        ocrSupertype: String?,
+        ocrSubtype: String?,
+        ocrEffect: String?,
         numberCandidates: [String],
         rawOCRBlob: String?
     ) -> Int {
         let name = nameScore(ocrName: ocrName, card: card)
+        let supertype = onePieceSupertypeScore(ocrSupertype: ocrSupertype, card: card)
         let num = bestNumberScore(card: card, candidates: numberCandidates)
-        var typeScore = 0
-        if let t = ocrCardType?.trimmingCharacters(in: .whitespacesAndNewlines), !t.isEmpty,
-           let cat = card.category, !cat.isEmpty {
-            let tl = t.lowercased()
-            let cl = cat.lowercased()
-            if cl.contains(tl) || tl.contains(cl) { typeScore = 180_000 }
-            else {
-                let parts = tl.split(whereSeparator: { !$0.isLetter && !$0.isNumber }).map(String.init).filter { $0.count >= 3 }
-                for p in parts where cl.contains(p.lowercased()) { typeScore = max(typeScore, 95_000) }
-            }
-        }
+        let effectScore = onePieceEffectScore(ocrEffect: ocrEffect, card: card)
+        let subtypeScore = onePieceSubtypeScore(ocrSubtype: ocrSubtype, card: card)
         let ex = exNameConsistencyScore(ocrBlob: rawOCRBlob, card: card)
-        return name + num + typeScore + ex
+        return name + supertype + num + effectScore + subtypeScore + ex
     }
 
     /// Same scoring as ``rankOnePiece``; exposed for scanner debug UI.
     static func onePieceTotalScoreDebug(
         card: Card,
         ocrName: String?,
+        ocrSupertype: String?,
         ocrCardNumber: String?,
-        ocrCardType: String?,
+        ocrSubtype: String?,
+        ocrEffect: String?,
         numberCandidates: [String],
         rawOCRBlob: String?
     ) -> Int {
@@ -993,10 +1121,51 @@ private enum ScannerCompositeRanker {
         return onePieceRankScore(
             card: card,
             ocrName: ocrName,
-            ocrCardType: ocrCardType,
+            ocrSupertype: ocrSupertype,
+            ocrSubtype: ocrSubtype,
+            ocrEffect: ocrEffect,
             numberCandidates: merged,
             rawOCRBlob: rawOCRBlob
         )
+    }
+
+    static func bestOnePieceNumberScoreDebug(card: Card, candidates: [String]) -> Int {
+        bestNumberScore(card: card, candidates: candidates)
+    }
+
+    private static func onePieceSupertypeScore(ocrSupertype: String?, card: Card) -> Int {
+        guard let raw = ocrSupertype?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty,
+              let category = card.category?.trimmingCharacters(in: .whitespacesAndNewlines), !category.isEmpty else { return 0 }
+        let ocr = raw.lowercased()
+        let cat = category.lowercased()
+        if ocr == cat { return 280_000 }
+        if cat.contains(ocr) || ocr.contains(cat) { return 220_000 }
+        return 0
+    }
+
+    private static func onePieceSubtypeScore(ocrSubtype: String?, card: Card) -> Int {
+        guard let raw = ocrSubtype?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return 0 }
+        let ocr = significantTokens(raw.lowercased())
+        guard !ocr.isEmpty else { return 0 }
+
+        var best = 0
+        let catalogValues = ([card.subtype] + (card.subtypes ?? [])).compactMap { $0?.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
+        for value in catalogValues {
+            let cat = significantTokens(value.lowercased())
+            guard !cat.isEmpty else { continue }
+            let inter = ocr.intersection(cat)
+            guard !inter.isEmpty else { continue }
+            if ocr == cat { best = max(best, 220_000); continue }
+            let recall = Double(inter.count) / Double(max(cat.count, 1))
+            let precision = Double(inter.count) / Double(max(ocr.count, 1))
+            best = max(best, Int((recall * 0.7 + precision * 0.3) * 185_000))
+        }
+        return best
+    }
+
+    private static func onePieceEffectScore(ocrEffect: String?, card: Card) -> Int {
+        guard let raw = ocrEffect?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else { return 0 }
+        return min(centerTextScore(ocrCenter: raw.lowercased(), card: card), 320_000)
     }
 
     private static func totalRankScore(
@@ -1151,6 +1320,10 @@ private enum ScannerCardNumberRanker {
         guard !o.isEmpty else { return 0 }
         if c == o { return 1_000_000 }
 
+        if c.contains("-") {
+            return onePieceStyleScore(ocr: o, catalog: c)
+        }
+
         let cParts = c.split(separator: "/").map(String.init)
         let oParts = o.split(separator: "/").map(String.init)
         guard cParts.count == 2 else { return (c.contains(o) || o.contains(c)) ? 50_000 : 0 }
@@ -1171,6 +1344,71 @@ private enum ScannerCardNumberRanker {
         return c.contains(o) ? 40_000 : 0
     }
 
+    private static func onePieceStyleScore(ocr: String, catalog: String) -> Int {
+        let cNorm = normalizedOnePieceID(catalog)
+        let oNorm = normalizedOnePieceID(ocr)
+        guard !cNorm.isEmpty, !oNorm.isEmpty else { return 0 }
+        if cNorm == oNorm { return 1_000_000 }
+
+        let cParts = cNorm.split(separator: "-").map(String.init)
+        let oParts = oNorm.split(separator: "-").map(String.init)
+        guard cParts.count == 2, oParts.count == 2 else {
+            if cNorm.contains(oNorm) || oNorm.contains(cNorm) { return 180_000 }
+            return smallAlphaNumericClose(cNorm, oNorm) ? 220_000 : 0
+        }
+
+        let cLeft = cParts[0]
+        let cRight = cParts[1]
+        let oLeft = oParts[0]
+        let oRight = oParts[1]
+        var leftScore = 0
+        if cLeft == oLeft {
+            leftScore = 380_000
+        } else if smallAlphaNumericClose(cLeft, oLeft) || cLeft.contains(oLeft) || oLeft.contains(cLeft) {
+            leftScore = 260_000
+        }
+        var rightScore = 0
+        if cRight == oRight {
+            rightScore = 520_000
+        } else if smallAlphaNumericClose(cRight, oRight) {
+            rightScore = 360_000
+        } else if cRight.hasPrefix(oRight) || oRight.hasPrefix(cRight) {
+            rightScore = 240_000
+        } else if numericCore(of: cRight) == numericCore(of: oRight) {
+            rightScore = 330_000
+        } else if strippedTrailingLetters(cRight) == strippedTrailingLetters(oRight) {
+            rightScore = 280_000
+        }
+
+        if leftScore == 0 {
+            // Do not let a near-miss numeric tail from the wrong set code survive the
+            // card-number filter for same-name cards like Rob Lucci.
+            if rightScore >= 520_000 { return 180_000 }
+            return 0
+        }
+
+        return leftScore + rightScore
+    }
+
+    private static func normalizedOnePieceID(_ text: String) -> String {
+        var normalized = text.uppercased().filter { $0.isLetter || $0.isNumber || $0 == "-" }
+        let parts = normalized.split(separator: "-", omittingEmptySubsequences: false).map(String.init)
+        if parts.count == 2 {
+            let left = strippedTrailingLetters(parts[0])
+            let right = strippedTrailingLetters(parts[1])
+            normalized = "\(left)-\(right)"
+        }
+        return normalized
+    }
+
+    private static func strippedTrailingLetters(_ text: String) -> String {
+        text.replacingOccurrences(of: #"[A-Z]+$"#, with: "", options: .regularExpression)
+    }
+
+    private static func numericCore(of text: String) -> String {
+        text.filter(\.isNumber)
+    }
+
     private static func intEqual(_ a: String, _ b: String) -> Bool {
         if let ia = Int(a), let ib = Int(b) { return ia == ib }
         return a == b
@@ -1180,6 +1418,13 @@ private enum ScannerCardNumberRanker {
         guard a != b else { return true }
         guard a.allSatisfy(\.isNumber), b.allSatisfy(\.isNumber) else { return false }
         guard a.count <= 4, b.count <= 4 else { return false }
+        if a.count == b.count { return zip(a, b).filter { $0 != $1 }.count <= 1 }
+        return editDistanceAtMostOne(a, b)
+    }
+
+    private static func smallAlphaNumericClose(_ a: String, _ b: String) -> Bool {
+        guard a != b else { return true }
+        guard a.count <= 8, b.count <= 8 else { return false }
         if a.count == b.count { return zip(a, b).filter { $0 != $1 }.count <= 1 }
         return editDistanceAtMostOne(a, b)
     }
@@ -1270,6 +1515,17 @@ private extension CGImage {
         let fh = CGFloat(height) * fraction
         let y = CGFloat(height) - fh
         let r = CGRect(x: 0, y: y, width: CGFloat(width), height: fh).integral
+        let inter = r.intersection(CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height)))
+        guard !inter.isEmpty else { return nil }
+        return cropping(to: inter)
+    }
+
+    /// Keeps the vertical band between `start` and `end` measured from the physical top of the card.
+    func croppingBetweenTopFractions(_ start: CGFloat, _ end: CGFloat) -> CGImage? {
+        guard start >= 0, end <= 1, end > start else { return nil }
+        let y = CGFloat(height) * start
+        let h = CGFloat(height) * (end - start)
+        let r = CGRect(x: 0, y: y, width: CGFloat(width), height: h).integral
         let inter = r.intersection(CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height)))
         guard !inter.isEmpty else { return nil }
         return cropping(to: inter)

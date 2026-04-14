@@ -111,22 +111,40 @@ struct CardScannerView: View {
                         Spacer(minLength: 0)
                         HStack {
                             Spacer(minLength: 0)
-                            Button {
-                                isCameraPaused.toggle()
-                                if isCameraPaused {
-                                    viewModel.stopSession()
-                                } else {
-                                    viewModel.startSession()
+                            HStack(spacing: 12) {
+                                if showOnePieceDebugButton {
+                                    Button {
+                                        if !isCameraPaused {
+                                            isCameraPaused = true
+                                            viewModel.stopSession()
+                                        }
+                                        showOnePieceDebugSheet = true
+                                    } label: {
+                                        Image(systemName: "info.circle")
+                                            .font(.system(size: 30))
+                                            .foregroundStyle(.white, .black.opacity(0.45))
+                                    }
+                                    .buttonStyle(.plain)
+                                    .accessibilityLabel("ONE PIECE scan debug")
                                 }
-                                HapticManager.impact(.light)
-                            } label: {
-                                Image(systemName: isCameraPaused ? "play.circle.fill" : "pause.circle.fill")
-                                    .font(.system(size: 30))
-                                    .foregroundStyle(.white, .black.opacity(0.45))
-                                    .animation(.easeInOut(duration: 0.2), value: isCameraPaused)
+
+                                Button {
+                                    isCameraPaused.toggle()
+                                    if isCameraPaused {
+                                        viewModel.stopSession()
+                                    } else {
+                                        viewModel.startSession()
+                                    }
+                                    HapticManager.impact(.light)
+                                } label: {
+                                    Image(systemName: isCameraPaused ? "play.circle.fill" : "pause.circle.fill")
+                                        .font(.system(size: 30))
+                                        .foregroundStyle(.white, .black.opacity(0.45))
+                                        .animation(.easeInOut(duration: 0.2), value: isCameraPaused)
+                                }
+                                .buttonStyle(.plain)
+                                .accessibilityLabel(isCameraPaused ? "Resume camera" : "Pause camera")
                             }
-                            .buttonStyle(.plain)
-                            .accessibilityLabel(isCameraPaused ? "Resume camera" : "Pause camera")
                             .padding(.trailing, 16)
                             .padding(.bottom, 14)
                         }
@@ -172,21 +190,6 @@ struct CardScannerView: View {
                 }
                 .frame(maxWidth: .infinity)
                 .frame(maxHeight: .infinity)
-                .overlay(alignment: .topTrailing) {
-                    if showOnePieceDebugButton {
-                        Button {
-                            showOnePieceDebugSheet = true
-                        } label: {
-                            Image(systemName: "info.circle")
-                                .font(.system(size: 16, weight: .medium))
-                                .foregroundStyle(.white.opacity(0.45))
-                        }
-                        .buttonStyle(.plain)
-                        .padding(.top, 10)
-                        .padding(.trailing, 12)
-                        .accessibilityLabel("ONE PIECE scan debug")
-                    }
-                }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .ignoresSafeArea()
@@ -227,14 +230,31 @@ struct CardScannerView: View {
             .onChange(of: showBulkAddSheet) { _, isShowing in
                 if isShowing { viewModel.stopSession() }
             }
+            .onChange(of: showOnePieceDebugSheet) { _, isShowing in
+                if isShowing {
+                    if !isCameraPaused { isCameraPaused = true }
+                    viewModel.stopSession()
+                }
+            }
             .sheet(isPresented: $showOnePieceDebugSheet) {
                 NavigationStack {
                     ScrollView {
-                        Text(viewModel.onePieceDebugText)
-                            .font(.system(.footnote, design: .monospaced))
-                            .foregroundStyle(.primary)
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding()
+                        VStack(alignment: .leading, spacing: 16) {
+                            if let debugImage = viewModel.onePieceDebugImage {
+                                OnePieceDebugPreviewCard(
+                                    image: debugImage,
+                                    ocrFraction: viewModel.onePieceOCRFraction,
+                                    effectBandStart: viewModel.onePieceEffectBandStart,
+                                    effectBandEnd: viewModel.onePieceEffectBandEnd
+                                )
+                            }
+
+                            Text(viewModel.onePieceDebugText)
+                                .font(.system(.footnote, design: .monospaced))
+                                .foregroundStyle(.primary)
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                        }
+                        .padding()
                     }
                     .navigationTitle("ONE PIECE debug")
                     .navigationBarTitleDisplayMode(.inline)
@@ -340,6 +360,78 @@ struct CardScannerView: View {
                 }
                 .buttonStyle(.borderedProminent)
             }
+        }
+    }
+}
+
+private struct OnePieceDebugPreviewCard: View {
+    let image: UIImage
+    let ocrFraction: CGFloat
+    let effectBandStart: CGFloat
+    let effectBandEnd: CGFloat
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text("Captured image with OCR area")
+                .font(.subheadline.weight(.semibold))
+                .foregroundStyle(.primary)
+
+            GeometryReader { geo in
+                let width = geo.size.width
+                let imageAspect = max(image.size.width, 1) / max(image.size.height, 1)
+                let height = width / imageAspect
+                let footerHeight = height * ocrFraction
+                let effectY = height * effectBandStart
+                let effectHeight = height * (effectBandEnd - effectBandStart)
+
+                ZStack(alignment: .top) {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: width, height: height)
+                        .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
+
+                    Rectangle()
+                        .fill(Color.cyan.opacity(0.16))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 0, style: .continuous)
+                                .stroke(Color.cyan, lineWidth: 2)
+                        )
+                        .frame(width: width, height: effectHeight)
+                        .offset(y: effectY)
+
+                    Text("OCR ranks with this 60-82% effect band")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.white)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .background(.black.opacity(0.6), in: Capsule())
+                        .offset(y: max(effectY + 8, 8))
+
+                    VStack {
+                        Spacer(minLength: 0)
+
+                        Rectangle()
+                            .fill(Color.orange.opacity(0.18))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 0, style: .continuous)
+                                    .stroke(Color.orange, lineWidth: 2)
+                            )
+                            .frame(width: width, height: footerHeight)
+                            .overlay(alignment: .top) {
+                                Text("OCR filters with this bottom 18% strip")
+                                    .font(.caption.weight(.semibold))
+                                    .foregroundStyle(.white)
+                                    .padding(.horizontal, 10)
+                                    .padding(.vertical, 6)
+                                    .background(.black.opacity(0.6), in: Capsule())
+                                    .padding(.top, 8)
+                            }
+                    }
+                }
+                .frame(width: width, height: height)
+            }
+            .aspectRatio(max(image.size.width, 1) / max(image.size.height, 1), contentMode: .fit)
         }
     }
 }
