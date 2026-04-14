@@ -42,6 +42,39 @@ enum CardOCRFieldExtractor {
         var effectText: String?
     }
 
+    // MARK: - ONE PIECE collector id normalization
+
+    /// Normalizes printed / OCR’d collector text to `SET-NNN`, where `SET` is the prefix before `-` (with stray trailing letters stripped)
+    /// and `NNN` is the **first three digits** of the numeric part (drops letters/symbols after those digits, e.g. rarity `ST29-004E` → `ST29-004`).
+    static func normalizedOnePieceCollectorID(_ text: String) -> String {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return "" }
+        let upper = trimmed.uppercased().filter { $0.isLetter || $0.isNumber || $0 == "-" }
+        let segments = upper.split(separator: "-", omittingEmptySubsequences: false)
+        guard segments.count >= 2 else { return "" }
+        let left = String(segments[0])
+        let rightRaw = segments.dropFirst().joined(separator: "-")
+        let leftStripped = left.replacingOccurrences(of: #"[A-Z]+$"#, with: "", options: .regularExpression)
+        guard !leftStripped.isEmpty else { return "" }
+        let digits = rightRaw.filter(\.isNumber)
+        guard !digits.isEmpty else { return "" }
+        let three = String(digits.prefix(3))
+        return "\(leftStripped)-\(three)"
+    }
+
+    /// True when OCR yielded a collector id whose numeric part has at least three digits (after normalization).
+    static func onePieceOCRHasReadableCollectorNumber(_ candidates: [String]) -> Bool {
+        for raw in candidates {
+            let n = normalizedOnePieceCollectorID(raw)
+            guard !n.isEmpty else { continue }
+            let parts = n.split(separator: "-", omittingEmptySubsequences: false)
+            guard parts.count == 2 else { continue }
+            let digitCount = parts[1].filter(\.isNumber).count
+            if digitCount >= 3 { return true }
+        }
+        return false
+    }
+
     // MARK: - Regex
 
     /// Standard set/collector number on the card front.
@@ -487,7 +520,8 @@ enum CardOCRFieldExtractor {
         if let m = onePieceCardIdRegex.firstMatch(in: trimmed, range: range),
            m.numberOfRanges >= 2,
            let r = Range(m.range(at: 1), in: trimmed) {
-            return String(trimmed[r]).uppercased()
+            let n = normalizedOnePieceCollectorID(String(trimmed[r]))
+            return n.isEmpty ? nil : n
         }
         if let m = onePieceLooseCardIdRegex.firstMatch(in: trimmed, range: range),
            m.numberOfRanges >= 4,
@@ -497,7 +531,9 @@ enum CardOCRFieldExtractor {
             let prefix = String(trimmed[prefixRange]).uppercased()
             let set = String(trimmed[setRange])
             let number = String(trimmed[numberRange]).uppercased()
-            return "\(prefix)\(set)-\(number)"
+            let combined = "\(prefix)\(set)-\(number)"
+            let n = normalizedOnePieceCollectorID(combined)
+            return n.isEmpty ? nil : n
         }
         return nil
     }

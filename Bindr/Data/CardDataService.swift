@@ -167,7 +167,17 @@ final class CardDataService {
                     subtypes: card.subtypes,
                     weakness: card.weakness,
                     resistance: card.resistance,
-                    pricingVariants: card.pricingVariants
+                    pricingVariants: card.pricingVariants,
+                    opAttributes: card.opAttributes,
+                    opCost: card.opCost,
+                    opCounter: card.opCounter,
+                    opLife: card.opLife,
+                    opPower: card.hp,
+                    lcVariant: card.lcVariant,
+                    lcCost: card.lcCost,
+                    lcStrength: card.lcStrength,
+                    lcWillpower: card.lcWillpower,
+                    lcLore: card.lcLore
                 )
             })
         }
@@ -396,6 +406,19 @@ final class CardDataService {
             try CatalogStore.shared.open()
             let rows = try CatalogStore.shared.fetchAllSets(for: brand)
             return rows.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }
+        } catch {
+            return []
+        }
+    }
+
+    /// All ONE PIECE cards sharing the same normalized collector id (e.g. every variant with printed `ST29-004`).
+    func allOnePieceCardsMatchingNormalizedCollectorID(_ normalized: String) async -> [Card] {
+        let key = CardOCRFieldExtractor.normalizedOnePieceCollectorID(normalized)
+        guard !key.isEmpty else { return [] }
+        do {
+            try CatalogStore.shared.open()
+            let all = try CatalogStore.shared.fetchAllCards(for: .onePiece)
+            return all.filter { CardOCRFieldExtractor.normalizedOnePieceCollectorID($0.cardNumber) == key }
         } catch {
             return []
         }

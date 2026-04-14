@@ -528,37 +528,43 @@ private struct ScannerBrandPickPanel: View {
 
     @State private var appeared = false
 
+    /// Splits brands into two rows: first row gets the ceiling half (e.g. 3 → 2+1, 2 → 1+1).
+    private var firstRowBrands: [TCGBrand] {
+        let n = (brands.count + 1) / 2
+        return Array(brands.prefix(n))
+    }
+
+    private var secondRowBrands: [TCGBrand] {
+        let n = (brands.count + 1) / 2
+        return Array(brands.dropFirst(n))
+    }
+
     var body: some View {
         let safeBottom = UIApplication.shared.connectedScenes
             .compactMap { $0 as? UIWindowScene }
             .first?.windows.first?.safeAreaInsets.bottom ?? 0
 
         VStack(spacing: 0) {
-            Spacer(minLength: 0)
-
-            VStack(spacing: 18) {
-                Text("Select a brand to scan")
-                    .font(.headline.weight(.semibold))
-                    .foregroundStyle(.white.opacity(0.92))
-                    .multilineTextAlignment(.center)
-                    .opacity(appeared ? 1 : 0)
-                    .offset(y: appeared ? 0 : 8)
-
-                HStack(spacing: 20) {
-                    ForEach(brands) { brand in
-                        Button {
-                            onSelect(brand)
-                        } label: {
-                            scannerBrandLogo(brand)
-                        }
-                        .buttonStyle(.plain)
-                        .accessibilityLabel("Scan \(brand.displayTitle) cards")
-                    }
-                }
+            Text("Select a brand to scan")
+                .font(.headline.weight(.semibold))
+                .foregroundStyle(.white.opacity(0.92))
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity)
+                .padding(.top, 20)
+                .padding(.horizontal, 24)
+                .padding(.bottom, 20)
                 .opacity(appeared ? 1 : 0)
-                .offset(y: appeared ? 0 : 10)
+                .offset(y: appeared ? 0 : 8)
+
+            VStack(spacing: 14) {
+                brandLogoRow(brands: firstRowBrands, singleItemMaxWidth: 200)
+                if !secondRowBrands.isEmpty {
+                    brandLogoRow(brands: secondRowBrands, singleItemMaxWidth: 200)
+                }
             }
-            .padding(.horizontal, 24)
+            .padding(.horizontal, 20)
+            .opacity(appeared ? 1 : 0)
+            .offset(y: appeared ? 0 : 10)
 
             Spacer(minLength: 0)
 
@@ -575,14 +581,40 @@ private struct ScannerBrandPickPanel: View {
         .onDisappear { appeared = false }
     }
 
+    @ViewBuilder
+    private func brandLogoRow(brands rowBrands: [TCGBrand], singleItemMaxWidth: CGFloat) -> some View {
+        let row = HStack(spacing: 12) {
+            ForEach(rowBrands) { brand in
+                Button {
+                    onSelect(brand)
+                } label: {
+                    scannerBrandLogo(brand)
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Scan \(brand.displayTitle) cards")
+                .frame(maxWidth: .infinity)
+            }
+        }
+
+        if rowBrands.count == 1 {
+            HStack {
+                Spacer(minLength: 0)
+                row.frame(maxWidth: singleItemMaxWidth)
+                Spacer(minLength: 0)
+            }
+        } else {
+            row
+        }
+    }
+
     private func scannerBrandLogo(_ brand: TCGBrand) -> some View {
         brandPickerImage(brand)
             .resizable()
             .renderingMode(.original)
             .interpolation(.high)
-            .scaledToFill()
-            .frame(width: 140, height: 40)
-            .clipped()
+            .scaledToFit()
+            .frame(height: 40)
+            .frame(maxWidth: .infinity)
             .contentShape(Rectangle())
     }
 

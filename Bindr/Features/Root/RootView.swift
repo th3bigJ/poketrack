@@ -577,6 +577,94 @@ struct RootView: View {
                 }
                 .menuActionDismissBehavior(.disabled)
                 .menuOrder(.fixed)
+
+                Menu(menuTitle("Attribute", summary: selectionSummary(for: browseFilters.opAttributes))) {
+                    ForEach(opAttributeAllOptions, id: \.self) { attr in
+                        Toggle(attr, isOn: binding(for: attr, keyPath: \.opAttributes))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+
+                Menu(menuTitle("Cost", summary: selectionSummary(for: browseFilters.opCosts))) {
+                    ForEach(opCostAllOptions, id: \.self) { cost in
+                        Toggle("\(cost)", isOn: binding(for: cost, keyPath: \.opCosts))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+
+                Menu(menuTitle("Counter", summary: selectionSummary(for: browseFilters.opCounters))) {
+                    ForEach(opCounterAllOptions, id: \.self) { counter in
+                        Toggle("\(counter)", isOn: binding(for: counter, keyPath: \.opCounters))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+
+                Menu(menuTitle("Life", summary: selectionSummary(for: browseFilters.opLives))) {
+                    ForEach(opLifeAllOptions, id: \.self) { life in
+                        Toggle("\(life)", isOn: binding(for: life, keyPath: \.opLives))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+
+                Menu(menuTitle("Power", summary: selectionSummary(for: browseFilters.opPowers))) {
+                    ForEach(opPowerAllOptions, id: \.self) { power in
+                        Toggle("\(power)", isOn: binding(for: power, keyPath: \.opPowers))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+            } else if services.brandSettings.selectedCatalogBrand == .lorcana {
+                Menu(menuTitle("Card type", summary: selectionSummary(for: browseFilters.lcCardTypes))) {
+                    ForEach(lcCardTypeAllOptions, id: \.self) { cardType in
+                        Toggle(cardType, isOn: binding(for: cardType, keyPath: \.lcCardTypes))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+
+                Menu(menuTitle("Variant", summary: selectionSummary(for: browseFilters.lcVariants))) {
+                    ForEach(lcVariantAllOptions, id: \.self) { variant in
+                        Toggle(variant, isOn: binding(for: variant, keyPath: \.lcVariants))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+
+                Menu(menuTitle("Cost", summary: selectionSummary(for: browseFilters.lcCosts))) {
+                    ForEach(lcCostAllOptions, id: \.self) { cost in
+                        Toggle("\(cost)", isOn: binding(for: cost, keyPath: \.lcCosts))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+
+                Menu(menuTitle("Lore", summary: selectionSummary(for: browseFilters.lcLores))) {
+                    ForEach(lcLoreAllOptions, id: \.self) { lore in
+                        Toggle("\(lore)", isOn: binding(for: lore, keyPath: \.lcLores))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+
+                Menu(menuTitle("Strength", summary: selectionSummary(for: browseFilters.lcStrengths))) {
+                    ForEach(lcStrengthAllOptions, id: \.self) { strength in
+                        Toggle("\(strength)", isOn: binding(for: strength, keyPath: \.lcStrengths))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+
+                Menu(menuTitle("Willpower", summary: selectionSummary(for: browseFilters.lcWillpowers))) {
+                    ForEach(lcWillpowerAllOptions, id: \.self) { willpower in
+                        Toggle("\(willpower)", isOn: binding(for: willpower, keyPath: \.lcWillpowers))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
             } else {
                 Menu(menuTitle("Card type", summary: selectionSummary(for: browseFilters.cardTypes))) {
                     ForEach(BrowseCardTypeFilter.allCases) { type in
@@ -656,6 +744,16 @@ struct RootView: View {
     }
 
     private func binding(for value: String, keyPath: WritableKeyPath<BrowseCardGridFilters, Set<String>>) -> Binding<Bool> {
+        Binding(
+            get: { browseFilters[keyPath: keyPath].contains(value) },
+            set: { isOn in
+                if isOn { browseFilters[keyPath: keyPath].insert(value) }
+                else { browseFilters[keyPath: keyPath].remove(value) }
+            }
+        )
+    }
+
+    private func binding(for value: Int, keyPath: WritableKeyPath<BrowseCardGridFilters, Set<Int>>) -> Binding<Bool> {
         Binding(
             get: { browseFilters[keyPath: keyPath].contains(value) },
             set: { isOn in

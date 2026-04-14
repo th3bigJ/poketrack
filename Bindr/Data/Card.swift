@@ -31,6 +31,26 @@ struct BrowseFilterCard: Codable, Identifiable, Hashable, Sendable {
     let weakness: String?
     let resistance: String?
     let pricingVariants: [String]?
+    /// ONE PIECE: attribute values e.g. ["Slash", "Strike"].
+    let opAttributes: [String]?
+    /// ONE PIECE: card cost (DON!! cost to play), nil for Leaders.
+    let opCost: Int?
+    /// ONE PIECE: counter value e.g. 1000 or 2000, nil when none.
+    let opCounter: Int?
+    /// ONE PIECE: leader life points.
+    let opLife: Int?
+    /// ONE PIECE: power value (stored as `hp` on Card, exposed separately here for clarity).
+    let opPower: Int?
+    /// LORCANA: printing variant e.g. "normal", "holofoil", "coldFoil".
+    let lcVariant: String?
+    /// LORCANA: ink cost to play the card.
+    let lcCost: Int?
+    /// LORCANA: strength value.
+    let lcStrength: Int?
+    /// LORCANA: willpower value.
+    let lcWillpower: Int?
+    /// LORCANA: lore value gained when questing.
+    let lcLore: Int?
 
     var ref: CardRef {
         CardRef(masterCardId: masterCardId, setCode: setCode)
@@ -77,6 +97,24 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
     let pricingVariants: [String]?
     /// ONE PIECE: TCGplayer product id when market/history JSON rows are keyed by id (not `priceKey`).
     let tcgplayerProductId: String?
+    /// ONE PIECE: attribute values e.g. ["Slash", "Strike"].
+    let opAttributes: [String]?
+    /// ONE PIECE: card cost (DON!! cost to play), nil for Leaders.
+    let opCost: Int?
+    /// ONE PIECE: counter value e.g. 1000 or 2000, nil when none.
+    let opCounter: Int?
+    /// ONE PIECE: leader life points.
+    let opLife: Int?
+    /// LORCANA: printing variant e.g. "normal", "holofoil", "coldFoil".
+    let lcVariant: String?
+    /// LORCANA: ink cost to play the card.
+    let lcCost: Int?
+    /// LORCANA: strength value.
+    let lcStrength: Int?
+    /// LORCANA: willpower value.
+    let lcWillpower: Int?
+    /// LORCANA: lore value gained when questing.
+    let lcLore: Int?
 
     enum CodingKeys: String, CodingKey {
         case masterCardId, externalId, tcgdex_id, tcgdexId, localId, setCode, setTcgdexId, cardNumber, cardName
@@ -84,6 +122,8 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         case trainerType, energyType, regulationMark, evolveFrom, artist, imageLowSrc, imageHighSrc
         case attacks, rules, subtype, weakness, resistance, retreatCost, flavorText, pricingVariants
         case tcgplayerProductId
+        case opAttributes, opCost, opCounter, opLife
+        case lcVariant, lcCost, lcStrength, lcWillpower, lcLore
     }
 
     init(from decoder: Decoder) throws {
@@ -127,6 +167,15 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         } else {
             tcgplayerProductId = nil
         }
+        opAttributes = try c.decodeIfPresent([String].self, forKey: .opAttributes)
+        opCost = try c.decodeIfPresent(Int.self, forKey: .opCost)
+        opCounter = try c.decodeIfPresent(Int.self, forKey: .opCounter)
+        opLife = try c.decodeIfPresent(Int.self, forKey: .opLife)
+        lcVariant = try c.decodeIfPresent(String.self, forKey: .lcVariant)
+        lcCost = try c.decodeIfPresent(Int.self, forKey: .lcCost)
+        lcStrength = try c.decodeIfPresent(Int.self, forKey: .lcStrength)
+        lcWillpower = try c.decodeIfPresent(Int.self, forKey: .lcWillpower)
+        lcLore = try c.decodeIfPresent(Int.self, forKey: .lcLore)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -163,6 +212,15 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         try c.encodeIfPresent(flavorText, forKey: .flavorText)
         try c.encodeIfPresent(pricingVariants, forKey: .pricingVariants)
         try c.encodeIfPresent(tcgplayerProductId, forKey: .tcgplayerProductId)
+        try c.encodeIfPresent(opAttributes, forKey: .opAttributes)
+        try c.encodeIfPresent(opCost, forKey: .opCost)
+        try c.encodeIfPresent(opCounter, forKey: .opCounter)
+        try c.encodeIfPresent(opLife, forKey: .opLife)
+        try c.encodeIfPresent(lcVariant, forKey: .lcVariant)
+        try c.encodeIfPresent(lcCost, forKey: .lcCost)
+        try c.encodeIfPresent(lcStrength, forKey: .lcStrength)
+        try c.encodeIfPresent(lcWillpower, forKey: .lcWillpower)
+        try c.encodeIfPresent(lcLore, forKey: .lcLore)
     }
 
     /// Memberwise initializer for catalog adapters (e.g. One Piece JSON → shared ``Card`` model).
@@ -198,7 +256,16 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         retreatCost: Int?,
         flavorText: String?,
         pricingVariants: [String]?,
-        tcgplayerProductId: String? = nil
+        tcgplayerProductId: String? = nil,
+        opAttributes: [String]? = nil,
+        opCost: Int? = nil,
+        opCounter: Int? = nil,
+        opLife: Int? = nil,
+        lcVariant: String? = nil,
+        lcCost: Int? = nil,
+        lcStrength: Int? = nil,
+        lcWillpower: Int? = nil,
+        lcLore: Int? = nil
     ) {
         self.masterCardId = masterCardId
         self.externalId = externalId
@@ -232,6 +299,15 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         self.flavorText = flavorText
         self.pricingVariants = pricingVariants
         self.tcgplayerProductId = tcgplayerProductId
+        self.opAttributes = opAttributes
+        self.opCost = opCost
+        self.opCounter = opCounter
+        self.opLife = opLife
+        self.lcVariant = lcVariant
+        self.lcCost = lcCost
+        self.lcStrength = lcStrength
+        self.lcWillpower = lcWillpower
+        self.lcLore = lcLore
     }
 
     /// Text included in inverted-index search: name/number/set, **HP**, **attacks** (Pokémon), **rules** (Trainers — often long).

@@ -403,7 +403,9 @@ struct BrowseView: View {
 
     private func filterCards(_ cards: [BrowseFilterCard]) -> [BrowseFilterCard] {
         cards.filter { card in
-            if filters.cardTypes.isEmpty == false && filters.cardTypes.contains(resolvedCardType(for: card)) == false {
+            if services.brandSettings.selectedCatalogBrand == .pokemon,
+               filters.cardTypes.isEmpty == false,
+               filters.cardTypes.contains(resolvedCardType(for: card)) == false {
                 return false
             }
             if filters.rarePlusOnly && isCommonOrUncommon(card.rarity) {
@@ -438,6 +440,46 @@ struct BrowseView: View {
                     return false
                 }
             }
+            if filters.opAttributes.isEmpty == false {
+                let attrs = Set(card.opAttributes ?? [])
+                if attrs.isDisjoint(with: filters.opAttributes) { return false }
+            }
+            if filters.opCosts.isEmpty == false {
+                guard let cost = card.opCost, filters.opCosts.contains(cost) else { return false }
+            }
+            if filters.opCounters.isEmpty == false {
+                guard let counter = card.opCounter, filters.opCounters.contains(counter) else { return false }
+            }
+            if filters.opLives.isEmpty == false {
+                guard let life = card.opLife, filters.opLives.contains(life) else { return false }
+            }
+            if filters.opPowers.isEmpty == false {
+                guard let power = card.opPower, filters.opPowers.contains(power) else { return false }
+            }
+            if filters.lcCardTypes.isEmpty == false {
+                let supertype = trimmedValue(card.category)
+                if supertype.isEmpty || filters.lcCardTypes.contains(supertype) == false {
+                    return false
+                }
+            }
+            if filters.lcVariants.isEmpty == false {
+                let v = trimmedValue(card.lcVariant)
+                if v.isEmpty || filters.lcVariants.contains(v) == false {
+                    return false
+                }
+            }
+            if filters.lcCosts.isEmpty == false {
+                guard let cost = card.lcCost, filters.lcCosts.contains(cost) else { return false }
+            }
+            if filters.lcStrengths.isEmpty == false {
+                guard let s = card.lcStrength, filters.lcStrengths.contains(s) else { return false }
+            }
+            if filters.lcWillpowers.isEmpty == false {
+                guard let w = card.lcWillpower, filters.lcWillpowers.contains(w) else { return false }
+            }
+            if filters.lcLores.isEmpty == false {
+                guard let lore = card.lcLore, filters.lcLores.contains(lore) else { return false }
+            }
             return true
         }
     }
@@ -451,11 +493,8 @@ struct BrowseView: View {
             return .pokemon
         }
         if services.brandSettings.selectedCatalogBrand == .lorcana {
-            let category = card.category?.lowercased() ?? ""
-            if category.contains("character") {
-                return .pokemon
-            }
-            return .trainer
+            // Browse uses `lcCardTypes` for supertype; this path is only relevant if Pokémon-style filters run.
+            return .pokemon
         }
         let category = card.category?.lowercased() ?? ""
         if category.contains("trainer") || card.trainerType != nil {

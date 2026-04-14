@@ -690,32 +690,90 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             }
         }
 
-        if let subtype, !subtype.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            let scored = pool.map { card in
-                (card, ScannerCompositeRanker.onePieceSubtypeScoreDebug(ocrSubtype: subtype, card: card))
+        let mergedRaw = ScannerCompositeRanker.mergedNumberCandidates(primary: cardNumber, extras: numberCandidates)
+        var mergedNumbers: [String] = []
+        var seenNorm = Set<String>()
+        for m in mergedRaw {
+            let n = CardOCRFieldExtractor.normalizedOnePieceCollectorID(m)
+            if !n.isEmpty, !seenNorm.contains(n) {
+                seenNorm.insert(n)
+                mergedNumbers.append(n)
             }
-            let filtered = scored.filter { $0.1 > 0 }.map(\.0)
-            if !filtered.isEmpty {
-                let best = scored.map(\.1).max() ?? 0
-                searchPath += " → filter(subtype, best: \(best))"
-                pool = filtered
+        }
+        if mergedNumbers.isEmpty {
+            mergedNumbers = mergedRaw
+        }
+        let numberReadable = CardOCRFieldExtractor.onePieceOCRHasReadableCollectorNumber(mergedRaw)
+        let scorePrimary = mergedNumbers.first ?? cardNumber
+        let scoreExtras = mergedNumbers.count > 1 ? Array(mergedNumbers.dropFirst()) : []
+
+        if !numberReadable {
+            if let subtype, !subtype.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                let scored = pool.map { card in
+                    (card, ScannerCompositeRanker.onePieceSubtypeScoreDebug(ocrSubtype: subtype, card: card))
+                }
+                let filtered = scored.filter { $0.1 > 0 }.map(\.0)
+                if !filtered.isEmpty {
+                    let best = scored.map(\.1).max() ?? 0
+                    searchPath += " → filter(subtype, best: \(best))"
+                    pool = filtered
+                }
+            }
+
+            if let effectText, !effectText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                let scored = pool.map { card in
+                    (card, ScannerCompositeRanker.onePieceEffectScoreDebug(ocrEffect: effectText, card: card))
+                }
+                let filtered = scored.filter { $0.1 > 0 }.map(\.0)
+                if !filtered.isEmpty {
+                    let best = scored.map(\.1).max() ?? 0
+                    searchPath += " → filter(effect, best: \(best))"
+                    pool = filtered
+                }
+            }
+        } else {
+            searchPath += " → collector# readable (subtype/effect not used to narrow)"
+        }
+
+        let mergedNormSet: Set<String> = Set(mergedNumbers.compactMap { raw in
+            let n = CardOCRFieldExtractor.normalizedOnePieceCollectorID(raw)
+            return n.isEmpty ? nil : n
+        })
+
+        /// OCR read a collector id but name search can miss rows. Only merge catalog matches that still belong to the **same**
+        /// name + supertype slice as the pool (card number ranking never pulls arbitrary ids).
+        if numberReadable, !mergedNormSet.isEmpty {
+            let before = pool.count
+            var seenIDs = Set(pool.map(\.masterCardId))
+            for key in mergedNormSet {
+                let rows = await service.allOnePieceCardsMatchingNormalizedCollectorID(key)
+                for c in rows {
+                    guard seenIDs.insert(c.masterCardId).inserted else { continue }
+                    if let rawSupertype, !rawSupertype.isEmpty {
+                        let cat = c.category?.lowercased() ?? ""
+                        if !cat.contains(rawSupertype.lowercased()) { continue }
+                    }
+                    if hasName {
+                        let sPreferred = ScannerCompositeRanker.nameScore(ocrName: preferredNameQuery, card: c)
+                        let sCleaned = cleanedName.map { ScannerCompositeRanker.nameScore(ocrName: $0, card: c) } ?? 0
+                        guard max(sPreferred, sCleaned) > 0 else { continue }
+                    }
+                    pool.append(c)
+                }
+            }
+            if pool.count > before {
+                searchPath += " → merge \(pool.count - before) catalog card(s) for OCR collector id (same name+supertype)"
             }
         }
 
-        if let effectText, !effectText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-            let scored = pool.map { card in
-                (card, ScannerCompositeRanker.onePieceEffectScoreDebug(ocrEffect: effectText, card: card))
-            }
-            let filtered = scored.filter { $0.1 > 0 }.map(\.0)
-            if !filtered.isEmpty {
-                let best = scored.map(\.1).max() ?? 0
-                searchPath += " → filter(effect, best: \(best))"
-                pool = filtered
-            }
-        }
-
-        let mergedNumbers = ScannerCompositeRanker.mergedNumberCandidates(primary: cardNumber, extras: numberCandidates)
         let rankedByNumber = pool.sorted { a, b in
+            if !mergedNormSet.isEmpty {
+                let na = CardOCRFieldExtractor.normalizedOnePieceCollectorID(a.cardNumber)
+                let nb = CardOCRFieldExtractor.normalizedOnePieceCollectorID(b.cardNumber)
+                let aExact = mergedNormSet.contains(na)
+                let bExact = mergedNormSet.contains(nb)
+                if aExact != bExact { return aExact && !bExact }
+            }
             let sa = ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: a, candidates: mergedNumbers)
             let sb = ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: b, candidates: mergedNumbers)
             if sa != sb { return sa > sb }
@@ -723,21 +781,23 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 card: a,
                 ocrName: preferredNameQuery,
                 ocrSupertype: rawSupertype,
-                ocrCardNumber: cardNumber,
+                ocrCardNumber: scorePrimary,
                 ocrSubtype: subtype,
                 ocrEffect: effectText,
-                numberCandidates: numberCandidates,
-                rawOCRBlob: rawOCRBlob
+                numberCandidates: scoreExtras,
+                rawOCRBlob: rawOCRBlob,
+                includeSubtypeAndEffect: !numberReadable
             )
             let tb = ScannerCompositeRanker.onePieceTotalScoreDebug(
                 card: b,
                 ocrName: preferredNameQuery,
                 ocrSupertype: rawSupertype,
-                ocrCardNumber: cardNumber,
+                ocrCardNumber: scorePrimary,
                 ocrSubtype: subtype,
                 ocrEffect: effectText,
-                numberCandidates: numberCandidates,
-                rawOCRBlob: rawOCRBlob
+                numberCandidates: scoreExtras,
+                rawOCRBlob: rawOCRBlob,
+                includeSubtypeAndEffect: !numberReadable
             )
             if ta != tb { return ta > tb }
             return a.masterCardId < b.masterCardId
@@ -748,27 +808,27 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             searchPath += " → rank(cardNumber closest, best: \(best), top: \(bestCard.cardNumber))"
         }
 
-        let exactHashNumber = rankedByNumber.first.flatMap { ScannerCompositeRanker.exactOnePieceCardNumber($0.cardNumber) }
-        let hashCandidates: [Card]
-        if let exactHashNumber {
-            hashCandidates = rankedByNumber.filter { ScannerCompositeRanker.exactOnePieceCardNumber($0.cardNumber) == exactHashNumber }
-        } else {
-            hashCandidates = []
-        }
-
         let rankedByText = ScannerCompositeRanker.rankOnePiece(
             pool,
             ocrName: preferredNameQuery,
             ocrSupertype: rawSupertype,
-            ocrCardNumber: cardNumber,
+            ocrCardNumber: scorePrimary,
             ocrSubtype: subtype,
             ocrEffect: effectText,
-            numberCandidates: numberCandidates,
-            rawOCRBlob: rawOCRBlob
+            numberCandidates: scoreExtras,
+            rawOCRBlob: rawOCRBlob,
+            includeSubtypeAndEffect: !numberReadable
         )
 
         let rankedByTextIDs = Dictionary(uniqueKeysWithValues: rankedByText.enumerated().map { ($1.masterCardId, $0) })
         let preHashRanked = rankedByNumber.sorted { a, b in
+            if !mergedNormSet.isEmpty {
+                let na = CardOCRFieldExtractor.normalizedOnePieceCollectorID(a.cardNumber)
+                let nb = CardOCRFieldExtractor.normalizedOnePieceCollectorID(b.cardNumber)
+                let aExact = mergedNormSet.contains(na)
+                let bExact = mergedNormSet.contains(nb)
+                if aExact != bExact { return aExact && !bExact }
+            }
             let sa = ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: a, candidates: mergedNumbers)
             let sb = ScannerCompositeRanker.bestOnePieceNumberScoreDebug(card: b, candidates: mergedNumbers)
             if sa != sb { return sa > sb }
@@ -776,6 +836,26 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             let ib = rankedByTextIDs[b.masterCardId] ?? .max
             if ia != ib { return ia < ib }
             return a.masterCardId < b.masterCardId
+        }
+
+        let exactHashNumber = rankedByNumber.first.map { CardOCRFieldExtractor.normalizedOnePieceCollectorID($0.cardNumber) }
+            .flatMap { $0.isEmpty ? nil : $0 }
+
+        var hashCandidates: [Card] = []
+        if let key = exactHashNumber, !key.isEmpty {
+            let fromCatalog = await service.allOnePieceCardsMatchingNormalizedCollectorID(key)
+            let preHashOrder = Dictionary(uniqueKeysWithValues: preHashRanked.enumerated().map { ($1.masterCardId, $0) })
+            hashCandidates = fromCatalog.sorted {
+                (preHashOrder[$0.masterCardId] ?? .max) < (preHashOrder[$1.masterCardId] ?? .max)
+            }
+        }
+        if hashCandidates.count < 2, let key = exactHashNumber, !key.isEmpty {
+            let fromPool = preHashRanked.filter {
+                CardOCRFieldExtractor.normalizedOnePieceCollectorID($0.cardNumber) == key
+            }
+            if fromPool.count > hashCandidates.count {
+                hashCandidates = fromPool
+            }
         }
 
         let hashRerank: OnePieceArtHashRerankResult? = if let captured = onePieceHashSourceImage, hashCandidates.count > 1 {
@@ -830,11 +910,12 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             card: top,
             ocrName: preferredNameQuery,
             ocrSupertype: rawSupertype,
-            ocrCardNumber: cardNumber,
+            ocrCardNumber: scorePrimary,
             ocrSubtype: subtype,
             ocrEffect: effectText,
-            numberCandidates: numberCandidates,
-            rawOCRBlob: rawOCRBlob
+            numberCandidates: scoreExtras,
+            rawOCRBlob: rawOCRBlob,
+            includeSubtypeAndEffect: !numberReadable
         )
         let topSubtype = top.subtype ?? top.subtypes?.joined(separator: ", ") ?? "∅"
         searchSection += "\nRanked #1: \(top.masterCardId)\n"
@@ -847,11 +928,12 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 card: second,
                 ocrName: preferredNameQuery,
                 ocrSupertype: rawSupertype,
-                ocrCardNumber: cardNumber,
+                ocrCardNumber: scorePrimary,
                 ocrSubtype: subtype,
                 ocrEffect: effectText,
-                numberCandidates: numberCandidates,
-                rawOCRBlob: rawOCRBlob
+                numberCandidates: scoreExtras,
+                rawOCRBlob: rawOCRBlob,
+                includeSubtypeAndEffect: !numberReadable
             )
             searchSection += "Ranked #2: \(second.masterCardId) — \(second.cardName) (score \(s2))\n"
         }
@@ -1130,7 +1212,7 @@ private enum ScannerCompositeRanker {
         }
     }
 
-    /// ONE PIECE: filter by supertype, name, and collector id; use subtype as a secondary ranking signal.
+    /// ONE PIECE: filter by supertype, name, and collector id; subtype/effect are optional (see ``includeSubtypeAndEffect``).
     static func rankOnePiece(
         _ cards: [Card],
         ocrName: String?,
@@ -1139,17 +1221,20 @@ private enum ScannerCompositeRanker {
         ocrSubtype: String?,
         ocrEffect: String?,
         numberCandidates: [String],
-        rawOCRBlob: String?
+        rawOCRBlob: String?,
+        includeSubtypeAndEffect: Bool = true
     ) -> [Card] {
         let merged = mergedNumberCandidates(primary: ocrCardNumber, extras: numberCandidates)
         return cards.sorted { a, b in
             let ta = onePieceRankScore(
                 card: a, ocrName: ocrName, ocrSupertype: ocrSupertype, ocrSubtype: ocrSubtype,
-                ocrEffect: ocrEffect, numberCandidates: merged, rawOCRBlob: rawOCRBlob
+                ocrEffect: ocrEffect, numberCandidates: merged, rawOCRBlob: rawOCRBlob,
+                includeSubtypeAndEffect: includeSubtypeAndEffect
             )
             let tb = onePieceRankScore(
                 card: b, ocrName: ocrName, ocrSupertype: ocrSupertype, ocrSubtype: ocrSubtype,
-                ocrEffect: ocrEffect, numberCandidates: merged, rawOCRBlob: rawOCRBlob
+                ocrEffect: ocrEffect, numberCandidates: merged, rawOCRBlob: rawOCRBlob,
+                includeSubtypeAndEffect: includeSubtypeAndEffect
             )
             if ta != tb { return ta > tb }
             return a.masterCardId < b.masterCardId
@@ -1163,13 +1248,14 @@ private enum ScannerCompositeRanker {
         ocrSubtype: String?,
         ocrEffect: String?,
         numberCandidates: [String],
-        rawOCRBlob: String?
+        rawOCRBlob: String?,
+        includeSubtypeAndEffect: Bool = true
     ) -> Int {
         let name = nameScore(ocrName: ocrName, card: card)
         let supertype = onePieceSupertypeScore(ocrSupertype: ocrSupertype, card: card)
         let num = bestNumberScore(card: card, candidates: numberCandidates)
-        let effectScore = onePieceEffectScore(ocrEffect: ocrEffect, card: card)
-        let subtypeScore = onePieceSubtypeScore(ocrSubtype: ocrSubtype, card: card)
+        let effectScore = includeSubtypeAndEffect ? onePieceEffectScore(ocrEffect: ocrEffect, card: card) : 0
+        let subtypeScore = includeSubtypeAndEffect ? onePieceSubtypeScore(ocrSubtype: ocrSubtype, card: card) : 0
         let ex = exNameConsistencyScore(ocrBlob: rawOCRBlob, card: card)
         return name + supertype + num + effectScore + subtypeScore + ex
     }
@@ -1183,7 +1269,8 @@ private enum ScannerCompositeRanker {
         ocrSubtype: String?,
         ocrEffect: String?,
         numberCandidates: [String],
-        rawOCRBlob: String?
+        rawOCRBlob: String?,
+        includeSubtypeAndEffect: Bool = true
     ) -> Int {
         let merged = mergedNumberCandidates(primary: ocrCardNumber, extras: numberCandidates)
         return onePieceRankScore(
@@ -1193,7 +1280,8 @@ private enum ScannerCompositeRanker {
             ocrSubtype: ocrSubtype,
             ocrEffect: ocrEffect,
             numberCandidates: merged,
-            rawOCRBlob: rawOCRBlob
+            rawOCRBlob: rawOCRBlob,
+            includeSubtypeAndEffect: includeSubtypeAndEffect
         )
     }
 
@@ -1477,14 +1565,7 @@ private enum ScannerCardNumberRanker {
     }
 
     private static func normalizedOnePieceID(_ text: String) -> String {
-        var normalized = text.uppercased().filter { $0.isLetter || $0.isNumber || $0 == "-" }
-        let parts = normalized.split(separator: "-", omittingEmptySubsequences: false).map(String.init)
-        if parts.count == 2 {
-            let left = strippedTrailingLetters(parts[0])
-            let right = strippedTrailingLetters(parts[1])
-            normalized = "\(left)-\(right)"
-        }
-        return normalized
+        CardOCRFieldExtractor.normalizedOnePieceCollectorID(text)
     }
 
     private static func strippedTrailingLetters(_ text: String) -> String {

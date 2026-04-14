@@ -39,6 +39,7 @@ struct LorcanaCardDTO: Decodable, Sendable {
     let cost: Int?
     let strength: Int?
     let willpower: Int?
+    let lore_value: Int?
     let flavor_text: String?
     let effect: String?
     let scrydexSlug: String?
@@ -49,7 +50,7 @@ struct LorcanaCardDTO: Decodable, Sendable {
 
     enum CodingKeys: String, CodingKey {
         case priceKey, cardNumber, name, setCode, variant, rarity, supertype, subtypes
-        case cost, strength, willpower, flavor_text, effect, scrydexSlug, imagePath, tcgplayerProductId
+        case cost, strength, willpower, lore_value, flavor_text, effect, scrydexSlug, imagePath, tcgplayerProductId
         case ink_type
     }
 
@@ -65,6 +66,7 @@ struct LorcanaCardDTO: Decodable, Sendable {
         cost = try c.decodeIfPresent(Int.self, forKey: .cost)
         strength = try c.decodeIfPresent(Int.self, forKey: .strength)
         willpower = try c.decodeIfPresent(Int.self, forKey: .willpower)
+        lore_value = try c.decodeIfPresent(Int.self, forKey: .lore_value)
         flavor_text = try c.decodeIfPresent(String.self, forKey: .flavor_text)
         effect = try c.decodeIfPresent(String.self, forKey: .effect)
         scrydexSlug = try c.decodeIfPresent(String.self, forKey: .scrydexSlug)
@@ -122,7 +124,12 @@ enum LorcanaCatalogMapping {
             retreatCost: nil,
             flavorText: dto.flavor_text,
             pricingVariants: pricingVariants,
-            tcgplayerProductId: dto.tcgplayerProductId.map { String($0) }
+            tcgplayerProductId: dto.tcgplayerProductId.map { String($0) },
+            lcVariant: dto.variant,
+            lcCost: dto.cost,
+            lcStrength: dto.strength,
+            lcWillpower: dto.willpower,
+            lcLore: dto.lore_value
         )
     }
 

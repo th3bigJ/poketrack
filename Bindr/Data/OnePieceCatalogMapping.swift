@@ -39,8 +39,11 @@ struct OnePieceCardDTO: Codable, Sendable {
     let rarity: String?
     let cardType: [String]?
     let color: [String]?
+    let cost: Int?
     let power: Int?
+    let counter: Int?
     let life: Int?
+    let attribute: [String]?
     let subtypes: [String]?
     let effect: String?
     let scrydexSlug: String?
@@ -48,7 +51,7 @@ struct OnePieceCardDTO: Codable, Sendable {
 
     enum CodingKeys: String, CodingKey {
         case priceKey, cardNumber, name, setCode, tcgplayerProductId
-        case variant, rarity, cardType, color, power, life
+        case variant, rarity, cardType, color, cost, power, counter, life, attribute
         case subtypes, effect, scrydexSlug, imagePath
     }
 
@@ -74,8 +77,11 @@ struct OnePieceCardDTO: Codable, Sendable {
         rarity = try c.decodeIfPresent(String.self, forKey: .rarity)
         cardType = try c.decodeIfPresent([String].self, forKey: .cardType)
         color = try c.decodeIfPresent([String].self, forKey: .color)
+        cost = try c.decodeIfPresent(Int.self, forKey: .cost)
         power = try c.decodeIfPresent(Int.self, forKey: .power)
+        counter = try c.decodeIfPresent(Int.self, forKey: .counter)
         life = try c.decodeIfPresent(Int.self, forKey: .life)
+        attribute = try c.decodeIfPresent([String].self, forKey: .attribute)
         subtypes = try c.decodeIfPresent([String].self, forKey: .subtypes)
         effect = try c.decodeIfPresent(String.self, forKey: .effect)
         scrydexSlug = try c.decodeIfPresent(String.self, forKey: .scrydexSlug)
@@ -120,7 +126,11 @@ enum OnePieceCatalogMapping {
             retreatCost: nil,
             flavorText: nil,
             pricingVariants: pricingVariants,
-            tcgplayerProductId: dto.tcgplayerProductId.map { String($0) }
+            tcgplayerProductId: dto.tcgplayerProductId.map { String($0) },
+            opAttributes: dto.attribute,
+            opCost: dto.cost,
+            opCounter: dto.counter,
+            opLife: dto.life
         )
     }
 
