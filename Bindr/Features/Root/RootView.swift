@@ -569,13 +569,23 @@ struct RootView: View {
         }
 
         Section("Filters") {
-            Menu(menuTitle("Card type", summary: selectionSummary(for: browseFilters.cardTypes))) {
-                ForEach(BrowseCardTypeFilter.allCases) { type in
-                    Toggle(type.title, isOn: binding(for: type))
+            if services.brandSettings.selectedCatalogBrand == .onePiece {
+                Menu(menuTitle("Card type", summary: selectionSummary(for: browseFilters.opCardTypes))) {
+                    ForEach(opCardTypeAllOptions, id: \.self) { cardType in
+                        Toggle(cardType, isOn: binding(for: cardType, keyPath: \.opCardTypes))
+                    }
                 }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+            } else {
+                Menu(menuTitle("Card type", summary: selectionSummary(for: browseFilters.cardTypes))) {
+                    ForEach(BrowseCardTypeFilter.allCases) { type in
+                        Toggle(type.title, isOn: binding(for: type))
+                    }
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
             }
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
 
             Menu(menuTitle(services.brandSettings.selectedCatalogBrand.energyFilterMenuTitle, summary: selectionSummary(for: browseFilters.energyTypes))) {
                 if browseFilterEnergyOptions.isEmpty {
@@ -583,18 +593,6 @@ struct RootView: View {
                 } else {
                     ForEach(browseFilterEnergyOptions, id: \.self) { energy in
                         Toggle(energy, isOn: binding(for: energy, keyPath: \.energyTypes))
-                    }
-                }
-            }
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
-
-            Menu(menuTitle("Rarity", summary: selectionSummary(for: browseFilters.rarities))) {
-                if browseFilterRarityOptions.isEmpty {
-                    Text("No rarities available")
-                } else {
-                    ForEach(browseFilterRarityOptions, id: \.self) { rarity in
-                        Toggle(rarity, isOn: binding(for: rarity, keyPath: \.rarities))
                     }
                 }
             }
@@ -617,6 +615,18 @@ struct RootView: View {
         }
 
         Section("Collection") {
+            Menu(menuTitle("Rarity", summary: selectionSummary(for: browseFilters.rarities))) {
+                if browseFilterRarityOptions.isEmpty {
+                    Text("No rarities available")
+                } else {
+                    ForEach(browseFilterRarityOptions, id: \.self) { rarity in
+                        Toggle(rarity, isOn: binding(for: rarity, keyPath: \.rarities))
+                    }
+                }
+            }
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
+
             Toggle("Rare + only", isOn: $browseFilters.rarePlusOnly)
             Toggle("Hide owned", isOn: $browseFilters.hideOwned)
         }

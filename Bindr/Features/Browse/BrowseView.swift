@@ -430,6 +430,14 @@ struct BrowseView: View {
                     return false
                 }
             }
+            if filters.opCardTypes.isEmpty == false {
+                let cardTypes = Set((card.category ?? "").split(separator: ",").map {
+                    $0.trimmingCharacters(in: .whitespacesAndNewlines)
+                })
+                if cardTypes.isDisjoint(with: filters.opCardTypes) {
+                    return false
+                }
+            }
             return true
         }
     }

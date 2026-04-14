@@ -36,6 +36,9 @@ enum BrowseCardTypeFilter: String, CaseIterable, Identifiable, Sendable {
     }
 }
 
+/// Fixed One Piece card type values — these are catalog-defined and don't change.
+let opCardTypeAllOptions: [String] = ["Character", "Event", "Leader", "Stage"]
+
 struct BrowseCardGridFilters: Equatable, Sendable {
     var sortBy: BrowseCardGridSortOption = .random
     var cardTypes: Set<BrowseCardTypeFilter> = []
@@ -44,6 +47,8 @@ struct BrowseCardGridFilters: Equatable, Sendable {
     var energyTypes: Set<String> = []
     var rarities: Set<String> = []
     var trainerTypes: Set<String> = []
+    /// ONE PIECE card type filter (Character / Event / Leader / Stage).
+    var opCardTypes: Set<String> = []
 
     var isDefault: Bool {
         self == Self()
@@ -56,6 +61,7 @@ struct BrowseCardGridFilters: Equatable, Sendable {
             || !energyTypes.isEmpty
             || !rarities.isEmpty
             || !trainerTypes.isEmpty
+            || !opCardTypes.isEmpty
     }
 
     var hasActiveSort: Bool {
