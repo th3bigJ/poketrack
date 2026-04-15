@@ -20,7 +20,7 @@ struct BindrsPlaceholderView: View {
         NavigationStack {
             ContentUnavailableView(
                 "Bindrs",
-                systemImage: "person.2",
+                systemImage: "books.vertical",
                 description: Text("Community features will appear here.")
             )
             .navigationTitle("Bindrs")

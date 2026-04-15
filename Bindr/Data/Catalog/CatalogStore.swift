@@ -273,6 +273,16 @@ final class CatalogStore: @unchecked Sendable {
         }
     }
 
+    func setMetaData(_ key: String, data: Data) throws {
+        guard let value = String(data: data, encoding: .utf8) else { throw CatalogStoreError.encodeFailed }
+        try setMeta(key, value)
+    }
+
+    func metaData(_ key: String) -> Data? {
+        guard let value = meta(key) else { return nil }
+        return value.data(using: .utf8)
+    }
+
     // MARK: - Catalog
 
     func hasAnyCards(for brand: TCGBrand) throws -> Bool {
@@ -355,6 +365,10 @@ final class CatalogStore: @unchecked Sendable {
                     "onepiece_catalog_sets_sha256",
                     "onepiece_catalog_sets_etag",
                     "onepiece_catalog_row_fingerprint",
+                    "onepiece_character_names_json",
+                    "onepiece_character_names_etag",
+                    "onepiece_character_subtypes_json",
+                    "onepiece_character_subtypes_etag",
                 ]
             case .lorcana:
                 keys = [

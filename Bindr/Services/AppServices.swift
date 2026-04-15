@@ -126,7 +126,8 @@ final class AppServices {
         let weightSync: Double = 0.62
         let weightLoadSets: Double = 0.18
         let weightDex: Double = brandSettings.enabledBrands.contains(.pokemon) ? 0.12 : 0
-        let weightStore: Double = max(0.04, 1.0 - weightSync - weightLoadSets - weightDex)
+        let weightOnePieceBrowse: Double = brandSettings.enabledBrands.contains(.onePiece) ? 0.06 : 0
+        let weightStore: Double = max(0.04, 1.0 - weightSync - weightLoadSets - weightDex - weightOnePieceBrowse)
 
         let progressHandler: (@MainActor @Sendable (CatalogSyncProgressSnapshot) -> Void)?
         if updateBootstrapProgressUI {
@@ -169,6 +170,18 @@ final class AppServices {
             bootstrapProgress = weightSync + weightLoadSets + weightDex
         }
 
+        if brandSettings.enabledBrands.contains(.onePiece) {
+            if updateBootstrapProgressUI {
+                bootstrapStatus = "Loading ONE PIECE browse lists…"
+            }
+            await cardData.loadOnePieceBrowseMetadata()
+        } else {
+            cardData.clearOnePieceBrowseMetadata()
+        }
+        if updateBootstrapProgressUI {
+            bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse
+        }
+
         if updateBootstrapProgressUI {
             bootstrapStatus = "Checking purchases…"
         }
@@ -176,7 +189,7 @@ final class AppServices {
         await store.loadProducts()
         await store.checkEntitlements()
         if updateBootstrapProgressUI {
-            bootstrapProgress = weightSync + weightLoadSets + weightDex + weightStore
+            bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse + weightStore
             bootstrapStatus = "Card data is ready."
         }
 
@@ -223,6 +236,15 @@ final class AppServices {
         } else {
             cardData.clearNationalDexForDisabledPokemon()
             catalogDownloadProgress = 0.94
+        }
+
+        if brandSettings.enabledBrands.contains(.onePiece) {
+            catalogDownloadStatus = "Loading ONE PIECE browse lists…"
+            catalogDownloadProgress = 0.97
+            await cardData.loadOnePieceBrowseMetadata()
+        } else {
+            cardData.clearOnePieceBrowseMetadata()
+            catalogDownloadProgress = 0.98
         }
 
         catalogDownloadStatus = "Done."

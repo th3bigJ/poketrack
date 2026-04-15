@@ -17,6 +17,7 @@ final class CloudSettingsService {
         static let currency = "priceDisplayCurrency"
         static let browseShowCardName = "browseGridShowCardName"
         static let browseShowSetName = "browseGridShowSetName"
+        static let browseShowSetID = "browseGridShowSetID"
         static let browseShowPricing = "browseGridShowPricing"
         static let browseColumnCount = "browseGridColumnCount"
     }
@@ -50,6 +51,7 @@ final class CloudSettingsService {
     func saveBrowseGridOptions(_ options: BrowseGridOptions) {
         store.set(options.showCardName, forKey: Keys.browseShowCardName)
         store.set(options.showSetName, forKey: Keys.browseShowSetName)
+        store.set(options.showSetID, forKey: Keys.browseShowSetID)
         store.set(options.showPricing, forKey: Keys.browseShowPricing)
         store.set(Int64(options.columnCount), forKey: Keys.browseColumnCount)
         store.synchronize()
@@ -59,6 +61,7 @@ final class CloudSettingsService {
         let hasStoredValue =
             store.object(forKey: Keys.browseShowCardName) != nil
             || store.object(forKey: Keys.browseShowSetName) != nil
+            || store.object(forKey: Keys.browseShowSetID) != nil
             || store.object(forKey: Keys.browseShowPricing) != nil
             || store.object(forKey: Keys.browseColumnCount) != nil
 
@@ -72,6 +75,9 @@ final class CloudSettingsService {
             showSetName: store.object(forKey: Keys.browseShowSetName) != nil
                 ? store.bool(forKey: Keys.browseShowSetName)
                 : defaults.showSetName,
+            showSetID: store.object(forKey: Keys.browseShowSetID) != nil
+                ? store.bool(forKey: Keys.browseShowSetID)
+                : defaults.showSetID,
             showPricing: store.object(forKey: Keys.browseShowPricing) != nil
                 ? store.bool(forKey: Keys.browseShowPricing)
                 : defaults.showPricing,

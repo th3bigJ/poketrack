@@ -256,6 +256,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
     private func syncOnePieceCatalogIfNeeded(progress: CatalogSyncProgressReporter) async {
         guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
         let store = CatalogStore.shared
+        await refreshOnePieceBrowseMetadata(store: store)
         let setsURL = AppConfiguration.r2OnePieceURL(path: "sets/data/sets.json")
         await progress.setStatus("Checking ONE PIECE catalog…")
         let data: Data
@@ -411,6 +412,48 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             // Leave partial; browse may be empty until next sync.
             // Mark sync as failed so next launch retries
             try? store.setMeta("sync_failed", "1")
+        }
+    }
+
+    /// Keeps ONE PIECE browse metadata local in SQLite so search/browse can read it offline and avoid live R2 fetches.
+    private func refreshOnePieceBrowseMetadata(store: CatalogStore) async {
+        await refreshOnePieceBrowseMetadataFile(
+            path: "character-names.json",
+            jsonMetaKey: "onepiece_character_names_json",
+            etagMetaKey: "onepiece_character_names_etag",
+            store: store
+        )
+        await refreshOnePieceBrowseMetadataFile(
+            path: "character-subtypes.json",
+            jsonMetaKey: "onepiece_character_subtypes_json",
+            etagMetaKey: "onepiece_character_subtypes_etag",
+            store: store
+        )
+    }
+
+    private func refreshOnePieceBrowseMetadataFile(
+        path: String,
+        jsonMetaKey: String,
+        etagMetaKey: String,
+        store: CatalogStore
+    ) async {
+        let url = AppConfiguration.r2OnePieceBrowseMetadataURL(path: path)
+        do {
+            var request = URLRequest(url: url)
+            if let prevEtag = store.meta(etagMetaKey), !prevEtag.isEmpty {
+                request.setValue(prevEtag, forHTTPHeaderField: "If-None-Match")
+            }
+            let (data, response) = try await session.data(for: request)
+            guard let http = response as? HTTPURLResponse else { return }
+            if http.statusCode == 304 { return }
+            guard (200...299).contains(http.statusCode), !data.isEmpty else { return }
+            guard (try? JSONDecoder().decode([String].self, from: data)) != nil else { return }
+            try? store.setMetaData(jsonMetaKey, data: data)
+            if let etag = http.value(forHTTPHeaderField: "ETag") ?? http.value(forHTTPHeaderField: "Etag") {
+                try? store.setMeta(etagMetaKey, etag)
+            }
+        } catch {
+            // Keep the last successful local copy.
         }
     }
 

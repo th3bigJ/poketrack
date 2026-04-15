@@ -5,6 +5,8 @@ import UIKit
 private enum BrowseFullScreen: String, Identifiable, Hashable {
     case allSets
     case allPokemon
+    case onePieceCharacters
+    case onePieceSubtypes
     var id: String { rawValue }
 }
 
@@ -21,6 +23,10 @@ private struct BrowseFullScreenHost: View {
                 BrowseAllSetsView()
             case .allPokemon:
                 BrowseAllPokemonView()
+            case .onePieceCharacters:
+                BrowseAllOnePieceCharactersView()
+            case .onePieceSubtypes:
+                BrowseAllOnePieceSubtypesView()
             }
         }
         .environment(\.presentCard, { card, list in
@@ -240,7 +246,19 @@ struct RootView: View {
                                             filterResultCount: $browseFilterResultCount,
                                             filterEnergyOptions: $browseFilterEnergyOptions,
                                             filterRarityOptions: $browseFilterRarityOptions,
-                                            filterTrainerTypeOptions: $browseFilterTrainerTypeOptions
+                                            filterTrainerTypeOptions: $browseFilterTrainerTypeOptions,
+                                            onBrowseSets: {
+                                                browseFullScreen = .allSets
+                                            },
+                                            onBrowsePokemon: {
+                                                browseFullScreen = .allPokemon
+                                            },
+                                            onBrowseOnePieceCharacters: {
+                                                browseFullScreen = .onePieceCharacters
+                                            },
+                                            onBrowseOnePieceSubtypes: {
+                                                browseFullScreen = .onePieceSubtypes
+                                            }
                                         )
                                     }
                                 case .wishlist:
@@ -276,25 +294,7 @@ struct RootView: View {
                             }
 
                         NavigationStack(path: $searchNavigationPath) {
-                            SearchExperienceView(
-                                query: $universalQuery,
-                                onBrowseSets: {
-                                    searchNavigationPath = NavigationPath()
-                                    withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                                        isSearchExperiencePresented = false
-                                    }
-                                    searchFieldFocused = false
-                                    browseFullScreen = .allSets
-                                },
-                                onBrowsePokemon: {
-                                    searchNavigationPath = NavigationPath()
-                                    withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                                        isSearchExperiencePresented = false
-                                    }
-                                    searchFieldFocused = false
-                                    browseFullScreen = .allPokemon
-                                }
-                            )
+                            SearchExperienceView(query: $universalQuery)
                             .navigationDestination(for: SearchNavRoot.self) { root in
                                 switch root {
                                 case .set(let s):
@@ -302,6 +302,12 @@ struct RootView: View {
                                         .onAppear { searchFieldFocused = false }
                                 case .dex(let dexId, let displayName):
                                     DexCardsView(dexId: dexId, displayName: displayName)
+                                        .onAppear { searchFieldFocused = false }
+                                case .onePieceCharacter(let name):
+                                    OnePieceCharacterCardsView(characterName: name)
+                                        .onAppear { searchFieldFocused = false }
+                                case .onePieceSubtype(let name):
+                                    OnePieceSubtypeCardsView(subtypeName: name)
                                         .onAppear { searchFieldFocused = false }
                                 }
                             }
@@ -611,34 +617,48 @@ struct RootView: View {
                 .menuActionDismissBehavior(.disabled)
                 .menuOrder(.fixed)
 
-                Menu(menuTitle("Cost", summary: selectionSummary(for: browseFilters.opCosts))) {
-                    ForEach(opCostAllOptions, id: \.self) { cost in
-                        Toggle("\(cost)", isOn: binding(for: cost, keyPath: \.opCosts))
+                Menu(
+                    menuTitle(
+                        "Stats",
+                        summary: combinedSelectionSummary(
+                            ("Cost", browseFilters.opCosts.count),
+                            ("Counter", browseFilters.opCounters.count),
+                            ("Life", browseFilters.opLives.count),
+                            ("Power", browseFilters.opPowers.count)
+                        )
+                    )
+                ) {
+                    Menu(menuTitle("Cost", summary: selectionSummary(for: browseFilters.opCosts))) {
+                        ForEach(opCostAllOptions, id: \.self) { cost in
+                            Toggle("\(cost)", isOn: binding(for: cost, keyPath: \.opCosts))
+                        }
                     }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
 
-                Menu(menuTitle("Counter", summary: selectionSummary(for: browseFilters.opCounters))) {
-                    ForEach(opCounterAllOptions, id: \.self) { counter in
-                        Toggle("\(counter)", isOn: binding(for: counter, keyPath: \.opCounters))
+                    Menu(menuTitle("Counter", summary: selectionSummary(for: browseFilters.opCounters))) {
+                        ForEach(opCounterAllOptions, id: \.self) { counter in
+                            Toggle("\(counter)", isOn: binding(for: counter, keyPath: \.opCounters))
+                        }
                     }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
 
-                Menu(menuTitle("Life", summary: selectionSummary(for: browseFilters.opLives))) {
-                    ForEach(opLifeAllOptions, id: \.self) { life in
-                        Toggle("\(life)", isOn: binding(for: life, keyPath: \.opLives))
+                    Menu(menuTitle("Life", summary: selectionSummary(for: browseFilters.opLives))) {
+                        ForEach(opLifeAllOptions, id: \.self) { life in
+                            Toggle("\(life)", isOn: binding(for: life, keyPath: \.opLives))
+                        }
                     }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
 
-                Menu(menuTitle("Power", summary: selectionSummary(for: browseFilters.opPowers))) {
-                    ForEach(opPowerAllOptions, id: \.self) { power in
-                        Toggle("\(power)", isOn: binding(for: power, keyPath: \.opPowers))
+                    Menu(menuTitle("Power", summary: selectionSummary(for: browseFilters.opPowers))) {
+                        ForEach(opPowerAllOptions, id: \.self) { power in
+                            Toggle("\(power)", isOn: binding(for: power, keyPath: \.opPowers))
+                        }
                     }
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
                 }
                 .menuActionDismissBehavior(.disabled)
                 .menuOrder(.fixed)
@@ -659,34 +679,48 @@ struct RootView: View {
                 .menuActionDismissBehavior(.disabled)
                 .menuOrder(.fixed)
 
-                Menu(menuTitle("Cost", summary: selectionSummary(for: browseFilters.lcCosts))) {
-                    ForEach(lcCostAllOptions, id: \.self) { cost in
-                        Toggle("\(cost)", isOn: binding(for: cost, keyPath: \.lcCosts))
+                Menu(
+                    menuTitle(
+                        "Stats",
+                        summary: combinedSelectionSummary(
+                            ("Cost", browseFilters.lcCosts.count),
+                            ("Lore", browseFilters.lcLores.count),
+                            ("Strength", browseFilters.lcStrengths.count),
+                            ("Willpower", browseFilters.lcWillpowers.count)
+                        )
+                    )
+                ) {
+                    Menu(menuTitle("Cost", summary: selectionSummary(for: browseFilters.lcCosts))) {
+                        ForEach(lcCostAllOptions, id: \.self) { cost in
+                            Toggle("\(cost)", isOn: binding(for: cost, keyPath: \.lcCosts))
+                        }
                     }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
 
-                Menu(menuTitle("Lore", summary: selectionSummary(for: browseFilters.lcLores))) {
-                    ForEach(lcLoreAllOptions, id: \.self) { lore in
-                        Toggle("\(lore)", isOn: binding(for: lore, keyPath: \.lcLores))
+                    Menu(menuTitle("Lore", summary: selectionSummary(for: browseFilters.lcLores))) {
+                        ForEach(lcLoreAllOptions, id: \.self) { lore in
+                            Toggle("\(lore)", isOn: binding(for: lore, keyPath: \.lcLores))
+                        }
                     }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
 
-                Menu(menuTitle("Strength", summary: selectionSummary(for: browseFilters.lcStrengths))) {
-                    ForEach(lcStrengthAllOptions, id: \.self) { strength in
-                        Toggle("\(strength)", isOn: binding(for: strength, keyPath: \.lcStrengths))
+                    Menu(menuTitle("Strength", summary: selectionSummary(for: browseFilters.lcStrengths))) {
+                        ForEach(lcStrengthAllOptions, id: \.self) { strength in
+                            Toggle("\(strength)", isOn: binding(for: strength, keyPath: \.lcStrengths))
+                        }
                     }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
 
-                Menu(menuTitle("Willpower", summary: selectionSummary(for: browseFilters.lcWillpowers))) {
-                    ForEach(lcWillpowerAllOptions, id: \.self) { willpower in
-                        Toggle("\(willpower)", isOn: binding(for: willpower, keyPath: \.lcWillpowers))
+                    Menu(menuTitle("Willpower", summary: selectionSummary(for: browseFilters.lcWillpowers))) {
+                        ForEach(lcWillpowerAllOptions, id: \.self) { willpower in
+                            Toggle("\(willpower)", isOn: binding(for: willpower, keyPath: \.lcWillpowers))
+                        }
                     }
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
                 }
                 .menuActionDismissBehavior(.disabled)
                 .menuOrder(.fixed)
@@ -748,6 +782,7 @@ struct RootView: View {
             Menu("Grid options") {
                 Toggle("Show card name", isOn: gridOptionBinding(\.showCardName))
                 Toggle("Show set name", isOn: gridOptionBinding(\.showSetName))
+                Toggle("Show set ID", isOn: gridOptionBinding(\.showSetID))
                 Toggle("Show pricing", isOn: gridOptionBinding(\.showPricing))
                 Stepper(value: gridOptionBinding(\.columnCount), in: 1...4) {
                     Text("Columns: \(services.browseGridOptions.options.columnCount)")
@@ -819,6 +854,12 @@ struct RootView: View {
         guard !values.isEmpty else { return nil }
         if values.count == 1 { return "1 selected" }
         return "\(values.count) selected"
+    }
+
+    private func combinedSelectionSummary(_ groups: (String, Int)...) -> String? {
+        let active = groups.filter { $0.1 > 0 }
+        guard !active.isEmpty else { return nil }
+        return active.map { "\($0.0) \($0.1)" }.joined(separator: ", ")
     }
 }
 

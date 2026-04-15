@@ -10,6 +10,7 @@ private final class ImageLoader {
 
     func load(url: URL?, targetSize: CGSize?) {
         loadTask?.cancel()
+        loadTask = nil
 
         guard let url else {
             currentURL = nil
@@ -18,7 +19,7 @@ private final class ImageLoader {
         }
 
         if url == currentURL {
-            if image != nil || loadTask != nil { return }
+            if image != nil { return }
         }
 
         currentURL = url
@@ -51,12 +52,14 @@ private final class ImageLoader {
                 guard let self, !Task.isCancelled else { return }
                 guard self.currentURL == capturedURL else { return }
                 self.image = finalImage
+                self.loadTask = nil
             }
         }
     }
 
     func cancel() {
         loadTask?.cancel()
+        loadTask = nil
     }
 }
 

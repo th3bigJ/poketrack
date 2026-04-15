@@ -31,11 +31,28 @@ struct UniversalSearchResultsView: View {
         return services.cardData.searchPokemon(matching: trimmed)
     }
 
+    private var showOnePieceBrowseSections: Bool {
+        services.brandSettings.selectedCatalogBrand == .onePiece
+    }
+
+    private var matchingOnePieceCharacters: [String] {
+        guard showOnePieceBrowseSections else { return [] }
+        return services.cardData.searchOnePieceCharacterNames(matching: trimmed)
+    }
+
+    private var matchingOnePieceSubtypes: [String] {
+        guard showOnePieceBrowseSections else { return [] }
+        return services.cardData.searchOnePieceCharacterSubtypes(matching: trimmed)
+    }
+
     private var emptyStateDescription: String {
         if showPokemonDexSection {
-            return "Type to find cards, sets, and Pokémon, or open Browse sets / Browse Pokémon above."
+            return "Type to find cards, sets, and Pokémon."
         }
-        return "Type to find cards and sets, or open Browse sets above."
+        if showOnePieceBrowseSections {
+            return "Type to find cards, sets, characters, and subtypes."
+        }
+        return "Type to find cards and sets."
     }
 
     private let cardColumns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
@@ -125,6 +142,32 @@ struct UniversalSearchResultsView: View {
                             }
                         }
 
+                        if !matchingOnePieceCharacters.isEmpty {
+                            sectionHeader("Characters")
+                            VStack(spacing: 0) {
+                                ForEach(matchingOnePieceCharacters, id: \.self) { name in
+                                    NavigationLink(value: SearchNavRoot.onePieceCharacter(name: name)) {
+                                        searchListRow(title: name)
+                                    }
+                                    .buttonStyle(.plain)
+                                    Divider().padding(.leading, 16)
+                                }
+                            }
+                        }
+
+                        if !matchingOnePieceSubtypes.isEmpty {
+                            sectionHeader("Subtypes")
+                            VStack(spacing: 0) {
+                                ForEach(matchingOnePieceSubtypes, id: \.self) { subtype in
+                                    NavigationLink(value: SearchNavRoot.onePieceSubtype(name: subtype)) {
+                                        searchListRow(title: subtype)
+                                    }
+                                    .buttonStyle(.plain)
+                                    Divider().padding(.leading, 16)
+                                }
+                            }
+                        }
+
                         // MARK: Cards
                         sectionHeader("Cards")
                         if isSearching && cards.isEmpty {
@@ -163,6 +206,10 @@ struct UniversalSearchResultsView: View {
             if showPokemonDexSection, services.cardData.nationalDexPokemon.isEmpty {
                 await services.cardData.loadNationalDexPokemon()
             }
+            if showOnePieceBrowseSections,
+               services.cardData.onePieceCharacterNames.isEmpty || services.cardData.onePieceCharacterSubtypes.isEmpty {
+                await services.cardData.loadOnePieceBrowseMetadata()
+            }
             isSearching = true
             defer { isSearching = false }
             try? await Task.sleep(nanoseconds: 150_000_000)
@@ -177,5 +224,19 @@ struct UniversalSearchResultsView: View {
             .foregroundStyle(.secondary)
             .padding(.horizontal, 16)
             .padding(.top, 4)
+    }
+
+    private func searchListRow(title: String) -> some View {
+        HStack(spacing: 12) {
+            Text(title)
+                .foregroundStyle(.primary)
+            Spacer(minLength: 0)
+            Image(systemName: "chevron.right")
+                .font(.caption)
+                .foregroundStyle(.tertiary)
+        }
+        .padding(.vertical, 10)
+        .padding(.horizontal, 16)
+        .contentShape(Rectangle())
     }
 }

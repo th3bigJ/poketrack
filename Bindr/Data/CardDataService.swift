@@ -7,6 +7,10 @@ final class CardDataService {
     private(set) var sets: [TCGSet] = []
     /// From R2 `pokemon.json` (see `nationalDexNumber`); sorted ascending when loaded.
     private(set) var nationalDexPokemon: [NationalDexPokemon] = []
+    /// From R2 `onepiece/character-names.json`; sorted alphabetically when loaded.
+    private(set) var onePieceCharacterNames: [String] = []
+    /// From R2 `onepiece/character-subtypes.json`; sorted alphabetically when loaded.
+    private(set) var onePieceCharacterSubtypes: [String] = []
     private(set) var cardsBySet: [String: [Card]] = [:]
     private(set) var lastError: String?
     private(set) var isLoading = false
@@ -94,6 +98,33 @@ final class CardDataService {
     /// Clears Pokédex rows when the user disables the Pokémon brand (saves memory; reloaded on next `loadNationalDexPokemon()`).
     func clearNationalDexForDisabledPokemon() {
         nationalDexPokemon = []
+    }
+
+    func clearOnePieceBrowseMetadata() {
+        onePieceCharacterNames = []
+        onePieceCharacterSubtypes = []
+    }
+
+    /// Loads ONE PIECE browse metadata lists from R2 and keeps them alphabetized for list UIs.
+    func loadOnePieceBrowseMetadata() async {
+        do {
+            try CatalogStore.shared.open()
+            let names = decodeStoredStringList(forMetaKey: "onepiece_character_names_json")
+            let subtypes = decodeStoredStringList(forMetaKey: "onepiece_character_subtypes_json")
+            onePieceCharacterNames = names.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+            onePieceCharacterSubtypes = subtypes.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+        } catch {
+            onePieceCharacterNames = []
+            onePieceCharacterSubtypes = []
+        }
+    }
+
+    private func decodeStoredStringList(forMetaKey key: String) -> [String] {
+        guard let data = CatalogStore.shared.metaData(key),
+              let decoded = try? JSONDecoder().decode([String].self, from: data) else {
+            return []
+        }
+        return decoded.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }
     }
 
     private func prepareSearchIndex() async {
@@ -288,6 +319,18 @@ final class CardDataService {
         }
     }
 
+    func searchOnePieceCharacterNames(matching query: String) -> [String] {
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !q.isEmpty else { return [] }
+        return onePieceCharacterNames.filter { $0.lowercased().contains(q) }
+    }
+
+    func searchOnePieceCharacterSubtypes(matching query: String) -> [String] {
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !q.isEmpty else { return [] }
+        return onePieceCharacterSubtypes.filter { $0.lowercased().contains(q) }
+    }
+
     /// All cards in the catalog that include a dex id (for species detail).
     func cards(matchingNationalDex dexId: Int) async -> [Card] {
         var out: [Card] = []
@@ -296,6 +339,34 @@ final class CardDataService {
             out.append(contentsOf: cards.filter { $0.dexIds?.contains(dexId) == true })
         }
         return sortCardsByReleaseDateNewestFirst(out)
+    }
+
+    /// ONE PIECE cards whose printed card name matches a browse character entry exactly (case-insensitive).
+    func cards(matchingOnePieceCharacterName name: String) async -> [Card] {
+        let q = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !q.isEmpty else { return [] }
+        let normalized = q.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+        let all = await allCards(for: .onePiece)
+        let matches = all.filter {
+            $0.cardName.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current) == normalized
+        }
+        return sortCardsByReleaseDateNewestFirst(matches)
+    }
+
+    /// ONE PIECE cards whose subtype list contains the selected browse subtype exactly (case-insensitive).
+    func cards(matchingOnePieceSubtype subtype: String) async -> [Card] {
+        let q = subtype.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !q.isEmpty else { return [] }
+        let normalized = q.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+        let all = await allCards(for: .onePiece)
+        let matches = all.filter { card in
+            let values = (card.subtypes ?? []) + [card.subtype].compactMap { $0 }
+            return values.contains {
+                $0.trimmingCharacters(in: .whitespacesAndNewlines)
+                    .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current) == normalized
+            }
+        }
+        return sortCardsByReleaseDateNewestFirst(matches)
     }
 
     func search(query: String) async -> [Card] {
@@ -522,6 +593,25 @@ final class CardDataService {
     private func loadCardsFromDatabase(setCode: String, brand: TCGBrand) async throws -> [Card] {
         try CatalogStore.shared.open()
         return try CatalogStore.shared.fetchCards(setCode: setCode, brand: brand)
+    }
+
+    private func allCards(for brand: TCGBrand) async -> [Card] {
+        do {
+            try CatalogStore.shared.open()
+            let cards = try CatalogStore.shared.fetchAllCards(for: brand)
+            if !cards.isEmpty {
+                return cards
+            }
+        } catch {
+            // Fall through.
+        }
+
+        let brandSets = await catalogSets(for: brand)
+        var out: [Card] = []
+        for set in brandSets {
+            out.append(contentsOf: await loadCards(forSetCode: set.setCode, catalogBrand: brand))
+        }
+        return out
     }
 
     /// Resolves one card by `masterCardId` from SQLite (franchise inferred from the id shape).

@@ -5,7 +5,7 @@ enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable {
     case newestSet
     case cardName
     case cardNumber
-    case rarity
+    case price
 
     var id: String { rawValue }
 
@@ -15,7 +15,7 @@ enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable {
         case .newestSet: return "Newest set"
         case .cardName: return "Card name"
         case .cardNumber: return "Card number"
-        case .rarity: return "Rarity"
+        case .price: return "Price"
         }
     }
 }
@@ -117,6 +117,7 @@ struct BrowseCardGridFilters: Equatable, Sendable {
 struct BrowseGridOptions: Equatable, Sendable {
     var showCardName = true
     var showSetName = false
+    var showSetID = false
     var showPricing = false
     var columnCount = 3
 }

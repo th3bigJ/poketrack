@@ -25,7 +25,7 @@ enum AppTab: String, CaseIterable, Identifiable, Hashable {
         case .browse: return "rectangle.stack"
         case .wishlist: return "star"
         case .collection: return "square.stack.3d.up.fill"
-        case .bindrs: return "person.2.fill"
+        case .bindrs: return "books.vertical.fill"
         }
     }
 }

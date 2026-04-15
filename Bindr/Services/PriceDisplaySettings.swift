@@ -87,9 +87,12 @@ final class PriceDisplaySettings {
 @Observable
 @MainActor
 final class BrowseGridOptionsSettings {
+    private static let validColumnRange = 1...4
+
     private enum Keys {
         static let showCardName = "browseGridShowCardName"
         static let showSetName = "browseGridShowSetName"
+        static let showSetID = "browseGridShowSetID"
         static let showPricing = "browseGridShowPricing"
         static let columnCount = "browseGridColumnCount"
     }
@@ -98,6 +101,11 @@ final class BrowseGridOptionsSettings {
 
     var options: BrowseGridOptions {
         didSet {
+            let sanitized = Self.sanitize(options)
+            if sanitized != options {
+                options = sanitized
+                return
+            }
             guard options != oldValue else { return }
             saveToLocalDefaults(options)
             cloudSettings.saveBrowseGridOptions(options)
@@ -109,8 +117,9 @@ final class BrowseGridOptionsSettings {
 
         let localOptions = Self.loadFromLocalDefaults()
         if let cloudOptions = cloudSettings.loadBrowseGridOptions() {
-            options = cloudOptions
-            saveToLocalDefaults(cloudOptions)
+            let sanitized = Self.sanitize(cloudOptions)
+            options = sanitized
+            saveToLocalDefaults(sanitized)
         } else {
             options = localOptions
             cloudSettings.saveBrowseGridOptions(localOptions)
@@ -124,8 +133,9 @@ final class BrowseGridOptionsSettings {
             Task { @MainActor [weak self] in
                 guard let self else { return }
                 guard let cloudOptions = self.cloudSettings.loadBrowseGridOptions() else { return }
-                if self.options != cloudOptions {
-                    self.options = cloudOptions
+                let sanitized = Self.sanitize(cloudOptions)
+                if self.options != sanitized {
+                    self.options = sanitized
                 }
             }
         }
@@ -142,12 +152,17 @@ final class BrowseGridOptionsSettings {
             showSetName: defaults.object(forKey: Keys.showSetName) != nil
                 ? defaults.bool(forKey: Keys.showSetName)
                 : base.showSetName,
+            showSetID: defaults.object(forKey: Keys.showSetID) != nil
+                ? defaults.bool(forKey: Keys.showSetID)
+                : base.showSetID,
             showPricing: defaults.object(forKey: Keys.showPricing) != nil
                 ? defaults.bool(forKey: Keys.showPricing)
                 : base.showPricing,
-            columnCount: defaults.object(forKey: Keys.columnCount) != nil
-                ? defaults.integer(forKey: Keys.columnCount)
-                : base.columnCount
+            columnCount: sanitizedColumnCount(
+                defaults.object(forKey: Keys.columnCount) != nil
+                    ? defaults.integer(forKey: Keys.columnCount)
+                    : base.columnCount
+            )
         )
     }
 
@@ -155,7 +170,18 @@ final class BrowseGridOptionsSettings {
         let defaults = UserDefaults.standard
         defaults.set(options.showCardName, forKey: Keys.showCardName)
         defaults.set(options.showSetName, forKey: Keys.showSetName)
+        defaults.set(options.showSetID, forKey: Keys.showSetID)
         defaults.set(options.showPricing, forKey: Keys.showPricing)
         defaults.set(options.columnCount, forKey: Keys.columnCount)
+    }
+
+    private static func sanitize(_ options: BrowseGridOptions) -> BrowseGridOptions {
+        var sanitized = options
+        sanitized.columnCount = sanitizedColumnCount(options.columnCount)
+        return sanitized
+    }
+
+    private static func sanitizedColumnCount(_ count: Int) -> Int {
+        min(max(count, validColumnRange.lowerBound), validColumnRange.upperBound)
     }
 }

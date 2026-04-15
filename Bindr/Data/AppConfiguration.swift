@@ -95,6 +95,13 @@ enum AppConfiguration {
         url(prefix: r2OnePieceCatalogRoot, path: path)
     }
 
+    /// ONE PIECE browse metadata lists:
+    /// - `onepiece/character-names.json`
+    /// - `onepiece/character-subtypes.json`
+    static func r2OnePieceBrowseMetadataURL(path: String) -> URL {
+        r2OnePieceURL(path: path)
+    }
+
     /// Per-set market pricing JSON for ONE PIECE: `onepiece/pricing/market/{setCode}.json` (keys are `priceKey` strings like `OP01::OP01-001::normal`).
     static func r2OnePieceMarketPricingSetURL(setCodeStem: String) -> URL {
         let stem = setCodeStem.trimmingCharacters(in: .whitespacesAndNewlines)

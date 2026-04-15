@@ -31,6 +31,16 @@ struct SideMenuView: View {
             ScrollView {
                     VStack(alignment: .leading, spacing: 0) {
                         SideMenuRow(
+                            systemImage: "square.grid.2x2.fill",
+                            title: "Dashboard",
+                            subtitle: "Your overview and activity",
+                            isSelected: selectedTab == .dashboard
+                        ) {
+                            close()
+                            selectedTab = .dashboard
+                        }
+
+                        SideMenuRow(
                             systemImage: "magnifyingglass",
                             title: "Search",
                             subtitle: "Cards, sets, and products"
@@ -78,6 +88,20 @@ struct SideMenuView: View {
                         ) {
                             close()
                             presentedSheet = .transactions
+                        }
+
+                        Divider()
+                            .padding(.vertical, 12)
+                            .padding(.horizontal, 4)
+
+                        SideMenuRow(
+                            systemImage: "books.vertical.fill",
+                            title: "Bindrs",
+                            subtitle: "Community binders and profiles",
+                            isSelected: selectedTab == .bindrs
+                        ) {
+                            close()
+                            selectedTab = .bindrs
                         }
 
                         Divider()
