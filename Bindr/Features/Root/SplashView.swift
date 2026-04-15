@@ -29,8 +29,8 @@ struct SplashView: View {
                     .textCase(.uppercase)
                     .padding(.bottom, 8)
 
-                // ── "bindr" wordmark ────────────────────────────────
-                Text("bindr")
+                // ── "BINDR" wordmark ────────────────────────────────
+                Text("BINDR")
                     .font(.custom("BebasNeue-Regular", size: 64))
                     // Fallback if Bebas Neue not yet added:
                     // .font(.system(size: 64, weight: .bold, design: .rounded))
