@@ -5,6 +5,7 @@ struct AccountView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @State private var showPaywall = false
     @State private var showDataExport = false
+    @State private var showDisclaimer = false
     @State private var brandPendingDisable: TCGBrand?
 
     /// Brands the user has not added yet (shown in the Add menu). Order follows the hosted `brands.json`.
@@ -26,6 +27,9 @@ struct AccountView: View {
         .sheet(isPresented: $showDataExport) {
             DataExportView()
                 .environment(services)
+        }
+        .sheet(isPresented: $showDisclaimer) {
+            DisclaimerView()
         }
         .alert(
             "Remove catalog?",
@@ -128,6 +132,10 @@ struct AccountView: View {
             Button("Export Data") { showDataExport = true }
         } header: {
             Text("Data")
+        }
+
+        Section {
+            Button("Legal Disclaimer") { showDisclaimer = true }
         }
 
         if let diagnostic = services.cloudSettings.cloudKitDiagnostic,

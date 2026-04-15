@@ -75,7 +75,8 @@ struct RootView: View {
     @FocusState private var searchFieldFocused: Bool
 
     // MARK: - Splash Flow
-    @State private var showSplash = true
+    @State private var showSplash = false
+    private let splashLastVersionKey = "bindr_splash_last_shown_version"
 
     /// True when search has pushed into a detail view — hide the floating `UniversalSearchBar` (detail uses system nav, same as Browse Pokémon).
     private var isSearchDetailActive: Bool {
@@ -181,6 +182,8 @@ struct RootView: View {
                 SplashView(onGetStarted: {
                     withAnimation(.easeInOut(duration: 0.35)) {
                         showSplash = false
+                        // Mark this version as shown
+                        UserDefaults.standard.set(currentAppVersion, forKey: splashLastVersionKey)
                         // Show existing brand onboarding if not completed
                         if !services.brandSettings.hasCompletedBrandOnboarding {
                             showBrandOnboarding = true
@@ -191,6 +194,19 @@ struct RootView: View {
                 .zIndex(100)
             }
         }
+        .task {
+            // Determine if splash should show (first launch or update)
+            let lastShownVersion = UserDefaults.standard.string(forKey: splashLastVersionKey)
+            let shouldShowSplash = lastShownVersion == nil || lastShownVersion != currentAppVersion
+            if shouldShowSplash {
+                showSplash = true
+            }
+        }
+    }
+
+    /// Current app version string (e.g., "1.2.3")
+    private var currentAppVersion: String {
+        Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
     }
 
     @ViewBuilder
