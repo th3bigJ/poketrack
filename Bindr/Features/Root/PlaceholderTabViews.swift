@@ -14,16 +14,3 @@ struct DashboardPlaceholderView: View {
     }
 }
 
-/// Temporary root for the last tab until social / Bindrs features ship.
-struct BindrsPlaceholderView: View {
-    var body: some View {
-        NavigationStack {
-            ContentUnavailableView(
-                "Bindrs",
-                systemImage: "books.vertical",
-                description: Text("Community features will appear here.")
-            )
-            .navigationTitle("Bindrs")
-        }
-    }
-}

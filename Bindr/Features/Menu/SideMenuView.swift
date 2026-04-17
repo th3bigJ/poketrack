@@ -10,7 +10,8 @@ struct SideMenuView: View {
     @Binding var presentedSheet: SideMenuSheet?
     /// Must match `RootView` search row: `safeAreaTop + 8` (same as `UniversalSearchBar` vertical padding).
     var headerTopPadding: CGFloat
-    var onPickSearch: () -> Void
+    var onPickCollection: () -> Void
+    var onPickWishlist: () -> Void
 
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
@@ -41,16 +42,6 @@ struct SideMenuView: View {
                         }
 
                         SideMenuRow(
-                            systemImage: "magnifyingglass",
-                            title: "Search",
-                            subtitle: "Cards, sets, and products"
-                        ) {
-                            close()
-                            selectedTab = .browse
-                            onPickSearch()
-                        }
-
-                        SideMenuRow(
                             systemImage: "rectangle.grid.2x2",
                             title: "Cards",
                             subtitle: "Browse all cards",
@@ -67,7 +58,7 @@ struct SideMenuView: View {
                             isSelected: selectedTab == .wishlist
                         ) {
                             close()
-                            selectedTab = .wishlist
+                            onPickWishlist()
                         }
 
                         SideMenuRow(
@@ -77,14 +68,22 @@ struct SideMenuView: View {
                             isSelected: selectedTab == .collection
                         ) {
                             close()
-                            selectedTab = .collection
+                            onPickCollection()
+                        }
+
+                        SideMenuRow(
+                            systemImage: "rectangle.on.rectangle.angled",
+                            title: "Deck Builder",
+                            subtitle: "Build and manage decks"
+                        ) {
+                            close()
+                            presentedSheet = .decks
                         }
 
                         SideMenuRow(
                             systemImage: "list.bullet.rectangle",
                             title: "Transactions",
-                            subtitle: "Your collection history",
-                            isSelected: presentedSheet == .transactions
+                            subtitle: "Your collection history"
                         ) {
                             close()
                             presentedSheet = .transactions
@@ -97,11 +96,20 @@ struct SideMenuView: View {
                         SideMenuRow(
                             systemImage: "books.vertical.fill",
                             title: "Bindrs",
-                            subtitle: "Community binders and profiles",
+                            subtitle: "Your card binders",
                             isSelected: selectedTab == .bindrs
                         ) {
                             close()
                             selectedTab = .bindrs
+                        }
+
+                        SideMenuRow(
+                            systemImage: "person.2",
+                            title: "Social",
+                            subtitle: "Friends, trades and activity"
+                        ) {
+                            close()
+                            presentedSheet = .social
                         }
 
                         Divider()

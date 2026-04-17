@@ -8,7 +8,8 @@
       "Bash(python3 -c ':*)",
       "Bash(mv pokemonL.imageset BrandPokemonLogo.imageset)",
       "Bash(mv onepieceL.imageset BrandOnePieceLogo.imageset)",
-      "Bash(mv lorcanaL.imageset lorcana.imageset)"
+      "Bash(mv lorcanaL.imageset lorcana.imageset)",
+      "Bash(xcodebuild -scheme PokeTrack -destination \"platform=iOS Simulator,name=iPhone 16\" build)"
     ]
   }
 }

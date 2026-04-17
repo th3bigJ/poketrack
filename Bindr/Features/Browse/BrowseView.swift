@@ -910,7 +910,8 @@ struct SetCardsView: View {
             query: query,
             filters: filters,
             ownedCardIDs: ownedCardIDs,
-            brand: services.brandSettings.selectedCatalogBrand
+            brand: services.brandSettings.selectedCatalogBrand,
+            sets: services.cardData.sets
         )
     }
 
@@ -1046,7 +1047,8 @@ struct DexCardsView: View {
             query: query,
             filters: filters,
             ownedCardIDs: ownedCardIDs,
-            brand: services.brandSettings.selectedCatalogBrand
+            brand: services.brandSettings.selectedCatalogBrand,
+            sets: services.cardData.sets
         )
     }
 
@@ -1160,7 +1162,8 @@ struct OnePieceCharacterCardsView: View {
             query: query,
             filters: filters,
             ownedCardIDs: ownedCardIDs,
-            brand: services.brandSettings.selectedCatalogBrand
+            brand: services.brandSettings.selectedCatalogBrand,
+            sets: services.cardData.sets
         )
     }
 
@@ -1272,7 +1275,8 @@ struct OnePieceSubtypeCardsView: View {
             query: query,
             filters: filters,
             ownedCardIDs: ownedCardIDs,
-            brand: services.brandSettings.selectedCatalogBrand
+            brand: services.brandSettings.selectedCatalogBrand,
+            sets: services.cardData.sets
         )
     }
 
@@ -1348,7 +1352,7 @@ struct OnePieceSubtypeCardsView: View {
     }
 }
 
-private struct BrowseFilterToolbarButton: View {
+struct BrowseFilterToolbarButton: View {
     let isActive: Bool
 
     var body: some View {
@@ -1359,7 +1363,7 @@ private struct BrowseFilterToolbarButton: View {
     }
 }
 
-private struct BrowseGridFiltersMenuContent: View {
+struct BrowseGridFiltersMenuContent: View {
     @Environment(AppServices.self) private var services
 
     let brand: TCGBrand
@@ -1369,14 +1373,26 @@ private struct BrowseGridFiltersMenuContent: View {
     let trainerTypeOptions: [String]
 
     var body: some View {
-        if filters.isVisiblyCustomized {
+        if filters.isVisiblyCustomized || filters.sortBy != .random {
             Section {
                 Button("Reset filters", role: .destructive) {
-                    let currentSort = filters.sortBy
                     filters = BrowseCardGridFilters()
-                    filters.sortBy = currentSort
                 }
             }
+        }
+
+        Section("Sort by") {
+            Menu(menuTitle("Sort by", summary: filters.sortBy.title)) {
+                Picker("Sort by", selection: $filters.sortBy) {
+                    ForEach(BrowseCardGridSortOption.allCases) { option in
+                        Text(option.title).tag(option)
+                    }
+                }
+                .pickerStyle(.inline)
+                .labelsHidden()
+            }
+            .menuActionDismissBehavior(.disabled)
+            .menuOrder(.fixed)
         }
 
         Section("Filters") {
@@ -1594,7 +1610,7 @@ private struct BrowseGridFiltersMenuContent: View {
     }
 }
 
-private func cardEnergyOptions(_ cards: [Card]) -> [String] {
+func cardEnergyOptions(_ cards: [Card]) -> [String] {
     var values = Set<String>()
     for card in cards {
         if let energyType = card.energyType?.trimmingCharacters(in: .whitespacesAndNewlines), !energyType.isEmpty {
@@ -1610,11 +1626,11 @@ private func cardEnergyOptions(_ cards: [Card]) -> [String] {
     return values.sorted()
 }
 
-private func cardRarityOptions(_ cards: [Card]) -> [String] {
+func cardRarityOptions(_ cards: [Card]) -> [String] {
     Set(cards.compactMap { $0.rarity?.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }).sorted()
 }
 
-private func cardTrainerTypeOptions(_ cards: [Card]) -> [String] {
+func cardTrainerTypeOptions(_ cards: [Card]) -> [String] {
     Set(cards.compactMap { $0.trainerType?.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }).sorted()
 }
 
@@ -1631,16 +1647,17 @@ private func isCommonOrUncommon(_ rarity: String?) -> Bool {
     return normalized.contains("common") || normalized.contains("uncommon")
 }
 
-private func filterBrowseCards(
+func filterBrowseCards(
     _ cards: [Card],
     query: String,
     filters: BrowseCardGridFilters,
     ownedCardIDs: Set<String>,
-    brand: TCGBrand
+    brand: TCGBrand,
+    sets: [TCGSet] = []
 ) -> [Card] {
     let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
     let q = trimmed.lowercased()
-    return cards.filter { card in
+    let filtered = cards.filter { card in
         let matchesQuery = trimmed.isEmpty || card.cardName.lowercased().contains(q)
             || card.cardNumber.lowercased().contains(q)
             || card.setCode.lowercased().contains(q)
@@ -1727,6 +1744,15 @@ private func filterBrowseCards(
             guard let lore = card.lcLore, filters.lcLores.contains(lore) else { return false }
         }
         return true
+    }
+
+    switch filters.sortBy {
+    case .cardName:
+        return filtered.sorted { $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending }
+    case .newestSet:
+        return sortCardsByReleaseDateNewestFirst(filtered, sets: sets)
+    case .cardNumber, .random, .price:
+        return filtered
     }
 }
 

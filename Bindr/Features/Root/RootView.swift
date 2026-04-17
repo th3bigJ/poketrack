@@ -63,12 +63,23 @@ struct RootView: View {
     @State private var browseFilterEnergyOptions: [String] = []
     @State private var browseFilterRarityOptions: [String] = []
     @State private var browseFilterTrainerTypeOptions: [String] = []
+    @State private var collectionFilters = BrowseCardGridFilters()
+    @State private var collectionFilterEnergyOptions: [String] = []
+    @State private var collectionFilterRarityOptions: [String] = []
+    @State private var collectionFilterTrainerTypeOptions: [String] = []
+    @State private var wishlistFilters = BrowseCardGridFilters()
+    @State private var wishlistFilterEnergyOptions: [String] = []
+    @State private var wishlistFilterRarityOptions: [String] = []
+    @State private var wishlistFilterTrainerTypeOptions: [String] = []
+    @State private var isWishlistActive = false
     @State private var isSideMenuOpen = false
     @State private var isSearchExperiencePresented = false
     /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar`; detail uses the same `NavigationStack` bar as Browse (`DexCardsView` / `SetCardsView`).
     @State private var searchNavigationPath = NavigationPath()
     /// Cards tab `NavigationStack` path — hide root chrome when a card detail (or other pushed screen) is showing.
     @State private var browseNavigationPath = NavigationPath()
+    @State private var collectionNavigationPath = NavigationPath()
+    @State private var bindrsNavigationPath = NavigationPath()
     @State private var browseFullScreen: BrowseFullScreen?
     @State private var selectedCardPresentation: CardPresentationContext?
     @State private var showBrandOnboarding = false
@@ -87,6 +98,7 @@ struct RootView: View {
     private var showUniversalSearchBar: Bool {
         if isSideMenuOpen { return true }
         if isSearchExperiencePresented { return true }
+        if selectedTab == .bindrs && !bindrsNavigationPath.isEmpty { return false }
         return chromeScroll.barsVisible
     }
 
@@ -103,6 +115,14 @@ struct RootView: View {
             && browseNavigationPath.isEmpty
             && !isSearchExperiencePresented
             && browseFullScreen == nil
+    }
+
+    private var isCollectionFilterContextActive: Bool {
+        selectedTab == .collection && collectionNavigationPath.isEmpty && !isSearchExperiencePresented
+    }
+
+    private var isWishlistFilterContextActive: Bool {
+        (selectedTab == .wishlist || (selectedTab == .collection && isWishlistActive)) && !isSearchExperiencePresented
     }
 
     var body: some View {
@@ -214,42 +234,47 @@ struct RootView: View {
         GeometryReader { geo in
             let width = geo.size.width
             let menuWidth = min(width * 0.65, 300)
-            // `GeometryReader` is already laid out inside the safe area, so only a small margin below the
-            // status bar — do not add `safeAreaInsets.top` here or the bar sits one notch-height too low.
-            let searchBarTopInset: CGFloat = 8
-            let searchBarHiddenOffset = -(RootChromeEnvironment.searchBarStackHeight + searchBarTopInset + 18)
-            // `SideMenuView` uses `.ignoresSafeArea(edges: .top)`, so it still needs the full safe inset.
-            let sideMenuHeaderTopPadding = geo.safeAreaInsets.top + 8
-            let edgeSwipeBelowSearchBar = searchBarTopInset + RootChromeEnvironment.searchBarStackHeight + 8
+            let searchBarTopInset = RootChromeEnvironment.searchBarTopInset
+            let searchBarBottomInset = RootChromeEnvironment.searchBarBottomInset
+            let floatingChromeInset = RootChromeEnvironment.floatingContentTopInset
+            let searchBarHiddenOffset = -(floatingChromeInset + 18)
+            // `SideMenuView` replaces the search row when open, so it should align to the same top offset,
+            // not sit below the full floating chrome stack.
+            let sideMenuHeaderTopPadding = geo.safeAreaInsets.top + searchBarTopInset
+            let edgeSwipeBelowSearchBar = floatingChromeInset + 8
             ZStack(alignment: .leading) {
             SideMenuView(
                 isPresented: $isSideMenuOpen,
                 selectedTab: $selectedTab,
                 presentedSheet: $sideMenuSheet,
                 headerTopPadding: sideMenuHeaderTopPadding,
-                onPickSearch: {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.35) {
-                        searchFieldFocused = true
-                    }
+                onPickCollection: {
+                    collectionNavigationPath = NavigationPath()
+                    selectedTab = .collection
+                },
+                onPickWishlist: {
+                    selectedTab = .wishlist
                 }
             )
             .frame(width: menuWidth)
             .frame(maxHeight: .infinity)
             .zIndex(0)
 
-            let floatingChromeInset: CGFloat = {
+            let contentTopInset: CGFloat = {
                 if isSearchDetailActive { return 0 }
-                return RootChromeEnvironment.searchBarStackHeight
+                return floatingChromeInset
             }()
 
             ZStack(alignment: .top) {
                 ZStack(alignment: .top) {
                     TabView(selection: $selectedTab) {
-                        ForEach(AppTab.allCases) { tab in
+                        ForEach(AppTab.visibleTabs) { tab in
                             Group {
                                 switch tab {
                                 case .dashboard:
-                                    DashboardPlaceholderView()
+                                    NavigationStack {
+                                        DashboardView()
+                                    }
                                 case .browse:
                                     NavigationStack(path: $browseNavigationPath) {
                                         BrowseView(
@@ -277,16 +302,40 @@ struct RootView: View {
                                             }
                                         )
                                     }
+                                case .collection:
+                                    NavigationStack(path: $collectionNavigationPath) {
+                                        CollectionListView(
+                                            filters: $collectionFilters,
+                                            onFilterOptionsChange: { energy, rarity, trainer in
+                                                collectionFilterEnergyOptions = energy
+                                                collectionFilterRarityOptions = rarity
+                                                collectionFilterTrainerTypeOptions = trainer
+                                            },
+                                            wishlistFilters: $wishlistFilters,
+                                            isWishlistActive: $isWishlistActive,
+                                            onWishlistFilterOptionsChange: { energy, rarity, trainer in
+                                                wishlistFilterEnergyOptions = energy
+                                                wishlistFilterRarityOptions = rarity
+                                                wishlistFilterTrainerTypeOptions = trainer
+                                            }
+                                        )
+                                    }
                                 case .wishlist:
                                     NavigationStack {
-                                        WishlistView()
-                                    }
-                                case .collection:
-                                    NavigationStack {
-                                        CollectionListView()
+                                        WishlistView(
+                                            filters: $wishlistFilters,
+                                            isActive: $isWishlistActive,
+                                            onFilterOptionsChange: { energy, rarity, trainer in
+                                                wishlistFilterEnergyOptions = energy
+                                                wishlistFilterRarityOptions = rarity
+                                                wishlistFilterTrainerTypeOptions = trainer
+                                            }
+                                        )
                                     }
                                 case .bindrs:
-                                    BindrsPlaceholderView()
+                                    NavigationStack(path: $bindrsNavigationPath) {
+                                        BindersRootView()
+                                    }
                                 }
                             }
                             .toolbarBackground(.hidden, for: .navigationBar)
@@ -348,7 +397,7 @@ struct RootView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .animation(.spring(response: 0.38, dampingFraction: 0.88), value: isSearchExperiencePresented)
-                .environment(\.rootFloatingChromeInset, floatingChromeInset)
+                .environment(\.rootFloatingChromeInset, contentTopInset)
 
                 // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
                 UniversalSearchBar(
@@ -356,9 +405,9 @@ struct RootView: View {
                     isFocused: $searchFieldFocused,
                     isMenuOpen: isSideMenuOpen,
                     isSearchOpen: isSearchExperiencePresented,
-                    isFilterEnabled: isBrowseGridFilterContextActive,
-                    isFilterActive: browseFilters.isVisiblyCustomized,
-                    filterMenuContent: isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent) : nil,
+                    isFilterEnabled: isBrowseGridFilterContextActive || isCollectionFilterContextActive || isWishlistFilterContextActive,
+                    isFilterActive: isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized : isWishlistFilterContextActive ? wishlistFilters.isVisiblyCustomized : collectionFilters.isVisiblyCustomized,
+                    filterMenuContent: isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent) : isWishlistFilterContextActive ? AnyView(wishlistFilterMenuContent) : isCollectionFilterContextActive ? AnyView(collectionFilterMenuContent) : nil,
                     onBurgerTap: {
                         if isSearchExperiencePresented {
                             searchNavigationPath = NavigationPath()
@@ -388,7 +437,7 @@ struct RootView: View {
                 .opacity(showUniversalSearchBar && !isSearchDetailActive ? 1 : 0.001)
                 .padding(.horizontal, 16)
                 .padding(.top, searchBarTopInset)
-                .padding(.bottom, 10)
+                .padding(.bottom, searchBarBottomInset)
                 .frame(maxWidth: .infinity, alignment: .top)
                 .allowsHitTesting(showUniversalSearchBar && !isSearchDetailActive)
                 .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
@@ -499,6 +548,9 @@ struct RootView: View {
         .onChange(of: selectedTab) { _, tab in
             Haptics.selectionChanged()
             chromeScroll.configureForTab(tab)
+            if tab == .collection {
+                collectionNavigationPath = NavigationPath()
+            }
         }
         .onChange(of: browseNavigationPath.count) { _, newCount in
             if newCount == 0 {
@@ -542,14 +594,24 @@ struct RootView: View {
                 switch destination {
                 case .account:
                     AccountView()
+                case .social:
+                    NavigationStack {
+                        SocialRootView()
+                    }
+                case .decks:
+                    NavigationStack {
+                        DecksRootView()
+                    }
                 case .transactions:
-                    TransactionsView()
+                    NavigationStack {
+                        TransactionsView()
+                    }
                 }
             }
             .environment(services)
             .safeAreaInset(edge: .top, spacing: 0) {
                 HStack {
-                    Text(destination == .account ? "Account" : "Transactions")
+                    Text(destination.title)
                         .font(.headline.weight(.semibold))
                     Spacer()
                     Button("Done") {
@@ -876,6 +938,28 @@ struct RootView: View {
         let active = groups.filter { $0.1 > 0 }
         guard !active.isEmpty else { return nil }
         return active.map { "\($0.0) \($0.1)" }.joined(separator: ", ")
+    }
+
+    @ViewBuilder
+    private var collectionFilterMenuContent: some View {
+        BrowseGridFiltersMenuContent(
+            brand: services.brandSettings.selectedCatalogBrand,
+            filters: $collectionFilters,
+            energyOptions: collectionFilterEnergyOptions,
+            rarityOptions: collectionFilterRarityOptions,
+            trainerTypeOptions: collectionFilterTrainerTypeOptions
+        )
+    }
+
+    @ViewBuilder
+    private var wishlistFilterMenuContent: some View {
+        BrowseGridFiltersMenuContent(
+            brand: services.brandSettings.selectedCatalogBrand,
+            filters: $wishlistFilters,
+            energyOptions: wishlistFilterEnergyOptions,
+            rarityOptions: wishlistFilterRarityOptions,
+            trainerTypeOptions: wishlistFilterTrainerTypeOptions
+        )
     }
 }
 

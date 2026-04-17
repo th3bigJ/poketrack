@@ -2,7 +2,7 @@ import AVFoundation
 import CoreImage
 import CoreImage.CIFilterBuiltins
 import UIKit
-import Vision
+@preconcurrency import Vision
 import SwiftUI
 
 enum ScanState {

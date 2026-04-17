@@ -47,8 +47,6 @@ struct TransactionsView: View {
     private var emptyState: some View {
         ScrollView {
             VStack(spacing: 16) {
-                Color.clear.frame(height: rootFloatingChromeInset)
-
                 Text("Transactions")
                     .font(.largeTitle.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -61,14 +59,13 @@ struct TransactionsView: View {
                 )
                 .frame(minHeight: 280)
             }
+            .padding(.top, rootFloatingChromeInset)
         }
     }
 
     private var hiddenByBrandEmptyState: some View {
         ScrollView {
             VStack(spacing: 16) {
-                Color.clear.frame(height: rootFloatingChromeInset)
-
                 Text("Transactions")
                     .font(.largeTitle.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -81,6 +78,7 @@ struct TransactionsView: View {
                 )
                 .frame(minHeight: 280)
             }
+            .padding(.top, rootFloatingChromeInset)
         }
     }
 
@@ -110,7 +108,9 @@ struct TransactionsView: View {
         }
         .listStyle(.plain)
         .scrollContentBackground(.hidden)
-        .contentMargins(.top, rootFloatingChromeInset, for: .scrollContent)
+        .safeAreaInset(edge: .top, spacing: 0) {
+            Color.clear.frame(height: rootFloatingChromeInset)
+        }
     }
 
     private func transactionRow(for line: LedgerLine) -> some View {

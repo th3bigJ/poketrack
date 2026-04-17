@@ -6,24 +6,32 @@ struct UniversalSearchResultsView: View {
     @Environment(\.presentCard) private var presentCard
     let query: String
 
+    @State private var matchingSets: [SearchSetMatch] = []
     @State private var cards: [Card] = []
     @State private var isSearching = false
+    @State private var isLoadingAllCards = false
+    @State private var hasMoreCardResults = false
+    @State private var showAllCards = false
+
+    private let previewCardLimit = 9
+
+    private struct SearchSetMatch: Identifiable {
+        let set: TCGSet
+        let brand: TCGBrand
+
+        var id: String { "\(brand.rawValue)|\(set.id)" }
+    }
 
     private var trimmed: String {
         query.trimmingCharacters(in: .whitespacesAndNewlines)
-    }
-
-    private var matchingSets: [TCGSet] {
-        services.cardData.searchSets(matching: trimmed)
     }
 
     private var pokemonCatalogEnabled: Bool {
         services.brandSettings.enabledBrands.contains(.pokemon)
     }
 
-    /// Dex matches are Pokémon-only; hide while browsing ONE PIECE (or Pokémon disabled).
     private var showPokemonDexSection: Bool {
-        pokemonCatalogEnabled && services.brandSettings.selectedCatalogBrand == .pokemon
+        pokemonCatalogEnabled
     }
 
     private var matchingPokemon: [NationalDexPokemon] {
@@ -32,7 +40,7 @@ struct UniversalSearchResultsView: View {
     }
 
     private var showOnePieceBrowseSections: Bool {
-        services.brandSettings.selectedCatalogBrand == .onePiece
+        services.brandSettings.enabledBrands.contains(.onePiece)
     }
 
     private var matchingOnePieceCharacters: [String] {
@@ -56,6 +64,7 @@ struct UniversalSearchResultsView: View {
     }
 
     private let cardColumns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+    private var displayedCards: [Card] { showAllCards ? cards : Array(cards.prefix(previewCardLimit)) }
 
     var body: some View {
         Group {
@@ -74,14 +83,14 @@ struct UniversalSearchResultsView: View {
                             sectionHeader("Sets")
                             VStack(spacing: 0) {
                                 ForEach(matchingSets) { set in
-                                    NavigationLink(value: SearchNavRoot.set(set)) {
+                                    NavigationLink(value: SearchNavRoot.set(set.set)) {
                                         HStack(spacing: 12) {
-                                            SetLogoAsyncImage(logoSrc: set.logoSrc, height: 36, brand: services.brandSettings.selectedCatalogBrand)
+                                            SetLogoAsyncImage(logoSrc: set.set.logoSrc, height: 36, brand: set.brand)
                                                 .frame(width: 72, height: 36)
                                             VStack(alignment: .leading, spacing: 2) {
-                                                Text(set.name)
+                                                Text(set.set.name)
                                                     .foregroundStyle(.primary)
-                                                Text(set.setCode.uppercased())
+                                                Text(set.brand.displayTitle + " · " + set.set.setCode.uppercased())
                                                     .font(.caption)
                                                     .foregroundStyle(.secondary)
                                             }
@@ -169,7 +178,7 @@ struct UniversalSearchResultsView: View {
                         }
 
                         // MARK: Cards
-                        sectionHeader("Cards")
+                        cardsSectionHeader
                         if isSearching && cards.isEmpty {
                             ProgressView("Searching…")
                                 .frame(maxWidth: .infinity)
@@ -181,8 +190,8 @@ struct UniversalSearchResultsView: View {
                                 .padding(.horizontal, 16)
                         } else {
                             LazyVGrid(columns: cardColumns, spacing: 12) {
-                                ForEach(cards) { card in
-                                    Button { presentCard(card, cards) } label: {
+                                ForEach(displayedCards) { card in
+                                    Button { presentCard(card, displayedCards) } label: {
                                         CardGridCell(card: card)
                                     }
                                     .buttonStyle(CardCellButtonStyle())
@@ -199,10 +208,19 @@ struct UniversalSearchResultsView: View {
         .toolbarBackground(.hidden, for: .navigationBar)
         .task(id: trimmed) {
             guard !trimmed.isEmpty else {
+                matchingSets = []
                 cards = []
                 isSearching = false
+                isLoadingAllCards = false
+                hasMoreCardResults = false
+                showAllCards = false
                 return
             }
+            isLoadingAllCards = false
+            hasMoreCardResults = false
+            showAllCards = false
+            try? await Task.sleep(nanoseconds: 225_000_000)
+            guard !Task.isCancelled else { return }
             if showPokemonDexSection, services.cardData.nationalDexPokemon.isEmpty {
                 await services.cardData.loadNationalDexPokemon()
             }
@@ -212,10 +230,57 @@ struct UniversalSearchResultsView: View {
             }
             isSearching = true
             defer { isSearching = false }
-            try? await Task.sleep(nanoseconds: 150_000_000)
-            guard !Task.isCancelled else { return }
-            cards = await services.cardData.search(query: trimmed)
+            let enabledBrands = services.brandSettings.enabledBrands.sorted { $0.menuOrder < $1.menuOrder }
+
+            var allSetMatches: [SearchSetMatch] = []
+            for brand in enabledBrands {
+                let brandSets = await services.cardData.catalogSets(for: brand)
+                let q = trimmed.lowercased()
+                let matches = brandSets.filter { set in
+                    set.name.lowercased().contains(q)
+                        || set.setCode.lowercased().contains(q)
+                        || (set.seriesName?.lowercased().contains(q) == true)
+                }
+                allSetMatches.append(contentsOf: matches.map { SearchSetMatch(set: $0, brand: brand) })
+            }
+            matchingSets = allSetMatches
+
+            var previewCards: [Card] = []
+            var totalMatchedCardCount = 0
+            for brand in enabledBrands {
+                let brandCards = await services.cardData.search(query: trimmed, catalogBrand: brand)
+                totalMatchedCardCount += brandCards.count
+                if previewCards.count < previewCardLimit {
+                    let remaining = previewCardLimit - previewCards.count
+                    previewCards.append(contentsOf: brandCards.prefix(remaining))
+                }
+                if totalMatchedCardCount > previewCardLimit {
+                    break
+                }
+            }
+            cards = previewCards
+            hasMoreCardResults = totalMatchedCardCount > previewCardLimit
         }
+    }
+
+    @MainActor
+    private func loadAllCardResults(for query: String) async {
+        guard !query.isEmpty else { return }
+        guard !isLoadingAllCards else { return }
+
+        isLoadingAllCards = true
+        defer { isLoadingAllCards = false }
+
+        let enabledBrands = services.brandSettings.enabledBrands.sorted { $0.menuOrder < $1.menuOrder }
+        var allCards: [Card] = []
+        for brand in enabledBrands {
+            let brandCards = await services.cardData.search(query: query, catalogBrand: brand)
+            allCards.append(contentsOf: brandCards)
+        }
+        guard self.trimmed == query else { return }
+        cards = allCards
+        showAllCards = true
+        hasMoreCardResults = allCards.count > previewCardLimit
     }
 
     private func sectionHeader(_ title: String) -> some View {
@@ -224,6 +289,33 @@ struct UniversalSearchResultsView: View {
             .foregroundStyle(.secondary)
             .padding(.horizontal, 16)
             .padding(.top, 4)
+    }
+
+    private var cardsSectionHeader: some View {
+        HStack(alignment: .firstTextBaseline, spacing: 12) {
+            Text("Cards")
+                .font(.footnote.weight(.semibold))
+                .foregroundStyle(.secondary)
+
+            Spacer()
+
+            if hasMoreCardResults && !showAllCards {
+                Button {
+                    Task { await loadAllCardResults(for: trimmed) }
+                } label: {
+                    if isLoadingAllCards {
+                        ProgressView()
+                            .controlSize(.small)
+                    } else {
+                        Text("View all")
+                            .font(.footnote.weight(.semibold))
+                    }
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 4)
     }
 
     private func searchListRow(title: String) -> some View {

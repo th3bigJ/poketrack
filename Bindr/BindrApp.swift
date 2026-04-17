@@ -22,6 +22,10 @@ struct BindrApp: App {
             LedgerLine.self,
             CostLot.self,
             SaleAllocation.self,
+            Binder.self,
+            BinderSlot.self,
+            Deck.self,
+            DeckCard.self,
         ])
 
         do {

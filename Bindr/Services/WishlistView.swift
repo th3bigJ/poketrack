@@ -8,6 +8,10 @@ struct WishlistView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var items: [WishlistItem]
 
+    @Binding var filters: BrowseCardGridFilters
+    @Binding var isActive: Bool
+    var onFilterOptionsChange: (([String], [String], [String]) -> Void)?
+
     /// Items for games that are still enabled in Account (same rows stay in iCloud; UI hides the rest).
     private var visibleWishlistItems: [WishlistItem] {
         let enabled = services.brandSettings.enabledBrands
@@ -29,6 +33,31 @@ struct WishlistView: View {
     /// Same order as `visibleWishlistItems`, for horizontal paging in `CardBrowseDetailView`.
     private var orderedCards: [Card] {
         visibleWishlistItems.compactMap { cardsByCardID[$0.cardID] }
+    }
+
+    private var ownedCardIDs: Set<String> {
+        Set<String>()
+    }
+
+    private var filteredItems: [(item: WishlistItem, card: Card)] {
+        let resolved = visibleWishlistItems.compactMap { item -> (WishlistItem, Card)? in
+            guard let card = cardsByCardID[item.cardID] else { return nil }
+            return (item, card)
+        }
+        guard filters.hasActiveFieldFilters else {
+            return resolved.map { ($0.0, $0.1) }
+        }
+        let cards = resolved.map { $0.1 }
+        let filteredCards = filterBrowseCards(
+            cards,
+            query: "",
+            filters: filters,
+            ownedCardIDs: ownedCardIDs,
+            brand: services.brandSettings.selectedCatalogBrand,
+            sets: services.cardData.sets
+        )
+        let filteredIDs = Set(filteredCards.map { $0.masterCardId })
+        return resolved.filter { filteredIDs.contains($0.1.masterCardId) }.map { ($0.0, $0.1) }
     }
 
     var body: some View {
@@ -60,6 +89,10 @@ struct WishlistView: View {
         }
         .onAppear {
             services.setupWishlist(modelContext: modelContext)
+            isActive = true
+        }
+        .onDisappear {
+            isActive = false
         }
     }
 
@@ -125,8 +158,8 @@ struct WishlistView: View {
                     .padding(.bottom, 12)
 
                 LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(Array(visibleWishlistItems.enumerated()), id: \.element.id) { index, item in
-                        wishlistCell(for: item)
+                    ForEach(Array(filteredItems.enumerated()), id: \.element.item.id) { index, pair in
+                        wishlistCell(for: pair.item)
                             .onAppear {
                                 ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: index + 1)
                             }
@@ -149,9 +182,11 @@ struct WishlistView: View {
     }
 
     private var wishlistTopBar: some View {
-        Text("Wishlist")
-            .font(.largeTitle.bold())
-            .frame(maxWidth: .infinity, alignment: .leading)
+        HStack(alignment: .firstTextBaseline) {
+            Text("Wishlist")
+                .font(.largeTitle.bold())
+            Spacer()
+        }
     }
 
     private var iCloudBanner: some View {
@@ -243,6 +278,11 @@ struct WishlistView: View {
         }
         cardsByCardID = next
         ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: 0, count: 24)
+        onFilterOptionsChange?(
+            cardEnergyOptions(orderedCards),
+            cardRarityOptions(orderedCards),
+            cardTrainerTypeOptions(orderedCards)
+        )
     }
 
     private func removeItem(_ item: WishlistItem) {
@@ -261,8 +301,11 @@ struct WishlistView: View {
 
 #Preview("Empty Wishlist") {
     NavigationStack {
-        WishlistView()
-            .environment(AppServices())
+        WishlistView(
+            filters: .constant(BrowseCardGridFilters()),
+            isActive: .constant(true)
+        )
+        .environment(AppServices())
     }
     .modelContainer(WishlistPreview.modelContainer)
 }
