@@ -66,6 +66,8 @@ The plan is phased so AI can build, test, and gate each slice before moving on. 
 - “I have this” should create a lightweight social signal that can later branch into trade if the user chooses.
 - Trade chat should be scoped to the trade itself rather than becoming a general-purpose DM system.
 - Avatar upload/signing/caching rules should be planned against Cloudflare R2 before profile media work begins.
+- `payload_version` is a field stored inside shared JSON payloads, not a package or install step.
+- Breaking payload-shape changes should bump the version, and readers should stay backward-compatible with at least the previous payload version during migration.
 
 # Part A: Bindrs, Deck Builder & Navigation Restructure
 
@@ -198,11 +200,11 @@ Add to `BindrApp.makeModelContainer()` Schema: `Binder.self, BinderSlot.self`
 // Lorcana:   60 cards total, max 4 copies per card name
 
 enum DeckFormat: String, Codable {
-    case pokemonStandard  = "Standard"
-    case pokemonExpanded  = "Expanded"
-    case pokemonUnlimited = "Unlimited"
-    case onePiece         = "Standard"
-    case lorcana          = "Standard"
+    case pokemonStandard  = "pokemon_standard"
+    case pokemonExpanded  = "pokemon_expanded"
+    case pokemonUnlimited = "pokemon_unlimited"
+    case onePiece         = "onepiece_standard"
+    case lorcana          = "lorcana_standard"
 
     var deckSize: Int { /* 60 except onePiece = 50 */ }
     var maxCopiesPerCard: Int { 4 }
@@ -226,6 +228,8 @@ enum DeckFormat: String, Codable {
     var deck: Deck?
 }
 ```
+
+Display names should be derived separately from the stored raw values.
 
 Validation computed on `Deck`:
 ```swift
@@ -458,7 +462,7 @@ Bindr is an iOS SwiftUI app using SwiftData + CloudKit for personal card collect
 | Trade items | V1 = single cards + cash top-up only |
 | Trade structure | Multi-card both sides; counter-offers allowed (negotiate loop) |
 | Trade ledger price | Market value from PricingService at time offer is created |
-| "I have this" | User chooses: notify only OR auto-start trade offer |
+| "I have this" | Sends a lightweight signal only; recipient can later choose `Start Trade` |
 | Trade expiry | None — trades stay open until one party declines/cancels. `expires_at` column omitted from schema. |
 | Offline trade completion | App checks for `completed` trades on next foreground open (remote + local idempotency) |
 | Social tab badge | Red dot on Social tab icon for unread feed items, pending friend requests, and trades requiring action |
@@ -696,6 +700,8 @@ completed  ← collections + ledger updated on each device
 
 **Counter-offer mechanics:** Items are replaced in-place when a counter is submitted, but each revision is also written to `trade_offer_revisions` as a full snapshot. `last_modified_by` indicates whose turn it is.
 
+**“I have this” flow:** the action sends a lightweight signal only. The recipient sees it in feed, inbox, and content detail, and may then choose `Start Trade` from that context.
+
 **Collection execution (each device independently):**
 
 When `status = completed` is detected via APNs or next app foreground:
@@ -729,7 +735,7 @@ When `status = completed` is detected via APNs or next app foreground:
 { "format": "Standard", "brand": "pokemon", "cards": [{ "cardID": "sv3pt5-001", "variantKey": "normal", "quantity": 4, "cardName": "Pikachu" }] }
 ```
 
-**Add to every shared payload:** `payload_version`, `generated_at`, and stable owner/content identifiers so future app versions can safely deserialize older snapshots.
+**Add to every shared payload:** `payload_version: 1`, `generated_at`, and stable owner/content identifiers so future app versions can safely deserialize older snapshots. Breaking payload changes should increment `payload_version`, and readers should remain compatible with at least the previous payload version during migration.
 
 ---
 
@@ -815,7 +821,7 @@ This section is the working delivery plan. Each phase should be built, manually 
 - [ ] Write SQL migrations for `trade_offer_revisions`
 - [ ] Add RLS policies for each table
 - [ ] Document deep-link routes and payload contracts
-- [ ] Add `payload_version` rules to every shared payload type
+- [ ] Add `payload_version = 1` rules to every shared payload type
 - [ ] Document block/cancel side effects in backend rules
 - [ ] Document comment threading rules and max UI depth
 
@@ -824,6 +830,7 @@ This section is the working delivery plan. Each phase should be built, manually 
 - [ ] RLS blocks non-friend access to `shared_content`
 - [ ] RLS allows only owners to edit `notification_preferences`
 - [ ] Block action rules are validated at the data level
+- [ ] Payload examples all include `payload_version: 1`
 
 **Gate**
 - [ ] Backend schema and contracts are frozen for app integration
@@ -1036,6 +1043,7 @@ This section is the working delivery plan. Each phase should be built, manually 
 - [ ] Add pagination/cursor loading strategy
 - [ ] Add unread-state tracking model
 - [ ] Exclude private-only `collection_stats` from shared/feed models
+- [ ] Keep push-triggering behavior locally stubbed only until Phase 15
 
 **Test**
 - [ ] Feed loads for a user with friend activity
@@ -1073,6 +1081,7 @@ This section is the working delivery plan. Each phase should be built, manually 
 - [ ] Load/save `notification_preferences`
 - [ ] Add settings entry point
 - [ ] Wire preference checks into local notification decision points
+- [ ] Keep APNs sends disabled and use local stubs only before Phase 15
 
 **Test**
 - [ ] Preference toggles persist
