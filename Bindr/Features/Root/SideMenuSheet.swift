@@ -1,7 +1,7 @@
 import Foundation
 
-/// Screens opened only from the side menu as fullScreenCover (not shown in the tab bar).
-enum SideMenuSheet: String, Identifiable {
+/// Screens opened only from the side menu and not shown in the tab bar.
+enum SideMenuPage: String, Identifiable {
     case account
     case social
     case decks

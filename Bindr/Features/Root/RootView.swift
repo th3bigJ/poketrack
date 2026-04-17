@@ -49,13 +49,34 @@ private struct BrowseFullScreenHost: View {
     }
 }
 
+private struct SideMenuPageHost: View {
+    let page: SideMenuPage
+
+    var body: some View {
+        NavigationStack {
+            Group {
+                switch page {
+                case .account:
+                    AccountView()
+                case .social:
+                    SocialRootView()
+                case .decks:
+                    DecksRootView()
+                case .transactions:
+                    TransactionsView()
+                }
+            }
+        }
+    }
+}
+
 struct RootView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @State private var services = AppServices()
     @StateObject private var chromeScroll = ChromeScrollCoordinator()
     @State private var selectedTab: AppTab = .dashboard
-    @State private var sideMenuSheet: SideMenuSheet?
+    @State private var sideMenuPage: SideMenuPage?
     @State private var universalQuery = ""
     @State private var showCardScanner = false
     @State private var browseFilters = BrowseCardGridFilters()
@@ -98,6 +119,7 @@ struct RootView: View {
     private var showUniversalSearchBar: Bool {
         if isSideMenuOpen { return true }
         if isSearchExperiencePresented { return true }
+        if sideMenuPage != nil { return true }
         if selectedTab == .bindrs && !bindrsNavigationPath.isEmpty { return false }
         return chromeScroll.barsVisible
     }
@@ -111,6 +133,8 @@ struct RootView: View {
     }
 
     private var isBrowseGridFilterContextActive: Bool {
+        sideMenuPage == nil
+            &&
         selectedTab == .browse
             && browseNavigationPath.isEmpty
             && !isSearchExperiencePresented
@@ -118,11 +142,11 @@ struct RootView: View {
     }
 
     private var isCollectionFilterContextActive: Bool {
-        selectedTab == .collection && collectionNavigationPath.isEmpty && !isSearchExperiencePresented
+        sideMenuPage == nil && selectedTab == .collection && collectionNavigationPath.isEmpty && !isSearchExperiencePresented
     }
 
     private var isWishlistFilterContextActive: Bool {
-        (selectedTab == .wishlist || (selectedTab == .collection && isWishlistActive)) && !isSearchExperiencePresented
+        sideMenuPage == nil && (selectedTab == .wishlist || (selectedTab == .collection && isWishlistActive)) && !isSearchExperiencePresented
     }
 
     var body: some View {
@@ -246,13 +270,15 @@ struct RootView: View {
             SideMenuView(
                 isPresented: $isSideMenuOpen,
                 selectedTab: $selectedTab,
-                presentedSheet: $sideMenuSheet,
+                selectedPage: $sideMenuPage,
                 headerTopPadding: sideMenuHeaderTopPadding,
                 onPickCollection: {
+                    sideMenuPage = nil
                     collectionNavigationPath = NavigationPath()
                     selectedTab = .collection
                 },
                 onPickWishlist: {
+                    sideMenuPage = nil
                     selectedTab = .wishlist
                 }
             )
@@ -346,6 +372,21 @@ struct RootView: View {
                         }
                     }
                     .allowsHitTesting(!isSideMenuOpen)
+
+                    if let sideMenuPage {
+                        SideMenuPageHost(page: sideMenuPage)
+                            .environment(services)
+                            .environment(\.presentCard, { card, list in
+                                let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
+                                selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
+                            })
+                            .toolbarBackground(.hidden, for: .navigationBar)
+                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+                            .background(Color(uiColor: .systemBackground))
+                            .transition(.move(edge: .trailing).combined(with: .opacity))
+                            .zIndex(1)
+                            .allowsHitTesting(!isSideMenuOpen)
+                    }
 
                     if isSearchExperiencePresented {
                         Color.black.opacity(colorScheme == .light ? 0.28 : 0.45)
@@ -547,9 +588,15 @@ struct RootView: View {
         }
         .onChange(of: selectedTab) { _, tab in
             Haptics.selectionChanged()
+            sideMenuPage = nil
             chromeScroll.configureForTab(tab)
             if tab == .collection {
                 collectionNavigationPath = NavigationPath()
+            }
+        }
+        .onChange(of: sideMenuPage) { _, page in
+            if page != nil {
+                chromeScroll.forceVisible()
             }
         }
         .onChange(of: browseNavigationPath.count) { _, newCount in
@@ -588,66 +635,6 @@ struct RootView: View {
                 }
             )
             .environment(services)
-        }
-        .fullScreenCover(item: $sideMenuSheet) { destination in
-            Group {
-                switch destination {
-                case .account:
-                    AccountView()
-                case .social:
-                    NavigationStack {
-                        SocialRootView()
-                    }
-                case .decks:
-                    NavigationStack {
-                        DecksRootView()
-                    }
-                case .transactions:
-                    NavigationStack {
-                        TransactionsView()
-                    }
-                }
-            }
-            .environment(services)
-            .safeAreaInset(edge: .top, spacing: 0) {
-                HStack {
-                    Text(destination.title)
-                        .font(.headline.weight(.semibold))
-                    Spacer()
-                    Button("Done") {
-                        sideMenuSheet = nil
-                    }
-                    .fontWeight(.semibold)
-                }
-                .padding(.horizontal, 16)
-                .padding(.vertical, 12)
-                .frame(maxWidth: .infinity)
-                .background(.bar)
-            }
-            .overlay {
-                if services.isCatalogDownloadInProgress {
-                    ZStack {
-                        Color.black.opacity(0.48)
-                            .ignoresSafeArea()
-                        if services.catalogDownloadShowsByteProgressUI {
-                            LoadingScreen(
-                                message: services.catalogDownloadMessage,
-                                status: services.catalogDownloadStatus,
-                                progress: services.catalogDownloadProgress,
-                                downloadedBytes: services.catalogDownloadDownloadedBytes,
-                                totalBytes: services.catalogDownloadEstimatedTotalBytes
-                            )
-                        } else {
-                            CatalogEnablingBusyView(
-                                message: services.catalogDownloadMessage,
-                                status: services.catalogDownloadStatus
-                            )
-                        }
-                    }
-                    .transition(.opacity)
-                }
-            }
-            .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
         }
     }
 

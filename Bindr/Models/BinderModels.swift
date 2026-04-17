@@ -2,21 +2,31 @@ import SwiftData
 import Foundation
 
 enum BinderPageLayout: String, Codable, CaseIterable {
+    case fourSlot   = "fourSlot"
     case nineSlot   = "nineSlot"
+    case sixteenSlot = "sixteenSlot"
     case twelveSlot = "twelveSlot"
     case freeScroll = "freeScroll"
 
+    static var allCases: [BinderPageLayout] {
+        [.fourSlot, .nineSlot, .twelveSlot, .sixteenSlot, .freeScroll]
+    }
+
     var displayName: String {
         switch self {
-        case .nineSlot:   return "3×3 Pages"
-        case .twelveSlot: return "4×3 Pages"
+        case .fourSlot: return "2×2"
+        case .nineSlot: return "3×3"
+        case .sixteenSlot: return "4×4"
+        case .twelveSlot: return "4×3"
         case .freeScroll: return "Free Scroll"
         }
     }
 
     var slotsPerPage: Int? {
         switch self {
-        case .nineSlot:   return 9
+        case .fourSlot: return 4
+        case .nineSlot: return 9
+        case .sixteenSlot: return 16
         case .twelveSlot: return 12
         case .freeScroll: return nil
         }
@@ -24,9 +34,19 @@ enum BinderPageLayout: String, Codable, CaseIterable {
 
     var columns: Int {
         switch self {
-        case .nineSlot:   return 3
-        case .twelveSlot: return 4
+        case .fourSlot: return 2
+        case .nineSlot: return 3
+        case .sixteenSlot, .twelveSlot: return 4
         case .freeScroll: return 3
+        }
+    }
+
+    var rows: Int {
+        switch self {
+        case .fourSlot: return 2
+        case .nineSlot, .freeScroll: return 3
+        case .sixteenSlot: return 4
+        case .twelveSlot: return 3
         }
     }
 }

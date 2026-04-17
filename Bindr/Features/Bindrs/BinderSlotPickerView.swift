@@ -11,6 +11,7 @@ struct BinderSlotPickerView: View {
     @State private var query = ""
     @State private var results: [Card] = []
     @State private var isSearching = false
+    @FocusState private var isSearchFieldFocused: Bool
 
     private var ownedCardIDs: Set<String> {
         Set(collectionItems.map { $0.cardID })
@@ -18,25 +19,39 @@ struct BinderSlotPickerView: View {
 
     var body: some View {
         NavigationStack {
-            Group {
-                if results.isEmpty && query.isEmpty {
-                    ContentUnavailableView("Search for a Card", systemImage: "magnifyingglass", description: Text("Type a card name to find it."))
-                } else if results.isEmpty && !query.isEmpty && !isSearching {
-                    ContentUnavailableView.search(text: query)
-                } else {
-                    ScrollView {
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 8)], spacing: 8) {
-                            ForEach(results) { card in
-                                Button {
-                                    onSelect(card.masterCardId, card.pricingVariants?.first ?? "normal", card.cardName)
-                                    dismiss()
-                                } label: {
-                                    PickerCardCell(card: card, isOwned: ownedCardIDs.contains(card.masterCardId))
-                                }
-                                .buttonStyle(.plain)
-                            }
+            VStack(spacing: 0) {
+                BrowseInlineSearchField(title: "Search all cards", text: $query)
+                    .padding(.horizontal, 12)
+                    .padding(.top, 12)
+                    .padding(.bottom, 8)
+                    .focused($isSearchFieldFocused)
+
+                Group {
+                    if results.isEmpty && query.isEmpty {
+                        ContentUnavailableView("Search for a Card", systemImage: "magnifyingglass", description: Text("Type a card name to find it."))
+                    } else if results.isEmpty && !query.isEmpty && isSearching {
+                        VStack {
+                            Spacer()
+                            ProgressView("Searching…")
+                            Spacer()
                         }
-                        .padding(12)
+                    } else if results.isEmpty {
+                        ContentUnavailableView.search(text: query)
+                    } else {
+                        ScrollView {
+                            LazyVGrid(columns: [GridItem(.adaptive(minimum: 100), spacing: 8)], spacing: 8) {
+                                ForEach(results) { card in
+                                    Button {
+                                        onSelect(card.masterCardId, card.pricingVariants?.first ?? "normal", card.cardName)
+                                        dismiss()
+                                    } label: {
+                                        PickerCardCell(card: card, isOwned: ownedCardIDs.contains(card.masterCardId))
+                                    }
+                                    .buttonStyle(.plain)
+                                }
+                            }
+                            .padding(12)
+                        }
                     }
                 }
             }
@@ -47,9 +62,14 @@ struct BinderSlotPickerView: View {
                     Button("Cancel") { dismiss() }
                 }
             }
-            .searchable(text: $query, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search all cards")
             .onChange(of: query) { _, newQuery in
                 performSearch(newQuery)
+            }
+            .onAppear {
+                Task { @MainActor in
+                    try? await Task.sleep(for: .milliseconds(150))
+                    isSearchFieldFocused = true
+                }
             }
         }
         .presentationDetents([.large])
@@ -58,6 +78,7 @@ struct BinderSlotPickerView: View {
     private func performSearch(_ q: String) {
         let trimmed = q.trimmingCharacters(in: .whitespaces)
         guard trimmed.count >= 2 else {
+            isSearching = false
             results = []
             return
         }

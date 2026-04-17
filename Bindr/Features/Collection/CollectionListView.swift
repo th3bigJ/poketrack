@@ -63,15 +63,6 @@ struct CollectionListView: View {
             }
         }
         .toolbar(.hidden, for: .navigationBar)
-        .navigationDestination(for: String.self) { route in
-            if route == "wishlist" {
-                WishlistView(
-                    filters: $wishlistFilters,
-                    isActive: $isWishlistActive,
-                    onFilterOptionsChange: onWishlistFilterOptionsChange
-                )
-            }
-        }
         .task(id: collectionSignature) {
             await resolveCollectionCards()
         }
@@ -84,9 +75,6 @@ struct CollectionListView: View {
         ScrollView {
             VStack(spacing: 16) {
                 Color.clear.frame(height: rootFloatingChromeInset)
-
-                wishlistEntryRow
-                    .padding(.horizontal, 16)
 
                 ContentUnavailableView(
                     "No collection yet",
@@ -103,9 +91,6 @@ struct CollectionListView: View {
             VStack(spacing: 16) {
                 Color.clear.frame(height: rootFloatingChromeInset)
 
-                wishlistEntryRow
-                    .padding(.horizontal, 16)
-
                 ContentUnavailableView(
                     "No visible collection items",
                     systemImage: "line.3.horizontal.decrease.circle",
@@ -116,43 +101,10 @@ struct CollectionListView: View {
         }
     }
 
-    private var wishlistEntryRow: some View {
-        NavigationLink(value: "wishlist") {
-            HStack(spacing: 12) {
-                Image(systemName: "star.fill")
-                    .font(.title3)
-                    .foregroundStyle(.yellow)
-                    .frame(width: 36, height: 36)
-                    .background(Color.yellow.opacity(0.15))
-                    .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
-                VStack(alignment: .leading, spacing: 2) {
-                    Text("Wishlist")
-                        .font(.body.weight(.semibold))
-                        .foregroundStyle(.primary)
-                    Text("Cards you want to collect")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
-                }
-                Spacer()
-                Image(systemName: "chevron.right")
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.secondary)
-            }
-            .padding(12)
-            .background(Color(uiColor: .secondarySystemGroupedBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-        }
-        .buttonStyle(.plain)
-    }
-
     private var collectionScrollGrid: some View {
         ScrollView {
             VStack(spacing: 0) {
                 Color.clear.frame(height: rootFloatingChromeInset)
-
-                wishlistEntryRow
-                    .padding(.horizontal, 16)
-                    .padding(.bottom, 16)
 
                 LazyVGrid(columns: columns, spacing: 12) {
                     ForEach(Array(filteredCollectionItems.enumerated()), id: \.element.id) { index, item in

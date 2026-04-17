@@ -23,13 +23,16 @@ struct CreateBinderSheet: View {
                 }
 
                 Section("Layout") {
-                    Picker("Layout", selection: $layout) {
-                        ForEach(BinderPageLayout.allCases, id: \.self) { l in
-                            Text(l.displayName).tag(l)
+                    VStack(spacing: 10) {
+                        ForEach(BinderPageLayout.allCases, id: \.self) { option in
+                            Button {
+                                layout = option
+                            } label: {
+                                layoutOptionRow(for: option)
+                            }
+                            .buttonStyle(.plain)
                         }
                     }
-                    .pickerStyle(.segmented)
-                    .labelsHidden()
                     .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
                 }
 
@@ -78,5 +81,30 @@ struct CreateBinderSheet: View {
         )
         modelContext.insert(binder)
         dismiss()
+    }
+
+    @ViewBuilder
+    private func layoutOptionRow(for option: BinderPageLayout) -> some View {
+        let isSelected = layout == option
+        let borderColor: Color = isSelected ? Color.accentColor.opacity(0.45) : .clear
+
+        HStack {
+            Text(option.displayName)
+                .font(.body.weight(.medium))
+                .foregroundStyle(.primary)
+            Spacer()
+            if isSelected {
+                Image(systemName: "checkmark.circle.fill")
+                    .foregroundStyle(Color.accentColor)
+            }
+        }
+        .padding(.horizontal, 14)
+        .padding(.vertical, 12)
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .strokeBorder(borderColor, lineWidth: 1)
+        }
     }
 }

@@ -1,6 +1,11 @@
 import SwiftUI
 import SwiftData
 import UIKit
+import UniformTypeIdentifiers
+
+private struct BinderSlotPickerTarget: Identifiable {
+    let id: Int
+}
 
 struct BinderDetailView: View {
     @Environment(AppServices.self) private var services
@@ -11,14 +16,14 @@ struct BinderDetailView: View {
 
     @State private var isEditing = false
     @State private var cardsByID: [String: Card] = [:]
-    @State private var slotPickerTarget: Int? = nil
-    @State private var showSlotPicker = false
+    @State private var slotPickerTarget: BinderSlotPickerTarget? = nil
     @State private var showEditTitle = false
     @State private var editingTitle = ""
     @State private var showColourPicker = false
     @State private var currentPage = 0
     @State private var viewingSlot: BinderSlot? = nil
     @State private var isPageTurning = false
+    @State private var draggedSlotPosition: Int? = nil
 
     private var layout: BinderPageLayout { binder.layout }
 
@@ -32,12 +37,7 @@ struct BinderDetailView: View {
 
     private var slotsPerPage: Int { layout.slotsPerPage ?? 9 }
     private var cols: Int { layout.columns }
-    private var rows: Int {
-        switch layout {
-        case .nineSlot, .freeScroll: return 3
-        case .twelveSlot: return 3
-        }
-    }
+    private var rows: Int { layout.rows }
 
     private var pageCount: Int {
         let maxPos = sortedSlots.last?.position ?? -1
@@ -100,13 +100,11 @@ struct BinderDetailView: View {
         .animation(.easeInOut(duration: 0.25), value: viewingSlot?.id)
         .onAppear { Task { await loadCards() } }
         .onChange(of: binder.slotList.count) { Task { await loadCards() } }
-        .sheet(isPresented: $showSlotPicker) {
-            if let target = slotPickerTarget {
-                BinderSlotPickerView { cardID, variantKey, cardName in
-                    fillSlot(position: target, cardID: cardID, variantKey: variantKey, cardName: cardName)
-                }
-                .environment(services)
+        .sheet(item: $slotPickerTarget) { target in
+            BinderSlotPickerView { cardID, variantKey, cardName in
+                fillSlot(position: target.id, cardID: cardID, variantKey: variantKey, cardName: cardName)
             }
+            .environment(services)
         }
         .alert("Rename Binder", isPresented: $showEditTitle) {
             TextField("Name", text: $editingTitle)
@@ -398,9 +396,31 @@ struct BinderDetailView: View {
                     }
             }
         }
+        .contentShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+        .opacity(draggedSlotPosition == position ? 0.45 : 1)
+        .overlay {
+            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                .strokeBorder(
+                    draggedSlotPosition != nil && draggedSlotPosition != position
+                        ? Color.accentColor.opacity(0.18)
+                        : Color.clear,
+                    lineWidth: 1
+                )
+        }
+        .onDrag {
+            guard slot != nil else { return NSItemProvider() }
+            draggedSlotPosition = position
+            return NSItemProvider(object: NSString(string: "\(position)"))
+        }
+        .onDrop(of: [UTType.text], delegate: BinderSlotDropDelegate(
+            targetPosition: position,
+            draggedSlotPosition: $draggedSlotPosition,
+            onDropSlot: moveSlot
+        ))
         .onTapGesture {
-            slotPickerTarget = position
-            showSlotPicker = true
+            if draggedSlotPosition == nil {
+                slotPickerTarget = BinderSlotPickerTarget(id: position)
+            }
         }
     }
 
@@ -416,13 +436,23 @@ struct BinderDetailView: View {
             slot.binder = binder
             modelContext.insert(slot)
         }
-        showSlotPicker = false
+        slotPickerTarget = nil
         Task { await loadCards() }
     }
 
     private func removeSlot(at position: Int) {
         guard let slot = binder.slotList.first(where: { $0.position == position }) else { return }
         modelContext.delete(slot)
+    }
+
+    private func moveSlot(from sourcePosition: Int, to targetPosition: Int) {
+        guard sourcePosition != targetPosition else { return }
+        guard let sourceSlot = binder.slotList.first(where: { $0.position == sourcePosition }) else { return }
+
+        if let targetSlot = binder.slotList.first(where: { $0.position == targetPosition }) {
+            targetSlot.position = sourcePosition
+        }
+        sourceSlot.position = targetPosition
     }
 
     private func addPage() {
@@ -454,6 +484,25 @@ struct BinderDetailView: View {
         default:       return Color(uiColor: .systemGray2)
         }
     }
+}
+
+private struct BinderSlotDropDelegate: DropDelegate {
+    let targetPosition: Int
+    @Binding var draggedSlotPosition: Int?
+    let onDropSlot: (Int, Int) -> Void
+
+    func validateDrop(info: DropInfo) -> Bool {
+        draggedSlotPosition != nil && info.hasItemsConforming(to: [UTType.text])
+    }
+
+    func performDrop(info: DropInfo) -> Bool {
+        defer { draggedSlotPosition = nil }
+        guard let sourcePosition = draggedSlotPosition else { return false }
+        onDropSlot(sourcePosition, targetPosition)
+        return true
+    }
+
+    func dropExited(info: DropInfo) {}
 }
 
 // MARK: - Full-size card viewer with swipe-to-dismiss

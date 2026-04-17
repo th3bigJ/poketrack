@@ -47,10 +47,7 @@ struct TransactionsView: View {
     private var emptyState: some View {
         ScrollView {
             VStack(spacing: 16) {
-                Text("Transactions")
-                    .font(.largeTitle.bold())
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 16)
+                pageTitle
 
                 ContentUnavailableView(
                     "No transactions yet",
@@ -66,10 +63,7 @@ struct TransactionsView: View {
     private var hiddenByBrandEmptyState: some View {
         ScrollView {
             VStack(spacing: 16) {
-                Text("Transactions")
-                    .font(.largeTitle.bold())
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .padding(.horizontal, 16)
+                pageTitle
 
                 ContentUnavailableView(
                     "No visible transactions",
@@ -82,34 +76,35 @@ struct TransactionsView: View {
         }
     }
 
+    private var pageTitle: some View {
+        Text("Transactions")
+            .font(.largeTitle.bold())
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, 16)
+    }
+
     private var transactionList: some View {
-        List {
-            Section {
-                ForEach(visibleLedgerLines, id: \.persistentModelID) { line in
-                    transactionRow(for: line)
-                        .listRowInsets(EdgeInsets(top: 10, leading: 16, bottom: 10, trailing: 16))
-                        .listRowBackground(Color.clear)
-                        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
-                            Button(role: .destructive) {
-                                modelContext.delete(line)
-                                HapticManager.notification(.success)
-                            } label: {
-                                Label("Delete", systemImage: "trash")
+        ScrollView {
+            VStack(alignment: .leading, spacing: 16) {
+                pageTitle
+
+                LazyVStack(spacing: 12) {
+                    ForEach(visibleLedgerLines, id: \.persistentModelID) { line in
+                        transactionRow(for: line)
+                            .contextMenu {
+                                Button(role: .destructive) {
+                                    modelContext.delete(line)
+                                    HapticManager.notification(.success)
+                                } label: {
+                                    Label("Delete", systemImage: "trash")
+                                }
                             }
-                        }
+                    }
                 }
-            } header: {
-                Text("Transactions")
-                    .font(.largeTitle.bold())
-                    .foregroundStyle(.primary)
-                    .textCase(nil)
-                    .padding(.bottom, 8)
             }
-        }
-        .listStyle(.plain)
-        .scrollContentBackground(.hidden)
-        .safeAreaInset(edge: .top, spacing: 0) {
-            Color.clear.frame(height: rootFloatingChromeInset)
+            .padding(.horizontal, 16)
+            .padding(.top, rootFloatingChromeInset)
+            .padding(.bottom, 16)
         }
     }
 
@@ -152,14 +147,8 @@ struct TransactionsView: View {
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .fill(.ultraThinMaterial)
-        }
-        .overlay {
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .strokeBorder(Color.primary.opacity(0.08), lineWidth: 0.5)
-        }
+        .background(Color(uiColor: .secondarySystemGroupedBackground))
+        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 
     private func infoChip(label: String) -> some View {

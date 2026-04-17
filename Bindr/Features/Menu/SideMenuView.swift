@@ -7,7 +7,7 @@ struct SideMenuView: View {
 
     @Binding var isPresented: Bool
     @Binding var selectedTab: AppTab
-    @Binding var presentedSheet: SideMenuSheet?
+    @Binding var selectedPage: SideMenuPage?
     /// Must match `RootView` search row: `safeAreaTop + 8` (same as `UniversalSearchBar` vertical padding).
     var headerTopPadding: CGFloat
     var onPickCollection: () -> Void
@@ -38,6 +38,7 @@ struct SideMenuView: View {
                             isSelected: selectedTab == .dashboard
                         ) {
                             close()
+                            selectedPage = nil
                             selectedTab = .dashboard
                         }
 
@@ -48,6 +49,7 @@ struct SideMenuView: View {
                             isSelected: selectedTab == .browse
                         ) {
                             close()
+                            selectedPage = nil
                             selectedTab = .browse
                         }
 
@@ -74,19 +76,21 @@ struct SideMenuView: View {
                         SideMenuRow(
                             systemImage: "rectangle.on.rectangle.angled",
                             title: "Deck Builder",
-                            subtitle: "Build and manage decks"
+                            subtitle: "Build and manage decks",
+                            isSelected: selectedPage == .decks
                         ) {
                             close()
-                            presentedSheet = .decks
+                            selectedPage = .decks
                         }
 
                         SideMenuRow(
                             systemImage: "list.bullet.rectangle",
                             title: "Transactions",
-                            subtitle: "Your collection history"
+                            subtitle: "Your collection history",
+                            isSelected: selectedPage == .transactions
                         ) {
                             close()
-                            presentedSheet = .transactions
+                            selectedPage = .transactions
                         }
 
                         Divider()
@@ -100,16 +104,18 @@ struct SideMenuView: View {
                             isSelected: selectedTab == .bindrs
                         ) {
                             close()
+                            selectedPage = nil
                             selectedTab = .bindrs
                         }
 
                         SideMenuRow(
                             systemImage: "person.2",
                             title: "Social",
-                            subtitle: "Friends, trades and activity"
+                            subtitle: "Friends, trades and activity",
+                            isSelected: selectedPage == .social
                         ) {
                             close()
-                            presentedSheet = .social
+                            selectedPage = .social
                         }
 
                         Divider()
@@ -126,10 +132,10 @@ struct SideMenuView: View {
                             systemImage: "person.crop.circle",
                             title: "Account",
                             subtitle: "Profile and app preferences",
-                            isSelected: presentedSheet == .account
+                            isSelected: selectedPage == .account
                         ) {
                             close()
-                            presentedSheet = .account
+                            selectedPage = .account
                         }
 
                     }
