@@ -5,8 +5,6 @@ enum AppTab: String, CaseIterable, Identifiable, Hashable {
     case browse
     case collect
     case bindrs
-    /// Tapping this tab opens the `MoreSheet` modally rather than routing to content.
-    /// `RootView` intercepts selection so the bar never actually settles on `.more`.
     case more
 
     var id: String { rawValue }

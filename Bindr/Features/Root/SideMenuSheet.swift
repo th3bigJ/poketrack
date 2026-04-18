@@ -1,8 +1,9 @@
 import Foundation
 
 /// Screens opened only from the side menu and not shown in the tab bar.
-enum SideMenuPage: String, Identifiable {
+enum SideMenuPage: String, Identifiable, Hashable {
     case account
+    case wishlist
     case social
     case decks
     case transactions
@@ -12,6 +13,7 @@ enum SideMenuPage: String, Identifiable {
     var title: String {
         switch self {
         case .account: return "Account"
+        case .wishlist: return "Wishlist"
         case .social: return "Social"
         case .decks: return "Deck Builder"
         case .transactions: return "Transactions"

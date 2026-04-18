@@ -7,7 +7,7 @@ struct BindersRootView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \Binder.createdAt, order: .reverse) private var binders: [Binder]
 
-    @State private var showCreateSheet = false
+    @Binding var showCreateSheet: Bool
     @State private var showPaywall = false
     @State private var binderToDelete: Binder?
     @State private var showDeleteConfirm = false
@@ -18,16 +18,6 @@ struct BindersRootView: View {
                 ScrollView {
                     VStack(spacing: 16) {
                         Color.clear.frame(height: rootFloatingChromeInset)
-                        HStack(alignment: .firstTextBaseline) {
-                            Text("Bindrs")
-                                .font(.largeTitle.bold())
-                            Spacer()
-                            Button { handleCreateTap() } label: {
-                                Image(systemName: "plus")
-                                    .font(.title3.weight(.semibold))
-                            }
-                        }
-                        .padding(.horizontal, 16)
                         ContentUnavailableView {
                             Label("No Binders", systemImage: "books.vertical")
                         } description: {
@@ -42,17 +32,6 @@ struct BindersRootView: View {
                 ScrollView {
                     VStack(spacing: 0) {
                         Color.clear.frame(height: rootFloatingChromeInset)
-                        HStack(alignment: .firstTextBaseline) {
-                            Text("Bindrs")
-                                .font(.largeTitle.bold())
-                            Spacer()
-                            Button { handleCreateTap() } label: {
-                                Image(systemName: "plus")
-                                    .font(.title3.weight(.semibold))
-                            }
-                        }
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 12)
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 12)], spacing: 12) {
                             ForEach(binders) { binder in
                                 NavigationLink(value: binder) {

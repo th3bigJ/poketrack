@@ -4,42 +4,44 @@ import SwiftData
 struct DecksRootView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \Deck.createdAt, order: .reverse) private var decks: [Deck]
 
     @State private var showCreateSheet = false
     @State private var showPaywall = false
-    @State private var brandFilter: TCGBrand? = nil
     @State private var deckToDelete: Deck?
     @State private var showDeleteConfirm = false
-
-    private var filteredDecks: [Deck] {
-        guard let brand = brandFilter else { return decks }
-        return decks.filter { $0.brand == brand.rawValue }
-    }
 
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
-                HStack(alignment: .center) {
+                ZStack {
                     Text("Deck Builder")
-                        .font(.largeTitle.bold())
-                    Spacer()
-                    brandFilterMenu
-                    Button { handleCreateTap() } label: {
-                        Image(systemName: "plus")
-                            .font(.title3.weight(.semibold))
+                        .font(.title2.weight(.bold))
+                        .foregroundStyle(.primary)
+
+                    HStack {
+                        ChromeGlassCircleButton(accessibilityLabel: "Search") {} label: {
+                            Image(systemName: "magnifyingglass")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(.primary)
+                        }
+                        Spacer(minLength: 0)
+                        ChromeGlassCircleButton(accessibilityLabel: "Create Deck") { handleCreateTap() } label: {
+                            Image(systemName: "plus")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(.primary)
+                        }
                     }
                 }
                 .padding(.horizontal, 16)
-                .padding(.top, rootFloatingChromeInset)
+                .padding(.top, 16)
                 .padding(.bottom, 12)
 
-                if filteredDecks.isEmpty {
+                if decks.isEmpty {
                     ContentUnavailableView {
                         Label("No Decks", systemImage: "rectangle.on.rectangle.angled")
                     } description: {
-                        Text(decks.isEmpty ? "Build your first deck." : "No decks for this brand.")
+                        Text("Build your first deck.")
                     } actions: {
                         if decks.isEmpty {
                             Button("Create a Deck") { handleCreateTap() }
@@ -49,7 +51,7 @@ struct DecksRootView: View {
                     .frame(minHeight: 300)
                 } else {
                     LazyVStack(spacing: 0) {
-                        ForEach(filteredDecks) { deck in
+                        ForEach(decks) { deck in
                             NavigationLink(value: deck) {
                                 DeckListRow(deck: deck)
                                     .padding(.horizontal, 16)
@@ -70,6 +72,8 @@ struct DecksRootView: View {
                 }
             }
         }
+        .navigationTitle("Deck Builder")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
         .navigationDestination(for: Deck.self) { deck in
             DeckDetailView(deck: deck)
@@ -88,20 +92,6 @@ struct DecksRootView: View {
             Button("Cancel", role: .cancel) {}
         } message: { deck in
             Text("This will permanently remove \"\(deck.title)\".")
-        }
-    }
-
-    @ViewBuilder
-    private var brandFilterMenu: some View {
-        Menu {
-            Button("All") { brandFilter = nil }
-            Divider()
-            ForEach(TCGBrand.allCases) { brand in
-                Button(brand.displayTitle) { brandFilter = brand }
-            }
-        } label: {
-            Image(systemName: "line.3.horizontal.decrease.circle")
-                .font(.title3.weight(.semibold))
         }
     }
 

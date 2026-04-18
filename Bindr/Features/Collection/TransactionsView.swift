@@ -4,7 +4,6 @@ import SwiftUI
 struct TransactionsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
-    @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     @Query(sort: \LedgerLine.occurredAt, order: .reverse) private var ledgerLines: [LedgerLine]
 
@@ -26,15 +25,20 @@ struct TransactionsView: View {
     }
 
     var body: some View {
-        Group {
-            if ledgerLines.isEmpty {
-                emptyState
-            } else if visibleLedgerLines.isEmpty {
-                hiddenByBrandEmptyState
-            } else {
-                transactionList
+        VStack(spacing: 0) {
+            transactionsHeader
+            Group {
+                if ledgerLines.isEmpty {
+                    emptyState
+                } else if visibleLedgerLines.isEmpty {
+                    hiddenByBrandEmptyState
+                } else {
+                    transactionList
+                }
             }
         }
+        .navigationTitle("Transactions")
+        .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
         .task(id: ledgerSignature) {
             await resolveCardNames()
@@ -44,11 +48,41 @@ struct TransactionsView: View {
         }
     }
 
+    private var transactionsHeader: some View {
+        ZStack {
+            Text("Transactions")
+                .font(.title2.weight(.bold))
+                .foregroundStyle(.primary)
+
+            HStack {
+                ChromeGlassCircleButton(accessibilityLabel: "Search") {} label: {
+                    Image(systemName: "magnifyingglass")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+                Spacer(minLength: 0)
+                Menu {
+                    // Options menu placeholder
+                } label: {
+                    Image(systemName: "ellipsis")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                        .modifier(ChromeGlassCircleGlyphModifier())
+                        .frame(width: 48, height: 48)
+                        .contentShape(Rectangle())
+                }
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+                .menuIndicator(.hidden)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+    }
+
     private var emptyState: some View {
         ScrollView {
             VStack(spacing: 16) {
-                pageTitle
-
                 ContentUnavailableView(
                     "No transactions yet",
                     systemImage: "list.bullet.rectangle",
@@ -56,15 +90,13 @@ struct TransactionsView: View {
                 )
                 .frame(minHeight: 280)
             }
-            .padding(.top, rootFloatingChromeInset)
+            .padding(.top, 16)
         }
     }
 
     private var hiddenByBrandEmptyState: some View {
         ScrollView {
             VStack(spacing: 16) {
-                pageTitle
-
                 ContentUnavailableView(
                     "No visible transactions",
                     systemImage: "line.3.horizontal.decrease.circle",
@@ -72,22 +104,13 @@ struct TransactionsView: View {
                 )
                 .frame(minHeight: 280)
             }
-            .padding(.top, rootFloatingChromeInset)
+            .padding(.top, 16)
         }
-    }
-
-    private var pageTitle: some View {
-        Text("Transactions")
-            .font(.largeTitle.bold())
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.horizontal, 16)
     }
 
     private var transactionList: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                pageTitle
-
                 LazyVStack(spacing: 12) {
                     ForEach(visibleLedgerLines, id: \.persistentModelID) { line in
                         transactionRow(for: line)
@@ -103,7 +126,7 @@ struct TransactionsView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.top, rootFloatingChromeInset)
+            .padding(.top, 16)
             .padding(.bottom, 16)
         }
     }

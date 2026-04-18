@@ -16,13 +16,14 @@ private func hapticFilterThen(_ action: @escaping () -> Void) -> () -> Void {
     }
 }
 
-/// Pill search field (camera inside on the right) with trailing filter. A back
+/// Pill search field with trailing filter while collapsed. A back
 /// chevron only appears while the search overlay is open; there is no burger
 /// menu — the overflow menu lives in the bottom nav's **More** tab.
 /// On supported OS versions uses **Liquid Glass** ([`glassEffect`](https://developer.apple.com/documentation/swiftui/view/glasseffect(_:in:)), [`GlassEffectContainer`](https://developer.apple.com/documentation/swiftui/glasseffectcontainer)); otherwise falls back to system materials.
 struct UniversalSearchBar: View {
     @Binding var text: String
     @FocusState.Binding var isFocused: Bool
+    var title: String?
 
     /// When `true`, search overlay is up — the leading **back** chevron is shown so the user can dismiss it.
     var isSearchOpen: Bool
@@ -30,7 +31,11 @@ struct UniversalSearchBar: View {
     var isFilterActive: Bool = false
     var filterMenuContent: AnyView? = nil
 
+    /// When set, replaces the filter button with a custom trailing button (symbol name + action).
+    var trailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? = nil
+
     /// Called when the leading back chevron is tapped (only visible while search is open).
+    var onActivateSearch: () -> Void
     var onBack: () -> Void
     var onCamera: () -> Void
     var onFilter: () -> Void
@@ -73,14 +78,75 @@ struct UniversalSearchBar: View {
     @available(iOS 26.0, *)
     private var liquidGlassBar: some View {
         GlassEffectContainer(spacing: 10) {
-            HStack(spacing: 10) {
+            Group {
                 if isSearchOpen {
+                    HStack(spacing: 10) {
+                        Button(action: hapticBackThen(onBack)) {
+                            Image(systemName: leadingSymbolName)
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(.primary)
+                                .frame(width: 44, height: 44)
+                                .glassEffect(.regular.interactive(), in: Circle())
+                                .contentTransition(.symbolEffect(.replace))
+                                .contentShape(Circle())
+                        }
+                        .buttonStyle(.plain)
+                        .frame(width: 48, height: 48)
+                        .contentShape(Rectangle())
+                        .accessibilityLabel(leadingAccessibilityLabel)
+                        .transition(.opacity.combined(with: .scale))
+
+                        searchFieldInner
+                            .padding(.leading, 14)
+                            .padding(.trailing, 8)
+                            .frame(height: 44)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .glassEffect(.regular, in: Capsule())
+                            .transition(.move(edge: .leading).combined(with: .opacity))
+
+                        cameraButtonLiquid
+                    }
+                } else {
+                    ZStack {
+                        if let title, !title.isEmpty {
+                            Text(title)
+                                .font(.title2.weight(.bold))
+                                .foregroundStyle(.primary)
+                                .lineLimit(1)
+                        }
+
+                        HStack {
+                            collapsedSearchButtonLiquid
+                            Spacer(minLength: 0)
+                            if let trailingButton {
+                                trailingButtonLiquid(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
+                            } else {
+                                filterButtonLiquid
+                            }
+                        }
+                    }
+                }
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+
+    // MARK: - Materials (fallback)
+
+    private var materialFallbackBar: some View {
+        Group {
+            if isSearchOpen {
+                HStack(spacing: 10) {
                     Button(action: hapticBackThen(onBack)) {
                         Image(systemName: leadingSymbolName)
                             .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(.primary)
                             .frame(width: 44, height: 44)
-                            .glassEffect(.regular.interactive(), in: Circle())
+                            .background(.ultraThinMaterial, in: Circle())
+                            .overlay {
+                                Circle()
+                                    .strokeBorder(glassStroke, lineWidth: 0.5)
+                            }
                             .contentTransition(.symbolEffect(.replace))
                             .contentShape(Circle())
                     }
@@ -89,58 +155,78 @@ struct UniversalSearchBar: View {
                     .contentShape(Rectangle())
                     .accessibilityLabel(leadingAccessibilityLabel)
                     .transition(.opacity.combined(with: .scale))
-                }
 
-                searchFieldInner
-                    .padding(.leading, 14)
-                    .padding(.trailing, 8)
-                    .frame(height: 44)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .glassEffect(.regular, in: Capsule())
-
-                filterButtonLiquid
-            }
-        }
-    }
-
-    // MARK: - Materials (fallback)
-
-    private var materialFallbackBar: some View {
-        HStack(spacing: 10) {
-            if isSearchOpen {
-                Button(action: hapticBackThen(onBack)) {
-                    Image(systemName: leadingSymbolName)
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                        .frame(width: 44, height: 44)
-                        .background(.ultraThinMaterial, in: Circle())
+                    searchFieldInner
+                        .padding(.leading, 14)
+                        .padding(.trailing, 8)
+                        .frame(height: 44)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .background(.ultraThinMaterial, in: Capsule())
                         .overlay {
-                            Circle()
+                            Capsule()
                                 .strokeBorder(glassStroke, lineWidth: 0.5)
                         }
-                        .contentTransition(.symbolEffect(.replace))
-                        .contentShape(Circle())
-                }
-                .buttonStyle(.plain)
-                .frame(width: 48, height: 48)
-                .contentShape(Rectangle())
-                .accessibilityLabel(leadingAccessibilityLabel)
-                .transition(.opacity.combined(with: .scale))
-            }
+                        .transition(.move(edge: .leading).combined(with: .opacity))
 
-            searchFieldInner
-                .padding(.leading, 14)
-                .padding(.trailing, 8)
-                .frame(height: 44)
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .background(.ultraThinMaterial, in: Capsule())
+                    cameraButtonFallback
+                }
+            } else {
+                ZStack {
+                    if let title, !title.isEmpty {
+                        Text(title)
+                            .font(.title2.weight(.bold))
+                            .foregroundStyle(.primary)
+                            .lineLimit(1)
+                    }
+
+                    HStack {
+                        collapsedSearchButtonFallback
+                        Spacer(minLength: 0)
+                        if let trailingButton {
+                            trailingButtonFallback(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
+                        } else {
+                            filterButtonFallback
+                        }
+                    }
+                }
+            }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    @available(iOS 26.0, *)
+    private var collapsedSearchButtonLiquid: some View {
+        Button(action: onActivateSearch) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+                .frame(width: 44, height: 44)
+                .glassEffect(.regular.interactive(), in: Circle())
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .frame(width: 48, height: 48)
+        .contentShape(Rectangle())
+        .accessibilityLabel("Open search")
+    }
+
+    private var collapsedSearchButtonFallback: some View {
+        Button(action: onActivateSearch) {
+            Image(systemName: "magnifyingglass")
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+                .frame(width: 44, height: 44)
+                .background(.ultraThinMaterial, in: Circle())
                 .overlay {
-                    Capsule()
+                    Circle()
                         .strokeBorder(glassStroke, lineWidth: 0.5)
                 }
-
-            filterButtonFallback
+                .contentShape(Circle())
         }
+        .buttonStyle(.plain)
+        .frame(width: 48, height: 48)
+        .contentShape(Rectangle())
+        .accessibilityLabel("Open search")
     }
 
     @available(iOS 26.0, *)
@@ -225,6 +311,83 @@ struct UniversalSearchBar: View {
             .contentShape(Circle())
     }
 
+    @available(iOS 26.0, *)
+    @available(iOS 26.0, *)
+    private func trailingButtonLiquid(symbol: String, accessibilityLabel: String, action: @escaping () -> Void) -> some View {
+        Button(action: { Haptics.lightImpact(); action() }) {
+            Image(systemName: symbol)
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+                .frame(width: 44, height: 44)
+                .glassEffect(.regular.interactive(), in: Circle())
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .frame(width: 48, height: 48)
+        .contentShape(Rectangle())
+        .accessibilityLabel(accessibilityLabel)
+    }
+
+    private func trailingButtonFallback(symbol: String, accessibilityLabel: String, action: @escaping () -> Void) -> some View {
+        Button(action: { Haptics.lightImpact(); action() }) {
+            Image(systemName: symbol)
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+                .frame(width: 44, height: 44)
+                .background(.ultraThinMaterial, in: Circle())
+                .overlay {
+                    Circle()
+                        .strokeBorder(glassStroke, lineWidth: 0.5)
+                }
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .frame(width: 48, height: 48)
+        .contentShape(Rectangle())
+        .accessibilityLabel(accessibilityLabel)
+    }
+
+    @available(iOS 26.0, *)
+    private var cameraButtonLiquid: some View {
+        Button(action: {
+            Haptics.lightImpact()
+            onCamera()
+        }) {
+            Image(systemName: "camera.fill")
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+                .frame(width: 44, height: 44)
+                .glassEffect(.regular.interactive(), in: Circle())
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .frame(width: 48, height: 48)
+        .contentShape(Rectangle())
+        .accessibilityLabel("Scan with camera")
+    }
+
+    private var cameraButtonFallback: some View {
+        Button(action: {
+            Haptics.lightImpact()
+            onCamera()
+        }) {
+            Image(systemName: "camera.fill")
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(.primary)
+                .frame(width: 44, height: 44)
+                .background(.ultraThinMaterial, in: Circle())
+                .overlay {
+                    Circle()
+                        .strokeBorder(glassStroke, lineWidth: 0.5)
+                }
+                .contentShape(Circle())
+        }
+        .buttonStyle(.plain)
+        .frame(width: 48, height: 48)
+        .contentShape(Rectangle())
+        .accessibilityLabel("Scan with camera")
+    }
+
     /// Shared field content (icons + text + camera) for both Liquid Glass and material layouts.
     /// Icons match the leading / trailing bar buttons (`.primary`); placeholder is slightly softer so typed text still reads as the main content.
     private var searchFieldInner: some View {
@@ -247,18 +410,20 @@ struct UniversalSearchBar: View {
             .accessibilityLabel("Search cards, sets, Pokemon, sealed products")
             .frame(maxWidth: .infinity, alignment: .leading)
 
-            Button(action: {
-                Haptics.lightImpact()
-                onCamera()
-            }) {
-                Image(systemName: "camera.fill")
-                    .font(.system(size: 15, weight: .regular))
-                    .foregroundStyle(.primary)
-                    .frame(minWidth: 36, minHeight: 36)
-                    .contentShape(Rectangle())
+            if !isSearchOpen {
+                Button(action: {
+                    Haptics.lightImpact()
+                    onCamera()
+                }) {
+                    Image(systemName: "camera.fill")
+                        .font(.system(size: 15, weight: .regular))
+                        .foregroundStyle(.primary)
+                        .frame(minWidth: 36, minHeight: 36)
+                        .contentShape(Rectangle())
+                }
+                .buttonStyle(.plain)
+                .accessibilityLabel("Scan with camera")
             }
-            .buttonStyle(.plain)
-            .accessibilityLabel("Scan with camera")
         }
     }
 }

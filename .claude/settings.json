@@ -9,7 +9,9 @@
       "Bash(mv pokemonL.imageset BrandPokemonLogo.imageset)",
       "Bash(mv onepieceL.imageset BrandOnePieceLogo.imageset)",
       "Bash(mv lorcanaL.imageset lorcana.imageset)",
-      "Bash(xcodebuild -scheme PokeTrack -destination \"platform=iOS Simulator,name=iPhone 16\" build)"
+      "Bash(xcodebuild -scheme PokeTrack -destination \"platform=iOS Simulator,name=iPhone 16\" build)",
+      "Bash(git stash *)",
+      "Bash(xcodebuild -project Bindr.xcodeproj -scheme Bindr -destination 'generic/platform=iOS Simulator' build)"
     ]
   }
 }

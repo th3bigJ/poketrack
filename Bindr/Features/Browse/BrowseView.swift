@@ -4,28 +4,15 @@ import SwiftUI
 // MARK: - Shared card grid cell
 
 struct CardGridCell: View {
-    @Environment(AppServices.self) private var services
-
     let card: Card
     var gridOptions = BrowseGridOptions()
     var setName: String? = nil
     /// Optional line under the name (e.g. wishlist variant key).
     var footnote: String? = nil
 
-    /// Target size for memory-efficient downsampling (~2x display size for retina)
-    private static let thumbnailSize = CGSize(width: 220, height: 308)
-
     var body: some View {
         VStack(spacing: 4) {
-            CachedAsyncImage(
-                url: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                targetSize: Self.thumbnailSize
-            ) { img in
-                img.resizable().scaledToFit()
-            } placeholder: {
-                Color.gray.opacity(0.12)
-                    .aspectRatio(5/7, contentMode: .fit)
-            }
+            BrowseCardThumbnailView(imageURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc))
             .frame(maxWidth: .infinity)
             .aspectRatio(5/7, contentMode: .fit)
             if gridOptions.showCardName {
@@ -63,12 +50,107 @@ struct CardGridCell: View {
     }
 }
 
+private struct BrowseCardThumbnailView: View {
+    let imageURL: URL?
+
+    var body: some View {
+        AsyncImage(url: imageURL, transaction: Transaction(animation: .easeOut(duration: 0.18))) { phase in
+            switch phase {
+            case let .success(image):
+                image
+                    .resizable()
+                    .scaledToFit()
+            case .failure, .empty:
+                Color.gray.opacity(0.12)
+                    .aspectRatio(5 / 7, contentMode: .fit)
+            @unknown default:
+                Color.gray.opacity(0.12)
+                    .aspectRatio(5 / 7, contentMode: .fit)
+            }
+        }
+    }
+}
+
 /// Subtle spring scale on press for all card grid cells — gives a premium tactile feel.
 struct CardCellButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .scaleEffect(configuration.isPressed ? 0.94 : 1.0)
             .animation(.spring(response: 0.2, dampingFraction: 0.75), value: configuration.isPressed)
+    }
+}
+
+private struct BrowseCardRow: Identifiable {
+    let id: Int
+    let card: Card
+    let setName: String?
+}
+
+private struct BrowseFeedSnapshot {
+    var cards: [Card] = []
+    var rows: [BrowseCardRow] = []
+    var hasMoreCardsToLoad = false
+}
+
+private struct BrowseCardListView: View {
+    let cards: [Card]
+    let rows: [BrowseCardRow]
+    let gridOptions: BrowseGridOptions
+    let isLoadingMore: Bool
+    let hasMoreCardsToLoad: Bool
+    let presentCard: (Card, [Card]) -> Void
+    let onLoadMore: () -> Void
+
+    @State private var lastAutoLoadRowCount = 0
+
+    private var safeColumnCount: Int {
+        min(max(gridOptions.columnCount, 1), 4)
+    }
+
+    private var columns: [GridItem] {
+        Array(repeating: GridItem(.flexible(), spacing: 12), count: safeColumnCount)
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            LazyVGrid(columns: columns, spacing: 12) {
+                ForEach(rows) { row in
+                    Button {
+                        presentCard(row.card, cards)
+                    } label: {
+                        CardGridCell(
+                            card: row.card,
+                            gridOptions: gridOptions,
+                            setName: row.setName
+                        )
+                    }
+                    .buttonStyle(CardCellButtonStyle())
+                    .frame(maxWidth: .infinity, alignment: .top)
+                    .onAppear {
+                        guard hasMoreCardsToLoad else { return }
+                        guard row.id >= max(rows.count - safeColumnCount, 0) else { return }
+                        guard rows.count != lastAutoLoadRowCount else { return }
+                        lastAutoLoadRowCount = rows.count
+                        DispatchQueue.main.async {
+                            onLoadMore()
+                        }
+                    }
+                }
+            }
+            if isLoadingMore {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 12)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 6)
+        .padding(.bottom, 16)
+        .onChange(of: rows.count) { _, newValue in
+            if newValue < lastAutoLoadRowCount {
+                lastAutoLoadRowCount = 0
+            }
+        }
     }
 }
 
@@ -96,16 +178,19 @@ struct BrowseView: View {
     @State private var shuffledRefs: [CardRef] = []
     @State private var nextRefIndex = 0
     @State private var displayedCards: [Card] = []
+    @State private var displayedRows: [BrowseCardRow] = []
     @State private var allBrowseFilterCards: [BrowseFilterCard] = []
     @State private var catalogOrderedRefs: [CardRef] = []
     @State private var catalogDisplayedCards: [Card] = []
+    @State private var catalogDisplayedRows: [BrowseCardRow] = []
+    @State private var browseFeedSnapshot = BrowseFeedSnapshot()
     @State private var catalogNextIndex = 0
     @State private var isLoadingInitial = true
     @State private var isLoadingMore = false
     @State private var isPreparingFilterCatalog = false
     /// Prevents concurrent full-filter-index loads (background warm vs active filter feed).
     @State private var isLoadingFullCatalog = false
-    @State private var gridResetToken = UUID()
+    @State private var loadedBrand: TCGBrand?
 
     private var safeColumnCount: Int {
         min(max(gridOptions.columnCount, 1), 4)
@@ -136,28 +221,11 @@ struct BrowseView: View {
         filters.hasActiveFieldFilters || filters.hasActiveSort
     }
 
-    private var visibleCards: [Card] {
-        usesCatalogFeed ? catalogDisplayedCards : displayedCards
-    }
-
-    /// Until `loadAllCards()` runs (filtered / sorted catalog feed), derive options from what is already loaded
-    /// so we never block launch on a full-catalog query; options grow as the user scrolls the shuffle feed.
-    private var energyOptions: [String] {
-        if allBrowseFilterCards.isEmpty {
-            return Array(Set(displayedCards.flatMap(resolvedEnergyTypes(for:)))).sorted()
+    private var hasMoreCardsToLoad: Bool {
+        if usesCatalogFeed {
+            return catalogNextIndex < catalogOrderedRefs.count
         }
-        return Array(Set(allBrowseFilterCards.flatMap(resolvedEnergyTypes(for:)))).sorted()
-    }
-
-    private var rarityOptions: [String] {
-        if allBrowseFilterCards.isEmpty {
-            return Array(Set(displayedCards.compactMap(\.rarity).map(trimmedValue(_:)))).sorted()
-        }
-        return Array(Set(allBrowseFilterCards.compactMap(\.rarity).map(trimmedValue(_:)))).sorted()
-    }
-
-    private var trainerTypeOptions: [String] {
-        Array(Set(allBrowseFilterCards.compactMap(\.trainerType).map(trimmedValue(_:)).filter { !$0.isEmpty })).sorted()
+        return nextRefIndex < shuffledRefs.count
     }
 
     var body: some View {
@@ -183,15 +251,34 @@ struct BrowseView: View {
         }
         .toolbar(.hidden, for: .navigationBar)
         .task(id: services.brandSettings.selectedCatalogBrand) {
-            // Launch pipeline already ran `loadSets` + warmed search; full `reloadAfterBrandChange()` would repeat that and freeze the UI.
-            if services.consumeLightBrowseTabEntryIfNeeded() {
-                services.cardData.resetBrowseFeedSessionOnly()
-            } else {
-                await services.cardData.reloadAfterBrandChange()
+            let selectedBrand = services.brandSettings.selectedCatalogBrand
+            let needsBrandBootstrap = loadedBrand != selectedBrand
+
+            if needsBrandBootstrap {
+                shuffledRefs = []
+                nextRefIndex = 0
+                displayedCards = []
+                displayedRows = []
+                allBrowseFilterCards = []
+                catalogOrderedRefs = []
+                catalogDisplayedCards = []
+                catalogDisplayedRows = []
+                browseFeedSnapshot = BrowseFeedSnapshot()
+                catalogNextIndex = 0
+                isLoadingInitial = true
+                // Launch pipeline already ran `loadSets` + warmed search; full
+                // `reloadAfterBrandChange()` would repeat that and freeze the UI.
+                if services.consumeLightBrowseTabEntryIfNeeded() {
+                    services.cardData.resetBrowseFeedSessionOnly()
+                } else {
+                    await services.cardData.reloadAfterBrandChange()
+                }
+                loadedBrand = selectedBrand
             }
+
             await Task.yield()
             await Task.yield()
-            await bootstrapFeed(forceReshuffle: true)
+            await bootstrapFeed(forceReshuffle: false)
             if usesCatalogFeed {
                 await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
                 await rebuildCatalogFeedIfNeeded()
@@ -212,52 +299,23 @@ struct BrowseView: View {
                 }
             }
         }
-        .task(id: filters) {
-            if usesCatalogFeed {
-                await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
-                await rebuildCatalogFeedIfNeeded()
-            } else {
-                catalogOrderedRefs = []
-                catalogDisplayedCards = []
-                catalogNextIndex = 0
-                syncFilterMenuState()
-            }
+        .onChange(of: filters) { _, _ in
+            handleBrowseFiltersChanged()
         }
     }
 
     private var browseCardGrid: some View {
-        let cards = visibleCards
-        let rows = chunkedBrowseCards(cards, columnCount: safeColumnCount)
-        return VStack(spacing: 0) {
-            LazyVStack(spacing: 12) {
-                ForEach(Array(rows.enumerated()), id: \.offset) { rowIndex, rowCards in
-                    HStack(alignment: .top, spacing: 12) {
-                        ForEach(rowCards, id: \.id) { card in
-                            Button { presentCard(card, cards) } label: {
-                                BrowseGridCardCell(
-                                    card: card,
-                                    gridOptions: gridOptions,
-                                    setName: setNameByCode[card.setCode]
-                                )
-                            }
-                            .buttonStyle(CardCellButtonStyle())
-                            .frame(maxWidth: .infinity, alignment: .top)
-                        }
-                        ForEach(0..<max(0, safeColumnCount - rowCards.count), id: \.self) { _ in
-                            Color.clear
-                                .frame(maxWidth: .infinity)
-                        }
-                    }
-                    .onAppear {
-                        guard rowIndex >= max(0, rows.count - 2) else { return }
-                        Task { await loadNextPageIfNeeded() }
-                    }
-                }
+        BrowseCardListView(
+            cards: browseFeedSnapshot.cards,
+            rows: browseFeedSnapshot.rows,
+            gridOptions: gridOptions,
+            isLoadingMore: isLoadingMore,
+            hasMoreCardsToLoad: browseFeedSnapshot.hasMoreCardsToLoad,
+            presentCard: presentCard,
+            onLoadMore: {
+                Task { await loadNextPageIfNeeded() }
             }
-        }
-        .padding(.horizontal, 16)
-        .padding(.top, 6)
-        .padding(.bottom, 16)
+        )
     }
 
     private var browseShortcutRow: some View {
@@ -272,44 +330,31 @@ struct BrowseView: View {
     }
 
     private var scrollTrackedCardGrid: some View {
-        ScrollViewReader { proxy in
-            ScrollView(showsIndicators: false) {
-                VStack(spacing: 0) {
-                    // Keeps first row clear of the overlaid search bar; spacer scrolls away so cards can pass under the glass.
-                    Color.clear
-                        .frame(height: rootFloatingChromeInset)
-                        .id("grid-top")
-                    ScrollOffsetAnchor { y in chromeScroll.reportScrollOffsetY(y) }
-                    if services.brandSettings.enabledBrands.count > 1 {
-                        BrandCatalogCarousel()
-                            .padding(.horizontal, 16)
-                            .padding(.bottom, 10)
-                    }
-                    browseShortcutRow
-                    browseCardGrid
-                    if isPreparingFilterCatalog {
-                        ProgressView("Preparing filters…")
-                            .frame(maxWidth: .infinity)
-                            .padding(.vertical, 12)
-                    }
-                    if isLoadingMore {
-                        ProgressView().frame(maxWidth: .infinity).padding(.vertical, 12)
-                    }
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 0) {
+                // Keeps first row clear of the overlaid search bar; spacer scrolls away so cards can pass under the glass.
+                Color.clear
+                    .frame(height: rootFloatingChromeInset)
+                if services.brandSettings.enabledBrands.count > 1 {
+                    BrandCatalogCarousel()
+                        .padding(.horizontal, 16)
+                        .padding(.bottom, 10)
                 }
-                // Match chrome animation so safe-area changes (tab bar) interpolate with the grid instead of snapping.
-                .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
-            }
-            .tabBarChromeFromScroll()
-            .coordinateSpace(name: "scroll")
-            .onChange(of: gridResetToken) { _, _ in
-                Task { @MainActor in
-                    await Task.yield()
-                    withAnimation(.easeInOut(duration: 0.2)) {
-                        proxy.scrollTo("grid-top", anchor: .top)
-                    }
+                browseShortcutRow
+                browseCardGrid
+                if isPreparingFilterCatalog {
+                    ProgressView("Preparing filters…")
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                }
+                if isLoadingMore {
+                    ProgressView().frame(maxWidth: .infinity).padding(.vertical, 12)
                 }
             }
+            // Match chrome animation so safe-area changes (tab bar) interpolate with the grid instead of snapping.
+            .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
         }
+        .tabBarChromeFromScroll()
     }
 
     private func bootstrapFeed(forceReshuffle: Bool) async {
@@ -325,10 +370,13 @@ struct BrowseView: View {
         let batch = Array(refs[..<firstEnd])
         nextRefIndex = firstEnd
         displayedCards = await services.cardData.cardsInOrder(refs: batch)
+        displayedRows = buildBrowseRows(from: displayedCards)
         allBrowseFilterCards = []
         catalogOrderedRefs = []
         catalogDisplayedCards = []
+        catalogDisplayedRows = []
         catalogNextIndex = 0
+        refreshBrowseFeedSnapshot()
         isLoadingInitial = false
         ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: 0, count: 24)
         prefetchNextWindow()
@@ -345,6 +393,8 @@ struct BrowseView: View {
             catalogNextIndex = end
             let more = await services.cardData.cardsInOrder(refs: batch)
             catalogDisplayedCards.append(contentsOf: more)
+            catalogDisplayedRows = buildBrowseRows(from: catalogDisplayedCards)
+            refreshBrowseFeedSnapshot()
             isLoadingMore = false
             syncFilterMenuState()
             return
@@ -356,6 +406,8 @@ struct BrowseView: View {
         nextRefIndex = end
         let more = await services.cardData.cardsInOrder(refs: batch)
         displayedCards.append(contentsOf: more)
+        displayedRows = buildBrowseRows(from: displayedCards)
+        refreshBrowseFeedSnapshot()
         isLoadingMore = false
         prefetchNextWindow()
         syncFilterMenuState()
@@ -396,7 +448,9 @@ struct BrowseView: View {
         if usesCatalogFeed == false {
             catalogOrderedRefs = []
             catalogDisplayedCards = []
+            catalogDisplayedRows = []
             catalogNextIndex = 0
+            refreshBrowseFeedSnapshot()
             syncFilterMenuState()
             return
         }
@@ -406,9 +460,58 @@ struct BrowseView: View {
         let initialEnd = min(Self.catalogInitialBatchSize, ordered.count)
         let initialRefs = Array(ordered.prefix(initialEnd))
         catalogDisplayedCards = await services.cardData.cardsInOrder(refs: initialRefs)
+        catalogDisplayedRows = buildBrowseRows(from: catalogDisplayedCards)
         catalogNextIndex = initialEnd
-        gridResetToken = UUID()
+        refreshBrowseFeedSnapshot()
         syncFilterMenuState()
+    }
+
+    private func handleBrowseFiltersChanged() {
+        if usesCatalogFeed {
+            Task {
+                await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
+                await rebuildCatalogFeedIfNeeded()
+            }
+        } else {
+            catalogOrderedRefs = []
+            catalogDisplayedCards = []
+            catalogDisplayedRows = []
+            catalogNextIndex = 0
+            refreshBrowseFeedSnapshot()
+            syncFilterMenuState()
+        }
+    }
+
+    private func refreshBrowseFeedSnapshot() {
+        if usesCatalogFeed {
+            browseFeedSnapshot = BrowseFeedSnapshot(
+                cards: catalogDisplayedCards,
+                rows: catalogDisplayedRows,
+                hasMoreCardsToLoad: catalogNextIndex < catalogOrderedRefs.count
+            )
+        } else {
+            browseFeedSnapshot = BrowseFeedSnapshot(
+                cards: displayedCards,
+                rows: displayedRows,
+                hasMoreCardsToLoad: nextRefIndex < shuffledRefs.count
+            )
+        }
+    }
+
+    private func buildBrowseRows(from cards: [Card]) -> [BrowseCardRow] {
+        let setNames = setNameByCode
+        var rows: [BrowseCardRow] = []
+        rows.reserveCapacity(cards.count)
+        for (index, card) in cards.enumerated() {
+            rows.append(
+                BrowseCardRow(
+                    id: index,
+                    card: card,
+                    setName: setNames[card.setCode]
+                )
+            )
+        }
+        return rows
     }
 
     private func orderedFilteredRefs(from cards: [BrowseFilterCard]) async -> [CardRef] {
@@ -623,10 +726,16 @@ struct BrowseView: View {
     }
 
     private func syncFilterMenuState() {
-        filterResultCount = usesCatalogFeed ? catalogOrderedRefs.count : visibleCards.count
-        filterEnergyOptions = energyOptions
-        filterRarityOptions = rarityOptions
-        filterTrainerTypeOptions = trainerTypeOptions
+        filterResultCount = usesCatalogFeed ? catalogOrderedRefs.count : browseFeedSnapshot.cards.count
+        if allBrowseFilterCards.isEmpty {
+            filterEnergyOptions = cardEnergyOptions(browseFeedSnapshot.cards)
+            filterRarityOptions = cardRarityOptions(browseFeedSnapshot.cards)
+            filterTrainerTypeOptions = []
+        } else {
+            filterEnergyOptions = browseFilterEnergyOptions(allBrowseFilterCards)
+            filterRarityOptions = browseFilterRarityOptions(allBrowseFilterCards)
+            filterTrainerTypeOptions = browseFilterTrainerTypeOptions(allBrowseFilterCards)
+        }
     }
 }
 
@@ -971,7 +1080,6 @@ struct SetCardsView: View {
                 } label: {
                     BrowseFilterToolbarButton(isActive: filters.isVisiblyCustomized)
                 }
-                .menuStyle(.button)
                 .menuActionDismissBehavior(.disabled)
                 .menuOrder(.fixed)
                 .menuIndicator(.hidden)
@@ -1108,7 +1216,6 @@ struct DexCardsView: View {
                 } label: {
                     BrowseFilterToolbarButton(isActive: filters.isVisiblyCustomized)
                 }
-                .menuStyle(.button)
                 .menuActionDismissBehavior(.disabled)
                 .menuOrder(.fixed)
                 .menuIndicator(.hidden)
@@ -1223,7 +1330,6 @@ struct OnePieceCharacterCardsView: View {
                 } label: {
                     BrowseFilterToolbarButton(isActive: filters.isVisiblyCustomized)
                 }
-                .menuStyle(.button)
                 .menuActionDismissBehavior(.disabled)
                 .menuOrder(.fixed)
                 .menuIndicator(.hidden)
@@ -1336,7 +1442,6 @@ struct OnePieceSubtypeCardsView: View {
                 } label: {
                     BrowseFilterToolbarButton(isActive: filters.isVisiblyCustomized)
                 }
-                .menuStyle(.button)
                 .menuActionDismissBehavior(.disabled)
                 .menuOrder(.fixed)
                 .menuIndicator(.hidden)
@@ -1360,6 +1465,8 @@ struct BrowseFilterToolbarButton: View {
             .font(.system(size: 17, weight: .medium))
             .foregroundStyle(isActive ? Color.blue : Color.primary)
             .modifier(ChromeGlassCircleGlyphModifier())
+            .frame(width: 48, height: 48)
+            .contentShape(Rectangle())
     }
 }
 
@@ -1631,6 +1738,30 @@ func cardRarityOptions(_ cards: [Card]) -> [String] {
 }
 
 func cardTrainerTypeOptions(_ cards: [Card]) -> [String] {
+    Set(cards.compactMap { $0.trainerType?.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }).sorted()
+}
+
+func browseFilterEnergyOptions(_ cards: [BrowseFilterCard]) -> [String] {
+    var values = Set<String>()
+    for card in cards {
+        if let energyType = card.energyType?.trimmingCharacters(in: .whitespacesAndNewlines), !energyType.isEmpty {
+            values.insert(energyType)
+        }
+        for type in card.elementTypes ?? [] {
+            let trimmed = type.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !trimmed.isEmpty {
+                values.insert(trimmed)
+            }
+        }
+    }
+    return values.sorted()
+}
+
+func browseFilterRarityOptions(_ cards: [BrowseFilterCard]) -> [String] {
+    Set(cards.compactMap { $0.rarity?.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }).sorted()
+}
+
+func browseFilterTrainerTypeOptions(_ cards: [BrowseFilterCard]) -> [String] {
     Set(cards.compactMap { $0.trainerType?.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty }).sorted()
 }
 

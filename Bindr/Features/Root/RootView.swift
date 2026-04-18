@@ -49,49 +49,16 @@ private struct BrowseFullScreenHost: View {
     }
 }
 
-/// Modal host for the overflow pages that used to live in the left drawer. Presented as a `fullScreenCover` from `RootView`; includes a `Done` toolbar button so the user can return.
-private struct SideMenuPageHost: View {
-    let page: SideMenuPage
-    var onDismiss: () -> Void
-
-    var body: some View {
-        NavigationStack {
-            Group {
-                switch page {
-                case .account:
-                    AccountView()
-                case .social:
-                    SocialRootView()
-                case .decks:
-                    DecksRootView()
-                case .transactions:
-                    TransactionsView()
-                }
-            }
-            .navigationTitle(page.title)
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Done", action: onDismiss)
-                }
-            }
-        }
-    }
-}
-
 struct RootView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @State private var services = AppServices()
     @StateObject private var chromeScroll = ChromeScrollCoordinator()
     @State private var selectedTab: AppTab = .dashboard
-    /// Drives the Collection / Wishlist segmented toggle inside `CollectView`. Owned here so the `MoreSheet` "Wishlist" quick-access can switch tab + segment together.
+    /// Drives the Collection / Wishlist segmented toggle inside `CollectView`. Owned here so the More tab's "Wishlist" quick-access can switch tab + segment together.
     @State private var collectSegment: CollectSegment = .collection
-    /// Modal overflow page triggered from `MoreSheet` (Deck Builder, Transactions, Social, Account/Settings). Presented as a `fullScreenCover`.
-    @State private var sideMenuPage: SideMenuPage?
     @State private var universalQuery = ""
     @State private var showCardScanner = false
-    @State private var showMoreSheet = false
     @State private var browseFilters = BrowseCardGridFilters()
     @State private var browseFilterResultCount = 0
     @State private var browseFilterEnergyOptions: [String] = []
@@ -104,9 +71,12 @@ struct RootView: View {
     @State private var browseNavigationPath = NavigationPath()
     @State private var collectionNavigationPath = NavigationPath()
     @State private var bindrsNavigationPath = NavigationPath()
+    @State private var moreNavigationPath = NavigationPath()
     @State private var browseFullScreen: BrowseFullScreen?
     @State private var selectedCardPresentation: CardPresentationContext?
     @State private var showBrandOnboarding = false
+    @State private var showProfile = false
+    @State private var showCreateBinder = false
     @FocusState private var searchFieldFocused: Bool
 
     // MARK: - Splash Flow
@@ -122,6 +92,7 @@ struct RootView: View {
     private var showUniversalSearchBar: Bool {
         if isSearchExperiencePresented { return true }
         if selectedTab == .bindrs && !bindrsNavigationPath.isEmpty { return false }
+        if selectedTab == .more { return false }
         return chromeScroll.barsVisible
     }
 
@@ -132,20 +103,16 @@ struct RootView: View {
             && browseFullScreen == nil
     }
 
-    /// Intercepts taps on the `.more` tab so it opens `MoreSheet` as a modal
-    /// instead of becoming the active tab (it has no real content view).
-    private var tabSelectionBinding: Binding<AppTab> {
-        Binding(
-            get: { selectedTab },
-            set: { newValue in
-                if newValue == .more {
-                    Haptics.lightImpact()
-                    showMoreSheet = true
-                } else {
-                    selectedTab = newValue
-                }
-            }
-        )
+    private var chromeTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
+        switch selectedTab {
+        case .dashboard: return ("person.crop.circle", "Profile", { showProfile = true })
+        case .bindrs: return ("plus", "Create Binder", { showCreateBinder = true })
+        default: return nil
+        }
+    }
+
+    private var rootChromeTitle: String {
+        selectedTab.title
     }
 
     var body: some View {
@@ -263,7 +230,7 @@ struct RootView: View {
 
             ZStack(alignment: .top) {
                 ZStack(alignment: .top) {
-                    TabView(selection: tabSelectionBinding) {
+                    TabView(selection: $selectedTab) {
                         ForEach(AppTab.visibleTabs) { tab in
                             Group {
                                 switch tab {
@@ -304,12 +271,12 @@ struct RootView: View {
                                     }
                                 case .bindrs:
                                     NavigationStack(path: $bindrsNavigationPath) {
-                                        BindersRootView()
+                                        BindersRootView(showCreateSheet: $showCreateBinder)
                                     }
                                 case .more:
-                                    // Placeholder — `tabSelectionBinding` intercepts `.more`
-                                    // so this view should never actually render.
-                                    Color.clear
+                                    NavigationStack(path: $moreNavigationPath) {
+                                        MoreView(navigationPath: $moreNavigationPath)
+                                    }
                                 }
                             }
                             .toolbarBackground(.hidden, for: .navigationBar)
@@ -372,41 +339,11 @@ struct RootView: View {
                 .environment(\.rootFloatingChromeInset, contentTopInset)
 
                 // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
-                UniversalSearchBar(
-                    text: $universalQuery,
-                    isFocused: $searchFieldFocused,
-                    isSearchOpen: isSearchExperiencePresented,
-                    isFilterEnabled: isBrowseGridFilterContextActive,
-                    isFilterActive: isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized : false,
-                    filterMenuContent: isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent) : nil,
-                    onBack: {
-                        // Only visible while the search overlay is up — dismiss it.
-                        searchNavigationPath = NavigationPath()
-                        universalQuery = ""
-                        withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                            isSearchExperiencePresented = false
-                        }
-                        searchFieldFocused = false
-                    },
-                    onCamera: {
-                        searchFieldFocused = false
-                        showCardScanner = true
-                    },
-                    onFilter: {
-                        searchFieldFocused = false
+                floatingSearchBar(hiddenOffset: searchBarHiddenOffset, topInset: searchBarTopInset, bottomInset: searchBarBottomInset)
+                    .popover(isPresented: $showProfile) {
+                        AccountView()
+                            .environment(services)
                     }
-                )
-                .frame(maxWidth: .infinity)
-                .offset(y: showUniversalSearchBar && !isSearchDetailActive ? 0 : searchBarHiddenOffset)
-                .opacity(showUniversalSearchBar && !isSearchDetailActive ? 1 : 0.001)
-                .padding(.horizontal, 16)
-                .padding(.top, searchBarTopInset)
-                .padding(.bottom, searchBarBottomInset)
-                .frame(maxWidth: .infinity, alignment: .top)
-                .allowsHitTesting(showUniversalSearchBar && !isSearchDetailActive)
-                .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
-                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
-                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             // System background shows through the material where the bar is translucent.
@@ -449,8 +386,10 @@ struct RootView: View {
         .onChange(of: searchFieldFocused) { _, isFocused in
             if isFocused {
                 Haptics.lightImpact()
-                withAnimation(.spring(response: 0.38, dampingFraction: 0.88)) {
-                    isSearchExperiencePresented = true
+                if !isSearchExperiencePresented {
+                    withAnimation(.spring(response: 0.38, dampingFraction: 0.88)) {
+                        isSearchExperiencePresented = true
+                    }
                 }
             }
         }
@@ -473,6 +412,9 @@ struct RootView: View {
             if tab == .collect {
                 collectionNavigationPath = NavigationPath()
             }
+            if tab == .more {
+                moreNavigationPath = NavigationPath()
+            }
         }
         .onChange(of: browseNavigationPath.count) { _, newCount in
             if newCount == 0 {
@@ -489,29 +431,6 @@ struct RootView: View {
         .sheet(item: $selectedCardPresentation) { ctx in
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
                 .environment(services)
-        }
-        .sheet(isPresented: $showMoreSheet) {
-            MoreSheet(
-                onSelectTab: { tab in
-                    selectedTab = tab
-                },
-                onSelectPage: { page in
-                    sideMenuPage = page
-                },
-                onSelectWishlist: {
-                    collectSegment = .wishlist
-                    selectedTab = .collect
-                }
-            )
-            .environment(services)
-        }
-        .fullScreenCover(item: $sideMenuPage) { page in
-            SideMenuPageHost(page: page, onDismiss: { sideMenuPage = nil })
-                .environment(services)
-                .environment(\.presentCard, { card, list in
-                    let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
-                    selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
-                })
         }
         .fullScreenCover(item: $browseFullScreen) { route in
             BrowseFullScreenHost(route: route)
@@ -531,6 +450,56 @@ struct RootView: View {
             )
             .environment(services)
         }
+    }
+
+    @ViewBuilder
+    private func floatingSearchBar(hiddenOffset: CGFloat, topInset: CGFloat, bottomInset: CGFloat) -> some View {
+        let visible = showUniversalSearchBar && !isSearchDetailActive
+        UniversalSearchBar(
+            text: $universalQuery,
+            isFocused: $searchFieldFocused,
+            title: rootChromeTitle,
+            isSearchOpen: isSearchExperiencePresented,
+            isFilterEnabled: isBrowseGridFilterContextActive,
+            isFilterActive: isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized : false,
+            filterMenuContent: isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent) : nil,
+            trailingButton: chromeTrailingButton,
+            onActivateSearch: {
+                withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
+                    isSearchExperiencePresented = true
+                }
+                Task { @MainActor in
+                    await Task.yield()
+                    searchFieldFocused = true
+                }
+            },
+            onBack: {
+                searchNavigationPath = NavigationPath()
+                universalQuery = ""
+                withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
+                    isSearchExperiencePresented = false
+                }
+                searchFieldFocused = false
+            },
+            onCamera: {
+                searchFieldFocused = false
+                showCardScanner = true
+            },
+            onFilter: {
+                searchFieldFocused = false
+            }
+        )
+        .frame(maxWidth: .infinity)
+        .offset(y: visible ? 0 : hiddenOffset)
+        .opacity(visible ? 1 : 0.001)
+        .padding(.horizontal, 16)
+        .padding(.top, topInset)
+        .padding(.bottom, bottomInset)
+        .frame(maxWidth: .infinity, alignment: .top)
+        .allowsHitTesting(visible)
+        .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
+        .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
+        .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
     }
 
     @ViewBuilder

@@ -26,6 +26,8 @@ struct CollectView: View {
     // MARK: - Shared State
     /// Owned by `RootView` so the top-bar menu can route the "Wishlist" quick-access into the Collect tab's Wishlist segment.
     @Binding var selectedSegment: CollectSegment
+    var showsSegmentedControl = true
+    var hidesNavigationBar = true
 
     private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
 
@@ -41,16 +43,17 @@ struct CollectView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Segmented control at top
-            segmentedControl
-                .padding(.horizontal, 16)
-                .padding(.top, rootFloatingChromeInset)
-                .padding(.bottom, 8)
+            if showsSegmentedControl {
+                segmentedControl
+                    .padding(.horizontal, 16)
+                    .padding(.top, rootFloatingChromeInset)
+                    .padding(.bottom, 16)
+            }
 
             // Content based on selected segment
             contentView
         }
-        .toolbar(.hidden, for: .navigationBar)
+        .toolbar(hidesNavigationBar ? .hidden : .visible, for: .navigationBar)
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
             services.setupWishlist(modelContext: modelContext)
@@ -303,6 +306,20 @@ struct CollectView: View {
                 .frame(minHeight: 280)
             }
         }
+    }
+}
+
+struct WishlistRootView: View {
+    @State private var selectedSegment: CollectSegment = .wishlist
+
+    var body: some View {
+        CollectView(
+            selectedSegment: $selectedSegment,
+            showsSegmentedControl: false,
+            hidesNavigationBar: false
+        )
+            .navigationTitle("Wishlist")
+            .navigationBarTitleDisplayMode(.inline)
     }
 }
 
