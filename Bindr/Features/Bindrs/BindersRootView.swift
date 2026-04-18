@@ -10,6 +10,7 @@ struct BindersRootView: View {
     @Binding var showCreateSheet: Bool
     @State private var showPaywall = false
     @State private var binderToDelete: Binder?
+    @State private var presentedBinder: Binder?
     @State private var showDeleteConfirm = false
 
     var body: some View {
@@ -34,7 +35,9 @@ struct BindersRootView: View {
                         Color.clear.frame(height: rootFloatingChromeInset)
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 12)], spacing: 12) {
                             ForEach(binders) { binder in
-                                NavigationLink(value: binder) {
+                                Button {
+                                    presentedBinder = binder
+                                } label: {
                                     BinderCardCell(binder: binder)
                                 }
                                 .buttonStyle(.plain)
@@ -55,7 +58,7 @@ struct BindersRootView: View {
             }
         }
         .toolbar(.hidden, for: .navigationBar)
-        .navigationDestination(for: Binder.self) { binder in
+        .fullScreenCover(item: $presentedBinder) { binder in
             BinderDetailView(binder: binder)
         }
         .sheet(isPresented: $showCreateSheet) {

@@ -8,6 +8,7 @@ struct TransactionsView: View {
     @Query(sort: \LedgerLine.occurredAt, order: .reverse) private var ledgerLines: [LedgerLine]
 
     @State private var cardNamesByID: [String: String] = [:]
+    @State private var showAddActivity = false
 
     private var visibleLedgerLines: [LedgerLine] {
         let enabled = services.brandSettings.enabledBrands
@@ -46,6 +47,9 @@ struct TransactionsView: View {
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
         }
+        .sheet(isPresented: $showAddActivity) {
+            AddManualActivityView()
+        }
     }
 
     private var transactionsHeader: some View {
@@ -55,25 +59,14 @@ struct TransactionsView: View {
                 .foregroundStyle(.primary)
 
             HStack {
-                ChromeGlassCircleButton(accessibilityLabel: "Search") {} label: {
-                    Image(systemName: "magnifyingglass")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                }
                 Spacer(minLength: 0)
-                Menu {
-                    // Options menu placeholder
+                ChromeGlassCircleButton(accessibilityLabel: "Add activity") {
+                    showAddActivity = true
                 } label: {
-                    Image(systemName: "ellipsis")
+                    Image(systemName: "plus")
                         .font(.system(size: 17, weight: .medium))
                         .foregroundStyle(.primary)
-                        .modifier(ChromeGlassCircleGlyphModifier())
-                        .frame(width: 48, height: 48)
-                        .contentShape(Rectangle())
                 }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-                .menuIndicator(.hidden)
             }
         }
         .padding(.horizontal, 16)
@@ -300,5 +293,108 @@ struct TransactionsView: View {
         return spaced.split(separator: " ")
             .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
             .joined(separator: " ")
+    }
+}
+
+// MARK: - Add Manual Activity Sheet
+
+private struct AddManualActivityView: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
+
+    @State private var direction: LedgerDirection = .bought
+    @State private var productKind: ProductKind = .singleCard
+    @State private var lineDescription: String = ""
+    @State private var quantity: Int = 1
+    @State private var unitPriceText: String = ""
+    @State private var counterparty: String = ""
+    @State private var occurredAt: Date = Date()
+
+    private var unitPrice: Double? {
+        Double(unitPriceText.replacingOccurrences(of: ",", with: "."))
+    }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section("Details") {
+                    Picker("Type", selection: $direction) {
+                        ForEach(LedgerDirection.allCases, id: \.self) { dir in
+                            Text(directionTitle(dir)).tag(dir)
+                        }
+                    }
+                    Picker("Item", selection: $productKind) {
+                        ForEach(ProductKind.allCases, id: \.self) { kind in
+                            Text(productKindTitle(kind)).tag(kind)
+                        }
+                    }
+                    TextField("Description", text: $lineDescription)
+                }
+
+                Section("Transaction") {
+                    Stepper("Quantity: \(quantity)", value: $quantity, in: 1...9999)
+                    HStack {
+                        Text("Unit price")
+                        Spacer()
+                        TextField("Optional", text: $unitPriceText)
+                            .multilineTextAlignment(.trailing)
+                            .keyboardType(.decimalPad)
+                    }
+                    TextField("Counterparty", text: $counterparty)
+                    DatePicker("Date", selection: $occurredAt, displayedComponents: .date)
+                }
+            }
+            .navigationTitle("Add Activity")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Add") { save() }
+                        .disabled(lineDescription.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                }
+            }
+        }
+    }
+
+    private func save() {
+        let line = LedgerLine(
+            occurredAt: occurredAt,
+            direction: direction.rawValue,
+            productKind: productKind.rawValue,
+            lineDescription: lineDescription.trimmingCharacters(in: .whitespacesAndNewlines),
+            quantity: quantity,
+            unitPrice: unitPrice,
+            counterparty: counterparty.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : counterparty.trimmingCharacters(in: .whitespacesAndNewlines)
+        )
+        modelContext.insert(line)
+        HapticManager.notification(.success)
+        dismiss()
+    }
+
+    private func directionTitle(_ dir: LedgerDirection) -> String {
+        switch dir {
+        case .bought: return "Bought"
+        case .packed: return "Packed"
+        case .sold: return "Sold"
+        case .tradedIn: return "Trade In"
+        case .tradedOut: return "Trade Out"
+        case .giftedIn: return "Gift In"
+        case .giftedOut: return "Gift Out"
+        case .adjustmentIn: return "Adjustment In"
+        case .adjustmentOut: return "Adjustment Out"
+        }
+    }
+
+    private func productKindTitle(_ kind: ProductKind) -> String {
+        switch kind {
+        case .singleCard: return "Single card"
+        case .gradedItem: return "Graded item"
+        case .sealedProduct: return "Sealed product"
+        case .boosterPack: return "Booster pack"
+        case .etb: return "ETB"
+        case .other: return "Other"
+        }
     }
 }

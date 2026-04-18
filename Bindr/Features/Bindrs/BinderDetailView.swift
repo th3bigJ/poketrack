@@ -73,9 +73,12 @@ struct BinderDetailView: View {
         .animation(.easeInOut(duration: 0.25), value: viewingSlot?.id)
         .onAppear { Task { await loadCards() } }
         .onChange(of: binder.slotList.count) { Task { await loadCards() } }
-        .sheet(item: $slotPickerTarget) { target in
-            BinderSlotPickerView { cardID, variantKey, cardName in
-                fillSlot(position: target.id, cardID: cardID, variantKey: variantKey, cardName: cardName)
+        .fullScreenCover(item: $slotPickerTarget) { target in
+            BinderSlotPickerView(
+                startPosition: target.id,
+                occupiedPositions: Set(binder.slotList.map(\.position))
+            ) { selections in
+                fillSlots(startingAt: target.id, selections: selections)
             }
             .environment(services)
         }
@@ -163,8 +166,7 @@ struct BinderDetailView: View {
             pageSurface(pageIdx: pageIdx, pageSize: pageSize)
         }
         .frame(width: pageSize.width, height: pageSize.height)
-        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-        .padding(.top, 16)
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
 
     private var pageBackColor: Color {
@@ -433,15 +435,23 @@ struct BinderDetailView: View {
 
     // MARK: - Helpers
 
-    private func fillSlot(position: Int, cardID: String, variantKey: String, cardName: String) {
-        if let existing = binder.slotList.first(where: { $0.position == position }) {
-            existing.cardID = cardID
-            existing.variantKey = variantKey
-            existing.cardName = cardName
-        } else {
-            let slot = BinderSlot(position: position, cardID: cardID, variantKey: variantKey, cardName: cardName)
-            slot.binder = binder
-            modelContext.insert(slot)
+    private func fillSlots(startingAt position: Int, selections: [BinderSlotPickerSelection]) {
+        for (offset, selection) in selections.enumerated() {
+            let targetPosition = position + offset
+            if let existing = binder.slotList.first(where: { $0.position == targetPosition }) {
+                existing.cardID = selection.cardID
+                existing.variantKey = selection.variantKey
+                existing.cardName = selection.cardName
+            } else {
+                let slot = BinderSlot(
+                    position: targetPosition,
+                    cardID: selection.cardID,
+                    variantKey: selection.variantKey,
+                    cardName: selection.cardName
+                )
+                slot.binder = binder
+                modelContext.insert(slot)
+            }
         }
         slotPickerTarget = nil
         Task { await loadCards() }
