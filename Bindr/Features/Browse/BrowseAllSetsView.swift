@@ -54,9 +54,9 @@ struct BrowseAllSetsView: View {
             return grouped
                 .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
                 .sorted { lhs, rhs in
-                    let lhsNewest = lhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
-                    let rhsNewest = rhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
-                    if lhsNewest != rhsNewest { return lhsNewest > rhsNewest }
+                    let lhsOldest = lhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
+                    let rhsOldest = rhs.sets.map(\.releaseDate).compactMap { $0 }.min() ?? ""
+                    if lhsOldest != rhsOldest { return lhsOldest > rhsOldest }
                     return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
                 }
         case .onePiece:

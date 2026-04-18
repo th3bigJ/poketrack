@@ -6,6 +6,7 @@ enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable {
     case cardName
     case cardNumber
     case price
+    case acquiredDateNewest
 
     var id: String { rawValue }
 
@@ -16,6 +17,7 @@ enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable {
         case .cardName: return "Card name"
         case .cardNumber: return "Card number"
         case .price: return "Price"
+        case .acquiredDateNewest: return "Acquired date (newest first)"
         }
     }
 }

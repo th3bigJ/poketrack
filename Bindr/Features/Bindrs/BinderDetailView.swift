@@ -14,6 +14,7 @@ struct BinderDetailView: View {
     @Bindable var binder: Binder
     @Query private var collectionItems: [CollectionItem]
 
+    @Environment(\.dismiss) private var dismiss
     @State private var isEditing = false
     @State private var cardsByID: [String: Card] = [:]
     @State private var slotPickerTarget: BinderSlotPickerTarget? = nil
@@ -51,44 +52,15 @@ struct BinderDetailView: View {
 
     var body: some View {
         VStack(spacing: 0) {
+            binderHeader
             if isEditing {
                 editContent
             } else {
                 viewContent
             }
         }
-        .toolbar(.visible, for: .navigationBar)
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                if isEditing {
-                    Button {
-                        editingTitle = binder.title
-                        showEditTitle = true
-                    } label: {
-                        HStack(spacing: 6) {
-                            Text(binder.title)
-                                .font(.headline)
-                            Image(systemName: "pencil")
-                                .font(.caption)
-                                .foregroundStyle(.secondary)
-                        }
-                    }
-                    .foregroundStyle(.primary)
-                } else {
-                    Text(binder.title)
-                        .font(.headline)
-                }
-            }
-            ToolbarItem(placement: .primaryAction) {
-                Button(isEditing ? "Done" : "Edit") {
-                    withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
-                        isEditing.toggle()
-                    }
-                }
-                .fontWeight(isEditing ? .semibold : .regular)
-            }
-        }
+        .toolbar(.hidden, for: .navigationBar)
         .overlay {
             if let slot = viewingSlot, let card = cardsByID[slot.cardID] {
                 BinderCardViewer(card: card) {
@@ -119,6 +91,52 @@ struct BinderDetailView: View {
                 binder.colour = colour
             }
         }
+    }
+
+    // MARK: - Header
+
+    private var binderHeader: some View {
+        ZStack {
+            if isEditing {
+                Button {
+                    editingTitle = binder.title
+                    showEditTitle = true
+                } label: {
+                    HStack(spacing: 6) {
+                        Text(binder.title)
+                            .font(.title2.weight(.bold))
+                        Image(systemName: "pencil")
+                            .font(.subheadline)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .foregroundStyle(.primary)
+            } else {
+                Text(binder.title)
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(.primary)
+            }
+
+            HStack {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+                Spacer(minLength: 0)
+                Button(isEditing ? "Done" : "Edit") {
+                    withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
+                        isEditing.toggle()
+                    }
+                }
+                .fontWeight(isEditing ? .semibold : .regular)
+                .modifier(ChromeGlassCircleGlyphModifier())
+                .frame(width: 48, height: 48)
+                .contentShape(Rectangle())
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
     }
 
     // MARK: - View mode (page-turn)

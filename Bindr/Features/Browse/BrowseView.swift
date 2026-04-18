@@ -517,7 +517,7 @@ struct BrowseView: View {
     private func orderedFilteredRefs(from cards: [BrowseFilterCard]) async -> [CardRef] {
         let filtered = filterCards(cards)
         switch filters.sortBy {
-        case .random:
+        case .random, .acquiredDateNewest:
             let filteredIDs = Set(filtered.map(\.masterCardId))
             let shuffled = shuffledRefs.filter { filteredIDs.contains($0.masterCardId) }
             let covered = Set(shuffled.map(\.masterCardId))
@@ -767,17 +767,17 @@ private struct BrowseShortcutButtonsRow: View {
         Group {
             if showBrowsePokemonShortcut {
                 HStack(spacing: 10) {
-                    shortcutButton(title: "Browse sets", action: onBrowseSets)
-                    shortcutButton(title: "Browse Pokémon", action: onBrowsePokemon)
+                    shortcutButton(title: "Sets", action: onBrowseSets)
+                    shortcutButton(title: "Pokémon", action: onBrowsePokemon)
                 }
             } else if showBrowseOnePieceShortcuts {
                 HStack(spacing: 10) {
-                    shortcutButton(title: "Browse sets", action: onBrowseSets)
-                    shortcutButton(title: "Browse characters", action: onBrowseOnePieceCharacters)
-                    shortcutButton(title: "Browse subtypes", action: onBrowseOnePieceSubtypes)
+                    shortcutButton(title: "Sets", action: onBrowseSets)
+                    shortcutButton(title: "Characters", action: onBrowseOnePieceCharacters)
+                    shortcutButton(title: "Subtypes", action: onBrowseOnePieceSubtypes)
                 }
             } else {
-                shortcutButton(title: "Browse sets", action: onBrowseSets)
+                shortcutButton(title: "Sets", action: onBrowseSets)
             }
         }
         .id(currentBrand)
@@ -1065,27 +1065,18 @@ struct SetCardsView: View {
                 }
             }
         }
-        .navigationTitle(set.name)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    BrowseGridFiltersMenuContent(
-                        brand: services.brandSettings.selectedCatalogBrand,
-                        filters: $filters,
-                        energyOptions: cardEnergyOptions(cards),
-                        rarityOptions: cardRarityOptions(cards),
-                        trainerTypeOptions: cardTrainerTypeOptions(cards)
-                    )
-                } label: {
-                    BrowseFilterToolbarButton(isActive: filters.isVisiblyCustomized)
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-                .menuIndicator(.hidden)
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .top) {
+            BrowseDetailNavBar(title: set.name, isFilterActive: filters.isVisiblyCustomized) {
+                BrowseGridFiltersMenuContent(
+                    brand: services.brandSettings.selectedCatalogBrand,
+                    filters: $filters,
+                    energyOptions: cardEnergyOptions(cards),
+                    rarityOptions: cardRarityOptions(cards),
+                    trainerTypeOptions: cardTrainerTypeOptions(cards)
+                )
             }
         }
-        .toolbarBackground(.hidden, for: .navigationBar)
         .task {
             isLoading = true
             let loaded = await services.cardData.loadCards(forSetCode: set.setCode)
@@ -1201,27 +1192,18 @@ struct DexCardsView: View {
                 }
             }
         }
-        .navigationTitle(displayName)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    BrowseGridFiltersMenuContent(
-                        brand: services.brandSettings.selectedCatalogBrand,
-                        filters: $filters,
-                        energyOptions: cardEnergyOptions(cards),
-                        rarityOptions: cardRarityOptions(cards),
-                        trainerTypeOptions: cardTrainerTypeOptions(cards)
-                    )
-                } label: {
-                    BrowseFilterToolbarButton(isActive: filters.isVisiblyCustomized)
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-                .menuIndicator(.hidden)
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .top) {
+            BrowseDetailNavBar(title: displayName, isFilterActive: filters.isVisiblyCustomized) {
+                BrowseGridFiltersMenuContent(
+                    brand: services.brandSettings.selectedCatalogBrand,
+                    filters: $filters,
+                    energyOptions: cardEnergyOptions(cards),
+                    rarityOptions: cardRarityOptions(cards),
+                    trainerTypeOptions: cardTrainerTypeOptions(cards)
+                )
             }
         }
-        .toolbarBackground(.hidden, for: .navigationBar)
         .task {
             isLoading = true
             cards = await services.cardData.cards(matchingNationalDex: dexId)
@@ -1315,27 +1297,18 @@ struct OnePieceCharacterCardsView: View {
                 }
             }
         }
-        .navigationTitle(characterName)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    BrowseGridFiltersMenuContent(
-                        brand: services.brandSettings.selectedCatalogBrand,
-                        filters: $filters,
-                        energyOptions: cardEnergyOptions(cards),
-                        rarityOptions: cardRarityOptions(cards),
-                        trainerTypeOptions: cardTrainerTypeOptions(cards)
-                    )
-                } label: {
-                    BrowseFilterToolbarButton(isActive: filters.isVisiblyCustomized)
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-                .menuIndicator(.hidden)
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .top) {
+            BrowseDetailNavBar(title: characterName, isFilterActive: filters.isVisiblyCustomized) {
+                BrowseGridFiltersMenuContent(
+                    brand: services.brandSettings.selectedCatalogBrand,
+                    filters: $filters,
+                    energyOptions: cardEnergyOptions(cards),
+                    rarityOptions: cardRarityOptions(cards),
+                    trainerTypeOptions: cardTrainerTypeOptions(cards)
+                )
             }
         }
-        .toolbarBackground(.hidden, for: .navigationBar)
         .task(id: characterName) {
             isLoading = true
             cards = await services.cardData.cards(matchingOnePieceCharacterName: characterName)
@@ -1427,33 +1400,67 @@ struct OnePieceSubtypeCardsView: View {
                 }
             }
         }
-        .navigationTitle(subtypeName)
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                Menu {
-                    BrowseGridFiltersMenuContent(
-                        brand: services.brandSettings.selectedCatalogBrand,
-                        filters: $filters,
-                        energyOptions: cardEnergyOptions(cards),
-                        rarityOptions: cardRarityOptions(cards),
-                        trainerTypeOptions: cardTrainerTypeOptions(cards)
-                    )
-                } label: {
-                    BrowseFilterToolbarButton(isActive: filters.isVisiblyCustomized)
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-                .menuIndicator(.hidden)
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .top) {
+            BrowseDetailNavBar(title: subtypeName, isFilterActive: filters.isVisiblyCustomized) {
+                BrowseGridFiltersMenuContent(
+                    brand: services.brandSettings.selectedCatalogBrand,
+                    filters: $filters,
+                    energyOptions: cardEnergyOptions(cards),
+                    rarityOptions: cardRarityOptions(cards),
+                    trainerTypeOptions: cardTrainerTypeOptions(cards)
+                )
             }
         }
-        .toolbarBackground(.hidden, for: .navigationBar)
         .task(id: subtypeName) {
             isLoading = true
             cards = await services.cardData.cards(matchingOnePieceSubtype: subtypeName)
             ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
             isLoading = false
         }
+    }
+}
+
+private struct BrowseDetailNavBar: View {
+    let title: String
+    let isFilterActive: Bool
+    @ViewBuilder let filterMenuContent: () -> BrowseGridFiltersMenuContent
+    @Environment(\.dismiss) private var dismiss
+
+    var body: some View {
+        ZStack {
+            Text(title)
+                .font(.title2.weight(.bold))
+                .foregroundStyle(.primary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+                .padding(.horizontal, 64)
+
+            HStack {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+
+                Spacer(minLength: 0)
+
+                Menu {
+                    filterMenuContent()
+                } label: {
+                    Image(systemName: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(isFilterActive ? Color.accentColor : Color.primary)
+                        .modifier(ChromeGlassCircleGlyphModifier())
+                }
+                .buttonStyle(.plain)
+                .menuActionDismissBehavior(.disabled)
+                .menuOrder(.fixed)
+                .menuIndicator(.hidden)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
     }
 }
 
@@ -1470,6 +1477,19 @@ struct BrowseFilterToolbarButton: View {
     }
 }
 
+struct FilterMenuConfig {
+    var showSortBy: Bool = true
+    var showAcquiredDateSort: Bool = false
+    var showBrandFilters: Bool = true
+    var showRarity: Bool = true
+    var showRarePlusOnly: Bool = true
+    var showHideOwned: Bool = true
+    var showGridOptions: Bool = true
+
+    static let browse = FilterMenuConfig()
+    static let collect = FilterMenuConfig(showAcquiredDateSort: true, showHideOwned: false)
+}
+
 struct BrowseGridFiltersMenuContent: View {
     @Environment(AppServices.self) private var services
 
@@ -1478,6 +1498,10 @@ struct BrowseGridFiltersMenuContent: View {
     let energyOptions: [String]
     let rarityOptions: [String]
     let trainerTypeOptions: [String]
+    var isAllBrands: Bool = false
+    /// When nil, falls back to `services.browseGridOptions` (browse behaviour). Pass a binding to use separate grid options.
+    var gridOptions: Binding<BrowseGridOptions>? = nil
+    var config: FilterMenuConfig = .browse
 
     var body: some View {
         if filters.isVisiblyCustomized || filters.sortBy != .random {
@@ -1491,7 +1515,9 @@ struct BrowseGridFiltersMenuContent: View {
         Section("Sort by") {
             Menu(menuTitle("Sort by", summary: filters.sortBy.title)) {
                 Picker("Sort by", selection: $filters.sortBy) {
-                    ForEach(BrowseCardGridSortOption.allCases) { option in
+                    ForEach(BrowseCardGridSortOption.allCases.filter {
+                        $0 != .acquiredDateNewest || config.showAcquiredDateSort
+                    }) { option in
                         Text(option.title).tag(option)
                     }
                 }
@@ -1502,6 +1528,7 @@ struct BrowseGridFiltersMenuContent: View {
             .menuOrder(.fixed)
         }
 
+        if !isAllBrands {
         Section("Filters") {
             if brand == .onePiece {
                 filterMenu(title: "Card type", summary: selectionSummary(for: filters.opCardTypes)) {
@@ -1620,20 +1647,28 @@ struct BrowseGridFiltersMenuContent: View {
             }
         }
 
-        Section("Collection") {
-            filterMenu(title: "Rarity", summary: selectionSummary(for: filters.rarities)) {
-                if rarityOptions.isEmpty {
-                    Text("No rarities available")
-                } else {
-                    ForEach(rarityOptions, id: \.self) { rarity in
-                        Toggle(rarity, isOn: stringBinding(for: rarity, keyPath: \.rarities))
+        if config.showRarity || config.showRarePlusOnly || config.showHideOwned {
+            Section("Collection") {
+                if config.showRarity {
+                    filterMenu(title: "Rarity", summary: selectionSummary(for: filters.rarities)) {
+                        if rarityOptions.isEmpty {
+                            Text("No rarities available")
+                        } else {
+                            ForEach(rarityOptions, id: \.self) { rarity in
+                                Toggle(rarity, isOn: stringBinding(for: rarity, keyPath: \.rarities))
+                            }
+                        }
                     }
                 }
+                if config.showRarePlusOnly {
+                    Toggle("Rare + only", isOn: $filters.rarePlusOnly)
+                }
+                if config.showHideOwned {
+                    Toggle("Hide owned", isOn: $filters.hideOwned)
+                }
             }
-
-            Toggle("Rare + only", isOn: $filters.rarePlusOnly)
-            Toggle("Hide owned", isOn: $filters.hideOwned)
         }
+        } // end if !isAllBrands
 
         Section("Grid options") {
             Menu("Grid options") {
@@ -1642,7 +1677,8 @@ struct BrowseGridFiltersMenuContent: View {
                 Toggle("Show set ID", isOn: gridOptionBinding(\.showSetID))
                 Toggle("Show pricing", isOn: gridOptionBinding(\.showPricing))
                 Stepper(value: gridOptionBinding(\.columnCount), in: 1...4) {
-                    Text("Columns: \(services.browseGridOptions.options.columnCount)")
+                    let count = gridOptions?.wrappedValue.columnCount ?? services.browseGridOptions.options.columnCount
+                    Text("Columns: \(count)")
                 }
             }
             .menuActionDismissBehavior(.disabled)
@@ -1690,7 +1726,17 @@ struct BrowseGridFiltersMenuContent: View {
     }
 
     private func gridOptionBinding<T>(_ keyPath: WritableKeyPath<BrowseGridOptions, T>) -> Binding<T> {
-        Binding(
+        if let gridOptions {
+            return Binding(
+                get: { gridOptions.wrappedValue[keyPath: keyPath] },
+                set: { newValue in
+                    var updated = gridOptions.wrappedValue
+                    updated[keyPath: keyPath] = newValue
+                    gridOptions.wrappedValue = updated
+                }
+            )
+        }
+        return Binding(
             get: { services.browseGridOptions.options[keyPath: keyPath] },
             set: { newValue in
                 var updated = services.browseGridOptions.options
@@ -1882,7 +1928,7 @@ func filterBrowseCards(
         return filtered.sorted { $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending }
     case .newestSet:
         return sortCardsByReleaseDateNewestFirst(filtered, sets: sets)
-    case .cardNumber, .random, .price:
+    case .cardNumber, .random, .price, .acquiredDateNewest:
         return filtered
     }
 }

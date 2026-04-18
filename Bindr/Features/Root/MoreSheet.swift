@@ -20,18 +20,13 @@ struct MoreView: View {
                     GridItem(.flexible())
                 ], spacing: 16) {
                     QuickAccessNavigationButton(
-                        icon: "star",
-                        title: "Wishlist",
-                        action: { navigationPath.append(SideMenuPage.wishlist) }
-                    )
-                    QuickAccessNavigationButton(
                         icon: "rectangle.on.rectangle.angled",
                         title: "Deck Builder",
                         action: { navigationPath.append(SideMenuPage.decks) }
                     )
                     QuickAccessNavigationButton(
                         icon: "list.bullet.rectangle",
-                        title: "Transactions",
+                        title: "Activity",
                         action: { navigationPath.append(SideMenuPage.transactions) }
                     )
                     QuickAccessNavigationButton(
@@ -43,11 +38,6 @@ struct MoreView: View {
                 .padding(.vertical, 8)
                 .listRowInsets(EdgeInsets())
                 .listRowBackground(Color.clear)
-            } header: {
-                Text("Quick Access")
-                    .font(.subheadline)
-                    .textCase(.uppercase)
-                    .foregroundStyle(.secondary)
             }
         }
         .listStyle(.insetGrouped)
@@ -55,10 +45,8 @@ struct MoreView: View {
         .navigationDestination(for: SideMenuPage.self) { page in
             switch page {
             case .account:
-                AccountView()
+                SettingsView()
                     .environment(services)
-            case .wishlist:
-                WishlistRootView()
             case .social:
                 SocialRootView()
             case .decks:
@@ -88,7 +76,7 @@ struct MoreView: View {
                         .foregroundStyle(.primary)
                 }
                 .popover(isPresented: $showSettings) {
-                    AccountView()
+                    SettingsView()
                         .environment(services)
                 }
 
@@ -103,8 +91,7 @@ struct MoreView: View {
                         .foregroundStyle(.primary)
                 }
                 .popover(isPresented: $showProfile) {
-                    AccountView()
-                        .environment(services)
+                    ProfileSheet()
                 }
             }
         }

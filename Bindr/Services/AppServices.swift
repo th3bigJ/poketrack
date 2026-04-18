@@ -20,6 +20,9 @@ final class AppServices {
     /// Collection + ledger (SwiftData) — initialized with `ModelContext`.
     private(set) var collectionLedger: CollectionLedgerService?
 
+    /// Daily value snapshots (SwiftData) — initialized with `ModelContext`.
+    private(set) var collectionValue: CollectionValueService?
+
     private(set) var isReady = false
     private(set) var isBootstrapping = false
     /// Until `true`, the root UI should not mount the main tab shell (Browse, etc.) so the cold launch catalog pipeline does not race the same SQLite + network work on the main actor.
@@ -262,5 +265,10 @@ final class AppServices {
     func setupCollectionLedger(modelContext: ModelContext) {
         guard collectionLedger == nil else { return }
         collectionLedger = CollectionLedgerService(modelContext: modelContext)
+    }
+
+    func setupCollectionValue(modelContext: ModelContext) {
+        guard collectionValue == nil else { return }
+        collectionValue = CollectionValueService(modelContext: modelContext, pricing: pricing, cardData: cardData)
     }
 }

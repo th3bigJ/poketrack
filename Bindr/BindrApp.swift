@@ -26,6 +26,9 @@ struct BindrApp: App {
             BinderSlot.self,
             Deck.self,
             DeckCard.self,
+            CollectionValueSnapshot.self,
+            CollectionWeeklyAverage.self,
+            CollectionMonthlyAverage.self,
         ])
 
         do {

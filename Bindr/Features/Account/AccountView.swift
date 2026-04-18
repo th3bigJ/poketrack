@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct AccountView: View {
+struct SettingsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @State private var showPaywall = false

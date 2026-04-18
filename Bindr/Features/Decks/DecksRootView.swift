@@ -12,61 +12,41 @@ struct DecksRootView: View {
     @State private var showDeleteConfirm = false
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                ZStack {
-                    Text("Deck Builder")
-                        .font(.title2.weight(.bold))
-                        .foregroundStyle(.primary)
-
-                    HStack {
-                        ChromeGlassCircleButton(accessibilityLabel: "Search") {} label: {
-                            Image(systemName: "magnifyingglass")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(.primary)
-                        }
-                        Spacer(minLength: 0)
-                        ChromeGlassCircleButton(accessibilityLabel: "Create Deck") { handleCreateTap() } label: {
-                            Image(systemName: "plus")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(.primary)
-                        }
-                    }
-                }
-                .padding(.horizontal, 16)
-                .padding(.top, 16)
-                .padding(.bottom, 12)
-
+        VStack(spacing: 0) {
+            decksHeader
+            Group {
                 if decks.isEmpty {
-                    ContentUnavailableView {
-                        Label("No Decks", systemImage: "rectangle.on.rectangle.angled")
-                    } description: {
-                        Text("Build your first deck.")
-                    } actions: {
-                        if decks.isEmpty {
+                    ScrollView {
+                        ContentUnavailableView {
+                            Label("No Decks", systemImage: "rectangle.on.rectangle.angled")
+                        } description: {
+                            Text("Build your first deck.")
+                        } actions: {
                             Button("Create a Deck") { handleCreateTap() }
                                 .buttonStyle(.borderedProminent)
                         }
+                        .frame(minHeight: 300)
                     }
-                    .frame(minHeight: 300)
                 } else {
-                    LazyVStack(spacing: 0) {
-                        ForEach(decks) { deck in
-                            NavigationLink(value: deck) {
-                                DeckListRow(deck: deck)
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 10)
-                            }
-                            .buttonStyle(.plain)
-                            .contextMenu {
-                                Button(role: .destructive) {
-                                    deckToDelete = deck
-                                    showDeleteConfirm = true
-                                } label: {
-                                    Label("Delete Deck", systemImage: "trash")
+                    ScrollView {
+                        LazyVStack(spacing: 0) {
+                            ForEach(decks) { deck in
+                                NavigationLink(value: deck) {
+                                    DeckListRow(deck: deck)
+                                        .padding(.horizontal, 16)
+                                        .padding(.vertical, 10)
                                 }
+                                .buttonStyle(.plain)
+                                .contextMenu {
+                                    Button(role: .destructive) {
+                                        deckToDelete = deck
+                                        showDeleteConfirm = true
+                                    } label: {
+                                        Label("Delete Deck", systemImage: "trash")
+                                    }
+                                }
+                                Divider().padding(.leading, 16)
                             }
-                            Divider().padding(.leading, 16)
                         }
                     }
                 }
@@ -93,6 +73,25 @@ struct DecksRootView: View {
         } message: { deck in
             Text("This will permanently remove \"\(deck.title)\".")
         }
+    }
+
+    private var decksHeader: some View {
+        ZStack {
+            Text("Deck Builder")
+                .font(.title2.weight(.bold))
+                .foregroundStyle(.primary)
+
+            HStack {
+                Spacer(minLength: 0)
+                ChromeGlassCircleButton(accessibilityLabel: "Create Deck") { handleCreateTap() } label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
     }
 
     private func handleCreateTap() {

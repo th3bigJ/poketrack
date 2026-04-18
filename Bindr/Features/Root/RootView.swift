@@ -64,6 +64,13 @@ struct RootView: View {
     @State private var browseFilterEnergyOptions: [String] = []
     @State private var browseFilterRarityOptions: [String] = []
     @State private var browseFilterTrainerTypeOptions: [String] = []
+    @State private var collectSelectedBrand: TCGBrand? = nil
+    @State private var collectCollectionFilters = BrowseCardGridFilters()
+    @State private var collectWishlistFilters = BrowseCardGridFilters()
+    @State private var collectFilterEnergyOptions: [String] = []
+    @State private var collectFilterRarityOptions: [String] = []
+    @State private var collectFilterTrainerTypeOptions: [String] = []
+    @State private var collectGridOptions = BrowseGridOptions()
     @State private var isSearchExperiencePresented = false
     /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar`; detail uses the same `NavigationStack` bar as Browse (`DexCardsView` / `SetCardsView`).
     @State private var searchNavigationPath = NavigationPath()
@@ -76,6 +83,7 @@ struct RootView: View {
     @State private var selectedCardPresentation: CardPresentationContext?
     @State private var showBrandOnboarding = false
     @State private var showProfile = false
+    @State private var suppressMorePathReset = false
     @State private var showCreateBinder = false
     @FocusState private var searchFieldFocused: Bool
 
@@ -101,6 +109,30 @@ struct RootView: View {
             && browseNavigationPath.isEmpty
             && !isSearchExperiencePresented
             && browseFullScreen == nil
+    }
+
+    private var isCollectFilterContextActive: Bool {
+        selectedTab == .collect && collectionNavigationPath.isEmpty
+    }
+
+    private var activeCollectFilters: BrowseCardGridFilters {
+        collectSegment == .collection ? collectCollectionFilters : collectWishlistFilters
+    }
+
+    private var activeCollectFiltersBinding: Binding<BrowseCardGridFilters> {
+        collectSegment == .collection ? $collectCollectionFilters : $collectWishlistFilters
+    }
+
+    private var isCollectFilterActive: Bool {
+        activeCollectFilters.isVisiblyCustomized
+    }
+
+    private var collectActiveBrand: TCGBrand {
+        collectSelectedBrand ?? services.brandSettings.selectedCatalogBrand
+    }
+
+    private var isCollectAllBrands: Bool {
+        collectSelectedBrand == nil && services.brandSettings.enabledBrands.count > 1
     }
 
     private var chromeTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
@@ -236,7 +268,12 @@ struct RootView: View {
                                 switch tab {
                                 case .dashboard:
                                     NavigationStack {
-                                        DashboardView()
+                                        DashboardView(onViewAllActivity: {
+                                            suppressMorePathReset = true
+                                            moreNavigationPath = NavigationPath()
+                                            moreNavigationPath.append(SideMenuPage.transactions)
+                                            selectedTab = .more
+                                        })
                                     }
                                 case .browse:
                                     NavigationStack(path: $browseNavigationPath) {
@@ -267,7 +304,16 @@ struct RootView: View {
                                     }
                                 case .collect:
                                     NavigationStack(path: $collectionNavigationPath) {
-                                        CollectView(selectedSegment: $collectSegment)
+                                        CollectView(
+                                            selectedSegment: $collectSegment,
+                                            selectedBrand: $collectSelectedBrand,
+                                            collectionFilters: $collectCollectionFilters,
+                                            wishlistFilters: $collectWishlistFilters,
+                                            collectFilterEnergyOptions: $collectFilterEnergyOptions,
+                                            collectFilterRarityOptions: $collectFilterRarityOptions,
+                                            collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
+                                            gridOptions: $collectGridOptions
+                                        )
                                     }
                                 case .bindrs:
                                     NavigationStack(path: $bindrsNavigationPath) {
@@ -341,8 +387,7 @@ struct RootView: View {
                 // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
                 floatingSearchBar(hiddenOffset: searchBarHiddenOffset, topInset: searchBarTopInset, bottomInset: searchBarBottomInset)
                     .popover(isPresented: $showProfile) {
-                        AccountView()
-                            .environment(services)
+                        ProfileSheet()
                     }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -398,12 +443,14 @@ struct RootView: View {
             if services.isReady {
                 services.setupWishlist(modelContext: modelContext)
                 services.setupCollectionLedger(modelContext: modelContext)
+                services.setupCollectionValue(modelContext: modelContext)
             }
         }
         .onChange(of: services.isReady) { _, ready in
             if ready {
                 services.setupWishlist(modelContext: modelContext)
                 services.setupCollectionLedger(modelContext: modelContext)
+                services.setupCollectionValue(modelContext: modelContext)
             }
         }
         .onChange(of: selectedTab) { _, tab in
@@ -413,7 +460,11 @@ struct RootView: View {
                 collectionNavigationPath = NavigationPath()
             }
             if tab == .more {
-                moreNavigationPath = NavigationPath()
+                if suppressMorePathReset {
+                    suppressMorePathReset = false
+                } else {
+                    moreNavigationPath = NavigationPath()
+                }
             }
         }
         .onChange(of: browseNavigationPath.count) { _, newCount in
@@ -455,14 +506,19 @@ struct RootView: View {
     @ViewBuilder
     private func floatingSearchBar(hiddenOffset: CGFloat, topInset: CGFloat, bottomInset: CGFloat) -> some View {
         let visible = showUniversalSearchBar && !isSearchDetailActive
+        let filterEnabled = isBrowseGridFilterContextActive || isCollectFilterContextActive
+        let filterActive = isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized
+                         : isCollectFilterContextActive ? isCollectFilterActive : false
+        let filterContent: AnyView? = isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent)
+                                    : isCollectFilterContextActive ? AnyView(collectFilterMenuContent) : nil
         UniversalSearchBar(
             text: $universalQuery,
             isFocused: $searchFieldFocused,
             title: rootChromeTitle,
             isSearchOpen: isSearchExperiencePresented,
-            isFilterEnabled: isBrowseGridFilterContextActive,
-            isFilterActive: isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized : false,
-            filterMenuContent: isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent) : nil,
+            isFilterEnabled: filterEnabled,
+            isFilterActive: filterActive,
+            filterMenuContent: filterContent,
             trailingButton: chromeTrailingButton,
             onActivateSearch: {
                 withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
@@ -500,6 +556,20 @@ struct RootView: View {
         .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
         .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
         .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
+    }
+
+    @ViewBuilder
+    private var collectFilterMenuContent: some View {
+        BrowseGridFiltersMenuContent(
+            brand: collectActiveBrand,
+            filters: activeCollectFiltersBinding,
+            energyOptions: collectFilterEnergyOptions,
+            rarityOptions: collectFilterRarityOptions,
+            trainerTypeOptions: collectFilterTrainerTypeOptions,
+            isAllBrands: isCollectAllBrands,
+            gridOptions: $collectGridOptions,
+            config: .collect
+        )
     }
 
     @ViewBuilder
@@ -791,7 +861,6 @@ struct RootView: View {
         return active.map { "\($0.0) \($0.1)" }.joined(separator: ", ")
     }
 
-    // Collection/Wishlist filter menus used to live here; filter state is now owned by `CollectView`'s internal segment.
 }
 
 #Preview {

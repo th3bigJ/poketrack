@@ -37,7 +37,7 @@ struct TransactionsView: View {
                 }
             }
         }
-        .navigationTitle("Transactions")
+        .navigationTitle("Activity")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
         .task(id: ledgerSignature) {
@@ -50,7 +50,7 @@ struct TransactionsView: View {
 
     private var transactionsHeader: some View {
         ZStack {
-            Text("Transactions")
+            Text("Activity")
                 .font(.title2.weight(.bold))
                 .foregroundStyle(.primary)
 
