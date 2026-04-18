@@ -6,6 +6,12 @@ struct CardBrowseDetailView: View {
     @Environment(\.colorScheme) private var colorScheme
 
     let cards: [Card]
+    /// When set, replaces the collection/wishlist buttons with a deck-add button.
+    var addToDeckAction: ((Card, String, Int) -> Void)? = nil
+    /// When false, hides the trailing header actions (+ collection, wishlist, deck add); set logo + title stay for context.
+    var showsHeaderChromeActions: Bool = true
+    /// When ``showsHeaderChromeActions`` is false (e.g. deck view sheet), still show wishlist star actions.
+    var showsWishlistWhenChromeHidden: Bool = false
     @State private var index: Int
     @State private var navigationPath = NavigationPath()
 
@@ -16,9 +22,19 @@ struct CardBrowseDetailView: View {
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
+    @State private var deckAddQuantity: Int = 1
 
-    init(cards: [Card], startIndex: Int) {
+    init(
+        cards: [Card],
+        startIndex: Int,
+        addToDeckAction: ((Card, String, Int) -> Void)? = nil,
+        showsHeaderChromeActions: Bool = true,
+        showsWishlistWhenChromeHidden: Bool = false
+    ) {
         self.cards = cards
+        self.addToDeckAction = addToDeckAction
+        self.showsHeaderChromeActions = showsHeaderChromeActions
+        self.showsWishlistWhenChromeHidden = showsWishlistWhenChromeHidden
         let clamped: Int = {
             guard !cards.isEmpty else { return 0 }
             return min(max(0, startIndex), cards.count - 1)
@@ -235,6 +251,59 @@ struct CardBrowseDetailView: View {
     }
 
     @ViewBuilder
+    private var wishlistHeaderControl: some View {
+        Group {
+            if isCurrentCardWishlisted {
+                Button(action: removeCurrentCardFromWishlist) {
+                    Image(systemName: "star.fill")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(Self.wishlistActiveStarColor)
+                        .modifier(ChromeGlassCircleGlyphModifier())
+                }
+                .buttonStyle(.plain)
+                .frame(width: 48, height: 48)
+                .contentShape(Rectangle())
+                .accessibilityLabel("Remove from wishlist")
+            } else {
+                Group {
+                    if let variantKey = singleAvailableVariantKey {
+                        Button {
+                            addToWishlist(variantKey: variantKey)
+                        } label: {
+                            Image(systemName: "star")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(Color.primary)
+                                .modifier(ChromeGlassCircleGlyphModifier())
+                        }
+                        .buttonStyle(.plain)
+                        .contentShape(Rectangle())
+                        .accessibilityLabel("Add to wishlist")
+                        .accessibilityHint("Adds the available print variant")
+                    } else {
+                        Menu {
+                            variantSelectionMenuContent(
+                                sectionHeader: "Select Variant to add to wishlist",
+                                showWishlistCheckmarks: true,
+                                onSelect: addToWishlist(variantKey:)
+                            )
+                        } label: {
+                            Image(systemName: "star")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(Color.primary)
+                                .modifier(ChromeGlassCircleGlyphModifier())
+                        }
+                        .menuStyle(.button)
+                        .menuIndicator(.hidden)
+                        .accessibilityLabel("Add to wishlist")
+                        .accessibilityHint("Choose a print variant to save")
+                    }
+                }
+                .frame(width: 48, height: 48)
+            }
+        }
+    }
+
+    @ViewBuilder
     private var headerRow: some View {
         let headerHeight = RootChromeEnvironment.searchBarStackHeight
 
@@ -267,91 +336,107 @@ struct CardBrowseDetailView: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .animation(.easeInOut(duration: 0.15), value: currentCard?.cardName)
 
+            if showsHeaderChromeActions {
             HStack(spacing: 10) {
-                Group {
-                    if let variantKey = singleAvailableVariantKey {
-                        Button {
-                            addToCollectionVariant(variantKey: variantKey)
-                        } label: {
-                            Image(systemName: "plus")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(collectionPlusGlyphColor)
-                                .modifier(ChromeGlassCircleGlyphModifier())
-                        }
-                        .buttonStyle(.plain)
-                        .contentShape(Rectangle())
-                        .accessibilityLabel("Add to collection")
-                        .accessibilityHint("Adds the available print variant")
-                    } else {
-                        Menu {
-                            variantSelectionMenuContent(
-                                sectionHeader: "Select Variant to add to collection",
-                                showWishlistCheckmarks: false,
-                                onSelect: addToCollectionVariant(variantKey:)
-                            )
-                        } label: {
-                            Image(systemName: "plus")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(collectionPlusGlyphColor)
-                                .modifier(ChromeGlassCircleGlyphModifier())
-                        }
-                        .menuStyle(.button)
-                        .menuIndicator(.hidden)
-                        .tint(collectionPlusGlyphColor)
-                        .accessibilityLabel("Add to collection")
-                        .accessibilityHint("Choose a print variant to add")
-                    }
-                }
-                .frame(width: 48, height: 48)
-
-                Group {
-                    if isCurrentCardWishlisted {
-                        Button(action: removeCurrentCardFromWishlist) {
-                            Image(systemName: "star.fill")
-                                .font(.system(size: 17, weight: .medium))
-                                .foregroundStyle(Self.wishlistActiveStarColor)
-                                .modifier(ChromeGlassCircleGlyphModifier())
-                        }
-                        .buttonStyle(.plain)
-                        .frame(width: 48, height: 48)
-                        .contentShape(Rectangle())
-                        .accessibilityLabel("Remove from wishlist")
-                    } else {
-                        Group {
-                            if let variantKey = singleAvailableVariantKey {
-                                Button {
-                                    addToWishlist(variantKey: variantKey)
-                                } label: {
-                                    Image(systemName: "star")
-                                        .font(.system(size: 17, weight: .medium))
-                                        .foregroundStyle(Color.primary)
-                                        .modifier(ChromeGlassCircleGlyphModifier())
+                if let deckAction = addToDeckAction {
+                    // Deck builder mode: stage variant + quantity in the picker basket; deck updates on confirm.
+                    Menu {
+                        // Put “Quantity” + value in the Stepper label (don’t rely on `Section("Quantity")` — it often reads as a faint section header without a clear title in menus).
+                        Section {
+                            Stepper(value: $deckAddQuantity, in: 1...20) {
+                                VStack(alignment: .leading, spacing: 4) {
+                                    Text("Quantity")
+                                        .font(.footnote.weight(.semibold))
+                                        .foregroundStyle(Color.secondary)
+                                    Text("\(deckAddQuantity)")
+                                        .font(.title3.weight(.bold))
+                                        .monospacedDigit()
+                                        .foregroundStyle(Color(uiColor: .label))
+                                        .contentTransition(.numericText())
+                                        .animation(.snappy, value: deckAddQuantity)
                                 }
-                                .buttonStyle(.plain)
-                                .contentShape(Rectangle())
-                                .accessibilityLabel("Add to wishlist")
-                                .accessibilityHint("Adds the available print variant")
-                            } else {
-                                Menu {
-                                    variantSelectionMenuContent(
-                                        sectionHeader: "Select Variant to add to wishlist",
-                                        showWishlistCheckmarks: true,
-                                        onSelect: addToWishlist(variantKey:)
-                                    )
-                                } label: {
-                                    Image(systemName: "star")
-                                        .font(.system(size: 17, weight: .medium))
-                                        .foregroundStyle(Color.primary)
-                                        .modifier(ChromeGlassCircleGlyphModifier())
-                                }
-                                .menuStyle(.button)
-                                .menuIndicator(.hidden)
-                                .accessibilityLabel("Add to wishlist")
-                                .accessibilityHint("Choose a print variant to save")
+                                .multilineTextAlignment(.leading)
                             }
                         }
-                        .frame(width: 48, height: 48)
+                        if wishlistVariantKeys.count > 1 {
+                            Section("Select Variant") {
+                                ForEach(wishlistVariantKeys, id: \.self) { key in
+                                    Button {
+                                        if let card = currentCard {
+                                            deckAction(card, key, deckAddQuantity)
+                                            deckAddQuantity = 1
+                                        }
+                                    } label: {
+                                        Text(wishlistVariantTitle(key))
+                                    }
+                                }
+                            }
+                        } else {
+                            Button {
+                                if let card = currentCard, let key = wishlistVariantKeys.first {
+                                    deckAction(card, key, deckAddQuantity)
+                                    deckAddQuantity = 1
+                                }
+                            } label: {
+                                Label("Add to Basket", systemImage: "plus.circle.fill")
+                            }
+                        }
+                    } label: {
+                        Image(systemName: "plus")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(collectionPlusGlyphColor)
+                            .modifier(ChromeGlassCircleGlyphModifier())
                     }
+                    .menuStyle(.button)
+                    .menuIndicator(.hidden)
+                    .tint(collectionPlusGlyphColor)
+                    .frame(width: 48, height: 48)
+                    .accessibilityLabel("Add to basket")
+                    .onChange(of: index) { _, _ in deckAddQuantity = 1 }
+                } else {
+                    // Normal mode: collection + wishlist buttons
+                    Group {
+                        if let variantKey = singleAvailableVariantKey {
+                            Button {
+                                addToCollectionVariant(variantKey: variantKey)
+                            } label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 17, weight: .medium))
+                                    .foregroundStyle(collectionPlusGlyphColor)
+                                    .modifier(ChromeGlassCircleGlyphModifier())
+                            }
+                            .buttonStyle(.plain)
+                            .contentShape(Rectangle())
+                            .accessibilityLabel("Add to collection")
+                            .accessibilityHint("Adds the available print variant")
+                        } else {
+                            Menu {
+                                variantSelectionMenuContent(
+                                    sectionHeader: "Select Variant to add to collection",
+                                    showWishlistCheckmarks: false,
+                                    onSelect: addToCollectionVariant(variantKey:)
+                                )
+                            } label: {
+                                Image(systemName: "plus")
+                                    .font(.system(size: 17, weight: .medium))
+                                    .foregroundStyle(collectionPlusGlyphColor)
+                                    .modifier(ChromeGlassCircleGlyphModifier())
+                            }
+                            .menuStyle(.button)
+                            .menuIndicator(.hidden)
+                            .tint(collectionPlusGlyphColor)
+                            .accessibilityLabel("Add to collection")
+                            .accessibilityHint("Choose a print variant to add")
+                        }
+                    }
+                    .frame(width: 48, height: 48)
+
+                    wishlistHeaderControl
+                }
+            }
+            } else if showsWishlistWhenChromeHidden {
+                HStack(spacing: 10) {
+                    wishlistHeaderControl
                 }
             }
         }

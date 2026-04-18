@@ -41,6 +41,11 @@ struct CreateDeckSheet: View {
                     .pickerStyle(.segmented)
                     .labelsHidden()
                     .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+
+                    Text(selectedFormat.rulesDescription)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
             }
             .navigationTitle("New Deck")
