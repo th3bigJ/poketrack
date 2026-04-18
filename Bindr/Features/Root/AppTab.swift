@@ -5,11 +5,14 @@ enum AppTab: String, CaseIterable, Identifiable, Hashable {
     case browse
     case collect
     case bindrs
+    /// Tapping this tab opens the `MoreSheet` modally rather than routing to content.
+    /// `RootView` intercepts selection so the bar never actually settles on `.more`.
+    case more
 
     var id: String { rawValue }
 
-    /// Only these tabs appear in the tab bar (4 tabs: Dashboard, Browse, Collect, Bindrs).
-    static let visibleTabs: [AppTab] = [.dashboard, .browse, .collect, .bindrs]
+    /// Tabs that appear in the tab bar (5 tabs: Dashboard, Browse, Collect, Bindrs, More).
+    static let visibleTabs: [AppTab] = [.dashboard, .browse, .collect, .bindrs, .more]
 
     var title: String {
         switch self {
@@ -17,6 +20,7 @@ enum AppTab: String, CaseIterable, Identifiable, Hashable {
         case .browse: return "Browse"
         case .collect: return "Collect"
         case .bindrs: return "Bindrs"
+        case .more: return "More"
         }
     }
 
@@ -26,6 +30,7 @@ enum AppTab: String, CaseIterable, Identifiable, Hashable {
         case .browse: return "rectangle.stack"
         case .collect: return "square.stack.3d.up.fill"
         case .bindrs: return "books.vertical.fill"
+        case .more: return "line.3.horizontal"
         }
     }
 }

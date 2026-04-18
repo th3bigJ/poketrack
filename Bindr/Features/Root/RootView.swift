@@ -132,6 +132,22 @@ struct RootView: View {
             && browseFullScreen == nil
     }
 
+    /// Intercepts taps on the `.more` tab so it opens `MoreSheet` as a modal
+    /// instead of becoming the active tab (it has no real content view).
+    private var tabSelectionBinding: Binding<AppTab> {
+        Binding(
+            get: { selectedTab },
+            set: { newValue in
+                if newValue == .more {
+                    Haptics.lightImpact()
+                    showMoreSheet = true
+                } else {
+                    selectedTab = newValue
+                }
+            }
+        )
+    }
+
     var body: some View {
         Group {
             if services.isReady {
@@ -247,7 +263,7 @@ struct RootView: View {
 
             ZStack(alignment: .top) {
                 ZStack(alignment: .top) {
-                    TabView(selection: $selectedTab) {
+                    TabView(selection: tabSelectionBinding) {
                         ForEach(AppTab.visibleTabs) { tab in
                             Group {
                                 switch tab {
@@ -290,6 +306,10 @@ struct RootView: View {
                                     NavigationStack(path: $bindrsNavigationPath) {
                                         BindersRootView()
                                     }
+                                case .more:
+                                    // Placeholder — `tabSelectionBinding` intercepts `.more`
+                                    // so this view should never actually render.
+                                    Color.clear
                                 }
                             }
                             .toolbarBackground(.hidden, for: .navigationBar)
@@ -355,24 +375,18 @@ struct RootView: View {
                 UniversalSearchBar(
                     text: $universalQuery,
                     isFocused: $searchFieldFocused,
-                    isMenuOpen: false,
                     isSearchOpen: isSearchExperiencePresented,
                     isFilterEnabled: isBrowseGridFilterContextActive,
                     isFilterActive: isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized : false,
                     filterMenuContent: isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent) : nil,
-                    onBurgerTap: {
-                        // Search overlay open → bar becomes a back control first; otherwise open the More sheet.
-                        if isSearchExperiencePresented {
-                            searchNavigationPath = NavigationPath()
-                            universalQuery = ""
-                            withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                                isSearchExperiencePresented = false
-                            }
-                            searchFieldFocused = false
-                            return
+                    onBack: {
+                        // Only visible while the search overlay is up — dismiss it.
+                        searchNavigationPath = NavigationPath()
+                        universalQuery = ""
+                        withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
+                            isSearchExperiencePresented = false
                         }
                         searchFieldFocused = false
-                        showMoreSheet = true
                     },
                     onCamera: {
                         searchFieldFocused = false

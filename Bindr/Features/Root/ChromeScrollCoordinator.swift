@@ -23,7 +23,9 @@ final class ChromeScrollCoordinator: ObservableObject {
         case .browse:
             acceptsScrollChromeUpdates = true
             resetForTabChange()
-        case .dashboard, .collect, .bindrs:
+        case .dashboard, .collect, .bindrs, .more:
+            // `.more` never actually becomes the selected tab (RootView intercepts it
+            // to present a sheet), but the switch must stay exhaustive.
             acceptsScrollChromeUpdates = false
             forceVisible()
         }

@@ -2,7 +2,7 @@ import SwiftUI
 
 // MARK: - Local haptic wrappers (keep call sites one line)
 
-private func hapticBurgerThen(_ action: @escaping () -> Void) -> () -> Void {
+private func hapticBackThen(_ action: @escaping () -> Void) -> () -> Void {
     {
         Haptics.lightImpact()
         action()
@@ -16,22 +16,22 @@ private func hapticFilterThen(_ action: @escaping () -> Void) -> () -> Void {
     }
 }
 
-/// Leading menu control, pill search field (camera inside on the right), trailing filter.
+/// Pill search field (camera inside on the right) with trailing filter. A back
+/// chevron only appears while the search overlay is open; there is no burger
+/// menu — the overflow menu lives in the bottom nav's **More** tab.
 /// On supported OS versions uses **Liquid Glass** ([`glassEffect`](https://developer.apple.com/documentation/swiftui/view/glasseffect(_:in:)), [`GlassEffectContainer`](https://developer.apple.com/documentation/swiftui/glasseffectcontainer)); otherwise falls back to system materials.
 struct UniversalSearchBar: View {
     @Binding var text: String
     @FocusState.Binding var isFocused: Bool
 
-    /// When `true`, the leading control shows an X (same style as the burger) to close the drawer.
-    var isMenuOpen: Bool
-
-    /// When `true`, search overlay is up — leading control is a **back** affordance (takes priority over the burger).
+    /// When `true`, search overlay is up — the leading **back** chevron is shown so the user can dismiss it.
     var isSearchOpen: Bool
     var isFilterEnabled: Bool = true
     var isFilterActive: Bool = false
     var filterMenuContent: AnyView? = nil
 
-    var onBurgerTap: () -> Void
+    /// Called when the leading back chevron is tapped (only visible while search is open).
+    var onBack: () -> Void
     var onCamera: () -> Void
     var onFilter: () -> Void
 
@@ -42,17 +42,9 @@ struct UniversalSearchBar: View {
     private var glassStroke: Color { Color.primary.opacity(0.1) }
     private var filterTint: Color { isFilterActive ? .blue : .primary }
 
-    private var leadingSymbolName: String {
-        if isSearchOpen { return "chevron.left" }
-        if isMenuOpen { return "xmark" }
-        return "line.3.horizontal"
-    }
+    private var leadingSymbolName: String { "chevron.left" }
 
-    private var leadingAccessibilityLabel: String {
-        if isSearchOpen { return "Back" }
-        if isMenuOpen { return "Close menu" }
-        return "Open menu"
-    }
+    private var leadingAccessibilityLabel: String { "Back" }
 
     private var filterMenuTouchDownHapticGesture: some Gesture {
         DragGesture(minimumDistance: 0)
@@ -82,19 +74,22 @@ struct UniversalSearchBar: View {
     private var liquidGlassBar: some View {
         GlassEffectContainer(spacing: 10) {
             HStack(spacing: 10) {
-                Button(action: hapticBurgerThen(onBurgerTap)) {
-                    Image(systemName: leadingSymbolName)
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                        .frame(width: 44, height: 44)
-                        .glassEffect(.regular.interactive(), in: Circle())
-                        .contentTransition(.symbolEffect(.replace))
-                        .contentShape(Circle())
+                if isSearchOpen {
+                    Button(action: hapticBackThen(onBack)) {
+                        Image(systemName: leadingSymbolName)
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                            .frame(width: 44, height: 44)
+                            .glassEffect(.regular.interactive(), in: Circle())
+                            .contentTransition(.symbolEffect(.replace))
+                            .contentShape(Circle())
+                    }
+                    .buttonStyle(.plain)
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
+                    .accessibilityLabel(leadingAccessibilityLabel)
+                    .transition(.opacity.combined(with: .scale))
                 }
-                .buttonStyle(.plain)
-                .frame(width: 48, height: 48)
-                .contentShape(Rectangle())
-                .accessibilityLabel(leadingAccessibilityLabel)
 
                 searchFieldInner
                     .padding(.leading, 14)
@@ -112,23 +107,26 @@ struct UniversalSearchBar: View {
 
     private var materialFallbackBar: some View {
         HStack(spacing: 10) {
-            Button(action: hapticBurgerThen(onBurgerTap)) {
-                Image(systemName: leadingSymbolName)
-                    .font(.system(size: 17, weight: .medium))
-                    .foregroundStyle(.primary)
-                    .frame(width: 44, height: 44)
-                    .background(.ultraThinMaterial, in: Circle())
-                    .overlay {
-                        Circle()
-                            .strokeBorder(glassStroke, lineWidth: 0.5)
-                    }
-                    .contentTransition(.symbolEffect(.replace))
-                    .contentShape(Circle())
+            if isSearchOpen {
+                Button(action: hapticBackThen(onBack)) {
+                    Image(systemName: leadingSymbolName)
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                        .frame(width: 44, height: 44)
+                        .background(.ultraThinMaterial, in: Circle())
+                        .overlay {
+                            Circle()
+                                .strokeBorder(glassStroke, lineWidth: 0.5)
+                        }
+                        .contentTransition(.symbolEffect(.replace))
+                        .contentShape(Circle())
+                }
+                .buttonStyle(.plain)
+                .frame(width: 48, height: 48)
+                .contentShape(Rectangle())
+                .accessibilityLabel(leadingAccessibilityLabel)
+                .transition(.opacity.combined(with: .scale))
             }
-            .buttonStyle(.plain)
-            .frame(width: 48, height: 48)
-            .contentShape(Rectangle())
-            .accessibilityLabel(leadingAccessibilityLabel)
 
             searchFieldInner
                 .padding(.leading, 14)
