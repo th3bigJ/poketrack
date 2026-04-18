@@ -15,43 +15,38 @@ struct BinderCoverView: View {
     
     var body: some View {
         ZStack(alignment: .leading) {
-            // Main Binder Body
-            mainBody
-                .clipShape(RoundedRectangle(cornerRadius: compact ? 12 : 16, style: .continuous))
-                .shadow(color: .black.opacity(0.15), radius: compact ? 4 : 8, x: 0, y: 4)
-            
-            // Spine Overlay
-            spineOverlay
-            
-            // Text Content
-            textContent
-                .padding(.leading, compact ? 28 : 40)
-                .padding(.trailing, 60) // Space for peeking cards
-        }
-        .frame(maxWidth: .infinity)
-        .frame(height: compact ? 120 : 180)
-    }
-    
-    private var mainBody: some View {
-        ZStack(alignment: .trailing) {
-            // The procedural material layer
+            // Main Binder Body (Tactile Material)
             BinderTextureView(
                 colourName: colourName,
                 texture: texture,
                 seed: seed,
                 compact: compact
             )
+            .clipShape(RoundedRectangle(cornerRadius: compact ? 12 : 16, style: .continuous))
+            .shadow(color: .black.opacity(0.15), radius: compact ? 4 : 8, x: 0, y: 4)
             
-            // Peeking Cards - fanned from the right side
-            HStack(spacing: compact ? -38 : -55) {
-                ForEach(0..<peekingCardURLs.count, id: \.self) { index in
-                    peekingCard(url: peekingCardURLs[index], index: index)
+            // Centered Content (Cards + Text)
+            VStack(spacing: compact ? 8 : 12) {
+                // Card Fan
+                HStack(spacing: compact ? -35 : -50) {
+                    ForEach(0..<peekingCardURLs.count, id: \.self) { index in
+                        peekingCard(url: peekingCardURLs[index], index: index)
+                    }
                 }
+                .padding(.top, compact ? 16 : 24)
+                
+                textContent
             }
-            .padding(.trailing, compact ? 12 : 20)
-            .offset(x: compact ? 12 : 18)
+            .frame(maxWidth: .infinity)
+            .padding(.leading, compact ? 20 : 32)
+            
+            // Spine Overlay (stays on left)
+            spineOverlay
         }
+        .frame(maxWidth: .infinity)
+        .frame(height: compact ? 180 : 250) // Slightly taller to accommodate centered stacked layout
     }
+    
     
     private var spineOverlay: some View {
         GeometryReader { geo in
@@ -86,22 +81,24 @@ struct BinderCoverView: View {
     }
     
     private var textContent: some View {
-        VStack(alignment: .leading, spacing: compact ? 2 : 4) {
-            Spacer()
+        VStack(alignment: .center, spacing: compact ? 2 : 4) {
             Text(title.isEmpty ? "Binder name..." : title)
                 .font(compact ? .headline : .title3.bold())
                 .foregroundStyle(.white)
-                .lineLimit(1)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
                 .opacity(title.isEmpty ? 0.5 : 1)
             
             if let subtitle {
                 Text(subtitle)
                     .font(.system(size: compact ? 11 : 13, weight: .medium))
-                    .foregroundStyle(.white.opacity(0.6))
+                    .foregroundStyle(.white.opacity(0.7))
+                    .multilineTextAlignment(.center)
                     .lineLimit(1)
             }
         }
-        .padding(.bottom, compact ? 16 : 24)
+        .padding(.horizontal, 16)
+        .padding(.bottom, compact ? 12 : 16)
     }
     
     @ViewBuilder

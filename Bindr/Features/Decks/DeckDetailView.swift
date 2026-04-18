@@ -107,17 +107,45 @@ struct DeckDetailView: View {
 }
 
 private struct DeckCardRow: View {
+    @Environment(AppServices.self) private var services
     let deckCard: DeckCard
     let isOwned: Bool
     let maxCopies: Int
     let onQuantityChange: (Int) -> Void
     let onDelete: () -> Void
 
+    @State private var imageURL: URL?
+
     var body: some View {
         HStack(spacing: 12) {
+            // Card Preview Thumbnail
+            ZStack {
+                if let imageURL {
+                    CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 80, height: 112)) { img in
+                        img.resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Color(uiColor: .systemGray6)
+                    }
+                } else {
+                    Color(uiColor: .systemGray6)
+                }
+            }
+            .frame(width: 40, height: 56)
+            .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    .stroke(.black.opacity(0.1), lineWidth: 0.5)
+            }
+            .task {
+                if let card = await services.cardData.loadCard(masterCardId: deckCard.cardID) {
+                    imageURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                }
+            }
+
             VStack(alignment: .leading, spacing: 2) {
                 Text(deckCard.cardName)
-                    .font(.body)
+                    .font(.body.bold())
                 Text(isOwned ? "✓ Owned" : "Need \(deckCard.quantity)")
                     .font(.caption)
                     .foregroundStyle(isOwned ? .green : Color(uiColor: .systemOrange))
@@ -151,6 +179,7 @@ private struct DeckCardRow: View {
                 .disabled(deckCard.quantity >= maxCopies)
             }
         }
+        .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
         .swipeActions(edge: .trailing) {
             Button(role: .destructive, action: onDelete) {
                 Label("Remove", systemImage: "trash")
@@ -158,3 +187,4 @@ private struct DeckCardRow: View {
         }
     }
 }
+

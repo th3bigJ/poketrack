@@ -141,11 +141,13 @@ struct BinderDetailView: View {
 
     private var viewContent: some View {
         GeometryReader { geo in
+            ZStack {
                 if layout.isFreeScroll {
                     freeScrollView
                 } else {
                     pagedViewContent(geo: geo)
                 }
+            }
         }
     }
 
@@ -167,7 +169,7 @@ struct BinderDetailView: View {
             pageCount: pageCount,
             currentPage: $currentPage,
             isTurning: $isPageTurning,
-            pageBackgroundColor: UIColor(pageBackColor)
+            pageBackgroundColor: UIColor(binder.resolvedColour)
         ) { pageIdx in
             pageSurface(pageIdx: pageIdx, pageSize: pageSize)
         }
@@ -176,7 +178,8 @@ struct BinderDetailView: View {
     }
 
     private var pageBackColor: Color {
-        colorScheme == .dark ? .black : .white
+        // High-contrast pages help cards pop, but we add a slight warmth to white pages
+        colorScheme == .dark ? .black : Color(white: 0.98)
     }
 
     private func binderPageSize(in available: CGSize) -> CGSize {
@@ -217,15 +220,18 @@ struct BinderDetailView: View {
     private func pageSurface(pageIdx: Int, pageSize: CGSize) -> some View {
         let positions = positions(for: pageIdx)
         return ZStack {
-            // Page background — subtle paper texture via shadow layering
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .fill(pageBackColor)
-                .shadow(color: .black.opacity(0.08), radius: 6, x: 2, y: 2)
-                .shadow(color: .black.opacity(0.04), radius: 2, x: -1, y: -1)
-
-            RoundedRectangle(cornerRadius: 10, style: .continuous)
-                .fill(pageBackColor)
-                .padding(12)
+            // Textured Page Background
+            BinderTextureView(
+                colourName: binder.colour,
+                texture: binder.textureKind,
+                seed: binder.textureSeed,
+                compact: false
+            )
+            .overlay {
+                Color.black.opacity(0.18) // Darkened to let cards stand out
+            }
+            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .shadow(color: .black.opacity(0.15), radius: 8, x: 2, y: 4)
 
             LazyVGrid(
                 columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: cols),
@@ -237,14 +243,19 @@ struct BinderDetailView: View {
                         if let slot {
                             viewSlotCell(slot: slot)
                         } else {
-                            Color(uiColor: .systemGray6)
-                                .clipShape(RoundedRectangle(cornerRadius: 6))
+                            // Integrated "pocket" look for empty slots
+                            RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                .fill(.black.opacity(0.15))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 6, style: .continuous)
+                                        .stroke(.white.opacity(0.05), lineWidth: 1)
+                                }
                         }
                     }
                     .aspectRatio(5/7, contentMode: .fit)
                 }
             }
-            .padding(12)
+            .padding(14)
 
             if isPageTurning {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
