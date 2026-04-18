@@ -1,10 +1,14 @@
+import SwiftData
 import SwiftUI
 
 /// In-app results for the universal search field (sets + cards; sealed placeholder until indexed).
 struct UniversalSearchResultsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
+    @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     let query: String
+    let selectedBrand: TCGBrand
+    let sourceScope: SearchSourceScope
 
     @State private var matchingSets: [SearchSetMatch] = []
     @State private var cards: [Card] = []
@@ -12,6 +16,7 @@ struct UniversalSearchResultsView: View {
     @State private var isLoadingAllCards = false
     @State private var hasMoreCardResults = false
     @State private var showAllCards = false
+    @State private var debouncedQuery = ""
 
     private let previewCardLimit = 9
 
@@ -22,16 +27,20 @@ struct UniversalSearchResultsView: View {
         var id: String { "\(brand.rawValue)|\(set.id)" }
     }
 
-    private var trimmed: String {
+    private var liveTrimmed: String {
         query.trimmingCharacters(in: .whitespacesAndNewlines)
     }
 
-    private var pokemonCatalogEnabled: Bool {
-        services.brandSettings.enabledBrands.contains(.pokemon)
+    private var trimmed: String {
+        debouncedQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    private var isAllCardsScope: Bool {
+        sourceScope == .allCards
     }
 
     private var showPokemonDexSection: Bool {
-        pokemonCatalogEnabled
+        isAllCardsScope && selectedBrand == .pokemon
     }
 
     private var matchingPokemon: [NationalDexPokemon] {
@@ -40,7 +49,7 @@ struct UniversalSearchResultsView: View {
     }
 
     private var showOnePieceBrowseSections: Bool {
-        services.brandSettings.enabledBrands.contains(.onePiece)
+        isAllCardsScope && selectedBrand == .onePiece
     }
 
     private var matchingOnePieceCharacters: [String] {
@@ -54,6 +63,9 @@ struct UniversalSearchResultsView: View {
     }
 
     private var emptyStateDescription: String {
+        if sourceScope == .myCollection {
+            return "Type to search your collection."
+        }
         if showPokemonDexSection {
             return "Type to find cards, sets, and Pokémon."
         }
@@ -78,12 +90,11 @@ struct UniversalSearchResultsView: View {
             } else {
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 24, pinnedViews: []) {
-                        // MARK: Sets
-                        if !matchingSets.isEmpty {
+                        if sourceScope == .allCards && !matchingSets.isEmpty {
                             sectionHeader("Sets")
                             VStack(spacing: 0) {
                                 ForEach(matchingSets) { set in
-                                    NavigationLink(value: SearchNavRoot.set(set.set)) {
+                                    NavigationLink(value: SearchNavRoot.set(set.set, brand: set.brand)) {
                                         HStack(spacing: 12) {
                                             SetLogoAsyncImage(logoSrc: set.set.logoSrc, height: 36, brand: set.brand)
                                                 .frame(width: 72, height: 36)
@@ -110,14 +121,15 @@ struct UniversalSearchResultsView: View {
                         }
 
                         // MARK: Pokémon
-                        if !matchingPokemon.isEmpty {
+                        if sourceScope == .allCards && !matchingPokemon.isEmpty {
                             sectionHeader("Pokémon")
                             VStack(spacing: 0) {
                                 ForEach(matchingPokemon) { mon in
                                     NavigationLink(
                                         value: SearchNavRoot.dex(
                                             dexId: mon.nationalDexNumber,
-                                            displayName: mon.displayName
+                                            displayName: mon.displayName,
+                                            brand: selectedBrand
                                         )
                                     ) {
                                         HStack(spacing: 12) {
@@ -151,11 +163,11 @@ struct UniversalSearchResultsView: View {
                             }
                         }
 
-                        if !matchingOnePieceCharacters.isEmpty {
+                        if sourceScope == .allCards && !matchingOnePieceCharacters.isEmpty {
                             sectionHeader("Characters")
                             VStack(spacing: 0) {
                                 ForEach(matchingOnePieceCharacters, id: \.self) { name in
-                                    NavigationLink(value: SearchNavRoot.onePieceCharacter(name: name)) {
+                                    NavigationLink(value: SearchNavRoot.onePieceCharacter(name: name, brand: selectedBrand)) {
                                         searchListRow(title: name)
                                     }
                                     .buttonStyle(.plain)
@@ -164,11 +176,11 @@ struct UniversalSearchResultsView: View {
                             }
                         }
 
-                        if !matchingOnePieceSubtypes.isEmpty {
+                        if sourceScope == .allCards && !matchingOnePieceSubtypes.isEmpty {
                             sectionHeader("Subtypes")
                             VStack(spacing: 0) {
                                 ForEach(matchingOnePieceSubtypes, id: \.self) { subtype in
-                                    NavigationLink(value: SearchNavRoot.onePieceSubtype(name: subtype)) {
+                                    NavigationLink(value: SearchNavRoot.onePieceSubtype(name: subtype, brand: selectedBrand)) {
                                         searchListRow(title: subtype)
                                     }
                                     .buttonStyle(.plain)
@@ -206,7 +218,16 @@ struct UniversalSearchResultsView: View {
             }
         }
         .toolbarBackground(.hidden, for: .navigationBar)
-        .task(id: trimmed) {
+        .task(id: query) {
+            if liveTrimmed.isEmpty {
+                debouncedQuery = ""
+                return
+            }
+            try? await Task.sleep(nanoseconds: 250_000_000)
+            guard !Task.isCancelled else { return }
+            debouncedQuery = query
+        }
+        .task(id: searchTaskKey) {
             guard !trimmed.isEmpty else {
                 matchingSets = []
                 cards = []
@@ -230,36 +251,26 @@ struct UniversalSearchResultsView: View {
             }
             isSearching = true
             defer { isSearching = false }
-            let enabledBrands = services.brandSettings.enabledBrands.sorted { $0.menuOrder < $1.menuOrder }
 
-            var allSetMatches: [SearchSetMatch] = []
-            for brand in enabledBrands {
-                let brandSets = await services.cardData.catalogSets(for: brand)
+            if sourceScope == .allCards {
+                let brandSets = await services.cardData.catalogSets(for: selectedBrand)
                 let q = trimmed.lowercased()
                 let matches = brandSets.filter { set in
                     set.name.lowercased().contains(q)
                         || set.setCode.lowercased().contains(q)
                         || (set.seriesName?.lowercased().contains(q) == true)
                 }
-                allSetMatches.append(contentsOf: matches.map { SearchSetMatch(set: $0, brand: brand) })
-            }
-            matchingSets = allSetMatches
+                matchingSets = matches.map { SearchSetMatch(set: $0, brand: selectedBrand) }
 
-            var previewCards: [Card] = []
-            var totalMatchedCardCount = 0
-            for brand in enabledBrands {
-                let brandCards = await services.cardData.search(query: trimmed, catalogBrand: brand)
-                totalMatchedCardCount += brandCards.count
-                if previewCards.count < previewCardLimit {
-                    let remaining = previewCardLimit - previewCards.count
-                    previewCards.append(contentsOf: brandCards.prefix(remaining))
-                }
-                if totalMatchedCardCount > previewCardLimit {
-                    break
-                }
+                let allBrandCards = await services.cardData.search(query: trimmed, catalogBrand: selectedBrand)
+                cards = Array(allBrandCards.prefix(previewCardLimit))
+                hasMoreCardResults = allBrandCards.count > previewCardLimit
+            } else {
+                matchingSets = []
+                let allCollectionCards = await collectionSearchResults(query: trimmed, brand: selectedBrand)
+                cards = Array(allCollectionCards.prefix(previewCardLimit))
+                hasMoreCardResults = allCollectionCards.count > previewCardLimit
             }
-            cards = previewCards
-            hasMoreCardResults = totalMatchedCardCount > previewCardLimit
         }
     }
 
@@ -271,16 +282,32 @@ struct UniversalSearchResultsView: View {
         isLoadingAllCards = true
         defer { isLoadingAllCards = false }
 
-        let enabledBrands = services.brandSettings.enabledBrands.sorted { $0.menuOrder < $1.menuOrder }
-        var allCards: [Card] = []
-        for brand in enabledBrands {
-            let brandCards = await services.cardData.search(query: query, catalogBrand: brand)
-            allCards.append(contentsOf: brandCards)
+        let allCards: [Card]
+        if sourceScope == .allCards {
+            allCards = await services.cardData.search(query: query, catalogBrand: selectedBrand)
+        } else {
+            allCards = await collectionSearchResults(query: query, brand: selectedBrand)
         }
         guard self.trimmed == query else { return }
         cards = allCards
         showAllCards = true
         hasMoreCardResults = allCards.count > previewCardLimit
+    }
+
+    private var searchTaskKey: String {
+        "\(trimmed)|\(selectedBrand.rawValue)|\(sourceScope.rawValue)"
+    }
+
+    private func collectionSearchResults(query: String, brand: TCGBrand) async -> [Card] {
+        let ownedIDs = Set(
+            collectionItems
+                .filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }
+                .map(\.cardID)
+        )
+        guard !ownedIDs.isEmpty else { return [] }
+
+        let brandCards = await services.cardData.search(query: query, catalogBrand: brand)
+        return brandCards.filter { ownedIDs.contains($0.masterCardId) }
     }
 
     private func sectionHeader(_ title: String) -> some View {

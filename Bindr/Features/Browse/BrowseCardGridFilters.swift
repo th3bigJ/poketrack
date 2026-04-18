@@ -17,7 +17,7 @@ enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable {
         case .cardName: return "Card name"
         case .cardNumber: return "Card number"
         case .price: return "Price"
-        case .acquiredDateNewest: return "Acquired date (newest first)"
+        case .acquiredDateNewest: return "Acquired date"
         }
     }
 }
@@ -60,6 +60,7 @@ struct BrowseCardGridFilters: Equatable, Sendable {
     var cardTypes: Set<BrowseCardTypeFilter> = []
     var rarePlusOnly = false
     var hideOwned = false
+    var showDuplicates = false
     var energyTypes: Set<String> = []
     var rarities: Set<String> = []
     var trainerTypes: Set<String> = []
@@ -86,6 +87,7 @@ struct BrowseCardGridFilters: Equatable, Sendable {
         !cardTypes.isEmpty
             || rarePlusOnly
             || hideOwned
+            || showDuplicates
             || !energyTypes.isEmpty
             || !rarities.isEmpty
             || !trainerTypes.isEmpty
@@ -121,5 +123,10 @@ struct BrowseGridOptions: Equatable, Sendable {
     var showSetName = false
     var showSetID = false
     var showPricing = false
+    var showOwned = true
     var columnCount = 3
+
+    var isDefault: Bool {
+        self == Self()
+    }
 }

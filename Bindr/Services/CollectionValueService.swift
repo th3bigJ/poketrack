@@ -238,9 +238,13 @@ final class CollectionValueService {
             }
         }
 
-        async let p = computeBrandValue(items: pokemonItems, on: date)
-        async let o = computeBrandValue(items: onePieceItems, on: date)
-        async let l = computeBrandValue(items: lorcanaItems, on: date)
+        let pokemonBatch = pokemonItems
+        let onePieceBatch = onePieceItems
+        let lorcanaBatch = lorcanaItems
+
+        async let p = computeBrandValue(items: pokemonBatch, on: date)
+        async let o = computeBrandValue(items: onePieceBatch, on: date)
+        async let l = computeBrandValue(items: lorcanaBatch, on: date)
         let (pv, ov, lv) = await (p, o, l)
         return BrandSnapshot(total: pv + ov + lv, pokemon: pv, onePiece: ov, lorcana: lv)
     }

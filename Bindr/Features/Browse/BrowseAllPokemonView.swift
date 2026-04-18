@@ -180,9 +180,9 @@ private struct OnePieceBrowseListView: View {
         .toolbarBackground(.hidden, for: .navigationBar)
         .navigationDestination(for: SearchNavRoot.self) { root in
             switch root {
-            case .onePieceCharacter(let name):
+            case .onePieceCharacter(let name, _):
                 OnePieceCharacterCardsView(characterName: name)
-            case .onePieceSubtype(let name):
+            case .onePieceSubtype(let name, _):
                 OnePieceSubtypeCardsView(subtypeName: name)
             default:
                 EmptyView()
@@ -209,7 +209,7 @@ struct BrowseAllOnePieceCharactersView: View {
                     emptyTitle: "No character list",
                     emptyDescription: "Character names will appear here after the ONE PIECE catalog sync completes.",
                     rows: rows,
-                    destination: { .onePieceCharacter(name: $0) }
+                    destination: { .onePieceCharacter(name: $0, brand: .onePiece) }
                 )
             }
         }
@@ -246,7 +246,7 @@ struct BrowseAllOnePieceSubtypesView: View {
                     emptyTitle: "No subtype list",
                     emptyDescription: "Character subtypes will appear here after the ONE PIECE catalog sync completes.",
                     rows: rows,
-                    destination: { .onePieceSubtype(name: $0) }
+                    destination: { .onePieceSubtype(name: $0, brand: .onePiece) }
                 )
             }
         }

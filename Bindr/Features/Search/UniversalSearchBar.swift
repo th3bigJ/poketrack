@@ -29,7 +29,9 @@ struct UniversalSearchBar: View {
     var isSearchOpen: Bool
     var isFilterEnabled: Bool = true
     var isFilterActive: Bool = false
+    var isGridOptionsActive: Bool = false
     var filterMenuContent: AnyView? = nil
+    var gridMenuContent: AnyView? = nil
 
     /// When set, replaces the filter button with a custom trailing button (symbol name + action).
     var trailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? = nil
@@ -45,7 +47,8 @@ struct UniversalSearchBar: View {
 
     /// Hairline on material fallback — `primary` adapts with light/dark (old fixed white stroke looked wrong on light mode).
     private var glassStroke: Color { Color.primary.opacity(0.1) }
-    private var filterTint: Color { isFilterActive ? .blue : .primary }
+    private var filterTint: Color { .primary }
+    private var gridTint: Color { .primary }
 
     private var leadingSymbolName: String { "chevron.left" }
 
@@ -80,7 +83,7 @@ struct UniversalSearchBar: View {
         GlassEffectContainer(spacing: 10) {
             Group {
                 if isSearchOpen {
-                    HStack(spacing: 10) {
+                            HStack(spacing: 6) {
                         Button(action: hapticBackThen(onBack)) {
                             Image(systemName: leadingSymbolName)
                                 .font(.system(size: 17, weight: .medium))
@@ -115,14 +118,29 @@ struct UniversalSearchBar: View {
                                 .lineLimit(1)
                         }
 
-                        HStack {
-                            collapsedSearchButtonLiquid
-                            Spacer(minLength: 0)
-                            if let trailingButton {
-                                trailingButtonLiquid(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
-                            } else {
-                                filterButtonLiquid
+                    HStack {
+                        collapsedSearchButtonLiquid
+                        Spacer(minLength: 0)
+                        if let trailingButton {
+                            trailingButtonLiquid(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
+                        } else if let filterMenuContent, let gridMenuContent, isFilterEnabled {
+                            HStack(spacing: 6) {
+                                chromeMenuButton(
+                                    symbol: "slider.horizontal.3",
+                                    tint: gridTint,
+                                    accessibilityLabel: "Grid options",
+                                    content: { gridMenuContent }
+                                )
+                                chromeMenuButton(
+                                    symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
+                                    tint: filterTint,
+                                    accessibilityLabel: "Filters",
+                                    content: { filterMenuContent }
+                                )
                             }
+                        } else {
+                            filterButtonLiquid
+                        }
                         }
                     }
                 }
@@ -136,7 +154,7 @@ struct UniversalSearchBar: View {
     private var materialFallbackBar: some View {
         Group {
             if isSearchOpen {
-                HStack(spacing: 10) {
+                            HStack(spacing: 6) {
                     Button(action: hapticBackThen(onBack)) {
                         Image(systemName: leadingSymbolName)
                             .font(.system(size: 17, weight: .medium))
@@ -184,6 +202,21 @@ struct UniversalSearchBar: View {
                         Spacer(minLength: 0)
                         if let trailingButton {
                             trailingButtonFallback(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
+                        } else if let filterMenuContent, let gridMenuContent, isFilterEnabled {
+                            HStack(spacing: 6) {
+                                chromeMenuButton(
+                                    symbol: "slider.horizontal.3",
+                                    tint: gridTint,
+                                    accessibilityLabel: "Grid options",
+                                    content: { gridMenuContent }
+                                )
+                                chromeMenuButton(
+                                    symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
+                                    tint: filterTint,
+                                    accessibilityLabel: "Filters",
+                                    content: { filterMenuContent }
+                                )
+                            }
                         } else {
                             filterButtonFallback
                         }
@@ -309,6 +342,29 @@ struct UniversalSearchBar: View {
                     .strokeBorder(glassStroke, lineWidth: 0.5)
             }
             .contentShape(Circle())
+    }
+
+    private func chromeMenuButton<Content: View>(
+        symbol: String,
+        tint: Color,
+        accessibilityLabel: String,
+        @ViewBuilder content: @escaping () -> Content
+    ) -> some View {
+        Menu {
+            content()
+        } label: {
+            Image(systemName: symbol)
+                .font(.system(size: 17, weight: .medium))
+                .foregroundStyle(tint)
+                .modifier(ChromeGlassCircleGlyphModifier())
+        }
+        .buttonStyle(.plain)
+        .menuActionDismissBehavior(.disabled)
+        .menuOrder(.fixed)
+        .menuIndicator(.hidden)
+        .frame(width: 48, height: 48)
+        .contentShape(Rectangle())
+        .accessibilityLabel(accessibilityLabel)
     }
 
     @available(iOS 26.0, *)

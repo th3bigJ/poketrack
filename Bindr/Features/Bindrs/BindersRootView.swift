@@ -122,15 +122,6 @@ private struct BinderCardCell: View {
     }
 
     private func binderColor(_ name: String) -> Color {
-        switch name {
-        case "red":    return .red
-        case "orange": return .orange
-        case "yellow": return .yellow
-        case "green":  return .green
-        case "blue":   return .blue
-        case "purple": return .purple
-        case "pink":   return .pink
-        default:       return Color(uiColor: .systemGray2)
-        }
+        BinderColourPalette.color(named: name)
     }
 }

@@ -27,6 +27,7 @@ struct BinderDetailView: View {
     @State private var draggedSlotPosition: Int? = nil
 
     private var layout: BinderPageLayout { binder.layout }
+    private var headerIconColor: Color { colorScheme == .dark ? .white : .black }
 
     private var sortedSlots: [BinderSlot] {
         binder.slotList.sorted { $0.position < $1.position }
@@ -97,25 +98,9 @@ struct BinderDetailView: View {
 
     private var binderHeader: some View {
         ZStack {
-            if isEditing {
-                Button {
-                    editingTitle = binder.title
-                    showEditTitle = true
-                } label: {
-                    HStack(spacing: 6) {
-                        Text(binder.title)
-                            .font(.title2.weight(.bold))
-                        Image(systemName: "pencil")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-                    }
-                }
+            Text(binder.title)
+                .font(.title2.weight(.bold))
                 .foregroundStyle(.primary)
-            } else {
-                Text(binder.title)
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(.primary)
-            }
 
             HStack {
                 ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
@@ -124,15 +109,19 @@ struct BinderDetailView: View {
                         .foregroundStyle(.primary)
                 }
                 Spacer(minLength: 0)
-                Button(isEditing ? "Done" : "Edit") {
+                Button {
                     withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
                         isEditing.toggle()
                     }
+                } label: {
+                    Image(systemName: isEditing ? "checkmark" : "pencil")
+                        .font(.system(size: 17, weight: .semibold))
+                        .foregroundStyle(headerIconColor)
                 }
-                .fontWeight(isEditing ? .semibold : .regular)
                 .modifier(ChromeGlassCircleGlyphModifier())
                 .frame(width: 48, height: 48)
                 .contentShape(Rectangle())
+                .accessibilityLabel(isEditing ? "Done editing binder" : "Edit binder")
             }
         }
         .padding(.horizontal, 16)
@@ -143,11 +132,11 @@ struct BinderDetailView: View {
 
     private var viewContent: some View {
         GeometryReader { geo in
-            if layout == .freeScroll {
-                freeScrollView
-            } else {
-                pagedViewContent(geo: geo)
-            }
+                if layout.isFreeScroll {
+                    freeScrollView
+                } else {
+                    pagedViewContent(geo: geo)
+                }
         }
     }
 
@@ -307,7 +296,7 @@ struct BinderDetailView: View {
             VStack(spacing: 16) {
                 editToolbar
 
-                if layout == .freeScroll {
+                if layout.isFreeScroll {
                     editGrid(positions: Array(0..<max(sortedSlots.count + 3, slotsPerPage)))
                 } else {
                     ForEach(0..<(pageCount + 1), id: \.self) { pageIdx in
@@ -345,7 +334,7 @@ struct BinderDetailView: View {
 
             Spacer()
 
-            if layout != .freeScroll {
+            if !layout.isFreeScroll {
                 Button {
                     addPage()
                 } label: {
@@ -491,16 +480,7 @@ struct BinderDetailView: View {
     }
 
     static func binderSwiftUIColor(_ name: String) -> Color {
-        switch name {
-        case "red":    return .red
-        case "orange": return .orange
-        case "yellow": return .yellow
-        case "green":  return .green
-        case "blue":   return .blue
-        case "purple": return .purple
-        case "pink":   return .pink
-        default:       return Color(uiColor: .systemGray2)
-        }
+        BinderColourPalette.color(named: name)
     }
 }
 
@@ -719,16 +699,10 @@ struct BinderColourPickerSheet: View {
     let current: String
     let onSelect: (String) -> Void
 
-    private let colours: [(name: String, color: Color)] = [
-        ("red", .red), ("orange", .orange), ("yellow", .yellow),
-        ("green", .green), ("blue", .blue), ("purple", .purple),
-        ("pink", .pink), ("grey", Color(uiColor: .systemGray2))
-    ]
-
     var body: some View {
         NavigationStack {
             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), spacing: 20) {
-                ForEach(colours, id: \.name) { swatch in
+                ForEach(BinderColourPalette.options, id: \.name) { swatch in
                     Button {
                         onSelect(swatch.name)
                         dismiss()

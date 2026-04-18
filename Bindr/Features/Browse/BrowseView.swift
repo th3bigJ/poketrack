@@ -36,7 +36,7 @@ struct CardGridCell: View {
                     .multilineTextAlignment(.center)
                     .foregroundStyle(.secondary)
             }
-            if let footnote, !footnote.isEmpty {
+            if gridOptions.showOwned, let footnote, !footnote.isEmpty {
                 Text(footnote)
                     .font(.caption2)
                     .lineLimit(1)
@@ -766,7 +766,7 @@ private struct BrowseShortcutButtonsRow: View {
     var body: some View {
         Group {
             if showBrowsePokemonShortcut {
-                HStack(spacing: 10) {
+                HStack(spacing: 6) {
                     shortcutButton(title: "Sets", action: onBrowseSets)
                     shortcutButton(title: "Pokémon", action: onBrowsePokemon)
                 }
@@ -1032,7 +1032,7 @@ struct SetCardsView: View {
                 VStack(spacing: 12) {
                     BrowseInlineSearchField(title: "Search cards in set", text: $query)
                         .padding(.horizontal)
-                        .padding(.top)
+                        .padding(.top, 2)
                     if filteredCards.isEmpty {
                         ContentUnavailableView(
                             "No matching cards",
@@ -1067,14 +1067,21 @@ struct SetCardsView: View {
         }
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
-            BrowseDetailNavBar(title: set.name, isFilterActive: filters.isVisiblyCustomized) {
+            BrowseDetailNavBar(
+                title: set.name,
+                isFilterActive: filters.isVisiblyCustomized,
+                isGridOptionsActive: !services.browseGridOptions.options.isDefault
+            ) {
                 BrowseGridFiltersMenuContent(
                     brand: services.brandSettings.selectedCatalogBrand,
                     filters: $filters,
                     energyOptions: cardEnergyOptions(cards),
                     rarityOptions: cardRarityOptions(cards),
-                    trainerTypeOptions: cardTrainerTypeOptions(cards)
+                    trainerTypeOptions: cardTrainerTypeOptions(cards),
+                    config: FilterMenuConfig(showGridOptions: false)
                 )
+            } gridMenuContent: {
+                BrowseGridOptionsMenuContent()
             }
         }
         .task {
@@ -1159,7 +1166,7 @@ struct DexCardsView: View {
                 VStack(spacing: 12) {
                     BrowseInlineSearchField(title: "Search cards for Pokémon", text: $query)
                         .padding(.horizontal)
-                        .padding(.top)
+                        .padding(.top, 2)
                     if filteredCards.isEmpty {
                         ContentUnavailableView(
                             "No matching cards",
@@ -1194,14 +1201,21 @@ struct DexCardsView: View {
         }
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
-            BrowseDetailNavBar(title: displayName, isFilterActive: filters.isVisiblyCustomized) {
+            BrowseDetailNavBar(
+                title: displayName,
+                isFilterActive: filters.isVisiblyCustomized,
+                isGridOptionsActive: !services.browseGridOptions.options.isDefault
+            ) {
                 BrowseGridFiltersMenuContent(
                     brand: services.brandSettings.selectedCatalogBrand,
                     filters: $filters,
                     energyOptions: cardEnergyOptions(cards),
                     rarityOptions: cardRarityOptions(cards),
-                    trainerTypeOptions: cardTrainerTypeOptions(cards)
+                    trainerTypeOptions: cardTrainerTypeOptions(cards),
+                    config: FilterMenuConfig(showGridOptions: false)
                 )
+            } gridMenuContent: {
+                BrowseGridOptionsMenuContent()
             }
         }
         .task {
@@ -1264,7 +1278,7 @@ struct OnePieceCharacterCardsView: View {
                 VStack(spacing: 12) {
                     BrowseInlineSearchField(title: "Search cards for character", text: $query)
                         .padding(.horizontal)
-                        .padding(.top)
+                        .padding(.top, 2)
                     if filteredCards.isEmpty {
                         ContentUnavailableView(
                             "No matching cards",
@@ -1299,14 +1313,21 @@ struct OnePieceCharacterCardsView: View {
         }
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
-            BrowseDetailNavBar(title: characterName, isFilterActive: filters.isVisiblyCustomized) {
+            BrowseDetailNavBar(
+                title: characterName,
+                isFilterActive: filters.isVisiblyCustomized,
+                isGridOptionsActive: !services.browseGridOptions.options.isDefault
+            ) {
                 BrowseGridFiltersMenuContent(
                     brand: services.brandSettings.selectedCatalogBrand,
                     filters: $filters,
                     energyOptions: cardEnergyOptions(cards),
                     rarityOptions: cardRarityOptions(cards),
-                    trainerTypeOptions: cardTrainerTypeOptions(cards)
+                    trainerTypeOptions: cardTrainerTypeOptions(cards),
+                    config: FilterMenuConfig(showGridOptions: false)
                 )
+            } gridMenuContent: {
+                BrowseGridOptionsMenuContent()
             }
         }
         .task(id: characterName) {
@@ -1367,7 +1388,7 @@ struct OnePieceSubtypeCardsView: View {
                 VStack(spacing: 12) {
                     BrowseInlineSearchField(title: "Search cards for subtype", text: $query)
                         .padding(.horizontal)
-                        .padding(.top)
+                        .padding(.top, 2)
                     if filteredCards.isEmpty {
                         ContentUnavailableView(
                             "No matching cards",
@@ -1402,14 +1423,21 @@ struct OnePieceSubtypeCardsView: View {
         }
         .toolbar(.hidden, for: .navigationBar)
         .safeAreaInset(edge: .top) {
-            BrowseDetailNavBar(title: subtypeName, isFilterActive: filters.isVisiblyCustomized) {
+            BrowseDetailNavBar(
+                title: subtypeName,
+                isFilterActive: filters.isVisiblyCustomized,
+                isGridOptionsActive: !services.browseGridOptions.options.isDefault
+            ) {
                 BrowseGridFiltersMenuContent(
                     brand: services.brandSettings.selectedCatalogBrand,
                     filters: $filters,
                     energyOptions: cardEnergyOptions(cards),
                     rarityOptions: cardRarityOptions(cards),
-                    trainerTypeOptions: cardTrainerTypeOptions(cards)
+                    trainerTypeOptions: cardTrainerTypeOptions(cards),
+                    config: FilterMenuConfig(showGridOptions: false)
                 )
+            } gridMenuContent: {
+                BrowseGridOptionsMenuContent()
             }
         }
         .task(id: subtypeName) {
@@ -1421,10 +1449,12 @@ struct OnePieceSubtypeCardsView: View {
     }
 }
 
-private struct BrowseDetailNavBar: View {
+private struct BrowseDetailNavBar<FilterMenuContent: View, GridMenuContent: View>: View {
     let title: String
     let isFilterActive: Bool
-    @ViewBuilder let filterMenuContent: () -> BrowseGridFiltersMenuContent
+    let isGridOptionsActive: Bool
+    @ViewBuilder let filterMenuContent: () -> FilterMenuContent
+    @ViewBuilder let gridMenuContent: () -> GridMenuContent
     @Environment(\.dismiss) private var dismiss
 
     var body: some View {
@@ -1445,18 +1475,39 @@ private struct BrowseDetailNavBar: View {
 
                 Spacer(minLength: 0)
 
-                Menu {
-                    filterMenuContent()
-                } label: {
-                    Image(systemName: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(isFilterActive ? Color.accentColor : Color.primary)
-                        .modifier(ChromeGlassCircleGlyphModifier())
+                HStack(spacing: 10) {
+                    Menu {
+                        gridMenuContent()
+                    } label: {
+                        Image(systemName: "slider.horizontal.3")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                            .modifier(ChromeGlassCircleGlyphModifier())
+                    }
+                    .buttonStyle(.plain)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
+                    .menuIndicator(.hidden)
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
+                    .accessibilityLabel("Grid options")
+
+                    Menu {
+                        filterMenuContent()
+                    } label: {
+                        Image(systemName: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                            .modifier(ChromeGlassCircleGlyphModifier())
+                    }
+                    .buttonStyle(.plain)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
+                    .menuIndicator(.hidden)
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
+                    .accessibilityLabel("Filters")
                 }
-                .buttonStyle(.plain)
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-                .menuIndicator(.hidden)
             }
         }
         .padding(.horizontal, 16)
@@ -1484,10 +1535,12 @@ struct FilterMenuConfig {
     var showRarity: Bool = true
     var showRarePlusOnly: Bool = true
     var showHideOwned: Bool = true
+    var showShowDuplicates: Bool = false
     var showGridOptions: Bool = true
+    var defaultSortBy: BrowseCardGridSortOption = .random
 
     static let browse = FilterMenuConfig()
-    static let collect = FilterMenuConfig(showAcquiredDateSort: true, showHideOwned: false)
+    static let collect = FilterMenuConfig(showAcquiredDateSort: true, showHideOwned: false, showShowDuplicates: true, defaultSortBy: .price)
 }
 
 struct BrowseGridFiltersMenuContent: View {
@@ -1504,10 +1557,11 @@ struct BrowseGridFiltersMenuContent: View {
     var config: FilterMenuConfig = .browse
 
     var body: some View {
-        if filters.isVisiblyCustomized || filters.sortBy != .random {
+        if filters.isVisiblyCustomized || filters.sortBy != config.defaultSortBy {
             Section {
                 Button("Reset filters", role: .destructive) {
                     filters = BrowseCardGridFilters()
+                    filters.sortBy = config.defaultSortBy
                 }
             }
         }
@@ -1647,7 +1701,7 @@ struct BrowseGridFiltersMenuContent: View {
             }
         }
 
-        if config.showRarity || config.showRarePlusOnly || config.showHideOwned {
+        if config.showRarity || config.showRarePlusOnly || config.showHideOwned || config.showShowDuplicates {
             Section("Collection") {
                 if config.showRarity {
                     filterMenu(title: "Rarity", summary: selectionSummary(for: filters.rarities)) {
@@ -1666,23 +1720,17 @@ struct BrowseGridFiltersMenuContent: View {
                 if config.showHideOwned {
                     Toggle("Hide owned", isOn: $filters.hideOwned)
                 }
+                if config.showShowDuplicates {
+                    Toggle("Show duplicates", isOn: $filters.showDuplicates)
+                }
             }
         }
         } // end if !isAllBrands
 
-        Section("Grid options") {
-            Menu("Grid options") {
-                Toggle("Show card name", isOn: gridOptionBinding(\.showCardName))
-                Toggle("Show set name", isOn: gridOptionBinding(\.showSetName))
-                Toggle("Show set ID", isOn: gridOptionBinding(\.showSetID))
-                Toggle("Show pricing", isOn: gridOptionBinding(\.showPricing))
-                Stepper(value: gridOptionBinding(\.columnCount), in: 1...4) {
-                    let count = gridOptions?.wrappedValue.columnCount ?? services.browseGridOptions.options.columnCount
-                    Text("Columns: \(count)")
-                }
+        if config.showGridOptions {
+            Section("Grid options") {
+                BrowseGridOptionsMenuContent(gridOptions: gridOptions)
             }
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
         }
     }
 
@@ -1760,6 +1808,48 @@ struct BrowseGridFiltersMenuContent: View {
         let active = groups.filter { $0.1 > 0 }
         guard !active.isEmpty else { return nil }
         return active.map { "\($0.0) \($0.1)" }.joined(separator: ", ")
+    }
+}
+
+struct BrowseGridOptionsMenuContent: View {
+    @Environment(AppServices.self) private var services
+
+    /// When nil, falls back to `services.browseGridOptions` (browse behaviour). Pass a binding to use separate grid options.
+    var gridOptions: Binding<BrowseGridOptions>? = nil
+
+    var body: some View {
+        Toggle("Show card name", isOn: gridOptionBinding(\.showCardName))
+        Toggle("Show set name", isOn: gridOptionBinding(\.showSetName))
+        Toggle("Show set ID", isOn: gridOptionBinding(\.showSetID))
+        if gridOptions != nil {
+            Toggle("Owned", isOn: gridOptionBinding(\.showOwned))
+        }
+        Toggle("Show pricing", isOn: gridOptionBinding(\.showPricing))
+        Stepper(value: gridOptionBinding(\.columnCount), in: 1...4) {
+            let count = gridOptions?.wrappedValue.columnCount ?? services.browseGridOptions.options.columnCount
+            Text("Columns: \(count)")
+        }
+    }
+
+    private func gridOptionBinding<T>(_ keyPath: WritableKeyPath<BrowseGridOptions, T>) -> Binding<T> {
+        if let gridOptions {
+            return Binding(
+                get: { gridOptions.wrappedValue[keyPath: keyPath] },
+                set: { newValue in
+                    var updated = gridOptions.wrappedValue
+                    updated[keyPath: keyPath] = newValue
+                    gridOptions.wrappedValue = updated
+                }
+            )
+        }
+        return Binding(
+            get: { services.browseGridOptions.options[keyPath: keyPath] },
+            set: { newValue in
+                var updated = services.browseGridOptions.options
+                updated[keyPath: keyPath] = newValue
+                services.browseGridOptions.options = updated
+            }
+        )
     }
 }
 

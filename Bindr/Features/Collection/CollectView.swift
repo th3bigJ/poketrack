@@ -11,10 +11,12 @@ struct CollectView: View {
     // MARK: - Collection State
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     @State private var cardsByCardID: [String: Card] = [:]
+    @State private var collectionPriceByItemKey: [String: Double] = [:]
 
     // MARK: - Wishlist State
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     @State private var wishlistCardsByID: [String: Card] = [:]
+    @State private var wishlistPriceByItemKey: [String: Double] = [:]
 
     // MARK: - Shared State (owned by RootView)
     @Binding var selectedSegment: CollectSegment
@@ -39,6 +41,29 @@ struct CollectView: View {
     }
 
     private var showsBrandPicker: Bool { enabledBrands.count > 1 }
+
+    private var setNameByBrandAndCode: [String: String] {
+        var map: [String: String] = [:]
+        for brand in services.brandSettings.enabledBrands {
+            guard let sets = try? CatalogStore.shared.fetchAllSets(for: brand) else { continue }
+            for set in sets {
+                let key = setNameKey(brand: brand, setCode: set.setCode)
+                if map[key] == nil {
+                    map[key] = set.name
+                }
+            }
+        }
+        return map
+    }
+
+    private func setNameKey(brand: TCGBrand, setCode: String) -> String {
+        "\(brand.rawValue)|\(setCode)"
+    }
+
+    private func setName(for card: Card) -> String? {
+        let brand = TCGBrand.inferredFromMasterCardId(card.masterCardId)
+        return setNameByBrandAndCode[setNameKey(brand: brand, setCode: card.setCode)]
+    }
 
     private var visibleCollectionItems: [CollectionItem] {
         let enabled = services.brandSettings.enabledBrands
@@ -89,9 +114,15 @@ struct CollectView: View {
             }
         }
         .onChange(of: selectedBrand) { _, _ in
-            collectionFilters = BrowseCardGridFilters()
+            collectionFilters = defaultCollectionFilters()
             wishlistFilters = BrowseCardGridFilters()
         }
+    }
+
+    private func defaultCollectionFilters() -> BrowseCardGridFilters {
+        var filters = BrowseCardGridFilters()
+        filters.sortBy = .price
+        return filters
     }
 
     // MARK: - Brand Picker
@@ -160,7 +191,12 @@ struct CollectView: View {
     private func collectionCell(for item: CollectionItem) -> some View {
         if let card = cardsByCardID[item.cardID] {
             Button { presentCard(card, orderedCollectionCards) } label: {
-                CardGridCell(card: card, gridOptions: gridOptions, footnote: collectionFootnote(for: item))
+                CardGridCell(
+                    card: card,
+                    gridOptions: gridOptions,
+                    setName: setName(for: card),
+                    footnote: collectionFootnote(for: item)
+                )
             }
             .buttonStyle(CardCellButtonStyle())
             .accessibilityLabel("\(card.cardName), \(item.quantity) copies, \(item.variantKey)")
@@ -181,6 +217,9 @@ struct CollectView: View {
 
     private var filteredCollectionItems: [CollectionItem] {
         var items = visibleCollectionItems
+        if collectionFilters.showDuplicates {
+            items = items.filter { $0.quantity >= 2 }
+        }
         if collectionFilters.hasActiveFieldFilters {
             let filteredCards = filterBrowseCards(
                 orderedCollectionCards, query: "", filters: collectionFilters,
@@ -199,8 +238,17 @@ struct CollectView: View {
             return items
         case .cardName:
             return items.sorted { (cardsByCardID[$0.cardID]?.cardName ?? "") < (cardsByCardID[$1.cardID]?.cardName ?? "") }
-        case .newestSet, .cardNumber, .price:
+        case .newestSet, .cardNumber:
             return items
+        case .price:
+            return items.sorted { lhs, rhs in
+                comparePricedItems(
+                    lhsPrice: collectionPriceByItemKey[collectionItemKey(lhs)],
+                    rhsPrice: collectionPriceByItemKey[collectionItemKey(rhs)],
+                    lhsCard: cardsByCardID[lhs.cardID],
+                    rhsCard: cardsByCardID[rhs.cardID]
+                )
+            }
         }
     }
 
@@ -220,6 +268,16 @@ struct CollectView: View {
             if let c = await services.cardData.loadCard(masterCardId: item.cardID) { next[item.cardID] = c }
         }
         cardsByCardID = next
+
+        var nextPrices: [String: Double] = [:]
+        for item in visibleCollectionItems {
+            guard let card = next[item.cardID] else { continue }
+            if let usd = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+                nextPrices[collectionItemKey(item)] = usd
+            }
+        }
+        collectionPriceByItemKey = nextPrices
+
         let cards = orderedCollectionCards
         ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
         collectFilterEnergyOptions = cardEnergyOptions(cards)
@@ -260,7 +318,12 @@ struct CollectView: View {
     private func wishlistCell(for item: WishlistItem) -> some View {
         if let card = wishlistCardsByID[item.cardID] {
             Button { presentCard(card, orderedWishlistCards) } label: {
-                CardGridCell(card: card, gridOptions: gridOptions, footnote: nil)
+                CardGridCell(
+                    card: card,
+                    gridOptions: gridOptions,
+                    setName: setName(for: card),
+                    footnote: nil
+                )
             }
             .buttonStyle(CardCellButtonStyle())
             .accessibilityLabel(card.cardName)
@@ -294,8 +357,17 @@ struct CollectView: View {
             return items
         case .cardName:
             return items.sorted { (wishlistCardsByID[$0.cardID]?.cardName ?? "") < (wishlistCardsByID[$1.cardID]?.cardName ?? "") }
-        case .newestSet, .cardNumber, .price:
+        case .newestSet, .cardNumber:
             return items
+        case .price:
+            return items.sorted { lhs, rhs in
+                comparePricedItems(
+                    lhsPrice: wishlistPriceByItemKey[wishlistItemKey(lhs)],
+                    rhsPrice: wishlistPriceByItemKey[wishlistItemKey(rhs)],
+                    lhsCard: wishlistCardsByID[lhs.cardID],
+                    rhsCard: wishlistCardsByID[rhs.cardID]
+                )
+            }
         }
     }
 
@@ -315,7 +387,59 @@ struct CollectView: View {
             if let c = await services.cardData.loadCard(masterCardId: item.cardID) { next[item.cardID] = c }
         }
         wishlistCardsByID = next
+
+        var nextPrices: [String: Double] = [:]
+        for item in visibleWishlistItems {
+            guard let card = next[item.cardID] else { continue }
+            if let usd = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+                nextPrices[wishlistItemKey(item)] = usd
+            }
+        }
+        wishlistPriceByItemKey = nextPrices
+
         ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: 0, count: 24)
+    }
+
+    private func collectionItemKey(_ item: CollectionItem) -> String {
+        "\(item.cardID)|\(item.variantKey)|\(item.dateAcquired.timeIntervalSinceReferenceDate)"
+    }
+
+    private func wishlistItemKey(_ item: WishlistItem) -> String {
+        "\(item.cardID)|\(item.variantKey)|\(item.dateAdded.timeIntervalSinceReferenceDate)"
+    }
+
+    private func comparePricedItems(
+        lhsPrice: Double?,
+        rhsPrice: Double?,
+        lhsCard: Card?,
+        rhsCard: Card?
+    ) -> Bool {
+        switch (lhsPrice, rhsPrice) {
+        case let (l?, r?):
+            if l != r { return l > r }
+        case (.some, nil):
+            return true
+        case (nil, .some):
+            return false
+        case (nil, nil):
+            break
+        }
+
+        let lhsName = lhsCard?.cardName ?? ""
+        let rhsName = rhsCard?.cardName ?? ""
+        if lhsName != rhsName {
+            return lhsName.localizedCaseInsensitiveCompare(rhsName) == .orderedAscending
+        }
+
+        let lhsSetCode = lhsCard?.setCode ?? ""
+        let rhsSetCode = rhsCard?.setCode ?? ""
+        if lhsSetCode != rhsSetCode {
+            return lhsSetCode.localizedStandardCompare(rhsSetCode) == .orderedAscending
+        }
+
+        let lhsNumber = lhsCard?.cardNumber ?? ""
+        let rhsNumber = rhsCard?.cardNumber ?? ""
+        return lhsNumber.localizedStandardCompare(rhsNumber) == .orderedAscending
     }
 
     // MARK: - Empty State

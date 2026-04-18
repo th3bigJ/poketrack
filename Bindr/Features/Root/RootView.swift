@@ -65,7 +65,11 @@ struct RootView: View {
     @State private var browseFilterRarityOptions: [String] = []
     @State private var browseFilterTrainerTypeOptions: [String] = []
     @State private var collectSelectedBrand: TCGBrand? = nil
-    @State private var collectCollectionFilters = BrowseCardGridFilters()
+    @State private var collectCollectionFilters: BrowseCardGridFilters = {
+        var filters = BrowseCardGridFilters()
+        filters.sortBy = .price
+        return filters
+    }()
     @State private var collectWishlistFilters = BrowseCardGridFilters()
     @State private var collectFilterEnergyOptions: [String] = []
     @State private var collectFilterRarityOptions: [String] = []
@@ -348,18 +352,30 @@ struct RootView: View {
                             SearchExperienceView(query: $universalQuery)
                             .navigationDestination(for: SearchNavRoot.self) { root in
                                 switch root {
-                                case .set(let s):
+                                case .set(let s, let brand):
                                     SetCardsView(set: s)
-                                        .onAppear { searchFieldFocused = false }
-                                case .dex(let dexId, let displayName):
+                                        .onAppear {
+                                            services.brandSettings.selectedCatalogBrand = brand
+                                            searchFieldFocused = false
+                                        }
+                                case .dex(let dexId, let displayName, let brand):
                                     DexCardsView(dexId: dexId, displayName: displayName)
-                                        .onAppear { searchFieldFocused = false }
-                                case .onePieceCharacter(let name):
+                                        .onAppear {
+                                            services.brandSettings.selectedCatalogBrand = brand
+                                            searchFieldFocused = false
+                                        }
+                                case .onePieceCharacter(let name, let brand):
                                     OnePieceCharacterCardsView(characterName: name)
-                                        .onAppear { searchFieldFocused = false }
-                                case .onePieceSubtype(let name):
+                                        .onAppear {
+                                            services.brandSettings.selectedCatalogBrand = brand
+                                            searchFieldFocused = false
+                                        }
+                                case .onePieceSubtype(let name, let brand):
                                     OnePieceSubtypeCardsView(subtypeName: name)
-                                        .onAppear { searchFieldFocused = false }
+                                        .onAppear {
+                                            services.brandSettings.selectedCatalogBrand = brand
+                                            searchFieldFocused = false
+                                        }
                                 }
                             }
                         }
@@ -509,8 +525,12 @@ struct RootView: View {
         let filterEnabled = isBrowseGridFilterContextActive || isCollectFilterContextActive
         let filterActive = isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized
                          : isCollectFilterContextActive ? isCollectFilterActive : false
+        let gridActive = isBrowseGridFilterContextActive ? !services.browseGridOptions.options.isDefault
+                        : isCollectFilterContextActive ? !collectGridOptions.isDefault : false
         let filterContent: AnyView? = isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent)
                                     : isCollectFilterContextActive ? AnyView(collectFilterMenuContent) : nil
+        let gridContent: AnyView? = isBrowseGridFilterContextActive ? AnyView(BrowseGridOptionsMenuContent())
+                                  : isCollectFilterContextActive ? AnyView(BrowseGridOptionsMenuContent(gridOptions: $collectGridOptions)) : nil
         UniversalSearchBar(
             text: $universalQuery,
             isFocused: $searchFieldFocused,
@@ -518,7 +538,9 @@ struct RootView: View {
             isSearchOpen: isSearchExperiencePresented,
             isFilterEnabled: filterEnabled,
             isFilterActive: filterActive,
+            isGridOptionsActive: gridActive,
             filterMenuContent: filterContent,
+            gridMenuContent: gridContent,
             trailingButton: chromeTrailingButton,
             onActivateSearch: {
                 withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
@@ -568,7 +590,13 @@ struct RootView: View {
             trainerTypeOptions: collectFilterTrainerTypeOptions,
             isAllBrands: isCollectAllBrands,
             gridOptions: $collectGridOptions,
-            config: .collect
+            config: FilterMenuConfig(
+                showAcquiredDateSort: true,
+                showHideOwned: false,
+                showShowDuplicates: true,
+                showGridOptions: false,
+                defaultSortBy: .price
+            )
         )
     }
 
@@ -776,20 +804,6 @@ struct RootView: View {
             Toggle("Rare + only", isOn: $browseFilters.rarePlusOnly)
             Toggle("Hide owned", isOn: $browseFilters.hideOwned)
         }
-
-        Section("Grid options") {
-            Menu("Grid options") {
-                Toggle("Show card name", isOn: gridOptionBinding(\.showCardName))
-                Toggle("Show set name", isOn: gridOptionBinding(\.showSetName))
-                Toggle("Show set ID", isOn: gridOptionBinding(\.showSetID))
-                Toggle("Show pricing", isOn: gridOptionBinding(\.showPricing))
-                Stepper(value: gridOptionBinding(\.columnCount), in: 1...4) {
-                    Text("Columns: \(services.browseGridOptions.options.columnCount)")
-                }
-            }
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
-        }
     }
 
     private func binding(for type: BrowseCardTypeFilter) -> Binding<Bool> {
@@ -826,29 +840,6 @@ struct RootView: View {
         guard let summary, !summary.isEmpty else { return title }
         return "\(title) (\(summary))"
     }
-
-    private func gridOptionBinding(_ keyPath: WritableKeyPath<BrowseGridOptions, Bool>) -> Binding<Bool> {
-        Binding(
-            get: { services.browseGridOptions.options[keyPath: keyPath] },
-            set: { value in
-                var options = services.browseGridOptions.options
-                options[keyPath: keyPath] = value
-                services.browseGridOptions.options = options
-            }
-        )
-    }
-
-    private func gridOptionBinding(_ keyPath: WritableKeyPath<BrowseGridOptions, Int>) -> Binding<Int> {
-        Binding(
-            get: { services.browseGridOptions.options[keyPath: keyPath] },
-            set: { value in
-                var options = services.browseGridOptions.options
-                options[keyPath: keyPath] = value
-                services.browseGridOptions.options = options
-            }
-        )
-    }
-
     private func selectionSummary<T>(for values: Set<T>) -> String? {
         guard !values.isEmpty else { return nil }
         if values.count == 1 { return "1 selected" }

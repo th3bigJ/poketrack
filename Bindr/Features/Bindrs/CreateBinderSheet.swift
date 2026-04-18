@@ -5,15 +5,21 @@ struct CreateBinderSheet: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
-    @State private var name = ""
-    @State private var layout = BinderPageLayout.nineSlot
-    @State private var colour = "blue"
-
-    private let colours: [(name: String, color: Color)] = [
-        ("red", .red), ("orange", .orange), ("yellow", .yellow),
-        ("green", .green), ("blue", .blue), ("purple", .purple),
-        ("pink", .pink), ("grey", Color(uiColor: .systemGray2))
+    private let layoutOptions: [BinderPageLayout] = [
+        .fixed(rows: 2, columns: 2),
+        .fixed(rows: 3, columns: 2),
+        .fixed(rows: 3, columns: 3),
+        .fixed(rows: 4, columns: 3),
+        .fixed(rows: 3, columns: 4),
+        .fixed(rows: 4, columns: 4),
+        .fixed(rows: 5, columns: 4),
+        .fixed(rows: 5, columns: 5),
+        .freeScroll
     ]
+
+    @State private var name = ""
+    @State private var layout = BinderPageLayout.fixed(rows: 3, columns: 3)
+    @State private var colour = "blue"
 
     var body: some View {
         NavigationStack {
@@ -24,7 +30,7 @@ struct CreateBinderSheet: View {
 
                 Section("Layout") {
                     VStack(spacing: 10) {
-                        ForEach(BinderPageLayout.allCases, id: \.self) { option in
+                        ForEach(layoutOptions, id: \.self) { option in
                             Button {
                                 layout = option
                             } label: {
@@ -37,8 +43,8 @@ struct CreateBinderSheet: View {
                 }
 
                 Section("Colour") {
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 8), spacing: 10) {
-                        ForEach(colours, id: \.name) { swatch in
+                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 5), spacing: 12) {
+                        ForEach(BinderColourPalette.options, id: \.name) { swatch in
                             Circle()
                                 .fill(swatch.color)
                                 .frame(width: 32, height: 32)
@@ -89,7 +95,7 @@ struct CreateBinderSheet: View {
         let borderColor: Color = isSelected ? Color.accentColor.opacity(0.45) : .clear
 
         HStack {
-            Text(option.displayName)
+            Text(layoutLabel(for: option))
                 .font(.body.weight(.medium))
                 .foregroundStyle(.primary)
             Spacer()
@@ -106,5 +112,9 @@ struct CreateBinderSheet: View {
             RoundedRectangle(cornerRadius: 12, style: .continuous)
                 .strokeBorder(borderColor, lineWidth: 1)
         }
+    }
+
+    private func layoutLabel(for option: BinderPageLayout) -> String {
+        option.isFreeScroll ? "Free flow" : "\(option.columns) x \(option.rows)"
     }
 }
