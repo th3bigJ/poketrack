@@ -91,41 +91,47 @@ struct BinderDetailView: View {
             Button("Cancel", role: .cancel) {}
         }
         .sheet(isPresented: $showColourPicker) {
-            BinderColourPickerSheet(current: binder.colour) { colour in
-                binder.colour = colour
-            }
+            BinderStylePickerSheet(binder: binder)
         }
     }
 
     // MARK: - Header
 
     private var binderHeader: some View {
-        ZStack {
-            Text(binder.title)
-                .font(.title2.weight(.bold))
-                .foregroundStyle(.primary)
+        VStack(spacing: 8) {
+            ZStack {
+                Text(binder.title)
+                    .font(.headline.weight(.semibold))
+                    .foregroundStyle(.primary)
 
-            HStack {
-                ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
-                }
-                Spacer(minLength: 0)
-                Button {
-                    withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
-                        isEditing.toggle()
+                HStack {
+                    ChromeGlassCircleButton(accessibilityLabel: "Back") { dismiss() } label: {
+                        Image(systemName: "chevron.left")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
                     }
-                } label: {
-                    Image(systemName: isEditing ? "checkmark" : "pencil")
-                        .font(.system(size: 17, weight: .semibold))
-                        .foregroundStyle(headerIconColor)
+                    Spacer(minLength: 0)
+                    Button {
+                        withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
+                            isEditing.toggle()
+                        }
+                    } label: {
+                        Image(systemName: isEditing ? "checkmark" : "pencil")
+                            .font(.system(size: 17, weight: .semibold))
+                            .foregroundStyle(headerIconColor)
+                    }
+                    .modifier(ChromeGlassCircleGlyphModifier())
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
+                    .accessibilityLabel(isEditing ? "Done editing binder" : "Edit binder")
                 }
-                .modifier(ChromeGlassCircleGlyphModifier())
-                .frame(width: 48, height: 48)
-                .contentShape(Rectangle())
-                .accessibilityLabel(isEditing ? "Done editing binder" : "Edit binder")
             }
+            
+            // Premium accent line under title
+            Capsule()
+                .fill(binder.resolvedColour)
+                .frame(width: 40, height: 3)
+                .opacity(0.8)
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
@@ -702,44 +708,105 @@ private struct PageCurlView<Content: View>: UIViewControllerRepresentable {
     }
 }
 
-// MARK: - Colour picker sheet
+// MARK: - Style picker sheet
 
-struct BinderColourPickerSheet: View {
+struct BinderStylePickerSheet: View {
+    @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
-    let current: String
-    let onSelect: (String) -> Void
+    @Bindable var binder: Binder
+    @State private var cardURLs: [URL?] = [nil, nil, nil]
 
     var body: some View {
         NavigationStack {
-            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 4), spacing: 20) {
-                ForEach(BinderColourPalette.options, id: \.name) { swatch in
-                    Button {
-                        onSelect(swatch.name)
-                        dismiss()
-                    } label: {
-                        Circle()
-                            .fill(swatch.color)
-                            .frame(width: 64, height: 64)
-                            .overlay {
-                                if current == swatch.name {
-                                    Image(systemName: "checkmark")
-                                        .font(.title3.weight(.bold))
-                                        .foregroundStyle(.white)
+            ScrollView {
+                VStack(spacing: 32) {
+                    // Preview
+                    BinderCoverView(
+                        title: binder.title,
+                        subtitle: "\(binder.slotList.count) cards · \(binder.layout.displayName)",
+                        colourName: binder.colour,
+                        texture: binder.textureKind,
+                        seed: binder.textureSeed,
+                        peekingCardURLs: cardURLs,
+                        compact: false
+                    )
+                    .padding(.horizontal, 16)
+                    
+                    VStack(alignment: .leading, spacing: 20) {
+                        // Texture Selection
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("TEXTURE")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+                            
+                            Picker("Texture", selection: $binder.texture) {
+                                ForEach(BinderTexture.allCases) { tex in
+                                    Text(tex.displayName).tag(tex.rawValue)
                                 }
                             }
-                            .shadow(color: swatch.color.opacity(0.4), radius: 6, x: 0, y: 3)
+                            .pickerStyle(.segmented)
+                        }
+
+                        // Colour Selection
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("COLOUR")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+                            
+                            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
+                                ForEach(BinderColourPalette.pickerOptions, id: \.name) { swatch in
+                                    Button {
+                                        binder.colour = swatch.name
+                                    } label: {
+                                        Circle()
+                                            .fill(swatch.color)
+                                            .frame(width: 44, height: 44)
+                                            .overlay {
+                                                if binder.colour == swatch.name {
+                                                    Image(systemName: "checkmark")
+                                                        .font(.headline.weight(.bold))
+                                                        .foregroundStyle(.white)
+                                                }
+                                            }
+                                            .shadow(color: swatch.color.opacity(0.3), radius: 4, x: 0, y: 2)
+                                    }
+                                }
+                            }
+                        }
                     }
+                    .padding(.horizontal, 16)
                 }
+                .padding(.vertical, 24)
             }
-            .padding(32)
-            .navigationTitle("Choose Colour")
+            .task {
+                await loadCardURLs()
+            }
+            .navigationTitle("Binder Style")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Done") { dismiss() }
+                        .bold()
                 }
             }
         }
-        .presentationDetents([.medium])
+        .presentationDetents([.medium, .large])
+    }
+
+    private func loadCardURLs() async {
+        let slots = binder.slotList.prefix(3)
+        var urls: [URL?] = []
+        
+        for slot in slots {
+            if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
+                urls.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+            } else {
+                urls.append(nil)
+            }
+        }
+        
+        while urls.count < 3 { urls.append(nil) }
+        cardURLs = urls
     }
 }
+

@@ -88,43 +88,40 @@ struct BindersRootView: View {
 }
 
 private struct BinderCardCell: View {
+    @Environment(AppServices.self) private var services
     let binder: Binder
+    @State private var cardURLs: [URL?] = [nil, nil, nil]
 
     var body: some View {
-        HStack(spacing: 0) {
-            // Binder spine
-            Rectangle()
-                .fill(binderColor(binder.colour).opacity(0.55))
-                .frame(width: 18)
+        BinderCoverView(
+            title: binder.title,
+            subtitle: "\(binder.slotList.count) cards · \(binder.layout.displayName)",
+            colourName: binder.colour,
+            texture: binder.textureKind,
+            seed: binder.textureSeed,
+            peekingCardURLs: cardURLs,
+            compact: true
+        )
+        .task {
+            await loadCardURLs()
+        }
+    }
 
-            // Binder body
-            ZStack(alignment: .bottomLeading) {
-                binderColor(binder.colour).opacity(0.18)
-
-                VStack(alignment: .leading, spacing: 4) {
-                    Spacer()
-                    Text(binder.title)
-                        .font(.headline)
-                        .foregroundStyle(binderColor(binder.colour))
-                        .lineLimit(2)
-                    Text("\(binder.slotList.count) cards")
-                        .font(.caption)
-                        .foregroundStyle(binderColor(binder.colour).opacity(0.7))
-                }
-                .padding(12)
+    private func loadCardURLs() async {
+        let slots = binder.slotList.prefix(3)
+        var urls: [URL?] = []
+        
+        for slot in slots {
+            if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
+                urls.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+            } else {
+                urls.append(nil)
             }
         }
-        .frame(height: 160)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-        .overlay(
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .strokeBorder(binderColor(binder.colour).opacity(0.3), lineWidth: 1)
-        )
-        .shadow(color: .black.opacity(0.08), radius: 4, x: 0, y: 2)
-    }
-
-    private func binderColor(_ name: String) -> Color {
-        BinderColourPalette.color(named: name)
+        
+        while urls.count < 3 { urls.append(nil) }
+        cardURLs = urls
     }
 }
+
+

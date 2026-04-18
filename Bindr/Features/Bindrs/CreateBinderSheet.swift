@@ -11,57 +11,130 @@ struct CreateBinderSheet: View {
         .fixed(rows: 3, columns: 3),
         .fixed(rows: 4, columns: 3),
         .fixed(rows: 3, columns: 4),
-        .fixed(rows: 4, columns: 4),
-        .fixed(rows: 5, columns: 4),
-        .fixed(rows: 5, columns: 5),
-        .freeScroll
+        .fixed(rows: 4, columns: 4)
     ]
 
     @State private var name = ""
     @State private var layout = BinderPageLayout.fixed(rows: 3, columns: 3)
-    @State private var colour = "blue"
+    @State private var colourName = "navy"
+    @State private var texture = BinderTexture.leather
 
     var body: some View {
         NavigationStack {
-            Form {
-                Section("Name") {
-                    TextField("Binder name", text: $name)
-                }
+            ScrollView {
+                VStack(spacing: 24) {
+                    // 1. Premium Preview
+                    BinderCoverView(
+                        title: name,
+                        subtitle: "0 cards · \(layout.displayName)",
+                        colourName: colourName,
+                        texture: texture,
+                        seed: 1, // Fixed seed for creation preview
+                        peekingCardURLs: [nil, nil, nil]
+                    )
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
 
-                Section("Layout") {
-                    VStack(spacing: 10) {
-                        ForEach(layoutOptions, id: \.self) { option in
-                            Button {
-                                layout = option
-                            } label: {
-                                layoutOptionRow(for: option)
-                            }
-                            .buttonStyle(.plain)
+                    VStack(alignment: .leading, spacing: 20) {
+                        // 2. Name Section
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("NAME")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+                            
+                            TextField("e.g. Charizard Vault", text: $name)
+                                .textFieldStyle(PremiumTextFieldStyle())
                         }
-                    }
-                    .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-                }
 
-                Section("Colour") {
-                    LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 5), spacing: 12) {
-                        ForEach(BinderColourPalette.options, id: \.name) { swatch in
-                            Circle()
-                                .fill(swatch.color)
-                                .frame(width: 32, height: 32)
-                                .overlay {
-                                    if colour == swatch.name {
-                                        Image(systemName: "checkmark")
-                                            .font(.caption.weight(.bold))
-                                            .foregroundStyle(.white)
+                        // 3. Layout Section
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("LAYOUT")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+                            
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                                ForEach(layoutOptions, id: \.self) { option in
+                                    layoutButton(for: option)
+                                }
+                                
+                                Button {
+                                    layout = .freeScroll
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "square.grid.3x3")
+                                        Text("Free flow")
+                                    }
+                                    .font(.system(size: 13, weight: .medium))
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 12)
+                                    .background(layout == .freeScroll ? Color.accentColor.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .overlay {
+                                        if layout == .freeScroll {
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.accentColor, lineWidth: 1)
+                                        }
                                     }
                                 }
-                                .onTapGesture {
-                                    colour = swatch.name
+                                .buttonStyle(.plain)
+                                .gridCellColumns(3)
+                            }
+                        }
+
+                        // 4. Style Section (Colors + Texture Info)
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("STYLE")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+                            
+                            VStack(spacing: 20) {
+                                // Color Grid
+                                LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 12) {
+                                    ForEach(BinderColourPalette.pickerOptions, id: \.name) { swatch in
+                                        Circle()
+                                            .fill(swatch.color)
+                                            .frame(width: 32, height: 32)
+                                            .overlay {
+                                                if colourName == swatch.name {
+                                                    Image(systemName: "checkmark")
+                                                        .font(.caption.weight(.bold))
+                                                        .foregroundStyle(.white)
+                                                }
+                                            }
+                                            .onTapGesture {
+                                                colourName = swatch.name
+                                            }
+                                    }
                                 }
+                                
+                                // Texture Segment/Picker
+                                Picker("Texture", selection: $texture) {
+                                    ForEach(BinderTexture.allCases) { tex in
+                                        Text(tex.displayName).tag(tex)
+                                    }
+                                }
+                                .pickerStyle(.segmented)
+                                
+                                // Selected Style Label
+                                HStack(spacing: 4) {
+                                    Circle()
+                                        .fill(BinderColourPalette.color(named: colourName))
+                                        .frame(width: 8, height: 8)
+                                    Text("Style: ")
+                                        .foregroundStyle(.secondary)
+                                    Text("\(BinderColourPalette.displayName(for: colourName)) \(texture.displayName)")
+                                        .bold()
+                                }
+                                .font(.caption)
+                            }
+                            .padding(16)
+                            .background(Color(uiColor: .secondarySystemGroupedBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
                         }
                     }
-                    .listRowInsets(EdgeInsets(top: 12, leading: 16, bottom: 12, trailing: 16))
+                    .padding(.horizontal, 16)
                 }
+                .padding(.bottom, 32)
             }
             .navigationTitle("New Binder")
             .navigationBarTitleDisplayMode(.inline)
@@ -73,6 +146,7 @@ struct CreateBinderSheet: View {
                     Button("Create") {
                         create()
                     }
+                    .bold()
                     .disabled(name.trimmingCharacters(in: .whitespaces).isEmpty)
                 }
             }
@@ -83,38 +157,58 @@ struct CreateBinderSheet: View {
         let binder = Binder(
             title: name.trimmingCharacters(in: .whitespaces),
             pageLayout: layout,
-            colour: colour
+            colour: colourName,
+            texture: texture
         )
         modelContext.insert(binder)
         dismiss()
     }
 
     @ViewBuilder
-    private func layoutOptionRow(for option: BinderPageLayout) -> some View {
+    private func layoutButton(for option: BinderPageLayout) -> some View {
         let isSelected = layout == option
-        let borderColor: Color = isSelected ? Color.accentColor.opacity(0.45) : .clear
-
-        HStack {
-            Text(layoutLabel(for: option))
-                .font(.body.weight(.medium))
-                .foregroundStyle(.primary)
-            Spacer()
-            if isSelected {
-                Image(systemName: "checkmark.circle.fill")
-                    .foregroundStyle(Color.accentColor)
+        Button {
+            layout = option
+        } label: {
+            VStack(spacing: 4) {
+                gridIcon(for: option)
+                    .font(.system(size: 16))
+                Text("\(option.columns) × \(option.rows)")
+                    .font(.system(size: 11, weight: .medium))
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+            .background(isSelected ? Color.accentColor.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
+            .foregroundStyle(isSelected ? Color.accentColor : .primary)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay {
+                if isSelected {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.accentColor, lineWidth: 1)
+                }
             }
         }
-        .padding(.horizontal, 14)
-        .padding(.vertical, 12)
-        .background(Color(uiColor: .secondarySystemGroupedBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 12, style: .continuous)
-                .strokeBorder(borderColor, lineWidth: 1)
-        }
+        .buttonStyle(.plain)
     }
 
-    private func layoutLabel(for option: BinderPageLayout) -> String {
-        option.isFreeScroll ? "Free flow" : "\(option.columns) x \(option.rows)"
+    private func gridIcon(for option: BinderPageLayout) -> Image {
+        switch (option.columns, option.rows) {
+        case (2, 2): return Image(systemName: "square.grid.2x2.fill")
+        default: return Image(systemName: "square.grid.3x3.fill")
+        }
     }
 }
+
+private struct PremiumTextFieldStyle: TextFieldStyle {
+    func _body(configuration: TextField<Self._Label>) -> some View {
+        configuration
+            .padding(14)
+            .background(Color(uiColor: .secondarySystemGroupedBackground))
+            .clipShape(RoundedRectangle(cornerRadius: 12))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12)
+                    .stroke(Color.white.opacity(0.05), lineWidth: 1)
+            }
+    }
+}
+
