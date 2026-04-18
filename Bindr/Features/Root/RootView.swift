@@ -49,8 +49,10 @@ private struct BrowseFullScreenHost: View {
     }
 }
 
+/// Modal host for the overflow pages that used to live in the left drawer. Presented as a `fullScreenCover` from `RootView`; includes a `Done` toolbar button so the user can return.
 private struct SideMenuPageHost: View {
     let page: SideMenuPage
+    var onDismiss: () -> Void
 
     var body: some View {
         NavigationStack {
@@ -66,6 +68,13 @@ private struct SideMenuPageHost: View {
                     TransactionsView()
                 }
             }
+            .navigationTitle(page.title)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Done", action: onDismiss)
+                }
+            }
         }
     }
 }
@@ -76,24 +85,18 @@ struct RootView: View {
     @State private var services = AppServices()
     @StateObject private var chromeScroll = ChromeScrollCoordinator()
     @State private var selectedTab: AppTab = .dashboard
+    /// Drives the Collection / Wishlist segmented toggle inside `CollectView`. Owned here so the `MoreSheet` "Wishlist" quick-access can switch tab + segment together.
+    @State private var collectSegment: CollectSegment = .collection
+    /// Modal overflow page triggered from `MoreSheet` (Deck Builder, Transactions, Social, Account/Settings). Presented as a `fullScreenCover`.
     @State private var sideMenuPage: SideMenuPage?
     @State private var universalQuery = ""
     @State private var showCardScanner = false
+    @State private var showMoreSheet = false
     @State private var browseFilters = BrowseCardGridFilters()
     @State private var browseFilterResultCount = 0
     @State private var browseFilterEnergyOptions: [String] = []
     @State private var browseFilterRarityOptions: [String] = []
     @State private var browseFilterTrainerTypeOptions: [String] = []
-    @State private var collectionFilters = BrowseCardGridFilters()
-    @State private var collectionFilterEnergyOptions: [String] = []
-    @State private var collectionFilterRarityOptions: [String] = []
-    @State private var collectionFilterTrainerTypeOptions: [String] = []
-    @State private var wishlistFilters = BrowseCardGridFilters()
-    @State private var wishlistFilterEnergyOptions: [String] = []
-    @State private var wishlistFilterRarityOptions: [String] = []
-    @State private var wishlistFilterTrainerTypeOptions: [String] = []
-    @State private var isWishlistActive = false
-    @State private var isSideMenuOpen = false
     @State private var isSearchExperiencePresented = false
     /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar`; detail uses the same `NavigationStack` bar as Browse (`DexCardsView` / `SetCardsView`).
     @State private var searchNavigationPath = NavigationPath()
@@ -117,36 +120,16 @@ struct RootView: View {
 
     /// Search open at root list: show chrome. Search with a pushed detail: hide chrome. Cards tab with a pushed detail: hide chrome. Else scroll-driven chrome on Browse.
     private var showUniversalSearchBar: Bool {
-        if isSideMenuOpen { return true }
         if isSearchExperiencePresented { return true }
-        if sideMenuPage != nil { return true }
         if selectedTab == .bindrs && !bindrsNavigationPath.isEmpty { return false }
         return chromeScroll.barsVisible
     }
 
-    /// Screen-edge swipe to open the menu — only when no pushed `NavigationStack` screen and no full-screen browse (so it doesn’t compete with back / pop).
-    private var isEdgeSwipeMenuEnabled: Bool {
-        !isSideMenuOpen
-            && browseNavigationPath.isEmpty
-            && searchNavigationPath.isEmpty
-            && browseFullScreen == nil
-    }
-
     private var isBrowseGridFilterContextActive: Bool {
-        sideMenuPage == nil
-            &&
         selectedTab == .browse
             && browseNavigationPath.isEmpty
             && !isSearchExperiencePresented
             && browseFullScreen == nil
-    }
-
-    private var isCollectionFilterContextActive: Bool {
-        sideMenuPage == nil && selectedTab == .collection && collectionNavigationPath.isEmpty && !isSearchExperiencePresented
-    }
-
-    private var isWishlistFilterContextActive: Bool {
-        sideMenuPage == nil && (selectedTab == .wishlist || (selectedTab == .collection && isWishlistActive)) && !isSearchExperiencePresented
     }
 
     var body: some View {
@@ -255,41 +238,12 @@ struct RootView: View {
 
     @ViewBuilder
     private var mainContent: some View {
-        GeometryReader { geo in
-            let width = geo.size.width
-            let menuWidth = min(width * 0.65, 300)
+        GeometryReader { _ in
             let searchBarTopInset = RootChromeEnvironment.searchBarTopInset
             let searchBarBottomInset = RootChromeEnvironment.searchBarBottomInset
             let floatingChromeInset = RootChromeEnvironment.floatingContentTopInset
             let searchBarHiddenOffset = -(floatingChromeInset + 18)
-            // `SideMenuView` replaces the search row when open, so it should align to the same top offset,
-            // not sit below the full floating chrome stack.
-            let sideMenuHeaderTopPadding = geo.safeAreaInsets.top + searchBarTopInset
-            let edgeSwipeBelowSearchBar = floatingChromeInset + 8
-            ZStack(alignment: .leading) {
-            SideMenuView(
-                isPresented: $isSideMenuOpen,
-                selectedTab: $selectedTab,
-                selectedPage: $sideMenuPage,
-                headerTopPadding: sideMenuHeaderTopPadding,
-                onPickCollection: {
-                    sideMenuPage = nil
-                    collectionNavigationPath = NavigationPath()
-                    selectedTab = .collection
-                },
-                onPickWishlist: {
-                    sideMenuPage = nil
-                    selectedTab = .wishlist
-                }
-            )
-            .frame(width: menuWidth)
-            .frame(maxHeight: .infinity)
-            .zIndex(0)
-
-            let contentTopInset: CGFloat = {
-                if isSearchDetailActive { return 0 }
-                return floatingChromeInset
-            }()
+            let contentTopInset: CGFloat = isSearchDetailActive ? 0 : floatingChromeInset
 
             ZStack(alignment: .top) {
                 ZStack(alignment: .top) {
@@ -328,35 +282,9 @@ struct RootView: View {
                                             }
                                         )
                                     }
-                                case .collection:
+                                case .collect:
                                     NavigationStack(path: $collectionNavigationPath) {
-                                        CollectionListView(
-                                            filters: $collectionFilters,
-                                            onFilterOptionsChange: { energy, rarity, trainer in
-                                                collectionFilterEnergyOptions = energy
-                                                collectionFilterRarityOptions = rarity
-                                                collectionFilterTrainerTypeOptions = trainer
-                                            },
-                                            wishlistFilters: $wishlistFilters,
-                                            isWishlistActive: $isWishlistActive,
-                                            onWishlistFilterOptionsChange: { energy, rarity, trainer in
-                                                wishlistFilterEnergyOptions = energy
-                                                wishlistFilterRarityOptions = rarity
-                                                wishlistFilterTrainerTypeOptions = trainer
-                                            }
-                                        )
-                                    }
-                                case .wishlist:
-                                    NavigationStack {
-                                        WishlistView(
-                                            filters: $wishlistFilters,
-                                            isActive: $isWishlistActive,
-                                            onFilterOptionsChange: { energy, rarity, trainer in
-                                                wishlistFilterEnergyOptions = energy
-                                                wishlistFilterRarityOptions = rarity
-                                                wishlistFilterTrainerTypeOptions = trainer
-                                            }
-                                        )
+                                        CollectView(selectedSegment: $collectSegment)
                                     }
                                 case .bindrs:
                                     NavigationStack(path: $bindrsNavigationPath) {
@@ -370,22 +298,6 @@ struct RootView: View {
                             }
                             .tag(tab)
                         }
-                    }
-                    .allowsHitTesting(!isSideMenuOpen)
-
-                    if let sideMenuPage {
-                        SideMenuPageHost(page: sideMenuPage)
-                            .environment(services)
-                            .environment(\.presentCard, { card, list in
-                                let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
-                                selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
-                            })
-                            .toolbarBackground(.hidden, for: .navigationBar)
-                            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
-                            .background(Color(uiColor: .systemBackground))
-                            .transition(.move(edge: .trailing).combined(with: .opacity))
-                            .zIndex(1)
-                            .allowsHitTesting(!isSideMenuOpen)
                     }
 
                     if isSearchExperiencePresented {
@@ -433,7 +345,6 @@ struct RootView: View {
                         .padding(.horizontal, searchNavigationPath.isEmpty ? 12 : 0)
                         .transition(.move(edge: .top).combined(with: .opacity))
                         .zIndex(2)
-                        .allowsHitTesting(!isSideMenuOpen)
                     }
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -444,12 +355,13 @@ struct RootView: View {
                 UniversalSearchBar(
                     text: $universalQuery,
                     isFocused: $searchFieldFocused,
-                    isMenuOpen: isSideMenuOpen,
+                    isMenuOpen: false,
                     isSearchOpen: isSearchExperiencePresented,
-                    isFilterEnabled: isBrowseGridFilterContextActive || isCollectionFilterContextActive || isWishlistFilterContextActive,
-                    isFilterActive: isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized : isWishlistFilterContextActive ? wishlistFilters.isVisiblyCustomized : collectionFilters.isVisiblyCustomized,
-                    filterMenuContent: isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent) : isWishlistFilterContextActive ? AnyView(wishlistFilterMenuContent) : isCollectionFilterContextActive ? AnyView(collectionFilterMenuContent) : nil,
+                    isFilterEnabled: isBrowseGridFilterContextActive,
+                    isFilterActive: isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized : false,
+                    filterMenuContent: isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent) : nil,
                     onBurgerTap: {
+                        // Search overlay open → bar becomes a back control first; otherwise open the More sheet.
                         if isSearchExperiencePresented {
                             searchNavigationPath = NavigationPath()
                             universalQuery = ""
@@ -460,10 +372,7 @@ struct RootView: View {
                             return
                         }
                         searchFieldFocused = false
-                        isSearchExperiencePresented = false
-                        withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                            isSideMenuOpen.toggle()
-                        }
+                        showMoreSheet = true
                     },
                     onCamera: {
                         searchFieldFocused = false
@@ -482,52 +391,12 @@ struct RootView: View {
                 .frame(maxWidth: .infinity, alignment: .top)
                 .allowsHitTesting(showUniversalSearchBar && !isSearchDetailActive)
                 .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
-                .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSideMenuOpen)
                 .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchExperiencePresented)
                 .animation(.spring(response: 0.35, dampingFraction: 0.86), value: isSearchDetailActive)
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
             // System background shows through the material where the bar is translucent.
             .background(Color(uiColor: .systemBackground))
-            .offset(x: isSideMenuOpen ? menuWidth : 0)
-            .shadow(
-                color: .black.opacity(isSideMenuOpen ? 0.45 : 0),
-                radius: 18,
-                x: -10,
-                y: 0
-            )
-            .overlay(alignment: .topLeading) {
-                if isEdgeSwipeMenuEnabled {
-                    LeftEdgeOpenMenuGesture(isEnabled: true) {
-                        searchFieldFocused = false
-                        searchNavigationPath = NavigationPath()
-                        isSearchExperiencePresented = false
-                        withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                            isSideMenuOpen = true
-                        }
-                    }
-                    .frame(width: 28)
-                    .padding(.top, edgeSwipeBelowSearchBar)
-                    .padding(.bottom, max(geo.safeAreaInsets.bottom, 12) + 52)
-                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-                    .zIndex(400)
-                }
-            }
-            .overlay(alignment: .trailing) {
-                if isSideMenuOpen {
-                    Color.clear
-                        .contentShape(Rectangle())
-                        .frame(width: max(0, width - menuWidth))
-                        .frame(maxHeight: .infinity)
-                        .ignoresSafeArea(edges: .vertical)
-                        .onTapGesture {
-                            withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
-                                isSideMenuOpen = false
-                            }
-                        }
-                }
-            }
-            .zIndex(1)
             .overlay {
                 if services.isCatalogDownloadInProgress {
                     ZStack {
@@ -553,8 +422,6 @@ struct RootView: View {
                 }
             }
             .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
         }
         .overlay {
             if selectedCardPresentation != nil {
@@ -588,24 +455,15 @@ struct RootView: View {
         }
         .onChange(of: selectedTab) { _, tab in
             Haptics.selectionChanged()
-            sideMenuPage = nil
             chromeScroll.configureForTab(tab)
-            if tab == .collection {
+            if tab == .collect {
                 collectionNavigationPath = NavigationPath()
-            }
-        }
-        .onChange(of: sideMenuPage) { _, page in
-            if page != nil {
-                chromeScroll.forceVisible()
             }
         }
         .onChange(of: browseNavigationPath.count) { _, newCount in
             if newCount == 0 {
                 chromeScroll.forceVisible()
             }
-        }
-        .onChange(of: isSideMenuOpen) { _, open in
-            if open { chromeScroll.forceVisible() }
         }
         .onChange(of: isSearchExperiencePresented) { _, open in
             if open {
@@ -617,6 +475,29 @@ struct RootView: View {
         .sheet(item: $selectedCardPresentation) { ctx in
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
                 .environment(services)
+        }
+        .sheet(isPresented: $showMoreSheet) {
+            MoreSheet(
+                onSelectTab: { tab in
+                    selectedTab = tab
+                },
+                onSelectPage: { page in
+                    sideMenuPage = page
+                },
+                onSelectWishlist: {
+                    collectSegment = .wishlist
+                    selectedTab = .collect
+                }
+            )
+            .environment(services)
+        }
+        .fullScreenCover(item: $sideMenuPage) { page in
+            SideMenuPageHost(page: page, onDismiss: { sideMenuPage = nil })
+                .environment(services)
+                .environment(\.presentCard, { card, list in
+                    let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
+                    selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
+                })
         }
         .fullScreenCover(item: $browseFullScreen) { route in
             BrowseFullScreenHost(route: route)
@@ -927,27 +808,7 @@ struct RootView: View {
         return active.map { "\($0.0) \($0.1)" }.joined(separator: ", ")
     }
 
-    @ViewBuilder
-    private var collectionFilterMenuContent: some View {
-        BrowseGridFiltersMenuContent(
-            brand: services.brandSettings.selectedCatalogBrand,
-            filters: $collectionFilters,
-            energyOptions: collectionFilterEnergyOptions,
-            rarityOptions: collectionFilterRarityOptions,
-            trainerTypeOptions: collectionFilterTrainerTypeOptions
-        )
-    }
-
-    @ViewBuilder
-    private var wishlistFilterMenuContent: some View {
-        BrowseGridFiltersMenuContent(
-            brand: services.brandSettings.selectedCatalogBrand,
-            filters: $wishlistFilters,
-            energyOptions: wishlistFilterEnergyOptions,
-            rarityOptions: wishlistFilterRarityOptions,
-            trainerTypeOptions: wishlistFilterTrainerTypeOptions
-        )
-    }
+    // Collection/Wishlist filter menus used to live here; filter state is now owned by `CollectView`'s internal segment.
 }
 
 #Preview {

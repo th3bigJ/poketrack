@@ -3,21 +3,19 @@ import Foundation
 enum AppTab: String, CaseIterable, Identifiable, Hashable {
     case dashboard
     case browse
-    case collection
-    case wishlist
+    case collect
     case bindrs
 
     var id: String { rawValue }
 
-    /// Only these tabs appear in the tab bar.
-    static let visibleTabs: [AppTab] = [.dashboard, .browse, .collection, .wishlist, .bindrs]
+    /// Only these tabs appear in the tab bar (4 tabs: Dashboard, Browse, Collect, Bindrs).
+    static let visibleTabs: [AppTab] = [.dashboard, .browse, .collect, .bindrs]
 
     var title: String {
         switch self {
         case .dashboard: return "Dashboard"
-        case .browse: return "Cards"
-        case .collection: return "Collection"
-        case .wishlist: return "Wishlist"
+        case .browse: return "Browse"
+        case .collect: return "Collect"
         case .bindrs: return "Bindrs"
         }
     }
@@ -26,8 +24,7 @@ enum AppTab: String, CaseIterable, Identifiable, Hashable {
         switch self {
         case .dashboard: return "square.grid.2x2.fill"
         case .browse: return "rectangle.stack"
-        case .collection: return "square.stack.3d.up.fill"
-        case .wishlist: return "star.fill"
+        case .collect: return "square.stack.3d.up.fill"
         case .bindrs: return "books.vertical.fill"
         }
     }
