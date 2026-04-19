@@ -150,26 +150,35 @@ private struct DeckListRow: View {
                 }
             }
 
-            VStack(alignment: .leading, spacing: 2) {
+            VStack(alignment: .leading, spacing: 3) {
                 Text(deck.title)
                     .font(.body.weight(.bold))
                     .foregroundStyle(.primary)
-                
-                HStack(spacing: 6) {
+
+                HStack(spacing: 5) {
                     Text(deck.tcgBrand.displayTitle)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                     Text("·")
-                        .foregroundStyle(.secondary)
-                    Text("\(deck.totalCardCount) Cards")
+                        .font(.caption)
+                        .foregroundStyle(.tertiary)
+                    Text(deck.deckFormat.displayName)
                         .font(.caption)
                         .foregroundStyle(.secondary)
-                    
+                    Text("·")
+                        .font(.caption)
+                        .foregroundStyle(.tertiary)
+                    Text("\(deck.totalCardCount) cards")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+
                     if !deck.isValid {
+                        let issueCount = deck.validationIssues.count
                         Text("·")
-                            .foregroundStyle(.secondary)
-                        Image(systemName: "exclamationmark.triangle.fill")
-                            .font(.system(size: 10))
+                            .font(.caption)
+                            .foregroundStyle(.tertiary)
+                        Label(issueCount == 1 ? "1 issue" : "\(issueCount) issues", systemImage: "exclamationmark.triangle.fill")
+                            .font(.caption)
                             .foregroundStyle(.orange)
                     }
                 }

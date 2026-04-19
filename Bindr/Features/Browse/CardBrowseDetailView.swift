@@ -343,20 +343,7 @@ struct CardBrowseDetailView: View {
                     Menu {
                         // Put “Quantity” + value in the Stepper label (don’t rely on `Section("Quantity")` — it often reads as a faint section header without a clear title in menus).
                         Section {
-                            Stepper(value: $deckAddQuantity, in: 1...20) {
-                                VStack(alignment: .leading, spacing: 4) {
-                                    Text("Quantity")
-                                        .font(.footnote.weight(.semibold))
-                                        .foregroundStyle(Color.secondary)
-                                    Text("\(deckAddQuantity)")
-                                        .font(.title3.weight(.bold))
-                                        .monospacedDigit()
-                                        .foregroundStyle(Color(uiColor: .label))
-                                        .contentTransition(.numericText())
-                                        .animation(.snappy, value: deckAddQuantity)
-                                }
-                                .multilineTextAlignment(.leading)
-                            }
+                            Stepper("Quantity: \(deckAddQuantity)", value: $deckAddQuantity, in: 1...20)
                         }
                         if wishlistVariantKeys.count > 1 {
                             Section("Select Variant") {

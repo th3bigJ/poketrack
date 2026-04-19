@@ -3,7 +3,7 @@ import Foundation
 
 // Format rules:
 // Pokémon:   60 cards total, max 4 copies per card name (basic energy exempt)
-// One Piece: 50 cards total, max 4 copies (Leader card treated separately — rules TBD)
+// One Piece: 51 cards total (50 main deck + 1 Leader), max 4 copies per card
 // Lorcana:   60 cards total, max 4 copies per card name
 
 // MARK: - Expanded legal set whitelist (Black & White onward, April 2011+)
@@ -70,11 +70,17 @@ enum DeckFormat: String, Codable, CaseIterable {
         }
     }
 
+    /// Minimum (and for most formats, exact) deck size.
     var deckSize: Int {
         switch self {
-        case .onePiece: return 50
+        case .onePiece: return 51
         default:        return 60
         }
+    }
+
+    /// When true the deck size is a minimum; any count ≥ deckSize is legal.
+    var deckSizeIsMinimum: Bool {
+        self == .lorcana
     }
 
     var maxCopiesPerCard: Int {
@@ -145,12 +151,13 @@ enum DeckFormat: String, Codable, CaseIterable {
                 """
         case .onePiece:
             return """
-                • 50 cards total
+                • 51 cards total (50 main deck + 1 Leader)
                 • Max 4 copies per card
+                • Exactly 1 Leader required
                 """
         case .lorcana:
             return """
-                • 60 cards total
+                • Minimum 60 cards (no maximum)
                 • Max 4 copies per card
                 """
         }
@@ -208,12 +215,23 @@ enum DeckFormat: String, Codable, CaseIterable {
         let fmt = deckFormat
         let total = totalCardCount
 
-        if total != fmt.deckSize {
+        if fmt.deckSizeIsMinimum {
+            if total < fmt.deckSize {
+                issues.append("Deck must have at least \(fmt.deckSize) cards (currently \(total))")
+            }
+        } else if total != fmt.deckSize {
             issues.append("Deck must have exactly \(fmt.deckSize) cards (currently \(total))")
         }
 
         guard tcgBrand == .pokemon else {
-            // Non-Pokemon: just check copy limits
+            if tcgBrand == .onePiece {
+                let leaderCount = cardList.filter {
+                    ($0.catalogCategory ?? "").lowercased().contains("leader")
+                }.reduce(0) { $0 + $1.quantity }
+                if leaderCount != 1 {
+                    issues.append("Deck must have exactly 1 Leader (have \(leaderCount))")
+                }
+            }
             let grouped = Dictionary(grouping: cardList, by: { $0.cardName })
             for (name, entries) in grouped {
                 let qty = entries.reduce(0) { $0 + $1.quantity }
@@ -327,6 +345,20 @@ enum DeckFormat: String, Codable, CaseIterable {
     var catalogCategory: String?
     /// Comma-separated subtype line from catalog (e.g. `Stage 1, V`) for summaries; mirrors ``Card/subtype`` or joined ``Card/subtypes``.
     var catalogSubtype: String?
+    /// ONE PIECE: DON!! cost to play. Nil for Leaders.
+    var opCost: Int? = nil
+    /// ONE PIECE: power value (reuses Card.hp field).
+    var opPower: Int? = nil
+    /// ONE PIECE: counter value (e.g. 1000, 2000). Nil when not present.
+    var opCounter: Int? = nil
+    /// LORCANA: ink cost to play.
+    var lcCost: Int? = nil
+    /// LORCANA: strength value (attack power for Characters).
+    var lcStrength: Int? = nil
+    /// LORCANA: willpower value (defence / Location move cost).
+    var lcWillpower: Int? = nil
+    /// LORCANA: lore value gained when questing.
+    var lcLore: Int? = nil
     var deck: Deck?
 
     var isEnergyCard: Bool { isBasicEnergy || isEnergy }
@@ -348,7 +380,14 @@ enum DeckFormat: String, Codable, CaseIterable {
         isEnergy: Bool = false,
         imageLowSrc: String = "",
         catalogCategory: String? = nil,
-        catalogSubtype: String? = nil
+        catalogSubtype: String? = nil,
+        opCost: Int? = nil,
+        opPower: Int? = nil,
+        opCounter: Int? = nil,
+        lcCost: Int? = nil,
+        lcStrength: Int? = nil,
+        lcWillpower: Int? = nil,
+        lcLore: Int? = nil
     ) {
         self.cardID = cardID
         self.variantKey = variantKey
@@ -367,6 +406,13 @@ enum DeckFormat: String, Codable, CaseIterable {
         self.imageLowSrc = imageLowSrc
         self.catalogCategory = catalogCategory
         self.catalogSubtype = catalogSubtype
+        self.opCost = opCost
+        self.opPower = opPower
+        self.opCounter = opCounter
+        self.lcCost = lcCost
+        self.lcStrength = lcStrength
+        self.lcWillpower = lcWillpower
+        self.lcLore = lcLore
     }
 }
 

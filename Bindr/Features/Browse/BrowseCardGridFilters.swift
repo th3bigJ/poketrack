@@ -23,17 +23,58 @@ enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable {
 }
 
 enum BrowseCardTypeFilter: String, CaseIterable, Identifiable, Sendable {
+    // Pokémon TCG
     case pokemon
     case trainer
     case energy
+    // One Piece
+    case opLeader
+    case opCharacter
+    case opEvent
+    case opStage
+    // Lorcana
+    case lcCharacter
+    case lcAction
+    case lcItem
+    case lcLocation
 
     var id: String { rawValue }
 
     var title: String {
         switch self {
-        case .pokemon: return "Pokemon"
-        case .trainer: return "Trainer"
-        case .energy: return "Energy"
+        case .pokemon:      return "Pokemon"
+        case .trainer:      return "Trainer"
+        case .energy:       return "Energy"
+        case .opLeader:     return "Leader"
+        case .opCharacter:  return "Character"
+        case .opEvent:      return "Event"
+        case .opStage:      return "Stage"
+        case .lcCharacter:  return "Character"
+        case .lcAction:     return "Action"
+        case .lcItem:       return "Item"
+        case .lcLocation:   return "Location"
+        }
+    }
+
+    /// The One Piece catalog category string this filter maps to.
+    var opCategoryString: String? {
+        switch self {
+        case .opLeader:    return "Leader"
+        case .opCharacter: return "Character"
+        case .opEvent:     return "Event"
+        case .opStage:     return "Stage"
+        default:           return nil
+        }
+    }
+
+    /// The Lorcana catalog supertype string this filter maps to.
+    var lcCategoryString: String? {
+        switch self {
+        case .lcCharacter: return "Character"
+        case .lcAction:    return "Action"
+        case .lcItem:      return "Item"
+        case .lcLocation:  return "Location"
+        default:           return nil
         }
     }
 }

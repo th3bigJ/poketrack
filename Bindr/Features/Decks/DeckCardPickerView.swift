@@ -8,6 +8,10 @@ private enum DeckPickerBrowseRoute: Hashable {
     case set(TCGSet)
     case pokemon
     case dex(dexId: Int, displayName: String)
+    case opCharacters
+    case opCharacter(name: String)
+    case opSubtypes
+    case opSubtype(name: String)
 }
 
 // MARK: - Source
@@ -90,6 +94,14 @@ struct DeckCardPickerView: View {
 
     private var ownedCardIDs: Set<String> {
         Set(collectionItems.map(\.cardID))
+    }
+
+    /// Colors of the One Piece Leader in this deck (from `elementTypes`). Empty = no leader yet.
+    private var opLeaderColors: Set<String> {
+        guard deck.tcgBrand == .onePiece else { return [] }
+        let leader = deck.cardList.first { ($0.catalogCategory ?? "").lowercased().contains("leader") }
+        let colors = leader?.elementTypes?.filter { !$0.isEmpty && $0 != "-" } ?? []
+        return Set(colors)
     }
 
     private var basketCardIDs: Set<String> {
@@ -354,6 +366,36 @@ struct DeckCardPickerView: View {
                             openDetailForCard(card, swipeContext: swipeCards)
                         }
                     )
+                case .opCharacters:
+                    DeckPickerOPBrowseListView(title: "Characters", searchPlaceholder: "Search characters", routeBuilder: { .opCharacter(name: $0) })
+                case .opCharacter(let name):
+                    DeckPickerCatalogCardsView(
+                        path: $browsePath,
+                        title: name,
+                        searchPlaceholder: "Search cards",
+                        deck: deck,
+                        isEligible: isEligible,
+                        basketCardIDs: basketCardIDs,
+                        loadCards: { await services.cardData.cards(matchingOnePieceCharacterName: name) },
+                        onCardSelected: { card, swipeCards in
+                            openDetailForCard(card, swipeContext: swipeCards)
+                        }
+                    )
+                case .opSubtypes:
+                    DeckPickerOPBrowseListView(title: "Subtypes", searchPlaceholder: "Search subtypes", routeBuilder: { .opSubtype(name: $0) })
+                case .opSubtype(let name):
+                    DeckPickerCatalogCardsView(
+                        path: $browsePath,
+                        title: name,
+                        searchPlaceholder: "Search cards",
+                        deck: deck,
+                        isEligible: isEligible,
+                        basketCardIDs: basketCardIDs,
+                        loadCards: { await services.cardData.cards(matchingOnePieceSubtype: name) },
+                        onCardSelected: { card, swipeCards in
+                            openDetailForCard(card, swipeContext: swipeCards)
+                        }
+                    )
                 }
             }
             .toolbar {
@@ -424,7 +466,13 @@ struct DeckCardPickerView: View {
             .onAppear {
                 filters.sortBy = .newestSet
                 if let initial = initialCategoryFilter {
-                    filters.cardTypes = [initial]
+                    if let opCat = initial.opCategoryString {
+                        filters.opCardTypes = [opCat]
+                    } else if let lcCat = initial.lcCategoryString {
+                        filters.lcCardTypes = [lcCat]
+                    } else {
+                        filters.cardTypes = [initial]
+                    }
                 }
                 Task { await restoreAllCardsFeedIfNeeded() }
             }
@@ -488,6 +536,14 @@ struct DeckCardPickerView: View {
                 if deck.tcgBrand == .pokemon {
                     NavigationLink(value: DeckPickerBrowseRoute.pokemon) {
                         shortcutChip(title: "Pokémon")
+                    }
+                }
+                if deck.tcgBrand == .onePiece {
+                    NavigationLink(value: DeckPickerBrowseRoute.opCharacters) {
+                        shortcutChip(title: "Characters")
+                    }
+                    NavigationLink(value: DeckPickerBrowseRoute.opSubtypes) {
+                        shortcutChip(title: "Subtypes")
                     }
                 }
             }
@@ -632,6 +688,13 @@ struct DeckCardPickerView: View {
             if existing.catalogSubtype == nil, let sub = DeckCardPickerView.catalogSubtypeString(from: card) {
                 existing.catalogSubtype = sub
             }
+            if existing.opCost == nil { existing.opCost = card.opCost }
+            if existing.opPower == nil { existing.opPower = card.hp }
+            if existing.opCounter == nil { existing.opCounter = card.opCounter }
+            if existing.lcCost == nil { existing.lcCost = card.lcCost }
+            if existing.lcStrength == nil { existing.lcStrength = card.lcStrength }
+            if existing.lcWillpower == nil { existing.lcWillpower = card.lcWillpower }
+            if existing.lcLore == nil { existing.lcLore = card.lcLore }
         } else if effectiveMax > 0 {
             let deckCard = DeckCard(
                 cardID: card.masterCardId,
@@ -650,7 +713,14 @@ struct DeckCardPickerView: View {
                 isEnergy: card.category == "Energy",
                 imageLowSrc: card.imageLowSrc,
                 catalogCategory: card.category,
-                catalogSubtype: Self.catalogSubtypeString(from: card)
+                catalogSubtype: Self.catalogSubtypeString(from: card),
+                opCost: card.opCost,
+                opPower: card.hp,
+                opCounter: card.opCounter,
+                lcCost: card.lcCost,
+                lcStrength: card.lcStrength,
+                lcWillpower: card.lcWillpower,
+                lcLore: card.lcLore
             )
             deckCard.deck = deck
             modelContext.insert(deckCard)
@@ -885,10 +955,26 @@ struct DeckCardPickerView: View {
     }
 
     private func filterBrowseFilterCards(_ cards: [BrowseFilterCard]) -> [BrowseFilterCard] {
-        cards.filter { card in
+        let leaderColors = opLeaderColors
+        return cards.filter { card in
             if deck.tcgBrand == .pokemon,
                !filters.cardTypes.isEmpty,
                !filters.cardTypes.contains(resolvedCardType(for: card)) { return false }
+            if deck.tcgBrand == .onePiece, !filters.opCardTypes.isEmpty {
+                let cardTypes = Set((card.category ?? "").split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) })
+                if cardTypes.isDisjoint(with: filters.opCardTypes) { return false }
+            }
+            if deck.tcgBrand == .onePiece, !leaderColors.isEmpty {
+                let isLeader = (card.category ?? "").lowercased().contains("leader")
+                if !isLeader {
+                    let cardColors = Set(card.elementTypes?.filter { !$0.isEmpty && $0 != "-" } ?? [])
+                    if cardColors.isDisjoint(with: leaderColors) { return false }
+                }
+            }
+            if deck.tcgBrand == .lorcana, !filters.lcCardTypes.isEmpty {
+                let cat = card.category?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+                if !filters.lcCardTypes.contains(cat) { return false }
+            }
             if filters.rarePlusOnly && isCommonOrUncommon(card.rarity) { return false }
             if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) { return false }
             if !filters.energyTypes.isEmpty {
@@ -912,6 +998,22 @@ struct DeckCardPickerView: View {
            !filters.cardTypes.isEmpty,
            !filters.cardTypes.contains(resolvedBrowseCardTypeForPicker(card)) {
             return false
+        }
+        if deck.tcgBrand == .onePiece, !filters.opCardTypes.isEmpty {
+            let cardTypes = Set((card.category ?? "").split(separator: ",").map { $0.trimmingCharacters(in: .whitespaces) })
+            if cardTypes.isDisjoint(with: filters.opCardTypes) { return false }
+        }
+        let leaderColors = opLeaderColors
+        if deck.tcgBrand == .onePiece, !leaderColors.isEmpty {
+            let isLeader = (card.category ?? "").lowercased().contains("leader")
+            if !isLeader {
+                let cardColors = Set(card.elementTypes?.filter { !$0.isEmpty && $0 != "-" } ?? [])
+                if cardColors.isDisjoint(with: leaderColors) { return false }
+            }
+        }
+        if deck.tcgBrand == .lorcana, !filters.lcCardTypes.isEmpty {
+            let cat = card.category?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            if !filters.lcCardTypes.contains(cat) { return false }
         }
         if filters.rarePlusOnly && isCommonOrUncommon(card.rarity) { return false }
         if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) { return false }
@@ -1117,19 +1219,79 @@ private struct DeckPickerSetsView: View {
     }
 
     private var groupedSets: [(title: String, sets: [TCGSet])] {
-        let grouped = Dictionary(grouping: filteredSets) { set -> String in
-            set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty == false
-                ? set.seriesName!.trimmingCharacters(in: .whitespacesAndNewlines)
-                : "Other"
-        }
-        return grouped
-            .map { (title: $0.key, sets: $0.value.sorted { ($0.releaseDate ?? "") > ($1.releaseDate ?? "") }) }
-            .sorted { lhs, rhs in
+        let grouped = Dictionary(grouping: filteredSets, by: seriesTitle(for:))
+        let sorted = grouped.map { (title: $0.key, sets: sortNewestFirst($0.value)) }
+        switch deck.tcgBrand {
+        case .onePiece:
+            return sorted.sorted { lhs, rhs in
+                let li = opSeriesOrder(lhs.title), ri = opSeriesOrder(rhs.title)
+                if li != ri { return li < ri }
+                return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+            }
+        case .lorcana:
+            return sorted.sorted { lhs, rhs in
+                let li = lcSeriesOrder(lhs.title), ri = lcSeriesOrder(rhs.title)
+                if li != ri { return li < ri }
+                return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+            }
+        default:
+            return sorted.sorted { lhs, rhs in
                 let l = lhs.sets.compactMap(\.releaseDate).min() ?? ""
                 let r = rhs.sets.compactMap(\.releaseDate).min() ?? ""
                 if l != r { return l > r }
                 return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
             }
+        }
+    }
+
+    private func seriesTitle(for set: TCGSet) -> String {
+        switch deck.tcgBrand {
+        case .onePiece:
+            let lower = (set.seriesName ?? "").lowercased()
+            if lower.contains("booster pack")    { return "Booster Pack" }
+            if lower.contains("extra booster")   { return "Extra Boosters" }
+            if lower.contains("starter")         { return "Starter deck" }
+            if lower.contains("premium booster") { return "Premium Booster" }
+            if lower.contains("promo")           { return "Promo" }
+            let raw = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            return raw.isEmpty ? "Other" : raw
+        case .lorcana:
+            let joined = "\(set.name) \(set.setCode)".lowercased()
+            if joined.contains("illumineer")                             { return "ILLUMINEER'S QUEST" }
+            if joined.contains("promo") || set.setCode.lowercased().contains("promo") { return "PROMO" }
+            return "MAIN"
+        default:
+            let raw = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            return raw.isEmpty ? "Other" : raw
+        }
+    }
+
+    private func sortNewestFirst(_ sets: [TCGSet]) -> [TCGSet] {
+        sets.sorted {
+            let l = $0.releaseDate ?? "", r = $1.releaseDate ?? ""
+            if l != r { return l > r }
+            return $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending
+        }
+    }
+
+    private func opSeriesOrder(_ title: String) -> Int {
+        switch title {
+        case "Booster Pack": return 0
+        case "Extra Boosters": return 1
+        case "Starter deck": return 2
+        case "Premium Booster": return 3
+        case "Promo": return 4
+        default: return 5
+        }
+    }
+
+    private func lcSeriesOrder(_ title: String) -> Int {
+        switch title {
+        case "MAIN": return 0
+        case "ILLUMINEER'S QUEST": return 1
+        case "PROMO": return 2
+        default: return 3
+        }
     }
 
     var body: some View {
@@ -1200,6 +1362,69 @@ private struct DeckPickerSetsView: View {
             } catch {
                 sets = []
             }
+        }
+    }
+}
+
+// MARK: - One Piece character / subtype browse
+
+private struct DeckPickerOPBrowseListView: View {
+    @Environment(AppServices.self) private var services
+
+    let title: String
+    let searchPlaceholder: String
+    let routeBuilder: (String) -> DeckPickerBrowseRoute
+
+    @State private var rows: [String] = []
+    @State private var isLoading = true
+    @State private var query = ""
+
+    private var filteredRows: [String] {
+        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        guard !q.isEmpty else { return rows }
+        return rows.filter { $0.lowercased().contains(q) }
+    }
+
+    var body: some View {
+        Group {
+            if isLoading {
+                ProgressView("Loading…")
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if rows.isEmpty {
+                ContentUnavailableView(title, systemImage: "list.bullet",
+                    description: Text("Sync the ONE PIECE catalog to see results."))
+            } else {
+                List {
+                    Section {
+                        BrowseInlineSearchField(title: searchPlaceholder, text: $query)
+                            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
+                            .listRowBackground(Color.clear)
+                    }
+                    if filteredRows.isEmpty {
+                        ContentUnavailableView("No matches", systemImage: "magnifyingglass")
+                            .listRowBackground(Color.clear)
+                    } else {
+                        ForEach(filteredRows, id: \.self) { row in
+                            NavigationLink(value: routeBuilder(row)) {
+                                Text(row).padding(.vertical, 4)
+                            }
+                        }
+                    }
+                }
+                .listStyle(.plain)
+            }
+        }
+        .navigationTitle(title)
+        .navigationBarTitleDisplayMode(.inline)
+        .task {
+            isLoading = true
+            defer { isLoading = false }
+            if services.cardData.onePieceCharacterNames.isEmpty {
+                await services.cardData.loadOnePieceBrowseMetadata()
+            }
+            rows = title == "Characters"
+                ? services.cardData.onePieceCharacterNames
+                : services.cardData.onePieceCharacterSubtypes
         }
     }
 }
