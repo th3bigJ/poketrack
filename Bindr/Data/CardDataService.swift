@@ -353,6 +353,55 @@ final class CardDataService {
         return sortCardsByReleaseDateNewestFirst(matches)
     }
 
+    /// Lorcana cards whose printed card name matches the given character name (case-insensitive).
+    func cards(matchingLorcanaCharacterName name: String) async -> [Card] {
+        let q = name.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !q.isEmpty else { return [] }
+        let normalized = q.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+        let all = await allCards(for: .lorcana)
+        let matches = all.filter {
+            $0.cardName.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current) == normalized
+        }
+        return sortCardsByReleaseDateNewestFirst(matches)
+    }
+
+    /// Lorcana cards whose subtype list contains the selected subtype (case-insensitive).
+    func cards(matchingLorcanaSubtype subtype: String) async -> [Card] {
+        let q = subtype.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !q.isEmpty else { return [] }
+        let normalized = q.folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current)
+        let all = await allCards(for: .lorcana)
+        let matches = all.filter { card in
+            let values = (card.subtypes ?? []) + [card.subtype].compactMap { $0 }
+            return values.contains {
+                $0.trimmingCharacters(in: .whitespacesAndNewlines)
+                    .folding(options: [.diacriticInsensitive, .caseInsensitive], locale: .current) == normalized
+            }
+        }
+        return sortCardsByReleaseDateNewestFirst(matches)
+    }
+
+    /// Returns sorted unique character names from the Lorcana catalog (cards with catalogCategory == "Character").
+    func lorcanaCharacterNames() async -> [String] {
+        let all = await allCards(for: .lorcana)
+        let names = all
+            .filter { ($0.category ?? "").lowercased() == "character" }
+            .map(\.cardName)
+        let unique = Array(Set(names)).sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+        return unique
+    }
+
+    /// Returns sorted unique subtype strings from the Lorcana catalog.
+    func lorcanaSubtypes() async -> [String] {
+        let all = await allCards(for: .lorcana)
+        var subtypeSet = Set<String>()
+        for card in all {
+            let values = (card.subtypes ?? []) + [card.subtype].compactMap { $0 }
+            values.forEach { subtypeSet.insert($0.trimmingCharacters(in: .whitespacesAndNewlines)) }
+        }
+        return subtypeSet.filter { !$0.isEmpty }.sorted { $0.localizedCaseInsensitiveCompare($1) == .orderedAscending }
+    }
+
     /// ONE PIECE cards whose subtype list contains the selected browse subtype exactly (case-insensitive).
     func cards(matchingOnePieceSubtype subtype: String) async -> [Card] {
         let q = subtype.trimmingCharacters(in: .whitespacesAndNewlines)

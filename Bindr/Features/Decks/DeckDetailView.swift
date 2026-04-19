@@ -1143,6 +1143,7 @@ private enum DeckCardGridLayoutMetrics {
 // MARK: - Card grid cell (view + edit)
 
 private struct DeckCardGridCell: View {
+    @Environment(AppServices.self) private var services
     let deckCard: DeckCard
     /// Copies of this deck line still not covered by the collection (after allocating owned playsets across lines).
     let copiesNeededFromCollection: Int
@@ -1153,24 +1154,33 @@ private struct DeckCardGridCell: View {
     /// When non-`nil` and not editing, tapping the artwork opens browse detail (view-only sheet).
     var onViewCardTap: (() -> Void)? = nil
 
+    @State private var fallbackImageURL: URL? = nil
+
+    private var imageURL: URL? {
+        if !deckCard.imageLowSrc.isEmpty {
+            return AppConfiguration.imageURL(relativePath: deckCard.imageLowSrc)
+        }
+        return fallbackImageURL
+    }
+
     private var cardArtStack: some View {
         ZStack(alignment: .bottom) {
-            CachedAsyncImage(
-                url: AppConfiguration.imageURL(relativePath: deckCard.imageLowSrc),
-                targetSize: CGSize(width: 200, height: 280)
-            ) { img in
-                img.resizable().scaledToFit()
-            } placeholder: {
-                RoundedRectangle(cornerRadius: 8)
-                    .fill(Color(uiColor: .systemGray5))
-                    .aspectRatio(5/7, contentMode: .fit)
-                    .overlay {
-                        Text(deckCard.cardName)
-                            .font(.caption2)
-                            .multilineTextAlignment(.center)
-                            .padding(4)
-                            .foregroundStyle(.secondary)
-                    }
+            AsyncImage(url: imageURL, transaction: Transaction(animation: .easeOut(duration: 0.18))) { phase in
+                switch phase {
+                case .success(let img):
+                    img.resizable().scaledToFit()
+                default:
+                    RoundedRectangle(cornerRadius: 8)
+                        .fill(Color(uiColor: .systemGray5))
+                        .aspectRatio(5/7, contentMode: .fit)
+                        .overlay {
+                            Text(deckCard.cardName)
+                                .font(.caption2)
+                                .multilineTextAlignment(.center)
+                                .padding(4)
+                                .foregroundStyle(.secondary)
+                        }
+                }
             }
             .aspectRatio(5/7, contentMode: .fit)
             .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -1260,6 +1270,14 @@ private struct DeckCardGridCell: View {
                 Button(role: .destructive, action: onDelete) {
                     Label("Remove", systemImage: "trash")
                 }
+            }
+        }
+        .task(id: deckCard.cardID) {
+            guard deckCard.imageLowSrc.isEmpty else { return }
+            if let card = await services.cardData.loadCard(masterCardId: deckCard.cardID),
+               !card.imageLowSrc.isEmpty {
+                deckCard.imageLowSrc = card.imageLowSrc
+                fallbackImageURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
             }
         }
     }
