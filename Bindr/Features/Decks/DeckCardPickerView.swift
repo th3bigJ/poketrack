@@ -610,6 +610,9 @@ struct DeckCardPickerView: View {
 
         if let existing = existingMap[card.masterCardId] {
             existing.quantity = min(existing.quantity + quantity, effectiveMax)
+            if existing.catalogCategory == nil, let cat = card.category?.trimmingCharacters(in: .whitespacesAndNewlines), !cat.isEmpty {
+                existing.catalogCategory = cat
+            }
         } else if effectiveMax > 0 {
             let deckCard = DeckCard(
                 cardID: card.masterCardId,
@@ -626,7 +629,8 @@ struct DeckCardPickerView: View {
                 elementTypes: card.elementTypes,
                 trainerType: card.trainerType,
                 isEnergy: card.category == "Energy",
-                imageLowSrc: card.imageLowSrc
+                imageLowSrc: card.imageLowSrc,
+                catalogCategory: card.category
             )
             deckCard.deck = deck
             modelContext.insert(deckCard)

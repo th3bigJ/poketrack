@@ -27,13 +27,25 @@ private enum DeckCardGroup: String, CaseIterable, Identifiable {
 }
 
 private extension DeckCard {
-    enum CardCategory { case pokemon, trainer, energy, other }
+    enum CardCategory { case pokemon, trainer, energy }
 
+    /// Maps a deck line into the three on-screen sections. Must align with TCG `Card.category`, not only evolution flags (Stage 1/2 Pokémon are still Pokémon).
     var category: CardCategory {
         if isEnergyCard { return .energy }
+
+        if let raw = catalogCategory?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty {
+            let c = raw.lowercased()
+            if c.contains("energy") { return .energy }
+            if c.contains("trainer") { return .trainer }
+            if c.contains("pokémon") || c.contains("pokemon") { return .pokemon }
+        }
+
+        // Rows saved before `catalogCategory` existed: infer from stored flags.
         if trainerType != nil { return .trainer }
         if isBasicPokemon || isRuleBox || isRadiant { return .pokemon }
-        return .other
+
+        // Previously Stage 1/2 Pokémon (etc.) fell through to `.other` and disappeared from every section while still counting toward the deck total.
+        return .pokemon
     }
 }
 

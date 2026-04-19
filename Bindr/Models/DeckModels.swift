@@ -318,6 +318,8 @@ enum DeckFormat: String, Codable, CaseIterable {
     var trainerType: String? = nil
     var isEnergy: Bool = false
     var imageLowSrc: String = ""
+    /// Canonical TCG category string from catalog (e.g. `Pokémon`, `Trainer`, `Energy`). Used so deck sections match all Pokémon stages, not only Basics / rule boxes.
+    var catalogCategory: String?
     var deck: Deck?
 
     var isEnergyCard: Bool { isBasicEnergy || isEnergy }
@@ -337,7 +339,8 @@ enum DeckFormat: String, Codable, CaseIterable {
         elementTypes: [String]? = nil,
         trainerType: String? = nil,
         isEnergy: Bool = false,
-        imageLowSrc: String = ""
+        imageLowSrc: String = "",
+        catalogCategory: String? = nil
     ) {
         self.cardID = cardID
         self.variantKey = variantKey
@@ -354,6 +357,7 @@ enum DeckFormat: String, Codable, CaseIterable {
         self.trainerType = trainerType
         self.isEnergy = isEnergy
         self.imageLowSrc = imageLowSrc
+        self.catalogCategory = catalogCategory
     }
 }
 
