@@ -7,6 +7,15 @@ struct SocialProfile: Codable, Identifiable, Sendable {
     let displayName: String?
     let avatarURL: String?
     let bio: String?
+    let profileRoles: [String]?
+    let favoritePokemonDex: Int?
+    let favoritePokemonName: String?
+    let favoritePokemonImageURL: String?
+    let favoriteCardID: String?
+    let favoriteCardName: String?
+    let favoriteCardSetCode: String?
+    let favoriteCardImageURL: String?
+    let favoriteDeckArchetype: String?
     let pinnedCardID: String?
     let createdAt: Date?
 
@@ -17,6 +26,15 @@ struct SocialProfile: Codable, Identifiable, Sendable {
         case displayName = "display_name"
         case avatarURL = "avatar_url"
         case bio
+        case profileRoles = "profile_roles"
+        case favoritePokemonDex = "favorite_pokemon_dex"
+        case favoritePokemonName = "favorite_pokemon_name"
+        case favoritePokemonImageURL = "favorite_pokemon_image_url"
+        case favoriteCardID = "favorite_card_id"
+        case favoriteCardName = "favorite_card_name"
+        case favoriteCardSetCode = "favorite_card_set_code"
+        case favoriteCardImageURL = "favorite_card_image_url"
+        case favoriteDeckArchetype = "favorite_deck_archetype"
         case pinnedCardID = "pinned_card_id"
         case createdAt = "created_at"
     }

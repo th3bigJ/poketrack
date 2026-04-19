@@ -230,17 +230,35 @@ struct SocialRootView: View {
                 .navigationDestination(for: ProfilePopoverDestination.self) { destination in
                     switch destination {
                     case .editProfile:
-                        EditProfileView(existingProfile: profile) { username, displayName, bio in
+                        EditProfileView(existingProfile: profile) { payload in
                             if profile == nil {
                                 profile = try await services.socialProfile.saveProfile(
-                                    username: username,
-                                    displayName: displayName,
-                                    bio: bio
+                                    username: payload.username,
+                                    displayName: payload.displayName,
+                                    bio: payload.bio,
+                                    profileRoles: payload.profileRoles,
+                                    favoritePokemonDex: payload.favoritePokemonDex,
+                                    favoritePokemonName: payload.favoritePokemonName,
+                                    favoritePokemonImageURL: payload.favoritePokemonImageURL,
+                                    favoriteCardID: payload.favoriteCardID,
+                                    favoriteCardName: payload.favoriteCardName,
+                                    favoriteCardSetCode: payload.favoriteCardSetCode,
+                                    favoriteCardImageURL: payload.favoriteCardImageURL,
+                                    favoriteDeckArchetype: payload.favoriteDeckArchetype
                                 )
                             } else {
                                 profile = try await services.socialProfile.updateProfile(
-                                    displayName: displayName,
-                                    bio: bio
+                                    displayName: payload.displayName,
+                                    bio: payload.bio,
+                                    profileRoles: payload.profileRoles,
+                                    favoritePokemonDex: payload.favoritePokemonDex,
+                                    favoritePokemonName: payload.favoritePokemonName,
+                                    favoritePokemonImageURL: payload.favoritePokemonImageURL,
+                                    favoriteCardID: payload.favoriteCardID,
+                                    favoriteCardName: payload.favoriteCardName,
+                                    favoriteCardSetCode: payload.favoriteCardSetCode,
+                                    favoriteCardImageURL: payload.favoriteCardImageURL,
+                                    favoriteDeckArchetype: payload.favoriteDeckArchetype
                                 )
                             }
                             profilePopoverPath = NavigationPath()

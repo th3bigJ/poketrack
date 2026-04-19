@@ -31,6 +31,15 @@ final class SocialProfileService {
         let displayName: String?
         let bio: String?
         let avatarURL: String?
+        let profileRoles: [String]
+        let favoritePokemonDex: Int?
+        let favoritePokemonName: String?
+        let favoritePokemonImageURL: String?
+        let favoriteCardID: String?
+        let favoriteCardName: String?
+        let favoriteCardSetCode: String?
+        let favoriteCardImageURL: String?
+        let favoriteDeckArchetype: String?
 
         enum CodingKeys: String, CodingKey {
             case id
@@ -39,6 +48,15 @@ final class SocialProfileService {
             case displayName = "display_name"
             case bio
             case avatarURL = "avatar_url"
+            case profileRoles = "profile_roles"
+            case favoritePokemonDex = "favorite_pokemon_dex"
+            case favoritePokemonName = "favorite_pokemon_name"
+            case favoritePokemonImageURL = "favorite_pokemon_image_url"
+            case favoriteCardID = "favorite_card_id"
+            case favoriteCardName = "favorite_card_name"
+            case favoriteCardSetCode = "favorite_card_set_code"
+            case favoriteCardImageURL = "favorite_card_image_url"
+            case favoriteDeckArchetype = "favorite_deck_archetype"
         }
     }
 
@@ -47,6 +65,34 @@ final class SocialProfileService {
 
         enum CodingKeys: String, CodingKey {
             case userID = "user_id"
+        }
+    }
+
+    private struct UpdateProfileRequest: Encodable {
+        let displayName: String?
+        let bio: String?
+        let profileRoles: [String]
+        let favoritePokemonDex: Int?
+        let favoritePokemonName: String?
+        let favoritePokemonImageURL: String?
+        let favoriteCardID: String?
+        let favoriteCardName: String?
+        let favoriteCardSetCode: String?
+        let favoriteCardImageURL: String?
+        let favoriteDeckArchetype: String?
+
+        enum CodingKeys: String, CodingKey {
+            case displayName = "display_name"
+            case bio
+            case profileRoles = "profile_roles"
+            case favoritePokemonDex = "favorite_pokemon_dex"
+            case favoritePokemonName = "favorite_pokemon_name"
+            case favoritePokemonImageURL = "favorite_pokemon_image_url"
+            case favoriteCardID = "favorite_card_id"
+            case favoriteCardName = "favorite_card_name"
+            case favoriteCardSetCode = "favorite_card_set_code"
+            case favoriteCardImageURL = "favorite_card_image_url"
+            case favoriteDeckArchetype = "favorite_deck_archetype"
         }
     }
 
@@ -73,7 +119,20 @@ final class SocialProfileService {
         return rows.first
     }
 
-    func saveProfile(username: String, displayName: String?, bio: String?) async throws -> SocialProfile {
+    func saveProfile(
+        username: String,
+        displayName: String?,
+        bio: String?,
+        profileRoles: [String],
+        favoritePokemonDex: Int?,
+        favoritePokemonName: String?,
+        favoritePokemonImageURL: String?,
+        favoriteCardID: String?,
+        favoriteCardName: String?,
+        favoriteCardSetCode: String?,
+        favoriteCardImageURL: String?,
+        favoriteDeckArchetype: String?
+    ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let appleUserID = KeychainStorage.readAppleUserIdentifier() ?? "apple-\(userID.uuidString)"
         let payload = UpsertProfileRequest(
@@ -82,7 +141,16 @@ final class SocialProfileService {
             username: username,
             displayName: displayName?.trimmedNilIfEmpty,
             bio: bio?.trimmedNilIfEmpty,
-            avatarURL: nil
+            avatarURL: nil,
+            profileRoles: profileRoles,
+            favoritePokemonDex: favoritePokemonDex,
+            favoritePokemonName: favoritePokemonName?.trimmedNilIfEmpty,
+            favoritePokemonImageURL: favoritePokemonImageURL?.trimmedNilIfEmpty,
+            favoriteCardID: favoriteCardID?.trimmedNilIfEmpty,
+            favoriteCardName: favoriteCardName?.trimmedNilIfEmpty,
+            favoriteCardSetCode: favoriteCardSetCode?.trimmedNilIfEmpty,
+            favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
+            favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?on_conflict=id",
@@ -98,12 +166,33 @@ final class SocialProfileService {
         return profile
     }
 
-    func updateProfile(displayName: String?, bio: String?) async throws -> SocialProfile {
+    func updateProfile(
+        displayName: String?,
+        bio: String?,
+        profileRoles: [String],
+        favoritePokemonDex: Int?,
+        favoritePokemonName: String?,
+        favoritePokemonImageURL: String?,
+        favoriteCardID: String?,
+        favoriteCardName: String?,
+        favoriteCardSetCode: String?,
+        favoriteCardImageURL: String?,
+        favoriteDeckArchetype: String?
+    ) async throws -> SocialProfile {
         let userID = try signedInUserID()
-        let payload: [String: String?] = [
-            "display_name": displayName?.trimmedNilIfEmpty,
-            "bio": bio?.trimmedNilIfEmpty
-        ]
+        let payload = UpdateProfileRequest(
+            displayName: displayName?.trimmedNilIfEmpty,
+            bio: bio?.trimmedNilIfEmpty,
+            profileRoles: profileRoles,
+            favoritePokemonDex: favoritePokemonDex,
+            favoritePokemonName: favoritePokemonName?.trimmedNilIfEmpty,
+            favoritePokemonImageURL: favoritePokemonImageURL?.trimmedNilIfEmpty,
+            favoriteCardID: favoriteCardID?.trimmedNilIfEmpty,
+            favoriteCardName: favoriteCardName?.trimmedNilIfEmpty,
+            favoriteCardSetCode: favoriteCardSetCode?.trimmedNilIfEmpty,
+            favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
+            favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty
+        )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?id=eq.\(userID.uuidString)&select=*",
             method: "PATCH",
