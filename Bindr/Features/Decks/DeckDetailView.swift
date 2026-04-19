@@ -627,7 +627,28 @@ struct DeckDetailView: View {
 // MARK: - DeckCard helper
 
 private extension DeckCard {
+    /// Normalizes catalog subtype fragments so summary chips match ``subtypeCounts``’ canonical tokens (e.g. `stage 1` → `Stage 1`).
+    static func normalizeSubtypeFragment(_ raw: String) -> String {
+        let t = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !t.isEmpty else { return "" }
+        switch t.lowercased() {
+        case "basic": return "Basic"
+        case "stage 1", "stage1": return "Stage 1"
+        case "stage 2", "stage2": return "Stage 2"
+        case "mega": return "MEGA"
+        case "break": return "BREAK"
+        case "radiant": return "Radiant"
+        default: return t
+        }
+    }
+
+    /// Tokens for “Pokémon Stages” chips: parsed from persisted catalog subtype when present, otherwise legacy booleans only.
     var subtypeTokens: [String] {
+        if let csv = catalogSubtype?.trimmingCharacters(in: .whitespacesAndNewlines), !csv.isEmpty {
+            return csv.split(separator: ",")
+                .map { Self.normalizeSubtypeFragment(String($0)) }
+                .filter { !$0.isEmpty }
+        }
         var tokens: [String] = []
         if isBasicPokemon { tokens.append("Basic") }
         if isRuleBox      { tokens.append("ex") }

@@ -586,6 +586,22 @@ struct DeckCardPickerView: View {
         detailSheetSession = DeckPickerDetailSession(cards: swipeContext, startIndex: idx)
     }
 
+    /// Subtype text for deck summaries (stages, V, etc.). Prefer CSV `subtype`; fall back to `subtypes`; then `stage` when the catalog omits subtype text.
+    private static func catalogSubtypeString(from card: Card) -> String? {
+        if let s = card.subtype?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty {
+            return s
+        }
+        let cleaned = card.subtypes?.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty } ?? []
+        if !cleaned.isEmpty {
+            return cleaned.joined(separator: ", ")
+        }
+        if card.category == "Pokémon",
+           let st = card.stage?.trimmingCharacters(in: .whitespacesAndNewlines), !st.isEmpty {
+            return st
+        }
+        return nil
+    }
+
     private func addCardToDeck(card: Card, variantKey: String, quantity: Int) {
         let fmt = deck.deckFormat
         let existingMap = Dictionary(uniqueKeysWithValues: deck.cardList.map { ($0.cardID, $0) })
@@ -613,6 +629,9 @@ struct DeckCardPickerView: View {
             if existing.catalogCategory == nil, let cat = card.category?.trimmingCharacters(in: .whitespacesAndNewlines), !cat.isEmpty {
                 existing.catalogCategory = cat
             }
+            if existing.catalogSubtype == nil, let sub = DeckCardPickerView.catalogSubtypeString(from: card) {
+                existing.catalogSubtype = sub
+            }
         } else if effectiveMax > 0 {
             let deckCard = DeckCard(
                 cardID: card.masterCardId,
@@ -630,7 +649,8 @@ struct DeckCardPickerView: View {
                 trainerType: card.trainerType,
                 isEnergy: card.category == "Energy",
                 imageLowSrc: card.imageLowSrc,
-                catalogCategory: card.category
+                catalogCategory: card.category,
+                catalogSubtype: Self.catalogSubtypeString(from: card)
             )
             deckCard.deck = deck
             modelContext.insert(deckCard)
