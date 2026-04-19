@@ -16,39 +16,9 @@ struct DecksRootView: View {
             decksHeader
             Group {
                 if decks.isEmpty {
-                    ScrollView {
-                        ContentUnavailableView {
-                            Label("No Decks", systemImage: "rectangle.on.rectangle.angled")
-                        } description: {
-                            Text("Build your first deck.")
-                        } actions: {
-                            Button("Create a Deck") { handleCreateTap() }
-                                .buttonStyle(.borderedProminent)
-                        }
-                        .frame(minHeight: 300)
-                    }
+                    emptyDecksView
                 } else {
-                    ScrollView {
-                        LazyVStack(spacing: 0) {
-                            ForEach(decks) { deck in
-                                NavigationLink(value: deck) {
-                                    DeckListRow(deck: deck)
-                                        .padding(.horizontal, 16)
-                                        .padding(.vertical, 10)
-                                }
-                                .buttonStyle(.plain)
-                                .contextMenu {
-                                    Button(role: .destructive) {
-                                        deckToDelete = deck
-                                        showDeleteConfirm = true
-                                    } label: {
-                                        Label("Delete Deck", systemImage: "trash")
-                                    }
-                                }
-                                Divider().padding(.leading, 16)
-                            }
-                        }
-                    }
+                    decksListView
                 }
             }
         }
@@ -72,6 +42,44 @@ struct DecksRootView: View {
             Button("Cancel", role: .cancel) {}
         } message: { deck in
             Text("This will permanently remove \"\(deck.title)\".")
+        }
+    }
+
+    private var emptyDecksView: some View {
+        ScrollView {
+            ContentUnavailableView {
+                Label("No Decks", systemImage: "rectangle.on.rectangle.angled")
+            } description: {
+                Text("Build your first deck.")
+            } actions: {
+                Button("Create a Deck") { handleCreateTap() }
+                    .buttonStyle(.borderedProminent)
+            }
+            .frame(minHeight: 300)
+        }
+    }
+
+    private var decksListView: some View {
+        ScrollView {
+            LazyVStack(spacing: 0) {
+                ForEach(decks) { deck in
+                    NavigationLink(value: deck) {
+                        DeckListRow(deck: deck)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 10)
+                    }
+                    .buttonStyle(.plain)
+                    .contextMenu {
+                        Button(role: .destructive) {
+                            deckToDelete = deck
+                            showDeleteConfirm = true
+                        } label: {
+                            Label("Delete Deck", systemImage: "trash")
+                        }
+                    }
+                    Divider().padding(.leading, 70) // Align divider past thumbnail
+                }
+            }
         }
     }
 
@@ -104,57 +112,75 @@ struct DecksRootView: View {
 }
 
 private struct DeckListRow: View {
+    @Environment(AppServices.self) private var services
     let deck: Deck
+    
+    @State private var thumbnailURL: URL?
 
     var body: some View {
         HStack(spacing: 12) {
-            RoundedRectangle(cornerRadius: 6, style: .continuous)
-                .fill(brandColor(deck.tcgBrand))
-                .frame(width: 6)
-                .frame(maxHeight: 44)
+            // Card Thumbnail Preview
+            ZStack {
+                if let thumbnailURL {
+                    CachedAsyncImage(url: thumbnailURL, targetSize: CGSize(width: 80, height: 112)) { img in
+                        img.resizable()
+                            .aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Color(uiColor: .systemGray6)
+                    }
+                } else {
+                    Color(uiColor: .systemGray6)
+                        .overlay {
+                            Image(systemName: "rectangle.portrait.badge.plus")
+                                .font(.caption)
+                                .foregroundStyle(.secondary.opacity(0.5))
+                        }
+                }
+            }
+            .frame(width: 40, height: 56)
+            .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 6, style: .continuous)
+                    .stroke(.black.opacity(0.1), lineWidth: 0.5)
+            }
+            .task {
+                if let cardID = deck.heroCardID,
+                   let card = await services.cardData.loadCard(masterCardId: cardID) {
+                    thumbnailURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
+                }
+            }
 
             VStack(alignment: .leading, spacing: 2) {
                 Text(deck.title)
-                    .font(.body.weight(.medium))
+                    .font(.body.weight(.bold))
                     .foregroundStyle(.primary)
+                
                 HStack(spacing: 6) {
                     Text(deck.tcgBrand.displayTitle)
                         .font(.caption)
                         .foregroundStyle(.secondary)
                     Text("·")
                         .foregroundStyle(.secondary)
-                    Text(deck.deckFormat.displayName)
+                    Text("\(deck.totalCardCount) Cards")
                         .font(.caption)
                         .foregroundStyle(.secondary)
-                    Text("·")
-                        .foregroundStyle(.secondary)
-                    Text("\(deck.totalCardCount) / \(deck.deckFormat.deckSize)")
-                        .font(.caption)
-                        .foregroundStyle(.secondary)
+                    
+                    if !deck.isValid {
+                        Text("·")
+                            .foregroundStyle(.secondary)
+                        Image(systemName: "exclamationmark.triangle.fill")
+                            .font(.system(size: 10))
+                            .foregroundStyle(.orange)
+                    }
                 }
             }
 
             Spacer()
-
-            Circle()
-                .fill(validityColor(deck))
-                .frame(width: 8, height: 8)
+            
+            Image(systemName: "chevron.right")
+                .font(.system(size: 13, weight: .bold))
+                .foregroundStyle(.quaternary)
         }
-    }
-
-    private func brandColor(_ brand: TCGBrand) -> Color {
-        switch brand {
-        case .pokemon:  return .red
-        case .onePiece: return .yellow
-        case .lorcana:  return .blue
-        }
-    }
-
-    private func validityColor(_ deck: Deck) -> Color {
-        let total = deck.totalCardCount
-        let target = deck.deckFormat.deckSize
-        if deck.isValid { return .green }
-        if total > target { return .red }
-        return Color(uiColor: .systemOrange)
     }
 }
+

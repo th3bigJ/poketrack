@@ -25,6 +25,10 @@ struct BinderDetailView: View {
     @State private var viewingSlot: BinderSlot? = nil
     @State private var isPageTurning = false
     @State private var draggedSlotPosition: Int? = nil
+    /// Cached USD price per "cardID|variantKey" — refreshed whenever the slot
+    /// set or pricing provider changes. Used by the bottom stats bar to show
+    /// a live total value and by the page-info bar for per-page value.
+    @State private var slotUSDValues: [String: Double] = [:]
 
     private var layout: BinderPageLayout { binder.layout }
     private var headerIconColor: Color { colorScheme == .dark ? .white : .black }
@@ -57,9 +61,12 @@ struct BinderDetailView: View {
             if isEditing {
                 editContent
             } else {
+                pageInfoBar
                 viewContent
+                bottomStatsBar
             }
         }
+        .background(Color(uiColor: .systemBackground))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
         .overlay {
@@ -73,6 +80,7 @@ struct BinderDetailView: View {
         .animation(.easeInOut(duration: 0.25), value: viewingSlot?.id)
         .onAppear { Task { await loadCards() } }
         .onChange(of: binder.slotList.count) { Task { await loadCards() } }
+        .onChange(of: cardsByID.count) { Task { await refreshSlotValues() } }
         .fullScreenCover(item: $slotPickerTarget) { target in
             BinderSlotPickerView(
                 startPosition: target.id,
@@ -134,7 +142,98 @@ struct BinderDetailView: View {
                 .opacity(0.8)
         }
         .padding(.horizontal, 16)
+        .padding(.top, 8)
+        .padding(.bottom, 6)
+    }
+
+    // MARK: - Page info bar (Page X of Y · Page value)
+
+    private var pageInfoBar: some View {
+        HStack {
+            Text("PAGE \(currentPage + 1) OF \(pageCount)")
+                .font(.caption2.weight(.semibold))
+                .tracking(0.8)
+                .foregroundStyle(.secondary)
+            Spacer()
+            HStack(spacing: 4) {
+                Text("Page value")
+                    .font(.caption2)
+                    .foregroundStyle(.secondary)
+                Text(formattedPageValue)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(.primary)
+            }
+        }
+        .padding(.horizontal, 20)
         .padding(.vertical, 8)
+        .background(Color(uiColor: .secondarySystemBackground).opacity(0.5))
+    }
+
+    // MARK: - Bottom stats bar (Cards · Value · Slots + Add Card)
+
+    private var bottomStatsBar: some View {
+        HStack(spacing: 0) {
+            statCell(value: "\(filledCardCount)", label: "CARDS")
+            statDivider
+            statCell(value: formattedTotalValue, label: "VALUE")
+            statDivider
+            statCell(value: "\(totalSlotCount)", label: "SLOTS")
+
+            Spacer(minLength: 8)
+
+            Button {
+                let target = firstEmptyPosition ?? 0
+                slotPickerTarget = BinderSlotPickerTarget(id: target)
+            } label: {
+                HStack(spacing: 6) {
+                    Image(systemName: "plus")
+                        .font(.system(size: 13, weight: .bold))
+                    Text("Add Card")
+                        .font(.subheadline.weight(.semibold))
+                }
+                .foregroundStyle(.white)
+                .padding(.horizontal, 18)
+                .padding(.vertical, 11)
+                .background(
+                    Capsule(style: .continuous)
+                        .fill(Color.black)
+                )
+                .shadow(color: .black.opacity(0.22), radius: 4, x: 0, y: 2)
+            }
+            .buttonStyle(.plain)
+        }
+        .padding(.horizontal, 16)
+        .padding(.top, 10)
+        .padding(.bottom, 8)
+        .background(
+            Rectangle()
+                .fill(.ultraThinMaterial)
+                .overlay(alignment: .top) {
+                    Divider().opacity(0.6)
+                }
+        )
+    }
+
+    private func statCell(value: String, label: String) -> some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(value)
+                .font(.title3.weight(.bold))
+                .foregroundStyle(.primary)
+                .minimumScaleFactor(0.8)
+                .lineLimit(1)
+            Text(label)
+                .font(.caption2.weight(.medium))
+                .tracking(0.6)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, 4)
+    }
+
+    private var statDivider: some View {
+        Rectangle()
+            .fill(Color.secondary.opacity(0.18))
+            .frame(width: 1, height: 26)
     }
 
     // MARK: - View mode (page-turn)
@@ -169,7 +268,11 @@ struct BinderDetailView: View {
             pageCount: pageCount,
             currentPage: $currentPage,
             isTurning: $isPageTurning,
-            pageBackgroundColor: UIColor(binder.resolvedColour)
+            // Use the system background so the rounded corners of the binder
+            // surface read as distinct cut-outs (a "card" against the page
+            // chrome) instead of blending into a same-colour rectangle.
+            // Also gives the page-curl effect realistic white page-back.
+            pageBackgroundColor: .systemBackground
         ) { pageIdx in
             pageSurface(pageIdx: pageIdx, pageSize: pageSize)
         }
@@ -177,16 +280,16 @@ struct BinderDetailView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
 
-    private var pageBackColor: Color {
-        // High-contrast pages help cards pop, but we add a slight warmth to white pages
-        colorScheme == .dark ? .black : Color(white: 0.98)
-    }
-
     private func binderPageSize(in available: CGSize) -> CGSize {
         let horizontalPadding: CGFloat = 32
         let verticalPadding: CGFloat = 24
         let slotSpacing: CGFloat = 8
-        let gridPadding: CGFloat = 24
+        // These must match the chrome inside `pageSurface`:
+        //   .padding(.horizontal, 14)  →  28pt total
+        //   .padding(.top, 14) + Spacer(min 6) + swipeHint (~20) + .padding(.bottom, 10) ≈ 50pt
+        // Plus a few pts of breathing room so cards never touch the rounded edges.
+        let surfaceHorizontalChrome: CGFloat = 28
+        let surfaceVerticalChrome: CGFloat = 60
         let cardAspectRatio: CGFloat = 5.0 / 7.0
 
         let maxWidth = max(available.width - horizontalPadding, 240)
@@ -205,13 +308,21 @@ struct BinderDetailView: View {
 
         let totalGridSpacingX = CGFloat(max(cols - 1, 0)) * slotSpacing
         let totalGridSpacingY = CGFloat(max(rows - 1, 0)) * slotSpacing
-        let contentWidth = max(width - gridPadding, 120)
+        let contentWidth = max(width - surfaceHorizontalChrome, 120)
         let cellWidth = (contentWidth - totalGridSpacingX) / CGFloat(cols)
         let gridHeight = cellWidth / cardAspectRatio * CGFloat(rows) + totalGridSpacingY
-        let desiredHeight = gridHeight + gridPadding
+        let desiredHeight = gridHeight + surfaceVerticalChrome
 
         if desiredHeight < height {
             height = desiredHeight
+        } else {
+            // Grid wants more vertical room than is available — shrink cells so
+            // the whole thing fits without clipping the top/bottom rows.
+            let availableForGrid = height - surfaceVerticalChrome
+            let shrunkCellHeight = max((availableForGrid - totalGridSpacingY) / CGFloat(rows), 40)
+            let shrunkCellWidth = shrunkCellHeight * cardAspectRatio
+            let shrunkContentWidth = shrunkCellWidth * CGFloat(cols) + totalGridSpacingX
+            width = min(width, shrunkContentWidth + surfaceHorizontalChrome)
         }
 
         return CGSize(width: width, height: height)
@@ -219,53 +330,138 @@ struct BinderDetailView: View {
 
     private func pageSurface(pageIdx: Int, pageSize: CGSize) -> some View {
         let positions = positions(for: pageIdx)
+        // Corner radius for the binder playmat. Bumped from 14 → 22 to match
+        // the mockup's pronounced, card-like rounding — the smaller radius read
+        // as barely-rounded against the page chrome.
+        let surfaceRadius: CGFloat = 22
+
         return ZStack {
-            // Textured Page Background
+            // 1. Base: binder colour + procedural cross-hatch weave (felt/baize).
+            //    We override to `.linen` here so the *interior* of every binder
+            //    has a consistent playmat texture regardless of cover material.
             BinderTextureView(
                 colourName: binder.colour,
-                texture: binder.textureKind,
+                texture: .linen,
                 seed: binder.textureSeed,
                 compact: false
             )
+            // Slight all-over darkening so cards pop against the surface.
+            .overlay(Color.black.opacity(0.22))
+            // Radial vignette — centre lighter, edges darker. Makes the
+            // surface feel recessed and focuses the eye on the cards.
             .overlay {
-                Color.black.opacity(0.18) // Darkened to let cards stand out
+                RadialGradient(
+                    gradient: Gradient(stops: [
+                        .init(color: .black.opacity(0), location: 0.0),
+                        .init(color: .black.opacity(0.14), location: 0.6),
+                        .init(color: .black.opacity(0.30), location: 1.0)
+                    ]),
+                    center: .center,
+                    startRadius: 40,
+                    endRadius: max(pageSize.width, pageSize.height) * 0.65
+                )
             }
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .shadow(color: .black.opacity(0.15), radius: 8, x: 2, y: 4)
+            // Faint inner border, a few pixels in — suggests material wear
+            // along the playmat edge.
+            .overlay {
+                RoundedRectangle(cornerRadius: surfaceRadius - 4, style: .continuous)
+                    .inset(by: 4)
+                    .stroke(Color.white.opacity(0.05), lineWidth: 1)
+            }
+            .clipShape(RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous))
+            // Inset shadow on all four edges to reinforce the recessed feel.
+            .overlay {
+                RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
+                    .stroke(Color.black.opacity(0.55), lineWidth: 6)
+                    .blur(radius: 5)
+                    .mask(
+                        RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
+                    )
+                    .allowsHitTesting(false)
+            }
+            // Soft drop shadow under the surface.
+            .shadow(color: .black.opacity(0.18), radius: 10, x: 0, y: 6)
 
-            LazyVGrid(
-                columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: cols),
-                spacing: 8
-            ) {
-                ForEach(positions, id: \.self) { pos in
-                    let slot = sortedSlots.first { $0.position == pos }
-                    Group {
-                        if let slot {
-                            viewSlotCell(slot: slot)
-                        } else {
-                            // Integrated "pocket" look for empty slots
-                            RoundedRectangle(cornerRadius: 6, style: .continuous)
-                                .fill(.black.opacity(0.15))
-                                .overlay {
-                                    RoundedRectangle(cornerRadius: 6, style: .continuous)
-                                        .stroke(.white.opacity(0.05), lineWidth: 1)
-                                }
+            // 2. Card grid
+            VStack(spacing: 0) {
+                LazyVGrid(
+                    columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: cols),
+                    spacing: 8
+                ) {
+                    ForEach(positions, id: \.self) { pos in
+                        let slot = sortedSlots.first { $0.position == pos }
+                        Group {
+                            if let slot {
+                                viewSlotCell(slot: slot)
+                            } else {
+                                emptySlotCell(position: pos)
+                            }
                         }
+                        .aspectRatio(5/7, contentMode: .fit)
                     }
-                    .aspectRatio(5/7, contentMode: .fit)
                 }
-            }
-            .padding(14)
+                .padding(.horizontal, 14)
+                .padding(.top, 14)
 
+                Spacer(minLength: 6)
+
+                // 3. Faint swipe hint (present enough to onboard, invisible enough
+                //    to not distract from the cards).
+                swipeHint
+                    .padding(.bottom, 10)
+            }
+
+            // 4. Page-turn dimming overlay (existing behaviour)
             if isPageTurning {
-                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                RoundedRectangle(cornerRadius: surfaceRadius, style: .continuous)
                     .fill(Color.black.opacity(colorScheme == .dark ? 0.22 : 0.12))
-                    .padding(12)
                     .allowsHitTesting(false)
             }
         }
         .frame(width: pageSize.width, height: pageSize.height)
         .clipped()
+    }
+
+    private var swipeHint: some View {
+        HStack(spacing: 10) {
+            Image(systemName: "chevron.left")
+                .font(.system(size: 9, weight: .semibold))
+            Text("SWIPE TO TURN PAGE")
+                .font(.system(size: 10, weight: .medium))
+                .tracking(2.0)
+            Image(systemName: "chevron.right")
+                .font(.system(size: 9, weight: .semibold))
+        }
+        .foregroundStyle(Color.white.opacity(0.20))
+        .frame(maxWidth: .infinity)
+    }
+
+    @ViewBuilder
+    private func emptySlotCell(position: Int) -> some View {
+        let cornerRadius: CGFloat = 6
+        ZStack {
+            // Dark, semi-transparent fill — gives the slot a "pocket" presence
+            // against the recessed surface without competing with filled cards.
+            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                .fill(Color.black.opacity(0.12))
+
+            // Dashed boundary so an empty slot reads as "a place for a card".
+            RoundedRectangle(cornerRadius: cornerRadius, style: .continuous)
+                .strokeBorder(
+                    Color.white.opacity(0.12),
+                    style: StrokeStyle(lineWidth: 1.5, dash: [4, 3])
+                )
+
+            // Faint plus/cross formed by two thin lines.
+            ZStack {
+                Rectangle()
+                    .fill(Color.white.opacity(0.07))
+                    .frame(width: 14, height: 1)
+                Rectangle()
+                    .fill(Color.white.opacity(0.07))
+                    .frame(width: 1, height: 14)
+            }
+        }
     }
 
     @ViewBuilder
@@ -278,17 +474,7 @@ struct BinderDetailView: View {
             if !isEditing { viewingSlot = slot }
         } label: {
             ZStack(alignment: .topTrailing) {
-                RoundedRectangle(cornerRadius: 6, style: .continuous)
-                    .fill(pageBackColor)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 6, style: .continuous)
-                            .fill(pageBackColor.opacity(0.98))
-                    }
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 6, style: .continuous)
-                            .strokeBorder(Color.primary.opacity(colorScheme == .dark ? 0.14 : 0.08), lineWidth: 0.5)
-                    }
-
+                // Card back/face
                 CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 220, height: 308)) { img in
                     img.resizable().scaledToFit()
                 } placeholder: {
@@ -296,7 +482,21 @@ struct BinderDetailView: View {
                         .fill(Color(uiColor: .systemGray5))
                 }
                 .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
-                .shadow(color: .black.opacity(0.15), radius: 2, x: 1, y: 1)
+
+                // Inset top highlight — simulates light catching the card edge.
+                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    .inset(by: 0.5)
+                    .stroke(
+                        LinearGradient(
+                            colors: [
+                                Color.white.opacity(0.22),
+                                Color.white.opacity(0.0)
+                            ],
+                            startPoint: .top,
+                            endPoint: .center
+                        ),
+                        lineWidth: 1
+                    )
 
                 Image(systemName: isOwned ? "checkmark.circle.fill" : "questionmark.circle.fill")
                     .font(.system(size: 11, weight: .bold))
@@ -305,7 +505,7 @@ struct BinderDetailView: View {
                     .padding(3)
             }
         }
-        .buttonStyle(.plain)
+        .buttonStyle(BinderCardButtonStyle())
     }
 
     // MARK: - Edit mode
@@ -504,10 +704,121 @@ struct BinderDetailView: View {
             }
         }
         cardsByID = map
+        await refreshSlotValues()
+    }
+
+    /// Re-fetches the USD market price for every filled slot, keyed by
+    /// `cardID|variantKey`. Called on load and whenever slot membership changes
+    /// so the bottom stats bar / page value stay live without heavy work on
+    /// every render.
+    private func refreshSlotValues() async {
+        var values: [String: Double] = [:]
+        for slot in binder.slotList {
+            guard let card = cardsByID[slot.cardID] else { continue }
+            if let usd = await services.pricing.usdPriceForVariant(
+                for: card,
+                variantKey: slot.variantKey
+            ) {
+                values[slotValueKey(slot)] = usd
+            }
+        }
+        slotUSDValues = values
+    }
+
+    private func slotValueKey(_ slot: BinderSlot) -> String {
+        "\(slot.cardID)|\(slot.variantKey)"
     }
 
     static func binderSwiftUIColor(_ name: String) -> Color {
         BinderColourPalette.color(named: name)
+    }
+
+    // MARK: - Stats helpers
+
+    private var filledCardCount: Int { binder.slotList.count }
+
+    private var totalSlotCount: Int {
+        if layout.isFreeScroll {
+            return max(filledCardCount, slotsPerPage)
+        }
+        return slotsPerPage * pageCount
+    }
+
+    private var totalUSDValue: Double {
+        binder.slotList.reduce(0) { acc, slot in
+            acc + (slotUSDValues[slotValueKey(slot)] ?? 0)
+        }
+    }
+
+    private var pageUSDValue: Double {
+        let positions = Set(positions(for: currentPage))
+        return binder.slotList
+            .filter { positions.contains($0.position) }
+            .reduce(0) { acc, slot in
+                acc + (slotUSDValues[slotValueKey(slot)] ?? 0)
+            }
+    }
+
+    private var formattedTotalValue: String {
+        formatMoney(usd: totalUSDValue)
+    }
+
+    private var formattedPageValue: String {
+        formatMoney(usd: pageUSDValue)
+    }
+
+    private func formatMoney(usd: Double) -> String {
+        let display = services.priceDisplay.currency
+        // Round to whole units for the stats bar so the three numbers stay
+        // visually balanced; per-page uses the same precision the rest of the
+        // app does (2dp) so small values still read accurately.
+        let amount = display == .gbp ? usd * services.pricing.usdToGbp : usd
+        let formatted: String
+        if amount >= 1000 {
+            formatted = String(format: "%.0f", amount)
+        } else {
+            formatted = String(format: "%.2f", amount)
+        }
+        return "\(display.symbol)\(formatted)"
+    }
+
+    private var firstEmptyPosition: Int? {
+        let used = Set(binder.slotList.map(\.position))
+        // Prefer an empty slot on the current page so "Add Card" reads as
+        // context-aware; fall back to the first empty slot overall.
+        let pagePositions = positions(for: currentPage)
+        if let empty = pagePositions.first(where: { !used.contains($0) }) {
+            return empty
+        }
+        let maxPosition = (used.max() ?? -1) + 1
+        for i in 0...max(maxPosition, slotsPerPage * pageCount) {
+            if !used.contains(i) { return i }
+        }
+        return maxPosition
+    }
+}
+
+// MARK: - Button style for cards (lift on press)
+
+private struct BinderCardButtonStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 1.02 : 1.0)
+            .offset(y: configuration.isPressed ? -2 : 0)
+            // Primary shadow (long, soft) + secondary (short, contact).
+            .shadow(
+                color: .black.opacity(configuration.isPressed ? 0.55 : 0.50),
+                radius: configuration.isPressed ? 10 : 8,
+                x: 0,
+                y: configuration.isPressed ? 6 : 3
+            )
+            .shadow(
+                color: .black.opacity(0.40),
+                radius: 2,
+                x: 0,
+                y: 1
+            )
+            .animation(.spring(response: 0.28, dampingFraction: 0.72), value: configuration.isPressed)
     }
 }
 
@@ -739,17 +1050,18 @@ struct BinderStylePickerSheet: View {
                         texture: binder.textureKind,
                         seed: binder.textureSeed,
                         peekingCardURLs: cardURLs,
+                        showCardPreview: binder.showCardPreview,
                         compact: false
                     )
                     .padding(.horizontal, 16)
-                    
+
                     VStack(alignment: .leading, spacing: 20) {
                         // Texture Selection
                         VStack(alignment: .leading, spacing: 12) {
                             Text("TEXTURE")
                                 .font(.caption.bold())
                                 .foregroundStyle(.secondary)
-                            
+
                             Picker("Texture", selection: $binder.texture) {
                                 ForEach(BinderTexture.allCases) { tex in
                                     Text(tex.displayName).tag(tex.rawValue)
@@ -763,7 +1075,7 @@ struct BinderStylePickerSheet: View {
                             Text("COLOUR")
                                 .font(.caption.bold())
                                 .foregroundStyle(.secondary)
-                            
+
                             LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 6), spacing: 16) {
                                 ForEach(BinderColourPalette.pickerOptions, id: \.name) { swatch in
                                     Button {
@@ -783,6 +1095,27 @@ struct BinderStylePickerSheet: View {
                                     }
                                 }
                             }
+                        }
+
+                        // Cover Options — mirror of the create sheet's toggle.
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("COVER")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+
+                            Toggle(isOn: $binder.showCardPreview) {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Show cards on cover")
+                                        .font(.subheadline.weight(.medium))
+                                    Text("Preview the first few cards on the binder front")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            .tint(.accentColor)
+                            .padding(16)
+                            .background(Color(uiColor: .secondarySystemGroupedBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
                         }
                     }
                     .padding(.horizontal, 16)

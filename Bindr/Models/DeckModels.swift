@@ -300,6 +300,11 @@ enum DeckFormat: String, Codable, CaseIterable {
     }
 
     var isValid: Bool { validationIssues.isEmpty }
+
+    /// The ID of the first card in the deck, used for the "Hero Card" preview on the deck box.
+    var heroCardID: String? {
+        cardList.first?.cardID
+    }
 }
 
 @Model final class DeckCard {

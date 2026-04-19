@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// A premium representation of a binder cover, featuring procedural textures,
-/// a reinforced spine, and "peeking" card-back thumbnails on the right edge.
+/// a reinforced spine, and an optional fan of "peeking" card-back thumbnails.
 struct BinderCoverView: View {
     let title: String
     let subtitle: String?
@@ -9,10 +9,15 @@ struct BinderCoverView: View {
     let texture: BinderTexture
     let seed: Int
     let peekingCardURLs: [URL?]
-    
+
+    /// When `false`, the card fan is omitted and the cover shows only the
+    /// title (slightly larger, centred). User-facing toggle — the model stores
+    /// this as ``Binder/showCardPreview``.
+    var showCardPreview: Bool = true
+
     /// If true, the view uses smaller refinements suitable for list cells.
     var compact: Bool = false
-    
+
     var body: some View {
         ZStack(alignment: .leading) {
             // Main Binder Body (Tactile Material)
@@ -24,27 +29,57 @@ struct BinderCoverView: View {
             )
             .clipShape(RoundedRectangle(cornerRadius: compact ? 12 : 16, style: .continuous))
             .shadow(color: .black.opacity(0.15), radius: compact ? 4 : 8, x: 0, y: 4)
-            
-            // Centered Content (Cards + Text)
-            VStack(spacing: compact ? 8 : 12) {
-                // Card Fan
-                HStack(spacing: compact ? -35 : -50) {
-                    ForEach(0..<peekingCardURLs.count, id: \.self) { index in
-                        peekingCard(url: peekingCardURLs[index], index: index)
+
+            // Centered Content
+            Group {
+                if showCardPreview {
+                    VStack(spacing: compact ? 8 : 12) {
+                        // Card Fan
+                        HStack(spacing: compact ? -35 : -50) {
+                            ForEach(0..<peekingCardURLs.count, id: \.self) { index in
+                                peekingCard(url: peekingCardURLs[index], index: index)
+                            }
+                        }
+                        .padding(.top, compact ? 16 : 24)
+
+                        textContent
                     }
+                } else {
+                    // Clean cover — just the title, centred, slightly larger so
+                    // the material texture carries the premium feel on its own.
+                    titleOnlyContent
                 }
-                .padding(.top, compact ? 16 : 24)
-                
-                textContent
             }
             .frame(maxWidth: .infinity)
             .padding(.leading, compact ? 20 : 32)
-            
+
             // Spine Overlay (stays on left)
             spineOverlay
         }
         .frame(maxWidth: .infinity)
         .frame(height: compact ? 180 : 250) // Slightly taller to accommodate centered stacked layout
+    }
+
+    private var titleOnlyContent: some View {
+        VStack(alignment: .center, spacing: compact ? 4 : 6) {
+            Text(title.isEmpty ? "Binder name…" : title)
+                .font(compact ? .title3.bold() : .title.bold())
+                .foregroundStyle(.white)
+                .multilineTextAlignment(.center)
+                .lineLimit(2)
+                .minimumScaleFactor(0.7)
+                .opacity(title.isEmpty ? 0.5 : 1)
+                .shadow(color: .black.opacity(0.3), radius: 2, x: 0, y: 1)
+
+            if let subtitle {
+                Text(subtitle)
+                    .font(.system(size: compact ? 12 : 14, weight: .medium))
+                    .foregroundStyle(.white.opacity(0.7))
+                    .multilineTextAlignment(.center)
+                    .lineLimit(1)
+            }
+        }
+        .padding(.horizontal, compact ? 20 : 32)
     }
     
     
@@ -156,7 +191,7 @@ extension BinderCoverView {
         let urls: [URL?] = slots.map { slot in
             AppConfiguration.imageURL(relativePath: "\(slot.cardID)_low.png") // Placeholder logic, will refine in parent
         }
-        
+
         // Ensure we always have 3 slots (filled with nil if needed)
         var finalURLs = Array(urls)
         while finalURLs.count < 3 { finalURLs.append(nil) }
@@ -168,6 +203,7 @@ extension BinderCoverView {
             texture: binder.textureKind,
             seed: binder.textureSeed,
             peekingCardURLs: finalURLs,
+            showCardPreview: binder.showCardPreview,
             compact: compact
         )
     }

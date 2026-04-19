@@ -100,6 +100,7 @@ private struct BinderCardCell: View {
             texture: binder.textureKind,
             seed: binder.textureSeed,
             peekingCardURLs: cardURLs,
+            showCardPreview: binder.showCardPreview,
             compact: true
         )
         .task {

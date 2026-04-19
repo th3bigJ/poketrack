@@ -197,6 +197,11 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
     /// Material applied on top of ``colour``. Stored as the ``BinderTexture`` raw value.
     /// Default is `"smooth"` so binders saved before textures existed still render.
     var texture: String = BinderTexture.smooth.rawValue
+    /// When `true`, the binder cover shows the fanned peeking-card thumbnails
+    /// from the first few slots; when `false` the cover is a clean material
+    /// surface with just the title. User-toggleable from the create/edit
+    /// sheet. Defaults to `true` so existing binders keep their previews.
+    var showCardPreview: Bool = true
     var createdAt: Date = Date()
     /// CloudKit: to-many relationships must be optional.
     @Relationship(deleteRule: .cascade, inverse: \BinderSlot.binder)
@@ -206,13 +211,15 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
         title: String,
         pageLayout: BinderPageLayout,
         colour: String,
-        texture: BinderTexture = .leather
+        texture: BinderTexture = .leather,
+        showCardPreview: Bool = true
     ) {
         self.id = UUID()
         self.title = title
         self.pageLayout = pageLayout.rawValue
         self.colour = colour
         self.texture = texture.rawValue
+        self.showCardPreview = showCardPreview
         self.createdAt = Date()
     }
 

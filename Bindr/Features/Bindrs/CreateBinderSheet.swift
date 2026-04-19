@@ -18,6 +18,7 @@ struct CreateBinderSheet: View {
     @State private var layout = BinderPageLayout.fixed(rows: 3, columns: 3)
     @State private var colourName = "navy"
     @State private var texture = BinderTexture.leather
+    @State private var showCardPreview = true
 
     var body: some View {
         NavigationStack {
@@ -30,7 +31,8 @@ struct CreateBinderSheet: View {
                         colourName: colourName,
                         texture: texture,
                         seed: 1, // Fixed seed for creation preview
-                        peekingCardURLs: [nil, nil, nil]
+                        peekingCardURLs: [nil, nil, nil],
+                        showCardPreview: showCardPreview
                     )
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
@@ -131,6 +133,29 @@ struct CreateBinderSheet: View {
                             .background(Color(uiColor: .secondarySystemGroupedBackground))
                             .clipShape(RoundedRectangle(cornerRadius: 16))
                         }
+
+                        // 5. Cover Options — toggle the fanned card preview on
+                        //    the front of the binder. Some users prefer the
+                        //    clean material look; keep both options available.
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("COVER")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+
+                            Toggle(isOn: $showCardPreview) {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Show cards on cover")
+                                        .font(.subheadline.weight(.medium))
+                                    Text("Preview the first few cards on the binder front")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            .tint(.accentColor)
+                            .padding(16)
+                            .background(Color(uiColor: .secondarySystemGroupedBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                        }
                     }
                     .padding(.horizontal, 16)
                 }
@@ -158,7 +183,8 @@ struct CreateBinderSheet: View {
             title: name.trimmingCharacters(in: .whitespaces),
             pageLayout: layout,
             colour: colourName,
-            texture: texture
+            texture: texture,
+            showCardPreview: showCardPreview
         )
         modelContext.insert(binder)
         dismiss()
