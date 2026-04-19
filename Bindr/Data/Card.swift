@@ -105,6 +105,8 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
     let opCounter: Int?
     /// ONE PIECE: leader life points.
     let opLife: Int?
+    /// LORCANA: printed collector number used by scanner footer matcher.
+    let printedNumber: String?
     /// LORCANA: printing variant e.g. "normal", "holofoil", "coldFoil".
     let lcVariant: String?
     /// LORCANA: ink cost to play the card.
@@ -123,6 +125,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         case attacks, rules, subtype, weakness, resistance, retreatCost, flavorText, pricingVariants
         case tcgplayerProductId
         case opAttributes, opCost, opCounter, opLife
+        case printedNumber
         case lcVariant, lcCost, lcStrength, lcWillpower, lcLore
     }
 
@@ -171,6 +174,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         opCost = try c.decodeIfPresent(Int.self, forKey: .opCost)
         opCounter = try c.decodeIfPresent(Int.self, forKey: .opCounter)
         opLife = try c.decodeIfPresent(Int.self, forKey: .opLife)
+        printedNumber = try c.decodeIfPresent(String.self, forKey: .printedNumber)
         lcVariant = try c.decodeIfPresent(String.self, forKey: .lcVariant)
         lcCost = try c.decodeIfPresent(Int.self, forKey: .lcCost)
         lcStrength = try c.decodeIfPresent(Int.self, forKey: .lcStrength)
@@ -216,6 +220,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         try c.encodeIfPresent(opCost, forKey: .opCost)
         try c.encodeIfPresent(opCounter, forKey: .opCounter)
         try c.encodeIfPresent(opLife, forKey: .opLife)
+        try c.encodeIfPresent(printedNumber, forKey: .printedNumber)
         try c.encodeIfPresent(lcVariant, forKey: .lcVariant)
         try c.encodeIfPresent(lcCost, forKey: .lcCost)
         try c.encodeIfPresent(lcStrength, forKey: .lcStrength)
@@ -261,6 +266,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         opCost: Int? = nil,
         opCounter: Int? = nil,
         opLife: Int? = nil,
+        printedNumber: String? = nil,
         lcVariant: String? = nil,
         lcCost: Int? = nil,
         lcStrength: Int? = nil,
@@ -303,6 +309,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         self.opCost = opCost
         self.opCounter = opCounter
         self.opLife = opLife
+        self.printedNumber = printedNumber
         self.lcVariant = lcVariant
         self.lcCost = lcCost
         self.lcStrength = lcStrength

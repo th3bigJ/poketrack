@@ -42,6 +42,12 @@ enum CardOCRFieldExtractor {
         var effectText: String?
     }
 
+    struct LorcanaExtractedFields {
+        var name: String?
+        /// Raw footer-ish code fragments pulled from OCR, e.g. `11/204`, `3/P1`, `D23`.
+        var codeCandidates: [String]
+    }
+
     // MARK: - ONE PIECE collector id normalization
 
     /// Normalizes printed / OCR’d collector text to `SET-NNN`, where `SET` is the prefix before `-` (with stray trailing letters stripped)
@@ -81,6 +87,11 @@ enum CardOCRFieldExtractor {
     private static let setNumberRegex = try! NSRegularExpression(pattern: #"\b(\d{1,4}/\d{1,4})\b"#)
     /// Every `NN/NNN`-like substring in a blob (footer / flavor often garbled but still contains the real fraction).
     private static let looseFractionRegex = try! NSRegularExpression(pattern: #"(\d{2,3}/\d{2,3})"#)
+    /// Lorcana footer fragments such as `11/204`, `3/P1`, `D23`, `P2`.
+    private static let lorcanaFooterTokenRegex = try! NSRegularExpression(
+        pattern: #"\b([A-Z0-9]{1,4}/[A-Z0-9]{1,4}|[A-Z]{1,3}\d{1,3}|\d{1,4})\b"#,
+        options: .caseInsensitive
+    )
 
     /// "HP 120", "HP120", "HP: 120"
     private static let hpLeadingRegex = try! NSRegularExpression(pattern: #"(?i)HP\s*:?\s*(\d{2,4})\b"#)
@@ -180,6 +191,25 @@ enum CardOCRFieldExtractor {
         return Array(found).sorted()
     }
 
+    static func extractLorcanaCodeCandidates(from rawLines: [String]) -> [String] {
+        let blob = rawLines.joined(separator: " ")
+        guard !blob.isEmpty else { return [] }
+
+        var found = Set<String>()
+        let nsBlob = blob as NSString
+        let full = NSRange(location: 0, length: nsBlob.length)
+
+        lorcanaFooterTokenRegex.enumerateMatches(in: blob, options: [], range: full) { match, _, _ in
+            guard let match, match.numberOfRanges >= 2,
+                  let r = Range(match.range(at: 1), in: blob) else { return }
+            let token = String(blob[r]).trimmingCharacters(in: .whitespacesAndNewlines)
+            guard isLikelyLorcanaCodeToken(token) else { return }
+            found.insert(token.uppercased())
+        }
+
+        return Array(found).sorted()
+    }
+
     /// Removes **basic** / **basis** and extra spaces from a string used for **search** (raw OCR lines unchanged).
     static func filterSearchNoise(_ text: String?) -> String? {
         guard var t = text?.trimmingCharacters(in: .whitespacesAndNewlines), !t.isEmpty else { return nil }
@@ -273,6 +303,22 @@ enum CardOCRFieldExtractor {
             subtype: resolvedIdentity.subtype,
             cardNumber: cardNumber,
             effectText: extractOnePieceEffectHint(from: effectLines)
+        )
+    }
+
+    static func extractLorcana(from observations: [VNRecognizedTextObservation]) -> LorcanaExtractedFields {
+        let lines: [OCRLine] = observations.compactMap { obs in
+            guard let recognized = obs.topCandidates(1).first else { return nil }
+            let text = recognized.string.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard !text.isEmpty else { return nil }
+            return OCRLine(text: text, boundingBox: obs.boundingBox)
+        }
+        guard !lines.isEmpty else {
+            return LorcanaExtractedFields(name: nil, codeCandidates: [])
+        }
+        return LorcanaExtractedFields(
+            name: extractLorcanaName(from: lines),
+            codeCandidates: extractLorcanaCodeCandidates(from: lines.map(\.text))
         )
     }
 
@@ -404,6 +450,48 @@ enum CardOCRFieldExtractor {
         return pickBestNameLine(from: candidates)
     }
 
+    private static func extractLorcanaName(from lines: [OCRLine]) -> String? {
+        let candidates = lines.compactMap { line -> (text: String, score: CGFloat)? in
+            let raw = line.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard raw.count >= 3, raw.count <= 34 else { return nil }
+
+            let lower = raw.lowercased()
+            let ns = raw as NSString
+            let range = NSRange(location: 0, length: ns.length)
+
+            if setNumberRegex.firstMatch(in: raw, range: range) != nil { return nil }
+            if raw.contains("/") { return nil }
+            if lower == "en" || lower == "location" { return nil }
+            if lower.contains("disney lorcana") || lower == "disney" { return nil }
+            if lower.contains("storyborn") || lower.contains("dreamborn") || lower.contains("floodborn") { return nil }
+            if lower.contains("bodyguard") || lower.contains("challenge") || lower.contains("please respect") { return nil }
+            if lower.contains("illus") || lower.contains("artist") || lower.contains("copyright") { return nil }
+            if lineLooksLikeScriptNoise(raw) { return nil }
+
+            let letters = raw.filter(\.isLetter)
+            guard letters.count >= 3 else { return nil }
+
+            let uppercaseRatio: CGFloat = {
+                let uppers = letters.filter(\.isUppercase).count
+                return CGFloat(uppers) / CGFloat(max(letters.count, 1))
+            }()
+            let wordCount = raw.split(whereSeparator: \.isWhitespace).count
+            let y = line.midY
+
+            var score = line.area * 6.0
+            if y >= 0.18 && y <= 0.62 { score += 1.5 }
+            if y >= 0.24 && y <= 0.48 { score += 0.55 }
+            if uppercaseRatio >= 0.65 { score += 0.45 }
+            if wordCount <= 4 { score += 0.25 }
+            if raw.rangeOfCharacter(from: .decimalDigits) != nil { score -= 0.8 }
+            if raw.count > 24 { score -= 0.35 }
+
+            return (raw, score)
+        }
+
+        return candidates.max(by: { $0.score < $1.score })?.text
+    }
+
     // MARK: - Center (Pokémon attacks / Trainer rules)
 
     /// Collects text from the middle of the frame for catalog matching (`Card.attacks` or long `Card.rules`).
@@ -500,6 +588,17 @@ enum CardOCRFieldExtractor {
             return (u >= 65 && u <= 90) || (u >= 97 && u <= 122)
         }
         return Double(basicLatin.count) / Double(letters.count) < 0.72
+    }
+
+    private static func isLikelyLorcanaCodeToken(_ token: String) -> Bool {
+        let upper = token.uppercased()
+        if upper == "EN" { return false }
+        if upper.count == 1, upper.allSatisfy(\.isNumber) { return false }
+        if upper.contains("/") { return true }
+        if upper.hasPrefix("P"), upper.dropFirst().allSatisfy(\.isNumber) { return true }
+        if upper.allSatisfy(\.isNumber), let value = Int(upper), value <= 9999 { return true }
+        if upper.range(of: #"^[A-Z]{1,3}\d{1,3}$"#, options: .regularExpression) != nil { return true }
+        return false
     }
 
     /// Prefer highest on card (max midY), then leftmost, then largest glyph area (title font).

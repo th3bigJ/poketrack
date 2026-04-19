@@ -143,7 +143,7 @@ final class CatalogStore: @unchecked Sendable {
     /// `lorcanaCardSchemaVersion` so cached SQLite rows are invalidated and sync re-imports cards.
     private func migrateLorcanaCardSchemaIfNeededLocked() throws {
         guard let db else { throw CatalogStoreError.notOpen }
-        let currentVersion = 1
+        let currentVersion = 2
         var stmt: OpaquePointer?
         defer { sqlite3_finalize(stmt) }
         guard sqlite3_prepare_v2(db, "SELECT value FROM sync_meta WHERE key = 'lorcana_card_schema_version' LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else { return }

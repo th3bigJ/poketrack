@@ -35,6 +35,24 @@ struct ScanResult: Identifiable {
 
 @Observable
 final class CardScannerViewModel: NSObject, @unchecked Sendable {
+    private struct LorcanaOCRPass {
+        let label: String
+        let observations: [VNRecognizedTextObservation]
+        let fields: CardOCRFieldExtractor.LorcanaExtractedFields
+        let rawLines: [String]
+
+        var signalScore: Int {
+            var score = 0
+            if let name = fields.name, !name.isEmpty {
+                score += 100
+                score += min(name.count, 24)
+            }
+            score += min(fields.codeCandidates.count, 6) * 12
+            score += min(rawLines.count, 12)
+            return score
+        }
+    }
+
     // MARK: - Public state
 
     var session = AVCaptureSession()
@@ -276,6 +294,11 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             Task { [weak self] in
                 await self?.performOnePieceOCR(on: correctedCG)
             }
+        } else if scanBrand == .lorcana {
+            let correctedCG = preprocessCardForOCR(croppedCG) ?? croppedCG
+            Task { [weak self] in
+                await self?.performLorcanaOCR(on: correctedCG)
+            }
         } else {
             let ocrCGImage = preprocessCardForOCR(croppedCG) ?? croppedCG
             performOCR(on: ocrCGImage)
@@ -289,6 +312,30 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
         async let effectObs = recognizeText(in: effectCG)
         let (footerObservations, effectObservations) = await (footerObs, effectObs)
         handleOnePieceTextObservations(footerObservations, effectObservations: effectObservations)
+    }
+
+    private func performLorcanaOCR(on correctedCG: CGImage) async {
+        let variants: [(String, CGImage)] = [
+            ("upright", correctedCG),
+            ("rotateCW", correctedCG.rotated90(clockwise: true) ?? correctedCG),
+            ("rotateCCW", correctedCG.rotated90(clockwise: false) ?? correctedCG),
+            ("rotate180", correctedCG.rotated180() ?? correctedCG),
+        ]
+
+        var passes: [LorcanaOCRPass] = []
+        var seenKeys = Set<String>()
+
+        for (label, image) in variants {
+            let key = "\(image.width)x\(image.height)-\(label)"
+            guard seenKeys.insert(key).inserted else { continue }
+            let observations = await recognizeText(in: image)
+            guard !observations.isEmpty else { continue }
+            let rawLines = CardOCRFieldExtractor.sortedLinesForDebug(from: observations)
+            let fields = CardOCRFieldExtractor.extractLorcana(from: observations)
+            passes.append(LorcanaOCRPass(label: label, observations: observations, fields: fields, rawLines: rawLines))
+        }
+
+        handleLorcanaTextObservations(passes)
     }
 
     private func performOCR(on ocrCGImage: CGImage) {
@@ -429,6 +476,14 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             handleOnePieceTextObservations(observations)
             return
         }
+        if scanBrand == .lorcana {
+            let rawLines = CardOCRFieldExtractor.sortedLinesForDebug(from: observations)
+            let fields = CardOCRFieldExtractor.extractLorcana(from: observations)
+            handleLorcanaTextObservations([
+                LorcanaOCRPass(label: "upright", observations: observations, fields: fields, rawLines: rawLines)
+            ])
+            return
+        }
 
         let sortedLines = CardOCRFieldExtractor.sortedLinesForDebug(from: observations)
         let fields = CardOCRFieldExtractor.extract(from: observations)
@@ -466,6 +521,38 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
                 illustrator: fields.illustrator,
                 centerHint: fields.centerSearchHint,
                 numberCandidates: numberCandidates,
+                rawOCRBlob: rawBlob
+            )
+        }
+    }
+
+    private func handleLorcanaTextObservations(_ passes: [LorcanaOCRPass]) {
+        guard let bestPass = passes.max(by: { $0.signalScore < $1.signalScore }) else {
+            DispatchQueue.main.async { [weak self] in
+                self?.scanState = .idle
+                self?.lastErrorMessage = "No text found. Try more light or a closer shot."
+            }
+            return
+        }
+
+        let hasSignal = [
+            bestPass.fields.name.map { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty } ?? false,
+            !bestPass.fields.codeCandidates.isEmpty
+        ].contains(true)
+
+        guard hasSignal else {
+            DispatchQueue.main.async { [weak self] in
+                self?.scanState = .idle
+                self?.lastErrorMessage = "Could not read the Lorcana title or footer. Try again."
+            }
+            return
+        }
+
+        let rawBlob = bestPass.rawLines.joined(separator: "\n")
+        Task { [weak self] in
+            await self?.runSearchLorcana(
+                cardName: bestPass.fields.name,
+                codeCandidates: bestPass.fields.codeCandidates,
                 rawOCRBlob: rawBlob
             )
         }
@@ -629,6 +716,200 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
             if !exactHP.isEmpty { deduped = exactHP }
         }
         return deduped
+    }
+
+    private func runSearchLorcana(
+        cardName: String?,
+        codeCandidates: [String],
+        rawOCRBlob: String?
+    ) async {
+        guard let service = cardDataService else { return }
+        let brand = TCGBrand.lorcana
+
+        let rawName = cardName?.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanedName = Self.cleanedOCRName(rawName)
+        let query = cleanedName ?? rawName
+
+        var pool: [Card] = []
+        if let query, !query.isEmpty {
+            pool = await service.searchByName(query: query, catalogBrand: brand)
+            if pool.isEmpty {
+                pool = await service.search(query: query, catalogBrand: brand)
+            }
+            if pool.isEmpty {
+                pool = await service.searchSoftTokenMatch(query: query, catalogBrand: brand)
+            }
+        }
+
+        if pool.isEmpty {
+            pool = await mixedFallbackPool(
+                service: service,
+                cleanedName: cleanedName,
+                hp: nil,
+                setNumber: nil,
+                illustrator: nil,
+                centerHint: nil,
+                catalogBrand: brand
+            )
+        }
+
+        let sets = await service.catalogSets(for: brand)
+        let setByCode = Dictionary(uniqueKeysWithValues: sets.map { ($0.setCode, $0) })
+        let normalizedBlobTokens = lorcanaOCRTokens(rawOCRBlob: rawOCRBlob, codeCandidates: codeCandidates)
+
+        let ranked = pool.sorted { a, b in
+            let sa = lorcanaRankScore(
+                card: a,
+                set: setByCode[a.setCode],
+                ocrName: query,
+                ocrTokens: normalizedBlobTokens
+            )
+            let sb = lorcanaRankScore(
+                card: b,
+                set: setByCode[b.setCode],
+                ocrName: query,
+                ocrTokens: normalizedBlobTokens
+            )
+            if sa != sb { return sa > sb }
+            return a.masterCardId < b.masterCardId
+        }
+
+        guard let top = ranked.first else {
+            await MainActor.run { [weak self] in
+                self?.scanState = .idle
+                self?.lastErrorMessage = "No Lorcana catalog match for that scan. Try again."
+            }
+            return
+        }
+
+        let alternatives = Array(ranked.dropFirst().prefix(30))
+        await MainActor.run { [weak self] in
+            guard let self else { return }
+            scanState = .idle
+            lastErrorMessage = nil
+            autoCaptureFrameCount = 0
+            lastAutoCaptureTime = Date()
+            if let newest = scanResults.first, newest.card.masterCardId == top.masterCardId {
+                return
+            }
+            let result = ScanResult(card: top, alternativeCards: alternatives)
+            scanResults.insert(result, at: 0)
+            onMatch?(result)
+        }
+    }
+
+    private func lorcanaRankScore(card: Card, set: TCGSet?, ocrName: String?, ocrTokens: [String]) -> Int {
+        let nameScore = ScannerCompositeRanker.nameScore(ocrName: ocrName, card: card)
+        let codeScore = lorcanaCodeScore(card: card, set: set, ocrTokens: ocrTokens)
+        return nameScore + codeScore
+    }
+
+    private func lorcanaCodeScore(card: Card, set: TCGSet?, ocrTokens: [String]) -> Int {
+        guard !ocrTokens.isEmpty else { return 0 }
+
+        let printed = lorcanaNormalizedToken(card.printedNumber)
+            ?? lorcanaNormalizedToken(card.cardNumber.split(separator: "/").first.map(String.init))
+        let expansion = lorcanaNormalizedToken(set?.scannerEnExpansionNumber)
+
+        var best = 0
+
+        if let printed, ocrTokens.contains(printed) {
+            best = max(best, 240_000)
+        }
+        if let expansion, ocrTokens.contains(expansion) {
+            best = max(best, 260_000)
+        }
+
+        let candidatePatterns = lorcanaExpectedPatterns(printed: printed, expansion: expansion)
+        for pattern in candidatePatterns {
+            best = max(best, orderedTokenPatternScore(pattern: pattern, tokens: ocrTokens))
+        }
+
+        return best
+    }
+
+    private func lorcanaExpectedPatterns(printed: String?, expansion: String?) -> [[String]] {
+        var patterns: [[String]] = []
+        func add(_ pattern: [String?]) {
+            let compact = pattern.compactMap { value -> String? in
+                guard let value, !value.isEmpty else { return nil }
+                return value
+            }
+            guard compact.count >= 2, !patterns.contains(compact) else { return }
+            patterns.append(compact)
+        }
+
+        add([printed, "EN", expansion])
+        add([printed, expansion])
+        add([expansion, "EN", printed, "P1"])
+        add([printed, "P1", "EN"])
+        add([printed, expansion, "EN"])
+        return patterns
+    }
+
+    private func orderedTokenPatternScore(pattern: [String], tokens: [String]) -> Int {
+        guard !pattern.isEmpty, !tokens.isEmpty else { return 0 }
+
+        var matchedIndices: [Int] = []
+        var searchStart = 0
+        for part in pattern {
+            guard let idx = tokens[searchStart...].firstIndex(of: part) else {
+                return matchedIndices.count * 90_000
+            }
+            matchedIndices.append(idx)
+            searchStart = idx + 1
+        }
+
+        guard let first = matchedIndices.first, let last = matchedIndices.last else { return 0 }
+        let span = max(last - first, 0)
+        return pattern.count * 170_000 + max(0, 5 - span) * 25_000
+    }
+
+    private func lorcanaOCRTokens(rawOCRBlob: String?, codeCandidates: [String]) -> [String] {
+        var tokens: [String] = []
+        var seen = Set<String>()
+
+        func appendToken(_ value: String?) {
+            guard let normalized = lorcanaNormalizedToken(value), !normalized.isEmpty else { return }
+            guard seen.insert(normalized).inserted else { return }
+            tokens.append(normalized)
+        }
+
+        let parts = (rawOCRBlob ?? "")
+            .uppercased()
+            .components(separatedBy: CharacterSet.alphanumerics.union(CharacterSet(charactersIn: "/")).inverted)
+            .filter { !$0.isEmpty }
+
+        for part in parts {
+            if part.contains("/") {
+                for sub in part.split(separator: "/").map(String.init) {
+                    appendToken(sub)
+                }
+            } else {
+                appendToken(part)
+            }
+        }
+
+        for raw in codeCandidates {
+            if raw.contains("/") {
+                for sub in raw.split(separator: "/").map(String.init) {
+                    appendToken(sub)
+                }
+            } else {
+                appendToken(raw)
+            }
+        }
+
+        return tokens
+    }
+
+    private func lorcanaNormalizedToken(_ raw: String?) -> String? {
+        guard let raw else { return nil }
+        let normalized = raw
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+            .uppercased()
+            .filter { $0.isLetter || $0.isNumber }
+        return normalized.isEmpty ? nil : normalized
     }
 
     private func runSearchOnePiece(
@@ -1676,6 +1957,39 @@ private extension UIImage {
 // MARK: - CGImage crop helpers
 
 private extension CGImage {
+    func rotated90(clockwise: Bool) -> CGImage? {
+        let size = CGSize(width: CGFloat(height), height: CGFloat(width))
+        let format = UIGraphicsImageRendererFormat.default()
+        format.scale = 1
+        let renderer = UIGraphicsImageRenderer(size: size, format: format)
+        let image = renderer.image { ctx in
+            let cg = ctx.cgContext
+            if clockwise {
+                cg.translateBy(x: size.width, y: 0)
+                cg.rotate(by: .pi / 2)
+            } else {
+                cg.translateBy(x: 0, y: size.height)
+                cg.rotate(by: -.pi / 2)
+            }
+            cg.draw(self, in: CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height)))
+        }
+        return image.cgImage
+    }
+
+    func rotated180() -> CGImage? {
+        let size = CGSize(width: CGFloat(width), height: CGFloat(height))
+        let format = UIGraphicsImageRendererFormat.default()
+        format.scale = 1
+        let renderer = UIGraphicsImageRenderer(size: size, format: format)
+        let image = renderer.image { ctx in
+            let cg = ctx.cgContext
+            cg.translateBy(x: size.width, y: size.height)
+            cg.rotate(by: .pi)
+            cg.draw(self, in: CGRect(x: 0, y: 0, width: CGFloat(width), height: CGFloat(height)))
+        }
+        return image.cgImage
+    }
+
     /// Keeps the bottom `fraction` of the image (UIKit-style top-left origin in pixel space).
     func croppingToBottomFraction(_ fraction: CGFloat) -> CGImage? {
         guard fraction > 0, fraction <= 1 else { return nil }

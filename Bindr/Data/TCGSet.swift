@@ -20,12 +20,15 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
     let seriesName: String?
     let logoSrc: String
     let symbolSrc: String?
+    /// LORCANA: numeric / promo expansion id used by the scanner footer matcher.
+    let scannerEnExpansionNumber: String?
 
     enum CodingKeys: String, CodingKey {
         case internalId = "id"
         case name, setKey, code, tcgdexId, releaseDate
         case cardCountTotal, cardCountOfficial, seriesName
         case logoSrc, symbolSrc
+        case scannerEnExpansionNumber
     }
 
     init(from decoder: Decoder) throws {
@@ -41,6 +44,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
         seriesName = try c.decodeIfPresent(String.self, forKey: .seriesName)
         logoSrc = try c.decode(String.self, forKey: .logoSrc)
         symbolSrc = try c.decodeIfPresent(String.self, forKey: .symbolSrc)
+        scannerEnExpansionNumber = try c.decodeIfPresent(String.self, forKey: .scannerEnExpansionNumber)
     }
 
     /// Memberwise (e.g. One Piece catalog rows mapped into the shared ``TCGSet`` type).
@@ -55,7 +59,8 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
         cardCountOfficial: Int?,
         seriesName: String?,
         logoSrc: String,
-        symbolSrc: String?
+        symbolSrc: String?,
+        scannerEnExpansionNumber: String? = nil
     ) {
         self.internalId = internalId
         self.name = name
@@ -68,6 +73,7 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
         self.seriesName = seriesName
         self.logoSrc = logoSrc
         self.symbolSrc = symbolSrc
+        self.scannerEnExpansionNumber = scannerEnExpansionNumber
     }
 
     /// Primary key used for bundled JSON filenames and R2 paths (`cards/{setCode}.json`, pricing stems, SQLite rows).

@@ -23,7 +23,8 @@ struct OnePieceSetRow: Codable, Sendable {
             cardCountOfficial: nil,
             seriesName: setType,
             logoSrc: imagePath ?? "",
-            symbolSrc: nil
+            symbolSrc: nil,
+            scannerEnExpansionNumber: nil
         )
     }
 }
@@ -130,7 +131,8 @@ enum OnePieceCatalogMapping {
             opAttributes: dto.attribute,
             opCost: dto.cost,
             opCounter: dto.counter,
-            opLife: dto.life
+            opLife: dto.life,
+            printedNumber: nil
         )
     }
 

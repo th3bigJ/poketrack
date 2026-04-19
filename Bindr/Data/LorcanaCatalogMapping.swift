@@ -6,6 +6,7 @@ struct LorcanaSetRow: Codable, Sendable {
     let id: String
     let setCode: String
     let name: String
+    let scannerEnExpansionNumber: String?
     let releaseDate: String?
     let cardCount: Int?
     let imagePath: String?
@@ -22,7 +23,8 @@ struct LorcanaSetRow: Codable, Sendable {
             cardCountOfficial: nil,
             seriesName: nil,
             logoSrc: imagePath ?? "",
-            symbolSrc: nil
+            symbolSrc: nil,
+            scannerEnExpansionNumber: scannerEnExpansionNumber
         )
     }
 }
@@ -30,6 +32,7 @@ struct LorcanaSetRow: Codable, Sendable {
 struct LorcanaCardDTO: Decodable, Sendable {
     let priceKey: String
     let cardNumber: String
+    let printedNumber: String?
     let name: String
     let setCode: String
     let variant: String?
@@ -49,7 +52,7 @@ struct LorcanaCardDTO: Decodable, Sendable {
     fileprivate(set) var inkTypeRaw: String?
 
     enum CodingKeys: String, CodingKey {
-        case priceKey, cardNumber, name, setCode, variant, rarity, supertype, subtypes
+        case priceKey, cardNumber, printedNumber, name, setCode, variant, rarity, supertype, subtypes
         case cost, strength, willpower, lore_value, flavor_text, effect, scrydexSlug, imagePath, tcgplayerProductId
         case ink_type
     }
@@ -57,6 +60,7 @@ struct LorcanaCardDTO: Decodable, Sendable {
     init(from decoder: Decoder) throws {
         let c = try decoder.container(keyedBy: CodingKeys.self)
         cardNumber = try c.decode(String.self, forKey: .cardNumber)
+        printedNumber = try c.decodeIfPresent(String.self, forKey: .printedNumber)
         name = try c.decode(String.self, forKey: .name)
         setCode = try c.decode(String.self, forKey: .setCode)
         variant = try c.decodeIfPresent(String.self, forKey: .variant)
@@ -125,6 +129,7 @@ enum LorcanaCatalogMapping {
             flavorText: dto.flavor_text,
             pricingVariants: pricingVariants,
             tcgplayerProductId: dto.tcgplayerProductId.map { String($0) },
+            printedNumber: dto.printedNumber,
             lcVariant: dto.variant,
             lcCost: dto.cost,
             lcStrength: dto.strength,

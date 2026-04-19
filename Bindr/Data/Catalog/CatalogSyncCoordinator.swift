@@ -633,7 +633,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
     }
 
     private static func lorcanaCatalogFingerprint(from rows: [LorcanaSetRow]) -> String {
-        lorcanaCatalogFingerprint(fromSetCodes: rows.map(\.setCode))
+        let payload = rows
+            .sorted { $0.setCode < $1.setCode }
+            .map { "\($0.setCode)|\($0.scannerEnExpansionNumber ?? "")" }
+            .joined(separator: "\n")
+            .data(using: .utf8) ?? Data()
+        return SHA256.hash(data: payload).map { String(format: "%02x", $0) }.joined()
     }
 
     private static func lorcanaPricingStemVariants(for setCode: String) -> [String] {
