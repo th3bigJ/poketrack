@@ -58,6 +58,36 @@ private struct DeckPickerDetailSession: Identifiable {
     let startIndex: Int
 }
 
+private func deckPickerIsBasicEnergy(category: String?, energyType: String?) -> Bool {
+    guard category == "Energy" else { return false }
+    return energyType?.trimmingCharacters(in: .whitespacesAndNewlines).caseInsensitiveCompare("Basic") == .orderedSame
+}
+
+private func deckPickerHasLegalRegulationMark(
+    format: DeckFormat,
+    category: String?,
+    energyType: String?,
+    regulationMark: String?
+) -> Bool {
+    guard let legalMarks = format.legalRegulationMarks else { return true }
+    let trimmedMark = regulationMark?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+    if !trimmedMark.isEmpty {
+        return legalMarks.contains(trimmedMark)
+    }
+    return deckPickerIsBasicEnergy(category: category, energyType: energyType)
+}
+
+private func deckPickerReleaseDateIsTournamentLegal(_ releaseDate: String?, now: Date = Date()) -> Bool {
+    guard let releaseDate, !releaseDate.isEmpty else { return true }
+    let formatter = ISO8601DateFormatter()
+    formatter.formatOptions = [.withFullDate]
+    guard let release = formatter.date(from: releaseDate) else { return true }
+    guard let legalDate = Calendar(identifier: .gregorian).date(byAdding: .day, value: 14, to: release) else {
+        return true
+    }
+    return legalDate <= now
+}
+
 // MARK: - Main view
 
 struct DeckCardPickerView: View {
@@ -244,10 +274,21 @@ struct DeckCardPickerView: View {
             guard legalSets.contains(card.setCode) else { return false }
         }
 
-        // Standard: regulation mark required (all energy cards are exempt — many lack marks)
-        let isEnergyCard = card.category == "Energy"
-        if let legalMarks = fmt.legalRegulationMarks, !isEnergyCard {
-            guard let mark = card.regulationMark, legalMarks.contains(mark) else { return false }
+        // Standard only: newly released sets wait until tournament-legal.
+        let releaseDate = releaseDateBySetCode[card.setCode]
+        if fmt == .pokemonStandard,
+           !deckPickerReleaseDateIsTournamentLegal(releaseDate) {
+            return false
+        }
+
+        // Standard: Basic Energy may omit regulation marks; other cards must carry a legal mark.
+        if fmt.legalRegulationMarks != nil {
+            guard deckPickerHasLegalRegulationMark(
+                format: fmt,
+                category: card.category,
+                energyType: card.energyType,
+                regulationMark: card.regulationMark
+            ) else { return false }
         }
 
         // Ban list
@@ -700,6 +741,15 @@ struct DeckCardPickerView: View {
         return nil
     }
 
+    private static func catalogStageString(from card: Card) -> String? {
+        guard card.category == "Pokémon",
+              let stage = card.stage?.trimmingCharacters(in: .whitespacesAndNewlines),
+              !stage.isEmpty else {
+            return nil
+        }
+        return stage
+    }
+
     private func addCardToDeck(card: Card, variantKey: String, quantity: Int) {
         let fmt = deck.deckFormat
         let existingMap = Dictionary(uniqueKeysWithValues: deck.cardList.map { ($0.cardID, $0) })
@@ -730,6 +780,9 @@ struct DeckCardPickerView: View {
             if existing.catalogSubtype == nil, let sub = DeckCardPickerView.catalogSubtypeString(from: card) {
                 existing.catalogSubtype = sub
             }
+            if existing.catalogStage == nil, let stage = DeckCardPickerView.catalogStageString(from: card) {
+                existing.catalogStage = stage
+            }
             if existing.opCost == nil { existing.opCost = card.opCost }
             if existing.opPower == nil { existing.opPower = card.hp }
             if existing.opCounter == nil { existing.opCounter = card.opCounter }
@@ -757,6 +810,7 @@ struct DeckCardPickerView: View {
                 imageLowSrc: card.imageLowSrc,
                 catalogCategory: card.category,
                 catalogSubtype: Self.catalogSubtypeString(from: card),
+                catalogStage: Self.catalogStageString(from: card),
                 opCost: card.opCost,
                 opPower: card.hp,
                 opCounter: card.opCounter,
@@ -829,9 +883,19 @@ struct DeckCardPickerView: View {
             let fmt = deck.deckFormat
             filterCards = filterCards.filter { card in
                 if let legalSets = fmt.legalSetKeys, !legalSets.contains(card.setCode) { return false }
-                let cardIsEnergy = (card.category ?? "").lowercased().contains("energy")
-                if let legalMarks = fmt.legalRegulationMarks, !cardIsEnergy {
-                    guard let mark = card.regulationMark, legalMarks.contains(mark) else { return false }
+                let releaseDate = sets.first(where: { $0.setCode == card.setCode })?.releaseDate
+                if fmt == .pokemonStandard,
+                   !deckPickerReleaseDateIsTournamentLegal(releaseDate) {
+                    return false
+                }
+                if fmt.legalRegulationMarks != nil,
+                   !deckPickerHasLegalRegulationMark(
+                    format: fmt,
+                    category: card.category,
+                    energyType: card.energyType,
+                    regulationMark: card.regulationMark
+                   ) {
+                    return false
                 }
                 if fmt.isBanned(cardName: card.cardName) { return false }
                 if fmt == .pokemonGLC {
@@ -1400,6 +1464,9 @@ private struct DeckPickerSetsView: View {
                 // Filter sets to only those with at least one eligible card per the format
                 if let legalSets = deck.deckFormat.legalSetKeys {
                     allSets = allSets.filter { legalSets.contains($0.setCode) }
+                }
+                if deck.deckFormat == .pokemonStandard {
+                    allSets = allSets.filter { deckPickerReleaseDateIsTournamentLegal($0.releaseDate) }
                 }
                 sets = allSets
             } catch {

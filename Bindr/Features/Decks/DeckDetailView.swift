@@ -143,6 +143,31 @@ struct DeckDetailView: View {
     @State private var missingValue: Double? = nil
     @State private var isLoadingValue = false
 
+    private static func catalogSubtypeString(from card: Card) -> String? {
+        if let s = card.subtype?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty {
+            return s
+        }
+        let cleaned = card.subtypes?.map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }.filter { !$0.isEmpty } ?? []
+        if !cleaned.isEmpty {
+            return cleaned.joined(separator: ", ")
+        }
+        if card.category == "Pokémon",
+           let stage = card.stage?.trimmingCharacters(in: .whitespacesAndNewlines),
+           !stage.isEmpty {
+            return stage
+        }
+        return nil
+    }
+
+    private static func catalogStageString(from card: Card) -> String? {
+        guard card.category == "Pokémon",
+              let stage = card.stage?.trimmingCharacters(in: .whitespacesAndNewlines),
+              !stage.isEmpty else {
+            return nil
+        }
+        return stage
+    }
+
     /// Loose + graded copies per catalog `cardID`, scoped to this deck’s TCG brand (what can “cover” deck slots).
     private func playableOwnedQuantityByCardID() -> [String: Int] {
         var counts: [String: Int] = [:]
@@ -293,6 +318,8 @@ struct DeckDetailView: View {
             .environment(services)
         }
         .task(id: deck.cardList.map(\.cardID).sorted().joined()) {
+            await backfillDeckCatalogMetadataIfNeeded()
+            await syncDeckImagePathsFromCatalog()
             await refreshValue()
         }
     }
@@ -500,6 +527,70 @@ struct DeckDetailView: View {
             let li = order.firstIndex(of: $0.subtype) ?? 99
             let ri = order.firstIndex(of: $1.subtype) ?? 99
             return li < ri
+        }
+    }
+
+    @MainActor
+    private func backfillDeckCatalogMetadataIfNeeded() async {
+        let cardsNeedingMetadata = deck.cardList.filter { deckCard in
+            if deckCard.pokemonCategory == .pokemon {
+                let missingSubtype = deckCard.catalogSubtype?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty != false
+                let missingStage = deckCard.catalogStage?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty != false
+                if missingSubtype || missingStage || deckCard.catalogCategory?.isEmpty != false {
+                    return true
+                }
+            }
+            return deckCard.catalogCategory?.isEmpty != false
+        }
+        guard !cardsNeedingMetadata.isEmpty else { return }
+
+        var didChange = false
+        for deckCard in cardsNeedingMetadata {
+            guard let card = await services.cardData.loadCard(masterCardId: deckCard.cardID) else { continue }
+
+            if deckCard.catalogCategory?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty != false,
+               let category = card.category?.trimmingCharacters(in: .whitespacesAndNewlines),
+               !category.isEmpty {
+                deckCard.catalogCategory = category
+                didChange = true
+            }
+
+            if deckCard.catalogSubtype?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty != false,
+               let subtype = Self.catalogSubtypeString(from: card) {
+                deckCard.catalogSubtype = subtype
+                didChange = true
+            }
+
+            if deckCard.catalogStage?.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty != false,
+               let stage = Self.catalogStageString(from: card) {
+                deckCard.catalogStage = stage
+                didChange = true
+            }
+        }
+
+        if didChange {
+            try? modelContext.save()
+        }
+    }
+
+    @MainActor
+    private func syncDeckImagePathsFromCatalog() async {
+        var didChange = false
+        for deckCard in deck.cardList {
+            guard let card = await services.cardData.loadCard(masterCardId: deckCard.cardID) else { continue }
+            let catalogLow = card.imageLowSrc.trimmingCharacters(in: .whitespacesAndNewlines)
+            let catalogHigh = card.imageHighSrc?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+            let preferredPath = !catalogLow.isEmpty ? catalogLow : catalogHigh
+            guard !preferredPath.isEmpty else { continue }
+
+            if deckCard.imageLowSrc != preferredPath {
+                deckCard.imageLowSrc = preferredPath
+                didChange = true
+            }
+        }
+
+        if didChange {
+            try? modelContext.save()
         }
     }
 
@@ -1118,12 +1209,21 @@ private extension DeckCard {
 
     /// Tokens for “Pokémon Stages” chips: parsed from persisted catalog subtype when present, otherwise legacy booleans only.
     var subtypeTokens: [String] {
-        if let csv = catalogSubtype?.trimmingCharacters(in: .whitespacesAndNewlines), !csv.isEmpty {
-            return csv.split(separator: ",")
-                .map { Self.normalizeSubtypeFragment(String($0)) }
-                .filter { !$0.isEmpty }
-        }
         var tokens: [String] = []
+        if let csv = catalogSubtype?.trimmingCharacters(in: .whitespacesAndNewlines), !csv.isEmpty {
+            tokens.append(contentsOf: csv.split(separator: ",")
+                .map { Self.normalizeSubtypeFragment(String($0)) }
+                .filter { !$0.isEmpty })
+        }
+        if let stage = catalogStage?.trimmingCharacters(in: .whitespacesAndNewlines), !stage.isEmpty {
+            let normalizedStage = Self.normalizeSubtypeFragment(stage)
+            if !normalizedStage.isEmpty, !tokens.contains(normalizedStage) {
+                tokens.append(normalizedStage)
+            }
+        }
+        if !tokens.isEmpty {
+            return tokens
+        }
         if isBasicPokemon { tokens.append("Basic") }
         if isRuleBox      { tokens.append("ex") }
         if isRadiant      { tokens.append("Radiant") }
@@ -1143,8 +1243,7 @@ private enum DeckCardGridLayoutMetrics {
 // MARK: - Card grid cell (view + edit)
 
 private struct DeckCardGridCell: View {
-    @Environment(AppServices.self) private var services
-    let deckCard: DeckCard
+    @Bindable var deckCard: DeckCard
     /// Copies of this deck line still not covered by the collection (after allocating owned playsets across lines).
     let copiesNeededFromCollection: Int
     let isEditing: Bool
@@ -1154,33 +1253,27 @@ private struct DeckCardGridCell: View {
     /// When non-`nil` and not editing, tapping the artwork opens browse detail (view-only sheet).
     var onViewCardTap: (() -> Void)? = nil
 
-    @State private var fallbackImageURL: URL? = nil
-
     private var imageURL: URL? {
-        if !deckCard.imageLowSrc.isEmpty {
-            return AppConfiguration.imageURL(relativePath: deckCard.imageLowSrc)
-        }
-        return fallbackImageURL
+        let path = deckCard.imageLowSrc.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !path.isEmpty else { return nil }
+        return AppConfiguration.imageURL(relativePath: path)
     }
 
     private var cardArtStack: some View {
         ZStack(alignment: .bottom) {
-            AsyncImage(url: imageURL, transaction: Transaction(animation: .easeOut(duration: 0.18))) { phase in
-                switch phase {
-                case .success(let img):
+            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 200, height: 280)) { img in
                     img.resizable().scaledToFit()
-                default:
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color(uiColor: .systemGray5))
-                        .aspectRatio(5/7, contentMode: .fit)
-                        .overlay {
-                            Text(deckCard.cardName)
-                                .font(.caption2)
-                                .multilineTextAlignment(.center)
-                                .padding(4)
-                                .foregroundStyle(.secondary)
-                        }
-                }
+            } placeholder: {
+                RoundedRectangle(cornerRadius: 8)
+                    .fill(Color(uiColor: .systemGray5))
+                    .aspectRatio(5/7, contentMode: .fit)
+                    .overlay {
+                        Text(deckCard.cardName)
+                            .font(.caption2)
+                            .multilineTextAlignment(.center)
+                            .padding(4)
+                            .foregroundStyle(.secondary)
+                    }
             }
             .aspectRatio(5/7, contentMode: .fit)
             .clipShape(RoundedRectangle(cornerRadius: 8))
@@ -1270,14 +1363,6 @@ private struct DeckCardGridCell: View {
                 Button(role: .destructive, action: onDelete) {
                     Label("Remove", systemImage: "trash")
                 }
-            }
-        }
-        .task(id: deckCard.cardID) {
-            guard deckCard.imageLowSrc.isEmpty else { return }
-            if let card = await services.cardData.loadCard(masterCardId: deckCard.cardID),
-               !card.imageLowSrc.isEmpty {
-                deckCard.imageLowSrc = card.imageLowSrc
-                fallbackImageURL = AppConfiguration.imageURL(relativePath: card.imageLowSrc)
             }
         }
     }

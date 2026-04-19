@@ -51,6 +51,15 @@ let expandedBannedCardNames: Set<String> = [
     "Unown",
 ]
 
+private func deckModelHasLegalRegulationMark(_ card: DeckCard, format: DeckFormat) -> Bool {
+    guard let legalMarks = format.legalRegulationMarks else { return true }
+    let trimmedMark = card.regulationMark?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+    if !trimmedMark.isEmpty {
+        return legalMarks.contains(trimmedMark)
+    }
+    return card.isBasicEnergy
+}
+
 enum DeckFormat: String, Codable, CaseIterable {
     case pokemonStandard  = "pokemon_standard"
     case pokemonExpanded  = "pokemon_expanded"
@@ -279,12 +288,10 @@ enum DeckFormat: String, Codable, CaseIterable {
                 issues.append("\(name) is from set \(first.setKey) which is not legal in \(fmt.displayName)")
             }
 
-            // Standard regulation mark (energy cards are exempt — many lack marks)
-            if let legalMarks = fmt.legalRegulationMarks, !first.isEnergyCard {
-                if let mark = first.regulationMark {
-                    if !legalMarks.contains(mark) {
-                        issues.append("\(name) (mark \(mark)) is not legal in Standard")
-                    }
+            // Standard regulation mark: Basic Energy may omit a mark; other cards must carry a legal mark.
+            if fmt.legalRegulationMarks != nil, !deckModelHasLegalRegulationMark(first, format: fmt) {
+                if let mark = first.regulationMark?.trimmingCharacters(in: .whitespacesAndNewlines), !mark.isEmpty {
+                    issues.append("\(name) (mark \(mark)) is not legal in Standard")
                 } else {
                     issues.append("\(name) has no regulation mark and is not legal in Standard")
                 }
@@ -345,6 +352,8 @@ enum DeckFormat: String, Codable, CaseIterable {
     var catalogCategory: String?
     /// Comma-separated subtype line from catalog (e.g. `Stage 1, V`) for summaries; mirrors ``Card/subtype`` or joined ``Card/subtypes``.
     var catalogSubtype: String?
+    /// Canonical Pokémon stage from catalog (e.g. `Basic`, `Stage 1`, `Stage 2`) so stage summaries survive older deck rows that predate `catalogSubtype`.
+    var catalogStage: String?
     /// ONE PIECE: DON!! cost to play. Nil for Leaders.
     var opCost: Int? = nil
     /// ONE PIECE: power value (reuses Card.hp field).
@@ -381,6 +390,7 @@ enum DeckFormat: String, Codable, CaseIterable {
         imageLowSrc: String = "",
         catalogCategory: String? = nil,
         catalogSubtype: String? = nil,
+        catalogStage: String? = nil,
         opCost: Int? = nil,
         opPower: Int? = nil,
         opCounter: Int? = nil,
@@ -406,6 +416,7 @@ enum DeckFormat: String, Codable, CaseIterable {
         self.imageLowSrc = imageLowSrc
         self.catalogCategory = catalogCategory
         self.catalogSubtype = catalogSubtype
+        self.catalogStage = catalogStage
         self.opCost = opCost
         self.opPower = opPower
         self.opCounter = opCounter

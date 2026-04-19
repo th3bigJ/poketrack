@@ -8,6 +8,14 @@ private final class ImageLoader {
     private var loadTask: Task<Void, Never>?
     private var targetSize: CGSize?
 
+    private func decodeImage(from cached: CachedURLResponse, targetSize: CGSize?, scale: CGFloat) -> UIImage? {
+        if let http = cached.response as? HTTPURLResponse,
+           !(200...299).contains(http.statusCode) {
+            return nil
+        }
+        return ThumbnailImageDecode.downsampled(data: cached.data, targetSize: targetSize, scale: scale)
+    }
+
     func load(url: URL?, targetSize: CGSize?) {
         loadTask?.cancel()
         loadTask = nil
@@ -36,14 +44,24 @@ private final class ImageLoader {
             var decoded: UIImage?
 
             if let cached = AppURLSession.imageURLCache.cachedResponse(for: request) {
-                decoded = ThumbnailImageDecode.downsampled(data: cached.data, targetSize: capturedTarget, scale: scale)
-            } else {
+                decoded = self?.decodeImage(from: cached, targetSize: capturedTarget, scale: scale)
+                if decoded == nil {
+                    AppURLSession.imageURLCache.removeCachedResponse(for: request)
+                }
+            }
+
+            if decoded == nil {
                 do {
-                    let (data, response) = try await AppURLSession.images.data(for: request)
+                    let refreshRequest = URLRequest(url: capturedURL, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 30)
+                    let (data, response) = try await AppURLSession.images.data(for: refreshRequest)
                     guard !Task.isCancelled else { return }
-                    AppURLSession.imageURLCache.storeCachedResponse(
-                        CachedURLResponse(response: response, data: data), for: request)
-                    decoded = ThumbnailImageDecode.downsampled(data: data, targetSize: capturedTarget, scale: scale)
+                    let cachedResponse = CachedURLResponse(response: response, data: data)
+                    if self?.decodeImage(from: cachedResponse, targetSize: capturedTarget, scale: scale) != nil {
+                        AppURLSession.imageURLCache.storeCachedResponse(cachedResponse, for: request)
+                    } else {
+                        AppURLSession.imageURLCache.removeCachedResponse(for: request)
+                    }
+                    decoded = self?.decodeImage(from: cachedResponse, targetSize: capturedTarget, scale: scale)
                 } catch { }
             }
 
