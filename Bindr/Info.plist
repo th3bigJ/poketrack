@@ -8,6 +8,10 @@
 	<string>data</string>
 	<key>BINDR_R2_PRICING_PREFIX</key>
 	<string></string>
+	<key>BINDR_SUPABASE_PUBLISHABLE_KEY</key>
+	<string>sb_publishable_Qf1l21DJp7GZELyCLjt6Gg_7uMbEhrC</string>
+	<key>BINDR_SUPABASE_URL</key>
+	<string>https://eovjwogsniwfwxfrtoer.supabase.co</string>
 	<key>NSUbiquitousContainers</key>
 	<dict>
 		<key>iCloud.app1xy.bindr</key>

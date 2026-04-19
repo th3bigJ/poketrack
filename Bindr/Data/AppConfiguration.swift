@@ -11,6 +11,32 @@ enum AppConfiguration {
     /// Single non-consumable premium product — create the same ID in App Store Connect.
     static let premiumProductID = "app1xy.bindr.premium"
 
+    /// Supabase project URL used for social/auth APIs.
+    static var supabaseURL: URL? {
+        if let s = Bundle.main.object(forInfoDictionaryKey: "BINDR_SUPABASE_URL") as? String {
+            let t = s.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !t.isEmpty, let u = URL(string: t) { return u }
+        }
+        if let env = ProcessInfo.processInfo.environment["BINDR_SUPABASE_URL"] {
+            let t = env.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !t.isEmpty, let u = URL(string: t) { return u }
+        }
+        return nil
+    }
+
+    /// Publishable Supabase key (safe for client apps when RLS is enabled).
+    static var supabasePublishableKey: String {
+        if let s = Bundle.main.object(forInfoDictionaryKey: "BINDR_SUPABASE_PUBLISHABLE_KEY") as? String {
+            let t = s.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !t.isEmpty { return t }
+        }
+        if let env = ProcessInfo.processInfo.environment["BINDR_SUPABASE_PUBLISHABLE_KEY"] {
+            let t = env.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !t.isEmpty { return t }
+        }
+        return ""
+    }
+
     /// Public CDN base (no trailing slash). Set `BINDR_R2_BASE_URL` in Info.plist or env.
     static var r2BaseURL: URL {
         if let s = Bundle.main.object(forInfoDictionaryKey: "BINDR_R2_BASE_URL") as? String {

@@ -9,6 +9,7 @@ struct MoreView: View {
 
     @State private var showProfile = false
     @State private var showSettings = false
+    @State private var showCreateBinder = false
 
     var body: some View {
         List {
@@ -20,6 +21,11 @@ struct MoreView: View {
                     GridItem(.flexible())
                 ], spacing: 16) {
                     QuickAccessNavigationButton(
+                        icon: "books.vertical.fill",
+                        title: "Binders",
+                        action: { navigationPath.append(SideMenuPage.binders) }
+                    )
+                    QuickAccessNavigationButton(
                         icon: "rectangle.on.rectangle.angled",
                         title: "Deck Builder",
                         action: { navigationPath.append(SideMenuPage.decks) }
@@ -28,11 +34,6 @@ struct MoreView: View {
                         icon: "list.bullet.rectangle",
                         title: "Activity",
                         action: { navigationPath.append(SideMenuPage.transactions) }
-                    )
-                    QuickAccessNavigationButton(
-                        icon: "person.2",
-                        title: "Social",
-                        action: { navigationPath.append(SideMenuPage.social) }
                     )
                 }
                 .padding(.vertical, 8)
@@ -49,6 +50,9 @@ struct MoreView: View {
                     .environment(services)
             case .social:
                 SocialRootView()
+                    .environment(services)
+            case .binders:
+                BindersRootView(showCreateSheet: $showCreateBinder)
             case .decks:
                 DecksRootView()
             case .transactions:

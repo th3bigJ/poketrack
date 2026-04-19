@@ -13,6 +13,8 @@ final class AppServices {
     let priceDisplay: PriceDisplaySettings
     let browseGridOptions: BrowseGridOptionsSettings
     let store = StoreKitService()
+    let socialAuth: SocialAuthService
+    let socialProfile: SocialProfileService
     
     // Wishlist service - initialized after model context is available
     private(set) var wishlist: WishlistService?
@@ -51,6 +53,9 @@ final class AppServices {
     private(set) var catalogDownloadEstimatedTotalBytes: Int64 = 0
 
     init() {
+        let socialAuth = SocialAuthService()
+        self.socialAuth = socialAuth
+        self.socialProfile = SocialProfileService(authService: socialAuth)
         let cloudSettings = CloudSettingsService()
         self.cloudSettings = cloudSettings
         self.priceDisplay = PriceDisplaySettings(cloudSettings: cloudSettings)
@@ -62,6 +67,9 @@ final class AppServices {
             isReady = true
             shouldRunBackgroundCatalogRefreshOnLaunch = true
             isLaunchCatalogPipelineComplete = false
+        }
+        Task {
+            await socialAuth.restoreSession()
         }
     }
 

@@ -81,14 +81,12 @@ struct RootView: View {
     /// Cards tab `NavigationStack` path — hide root chrome when a card detail (or other pushed screen) is showing.
     @State private var browseNavigationPath = NavigationPath()
     @State private var collectionNavigationPath = NavigationPath()
-    @State private var bindrsNavigationPath = NavigationPath()
     @State private var moreNavigationPath = NavigationPath()
     @State private var browseFullScreen: BrowseFullScreen?
     @State private var selectedCardPresentation: CardPresentationContext?
     @State private var showBrandOnboarding = false
-    @State private var showProfile = false
+    @State private var showSettings = false
     @State private var suppressMorePathReset = false
-    @State private var showCreateBinder = false
     @FocusState private var searchFieldFocused: Bool
 
     // MARK: - Splash Flow
@@ -103,7 +101,7 @@ struct RootView: View {
     /// Search open at root list: show chrome. Search with a pushed detail: hide chrome. Cards tab with a pushed detail: hide chrome. Else scroll-driven chrome on Browse.
     private var showUniversalSearchBar: Bool {
         if isSearchExperiencePresented { return true }
-        if selectedTab == .bindrs && !bindrsNavigationPath.isEmpty { return false }
+        if selectedTab == .social { return false }
         if selectedTab == .more { return false }
         return chromeScroll.barsVisible
     }
@@ -141,8 +139,7 @@ struct RootView: View {
 
     private var chromeTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
         switch selectedTab {
-        case .dashboard: return ("person.crop.circle", "Profile", { showProfile = true })
-        case .bindrs: return ("plus", "Create Binder", { showCreateBinder = true })
+        case .dashboard: return ("gearshape", "Settings", { showSettings = true })
         default: return nil
         }
     }
@@ -319,9 +316,9 @@ struct RootView: View {
                                             gridOptions: $collectGridOptions
                                         )
                                     }
-                                case .bindrs:
-                                    NavigationStack(path: $bindrsNavigationPath) {
-                                        BindersRootView(showCreateSheet: $showCreateBinder)
+                                case .social:
+                                    NavigationStack {
+                                        SocialRootView()
                                     }
                                 case .more:
                                     NavigationStack(path: $moreNavigationPath) {
@@ -402,8 +399,9 @@ struct RootView: View {
 
                 // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
                 floatingSearchBar(hiddenOffset: searchBarHiddenOffset, topInset: searchBarTopInset, bottomInset: searchBarBottomInset)
-                    .popover(isPresented: $showProfile) {
-                        ProfileSheet()
+                    .popover(isPresented: $showSettings) {
+                        SettingsView()
+                            .environment(services)
                     }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
