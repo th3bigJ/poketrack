@@ -209,16 +209,26 @@ final class SocialFriendService {
 
     func fetchProfile(username: String) async throws -> SocialProfile? {
         let accessToken = try signedInAccessToken()
-        let normalized = username.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        guard !normalized.isEmpty else { return nil }
-        let encodedUsername = encodedQueryValue(normalized)
+        let trimmed = username.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        let encodedUsername = encodedQueryValue(trimmed)
 
-        let profiles: [SocialProfile] = try await execute(
+        // Prefer exact equality first, then fall back to case-insensitive lookup.
+        let exactProfiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?select=*&username=eq.\(encodedUsername)&limit=1",
             method: "GET",
             accessToken: accessToken
         )
-        return profiles.first
+        if let first = exactProfiles.first {
+            return first
+        }
+
+        let ilikeProfiles: [SocialProfile] = try await execute(
+            path: "/rest/v1/profiles?select=*&username=ilike.\(encodedUsername)&limit=1",
+            method: "GET",
+            accessToken: accessToken
+        )
+        return ilikeProfiles.first
     }
 
     func fetchRelationshipState(for userID: UUID) async throws -> RelationshipState {
