@@ -35,10 +35,14 @@ const APNS_TEAM_ID = Deno.env.get("APNS_TEAM_ID") ?? ""
 const APNS_KEY_ID = Deno.env.get("APNS_KEY_ID") ?? ""
 const APNS_PRIVATE_KEY = Deno.env.get("APNS_PRIVATE_KEY") ?? ""
 
-const APNS_HOST =
+const APNS_PRIMARY_HOST =
   APNS_ENV.toLowerCase() === "production"
     ? "api.push.apple.com"
     : "api.sandbox.push.apple.com"
+const APNS_FALLBACK_HOST =
+  APNS_PRIMARY_HOST == "api.push.apple.com"
+    ? "api.sandbox.push.apple.com"
+    : "api.push.apple.com"
 
 function asString(value: unknown): string | null {
   if (typeof value !== "string") return null
@@ -131,6 +135,10 @@ async function sendApnsPush(candidate: PushCandidate) {
   }
 
   for (const token of tokens) {
+    let delivered = false
+    let lastError: string | null = null
+    const hostsToTry = [APNS_PRIMARY_HOST, APNS_FALLBACK_HOST]
+
     try {
       const payload = {
         aps: {
@@ -145,24 +153,45 @@ async function sendApnsPush(candidate: PushCandidate) {
         category: candidate.category,
         metadata: candidate.metadata,
       }
-      const response = await fetch(`https://${APNS_HOST}/3/device/${token}`, {
-        method: "POST",
-        headers: {
-          authorization: `bearer ${bearer}`,
-          "apns-topic": APNS_TOPIC,
-          "apns-push-type": "alert",
-          "apns-priority": "10",
-          "content-type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
 
-      if (!response.ok) {
+      for (const host of hostsToTry) {
+        const response = await fetch(`https://${host}/3/device/${token}`, {
+          method: "POST",
+          headers: {
+            authorization: `bearer ${bearer}`,
+            "apns-topic": APNS_TOPIC,
+            "apns-push-type": "alert",
+            "apns-priority": "10",
+            "content-type": "application/json",
+          },
+          body: JSON.stringify(payload),
+        })
+
+        if (response.ok) {
+          delivered = true
+          break
+        }
+
         const raw = await response.text()
-        await writeLog(candidate, token, "failed", `apns ${response.status}: ${raw}`)
-        continue
+        const shouldTryAlternateHost =
+          response.status === 400 &&
+          raw.includes("\"reason\":\"BadDeviceToken\"") &&
+          host === APNS_PRIMARY_HOST
+
+        if (shouldTryAlternateHost) {
+          lastError = `apns ${response.status} (${host}): ${raw}; retrying alternate APNs host`
+          continue
+        }
+
+        lastError = `apns ${response.status} (${host}): ${raw}`
+        break
       }
-      await writeLog(candidate, token, "sent", null)
+
+      if (delivered) {
+        await writeLog(candidate, token, "sent", null)
+      } else {
+        await writeLog(candidate, token, "failed", lastError ?? "apns failed with unknown error")
+      }
     } catch (error) {
       const message = error instanceof Error ? error.message : "unknown APNs error"
       await writeLog(candidate, token, "failed", message)
