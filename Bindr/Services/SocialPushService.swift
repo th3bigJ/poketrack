@@ -57,6 +57,17 @@ final class SocialPushService {
         return queuedDeepLinkURL
     }
 
+    func clearAppBadgeCount() {
+        if #available(iOS 17.0, *) {
+            UNUserNotificationCenter.current().setBadgeCount(0) { _ in }
+        } else {
+            UIApplication.shared.applicationIconBadgeNumber = 0
+        }
+        if #available(iOS 16.0, *) {
+            UNUserNotificationCenter.current().setBadgeCount(0) { _ in }
+        }
+    }
+
     private func subscribeToPushEvents() {
         NotificationCenter.default.addObserver(
             forName: .socialPushDeviceTokenDidUpdate,
@@ -74,8 +85,11 @@ final class SocialPushService {
             object: nil,
             queue: .main
         ) { [weak self] notification in
+            guard let self else { return }
             guard let userInfo = notification.userInfo else { return }
-            self?.queueDeepLink(from: userInfo)
+            MainActor.assumeIsolated {
+                self.queueDeepLink(from: userInfo)
+            }
         }
     }
 }

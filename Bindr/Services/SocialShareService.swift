@@ -101,6 +101,40 @@ final class SocialShareService {
         let localContentID: String
     }
 
+    private struct BinderSlotSnapshot: Sendable {
+        let cardID: String
+        let variantKey: String
+        let cardName: String
+    }
+
+    private struct BinderSyncSnapshot: Sendable {
+        let id: UUID
+        let title: String
+        let brandRawValue: String
+        let slots: [BinderSlotSnapshot]
+    }
+
+    private struct DeckCardSnapshot: Sendable {
+        let cardID: String
+        let variantKey: String
+        let cardName: String
+        let quantity: Int
+    }
+
+    private struct DeckSyncSnapshot: Sendable {
+        let id: UUID
+        let title: String
+        let brandRawValue: String
+        let formatDisplayName: String
+        let cards: [DeckCardSnapshot]
+    }
+
+    private struct WishlistItemSnapshot: Sendable {
+        let cardID: String
+        let variantKey: String
+        let notes: String
+    }
+
     private let authService: SocialAuthService
     private let storeService: StoreKitService
     private let cardDataService: CardDataService
@@ -244,23 +278,43 @@ final class SocialShareService {
     }
 
     func scheduleAutoSync(binder: Binder) {
+        let snapshot = BinderSyncSnapshot(
+            id: binder.id,
+            title: binder.title,
+            brandRawValue: binder.tcgBrand.rawValue,
+            slots: binder.slotList.map {
+                BinderSlotSnapshot(cardID: $0.cardID, variantKey: $0.variantKey, cardName: $0.cardName)
+            }
+        )
         scheduleAutoSync(for: .binder(binder.id)) { [weak self] in
             guard let self else { return }
-            try await self.syncIfPublished(binder: binder)
+            try await self.syncIfPublished(binderSnapshot: snapshot)
         }
     }
 
     func scheduleAutoSync(deck: Deck) {
+        let snapshot = DeckSyncSnapshot(
+            id: deck.id,
+            title: deck.title,
+            brandRawValue: deck.tcgBrand.rawValue,
+            formatDisplayName: deck.deckFormat.displayName,
+            cards: deck.cardList.map {
+                DeckCardSnapshot(cardID: $0.cardID, variantKey: $0.variantKey, cardName: $0.cardName, quantity: $0.quantity)
+            }
+        )
         scheduleAutoSync(for: .deck(deck.id)) { [weak self] in
             guard let self else { return }
-            try await self.syncIfPublished(deck: deck)
+            try await self.syncIfPublished(deckSnapshot: snapshot)
         }
     }
 
     func scheduleAutoSyncWishlist(items: [WishlistItem]) {
+        let snapshots = items.map {
+            WishlistItemSnapshot(cardID: $0.cardID, variantKey: $0.variantKey, notes: $0.notes)
+        }
         scheduleAutoSync(for: .wishlist) { [weak self] in
             guard let self else { return }
-            try await self.syncIfPublishedWishlist(items: items)
+            try await self.syncIfPublishedWishlist(itemSnapshots: snapshots)
         }
     }
 
@@ -360,6 +414,53 @@ final class SocialShareService {
             visibility: existing?.visibility ?? .friends,
             includeValue: existing?.includeValue ?? false,
             wishlistItems: items
+        )
+    }
+
+    private func syncIfPublished(binderSnapshot: BinderSyncSnapshot) async throws {
+        let localID = binderSnapshot.id.uuidString
+        let existing = try await fetchMine(type: .binder, localContentID: localID)
+        guard existing != nil else { return }
+        let encoded = try await encodeBinderPayload(binderSnapshot, includeValue: existing?.includeValue ?? false)
+        _ = try await upsertSharedContent(
+            type: .binder,
+            localContentID: encoded.localContentID,
+            encoded: encoded,
+            title: existing?.title ?? binderSnapshot.title,
+            description: existing?.description,
+            visibility: existing?.visibility ?? .friends,
+            includeValue: existing?.includeValue ?? false
+        )
+    }
+
+    private func syncIfPublished(deckSnapshot: DeckSyncSnapshot) async throws {
+        let localID = deckSnapshot.id.uuidString
+        let existing = try await fetchMine(type: .deck, localContentID: localID)
+        guard existing != nil else { return }
+        let encoded = try await encodeDeckPayload(deckSnapshot, includeValue: existing?.includeValue ?? false)
+        _ = try await upsertSharedContent(
+            type: .deck,
+            localContentID: encoded.localContentID,
+            encoded: encoded,
+            title: existing?.title ?? deckSnapshot.title,
+            description: existing?.description,
+            visibility: existing?.visibility ?? .friends,
+            includeValue: existing?.includeValue ?? false
+        )
+    }
+
+    private func syncIfPublishedWishlist(itemSnapshots: [WishlistItemSnapshot]) async throws {
+        let existing = try await fetchMine(type: .wishlist, localContentID: "wishlist")
+        guard existing != nil else { return }
+        let encoded = try await encodeWishlistPayload(itemSnapshots, includeValue: existing?.includeValue ?? false)
+        _ = try await upsertSharedContent(
+            type: .wishlist,
+            localContentID: encoded.localContentID,
+            encoded: encoded,
+            title: existing?.title ?? "Wishlist",
+            description: existing?.description,
+            visibility: existing?.visibility ?? .friends,
+            includeValue: existing?.includeValue ?? false
         )
     }
 
@@ -501,6 +602,44 @@ final class SocialShareService {
         )
     }
 
+    private func encodeWishlistPayload(_ itemSnapshots: [WishlistItemSnapshot], includeValue: Bool) async throws -> EncodedPayload {
+        var rows: [[String: JSONValue]] = []
+        var totalValue: Double = 0
+        for item in itemSnapshots {
+            var row: [String: JSONValue] = [
+                "cardID": .string(item.cardID),
+                "variantKey": .string(item.variantKey)
+            ]
+            if !item.notes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                row["notes"] = .string(item.notes)
+            }
+            if let card = await cardDataService.loadCard(masterCardId: item.cardID) {
+                row["cardName"] = .string(card.cardName)
+                if includeValue, let value = await pricingService.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+                    row["market_value_usd"] = .number(value)
+                    totalValue += value
+                }
+            }
+            rows.append(row)
+        }
+        var payload: [String: JSONValue] = [
+            "payload_version": .number(1),
+            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
+            "local_content_id": .string("wishlist"),
+            "items": .array(rows.map(JSONValue.object))
+        ]
+        if includeValue {
+            payload["market_value_usd"] = .number(totalValue)
+        }
+        return EncodedPayload(
+            payload: payload,
+            title: "Wishlist",
+            cardCount: rows.count,
+            brand: nil,
+            localContentID: "wishlist"
+        )
+    }
+
     private func encodeBinderPayload(_ binder: Binder, includeValue: Bool) async throws -> EncodedPayload {
         var rows: [[String: JSONValue]] = []
         var totalValue: Double = 0
@@ -535,6 +674,43 @@ final class SocialShareService {
             cardCount: rows.count,
             brand: binder.tcgBrand.rawValue,
             localContentID: binder.id.uuidString
+        )
+    }
+
+    private func encodeBinderPayload(_ snapshot: BinderSyncSnapshot, includeValue: Bool) async throws -> EncodedPayload {
+        var rows: [[String: JSONValue]] = []
+        var totalValue: Double = 0
+        for slot in snapshot.slots {
+            var row: [String: JSONValue] = [
+                "cardID": .string(slot.cardID),
+                "variantKey": .string(slot.variantKey),
+                "quantity": .number(1),
+                "cardName": .string(slot.cardName)
+            ]
+            if includeValue,
+               let card = await cardDataService.loadCard(masterCardId: slot.cardID),
+               let value = await pricingService.usdPriceForVariant(for: card, variantKey: slot.variantKey) {
+                row["market_value_usd"] = .number(value)
+                totalValue += value
+            }
+            rows.append(row)
+        }
+        var payload: [String: JSONValue] = [
+            "payload_version": .number(1),
+            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
+            "local_content_id": .string(snapshot.id.uuidString),
+            "brand": .string(snapshot.brandRawValue),
+            "items": .array(rows.map(JSONValue.object))
+        ]
+        if includeValue {
+            payload["market_value_usd"] = .number(totalValue)
+        }
+        return EncodedPayload(
+            payload: payload,
+            title: snapshot.title,
+            cardCount: rows.count,
+            brand: snapshot.brandRawValue,
+            localContentID: snapshot.id.uuidString
         )
     }
 
@@ -576,6 +752,47 @@ final class SocialShareService {
             cardCount: totalCardCount,
             brand: deck.tcgBrand.rawValue,
             localContentID: deck.id.uuidString
+        )
+    }
+
+    private func encodeDeckPayload(_ snapshot: DeckSyncSnapshot, includeValue: Bool) async throws -> EncodedPayload {
+        var rows: [[String: JSONValue]] = []
+        var totalCardCount = 0
+        var totalValue: Double = 0
+        for entry in snapshot.cards {
+            totalCardCount += entry.quantity
+            var row: [String: JSONValue] = [
+                "cardID": .string(entry.cardID),
+                "variantKey": .string(entry.variantKey),
+                "quantity": .number(Double(entry.quantity)),
+                "cardName": .string(entry.cardName)
+            ]
+            if includeValue,
+               let card = await cardDataService.loadCard(masterCardId: entry.cardID),
+               let unit = await pricingService.usdPriceForVariant(for: card, variantKey: entry.variantKey) {
+                let line = unit * Double(entry.quantity)
+                row["market_value_usd"] = .number(line)
+                totalValue += line
+            }
+            rows.append(row)
+        }
+        var payload: [String: JSONValue] = [
+            "payload_version": .number(1),
+            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
+            "local_content_id": .string(snapshot.id.uuidString),
+            "brand": .string(snapshot.brandRawValue),
+            "format": .string(snapshot.formatDisplayName),
+            "cards": .array(rows.map(JSONValue.object))
+        ]
+        if includeValue {
+            payload["market_value_usd"] = .number(totalValue)
+        }
+        return EncodedPayload(
+            payload: payload,
+            title: snapshot.title,
+            cardCount: totalCardCount,
+            brand: snapshot.brandRawValue,
+            localContentID: snapshot.id.uuidString
         )
     }
 

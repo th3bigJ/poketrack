@@ -24,6 +24,7 @@ struct FeedView: View {
         }
         .onAppear {
             services.socialFeed.clearUnreadState()
+            services.socialPush.clearAppBadgeCount()
         }
     }
 
@@ -96,6 +97,7 @@ struct FeedView: View {
         do {
             _ = try await services.socialFeed.fetchFeed(refresh: true, pageSize: 20)
             services.socialFeed.clearUnreadState()
+            services.socialPush.clearAppBadgeCount()
             errorMessage = nil
         } catch {
             errorMessage = error.localizedDescription

@@ -478,6 +478,7 @@ struct RootView: View {
             }
             if tab == .social {
                 services.socialFeed.clearUnreadState()
+                services.socialPush.clearAppBadgeCount()
             }
             if tab == .more {
                 if suppressMorePathReset {
