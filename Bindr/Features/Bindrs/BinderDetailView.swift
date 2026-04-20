@@ -61,7 +61,8 @@ struct BinderDetailView: View {
             if isEditing {
                 editContent
             } else {
-                pageInfoBar
+                // No top info bar any more — "Page Value" moved into the
+                // bottom stats row so the binder itself has more vertical room.
                 viewContent
                 bottomStatsBar
             }
@@ -146,65 +147,23 @@ struct BinderDetailView: View {
         .padding(.bottom, 6)
     }
 
-    // MARK: - Page info bar (Page X of Y · Page value)
+    // MARK: - Bottom stats bar (Cards · Page Value · Binder Value)
 
-    private var pageInfoBar: some View {
-        HStack {
-            Text("PAGE \(currentPage + 1) OF \(pageCount)")
-                .font(.caption2.weight(.semibold))
-                .tracking(0.8)
-                .foregroundStyle(.secondary)
-            Spacer()
-            HStack(spacing: 4) {
-                Text("Page value")
-                    .font(.caption2)
-                    .foregroundStyle(.secondary)
-                Text(formattedPageValue)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.primary)
-            }
-        }
-        .padding(.horizontal, 20)
-        .padding(.vertical, 8)
-        .background(Color(uiColor: .secondarySystemBackground).opacity(0.5))
-    }
-
-    // MARK: - Bottom stats bar (Cards · Value · Slots + Add Card)
-
+    /// Sits flush at the bottom of the binder page.
+    /// The top "Page X of Y / Page value" bar was removed — page value moved
+    /// here next to the binder-wide value, and "Add Card" lives on the
+    /// header's edit button, so we don't need the pill any more.
     private var bottomStatsBar: some View {
         HStack(spacing: 0) {
             statCell(value: "\(filledCardCount)", label: "CARDS")
             statDivider
-            statCell(value: formattedTotalValue, label: "VALUE")
+            statCell(value: formattedPageValue, label: "PAGE VALUE")
             statDivider
-            statCell(value: "\(totalSlotCount)", label: "SLOTS")
-
-            Spacer(minLength: 8)
-
-            Button {
-                let target = firstEmptyPosition ?? 0
-                slotPickerTarget = BinderSlotPickerTarget(id: target)
-            } label: {
-                HStack(spacing: 6) {
-                    Image(systemName: "plus")
-                        .font(.system(size: 13, weight: .bold))
-                    Text("Add Card")
-                        .font(.subheadline.weight(.semibold))
-                }
-                .foregroundStyle(.white)
-                .padding(.horizontal, 18)
-                .padding(.vertical, 11)
-                .background(
-                    Capsule(style: .continuous)
-                        .fill(Color.black)
-                )
-                .shadow(color: .black.opacity(0.22), radius: 4, x: 0, y: 2)
-            }
-            .buttonStyle(.plain)
+            statCell(value: formattedTotalValue, label: "BINDER VALUE")
         }
         .padding(.horizontal, 16)
         .padding(.top, 10)
-        .padding(.bottom, 8)
+        .padding(.bottom, 6)
         .background(
             Rectangle()
                 .fill(.ultraThinMaterial)
@@ -737,13 +696,6 @@ struct BinderDetailView: View {
 
     private var filledCardCount: Int { binder.slotList.count }
 
-    private var totalSlotCount: Int {
-        if layout.isFreeScroll {
-            return max(filledCardCount, slotsPerPage)
-        }
-        return slotsPerPage * pageCount
-    }
-
     private var totalUSDValue: Double {
         binder.slotList.reduce(0) { acc, slot in
             acc + (slotUSDValues[slotValueKey(slot)] ?? 0)
@@ -782,20 +734,6 @@ struct BinderDetailView: View {
         return "\(display.symbol)\(formatted)"
     }
 
-    private var firstEmptyPosition: Int? {
-        let used = Set(binder.slotList.map(\.position))
-        // Prefer an empty slot on the current page so "Add Card" reads as
-        // context-aware; fall back to the first empty slot overall.
-        let pagePositions = positions(for: currentPage)
-        if let empty = pagePositions.first(where: { !used.contains($0) }) {
-            return empty
-        }
-        let maxPosition = (used.max() ?? -1) + 1
-        for i in 0...max(maxPosition, slotsPerPage * pageCount) {
-            if !used.contains(i) { return i }
-        }
-        return maxPosition
-    }
 }
 
 // MARK: - Button style for cards (lift on press)
