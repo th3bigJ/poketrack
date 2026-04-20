@@ -50,6 +50,13 @@ struct DecksRootView: View {
         } message: { deck in
             Text("This will permanently remove \"\(deck.title)\".")
         }
+        .task(id: decks.map(\.id).map(\.uuidString).sorted().joined(separator: ",")) {
+            do {
+                try await services.socialShare.reconcileDeletedDecks(localDeckIDs: Set(decks.map(\.id)))
+            } catch {
+                // Silent best-effort cleanup.
+            }
+        }
     }
 
     private var emptyDecksView: some View {

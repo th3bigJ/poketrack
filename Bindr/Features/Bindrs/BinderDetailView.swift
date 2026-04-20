@@ -21,6 +21,8 @@ struct BinderDetailView: View {
     @State private var showEditTitle = false
     @State private var editingTitle = ""
     @State private var showColourPicker = false
+    @State private var showShareSettings = false
+    @State private var isSharedPublished = false
     @State private var currentPage = 0
     @State private var viewingSlot: BinderSlot? = nil
     @State private var isPageTurning = false
@@ -44,6 +46,13 @@ struct BinderDetailView: View {
     private var slotsPerPage: Int { layout.slotsPerPage ?? 9 }
     private var cols: Int { layout.columns }
     private var rows: Int { layout.rows }
+    private var shareAutoSyncSignature: String {
+        let slotSignature = binder.slotList
+            .sorted { $0.position < $1.position }
+            .map { "\($0.position)|\($0.cardID)|\($0.variantKey)|\($0.cardName)" }
+            .joined(separator: ";")
+        return "\(binder.title)|\(slotSignature)"
+    }
 
     private var pageCount: Int {
         let maxPos = sortedSlots.last?.position ?? -1
@@ -79,8 +88,17 @@ struct BinderDetailView: View {
             }
         }
         .animation(.easeInOut(duration: 0.25), value: viewingSlot?.id)
-        .onAppear { Task { await loadCards() } }
+        .onAppear {
+            Task {
+                await loadCards()
+                await refreshShareStatus()
+            }
+        }
         .onChange(of: binder.slotList.count) { Task { await loadCards() } }
+        .onChange(of: shareAutoSyncSignature) { _, _ in
+            services.socialShare.scheduleAutoSync(binder: binder)
+            Task { await refreshShareStatus() }
+        }
         .onChange(of: cardsByID.count) { Task { await refreshSlotValues() } }
         .fullScreenCover(item: $slotPickerTarget) { target in
             BinderSlotPickerView(
@@ -103,6 +121,12 @@ struct BinderDetailView: View {
         .sheet(isPresented: $showColourPicker) {
             BinderStylePickerSheet(binder: binder)
         }
+        .sheet(isPresented: $showShareSettings) {
+            ShareSettingsView(source: .binder(binder)) {
+                Task { await refreshShareStatus() }
+            }
+            .environment(services)
+        }
     }
 
     // MARK: - Header
@@ -121,6 +145,18 @@ struct BinderDetailView: View {
                             .foregroundStyle(.primary)
                     }
                     Spacer(minLength: 0)
+                    Button {
+                        showShareSettings = true
+                    } label: {
+                        Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                            .font(.system(size: 17, weight: .semibold))
+                            .foregroundStyle(isSharedPublished ? .green : headerIconColor)
+                    }
+                    .modifier(ChromeGlassCircleGlyphModifier())
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
+                    .accessibilityLabel(isSharedPublished ? "Shared binder settings" : "Share binder")
+
                     Button {
                         withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
                             isEditing.toggle()
@@ -733,6 +769,15 @@ struct BinderDetailView: View {
             formatted = String(format: "%.2f", amount)
         }
         return "\(display.symbol)\(formatted)"
+    }
+
+    private func refreshShareStatus() async {
+        do {
+            let snapshot = try await services.socialShare.shareSnapshot(for: binder)
+            isSharedPublished = snapshot.isPublished
+        } catch {
+            isSharedPublished = false
+        }
     }
 
 }

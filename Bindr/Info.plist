@@ -12,6 +12,19 @@
 	<string>sb_publishable_Qf1l21DJp7GZELyCLjt6Gg_7uMbEhrC</string>
 	<key>BINDR_SUPABASE_URL</key>
 	<string>https://eovjwogsniwfwxfrtoer.supabase.co</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>app.bindr.social</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>bindr</string>
+			</array>
+		</dict>
+	</array>
 	<key>NSUbiquitousContainers</key>
 	<dict>
 		<key>iCloud.app1xy.bindr</key>

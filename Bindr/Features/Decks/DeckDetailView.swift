@@ -116,6 +116,8 @@ struct DeckDetailView: View {
     @State private var deckValue: Double? = nil
     @State private var missingValue: Double? = nil
     @State private var isLoadingValue = false
+    @State private var showShareSettings = false
+    @State private var isSharedPublished = false
 
     private static func catalogSubtypeString(from card: Card) -> String? {
         if let s = card.subtype?.trimmingCharacters(in: .whitespacesAndNewlines), !s.isEmpty {
@@ -211,6 +213,13 @@ struct DeckDetailView: View {
     }
 
     private var isOnePiece: Bool { deck.tcgBrand == .onePiece }
+    private var shareAutoSyncSignature: String {
+        let cardsSignature = deck.cardList
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)|\($0.cardName)" }
+            .sorted()
+            .joined(separator: ";")
+        return "\(deck.title)|\(deck.deckFormat.rawValue)|\(cardsSignature)"
+    }
 
     var body: some View {
         ScrollView {
@@ -250,12 +259,21 @@ struct DeckDetailView: View {
                 }
             }
             ToolbarItem(placement: .primaryAction) {
-                Button(isEditing ? "Done" : "Edit") {
-                    withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                        isEditing.toggle()
+                HStack(spacing: 10) {
+                    Button {
+                        showShareSettings = true
+                    } label: {
+                        Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                            .foregroundStyle(isSharedPublished ? .green : .primary)
                     }
+
+                    Button(isEditing ? "Done" : "Edit") {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                            isEditing.toggle()
+                        }
+                    }
+                    .fontWeight(isEditing ? .semibold : .regular)
                 }
-                .fontWeight(isEditing ? .semibold : .regular)
             }
         }
         .sheet(item: $pickerGroup) { group in
@@ -271,10 +289,23 @@ struct DeckDetailView: View {
             )
             .environment(services)
         }
+        .sheet(isPresented: $showShareSettings) {
+            ShareSettingsView(source: .deck(deck)) {
+                Task { await refreshShareStatus() }
+            }
+            .environment(services)
+        }
         .task(id: deck.cardList.map(\.cardID).sorted().joined()) {
             await backfillDeckCatalogMetadataIfNeeded()
             await syncDeckImagePathsFromCatalog()
             await refreshValue()
+        }
+        .task {
+            await refreshShareStatus()
+        }
+        .onChange(of: shareAutoSyncSignature) { _, _ in
+            services.socialShare.scheduleAutoSync(deck: deck)
+            Task { await refreshShareStatus() }
         }
     }
 
@@ -957,6 +988,15 @@ struct DeckDetailView: View {
         case "Fairy":      return .pink
         case "Colorless":  return Color(uiColor: .systemGray3)
         default:           return .secondary
+        }
+    }
+
+    private func refreshShareStatus() async {
+        do {
+            let snapshot = try await services.socialShare.shareSnapshot(for: deck)
+            isSharedPublished = snapshot.isPublished
+        } catch {
+            isSharedPublished = false
         }
     }
 }

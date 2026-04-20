@@ -20,6 +20,8 @@ struct WishlistView: View {
 
     @State private var cardsByCardID: [String: Card] = [:]
     @State private var showPaywall = false
+    @State private var showShareSettings = false
+    @State private var isSharedPublished = false
     @State private var errorMessage: String?
 
     private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
@@ -75,6 +77,12 @@ struct WishlistView: View {
             PaywallSheet()
                 .environment(services)
         }
+        .sheet(isPresented: $showShareSettings) {
+            ShareSettingsView(source: .wishlist(items: visibleWishlistItems)) {
+                Task { await refreshShareStatus() }
+            }
+            .environment(services)
+        }
         .alert("Error", isPresented: .constant(errorMessage != nil)) {
             Button("OK") {
                 errorMessage = nil
@@ -86,10 +94,15 @@ struct WishlistView: View {
         }
         .task(id: wishlistSignature) {
             await resolveWishlistCards()
+            services.socialShare.scheduleAutoSyncWishlist(items: visibleWishlistItems)
+            await refreshShareStatus()
         }
         .onAppear {
             services.setupWishlist(modelContext: modelContext)
             isActive = true
+            Task {
+                await refreshShareStatus()
+            }
         }
         .onDisappear {
             isActive = false
@@ -186,6 +199,17 @@ struct WishlistView: View {
             Text("Wishlist")
                 .font(.largeTitle.bold())
             Spacer()
+            Button {
+                showShareSettings = true
+            } label: {
+                Image(systemName: isSharedPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                    .font(.system(size: 18, weight: .semibold))
+                    .foregroundStyle(isSharedPublished ? .green : .primary)
+                    .padding(8)
+                    .background(.ultraThinMaterial, in: Circle())
+            }
+            .buttonStyle(.plain)
+            .accessibilityLabel(isSharedPublished ? "Wishlist share settings" : "Share wishlist")
         }
     }
 
@@ -293,6 +317,15 @@ struct WishlistView: View {
         } catch {
             errorMessage = error.localizedDescription
             HapticManager.notification(.error)
+        }
+    }
+
+    private func refreshShareStatus() async {
+        do {
+            let snapshot = try await services.socialShare.shareSnapshotForWishlist()
+            isSharedPublished = snapshot.isPublished
+        } catch {
+            isSharedPublished = false
         }
     }
 }

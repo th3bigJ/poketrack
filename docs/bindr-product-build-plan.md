@@ -1,3 +1,316 @@
+# Bindr - Social Build Plan (Current Status)
+
+> Canonical remaining-work plan: `docs/bindr-product-build-plan-remaining.md`
+>
+> Canonical test execution checklist: `docs/part-a1-a4-testing-checklist.md`
+
+This file is a concise current-status summary.
+
+---
+
+## Completed
+
+- Part A1 Profiles
+- Part A2 Friends
+- Part A3 Sharing
+- Part A4 Phases 12-14 (feed, reactions/comments, notification preferences UI)
+- Part A4 Phase 15 backend wiring:
+  - `social-push` Edge Function deployed via MCP
+  - DB triggers wired for friendship, shared content, comments, wishlist matches
+  - `push_delivery_log` created for delivery observability
+
+---
+
+## Remaining Work
+
+1. Finalize Part A4 Phase 15 runtime configuration + device validation
+2. Run full A1-A4 QA and sign-off
+3. Start Part B (Trading)
+
+---
+
+## Part A4 Phase 15 Remaining
+
+### Build
+
+- [x] Deploy Supabase Edge Function `social-push`.
+- [x] Add event triggers for all required social push categories.
+- [x] Honor `notification_preferences` in backend push decision logic.
+- [x] Include deep-link target payload fields in push payloads.
+- [x] Add push observability via `push_delivery_log`.
+- [ ] Configure APNs runtime secrets in Supabase (`APNS_TOPIC`, `APNS_ENV`, `APNS_TEAM_ID`, `APNS_KEY_ID`, `APNS_PRIVATE_KEY`).
+
+### Test
+
+- [ ] Push arrives for each enabled trigger category.
+- [ ] Disabled categories do not send push.
+- [ ] Push tap deep-links correctly in foreground/background/cold-start.
+- [ ] Social unread indicator appears and clears correctly.
+- [ ] Duplicate sends are prevented where expected.
+- [ ] Push failure paths are observable in logs.
+
+### Gate
+
+- [ ] Part A4 complete.
+- [ ] Part A is shippable.
+
+---
+
+## Part A Sign-Off
+
+Use `docs/part-a1-a4-testing-checklist.md` for full execution.
+
+Before Part B:
+
+- [ ] A1-A4 checklist completed end-to-end.
+- [ ] Friend/non-friend/blocked scenarios verified.
+- [ ] At least one clean install and one relaunch run pass.
+- [ ] Physical-device APNs flow verified.
+# Bindr - Social Build Plan (Current Status)
+
+> Canonical remaining-work plan: `docs/bindr-product-build-plan-remaining.md`
+>
+> Canonical test execution checklist: `docs/part-a1-a4-testing-checklist.md`
+
+This file is a concise current-status summary.
+
+---
+
+## Completed
+
+- Part A1 Profiles
+- Part A2 Friends
+- Part A3 Sharing
+- Part A4 Phases 12-14 (feed, reactions/comments, notification preferences UI)
+- Part A4 Phase 15 backend wiring:
+  - `social-push` Edge Function deployed via MCP
+  - DB triggers wired for friendship, shared content, comments, wishlist matches
+  - `push_delivery_log` created for delivery observability
+
+---
+
+## Remaining Work
+
+1. Finalize Part A4 Phase 15 runtime configuration + device validation
+2. Run full A1-A4 QA and sign-off
+3. Start Part B (Trading)
+
+---
+
+## Part A4 Phase 15 Remaining
+
+### Build
+
+- [x] Deploy Supabase Edge Function `social-push`.
+- [x] Add event triggers for all required social push categories.
+- [x] Honor `notification_preferences` in backend push decision logic.
+- [x] Include deep-link target payload fields in push payloads.
+- [x] Add push observability via `push_delivery_log`.
+- [ ] Configure APNs runtime secrets in Supabase (`APNS_TOPIC`, `APNS_ENV`, `APNS_TEAM_ID`, `APNS_KEY_ID`, `APNS_PRIVATE_KEY`).
+
+### Test
+
+- [ ] Push arrives for each enabled trigger category.
+- [ ] Disabled categories do not send push.
+- [ ] Push tap deep-links correctly in foreground/background/cold-start.
+- [ ] Social unread indicator appears and clears correctly.
+- [ ] Duplicate sends are prevented where expected.
+- [ ] Push failure paths are observable in logs.
+
+### Gate
+
+- [ ] Part A4 complete.
+- [ ] Part A is shippable.
+
+---
+
+## Part A Sign-Off
+
+Use `docs/part-a1-a4-testing-checklist.md` for full execution.
+
+Before Part B:
+
+- [ ] A1-A4 checklist completed end-to-end.
+- [ ] Friend/non-friend/blocked scenarios verified.
+- [ ] At least one clean install and one relaunch run pass.
+- [ ] Physical-device APNs flow verified.
+
+# Bindr - Social Build Plan
+
+> Canonical remaining-work plan: `docs/bindr-product-build-plan-remaining.md`
+>
+> Canonical test execution checklist: `docs/part-a1-a4-testing-checklist.md`
+# Bindr - Social Build Plan (Remaining Work Only)
+
+This file now tracks only unfinished work.
+
+Completed:
+- Part A1 Profiles
+- Part A2 Friends
+- Part A3 Sharing
+- Part A4 Phases 12-14 (feed, reactions/comments, notification preferences UI)
+- Part A4 Phase 15 backend wiring (Edge Function + DB triggers + logging table)
+
+---
+
+## What Is Left Now
+
+1. Finalize Part A4 Phase 15 runtime configuration + full device validation
+2. Run full A1-A4 QA and sign-off
+3. Start Part B (Trading)
+
+---
+
+## Part A4 - Remaining (Phase 15)
+
+## Goal
+Complete production-grade push delivery and final social readiness for ship.
+
+### Build
+- [x] Deploy Supabase Edge Function `social-push` for push delivery.
+- [x] Add push trigger: friend request received.
+- [x] Add push trigger: friend request accepted.
+- [x] Add push trigger: friend publishes new shared content.
+- [x] Add push trigger: new comment on your content.
+- [x] Add push trigger: "I have this" on your wishlist.
+- [x] Ensure `notification_preferences` is honored in push decision logic.
+- [x] Verify APNs payload shape includes deep-link target data.
+- [x] Add push observability via `push_delivery_log`.
+- [ ] Configure APNs runtime secrets in Supabase (`APNS_TOPIC`, `APNS_ENV`, `APNS_TEAM_ID`, `APNS_KEY_ID`, `APNS_PRIVATE_KEY`).
+- [ ] Confirm push deep-link routing opens correct in-app destination.
+- [ ] Confirm Social badge behavior is correct under all unread states.
+
+### Test
+- [ ] Push arrives for each enabled trigger category.
+- [ ] Disabled categories do not send push.
+- [ ] Push tap deep-links to correct destination in foreground/background/cold-start states.
+- [ ] Social unread indicator appears and clears correctly.
+- [ ] Duplicate push sends are prevented where expected.
+- [ ] Push failure paths are observable in logs.
+
+### Gate
+- [ ] Part A4 complete.
+- [ ] Part A is shippable.
+
+---
+
+## Part A Sign-Off Checklist (Consolidated)
+
+Use this doc for full execution:
+- `docs/part-a1-a4-testing-checklist.md`
+
+Required before Part B begins:
+- [ ] A1-A4 checklist completed end-to-end.
+- [ ] Friend/non-friend/blocked scenarios verified.
+- [ ] At least one clean install and one relaunch run pass.
+- [ ] Physical-device APNs flow verified.
+
+---
+
+## Part B - Trading (Not Started)
+
+Detailed phasing will be added after Part A ship gate is passed.
+
+### Scope
+- Single cards + cash top-up only (V1)
+- Multi-card both sides; counter-offer negotiate loop
+- Two-stage flow: agreement -> physical exchange confirmation -> collection execution
+- Trade ledger via `CollectionLedgerService.recordTradeOut(...)` + existing `recordSingleCardAcquisition(kind: .trade)`
+- Full revision history per trade
+- Trade chat scoped to the trade
+
+### Tables Required
+`trade_offers`, `trade_offer_items`, `trade_offer_revisions`, `trade_messages`
+
+### New Service Required
+`SocialTradeService`
+
+### New UI Required
+`TradesListView`, `TradeDetailView`, `BuildTradeOfferView`, `TradeItemPickerView`, `TradeMessagesView`, `TradeCompletionView`
+# Bindr - Social Build Plan (Remaining Work Only)
+
+This file now tracks only unfinished work.
+
+Completed:
+- Part A1 Profiles
+- Part A2 Friends
+- Part A3 Sharing
+- Part A4 Phases 12-14 (feed, reactions/comments, notification preferences UI)
+
+---
+
+## What Is Left Now
+
+1. Finalize Part A4 Phase 15 (APNs delivery backend + full push validation)
+2. Run full A1-A4 QA and sign-off
+3. Start Part B (Trading)
+
+---
+
+## Part A4 - Remaining (Phase 15)
+
+## Goal
+Complete production-grade push delivery and final social readiness for ship.
+
+### Build
+- [ ] Build and deploy Supabase Edge Function for push delivery.
+- [ ] Add push trigger: friend request received.
+- [ ] Add push trigger: friend request accepted.
+- [ ] Add push trigger: friend publishes new shared content.
+- [ ] Add push trigger: new comment on your content.
+- [ ] Add push trigger: "I have this" on your wishlist.
+- [ ] Ensure `notification_preferences` is honored for every push category.
+- [ ] Verify APNs payload shape includes deep-link target data.
+- [ ] Confirm push deep-link routing opens correct in-app destination.
+- [ ] Confirm Social badge behavior is correct under all unread states.
+
+### Test
+- [ ] Push arrives for each enabled trigger category.
+- [ ] Disabled categories do not send push.
+- [ ] Push tap deep-links to correct destination in foreground/background/cold-start states.
+- [ ] Social unread indicator appears and clears correctly.
+- [ ] Duplicate push sends are prevented where expected.
+- [ ] Push failure paths are observable in logs.
+
+### Gate
+- [ ] Part A4 complete.
+- [ ] Part A is shippable.
+
+---
+
+## Part A Sign-Off Checklist (Consolidated)
+
+Use this doc for full execution:
+- `docs/part-a1-a4-testing-checklist.md`
+
+Required before Part B begins:
+- [ ] A1-A4 checklist completed end-to-end.
+- [ ] Friend/non-friend/blocked scenarios verified.
+- [ ] At least one clean install and one relaunch run pass.
+- [ ] Physical-device APNs flow verified.
+
+---
+
+## Part B - Trading (Not Started)
+
+Detailed phasing will be added after Part A ship gate is passed.
+
+### Scope
+- Single cards + cash top-up only (V1)
+- Multi-card both sides; counter-offer negotiate loop
+- Two-stage flow: agreement -> physical exchange confirmation -> collection execution
+- Trade ledger via `CollectionLedgerService.recordTradeOut(...)` + existing `recordSingleCardAcquisition(kind: .trade)`
+- Full revision history per trade
+- Trade chat scoped to the trade
+
+### Tables Required
+`trade_offers`, `trade_offer_items`, `trade_offer_revisions`, `trade_messages`
+
+### New Service Required
+`SocialTradeService`
+
+### New UI Required
+`TradesListView`, `TradeDetailView`, `BuildTradeOfferView`, `TradeItemPickerView`, `TradeMessagesView`, `TradeCompletionView`
 # Bindr — Social Build Plan
 
 ---
@@ -18,147 +331,6 @@ Part A (bindrs, decks, dashboard, navigation) is complete. The app has 5 tabs: D
 | More → Deck Builder | `DecksRootView` |
 
 Social stays in More. It does not become its own tab.
-
----
-
-## Brand Mode Split Plan
-
-## Goal
-Stop running Pokémon and ONE PIECE side by side across the main app. The app should behave as a single-brand experience at runtime:
-
-- When active brand is `pokemon`, main navigation only shows Pokémon data, filters, labels, stats, and shortcuts.
-- When active brand is `onePiece`, main navigation only shows ONE PIECE data, filters, labels, stats, and shortcuts.
-- Brand switching lives in `More` as an explicit app-level control.
-
-This keeps menus smaller, reduces mixed-brand UI states, and makes future franchise expansion easier.
-
-## Product Decision
-
-- `selectedCatalogBrand` becomes the app-wide active brand, not just the Browse brand.
-- `enabledBrands` is no longer used to drive simultaneous multi-brand UI in the main app shell.
-- The user can still have local data for both brands installed, but only one brand is visible at a time.
-- `More` gets a new "Switch Game" / "Active Game" control that swaps the app into Pokémon or ONE PIECE mode.
-- Existing cross-brand aggregates can either be removed from the main shell or moved behind a later settings/debug surface; V1 should prefer active-brand-only presentation.
-
-## UX Rules
-
-- Dashboard: only show value/activity/cards for the active brand.
-- Browse: only show the active brand's catalog and brand-specific entry points.
-- Collect: only show collection/wishlist for the active brand.
-- Bindrs: default new binders and visible binder flows to the active brand; do not surface cross-brand shortcuts in the same session.
-- Deck Builder: create and browse decks for the active brand by default.
-- Search: scope results to the active brand unless a future global search mode is deliberately added.
-- More: show current active game at the top and provide the switcher there.
-
-## Implementation Shape
-
-### Phase B1 — Reframe Brand Settings
-
-**Build**
-- [ ] Treat `BrandSettings.selectedCatalogBrand` as the single source of truth for active app mode
-- [ ] Keep persistence for both brands installed, but stop using `enabledBrands` to render mixed-brand chrome
-- [ ] Add a single helper like `activeBrand` / `currentAppBrand` usage pattern in root views and feature entry points
-- [ ] Audit fallbacks that currently assume "all enabled brands" and convert them to "current active brand"
-
-**Likely files**
-- `Bindr/Services/BrandSettings.swift`
-- `Bindr/Services/AppServices.swift`
-- `Bindr/Features/Root/RootView.swift`
-
-**Gate**
-- [ ] Switching active brand updates app state consistently without needing relaunch
-
-### Phase B2 — Add Brand Switcher To More
-
-**Build**
-- [ ] Add an "Active Game" section near the top of `MoreView`
-- [ ] Show current game logo/name and a segmented control, picker, or menu for Pokémon / ONE PIECE
-- [ ] On switch, reset feature-local navigation/filter/search state that could leak old-brand context
-- [ ] Preserve the current tab if possible; otherwise safely return to that tab's root before applying the new brand
-
-**Likely files**
-- `Bindr/Features/Root/MoreSheet.swift`
-- `Bindr/Features/Root/RootView.swift`
-
-**Gate**
-- [ ] User can switch from More and immediately see the whole app change brand context cleanly
-
-### Phase B3 — Remove Mixed-Brand Main Shell UI
-
-**Build**
-- [ ] Dashboard: replace combined Pokémon/ONE PIECE tiles with active-brand-only metrics
-- [ ] Collect: remove "all brands" presentation from default UX
-- [ ] Search: default to active brand and remove dual-brand result blending in standard flows
-- [ ] Browse: ensure Pokémon-only routes (`All Pokémon`) never appear in ONE PIECE mode, and ONE PIECE-only routes never appear in Pokémon mode
-- [ ] Scanner: use active brand as the default scan target
-
-**Likely files**
-- `Bindr/Features/Dashboard/DashboardView.swift`
-- `Bindr/Features/Browse/BrowseView.swift`
-- `Bindr/Features/Search/SearchExperienceView.swift`
-- `Bindr/Features/Search/UniversalSearchResultsView.swift`
-- `Bindr/Features/Scanner/CardScannerView.swift`
-- `Bindr/Features/Scanner/CardScannerViewModel.swift`
-
-**Gate**
-- [ ] No main tab shows mixed Pokémon + ONE PIECE content after the split
-
-### Phase B4 — Make Creation Flows Brand-Scoped
-
-**Build**
-- [ ] New deck flow should default to active brand and only offer that brand's formats unless user explicitly changes context
-- [ ] New binder flow should default to active brand
-- [ ] Any quick actions in `More` should launch into the current brand's experience
-- [ ] Brand-specific copy, empty states, and shortcut rows should follow the active game
-
-**Likely files**
-- `Bindr/Features/Decks/CreateDeckSheet.swift`
-- `Bindr/Features/Decks/DecksRootView.swift`
-- `Bindr/Features/Bindrs/`
-- `Bindr/Features/Root/MoreSheet.swift`
-
-**Gate**
-- [ ] Newly created content naturally belongs to the currently selected game
-
-### Phase B5 — Data, Sync, And Offline Follow-Through
-
-**Build**
-- [ ] Keep local catalog/pricing/offline packs stored per brand as they are today
-- [ ] Do not delete the inactive brand's data on switch; only hide it from the main UX
-- [ ] Ensure background refresh/offline image settings remain brand-aware but not simultaneously foregrounded in UI
-- [ ] Review collection value snapshots and similar aggregate models so active-brand screens do not imply a combined mode
-
-**Likely files**
-- `Bindr/Data/Catalog/`
-- `Bindr/Services/OfflineImageSettings.swift`
-- `Bindr/Services/CollectionValueService.swift`
-
-**Gate**
-- [ ] Brand switching is a presentation/context switch, not a destructive data operation
-
-## State Reset Rules On Switch
-
-- Clear Browse navigation path
-- Clear Search query and search navigation path
-- Reset Collect filters to the selected brand context
-- Dismiss any presented brand-specific full-screen browse routes if needed
-- Reset temporary picker state in deck/binder creation flows
-
-This avoids landing in invalid UI after switching from one franchise to the other.
-
-## Non-Goals For This Split
-
-- Creating two separate app targets
-- Duplicating the codebase into a Pokémon app and a ONE PIECE app
-- Deleting support for storing multiple brands on-device
-- Reworking social/trading payload schemas right now
-
-## Recommended Rollout Order
-
-1. `More` brand switcher + root state reset
-2. Browse / Collect / Search isolation
-3. Dashboard and creation-flow cleanup
-4. Follow-up pass for wording, empty states, badges, and settings
 
 ---
 
@@ -775,15 +947,19 @@ Bindr/Features/Social/
 ### Phase 15 — APNs & Push Delivery
 
 **Build**
-- [ ] Register APNs device token with backend on sign-in (`device_tokens` table)
-- [ ] Build Supabase Edge Function for push delivery
-- [ ] Add push trigger: friend request received
-- [ ] Add push trigger: friend request accepted
-- [ ] Add push trigger: friend publishes new shared content
-- [ ] Add push trigger: new comment on your content
-- [ ] Add push trigger: "I have this" on your wishlist
-- [ ] Add push deep-link routing — tap notification opens relevant screen
-- [ ] Wire Social badge (red dot on More → Social row) for unread items
+- [x] Register APNs device token with backend on sign-in (`device_tokens` table)
+- [x] Build and deploy Supabase Edge Function `social-push` for push delivery
+- [x] Add push trigger: friend request received
+- [x] Add push trigger: friend request accepted
+- [x] Add push trigger: friend publishes new shared content
+- [x] Add push trigger: new comment on your content
+- [x] Add push trigger: "I have this" on your wishlist
+- [x] Ensure `notification_preferences` are honored in backend push logic
+- [x] Include deep-link payload fields and event metadata in push payloads
+- [x] Add `push_delivery_log` observability table for sent/skipped/failed states
+- [ ] Configure APNs runtime secrets in Supabase for real device delivery
+- [ ] Validate push deep-link routing — tap notification opens relevant screen
+- [ ] Validate Social badge (red dot on More → Social row) for unread items
 
 **Test**
 - [ ] Push arrives for each enabled trigger category

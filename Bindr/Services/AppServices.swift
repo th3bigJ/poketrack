@@ -15,6 +15,10 @@ final class AppServices {
     let store = StoreKitService()
     let socialAuth: SocialAuthService
     let socialProfile: SocialProfileService
+    let socialFriend: SocialFriendService
+    let socialShare: SocialShareService
+    let socialFeed: SocialFeedService
+    let socialPush: SocialPushService
     
     // Wishlist service - initialized after model context is available
     private(set) var wishlist: WishlistService?
@@ -56,6 +60,9 @@ final class AppServices {
         let socialAuth = SocialAuthService()
         self.socialAuth = socialAuth
         self.socialProfile = SocialProfileService(authService: socialAuth)
+        self.socialFriend = SocialFriendService(authService: socialAuth, storeService: store)
+        self.socialFeed = SocialFeedService(authService: socialAuth)
+        self.socialPush = SocialPushService(authService: socialAuth, profileService: socialProfile)
         let cloudSettings = CloudSettingsService()
         self.cloudSettings = cloudSettings
         self.priceDisplay = PriceDisplaySettings(cloudSettings: cloudSettings)
@@ -63,6 +70,12 @@ final class AppServices {
         let brandSettings = BrandSettings()
         self.brandSettings = brandSettings
         self.cardData = CardDataService(brandSettings: brandSettings)
+        self.socialShare = SocialShareService(
+            authService: socialAuth,
+            storeService: store,
+            cardDataService: cardData,
+            pricingService: pricing
+        )
         if brandSettings.hasCompletedBrandOnboarding && brandSettings.hasCompletedInitialAppBootstrap {
             isReady = true
             shouldRunBackgroundCatalogRefreshOnLaunch = true

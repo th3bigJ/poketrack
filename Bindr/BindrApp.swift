@@ -7,9 +7,37 @@
 
 import SwiftUI
 import SwiftData
+import UserNotifications
+import UIKit
+
+final class BindrPushAppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDelegate {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
+        UNUserNotificationCenter.current().delegate = self
+        return true
+    }
+
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        NotificationCenter.default.post(name: .socialPushDeviceTokenDidUpdate, object: deviceToken)
+    }
+
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        // Safe to ignore in development/simulators where APNs registration may be unavailable.
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification) async -> UNNotificationPresentationOptions {
+        NotificationCenter.default.post(name: .socialPushDeepLinkReceived, object: nil, userInfo: notification.request.content.userInfo)
+        return [.banner, .sound, .badge]
+    }
+
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse) async {
+        NotificationCenter.default.post(name: .socialPushDeepLinkReceived, object: nil, userInfo: response.notification.request.content.userInfo)
+    }
+}
 
 @main
 struct BindrApp: App {
+    @UIApplicationDelegateAdaptor(BindrPushAppDelegate.self) private var pushAppDelegate
+
     static let cloudKitFallbackDefaultsKey = "cloudKitFallbackActive"
     static let cloudKitLastErrorDefaultsKey = "cloudKitLastError"
 

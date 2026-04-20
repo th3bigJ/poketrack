@@ -244,6 +244,7 @@ struct RootView: View {
             if shouldShowSplash {
                 showSplash = true
             }
+            await services.socialPush.updateRegistrationState()
         }
     }
 
@@ -330,6 +331,7 @@ struct RootView: View {
                             .tabItem {
                                 Label(tab.title, systemImage: tab.symbolName)
                             }
+                            .badge(tab == .social && services.socialFeed.hasUnread ? "●" : nil)
                             .tag(tab)
                         }
                     }
@@ -474,6 +476,9 @@ struct RootView: View {
             if tab == .collect {
                 collectionNavigationPath = NavigationPath()
             }
+            if tab == .social {
+                services.socialFeed.clearUnreadState()
+            }
             if tab == .more {
                 if suppressMorePathReset {
                     suppressMorePathReset = false
@@ -508,6 +513,27 @@ struct RootView: View {
             defaultCollectionFilters.sortBy = .price
             collectCollectionFilters = defaultCollectionFilters
             collectWishlistFilters = BrowseCardGridFilters()
+        }
+        .onChange(of: services.socialAuth.authState) { _, _ in
+            Task {
+                await services.socialPush.updateRegistrationState()
+            }
+        }
+        .onOpenURL { url in
+            guard services.socialFriend.queueProfileDeepLink(from: url) else { return }
+            selectedTab = .social
+            Task {
+                await services.socialAuth.restoreSession()
+            }
+        }
+        .onChange(of: services.socialPush.queuedDeepLinkURL) { _, queuedURL in
+            guard let queuedURL else { return }
+            guard services.socialFriend.queueProfileDeepLink(from: queuedURL) else { return }
+            _ = services.socialPush.consumeQueuedDeepLinkURL()
+            selectedTab = .social
+            Task {
+                await services.socialAuth.restoreSession()
+            }
         }
         .sheet(item: $selectedCardPresentation) { ctx in
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)

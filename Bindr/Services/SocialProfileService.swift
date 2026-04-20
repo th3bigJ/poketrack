@@ -72,6 +72,40 @@ final class SocialProfileService {
         }
     }
 
+    private struct UpdateNotificationPreferencesRequest: Encodable {
+        let friendRequests: Bool
+        let friendAccepts: Bool
+        let sharedContentPosts: Bool
+        let comments: Bool
+        let wishlistMatches: Bool
+        let tradeUpdates: Bool
+        let marketing: Bool
+        let updatedAt: Date
+
+        enum CodingKeys: String, CodingKey {
+            case friendRequests = "friend_requests"
+            case friendAccepts = "friend_accepts"
+            case sharedContentPosts = "shared_content_posts"
+            case comments
+            case wishlistMatches = "wishlist_matches"
+            case tradeUpdates = "trade_updates"
+            case marketing
+            case updatedAt = "updated_at"
+        }
+    }
+
+    private struct DeviceTokenUpsertRequest: Encodable {
+        let userID: UUID
+        let token: String
+        let updatedAt: Date
+
+        enum CodingKeys: String, CodingKey {
+            case userID = "user_id"
+            case token
+            case updatedAt = "updated_at"
+        }
+    }
+
     private struct UpdateProfileRequest: Encodable {
         let displayName: String?
         let bio: String?
@@ -219,6 +253,77 @@ final class SocialProfileService {
             ]
         )
         return try profiles.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+    }
+
+    func fetchNotificationPreferences() async throws -> NotificationPreferences {
+        let userID = try signedInUserID()
+        let rows: [NotificationPreferences] = try await execute(
+            path: "/rest/v1/notification_preferences?select=*&user_id=eq.\(userID.uuidString)&limit=1",
+            method: "GET",
+            accessToken: try signedInAccessToken()
+        )
+        if let first = rows.first {
+            return first
+        }
+        try await ensureNotificationPreferences(userID: userID)
+        let seededRows: [NotificationPreferences] = try await execute(
+            path: "/rest/v1/notification_preferences?select=*&user_id=eq.\(userID.uuidString)&limit=1",
+            method: "GET",
+            accessToken: try signedInAccessToken()
+        )
+        return try seededRows.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+    }
+
+    func updateNotificationPreferences(
+        friendRequests: Bool,
+        friendAccepts: Bool,
+        sharedContentPosts: Bool,
+        comments: Bool,
+        wishlistMatches: Bool,
+        tradeUpdates: Bool,
+        marketing: Bool
+    ) async throws -> NotificationPreferences {
+        let userID = try signedInUserID()
+        let payload = UpdateNotificationPreferencesRequest(
+            friendRequests: friendRequests,
+            friendAccepts: friendAccepts,
+            sharedContentPosts: sharedContentPosts,
+            comments: comments,
+            wishlistMatches: wishlistMatches,
+            tradeUpdates: tradeUpdates,
+            marketing: marketing,
+            updatedAt: Date()
+        )
+        let rows: [NotificationPreferences] = try await execute(
+            path: "/rest/v1/notification_preferences?user_id=eq.\(userID.uuidString)&select=*",
+            method: "PATCH",
+            accessToken: try signedInAccessToken(),
+            body: payload,
+            extraHeaders: [
+                "Prefer": "return=representation"
+            ]
+        )
+        return try rows.first.unwrapOrThrow(SocialProfileError.invalidResponse)
+    }
+
+    func registerDeviceToken(_ token: String) async throws {
+        let normalizedToken = token.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !normalizedToken.isEmpty else { return }
+        let userID = try signedInUserID()
+        let payload = DeviceTokenUpsertRequest(
+            userID: userID,
+            token: normalizedToken,
+            updatedAt: Date()
+        )
+        _ = try await execute(
+            path: "/rest/v1/device_tokens?on_conflict=user_id,token",
+            method: "POST",
+            accessToken: try signedInAccessToken(),
+            body: payload,
+            extraHeaders: [
+                "Prefer": "resolution=merge-duplicates,return=minimal"
+            ]
+        ) as EmptyResponse
     }
 
     private func ensureNotificationPreferences(userID: UUID) async throws {

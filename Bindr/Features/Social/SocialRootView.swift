@@ -4,8 +4,27 @@ import CryptoKit
 import Security
 
 struct SocialRootView: View {
+    private enum SocialSection: String, CaseIterable, Identifiable {
+        case feed
+        case friends
+
+        var id: String { rawValue }
+        var title: String {
+            switch self {
+            case .feed: return "Feed"
+            case .friends: return "Friends"
+            }
+        }
+    }
+
     private enum ProfilePopoverDestination: Hashable {
         case editProfile
+    }
+
+    private enum SocialDestination: Hashable {
+        case search
+        case qrProfile
+        case friendProfile(username: String)
     }
 
     @Environment(AppServices.self) private var services
@@ -15,7 +34,9 @@ struct SocialRootView: View {
     @State private var errorMessage: String?
     @State private var showAccountProfile = false
     @State private var profilePopoverPath = NavigationPath()
+    @State private var socialNavigationPath = NavigationPath()
     @State private var currentNonce: String?
+    @State private var selectedSection: SocialSection = .feed
 
     private var isConfigured: Bool {
         AppConfiguration.supabaseURL != nil && !AppConfiguration.supabasePublishableKey.isEmpty
@@ -37,12 +58,20 @@ struct SocialRootView: View {
         .task {
             await services.socialAuth.restoreSession()
             await refreshProfileIfNeeded()
+            await routeQueuedDeepLinkIfPossible()
+            await services.socialPush.updateRegistrationState()
         }
         .onChange(of: services.socialAuth.authState) { _, state in
-            Task { await refreshProfileIfNeeded() }
+            Task {
+                await refreshProfileIfNeeded()
+                await routeQueuedDeepLinkIfPossible()
+                await services.socialPush.updateRegistrationState()
+            }
             if state == .signedOut {
                 profilePopoverPath = NavigationPath()
+                socialNavigationPath = NavigationPath()
                 showAccountProfile = false
+                selectedSection = .feed
             }
         }
     }
@@ -135,12 +164,56 @@ struct SocialRootView: View {
 
     @ViewBuilder
     private var signedInContent: some View {
-        ContentUnavailableView(
-            "Social Feed Coming Soon",
-            systemImage: "person.2",
-            description: Text("Use the profile button in the top-right to manage your social profile.")
-        )
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        if let profile {
+            NavigationStack(path: $socialNavigationPath) {
+                VStack(spacing: 12) {
+                    Picker("Social section", selection: $selectedSection) {
+                        ForEach(SocialSection.allCases) { section in
+                            Text(section.title).tag(section)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                    .padding(.horizontal, 16)
+                    .padding(.top, 8)
+
+                    Group {
+                        switch selectedSection {
+                        case .feed:
+                            FeedView()
+                        case .friends:
+                            FriendsListView(
+                                onOpenSearch: { socialNavigationPath.append(SocialDestination.search) },
+                                onOpenQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
+                                onOpenUsername: { username in
+                                    socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                                }
+                            )
+                        }
+                    }
+                }
+                .navigationTitle(selectedSection.title)
+                .navigationBarTitleDisplayMode(.inline)
+                .navigationDestination(for: SocialDestination.self) { destination in
+                    switch destination {
+                    case .search:
+                        FriendSearchView()
+                    case .qrProfile:
+                        QRProfileView(username: profile.username) { scannedUsername in
+                            socialNavigationPath.append(SocialDestination.friendProfile(username: scannedUsername))
+                        }
+                    case .friendProfile(let username):
+                        FriendProfileView(username: username)
+                    }
+                }
+            }
+        } else {
+            ContentUnavailableView(
+                "Create Your Profile",
+                systemImage: "person.crop.circle.badge.plus",
+                description: Text("Create your social profile first, then you can send and accept friend requests.")
+            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
     }
 
     private func handleAppleSignInResult(_ result: Result<ASAuthorization, Error>) async {
@@ -224,6 +297,20 @@ struct SocialRootView: View {
         }
     }
 
+    private func routeQueuedDeepLinkIfPossible() async {
+        guard case .signedIn = services.socialAuth.authState else { return }
+        guard let username = services.socialFriend.queuedProfileUsername else { return }
+        if profile == nil {
+            profilePopoverPath = NavigationPath()
+            profilePopoverPath.append(ProfilePopoverDestination.editProfile)
+            showAccountProfile = true
+        } else {
+            _ = services.socialFriend.consumeQueuedProfileUsername()
+            socialNavigationPath = NavigationPath()
+            socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+        }
+    }
+
     private var profilePopover: some View {
         NavigationStack(path: $profilePopoverPath) {
             profilePopoverHome
@@ -266,6 +353,8 @@ struct SocialRootView: View {
                                 )
                             }
                             profilePopoverPath = NavigationPath()
+                            showAccountProfile = false
+                            await routeQueuedDeepLinkIfPossible()
                         }
                     }
                 }

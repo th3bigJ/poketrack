@@ -135,6 +135,19 @@ struct SettingsView: View {
         }
 
         Section {
+            NavigationLink {
+                NotificationPreferencesView()
+                    .environment(services)
+            } label: {
+                Label("Notification Preferences", systemImage: "bell.badge")
+            }
+        } header: {
+            Text("Social")
+        } footer: {
+            Text("Choose exactly which social activity types can notify you.")
+        }
+
+        Section {
             Button("Legal Disclaimer") { showDisclaimer = true }
         }
 

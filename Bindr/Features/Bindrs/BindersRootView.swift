@@ -97,6 +97,13 @@ struct BindersRootView: View {
         } message: { binder in
             Text("This will permanently remove \"\(binder.title)\" and all its slots.")
         }
+        .task(id: binders.map(\.id).map(\.uuidString).sorted().joined(separator: ",")) {
+            do {
+                try await services.socialShare.reconcileDeletedBinders(localBinderIDs: Set(binders.map(\.id)))
+            } catch {
+                // Silent best-effort cleanup.
+            }
+        }
     }
 
     private func handleCreateTap() {

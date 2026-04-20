@@ -61,8 +61,10 @@ struct MoreView: View {
         .navigationDestination(for: SideMenuPage.self) { page in
             switch page {
             case .account:
-                SettingsView()
-                    .environment(services)
+                NavigationStack {
+                    SettingsView()
+                        .environment(services)
+                }
             case .social:
                 SocialRootView()
                     .environment(services)
@@ -95,8 +97,10 @@ struct MoreView: View {
                         .foregroundStyle(.primary)
                 }
                 .popover(isPresented: $showSettings) {
-                    SettingsView()
-                        .environment(services)
+                    NavigationStack {
+                        SettingsView()
+                            .environment(services)
+                    }
                 }
 
                 Spacer(minLength: 0)
