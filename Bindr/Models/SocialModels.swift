@@ -17,6 +17,9 @@ struct SocialProfile: Codable, Identifiable, Sendable {
     let favoriteCardImageURL: String?
     let favoriteDeckArchetype: String?
     let pinnedCardID: String?
+    let followerCount: Int?
+    let isWishlistPublic: Bool?
+    let wishlistCardIDs: [String]?
     let createdAt: Date?
 
     enum CodingKeys: String, CodingKey {
@@ -36,6 +39,9 @@ struct SocialProfile: Codable, Identifiable, Sendable {
         case favoriteCardImageURL = "favorite_card_image_url"
         case favoriteDeckArchetype = "favorite_deck_archetype"
         case pinnedCardID = "pinned_card_id"
+        case followerCount = "follower_count"
+        case isWishlistPublic = "is_wishlist_public"
+        case wishlistCardIDs = "wishlist_card_ids"
         case createdAt = "created_at"
     }
 }

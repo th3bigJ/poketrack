@@ -244,7 +244,9 @@ struct SocialRootView: View {
                                     favoriteCardName: payload.favoriteCardName,
                                     favoriteCardSetCode: payload.favoriteCardSetCode,
                                     favoriteCardImageURL: payload.favoriteCardImageURL,
-                                    favoriteDeckArchetype: payload.favoriteDeckArchetype
+                                    favoriteDeckArchetype: payload.favoriteDeckArchetype,
+                                    isWishlistPublic: payload.isWishlistPublic,
+                                    wishlistCardIDs: payload.wishlistCardIDs
                                 )
                             } else {
                                 profile = try await services.socialProfile.updateProfile(
@@ -258,7 +260,9 @@ struct SocialRootView: View {
                                     favoriteCardName: payload.favoriteCardName,
                                     favoriteCardSetCode: payload.favoriteCardSetCode,
                                     favoriteCardImageURL: payload.favoriteCardImageURL,
-                                    favoriteDeckArchetype: payload.favoriteDeckArchetype
+                                    favoriteDeckArchetype: payload.favoriteDeckArchetype,
+                                    isWishlistPublic: payload.isWishlistPublic,
+                                    wishlistCardIDs: payload.wishlistCardIDs
                                 )
                             }
                             profilePopoverPath = NavigationPath()

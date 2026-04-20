@@ -40,6 +40,8 @@ final class SocialProfileService {
         let favoriteCardSetCode: String?
         let favoriteCardImageURL: String?
         let favoriteDeckArchetype: String?
+        let isWishlistPublic: Bool?
+        let wishlistCardIDs: [String]?
 
         enum CodingKeys: String, CodingKey {
             case id
@@ -57,6 +59,8 @@ final class SocialProfileService {
             case favoriteCardSetCode = "favorite_card_set_code"
             case favoriteCardImageURL = "favorite_card_image_url"
             case favoriteDeckArchetype = "favorite_deck_archetype"
+            case isWishlistPublic = "is_wishlist_public"
+            case wishlistCardIDs = "wishlist_card_ids"
         }
     }
 
@@ -80,6 +84,8 @@ final class SocialProfileService {
         let favoriteCardSetCode: String?
         let favoriteCardImageURL: String?
         let favoriteDeckArchetype: String?
+        let isWishlistPublic: Bool?
+        let wishlistCardIDs: [String]?
 
         enum CodingKeys: String, CodingKey {
             case displayName = "display_name"
@@ -93,6 +99,8 @@ final class SocialProfileService {
             case favoriteCardSetCode = "favorite_card_set_code"
             case favoriteCardImageURL = "favorite_card_image_url"
             case favoriteDeckArchetype = "favorite_deck_archetype"
+            case isWishlistPublic = "is_wishlist_public"
+            case wishlistCardIDs = "wishlist_card_ids"
         }
     }
 
@@ -131,7 +139,9 @@ final class SocialProfileService {
         favoriteCardName: String?,
         favoriteCardSetCode: String?,
         favoriteCardImageURL: String?,
-        favoriteDeckArchetype: String?
+        favoriteDeckArchetype: String?,
+        isWishlistPublic: Bool?,
+        wishlistCardIDs: [String]?
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let appleUserID = KeychainStorage.readAppleUserIdentifier() ?? "apple-\(userID.uuidString)"
@@ -150,7 +160,9 @@ final class SocialProfileService {
             favoriteCardName: favoriteCardName?.trimmedNilIfEmpty,
             favoriteCardSetCode: favoriteCardSetCode?.trimmedNilIfEmpty,
             favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
-            favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty
+            favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
+            isWishlistPublic: isWishlistPublic,
+            wishlistCardIDs: wishlistCardIDs
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?on_conflict=id",
@@ -177,7 +189,9 @@ final class SocialProfileService {
         favoriteCardName: String?,
         favoriteCardSetCode: String?,
         favoriteCardImageURL: String?,
-        favoriteDeckArchetype: String?
+        favoriteDeckArchetype: String?,
+        isWishlistPublic: Bool?,
+        wishlistCardIDs: [String]?
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let payload = UpdateProfileRequest(
@@ -191,7 +205,9 @@ final class SocialProfileService {
             favoriteCardName: favoriteCardName?.trimmedNilIfEmpty,
             favoriteCardSetCode: favoriteCardSetCode?.trimmedNilIfEmpty,
             favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
-            favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty
+            favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
+            isWishlistPublic: isWishlistPublic,
+            wishlistCardIDs: wishlistCardIDs
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?id=eq.\(userID.uuidString)&select=*",

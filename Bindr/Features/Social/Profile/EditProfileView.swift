@@ -13,6 +13,8 @@ struct SocialProfileFormPayload: Sendable {
     let favoriteCardSetCode: String?
     let favoriteCardImageURL: String?
     let favoriteDeckArchetype: String
+    let isWishlistPublic: Bool
+    let wishlistCardIDs: [String]?
 }
 
 private struct FavoritePokemonSelection: Identifiable, Hashable {
@@ -59,6 +61,7 @@ struct EditProfileView: View {
     @State private var favoriteDeckArchetype: String
     @State private var favoritePokemon: FavoritePokemonSelection?
     @State private var favoriteCard: FavoriteCardSelection?
+    @State private var isWishlistPublic: Bool
     @State private var showPokemonPicker = false
     @State private var showCardPicker = false
     @State private var isSaving = false
@@ -75,6 +78,7 @@ struct EditProfileView: View {
         _bio = State(initialValue: existingProfile?.bio ?? "")
         _profileRoles = State(initialValue: Set((existingProfile?.profileRoles ?? []).compactMap(ProfileRole.init(rawValue:))))
         _favoriteDeckArchetype = State(initialValue: existingProfile?.favoriteDeckArchetype ?? "")
+        _isWishlistPublic = State(initialValue: existingProfile?.isWishlistPublic ?? false)
         _favoritePokemon = State(initialValue: {
             guard let dex = existingProfile?.favoritePokemonDex else { return nil }
             return FavoritePokemonSelection(
@@ -136,10 +140,16 @@ struct EditProfileView: View {
                         }
                     ))
                 }
-            } header: {
-                Text("How you collect and play")
             } footer: {
                 Text("You can choose both Collector and TCG Player.")
+            }
+
+            Section {
+                Toggle("Show Wishlist on Profile", isOn: $isWishlistPublic)
+            } header: {
+                Text("Privacy")
+            } footer: {
+                Text("If enabled, your wishlist will be visible to other users on your profile.")
             }
 
             Section {
@@ -273,6 +283,7 @@ struct EditProfileView: View {
         isSaving = true
         let resolvedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
         let roleValues = profileRoles.map(\.rawValue).sorted()
+        let wishlistIDs = services.wishlist?.items.prefix(10).map(\.cardID)
         let payload = SocialProfileFormPayload(
             username: resolvedUsername,
             displayName: displayName,
@@ -285,7 +296,9 @@ struct EditProfileView: View {
             favoriteCardName: favoriteCard?.cardName,
             favoriteCardSetCode: favoriteCard?.setCode,
             favoriteCardImageURL: favoriteCard?.imageURL,
-            favoriteDeckArchetype: favoriteDeckArchetype
+            favoriteDeckArchetype: favoriteDeckArchetype,
+            isWishlistPublic: isWishlistPublic,
+            wishlistCardIDs: wishlistIDs
         )
         Task {
             do {
