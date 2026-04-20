@@ -33,14 +33,6 @@ struct DashboardView: View {
         return BrandSnapshot(total: t, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp)
     }
 
-    private func brandValue(_ point: ChartPoint) -> Double {
-        switch selectedBrand {
-        case .pokemon:  return point.pokemon
-        case .onePiece: return point.onePiece
-        case nil:       return point.total
-        }
-    }
-
     private var displayTotal: Double {
         let point = selectedPoint
         switch selectedBrand {
@@ -49,8 +41,6 @@ struct DashboardView: View {
         case nil:       return point?.total    ?? liveTotalGbp ?? 0
         }
     }
-    private var displayPokemon: Double  { selectedPoint?.pokemon  ?? livePokemonGbp }
-    private var displayOnePiece: Double { selectedPoint?.onePiece ?? liveOnePieceGbp }
     private var isScrubbingOrLoaded: Bool { selectedPoint != nil || liveTotalGbp != nil }
 
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
@@ -194,7 +184,6 @@ struct DashboardView: View {
                 if !activePoints.isEmpty {
                     valueChartCard
                 }
-                brandBreakdownRow
                 recentActivityCard
             }
             .padding(16)
@@ -366,23 +355,6 @@ struct DashboardView: View {
         }
     }
 
-    private var brandBreakdownRow: some View {
-        return HStack(spacing: 8) {
-            if activeBrand == .pokemon {
-                BrandValueTile(brand: "Pokémon", value: displayPokemon, isSelected: selectedBrand == .pokemon, hasSelection: selectedBrand != nil, formatter: formatCurrency) {
-                    selectedBrand = .pokemon
-                    selectedPoint = nil
-                }
-            }
-            if activeBrand == .onePiece {
-                BrandValueTile(brand: "ONE PIECE", value: displayOnePiece, isSelected: selectedBrand == .onePiece, hasSelection: selectedBrand != nil, formatter: formatCurrency) {
-                    selectedBrand = .onePiece
-                    selectedPoint = nil
-                }
-            }
-        }
-    }
-
     private var recentActivityCard: some View {
         DashboardCard(title: "Recent Activity", trailing: {
             if let onViewAllActivity {
@@ -527,45 +499,6 @@ private struct ChartPoint: Identifiable {
     let total: Double
     let pokemon: Double
     let onePiece: Double
-}
-
-private struct BrandValueTile: View {
-    let brand: String
-    let value: Double
-    let isSelected: Bool
-    let hasSelection: Bool
-    let formatter: (Double) -> String
-    let onTap: () -> Void
-
-    var body: some View {
-        Button(action: onTap) {
-            VStack(alignment: .leading, spacing: 6) {
-                Text(brand)
-                    .font(.caption)
-                    .foregroundStyle(isSelected ? .primary : .secondary)
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
-                Text(formatter(value))
-                    .font(.subheadline.monospacedDigit().weight(.semibold))
-                    .foregroundStyle(isSelected ? .primary : (hasSelection ? .secondary : (value > 0 ? .primary : .secondary)))
-                    .contentTransition(.numericText())
-                    .lineLimit(1)
-                    .minimumScaleFactor(0.7)
-            }
-            .padding(12)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .background(isSelected ? Color.accentColor.opacity(0.15) : Color(uiColor: .secondarySystemGroupedBackground))
-            .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
-            .overlay(
-                RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .strokeBorder(isSelected ? Color.accentColor.opacity(0.5) : Color.clear, lineWidth: 1)
-            )
-            .opacity(hasSelection && !isSelected ? 0.5 : 1)
-        }
-        .buttonStyle(.plain)
-        .animation(.easeInOut(duration: 0.18), value: isSelected)
-        .animation(.easeInOut(duration: 0.18), value: hasSelection)
-    }
 }
 
 private struct DashboardCard<Content: View, Trailing: View>: View {

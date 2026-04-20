@@ -26,11 +26,6 @@ struct MoreView: View {
                     }
                 }
                 .pickerStyle(.segmented)
-
-                LabeledContent("Current") {
-                    Text(services.brandSettings.selectedCatalogBrand.displayTitle)
-                        .foregroundStyle(.secondary)
-                }
             }
 
             // MARK: - Quick Access Grid
