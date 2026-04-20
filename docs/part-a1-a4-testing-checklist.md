@@ -25,6 +25,7 @@ Use this checklist to validate Part A (A1 through A4) before moving to Part B tr
   - [ ] Edge Function `social-push` is deployed and `ACTIVE`.
   - [ ] Push triggers exist for `friendships`, `shared_content`, `comments`, and `wishlist_matches`.
   - [ ] `push_delivery_log` table exists and receives delivery/skipped/failed log rows.
+  - [ ] Runtime probe no longer logs `missing APNs secrets or topic` in `push_delivery_log`.
 
 ---
 
@@ -144,6 +145,7 @@ Use this checklist to validate Part A (A1 through A4) before moving to Part B tr
 ### APNs + Deep Link Routing
 - [ ] APNs registration token is captured and written to `device_tokens`.
 - [ ] APNs function secrets are configured (`APNS_TOPIC`, `APNS_ENV`, `APNS_TEAM_ID`, `APNS_KEY_ID`, `APNS_PRIVATE_KEY`).
+- [ ] Verify secrets are active by triggering a test event and confirming `push_delivery_log.error_message` is not `missing APNs secrets or topic`.
 - [ ] Push function honors `notification_preferences` for each category.
 - [ ] Receiving push with `deep_link` navigates to correct in-app destination.
 - [ ] Tapping push while app closed/backgrounded routes correctly.

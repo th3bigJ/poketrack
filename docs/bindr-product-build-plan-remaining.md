@@ -34,6 +34,7 @@ Complete production-grade push delivery and final social readiness for ship.
 - [x] Ensure `notification_preferences` gating is implemented in push delivery logic.
 - [x] Include deep-link target data in push payload shape.
 - [ ] Configure APNs runtime secrets in Supabase (`APNS_TOPIC`, `APNS_ENV`, `APNS_TEAM_ID`, `APNS_KEY_ID`, `APNS_PRIVATE_KEY`).
+- [ ] Runtime verification: test push no longer logs `missing APNs secrets or topic`.
 - [ ] Validate push deep-link routing opens the correct in-app destination.
 - [ ] Validate Social badge behavior under all unread states.
 - [x] Add push observability table (`push_delivery_log`) for sent/skipped/failed records.

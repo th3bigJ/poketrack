@@ -958,6 +958,7 @@ Bindr/Features/Social/
 - [x] Include deep-link payload fields and event metadata in push payloads
 - [x] Add `push_delivery_log` observability table for sent/skipped/failed states
 - [ ] Configure APNs runtime secrets in Supabase for real device delivery
+- [ ] Runtime verification: test push no longer logs `missing APNs secrets or topic`
 - [ ] Validate push deep-link routing — tap notification opens relevant screen
 - [ ] Validate Social badge (red dot on More → Social row) for unread items
 
