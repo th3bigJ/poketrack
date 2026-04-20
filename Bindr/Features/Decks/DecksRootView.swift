@@ -11,12 +11,19 @@ struct DecksRootView: View {
     @State private var deckToDelete: Deck?
     @State private var showDeleteConfirm = false
 
+    private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
+    private var visibleDecks: [Deck] {
+        decks.filter { $0.tcgBrand == activeBrand }
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             decksHeader
             Group {
                 if decks.isEmpty {
                     emptyDecksView
+                } else if visibleDecks.isEmpty {
+                    emptyActiveBrandDecksView
                 } else {
                     decksListView
                 }
@@ -59,10 +66,24 @@ struct DecksRootView: View {
         }
     }
 
+    private var emptyActiveBrandDecksView: some View {
+        ScrollView {
+            ContentUnavailableView {
+                Label("No \(activeBrand.displayTitle) Decks", systemImage: "rectangle.on.rectangle.angled")
+            } description: {
+                Text("Create a \(activeBrand.displayTitle) deck.")
+            } actions: {
+                Button("Create a Deck") { handleCreateTap() }
+                    .buttonStyle(.borderedProminent)
+            }
+            .frame(minHeight: 300)
+        }
+    }
+
     private var decksListView: some View {
         ScrollView {
             LazyVStack(spacing: 0) {
-                ForEach(decks) { deck in
+                ForEach(visibleDecks) { deck in
                     NavigationLink(value: deck) {
                         DeckListRow(deck: deck)
                             .padding(.horizontal, 16)
@@ -103,7 +124,7 @@ struct DecksRootView: View {
     }
 
     private func handleCreateTap() {
-        if !services.store.isPremium && decks.count >= 1 {
+        if !services.store.isPremium && visibleDecks.count >= 1 {
             showPaywall = true
         } else {
             showCreateSheet = true
@@ -192,4 +213,3 @@ private struct DeckListRow: View {
         }
     }
 }
-

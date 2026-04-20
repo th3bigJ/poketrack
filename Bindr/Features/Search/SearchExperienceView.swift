@@ -19,24 +19,17 @@ struct SearchExperienceView: View {
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     @Binding var query: String
-    @State private var selectedBrand: TCGBrand = .pokemon
     @State private var sourceScope: SearchSourceScope = .allCards
-
-    private var enabledBrands: [TCGBrand] {
-        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
-    }
 
     var body: some View {
         VStack(spacing: 0) {
             VStack(spacing: 10) {
-                if !enabledBrands.isEmpty {
-                    Picker("Brand", selection: $selectedBrand) {
-                        ForEach(enabledBrands) { brand in
-                            Text(brand.displayTitle).tag(brand)
-                        }
-                    }
-                    .pickerStyle(.segmented)
+                HStack {
+                    Text(services.brandSettings.selectedCatalogBrand.displayTitle)
+                        .font(.subheadline.weight(.semibold))
+                    Spacer()
                 }
+                .padding(.horizontal, 2)
 
                 Picker("Search source", selection: $sourceScope) {
                     ForEach(SearchSourceScope.allCases) { scope in
@@ -51,7 +44,7 @@ struct SearchExperienceView: View {
 
             UniversalSearchResultsView(
                 query: query,
-                selectedBrand: selectedBrand,
+                selectedBrand: services.brandSettings.selectedCatalogBrand,
                 sourceScope: sourceScope
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
@@ -59,22 +52,5 @@ struct SearchExperienceView: View {
         .navigationTitle("Search")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
-        .onAppear {
-            syncSelectedBrand()
-        }
-        .onChange(of: services.brandSettings.enabledBrands) { _, _ in
-            syncSelectedBrand()
-        }
-    }
-
-    private func syncSelectedBrand() {
-        let enabled = enabledBrands
-        guard !enabled.isEmpty else { return }
-        if enabled.contains(selectedBrand) { return }
-        if enabled.contains(services.brandSettings.selectedCatalogBrand) {
-            selectedBrand = services.brandSettings.selectedCatalogBrand
-        } else if let first = enabled.first {
-            selectedBrand = first
-        }
     }
 }

@@ -57,22 +57,6 @@ enum OfflineImageURLInventory {
                 }
             }
 
-        case .lorcana:
-            let cards = try CatalogStore.shared.fetchAllCards(for: .lorcana)
-            for c in cards {
-                append(c.imageLowSrc, AppConfiguration.imageURL(relativePath: c.imageLowSrc))
-            }
-            let sets = try CatalogStore.shared.fetchAllSets(for: .lorcana)
-            for s in sets {
-                let logo = s.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines)
-                if !logo.isEmpty, let u = AppConfiguration.setLogoURLCandidates(logoSrc: logo).first {
-                    append(logo, u)
-                }
-                if let sym = s.symbolSrc?.trimmingCharacters(in: .whitespacesAndNewlines), !sym.isEmpty,
-                   let u = AppConfiguration.setSymbolURLCandidates(symbolSrc: sym).first {
-                    append(sym, u)
-                }
-            }
         }
 
         return rows

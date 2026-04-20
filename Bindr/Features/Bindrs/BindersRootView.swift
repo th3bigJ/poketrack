@@ -13,6 +13,11 @@ struct BindersRootView: View {
     @State private var presentedBinder: Binder?
     @State private var showDeleteConfirm = false
 
+    private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
+    private var visibleBinders: [Binder] {
+        binders.filter { $0.tcgBrand == activeBrand }
+    }
+
     var body: some View {
         Group {
             if binders.isEmpty {
@@ -29,12 +34,26 @@ struct BindersRootView: View {
                         }
                     }
                 }
+            } else if visibleBinders.isEmpty {
+                ScrollView {
+                    VStack(spacing: 16) {
+                        Color.clear.frame(height: rootFloatingChromeInset)
+                        ContentUnavailableView {
+                            Label("No \(activeBrand.displayTitle) Binders", systemImage: "books.vertical")
+                        } description: {
+                            Text("Create a binder for \(activeBrand.displayTitle) to organise those cards.")
+                        } actions: {
+                            Button("Create a Binder") { handleCreateTap() }
+                                .buttonStyle(.borderedProminent)
+                        }
+                    }
+                }
             } else {
                 ScrollView {
                     VStack(spacing: 0) {
                         Color.clear.frame(height: rootFloatingChromeInset)
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 12)], spacing: 12) {
-                            ForEach(binders) { binder in
+                            ForEach(visibleBinders) { binder in
                                 Button {
                                     presentedBinder = binder
                                 } label: {
@@ -60,9 +79,11 @@ struct BindersRootView: View {
         .toolbar(.hidden, for: .navigationBar)
         .fullScreenCover(item: $presentedBinder) { binder in
             BinderDetailView(binder: binder)
+                .environment(services)
         }
         .sheet(isPresented: $showCreateSheet) {
             CreateBinderSheet()
+                .environment(services)
         }
         .sheet(isPresented: $showPaywall) {
             PaywallSheet()
@@ -79,7 +100,7 @@ struct BindersRootView: View {
     }
 
     private func handleCreateTap() {
-        if !services.store.isPremium && binders.count >= 1 {
+        if !services.store.isPremium && visibleBinders.count >= 1 {
             showPaywall = true
         } else {
             showCreateSheet = true
@@ -124,5 +145,4 @@ private struct BinderCardCell: View {
         cardURLs = urls
     }
 }
-
 

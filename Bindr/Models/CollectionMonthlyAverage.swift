@@ -9,13 +9,11 @@ final class CollectionMonthlyAverage {
     var totalGbp: Double = 0.0
     var pokemonGbp: Double = 0.0
     var onePieceGbp: Double = 0.0
-    var lorcanaGbp: Double = 0.0
 
-    init(monthStart: Date, totalGbp: Double, pokemonGbp: Double, onePieceGbp: Double, lorcanaGbp: Double) {
+    init(monthStart: Date, totalGbp: Double, pokemonGbp: Double, onePieceGbp: Double) {
         self.monthStart = monthStart
         self.totalGbp = totalGbp
         self.pokemonGbp = pokemonGbp
         self.onePieceGbp = onePieceGbp
-        self.lorcanaGbp = lorcanaGbp
     }
 }

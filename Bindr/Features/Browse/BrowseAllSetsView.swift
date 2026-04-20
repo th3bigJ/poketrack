@@ -68,15 +68,6 @@ struct BrowseAllSetsView: View {
                     if li != ri { return li < ri }
                     return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
                 }
-        case .lorcana:
-            return grouped
-                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
-                .sorted { lhs, rhs in
-                    let li = lorcanaSeriesOrderIndex(lhs.title)
-                    let ri = lorcanaSeriesOrderIndex(rhs.title)
-                    if li != ri { return li < ri }
-                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-                }
         }
     }
 
@@ -172,8 +163,6 @@ struct BrowseAllSetsView: View {
             return (title?.isEmpty == false ? title! : "Other")
         case .onePiece:
             return normalizedOnePieceSeriesTitle(set.seriesName)
-        case .lorcana:
-            return normalizedLorcanaSeriesTitle(for: set)
         }
     }
 
@@ -208,21 +197,4 @@ struct BrowseAllSetsView: View {
         }
     }
 
-    private func normalizedLorcanaSeriesTitle(for set: TCGSet) -> String {
-        let joined = "\(set.name) \(set.setCode)".lowercased()
-        if joined.contains("illumineer") { return "ILLUMINEER'S QUEST" }
-        if joined.contains("promo") || set.setCode.lowercased().contains("promo") {
-            return "PROMO"
-        }
-        return "MAIN"
-    }
-
-    private func lorcanaSeriesOrderIndex(_ title: String) -> Int {
-        switch title {
-        case "MAIN": return 0
-        case "ILLUMINEER'S QUEST": return 1
-        case "PROMO": return 2
-        default: return 3
-        }
-    }
 }

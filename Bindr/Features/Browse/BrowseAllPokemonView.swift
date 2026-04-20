@@ -26,6 +26,12 @@ struct BrowseAllPokemonView: View {
             if isLoading {
                 ProgressView("Loading Pokémon…")
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if services.brandSettings.selectedCatalogBrand != .pokemon {
+                ContentUnavailableView(
+                    "Pokémon not active",
+                    systemImage: "hare",
+                    description: Text("Switch the active game to Pokémon from More to browse the National Dex.")
+                )
             } else if !services.brandSettings.enabledBrands.contains(.pokemon) {
                 ContentUnavailableView(
                     "Pokémon catalog off",
@@ -101,7 +107,8 @@ struct BrowseAllPokemonView: View {
         .task {
             isLoading = true
             defer { isLoading = false }
-            guard services.brandSettings.enabledBrands.contains(.pokemon) else {
+            guard services.brandSettings.selectedCatalogBrand == .pokemon,
+                  services.brandSettings.enabledBrands.contains(.pokemon) else {
                 rows = []
                 return
             }

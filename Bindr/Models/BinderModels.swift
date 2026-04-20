@@ -192,6 +192,7 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
     /// CloudKit: stored attributes need defaults (or optionals) on the model.
     var id: UUID = UUID()
     var title: String = ""
+    var brand: String = TCGBrand.pokemon.rawValue
     var pageLayout: String = BinderPageLayout.fixed(rows: 3, columns: 3).rawValue
     var colour: String = ""
     /// Material applied on top of ``colour``. Stored as the ``BinderTexture`` raw value.
@@ -209,6 +210,7 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
 
     init(
         title: String,
+        brand: TCGBrand = .pokemon,
         pageLayout: BinderPageLayout,
         colour: String,
         texture: BinderTexture = .leather,
@@ -216,6 +218,7 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
     ) {
         self.id = UUID()
         self.title = title
+        self.brand = brand.rawValue
         self.pageLayout = pageLayout.rawValue
         self.colour = colour
         self.texture = texture.rawValue
@@ -225,6 +228,16 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
 
     var layout: BinderPageLayout {
         BinderPageLayout(rawValue: pageLayout)
+    }
+
+    var tcgBrand: TCGBrand {
+        if let firstCardID = slotList.first?.cardID {
+            return TCGBrand.inferredFromMasterCardId(firstCardID)
+        }
+        if let stored = TCGBrand(rawValue: brand) {
+            return stored
+        }
+        return .pokemon
     }
 
     /// Resolves the stored `texture` string to an enum, falling back to `.smooth`

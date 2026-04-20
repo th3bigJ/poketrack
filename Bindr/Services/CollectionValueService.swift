@@ -81,8 +81,7 @@ final class CollectionValueService {
                     date: day,
                     totalGbp: result.total,
                     pokemonGbp: result.pokemon,
-                    onePieceGbp: result.onePiece,
-                    lorcanaGbp: result.lorcana
+                    onePieceGbp: result.onePiece
                 )
                 modelContext.insert(snapshot)
                 try? modelContext.save()
@@ -130,8 +129,7 @@ final class CollectionValueService {
                 weekStart: weekStart,
                 totalGbp: avg.total,
                 pokemonGbp: avg.pokemon,
-                onePieceGbp: avg.onePiece,
-                lorcanaGbp: avg.lorcana
+                onePieceGbp: avg.onePiece
             )
             modelContext.insert(record)
             print("[CollectionValue] Saved weekly avg for week of \(weekStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
@@ -171,8 +169,7 @@ final class CollectionValueService {
                 monthStart: monthStart,
                 totalGbp: avg.total,
                 pokemonGbp: avg.pokemon,
-                onePieceGbp: avg.onePiece,
-                lorcanaGbp: avg.lorcana
+                onePieceGbp: avg.onePiece
             )
             modelContext.insert(record)
             print("[CollectionValue] Saved monthly avg for \(monthStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
@@ -228,25 +225,20 @@ final class CollectionValueService {
     private func computeValue(for items: [CollectionItem], on date: Date) async -> BrandSnapshot {
         var pokemonItems: [CollectionItem] = []
         var onePieceItems: [CollectionItem] = []
-        var lorcanaItems: [CollectionItem] = []
 
         for item in items {
             switch TCGBrand.inferredFromMasterCardId(item.cardID) {
             case .pokemon:  pokemonItems.append(item)
             case .onePiece: onePieceItems.append(item)
-            case .lorcana:  lorcanaItems.append(item)
             }
         }
 
-        let pokemonBatch = pokemonItems
-        let onePieceBatch = onePieceItems
-        let lorcanaBatch = lorcanaItems
-
-        async let p = computeBrandValue(items: pokemonBatch, on: date)
-        async let o = computeBrandValue(items: onePieceBatch, on: date)
-        async let l = computeBrandValue(items: lorcanaBatch, on: date)
-        let (pv, ov, lv) = await (p, o, l)
-        return BrandSnapshot(total: pv + ov + lv, pokemon: pv, onePiece: ov, lorcana: lv)
+        let pokemonItemsCopy = pokemonItems
+        let onePieceItemsCopy = onePieceItems
+        async let p = computeBrandValue(items: pokemonItemsCopy, on: date)
+        async let o = computeBrandValue(items: onePieceItemsCopy, on: date)
+        let (pv, ov) = await (p, o)
+        return BrandSnapshot(total: pv + ov, pokemon: pv, onePiece: ov)
     }
 
     private func computeBrandValue(items: [CollectionItem], on date: Date) async -> Double {
@@ -298,13 +290,12 @@ final class CollectionValueService {
     // MARK: - Helpers
 
     private func average(of snapshots: [BrandSnapshot]) -> BrandSnapshot {
-        guard !snapshots.isEmpty else { return BrandSnapshot(total: 0, pokemon: 0, onePiece: 0, lorcana: 0) }
+        guard !snapshots.isEmpty else { return BrandSnapshot(total: 0, pokemon: 0, onePiece: 0) }
         let count = Double(snapshots.count)
         return BrandSnapshot(
             total:    snapshots.map(\.total).reduce(0, +) / count,
             pokemon:  snapshots.map(\.pokemon).reduce(0, +) / count,
-            onePiece: snapshots.map(\.onePiece).reduce(0, +) / count,
-            lorcana:  snapshots.map(\.lorcana).reduce(0, +) / count
+            onePiece: snapshots.map(\.onePiece).reduce(0, +) / count
         )
     }
 
@@ -359,11 +350,10 @@ struct BrandSnapshot {
     var total: Double
     var pokemon: Double
     var onePiece: Double
-    var lorcana: Double
 }
 
 extension CollectionValueSnapshot {
     var asBrandSnapshot: BrandSnapshot {
-        BrandSnapshot(total: totalGbp, pokemon: pokemonGbp, onePiece: onePieceGbp, lorcana: lorcanaGbp)
+        BrandSnapshot(total: totalGbp, pokemon: pokemonGbp, onePiece: onePieceGbp)
     }
 }

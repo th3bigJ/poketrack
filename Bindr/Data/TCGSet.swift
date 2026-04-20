@@ -20,7 +20,6 @@ struct TCGSet: Codable, Identifiable, Hashable, Sendable {
     let seriesName: String?
     let logoSrc: String
     let symbolSrc: String?
-    /// LORCANA: numeric / promo expansion id used by the scanner footer matcher.
     let scannerEnExpansionNumber: String?
 
     enum CodingKeys: String, CodingKey {

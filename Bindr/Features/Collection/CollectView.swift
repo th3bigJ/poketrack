@@ -36,11 +36,9 @@ struct CollectView: View {
         return Array(repeating: GridItem(.flexible(), spacing: 12), count: count)
     }
 
-    private var enabledBrands: [TCGBrand] {
-        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
+    private var activeBrand: TCGBrand {
+        selectedBrand ?? services.brandSettings.selectedCatalogBrand
     }
-
-    private var showsBrandPicker: Bool { enabledBrands.count > 1 }
 
     private var setNameByBrandAndCode: [String: String] {
         var map: [String: String] = [:]
@@ -66,17 +64,11 @@ struct CollectView: View {
     }
 
     private var visibleCollectionItems: [CollectionItem] {
-        let enabled = services.brandSettings.enabledBrands
-        let brandFiltered = collectionItems.filter { enabled.contains(TCGBrand.inferredFromMasterCardId($0.cardID)) }
-        guard let brand = selectedBrand else { return brandFiltered }
-        return brandFiltered.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }
+        collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
     }
 
     private var visibleWishlistItems: [WishlistItem] {
-        let enabled = services.brandSettings.enabledBrands
-        let brandFiltered = wishlistItems.filter { enabled.contains(TCGBrand.inferredFromMasterCardId($0.cardID)) }
-        guard let brand = selectedBrand else { return brandFiltered }
-        return brandFiltered.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == brand }
+        wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
     }
 
     var body: some View {
@@ -85,9 +77,6 @@ struct CollectView: View {
                 Color.clear.frame(height: rootFloatingChromeInset)
 
                 VStack(spacing: 10) {
-                    if showsBrandPicker {
-                        brandPicker.padding(.horizontal, 16)
-                    }
                     if showsSegmentedControl {
                         segmentedControl.padding(.horizontal, 16)
                     }
@@ -108,10 +97,13 @@ struct CollectView: View {
         .task(id: wishlistSignature) {
             await resolveWishlistCards()
         }
-        .onChange(of: services.brandSettings.enabledBrands) { _, enabled in
-            if let brand = selectedBrand, !enabled.contains(brand) {
-                selectedBrand = nil
+        .onAppear {
+            if selectedBrand != services.brandSettings.selectedCatalogBrand {
+                selectedBrand = services.brandSettings.selectedCatalogBrand
             }
+        }
+        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
+            selectedBrand = brand
         }
         .onChange(of: selectedBrand) { _, _ in
             collectionFilters = defaultCollectionFilters()
@@ -123,18 +115,6 @@ struct CollectView: View {
         var filters = BrowseCardGridFilters()
         filters.sortBy = .price
         return filters
-    }
-
-    // MARK: - Brand Picker
-
-    private var brandPicker: some View {
-        Picker("Brand", selection: $selectedBrand) {
-            Text("All").tag(Optional<TCGBrand>.none)
-            ForEach(enabledBrands) { brand in
-                Text(brand.displayTitle).tag(Optional(brand))
-            }
-        }
-        .pickerStyle(.segmented)
     }
 
     // MARK: - Segmented Control
@@ -169,9 +149,7 @@ struct CollectView: View {
             emptyState(
                 title: "No collection items",
                 image: "line.3.horizontal.decrease.circle",
-                description: selectedBrand != nil
-                    ? "No \(selectedBrand!.displayTitle) cards in your collection yet."
-                    : "Turn a game back on under Settings → Card catalog to see collection cards for that game."
+                description: "No \(activeBrand.displayTitle) cards in your collection yet."
             )
         } else {
             LazyVGrid(columns: columns, spacing: 12) {
@@ -224,7 +202,7 @@ struct CollectView: View {
             let filteredCards = filterBrowseCards(
                 orderedCollectionCards, query: "", filters: collectionFilters,
                 ownedCardIDs: Set(items.map { $0.cardID }),
-                brand: services.brandSettings.selectedCatalogBrand, sets: services.cardData.sets
+                brand: activeBrand, sets: services.cardData.sets
             )
             let filteredIDs = Set(filteredCards.map { $0.masterCardId })
             items = items.filter { filteredIDs.contains($0.cardID) }
@@ -257,7 +235,7 @@ struct CollectView: View {
     }
 
     private var collectionSignature: String {
-        let brandKey = services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
+        let brandKey = activeBrand.rawValue
         return visibleCollectionItems.map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }.joined(separator: "§") + "|" + brandKey
     }
 
@@ -296,9 +274,7 @@ struct CollectView: View {
             emptyState(
                 title: "No wishlist items",
                 image: "line.3.horizontal.decrease.circle",
-                description: selectedBrand != nil
-                    ? "No \(selectedBrand!.displayTitle) cards on your wishlist yet."
-                    : "Turn a game back on under Settings → Card catalog to see wishlist cards for that game."
+                description: "No \(activeBrand.displayTitle) cards on your wishlist yet."
             )
         } else {
             LazyVGrid(columns: columns, spacing: 12) {
@@ -343,7 +319,7 @@ struct CollectView: View {
         if wishlistFilters.hasActiveFieldFilters {
             let filteredCards = filterBrowseCards(
                 orderedWishlistCards, query: "", filters: wishlistFilters,
-                ownedCardIDs: [], brand: services.brandSettings.selectedCatalogBrand, sets: services.cardData.sets
+                ownedCardIDs: [], brand: activeBrand, sets: services.cardData.sets
             )
             let filteredIDs = Set(filteredCards.map { $0.masterCardId })
             items = items.filter { filteredIDs.contains($0.cardID) }
@@ -376,7 +352,7 @@ struct CollectView: View {
     }
 
     private var wishlistSignature: String {
-        let brandKey = services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
+        let brandKey = activeBrand.rawValue
         return visibleWishlistItems.map { $0.cardID }.joined(separator: "§") + "|" + brandKey
     }
 

@@ -622,7 +622,6 @@ private struct ScannerBrandPickPanel: View {
         switch brand {
         case .pokemon: Image("BrandPokemonLogo")
         case .onePiece: Image("BrandOnePieceLogo")
-        case .lorcana: Image("lorcana")
         }
     }
 }

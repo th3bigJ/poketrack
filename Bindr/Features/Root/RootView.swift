@@ -134,7 +134,7 @@ struct RootView: View {
     }
 
     private var isCollectAllBrands: Bool {
-        collectSelectedBrand == nil && services.brandSettings.enabledBrands.count > 1
+        false
     }
 
     private var chromeTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
@@ -454,6 +454,7 @@ struct RootView: View {
         }
         .onAppear {
             chromeScroll.configureForTab(selectedTab)
+            collectSelectedBrand = services.brandSettings.selectedCatalogBrand
             if services.isReady {
                 services.setupWishlist(modelContext: modelContext)
                 services.setupCollectionLedger(modelContext: modelContext)
@@ -492,6 +493,21 @@ struct RootView: View {
             } else {
                 searchNavigationPath = NavigationPath()
             }
+        }
+        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
+            browseNavigationPath = NavigationPath()
+            collectionNavigationPath = NavigationPath()
+            searchNavigationPath = NavigationPath()
+            browseFullScreen = nil
+            selectedCardPresentation = nil
+            universalQuery = ""
+            searchFieldFocused = false
+            collectSelectedBrand = brand
+
+            var defaultCollectionFilters = BrowseCardGridFilters()
+            defaultCollectionFilters.sortBy = .price
+            collectCollectionFilters = defaultCollectionFilters
+            collectWishlistFilters = BrowseCardGridFilters()
         }
         .sheet(item: $selectedCardPresentation) { ctx in
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
@@ -680,68 +696,6 @@ struct RootView: View {
                     Menu(menuTitle("Power", summary: selectionSummary(for: browseFilters.opPowers))) {
                         ForEach(opPowerAllOptions, id: \.self) { power in
                             Toggle("\(power)", isOn: binding(for: power, keyPath: \.opPowers))
-                        }
-                    }
-                    .menuActionDismissBehavior(.disabled)
-                    .menuOrder(.fixed)
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-            } else if services.brandSettings.selectedCatalogBrand == .lorcana {
-                Menu(menuTitle("Card type", summary: selectionSummary(for: browseFilters.lcCardTypes))) {
-                    ForEach(lcCardTypeAllOptions, id: \.self) { cardType in
-                        Toggle(cardType, isOn: binding(for: cardType, keyPath: \.lcCardTypes))
-                    }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-
-                Menu(menuTitle("Variant", summary: selectionSummary(for: browseFilters.lcVariants))) {
-                    ForEach(lcVariantAllOptions, id: \.self) { variant in
-                        Toggle(variant, isOn: binding(for: variant, keyPath: \.lcVariants))
-                    }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-
-                Menu(
-                    menuTitle(
-                        "Stats",
-                        summary: combinedSelectionSummary(
-                            ("Cost", browseFilters.lcCosts.count),
-                            ("Lore", browseFilters.lcLores.count),
-                            ("Strength", browseFilters.lcStrengths.count),
-                            ("Willpower", browseFilters.lcWillpowers.count)
-                        )
-                    )
-                ) {
-                    Menu(menuTitle("Cost", summary: selectionSummary(for: browseFilters.lcCosts))) {
-                        ForEach(lcCostAllOptions, id: \.self) { cost in
-                            Toggle("\(cost)", isOn: binding(for: cost, keyPath: \.lcCosts))
-                        }
-                    }
-                    .menuActionDismissBehavior(.disabled)
-                    .menuOrder(.fixed)
-
-                    Menu(menuTitle("Lore", summary: selectionSummary(for: browseFilters.lcLores))) {
-                        ForEach(lcLoreAllOptions, id: \.self) { lore in
-                            Toggle("\(lore)", isOn: binding(for: lore, keyPath: \.lcLores))
-                        }
-                    }
-                    .menuActionDismissBehavior(.disabled)
-                    .menuOrder(.fixed)
-
-                    Menu(menuTitle("Strength", summary: selectionSummary(for: browseFilters.lcStrengths))) {
-                        ForEach(lcStrengthAllOptions, id: \.self) { strength in
-                            Toggle("\(strength)", isOn: binding(for: strength, keyPath: \.lcStrengths))
-                        }
-                    }
-                    .menuActionDismissBehavior(.disabled)
-                    .menuOrder(.fixed)
-
-                    Menu(menuTitle("Willpower", summary: selectionSummary(for: browseFilters.lcWillpowers))) {
-                        ForEach(lcWillpowerAllOptions, id: \.self) { willpower in
-                            Toggle("\(willpower)", isOn: binding(for: willpower, keyPath: \.lcWillpowers))
                         }
                     }
                     .menuActionDismissBehavior(.disabled)

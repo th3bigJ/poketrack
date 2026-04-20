@@ -13,6 +13,26 @@ struct MoreView: View {
 
     var body: some View {
         List {
+            Section("Active Game") {
+                Picker(
+                    "Active Game",
+                    selection: Binding(
+                        get: { services.brandSettings.selectedCatalogBrand },
+                        set: { services.brandSettings.selectedCatalogBrand = $0 }
+                    )
+                ) {
+                    ForEach(services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)) { brand in
+                        Text(brand.displayTitle).tag(brand)
+                    }
+                }
+                .pickerStyle(.segmented)
+
+                LabeledContent("Current") {
+                    Text(services.brandSettings.selectedCatalogBrand.displayTitle)
+                        .foregroundStyle(.secondary)
+                }
+            }
+
             // MARK: - Quick Access Grid
             Section {
                 LazyVGrid(columns: [

@@ -4,7 +4,6 @@ import Foundation
 // Format rules:
 // Pokémon:   60 cards total, max 4 copies per card name (basic energy exempt)
 // One Piece: 51 cards total (50 main deck + 1 Leader), max 4 copies per card
-// Lorcana:   60 cards total, max 4 copies per card name
 
 // MARK: - Expanded legal set whitelist (Black & White onward, April 2011+)
 let expandedLegalSetKeys: Set<String> = [
@@ -66,7 +65,6 @@ enum DeckFormat: String, Codable, CaseIterable {
     case pokemonUnlimited = "pokemon_unlimited"
     case pokemonGLC       = "pokemon_glc"
     case onePiece         = "onepiece_standard"
-    case lorcana          = "lorcana_standard"
 
     var displayName: String {
         switch self {
@@ -75,7 +73,6 @@ enum DeckFormat: String, Codable, CaseIterable {
         case .pokemonUnlimited: return "Unlimited"
         case .pokemonGLC:       return "GLC"
         case .onePiece:         return "Standard"
-        case .lorcana:          return "Standard"
         }
     }
 
@@ -89,7 +86,7 @@ enum DeckFormat: String, Codable, CaseIterable {
 
     /// When true the deck size is a minimum; any count ≥ deckSize is legal.
     var deckSizeIsMinimum: Bool {
-        self == .lorcana
+        false
     }
 
     var maxCopiesPerCard: Int {
@@ -107,7 +104,6 @@ enum DeckFormat: String, Codable, CaseIterable {
         case .pokemonGLC:       return expandedLegalSetKeys
         case .pokemonUnlimited: return nil
         case .onePiece:         return nil
-        case .lorcana:          return nil
         }
     }
 
@@ -164,11 +160,6 @@ enum DeckFormat: String, Codable, CaseIterable {
                 • Max 4 copies per card
                 • Exactly 1 Leader required
                 """
-        case .lorcana:
-            return """
-                • Minimum 60 cards (no maximum)
-                • Max 4 copies per card
-                """
         }
     }
 
@@ -185,7 +176,6 @@ enum DeckFormat: String, Codable, CaseIterable {
         switch brand {
         case .pokemon:  return [.pokemonStandard, .pokemonExpanded, .pokemonUnlimited, .pokemonGLC]
         case .onePiece: return [.onePiece]
-        case .lorcana:  return [.lorcana]
         }
     }
 }
@@ -360,14 +350,6 @@ enum DeckFormat: String, Codable, CaseIterable {
     var opPower: Int? = nil
     /// ONE PIECE: counter value (e.g. 1000, 2000). Nil when not present.
     var opCounter: Int? = nil
-    /// LORCANA: ink cost to play.
-    var lcCost: Int? = nil
-    /// LORCANA: strength value (attack power for Characters).
-    var lcStrength: Int? = nil
-    /// LORCANA: willpower value (defence / Location move cost).
-    var lcWillpower: Int? = nil
-    /// LORCANA: lore value gained when questing.
-    var lcLore: Int? = nil
     var deck: Deck?
 
     var isEnergyCard: Bool { isBasicEnergy || isEnergy }
@@ -393,11 +375,7 @@ enum DeckFormat: String, Codable, CaseIterable {
         catalogStage: String? = nil,
         opCost: Int? = nil,
         opPower: Int? = nil,
-        opCounter: Int? = nil,
-        lcCost: Int? = nil,
-        lcStrength: Int? = nil,
-        lcWillpower: Int? = nil,
-        lcLore: Int? = nil
+        opCounter: Int? = nil
     ) {
         self.cardID = cardID
         self.variantKey = variantKey
@@ -420,10 +398,6 @@ enum DeckFormat: String, Codable, CaseIterable {
         self.opCost = opCost
         self.opPower = opPower
         self.opCounter = opCounter
-        self.lcCost = lcCost
-        self.lcStrength = lcStrength
-        self.lcWillpower = lcWillpower
-        self.lcLore = lcLore
     }
 }
 

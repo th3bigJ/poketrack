@@ -2,6 +2,7 @@ import SwiftUI
 import SwiftData
 
 struct CreateBinderSheet: View {
+    @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss
 
@@ -27,7 +28,7 @@ struct CreateBinderSheet: View {
                     // 1. Premium Preview
                     BinderCoverView(
                         title: name,
-                        subtitle: "0 cards · \(layout.displayName)",
+                        subtitle: "\(services.brandSettings.selectedCatalogBrand.displayTitle) · 0 cards · \(layout.displayName)",
                         colourName: colourName,
                         texture: texture,
                         seed: 1, // Fixed seed for creation preview
@@ -46,6 +47,22 @@ struct CreateBinderSheet: View {
                             
                             TextField("e.g. Charizard Vault", text: $name)
                                 .textFieldStyle(PremiumTextFieldStyle())
+                        }
+
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text("GAME")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+
+                            HStack {
+                                Text(services.brandSettings.selectedCatalogBrand.displayTitle)
+                                    .font(.subheadline.weight(.semibold))
+                                    .foregroundStyle(.primary)
+                                Spacer()
+                            }
+                            .padding(14)
+                            .background(Color(uiColor: .secondarySystemGroupedBackground))
+                            .clipShape(RoundedRectangle(cornerRadius: 12))
                         }
 
                         // 3. Layout Section
@@ -181,6 +198,7 @@ struct CreateBinderSheet: View {
     private func create() {
         let binder = Binder(
             title: name.trimmingCharacters(in: .whitespaces),
+            brand: services.brandSettings.selectedCatalogBrand,
             pageLayout: layout,
             colour: colourName,
             texture: texture,
@@ -237,4 +255,3 @@ private struct PremiumTextFieldStyle: TextFieldStyle {
             }
     }
 }
-

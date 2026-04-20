@@ -58,7 +58,7 @@ struct SplashView: View {
 
                 // ── Strapline ────────────────────────────────────────
                 VStack(spacing: 0) {
-                    Text("Scan Pokémon, One Piece & Lorcana cards.")
+                    Text("Scan Pokémon & One Piece cards.")
                     Text("Track prices, build your collection,")
                     Text("and join our community.")
                 }

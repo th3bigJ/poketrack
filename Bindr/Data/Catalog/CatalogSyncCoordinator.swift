@@ -152,10 +152,6 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             try? CatalogStore.shared.open()
             await syncOnePieceCatalogIfNeeded(progress: progress)
         }
-        if enabledBrands.contains(.lorcana) {
-            try? CatalogStore.shared.open()
-            await syncLorcanaCatalogIfNeeded(progress: progress)
-        }
         // Per-set market JSON for every enabled brand, once per local day after 03:00 (same gate as daily blobs below).
         if !enabledBrands.isEmpty {
             try? CatalogStore.shared.open()
@@ -457,203 +453,6 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         }
     }
 
-    /// Imports Lorcana sets, cards, and per-set market pricing into SQLite (`brand = lorcana`).
-    private func syncLorcanaCatalogIfNeeded(progress: CatalogSyncProgressReporter) async {
-        guard AppConfiguration.r2BaseURL.host != "invalid.local" else { return }
-        let store = CatalogStore.shared
-        let setsURL = AppConfiguration.r2LorcanaURL(path: "sets/data/sets.json")
-        await progress.setStatus("Checking Lorcana catalog…")
-        let data: Data
-        let http: HTTPURLResponse?
-        do {
-            var request = URLRequest(url: setsURL)
-            if let prevEtagHeader = store.meta("lorcana_catalog_sets_etag"), !prevEtagHeader.isEmpty {
-                request.setValue(prevEtagHeader, forHTTPHeaderField: "If-None-Match")
-            }
-            let pair = try await session.data(for: request)
-            var d = pair.0
-            var h = pair.1 as? HTTPURLResponse
-
-            if h?.statusCode == 304 {
-                let hasLocalCards = (try? store.hasAnyCards(for: .lorcana)) ?? false
-                if hasLocalCards {
-                    await progress.addPlannedFiles(2)
-                    await progress.completeFile(byteCount: 0)
-                    await progress.completeFile(byteCount: 0)
-                    if let e = h?.value(forHTTPHeaderField: "ETag") ?? h?.value(forHTTPHeaderField: "Etag") {
-                        try? store.setMeta("lorcana_catalog_sets_etag", e)
-                    }
-                    let emptyCodes = (try? store.fetchSetCodesWithNoCards(for: .lorcana)) ?? []
-                    if !emptyCodes.isEmpty {
-                        await patchMissingLorcanaCards(setCodes: emptyCodes, store: store, progress: progress)
-                    }
-                    return
-                }
-                let pair2 = try await session.data(from: setsURL)
-                d = pair2.0
-                h = pair2.1 as? HTTPURLResponse
-            }
-            data = d
-            http = h
-        } catch {
-            await progress.addPlannedFiles(2)
-            await progress.completeFile()
-            await progress.completeFile()
-            return
-        }
-        guard let code = http?.statusCode, (200...299).contains(code), !data.isEmpty else {
-            await progress.addPlannedFiles(2)
-            await progress.completeFile()
-            await progress.completeFile()
-            return
-        }
-        let etag = http?.value(forHTTPHeaderField: "ETag") ?? http?.value(forHTTPHeaderField: "Etag")
-        let hash = SHA256.hash(data: data).map { String(format: "%02x", $0) }.joined()
-        let prevHash = store.meta("lorcana_catalog_sets_sha256")
-        let prevEtag = store.meta("lorcana_catalog_sets_etag")
-        let unchangedHash = (hash == prevHash)
-        let unchangedEtag = (etag != nil && etag == prevEtag)
-        let hasCards = (try? store.hasAnyCards(for: .lorcana)) ?? false
-        if hasCards && (unchangedHash || unchangedEtag) {
-            if let rows = try? JSONDecoder().decode([LorcanaSetRow].self, from: data) {
-                let fp = Self.lorcanaCatalogFingerprint(from: rows)
-                try? store.setMeta("lorcana_catalog_row_fingerprint", fp)
-            }
-            await progress.addPlannedFiles(2)
-            await progress.completeFile(byteCount: Int64(data.count))
-            await progress.completeFile(byteCount: 0)
-            if let etag {
-                try? store.setMeta("lorcana_catalog_sets_etag", etag)
-            }
-            let emptyCodes = (try? store.fetchSetCodesWithNoCards(for: .lorcana)) ?? []
-            if !emptyCodes.isEmpty {
-                await patchMissingLorcanaCards(setCodes: emptyCodes, store: store, progress: progress)
-            }
-            return
-        }
-
-        let rows: [LorcanaSetRow]
-        do {
-            rows = try JSONDecoder().decode([LorcanaSetRow].self, from: data)
-        } catch {
-            await progress.addPlannedFiles(2)
-            await progress.completeFile(byteCount: Int64(data.count))
-            await progress.completeFile(byteCount: 0)
-            return
-        }
-
-        let rowFingerprint = Self.lorcanaCatalogFingerprint(from: rows)
-        let storedFp = store.meta("lorcana_catalog_row_fingerprint")
-        let localFp: String? = {
-            guard let sets = try? store.fetchAllSets(for: .lorcana), !sets.isEmpty else { return nil }
-            return Self.lorcanaCatalogFingerprint(fromSetCodes: sets.map(\.setCode))
-        }()
-        let catalogStructureUnchanged =
-            (storedFp == rowFingerprint) || (storedFp == nil && localFp == rowFingerprint)
-        if hasCards && catalogStructureUnchanged {
-            try? store.setMeta("lorcana_catalog_sets_sha256", hash)
-            if let etag {
-                try? store.setMeta("lorcana_catalog_sets_etag", etag)
-            }
-            try? store.setMeta("lorcana_catalog_row_fingerprint", rowFingerprint)
-            await progress.addPlannedFiles(2)
-            await progress.completeFile(byteCount: Int64(data.count))
-            await progress.completeFile(byteCount: 0)
-            let emptyCodes = (try? store.fetchSetCodesWithNoCards(for: .lorcana)) ?? []
-            if !emptyCodes.isEmpty {
-                await patchMissingLorcanaCards(setCodes: emptyCodes, store: store, progress: progress)
-            }
-            return
-        }
-
-        await progress.addPlannedFiles(1 + rows.count * 2)
-        await progress.completeFile(byteCount: Int64(data.count))
-
-        do {
-            try store.purgeCatalogTables(for: .lorcana)
-            for row in rows {
-                let set = row.asTCGSet()
-                let code = row.setCode
-                await progress.setStatus("Updating \(row.name)…")
-                try store.upsertSet(set, brand: .lorcana)
-                let cardsURL = AppConfiguration.r2LorcanaURL(path: "cards/data/\(code).json")
-                if let (cData, _) = try? await session.data(from: cardsURL), !cData.isEmpty {
-                    let dtos = try JSONDecoder().decode([LorcanaCardDTO].self, from: cData)
-                    let cards = dtos.map { LorcanaCatalogMapping.card(from: $0) }
-                    try store.insertCards(cards, setCode: code, brand: .lorcana)
-                    await progress.completeFile(byteCount: Int64(cData.count))
-                } else {
-                    await progress.completeFile()
-                }
-                var pricingBytes: Int64 = 0
-                for stem in Self.lorcanaPricingStemVariants(for: code) {
-                    let pURL = AppConfiguration.r2LorcanaMarketPricingSetURL(setCodeStem: stem)
-                    guard let (pData, resp) = try? await session.data(from: pURL),
-                          let http = resp as? HTTPURLResponse,
-                          (200...299).contains(http.statusCode),
-                          !pData.isEmpty
-                    else { continue }
-                    try store.upsertPricing(setCode: code, json: pData, brand: .lorcana)
-                    pricingBytes = Int64(pData.count)
-                    break
-                }
-                await progress.completeFile(byteCount: pricingBytes)
-            }
-            try store.setMeta("lorcana_catalog_sets_sha256", hash)
-            if let etag {
-                try store.setMeta("lorcana_catalog_sets_etag", etag)
-            }
-            try store.setMeta("lorcana_catalog_row_fingerprint", rowFingerprint)
-        } catch {
-            // Leave partial; browse may be empty until next sync.
-            // Mark sync as failed so next launch retries
-            try? store.setMeta("sync_failed", "1")
-        }
-    }
-
-    private func patchMissingLorcanaCards(setCodes: [String], store: CatalogStore, progress: CatalogSyncProgressReporter) async {
-        await progress.addPlannedFiles(setCodes.count)
-        for code in setCodes {
-            let cardsURL = AppConfiguration.r2LorcanaURL(path: "cards/data/\(code).json")
-            guard let (cData, _) = try? await session.data(from: cardsURL), !cData.isEmpty,
-                  let dtos = try? JSONDecoder().decode([LorcanaCardDTO].self, from: cData)
-            else {
-                await progress.completeFile()
-                continue
-            }
-            let cards = dtos.map { LorcanaCatalogMapping.card(from: $0) }
-            try? store.insertCards(cards, setCode: code, brand: .lorcana)
-            await progress.completeFile(byteCount: Int64(cData.count))
-        }
-    }
-
-    private static func lorcanaCatalogFingerprint(fromSetCodes codes: [String]) -> String {
-        let payload = codes.sorted().joined(separator: "\n").data(using: .utf8) ?? Data()
-        return SHA256.hash(data: payload).map { String(format: "%02x", $0) }.joined()
-    }
-
-    private static func lorcanaCatalogFingerprint(from rows: [LorcanaSetRow]) -> String {
-        let payload = rows
-            .sorted { $0.setCode < $1.setCode }
-            .map { "\($0.setCode)|\($0.scannerEnExpansionNumber ?? "")" }
-            .joined(separator: "\n")
-            .data(using: .utf8) ?? Data()
-        return SHA256.hash(data: payload).map { String(format: "%02x", $0) }.joined()
-    }
-
-    private static func lorcanaPricingStemVariants(for setCode: String) -> [String] {
-        let s = setCode.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !s.isEmpty else { return [] }
-        var stems: [String] = []
-        func add(_ x: String) {
-            let t = x.trimmingCharacters(in: .whitespacesAndNewlines)
-            if !t.isEmpty, !stems.contains(t) { stems.append(t) }
-        }
-        add(s)
-        add(s.uppercased())
-        add(s.lowercased())
-        return stems
-    }
 
     /// Downloads and inserts card JSON for ONE PIECE sets that are registered in the DB but have no cards.
     /// Called after both skip paths so a failed card download from a previous sync self-heals.
@@ -715,9 +514,6 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             if enabledBrands.contains(.onePiece) {
                 await syncOnePieceMarketPricingFullRefresh(progress: progress, store: store)
             }
-            if enabledBrands.contains(.lorcana) {
-                await syncLorcanaMarketPricingFullRefresh(progress: progress, store: store)
-            }
             try? store.setMeta("pricing_last_synced_at", String(Date().timeIntervalSince1970))
             try? store.setMeta("pricing_aux_sqlite_v1", "1")
         } else if needsAuxBackfill {
@@ -727,9 +523,6 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             }
             if enabledBrands.contains(.onePiece) {
                 downloaded += await syncOnePieceHistoryTrendsOnly(progress: progress, store: store)
-            }
-            if enabledBrands.contains(.lorcana) {
-                downloaded += await syncLorcanaHistoryTrendsOnly(progress: progress, store: store)
             }
             // Avoid marking complete offline: retry chart backfill on a later launch when networked.
             if downloaded > 0 {
@@ -926,104 +719,6 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
                         let tURL = AppConfiguration.r2OnePiecePriceTrendsURL(setCodeStem: tStem)
                         if let tData = await Self.fetchHTTPBodyIfOK(session: sess, url: tURL) {
                             try? store.upsertPriceTrends(setCode: code, json: tData, brand: .onePiece)
-                            total += Int64(tData.count)
-                            break
-                        }
-                    }
-                    return total
-                }
-            }
-            for await result in group {
-                let n = result ?? 0
-                sum += n
-                await progress.completeFile(byteCount: n)
-            }
-        }
-        return sum
-    }
-
-    private func syncLorcanaMarketPricingFullRefresh(progress: CatalogSyncProgressReporter, store: CatalogStore) async {
-        let sets: [TCGSet]
-        do {
-            sets = try store.fetchAllSets(for: .lorcana)
-        } catch {
-            return
-        }
-        guard !sets.isEmpty else { return }
-        await progress.addPlannedFiles(sets.count)
-        await withTaskGroup(of: (String, Int64)?.self) { group in
-            for set in sets {
-                let code = set.setCode
-                let sess = session
-                group.addTask {
-                    for stem in Self.lorcanaPricingStemVariants(for: code) {
-                        let pURL = AppConfiguration.r2LorcanaMarketPricingSetURL(setCodeStem: stem)
-                        guard let (pData, resp) = try? await sess.data(from: pURL),
-                              let http = resp as? HTTPURLResponse,
-                              (200...299).contains(http.statusCode),
-                              !pData.isEmpty
-                        else { continue }
-                        var totalBytes = Int64(pData.count)
-                        try? store.upsertPricing(setCode: code, json: pData, brand: .lorcana)
-                        for hStem in Self.lorcanaPricingStemVariants(for: code) {
-                            let hURL = AppConfiguration.r2LorcanaPricingHistoryURL(setCodeStem: hStem)
-                            if let hData = await Self.fetchHTTPBodyIfOK(session: sess, url: hURL) {
-                                try? store.upsertPriceHistory(setCode: code, json: hData, brand: .lorcana)
-                                totalBytes += Int64(hData.count)
-                                break
-                            }
-                        }
-                        for tStem in Self.lorcanaPricingStemVariants(for: code) {
-                            let tURL = AppConfiguration.r2LorcanaPriceTrendsURL(setCodeStem: tStem)
-                            if let tData = await Self.fetchHTTPBodyIfOK(session: sess, url: tURL) {
-                                try? store.upsertPriceTrends(setCode: code, json: tData, brand: .lorcana)
-                                totalBytes += Int64(tData.count)
-                                break
-                            }
-                        }
-                        return (code, totalBytes)
-                    }
-                    return nil
-                }
-            }
-            for await result in group {
-                guard let (_, byteCount) = result else {
-                    await progress.completeFile()
-                    continue
-                }
-                await progress.completeFile(byteCount: byteCount)
-            }
-        }
-    }
-
-    private func syncLorcanaHistoryTrendsOnly(progress: CatalogSyncProgressReporter, store: CatalogStore) async -> Int64 {
-        let sets: [TCGSet]
-        do {
-            sets = try store.fetchAllSets(for: .lorcana)
-        } catch {
-            return 0
-        }
-        guard !sets.isEmpty else { return 0 }
-        await progress.addPlannedFiles(sets.count)
-        let sess = session
-        var sum: Int64 = 0
-        await withTaskGroup(of: Int64?.self) { group in
-            for set in sets {
-                let code = set.setCode
-                group.addTask {
-                    var total: Int64 = 0
-                    for hStem in Self.lorcanaPricingStemVariants(for: code) {
-                        let hURL = AppConfiguration.r2LorcanaPricingHistoryURL(setCodeStem: hStem)
-                        if let hData = await Self.fetchHTTPBodyIfOK(session: sess, url: hURL) {
-                            try? store.upsertPriceHistory(setCode: code, json: hData, brand: .lorcana)
-                            total += Int64(hData.count)
-                            break
-                        }
-                    }
-                    for tStem in Self.lorcanaPricingStemVariants(for: code) {
-                        let tURL = AppConfiguration.r2LorcanaPriceTrendsURL(setCodeStem: tStem)
-                        if let tData = await Self.fetchHTTPBodyIfOK(session: sess, url: tURL) {
-                            try? store.upsertPriceTrends(setCode: code, json: tData, brand: .lorcana)
                             total += Int64(tData.count)
                             break
                         }

@@ -12,10 +12,6 @@ private enum DeckPickerBrowseRoute: Hashable {
     case opCharacter(name: String)
     case opSubtypes
     case opSubtype(name: String)
-    case lcCharacters
-    case lcCharacter(name: String)
-    case lcSubtypes
-    case lcSubtype(name: String)
 }
 
 // MARK: - Source
@@ -441,36 +437,6 @@ struct DeckCardPickerView: View {
                             openDetailForCard(card, swipeContext: swipeCards)
                         }
                     )
-                case .lcCharacters:
-                    DeckPickerLorcanaBrowseListView(title: "Characters", searchPlaceholder: "Search characters", routeBuilder: { .lcCharacter(name: $0) })
-                case .lcCharacter(let name):
-                    DeckPickerCatalogCardsView(
-                        path: $browsePath,
-                        title: name,
-                        searchPlaceholder: "Search cards",
-                        deck: deck,
-                        isEligible: isEligible,
-                        basketCardIDs: basketCardIDs,
-                        loadCards: { await services.cardData.cards(matchingLorcanaCharacterName: name) },
-                        onCardSelected: { card, swipeCards in
-                            openDetailForCard(card, swipeContext: swipeCards)
-                        }
-                    )
-                case .lcSubtypes:
-                    DeckPickerLorcanaBrowseListView(title: "Subtypes", searchPlaceholder: "Search subtypes", routeBuilder: { .lcSubtype(name: $0) })
-                case .lcSubtype(let name):
-                    DeckPickerCatalogCardsView(
-                        path: $browsePath,
-                        title: name,
-                        searchPlaceholder: "Search cards",
-                        deck: deck,
-                        isEligible: isEligible,
-                        basketCardIDs: basketCardIDs,
-                        loadCards: { await services.cardData.cards(matchingLorcanaSubtype: name) },
-                        onCardSelected: { card, swipeCards in
-                            openDetailForCard(card, swipeContext: swipeCards)
-                        }
-                    )
                 }
             }
             .toolbar {
@@ -543,8 +509,6 @@ struct DeckCardPickerView: View {
                 if let initial = initialCategoryFilter {
                     if let opCat = initial.opCategoryString {
                         filters.opCardTypes = [opCat]
-                    } else if let lcCat = initial.lcCategoryString {
-                        filters.lcCardTypes = [lcCat]
                     } else {
                         filters.cardTypes = [initial]
                     }
@@ -618,14 +582,6 @@ struct DeckCardPickerView: View {
                         shortcutChip(title: "Characters")
                     }
                     NavigationLink(value: DeckPickerBrowseRoute.opSubtypes) {
-                        shortcutChip(title: "Subtypes")
-                    }
-                }
-                if deck.tcgBrand == .lorcana {
-                    NavigationLink(value: DeckPickerBrowseRoute.lcCharacters) {
-                        shortcutChip(title: "Characters")
-                    }
-                    NavigationLink(value: DeckPickerBrowseRoute.lcSubtypes) {
                         shortcutChip(title: "Subtypes")
                     }
                 }
@@ -786,10 +742,6 @@ struct DeckCardPickerView: View {
             if existing.opCost == nil { existing.opCost = card.opCost }
             if existing.opPower == nil { existing.opPower = card.hp }
             if existing.opCounter == nil { existing.opCounter = card.opCounter }
-            if existing.lcCost == nil { existing.lcCost = card.lcCost }
-            if existing.lcStrength == nil { existing.lcStrength = card.lcStrength }
-            if existing.lcWillpower == nil { existing.lcWillpower = card.lcWillpower }
-            if existing.lcLore == nil { existing.lcLore = card.lcLore }
             if existing.imageLowSrc.isEmpty, !card.imageLowSrc.isEmpty { existing.imageLowSrc = card.imageLowSrc }
         } else if effectiveMax > 0 {
             let deckCard = DeckCard(
@@ -813,11 +765,7 @@ struct DeckCardPickerView: View {
                 catalogStage: Self.catalogStageString(from: card),
                 opCost: card.opCost,
                 opPower: card.hp,
-                opCounter: card.opCounter,
-                lcCost: card.lcCost,
-                lcStrength: card.lcStrength,
-                lcWillpower: card.lcWillpower,
-                lcLore: card.lcLore
+                opCounter: card.opCounter
             )
             deckCard.deck = deck
             modelContext.insert(deckCard)
@@ -1078,10 +1026,6 @@ struct DeckCardPickerView: View {
                     if cardColors.isDisjoint(with: leaderColors) { return false }
                 }
             }
-            if deck.tcgBrand == .lorcana, !filters.lcCardTypes.isEmpty {
-                let cat = card.category?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-                if !filters.lcCardTypes.contains(cat) { return false }
-            }
             if filters.rarePlusOnly && isCommonOrUncommon(card.rarity) { return false }
             if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) { return false }
             if !filters.energyTypes.isEmpty {
@@ -1118,10 +1062,6 @@ struct DeckCardPickerView: View {
                 if cardColors.isDisjoint(with: leaderColors) { return false }
             }
         }
-        if deck.tcgBrand == .lorcana, !filters.lcCardTypes.isEmpty {
-            let cat = card.category?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            if !filters.lcCardTypes.contains(cat) { return false }
-        }
         if filters.rarePlusOnly && isCommonOrUncommon(card.rarity) { return false }
         if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) { return false }
         if !filters.energyTypes.isEmpty {
@@ -1139,7 +1079,6 @@ struct DeckCardPickerView: View {
     }
 
     private func resolvedBrowseCardTypeForPicker(_ card: Card) -> BrowseCardTypeFilter {
-        if deck.tcgBrand == .lorcana { return .pokemon }
         let category = card.category?.lowercased() ?? ""
         if category.contains("trainer") || card.trainerType != nil {
             return .trainer
@@ -1335,12 +1274,6 @@ private struct DeckPickerSetsView: View {
                 if li != ri { return li < ri }
                 return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
             }
-        case .lorcana:
-            return sorted.sorted { lhs, rhs in
-                let li = lcSeriesOrder(lhs.title), ri = lcSeriesOrder(rhs.title)
-                if li != ri { return li < ri }
-                return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-            }
         default:
             return sorted.sorted { lhs, rhs in
                 let l = lhs.sets.compactMap(\.releaseDate).min() ?? ""
@@ -1362,11 +1295,6 @@ private struct DeckPickerSetsView: View {
             if lower.contains("promo")           { return "Promo" }
             let raw = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             return raw.isEmpty ? "Other" : raw
-        case .lorcana:
-            let joined = "\(set.name) \(set.setCode)".lowercased()
-            if joined.contains("illumineer")                             { return "ILLUMINEER'S QUEST" }
-            if joined.contains("promo") || set.setCode.lowercased().contains("promo") { return "PROMO" }
-            return "MAIN"
         default:
             let raw = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             return raw.isEmpty ? "Other" : raw
@@ -1389,15 +1317,6 @@ private struct DeckPickerSetsView: View {
         case "Premium Booster": return 3
         case "Promo": return 4
         default: return 5
-        }
-    }
-
-    private func lcSeriesOrder(_ title: String) -> Int {
-        switch title {
-        case "MAIN": return 0
-        case "ILLUMINEER'S QUEST": return 1
-        case "PROMO": return 2
-        default: return 3
         }
     }
 
@@ -1535,66 +1454,6 @@ private struct DeckPickerOPBrowseListView: View {
             rows = title == "Characters"
                 ? services.cardData.onePieceCharacterNames
                 : services.cardData.onePieceCharacterSubtypes
-        }
-    }
-}
-
-// MARK: - Lorcana character / subtype browse
-
-private struct DeckPickerLorcanaBrowseListView: View {
-    @Environment(AppServices.self) private var services
-
-    let title: String
-    let searchPlaceholder: String
-    let routeBuilder: (String) -> DeckPickerBrowseRoute
-
-    @State private var rows: [String] = []
-    @State private var isLoading = true
-    @State private var query = ""
-
-    private var filteredRows: [String] {
-        let q = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
-        guard !q.isEmpty else { return rows }
-        return rows.filter { $0.lowercased().contains(q) }
-    }
-
-    var body: some View {
-        Group {
-            if isLoading {
-                ProgressView("Loading…")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            } else if rows.isEmpty {
-                ContentUnavailableView(title, systemImage: "list.bullet",
-                    description: Text("Sync the Lorcana catalog to see results."))
-            } else {
-                List {
-                    Section {
-                        BrowseInlineSearchField(title: searchPlaceholder, text: $query)
-                            .listRowInsets(EdgeInsets(top: 8, leading: 16, bottom: 8, trailing: 16))
-                            .listRowBackground(Color.clear)
-                    }
-                    if filteredRows.isEmpty {
-                        ContentUnavailableView("No matches", systemImage: "magnifyingglass")
-                            .listRowBackground(Color.clear)
-                    } else {
-                        ForEach(filteredRows, id: \.self) { row in
-                            NavigationLink(value: routeBuilder(row)) {
-                                Text(row).padding(.vertical, 4)
-                            }
-                        }
-                    }
-                }
-                .listStyle(.plain)
-            }
-        }
-        .navigationTitle(title)
-        .navigationBarTitleDisplayMode(.inline)
-        .task {
-            isLoading = true
-            defer { isLoading = false }
-            rows = title == "Characters"
-                ? await services.cardData.lorcanaCharacterNames()
-                : await services.cardData.lorcanaSubtypes()
         }
     }
 }

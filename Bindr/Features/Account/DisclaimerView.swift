@@ -7,14 +7,14 @@ struct DisclaimerView: View {
         NavigationStack {
             List {
                 Section {
-                    Text("Bindr is an independent card scanning, pricing and collection management application. Bindr is not affiliated with, endorsed by, sponsored by, or in any way officially connected with The Pokémon Company International, Nintendo, Creatures Inc., GAME FREAK, Toei Animation Co. Ltd., Eiichiro Oda, Shueisha Inc., Ravensburger AG, or The Walt Disney Company, or any of their subsidiaries or affiliates.")
+                    Text("Bindr is an independent card scanning, pricing and collection management application. Bindr is not affiliated with, endorsed by, sponsored by, or in any way officially connected with The Pokémon Company International, Nintendo, Creatures Inc., GAME FREAK, Toei Animation Co. Ltd., Eiichiro Oda, Shueisha Inc., or any of their subsidiaries or affiliates.")
                         .font(.subheadline)
                         .foregroundStyle(.primary)
                         .fixedSize(horizontal: false, vertical: true)
                 }
 
                 Section {
-                    Text("All card names, game names, and associated terminology including Pokémon, One Piece, and Disney Lorcana are the property of their respective trademark holders. Card images displayed within Bindr are used solely for the purposes of card identification, price reference, and personal collection management, and remain the intellectual property of their respective owners.")
+                    Text("All card names, game names, and associated terminology including Pokémon and One Piece are the property of their respective trademark holders. Card images displayed within Bindr are used solely for the purposes of card identification, price reference, and personal collection management, and remain the intellectual property of their respective owners.")
                         .font(.subheadline)
                         .foregroundStyle(.primary)
                         .fixedSize(horizontal: false, vertical: true)

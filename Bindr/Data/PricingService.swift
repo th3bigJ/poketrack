@@ -61,7 +61,7 @@ final class PricingService {
     /// Keys to try for per-set pricing / history JSON lookups.
     /// - **Pokémon market:** `externalId`, `tcgdex_id`, derived ids, `masterCardId`.
     /// - **Pokémon history / trends:** `tcgdex_id` first (dotted ids match R2), then `externalId`, locals, `masterCardId`.
-    /// - **ONE PIECE / Lorcana (`::` price keys):** R2 JSON is keyed by Scrydex `priceKey` without the `lorcana::` app prefix.
+    /// - **ONE PIECE (`::` price keys):** R2 JSON is keyed by Scrydex `priceKey`.
     private static func pricingLookupKeys(for card: Card, historyStyle: Bool = false) -> [String] {
         var keys: [String] = []
         func append(_ s: String) {
@@ -70,12 +70,7 @@ final class PricingService {
         }
         let opStyle = card.masterCardId.contains("::")
         if opStyle {
-            let corePriceKey: String = {
-                if card.masterCardId.hasPrefix(TCGBrand.lorcanaMasterIdPrefix) {
-                    return String(card.masterCardId.dropFirst(TCGBrand.lorcanaMasterIdPrefix.count))
-                }
-                return card.masterCardId
-            }()
+            let corePriceKey = card.masterCardId
             if let pid = card.tcgplayerProductId, !pid.isEmpty { append(pid) }
             append(corePriceKey)
             append(card.masterCardId)
@@ -297,7 +292,6 @@ final class PricingService {
         switch catalogBrand {
         case .pokemon: return "pk:\(s)"
         case .onePiece: return "op:\(s)"
-        case .lorcana: return "lor:\(s)"
         }
     }
 
@@ -386,16 +380,6 @@ final class PricingService {
                 return typed
             }
             return [:]
-        case .lorcana:
-            for stem in Self.lorcanaMarketPricingStemVariants(for: setCode) {
-                let url = AppConfiguration.r2LorcanaPricingHistoryURL(setCodeStem: stem)
-                guard let data = await fetchDataIfOK(from: url),
-                      let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { continue }
-                let typed = root.compactMapValues { $0 as? [String: Any] }
-                historyCache[cacheKey] = typed
-                return typed
-            }
-            return [:]
         case .pokemon:
             for stem in AppConfiguration.pricingFileStemVariants(for: setCode) {
                 let url = AppConfiguration.r2PricingHistoryURL(setCode: stem)
@@ -430,16 +414,6 @@ final class PricingService {
         case .onePiece:
             for stem in Self.onePieceMarketPricingStemVariants(for: setCode) {
                 let url = AppConfiguration.r2OnePiecePriceTrendsURL(setCodeStem: stem)
-                guard let data = await fetchDataIfOK(from: url),
-                      let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { continue }
-                let typed = root.compactMapValues { $0 as? [String: Any] }
-                trendsCache[cacheKey] = typed
-                return typed
-            }
-            return [:]
-        case .lorcana:
-            for stem in Self.lorcanaMarketPricingStemVariants(for: setCode) {
-                let url = AppConfiguration.r2LorcanaPriceTrendsURL(setCodeStem: stem)
                 guard let data = await fetchDataIfOK(from: url),
                       let root = try? JSONSerialization.jsonObject(with: data) as? [String: Any] else { continue }
                 let typed = root.compactMapValues { $0 as? [String: Any] }
@@ -562,17 +536,6 @@ final class PricingService {
                         return map
                     }
                 }
-            case .lorcana:
-                for stem in Self.lorcanaMarketPricingStemVariants(for: card.setCode) {
-                    let url = AppConfiguration.r2LorcanaMarketPricingSetURL(setCodeStem: stem)
-                    if let (map, data) = await fetchPricingMapAndDataIfOK(from: url) {
-                        pricingCache[key] = (map, Date().addingTimeInterval(cacheTTL))
-                        saveDiskCache(setCode: key, data: data)
-                        try? CatalogStore.shared.open()
-                        try? CatalogStore.shared.upsertPricing(setCode: key, json: data, brand: .lorcana)
-                        return map
-                    }
-                }
             case .pokemon:
                 for stem in AppConfiguration.pricingFileStemVariants(for: key) {
                     let url = AppConfiguration.r2CardPricingSetJSONURL(setCodeStem: stem)
@@ -600,27 +563,12 @@ final class PricingService {
 
     /// Which SQLite partition / R2 pricing tree this card uses.
     private static func pricingCatalogBrand(for card: Card) -> TCGBrand {
-        if card.masterCardId.hasPrefix(TCGBrand.lorcanaMasterIdPrefix) { return .lorcana }
         if card.masterCardId.contains("::") { return .onePiece }
         return .pokemon
     }
 
     /// Filenames on R2 use set codes like `OP01` (case-sensitive); try a small set of stems.
     private static func onePieceMarketPricingStemVariants(for setCode: String) -> [String] {
-        let s = setCode.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !s.isEmpty else { return [] }
-        var stems: [String] = []
-        func add(_ x: String) {
-            let t = x.trimmingCharacters(in: .whitespacesAndNewlines)
-            if !t.isEmpty, !stems.contains(t) { stems.append(t) }
-        }
-        add(s)
-        add(s.uppercased())
-        add(s.lowercased())
-        return stems
-    }
-
-    private static func lorcanaMarketPricingStemVariants(for setCode: String) -> [String] {
         let s = setCode.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !s.isEmpty else { return [] }
         var stems: [String] = []

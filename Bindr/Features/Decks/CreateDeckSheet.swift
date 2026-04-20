@@ -21,14 +21,10 @@ struct CreateDeckSheet: View {
                     TextField("Deck name", text: $name)
                 }
 
-                Section("Brand") {
-                    Picker("Brand", selection: $selectedBrand) {
-                        ForEach(services.brandSettings.enabledBrands.sorted { $0.menuOrder < $1.menuOrder }) { brand in
-                            Text(brand.displayTitle).tag(brand)
-                        }
-                    }
-                    .onChange(of: selectedBrand) { _, brand in
-                        selectedFormat = DeckFormat.formats(for: brand).first ?? .pokemonStandard
+                Section("Game") {
+                    LabeledContent("Active Game") {
+                        Text(selectedBrand.displayTitle)
+                            .foregroundStyle(.secondary)
                     }
                 }
 
@@ -50,6 +46,11 @@ struct CreateDeckSheet: View {
             }
             .navigationTitle("New Deck")
             .navigationBarTitleDisplayMode(.inline)
+            .onAppear {
+                let activeBrand = services.brandSettings.selectedCatalogBrand
+                selectedBrand = activeBrand
+                selectedFormat = DeckFormat.formats(for: activeBrand).first ?? .pokemonStandard
+            }
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }

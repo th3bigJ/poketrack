@@ -21,6 +21,147 @@ Social stays in More. It does not become its own tab.
 
 ---
 
+## Brand Mode Split Plan
+
+## Goal
+Stop running Pokémon and ONE PIECE side by side across the main app. The app should behave as a single-brand experience at runtime:
+
+- When active brand is `pokemon`, main navigation only shows Pokémon data, filters, labels, stats, and shortcuts.
+- When active brand is `onePiece`, main navigation only shows ONE PIECE data, filters, labels, stats, and shortcuts.
+- Brand switching lives in `More` as an explicit app-level control.
+
+This keeps menus smaller, reduces mixed-brand UI states, and makes future franchise expansion easier.
+
+## Product Decision
+
+- `selectedCatalogBrand` becomes the app-wide active brand, not just the Browse brand.
+- `enabledBrands` is no longer used to drive simultaneous multi-brand UI in the main app shell.
+- The user can still have local data for both brands installed, but only one brand is visible at a time.
+- `More` gets a new "Switch Game" / "Active Game" control that swaps the app into Pokémon or ONE PIECE mode.
+- Existing cross-brand aggregates can either be removed from the main shell or moved behind a later settings/debug surface; V1 should prefer active-brand-only presentation.
+
+## UX Rules
+
+- Dashboard: only show value/activity/cards for the active brand.
+- Browse: only show the active brand's catalog and brand-specific entry points.
+- Collect: only show collection/wishlist for the active brand.
+- Bindrs: default new binders and visible binder flows to the active brand; do not surface cross-brand shortcuts in the same session.
+- Deck Builder: create and browse decks for the active brand by default.
+- Search: scope results to the active brand unless a future global search mode is deliberately added.
+- More: show current active game at the top and provide the switcher there.
+
+## Implementation Shape
+
+### Phase B1 — Reframe Brand Settings
+
+**Build**
+- [ ] Treat `BrandSettings.selectedCatalogBrand` as the single source of truth for active app mode
+- [ ] Keep persistence for both brands installed, but stop using `enabledBrands` to render mixed-brand chrome
+- [ ] Add a single helper like `activeBrand` / `currentAppBrand` usage pattern in root views and feature entry points
+- [ ] Audit fallbacks that currently assume "all enabled brands" and convert them to "current active brand"
+
+**Likely files**
+- `Bindr/Services/BrandSettings.swift`
+- `Bindr/Services/AppServices.swift`
+- `Bindr/Features/Root/RootView.swift`
+
+**Gate**
+- [ ] Switching active brand updates app state consistently without needing relaunch
+
+### Phase B2 — Add Brand Switcher To More
+
+**Build**
+- [ ] Add an "Active Game" section near the top of `MoreView`
+- [ ] Show current game logo/name and a segmented control, picker, or menu for Pokémon / ONE PIECE
+- [ ] On switch, reset feature-local navigation/filter/search state that could leak old-brand context
+- [ ] Preserve the current tab if possible; otherwise safely return to that tab's root before applying the new brand
+
+**Likely files**
+- `Bindr/Features/Root/MoreSheet.swift`
+- `Bindr/Features/Root/RootView.swift`
+
+**Gate**
+- [ ] User can switch from More and immediately see the whole app change brand context cleanly
+
+### Phase B3 — Remove Mixed-Brand Main Shell UI
+
+**Build**
+- [ ] Dashboard: replace combined Pokémon/ONE PIECE tiles with active-brand-only metrics
+- [ ] Collect: remove "all brands" presentation from default UX
+- [ ] Search: default to active brand and remove dual-brand result blending in standard flows
+- [ ] Browse: ensure Pokémon-only routes (`All Pokémon`) never appear in ONE PIECE mode, and ONE PIECE-only routes never appear in Pokémon mode
+- [ ] Scanner: use active brand as the default scan target
+
+**Likely files**
+- `Bindr/Features/Dashboard/DashboardView.swift`
+- `Bindr/Features/Browse/BrowseView.swift`
+- `Bindr/Features/Search/SearchExperienceView.swift`
+- `Bindr/Features/Search/UniversalSearchResultsView.swift`
+- `Bindr/Features/Scanner/CardScannerView.swift`
+- `Bindr/Features/Scanner/CardScannerViewModel.swift`
+
+**Gate**
+- [ ] No main tab shows mixed Pokémon + ONE PIECE content after the split
+
+### Phase B4 — Make Creation Flows Brand-Scoped
+
+**Build**
+- [ ] New deck flow should default to active brand and only offer that brand's formats unless user explicitly changes context
+- [ ] New binder flow should default to active brand
+- [ ] Any quick actions in `More` should launch into the current brand's experience
+- [ ] Brand-specific copy, empty states, and shortcut rows should follow the active game
+
+**Likely files**
+- `Bindr/Features/Decks/CreateDeckSheet.swift`
+- `Bindr/Features/Decks/DecksRootView.swift`
+- `Bindr/Features/Bindrs/`
+- `Bindr/Features/Root/MoreSheet.swift`
+
+**Gate**
+- [ ] Newly created content naturally belongs to the currently selected game
+
+### Phase B5 — Data, Sync, And Offline Follow-Through
+
+**Build**
+- [ ] Keep local catalog/pricing/offline packs stored per brand as they are today
+- [ ] Do not delete the inactive brand's data on switch; only hide it from the main UX
+- [ ] Ensure background refresh/offline image settings remain brand-aware but not simultaneously foregrounded in UI
+- [ ] Review collection value snapshots and similar aggregate models so active-brand screens do not imply a combined mode
+
+**Likely files**
+- `Bindr/Data/Catalog/`
+- `Bindr/Services/OfflineImageSettings.swift`
+- `Bindr/Services/CollectionValueService.swift`
+
+**Gate**
+- [ ] Brand switching is a presentation/context switch, not a destructive data operation
+
+## State Reset Rules On Switch
+
+- Clear Browse navigation path
+- Clear Search query and search navigation path
+- Reset Collect filters to the selected brand context
+- Dismiss any presented brand-specific full-screen browse routes if needed
+- Reset temporary picker state in deck/binder creation flows
+
+This avoids landing in invalid UI after switching from one franchise to the other.
+
+## Non-Goals For This Split
+
+- Creating two separate app targets
+- Duplicating the codebase into a Pokémon app and a ONE PIECE app
+- Deleting support for storing multiple brands on-device
+- Reworking social/trading payload schemas right now
+
+## Recommended Rollout Order
+
+1. `More` brand switcher + root state reset
+2. Browse / Collect / Search isolation
+3. Dashboard and creation-flow cleanup
+4. Follow-up pass for wording, empty states, badges, and settings
+
+---
+
 ## Overall Plan Structure
 
 - **Part A1 — Profiles:** Supabase setup, auth, profile creation and editing

@@ -41,17 +41,6 @@ struct BrowseFilterCard: Codable, Identifiable, Hashable, Sendable {
     let opLife: Int?
     /// ONE PIECE: power value (stored as `hp` on Card, exposed separately here for clarity).
     let opPower: Int?
-    /// LORCANA: printing variant e.g. "normal", "holofoil", "coldFoil".
-    let lcVariant: String?
-    /// LORCANA: ink cost to play the card.
-    let lcCost: Int?
-    /// LORCANA: strength value.
-    let lcStrength: Int?
-    /// LORCANA: willpower value.
-    let lcWillpower: Int?
-    /// LORCANA: lore value gained when questing.
-    let lcLore: Int?
-
     var ref: CardRef {
         CardRef(masterCardId: masterCardId, setCode: setCode)
     }
@@ -105,18 +94,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
     let opCounter: Int?
     /// ONE PIECE: leader life points.
     let opLife: Int?
-    /// LORCANA: printed collector number used by scanner footer matcher.
     let printedNumber: String?
-    /// LORCANA: printing variant e.g. "normal", "holofoil", "coldFoil".
-    let lcVariant: String?
-    /// LORCANA: ink cost to play the card.
-    let lcCost: Int?
-    /// LORCANA: strength value.
-    let lcStrength: Int?
-    /// LORCANA: willpower value.
-    let lcWillpower: Int?
-    /// LORCANA: lore value gained when questing.
-    let lcLore: Int?
 
     enum CodingKeys: String, CodingKey {
         case masterCardId, externalId, tcgdex_id, tcgdexId, localId, setCode, setTcgdexId, cardNumber, cardName
@@ -126,7 +104,6 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         case tcgplayerProductId
         case opAttributes, opCost, opCounter, opLife
         case printedNumber
-        case lcVariant, lcCost, lcStrength, lcWillpower, lcLore
     }
 
     init(from decoder: Decoder) throws {
@@ -175,11 +152,6 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         opCounter = try c.decodeIfPresent(Int.self, forKey: .opCounter)
         opLife = try c.decodeIfPresent(Int.self, forKey: .opLife)
         printedNumber = try c.decodeIfPresent(String.self, forKey: .printedNumber)
-        lcVariant = try c.decodeIfPresent(String.self, forKey: .lcVariant)
-        lcCost = try c.decodeIfPresent(Int.self, forKey: .lcCost)
-        lcStrength = try c.decodeIfPresent(Int.self, forKey: .lcStrength)
-        lcWillpower = try c.decodeIfPresent(Int.self, forKey: .lcWillpower)
-        lcLore = try c.decodeIfPresent(Int.self, forKey: .lcLore)
     }
 
     func encode(to encoder: Encoder) throws {
@@ -221,11 +193,6 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         try c.encodeIfPresent(opCounter, forKey: .opCounter)
         try c.encodeIfPresent(opLife, forKey: .opLife)
         try c.encodeIfPresent(printedNumber, forKey: .printedNumber)
-        try c.encodeIfPresent(lcVariant, forKey: .lcVariant)
-        try c.encodeIfPresent(lcCost, forKey: .lcCost)
-        try c.encodeIfPresent(lcStrength, forKey: .lcStrength)
-        try c.encodeIfPresent(lcWillpower, forKey: .lcWillpower)
-        try c.encodeIfPresent(lcLore, forKey: .lcLore)
     }
 
     /// Memberwise initializer for catalog adapters (e.g. One Piece JSON → shared ``Card`` model).
@@ -266,12 +233,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         opCost: Int? = nil,
         opCounter: Int? = nil,
         opLife: Int? = nil,
-        printedNumber: String? = nil,
-        lcVariant: String? = nil,
-        lcCost: Int? = nil,
-        lcStrength: Int? = nil,
-        lcWillpower: Int? = nil,
-        lcLore: Int? = nil
+        printedNumber: String? = nil
     ) {
         self.masterCardId = masterCardId
         self.externalId = externalId
@@ -310,11 +272,6 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         self.opCounter = opCounter
         self.opLife = opLife
         self.printedNumber = printedNumber
-        self.lcVariant = lcVariant
-        self.lcCost = lcCost
-        self.lcStrength = lcStrength
-        self.lcWillpower = lcWillpower
-        self.lcLore = lcLore
     }
 
     /// Text included in inverted-index search: name/number/set, **HP**, **attacks** (Pokémon), **rules** (Trainers — often long).

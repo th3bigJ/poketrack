@@ -10,18 +10,19 @@ struct TransactionsView: View {
     @State private var cardNamesByID: [String: String] = [:]
     @State private var showAddActivity = false
 
+    private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
+
     private var visibleLedgerLines: [LedgerLine] {
-        let enabled = services.brandSettings.enabledBrands
         return ledgerLines.filter { line in
             guard let cid = line.cardID?.trimmingCharacters(in: .whitespacesAndNewlines), !cid.isEmpty else {
-                return true
+                return false
             }
-            return enabled.contains(TCGBrand.inferredFromMasterCardId(cid))
+            return TCGBrand.inferredFromMasterCardId(cid) == activeBrand
         }
     }
 
     private var ledgerSignature: String {
-        let brandKey = services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
+        let brandKey = activeBrand.rawValue
         return visibleLedgerLines.map { "\($0.id.uuidString)|\($0.occurredAt.timeIntervalSince1970)" }.joined(separator: "§") + "|" + brandKey
     }
 
@@ -91,9 +92,9 @@ struct TransactionsView: View {
         ScrollView {
             VStack(spacing: 16) {
                 ContentUnavailableView(
-                    "No visible transactions",
+                    "No \(activeBrand.displayTitle) transactions",
                     systemImage: "line.3.horizontal.decrease.circle",
-                    description: Text("Turn a game back on under Account → Card catalog to see ledger lines tied to cards from that game.")
+                    description: Text("Transactions only appear for the active game selected in More.")
                 )
                 .frame(minHeight: 280)
             }

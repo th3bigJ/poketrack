@@ -20,7 +20,6 @@ struct DashboardView: View {
     @State private var liveTotalGbp: Double? = nil
     @State private var livePokemonGbp: Double = 0
     @State private var liveOnePieceGbp: Double = 0
-    @State private var liveLorcanaGbp: Double = 0
     @State private var totalCostBasis: Double = 0
     @State private var isLoadingValue = false
     @State private var selectedPoint: ChartPoint? = nil
@@ -31,14 +30,13 @@ struct DashboardView: View {
 
     private var liveSnapshot: BrandSnapshot? {
         guard let t = liveTotalGbp else { return nil }
-        return BrandSnapshot(total: t, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp, lorcana: liveLorcanaGbp)
+        return BrandSnapshot(total: t, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp)
     }
 
     private func brandValue(_ point: ChartPoint) -> Double {
         switch selectedBrand {
         case .pokemon:  return point.pokemon
         case .onePiece: return point.onePiece
-        case .lorcana:  return point.lorcana
         case nil:       return point.total
         }
     }
@@ -48,16 +46,26 @@ struct DashboardView: View {
         switch selectedBrand {
         case .pokemon:  return point?.pokemon  ?? livePokemonGbp
         case .onePiece: return point?.onePiece ?? liveOnePieceGbp
-        case .lorcana:  return point?.lorcana  ?? liveLorcanaGbp
         case nil:       return point?.total    ?? liveTotalGbp ?? 0
         }
     }
     private var displayPokemon: Double  { selectedPoint?.pokemon  ?? livePokemonGbp }
     private var displayOnePiece: Double { selectedPoint?.onePiece ?? liveOnePieceGbp }
-    private var displayLorcana: Double  { selectedPoint?.lorcana  ?? liveLorcanaGbp }
     private var isScrubbingOrLoaded: Bool { selectedPoint != nil || liveTotalGbp != nil }
 
-    private var recentLines: [LedgerLine] { Array(allLedgerLines.prefix(5)) }
+    private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
+    private var recentLines: [LedgerLine] {
+        Array(
+            allLedgerLines.filter { line in
+                guard let cardID = line.cardID?.trimmingCharacters(in: .whitespacesAndNewlines),
+                      !cardID.isEmpty else {
+                    return false
+                }
+                return TCGBrand.inferredFromMasterCardId(cardID) == activeBrand
+            }
+            .prefix(5)
+        )
+    }
 
     /// The point whose value we're comparing against (the one before the displayed point).
     private var periodChange: (amount: Double, pct: Double, label: String)? {
@@ -104,10 +112,10 @@ struct DashboardView: View {
         if let svc {
             points = svc.snapshots
                 .filter { $0.date >= cutoff }
-                .map { ChartPoint(date: $0.date, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp, lorcana: $0.lorcanaGbp) }
+                .map { ChartPoint(date: $0.date, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
         }
         if let live = liveTotalGbp {
-            points.append(ChartPoint(date: cal.startOfDay(for: Date()), total: live, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp, lorcana: liveLorcanaGbp))
+            points.append(ChartPoint(date: cal.startOfDay(for: Date()), total: live, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp))
         }
         return points
     }
@@ -120,14 +128,14 @@ struct DashboardView: View {
         if let svc {
             points = svc.weeklyAverages
                 .filter { $0.weekStart >= cutoff }
-                .map { ChartPoint(date: $0.weekStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp, lorcana: $0.lorcanaGbp) }
+                .map { ChartPoint(date: $0.weekStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
             // Append current incomplete week average
             let cwAvg = svc.currentWeekAverage(liveToday: liveSnapshot)
             if cwAvg.total > 0 {
                 var cal2 = Calendar(identifier: .iso8601)
                 cal2.timeZone = TimeZone.current
                 let thisWeekStart = cal2.date(from: cal2.dateComponents([.yearForWeekOfYear, .weekOfYear], from: Date()))!
-                points.append(ChartPoint(date: thisWeekStart, total: cwAvg.total, pokemon: cwAvg.pokemon, onePiece: cwAvg.onePiece, lorcana: cwAvg.lorcana))
+                points.append(ChartPoint(date: thisWeekStart, total: cwAvg.total, pokemon: cwAvg.pokemon, onePiece: cwAvg.onePiece))
             }
         }
         return points
@@ -141,7 +149,7 @@ struct DashboardView: View {
         if let svc {
             points = svc.monthlyAverages
                 .filter { $0.monthStart >= cutoff }
-                .map { ChartPoint(date: $0.monthStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp, lorcana: $0.lorcanaGbp) }
+                .map { ChartPoint(date: $0.monthStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
             // Current month: average past days this month + today's live value.
             // Falls back to just today's live value if no past-days exist yet.
             let cmAvg = svc.currentMonthAverage(liveToday: liveSnapshot)
@@ -150,7 +158,7 @@ struct DashboardView: View {
                 let comps = cal.dateComponents([.year, .month], from: Date())
                 let thisMonthStart = cal.date(from: comps)!
                 let snap = cmAvg.total > 0 ? cmAvg : liveSnapshot!
-                points.append(ChartPoint(date: thisMonthStart, total: snap.total, pokemon: snap.pokemon, onePiece: snap.onePiece, lorcana: snap.lorcana))
+                points.append(ChartPoint(date: thisMonthStart, total: snap.total, pokemon: snap.pokemon, onePiece: snap.onePiece))
             }
         }
         return points
@@ -169,9 +177,8 @@ struct DashboardView: View {
             switch brand {
             case .pokemon:  v = p.pokemon
             case .onePiece: v = p.onePiece
-            case .lorcana:  v = p.lorcana
             }
-            return ChartPoint(date: p.date, total: v, pokemon: p.pokemon, onePiece: p.onePiece, lorcana: p.lorcana)
+            return ChartPoint(date: p.date, total: v, pokemon: p.pokemon, onePiece: p.onePiece)
         }
     }
 
@@ -187,9 +194,7 @@ struct DashboardView: View {
                 if !activePoints.isEmpty {
                     valueChartCard
                 }
-                if services.brandSettings.enabledBrands.count > 1 {
-                    brandBreakdownRow
-                }
+                brandBreakdownRow
                 recentActivityCard
             }
             .padding(16)
@@ -203,9 +208,16 @@ struct DashboardView: View {
             guard services.collectionValue != nil else { return }
             await services.collectionValue?.runBackfillIfNeeded(collectionItems: collectionItems)
         }
+        .onAppear {
+            selectedBrand = activeBrand
+        }
+        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
+            selectedBrand = brand
+            selectedPoint = nil
+        }
         .onChange(of: chartRange) { _, _ in
             selectedPoint = nil
-            selectedBrand = nil
+            selectedBrand = activeBrand
         }
     }
 
@@ -355,23 +367,16 @@ struct DashboardView: View {
     }
 
     private var brandBreakdownRow: some View {
-        let enabled = services.brandSettings.enabledBrands
         return HStack(spacing: 8) {
-            if enabled.contains(.pokemon) {
+            if activeBrand == .pokemon {
                 BrandValueTile(brand: "Pokémon", value: displayPokemon, isSelected: selectedBrand == .pokemon, hasSelection: selectedBrand != nil, formatter: formatCurrency) {
-                    selectedBrand = selectedBrand == .pokemon ? nil : .pokemon
+                    selectedBrand = .pokemon
                     selectedPoint = nil
                 }
             }
-            if enabled.contains(.onePiece) {
+            if activeBrand == .onePiece {
                 BrandValueTile(brand: "ONE PIECE", value: displayOnePiece, isSelected: selectedBrand == .onePiece, hasSelection: selectedBrand != nil, formatter: formatCurrency) {
-                    selectedBrand = selectedBrand == .onePiece ? nil : .onePiece
-                    selectedPoint = nil
-                }
-            }
-            if enabled.contains(.lorcana) {
-                BrandValueTile(brand: "Lorcana", value: displayLorcana, isSelected: selectedBrand == .lorcana, hasSelection: selectedBrand != nil, formatter: formatCurrency) {
-                    selectedBrand = selectedBrand == .lorcana ? nil : .lorcana
+                    selectedBrand = .onePiece
                     selectedPoint = nil
                 }
             }
@@ -429,7 +434,6 @@ struct DashboardView: View {
         var totalValue = 0.0
         var pokemonValue = 0.0
         var onePieceValue = 0.0
-        var lorcanaValue = 0.0
         var totalCost = 0.0
 
         for item in collectionItems {
@@ -441,7 +445,6 @@ struct DashboardView: View {
             switch TCGBrand.inferredFromMasterCardId(item.cardID) {
             case .pokemon:  pokemonValue += gbp
             case .onePiece: onePieceValue += gbp
-            case .lorcana:  lorcanaValue += gbp
             }
 
             totalCost += (item.purchasePrice ?? 0) * Double(item.quantity)
@@ -450,7 +453,6 @@ struct DashboardView: View {
         liveTotalGbp = totalValue > 0 ? totalValue : nil
         livePokemonGbp = pokemonValue
         liveOnePieceGbp = onePieceValue
-        liveLorcanaGbp = lorcanaValue
         totalCostBasis = totalCost
     }
 
@@ -525,7 +527,6 @@ private struct ChartPoint: Identifiable {
     let total: Double
     let pokemon: Double
     let onePiece: Double
-    let lorcana: Double
 }
 
 private struct BrandValueTile: View {
@@ -596,4 +597,3 @@ private struct DashboardCard<Content: View, Trailing: View>: View {
         .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 }
-

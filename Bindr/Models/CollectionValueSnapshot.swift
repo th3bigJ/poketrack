@@ -10,13 +10,11 @@ final class CollectionValueSnapshot {
     var totalGbp: Double = 0.0
     var pokemonGbp: Double = 0.0
     var onePieceGbp: Double = 0.0
-    var lorcanaGbp: Double = 0.0
 
-    init(date: Date, totalGbp: Double, pokemonGbp: Double, onePieceGbp: Double, lorcanaGbp: Double) {
+    init(date: Date, totalGbp: Double, pokemonGbp: Double, onePieceGbp: Double) {
         self.date = date
         self.totalGbp = totalGbp
         self.pokemonGbp = pokemonGbp
         self.onePieceGbp = onePieceGbp
-        self.lorcanaGbp = lorcanaGbp
     }
 }

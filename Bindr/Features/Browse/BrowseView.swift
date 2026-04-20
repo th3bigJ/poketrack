@@ -204,12 +204,12 @@ struct BrowseView: View {
     private static let catalogInitialBatchSize = 36
     private static let pageSize = 18
     private static let prefetchBuffer = 8
+    private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
 
     private var ownedCardIDs: Set<String> {
-        let enabled = services.brandSettings.enabledBrands
         return Set(collectionItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return enabled.contains(brand) ? item.cardID : nil
+            return brand == activeBrand ? item.cardID : nil
         })
     }
 
@@ -335,11 +335,6 @@ struct BrowseView: View {
                 // Keeps first row clear of the overlaid search bar; spacer scrolls away so cards can pass under the glass.
                 Color.clear
                     .frame(height: rootFloatingChromeInset)
-                if services.brandSettings.enabledBrands.count > 1 {
-                    BrandCatalogCarousel()
-                        .padding(.horizontal, 16)
-                        .padding(.bottom, 10)
-                }
                 browseShortcutRow
                 browseCardGrid
                 if isPreparingFilterCatalog {
@@ -569,7 +564,7 @@ struct BrowseView: View {
 
     private func filterCards(_ cards: [BrowseFilterCard]) -> [BrowseFilterCard] {
         cards.filter { card in
-            if services.brandSettings.selectedCatalogBrand == .pokemon,
+            if activeBrand == .pokemon,
                filters.cardTypes.isEmpty == false,
                filters.cardTypes.contains(resolvedCardType(for: card)) == false {
                 return false
@@ -622,44 +617,16 @@ struct BrowseView: View {
             if filters.opPowers.isEmpty == false {
                 guard let power = card.opPower, filters.opPowers.contains(power) else { return false }
             }
-            if filters.lcCardTypes.isEmpty == false {
-                let supertype = trimmedValue(card.category)
-                if supertype.isEmpty || filters.lcCardTypes.contains(supertype) == false {
-                    return false
-                }
-            }
-            if filters.lcVariants.isEmpty == false {
-                let v = trimmedValue(card.lcVariant)
-                if v.isEmpty || filters.lcVariants.contains(v) == false {
-                    return false
-                }
-            }
-            if filters.lcCosts.isEmpty == false {
-                guard let cost = card.lcCost, filters.lcCosts.contains(cost) else { return false }
-            }
-            if filters.lcStrengths.isEmpty == false {
-                guard let s = card.lcStrength, filters.lcStrengths.contains(s) else { return false }
-            }
-            if filters.lcWillpowers.isEmpty == false {
-                guard let w = card.lcWillpower, filters.lcWillpowers.contains(w) else { return false }
-            }
-            if filters.lcLores.isEmpty == false {
-                guard let lore = card.lcLore, filters.lcLores.contains(lore) else { return false }
-            }
             return true
         }
     }
 
     private func resolvedCardType(for card: BrowseFilterCard) -> BrowseCardTypeFilter {
-        if services.brandSettings.selectedCatalogBrand == .onePiece {
+        if activeBrand == .onePiece {
             let category = card.category?.lowercased() ?? ""
             if category.contains("event") {
                 return .trainer
             }
-            return .pokemon
-        }
-        if services.brandSettings.selectedCatalogBrand == .lorcana {
-            // Browse uses `lcCardTypes` for supertype; this path is only relevant if Pokémon-style filters run.
             return .pokemon
         }
         let category = card.category?.lowercased() ?? ""
@@ -1006,10 +973,9 @@ struct SetCardsView: View {
     }
 
     private var ownedCardIDs: Set<String> {
-        let enabled = services.brandSettings.enabledBrands
         return Set(collectionItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return enabled.contains(brand) ? item.cardID : nil
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
     }
 
@@ -1140,10 +1106,9 @@ struct DexCardsView: View {
     }
 
     private var ownedCardIDs: Set<String> {
-        let enabled = services.brandSettings.enabledBrands
         return Set(collectionItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return enabled.contains(brand) ? item.cardID : nil
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
     }
 
@@ -1252,10 +1217,9 @@ struct OnePieceCharacterCardsView: View {
     }
 
     private var ownedCardIDs: Set<String> {
-        let enabled = services.brandSettings.enabledBrands
         return Set(collectionItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return enabled.contains(brand) ? item.cardID : nil
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
     }
 
@@ -1362,10 +1326,9 @@ struct OnePieceSubtypeCardsView: View {
     }
 
     private var ownedCardIDs: Set<String> {
-        let enabled = services.brandSettings.enabledBrands
         return Set(collectionItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return enabled.contains(brand) ? item.cardID : nil
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
     }
 
@@ -1624,49 +1587,6 @@ struct BrowseGridFiltersMenuContent: View {
                     filterMenu(title: "Power", summary: selectionSummary(for: filters.opPowers)) {
                         ForEach(opPowerAllOptions, id: \.self) { power in
                             Toggle("\(power)", isOn: intBinding(for: power, keyPath: \.opPowers))
-                        }
-                    }
-                }
-            } else if brand == .lorcana {
-                filterMenu(title: "Card type", summary: selectionSummary(for: filters.lcCardTypes)) {
-                    ForEach(lcCardTypeAllOptions, id: \.self) { cardType in
-                        Toggle(cardType, isOn: stringBinding(for: cardType, keyPath: \.lcCardTypes))
-                    }
-                }
-
-                filterMenu(title: "Variant", summary: selectionSummary(for: filters.lcVariants)) {
-                    ForEach(lcVariantAllOptions, id: \.self) { variant in
-                        Toggle(variant, isOn: stringBinding(for: variant, keyPath: \.lcVariants))
-                    }
-                }
-
-                filterMenu(
-                    title: "Stats",
-                    summary: combinedSelectionSummary(
-                        ("Cost", filters.lcCosts.count),
-                        ("Lore", filters.lcLores.count),
-                        ("Strength", filters.lcStrengths.count),
-                        ("Willpower", filters.lcWillpowers.count)
-                    )
-                ) {
-                    filterMenu(title: "Cost", summary: selectionSummary(for: filters.lcCosts)) {
-                        ForEach(lcCostAllOptions, id: \.self) { cost in
-                            Toggle("\(cost)", isOn: intBinding(for: cost, keyPath: \.lcCosts))
-                        }
-                    }
-                    filterMenu(title: "Lore", summary: selectionSummary(for: filters.lcLores)) {
-                        ForEach(lcLoreAllOptions, id: \.self) { lore in
-                            Toggle("\(lore)", isOn: intBinding(for: lore, keyPath: \.lcLores))
-                        }
-                    }
-                    filterMenu(title: "Strength", summary: selectionSummary(for: filters.lcStrengths)) {
-                        ForEach(lcStrengthAllOptions, id: \.self) { strength in
-                            Toggle("\(strength)", isOn: intBinding(for: strength, keyPath: \.lcStrengths))
-                        }
-                    }
-                    filterMenu(title: "Willpower", summary: selectionSummary(for: filters.lcWillpowers)) {
-                        ForEach(lcWillpowerAllOptions, id: \.self) { willpower in
-                            Toggle("\(willpower)", isOn: intBinding(for: willpower, keyPath: \.lcWillpowers))
                         }
                     }
                 }
@@ -1986,30 +1906,6 @@ func filterBrowseCards(
             let power = card.hp
             guard let power, filters.opPowers.contains(power) else { return false }
         }
-        if filters.lcCardTypes.isEmpty == false {
-            let supertype = card.category?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            if supertype.isEmpty || filters.lcCardTypes.contains(supertype) == false {
-                return false
-            }
-        }
-        if filters.lcVariants.isEmpty == false {
-            let variant = card.lcVariant?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
-            if variant.isEmpty || filters.lcVariants.contains(variant) == false {
-                return false
-            }
-        }
-        if filters.lcCosts.isEmpty == false {
-            guard let cost = card.lcCost, filters.lcCosts.contains(cost) else { return false }
-        }
-        if filters.lcStrengths.isEmpty == false {
-            guard let strength = card.lcStrength, filters.lcStrengths.contains(strength) else { return false }
-        }
-        if filters.lcWillpowers.isEmpty == false {
-            guard let willpower = card.lcWillpower, filters.lcWillpowers.contains(willpower) else { return false }
-        }
-        if filters.lcLores.isEmpty == false {
-            guard let lore = card.lcLore, filters.lcLores.contains(lore) else { return false }
-        }
         return true
     }
 
@@ -2024,7 +1920,6 @@ func filterBrowseCards(
 }
 
 private func resolvedBrowseCardType(for card: Card, brand: TCGBrand) -> BrowseCardTypeFilter {
-    if brand == .lorcana { return .pokemon }
     let category = card.category?.lowercased() ?? ""
     if category.contains("trainer") || card.trainerType != nil {
         return .trainer

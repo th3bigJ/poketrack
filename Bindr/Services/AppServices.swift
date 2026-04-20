@@ -121,8 +121,6 @@ final class AppServices {
                 bootstrapMessage = "Updating ONE PIECE card data…"
             } else if enabled.count == 1, enabled.contains(.pokemon) {
                 bootstrapMessage = "Updating Pokémon card data…"
-            } else if enabled.count == 1, enabled.contains(.lorcana) {
-                bootstrapMessage = "Updating Lorcana card data…"
             } else {
                 bootstrapMessage = "Updating card data, please wait."
             }

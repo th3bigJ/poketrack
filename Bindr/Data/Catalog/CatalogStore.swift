@@ -105,7 +105,6 @@ final class CatalogStore: @unchecked Sendable {
         }
         try migrateBrandPartitionIfNeededLocked()
         try migrateOnePieceCardSchemaIfNeededLocked()
-        try migrateLorcanaCardSchemaIfNeededLocked()
     }
 
     /// v3: card schema version bump — when new fields are added to the OP card JSON (e.g. opAttributes,
@@ -134,35 +133,6 @@ final class CatalogStore: @unchecked Sendable {
         if let e = mErr { sqlite3_free(e) }
 
         let upsert = "INSERT INTO sync_meta(key, value) VALUES('onepiece_card_schema_version', '\(currentVersion)') ON CONFLICT(key) DO UPDATE SET value = excluded.value;"
-        var uErr: UnsafeMutablePointer<CChar>?
-        sqlite3_exec(db, upsert, nil, nil, &uErr)
-        if let e = uErr { sqlite3_free(e) }
-    }
-
-    /// When new fields are added to Lorcana card JSON (e.g. `lcCost`, `lcLore`), bump
-    /// `lorcanaCardSchemaVersion` so cached SQLite rows are invalidated and sync re-imports cards.
-    private func migrateLorcanaCardSchemaIfNeededLocked() throws {
-        guard let db else { throw CatalogStoreError.notOpen }
-        let currentVersion = 2
-        var stmt: OpaquePointer?
-        defer { sqlite3_finalize(stmt) }
-        guard sqlite3_prepare_v2(db, "SELECT value FROM sync_meta WHERE key = 'lorcana_card_schema_version' LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else { return }
-        let storedVersion: Int
-        if sqlite3_step(stmt) == SQLITE_ROW, let c = sqlite3_column_text(stmt, 0) {
-            storedVersion = Int(String(cString: c)) ?? 0
-        } else {
-            storedVersion = 0
-        }
-        sqlite3_finalize(stmt)
-        stmt = nil
-        guard storedVersion < currentVersion else { return }
-
-        let clear = "DELETE FROM sync_meta WHERE key IN ('lorcana_catalog_row_fingerprint', 'lorcana_catalog_sets_sha256', 'lorcana_catalog_sets_etag');"
-        var mErr: UnsafeMutablePointer<CChar>?
-        sqlite3_exec(db, clear, nil, nil, &mErr)
-        if let e = mErr { sqlite3_free(e) }
-
-        let upsert = "INSERT INTO sync_meta(key, value) VALUES('lorcana_card_schema_version', '\(currentVersion)') ON CONFLICT(key) DO UPDATE SET value = excluded.value;"
         var uErr: UnsafeMutablePointer<CChar>?
         sqlite3_exec(db, upsert, nil, nil, &uErr)
         if let e = uErr { sqlite3_free(e) }
@@ -369,12 +339,6 @@ final class CatalogStore: @unchecked Sendable {
                     "onepiece_character_names_etag",
                     "onepiece_character_subtypes_json",
                     "onepiece_character_subtypes_etag",
-                ]
-            case .lorcana:
-                keys = [
-                    "lorcana_catalog_sets_sha256",
-                    "lorcana_catalog_sets_etag",
-                    "lorcana_catalog_row_fingerprint",
                 ]
             }
             for key in keys {

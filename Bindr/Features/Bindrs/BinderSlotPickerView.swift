@@ -48,6 +48,7 @@ struct BinderSlotPickerView: View {
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     @Environment(\.dismiss) private var dismiss
 
+    let brand: TCGBrand
     let startPosition: Int
     let occupiedPositions: Set<Int>
     var onAdd: ([BinderSlotPickerSelection]) -> Void
@@ -75,10 +76,6 @@ struct BinderSlotPickerView: View {
 
     private static let initialBatchSize = 36
     private static let pageSize = 24
-
-    private var enabledBrands: [TCGBrand] {
-        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
-    }
 
     private var ownedCardIDs: Set<String> {
         Set(collectionItems.map(\.cardID))
@@ -404,7 +401,7 @@ struct BinderSlotPickerView: View {
                 Task { await rebuildFilteredRefFeed(reset: true) }
             }
             .onAppear {
-                selectedBrand = services.brandSettings.selectedCatalogBrand
+                selectedBrand = brand
                 filters.sortBy = .newestSet
                 Task { await restoreAllCardsFeedIfNeeded() }
             }
@@ -463,13 +460,10 @@ struct BinderSlotPickerView: View {
 
     private var header: some View {
         VStack(spacing: 12) {
-            if enabledBrands.count > 1 {
-                Picker("Brand", selection: $selectedBrand) {
-                    ForEach(enabledBrands) { brand in
-                        Text(brand.displayTitle).tag(brand)
-                    }
-                }
-                .pickerStyle(.segmented)
+            HStack {
+                Text(selectedBrand.displayTitle)
+                    .font(.subheadline.weight(.semibold))
+                Spacer()
             }
 
             Picker("Source", selection: $source) {
@@ -518,8 +512,6 @@ struct BinderSlotPickerView: View {
                     NavigationLink(value: BinderPickerBrowseRoute.onePieceSubtypes) {
                         shortcutChip(title: "Subtypes")
                     }
-                case .lorcana:
-                    EmptyView()
                 }
             }
         }
@@ -883,26 +875,6 @@ struct BinderSlotPickerView: View {
             if filters.opPowers.isEmpty == false {
                 guard let power = card.opPower, filters.opPowers.contains(power) else { return false }
             }
-            if filters.lcCardTypes.isEmpty == false {
-                let supertype = trimmedValue(card.category)
-                if supertype.isEmpty || filters.lcCardTypes.contains(supertype) == false { return false }
-            }
-            if filters.lcVariants.isEmpty == false {
-                let variant = trimmedValue(card.lcVariant)
-                if variant.isEmpty || filters.lcVariants.contains(variant) == false { return false }
-            }
-            if filters.lcCosts.isEmpty == false {
-                guard let cost = card.lcCost, filters.lcCosts.contains(cost) else { return false }
-            }
-            if filters.lcStrengths.isEmpty == false {
-                guard let strength = card.lcStrength, filters.lcStrengths.contains(strength) else { return false }
-            }
-            if filters.lcWillpowers.isEmpty == false {
-                guard let willpower = card.lcWillpower, filters.lcWillpowers.contains(willpower) else { return false }
-            }
-            if filters.lcLores.isEmpty == false {
-                guard let lore = card.lcLore, filters.lcLores.contains(lore) else { return false }
-            }
             return true
         }
     }
@@ -913,7 +885,6 @@ struct BinderSlotPickerView: View {
             if category.contains("event") { return .trainer }
             return .pokemon
         }
-        if selectedBrand == .lorcana { return .pokemon }
         let category = card.category?.lowercased() ?? ""
         if category.contains("trainer") || card.trainerType != nil { return .trainer }
         if category.contains("energy") || card.energyType != nil { return .energy }
@@ -1201,15 +1172,6 @@ private struct BinderPickerSetsView: View {
                     if lhsIndex != rhsIndex { return lhsIndex < rhsIndex }
                     return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
                 }
-        case .lorcana:
-            return grouped
-                .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
-                .sorted { lhs, rhs in
-                    let lhsIndex = lorcanaSeriesOrderIndex(lhs.title)
-                    let rhsIndex = lorcanaSeriesOrderIndex(rhs.title)
-                    if lhsIndex != rhsIndex { return lhsIndex < rhsIndex }
-                    return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
-                }
         }
     }
 
@@ -1299,11 +1261,6 @@ private struct BinderPickerSetsView: View {
             if lower.contains("premium booster") { return "Premium Booster" }
             if lower.contains("promo") { return "Promo" }
             return title.isEmpty ? "Other" : title
-        case .lorcana:
-            let joined = "\(set.name) \(set.setCode)".lowercased()
-            if joined.contains("illumineer") { return "ILLUMINEER'S QUEST" }
-            if joined.contains("promo") || set.setCode.lowercased().contains("promo") { return "PROMO" }
-            return "MAIN"
         }
     }
 
@@ -1327,14 +1284,6 @@ private struct BinderPickerSetsView: View {
         }
     }
 
-    private func lorcanaSeriesOrderIndex(_ title: String) -> Int {
-        switch title {
-        case "MAIN": return 0
-        case "ILLUMINEER'S QUEST": return 1
-        case "PROMO": return 2
-        default: return 3
-        }
-    }
 }
 
 // MARK: - Pokémon browse

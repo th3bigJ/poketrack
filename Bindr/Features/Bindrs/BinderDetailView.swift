@@ -84,6 +84,7 @@ struct BinderDetailView: View {
         .onChange(of: cardsByID.count) { Task { await refreshSlotValues() } }
         .fullScreenCover(item: $slotPickerTarget) { target in
             BinderSlotPickerView(
+                brand: binder.tcgBrand,
                 startPosition: target.id,
                 occupiedPositions: Set(binder.slotList.map(\.position))
             ) { selections in
@@ -1091,4 +1092,3 @@ struct BinderStylePickerSheet: View {
         cardURLs = urls
     }
 }
-
