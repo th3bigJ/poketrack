@@ -313,115 +313,20 @@ struct SocialRootView: View {
 
     private var profilePopover: some View {
         NavigationStack(path: $profilePopoverPath) {
-            profilePopoverHome
-                .navigationDestination(for: ProfilePopoverDestination.self) { destination in
-                    switch destination {
-                    case .editProfile:
-                        EditProfileView(existingProfile: profile) { payload in
-                            if profile == nil {
-                                profile = try await services.socialProfile.saveProfile(
-                                    username: payload.username,
-                                    displayName: payload.displayName,
-                                    bio: payload.bio,
-                                    profileRoles: payload.profileRoles,
-                                    favoritePokemonDex: payload.favoritePokemonDex,
-                                    favoritePokemonName: payload.favoritePokemonName,
-                                    favoritePokemonImageURL: payload.favoritePokemonImageURL,
-                                    favoriteCardID: payload.favoriteCardID,
-                                    favoriteCardName: payload.favoriteCardName,
-                                    favoriteCardSetCode: payload.favoriteCardSetCode,
-                                    favoriteCardImageURL: payload.favoriteCardImageURL,
-                                    favoriteDeckArchetype: payload.favoriteDeckArchetype,
-                                    isWishlistPublic: payload.isWishlistPublic,
-                                    wishlistCardIDs: payload.wishlistCardIDs
-                                )
-                            } else {
-                                profile = try await services.socialProfile.updateProfile(
-                                    displayName: payload.displayName,
-                                    bio: payload.bio,
-                                    profileRoles: payload.profileRoles,
-                                    favoritePokemonDex: payload.favoritePokemonDex,
-                                    favoritePokemonName: payload.favoritePokemonName,
-                                    favoritePokemonImageURL: payload.favoritePokemonImageURL,
-                                    favoriteCardID: payload.favoriteCardID,
-                                    favoriteCardName: payload.favoriteCardName,
-                                    favoriteCardSetCode: payload.favoriteCardSetCode,
-                                    favoriteCardImageURL: payload.favoriteCardImageURL,
-                                    favoriteDeckArchetype: payload.favoriteDeckArchetype,
-                                    isWishlistPublic: payload.isWishlistPublic,
-                                    wishlistCardIDs: payload.wishlistCardIDs
-                                )
-                            }
-                            profilePopoverPath = NavigationPath()
-                            showAccountProfile = false
-                            await routeQueuedDeepLinkIfPossible()
-                        }
+            AccountProfileView(
+                navigationPath: $profilePopoverPath,
+                isPresented: $showAccountProfile,
+                externalProfile: $profile
+            )
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button("Done") {
+                        showAccountProfile = false
                     }
                 }
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button("Done") {
-                            showAccountProfile = false
-                        }
-                    }
-                }
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color(uiColor: .systemGroupedBackground))
-    }
-
-    @ViewBuilder
-    private var profilePopoverHome: some View {
-        switch services.socialAuth.authState {
-        case .signedOut:
-            List {
-                Section {
-                    Text("Sign in with Apple from the Social page to manage your social profile.")
-                        .font(.subheadline)
-                        .foregroundStyle(.secondary)
-                }
-            }
-            .listStyle(.insetGrouped)
-            .navigationTitle("Profile")
-            .navigationBarTitleDisplayMode(.inline)
-        case .signedIn:
-            if let profile {
-                MyProfileView(
-                    profile: profile,
-                    onEditTapped: { profilePopoverPath.append(ProfilePopoverDestination.editProfile) },
-                    onSignOutTapped: {
-                        services.socialAuth.signOut()
-                        self.profile = nil
-                        profilePopoverPath = NavigationPath()
-                        showAccountProfile = false
-                    }
-                )
-            } else {
-                List {
-                    Section {
-                        Text("Create your social profile to start using social features.")
-                            .font(.subheadline)
-                            .foregroundStyle(.secondary)
-
-                        Button("Create Profile") {
-                            profilePopoverPath.append(ProfilePopoverDestination.editProfile)
-                        }
-                        .buttonStyle(.borderedProminent)
-                    }
-
-                    Section {
-                        Button("Sign Out", role: .destructive) {
-                            services.socialAuth.signOut()
-                            self.profile = nil
-                            profilePopoverPath = NavigationPath()
-                            showAccountProfile = false
-                        }
-                    }
-                }
-                .listStyle(.insetGrouped)
-                .navigationTitle("Profile")
-                .navigationBarTitleDisplayMode(.inline)
-            }
-        }
     }
 }

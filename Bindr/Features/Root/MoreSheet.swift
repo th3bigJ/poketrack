@@ -10,6 +10,8 @@ struct MoreView: View {
     @State private var showProfile = false
     @State private var showSettings = false
     @State private var showCreateBinder = false
+    @State private var profilePath = NavigationPath()
+    @State private var profile: SocialProfile? = nil
 
     var body: some View {
         List {
@@ -114,7 +116,22 @@ struct MoreView: View {
                         .foregroundStyle(.primary)
                 }
                 .popover(isPresented: $showProfile) {
-                    ProfileSheet()
+                    NavigationStack(path: $profilePath) {
+                        AccountProfileView(
+                            navigationPath: $profilePath,
+                            isPresented: $showProfile,
+                            externalProfile: $profile
+                        )
+                        .toolbar {
+                                ToolbarItem(placement: .topBarLeading) {
+                                    Button("Done") {
+                                        showProfile = false
+                                    }
+                                }
+                            }
+                    }
+                    .presentationDetents([.large])
+                    .presentationDragIndicator(.visible)
                 }
             }
         }

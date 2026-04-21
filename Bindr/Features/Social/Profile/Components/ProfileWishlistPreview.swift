@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ProfileWishlistPreview: View {
     let cardIDs: [String]
-    let onEditTapped: () -> Void
+    let onViewAllTapped: () -> Void
     let cardLoader: (String) async -> Card?
     let priceFormatter: (Double) -> String
     
@@ -15,11 +15,13 @@ struct ProfileWishlistPreview: View {
                 Text("Wishlist Preview")
                     .font(.headline)
                 Spacer()
-                Button("View All") {
-                    onEditTapped()
+                Button(action: onViewAllTapped) {
+                    Text("View All")
+                        .font(.subheadline.weight(.semibold))
+                        .foregroundStyle(.blue)
+                        .padding(.vertical, 8)
+                        .padding(.leading, 12)
                 }
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.blue)
             }
             .padding(.horizontal, 20)
             
@@ -53,8 +55,8 @@ private struct WishlistPreviewItem: View {
         VStack(alignment: .leading, spacing: 6) {
             // Card Thumbnail
             ZStack {
-                if let imageURLString = card?.imageLowSrc, let url = URL(string: imageURLString) {
-                    CachedAsyncImage(url: url) { image in
+                if let imageURLString = card?.imageLowSrc {
+                    CachedAsyncImage(url: AppConfiguration.imageURL(relativePath: imageURLString)) { image in
                         image.resizable().aspectRatio(contentMode: .fill)
                     } placeholder: {
                         Color.gray.opacity(0.1)

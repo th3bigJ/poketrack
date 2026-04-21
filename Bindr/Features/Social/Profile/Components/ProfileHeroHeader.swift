@@ -2,7 +2,7 @@ import SwiftUI
 
 struct ProfileHeroHeader: View {
     let profile: SocialProfile
-    let onEditTapped: () -> Void
+    let onEditTapped: (() -> Void)?
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -52,29 +52,33 @@ struct ProfileHeroHeader: View {
             // Watermark Pokédex Number
             if let dex = profile.favoritePokemonDex {
                 Text("#\(String(format: "%03d", dex))")
-                    .font(.system(size: 120, weight: .black))
+                    .font(.system(size: 140, weight: .black))
                     .foregroundStyle(colorScheme == .dark ? .white : .black)
                     .opacity(colorScheme == .dark ? 0.04 : 0.05)
-                    .position(x: UIScreen.main.bounds.width - 60, y: 80)
+                    .frame(maxWidth: .infinity, maxHeight: 230, alignment: .center)
+                    .offset(y: -10)
+                    .allowsHitTesting(false)
             }
             
             // Edit Button (Top Right)
-            VStack {
-                HStack {
-                    Spacer()
-                    Button(action: onEditTapped) {
-                        Image(systemName: "pencil")
-                            .font(.system(size: 14, weight: .bold))
-                            .foregroundStyle(.primary)
-                            .frame(width: 32, height: 32)
-                            .background(.ultraThinMaterial)
-                            .clipShape(Circle())
-                            .shadow(color: .black.opacity(0.1), radius: 2)
+            if let onEditTapped = onEditTapped {
+                VStack {
+                    HStack {
+                        Spacer()
+                        Button(action: onEditTapped) {
+                            Image(systemName: "pencil")
+                                .font(.system(size: 14, weight: .bold))
+                                .foregroundStyle(.primary)
+                                .frame(width: 32, height: 32)
+                                .background(.ultraThinMaterial)
+                                .clipShape(Circle())
+                                .shadow(color: .black.opacity(0.1), radius: 2)
+                        }
+                        .padding(.top, 50) // Adjust for status bar if needed inside modal
+                        .padding(.trailing, 20)
                     }
-                    .padding(.top, 50) // Adjust for status bar if needed inside modal
-                    .padding(.trailing, 20)
+                    Spacer()
                 }
-                Spacer()
             }
             
             // Hero Card (Tilted)

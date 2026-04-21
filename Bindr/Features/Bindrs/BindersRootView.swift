@@ -104,13 +104,13 @@ struct BindersRootView: View {
             PaywallSheet()
                 .environment(services)
         }
-        .confirmationDialog("Delete Binder?", isPresented: $showDeleteConfirm, presenting: binderToDelete) { binder in
+        .alert("Delete Binder?", isPresented: $showDeleteConfirm, presenting: binderToDelete) { binder in
             Button("Delete \"\(binder.title)\"", role: .destructive) {
                 modelContext.delete(binder)
             }
             Button("Cancel", role: .cancel) {}
         } message: { binder in
-            Text("This will permanently remove \"\(binder.title)\" and all its slots.")
+            Text("This will permanently remove \"\(binder.title)\" and all its cards.")
         }
         .task(id: binders.map(\.id).map(\.uuidString).sorted().joined(separator: ",")) {
             do {

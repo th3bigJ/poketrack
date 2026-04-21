@@ -15,6 +15,7 @@ struct MyProfileView: View {
     @State private var totalValue: Double = 0
     @State private var favoriteCard: Card?
     @State private var favoriteCardPrice: Double?
+    @State private var showWishlistDetail = false
     
     private var formattedTotalValue: String {
         let display = services.priceDisplay
@@ -112,7 +113,7 @@ struct MyProfileView: View {
                     if profile.isWishlistPublic == true, let wishlist = services.wishlist {
                         ProfileWishlistPreview(
                             cardIDs: wishlist.items.map(\.cardID),
-                            onEditTapped: { /* Navigation to full wishlist */ },
+                            onViewAllTapped: { showWishlistDetail = true },
                             cardLoader: { id in await services.cardData.loadCard(masterCardId: id) },
                             priceFormatter: { val in
                                 let formatter = NumberFormatter()
@@ -121,6 +122,19 @@ struct MyProfileView: View {
                                 return formatter.string(from: NSNumber(value: val)) ?? "$0"
                             }
                         )
+                        .sheet(isPresented: $showWishlistDetail) {
+                            PublicWishlistDetailView(
+                                cardIDs: wishlist.items.map(\.cardID),
+                                title: "My Wishlist",
+                                cardLoader: { id in await services.cardData.loadCard(masterCardId: id) },
+                                priceFormatter: { val in
+                                    let formatter = NumberFormatter()
+                                    formatter.numberStyle = .currency
+                                    formatter.currencySymbol = services.priceDisplay.currency == .gbp ? "£" : "$"
+                                    return formatter.string(from: NSNumber(value: val)) ?? "$0"
+                                }
+                            )
+                        }
                     }
                     
                     // 6. Actions
