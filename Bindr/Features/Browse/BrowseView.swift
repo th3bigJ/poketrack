@@ -242,6 +242,7 @@ struct BrowseView: View {
     @State private var visibleBrowseResultCount = 0
     @State private var isBrowseBodyReady = false
     @State private var currentBrand: TCGBrand = .pokemon
+    private let inlineDetailColumns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
 
     private var safeColumnCount: Int {
         min(max(gridOptions.columnCount, 1), 4)
@@ -633,7 +634,7 @@ struct BrowseView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         } else {
-            LazyVGrid(columns: columns, spacing: 12) {
+            LazyVGrid(columns: inlineDetailColumns, spacing: 12) {
                 ForEach(Array(filteredCards.enumerated()), id: \.element.id) { index, card in
                     Button {
                         presentCard(card, filteredCards)
@@ -1210,9 +1211,12 @@ struct BrowseView: View {
 
 private struct BrowseSetsTabContent: View {
     @Environment(AppServices.self) private var services
+    @Query private var collectionItems: [CollectionItem]
 
     let query: String
     let onSelectSet: (TCGSet) -> Void
+
+    @State private var uniqueCollectedCountBySetCode: [String: Int] = [:]
 
     private var filteredSets: [TCGSet] {
         let sets = services.cardData.allSetsSortedByReleaseDateNewestFirst()
@@ -1238,73 +1242,97 @@ private struct BrowseSetsTabContent: View {
             }
     }
 
+    private var collectionProgressTaskKey: String {
+        let snapshot = collectionItems
+            .map { "\($0.cardID)|\($0.quantity)" }
+            .sorted()
+            .joined(separator: ",")
+        return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(snapshot)"
+    }
+
     var body: some View {
-        if filteredSets.isEmpty {
-            ContentUnavailableView(
-                "No matching sets",
-                systemImage: "magnifyingglass",
-                description: Text("Try a different set name or code.")
-            )
-            .frame(maxWidth: .infinity, minHeight: 280)
-            .padding(.horizontal, 16)
-            .padding(.bottom, 16)
-        } else {
-            LazyVStack(alignment: .leading, spacing: 20) {
-                ForEach(groupedSets, id: \.title) { group in
-                    VStack(alignment: .leading, spacing: 8) {
-                        Text(group.title)
-                            .font(.title2.weight(.bold))
-                            .foregroundStyle(.primary)
-                        Rectangle()
-                            .fill(Color.primary.opacity(0.08))
-                            .frame(height: 1)
-                    }
-                    .padding(.horizontal, 16)
-                    .padding(.top, 10)
-
-                    LazyVStack(spacing: 0) {
-                        ForEach(Array(group.sets.enumerated()), id: \.offset) { _, set in
-                            Button {
-                                onSelectSet(set)
-                            } label: {
-                                HStack(spacing: 14) {
-                                    SetLogoAsyncImage(
-                                        logoSrc: set.logoSrc,
-                                        height: 44,
-                                        brand: services.brandSettings.selectedCatalogBrand
-                                    )
-                                    .frame(width: 80)
-
-                                    VStack(alignment: .leading, spacing: 2) {
-                                        Text(set.name)
-                                            .font(.subheadline.weight(.medium))
-                                            .foregroundStyle(.primary)
-                                            .lineLimit(2)
-                                        Text(set.setCode.uppercased())
-                                            .font(.caption)
-                                            .foregroundStyle(.secondary)
-                                    }
-
-                                    Spacer()
-
-                                    Image(systemName: "chevron.right")
-                                        .font(.caption.weight(.semibold))
-                                        .foregroundStyle(.tertiary)
-                                }
-                                .padding(.horizontal, 16)
-                                .padding(.vertical, 10)
-                                .contentShape(Rectangle())
-                            }
-                            .buttonStyle(.plain)
-
-                            Divider()
-                                .padding(.leading, 124)
+        Group {
+            if filteredSets.isEmpty {
+                ContentUnavailableView(
+                    "No matching sets",
+                    systemImage: "magnifyingglass",
+                    description: Text("Try a different set name or code.")
+                )
+                .frame(maxWidth: .infinity, minHeight: 280)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 16)
+            } else {
+                LazyVStack(alignment: .leading, spacing: 20) {
+                    ForEach(groupedSets, id: \.title) { group in
+                        VStack(alignment: .leading, spacing: 8) {
+                            Text(group.title)
+                                .font(.title2.weight(.bold))
+                                .foregroundStyle(.primary)
+                            Rectangle()
+                                .fill(Color.primary.opacity(0.08))
+                                .frame(height: 1)
                         }
+                        .padding(.horizontal, 16)
+                        .padding(.top, 10)
+
+                        LazyVStack(spacing: 0) {
+                            ForEach(Array(group.sets.enumerated()), id: \.offset) { _, set in
+                                Button {
+                                    onSelectSet(set)
+                                } label: {
+                                    HStack(spacing: 14) {
+                                        SetLogoAsyncImage(
+                                            logoSrc: set.logoSrc,
+                                            height: 44,
+                                            brand: services.brandSettings.selectedCatalogBrand
+                                        )
+                                        .frame(width: 80)
+
+                                        VStack(alignment: .leading, spacing: 2) {
+                                            let progress = setProgress(for: set)
+                                            Text(set.name)
+                                                .font(.subheadline.weight(.medium))
+                                                .foregroundStyle(.primary)
+                                                .lineLimit(2)
+                                            if let total = progress.total, total > 0 {
+                                                ProgressView(value: min(Double(progress.collected), Double(total)), total: Double(total))
+                                                    .progressViewStyle(.linear)
+                                                    .tint(.accentColor)
+                                                    .padding(.top, 2)
+                                                Text("\(progress.collected) out of \(total) collected")
+                                                    .font(.caption2)
+                                                    .foregroundStyle(.secondary)
+                                            } else {
+                                                Text("\(progress.collected) collected")
+                                                    .font(.caption2)
+                                                    .foregroundStyle(.secondary)
+                                            }
+                                        }
+
+                                        Spacer()
+
+                                        Image(systemName: "chevron.right")
+                                            .font(.caption.weight(.semibold))
+                                            .foregroundStyle(.tertiary)
+                                    }
+                                    .padding(.horizontal, 16)
+                                    .padding(.vertical, 10)
+                                    .contentShape(Rectangle())
+                                }
+                                .buttonStyle(.plain)
+
+                                Divider()
+                                    .padding(.leading, 124)
+                            }
+                        }
+                        .padding(.top, 4)
                     }
-                    .padding(.top, 4)
                 }
+                .padding(.bottom, 16)
             }
-            .padding(.bottom, 16)
+        }
+        .task(id: collectionProgressTaskKey) {
+            await refreshCollectedCounts()
         }
     }
 
@@ -1336,6 +1364,66 @@ private struct BrowseSetsTabContent: View {
         if lower.contains("premium booster") { return "Premium Booster" }
         if lower.contains("promo") { return "Promo" }
         return title.isEmpty ? "Other" : title
+    }
+
+    private func setProgress(for set: TCGSet) -> (collected: Int, total: Int?) {
+        let collected = uniqueCollectedCountBySetCode[set.setCode.lowercased()] ?? 0
+        return (collected, set.cardCountTotal)
+    }
+
+    @MainActor
+    private func refreshCollectedCounts() async {
+        let activeSetCodes = Set(services.cardData.sets.map { $0.setCode.lowercased() })
+        var uniqueCardKeysBySetCode: [String: Set<String>] = [:]
+
+        for item in collectionItems where item.quantity > 0 {
+            guard let identity = await resolveCollectionCardIdentity(
+                for: item.cardID,
+                activeSetCodes: activeSetCodes
+            ) else { continue }
+            uniqueCardKeysBySetCode[identity.setCode, default: []].insert(identity.uniqueCardKey)
+        }
+
+        uniqueCollectedCountBySetCode = uniqueCardKeysBySetCode.mapValues(\.count)
+    }
+
+    private func resolveCollectionCardIdentity(
+        for cardID: String,
+        activeSetCodes: Set<String>
+    ) async -> (setCode: String, uniqueCardKey: String)? {
+        if let parsed = collectionCardIdentity(for: cardID), activeSetCodes.contains(parsed.setCode) {
+            return parsed
+        }
+
+        guard let card = await services.cardData.loadCard(masterCardId: cardID) else { return nil }
+        let setCode = card.setCode.lowercased()
+        guard activeSetCodes.contains(setCode) else { return nil }
+        if card.masterCardId.contains("::") {
+            let number = card.cardNumber.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+            let uniqueKey = number.isEmpty ? card.masterCardId.lowercased() : "\(setCode)::\(number)"
+            return (setCode, uniqueKey)
+        }
+        return (setCode, card.masterCardId.lowercased())
+    }
+
+    private func collectionCardIdentity(for cardID: String) -> (setCode: String, uniqueCardKey: String)? {
+        let trimmed = cardID.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard trimmed.isEmpty == false else { return nil }
+
+        if trimmed.contains("::") {
+            let parts = trimmed.components(separatedBy: "::")
+            guard parts.count >= 2 else { return nil }
+            let setCode = parts[0].lowercased()
+            let cardNumber = parts[1].lowercased()
+            guard setCode.isEmpty == false, cardNumber.isEmpty == false else { return nil }
+            return (setCode, "\(setCode)::\(cardNumber)")
+        }
+
+        guard let separatorIndex = trimmed.firstIndex(of: "-"), separatorIndex > trimmed.startIndex else {
+            return nil
+        }
+        let setCode = String(trimmed[..<separatorIndex]).lowercased()
+        return (setCode, trimmed.lowercased())
     }
 }
 
