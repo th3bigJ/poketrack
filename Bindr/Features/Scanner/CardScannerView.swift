@@ -26,21 +26,11 @@ struct CardScannerView: View {
     @State private var isCameraPaused = false
     /// Variant selected in the overlay bar at the moment the user swiped up, keyed by ScanResult.id.
     @State private var selectedVariantsByResultID: [UUID: String] = [:]
-    /// Set when the user must pick Pokémon vs ONE PIECE (`nil` = not chosen yet, only when multiple brands enabled).
-    @State private var scanBrandChoice: TCGBrand? = nil
     @State private var showOnePieceDebugSheet = false
 
-    private var enabledScanBrands: [TCGBrand] {
-        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
-    }
-
-    private var needsScanBrandPick: Bool {
-        enabledScanBrands.count > 1 && scanBrandChoice == nil
-    }
-
-    /// Show ONE PIECE debug affordance after a franchise is chosen (including single-brand OP).
+    /// Show ONE PIECE debug affordance when the active scanner brand is ONE PIECE.
     private var showOnePieceDebugButton: Bool {
-        viewModel.scanBrand == .onePiece && !needsScanBrandPick
+        viewModel.scanBrand == .onePiece
     }
 
     var body: some View {
@@ -57,7 +47,7 @@ struct CardScannerView: View {
                         CardScannerReticle(
                             frameQuality: viewModel.frameQuality,
                             isCapturing: viewModel.isCapturing,
-                            hideQualityPill: viewModel.requiresBrandSelection
+                            hideQualityPill: false
                         ) { rect in
                             viewModel.cardNormalizedRect = rect
                         }
@@ -160,18 +150,8 @@ struct CardScannerView: View {
                     Color.black
 
                     if viewModel.scanResults.isEmpty {
-                        if needsScanBrandPick {
-                            ScannerBrandPickPanel(brands: enabledScanBrands) { brand in
-                                HapticManager.selection()
-                                scanBrandChoice = brand
-                                viewModel.scanBrand = brand
-                                viewModel.requiresBrandSelection = false
-                            }
+                        ScannerIdleInstructions()
                             .transition(AnyTransition.opacity)
-                        } else {
-                            ScannerIdleInstructions()
-                                .transition(AnyTransition.opacity)
-                        }
                     } else {
                         ScannerResultsOverlay(
                             results: viewModel.scanResults,
@@ -288,16 +268,9 @@ struct CardScannerView: View {
         .ignoresSafeArea()
         .onAppear {
             viewModel.configure(cardDataService: services.cardData)
-            let brands = enabledScanBrands
-            if brands.count <= 1 {
-                let b = brands.first ?? .pokemon
-                scanBrandChoice = b
-                viewModel.scanBrand = b
-                viewModel.requiresBrandSelection = false
-            } else {
-                scanBrandChoice = nil
-                viewModel.requiresBrandSelection = true
-            }
+            let selectedBrand = services.brandSettings.selectedCatalogBrand
+            viewModel.scanBrand = selectedBrand
+            viewModel.requiresBrandSelection = false
             viewModel.onMatch = { _ in
                 HapticManager.impact(.medium)
                 currentResultIndex = 0

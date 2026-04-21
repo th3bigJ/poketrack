@@ -29,9 +29,10 @@ struct UniversalSearchBar: View {
     var isSearchOpen: Bool
     var isFilterEnabled: Bool = true
     var isFilterActive: Bool = false
-    var isGridOptionsActive: Bool = false
     var filterMenuContent: AnyView? = nil
-    var gridMenuContent: AnyView? = nil
+
+    /// When set, replaces the collapsed leading camera button with a custom button.
+    var collapsedLeadingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? = nil
 
     /// When set, replaces the filter button with a custom trailing button (symbol name + action).
     var trailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? = nil
@@ -48,8 +49,6 @@ struct UniversalSearchBar: View {
     /// Hairline on material fallback — `primary` adapts with light/dark (old fixed white stroke looked wrong on light mode).
     private var glassStroke: Color { Color.primary.opacity(0.1) }
     private var filterTint: Color { .primary }
-    private var gridTint: Color { .primary }
-
     private var leadingSymbolName: String { "chevron.left" }
 
     private var leadingAccessibilityLabel: String { "Back" }
@@ -123,21 +122,13 @@ struct UniversalSearchBar: View {
                         Spacer(minLength: 0)
                         if let trailingButton {
                             trailingButtonLiquid(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
-                        } else if let filterMenuContent, let gridMenuContent, isFilterEnabled {
-                            HStack(spacing: 6) {
-                                chromeMenuButton(
-                                    symbol: "slider.horizontal.3",
-                                    tint: gridTint,
-                                    accessibilityLabel: "Grid options",
-                                    content: { gridMenuContent }
-                                )
-                                chromeMenuButton(
-                                    symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
-                                    tint: filterTint,
-                                    accessibilityLabel: "Filters",
-                                    content: { filterMenuContent }
-                                )
-                            }
+                        } else if let filterMenuContent, isFilterEnabled {
+                            chromeMenuButton(
+                                symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
+                                tint: filterTint,
+                                accessibilityLabel: "Filters",
+                                content: { filterMenuContent }
+                            )
                         } else {
                             filterButtonLiquid
                         }
@@ -202,21 +193,13 @@ struct UniversalSearchBar: View {
                         Spacer(minLength: 0)
                         if let trailingButton {
                             trailingButtonFallback(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
-                        } else if let filterMenuContent, let gridMenuContent, isFilterEnabled {
-                            HStack(spacing: 6) {
-                                chromeMenuButton(
-                                    symbol: "slider.horizontal.3",
-                                    tint: gridTint,
-                                    accessibilityLabel: "Grid options",
-                                    content: { gridMenuContent }
-                                )
-                                chromeMenuButton(
-                                    symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
-                                    tint: filterTint,
-                                    accessibilityLabel: "Filters",
-                                    content: { filterMenuContent }
-                                )
-                            }
+                        } else if let filterMenuContent, isFilterEnabled {
+                            chromeMenuButton(
+                                symbol: isFilterActive ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle",
+                                tint: filterTint,
+                                accessibilityLabel: "Filters",
+                                content: { filterMenuContent }
+                            )
                         } else {
                             filterButtonFallback
                         }
@@ -229,8 +212,14 @@ struct UniversalSearchBar: View {
 
     @available(iOS 26.0, *)
     private var collapsedSearchButtonLiquid: some View {
-        Button(action: onActivateSearch) {
-            Image(systemName: "magnifyingglass")
+        let symbol = collapsedLeadingButton?.symbol ?? "camera.fill"
+        let accessibilityLabel = collapsedLeadingButton?.accessibilityLabel ?? "Open scanner"
+        let action = collapsedLeadingButton?.action ?? onCamera
+        return Button(action: {
+            Haptics.lightImpact()
+            action()
+        }) {
+            Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
                 .frame(width: 44, height: 44)
@@ -240,12 +229,18 @@ struct UniversalSearchBar: View {
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
         .contentShape(Rectangle())
-        .accessibilityLabel("Open search")
+        .accessibilityLabel(accessibilityLabel)
     }
 
     private var collapsedSearchButtonFallback: some View {
-        Button(action: onActivateSearch) {
-            Image(systemName: "magnifyingglass")
+        let symbol = collapsedLeadingButton?.symbol ?? "camera.fill"
+        let accessibilityLabel = collapsedLeadingButton?.accessibilityLabel ?? "Open scanner"
+        let action = collapsedLeadingButton?.action ?? onCamera
+        return Button(action: {
+            Haptics.lightImpact()
+            action()
+        }) {
+            Image(systemName: symbol)
                 .font(.system(size: 17, weight: .medium))
                 .foregroundStyle(.primary)
                 .frame(width: 44, height: 44)
@@ -259,7 +254,7 @@ struct UniversalSearchBar: View {
         .buttonStyle(.plain)
         .frame(width: 48, height: 48)
         .contentShape(Rectangle())
-        .accessibilityLabel("Open search")
+        .accessibilityLabel(accessibilityLabel)
     }
 
     @available(iOS 26.0, *)

@@ -35,6 +35,8 @@ enum BrowseCardTypeFilter: String, CaseIterable, Identifiable, Sendable {
 
     var id: String { rawValue }
 
+    static let pokemonOptions: [BrowseCardTypeFilter] = [.pokemon, .trainer, .energy]
+
     var title: String {
         switch self {
         case .pokemon:      return "Pokemon"
@@ -59,6 +61,27 @@ enum BrowseCardTypeFilter: String, CaseIterable, Identifiable, Sendable {
     }
 }
 
+enum BrowseCardLegalityFilter: String, CaseIterable, Identifiable, Sendable {
+    case standard
+    case expanded
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .standard: return "Standard"
+        case .expanded: return "Expanded"
+        }
+    }
+
+    var deckFormat: DeckFormat {
+        switch self {
+        case .standard: return .pokemonStandard
+        case .expanded: return .pokemonExpanded
+        }
+    }
+}
+
 /// Fixed One Piece filter options — catalog-defined, don't change between sets.
 let opCardTypeAllOptions: [String] = ["Character", "Event", "Leader", "Stage"]
 let opAttributeAllOptions: [String] = ["Slash", "Strike", "Ranged", "Special", "Wisdom"]
@@ -76,6 +99,7 @@ struct BrowseCardGridFilters: Equatable, Sendable {
     var energyTypes: Set<String> = []
     var rarities: Set<String> = []
     var trainerTypes: Set<String> = []
+    var legalities: Set<BrowseCardLegalityFilter> = []
     /// ONE PIECE card type filter (Character / Event / Leader / Stage).
     var opCardTypes: Set<String> = []
     var opAttributes: Set<String> = []
@@ -96,6 +120,7 @@ struct BrowseCardGridFilters: Equatable, Sendable {
             || !energyTypes.isEmpty
             || !rarities.isEmpty
             || !trainerTypes.isEmpty
+            || !legalities.isEmpty
             || !opCardTypes.isEmpty
             || !opAttributes.isEmpty
             || !opCosts.isEmpty

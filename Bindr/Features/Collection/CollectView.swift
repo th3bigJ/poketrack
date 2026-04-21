@@ -28,6 +28,9 @@ struct CollectView: View {
     @Binding var collectFilterTrainerTypeOptions: [String]
     @Binding var gridOptions: BrowseGridOptions
 
+    @State private var collectionQuery = ""
+    @State private var wishlistQuery = ""
+
     var showsSegmentedControl = true
     var hidesNavigationBar = true
 
@@ -80,6 +83,8 @@ struct CollectView: View {
                     if showsSegmentedControl {
                         segmentedControl.padding(.horizontal, 16)
                     }
+                    BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding)
+                        .padding(.horizontal, 16)
                 }
                 .padding(.bottom, 10)
 
@@ -128,6 +133,14 @@ struct CollectView: View {
         .pickerStyle(.segmented)
     }
 
+    private var searchPlaceholder: String {
+        selectedSegment == .collection ? "Search your collection" : "Search your wishlist"
+    }
+
+    private var activeQueryBinding: Binding<String> {
+        selectedSegment == .collection ? $collectionQuery : $wishlistQuery
+    }
+
     // MARK: - Content View
 
     @ViewBuilder
@@ -150,6 +163,12 @@ struct CollectView: View {
                 title: "No collection items",
                 image: "line.3.horizontal.decrease.circle",
                 description: "No \(activeBrand.displayTitle) cards in your collection yet."
+            )
+        } else if filteredCollectionItems.isEmpty {
+            emptyState(
+                title: "No matching cards",
+                image: "magnifyingglass",
+                description: "Try a different card name, set code, or number."
             )
         } else {
             LazyVGrid(columns: columns, spacing: 12) {
@@ -198,9 +217,9 @@ struct CollectView: View {
         if collectionFilters.showDuplicates {
             items = items.filter { $0.quantity >= 2 }
         }
-        if collectionFilters.hasActiveFieldFilters {
+        if collectionFilters.hasActiveFieldFilters || !collectionQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             let filteredCards = filterBrowseCards(
-                orderedCollectionCards, query: "", filters: collectionFilters,
+                resolvedCollectionCards, query: collectionQuery, filters: collectionFilters,
                 ownedCardIDs: Set(items.map { $0.cardID }),
                 brand: activeBrand, sets: services.cardData.sets
             )
@@ -230,8 +249,12 @@ struct CollectView: View {
         }
     }
 
-    private var orderedCollectionCards: [Card] {
+    private var resolvedCollectionCards: [Card] {
         visibleCollectionItems.compactMap { cardsByCardID[$0.cardID] }
+    }
+
+    private var orderedCollectionCards: [Card] {
+        filteredCollectionItems.compactMap { cardsByCardID[$0.cardID] }
     }
 
     private var collectionSignature: String {
@@ -276,6 +299,12 @@ struct CollectView: View {
                 image: "line.3.horizontal.decrease.circle",
                 description: "No \(activeBrand.displayTitle) cards on your wishlist yet."
             )
+        } else if filteredWishlistItems.isEmpty {
+            emptyState(
+                title: "No matching cards",
+                image: "magnifyingglass",
+                description: "Try a different card name, set code, or number."
+            )
         } else {
             LazyVGrid(columns: columns, spacing: 12) {
                 ForEach(Array(filteredWishlistItems.enumerated()), id: \.element.id) { index, item in
@@ -316,9 +345,9 @@ struct CollectView: View {
 
     private var filteredWishlistItems: [WishlistItem] {
         var items = visibleWishlistItems
-        if wishlistFilters.hasActiveFieldFilters {
+        if wishlistFilters.hasActiveFieldFilters || !wishlistQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             let filteredCards = filterBrowseCards(
-                orderedWishlistCards, query: "", filters: wishlistFilters,
+                resolvedWishlistCards, query: wishlistQuery, filters: wishlistFilters,
                 ownedCardIDs: [], brand: activeBrand, sets: services.cardData.sets
             )
             let filteredIDs = Set(filteredCards.map { $0.masterCardId })
@@ -347,8 +376,12 @@ struct CollectView: View {
         }
     }
 
-    private var orderedWishlistCards: [Card] {
+    private var resolvedWishlistCards: [Card] {
         visibleWishlistItems.compactMap { wishlistCardsByID[$0.cardID] }
+    }
+
+    private var orderedWishlistCards: [Card] {
+        filteredWishlistItems.compactMap { wishlistCardsByID[$0.cardID] }
     }
 
     private var wishlistSignature: String {

@@ -92,6 +92,33 @@ private struct BrowseFeedSnapshot {
     var hasMoreCardsToLoad = false
 }
 
+enum BrowseHomeTab: String, CaseIterable, Identifiable {
+    case cards
+    case sets
+    case pokemon
+    case sealed
+
+    var id: String { rawValue }
+}
+
+enum BrowseInlineDetailRoute: Hashable {
+    case set(TCGSet)
+    case dex(dexId: Int, displayName: String)
+    case onePieceCharacter(String)
+    case onePieceSubtype(String)
+
+    var title: String {
+        switch self {
+        case .set(let set):
+            return set.name
+        case .dex(_, let displayName):
+            return displayName
+        case .onePieceCharacter(let name), .onePieceSubtype(let name):
+            return name
+        }
+    }
+}
+
 private struct BrowseCardListView: View {
     let cards: [Card]
     let rows: [BrowseCardRow]
@@ -156,24 +183,27 @@ private struct BrowseCardListView: View {
 
 // MARK: - Browse feed
 
+@MainActor
 struct BrowseView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
-    @EnvironmentObject private var chromeScroll: ChromeScrollCoordinator
     @Query private var collectionItems: [CollectionItem]
 
     @Binding var filters: BrowseCardGridFilters
+    @Binding var inlineDetailFilters: BrowseCardGridFilters
     @Binding var gridOptions: BrowseGridOptions
     @Binding var isFilterMenuPresented: Bool
     @Binding var filterResultCount: Int
     @Binding var filterEnergyOptions: [String]
     @Binding var filterRarityOptions: [String]
     @Binding var filterTrainerTypeOptions: [String]
-    var onBrowseSets: () -> Void
-    var onBrowsePokemon: () -> Void
-    var onBrowseOnePieceCharacters: () -> Void
-    var onBrowseOnePieceSubtypes: () -> Void
+    @Binding var inlineDetailFilterResultCount: Int
+    @Binding var inlineDetailFilterEnergyOptions: [String]
+    @Binding var inlineDetailFilterRarityOptions: [String]
+    @Binding var inlineDetailFilterTrainerTypeOptions: [String]
+    @Binding var selectedTab: BrowseHomeTab
+    @Binding var inlineDetailRoute: BrowseInlineDetailRoute?
 
     @State private var shuffledRefs: [CardRef] = []
     @State private var nextRefIndex = 0
@@ -191,6 +221,15 @@ struct BrowseView: View {
     /// Prevents concurrent full-filter-index loads (background warm vs active filter feed).
     @State private var isLoadingFullCatalog = false
     @State private var loadedBrand: TCGBrand?
+    @State private var cachedSetNameByCode: [String: String] = [:]
+    @State private var query = ""
+    @State private var inlineDetailCards: [Card] = []
+    @State private var inlineDetailQuery = ""
+    @State private var inlineDetailLoading = false
+    @State private var ownedCardIDsCache: Set<String> = []
+    @State private var isUsingCatalogFeedSelection = false
+    @State private var isInlineDetailPresented = false
+    @State private var isViewVisible = false
 
     private var safeColumnCount: Int {
         min(max(gridOptions.columnCount, 1), 4)
@@ -205,107 +244,238 @@ struct BrowseView: View {
     private static let pageSize = 18
     private static let prefetchBuffer = 8
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
-
-    private var ownedCardIDs: Set<String> {
-        return Set(collectionItems.compactMap { item in
-            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
-            return brand == activeBrand ? item.cardID : nil
-        })
+    private var shouldUseCatalogFeedForCurrentInputs: Bool {
+        selectedTab == .cards
+            && (!query.isEmpty || filters.hasActiveFieldFilters || filters.hasActiveSort)
     }
 
-    private var setNameByCode: [String: String] {
-        firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
-    }
-
-    private var usesCatalogFeed: Bool {
-        filters.hasActiveFieldFilters || filters.hasActiveSort
+    private var usesCurrentCatalogFeed: Bool {
+        isUsingCatalogFeedSelection
     }
 
     private var hasMoreCardsToLoad: Bool {
-        if usesCatalogFeed {
+        if usesCurrentCatalogFeed {
             return catalogNextIndex < catalogOrderedRefs.count
         }
         return nextRefIndex < shuffledRefs.count
     }
 
     var body: some View {
-        Group {
-            if isLoadingInitial {
-                ProgressView("Loading cards…")
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-            } else if displayedCards.isEmpty {
-                VStack(alignment: .leading, spacing: 8) {
-                    Text("No cards in the catalog yet.")
-                        .foregroundStyle(.secondary)
-                    if let err = services.cardData.lastError {
-                        Text(err).font(.caption).foregroundStyle(.red)
-                    }
-                    Text("Pull to refresh after your catalog syncs, or check BINDR_R2_BASE_URL in Info.plist.")
-                        .font(.caption2).foregroundStyle(.tertiary)
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
-                .padding()
-            } else {
-                scrollTrackedCardGrid
-            }
-        }
+        browseBodyContent
         .toolbar(.hidden, for: .navigationBar)
-        .task(id: services.brandSettings.selectedCatalogBrand) {
-            let selectedBrand = services.brandSettings.selectedCatalogBrand
-            let needsBrandBootstrap = loadedBrand != selectedBrand
-
-            if needsBrandBootstrap {
-                shuffledRefs = []
-                nextRefIndex = 0
-                displayedCards = []
-                displayedRows = []
-                allBrowseFilterCards = []
-                catalogOrderedRefs = []
-                catalogDisplayedCards = []
-                catalogDisplayedRows = []
-                browseFeedSnapshot = BrowseFeedSnapshot()
-                catalogNextIndex = 0
-                isLoadingInitial = true
-                // Launch pipeline already ran `loadSets` + warmed search; full
-                // `reloadAfterBrandChange()` would repeat that and freeze the UI.
-                if services.consumeLightBrowseTabEntryIfNeeded() {
-                    services.cardData.resetBrowseFeedSessionOnly()
-                } else {
-                    await services.cardData.reloadAfterBrandChange()
-                }
-                loadedBrand = selectedBrand
-            }
-
-            await Task.yield()
-            await Task.yield()
-            await bootstrapFeed(forceReshuffle: false)
-            if usesCatalogFeed {
-                await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
-                await rebuildCatalogFeedIfNeeded()
-            } else {
-                Task {
-                    await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: false)
-                }
+        .onAppear {
+            isViewVisible = true
+            isInlineDetailPresented = (inlineDetailRoute != nil)
+            let brand = services.brandSettings.selectedCatalogBrand
+            Task { @MainActor in
+                // Defer startup work one turn so we don't read bindings during
+                // SwiftUI's appearance transaction.
+                await Task.yield()
+                guard isViewVisible else { return }
+                await scheduleOwnedCardIDsRefresh(for: brand)
+                await scheduleBrowseInitialization(for: brand)
             }
         }
-        .refreshable {
-            await bootstrapFeed(forceReshuffle: true)
-            if usesCatalogFeed {
-                await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
-                await rebuildCatalogFeedIfNeeded()
-            } else {
-                Task {
-                    await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: false)
-                }
+        .onDisappear {
+            isViewVisible = false
+        }
+        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, newBrand in
+            Task { @MainActor in
+                await Task.yield()
+                guard isViewVisible else { return }
+                await scheduleOwnedCardIDsRefresh(for: newBrand)
+                await scheduleBrowseInitialization(for: newBrand)
+            }
+        }
+        .onChange(of: collectionItems.count) { _, _ in
+            Task { @MainActor in
+                await scheduleOwnedCardIDsRefresh(for: activeBrand)
             }
         }
         .onChange(of: filters) { _, _ in
-            handleBrowseFiltersChanged()
+            guard !isInlineDetailPresented else { return }
+            handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeedForCurrentInputs)
+        }
+        .onChange(of: inlineDetailFilters) { _, _ in
+            guard isInlineDetailPresented else { return }
+            syncFilterMenuState(usingCatalogFeed: false)
+        }
+        .onChange(of: query) { _, _ in
+            guard selectedTab == .cards else { return }
+            handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeedForCurrentInputs)
+        }
+        .onChange(of: inlineDetailQuery) { _, _ in
+            guard isInlineDetailPresented else { return }
+            syncFilterMenuState(usingCatalogFeed: false)
+        }
+        .onChange(of: selectedTab) { _, newValue in
+            query = ""
+            if tabSupportsInlineDetail(newValue) == false {
+                inlineDetailRoute = nil
+            }
+            if newValue != .cards {
+                isUsingCatalogFeedSelection = false
+                syncFilterMenuState(usingCatalogFeed: false)
+            } else {
+                handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeedForCurrentInputs)
+            }
+        }
+        .onChange(of: inlineDetailRoute) { _, newValue in
+            isInlineDetailPresented = (newValue != nil)
+            inlineDetailQuery = ""
+            inlineDetailFilters = BrowseCardGridFilters()
+            Task {
+                await loadInlineDetailIfNeeded(route: newValue)
+            }
+        }
+    }
+
+    @MainActor
+    private func scheduleBrowseInitialization(for selectedBrand: TCGBrand) async {
+        guard isViewVisible else { return }
+        let selectedTabSnapshot = selectedTab
+        let querySnapshot = query
+        // Avoid reading filter bindings during immediate appearance updates.
+        // The active filters/query pipeline will reconcile right after startup.
+        let filtersSnapshot = BrowseCardGridFilters()
+        // Avoid touching the `@Query`-backed collection rows during SwiftUI's
+        // appearance update cycle. Ownership-sensitive filters are refreshed
+        // later through the normal change handlers once the view is stable.
+        let ownedCardIDsSnapshot: Set<String> = []
+        let shouldUseCatalogFeedOnStartup = false
+        isUsingCatalogFeedSelection = shouldUseCatalogFeedOnStartup
+        await initializeBrowseData(
+            for: selectedBrand,
+            selectedTabSnapshot: selectedTabSnapshot,
+            querySnapshot: querySnapshot,
+            filtersSnapshot: filtersSnapshot,
+            ownedCardIDsSnapshot: ownedCardIDsSnapshot,
+            shouldUseCatalogFeedOnStartup: shouldUseCatalogFeedOnStartup
+        )
+    }
+
+    @MainActor
+    private func scheduleOwnedCardIDsRefresh(for brand: TCGBrand) async {
+        guard isViewVisible else { return }
+        await Task.yield()
+        guard isViewVisible else { return }
+        ownedCardIDsCache = Set(collectionItems.compactMap { item in
+            let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return itemBrand == brand ? item.cardID : nil
+        })
+        if isInlineDetailPresented {
+            syncFilterMenuState(usingCatalogFeed: false)
+        } else {
+            // Avoid re-entering the feed-selection decision path from the
+            // ownership refresh task; preserve current feed mode and only
+            // rebuild catalog results when that mode is already active.
+            if isUsingCatalogFeedSelection {
+                guard isViewVisible else { return }
+                await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: false)
+                await rebuildCatalogFeedIfNeeded(
+                    selectedTab: selectedTab,
+                    query: query,
+                    filters: filters,
+                    brand: activeBrand,
+                    ownedCardIDs: ownedCardIDsCache,
+                    shouldUseCatalogFeed: true
+                )
+            } else {
+                syncFilterMenuState(usingCatalogFeed: false)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var browseBodyContent: some View {
+        if selectedTab == .cards {
+            let usesCatalogFeedSnapshot = usesCurrentCatalogFeed
+            cardsTabScrollView
+                .refreshable {
+                    await bootstrapFeed(forceReshuffle: true)
+                    if usesCatalogFeedSnapshot {
+                        await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
+                        await rebuildCatalogFeedIfNeeded(
+                            selectedTab: selectedTab,
+                            query: query,
+                            filters: filters,
+                            brand: activeBrand,
+                            ownedCardIDs: ownedCardIDsCache,
+                            shouldUseCatalogFeed: true
+                        )
+                    } else {
+                        await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: false)
+                    }
+                }
+        } else {
+            auxiliaryTabScrollView
+        }
+    }
+
+    @MainActor
+    private func initializeBrowseData(
+        for selectedBrand: TCGBrand,
+        selectedTabSnapshot: BrowseHomeTab,
+        querySnapshot: String,
+        filtersSnapshot: BrowseCardGridFilters,
+        ownedCardIDsSnapshot: Set<String>,
+        shouldUseCatalogFeedOnStartup: Bool
+    ) async {
+        guard isViewVisible else { return }
+        if loadedBrand != selectedBrand {
+            shuffledRefs = []
+            nextRefIndex = 0
+            displayedCards = []
+            displayedRows = []
+            allBrowseFilterCards = []
+            catalogOrderedRefs = []
+            catalogDisplayedCards = []
+            catalogDisplayedRows = []
+            browseFeedSnapshot = BrowseFeedSnapshot()
+            catalogNextIndex = 0
+            isLoadingInitial = true
+
+            // The root startup pipeline already refreshes catalog data.
+            // Browse only needs to ensure the selected brand's sets are present.
+            services.cardData.resetBrowseFeedSessionOnly()
+            await services.cardData.loadSets(preferSyncedCatalog: true)
+            guard isViewVisible else { return }
+            cachedSetNameByCode = firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
+            loadedBrand = selectedBrand
+        } else if cachedSetNameByCode.isEmpty, services.cardData.sets.isEmpty == false {
+            cachedSetNameByCode = firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
+        }
+
+        await Task.yield()
+        await Task.yield()
+        guard isViewVisible else { return }
+        await bootstrapFeed(forceReshuffle: false)
+        guard isViewVisible else { return }
+        if shouldUseCatalogFeedOnStartup {
+            await ensureAllBrowseFilterCardsLoaded(
+                showsPreparingBanner: true,
+                usingCatalogFeed: true
+            )
+            guard isViewVisible else { return }
+            await rebuildCatalogFeedIfNeeded(
+                selectedTab: selectedTabSnapshot,
+                query: querySnapshot,
+                filters: filtersSnapshot,
+                brand: selectedBrand,
+                ownedCardIDs: ownedCardIDsSnapshot,
+                shouldUseCatalogFeed: shouldUseCatalogFeedOnStartup
+            )
+        } else {
+            await ensureAllBrowseFilterCardsLoaded(
+                showsPreparingBanner: false,
+                usingCatalogFeed: false
+            )
         }
     }
 
     private var browseCardGrid: some View {
-        BrowseCardListView(
+        let usesCatalogFeedSnapshot = usesCurrentCatalogFeed
+        return BrowseCardListView(
             cards: browseFeedSnapshot.cards,
             rows: browseFeedSnapshot.rows,
             gridOptions: gridOptions,
@@ -313,50 +483,214 @@ struct BrowseView: View {
             hasMoreCardsToLoad: browseFeedSnapshot.hasMoreCardsToLoad,
             presentCard: presentCard,
             onLoadMore: {
-                Task { await loadNextPageIfNeeded() }
+                Task { await loadNextPageIfNeeded(usingCatalogFeed: usesCatalogFeedSnapshot) }
             }
         )
     }
 
-    private var browseShortcutRow: some View {
-        BrowseShortcutButtonsRow(
-            onBrowseSets: onBrowseSets,
-            onBrowsePokemon: onBrowsePokemon,
-            onBrowseOnePieceCharacters: onBrowseOnePieceCharacters,
-            onBrowseOnePieceSubtypes: onBrowseOnePieceSubtypes
-        )
-        .padding(.horizontal, 16)
-        .padding(.bottom, 10)
+    private var browseSearchPlaceholder: String {
+        if let inlineDetailRoute {
+            switch inlineDetailRoute {
+            case .set:
+                return "Search cards in set"
+            case .dex:
+                return "Search cards for Pokémon"
+            case .onePieceCharacter:
+                return "Search cards for character"
+            case .onePieceSubtype:
+                return "Search cards for subtype"
+            }
+        }
+        switch selectedTab {
+        case .cards:
+            return "Search cards"
+        case .sets:
+            return "Search sets"
+        case .pokemon:
+            return activeBrand == .pokemon ? "Search Pokémon" : "Search characters or subtypes"
+        case .sealed:
+            return "Search sealed"
+        }
     }
 
-    private var scrollTrackedCardGrid: some View {
+    @ViewBuilder
+    private var browseTabsRow: some View {
+        if isInlineDetailPresented {
+            EmptyView()
+        } else {
+            Picker("Browse section", selection: $selectedTab) {
+                ForEach(BrowseHomeTab.allCases) { tab in
+                    Text(title(for: tab)).tag(tab)
+                }
+            }
+            .pickerStyle(.segmented)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 10)
+        }
+    }
+
+    private var browseSearchRow: some View {
+        BrowseInlineSearchField(
+            title: browseSearchPlaceholder,
+            text: isInlineDetailPresented ? $inlineDetailQuery : $query
+        )
+            .padding(.horizontal, 16)
+            .padding(.bottom, 12)
+    }
+
+    private var cardsTabScrollView: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 0) {
                 // Keeps first row clear of the overlaid search bar; spacer scrolls away so cards can pass under the glass.
                 Color.clear
                     .frame(height: rootFloatingChromeInset)
-                browseShortcutRow
-                browseCardGrid
-                if isPreparingFilterCatalog {
+                browseTabsRow
+                browseSearchRow
+                activeTabContent
+                if selectedTab == .cards && isPreparingFilterCatalog {
                     ProgressView("Preparing filters…")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
                 }
-                if isLoadingMore {
+                if selectedTab == .cards && isLoadingMore {
                     ProgressView().frame(maxWidth: .infinity).padding(.vertical, 12)
                 }
             }
-            // Match chrome animation so safe-area changes (tab bar) interpolate with the grid instead of snapping.
-            .animation(.easeInOut(duration: 0.22), value: chromeScroll.barsVisible)
         }
-        .tabBarChromeFromScroll()
     }
 
+    private var auxiliaryTabScrollView: some View {
+        ScrollView(showsIndicators: false) {
+            VStack(spacing: 0) {
+                Color.clear
+                    .frame(height: rootFloatingChromeInset)
+                browseTabsRow
+                browseSearchRow
+                activeTabContent
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var activeTabContent: some View {
+        switch selectedTab {
+        case .cards:
+            browseCardsContent
+        case .sets:
+            if let inlineDetailRoute {
+                inlineDetailContent(route: inlineDetailRoute)
+            } else {
+                BrowseSetsTabContent(query: query) { set in
+                    inlineDetailRoute = .set(set)
+                }
+            }
+        case .pokemon:
+            if let inlineDetailRoute {
+                inlineDetailContent(route: inlineDetailRoute)
+            } else {
+                BrowsePokemonTabContent(query: query) { route in
+                    inlineDetailRoute = route
+                }
+            }
+        case .sealed:
+            ContentUnavailableView(
+                "Sealed coming soon",
+                systemImage: "shippingbox",
+                description: Text("This tab is a placeholder until sealed products are added.")
+            )
+            .frame(maxWidth: .infinity, minHeight: 280)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
+        }
+    }
+
+    @ViewBuilder
+    private func inlineDetailContent(route: BrowseInlineDetailRoute) -> some View {
+        let filteredCards = filteredInlineDetailCards
+        if inlineDetailLoading {
+            ProgressView("Loading cards…")
+                .frame(maxWidth: .infinity, minHeight: 280)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 16)
+        } else if filteredCards.isEmpty {
+            ContentUnavailableView(
+                inlineDetailCards.isEmpty ? "No cards found" : "No matching cards",
+                systemImage: "magnifyingglass",
+                description: Text(inlineDetailCards.isEmpty ? "No cards were found for \(route.title)." : "Try a different card name or number.")
+            )
+            .frame(maxWidth: .infinity, minHeight: 280)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
+        } else {
+            LazyVGrid(columns: columns, spacing: 12) {
+                ForEach(Array(filteredCards.enumerated()), id: \.element.id) { index, card in
+                    Button {
+                        presentCard(card, filteredCards)
+                    } label: {
+                        CardGridCell(
+                            card: card,
+                            gridOptions: gridOptions,
+                            setName: cachedSetNameByCode[card.setCode]
+                        )
+                    }
+                    .buttonStyle(CardCellButtonStyle())
+                    .onAppear {
+                        ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
+                    }
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
+        }
+    }
+
+    private var filteredInlineDetailCards: [Card] {
+        filterBrowseCards(
+            inlineDetailCards,
+            query: inlineDetailQuery,
+            filters: inlineDetailFilters,
+            ownedCardIDs: ownedCardIDsCache,
+            brand: activeBrand,
+            sets: services.cardData.sets
+        )
+    }
+
+    @ViewBuilder
+    private var browseCardsContent: some View {
+        if isLoadingInitial {
+            ProgressView("Loading cards…")
+                .frame(maxWidth: .infinity, minHeight: 280)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 16)
+        } else if displayedCards.isEmpty {
+            VStack(alignment: .leading, spacing: 8) {
+                Text("No cards in the catalog yet.")
+                    .foregroundStyle(.secondary)
+                if let err = services.cardData.lastError {
+                    Text(err)
+                        .font(.caption)
+                        .foregroundStyle(.red)
+                }
+                Text("Pull to refresh after your catalog syncs, or check BINDR_R2_BASE_URL in Info.plist.")
+                    .font(.caption2)
+                    .foregroundStyle(.tertiary)
+            }
+            .frame(maxWidth: .infinity, minHeight: 280, alignment: .center)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
+        } else {
+            browseCardGrid
+        }
+    }
+
+    @MainActor
     private func bootstrapFeed(forceReshuffle: Bool) async {
+        guard isViewVisible else { return }
         if !forceReshuffle && !displayedCards.isEmpty { return }
         ImagePrefetcher.shared.cancelAll()
         isLoadingInitial = true
         let refs = await services.cardData.browseFeedCardRefs(forceReshuffle: forceReshuffle)
+        guard isViewVisible else { return }
         shuffledRefs = refs
         nextRefIndex = 0
         displayedCards = []
@@ -365,33 +699,37 @@ struct BrowseView: View {
         let batch = Array(refs[..<firstEnd])
         nextRefIndex = firstEnd
         displayedCards = await services.cardData.cardsInOrder(refs: batch)
+        guard isViewVisible else { return }
         displayedRows = buildBrowseRows(from: displayedCards)
         allBrowseFilterCards = []
         catalogOrderedRefs = []
         catalogDisplayedCards = []
         catalogDisplayedRows = []
         catalogNextIndex = 0
-        refreshBrowseFeedSnapshot()
+        refreshBrowseFeedSnapshot(usingCatalogFeed: false)
         isLoadingInitial = false
         ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: 0, count: 24)
-        prefetchNextWindow()
-        syncFilterMenuState()
+        prefetchNextWindow(usingCatalogFeed: false)
+        syncFilterMenuState(usingCatalogFeed: false)
     }
 
-    private func loadNextPageIfNeeded() async {
+    @MainActor
+    private func loadNextPageIfNeeded(usingCatalogFeed: Bool) async {
+        guard isViewVisible else { return }
         guard !isLoadingMore else { return }
-        if usesCatalogFeed {
+        if usingCatalogFeed {
             guard catalogNextIndex < catalogOrderedRefs.count else { return }
             isLoadingMore = true
             let end = min(catalogNextIndex + Self.pageSize, catalogOrderedRefs.count)
             let batch = Array(catalogOrderedRefs[catalogNextIndex..<end])
             catalogNextIndex = end
             let more = await services.cardData.cardsInOrder(refs: batch)
+            guard isViewVisible else { return }
             catalogDisplayedCards.append(contentsOf: more)
             catalogDisplayedRows = buildBrowseRows(from: catalogDisplayedCards)
-            refreshBrowseFeedSnapshot()
+            refreshBrowseFeedSnapshot(usingCatalogFeed: true)
             isLoadingMore = false
-            syncFilterMenuState()
+            syncFilterMenuState(usingCatalogFeed: true)
             return
         }
         guard nextRefIndex < shuffledRefs.count else { return }
@@ -400,27 +738,33 @@ struct BrowseView: View {
         let batch = Array(shuffledRefs[nextRefIndex..<end])
         nextRefIndex = end
         let more = await services.cardData.cardsInOrder(refs: batch)
+        guard isViewVisible else { return }
         displayedCards.append(contentsOf: more)
         displayedRows = buildBrowseRows(from: displayedCards)
-        refreshBrowseFeedSnapshot()
+        refreshBrowseFeedSnapshot(usingCatalogFeed: false)
         isLoadingMore = false
-        prefetchNextWindow()
-        syncFilterMenuState()
+        prefetchNextWindow(usingCatalogFeed: false)
+        syncFilterMenuState(usingCatalogFeed: false)
     }
 
-    private func prefetchNextWindow() {
-        guard usesCatalogFeed == false else { return }
+    private func prefetchNextWindow(usingCatalogFeed: Bool) {
+        guard usingCatalogFeed == false else { return }
         let end = min(nextRefIndex + Self.pageSize, shuffledRefs.count)
         guard nextRefIndex < end else { return }
         let upcoming = Array(shuffledRefs[nextRefIndex..<end])
-        Task.detached(priority: .low) {
+        Task(priority: .low) {
             let cards = await services.cardData.cardsInOrder(refs: upcoming)
             let urls = cards.map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
             ImagePrefetcher.shared.prefetch(urls)
         }
     }
 
-    private func ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: Bool = true) async {
+    @MainActor
+    private func ensureAllBrowseFilterCardsLoaded(
+        showsPreparingBanner: Bool = true,
+        usingCatalogFeed: Bool? = nil
+    ) async {
+        guard isViewVisible else { return }
         if !allBrowseFilterCards.isEmpty { return }
         while isLoadingFullCatalog {
             try? await Task.sleep(nanoseconds: 25_000_000)
@@ -431,54 +775,93 @@ struct BrowseView: View {
             isPreparingFilterCatalog = true
         }
         let loaded = await services.cardData.loadAllBrowseFilterCards()
+        guard isViewVisible else { return }
         allBrowseFilterCards = loaded
         isLoadingFullCatalog = false
         if showsPreparingBanner {
             isPreparingFilterCatalog = false
         }
-        syncFilterMenuState()
+        syncFilterMenuState(usingCatalogFeed: usingCatalogFeed)
     }
 
-    private func rebuildCatalogFeedIfNeeded() async {
-        if usesCatalogFeed == false {
+    @MainActor
+    private func rebuildCatalogFeedIfNeeded(
+        selectedTab: BrowseHomeTab,
+        query: String,
+        filters: BrowseCardGridFilters,
+        brand: TCGBrand,
+        ownedCardIDs: Set<String>,
+        shouldUseCatalogFeed: Bool
+    ) async {
+        guard isViewVisible else { return }
+        if shouldUseCatalogFeed == false {
+            isUsingCatalogFeedSelection = false
             catalogOrderedRefs = []
             catalogDisplayedCards = []
             catalogDisplayedRows = []
             catalogNextIndex = 0
-            refreshBrowseFeedSnapshot()
-            syncFilterMenuState()
+            refreshBrowseFeedSnapshot(usingCatalogFeed: false)
+            syncFilterMenuState(usingCatalogFeed: false)
             return
         }
         guard !allBrowseFilterCards.isEmpty else { return }
-        let ordered = await orderedFilteredRefs(from: allBrowseFilterCards)
+        let ordered = await orderedFilteredRefs(
+            from: allBrowseFilterCards,
+            query: query,
+            filters: filters,
+            brand: brand,
+            ownedCardIDs: ownedCardIDs
+        )
+        guard isViewVisible else { return }
+        isUsingCatalogFeedSelection = true
         catalogOrderedRefs = ordered
         let initialEnd = min(Self.catalogInitialBatchSize, ordered.count)
         let initialRefs = Array(ordered.prefix(initialEnd))
         catalogDisplayedCards = await services.cardData.cardsInOrder(refs: initialRefs)
+        guard isViewVisible else { return }
         catalogDisplayedRows = buildBrowseRows(from: catalogDisplayedCards)
         catalogNextIndex = initialEnd
-        refreshBrowseFeedSnapshot()
-        syncFilterMenuState()
+        refreshBrowseFeedSnapshot(usingCatalogFeed: true)
+        syncFilterMenuState(usingCatalogFeed: true)
     }
 
-    private func handleBrowseFiltersChanged() {
-        if usesCatalogFeed {
+    @MainActor
+    private func handleBrowseFiltersChanged(usingCatalogFeed: Bool) {
+        if isInlineDetailPresented {
+            syncFilterMenuState(usingCatalogFeed: false)
+            return
+        }
+        let selectedTabSnapshot = selectedTab
+        let querySnapshot = query
+        let filtersSnapshot = filters
+        let brandSnapshot = activeBrand
+        let ownedCardIDsSnapshot = ownedCardIDsCache
+        let isUsingCatalogFeed = usingCatalogFeed
+        isUsingCatalogFeedSelection = isUsingCatalogFeed
+        if isUsingCatalogFeed {
             Task {
                 await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
-                await rebuildCatalogFeedIfNeeded()
+                await rebuildCatalogFeedIfNeeded(
+                    selectedTab: selectedTabSnapshot,
+                    query: querySnapshot,
+                    filters: filtersSnapshot,
+                    brand: brandSnapshot,
+                    ownedCardIDs: ownedCardIDsSnapshot,
+                    shouldUseCatalogFeed: isUsingCatalogFeed
+                )
             }
         } else {
             catalogOrderedRefs = []
             catalogDisplayedCards = []
             catalogDisplayedRows = []
             catalogNextIndex = 0
-            refreshBrowseFeedSnapshot()
-            syncFilterMenuState()
+            refreshBrowseFeedSnapshot(usingCatalogFeed: false)
+            syncFilterMenuState(usingCatalogFeed: false)
         }
     }
 
-    private func refreshBrowseFeedSnapshot() {
-        if usesCatalogFeed {
+    private func refreshBrowseFeedSnapshot(usingCatalogFeed: Bool) {
+        if usingCatalogFeed {
             browseFeedSnapshot = BrowseFeedSnapshot(
                 cards: catalogDisplayedCards,
                 rows: catalogDisplayedRows,
@@ -494,7 +877,7 @@ struct BrowseView: View {
     }
 
     private func buildBrowseRows(from cards: [Card]) -> [BrowseCardRow] {
-        let setNames = setNameByCode
+        let setNames = cachedSetNameByCode
         var rows: [BrowseCardRow] = []
         rows.reserveCapacity(cards.count)
         for (index, card) in cards.enumerated() {
@@ -509,8 +892,20 @@ struct BrowseView: View {
         return rows
     }
 
-    private func orderedFilteredRefs(from cards: [BrowseFilterCard]) async -> [CardRef] {
-        let filtered = filterCards(cards)
+    private func orderedFilteredRefs(
+        from cards: [BrowseFilterCard],
+        query: String,
+        filters: BrowseCardGridFilters,
+        brand: TCGBrand,
+        ownedCardIDs: Set<String>
+    ) async -> [CardRef] {
+        let filtered = filterCards(
+            cards,
+            query: query,
+            filters: filters,
+            brand: brand,
+            ownedCardIDs: ownedCardIDs
+        )
         switch filters.sortBy {
         case .random, .acquiredDateNewest:
             let filteredIDs = Set(filtered.map(\.masterCardId))
@@ -562,17 +957,46 @@ struct BrowseView: View {
         }
     }
 
-    private func filterCards(_ cards: [BrowseFilterCard]) -> [BrowseFilterCard] {
-        cards.filter { card in
-            if activeBrand == .pokemon,
+    private func filterCards(
+        _ cards: [BrowseFilterCard],
+        query: String,
+        filters: BrowseCardGridFilters,
+        brand: TCGBrand,
+        ownedCardIDs: Set<String>
+    ) -> [BrowseFilterCard] {
+        let loweredQuery = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let setReleaseDateByCode = firstValueMap(services.cardData.sets, key: \.setCode) { $0.releaseDate ?? "" }
+        return cards.filter { card in
+            let matchesQuery = loweredQuery.isEmpty
+                || card.cardName.lowercased().contains(loweredQuery)
+                || card.cardNumber.lowercased().contains(loweredQuery)
+                || card.setCode.lowercased().contains(loweredQuery)
+                || (card.subtype?.lowercased().contains(loweredQuery) == true)
+                || (card.subtypes?.contains { $0.lowercased().contains(loweredQuery) } == true)
+            guard matchesQuery else { return false }
+
+            if brand == .pokemon,
                filters.cardTypes.isEmpty == false,
-               filters.cardTypes.contains(resolvedCardType(for: card)) == false {
+               filters.cardTypes.contains(resolvedCardType(for: card, brand: brand)) == false {
                 return false
             }
             if filters.rarePlusOnly && isCommonOrUncommon(card.rarity) {
                 return false
             }
             if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) {
+                return false
+            }
+            if brand == .pokemon,
+               filters.legalities.isEmpty == false,
+               pokemonCardMatchesLegalityFilters(
+                    selectedLegalityFilters: filters.legalities,
+                    setCode: card.setCode,
+                    releaseDate: setReleaseDateByCode[card.setCode],
+                    category: card.category,
+                    energyType: card.energyType,
+                    regulationMark: card.regulationMark,
+                    cardName: card.cardName
+               ) == false {
                 return false
             }
             if filters.energyTypes.isEmpty == false {
@@ -621,8 +1045,8 @@ struct BrowseView: View {
         }
     }
 
-    private func resolvedCardType(for card: BrowseFilterCard) -> BrowseCardTypeFilter {
-        if activeBrand == .onePiece {
+    private func resolvedCardType(for card: BrowseFilterCard, brand: TCGBrand) -> BrowseCardTypeFilter {
+        if brand == .onePiece {
             let category = card.category?.lowercased() ?? ""
             if category.contains("event") {
                 return .trainer
@@ -692,8 +1116,23 @@ struct BrowseView: View {
         return lhsSetCode.localizedStandardCompare(rhsSetCode) == .orderedAscending
     }
 
-    private func syncFilterMenuState() {
-        filterResultCount = usesCatalogFeed ? catalogOrderedRefs.count : browseFeedSnapshot.cards.count
+    @MainActor
+    private func syncFilterMenuState(usingCatalogFeed: Bool? = nil) {
+        if isInlineDetailPresented {
+            filterResultCount = filteredInlineDetailCards.count
+            filterEnergyOptions = cardEnergyOptions(inlineDetailCards)
+            filterRarityOptions = cardRarityOptions(inlineDetailCards)
+            filterTrainerTypeOptions = cardTrainerTypeOptions(inlineDetailCards)
+            inlineDetailFilterResultCount = filteredInlineDetailCards.count
+            inlineDetailFilterEnergyOptions = cardEnergyOptions(inlineDetailCards)
+            inlineDetailFilterRarityOptions = cardRarityOptions(inlineDetailCards)
+            inlineDetailFilterTrainerTypeOptions = cardTrainerTypeOptions(inlineDetailCards)
+            return
+        }
+        let isUsingCatalogFeed = usingCatalogFeed ?? usesCurrentCatalogFeed
+        filterResultCount = selectedTab == .cards
+            ? (isUsingCatalogFeed ? catalogOrderedRefs.count : browseFeedSnapshot.cards.count)
+            : 0
         if allBrowseFilterCards.isEmpty {
             filterEnergyOptions = cardEnergyOptions(browseFeedSnapshot.cards)
             filterRarityOptions = cardRarityOptions(browseFeedSnapshot.cards)
@@ -704,68 +1143,413 @@ struct BrowseView: View {
             filterTrainerTypeOptions = browseFilterTrainerTypeOptions(allBrowseFilterCards)
         }
     }
+
+    private func title(for tab: BrowseHomeTab) -> String {
+        switch tab {
+        case .cards:
+            return "Cards"
+        case .sets:
+            return "Sets"
+        case .pokemon:
+            return activeBrand == .pokemon ? "Pokemon" : "Characters"
+        case .sealed:
+            return "Sealed"
+        }
+    }
+
+    private func tabSupportsInlineDetail(_ tab: BrowseHomeTab) -> Bool {
+        switch tab {
+        case .sets, .pokemon:
+            return true
+        case .cards, .sealed:
+            return false
+        }
+    }
+
+    @MainActor
+    private func loadInlineDetailIfNeeded(route: BrowseInlineDetailRoute?) async {
+        guard let route else {
+            inlineDetailCards = []
+            inlineDetailLoading = false
+            syncFilterMenuState(usingCatalogFeed: false)
+            return
+        }
+
+        inlineDetailLoading = true
+        defer { inlineDetailLoading = false }
+
+        switch route {
+        case .set(let set):
+            let loaded = await services.cardData.loadCards(forSetCode: set.setCode)
+            inlineDetailCards = sortCardsByLocalIdHighestFirst(loaded)
+        case .dex(let dexId, _):
+            inlineDetailCards = await services.cardData.cards(matchingNationalDex: dexId)
+        case .onePieceCharacter(let name):
+            inlineDetailCards = await services.cardData.cards(matchingOnePieceCharacterName: name)
+        case .onePieceSubtype(let name):
+            inlineDetailCards = await services.cardData.cards(matchingOnePieceSubtype: name)
+        }
+
+        ImagePrefetcher.shared.prefetchCardWindow(inlineDetailCards, startingAt: 0, count: 24)
+        syncFilterMenuState(usingCatalogFeed: false)
+    }
 }
 
-private struct BrowseShortcutButtonsRow: View {
+private struct BrowseSetsTabContent: View {
     @Environment(AppServices.self) private var services
 
-    let onBrowseSets: () -> Void
-    let onBrowsePokemon: () -> Void
-    let onBrowseOnePieceCharacters: () -> Void
-    let onBrowseOnePieceSubtypes: () -> Void
+    let query: String
+    let onSelectSet: (TCGSet) -> Void
 
-    private var pokemonCatalogEnabled: Bool {
-        services.brandSettings.enabledBrands.contains(.pokemon)
+    private var filteredSets: [TCGSet] {
+        let sets = services.cardData.allSetsSortedByReleaseDateNewestFirst()
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return sets }
+        let lowered = trimmed.lowercased()
+        return sets.filter { set in
+            set.name.lowercased().contains(lowered)
+                || set.setCode.lowercased().contains(lowered)
+                || (set.seriesName?.lowercased().contains(lowered) == true)
+        }
     }
 
-    private var showBrowsePokemonShortcut: Bool {
-        pokemonCatalogEnabled && services.brandSettings.selectedCatalogBrand == .pokemon
+    private var groupedSets: [(title: String, sets: [TCGSet])] {
+        let grouped = Dictionary(grouping: filteredSets, by: browseSeriesTitle(for:))
+        return grouped
+            .map { (title: $0.key, sets: sortSetsNewestFirst($0.value)) }
+            .sorted { lhs, rhs in
+                let lhsNewest = lhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
+                let rhsNewest = rhs.sets.map(\.releaseDate).compactMap { $0 }.max() ?? ""
+                if lhsNewest != rhsNewest { return lhsNewest > rhsNewest }
+                return lhs.title.localizedCaseInsensitiveCompare(rhs.title) == .orderedAscending
+            }
     }
 
-    private var showBrowseOnePieceShortcuts: Bool {
-        services.brandSettings.selectedCatalogBrand == .onePiece
+    var body: some View {
+        if filteredSets.isEmpty {
+            ContentUnavailableView(
+                "No matching sets",
+                systemImage: "magnifyingglass",
+                description: Text("Try a different set name or code.")
+            )
+            .frame(maxWidth: .infinity, minHeight: 280)
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
+        } else {
+            LazyVStack(alignment: .leading, spacing: 20) {
+                ForEach(groupedSets, id: \.title) { group in
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text(group.title)
+                            .font(.title2.weight(.bold))
+                            .foregroundStyle(.primary)
+                        Rectangle()
+                            .fill(Color.primary.opacity(0.08))
+                            .frame(height: 1)
+                    }
+                    .padding(.horizontal, 16)
+                    .padding(.top, 10)
+
+                    LazyVStack(spacing: 0) {
+                        ForEach(Array(group.sets.enumerated()), id: \.offset) { _, set in
+                            Button {
+                                onSelectSet(set)
+                            } label: {
+                                HStack(spacing: 14) {
+                                    SetLogoAsyncImage(
+                                        logoSrc: set.logoSrc,
+                                        height: 44,
+                                        brand: services.brandSettings.selectedCatalogBrand
+                                    )
+                                    .frame(width: 80)
+
+                                    VStack(alignment: .leading, spacing: 2) {
+                                        Text(set.name)
+                                            .font(.subheadline.weight(.medium))
+                                            .foregroundStyle(.primary)
+                                            .lineLimit(2)
+                                        Text(set.setCode.uppercased())
+                                            .font(.caption)
+                                            .foregroundStyle(.secondary)
+                                    }
+
+                                    Spacer()
+
+                                    Image(systemName: "chevron.right")
+                                        .font(.caption.weight(.semibold))
+                                        .foregroundStyle(.tertiary)
+                                }
+                                .padding(.horizontal, 16)
+                                .padding(.vertical, 10)
+                                .contentShape(Rectangle())
+                            }
+                            .buttonStyle(.plain)
+
+                            Divider()
+                                .padding(.leading, 124)
+                        }
+                    }
+                    .padding(.top, 4)
+                }
+            }
+            .padding(.bottom, 16)
+        }
     }
 
-    private var currentBrand: TCGBrand {
-        services.brandSettings.selectedCatalogBrand
+    private func browseSeriesTitle(for set: TCGSet) -> String {
+        switch services.brandSettings.selectedCatalogBrand {
+        case .pokemon:
+            let title = set.seriesName?.trimmingCharacters(in: .whitespacesAndNewlines)
+            return (title?.isEmpty == false ? title! : "Other")
+        case .onePiece:
+            return normalizedOnePieceSeriesTitle(set.seriesName)
+        }
+    }
+
+    private func sortSetsNewestFirst(_ sets: [TCGSet]) -> [TCGSet] {
+        sets.sorted { lhs, rhs in
+            let ld = lhs.releaseDate ?? ""
+            let rd = rhs.releaseDate ?? ""
+            if ld != rd { return ld > rd }
+            return lhs.name.localizedCaseInsensitiveCompare(rhs.name) == .orderedAscending
+        }
+    }
+
+    private func normalizedOnePieceSeriesTitle(_ raw: String?) -> String {
+        let title = raw?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        let lower = title.lowercased()
+        if lower.contains("booster pack") { return "Booster Pack" }
+        if lower.contains("extra booster") { return "Extra Boosters" }
+        if lower.contains("starter") { return "Starter deck" }
+        if lower.contains("premium booster") { return "Premium Booster" }
+        if lower.contains("promo") { return "Promo" }
+        return title.isEmpty ? "Other" : title
+    }
+}
+
+private struct BrowsePokemonTabContent: View {
+    @Environment(AppServices.self) private var services
+
+    let query: String
+    let onSelectRoute: (BrowseInlineDetailRoute) -> Void
+
+    @State private var rows: [NationalDexPokemon] = []
+    @State private var isLoading = true
+    @State private var characterRows: [String] = []
+    @State private var subtypeRows: [String] = []
+
+    private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+
+    private var filteredPokemonRows: [NationalDexPokemon] {
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return rows }
+        let lowered = trimmed.lowercased()
+        return rows.filter { item in
+            item.name.lowercased().contains(lowered)
+                || item.displayName.lowercased().contains(lowered)
+                || String(item.nationalDexNumber).contains(lowered)
+        }
+    }
+
+    private var filteredCharacterRows: [String] {
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return characterRows }
+        let lowered = trimmed.lowercased()
+        return characterRows.filter { $0.lowercased().contains(lowered) }
+    }
+
+    private var filteredSubtypeRows: [String] {
+        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return subtypeRows }
+        let lowered = trimmed.lowercased()
+        return subtypeRows.filter { $0.lowercased().contains(lowered) }
     }
 
     var body: some View {
         Group {
-            if showBrowsePokemonShortcut {
-                HStack(spacing: 6) {
-                    shortcutButton(title: "Sets", action: onBrowseSets)
-                    shortcutButton(title: "Pokémon", action: onBrowsePokemon)
-                }
-            } else if showBrowseOnePieceShortcuts {
-                HStack(spacing: 10) {
-                    shortcutButton(title: "Sets", action: onBrowseSets)
-                    shortcutButton(title: "Characters", action: onBrowseOnePieceCharacters)
-                    shortcutButton(title: "Subtypes", action: onBrowseOnePieceSubtypes)
-                }
+            if isLoading {
+                ProgressView(activeTitle)
+                    .frame(maxWidth: .infinity, minHeight: 280)
+                    .padding(.horizontal, 16)
+            } else if services.brandSettings.selectedCatalogBrand == .pokemon {
+                pokemonBody
             } else {
-                shortcutButton(title: "Sets", action: onBrowseSets)
+                onePieceBody
             }
         }
-        .id(currentBrand)
-        .transaction { transaction in
-            transaction.animation = nil
+        .onAppear {
+            scheduleRowLoad(for: services.brandSettings.selectedCatalogBrand)
+        }
+        .onChange(of: services.brandSettings.selectedCatalogBrand) { _, newBrand in
+            scheduleRowLoad(for: newBrand)
         }
     }
 
-    private func shortcutButton(title: String, action: @escaping () -> Void) -> some View {
-        Button(action: action) {
-            Text(title)
-                .font(.subheadline.weight(.semibold))
-                .foregroundStyle(.primary)
-                .frame(maxWidth: .infinity)
-                .padding(.vertical, 10)
-                .background(
-                    RoundedRectangle(cornerRadius: 12, style: .continuous)
-                        .fill(Color(uiColor: .tertiarySystemFill))
-                )
+    @MainActor
+    private func scheduleRowLoad(for _: TCGBrand) {
+        Task { @MainActor in
+            await loadRows()
         }
-        .buttonStyle(.plain)
+    }
+
+    private var activeTitle: String {
+        services.brandSettings.selectedCatalogBrand == .pokemon ? "Loading Pokémon…" : "Loading characters…"
+    }
+
+    @ViewBuilder
+    private var pokemonBody: some View {
+        if rows.isEmpty {
+            ContentUnavailableView(
+                "No Pokédex list",
+                systemImage: "hare",
+                description: Text("Add pokemon.json next to sets.json on your CDN.")
+            )
+            .frame(maxWidth: .infinity, minHeight: 280)
+            .padding(.horizontal, 16)
+        } else if filteredPokemonRows.isEmpty {
+            ContentUnavailableView(
+                "No matching Pokémon",
+                systemImage: "magnifyingglass",
+                description: Text("Try a different name or National Dex number.")
+            )
+            .frame(maxWidth: .infinity, minHeight: 280)
+            .padding(.horizontal, 16)
+        } else {
+            LazyVGrid(columns: columns, spacing: 12) {
+                ForEach(filteredPokemonRows) { item in
+                    Button {
+                        onSelectRoute(.dex(dexId: item.nationalDexNumber, displayName: item.displayName))
+                    } label: {
+                        VStack(spacing: 6) {
+                            CachedAsyncImage(
+                                url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl)
+                            ) { img in
+                                img.resizable().scaledToFit()
+                            } placeholder: {
+                                Color.gray.opacity(0.12)
+                            }
+                            .frame(height: 140)
+
+                            Text(item.displayName)
+                                .font(.caption2)
+                                .foregroundStyle(.primary)
+                                .lineLimit(2)
+                                .multilineTextAlignment(.center)
+
+                            Text("#\(item.nationalDexNumber)")
+                                .font(.caption2)
+                                .foregroundStyle(.secondary)
+                        }
+                        .padding(6)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.08)))
+                    }
+                    .buttonStyle(.plain)
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.bottom, 16)
+        }
+    }
+
+    @ViewBuilder
+    private var onePieceBody: some View {
+        if characterRows.isEmpty && subtypeRows.isEmpty {
+            ContentUnavailableView(
+                "No browse lists",
+                systemImage: "list.bullet",
+                description: Text("Character names and subtypes will appear here after the ONE PIECE catalog sync completes.")
+            )
+            .frame(maxWidth: .infinity, minHeight: 280)
+            .padding(.horizontal, 16)
+        } else if filteredCharacterRows.isEmpty && filteredSubtypeRows.isEmpty {
+            ContentUnavailableView(
+                "No matches",
+                systemImage: "magnifyingglass",
+                description: Text("Try a different search term.")
+            )
+            .frame(maxWidth: .infinity, minHeight: 280)
+            .padding(.horizontal, 16)
+        } else {
+            LazyVStack(alignment: .leading, spacing: 20) {
+                if !filteredCharacterRows.isEmpty {
+                        listSection(title: "Characters", rows: filteredCharacterRows) { row in
+                        Button {
+                            onSelectRoute(.onePieceCharacter(row))
+                        } label: {
+                            browseListRow(title: row)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+
+                if !filteredSubtypeRows.isEmpty {
+                    listSection(title: "Subtypes", rows: filteredSubtypeRows) { row in
+                        Button {
+                            onSelectRoute(.onePieceSubtype(row))
+                        } label: {
+                            browseListRow(title: row)
+                        }
+                        .buttonStyle(.plain)
+                    }
+                }
+            }
+            .padding(.bottom, 16)
+        }
+    }
+
+    private func loadRows() async {
+        isLoading = true
+        defer { isLoading = false }
+
+        if services.brandSettings.selectedCatalogBrand == .pokemon {
+            characterRows = []
+            subtypeRows = []
+            if services.cardData.nationalDexPokemon.isEmpty {
+                await services.cardData.loadNationalDexPokemon()
+            }
+            rows = services.cardData.nationalDexPokemonSorted()
+        } else {
+            rows = []
+            if services.cardData.onePieceCharacterNames.isEmpty || services.cardData.onePieceCharacterSubtypes.isEmpty {
+                await services.cardData.loadOnePieceBrowseMetadata()
+            }
+            characterRows = services.cardData.onePieceCharacterNames
+            subtypeRows = services.cardData.onePieceCharacterSubtypes
+        }
+    }
+
+    private func listSection<RowContent: View>(
+        title: String,
+        rows: [String],
+        @ViewBuilder rowBuilder: @escaping (String) -> RowContent
+    ) -> some View {
+        VStack(alignment: .leading, spacing: 8) {
+            Text(title)
+                .font(.title3.weight(.bold))
+                .foregroundStyle(.primary)
+                .padding(.horizontal, 16)
+
+            LazyVStack(spacing: 0) {
+                ForEach(Array(rows.enumerated()), id: \.offset) { _, row in
+                    rowBuilder(row)
+                    Divider()
+                        .padding(.leading, 32)
+                }
+            }
+        }
+    }
+
+    private func browseListRow(title: String) -> some View {
+        HStack(spacing: 12) {
+            Text(title)
+                .foregroundStyle(.primary)
+            Spacer(minLength: 0)
+            Image(systemName: "chevron.right")
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.tertiary)
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .contentShape(Rectangle())
     }
 }
 
@@ -1592,8 +2376,13 @@ struct BrowseGridFiltersMenuContent: View {
                 }
             } else {
                 filterMenu(title: "Card type", summary: selectionSummary(for: filters.cardTypes)) {
-                    ForEach(BrowseCardTypeFilter.allCases) { type in
+                    ForEach(BrowseCardTypeFilter.pokemonOptions) { type in
                         Toggle(type.title, isOn: cardTypeBinding(for: type))
+                    }
+                }
+                filterMenu(title: "Legal", summary: selectionSummary(for: filters.legalities)) {
+                    ForEach(BrowseCardLegalityFilter.allCases) { legality in
+                        Toggle(legality.title, isOn: legalityBinding(for: legality))
                     }
                 }
             }
@@ -1669,6 +2458,16 @@ struct BrowseGridFiltersMenuContent: View {
             set: { isOn in
                 if isOn { filters.cardTypes.insert(type) }
                 else { filters.cardTypes.remove(type) }
+            }
+        )
+    }
+
+    private func legalityBinding(for legality: BrowseCardLegalityFilter) -> Binding<Bool> {
+        Binding(
+            get: { filters.legalities.contains(legality) },
+            set: { isOn in
+                if isOn { filters.legalities.insert(legality) }
+                else { filters.legalities.remove(legality) }
             }
         )
     }
@@ -1844,6 +2643,7 @@ func filterBrowseCards(
 ) -> [Card] {
     let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
     let q = trimmed.lowercased()
+    let setReleaseDateByCode = firstValueMap(sets, key: \.setCode) { $0.releaseDate ?? "" }
     let filtered = cards.filter { card in
         let matchesQuery = trimmed.isEmpty || card.cardName.lowercased().contains(q)
             || card.cardNumber.lowercased().contains(q)
@@ -1861,6 +2661,19 @@ func filterBrowseCards(
             return false
         }
         if filters.hideOwned && ownedCardIDs.contains(card.masterCardId) {
+            return false
+        }
+        if brand == .pokemon,
+           filters.legalities.isEmpty == false,
+           pokemonCardMatchesLegalityFilters(
+                selectedLegalityFilters: filters.legalities,
+                setCode: card.setCode,
+                releaseDate: setReleaseDateByCode[card.setCode],
+                category: card.category,
+                energyType: card.energyType,
+                regulationMark: card.regulationMark,
+                cardName: card.cardName
+           ) == false {
             return false
         }
         if filters.energyTypes.isEmpty == false {
@@ -1933,20 +2746,95 @@ private func resolvedBrowseCardType(for card: Card, brand: TCGBrand) -> BrowseCa
     return .pokemon
 }
 
+private func pokemonCardMatchesLegalityFilters(
+    selectedLegalityFilters: Set<BrowseCardLegalityFilter>,
+    setCode: String,
+    releaseDate: String?,
+    category: String?,
+    energyType: String?,
+    regulationMark: String?,
+    cardName: String
+) -> Bool {
+    selectedLegalityFilters.contains { legality in
+        pokemonCardIsLegalInDeckFormat(
+            legality.deckFormat,
+            setCode: setCode,
+            releaseDate: releaseDate,
+            category: category,
+            energyType: energyType,
+            regulationMark: regulationMark,
+            cardName: cardName
+        )
+    }
+}
+
+private func pokemonCardIsLegalInDeckFormat(
+    _ format: DeckFormat,
+    setCode: String,
+    releaseDate: String?,
+    category: String?,
+    energyType: String?,
+    regulationMark: String?,
+    cardName: String
+) -> Bool {
+    if let legalSets = format.legalSetKeys, legalSets.contains(setCode) == false {
+        return false
+    }
+    if format == .pokemonStandard,
+       pokemonSetIsTournamentLegal(releaseDate: releaseDate) == false {
+        return false
+    }
+    if let legalMarks = format.legalRegulationMarks {
+        let trimmedMark = regulationMark?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        if trimmedMark.isEmpty {
+            if pokemonCardIsBasicEnergy(category: category, energyType: energyType) == false {
+                return false
+            }
+        } else if legalMarks.contains(trimmedMark) == false {
+            return false
+        }
+    }
+    if format.isBanned(cardName: cardName) {
+        return false
+    }
+    return true
+}
+
+private func pokemonCardIsBasicEnergy(category: String?, energyType: String?) -> Bool {
+    guard category == "Energy" else { return false }
+    return energyType?
+        .trimmingCharacters(in: .whitespacesAndNewlines)
+        .caseInsensitiveCompare("Basic") == .orderedSame
+}
+
+private func pokemonSetIsTournamentLegal(releaseDate: String?, now: Date = Date()) -> Bool {
+    guard let releaseDate, releaseDate.isEmpty == false else { return true }
+    let formatter = ISO8601DateFormatter()
+    formatter.formatOptions = [.withFullDate]
+    guard let release = formatter.date(from: releaseDate) else { return true }
+    guard let legalDate = Calendar(identifier: .gregorian).date(byAdding: .day, value: 14, to: release) else {
+        return true
+    }
+    return legalDate <= now
+}
+
 #Preview {
     NavigationStack {
         BrowseView(
             filters: .constant(BrowseCardGridFilters()),
+            inlineDetailFilters: .constant(BrowseCardGridFilters()),
             gridOptions: .constant(BrowseGridOptions()),
             isFilterMenuPresented: .constant(false),
             filterResultCount: .constant(0),
             filterEnergyOptions: .constant([]),
             filterRarityOptions: .constant([]),
             filterTrainerTypeOptions: .constant([]),
-            onBrowseSets: {},
-            onBrowsePokemon: {},
-            onBrowseOnePieceCharacters: {},
-            onBrowseOnePieceSubtypes: {}
+            inlineDetailFilterResultCount: .constant(0),
+            inlineDetailFilterEnergyOptions: .constant([]),
+            inlineDetailFilterRarityOptions: .constant([]),
+            inlineDetailFilterTrainerTypeOptions: .constant([]),
+            selectedTab: .constant(.cards),
+            inlineDetailRoute: .constant(nil)
         )
     }
         .environment(AppServices())

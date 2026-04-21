@@ -2,53 +2,6 @@ import SwiftUI
 import SwiftData
 import UIKit
 
-private enum BrowseFullScreen: String, Identifiable, Hashable {
-    case allSets
-    case allPokemon
-    case onePieceCharacters
-    case onePieceSubtypes
-    var id: String { rawValue }
-}
-
-/// Presents Browse Sets / Pokémon as one root `fullScreenCover`, and card detail in a **nested** cover so SwiftUI never stacks two root-level full-screen presentations (which triggers “only presenting a single sheet is supported”).
-private struct BrowseFullScreenHost: View {
-    let route: BrowseFullScreen
-    @Environment(AppServices.self) private var services
-    @State private var presentedCardPresentation: CardPresentationContext?
-
-    var body: some View {
-        NavigationStack {
-            switch route {
-            case .allSets:
-                BrowseAllSetsView()
-            case .allPokemon:
-                BrowseAllPokemonView()
-            case .onePieceCharacters:
-                BrowseAllOnePieceCharactersView()
-            case .onePieceSubtypes:
-                BrowseAllOnePieceSubtypesView()
-            }
-        }
-        .environment(\.presentCard, { card, list in
-            let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
-            presentedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
-        })
-        .overlay {
-            if presentedCardPresentation != nil {
-                Color(uiColor: .systemBackground)
-                    .ignoresSafeArea()
-                    .allowsHitTesting(false)
-                    .transition(.opacity)
-            }
-        }
-        .animation(.easeInOut(duration: 0.25), value: presentedCardPresentation != nil)
-        .sheet(item: $presentedCardPresentation) { ctx in
-            CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
-                .environment(services)
-        }
-    }
-}
-
 struct RootView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
@@ -64,6 +17,13 @@ struct RootView: View {
     @State private var browseFilterEnergyOptions: [String] = []
     @State private var browseFilterRarityOptions: [String] = []
     @State private var browseFilterTrainerTypeOptions: [String] = []
+    @State private var browseInlineDetailFilters = BrowseCardGridFilters()
+    @State private var browseInlineDetailFilterResultCount = 0
+    @State private var browseInlineDetailFilterEnergyOptions: [String] = []
+    @State private var browseInlineDetailFilterRarityOptions: [String] = []
+    @State private var browseInlineDetailFilterTrainerTypeOptions: [String] = []
+    @State private var browseHomeTab: BrowseHomeTab = .cards
+    @State private var browseInlineDetailRoute: BrowseInlineDetailRoute?
     @State private var collectSelectedBrand: TCGBrand? = nil
     @State private var collectCollectionFilters: BrowseCardGridFilters = {
         var filters = BrowseCardGridFilters()
@@ -82,7 +42,6 @@ struct RootView: View {
     @State private var browseNavigationPath = NavigationPath()
     @State private var collectionNavigationPath = NavigationPath()
     @State private var moreNavigationPath = NavigationPath()
-    @State private var browseFullScreen: BrowseFullScreen?
     @State private var selectedCardPresentation: CardPresentationContext?
     @State private var showBrandOnboarding = false
     @State private var showSettings = false
@@ -110,7 +69,7 @@ struct RootView: View {
         selectedTab == .browse
             && browseNavigationPath.isEmpty
             && !isSearchExperiencePresented
-            && browseFullScreen == nil
+            && (browseHomeTab == .cards || browseInlineDetailRoute != nil)
     }
 
     private var isCollectFilterContextActive: Bool {
@@ -145,7 +104,30 @@ struct RootView: View {
     }
 
     private var rootChromeTitle: String {
-        selectedTab.title
+        if selectedTab == .browse, let browseInlineDetailRoute {
+            return browseInlineDetailRoute.title
+        }
+        return selectedTab.title
+    }
+
+    private var activeBrowseFilters: BrowseCardGridFilters {
+        browseInlineDetailRoute == nil ? browseFilters : browseInlineDetailFilters
+    }
+
+    private var activeBrowseFiltersBinding: Binding<BrowseCardGridFilters> {
+        browseInlineDetailRoute == nil ? $browseFilters : $browseInlineDetailFilters
+    }
+
+    private var activeBrowseFilterEnergyOptions: [String] {
+        browseInlineDetailRoute == nil ? browseFilterEnergyOptions : browseInlineDetailFilterEnergyOptions
+    }
+
+    private var activeBrowseFilterRarityOptions: [String] {
+        browseInlineDetailRoute == nil ? browseFilterRarityOptions : browseInlineDetailFilterRarityOptions
+    }
+
+    private var activeBrowseFilterTrainerTypeOptions: [String] {
+        browseInlineDetailRoute == nil ? browseFilterTrainerTypeOptions : browseInlineDetailFilterTrainerTypeOptions
     }
 
     var body: some View {
@@ -281,6 +263,7 @@ struct RootView: View {
                                     NavigationStack(path: $browseNavigationPath) {
                                         BrowseView(
                                             filters: $browseFilters,
+                                            inlineDetailFilters: $browseInlineDetailFilters,
                                             gridOptions: Binding(
                                                 get: { services.browseGridOptions.options },
                                                 set: { services.browseGridOptions.options = $0 }
@@ -290,18 +273,12 @@ struct RootView: View {
                                             filterEnergyOptions: $browseFilterEnergyOptions,
                                             filterRarityOptions: $browseFilterRarityOptions,
                                             filterTrainerTypeOptions: $browseFilterTrainerTypeOptions,
-                                            onBrowseSets: {
-                                                browseFullScreen = .allSets
-                                            },
-                                            onBrowsePokemon: {
-                                                browseFullScreen = .allPokemon
-                                            },
-                                            onBrowseOnePieceCharacters: {
-                                                browseFullScreen = .onePieceCharacters
-                                            },
-                                            onBrowseOnePieceSubtypes: {
-                                                browseFullScreen = .onePieceSubtypes
-                                            }
+                                            inlineDetailFilterResultCount: $browseInlineDetailFilterResultCount,
+                                            inlineDetailFilterEnergyOptions: $browseInlineDetailFilterEnergyOptions,
+                                            inlineDetailFilterRarityOptions: $browseInlineDetailFilterRarityOptions,
+                                            inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
+                                            selectedTab: $browseHomeTab,
+                                            inlineDetailRoute: $browseInlineDetailRoute
                                         )
                                     }
                                 case .collect:
@@ -504,7 +481,10 @@ struct RootView: View {
             browseNavigationPath = NavigationPath()
             collectionNavigationPath = NavigationPath()
             searchNavigationPath = NavigationPath()
-            browseFullScreen = nil
+            browseHomeTab = .cards
+            browseFilters = BrowseCardGridFilters()
+            browseInlineDetailFilters = BrowseCardGridFilters()
+            browseInlineDetailRoute = nil
             selectedCardPresentation = nil
             universalQuery = ""
             searchFieldFocused = false
@@ -540,10 +520,6 @@ struct RootView: View {
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
                 .environment(services)
         }
-        .fullScreenCover(item: $browseFullScreen) { route in
-            BrowseFullScreenHost(route: route)
-                .environment(services)
-        }
         .fullScreenCover(isPresented: $showCardScanner) {
             CardScannerView(
                 onMatch: { card in
@@ -563,15 +539,18 @@ struct RootView: View {
     @ViewBuilder
     private func floatingSearchBar(hiddenOffset: CGFloat, topInset: CGFloat, bottomInset: CGFloat) -> some View {
         let visible = showUniversalSearchBar && !isSearchDetailActive
+        let browseLeadingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? =
+            selectedTab == .browse && browseInlineDetailRoute != nil
+            ? ("chevron.left", "Back", {
+                browseInlineDetailFilters = BrowseCardGridFilters()
+                browseInlineDetailRoute = nil
+            })
+            : nil
         let filterEnabled = isBrowseGridFilterContextActive || isCollectFilterContextActive
-        let filterActive = isBrowseGridFilterContextActive ? browseFilters.isVisiblyCustomized
+        let filterActive = isBrowseGridFilterContextActive ? activeBrowseFilters.isVisiblyCustomized
                          : isCollectFilterContextActive ? isCollectFilterActive : false
-        let gridActive = isBrowseGridFilterContextActive ? !services.browseGridOptions.options.isDefault
-                        : isCollectFilterContextActive ? !collectGridOptions.isDefault : false
         let filterContent: AnyView? = isBrowseGridFilterContextActive ? AnyView(browseFilterMenuContent)
                                     : isCollectFilterContextActive ? AnyView(collectFilterMenuContent) : nil
-        let gridContent: AnyView? = isBrowseGridFilterContextActive ? AnyView(BrowseGridOptionsMenuContent())
-                                  : isCollectFilterContextActive ? AnyView(BrowseGridOptionsMenuContent(gridOptions: $collectGridOptions)) : nil
         UniversalSearchBar(
             text: $universalQuery,
             isFocused: $searchFieldFocused,
@@ -579,9 +558,8 @@ struct RootView: View {
             isSearchOpen: isSearchExperiencePresented,
             isFilterEnabled: filterEnabled,
             isFilterActive: filterActive,
-            isGridOptionsActive: gridActive,
             filterMenuContent: filterContent,
-            gridMenuContent: gridContent,
+            collapsedLeadingButton: browseLeadingButton,
             trailingButton: chromeTrailingButton,
             onActivateSearch: {
                 withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
@@ -643,192 +621,14 @@ struct RootView: View {
 
     @ViewBuilder
     private var browseFilterMenuContent: some View {
-        if browseFilters.isVisiblyCustomized {
-            Section {
-                Button("Reset filters", role: .destructive) {
-                    let currentSort = browseFilters.sortBy
-                    browseFilters = BrowseCardGridFilters()
-                    browseFilters.sortBy = currentSort
-                }
-            }
-        }
-
-        Section("Sort by") {
-            Menu(menuTitle("Sort by", summary: browseFilters.sortBy.title)) {
-                Picker("Sort by", selection: $browseFilters.sortBy) {
-                    ForEach(BrowseCardGridSortOption.allCases) { option in
-                        Text(option.title).tag(option)
-                    }
-                }
-                .pickerStyle(.inline)
-                .labelsHidden()
-            }
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
-        }
-
-        Section("Filters") {
-            if services.brandSettings.selectedCatalogBrand == .onePiece {
-                Menu(menuTitle("Card type", summary: selectionSummary(for: browseFilters.opCardTypes))) {
-                    ForEach(opCardTypeAllOptions, id: \.self) { cardType in
-                        Toggle(cardType, isOn: binding(for: cardType, keyPath: \.opCardTypes))
-                    }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-
-                Menu(menuTitle("Attribute", summary: selectionSummary(for: browseFilters.opAttributes))) {
-                    ForEach(opAttributeAllOptions, id: \.self) { attr in
-                        Toggle(attr, isOn: binding(for: attr, keyPath: \.opAttributes))
-                    }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-
-                Menu(
-                    menuTitle(
-                        "Stats",
-                        summary: combinedSelectionSummary(
-                            ("Cost", browseFilters.opCosts.count),
-                            ("Counter", browseFilters.opCounters.count),
-                            ("Life", browseFilters.opLives.count),
-                            ("Power", browseFilters.opPowers.count)
-                        )
-                    )
-                ) {
-                    Menu(menuTitle("Cost", summary: selectionSummary(for: browseFilters.opCosts))) {
-                        ForEach(opCostAllOptions, id: \.self) { cost in
-                            Toggle("\(cost)", isOn: binding(for: cost, keyPath: \.opCosts))
-                        }
-                    }
-                    .menuActionDismissBehavior(.disabled)
-                    .menuOrder(.fixed)
-
-                    Menu(menuTitle("Counter", summary: selectionSummary(for: browseFilters.opCounters))) {
-                        ForEach(opCounterAllOptions, id: \.self) { counter in
-                            Toggle("\(counter)", isOn: binding(for: counter, keyPath: \.opCounters))
-                        }
-                    }
-                    .menuActionDismissBehavior(.disabled)
-                    .menuOrder(.fixed)
-
-                    Menu(menuTitle("Life", summary: selectionSummary(for: browseFilters.opLives))) {
-                        ForEach(opLifeAllOptions, id: \.self) { life in
-                            Toggle("\(life)", isOn: binding(for: life, keyPath: \.opLives))
-                        }
-                    }
-                    .menuActionDismissBehavior(.disabled)
-                    .menuOrder(.fixed)
-
-                    Menu(menuTitle("Power", summary: selectionSummary(for: browseFilters.opPowers))) {
-                        ForEach(opPowerAllOptions, id: \.self) { power in
-                            Toggle("\(power)", isOn: binding(for: power, keyPath: \.opPowers))
-                        }
-                    }
-                    .menuActionDismissBehavior(.disabled)
-                    .menuOrder(.fixed)
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-            } else {
-                Menu(menuTitle("Card type", summary: selectionSummary(for: browseFilters.cardTypes))) {
-                    ForEach(BrowseCardTypeFilter.allCases) { type in
-                        Toggle(type.title, isOn: binding(for: type))
-                    }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-            }
-
-            Menu(menuTitle(services.brandSettings.selectedCatalogBrand.energyFilterMenuTitle, summary: selectionSummary(for: browseFilters.energyTypes))) {
-                if browseFilterEnergyOptions.isEmpty {
-                    Text("No options available")
-                } else {
-                    ForEach(browseFilterEnergyOptions, id: \.self) { energy in
-                        Toggle(energy, isOn: binding(for: energy, keyPath: \.energyTypes))
-                    }
-                }
-            }
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
-
-            if services.brandSettings.selectedCatalogBrand == .pokemon {
-                Menu(menuTitle("Trainer type", summary: selectionSummary(for: browseFilters.trainerTypes))) {
-                    if browseFilterTrainerTypeOptions.isEmpty {
-                        Text("No trainer types available")
-                    } else {
-                        ForEach(browseFilterTrainerTypeOptions, id: \.self) { trainerType in
-                            Toggle(trainerType, isOn: binding(for: trainerType, keyPath: \.trainerTypes))
-                        }
-                    }
-                }
-                .menuActionDismissBehavior(.disabled)
-                .menuOrder(.fixed)
-            }
-        }
-
-        Section("Collection") {
-            Menu(menuTitle("Rarity", summary: selectionSummary(for: browseFilters.rarities))) {
-                if browseFilterRarityOptions.isEmpty {
-                    Text("No rarities available")
-                } else {
-                    ForEach(browseFilterRarityOptions, id: \.self) { rarity in
-                        Toggle(rarity, isOn: binding(for: rarity, keyPath: \.rarities))
-                    }
-                }
-            }
-            .menuActionDismissBehavior(.disabled)
-            .menuOrder(.fixed)
-
-            Toggle("Rare + only", isOn: $browseFilters.rarePlusOnly)
-            Toggle("Hide owned", isOn: $browseFilters.hideOwned)
-        }
-    }
-
-    private func binding(for type: BrowseCardTypeFilter) -> Binding<Bool> {
-        Binding(
-            get: { browseFilters.cardTypes.contains(type) },
-            set: { isOn in
-                if isOn { browseFilters.cardTypes.insert(type) }
-                else { browseFilters.cardTypes.remove(type) }
-            }
+        BrowseGridFiltersMenuContent(
+            brand: services.brandSettings.selectedCatalogBrand,
+            filters: activeBrowseFiltersBinding,
+            energyOptions: activeBrowseFilterEnergyOptions,
+            rarityOptions: activeBrowseFilterRarityOptions,
+            trainerTypeOptions: activeBrowseFilterTrainerTypeOptions,
+            isAllBrands: false
         )
-    }
-
-    private func binding(for value: String, keyPath: WritableKeyPath<BrowseCardGridFilters, Set<String>>) -> Binding<Bool> {
-        Binding(
-            get: { browseFilters[keyPath: keyPath].contains(value) },
-            set: { isOn in
-                if isOn { browseFilters[keyPath: keyPath].insert(value) }
-                else { browseFilters[keyPath: keyPath].remove(value) }
-            }
-        )
-    }
-
-    private func binding(for value: Int, keyPath: WritableKeyPath<BrowseCardGridFilters, Set<Int>>) -> Binding<Bool> {
-        Binding(
-            get: { browseFilters[keyPath: keyPath].contains(value) },
-            set: { isOn in
-                if isOn { browseFilters[keyPath: keyPath].insert(value) }
-                else { browseFilters[keyPath: keyPath].remove(value) }
-            }
-        )
-    }
-
-    private func menuTitle(_ title: String, summary: String?) -> String {
-        guard let summary, !summary.isEmpty else { return title }
-        return "\(title) (\(summary))"
-    }
-    private func selectionSummary<T>(for values: Set<T>) -> String? {
-        guard !values.isEmpty else { return nil }
-        if values.count == 1 { return "1 selected" }
-        return "\(values.count) selected"
-    }
-
-    private func combinedSelectionSummary(_ groups: (String, Int)...) -> String? {
-        let active = groups.filter { $0.1 > 0 }
-        guard !active.isEmpty else { return nil }
-        return active.map { "\($0.0) \($0.1)" }.joined(separator: ", ")
     }
 
 }

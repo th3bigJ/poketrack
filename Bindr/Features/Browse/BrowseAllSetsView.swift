@@ -3,6 +3,7 @@ import SwiftUI
 struct BrowseInlineSearchField: View {
     let title: String
     @Binding var text: String
+    private let chromeCornerRadius: CGFloat = 16
 
     var body: some View {
         HStack(spacing: 10) {
@@ -24,7 +25,7 @@ struct BrowseInlineSearchField: View {
         .padding(.horizontal, 14)
         .padding(.vertical, 10)
         .background(
-            RoundedRectangle(cornerRadius: 14, style: .continuous)
+            RoundedRectangle(cornerRadius: chromeCornerRadius, style: .continuous)
                 .fill(Color(uiColor: .secondarySystemFill))
         )
     }
