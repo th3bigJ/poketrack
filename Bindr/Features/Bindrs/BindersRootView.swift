@@ -4,10 +4,12 @@ import SwiftData
 struct BindersRootView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
     @Query(sort: \Binder.createdAt, order: .reverse) private var binders: [Binder]
 
     @Binding var showCreateSheet: Bool
+    @State private var isEditing = false
     @State private var showPaywall = false
     @State private var binderToDelete: Binder?
     @State private var presentedBinder: Binder?
@@ -19,11 +21,11 @@ struct BindersRootView: View {
     }
 
     var body: some View {
-        Group {
-            if binders.isEmpty {
-                ScrollView {
-                    VStack(spacing: 16) {
-                        Color.clear.frame(height: rootFloatingChromeInset)
+        VStack(spacing: 0) {
+            bindersHeader
+            Group {
+                if binders.isEmpty {
+                    ScrollView {
                         ContentUnavailableView {
                             Label("No Binders", systemImage: "books.vertical")
                         } description: {
@@ -32,12 +34,10 @@ struct BindersRootView: View {
                             Button("Create a Binder") { handleCreateTap() }
                                 .buttonStyle(.borderedProminent)
                         }
+                        .frame(minHeight: 300)
                     }
-                }
-            } else if visibleBinders.isEmpty {
-                ScrollView {
-                    VStack(spacing: 16) {
-                        Color.clear.frame(height: rootFloatingChromeInset)
+                } else if visibleBinders.isEmpty {
+                    ScrollView {
                         ContentUnavailableView {
                             Label("No \(activeBrand.displayTitle) Binders", systemImage: "books.vertical")
                         } description: {
@@ -46,18 +46,32 @@ struct BindersRootView: View {
                             Button("Create a Binder") { handleCreateTap() }
                                 .buttonStyle(.borderedProminent)
                         }
+                        .frame(minHeight: 300)
                     }
-                }
-            } else {
-                ScrollView {
-                    VStack(spacing: 0) {
-                        Color.clear.frame(height: rootFloatingChromeInset)
+                } else {
+                    ScrollView {
                         LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 12)], spacing: 12) {
                             ForEach(visibleBinders) { binder in
                                 Button {
                                     presentedBinder = binder
                                 } label: {
-                                    BinderCardCell(binder: binder)
+                                    ZStack(alignment: .topTrailing) {
+                                        BinderCardCell(binder: binder)
+                                        
+                                        if isEditing {
+                                            Button {
+                                                binderToDelete = binder
+                                                showDeleteConfirm = true
+                                            } label: {
+                                                Image(systemName: "minus.circle.fill")
+                                                    .font(.title3)
+                                                    .foregroundStyle(.red)
+                                                    .background(Circle().fill(.white).padding(2))
+                                            }
+                                            .transition(.scale.combined(with: .opacity))
+                                            .padding(8)
+                                        }
+                                    }
                                 }
                                 .buttonStyle(.plain)
                                 .contextMenu {
@@ -71,7 +85,8 @@ struct BindersRootView: View {
                             }
                         }
                         .padding(.horizontal, 16)
-                        .padding(.bottom, 8)
+                        .padding(.top, 12)
+                        .padding(.bottom, 8 + rootFloatingChromeInset)
                     }
                 }
             }
@@ -104,6 +119,50 @@ struct BindersRootView: View {
                 // Silent best-effort cleanup.
             }
         }
+    }
+
+    // MARK: - Header
+
+    private var bindersHeader: some View {
+        ZStack {
+            Text("Binders")
+                .font(.title2.weight(.bold))
+                .foregroundStyle(.primary)
+
+            HStack {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+
+                Spacer()
+
+                HStack(spacing: 8) {
+                    Button {
+                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
+                            isEditing.toggle()
+                        }
+                    } label: {
+                        Image(systemName: isEditing ? "checkmark" : "pencil")
+                            .font(.system(size: 17, weight: .semibold))
+                            .foregroundStyle(.primary)
+                    }
+                    .modifier(ChromeGlassCircleGlyphModifier())
+                    .frame(width: 44, height: 44)
+
+                    ChromeGlassCircleButton(accessibilityLabel: "Create Binder") { handleCreateTap() } label: {
+                        Image(systemName: "plus")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                    }
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
     }
 
     private func handleCreateTap() {
