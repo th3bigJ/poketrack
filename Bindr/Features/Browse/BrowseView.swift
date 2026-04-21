@@ -99,6 +99,15 @@ enum BrowseHomeTab: String, CaseIterable, Identifiable {
     case sealed
 
     var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .cards: return "Cards"
+        case .sets: return "Sets"
+        case .pokemon: return "Pokemon"
+        case .sealed: return "Sealed"
+        }
+    }
 }
 
 enum BrowseInlineDetailRoute: Hashable {
@@ -230,6 +239,9 @@ struct BrowseView: View {
     @State private var isUsingCatalogFeedSelection = false
     @State private var isInlineDetailPresented = false
     @State private var isViewVisible = false
+    @State private var visibleBrowseResultCount = 0
+    @State private var isBrowseBodyReady = false
+    @State private var currentBrand: TCGBrand = .pokemon
 
     private var safeColumnCount: Int {
         min(max(gridOptions.columnCount, 1), 4)
@@ -243,43 +255,40 @@ struct BrowseView: View {
     private static let catalogInitialBatchSize = 36
     private static let pageSize = 18
     private static let prefetchBuffer = 8
-    private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
-    private var shouldUseCatalogFeedForCurrentInputs: Bool {
-        selectedTab == .cards
-            && (!query.isEmpty || filters.hasActiveFieldFilters || filters.hasActiveSort)
-    }
-
-    private var usesCurrentCatalogFeed: Bool {
-        isUsingCatalogFeedSelection
-    }
-
-    private var hasMoreCardsToLoad: Bool {
-        if usesCurrentCatalogFeed {
-            return catalogNextIndex < catalogOrderedRefs.count
-        }
-        return nextRefIndex < shuffledRefs.count
-    }
 
     var body: some View {
-        browseBodyContent
-        .toolbar(.hidden, for: .navigationBar)
+        Group {
+            if isBrowseBodyReady {
+                browseBodyContent
+            } else {
+                ProgressView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
+            }
+        }
         .onAppear {
             isViewVisible = true
             isInlineDetailPresented = (inlineDetailRoute != nil)
-            let brand = services.brandSettings.selectedCatalogBrand
+            currentBrand = services.brandSettings.selectedCatalogBrand
+            if isBrowseBodyReady == false {
+                Task { @MainActor in
+                    await Task.yield()
+                    guard isViewVisible else { return }
+                    isBrowseBodyReady = true
+                }
+            }
+            let brandSnapshot = services.brandSettings.selectedCatalogBrand
             Task { @MainActor in
-                // Defer startup work one turn so we don't read bindings during
-                // SwiftUI's appearance transaction.
                 await Task.yield()
                 guard isViewVisible else { return }
-                await scheduleOwnedCardIDsRefresh(for: brand)
-                await scheduleBrowseInitialization(for: brand)
+                await scheduleOwnedCardIDsRefresh(for: brandSnapshot)
+                await scheduleBrowseInitialization(for: brandSnapshot)
             }
         }
         .onDisappear {
             isViewVisible = false
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, newBrand in
+            currentBrand = newBrand
             Task { @MainActor in
                 await Task.yield()
                 guard isViewVisible else { return }
@@ -287,44 +296,49 @@ struct BrowseView: View {
                 await scheduleBrowseInitialization(for: newBrand)
             }
         }
-        .onChange(of: collectionItems.count) { _, _ in
+        .onChange(of: filters) { _, newFilters in
+            guard !isInlineDetailPresented else { return }
+            let shouldUseCatalogFeed = selectedTab == .cards
+                && (!query.isEmpty || newFilters.hasActiveFieldFilters || newFilters.hasActiveSort)
             Task { @MainActor in
-                await scheduleOwnedCardIDsRefresh(for: activeBrand)
+                await Task.yield()
+                guard isViewVisible else { return }
+                handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeed)
             }
         }
-        .onChange(of: filters) { _, _ in
-            guard !isInlineDetailPresented else { return }
-            handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeedForCurrentInputs)
-        }
-        .onChange(of: inlineDetailFilters) { _, _ in
-            guard isInlineDetailPresented else { return }
-            syncFilterMenuState(usingCatalogFeed: false)
-        }
-        .onChange(of: query) { _, _ in
+        .onChange(of: query) { _, newQuery in
             guard selectedTab == .cards else { return }
-            handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeedForCurrentInputs)
-        }
-        .onChange(of: inlineDetailQuery) { _, _ in
-            guard isInlineDetailPresented else { return }
-            syncFilterMenuState(usingCatalogFeed: false)
+            let shouldUseCatalogFeed = !newQuery.isEmpty || filters.hasActiveFieldFilters || filters.hasActiveSort
+            Task { @MainActor in
+                await Task.yield()
+                guard isViewVisible else { return }
+                handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeed)
+            }
         }
         .onChange(of: selectedTab) { _, newValue in
-            query = ""
-            if tabSupportsInlineDetail(newValue) == false {
-                inlineDetailRoute = nil
-            }
-            if newValue != .cards {
-                isUsingCatalogFeedSelection = false
-                syncFilterMenuState(usingCatalogFeed: false)
-            } else {
-                handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeedForCurrentInputs)
+            Task { @MainActor in
+                await Task.yield()
+                guard isViewVisible else { return }
+                query = ""
+                if tabSupportsInlineDetail(newValue) == false {
+                    inlineDetailRoute = nil
+                }
+                if newValue != .cards {
+                    isUsingCatalogFeedSelection = false
+                    syncFilterMenuState(usingCatalogFeed: false)
+                } else {
+                    let shouldUseCatalogFeed = !query.isEmpty || filters.hasActiveFieldFilters || filters.hasActiveSort
+                    handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeed)
+                }
             }
         }
         .onChange(of: inlineDetailRoute) { _, newValue in
-            isInlineDetailPresented = (newValue != nil)
-            inlineDetailQuery = ""
-            inlineDetailFilters = BrowseCardGridFilters()
-            Task {
+            Task { @MainActor in
+                await Task.yield()
+                guard isViewVisible else { return }
+                isInlineDetailPresented = (newValue != nil)
+                inlineDetailQuery = ""
+                inlineDetailFilters = BrowseCardGridFilters()
                 await loadInlineDetailIfNeeded(route: newValue)
             }
         }
@@ -376,7 +390,7 @@ struct BrowseView: View {
                     selectedTab: selectedTab,
                     query: query,
                     filters: filters,
-                    brand: activeBrand,
+                            brand: currentBrand,
                     ownedCardIDs: ownedCardIDsCache,
                     shouldUseCatalogFeed: true
                 )
@@ -389,24 +403,7 @@ struct BrowseView: View {
     @ViewBuilder
     private var browseBodyContent: some View {
         if selectedTab == .cards {
-            let usesCatalogFeedSnapshot = usesCurrentCatalogFeed
             cardsTabScrollView
-                .refreshable {
-                    await bootstrapFeed(forceReshuffle: true)
-                    if usesCatalogFeedSnapshot {
-                        await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
-                        await rebuildCatalogFeedIfNeeded(
-                            selectedTab: selectedTab,
-                            query: query,
-                            filters: filters,
-                            brand: activeBrand,
-                            ownedCardIDs: ownedCardIDsCache,
-                            shouldUseCatalogFeed: true
-                        )
-                    } else {
-                        await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: false)
-                    }
-                }
         } else {
             auxiliaryTabScrollView
         }
@@ -474,7 +471,7 @@ struct BrowseView: View {
     }
 
     private var browseCardGrid: some View {
-        let usesCatalogFeedSnapshot = usesCurrentCatalogFeed
+        let usesCatalogFeedSnapshot = isUsingCatalogFeedSelection
         return BrowseCardListView(
             cards: browseFeedSnapshot.cards,
             rows: browseFeedSnapshot.rows,
@@ -507,7 +504,7 @@ struct BrowseView: View {
         case .sets:
             return "Search sets"
         case .pokemon:
-            return activeBrand == .pokemon ? "Search Pokémon" : "Search characters or subtypes"
+            return currentBrand == .pokemon ? "Search Pokémon" : "Search characters or subtypes"
         case .sealed:
             return "Search sealed"
         }
@@ -520,7 +517,7 @@ struct BrowseView: View {
         } else {
             Picker("Browse section", selection: $selectedTab) {
                 ForEach(BrowseHomeTab.allCases) { tab in
-                    Text(title(for: tab)).tag(tab)
+                    Text(tab.title).tag(tab)
                 }
             }
             .pickerStyle(.segmented)
@@ -538,6 +535,18 @@ struct BrowseView: View {
             .padding(.bottom, 12)
     }
 
+    @ViewBuilder
+    private var browseResultCountRow: some View {
+        if selectedTab == .cards || isInlineDetailPresented {
+            Text("\(visibleBrowseResultCount) cards")
+                .font(.caption2)
+                .foregroundStyle(.secondary)
+                .frame(maxWidth: .infinity, alignment: .center)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 10)
+        }
+    }
+
     private var cardsTabScrollView: some View {
         ScrollView(showsIndicators: false) {
             VStack(spacing: 0) {
@@ -546,6 +555,7 @@ struct BrowseView: View {
                     .frame(height: rootFloatingChromeInset)
                 browseTabsRow
                 browseSearchRow
+                browseResultCountRow
                 activeTabContent
                 if selectedTab == .cards && isPreparingFilterCatalog {
                     ProgressView("Preparing filters…")
@@ -566,6 +576,7 @@ struct BrowseView: View {
                     .frame(height: rootFloatingChromeInset)
                 browseTabsRow
                 browseSearchRow
+                browseResultCountRow
                 activeTabContent
             }
         }
@@ -650,7 +661,7 @@ struct BrowseView: View {
             query: inlineDetailQuery,
             filters: inlineDetailFilters,
             ownedCardIDs: ownedCardIDsCache,
-            brand: activeBrand,
+            brand: currentBrand,
             sets: services.cardData.sets
         )
     }
@@ -834,7 +845,7 @@ struct BrowseView: View {
         let selectedTabSnapshot = selectedTab
         let querySnapshot = query
         let filtersSnapshot = filters
-        let brandSnapshot = activeBrand
+        let brandSnapshot = currentBrand
         let ownedCardIDsSnapshot = ownedCardIDsCache
         let isUsingCatalogFeed = usingCatalogFeed
         isUsingCatalogFeedSelection = isUsingCatalogFeed
@@ -1119,20 +1130,35 @@ struct BrowseView: View {
     @MainActor
     private func syncFilterMenuState(usingCatalogFeed: Bool? = nil) {
         if isInlineDetailPresented {
-            filterResultCount = filteredInlineDetailCards.count
+            let inlineCount = filteredInlineDetailCards.count
+            visibleBrowseResultCount = inlineCount
+            filterResultCount = inlineCount
             filterEnergyOptions = cardEnergyOptions(inlineDetailCards)
             filterRarityOptions = cardRarityOptions(inlineDetailCards)
             filterTrainerTypeOptions = cardTrainerTypeOptions(inlineDetailCards)
-            inlineDetailFilterResultCount = filteredInlineDetailCards.count
+            inlineDetailFilterResultCount = inlineCount
             inlineDetailFilterEnergyOptions = cardEnergyOptions(inlineDetailCards)
             inlineDetailFilterRarityOptions = cardRarityOptions(inlineDetailCards)
             inlineDetailFilterTrainerTypeOptions = cardTrainerTypeOptions(inlineDetailCards)
             return
         }
-        let isUsingCatalogFeed = usingCatalogFeed ?? usesCurrentCatalogFeed
-        filterResultCount = selectedTab == .cards
-            ? (isUsingCatalogFeed ? catalogOrderedRefs.count : browseFeedSnapshot.cards.count)
-            : 0
+        let isUsingCatalogFeed = usingCatalogFeed ?? isUsingCatalogFeedSelection
+        let hasCardFeedFilters = !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            || filters.hasActiveFieldFilters
+            || filters.hasActiveSort
+        let count: Int
+        if selectedTab != .cards {
+            count = 0
+        } else if isUsingCatalogFeed {
+            count = catalogOrderedRefs.count
+        } else if hasCardFeedFilters == false, shuffledRefs.isEmpty == false {
+            // No filters/search: show total available browse feed size, not just current page.
+            count = shuffledRefs.count
+        } else {
+            count = browseFeedSnapshot.cards.count
+        }
+        visibleBrowseResultCount = count
+        filterResultCount = count
         if allBrowseFilterCards.isEmpty {
             filterEnergyOptions = cardEnergyOptions(browseFeedSnapshot.cards)
             filterRarityOptions = cardRarityOptions(browseFeedSnapshot.cards)
@@ -1141,19 +1167,6 @@ struct BrowseView: View {
             filterEnergyOptions = browseFilterEnergyOptions(allBrowseFilterCards)
             filterRarityOptions = browseFilterRarityOptions(allBrowseFilterCards)
             filterTrainerTypeOptions = browseFilterTrainerTypeOptions(allBrowseFilterCards)
-        }
-    }
-
-    private func title(for tab: BrowseHomeTab) -> String {
-        switch tab {
-        case .cards:
-            return "Cards"
-        case .sets:
-            return "Sets"
-        case .pokemon:
-            return activeBrand == .pokemon ? "Pokemon" : "Characters"
-        case .sealed:
-            return "Sealed"
         }
     }
 

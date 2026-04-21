@@ -13,6 +13,11 @@ struct SettingsView: View {
         services.brandsManifest.brandsAvailableToAdd(enabled: services.brandSettings.enabledBrands)
     }
 
+    /// Enabled brands ordered for user-facing controls.
+    private var sortedEnabledBrands: [TCGBrand] {
+        services.brandsManifest.sortBrands(services.brandSettings.enabledBrands)
+    }
+
     var body: some View {
         List {
             topSections
@@ -92,6 +97,24 @@ struct SettingsView: View {
             case .iCloudAccountUnavailable:
                 Text("You can still use the app offline, but CloudKit sync stays off until this device is signed into iCloud.")
             }
+        }
+
+        Section {
+            Picker(
+                "Active Game",
+                selection: Binding(
+                    get: { services.brandSettings.selectedCatalogBrand },
+                    set: { services.brandSettings.selectedCatalogBrand = $0 }
+                )
+            ) {
+                ForEach(sortedEnabledBrands) { brand in
+                    Text(brand.displayTitle).tag(brand)
+                }
+            }
+        } header: {
+            Text("Active Game")
+        } footer: {
+            Text("Changes which card game is used across browse, collection, and search.")
         }
 
         Section("Pricing") {
@@ -199,17 +222,6 @@ private struct CatalogSection: View {
 
     var body: some View {
         Section {
-            Picker(
-                "Browse",
-                selection: Binding(
-                    get: { services.brandSettings.selectedCatalogBrand },
-                    set: { services.brandSettings.selectedCatalogBrand = $0 }
-                )
-            ) {
-                ForEach(sortedEnabled) { b in
-                    Text(b.displayTitle).tag(b)
-                }
-            }
             ForEach(sortedEnabled) { brand in
                 Text(brand.displayTitle)
             }

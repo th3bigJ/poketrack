@@ -85,6 +85,10 @@ struct CollectView: View {
                     }
                     BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding)
                         .padding(.horizontal, 16)
+                    Text("\(activeFilteredCount) cards")
+                        .font(.caption2)
+                        .foregroundStyle(.secondary)
+                        .frame(maxWidth: .infinity, alignment: .center)
                 }
                 .padding(.bottom, 10)
 
@@ -139,6 +143,10 @@ struct CollectView: View {
 
     private var activeQueryBinding: Binding<String> {
         selectedSegment == .collection ? $collectionQuery : $wishlistQuery
+    }
+
+    private var activeFilteredCount: Int {
+        selectedSegment == .collection ? filteredCollectionItems.count : filteredWishlistItems.count
     }
 
     // MARK: - Content View
