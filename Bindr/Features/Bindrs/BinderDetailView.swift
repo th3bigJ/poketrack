@@ -200,10 +200,11 @@ struct BinderDetailView: View {
         }
         .padding(.horizontal, 16)
         .padding(.top, 10)
-        .padding(.bottom, 6)
+        .padding(.bottom, 8)
         .background(
             Rectangle()
                 .fill(.ultraThinMaterial)
+                .ignoresSafeArea(edges: .bottom)
                 .overlay(alignment: .top) {
                     Divider().opacity(0.6)
                 }
@@ -260,32 +261,31 @@ struct BinderDetailView: View {
 
     private func pagedViewContent(geo: GeometryProxy) -> some View {
         let pageSize = binderPageSize(in: geo.size)
-        return PageCurlView(
-            pageCount: pageCount,
-            currentPage: $currentPage,
-            isTurning: $isPageTurning,
-            // Use the system background so the rounded corners of the binder
-            // surface read as distinct cut-outs (a "card" against the page
-            // chrome) instead of blending into a same-colour rectangle.
-            // Also gives the page-curl effect realistic white page-back.
-            pageBackgroundColor: .systemBackground
-        ) { pageIdx in
-            pageSurface(pageIdx: pageIdx, pageSize: pageSize)
+        return VStack(spacing: 20) {
+            PageCurlView(
+                pageCount: pageCount,
+                currentPage: $currentPage,
+                isTurning: $isPageTurning,
+                pageBackgroundColor: .systemBackground
+            ) { pageIdx in
+                pageSurface(pageIdx: pageIdx, pageSize: pageSize)
+            }
+            .frame(width: pageSize.width, height: pageSize.height)
+            
+            swipeHint
         }
-        .frame(width: pageSize.width, height: pageSize.height)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
 
     private func binderPageSize(in available: CGSize) -> CGSize {
         let horizontalPadding: CGFloat = 32
-        let verticalPadding: CGFloat = 24
+        let verticalPadding: CGFloat = 40 // More vertical breathing room
         let slotSpacing: CGFloat = 8
         // These must match the chrome inside `pageSurface`:
         //   .padding(.horizontal, 14)  →  28pt total
-        //   .padding(.top, 14) + Spacer(min 6) + swipeHint (~20) + .padding(.bottom, 10) ≈ 50pt
-        // Plus a few pts of breathing room so cards never touch the rounded edges.
+        //   .padding(.top, 14) + .padding(.bottom, 14) = 28pt
         let surfaceHorizontalChrome: CGFloat = 28
-        let surfaceVerticalChrome: CGFloat = 60
+        let surfaceVerticalChrome: CGFloat = 28
         let cardAspectRatio: CGFloat = 5.0 / 7.0
 
         let maxWidth = max(available.width - horizontalPadding, 240)
@@ -379,33 +379,24 @@ struct BinderDetailView: View {
             .shadow(color: .black.opacity(0.18), radius: 10, x: 0, y: 6)
 
             // 2. Card grid
-            VStack(spacing: 0) {
-                LazyVGrid(
-                    columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: cols),
-                    spacing: 8
-                ) {
-                    ForEach(positions, id: \.self) { pos in
-                        let slot = sortedSlots.first { $0.position == pos }
-                        Group {
-                            if let slot {
-                                viewSlotCell(slot: slot)
-                            } else {
-                                emptySlotCell(position: pos)
-                            }
+            LazyVGrid(
+                columns: Array(repeating: GridItem(.flexible(), spacing: 8), count: cols),
+                spacing: 8
+            ) {
+                ForEach(positions, id: \.self) { pos in
+                    let slot = sortedSlots.first { $0.position == pos }
+                    Group {
+                        if let slot {
+                            viewSlotCell(slot: slot)
+                        } else {
+                            emptySlotCell(position: pos)
                         }
-                        .aspectRatio(5/7, contentMode: .fit)
                     }
+                    .aspectRatio(5/7, contentMode: .fit)
                 }
-                .padding(.horizontal, 14)
-                .padding(.top, 14)
-
-                Spacer(minLength: 6)
-
-                // 3. Faint swipe hint (present enough to onboard, invisible enough
-                //    to not distract from the cards).
-                swipeHint
-                    .padding(.bottom, 10)
             }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 14)
 
             // 4. Page-turn dimming overlay (existing behaviour)
             if isPageTurning {
@@ -428,7 +419,7 @@ struct BinderDetailView: View {
             Image(systemName: "chevron.right")
                 .font(.system(size: 9, weight: .semibold))
         }
-        .foregroundStyle(Color.white.opacity(0.20))
+        .foregroundStyle(Color.primary.opacity(0.20))
         .frame(maxWidth: .infinity)
     }
 
