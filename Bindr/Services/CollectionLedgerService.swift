@@ -132,6 +132,74 @@ final class CollectionLedgerService {
         try modelContext.save()
     }
 
+    /// Records that a card stack left the collection via sale, trade, or gift.
+    func recordSingleCardDisposition(
+        item: CollectionItem,
+        kind: CollectionDispositionKind,
+        quantity: Int,
+        currencyCode: String,
+        cardDisplayName: String,
+        unitPrice: Double? = nil,
+        counterparty: String? = nil,
+        notes: String? = nil
+    ) throws {
+        guard item.itemKind == ProductKind.singleCard.rawValue || item.itemKind == ProductKind.gradedItem.rawValue else {
+            throw CollectionLedgerError.notSingleCardStack
+        }
+        guard quantity > 0 else { throw CollectionLedgerError.invalidQuantity }
+        guard quantity <= item.quantity else { throw CollectionLedgerError.insufficientQuantity }
+
+        let productKind = item.itemKind
+        let direction = kind.ledgerDirection.rawValue
+        let cleanCounterparty = cleanOptionalString(counterparty)
+        let cleanNotes = cleanOptionalString(notes)
+        let descriptionParts = [cardDisplayName, cleanNotes].compactMap { $0 }
+        let line = LedgerLine(
+            direction: direction,
+            productKind: productKind,
+            lineDescription: descriptionParts.joined(separator: " · "),
+            cardID: item.cardID,
+            variantKey: item.variantKey,
+            gradingCompany: item.gradingCompany,
+            grade: item.grade,
+            quantity: quantity,
+            unitPrice: unitPrice,
+            currencyCode: currencyCode,
+            feesAmount: nil,
+            sealedStatus: SealedInventoryStatus.notApplicable.rawValue,
+            counterparty: cleanCounterparty,
+            channel: dispositionChannel(for: kind),
+            externalRef: nil,
+            transactionGroupId: nil
+        )
+        modelContext.insert(line)
+
+        var remaining = quantity
+        let sortedLots = (item.costLots ?? []).sorted { $0.createdAt < $1.createdAt }
+        for lot in sortedLots where remaining > 0 {
+            guard lot.quantityRemaining > 0 else { continue }
+            let take = min(remaining, lot.quantityRemaining)
+            lot.quantityRemaining -= take
+            remaining -= take
+
+            if kind == .sold {
+                let allocation = SaleAllocation(
+                    quantity: take,
+                    allocatedCost: Double(take) * lot.unitCost,
+                    saleLedgerLine: line,
+                    costLot: lot
+                )
+                modelContext.insert(allocation)
+            } else if lot.quantityRemaining == 0, (lot.saleAllocations ?? []).isEmpty {
+                modelContext.delete(lot)
+            }
+        }
+
+        item.quantity -= quantity
+
+        try modelContext.save()
+    }
+
     private func applyDecreaseSingleCardStack(
         item: CollectionItem,
         unitsToRemove: Int,
@@ -315,6 +383,14 @@ final class CollectionLedgerService {
         return t
     }
 
+    private func dispositionChannel(for kind: CollectionDispositionKind) -> String {
+        switch kind {
+        case .sold: return "sale"
+        case .traded: return "trade"
+        case .gifted: return "gift"
+        }
+    }
+
     private func findOrCreateCardStack(
         cardID: String,
         variantKey: String,
@@ -354,6 +430,7 @@ final class CollectionLedgerService {
 enum CollectionLedgerError: LocalizedError {
     case notSingleCardStack
     case invalidQuantity
+    case insufficientQuantity
 
     var errorDescription: String? {
         switch self {
@@ -361,6 +438,8 @@ enum CollectionLedgerError: LocalizedError {
             return "This edit only applies to single-card stacks."
         case .invalidQuantity:
             return "Quantity must be at least 1."
+        case .insufficientQuantity:
+            return "You don't have that many copies in this stack."
         }
     }
 }

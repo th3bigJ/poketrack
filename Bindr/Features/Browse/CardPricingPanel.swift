@@ -14,6 +14,7 @@ private enum ChartRange: String, CaseIterable {
 
 struct CardPricingPanel: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
 
     let card: Card
     /// Pre-select this variant when the panel first loads. If nil the panel picks its own default.
@@ -107,18 +108,6 @@ struct CardPricingPanel: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // Row 1: variant picker
-            if shouldShowVariantChips {
-                chipPicker(keys: displayedVariants, selected: $selectedVariant) { variantDisplayName($0) }
-                    .padding(.top, 12)
-            }
-
-            // Row 2: grade picker (only when >1 grade available)
-            if gradesForVariant.count > 1 {
-                chipPicker(keys: gradesForVariant, selected: $selectedGrade) { gradeDisplayName($0) }
-                    .padding(.top, 6)
-            }
-
             // Market price / scrub date label
             Text(scrubPoint != nil ? scrubLabel(scrubPoint!.label) : "Market Price")
                 .font(.caption)
@@ -143,6 +132,17 @@ struct CardPricingPanel: View {
                 .padding(.bottom, 4)
             }
 
+            // Variant and grade tags
+            if shouldShowVariantChips {
+                chipPicker(keys: displayedVariants, selected: $selectedVariant) { variantDisplayName($0) }
+                    .padding(.top, 12)
+            }
+
+            if gradesForVariant.count > 1 {
+                chipPicker(keys: gradesForVariant, selected: $selectedGrade) { gradeDisplayName($0) }
+                    .padding(.top, 6)
+            }
+
             // Chart
             if !chartPoints.isEmpty {
                 chartView
@@ -165,6 +165,17 @@ struct CardPricingPanel: View {
                 Spacer().frame(height: 16)
             }
         }
+        .padding(.horizontal, 6)
+        .padding(.vertical, 18)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 26, style: .continuous)
+                .fill(panelCardBackground)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 26, style: .continuous)
+                        .stroke(panelBorder, lineWidth: 1)
+                )
+        )
         .task(id: card.masterCardId) {
             await load()
         }
@@ -189,11 +200,27 @@ struct CardPricingPanel: View {
     // MARK: - Chip styles (system adaptive — matches Settings-style pills)
 
     private func chipBackground(selected: Bool) -> Color {
-        selected ? Color(uiColor: .label) : Color(uiColor: .tertiarySystemFill)
+        selected ? PricingPanelPalette.chartLine : chipIdleBackground
     }
 
     private func chipForeground(selected: Bool) -> Color {
-        selected ? Color(uiColor: .systemBackground) : Color.primary.opacity(0.9)
+        selected ? Color.white : Color.primary.opacity(0.9)
+    }
+
+    private var panelCardBackground: Color {
+        colorScheme == .dark ? .black : .white
+    }
+
+    private var panelBorder: Color {
+        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
+    }
+
+    private var panelDivider: Color {
+        colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10)
+    }
+
+    private var chipIdleBackground: Color {
+        colorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.04)
     }
 
     // MARK: - Chip picker
@@ -232,7 +259,8 @@ struct CardPricingPanel: View {
                 y: .value("Price", point.price)
             )
             .interpolationMethod(.catmullRom)
-            .foregroundStyle(Color.accentColor)
+            .foregroundStyle(PricingPanelPalette.chartLine)
+            .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
 
             AreaMark(
                 x: .value("Date", point.label),
@@ -241,7 +269,7 @@ struct CardPricingPanel: View {
             )
             .interpolationMethod(.catmullRom)
             .foregroundStyle(LinearGradient(
-                colors: [Color.accentColor.opacity(0.22), Color.accentColor.opacity(0.02)],
+                colors: [PricingPanelPalette.chartLine.opacity(0.28), PricingPanelPalette.chartLine.opacity(0.03)],
                 startPoint: .top, endPoint: .bottom
             ))
         }
@@ -260,8 +288,8 @@ struct CardPricingPanel: View {
                         .foregroundStyle(Color(uiColor: .label))
                         .font(.system(size: 9))
                 }
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.5))
-                    .foregroundStyle(Color(uiColor: .separator))
+                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
+                    .foregroundStyle(panelDivider)
             }
         }
         .chartYAxis {
@@ -271,8 +299,8 @@ struct CardPricingPanel: View {
                         .foregroundStyle(Color(uiColor: .label))
                         .font(.system(size: 9))
                 }
-                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.5))
-                    .foregroundStyle(Color(uiColor: .separator))
+                AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
+                    .foregroundStyle(panelDivider)
             }
         }
         .chartOverlay { proxy in
@@ -284,7 +312,7 @@ struct CardPricingPanel: View {
                     if let scrub = scrubPoint, let xPos = proxy.position(forX: scrub.label) {
                         let x = xPos + plotFrame.origin.x
                         Rectangle()
-                            .fill(Color(uiColor: .label).opacity(0.35))
+                            .fill(panelDivider)
                             .frame(width: 1.5)
                             .frame(maxHeight: .infinity)
                             .offset(x: x - 0.75)
@@ -292,7 +320,7 @@ struct CardPricingPanel: View {
 
                         if let yPos = proxy.position(forY: scrub.price) {
                             Circle()
-                                .fill(Color.accentColor)
+                                .fill(PricingPanelPalette.chartLine)
                                 .frame(width: 8, height: 8)
                                 .offset(x: x - 4, y: plotFrame.origin.y + yPos - 4)
                                 .allowsHitTesting(false)
@@ -428,10 +456,13 @@ struct CardPricingPanel: View {
                 Text(String(format: "%.1f%%", abs(value)))
                     .font(.caption.weight(.semibold))
             }
-            .foregroundStyle(value >= 0 ? Color.green : Color.red)
+            .foregroundStyle(value >= 0 ? PricingPanelPalette.success : PricingPanelPalette.danger)
             .padding(.horizontal, 8)
             .padding(.vertical, 4)
-            .background(Capsule().fill((value >= 0 ? Color.green : Color.red).opacity(0.15)))
+            .background(
+                Capsule()
+                    .fill((value >= 0 ? PricingPanelPalette.success : PricingPanelPalette.danger).opacity(0.15))
+            )
         }
     }
 
@@ -533,4 +564,10 @@ struct CardPricingPanel: View {
         default:      return key.uppercased()
         }
     }
+}
+
+private enum PricingPanelPalette {
+    static let chartLine = Color(red: 0.12, green: 0.52, blue: 1.0)
+    static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
+    static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
 }

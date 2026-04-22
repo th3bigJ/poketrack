@@ -101,19 +101,19 @@ struct DashboardView: View {
     }
 
     private var dashboardCardBackground: Color {
-        Color(uiColor: .secondarySystemBackground)
+        colorScheme == .dark ? .black : .white
     }
 
     private var dashboardCardInsetBackground: Color {
-        Color(uiColor: .tertiarySystemFill)
+        colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03)
     }
 
     private var dashboardBorder: Color {
-        Color(uiColor: .separator).opacity(colorScheme == .dark ? 0.28 : 0.16)
+        colorScheme == .dark ? Color.white.opacity(0.12) : Color.black.opacity(0.08)
     }
 
     private var dashboardDividerColor: Color {
-        Color(uiColor: .separator).opacity(colorScheme == .dark ? 0.22 : 0.14)
+        colorScheme == .dark ? Color.white.opacity(0.10) : Color.black.opacity(0.10)
     }
 
     private var backfillTrigger: String {

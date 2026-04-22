@@ -46,6 +46,29 @@ enum CollectionAcquisitionKind: String, CaseIterable, Sendable {
     }
 }
 
+/// How a card leaves the current collection.
+enum CollectionDispositionKind: String, CaseIterable, Sendable {
+    case sold
+    case traded
+    case gifted
+
+    var title: String {
+        switch self {
+        case .sold: return "Sold"
+        case .traded: return "Traded"
+        case .gifted: return "Gifted"
+        }
+    }
+
+    var ledgerDirection: LedgerDirection {
+        switch self {
+        case .sold: return .sold
+        case .traded: return .tradedOut
+        case .gifted: return .giftedOut
+        }
+    }
+}
+
 /// What the line refers to (card, slab, sealed, etc.).
 enum ProductKind: String, Codable, CaseIterable, Sendable {
     case singleCard
