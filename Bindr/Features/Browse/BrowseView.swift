@@ -7,6 +7,8 @@ struct CardGridCell: View {
     let card: Card
     var gridOptions = BrowseGridOptions()
     var setName: String? = nil
+    var isOwned = false
+    var isWishlisted = false
     /// Optional line under the name (e.g. wishlist variant key).
     var footnote: String? = nil
     /// When provided, shown as the price instead of doing a live lookup (used by collection grid to show grade-correct price).
@@ -16,7 +18,11 @@ struct CardGridCell: View {
 
     var body: some View {
         VStack(spacing: 4) {
-            BrowseCardThumbnailView(imageURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc))
+            BrowseCardThumbnailView(
+                imageURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                isOwned: isOwned,
+                isWishlisted: isWishlisted
+            )
             .frame(maxWidth: .infinity)
             .aspectRatio(5/7, contentMode: .fit)
             if gridOptions.showCardName {
@@ -56,21 +62,44 @@ struct CardGridCell: View {
 
 private struct BrowseCardThumbnailView: View {
     let imageURL: URL?
+    var isOwned = false
+    var isWishlisted = false
 
     var body: some View {
-        AsyncImage(url: imageURL, transaction: Transaction(animation: .easeOut(duration: 0.18))) { phase in
-            switch phase {
-            case let .success(image):
-                image
-                    .resizable()
-                    .scaledToFit()
-            case .failure, .empty:
-                Color.gray.opacity(0.12)
-                    .aspectRatio(5 / 7, contentMode: .fit)
-            @unknown default:
-                Color.gray.opacity(0.12)
-                    .aspectRatio(5 / 7, contentMode: .fit)
+        ZStack(alignment: .bottomTrailing) {
+            AsyncImage(url: imageURL, transaction: Transaction(animation: .easeOut(duration: 0.18))) { phase in
+                switch phase {
+                case let .success(image):
+                    image
+                        .resizable()
+                        .scaledToFit()
+                case .failure, .empty:
+                    Color.gray.opacity(0.12)
+                        .aspectRatio(5 / 7, contentMode: .fit)
+                @unknown default:
+                    Color.gray.opacity(0.12)
+                        .aspectRatio(5 / 7, contentMode: .fit)
+                }
             }
+            if isOwned || isWishlisted {
+                browseStatusBadge
+                    .padding(6)
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var browseStatusBadge: some View {
+        if isOwned {
+            Image(systemName: "checkmark.circle.fill")
+                .font(.system(size: 24, weight: .semibold))
+                .foregroundStyle(.white, .green)
+                .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+        } else if isWishlisted {
+            Image(systemName: "star.circle.fill")
+                .font(.system(size: 24, weight: .semibold))
+                .foregroundStyle(.white, .yellow)
+                .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
         }
     }
 }
@@ -136,6 +165,8 @@ private struct BrowseCardListView: View {
     let cards: [Card]
     let rows: [BrowseCardRow]
     let gridOptions: BrowseGridOptions
+    let ownedCardIDs: Set<String>
+    let wishlistedCardIDs: Set<String>
     let isLoadingMore: Bool
     let hasMoreCardsToLoad: Bool
     let presentCard: (Card, [Card]) -> Void
@@ -161,7 +192,9 @@ private struct BrowseCardListView: View {
                         CardGridCell(
                             card: row.card,
                             gridOptions: gridOptions,
-                            setName: row.setName
+                            setName: row.setName,
+                            isOwned: ownedCardIDs.contains(row.card.masterCardId),
+                            isWishlisted: wishlistedCardIDs.contains(row.card.masterCardId)
                         )
                     }
                     .buttonStyle(CardCellButtonStyle())
@@ -194,39 +227,6 @@ private struct BrowseCardListView: View {
     }
 }
 
-// MARK: - Browse feed
-
-@Observable @MainActor fileprivate final class BrowseViewModel {
-    var shuffledRefs: [CardRef] = []
-    var nextRefIndex = 0
-    var displayedCards: [Card] = []
-    var displayedRows: [BrowseCardRow] = []
-    var allBrowseFilterCards: [BrowseFilterCard] = []
-    var catalogOrderedRefs: [CardRef] = []
-    var catalogDisplayedCards: [Card] = []
-    var catalogDisplayedRows: [BrowseCardRow] = []
-    var browseFeedSnapshot = BrowseFeedSnapshot()
-    var catalogNextIndex = 0
-    var isLoadingInitial = true
-    var isLoadingMore = false
-    var isPreparingFilterCatalog = false
-    /// Prevents concurrent full-filter-index loads (background warm vs active filter feed).
-    var isLoadingFullCatalog = false
-    var loadedBrand: TCGBrand?
-    var cachedSetNameByCode: [String: String] = [:]
-    var query = ""
-    var inlineDetailCards: [Card] = []
-    var inlineDetailQuery = ""
-    var inlineDetailLoading = false
-    var ownedCardIDsCache: Set<String> = []
-    var isUsingCatalogFeedSelection = false
-    var isInlineDetailPresented = false
-    var isViewVisible = false
-    var visibleBrowseResultCount = 0
-    var isBrowseBodyReady = false
-    var currentBrand: TCGBrand = .pokemon
-}
-
 @MainActor
 struct BrowseView: View {
     @Environment(AppServices.self) private var services
@@ -250,7 +250,34 @@ struct BrowseView: View {
     @Binding var selectedTab: BrowseHomeTab
     @Binding var inlineDetailRoute: BrowseInlineDetailRoute?
 
-    @State private var model = BrowseViewModel()
+    @State private var shuffledRefs: [CardRef] = []
+    @State private var nextRefIndex = 0
+    @State private var displayedCards: [Card] = []
+    @State private var displayedRows: [BrowseCardRow] = []
+    @State private var allBrowseFilterCards: [BrowseFilterCard] = []
+    @State private var catalogOrderedRefs: [CardRef] = []
+    @State private var catalogDisplayedCards: [Card] = []
+    @State private var catalogDisplayedRows: [BrowseCardRow] = []
+    @State private var browseFeedSnapshot = BrowseFeedSnapshot()
+    @State private var catalogNextIndex = 0
+    @State private var isLoadingInitial = true
+    @State private var isLoadingMore = false
+    @State private var isPreparingFilterCatalog = false
+    /// Prevents concurrent full-filter-index loads (background warm vs active filter feed).
+    @State private var isLoadingFullCatalog = false
+    @State private var loadedBrand: TCGBrand?
+    @State private var cachedSetNameByCode: [String: String] = [:]
+    @State private var query = ""
+    @State private var inlineDetailCards: [Card] = []
+    @State private var inlineDetailQuery = ""
+    @State private var inlineDetailLoading = false
+    @State private var ownedCardIDsCache: Set<String> = []
+    @State private var isUsingCatalogFeedSelection = false
+    @State private var isInlineDetailPresented = false
+    @State private var isViewVisible = false
+    @State private var visibleBrowseResultCount = 0
+    @State private var isBrowseBodyReady = false
+    @State private var currentBrand: TCGBrand = .pokemon
     private let inlineDetailColumns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
 
     private var safeColumnCount: Int {
@@ -261,6 +288,14 @@ struct BrowseView: View {
         Array(repeating: GridItem(.flexible(), spacing: 12), count: safeColumnCount)
     }
 
+    private var visibleWishlistedCardIDs: Set<String> {
+        Set((services.wishlist?.items ?? []).compactMap { item in
+            let cardID = item.cardID
+            let itemBrand = TCGBrand.inferredFromMasterCardId(cardID)
+            return itemBrand == services.brandSettings.selectedCatalogBrand ? cardID : nil
+        })
+    }
+
     private static let initialBatchSize = 36
     private static let catalogInitialBatchSize = 36
     private static let pageSize = 18
@@ -268,7 +303,7 @@ struct BrowseView: View {
 
     var body: some View {
         Group {
-            if model.isBrowseBodyReady {
+            if isBrowseBodyReady {
                 browseBodyContent
             } else {
                 ProgressView()
@@ -276,68 +311,68 @@ struct BrowseView: View {
             }
         }
         .onAppear {
-            model.isViewVisible = true
-            model.isInlineDetailPresented = (inlineDetailRoute != nil)
-            model.currentBrand = services.brandSettings.selectedCatalogBrand
-            if model.isBrowseBodyReady == false {
+            isViewVisible = true
+            isInlineDetailPresented = (inlineDetailRoute != nil)
+            currentBrand = services.brandSettings.selectedCatalogBrand
+            if isBrowseBodyReady == false {
                 Task { @MainActor in
                     await Task.yield()
-                    guard model.isViewVisible else { return }
-                    model.isBrowseBodyReady = true
+                    guard isViewVisible else { return }
+                    isBrowseBodyReady = true
                 }
             }
             let brandSnapshot = services.brandSettings.selectedCatalogBrand
             Task { @MainActor in
                 await Task.yield()
-                guard model.isViewVisible else { return }
+                guard isViewVisible else { return }
                 await scheduleOwnedCardIDsRefresh(for: brandSnapshot)
                 await scheduleBrowseInitialization(for: brandSnapshot)
             }
         }
         .onDisappear {
-            model.isViewVisible = false
+            isViewVisible = false
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, newBrand in
-            model.currentBrand = newBrand
+            currentBrand = newBrand
             Task { @MainActor in
                 await Task.yield()
-                guard model.isViewVisible else { return }
+                guard isViewVisible else { return }
                 await scheduleOwnedCardIDsRefresh(for: newBrand)
                 await scheduleBrowseInitialization(for: newBrand)
             }
         }
         .onChange(of: filters) { _, newFilters in
-            guard !model.isInlineDetailPresented else { return }
+            guard !isInlineDetailPresented else { return }
             let shouldUseCatalogFeed = selectedTab == .cards
-                && (!model.query.isEmpty || newFilters.hasActiveFieldFilters || newFilters.hasActiveSort)
+                && (!query.isEmpty || newFilters.hasActiveFieldFilters || newFilters.hasActiveSort)
             Task { @MainActor in
                 await Task.yield()
-                guard model.isViewVisible else { return }
+                guard isViewVisible else { return }
                 handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeed)
             }
         }
-        .onChange(of: model.query) { _, newQuery in
+        .onChange(of: query) { _, newQuery in
             guard selectedTab == .cards else { return }
             let shouldUseCatalogFeed = !newQuery.isEmpty || filters.hasActiveFieldFilters || filters.hasActiveSort
             Task { @MainActor in
                 await Task.yield()
-                guard model.isViewVisible else { return }
+                guard isViewVisible else { return }
                 handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeed)
             }
         }
         .onChange(of: selectedTab) { _, newValue in
             Task { @MainActor in
                 await Task.yield()
-                guard model.isViewVisible else { return }
-                model.query = ""
+                guard isViewVisible else { return }
+                query = ""
                 if tabSupportsInlineDetail(newValue) == false {
                     inlineDetailRoute = nil
                 }
                 if newValue != .cards {
-                    model.isUsingCatalogFeedSelection = false
+                    isUsingCatalogFeedSelection = false
                     syncFilterMenuState(usingCatalogFeed: false)
                 } else {
-                    let shouldUseCatalogFeed = !model.query.isEmpty || filters.hasActiveFieldFilters || filters.hasActiveSort
+                    let shouldUseCatalogFeed = !query.isEmpty || filters.hasActiveFieldFilters || filters.hasActiveSort
                     handleBrowseFiltersChanged(usingCatalogFeed: shouldUseCatalogFeed)
                 }
             }
@@ -345,9 +380,9 @@ struct BrowseView: View {
         .onChange(of: inlineDetailRoute) { _, newValue in
             Task { @MainActor in
                 await Task.yield()
-                guard model.isViewVisible else { return }
-                model.isInlineDetailPresented = (newValue != nil)
-                model.inlineDetailQuery = ""
+                guard isViewVisible else { return }
+                isInlineDetailPresented = (newValue != nil)
+                inlineDetailQuery = ""
                 inlineDetailFilters = BrowseCardGridFilters()
                 await loadInlineDetailIfNeeded(route: newValue)
             }
@@ -356,9 +391,9 @@ struct BrowseView: View {
 
     @MainActor
     private func scheduleBrowseInitialization(for selectedBrand: TCGBrand) async {
-        guard model.isViewVisible else { return }
+        guard isViewVisible else { return }
         let selectedTabSnapshot = selectedTab
-        let querySnapshot = model.query
+        let querySnapshot = query
         // Avoid reading filter bindings during immediate appearance updates.
         // The active filters/query pipeline will reconcile right after startup.
         let filtersSnapshot = BrowseCardGridFilters()
@@ -367,7 +402,7 @@ struct BrowseView: View {
         // later through the normal change handlers once the view is stable.
         let ownedCardIDsSnapshot: Set<String> = []
         let shouldUseCatalogFeedOnStartup = false
-        model.isUsingCatalogFeedSelection = shouldUseCatalogFeedOnStartup
+        isUsingCatalogFeedSelection = shouldUseCatalogFeedOnStartup
         await initializeBrowseData(
             for: selectedBrand,
             selectedTabSnapshot: selectedTabSnapshot,
@@ -380,28 +415,28 @@ struct BrowseView: View {
 
     @MainActor
     private func scheduleOwnedCardIDsRefresh(for brand: TCGBrand) async {
-        guard model.isViewVisible else { return }
+        guard isViewVisible else { return }
         await Task.yield()
-        guard model.isViewVisible else { return }
-        model.ownedCardIDsCache = Set(collectionItems.compactMap { item in
+        guard isViewVisible else { return }
+        ownedCardIDsCache = Set(collectionItems.compactMap { item in
             let itemBrand = TCGBrand.inferredFromMasterCardId(item.cardID)
             return itemBrand == brand ? item.cardID : nil
         })
-        if model.isInlineDetailPresented {
+        if isInlineDetailPresented {
             syncFilterMenuState(usingCatalogFeed: false)
         } else {
             // Avoid re-entering the feed-selection decision path from the
             // ownership refresh task; preserve current feed mode and only
             // rebuild catalog results when that mode is already active.
-            if model.isUsingCatalogFeedSelection {
-                guard model.isViewVisible else { return }
+            if isUsingCatalogFeedSelection {
+                guard isViewVisible else { return }
                 await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: false)
                 await rebuildCatalogFeedIfNeeded(
                     selectedTab: selectedTab,
-                    query: model.query,
+                    query: query,
                     filters: filters,
-                            brand: model.currentBrand,
-                    ownedCardIDs: model.ownedCardIDsCache,
+                    brand: currentBrand,
+                    ownedCardIDs: ownedCardIDsCache,
                     shouldUseCatalogFeed: true
                 )
             } else {
@@ -428,42 +463,42 @@ struct BrowseView: View {
         ownedCardIDsSnapshot: Set<String>,
         shouldUseCatalogFeedOnStartup: Bool
     ) async {
-        guard model.isViewVisible else { return }
-        if model.loadedBrand != selectedBrand {
-            model.shuffledRefs = []
-            model.nextRefIndex = 0
-            model.displayedCards = []
-            model.displayedRows = []
-            model.allBrowseFilterCards = []
-            model.catalogOrderedRefs = []
-            model.catalogDisplayedCards = []
-            model.catalogDisplayedRows = []
-            model.browseFeedSnapshot = BrowseFeedSnapshot()
-            model.catalogNextIndex = 0
-            model.isLoadingInitial = true
+        guard isViewVisible else { return }
+        if loadedBrand != selectedBrand {
+            shuffledRefs = []
+            nextRefIndex = 0
+            displayedCards = []
+            displayedRows = []
+            allBrowseFilterCards = []
+            catalogOrderedRefs = []
+            catalogDisplayedCards = []
+            catalogDisplayedRows = []
+            browseFeedSnapshot = BrowseFeedSnapshot()
+            catalogNextIndex = 0
+            isLoadingInitial = true
 
             // The root startup pipeline already refreshes catalog data.
             // Browse only needs to ensure the selected brand's sets are present.
             services.cardData.resetBrowseFeedSessionOnly()
             await services.cardData.loadSets(preferSyncedCatalog: true)
-            guard model.isViewVisible else { return }
-            model.cachedSetNameByCode = firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
-            model.loadedBrand = selectedBrand
-        } else if model.cachedSetNameByCode.isEmpty, services.cardData.sets.isEmpty == false {
-            model.cachedSetNameByCode = firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
+            guard isViewVisible else { return }
+            cachedSetNameByCode = firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
+            loadedBrand = selectedBrand
+        } else if cachedSetNameByCode.isEmpty, services.cardData.sets.isEmpty == false {
+            cachedSetNameByCode = firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
         }
 
         await Task.yield()
         await Task.yield()
-        guard model.isViewVisible else { return }
+        guard isViewVisible else { return }
         await bootstrapFeed(forceReshuffle: false)
-        guard model.isViewVisible else { return }
+        guard isViewVisible else { return }
         if shouldUseCatalogFeedOnStartup {
             await ensureAllBrowseFilterCardsLoaded(
                 showsPreparingBanner: true,
                 usingCatalogFeed: true
             )
-            guard model.isViewVisible else { return }
+            guard isViewVisible else { return }
             await rebuildCatalogFeedIfNeeded(
                 selectedTab: selectedTabSnapshot,
                 query: querySnapshot,
@@ -481,13 +516,15 @@ struct BrowseView: View {
     }
 
     private var browseCardGrid: some View {
-        let usesCatalogFeedSnapshot = model.isUsingCatalogFeedSelection
+        let usesCatalogFeedSnapshot = isUsingCatalogFeedSelection
         return BrowseCardListView(
-            cards: model.browseFeedSnapshot.cards,
-            rows: model.browseFeedSnapshot.rows,
+            cards: browseFeedSnapshot.cards,
+            rows: browseFeedSnapshot.rows,
             gridOptions: gridOptions,
-            isLoadingMore: model.isLoadingMore,
-            hasMoreCardsToLoad: model.browseFeedSnapshot.hasMoreCardsToLoad,
+            ownedCardIDs: ownedCardIDsCache,
+            wishlistedCardIDs: visibleWishlistedCardIDs,
+            isLoadingMore: isLoadingMore,
+            hasMoreCardsToLoad: browseFeedSnapshot.hasMoreCardsToLoad,
             presentCard: presentCard,
             onLoadMore: {
                 Task { await loadNextPageIfNeeded(usingCatalogFeed: usesCatalogFeedSnapshot) }
@@ -514,7 +551,7 @@ struct BrowseView: View {
         case .sets:
             return "Search sets"
         case .pokemon:
-            return model.currentBrand == .pokemon ? "Search Pokémon" : "Search characters or subtypes"
+            return currentBrand == .pokemon ? "Search Pokémon" : "Search characters or subtypes"
         case .sealed:
             return "Search sealed"
         }
@@ -522,7 +559,7 @@ struct BrowseView: View {
 
     @ViewBuilder
     private var browseTabsRow: some View {
-        if model.isInlineDetailPresented {
+        if isInlineDetailPresented {
             EmptyView()
         } else {
             Picker("Browse section", selection: $selectedTab) {
@@ -539,7 +576,7 @@ struct BrowseView: View {
     private var browseSearchRow: some View {
         BrowseInlineSearchField(
             title: browseSearchPlaceholder,
-            text: model.isInlineDetailPresented ? Binding(get: { model.inlineDetailQuery }, set: { model.inlineDetailQuery = $0 }) : Binding(get: { model.query }, set: { model.query = $0 })
+            text: isInlineDetailPresented ? $inlineDetailQuery : $query
         )
             .padding(.horizontal, 16)
             .padding(.bottom, 12)
@@ -547,8 +584,8 @@ struct BrowseView: View {
 
     @ViewBuilder
     private var browseResultCountRow: some View {
-        if selectedTab == .cards || model.isInlineDetailPresented {
-            Text("\(model.visibleBrowseResultCount) cards")
+        if selectedTab == .cards || isInlineDetailPresented {
+            Text("\(visibleBrowseResultCount) cards")
                 .font(.caption2)
                 .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .center)
@@ -567,12 +604,12 @@ struct BrowseView: View {
                 browseSearchRow
                 browseResultCountRow
                 activeTabContent
-                if selectedTab == .cards && model.isPreparingFilterCatalog {
+                if selectedTab == .cards && isPreparingFilterCatalog {
                     ProgressView("Preparing filters…")
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
                 }
-                if selectedTab == .cards && model.isLoadingMore {
+                if selectedTab == .cards && isLoadingMore {
                     ProgressView().frame(maxWidth: .infinity).padding(.vertical, 12)
                 }
             }
@@ -607,7 +644,7 @@ struct BrowseView: View {
             if let inlineDetailRoute {
                 inlineDetailContent(route: inlineDetailRoute)
             } else {
-                BrowseSetsTabContent(query: model.query) { set in
+                BrowseSetsTabContent(query: query) { set in
                     inlineDetailRoute = .set(set)
                 }
             }
@@ -615,7 +652,7 @@ struct BrowseView: View {
             if let inlineDetailRoute {
                 inlineDetailContent(route: inlineDetailRoute)
             } else {
-                BrowsePokemonTabContent(query: model.query) { route in
+                BrowsePokemonTabContent(query: query) { route in
                     inlineDetailRoute = route
                 }
             }
@@ -634,16 +671,16 @@ struct BrowseView: View {
     @ViewBuilder
     private func inlineDetailContent(route: BrowseInlineDetailRoute) -> some View {
         let filteredCards = filteredInlineDetailCards
-        if model.inlineDetailLoading {
+        if inlineDetailLoading {
             ProgressView("Loading cards…")
                 .frame(maxWidth: .infinity, minHeight: 280)
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
         } else if filteredCards.isEmpty {
             ContentUnavailableView(
-                model.inlineDetailCards.isEmpty ? "No cards found" : "No matching cards",
+                inlineDetailCards.isEmpty ? "No cards found" : "No matching cards",
                 systemImage: "magnifyingglass",
-                description: Text(model.inlineDetailCards.isEmpty ? "No cards were found for \(route.title)." : "Try a different card name or number.")
+                description: Text(inlineDetailCards.isEmpty ? "No cards were found for \(route.title)." : "Try a different card name or number.")
             )
             .frame(maxWidth: .infinity, minHeight: 280)
             .padding(.horizontal, 16)
@@ -657,7 +694,9 @@ struct BrowseView: View {
                         CardGridCell(
                             card: card,
                             gridOptions: gridOptions,
-                            setName: model.cachedSetNameByCode[card.setCode]
+                            setName: cachedSetNameByCode[card.setCode],
+                            isOwned: ownedCardIDsCache.contains(card.masterCardId),
+                            isWishlisted: visibleWishlistedCardIDs.contains(card.masterCardId)
                         )
                     }
                     .buttonStyle(CardCellButtonStyle())
@@ -673,23 +712,23 @@ struct BrowseView: View {
 
     private var filteredInlineDetailCards: [Card] {
         filterBrowseCards(
-            model.inlineDetailCards,
-            query: model.inlineDetailQuery,
+            inlineDetailCards,
+            query: inlineDetailQuery,
             filters: inlineDetailFilters,
-            ownedCardIDs: model.ownedCardIDsCache,
-            brand: model.currentBrand,
+            ownedCardIDs: ownedCardIDsCache,
+            brand: currentBrand,
             sets: services.cardData.sets
         )
     }
 
     @ViewBuilder
     private var browseCardsContent: some View {
-        if model.isLoadingInitial {
+        if isLoadingInitial {
             ProgressView("Loading cards…")
                 .frame(maxWidth: .infinity, minHeight: 280)
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
-        } else if model.displayedCards.isEmpty {
+        } else if displayedCards.isEmpty {
             VStack(alignment: .leading, spacing: 8) {
                 Text("No cards in the catalog yet.")
                     .foregroundStyle(.secondary)
@@ -712,73 +751,73 @@ struct BrowseView: View {
 
     @MainActor
     private func bootstrapFeed(forceReshuffle: Bool) async {
-        guard model.isViewVisible else { return }
-        if !forceReshuffle && !model.displayedCards.isEmpty { return }
+        guard isViewVisible else { return }
+        if !forceReshuffle && !displayedCards.isEmpty { return }
         ImagePrefetcher.shared.cancelAll()
-        model.isLoadingInitial = true
+        isLoadingInitial = true
         let refs = await services.cardData.browseFeedCardRefs(forceReshuffle: forceReshuffle)
-        guard model.isViewVisible else { return }
-        model.shuffledRefs = refs
-        model.nextRefIndex = 0
-        model.displayedCards = []
-        guard !refs.isEmpty else { model.isLoadingInitial = false; return }
+        guard isViewVisible else { return }
+        shuffledRefs = refs
+        nextRefIndex = 0
+        displayedCards = []
+        guard !refs.isEmpty else { isLoadingInitial = false; return }
         let firstEnd = min(Self.initialBatchSize, refs.count)
         let batch = Array(refs[..<firstEnd])
-        model.nextRefIndex = firstEnd
-        model.displayedCards = await services.cardData.cardsInOrder(refs: batch)
-        guard model.isViewVisible else { return }
-        model.displayedRows = buildBrowseRows(from: model.displayedCards)
-        model.allBrowseFilterCards = []
-        model.catalogOrderedRefs = []
-        model.catalogDisplayedCards = []
-        model.catalogDisplayedRows = []
-        model.catalogNextIndex = 0
+        nextRefIndex = firstEnd
+        displayedCards = await services.cardData.cardsInOrder(refs: batch)
+        guard isViewVisible else { return }
+        displayedRows = buildBrowseRows(from: displayedCards)
+        allBrowseFilterCards = []
+        catalogOrderedRefs = []
+        catalogDisplayedCards = []
+        catalogDisplayedRows = []
+        catalogNextIndex = 0
         refreshBrowseFeedSnapshot(usingCatalogFeed: false)
-        model.isLoadingInitial = false
-        ImagePrefetcher.shared.prefetchCardWindow(model.displayedCards, startingAt: 0, count: 24)
+        isLoadingInitial = false
+        ImagePrefetcher.shared.prefetchCardWindow(displayedCards, startingAt: 0, count: 24)
         prefetchNextWindow(usingCatalogFeed: false)
         syncFilterMenuState(usingCatalogFeed: false)
     }
 
     @MainActor
     private func loadNextPageIfNeeded(usingCatalogFeed: Bool) async {
-        guard model.isViewVisible else { return }
-        guard !model.isLoadingMore else { return }
+        guard isViewVisible else { return }
+        guard !isLoadingMore else { return }
         if usingCatalogFeed {
-            guard model.catalogNextIndex < model.catalogOrderedRefs.count else { return }
-            model.isLoadingMore = true
-            let end = min(model.catalogNextIndex + Self.pageSize, model.catalogOrderedRefs.count)
-            let batch = Array(model.catalogOrderedRefs[model.catalogNextIndex..<end])
-            model.catalogNextIndex = end
+            guard catalogNextIndex < catalogOrderedRefs.count else { return }
+            isLoadingMore = true
+            let end = min(catalogNextIndex + Self.pageSize, catalogOrderedRefs.count)
+            let batch = Array(catalogOrderedRefs[catalogNextIndex..<end])
+            catalogNextIndex = end
             let more = await services.cardData.cardsInOrder(refs: batch)
-            guard model.isViewVisible else { return }
-            model.catalogDisplayedCards.append(contentsOf: more)
-            model.catalogDisplayedRows = buildBrowseRows(from: model.catalogDisplayedCards)
+            guard isViewVisible else { return }
+            catalogDisplayedCards.append(contentsOf: more)
+            catalogDisplayedRows = buildBrowseRows(from: catalogDisplayedCards)
             refreshBrowseFeedSnapshot(usingCatalogFeed: true)
-            model.isLoadingMore = false
+            isLoadingMore = false
             syncFilterMenuState(usingCatalogFeed: true)
             return
         }
-        guard model.nextRefIndex < model.shuffledRefs.count else { return }
-        model.isLoadingMore = true
-        let end = min(model.nextRefIndex + Self.pageSize, model.shuffledRefs.count)
-        let batch = Array(model.shuffledRefs[model.nextRefIndex..<end])
-        model.nextRefIndex = end
+        guard nextRefIndex < shuffledRefs.count else { return }
+        isLoadingMore = true
+        let end = min(nextRefIndex + Self.pageSize, shuffledRefs.count)
+        let batch = Array(shuffledRefs[nextRefIndex..<end])
+        nextRefIndex = end
         let more = await services.cardData.cardsInOrder(refs: batch)
-        guard model.isViewVisible else { return }
-        model.displayedCards.append(contentsOf: more)
-        model.displayedRows = buildBrowseRows(from: model.displayedCards)
+        guard isViewVisible else { return }
+        displayedCards.append(contentsOf: more)
+        displayedRows = buildBrowseRows(from: displayedCards)
         refreshBrowseFeedSnapshot(usingCatalogFeed: false)
-        model.isLoadingMore = false
+        isLoadingMore = false
         prefetchNextWindow(usingCatalogFeed: false)
         syncFilterMenuState(usingCatalogFeed: false)
     }
 
     private func prefetchNextWindow(usingCatalogFeed: Bool) {
         guard usingCatalogFeed == false else { return }
-        let end = min(model.nextRefIndex + Self.pageSize, model.shuffledRefs.count)
-        guard model.nextRefIndex < end else { return }
-        let upcoming = Array(model.shuffledRefs[model.nextRefIndex..<end])
+        let end = min(nextRefIndex + Self.pageSize, shuffledRefs.count)
+        guard nextRefIndex < end else { return }
+        let upcoming = Array(shuffledRefs[nextRefIndex..<end])
         Task(priority: .low) {
             let cards = await services.cardData.cardsInOrder(refs: upcoming)
             let urls = cards.map { AppConfiguration.imageURL(relativePath: $0.imageLowSrc) }
@@ -791,22 +830,22 @@ struct BrowseView: View {
         showsPreparingBanner: Bool = true,
         usingCatalogFeed: Bool? = nil
     ) async {
-        guard model.isViewVisible else { return }
-        if !model.allBrowseFilterCards.isEmpty { return }
-        while model.isLoadingFullCatalog {
+        guard isViewVisible else { return }
+        if !allBrowseFilterCards.isEmpty { return }
+        while isLoadingFullCatalog {
             try? await Task.sleep(nanoseconds: 25_000_000)
         }
-        if !model.allBrowseFilterCards.isEmpty { return }
-        model.isLoadingFullCatalog = true
+        if !allBrowseFilterCards.isEmpty { return }
+        isLoadingFullCatalog = true
         if showsPreparingBanner {
-            model.isPreparingFilterCatalog = true
+            isPreparingFilterCatalog = true
         }
         let loaded = await services.cardData.loadAllBrowseFilterCards()
-        guard model.isViewVisible else { return }
-        model.allBrowseFilterCards = loaded
-        model.isLoadingFullCatalog = false
+        guard isViewVisible else { return }
+        allBrowseFilterCards = loaded
+        isLoadingFullCatalog = false
         if showsPreparingBanner {
-            model.isPreparingFilterCatalog = false
+            isPreparingFilterCatalog = false
         }
         syncFilterMenuState(usingCatalogFeed: usingCatalogFeed)
     }
@@ -820,51 +859,51 @@ struct BrowseView: View {
         ownedCardIDs: Set<String>,
         shouldUseCatalogFeed: Bool
     ) async {
-        guard model.isViewVisible else { return }
+        guard isViewVisible else { return }
         if shouldUseCatalogFeed == false {
-            model.isUsingCatalogFeedSelection = false
-            model.catalogOrderedRefs = []
-            model.catalogDisplayedCards = []
-            model.catalogDisplayedRows = []
-            model.catalogNextIndex = 0
+            isUsingCatalogFeedSelection = false
+            catalogOrderedRefs = []
+            catalogDisplayedCards = []
+            catalogDisplayedRows = []
+            catalogNextIndex = 0
             refreshBrowseFeedSnapshot(usingCatalogFeed: false)
             syncFilterMenuState(usingCatalogFeed: false)
             return
         }
-        guard !model.allBrowseFilterCards.isEmpty else { return }
+        guard !allBrowseFilterCards.isEmpty else { return }
         let ordered = await orderedFilteredRefs(
-            from: model.allBrowseFilterCards,
+            from: allBrowseFilterCards,
             query: query,
             filters: filters,
             brand: brand,
             ownedCardIDs: ownedCardIDs
         )
-        guard model.isViewVisible else { return }
-        model.isUsingCatalogFeedSelection = true
-        model.catalogOrderedRefs = ordered
+        guard isViewVisible else { return }
+        isUsingCatalogFeedSelection = true
+        catalogOrderedRefs = ordered
         let initialEnd = min(Self.catalogInitialBatchSize, ordered.count)
         let initialRefs = Array(ordered.prefix(initialEnd))
-        model.catalogDisplayedCards = await services.cardData.cardsInOrder(refs: initialRefs)
-        guard model.isViewVisible else { return }
-        model.catalogDisplayedRows = buildBrowseRows(from: model.catalogDisplayedCards)
-        model.catalogNextIndex = initialEnd
+        catalogDisplayedCards = await services.cardData.cardsInOrder(refs: initialRefs)
+        guard isViewVisible else { return }
+        catalogDisplayedRows = buildBrowseRows(from: catalogDisplayedCards)
+        catalogNextIndex = initialEnd
         refreshBrowseFeedSnapshot(usingCatalogFeed: true)
         syncFilterMenuState(usingCatalogFeed: true)
     }
 
     @MainActor
     private func handleBrowseFiltersChanged(usingCatalogFeed: Bool) {
-        if model.isInlineDetailPresented {
+        if isInlineDetailPresented {
             syncFilterMenuState(usingCatalogFeed: false)
             return
         }
         let selectedTabSnapshot = selectedTab
-        let querySnapshot = model.query
+        let querySnapshot = query
         let filtersSnapshot = filters
-        let brandSnapshot = model.currentBrand
-        let ownedCardIDsSnapshot = model.ownedCardIDsCache
+        let brandSnapshot = currentBrand
+        let ownedCardIDsSnapshot = ownedCardIDsCache
         let isUsingCatalogFeed = usingCatalogFeed
-        model.isUsingCatalogFeedSelection = isUsingCatalogFeed
+        self.isUsingCatalogFeedSelection = isUsingCatalogFeed
         if isUsingCatalogFeed {
             Task {
                 await ensureAllBrowseFilterCardsLoaded(showsPreparingBanner: true)
@@ -878,10 +917,10 @@ struct BrowseView: View {
                 )
             }
         } else {
-            model.catalogOrderedRefs = []
-            model.catalogDisplayedCards = []
-            model.catalogDisplayedRows = []
-            model.catalogNextIndex = 0
+            catalogOrderedRefs = []
+            catalogDisplayedCards = []
+            catalogDisplayedRows = []
+            catalogNextIndex = 0
             refreshBrowseFeedSnapshot(usingCatalogFeed: false)
             syncFilterMenuState(usingCatalogFeed: false)
         }
@@ -889,22 +928,22 @@ struct BrowseView: View {
 
     private func refreshBrowseFeedSnapshot(usingCatalogFeed: Bool) {
         if usingCatalogFeed {
-            model.browseFeedSnapshot = BrowseFeedSnapshot(
-                cards: model.catalogDisplayedCards,
-                rows: model.catalogDisplayedRows,
-                hasMoreCardsToLoad: model.catalogNextIndex < model.catalogOrderedRefs.count
+            browseFeedSnapshot = BrowseFeedSnapshot(
+                cards: catalogDisplayedCards,
+                rows: catalogDisplayedRows,
+                hasMoreCardsToLoad: catalogNextIndex < catalogOrderedRefs.count
             )
         } else {
-            model.browseFeedSnapshot = BrowseFeedSnapshot(
-                cards: model.displayedCards,
-                rows: model.displayedRows,
-                hasMoreCardsToLoad: model.nextRefIndex < model.shuffledRefs.count
+            browseFeedSnapshot = BrowseFeedSnapshot(
+                cards: displayedCards,
+                rows: displayedRows,
+                hasMoreCardsToLoad: nextRefIndex < shuffledRefs.count
             )
         }
     }
 
     private func buildBrowseRows(from cards: [Card]) -> [BrowseCardRow] {
-        let setNames = model.cachedSetNameByCode
+        let setNames = cachedSetNameByCode
         var rows: [BrowseCardRow] = []
         rows.reserveCapacity(cards.count)
         for (index, card) in cards.enumerated() {
@@ -936,7 +975,7 @@ struct BrowseView: View {
         switch filters.sortBy {
         case .random, .acquiredDateNewest:
             let filteredIDs = Set(filtered.map(\.masterCardId))
-            let shuffled = model.shuffledRefs.filter { filteredIDs.contains($0.masterCardId) }
+            let shuffled = shuffledRefs.filter { filteredIDs.contains($0.masterCardId) }
             let covered = Set(shuffled.map(\.masterCardId))
             let remainder = Array(filtered.lazy.filter { !covered.contains($0.masterCardId) }.map(\.ref))
             return shuffled + remainder
@@ -1145,44 +1184,41 @@ struct BrowseView: View {
 
     @MainActor
     private func syncFilterMenuState(usingCatalogFeed: Bool? = nil) {
-        if model.isInlineDetailPresented {
+        if isInlineDetailPresented {
             let inlineCount = filteredInlineDetailCards.count
-            model.visibleBrowseResultCount = inlineCount
+            visibleBrowseResultCount = inlineCount
             filterResultCount = inlineCount
-            filterEnergyOptions = cardEnergyOptions(model.inlineDetailCards)
-            filterRarityOptions = cardRarityOptions(model.inlineDetailCards)
-            filterTrainerTypeOptions = cardTrainerTypeOptions(model.inlineDetailCards)
+            filterEnergyOptions = cardEnergyOptions(inlineDetailCards)
+            filterRarityOptions = cardRarityOptions(inlineDetailCards)
+            filterTrainerTypeOptions = cardTrainerTypeOptions(inlineDetailCards)
             inlineDetailFilterResultCount = inlineCount
-            inlineDetailFilterEnergyOptions = cardEnergyOptions(model.inlineDetailCards)
-            inlineDetailFilterRarityOptions = cardRarityOptions(model.inlineDetailCards)
-            inlineDetailFilterTrainerTypeOptions = cardTrainerTypeOptions(model.inlineDetailCards)
             return
         }
-        let isUsingCatalogFeed = usingCatalogFeed ?? model.isUsingCatalogFeedSelection
-        let hasCardFeedFilters = !model.query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+        let isUsingCatalogFeed = usingCatalogFeed ?? isUsingCatalogFeedSelection
+        let hasCardFeedFilters = !query.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
             || filters.hasActiveFieldFilters
             || filters.hasActiveSort
         let count: Int
         if selectedTab != .cards {
             count = 0
         } else if isUsingCatalogFeed {
-            count = model.catalogOrderedRefs.count
-        } else if hasCardFeedFilters == false, model.shuffledRefs.isEmpty == false {
+            count = catalogOrderedRefs.count
+        } else if hasCardFeedFilters == false, shuffledRefs.isEmpty == false {
             // No filters/search: show total available browse feed size, not just current page.
-            count = model.shuffledRefs.count
+            count = shuffledRefs.count
         } else {
-            count = model.browseFeedSnapshot.cards.count
+            count = browseFeedSnapshot.cards.count
         }
-        model.visibleBrowseResultCount = count
+        visibleBrowseResultCount = count
         filterResultCount = count
-        if model.allBrowseFilterCards.isEmpty {
-            filterEnergyOptions = cardEnergyOptions(model.browseFeedSnapshot.cards)
-            filterRarityOptions = cardRarityOptions(model.browseFeedSnapshot.cards)
+        if allBrowseFilterCards.isEmpty {
+            filterEnergyOptions = cardEnergyOptions(browseFeedSnapshot.cards)
+            filterRarityOptions = cardRarityOptions(browseFeedSnapshot.cards)
             filterTrainerTypeOptions = []
         } else {
-            filterEnergyOptions = browseFilterEnergyOptions(model.allBrowseFilterCards)
-            filterRarityOptions = browseFilterRarityOptions(model.allBrowseFilterCards)
-            filterTrainerTypeOptions = browseFilterTrainerTypeOptions(model.allBrowseFilterCards)
+            filterEnergyOptions = browseFilterEnergyOptions(allBrowseFilterCards)
+            filterRarityOptions = browseFilterRarityOptions(allBrowseFilterCards)
+            filterTrainerTypeOptions = browseFilterTrainerTypeOptions(allBrowseFilterCards)
         }
     }
 
@@ -1198,28 +1234,28 @@ struct BrowseView: View {
     @MainActor
     private func loadInlineDetailIfNeeded(route: BrowseInlineDetailRoute?) async {
         guard let route else {
-            model.inlineDetailCards = []
-            model.inlineDetailLoading = false
+            inlineDetailCards = []
+            inlineDetailLoading = false
             syncFilterMenuState(usingCatalogFeed: false)
             return
         }
 
-        model.inlineDetailLoading = true
-        defer { model.inlineDetailLoading = false }
+        inlineDetailLoading = true
+        defer { inlineDetailLoading = false }
 
         switch route {
         case .set(let set):
             let loaded = await services.cardData.loadCards(forSetCode: set.setCode)
-            model.inlineDetailCards = sortCardsByLocalIdHighestFirst(loaded)
+            inlineDetailCards = sortCardsByLocalIdHighestFirst(loaded)
         case .dex(let dexId, _):
-            model.inlineDetailCards = await services.cardData.cards(matchingNationalDex: dexId)
+            inlineDetailCards = await services.cardData.cards(matchingNationalDex: dexId)
         case .onePieceCharacter(let name):
-            model.inlineDetailCards = await services.cardData.cards(matchingOnePieceCharacterName: name)
+            inlineDetailCards = await services.cardData.cards(matchingOnePieceCharacterName: name)
         case .onePieceSubtype(let name):
-            model.inlineDetailCards = await services.cardData.cards(matchingOnePieceSubtype: name)
+            inlineDetailCards = await services.cardData.cards(matchingOnePieceSubtype: name)
         }
 
-        ImagePrefetcher.shared.prefetchCardWindow(model.inlineDetailCards, startingAt: 0, count: 24)
+        ImagePrefetcher.shared.prefetchCardWindow(inlineDetailCards, startingAt: 0, count: 24)
         syncFilterMenuState(usingCatalogFeed: false)
     }
 }
@@ -1877,6 +1913,7 @@ struct SetCardsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
     @Query private var collectionItems: [CollectionItem]
+    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     let set: TCGSet
 
     @State private var cards: [Card] = []
@@ -1892,6 +1929,13 @@ struct SetCardsView: View {
 
     private var ownedCardIDs: Set<String> {
         return Set(collectionItems.compactMap { item in
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
+        })
+    }
+
+    private var wishlistedCardIDs: Set<String> {
+        Set(wishlistItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
             return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
@@ -1934,7 +1978,9 @@ struct SetCardsView: View {
                                     CardGridCell(
                                         card: card,
                                         gridOptions: services.browseGridOptions.options,
-                                        setName: set.name
+                                        setName: set.name,
+                                        isOwned: ownedCardIDs.contains(card.masterCardId),
+                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
                                     )
                                 }
                                     .buttonStyle(CardCellButtonStyle())
@@ -2005,6 +2051,7 @@ struct DexCardsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
     @Query private var collectionItems: [CollectionItem]
+    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
     let dexId: Int
     let displayName: String
 
@@ -2025,6 +2072,13 @@ struct DexCardsView: View {
 
     private var ownedCardIDs: Set<String> {
         return Set(collectionItems.compactMap { item in
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
+        })
+    }
+
+    private var wishlistedCardIDs: Set<String> {
+        Set(wishlistItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
             return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
@@ -2067,7 +2121,9 @@ struct DexCardsView: View {
                                     CardGridCell(
                                         card: card,
                                         gridOptions: services.browseGridOptions.options,
-                                        setName: setNameByCode[card.setCode]
+                                        setName: setNameByCode[card.setCode],
+                                        isOwned: ownedCardIDs.contains(card.masterCardId),
+                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
                                     )
                                 }
                                     .buttonStyle(CardCellButtonStyle())
@@ -2116,6 +2172,7 @@ struct OnePieceCharacterCardsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
     @Query private var collectionItems: [CollectionItem]
+    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
 
     let characterName: String
 
@@ -2136,6 +2193,13 @@ struct OnePieceCharacterCardsView: View {
 
     private var ownedCardIDs: Set<String> {
         return Set(collectionItems.compactMap { item in
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
+        })
+    }
+
+    private var wishlistedCardIDs: Set<String> {
+        Set(wishlistItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
             return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
@@ -2178,7 +2242,9 @@ struct OnePieceCharacterCardsView: View {
                                     CardGridCell(
                                         card: card,
                                         gridOptions: services.browseGridOptions.options,
-                                        setName: setNameByCode[card.setCode]
+                                        setName: setNameByCode[card.setCode],
+                                        isOwned: ownedCardIDs.contains(card.masterCardId),
+                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
                                     )
                                 }
                                     .buttonStyle(CardCellButtonStyle())
@@ -2225,6 +2291,7 @@ struct OnePieceSubtypeCardsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.presentCard) private var presentCard
     @Query private var collectionItems: [CollectionItem]
+    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
 
     let subtypeName: String
 
@@ -2245,6 +2312,13 @@ struct OnePieceSubtypeCardsView: View {
 
     private var ownedCardIDs: Set<String> {
         return Set(collectionItems.compactMap { item in
+            let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
+            return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
+        })
+    }
+
+    private var wishlistedCardIDs: Set<String> {
+        Set(wishlistItems.compactMap { item in
             let brand = TCGBrand.inferredFromMasterCardId(item.cardID)
             return brand == services.brandSettings.selectedCatalogBrand ? item.cardID : nil
         })
@@ -2287,7 +2361,9 @@ struct OnePieceSubtypeCardsView: View {
                                     CardGridCell(
                                         card: card,
                                         gridOptions: services.browseGridOptions.options,
-                                        setName: setNameByCode[card.setCode]
+                                        setName: setNameByCode[card.setCode],
+                                        isOwned: ownedCardIDs.contains(card.masterCardId),
+                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
                                     )
                                 }
                                     .buttonStyle(CardCellButtonStyle())

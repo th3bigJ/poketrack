@@ -153,15 +153,15 @@ struct RootView: View {
     }
 
     private var activeBrowseFilterEnergyOptions: [String] {
-        browseInlineDetailRoute == nil ? browseFilterEnergyOptions : browseInlineDetailFilterEnergyOptions
+        browseFilterEnergyOptions
     }
 
     private var activeBrowseFilterRarityOptions: [String] {
-        browseInlineDetailRoute == nil ? browseFilterRarityOptions : browseInlineDetailFilterRarityOptions
+        browseFilterRarityOptions
     }
 
     private var activeBrowseFilterTrainerTypeOptions: [String] {
-        browseInlineDetailRoute == nil ? browseFilterTrainerTypeOptions : browseInlineDetailFilterTrainerTypeOptions
+        browseFilterTrainerTypeOptions
     }
 
     var body: some View {
