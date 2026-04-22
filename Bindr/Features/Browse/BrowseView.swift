@@ -2940,11 +2940,11 @@ func filterBrowseCards(
 
 private func normalizedBrowseSearchText(_ value: String?) -> String {
     guard let value else { return "" }
-    let scalars = value.lowercased().unicodeScalars.map { scalar -> Character in
+    let scalars = value.lowercased().unicodeScalars.compactMap { scalar -> Character? in
         if CharacterSet.alphanumerics.contains(scalar) || CharacterSet.whitespacesAndNewlines.contains(scalar) {
             return Character(scalar)
         }
-        return " "
+        return nil
     }
     return String(scalars)
         .split(whereSeparator: \.isWhitespace)
