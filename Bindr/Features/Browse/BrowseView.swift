@@ -1030,15 +1030,15 @@ struct BrowseView: View {
         brand: TCGBrand,
         ownedCardIDs: Set<String>
     ) -> [BrowseFilterCard] {
-        let loweredQuery = query.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+        let normalizedQuery = normalizedBrowseSearchText(query)
         let setReleaseDateByCode = firstValueMap(services.cardData.sets, key: \.setCode) { $0.releaseDate ?? "" }
         return cards.filter { card in
-            let matchesQuery = loweredQuery.isEmpty
-                || card.cardName.lowercased().contains(loweredQuery)
-                || card.cardNumber.lowercased().contains(loweredQuery)
-                || card.setCode.lowercased().contains(loweredQuery)
-                || (card.subtype?.lowercased().contains(loweredQuery) == true)
-                || (card.subtypes?.contains { $0.lowercased().contains(loweredQuery) } == true)
+            let matchesQuery = normalizedQuery.isEmpty
+                || normalizedBrowseSearchText(card.cardName).contains(normalizedQuery)
+                || normalizedBrowseSearchText(card.cardNumber).contains(normalizedQuery)
+                || normalizedBrowseSearchText(card.setCode).contains(normalizedQuery)
+                || normalizedBrowseSearchText(card.subtype).contains(normalizedQuery)
+                || (card.subtypes?.contains { normalizedBrowseSearchText($0).contains(normalizedQuery) } == true)
             guard matchesQuery else { return false }
 
             if brand == .pokemon,
@@ -1271,13 +1271,12 @@ private struct BrowseSetsTabContent: View {
 
     private var filteredSets: [TCGSet] {
         let sets = services.cardData.allSetsSortedByReleaseDateNewestFirst()
-        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return sets }
-        let lowered = trimmed.lowercased()
+        let normalizedQuery = normalizedBrowseSearchText(query)
+        guard !normalizedQuery.isEmpty else { return sets }
         return sets.filter { set in
-            set.name.lowercased().contains(lowered)
-                || set.setCode.lowercased().contains(lowered)
-                || (set.seriesName?.lowercased().contains(lowered) == true)
+            normalizedBrowseSearchText(set.name).contains(normalizedQuery)
+                || normalizedBrowseSearchText(set.setCode).contains(normalizedQuery)
+                || normalizedBrowseSearchText(set.seriesName).contains(normalizedQuery)
         }
     }
 
@@ -1492,28 +1491,25 @@ private struct BrowsePokemonTabContent: View {
     private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
 
     private var filteredPokemonRows: [NationalDexPokemon] {
-        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return rows }
-        let lowered = trimmed.lowercased()
+        let normalizedQuery = normalizedBrowseSearchText(query)
+        guard !normalizedQuery.isEmpty else { return rows }
         return rows.filter { item in
-            item.name.lowercased().contains(lowered)
-                || item.displayName.lowercased().contains(lowered)
-                || String(item.nationalDexNumber).contains(lowered)
+            normalizedBrowseSearchText(item.name).contains(normalizedQuery)
+                || normalizedBrowseSearchText(item.displayName).contains(normalizedQuery)
+                || normalizedBrowseSearchText(String(item.nationalDexNumber)).contains(normalizedQuery)
         }
     }
 
     private var filteredCharacterRows: [String] {
-        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return characterRows }
-        let lowered = trimmed.lowercased()
-        return characterRows.filter { $0.lowercased().contains(lowered) }
+        let normalizedQuery = normalizedBrowseSearchText(query)
+        guard !normalizedQuery.isEmpty else { return characterRows }
+        return characterRows.filter { normalizedBrowseSearchText($0).contains(normalizedQuery) }
     }
 
     private var filteredSubtypeRows: [String] {
-        let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        guard !trimmed.isEmpty else { return subtypeRows }
-        let lowered = trimmed.lowercased()
-        return subtypeRows.filter { $0.lowercased().contains(lowered) }
+        let normalizedQuery = normalizedBrowseSearchText(query)
+        guard !normalizedQuery.isEmpty else { return subtypeRows }
+        return subtypeRows.filter { normalizedBrowseSearchText($0).contains(normalizedQuery) }
     }
 
     var body: some View {
@@ -2851,15 +2847,15 @@ func filterBrowseCards(
     brand: TCGBrand,
     sets: [TCGSet] = []
 ) -> [Card] {
-    let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
-    let q = trimmed.lowercased()
+    let normalizedQuery = normalizedBrowseSearchText(query)
     let setReleaseDateByCode = firstValueMap(sets, key: \.setCode) { $0.releaseDate ?? "" }
     let filtered = cards.filter { card in
-        let matchesQuery = trimmed.isEmpty || card.cardName.lowercased().contains(q)
-            || card.cardNumber.lowercased().contains(q)
-            || card.setCode.lowercased().contains(q)
-            || (card.subtype?.lowercased().contains(q) == true)
-            || (card.subtypes?.contains { $0.lowercased().contains(q) } == true)
+        let matchesQuery = normalizedQuery.isEmpty
+            || normalizedBrowseSearchText(card.cardName).contains(normalizedQuery)
+            || normalizedBrowseSearchText(card.cardNumber).contains(normalizedQuery)
+            || normalizedBrowseSearchText(card.setCode).contains(normalizedQuery)
+            || normalizedBrowseSearchText(card.subtype).contains(normalizedQuery)
+            || (card.subtypes?.contains { normalizedBrowseSearchText($0).contains(normalizedQuery) } == true)
         guard matchesQuery else { return false }
 
         if brand == .pokemon,
@@ -2940,6 +2936,19 @@ func filterBrowseCards(
     case .cardNumber, .random, .price, .acquiredDateNewest:
         return filtered
     }
+}
+
+private func normalizedBrowseSearchText(_ value: String?) -> String {
+    guard let value else { return "" }
+    let scalars = value.lowercased().unicodeScalars.map { scalar -> Character in
+        if CharacterSet.alphanumerics.contains(scalar) || CharacterSet.whitespacesAndNewlines.contains(scalar) {
+            return Character(scalar)
+        }
+        return " "
+    }
+    return String(scalars)
+        .split(whereSeparator: \.isWhitespace)
+        .joined(separator: " ")
 }
 
 private func resolvedBrowseCardType(for card: Card, brand: TCGBrand) -> BrowseCardTypeFilter {
