@@ -10,12 +10,18 @@ private enum ChartRange: String, CaseIterable {
 
 struct DashboardView: View {
     var onViewAllActivity: (() -> Void)? = nil
+    var onOpenScanner: (() -> Void)? = nil
+    var onOpenCollection: (() -> Void)? = nil
+    var onOpenBrowse: (() -> Void)? = nil
+
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
     @Environment(\.rootFloatingChromeInset) private var rootFloatingChromeInset
 
     @Query(sort: \LedgerLine.occurredAt, order: .reverse) private var allLedgerLines: [LedgerLine]
     @Query private var collectionItems: [CollectionItem]
+    @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
 
     @State private var liveTotalGbp: Double? = nil
     @State private var livePokemonGbp: Double = 0
@@ -25,8 +31,9 @@ struct DashboardView: View {
     @State private var selectedPoint: ChartPoint? = nil
     @State private var chartRange: ChartRange = .daily
     @State private var selectedBrand: TCGBrand? = nil
-
-    // MARK: - Display values (live or scrubbed)
+    @State private var cardNamesByID: [String: String] = [:]
+    @State private var setNamesByCardID: [String: String] = [:]
+    @State private var cardImageURLsByID: [String: URL] = [:]
 
     private var liveSnapshot: BrandSnapshot? {
         guard let t = liveTotalGbp else { return nil }
@@ -36,63 +43,82 @@ struct DashboardView: View {
     private var displayTotal: Double {
         let point = selectedPoint
         switch selectedBrand {
-        case .pokemon:  return point?.pokemon  ?? livePokemonGbp
+        case .pokemon:  return point?.pokemon ?? livePokemonGbp
         case .onePiece: return point?.onePiece ?? liveOnePieceGbp
-        case nil:       return point?.total    ?? liveTotalGbp ?? 0
+        case nil:       return point?.total ?? liveTotalGbp ?? 0
         }
     }
-    private var isScrubbingOrLoaded: Bool { selectedPoint != nil || liveTotalGbp != nil }
 
+    private var isScrubbingOrLoaded: Bool { selectedPoint != nil || liveTotalGbp != nil }
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
+
+    private var visibleCollectionItems: [CollectionItem] {
+        collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
+    }
+
+    private var visibleWishlistItems: [WishlistItem] {
+        wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
+    }
+
     private var recentLines: [LedgerLine] {
         Array(
             allLedgerLines.filter { line in
-                guard let cardID = line.cardID?.trimmingCharacters(in: .whitespacesAndNewlines),
-                      !cardID.isEmpty else {
-                    return false
-                }
+                guard let cardID = cleaned(line.cardID) else { return false }
                 return TCGBrand.inferredFromMasterCardId(cardID) == activeBrand
             }
             .prefix(5)
         )
     }
 
-    /// The point whose value we're comparing against (the one before the displayed point).
-    private var periodChange: (amount: Double, pct: Double, label: String)? {
-        let points = activePoints
-        guard points.count >= 2 else { return nil }
+    private var totalCardsCount: Int {
+        visibleCollectionItems.reduce(0) { $0 + max($1.quantity, 0) }
+    }
 
-        // When scrubbing: compare selected point to the one before it.
-        // When not scrubbing: compare the last point (live/today) to the second-to-last.
-        let currentIndex: Int
-        if let sel = selectedPoint, let idx = points.firstIndex(where: { $0.date == sel.date }) {
-            guard idx > 0 else { return nil }
-            currentIndex = idx
-        } else {
-            currentIndex = points.count - 1
-        }
+    private var uniqueCardsCount: Int {
+        Set(visibleCollectionItems.map(\.cardID)).count
+    }
 
-        let current = points[currentIndex].total
-        let previous = points[currentIndex - 1].total
-        guard previous > 0 else { return nil }
+    private var wishlistedCardsCount: Int {
+        Set(visibleWishlistItems.map(\.cardID)).count
+    }
 
-        let amount = current - previous
-        let pct = (amount / previous) * 100
+    private var portfolioGain: Double? {
+        guard let liveTotalGbp else { return nil }
+        return liveTotalGbp - totalCostBasis
+    }
 
-        let label: String
-        switch chartRange {
-        case .daily:   label = "vs prev day"
-        case .weekly:  label = "vs prev week"
-        case .monthly: label = "vs prev month"
-        }
-        return (amount, pct, label)
+    private var portfolioGainColor: Color {
+        guard let gain = portfolioGain else { return dashboardSecondaryText }
+        return gain >= 0 ? DashboardPalette.success : DashboardPalette.danger
+    }
+
+    private var dashboardPrimaryText: Color {
+        Color(uiColor: .label)
+    }
+
+    private var dashboardSecondaryText: Color {
+        Color(uiColor: .secondaryLabel)
+    }
+
+    private var dashboardCardBackground: Color {
+        Color(uiColor: .secondarySystemBackground)
+    }
+
+    private var dashboardCardInsetBackground: Color {
+        Color(uiColor: .tertiarySystemFill)
+    }
+
+    private var dashboardBorder: Color {
+        Color(uiColor: .separator).opacity(colorScheme == .dark ? 0.28 : 0.16)
+    }
+
+    private var dashboardDividerColor: Color {
+        Color(uiColor: .separator).opacity(colorScheme == .dark ? 0.22 : 0.14)
     }
 
     private var backfillTrigger: String {
         "\(services.collectionValue == nil ? "nil" : "ready"):\(collectionItems.count)"
     }
-
-    // MARK: - Chart points for each range
 
     private var dailyPoints: [ChartPoint] {
         let svc = services.collectionValue
@@ -119,7 +145,6 @@ struct DashboardView: View {
             points = svc.weeklyAverages
                 .filter { $0.weekStart >= cutoff }
                 .map { ChartPoint(date: $0.weekStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
-            // Append current incomplete week average
             let cwAvg = svc.currentWeekAverage(liveToday: liveSnapshot)
             if cwAvg.total > 0 {
                 var cal2 = Calendar(identifier: .iso8601)
@@ -140,8 +165,6 @@ struct DashboardView: View {
             points = svc.monthlyAverages
                 .filter { $0.monthStart >= cutoff }
                 .map { ChartPoint(date: $0.monthStart, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
-            // Current month: average past days this month + today's live value.
-            // Falls back to just today's live value if no past-days exist yet.
             let cmAvg = svc.currentMonthAverage(liveToday: liveSnapshot)
             let currentMonthTotal = cmAvg.total > 0 ? cmAvg.total : (liveSnapshot?.total ?? 0)
             if currentMonthTotal > 0 {
@@ -157,38 +180,71 @@ struct DashboardView: View {
     private var activePoints: [ChartPoint] {
         let base: [ChartPoint]
         switch chartRange {
-        case .daily:   base = dailyPoints
-        case .weekly:  base = weeklyPoints
+        case .daily: base = dailyPoints
+        case .weekly: base = weeklyPoints
         case .monthly: base = monthlyPoints
         }
         guard let brand = selectedBrand else { return base }
-        return base.map { p in
-            let v: Double
+        return base.map { point in
+            let total: Double
             switch brand {
-            case .pokemon:  v = p.pokemon
-            case .onePiece: v = p.onePiece
+            case .pokemon: total = point.pokemon
+            case .onePiece: total = point.onePiece
             }
-            return ChartPoint(date: p.date, total: v, pokemon: p.pokemon, onePiece: p.onePiece)
+            return ChartPoint(date: point.date, total: total, pokemon: point.pokemon, onePiece: point.onePiece)
         }
     }
 
     private var chartMin: Double { (activePoints.map(\.total).min() ?? 0) * 0.95 }
     private var chartMax: Double { (activePoints.map(\.total).max() ?? 0) * 1.05 }
 
-    // MARK: - Body
+    private var periodChange: (amount: Double, pct: Double, label: String)? {
+        let points = activePoints
+        guard points.count >= 2 else { return nil }
+
+        let currentIndex: Int
+        if let sel = selectedPoint, let idx = points.firstIndex(where: { $0.date == sel.date }) {
+            guard idx > 0 else { return nil }
+            currentIndex = idx
+        } else {
+            currentIndex = points.count - 1
+        }
+
+        let current = points[currentIndex].total
+        let previous = points[currentIndex - 1].total
+        guard previous > 0 else { return nil }
+
+        let amount = current - previous
+        let pct = (amount / previous) * 100
+
+        let label: String
+        switch chartRange {
+        case .daily: label = "vs prev day"
+        case .weekly: label = "vs prev week"
+        case .monthly: label = "vs prev month"
+        }
+
+        return (amount, pct, label)
+    }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 16) {
-                valueHeaderCard
+        ScrollView(showsIndicators: false) {
+            VStack(alignment: .leading, spacing: 18) {
+                heroSection
+                summaryCard
+                statsStrip
                 if !activePoints.isEmpty {
                     valueChartCard
                 }
+                quickActionsSection
                 recentActivityCard
             }
-            .padding(16)
+            .padding(.horizontal, 16)
+            .padding(.top, 18)
+            .padding(.bottom, 32)
         }
         .safeAreaPadding(.top, rootFloatingChromeInset)
+        .background(dashboardBackground.ignoresSafeArea())
         .toolbar(.hidden, for: .navigationBar)
         .task(id: collectionItems.count) {
             await computeLiveValue()
@@ -196,6 +252,9 @@ struct DashboardView: View {
         .task(id: backfillTrigger) {
             guard services.collectionValue != nil else { return }
             await services.collectionValue?.runBackfillIfNeeded(collectionItems: collectionItems)
+        }
+        .task(id: dashboardDataSignature) {
+            await resolveDashboardMetadata()
         }
         .onAppear {
             selectedBrand = activeBrand
@@ -210,60 +269,112 @@ struct DashboardView: View {
         }
     }
 
-    // MARK: - Cards
+    private var heroSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            Text("Hello, Trainer.")
+                .font(.system(size: 24, weight: .semibold, design: .rounded))
+                .foregroundStyle(dashboardPrimaryText)
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+    }
 
-    private var valueHeaderCard: some View {
-        DashboardCard(title: selectedBrand.map { "\($0.displayTitle) Value" } ?? "Collection Value") {
-            if isLoadingValue && liveTotalGbp == nil {
-                ProgressView()
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .padding(.vertical, 8)
-            } else if isScrubbingOrLoaded {
-                VStack(alignment: .leading, spacing: 6) {
-                    HStack(alignment: .firstTextBaseline) {
-                        Text(formatCurrency(displayTotal))
-                            .font(.title.bold())
-                            .contentTransition(.numericText())
-                        Spacer()
-                        if let change = periodChange {
-                            VStack(alignment: .trailing, spacing: 2) {
-                                Text((change.amount >= 0 ? "+" : "") + formatCurrency(change.amount))
-                                    .font(.headline)
-                                    .foregroundStyle(change.amount >= 0 ? .green : .red)
-                                    .contentTransition(.numericText())
-                                HStack(spacing: 4) {
-                                    Text(String(format: "%.1f%%", change.pct))
-                                        .foregroundStyle(change.pct >= 0 ? .green : .red)
-                                    Text(change.label)
-                                        .foregroundStyle(.secondary)
-                                }
-                                .font(.caption)
-                            }
+    private var summaryCard: some View {
+        dashboardCard {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .top) {
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Total Collection Value")
+                            .font(.headline)
+                            .foregroundStyle(dashboardSecondaryText)
+
+                        if isLoadingValue && liveTotalGbp == nil {
+                            ProgressView()
+                                .tint(DashboardPalette.chartLine)
+                        } else if isScrubbingOrLoaded {
+                            Text(formatCurrency(displayTotal))
+                                .font(.system(size: 30, weight: .bold, design: .rounded))
+                                .foregroundStyle(dashboardPrimaryText)
+                                .contentTransition(.numericText())
+                        } else {
+                            Text("No pricing data yet")
+                                .font(.headline)
+                                .foregroundStyle(dashboardSecondaryText)
                         }
                     }
-                    if let point = selectedPoint {
-                        Text(rangeLabel(for: point.date))
-                            .font(.caption)
-                            .foregroundStyle(.secondary)
+
+                    Spacer(minLength: 16)
+
+                    VStack(alignment: .trailing, spacing: 6) {
+                        if let change = periodChange {
+                            Text((change.amount >= 0 ? "+" : "") + formatCurrency(change.amount))
+                                .font(.title3.weight(.bold))
+                                .foregroundStyle(change.amount >= 0 ? DashboardPalette.success : DashboardPalette.danger)
+                                .contentTransition(.numericText())
+
+                            Text(String(format: "%.1f%% %@", change.pct, change.label))
+                                .font(.caption.weight(.medium))
+                                .foregroundStyle(dashboardSecondaryText)
+                        } else if let gain = portfolioGain {
+                            Text((gain >= 0 ? "+" : "") + formatCurrency(gain))
+                                .font(.title3.weight(.bold))
+                                .foregroundStyle(portfolioGainColor)
+                            Text("all-time gain")
+                                .font(.caption.weight(.medium))
+                                .foregroundStyle(dashboardSecondaryText)
+                        }
                     }
                 }
-            } else {
-                Text("No pricing data yet")
-                    .font(.body)
-                    .foregroundStyle(.secondary)
+            }
+        }
+    }
+
+    private var statsStrip: some View {
+        dashboardCard {
+            HStack(spacing: 0) {
+                dashboardStat(
+                    icon: "square.stack.3d.up.fill",
+                    iconColor: DashboardPalette.purple,
+                    value: "\(totalCardsCount)",
+                    label: "Total Cards"
+                )
+
+                statDivider
+
+                dashboardStat(
+                    icon: "rectangle.stack.fill",
+                    iconColor: DashboardPalette.blue,
+                    value: "\(uniqueCardsCount)",
+                    label: "Unique Cards"
+                )
+
+                statDivider
+
+                dashboardStat(
+                    icon: "star.fill",
+                    iconColor: DashboardPalette.gold,
+                    value: "\(wishlistedCardsCount)",
+                    label: "Wishlisted Cards"
+                )
             }
         }
     }
 
     private var valueChartCard: some View {
-        DashboardCard(title: "Value History") {
-            VStack(spacing: 12) {
-                Picker("Range", selection: $chartRange) {
-                    ForEach(ChartRange.allCases, id: \.self) { range in
-                        Text(range.rawValue).tag(range)
+        dashboardCard {
+            VStack(alignment: .leading, spacing: 14) {
+                HStack {
+                    Text("Value History")
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(dashboardPrimaryText)
+                    Spacer()
+                    Picker("Range", selection: $chartRange) {
+                        ForEach(ChartRange.allCases, id: \.self) { range in
+                            Text(range.rawValue).tag(range)
+                        }
                     }
+                    .pickerStyle(.segmented)
+                    .frame(maxWidth: 270)
                 }
-                .pickerStyle(.segmented)
 
                 Chart(activePoints) { point in
                     AreaMark(
@@ -273,7 +384,7 @@ struct DashboardView: View {
                     )
                     .foregroundStyle(
                         LinearGradient(
-                            colors: [Color.accentColor.opacity(0.3), Color.accentColor.opacity(0.04)],
+                            colors: [DashboardPalette.chartLine.opacity(0.3), DashboardPalette.chartLine.opacity(0.03)],
                             startPoint: .top,
                             endPoint: .bottom
                         )
@@ -283,12 +394,13 @@ struct DashboardView: View {
                         x: .value("Date", point.date),
                         y: .value("Value", point.total)
                     )
-                    .foregroundStyle(Color.accentColor)
-                    .lineStyle(StrokeStyle(lineWidth: 2))
+                    .interpolationMethod(.catmullRom)
+                    .foregroundStyle(DashboardPalette.chartLine)
+                    .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
 
                     if let sel = selectedPoint, sel.date == point.date {
                         RuleMark(x: .value("Date", point.date))
-                            .foregroundStyle(Color.secondary.opacity(0.4))
+                            .foregroundStyle(dashboardDividerColor)
                             .lineStyle(StrokeStyle(lineWidth: 1, dash: [4]))
 
                         PointMark(
@@ -296,18 +408,18 @@ struct DashboardView: View {
                             y: .value("Value", point.total)
                         )
                         .symbolSize(60)
-                        .foregroundStyle(Color.accentColor)
+                        .foregroundStyle(dashboardPrimaryText)
                     }
                 }
                 .chartYAxis {
                     AxisMarks(position: .leading, values: .automatic(desiredCount: 4)) { value in
-                        AxisGridLine(stroke: StrokeStyle(lineWidth: 0.5, dash: [4]))
-                            .foregroundStyle(Color.secondary.opacity(0.3))
+                        AxisGridLine(stroke: StrokeStyle(lineWidth: 0.6, dash: [4]))
+                            .foregroundStyle(dashboardDividerColor)
                         AxisValueLabel {
                             if let d = value.as(Double.self) {
                                 Text(formatCurrencyShort(d))
                                     .font(.caption2)
-                                    .foregroundStyle(.secondary)
+                                    .foregroundStyle(dashboardSecondaryText)
                             }
                         }
                     }
@@ -318,13 +430,13 @@ struct DashboardView: View {
                             if let d = value.as(Date.self) {
                                 Text(xAxisLabel(for: d))
                                     .font(.caption2)
-                                    .foregroundStyle(.secondary)
+                                    .foregroundStyle(dashboardSecondaryText)
                             }
                         }
                     }
                 }
                 .chartYScale(domain: chartMin...max(chartMax, chartMin + 1))
-                .frame(height: 180)
+                .frame(height: 220)
                 .chartOverlay { proxy in
                     GeometryReader { geo in
                         Rectangle()
@@ -333,7 +445,8 @@ struct DashboardView: View {
                             .gesture(
                                 DragGesture(minimumDistance: 0)
                                     .onChanged { value in
-                                        let x = value.location.x - geo[proxy.plotFrame!].origin.x
+                                        guard let frame = proxy.plotFrame else { return }
+                                        let x = value.location.x - geo[frame].origin.x
                                         guard let date: Date = proxy.value(atX: x) else { return }
                                         let nearest = activePoints.min(by: {
                                             abs($0.date.timeIntervalSince(date)) < abs($1.date.timeIntervalSince(date))
@@ -355,41 +468,71 @@ struct DashboardView: View {
         }
     }
 
-    private var recentActivityCard: some View {
-        DashboardCard(title: "Recent Activity", trailing: {
-            if let onViewAllActivity {
-                Button("View All") { onViewAllActivity() }
-                    .font(.caption)
+    private var quickActionsSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Quick Actions")
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(dashboardPrimaryText)
+
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible(), spacing: 10), count: 4), spacing: 10) {
+                quickActionTile(
+                    title: "Scan Card",
+                    icon: "camera.fill",
+                    tint: DashboardPalette.purple,
+                    action: onOpenScanner
+                )
+
+                quickActionTile(
+                    title: "Bindrs",
+                    icon: "plus.circle.fill",
+                    tint: DashboardPalette.success,
+                    action: onOpenCollection
+                )
+
+                quickActionTile(
+                    title: "Deck Builder",
+                    icon: "square.stack.3d.up.fill",
+                    tint: DashboardPalette.blue,
+                    action: onOpenBrowse
+                )
+
+                quickActionTile(
+                    title: "Activity",
+                    icon: "clock.arrow.circlepath",
+                    tint: DashboardPalette.gold,
+                    action: onViewAllActivity
+                )
             }
-        }) {
-            if recentLines.isEmpty {
-                Text("No transactions yet.")
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-            } else {
-                VStack(spacing: 0) {
-                    ForEach(recentLines) { line in
-                        HStack(spacing: 10) {
-                            Image(systemName: directionIcon(for: line))
-                                .font(.caption)
-                                .foregroundStyle(directionColor(for: line))
-                                .frame(width: 20)
-                            VStack(alignment: .leading, spacing: 1) {
-                                Text(line.lineDescription)
-                                    .font(.caption)
-                                    .lineLimit(1)
-                                Text(line.occurredAt.formatted(date: .abbreviated, time: .omitted))
-                                    .font(.caption2)
-                                    .foregroundStyle(.secondary)
+        }
+    }
+
+    private var recentActivityCard: some View {
+        dashboardCard {
+            VStack(alignment: .leading, spacing: 14) {
+                HStack {
+                    Text("Recent Activity")
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(dashboardPrimaryText)
+                    Spacer()
+                    if let onViewAllActivity {
+                        Button("View All") { onViewAllActivity() }
+                            .font(.subheadline.weight(.medium))
+                            .foregroundStyle(DashboardPalette.purple)
+                    }
+                }
+
+                if recentLines.isEmpty {
+                    Text("No transactions yet.")
+                        .font(.subheadline)
+                        .foregroundStyle(dashboardSecondaryText)
+                } else {
+                    VStack(spacing: 0) {
+                        ForEach(recentLines) { line in
+                            dashboardActivityRow(line: line)
+                            if line.id != recentLines.last?.id {
+                                Divider()
+                                    .overlay(dashboardDividerColor)
                             }
-                            Spacer()
-                            Text("×\(line.quantity)")
-                                .font(.caption.monospacedDigit())
-                                .foregroundStyle(.secondary)
-                        }
-                        .padding(.vertical, 5)
-                        if line.id != recentLines.last?.id {
-                            Divider()
                         }
                     }
                 }
@@ -397,7 +540,186 @@ struct DashboardView: View {
         }
     }
 
-    // MARK: - Live value computation
+    private var dashboardBackground: some View {
+        Color(uiColor: .systemBackground)
+    }
+
+    private var statDivider: some View {
+        Rectangle()
+            .fill(dashboardDividerColor)
+            .frame(width: 1, height: 52)
+    }
+
+    private var dashboardDataSignature: String {
+        let brand = activeBrand.rawValue
+        let itemPart = visibleCollectionItems.map { "\($0.cardID)|\($0.quantity)" }.joined(separator: "§")
+        let linePart = recentLines.map { cleaned($0.cardID) ?? $0.id.uuidString }.joined(separator: "§")
+        return "\(brand)|\(itemPart)|\(linePart)"
+    }
+
+    private func dashboardStat(icon: String, iconColor: Color, value: String, label: String) -> some View {
+        VStack(spacing: 8) {
+            Image(systemName: icon)
+                .font(.title3.weight(.semibold))
+                .foregroundStyle(iconColor)
+            Text(value)
+                .font(.title3.weight(.bold))
+                .foregroundStyle(dashboardPrimaryText)
+                .lineLimit(1)
+                .minimumScaleFactor(0.7)
+            Text(label)
+                .font(.caption)
+                .foregroundStyle(dashboardSecondaryText)
+                .multilineTextAlignment(.center)
+        }
+        .frame(maxWidth: .infinity, alignment: .center)
+    }
+
+    private func quickActionTile(title: String, icon: String, tint: Color, action: (() -> Void)?) -> some View {
+        Button {
+            action?()
+        } label: {
+            VStack(spacing: 10) {
+                ZStack {
+                    RoundedRectangle(cornerRadius: 16, style: .continuous)
+                        .fill(tint.opacity(0.18))
+                        .frame(width: 44, height: 44)
+                    Image(systemName: icon)
+                        .font(.headline.weight(.semibold))
+                        .foregroundStyle(tint)
+                }
+
+                Text(title)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(dashboardPrimaryText)
+                    .multilineTextAlignment(.center)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.8)
+            }
+            .padding(.horizontal, 8)
+            .padding(.vertical, 14)
+            .frame(maxWidth: .infinity, minHeight: 108)
+            .background(
+                RoundedRectangle(cornerRadius: 20, style: .continuous)
+                    .fill(dashboardCardBackground)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .stroke(dashboardBorder, lineWidth: 1)
+                    )
+            )
+        }
+        .buttonStyle(DashboardPressStyle())
+        .disabled(action == nil)
+    }
+
+    private func dashboardActivityRow(line: LedgerLine) -> some View {
+        HStack(spacing: 12) {
+            activityLeadingVisual(for: line)
+
+            VStack(alignment: .leading, spacing: 4) {
+                HStack(spacing: 8) {
+                    Text(activityTitle(for: line))
+                        .font(.headline)
+                        .foregroundStyle(dashboardPrimaryText)
+                        .lineLimit(1)
+
+                    if badgeText(for: line) != nil {
+                        Text(badgeText(for: line) ?? "")
+                            .font(.caption2.weight(.semibold))
+                            .foregroundStyle(Color.white)
+                            .padding(.horizontal, 8)
+                            .padding(.vertical, 4)
+                            .background(
+                                Capsule(style: .continuous)
+                                    .fill(DashboardPalette.purple.opacity(0.35))
+                            )
+                    }
+                }
+
+                Text(activitySubtitle(for: line))
+                    .font(.subheadline)
+                    .foregroundStyle(dashboardSecondaryText)
+                    .lineLimit(1)
+            }
+
+            Spacer(minLength: 8)
+
+            VStack(alignment: .trailing, spacing: 4) {
+                Text(line.occurredAt.formatted(date: .abbreviated, time: .omitted))
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(dashboardSecondaryText)
+                Image(systemName: "chevron.right")
+                    .font(.caption.weight(.bold))
+                    .foregroundStyle(dashboardSecondaryText)
+            }
+        }
+        .padding(.vertical, 12)
+    }
+
+    @ViewBuilder
+    private func activityLeadingVisual(for line: LedgerLine) -> some View {
+        if let cardID = cleaned(line.cardID), let imageURL = cardImageURLsByID[cardID] {
+            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+            } placeholder: {
+                fallbackCardArtwork(for: line)
+            }
+            .frame(width: 48, height: 68)
+            .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(dashboardBorder, lineWidth: 1)
+            )
+        } else {
+            fallbackCardArtwork(for: line)
+        }
+    }
+
+    private func fallbackCardArtwork(for line: LedgerLine) -> some View {
+        let cardName: String = {
+            if let cardID = cleaned(line.cardID), let name = cardNamesByID[cardID] {
+                return name
+            }
+            return cleaned(line.lineDescription) ?? "Card"
+        }()
+
+        return RoundedRectangle(cornerRadius: 10, style: .continuous)
+            .fill(dashboardCardInsetBackground)
+            .frame(width: 48, height: 68)
+            .overlay {
+                VStack(spacing: 6) {
+                    Spacer(minLength: 0)
+                    Text(cardArtworkFallback(for: cardName))
+                        .font(.system(size: 18, weight: .bold, design: .rounded))
+                        .foregroundStyle(dashboardPrimaryText)
+                    Image(systemName: "square.stack.3d.up.fill")
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(dashboardSecondaryText)
+                    Spacer(minLength: 0)
+                }
+                .padding(.vertical, 6)
+            }
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(dashboardBorder, lineWidth: 1)
+            )
+    }
+
+    private func dashboardCard<Content: View>(@ViewBuilder content: () -> Content) -> some View {
+        content()
+            .padding(18)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                RoundedRectangle(cornerRadius: 26, style: .continuous)
+                    .fill(dashboardCardBackground)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 26, style: .continuous)
+                            .stroke(dashboardBorder, lineWidth: 1)
+                    )
+            )
+    }
 
     private func computeLiveValue() async {
         isLoadingValue = true
@@ -423,7 +745,7 @@ struct DashboardView: View {
             totalValue += gbp
 
             switch TCGBrand.inferredFromMasterCardId(item.cardID) {
-            case .pokemon:  pokemonValue += gbp
+            case .pokemon: pokemonValue += gbp
             case .onePiece: onePieceValue += gbp
             }
 
@@ -436,7 +758,85 @@ struct DashboardView: View {
         totalCostBasis = totalCost
     }
 
-    // MARK: - Helpers
+    private func resolveDashboardMetadata() async {
+        var nextNames = cardNamesByID
+        var nextSets = setNamesByCardID
+        var nextImages = cardImageURLsByID
+        var setsByBrandAndCode: [String: String] = [:]
+
+        for brand in services.brandSettings.enabledBrands {
+            guard let sets = try? CatalogStore.shared.fetchAllSets(for: brand) else { continue }
+            for set in sets {
+                setsByBrandAndCode["\(brand.rawValue)|\(set.setCode)"] = set.name
+            }
+        }
+
+        let cardIDs = Set(visibleCollectionItems.map(\.cardID) + recentLines.compactMap { cleaned($0.cardID) })
+
+        for cardID in cardIDs {
+            guard nextNames[cardID] == nil || nextSets[cardID] == nil || nextImages[cardID] == nil else { continue }
+            guard let card = await services.cardData.loadCard(masterCardId: cardID) else { continue }
+            nextNames[cardID] = card.cardName
+            if nextImages[cardID] == nil {
+                let preferredPath = cleaned(card.imageHighSrc) ?? card.imageLowSrc
+                nextImages[cardID] = AppConfiguration.imageURL(relativePath: preferredPath)
+            }
+
+            let brand = TCGBrand.inferredFromMasterCardId(cardID)
+            if let setName = setsByBrandAndCode["\(brand.rawValue)|\(card.setCode)"] {
+                nextSets[cardID] = setName
+            }
+        }
+
+        cardNamesByID = nextNames
+        setNamesByCardID = nextSets
+        cardImageURLsByID = nextImages
+    }
+
+    private func activityTitle(for line: LedgerLine) -> String {
+        if let cardID = cleaned(line.cardID), let cardName = cardNamesByID[cardID] {
+            return "\(line.quantity) x \(cardName)"
+        }
+        return cleaned(line.lineDescription) ?? "Collection update"
+    }
+
+    private func activitySubtitle(for line: LedgerLine) -> String {
+        let setName: String? = {
+            if let cardID = cleaned(line.cardID), let setName = setNamesByCardID[cardID] {
+                return setName
+            }
+            return nil
+        }()
+
+        if case .some(.bought) = LedgerDirection(rawValue: line.direction),
+           let unitPrice = line.unitPrice {
+            let priceLabel = unitPrice.formatted(
+                .currency(code: line.currencyCode)
+                .precision(.fractionLength(2))
+            )
+            if let setName {
+                return "\(setName) · \(priceLabel)"
+            }
+            return priceLabel
+        }
+
+        if let setName {
+            return setName
+        }
+        return cleaned(line.lineDescription) ?? line.occurredAt.formatted(date: .abbreviated, time: .omitted)
+    }
+
+    private func badgeText(for line: LedgerLine) -> String? {
+        guard let direction = LedgerDirection(rawValue: line.direction) else { return nil }
+        switch direction {
+        case .packed: return "Packed"
+        case .bought: return "Bought"
+        case .sold: return "Sold"
+        case .tradedIn, .tradedOut: return "Traded"
+        case .giftedIn, .giftedOut: return "Gifted"
+        case .adjustmentIn, .adjustmentOut: return "Adjusted"
+        }
+    }
 
     private func rangeLabel(for date: Date) -> String {
         switch chartRange {
@@ -444,7 +844,7 @@ struct DashboardView: View {
             return date.formatted(date: .abbreviated, time: .omitted)
         case .weekly:
             let end = Calendar.current.date(byAdding: .day, value: 6, to: date) ?? date
-            return "w/c \(date.formatted(.dateTime.day().month(.abbreviated))) – \(end.formatted(.dateTime.day().month(.abbreviated)))"
+            return "w/c \(date.formatted(.dateTime.day().month(.abbreviated))) - \(end.formatted(.dateTime.day().month(.abbreviated)))"
         case .monthly:
             return date.formatted(.dateTime.month(.wide).year())
         }
@@ -475,31 +875,43 @@ struct DashboardView: View {
             : "£\(String(format: "%.0f", value))"
     }
 
+    private func cleaned(_ text: String?) -> String? {
+        guard let text else { return nil }
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? nil : trimmed
+    }
+
+    private func cardArtworkFallback(for cardName: String) -> String {
+        let pieces = cardName.split(separator: " ")
+        let initials = pieces.prefix(2).compactMap { $0.first }.map(String.init).joined()
+        return initials.isEmpty ? "TCG" : initials.uppercased()
+    }
+
     private func directionIcon(for line: LedgerLine) -> String {
-        guard let dir = LedgerDirection(rawValue: line.direction) else { return "circle" }
+        guard let dir = LedgerDirection(rawValue: line.direction) else { return "circle.fill" }
         switch dir {
-        case .bought:        return "cart.fill"
-        case .packed:        return "shippingbox.fill"
-        case .sold:          return "dollarsign.circle.fill"
-        case .tradedIn:      return "arrow.left.arrow.right.circle.fill"
-        case .tradedOut:     return "arrow.left.arrow.right.circle"
-        case .giftedIn:      return "gift.fill"
-        case .giftedOut:     return "gift"
-        case .adjustmentIn:  return "plus.circle.fill"
+        case .bought: return "cart.fill"
+        case .packed: return "shippingbox.fill"
+        case .sold: return "sterlingsign.circle.fill"
+        case .tradedIn: return "arrow.left.arrow.right.circle.fill"
+        case .tradedOut: return "arrow.left.arrow.right.circle"
+        case .giftedIn: return "gift.fill"
+        case .giftedOut: return "gift"
+        case .adjustmentIn: return "plus.circle.fill"
         case .adjustmentOut: return "minus.circle.fill"
         }
     }
 
     private func directionColor(for line: LedgerLine) -> Color {
-        guard let dir = LedgerDirection(rawValue: line.direction) else { return .secondary }
+        guard let dir = LedgerDirection(rawValue: line.direction) else { return dashboardSecondaryText }
         switch dir {
-        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn:   return .green
-        case .sold, .tradedOut, .giftedOut, .adjustmentOut:            return .red
+        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn:
+            return DashboardPalette.success
+        case .sold, .tradedOut, .giftedOut, .adjustmentOut:
+            return DashboardPalette.danger
         }
     }
 }
-
-// MARK: - Supporting types
 
 private struct ChartPoint: Identifiable {
     var id: Date { date }
@@ -509,32 +921,20 @@ private struct ChartPoint: Identifiable {
     let onePiece: Double
 }
 
-private struct DashboardCard<Content: View, Trailing: View>: View {
-    let title: String
-    @ViewBuilder let trailing: () -> Trailing
-    @ViewBuilder let content: () -> Content
-
-    init(title: String, @ViewBuilder trailing: @escaping () -> Trailing = { EmptyView() }, @ViewBuilder content: @escaping () -> Content) {
-        self.title = title
-        self.trailing = trailing
-        self.content = content
+private struct DashboardPressStyle: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .scaleEffect(configuration.isPressed ? 0.985 : 1)
+            .opacity(configuration.isPressed ? 0.92 : 1)
+            .animation(.easeOut(duration: 0.16), value: configuration.isPressed)
     }
+}
 
-    var body: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            HStack {
-                Text(title)
-                    .font(.subheadline.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                Spacer()
-                trailing()
-                    .foregroundStyle(.secondary)
-            }
-            content()
-        }
-        .padding(14)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(uiColor: .secondarySystemGroupedBackground))
-        .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
-    }
+private enum DashboardPalette {
+    static let purple = Color(red: 0.58, green: 0.33, blue: 1.0)
+    static let blue = Color(red: 0.24, green: 0.58, blue: 1.0)
+    static let chartLine = Color(red: 0.12, green: 0.52, blue: 1.0)
+    static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
+    static let gold = Color(red: 0.99, green: 0.72, blue: 0.22)
+    static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
 }

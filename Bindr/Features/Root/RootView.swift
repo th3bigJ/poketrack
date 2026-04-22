@@ -287,6 +287,15 @@ struct RootView: View {
                                 moreNavigationPath = NavigationPath()
                                 moreNavigationPath.append(SideMenuPage.transactions)
                                 selectedTab = .more
+                            }, onOpenScanner: {
+                                showCardScanner = true
+                            }, onOpenCollection: {
+                                collectionNavigationPath = NavigationPath()
+                                collectSegment = .collection
+                                selectedTab = .collect
+                            }, onOpenBrowse: {
+                                browseNavigationPath = NavigationPath()
+                                selectedTab = .browse
                             })
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
