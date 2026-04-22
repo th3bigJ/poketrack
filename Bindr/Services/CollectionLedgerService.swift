@@ -10,7 +10,7 @@ final class CollectionLedgerService {
         self.modelContext = modelContext
     }
 
-    /// Records acquiring raw (non-graded) single cards: bought, from a pack, trade in, or gift.
+    /// Records acquiring single cards (raw or graded): bought, from a pack, trade in, or gift.
     func recordSingleCardAcquisition(
         cardID: String,
         variantKey: String,
@@ -20,6 +20,10 @@ final class CollectionLedgerService {
         cardDisplayName: String,
         /// Unit price / estimated value for cost basis (bought, trade, gift); ignored for packed unless you extend later.
         unitPrice: Double?,
+        /// Grading company name (e.g. "PSA", "ACE"). Nil for raw cards.
+        gradingCompany: String? = nil,
+        /// Grade string (e.g. "10"). Nil for raw cards.
+        grade: String? = nil,
         /// Packed: what was opened (e.g. booster box name).
         packedOpenedFrom: String?,
         /// Trade: other party.
@@ -33,7 +37,8 @@ final class CollectionLedgerService {
     ) throws {
         guard quantity > 0 else { return }
 
-        let productKind = ProductKind.singleCard.rawValue
+        let isGraded = gradingCompany != nil
+        let productKind = isGraded ? ProductKind.gradedItem.rawValue : ProductKind.singleCard.rawValue
         let direction = kind.ledgerDirection.rawValue
 
         let (lineDescription, counterparty, channel) = buildLedgerMetadata(
@@ -52,6 +57,8 @@ final class CollectionLedgerService {
             lineDescription: lineDescription,
             cardID: cardID,
             variantKey: variantKey,
+            gradingCompany: gradingCompany,
+            grade: grade,
             quantity: quantity,
             unitPrice: unitPrice,
             currencyCode: currencyCode,
@@ -64,7 +71,13 @@ final class CollectionLedgerService {
         )
         modelContext.insert(line)
 
-        let item = try findOrCreateSingleCardStack(cardID: cardID, variantKey: variantKey)
+        let item = try findOrCreateCardStack(
+            cardID: cardID,
+            variantKey: variantKey,
+            productKind: productKind,
+            gradingCompany: gradingCompany,
+            grade: grade
+        )
         item.quantity += quantity
         item.dateAcquired = Date()
         if let unitPrice {
@@ -302,12 +315,21 @@ final class CollectionLedgerService {
         return t
     }
 
-    private func findOrCreateSingleCardStack(cardID: String, variantKey: String) throws -> CollectionItem {
-        let kind = ProductKind.singleCard.rawValue
+    private func findOrCreateCardStack(
+        cardID: String,
+        variantKey: String,
+        productKind: String,
+        gradingCompany: String?,
+        grade: String?
+    ) throws -> CollectionItem {
         let descriptor = FetchDescriptor<CollectionItem>()
         let all = try modelContext.fetch(descriptor)
         if let match = all.first(where: {
-            $0.cardID == cardID && $0.variantKey == variantKey && $0.itemKind == kind
+            $0.cardID == cardID
+                && $0.variantKey == variantKey
+                && $0.itemKind == productKind
+                && $0.gradingCompany == gradingCompany
+                && $0.grade == grade
         }) {
             return match
         }
@@ -318,7 +340,9 @@ final class CollectionLedgerService {
             purchasePrice: nil,
             quantity: 0,
             notes: "",
-            itemKind: kind
+            itemKind: productKind,
+            gradingCompany: gradingCompany,
+            grade: grade
         )
         modelContext.insert(created)
         return created

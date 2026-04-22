@@ -8,6 +8,31 @@ struct AddToCollectionSheetPayload: Identifiable {
     let variantKey: String
 }
 
+enum CardCondition: String, CaseIterable, Sendable {
+    case raw
+    case graded
+
+    var title: String {
+        switch self {
+        case .raw: return "Raw"
+        case .graded: return "Graded"
+        }
+    }
+}
+
+enum GradingCompany: String, CaseIterable, Sendable {
+    case psa = "PSA"
+    case ace = "ACE"
+
+    var title: String { rawValue }
+    var priceGradeKey: String {
+        switch self {
+        case .psa: return "psa10"
+        case .ace: return "ace10"
+        }
+    }
+}
+
 /// Add a card to the collection with purchase type–specific fields.
 struct AddToCollectionSheet: View {
     @Environment(\.dismiss) private var dismiss
@@ -18,6 +43,10 @@ struct AddToCollectionSheet: View {
 
     @State private var acquisitionKind: CollectionAcquisitionKind = .packed
     @State private var quantity: Int = 1
+
+    // Grading
+    @State private var cardCondition: CardCondition = .raw
+    @State private var gradingCompany: GradingCompany = .psa
 
     // Bought
     @State private var priceText: String = ""
@@ -53,6 +82,28 @@ struct AddToCollectionSheet: View {
                         }
                     }
                     .pickerStyle(.segmented)
+                }
+
+                Section {
+                    Picker("Condition", selection: $cardCondition) {
+                        ForEach(CardCondition.allCases, id: \.self) { condition in
+                            Text(condition.title).tag(condition)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+
+                    if cardCondition == .graded {
+                        Picker("Grading company", selection: $gradingCompany) {
+                            ForEach(GradingCompany.allCases, id: \.self) { company in
+                                Text(company.title).tag(company)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                    }
+                } footer: {
+                    if cardCondition == .graded {
+                        Text("Graded card value uses the \(gradingCompany.title) 10 market price.")
+                    }
                 }
 
                 Section {
@@ -155,11 +206,19 @@ struct AddToCollectionSheet: View {
         return v
     }
 
+    private var resolvedGradingCompany: String? {
+        cardCondition == .graded ? gradingCompany.rawValue : nil
+    }
+
+    private var resolvedGrade: String? {
+        cardCondition == .graded ? "10" : nil
+    }
+
     private func save() {
         errorMessage = nil
         guard acquisitionKind != .trade else { return }
         guard let ledger = services.collectionLedger else {
-            errorMessage = "Collection isn’t ready. Try again."
+            errorMessage = "Collection isn't ready. Try again."
             return
         }
 
@@ -175,6 +234,8 @@ struct AddToCollectionSheet: View {
                     currencyCode: currencyCode,
                     cardDisplayName: card.cardName,
                     unitPrice: unit,
+                    gradingCompany: resolvedGradingCompany,
+                    grade: resolvedGrade,
                     packedOpenedFrom: nil,
                     tradeCounterparty: nil,
                     tradeGaveAway: nil,
@@ -190,6 +251,8 @@ struct AddToCollectionSheet: View {
                     currencyCode: currencyCode,
                     cardDisplayName: card.cardName,
                     unitPrice: nil,
+                    gradingCompany: resolvedGradingCompany,
+                    grade: resolvedGrade,
                     packedOpenedFrom: nil,
                     tradeCounterparty: nil,
                     tradeGaveAway: nil,
@@ -205,6 +268,8 @@ struct AddToCollectionSheet: View {
                     currencyCode: currencyCode,
                     cardDisplayName: card.cardName,
                     unitPrice: nil,
+                    gradingCompany: resolvedGradingCompany,
+                    grade: resolvedGrade,
                     packedOpenedFrom: nil,
                     tradeCounterparty: nil,
                     tradeGaveAway: nil,

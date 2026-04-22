@@ -95,6 +95,7 @@ struct CollectView: View {
                 contentView
             }
         }
+        .scrollDismissesKeyboard(.immediately)
         .toolbar(hidesNavigationBar ? .hidden : .visible, for: .navigationBar)
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
@@ -200,7 +201,9 @@ struct CollectView: View {
                     card: card,
                     gridOptions: gridOptions,
                     setName: setName(for: card),
-                    footnote: collectionFootnote(for: item)
+                    footnote: collectionFootnote(for: item),
+                    overridePrice: collectionPriceByItemKey[collectionItemKey(item)],
+                    gradeLabel: collectionGradeLabel(for: item)
                 )
             }
             .buttonStyle(CardCellButtonStyle())
@@ -281,7 +284,8 @@ struct CollectView: View {
         var nextPrices: [String: Double] = [:]
         for item in visibleCollectionItems {
             guard let card = next[item.cardID] else { continue }
-            if let usd = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+            let gradeKey = collectionGradeKey(for: item)
+            if let usd = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: item.variantKey, grade: gradeKey) {
                 nextPrices[collectionItemKey(item)] = usd
             }
         }
@@ -419,6 +423,20 @@ struct CollectView: View {
 
     private func collectionItemKey(_ item: CollectionItem) -> String {
         "\(item.cardID)|\(item.variantKey)|\(item.dateAcquired.timeIntervalSinceReferenceDate)"
+    }
+
+    private func collectionGradeKey(for item: CollectionItem) -> String {
+        guard let company = item.gradingCompany else { return "raw" }
+        switch company.uppercased() {
+        case "PSA": return "psa10"
+        case "ACE": return "ace10"
+        default: return "raw"
+        }
+    }
+
+    private func collectionGradeLabel(for item: CollectionItem) -> String? {
+        guard let company = item.gradingCompany, let grade = item.grade else { return nil }
+        return "\(company) \(grade)"
     }
 
     private func wishlistItemKey(_ item: WishlistItem) -> String {

@@ -245,23 +245,34 @@ final class CollectionValueService {
         var total = 0.0
         for item in items {
             guard let card = await cardData.loadCard(masterCardId: item.cardID) else { continue }
-            let usd = await usdPrice(for: card, variantKey: item.variantKey, on: date)
+            let grade = resolvedGradeKey(for: item)
+            let usd = await usdPrice(for: card, variantKey: item.variantKey, grade: grade, on: date)
             total += usd * Double(item.quantity) * pricing.usdToGbp
         }
         return total
     }
 
-    private func usdPrice(for card: Card, variantKey: String, on date: Date) async -> Double {
-        if let historicalPrice = await historicalUsdPrice(for: card, variantKey: variantKey, on: date) {
-            return historicalPrice
+    /// Maps a CollectionItem's grading fields to the pricing grade key used by PricingService.
+    private func resolvedGradeKey(for item: CollectionItem) -> String {
+        guard let company = item.gradingCompany else { return "raw" }
+        switch company.uppercased() {
+        case "PSA": return "psa10"
+        case "ACE": return "ace10"
+        default: return "raw"
         }
-        return await pricing.usdPriceForVariant(for: card, variantKey: variantKey) ?? 0
     }
 
-    private func historicalUsdPrice(for card: Card, variantKey: String, on date: Date) async -> Double? {
+    private func usdPrice(for card: Card, variantKey: String, grade: String, on date: Date) async -> Double {
+        if let historicalPrice = await historicalUsdPrice(for: card, variantKey: variantKey, grade: grade, on: date) {
+            return historicalPrice
+        }
+        return await pricing.usdPriceForVariantAndGrade(for: card, variantKey: variantKey, grade: grade) ?? 0
+    }
+
+    private func historicalUsdPrice(for card: Card, variantKey: String, grade: String, on date: Date) async -> Double? {
         guard let history = await pricing.priceHistory(for: card) else { return nil }
 
-        let seriesKey = "\(variantKey)/raw"
+        let seriesKey = "\(variantKey)/\(grade)"
         let series = history.series[seriesKey]
             ?? history.series.first(where: { $0.key.hasPrefix(variantKey + "/") })?.value
             ?? history.series.values.first

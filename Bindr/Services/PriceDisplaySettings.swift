@@ -185,3 +185,121 @@ final class BrowseGridOptionsSettings {
         min(max(count, validColumnRange.lowerBound), validColumnRange.upperBound)
     }
 }
+
+// MARK: - Collection filter + grid persistence
+
+/// Persists the collection tab's filter choices (sort, toggles) and grid options across launches.
+/// Only the stable, non-set-specific fields are saved: sortBy, showDuplicates, and all grid options.
+/// Set-specific filters (energy, rarity, trainer type) are intentionally left ephemeral.
+@Observable
+final class CollectionFiltersSettings {
+    private static let validColumnRange = 1...4
+
+    private enum Keys {
+        static let collectionSortBy     = "collectFilterSortBy"
+        static let collectionShowDups   = "collectFilterShowDuplicates"
+        static let wishlistSortBy       = "wishlistFilterSortBy"
+        static let gridShowCardName     = "collectGridShowCardName"
+        static let gridShowSetName      = "collectGridShowSetName"
+        static let gridShowSetID        = "collectGridShowSetID"
+        static let gridShowPricing      = "collectGridShowPricing"
+        static let gridShowOwned        = "collectGridShowOwned"
+        static let gridColumnCount      = "collectGridColumnCount"
+    }
+
+    var collectionFilters: BrowseCardGridFilters {
+        didSet {
+            guard collectionFilters != oldValue else { return }
+            saveCollectionFilters(collectionFilters)
+        }
+    }
+
+    var wishlistFilters: BrowseCardGridFilters {
+        didSet {
+            guard wishlistFilters != oldValue else { return }
+            saveWishlistFilters(wishlistFilters)
+        }
+    }
+
+    var gridOptions: BrowseGridOptions {
+        didSet {
+            let sanitized = Self.sanitizeGrid(gridOptions)
+            if sanitized != gridOptions { gridOptions = sanitized; return }
+            guard gridOptions != oldValue else { return }
+            saveGridOptions(gridOptions)
+        }
+    }
+
+    init() {
+        collectionFilters = Self.loadCollectionFilters()
+        wishlistFilters   = Self.loadWishlistFilters()
+        gridOptions       = Self.loadGridOptions()
+    }
+
+    // MARK: - Load
+
+    private static func loadCollectionFilters() -> BrowseCardGridFilters {
+        let d = UserDefaults.standard
+        var f = BrowseCardGridFilters()
+        f.sortBy = BrowseCardGridSortOption(rawValue: d.string(forKey: Keys.collectionSortBy) ?? "") ?? .price
+        f.showDuplicates = d.object(forKey: Keys.collectionShowDups) != nil
+            ? d.bool(forKey: Keys.collectionShowDups) : false
+        return f
+    }
+
+    private static func loadWishlistFilters() -> BrowseCardGridFilters {
+        let d = UserDefaults.standard
+        var f = BrowseCardGridFilters()
+        f.sortBy = BrowseCardGridSortOption(rawValue: d.string(forKey: Keys.wishlistSortBy) ?? "") ?? .random
+        return f
+    }
+
+    private static func loadGridOptions() -> BrowseGridOptions {
+        let d = UserDefaults.standard
+        let base = BrowseGridOptions()
+        return BrowseGridOptions(
+            showCardName: d.object(forKey: Keys.gridShowCardName) != nil ? d.bool(forKey: Keys.gridShowCardName) : base.showCardName,
+            showSetName:  d.object(forKey: Keys.gridShowSetName)  != nil ? d.bool(forKey: Keys.gridShowSetName)  : base.showSetName,
+            showSetID:    d.object(forKey: Keys.gridShowSetID)    != nil ? d.bool(forKey: Keys.gridShowSetID)    : base.showSetID,
+            showPricing:  d.object(forKey: Keys.gridShowPricing)  != nil ? d.bool(forKey: Keys.gridShowPricing)  : base.showPricing,
+            showOwned:    d.object(forKey: Keys.gridShowOwned)    != nil ? d.bool(forKey: Keys.gridShowOwned)    : base.showOwned,
+            columnCount:  sanitizedColumnCount(
+                d.object(forKey: Keys.gridColumnCount) != nil ? d.integer(forKey: Keys.gridColumnCount) : base.columnCount
+            )
+        )
+    }
+
+    // MARK: - Save
+
+    private func saveCollectionFilters(_ f: BrowseCardGridFilters) {
+        let d = UserDefaults.standard
+        d.set(f.sortBy.rawValue, forKey: Keys.collectionSortBy)
+        d.set(f.showDuplicates, forKey: Keys.collectionShowDups)
+    }
+
+    private func saveWishlistFilters(_ f: BrowseCardGridFilters) {
+        UserDefaults.standard.set(f.sortBy.rawValue, forKey: Keys.wishlistSortBy)
+    }
+
+    private func saveGridOptions(_ options: BrowseGridOptions) {
+        let d = UserDefaults.standard
+        d.set(options.showCardName, forKey: Keys.gridShowCardName)
+        d.set(options.showSetName,  forKey: Keys.gridShowSetName)
+        d.set(options.showSetID,    forKey: Keys.gridShowSetID)
+        d.set(options.showPricing,  forKey: Keys.gridShowPricing)
+        d.set(options.showOwned,    forKey: Keys.gridShowOwned)
+        d.set(options.columnCount,  forKey: Keys.gridColumnCount)
+    }
+
+    // MARK: - Helpers
+
+    private static func sanitizeGrid(_ options: BrowseGridOptions) -> BrowseGridOptions {
+        var s = options
+        s.columnCount = sanitizedColumnCount(options.columnCount)
+        return s
+    }
+
+    private static func sanitizedColumnCount(_ count: Int) -> Int {
+        min(max(count, validColumnRange.lowerBound), validColumnRange.upperBound)
+    }
+}

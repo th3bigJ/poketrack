@@ -410,7 +410,15 @@ struct DashboardView: View {
 
         for item in collectionItems {
             guard let card = await services.cardData.loadCard(masterCardId: item.cardID) else { continue }
-            let usdPrice = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) ?? 0
+            let gradeKey: String = {
+                guard let company = item.gradingCompany else { return "raw" }
+                switch company.uppercased() {
+                case "PSA": return "psa10"
+                case "ACE": return "ace10"
+                default: return "raw"
+                }
+            }()
+            let usdPrice = await services.pricing.usdPriceForVariantAndGrade(for: card, variantKey: item.variantKey, grade: gradeKey) ?? 0
             let gbp = usdPrice * Double(item.quantity) * services.pricing.usdToGbp
             totalValue += gbp
 

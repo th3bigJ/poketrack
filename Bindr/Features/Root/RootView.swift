@@ -2,6 +2,46 @@ import SwiftUI
 import SwiftData
 import UIKit
 
+/// Thin wrapper that gives `BrowseView` its own stable SwiftUI identity,
+/// preventing it from being re-initialised whenever `RootView.body` re-evaluates.
+private struct BrowseTabView: View {
+    @Query private var collectionItems: [CollectionItem]
+
+    @Binding var filters: BrowseCardGridFilters
+    @Binding var inlineDetailFilters: BrowseCardGridFilters
+    @Binding var gridOptions: BrowseGridOptions
+    @Binding var filterResultCount: Int
+    @Binding var filterEnergyOptions: [String]
+    @Binding var filterRarityOptions: [String]
+    @Binding var filterTrainerTypeOptions: [String]
+    @Binding var inlineDetailFilterResultCount: Int
+    @Binding var inlineDetailFilterEnergyOptions: [String]
+    @Binding var inlineDetailFilterRarityOptions: [String]
+    @Binding var inlineDetailFilterTrainerTypeOptions: [String]
+    @Binding var selectedTab: BrowseHomeTab
+    @Binding var inlineDetailRoute: BrowseInlineDetailRoute?
+
+    var body: some View {
+        BrowseView(
+            collectionItems: collectionItems,
+            filters: $filters,
+            inlineDetailFilters: $inlineDetailFilters,
+            gridOptions: $gridOptions,
+            isFilterMenuPresented: .constant(false),
+            filterResultCount: $filterResultCount,
+            filterEnergyOptions: $filterEnergyOptions,
+            filterRarityOptions: $filterRarityOptions,
+            filterTrainerTypeOptions: $filterTrainerTypeOptions,
+            inlineDetailFilterResultCount: $inlineDetailFilterResultCount,
+            inlineDetailFilterEnergyOptions: $inlineDetailFilterEnergyOptions,
+            inlineDetailFilterRarityOptions: $inlineDetailFilterRarityOptions,
+            inlineDetailFilterTrainerTypeOptions: $inlineDetailFilterTrainerTypeOptions,
+            selectedTab: $selectedTab,
+            inlineDetailRoute: $inlineDetailRoute
+        )
+    }
+}
+
 struct RootView: View {
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
@@ -25,16 +65,10 @@ struct RootView: View {
     @State private var browseHomeTab: BrowseHomeTab = .cards
     @State private var browseInlineDetailRoute: BrowseInlineDetailRoute?
     @State private var collectSelectedBrand: TCGBrand? = nil
-    @State private var collectCollectionFilters: BrowseCardGridFilters = {
-        var filters = BrowseCardGridFilters()
-        filters.sortBy = .price
-        return filters
-    }()
-    @State private var collectWishlistFilters = BrowseCardGridFilters()
+    @State private var collectFilters = CollectionFiltersSettings()
     @State private var collectFilterEnergyOptions: [String] = []
     @State private var collectFilterRarityOptions: [String] = []
     @State private var collectFilterTrainerTypeOptions: [String] = []
-    @State private var collectGridOptions = BrowseGridOptions()
     @State private var isSearchExperiencePresented = false
     /// When non-empty, user has pushed card / set / dex from search — hide root `UniversalSearchBar`; detail uses the same `NavigationStack` bar as Browse (`DexCardsView` / `SetCardsView`).
     @State private var searchNavigationPath = NavigationPath()
@@ -77,11 +111,11 @@ struct RootView: View {
     }
 
     private var activeCollectFilters: BrowseCardGridFilters {
-        collectSegment == .collection ? collectCollectionFilters : collectWishlistFilters
+        collectSegment == .collection ? collectFilters.collectionFilters : collectFilters.wishlistFilters
     }
 
     private var activeCollectFiltersBinding: Binding<BrowseCardGridFilters> {
-        collectSegment == .collection ? $collectCollectionFilters : $collectWishlistFilters
+        collectSegment == .collection ? $collectFilters.collectionFilters : $collectFilters.wishlistFilters
     }
 
     private var isCollectFilterActive: Bool {
@@ -180,6 +214,7 @@ struct RootView: View {
         .environment(services)
         .environmentObject(chromeScroll)
         .environment(\.presentCard, { card, list in
+            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
             let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
             selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
         })
@@ -235,82 +270,81 @@ struct RootView: View {
         Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? "1.0"
     }
 
+    private var chromeSearchBarTopInset: CGFloat { RootChromeEnvironment.searchBarTopInset }
+    private var chromeSearchBarBottomInset: CGFloat { RootChromeEnvironment.searchBarBottomInset }
+    private var chromeFloatingInset: CGFloat { RootChromeEnvironment.floatingContentTopInset }
+    private var chromeSearchBarHiddenOffset: CGFloat { -(chromeFloatingInset + 18) }
+    private var chromeContentTopInset: CGFloat { isSearchDetailActive ? 0 : chromeFloatingInset }
+
     @ViewBuilder
     private var mainContent: some View {
-        GeometryReader { _ in
-            let searchBarTopInset = RootChromeEnvironment.searchBarTopInset
-            let searchBarBottomInset = RootChromeEnvironment.searchBarBottomInset
-            let floatingChromeInset = RootChromeEnvironment.floatingContentTopInset
-            let searchBarHiddenOffset = -(floatingChromeInset + 18)
-            let contentTopInset: CGFloat = isSearchDetailActive ? 0 : floatingChromeInset
-
+        ZStack(alignment: .top) {
             ZStack(alignment: .top) {
-                ZStack(alignment: .top) {
                     TabView(selection: $selectedTab) {
-                        ForEach(AppTab.visibleTabs) { tab in
-                            Group {
-                                switch tab {
-                                case .dashboard:
-                                    NavigationStack {
-                                        DashboardView(onViewAllActivity: {
-                                            suppressMorePathReset = true
-                                            moreNavigationPath = NavigationPath()
-                                            moreNavigationPath.append(SideMenuPage.transactions)
-                                            selectedTab = .more
-                                        })
-                                    }
-                                case .browse:
-                                    NavigationStack(path: $browseNavigationPath) {
-                                        BrowseView(
-                                            filters: $browseFilters,
-                                            inlineDetailFilters: $browseInlineDetailFilters,
-                                            gridOptions: Binding(
-                                                get: { services.browseGridOptions.options },
-                                                set: { services.browseGridOptions.options = $0 }
-                                            ),
-                                            isFilterMenuPresented: .constant(false),
-                                            filterResultCount: $browseFilterResultCount,
-                                            filterEnergyOptions: $browseFilterEnergyOptions,
-                                            filterRarityOptions: $browseFilterRarityOptions,
-                                            filterTrainerTypeOptions: $browseFilterTrainerTypeOptions,
-                                            inlineDetailFilterResultCount: $browseInlineDetailFilterResultCount,
-                                            inlineDetailFilterEnergyOptions: $browseInlineDetailFilterEnergyOptions,
-                                            inlineDetailFilterRarityOptions: $browseInlineDetailFilterRarityOptions,
-                                            inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
-                                            selectedTab: $browseHomeTab,
-                                            inlineDetailRoute: $browseInlineDetailRoute
-                                        )
-                                    }
-                                case .collect:
-                                    NavigationStack(path: $collectionNavigationPath) {
-                                        CollectView(
-                                            selectedSegment: $collectSegment,
-                                            selectedBrand: $collectSelectedBrand,
-                                            collectionFilters: $collectCollectionFilters,
-                                            wishlistFilters: $collectWishlistFilters,
-                                            collectFilterEnergyOptions: $collectFilterEnergyOptions,
-                                            collectFilterRarityOptions: $collectFilterRarityOptions,
-                                            collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
-                                            gridOptions: $collectGridOptions
-                                        )
-                                    }
-                                case .social:
-                                    NavigationStack {
-                                        SocialRootView()
-                                    }
-                                case .more:
-                                    NavigationStack(path: $moreNavigationPath) {
-                                        MoreView(navigationPath: $moreNavigationPath)
-                                    }
-                                }
-                            }
-                            .toolbarBackground(.hidden, for: .navigationBar)
-                            .tabItem {
-                                Label(tab.title, systemImage: tab.symbolName)
-                            }
-                            .badge(tab == .social && services.socialFeed.hasUnread ? "●" : nil)
-                            .tag(tab)
+                        NavigationStack {
+                            DashboardView(onViewAllActivity: {
+                                suppressMorePathReset = true
+                                moreNavigationPath = NavigationPath()
+                                moreNavigationPath.append(SideMenuPage.transactions)
+                                selectedTab = .more
+                            })
                         }
+                        .toolbarBackground(.hidden, for: .navigationBar)
+                        .tabItem { Label(AppTab.dashboard.title, systemImage: AppTab.dashboard.symbolName) }
+                        .tag(AppTab.dashboard)
+
+                        NavigationStack(path: $browseNavigationPath) {
+                            let browseGridOptionsBindable = Bindable(services.browseGridOptions)
+                            BrowseTabView(
+                                filters: $browseFilters,
+                                inlineDetailFilters: $browseInlineDetailFilters,
+                                gridOptions: browseGridOptionsBindable.options,
+                                filterResultCount: $browseFilterResultCount,
+                                filterEnergyOptions: $browseFilterEnergyOptions,
+                                filterRarityOptions: $browseFilterRarityOptions,
+                                filterTrainerTypeOptions: $browseFilterTrainerTypeOptions,
+                                inlineDetailFilterResultCount: $browseInlineDetailFilterResultCount,
+                                inlineDetailFilterEnergyOptions: $browseInlineDetailFilterEnergyOptions,
+                                inlineDetailFilterRarityOptions: $browseInlineDetailFilterRarityOptions,
+                                inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
+                                selectedTab: $browseHomeTab,
+                                inlineDetailRoute: $browseInlineDetailRoute
+                            )
+                        }
+                        .toolbarBackground(.hidden, for: .navigationBar)
+                        .tabItem { Label(AppTab.browse.title, systemImage: AppTab.browse.symbolName) }
+                        .tag(AppTab.browse)
+
+                        NavigationStack(path: $collectionNavigationPath) {
+                            CollectView(
+                                selectedSegment: $collectSegment,
+                                selectedBrand: $collectSelectedBrand,
+                                collectionFilters: $collectFilters.collectionFilters,
+                                wishlistFilters: $collectFilters.wishlistFilters,
+                                collectFilterEnergyOptions: $collectFilterEnergyOptions,
+                                collectFilterRarityOptions: $collectFilterRarityOptions,
+                                collectFilterTrainerTypeOptions: $collectFilterTrainerTypeOptions,
+                                gridOptions: $collectFilters.gridOptions
+                            )
+                        }
+                        .toolbarBackground(.hidden, for: .navigationBar)
+                        .tabItem { Label(AppTab.collect.title, systemImage: AppTab.collect.symbolName) }
+                        .tag(AppTab.collect)
+
+                        NavigationStack {
+                            SocialRootView()
+                        }
+                        .toolbarBackground(.hidden, for: .navigationBar)
+                        .tabItem { Label(AppTab.social.title, systemImage: AppTab.social.symbolName) }
+                        .badge(services.socialFeed.hasUnread ? "●" : nil)
+                        .tag(AppTab.social)
+
+                        NavigationStack(path: $moreNavigationPath) {
+                            MoreView(navigationPath: $moreNavigationPath)
+                        }
+                        .toolbarBackground(.hidden, for: .navigationBar)
+                        .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
+                        .tag(AppTab.more)
                     }
 
                     if isSearchExperiencePresented {
@@ -356,6 +390,7 @@ struct RootView: View {
                             }
                         }
                         .environment(\.presentCard, { card, list in
+                            UIImpactFeedbackGenerator(style: .medium).impactOccurred()
                             let idx = list.firstIndex(where: { $0.id == card.id }) ?? 0
                             selectedCardPresentation = CardPresentationContext(cards: list, startIndex: idx)
                         })
@@ -374,44 +409,43 @@ struct RootView: View {
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
                 .animation(.spring(response: 0.38, dampingFraction: 0.88), value: isSearchExperiencePresented)
-                .environment(\.rootFloatingChromeInset, contentTopInset)
+                .environment(\.rootFloatingChromeInset, chromeContentTopInset)
 
                 // Floating above tab content so `.ultraThinMaterial` / Liquid Glass blur the grid behind the bar.
-                floatingSearchBar(hiddenOffset: searchBarHiddenOffset, topInset: searchBarTopInset, bottomInset: searchBarBottomInset)
+                floatingSearchBar(hiddenOffset: chromeSearchBarHiddenOffset, topInset: chromeSearchBarTopInset, bottomInset: chromeSearchBarBottomInset)
                     .popover(isPresented: $showSettings) {
                         SettingsView()
                             .environment(services)
                     }
-            }
-            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-            // System background shows through the material where the bar is translucent.
-            .background(Color(uiColor: .systemBackground))
-            .overlay {
-                if services.isCatalogDownloadInProgress {
-                    ZStack {
-                        Color.black.opacity(0.48)
-                            .ignoresSafeArea()
-                        if services.catalogDownloadShowsByteProgressUI {
-                            LoadingScreen(
-                                message: services.catalogDownloadMessage,
-                                status: services.catalogDownloadStatus,
-                                progress: services.catalogDownloadProgress,
-                                downloadedBytes: services.catalogDownloadDownloadedBytes,
-                                totalBytes: services.catalogDownloadEstimatedTotalBytes
-                            )
-                        } else {
-                            CatalogEnablingBusyView(
-                                message: services.catalogDownloadMessage,
-                                status: services.catalogDownloadStatus
-                            )
-                        }
-                    }
-                    .transition(.opacity)
-                    .zIndex(500)
-                }
-            }
-            .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+        // System background shows through the material where the bar is translucent.
+        .background(Color(uiColor: .systemBackground))
+        .overlay {
+            if services.isCatalogDownloadInProgress {
+                ZStack {
+                    Color.black.opacity(0.48)
+                        .ignoresSafeArea()
+                    if services.catalogDownloadShowsByteProgressUI {
+                        LoadingScreen(
+                            message: services.catalogDownloadMessage,
+                            status: services.catalogDownloadStatus,
+                            progress: services.catalogDownloadProgress,
+                            downloadedBytes: services.catalogDownloadDownloadedBytes,
+                            totalBytes: services.catalogDownloadEstimatedTotalBytes
+                        )
+                    } else {
+                        CatalogEnablingBusyView(
+                            message: services.catalogDownloadMessage,
+                            status: services.catalogDownloadStatus
+                        )
+                    }
+                }
+                .transition(.opacity)
+                .zIndex(500)
+            }
+        }
+        .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
         .overlay {
             if selectedCardPresentation != nil {
                 Color(uiColor: .systemBackground)
@@ -492,8 +526,8 @@ struct RootView: View {
 
             var defaultCollectionFilters = BrowseCardGridFilters()
             defaultCollectionFilters.sortBy = .price
-            collectCollectionFilters = defaultCollectionFilters
-            collectWishlistFilters = BrowseCardGridFilters()
+            collectFilters.collectionFilters = defaultCollectionFilters
+            collectFilters.wishlistFilters = BrowseCardGridFilters()
         }
         .onChange(of: services.socialAuth.authState) { _, _ in
             Task {
@@ -608,12 +642,12 @@ struct RootView: View {
             rarityOptions: collectFilterRarityOptions,
             trainerTypeOptions: collectFilterTrainerTypeOptions,
             isAllBrands: isCollectAllBrands,
-            gridOptions: $collectGridOptions,
+            gridOptions: $collectFilters.gridOptions,
             config: FilterMenuConfig(
                 showAcquiredDateSort: true,
                 showHideOwned: false,
                 showShowDuplicates: true,
-                showGridOptions: false,
+                showGridOptions: true,
                 defaultSortBy: .price
             )
         )
