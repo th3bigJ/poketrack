@@ -28,15 +28,16 @@ struct FriendProfileView: View {
                 ScrollView {
                     VStack(spacing: 0) {
                         // 1. Hero Header
-                        ProfileHeroHeader(profile: profile, onEditTapped: nil) // Pass nil since can't edit friend
+                        ProfileHeroHeader(profile: profile, onEditTapped: nil)
+                            .zIndex(1)
                         
                         VStack(spacing: 24) {
                             // 2. Stats Row
                             ProfileStatsRow(
-                                cardCount: 0, // Not synced yet
-                                totalValue: "---", // Not synced yet
+                                cardCount: profile.collectionCardCount ?? 0,
+                                totalValue: formattedTotalValue(profile.collectionTotalValue),
                                 followerCount: profile.followerCount ?? 0,
-                                binderCount: 0 // Not synced yet
+                                binderCount: profile.collectionBinderCount ?? 0
                             )
                             
                             // 3. Profile Type Chips
@@ -195,7 +196,7 @@ struct FriendProfileView: View {
                             
                             Spacer().frame(height: 40)
                         }
-                        .padding(.top, 24)
+                        .padding(.top, 48) // Increased space to account for Hero Header overlap (offset 40 + extra)
                     }
                 }
                 .background(colorScheme == .dark ? Color.black : Color(uiColor: .systemGroupedBackground))
@@ -400,6 +401,23 @@ struct FriendProfileView: View {
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+
+    private func formattedTotalValue(_ value: Double?) -> String {
+        guard let value else { return "---" }
+        let display = services.priceDisplay
+        let currency = display.currency
+        let symbol = currency.symbol
+        
+        // Profiles store values in GBP (base currency for collection snapshots)
+        let rate = currency == .gbp ? 1.0 : 1.0 / services.pricing.usdToGbp
+        let valueInTarget = value * rate
+        
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = symbol
+        formatter.maximumFractionDigits = 0
+        return formatter.string(from: NSNumber(value: valueInTarget)) ?? "\(symbol)0"
     }
 
     private func refreshSharedContent(ownerID: UUID) async {

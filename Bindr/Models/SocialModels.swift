@@ -20,6 +20,11 @@ struct SocialProfile: Codable, Identifiable, Sendable {
     let followerCount: Int?
     let isWishlistPublic: Bool?
     let wishlistCardIDs: [String]?
+    let avatarBackgroundColor: String?
+    let avatarOutlineStyle: String?
+    let collectionCardCount: Int?
+    let collectionBinderCount: Int?
+    let collectionTotalValue: Double?
     let createdAt: Date?
 
     enum CodingKeys: String, CodingKey {
@@ -42,6 +47,11 @@ struct SocialProfile: Codable, Identifiable, Sendable {
         case followerCount = "follower_count"
         case isWishlistPublic = "is_wishlist_public"
         case wishlistCardIDs = "wishlist_card_ids"
+        case avatarBackgroundColor = "avatar_background_color"
+        case avatarOutlineStyle = "avatar_outline_style"
+        case collectionCardCount = "collection_card_count"
+        case collectionBinderCount = "collection_binder_count"
+        case collectionTotalValue = "collection_total_value"
         case createdAt = "created_at"
     }
 }

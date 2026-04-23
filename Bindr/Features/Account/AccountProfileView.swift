@@ -190,7 +190,12 @@ struct AccountProfileView: View {
                     favoriteCardImageURL: payload.favoriteCardImageURL,
                     favoriteDeckArchetype: payload.favoriteDeckArchetype,
                     isWishlistPublic: payload.isWishlistPublic,
-                    wishlistCardIDs: payload.wishlistCardIDs
+                    wishlistCardIDs: payload.wishlistCardIDs,
+                    avatarBackgroundColor: payload.avatarBackgroundColor,
+                    avatarOutlineStyle: payload.avatarOutlineStyle,
+                    collectionCardCount: payload.collectionCardCount,
+                    collectionBinderCount: payload.collectionBinderCount,
+                    collectionTotalValue: payload.collectionTotalValue
                 )
             } else {
                 profile = try await services.socialProfile.updateProfile(
@@ -206,7 +211,12 @@ struct AccountProfileView: View {
                     favoriteCardImageURL: payload.favoriteCardImageURL,
                     favoriteDeckArchetype: payload.favoriteDeckArchetype,
                     isWishlistPublic: payload.isWishlistPublic,
-                    wishlistCardIDs: payload.wishlistCardIDs
+                    wishlistCardIDs: payload.wishlistCardIDs,
+                    avatarBackgroundColor: payload.avatarBackgroundColor,
+                    avatarOutlineStyle: payload.avatarOutlineStyle,
+                    collectionCardCount: payload.collectionCardCount,
+                    collectionBinderCount: payload.collectionBinderCount,
+                    collectionTotalValue: payload.collectionTotalValue
                 )
             }
             externalProfile = profile

@@ -42,6 +42,11 @@ final class SocialProfileService {
         let favoriteDeckArchetype: String?
         let isWishlistPublic: Bool?
         let wishlistCardIDs: [String]?
+        let avatarBackgroundColor: String?
+        let avatarOutlineStyle: String?
+        let collectionCardCount: Int?
+        let collectionBinderCount: Int?
+        let collectionTotalValue: Double?
 
         enum CodingKeys: String, CodingKey {
             case id
@@ -61,6 +66,11 @@ final class SocialProfileService {
             case favoriteDeckArchetype = "favorite_deck_archetype"
             case isWishlistPublic = "is_wishlist_public"
             case wishlistCardIDs = "wishlist_card_ids"
+            case avatarBackgroundColor = "avatar_background_color"
+            case avatarOutlineStyle = "avatar_outline_style"
+            case collectionCardCount = "collection_card_count"
+            case collectionBinderCount = "collection_binder_count"
+            case collectionTotalValue = "collection_total_value"
         }
     }
 
@@ -120,6 +130,11 @@ final class SocialProfileService {
         let favoriteDeckArchetype: String?
         let isWishlistPublic: Bool?
         let wishlistCardIDs: [String]?
+        let avatarBackgroundColor: String?
+        let avatarOutlineStyle: String?
+        let collectionCardCount: Int?
+        let collectionBinderCount: Int?
+        let collectionTotalValue: Double?
 
         enum CodingKeys: String, CodingKey {
             case displayName = "display_name"
@@ -135,6 +150,11 @@ final class SocialProfileService {
             case favoriteDeckArchetype = "favorite_deck_archetype"
             case isWishlistPublic = "is_wishlist_public"
             case wishlistCardIDs = "wishlist_card_ids"
+            case avatarBackgroundColor = "avatar_background_color"
+            case avatarOutlineStyle = "avatar_outline_style"
+            case collectionCardCount = "collection_card_count"
+            case collectionBinderCount = "collection_binder_count"
+            case collectionTotalValue = "collection_total_value"
         }
     }
 
@@ -175,7 +195,12 @@ final class SocialProfileService {
         favoriteCardImageURL: String?,
         favoriteDeckArchetype: String?,
         isWishlistPublic: Bool?,
-        wishlistCardIDs: [String]?
+        wishlistCardIDs: [String]?,
+        avatarBackgroundColor: String?,
+        avatarOutlineStyle: String?,
+        collectionCardCount: Int?,
+        collectionBinderCount: Int?,
+        collectionTotalValue: Double?
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let appleUserID = KeychainStorage.readAppleUserIdentifier() ?? "apple-\(userID.uuidString)"
@@ -196,7 +221,12 @@ final class SocialProfileService {
             favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
             favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
             isWishlistPublic: isWishlistPublic,
-            wishlistCardIDs: wishlistCardIDs
+            wishlistCardIDs: wishlistCardIDs,
+            avatarBackgroundColor: avatarBackgroundColor,
+            avatarOutlineStyle: avatarOutlineStyle,
+            collectionCardCount: collectionCardCount,
+            collectionBinderCount: collectionBinderCount,
+            collectionTotalValue: collectionTotalValue
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?on_conflict=id",
@@ -225,7 +255,12 @@ final class SocialProfileService {
         favoriteCardImageURL: String?,
         favoriteDeckArchetype: String?,
         isWishlistPublic: Bool?,
-        wishlistCardIDs: [String]?
+        wishlistCardIDs: [String]?,
+        avatarBackgroundColor: String?,
+        avatarOutlineStyle: String?,
+        collectionCardCount: Int?,
+        collectionBinderCount: Int?,
+        collectionTotalValue: Double?
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let payload = UpdateProfileRequest(
@@ -241,7 +276,12 @@ final class SocialProfileService {
             favoriteCardImageURL: favoriteCardImageURL?.trimmedNilIfEmpty,
             favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
             isWishlistPublic: isWishlistPublic,
-            wishlistCardIDs: wishlistCardIDs
+            wishlistCardIDs: wishlistCardIDs,
+            avatarBackgroundColor: avatarBackgroundColor,
+            avatarOutlineStyle: avatarOutlineStyle,
+            collectionCardCount: collectionCardCount,
+            collectionBinderCount: collectionBinderCount,
+            collectionTotalValue: collectionTotalValue
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?id=eq.\(userID.uuidString)&select=*",

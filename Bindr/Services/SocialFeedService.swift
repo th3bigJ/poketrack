@@ -350,6 +350,16 @@ final class SocialFeedService {
         return flattened
     }
 
+    func fetchCommentCount(for contentID: UUID) async throws -> Int {
+        let path = "/rest/v1/comments?select=id&content_id=eq.\(contentID.uuidString)"
+        let rows: [[String: UUID]] = try await execute(
+            path: path,
+            method: "GET",
+            accessToken: try signedInAccessToken()
+        )
+        return rows.count
+    }
+
     func postComment(body: String, parentID: UUID?, to contentID: UUID) async throws {
         let trimmed = body.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmed.isEmpty else { return }
@@ -399,7 +409,6 @@ final class SocialFeedService {
     ) async throws -> [FeedItem] {
         async let sharedTask = fetchSharedContentRows(before: before, limit: limit)
         async let reactionTask = fetchReactionRows(before: before, limit: limit)
-        async let commentTask = fetchCommentRows(before: before, limit: limit)
         async let friendshipTask = fetchFriendshipRows(before: before, limit: limit)
         async let matchTask = fetchWishlistMatchRows(before: before, limit: limit)
 
@@ -442,24 +451,6 @@ final class SocialFeedService {
             )
         })
 
-        let commentRows = try await commentTask
-        merged.append(contentsOf: commentRows.compactMap { row in
-            guard let timestamp = row.createdAt, let content = row.content else { return nil }
-            guard row.authorID != currentUserID else { return nil }
-            guard !blockedUserIDs.contains(row.authorID) else { return nil }
-            let summary = FeedContentSummary(id: content.id, ownerID: content.ownerID, title: content.title, contentType: content.contentType)
-            return FeedItem(
-                id: "comment-\(row.id.uuidString)",
-                type: .comment,
-                createdAt: timestamp,
-                actor: row.author,
-                content: summary,
-                reactionType: nil,
-                commentBody: row.body,
-                friendshipID: nil,
-                wishlistCardID: nil
-            )
-        })
 
         let friendshipRows = try await friendshipTask
         merged.append(contentsOf: friendshipRows.compactMap { row in

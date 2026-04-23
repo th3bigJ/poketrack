@@ -6,6 +6,7 @@ struct FeedItemView: View {
     let item: SocialFeedService.FeedItem
 
     @State private var reactionAggregate = SocialFeedService.ReactionAggregate(totalCount: 0, byType: [:], myReactionType: nil)
+    @State private var commentCount = 0
     @State private var isReactionBusy = false
     @State private var isCommentsPresented = false
     @State private var errorMessage: String?
@@ -49,7 +50,12 @@ struct FeedItemView: View {
         .padding(12)
         .background(cardBackground)
         .task(id: item.id) {
-            await refreshReactionAggregateIfNeeded()
+            await refreshAggregates()
+        }
+        .onChange(of: isCommentsPresented) { _, newValue in
+            if !newValue {
+                Task { await refreshAggregates() }
+            }
         }
     }
 
@@ -132,11 +138,23 @@ struct FeedItemView: View {
                     Button {
                         isCommentsPresented = true
                     } label: {
-                        Label("Comments", systemImage: "bubble.left.and.bubble.right")
-                            .font(.caption.weight(.semibold))
+                        HStack(spacing: 4) {
+                            Image(systemName: "bubble.left.and.bubble.right")
+                            if commentCount > 0 {
+                                Text("\(commentCount)")
+                                    .font(.caption.weight(.bold))
+                            }
+                        }
+                        .font(.caption.weight(.semibold))
+                        .foregroundStyle(.secondary)
+                        .padding(.horizontal, 10)
+                        .padding(.vertical, 6)
+                        .background(
+                            Capsule()
+                                .fill(Color.secondary.opacity(0.12))
+                        )
                     }
                     .buttonStyle(.plain)
-                    .foregroundStyle(.secondary)
                 }
             }
         }
@@ -161,6 +179,24 @@ struct FeedItemView: View {
                     RoundedRectangle(cornerRadius: 14, style: .continuous)
                         .stroke(Color.primary.opacity(0.08), lineWidth: 0.5)
                 }
+        }
+    }
+
+    private func refreshAggregates() async {
+        guard let contentID = item.content?.id else { return }
+        await withTaskGroup(of: Void.self) { group in
+            group.addTask {
+                do {
+                    let reaction = try await services.socialFeed.fetchReactionAggregate(for: contentID)
+                    await MainActor.run { self.reactionAggregate = reaction }
+                } catch {}
+            }
+            group.addTask {
+                do {
+                    let count = try await services.socialFeed.fetchCommentCount(for: contentID)
+                    await MainActor.run { self.commentCount = count }
+                } catch {}
+            }
         }
     }
 

@@ -51,6 +51,7 @@ struct MyProfileView: View {
             VStack(spacing: 24) {
                 // 1. Hero Header
                 ProfileHeroHeader(profile: profile, onEditTapped: onEditTapped)
+                    .zIndex(1)
                 
                 VStack(spacing: 24) {
                     // 2. Stats Row
@@ -166,7 +167,7 @@ struct MyProfileView: View {
                     .padding(.horizontal, 20)
                     .padding(.bottom, 40)
                 }
-                .padding(.top, 20) // Space after hero header overlap
+                .padding(.top, 48) // Increased space to account for Hero Header overlap (offset 40 + extra)
             }
         }
         .background(colorScheme == .dark ? Color.black : Color(uiColor: .systemGroupedBackground))

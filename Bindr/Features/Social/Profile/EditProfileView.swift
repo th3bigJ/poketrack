@@ -1,4 +1,5 @@
 import SwiftUI
+import SwiftData
 
 struct SocialProfileFormPayload: Sendable {
     let username: String
@@ -15,6 +16,11 @@ struct SocialProfileFormPayload: Sendable {
     let favoriteDeckArchetype: String
     let isWishlistPublic: Bool
     let wishlistCardIDs: [String]?
+    let avatarBackgroundColor: String?
+    let avatarOutlineStyle: String?
+    let collectionCardCount: Int?
+    let collectionBinderCount: Int?
+    let collectionTotalValue: Double?
 }
 
 private struct FavoritePokemonSelection: Identifiable, Hashable {
@@ -36,6 +42,8 @@ private struct FavoriteCardSelection: Identifiable, Hashable {
 
 struct EditProfileView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
 
     private enum ProfileRole: String, CaseIterable, Identifiable {
         case collector = "collector"
@@ -66,6 +74,8 @@ struct EditProfileView: View {
     @State private var showCardPicker = false
     @State private var isSaving = false
     @State private var errorMessage: String?
+    @State private var avatarBackgroundColor: String?
+    @State private var avatarOutlineStyle: String?
 
     init(
         existingProfile: SocialProfile?,
@@ -79,6 +89,8 @@ struct EditProfileView: View {
         _profileRoles = State(initialValue: Set((existingProfile?.profileRoles ?? []).compactMap(ProfileRole.init(rawValue:))))
         _favoriteDeckArchetype = State(initialValue: existingProfile?.favoriteDeckArchetype ?? "")
         _isWishlistPublic = State(initialValue: existingProfile?.isWishlistPublic ?? false)
+        _avatarBackgroundColor = State(initialValue: existingProfile?.avatarBackgroundColor)
+        _avatarOutlineStyle = State(initialValue: existingProfile?.avatarOutlineStyle)
         _favoritePokemon = State(initialValue: {
             guard let dex = existingProfile?.favoritePokemonDex else { return nil }
             return FavoritePokemonSelection(
@@ -111,6 +123,8 @@ struct EditProfileView: View {
         return true
     }
 
+
+
     var body: some View {
         Form {
             Section {
@@ -129,6 +143,80 @@ struct EditProfileView: View {
                 Text(isUsernameLocked
                      ? "Username is locked after first save."
                      : "Choose your public username. You cannot change it later.")
+            }
+
+            Section {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Avatar Background")
+                        .font(.footnote.weight(.medium))
+                        .foregroundStyle(.secondary)
+                    
+                    HStack(spacing: 12) {
+                        let colors = [
+                            ("Indigo", "6366f1"),
+                            ("Rose", "f43f5e"),
+                            ("Amber", "f59e0b"),
+                            ("Emerald", "10b981"),
+                            ("Slate", "64748b")
+                        ]
+                        
+                        ForEach(colors, id: \.1) { name, hex in
+                            Circle()
+                                .fill(Color(hex: hex))
+                                .frame(width: 38, height: 38)
+                                .overlay(
+                                    Circle()
+                                        .stroke(Color.primary.opacity(avatarBackgroundColor == hex ? 1 : 0), lineWidth: 3)
+                                        .padding(-4)
+                                )
+                                .onTapGesture {
+                                    avatarBackgroundColor = hex
+                                }
+                        }
+                    }
+                    .padding(.vertical, 4)
+                    
+                    Divider().padding(.vertical, 4)
+                    
+                    Text("Avatar Outline Pattern")
+                        .font(.footnote.weight(.medium))
+                        .foregroundStyle(.secondary)
+                    
+                    ScrollView(.horizontal, showsIndicators: false) {
+                        HStack(spacing: 10) {
+                            let styles = [
+                                ("Solid", "solid"),
+                                ("Thick", "thick"),
+                                ("Dotted", "dotted"),
+                                ("Double", "double"),
+                                ("Glow", "glow")
+                            ]
+                            
+                            ForEach(styles, id: \.1) { name, style in
+                                Button {
+                                    avatarOutlineStyle = style
+                                } label: {
+                                    Text(name)
+                                        .font(.system(size: 14, weight: .medium))
+                                        .padding(.horizontal, 16)
+                                        .padding(.vertical, 8)
+                                        .background(
+                                            Capsule()
+                                                .fill(avatarOutlineStyle == style ? Color.blue : Color.gray.opacity(0.1))
+                                        )
+                                        .foregroundStyle(avatarOutlineStyle == style ? .white : .primary)
+                                }
+                                .buttonStyle(.plain)
+                            }
+                        }
+                        .padding(.vertical, 4)
+                    }
+                }
+                .padding(.vertical, 8)
+            } header: {
+                Text("Avatar Customization")
+            } footer: {
+                Text("Personalize your trainer profile picture with colors and patterns.")
             }
 
             Section {
@@ -298,7 +386,12 @@ struct EditProfileView: View {
             favoriteCardImageURL: favoriteCard?.imageURL,
             favoriteDeckArchetype: favoriteDeckArchetype,
             isWishlistPublic: isWishlistPublic,
-            wishlistCardIDs: wishlistIDs
+            wishlistCardIDs: wishlistIDs,
+            avatarBackgroundColor: avatarBackgroundColor,
+            avatarOutlineStyle: avatarOutlineStyle,
+            collectionCardCount: (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0,
+            collectionBinderCount: (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0,
+            collectionTotalValue: services.collectionValue?.snapshots.last?.totalGbp ?? 0
         )
         Task {
             do {
