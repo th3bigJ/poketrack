@@ -291,12 +291,15 @@ struct RootView: View {
                             }, onOpenScanner: {
                                 showCardScanner = true
                             }, onOpenCollection: {
-                                collectionNavigationPath = NavigationPath()
-                                collectSegment = .collection
-                                selectedTab = .collect
+                                suppressMorePathReset = true
+                                moreNavigationPath = NavigationPath()
+                                moreNavigationPath.append(SideMenuPage.binders)
+                                selectedTab = .more
                             }, onOpenBrowse: {
-                                browseNavigationPath = NavigationPath()
-                                selectedTab = .browse
+                                suppressMorePathReset = true
+                                moreNavigationPath = NavigationPath()
+                                moreNavigationPath.append(SideMenuPage.decks)
+                                selectedTab = .more
                             })
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)

@@ -42,6 +42,8 @@ final class SocialProfileService {
         let favoriteDeckArchetype: String?
         let isWishlistPublic: Bool?
         let wishlistCardIDs: [String]?
+        let avatarBackgroundColor: String?
+        let avatarOutlineStyle: String?
         let collectionCardCount: Int?
         let collectionBinderCount: Int?
         let collectionTotalValue: Double?
@@ -64,6 +66,8 @@ final class SocialProfileService {
             case favoriteDeckArchetype = "favorite_deck_archetype"
             case isWishlistPublic = "is_wishlist_public"
             case wishlistCardIDs = "wishlist_card_ids"
+            case avatarBackgroundColor = "avatar_background_color"
+            case avatarOutlineStyle = "avatar_outline_style"
             case collectionCardCount = "collection_card_count"
             case collectionBinderCount = "collection_binder_count"
             case collectionTotalValue = "collection_total_value"
@@ -126,6 +130,8 @@ final class SocialProfileService {
         let favoriteDeckArchetype: String?
         let isWishlistPublic: Bool?
         let wishlistCardIDs: [String]?
+        let avatarBackgroundColor: String?
+        let avatarOutlineStyle: String?
         let collectionCardCount: Int?
         let collectionBinderCount: Int?
         let collectionTotalValue: Double?
@@ -144,6 +150,8 @@ final class SocialProfileService {
             case favoriteDeckArchetype = "favorite_deck_archetype"
             case isWishlistPublic = "is_wishlist_public"
             case wishlistCardIDs = "wishlist_card_ids"
+            case avatarBackgroundColor = "avatar_background_color"
+            case avatarOutlineStyle = "avatar_outline_style"
             case collectionCardCount = "collection_card_count"
             case collectionBinderCount = "collection_binder_count"
             case collectionTotalValue = "collection_total_value"
@@ -188,6 +196,8 @@ final class SocialProfileService {
         favoriteDeckArchetype: String?,
         isWishlistPublic: Bool?,
         wishlistCardIDs: [String]?,
+        avatarBackgroundColor: String?,
+        avatarOutlineStyle: String?,
         collectionCardCount: Int?,
         collectionBinderCount: Int?,
         collectionTotalValue: Double?
@@ -212,6 +222,8 @@ final class SocialProfileService {
             favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
             isWishlistPublic: isWishlistPublic,
             wishlistCardIDs: wishlistCardIDs,
+            avatarBackgroundColor: avatarBackgroundColor,
+            avatarOutlineStyle: avatarOutlineStyle,
             collectionCardCount: collectionCardCount,
             collectionBinderCount: collectionBinderCount,
             collectionTotalValue: collectionTotalValue
@@ -244,6 +256,8 @@ final class SocialProfileService {
         favoriteDeckArchetype: String?,
         isWishlistPublic: Bool?,
         wishlistCardIDs: [String]?,
+        avatarBackgroundColor: String?,
+        avatarOutlineStyle: String?,
         collectionCardCount: Int?,
         collectionBinderCount: Int?,
         collectionTotalValue: Double?
@@ -263,6 +277,8 @@ final class SocialProfileService {
             favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
             isWishlistPublic: isWishlistPublic,
             wishlistCardIDs: wishlistCardIDs,
+            avatarBackgroundColor: avatarBackgroundColor,
+            avatarOutlineStyle: avatarOutlineStyle,
             collectionCardCount: collectionCardCount,
             collectionBinderCount: collectionBinderCount,
             collectionTotalValue: collectionTotalValue

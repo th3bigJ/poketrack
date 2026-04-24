@@ -384,7 +384,7 @@ final class SocialFeedService {
     func fetchComments(for contentID: UUID) async throws -> [CommentDisplay] {
         let blockedUserIDs = try await fetchBlockedUserIDs()
         let rows: [CommentFeedRow] = try await execute(
-            path: "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url)&content_id=eq.\(contentID.uuidString)&order=created_at.asc",
+            path: "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&content_id=eq.\(contentID.uuidString)&order=created_at.asc",
             method: "GET",
             accessToken: try signedInAccessToken()
         )
@@ -397,7 +397,7 @@ final class SocialFeedService {
 
     func fetchReactions(for contentID: UUID) async throws -> [FeedItem] {
         let rows: [ReactionFeedRow] = try await execute(
-            path: "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url)&content_id=eq.\(contentID.uuidString)&order=created_at.desc",
+            path: "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&content_id=eq.\(contentID.uuidString)&order=created_at.desc",
             method: "GET",
             accessToken: try signedInAccessToken()
         )
@@ -692,7 +692,7 @@ final class SocialFeedService {
 
     private func fetchSharedContentRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [SharedContentFeedRow] {
         let beforeFilter = before.map { "&published_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,payload,published_at,actor:owner_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,payload,published_at,actor:owner_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
@@ -704,7 +704,7 @@ final class SocialFeedService {
 
     private func fetchReactionRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [ReactionFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
@@ -716,7 +716,7 @@ final class SocialFeedService {
 
     private func fetchCommentRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [CommentFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
@@ -729,13 +729,13 @@ final class SocialFeedService {
     private func fetchFriendshipRows(before: Date?, limit: Int, scope: FeedScope, currentUserID: UUID) async throws -> [FriendshipFeedRow] {
         if scope == .mine { return [] } // Friendship events are mutual, usually not shown in "Mine"
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        let path = "/rest/v1/friendships?select=id,requester_id,addressee_id,status,created_at,requester:requester_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url),addressee:addressee_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url)&status=eq.accepted&or=(requester_id.eq.\(currentUserID.uuidString),addressee_id.eq.\(currentUserID.uuidString))&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        let path = "/rest/v1/friendships?select=id,requester_id,addressee_id,status,created_at,requester:requester_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),addressee:addressee_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&status=eq.accepted&or=(requester_id.eq.\(currentUserID.uuidString),addressee_id.eq.\(currentUserID.uuidString))&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         return try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())
     }
 
     private func fetchWishlistMatchRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [WishlistMatchFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/wishlist_matches?select=id,content_id,card_id,sender_id,matcher_id,created_at,sender:sender_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url),matcher:matcher_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/wishlist_matches?select=id,content_id,card_id,sender_id,matcher_id,created_at,sender:sender_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),matcher:matcher_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
