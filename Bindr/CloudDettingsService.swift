@@ -109,6 +109,25 @@ final class CloudSettingsService {
     var cloudKitDiagnostic: String? {
         UserDefaults.standard.string(forKey: BindrApp.cloudKitLastErrorDefaultsKey)
     }
+
+    // MARK: - Generic Accessors
+
+    func set(_ value: Any?, forKey key: String) {
+        store.set(value, forKey: key)
+        store.synchronize()
+    }
+
+    func string(forKey key: String) -> String? {
+        store.string(forKey: key)
+    }
+
+    func bool(forKey key: String) -> Bool {
+        store.bool(forKey: key)
+    }
+
+    func integer(forKey key: String) -> Int {
+        Int(store.longLong(forKey: key))
+    }
     
     /// `NotificationCenter` delivers this on the queue passed to `addObserver` (`.main` above), but the observer
     /// closure is still `@Sendable` / not MainActor-isolated — keep this `nonisolated` and only post notifications.

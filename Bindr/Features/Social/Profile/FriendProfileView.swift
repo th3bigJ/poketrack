@@ -177,7 +177,7 @@ struct FriendProfileView: View {
                                                     Spacer()
                                                     Image(systemName: "chevron.right")
                                                         .font(.system(size: 14, weight: .semibold))
-                                                        .foregroundStyle(.tertiary)
+                                                        .foregroundStyle(.secondary)
                                                 }
                                                 .padding()
                                                 .background(colorScheme == .dark ? Color(hex: "1c1c1e") : .white)
@@ -222,7 +222,7 @@ struct FriendProfileView: View {
                 }
             }
         }
-        .task {
+        .task(id: username) {
             await refresh()
         }
     }

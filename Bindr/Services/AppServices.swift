@@ -19,6 +19,7 @@ final class AppServices {
     let socialShare: SocialShareService
     let socialFeed: SocialFeedService
     let socialPush: SocialPushService
+    let theme: ThemeSettings
     
     // Wishlist service - initialized after model context is available
     private(set) var wishlist: WishlistService?
@@ -60,8 +61,9 @@ final class AppServices {
         let socialAuth = SocialAuthService()
         self.socialAuth = socialAuth
         self.socialProfile = SocialProfileService(authService: socialAuth)
-        self.socialFriend = SocialFriendService(authService: socialAuth, storeService: store)
-        self.socialFeed = SocialFeedService(authService: socialAuth)
+        let socialFriend = SocialFriendService(authService: socialAuth, storeService: store)
+        self.socialFriend = socialFriend
+        self.socialFeed = SocialFeedService(authService: socialAuth, friendService: socialFriend)
         self.socialPush = SocialPushService(authService: socialAuth, profileService: socialProfile)
         let cloudSettings = CloudSettingsService()
         self.cloudSettings = cloudSettings
@@ -76,6 +78,7 @@ final class AppServices {
             cardDataService: cardData,
             pricingService: pricing
         )
+        self.theme = ThemeSettings(cloudSettings: cloudSettings)
         if brandSettings.hasCompletedBrandOnboarding && brandSettings.hasCompletedInitialAppBootstrap {
             isReady = true
             shouldRunBackgroundCatalogRefreshOnLaunch = true

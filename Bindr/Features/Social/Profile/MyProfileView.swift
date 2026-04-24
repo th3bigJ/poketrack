@@ -16,6 +16,7 @@ struct MyProfileView: View {
     @State private var favoriteCard: Card?
     @State private var favoriteCardPrice: Double?
     @State private var showWishlistDetail = false
+    @State private var myActivity: [SocialFeedService.FeedItem] = []
     
     private var formattedTotalValue: String {
         let display = services.priceDisplay
@@ -138,6 +139,22 @@ struct MyProfileView: View {
                         }
                     }
                     
+                    // 5.5 My Activity
+                    if !myActivity.isEmpty {
+                        VStack(alignment: .leading, spacing: 16) {
+                            Text("My Activity")
+                                .font(.headline)
+                                .padding(.horizontal, 20)
+                            
+                            VStack(spacing: 12) {
+                                ForEach(groupedActivity) { group in
+                                    FeedItemView(group: group)
+                                }
+                            }
+                            .padding(.horizontal, 4)
+                        }
+                    }
+                    
                     // 6. Actions
                     VStack(spacing: 0) {
                         Button(action: onEditTapped) {
@@ -177,6 +194,12 @@ struct MyProfileView: View {
                 Text("My Profile")
                     .font(.headline)
             }
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(action: onEditTapped) {
+                    Image(systemName: "pencil")
+                        .font(.system(size: 16, weight: .semibold))
+                }
+            }
         }
         .task {
             fetchStats()
@@ -185,6 +208,13 @@ struct MyProfileView: View {
                 if let card = favoriteCard {
                     favoriteCardPrice = await services.pricing.usdPrice(for: card, printing: "normal")
                 }
+            }
+            
+            // Fetch my activity
+            do {
+                myActivity = try await services.socialFeed.fetchUserActivity(limit: 10)
+            } catch {
+                print("Error fetching my activity: \(error)")
             }
         }
     }
@@ -331,5 +361,32 @@ struct MyProfileView: View {
         binderCount = (try? modelContext.fetchCount(binderFetch)) ?? 0
         
         // Value is handled by totalValue computed property using services.collectionValue
+    }
+
+    // MARK: - Grouping Logic
+    
+    private var groupedActivity: [GroupedFeedItem] {
+        var groups: [GroupedFeedItem] = []
+        var contentIndex: [UUID: Int] = [:]
+
+        for item in myActivity {
+            switch item.type {
+            case .reaction, .comment:
+                if let contentID = item.content?.id, let idx = contentIndex[contentID] {
+                    groups[idx].interactions.append(item)
+                    continue
+                }
+                let group = GroupedFeedItem(id: item.id, primary: item, interactions: [])
+                groups.append(group)
+            default:
+                let group = GroupedFeedItem(id: item.id, primary: item, interactions: [])
+                let idx = groups.count
+                groups.append(group)
+                if let contentID = item.content?.id {
+                    contentIndex[contentID] = idx
+                }
+            }
+        }
+        return groups
     }
 }

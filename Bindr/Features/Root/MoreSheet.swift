@@ -37,6 +37,11 @@ struct MoreView: View {
                         title: "Activity",
                         action: { navigationPath.append(SideMenuPage.transactions) }
                     )
+                    QuickAccessNavigationButton(
+                        icon: "paintpalette.fill",
+                        title: "Themes",
+                        action: { navigationPath.append(SideMenuPage.themes) }
+                    )
                 }
                 .padding(.vertical, 8)
                 .listRowInsets(EdgeInsets())
@@ -61,6 +66,8 @@ struct MoreView: View {
                 DecksRootView()
             case .transactions:
                 TransactionsView()
+            case .themes:
+                ThemesView()
             }
         }
         .safeAreaInset(edge: .top) {

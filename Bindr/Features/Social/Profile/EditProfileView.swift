@@ -146,6 +146,45 @@ struct EditProfileView: View {
             }
 
             Section {
+                HStack {
+                    Spacer()
+                    ProfileAvatarView(
+                        profile: SocialProfile(
+                            id: existingProfile?.id ?? UUID(),
+                            appleUserID: nil,
+                            username: username,
+                            displayName: displayName,
+                            avatarURL: nil,
+                            bio: bio,
+                            profileRoles: [],
+                            favoritePokemonDex: favoritePokemon?.dexNumber,
+                            favoritePokemonName: favoritePokemon?.name,
+                            favoritePokemonImageURL: favoritePokemon?.imageURL,
+                            favoriteCardID: favoriteCard?.cardID,
+                            favoriteCardName: favoriteCard?.cardName,
+                            favoriteCardSetCode: favoriteCard?.setCode,
+                            favoriteCardImageURL: favoriteCard?.imageURL,
+                            favoriteDeckArchetype: favoriteDeckArchetype,
+                            pinnedCardID: nil,
+                            followerCount: 0,
+                            isWishlistPublic: isWishlistPublic,
+                            wishlistCardIDs: [],
+                            avatarBackgroundColor: avatarBackgroundColor,
+                            avatarOutlineStyle: avatarOutlineStyle,
+                            collectionCardCount: 0,
+                            collectionBinderCount: 0,
+                            collectionTotalValue: 0,
+                            createdAt: nil
+                        ),
+                        size: 100
+                    )
+                    Spacer()
+                }
+                .padding(.vertical, 8)
+                .listRowBackground(Color.clear)
+            }
+
+            Section {
                 VStack(alignment: .leading, spacing: 12) {
                     Text("Avatar Background")
                         .font(.footnote.weight(.medium))
@@ -271,7 +310,7 @@ struct EditProfileView: View {
                         Spacer()
                         Image(systemName: "chevron.right")
                             .font(.caption)
-                            .foregroundStyle(.tertiary)
+                            .foregroundStyle(.secondary)
                     }
                 }
                 .buttonStyle(.plain)
@@ -311,7 +350,7 @@ struct EditProfileView: View {
                         Spacer()
                         Image(systemName: "chevron.right")
                             .font(.caption)
-                            .foregroundStyle(.tertiary)
+                            .foregroundStyle(.secondary)
                     }
                 }
                 .buttonStyle(.plain)

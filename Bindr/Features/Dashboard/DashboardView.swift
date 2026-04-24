@@ -22,6 +22,9 @@ struct DashboardView: View {
     @Query(sort: \LedgerLine.occurredAt, order: .reverse) private var allLedgerLines: [LedgerLine]
     @Query private var collectionItems: [CollectionItem]
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
+    @Query private var binders: [Binder]
+    
+    @AppStorage("dismissedMilestones") private var dismissedMilestonesData: Data = Data()
 
     @State private var liveTotalGbp: Double? = nil
     @State private var livePokemonGbp: Double = 0
@@ -231,6 +234,7 @@ struct DashboardView: View {
         ScrollView(showsIndicators: false) {
             VStack(alignment: .leading, spacing: 18) {
                 heroSection
+                milestoneBanner
                 summaryCard
                 statsStrip
                 if !activePoints.isEmpty {
@@ -269,13 +273,154 @@ struct DashboardView: View {
         }
     }
 
-    private var heroSection: some View {
-        VStack(alignment: .leading, spacing: 10) {
-            Text("Hello, Trainer.")
-                .font(.system(size: 24, weight: .semibold, design: .rounded))
-                .foregroundStyle(dashboardPrimaryText)
+    private var milestoneBanner: some View {
+        guard let milestone = activeMilestone else { return AnyView(EmptyView()) }
+        
+        return AnyView(
+            HStack(spacing: 12) {
+                Image(systemName: "trophy.fill")
+                    .font(.title3)
+                    .foregroundStyle(Color(hex: "f59e0b"))
+                
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(milestone.title)
+                        .font(.subheadline.weight(.bold))
+                    Text(milestone.description)
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                }
+                
+                Spacer()
+                
+                Button {
+                    dismissMilestone(milestone.id)
+                } label: {
+                    Image(systemName: "xmark")
+                        .font(.caption.weight(.bold))
+                        .foregroundStyle(.secondary)
+                        .padding(8)
+                        .background(Color.white.opacity(0.1))
+                        .clipShape(Circle())
+                }
+            }
+            .padding(16)
+            .background {
+                RoundedRectangle(cornerRadius: 16, style: .continuous)
+                    .fill(Color(hex: "f59e0b").opacity(0.08))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                            .stroke(Color(hex: "f59e0b").opacity(0.2), lineWidth: 1)
+                    }
+            }
+        )
+    }
+
+    private struct Milestone: Identifiable {
+        let id: String
+        let title: String
+        let description: String
+    }
+
+    private var activeMilestone: Milestone? {
+        let dismissed = getDismissedMilestones()
+        
+        // 1. First Scan
+        if totalCardsCount > 0 && !dismissed.contains("first_scan") {
+            return Milestone(id: "first_scan", title: "First Scan Complete!", description: "You've started your journey as a Master Trainer.")
         }
-        .frame(maxWidth: .infinity, alignment: .center)
+        
+        // 2. £100 Milestone
+        if (liveTotalGbp ?? 0) >= 100 && !dismissed.contains("value_100") {
+            return Milestone(id: "value_100", title: "Century Club!", description: "Your collection value has crossed £100.")
+        }
+        
+        // 3. First Binder
+        if !binders.isEmpty && !dismissed.contains("first_bindr") {
+            return Milestone(id: "first_bindr", title: "Organized!", description: "You've created your first Binder.")
+        }
+        
+        return nil
+    }
+
+    private func getDismissedMilestones() -> Set<String> {
+        (try? JSONDecoder().decode(Set<String>.self, from: dismissedMilestonesData)) ?? []
+    }
+
+    private func dismissMilestone(_ id: String) {
+        var dismissed = getDismissedMilestones()
+        dismissed.insert(id)
+        if let data = try? JSONEncoder().encode(dismissed) {
+            dismissedMilestonesData = data
+        }
+    }
+    
+    private var heroSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(timeGreeting)
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.secondary)
+                
+                HStack(spacing: 0) {
+                    Text("Welcome back, ")
+                    Text("Trainer.")
+                        .foregroundStyle(Color(hex: "5b9df9"))
+                }
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundStyle(dashboardPrimaryText)
+            }
+            
+            contextPill
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.bottom, 4)
+    }
+
+    private var contextPill: some View {
+        HStack(spacing: 8) {
+            Circle()
+                .fill(Color(hex: "5b9df9"))
+                .frame(width: 6, height: 6)
+            
+            Text(contextMessage)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(.secondary)
+        }
+        .padding(.horizontal, 12)
+        .padding(.vertical, 8)
+        .background {
+            Capsule()
+                .fill(Color.white.opacity(0.05))
+                .overlay {
+                    Capsule()
+                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
+                }
+        }
+    }
+
+    private var timeGreeting: String {
+        let hour = Calendar.current.component(.hour, from: Date())
+        if hour < 12 { return "Good morning" }
+        if hour < 17 { return "Good afternoon" }
+        return "Good evening"
+    }
+
+    private var contextMessage: String {
+        // Priority logic:
+        // 1. Set releases (mocked for now or checking catalog)
+        // 2. Friends activity
+        // 3. Collection movement
+        // 4. Fallback
+        
+        if let gain = periodChange, abs(gain.amount) > 10 {
+            return "Your collection grew by \(formatCurrency(gain.amount)) today"
+        }
+        
+        if totalCardsCount > 0 {
+            return "You have \(totalCardsCount) cards in your collection"
+        }
+        
+        return "Scan your first card to start tracking"
     }
 
     private var summaryCard: some View {

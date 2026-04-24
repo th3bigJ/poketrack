@@ -1,0 +1,63 @@
+import SwiftUI
+
+struct ThemesView: View {
+    @Environment(AppServices.self) private var services
+    
+    var body: some View {
+        List {
+            Section {
+                VStack(alignment: .leading, spacing: 12) {
+                    Text("Accent Color")
+                        .font(.headline)
+                    
+                    Text("Choose a color that will be used for buttons, links, and highlights throughout the app.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    
+                    LazyVGrid(columns: [GridItem(.adaptive(minimum: 44))], spacing: 16) {
+                        ForEach(ThemeSettings.presetColors, id: \.self) { hex in
+                            ColorPill(hex: hex, isSelected: services.theme.accentColorHex == hex) {
+                                services.theme.accentColorHex = hex
+                                Haptics.lightImpact()
+                            }
+                        }
+                    }
+                    .padding(.vertical, 8)
+                }
+                .padding(.vertical, 4)
+            } footer: {
+                Text("Bindr is optimized for dark mode to make your cards pop.")
+            }
+        }
+        .navigationTitle("Themes")
+        .navigationBarTitleDisplayMode(.inline)
+    }
+}
+
+private struct ColorPill: View {
+    let hex: String
+    let isSelected: Bool
+    let action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            ZStack {
+                Circle()
+                    .fill(Color(hex: hex))
+                    .frame(width: 44, height: 44)
+                
+                if isSelected {
+                    Circle()
+                        .strokeBorder(.white, lineWidth: 3)
+                        .frame(width: 44, height: 44)
+                    
+                    Image(systemName: "checkmark")
+                        .font(.system(size: 14, weight: .black))
+                        .foregroundStyle(.white)
+                }
+            }
+            .shadow(color: .black.opacity(0.1), radius: 4, y: 2)
+        }
+        .buttonStyle(.plain)
+    }
+}

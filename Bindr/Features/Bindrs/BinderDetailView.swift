@@ -419,7 +419,7 @@ struct BinderDetailView: View {
             Image(systemName: "chevron.right")
                 .font(.system(size: 9, weight: .semibold))
         }
-        .foregroundStyle(Color.primary.opacity(0.20))
+        .foregroundStyle(Color.primary.opacity(0.7))
         .frame(maxWidth: .infinity)
     }
 

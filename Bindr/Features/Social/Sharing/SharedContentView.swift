@@ -27,6 +27,8 @@ struct SharedContentView: View {
             return decodeRows(key: "items")
         case .deck:
             return decodeRows(key: "cards")
+        case .pull, .dailyDigest:
+            return []
         }
     }
 

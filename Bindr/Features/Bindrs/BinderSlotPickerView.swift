@@ -1221,7 +1221,7 @@ private struct BinderPickerSetsView: View {
                                             Spacer()
                                             Image(systemName: "chevron.right")
                                                 .font(.caption.weight(.semibold))
-                                                .foregroundStyle(.tertiary)
+                                                .foregroundStyle(.secondary)
                                         }
                                         .padding(.horizontal, 16)
                                         .padding(.vertical, 10)

@@ -333,6 +333,9 @@ final class SocialShareService {
                 if !hasWishlist {
                     try await deleteSharedContent(id: entry.id)
                 }
+            case .pull, .dailyDigest:
+                // Server-generated events — never delete locally
+                break
             }
         }
     }
@@ -561,6 +564,9 @@ final class SocialShareService {
             break
         case .deck:
             throw SocialShareError.deckSharingRequiresPremium
+        case .pull, .dailyDigest:
+            // Server-generated — no limit enforcement needed
+            break
         }
     }
 
@@ -663,6 +669,9 @@ final class SocialShareService {
             "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
             "local_content_id": .string(binder.id.uuidString),
             "brand": .string(binder.tcgBrand.rawValue),
+            "colour": .string(binder.colour),
+            "texture": .string(binder.textureKind.rawValue),
+            "seed": .number(Double(binder.textureSeed)),
             "items": .array(rows.map(JSONValue.object))
         ]
         if includeValue {
@@ -702,6 +711,7 @@ final class SocialShareService {
             "brand": .string(snapshot.brandRawValue),
             "items": .array(rows.map(JSONValue.object))
         ]
+        // Note: snapshot doesn't have colour/texture yet, but we should add it to snapshot if we want it to sync
         if includeValue {
             payload["market_value_usd"] = .number(totalValue)
         }

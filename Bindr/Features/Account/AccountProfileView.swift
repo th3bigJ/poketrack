@@ -191,8 +191,6 @@ struct AccountProfileView: View {
                     favoriteDeckArchetype: payload.favoriteDeckArchetype,
                     isWishlistPublic: payload.isWishlistPublic,
                     wishlistCardIDs: payload.wishlistCardIDs,
-                    avatarBackgroundColor: payload.avatarBackgroundColor,
-                    avatarOutlineStyle: payload.avatarOutlineStyle,
                     collectionCardCount: payload.collectionCardCount,
                     collectionBinderCount: payload.collectionBinderCount,
                     collectionTotalValue: payload.collectionTotalValue
@@ -212,8 +210,6 @@ struct AccountProfileView: View {
                     favoriteDeckArchetype: payload.favoriteDeckArchetype,
                     isWishlistPublic: payload.isWishlistPublic,
                     wishlistCardIDs: payload.wishlistCardIDs,
-                    avatarBackgroundColor: payload.avatarBackgroundColor,
-                    avatarOutlineStyle: payload.avatarOutlineStyle,
                     collectionCardCount: payload.collectionCardCount,
                     collectionBinderCount: payload.collectionBinderCount,
                     collectionTotalValue: payload.collectionTotalValue

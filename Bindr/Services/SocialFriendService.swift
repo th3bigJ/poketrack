@@ -124,7 +124,7 @@ final class SocialFriendService {
     func fetchFriends() async throws -> [SocialProfile] {
         let currentUserID = try signedInUserID()
         let rows: [FriendshipWithProfiles] = try await execute(
-            path: "/rest/v1/friendships?select=id,requester_id,addressee_id,status,created_at,requester:requester_id(*),addressee:addressee_id(*)&status=eq.accepted&or=(requester_id.eq.\(currentUserID.uuidString),addressee_id.eq.\(currentUserID.uuidString))&order=created_at.desc",
+            path: "/rest/v1/friendships?select=id,requester_id,addressee_id,status,created_at,requester:requester_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url),addressee:addressee_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url)&status=eq.accepted&or=(requester_id.eq.\(currentUserID.uuidString),addressee_id.eq.\(currentUserID.uuidString))&order=created_at.desc",
             method: "GET",
             accessToken: try signedInAccessToken()
         )
@@ -140,7 +140,7 @@ final class SocialFriendService {
     func fetchPendingRequests() async throws -> [IncomingFriendRequest] {
         let currentUserID = try signedInUserID()
         let rows: [FriendshipWithProfiles] = try await execute(
-            path: "/rest/v1/friendships?select=id,requester_id,addressee_id,status,created_at,requester:requester_id(*),addressee:addressee_id(*)&status=eq.pending&addressee_id=eq.\(currentUserID.uuidString)&order=created_at.desc",
+            path: "/rest/v1/friendships?select=id,requester_id,addressee_id,status,created_at,requester:requester_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url),addressee:addressee_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url)&status=eq.pending&addressee_id=eq.\(currentUserID.uuidString)&order=created_at.desc",
             method: "GET",
             accessToken: try signedInAccessToken()
         )
@@ -161,7 +161,7 @@ final class SocialFriendService {
     func fetchOutgoingPendingRequests() async throws -> [OutgoingFriendRequest] {
         let currentUserID = try signedInUserID()
         let rows: [FriendshipWithProfiles] = try await execute(
-            path: "/rest/v1/friendships?select=id,requester_id,addressee_id,status,created_at,requester:requester_id(*),addressee:addressee_id(*)&status=eq.pending&requester_id=eq.\(currentUserID.uuidString)&order=created_at.desc",
+            path: "/rest/v1/friendships?select=id,requester_id,addressee_id,status,created_at,requester:requester_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url),addressee:addressee_id(id,username,display_name,avatar_url,favorite_pokemon_dex,favorite_pokemon_image_url)&status=eq.pending&requester_id=eq.\(currentUserID.uuidString)&order=created_at.desc",
             method: "GET",
             accessToken: try signedInAccessToken()
         )
@@ -186,7 +186,7 @@ final class SocialFriendService {
         let currentUserID = try signedInUserID()
         let accessToken = try signedInAccessToken()
         let encodedQuery = encodedQueryValue(trimmed.replacingOccurrences(of: ",", with: ""))
-        let queryPattern = "*\(encodedQuery)*"
+        let queryPattern = "%\(encodedQuery)%"
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?select=*&username=ilike.\(queryPattern)&order=username.asc&limit=25",
             method: "GET",

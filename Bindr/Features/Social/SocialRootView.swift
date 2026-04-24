@@ -4,28 +4,11 @@ import CryptoKit
 import Security
 
 struct SocialRootView: View {
-    private enum SocialSection: String, CaseIterable, Identifiable {
-        case feed
-        case friends
-
-        var id: String { rawValue }
-        var title: String {
-            switch self {
-            case .feed: return "Feed"
-            case .friends: return "Friends"
-            }
-        }
-    }
 
     private enum ProfilePopoverDestination: Hashable {
         case editProfile
     }
 
-    private enum SocialDestination: Hashable {
-        case search
-        case qrProfile
-        case friendProfile(username: String)
-    }
 
     @Environment(AppServices.self) private var services
 
@@ -36,7 +19,6 @@ struct SocialRootView: View {
     @State private var profilePopoverPath = NavigationPath()
     @State private var socialNavigationPath = NavigationPath()
     @State private var currentNonce: String?
-    @State private var selectedSection: SocialSection = .feed
 
     private var isConfigured: Bool {
         AppConfiguration.supabaseURL != nil && !AppConfiguration.supabasePublishableKey.isEmpty
@@ -44,7 +26,9 @@ struct SocialRootView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            socialHeader
+            if services.socialAuth.authState == .signedOut {
+                socialHeader
+            }
             content
         }
         .navigationTitle("Social")
@@ -71,7 +55,6 @@ struct SocialRootView: View {
                 profilePopoverPath = NavigationPath()
                 socialNavigationPath = NavigationPath()
                 showAccountProfile = false
-                selectedSection = .feed
             }
         }
     }
@@ -166,35 +149,40 @@ struct SocialRootView: View {
     private var signedInContent: some View {
         if let profile {
             NavigationStack(path: $socialNavigationPath) {
-                VStack(spacing: 12) {
-                    Picker("Social section", selection: $selectedSection) {
-                        ForEach(SocialSection.allCases) { section in
-                            Text(section.title).tag(section)
+                VStack(spacing: 0) {
+                    FeedView()
+                }
+                .navigationTitle("Social")
+                .navigationBarTitleDisplayMode(.inline)
+                .toolbar {
+                    ToolbarItem(placement: .topBarLeading) {
+                        Button {
+                            socialNavigationPath.append(SocialDestination.friends)
+                        } label: {
+                            Image(systemName: "person.2.fill")
+                                .font(.system(size: 15, weight: .medium))
                         }
                     }
-                    .pickerStyle(.segmented)
-                    .padding(.horizontal, 16)
-                    .padding(.top, 8)
-
-                    Group {
-                        switch selectedSection {
-                        case .feed:
-                            FeedView()
-                        case .friends:
-                            FriendsListView(
-                                onOpenSearch: { socialNavigationPath.append(SocialDestination.search) },
-                                onOpenQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
-                                onOpenUsername: { username in
-                                    socialNavigationPath.append(SocialDestination.friendProfile(username: username))
-                                }
-                            )
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Button {
+                            Haptics.lightImpact()
+                            showAccountProfile = true
+                        } label: {
+                            Image(systemName: "person.crop.circle")
+                                .font(.system(size: 17, weight: .medium))
                         }
                     }
                 }
-                .navigationTitle(selectedSection.title)
-                .navigationBarTitleDisplayMode(.inline)
                 .navigationDestination(for: SocialDestination.self) { destination in
                     switch destination {
+                    case .friends:
+                        FriendsListView(
+                            onOpenSearch: { socialNavigationPath.append(SocialDestination.search) },
+                            onOpenQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
+                            onOpenUsername: { username in
+                                socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                            }
+                        )
                     case .search:
                         FriendSearchView()
                     case .qrProfile:

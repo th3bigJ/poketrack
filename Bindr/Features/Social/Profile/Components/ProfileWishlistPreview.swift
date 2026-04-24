@@ -82,7 +82,7 @@ private struct WishlistPreviewItem: View {
                 } else {
                     Text("---")
                         .font(.system(size: 9, weight: .semibold))
-                        .foregroundStyle(.tertiary)
+                        .foregroundStyle(.secondary)
                 }
             }
         }

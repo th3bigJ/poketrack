@@ -163,7 +163,14 @@ struct WishlistMatch: Codable, Identifiable, Sendable {
 enum FriendshipStatus: String, Codable, Sendable {
     case pending
     case accepted
-    case blocked
+    case blocked = "blocked"
+}
+
+public enum SocialDestination: Hashable {
+    case friends
+    case search
+    case qrProfile
+    case friendProfile(username: String)
 }
 
 struct Friendship: Codable, Identifiable, Sendable {
@@ -186,6 +193,8 @@ enum SharedContentType: String, Codable, Sendable, CaseIterable {
     case binder
     case wishlist
     case deck
+    case pull
+    case dailyDigest = "daily_digest"
 }
 
 enum SharedContentVisibility: String, Codable, Sendable, CaseIterable {
@@ -232,6 +241,21 @@ extension JSONValue: @unchecked Sendable {}
 extension JSONValue {
     var stringValue: String? {
         if case .string(let value) = self { return value }
+        return nil
+    }
+    
+    var doubleValue: Double? {
+        if case .number(let value) = self { return value }
+        return nil
+    }
+    
+    var intValue: Int? {
+        if case .number(let value) = self { return Int(value) }
+        return nil
+    }
+    
+    var arrayValue: [JSONValue]? {
+        if case .array(let value) = self { return value }
         return nil
     }
 }

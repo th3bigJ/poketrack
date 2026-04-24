@@ -6,6 +6,7 @@ struct CommentsView: View {
     let content: SocialFeedService.FeedContentSummary
 
     @State private var comments: [SocialFeedService.CommentDisplay] = []
+    @State private var reactions: [SocialFeedService.FeedItem] = []
     @State private var isLoading = false
     @State private var composerText = ""
     @State private var replyingTo: UUID?
@@ -14,6 +15,31 @@ struct CommentsView: View {
     var body: some View {
         VStack(spacing: 0) {
             List {
+                if !reactions.isEmpty {
+                    Section("Reactions") {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 12) {
+                                ForEach(reactions, id: \.id) { item in
+                                    VStack(spacing: 4) {
+                                        if let profile = item.actor {
+                                            ProfileAvatarView(profile: profile, size: 32)
+                                        }
+                                        if let type = item.reactionType {
+                                            Text(emoji(for: type))
+                                                .font(.caption2)
+                                                .padding(2)
+                                                .background(.ultraThinMaterial, in: Circle())
+                                                .offset(x: 10, y: -10)
+                                        }
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 4)
+                            .padding(.vertical, 8)
+                        }
+                    }
+                }
+
                 if isLoading {
                     Section {
                         HStack(spacing: 10) {
@@ -116,10 +142,23 @@ struct CommentsView: View {
         isLoading = true
         defer { isLoading = false }
         do {
-            comments = try await services.socialFeed.fetchComments(for: content.id)
+            async let commentsTask = services.socialFeed.fetchComments(for: content.id)
+            async let reactionsTask = services.socialFeed.fetchReactions(for: content.id)
+            
+            let (loadedComments, loadedReactions) = try await (commentsTask, reactionsTask)
+            comments = loadedComments
+            reactions = loadedReactions
             errorMessage = nil
         } catch {
             errorMessage = error.localizedDescription
+        }
+    }
+
+    private func emoji(for type: ReactionType) -> String {
+        switch type {
+        case .fire: return "🔥"
+        case .like: return "⭐"
+        case .wow: return "👀"
         }
     }
 
