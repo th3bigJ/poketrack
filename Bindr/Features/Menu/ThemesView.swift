@@ -2,6 +2,7 @@ import SwiftUI
 
 struct ThemesView: View {
     @Environment(AppServices.self) private var services
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         List {
@@ -48,8 +49,32 @@ struct ThemesView: View {
                 Text("Select a color that reflects your style.")
             }
         }
-        .navigationTitle("Themes")
-        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .top) {
+            themesHeader
+        }
+    }
+
+    private var themesHeader: some View {
+        ZStack {
+            Text("Themes")
+                .font(.title2.weight(.bold))
+                .foregroundStyle(.primary)
+
+            HStack {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+
+                Spacer(minLength: 0)
+            }
+        }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
     }
 }
 

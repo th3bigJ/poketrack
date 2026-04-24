@@ -52,6 +52,10 @@ final class SocialPushService {
         queuedDeepLinkURL = url
     }
 
+    func queueDeepLink(url: URL) {
+        queuedDeepLinkURL = url
+    }
+
     func consumeQueuedDeepLinkURL() -> URL? {
         defer { queuedDeepLinkURL = nil }
         return queuedDeepLinkURL

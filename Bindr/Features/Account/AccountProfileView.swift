@@ -36,7 +36,6 @@ struct AccountProfileView: View {
                     if let profile {
                         MyProfileView(
                             profile: profile,
-                            onEditTapped: { navigationPath.append(Destination.editProfile) },
                             onSignOutTapped: {
                                 services.socialAuth.signOut()
                                 self.profile = nil
@@ -196,7 +195,12 @@ struct AccountProfileView: View {
                 isWishlistPublic: payload.isWishlistPublic,
                 wishlistCardIDs: payload.wishlistCardIDs,
                 avatarBackgroundColor: payload.avatarBackgroundColor,
-                avatarOutlineStyle: payload.avatarOutlineStyle
+                avatarOutlineStyle: payload.avatarOutlineStyle,
+                collectionCardCount: payload.collectionCardCount,
+                collectionBinderCount: payload.collectionBinderCount,
+                collectionDeckCount: payload.collectionDeckCount,
+                friendCount: payload.friendCount,
+                collectionTotalValue: payload.collectionTotalValue
             )
             print("[ProfileSave] saveProfile succeeded: \(saved.username)")
             profile = saved
@@ -217,7 +221,12 @@ struct AccountProfileView: View {
                 isWishlistPublic: payload.isWishlistPublic,
                 wishlistCardIDs: payload.wishlistCardIDs,
                 avatarBackgroundColor: payload.avatarBackgroundColor,
-                avatarOutlineStyle: payload.avatarOutlineStyle
+                avatarOutlineStyle: payload.avatarOutlineStyle,
+                collectionCardCount: payload.collectionCardCount,
+                collectionBinderCount: payload.collectionBinderCount,
+                collectionDeckCount: payload.collectionDeckCount,
+                friendCount: payload.friendCount,
+                collectionTotalValue: payload.collectionTotalValue
             )
             print("[ProfileSave] updateProfile succeeded: \(updated.username)")
             profile = updated

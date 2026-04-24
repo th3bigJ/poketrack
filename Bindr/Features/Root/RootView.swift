@@ -291,10 +291,13 @@ struct RootView: View {
                             }, onOpenScanner: {
                                 showCardScanner = true
                             }, onOpenCollection: {
-                                suppressMorePathReset = true
-                                moreNavigationPath = NavigationPath()
-                                moreNavigationPath.append(SideMenuPage.binders)
-                                selectedTab = .more
+                                collectionNavigationPath = NavigationPath()
+                                collectSegment = .collection
+                                selectedTab = .collect
+                            }, onOpenWishlist: {
+                                collectionNavigationPath = NavigationPath()
+                                collectSegment = .wishlist
+                                selectedTab = .collect
                             }, onOpenBrowse: {
                                 suppressMorePathReset = true
                                 moreNavigationPath = NavigationPath()
@@ -548,7 +551,8 @@ struct RootView: View {
             }
         }
         .onOpenURL { url in
-            guard services.socialFriend.queueProfileDeepLink(from: url) else { return }
+            guard url.scheme?.lowercased() == "bindr" else { return }
+            services.socialPush.queueDeepLink(url: url)
             selectedTab = .social
             Task {
                 await services.socialAuth.restoreSession()
@@ -556,8 +560,7 @@ struct RootView: View {
         }
         .onChange(of: services.socialPush.queuedDeepLinkURL) { _, queuedURL in
             guard let queuedURL else { return }
-            guard services.socialFriend.queueProfileDeepLink(from: queuedURL) else { return }
-            _ = services.socialPush.consumeQueuedDeepLinkURL()
+            guard queuedURL.scheme?.lowercased() == "bindr" else { return }
             selectedTab = .social
             Task {
                 await services.socialAuth.restoreSession()

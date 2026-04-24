@@ -14,6 +14,7 @@ struct DashboardView: View {
     var onViewAllActivity: (() -> Void)? = nil
     var onOpenScanner: (() -> Void)? = nil
     var onOpenCollection: (() -> Void)? = nil
+    var onOpenWishlist: (() -> Void)? = nil
     var onOpenBrowse: (() -> Void)? = nil
 
     @Environment(AppServices.self) private var services
@@ -372,32 +373,9 @@ struct DashboardView: View {
                 .foregroundStyle(dashboardPrimaryText)
             }
             
-            contextPill
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(.bottom, 4)
-    }
-
-    private var contextPill: some View {
-        HStack(spacing: 8) {
-            Circle()
-                .fill(services.theme.accentColor)
-                .frame(width: 6, height: 6)
-            
-            Text(contextMessage)
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.secondary)
-        }
-        .padding(.horizontal, 12)
-        .padding(.vertical, 8)
-        .background {
-            Capsule()
-                .fill(Color.white.opacity(0.05))
-                .overlay {
-                    Capsule()
-                        .stroke(Color.white.opacity(0.1), lineWidth: 1)
-                }
-        }
     }
 
     private var timeGreeting: String {
@@ -405,20 +383,6 @@ struct DashboardView: View {
         if hour < 12 { return "Good morning" }
         if hour < 17 { return "Good afternoon" }
         return "Good evening"
-    }
-
-    private var contextMessage: String {
-        // Priority logic:
-        // 1. Set releases (mocked for now or checking catalog)
-        // 2. Friends activity
-        // 3. Collection movement
-        // 4. Fallback
-        
-        if let gain = periodChange, abs(gain.amount) > 10 {
-            return "Your collection grew by \(formatCurrency(gain.amount)) today"
-        }
-        
-        return "Scan your first card to start tracking"
     }
 
     private var summaryCard: some View {
@@ -478,7 +442,8 @@ struct DashboardView: View {
                     icon: "square.stack.3d.up.fill",
                     iconColor: DashboardPalette.purple,
                     value: "\(totalCardsCount)",
-                    label: "Total Cards"
+                    label: "Total Cards",
+                    action: onOpenCollection
                 )
 
                 statDivider
@@ -487,7 +452,8 @@ struct DashboardView: View {
                     icon: "rectangle.stack.fill",
                     iconColor: DashboardPalette.blue,
                     value: "\(uniqueCardsCount)",
-                    label: "Unique Cards"
+                    label: "Unique Cards",
+                    action: onOpenCollection
                 )
 
                 statDivider
@@ -496,7 +462,8 @@ struct DashboardView: View {
                     icon: "star.fill",
                     iconColor: DashboardPalette.gold,
                     value: "\(wishlistedCardsCount)",
-                    label: "Wishlisted Cards"
+                    label: "Wishlisted Cards",
+                    action: onOpenWishlist
                 )
             }
         }
@@ -699,22 +666,29 @@ struct DashboardView: View {
         return "\(brand)|\(itemPart)|\(linePart)"
     }
 
-    private func dashboardStat(icon: String, iconColor: Color, value: String, label: String) -> some View {
-        VStack(spacing: 8) {
-            Image(systemName: icon)
-                .font(.title3.weight(.semibold))
-                .foregroundStyle(iconColor)
-            Text(value)
-                .font(.title3.weight(.bold))
-                .foregroundStyle(dashboardPrimaryText)
-                .lineLimit(1)
-                .minimumScaleFactor(0.7)
-            Text(label)
-                .font(.caption)
-                .foregroundStyle(dashboardSecondaryText)
-                .multilineTextAlignment(.center)
+    private func dashboardStat(icon: String, iconColor: Color, value: String, label: String, action: (() -> Void)? = nil) -> some View {
+        Button {
+            action?()
+        } label: {
+            VStack(spacing: 8) {
+                Image(systemName: icon)
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(iconColor)
+                Text(value)
+                    .font(.title3.weight(.bold))
+                    .foregroundStyle(dashboardPrimaryText)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                Text(label)
+                    .font(.caption)
+                    .foregroundStyle(dashboardSecondaryText)
+                    .multilineTextAlignment(.center)
+            }
+            .frame(maxWidth: .infinity, alignment: .center)
+            .contentShape(Rectangle())
         }
-        .frame(maxWidth: .infinity, alignment: .center)
+        .buttonStyle(DashboardPressStyle())
+        .disabled(action == nil)
     }
 
     private func quickActionTile(title: String, icon: String, tint: Color, action: (() -> Void)?) -> some View {
@@ -768,16 +742,16 @@ struct DashboardView: View {
                     if badgeText(for: line) != nil {
                         Text(badgeText(for: line) ?? "")
                             .font(.caption2.weight(.semibold))
-                            .foregroundStyle(Color.white)
+                            .foregroundStyle(services.theme.accentColor)
                             .padding(.horizontal, 8)
                             .padding(.vertical, 4)
                             .background(
                                 Capsule(style: .continuous)
-                                    .fill(services.theme.accentColor.opacity(0.15))
+                                    .fill(activityBadgeBackground)
                             )
                             .overlay {
                                 Capsule(style: .continuous)
-                                    .stroke(services.theme.accentColor.opacity(0.3), lineWidth: 1)
+                                    .stroke(services.theme.accentColor.opacity(0.28), lineWidth: 1)
                             }
                     }
                 }
@@ -800,6 +774,10 @@ struct DashboardView: View {
             }
         }
         .padding(.vertical, 12)
+    }
+
+    private var activityBadgeBackground: Color {
+        services.theme.accentColor.opacity(colorScheme == .dark ? 0.18 : 0.08)
     }
 
     @ViewBuilder

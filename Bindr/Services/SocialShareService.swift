@@ -91,6 +91,7 @@ final class SocialShareService {
         case binder(UUID)
         case deck(UUID)
         case wishlist
+        case collection
     }
 
     private struct EncodedPayload {
@@ -135,6 +136,13 @@ final class SocialShareService {
         let notes: String
     }
 
+    private struct CollectionItemSnapshot: Sendable {
+        let cardID: String
+        let variantKey: String
+        let quantity: Int
+        let notes: String
+    }
+
     private let authService: SocialAuthService
     private let storeService: StoreKitService
     private let cardDataService: CardDataService
@@ -166,6 +174,12 @@ final class SocialShareService {
     func fetchSharedContent(ownerID: UUID) async throws -> [SharedContent] {
         let path = "/rest/v1/shared_content?select=*&owner_id=eq.\(ownerID.uuidString)&order=updated_at.desc"
         return try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())
+    }
+
+    func fetchSharedContent(id: UUID) async throws -> SharedContent? {
+        let path = "/rest/v1/shared_content?select=*&id=eq.\(id.uuidString)&limit=1"
+        let results: [SharedContent] = try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())
+        return results.first
     }
 
     func shareSnapshot(for binder: Binder) async throws -> ShareSnapshot {
@@ -202,6 +216,54 @@ final class SocialShareService {
             includeValue: existing?.includeValue ?? false,
             isPublished: existing != nil
         )
+    }
+
+    func shareSnapshotForCollection() async throws -> ShareSnapshot {
+        let existing = try await fetchMine(type: .collection, localContentID: "collection")
+        return ShareSnapshot(
+            sharedContent: existing,
+            title: existing?.title ?? "My Collection",
+            description: existing?.description ?? "",
+            visibility: existing?.visibility ?? .friends,
+            includeValue: existing?.includeValue ?? false,
+            isPublished: existing != nil
+        )
+    }
+
+    func publishCollection(
+        title: String,
+        description: String,
+        visibility: SharedContentVisibility,
+        includeValue: Bool,
+        collectionItems: [CollectionItem]
+    ) async throws -> SharedContent {
+        let snapshots = collectionItems.map {
+            CollectionItemSnapshot(cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity, notes: $0.notes)
+        }
+        let encoded = try await encodeCollectionPayload(snapshots, includeValue: includeValue)
+        return try await upsertSharedContent(
+            type: .collection,
+            localContentID: "collection",
+            encoded: encoded,
+            title: normalizedTitle(title, fallback: "My Collection"),
+            description: normalizedDescription(description),
+            visibility: visibility,
+            includeValue: includeValue
+        )
+    }
+
+    func unpublishCollection() async throws {
+        try await unpublish(type: .collection, localContentID: "collection")
+    }
+
+    func scheduleAutoSyncCollection(items: [CollectionItem]) {
+        let snapshots = items.map {
+            CollectionItemSnapshot(cardID: $0.cardID, variantKey: $0.variantKey, quantity: $0.quantity, notes: $0.notes)
+        }
+        scheduleAutoSync(for: .collection) { [weak self] in
+            guard let self else { return }
+            try await self.syncIfPublishedCollection(itemSnapshots: snapshots)
+        }
     }
 
     func publishBinder(
@@ -262,6 +324,76 @@ final class SocialShareService {
             description: normalizedDescription(description),
             visibility: visibility,
             includeValue: includeValue
+        )
+    }
+
+    func publishPull(
+        collectionItem: CollectionItem,
+        cardName: String,
+        setName: String?,
+        message: String,
+        visibility: SharedContentVisibility
+    ) async throws -> SharedContent {
+        let localID = "pull-\(collectionItem.cardID)-\(collectionItem.variantKey)-\(Int(Date().timeIntervalSince1970))"
+        var payload: [String: JSONValue] = [
+            "payload_version": .number(1),
+            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
+            "local_content_id": .string(localID),
+            "card_id": .string(collectionItem.cardID),
+            "card_name": .string(cardName),
+            "variant_key": .string(collectionItem.variantKey)
+        ]
+        if let setName { payload["set_name"] = .string(setName) }
+        let encoded = EncodedPayload(
+            payload: payload,
+            title: cardName,
+            cardCount: 1,
+            brand: TCGBrand.inferredFromMasterCardId(collectionItem.cardID).rawValue,
+            localContentID: localID
+        )
+        return try await upsertSharedContent(
+            type: .pull,
+            localContentID: localID,
+            encoded: encoded,
+            title: cardName,
+            description: message.isEmpty ? nil : message,
+            visibility: visibility,
+            includeValue: false
+        )
+    }
+
+    func publishWant(
+        wishlistItem: WishlistItem,
+        cardName: String,
+        message: String,
+        visibility: SharedContentVisibility
+    ) async throws -> SharedContent {
+        let localID = "want-\(wishlistItem.cardID)-\(wishlistItem.variantKey)"
+        let payload: [String: JSONValue] = [
+            "payload_version": .number(1),
+            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
+            "local_content_id": .string(localID),
+            "items": .array([.object([
+                "cardID": .string(wishlistItem.cardID),
+                "variantKey": .string(wishlistItem.variantKey),
+                "cardName": .string(cardName)
+            ])])
+        ]
+        let encoded = EncodedPayload(
+            payload: payload,
+            title: cardName,
+            cardCount: 1,
+            brand: TCGBrand.inferredFromMasterCardId(wishlistItem.cardID).rawValue,
+            localContentID: localID
+        )
+        return try await upsertSharedContent(
+            type: .wishlist,
+            localContentID: localID,
+            encoded: encoded,
+            title: cardName,
+            description: message.isEmpty ? nil : message,
+            visibility: visibility,
+            includeValue: false
         )
     }
 
@@ -333,6 +465,8 @@ final class SocialShareService {
                 if !hasWishlist {
                     try await deleteSharedContent(id: entry.id)
                 }
+            case .collection:
+                break
             case .pull, .dailyDigest:
                 // Server-generated events — never delete locally
                 break
@@ -467,6 +601,21 @@ final class SocialShareService {
         )
     }
 
+    private func syncIfPublishedCollection(itemSnapshots: [CollectionItemSnapshot]) async throws {
+        let existing = try await fetchMine(type: .collection, localContentID: "collection")
+        guard existing != nil else { return }
+        let encoded = try await encodeCollectionPayload(itemSnapshots, includeValue: existing?.includeValue ?? false)
+        _ = try await upsertSharedContent(
+            type: .collection,
+            localContentID: "collection",
+            encoded: encoded,
+            title: existing?.title ?? "My Collection",
+            description: existing?.description,
+            visibility: existing?.visibility ?? .friends,
+            includeValue: existing?.includeValue ?? false
+        )
+    }
+
     private func scheduleAutoSync(for key: LocalKey, operation: @escaping @Sendable () async throws -> Void) {
         pendingSyncTasks[key]?.cancel()
         pendingSyncTasks[key] = Task { [weak self] in
@@ -560,12 +709,11 @@ final class SocialShareService {
             if !publishedBinders.isEmpty {
                 throw SocialShareError.freeTierLimitReached
             }
-        case .wishlist:
+        case .wishlist, .collection:
             break
         case .deck:
             throw SocialShareError.deckSharingRequiresPremium
         case .pull, .dailyDigest:
-            // Server-generated — no limit enforcement needed
             break
         }
     }
@@ -643,6 +791,45 @@ final class SocialShareService {
             cardCount: rows.count,
             brand: nil,
             localContentID: "wishlist"
+        )
+    }
+
+    private func encodeCollectionPayload(_ items: [CollectionItemSnapshot], includeValue: Bool) async throws -> EncodedPayload {
+        var rows: [[String: JSONValue]] = []
+        var totalValue: Double = 0
+        for item in items {
+            var row: [String: JSONValue] = [
+                "cardID": .string(item.cardID),
+                "variantKey": .string(item.variantKey),
+                "quantity": .number(Double(item.quantity))
+            ]
+            if !item.notes.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                row["notes"] = .string(item.notes)
+            }
+            if let card = await cardDataService.loadCard(masterCardId: item.cardID) {
+                row["cardName"] = .string(card.cardName)
+                if includeValue, let value = await pricingService.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+                    row["market_value_usd"] = .number(value)
+                    totalValue += value * Double(item.quantity)
+                }
+            }
+            rows.append(row)
+        }
+        var payload: [String: JSONValue] = [
+            "payload_version": .number(1),
+            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
+            "local_content_id": .string("collection"),
+            "items": .array(rows.map(JSONValue.object))
+        ]
+        if includeValue {
+            payload["market_value_usd"] = .number(totalValue)
+        }
+        return EncodedPayload(
+            payload: payload,
+            title: "My Collection",
+            cardCount: rows.count,
+            brand: nil,
+            localContentID: "collection"
         )
     }
 

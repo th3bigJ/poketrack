@@ -29,7 +29,6 @@ struct TransactionsView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            transactionsHeader
             Group {
                 if ledgerLines.isEmpty {
                     emptyState
@@ -40,8 +39,10 @@ struct TransactionsView: View {
                 }
             }
         }
-        .navigationTitle("Activity")
-        .navigationBarTitleDisplayMode(.inline)
+        .toolbar(.hidden, for: .navigationBar)
+        .safeAreaInset(edge: .top) {
+            transactionsHeader
+        }
         .task(id: ledgerSignature) {
             await resolveCardNames()
         }
@@ -81,7 +82,6 @@ struct TransactionsView: View {
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
-        .background(.ultraThinMaterial)
     }
 
     private var emptyState: some View {

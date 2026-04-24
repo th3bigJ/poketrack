@@ -44,6 +44,11 @@ final class SocialProfileService {
         let wishlistCardIDs: [String]?
         let avatarBackgroundColor: String?
         let avatarOutlineStyle: String?
+        let collectionCardCount: Int?
+        let collectionBinderCount: Int?
+        let collectionDeckCount: Int?
+        let friendCount: Int?
+        let collectionTotalValue: Double?
 
         enum CodingKeys: String, CodingKey {
             case id
@@ -65,6 +70,11 @@ final class SocialProfileService {
             case wishlistCardIDs = "wishlist_card_ids"
             case avatarBackgroundColor = "avatar_background_color"
             case avatarOutlineStyle = "avatar_outline_style"
+            case collectionCardCount = "collection_card_count"
+            case collectionBinderCount = "collection_binder_count"
+            case collectionDeckCount = "collection_deck_count"
+            case friendCount = "friend_count"
+            case collectionTotalValue = "collection_total_value"
         }
     }
 
@@ -126,6 +136,11 @@ final class SocialProfileService {
         let wishlistCardIDs: [String]?
         let avatarBackgroundColor: String?
         let avatarOutlineStyle: String?
+        let collectionCardCount: Int?
+        let collectionBinderCount: Int?
+        let collectionDeckCount: Int?
+        let friendCount: Int?
+        let collectionTotalValue: Double?
 
         enum CodingKeys: String, CodingKey {
             case displayName = "display_name"
@@ -143,6 +158,11 @@ final class SocialProfileService {
             case wishlistCardIDs = "wishlist_card_ids"
             case avatarBackgroundColor = "avatar_background_color"
             case avatarOutlineStyle = "avatar_outline_style"
+            case collectionCardCount = "collection_card_count"
+            case collectionBinderCount = "collection_binder_count"
+            case collectionDeckCount = "collection_deck_count"
+            case friendCount = "friend_count"
+            case collectionTotalValue = "collection_total_value"
         }
     }
 
@@ -185,7 +205,12 @@ final class SocialProfileService {
         isWishlistPublic: Bool?,
         wishlistCardIDs: [String]?,
         avatarBackgroundColor: String?,
-        avatarOutlineStyle: String?
+        avatarOutlineStyle: String?,
+        collectionCardCount: Int? = nil,
+        collectionBinderCount: Int? = nil,
+        collectionDeckCount: Int? = nil,
+        friendCount: Int? = nil,
+        collectionTotalValue: Double? = nil
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let appleUserID = KeychainStorage.readAppleUserIdentifier() ?? "apple-\(userID.uuidString)"
@@ -208,7 +233,12 @@ final class SocialProfileService {
             isWishlistPublic: isWishlistPublic,
             wishlistCardIDs: wishlistCardIDs,
             avatarBackgroundColor: avatarBackgroundColor?.trimmedNilIfEmpty,
-            avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty
+            avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty,
+            collectionCardCount: collectionCardCount,
+            collectionBinderCount: collectionBinderCount,
+            collectionDeckCount: collectionDeckCount,
+            friendCount: friendCount,
+            collectionTotalValue: collectionTotalValue
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?on_conflict=id&select=*",
@@ -239,7 +269,12 @@ final class SocialProfileService {
         isWishlistPublic: Bool?,
         wishlistCardIDs: [String]?,
         avatarBackgroundColor: String?,
-        avatarOutlineStyle: String?
+        avatarOutlineStyle: String?,
+        collectionCardCount: Int? = nil,
+        collectionBinderCount: Int? = nil,
+        collectionDeckCount: Int? = nil,
+        friendCount: Int? = nil,
+        collectionTotalValue: Double? = nil
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let payload = UpdateProfileRequest(
@@ -257,7 +292,12 @@ final class SocialProfileService {
             isWishlistPublic: isWishlistPublic,
             wishlistCardIDs: wishlistCardIDs,
             avatarBackgroundColor: avatarBackgroundColor?.trimmedNilIfEmpty,
-            avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty
+            avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty,
+            collectionCardCount: collectionCardCount,
+            collectionBinderCount: collectionBinderCount,
+            collectionDeckCount: collectionDeckCount,
+            friendCount: friendCount,
+            collectionTotalValue: collectionTotalValue
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?id=eq.\(userID.uuidString)&select=*",

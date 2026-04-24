@@ -8,7 +8,7 @@ struct BrowseAllPokemonView: View {
     @State private var isLoading = true
     @State private var query = ""
 
-    private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+    private let columnCount = 3
 
     private var filteredRows: [NationalDexPokemon] {
         let trimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -59,32 +59,30 @@ struct BrowseAllPokemonView: View {
                             .padding(.horizontal)
                             .padding(.bottom)
                         } else {
-                            LazyVGrid(columns: columns, spacing: 12) {
-                                ForEach(filteredRows) { item in
-                                    NavigationLink(value: item) {
-                                        VStack(spacing: 6) {
-                                            CachedAsyncImage(
-                                                url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl)
-                                            ) { img in
-                                                img.resizable().scaledToFit()
-                                            } placeholder: {
-                                                Color.gray.opacity(0.12)
-                                            }
-                                            .frame(height: 140)
-                                            Text(item.displayName)
-                                                .font(.caption2)
-                                                .foregroundStyle(.primary)
-                                                .lineLimit(2)
-                                                .multilineTextAlignment(.center)
-                                            Text("#\(item.nationalDexNumber)")
-                                                .font(.caption2)
-                                                .foregroundStyle(.secondary)
+                            EagerVGrid(items: filteredRows, columns: columnCount, spacing: 12) { item in
+                                NavigationLink(value: item) {
+                                    VStack(spacing: 6) {
+                                        CachedAsyncImage(
+                                            url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl)
+                                        ) { img in
+                                            img.resizable().scaledToFit()
+                                        } placeholder: {
+                                            Color.gray.opacity(0.12)
                                         }
-                                        .padding(6)
-                                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.08)))
+                                        .frame(height: 140)
+                                        Text(item.displayName)
+                                            .font(.caption2)
+                                            .foregroundStyle(.primary)
+                                            .lineLimit(2)
+                                            .multilineTextAlignment(.center)
+                                        Text("#\(item.nationalDexNumber)")
+                                            .font(.caption2)
+                                            .foregroundStyle(.secondary)
                                     }
-                                    .buttonStyle(.plain)
+                                    .padding(6)
+                                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.08)))
                                 }
+                                .buttonStyle(.plain)
                             }
                             .padding(.horizontal)
                             .padding(.bottom)

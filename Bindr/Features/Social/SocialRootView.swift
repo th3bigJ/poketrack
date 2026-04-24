@@ -9,6 +9,68 @@ struct SocialRootView: View {
         case editProfile
     }
 
+    private enum SocialTab: String, CaseIterable, Identifiable {
+        case feed = "Feed"
+        case friends = "Friends"
+        case profile = "Profile"
+
+        var id: String { rawValue }
+        var title: String { rawValue }
+    }
+
+    private enum SocialDeepLinkDestination {
+        case feed
+        case friends
+        case friendRequests
+        case profile(username: String)
+        case content(id: UUID)
+        case comment(id: UUID)
+        case wishlistMatch(id: UUID)
+
+        static func parse(from url: URL) -> SocialDeepLinkDestination? {
+            guard url.scheme?.lowercased() == "bindr" else { return nil }
+            let host = url.host?.lowercased() ?? ""
+
+            if host == "profile" {
+                let rawPath = url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+                guard rawPath.hasPrefix("@") else { return nil }
+                let username = String(rawPath.dropFirst()).trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+                guard !username.isEmpty else { return nil }
+                return .profile(username: username)
+            }
+
+            guard host == "social" else { return nil }
+            let pathComponents = url.path
+                .split(separator: "/")
+                .map { $0.lowercased() }
+
+            guard let first = pathComponents.first else { return nil }
+            switch first {
+            case "feed":
+                guard pathComponents.count >= 2 else { return .feed }
+                let deepLinkType = pathComponents[1]
+                guard pathComponents.count >= 3 else { return .feed }
+                guard let id = UUID(uuidString: pathComponents[2]) else { return .feed }
+                switch deepLinkType {
+                case "content":
+                    return .content(id: id)
+                case "comment":
+                    return .comment(id: id)
+                case "wishlist-match":
+                    return .wishlistMatch(id: id)
+                default:
+                    return .feed
+                }
+            case "friends":
+                if pathComponents.count >= 2, pathComponents[1] == "requests" {
+                    return .friendRequests
+                }
+                return .friends
+            default:
+                return .feed
+            }
+        }
+    }
 
     @Environment(AppServices.self) private var services
 
@@ -19,6 +81,11 @@ struct SocialRootView: View {
     @State private var profilePopoverPath = NavigationPath()
     @State private var socialNavigationPath = NavigationPath()
     @State private var currentNonce: String?
+    @State private var selectedTab: SocialTab = .feed
+    @State private var isAlertsPresented = false
+    @State private var isNewPostPresented = false
+    @State private var deepLinkedSharedContent: SharedContent?
+    @State private var deepLinkedCommentsContent: SocialFeedService.FeedContentSummary?
 
     private var isConfigured: Bool {
         AppConfiguration.supabaseURL != nil && !AppConfiguration.supabasePublishableKey.isEmpty
@@ -26,18 +93,29 @@ struct SocialRootView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            if services.socialAuth.authState == .signedOut {
-                socialHeader
-            }
+            socialHeader
             content
         }
+        .background(Color(hex: "0A0A0A").ignoresSafeArea())
         .navigationTitle("Social")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar(services.socialAuth.isSignedIn ? .visible : .hidden, for: .navigationBar)
+        .toolbar(.hidden, for: .navigationBar)
         .sheet(isPresented: $showAccountProfile) {
             profilePopover
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
+        }
+        .sheet(item: $deepLinkedSharedContent) { content in
+            NavigationStack {
+                SharedContentView(content: content)
+                    .environment(services)
+            }
+        }
+        .sheet(item: $deepLinkedCommentsContent) { content in
+            NavigationStack {
+                CommentsView(content: content)
+                    .environment(services)
+            }
         }
         .task {
             await services.socialAuth.restoreSession()
@@ -57,6 +135,11 @@ struct SocialRootView: View {
                 showAccountProfile = false
             }
         }
+        .onChange(of: services.socialPush.queuedDeepLinkURL) { _, _ in
+            Task {
+                await routeQueuedDeepLinkIfPossible()
+            }
+        }
     }
 
     private var socialHeader: some View {
@@ -66,19 +149,75 @@ struct SocialRootView: View {
                 .foregroundStyle(.primary)
 
             HStack {
+                if services.socialAuth.isSignedIn {
+                    ChromeGlassCircleButton(accessibilityLabel: "Alerts") {
+                        Haptics.lightImpact()
+                        isAlertsPresented = true
+                    } label: {
+                        ZStack(alignment: .topTrailing) {
+                            Image(systemName: "bell")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(services.socialFeed.unreadCount > 0 ? Color(hex: "E8B84B") : .primary)
+
+                            if services.socialFeed.unreadCount > 0 {
+                                Circle()
+                                    .fill(Color(hex: "E05252"))
+                                    .frame(width: 8, height: 8)
+                                    .overlay(Circle().stroke(Color(hex: "141414"), lineWidth: 1.5))
+                                    .offset(x: 4, y: -4)
+                            }
+                        }
+                    }
+                }
+
                 Spacer(minLength: 0)
-                ChromeGlassCircleButton(accessibilityLabel: "Profile") {
-                    Haptics.lightImpact()
-                    showAccountProfile = true
-                } label: {
-                    Image(systemName: "person.crop.circle")
-                        .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
+
+                if services.socialAuth.isSignedIn {
+                    if selectedTab == .feed {
+                        ChromeGlassCircleButton(accessibilityLabel: "New Post") {
+                            Haptics.lightImpact()
+                            isNewPostPresented = true
+                        } label: {
+                            Image(systemName: "plus")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(.primary)
+                        }
+                    } else if selectedTab == .profile {
+                        ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
+                            Haptics.lightImpact()
+                            profilePopoverPath.append(ProfilePopoverDestination.editProfile)
+                            showAccountProfile = true
+                        } label: {
+                            Image(systemName: "pencil")
+                                .font(.system(size: 17, weight: .medium))
+                                .foregroundStyle(.primary)
+                        }
+                    }
+                } else {
+                    ChromeGlassCircleButton(accessibilityLabel: "Profile") {
+                        Haptics.lightImpact()
+                        showAccountProfile = true
+                    } label: {
+                        Image(systemName: "person.crop.circle")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                    }
                 }
             }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
+        .sheet(isPresented: $isAlertsPresented) {
+            SocialAlertsSheet(isPresented: $isAlertsPresented)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+        }
+        .sheet(isPresented: $isNewPostPresented) {
+            NewPostView()
+                .environment(services)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.visible)
+        }
     }
 
     @ViewBuilder
@@ -150,31 +289,9 @@ struct SocialRootView: View {
         if let profile {
             NavigationStack(path: $socialNavigationPath) {
                 VStack(spacing: 0) {
-                    FeedView()
+                    socialShell(profile: profile)
                 }
-                .navigationTitle("Social")
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        ChromeGlassCircleButton(accessibilityLabel: "Friends") {
-                            socialNavigationPath.append(SocialDestination.friends)
-                        } label: {
-                            Image(systemName: "person.2.fill")
-                                .font(.system(size: 15, weight: .bold))
-                                .foregroundStyle(.primary)
-                        }
-                    }
-                    ToolbarItem(placement: .topBarTrailing) {
-                        ChromeGlassCircleButton(accessibilityLabel: "Profile") {
-                            Haptics.lightImpact()
-                            showAccountProfile = true
-                        } label: {
-                            Image(systemName: "person.crop.circle")
-                                .font(.system(size: 17, weight: .bold))
-                                .foregroundStyle(.primary)
-                        }
-                    }
-                }
+                .toolbar(.hidden, for: .navigationBar)
                 .navigationDestination(for: SocialDestination.self) { destination in
                     switch destination {
                     case .friends:
@@ -204,6 +321,44 @@ struct SocialRootView: View {
             )
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
+    }
+
+    private func socialShell(profile: SocialProfile) -> some View {
+        VStack(spacing: 0) {
+            SlidingSegmentedPicker(
+                selection: $selectedTab,
+                items: SocialTab.allCases,
+                title: { $0.title }
+            )
+            .padding(.horizontal, 16)
+            .padding(.bottom, 10)
+
+            Group {
+                switch selectedTab {
+                case .feed:
+                    FeedView()
+                case .friends:
+                    FriendsListView(
+                        onOpenSearch: { selectedTab = .friends },
+                        onOpenQR: { socialNavigationPath.append(SocialDestination.qrProfile) },
+                        onOpenUsername: { username in
+                            socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+                        }
+                    )
+                case .profile:
+                    MyProfileView(
+                        profile: profile,
+                        onSignOutTapped: {
+                            services.socialAuth.signOut()
+                            self.profile = nil
+                            selectedTab = .feed
+                        }
+                    )
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+        .background(Color(hex: "0A0A0A"))
     }
 
     private func handleAppleSignInResult(_ result: Result<ASAuthorization, Error>) async {
@@ -289,16 +444,62 @@ struct SocialRootView: View {
 
     private func routeQueuedDeepLinkIfPossible() async {
         guard case .signedIn = services.socialAuth.authState else { return }
-        guard let username = services.socialFriend.queuedProfileUsername else { return }
-        if profile == nil {
-            profilePopoverPath = NavigationPath()
-            profilePopoverPath.append(ProfilePopoverDestination.editProfile)
-            showAccountProfile = true
-        } else {
-            _ = services.socialFriend.consumeQueuedProfileUsername()
-            socialNavigationPath = NavigationPath()
-            socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+        if let url = services.socialPush.consumeQueuedDeepLinkURL(),
+           let destination = SocialDeepLinkDestination.parse(from: url) {
+            await route(destination: destination)
+            return
         }
+
+        guard let username = services.socialFriend.consumeQueuedProfileUsername() else { return }
+        await route(destination: .profile(username: username))
+    }
+
+    private func route(destination: SocialDeepLinkDestination) async {
+        switch destination {
+        case .feed:
+            selectedTab = .feed
+        case .friends, .friendRequests:
+            selectedTab = .friends
+        case .profile(let username):
+            if profile == nil {
+                profilePopoverPath = NavigationPath()
+                profilePopoverPath.append(ProfilePopoverDestination.editProfile)
+                showAccountProfile = true
+            } else {
+                selectedTab = .friends
+                socialNavigationPath = NavigationPath()
+                socialNavigationPath.append(SocialDestination.friendProfile(username: username))
+            }
+        case .content(let id):
+            selectedTab = .feed
+            guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) else { return }
+            deepLinkedCommentsContent = nil
+            deepLinkedSharedContent = sharedContent
+        case .comment(let id):
+            selectedTab = .feed
+            guard let contentID = try? await services.socialFeed.fetchContentID(forCommentID: id) else { return }
+            guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: contentID) else { return }
+            deepLinkedSharedContent = nil
+            deepLinkedCommentsContent = feedContentSummary(from: sharedContent)
+        case .wishlistMatch(let id):
+            selectedTab = .feed
+            guard let contentID = try? await services.socialFeed.fetchContentID(forWishlistMatchID: id) else { return }
+            guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: contentID) else { return }
+            deepLinkedCommentsContent = nil
+            deepLinkedSharedContent = sharedContent
+        }
+    }
+
+    private func feedContentSummary(from sharedContent: SharedContent) -> SocialFeedService.FeedContentSummary {
+        SocialFeedService.FeedContentSummary(
+            id: sharedContent.id,
+            ownerID: sharedContent.ownerID,
+            title: sharedContent.title,
+            contentType: sharedContent.contentType,
+            description: sharedContent.description,
+            cardCount: sharedContent.cardCount,
+            brand: sharedContent.brand
+        )
     }
 
     private var profilePopover: some View {

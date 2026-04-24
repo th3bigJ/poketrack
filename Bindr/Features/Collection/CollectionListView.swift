@@ -22,7 +22,7 @@ struct CollectionListView: View {
 
     @State private var cardsByCardID: [String: Card] = [:]
 
-    private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+    private let columnCount = 3
 
     private var ownedCardIDs: Set<String> {
         Set(visibleCollectionItems.map { $0.cardID })
@@ -106,13 +106,12 @@ struct CollectionListView: View {
             VStack(spacing: 0) {
                 Color.clear.frame(height: rootFloatingChromeInset)
 
-                LazyVGrid(columns: columns, spacing: 12) {
-                    ForEach(Array(filteredCollectionItems.enumerated()), id: \.element.id) { index, item in
-                        collectionCell(for: item)
-                            .onAppear {
-                                ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: index + 1)
-                            }
-                    }
+                EagerVGrid(items: filteredCollectionItems, columns: columnCount, spacing: 12) { item in
+                    let index = filteredCollectionItems.firstIndex(where: { $0.id == item.id }) ?? 0
+                    collectionCell(for: item)
+                        .onAppear {
+                            ImagePrefetcher.shared.prefetchCardWindow(orderedCards, startingAt: index + 1)
+                        }
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 8)

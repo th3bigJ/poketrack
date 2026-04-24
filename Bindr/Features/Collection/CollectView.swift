@@ -34,9 +34,8 @@ struct CollectView: View {
     var showsSegmentedControl = true
     var hidesNavigationBar = true
 
-    private var columns: [GridItem] {
-        let count = min(max(gridOptions.columnCount, 1), 4)
-        return Array(repeating: GridItem(.flexible(), spacing: 12), count: count)
+    private var safeColumnCount: Int {
+        min(max(gridOptions.columnCount, 1), 4)
     }
 
     private var activeBrand: TCGBrand {
@@ -85,10 +84,6 @@ struct CollectView: View {
                     }
                     BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding)
                         .padding(.horizontal, 16)
-                    Text("\(activeFilteredCount) cards")
-                        .font(.caption2)
-                        .foregroundStyle(.secondary)
-                        .frame(maxWidth: .infinity, alignment: .center)
                 }
                 .padding(.bottom, 10)
 
@@ -119,6 +114,9 @@ struct CollectView: View {
             collectionFilters = defaultCollectionFilters()
             wishlistFilters = BrowseCardGridFilters()
         }
+        .onChange(of: collectionShareSyncSignature) { _, _ in
+            services.socialShare.scheduleAutoSyncCollection(items: collectionItems)
+        }
     }
 
     private func defaultCollectionFilters() -> BrowseCardGridFilters {
@@ -138,7 +136,12 @@ struct CollectView: View {
     }
 
     private var searchPlaceholder: String {
-        selectedSegment == .collection ? "Search your collection" : "Search your wishlist"
+        switch selectedSegment {
+        case .collection:
+            return "Search \(formattedActiveFilteredCount) cards in collection"
+        case .wishlist:
+            return "Search \(formattedActiveFilteredCount) cards in wishlist"
+        }
     }
 
     private var activeQueryBinding: Binding<String> {
@@ -147,6 +150,12 @@ struct CollectView: View {
 
     private var activeFilteredCount: Int {
         selectedSegment == .collection ? filteredCollectionItems.count : filteredWishlistItems.count
+    }
+
+    private var formattedActiveFilteredCount: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(value: activeFilteredCount)) ?? "\(activeFilteredCount)"
     }
 
     // MARK: - Content View
@@ -179,13 +188,12 @@ struct CollectView: View {
                 description: "Try a different card name, set code, or number."
             )
         } else {
-            LazyVGrid(columns: columns, spacing: 12) {
-                ForEach(Array(filteredCollectionItems.enumerated()), id: \.element.id) { index, item in
-                    collectionCell(for: item)
-                        .onAppear {
-                            ImagePrefetcher.shared.prefetchCardWindow(orderedCollectionCards, startingAt: index + 1)
-                        }
-                }
+            EagerVGrid(items: filteredCollectionItems, columns: safeColumnCount, spacing: 12) { item in
+                let index = filteredCollectionItems.firstIndex(where: { $0.id == item.id }) ?? 0
+                collectionCell(for: item)
+                    .onAppear {
+                        ImagePrefetcher.shared.prefetchCardWindow(orderedCollectionCards, startingAt: index + 1)
+                    }
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 8)
@@ -272,6 +280,13 @@ struct CollectView: View {
         return visibleCollectionItems.map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)" }.joined(separator: "§") + "|" + brandKey
     }
 
+    private var collectionShareSyncSignature: String {
+        collectionItems
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)|\($0.notes)" }
+            .sorted()
+            .joined(separator: ";")
+    }
+
     private func resolveCollectionCards() async {
         var next = cardsByCardID
         for item in visibleCollectionItems {
@@ -317,13 +332,12 @@ struct CollectView: View {
                 description: "Try a different card name, set code, or number."
             )
         } else {
-            LazyVGrid(columns: columns, spacing: 12) {
-                ForEach(Array(filteredWishlistItems.enumerated()), id: \.element.id) { index, item in
-                    wishlistCell(for: item)
-                        .onAppear {
-                            ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: index + 1)
-                        }
-                }
+            EagerVGrid(items: filteredWishlistItems, columns: safeColumnCount, spacing: 12) { item in
+                let index = filteredWishlistItems.firstIndex(where: { $0.id == item.id }) ?? 0
+                wishlistCell(for: item)
+                    .onAppear {
+                        ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: index + 1)
+                    }
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 8)

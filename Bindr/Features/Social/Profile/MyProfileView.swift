@@ -2,8 +2,13 @@ import SwiftUI
 import SwiftData
 
 struct MyProfileView: View {
+    private enum ProfileTab: String, CaseIterable {
+        case posts
+        case wishlist
+        case collection
+    }
+
     let profile: SocialProfile
-    let onEditTapped: () -> Void
     let onSignOutTapped: () -> Void
 
     @Environment(\.modelContext) private var modelContext
@@ -12,31 +17,22 @@ struct MyProfileView: View {
 
     @State private var cardCount: Int = 0
     @State private var binderCount: Int = 0
-    @State private var totalValue: Double = 0
+    @State private var deckCount: Int = 0
     @State private var favoriteCard: Card?
     @State private var favoriteCardPrice: Double?
-    @State private var showWishlistDetail = false
     @State private var myActivity: [SocialFeedService.FeedItem] = []
-    
-    private var formattedTotalValue: String {
-        let display = services.priceDisplay
-        let currency = display.currency
-        let symbol = currency.symbol
-        let rate = currency == .usd ? 1.0 : services.pricing.usdToGbp
-        
-        // The snapshots are in GBP by default in CollectionValueService
-        // but let's see if we can convert back if needed.
-        // Actually, let's just use the GBP value and format it.
-        let valueInGbp = services.collectionValue?.snapshots.last?.totalGbp ?? 0
-        let valueInTarget = currency == .gbp ? valueInGbp : valueInGbp / services.pricing.usdToGbp * rate
-        
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
-        formatter.currencySymbol = symbol
-        formatter.maximumFractionDigits = 0
-        return formatter.string(from: NSNumber(value: valueInTarget)) ?? "\(symbol)0"
-    }
+    @State private var selectedProfileTab: ProfileTab = .posts
+    @State private var isCollectionPublished = false
+    @State private var showCollectionShareSettings = false
+    @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
 
+    private var collectionShareAutoSyncSignature: String {
+        collectionItems
+            .map { "\($0.cardID)|\($0.variantKey)|\($0.quantity)|\($0.notes)" }
+            .sorted()
+            .joined(separator: ";")
+    }
+    
     private var roleTitles: [String] {
         (profile.profileRoles ?? []).map { role in
             switch role {
@@ -47,149 +43,50 @@ struct MyProfileView: View {
         }
     }
 
+    // Prefer local counts on My Profile so totals remain correct
+    // when remote profile stats are stale.
+    private var displayedCardCount: Int {
+        max(cardCount, profile.collectionCardCount ?? 0)
+    }
+
+    private var displayedDeckCount: Int {
+        max(deckCount, profile.collectionDeckCount ?? 0)
+    }
+
+    private var displayedBinderCount: Int {
+        max(binderCount, profile.collectionBinderCount ?? 0)
+    }
+
     var body: some View {
         ScrollView {
-            VStack(spacing: 24) {
-                // 1. Hero Header
-                ProfileHeroHeader(profile: profile, onEditTapped: onEditTapped)
-                    .zIndex(1)
-                
-                VStack(spacing: 24) {
-                    // 2. Stats Row
-                    ProfileStatsRow(
-                        totalValue: formattedTotalValue,
-                        followerCount: profile.followerCount ?? 0,
-                        binderCount: binderCount
-                    )
-                    
-                    // 3. Profile Type Chips
-                    if !roleTitles.isEmpty {
-                        HStack(spacing: 10) {
-                            ForEach(roleTitles, id: \.self) { title in
-                                Text(title)
-                                    .font(.system(size: 14, weight: .semibold))
-                                    .padding(.horizontal, 16)
-                                    .padding(.vertical, 8)
-                                    .background(
-                                        Capsule()
-                                            .fill(colorScheme == .dark ? Color.white.opacity(0.07) : Color.black.opacity(0.05))
-                                    )
-                                    .overlay(
-                                        Capsule()
-                                            .stroke(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.08), lineWidth: 1)
-                                    )
-                            }
+            VStack(spacing: 18) {
+                profileHeader
+                favoritesSection
+                profileTabPicker
+                profileTabContent
+
+                Button(role: .destructive, action: onSignOutTapped) {
+                    Text("Sign Out")
+                        .font(.system(size: 13, weight: .semibold))
+                        .frame(maxWidth: .infinity)
+                        .padding(.vertical, 12)
+                        .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                                .stroke(Color.white.opacity(0.09), lineWidth: 1)
                         }
-                    }
-                    
-                    // 4. Favorites Section
-                    VStack(alignment: .leading, spacing: 16) {
-                        HStack {
-                            Text("Favorites")
-                                .font(.headline)
-                            Spacer()
-                            Button("Change") {
-                                onEditTapped()
-                            }
-                            .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(.primary)
-                        }
-                        .padding(.horizontal, 20)
-                        
-                        VStack(spacing: 12) {
-                            // Favorite Pokémon Tile
-                            if let pokemonName = profile.favoritePokemonName {
-                                favoritePokemonTile(name: pokemonName, dex: profile.favoritePokemonDex)
-                            }
-                            
-                            // Favorite Card Tile
-                            if let cardName = profile.favoriteCardName {
-                                favoriteCardTile(name: cardName)
-                            }
-                        }
-                        .padding(.horizontal, 20)
-                    }
-                    
-                    // 5. Public Wishlist Preview
-                    if profile.isWishlistPublic == true, let wishlist = services.wishlist {
-                        ProfileWishlistPreview(
-                            cardIDs: wishlist.items.map(\.cardID),
-                            onViewAllTapped: { showWishlistDetail = true },
-                            cardLoader: { id in await services.cardData.loadCard(masterCardId: id) },
-                            priceFormatter: { val in
-                                let formatter = NumberFormatter()
-                                formatter.numberStyle = .currency
-                                formatter.currencySymbol = services.priceDisplay.currency == .gbp ? "£" : "$"
-                                return formatter.string(from: NSNumber(value: val)) ?? "$0"
-                            }
-                        )
-                        .sheet(isPresented: $showWishlistDetail) {
-                            PublicWishlistDetailView(
-                                cardIDs: wishlist.items.map(\.cardID),
-                                title: "My Wishlist",
-                                cardLoader: { id in await services.cardData.loadCard(masterCardId: id) },
-                                priceFormatter: { val in
-                                    let formatter = NumberFormatter()
-                                    formatter.numberStyle = .currency
-                                    formatter.currencySymbol = services.priceDisplay.currency == .gbp ? "£" : "$"
-                                    return formatter.string(from: NSNumber(value: val)) ?? "$0"
-                                }
-                            )
-                        }
-                    }
-                    
-                    // 5.5 My Activity
-                    if !myActivity.isEmpty {
-                        VStack(alignment: .leading, spacing: 16) {
-                            Text("My Activity")
-                                .font(.headline)
-                                .padding(.horizontal, 20)
-                            
-                            VStack(spacing: 12) {
-                                ForEach(groupedActivity) { group in
-                                    FeedItemView(group: group)
-                                }
-                            }
-                            .padding(.horizontal, 4)
-                        }
-                    }
-                    
-                    // 6. Actions
-                    VStack(spacing: 0) {
-                        
-                        
-                        Button(role: .destructive, action: onSignOutTapped) {
-                            HStack {
-                                Text("Sign Out")
-                                Spacer()
-                            }
-                            .padding()
-                            .background(colorScheme == .dark ? Color(hex: "1c1c1e") : .white)
-                        }
-                    }
-                    .clipShape(RoundedRectangle(cornerRadius: 12))
-                    .padding(.horizontal, 20)
-                    .padding(.bottom, 40)
                 }
-                .padding(.top, 48) // Increased space to account for Hero Header overlap (offset 40 + extra)
+                .padding(.horizontal, 16)
+                .padding(.bottom, 32)
             }
         }
-        .background(colorScheme == .dark ? Color.black : Color(uiColor: .systemGroupedBackground))
+        .background(Color(hex: "0A0A0A"))
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .principal) {
-                Text("My Profile")
-                    .font(.headline)
+        .sheet(isPresented: $showCollectionShareSettings) {
+            ShareSettingsView(source: .collection(items: collectionItems)) {
+                Task { await refreshCollectionShareStatus() }
             }
-            ToolbarItem(placement: .topBarTrailing) {
-                ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
-                    onEditTapped()
-                } label: {
-                    Image(systemName: "pencil")
-                        .font(.system(size: 16, weight: .bold))
-                        .foregroundStyle(.primary)
-                }
-            }
+            .environment(services)
         }
         .task {
             fetchStats()
@@ -199,17 +96,246 @@ struct MyProfileView: View {
                     favoriteCardPrice = await services.pricing.usdPrice(for: card, printing: "normal")
                 }
             }
-            
-            // Fetch my activity
             do {
                 myActivity = try await services.socialFeed.fetchUserActivity(limit: 10)
             } catch {
                 print("Error fetching my activity: \(error)")
             }
+            await refreshCollectionShareStatus()
+        }
+        .onChange(of: collectionShareAutoSyncSignature) { _, _ in
+            fetchStats()
+            services.socialShare.scheduleAutoSyncCollection(items: collectionItems)
+            Task { await refreshCollectionShareStatus() }
         }
     }
     
     // MARK: - Subviews
+
+    private var profileHeader: some View {
+        VStack(alignment: .leading, spacing: 14) {
+            HStack(alignment: .top, spacing: 14) {
+                ZStack(alignment: .bottomTrailing) {
+                    ProfileAvatarView(profile: profile, size: 64)
+                        .overlay(Circle().stroke(Color(hex: "E8B84B"), lineWidth: 3))
+                    Circle()
+                        .fill(Color(hex: "52C97C"))
+                        .frame(width: 18, height: 18)
+                        .overlay(Circle().stroke(Color(hex: "0A0A0A"), lineWidth: 3))
+                }
+
+                VStack(alignment: .leading, spacing: 6) {
+                    Text(profile.displayName ?? profile.username)
+                        .font(.system(size: 18, weight: .heavy))
+                        .foregroundStyle(Color(hex: "F0F0F0"))
+                    Text("@\(profile.username)")
+                        .font(.system(size: 12))
+                        .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                    if !roleTitles.isEmpty {
+                        HStack(spacing: 6) {
+                            ForEach(roleTitles, id: \.self) { title in
+                                rolePill(title)
+                            }
+                        }
+                    }
+                }
+
+                Spacer()
+
+            }
+
+            if let bio = profile.bio, !bio.isEmpty {
+                Text(bio)
+                    .font(.system(size: 13))
+                    .lineSpacing(3)
+                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+            }
+
+            HStack(spacing: 0) {
+                statColumn(value: "\(displayedCardCount)", label: "Cards")
+                statColumn(value: "\(displayedDeckCount)", label: "Decks")
+                statColumn(value: "\(displayedBinderCount)", label: "Binders")
+                statColumn(value: "\(profile.friendCount ?? 0)", label: "Friends")
+            }
+            .padding(.vertical, 12)
+            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .stroke(Color.white.opacity(0.09), lineWidth: 1)
+            }
+        }
+        .padding(16)
+        .background {
+            LinearGradient(
+                colors: [Color(hex: "E8B84B").opacity(0.13), Color(hex: "0A0A0A")],
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        }
+    }
+
+    private var favoritesSection: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            sectionLabel("FAVORITES")
+
+            if let pokemonName = profile.favoritePokemonName {
+                favoriteRow(icon: "star.fill", label: "Pokémon", value: pokemonName)
+            }
+            if let cardName = profile.favoriteCardName {
+                favoriteRow(icon: "rectangle.portrait.fill", label: "Card", value: cardName)
+            }
+            if let deck = profile.favoriteDeckArchetype {
+                favoriteRow(icon: "square.stack.3d.up.fill", label: "Deck", value: deck)
+            }
+            if profile.favoritePokemonName == nil && profile.favoriteCardName == nil && profile.favoriteDeckArchetype == nil {
+                favoriteRow(icon: "sparkles", label: "Favorites", value: "Choose favorites in Edit")
+            }
+        }
+        .padding(.horizontal, 16)
+    }
+
+    private var profileTabPicker: some View {
+        HStack(spacing: 8) {
+            ForEach(ProfileTab.allCases, id: \.self) { tab in
+                Button {
+                    selectedProfileTab = tab
+                } label: {
+                    Text(tab.rawValue)
+                        .font(.system(size: 12, weight: .semibold))
+                        .foregroundStyle(selectedProfileTab == tab ? Color.black : Color(hex: "F0F0F0").opacity(0.55))
+                        .padding(.horizontal, 14)
+                        .padding(.vertical, 6)
+                        .background(selectedProfileTab == tab ? Color(hex: "E8B84B") : .clear, in: Capsule())
+                }
+                .buttonStyle(.plain)
+            }
+            Spacer()
+            if selectedProfileTab == .collection {
+                Button {
+                    showCollectionShareSettings = true
+                } label: {
+                    Image(systemName: isCollectionPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
+                        .font(.system(size: 15, weight: .semibold))
+                        .foregroundStyle(isCollectionPublished ? Color(hex: "52C97C") : Color(hex: "F0F0F0").opacity(0.55))
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(.horizontal, 16)
+    }
+
+    @ViewBuilder
+    private var profileTabContent: some View {
+        VStack(spacing: 10) {
+            switch selectedProfileTab {
+            case .posts:
+                if groupedActivity.isEmpty {
+                    emptyProfileCard("Your shared posts will appear here.")
+                } else {
+                    ForEach(groupedActivity) { group in
+                        FeedItemView(group: group)
+                    }
+                }
+            case .wishlist:
+                let ids = services.wishlist?.items.map(\.cardID) ?? profile.wishlistCardIDs ?? []
+                if ids.isEmpty {
+                    emptyProfileCard("Your public wishlist will appear here.")
+                } else {
+                    WishlistCardGrid(cardIDs: ids, cardLoader: { id in
+                        await services.cardData.loadCard(masterCardId: id)
+                    })
+                }
+            case .collection:
+                let ids = collectionItems.map(\.cardID)
+                if ids.isEmpty {
+                    emptyProfileCard("Cards you've added to your collection will appear here.")
+                } else {
+                    WishlistCardGrid(cardIDs: ids, cardLoader: { id in
+                        await services.cardData.loadCard(masterCardId: id)
+                    })
+                }
+            }
+        }
+        .padding(.horizontal, 16)
+    }
+
+    private func sectionLabel(_ text: String) -> some View {
+        Text(text)
+            .font(.system(size: 11, weight: .bold))
+            .tracking(0.88)
+            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+    }
+
+    private func rolePill(_ title: String) -> some View {
+        Text(title.uppercased())
+            .font(.system(size: 10, weight: .bold))
+            .tracking(0.4)
+            .foregroundStyle(Color(hex: "E8B84B"))
+            .padding(.horizontal, 6)
+            .padding(.vertical, 2)
+            .background(Color(hex: "E8B84B").opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 4, style: .continuous)
+                    .stroke(Color(hex: "E8B84B").opacity(0.19), lineWidth: 1)
+            }
+    }
+
+    private func statColumn(value: String, label: String) -> some View {
+        VStack(spacing: 3) {
+            Text(value)
+                .font(.system(size: 16, weight: .heavy))
+                .foregroundStyle(Color(hex: "F0F0F0"))
+                .lineLimit(1)
+                .minimumScaleFactor(0.65)
+            Text(label)
+                .font(.system(size: 10))
+                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+        }
+        .frame(maxWidth: .infinity)
+    }
+
+    private func favoriteRow(icon: String, label: String, value: String) -> some View {
+        HStack(spacing: 10) {
+            Circle()
+                .fill(Color(hex: "E8B84B").opacity(0.15))
+                .frame(width: 34, height: 34)
+                .overlay {
+                    Image(systemName: icon)
+                        .font(.system(size: 13, weight: .bold))
+                        .foregroundStyle(Color(hex: "E8B84B"))
+                }
+            VStack(alignment: .leading, spacing: 2) {
+                Text(label)
+                    .font(.system(size: 10, weight: .bold))
+                    .tracking(0.4)
+                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+                Text(value)
+                    .font(.system(size: 13, weight: .bold))
+                    .foregroundStyle(Color(hex: "F0F0F0"))
+                    .lineLimit(1)
+            }
+            Spacer()
+        }
+        .padding(12)
+        .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(Color.white.opacity(0.09), lineWidth: 1)
+        }
+    }
+
+    private func emptyProfileCard(_ text: String) -> some View {
+        Text(text)
+            .font(.system(size: 12))
+            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(14)
+            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay {
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(Color.white.opacity(0.09), lineWidth: 1)
+            }
+    }
     
     private func favoritePokemonTile(name: String, dex: Int?) -> some View {
         HStack(spacing: 16) {
@@ -342,15 +468,18 @@ struct MyProfileView: View {
     // MARK: - Data Fetching
     
     private func fetchStats() {
-        // Fetch Card Count
-        let cardFetch = FetchDescriptor<CollectionItem>()
-        cardCount = (try? modelContext.fetchCount(cardFetch)) ?? 0
-        
-        // Fetch Binder Count
-        let binderFetch = FetchDescriptor<Binder>()
-        binderCount = (try? modelContext.fetchCount(binderFetch)) ?? 0
-        
-        // Value is handled by totalValue computed property using services.collectionValue
+        cardCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0
+        binderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
+        deckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
+    }
+
+    private func refreshCollectionShareStatus() async {
+        do {
+            let snapshot = try await services.socialShare.shareSnapshotForCollection()
+            isCollectionPublished = snapshot.isPublished
+        } catch {
+            isCollectionPublished = false
+        }
     }
 
     // MARK: - Grouping Logic
@@ -361,7 +490,7 @@ struct MyProfileView: View {
 
         for item in myActivity {
             switch item.type {
-            case .reaction, .comment:
+            case .vote, .comment:
                 if let contentID = item.content?.id, let idx = contentIndex[contentID] {
                     groups[idx].interactions.append(item)
                     continue

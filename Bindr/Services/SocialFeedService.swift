@@ -26,7 +26,7 @@ final class SocialFeedService {
 
     enum FeedItemType: String, Sendable {
         case sharedContent
-        case reaction
+        case vote
         case comment
         case friendship
         case wishlistMatch
@@ -45,6 +45,9 @@ final class SocialFeedService {
         let ownerID: UUID
         let title: String
         let contentType: SharedContentType
+        let description: String?
+        let cardCount: Int?
+        let brand: String?
     }
 
     struct FeedItem: Identifiable, Sendable {
@@ -53,7 +56,7 @@ final class SocialFeedService {
         let createdAt: Date
         let actor: SocialProfile?
         let content: FeedContentSummary?
-        let reactionType: ReactionType?
+        let voteType: ReactionType?
         let commentBody: String?
         let friendshipID: UUID?
         let wishlistCardID: String?
@@ -83,10 +86,12 @@ final class SocialFeedService {
         let depth: Int
     }
 
-    struct ReactionAggregate: Sendable {
-        var totalCount: Int
-        var byType: [ReactionType: Int]
-        var myReactionType: ReactionType?
+    struct VoteAggregate: Sendable {
+        var upvoteCount: Int
+        var downvoteCount: Int
+        var myVoteType: ReactionType?
+
+        var score: Int { upvoteCount - downvoteCount }
     }
 
     private struct APIErrorPayload: Decodable {
@@ -94,12 +99,23 @@ final class SocialFeedService {
         let hint: String?
     }
 
+    private struct ContentReferenceRow: Decodable {
+        let contentID: UUID
+
+        enum CodingKeys: String, CodingKey {
+            case contentID = "content_id"
+        }
+    }
+
     private struct SharedContentFeedRow: Decodable {
         let id: UUID
         let ownerID: UUID
         let contentType: SharedContentType
         let title: String
+        let description: String?
         let payload: [String: JSONValue]?
+        let cardCount: Int?
+        let brand: String?
         let publishedAt: Date?
         let actor: SocialProfile?
 
@@ -108,17 +124,20 @@ final class SocialFeedService {
             case ownerID = "owner_id"
             case contentType = "content_type"
             case title
+            case description
             case payload
+            case cardCount = "card_count"
+            case brand
             case publishedAt = "published_at"
             case actor
         }
     }
 
-    private struct ReactionFeedRow: Decodable {
+    private struct VoteFeedRow: Decodable {
         let id: UUID
         let contentID: UUID
         let userID: UUID
-        let reactionType: ReactionType
+        let voteType: ReactionType
         let createdAt: Date?
         let actor: SocialProfile?
         let content: EmbeddedContent?
@@ -127,7 +146,7 @@ final class SocialFeedService {
             case id
             case contentID = "content_id"
             case userID = "user_id"
-            case reactionType = "reaction_type"
+            case voteType = "reaction_type"
             case createdAt = "created_at"
             case actor
             case content
@@ -219,24 +238,30 @@ final class SocialFeedService {
         let ownerID: UUID
         let title: String
         let contentType: SharedContentType
+        let description: String?
+        let cardCount: Int?
+        let brand: String?
 
         enum CodingKeys: String, CodingKey {
             case id
             case ownerID = "owner_id"
             case title
             case contentType = "content_type"
+            case description
+            case cardCount = "card_count"
+            case brand
         }
     }
 
-    private struct ReactionInsertRequest: Encodable {
+    private struct VoteInsertRequest: Encodable {
         let contentID: UUID
         let userID: UUID
-        let reactionType: ReactionType
+        let voteType: ReactionType
 
         enum CodingKeys: String, CodingKey {
             case contentID = "content_id"
             case userID = "user_id"
-            case reactionType = "reaction_type"
+            case voteType = "reaction_type"
         }
     }
 
@@ -282,12 +307,19 @@ final class SocialFeedService {
         let currentUserID = try signedInUserID()
         let beforeDate = refresh ? nil : cursorDate
         let blockedUserIDs = try await fetchBlockedUserIDs()
-        let fetched = try await fetchCompositePage(before: beforeDate, limit: pageSize, currentUserID: currentUserID, blockedUserIDs: blockedUserIDs, scope: scope)
+        let fetched = try await fetchCompositePage(
+            before: beforeDate,
+            limit: pageSize,
+            currentUserID: currentUserID,
+            blockedUserIDs: blockedUserIDs,
+            scope: scope,
+            includeActivityRows: false
+        )
         
         // Filter out "notification" style items from the main Everyone feed
         let filtered = fetched.filter { item in
             switch item.type {
-            case .reaction, .comment, .friendship, .wishlistMatch:
+            case .vote, .comment, .friendship, .wishlistMatch:
                 return false
             default:
                 return true
@@ -311,7 +343,63 @@ final class SocialFeedService {
     func fetchUserActivity(limit: Int = 20) async throws -> [FeedItem] {
         let currentUserID = try signedInUserID()
         let blockedUserIDs = try await fetchBlockedUserIDs()
-        return try await fetchCompositePage(before: nil, limit: limit, currentUserID: currentUserID, blockedUserIDs: blockedUserIDs, scope: .mine)
+        return try await fetchCompositePage(
+            before: nil,
+            limit: limit,
+            currentUserID: currentUserID,
+            blockedUserIDs: blockedUserIDs,
+            scope: .mine,
+            includeActivityRows: true
+        )
+    }
+
+    func fetchActivityForUser(userID: UUID, limit: Int = 20) async throws -> [FeedItem] {
+        let currentUserID = try signedInUserID()
+        let path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,description,card_count,brand,payload,published_at,actor:owner_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)&owner_id=eq.\(userID.uuidString)"
+        let rows: [SharedContentFeedRow] = try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())
+        let blockedUserIDs = try await fetchBlockedUserIDs()
+        return rows.compactMap { row -> FeedItem? in
+            guard let createdAt = row.publishedAt else { return nil }
+            guard !blockedUserIDs.contains(row.ownerID) else { return nil }
+            let content = FeedContentSummary(
+                id: row.id,
+                ownerID: row.ownerID,
+                title: row.title,
+                contentType: row.contentType,
+                description: row.description,
+                cardCount: row.cardCount,
+                brand: row.brand
+            )
+            let type: FeedItemType = {
+                switch row.contentType {
+                case .pull: return .pull
+                case .dailyDigest: return .dailyDigest
+                default: return .sharedContent
+                }
+            }()
+            return FeedItem(
+                id: row.id.uuidString,
+                type: type,
+                createdAt: createdAt,
+                actor: row.actor,
+                content: content,
+                voteType: nil,
+                commentBody: nil,
+                friendshipID: nil,
+                wishlistCardID: nil,
+                pullCardID: row.payload?["card_id"]?.stringValue,
+                pullCardName: row.payload?["card_name"]?.stringValue,
+                pullSetName: row.payload?["set_name"]?.stringValue,
+                pullValue: nil,
+                pullRarity: nil,
+                digestCollectionCount: nil,
+                digestWishlistCount: nil,
+                digestThumbnails: nil,
+                binderColour: nil,
+                binderTexture: nil,
+                binderSeed: nil
+            )
+        }
     }
 
     func loadMore(pageSize: Int = 20) async throws -> [FeedItem] {
@@ -325,11 +413,11 @@ final class SocialFeedService {
         recalculateUnread()
     }
 
-    func postReaction(type: ReactionType, to contentID: UUID) async throws {
-        let payload = ReactionInsertRequest(
+    func postVote(type: ReactionType, to contentID: UUID) async throws {
+        let payload = VoteInsertRequest(
             contentID: contentID,
             userID: try signedInUserID(),
-            reactionType: type
+            voteType: type
         )
         _ = try await execute(
             path: "/rest/v1/reactions?on_conflict=content_id,user_id",
@@ -342,7 +430,7 @@ final class SocialFeedService {
         ) as EmptyResponse
     }
 
-    func removeReaction(from contentID: UUID) async throws {
+    func removeVote(from contentID: UUID) async throws {
         let userID = try signedInUserID()
         _ = try await execute(
             path: "/rest/v1/reactions?content_id=eq.\(contentID.uuidString)&user_id=eq.\(userID.uuidString)",
@@ -354,31 +442,37 @@ final class SocialFeedService {
         ) as EmptyResponse
     }
 
-    func toggleReaction(type: ReactionType, to contentID: UUID) async throws {
-        let aggregate = try await fetchReactionAggregate(for: contentID)
-        if aggregate.myReactionType == type {
-            try await removeReaction(from: contentID)
+    func toggleVote(type: ReactionType, to contentID: UUID) async throws {
+        let aggregate = try await fetchVoteAggregate(for: contentID)
+        if aggregate.myVoteType == type {
+            try await removeVote(from: contentID)
         } else {
-            try await postReaction(type: type, to: contentID)
+            try await postVote(type: type, to: contentID)
         }
     }
 
-    func fetchReactionAggregate(for contentID: UUID) async throws -> ReactionAggregate {
-        let rows: [Reaction] = try await execute(
+    func fetchVoteAggregate(for contentID: UUID) async throws -> VoteAggregate {
+        let rows: [Vote] = try await execute(
             path: "/rest/v1/reactions?select=*&content_id=eq.\(contentID.uuidString)",
             method: "GET",
             accessToken: try signedInAccessToken()
         )
         let currentUserID = try signedInUserID()
-        var byType: [ReactionType: Int] = [:]
-        var myReaction: ReactionType?
+        var upvotes = 0
+        var downvotes = 0
+        var myVote: ReactionType?
         for row in rows {
-            byType[row.reactionType, default: 0] += 1
+            switch row.voteType {
+            case .upvote:
+                upvotes += 1
+            case .downvote:
+                downvotes += 1
+            }
             if row.userID == currentUserID {
-                myReaction = row.reactionType
+                myVote = row.voteType
             }
         }
-        return ReactionAggregate(totalCount: rows.count, byType: byType, myReactionType: myReaction)
+        return VoteAggregate(upvoteCount: upvotes, downvoteCount: downvotes, myVoteType: myVote)
     }
 
     func fetchComments(for contentID: UUID) async throws -> [CommentDisplay] {
@@ -395,8 +489,8 @@ final class SocialFeedService {
         return flattened
     }
 
-    func fetchReactions(for contentID: UUID) async throws -> [FeedItem] {
-        let rows: [ReactionFeedRow] = try await execute(
+    func fetchVotes(for contentID: UUID) async throws -> [FeedItem] {
+        let rows: [VoteFeedRow] = try await execute(
             path: "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&content_id=eq.\(contentID.uuidString)&order=created_at.desc",
             method: "GET",
             accessToken: try signedInAccessToken()
@@ -404,12 +498,12 @@ final class SocialFeedService {
         return rows.compactMap { row in
             guard let timestamp = row.createdAt else { return nil }
             return FeedItem(
-                id: "reaction-\(row.id.uuidString)",
-                type: .reaction,
+                id: "vote-\(row.id.uuidString)",
+                type: .vote,
                 createdAt: timestamp,
                 actor: row.actor,
                 content: nil,
-                reactionType: row.reactionType,
+                voteType: row.voteType,
                 commentBody: nil,
                 friendshipID: nil,
                 wishlistCardID: nil,
@@ -436,6 +530,26 @@ final class SocialFeedService {
             accessToken: try signedInAccessToken()
         )
         return rows.count
+    }
+
+    func fetchContentID(forCommentID commentID: UUID) async throws -> UUID? {
+        let path = "/rest/v1/comments?select=content_id&id=eq.\(commentID.uuidString)&limit=1"
+        let rows: [ContentReferenceRow] = try await execute(
+            path: path,
+            method: "GET",
+            accessToken: try signedInAccessToken()
+        )
+        return rows.first?.contentID
+    }
+
+    func fetchContentID(forWishlistMatchID matchID: UUID) async throws -> UUID? {
+        let path = "/rest/v1/wishlist_matches?select=content_id&id=eq.\(matchID.uuidString)&limit=1"
+        let rows: [ContentReferenceRow] = try await execute(
+            path: path,
+            method: "GET",
+            accessToken: try signedInAccessToken()
+        )
+        return rows.first?.contentID
     }
 
     func postComment(body: String, parentID: UUID?, to contentID: UUID) async throws {
@@ -484,19 +598,14 @@ final class SocialFeedService {
         limit: Int,
         currentUserID: UUID,
         blockedUserIDs: Set<UUID>,
-        scope: FeedScope
+        scope: FeedScope,
+        includeActivityRows: Bool
     ) async throws -> [FeedItem] {
         let friends = try? await friendService.fetchFriends()
         let friendIDs = Set(friends?.map(\.id) ?? [])
         
-        async let sharedTask = fetchSharedContentRows(before: before, limit: limit, scope: scope)
-        async let reactionTask = fetchReactionRows(before: before, limit: limit, scope: scope)
-        async let commentTask = fetchCommentRows(before: before, limit: limit, scope: scope)
-        async let friendshipTask = fetchFriendshipRows(before: before, limit: limit, scope: scope, currentUserID: currentUserID)
-        async let matchTask = fetchWishlistMatchRows(before: before, limit: limit, scope: scope)
-
         var merged: [FeedItem] = []
-        let sharedRows = try await sharedTask
+        let sharedRows = try await fetchSharedContentRows(before: before, limit: limit, scope: scope)
         merged.append(contentsOf: sharedRows.compactMap { row in
             guard let timestamp = row.publishedAt else { return nil }
             
@@ -510,7 +619,15 @@ final class SocialFeedService {
             }
             
             guard !blockedUserIDs.contains(row.ownerID) else { return nil }
-            let content = FeedContentSummary(id: row.id, ownerID: row.ownerID, title: row.title, contentType: row.contentType)
+            let content = FeedContentSummary(
+                id: row.id,
+                ownerID: row.ownerID,
+                title: row.title,
+                contentType: row.contentType,
+                description: row.description,
+                cardCount: row.cardCount,
+                brand: row.brand
+            )
             let type: FeedItemType = {
                 switch row.contentType {
                 case .pull: return .pull
@@ -525,7 +642,7 @@ final class SocialFeedService {
                 createdAt: timestamp,
                 actor: row.actor,
                 content: content,
-                reactionType: nil,
+                voteType: nil,
                 commentBody: nil,
                 friendshipID: nil,
                 wishlistCardID: nil,
@@ -543,8 +660,18 @@ final class SocialFeedService {
             )
         })
 
-        let reactionRows = try await reactionTask
-        merged.append(contentsOf: reactionRows.compactMap { (row) -> FeedItem? in
+        guard includeActivityRows else {
+            merged.sort { $0.createdAt > $1.createdAt }
+            return Array(merged.prefix(limit))
+        }
+
+        async let voteTask = fetchVoteRows(before: before, limit: limit, scope: scope)
+        async let commentTask = fetchCommentRows(before: before, limit: limit, scope: scope)
+        async let friendshipTask = fetchFriendshipRows(before: before, limit: limit, scope: scope, currentUserID: currentUserID)
+        async let matchTask = fetchWishlistMatchRows(before: before, limit: limit, scope: scope)
+
+        let voteRows = try await voteTask
+        merged.append(contentsOf: voteRows.compactMap { (row) -> FeedItem? in
             guard let timestamp = row.createdAt, let content = row.content else { return nil }
             switch scope {
             case .following:
@@ -555,14 +682,22 @@ final class SocialFeedService {
                 guard row.userID == currentUserID else { return nil }
             }
             guard !blockedUserIDs.contains(row.userID) else { return nil }
-            let summary = FeedContentSummary(id: content.id, ownerID: content.ownerID, title: content.title, contentType: content.contentType)
+            let summary = FeedContentSummary(
+                id: content.id,
+                ownerID: content.ownerID,
+                title: content.title,
+                contentType: content.contentType,
+                description: content.description,
+                cardCount: content.cardCount,
+                brand: content.brand
+            )
             return FeedItem(
-                id: "reaction-\(row.id.uuidString)",
-                type: .reaction,
+                id: "vote-\(row.id.uuidString)",
+                type: .vote,
                 createdAt: timestamp,
                 actor: row.actor,
                 content: summary,
-                reactionType: row.reactionType,
+                voteType: row.voteType,
                 commentBody: nil,
                 friendshipID: nil,
                 wishlistCardID: nil,
@@ -593,7 +728,7 @@ final class SocialFeedService {
                 createdAt: timestamp,
                 actor: actor,
                 content: nil,
-                reactionType: nil,
+                voteType: nil,
                 commentBody: nil,
                 friendshipID: row.id,
                 wishlistCardID: nil,
@@ -623,14 +758,22 @@ final class SocialFeedService {
                 guard row.authorID == currentUserID else { return nil }
             }
             guard !blockedUserIDs.contains(row.authorID) else { return nil }
-            let summary = FeedContentSummary(id: content.id, ownerID: content.ownerID, title: content.title, contentType: content.contentType)
+            let summary = FeedContentSummary(
+                id: content.id,
+                ownerID: content.ownerID,
+                title: content.title,
+                contentType: content.contentType,
+                description: content.description,
+                cardCount: content.cardCount,
+                brand: content.brand
+            )
             return FeedItem(
                 id: "comment-\(row.id.uuidString)",
                 type: .comment,
                 createdAt: timestamp,
                 actor: row.author,
                 content: summary,
-                reactionType: nil,
+                voteType: nil,
                 commentBody: row.body,
                 friendshipID: nil,
                 wishlistCardID: nil,
@@ -661,14 +804,22 @@ final class SocialFeedService {
             }
             
             guard !blockedUserIDs.contains(row.senderID) else { return nil }
-            let summary = FeedContentSummary(id: content.id, ownerID: content.ownerID, title: content.title, contentType: content.contentType)
+            let summary = FeedContentSummary(
+                id: content.id,
+                ownerID: content.ownerID,
+                title: content.title,
+                contentType: content.contentType,
+                description: content.description,
+                cardCount: content.cardCount,
+                brand: content.brand
+            )
             return FeedItem(
                 id: "wishlist-\(row.id.uuidString)",
                 type: .wishlistMatch,
                 createdAt: timestamp,
                 actor: row.sender,
                 content: summary,
-                reactionType: nil,
+                voteType: nil,
                 commentBody: nil,
                 friendshipID: nil,
                 wishlistCardID: row.cardID,
@@ -692,7 +843,7 @@ final class SocialFeedService {
 
     private func fetchSharedContentRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [SharedContentFeedRow] {
         let beforeFilter = before.map { "&published_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,payload,published_at,actor:owner_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,description,card_count,brand,payload,published_at,actor:owner_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
@@ -702,9 +853,9 @@ final class SocialFeedService {
         return try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())
     }
 
-    private func fetchReactionRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [ReactionFeedRow] {
+    private func fetchVoteRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [VoteFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
@@ -716,7 +867,7 @@ final class SocialFeedService {
 
     private func fetchCommentRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [CommentFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
@@ -735,7 +886,7 @@ final class SocialFeedService {
 
     private func fetchWishlistMatchRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [WishlistMatchFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/wishlist_matches?select=id,content_id,card_id,sender_id,matcher_id,created_at,sender:sender_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),matcher:matcher_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/wishlist_matches?select=id,content_id,card_id,sender_id,matcher_id,created_at,sender:sender_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),matcher:matcher_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()

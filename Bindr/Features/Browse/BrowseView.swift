@@ -1,6 +1,59 @@
 import SwiftData
 import SwiftUI
 
+/// A premium, sliding-highlight segmented picker that respects the user's theme accent color.
+/// Kept with Browse because Browse owns the primary tab treatment reused by collection/social.
+struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
+    @Binding var selection: SelectionValue
+    let items: [SelectionValue]
+    let title: (SelectionValue) -> String
+
+    @Environment(AppServices.self) private var services
+    @Namespace private var namespace
+
+    var body: some View {
+        HStack(spacing: 0) {
+            ForEach(items) { item in
+                let isSelected = selection == item
+
+                Button {
+                    if selection != item {
+                        withAnimation(.spring(response: 0.35, dampingFraction: 0.8)) {
+                            selection = item
+                        }
+                        Haptics.lightImpact()
+                    }
+                } label: {
+                    Text(title(item))
+                        .font(.system(size: 14, weight: isSelected ? .bold : .medium))
+                        .foregroundStyle(isSelected ? .white : .primary.opacity(0.7))
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 4)
+                        .frame(maxWidth: .infinity)
+                        .background {
+                            if isSelected {
+                                Capsule()
+                                    .fill(services.theme.accentColor)
+                                    .matchedGeometryEffect(id: "highlight", in: namespace)
+                                    .shadow(color: services.theme.accentColor.opacity(0.3), radius: 4, x: 0, y: 2)
+                            }
+                        }
+                }
+                .buttonStyle(.plain)
+            }
+        }
+        .padding(4)
+        .background {
+            Capsule()
+                .fill(.ultraThinMaterial)
+                .overlay {
+                    Capsule()
+                        .strokeBorder(.white.opacity(0.1), lineWidth: 0.5)
+                }
+        }
+    }
+}
+
 // MARK: - Shared card grid cell
 
 struct CardGridCell: View {
@@ -15,48 +68,137 @@ struct CardGridCell: View {
     var overridePrice: Double? = nil
     /// When provided, shown as a small badge next to the price (e.g. "PSA 10", "ACE 10").
     var gradeLabel: String? = nil
+    @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
+
+    private var tileBackground: Color {
+        colorScheme == .dark ? .black : .white
+    }
+
+    private var tileBorder: Color {
+        colorScheme == .dark ? Color.white.opacity(0.20) : Color.black.opacity(0.16)
+    }
+
+    private var insetBackground: Color {
+        colorScheme == .dark ? Color.white.opacity(0.03) : Color.black.opacity(0.02)
+    }
+
+    private var dividerColor: Color {
+        colorScheme == .dark ? Color.white.opacity(0.06) : Color.black.opacity(0.06)
+    }
+
+    private var showsFooter: Bool {
+        (gridOptions.showSetName && !(setName?.isEmpty ?? true))
+            || (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
+            || gridOptions.showSetID
+            || gridOptions.showPricing
+    }
+
+    private var cardCornerRadius: CGFloat {
+        (gridOptions.showCardName || showsFooter) ? 18 : 0
+    }
 
     var body: some View {
-        VStack(spacing: 4) {
+        VStack(spacing: 0) {
+            if gridOptions.showCardName {
+                Text(card.cardName)
+                    .font(.caption2.weight(.semibold))
+                    .lineLimit(1)
+                    .truncationMode(.tail)
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(.primary)
+                    .frame(maxWidth: .infinity)
+                    .padding(.vertical, 7)
+                    .padding(.horizontal, 8)
+                    .overlay(alignment: .bottom) {
+                        Rectangle()
+                            .fill(dividerColor)
+                            .frame(height: 1)
+                    }
+            }
+
             BrowseCardThumbnailView(
-                imageURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
+                imageURL: safeImageURL(relativePath: card.imageLowSrc),
                 isOwned: isOwned,
                 isWishlisted: isWishlisted
             )
             .frame(maxWidth: .infinity)
             .aspectRatio(5/7, contentMode: .fit)
-            if gridOptions.showCardName {
-                Text(card.cardName)
-                    .font(.caption2)
-                    .lineLimit(1)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.primary)
-            }
-            if gridOptions.showSetName, let setName, !setName.isEmpty {
-                Text(setName)
-                    .font(.caption2)
-                    .lineLimit(1)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
-            }
-            if gridOptions.showSetID {
-                Text(card.setCode)
-                    .font(.caption2)
-                    .lineLimit(1)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
-            }
-            if gridOptions.showOwned, let footnote, !footnote.isEmpty {
-                Text(footnote)
-                    .font(.caption2)
-                    .lineLimit(1)
-                    .multilineTextAlignment(.center)
-                    .foregroundStyle(.secondary)
-            }
-            if gridOptions.showPricing {
-                BrowseGridPriceText(card: card, overridePrice: overridePrice, gradeLabel: gradeLabel)
+
+            if showsFooter {
+                VStack(spacing: 3) {
+                    if gridOptions.showSetName, let setName, !setName.isEmpty {
+                        Text(setName)
+                            .font(.caption2)
+                            .lineLimit(1)
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity)
+                    }
+
+                    if gridOptions.showOwned, let footnote, !footnote.isEmpty {
+                        Text(footnote)
+                            .font(.caption2)
+                            .lineLimit(1)
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity)
+                    }
+
+                    if gridOptions.showSetID {
+                        Text(trailingCardID)
+                            .font(.caption2)
+                            .lineLimit(1)
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.tertiary)
+                            .frame(maxWidth: .infinity)
+                    }
+
+                    if gridOptions.showPricing {
+                        BrowseGridPriceText(
+                            card: card,
+                            overridePrice: overridePrice,
+                            gradeLabel: gradeLabel,
+                            usesAccentColor: true
+                        )
+                        .frame(maxWidth: .infinity, alignment: .center)
+                    }
+                }
+                .padding(.horizontal, 8)
+                .padding(.vertical, 7)
+                .frame(maxWidth: .infinity)
+                .background(insetBackground)
+                .overlay(alignment: .top) {
+                    Rectangle()
+                        .fill(dividerColor)
+                        .frame(height: 1)
+                }
             }
         }
+        .background(tileBackground)
+        .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
+        .overlay {
+            RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
+                .stroke(
+                    isOwned ? services.theme.accentColor : tileBorder,
+                    lineWidth: isOwned ? 1.8 : 1.2
+                )
+        }
+    }
+
+    private func safeImageURL(relativePath: String) -> URL? {
+        let trimmed = relativePath.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        if trimmed.hasPrefix("http") {
+            return URL(string: trimmed)
+        }
+        return AppConfiguration.imageURL(relativePath: trimmed)
+    }
+
+    private var trailingCardID: String {
+        let number = card.cardNumber.trimmingCharacters(in: .whitespacesAndNewlines)
+        if number.isEmpty { return card.setCode }
+        return number
     }
 }
 
@@ -119,6 +261,37 @@ private struct BrowseCardRow: Identifiable {
     let setName: String?
 }
 
+/// LazyVGrid inside an unbounded ScrollView triggers a SwiftUI iOS 26 layout crash.
+/// Using LazyVStack with manual row chunking achieves virtualization without the bug.
+struct EagerVGrid<Item: Identifiable, Cell: View>: View {
+    let items: [Item]
+    let columns: Int
+    let spacing: CGFloat
+    @ViewBuilder let cell: (Item) -> Cell
+
+    var body: some View {
+        let cols = max(columns, 1)
+        let rows = stride(from: 0, to: items.count, by: cols).map {
+            Array(items[$0..<min($0 + cols, items.count)])
+        }
+        LazyVStack(spacing: spacing) {
+            ForEach(Array(rows.enumerated()), id: \.offset) { _, rowItems in
+                HStack(spacing: spacing) {
+                    ForEach(rowItems) { item in
+                        cell(item)
+                            .frame(maxWidth: .infinity)
+                    }
+                    if rowItems.count < cols {
+                        ForEach(0..<(cols - rowItems.count), id: \.self) { _ in
+                            Color.clear.frame(maxWidth: .infinity)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 private struct BrowseFeedSnapshot {
     var cards: [Card] = []
     var rows: [BrowseCardRow] = []
@@ -161,69 +334,30 @@ enum BrowseInlineDetailRoute: Hashable {
     }
 }
 
-private struct BrowseCardListView: View {
-    let cards: [Card]
-    let rows: [BrowseCardRow]
+
+private struct BrowseCardGridButton: View {
+    let row: BrowseCardRow
     let gridOptions: BrowseGridOptions
-    let ownedCardIDs: Set<String>
-    let wishlistedCardIDs: Set<String>
-    let isLoadingMore: Bool
-    let hasMoreCardsToLoad: Bool
-    let presentCard: (Card, [Card]) -> Void
-    let onLoadMore: () -> Void
+    let isOwned: Bool
+    let isWishlisted: Bool
 
-    @State private var lastAutoLoadRowCount = 0
-
-    private var safeColumnCount: Int {
-        min(max(gridOptions.columnCount, 1), 4)
-    }
-
-    private var columns: [GridItem] {
-        Array(repeating: GridItem(.flexible(), spacing: 12), count: safeColumnCount)
-    }
+    @Environment(\.presentCard) private var presentCard
+    @Environment(\.browseFeedCards) private var browseFeedCards
 
     var body: some View {
-        VStack(spacing: 0) {
-            LazyVGrid(columns: columns, spacing: 12) {
-                ForEach(rows) { row in
-                    Button {
-                        presentCard(row.card, cards)
-                    } label: {
-                        CardGridCell(
-                            card: row.card,
-                            gridOptions: gridOptions,
-                            setName: row.setName,
-                            isOwned: ownedCardIDs.contains(row.card.masterCardId),
-                            isWishlisted: wishlistedCardIDs.contains(row.card.masterCardId)
-                        )
-                    }
-                    .buttonStyle(CardCellButtonStyle())
-                    .frame(maxWidth: .infinity, alignment: .top)
-                    .onAppear {
-                        guard hasMoreCardsToLoad else { return }
-                        guard row.id >= max(rows.count - safeColumnCount, 0) else { return }
-                        guard rows.count != lastAutoLoadRowCount else { return }
-                        lastAutoLoadRowCount = rows.count
-                        DispatchQueue.main.async {
-                            onLoadMore()
-                        }
-                    }
-                }
-            }
-            if isLoadingMore {
-                ProgressView()
-                    .frame(maxWidth: .infinity)
-                    .padding(.top, 12)
-            }
+        Button {
+            presentCard(row.card, browseFeedCards)
+        } label: {
+            CardGridCell(
+                card: row.card,
+                gridOptions: gridOptions,
+                setName: row.setName,
+                isOwned: isOwned,
+                isWishlisted: isWishlisted
+            )
         }
-        .padding(.horizontal, 16)
-        .padding(.top, 6)
-        .padding(.bottom, 16)
-        .onChange(of: rows.count) { _, newValue in
-            if newValue < lastAutoLoadRowCount {
-                lastAutoLoadRowCount = 0
-            }
-        }
+        .buttonStyle(CardCellButtonStyle())
+        .frame(maxWidth: .infinity, alignment: .top)
     }
 }
 
@@ -278,14 +412,11 @@ struct BrowseView: View {
     @State private var visibleBrowseResultCount = 0
     @State private var isBrowseBodyReady = false
     @State private var currentBrand: TCGBrand = .pokemon
-    private let inlineDetailColumns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+    @State private var lastAutoLoadRowCount = 0
+    private let inlineDetailColumnCount = 3
 
     private var safeColumnCount: Int {
         min(max(gridOptions.columnCount, 1), 4)
-    }
-
-    private var columns: [GridItem] {
-        Array(repeating: GridItem(.flexible(), spacing: 12), count: safeColumnCount)
     }
 
     private var visibleWishlistedCardIDs: Set<String> {
@@ -474,6 +605,7 @@ struct BrowseView: View {
             catalogDisplayedCards = []
             catalogDisplayedRows = []
             browseFeedSnapshot = BrowseFeedSnapshot()
+            lastAutoLoadRowCount = 0
             catalogNextIndex = 0
             isLoadingInitial = true
 
@@ -515,21 +647,40 @@ struct BrowseView: View {
         }
     }
 
+    @ViewBuilder
     private var browseCardGrid: some View {
-        let usesCatalogFeedSnapshot = isUsingCatalogFeedSelection
-        return BrowseCardListView(
-            cards: browseFeedSnapshot.cards,
-            rows: browseFeedSnapshot.rows,
-            gridOptions: gridOptions,
-            ownedCardIDs: ownedCardIDsCache,
-            wishlistedCardIDs: visibleWishlistedCardIDs,
-            isLoadingMore: isLoadingMore,
-            hasMoreCardsToLoad: browseFeedSnapshot.hasMoreCardsToLoad,
-            presentCard: presentCard,
-            onLoadMore: {
-                Task { await loadNextPageIfNeeded(usingCatalogFeed: usesCatalogFeedSnapshot) }
+        let snapshot = browseFeedSnapshot
+        let usesCatalogFeed = isUsingCatalogFeedSelection
+        VStack(spacing: 0) {
+            EagerVGrid(items: snapshot.rows, columns: safeColumnCount, spacing: 12) { row in
+                BrowseCardGridButton(
+                    row: row,
+                    gridOptions: gridOptions,
+                    isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
+                    isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId)
+                )
+                .onAppear {
+                    guard snapshot.hasMoreCardsToLoad else { return }
+                    guard row.id >= max(snapshot.rows.count - safeColumnCount, 0) else { return }
+                    guard snapshot.rows.count != lastAutoLoadRowCount else { return }
+                    lastAutoLoadRowCount = snapshot.rows.count
+                    Task { await loadNextPageIfNeeded(usingCatalogFeed: usesCatalogFeed) }
+                }
             }
-        )
+            if isLoadingMore {
+                ProgressView()
+                    .frame(maxWidth: .infinity)
+                    .padding(.top, 12)
+            }
+        }
+        .environment(\.browseFeedCards, snapshot.cards)
+        .padding(.horizontal, 16)
+        .padding(.bottom, 16)
+        .onChange(of: snapshot.rows.count) { _, newValue in
+            if newValue < lastAutoLoadRowCount {
+                lastAutoLoadRowCount = 0
+            }
+        }
     }
 
     private var formattedResultCount: String {
@@ -584,15 +735,13 @@ struct BrowseView: View {
             text: isInlineDetailPresented ? $inlineDetailQuery : $query
         )
             .padding(.horizontal, 16)
-            .padding(.bottom, 12)
+            .padding(.bottom, 10)
     }
 
     @ViewBuilder
     private var browseResultCountRow: some View {
         if selectedTab == .cards || isInlineDetailPresented {
-            // Remove the visible text but preserve the vertical layout spacing between the search field and grid.
-            Color.clear
-                .frame(height: 22)
+            EmptyView()
         }
     }
 
@@ -688,23 +837,22 @@ struct BrowseView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         } else {
-            LazyVGrid(columns: inlineDetailColumns, spacing: 12) {
-                ForEach(Array(filteredCards.enumerated()), id: \.element.id) { index, card in
-                    Button {
-                        presentCard(card, filteredCards)
-                    } label: {
-                        CardGridCell(
-                            card: card,
-                            gridOptions: gridOptions,
-                            setName: cachedSetNameByCode[card.setCode],
-                            isOwned: ownedCardIDsCache.contains(card.masterCardId),
-                            isWishlisted: visibleWishlistedCardIDs.contains(card.masterCardId)
-                        )
-                    }
-                    .buttonStyle(CardCellButtonStyle())
-                    .onAppear {
-                        ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
-                    }
+            EagerVGrid(items: filteredCards, columns: inlineDetailColumnCount, spacing: 12) { card in
+                let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
+                Button {
+                    presentCard(card, filteredCards)
+                } label: {
+                    CardGridCell(
+                        card: card,
+                        gridOptions: gridOptions,
+                        setName: cachedSetNameByCode[card.setCode],
+                        isOwned: ownedCardIDsCache.contains(card.masterCardId),
+                        isWishlisted: visibleWishlistedCardIDs.contains(card.masterCardId)
+                    )
+                }
+                .buttonStyle(CardCellButtonStyle())
+                .onAppear {
+                    ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                 }
             }
             .padding(.horizontal, 16)
@@ -1490,7 +1638,7 @@ private struct BrowsePokemonTabContent: View {
     @State private var characterRows: [String] = []
     @State private var subtypeRows: [String] = []
 
-    private let columns = [GridItem(.adaptive(minimum: 110), spacing: 12)]
+    private let pokemonColumnCount = 3
 
     private var filteredPokemonRows: [NationalDexPokemon] {
         let normalizedQuery = normalizedBrowseSearchText(query)
@@ -1564,36 +1712,34 @@ private struct BrowsePokemonTabContent: View {
             .frame(maxWidth: .infinity, minHeight: 280)
             .padding(.horizontal, 16)
         } else {
-            LazyVGrid(columns: columns, spacing: 12) {
-                ForEach(filteredPokemonRows) { item in
-                    Button {
-                        onSelectRoute(.dex(dexId: item.nationalDexNumber, displayName: item.displayName))
-                    } label: {
-                        VStack(spacing: 6) {
-                            CachedAsyncImage(
-                                url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl)
-                            ) { img in
-                                img.resizable().scaledToFit()
-                            } placeholder: {
-                                Color.gray.opacity(0.12)
-                            }
-                            .frame(height: 140)
-
-                            Text(item.displayName)
-                                .font(.caption2)
-                                .foregroundStyle(.primary)
-                                .lineLimit(2)
-                                .multilineTextAlignment(.center)
-
-                            Text("#\(item.nationalDexNumber)")
-                                .font(.caption2)
-                                .foregroundStyle(.secondary)
+            EagerVGrid(items: filteredPokemonRows, columns: pokemonColumnCount, spacing: 12) { item in
+                Button {
+                    onSelectRoute(.dex(dexId: item.nationalDexNumber, displayName: item.displayName))
+                } label: {
+                    VStack(spacing: 6) {
+                        CachedAsyncImage(
+                            url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl)
+                        ) { img in
+                            img.resizable().scaledToFit()
+                        } placeholder: {
+                            Color.gray.opacity(0.12)
                         }
-                        .padding(6)
-                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.08)))
+                        .frame(height: 140)
+
+                        Text(item.displayName)
+                            .font(.caption2)
+                            .foregroundStyle(.primary)
+                            .lineLimit(2)
+                            .multilineTextAlignment(.center)
+
+                        Text("#\(item.nationalDexNumber)")
+                            .font(.caption2)
+                            .foregroundStyle(.secondary)
                     }
-                    .buttonStyle(.plain)
+                    .padding(6)
+                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.08)))
                 }
+                .buttonStyle(.plain)
             }
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
@@ -1773,6 +1919,8 @@ private struct BrowseGridPriceText: View {
     var overridePrice: Double? = nil
     /// When set, shown as a small pill badge next to the price (e.g. "PSA 10", "ACE 10").
     var gradeLabel: String? = nil
+    /// When true, render the resolved price in the current theme accent color.
+    var usesAccentColor: Bool = false
 
     /// `nil` until the pricing task finishes; then a single price, a `low - high` range, or an em dash when unknown.
     @State private var priceLine: String?
@@ -1789,11 +1937,19 @@ private struct BrowseGridPriceText: View {
                             .padding(.vertical, 1.5)
                             .background(Color.accentColor, in: RoundedRectangle(cornerRadius: 3))
                     }
-                    Text(priceLine)
-                        .font(.caption2.weight(.semibold))
-                        .lineLimit(1)
-                        .minimumScaleFactor(0.7)
-                        .foregroundStyle(.secondary)
+                    if usesAccentColor {
+                        Text(priceLine)
+                            .font(.caption2.weight(.semibold))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.7)
+                            .foregroundStyle(services.theme.accentColor)
+                    } else {
+                        Text(priceLine)
+                            .font(.caption2.weight(.semibold))
+                            .lineLimit(1)
+                            .minimumScaleFactor(0.7)
+                            .foregroundStyle(.secondary)
+                    }
                 }
                 .multilineTextAlignment(.center)
             } else {
@@ -1918,12 +2074,6 @@ struct SetCardsView: View {
     @State private var isLoading = true
     @State private var query = ""
     @State private var filters = BrowseCardGridFilters()
-    private var columns: [GridItem] {
-        Array(
-            repeating: GridItem(.flexible(), spacing: 12),
-            count: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount)
-        )
-    }
 
     private var ownedCardIDs: Set<String> {
         return Set(collectionItems.compactMap { item in
@@ -1968,23 +2118,22 @@ struct SetCardsView: View {
                         .padding(.horizontal)
                         .padding(.bottom)
                     } else {
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            ForEach(Array(filteredCards.enumerated()), id: \.element.id) { index, card in
-                                Button {
-                                    presentCard(card, filteredCards)
-                                } label: {
-                                    CardGridCell(
-                                        card: card,
-                                        gridOptions: services.browseGridOptions.options,
-                                        setName: set.name,
-                                        isOwned: ownedCardIDs.contains(card.masterCardId),
-                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
-                                    )
-                                }
-                                    .buttonStyle(CardCellButtonStyle())
-                                    .onAppear {
-                                        ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
-                                    }
+                        EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: 12) { card in
+                            let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
+                            Button {
+                                presentCard(card, filteredCards)
+                            } label: {
+                                CardGridCell(
+                                    card: card,
+                                    gridOptions: services.browseGridOptions.options,
+                                    setName: set.name,
+                                    isOwned: ownedCardIDs.contains(card.masterCardId),
+                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
+                                )
+                            }
+                            .buttonStyle(CardCellButtonStyle())
+                            .onAppear {
+                                ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                             }
                         }
                         .padding(.horizontal)
@@ -2057,12 +2206,6 @@ struct DexCardsView: View {
     @State private var isLoading = true
     @State private var query = ""
     @State private var filters = BrowseCardGridFilters()
-    private var columns: [GridItem] {
-        Array(
-            repeating: GridItem(.flexible(), spacing: 12),
-            count: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount)
-        )
-    }
 
     private var setNameByCode: [String: String] {
         firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
@@ -2111,23 +2254,22 @@ struct DexCardsView: View {
                         .padding(.horizontal)
                         .padding(.bottom)
                     } else {
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            ForEach(Array(filteredCards.enumerated()), id: \.element.id) { index, card in
-                                Button {
-                                    presentCard(card, filteredCards)
-                                } label: {
-                                    CardGridCell(
-                                        card: card,
-                                        gridOptions: services.browseGridOptions.options,
-                                        setName: setNameByCode[card.setCode],
-                                        isOwned: ownedCardIDs.contains(card.masterCardId),
-                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
-                                    )
-                                }
-                                    .buttonStyle(CardCellButtonStyle())
-                                    .onAppear {
-                                        ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
-                                    }
+                        EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: 12) { card in
+                            let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
+                            Button {
+                                presentCard(card, filteredCards)
+                            } label: {
+                                CardGridCell(
+                                    card: card,
+                                    gridOptions: services.browseGridOptions.options,
+                                    setName: setNameByCode[card.setCode],
+                                    isOwned: ownedCardIDs.contains(card.masterCardId),
+                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
+                                )
+                            }
+                            .buttonStyle(CardCellButtonStyle())
+                            .onAppear {
+                                ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                             }
                         }
                         .padding(.horizontal)
@@ -2178,12 +2320,6 @@ struct OnePieceCharacterCardsView: View {
     @State private var isLoading = true
     @State private var query = ""
     @State private var filters = BrowseCardGridFilters()
-    private var columns: [GridItem] {
-        Array(
-            repeating: GridItem(.flexible(), spacing: 12),
-            count: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount)
-        )
-    }
 
     private var setNameByCode: [String: String] {
         firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
@@ -2232,23 +2368,22 @@ struct OnePieceCharacterCardsView: View {
                         .padding(.horizontal)
                         .padding(.bottom)
                     } else {
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            ForEach(Array(filteredCards.enumerated()), id: \.element.id) { index, card in
-                                Button {
-                                    presentCard(card, filteredCards)
-                                } label: {
-                                    CardGridCell(
-                                        card: card,
-                                        gridOptions: services.browseGridOptions.options,
-                                        setName: setNameByCode[card.setCode],
-                                        isOwned: ownedCardIDs.contains(card.masterCardId),
-                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
-                                    )
-                                }
-                                    .buttonStyle(CardCellButtonStyle())
-                                    .onAppear {
-                                        ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
-                                    }
+                        EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: 12) { card in
+                            let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
+                            Button {
+                                presentCard(card, filteredCards)
+                            } label: {
+                                CardGridCell(
+                                    card: card,
+                                    gridOptions: services.browseGridOptions.options,
+                                    setName: setNameByCode[card.setCode],
+                                    isOwned: ownedCardIDs.contains(card.masterCardId),
+                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
+                                )
+                            }
+                            .buttonStyle(CardCellButtonStyle())
+                            .onAppear {
+                                ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                             }
                         }
                         .padding(.horizontal)
@@ -2297,12 +2432,6 @@ struct OnePieceSubtypeCardsView: View {
     @State private var isLoading = true
     @State private var query = ""
     @State private var filters = BrowseCardGridFilters()
-    private var columns: [GridItem] {
-        Array(
-            repeating: GridItem(.flexible(), spacing: 12),
-            count: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount)
-        )
-    }
 
     private var setNameByCode: [String: String] {
         firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
@@ -2351,23 +2480,22 @@ struct OnePieceSubtypeCardsView: View {
                         .padding(.horizontal)
                         .padding(.bottom)
                     } else {
-                        LazyVGrid(columns: columns, spacing: 12) {
-                            ForEach(Array(filteredCards.enumerated()), id: \.element.id) { index, card in
-                                Button {
-                                    presentCard(card, filteredCards)
-                                } label: {
-                                    CardGridCell(
-                                        card: card,
-                                        gridOptions: services.browseGridOptions.options,
-                                        setName: setNameByCode[card.setCode],
-                                        isOwned: ownedCardIDs.contains(card.masterCardId),
-                                        isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
-                                    )
-                                }
-                                    .buttonStyle(CardCellButtonStyle())
-                                    .onAppear {
-                                        ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
-                                    }
+                        EagerVGrid(items: filteredCards, columns: safeBrowseGridColumnCount(services.browseGridOptions.options.columnCount), spacing: 12) { card in
+                            let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
+                            Button {
+                                presentCard(card, filteredCards)
+                            } label: {
+                                CardGridCell(
+                                    card: card,
+                                    gridOptions: services.browseGridOptions.options,
+                                    setName: setNameByCode[card.setCode],
+                                    isOwned: ownedCardIDs.contains(card.masterCardId),
+                                    isWishlisted: wishlistedCardIDs.contains(card.masterCardId)
+                                )
+                            }
+                            .buttonStyle(CardCellButtonStyle())
+                            .onAppear {
+                                ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                             }
                         }
                         .padding(.horizontal)
@@ -2747,7 +2875,7 @@ struct BrowseGridOptionsMenuContent: View {
     var body: some View {
         Toggle("Show card name", isOn: gridOptionBinding(\.showCardName))
         Toggle("Show set name", isOn: gridOptionBinding(\.showSetName))
-        Toggle("Show set ID", isOn: gridOptionBinding(\.showSetID))
+        Toggle("Show card ID", isOn: gridOptionBinding(\.showSetID))
         if gridOptions != nil {
             Toggle("Owned", isOn: gridOptionBinding(\.showOwned))
         }

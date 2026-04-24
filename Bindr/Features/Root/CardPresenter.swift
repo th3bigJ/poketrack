@@ -11,10 +11,20 @@ private struct CardPresenterKey: EnvironmentKey {
     static let defaultValue: (Card, [Card]) -> Void = { _, _ in }
 }
 
+private struct BrowseFeedCardsKey: EnvironmentKey {
+    static let defaultValue: [Card] = []
+}
+
 extension EnvironmentValues {
-    /// Present card detail; pass the **same ordered array** the user is browsing (search, set, dex, or feed) so paging matches that filter.
+    /// Present card detail; pass the **same ordered array** the user is browsing so paging matches that filter.
     var presentCard: (Card, [Card]) -> Void {
         get { self[CardPresenterKey.self] }
         set { self[CardPresenterKey.self] = newValue }
+    }
+
+    /// The current browse feed card list, set on the lazy grid container so individual cells don't store it.
+    var browseFeedCards: [Card] {
+        get { self[BrowseFeedCardsKey.self] }
+        set { self[BrowseFeedCardsKey.self] = newValue }
     }
 }

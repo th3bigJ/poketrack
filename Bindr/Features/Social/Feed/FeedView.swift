@@ -2,11 +2,11 @@ import SwiftUI
 
 // MARK: - Grouped Feed Model
 
-/// A primary feed event with any reactions/comments on it collapsed underneath
+/// A primary feed event with any votes/comments on it collapsed underneath
 struct GroupedFeedItem: Identifiable {
     let id: String
     let primary: SocialFeedService.FeedItem
-    var interactions: [SocialFeedService.FeedItem]   // reactions + comments on this post
+    var interactions: [SocialFeedService.FeedItem]   // votes + comments on this post
 
     var interactionSummary: String? {
         guard !interactions.isEmpty else { return nil }
@@ -34,7 +34,7 @@ struct FeedView: View {
 
         for item in items {
             switch item.type {
-            case .reaction, .comment:
+            case .vote, .comment:
                 // Try to attach to a parent post in the group list
                 if let contentID = item.content?.id, let idx = contentIndex[contentID] {
                     groups[idx].interactions.append(item)
@@ -128,7 +128,7 @@ struct FeedView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.top, 8)
+            .padding(.top, 0)
             .padding(.bottom, 32)
         }
         .refreshable { await refresh() }
@@ -145,6 +145,10 @@ struct FeedView: View {
             services.socialFeed.clearUnreadState()
             services.socialPush.clearAppBadgeCount()
             errorMessage = nil
+        } catch is CancellationError {
+            return
+        } catch let error as URLError where error.code == .cancelled {
+            return
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -157,6 +161,10 @@ struct FeedView: View {
         do {
             _ = try await services.socialFeed.loadMore(pageSize: 20)
             errorMessage = nil
+        } catch is CancellationError {
+            return
+        } catch let error as URLError where error.code == .cancelled {
+            return
         } catch {
             errorMessage = error.localizedDescription
         }
@@ -183,5 +191,221 @@ struct ShimmerCard: View {
                     phase = 1.4
                 }
             }
+    }
+}
+
+struct SocialAlertsSheet: View {
+    @Binding var isPresented: Bool
+    @Environment(AppServices.self) private var services
+
+    private var groupedItems: [GroupedFeedItem] {
+        let items = services.socialFeed.items
+        var groups: [GroupedFeedItem] = []
+        var contentIndex: [UUID: Int] = [:]
+        for item in items {
+            switch item.type {
+            case .vote, .comment:
+                if let contentID = item.content?.id, let idx = contentIndex[contentID] {
+                    groups[idx].interactions.append(item)
+                    continue
+                }
+                groups.append(GroupedFeedItem(id: item.id, primary: item, interactions: []))
+            default:
+                let idx = groups.count
+                groups.append(GroupedFeedItem(id: item.id, primary: item, interactions: []))
+                if let contentID = item.content?.id { contentIndex[contentID] = idx }
+            }
+        }
+        return groups
+    }
+
+    var body: some View {
+        SocialAlertsPreviewView(items: groupedItems, onDone: { isPresented = false })
+    }
+}
+
+struct NewPostPlaceholderView: View {
+    @Binding var isPresented: Bool
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ZStack {
+                Text("New Post")
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(.primary)
+
+                HStack {
+                    Spacer(minLength: 0)
+                    ChromeGlassCircleButton(accessibilityLabel: "Done") {
+                        Haptics.lightImpact()
+                        isPresented = false
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                    }
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+
+            ContentUnavailableView(
+                "Coming Soon",
+                systemImage: "plus.circle",
+                description: Text("Post sharing will be available in a future update.")
+            )
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+        }
+    }
+}
+
+private struct SocialAlertsPreviewView: View {
+    let items: [GroupedFeedItem]
+    let onDone: () -> Void
+
+    private var activityItems: [GroupedFeedItem] {
+        items.filter { group in
+            switch group.primary.type {
+            case .vote, .comment, .friendship, .wishlistMatch:
+                return true
+            default:
+                return !group.interactions.isEmpty
+            }
+        }
+    }
+
+    var body: some View {
+        VStack(spacing: 0) {
+            ZStack {
+                Text("Alerts")
+                    .font(.title2.weight(.bold))
+                    .foregroundStyle(.primary)
+
+                HStack {
+                    Spacer(minLength: 0)
+                    ChromeGlassCircleButton(accessibilityLabel: "Done") {
+                        Haptics.lightImpact()
+                        onDone()
+                    } label: {
+                        Image(systemName: "xmark")
+                            .font(.system(size: 17, weight: .medium))
+                            .foregroundStyle(.primary)
+                    }
+                }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+
+            ScrollView {
+                VStack(alignment: .leading, spacing: 14) {
+                    sectionLabel("WISHLIST MATCHES")
+                    let matches = activityItems.filter { $0.primary.type == .wishlistMatch }
+                    if matches.isEmpty {
+                        emptyAlert("No wishlist matches yet.")
+                    } else {
+                        ForEach(matches) { group in
+                            alertRow(group: group, tint: Color(hex: "E8B84B"), icon: "target")
+                        }
+                    }
+
+                    sectionLabel("ALL ACTIVITY")
+                        .padding(.top, 8)
+                    if activityItems.isEmpty {
+                        emptyAlert("Votes, comments, and friend activity will appear here.")
+                    } else {
+                        ForEach(activityItems) { group in
+                            alertRow(group: group, tint: tint(for: group.primary), icon: icon(for: group.primary))
+                        }
+                    }
+                }
+                .padding(16)
+            }
+        }
+    }
+
+    private func sectionLabel(_ text: String) -> some View {
+        Text(text)
+            .font(.system(size: 11, weight: .bold))
+            .tracking(0.88)
+            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+    }
+
+    private func emptyAlert(_ text: String) -> some View {
+        Text(text)
+            .font(.system(size: 12))
+            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(14)
+            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(Color.white.opacity(0.09), lineWidth: 1))
+    }
+
+    private func alertRow(group: GroupedFeedItem, tint: Color, icon: String) -> some View {
+        HStack(spacing: 10) {
+            Circle()
+                .fill(tint.opacity(0.15))
+                .frame(width: 36, height: 36)
+                .overlay {
+                    Image(systemName: icon)
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(tint)
+                }
+
+            VStack(alignment: .leading, spacing: 3) {
+                Text(alertTitle(for: group.primary))
+                    .font(.system(size: 13, weight: .semibold))
+                    .foregroundStyle(Color(hex: "F0F0F0"))
+                    .lineLimit(2)
+                Text(SocialFeedService.shortRelativeDate(group.primary.createdAt))
+                    .font(.system(size: 11))
+                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+            }
+
+            Spacer()
+
+            Circle()
+                .fill(tint)
+                .frame(width: 7, height: 7)
+        }
+        .padding(14)
+        .background(tint.opacity(group.primary.type == .wishlistMatch ? 0.12 : 0), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(tint.opacity(0.2), lineWidth: 1))
+    }
+
+    private func alertTitle(for item: SocialFeedService.FeedItem) -> String {
+        let name = item.actor?.displayName ?? item.actor?.username ?? "A trainer"
+        switch item.type {
+        case .wishlistMatch:
+            return "\(name) has a card from your wishlist"
+        case .friendship:
+            return "\(name) connected with you"
+        case .vote:
+            return "\(name) voted on \(item.content?.title ?? "your post")"
+        case .comment:
+            return "\(name) commented on \(item.content?.title ?? "your post")"
+        default:
+            return "\(name) shared \(item.content?.title ?? "an update")"
+        }
+    }
+
+    private func tint(for item: SocialFeedService.FeedItem) -> Color {
+        switch item.type {
+        case .comment: return Color(hex: "5B9CF6")
+        case .friendship: return Color(hex: "52C97C")
+        case .wishlistMatch: return Color(hex: "E8B84B")
+        case .vote: return Color(hex: "E05252")
+        default: return Color(hex: "E8B84B")
+        }
+    }
+
+    private func icon(for item: SocialFeedService.FeedItem) -> String {
+        switch item.type {
+        case .comment: return "bubble.left.fill"
+        case .friendship: return "person.2.fill"
+        case .wishlistMatch: return "target"
+        case .vote: return "arrow.up.arrow.down"
+        default: return "bell.fill"
+        }
     }
 }

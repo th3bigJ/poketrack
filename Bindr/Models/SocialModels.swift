@@ -17,13 +17,14 @@ struct SocialProfile: Codable, Identifiable, Sendable {
     let favoriteCardImageURL: String?
     let favoriteDeckArchetype: String?
     let pinnedCardID: String?
-    let followerCount: Int?
+    let friendCount: Int?
     let isWishlistPublic: Bool?
     let wishlistCardIDs: [String]?
     let avatarBackgroundColor: String?
     let avatarOutlineStyle: String?
     let collectionCardCount: Int?
     let collectionBinderCount: Int?
+    let collectionDeckCount: Int?
     let collectionTotalValue: Double?
     let createdAt: Date?
 
@@ -44,13 +45,14 @@ struct SocialProfile: Codable, Identifiable, Sendable {
         case favoriteCardImageURL = "favorite_card_image_url"
         case favoriteDeckArchetype = "favorite_deck_archetype"
         case pinnedCardID = "pinned_card_id"
-        case followerCount = "follower_count"
+        case friendCount = "friend_count"
         case isWishlistPublic = "is_wishlist_public"
         case wishlistCardIDs = "wishlist_card_ids"
         case avatarBackgroundColor = "avatar_background_color"
         case avatarOutlineStyle = "avatar_outline_style"
         case collectionCardCount = "collection_card_count"
         case collectionBinderCount = "collection_binder_count"
+        case collectionDeckCount = "collection_deck_count"
         case collectionTotalValue = "collection_total_value"
         case createdAt = "created_at"
     }
@@ -95,31 +97,29 @@ struct DeviceToken: Codable, Identifiable, Sendable {
 }
 
 enum ReactionType: String, Codable, Sendable, CaseIterable {
-    case like
-    case fire
-    case wow
+    case upvote
+    case downvote
 
     var systemImage: String {
         switch self {
-        case .like: return "hand.thumbsup.fill"
-        case .fire: return "flame.fill"
-        case .wow: return "sparkles"
+        case .upvote: return "arrow.up"
+        case .downvote: return "arrow.down"
         }
     }
 }
 
-struct Reaction: Codable, Identifiable, Sendable {
+struct Vote: Codable, Identifiable, Sendable {
     let id: UUID
     let contentID: UUID
     let userID: UUID
-    let reactionType: ReactionType
+    let voteType: ReactionType
     let createdAt: Date?
 
     enum CodingKeys: String, CodingKey {
         case id
         case contentID = "content_id"
         case userID = "user_id"
-        case reactionType = "reaction_type"
+        case voteType = "reaction_type"
         case createdAt = "created_at"
     }
 }
@@ -193,6 +193,7 @@ enum SharedContentType: String, Codable, Sendable, CaseIterable {
     case binder
     case wishlist
     case deck
+    case collection
     case pull
     case dailyDigest = "daily_digest"
 }

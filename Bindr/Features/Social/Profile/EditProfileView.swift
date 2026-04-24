@@ -20,6 +20,8 @@ struct SocialProfileFormPayload: Sendable {
     let avatarOutlineStyle: String?
     let collectionCardCount: Int?
     let collectionBinderCount: Int?
+    let collectionDeckCount: Int?
+    let friendCount: Int?
     let collectionTotalValue: Double?
 }
 
@@ -167,13 +169,14 @@ struct EditProfileView: View {
                             favoriteCardImageURL: favoriteCard?.imageURL,
                             favoriteDeckArchetype: favoriteDeckArchetype,
                             pinnedCardID: nil,
-                            followerCount: 0,
+                            friendCount: 0,
                             isWishlistPublic: isWishlistPublic,
                             wishlistCardIDs: [],
                             avatarBackgroundColor: avatarBackgroundColor,
                             avatarOutlineStyle: avatarOutlineStyle,
                             collectionCardCount: 0,
                             collectionBinderCount: 0,
+                            collectionDeckCount: 0,
                             collectionTotalValue: 0,
                             createdAt: nil
                         ),
@@ -436,30 +439,51 @@ struct EditProfileView: View {
         isSaving = true
         let resolvedUsername = username.trimmingCharacters(in: .whitespacesAndNewlines)
         let roleValues = profileRoles.map(\.rawValue).sorted()
-        let wishlistIDs = services.wishlist?.items.prefix(10).map(\.cardID)
-        let payload = SocialProfileFormPayload(
-            username: resolvedUsername,
-            displayName: displayName,
-            bio: bio,
-            profileRoles: roleValues,
-            favoritePokemonDex: favoritePokemon?.dexNumber,
-            favoritePokemonName: favoritePokemon?.name,
-            favoritePokemonImageURL: favoritePokemon?.imageURL,
-            favoriteCardID: favoriteCard?.cardID,
-            favoriteCardName: favoriteCard?.cardName,
-            favoriteCardSetCode: favoriteCard?.setCode,
-            favoriteCardImageURL: favoriteCard?.imageURL,
-            favoriteDeckArchetype: favoriteDeckArchetype,
-            isWishlistPublic: isWishlistPublic,
-            wishlistCardIDs: wishlistIDs,
-            avatarBackgroundColor: avatarBackgroundColor,
-            avatarOutlineStyle: avatarOutlineStyle,
-            collectionCardCount: (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0,
-            collectionBinderCount: (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0,
-            collectionTotalValue: services.collectionValue?.snapshots.last?.totalGbp ?? 0
-        )
+        let localCardIDs = services.wishlist?.items.map(\.cardID) ?? []
+        let existingRemoteIDs = existingProfile?.wishlistCardIDs ?? []
+        let merged = existingRemoteIDs + localCardIDs.filter { !existingRemoteIDs.contains($0) }
+        let wishlistIDs: [String]? = merged.isEmpty ? nil : merged
+        let collectionCardCount = (try? modelContext.fetchCount(FetchDescriptor<CollectionItem>())) ?? 0
+        let collectionBinderCount = (try? modelContext.fetchCount(FetchDescriptor<Binder>())) ?? 0
+        let collectionDeckCount = (try? modelContext.fetchCount(FetchDescriptor<Deck>())) ?? 0
+        let collectionTotalValue = services.collectionValue?.snapshots.last?.totalGbp ?? 0
+        let capturedUsername = resolvedUsername
+        let capturedDisplayName = displayName
+        let capturedBio = bio
+        let capturedRoleValues = roleValues
+        let capturedFavoritePokemon = favoritePokemon
+        let capturedFavoriteCard = favoriteCard
+        let capturedFavoriteDeckArchetype = favoriteDeckArchetype
+        let capturedIsWishlistPublic = isWishlistPublic
+        let capturedWishlistIDs = wishlistIDs
+        let capturedAvatarBg = avatarBackgroundColor
+        let capturedAvatarOutline = avatarOutlineStyle
         Task {
             do {
+                let friendCount = try? await services.socialFriend.fetchFriends().count
+                let payload = SocialProfileFormPayload(
+                    username: capturedUsername,
+                    displayName: capturedDisplayName,
+                    bio: capturedBio,
+                    profileRoles: capturedRoleValues,
+                    favoritePokemonDex: capturedFavoritePokemon?.dexNumber,
+                    favoritePokemonName: capturedFavoritePokemon?.name,
+                    favoritePokemonImageURL: capturedFavoritePokemon?.imageURL,
+                    favoriteCardID: capturedFavoriteCard?.cardID,
+                    favoriteCardName: capturedFavoriteCard?.cardName,
+                    favoriteCardSetCode: capturedFavoriteCard?.setCode,
+                    favoriteCardImageURL: capturedFavoriteCard?.imageURL,
+                    favoriteDeckArchetype: capturedFavoriteDeckArchetype,
+                    isWishlistPublic: capturedIsWishlistPublic,
+                    wishlistCardIDs: capturedWishlistIDs,
+                    avatarBackgroundColor: capturedAvatarBg,
+                    avatarOutlineStyle: capturedAvatarOutline,
+                    collectionCardCount: collectionCardCount,
+                    collectionBinderCount: collectionBinderCount,
+                    collectionDeckCount: collectionDeckCount,
+                    friendCount: friendCount,
+                    collectionTotalValue: collectionTotalValue
+                )
                 print("[EditProfileView] Calling onSave…")
                 try await onSave(payload)
                 print("[EditProfileView] onSave succeeded")

@@ -600,22 +600,32 @@ private struct CardBrowseDetailPage: View {
         DetailSurface(title: "Card Details") {
             VStack(alignment: .leading, spacing: 18) {
                 if !summaryFacts.isEmpty {
-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 12) {
-                        ForEach(summaryFacts, id: \.0) { fact in
-                            VStack(alignment: .leading, spacing: 6) {
-                                Text(fact.0)
-                                    .font(.caption.weight(.semibold))
-                                    .foregroundStyle(.secondary)
-                                Text(fact.1)
-                                    .font(.subheadline.weight(.medium))
-                                    .foregroundStyle(.primary)
+                    let factRows = stride(from: 0, to: summaryFacts.count, by: 2).map {
+                        Array(summaryFacts[$0..<min($0 + 2, summaryFacts.count)])
+                    }
+                    VStack(spacing: 12) {
+                        ForEach(Array(factRows.enumerated()), id: \.offset) { _, row in
+                            HStack(spacing: 12) {
+                                ForEach(row, id: \.0) { fact in
+                                    VStack(alignment: .leading, spacing: 6) {
+                                        Text(fact.0)
+                                            .font(.caption.weight(.semibold))
+                                            .foregroundStyle(.secondary)
+                                        Text(fact.1)
+                                            .font(.subheadline.weight(.medium))
+                                            .foregroundStyle(.primary)
+                                    }
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(12)
+                                    .background(
+                                        RoundedRectangle(cornerRadius: 16, style: .continuous)
+                                            .fill(sectionInsetBackground)
+                                    )
+                                }
+                                if row.count < 2 {
+                                    Color.clear.frame(maxWidth: .infinity)
+                                }
                             }
-                            .frame(maxWidth: .infinity, alignment: .leading)
-                            .padding(12)
-                            .background(
-                                RoundedRectangle(cornerRadius: 16, style: .continuous)
-                                    .fill(sectionInsetBackground)
-                            )
                         }
                     }
                 }

@@ -6,7 +6,7 @@ struct CommentsView: View {
     let content: SocialFeedService.FeedContentSummary
 
     @State private var comments: [SocialFeedService.CommentDisplay] = []
-    @State private var reactions: [SocialFeedService.FeedItem] = []
+    @State private var votes: [SocialFeedService.FeedItem] = []
     @State private var isLoading = false
     @State private var composerText = ""
     @State private var replyingTo: UUID?
@@ -16,16 +16,16 @@ struct CommentsView: View {
     var body: some View {
         VStack(spacing: 0) {
             List {
-                if !reactions.isEmpty {
-                    Section("Reactions") {
+                if !votes.isEmpty {
+                    Section("Votes") {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 12) {
-                                ForEach(reactions, id: \.id) { item in
+                                ForEach(votes, id: \.id) { item in
                                     VStack(spacing: 4) {
                                         if let profile = item.actor {
                                             ProfileAvatarView(profile: profile, size: 32)
                                         }
-                                        if let type = item.reactionType {
+                                        if let type = item.voteType {
                                             Text(emoji(for: type))
                                                 .font(.caption2)
                                                 .padding(2)
@@ -126,17 +126,31 @@ struct CommentsView: View {
             HStack(alignment: .bottom, spacing: 10) {
                 TextField("Write a comment…", text: $composerText, axis: .vertical)
                     .lineLimit(1...4)
-                    .textFieldStyle(.roundedBorder)
                     .focused($isComposerFocused)
+                    .padding(.horizontal, 14)
+                    .padding(.vertical, 10)
+                    .background(Color(hex: "1C1C1C"), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20, style: .continuous)
+                            .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                    )
 
-                Button("Send") {
+                Button {
                     Task { await submitComment() }
+                } label: {
+                    Image(systemName: "arrow.up.circle.fill")
+                        .font(.system(size: 32))
+                        .foregroundStyle(composerText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                            ? Color(hex: "3A3A3A")
+                            : services.theme.accentColor)
                 }
-                .buttonStyle(.borderedProminent)
+                .buttonStyle(.plain)
                 .disabled(composerText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty)
+                .animation(.easeInOut(duration: 0.15), value: composerText.isEmpty)
             }
         }
-        .padding(12)
+        .padding(.horizontal, 12)
+        .padding(.vertical, 10)
         .background(.bar)
     }
 
@@ -145,11 +159,11 @@ struct CommentsView: View {
         defer { isLoading = false }
         do {
             async let commentsTask = services.socialFeed.fetchComments(for: content.id)
-            async let reactionsTask = services.socialFeed.fetchReactions(for: content.id)
+            async let votesTask = services.socialFeed.fetchVotes(for: content.id)
             
-            let (loadedComments, loadedReactions) = try await (commentsTask, reactionsTask)
+            let (loadedComments, loadedVotes) = try await (commentsTask, votesTask)
             comments = loadedComments
-            reactions = loadedReactions
+            votes = loadedVotes
             errorMessage = nil
         } catch {
             errorMessage = error.localizedDescription
@@ -158,9 +172,8 @@ struct CommentsView: View {
 
     private func emoji(for type: ReactionType) -> String {
         switch type {
-        case .fire: return "🔥"
-        case .like: return "⭐"
-        case .wow: return "👀"
+        case .upvote: return "⬆️"
+        case .downvote: return "⬇️"
         }
     }
 
