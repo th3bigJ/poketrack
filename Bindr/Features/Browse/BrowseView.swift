@@ -532,22 +532,28 @@ struct BrowseView: View {
         )
     }
 
+    private var formattedResultCount: String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        return formatter.string(from: NSNumber(value: visibleBrowseResultCount)) ?? "\(visibleBrowseResultCount)"
+    }
+
     private var browseSearchPlaceholder: String {
         if let inlineDetailRoute {
             switch inlineDetailRoute {
             case .set:
-                return "Search cards in set"
+                return "Search \(formattedResultCount) cards in set"
             case .dex:
-                return "Search cards for Pokémon"
+                return "Search \(formattedResultCount) cards for Pokémon"
             case .onePieceCharacter:
-                return "Search cards for character"
+                return "Search \(formattedResultCount) cards for character"
             case .onePieceSubtype:
-                return "Search cards for subtype"
+                return "Search \(formattedResultCount) cards for subtype"
             }
         }
         switch selectedTab {
         case .cards:
-            return "Search cards"
+            return "Search \(formattedResultCount) cards"
         case .sets:
             return "Search sets"
         case .pokemon:
@@ -584,12 +590,9 @@ struct BrowseView: View {
     @ViewBuilder
     private var browseResultCountRow: some View {
         if selectedTab == .cards || isInlineDetailPresented {
-            Text("\(visibleBrowseResultCount) cards")
-                .font(.caption2)
-                .foregroundStyle(.secondary)
-                .frame(maxWidth: .infinity, alignment: .center)
-                .padding(.horizontal, 16)
-                .padding(.bottom, 10)
+            // Remove the visible text but preserve the vertical layout spacing between the search field and grid.
+            Color.clear
+                .frame(height: 22)
         }
     }
 

@@ -124,14 +124,14 @@ struct DecksRootView: View {
                 } label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.primary)
                 }
 
                 Spacer(minLength: 0)
                 ChromeGlassCircleButton(accessibilityLabel: "Create Deck") { handleCreateTap() } label: {
                     Image(systemName: "plus")
                         .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.primary)
                 }
             }
         }

@@ -226,7 +226,7 @@ struct AccountProfileView: View {
         externalProfile = profile
         
         // Refresh feed so my posts show the new avatar/colors
-        try? await services.socialFeed.fetchFeed(refresh: true)
+        _ = try? await services.socialFeed.fetchFeed(refresh: true)
         
         // Dismiss the entire profile popover
         navigationPath = NavigationPath()

@@ -161,9 +161,8 @@ struct SocialRootView: View {
                         } label: {
                             Image(systemName: "person.2.fill")
                                 .font(.system(size: 15, weight: .bold))
-                                .foregroundStyle(.white)
+                                .foregroundStyle(.primary)
                         }
-                        .tint(.white)
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
@@ -172,9 +171,8 @@ struct SocialRootView: View {
                         } label: {
                             Image(systemName: "person.crop.circle")
                                 .font(.system(size: 17, weight: .bold))
-                                .foregroundStyle(.white)
+                                .foregroundStyle(.primary)
                         }
-                        .tint(.white)
                     }
                 }
                 .navigationDestination(for: SocialDestination.self) { destination in

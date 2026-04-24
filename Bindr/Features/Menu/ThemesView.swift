@@ -7,6 +7,25 @@ struct ThemesView: View {
         List {
             Section {
                 VStack(alignment: .leading, spacing: 12) {
+                    Text("Appearance")
+                        .font(.headline)
+                    
+                    Text("Choose how Bindr looks on your device.")
+                        .font(.caption)
+                        .foregroundStyle(.secondary)
+                    
+                    SlidingSegmentedPicker(
+                        selection: Bindable(services.theme).appearance,
+                        items: ThemeSettings.AppAppearance.allCases,
+                        title: { $0.displayName }
+                    )
+                    .padding(.vertical, 8)
+                }
+                .padding(.vertical, 4)
+            }
+            
+            Section {
+                VStack(alignment: .leading, spacing: 12) {
                     Text("Accent Color")
                         .font(.headline)
                     
@@ -26,7 +45,7 @@ struct ThemesView: View {
                 }
                 .padding(.vertical, 4)
             } footer: {
-                Text("Bindr is optimized for dark mode to make your cards pop.")
+                Text("Select a color that reflects your style.")
             }
         }
         .navigationTitle("Themes")

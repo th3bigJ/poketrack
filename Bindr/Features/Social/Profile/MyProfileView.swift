@@ -92,7 +92,7 @@ struct MyProfileView: View {
                                 onEditTapped()
                             }
                             .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(services.theme.accentColor)
+                            .foregroundStyle(.primary)
                         }
                         .padding(.horizontal, 20)
                         
@@ -185,7 +185,7 @@ struct MyProfileView: View {
                 Button(action: onEditTapped) {
                     Image(systemName: "pencil")
                         .font(.system(size: 16, weight: .bold))
-                        .foregroundStyle(services.theme.accentColor)
+                        .foregroundStyle(.primary)
                 }
             }
         }

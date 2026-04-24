@@ -263,7 +263,7 @@ struct RootView: View {
             }
             await services.socialPush.updateRegistrationState()
         }
-        .preferredColorScheme(.dark)
+        .preferredColorScheme(services.theme.colorScheme)
     }
 
     /// Current app version string (e.g., "1.2.3")

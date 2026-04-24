@@ -135,7 +135,7 @@ struct BindersRootView: View {
                 } label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.white)
+                        .foregroundStyle(.primary)
                 }
 
                 Spacer()
@@ -148,13 +148,13 @@ struct BindersRootView: View {
                     } label: {
                         Image(systemName: isEditing ? "checkmark" : "pencil")
                             .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                     }
 
                     ChromeGlassCircleButton(accessibilityLabel: "Create Binder") { handleCreateTap() } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.white)
+                            .foregroundStyle(.primary)
                     }
                 }
             }
