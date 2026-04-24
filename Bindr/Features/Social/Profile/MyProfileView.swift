@@ -57,7 +57,6 @@ struct MyProfileView: View {
                 VStack(spacing: 24) {
                     // 2. Stats Row
                     ProfileStatsRow(
-                        cardCount: cardCount,
                         totalValue: formattedTotalValue,
                         followerCount: profile.followerCount ?? 0,
                         binderCount: binderCount
@@ -93,7 +92,7 @@ struct MyProfileView: View {
                                 onEditTapped()
                             }
                             .font(.subheadline.weight(.semibold))
-                            .foregroundStyle(.blue)
+                            .foregroundStyle(services.theme.accentColor)
                         }
                         .padding(.horizontal, 20)
                         
@@ -157,19 +156,7 @@ struct MyProfileView: View {
                     
                     // 6. Actions
                     VStack(spacing: 0) {
-                        Button(action: onEditTapped) {
-                            HStack {
-                                Text("Edit Profile")
-                                Spacer()
-                                Image(systemName: "chevron.right")
-                                    .font(.system(size: 14, weight: .semibold))
-                                    .foregroundStyle(.secondary)
-                            }
-                            .padding()
-                            .background(colorScheme == .dark ? Color(hex: "1c1c1e") : .white)
-                        }
                         
-                        Divider().padding(.leading)
                         
                         Button(role: .destructive, action: onSignOutTapped) {
                             HStack {
@@ -197,7 +184,8 @@ struct MyProfileView: View {
             ToolbarItem(placement: .topBarTrailing) {
                 Button(action: onEditTapped) {
                     Image(systemName: "pencil")
-                        .font(.system(size: 16, weight: .semibold))
+                        .font(.system(size: 16, weight: .bold))
+                        .foregroundStyle(services.theme.accentColor)
                 }
             }
         }

@@ -210,6 +210,12 @@ struct ProfileAvatarView: View {
                 view.padding(3)
                     .overlay(Circle().stroke(color, lineWidth: 1))
             }
+            .if(style == "dashed") { view in
+                view.overlay(
+                    Circle()
+                        .stroke(color, style: StrokeStyle(lineWidth: 2, dash: [8, 4]))
+                )
+            }
             .if(style == "glow") { view in
                 view.shadow(color: Color(hex: profile.avatarBackgroundColor ?? "4f46e5").opacity(0.5), radius: 6)
             }

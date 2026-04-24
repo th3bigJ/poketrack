@@ -8,6 +8,11 @@ final class SocialAuthService {
         case signedOut
         case signedIn(userID: UUID, email: String?)
     }
+    
+    var isSignedIn: Bool {
+        if case .signedIn = authState { return true }
+        return false
+    }
 
     private struct AuthResponse: Decodable {
         let accessToken: String?

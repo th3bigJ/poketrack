@@ -135,28 +135,26 @@ struct BindersRootView: View {
                 } label: {
                     Image(systemName: "chevron.left")
                         .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(.white)
                 }
 
                 Spacer()
 
                 HStack(spacing: 8) {
-                    Button {
+                    ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done" : "Edit") {
                         withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
                             isEditing.toggle()
                         }
                     } label: {
                         Image(systemName: isEditing ? "checkmark" : "pencil")
                             .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(.white)
                     }
-                    .modifier(ChromeGlassCircleGlyphModifier())
-                    .frame(width: 44, height: 44)
 
                     ChromeGlassCircleButton(accessibilityLabel: "Create Binder") { handleCreateTap() } label: {
                         Image(systemName: "plus")
                             .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
+                            .foregroundStyle(.white)
                     }
                 }
             }

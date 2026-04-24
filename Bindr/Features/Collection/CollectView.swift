@@ -130,12 +130,11 @@ struct CollectView: View {
     // MARK: - Segmented Control
 
     private var segmentedControl: some View {
-        Picker("View", selection: $selectedSegment) {
-            ForEach(CollectSegment.allCases) { segment in
-                Text(segment.title).tag(segment)
-            }
-        }
-        .pickerStyle(.segmented)
+        SlidingSegmentedPicker(
+            selection: $selectedSegment,
+            items: CollectSegment.allCases,
+            title: { $0.title }
+        )
     }
 
     private var searchPlaceholder: String {

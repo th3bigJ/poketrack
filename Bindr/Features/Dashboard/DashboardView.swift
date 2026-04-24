@@ -2,10 +2,12 @@ import SwiftUI
 import SwiftData
 import Charts
 
-private enum ChartRange: String, CaseIterable {
+private enum ChartRange: String, CaseIterable, Identifiable {
     case daily = "Daily"
     case weekly = "Weekly"
     case monthly = "Monthly"
+
+    var id: String { rawValue }
 }
 
 struct DashboardView: View {
@@ -364,7 +366,7 @@ struct DashboardView: View {
                 HStack(spacing: 0) {
                     Text("Welcome back, ")
                     Text("Trainer.")
-                        .foregroundStyle(Color(hex: "5b9df9"))
+                        .foregroundStyle(services.theme.accentColor)
                 }
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundStyle(dashboardPrimaryText)
@@ -379,7 +381,7 @@ struct DashboardView: View {
     private var contextPill: some View {
         HStack(spacing: 8) {
             Circle()
-                .fill(Color(hex: "5b9df9"))
+                .fill(services.theme.accentColor)
                 .frame(width: 6, height: 6)
             
             Text(contextMessage)
@@ -416,10 +418,6 @@ struct DashboardView: View {
             return "Your collection grew by \(formatCurrency(gain.amount)) today"
         }
         
-        if totalCardsCount > 0 {
-            return "You have \(totalCardsCount) cards in your collection"
-        }
-        
         return "Scan your first card to start tracking"
     }
 
@@ -434,7 +432,7 @@ struct DashboardView: View {
 
                         if isLoadingValue && liveTotalGbp == nil {
                             ProgressView()
-                                .tint(DashboardPalette.chartLine)
+                                .tint(services.theme.accentColor)
                         } else if isScrubbingOrLoaded {
                             Text(formatCurrency(displayTotal))
                                 .font(.system(size: 30, weight: .bold, design: .rounded))
@@ -512,13 +510,12 @@ struct DashboardView: View {
                         .font(.title3.weight(.semibold))
                         .foregroundStyle(dashboardPrimaryText)
                     Spacer()
-                    Picker("Range", selection: $chartRange) {
-                        ForEach(ChartRange.allCases, id: \.self) { range in
-                            Text(range.rawValue).tag(range)
-                        }
-                    }
-                    .pickerStyle(.segmented)
-                    .frame(maxWidth: 270)
+                    SlidingSegmentedPicker(
+                        selection: $chartRange,
+                        items: ChartRange.allCases,
+                        title: { $0.rawValue }
+                    )
+                    .frame(maxWidth: 240)
                 }
 
                 Chart(activePoints) { point in
@@ -529,7 +526,7 @@ struct DashboardView: View {
                     )
                     .foregroundStyle(
                         LinearGradient(
-                            colors: [DashboardPalette.chartLine.opacity(0.3), DashboardPalette.chartLine.opacity(0.03)],
+                            colors: [services.theme.accentColor.opacity(0.3), services.theme.accentColor.opacity(0.03)],
                             startPoint: .top,
                             endPoint: .bottom
                         )
@@ -540,7 +537,7 @@ struct DashboardView: View {
                         y: .value("Value", point.total)
                     )
                     .interpolationMethod(.catmullRom)
-                    .foregroundStyle(DashboardPalette.chartLine)
+                    .foregroundStyle(services.theme.accentColor)
                     .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
 
                     if let sel = selectedPoint, sel.date == point.date {
@@ -662,7 +659,7 @@ struct DashboardView: View {
                     if let onViewAllActivity {
                         Button("View All") { onViewAllActivity() }
                             .font(.subheadline.weight(.medium))
-                            .foregroundStyle(DashboardPalette.purple)
+                            .foregroundStyle(services.theme.accentColor)
                     }
                 }
 
@@ -776,8 +773,12 @@ struct DashboardView: View {
                             .padding(.vertical, 4)
                             .background(
                                 Capsule(style: .continuous)
-                                    .fill(DashboardPalette.purple.opacity(0.35))
+                                    .fill(services.theme.accentColor.opacity(0.15))
                             )
+                            .overlay {
+                                Capsule(style: .continuous)
+                                    .stroke(services.theme.accentColor.opacity(0.3), lineWidth: 1)
+                            }
                     }
                 }
 

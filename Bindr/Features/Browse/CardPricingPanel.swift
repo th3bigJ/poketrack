@@ -200,7 +200,7 @@ struct CardPricingPanel: View {
     // MARK: - Chip styles (system adaptive — matches Settings-style pills)
 
     private func chipBackground(selected: Bool) -> Color {
-        selected ? PricingPanelPalette.chartLine : chipIdleBackground
+        selected ? services.theme.accentColor : chipIdleBackground
     }
 
     private func chipForeground(selected: Bool) -> Color {
@@ -259,7 +259,7 @@ struct CardPricingPanel: View {
                 y: .value("Price", point.price)
             )
             .interpolationMethod(.catmullRom)
-            .foregroundStyle(PricingPanelPalette.chartLine)
+            .foregroundStyle(services.theme.accentColor)
             .lineStyle(StrokeStyle(lineWidth: 3, lineCap: .round, lineJoin: .round))
 
             AreaMark(
@@ -269,7 +269,7 @@ struct CardPricingPanel: View {
             )
             .interpolationMethod(.catmullRom)
             .foregroundStyle(LinearGradient(
-                colors: [PricingPanelPalette.chartLine.opacity(0.28), PricingPanelPalette.chartLine.opacity(0.03)],
+                colors: [services.theme.accentColor.opacity(0.28), services.theme.accentColor.opacity(0.03)],
                 startPoint: .top, endPoint: .bottom
             ))
         }
@@ -320,7 +320,7 @@ struct CardPricingPanel: View {
 
                         if let yPos = proxy.position(forY: scrub.price) {
                             Circle()
-                                .fill(PricingPanelPalette.chartLine)
+                                .fill(services.theme.accentColor)
                                 .frame(width: 8, height: 8)
                                 .offset(x: x - 4, y: plotFrame.origin.y + yPos - 4)
                                 .allowsHitTesting(false)

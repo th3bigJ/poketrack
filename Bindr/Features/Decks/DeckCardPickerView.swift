@@ -534,12 +534,11 @@ struct DeckCardPickerView: View {
 
     private var header: some View {
         VStack(spacing: 12) {
-            Picker("Source", selection: $source) {
-                ForEach(DeckPickerSource.allCases) { s in
-                    Text(s.title).tag(s)
-                }
-            }
-            .pickerStyle(.segmented)
+            SlidingSegmentedPicker(
+                selection: $source,
+                items: DeckPickerSource.allCases,
+                title: { $0.title }
+            )
 
             browseShortcutRow
 

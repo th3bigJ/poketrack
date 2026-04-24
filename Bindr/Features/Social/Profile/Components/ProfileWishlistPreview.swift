@@ -18,7 +18,7 @@ struct ProfileWishlistPreview: View {
                 Button(action: onViewAllTapped) {
                     Text("View All")
                         .font(.subheadline.weight(.semibold))
-                        .foregroundStyle(.blue)
+                        .foregroundStyle(services.theme.accentColor)
                         .padding(.vertical, 8)
                         .padding(.leading, 12)
                 }

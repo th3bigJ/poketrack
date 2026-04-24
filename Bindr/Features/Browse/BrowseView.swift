@@ -562,12 +562,11 @@ struct BrowseView: View {
         if isInlineDetailPresented {
             EmptyView()
         } else {
-            Picker("Browse section", selection: $selectedTab) {
-                ForEach(BrowseHomeTab.allCases) { tab in
-                    Text(tab.title).tag(tab)
-                }
-            }
-            .pickerStyle(.segmented)
+            SlidingSegmentedPicker(
+                selection: $selectedTab,
+                items: BrowseHomeTab.allCases,
+                title: { $0.title }
+            )
             .padding(.horizontal, 16)
             .padding(.bottom, 10)
         }

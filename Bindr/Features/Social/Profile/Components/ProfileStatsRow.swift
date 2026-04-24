@@ -1,7 +1,6 @@
 import SwiftUI
 
 struct ProfileStatsRow: View {
-    let cardCount: Int
     let totalValue: String
     let followerCount: Int
     let binderCount: Int
@@ -10,8 +9,6 @@ struct ProfileStatsRow: View {
     
     var body: some View {
         HStack(spacing: 0) {
-            statCell(label: "CARDS", value: "\(cardCount)")
-            divider
             statCell(label: "VALUE", value: totalValue)
             divider
             statCell(label: "FOLLOWERS", value: "\(followerCount)")

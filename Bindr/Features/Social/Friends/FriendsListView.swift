@@ -29,6 +29,11 @@ struct FriendsListView: View {
                     )
                 }
                 .padding(.vertical, 4)
+            } header: {
+                Text("Add Friends")
+            } footer: {
+                Text("Search for collectors by their username or scan their QR code to connect and view their shared binders.")
+                    .font(.caption)
             }
             .listRowBackground(Color.clear)
 

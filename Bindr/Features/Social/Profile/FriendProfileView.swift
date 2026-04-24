@@ -34,7 +34,6 @@ struct FriendProfileView: View {
                         VStack(spacing: 24) {
                             // 2. Stats Row
                             ProfileStatsRow(
-                                cardCount: profile.collectionCardCount ?? 0,
                                 totalValue: formattedTotalValue(profile.collectionTotalValue),
                                 followerCount: profile.followerCount ?? 0,
                                 binderCount: profile.collectionBinderCount ?? 0

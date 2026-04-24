@@ -11,6 +11,7 @@ struct CommentsView: View {
     @State private var composerText = ""
     @State private var replyingTo: UUID?
     @State private var errorMessage: String?
+    @FocusState private var isComposerFocused: Bool
 
     var body: some View {
         VStack(spacing: 0) {
@@ -126,6 +127,7 @@ struct CommentsView: View {
                 TextField("Write a comment…", text: $composerText, axis: .vertical)
                     .lineLimit(1...4)
                     .textFieldStyle(.roundedBorder)
+                    .focused($isComposerFocused)
 
                 Button("Send") {
                     Task { await submitComment() }
@@ -169,6 +171,7 @@ struct CommentsView: View {
             try await services.socialFeed.postComment(body: text, parentID: replyingTo, to: content.id)
             composerText = ""
             replyingTo = nil
+            isComposerFocused = false
             await loadComments()
         } catch {
             errorMessage = error.localizedDescription

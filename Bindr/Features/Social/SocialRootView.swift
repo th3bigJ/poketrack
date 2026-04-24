@@ -33,7 +33,7 @@ struct SocialRootView: View {
         }
         .navigationTitle("Social")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar(.hidden, for: .navigationBar)
+        .toolbar(services.socialAuth.isSignedIn ? .visible : .hidden, for: .navigationBar)
         .sheet(isPresented: $showAccountProfile) {
             profilePopover
                 .presentationDetents([.large])
@@ -160,8 +160,10 @@ struct SocialRootView: View {
                             socialNavigationPath.append(SocialDestination.friends)
                         } label: {
                             Image(systemName: "person.2.fill")
-                                .font(.system(size: 15, weight: .medium))
+                                .font(.system(size: 15, weight: .bold))
+                                .foregroundStyle(.white)
                         }
+                        .tint(.white)
                     }
                     ToolbarItem(placement: .topBarTrailing) {
                         Button {
@@ -169,8 +171,10 @@ struct SocialRootView: View {
                             showAccountProfile = true
                         } label: {
                             Image(systemName: "person.crop.circle")
-                                .font(.system(size: 17, weight: .medium))
+                                .font(.system(size: 17, weight: .bold))
+                                .foregroundStyle(.white)
                         }
+                        .tint(.white)
                     }
                 }
                 .navigationDestination(for: SocialDestination.self) { destination in
@@ -311,6 +315,8 @@ struct SocialRootView: View {
                     Button("Done") {
                         showAccountProfile = false
                     }
+                    .foregroundStyle(.primary)
+                    .fontWeight(.bold)
                 }
             }
         }

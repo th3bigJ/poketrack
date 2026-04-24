@@ -44,9 +44,6 @@ final class SocialProfileService {
         let wishlistCardIDs: [String]?
         let avatarBackgroundColor: String?
         let avatarOutlineStyle: String?
-        let collectionCardCount: Int?
-        let collectionBinderCount: Int?
-        let collectionTotalValue: Double?
 
         enum CodingKeys: String, CodingKey {
             case id
@@ -68,9 +65,6 @@ final class SocialProfileService {
             case wishlistCardIDs = "wishlist_card_ids"
             case avatarBackgroundColor = "avatar_background_color"
             case avatarOutlineStyle = "avatar_outline_style"
-            case collectionCardCount = "collection_card_count"
-            case collectionBinderCount = "collection_binder_count"
-            case collectionTotalValue = "collection_total_value"
         }
     }
 
@@ -132,9 +126,6 @@ final class SocialProfileService {
         let wishlistCardIDs: [String]?
         let avatarBackgroundColor: String?
         let avatarOutlineStyle: String?
-        let collectionCardCount: Int?
-        let collectionBinderCount: Int?
-        let collectionTotalValue: Double?
 
         enum CodingKeys: String, CodingKey {
             case displayName = "display_name"
@@ -152,9 +143,6 @@ final class SocialProfileService {
             case wishlistCardIDs = "wishlist_card_ids"
             case avatarBackgroundColor = "avatar_background_color"
             case avatarOutlineStyle = "avatar_outline_style"
-            case collectionCardCount = "collection_card_count"
-            case collectionBinderCount = "collection_binder_count"
-            case collectionTotalValue = "collection_total_value"
         }
     }
 
@@ -197,10 +185,7 @@ final class SocialProfileService {
         isWishlistPublic: Bool?,
         wishlistCardIDs: [String]?,
         avatarBackgroundColor: String?,
-        avatarOutlineStyle: String?,
-        collectionCardCount: Int?,
-        collectionBinderCount: Int?,
-        collectionTotalValue: Double?
+        avatarOutlineStyle: String?
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let appleUserID = KeychainStorage.readAppleUserIdentifier() ?? "apple-\(userID.uuidString)"
@@ -222,14 +207,11 @@ final class SocialProfileService {
             favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
             isWishlistPublic: isWishlistPublic,
             wishlistCardIDs: wishlistCardIDs,
-            avatarBackgroundColor: avatarBackgroundColor,
-            avatarOutlineStyle: avatarOutlineStyle,
-            collectionCardCount: collectionCardCount,
-            collectionBinderCount: collectionBinderCount,
-            collectionTotalValue: collectionTotalValue
+            avatarBackgroundColor: avatarBackgroundColor?.trimmedNilIfEmpty,
+            avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty
         )
         let profiles: [SocialProfile] = try await execute(
-            path: "/rest/v1/profiles?on_conflict=id",
+            path: "/rest/v1/profiles?on_conflict=id&select=*",
             method: "POST",
             accessToken: try signedInAccessToken(),
             body: payload,
@@ -257,10 +239,7 @@ final class SocialProfileService {
         isWishlistPublic: Bool?,
         wishlistCardIDs: [String]?,
         avatarBackgroundColor: String?,
-        avatarOutlineStyle: String?,
-        collectionCardCount: Int?,
-        collectionBinderCount: Int?,
-        collectionTotalValue: Double?
+        avatarOutlineStyle: String?
     ) async throws -> SocialProfile {
         let userID = try signedInUserID()
         let payload = UpdateProfileRequest(
@@ -277,11 +256,8 @@ final class SocialProfileService {
             favoriteDeckArchetype: favoriteDeckArchetype?.trimmedNilIfEmpty,
             isWishlistPublic: isWishlistPublic,
             wishlistCardIDs: wishlistCardIDs,
-            avatarBackgroundColor: avatarBackgroundColor,
-            avatarOutlineStyle: avatarOutlineStyle,
-            collectionCardCount: collectionCardCount,
-            collectionBinderCount: collectionBinderCount,
-            collectionTotalValue: collectionTotalValue
+            avatarBackgroundColor: avatarBackgroundColor?.trimmedNilIfEmpty,
+            avatarOutlineStyle: avatarOutlineStyle?.trimmedNilIfEmpty
         )
         let profiles: [SocialProfile] = try await execute(
             path: "/rest/v1/profiles?id=eq.\(userID.uuidString)&select=*",
@@ -419,6 +395,7 @@ final class SocialProfileService {
         }
         var request = URLRequest(url: url)
         request.httpMethod = method
+        request.cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(publishableKey, forHTTPHeaderField: "apikey")
@@ -427,12 +404,23 @@ final class SocialProfileService {
             request.setValue(value, forHTTPHeaderField: header)
         }
         if let body {
-            request.httpBody = try JSONEncoder.socialJSON.encode(body)
+            let encoder = JSONEncoder.socialJSON
+            let data = try encoder.encode(body)
+            request.httpBody = data
+            if let json = String(data: data, encoding: .utf8) {
+                print("--- SOCIAL REQUEST \(method) \(path) ---")
+                print(json)
+            }
         }
 
         let (data, response) = try await URLSession.shared.data(for: request)
         guard let http = response as? HTTPURLResponse else {
             throw SocialProfileError.invalidResponse
+        }
+        
+        print("--- SOCIAL RESPONSE \(http.statusCode) ---")
+        if let json = String(data: data, encoding: .utf8) {
+            print(json)
         }
         guard (200..<300).contains(http.statusCode) else {
             if let payload = try? JSONDecoder.socialJSON.decode(APIErrorPayload.self, from: data) {

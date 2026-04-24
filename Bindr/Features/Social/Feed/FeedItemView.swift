@@ -294,7 +294,12 @@ struct InteractionBar: View {
             .padding(.horizontal, 14)
             .padding(.vertical, 10)
         }
-        .task(id: item.id) { await refresh() }
+        .task { await refresh() }
+        .onChange(of: isCommentsPresented) { _, newValue in
+            if !newValue {
+                Task { await refresh() }
+            }
+        }
         .sheet(isPresented: $isCommentsPresented) {
             if let content = item.content {
                 NavigationStack {

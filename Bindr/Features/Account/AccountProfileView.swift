@@ -57,7 +57,7 @@ struct AccountProfileView: View {
             switch destination {
             case .editProfile:
                 EditProfileView(existingProfile: profile) { payload in
-                    await handleProfileSave(payload: payload)
+                    try await handleProfileSave(payload: payload)
                 }
             }
         }
@@ -173,58 +173,64 @@ struct AccountProfileView: View {
         }
     }
     
-    private func handleProfileSave(payload: SocialProfileFormPayload) async {
-        do {
-            if profile == nil {
-                profile = try await services.socialProfile.saveProfile(
-                    username: payload.username,
-                    displayName: payload.displayName,
-                    bio: payload.bio,
-                    profileRoles: payload.profileRoles,
-                    favoritePokemonDex: payload.favoritePokemonDex,
-                    favoritePokemonName: payload.favoritePokemonName,
-                    favoritePokemonImageURL: payload.favoritePokemonImageURL,
-                    favoriteCardID: payload.favoriteCardID,
-                    favoriteCardName: payload.favoriteCardName,
-                    favoriteCardSetCode: payload.favoriteCardSetCode,
-                    favoriteCardImageURL: payload.favoriteCardImageURL,
-                    favoriteDeckArchetype: payload.favoriteDeckArchetype,
-                    isWishlistPublic: payload.isWishlistPublic,
-                    wishlistCardIDs: payload.wishlistCardIDs,
-                    avatarBackgroundColor: payload.avatarBackgroundColor,
-                    avatarOutlineStyle: payload.avatarOutlineStyle,
-                    collectionCardCount: payload.collectionCardCount,
-                    collectionBinderCount: payload.collectionBinderCount,
-                    collectionTotalValue: payload.collectionTotalValue
-                )
-            } else {
-                profile = try await services.socialProfile.updateProfile(
-                    displayName: payload.displayName,
-                    bio: payload.bio,
-                    profileRoles: payload.profileRoles,
-                    favoritePokemonDex: payload.favoritePokemonDex,
-                    favoritePokemonName: payload.favoritePokemonName,
-                    favoritePokemonImageURL: payload.favoritePokemonImageURL,
-                    favoriteCardID: payload.favoriteCardID,
-                    favoriteCardName: payload.favoriteCardName,
-                    favoriteCardSetCode: payload.favoriteCardSetCode,
-                    favoriteCardImageURL: payload.favoriteCardImageURL,
-                    favoriteDeckArchetype: payload.favoriteDeckArchetype,
-                    isWishlistPublic: payload.isWishlistPublic,
-                    wishlistCardIDs: payload.wishlistCardIDs,
-                    avatarBackgroundColor: payload.avatarBackgroundColor,
-                    avatarOutlineStyle: payload.avatarOutlineStyle,
-                    collectionCardCount: payload.collectionCardCount,
-                    collectionBinderCount: payload.collectionBinderCount,
-                    collectionTotalValue: payload.collectionTotalValue
-                )
-            }
-            externalProfile = profile
-            navigationPath = NavigationPath()
-            isPresented = false
-        } catch {
-            errorMessage = error.localizedDescription
+    private func handleProfileSave(payload: SocialProfileFormPayload) async throws {
+        print("[ProfileSave] Starting save. Profile exists: \(profile != nil)")
+        print("[ProfileSave] Auth state: \(services.socialAuth.authState)")
+        print("[ProfileSave] Access token present: \(services.socialAuth.accessToken != nil)")
+
+        if profile == nil {
+            print("[ProfileSave] → calling saveProfile (create)")
+            let saved = try await services.socialProfile.saveProfile(
+                username: payload.username,
+                displayName: payload.displayName,
+                bio: payload.bio,
+                profileRoles: payload.profileRoles,
+                favoritePokemonDex: payload.favoritePokemonDex,
+                favoritePokemonName: payload.favoritePokemonName,
+                favoritePokemonImageURL: payload.favoritePokemonImageURL,
+                favoriteCardID: payload.favoriteCardID,
+                favoriteCardName: payload.favoriteCardName,
+                favoriteCardSetCode: payload.favoriteCardSetCode,
+                favoriteCardImageURL: payload.favoriteCardImageURL,
+                favoriteDeckArchetype: payload.favoriteDeckArchetype,
+                isWishlistPublic: payload.isWishlistPublic,
+                wishlistCardIDs: payload.wishlistCardIDs,
+                avatarBackgroundColor: payload.avatarBackgroundColor,
+                avatarOutlineStyle: payload.avatarOutlineStyle
+            )
+            print("[ProfileSave] saveProfile succeeded: \(saved.username)")
+            profile = saved
+        } else {
+            print("[ProfileSave] → calling updateProfile")
+            let updated = try await services.socialProfile.updateProfile(
+                displayName: payload.displayName,
+                bio: payload.bio,
+                profileRoles: payload.profileRoles,
+                favoritePokemonDex: payload.favoritePokemonDex,
+                favoritePokemonName: payload.favoritePokemonName,
+                favoritePokemonImageURL: payload.favoritePokemonImageURL,
+                favoriteCardID: payload.favoriteCardID,
+                favoriteCardName: payload.favoriteCardName,
+                favoriteCardSetCode: payload.favoriteCardSetCode,
+                favoriteCardImageURL: payload.favoriteCardImageURL,
+                favoriteDeckArchetype: payload.favoriteDeckArchetype,
+                isWishlistPublic: payload.isWishlistPublic,
+                wishlistCardIDs: payload.wishlistCardIDs,
+                avatarBackgroundColor: payload.avatarBackgroundColor,
+                avatarOutlineStyle: payload.avatarOutlineStyle
+            )
+            print("[ProfileSave] updateProfile succeeded: \(updated.username)")
+            profile = updated
         }
+        
+        externalProfile = profile
+        
+        // Refresh feed so my posts show the new avatar/colors
+        try? await services.socialFeed.fetchFeed(refresh: true)
+        
+        // Dismiss the entire profile popover
+        navigationPath = NavigationPath()
+        isPresented = false
     }
     
     private func refreshProfileIfNeeded() async {

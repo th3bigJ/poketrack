@@ -4,6 +4,7 @@ import SwiftUI
 struct TransactionsView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
 
     @Query(sort: \LedgerLine.occurredAt, order: .reverse) private var ledgerLines: [LedgerLine]
 
@@ -41,7 +42,6 @@ struct TransactionsView: View {
         }
         .navigationTitle("Activity")
         .navigationBarTitleDisplayMode(.inline)
-        .toolbar(.hidden, for: .navigationBar)
         .task(id: ledgerSignature) {
             await resolveCardNames()
         }
@@ -60,7 +60,16 @@ struct TransactionsView: View {
                 .foregroundStyle(.primary)
 
             HStack {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
+                }
+
                 Spacer(minLength: 0)
+
                 ChromeGlassCircleButton(accessibilityLabel: "Add activity") {
                     showAddActivity = true
                 } label: {
@@ -72,6 +81,7 @@ struct TransactionsView: View {
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
+        .background(.ultraThinMaterial)
     }
 
     private var emptyState: some View {

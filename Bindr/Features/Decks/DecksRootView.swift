@@ -4,6 +4,7 @@ import SwiftData
 struct DecksRootView: View {
     @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.dismiss) private var dismiss
     @Query(sort: \Deck.createdAt, order: .reverse) private var decks: [Deck]
 
     @State private var showCreateSheet = false
@@ -118,11 +119,19 @@ struct DecksRootView: View {
                 .foregroundStyle(.primary)
 
             HStack {
+                ChromeGlassCircleButton(accessibilityLabel: "Back") {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.white)
+                }
+
                 Spacer(minLength: 0)
                 ChromeGlassCircleButton(accessibilityLabel: "Create Deck") { handleCreateTap() } label: {
                     Image(systemName: "plus")
                         .font(.system(size: 17, weight: .medium))
-                        .foregroundStyle(.primary)
+                        .foregroundStyle(.white)
                 }
             }
         }

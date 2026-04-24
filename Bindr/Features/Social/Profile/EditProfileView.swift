@@ -74,6 +74,7 @@ struct EditProfileView: View {
     @State private var showCardPicker = false
     @State private var isSaving = false
     @State private var errorMessage: String?
+    @State private var showErrorAlert = false
     @State private var avatarBackgroundColor: String?
     @State private var avatarOutlineStyle: String?
 
@@ -116,7 +117,7 @@ struct EditProfileView: View {
 
     private var canSave: Bool {
         if isSaving { return false }
-        if !isUsernameLocked && username.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        if username.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
             return false
         }
         if profileRoles.isEmpty { return false }
@@ -196,6 +197,9 @@ struct EditProfileView: View {
                             ("Rose", "f43f5e"),
                             ("Amber", "f59e0b"),
                             ("Emerald", "10b981"),
+                            ("Purple", "a855f7"),
+                            ("Cyan", "06b6d4"),
+                            ("Lime", "84cc16"),
                             ("Slate", "64748b")
                         ]
                         
@@ -226,6 +230,7 @@ struct EditProfileView: View {
                             let styles = [
                                 ("Solid", "solid"),
                                 ("Thick", "thick"),
+                                ("Dashed", "dashed"),
                                 ("Dotted", "dotted"),
                                 ("Double", "double"),
                                 ("Glow", "glow")
@@ -377,17 +382,28 @@ struct EditProfileView: View {
                             ProgressView()
                             Text("Saving…")
                         }
+                        .frame(maxWidth: .infinity)
                     } else {
                         Text("Save Profile")
+                            .font(.headline)
+                            .frame(maxWidth: .infinity)
                     }
                 }
+                .buttonStyle(.borderedProminent)
                 .disabled(!canSave)
+                .listRowBackground(Color.clear)
+                .listRowInsets(EdgeInsets())
             }
         }
         .scrollContentBackground(.hidden)
         .background(Color(uiColor: .systemGroupedBackground))
         .navigationTitle(existingProfile == nil ? "Create Profile" : "Edit Profile")
         .navigationBarTitleDisplayMode(.inline)
+        .alert("Save Failed", isPresented: $showErrorAlert) {
+            Button("OK", role: .cancel) {}
+        } message: {
+            Text(errorMessage ?? "An unknown error occurred.")
+        }
         .sheet(isPresented: $showPokemonPicker) {
             NavigationStack {
                 FavoritePokemonPickerView(selection: $favoritePokemon)
@@ -401,6 +417,16 @@ struct EditProfileView: View {
                     .environment(services)
             }
             .presentationDetents([.large])
+        }
+        .toolbar {
+            ToolbarItem(placement: .topBarTrailing) {
+                Button(isSaving ? "Saving..." : "Save") {
+                    save()
+                }
+                .foregroundStyle(.primary)
+                .fontWeight(.bold)
+                .disabled(!canSave)
+            }
         }
     }
 
@@ -434,11 +460,17 @@ struct EditProfileView: View {
         )
         Task {
             do {
+                print("[EditProfileView] Calling onSave…")
                 try await onSave(payload)
+                print("[EditProfileView] onSave succeeded")
             } catch {
+                print("[EditProfileView] onSave FAILED: \(error)")
                 await MainActor.run {
                     errorMessage = error.localizedDescription
+                    showErrorAlert = true
+                    isSaving = false
                 }
+                return
             }
             await MainActor.run {
                 isSaving = false
@@ -500,6 +532,8 @@ private struct FavoritePokemonPickerView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Cancel") { dismiss() }
+                    .foregroundStyle(.primary)
+                    .fontWeight(.bold)
             }
         }
         .task {
@@ -594,6 +628,8 @@ private struct FavoriteCardPickerView: View {
         .toolbar {
             ToolbarItem(placement: .topBarLeading) {
                 Button("Cancel") { dismiss() }
+                    .foregroundStyle(.primary)
+                    .fontWeight(.bold)
             }
         }
         .task {
