@@ -182,7 +182,9 @@ struct MyProfileView: View {
                     .font(.headline)
             }
             ToolbarItem(placement: .topBarTrailing) {
-                Button(action: onEditTapped) {
+                ChromeGlassCircleButton(accessibilityLabel: "Edit Profile") {
+                    onEditTapped()
+                } label: {
                     Image(systemName: "pencil")
                         .font(.system(size: 16, weight: .bold))
                         .foregroundStyle(.primary)

@@ -156,7 +156,7 @@ struct SocialRootView: View {
                 .navigationBarTitleDisplayMode(.inline)
                 .toolbar {
                     ToolbarItem(placement: .topBarLeading) {
-                        Button {
+                        ChromeGlassCircleButton(accessibilityLabel: "Friends") {
                             socialNavigationPath.append(SocialDestination.friends)
                         } label: {
                             Image(systemName: "person.2.fill")
@@ -165,7 +165,7 @@ struct SocialRootView: View {
                         }
                     }
                     ToolbarItem(placement: .topBarTrailing) {
-                        Button {
+                        ChromeGlassCircleButton(accessibilityLabel: "Profile") {
                             Haptics.lightImpact()
                             showAccountProfile = true
                         } label: {
