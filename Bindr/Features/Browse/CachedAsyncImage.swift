@@ -105,15 +105,58 @@ struct CachedAsyncImage<Content: View, Placeholder: View>: View {
 
     var body: some View {
         Group {
-            if let ui = loader.image {
+            if let ui = loader.image,
+               ui.size.width.isFinite,
+               ui.size.height.isFinite,
+               ui.size.width > 0,
+               ui.size.height > 0 {
                 content(Image(uiImage: ui))
-                    .transition(.opacity)
             } else {
                 placeholder()
-                    .transition(.opacity)
             }
         }
-        .animation(.easeOut(duration: 0.18), value: loader.image != nil)
+        .task(id: url?.absoluteString ?? "") {
+            loader.load(url: url, targetSize: targetSize)
+        }
+        .onDisappear {
+            loader.cancel()
+        }
+    }
+}
+
+/// Stable, non-generic thumbnail loader for card grids.
+/// Avoids closure-based image rendering in high-churn LazyVGrid paths.
+struct CachedCardThumbnailImage: View {
+    private let url: URL?
+    private let targetSize: CGSize?
+    @State private var loader = ImageLoader()
+
+    init(url: URL?, targetSize: CGSize? = nil) {
+        self.url = url
+        self.targetSize = targetSize
+    }
+
+    private var hasRenderableImage: Bool {
+        guard let ui = loader.image else { return false }
+        guard ui.size.width.isFinite, ui.size.height.isFinite else { return false }
+        guard ui.size.width > 0, ui.size.height > 0 else { return false }
+        if let cg = ui.cgImage {
+            guard cg.width > 0, cg.height > 0 else { return false }
+        }
+        return true
+    }
+
+    var body: some View {
+        Group {
+            if hasRenderableImage, let ui = loader.image {
+                Image(uiImage: ui)
+                    .resizable()
+                    .scaledToFit()
+            } else {
+                Color.gray.opacity(0.12)
+                    .aspectRatio(5 / 7, contentMode: .fit)
+            }
+        }
         .task(id: url?.absoluteString ?? "") {
             loader.load(url: url, targetSize: targetSize)
         }

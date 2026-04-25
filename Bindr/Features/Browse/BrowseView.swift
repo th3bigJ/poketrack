@@ -98,7 +98,8 @@ struct CardGridCell: View {
 
     private var visibleOwnedCountBadge: Int? {
         guard gridOptions.showOwned, let ownedCountBadge, ownedCountBadge > 1 else { return nil }
-        return ownedCountBadge
+        // Defensive clamp in case bad data creates extreme values.
+        return min(max(ownedCountBadge, 2), 999)
     }
 
     private var cardCornerRadius: CGFloat {
@@ -211,6 +212,7 @@ struct CardGridCell: View {
 }
 
 private struct BrowseCardThumbnailView: View {
+    @Environment(AppServices.self) private var services
     let imageURL: URL?
     var isOwned = false
     var isWishlisted = false
@@ -218,51 +220,76 @@ private struct BrowseCardThumbnailView: View {
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-            AsyncImage(url: imageURL, transaction: Transaction(animation: .easeOut(duration: 0.18))) { phase in
-                switch phase {
-                case let .success(image):
-                    image
-                        .resizable()
-                        .scaledToFit()
-                case .failure, .empty:
-                    Color.gray.opacity(0.12)
-                        .aspectRatio(5 / 7, contentMode: .fit)
-                @unknown default:
-                    Color.gray.opacity(0.12)
-                        .aspectRatio(5 / 7, contentMode: .fit)
+            CachedCardThumbnailImage(url: imageURL)
+            if let ownedCountBadge, ownedCountBadge > 1 {
+                if ownedCountBadge == 2 {
+                    Image(systemName: "2.circle.fill")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundStyle(.white, services.theme.accentColor)
+                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                        .padding(6)
+                } else if ownedCountBadge == 3 {
+                    Image(systemName: "3.circle.fill")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundStyle(.white, services.theme.accentColor)
+                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                        .padding(6)
+                } else if ownedCountBadge == 4 {
+                    Image(systemName: "4.circle.fill")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundStyle(.white, services.theme.accentColor)
+                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                        .padding(6)
+                } else if ownedCountBadge == 5 {
+                    Image(systemName: "5.circle.fill")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundStyle(.white, services.theme.accentColor)
+                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                        .padding(6)
+                } else if ownedCountBadge == 6 {
+                    Image(systemName: "6.circle.fill")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundStyle(.white, services.theme.accentColor)
+                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                        .padding(6)
+                } else if ownedCountBadge == 7 {
+                    Image(systemName: "7.circle.fill")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundStyle(.white, services.theme.accentColor)
+                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                        .padding(6)
+                } else if ownedCountBadge == 8 {
+                    Image(systemName: "8.circle.fill")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundStyle(.white, services.theme.accentColor)
+                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                        .padding(6)
+                } else if ownedCountBadge == 9 {
+                    Image(systemName: "9.circle.fill")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundStyle(.white, services.theme.accentColor)
+                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                        .padding(6)
+                } else {
+                    Image(systemName: "checkmark.circle.fill")
+                        .font(.system(size: 24, weight: .semibold))
+                        .foregroundStyle(.white, services.theme.accentColor)
+                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                        .padding(6)
                 }
-            }
-            if ownedCountBadge != nil || isOwned || isWishlisted {
-                browseStatusBadge
+            } else if isOwned {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 24, weight: .semibold))
+                    .foregroundStyle(.white, services.theme.accentColor)
+                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                    .padding(6)
+            } else if isWishlisted {
+                Image(systemName: "star.circle.fill")
+                    .font(.system(size: 24, weight: .semibold))
+                    .foregroundStyle(.white, .yellow)
+                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
                     .padding(6)
             }
-        }
-    }
-
-    @ViewBuilder
-    private var browseStatusBadge: some View {
-        if let ownedCountBadge {
-            Text("x\(ownedCountBadge)")
-                .font(.system(size: 10, weight: .bold, design: .rounded))
-                .lineLimit(1)
-                .minimumScaleFactor(0.65)
-                .foregroundStyle(.white)
-                .frame(width: 24, height: 24)
-                .background(
-                    Circle()
-                        .fill(.green)
-                )
-                .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-        } else if isOwned {
-            Image(systemName: "checkmark.circle.fill")
-                .font(.system(size: 24, weight: .semibold))
-                .foregroundStyle(.white, .green)
-                .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-        } else if isWishlisted {
-            Image(systemName: "star.circle.fill")
-                .font(.system(size: 24, weight: .semibold))
-                .foregroundStyle(.white, .yellow)
-                .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
         }
     }
 }
@@ -424,6 +451,7 @@ struct BrowseView: View {
     @State private var cachedSetNameByCode: [String: String] = [:]
     @State private var query = ""
     @State private var inlineDetailCards: [Card] = []
+    @State private var inlineDetailPriceByCardID: [String: Double] = [:]
     @State private var inlineDetailQuery = ""
     @State private var inlineDetailLoading = false
     @State private var ownedCardIDsCache: Set<String> = []
@@ -435,6 +463,11 @@ struct BrowseView: View {
     @State private var currentBrand: TCGBrand = .pokemon
     @State private var lastAutoLoadRowCount = 0
     private let inlineDetailColumnCount = 3
+
+    private var inlineDetailPriceCacheTaskKey: String {
+        let ids = inlineDetailCards.map(\.masterCardId).joined(separator: "|")
+        return "\(currentBrand.rawValue)#\(ids)"
+    }
 
     private var safeColumnCount: Int {
         min(max(gridOptions.columnCount, 1), 4)
@@ -536,7 +569,17 @@ struct BrowseView: View {
                 isInlineDetailPresented = (newValue != nil)
                 inlineDetailQuery = ""
                 inlineDetailFilters = BrowseCardGridFilters()
+                inlineDetailPriceByCardID = [:]
                 await loadInlineDetailIfNeeded(route: newValue)
+            }
+        }
+        .task(id: inlineDetailPriceCacheTaskKey) {
+            await refreshInlineDetailPriceCache()
+        }
+        .onChange(of: inlineDetailFilters.sortBy) { _, sortBy in
+            guard sortBy == .price else { return }
+            Task { @MainActor in
+                await refreshInlineDetailPriceCache()
             }
         }
     }
@@ -888,8 +931,25 @@ struct BrowseView: View {
             filters: inlineDetailFilters,
             ownedCardIDs: ownedCardIDsCache,
             brand: currentBrand,
-            sets: services.cardData.sets
+            sets: services.cardData.sets,
+            priceByCardID: inlineDetailPriceByCardID
         )
+    }
+
+    @MainActor
+    private func refreshInlineDetailPriceCache() async {
+        guard isInlineDetailPresented, !inlineDetailCards.isEmpty else {
+            inlineDetailPriceByCardID = [:]
+            return
+        }
+        var next: [String: Double] = [:]
+        next.reserveCapacity(inlineDetailCards.count)
+        for card in inlineDetailCards {
+            guard let entry = await services.pricing.pricing(for: card),
+                  let usd = browseMarketPriceUSD(for: entry) else { continue }
+            next[card.masterCardId] = usd
+        }
+        inlineDetailPriceByCardID = next
     }
 
     @ViewBuilder
@@ -2312,6 +2372,7 @@ struct SetCardsView: View {
     @State private var isLoading = true
     @State private var query = ""
     @State private var filters = BrowseCardGridFilters()
+    @State private var priceByCardID: [String: Double] = [:]
 
     private var ownedCardIDs: Set<String> {
         return Set(collectionItems.compactMap { item in
@@ -2334,8 +2395,14 @@ struct SetCardsView: View {
             filters: filters,
             ownedCardIDs: ownedCardIDs,
             brand: services.brandSettings.selectedCatalogBrand,
-            sets: services.cardData.sets
+            sets: services.cardData.sets,
+            priceByCardID: priceByCardID
         )
+    }
+
+    private var priceCacheTaskKey: String {
+        let ids = cards.map(\.masterCardId).joined(separator: "|")
+        return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(ids)"
     }
 
     var body: some View {
@@ -2406,6 +2473,27 @@ struct SetCardsView: View {
             ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
             isLoading = false
         }
+        .task(id: priceCacheTaskKey) {
+            await refreshPriceCache()
+        }
+        .onChange(of: filters.sortBy) { _, sortBy in
+            guard sortBy == .price else { return }
+            Task { @MainActor in
+                await refreshPriceCache()
+            }
+        }
+    }
+
+    @MainActor
+    private func refreshPriceCache() async {
+        var next: [String: Double] = [:]
+        next.reserveCapacity(cards.count)
+        for card in cards {
+            guard let entry = await services.pricing.pricing(for: card),
+                  let usd = browseMarketPriceUSD(for: entry) else { continue }
+            next[card.masterCardId] = usd
+        }
+        priceByCardID = next
     }
 }
 
@@ -2444,6 +2532,7 @@ struct DexCardsView: View {
     @State private var isLoading = true
     @State private var query = ""
     @State private var filters = BrowseCardGridFilters()
+    @State private var priceByCardID: [String: Double] = [:]
 
     private var setNameByCode: [String: String] {
         firstValueMap(services.cardData.sets, key: \.setCode, value: \.name)
@@ -2470,8 +2559,14 @@ struct DexCardsView: View {
             filters: filters,
             ownedCardIDs: ownedCardIDs,
             brand: services.brandSettings.selectedCatalogBrand,
-            sets: services.cardData.sets
+            sets: services.cardData.sets,
+            priceByCardID: priceByCardID
         )
+    }
+
+    private var priceCacheTaskKey: String {
+        let ids = cards.map(\.masterCardId).joined(separator: "|")
+        return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(ids)"
     }
 
     var body: some View {
@@ -2541,6 +2636,27 @@ struct DexCardsView: View {
             ImagePrefetcher.shared.prefetchCardWindow(cards, startingAt: 0, count: 24)
             isLoading = false
         }
+        .task(id: priceCacheTaskKey) {
+            await refreshPriceCache()
+        }
+        .onChange(of: filters.sortBy) { _, sortBy in
+            guard sortBy == .price else { return }
+            Task { @MainActor in
+                await refreshPriceCache()
+            }
+        }
+    }
+
+    @MainActor
+    private func refreshPriceCache() async {
+        var next: [String: Double] = [:]
+        next.reserveCapacity(cards.count)
+        for card in cards {
+            guard let entry = await services.pricing.pricing(for: card),
+                  let usd = browseMarketPriceUSD(for: entry) else { continue }
+            next[card.masterCardId] = usd
+        }
+        priceByCardID = next
     }
 }
 
@@ -3214,7 +3330,8 @@ func filterBrowseCards(
     filters: BrowseCardGridFilters,
     ownedCardIDs: Set<String>,
     brand: TCGBrand,
-    sets: [TCGSet] = []
+    sets: [TCGSet] = [],
+    priceByCardID: [String: Double] = [:]
 ) -> [Card] {
     let normalizedQuery = normalizedBrowseSearchText(query)
     let setReleaseDateByCode = firstValueMap(sets, key: \.setCode) { $0.releaseDate ?? "" }
@@ -3302,7 +3419,44 @@ func filterBrowseCards(
         return filtered.sorted { $0.cardName.localizedCaseInsensitiveCompare($1.cardName) == .orderedAscending }
     case .newestSet:
         return sortCardsByReleaseDateNewestFirst(filtered, sets: sets)
-    case .cardNumber, .random, .price, .acquiredDateNewest:
+    case .cardNumber:
+        return filtered.sorted { lhs, rhs in
+            if lhs.setCode != rhs.setCode {
+                let lhsDate = setReleaseDateByCode[lhs.setCode] ?? ""
+                let rhsDate = setReleaseDateByCode[rhs.setCode] ?? ""
+                if lhsDate != rhsDate { return lhsDate > rhsDate }
+                return lhs.setCode.localizedStandardCompare(rhs.setCode) == .orderedAscending
+            }
+            return lhs.cardNumber.localizedStandardCompare(rhs.cardNumber) == .orderedAscending
+        }
+    case .random:
+        return filtered.shuffled()
+    case .price:
+        return filtered.sorted { lhs, rhs in
+            let lhsPrice = priceByCardID[lhs.masterCardId]
+            let rhsPrice = priceByCardID[rhs.masterCardId]
+            switch (lhsPrice, rhsPrice) {
+            case let (l?, r?):
+                if l != r { return l > r }
+            case (.some, nil):
+                return true
+            case (nil, .some):
+                return false
+            case (nil, nil):
+                break
+            }
+            if lhs.cardName != rhs.cardName {
+                return lhs.cardName.localizedCaseInsensitiveCompare(rhs.cardName) == .orderedAscending
+            }
+            if lhs.setCode != rhs.setCode {
+                let lhsDate = setReleaseDateByCode[lhs.setCode] ?? ""
+                let rhsDate = setReleaseDateByCode[rhs.setCode] ?? ""
+                if lhsDate != rhsDate { return lhsDate > rhsDate }
+                return lhs.setCode.localizedStandardCompare(rhs.setCode) == .orderedAscending
+            }
+            return lhs.cardNumber.localizedStandardCompare(rhs.cardNumber) == .orderedAscending
+        }
+    case .acquiredDateNewest:
         return filtered
     }
 }
