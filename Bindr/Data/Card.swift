@@ -11,6 +11,46 @@ struct CardAttack: Codable, Hashable, Sendable {
     let effect: String?
 }
 
+/// One named ability line from the card.
+struct CardAbility: Hashable, Sendable, Codable {
+    let name: String?
+    let text: String
+    let type: String?
+
+    enum CodingKeys: String, CodingKey {
+        case name
+        case text
+        case type
+        case effect
+        case description
+    }
+
+    init(name: String?, text: String, type: String?) {
+        self.name = name
+        self.text = text
+        self.type = type
+    }
+
+    init(from decoder: Decoder) throws {
+        let c = try decoder.container(keyedBy: CodingKeys.self)
+        let textValue = (try? c.decodeIfPresent(String.self, forKey: .text)) ?? nil
+        let effectValue = (try? c.decodeIfPresent(String.self, forKey: .effect)) ?? nil
+        let descriptionValue = (try? c.decodeIfPresent(String.self, forKey: .description)) ?? nil
+        self.text = (textValue ?? effectValue ?? descriptionValue ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        self.name = ((try? c.decodeIfPresent(String.self, forKey: .name)) ?? nil)?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        self.type = ((try? c.decodeIfPresent(String.self, forKey: .type)) ?? nil)?
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+    }
+
+    func encode(to encoder: Encoder) throws {
+        var c = encoder.container(keyedBy: CodingKeys.self)
+        try c.encodeIfPresent(name, forKey: .name)
+        try c.encode(text, forKey: .text)
+        try c.encodeIfPresent(type, forKey: .type)
+    }
+}
+
 /// Lightweight metadata row used by browse filters so the app does not have to hold full `Card` payloads in memory.
 struct BrowseFilterCard: Codable, Identifiable, Hashable, Sendable {
     var id: String { masterCardId }
@@ -74,6 +114,8 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
     let imageHighSrc: String?
     /// Pokémon attacks in visual order; OCR from the center of the card can match these.
     let attacks: [CardAttack]?
+    /// Pokémon abilities / powers shown separately from attacks.
+    let abilities: [CardAbility]?
     /// Trainer / Special Energy rules text from the center of the card.
     let rules: String?
     /// Subtype as a comma-separated string, e.g. "Stage 2, MEGA, ex".
@@ -100,7 +142,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         case masterCardId, externalId, tcgdex_id, tcgdexId, localId, setCode, setTcgdexId, cardNumber, cardName
         case fullDisplayName, rarity, category, stage, hp, elementTypes, dexIds, subtypes
         case trainerType, energyType, regulationMark, evolveFrom, artist, imageLowSrc, imageHighSrc
-        case attacks, rules, subtype, weakness, resistance, retreatCost, flavorText, pricingVariants
+        case attacks, abilities, ability, rules, rule, subtype, weakness, resistance, retreatCost, flavorText, flavor_text, pricingVariants
         case tcgplayerProductId
         case opAttributes, opCost, opCounter, opLife
         case printedNumber
@@ -133,12 +175,13 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         imageLowSrc = try c.decode(String.self, forKey: .imageLowSrc)
         imageHighSrc = try c.decodeIfPresent(String.self, forKey: .imageHighSrc)
         attacks = try c.decodeIfPresent([CardAttack].self, forKey: .attacks)
-        rules = try c.decodeIfPresent(String.self, forKey: .rules)
+        abilities = Self.decodeAbilities(container: c)
+        rules = Self.decodeFlexibleText(container: c, keys: [.rules, .rule])
         subtype = try c.decodeIfPresent(String.self, forKey: .subtype)
         weakness = try c.decodeIfPresent(String.self, forKey: .weakness)
         resistance = try c.decodeIfPresent(String.self, forKey: .resistance)
         retreatCost = try c.decodeIfPresent(Int.self, forKey: .retreatCost)
-        flavorText = try c.decodeIfPresent(String.self, forKey: .flavorText)
+        flavorText = Self.decodeFlexibleText(container: c, keys: [.flavorText, .flavor_text])
         pricingVariants = try c.decodeIfPresent([String].self, forKey: .pricingVariants)
         if let s = try c.decodeIfPresent(String.self, forKey: .tcgplayerProductId) {
             tcgplayerProductId = s
@@ -180,6 +223,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         try c.encode(imageLowSrc, forKey: .imageLowSrc)
         try c.encodeIfPresent(imageHighSrc, forKey: .imageHighSrc)
         try c.encodeIfPresent(attacks, forKey: .attacks)
+        try c.encodeIfPresent(abilities, forKey: .abilities)
         try c.encodeIfPresent(rules, forKey: .rules)
         try c.encodeIfPresent(subtype, forKey: .subtype)
         try c.encodeIfPresent(weakness, forKey: .weakness)
@@ -221,6 +265,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         imageLowSrc: String,
         imageHighSrc: String?,
         attacks: [CardAttack]?,
+        abilities: [CardAbility]?,
         rules: String?,
         subtype: String?,
         weakness: String?,
@@ -259,6 +304,7 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         self.imageLowSrc = imageLowSrc
         self.imageHighSrc = imageHighSrc
         self.attacks = attacks
+        self.abilities = abilities
         self.rules = rules
         self.subtype = subtype
         self.weakness = weakness
@@ -288,6 +334,17 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
         if let rules {
             parts.append(rules)
         }
+        if let flavorText {
+            parts.append(flavorText)
+        }
+        if let abilities {
+            for ability in abilities {
+                if let name = ability.name {
+                    parts.append(name)
+                }
+                parts.append(ability.text)
+            }
+        }
         if let attacks {
             for a in attacks {
                 parts.append(a.name)
@@ -300,5 +357,60 @@ struct Card: Codable, Identifiable, Hashable, Sendable {
             parts.append(artist)
         }
         return parts.joined(separator: " ")
+    }
+
+    private static func decodeFlexibleText(
+        container: KeyedDecodingContainer<CodingKeys>,
+        keys: [CodingKeys]
+    ) -> String? {
+        for key in keys {
+            if let raw = try? container.decodeIfPresent(String.self, forKey: key) {
+                let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+                if !trimmed.isEmpty {
+                    return trimmed
+                }
+            }
+            if let rawList = try? container.decodeIfPresent([String].self, forKey: key) {
+                let joined = rawList
+                    .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+                    .filter { !$0.isEmpty }
+                    .joined(separator: "\n\n")
+                if !joined.isEmpty {
+                    return joined
+                }
+            }
+        }
+        return nil
+    }
+
+    private static func decodeAbilities(container: KeyedDecodingContainer<CodingKeys>) -> [CardAbility]? {
+        if let list = try? container.decodeIfPresent([CardAbility].self, forKey: .abilities) {
+            let cleaned = list.filter { !$0.text.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+            if !cleaned.isEmpty {
+                return cleaned
+            }
+        }
+        if let list = try? container.decodeIfPresent([String].self, forKey: .abilities) {
+            let mapped = list
+                .map { $0.trimmingCharacters(in: .whitespacesAndNewlines) }
+                .filter { !$0.isEmpty }
+                .map { CardAbility(name: nil, text: $0, type: nil) }
+            if !mapped.isEmpty {
+                return mapped
+            }
+        }
+        if let ability = try? container.decodeIfPresent(CardAbility.self, forKey: .ability) {
+            let text = ability.text.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !text.isEmpty {
+                return [ability]
+            }
+        }
+        if let single = try? container.decodeIfPresent(String.self, forKey: .ability) {
+            let text = single.trimmingCharacters(in: .whitespacesAndNewlines)
+            if !text.isEmpty {
+                return [CardAbility(name: nil, text: text, type: nil)]
+            }
+        }
+        return nil
     }
 }

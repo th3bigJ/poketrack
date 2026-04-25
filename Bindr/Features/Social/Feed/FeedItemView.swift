@@ -5,17 +5,16 @@ import SwiftUI
 struct FeedItemView: View {
     @Environment(AppServices.self) private var services
     let group: GroupedFeedItem
+    var showsInteractionBar: Bool = true
+    var isCardTapEnabled: Bool = true
 
     private var item: SocialFeedService.FeedItem { group.primary }
 
-    @State private var sharedContentDetail: SharedContent? = nil
-    @State private var isLoadingContent = false
+    @State private var isCommentsPresented = false
+    @State private var commentsRefreshToken = 0
 
-    private var isTappableContent: Bool {
-        guard item.type == .sharedContent else { return false }
-        return item.content?.contentType == .binder
-            || item.content?.contentType == .deck
-            || item.content?.contentType == .collection
+    private var canOpenComments: Bool {
+        item.content != nil && item.type != .friendship
     }
 
     var body: some View {
@@ -23,8 +22,12 @@ struct FeedItemView: View {
             header
             content
 
-            if item.type != .friendship {
-                InteractionBar(item: item)
+            if showsInteractionBar, item.type != .friendship {
+                InteractionBar(
+                    item: item,
+                    refreshToken: commentsRefreshToken,
+                    onOpenComments: { isCommentsPresented = true }
+                )
             }
         }
         .padding(.horizontal, 14)
@@ -36,33 +39,21 @@ struct FeedItemView: View {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .stroke(Color.white.opacity(0.09), lineWidth: 1)
         }
-        .overlay(alignment: .topTrailing) {
-            if isLoadingContent {
-                ProgressView()
-                    .scaleEffect(0.7)
-                    .padding(10)
-            }
-        }
         .contentShape(Rectangle())
         .onTapGesture {
-            guard isTappableContent && !isLoadingContent else { return }
-            Task { await openSharedContent() }
+            guard isCardTapEnabled, canOpenComments else { return }
+            isCommentsPresented = true
         }
-        .sheet(item: $sharedContentDetail) { sharedContent in
-            NavigationStack {
-                SharedContentView(content: sharedContent)
-                    .environment(services)
+        .sheet(isPresented: $isCommentsPresented, onDismiss: {
+            commentsRefreshToken += 1
+        }) {
+            if let content = item.content {
+                NavigationStack {
+                    CommentsView(content: content, sourceItem: item)
+                        .environment(services)
+                }
             }
         }
-    }
-
-    private func openSharedContent() async {
-        guard let contentID = item.content?.id else { return }
-        isLoadingContent = true
-        defer { isLoadingContent = false }
-        do {
-            sharedContentDetail = try await services.socialShare.fetchSharedContent(id: contentID)
-        } catch {}
     }
 
     private var header: some View {
@@ -338,11 +329,12 @@ private struct CardStackPreview: View {
 struct InteractionBar: View {
     @Environment(AppServices.self) private var services
     let item: SocialFeedService.FeedItem
+    let refreshToken: Int
+    let onOpenComments: () -> Void
 
     @State private var aggregate = SocialFeedService.VoteAggregate(upvoteCount: 0, downvoteCount: 0, myVoteType: nil)
     @State private var commentCount = 0
     @State private var isBusy = false
-    @State private var isCommentsPresented = false
 
     var body: some View {
         VStack(spacing: 10) {
@@ -361,7 +353,7 @@ struct InteractionBar: View {
                 Spacer()
 
                 Button {
-                    isCommentsPresented = true
+                    onOpenComments()
                 } label: {
                     HStack(spacing: 4) {
                         Image(systemName: "bubble.left")
@@ -375,18 +367,8 @@ struct InteractionBar: View {
             }
         }
         .task { await refresh() }
-        .onChange(of: isCommentsPresented) { _, isPresented in
-            if !isPresented {
-                Task { await refresh() }
-            }
-        }
-        .sheet(isPresented: $isCommentsPresented) {
-            if let content = item.content {
-                NavigationStack {
-                    CommentsView(content: content)
-                        .environment(services)
-                }
-            }
+        .onChange(of: refreshToken) { _, _ in
+            Task { await refresh() }
         }
     }
 

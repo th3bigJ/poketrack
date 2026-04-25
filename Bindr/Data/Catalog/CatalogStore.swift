@@ -104,18 +104,17 @@ final class CatalogStore: @unchecked Sendable {
             throw CatalogStoreError.migrationFailed
         }
         try migrateBrandPartitionIfNeededLocked()
-        try migrateOnePieceCardSchemaIfNeededLocked()
+        try migrateCardSchemaIfNeededLocked()
     }
 
-    /// v3: card schema version bump — when new fields are added to the OP card JSON (e.g. opAttributes,
-    /// opCost, opCounter, opLife), bump `onePieceCardSchemaVersion` so the cached SQLite data is
-    /// invalidated and the sync coordinator re-downloads fresh card JSON.
-    private func migrateOnePieceCardSchemaIfNeededLocked() throws {
+    /// Bump when catalog card JSON structure changes so both franchises re-download into SQLite.
+    /// This catches new fields (e.g. abilities / rules / flavor text) even when `sets.json` is unchanged.
+    private func migrateCardSchemaIfNeededLocked() throws {
         guard let db else { throw CatalogStoreError.notOpen }
-        let currentVersion = 2  // bump this whenever new OP Card fields are added
+        let currentVersion = 1
         var stmt: OpaquePointer?
         defer { sqlite3_finalize(stmt) }
-        guard sqlite3_prepare_v2(db, "SELECT value FROM sync_meta WHERE key = 'onepiece_card_schema_version' LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else { return }
+        guard sqlite3_prepare_v2(db, "SELECT value FROM sync_meta WHERE key = 'catalog_card_schema_version' LIMIT 1;", -1, &stmt, nil) == SQLITE_OK else { return }
         let storedVersion: Int
         if sqlite3_step(stmt) == SQLITE_ROW, let c = sqlite3_column_text(stmt, 0) {
             storedVersion = Int(String(cString: c)) ?? 0
@@ -126,13 +125,13 @@ final class CatalogStore: @unchecked Sendable {
         stmt = nil
         guard storedVersion < currentVersion else { return }
 
-        // Clear the OP fingerprint so CatalogSyncCoordinator re-downloads all OP cards.
-        let clear = "DELETE FROM sync_meta WHERE key IN ('onepiece_catalog_row_fingerprint', 'onepiece_catalog_sets_sha256', 'onepiece_catalog_sets_etag');"
+        // Clear sync fingerprints so CatalogSyncCoordinator re-downloads card JSON for both brands.
+        let clear = "DELETE FROM sync_meta WHERE key IN ('catalog_sets_sha256', 'catalog_etag', 'onepiece_catalog_row_fingerprint', 'onepiece_catalog_sets_sha256', 'onepiece_catalog_sets_etag');"
         var mErr: UnsafeMutablePointer<CChar>?
         sqlite3_exec(db, clear, nil, nil, &mErr)
         if let e = mErr { sqlite3_free(e) }
 
-        let upsert = "INSERT INTO sync_meta(key, value) VALUES('onepiece_card_schema_version', '\(currentVersion)') ON CONFLICT(key) DO UPDATE SET value = excluded.value;"
+        let upsert = "INSERT INTO sync_meta(key, value) VALUES('catalog_card_schema_version', '\(currentVersion)') ON CONFLICT(key) DO UPDATE SET value = excluded.value;"
         var uErr: UnsafeMutablePointer<CChar>?
         sqlite3_exec(db, upsert, nil, nil, &uErr)
         if let e = uErr { sqlite3_free(e) }

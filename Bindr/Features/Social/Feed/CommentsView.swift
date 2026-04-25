@@ -4,6 +4,7 @@ struct CommentsView: View {
     @Environment(AppServices.self) private var services
 
     let content: SocialFeedService.FeedContentSummary
+    let sourceItem: SocialFeedService.FeedItem?
 
     @State private var comments: [SocialFeedService.CommentDisplay] = []
     @State private var votes: [SocialFeedService.FeedItem] = []
@@ -11,34 +12,23 @@ struct CommentsView: View {
     @State private var composerText = ""
     @State private var replyingTo: UUID?
     @State private var errorMessage: String?
+    @State private var sharedContentDetail: SharedContent?
+    @State private var isLoadingSharedContent = false
     @FocusState private var isComposerFocused: Bool
+
+    init(
+        content: SocialFeedService.FeedContentSummary,
+        sourceItem: SocialFeedService.FeedItem? = nil
+    ) {
+        self.content = content
+        self.sourceItem = sourceItem
+    }
 
     var body: some View {
         VStack(spacing: 0) {
             List {
-                if !votes.isEmpty {
-                    Section("Votes") {
-                        ScrollView(.horizontal, showsIndicators: false) {
-                            HStack(spacing: 12) {
-                                ForEach(votes, id: \.id) { item in
-                                    VStack(spacing: 4) {
-                                        if let profile = item.actor {
-                                            ProfileAvatarView(profile: profile, size: 32)
-                                        }
-                                        if let type = item.voteType {
-                                            Text(emoji(for: type))
-                                                .font(.caption2)
-                                                .padding(2)
-                                                .background(.ultraThinMaterial, in: Circle())
-                                                .offset(x: 10, y: -10)
-                                        }
-                                    }
-                                }
-                            }
-                            .padding(.horizontal, 4)
-                            .padding(.vertical, 8)
-                        }
-                    }
+                Section("Post") {
+                    postHeader
                 }
 
                 if isLoading {
@@ -85,6 +75,31 @@ struct CommentsView: View {
                     }
                 }
 
+                if !votes.isEmpty {
+                    Section("Votes") {
+                        ScrollView(.horizontal, showsIndicators: false) {
+                            HStack(spacing: 12) {
+                                ForEach(votes, id: \.id) { item in
+                                    VStack(spacing: 4) {
+                                        if let profile = item.actor {
+                                            ProfileAvatarView(profile: profile, size: 32)
+                                        }
+                                        if let type = item.voteType {
+                                            Text(emoji(for: type))
+                                                .font(.caption2)
+                                                .padding(2)
+                                                .background(.ultraThinMaterial, in: Circle())
+                                                .offset(x: 10, y: -10)
+                                        }
+                                    }
+                                }
+                            }
+                            .padding(.horizontal, 4)
+                            .padding(.vertical, 8)
+                        }
+                    }
+                }
+
                 if let errorMessage {
                     Section {
                         Text(errorMessage)
@@ -104,6 +119,12 @@ struct CommentsView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await loadComments()
+        }
+        .sheet(item: $sharedContentDetail) { sharedContent in
+            NavigationStack {
+                SharedContentView(content: sharedContent)
+                    .environment(services)
+            }
         }
     }
 
@@ -152,6 +173,90 @@ struct CommentsView: View {
         .padding(.horizontal, 12)
         .padding(.vertical, 10)
         .background(.bar)
+    }
+
+    private var postHeader: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if let sourceItem {
+                FeedItemView(
+                    group: GroupedFeedItem(id: sourceItem.id, primary: sourceItem, interactions: []),
+                    showsInteractionBar: false,
+                    isCardTapEnabled: false
+                )
+                .listRowInsets(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+            } else {
+                postCard
+            }
+
+            Button {
+                Task { await openSharedContent() }
+            } label: {
+                HStack(spacing: 8) {
+                    if isLoadingSharedContent {
+                        ProgressView()
+                            .controlSize(.small)
+                    } else {
+                        Image(systemName: "arrow.up.right.square")
+                    }
+                    Text("View Content")
+                        .fontWeight(.semibold)
+                }
+                .frame(maxWidth: .infinity)
+            }
+            .buttonStyle(.borderedProminent)
+            .disabled(isLoadingSharedContent)
+        }
+    }
+
+    private var postCard: some View {
+        VStack(alignment: .leading, spacing: 8) {
+            HStack(spacing: 8) {
+                if let actor = sourceItem?.actor {
+                    ProfileAvatarView(profile: actor, size: 26)
+                }
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(sourceItem?.actor?.displayName ?? sourceItem?.actor?.username ?? "Post")
+                        .font(.subheadline.weight(.semibold))
+                    if let createdAt = sourceItem?.createdAt {
+                        Text(createdAt, style: .relative)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Text(content.contentType.rawValue.capitalized)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                Spacer()
+            }
+
+            Text(content.title)
+                .font(.headline)
+                .foregroundStyle(.primary)
+
+            if let description = content.description, !description.isEmpty {
+                Text(description)
+                    .font(.subheadline)
+                    .foregroundStyle(.secondary)
+            }
+
+            if let cardCount = content.cardCount {
+                Text("\(cardCount) cards")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(.vertical, 4)
+    }
+
+    private func openSharedContent() async {
+        isLoadingSharedContent = true
+        defer { isLoadingSharedContent = false }
+        do {
+            sharedContentDetail = try await services.socialShare.fetchSharedContent(id: content.id)
+        } catch {
+            errorMessage = error.localizedDescription
+        }
     }
 
     private func loadComments() async {

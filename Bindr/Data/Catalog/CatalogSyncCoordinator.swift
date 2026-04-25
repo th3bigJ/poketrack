@@ -753,6 +753,7 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
         let periodStart = DailyMarketPricingSchedule.currentPeriodStart(now: Date(), calendar: .current)
         var keys: [(String, URL)] = [
             (DailyBlobKey.priceTrends, AppConfiguration.r2MarketURL(path: DailyBlobPath.priceTrends)),
+            (DailyBlobKey.marketTrend, AppConfiguration.r2MarketURL(path: DailyBlobPath.marketTrend)),
         ]
         if enabledBrands.contains(.pokemon) {
             keys.insert(
@@ -808,10 +809,12 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 enum DailyBlobKey {
     static let pokedataEnglishPokemonPrices = "pokedata_english_pokemon_prices"
     static let priceTrends = "price_trends"
+    static let marketTrend = "market_trend"
 }
 
 /// Paths relative to `r2MarketPathPrefix` (default: bucket root). Adjust in `AppConfiguration` / plist if your tidy layout differs.
 enum DailyBlobPath {
     static let pokedataEnglishPokemonPrices = "sealed-products/pokedata/pokedata-english-pokemon-prices.json"
     static let priceTrends = "data/price-trends.json"
+    static let marketTrend = "pricing/market-trend.json"
 }

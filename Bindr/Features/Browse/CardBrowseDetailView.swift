@@ -227,7 +227,7 @@ private struct CardBrowseDetailPage: View {
                     collectionSection
                 }
 
-                if !summaryFacts.isEmpty || card.attacks != nil || cleaned(card.rules) != nil || cleaned(card.flavorText) != nil {
+                if !summaryFacts.isEmpty || card.attacks != nil || card.abilities != nil || cleaned(card.rules) != nil || cleaned(card.flavorText) != nil {
                     cardDetailsSection
                 }
             }
@@ -667,6 +667,49 @@ private struct CardBrowseDetailPage: View {
                                 RoundedRectangle(cornerRadius: 18, style: .continuous)
                                     .fill(sectionInsetBackground)
                             )
+                        }
+                    }
+                }
+
+                if let abilities = card.abilities, !abilities.isEmpty {
+                    VStack(alignment: .leading, spacing: 10) {
+                        Text("Abilities")
+                            .font(.headline)
+                            .foregroundStyle(.primary)
+
+                        ForEach(Array(abilities.enumerated()), id: \.offset) { _, ability in
+                            if let text = cleaned(ability.text) {
+                                VStack(alignment: .leading, spacing: 6) {
+                                    HStack(spacing: 8) {
+                                        if let type = cleaned(ability.type) {
+                                            Text(type.uppercased())
+                                                .font(.caption2.weight(.semibold))
+                                                .foregroundStyle(CardDetailPalette.chartLine)
+                                                .padding(.horizontal, 8)
+                                                .padding(.vertical, 4)
+                                                .background(
+                                                    Capsule(style: .continuous)
+                                                        .fill(CardDetailPalette.chartLine.opacity(0.14))
+                                                )
+                                        }
+
+                                        if let name = cleaned(ability.name) {
+                                            Text(name)
+                                                .font(.subheadline.weight(.semibold))
+                                                .foregroundStyle(.primary)
+                                        }
+                                    }
+
+                                    Text(text)
+                                        .font(.subheadline)
+                                        .foregroundStyle(.secondary)
+                                }
+                                .padding(14)
+                                .background(
+                                    RoundedRectangle(cornerRadius: 18, style: .continuous)
+                                        .fill(sectionInsetBackground)
+                                )
+                            }
                         }
                     }
                 }

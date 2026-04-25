@@ -40,6 +40,7 @@ struct DashboardView: View {
     @State private var cardNamesByID: [String: String] = [:]
     @State private var setNamesByCardID: [String: String] = [:]
     @State private var cardImageURLsByID: [String: URL] = [:]
+    @State private var marketTrendData: MarketTrendDailyBlob? = nil
 
     private var liveSnapshot: BrandSnapshot? {
         guard let t = liveTotalGbp else { return nil }
@@ -57,6 +58,13 @@ struct DashboardView: View {
 
     private var isScrubbingOrLoaded: Bool { selectedPoint != nil || liveTotalGbp != nil }
     private var activeBrand: TCGBrand { services.brandSettings.selectedCatalogBrand }
+    private var activeMarketTrend: MarketTrendMetrics? {
+        guard let marketTrendData else { return nil }
+        switch activeBrand {
+        case .pokemon: return marketTrendData.pokemon
+        case .onePiece: return marketTrendData.onepiece
+        }
+    }
 
     private var visibleCollectionItems: [CollectionItem] {
         collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
@@ -242,6 +250,9 @@ struct DashboardView: View {
                 statsStrip
                 if !activePoints.isEmpty {
                     valueChartCard
+                    if let trend = activeMarketTrend {
+                        marketTrendCard(trend: trend, updatedAt: marketTrendData?.updatedAt)
+                    }
                 }
                 quickActionsSection
                 recentActivityCard
@@ -262,6 +273,9 @@ struct DashboardView: View {
         }
         .task(id: dashboardDataSignature) {
             await resolveDashboardMetadata()
+        }
+        .task {
+            await loadMarketTrendBlob()
         }
         .onAppear {
             selectedBrand = activeBrand
@@ -572,6 +586,30 @@ struct DashboardView: View {
                                     }
                             )
                     }
+                }
+            }
+        }
+    }
+
+    private func marketTrendCard(trend: MarketTrendMetrics, updatedAt: Date?) -> some View {
+        dashboardCard {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .firstTextBaseline) {
+                    Text("Market Trend")
+                        .font(.title3.weight(.semibold))
+                        .foregroundStyle(dashboardPrimaryText)
+                    Spacer()
+                    if let updatedAt {
+                        Text(updatedAt.formatted(date: .abbreviated, time: .shortened))
+                            .font(.caption)
+                            .foregroundStyle(dashboardSecondaryText)
+                    }
+                }
+
+                HStack(spacing: 10) {
+                    trendCell(title: "31D", value: trend.change31Days)
+                    trendCell(title: "7D", value: trend.change7Days)
+                    trendCell(title: "1D", value: trend.change1Day)
                 }
             }
         }
@@ -999,6 +1037,49 @@ struct DashboardView: View {
             : "£\(String(format: "%.0f", value))"
     }
 
+    private func loadMarketTrendBlob() async {
+        guard let data = CatalogStore.shared.dailyBlob(key: DailyBlobKey.marketTrend) else {
+            marketTrendData = nil
+            return
+        }
+        do {
+            marketTrendData = try JSONDecoder().decode(MarketTrendDailyBlob.self, from: data)
+        } catch {
+            marketTrendData = nil
+        }
+    }
+
+    private func trendCell(title: String, value: Double?) -> some View {
+        VStack(alignment: .leading, spacing: 4) {
+            Text(title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(dashboardSecondaryText)
+            Text(formatTrendPercent(value))
+                .font(.title3.weight(.bold))
+                .foregroundStyle(trendColor(value))
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.vertical, 10)
+        .padding(.horizontal, 12)
+        .background(dashboardCardInsetBackground, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+        .overlay(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .stroke(dashboardBorder.opacity(0.5), lineWidth: 1)
+        )
+    }
+
+    private func formatTrendPercent(_ value: Double?) -> String {
+        guard let value else { return "N/A" }
+        return String(format: "%@%.2f%%", value >= 0 ? "+" : "", value)
+    }
+
+    private func trendColor(_ value: Double?) -> Color {
+        guard let value else { return dashboardSecondaryText }
+        if value > 0 { return DashboardPalette.success }
+        if value < 0 { return DashboardPalette.danger }
+        return dashboardSecondaryText
+    }
+
     private func cleaned(_ text: String?) -> String? {
         guard let text else { return nil }
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -1035,6 +1116,49 @@ struct DashboardView: View {
             return DashboardPalette.danger
         }
     }
+}
+
+private struct MarketTrendDailyBlob: Decodable {
+    let pokemon: MarketTrendMetrics
+    let onepiece: MarketTrendMetrics
+    let updatedAt: Date?
+
+    private enum CodingKeys: String, CodingKey {
+        case pokemon
+        case onepiece
+        case updatedAt
+    }
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        pokemon = try container.decode(MarketTrendMetrics.self, forKey: .pokemon)
+        onepiece = try container.decode(MarketTrendMetrics.self, forKey: .onepiece)
+
+        if let rawUpdatedAt = try container.decodeIfPresent(String.self, forKey: .updatedAt) {
+            updatedAt = Self.iso8601WithFractional.date(from: rawUpdatedAt)
+                ?? Self.iso8601Basic.date(from: rawUpdatedAt)
+        } else {
+            updatedAt = nil
+        }
+    }
+
+    private static let iso8601WithFractional: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime, .withFractionalSeconds]
+        return formatter
+    }()
+
+    private static let iso8601Basic: ISO8601DateFormatter = {
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime]
+        return formatter
+    }()
+}
+
+private struct MarketTrendMetrics: Decodable {
+    let change1Day: Double?
+    let change7Days: Double?
+    let change31Days: Double?
 }
 
 private struct ChartPoint: Identifiable {

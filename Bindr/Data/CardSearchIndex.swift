@@ -48,7 +48,7 @@ final class CardSearchIndex {
     }
 
     /// Bump when searchable fields on `Card` change (e.g. attacks/rules/artist) so the inverted index rebuilds.
-    private static let indexSchemaVersion = "5"
+    private static let indexSchemaVersion = "6"
 
     static func versionSignature(for sets: [TCGSet], brand: TCGBrand) -> String {
         let codes = sets.map(\.setCode).sorted().joined(separator: "|")

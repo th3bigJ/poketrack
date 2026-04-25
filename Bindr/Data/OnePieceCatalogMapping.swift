@@ -120,6 +120,7 @@ enum OnePieceCatalogMapping {
             imageLowSrc: dto.imagePath ?? "",
             imageHighSrc: nil,
             attacks: nil,
+            abilities: nil,
             rules: dto.effect,
             subtype: dto.subtypes?.joined(separator: ", "),
             weakness: nil,
