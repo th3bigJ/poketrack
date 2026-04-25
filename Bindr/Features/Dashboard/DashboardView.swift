@@ -145,7 +145,11 @@ struct DashboardView: View {
                 .map { ChartPoint(date: $0.date, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
         }
         if let live = liveTotalGbp {
-            points.append(ChartPoint(date: cal.startOfDay(for: Date()), total: live, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp))
+            let today = cal.startOfDay(for: Date())
+            let hasTodaySnapshot = points.contains { cal.isDate($0.date, inSameDayAs: today) }
+            if !hasTodaySnapshot {
+                points.append(ChartPoint(date: today, total: live, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp))
+            }
         }
         return points
     }
@@ -861,7 +865,7 @@ struct DashboardView: View {
                         .foregroundStyle(dashboardSecondaryText)
                     Spacer(minLength: 0)
                 }
-                .padding(.vertical, 6)
+            .padding(.vertical, 6)
             }
             .overlay(
                 RoundedRectangle(cornerRadius: 10, style: .continuous)

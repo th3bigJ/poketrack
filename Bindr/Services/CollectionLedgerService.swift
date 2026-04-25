@@ -196,6 +196,56 @@ final class CollectionLedgerService {
         }
 
         item.quantity -= quantity
+        if item.quantity <= 0 {
+            removeDepletedCollectionItem(item)
+        }
+
+        try modelContext.save()
+    }
+
+    /// Deletes a ledger line and reconciles current collection quantities for card stacks.
+    /// Inbound lines (`bought`, `packed`, `tradedIn`, `giftedIn`, `adjustmentIn`) are subtracted.
+    /// Outbound lines (`sold`, `tradedOut`, `giftedOut`, `adjustmentOut`) are added back.
+    func deleteLedgerLineAndReconcileCollection(_ line: LedgerLine) throws {
+        defer { modelContext.delete(line) }
+
+        guard let direction = LedgerDirection(rawValue: line.direction) else {
+            try modelContext.save()
+            return
+        }
+
+        guard line.quantity > 0 else {
+            try modelContext.save()
+            return
+        }
+
+        guard line.productKind == ProductKind.singleCard.rawValue || line.productKind == ProductKind.gradedItem.rawValue else {
+            try modelContext.save()
+            return
+        }
+
+        guard let cardID = cleanOptionalString(line.cardID) else {
+            try modelContext.save()
+            return
+        }
+
+        let variantKey = cleanOptionalString(line.variantKey) ?? "normal"
+        let quantityDelta: Int
+        switch direction {
+        case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn:
+            quantityDelta = -line.quantity
+        case .sold, .tradedOut, .giftedOut, .adjustmentOut:
+            quantityDelta = line.quantity
+        }
+
+        try reconcileCardStackQuantity(
+            cardID: cardID,
+            variantKey: variantKey,
+            productKind: line.productKind,
+            gradingCompany: line.gradingCompany,
+            grade: line.grade,
+            quantityDelta: quantityDelta
+        )
 
         try modelContext.save()
     }
@@ -316,6 +366,52 @@ final class CollectionLedgerService {
         return "USD"
     }
 
+    private func reconcileCardStackQuantity(
+        cardID: String,
+        variantKey: String,
+        productKind: String,
+        gradingCompany: String?,
+        grade: String?,
+        quantityDelta: Int
+    ) throws {
+        guard quantityDelta != 0 else { return }
+
+        let existing = try findCardStack(
+            cardID: cardID,
+            variantKey: variantKey,
+            productKind: productKind,
+            gradingCompany: gradingCompany,
+            grade: grade
+        )
+
+        if quantityDelta > 0 {
+            if let existing {
+                existing.quantity += quantityDelta
+                existing.dateAcquired = Date()
+            } else {
+                let created = CollectionItem(
+                    cardID: cardID,
+                    variantKey: variantKey,
+                    dateAcquired: Date(),
+                    purchasePrice: nil,
+                    quantity: quantityDelta,
+                    notes: "",
+                    itemKind: productKind,
+                    gradingCompany: gradingCompany,
+                    grade: grade
+                )
+                modelContext.insert(created)
+            }
+            return
+        }
+
+        guard let existing else { return }
+        existing.quantity = max(existing.quantity + quantityDelta, 0)
+        if existing.quantity == 0 {
+            removeDepletedCollectionItem(existing)
+        }
+    }
+
     /// Legacy path — same as ``CollectionAcquisitionKind/bought``.
     func recordBoughtSingleCard(
         cardID: String,
@@ -383,6 +479,21 @@ final class CollectionLedgerService {
         return t
     }
 
+    /// Removes a current-holdings row once the stack is fully depleted.
+    /// Keeps historical cost-lot + sale-allocation links by detaching those lots first.
+    private func removeDepletedCollectionItem(_ item: CollectionItem) {
+        let attachedLots = item.costLots ?? []
+        for lot in attachedLots {
+            if (lot.saleAllocations ?? []).isEmpty {
+                modelContext.delete(lot)
+            } else {
+                lot.quantityRemaining = 0
+                lot.collectionItem = nil
+            }
+        }
+        modelContext.delete(item)
+    }
+
     private func dispositionChannel(for kind: CollectionDispositionKind) -> String {
         switch kind {
         case .sold: return "sale"
@@ -422,6 +533,24 @@ final class CollectionLedgerService {
         )
         modelContext.insert(created)
         return created
+    }
+
+    private func findCardStack(
+        cardID: String,
+        variantKey: String,
+        productKind: String,
+        gradingCompany: String?,
+        grade: String?
+    ) throws -> CollectionItem? {
+        let descriptor = FetchDescriptor<CollectionItem>()
+        let all = try modelContext.fetch(descriptor)
+        return all.first(where: {
+            $0.cardID == cardID
+                && $0.variantKey == variantKey
+                && $0.itemKind == productKind
+                && $0.gradingCompany == gradingCompany
+                && $0.grade == grade
+        })
     }
 }
 

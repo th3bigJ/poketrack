@@ -113,26 +113,28 @@ struct TransactionsView: View {
     }
 
     private var transactionList: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 16) {
-                LazyVStack(spacing: 12) {
-                    ForEach(visibleLedgerLines, id: \.persistentModelID) { line in
-                        transactionRow(for: line)
-                            .contextMenu {
-                                Button(role: .destructive) {
-                                    modelContext.delete(line)
-                                    HapticManager.notification(.success)
-                                } label: {
-                                    Label("Delete", systemImage: "trash")
-                                }
-                            }
+        List {
+            ForEach(visibleLedgerLines, id: \.persistentModelID) { line in
+                transactionRow(for: line)
+                    .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                    .listRowBackground(Color.clear)
+                    .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                        Button(role: .destructive) {
+                            deleteLedgerLine(line)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
                     }
-                }
+                    .contextMenu {
+                        Button(role: .destructive) {
+                            deleteLedgerLine(line)
+                        } label: {
+                            Label("Delete", systemImage: "trash")
+                        }
+                    }
             }
-            .padding(.horizontal, 16)
-            .padding(.top, 16)
-            .padding(.bottom, 16)
         }
+        .listStyle(.plain)
     }
 
     private func transactionRow(for line: LedgerLine) -> some View {
@@ -304,6 +306,21 @@ struct TransactionsView: View {
         return spaced.split(separator: " ")
             .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
             .joined(separator: " ")
+    }
+
+    private func deleteLedgerLine(_ line: LedgerLine) {
+        do {
+            if let ledger = services.collectionLedger {
+                try ledger.deleteLedgerLineAndReconcileCollection(line)
+            } else {
+                modelContext.delete(line)
+                try modelContext.save()
+            }
+            HapticManager.notification(.success)
+        } catch {
+            HapticManager.notification(.error)
+            print("[Transactions] Failed to delete ledger line: \(error.localizedDescription)")
+        }
     }
 }
 

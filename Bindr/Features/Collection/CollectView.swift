@@ -208,7 +208,7 @@ struct CollectView: View {
                     card: card,
                     gridOptions: gridOptions,
                     setName: setName(for: card),
-                    footnote: collectionFootnote(for: item),
+                    ownedCountBadge: item.quantity,
                     overridePrice: collectionPriceByItemKey[collectionItemKey(item)],
                     gradeLabel: collectionGradeLabel(for: item)
                 )
@@ -224,10 +224,6 @@ struct CollectView: View {
                 Text(item.cardID).font(.caption2).lineLimit(2).multilineTextAlignment(.center).foregroundStyle(.secondary)
             }
         }
-    }
-
-    private func collectionFootnote(for item: CollectionItem) -> String {
-        "×\(item.quantity) · \(item.variantKey.replacingOccurrences(of: "_", with: " "))"
     }
 
     private var filteredCollectionItems: [CollectionItem] {

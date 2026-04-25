@@ -5,8 +5,8 @@ import Observation
 /// Computes and stores daily snapshots, completed-week averages, and completed-month averages.
 ///
 /// Daily rules:
-/// - Only dates before today are locked; today is always live.
-/// - Backfill up to 7 days on launch.
+/// - No historical backfill.
+/// - Capture at most one snapshot for today when the app runs.
 ///
 /// Weekly rules:
 /// - A week average is written once the week (Mon–Sun) is fully complete and the user opens
@@ -64,35 +64,41 @@ final class CollectionValueService {
     func runBackfillIfNeeded(collectionItems: [CollectionItem]) async {
         guard !isBackfilling else { return }
         purgeZeroValueSnapshots()
-
-        let missingDays = daysToBackfill()
-        if missingDays.isEmpty {
-            print("[CollectionValue] No missing days to backfill.")
-        } else {
-            print("[CollectionValue] Backfilling \(missingDays.count) day(s)")
-            print("[CollectionValue] Collection has \(collectionItems.count) item(s)")
-
-            isBackfilling = true
-            for day in missingDays {
-                if snapshotExists(for: day) { continue }
-                let result = await computeValue(for: collectionItems, on: day)
-                print("[CollectionValue] \(day.formatted(date: .abbreviated, time: .omitted)) → total=\(result.total)")
-                let snapshot = CollectionValueSnapshot(
-                    date: day,
-                    totalGbp: result.total,
-                    pokemonGbp: result.pokemon,
-                    onePieceGbp: result.onePiece
-                )
-                modelContext.insert(snapshot)
-                try? modelContext.save()
-            }
-            isBackfilling = false
-            loadAll()
-            print("[CollectionValue] Backfill complete. Snapshots: \(snapshots.count)")
-        }
+        await captureTodaySnapshotIfMissing(collectionItems: collectionItems)
 
         aggregateWeeklyIfNeeded()
         aggregateMonthlyIfNeeded()
+        loadAll()
+    }
+
+    private func captureTodaySnapshotIfMissing(collectionItems: [CollectionItem]) async {
+        let cal = Calendar.current
+        let today = cal.startOfDay(for: Date())
+        guard !snapshotExists(for: today) else { return }
+
+        let hasInventory = collectionItems.contains { $0.quantity > 0 }
+        guard hasInventory else {
+            print("[CollectionValue] Skipping daily snapshot (no inventory).")
+            return
+        }
+
+        isBackfilling = true
+        let result = await computeValue(for: collectionItems, on: today)
+        isBackfilling = false
+        guard result.total > 0 else {
+            print("[CollectionValue] Skipping daily snapshot (value is zero).")
+            return
+        }
+
+        print("[CollectionValue] Saving snapshot for \(today.formatted(date: .abbreviated, time: .omitted)) → total=\(result.total)")
+        let snapshot = CollectionValueSnapshot(
+            date: today,
+            totalGbp: result.total,
+            pokemonGbp: result.pokemon,
+            onePieceGbp: result.onePiece
+        )
+        modelContext.insert(snapshot)
+        try? modelContext.save()
         loadAll()
     }
 
@@ -175,38 +181,6 @@ final class CollectionValueService {
             print("[CollectionValue] Saved monthly avg for \(monthStart.formatted(date: .abbreviated, time: .omitted)): \(avg.total)")
         }
         try? modelContext.save()
-    }
-
-    // MARK: - Days to backfill
-
-    private func daysToBackfill() -> [Date] {
-        let cal = Calendar.current
-        let today = cal.startOfDay(for: Date())
-        let earliest = cal.date(byAdding: .day, value: -7, to: today)!
-
-        let lastSnapshotDate: Date? = {
-            let descriptor = FetchDescriptor<CollectionValueSnapshot>(
-                sortBy: [SortDescriptor(\.date, order: .reverse)]
-            )
-            let results = (try? modelContext.fetch(descriptor)) ?? []
-            return results.first.map { cal.startOfDay(for: $0.date) }
-        }()
-
-        let cursor0: Date
-        if let last = lastSnapshotDate {
-            cursor0 = cal.date(byAdding: .day, value: 1, to: last)!
-        } else {
-            cursor0 = earliest
-        }
-
-        var days: [Date] = []
-        var cursor = cursor0
-        let yesterday = cal.date(byAdding: .day, value: -1, to: today)!
-        while cursor <= yesterday {
-            days.append(cursor)
-            cursor = cal.date(byAdding: .day, value: 1, to: cursor)!
-        }
-        return days
     }
 
     private func snapshotExists(for date: Date) -> Bool {

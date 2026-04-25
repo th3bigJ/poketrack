@@ -62,6 +62,8 @@ struct CardGridCell: View {
     var setName: String? = nil
     var isOwned = false
     var isWishlisted = false
+    /// Optional owned-count badge for collection surfaces. Renders as `xN` in the thumbnail corner.
+    var ownedCountBadge: Int? = nil
     /// Optional line under the name (e.g. wishlist variant key).
     var footnote: String? = nil
     /// When provided, shown as the price instead of doing a live lookup (used by collection grid to show grade-correct price).
@@ -94,6 +96,11 @@ struct CardGridCell: View {
             || gridOptions.showPricing
     }
 
+    private var visibleOwnedCountBadge: Int? {
+        guard gridOptions.showOwned, let ownedCountBadge, ownedCountBadge > 1 else { return nil }
+        return ownedCountBadge
+    }
+
     private var cardCornerRadius: CGFloat {
         (gridOptions.showCardName || showsFooter) ? 18 : 0
     }
@@ -120,7 +127,8 @@ struct CardGridCell: View {
             BrowseCardThumbnailView(
                 imageURL: safeImageURL(relativePath: card.imageLowSrc),
                 isOwned: isOwned,
-                isWishlisted: isWishlisted
+                isWishlisted: isWishlisted,
+                ownedCountBadge: visibleOwnedCountBadge
             )
             .frame(maxWidth: .infinity)
             .aspectRatio(5/7, contentMode: .fit)
@@ -206,6 +214,7 @@ private struct BrowseCardThumbnailView: View {
     let imageURL: URL?
     var isOwned = false
     var isWishlisted = false
+    var ownedCountBadge: Int? = nil
 
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
@@ -223,7 +232,7 @@ private struct BrowseCardThumbnailView: View {
                         .aspectRatio(5 / 7, contentMode: .fit)
                 }
             }
-            if isOwned || isWishlisted {
+            if ownedCountBadge != nil || isOwned || isWishlisted {
                 browseStatusBadge
                     .padding(6)
             }
@@ -232,7 +241,19 @@ private struct BrowseCardThumbnailView: View {
 
     @ViewBuilder
     private var browseStatusBadge: some View {
-        if isOwned {
+        if let ownedCountBadge {
+            Text("x\(ownedCountBadge)")
+                .font(.system(size: 10, weight: .bold, design: .rounded))
+                .lineLimit(1)
+                .minimumScaleFactor(0.65)
+                .foregroundStyle(.white)
+                .frame(width: 24, height: 24)
+                .background(
+                    Circle()
+                        .fill(.green)
+                )
+                .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+        } else if isOwned {
             Image(systemName: "checkmark.circle.fill")
                 .font(.system(size: 24, weight: .semibold))
                 .foregroundStyle(.white, .green)
@@ -1418,6 +1439,9 @@ private struct BrowseSetsTabContent: View {
     let onSelectSet: (TCGSet) -> Void
 
     @State private var uniqueCollectedCountBySetCode: [String: Int] = [:]
+    @State private var setMarketValueUSDByKey: [String: Double] = [:]
+    @State private var loadedSetMarketValueKeys: Set<String> = []
+    @State private var loadingSetMarketValueKeys: Set<String> = []
 
     private var filteredSets: [TCGSet] {
         let sets = services.cardData.allSetsSortedByReleaseDateNewestFirst()
@@ -1499,13 +1523,29 @@ private struct BrowseSetsTabContent: View {
                                                     .progressViewStyle(.linear)
                                                     .tint(.accentColor)
                                                     .padding(.top, 2)
-                                                Text("\(progress.collected) out of \(total) collected")
-                                                    .font(.caption2)
-                                                    .foregroundStyle(.secondary)
+                                                HStack(spacing: 8) {
+                                                    Text("\(progress.collected) out of \(total) collected")
+                                                        .font(.caption2)
+                                                        .foregroundStyle(.secondary)
+                                                        .lineLimit(1)
+                                                    Spacer(minLength: 6)
+                                                    Text(setMarketValueText(for: set))
+                                                        .font(.caption2.weight(.semibold))
+                                                        .foregroundStyle(.secondary)
+                                                        .lineLimit(1)
+                                                }
                                             } else {
-                                                Text("\(progress.collected) collected")
-                                                    .font(.caption2)
-                                                    .foregroundStyle(.secondary)
+                                                HStack(spacing: 8) {
+                                                    Text("\(progress.collected) collected")
+                                                        .font(.caption2)
+                                                        .foregroundStyle(.secondary)
+                                                        .lineLimit(1)
+                                                    Spacer(minLength: 6)
+                                                    Text(setMarketValueText(for: set))
+                                                        .font(.caption2.weight(.semibold))
+                                                        .foregroundStyle(.secondary)
+                                                        .lineLimit(1)
+                                                }
                                             }
                                         }
 
@@ -1520,6 +1560,9 @@ private struct BrowseSetsTabContent: View {
                                     .contentShape(Rectangle())
                                 }
                                 .buttonStyle(.plain)
+                                .task(id: setMarketValueTaskID(for: set)) {
+                                    await ensureSetMarketValueLoaded(for: set)
+                                }
 
                                 Divider()
                                     .padding(.leading, 124)
@@ -1569,6 +1612,66 @@ private struct BrowseSetsTabContent: View {
     private func setProgress(for set: TCGSet) -> (collected: Int, total: Int?) {
         let collected = uniqueCollectedCountBySetCode[set.setCode.lowercased()] ?? 0
         return (collected, set.cardCountTotal)
+    }
+
+    private func setMarketValueTaskID(for set: TCGSet) -> String {
+        "\(services.brandSettings.selectedCatalogBrand.rawValue)|\(set.setCode.lowercased())"
+    }
+
+    private func setMarketValueKey(for set: TCGSet) -> String {
+        setMarketValueTaskID(for: set)
+    }
+
+    private func setMarketValueText(for set: TCGSet) -> String {
+        let key = setMarketValueKey(for: set)
+        if let usd = setMarketValueUSDByKey[key] {
+            return services.priceDisplay.currency.format(amountUSD: usd, usdToGbp: services.pricing.usdToGbp)
+        }
+        if loadedSetMarketValueKeys.contains(key) {
+            return "—"
+        }
+        return "…"
+    }
+
+    @MainActor
+    private func ensureSetMarketValueLoaded(for set: TCGSet) async {
+        let key = setMarketValueKey(for: set)
+        if loadedSetMarketValueKeys.contains(key) || loadingSetMarketValueKeys.contains(key) {
+            return
+        }
+        loadingSetMarketValueKeys.insert(key)
+        defer { loadingSetMarketValueKeys.remove(key) }
+
+        let cards = await services.cardData.loadCards(forSetCode: set.setCode)
+        var totalUSD = 0.0
+        var pricedCardCount = 0
+
+        for card in cards {
+            guard let entry = await services.pricing.pricing(for: card) else { continue }
+            guard let cheapestUSD = cheapestVariantMarketUSD(for: entry), cheapestUSD > 0 else { continue }
+            totalUSD += cheapestUSD
+            pricedCardCount += 1
+        }
+
+        if pricedCardCount > 0 {
+            setMarketValueUSDByKey[key] = totalUSD
+        } else {
+            setMarketValueUSDByKey.removeValue(forKey: key)
+        }
+        loadedSetMarketValueKeys.insert(key)
+    }
+
+    private func cheapestVariantMarketUSD(for entry: CardPricingEntry) -> Double? {
+        if let scrydex = entry.scrydex, !scrydex.isEmpty {
+            return scrydex.values
+                .compactMap { $0.marketEstimateUSD() }
+                .filter { $0 > 0 }
+                .min()
+        }
+        if let usd = entry.tcgplayerMarketEstimateUSD(), usd > 0 {
+            return usd
+        }
+        return nil
     }
 
     @MainActor
@@ -1629,6 +1732,7 @@ private struct BrowseSetsTabContent: View {
 
 private struct BrowsePokemonTabContent: View {
     @Environment(AppServices.self) private var services
+    @Query private var collectionItems: [CollectionItem]
 
     let query: String
     let onSelectRoute: (BrowseInlineDetailRoute) -> Void
@@ -1637,17 +1741,26 @@ private struct BrowsePokemonTabContent: View {
     @State private var isLoading = true
     @State private var characterRows: [String] = []
     @State private var subtypeRows: [String] = []
+    @State private var ownedNationalDexIDs: Set<Int> = []
+    @State private var dexCollectionProgress: [Int: (owned: Int, total: Int)] = [:]
+    @State private var hideCollectedPokemon = false
 
     private let pokemonColumnCount = 3
 
     private var filteredPokemonRows: [NationalDexPokemon] {
         let normalizedQuery = normalizedBrowseSearchText(query)
-        guard !normalizedQuery.isEmpty else { return rows }
-        return rows.filter { item in
-            normalizedBrowseSearchText(item.name).contains(normalizedQuery)
-                || normalizedBrowseSearchText(item.displayName).contains(normalizedQuery)
-                || normalizedBrowseSearchText(String(item.nationalDexNumber)).contains(normalizedQuery)
+        var filtered = rows
+        if !normalizedQuery.isEmpty {
+            filtered = filtered.filter { item in
+                normalizedBrowseSearchText(item.name).contains(normalizedQuery)
+                    || normalizedBrowseSearchText(item.displayName).contains(normalizedQuery)
+                    || normalizedBrowseSearchText(String(item.nationalDexNumber)).contains(normalizedQuery)
+            }
         }
+        if hideCollectedPokemon {
+            filtered = filtered.filter { !ownedNationalDexIDs.contains($0.nationalDexNumber) }
+        }
+        return filtered
     }
 
     private var filteredCharacterRows: [String] {
@@ -1660,6 +1773,19 @@ private struct BrowsePokemonTabContent: View {
         let normalizedQuery = normalizedBrowseSearchText(query)
         guard !normalizedQuery.isEmpty else { return subtypeRows }
         return subtypeRows.filter { normalizedBrowseSearchText($0).contains(normalizedQuery) }
+    }
+
+    private var ownedDexTaskKey: String {
+        let collectionSnapshot = collectionItems
+            .filter { $0.quantity > 0 }
+            .map { "\($0.cardID)|\($0.quantity)" }
+            .sorted()
+            .joined(separator: ",")
+        let setSnapshot = services.cardData.sets
+            .map(\.setCode)
+            .sorted()
+            .joined(separator: ",")
+        return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(setSnapshot)#\(collectionSnapshot)"
     }
 
     var body: some View {
@@ -1679,6 +1805,9 @@ private struct BrowsePokemonTabContent: View {
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, newBrand in
             scheduleRowLoad(for: newBrand)
+        }
+        .task(id: ownedDexTaskKey) {
+            await refreshOwnedNationalDexIDs()
         }
     }
 
@@ -1704,45 +1833,78 @@ private struct BrowsePokemonTabContent: View {
             .frame(maxWidth: .infinity, minHeight: 280)
             .padding(.horizontal, 16)
         } else if filteredPokemonRows.isEmpty {
-            ContentUnavailableView(
-                "No matching Pokémon",
-                systemImage: "magnifyingglass",
-                description: Text("Try a different name or National Dex number.")
-            )
-            .frame(maxWidth: .infinity, minHeight: 280)
-            .padding(.horizontal, 16)
-        } else {
-            EagerVGrid(items: filteredPokemonRows, columns: pokemonColumnCount, spacing: 12) { item in
-                Button {
-                    onSelectRoute(.dex(dexId: item.nationalDexNumber, displayName: item.displayName))
-                } label: {
-                    VStack(spacing: 6) {
-                        CachedAsyncImage(
-                            url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl)
-                        ) { img in
-                            img.resizable().scaledToFit()
-                        } placeholder: {
-                            Color.gray.opacity(0.12)
-                        }
-                        .frame(height: 140)
+            VStack(alignment: .leading, spacing: 10) {
+                Toggle("Hide Collected", isOn: $hideCollectedPokemon)
+                    .font(.caption.weight(.semibold))
+                    .toggleStyle(.switch)
+                    .padding(.horizontal, 16)
 
-                        Text(item.displayName)
-                            .font(.caption2)
-                            .foregroundStyle(.primary)
-                            .lineLimit(2)
-                            .multilineTextAlignment(.center)
-
-                        Text("#\(item.nationalDexNumber)")
-                            .font(.caption2)
-                            .foregroundStyle(.secondary)
-                    }
-                    .padding(6)
-                    .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.08)))
-                }
-                .buttonStyle(.plain)
+                ContentUnavailableView(
+                    "No matching Pokémon",
+                    systemImage: "magnifyingglass",
+                    description: Text("Try a different name or National Dex number.")
+                )
+                .frame(maxWidth: .infinity, minHeight: 280)
+                .padding(.horizontal, 16)
             }
-            .padding(.horizontal, 16)
-            .padding(.bottom, 16)
+        } else {
+            VStack(alignment: .leading, spacing: 10) {
+                Toggle("Hide Collected", isOn: $hideCollectedPokemon)
+                    .font(.caption.weight(.semibold))
+                    .toggleStyle(.switch)
+                    .padding(.horizontal, 16)
+
+                EagerVGrid(items: filteredPokemonRows, columns: pokemonColumnCount, spacing: 12) { item in
+                    Button {
+                        onSelectRoute(.dex(dexId: item.nationalDexNumber, displayName: item.displayName))
+                    } label: {
+                        VStack(spacing: 6) {
+                            CachedAsyncImage(
+                                url: AppConfiguration.pokemonArtURL(imageFileName: item.imageUrl)
+                            ) { img in
+                                img.resizable().scaledToFit()
+                            } placeholder: {
+                                Color.gray.opacity(0.12)
+                            }
+                            .frame(height: 140)
+
+                            HStack(alignment: .center, spacing: 8) {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text(item.displayName)
+                                        .font(.caption2)
+                                        .foregroundStyle(.primary)
+                                        .lineLimit(2)
+                                        .multilineTextAlignment(.leading)
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+
+                                    Text("#\(item.nationalDexNumber)")
+                                        .font(.caption2)
+                                        .foregroundStyle(.secondary)
+
+                                    Text(dexCollectionSummary(for: item.nationalDexNumber))
+                                        .font(.caption2)
+                                        .foregroundStyle(.tertiary)
+                                        .lineLimit(1)
+                                        .minimumScaleFactor(0.7)
+                                }
+
+                                Spacer(minLength: 0)
+
+                                if ownedNationalDexIDs.contains(item.nationalDexNumber) {
+                                    PokemonOwnedPokeBallBadge()
+                                        .frame(width: 18, height: 18)
+                                        .accessibilityHidden(true)
+                                }
+                            }
+                        }
+                        .padding(6)
+                        .background(RoundedRectangle(cornerRadius: 8).fill(Color.gray.opacity(0.08)))
+                    }
+                    .buttonStyle(.plain)
+                }
+                .padding(.horizontal, 16)
+                .padding(.bottom, 16)
+            }
         }
     }
 
@@ -1811,6 +1973,58 @@ private struct BrowsePokemonTabContent: View {
             characterRows = services.cardData.onePieceCharacterNames
             subtypeRows = services.cardData.onePieceCharacterSubtypes
         }
+    }
+
+    @MainActor
+    private func refreshOwnedNationalDexIDs() async {
+        guard services.brandSettings.selectedCatalogBrand == .pokemon else {
+            ownedNationalDexIDs = []
+            dexCollectionProgress = [:]
+            return
+        }
+
+        var allPokemonCards: [Card] = []
+        for set in services.cardData.sets {
+            allPokemonCards.append(contentsOf: await services.cardData.loadCards(forSetCode: set.setCode))
+        }
+
+        var totalByDex: [Int: Int] = [:]
+        for card in allPokemonCards {
+            guard let dexIDs = card.dexIds else { continue }
+            for dexID in Set(dexIDs) {
+                totalByDex[dexID, default: 0] += 1
+            }
+        }
+
+        let ownedCardIDs: Set<String> = Set(collectionItems.compactMap { item in
+            guard item.quantity > 0 else { return nil }
+            guard TCGBrand.inferredFromMasterCardId(item.cardID) == .pokemon else { return nil }
+            return item.cardID
+        })
+
+        var nextOwnedDexIDs: Set<Int> = []
+        var ownedByDex: [Int: Int] = [:]
+        for cardID in ownedCardIDs {
+            guard let card = await services.cardData.loadCard(masterCardId: cardID) else { continue }
+            guard let dexIDs = card.dexIds else { continue }
+            for dexID in Set(dexIDs) {
+                nextOwnedDexIDs.insert(dexID)
+                ownedByDex[dexID, default: 0] += 1
+            }
+        }
+
+        var nextDexCollectionProgress: [Int: (owned: Int, total: Int)] = [:]
+        for (dexID, total) in totalByDex {
+            nextDexCollectionProgress[dexID] = (ownedByDex[dexID] ?? 0, total)
+        }
+
+        ownedNationalDexIDs = nextOwnedDexIDs
+        dexCollectionProgress = nextDexCollectionProgress
+    }
+
+    private func dexCollectionSummary(for dexID: Int) -> String {
+        let progress = dexCollectionProgress[dexID] ?? (0, 0)
+        return "\(progress.owned) of \(progress.total) collected"
     }
 
     private func listSection<RowContent: View>(
@@ -1907,6 +2121,30 @@ private struct BrowseGridCardCell: View {
             if gridOptions.showPricing {
                 BrowseGridPriceText(card: card)
             }
+        }
+    }
+}
+
+private struct PokemonOwnedPokeBallBadge: View {
+    var body: some View {
+        ZStack {
+            Circle()
+                .fill(Color.white)
+                .overlay(Circle().stroke(Color.primary.opacity(0.9), lineWidth: 1.1))
+
+            Circle()
+                .trim(from: 0, to: 0.5)
+                .fill(Color.red)
+                .rotationEffect(.degrees(180))
+
+            Rectangle()
+                .fill(Color.primary.opacity(0.9))
+                .frame(height: 1.1)
+
+            Circle()
+                .fill(Color.white)
+                .frame(width: 6.6, height: 6.6)
+                .overlay(Circle().stroke(Color.primary.opacity(0.9), lineWidth: 1.0))
         }
     }
 }
@@ -2884,6 +3122,7 @@ struct BrowseGridOptionsMenuContent: View {
             let count = gridOptions?.wrappedValue.columnCount ?? services.browseGridOptions.options.columnCount
             Text("Columns: \(count)")
         }
+        .tint(.primary)
     }
 
     private func gridOptionBinding<T>(_ keyPath: WritableKeyPath<BrowseGridOptions, T>) -> Binding<T> {
