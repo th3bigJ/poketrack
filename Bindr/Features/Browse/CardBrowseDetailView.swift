@@ -94,6 +94,7 @@ private struct CardBrowseDetailPage: View {
     @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.modelContext) private var modelContext
+    @Environment(\.openURL) private var openURL
     @Query private var collectionItems: [CollectionItem]
 
     let card: Card
@@ -222,6 +223,7 @@ private struct CardBrowseDetailPage: View {
                 cardMetaRow
 
                 CardPricingPanel(card: card)
+                recentSoldOnEbayButton
 
                 if showsCollectionSection {
                     collectionSection
@@ -274,6 +276,66 @@ private struct CardBrowseDetailPage: View {
         } message: {
             Text(wishlistAlertMessage ?? "")
         }
+    }
+
+    private var recentSoldOnEbayButton: some View {
+        Button {
+            guard let url = ebayRecentSoldURL else { return }
+            openURL(url)
+        } label: {
+            HStack(spacing: 10) {
+                ebayWordmark
+                Text("Recent Sold on eBay")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
+                Spacer(minLength: 0)
+                Image(systemName: "arrow.up.right.square")
+                    .font(.footnote.weight(.semibold))
+                    .foregroundStyle(.secondary)
+            }
+            .padding(.horizontal, 14)
+            .padding(.vertical, 12)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .background(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .fill(sectionInsetBackground)
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 14, style: .continuous)
+                    .stroke(sectionBorder, lineWidth: 1)
+            )
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel("Open recent sold listings on eBay")
+    }
+
+    private var ebayWordmark: some View {
+        HStack(spacing: 0) {
+            Text("e").foregroundStyle(Color(red: 0.89, green: 0.15, blue: 0.13))
+            Text("B").foregroundStyle(Color(red: 0.00, green: 0.38, blue: 0.75))
+            Text("a").foregroundStyle(Color(red: 0.97, green: 0.74, blue: 0.06))
+            Text("y").foregroundStyle(Color(red: 0.44, green: 0.68, blue: 0.11))
+        }
+        .font(.system(size: 18, weight: .bold, design: .rounded))
+    }
+
+    private var ebayRecentSoldURL: URL? {
+        let cardName = card.cardName.trimmingCharacters(in: .whitespacesAndNewlines)
+        let setName = cleaned(set?.name) ?? card.setCode.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cardNumber = (cleaned(card.printedNumber) ?? cleaned(card.cardNumber) ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        let searchText = [cardName, setName, cardNumber]
+            .filter { !$0.isEmpty }
+            .joined(separator: " ")
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !searchText.isEmpty else { return nil }
+
+        var components = URLComponents(string: "https://www.ebay.com/sch/i.html")
+        components?.queryItems = [
+            URLQueryItem(name: "_nkw", value: searchText),
+            URLQueryItem(name: "LH_Sold", value: "1"),
+            URLQueryItem(name: "LH_Complete", value: "1")
+        ]
+        return components?.url
     }
 
     private var cardImage: some View {

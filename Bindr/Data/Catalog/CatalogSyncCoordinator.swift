@@ -756,10 +756,10 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
             (DailyBlobKey.marketTrend, AppConfiguration.r2MarketURL(path: DailyBlobPath.marketTrend)),
         ]
         if enabledBrands.contains(.pokemon) {
-            keys.insert(
-                (DailyBlobKey.pokedataEnglishPokemonPrices, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPrices)),
-                at: 0
-            )
+            keys.insert((DailyBlobKey.pokedataEnglishPokemonPriceTrends, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPriceTrends)), at: 0)
+            keys.insert((DailyBlobKey.pokedataEnglishPokemonPriceHistory, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPriceHistory)), at: 0)
+            keys.insert((DailyBlobKey.pokedataEnglishPokemonPrices, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonPrices)), at: 0)
+            keys.insert((DailyBlobKey.pokedataEnglishPokemonProducts, AppConfiguration.r2MarketURL(path: DailyBlobPath.pokedataEnglishPokemonProducts)), at: 0)
         }
         let staleKeys = keys.filter { key, _ in
             guard let last = store.dailyBlobFetchedAt(key: key) else { return true }
@@ -807,14 +807,20 @@ final class CatalogSyncCoordinator: @unchecked Sendable {
 }
 
 enum DailyBlobKey {
+    static let pokedataEnglishPokemonProducts = "pokedata_english_pokemon_products"
     static let pokedataEnglishPokemonPrices = "pokedata_english_pokemon_prices"
+    static let pokedataEnglishPokemonPriceHistory = "pokedata_english_pokemon_price_history"
+    static let pokedataEnglishPokemonPriceTrends = "pokedata_english_pokemon_price_trends"
     static let priceTrends = "price_trends"
     static let marketTrend = "market_trend"
 }
 
 /// Paths relative to `r2MarketPathPrefix` (default: bucket root). Adjust in `AppConfiguration` / plist if your tidy layout differs.
 enum DailyBlobPath {
-    static let pokedataEnglishPokemonPrices = "sealed-products/pokedata/pokedata-english-pokemon-prices.json"
+    static let pokedataEnglishPokemonProducts = "data/pokedata-english-pokemon-products.json"
+    static let pokedataEnglishPokemonPrices = "pricing/pokedata-english-pokemon-prices.json"
+    static let pokedataEnglishPokemonPriceHistory = "pricing/pokedata-english-pokemon-price-history.json"
+    static let pokedataEnglishPokemonPriceTrends = "pricing/pokedata-english-pokemon-price-trends.json"
     static let priceTrends = "data/price-trends.json"
     static let marketTrend = "pricing/market-trend.json"
 }

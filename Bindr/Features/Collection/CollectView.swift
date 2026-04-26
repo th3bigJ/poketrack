@@ -12,6 +12,7 @@ struct CollectView: View {
     @Query(sort: \CollectionItem.dateAcquired, order: .reverse) private var collectionItems: [CollectionItem]
     @State private var cardsByCardID: [String: Card] = [:]
     @State private var collectionPriceByItemKey: [String: Double] = [:]
+    @State private var selectedSealedProduct: SealedProduct?
 
     // MARK: - Wishlist State
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
@@ -69,6 +70,21 @@ struct CollectView: View {
         collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
     }
 
+    private var sealedProductByID: [Int: SealedProduct] {
+        Dictionary(uniqueKeysWithValues: services.sealedProducts.products.map { ($0.id, $0) })
+    }
+
+    private var sealedProductByCollectionCardID: [String: SealedProduct] {
+        Dictionary(uniqueKeysWithValues: services.sealedProducts.products.map { ($0.collectionCardID, $0) })
+    }
+
+    private var wishlistedSealedCollectionCardIDs: Set<String> {
+        Set(wishlistItems.compactMap { item in
+            guard SealedProduct.parseCollectionProductID(item.cardID) != nil else { return nil }
+            return item.cardID
+        })
+    }
+
     private var visibleWishlistItems: [WishlistItem] {
         wishlistItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
     }
@@ -95,6 +111,12 @@ struct CollectView: View {
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
             services.setupWishlist(modelContext: modelContext)
+            services.sealedProducts.loadFromLocalIfAvailable()
+        }
+        .task {
+            if services.sealedProducts.products.isEmpty {
+                await services.sealedProducts.refreshFromNetworkAndStoreLocallyIfNeeded()
+            }
         }
         .task(id: collectionSignature) {
             await resolveCollectionCards()
@@ -111,18 +133,15 @@ struct CollectView: View {
             selectedBrand = brand
         }
         .onChange(of: selectedBrand) { _, _ in
-            collectionFilters = defaultCollectionFilters()
-            wishlistFilters = BrowseCardGridFilters()
+            // Keep persisted filters when switching brands.
         }
         .onChange(of: collectionShareSyncSignature) { _, _ in
             services.socialShare.scheduleAutoSyncCollection(items: collectionItems)
         }
-    }
-
-    private func defaultCollectionFilters() -> BrowseCardGridFilters {
-        var filters = BrowseCardGridFilters()
-        filters.sortBy = .price
-        return filters
+        .sheet(item: $selectedSealedProduct) { product in
+            SealedProductBrowseDetailView(products: [product], startProductID: product.id)
+                .environment(services)
+        }
     }
 
     // MARK: - Segmented Control
@@ -202,7 +221,20 @@ struct CollectView: View {
 
     @ViewBuilder
     private func collectionCell(for item: CollectionItem) -> some View {
-        if let card = cardsByCardID[item.cardID] {
+        if let product = sealedProduct(for: item) {
+            Button { selectedSealedProduct = product } label: {
+                SealedProductGridCell(
+                    product: product,
+                    gridOptions: gridOptions,
+                    priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
+                    isOwned: item.quantity > 0,
+                    isWishlisted: wishlistedSealedCollectionCardIDs.contains(product.collectionCardID)
+                )
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(CardCellButtonStyle())
+            .accessibilityLabel("\(product.name), \(item.quantity) owned")
+        } else if let card = cardsByCardID[item.cardID] {
             Button { presentCard(card, orderedCollectionCards) } label: {
                 CardGridCell(
                     card: card,
@@ -231,14 +263,24 @@ struct CollectView: View {
         if collectionFilters.showDuplicates {
             items = items.filter { $0.quantity >= 2 }
         }
-        if collectionFilters.hasActiveFieldFilters || !collectionQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        let trimmedQuery = collectionQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+        if collectionFilters.hasActiveFieldFilters || !trimmedQuery.isEmpty {
             let filteredCards = filterBrowseCards(
                 resolvedCollectionCards, query: collectionQuery, filters: collectionFilters,
                 ownedCardIDs: Set(items.map { $0.cardID }),
                 brand: activeBrand, sets: services.cardData.sets
             )
             let filteredIDs = Set(filteredCards.map { $0.masterCardId })
-            items = items.filter { filteredIDs.contains($0.cardID) }
+            let hasFieldFilters = collectionFilters.hasActiveFieldFilters
+            let normalizedQuery = trimmedQuery.lowercased()
+            items = items.filter { item in
+                if let product = sealedProduct(for: item) {
+                    guard hasFieldFilters == false else { return false }
+                    guard !normalizedQuery.isEmpty else { return true }
+                    return product.searchBlob.contains(normalizedQuery)
+                }
+                return filteredIDs.contains(item.cardID)
+            }
         }
         return applySortToCollectionItems(items, filters: collectionFilters)
     }
@@ -248,17 +290,26 @@ struct CollectView: View {
         case .acquiredDateNewest, .random:
             return items
         case .cardName:
-            return items.sorted { (cardsByCardID[$0.cardID]?.cardName ?? "") < (cardsByCardID[$1.cardID]?.cardName ?? "") }
+            return items.sorted {
+                collectionDisplayName(for: $0).localizedCaseInsensitiveCompare(collectionDisplayName(for: $1)) == .orderedAscending
+            }
         case .newestSet, .cardNumber:
             return items
         case .price:
             return items.sorted { lhs, rhs in
-                comparePricedItems(
-                    lhsPrice: collectionPriceByItemKey[collectionItemKey(lhs)],
-                    rhsPrice: collectionPriceByItemKey[collectionItemKey(rhs)],
-                    lhsCard: cardsByCardID[lhs.cardID],
-                    rhsCard: cardsByCardID[rhs.cardID]
-                )
+                let lhsPrice = collectionDisplayPrice(for: lhs)
+                let rhsPrice = collectionDisplayPrice(for: rhs)
+                switch (lhsPrice, rhsPrice) {
+                case let (l?, r?):
+                    if l != r { return l > r }
+                case (.some, nil):
+                    return true
+                case (nil, .some):
+                    return false
+                case (nil, nil):
+                    break
+                }
+                return collectionDisplayName(for: lhs).localizedCaseInsensitiveCompare(collectionDisplayName(for: rhs)) == .orderedAscending
             }
         }
     }
@@ -286,6 +337,7 @@ struct CollectView: View {
     private func resolveCollectionCards() async {
         var next = cardsByCardID
         for item in visibleCollectionItems {
+            if sealedProduct(for: item) != nil { continue }
             if next[item.cardID] != nil { continue }
             if let c = await services.cardData.loadCard(masterCardId: item.cardID) { next[item.cardID] = c }
         }
@@ -306,6 +358,38 @@ struct CollectView: View {
         collectFilterEnergyOptions = cardEnergyOptions(cards)
         collectFilterRarityOptions = cardRarityOptions(cards)
         collectFilterTrainerTypeOptions = cardTrainerTypeOptions(cards)
+    }
+
+    private func sealedProduct(for item: CollectionItem) -> SealedProduct? {
+        guard item.itemKind == ProductKind.sealedProduct.rawValue || SealedProduct.parseCollectionProductID(item.cardID) != nil else {
+            return nil
+        }
+        if let product = sealedProductByCollectionCardID[item.cardID] {
+            return product
+        }
+        if let rawID = item.sealedProductId,
+           let productID = Int(rawID),
+           let product = sealedProductByID[productID] {
+            return product
+        }
+        if let productID = SealedProduct.parseCollectionProductID(item.cardID) {
+            return sealedProductByID[productID]
+        }
+        return nil
+    }
+
+    private func collectionDisplayName(for item: CollectionItem) -> String {
+        if let product = sealedProduct(for: item) {
+            return product.name
+        }
+        return cardsByCardID[item.cardID]?.cardName ?? item.cardID
+    }
+
+    private func collectionDisplayPrice(for item: CollectionItem) -> Double? {
+        if let product = sealedProduct(for: item) {
+            return services.sealedProducts.marketPriceUSD(for: product.id)
+        }
+        return collectionPriceByItemKey[collectionItemKey(item)]
     }
 
     // MARK: - Wishlist Content
@@ -342,7 +426,20 @@ struct CollectView: View {
 
     @ViewBuilder
     private func wishlistCell(for item: WishlistItem) -> some View {
-        if let card = wishlistCardsByID[item.cardID] {
+        if let product = sealedProduct(for: item) {
+            Button { selectedSealedProduct = product } label: {
+                SealedProductGridCell(
+                    product: product,
+                    gridOptions: gridOptions,
+                    priceUSD: services.sealedProducts.marketPriceUSD(for: product.id),
+                    isOwned: false,
+                    isWishlisted: true
+                )
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(CardCellButtonStyle())
+            .accessibilityLabel(product.name)
+        } else if let card = wishlistCardsByID[item.cardID] {
             Button { presentCard(card, orderedWishlistCards) } label: {
                 CardGridCell(
                     card: card,
@@ -366,13 +463,23 @@ struct CollectView: View {
 
     private var filteredWishlistItems: [WishlistItem] {
         var items = visibleWishlistItems
-        if wishlistFilters.hasActiveFieldFilters || !wishlistQuery.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+        let trimmedQuery = wishlistQuery.trimmingCharacters(in: .whitespacesAndNewlines)
+        if wishlistFilters.hasActiveFieldFilters || !trimmedQuery.isEmpty {
             let filteredCards = filterBrowseCards(
                 resolvedWishlistCards, query: wishlistQuery, filters: wishlistFilters,
                 ownedCardIDs: [], brand: activeBrand, sets: services.cardData.sets
             )
             let filteredIDs = Set(filteredCards.map { $0.masterCardId })
-            items = items.filter { filteredIDs.contains($0.cardID) }
+            let hasFieldFilters = wishlistFilters.hasActiveFieldFilters
+            let normalizedQuery = trimmedQuery.lowercased()
+            items = items.filter { item in
+                if let product = sealedProduct(for: item) {
+                    guard hasFieldFilters == false else { return false }
+                    guard !normalizedQuery.isEmpty else { return true }
+                    return product.searchBlob.contains(normalizedQuery)
+                }
+                return filteredIDs.contains(item.cardID)
+            }
         }
         return applySortToWishlistItems(items, filters: wishlistFilters)
     }
@@ -382,17 +489,26 @@ struct CollectView: View {
         case .acquiredDateNewest, .random:
             return items
         case .cardName:
-            return items.sorted { (wishlistCardsByID[$0.cardID]?.cardName ?? "") < (wishlistCardsByID[$1.cardID]?.cardName ?? "") }
+            return items.sorted {
+                wishlistDisplayName(for: $0).localizedCaseInsensitiveCompare(wishlistDisplayName(for: $1)) == .orderedAscending
+            }
         case .newestSet, .cardNumber:
             return items
         case .price:
             return items.sorted { lhs, rhs in
-                comparePricedItems(
-                    lhsPrice: wishlistPriceByItemKey[wishlistItemKey(lhs)],
-                    rhsPrice: wishlistPriceByItemKey[wishlistItemKey(rhs)],
-                    lhsCard: wishlistCardsByID[lhs.cardID],
-                    rhsCard: wishlistCardsByID[rhs.cardID]
-                )
+                let lhsPrice = wishlistDisplayPrice(for: lhs)
+                let rhsPrice = wishlistDisplayPrice(for: rhs)
+                switch (lhsPrice, rhsPrice) {
+                case let (l?, r?):
+                    if l != r { return l > r }
+                case (.some, nil):
+                    return true
+                case (nil, .some):
+                    return false
+                case (nil, nil):
+                    break
+                }
+                return wishlistDisplayName(for: lhs).localizedCaseInsensitiveCompare(wishlistDisplayName(for: rhs)) == .orderedAscending
             }
         }
     }
@@ -413,6 +529,7 @@ struct CollectView: View {
     private func resolveWishlistCards() async {
         var next = wishlistCardsByID
         for item in visibleWishlistItems {
+            if sealedProduct(for: item) != nil { continue }
             if next[item.cardID] != nil { continue }
             if let c = await services.cardData.loadCard(masterCardId: item.cardID) { next[item.cardID] = c }
         }
@@ -428,6 +545,30 @@ struct CollectView: View {
         wishlistPriceByItemKey = nextPrices
 
         ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: 0, count: 24)
+    }
+
+    private func sealedProduct(for item: WishlistItem) -> SealedProduct? {
+        if let product = sealedProductByCollectionCardID[item.cardID] {
+            return product
+        }
+        if let productID = SealedProduct.parseCollectionProductID(item.cardID) {
+            return sealedProductByID[productID]
+        }
+        return nil
+    }
+
+    private func wishlistDisplayName(for item: WishlistItem) -> String {
+        if let product = sealedProduct(for: item) {
+            return product.name
+        }
+        return wishlistCardsByID[item.cardID]?.cardName ?? item.cardID
+    }
+
+    private func wishlistDisplayPrice(for item: WishlistItem) -> Double? {
+        if let product = sealedProduct(for: item) {
+            return services.sealedProducts.marketPriceUSD(for: product.id)
+        }
+        return wishlistPriceByItemKey[wishlistItemKey(item)]
     }
 
     private func collectionItemKey(_ item: CollectionItem) -> String {

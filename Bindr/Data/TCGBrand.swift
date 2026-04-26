@@ -40,6 +40,8 @@ enum TCGBrand: String, CaseIterable, Codable, Identifiable, Sendable {
 
     /// Catalog / wishlist / collection: ONE PIECE uses Scrydex-style `priceKey` ids with `::`.
     static func inferredFromMasterCardId(_ masterCardId: String) -> TCGBrand {
+        if masterCardId.hasPrefix("sealed:pokemon:") { return .pokemon }
+        if masterCardId.hasPrefix("sealed:onepiece:") { return .onePiece }
         if masterCardId.contains("::") { return .onePiece }
         return .pokemon
     }

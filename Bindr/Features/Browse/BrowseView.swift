@@ -462,7 +462,6 @@ struct BrowseView: View {
     @State private var isBrowseBodyReady = false
     @State private var currentBrand: TCGBrand = .pokemon
     @State private var lastAutoLoadRowCount = 0
-    private let inlineDetailColumnCount = 3
 
     private var inlineDetailPriceCacheTaskKey: String {
         let ids = inlineDetailCards.map(\.masterCardId).joined(separator: "|")
@@ -568,7 +567,6 @@ struct BrowseView: View {
                 guard isViewVisible else { return }
                 isInlineDetailPresented = (newValue != nil)
                 inlineDetailQuery = ""
-                inlineDetailFilters = BrowseCardGridFilters()
                 inlineDetailPriceByCardID = [:]
                 await loadInlineDetailIfNeeded(route: newValue)
             }
@@ -872,14 +870,7 @@ struct BrowseView: View {
                 }
             }
         case .sealed:
-            ContentUnavailableView(
-                "Sealed coming soon",
-                systemImage: "shippingbox",
-                description: Text("This tab is a placeholder until sealed products are added.")
-            )
-            .frame(maxWidth: .infinity, minHeight: 280)
-            .padding(.horizontal, 16)
-            .padding(.bottom, 16)
+            BrowseSealedTabContent(query: query, filters: filters, gridOptions: gridOptions)
         }
     }
 
@@ -901,7 +892,7 @@ struct BrowseView: View {
             .padding(.horizontal, 16)
             .padding(.bottom, 16)
         } else {
-            EagerVGrid(items: filteredCards, columns: inlineDetailColumnCount, spacing: 12) { card in
+            EagerVGrid(items: filteredCards, columns: safeColumnCount, spacing: 12) { card in
                 let index = filteredCards.firstIndex(where: { $0.id == card.id }) ?? 0
                 Button {
                     presentCard(card, filteredCards)
@@ -925,7 +916,7 @@ struct BrowseView: View {
     }
 
     private var filteredInlineDetailCards: [Card] {
-        filterBrowseCards(
+        let filtered = filterBrowseCards(
             inlineDetailCards,
             query: inlineDetailQuery,
             filters: inlineDetailFilters,
@@ -934,6 +925,10 @@ struct BrowseView: View {
             sets: services.cardData.sets,
             priceByCardID: inlineDetailPriceByCardID
         )
+        if case .some(.set(_)) = inlineDetailRoute, inlineDetailFilters.sortBy == .cardNumber {
+            return Array(filtered.reversed())
+        }
+        return filtered
     }
 
     @MainActor
@@ -1848,6 +1843,12 @@ private struct BrowsePokemonTabContent: View {
         return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(setSnapshot)#\(collectionSnapshot)"
     }
 
+    private var hideCollectedToggleTitle: String {
+        let total = rows.count
+        let collected = min(ownedNationalDexIDs.count, total)
+        return "Hide Collected (\(collected) of \(total) Pokemon collected)"
+    }
+
     var body: some View {
         Group {
             if isLoading {
@@ -1894,7 +1895,7 @@ private struct BrowsePokemonTabContent: View {
             .padding(.horizontal, 16)
         } else if filteredPokemonRows.isEmpty {
             VStack(alignment: .leading, spacing: 10) {
-                Toggle("Hide Collected", isOn: $hideCollectedPokemon)
+                Toggle(hideCollectedToggleTitle, isOn: $hideCollectedPokemon)
                     .font(.caption.weight(.semibold))
                     .toggleStyle(.switch)
                     .padding(.horizontal, 16)
@@ -1909,7 +1910,7 @@ private struct BrowsePokemonTabContent: View {
             }
         } else {
             VStack(alignment: .leading, spacing: 10) {
-                Toggle("Hide Collected", isOn: $hideCollectedPokemon)
+                Toggle(hideCollectedToggleTitle, isOn: $hideCollectedPokemon)
                     .font(.caption.weight(.semibold))
                     .toggleStyle(.switch)
                     .padding(.horizontal, 16)
@@ -2968,6 +2969,8 @@ struct BrowseFilterToolbarButton: View {
 struct FilterMenuConfig {
     var showSortBy: Bool = true
     var showAcquiredDateSort: Bool = false
+    var showRandomSort: Bool = true
+    var showCardNumberSort: Bool = true
     var showBrandFilters: Bool = true
     var showRarity: Bool = true
     var showRarePlusOnly: Bool = true
@@ -2977,7 +2980,14 @@ struct FilterMenuConfig {
     var defaultSortBy: BrowseCardGridSortOption = .random
 
     static let browse = FilterMenuConfig()
-    static let collect = FilterMenuConfig(showAcquiredDateSort: true, showHideOwned: false, showShowDuplicates: true, defaultSortBy: .price)
+    static let collect = FilterMenuConfig(
+        showAcquiredDateSort: true,
+        showRandomSort: false,
+        showCardNumberSort: false,
+        showHideOwned: false,
+        showShowDuplicates: true,
+        defaultSortBy: .price
+    )
 }
 
 struct BrowseGridFiltersMenuContent: View {
@@ -3007,7 +3017,9 @@ struct BrowseGridFiltersMenuContent: View {
             Menu(menuTitle("Sort by", summary: filters.sortBy.title)) {
                 Picker("Sort by", selection: $filters.sortBy) {
                     ForEach(BrowseCardGridSortOption.allCases.filter {
-                        $0 != .acquiredDateNewest || config.showAcquiredDateSort
+                        ($0 != .acquiredDateNewest || config.showAcquiredDateSort)
+                            && ($0 != .random || config.showRandomSort)
+                            && ($0 != .cardNumber || config.showCardNumberSort)
                     }) { option in
                         Text(option.title).tag(option)
                     }
@@ -3019,7 +3031,7 @@ struct BrowseGridFiltersMenuContent: View {
             .menuOrder(.fixed)
         }
 
-        if !isAllBrands {
+        if !isAllBrands && config.showBrandFilters {
         Section("Filters") {
             if brand == .onePiece {
                 filterMenu(title: "Card type", summary: selectionSummary(for: filters.opCardTypes)) {
@@ -3124,7 +3136,7 @@ struct BrowseGridFiltersMenuContent: View {
                 }
             }
         }
-        } // end if !isAllBrands
+        } // end if !isAllBrands && showBrandFilters
 
         if config.showGridOptions {
             Section("Grid options") {

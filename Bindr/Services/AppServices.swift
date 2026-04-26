@@ -8,6 +8,7 @@ final class AppServices {
     let brandsManifest = BrandsManifestService()
     let brandSettings: BrandSettings
     let cardData: CardDataService
+    let sealedProducts = SealedProductService()
     let pricing = PricingService()
     let cloudSettings: CloudSettingsService
     let priceDisplay: PriceDisplaySettings
@@ -207,6 +208,8 @@ final class AppServices {
             bootstrapProgress = weightSync + weightLoadSets + weightDex + weightOnePieceBrowse
         }
 
+        sealedProducts.loadFromLocalIfAvailable()
+
         if updateBootstrapProgressUI {
             bootstrapStatus = "Checking purchases…"
         }
@@ -271,6 +274,8 @@ final class AppServices {
             cardData.clearOnePieceBrowseMetadata()
             catalogDownloadProgress = 0.98
         }
+
+        sealedProducts.loadFromLocalIfAvailable()
 
         catalogDownloadStatus = "Done."
         catalogDownloadProgress = 1

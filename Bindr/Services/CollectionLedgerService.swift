@@ -437,6 +437,62 @@ final class CollectionLedgerService {
         )
     }
 
+    /// Records acquiring a sealed product stack.
+    func recordSealedProductAcquisition(
+        sealedProductId: String,
+        productName: String,
+        quantity: Int,
+        kind: CollectionAcquisitionKind,
+        currencyCode: String,
+        unitPrice: Double?,
+        cardID: String
+    ) throws {
+        guard quantity > 0 else { return }
+
+        let description = productName.trimmingCharacters(in: .whitespacesAndNewlines)
+        let line = LedgerLine(
+            direction: kind.ledgerDirection.rawValue,
+            productKind: ProductKind.sealedProduct.rawValue,
+            lineDescription: description.isEmpty ? "Sealed product" : description,
+            cardID: cardID,
+            variantKey: "sealed",
+            sealedProductId: sealedProductId,
+            quantity: quantity,
+            unitPrice: unitPrice,
+            currencyCode: currencyCode,
+            feesAmount: nil,
+            sealedStatus: SealedInventoryStatus.sealed.rawValue,
+            counterparty: nil,
+            channel: kind == .packed ? "opened_product" : "sealed",
+            externalRef: nil,
+            transactionGroupId: nil
+        )
+        modelContext.insert(line)
+
+        let item = try findOrCreateSealedStack(
+            cardID: cardID,
+            sealedProductId: sealedProductId
+        )
+        item.quantity += quantity
+        item.dateAcquired = Date()
+        item.sealedStatus = SealedInventoryStatus.sealed.rawValue
+        if let unitPrice {
+            item.purchasePrice = unitPrice
+        }
+
+        let costPerUnit = resolvedUnitCost(kind: kind, unitPrice: unitPrice)
+        let lot = CostLot(
+            quantityRemaining: quantity,
+            unitCost: costPerUnit,
+            currencyCode: currencyCode,
+            collectionItem: item,
+            sourceLedgerLine: line
+        )
+        modelContext.insert(lot)
+
+        try modelContext.save()
+    }
+
     private func resolvedUnitCost(kind: CollectionAcquisitionKind, unitPrice: Double?) -> Double {
         switch kind {
         case .bought, .trade, .gifted:
@@ -551,6 +607,37 @@ final class CollectionLedgerService {
                 && $0.gradingCompany == gradingCompany
                 && $0.grade == grade
         })
+    }
+
+    private func findOrCreateSealedStack(
+        cardID: String,
+        sealedProductId: String
+    ) throws -> CollectionItem {
+        let descriptor = FetchDescriptor<CollectionItem>()
+        let all = try modelContext.fetch(descriptor)
+        if let match = all.first(where: {
+            $0.cardID == cardID
+                && $0.itemKind == ProductKind.sealedProduct.rawValue
+                && $0.sealedProductId == sealedProductId
+        }) {
+            return match
+        }
+        let created = CollectionItem(
+            cardID: cardID,
+            variantKey: "sealed",
+            dateAcquired: Date(),
+            purchasePrice: nil,
+            quantity: 0,
+            notes: "",
+            itemKind: ProductKind.sealedProduct.rawValue,
+            gradingCompany: nil,
+            grade: nil,
+            certNumber: nil,
+            sealedProductId: sealedProductId,
+            sealedStatus: SealedInventoryStatus.sealed.rawValue
+        )
+        modelContext.insert(created)
+        return created
     }
 }
 

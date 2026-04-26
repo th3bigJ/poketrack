@@ -611,6 +611,9 @@ final class CardDataService {
 
     /// Resolves one card by `masterCardId` from SQLite (franchise inferred from the id shape).
     func loadCard(masterCardId: String) async -> Card? {
+        if masterCardId.hasPrefix("sealed:") {
+            return nil
+        }
         let inferred = TCGBrand.inferredFromMasterCardId(masterCardId)
         do {
             try CatalogStore.shared.open()

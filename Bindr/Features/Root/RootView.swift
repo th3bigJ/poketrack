@@ -52,12 +52,11 @@ struct RootView: View {
     @State private var collectSegment: CollectSegment = .collection
     @State private var universalQuery = ""
     @State private var showCardScanner = false
-    @State private var browseFilters = BrowseCardGridFilters()
+    @State private var browseFilters = BrowseFiltersSettings()
     @State private var browseFilterResultCount = 0
     @State private var browseFilterEnergyOptions: [String] = []
     @State private var browseFilterRarityOptions: [String] = []
     @State private var browseFilterTrainerTypeOptions: [String] = []
-    @State private var browseInlineDetailFilters = BrowseCardGridFilters()
     @State private var browseInlineDetailFilterResultCount = 0
     @State private var browseInlineDetailFilterEnergyOptions: [String] = []
     @State private var browseInlineDetailFilterRarityOptions: [String] = []
@@ -103,7 +102,7 @@ struct RootView: View {
         selectedTab == .browse
             && browseNavigationPath.isEmpty
             && !isSearchExperiencePresented
-            && (browseHomeTab == .cards || browseInlineDetailRoute != nil)
+            && (browseHomeTab == .cards || browseHomeTab == .sealed || browseInlineDetailRoute != nil)
     }
 
     private var isCollectFilterContextActive: Bool {
@@ -145,11 +144,39 @@ struct RootView: View {
     }
 
     private var activeBrowseFilters: BrowseCardGridFilters {
-        browseInlineDetailRoute == nil ? browseFilters : browseInlineDetailFilters
+        browseInlineDetailRoute == nil
+            ? activeBrowseTabFiltersBinding.wrappedValue
+            : activeBrowseTabInlineFiltersBinding.wrappedValue
     }
 
     private var activeBrowseFiltersBinding: Binding<BrowseCardGridFilters> {
-        browseInlineDetailRoute == nil ? $browseFilters : $browseInlineDetailFilters
+        browseInlineDetailRoute == nil ? activeBrowseTabFiltersBinding : activeBrowseTabInlineFiltersBinding
+    }
+
+    private var activeBrowseTabFiltersBinding: Binding<BrowseCardGridFilters> {
+        switch browseHomeTab {
+        case .cards:
+            return $browseFilters.cardsFilters
+        case .sets:
+            return $browseFilters.setsFilters
+        case .pokemon:
+            return $browseFilters.pokemonFilters
+        case .sealed:
+            return $browseFilters.sealedFilters
+        }
+    }
+
+    private var activeBrowseTabInlineFiltersBinding: Binding<BrowseCardGridFilters> {
+        switch browseHomeTab {
+        case .cards:
+            return $browseFilters.cardsInlineFilters
+        case .sets:
+            return $browseFilters.setsInlineFilters
+        case .pokemon:
+            return $browseFilters.pokemonInlineFilters
+        case .sealed:
+            return $browseFilters.sealedInlineFilters
+        }
     }
 
     private var activeBrowseFilterEnergyOptions: [String] {
@@ -312,8 +339,8 @@ struct RootView: View {
                         NavigationStack(path: $browseNavigationPath) {
                             let browseGridOptionsBindable = Bindable(services.browseGridOptions)
                             BrowseTabView(
-                                filters: $browseFilters,
-                                inlineDetailFilters: $browseInlineDetailFilters,
+                                filters: activeBrowseTabFiltersBinding,
+                                inlineDetailFilters: activeBrowseTabInlineFiltersBinding,
                                 gridOptions: browseGridOptionsBindable.options,
                                 filterResultCount: $browseFilterResultCount,
                                 filterEnergyOptions: $browseFilterEnergyOptions,
@@ -532,18 +559,11 @@ struct RootView: View {
             collectionNavigationPath = NavigationPath()
             searchNavigationPath = NavigationPath()
             browseHomeTab = .cards
-            browseFilters = BrowseCardGridFilters()
-            browseInlineDetailFilters = BrowseCardGridFilters()
             browseInlineDetailRoute = nil
             selectedCardPresentation = nil
             universalQuery = ""
             searchFieldFocused = false
             collectSelectedBrand = brand
-
-            var defaultCollectionFilters = BrowseCardGridFilters()
-            defaultCollectionFilters.sortBy = .price
-            collectFilters.collectionFilters = defaultCollectionFilters
-            collectFilters.wishlistFilters = BrowseCardGridFilters()
         }
         .onChange(of: services.socialAuth.authState) { _, _ in
             Task {
@@ -593,7 +613,6 @@ struct RootView: View {
         let browseLeadingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? =
             selectedTab == .browse && browseInlineDetailRoute != nil
             ? ("chevron.left", "Back", {
-                browseInlineDetailFilters = BrowseCardGridFilters()
                 browseInlineDetailRoute = nil
             })
             : nil
@@ -662,6 +681,8 @@ struct RootView: View {
             gridOptions: $collectFilters.gridOptions,
             config: FilterMenuConfig(
                 showAcquiredDateSort: true,
+                showRandomSort: false,
+                showCardNumberSort: false,
                 showHideOwned: false,
                 showShowDuplicates: true,
                 showGridOptions: true,
@@ -672,13 +693,48 @@ struct RootView: View {
 
     @ViewBuilder
     private var browseFilterMenuContent: some View {
+        let isSealedTab = browseHomeTab == .sealed
+        let defaultSortBy: BrowseCardGridSortOption = {
+            if let route = browseInlineDetailRoute {
+                switch route {
+                case .set(_):
+                    return .cardNumber
+                case .dex(_, _), .onePieceCharacter(_), .onePieceSubtype(_):
+                    return .newestSet
+                }
+            }
+            switch browseHomeTab {
+            case .sets:
+                return .cardNumber
+            case .pokemon, .sealed:
+                return .newestSet
+            case .cards:
+                return .random
+            }
+        }()
+
+        let browseConfig = FilterMenuConfig(defaultSortBy: defaultSortBy)
+
         BrowseGridFiltersMenuContent(
             brand: services.brandSettings.selectedCatalogBrand,
             filters: activeBrowseFiltersBinding,
             energyOptions: activeBrowseFilterEnergyOptions,
             rarityOptions: activeBrowseFilterRarityOptions,
             trainerTypeOptions: activeBrowseFilterTrainerTypeOptions,
-            isAllBrands: false
+            isAllBrands: false,
+            config: isSealedTab
+                ? FilterMenuConfig(
+                    showAcquiredDateSort: false,
+                    showCardNumberSort: false,
+                    showBrandFilters: false,
+                    showRarity: false,
+                    showRarePlusOnly: false,
+                    showHideOwned: false,
+                    showShowDuplicates: false,
+                    showGridOptions: true,
+                    defaultSortBy: .newestSet
+                )
+                : browseConfig
         )
     }
 

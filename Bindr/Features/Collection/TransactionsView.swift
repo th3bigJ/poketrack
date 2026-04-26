@@ -124,6 +124,7 @@ struct TransactionsView: View {
                         } label: {
                             Label("Delete", systemImage: "trash")
                         }
+                        .tint(.red)
                     }
                     .contextMenu {
                         Button(role: .destructive) {

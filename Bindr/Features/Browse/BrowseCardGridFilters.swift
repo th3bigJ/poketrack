@@ -1,6 +1,6 @@
 import SwiftUI
 
-enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable {
+enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable, Codable {
     case random
     case newestSet
     case cardName
@@ -22,7 +22,7 @@ enum BrowseCardGridSortOption: String, CaseIterable, Identifiable, Sendable {
     }
 }
 
-enum BrowseCardTypeFilter: String, CaseIterable, Identifiable, Sendable {
+enum BrowseCardTypeFilter: String, CaseIterable, Identifiable, Sendable, Codable {
     // Pokémon TCG
     case pokemon
     case trainer
@@ -61,7 +61,7 @@ enum BrowseCardTypeFilter: String, CaseIterable, Identifiable, Sendable {
     }
 }
 
-enum BrowseCardLegalityFilter: String, CaseIterable, Identifiable, Sendable {
+enum BrowseCardLegalityFilter: String, CaseIterable, Identifiable, Sendable, Codable {
     case standard
     case expanded
 
@@ -90,7 +90,7 @@ let opCounterAllOptions: [Int] = [1000, 2000]
 let opLifeAllOptions: [Int] = [3, 4, 5, 6]
 let opPowerAllOptions: [Int] = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
 
-struct BrowseCardGridFilters: Equatable, Sendable {
+struct BrowseCardGridFilters: Equatable, Sendable, Codable {
     var sortBy: BrowseCardGridSortOption = .random
     var cardTypes: Set<BrowseCardTypeFilter> = []
     var rarePlusOnly = false
@@ -142,7 +142,7 @@ struct BrowseCardGridFilters: Equatable, Sendable {
     }
 }
 
-struct BrowseGridOptions: Equatable, Sendable {
+struct BrowseGridOptions: Equatable, Sendable, Codable {
     var showCardName = true
     var showSetName = false
     var showSetID = false

@@ -186,19 +186,32 @@ final class BrowseGridOptionsSettings {
     }
 }
 
+private func decodeDefaultsJSON<T: Decodable>(_ type: T.Type, key: String) -> T? {
+    guard let data = UserDefaults.standard.data(forKey: key) else { return nil }
+    return try? JSONDecoder().decode(T.self, from: data)
+}
+
+private func encodeDefaultsJSON<T: Encodable>(_ value: T, key: String) {
+    guard let data = try? JSONEncoder().encode(value) else { return }
+    UserDefaults.standard.set(data, forKey: key)
+}
+
 // MARK: - Collection filter + grid persistence
 
-/// Persists the collection tab's filter choices (sort, toggles) and grid options across launches.
-/// Only the stable, non-set-specific fields are saved: sortBy, showDuplicates, and all grid options.
-/// Set-specific filters (energy, rarity, trainer type) are intentionally left ephemeral.
+/// Persists the collection tab's filter choices (all fields) and grid options across launches.
 @Observable
 final class CollectionFiltersSettings {
     private static let validColumnRange = 1...4
 
     private enum Keys {
+        static let collectionFiltersJSON = "collectFiltersJSON"
+        static let wishlistFiltersJSON   = "wishlistFiltersJSON"
+
+        // Legacy keys retained for migration fallback.
         static let collectionSortBy     = "collectFilterSortBy"
         static let collectionShowDups   = "collectFilterShowDuplicates"
         static let wishlistSortBy       = "wishlistFilterSortBy"
+
         static let gridShowCardName     = "collectGridShowCardName"
         static let gridShowSetName      = "collectGridShowSetName"
         static let gridShowSetID        = "collectGridShowSetID"
@@ -239,19 +252,27 @@ final class CollectionFiltersSettings {
     // MARK: - Load
 
     private static func loadCollectionFilters() -> BrowseCardGridFilters {
+        if let decoded = decodeDefaultsJSON(BrowseCardGridFilters.self, key: Keys.collectionFiltersJSON) {
+            return sanitizeCollectionFilters(decoded)
+        }
+
         let d = UserDefaults.standard
         var f = BrowseCardGridFilters()
         f.sortBy = BrowseCardGridSortOption(rawValue: d.string(forKey: Keys.collectionSortBy) ?? "") ?? .price
         f.showDuplicates = d.object(forKey: Keys.collectionShowDups) != nil
             ? d.bool(forKey: Keys.collectionShowDups) : false
-        return f
+        return sanitizeCollectionFilters(f)
     }
 
     private static func loadWishlistFilters() -> BrowseCardGridFilters {
+        if let decoded = decodeDefaultsJSON(BrowseCardGridFilters.self, key: Keys.wishlistFiltersJSON) {
+            return sanitizeCollectionFilters(decoded)
+        }
+
         let d = UserDefaults.standard
         var f = BrowseCardGridFilters()
-        f.sortBy = BrowseCardGridSortOption(rawValue: d.string(forKey: Keys.wishlistSortBy) ?? "") ?? .random
-        return f
+        f.sortBy = BrowseCardGridSortOption(rawValue: d.string(forKey: Keys.wishlistSortBy) ?? "") ?? .price
+        return sanitizeCollectionFilters(f)
     }
 
     private static func loadGridOptions() -> BrowseGridOptions {
@@ -272,13 +293,26 @@ final class CollectionFiltersSettings {
     // MARK: - Save
 
     private func saveCollectionFilters(_ f: BrowseCardGridFilters) {
+        let sanitized = Self.sanitizeCollectionFilters(f)
+        if collectionFilters != sanitized {
+            collectionFilters = sanitized
+            return
+        }
+        encodeDefaultsJSON(sanitized, key: Keys.collectionFiltersJSON)
+
         let d = UserDefaults.standard
-        d.set(f.sortBy.rawValue, forKey: Keys.collectionSortBy)
-        d.set(f.showDuplicates, forKey: Keys.collectionShowDups)
+        d.set(sanitized.sortBy.rawValue, forKey: Keys.collectionSortBy)
+        d.set(sanitized.showDuplicates, forKey: Keys.collectionShowDups)
     }
 
     private func saveWishlistFilters(_ f: BrowseCardGridFilters) {
-        UserDefaults.standard.set(f.sortBy.rawValue, forKey: Keys.wishlistSortBy)
+        let sanitized = Self.sanitizeCollectionFilters(f)
+        if wishlistFilters != sanitized {
+            wishlistFilters = sanitized
+            return
+        }
+        encodeDefaultsJSON(sanitized, key: Keys.wishlistFiltersJSON)
+        UserDefaults.standard.set(sanitized.sortBy.rawValue, forKey: Keys.wishlistSortBy)
     }
 
     private func saveGridOptions(_ options: BrowseGridOptions) {
@@ -301,5 +335,135 @@ final class CollectionFiltersSettings {
 
     private static func sanitizedColumnCount(_ count: Int) -> Int {
         min(max(count, validColumnRange.lowerBound), validColumnRange.upperBound)
+    }
+
+    private static func sanitizeCollectionFilters(_ filters: BrowseCardGridFilters) -> BrowseCardGridFilters {
+        var next = filters
+        if next.sortBy == .random || next.sortBy == .cardNumber {
+            next.sortBy = .price
+        }
+        return next
+    }
+}
+
+// MARK: - Browse filter persistence (per tab)
+
+/// Persists browse filters per tab so each page keeps independent filter/sort choices.
+@Observable
+final class BrowseFiltersSettings {
+    private enum Keys {
+        static let cardsFiltersJSON = "browseFiltersCardsJSON"
+        static let setsFiltersJSON = "browseFiltersSetsJSON"
+        static let pokemonFiltersJSON = "browseFiltersPokemonJSON"
+        static let sealedFiltersJSON = "browseFiltersSealedJSON"
+        static let cardsInlineFiltersJSON = "browseInlineFiltersCardsJSON"
+        static let setsInlineFiltersJSON = "browseInlineFiltersSetsJSON"
+        static let pokemonInlineFiltersJSON = "browseInlineFiltersPokemonJSON"
+        static let sealedInlineFiltersJSON = "browseInlineFiltersSealedJSON"
+    }
+
+    var cardsFilters: BrowseCardGridFilters {
+        didSet {
+            guard cardsFilters != oldValue else { return }
+            saveBrowseFilters(cardsFilters, key: Keys.cardsFiltersJSON)
+        }
+    }
+
+    var setsFilters: BrowseCardGridFilters {
+        didSet {
+            guard setsFilters != oldValue else { return }
+            saveBrowseFilters(setsFilters, key: Keys.setsFiltersJSON)
+        }
+    }
+
+    var pokemonFilters: BrowseCardGridFilters {
+        didSet {
+            guard pokemonFilters != oldValue else { return }
+            saveBrowseFilters(pokemonFilters, key: Keys.pokemonFiltersJSON)
+        }
+    }
+
+    var sealedFilters: BrowseCardGridFilters {
+        didSet {
+            guard sealedFilters != oldValue else { return }
+            saveBrowseFilters(sealedFilters, key: Keys.sealedFiltersJSON)
+        }
+    }
+
+    var cardsInlineFilters: BrowseCardGridFilters {
+        didSet {
+            guard cardsInlineFilters != oldValue else { return }
+            saveBrowseFilters(cardsInlineFilters, key: Keys.cardsInlineFiltersJSON)
+        }
+    }
+
+    var setsInlineFilters: BrowseCardGridFilters {
+        didSet {
+            guard setsInlineFilters != oldValue else { return }
+            saveBrowseFilters(setsInlineFilters, key: Keys.setsInlineFiltersJSON)
+        }
+    }
+
+    var pokemonInlineFilters: BrowseCardGridFilters {
+        didSet {
+            guard pokemonInlineFilters != oldValue else { return }
+            saveBrowseFilters(pokemonInlineFilters, key: Keys.pokemonInlineFiltersJSON)
+        }
+    }
+
+    var sealedInlineFilters: BrowseCardGridFilters {
+        didSet {
+            guard sealedInlineFilters != oldValue else { return }
+            saveBrowseFilters(sealedInlineFilters, key: Keys.sealedInlineFiltersJSON)
+        }
+    }
+
+    init() {
+        cardsFilters = Self.loadBrowseFilters(key: Keys.cardsFiltersJSON)
+        setsFilters = Self.loadBrowseFilters(key: Keys.setsFiltersJSON)
+        pokemonFilters = Self.loadBrowseFilters(key: Keys.pokemonFiltersJSON)
+        sealedFilters = Self.loadBrowseFilters(key: Keys.sealedFiltersJSON)
+        cardsInlineFilters = Self.loadBrowseFilters(key: Keys.cardsInlineFiltersJSON)
+        setsInlineFilters = Self.loadBrowseFilters(key: Keys.setsInlineFiltersJSON)
+        pokemonInlineFilters = Self.loadBrowseFilters(key: Keys.pokemonInlineFiltersJSON)
+        sealedInlineFilters = Self.loadBrowseFilters(key: Keys.sealedInlineFiltersJSON)
+    }
+
+    private static func loadBrowseFilters(key: String) -> BrowseCardGridFilters {
+        if let decoded = decodeDefaultsJSON(BrowseCardGridFilters.self, key: key) {
+            var sanitized = sanitizeBrowseFilters(decoded)
+            if (key == Keys.sealedFiltersJSON || key == Keys.sealedInlineFiltersJSON),
+               sanitized.sortBy == .random {
+                sanitized.sortBy = .newestSet
+            }
+            return sanitized
+        }
+        var defaults = BrowseCardGridFilters()
+        defaults.sortBy = defaultBrowseSort(for: key)
+        return defaults
+    }
+
+    private func saveBrowseFilters(_ filters: BrowseCardGridFilters, key: String) {
+        let sanitized = Self.sanitizeBrowseFilters(filters)
+        encodeDefaultsJSON(sanitized, key: key)
+    }
+
+    private static func sanitizeBrowseFilters(_ filters: BrowseCardGridFilters) -> BrowseCardGridFilters {
+        var next = filters
+        if next.sortBy == .acquiredDateNewest {
+            next.sortBy = .random
+        }
+        return next
+    }
+
+    private static func defaultBrowseSort(for key: String) -> BrowseCardGridSortOption {
+        switch key {
+        case Keys.setsFiltersJSON, Keys.setsInlineFiltersJSON:
+            return .cardNumber
+        case Keys.pokemonFiltersJSON, Keys.pokemonInlineFiltersJSON, Keys.sealedFiltersJSON, Keys.sealedInlineFiltersJSON:
+            return .newestSet
+        default:
+            return .random
+        }
     }
 }
