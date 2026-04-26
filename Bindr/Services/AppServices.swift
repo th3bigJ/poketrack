@@ -37,6 +37,8 @@ final class AppServices {
     private(set) var isLaunchCatalogPipelineComplete = false
     /// Set in `init` when the user already completed the one-time blocking bootstrap; consumed by the first `.task` on the main UI to refresh catalogs in the background.
     private(set) var shouldRunBackgroundCatalogRefreshOnLaunch = false
+    /// Mirrors card-detail root overlay behavior for sealed detail sheets so underlying UI is fully obscured.
+    var isSealedDetailPresentationActive = false
     private var isBackgroundCatalogRefreshInFlight = false
     /// Set when a catalog pipeline run just finished; ``BrowseView`` consumes once to skip duplicate ``CardDataService/reloadAfterBrandChange()`` (same `loadSets` + search index work).
     private var pendingLightBrowseTabEntry = false

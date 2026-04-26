@@ -14,6 +14,8 @@ struct CollectView: View {
     @State private var collectionPriceByItemKey: [String: Double] = [:]
     @State private var selectedSealedProduct: SealedProduct?
     @State private var cachedSetNameByBrandAndCode: [String: String] = [:]
+    @State private var sealedProductByIDCache: [Int: SealedProduct] = [:]
+    @State private var sealedProductByCollectionCardIDCache: [String: SealedProduct] = [:]
 
     // MARK: - Wishlist State
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
@@ -32,6 +34,7 @@ struct CollectView: View {
 
     @State private var collectionQuery = ""
     @State private var wishlistQuery = ""
+    @State private var contentTypeTab: CollectContentTypeTab = .cards
 
     var showsSegmentedControl = true
     var hidesNavigationBar = true
@@ -61,12 +64,8 @@ struct CollectView: View {
         collectionItems.filter { TCGBrand.inferredFromMasterCardId($0.cardID) == activeBrand }
     }
 
-    private var sealedProductByID: [Int: SealedProduct] {
-        Dictionary(uniqueKeysWithValues: services.sealedProducts.products.map { ($0.id, $0) })
-    }
-
-    private var sealedProductByCollectionCardID: [String: SealedProduct] {
-        Dictionary(uniqueKeysWithValues: services.sealedProducts.products.map { ($0.collectionCardID, $0) })
+    private var sealedProductsSignature: String {
+        services.sealedProducts.products.map { "\($0.id)" }.joined(separator: ",")
     }
 
     private var wishlistedSealedCollectionCardIDs: Set<String> {
@@ -89,7 +88,9 @@ struct CollectView: View {
                     if showsSegmentedControl {
                         segmentedControl.padding(.horizontal, 16)
                     }
-                    BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding)
+                    BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding) {
+                        contentTypeChips
+                    }
                         .padding(.horizontal, 16)
                 }
                 .padding(.bottom, 10)
@@ -118,10 +119,14 @@ struct CollectView: View {
         .task(id: setNameCacheKey) {
             refreshSetNameCache()
         }
+        .task(id: sealedProductsSignature) {
+            refreshSealedProductCaches()
+        }
         .onAppear {
             if selectedBrand != services.brandSettings.selectedCatalogBrand {
                 selectedBrand = services.brandSettings.selectedCatalogBrand
             }
+            refreshSealedProductCaches()
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
@@ -135,6 +140,9 @@ struct CollectView: View {
         .sheet(item: $selectedSealedProduct) { product in
             SealedProductBrowseDetailView(products: [product], startProductID: product.id)
                 .environment(services)
+        }
+        .onChange(of: selectedSealedProduct?.id) { _, productID in
+            services.isSealedDetailPresentationActive = (productID != nil)
         }
     }
 
@@ -152,6 +160,19 @@ struct CollectView: View {
         cachedSetNameByBrandAndCode = map
     }
 
+    private func refreshSealedProductCaches() {
+        var byID: [Int: SealedProduct] = [:]
+        var byCollectionCardID: [String: SealedProduct] = [:]
+        byID.reserveCapacity(services.sealedProducts.products.count)
+        byCollectionCardID.reserveCapacity(services.sealedProducts.products.count)
+        for product in services.sealedProducts.products {
+            byID[product.id] = product
+            byCollectionCardID[product.collectionCardID] = product
+        }
+        sealedProductByIDCache = byID
+        sealedProductByCollectionCardIDCache = byCollectionCardID
+    }
+
     // MARK: - Segmented Control
 
     private var segmentedControl: some View {
@@ -163,11 +184,12 @@ struct CollectView: View {
     }
 
     private var searchPlaceholder: String {
+        let itemLabel = contentTypeTab == .cards ? "cards" : "sealed"
         switch selectedSegment {
         case .collection:
-            return "Search \(formattedActiveFilteredCount) cards in collection"
+            return "Search \(formattedActiveFilteredCount) \(itemLabel) in collection"
         case .wishlist:
-            return "Search \(formattedActiveFilteredCount) cards in wishlist"
+            return "Search \(formattedActiveFilteredCount) \(itemLabel) in wishlist"
         }
     }
 
@@ -175,8 +197,60 @@ struct CollectView: View {
         selectedSegment == .collection ? $collectionQuery : $wishlistQuery
     }
 
+    private var contentTypeChips: some View {
+        HStack(spacing: 6) {
+            contentTypeChip(for: .cards, icon: "square.stack.3d.up")
+            contentTypeChip(for: .sealed, icon: "shippingbox")
+            if !activeQueryBinding.wrappedValue.isEmpty {
+                Button {
+                    activeQueryBinding.wrappedValue = ""
+                } label: {
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundStyle(.tertiary)
+                }
+                .buttonStyle(.plain)
+                .padding(.leading, 2)
+            }
+        }
+    }
+
+    private func contentTypeChip(for tab: CollectContentTypeTab, icon: String) -> some View {
+        let isSelected = contentTypeTab == tab
+        return Button {
+            guard contentTypeTab != tab else { return }
+            withAnimation(.spring(response: 0.28, dampingFraction: 0.82)) {
+                contentTypeTab = tab
+            }
+            Haptics.lightImpact()
+        } label: {
+            HStack(spacing: 4) {
+                Image(systemName: icon)
+                    .font(.system(size: 11, weight: .semibold))
+                Text(tab.title)
+                    .font(.caption.weight(.semibold))
+                    .lineLimit(1)
+            }
+            .foregroundStyle(isSelected ? .white : .secondary)
+            .padding(.horizontal, 8)
+            .padding(.vertical, 5)
+            .background(
+                Capsule(style: .continuous)
+                    .fill(isSelected ? services.theme.accentColor : Color.clear)
+            )
+            .overlay(
+                Capsule(style: .continuous)
+                    .strokeBorder(
+                        isSelected ? services.theme.accentColor.opacity(0.55) : Color.white.opacity(0.16),
+                        lineWidth: 1
+                    )
+            )
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(tab.title)
+    }
+
     private var activeFilteredCount: Int {
-        selectedSegment == .collection ? filteredCollectionItems.count : filteredWishlistItems.count
+        selectedSegment == .collection ? filteredCollectionItemsForSelectedType.count : filteredWishlistItemsForSelectedType.count
     }
 
     private var formattedActiveFilteredCount: String {
@@ -208,18 +282,20 @@ struct CollectView: View {
                 image: "line.3.horizontal.decrease.circle",
                 description: "No \(activeBrand.displayTitle) cards in your collection yet."
             )
-        } else if filteredCollectionItems.isEmpty {
+        } else if filteredCollectionItemsForSelectedType.isEmpty {
             emptyState(
-                title: "No matching cards",
+                title: "No matching \(contentTypeTab.title.lowercased())",
                 image: "magnifyingglass",
-                description: "Try a different card name, set code, or number."
+                description: contentTypeTab == .cards
+                    ? "Try a different card name, set code, or number."
+                    : "Try a different product name, series, or year."
             )
         } else {
-            EagerVGrid(items: filteredCollectionItems, columns: safeColumnCount, spacing: 12) { item in
-                let index = filteredCollectionItems.firstIndex(where: { $0.id == item.id }) ?? 0
-                collectionCell(for: item)
+            EagerVGrid(items: indexedFilteredCollectionItemsForSelectedType, columns: safeColumnCount, spacing: 12) { indexed in
+                collectionCell(for: indexed.item)
                     .onAppear {
-                        ImagePrefetcher.shared.prefetchCardWindow(orderedCollectionCards, startingAt: index + 1)
+                        guard contentTypeTab == .cards else { return }
+                        ImagePrefetcher.shared.prefetchCardWindow(orderedCollectionCards, startingAt: indexed.index + 1)
                     }
             }
             .padding(.horizontal, 16)
@@ -293,6 +369,19 @@ struct CollectView: View {
         return applySortToCollectionItems(items, filters: collectionFilters)
     }
 
+    private var filteredCollectionItemsForSelectedType: [CollectionItem] {
+        filteredCollectionItems.filter { item in
+            let isSealed = sealedProduct(for: item) != nil
+            return contentTypeTab == .sealed ? isSealed : !isSealed
+        }
+    }
+
+    private var indexedFilteredCollectionItemsForSelectedType: [IndexedGridItem<CollectionItem>] {
+        Array(filteredCollectionItemsForSelectedType.enumerated()).map { offset, item in
+            IndexedGridItem(index: offset, item: item)
+        }
+    }
+
     private func applySortToCollectionItems(_ items: [CollectionItem], filters: BrowseCardGridFilters) -> [CollectionItem] {
         switch filters.sortBy {
         case .acquiredDateNewest, .random:
@@ -327,7 +416,7 @@ struct CollectView: View {
     }
 
     private var orderedCollectionCards: [Card] {
-        filteredCollectionItems.compactMap { cardsByCardID[$0.cardID] }
+        indexedFilteredCollectionItemsForSelectedType.compactMap { cardsByCardID[$0.item.cardID] }
     }
 
     private var collectionSignature: String {
@@ -372,16 +461,16 @@ struct CollectView: View {
         guard item.itemKind == ProductKind.sealedProduct.rawValue || SealedProduct.parseCollectionProductID(item.cardID) != nil else {
             return nil
         }
-        if let product = sealedProductByCollectionCardID[item.cardID] {
+        if let product = sealedProductByCollectionCardIDCache[item.cardID] {
             return product
         }
         if let rawID = item.sealedProductId,
            let productID = Int(rawID),
-           let product = sealedProductByID[productID] {
+           let product = sealedProductByIDCache[productID] {
             return product
         }
         if let productID = SealedProduct.parseCollectionProductID(item.cardID) {
-            return sealedProductByID[productID]
+            return sealedProductByIDCache[productID]
         }
         return nil
     }
@@ -413,18 +502,20 @@ struct CollectView: View {
                 image: "line.3.horizontal.decrease.circle",
                 description: "No \(activeBrand.displayTitle) cards on your wishlist yet."
             )
-        } else if filteredWishlistItems.isEmpty {
+        } else if filteredWishlistItemsForSelectedType.isEmpty {
             emptyState(
-                title: "No matching cards",
+                title: "No matching \(contentTypeTab.title.lowercased())",
                 image: "magnifyingglass",
-                description: "Try a different card name, set code, or number."
+                description: contentTypeTab == .cards
+                    ? "Try a different card name, set code, or number."
+                    : "Try a different product name, series, or year."
             )
         } else {
-            EagerVGrid(items: filteredWishlistItems, columns: safeColumnCount, spacing: 12) { item in
-                let index = filteredWishlistItems.firstIndex(where: { $0.id == item.id }) ?? 0
-                wishlistCell(for: item)
+            EagerVGrid(items: indexedFilteredWishlistItemsForSelectedType, columns: safeColumnCount, spacing: 12) { indexed in
+                wishlistCell(for: indexed.item)
                     .onAppear {
-                        ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: index + 1)
+                        guard contentTypeTab == .cards else { return }
+                        ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: indexed.index + 1)
                     }
             }
             .padding(.horizontal, 16)
@@ -492,6 +583,19 @@ struct CollectView: View {
         return applySortToWishlistItems(items, filters: wishlistFilters)
     }
 
+    private var filteredWishlistItemsForSelectedType: [WishlistItem] {
+        filteredWishlistItems.filter { item in
+            let isSealed = sealedProduct(for: item) != nil
+            return contentTypeTab == .sealed ? isSealed : !isSealed
+        }
+    }
+
+    private var indexedFilteredWishlistItemsForSelectedType: [IndexedGridItem<WishlistItem>] {
+        Array(filteredWishlistItemsForSelectedType.enumerated()).map { offset, item in
+            IndexedGridItem(index: offset, item: item)
+        }
+    }
+
     private func applySortToWishlistItems(_ items: [WishlistItem], filters: BrowseCardGridFilters) -> [WishlistItem] {
         switch filters.sortBy {
         case .acquiredDateNewest, .random:
@@ -526,7 +630,7 @@ struct CollectView: View {
     }
 
     private var orderedWishlistCards: [Card] {
-        filteredWishlistItems.compactMap { wishlistCardsByID[$0.cardID] }
+        indexedFilteredWishlistItemsForSelectedType.compactMap { wishlistCardsByID[$0.item.cardID] }
     }
 
     private var wishlistSignature: String {
@@ -556,11 +660,11 @@ struct CollectView: View {
     }
 
     private func sealedProduct(for item: WishlistItem) -> SealedProduct? {
-        if let product = sealedProductByCollectionCardID[item.cardID] {
+        if let product = sealedProductByCollectionCardIDCache[item.cardID] {
             return product
         }
         if let productID = SealedProduct.parseCollectionProductID(item.cardID) {
-            return sealedProductByID[productID]
+            return sealedProductByIDCache[productID]
         }
         return nil
     }
@@ -657,4 +761,25 @@ enum CollectSegment: String, CaseIterable, Identifiable {
         case .wishlist:   return "Wishlist"
         }
     }
+}
+
+private enum CollectContentTypeTab: String, CaseIterable, Identifiable {
+    case cards
+    case sealed
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .cards: return "Cards"
+        case .sealed: return "Sealed"
+        }
+    }
+}
+
+private struct IndexedGridItem<Item: Identifiable>: Identifiable {
+    let index: Int
+    let item: Item
+
+    var id: Item.ID { item.id }
 }

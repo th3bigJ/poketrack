@@ -351,6 +351,8 @@ final class CollectionFiltersSettings {
 /// Persists browse filters per tab so each page keeps independent filter/sort choices.
 @Observable
 final class BrowseFiltersSettings {
+    private static let validColumnRange = 1...4
+
     private enum Keys {
         static let cardsFiltersJSON = "browseFiltersCardsJSON"
         static let setsFiltersJSON = "browseFiltersSetsJSON"
@@ -360,6 +362,7 @@ final class BrowseFiltersSettings {
         static let setsInlineFiltersJSON = "browseInlineFiltersSetsJSON"
         static let pokemonInlineFiltersJSON = "browseInlineFiltersPokemonJSON"
         static let sealedInlineFiltersJSON = "browseInlineFiltersSealedJSON"
+        static let sealedGridOptionsJSON = "browseGridOptionsSealedJSON"
     }
 
     var cardsFilters: BrowseCardGridFilters {
@@ -418,6 +421,19 @@ final class BrowseFiltersSettings {
         }
     }
 
+    /// Sealed browse has dedicated grid options so columns/toggles don't affect cards/sets/pokemon.
+    var sealedGridOptions: BrowseGridOptions {
+        didSet {
+            let sanitized = Self.sanitizeGridOptions(sealedGridOptions)
+            if sanitized != sealedGridOptions {
+                sealedGridOptions = sanitized
+                return
+            }
+            guard sealedGridOptions != oldValue else { return }
+            saveSealedGridOptions(sealedGridOptions)
+        }
+    }
+
     init() {
         cardsFilters = Self.loadBrowseFilters(key: Keys.cardsFiltersJSON)
         setsFilters = Self.loadBrowseFilters(key: Keys.setsFiltersJSON)
@@ -427,6 +443,7 @@ final class BrowseFiltersSettings {
         setsInlineFilters = Self.loadBrowseFilters(key: Keys.setsInlineFiltersJSON)
         pokemonInlineFilters = Self.loadBrowseFilters(key: Keys.pokemonInlineFiltersJSON)
         sealedInlineFilters = Self.loadBrowseFilters(key: Keys.sealedInlineFiltersJSON)
+        sealedGridOptions = Self.loadSealedGridOptions()
     }
 
     private static func loadBrowseFilters(key: String) -> BrowseCardGridFilters {
@@ -465,5 +482,25 @@ final class BrowseFiltersSettings {
         default:
             return .random
         }
+    }
+
+    private static func loadSealedGridOptions() -> BrowseGridOptions {
+        if let decoded = decodeDefaultsJSON(BrowseGridOptions.self, key: Keys.sealedGridOptionsJSON) {
+            return sanitizeGridOptions(decoded)
+        }
+        var defaults = BrowseGridOptions()
+        defaults.columnCount = 2
+        return sanitizeGridOptions(defaults)
+    }
+
+    private func saveSealedGridOptions(_ options: BrowseGridOptions) {
+        let sanitized = Self.sanitizeGridOptions(options)
+        encodeDefaultsJSON(sanitized, key: Keys.sealedGridOptionsJSON)
+    }
+
+    private static func sanitizeGridOptions(_ options: BrowseGridOptions) -> BrowseGridOptions {
+        var next = options
+        next.columnCount = min(max(options.columnCount, validColumnRange.lowerBound), validColumnRange.upperBound)
+        return next
     }
 }

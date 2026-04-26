@@ -219,17 +219,11 @@ final class CollectionLedgerService {
             return
         }
 
-        guard line.productKind == ProductKind.singleCard.rawValue || line.productKind == ProductKind.gradedItem.rawValue else {
-            try modelContext.save()
-            return
-        }
-
         guard let cardID = cleanOptionalString(line.cardID) else {
             try modelContext.save()
             return
         }
 
-        let variantKey = cleanOptionalString(line.variantKey) ?? "normal"
         let quantityDelta: Int
         switch direction {
         case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn:
@@ -238,14 +232,24 @@ final class CollectionLedgerService {
             quantityDelta = line.quantity
         }
 
-        try reconcileCardStackQuantity(
-            cardID: cardID,
-            variantKey: variantKey,
-            productKind: line.productKind,
-            gradingCompany: line.gradingCompany,
-            grade: line.grade,
-            quantityDelta: quantityDelta
-        )
+        if line.productKind == ProductKind.singleCard.rawValue || line.productKind == ProductKind.gradedItem.rawValue {
+            let variantKey = cleanOptionalString(line.variantKey) ?? "normal"
+            try reconcileCardStackQuantity(
+                cardID: cardID,
+                variantKey: variantKey,
+                productKind: line.productKind,
+                gradingCompany: line.gradingCompany,
+                grade: line.grade,
+                quantityDelta: quantityDelta
+            )
+        } else if line.productKind == ProductKind.sealedProduct.rawValue {
+            let sealedProductId = cleanOptionalString(line.sealedProductId)
+            try reconcileSealedStackQuantity(
+                cardID: cardID,
+                sealedProductId: sealedProductId,
+                quantityDelta: quantityDelta
+            )
+        }
 
         try modelContext.save()
     }
@@ -399,6 +403,55 @@ final class CollectionLedgerService {
                     itemKind: productKind,
                     gradingCompany: gradingCompany,
                     grade: grade
+                )
+                modelContext.insert(created)
+            }
+            return
+        }
+
+        guard let existing else { return }
+        existing.quantity = max(existing.quantity + quantityDelta, 0)
+        if existing.quantity == 0 {
+            removeDepletedCollectionItem(existing)
+        }
+    }
+
+    private func reconcileSealedStackQuantity(
+        cardID: String,
+        sealedProductId: String?,
+        quantityDelta: Int
+    ) throws {
+        guard quantityDelta != 0 else { return }
+
+        let existing = try findSealedStack(
+            cardID: cardID,
+            sealedProductId: sealedProductId
+        )
+
+        if quantityDelta > 0 {
+            if let existing {
+                existing.quantity += quantityDelta
+                existing.dateAcquired = Date()
+                existing.sealedStatus = SealedInventoryStatus.sealed.rawValue
+            } else if let sealedProductId {
+                let created = try findOrCreateSealedStack(cardID: cardID, sealedProductId: sealedProductId)
+                created.quantity = quantityDelta
+                created.dateAcquired = Date()
+                created.sealedStatus = SealedInventoryStatus.sealed.rawValue
+            } else {
+                let created = CollectionItem(
+                    cardID: cardID,
+                    variantKey: "sealed",
+                    dateAcquired: Date(),
+                    purchasePrice: nil,
+                    quantity: quantityDelta,
+                    notes: "",
+                    itemKind: ProductKind.sealedProduct.rawValue,
+                    gradingCompany: nil,
+                    grade: nil,
+                    certNumber: nil,
+                    sealedProductId: nil,
+                    sealedStatus: SealedInventoryStatus.sealed.rawValue
                 )
                 modelContext.insert(created)
             }
@@ -606,6 +659,23 @@ final class CollectionLedgerService {
                 && $0.itemKind == productKind
                 && $0.gradingCompany == gradingCompany
                 && $0.grade == grade
+        })
+    }
+
+    private func findSealedStack(
+        cardID: String,
+        sealedProductId: String?
+    ) throws -> CollectionItem? {
+        let descriptor = FetchDescriptor<CollectionItem>()
+        let all = try modelContext.fetch(descriptor)
+        return all.first(where: { item in
+            guard item.cardID == cardID, item.itemKind == ProductKind.sealedProduct.rawValue else {
+                return false
+            }
+            if let sealedProductId {
+                return item.sealedProductId == sealedProductId
+            }
+            return true
         })
     }
 

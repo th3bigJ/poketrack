@@ -2980,6 +2980,10 @@ struct FilterMenuConfig {
     var showShowDuplicates: Bool = false
     var showGridOptions: Bool = true
     var defaultSortBy: BrowseCardGridSortOption = .random
+    var gridNameToggleTitle: String = "Show card name"
+    var showGridCardIDToggle: Bool = true
+    var showGridColumns: Bool = true
+    var showGridOwnedToggle: Bool = true
 
     static let browse = FilterMenuConfig()
     static let collect = FilterMenuConfig(
@@ -3142,7 +3146,13 @@ struct BrowseGridFiltersMenuContent: View {
 
         if config.showGridOptions {
             Section("Grid options") {
-                BrowseGridOptionsMenuContent(gridOptions: gridOptions)
+                BrowseGridOptionsMenuContent(
+                    gridOptions: gridOptions,
+                    nameToggleTitle: config.gridNameToggleTitle,
+                    showCardIDToggle: config.showGridCardIDToggle,
+                    showColumns: config.showGridColumns,
+                    showOwnedToggle: config.showGridOwnedToggle
+                )
             }
         }
     }
@@ -3239,20 +3249,28 @@ struct BrowseGridOptionsMenuContent: View {
 
     /// When nil, falls back to `services.browseGridOptions` (browse behaviour). Pass a binding to use separate grid options.
     var gridOptions: Binding<BrowseGridOptions>? = nil
+    var nameToggleTitle: String = "Show card name"
+    var showCardIDToggle: Bool = true
+    var showColumns: Bool = true
+    var showOwnedToggle: Bool = true
 
     var body: some View {
-        Toggle("Show card name", isOn: gridOptionBinding(\.showCardName))
+        Toggle(nameToggleTitle, isOn: gridOptionBinding(\.showCardName))
         Toggle("Show set name", isOn: gridOptionBinding(\.showSetName))
-        Toggle("Show card ID", isOn: gridOptionBinding(\.showSetID))
-        if gridOptions != nil {
+        if showCardIDToggle {
+            Toggle("Show card ID", isOn: gridOptionBinding(\.showSetID))
+        }
+        if showOwnedToggle, gridOptions != nil {
             Toggle("Owned", isOn: gridOptionBinding(\.showOwned))
         }
         Toggle("Show pricing", isOn: gridOptionBinding(\.showPricing))
-        Stepper(value: gridOptionBinding(\.columnCount), in: 1...4) {
-            let count = gridOptions?.wrappedValue.columnCount ?? services.browseGridOptions.options.columnCount
-            Text("Columns: \(count)")
+        if showColumns {
+            Stepper(value: gridOptionBinding(\.columnCount), in: 1...4) {
+                let count = gridOptions?.wrappedValue.columnCount ?? services.browseGridOptions.options.columnCount
+                Text("Columns: \(count)")
+            }
+            .tint(.primary)
         }
-        .tint(.primary)
     }
 
     private func gridOptionBinding<T>(_ keyPath: WritableKeyPath<BrowseGridOptions, T>) -> Binding<T> {

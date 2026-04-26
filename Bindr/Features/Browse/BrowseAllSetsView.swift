@@ -3,7 +3,24 @@ import SwiftUI
 struct BrowseInlineSearchField: View {
     let title: String
     @Binding var text: String
+    private let trailingContent: AnyView?
     private let chromeCornerRadius: CGFloat = 16
+
+    init(title: String, text: Binding<String>) {
+        self.title = title
+        self._text = text
+        self.trailingContent = nil
+    }
+
+    init<Trailing: View>(
+        title: String,
+        text: Binding<String>,
+        @ViewBuilder trailing: () -> Trailing
+    ) {
+        self.title = title
+        self._text = text
+        self.trailingContent = AnyView(trailing())
+    }
 
     var body: some View {
         HStack(spacing: 10) {
@@ -12,7 +29,7 @@ struct BrowseInlineSearchField: View {
             TextField(title, text: $text)
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
-            if !text.isEmpty {
+            if !text.isEmpty, trailingContent == nil {
                 Button {
                     text = ""
                 } label: {
@@ -20,6 +37,9 @@ struct BrowseInlineSearchField: View {
                         .foregroundStyle(.tertiary)
                 }
                 .buttonStyle(.plain)
+            }
+            if let trailingContent {
+                trailingContent
             }
         }
         .padding(.horizontal, 14)

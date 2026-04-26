@@ -13,6 +13,12 @@ struct BrowseSealedTabContent: View {
 
     @State private var selectedProduct: SealedProduct?
     @State private var detailProducts: [SealedProduct] = []
+    private let sealedGridHorizontalPadding: CGFloat = 16
+    private let sealedGridSpacing: CGFloat = 12
+
+    private var sealedGridColumnCount: Int {
+        min(max(gridOptions.columnCount, 1), 4)
+    }
 
     private var ownedCollectionCardIDs: Set<String> {
         Set(collectionItems.compactMap { item in
@@ -54,7 +60,7 @@ struct BrowseSealedTabContent: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
             } else {
-                EagerVGrid(items: products, columns: min(max(gridOptions.columnCount, 1), 4), spacing: 12) { product in
+                EagerVGrid(items: products, columns: sealedGridColumnCount, spacing: sealedGridSpacing) { product in
                     Button {
                         detailProducts = products
                         selectedProduct = product
@@ -70,7 +76,7 @@ struct BrowseSealedTabContent: View {
                     }
                     .buttonStyle(CardCellButtonStyle())
                 }
-                .padding(.horizontal, 16)
+                .padding(.horizontal, sealedGridHorizontalPadding)
                 .padding(.bottom, 16)
             }
         }
@@ -83,6 +89,9 @@ struct BrowseSealedTabContent: View {
         .sheet(item: $selectedProduct) { product in
             SealedProductBrowseDetailView(products: detailProducts.isEmpty ? [product] : detailProducts, startProductID: product.id)
                 .environment(services)
+        }
+        .onChange(of: selectedProduct?.id) { _, productID in
+            services.isSealedDetailPresentationActive = (productID != nil)
         }
     }
 
@@ -169,6 +178,16 @@ struct SealedProductGridCell: View {
         (gridOptions.showCardName || showsFooter) ? 18 : 0
     }
 
+    private var imageHeight: CGFloat {
+        let columns = min(max(gridOptions.columnCount, 1), 4)
+        switch columns {
+        case 1: return 220
+        case 2: return 130
+        case 3: return 96
+        default: return 78
+        }
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             if gridOptions.showCardName {
@@ -192,8 +211,9 @@ struct SealedProductGridCell: View {
                 isWishlisted: isWishlisted,
                 ownedCountBadge: nil
             )
-            .aspectRatio(5 / 7, contentMode: .fit)
             .frame(maxWidth: .infinity)
+            .frame(height: imageHeight)
+            .clipped()
 
             if showsFooter {
                 VStack(spacing: 3) {
@@ -263,9 +283,8 @@ private struct SealedThumbnailView: View {
             CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 260, height: 364)) { image in
                 image
                     .resizable()
-                    .scaledToFill()
+                    .scaledToFit()
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .clipped()
             } placeholder: {
                 Color.secondary.opacity(0.12)
                     .overlay { ProgressView() }
@@ -297,11 +316,13 @@ private struct SealedThumbnailView: View {
 }
 
 struct SealedProductBrowseDetailView: View {
+    @Environment(AppServices.self) private var services
     @Environment(\.colorScheme) private var colorScheme
 
     let products: [SealedProduct]
 
     @State private var index: Int
+    @State private var navigationPath = NavigationPath()
 
     init(products: [SealedProduct], startProductID: Int) {
         self.products = products
@@ -310,22 +331,26 @@ struct SealedProductBrowseDetailView: View {
     }
 
     var body: some View {
-        Group {
-            if products.isEmpty {
-                ContentUnavailableView("No product", systemImage: "shippingbox")
-            } else {
-                TabView(selection: $index) {
-                    ForEach(Array(products.enumerated()), id: \.element.id) { idx, product in
-                        SealedProductDetailPage(product: product)
-                            .tag(idx)
+        NavigationStack(path: $navigationPath) {
+            Group {
+                if products.isEmpty {
+                    ContentUnavailableView("No product", systemImage: "shippingbox")
+                } else {
+                    TabView(selection: $index) {
+                        ForEach(Array(products.enumerated()), id: \.element.id) { idx, product in
+                            SealedProductDetailPage(product: product)
+                                .tag(idx)
+                        }
                     }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
                 }
-                .tabViewStyle(.page(indexDisplayMode: .never))
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(pageChromeBackground)
+            .navigationBarHidden(true)
         }
-        .background(pageChromeBackground)
-        .presentationBackground(colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground))
+        .presentationBackground(pageChromeBackground)
         .presentationDragIndicator(.visible)
         .presentationDetents([.large])
         .presentationCornerRadius(20)
@@ -440,24 +465,6 @@ private struct SealedProductDetailPage: View {
                 .foregroundStyle(.primary)
                 .multilineTextAlignment(.center)
                 .frame(maxWidth: .infinity, alignment: .center)
-            HStack(spacing: 8) {
-                Text(product.typeDisplayName)
-                    .font(.caption.weight(.semibold))
-                    .foregroundStyle(.secondary)
-                if let series = product.series, !series.isEmpty {
-                    Text("•")
-                        .font(.caption)
-                        .foregroundStyle(.tertiary)
-                    Text(series)
-                        .font(.caption.weight(.semibold))
-                        .foregroundStyle(.secondary)
-                }
-                Spacer(minLength: 0)
-                Text("#\(product.id)")
-                    .font(.caption)
-                    .foregroundStyle(.tertiary)
-            }
-            .frame(maxWidth: .infinity, alignment: .center)
             if ownedQuantity > 0 {
                 Text("Owned: \(ownedQuantity)")
                     .font(.subheadline.weight(.semibold))
@@ -481,6 +488,9 @@ private struct SealedProductDetailPage: View {
             .buttonStyle(.plain)
             .frame(maxWidth: .infinity, alignment: .leading)
 
+            centeredSetBlock
+                .frame(maxWidth: .infinity, alignment: .center)
+
             Button {
                 toggleWishlist()
             } label: {
@@ -494,6 +504,67 @@ private struct SealedProductDetailPage: View {
             .frame(maxWidth: .infinity, alignment: .trailing)
         }
         .frame(maxWidth: .infinity)
+    }
+
+    @ViewBuilder
+    private var centeredSetBlock: some View {
+        if let set = matchedSet, !set.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+            SetLogoAsyncImage(
+                logoSrc: set.logoSrc,
+                height: 34,
+                brand: services.brandSettings.selectedCatalogBrand
+            )
+            .frame(maxWidth: 140, minHeight: 40)
+        } else if let series = displaySeries {
+            Text(series)
+                .font(.subheadline.weight(.medium))
+                .foregroundStyle(.secondary)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+                .frame(maxWidth: .infinity, alignment: .center)
+        } else {
+            Color.clear
+                .frame(width: 140, height: 40)
+        }
+    }
+
+    private var matchedSet: TCGSet? {
+        let sets = services.cardData.sets
+        if let setID = product.setID {
+            let needle = String(setID)
+            if let exactIdMatch = sets.first(where: { set in
+                set.internalId == needle
+                    || set.setCode == needle
+                    || set.code == needle
+                    || set.tcgdexId == needle
+            }) {
+                return exactIdMatch
+            }
+        }
+        if let series = normalized(product.series) {
+            if let nameMatch = sets.first(where: { normalized($0.name) == series }) {
+                return nameMatch
+            }
+            if let seriesMatch = sets.first(where: { normalized($0.seriesName) == series }) {
+                return seriesMatch
+            }
+        }
+        return nil
+    }
+
+    private var displaySeries: String? {
+        trimmed(product.series)
+    }
+
+    private func trimmed(_ value: String?) -> String? {
+        guard let raw = value?.trimmingCharacters(in: .whitespacesAndNewlines), !raw.isEmpty else {
+            return nil
+        }
+        return raw
+    }
+
+    private func normalized(_ value: String?) -> String? {
+        trimmed(value)?.lowercased()
     }
 
     private func sealedActionBody(title: String, systemImage: String, tint: Color) -> some View {

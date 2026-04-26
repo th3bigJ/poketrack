@@ -153,6 +153,20 @@ struct RootView: View {
         browseInlineDetailRoute == nil ? activeBrowseTabFiltersBinding : activeBrowseTabInlineFiltersBinding
     }
 
+    private var sharedBrowseGridOptionsBinding: Binding<BrowseGridOptions> {
+        Binding(
+            get: { services.browseGridOptions.options },
+            set: { services.browseGridOptions.options = $0 }
+        )
+    }
+
+    private var activeBrowseGridOptionsBinding: Binding<BrowseGridOptions> {
+        if browseHomeTab == .sealed, browseInlineDetailRoute == nil {
+            return $browseFilters.sealedGridOptions
+        }
+        return sharedBrowseGridOptionsBinding
+    }
+
     private var activeBrowseTabFiltersBinding: Binding<BrowseCardGridFilters> {
         switch browseHomeTab {
         case .cards:
@@ -337,11 +351,10 @@ struct RootView: View {
                         .tag(AppTab.dashboard)
 
                         NavigationStack(path: $browseNavigationPath) {
-                            let browseGridOptionsBindable = Bindable(services.browseGridOptions)
                             BrowseTabView(
                                 filters: activeBrowseTabFiltersBinding,
                                 inlineDetailFilters: activeBrowseTabInlineFiltersBinding,
-                                gridOptions: browseGridOptionsBindable.options,
+                                gridOptions: activeBrowseGridOptionsBinding,
                                 filterResultCount: $browseFilterResultCount,
                                 filterEnergyOptions: $browseFilterEnergyOptions,
                                 filterRarityOptions: $browseFilterRarityOptions,
@@ -490,14 +503,17 @@ struct RootView: View {
         }
         .animation(.easeInOut(duration: 0.22), value: services.isCatalogDownloadInProgress)
         .overlay {
-            if selectedCardPresentation != nil {
+            if selectedCardPresentation != nil || services.isSealedDetailPresentationActive {
                 Color(uiColor: .systemBackground)
                     .ignoresSafeArea()
                     .allowsHitTesting(false)
                     .transition(.opacity)
             }
         }
-        .animation(.easeInOut(duration: 0.25), value: selectedCardPresentation != nil)
+        .animation(
+            .easeInOut(duration: 0.25),
+            value: selectedCardPresentation != nil || services.isSealedDetailPresentationActive
+        )
         .onChange(of: searchFieldFocused) { _, isFocused in
             if isFocused {
                 Haptics.lightImpact()
@@ -722,6 +738,7 @@ struct RootView: View {
             rarityOptions: activeBrowseFilterRarityOptions,
             trainerTypeOptions: activeBrowseFilterTrainerTypeOptions,
             isAllBrands: false,
+            gridOptions: isSealedTab ? $browseFilters.sealedGridOptions : nil,
             config: isSealedTab
                 ? FilterMenuConfig(
                     showAcquiredDateSort: false,
@@ -732,7 +749,11 @@ struct RootView: View {
                     showHideOwned: false,
                     showShowDuplicates: false,
                     showGridOptions: true,
-                    defaultSortBy: .newestSet
+                    defaultSortBy: .newestSet,
+                    gridNameToggleTitle: "Show product name",
+                    showGridCardIDToggle: false,
+                    showGridColumns: true,
+                    showGridOwnedToggle: false
                 )
                 : browseConfig
         )
