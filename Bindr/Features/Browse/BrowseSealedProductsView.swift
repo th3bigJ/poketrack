@@ -252,7 +252,6 @@ struct SealedProductGridCell: View {
             }
         }
         .frame(maxWidth: tileMaxWidth)
-        .frame(maxWidth: .infinity)
         .background(tileBackground)
         .contentShape(Rectangle())
         .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
@@ -260,6 +259,7 @@ struct SealedProductGridCell: View {
             RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                 .stroke(isOwned ? services.theme.accentColor : tileBorder, lineWidth: isOwned ? 1.8 : 1.2)
         }
+        .frame(maxWidth: .infinity)
     }
 }
 
