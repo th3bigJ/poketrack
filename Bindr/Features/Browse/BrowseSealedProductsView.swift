@@ -12,6 +12,7 @@ struct BrowseSealedTabContent: View {
     let gridOptions: BrowseGridOptions
 
     @State private var selectedProduct: SealedProduct?
+    @State private var detailProducts: [SealedProduct] = []
 
     private var ownedCollectionCardIDs: Set<String> {
         Set(collectionItems.compactMap { item in
@@ -34,13 +35,14 @@ struct BrowseSealedTabContent: View {
     }
 
     var body: some View {
+        let products = filteredProducts
         Group {
             if services.sealedProducts.isLoading && services.sealedProducts.products.isEmpty {
                 ProgressView("Loading sealed products…")
                     .frame(maxWidth: .infinity, minHeight: 280)
                     .padding(.horizontal, 16)
                     .padding(.bottom, 16)
-            } else if filteredProducts.isEmpty {
+            } else if products.isEmpty {
                 ContentUnavailableView(
                     services.sealedProducts.products.isEmpty ? "No sealed products yet" : "No matching products",
                     systemImage: "shippingbox",
@@ -52,8 +54,9 @@ struct BrowseSealedTabContent: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
             } else {
-                EagerVGrid(items: filteredProducts, columns: min(max(gridOptions.columnCount, 1), 4), spacing: 12) { product in
+                EagerVGrid(items: products, columns: min(max(gridOptions.columnCount, 1), 4), spacing: 12) { product in
                     Button {
+                        detailProducts = products
                         selectedProduct = product
                     } label: {
                         SealedProductGridCell(
@@ -78,7 +81,7 @@ struct BrowseSealedTabContent: View {
             }
         }
         .sheet(item: $selectedProduct) { product in
-            SealedProductBrowseDetailView(products: filteredProducts, startProductID: product.id)
+            SealedProductBrowseDetailView(products: detailProducts.isEmpty ? [product] : detailProducts, startProductID: product.id)
                 .environment(services)
         }
     }
@@ -262,42 +265,38 @@ private struct SealedThumbnailView: View {
     var ownedCountBadge: Int? = nil
 
     var body: some View {
-        GeometryReader { proxy in
-            let size = proxy.size
-            ZStack(alignment: .bottomTrailing) {
-                CachedAsyncImage(url: imageURL) { image in
-                    image
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: size.width, height: size.height)
-                        .clipped()
-                } placeholder: {
-                    Color.secondary.opacity(0.12)
-                        .overlay { ProgressView() }
-                }
-                .frame(width: size.width, height: size.height)
-                .clipped()
+        ZStack(alignment: .bottomTrailing) {
+            CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 260, height: 364)) { image in
+                image
+                    .resizable()
+                    .scaledToFill()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .clipped()
+            } placeholder: {
+                Color.secondary.opacity(0.12)
+                    .overlay { ProgressView() }
+            }
+            .clipped()
 
-                if let ownedCountBadge, ownedCountBadge > 1 {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                        .accessibilityLabel("Owned \(ownedCountBadge)")
-                } else if isOwned {
-                    Image(systemName: "checkmark.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, services.theme.accentColor)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                } else if isWishlisted {
-                    Image(systemName: "star.circle.fill")
-                        .font(.system(size: 24, weight: .semibold))
-                        .foregroundStyle(.white, .yellow)
-                        .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
-                        .padding(6)
-                }
+            if let ownedCountBadge, ownedCountBadge > 1 {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 24, weight: .semibold))
+                    .foregroundStyle(.white, services.theme.accentColor)
+                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                    .padding(6)
+                    .accessibilityLabel("Owned \(ownedCountBadge)")
+            } else if isOwned {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.system(size: 24, weight: .semibold))
+                    .foregroundStyle(.white, services.theme.accentColor)
+                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                    .padding(6)
+            } else if isWishlisted {
+                Image(systemName: "star.circle.fill")
+                    .font(.system(size: 24, weight: .semibold))
+                    .foregroundStyle(.white, .yellow)
+                    .shadow(color: .black.opacity(0.18), radius: 3, x: 0, y: 1)
+                    .padding(6)
             }
         }
     }

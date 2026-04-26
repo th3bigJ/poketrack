@@ -13,6 +13,7 @@ struct CollectView: View {
     @State private var cardsByCardID: [String: Card] = [:]
     @State private var collectionPriceByItemKey: [String: Double] = [:]
     @State private var selectedSealedProduct: SealedProduct?
+    @State private var cachedSetNameByBrandAndCode: [String: String] = [:]
 
     // MARK: - Wishlist State
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
@@ -43,27 +44,17 @@ struct CollectView: View {
         selectedBrand ?? services.brandSettings.selectedCatalogBrand
     }
 
-    private var setNameByBrandAndCode: [String: String] {
-        var map: [String: String] = [:]
-        for brand in services.brandSettings.enabledBrands {
-            guard let sets = try? CatalogStore.shared.fetchAllSets(for: brand) else { continue }
-            for set in sets {
-                let key = setNameKey(brand: brand, setCode: set.setCode)
-                if map[key] == nil {
-                    map[key] = set.name
-                }
-            }
-        }
-        return map
-    }
-
     private func setNameKey(brand: TCGBrand, setCode: String) -> String {
         "\(brand.rawValue)|\(setCode)"
     }
 
     private func setName(for card: Card) -> String? {
         let brand = TCGBrand.inferredFromMasterCardId(card.masterCardId)
-        return setNameByBrandAndCode[setNameKey(brand: brand, setCode: card.setCode)]
+        return cachedSetNameByBrandAndCode[setNameKey(brand: brand, setCode: card.setCode)]
+    }
+
+    private var setNameCacheKey: String {
+        services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
     }
 
     private var visibleCollectionItems: [CollectionItem] {
@@ -124,6 +115,9 @@ struct CollectView: View {
         .task(id: wishlistSignature) {
             await resolveWishlistCards()
         }
+        .task(id: setNameCacheKey) {
+            refreshSetNameCache()
+        }
         .onAppear {
             if selectedBrand != services.brandSettings.selectedCatalogBrand {
                 selectedBrand = services.brandSettings.selectedCatalogBrand
@@ -142,6 +136,20 @@ struct CollectView: View {
             SealedProductBrowseDetailView(products: [product], startProductID: product.id)
                 .environment(services)
         }
+    }
+
+    private func refreshSetNameCache() {
+        var map: [String: String] = [:]
+        for brand in services.brandSettings.enabledBrands {
+            guard let sets = try? CatalogStore.shared.fetchAllSets(for: brand) else { continue }
+            for set in sets {
+                let key = setNameKey(brand: brand, setCode: set.setCode)
+                if map[key] == nil {
+                    map[key] = set.name
+                }
+            }
+        }
+        cachedSetNameByBrandAndCode = map
     }
 
     // MARK: - Segmented Control
