@@ -348,21 +348,30 @@ struct CollectView: View {
             items = items.filter { $0.quantity >= 2 }
         }
         let trimmedQuery = collectionQuery.trimmingCharacters(in: .whitespacesAndNewlines)
-        if collectionFilters.hasActiveFieldFilters || !trimmedQuery.isEmpty {
+        let hasCardFieldFilters = collectionFilters.hasActiveCardFieldFilters
+        let hasSealedFieldFilters = collectionFilters.hasActiveSealedFieldFilters
+        let needsCardFiltering = hasCardFieldFilters || !trimmedQuery.isEmpty
+        let filteredIDs: Set<String> = {
+            guard needsCardFiltering else { return [] }
             let filteredCards = filterBrowseCards(
                 resolvedCollectionCards, query: collectionQuery, filters: collectionFilters,
                 ownedCardIDs: Set(items.map { $0.cardID }),
                 brand: activeBrand, sets: services.cardData.sets
             )
-            let filteredIDs = Set(filteredCards.map { $0.masterCardId })
-            let hasFieldFilters = collectionFilters.hasActiveFieldFilters
+            return Set(filteredCards.map { $0.masterCardId })
+        }()
+        if needsCardFiltering || hasSealedFieldFilters {
             let normalizedQuery = trimmedQuery.lowercased()
             items = items.filter { item in
                 if let product = sealedProduct(for: item) {
-                    guard hasFieldFilters == false else { return false }
+                    guard hasCardFieldFilters == false else { return false }
+                    guard sealedProductMatchesSelectedTypes(product.type, selectedOptionIDs: collectionFilters.sealedProductTypes) else {
+                        return false
+                    }
                     guard !normalizedQuery.isEmpty else { return true }
                     return product.searchBlob.contains(normalizedQuery)
                 }
+                guard needsCardFiltering else { return true }
                 return filteredIDs.contains(item.cardID)
             }
         }
@@ -563,20 +572,29 @@ struct CollectView: View {
     private var filteredWishlistItems: [WishlistItem] {
         var items = visibleWishlistItems
         let trimmedQuery = wishlistQuery.trimmingCharacters(in: .whitespacesAndNewlines)
-        if wishlistFilters.hasActiveFieldFilters || !trimmedQuery.isEmpty {
+        let hasCardFieldFilters = wishlistFilters.hasActiveCardFieldFilters
+        let hasSealedFieldFilters = wishlistFilters.hasActiveSealedFieldFilters
+        let needsCardFiltering = hasCardFieldFilters || !trimmedQuery.isEmpty
+        let filteredIDs: Set<String> = {
+            guard needsCardFiltering else { return [] }
             let filteredCards = filterBrowseCards(
                 resolvedWishlistCards, query: wishlistQuery, filters: wishlistFilters,
                 ownedCardIDs: [], brand: activeBrand, sets: services.cardData.sets
             )
-            let filteredIDs = Set(filteredCards.map { $0.masterCardId })
-            let hasFieldFilters = wishlistFilters.hasActiveFieldFilters
+            return Set(filteredCards.map { $0.masterCardId })
+        }()
+        if needsCardFiltering || hasSealedFieldFilters {
             let normalizedQuery = trimmedQuery.lowercased()
             items = items.filter { item in
                 if let product = sealedProduct(for: item) {
-                    guard hasFieldFilters == false else { return false }
+                    guard hasCardFieldFilters == false else { return false }
+                    guard sealedProductMatchesSelectedTypes(product.type, selectedOptionIDs: wishlistFilters.sealedProductTypes) else {
+                        return false
+                    }
                     guard !normalizedQuery.isEmpty else { return true }
                     return product.searchBlob.contains(normalizedQuery)
                 }
+                guard needsCardFiltering else { return true }
                 return filteredIDs.contains(item.cardID)
             }
         }

@@ -90,6 +90,61 @@ let opCounterAllOptions: [Int] = [1000, 2000]
 let opLifeAllOptions: [Int] = [3, 4, 5, 6]
 let opPowerAllOptions: [Int] = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
 
+struct SealedProductTypeFilterOption: Identifiable, Equatable, Sendable {
+    let id: String
+    let title: String
+    let rawTypes: Set<String>
+}
+
+let sealedProductTypeFilterOptions: [SealedProductTypeFilterOption] = [
+    SealedProductTypeFilterOption(id: "battlebox", title: "battlebox", rawTypes: ["battlebox"]),
+    SealedProductTypeFilterOption(id: "blisterpack", title: "blisterpack", rawTypes: ["blisterpack"]),
+    SealedProductTypeFilterOption(id: "boosterbox", title: "boosterbox", rawTypes: ["boosterbox"]),
+    SealedProductTypeFilterOption(id: "boosterpack", title: "boosterpack", rawTypes: ["boosterpack"]),
+    SealedProductTypeFilterOption(
+        id: "collections",
+        title: "Collections",
+        rawTypes: ["collectionbox", "collectionchest"]
+    ),
+    SealedProductTypeFilterOption(id: "deck", title: "deck", rawTypes: ["deck"]),
+    SealedProductTypeFilterOption(id: "elitetrainerbox", title: "elitetrainerbox", rawTypes: ["elitetrainerbox"]),
+    SealedProductTypeFilterOption(id: "miscellaneous", title: "miscellaneous", rawTypes: ["miscellaneous"]),
+    SealedProductTypeFilterOption(id: "pincollection", title: "pincollection", rawTypes: ["pincollection"]),
+    SealedProductTypeFilterOption(
+        id: "special",
+        title: "Special",
+        rawTypes: ["specialbox", "specialpack", "specialset"]
+    ),
+    SealedProductTypeFilterOption(id: "starterset", title: "starterset", rawTypes: ["starterset"]),
+    SealedProductTypeFilterOption(id: "tin", title: "tin", rawTypes: ["tin"])
+]
+
+private let sealedProductTypeFilterOptionByID: [String: SealedProductTypeFilterOption] = Dictionary(
+    uniqueKeysWithValues: sealedProductTypeFilterOptions.map { ($0.id, $0) }
+)
+
+func normalizeSealedProductTypeToken(_ value: String?) -> String {
+    guard let value else { return "" }
+    return value
+        .trimmingCharacters(in: .whitespacesAndNewlines)
+        .lowercased()
+        .replacingOccurrences(of: "_", with: "")
+        .replacingOccurrences(of: " ", with: "")
+}
+
+func sealedProductMatchesSelectedTypes(_ rawType: String?, selectedOptionIDs: Set<String>) -> Bool {
+    guard !selectedOptionIDs.isEmpty else { return true }
+    let normalizedRawType = normalizeSealedProductTypeToken(rawType)
+    guard !normalizedRawType.isEmpty else { return false }
+    for optionID in selectedOptionIDs {
+        guard let option = sealedProductTypeFilterOptionByID[optionID] else { continue }
+        if option.rawTypes.contains(normalizedRawType) {
+            return true
+        }
+    }
+    return false
+}
+
 struct BrowseCardGridFilters: Equatable, Sendable, Codable {
     var sortBy: BrowseCardGridSortOption = .random
     var cardTypes: Set<BrowseCardTypeFilter> = []
@@ -107,12 +162,14 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
     var opCounters: Set<Int> = []
     var opLives: Set<Int> = []
     var opPowers: Set<Int> = []
+    /// Sealed product type filters (supports grouped options like Collections / Special).
+    var sealedProductTypes: Set<String> = []
 
     var isDefault: Bool {
         self == Self()
     }
 
-    var hasActiveFieldFilters: Bool {
+    var hasActiveCardFieldFilters: Bool {
         !cardTypes.isEmpty
             || rarePlusOnly
             || hideOwned
@@ -127,6 +184,14 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
             || !opCounters.isEmpty
             || !opLives.isEmpty
             || !opPowers.isEmpty
+    }
+
+    var hasActiveSealedFieldFilters: Bool {
+        !sealedProductTypes.isEmpty
+    }
+
+    var hasActiveFieldFilters: Bool {
+        hasActiveCardFieldFilters || hasActiveSealedFieldFilters
     }
 
     var hasActiveSort: Bool {

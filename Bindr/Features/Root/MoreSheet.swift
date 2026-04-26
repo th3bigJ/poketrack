@@ -42,6 +42,11 @@ struct MoreView: View {
                         title: "Themes",
                         action: { navigationPath.append(SideMenuPage.themes) }
                     )
+                    QuickAccessNavigationButton(
+                        icon: "chart.line.uptrend.xyaxis",
+                        title: "Grading",
+                        action: { navigationPath.append(SideMenuPage.gradingOpportunities) }
+                    )
                 }
                 .padding(.vertical, 8)
                 .listRowInsets(EdgeInsets())
@@ -68,6 +73,8 @@ struct MoreView: View {
                 TransactionsView()
             case .themes:
                 ThemesView()
+            case .gradingOpportunities:
+                GradingOpportunitiesView()
             }
         }
         .safeAreaInset(edge: .top) {

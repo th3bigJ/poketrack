@@ -702,7 +702,8 @@ struct RootView: View {
                 showHideOwned: false,
                 showShowDuplicates: true,
                 showGridOptions: true,
-                defaultSortBy: .price
+                defaultSortBy: .price,
+                showSealedProductTypeFilter: true
             )
         )
     }
@@ -753,7 +754,8 @@ struct RootView: View {
                     gridNameToggleTitle: "Show product name",
                     showGridCardIDToggle: false,
                     showGridColumns: true,
-                    showGridOwnedToggle: false
+                    showGridOwnedToggle: false,
+                    showSealedProductTypeFilter: true
                 )
                 : browseConfig
         )

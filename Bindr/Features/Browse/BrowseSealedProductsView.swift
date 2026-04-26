@@ -34,6 +34,9 @@ struct BrowseSealedTabContent: View {
     private var filteredProducts: [SealedProduct] {
         let normalizedQuery = normalizeSealedSearchText(query)
         let base = services.sealedProducts.products.filter { product in
+            if sealedProductMatchesSelectedTypes(product.type, selectedOptionIDs: filters.sealedProductTypes) == false {
+                return false
+            }
             guard normalizedQuery.isEmpty == false else { return true }
             return product.searchBlob.contains(normalizedQuery)
         }
@@ -374,6 +377,7 @@ private struct SealedProductDetailPage: View {
     @State private var showWishlistPaywall = false
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
+    @State private var isWishlisted = false
 
     init(product: SealedProduct) {
         self.product = product
@@ -389,10 +393,6 @@ private struct SealedProductDetailPage: View {
         collectionItems
             .filter { $0.itemKind == ProductKind.sealedProduct.rawValue }
             .reduce(0) { $0 + max($1.quantity, 0) }
-    }
-
-    private var isWishlisted: Bool {
-        services.wishlist?.isInWishlist(cardID: collectionCardID, variantKey: "sealed") == true
     }
 
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
@@ -424,6 +424,7 @@ private struct SealedProductDetailPage: View {
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
             services.setupWishlist(modelContext: modelContext)
+            refreshWishlistState()
         }
         .sheet(isPresented: $showAddSheet) {
             AddSealedToCollectionSheet(product: product)
@@ -714,6 +715,7 @@ private struct SealedProductDetailPage: View {
         if isWishlisted {
             do {
                 try wishlist.removeCardVariant(cardID: collectionCardID, variantKey: "sealed")
+                isWishlisted = false
             } catch {
                 wishlistAlertMessage = error.localizedDescription
                 showWishlistAlert = true
@@ -728,11 +730,22 @@ private struct SealedProductDetailPage: View {
 
         do {
             try wishlist.addItem(cardID: collectionCardID, variantKey: "sealed")
+            isWishlisted = true
         } catch WishlistError.limitReached {
             showWishlistPaywall = true
         } catch {
             wishlistAlertMessage = error.localizedDescription
             showWishlistAlert = true
+        }
+    }
+
+    private func refreshWishlistState() {
+        guard let wishlist = services.wishlist else {
+            isWishlisted = false
+            return
+        }
+        isWishlisted = wishlist.items.contains {
+            $0.cardID == collectionCardID && $0.variantKey == "sealed"
         }
     }
 }

@@ -66,6 +66,8 @@ struct CardGridCell: View {
     var ownedCountBadge: Int? = nil
     /// Optional line under the name (e.g. wishlist variant key).
     var footnote: String? = nil
+    /// Optional line rendered after pricing in the footer (used by grading opportunities for upside text).
+    var postPriceFootnote: String? = nil
     /// When provided, shown as the price instead of doing a live lookup (used by collection grid to show grade-correct price).
     var overridePrice: Double? = nil
     /// When provided, shown as a small badge next to the price (e.g. "PSA 10", "ACE 10").
@@ -94,6 +96,7 @@ struct CardGridCell: View {
             || (gridOptions.showOwned && !(footnote?.isEmpty ?? true))
             || gridOptions.showSetID
             || gridOptions.showPricing
+            || !(postPriceFootnote?.isEmpty ?? true)
     }
 
     private var visibleOwnedCountBadge: Int? {
@@ -171,6 +174,15 @@ struct CardGridCell: View {
                             usesAccentColor: true
                         )
                         .frame(maxWidth: .infinity, alignment: .center)
+                    }
+
+                    if let postPriceFootnote, !postPriceFootnote.isEmpty {
+                        Text(postPriceFootnote)
+                            .font(.caption2)
+                            .lineLimit(1)
+                            .multilineTextAlignment(.center)
+                            .foregroundStyle(.secondary)
+                            .frame(maxWidth: .infinity)
                     }
                 }
                 .padding(.horizontal, 8)
@@ -2984,6 +2996,7 @@ struct FilterMenuConfig {
     var showGridCardIDToggle: Bool = true
     var showGridColumns: Bool = true
     var showGridOwnedToggle: Bool = true
+    var showSealedProductTypeFilter: Bool = false
 
     static let browse = FilterMenuConfig()
     static let collect = FilterMenuConfig(
@@ -3116,6 +3129,14 @@ struct BrowseGridFiltersMenuContent: View {
                     }
                 }
             }
+
+            if config.showSealedProductTypeFilter {
+                filterMenu(title: "Product type", summary: selectionSummary(for: filters.sealedProductTypes)) {
+                    ForEach(sealedProductTypeFilterOptions) { option in
+                        Toggle(option.title, isOn: stringBinding(for: option.id, keyPath: \.sealedProductTypes))
+                    }
+                }
+            }
         }
 
         if config.showRarity || config.showRarePlusOnly || config.showHideOwned || config.showShowDuplicates {
@@ -3143,6 +3164,16 @@ struct BrowseGridFiltersMenuContent: View {
             }
         }
         } // end if !isAllBrands && showBrandFilters
+
+        if config.showSealedProductTypeFilter && (!isAllBrands && config.showBrandFilters) == false {
+            Section("Filters") {
+                filterMenu(title: "Product type", summary: selectionSummary(for: filters.sealedProductTypes)) {
+                    ForEach(sealedProductTypeFilterOptions) { option in
+                        Toggle(option.title, isOn: stringBinding(for: option.id, keyPath: \.sealedProductTypes))
+                    }
+                }
+            }
+        }
 
         if config.showGridOptions {
             Section("Grid options") {

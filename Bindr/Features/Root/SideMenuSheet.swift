@@ -8,6 +8,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
     case decks
     case transactions
     case themes
+    case gradingOpportunities
 
     var id: String { rawValue }
 
@@ -19,6 +20,7 @@ enum SideMenuPage: String, Identifiable, Hashable {
         case .decks: return "Deck Builder"
         case .transactions: return "Transactions"
         case .themes: return "Themes"
+        case .gradingOpportunities: return "Grading Opportunities"
         }
     }
 }
