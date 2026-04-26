@@ -174,6 +174,11 @@ struct SealedProductGridCell: View {
         260
     }
 
+    /// Keep the entire tile (title/image/footer) card-sized, not full-column width.
+    private var tileMaxWidth: CGFloat {
+        260
+    }
+
     var body: some View {
         VStack(spacing: 0) {
             if gridOptions.showCardName {
@@ -246,6 +251,8 @@ struct SealedProductGridCell: View {
                 }
             }
         }
+        .frame(maxWidth: tileMaxWidth)
+        .frame(maxWidth: .infinity)
         .background(tileBackground)
         .contentShape(Rectangle())
         .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
