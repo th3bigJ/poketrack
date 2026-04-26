@@ -335,8 +335,10 @@ struct EagerVGrid<Item: Identifiable, Cell: View>: View {
                         }
                     }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
+        .frame(maxWidth: .infinity, alignment: .leading)
     }
 }
 

@@ -169,16 +169,6 @@ struct SealedProductGridCell: View {
         (gridOptions.showCardName || showsFooter) ? 18 : 0
     }
 
-    /// Keep sealed artwork at a card-like maximum width even when a tile spans a wide column (e.g. 1-column mode).
-    private var thumbnailMaxWidth: CGFloat {
-        260
-    }
-
-    /// Keep the entire tile (title/image/footer) card-sized, not full-column width.
-    private var tileMaxWidth: CGFloat {
-        260
-    }
-
     var body: some View {
         VStack(spacing: 0) {
             if gridOptions.showCardName {
@@ -203,7 +193,6 @@ struct SealedProductGridCell: View {
                 ownedCountBadge: nil
             )
             .aspectRatio(5 / 7, contentMode: .fit)
-            .frame(maxWidth: thumbnailMaxWidth)
             .frame(maxWidth: .infinity)
 
             if showsFooter {
@@ -251,7 +240,6 @@ struct SealedProductGridCell: View {
                 }
             }
         }
-        .frame(maxWidth: tileMaxWidth)
         .background(tileBackground)
         .contentShape(Rectangle())
         .clipShape(RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous))
@@ -259,7 +247,6 @@ struct SealedProductGridCell: View {
             RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                 .stroke(isOwned ? services.theme.accentColor : tileBorder, lineWidth: isOwned ? 1.8 : 1.2)
         }
-        .frame(maxWidth: .infinity)
     }
 }
 
