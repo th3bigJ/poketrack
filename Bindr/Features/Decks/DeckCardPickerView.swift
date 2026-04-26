@@ -1213,7 +1213,7 @@ private struct DeckPickerCardCell: View {
     let alreadyInDeck: Bool
 
     var body: some View {
-        ZStack(alignment: .topTrailing) {
+        ZStack(alignment: .bottomTrailing) {
             CardGridCell(
                 card: entry.card,
                 gridOptions: gridOptions,

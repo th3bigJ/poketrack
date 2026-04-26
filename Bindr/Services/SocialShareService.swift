@@ -92,6 +92,7 @@ final class SocialShareService {
         case deck(UUID)
         case wishlist
         case collection
+        case folder(UUID)
     }
 
     private struct EncodedPayload {
@@ -409,6 +410,79 @@ final class SocialShareService {
         try await unpublish(type: .wishlist, localContentID: "wishlist")
     }
 
+    // MARK: - Folders
+
+    func shareSnapshot(for folder: CardFolder) async throws -> ShareSnapshot {
+        let existing = try await fetchMine(type: .folder, localContentID: folder.id.uuidString)
+        return ShareSnapshot(
+            sharedContent: existing,
+            title: existing?.title ?? folder.title,
+            description: existing?.description ?? "",
+            visibility: existing?.visibility ?? .friends,
+            includeValue: existing?.includeValue ?? false,
+            isPublished: existing != nil
+        )
+    }
+
+    func publishFolder(
+        _ folder: CardFolder,
+        title: String,
+        description: String,
+        visibility: SharedContentVisibility,
+        includeValue: Bool
+    ) async throws -> SharedContent {
+        let encoded = try await encodeFolderPayload(folder, includeValue: includeValue)
+        return try await upsertSharedContent(
+            type: .folder,
+            localContentID: encoded.localContentID,
+            encoded: encoded,
+            title: normalizedTitle(title, fallback: folder.title),
+            description: normalizedDescription(description),
+            visibility: visibility,
+            includeValue: includeValue
+        )
+    }
+
+    func unpublishFolder(_ folder: CardFolder) async throws {
+        try await unpublish(type: .folder, localContentID: folder.id.uuidString)
+    }
+
+    private func encodeFolderPayload(_ folder: CardFolder, includeValue: Bool) async throws -> EncodedPayload {
+        var rows: [[String: JSONValue]] = []
+        var totalValue: Double = 0
+        for item in folder.items ?? [] {
+            var row: [String: JSONValue] = [
+                "cardID": .string(item.cardID),
+                "variantKey": .string(item.variantKey)
+            ]
+            if let card = await cardDataService.loadCard(masterCardId: item.cardID) {
+                row["cardName"] = .string(card.cardName)
+                if includeValue, let value = await pricingService.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+                    row["market_value_usd"] = .number(value)
+                    totalValue += value
+                }
+            }
+            rows.append(row)
+        }
+        var payload: [String: JSONValue] = [
+            "payload_version": .number(1),
+            "generated_at": .string(ISO8601DateFormatter().string(from: Date())),
+            "local_content_id": .string(folder.id.uuidString),
+            "title": .string(folder.title),
+            "items": .array(rows.map(JSONValue.object))
+        ]
+        if includeValue {
+            payload["market_value_usd"] = .number(totalValue)
+        }
+        return EncodedPayload(
+            payload: payload,
+            title: folder.title,
+            cardCount: rows.count,
+            brand: nil,
+            localContentID: folder.id.uuidString
+        )
+    }
+
     func scheduleAutoSync(binder: Binder) {
         let snapshot = BinderSyncSnapshot(
             id: binder.id,
@@ -469,6 +543,8 @@ final class SocialShareService {
                 break
             case .pull, .dailyDigest:
                 // Server-generated events — never delete locally
+                break
+            case .folder:
                 break
             }
         }
@@ -714,6 +790,8 @@ final class SocialShareService {
         case .deck:
             throw SocialShareError.deckSharingRequiresPremium
         case .pull, .dailyDigest:
+            break
+        case .folder:
             break
         }
     }

@@ -88,15 +88,20 @@ struct CollectView: View {
                     if showsSegmentedControl {
                         segmentedControl.padding(.horizontal, 16)
                     }
-                    BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding) {
-                        contentTypeChips
-                    }
+                    if selectedSegment != .folders {
+                        BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding) {
+                            contentTypeChips
+                        }
                         .padding(.horizontal, 16)
+                    }
                 }
                 .padding(.bottom, 10)
 
                 contentView
             }
+        }
+        .navigationDestination(for: CardFolder.self) { folder in
+            FolderContentsView(folder: folder)
         }
         .scrollDismissesKeyboard(.immediately)
         .toolbar(hidesNavigationBar ? .hidden : .visible, for: .navigationBar)
@@ -190,11 +195,17 @@ struct CollectView: View {
             return "Search \(formattedActiveFilteredCount) \(itemLabel) in collection"
         case .wishlist:
             return "Search \(formattedActiveFilteredCount) \(itemLabel) in wishlist"
+        case .folders:
+            return ""
         }
     }
 
     private var activeQueryBinding: Binding<String> {
-        selectedSegment == .collection ? $collectionQuery : $wishlistQuery
+        switch selectedSegment {
+        case .collection: return $collectionQuery
+        case .wishlist:   return $wishlistQuery
+        case .folders:    return $collectionQuery
+        }
     }
 
     private var contentTypeChips: some View {
@@ -250,7 +261,11 @@ struct CollectView: View {
     }
 
     private var activeFilteredCount: Int {
-        selectedSegment == .collection ? filteredCollectionItemsForSelectedType.count : filteredWishlistItemsForSelectedType.count
+        switch selectedSegment {
+        case .collection: return filteredCollectionItemsForSelectedType.count
+        case .wishlist:   return filteredWishlistItemsForSelectedType.count
+        case .folders:    return 0
+        }
     }
 
     private var formattedActiveFilteredCount: String {
@@ -266,7 +281,13 @@ struct CollectView: View {
         switch selectedSegment {
         case .collection: collectionContent
         case .wishlist:   wishlistContent
+        case .folders:    foldersContent
         }
+    }
+
+    @ViewBuilder
+    private var foldersContent: some View {
+        FoldersListView()
     }
 
     // MARK: - Collection Content
@@ -770,6 +791,7 @@ struct CollectView: View {
 enum CollectSegment: String, CaseIterable, Identifiable {
     case collection
     case wishlist
+    case folders
 
     var id: String { rawValue }
 
@@ -777,6 +799,7 @@ enum CollectSegment: String, CaseIterable, Identifiable {
         switch self {
         case .collection: return "Collection"
         case .wishlist:   return "Wishlist"
+        case .folders:    return "Folders"
         }
     }
 }

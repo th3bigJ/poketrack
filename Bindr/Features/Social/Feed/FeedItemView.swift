@@ -201,6 +201,7 @@ struct FeedItemView: View {
                 case .collection: return "cards in collection"
                 case .pull: return "pull"
                 case .dailyDigest: return "daily updates"
+                case .folder: return "cards in folder"
                 }
             }()
             if let brand = content.brand, !brand.isEmpty {
@@ -279,6 +280,8 @@ struct FeedItemView: View {
             return [typeAccentColor]
         case .dailyDigest:
             return [Color(hex: "5B9CF6"), Color(hex: "52C97C"), Color(hex: "E8B84B")]
+        case .folder:
+            return [Color(hex: "22B8CF"), Color(hex: "5B9CF6"), Color(hex: "52C97C")]
         }
     }
 }

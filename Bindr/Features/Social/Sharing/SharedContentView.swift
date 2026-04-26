@@ -21,7 +21,7 @@ struct SharedContentView: View {
 
     private var rows: [SharedCardRow] {
         switch content.contentType {
-        case .binder, .wishlist, .collection:
+        case .binder, .wishlist, .collection, .folder:
             return decodeRows(key: "items")
         case .deck:
             return decodeRows(key: "cards")

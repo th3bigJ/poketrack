@@ -213,10 +213,10 @@ struct SocialRootView: View {
                 .presentationDragIndicator(.visible)
         }
         .sheet(isPresented: $isNewPostPresented) {
-            NewPostView()
+            SocialShareSheet(item: .card)
                 .environment(services)
                 .presentationDetents([.large])
-                .presentationDragIndicator(.visible)
+                .presentationDragIndicator(.hidden)
         }
     }
 

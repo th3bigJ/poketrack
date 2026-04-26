@@ -41,6 +41,10 @@ struct BindrApp: App {
     static let cloudKitFallbackDefaultsKey = "cloudKitFallbackActive"
     static let cloudKitLastErrorDefaultsKey = "cloudKitLastError"
 
+    init() {
+        Self.configureTabBarAppearance()
+    }
+
     /// CloudKit-backed store for user data. SwiftData keeps a local cache on-device and syncs it through the
     /// app's private iCloud database when the user is signed into iCloud.
     private static func makeModelContainer() -> ModelContainer {
@@ -57,6 +61,8 @@ struct BindrApp: App {
             CollectionValueSnapshot.self,
             CollectionWeeklyAverage.self,
             CollectionMonthlyAverage.self,
+            CardFolder.self,
+            CardFolderItem.self,
         ])
 
         do {
@@ -149,6 +155,28 @@ struct BindrApp: App {
         if !nsError.userInfo.isEmpty {
             print("userInfo=\(nsError.userInfo)")
         }
+    }
+
+    /// Match tab bar glass density to multi-select pill buttons.
+    private static func configureTabBarAppearance() {
+        let appearance = UITabBarAppearance()
+        appearance.configureWithTransparentBackground()
+        appearance.backgroundEffect = UIBlurEffect(style: .systemUltraThinMaterial)
+        appearance.backgroundColor = UIColor { traitCollection in
+            if traitCollection.userInterfaceStyle == .dark {
+                return UIColor.black.withAlphaComponent(0.30)
+            } else {
+                return UIColor.black.withAlphaComponent(0.12)
+            }
+        }
+        appearance.shadowColor = UIColor { traitCollection in
+            traitCollection.userInterfaceStyle == .dark
+                ? UIColor.white.withAlphaComponent(0.18)
+                : UIColor.black.withAlphaComponent(0.10)
+        }
+
+        UITabBar.appearance().standardAppearance = appearance
+        UITabBar.appearance().scrollEdgeAppearance = appearance
     }
 
     var body: some Scene {

@@ -5,6 +5,7 @@ enum ShareSettingsSource {
     case deck(Deck)
     case wishlist(items: [WishlistItem])
     case collection(items: [CollectionItem])
+    case folder(CardFolder)
 }
 
 struct ShareSettingsView: View {
@@ -110,6 +111,8 @@ struct ShareSettingsView: View {
                 snapshot = try await services.socialShare.shareSnapshotForWishlist()
             case .collection:
                 snapshot = try await services.socialShare.shareSnapshotForCollection()
+            case .folder(let folder):
+                snapshot = try await services.socialShare.shareSnapshot(for: folder)
             }
             title = snapshot.title
             descriptionText = snapshot.description
@@ -159,6 +162,14 @@ struct ShareSettingsView: View {
                     includeValue: includeValue,
                     collectionItems: items
                 )
+            case .folder(let folder):
+                _ = try await services.socialShare.publishFolder(
+                    folder,
+                    title: title,
+                    description: descriptionText,
+                    visibility: visibility,
+                    includeValue: includeValue
+                )
             }
             isPublished = true
             errorMessage = nil
@@ -186,6 +197,8 @@ struct ShareSettingsView: View {
                 try await services.socialShare.unpublishWishlist()
             case .collection:
                 try await services.socialShare.unpublishCollection()
+            case .folder(let folder):
+                try await services.socialShare.unpublishFolder(folder)
             }
             isPublished = false
             errorMessage = nil

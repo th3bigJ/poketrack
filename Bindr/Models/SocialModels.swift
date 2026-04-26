@@ -196,6 +196,7 @@ enum SharedContentType: String, Codable, Sendable, CaseIterable {
     case collection
     case pull
     case dailyDigest = "daily_digest"
+    case folder
 }
 
 enum SharedContentVisibility: String, Codable, Sendable, CaseIterable {

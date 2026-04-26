@@ -36,6 +36,8 @@ struct UniversalSearchBar: View {
 
     /// When set, replaces the filter button with a custom trailing button (symbol name + action).
     var trailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? = nil
+    /// Optional second trailing control shown before filter/trailing button.
+    var extraTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? = nil
 
     /// Called when the leading back chevron is tapped (only visible while search is open).
     var onActivateSearch: () -> Void
@@ -120,6 +122,13 @@ struct UniversalSearchBar: View {
                     HStack {
                         collapsedSearchButtonLiquid
                         Spacer(minLength: 0)
+                        if let extraTrailingButton {
+                            trailingButtonLiquid(
+                                symbol: extraTrailingButton.symbol,
+                                accessibilityLabel: extraTrailingButton.accessibilityLabel,
+                                action: extraTrailingButton.action
+                            )
+                        }
                         if let trailingButton {
                             trailingButtonLiquid(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
                         } else if let filterMenuContent, isFilterEnabled {
@@ -191,6 +200,13 @@ struct UniversalSearchBar: View {
                     HStack {
                         collapsedSearchButtonFallback
                         Spacer(minLength: 0)
+                        if let extraTrailingButton {
+                            trailingButtonFallback(
+                                symbol: extraTrailingButton.symbol,
+                                accessibilityLabel: extraTrailingButton.accessibilityLabel,
+                                action: extraTrailingButton.action
+                            )
+                        }
                         if let trailingButton {
                             trailingButtonFallback(symbol: trailingButton.symbol, accessibilityLabel: trailingButton.accessibilityLabel, action: trailingButton.action)
                         } else if let filterMenuContent, isFilterEnabled {

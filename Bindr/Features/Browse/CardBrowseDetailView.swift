@@ -107,6 +107,8 @@ private struct CardBrowseDetailPage: View {
     @State private var editingItem: CollectionItem?
     @State private var dispositionItem: CollectionItem?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
+    @State private var addToFolderPayload: AddToFolderSheetPayload?
+    @State private var showCardShare = false
     @State private var wishlistVariantKeys: [String] = ["normal"]
     @State private var isCurrentCardWishlisted = false
     @State private var showWishlistPaywall = false
@@ -267,6 +269,15 @@ private struct CardBrowseDetailPage: View {
             AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey)
                 .environment(services)
         }
+        .sheet(item: $addToFolderPayload) { payload in
+            AddToFolderSheet(card: payload.card, variantKey: payload.variantKey)
+        }
+        .sheet(isPresented: $showCardShare) {
+            SocialShareSheet(item: .card)
+                .environment(services)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.hidden)
+        }
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()
                 .environment(services)
@@ -406,22 +417,16 @@ private struct CardBrowseDetailPage: View {
             VStack(spacing: 14) {
                 titleBlock
 
-                HStack(alignment: .center, spacing: 10) {
+                HStack(spacing: 8) {
                     if showsCollectionAction {
-                        collectionActionButton.frame(maxWidth: .infinity, alignment: .leading)
-                    } else {
-                        Spacer(minLength: 0)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                        collectionActionButton
                     }
-
-                    centeredSetBlock
-                        .frame(maxWidth: .infinity, alignment: .center)
-
                     if showsWishlistAction {
-                        wishlistActionButton.frame(maxWidth: .infinity, alignment: .trailing)
-                    } else {
-                        Spacer(minLength: 0)
-                            .frame(maxWidth: .infinity, alignment: .trailing)
+                        wishlistActionButton
+                    }
+                    if showsCollectionAction {
+                        folderActionButton
+                        shareActionButton
                     }
                 }
             }
@@ -429,11 +434,14 @@ private struct CardBrowseDetailPage: View {
     }
 
     private var titleBlock: some View {
-        Text(card.cardName)
-            .font(.system(size: 28, weight: .bold, design: .rounded))
-            .foregroundStyle(Color.primary)
-            .multilineTextAlignment(.center)
-            .frame(maxWidth: .infinity, alignment: .center)
+        VStack(spacing: 6) {
+            Text(card.cardName)
+                .font(.system(size: 28, weight: .bold, design: .rounded))
+                .foregroundStyle(Color.primary)
+                .multilineTextAlignment(.center)
+                .frame(maxWidth: .infinity, alignment: .center)
+            centeredSetBlock
+        }
     }
 
     @ViewBuilder
@@ -535,16 +543,71 @@ private struct CardBrowseDetailPage: View {
         }
     }
 
+    @ViewBuilder
+    private var folderActionButton: some View {
+        if let variantKey = singleAvailableVariantKey {
+            Button {
+                addToFolderPayload = AddToFolderSheetPayload(card: card, variantKey: variantKey)
+            } label: {
+                cardActionBody(
+                    title: "Add to Folder",
+                    systemImage: "folder.badge.plus",
+                    tint: Color(red: 0.18, green: 0.72, blue: 0.88)
+                )
+            }
+            .buttonStyle(.plain)
+        } else {
+            Menu {
+                variantSelectionMenuContent(
+                    sectionHeader: "Select Variant to add to folder",
+                    showWishlistCheckmarks: false,
+                    onSelect: { key in
+                        addToFolderPayload = AddToFolderSheetPayload(card: card, variantKey: key)
+                    }
+                )
+            } label: {
+                cardActionBody(
+                    title: "Add to Folder",
+                    systemImage: "folder.badge.plus",
+                    tint: Color(red: 0.18, green: 0.72, blue: 0.88)
+                )
+            }
+            .menuStyle(.button)
+            .menuIndicator(.hidden)
+        }
+    }
+
+    private var shareActionButton: some View {
+        Button {
+            showCardShare = true
+        } label: {
+            cardActionBody(
+                title: "Share",
+                systemImage: "square.and.arrow.up",
+                tint: Color(red: 0.36, green: 0.61, blue: 0.97)
+            )
+        }
+        .buttonStyle(.plain)
+    }
+
     private func cardActionBody(title: String, systemImage: String, tint: Color) -> some View {
-        Image(systemName: systemImage)
-            .font(.system(size: 20, weight: .semibold))
-            .foregroundStyle(tint)
-            .frame(width: 52, height: 52)
+        VStack(spacing: 5) {
+            Image(systemName: systemImage)
+                .font(.system(size: 20, weight: .semibold))
+                .foregroundStyle(tint)
+            Text(title)
+                .font(.system(size: 9, weight: .semibold))
+                .foregroundStyle(tint)
+                .lineLimit(1)
+                .minimumScaleFactor(0.6)
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 12)
         .background {
-            Circle()
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .fill(glassButtonBackground)
                 .overlay(
-                    Circle()
+                    RoundedRectangle(cornerRadius: 14, style: .continuous)
                         .stroke(glassButtonBorder, lineWidth: 1)
                 )
         }

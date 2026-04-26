@@ -20,6 +20,8 @@ private struct BrowseTabView: View {
     @Binding var inlineDetailFilterTrainerTypeOptions: [String]
     @Binding var selectedTab: BrowseHomeTab
     @Binding var inlineDetailRoute: BrowseInlineDetailRoute?
+    @Binding var isMultiSelectActive: Bool
+    @Binding var multiSelectedCardIDs: Set<String>
 
     var body: some View {
         BrowseView(
@@ -37,7 +39,9 @@ private struct BrowseTabView: View {
             inlineDetailFilterRarityOptions: $inlineDetailFilterRarityOptions,
             inlineDetailFilterTrainerTypeOptions: $inlineDetailFilterTrainerTypeOptions,
             selectedTab: $selectedTab,
-            inlineDetailRoute: $inlineDetailRoute
+            inlineDetailRoute: $inlineDetailRoute,
+            isMultiSelectActive: $isMultiSelectActive,
+            multiSelectedCardIDs: $multiSelectedCardIDs
         )
     }
 }
@@ -63,6 +67,8 @@ struct RootView: View {
     @State private var browseInlineDetailFilterTrainerTypeOptions: [String] = []
     @State private var browseHomeTab: BrowseHomeTab = .cards
     @State private var browseInlineDetailRoute: BrowseInlineDetailRoute?
+    @State private var browseMultiSelectActive = false
+    @State private var browseMultiSelectedCardIDs: Set<String> = []
     @State private var collectSelectedBrand: TCGBrand? = nil
     @State private var collectFilters = CollectionFiltersSettings()
     @State private var collectFilterEnergyOptions: [String] = []
@@ -77,6 +83,8 @@ struct RootView: View {
     @State private var moreNavigationPath = NavigationPath()
     @State private var selectedCardPresentation: CardPresentationContext?
     @State private var showBrandOnboarding = false
+    @State private var showCreateFolderAlert = false
+    @State private var newFolderTitle = ""
     @State private var showSettings = false
     @State private var suppressMorePathReset = false
     @FocusState private var searchFieldFocused: Bool
@@ -95,6 +103,7 @@ struct RootView: View {
         if isSearchExperiencePresented { return true }
         if selectedTab == .social { return false }
         if selectedTab == .more { return false }
+        if selectedTab == .collect && !collectionNavigationPath.isEmpty { return false }
         return chromeScroll.barsVisible
     }
 
@@ -106,19 +115,27 @@ struct RootView: View {
     }
 
     private var isCollectFilterContextActive: Bool {
-        selectedTab == .collect && collectionNavigationPath.isEmpty
+        selectedTab == .collect && collectionNavigationPath.isEmpty && collectSegment != .folders
     }
 
     private var activeCollectFilters: BrowseCardGridFilters {
-        collectSegment == .collection ? collectFilters.collectionFilters : collectFilters.wishlistFilters
+        switch collectSegment {
+        case .collection: return collectFilters.collectionFilters
+        case .wishlist:   return collectFilters.wishlistFilters
+        case .folders:    return BrowseCardGridFilters()
+        }
     }
 
     private var activeCollectFiltersBinding: Binding<BrowseCardGridFilters> {
-        collectSegment == .collection ? $collectFilters.collectionFilters : $collectFilters.wishlistFilters
+        switch collectSegment {
+        case .collection: return $collectFilters.collectionFilters
+        case .wishlist:   return $collectFilters.wishlistFilters
+        case .folders:    return .constant(BrowseCardGridFilters())
+        }
     }
 
     private var isCollectFilterActive: Bool {
-        activeCollectFilters.isVisiblyCustomized
+        collectSegment == .folders ? false : activeCollectFilters.isVisiblyCustomized
     }
 
     private var collectActiveBrand: TCGBrand {
@@ -130,10 +147,27 @@ struct RootView: View {
     }
 
     private var chromeTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
+        if selectedTab == .collect && collectSegment == .folders && collectionNavigationPath.isEmpty {
+            return ("folder.badge.plus", "Create folder", { showCreateFolderAlert = true })
+        }
         switch selectedTab {
         case .dashboard: return ("gearshape", "Settings", { showSettings = true })
         default: return nil
         }
+    }
+
+    private var chromeExtraTrailingButton: (symbol: String, accessibilityLabel: String, action: () -> Void)? {
+        guard isBrowseGridFilterContextActive else { return nil }
+        return (
+            browseMultiSelectActive ? "checkmark.circle.fill" : "checkmark.circle",
+            browseMultiSelectActive ? "Exit multi-select" : "Multi-select",
+            {
+                browseMultiSelectActive.toggle()
+                if !browseMultiSelectActive {
+                    browseMultiSelectedCardIDs.removeAll()
+                }
+            }
+        )
     }
 
     private var rootChromeTitle: String {
@@ -364,7 +398,9 @@ struct RootView: View {
                                 inlineDetailFilterRarityOptions: $browseInlineDetailFilterRarityOptions,
                                 inlineDetailFilterTrainerTypeOptions: $browseInlineDetailFilterTrainerTypeOptions,
                                 selectedTab: $browseHomeTab,
-                                inlineDetailRoute: $browseInlineDetailRoute
+                                inlineDetailRoute: $browseInlineDetailRoute,
+                                isMultiSelectActive: $browseMultiSelectActive,
+                                multiSelectedCardIDs: $browseMultiSelectedCardIDs
                             )
                         }
                         .toolbarBackground(.hidden, for: .navigationBar)
@@ -402,7 +438,6 @@ struct RootView: View {
                         .tabItem { Label(AppTab.more.title, systemImage: AppTab.more.symbolName) }
                         .tag(AppTab.more)
                     }
-
                     if isSearchExperiencePresented {
                         Color.black.opacity(colorScheme == .light ? 0.28 : 0.45)
                             .ignoresSafeArea(edges: .bottom)
@@ -543,6 +578,9 @@ struct RootView: View {
         .onChange(of: selectedTab) { _, tab in
             Haptics.selectionChanged()
             chromeScroll.configureForTab(tab)
+            if tab != .browse {
+                resetBrowseMultiSelectState()
+            }
             if tab == .collect {
                 collectionNavigationPath = NavigationPath()
             }
@@ -559,8 +597,22 @@ struct RootView: View {
             }
         }
         .onChange(of: browseNavigationPath.count) { _, newCount in
+            if newCount > 0 {
+                resetBrowseMultiSelectState()
+            }
             if newCount == 0 {
                 chromeScroll.forceVisible()
+            }
+        }
+        .onChange(of: browseHomeTab) { _, newValue in
+            let supportsMultiSelect = newValue == .cards || newValue == .sealed || browseInlineDetailRoute != nil
+            if !supportsMultiSelect {
+                resetBrowseMultiSelectState()
+            }
+        }
+        .onChange(of: browseInlineDetailRoute) { _, newValue in
+            if newValue == nil && browseHomeTab != .cards && browseHomeTab != .sealed {
+                resetBrowseMultiSelectState()
             }
         }
         .onChange(of: isSearchExperiencePresented) { _, open in
@@ -576,6 +628,7 @@ struct RootView: View {
             searchNavigationPath = NavigationPath()
             browseHomeTab = .cards
             browseInlineDetailRoute = nil
+            resetBrowseMultiSelectState()
             selectedCardPresentation = nil
             universalQuery = ""
             searchFieldFocused = false
@@ -605,6 +658,19 @@ struct RootView: View {
         .sheet(item: $selectedCardPresentation) { ctx in
             CardBrowseDetailView(cards: ctx.cards, startIndex: ctx.startIndex)
                 .environment(services)
+        }
+        .alert("New Folder", isPresented: $showCreateFolderAlert) {
+            TextField("Folder name", text: $newFolderTitle)
+            Button("Create") {
+                let title = newFolderTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+                if !title.isEmpty {
+                    let folder = CardFolder(title: title)
+                    modelContext.insert(folder)
+                    try? modelContext.save()
+                }
+                newFolderTitle = ""
+            }
+            Button("Cancel", role: .cancel) { newFolderTitle = "" }
         }
         .fullScreenCover(isPresented: $showCardScanner) {
             CardScannerView(
@@ -647,6 +713,7 @@ struct RootView: View {
             filterMenuContent: filterContent,
             collapsedLeadingButton: browseLeadingButton,
             trailingButton: chromeTrailingButton,
+            extraTrailingButton: chromeExtraTrailingButton,
             onActivateSearch: {
                 withAnimation(.spring(response: 0.35, dampingFraction: 0.86)) {
                     isSearchExperiencePresented = true
@@ -759,6 +826,11 @@ struct RootView: View {
                 )
                 : browseConfig
         )
+    }
+
+    private func resetBrowseMultiSelectState() {
+        browseMultiSelectActive = false
+        browseMultiSelectedCardIDs.removeAll()
     }
 
 }

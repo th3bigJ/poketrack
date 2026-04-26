@@ -290,10 +290,10 @@ struct DeckDetailView: View {
             .environment(services)
         }
         .sheet(isPresented: $showShareSettings) {
-            ShareSettingsView(source: .deck(deck)) {
-                Task { await refreshShareStatus() }
-            }
-            .environment(services)
+            SocialShareSheet(item: .deck(deck))
+                .environment(services)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.hidden)
         }
         .task(id: deck.cardList.map(\.cardID).sorted().joined()) {
             await backfillDeckCatalogMetadataIfNeeded()

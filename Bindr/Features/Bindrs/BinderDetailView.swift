@@ -122,10 +122,10 @@ struct BinderDetailView: View {
             BinderStylePickerSheet(binder: binder)
         }
         .sheet(isPresented: $showShareSettings) {
-            ShareSettingsView(source: .binder(binder)) {
-                Task { await refreshShareStatus() }
-            }
-            .environment(services)
+            SocialShareSheet(item: .binder(binder))
+                .environment(services)
+                .presentationDetents([.large])
+                .presentationDragIndicator(.hidden)
         }
     }
 

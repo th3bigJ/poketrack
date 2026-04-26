@@ -92,6 +92,15 @@ struct DashboardView: View {
         Set(visibleCollectionItems.map(\.cardID)).count
     }
 
+    private var sealedProductsCount: Int {
+        visibleCollectionItems.reduce(0) { partialResult, item in
+            guard item.itemKind == ProductKind.sealedProduct.rawValue || SealedProduct.parseCollectionProductID(item.cardID) != nil else {
+                return partialResult
+            }
+            return partialResult + max(item.quantity, 0)
+        }
+    }
+
     private var wishlistedCardsCount: Int {
         Set(visibleWishlistItems.map(\.cardID)).count
     }
@@ -471,6 +480,16 @@ struct DashboardView: View {
                     iconColor: DashboardPalette.blue,
                     value: "\(uniqueCardsCount)",
                     label: "Unique Cards",
+                    action: onOpenCollection
+                )
+
+                statDivider
+
+                dashboardStat(
+                    icon: "shippingbox.fill",
+                    iconColor: DashboardPalette.success,
+                    value: "\(sealedProductsCount)",
+                    label: "Sealed Products",
                     action: onOpenCollection
                 )
 
@@ -890,6 +909,7 @@ struct DashboardView: View {
     private func computeLiveValue() async {
         isLoadingValue = true
         defer { isLoadingValue = false }
+        services.sealedProducts.loadFromLocalIfAvailable()
 
         var totalValue = 0.0
         var pokemonValue = 0.0
@@ -897,6 +917,20 @@ struct DashboardView: View {
         var totalCost = 0.0
 
         for item in collectionItems {
+            totalCost += (item.purchasePrice ?? 0) * Double(item.quantity)
+
+            if let sealedProductID = sealedProductID(for: item),
+               let sealedPriceUSD = services.sealedProducts.marketPriceUSD(for: sealedProductID) {
+                let gbp = sealedPriceUSD * Double(item.quantity) * services.pricing.usdToGbp
+                totalValue += gbp
+
+                switch TCGBrand.inferredFromMasterCardId(item.cardID) {
+                case .pokemon: pokemonValue += gbp
+                case .onePiece: onePieceValue += gbp
+                }
+                continue
+            }
+
             guard let card = await services.cardData.loadCard(masterCardId: item.cardID) else { continue }
             let gradeKey: String = {
                 guard let company = item.gradingCompany else { return "raw" }
@@ -914,14 +948,20 @@ struct DashboardView: View {
             case .pokemon: pokemonValue += gbp
             case .onePiece: onePieceValue += gbp
             }
-
-            totalCost += (item.purchasePrice ?? 0) * Double(item.quantity)
         }
 
         liveTotalGbp = totalValue > 0 ? totalValue : nil
         livePokemonGbp = pokemonValue
         liveOnePieceGbp = onePieceValue
         totalCostBasis = totalCost
+    }
+
+    private func sealedProductID(for item: CollectionItem) -> Int? {
+        if let rawID = item.sealedProductId,
+           let productID = Int(rawID) {
+            return productID
+        }
+        return SealedProduct.parseCollectionProductID(item.cardID)
     }
 
     private func resolveDashboardMetadata() async {
