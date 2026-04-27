@@ -24,6 +24,7 @@ struct CollectView: View {
 
     // MARK: - Shared State (owned by RootView)
     @Binding var selectedSegment: CollectSegment
+    @Binding var selectedContentTypeTab: CollectContentTypeTab
     @Binding var selectedBrand: TCGBrand?
     @Binding var collectionFilters: BrowseCardGridFilters
     @Binding var wishlistFilters: BrowseCardGridFilters
@@ -34,7 +35,6 @@ struct CollectView: View {
 
     @State private var collectionQuery = ""
     @State private var wishlistQuery = ""
-    @State private var contentTypeTab: CollectContentTypeTab = .cards
 
     var showsSegmentedControl = true
     var hidesNavigationBar = true
@@ -189,7 +189,7 @@ struct CollectView: View {
     }
 
     private var searchPlaceholder: String {
-        let itemLabel = contentTypeTab == .cards ? "cards" : "sealed"
+        let itemLabel = selectedContentTypeTab == .cards ? "cards" : "sealed"
         switch selectedSegment {
         case .collection:
             return "Search \(formattedActiveFilteredCount) \(itemLabel) in collection"
@@ -226,11 +226,11 @@ struct CollectView: View {
     }
 
     private func contentTypeChip(for tab: CollectContentTypeTab, icon: String) -> some View {
-        let isSelected = contentTypeTab == tab
+        let isSelected = selectedContentTypeTab == tab
         return Button {
-            guard contentTypeTab != tab else { return }
+            guard selectedContentTypeTab != tab else { return }
             withAnimation(.spring(response: 0.28, dampingFraction: 0.82)) {
-                contentTypeTab = tab
+                selectedContentTypeTab = tab
             }
             Haptics.lightImpact()
         } label: {
@@ -305,9 +305,9 @@ struct CollectView: View {
             )
         } else if filteredCollectionItemsForSelectedType.isEmpty {
             emptyState(
-                title: "No matching \(contentTypeTab.title.lowercased())",
+                title: "No matching \(selectedContentTypeTab.title.lowercased())",
                 image: "magnifyingglass",
-                description: contentTypeTab == .cards
+                description: selectedContentTypeTab == .cards
                     ? "Try a different card name, set code, or number."
                     : "Try a different product name, series, or year."
             )
@@ -315,7 +315,7 @@ struct CollectView: View {
             EagerVGrid(items: indexedFilteredCollectionItemsForSelectedType, columns: safeColumnCount, spacing: 12) { indexed in
                 collectionCell(for: indexed.item)
                     .onAppear {
-                        guard contentTypeTab == .cards else { return }
+                        guard selectedContentTypeTab == .cards else { return }
                         ImagePrefetcher.shared.prefetchCardWindow(orderedCollectionCards, startingAt: indexed.index + 1)
                     }
             }
@@ -402,7 +402,7 @@ struct CollectView: View {
     private var filteredCollectionItemsForSelectedType: [CollectionItem] {
         filteredCollectionItems.filter { item in
             let isSealed = sealedProduct(for: item) != nil
-            return contentTypeTab == .sealed ? isSealed : !isSealed
+            return selectedContentTypeTab == .sealed ? isSealed : !isSealed
         }
     }
 
@@ -534,9 +534,9 @@ struct CollectView: View {
             )
         } else if filteredWishlistItemsForSelectedType.isEmpty {
             emptyState(
-                title: "No matching \(contentTypeTab.title.lowercased())",
+                title: "No matching \(selectedContentTypeTab.title.lowercased())",
                 image: "magnifyingglass",
-                description: contentTypeTab == .cards
+                description: selectedContentTypeTab == .cards
                     ? "Try a different card name, set code, or number."
                     : "Try a different product name, series, or year."
             )
@@ -544,7 +544,7 @@ struct CollectView: View {
             EagerVGrid(items: indexedFilteredWishlistItemsForSelectedType, columns: safeColumnCount, spacing: 12) { indexed in
                 wishlistCell(for: indexed.item)
                     .onAppear {
-                        guard contentTypeTab == .cards else { return }
+                        guard selectedContentTypeTab == .cards else { return }
                         ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: indexed.index + 1)
                     }
             }
@@ -625,7 +625,7 @@ struct CollectView: View {
     private var filteredWishlistItemsForSelectedType: [WishlistItem] {
         filteredWishlistItems.filter { item in
             let isSealed = sealedProduct(for: item) != nil
-            return contentTypeTab == .sealed ? isSealed : !isSealed
+            return selectedContentTypeTab == .sealed ? isSealed : !isSealed
         }
     }
 
@@ -804,7 +804,7 @@ enum CollectSegment: String, CaseIterable, Identifiable {
     }
 }
 
-private enum CollectContentTypeTab: String, CaseIterable, Identifiable {
+enum CollectContentTypeTab: String, CaseIterable, Identifiable {
     case cards
     case sealed
 

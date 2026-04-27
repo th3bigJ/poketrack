@@ -30,6 +30,25 @@ struct SocialRootView: View {
         static func parse(from url: URL) -> SocialDeepLinkDestination? {
             guard url.scheme?.lowercased() == "bindr" else { return nil }
             let host = url.host?.lowercased() ?? ""
+            var normalizedHost = host
+            var pathComponents = url.path
+                .split(separator: "/")
+                .map { $0.lowercased() }
+            let hasInlineHost = pathComponents.first == "social" || pathComponents.first == "profile"
+
+            if host.isEmpty, hasInlineHost {
+                let first = pathComponents.removeFirst()
+                if first == "profile" {
+                    guard let rawUsername = pathComponents.first else { return nil }
+                    guard rawUsername.hasPrefix("@") else { return nil }
+                    let username = String(rawUsername.dropFirst())
+                        .trimmingCharacters(in: .whitespacesAndNewlines)
+                        .lowercased()
+                    guard !username.isEmpty else { return nil }
+                    return .profile(username: username)
+                }
+                normalizedHost = String(first)
+            }
 
             if host == "profile" {
                 let rawPath = url.path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
@@ -39,14 +58,20 @@ struct SocialRootView: View {
                 return .profile(username: username)
             }
 
-            guard host == "social" else { return nil }
-            let pathComponents = url.path
-                .split(separator: "/")
-                .map { $0.lowercased() }
+            guard normalizedHost == "social" else { return nil }
 
             guard let first = pathComponents.first else { return nil }
             switch first {
             case "feed":
+                if let contentID = queryUUID(in: url, keys: ["content_id", "contentid"]) {
+                    return .content(id: contentID)
+                }
+                if let commentID = queryUUID(in: url, keys: ["comment_id", "commentid"]) {
+                    return .comment(id: commentID)
+                }
+                if let wishlistMatchID = queryUUID(in: url, keys: ["wishlist_match_id", "wishlistmatchid"]) {
+                    return .wishlistMatch(id: wishlistMatchID)
+                }
                 guard pathComponents.count >= 2 else { return .feed }
                 let deepLinkType = pathComponents[1]
                 guard pathComponents.count >= 3 else { return .feed }
@@ -69,6 +94,17 @@ struct SocialRootView: View {
             default:
                 return .feed
             }
+        }
+
+        private static func queryUUID(in url: URL, keys: [String]) -> UUID? {
+            guard let components = URLComponents(url: url, resolvingAgainstBaseURL: false) else { return nil }
+            for item in components.queryItems ?? [] {
+                let name = item.name.lowercased()
+                guard keys.contains(name) else { continue }
+                guard let value = item.value, let uuid = UUID(uuidString: value) else { continue }
+                return uuid
+            }
+            return nil
         }
     }
 
@@ -208,7 +244,9 @@ struct SocialRootView: View {
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
         .sheet(isPresented: $isAlertsPresented) {
-            SocialAlertsSheet(isPresented: $isAlertsPresented)
+            SocialAlertsSheet(isPresented: $isAlertsPresented) { deepLinkURL in
+                services.socialPush.queueDeepLink(url: deepLinkURL)
+            }
                 .presentationDetents([.large])
                 .presentationDragIndicator(.visible)
         }
@@ -477,12 +515,22 @@ struct SocialRootView: View {
             deepLinkedSharedContent = sharedContent
         case .comment(let id):
             selectedTab = .feed
+            if let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) {
+                deepLinkedSharedContent = nil
+                deepLinkedCommentsContent = feedContentSummary(from: sharedContent)
+                return
+            }
             guard let contentID = try? await services.socialFeed.fetchContentID(forCommentID: id) else { return }
             guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: contentID) else { return }
             deepLinkedSharedContent = nil
             deepLinkedCommentsContent = feedContentSummary(from: sharedContent)
         case .wishlistMatch(let id):
             selectedTab = .feed
+            if let sharedContent = try? await services.socialShare.fetchSharedContent(id: id) {
+                deepLinkedCommentsContent = nil
+                deepLinkedSharedContent = sharedContent
+                return
+            }
             guard let contentID = try? await services.socialFeed.fetchContentID(forWishlistMatchID: id) else { return }
             guard let sharedContent = try? await services.socialShare.fetchSharedContent(id: contentID) else { return }
             deepLinkedCommentsContent = nil

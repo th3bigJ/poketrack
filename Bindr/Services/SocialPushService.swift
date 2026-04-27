@@ -47,7 +47,8 @@ final class SocialPushService {
     }
 
     func queueDeepLink(from userInfo: [AnyHashable: Any]) {
-        guard let raw = userInfo["deep_link"] as? String else { return }
+        let raw = extractDeepLinkString(from: userInfo)
+        guard let raw else { return }
         guard let url = URL(string: raw) else { return }
         queuedDeepLinkURL = url
     }
@@ -95,6 +96,31 @@ final class SocialPushService {
                 self.queueDeepLink(from: userInfo)
             }
         }
+    }
+
+    private func extractDeepLinkString(from userInfo: [AnyHashable: Any]) -> String? {
+        let directKeys = ["deep_link", "deepLink", "deeplink", "url"]
+        for key in directKeys {
+            if let raw = userInfo[key] as? String {
+                let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+                if !trimmed.isEmpty {
+                    return trimmed
+                }
+            }
+        }
+
+        if let metadata = userInfo["metadata"] as? [String: Any] {
+            for key in directKeys {
+                if let raw = metadata[key] as? String {
+                    let trimmed = raw.trimmingCharacters(in: .whitespacesAndNewlines)
+                    if !trimmed.isEmpty {
+                        return trimmed
+                    }
+                }
+            }
+        }
+
+        return nil
     }
 }
 

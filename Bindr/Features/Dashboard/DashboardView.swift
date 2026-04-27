@@ -14,6 +14,7 @@ struct DashboardView: View {
     var onViewAllActivity: (() -> Void)? = nil
     var onOpenScanner: (() -> Void)? = nil
     var onOpenCollection: (() -> Void)? = nil
+    var onOpenSealedProducts: (() -> Void)? = nil
     var onOpenWishlist: (() -> Void)? = nil
     var onOpenBrowse: (() -> Void)? = nil
 
@@ -147,20 +148,25 @@ struct DashboardView: View {
         let svc = services.collectionValue
         let cal = Calendar.current
         let cutoff = cal.date(byAdding: .day, value: -31, to: cal.startOfDay(for: Date()))!
-        var points: [ChartPoint] = []
+        var pointsByDay: [Date: ChartPoint] = [:]
         if let svc {
-            points = svc.snapshots
-                .filter { $0.date >= cutoff }
-                .map { ChartPoint(date: $0.date, total: $0.totalGbp, pokemon: $0.pokemonGbp, onePiece: $0.onePieceGbp) }
+            for snapshot in svc.snapshots {
+                let day = cal.startOfDay(for: snapshot.date)
+                guard day >= cutoff else { continue }
+                pointsByDay[day] = ChartPoint(
+                    date: day,
+                    total: snapshot.totalGbp,
+                    pokemon: snapshot.pokemonGbp,
+                    onePiece: snapshot.onePieceGbp
+                )
+            }
         }
         if let live = liveTotalGbp {
             let today = cal.startOfDay(for: Date())
-            let hasTodaySnapshot = points.contains { cal.isDate($0.date, inSameDayAs: today) }
-            if !hasTodaySnapshot {
-                points.append(ChartPoint(date: today, total: live, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp))
-            }
+            // Always use today's live value so the chart matches the summary value card.
+            pointsByDay[today] = ChartPoint(date: today, total: live, pokemon: livePokemonGbp, onePiece: liveOnePieceGbp)
         }
-        return points
+        return pointsByDay.keys.sorted().compactMap { pointsByDay[$0] }
     }
 
     private var weeklyPoints: [ChartPoint] {
@@ -490,7 +496,7 @@ struct DashboardView: View {
                     iconColor: DashboardPalette.success,
                     value: "\(sealedProductsCount)",
                     label: "Sealed Products",
-                    action: onOpenCollection
+                    action: onOpenSealedProducts
                 )
 
                 statDivider

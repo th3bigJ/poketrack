@@ -196,6 +196,7 @@ struct ShimmerCard: View {
 
 struct SocialAlertsSheet: View {
     @Binding var isPresented: Bool
+    let onDeepLinkSelected: (URL) -> Void
     @Environment(AppServices.self) private var services
 
     private var groupedItems: [GroupedFeedItem] {
@@ -220,7 +221,14 @@ struct SocialAlertsSheet: View {
     }
 
     var body: some View {
-        SocialAlertsPreviewView(items: groupedItems, onDone: { isPresented = false })
+        SocialAlertsPreviewView(
+            items: groupedItems,
+            onDone: { isPresented = false },
+            onDeepLinkSelected: { url in
+                onDeepLinkSelected(url)
+                isPresented = false
+            }
+        )
     }
 }
 
@@ -262,6 +270,7 @@ struct NewPostPlaceholderView: View {
 private struct SocialAlertsPreviewView: View {
     let items: [GroupedFeedItem]
     let onDone: () -> Void
+    let onDeepLinkSelected: (URL) -> Void
 
     private var activityItems: [GroupedFeedItem] {
         items.filter { group in
@@ -340,8 +349,9 @@ private struct SocialAlertsPreviewView: View {
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(Color.white.opacity(0.09), lineWidth: 1))
     }
 
+    @ViewBuilder
     private func alertRow(group: GroupedFeedItem, tint: Color, icon: String) -> some View {
-        HStack(spacing: 10) {
+        let row = HStack(spacing: 10) {
             Circle()
                 .fill(tint.opacity(0.15))
                 .frame(width: 36, height: 36)
@@ -367,10 +377,61 @@ private struct SocialAlertsPreviewView: View {
                 .fill(tint)
                 .frame(width: 7, height: 7)
         }
-        .padding(14)
-        .background(tint.opacity(group.primary.type == .wishlistMatch ? 0.12 : 0), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(tint.opacity(0.2), lineWidth: 1))
+        .contentShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+
+        if let deepLink = deepLinkURL(for: group.primary) {
+            Button {
+                Haptics.lightImpact()
+                onDeepLinkSelected(deepLink)
+            } label: {
+                row
+            }
+            .buttonStyle(.plain)
+            .padding(14)
+            .background(tint.opacity(group.primary.type == .wishlistMatch ? 0.12 : 0), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(tint.opacity(0.2), lineWidth: 1))
+        } else {
+            row
+                .padding(14)
+                .background(tint.opacity(group.primary.type == .wishlistMatch ? 0.12 : 0), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(tint.opacity(0.2), lineWidth: 1))
+        }
+    }
+
+    private func deepLinkURL(for item: SocialFeedService.FeedItem) -> URL? {
+        switch item.type {
+        case .friendship:
+            return URL(string: "bindr://social/friends")
+        case .comment:
+            if let commentID = uuidFromFeedItemID(item.id, prefix: "comment-") {
+                return URL(string: "bindr://social/feed/comment/\(commentID.uuidString)")
+            }
+            if let contentID = item.content?.id {
+                return URL(string: "bindr://social/feed/content/\(contentID.uuidString)")
+            }
+            return URL(string: "bindr://social/feed")
+        case .wishlistMatch:
+            if let matchID = uuidFromFeedItemID(item.id, prefix: "wishlist-") {
+                return URL(string: "bindr://social/feed/wishlist-match/\(matchID.uuidString)")
+            }
+            if let contentID = item.content?.id {
+                return URL(string: "bindr://social/feed/content/\(contentID.uuidString)")
+            }
+            return URL(string: "bindr://social/feed")
+        case .vote, .sharedContent, .pull, .dailyDigest:
+            if let contentID = item.content?.id {
+                return URL(string: "bindr://social/feed/content/\(contentID.uuidString)")
+            }
+            return URL(string: "bindr://social/feed")
+        }
+    }
+
+    private func uuidFromFeedItemID(_ id: String, prefix: String) -> UUID? {
+        guard id.hasPrefix(prefix) else { return nil }
+        let raw = String(id.dropFirst(prefix.count))
+        return UUID(uuidString: raw)
     }
 
     private func alertTitle(for item: SocialFeedService.FeedItem) -> String {

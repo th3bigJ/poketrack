@@ -54,6 +54,7 @@ struct RootView: View {
     @State private var selectedTab: AppTab = .dashboard
     /// Drives the Collection / Wishlist segmented toggle inside `CollectView`. Owned here so the More tab's "Wishlist" quick-access can switch tab + segment together.
     @State private var collectSegment: CollectSegment = .collection
+    @State private var collectContentTypeTab: CollectContentTypeTab = .cards
     @State private var universalQuery = ""
     @State private var showCardScanner = false
     @State private var browseFilters = BrowseFiltersSettings()
@@ -368,10 +369,17 @@ struct RootView: View {
                             }, onOpenCollection: {
                                 collectionNavigationPath = NavigationPath()
                                 collectSegment = .collection
+                                collectContentTypeTab = .cards
+                                selectedTab = .collect
+                            }, onOpenSealedProducts: {
+                                collectionNavigationPath = NavigationPath()
+                                collectSegment = .collection
+                                collectContentTypeTab = .sealed
                                 selectedTab = .collect
                             }, onOpenWishlist: {
                                 collectionNavigationPath = NavigationPath()
                                 collectSegment = .wishlist
+                                collectContentTypeTab = .cards
                                 selectedTab = .collect
                             }, onOpenBrowse: {
                                 suppressMorePathReset = true
@@ -410,6 +418,7 @@ struct RootView: View {
                         NavigationStack(path: $collectionNavigationPath) {
                             CollectView(
                                 selectedSegment: $collectSegment,
+                                selectedContentTypeTab: $collectContentTypeTab,
                                 selectedBrand: $collectSelectedBrand,
                                 collectionFilters: $collectFilters.collectionFilters,
                                 wishlistFilters: $collectFilters.wishlistFilters,

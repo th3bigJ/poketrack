@@ -178,7 +178,7 @@ struct SealedProductGridCell: View {
     }
 
     private var cardCornerRadius: CGFloat {
-        (gridOptions.showCardName || showsFooter) ? 18 : 0
+        showsFooter ? 18 : 0
     }
 
     private var imageHeight: CGFloat {

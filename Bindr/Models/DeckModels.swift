@@ -3,7 +3,7 @@ import Foundation
 
 // Format rules:
 // Pokémon:   60 cards total, max 4 copies per card name (basic energy exempt)
-// One Piece: 51 cards total (50 main deck + 1 Leader), max 4 copies per card
+// One Piece: 51 cards total (50 main deck + 1 Leader), max 4 copies per set+card number
 
 // MARK: - Expanded legal set whitelist (Black & White onward, April 2011+)
 let expandedLegalSetKeys: Set<String> = [
@@ -57,6 +57,32 @@ private func deckModelHasLegalRegulationMark(_ card: DeckCard, format: DeckForma
         return legalMarks.contains(trimmedMark)
     }
     return card.isBasicEnergy
+}
+
+private func onePieceDeckCopyLimitIdentity(for card: DeckCard) -> (key: String, label: String) {
+    let trimmedSet = card.setKey.trimmingCharacters(in: .whitespacesAndNewlines)
+    let rawID = card.cardID.trimmingCharacters(in: .whitespacesAndNewlines)
+    let lowerRawID = rawID.lowercased()
+
+    // ONE PIECE master ids are typically `setCode::cardNumber::variant`.
+    if lowerRawID.contains("::") {
+        let parts = lowerRawID.split(separator: "::", omittingEmptySubsequences: false)
+        if parts.count >= 2 {
+            let setCode = String(parts[0])
+            let cardNumber = String(parts[1])
+            if !setCode.isEmpty, !cardNumber.isEmpty {
+                let readableSet = trimmedSet.isEmpty ? setCode.uppercased() : trimmedSet
+                let readableNumber = cardNumber.uppercased()
+                return ("\(setCode)::\(cardNumber)", "\(card.cardName) [\(readableSet) #\(readableNumber)]")
+            }
+        }
+    }
+
+    // Fallback for legacy rows with non-standard ids.
+    if !trimmedSet.isEmpty {
+        return ("\(trimmedSet.lowercased())::\(lowerRawID)", "\(card.cardName) [\(trimmedSet)]")
+    }
+    return (lowerRawID, card.cardName)
 }
 
 enum DeckFormat: String, Codable, CaseIterable {
@@ -157,7 +183,7 @@ enum DeckFormat: String, Codable, CaseIterable {
         case .onePiece:
             return """
                 • 51 cards total (50 main deck + 1 Leader)
-                • Max 4 copies per card
+                • Max 4 copies per set + card number
                 • Exactly 1 Leader required
                 """
         }
@@ -230,7 +256,18 @@ enum DeckFormat: String, Codable, CaseIterable {
                 if leaderCount != 1 {
                     issues.append("Deck must have exactly 1 Leader (have \(leaderCount))")
                 }
+
+                let groupedByIdentity = Dictionary(grouping: cardList, by: { onePieceDeckCopyLimitIdentity(for: $0).key })
+                for entries in groupedByIdentity.values {
+                    let qty = entries.reduce(0) { $0 + $1.quantity }
+                    if qty > fmt.maxCopiesPerCard {
+                        let label = onePieceDeckCopyLimitIdentity(for: entries[0]).label
+                        issues.append("\(label): max \(fmt.maxCopiesPerCard) copies (have \(qty))")
+                    }
+                }
+                return issues
             }
+
             let grouped = Dictionary(grouping: cardList, by: { $0.cardName })
             for (name, entries) in grouped {
                 let qty = entries.reduce(0) { $0 + $1.quantity }

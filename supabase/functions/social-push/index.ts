@@ -263,7 +263,7 @@ function buildCandidate(payload: WebhookPayload): PushCandidate | null {
         category: "comments",
         title: "New comment",
         body: "Someone commented on your shared content.",
-        deepLink: `bindr://social/feed/comment/${commentID}`,
+        deepLink: `bindr://social/feed/comment/${commentID}?content_id=${contentID}`,
         metadata: { content_id: contentID, author_id: authorID, comment_id: commentID },
       }
     }
@@ -279,7 +279,7 @@ function buildCandidate(payload: WebhookPayload): PushCandidate | null {
         category: "wishlist_matches",
         title: "Wishlist match",
         body: "A friend has a card from your wishlist.",
-        deepLink: `bindr://social/feed/wishlist-match/${matchID}`,
+        deepLink: `bindr://social/feed/wishlist-match/${matchID}?content_id=${contentID}`,
         metadata: { content_id: contentID, sender_id: senderID, match_id: matchID },
       }
     }

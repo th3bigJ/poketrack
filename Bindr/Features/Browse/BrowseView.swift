@@ -106,7 +106,7 @@ struct CardGridCell: View {
     }
 
     private var cardCornerRadius: CGFloat {
-        (gridOptions.showCardName || showsFooter) ? 18 : 0
+        showsFooter ? 18 : 0
     }
 
     var body: some View {

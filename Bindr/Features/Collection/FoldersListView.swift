@@ -2,9 +2,23 @@ import SwiftUI
 import SwiftData
 
 struct FoldersListView: View {
+    @Environment(AppServices.self) private var services
     @Environment(\.modelContext) private var modelContext
 
     @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
+    @State private var folderValueByID: [UUID: Double] = [:]
+
+    private var folderValueSignature: String {
+        folders
+            .map { folder in
+                let itemsSig = (folder.items ?? [])
+                    .map { "\($0.cardID)|\($0.variantKey)" }
+                    .sorted()
+                    .joined(separator: "§")
+                return "\(folder.id.uuidString)|\(itemsSig)"
+            }
+            .joined(separator: "|")
+    }
 
     var body: some View {
         ScrollView {
@@ -32,6 +46,9 @@ struct FoldersListView: View {
             }
         }
         .toolbar(.hidden, for: .navigationBar)
+        .task(id: folderValueSignature) {
+            await resolveFolderValues()
+        }
     }
 
     private func folderCard(_ folder: CardFolder) -> some View {
@@ -45,7 +62,7 @@ struct FoldersListView: View {
                 Text(folder.title)
                     .font(.body.weight(.medium))
                     .foregroundStyle(.primary)
-                Text("\((folder.items ?? []).count) \((folder.items ?? []).count == 1 ? "card" : "cards")")
+                Text(folderSubtitle(folder))
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
@@ -72,5 +89,37 @@ struct FoldersListView: View {
                 Label("Delete", systemImage: "trash")
             }
         }
+    }
+
+    private func folderSubtitle(_ folder: CardFolder) -> String {
+        let count = (folder.items ?? []).count
+        let cardsPart = "\(count) \(count == 1 ? "card" : "cards")"
+        guard let value = folderValueByID[folder.id] else { return cardsPart }
+        return "\(cardsPart) · \(formatGBP(value))"
+    }
+
+    private func formatGBP(_ value: Double) -> String {
+        value.formatted(.currency(code: "GBP").precision(.fractionLength(2)))
+    }
+
+    private func resolveFolderValues() async {
+        var nextValues: [UUID: Double] = [:]
+        var cachedCards: [String: Card] = [:]
+
+        for folder in folders {
+            var folderTotal = 0.0
+            for item in folder.items ?? [] {
+                if cachedCards[item.cardID] == nil {
+                    cachedCards[item.cardID] = await services.cardData.loadCard(masterCardId: item.cardID)
+                }
+                guard let card = cachedCards[item.cardID] else { continue }
+                if let usd = await services.pricing.usdPriceForVariant(for: card, variantKey: item.variantKey) {
+                    folderTotal += usd * services.pricing.usdToGbp
+                }
+            }
+            nextValues[folder.id] = folderTotal
+        }
+
+        folderValueByID = nextValues
     }
 }
