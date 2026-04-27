@@ -59,6 +59,8 @@ final class CardScannerViewModel: NSObject, @unchecked Sendable {
 
     /// When `true`, user must pick a franchise first (multi-brand); auto-capture stays off.
     var requiresBrandSelection: Bool = false
+    /// When false, live auto-capture is disabled (manual shutter mode).
+    var autoCaptureEnabled: Bool = true
 
     /// ONE PIECE only: last capture / match diagnostics for the debug “i” sheet.
     var onePieceDebugText: String = CardScannerViewModel.defaultOnePieceDebugBlurb
@@ -1063,6 +1065,13 @@ extension CardScannerViewModel: AVCaptureVideoDataOutputSampleBufferDelegate {
         // Don't analyse while a capture or OCR pass is in flight
         guard !isCapturing, case .idle = scanState else {
             DispatchQueue.main.async { [weak self] in self?.frameQuality = 0 }
+            return
+        }
+        guard autoCaptureEnabled else {
+            DispatchQueue.main.async { [weak self] in
+                self?.frameQuality = 0
+                self?.autoCaptureFrameCount = 0
+            }
             return
         }
         guard !requiresBrandSelection else {

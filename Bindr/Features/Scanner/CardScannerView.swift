@@ -11,6 +11,18 @@ private enum ScannerCardFrameLayout {
     static let cardAspectHeightOverWidth: CGFloat = 1.395
 }
 
+private enum ScannerCaptureMode: String {
+    case auto
+    case manual
+
+    var title: String {
+        switch self {
+        case .auto: return "Auto"
+        case .manual: return "Manual"
+        }
+    }
+}
+
 struct CardScannerView: View {
     @Environment(AppServices.self) private var services
     var onMatch: (Card) -> Void
@@ -25,6 +37,7 @@ struct CardScannerView: View {
     @State private var showBulkAddSheet = false
     @State private var isCameraPaused = false
     @State private var wasCameraPausedBeforeDetail = false
+    @AppStorage("scanner.captureMode") private var captureModeRawValue: String = ScannerCaptureMode.auto.rawValue
     /// Variant selected in the overlay bar at the moment the user swiped up, keyed by ScanResult.id.
     @State private var selectedVariantsByResultID: [UUID: String] = [:]
     @State private var showOnePieceDebugSheet = false
@@ -32,6 +45,20 @@ struct CardScannerView: View {
     /// Show ONE PIECE debug affordance when the active scanner brand is ONE PIECE.
     private var showOnePieceDebugButton: Bool {
         viewModel.scanBrand == .onePiece
+    }
+
+    private var captureMode: ScannerCaptureMode {
+        ScannerCaptureMode(rawValue: captureModeRawValue) ?? .auto
+    }
+
+    private var isManualCaptureMode: Bool {
+        captureMode == .manual
+    }
+
+    private var canTriggerManualCapture: Bool {
+        guard !permissionDenied, !isCameraPaused, !viewModel.isCapturing, viewModel.isCameraReady else { return false }
+        if case .scanning = viewModel.scanState { return false }
+        return true
     }
 
     var body: some View {
@@ -87,6 +114,43 @@ struct CardScannerView: View {
                     scannerScanningOverlay(geo: geo)
 
                     if permissionDenied { permissionDeniedOverlay }
+
+                    VStack {
+                        HStack {
+                            Spacer(minLength: 0)
+                            captureModeToggle
+                            Spacer(minLength: 0)
+                        }
+                        .padding(.top, ScannerSheetLayout.statusBarHeight + 10)
+                        .padding(.horizontal, 16)
+                        Spacer(minLength: 0)
+                    }
+                    .allowsHitTesting(!permissionDenied)
+
+                    if isManualCaptureMode {
+                        VStack {
+                            Spacer(minLength: 0)
+                            Button {
+                                guard canTriggerManualCapture else { return }
+                                viewModel.capturePhoto()
+                                HapticManager.impact(.medium)
+                            } label: {
+                                ZStack {
+                                    Circle()
+                                        .fill(.white.opacity(0.92))
+                                        .frame(width: 68, height: 68)
+                                    Circle()
+                                        .stroke(Color.black.opacity(0.28), lineWidth: 3)
+                                        .frame(width: 56, height: 56)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                            .disabled(!canTriggerManualCapture)
+                            .accessibilityLabel("Take photo")
+                            .padding(.bottom, 14)
+                        }
+                        .allowsHitTesting(!permissionDenied)
+                    }
 
                     // Value scanned label — bottom-leading of camera area
                     if !viewModel.scanResults.isEmpty {
@@ -278,6 +342,7 @@ struct CardScannerView: View {
         .ignoresSafeArea()
         .onAppear {
             viewModel.configure(cardDataService: services.cardData)
+            viewModel.autoCaptureEnabled = (captureMode == .auto)
             let selectedBrand = services.brandSettings.selectedCatalogBrand
             viewModel.scanBrand = selectedBrand
             viewModel.requiresBrandSelection = false
@@ -291,6 +356,10 @@ struct CardScannerView: View {
             } else {
                 viewModel.startSession()
             }
+        }
+        .onChange(of: captureModeRawValue) { _, newRaw in
+            let mode = ScannerCaptureMode(rawValue: newRaw) ?? .auto
+            viewModel.autoCaptureEnabled = (mode == .auto)
         }
         .onDisappear { viewModel.stopSession() }
         .animation(.spring(response: 0.45, dampingFraction: 0.82), value: viewModel.scanResults.isEmpty)
@@ -344,6 +413,39 @@ struct CardScannerView: View {
                 .buttonStyle(.borderedProminent)
             }
         }
+    }
+
+    private var captureModeToggle: some View {
+        HStack(spacing: 4) {
+            captureModeChip(.auto)
+            captureModeChip(.manual)
+        }
+        .padding(4)
+        .background(.ultraThinMaterial, in: Capsule())
+        .overlay(
+            Capsule()
+                .strokeBorder(Color.white.opacity(0.22), lineWidth: 1)
+        )
+    }
+
+    private func captureModeChip(_ mode: ScannerCaptureMode) -> some View {
+        let isSelected = captureMode == mode
+        return Button {
+            captureModeRawValue = mode.rawValue
+            HapticManager.selection()
+        } label: {
+            Text(mode.title)
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(isSelected ? .black : .white)
+                .padding(.horizontal, 10)
+                .padding(.vertical, 7)
+                .background(
+                    Capsule()
+                        .fill(isSelected ? Color.white : Color.clear)
+                )
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(mode == .auto ? "Auto capture" : "Manual capture")
     }
 }
 
@@ -834,7 +936,7 @@ private struct ScannerUndoBelowFrameButton: View {
             let cardW = geo.size.width * ScannerCardFrameLayout.reticleWidthFraction
             let cardH = cardW * ScannerCardFrameLayout.cardAspectHeightOverWidth
             let cardY = (geo.size.height - cardH) / 2 - ScannerCardFrameLayout.verticalCenterBias
-            let belowFrameTop = cardY + cardH + 48
+            let belowFrameTop = cardY + cardH + 34
 
             VStack(spacing: 0) {
                 Spacer().frame(height: belowFrameTop)
