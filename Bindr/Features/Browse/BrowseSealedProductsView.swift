@@ -395,6 +395,16 @@ private struct SealedProductDetailPage: View {
             .reduce(0) { $0 + max($1.quantity, 0) }
     }
 
+    private var visibleCollectionItems: [CollectionItem] {
+        collectionItems
+            .filter { $0.itemKind == ProductKind.sealedProduct.rawValue && $0.quantity > 0 }
+            .sorted { $0.dateAcquired > $1.dateAcquired }
+    }
+
+    private var showsCollectionSection: Bool {
+        !visibleCollectionItems.isEmpty
+    }
+
     private static let wishlistActiveStarColor = Color(red: 0.98, green: 0.78, blue: 0.18)
 
     var body: some View {
@@ -408,6 +418,10 @@ private struct SealedProductDetailPage: View {
                 actionButtons
 
                 SealedProductPricingPanel(productID: product.id)
+
+                if showsCollectionSection {
+                    collectionSection
+                }
 
                 recentSoldOnEbayButton
 
@@ -682,6 +696,109 @@ private struct SealedProductDetailPage: View {
         )
     }
 
+    private var collectionSection: some View {
+        VStack(alignment: .leading, spacing: 12) {
+            Text("Collection")
+                .font(.headline)
+
+            VStack(spacing: 10) {
+                ForEach(visibleCollectionItems, id: \.persistentModelID) { item in
+                    collectionStackCard(for: item)
+                }
+            }
+        }
+        .padding(14)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .fill(sectionInsetBackground)
+        )
+        .overlay(
+            RoundedRectangle(cornerRadius: 14, style: .continuous)
+                .stroke(sectionBorder, lineWidth: 1)
+        )
+    }
+
+    private func collectionStackCard(for item: CollectionItem) -> some View {
+        VStack(alignment: .leading, spacing: 12) {
+            HStack(alignment: .top, spacing: 8) {
+                Text("\(item.quantity) x Sealed")
+                    .font(.subheadline.weight(.semibold))
+                    .foregroundStyle(.primary)
+                Spacer(minLength: 8)
+                Text(item.dateAcquired.formatted(date: .abbreviated, time: .omitted))
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.secondary)
+            }
+
+            let sources = activeHoldingSources(for: item)
+            if sources.isEmpty {
+                Text("No source details recorded yet.")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            } else {
+                VStack(spacing: 8) {
+                    ForEach(sources) { source in
+                        sourceRow(source)
+                    }
+                }
+            }
+
+            if let notes = cleaned(item.notes) {
+                Text(notes)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(12)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 12, style: .continuous)
+                .fill(colorScheme == .dark ? Color.white.opacity(0.05) : Color.black.opacity(0.035))
+        )
+    }
+
+    private func sourceRow(_ source: SealedHoldingSource) -> some View {
+        VStack(alignment: .leading, spacing: 7) {
+            HStack(spacing: 8) {
+                Text(source.directionTitle)
+                    .font(.caption.weight(.semibold))
+                    .foregroundStyle(source.tint)
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 4)
+                    .background(
+                        Capsule(style: .continuous)
+                            .fill(source.tint.opacity(0.15))
+                    )
+                Text("Qty \(source.quantity)")
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.secondary)
+                Spacer(minLength: 8)
+                Text(source.date.formatted(date: .abbreviated, time: .omitted))
+                    .font(.caption.weight(.medium))
+                    .foregroundStyle(.secondary)
+            }
+
+            if let priceText = source.priceText {
+                Text("Price: \(priceText)")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+
+            if let description = source.description {
+                Text(description)
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+            }
+        }
+        .padding(10)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: 10, style: .continuous)
+                .fill(colorScheme == .dark ? Color.white.opacity(0.04) : Color.black.opacity(0.03))
+        )
+    }
+
     private var releaseDateDisplay: String {
         if let date = product.releaseDate {
             return DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
@@ -703,6 +820,70 @@ private struct SealedProductDetailPage: View {
                 .foregroundStyle(.primary)
             Spacer(minLength: 0)
         }
+    }
+
+    private func activeHoldingSources(for item: CollectionItem) -> [SealedHoldingSource] {
+        (item.costLots ?? [])
+            .filter { $0.quantityRemaining > 0 }
+            .sorted { $0.createdAt > $1.createdAt }
+            .map { lot in
+                let line = lot.sourceLedgerLine
+                let direction = line
+                    .flatMap { LedgerDirection(rawValue: $0.direction) }
+                    .map(directionTitle(for:)) ?? "Acquired"
+                let tint = line
+                    .flatMap { LedgerDirection(rawValue: $0.direction) }
+                    .map(directionTint(for:)) ?? services.theme.accentColor
+                return SealedHoldingSource(
+                    id: line?.id ?? UUID(),
+                    quantity: lot.quantityRemaining,
+                    date: line?.occurredAt ?? item.dateAcquired,
+                    directionTitle: direction,
+                    tint: tint,
+                    priceText: {
+                        guard let unitPrice = line?.unitPrice, unitPrice > 0 else { return nil }
+                        return formatCurrency(amount: unitPrice, code: line?.currencyCode ?? "USD")
+                    }(),
+                    description: cleaned(line?.lineDescription)
+                )
+            }
+    }
+
+    private func directionTitle(for direction: LedgerDirection) -> String {
+        switch direction {
+        case .bought: return "Bought"
+        case .packed: return "Packed"
+        case .tradedIn: return "Traded In"
+        case .giftedIn: return "Gifted"
+        case .adjustmentIn: return "Adjusted In"
+        case .sold: return "Sold"
+        case .tradedOut: return "Traded Out"
+        case .giftedOut: return "Gifted Out"
+        case .adjustmentOut: return "Adjusted Out"
+        }
+    }
+
+    private func directionTint(for direction: LedgerDirection) -> Color {
+        switch direction {
+        case .sold, .tradedOut, .giftedOut, .adjustmentOut:
+            return SealedPricingPalette.danger
+        default:
+            return SealedPricingPalette.success
+        }
+    }
+
+    private func formatCurrency(amount: Double, code: String) -> String {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = code
+        formatter.maximumFractionDigits = 2
+        return formatter.string(from: NSNumber(value: amount)) ?? String(format: "%.2f", amount)
+    }
+
+    private func cleaned(_ text: String?) -> String? {
+        guard let text else { return nil }
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        return trimmed.isEmpty ? nil : trimmed
     }
 
     private func toggleWishlist() {
@@ -748,6 +929,16 @@ private struct SealedProductDetailPage: View {
             $0.cardID == collectionCardID && $0.variantKey == "sealed"
         }
     }
+}
+
+private struct SealedHoldingSource: Identifiable {
+    let id: UUID
+    let quantity: Int
+    let date: Date
+    let directionTitle: String
+    let tint: Color
+    let priceText: String?
+    let description: String?
 }
 
 private enum SealedChartRange: String, CaseIterable {
