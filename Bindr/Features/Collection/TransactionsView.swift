@@ -205,6 +205,10 @@ struct TransactionsView: View {
     }
 
     private func primaryTitle(for line: LedgerLine) -> String {
+        if line.productKind == ProductKind.sealedProduct.rawValue,
+           let description = cleaned(line.lineDescription) {
+            return description
+        }
         if let cardID = cleaned(line.cardID), let name = cardNamesByID[cardID] {
             return name
         }
@@ -234,6 +238,7 @@ struct TransactionsView: View {
     }
 
     private func directionTitle(for line: LedgerLine) -> String {
+        if isOpenedSealedLine(line) { return "Opened" }
         guard let direction = LedgerDirection(rawValue: line.direction) else { return line.direction.capitalized }
         switch direction {
         case .bought: return "Bought"
@@ -261,6 +266,7 @@ struct TransactionsView: View {
     }
 
     private func directionIcon(for line: LedgerLine) -> String {
+        if isOpenedSealedLine(line) { return "shippingbox" }
         guard let direction = LedgerDirection(rawValue: line.direction) else { return "arrow.left.arrow.right" }
         switch direction {
         case .bought: return "cart.fill"
@@ -274,6 +280,7 @@ struct TransactionsView: View {
     }
 
     private func directionColor(for line: LedgerLine) -> Color {
+        if isOpenedSealedLine(line) { return .orange }
         guard let direction = LedgerDirection(rawValue: line.direction) else { return .secondary }
         switch direction {
         case .bought, .packed, .tradedIn, .giftedIn, .adjustmentIn:
@@ -281,6 +288,11 @@ struct TransactionsView: View {
         case .sold, .tradedOut, .giftedOut, .adjustmentOut:
             return .orange
         }
+    }
+
+    private func isOpenedSealedLine(_ line: LedgerLine) -> Bool {
+        guard line.productKind == ProductKind.sealedProduct.rawValue else { return false }
+        return line.sealedStatus == SealedInventoryStatus.opened.rawValue
     }
 
     private func moneySummary(for line: LedgerLine) -> String? {

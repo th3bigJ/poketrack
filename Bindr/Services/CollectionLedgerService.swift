@@ -546,6 +546,63 @@ final class CollectionLedgerService {
         try modelContext.save()
     }
 
+    /// Records opening sealed product quantity, removing it from active collection while keeping history.
+    func recordSealedProductOpened(
+        item: CollectionItem,
+        quantity: Int,
+        productName: String?
+    ) throws {
+        guard item.itemKind == ProductKind.sealedProduct.rawValue else {
+            throw CollectionLedgerError.notSealedProductStack
+        }
+        guard quantity > 0 else { throw CollectionLedgerError.invalidQuantity }
+        guard quantity <= item.quantity else { throw CollectionLedgerError.insufficientQuantity }
+
+        let currency = currencyCode(for: item)
+        let averageUnitCost = weightedAverageUnitCost(for: item)
+        let cleanName = cleanOptionalString(productName) ?? "Sealed product"
+
+        let line = LedgerLine(
+            direction: LedgerDirection.adjustmentOut.rawValue,
+            productKind: ProductKind.sealedProduct.rawValue,
+            lineDescription: "Opened · \(cleanName)",
+            cardID: item.cardID,
+            variantKey: "sealed",
+            sealedProductId: cleanOptionalString(item.sealedProductId),
+            quantity: quantity,
+            unitPrice: averageUnitCost > 0 ? averageUnitCost : nil,
+            currencyCode: currency,
+            feesAmount: nil,
+            sealedStatus: SealedInventoryStatus.opened.rawValue,
+            counterparty: nil,
+            channel: "opened",
+            externalRef: nil,
+            transactionGroupId: nil
+        )
+        modelContext.insert(line)
+
+        var remaining = quantity
+        let sortedLots = (item.costLots ?? []).sorted { $0.createdAt < $1.createdAt }
+        for lot in sortedLots where remaining > 0 {
+            guard lot.quantityRemaining > 0 else { continue }
+            let take = min(remaining, lot.quantityRemaining)
+            lot.quantityRemaining -= take
+            remaining -= take
+            if lot.quantityRemaining == 0, (lot.saleAllocations ?? []).isEmpty {
+                modelContext.delete(lot)
+            }
+        }
+
+        item.quantity -= quantity
+        if item.quantity <= 0 {
+            removeDepletedCollectionItem(item)
+        } else {
+            item.sealedStatus = SealedInventoryStatus.sealed.rawValue
+        }
+
+        try modelContext.save()
+    }
+
     private func resolvedUnitCost(kind: CollectionAcquisitionKind, unitPrice: Double?) -> Double {
         switch kind {
         case .bought, .trade, .gifted:
@@ -715,6 +772,7 @@ final class CollectionLedgerService {
 
 enum CollectionLedgerError: LocalizedError {
     case notSingleCardStack
+    case notSealedProductStack
     case invalidQuantity
     case insufficientQuantity
 
@@ -722,6 +780,8 @@ enum CollectionLedgerError: LocalizedError {
         switch self {
         case .notSingleCardStack:
             return "This edit only applies to single-card stacks."
+        case .notSealedProductStack:
+            return "This edit only applies to sealed product stacks."
         case .invalidQuantity:
             return "Quantity must be at least 1."
         case .insufficientQuantity:

@@ -24,6 +24,7 @@ struct CardScannerView: View {
     @State private var showDetailSheet = false
     @State private var showBulkAddSheet = false
     @State private var isCameraPaused = false
+    @State private var wasCameraPausedBeforeDetail = false
     /// Variant selected in the overlay bar at the moment the user swiped up, keyed by ScanResult.id.
     @State private var selectedVariantsByResultID: [UUID: String] = [:]
     @State private var showOnePieceDebugSheet = false
@@ -189,7 +190,12 @@ struct CardScannerView: View {
                 }
             }
             .sheet(isPresented: $showDetailSheet, onDismiss: {
-                if !isCameraPaused { viewModel.startSession() }
+                if wasCameraPausedBeforeDetail {
+                    isCameraPaused = true
+                } else {
+                    isCameraPaused = false
+                    viewModel.startSession()
+                }
             }) {
                 ScannerDetailSheet(
                     results: viewModel.scanResults,
@@ -205,7 +211,11 @@ struct CardScannerView: View {
                 .presentationCornerRadius(20)
             }
             .onChange(of: showDetailSheet) { _, isShowing in
-                if isShowing { viewModel.stopSession() }
+                if isShowing {
+                    wasCameraPausedBeforeDetail = isCameraPaused
+                    isCameraPaused = true
+                    viewModel.stopSession()
+                }
             }
             .onChange(of: showBulkAddSheet) { _, isShowing in
                 if isShowing { viewModel.stopSession() }
@@ -798,109 +808,19 @@ private struct ScannerResultsOverlay: View {
 // MARK: - Detail sheet (large, shown on swipe up)
 
 private struct ScannerDetailSheet: View {
-    @Environment(AppServices.self) private var services
-    @Environment(\.colorScheme) private var colorScheme
-
     let results: [ScanResult]
     @Binding var currentResultIndex: Int
     let selectedVariantsByResultID: [UUID: String]
     let onPickAlternative: (UUID, Card) -> Void
 
     var body: some View {
-        let count = results.count
-        let currentCard = results.indices.contains(currentResultIndex) ? results[currentResultIndex].card : results.first?.card
-        let currentSet = currentCard.flatMap { card in
-            services.cardData.sets.first { $0.setCode == card.setCode }
-        }
-        let headerHeight = RootChromeEnvironment.searchBarStackHeight
-
-        ZStack(alignment: .top) {
-            // Scroll content fills the full frame and flows behind the glass header
-            TabView(selection: $currentResultIndex) {
-                ForEach(Array(results.enumerated()), id: \.element.id) { i, result in
-                    ScannerDetailPage(
-                        card: result.card,
-                        initialVariant: selectedVariantsByResultID[result.id],
-                        headerHeight: headerHeight
-                    )
-                        .tag(i)
-                }
-            }
-            .tabViewStyle(.page(indexDisplayMode: count > 1 ? .always : .never))
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .ignoresSafeArea(edges: .top)
-            .onChange(of: currentResultIndex) { _, _ in HapticManager.selection() }
-
-            // Glass header overlaid on top
-            HStack(alignment: .center, spacing: 10) {
-                Group {
-                    if let set = currentSet, currentCard != nil {
-                        SetLogoAsyncImage(
-                            logoSrc: set.logoSrc,
-                            height: 26,
-                            brand: services.brandSettings.selectedCatalogBrand
-                        )
-                            .frame(maxWidth: 72, maxHeight: headerHeight - 14)
-                    } else {
-                        Color.clear.frame(width: 0, height: 1)
-                    }
-                }
-                .frame(minHeight: 32, alignment: .center)
-
-                Text(currentCard?.cardName ?? "")
-                    .font(.title2.weight(.bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.75)
-                    .multilineTextAlignment(.leading)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    .animation(.easeInOut(duration: 0.15), value: currentCard?.cardName)
-            }
-            .padding(.horizontal, 16)
-            .frame(height: headerHeight, alignment: .center)
-            .frame(maxWidth: .infinity)
-            .background { CardDetailStyleGlassBarBackground() }
-            .ignoresSafeArea(edges: .top)
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(colorScheme == .dark ? Color.black : Color(uiColor: .systemBackground))
-    }
-}
-
-// MARK: - Large detail single page
-
-private struct ScannerDetailPage: View {
-    let card: Card
-    var initialVariant: String? = nil
-    var headerHeight: CGFloat = RootChromeEnvironment.searchBarStackHeight
-    @State private var imageAppeared = false
-
-    var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                ProgressiveAsyncImage(
-                    lowResURL: AppConfiguration.imageURL(relativePath: card.imageLowSrc),
-                    highResURL: card.imageHighSrc.map { AppConfiguration.imageURL(relativePath: $0) }
-                ) {
-                    Color(uiColor: .tertiarySystemFill).aspectRatio(5/7, contentMode: .fit)
-                }
-                .padding(.horizontal, 16)
-                .padding(.top, headerHeight + 6)
-                .scaleEffect(imageAppeared ? 1.0 : 0.94)
-                .onAppear {
-                    withAnimation(.spring(response: 0.45, dampingFraction: 0.82)) { imageAppeared = true }
-                }
-                .onDisappear { imageAppeared = false }
-
-                CardPricingPanel(card: card, initialVariant: initialVariant)
-                    .padding(.top, 16)
-                    .padding(.bottom, 32)
-            }
-            .frame(maxWidth: .infinity)
-        }
-        .scrollContentBackground(.hidden)
-        .scrollIndicators(.hidden)
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        CardBrowseDetailView(
+            cards: results.map(\.card),
+            startIndex: currentResultIndex,
+            addToDeckAction: nil,
+            showsHeaderChromeActions: true,
+            showsWishlistWhenChromeHidden: false
+        )
     }
 }
 

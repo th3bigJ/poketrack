@@ -76,7 +76,13 @@ final class CollectionValueService {
         let today = cal.startOfDay(for: Date())
         guard !snapshotExists(for: today) else { return }
 
-        let hasInventory = collectionItems.contains { $0.quantity > 0 }
+        let hasInventory = collectionItems.contains { item in
+            guard item.quantity > 0 else { return false }
+            if item.itemKind == ProductKind.sealedProduct.rawValue {
+                return item.sealedStatus != SealedInventoryStatus.opened.rawValue
+            }
+            return true
+        }
         guard hasInventory else {
             print("[CollectionValue] Skipping daily snapshot (no inventory).")
             return
@@ -218,6 +224,11 @@ final class CollectionValueService {
     private func computeBrandValue(items: [CollectionItem], on date: Date) async -> Double {
         var total = 0.0
         for item in items {
+            guard item.quantity > 0 else { continue }
+            if item.itemKind == ProductKind.sealedProduct.rawValue,
+               item.sealedStatus == SealedInventoryStatus.opened.rawValue {
+                continue
+            }
             guard let card = await cardData.loadCard(masterCardId: item.cardID) else { continue }
             let grade = resolvedGradeKey(for: item)
             let usd = await usdPrice(for: card, variantKey: item.variantKey, grade: grade, on: date)

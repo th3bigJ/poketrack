@@ -378,6 +378,7 @@ private struct SealedProductDetailPage: View {
     @State private var wishlistAlertMessage: String?
     @State private var showWishlistAlert = false
     @State private var isWishlisted = false
+    @State private var openingItem: CollectionItem?
 
     init(product: SealedProduct) {
         self.product = product
@@ -443,6 +444,15 @@ private struct SealedProductDetailPage: View {
         .sheet(isPresented: $showAddSheet) {
             AddSealedToCollectionSheet(product: product)
                 .environment(services)
+        }
+        .sheet(isPresented: Binding(
+            get: { openingItem != nil },
+            set: { if !$0 { openingItem = nil } }
+        )) {
+            if let openingItem {
+                OpenSealedCollectionItemSheet(item: openingItem, productName: product.name)
+                    .environment(services)
+            }
         }
         .sheet(isPresented: $showWishlistPaywall) {
             PaywallSheet()
@@ -749,6 +759,12 @@ private struct SealedProductDetailPage: View {
                     .font(.caption)
                     .foregroundStyle(.secondary)
             }
+
+            Button("Mark Opened") {
+                openingItem = item
+            }
+            .buttonStyle(.borderedProminent)
+            .tint(SealedPricingPalette.danger)
         }
         .padding(12)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -1256,6 +1272,77 @@ private enum SealedPricingPalette {
     static let success = Color(red: 0.28, green: 0.84, blue: 0.39)
     static let danger = Color(red: 1.0, green: 0.36, blue: 0.34)
     static let gold = Color(red: 0.97, green: 0.74, blue: 0.06)
+}
+
+private struct OpenSealedCollectionItemSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(AppServices.self) private var services
+
+    let item: CollectionItem
+    let productName: String
+
+    @State private var quantity: Int
+    @State private var errorMessage: String?
+
+    init(item: CollectionItem, productName: String) {
+        self.item = item
+        self.productName = productName
+        _quantity = State(initialValue: min(max(item.quantity, 1), 999))
+    }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    Text(productName)
+                        .font(.headline)
+                    Text("In collection: \(item.quantity)")
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                Section {
+                    Stepper("Open quantity: \(quantity)", value: $quantity, in: 1...max(item.quantity, 1))
+                }
+
+                if let errorMessage {
+                    Section {
+                        Text(errorMessage)
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                }
+            }
+            .navigationTitle("Mark Opened")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") { save() }
+                }
+            }
+        }
+    }
+
+    private func save() {
+        errorMessage = nil
+        guard let ledger = services.collectionLedger else {
+            errorMessage = "Collection isn't ready. Try again."
+            return
+        }
+        do {
+            try ledger.recordSealedProductOpened(
+                item: item,
+                quantity: quantity,
+                productName: productName
+            )
+            dismiss()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
 }
 
 private struct AddSealedToCollectionSheet: View {
