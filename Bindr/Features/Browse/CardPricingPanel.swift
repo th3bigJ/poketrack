@@ -146,7 +146,7 @@ struct CardPricingPanel: View {
             // Chart
             if !chartPoints.isEmpty {
                 chartView
-                    .padding(.top, 16)
+                    .padding(.top, 4)
 
                 Picker("Range", selection: $chartRange) {
                     ForEach(ChartRange.allCases, id: \.self) { r in
@@ -156,7 +156,7 @@ struct CardPricingPanel: View {
                 .pickerStyle(.segmented)
                 .padding(.horizontal, 16)
                 .padding(.top, 8)
-                .padding(.bottom, 16)
+                .padding(.bottom, 4)
             } else if isLoading {
                 ProgressView()
                     .tint(.primary)
@@ -166,7 +166,7 @@ struct CardPricingPanel: View {
             }
         }
         .padding(.horizontal, 6)
-        .padding(.vertical, 18)
+        .padding(.vertical, 4)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 26, style: .continuous)

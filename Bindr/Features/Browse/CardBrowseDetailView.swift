@@ -218,9 +218,10 @@ private struct CardBrowseDetailPage: View {
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 14) {
                 cardImage
-                    .padding(.top, 26)
+                    .padding(.top, 20)
+                    .padding(.horizontal, 6)
 
                 cardMetaRow
 
@@ -236,7 +237,7 @@ private struct CardBrowseDetailPage: View {
                 }
             }
             .padding(.horizontal, 12)
-            .padding(.bottom, 48)
+            .padding(.bottom, 36)
             .frame(maxWidth: .infinity, minHeight: 0, alignment: .topLeading)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -372,7 +373,7 @@ private struct CardBrowseDetailPage: View {
     @ViewBuilder
     private var cardMetaRow: some View {
         if let deckAction = addToDeckAction {
-            VStack(spacing: 14) {
+            VStack(spacing: 12) {
                 titleBlock
 
                 if let variantKey = singleAvailableVariantKey {
@@ -414,7 +415,7 @@ private struct CardBrowseDetailPage: View {
                 }
             }
         } else {
-            VStack(spacing: 14) {
+            VStack(spacing: 12) {
                 titleBlock
 
                 HStack(spacing: 8) {
@@ -434,7 +435,7 @@ private struct CardBrowseDetailPage: View {
     }
 
     private var titleBlock: some View {
-        VStack(spacing: 6) {
+        VStack(spacing: 4) {
             Text(card.cardName)
                 .font(.system(size: 28, weight: .bold, design: .rounded))
                 .foregroundStyle(Color.primary)
@@ -723,16 +724,16 @@ private struct CardBrowseDetailPage: View {
 
     private var cardDetailsSection: some View {
         DetailSurface(title: "Card Details") {
-            VStack(alignment: .leading, spacing: 18) {
+            VStack(alignment: .leading, spacing: 14) {
                 if !summaryFacts.isEmpty {
                     let factRows = stride(from: 0, to: summaryFacts.count, by: 2).map {
                         Array(summaryFacts[$0..<min($0 + 2, summaryFacts.count)])
                     }
-                    VStack(spacing: 12) {
+                    VStack(spacing: 10) {
                         ForEach(Array(factRows.enumerated()), id: \.offset) { _, row in
                             HStack(spacing: 12) {
                                 ForEach(row, id: \.0) { fact in
-                                    VStack(alignment: .leading, spacing: 6) {
+                                    VStack(alignment: .leading, spacing: 4) {
                                         Text(fact.0)
                                             .font(.caption.weight(.semibold))
                                             .foregroundStyle(.secondary)
@@ -741,7 +742,7 @@ private struct CardBrowseDetailPage: View {
                                             .foregroundStyle(.primary)
                                     }
                                     .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(12)
+                                    .padding(10)
                                     .background(
                                         RoundedRectangle(cornerRadius: 16, style: .continuous)
                                             .fill(sectionInsetBackground)
@@ -756,13 +757,13 @@ private struct CardBrowseDetailPage: View {
                 }
 
                 if let attacks = card.attacks, !attacks.isEmpty {
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 8) {
                         Text("Attacks")
                             .font(.headline)
                             .foregroundStyle(.primary)
 
                         ForEach(Array(attacks.enumerated()), id: \.offset) { _, attack in
-                            VStack(alignment: .leading, spacing: 6) {
+                            VStack(alignment: .leading, spacing: 5) {
                                 HStack {
                                     Text(attack.name)
                                         .font(.subheadline.weight(.semibold))
@@ -787,7 +788,7 @@ private struct CardBrowseDetailPage: View {
                                         .foregroundStyle(.secondary)
                                 }
                             }
-                            .padding(14)
+                            .padding(12)
                             .background(
                                 RoundedRectangle(cornerRadius: 18, style: .continuous)
                                     .fill(sectionInsetBackground)
@@ -797,14 +798,14 @@ private struct CardBrowseDetailPage: View {
                 }
 
                 if let abilities = card.abilities, !abilities.isEmpty {
-                    VStack(alignment: .leading, spacing: 10) {
+                    VStack(alignment: .leading, spacing: 8) {
                         Text("Abilities")
                             .font(.headline)
                             .foregroundStyle(.primary)
 
                         ForEach(Array(abilities.enumerated()), id: \.offset) { _, ability in
                             if let text = cleaned(ability.text) {
-                                VStack(alignment: .leading, spacing: 6) {
+                                VStack(alignment: .leading, spacing: 5) {
                                     HStack(spacing: 8) {
                                         if let type = cleaned(ability.type) {
                                             Text(type.uppercased())
@@ -829,7 +830,7 @@ private struct CardBrowseDetailPage: View {
                                         .font(.subheadline)
                                         .foregroundStyle(.secondary)
                                 }
-                                .padding(14)
+                                .padding(12)
                                 .background(
                                     RoundedRectangle(cornerRadius: 18, style: .continuous)
                                         .fill(sectionInsetBackground)
@@ -851,7 +852,7 @@ private struct CardBrowseDetailPage: View {
     }
 
     private func detailTextBlock(title: String, body: String) -> some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 6) {
             Text(title)
                 .font(.headline)
                 .foregroundStyle(.primary)
@@ -1080,14 +1081,14 @@ private struct DetailSurface<Content: View>: View {
     }
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(alignment: .leading, spacing: 12) {
             Text(title)
                 .font(.title3.weight(.semibold))
                 .foregroundStyle(Color.primary)
 
             content
         }
-        .padding(18)
+        .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
             RoundedRectangle(cornerRadius: 26, style: .continuous)
