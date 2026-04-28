@@ -50,6 +50,9 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
             for i in 0..<needed {
                 (coord.controllers[i] as? UIHostingController<Content>)?.rootView = pageContent(i)
             }
+            // Explicitly notify the current view it needs to redraw, as UIPageViewController
+            // might not automatically refresh the visible UIHostingController.
+            uiViewController.viewControllers?.first?.view.setNeedsLayout()
         }
 
         guard needed > 0 else { return }

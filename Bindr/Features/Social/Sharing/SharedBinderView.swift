@@ -128,10 +128,7 @@ struct SharedBinderView: View {
 
     private var titleHeader: some View {
         VStack(spacing: 8) {
-            Text(content.title)
-                .font(.headline.weight(.semibold))
-                .foregroundStyle(.primary)
-                .multilineTextAlignment(.center)
+            // Redundant title removed (already in navigation bar)
 
             if let description = content.description, !description.isEmpty {
                 Text(description)
@@ -372,13 +369,11 @@ struct SharedBinderView: View {
     }
 
     private func loadCards() async {
-        var resolved: [String: Card] = [:]
         for entry in entries {
-            guard resolved[entry.cardID] == nil else { continue }
+            guard cardsByID[entry.cardID] == nil else { continue }
             if let card = await services.cardData.loadCard(masterCardId: entry.cardID) {
-                resolved[entry.cardID] = card
+                cardsByID[entry.cardID] = card
             }
         }
-        cardsByID = resolved
     }
 }
