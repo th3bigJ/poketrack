@@ -453,7 +453,7 @@ final class SocialFeedService {
     func postVote(type: ReactionType, to contentID: UUID) async throws {
         let userID = try signedInUserID()
         let payload = VoteInsertRequest(contentID: contentID, userID: userID, voteType: type)
-        print("DEBUG: postVote started - type: \(type), contentID: \(contentID)")
+        print("DEBUG: postVote started - type: \(type), contentID: \(contentID), userID: \(userID)")
         do {
             _ = try await execute(
                 path: "/rest/v1/reactions?on_conflict=content_id,user_id",

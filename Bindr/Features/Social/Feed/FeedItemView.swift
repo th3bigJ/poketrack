@@ -514,12 +514,18 @@ struct InteractionBar: View {
     }
 
     private func toggleVote(_ type: ReactionType) async {
-        guard let contentID = item.content?.id else { return }
+        guard let contentID = item.content?.id else {
+            print("DEBUG: toggleVote aborted - contentID is nil for item \(item.id)")
+            return
+        }
+        print("DEBUG: toggleVote requested - type: \(type), contentID: \(contentID)")
         isBusy = true
         defer { isBusy = false }
         do {
             try await services.socialFeed.toggleVote(type: type, to: contentID)
+            print("DEBUG: toggleVote call finished, refreshing aggregate...")
             aggregate = try await services.socialFeed.fetchVoteAggregate(for: contentID)
+            print("DEBUG: toggleVote refresh finished - score is now \(aggregate.score)")
         } catch {
             print("DEBUG: toggleVote failed: \(error)")
         }
