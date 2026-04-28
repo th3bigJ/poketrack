@@ -1,21 +1,15 @@
 import SwiftUI
 
 /// Compact horizontal row that appears under a binder's title in
-/// ``BinderDetailView``. Shows three pieces of social/value context:
+/// ``BinderDetailView``. Shows social context:
 ///
-///   1. **Share state** — a lock icon ("Private") when the binder hasn't been
-///      published, or a people icon + "Shared" label + count when it has.
+///   1. **Share state** — only shown when published ("Shared").
 ///   2. **Likers** — overlapping avatar bubbles for up to four upvoters with a
 ///      "+N" overflow chip when there are more.
-///   3. **Weekly value change** — a green/red pill showing the binder's USD
-///      gain or loss over the past 7 days, formatted in the user's display
-///      currency. Hidden when no trend data is available yet.
 ///
-/// All three sections degrade independently — if there are no likers we just
-/// hide the avatar stack; if pricing trends haven't loaded the change pill
-/// stays out of the way. The row is purely presentational; it accepts
-/// pre-computed data so the parent view stays the source of truth for
-/// publishing state and pricing math.
+/// Sections degrade independently — if there are no likers we hide the avatar
+/// stack. The row is purely presentational; it accepts pre-computed data so
+/// the parent view stays the source of truth for publishing state.
 struct BinderSocialRow: View {
     /// Whether the binder has a `SharedContent` record on the server.
     let isPublished: Bool
@@ -25,13 +19,6 @@ struct BinderSocialRow: View {
     /// Total upvote count for the binder. May exceed `likers.count` when only
     /// a partial page of voters has been fetched.
     let totalLikeCount: Int
-    /// Net USD change over the past 7 days, summed across all slots. `nil`
-    /// when trends haven't been resolved yet.
-    let weeklyUSDChange: Double?
-    /// User-selected currency + USD→GBP rate, used to format the change pill.
-    let currencySymbol: String
-    let usdToGbp: Double
-    let displayInGBP: Bool
     /// Tap handler for the share section — opens the existing share sheet.
     var onShareTap: () -> Void = {}
     /// Tap handler for the likers row — drills into a "people who upvoted"
@@ -40,14 +27,13 @@ struct BinderSocialRow: View {
 
     var body: some View {
         HStack(spacing: 12) {
-            shareSection
+            if isPublished {
+                shareSection
+            }
             if !likers.isEmpty {
                 likersSection
             }
             Spacer(minLength: 0)
-            if let weeklyUSDChange {
-                weeklyChangePill(usd: weeklyUSDChange)
-            }
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 6)
@@ -58,10 +44,10 @@ struct BinderSocialRow: View {
     private var shareSection: some View {
         Button(action: onShareTap) {
             HStack(spacing: 6) {
-                Image(systemName: isPublished ? "person.2.fill" : "lock.fill")
+                Image(systemName: "person.2.fill")
                     .font(.system(size: 11, weight: .semibold))
-                    .foregroundStyle(isPublished ? Color.green : Color.secondary)
-                Text(isPublished ? "Shared" : "Private")
+                    .foregroundStyle(Color.green)
+                Text("Shared")
                     .font(.system(size: 12, weight: .semibold))
                     .foregroundStyle(.primary)
             }
@@ -77,7 +63,7 @@ struct BinderSocialRow: View {
             )
         }
         .buttonStyle(.plain)
-        .accessibilityLabel(isPublished ? "Shared binder, tap to manage" : "Private binder, tap to share")
+        .accessibilityLabel("Shared binder, tap to manage")
     }
 
     // MARK: - Likers row
@@ -127,49 +113,4 @@ struct BinderSocialRow: View {
         .accessibilityLabel("\(totalLikeCount) \(totalLikeCount == 1 ? "person likes" : "people like") this binder")
     }
 
-    // MARK: - Weekly change
-
-    @ViewBuilder
-    private func weeklyChangePill(usd: Double) -> some View {
-        // Treat near-zero as flat — avoids showing "↑ £0" when prices barely moved.
-        let absUSD = abs(usd)
-        if absUSD < 0.5 {
-            EmptyView()
-        } else {
-            let amount = displayInGBP ? absUSD * usdToGbp : absUSD
-            let isUp = usd >= 0
-            let tint: Color = isUp ? .green : .red
-            HStack(spacing: 4) {
-                Image(systemName: isUp ? "arrow.up" : "arrow.down")
-                    .font(.system(size: 10, weight: .bold))
-                Text(formatChange(amount: amount))
-                    .font(.system(size: 12, weight: .bold, design: .rounded))
-                Text("this week")
-                    .font(.system(size: 10, weight: .medium))
-                    .foregroundStyle(.secondary)
-            }
-            .foregroundStyle(tint)
-            .padding(.horizontal, 10)
-            .padding(.vertical, 5)
-            .background(
-                Capsule()
-                    .fill(tint.opacity(0.12))
-            )
-            .accessibilityLabel("\(isUp ? "Up" : "Down") \(formatChange(amount: amount)) this week")
-        }
-    }
-
-    private func formatChange(amount: Double) -> String {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        if amount >= 1000 {
-            formatter.maximumFractionDigits = 0
-            formatter.minimumFractionDigits = 0
-        } else {
-            formatter.maximumFractionDigits = 2
-            formatter.minimumFractionDigits = 2
-        }
-        let pretty = formatter.string(from: NSNumber(value: amount)) ?? "0"
-        return "\(currencySymbol)\(pretty)"
-    }
 }

@@ -7,6 +7,8 @@ struct FoldersListView: View {
 
     @Query(sort: \CardFolder.createdAt, order: .reverse) private var folders: [CardFolder]
     @State private var folderValueByID: [UUID: Double] = [:]
+    @State private var folderToEdit: CardFolder? = nil
+    @State private var editedFolderTitle: String = ""
 
     private var folderValueSignature: String {
         folders
@@ -21,31 +23,49 @@ struct FoldersListView: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                if folders.isEmpty {
-                    ContentUnavailableView(
-                        "No Folders",
-                        systemImage: "folder",
-                        description: Text("Tap + to create your first folder.")
-                    )
-                    .frame(minHeight: 280)
-                } else {
-                    LazyVStack(spacing: 10) {
-                        ForEach(folders) { folder in
-                            NavigationLink(value: folder) {
-                                folderCard(folder)
-                            }
-                            .buttonStyle(.plain)
+        Group {
+            if folders.isEmpty {
+                ContentUnavailableView(
+                    "No Folders",
+                    systemImage: "folder",
+                    description: Text("Tap + to create your first folder.")
+                )
+                .frame(minHeight: 280)
+            } else {
+                List {
+                    ForEach(folders) { folder in
+                        NavigationLink(value: folder) {
+                            folderCard(folder)
                         }
+                        .buttonStyle(.plain)
+                        .listRowInsets(EdgeInsets(top: 6, leading: 16, bottom: 6, trailing: 16))
+                        .listRowBackground(Color.clear)
+                        .listRowSeparator(.hidden)
                     }
-                    .padding(.horizontal, 16)
-                    .padding(.top, 8)
-                    .padding(.bottom, 24)
                 }
+                .listStyle(.plain)
+                .scrollContentBackground(.hidden)
             }
         }
         .toolbar(.hidden, for: .navigationBar)
+        .alert("Edit Folder", isPresented: Binding(
+            get: { folderToEdit != nil },
+            set: { if !$0 { folderToEdit = nil } }
+        )) {
+            TextField("Folder Name", text: $editedFolderTitle)
+            Button("Save") {
+                guard let folder = folderToEdit else { return }
+                let trimmed = editedFolderTitle.trimmingCharacters(in: .whitespacesAndNewlines)
+                if !trimmed.isEmpty {
+                    folder.title = trimmed
+                    try? modelContext.save()
+                }
+                folderToEdit = nil
+            }
+            Button("Cancel", role: .cancel) {
+                folderToEdit = nil
+            }
+        }
         .task(id: folderValueSignature) {
             await resolveFolderValues()
         }
@@ -68,26 +88,25 @@ struct FoldersListView: View {
             }
 
             Spacer()
-
-            Image(systemName: "chevron.right")
-                .font(.caption.weight(.semibold))
-                .foregroundStyle(.tertiary)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 14)
-        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .overlay {
-            RoundedRectangle(cornerRadius: 16, style: .continuous)
-                .stroke(Color.primary.opacity(0.06), lineWidth: 0.5)
-        }
-        .contentShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-        .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+        .padding(.vertical, 10)
+        .contentShape(Rectangle())
+        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
             Button(role: .destructive) {
                 modelContext.delete(folder)
                 try? modelContext.save()
             } label: {
                 Label("Delete", systemImage: "trash")
             }
+            .tint(.red)
+
+            Button {
+                editedFolderTitle = folder.title
+                folderToEdit = folder
+            } label: {
+                Label("Edit", systemImage: "pencil")
+            }
+            .tint(.blue)
         }
     }
 

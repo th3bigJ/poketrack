@@ -24,6 +24,10 @@ struct BinderCoverView: View {
     /// the bottom of the cover. Pass `nil` to omit (e.g. for empty binders or
     /// preview/creation flows where the value isn't meaningful yet).
     var valueText: String? = nil
+    /// Cover text color selection for title/subtitle/value.
+    var titleTextColor: BinderTitleTextColor = .gold
+    /// Cover text font selection for title/subtitle/value.
+    var titleFontStyle: BinderTitleFontStyle = .serif
 
     // MARK: - Premium gold accent palette
     //
@@ -33,6 +37,21 @@ struct BinderCoverView: View {
     // on the title, ornament, and value.
     private var goldAccent: Color { Color(red: 0.86, green: 0.72, blue: 0.42) }
     private var goldHighlight: Color { Color(red: 0.98, green: 0.86, blue: 0.55) }
+    private var ornamentColor: Color {
+        titleTextColor == .gold ? goldAccent : titleTextColor.swiftUIColor
+    }
+    private var titleTextStyle: AnyShapeStyle {
+        if titleTextColor == .gold {
+            return AnyShapeStyle(
+                LinearGradient(
+                    colors: [goldHighlight, goldAccent],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+        }
+        return AnyShapeStyle(titleTextColor.swiftUIColor)
+    }
 
     var body: some View {
         ZStack(alignment: .leading) {
@@ -106,9 +125,9 @@ struct BinderCoverView: View {
     private var ornamentLine: some View {
         LinearGradient(
             colors: [
-                goldAccent.opacity(0.0),
-                goldAccent.opacity(0.85),
-                goldAccent.opacity(0.0)
+                ornamentColor.opacity(0.0),
+                ornamentColor.opacity(0.85),
+                ornamentColor.opacity(0.0)
             ],
             startPoint: .leading,
             endPoint: .trailing
@@ -119,7 +138,9 @@ struct BinderCoverView: View {
     private var ornamentDiamond: some View {
         Rectangle()
             .fill(LinearGradient(
-                colors: [goldHighlight, goldAccent],
+                colors: titleTextColor == .gold
+                    ? [goldHighlight, goldAccent]
+                    : [ornamentColor.opacity(0.95), ornamentColor.opacity(0.75)],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             ))
@@ -133,12 +154,8 @@ struct BinderCoverView: View {
     private var titleBlock: some View {
         VStack(spacing: compact ? 4 : 6) {
             Text(title.isEmpty ? "Binder name…" : title)
-                .font(.system(size: compact ? 17 : 24, weight: .bold, design: .serif))
-                .foregroundStyle(LinearGradient(
-                    colors: [goldHighlight, goldAccent],
-                    startPoint: .top,
-                    endPoint: .bottom
-                ))
+                .font(.system(size: compact ? 17 : 24, weight: .bold, design: titleFontStyle.fontDesign))
+                .foregroundStyle(titleTextStyle)
                 .multilineTextAlignment(.center)
                 .lineLimit(2)
                 .minimumScaleFactor(0.7)
@@ -147,9 +164,9 @@ struct BinderCoverView: View {
 
             if let subtitle {
                 Text(subtitle.uppercased())
-                    .font(.system(size: compact ? 9.5 : 11.5, weight: .semibold))
+                    .font(.system(size: compact ? 9.5 : 11.5, weight: .semibold, design: titleFontStyle.fontDesign))
                     .tracking(compact ? 1.4 : 1.8)
-                    .foregroundStyle(goldAccent.opacity(0.85))
+                    .foregroundStyle(titleTextColor == .gold ? goldAccent.opacity(0.85) : titleTextColor.swiftUIColor.opacity(0.88))
                     .multilineTextAlignment(.center)
                     .lineLimit(1)
                     .minimumScaleFactor(0.7)
@@ -162,12 +179,8 @@ struct BinderCoverView: View {
 
     private func valueLabel(_ text: String) -> some View {
         Text(text)
-            .font(.system(size: compact ? 26 : 38, weight: .bold, design: .serif))
-            .foregroundStyle(LinearGradient(
-                colors: [goldHighlight, goldAccent],
-                startPoint: .top,
-                endPoint: .bottom
-            ))
+            .font(.system(size: compact ? 26 : 38, weight: .bold, design: titleFontStyle.fontDesign))
+            .foregroundStyle(titleTextStyle)
             .shadow(color: .black.opacity(0.45), radius: 1.5, x: 0, y: 1)
             .lineLimit(1)
             .minimumScaleFactor(0.6)
@@ -279,7 +292,9 @@ extension BinderCoverView {
             peekingCardURLs: finalURLs,
             showCardPreview: binder.showCardPreview,
             compact: compact,
-            valueText: valueText
+            valueText: valueText,
+            titleTextColor: binder.titleTextColorKind,
+            titleFontStyle: binder.titleFontStyleKind
         )
     }
 }

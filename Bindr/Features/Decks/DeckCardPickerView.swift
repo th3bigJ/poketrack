@@ -1038,6 +1038,11 @@ struct DeckCardPickerView: View {
                 let t = card.trainerType?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
                 if t.isEmpty || !filters.trainerTypes.contains(t) { return false }
             }
+            if let abilityPresence = filters.abilityPresence {
+                let hasAbilities = (card.abilities?.isEmpty == false)
+                if abilityPresence == .yes, hasAbilities == false { return false }
+                if abilityPresence == .no, hasAbilities == true { return false }
+            }
             return true
         }
     }
@@ -1073,6 +1078,11 @@ struct DeckCardPickerView: View {
         if !filters.trainerTypes.isEmpty {
             let t = card.trainerType?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
             if t.isEmpty || !filters.trainerTypes.contains(t) { return false }
+        }
+        if let abilityPresence = filters.abilityPresence {
+            let hasAbilities = (card.abilities?.isEmpty == false)
+            if abilityPresence == .yes, hasAbilities == false { return false }
+            if abilityPresence == .no, hasAbilities == true { return false }
         }
         return true
     }

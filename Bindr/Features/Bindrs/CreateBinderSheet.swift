@@ -20,6 +20,9 @@ struct CreateBinderSheet: View {
     @State private var colourName = "navy"
     @State private var texture = BinderTexture.leather
     @State private var showCardPreview = true
+    @State private var showValueOnCover = true
+    @State private var titleTextColor = BinderTitleTextColor.gold
+    @State private var titleFontStyle = BinderTitleFontStyle.serif
 
     var body: some View {
         NavigationStack {
@@ -33,7 +36,9 @@ struct CreateBinderSheet: View {
                         texture: texture,
                         seed: 1, // Fixed seed for creation preview
                         peekingCardURLs: [nil, nil, nil],
-                        showCardPreview: showCardPreview
+                        showCardPreview: showCardPreview,
+                        titleTextColor: titleTextColor,
+                        titleFontStyle: titleFontStyle
                     )
                     .padding(.horizontal, 16)
                     .padding(.top, 8)
@@ -133,6 +138,20 @@ struct CreateBinderSheet: View {
                                     }
                                 }
                                 .pickerStyle(.segmented)
+
+                                Picker("Title text color", selection: $titleTextColor) {
+                                    ForEach(BinderTitleTextColor.allCases) { option in
+                                        Text(option.displayName).tag(option)
+                                    }
+                                }
+                                .pickerStyle(.segmented)
+
+                                Picker("Title font", selection: $titleFontStyle) {
+                                    ForEach(BinderTitleFontStyle.allCases) { option in
+                                        Text(option.displayName).tag(option)
+                                    }
+                                }
+                                .pickerStyle(.segmented)
                                 
                                 // Selected Style Label
                                 HStack(spacing: 4) {
@@ -164,6 +183,17 @@ struct CreateBinderSheet: View {
                                     Text("Show cards on cover")
                                         .font(.subheadline.weight(.medium))
                                     Text("Preview the first few cards on the binder front")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            .tint(.accentColor)
+
+                            Toggle(isOn: $showValueOnCover) {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Show value on cover")
+                                        .font(.subheadline.weight(.medium))
+                                    Text("Display the binder value label on the front")
                                         .font(.caption)
                                         .foregroundStyle(.secondary)
                                 }
@@ -202,7 +232,10 @@ struct CreateBinderSheet: View {
             pageLayout: layout,
             colour: colourName,
             texture: texture,
-            showCardPreview: showCardPreview
+            showCardPreview: showCardPreview,
+            showValueOnCover: showValueOnCover,
+            titleTextColor: titleTextColor,
+            titleFontStyle: titleFontStyle
         )
         modelContext.insert(binder)
         dismiss()

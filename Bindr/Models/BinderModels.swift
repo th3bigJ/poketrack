@@ -188,6 +188,60 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
     }
 }
 
+enum BinderTitleTextColor: String, CaseIterable, Identifiable, Codable {
+    case gold
+    case white
+    case black
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        switch self {
+        case .gold: return "Gold"
+        case .white: return "White"
+        case .black: return "Black"
+        }
+    }
+
+    var swiftUIColor: Color {
+        switch self {
+        case .gold:
+            return Color(red: 0.86, green: 0.72, blue: 0.42)
+        case .white:
+            return .white
+        case .black:
+            return .black
+        }
+    }
+}
+
+enum BinderTitleFontStyle: String, CaseIterable, Identifiable, Codable {
+    case serif
+    case rounded
+    case sans
+    case mono
+
+    var id: String { rawValue }
+
+    var displayName: String {
+        switch self {
+        case .serif: return "Serif"
+        case .rounded: return "Rounded"
+        case .sans: return "Sans"
+        case .mono: return "Mono"
+        }
+    }
+
+    var fontDesign: Font.Design {
+        switch self {
+        case .serif: return .serif
+        case .rounded: return .rounded
+        case .sans: return .default
+        case .mono: return .monospaced
+        }
+    }
+}
+
 @Model final class Binder {
     /// CloudKit: stored attributes need defaults (or optionals) on the model.
     var id: UUID = UUID()
@@ -203,6 +257,13 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
     /// surface with just the title. User-toggleable from the create/edit
     /// sheet. Defaults to `true` so existing binders keep their previews.
     var showCardPreview: Bool = true
+    /// When `true`, the binder cover can show its value label. User-toggleable
+    /// from the create/edit sheet. Defaults to `true` to preserve current behaviour.
+    var showValueOnCover: Bool = true
+    /// Cover title/subtitle/value color. Stored as ``BinderTitleTextColor`` raw value.
+    var titleTextColor: String = BinderTitleTextColor.gold.rawValue
+    /// Cover title/subtitle/value font design. Stored as ``BinderTitleFontStyle`` raw value.
+    var titleFontStyle: String = BinderTitleFontStyle.serif.rawValue
     var createdAt: Date = Date()
     /// CloudKit: to-many relationships must be optional.
     @Relationship(deleteRule: .cascade, inverse: \BinderSlot.binder)
@@ -214,7 +275,10 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
         pageLayout: BinderPageLayout,
         colour: String,
         texture: BinderTexture = .leather,
-        showCardPreview: Bool = true
+        showCardPreview: Bool = true,
+        showValueOnCover: Bool = true,
+        titleTextColor: BinderTitleTextColor = .gold,
+        titleFontStyle: BinderTitleFontStyle = .serif
     ) {
         self.id = UUID()
         self.title = title
@@ -223,6 +287,9 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
         self.colour = colour
         self.texture = texture.rawValue
         self.showCardPreview = showCardPreview
+        self.showValueOnCover = showValueOnCover
+        self.titleTextColor = titleTextColor.rawValue
+        self.titleFontStyle = titleFontStyle.rawValue
         self.createdAt = Date()
     }
 
@@ -244,6 +311,14 @@ enum BinderTexture: String, CaseIterable, Identifiable, Codable {
     /// for legacy values (this matches how binders saved before textures existed behave).
     var textureKind: BinderTexture {
         BinderTexture(rawValue: texture) ?? .smooth
+    }
+
+    var titleTextColorKind: BinderTitleTextColor {
+        BinderTitleTextColor(rawValue: titleTextColor) ?? .gold
+    }
+
+    var titleFontStyleKind: BinderTitleFontStyle {
+        BinderTitleFontStyle(rawValue: titleFontStyle) ?? .serif
     }
 
     var resolvedColour: Color {

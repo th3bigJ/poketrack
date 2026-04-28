@@ -82,13 +82,9 @@ struct BindersRootView: View {
                                         binderToDelete = binder
                                         showDeleteConfirm = true
                                     } label: {
-                                        // Explicit red foreground style on the
-                                        // Label paints the trash icon red to
-                                        // match the destructive text — by
-                                        // default iOS only tints the title.
                                         Label("Delete Binder", systemImage: "trash")
-                                            .foregroundStyle(.red)
                                     }
+                                    .tint(.red)
                                 }
                             }
                         }
@@ -148,22 +144,10 @@ struct BindersRootView: View {
 
                 Spacer()
 
-                HStack(spacing: 8) {
-                    ChromeGlassCircleButton(accessibilityLabel: isEditing ? "Done" : "Edit") {
-                        withAnimation(.spring(response: 0.3, dampingFraction: 0.8)) {
-                            isEditing.toggle()
-                        }
-                    } label: {
-                        Image(systemName: isEditing ? "checkmark" : "pencil")
-                            .font(.system(size: 17, weight: .semibold))
-                            .foregroundStyle(.primary)
-                    }
-
-                    ChromeGlassCircleButton(accessibilityLabel: "Create Binder") { handleCreateTap() } label: {
-                        Image(systemName: "plus")
-                            .font(.system(size: 17, weight: .medium))
-                            .foregroundStyle(.primary)
-                    }
+                ChromeGlassCircleButton(accessibilityLabel: "Create Binder") { handleCreateTap() } label: {
+                    Image(systemName: "plus")
+                        .font(.system(size: 17, weight: .medium))
+                        .foregroundStyle(.primary)
                 }
             }
         }
@@ -197,7 +181,9 @@ private struct BinderCardCell: View {
             peekingCardURLs: cardURLs,
             showCardPreview: binder.showCardPreview,
             compact: true,
-            valueText: displayedValueText
+            valueText: displayedValueText,
+            titleTextColor: binder.titleTextColorKind,
+            titleFontStyle: binder.titleFontStyleKind
         )
         .task {
             await loadCardURLs()
@@ -205,18 +191,17 @@ private struct BinderCardCell: View {
         }
     }
 
-    /// Subtitle now leads with the binder grade ("RAW") followed by the card
-    /// count, matching the look of the new cover layout.
+    /// Subtitle displays only the binder card count.
     private var subtitleText: String {
         let count = binder.slotList.count
-        return "RAW · \(count) \(count == 1 ? "card" : "cards")"
+        return "\(count) \(count == 1 ? "card" : "cards")"
     }
 
     /// Returns the formatted total value once prices have been fetched. We
     /// hide the label entirely for empty binders so a "£0" doesn't dominate
     /// brand-new covers — once cards are added the value appears.
     private var displayedValueText: String? {
-        guard hasLoadedValue, !binder.slotList.isEmpty else { return nil }
+        guard binder.showValueOnCover, hasLoadedValue, !binder.slotList.isEmpty else { return nil }
         return formatTotal(usd: totalUSDValue)
     }
 
@@ -270,4 +255,3 @@ private struct BinderCardCell: View {
         hasLoadedValue = true
     }
 }
-

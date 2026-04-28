@@ -82,6 +82,20 @@ enum BrowseCardLegalityFilter: String, CaseIterable, Identifiable, Sendable, Cod
     }
 }
 
+enum BrowseCardAbilityPresenceFilter: String, CaseIterable, Identifiable, Sendable, Codable {
+    case yes
+    case no
+
+    var id: String { rawValue }
+
+    var title: String {
+        switch self {
+        case .yes: return "Yes"
+        case .no: return "No"
+        }
+    }
+}
+
 /// Fixed One Piece filter options — catalog-defined, don't change between sets.
 let opCardTypeAllOptions: [String] = ["Character", "Event", "Leader", "Stage"]
 let opAttributeAllOptions: [String] = ["Slash", "Strike", "Ranged", "Special", "Wisdom"]
@@ -89,6 +103,21 @@ let opCostAllOptions: [Int] = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 let opCounterAllOptions: [Int] = [1000, 2000]
 let opLifeAllOptions: [Int] = [3, 4, 5, 6]
 let opPowerAllOptions: [Int] = [1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000]
+let pokemonSubtypeAllOptions: [String] = [
+    "Basic",
+    "Stage 1",
+    "Stage 2",
+    "VMAX",
+    "VSTAR",
+    "MEGA",
+    "EX",
+    "Level-Up:",
+    "BREAK",
+    "V-UNION",
+    "Baby",
+    "LEGEND",
+    "Restored"
+]
 
 struct SealedProductTypeFilterOption: Identifiable, Equatable, Sendable {
     let id: String
@@ -154,6 +183,8 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
     var energyTypes: Set<String> = []
     var rarities: Set<String> = []
     var trainerTypes: Set<String> = []
+    var pokemonSubtypes: Set<String> = []
+    var abilityPresence: BrowseCardAbilityPresenceFilter? = nil
     var legalities: Set<BrowseCardLegalityFilter> = []
     /// ONE PIECE card type filter (Character / Event / Leader / Stage).
     var opCardTypes: Set<String> = []
@@ -177,6 +208,8 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
             || !energyTypes.isEmpty
             || !rarities.isEmpty
             || !trainerTypes.isEmpty
+            || !pokemonSubtypes.isEmpty
+            || abilityPresence != nil
             || !legalities.isEmpty
             || !opCardTypes.isEmpty
             || !opAttributes.isEmpty
@@ -204,6 +237,51 @@ struct BrowseCardGridFilters: Equatable, Sendable, Codable {
 
     var isVisiblyCustomized: Bool {
         hasActiveFieldFilters
+    }
+
+    enum CodingKeys: String, CodingKey {
+        case sortBy
+        case cardTypes
+        case rarePlusOnly
+        case hideOwned
+        case showDuplicates
+        case energyTypes
+        case rarities
+        case trainerTypes
+        case pokemonSubtypes
+        case abilityPresence
+        case legalities
+        case opCardTypes
+        case opAttributes
+        case opCosts
+        case opCounters
+        case opLives
+        case opPowers
+        case sealedProductTypes
+    }
+
+    init() {}
+
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CodingKeys.self)
+        sortBy = try container.decodeIfPresent(BrowseCardGridSortOption.self, forKey: .sortBy) ?? .random
+        cardTypes = try container.decodeIfPresent(Set<BrowseCardTypeFilter>.self, forKey: .cardTypes) ?? []
+        rarePlusOnly = try container.decodeIfPresent(Bool.self, forKey: .rarePlusOnly) ?? false
+        hideOwned = try container.decodeIfPresent(Bool.self, forKey: .hideOwned) ?? false
+        showDuplicates = try container.decodeIfPresent(Bool.self, forKey: .showDuplicates) ?? false
+        energyTypes = try container.decodeIfPresent(Set<String>.self, forKey: .energyTypes) ?? []
+        rarities = try container.decodeIfPresent(Set<String>.self, forKey: .rarities) ?? []
+        trainerTypes = try container.decodeIfPresent(Set<String>.self, forKey: .trainerTypes) ?? []
+        pokemonSubtypes = try container.decodeIfPresent(Set<String>.self, forKey: .pokemonSubtypes) ?? []
+        abilityPresence = try container.decodeIfPresent(BrowseCardAbilityPresenceFilter.self, forKey: .abilityPresence)
+        legalities = try container.decodeIfPresent(Set<BrowseCardLegalityFilter>.self, forKey: .legalities) ?? []
+        opCardTypes = try container.decodeIfPresent(Set<String>.self, forKey: .opCardTypes) ?? []
+        opAttributes = try container.decodeIfPresent(Set<String>.self, forKey: .opAttributes) ?? []
+        opCosts = try container.decodeIfPresent(Set<Int>.self, forKey: .opCosts) ?? []
+        opCounters = try container.decodeIfPresent(Set<Int>.self, forKey: .opCounters) ?? []
+        opLives = try container.decodeIfPresent(Set<Int>.self, forKey: .opLives) ?? []
+        opPowers = try container.decodeIfPresent(Set<Int>.self, forKey: .opPowers) ?? []
+        sealedProductTypes = try container.decodeIfPresent(Set<String>.self, forKey: .sealedProductTypes) ?? []
     }
 }
 

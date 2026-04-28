@@ -47,6 +47,7 @@ struct BinderDetailView: View {
 
     private var layout: BinderPageLayout { binder.layout }
     private var headerIconColor: Color { colorScheme == .dark ? .white : .black }
+    private var editTagColor: Color { colorScheme == .dark ? .white : .black }
 
     private var sortedSlots: [BinderSlot] {
         binder.slotList.sorted { $0.position < $1.position }
@@ -87,10 +88,6 @@ struct BinderDetailView: View {
                     isPublished: isSharedPublished,
                     likers: likers,
                     totalLikeCount: totalLikeCount,
-                    weeklyUSDChange: weeklyUSDChange,
-                    currencySymbol: services.priceDisplay.currency.symbol,
-                    usdToGbp: services.pricing.usdToGbp,
-                    displayInGBP: services.priceDisplay.currency == .gbp,
                     onShareTap: { showShareSettings = true },
                     onLikersTap: nil
                 )
@@ -100,7 +97,13 @@ struct BinderDetailView: View {
             } else {
                 // No top info bar any more — "Page Value" moved into the
                 // bottom stats row so the binder itself has more vertical room.
-                viewContent
+                ZStack(alignment: .bottom) {
+                    viewContent
+                    if !layout.isFreeScroll {
+                        swipeHint
+                            .padding(.bottom, 8)
+                    }
+                }
                 bottomStatsBar
             }
         }
@@ -219,7 +222,7 @@ struct BinderDetailView: View {
     /// here next to the binder-wide value, and "Add Card" lives on the
     /// header's edit button, so we don't need the pill any more.
     private var bottomStatsBar: some View {
-        HStack(spacing: 0) {
+        HStack(spacing: 10) {
             statCell(value: "\(filledCardCount)", label: "CARDS")
             statDivider
             statCell(value: formattedPageValue, label: "PAGE VALUE")
@@ -227,38 +230,52 @@ struct BinderDetailView: View {
             statCell(value: formattedTotalValue, label: "BINDER VALUE")
         }
         .padding(.horizontal, 16)
-        .padding(.top, 10)
-        .padding(.bottom, 8)
+        .padding(.top, 12)
+        .padding(.bottom, 10)
         .background(
-            Rectangle()
-                .fill(.ultraThinMaterial)
+            ZStack {
+                Rectangle()
+                    .fill(.ultraThinMaterial)
+                LinearGradient(
+                    colors: [
+                        Color.black.opacity(colorScheme == .dark ? 0.30 : 0.08),
+                        Color.black.opacity(colorScheme == .dark ? 0.12 : 0.03)
+                    ],
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            }
                 .ignoresSafeArea(edges: .bottom)
                 .overlay(alignment: .top) {
-                    Divider().opacity(0.6)
+                    Rectangle()
+                        .fill(Color.white.opacity(colorScheme == .dark ? 0.10 : 0.18))
+                        .frame(height: 1)
                 }
         )
     }
 
     private func statCell(value: String, label: String) -> some View {
-        VStack(alignment: .leading, spacing: 2) {
+        VStack(spacing: 2) {
             Text(value)
                 .font(.title3.weight(.bold))
                 .foregroundStyle(.primary)
                 .minimumScaleFactor(0.8)
                 .lineLimit(1)
+                .multilineTextAlignment(.center)
             Text(label)
                 .font(.caption2.weight(.medium))
-                .tracking(0.6)
+                .tracking(1.1)
                 .foregroundStyle(.secondary)
+                .multilineTextAlignment(.center)
         }
-        .frame(maxWidth: .infinity, alignment: .leading)
+        .frame(maxWidth: .infinity, alignment: .center)
         .padding(.horizontal, 4)
     }
 
     private var statDivider: some View {
         Rectangle()
-            .fill(Color.secondary.opacity(0.18))
-            .frame(width: 1, height: 26)
+            .fill(Color.secondary.opacity(colorScheme == .dark ? 0.24 : 0.18))
+            .frame(width: 1, height: 30)
     }
 
     // MARK: - View mode (page-turn)
@@ -289,7 +306,7 @@ struct BinderDetailView: View {
 
     private func pagedViewContent(geo: GeometryProxy) -> some View {
         let pageSize = binderPageSize(in: geo.size)
-        return VStack(spacing: 20) {
+        return VStack(spacing: 0) {
             PageCurlView(
                 pageCount: pageCount,
                 currentPage: $currentPage,
@@ -300,8 +317,6 @@ struct BinderDetailView: View {
                 pageSurface(pageIdx: pageIdx, pageSize: pageSize)
             }
             .frame(width: pageSize.width, height: pageSize.height)
-            
-            swipeHint
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
     }
@@ -550,31 +565,17 @@ struct BinderDetailView: View {
                 showEditTitle = true
             } label: {
                 Label("Rename", systemImage: "pencil")
-                    .font(.caption.weight(.medium))
+                    .font(.caption.weight(.semibold))
+                    .lineLimit(1)
             }
             .buttonStyle(.bordered)
 
             Button {
                 showColourPicker = true
             } label: {
-                HStack(spacing: 6) {
-                    Circle()
-                        .fill(BinderDetailView.binderSwiftUIColor(binder.colour))
-                        .frame(width: 14, height: 14)
-                    Text("Colour")
-                        .font(.caption.weight(.medium))
-                }
-            }
-            .buttonStyle(.bordered)
-
-            Menu {
-                Button { binder.pageLayout = BinderPageLayout.fixed(rows: 2, columns: 2).rawValue } label: { Label("2x2 (4 slots)", systemImage: "square.grid.2x2") }
-                Button { binder.pageLayout = BinderPageLayout.fixed(rows: 3, columns: 3).rawValue } label: { Label("3x3 (9 slots)", systemImage: "square.grid.3x3") }
-                Button { binder.pageLayout = BinderPageLayout.fixed(rows: 3, columns: 4).rawValue } label: { Label("3x4 (12 slots)", systemImage: "rectangle.grid.3x2") }
-                Button { binder.pageLayout = BinderPageLayout.freeScroll.rawValue } label: { Label("Free Scroll", systemImage: "scroll") }
-            } label: {
-                Label(layout.displayName, systemImage: "rectangle.split.3x3")
-                    .font(.caption.weight(.medium))
+                Label("Binder Style", systemImage: "paintpalette")
+                    .font(.caption.weight(.semibold))
+                    .lineLimit(1)
             }
             .buttonStyle(.bordered)
 
@@ -585,11 +586,14 @@ struct BinderDetailView: View {
                     addPage()
                 } label: {
                     Label("Add Page", systemImage: "plus.rectangle.on.rectangle")
-                        .font(.caption.weight(.medium))
+                        .font(.caption.weight(.semibold))
+                        .lineLimit(1)
                 }
                 .buttonStyle(.bordered)
             }
         }
+        .controlSize(.regular)
+        .tint(editTagColor)
     }
 
     private func editPageSection(pageIdx: Int) -> some View {
@@ -1013,27 +1017,77 @@ private struct BinderCardViewer: View {
 struct BinderStylePickerSheet: View {
     @Environment(AppServices.self) private var services
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
     @Bindable var binder: Binder
     @State private var cardURLs: [URL?] = [nil, nil, nil]
+    private let layoutOptions: [BinderPageLayout] = [
+        .fixed(rows: 2, columns: 2),
+        .fixed(rows: 3, columns: 2),
+        .fixed(rows: 3, columns: 3),
+        .fixed(rows: 4, columns: 3),
+        .fixed(rows: 3, columns: 4),
+        .fixed(rows: 4, columns: 4)
+    ]
 
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 32) {
                     // Preview
-                    BinderCoverView(
-                        title: binder.title,
-                        subtitle: "\(binder.slotList.count) cards · \(binder.layout.displayName)",
-                        colourName: binder.colour,
-                        texture: binder.textureKind,
-                        seed: binder.textureSeed,
-                        peekingCardURLs: cardURLs,
-                        showCardPreview: binder.showCardPreview,
-                        compact: false
-                    )
+                    GeometryReader { proxy in
+                        BinderCoverView(
+                            title: binder.title,
+                            subtitle: "\(binder.slotList.count) cards · \(binder.layout.displayName)",
+                            colourName: binder.colour,
+                            texture: binder.textureKind,
+                            seed: binder.textureSeed,
+                            peekingCardURLs: cardURLs,
+                            showCardPreview: binder.showCardPreview,
+                            compact: false,
+                            titleTextColor: binder.titleTextColorKind,
+                            titleFontStyle: binder.titleFontStyleKind
+                        )
+                        .frame(width: proxy.size.width * 0.6)
+                        .frame(maxWidth: .infinity)
+                    }
+                    .frame(height: 320)
                     .padding(.horizontal, 16)
 
                     VStack(alignment: .leading, spacing: 20) {
+                        VStack(alignment: .leading, spacing: 12) {
+                            Text("LAYOUT")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+
+                            LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())], spacing: 10) {
+                                ForEach(layoutOptions, id: \.self) { option in
+                                    layoutButton(for: option)
+                                }
+
+                                Button {
+                                    binder.pageLayout = BinderPageLayout.freeScroll.rawValue
+                                } label: {
+                                    HStack {
+                                        Image(systemName: "square.grid.3x3")
+                                        Text("Free flow")
+                                    }
+                                    .font(.system(size: 13, weight: .medium))
+                                    .frame(maxWidth: .infinity)
+                                    .padding(.vertical, 12)
+                                    .background(layout.isFreeScroll ? Color.accentColor.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
+                                    .clipShape(RoundedRectangle(cornerRadius: 10))
+                                    .overlay {
+                                        if layout.isFreeScroll {
+                                            RoundedRectangle(cornerRadius: 10)
+                                                .stroke(Color.accentColor, lineWidth: 1)
+                                        }
+                                    }
+                                }
+                                .buttonStyle(.plain)
+                                .gridCellColumns(3)
+                            }
+                        }
+
                         // Texture Selection
                         VStack(alignment: .leading, spacing: 12) {
                             Text("TEXTURE")
@@ -1046,6 +1100,7 @@ struct BinderStylePickerSheet: View {
                                 }
                             }
                             .pickerStyle(.segmented)
+                            .tint(colorScheme == .dark ? .white : .black)
                         }
 
                         // Colour Selection
@@ -1077,6 +1132,29 @@ struct BinderStylePickerSheet: View {
 
                         // Cover Options — mirror of the create sheet's toggle.
                         VStack(alignment: .leading, spacing: 12) {
+                            Text("TITLE")
+                                .font(.caption.bold())
+                                .foregroundStyle(.secondary)
+
+                            Picker("Title text color", selection: $binder.titleTextColor) {
+                                ForEach(BinderTitleTextColor.allCases) { option in
+                                    Text(option.displayName).tag(option.rawValue)
+                                }
+                            }
+                            .pickerStyle(.segmented)
+                            .tint(colorScheme == .dark ? .white : .black)
+
+                            Picker("Title font", selection: $binder.titleFontStyle) {
+                                ForEach(BinderTitleFontStyle.allCases) { option in
+                                    Text(option.displayName).tag(option.rawValue)
+                                }
+                            }
+                            .pickerStyle(.segmented)
+                            .tint(colorScheme == .dark ? .white : .black)
+                        }
+
+                        // Cover Options — mirror of the create sheet's toggle.
+                        VStack(alignment: .leading, spacing: 12) {
                             Text("COVER")
                                 .font(.caption.bold())
                                 .foregroundStyle(.secondary)
@@ -1090,10 +1168,18 @@ struct BinderStylePickerSheet: View {
                                         .foregroundStyle(.secondary)
                                 }
                             }
-                            .tint(.accentColor)
-                            .padding(16)
-                            .background(Color(uiColor: .secondarySystemGroupedBackground))
-                            .clipShape(RoundedRectangle(cornerRadius: 16))
+                            .tint(colorScheme == .dark ? .white : .black)
+
+                            Toggle(isOn: $binder.showValueOnCover) {
+                                VStack(alignment: .leading, spacing: 2) {
+                                    Text("Show value on cover")
+                                        .font(.subheadline.weight(.medium))
+                                    Text("Display the binder value label on the front")
+                                        .font(.caption)
+                                        .foregroundStyle(.secondary)
+                                }
+                            }
+                            .tint(colorScheme == .dark ? .white : .black)
                         }
                     }
                     .padding(.horizontal, 16)
@@ -1109,10 +1195,49 @@ struct BinderStylePickerSheet: View {
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Done") { dismiss() }
                         .bold()
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
                 }
             }
         }
-        .presentationDetents([.medium, .large])
+        .presentationDetents([.large])
+    }
+
+    private var layout: BinderPageLayout {
+        BinderPageLayout(rawValue: binder.pageLayout)
+    }
+
+    @ViewBuilder
+    private func layoutButton(for option: BinderPageLayout) -> some View {
+        let isSelected = layout == option
+        Button {
+            binder.pageLayout = option.rawValue
+        } label: {
+            VStack(spacing: 4) {
+                gridIcon(for: option)
+                    .font(.system(size: 16))
+                Text("\(option.columns) × \(option.rows)")
+                    .font(.system(size: 11, weight: .medium))
+            }
+            .frame(maxWidth: .infinity)
+            .padding(.vertical, 12)
+            .background(isSelected ? Color.accentColor.opacity(0.1) : Color(uiColor: .secondarySystemGroupedBackground))
+            .foregroundStyle(isSelected ? Color.accentColor : .primary)
+            .clipShape(RoundedRectangle(cornerRadius: 10))
+            .overlay {
+                if isSelected {
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(Color.accentColor, lineWidth: 1)
+                }
+            }
+        }
+        .buttonStyle(.plain)
+    }
+
+    private func gridIcon(for option: BinderPageLayout) -> Image {
+        switch (option.columns, option.rows) {
+        case (2, 2): return Image(systemName: "square.grid.2x2.fill")
+        default: return Image(systemName: "square.grid.3x3.fill")
+        }
     }
 
     private func loadCardURLs() async {

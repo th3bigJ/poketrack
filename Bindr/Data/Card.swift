@@ -61,6 +61,7 @@ struct BrowseFilterCard: Codable, Identifiable, Hashable, Sendable {
     let cardName: String
     let rarity: String?
     let category: String?
+    let stage: String?
     let elementTypes: [String]?
     let trainerType: String?
     let energyType: String?
@@ -68,6 +69,7 @@ struct BrowseFilterCard: Codable, Identifiable, Hashable, Sendable {
     let artist: String?
     let subtype: String?
     let subtypes: [String]?
+    let abilities: [CardAbility]?
     let weakness: String?
     let resistance: String?
     let pricingVariants: [String]?

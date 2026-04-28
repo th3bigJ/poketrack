@@ -291,7 +291,8 @@ struct MyProfileView: View {
                     }
                 }
             case .wishlist:
-                let ids = services.wishlist?.items.map(\.cardID) ?? profile.wishlistCardIDs ?? []
+                let ids = (services.wishlist?.items.map(\.cardID) ?? profile.wishlistCardIDs ?? [])
+                    .filter(isRenderableCardIDForProfileGrid)
                 if ids.isEmpty {
                     emptyProfileCard("Your public wishlist will appear here.")
                 } else {
@@ -300,7 +301,7 @@ struct MyProfileView: View {
                     })
                 }
             case .collection:
-                let ids = collectionItems.map(\.cardID)
+                let ids = collectionItems.map(\.cardID).filter(isRenderableCardIDForProfileGrid)
                 if ids.isEmpty {
                     emptyProfileCard("Cards you've added to your collection will appear here.")
                 } else {
@@ -311,6 +312,12 @@ struct MyProfileView: View {
             }
         }
         .padding(.horizontal, 16)
+    }
+
+    private func isRenderableCardIDForProfileGrid(_ cardID: String) -> Bool {
+        // Shared profile card grid renders trading cards only.
+        // Sealed product ids (e.g. "sealed:pokemon:123") produce permanent placeholders.
+        !cardID.hasPrefix("sealed:")
     }
 
     private func sectionLabel(_ text: String) -> some View {

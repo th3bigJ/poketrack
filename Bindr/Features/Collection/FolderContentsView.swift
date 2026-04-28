@@ -11,9 +11,9 @@ struct FolderContentsView: View {
 
     @State private var query = ""
     @State private var filters = BrowseCardGridFilters()
+    @State private var gridOptions = BrowseGridOptions()
     @State private var cardsByCardID: [String: Card] = [:]
     @State private var showShare = false
-    @State private var showAddCards = false
 
     private var folderSignature: String {
         (folder.items ?? []).map { "\($0.cardID)|\($0.variantKey)" }.joined(separator: "§")
@@ -25,6 +25,8 @@ struct FolderContentsView: View {
             return (item, card)
         }
     }
+
+    private var resolvedCards: [Card] { resolvedPairs.map(\.card) }
 
     private var orderedCards: [Card] { resolvedPairs.map { $0.card } }
 
@@ -64,7 +66,7 @@ struct FolderContentsView: View {
                 if indexedFilteredPairs.isEmpty {
                     emptyState
                 } else {
-                    EagerVGrid(items: indexedFilteredPairs, columns: 3, spacing: 12) { indexed in
+                    EagerVGrid(items: indexedFilteredPairs, columns: safeColumnCount(gridOptions.columnCount), spacing: 12) { indexed in
                         folderCell(item: indexed.item, card: indexed.card)
                     }
                     .padding(.horizontal, 16)
@@ -78,10 +80,6 @@ struct FolderContentsView: View {
                 .environment(services)
                 .presentationDetents([.large])
                 .presentationDragIndicator(.hidden)
-        }
-        .sheet(isPresented: $showAddCards) {
-            FolderAddCardsSheet(folder: folder)
-                .environment(services)
         }
         .task(id: folderSignature) {
             await resolveCards()
@@ -115,11 +113,27 @@ struct FolderContentsView: View {
                             .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(.primary)
                     }
-                    ChromeGlassCircleButton(accessibilityLabel: "Add cards") { showAddCards = true } label: {
-                        Image(systemName: "plus")
+                    Menu {
+                        BrowseGridFiltersMenuContent(
+                            brand: services.brandSettings.selectedCatalogBrand,
+                            filters: $filters,
+                            energyOptions: cardEnergyOptions(resolvedCards),
+                            rarityOptions: cardRarityOptions(resolvedCards),
+                            trainerTypeOptions: cardTrainerTypeOptions(resolvedCards),
+                            gridOptions: $gridOptions
+                        )
+                    } label: {
+                        Image(systemName: filters.hasActiveFieldFilters ? "line.3.horizontal.decrease.circle.fill" : "line.3.horizontal.decrease.circle")
                             .font(.system(size: 17, weight: .medium))
                             .foregroundStyle(.primary)
+                            .modifier(ChromeGlassCircleGlyphModifier())
                     }
+                    .buttonStyle(.plain)
+                    .menuActionDismissBehavior(.disabled)
+                    .menuOrder(.fixed)
+                    .menuIndicator(.hidden)
+                    .frame(width: 48, height: 48)
+                    .contentShape(Rectangle())
                 }
             }
         }
@@ -133,7 +147,7 @@ struct FolderContentsView: View {
         Button {
             presentCard(card, orderedCards)
         } label: {
-            CardGridCell(card: card, footnote: item.variantKey != "normal" ? item.variantKey : nil)
+            CardGridCell(card: card, gridOptions: gridOptions, footnote: item.variantKey != "normal" ? item.variantKey : nil)
         }
         .buttonStyle(CardCellButtonStyle())
         .contextMenu {
@@ -173,6 +187,28 @@ struct FolderContentsView: View {
     private func removeItem(_ item: CardFolderItem) {
         modelContext.delete(item)
         try? modelContext.save()
+    }
+
+    private func cardEnergyOptions(_ cards: [Card]) -> [String] {
+        Set(cards.flatMap { $0.elementTypes ?? [] })
+            .filter { !$0.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty }
+            .sorted()
+    }
+
+    private func cardRarityOptions(_ cards: [Card]) -> [String] {
+        Set(cards.compactMap { $0.rarity?.trimmingCharacters(in: .whitespacesAndNewlines) })
+            .filter { !$0.isEmpty }
+            .sorted()
+    }
+
+    private func cardTrainerTypeOptions(_ cards: [Card]) -> [String] {
+        Set(cards.compactMap { $0.trainerType?.trimmingCharacters(in: .whitespacesAndNewlines) })
+            .filter { !$0.isEmpty }
+            .sorted()
+    }
+
+    private func safeColumnCount(_ value: Int) -> Int {
+        min(max(value, 1), 4)
     }
 }
 

@@ -495,7 +495,7 @@ struct DashboardView: View {
                     icon: "shippingbox.fill",
                     iconColor: DashboardPalette.success,
                     value: "\(sealedProductsCount)",
-                    label: "Sealed Products",
+                    label: "Sealed",
                     action: onOpenSealedProducts
                 )
 
@@ -505,7 +505,7 @@ struct DashboardView: View {
                     icon: "star.fill",
                     iconColor: DashboardPalette.gold,
                     value: "\(wishlistedCardsCount)",
-                    label: "Wishlisted Cards",
+                    label: "Wishlisted",
                     action: onOpenWishlist
                 )
             }

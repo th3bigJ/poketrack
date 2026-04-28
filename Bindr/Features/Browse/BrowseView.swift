@@ -1604,6 +1604,20 @@ struct BrowseView: View {
                     return false
                 }
             }
+            if brand == .pokemon,
+               filters.pokemonSubtypes.isEmpty == false {
+                guard resolvedCardType(for: card, brand: brand) == .pokemon else {
+                    return false
+                }
+                guard cardMatchesPokemonSubtypeFilters(card, selectedSubtypes: filters.pokemonSubtypes) else {
+                    return false
+                }
+            }
+            if let abilityPresence = filters.abilityPresence {
+                let hasAbilities = (card.abilities?.isEmpty == false)
+                if abilityPresence == .yes, hasAbilities == false { return false }
+                if abilityPresence == .no, hasAbilities == true { return false }
+            }
             if filters.opCardTypes.isEmpty == false {
                 let cardTypes = Set((card.category ?? "").split(separator: ",").map {
                     $0.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -1665,6 +1679,30 @@ struct BrowseView: View {
             }
         }
         return Array(values)
+    }
+
+    private func cardMatchesPokemonSubtypeFilters(_ card: BrowseFilterCard, selectedSubtypes: Set<String>) -> Bool {
+        let selectedTokens = Set(selectedSubtypes.map(normalizedBrowseSearchText).filter { !$0.isEmpty })
+        guard !selectedTokens.isEmpty else { return true }
+
+        let cardSubtypeTokens = Set(([card.stage, card.subtype] + (card.subtypes ?? []))
+            .map(normalizedBrowseSearchText)
+            .filter { !$0.isEmpty })
+        guard !cardSubtypeTokens.isEmpty else { return false }
+
+        func compact(_ token: String) -> String {
+            token.replacingOccurrences(of: " ", with: "")
+        }
+
+        return selectedTokens.contains { selected in
+            let compactSelected = compact(selected)
+            return cardSubtypeTokens.contains { token in
+                token == selected
+                    || token.contains(selected)
+                    || compact(token) == compactSelected
+                    || compact(token).contains(compactSelected)
+            }
+        }
     }
 
     private func resolvedEnergyTypes(for card: Card) -> [String] {
@@ -3677,6 +3715,16 @@ struct BrowseGridFiltersMenuContent: View {
                         }
                     }
                 }
+                filterMenu(title: "Subtype", summary: selectionSummary(for: filters.pokemonSubtypes)) {
+                    ForEach(pokemonSubtypeAllOptions, id: \.self) { subtype in
+                        Toggle(subtype, isOn: stringBinding(for: subtype, keyPath: \.pokemonSubtypes))
+                    }
+                }
+                filterMenu(title: "Ability", summary: filters.abilityPresence?.title) {
+                    ForEach(BrowseCardAbilityPresenceFilter.allCases) { option in
+                        Toggle(option.title, isOn: abilityPresenceBinding(for: option))
+                    }
+                }
             }
 
             if config.showSealedProductTypeFilter {
@@ -3782,6 +3830,15 @@ struct BrowseGridFiltersMenuContent: View {
             set: { isOn in
                 if isOn { filters[keyPath: keyPath].insert(value) }
                 else { filters[keyPath: keyPath].remove(value) }
+            }
+        )
+    }
+
+    private func abilityPresenceBinding(for value: BrowseCardAbilityPresenceFilter) -> Binding<Bool> {
+        Binding(
+            get: { filters.abilityPresence == value },
+            set: { isOn in
+                filters.abilityPresence = isOn ? value : nil
             }
         )
     }
@@ -3936,6 +3993,30 @@ private func isCommonOrUncommon(_ rarity: String?) -> Bool {
     return normalized.contains("common") || normalized.contains("uncommon")
 }
 
+private func cardMatchesPokemonSubtypeFilters(_ card: Card, selectedSubtypes: Set<String>) -> Bool {
+    let selectedTokens = Set(selectedSubtypes.map(normalizedBrowseSearchText).filter { !$0.isEmpty })
+    guard !selectedTokens.isEmpty else { return true }
+
+    let cardSubtypeTokens = Set(([card.stage, card.subtype] + (card.subtypes ?? []))
+        .map(normalizedBrowseSearchText)
+        .filter { !$0.isEmpty })
+    guard !cardSubtypeTokens.isEmpty else { return false }
+
+    func compact(_ token: String) -> String {
+        token.replacingOccurrences(of: " ", with: "")
+    }
+
+    return selectedTokens.contains { selected in
+        let compactSelected = compact(selected)
+        return cardSubtypeTokens.contains { token in
+            token == selected
+                || token.contains(selected)
+                || compact(token) == compactSelected
+                || compact(token).contains(compactSelected)
+        }
+    }
+}
+
 func filterBrowseCards(
     _ cards: [Card],
     query: String,
@@ -3997,6 +4078,20 @@ func filterBrowseCards(
             if trainerType.isEmpty || filters.trainerTypes.contains(trainerType) == false {
                 return false
             }
+        }
+        if brand == .pokemon,
+           filters.pokemonSubtypes.isEmpty == false {
+            guard resolvedBrowseCardType(for: card, brand: brand) == .pokemon else {
+                return false
+            }
+            guard cardMatchesPokemonSubtypeFilters(card, selectedSubtypes: filters.pokemonSubtypes) else {
+                return false
+            }
+        }
+        if let abilityPresence = filters.abilityPresence {
+            let hasAbilities = (card.abilities?.isEmpty == false)
+            if abilityPresence == .yes, hasAbilities == false { return false }
+            if abilityPresence == .no, hasAbilities == true { return false }
         }
         if filters.opCardTypes.isEmpty == false {
             let cardTypes = Set((card.category ?? "").split(separator: ",").map {

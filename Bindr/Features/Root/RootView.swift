@@ -763,6 +763,7 @@ struct RootView: View {
 
     @ViewBuilder
     private var collectFilterMenuContent: some View {
+        let showSealedProductTypeFilter = collectContentTypeTab == .sealed
         BrowseGridFiltersMenuContent(
             brand: collectActiveBrand,
             filters: activeCollectFiltersBinding,
@@ -779,7 +780,7 @@ struct RootView: View {
                 showShowDuplicates: true,
                 showGridOptions: true,
                 defaultSortBy: .price,
-                showSealedProductTypeFilter: true
+                showSealedProductTypeFilter: showSealedProductTypeFilter
             )
         )
     }

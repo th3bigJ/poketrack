@@ -853,6 +853,11 @@ struct BinderSlotPickerView: View {
                 let trainerType = trimmedValue(card.trainerType)
                 if trainerType.isEmpty || filters.trainerTypes.contains(trainerType) == false { return false }
             }
+            if let abilityPresence = filters.abilityPresence {
+                let hasAbilities = (card.abilities?.isEmpty == false)
+                if abilityPresence == .yes, hasAbilities == false { return false }
+                if abilityPresence == .no, hasAbilities == true { return false }
+            }
             if filters.opCardTypes.isEmpty == false {
                 let cardTypes = Set((card.category ?? "").split(separator: ",").map {
                     $0.trimmingCharacters(in: .whitespacesAndNewlines)

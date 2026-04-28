@@ -80,24 +80,40 @@ struct CollectView: View {
     }
 
     var body: some View {
-        ScrollView {
-            VStack(spacing: 0) {
-                Color.clear.frame(height: rootFloatingChromeInset)
+        Group {
+            if selectedSegment == .folders {
+                VStack(spacing: 0) {
+                    Color.clear.frame(height: rootFloatingChromeInset)
 
-                VStack(spacing: 10) {
-                    if showsSegmentedControl {
-                        segmentedControl.padding(.horizontal, 16)
-                    }
-                    if selectedSegment != .folders {
-                        BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding) {
-                            contentTypeChips
+                    VStack(spacing: 10) {
+                        if showsSegmentedControl {
+                            segmentedControl.padding(.horizontal, 16)
                         }
-                        .padding(.horizontal, 16)
+                    }
+                    .padding(.bottom, 10)
+
+                    contentView
+                        .frame(maxWidth: .infinity, maxHeight: .infinity)
+                }
+            } else {
+                ScrollView {
+                    VStack(spacing: 0) {
+                        Color.clear.frame(height: rootFloatingChromeInset)
+
+                        VStack(spacing: 10) {
+                            if showsSegmentedControl {
+                                segmentedControl.padding(.horizontal, 16)
+                            }
+                            BrowseInlineSearchField(title: searchPlaceholder, text: activeQueryBinding) {
+                                contentTypeChips
+                            }
+                            .padding(.horizontal, 16)
+                        }
+                        .padding(.bottom, 10)
+
+                        contentView
                     }
                 }
-                .padding(.bottom, 10)
-
-                contentView
             }
         }
         .navigationDestination(for: CardFolder.self) { folder in
