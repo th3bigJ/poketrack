@@ -18,6 +18,7 @@ struct SharedContentView: View {
     @State private var cardsByID: [String: Card] = [:]
     @State private var isSendingWishlistMatch = false
     @State private var errorMessage: String?
+    @State private var presentedCard: Card?
 
     private var rows: [SharedCardRow] {
         switch content.contentType {
@@ -25,8 +26,15 @@ struct SharedContentView: View {
             return decodeRows(key: "items")
         case .deck:
             return decodeRows(key: "cards")
-        case .pull, .dailyDigest:
-            return []
+        case .pull:
+            // Pulls store a single card at the top level of the payload
+            // (`card_id` / `card_name` / `variant_key`) rather than under an
+            // `items` array, so the generic `decodeRows` won't pick it up.
+            // Reconstruct one row so friends viewing the pull see the actual
+            // card and can tap through to its browse detail.
+            return decodePullRow()
+        case .dailyDigest:
+            return decodeRows(key: "items")
         }
     }
 
@@ -68,7 +76,20 @@ struct SharedContentView: View {
                         .foregroundStyle(.secondary)
                 } else {
                     ForEach(rows) { row in
-                        sharedRow(row)
+                        // Tap a row to open the same browse detail screen we
+                        // use everywhere else in the app — but only when the
+                        // catalog has actually resolved a Card for this row.
+                        // Without the resolved card, opening would show an
+                        // empty detail page.
+                        Button {
+                            if let card = cardsByID[row.cardID] {
+                                presentedCard = card
+                            }
+                        } label: {
+                            sharedRow(row)
+                        }
+                        .buttonStyle(.plain)
+                        .disabled(cardsByID[row.cardID] == nil)
                     }
                 }
             }
@@ -86,6 +107,12 @@ struct SharedContentView: View {
         .navigationBarTitleDisplayMode(.inline)
         .task {
             await loadCards()
+        }
+        .sheet(item: $presentedCard) { card in
+            // Reuse the standard browse detail screen so the experience matches
+            // tapping a card from the Browse tab — same chrome, same actions.
+            CardBrowseDetailView(cards: [card], startIndex: 0)
+                .environment(services)
         }
     }
 
@@ -172,6 +199,36 @@ struct SharedContentView: View {
             }
         }
         cardsByID = resolved
+    }
+
+    /// Builds a single ``SharedCardRow`` from a pull payload. Pulls flatten the
+    /// card into the payload root (`card_id`, `card_name`, `variant_key`)
+    /// rather than the `items` array used by binders/wishlists, so they need
+    /// their own decoder. Returns an empty array when the payload has no card
+    /// id (e.g. malformed legacy posts).
+    private func decodePullRow() -> [SharedCardRow] {
+        guard let cardID = content.payload["card_id"]?.stringValue, !cardID.isEmpty else {
+            return []
+        }
+        let cardName = content.payload["card_name"]?.stringValue ?? ""
+        let variant = content.payload["variant_key"]?.stringValue ?? "normal"
+        let marketValue: Double?
+        if case .number(let value) = content.payload["card_value"] {
+            marketValue = value
+        } else {
+            marketValue = nil
+        }
+        return [
+            SharedCardRow(
+                id: "\(cardID)|\(variant)",
+                cardID: cardID,
+                cardName: cardName,
+                variantKey: variant,
+                quantity: 1,
+                notes: nil,
+                marketValue: marketValue
+            )
+        ]
     }
 
     private func decodeRows(key: String) -> [SharedCardRow] {

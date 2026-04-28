@@ -19,8 +19,23 @@ struct FeedItemView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
-            header
-            content
+            // Only the upper card area (header + content) opens the comments
+            // sheet on tap. Putting `.onTapGesture` on the *whole* card would
+            // also cover the InteractionBar — and a parent tap gesture on a
+            // container with nested `Button`s is a SwiftUI footgun: the inner
+            // vote buttons appear to fire but the parent gesture eats the
+            // touch, so upvote/downvote stop working. Scoping the tap target
+            // to just the top section keeps the InteractionBar's buttons
+            // free of any container-level gesture.
+            VStack(alignment: .leading, spacing: 10) {
+                header
+                content
+            }
+            .contentShape(Rectangle())
+            .onTapGesture {
+                guard isCardTapEnabled, canOpenComments else { return }
+                isCommentsPresented = true
+            }
 
             if showsInteractionBar, item.type != .friendship {
                 InteractionBar(
@@ -38,11 +53,6 @@ struct FeedItemView: View {
         .overlay {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
                 .stroke(Color.primary.opacity(0.08), lineWidth: 1)
-        }
-        .contentShape(Rectangle())
-        .onTapGesture {
-            guard isCardTapEnabled, canOpenComments else { return }
-            isCommentsPresented = true
         }
         .sheet(isPresented: $isCommentsPresented, onDismiss: {
             commentsRefreshToken += 1
