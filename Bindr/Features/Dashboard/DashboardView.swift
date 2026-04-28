@@ -849,15 +849,17 @@ struct DashboardView: View {
 
     @ViewBuilder
     private func activityLeadingVisual(for line: LedgerLine) -> some View {
-        if let cardID = cleaned(line.cardID), let imageURL = cardImageURLsByID[cardID] {
+        if let imageURL = activityImageURL(for: line) {
             CachedAsyncImage(url: imageURL, targetSize: CGSize(width: 120, height: 168)) { image in
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             } placeholder: {
                 fallbackCardArtwork(for: line)
             }
             .frame(width: 48, height: 68)
+            .background(Color.white)
             .clipShape(RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay(
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
@@ -866,6 +868,29 @@ struct DashboardView: View {
         } else {
             fallbackCardArtwork(for: line)
         }
+    }
+
+    private func activityImageURL(for line: LedgerLine) -> URL? {
+        if let cardID = cleaned(line.cardID), let imageURL = cardImageURLsByID[cardID] {
+            return imageURL
+        }
+
+        guard line.productKind == ProductKind.sealedProduct.rawValue else { return nil }
+        services.sealedProducts.loadFromLocalIfAvailable()
+
+        if let rawID = cleaned(line.sealedProductId),
+           let productID = Int(rawID),
+           let imageURL = services.sealedProducts.products.first(where: { $0.id == productID })?.imageURL {
+            return imageURL
+        }
+
+        if let cardID = cleaned(line.cardID),
+           let productID = SealedProduct.parseCollectionProductID(cardID),
+           let imageURL = services.sealedProducts.products.first(where: { $0.id == productID })?.imageURL {
+            return imageURL
+        }
+
+        return nil
     }
 
     private func fallbackCardArtwork(for line: LedgerLine) -> some View {
