@@ -594,7 +594,7 @@ final class SocialFeedService {
         let rows: [[String: UUID]] = try await execute(
             path: path,
             method: "GET",
-            accessToken: try signedInAccessToken()
+            accessToken: try? signedInAccessToken()
         )
         return rows.count
     }
@@ -1021,7 +1021,7 @@ final class SocialFeedService {
     private func execute<T: Decodable>(
         path: String,
         method: String,
-        accessToken: String,
+        accessToken: String? = nil,
         extraHeaders: [String: String] = [:]
     ) async throws -> T {
         try await execute(path: path, method: method, accessToken: accessToken, body: Optional<String>.none, extraHeaders: extraHeaders)
@@ -1030,7 +1030,7 @@ final class SocialFeedService {
     private func execute<T: Decodable, Body: Encodable>(
         path: String,
         method: String,
-        accessToken: String,
+        accessToken: String? = nil,
         body: Body?,
         extraHeaders: [String: String] = [:]
     ) async throws -> T {
@@ -1046,7 +1046,7 @@ final class SocialFeedService {
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue(publishableKey, forHTTPHeaderField: "apikey")
-        request.setValue("Bearer \(accessToken)", forHTTPHeaderField: "Authorization")
+        request.setValue("Bearer \(accessToken ?? publishableKey)", forHTTPHeaderField: "Authorization")
         for (header, value) in extraHeaders {
             request.setValue(value, forHTTPHeaderField: header)
         }
