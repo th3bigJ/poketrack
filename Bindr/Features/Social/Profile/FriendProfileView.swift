@@ -67,10 +67,12 @@ struct FriendProfileView: View {
     // MARK: - Subviews
 
     private func profileHeader(_ profile: SocialProfile) -> some View {
-        VStack(alignment: .leading, spacing: 14) {
+        let accent = themeColor(for: profile)
+
+        return VStack(alignment: .leading, spacing: 14) {
             HStack(alignment: .top, spacing: 14) {
                 ProfileAvatarView(profile: profile, size: 64)
-                    .overlay(Circle().stroke(Color(hex: "E8B84B"), lineWidth: 3))
+                    .overlay(Circle().stroke(accent, lineWidth: 3))
 
                 VStack(alignment: .leading, spacing: 6) {
                     Text(profile.displayName ?? profile.username)
@@ -83,7 +85,7 @@ struct FriendProfileView: View {
                     if !roleTitles.isEmpty {
                         HStack(spacing: 6) {
                             ForEach(roleTitles, id: \.self) { title in
-                                rolePill(title)
+                                rolePill(title, accent: accent)
                             }
                         }
                     }
@@ -114,12 +116,69 @@ struct FriendProfileView: View {
         }
         .padding(16)
         .background {
-            LinearGradient(
-                colors: [Color(hex: "E8B84B").opacity(0.13), Color(uiColor: .systemBackground)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+            // Layered backdrop driven by the friend's theme colour, favourite
+            // Pokémon (faded silhouette behind everything), and favourite
+            // card (tilted ghost card peeking from the top-right). Mirrors
+            // the personalised look on `MyProfileView` so visiting a friend's
+            // profile feels like *their* space, not a stock template.
+            ZStack(alignment: .topTrailing) {
+                LinearGradient(
+                    colors: [accent.opacity(0.22), accent.opacity(0.06), Color(uiColor: .systemBackground)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+
+                if let dex = profile.favoritePokemonDex {
+                    Text("#\(String(format: "%03d", dex))")
+                        .font(.system(size: 110, weight: .black))
+                        .foregroundStyle(accent)
+                        .opacity(0.06)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                        .offset(x: -16, y: 12)
+                        .allowsHitTesting(false)
+                }
+
+                if let imageURL = profile.favoriteCardImageURL,
+                   let url = URL(string: imageURL) {
+                    CachedAsyncImage(url: url) { image in
+                        image.resizable().aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Color.gray.opacity(0.08)
+                    }
+                    .frame(width: 64, height: 90)
+                    .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 6, style: .continuous)
+                            .stroke(Color.white.opacity(0.35), lineWidth: 0.5)
+                    }
+                    .shadow(color: accent.opacity(0.45), radius: 10, x: 0, y: 6)
+                    .rotationEffect(.degrees(8))
+                    .opacity(0.85)
+                    .padding(.top, 14)
+                    .padding(.trailing, 18)
+                    .allowsHitTesting(false)
+                }
+            }
         }
+    }
+
+    /// Accent colour driven by the friend's chosen avatar background. Falls
+    /// back to the original gold for friends who haven't picked one. Threaded
+    /// through everywhere the view previously hard-coded `#E8B84B`. Reads
+    /// from `profile` so helper subviews (`rolePill`, `infoRow`,
+    /// `actionButton`, etc.) can pick it up without each one taking an arg.
+    private var accentColor: Color {
+        if let hex = profile?.avatarBackgroundColor, !hex.isEmpty {
+            return Color(hex: hex)
+        }
+        return Color(hex: "E8B84B")
+    }
+
+    private func themeColor(for profile: SocialProfile) -> Color {
+        if let hex = profile.avatarBackgroundColor, !hex.isEmpty {
+            return Color(hex: hex)
+        }
+        return Color(hex: "E8B84B")
     }
 
     @ViewBuilder
@@ -172,7 +231,7 @@ struct FriendProfileView: View {
                         .foregroundStyle(selectedTab == tab ? Color.white : Color.secondary)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 6)
-                        .background(selectedTab == tab ? Color(hex: "E8B84B") : .clear, in: Capsule())
+                        .background(selectedTab == tab ? accentColor : .clear, in: Capsule())
                 }
                 .buttonStyle(.plain)
             }
@@ -227,17 +286,18 @@ struct FriendProfileView: View {
             .foregroundStyle(Color.secondary.opacity(0.3))
     }
 
-    private func rolePill(_ title: String) -> some View {
-        Text(title.uppercased())
+    private func rolePill(_ title: String, accent: Color? = nil) -> some View {
+        let tint = accent ?? accentColor
+        return Text(title.uppercased())
             .font(.system(size: 10, weight: .bold))
             .tracking(0.4)
-            .foregroundStyle(Color(hex: "E8B84B"))
+            .foregroundStyle(tint)
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
-            .background(Color(hex: "E8B84B").opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+            .background(tint.opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .stroke(Color(hex: "E8B84B").opacity(0.19), lineWidth: 1)
+                    .stroke(tint.opacity(0.19), lineWidth: 1)
             }
     }
 
@@ -258,12 +318,12 @@ struct FriendProfileView: View {
     private func infoRow(icon: String, label: String, value: String) -> some View {
         HStack(spacing: 10) {
             Circle()
-                .fill(Color(hex: "E8B84B").opacity(0.15))
+                .fill(accentColor.opacity(0.15))
                 .frame(width: 34, height: 34)
                 .overlay {
                     Image(systemName: icon)
                         .font(.system(size: 13, weight: .bold))
-                        .foregroundStyle(Color(hex: "E8B84B"))
+                        .foregroundStyle(accentColor)
                 }
             VStack(alignment: .leading, spacing: 2) {
                 Text(label)
@@ -309,7 +369,7 @@ struct FriendProfileView: View {
             .foregroundStyle(.black)
             .padding(.horizontal, 14)
             .padding(.vertical, 8)
-            .background(Color(hex: "E8B84B"), in: Capsule())
+            .background(accentColor, in: Capsule())
             .disabled(isMutating)
         case .friends:
             Label("Friends", systemImage: "checkmark")
@@ -327,7 +387,7 @@ struct FriendProfileView: View {
             .foregroundStyle(.black)
             .padding(.horizontal, 14)
             .padding(.vertical, 8)
-            .background(Color(hex: "E8B84B"), in: Capsule())
+            .background(accentColor, in: Capsule())
             .disabled(isMutating)
         case .blocked:
             Label("Blocked", systemImage: "hand.raised.fill")

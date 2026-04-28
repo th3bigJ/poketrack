@@ -82,7 +82,12 @@ struct BindersRootView: View {
                                         binderToDelete = binder
                                         showDeleteConfirm = true
                                     } label: {
+                                        // Explicit red foreground style on the
+                                        // Label paints the trash icon red to
+                                        // match the destructive text — by
+                                        // default iOS only tints the title.
                                         Label("Delete Binder", systemImage: "trash")
+                                            .foregroundStyle(.red)
                                     }
                                 }
                             }

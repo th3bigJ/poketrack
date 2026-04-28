@@ -43,6 +43,18 @@ struct MyProfileView: View {
         }
     }
 
+    /// Accent colour driven by the user's chosen avatar background (their
+    /// "theme colour"). Falls back to the original gold so anyone who hasn't
+    /// picked a colour yet still sees the polished default. Used everywhere
+    /// the profile previously hard-coded `#E8B84B` so the screen actually
+    /// reflects the user's taste instead of looking the same for everyone.
+    private var themeColor: Color {
+        if let hex = profile.avatarBackgroundColor, !hex.isEmpty {
+            return Color(hex: hex)
+        }
+        return Color(hex: "E8B84B")
+    }
+
     // Prefer local counts on My Profile so totals remain correct
     // when remote profile stats are stale.
     private var displayedCardCount: Int {
@@ -117,7 +129,7 @@ struct MyProfileView: View {
             HStack(alignment: .top, spacing: 14) {
                 ZStack(alignment: .bottomTrailing) {
                     ProfileAvatarView(profile: profile, size: 64)
-                        .overlay(Circle().stroke(Color(hex: "E8B84B"), lineWidth: 3))
+                        .overlay(Circle().stroke(themeColor, lineWidth: 3))
                     Circle()
                         .fill(Color(hex: "52C97C"))
                         .frame(width: 18, height: 18)
@@ -166,11 +178,53 @@ struct MyProfileView: View {
         }
         .padding(16)
         .background {
-            LinearGradient(
-                colors: [Color(hex: "E8B84B").opacity(0.13), Color(uiColor: .systemBackground)],
-                startPoint: .topLeading,
-                endPoint: .bottomTrailing
-            )
+            // Layered backdrop driven by the user's theme colour, favourite
+            // Pokémon (huge faded silhouette behind everything), and favourite
+            // card (tilted ghost card peeking from the top-right). Gives every
+            // profile a personalised feel rather than the same gold gradient
+            // for everyone.
+            ZStack(alignment: .topTrailing) {
+                LinearGradient(
+                    colors: [themeColor.opacity(0.22), themeColor.opacity(0.06), Color(uiColor: .systemBackground)],
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+
+                // Pokémon dex watermark — anchored bottom-left so it doesn't
+                // collide with the avatar/name on the top row.
+                if let dex = profile.favoritePokemonDex {
+                    Text("#\(String(format: "%03d", dex))")
+                        .font(.system(size: 110, weight: .black))
+                        .foregroundStyle(themeColor)
+                        .opacity(0.06)
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .bottomLeading)
+                        .offset(x: -16, y: 12)
+                        .allowsHitTesting(false)
+                }
+
+                // Tilted favourite card peek — visual anchor on the right that
+                // signals "this is *their* shelf", not a stock template.
+                if let imageURL = profile.favoriteCardImageURL,
+                   let url = URL(string: imageURL) {
+                    CachedAsyncImage(url: url) { image in
+                        image.resizable().aspectRatio(contentMode: .fill)
+                    } placeholder: {
+                        Color.gray.opacity(0.08)
+                    }
+                    .frame(width: 64, height: 90)
+                    .clipShape(RoundedRectangle(cornerRadius: 6, style: .continuous))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 6, style: .continuous)
+                            .stroke(Color.white.opacity(0.35), lineWidth: 0.5)
+                    }
+                    .shadow(color: themeColor.opacity(0.45), radius: 10, x: 0, y: 6)
+                    .rotationEffect(.degrees(8))
+                    .opacity(0.85)
+                    .padding(.top, 14)
+                    .padding(.trailing, 18)
+                    .allowsHitTesting(false)
+                }
+            }
         }
     }
 
@@ -205,7 +259,7 @@ struct MyProfileView: View {
                         .foregroundStyle(selectedProfileTab == tab ? Color.white : Color.secondary)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 6)
-                        .background(selectedProfileTab == tab ? Color(hex: "E8B84B") : .clear, in: Capsule())
+                        .background(selectedProfileTab == tab ? themeColor : .clear, in: Capsule())
                 }
                 .buttonStyle(.plain)
             }
@@ -270,13 +324,13 @@ struct MyProfileView: View {
         Text(title.uppercased())
             .font(.system(size: 10, weight: .bold))
             .tracking(0.4)
-            .foregroundStyle(Color(hex: "E8B84B"))
+            .foregroundStyle(themeColor)
             .padding(.horizontal, 6)
             .padding(.vertical, 2)
-            .background(Color(hex: "E8B84B").opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
+            .background(themeColor.opacity(0.15), in: RoundedRectangle(cornerRadius: 4, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 4, style: .continuous)
-                    .stroke(Color(hex: "E8B84B").opacity(0.19), lineWidth: 1)
+                    .stroke(themeColor.opacity(0.19), lineWidth: 1)
             }
     }
 
@@ -297,12 +351,12 @@ struct MyProfileView: View {
     private func favoriteRow(icon: String, label: String, value: String) -> some View {
         HStack(spacing: 10) {
             Circle()
-                .fill(Color(hex: "E8B84B").opacity(0.15))
+                .fill(themeColor.opacity(0.15))
                 .frame(width: 34, height: 34)
                 .overlay {
                     Image(systemName: icon)
                         .font(.system(size: 13, weight: .bold))
-                        .foregroundStyle(Color(hex: "E8B84B"))
+                        .foregroundStyle(themeColor)
                 }
             VStack(alignment: .leading, spacing: 2) {
                 Text(label)

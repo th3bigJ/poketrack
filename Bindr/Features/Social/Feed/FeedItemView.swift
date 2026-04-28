@@ -445,10 +445,13 @@ struct InteractionBar: View {
 
     @State private var aggregate = SocialFeedService.VoteAggregate(upvoteCount: 0, downvoteCount: 0, myVoteType: nil)
     @State private var commentCount = 0
-    @State private var isBusy = false
+    /// Last error shown to the user under the bar — surfaces what previously
+    /// only printed to the Xcode console (auth, RLS, missing content id, etc.)
+    /// so we can tell *why* a vote silently fails on device.
+    @State private var voteErrorMessage: String?
 
     var body: some View {
-        VStack(spacing: 10) {
+        VStack(spacing: 6) {
             Rectangle()
                 .fill(Color.primary.opacity(0.05))
                 .frame(height: 1)
@@ -473,8 +476,18 @@ struct InteractionBar: View {
                             .font(.system(size: 11))
                     }
                     .foregroundStyle(Color.secondary.opacity(0.6))
+                    .padding(.horizontal, 8)
+                    .padding(.vertical, 6)
+                    .contentShape(Rectangle())
                 }
                 .buttonStyle(.plain)
+            }
+
+            if let voteErrorMessage {
+                Text(voteErrorMessage)
+                    .font(.system(size: 10))
+                    .foregroundStyle(Color.red)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
         }
         .task { await refresh() }
@@ -489,28 +502,35 @@ struct InteractionBar: View {
         let symbol = type == .upvote ? "arrow.up" : "arrow.down"
         let tint = type == .upvote ? Color(hex: "52C97C") : Color(hex: "E05252")
 
-        return Button {
-            Task { await toggleVote(type) }
-        } label: {
-            HStack(spacing: 3) {
-                Image(systemName: symbol)
-                    .font(.system(size: 12, weight: .bold))
-                if count > 0 {
-                    Text("\(count)")
-                        .font(.system(size: 11, weight: isActive ? .bold : .regular))
-                        .foregroundStyle(isActive ? tint : Color.secondary)
-                }
-            }
-            .padding(.horizontal, 8)
-            .padding(.vertical, 3)
-            .background(isActive ? tint.opacity(0.15) : .clear, in: Capsule())
-            .overlay {
-                Capsule()
-                    .stroke(isActive ? tint.opacity(0.37) : Color.primary.opacity(0.09), lineWidth: 1)
+        // Use a tap-gesture wrapper rather than `Button` here. Inside lazy
+        // scroll containers (LazyVStack on the main feed, Lists on the
+        // profile) `Button(.plain)` taps can be eaten by the scroll view's
+        // own gesture before reaching the button — the visible side-effect
+        // is exactly what the user reported: tap registers visually but the
+        // action never fires. A `.contentShape` + `.onTapGesture` pair
+        // resolves cleanly because tap gestures coexist with the scroll
+        // gesture instead of contending with it.
+        return HStack(spacing: 3) {
+            Image(systemName: symbol)
+                .font(.system(size: 13, weight: .bold))
+            if count > 0 {
+                Text("\(count)")
+                    .font(.system(size: 12, weight: isActive ? .bold : .regular))
+                    .foregroundStyle(isActive ? tint : Color.secondary)
             }
         }
-        .buttonStyle(.plain)
-        .disabled(isBusy)
+        .foregroundStyle(isActive ? tint : Color.secondary)
+        .padding(.horizontal, 10)
+        .padding(.vertical, 6)
+        .background(isActive ? tint.opacity(0.15) : .clear, in: Capsule())
+        .overlay {
+            Capsule()
+                .stroke(isActive ? tint.opacity(0.37) : Color.primary.opacity(0.09), lineWidth: 1)
+        }
+        .contentShape(Capsule())
+        .onTapGesture {
+            Task { await toggleVote(type) }
+        }
     }
 
     private func refresh() async {
@@ -520,25 +540,65 @@ struct InteractionBar: View {
             async let cnt = services.socialFeed.fetchCommentCount(for: contentID)
             aggregate = try await agg
             commentCount = try await cnt
-        } catch {}
+        } catch {
+            // Silent — the bar still renders, just with zeroed counts.
+        }
     }
 
     private func toggleVote(_ type: ReactionType) async {
         guard let contentID = item.content?.id else {
-            print("DEBUG: toggleVote aborted - contentID is nil for item \(item.id)")
+            voteErrorMessage = "Can't vote on this post."
             return
         }
-        print("DEBUG: toggleVote requested - type: \(type), contentID: \(contentID)")
-        isBusy = true
-        defer { isBusy = false }
+        // Optimistic update — flip the local aggregate immediately so the
+        // user gets feedback before the network round-trip lands.
+        let previous = aggregate
+        aggregate = optimisticToggle(current: previous, tapped: type)
+        voteErrorMessage = nil
+
         do {
             try await services.socialFeed.toggleVote(type: type, to: contentID)
-            print("DEBUG: toggleVote call finished, refreshing aggregate...")
+            // Reconcile against the server in case our optimistic guess was
+            // off (e.g. the row was deleted server-side).
             aggregate = try await services.socialFeed.fetchVoteAggregate(for: contentID)
-            print("DEBUG: toggleVote refresh finished - score is now \(aggregate.score)")
         } catch {
-            print("DEBUG: toggleVote failed: \(error)")
+            // Roll back the optimistic change and surface the error so we
+            // can see what's actually wrong on device instead of failing
+            // silently.
+            aggregate = previous
+            voteErrorMessage = "Vote failed: \(error.localizedDescription)"
         }
+    }
+
+    /// Produces what the aggregate *should* look like immediately after a
+    /// tap, without waiting for the server. Mirrors the toggle/swap logic in
+    /// ``SocialFeedService.toggleVote`` so the UI guess matches.
+    private func optimisticToggle(
+        current: SocialFeedService.VoteAggregate,
+        tapped: ReactionType
+    ) -> SocialFeedService.VoteAggregate {
+        var up = current.upvoteCount
+        var down = current.downvoteCount
+        let nextMine: ReactionType?
+        switch (current.myVoteType, tapped) {
+        case (nil, .upvote):
+            up += 1; nextMine = .upvote
+        case (nil, .downvote):
+            down += 1; nextMine = .downvote
+        case (.upvote?, .upvote):
+            up = max(0, up - 1); nextMine = nil
+        case (.downvote?, .downvote):
+            down = max(0, down - 1); nextMine = nil
+        case (.upvote?, .downvote):
+            up = max(0, up - 1); down += 1; nextMine = .downvote
+        case (.downvote?, .upvote):
+            down = max(0, down - 1); up += 1; nextMine = .upvote
+        }
+        return SocialFeedService.VoteAggregate(
+            upvoteCount: up,
+            downvoteCount: down,
+            myVoteType: nextMine
+        )
     }
 }
 
