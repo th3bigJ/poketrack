@@ -144,27 +144,12 @@ struct FeedItemView: View {
                         .foregroundStyle(Color.secondary.opacity(0.3))
                 }
 
-                if item.type == .pull, let pullCard = item.pullCardName {
-                    HStack(spacing: 5) {
-                        Circle()
-                            .fill(typeAccentColor)
-                            .frame(width: 6, height: 6)
-                        Text(pullCard)
-                            .font(.system(size: 11, weight: .bold))
-                    }
-                    .foregroundStyle(typeAccentColor)
-                    .padding(.horizontal, 8)
-                    .padding(.vertical, 4)
-                    .background(typeAccentColor.opacity(0.094), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 8, style: .continuous)
-                            .stroke(typeAccentColor.opacity(0.25), lineWidth: 1)
-                    }
                 }
+            }
             }
 
             Spacer(minLength: 8)
-            CardStackPreview(item: item, size: item.type == .pull ? 42 : 38)
+            CardStackPreview(item: item, size: item.type == .pull ? 64 : 52)
         }
     }
 

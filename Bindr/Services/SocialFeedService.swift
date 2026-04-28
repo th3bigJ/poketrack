@@ -494,9 +494,19 @@ final class SocialFeedService {
 
     func toggleVote(type: ReactionType, to contentID: UUID) async throws {
         let aggregate = try await fetchVoteAggregate(for: contentID)
-        if aggregate.myVoteType == type {
-            try await removeVote(from: contentID)
+        
+        if let current = aggregate.myVoteType {
+            if current == type {
+                // Clicking the same type toggles it OFF
+                try await removeVote(from: contentID)
+            } else {
+                // Switching types (e.g. from down to up)
+                // Remove first to ensure we don't hit a unique constraint violation
+                try await removeVote(from: contentID)
+                try await postVote(type: type, to: contentID)
+            }
         } else {
+            // No vote exists, just post new one
             try await postVote(type: type, to: contentID)
         }
     }

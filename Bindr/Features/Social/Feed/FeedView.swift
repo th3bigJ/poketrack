@@ -129,7 +129,7 @@ struct FeedView: View {
             }
             .padding(.horizontal, 16)
             .padding(.top, 0)
-            .padding(.bottom, 32)
+            .padding(.bottom, 100)
         }
         .refreshable { await refresh() }
     }
