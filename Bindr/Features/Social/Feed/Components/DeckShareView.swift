@@ -8,8 +8,8 @@ struct DeckShareView: View {
         HStack(spacing: 16) {
             // Stacked card thumbnails
             ZStack {
-                ForEach(0..<min(3, item.digestThumbnails?.count ?? 0), id: \.self) { index in
-                    if let thumbnails = item.digestThumbnails {
+                ForEach(0..<min(3, item.thumbnails?.count ?? 0), id: \.self) { index in
+                    if let thumbnails = item.thumbnails {
                         thumbnail(cardID: thumbnails[index])
                             .rotationEffect(.degrees(Double(index - 1) * 10))
                             .offset(x: Double(index - 1) * 15)
@@ -32,7 +32,7 @@ struct DeckShareView: View {
             Spacer()
         }
         .padding(12)
-        .background(Color.white.opacity(0.05))
+        .background(Color.primary.opacity(0.05))
         .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
     }
     
@@ -42,7 +42,7 @@ struct DeckShareView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
         } placeholder: {
-            Color.white.opacity(0.1)
+            Color.primary.opacity(0.05)
         }
         .frame(width: 42, height: 58)
         .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))

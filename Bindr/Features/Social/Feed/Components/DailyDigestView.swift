@@ -16,10 +16,10 @@ struct DailyDigestView: View {
                 }
             }
             .padding(12)
-            .background(Color.white.opacity(0.05))
+            .background(Color.primary.opacity(0.05))
             .clipShape(RoundedRectangle(cornerRadius: 12, style: .continuous))
             
-            if let thumbnails = item.digestThumbnails, !thumbnails.isEmpty {
+            if let thumbnails = item.thumbnails, !thumbnails.isEmpty {
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 8) {
                         ForEach(thumbnails.prefix(4), id: \.self) { cardID in
@@ -53,7 +53,7 @@ struct DailyDigestView: View {
             .font(.caption.weight(.bold))
             .padding(.horizontal, 10)
             .padding(.vertical, 4)
-            .background(Color.white.opacity(0.1))
+            .background(Color.primary.opacity(0.05))
             .clipShape(Capsule())
             .foregroundStyle(.primary)
         }
@@ -65,7 +65,7 @@ struct DailyDigestView: View {
                 .resizable()
                 .aspectRatio(contentMode: .fill)
         } placeholder: {
-            Color.white.opacity(0.1)
+            Color.primary.opacity(0.05)
         }
         .frame(width: 42, height: 58)
         .clipShape(RoundedRectangle(cornerRadius: 4, style: .continuous))
@@ -74,7 +74,7 @@ struct DailyDigestView: View {
     private func overflowTile(count: Int) -> some View {
         ZStack {
             RoundedRectangle(cornerRadius: 4, style: .continuous)
-                .fill(Color.white.opacity(0.1))
+                .fill(Color.primary.opacity(0.05))
             
             Text("+\(count)")
                 .font(.caption.weight(.bold))

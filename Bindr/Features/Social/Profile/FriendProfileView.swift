@@ -37,7 +37,7 @@ struct FriendProfileView: View {
                     }
                     .padding(.bottom, 32)
                 }
-                .background(Color(hex: "0A0A0A"))
+                .background(Color(uiColor: .systemBackground))
             } else {
                 ContentUnavailableView(
                     "Profile Not Found",
@@ -47,7 +47,7 @@ struct FriendProfileView: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             }
         }
-        .background(Color(hex: "0A0A0A").ignoresSafeArea())
+        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
         .navigationTitle("@\(username)")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -75,10 +75,10 @@ struct FriendProfileView: View {
                 VStack(alignment: .leading, spacing: 6) {
                     Text(profile.displayName ?? profile.username)
                         .font(.system(size: 18, weight: .heavy))
-                        .foregroundStyle(Color(hex: "F0F0F0"))
+                        .foregroundStyle(Color.primary)
                     Text("@\(profile.username)")
                         .font(.system(size: 12))
-                        .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                        .foregroundStyle(Color.secondary)
                     let roleTitles = roleTitles(for: profile)
                     if !roleTitles.isEmpty {
                         HStack(spacing: 6) {
@@ -96,7 +96,7 @@ struct FriendProfileView: View {
                 Text(bio)
                     .font(.system(size: 13))
                     .lineSpacing(3)
-                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                    .foregroundStyle(Color.secondary)
             }
 
             HStack(spacing: 0) {
@@ -106,16 +106,16 @@ struct FriendProfileView: View {
                 statColumn(value: "\(profile.friendCount ?? 0)", label: "Friends")
             }
             .padding(.vertical, 12)
-            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
             }
         }
         .padding(16)
         .background {
             LinearGradient(
-                colors: [Color(hex: "E8B84B").opacity(0.13), Color(hex: "0A0A0A")],
+                colors: [Color(hex: "E8B84B").opacity(0.13), Color(uiColor: .systemBackground)],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
@@ -147,15 +147,15 @@ struct FriendProfileView: View {
             HStack(spacing: 12) {
                 Text(relationshipLabel)
                     .font(.system(size: 13))
-                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                    .foregroundStyle(Color.secondary)
                 Spacer()
                 actionButton(for: profile.id)
             }
             .padding(12)
-            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
             }
         }
         .padding(.horizontal, 16)
@@ -169,7 +169,7 @@ struct FriendProfileView: View {
                 } label: {
                     Text(tab.rawValue)
                         .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(selectedTab == tab ? Color.black : Color(hex: "F0F0F0").opacity(0.55))
+                        .foregroundStyle(selectedTab == tab ? Color.white : Color.secondary)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 6)
                         .background(selectedTab == tab ? Color(hex: "E8B84B") : .clear, in: Capsule())
@@ -224,7 +224,7 @@ struct FriendProfileView: View {
         Text(text)
             .font(.system(size: 11, weight: .bold))
             .tracking(0.88)
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+            .foregroundStyle(Color.secondary.opacity(0.3))
     }
 
     private func rolePill(_ title: String) -> some View {
@@ -245,12 +245,12 @@ struct FriendProfileView: View {
         VStack(spacing: 3) {
             Text(value)
                 .font(.system(size: 16, weight: .heavy))
-                .foregroundStyle(Color(hex: "F0F0F0"))
+                .foregroundStyle(.primary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.65)
             Text(label)
                 .font(.system(size: 10))
-                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+                .foregroundStyle(Color.secondary.opacity(0.3))
         }
         .frame(maxWidth: .infinity)
     }
@@ -269,32 +269,32 @@ struct FriendProfileView: View {
                 Text(label)
                     .font(.system(size: 10, weight: .bold))
                     .tracking(0.4)
-                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+                    .foregroundStyle(Color.secondary.opacity(0.3))
                 Text(value)
                     .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(Color(hex: "F0F0F0"))
+                    .foregroundStyle(.primary)
                     .lineLimit(1)
             }
             Spacer()
         }
         .padding(12)
-        .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                .stroke(Color.primary.opacity(0.08), lineWidth: 1)
         }
     }
 
     private func emptyCard(_ text: String) -> some View {
         Text(text)
             .font(.system(size: 12))
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+            .foregroundStyle(Color.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(14)
-            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
             }
     }
 
@@ -318,7 +318,7 @@ struct FriendProfileView: View {
         case .pendingOutgoing:
             Label("Pending", systemImage: "clock")
                 .font(.system(size: 12, weight: .semibold))
-                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.45))
+                .foregroundStyle(Color.secondary.opacity(0.45))
         case .pendingIncoming(let friendshipID):
             Button("Accept") {
                 Task { await respond(to: friendshipID, accepted: true) }

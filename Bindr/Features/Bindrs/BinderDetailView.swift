@@ -31,6 +31,19 @@ struct BinderDetailView: View {
     /// set or pricing provider changes. Used by the bottom stats bar to show
     /// a live total value and by the page-info bar for per-page value.
     @State private var slotUSDValues: [String: Double] = [:]
+    /// Cached 7-day percent change per "cardID|variantKey", from
+    /// ``PricingService.priceTrends``. Combined with `slotUSDValues` to
+    /// produce the binder's weekly USD swing for the social row.
+    @State private var slotChange7d: [String: Double] = [:]
+    /// Identifier of the published `SharedContent` row for this binder, when
+    /// it has been shared. `nil` while loading or when the binder is private.
+    @State private var sharedContentID: UUID? = nil
+    /// Profiles of users who have upvoted the published binder. Empty when
+    /// the binder isn't shared yet or hasn't been voted on.
+    @State private var likers: [SocialProfile] = []
+    /// Total upvote count from the vote aggregate — may be larger than
+    /// `likers.count` if we only fetched a partial page of voters.
+    @State private var totalLikeCount: Int = 0
 
     private var layout: BinderPageLayout { binder.layout }
     private var headerIconColor: Color { colorScheme == .dark ? .white : .black }
@@ -67,6 +80,21 @@ struct BinderDetailView: View {
     var body: some View {
         VStack(spacing: 0) {
             binderHeader
+            if !isEditing {
+                // Share/likers/weekly-change row — sits between the title and
+                // the binder pages so it doesn't crowd the editing surface.
+                BinderSocialRow(
+                    isPublished: isSharedPublished,
+                    likers: likers,
+                    totalLikeCount: totalLikeCount,
+                    weeklyUSDChange: weeklyUSDChange,
+                    currencySymbol: services.priceDisplay.currency.symbol,
+                    usdToGbp: services.pricing.usdToGbp,
+                    displayInGBP: services.priceDisplay.currency == .gbp,
+                    onShareTap: { showShareSettings = true },
+                    onLikersTap: nil
+                )
+            }
             if isEditing {
                 editContent
             } else {
@@ -700,16 +728,35 @@ struct BinderDetailView: View {
     /// every render.
     private func refreshSlotValues() async {
         var values: [String: Double] = [:]
+        var changes: [String: Double] = [:]
+
+        // Pricing and 7-day trend lookups are independent per slot, so we
+        // run them concurrently per slot and serially across slots — which
+        // matches how the rest of the detail view paces this kind of work.
         for slot in binder.slotList {
             guard let card = cardsByID[slot.cardID] else { continue }
-            if let usd = await services.pricing.usdPriceForVariant(
+            async let usdPrice = services.pricing.usdPriceForVariant(
                 for: card,
                 variantKey: slot.variantKey
-            ) {
+            )
+            async let trends = services.pricing.priceTrends(for: card)
+
+            if let usd = await usdPrice {
                 values[slotValueKey(slot)] = usd
+            }
+            if let t = await trends {
+                // Binder slots don't track grade; prefer "raw", then any
+                // grade for this variant, then the trend's primary entry.
+                let raw = t.changes(for: slot.variantKey, grade: "raw").change7d
+                let anyGrade = t.allVariants[slot.variantKey]?.values
+                    .compactMap(\.change7d).first
+                if let pct = raw ?? anyGrade ?? t.change7d {
+                    changes[slotValueKey(slot)] = pct
+                }
             }
         }
         slotUSDValues = values
+        slotChange7d = changes
     }
 
     private func slotValueKey(_ slot: BinderSlot) -> String {
@@ -766,9 +813,61 @@ struct BinderDetailView: View {
         do {
             let snapshot = try await services.socialShare.shareSnapshot(for: binder)
             isSharedPublished = snapshot.isPublished
+            sharedContentID = snapshot.sharedContent?.id
+            await refreshLikers()
         } catch {
             isSharedPublished = false
+            sharedContentID = nil
+            likers = []
+            totalLikeCount = 0
         }
+    }
+
+    /// Loads the upvoter list for the published binder so the social row can
+    /// show avatar bubbles. Skipped entirely when the binder is private —
+    /// there's no `SharedContent` row to query reactions against. Best-effort:
+    /// any network failure leaves the row empty rather than blocking the view.
+    private func refreshLikers() async {
+        guard let contentID = sharedContentID else {
+            likers = []
+            totalLikeCount = 0
+            return
+        }
+        do {
+            async let aggregateTask = services.socialFeed.fetchVoteAggregate(for: contentID)
+            async let votesTask = services.socialFeed.fetchVotes(for: contentID)
+            let (aggregate, votes) = try await (aggregateTask, votesTask)
+            // Only include upvotes — downvotes don't belong on a "who liked
+            // this" row even though the same reactions endpoint serves them.
+            let profiles = votes
+                .filter { $0.voteType == .upvote }
+                .compactMap { $0.actor }
+            likers = profiles
+            totalLikeCount = aggregate.upvoteCount
+        } catch {
+            likers = []
+            totalLikeCount = 0
+        }
+    }
+
+    /// Sums each slot's 7-day USD change. The trend feed gives us a percent;
+    /// converting back to dollars via `current - current/(1+pct/100)` yields
+    /// the actual dollar amount the card has gained or lost in the last week.
+    /// Returns `nil` until at least one slot has both a price and a trend so
+    /// the UI doesn't briefly flash a misleading "£0".
+    private var weeklyUSDChange: Double? {
+        var total: Double = 0
+        var anyResolved = false
+        for slot in binder.slotList {
+            let key = slotValueKey(slot)
+            guard let current = slotUSDValues[key], let pct = slotChange7d[key] else { continue }
+            let denom = 1.0 + (pct / 100.0)
+            guard denom != 0 else { continue }
+            let delta = current - (current / denom)
+            total += delta
+            anyResolved = true
+        }
+        return anyResolved ? total : nil
     }
 
 }

@@ -114,6 +114,7 @@ struct SocialShareSheet: View {
     @State private var visibility: SharedContentVisibility = .friends
     @State private var cardsByID: [String: Card] = [:]
     @State private var setCodesByID: [String: String] = [:]
+    @State private var setNamesByID: [String: String] = [:]
     @State private var isBusy = false
     @State private var errorMessage: String? = nil
     @State private var showPaywall = false
@@ -170,7 +171,7 @@ struct SocialShareSheet: View {
                 .padding(16)
             }
         }
-        .background(Color(hex: "0A0A0A").ignoresSafeArea())
+        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
         .sheet(isPresented: $showPaywall) {
             PaywallSheet().environment(services)
         }
@@ -260,10 +261,10 @@ struct SocialShareSheet: View {
                 .padding(.horizontal, 14)
                 .padding(.vertical, 8)
                 .background(
-                    isSelected ? accent.opacity(0.2) : Color.white.opacity(0.06),
+                    isSelected ? accent.opacity(0.12) : Color.primary.opacity(0.05),
                     in: Capsule()
                 )
-                .overlay(Capsule().stroke(isSelected ? accent : Color.white.opacity(0.1), lineWidth: 1))
+                .overlay(Capsule().stroke(isSelected ? accent : Color.primary.opacity(0.1), lineWidth: 1))
         }
         .buttonStyle(.plain)
     }
@@ -333,7 +334,7 @@ struct SocialShareSheet: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8, style: .continuous))
                         .overlay {
                             RoundedRectangle(cornerRadius: 8, style: .continuous)
-                                .stroke(isSelected ? accent : Color.white.opacity(0.12), lineWidth: isSelected ? 2.5 : 1)
+                                .stroke(isSelected ? accent : Color.primary.opacity(0.12), lineWidth: isSelected ? 2.5 : 1)
                         }
                     if isSelected {
                         Image(systemName: "checkmark.circle.fill")
@@ -401,11 +402,11 @@ struct SocialShareSheet: View {
                                 }
                                 .padding(.horizontal, 12).padding(.vertical, 9)
                                 .frame(maxWidth: 160, alignment: .leading)
-                                .background(isSelected ? accent.opacity(0.15) : Color.white.opacity(0.05),
+                                .background(isSelected ? accent.opacity(0.12) : Color.primary.opacity(0.05),
                                             in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                                 .overlay {
                                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                                        .stroke(isSelected ? accent : Color.white.opacity(0.08), lineWidth: 1)
+                                        .stroke(isSelected ? accent : Color.primary.opacity(0.1), lineWidth: 1)
                                 }
                             }
                             .buttonStyle(.plain)
@@ -424,13 +425,13 @@ struct SocialShareSheet: View {
             sectionLabel("POST")
             TextField("Write something…", text: $postText, axis: .vertical)
                 .font(.system(size: 14))
-                .foregroundStyle(Color(hex: "F0F0F0"))
+                .foregroundStyle(.primary)
                 .lineLimit(5, reservesSpace: true)
                 .padding(12)
-                .background(Color.white.opacity(0.05), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .overlay {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                        .stroke(Color.primary.opacity(0.12), lineWidth: 1)
                 }
             if let errorMessage {
                 Text(errorMessage)
@@ -462,11 +463,11 @@ struct SocialShareSheet: View {
             .foregroundStyle(isSelected ? .primary : Color.primary.opacity(0.4))
             .frame(maxWidth: .infinity)
             .padding(.vertical, 11)
-            .background(isSelected ? accent.opacity(0.18) : Color.white.opacity(0.05),
+            .background(isSelected ? accent.opacity(0.18) : Color.primary.opacity(0.05),
                         in: RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .stroke(isSelected ? accent : Color.white.opacity(0.08), lineWidth: 1)
+                    .stroke(isSelected ? accent : Color.primary.opacity(0.1), lineWidth: 1)
             }
         }
         .buttonStyle(.plain)
@@ -487,7 +488,7 @@ struct SocialShareSheet: View {
             .foregroundStyle(Color.primary.opacity(0.4))
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(12)
-            .background(Color.white.opacity(0.04), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .background(Color.primary.opacity(0.05), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 
     // MARK: - Actions
@@ -502,8 +503,11 @@ struct SocialShareSheet: View {
                 guard let item = selectedCollectionItem else { return }
                 let name = cardsByID[item.cardID]?.cardName ?? item.cardID
                 let taggedMessage = tagPrefix + (postText.isEmpty ? "" : " \(postText)")
+                // Prefer human-readable set name; fall back to set code only
+                // if the catalog hasn't loaded yet.
+                let resolvedSetName = setNamesByID[item.cardID] ?? setCodesByID[item.cardID]
                 _ = try await services.socialShare.publishPull(
-                    collectionItem: item, cardName: name, setName: setCodesByID[item.cardID],
+                    collectionItem: item, cardName: name, setName: resolvedSetName,
                     message: taggedMessage, visibility: visibility
                 )
             case .want:
@@ -548,11 +552,20 @@ struct SocialShareSheet: View {
         var ids = Set<String>()
         singleCards.forEach { ids.insert($0.cardID) }
         wishlistItems.forEach { ids.insert($0.cardID) }
+        // Build a setCode -> human-readable set name map from the catalog so
+        // pull posts attribute the card to e.g. "Mega Evolution" rather than
+        // the raw "me2pt5" set code.
+        let setNameByCode = Dictionary(
+            uniqueKeysWithValues: services.cardData.sets.map { ($0.setCode, $0.name) }
+        )
         for id in ids {
             guard cardsByID[id] == nil else { continue }
             if let card = await services.cardData.loadCard(masterCardId: id) {
                 cardsByID[id] = card
                 setCodesByID[id] = card.setCode
+                if let name = setNameByCode[card.setCode] {
+                    setNamesByID[id] = name
+                }
             }
         }
     }

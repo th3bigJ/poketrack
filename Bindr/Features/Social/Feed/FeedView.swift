@@ -180,7 +180,7 @@ struct ShimmerCard: View {
         RoundedRectangle(cornerRadius: 20, style: .continuous)
             .fill(
                 LinearGradient(
-                    colors: [Color.white.opacity(0.05), Color.white.opacity(0.12), Color.white.opacity(0.05)],
+                    colors: [Color.primary.opacity(0.05), Color.primary.opacity(0.12), Color.primary.opacity(0.05)],
                     startPoint: .init(x: phase - 0.3, y: 0),
                     endPoint: .init(x: phase + 0.3, y: 0)
                 )
@@ -336,17 +336,17 @@ private struct SocialAlertsPreviewView: View {
         Text(text)
             .font(.system(size: 11, weight: .bold))
             .tracking(0.88)
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+            .foregroundStyle(Color.secondary.opacity(0.3))
     }
 
     private func emptyAlert(_ text: String) -> some View {
         Text(text)
             .font(.system(size: 12))
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+            .foregroundStyle(Color.secondary.opacity(0.55))
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(14)
-            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(Color.white.opacity(0.09), lineWidth: 1))
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(Color.primary.opacity(0.09), lineWidth: 1))
     }
 
     @ViewBuilder
@@ -364,11 +364,11 @@ private struct SocialAlertsPreviewView: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text(alertTitle(for: group.primary))
                     .font(.system(size: 13, weight: .semibold))
-                    .foregroundStyle(Color(hex: "F0F0F0"))
+                    .foregroundStyle(Color.primary)
                     .lineLimit(2)
                 Text(SocialFeedService.shortRelativeDate(group.primary.createdAt))
                     .font(.system(size: 11))
-                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+                    .foregroundStyle(Color.secondary.opacity(0.3))
             }
 
             Spacer()
@@ -389,13 +389,13 @@ private struct SocialAlertsPreviewView: View {
             .buttonStyle(.plain)
             .padding(14)
             .background(tint.opacity(group.primary.type == .wishlistMatch ? 0.12 : 0), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(tint.opacity(0.2), lineWidth: 1))
         } else {
             row
                 .padding(14)
                 .background(tint.opacity(group.primary.type == .wishlistMatch ? 0.12 : 0), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
-                .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                 .overlay(RoundedRectangle(cornerRadius: 14, style: .continuous).stroke(tint.opacity(0.2), lineWidth: 1))
         }
     }

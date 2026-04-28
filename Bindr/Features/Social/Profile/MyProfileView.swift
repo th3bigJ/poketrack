@@ -70,17 +70,17 @@ struct MyProfileView: View {
                         .font(.system(size: 13, weight: .semibold))
                         .frame(maxWidth: .infinity)
                         .padding(.vertical, 12)
-                        .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+                        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
                         .overlay {
                             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                                .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                                .stroke(Color.primary.opacity(0.09), lineWidth: 1)
                         }
                 }
                 .padding(.horizontal, 16)
                 .padding(.bottom, 32)
             }
         }
-        .background(Color(hex: "0A0A0A"))
+        .background(Color(uiColor: .systemBackground))
         .navigationBarTitleDisplayMode(.inline)
         .sheet(isPresented: $showCollectionShareSettings) {
             ShareSettingsView(source: .collection(items: collectionItems)) {
@@ -121,16 +121,16 @@ struct MyProfileView: View {
                     Circle()
                         .fill(Color(hex: "52C97C"))
                         .frame(width: 18, height: 18)
-                        .overlay(Circle().stroke(Color(hex: "0A0A0A"), lineWidth: 3))
+                        .overlay(Circle().stroke(Color(uiColor: .systemBackground), lineWidth: 3))
                 }
 
                 VStack(alignment: .leading, spacing: 6) {
                     Text(profile.displayName ?? profile.username)
                         .font(.system(size: 18, weight: .heavy))
-                        .foregroundStyle(Color(hex: "F0F0F0"))
+                        .foregroundStyle(Color.primary)
                     Text("@\(profile.username)")
                         .font(.system(size: 12))
-                        .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                        .foregroundStyle(Color.secondary)
                     if !roleTitles.isEmpty {
                         HStack(spacing: 6) {
                             ForEach(roleTitles, id: \.self) { title in
@@ -148,7 +148,7 @@ struct MyProfileView: View {
                 Text(bio)
                     .font(.system(size: 13))
                     .lineSpacing(3)
-                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                    .foregroundStyle(Color.secondary)
             }
 
             HStack(spacing: 0) {
@@ -158,16 +158,16 @@ struct MyProfileView: View {
                 statColumn(value: "\(profile.friendCount ?? 0)", label: "Friends")
             }
             .padding(.vertical, 12)
-            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 12, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.08), lineWidth: 1)
             }
         }
         .padding(16)
         .background {
             LinearGradient(
-                colors: [Color(hex: "E8B84B").opacity(0.13), Color(hex: "0A0A0A")],
+                colors: [Color(hex: "E8B84B").opacity(0.13), Color(uiColor: .systemBackground)],
                 startPoint: .topLeading,
                 endPoint: .bottomTrailing
             )
@@ -202,7 +202,7 @@ struct MyProfileView: View {
                 } label: {
                     Text(tab.rawValue)
                         .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(selectedProfileTab == tab ? Color.black : Color(hex: "F0F0F0").opacity(0.55))
+                        .foregroundStyle(selectedProfileTab == tab ? Color.white : Color.secondary)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 6)
                         .background(selectedProfileTab == tab ? Color(hex: "E8B84B") : .clear, in: Capsule())
@@ -216,7 +216,7 @@ struct MyProfileView: View {
                 } label: {
                     Image(systemName: isCollectionPublished ? "checkmark.circle.fill" : "square.and.arrow.up")
                         .font(.system(size: 15, weight: .semibold))
-                        .foregroundStyle(isCollectionPublished ? Color(hex: "52C97C") : Color(hex: "F0F0F0").opacity(0.55))
+                        .foregroundStyle(isCollectionPublished ? Color(hex: "52C97C") : Color.secondary)
                 }
                 .buttonStyle(.plain)
             }
@@ -263,7 +263,7 @@ struct MyProfileView: View {
         Text(text)
             .font(.system(size: 11, weight: .bold))
             .tracking(0.88)
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+            .foregroundStyle(Color.secondary.opacity(0.3))
     }
 
     private func rolePill(_ title: String) -> some View {
@@ -284,12 +284,12 @@ struct MyProfileView: View {
         VStack(spacing: 3) {
             Text(value)
                 .font(.system(size: 16, weight: .heavy))
-                .foregroundStyle(Color(hex: "F0F0F0"))
+                .foregroundStyle(.primary)
                 .lineLimit(1)
                 .minimumScaleFactor(0.65)
             Text(label)
                 .font(.system(size: 10))
-                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+                .foregroundStyle(Color.secondary.opacity(0.3))
         }
         .frame(maxWidth: .infinity)
     }
@@ -308,32 +308,32 @@ struct MyProfileView: View {
                 Text(label)
                     .font(.system(size: 10, weight: .bold))
                     .tracking(0.4)
-                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+                    .foregroundStyle(Color.secondary.opacity(0.3))
                 Text(value)
                     .font(.system(size: 13, weight: .bold))
-                    .foregroundStyle(Color(hex: "F0F0F0"))
+                    .foregroundStyle(.primary)
                     .lineLimit(1)
             }
             Spacer()
         }
         .padding(12)
-        .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                .stroke(Color.primary.opacity(0.08), lineWidth: 1)
         }
     }
 
     private func emptyProfileCard(_ text: String) -> some View {
         Text(text)
             .font(.system(size: 12))
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+            .foregroundStyle(Color.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(14)
-            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.08), lineWidth: 1)
             }
     }
     
@@ -342,7 +342,7 @@ struct MyProfileView: View {
             // Icon/Sprite
             ZStack {
                 Circle()
-                    .fill(colorScheme == .dark ? Color.white.opacity(0.05) : Color.black.opacity(0.03))
+                    .fill(Color.primary.opacity(0.06))
                     .frame(width: 60, height: 60)
                 
                 if let urlString = profile.favoritePokemonImageURL, let url = URL(string: urlString) {
@@ -387,7 +387,7 @@ struct MyProfileView: View {
                 .fill(.ultraThinMaterial)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.05), lineWidth: 1)
+                        .stroke(Color.primary.opacity(0.07), lineWidth: 1)
                 )
         )
     }
@@ -406,7 +406,7 @@ struct MyProfileView: View {
                 .shadow(color: .black.opacity(0.2), radius: 4, y: 2)
                 .overlay(
                     RoundedRectangle(cornerRadius: 6)
-                        .stroke(Color.white.opacity(0.1), lineWidth: 0.5)
+                        .stroke(Color.primary.opacity(0.12), lineWidth: 0.5)
                 )
             }
             
@@ -437,7 +437,7 @@ struct MyProfileView: View {
                 .fill(.ultraThinMaterial)
                 .overlay(
                     RoundedRectangle(cornerRadius: 16)
-                        .stroke(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.05), lineWidth: 1)
+                        .stroke(Color.primary.opacity(0.07), lineWidth: 1)
                 )
         )
     }
@@ -449,11 +449,11 @@ struct MyProfileView: View {
             .padding(.vertical, 4)
             .background(
                 Capsule()
-                    .fill(colorScheme == .dark ? Color.white.opacity(0.07) : Color.black.opacity(0.05))
+                    .fill(Color.primary.opacity(0.06))
             )
             .overlay(
                 Capsule()
-                    .stroke(colorScheme == .dark ? Color.white.opacity(0.1) : Color.black.opacity(0.08), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.1), lineWidth: 1)
             )
     }
     

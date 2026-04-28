@@ -54,7 +54,7 @@ struct FriendsListView: View {
             }
             .refreshable { await refresh() }
         }
-        .background(Color(hex: "0A0A0A"))
+        .background(Color(uiColor: .systemBackground))
         .task { await refresh() }
         .onChange(of: searchText) { _, newValue in
             Task { await search(query: newValue) }
@@ -66,15 +66,15 @@ struct FriendsListView: View {
             Text("Friends")
                 .font(.system(size: 22, weight: .heavy))
                 .tracking(-0.5)
-                .foregroundStyle(Color(hex: "F0F0F0"))
+                .foregroundStyle(Color.primary)
             Spacer()
             Button(action: onOpenQR) {
                 Image(systemName: "qrcode")
                     .font(.system(size: 16, weight: .bold))
                     .foregroundStyle(Color(hex: "E8B84B"))
                     .frame(width: 36, height: 36)
-                    .background(Color(hex: "141414"), in: Circle())
-                    .overlay(Circle().stroke(Color.white.opacity(0.09), lineWidth: 1))
+                    .background(Color(uiColor: .secondarySystemBackground), in: Circle())
+                    .overlay(Circle().stroke(Color.primary.opacity(0.09), lineWidth: 1))
             }
             .buttonStyle(.plain)
         }
@@ -94,13 +94,13 @@ struct FriendsListView: View {
                 } label: {
                     Text(tab.rawValue)
                         .font(.system(size: 12, weight: .semibold))
-                        .foregroundStyle(selectedTab == tab ? Color.black : Color(hex: "F0F0F0").opacity(0.55))
+                        .foregroundStyle(selectedTab == tab ? Color.black : Color.secondary)
                         .padding(.horizontal, 14)
                         .padding(.vertical, 6)
-                        .background(selectedTab == tab ? Color(hex: "E8B84B") : Color(hex: "141414"), in: Capsule())
+                        .background(selectedTab == tab ? Color(hex: "E8B84B") : Color(uiColor: .secondarySystemBackground), in: Capsule())
                         .overlay {
                             Capsule()
-                                .stroke(selectedTab == tab ? .clear : Color.white.opacity(0.09), lineWidth: 1)
+                                .stroke(selectedTab == tab ? .clear : Color.primary.opacity(0.09), lineWidth: 1)
                         }
                 }
                 .buttonStyle(.plain)
@@ -114,20 +114,20 @@ struct FriendsListView: View {
         HStack(spacing: 8) {
             Image(systemName: "magnifyingglass")
                 .font(.system(size: 14, weight: .semibold))
-                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+                .foregroundStyle(Color.secondary.opacity(0.3))
             TextField("Search trainers...", text: $searchText)
                 .font(.system(size: 13))
-                .foregroundStyle(Color(hex: "F0F0F0"))
+                .foregroundStyle(Color.primary)
                 .tint(Color(hex: "E8B84B"))
                 .textInputAutocapitalization(.never)
                 .autocorrectionDisabled()
         }
         .padding(.horizontal, 12)
         .padding(.vertical, 11)
-        .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
         .overlay {
             RoundedRectangle(cornerRadius: 14, style: .continuous)
-                .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                .stroke(Color.primary.opacity(0.09), lineWidth: 1)
         }
         .padding(.horizontal, 16)
     }
@@ -186,7 +186,7 @@ struct FriendsListView: View {
         Text(text)
             .font(.system(size: 11, weight: .bold))
             .tracking(0.88)
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+            .foregroundStyle(Color.secondary.opacity(0.5))
     }
 
     private func pendingRequestCard(_ request: SocialFriendService.IncomingFriendRequest) -> some View {
@@ -196,10 +196,10 @@ struct FriendsListView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(request.requester.displayName ?? request.requester.username)
                         .font(.system(size: 14, weight: .bold))
-                        .foregroundStyle(Color(hex: "F0F0F0"))
+                        .foregroundStyle(Color.primary)
                     Text("@\(request.requester.username) wants to follow you")
                         .font(.system(size: 12))
-                        .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                        .foregroundStyle(Color.secondary)
                 }
                 Spacer()
             }
@@ -219,10 +219,10 @@ struct FriendsListView: View {
                 } label: {
                     Image(systemName: "xmark")
                         .font(.system(size: 12, weight: .bold))
-                        .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                        .foregroundStyle(Color.secondary)
                         .frame(width: 36, height: 32)
-                        .background(Color(hex: "141414"), in: Capsule())
-                        .overlay(Capsule().stroke(Color.white.opacity(0.09), lineWidth: 1))
+                        .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
+                        .overlay(Capsule().stroke(Color.primary.opacity(0.09), lineWidth: 1))
                 }
                 .buttonStyle(.plain)
             }
@@ -242,28 +242,28 @@ struct FriendsListView: View {
                 VStack(alignment: .leading, spacing: 2) {
                     Text(profile.displayName ?? profile.username)
                         .font(.system(size: 14, weight: .bold))
-                        .foregroundStyle(Color(hex: "F0F0F0"))
+                        .foregroundStyle(Color.primary)
                     Text("@\(profile.username)")
                         .font(.system(size: 11))
-                        .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                        .foregroundStyle(Color.secondary)
                     Text(detail)
                         .font(.system(size: 11))
-                        .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+                        .foregroundStyle(Color.secondary.opacity(0.3))
                 }
                 Spacer()
                 Text(buttonTitle)
                     .font(.system(size: 11, weight: .bold))
-                    .foregroundStyle(buttonTitle == "Following" || buttonTitle == "Pending" ? Color(hex: "F0F0F0").opacity(0.55) : Color(hex: "E8B84B"))
+                    .foregroundStyle(buttonTitle == "Following" || buttonTitle == "Pending" ? Color.secondary : Color(hex: "E8B84B"))
                     .padding(.horizontal, 10)
                     .padding(.vertical, 6)
-                    .background(Color(hex: "141414"), in: Capsule())
-                    .overlay(Capsule().stroke(Color.white.opacity(0.09), lineWidth: 1))
+                    .background(Color(uiColor: .secondarySystemBackground), in: Capsule())
+                    .overlay(Capsule().stroke(Color.primary.opacity(0.1), lineWidth: 1))
             }
             .padding(14)
-            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
             }
         }
         .buttonStyle(.plain)
@@ -281,23 +281,23 @@ struct FriendsListView: View {
                 .tint(Color(hex: "E8B84B"))
             Text(text)
                 .font(.system(size: 12))
-                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                .foregroundStyle(Color.secondary)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
         .padding(14)
-        .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+        .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
     }
 
     private func emptyCard(_ text: String) -> some View {
         Text(text)
             .font(.system(size: 12))
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+            .foregroundStyle(Color.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(14)
-            .background(Color(hex: "141414"), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 14, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                    .stroke(Color.primary.opacity(0.09), lineWidth: 1)
             }
     }
 

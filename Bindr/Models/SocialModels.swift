@@ -260,4 +260,13 @@ extension JSONValue {
         if case .array(let value) = self { return value }
         return nil
     }
+
+    /// Convenience accessor for the `.object` case so callers can dig into
+    /// nested JSON without pattern-matching at every step (e.g.
+    /// `value.objectValue?["cardID"]?.stringValue`). Mirrors the other
+    /// case-specific accessors above.
+    var objectValue: [String: JSONValue]? {
+        if case .object(let value) = self { return value }
+        return nil
+    }
 }

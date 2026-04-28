@@ -71,7 +71,8 @@ final class SocialFeedService {
         // Daily Digest metadata
         let digestCollectionCount: Int?
         let digestWishlistCount: Int?
-        let digestThumbnails: [String]?
+        
+        let thumbnails: [String]?
 
         // Binder styling (from shared_content payload)
         let binderColour: String?
@@ -354,7 +355,6 @@ final class SocialFeedService {
     }
 
     func fetchActivityForUser(userID: UUID, limit: Int = 20) async throws -> [FeedItem] {
-        let currentUserID = try signedInUserID()
         let path = "/rest/v1/shared_content?select=id,owner_id,content_type,title,description,card_count,brand,payload,published_at,actor:owner_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url)&order=published_at.desc&limit=\(limit)&owner_id=eq.\(userID.uuidString)"
         let rows: [SharedContentFeedRow] = try await execute(path: path, method: "GET", accessToken: try signedInAccessToken())
         let blockedUserIDs = try await fetchBlockedUserIDs()
@@ -377,6 +377,10 @@ final class SocialFeedService {
                 default: return .sharedContent
                 }
             }()
+            // Extracted to a local let — inlining the full coalesce chain
+            // alongside the other `FeedItem(...)` arguments hits the Swift
+            // compiler's "unable to type-check in reasonable time" limit.
+            let thumbnails = Self.thumbnailsFromPayload(row.payload, includeThumbnailsKey: false)
             return FeedItem(
                 id: row.id.uuidString,
                 type: type,
@@ -394,12 +398,44 @@ final class SocialFeedService {
                 pullRarity: nil,
                 digestCollectionCount: nil,
                 digestWishlistCount: nil,
-                digestThumbnails: nil,
+                thumbnails: thumbnails,
                 binderColour: nil,
                 binderTexture: nil,
                 binderSeed: nil
             )
         }
+    }
+
+    /// Resolves the thumbnail-id list from a shared-content `payload` blob.
+    /// Pulled out of the `FeedItem(...)` literals because the inline coalesce
+    /// chain across `thumbnails` / `items` / `cards` / `card_id` was tripping
+    /// the type checker's complexity budget.
+    ///
+    /// - Parameter includeThumbnailsKey: when `true`, the legacy
+    ///   `payload["thumbnails"]` array of plain string IDs is checked first
+    ///   (used by the main feed); when `false` we skip straight to the
+    ///   per-card lookups (used by activity-for-user).
+    private static func thumbnailsFromPayload(
+        _ payload: [String: JSONValue]?,
+        includeThumbnailsKey: Bool
+    ) -> [String] {
+        // Mirrors the original coalesce chain exactly: each step falls through
+        // only when the preceding key is *missing or not an array* — an array
+        // that compactMaps down to empty still wins (matches `?? next`).
+        if includeThumbnailsKey,
+           let direct = payload?["thumbnails"]?.arrayValue?.compactMap({ $0.stringValue }) {
+            return direct
+        }
+        if let items = payload?["items"]?.arrayValue {
+            return items.prefix(4).compactMap { $0.objectValue?["cardID"]?.stringValue }
+        }
+        if let cards = payload?["cards"]?.arrayValue {
+            return cards.prefix(4).compactMap { $0.objectValue?["cardID"]?.stringValue }
+        }
+        if let single = payload?["card_id"]?.stringValue {
+            return [single]
+        }
+        return []
     }
 
     func loadMore(pageSize: Int = 20) async throws -> [FeedItem] {
@@ -413,33 +449,45 @@ final class SocialFeedService {
         recalculateUnread()
     }
 
+
     func postVote(type: ReactionType, to contentID: UUID) async throws {
-        let payload = VoteInsertRequest(
-            contentID: contentID,
-            userID: try signedInUserID(),
-            voteType: type
-        )
-        _ = try await execute(
-            path: "/rest/v1/reactions?on_conflict=content_id,user_id",
-            method: "POST",
-            accessToken: try signedInAccessToken(),
-            body: payload,
-            extraHeaders: [
-                "Prefer": "resolution=merge-duplicates,return=minimal"
-            ]
-        ) as EmptyResponse
+        let userID = try signedInUserID()
+        let payload = VoteInsertRequest(contentID: contentID, userID: userID, voteType: type)
+        print("DEBUG: postVote started - type: \(type), contentID: \(contentID)")
+        do {
+            _ = try await execute(
+                path: "/rest/v1/reactions?on_conflict=content_id,user_id",
+                method: "POST",
+                accessToken: try signedInAccessToken(),
+                body: payload,
+                extraHeaders: [
+                    "Prefer": "resolution=merge-duplicates,return=minimal"
+                ]
+            ) as EmptyResponse
+            print("DEBUG: postVote success")
+        } catch {
+            print("DEBUG: postVote failed: \(error)")
+            throw error
+        }
     }
 
     func removeVote(from contentID: UUID) async throws {
         let userID = try signedInUserID()
-        _ = try await execute(
-            path: "/rest/v1/reactions?content_id=eq.\(contentID.uuidString)&user_id=eq.\(userID.uuidString)",
-            method: "DELETE",
-            accessToken: try signedInAccessToken(),
-            extraHeaders: [
-                "Prefer": "return=minimal"
-            ]
-        ) as EmptyResponse
+        print("DEBUG: removeVote started - contentID: \(contentID)")
+        do {
+            _ = try await execute(
+                path: "/rest/v1/reactions?content_id=eq.\(contentID.uuidString)&user_id=eq.\(userID.uuidString)",
+                method: "DELETE",
+                accessToken: try signedInAccessToken(),
+                extraHeaders: [
+                    "Prefer": "return=minimal"
+                ]
+            ) as EmptyResponse
+            print("DEBUG: removeVote success")
+        } catch {
+            print("DEBUG: removeVote failed: \(error)")
+            throw error
+        }
     }
 
     func toggleVote(type: ReactionType, to contentID: UUID) async throws {
@@ -457,10 +505,12 @@ final class SocialFeedService {
             method: "GET",
             accessToken: try signedInAccessToken()
         )
-        let currentUserID = try signedInUserID()
+        
+        let currentUserID = try? signedInUserID()
         var upvotes = 0
         var downvotes = 0
         var myVote: ReactionType?
+        
         for row in rows {
             switch row.voteType {
             case .upvote:
@@ -468,7 +518,7 @@ final class SocialFeedService {
             case .downvote:
                 downvotes += 1
             }
-            if row.userID == currentUserID {
+            if let currentUserID, row.userID == currentUserID {
                 myVote = row.voteType
             }
         }
@@ -514,7 +564,7 @@ final class SocialFeedService {
                 pullRarity: nil,
                 digestCollectionCount: nil,
                 digestWishlistCount: nil,
-                digestThumbnails: nil,
+                thumbnails: nil,
                 binderColour: nil,
                 binderTexture: nil,
                 binderSeed: nil
@@ -635,7 +685,11 @@ final class SocialFeedService {
                 default: return .sharedContent
                 }
             }()
-            
+
+            // See `thumbnailsFromPayload` — inlining this chain alongside the
+            // other ~15 `FeedItem(...)` arguments times out the type checker.
+            let thumbnails = Self.thumbnailsFromPayload(row.payload, includeThumbnailsKey: true)
+
             return FeedItem(
                 id: "shared-\(row.id.uuidString)",
                 type: type,
@@ -653,7 +707,7 @@ final class SocialFeedService {
                 pullRarity: row.payload?["rarity"]?.stringValue,
                 digestCollectionCount: row.payload?["collection_count"]?.intValue,
                 digestWishlistCount: row.payload?["wishlist_count"]?.intValue,
-                digestThumbnails: row.payload?["thumbnails"]?.arrayValue?.compactMap { $0.stringValue },
+                thumbnails: thumbnails,
                 binderColour: row.payload?["colour"]?.stringValue,
                 binderTexture: row.payload?["texture"]?.stringValue,
                 binderSeed: row.payload?["seed"]?.intValue
@@ -708,7 +762,7 @@ final class SocialFeedService {
                 pullRarity: nil,
                 digestCollectionCount: nil,
                 digestWishlistCount: nil,
-                digestThumbnails: nil,
+                thumbnails: nil,
                 binderColour: nil,
                 binderTexture: nil,
                 binderSeed: nil
@@ -739,7 +793,7 @@ final class SocialFeedService {
                 pullRarity: nil,
                 digestCollectionCount: nil,
                 digestWishlistCount: nil,
-                digestThumbnails: nil,
+                thumbnails: nil,
                 binderColour: nil,
                 binderTexture: nil,
                 binderSeed: nil
@@ -784,7 +838,7 @@ final class SocialFeedService {
                 pullRarity: nil,
                 digestCollectionCount: nil,
                 digestWishlistCount: nil,
-                digestThumbnails: nil,
+                thumbnails: nil,
                 binderColour: nil,
                 binderTexture: nil,
                 binderSeed: nil
@@ -830,7 +884,7 @@ final class SocialFeedService {
                 pullRarity: nil,
                 digestCollectionCount: nil,
                 digestWishlistCount: nil,
-                digestThumbnails: nil,
+                thumbnails: nil,
                 binderColour: nil,
                 binderTexture: nil,
                 binderSeed: nil

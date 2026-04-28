@@ -50,7 +50,10 @@ struct BindersRootView: View {
                     }
                 } else {
                     ScrollView {
-                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 160), spacing: 12)], spacing: 12) {
+                        // Cards now render in an A4 portrait ratio (~160 × 230),
+                        // so allow each grid cell a bit more horizontal room
+                        // and a touch more vertical spacing between rows.
+                        LazyVGrid(columns: [GridItem(.adaptive(minimum: 158), spacing: 14)], spacing: 16) {
                             ForEach(visibleBinders) { binder in
                                 Button {
                                     presentedBinder = binder
@@ -176,27 +179,63 @@ private struct BinderCardCell: View {
     @Environment(AppServices.self) private var services
     let binder: Binder
     @State private var cardURLs: [URL?] = [nil, nil, nil]
+    @State private var totalUSDValue: Double = 0
+    @State private var hasLoadedValue: Bool = false
 
     var body: some View {
         BinderCoverView(
             title: binder.title,
-            subtitle: "\(binder.slotList.count) cards · \(binder.layout.displayName)",
+            subtitle: subtitleText,
             colourName: binder.colour,
             texture: binder.textureKind,
             seed: binder.textureSeed,
             peekingCardURLs: cardURLs,
             showCardPreview: binder.showCardPreview,
-            compact: true
+            compact: true,
+            valueText: displayedValueText
         )
         .task {
             await loadCardURLs()
+            await refreshTotalValue()
         }
+    }
+
+    /// Subtitle now leads with the binder grade ("RAW") followed by the card
+    /// count, matching the look of the new cover layout.
+    private var subtitleText: String {
+        let count = binder.slotList.count
+        return "RAW · \(count) \(count == 1 ? "card" : "cards")"
+    }
+
+    /// Returns the formatted total value once prices have been fetched. We
+    /// hide the label entirely for empty binders so a "£0" doesn't dominate
+    /// brand-new covers — once cards are added the value appears.
+    private var displayedValueText: String? {
+        guard hasLoadedValue, !binder.slotList.isEmpty else { return nil }
+        return formatTotal(usd: totalUSDValue)
+    }
+
+    private func formatTotal(usd: Double) -> String {
+        let display = services.priceDisplay.currency
+        let amount = display == .gbp ? usd * services.pricing.usdToGbp : usd
+
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        if amount >= 1000 {
+            formatter.maximumFractionDigits = 0
+            formatter.minimumFractionDigits = 0
+        } else {
+            formatter.maximumFractionDigits = 2
+            formatter.minimumFractionDigits = 2
+        }
+        let pretty = formatter.string(from: NSNumber(value: amount)) ?? "0"
+        return "\(display.symbol)\(pretty)"
     }
 
     private func loadCardURLs() async {
         let slots = binder.slotList.prefix(3)
         var urls: [URL?] = []
-        
+
         for slot in slots {
             if let card = await services.cardData.loadCard(masterCardId: slot.cardID) {
                 urls.append(AppConfiguration.imageURL(relativePath: card.imageLowSrc))
@@ -204,9 +243,26 @@ private struct BinderCardCell: View {
                 urls.append(nil)
             }
         }
-        
+
         while urls.count < 3 { urls.append(nil) }
         cardURLs = urls
+    }
+
+    /// Sums every slot's USD market price the same way ``BinderDetailView``
+    /// does, so the cover front mirrors what the user sees inside the binder.
+    private func refreshTotalValue() async {
+        var sum: Double = 0
+        for slot in binder.slotList {
+            guard let card = await services.cardData.loadCard(masterCardId: slot.cardID) else { continue }
+            if let usd = await services.pricing.usdPriceForVariant(
+                for: card,
+                variantKey: slot.variantKey
+            ) {
+                sum += usd
+            }
+        }
+        totalUSDValue = sum
+        hasLoadedValue = true
     }
 }
 

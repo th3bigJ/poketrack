@@ -150,10 +150,10 @@ struct CommentsView: View {
                     .focused($isComposerFocused)
                     .padding(.horizontal, 14)
                     .padding(.vertical, 10)
-                    .background(Color(hex: "1C1C1C"), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
+                    .background(Color(uiColor: .tertiarySystemBackground), in: RoundedRectangle(cornerRadius: 20, style: .continuous))
                     .overlay(
                         RoundedRectangle(cornerRadius: 20, style: .continuous)
-                            .stroke(Color.white.opacity(0.08), lineWidth: 1)
+                            .stroke(Color.primary.opacity(0.08), lineWidth: 1)
                     )
 
                 Button {
@@ -162,7 +162,7 @@ struct CommentsView: View {
                     Image(systemName: "arrow.up.circle.fill")
                         .font(.system(size: 32))
                         .foregroundStyle(composerText.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
-                            ? Color(hex: "3A3A3A")
+                            ? Color(uiColor: .secondarySystemFill)
                             : services.theme.accentColor)
                 }
                 .buttonStyle(.plain)

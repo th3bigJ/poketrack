@@ -69,6 +69,7 @@ struct NewPostView: View {
     }
     @State private var cardNamesByID: [String: String] = [:]
     @State private var setCodesByID: [String: String] = [:]
+    @State private var setNamesByID: [String: String] = [:]
     @State private var isBusy = false
     @State private var errorMessage: String? = nil
     @State private var showPaywall = false
@@ -100,7 +101,7 @@ struct NewPostView: View {
                 .padding(16)
             }
         }
-        .background(Color(hex: "0A0A0A").ignoresSafeArea())
+        .background(Color(uiColor: .systemBackground).ignoresSafeArea())
         .sheet(isPresented: $showPaywall) {
             PaywallSheet()
                 .environment(services)
@@ -139,7 +140,7 @@ struct NewPostView: View {
                             .foregroundStyle(.white)
                             .padding(.horizontal, 14)
                             .padding(.vertical, 6)
-                            .background(canPost ? selectedType.accentColor : Color.white.opacity(0.15),
+                            .background(canPost ? selectedType.accentColor : Color.primary.opacity(0.12),
                                         in: Capsule())
                     }
                 }
@@ -174,14 +175,14 @@ struct NewPostView: View {
                 Text(type.rawValue)
                     .font(.system(size: 12, weight: .semibold))
             }
-            .foregroundStyle(isSelected ? type.accentColor : Color(hex: "F0F0F0").opacity(0.55))
+            .foregroundStyle(isSelected ? type.accentColor : Color.secondary)
             .padding(.horizontal, 10)
             .padding(.vertical, 7)
-            .background(isSelected ? type.accentColor.opacity(0.12) : Color.white.opacity(0.05),
+            .background(isSelected ? type.accentColor.opacity(0.12) : Color.primary.opacity(0.05),
                         in: RoundedRectangle(cornerRadius: 8, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 8, style: .continuous)
-                    .stroke(isSelected ? type.accentColor.opacity(0.4) : Color.white.opacity(0.08), lineWidth: 1)
+                    .stroke(isSelected ? type.accentColor.opacity(0.4) : Color.primary.opacity(0.1), lineWidth: 1)
             }
         }
         .buttonStyle(.plain)
@@ -353,23 +354,23 @@ struct NewPostView: View {
             VStack(alignment: .leading, spacing: 3) {
                 Text(title)
                     .font(.system(size: 13, weight: .semibold))
-                    .foregroundStyle(isSelected ? color : Color(hex: "F0F0F0"))
+                    .foregroundStyle(isSelected ? color : Color.primary)
                     .lineLimit(2)
                     .multilineTextAlignment(.leading)
                 if let subtitle {
                     Text(subtitle)
                         .font(.system(size: 11))
-                        .foregroundStyle(isSelected ? color.opacity(0.7) : Color(hex: "F0F0F0").opacity(0.4))
+                        .foregroundStyle(isSelected ? color.opacity(0.7) : Color.secondary)
                 }
             }
             .padding(.horizontal, 12)
             .padding(.vertical, 9)
             .frame(maxWidth: 160, alignment: .leading)
-            .background(isSelected ? color.opacity(0.12) : Color.white.opacity(0.05),
+            .background(isSelected ? color.opacity(0.12) : Color.primary.opacity(0.05),
                         in: RoundedRectangle(cornerRadius: 10, style: .continuous))
             .overlay {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .stroke(isSelected ? color.opacity(0.45) : Color.white.opacity(0.08), lineWidth: 1)
+                    .stroke(isSelected ? color.opacity(0.45) : Color.primary.opacity(0.1), lineWidth: 1)
             }
         }
         .buttonStyle(.plain)
@@ -378,10 +379,10 @@ struct NewPostView: View {
     private func emptyPicker(_ text: String) -> some View {
         Text(text)
             .font(.system(size: 13))
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.4))
+            .foregroundStyle(Color.secondary)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(12)
-            .background(Color.white.opacity(0.04), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+            .background(Color.primary.opacity(0.04), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
     }
 
     // MARK: - Message Field
@@ -391,13 +392,13 @@ struct NewPostView: View {
             sectionLabel("MESSAGE (OPTIONAL)")
             TextField("Add a message…", text: $message, axis: .vertical)
                 .font(.system(size: 14))
-                .foregroundStyle(Color(hex: "F0F0F0"))
+                .foregroundStyle(.primary)
                 .lineLimit(4, reservesSpace: true)
                 .padding(12)
-                .background(Color.white.opacity(0.05), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
+                .background(Color(uiColor: .secondarySystemBackground), in: RoundedRectangle(cornerRadius: 10, style: .continuous))
                 .overlay {
                     RoundedRectangle(cornerRadius: 10, style: .continuous)
-                        .stroke(Color.white.opacity(0.09), lineWidth: 1)
+                        .stroke(Color.primary.opacity(0.1), lineWidth: 1)
                 }
 
             if let errorMessage {
@@ -414,7 +415,7 @@ struct NewPostView: View {
         Text(text)
             .font(.system(size: 11, weight: .bold))
             .tracking(0.6)
-            .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+            .foregroundStyle(Color.secondary.opacity(0.6))
     }
 
     // MARK: - Actions
@@ -428,11 +429,13 @@ struct NewPostView: View {
             case .pull:
                 guard let item = selectedCollectionItem else { return }
                 let name = cardNamesByID[item.cardID] ?? item.cardID
-                let setCode = setCodesByID[item.cardID]
+                // Prefer the human-readable set name; fall back to the set code
+                // only when the catalog hasn't been loaded yet.
+                let resolvedSetName = setNamesByID[item.cardID] ?? setCodesByID[item.cardID]
                 _ = try await services.socialShare.publishPull(
                     collectionItem: item,
                     cardName: name,
-                    setName: setCode,
+                    setName: resolvedSetName,
                     message: message,
                     visibility: .friends
                 )
@@ -489,11 +492,21 @@ struct NewPostView: View {
         singleCards.forEach { ids.insert($0.cardID) }
         wishlistItems.forEach { ids.insert($0.cardID) }
 
+        // Build a setCode -> human-readable set name map from the catalog so
+        // pull posts can attribute the card to e.g. "Mega Evolution" rather
+        // than the raw "me2pt5" set code.
+        let setNameByCode = Dictionary(
+            uniqueKeysWithValues: services.cardData.sets.map { ($0.setCode, $0.name) }
+        )
+
         for id in ids {
             guard cardNamesByID[id] == nil else { continue }
             if let card = await services.cardData.loadCard(masterCardId: id) {
                 cardNamesByID[id] = card.cardName
                 setCodesByID[id] = card.setCode
+                if let name = setNameByCode[card.setCode] {
+                    setNamesByID[id] = name
+                }
             }
         }
     }

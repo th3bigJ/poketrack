@@ -46,14 +46,6 @@ struct FolderAddCardsSheet: View {
 
     private var allCardsBase: [Card] { isQueryActive ? searchResults : displayedCards }
 
-    private var collectionCards: [Card] {
-        let q = debouncedTrimmed.lowercased()
-        return collectionItems.compactMap { item in
-            guard TCGBrand.inferredFromMasterCardId(item.cardID) == brand else { return nil }
-            // Use already-resolved cards if available, else skip until resolved
-            return nil
-        }
-    }
 
     // Collection entries resolved via pre-loaded card data
     @State private var resolvedByID: [String: Card] = [:]

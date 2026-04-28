@@ -28,7 +28,7 @@ struct PublicWishlistDetailView: View {
             }
             .navigationTitle(title)
             .navigationBarTitleDisplayMode(.inline)
-            .background(colorScheme == .dark ? Color.black : Color(uiColor: .systemGroupedBackground))
+            .background(Color(uiColor: .systemGroupedBackground))
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
                     Button("Close") {
@@ -93,7 +93,7 @@ private struct PublicWishlistDetailItem: View {
         .padding(8)
         .background(
             RoundedRectangle(cornerRadius: 12)
-                .fill(colorScheme == .dark ? Color.white.opacity(0.05) : Color.white)
+                .fill(Color(uiColor: .secondarySystemGroupedBackground))
                 .shadow(color: .black.opacity(0.03), radius: 2, y: 1)
         )
         .task {

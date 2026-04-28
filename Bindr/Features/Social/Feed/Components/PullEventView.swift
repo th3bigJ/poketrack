@@ -18,13 +18,13 @@ struct PullEventView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fill)
                     } placeholder: {
-                        Color.white.opacity(0.1)
+                        Color.primary.opacity(0.05)
                     }
                     .clipShape(RoundedRectangle(cornerRadius: 7, style: .continuous))
                     
                     // Inset highlight
                     RoundedRectangle(cornerRadius: 7, style: .continuous)
-                        .stroke(LinearGradient(colors: [.white.opacity(0.3), .clear], startPoint: .top, endPoint: .bottom), lineWidth: 1)
+                        .stroke(LinearGradient(colors: [.primary.opacity(0.2), .clear], startPoint: .top, endPoint: .bottom), lineWidth: 1)
                 }
                 .frame(width: 54, height: 76)
             }
@@ -63,7 +63,7 @@ struct PullEventView: View {
     }
     
     private var cardGradient: LinearGradient {
-        LinearGradient(colors: [Color.white.opacity(0.1), Color.black.opacity(0.1)], startPoint: .topLeading, endPoint: .bottomTrailing)
+        LinearGradient(colors: [Color.primary.opacity(0.05), Color.black.opacity(0.1)], startPoint: .topLeading, endPoint: .bottomTrailing)
     }
     
     private func formatCurrency(_ value: Double) -> String {

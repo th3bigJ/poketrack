@@ -26,7 +26,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
                 } label: {
                     Text(title(item))
                         .font(.system(size: 14, weight: isSelected ? .bold : .medium))
-                        .foregroundStyle(isSelected ? .white : .primary.opacity(0.7))
+                        .foregroundStyle(isSelected ? .white : .primary.opacity(0.6))
                         .padding(.vertical, 8)
                         .padding(.horizontal, 4)
                         .frame(maxWidth: .infinity)
@@ -35,7 +35,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
                                 Capsule()
                                     .fill(services.theme.accentColor)
                                     .matchedGeometryEffect(id: "highlight", in: namespace)
-                                    .shadow(color: services.theme.accentColor.opacity(0.3), radius: 4, x: 0, y: 2)
+                                    .shadow(color: services.theme.accentColor.opacity(0.2), radius: 4, x: 0, y: 2)
                             }
                         }
                 }
@@ -48,7 +48,7 @@ struct SlidingSegmentedPicker<SelectionValue: Hashable & Identifiable>: View {
                 .fill(.ultraThinMaterial)
                 .overlay {
                     Capsule()
-                        .strokeBorder(.white.opacity(0.1), lineWidth: 0.5)
+                        .strokeBorder(Color.primary.opacity(0.1), lineWidth: 0.5)
                 }
         }
     }

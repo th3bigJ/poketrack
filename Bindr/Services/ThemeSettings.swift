@@ -52,8 +52,8 @@ final class ThemeSettings {
         // Default to a premium blue/indigo
         self.accentColorHex = cloudSettings.string(forKey: accentColorKey) ?? "4f46e5"
         
-        let savedAppearance = cloudSettings.string(forKey: appearanceKey) ?? AppAppearance.dark.rawValue
-        self.appearance = AppAppearance(rawValue: savedAppearance) ?? .dark
+        let savedAppearance = cloudSettings.string(forKey: appearanceKey) ?? AppAppearance.system.rawValue
+        self.appearance = AppAppearance(rawValue: savedAppearance) ?? .system
     }
     
     static let presetColors = [

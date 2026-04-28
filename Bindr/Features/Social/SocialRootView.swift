@@ -132,7 +132,8 @@ struct SocialRootView: View {
             socialHeader
             content
         }
-        .background(Color(hex: "0A0A0A").ignoresSafeArea())
+        .background(Color(uiColor: .systemBackground))
+        .ignoresSafeArea(edges: .bottom)
         .navigationTitle("Social")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar(.hidden, for: .navigationBar)
@@ -179,7 +180,8 @@ struct SocialRootView: View {
     }
 
     private var socialHeader: some View {
-        ZStack {
+        VStack(spacing: 0) {
+            ZStack {
             Text("Social")
                 .font(.title2.weight(.bold))
                 .foregroundStyle(.primary)
@@ -199,7 +201,7 @@ struct SocialRootView: View {
                                 Circle()
                                     .fill(Color(hex: "E05252"))
                                     .frame(width: 8, height: 8)
-                                    .overlay(Circle().stroke(Color(hex: "141414"), lineWidth: 1.5))
+                                    .overlay(Circle().stroke(Color(uiColor: .systemBackground), lineWidth: 1.5))
                                     .offset(x: 4, y: -4)
                             }
                         }
@@ -240,9 +242,13 @@ struct SocialRootView: View {
                     }
                 }
             }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(Color(uiColor: .systemBackground))
+            
+            Divider().opacity(0.1)
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
         .sheet(isPresented: $isAlertsPresented) {
             SocialAlertsSheet(isPresented: $isAlertsPresented) { deepLinkURL in
                 services.socialPush.queueDeepLink(url: deepLinkURL)
@@ -396,7 +402,7 @@ struct SocialRootView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
         }
-        .background(Color(hex: "0A0A0A"))
+        .background(Color(uiColor: .systemBackground))
     }
 
     private func handleAppleSignInResult(_ result: Result<ASAuthorization, Error>) async {

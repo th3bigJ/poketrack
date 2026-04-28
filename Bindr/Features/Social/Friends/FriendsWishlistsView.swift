@@ -36,7 +36,7 @@ struct FriendsWishlistsView: View {
             }
             .padding(.vertical, 12)
         }
-        .background(Color(hex: "0A0A0A"))
+        .background(Color(uiColor: .systemBackground))
         .sheet(item: $selectedFriend) { friend in
             PublicWishlistDetailView(
                 cardIDs: friend.wishlistCardIDs ?? [],
@@ -56,15 +56,15 @@ struct FriendsWishlistsView: View {
             VStack(alignment: .leading, spacing: 1) {
                 Text(friend.displayName ?? friend.username)
                     .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(Color(hex: "F0F0F0"))
+                    .foregroundStyle(.primary)
                 Text("@\(friend.username)")
                     .font(.system(size: 11))
-                    .foregroundStyle(Color(hex: "F0F0F0").opacity(0.45))
+                    .foregroundStyle(.secondary)
             }
             Spacer()
             Text("\(friend.wishlistCardIDs?.count ?? 0) cards")
                 .font(.system(size: 11, weight: .semibold))
-                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.35))
+                .foregroundStyle(Color.secondary.opacity(0.7))
         }
         .padding(.horizontal, 20)
     }
@@ -73,13 +73,13 @@ struct FriendsWishlistsView: View {
         VStack(spacing: 12) {
             Image(systemName: "heart.slash")
                 .font(.system(size: 36, weight: .light))
-                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.2))
+                .foregroundStyle(Color.secondary.opacity(0.4))
             Text("No shared wishlists yet")
                 .font(.system(size: 15, weight: .semibold))
-                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.55))
+                .foregroundStyle(Color.secondary)
             Text("Friends can share their wishlist from their profile settings.")
                 .font(.system(size: 13))
-                .foregroundStyle(Color(hex: "F0F0F0").opacity(0.3))
+                .foregroundStyle(Color.secondary.opacity(0.6))
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 40)
         }
