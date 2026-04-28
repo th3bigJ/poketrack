@@ -51,12 +51,16 @@ enum CollectionDispositionKind: String, CaseIterable, Sendable {
     case sold
     case traded
     case gifted
+    case lost
+    case damaged
 
     var title: String {
         switch self {
         case .sold: return "Sold"
         case .traded: return "Traded"
         case .gifted: return "Gifted"
+        case .lost: return "Lost"
+        case .damaged: return "Damaged"
         }
     }
 
@@ -65,6 +69,7 @@ enum CollectionDispositionKind: String, CaseIterable, Sendable {
         case .sold: return .sold
         case .traded: return .tradedOut
         case .gifted: return .giftedOut
+        case .lost, .damaged: return .adjustmentOut
         }
     }
 }

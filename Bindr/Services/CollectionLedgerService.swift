@@ -141,7 +141,8 @@ final class CollectionLedgerService {
         cardDisplayName: String,
         unitPrice: Double? = nil,
         counterparty: String? = nil,
-        notes: String? = nil
+        notes: String? = nil,
+        preferredLotIDs: Set<UUID> = []
     ) throws {
         guard item.itemKind == ProductKind.singleCard.rawValue || item.itemKind == ProductKind.gradedItem.rawValue else {
             throw CollectionLedgerError.notSingleCardStack
@@ -153,7 +154,8 @@ final class CollectionLedgerService {
         let direction = kind.ledgerDirection.rawValue
         let cleanCounterparty = cleanOptionalString(counterparty)
         let cleanNotes = cleanOptionalString(notes)
-        let descriptionParts = [cardDisplayName, cleanNotes].compactMap { $0 }
+        let baseDescription = "\(kind.title) · \(cardDisplayName)"
+        let descriptionParts = [baseDescription, cleanNotes].compactMap { $0 }
         let line = LedgerLine(
             direction: direction,
             productKind: productKind,
@@ -176,7 +178,9 @@ final class CollectionLedgerService {
 
         var remaining = quantity
         let sortedLots = (item.costLots ?? []).sorted { $0.createdAt < $1.createdAt }
-        for lot in sortedLots where remaining > 0 {
+        let preferredLots = sortedLots.filter { preferredLotIDs.contains($0.id) }
+        let fallbackLots = sortedLots.filter { !preferredLotIDs.contains($0.id) }
+        for lot in (preferredLots + fallbackLots) where remaining > 0 {
             guard lot.quantityRemaining > 0 else { continue }
             let take = min(remaining, lot.quantityRemaining)
             lot.quantityRemaining -= take
@@ -665,6 +669,8 @@ final class CollectionLedgerService {
         case .sold: return "sale"
         case .traded: return "trade"
         case .gifted: return "gift"
+        case .lost: return "lost"
+        case .damaged: return "damaged"
         }
     }
 

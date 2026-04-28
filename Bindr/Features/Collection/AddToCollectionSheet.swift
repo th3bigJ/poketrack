@@ -36,6 +36,7 @@ enum GradingCompany: String, CaseIterable, Sendable {
 /// Add a card to the collection with purchase type–specific fields.
 struct AddToCollectionSheet: View {
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.colorScheme) private var colorScheme
     @Environment(AppServices.self) private var services
 
     let card: Card
@@ -130,6 +131,7 @@ struct AddToCollectionSheet: View {
                 }
             }
             .scrollDismissesKeyboard(.interactively)
+            .tint(colorScheme == .dark ? .white : .black)
             .navigationTitle("Add to collection")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

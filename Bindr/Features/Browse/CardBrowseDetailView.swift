@@ -104,8 +104,8 @@ private struct CardBrowseDetailPage: View {
     let showsWishlistAction: Bool
     let onOpenSet: () -> Void
 
-    @State private var editingItem: CollectionItem?
-    @State private var dispositionItem: CollectionItem?
+    @State private var editingLine: HoldingLine?
+    @State private var dispositionLine: HoldingLine?
     @State private var addToCollectionPayload: AddToCollectionSheetPayload?
     @State private var addToFolderPayload: AddToFolderSheetPayload?
     @State private var showCardShare = false
@@ -250,21 +250,11 @@ private struct CardBrowseDetailPage: View {
         .onAppear {
             services.setupCollectionLedger(modelContext: modelContext)
         }
-        .sheet(isPresented: Binding(
-            get: { editingItem != nil },
-            set: { if !$0 { editingItem = nil } }
-        )) {
-            if let editingItem {
-                EditCollectionItemSheet(item: editingItem, cardDisplayName: card.cardName)
-            }
+        .sheet(item: $editingLine) { line in
+            EditCollectionItemSheet(line: line, cardDisplayName: card.cardName)
         }
-        .sheet(isPresented: Binding(
-            get: { dispositionItem != nil },
-            set: { if !$0 { dispositionItem = nil } }
-        )) {
-            if let dispositionItem {
-                HoldingDispositionSheet(item: dispositionItem, cardDisplayName: card.cardName)
-            }
+        .sheet(item: $dispositionLine) { line in
+            HoldingDispositionSheet(line: line, cardDisplayName: card.cardName)
         }
         .sheet(item: $addToCollectionPayload) { payload in
             AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey)
@@ -618,107 +608,75 @@ private struct CardBrowseDetailPage: View {
     private var collectionSection: some View {
         DetailSurface(title: "Collection") {
             VStack(alignment: .leading, spacing: 14) {
-                ForEach(visibleCollectionItems, id: \.persistentModelID) { item in
-                    holdingCard(for: item)
+                ForEach(groupedHoldings) { group in
+                    holdingCard(for: group)
                 }
             }
         }
     }
 
-    private func holdingCard(for item: CollectionItem) -> some View {
+    private func holdingCard(for group: HoldingGroup) -> some View {
         VStack(alignment: .leading, spacing: 14) {
-            HStack(alignment: .top, spacing: 12) {
-                VStack(alignment: .leading, spacing: 6) {
-                    Text("\(item.quantity) x \(variantTitle(item.variantKey))")
-                        .font(.headline)
-                        .foregroundStyle(.primary)
-
-                    HStack(spacing: 8) {
-                        infoBadge(label: item.itemKind == ProductKind.gradedItem.rawValue ? "Graded" : "Raw", tint: CardDetailPalette.chartLine)
-                        if let company = cleaned(item.gradingCompany), let grade = cleaned(item.grade) {
-                            infoBadge(label: "\(company) \(grade)", tint: CardDetailPalette.gold)
-                        }
-                    }
-                }
-
-                Spacer(minLength: 8)
-
-                Button("Mark As") {
-                    dispositionItem = item
-                }
-                .buttonStyle(.borderedProminent)
-                .tint(CardDetailPalette.chartLine)
-            }
-
-            let sources = activeHoldingSources(for: item)
-            if sources.isEmpty {
-                Text("No source details recorded yet.")
-                    .font(.subheadline)
-                    .foregroundStyle(.secondary)
-            } else {
-                VStack(spacing: 10) {
-                    ForEach(sources) { source in
-                        holdingSourceRow(source)
-                    }
+            HStack(spacing: 8) {
+                Text("\(group.totalQuantity) x \(variantTitle(group.variantKey))")
+                    .font(.headline)
+                    .foregroundStyle(.primary)
+                infoBadge(label: group.itemKind == ProductKind.gradedItem.rawValue ? "Graded" : "Raw", tint: CardDetailPalette.chartLine)
+                if let company = cleaned(group.gradingCompany), let grade = cleaned(group.grade) {
+                    infoBadge(label: "\(company) \(grade)", tint: CardDetailPalette.gold)
                 }
             }
 
-            if let notes = cleaned(item.notes) {
+            VStack(spacing: 10) {
+                ForEach(group.lines) { line in
+                    holdingSourceRow(line)
+                }
+            }
+
+            if let notes = cleaned(group.primaryItem.notes) {
                 Text(notes)
                     .font(.subheadline)
                     .foregroundStyle(.secondary)
             }
 
-            Button("Edit Stack") {
-                editingItem = item
-            }
-            .buttonStyle(.bordered)
         }
-        .padding(16)
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .background(
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .fill(sectionInsetBackground)
-        )
-        .overlay(
-            RoundedRectangle(cornerRadius: 22, style: .continuous)
-                .stroke(sectionBorder, lineWidth: 1)
-        )
+        .padding(.vertical, 6)
     }
 
-    private func holdingSourceRow(_ source: HoldingSource) -> some View {
+    private func holdingSourceRow(_ line: HoldingLine) -> some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack(alignment: .center, spacing: 10) {
-                infoBadge(label: source.directionTitle, tint: source.tint)
-                Text("Qty \(source.quantity)")
+                infoBadge(label: line.directionTitle, tint: line.tint)
+                Text("Qty \(line.quantity)")
                     .font(.caption.weight(.medium))
                     .foregroundStyle(.secondary)
                 Spacer(minLength: 8)
-                Text(source.date.formatted(date: .abbreviated, time: .omitted))
+                Text(line.date.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption.weight(.medium))
                     .foregroundStyle(.secondary)
             }
 
             HStack(spacing: 12) {
-                if let priceText = source.priceText {
+                if let priceText = line.priceText {
                     labelValueRow(label: "Price", value: priceText)
                 }
-                if let counterparty = source.counterparty {
-                    labelValueRow(label: source.counterpartyLabel, value: counterparty)
+                if let counterparty = line.counterparty {
+                    labelValueRow(label: line.counterpartyLabel, value: counterparty)
                 }
-            }
-
-            if let description = source.description {
-                Text(description)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
+                Spacer(minLength: 8)
+                Button("Edit") { editingLine = line }
+                    .buttonStyle(.bordered)
+                    .tint(colorScheme == .dark ? .white : .black)
+                Button("Mark As") { dispositionLine = line }
+                    .buttonStyle(.borderedProminent)
+                    .tint(CardDetailPalette.chartLine)
             }
         }
         .padding(14)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(
-            RoundedRectangle(cornerRadius: 18, style: .continuous)
-                .fill(sectionInsetBackground)
+            RoundedRectangle(cornerRadius: 16, style: .continuous)
+                .fill(sectionInsetBackground.opacity(0.55))
         )
     }
 
@@ -885,24 +843,83 @@ private struct CardBrowseDetailPage: View {
             )
     }
 
-    private func activeHoldingSources(for item: CollectionItem) -> [HoldingSource] {
-        (item.costLots ?? [])
-            .filter { $0.quantityRemaining > 0 }
-            .sorted { $0.createdAt > $1.createdAt }
-            .map { lot in
+    private var groupedHoldings: [HoldingGroup] {
+        var groups: [String: HoldingGroup] = [:]
+
+        for item in visibleCollectionItems {
+            for lot in (item.costLots ?? []).filter({ $0.quantityRemaining > 0 }) {
                 let line = lot.sourceLedgerLine
-                return HoldingSource(
-                    id: line?.id ?? UUID(),
+                let direction = line.flatMap { LedgerDirection(rawValue: $0.direction) } ?? .bought
+                let date = line?.occurredAt ?? item.dateAcquired
+                let counterparty = cleaned(line?.counterparty)
+                let description = cleaned(line?.lineDescription)
+                let unitPrice = line?.unitPrice
+                let currencyCode = line?.currencyCode ?? "USD"
+                let groupKey = [
+                    item.itemKind,
+                    item.variantKey,
+                    cleaned(item.gradingCompany) ?? "",
+                    cleaned(item.grade) ?? ""
+                ].joined(separator: "|")
+
+                let lineID = [
+                    groupKey,
+                    direction.rawValue,
+                    counterparty ?? "",
+                    description ?? "",
+                    currencyCode,
+                    (unitPrice.map { String(format: "%.6f", $0) } ?? ""),
+                    String(Int(date.timeIntervalSince1970))
+                ].joined(separator: "|")
+                let holdingLine = HoldingLine(
+                    id: lineID + "|\(lot.id.uuidString)",
+                    item: item,
+                    itemKind: item.itemKind,
+                    variantKey: item.variantKey,
+                    gradingCompany: cleaned(item.gradingCompany),
+                    grade: cleaned(item.grade),
                     quantity: lot.quantityRemaining,
-                    date: line?.occurredAt ?? item.dateAcquired,
-                    direction: line.flatMap { LedgerDirection(rawValue: $0.direction) } ?? .bought,
-                    priceText: {
-                        guard let unitPrice = line?.unitPrice, unitPrice > 0 else { return nil }
-                        return currencyFormatter(code: line?.currencyCode ?? "USD").string(from: NSNumber(value: unitPrice))
-                    }(),
-                    counterparty: cleaned(line?.counterparty),
-                    description: cleaned(line?.lineDescription)
+                    date: date,
+                    direction: direction,
+                    unitPrice: unitPrice,
+                    currencyCode: currencyCode,
+                    counterparty: counterparty,
+                    description: description,
+                    lotIDs: [lot.id]
                 )
+
+                if var existingGroup = groups[groupKey] {
+                    existingGroup.totalQuantity += lot.quantityRemaining
+                    if let existingLineIndex = existingGroup.lines.firstIndex(where: { $0.identityKey == holdingLine.identityKey }) {
+                        existingGroup.lines[existingLineIndex].quantity += lot.quantityRemaining
+                        existingGroup.lines[existingLineIndex].lotIDs.insert(lot.id)
+                    } else {
+                        existingGroup.lines.append(holdingLine)
+                    }
+                    groups[groupKey] = existingGroup
+                } else {
+                    groups[groupKey] = HoldingGroup(
+                        id: groupKey,
+                        primaryItem: item,
+                        itemKind: item.itemKind,
+                        variantKey: item.variantKey,
+                        gradingCompany: cleaned(item.gradingCompany),
+                        grade: cleaned(item.grade),
+                        totalQuantity: lot.quantityRemaining,
+                        lines: [holdingLine]
+                    )
+                }
+            }
+        }
+
+        return groups.values
+            .map { group in
+                var mutable = group
+                mutable.lines.sort { $0.date > $1.date }
+                return mutable
+            }
+            .sorted { lhs, rhs in
+                (lhs.lines.first?.date ?? .distantPast) > (rhs.lines.first?.date ?? .distantPast)
             }
     }
 
@@ -1111,14 +1128,55 @@ private struct DetailSurface<Content: View>: View {
     }
 }
 
-private struct HoldingSource: Identifiable {
-    let id: UUID
-    let quantity: Int
+private struct HoldingGroup: Identifiable {
+    let id: String
+    let primaryItem: CollectionItem
+    let itemKind: String
+    let variantKey: String
+    let gradingCompany: String?
+    let grade: String?
+    var totalQuantity: Int
+    var lines: [HoldingLine]
+}
+
+private struct HoldingLine: Identifiable {
+    let id: String
+    let item: CollectionItem
+    let itemKind: String
+    let variantKey: String
+    let gradingCompany: String?
+    let grade: String?
+    var quantity: Int
     let date: Date
     let direction: LedgerDirection
-    let priceText: String?
+    let unitPrice: Double?
+    let currencyCode: String
     let counterparty: String?
     let description: String?
+    var lotIDs: Set<UUID>
+
+    var identityKey: String {
+        [
+            itemKind,
+            variantKey,
+            gradingCompany ?? "",
+            grade ?? "",
+            direction.rawValue,
+            counterparty ?? "",
+            description ?? "",
+            currencyCode,
+            (unitPrice.map { String(format: "%.6f", $0) } ?? ""),
+            String(Int(date.timeIntervalSince1970))
+        ].joined(separator: "|")
+    }
+
+    var priceText: String? {
+        guard let unitPrice, unitPrice > 0 else { return nil }
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .currency
+        formatter.currencyCode = currencyCode
+        return formatter.string(from: NSNumber(value: unitPrice))
+    }
 
     var directionTitle: String {
         switch direction {
@@ -1162,8 +1220,9 @@ private struct HoldingDispositionSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
 
-    let item: CollectionItem
+    let line: HoldingLine
     let cardDisplayName: String
 
     @State private var dispositionKind: CollectionDispositionKind = .sold
@@ -1177,9 +1236,7 @@ private struct HoldingDispositionSheet: View {
         NavigationStack {
             Form {
                 Section {
-                    Text(cardDisplayName)
-                        .font(.headline)
-                    Text(item.variantKey)
+                    Text(line.variantKey)
                         .font(.subheadline)
                         .foregroundStyle(.secondary)
                 }
@@ -1194,7 +1251,7 @@ private struct HoldingDispositionSheet: View {
                 }
 
                 Section {
-                    Stepper("Quantity: \(quantity)", value: $quantity, in: 1...max(item.quantity, 1))
+                    Stepper("Quantity: \(quantity)", value: $quantity, in: 1...max(line.quantity, 1))
                 }
 
                 if dispositionKind == .sold {
@@ -1218,18 +1275,21 @@ private struct HoldingDispositionSheet: View {
                     }
                 }
             }
+            .tint(colorScheme == .dark ? .white : .black)
             .navigationTitle("Mark Card")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { save() }
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
                 }
             }
             .onAppear {
-                quantity = min(max(item.quantity, 1), quantity)
+                quantity = min(max(line.quantity, 1), quantity)
                 services.setupCollectionLedger(modelContext: modelContext)
             }
         }
@@ -1240,6 +1300,8 @@ private struct HoldingDispositionSheet: View {
         case .sold: return "Sold to"
         case .traded: return "Traded with"
         case .gifted: return "Gifted to"
+        case .lost: return "Lost details"
+        case .damaged: return "Damage details"
         }
     }
 
@@ -1252,14 +1314,15 @@ private struct HoldingDispositionSheet: View {
 
         do {
             try ledger.recordSingleCardDisposition(
-                item: item,
+                item: line.item,
                 kind: dispositionKind,
                 quantity: quantity,
                 currencyCode: services.priceDisplay.currency == .gbp ? "GBP" : "USD",
                 cardDisplayName: cardDisplayName,
                 unitPrice: try parsedOptionalPrice(priceText),
                 counterparty: counterparty,
-                notes: notes
+                notes: notes,
+                preferredLotIDs: line.lotIDs
             )
             dismiss()
         } catch {
@@ -1294,26 +1357,77 @@ private struct EditCollectionItemSheet: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.modelContext) private var modelContext
     @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
 
-    @Bindable var item: CollectionItem
+    let line: HoldingLine
     let cardDisplayName: String
 
+    @State private var acquisitionKind: CollectionAcquisitionKind
     @State private var quantity: Int
+    @State private var cardCondition: CardCondition
+    @State private var gradingCompany: GradingCompany
+    @State private var occurredAt: Date
+    @State private var unitPriceText: String
+    @State private var counterparty: String
+    @State private var sourceDescription: String
     @State private var notes: String
     @State private var errorMessage: String?
 
-    init(item: CollectionItem, cardDisplayName: String) {
-        self.item = item
+    init(line: HoldingLine, cardDisplayName: String) {
+        self.line = line
         self.cardDisplayName = cardDisplayName
-        _quantity = State(initialValue: item.quantity)
-        _notes = State(initialValue: item.notes)
+        _acquisitionKind = State(initialValue: Self.acquisitionKind(for: line.direction))
+        _quantity = State(initialValue: max(line.quantity, 1))
+        _cardCondition = State(initialValue: line.itemKind == ProductKind.gradedItem.rawValue ? .graded : .raw)
+        _gradingCompany = State(initialValue: Self.gradingCompany(for: line.gradingCompany))
+        _occurredAt = State(initialValue: line.date)
+        _unitPriceText = State(initialValue: line.unitPrice.map { String($0) } ?? "")
+        _counterparty = State(initialValue: line.counterparty ?? "")
+        _sourceDescription = State(initialValue: line.description ?? "")
+        _notes = State(initialValue: line.item.notes)
     }
 
     var body: some View {
         NavigationStack {
             Form {
                 Section {
+                    Picker("Purchase type", selection: $acquisitionKind) {
+                        ForEach(CollectionAcquisitionKind.allCases, id: \.self) { kind in
+                            Text(kind.title).tag(kind)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+
+                Section {
+                    Picker("Condition", selection: $cardCondition) {
+                        ForEach(CardCondition.allCases, id: \.self) { condition in
+                            Text(condition.title).tag(condition)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+
+                    if cardCondition == .graded {
+                        Picker("Grading company", selection: $gradingCompany) {
+                            ForEach(GradingCompany.allCases, id: \.self) { company in
+                                Text(company.title).tag(company)
+                            }
+                        }
+                        .pickerStyle(.segmented)
+                    }
+                }
+
+                Section {
                     Stepper("Quantity: \(quantity)", value: $quantity, in: 1...999)
+                }
+
+                Section {
+                    DatePicker("Date", selection: $occurredAt, displayedComponents: .date)
+                    TextField("Bought value / unit price", text: $unitPriceText)
+                        .keyboardType(.decimalPad)
+                    TextField("Source", text: $counterparty)
+                    TextField("Details", text: $sourceDescription, axis: .vertical)
+                        .lineLimit(2...5)
                 }
                 Section {
                     TextField("Notes", text: $notes, axis: .vertical)
@@ -1327,14 +1441,17 @@ private struct EditCollectionItemSheet: View {
                     }
                 }
             }
+            .tint(colorScheme == .dark ? .white : .black)
             .navigationTitle("Edit in collection")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
                 }
                 ToolbarItem(placement: .confirmationAction) {
                     Button("Save") { save() }
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
                 }
             }
             .onAppear {
@@ -1346,22 +1463,83 @@ private struct EditCollectionItemSheet: View {
     private func save() {
         errorMessage = nil
         services.setupCollectionLedger(modelContext: modelContext)
-        guard let ledger = services.collectionLedger else {
+        guard services.collectionLedger != nil else {
             errorMessage = "Collection isn’t ready. Try again."
             return
         }
         do {
-            if quantity != item.quantity {
-                try ledger.applySingleCardStackQuantityChange(
-                    item: item,
-                    newQuantity: quantity,
-                    cardDisplayName: cardDisplayName
-                )
+            let trimmedCounterparty = counterparty.trimmingCharacters(in: .whitespacesAndNewlines)
+            let trimmedDescription = sourceDescription.trimmingCharacters(in: .whitespacesAndNewlines)
+            let parsedUnitPrice = try parsedOptionalPrice(unitPriceText)
+            let directionRaw = acquisitionKind.ledgerDirection.rawValue
+            let previousQuantity = line.quantity
+            let delta = quantity - previousQuantity
+
+            let selectedLots = (line.item.costLots ?? []).filter { line.lotIDs.contains($0.id) }
+            let selectedUnits = selectedLots.reduce(0) { $0 + $1.quantityRemaining }
+            if selectedUnits > 0 {
+                var remaining = quantity
+                let sorted = selectedLots.sorted { $0.createdAt > $1.createdAt }
+                for lot in sorted {
+                    let assigned = min(remaining, lot.quantityRemaining)
+                    lot.quantityRemaining = assigned
+                    remaining -= assigned
+                }
+                if remaining > 0, let first = sorted.first {
+                    first.quantityRemaining += remaining
+                }
             }
-            item.notes = notes
+
+            if delta != 0 {
+                line.item.quantity = max(1, line.item.quantity + delta)
+            }
+
+            for lot in selectedLots {
+                if let ledgerLine = lot.sourceLedgerLine {
+                    ledgerLine.occurredAt = occurredAt
+                    ledgerLine.direction = directionRaw
+                    ledgerLine.unitPrice = parsedUnitPrice
+                    ledgerLine.currencyCode = services.priceDisplay.currency == .gbp ? "GBP" : "USD"
+                    ledgerLine.counterparty = trimmedCounterparty.isEmpty ? nil : trimmedCounterparty
+                    ledgerLine.lineDescription = trimmedDescription.isEmpty ? cardDisplayName : trimmedDescription
+                    ledgerLine.quantity = selectedLots
+                        .filter { $0.sourceLedgerLine?.id == ledgerLine.id }
+                        .reduce(0) { $0 + $1.quantityRemaining }
+                }
+            }
+
+            line.item.itemKind = cardCondition == .graded ? ProductKind.gradedItem.rawValue : ProductKind.singleCard.rawValue
+            line.item.gradingCompany = cardCondition == .graded ? gradingCompany.rawValue : nil
+            line.item.grade = cardCondition == .graded ? "10" : nil
+            line.item.notes = notes
+            try modelContext.save()
             dismiss()
         } catch {
             errorMessage = error.localizedDescription
         }
+    }
+
+    private func parsedOptionalPrice(_ text: String) throws -> Double? {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        guard let value = Double(trimmed.replacingOccurrences(of: ",", with: ".")) else {
+            throw HoldingDispositionError.invalidPrice
+        }
+        return value
+    }
+
+    private static func acquisitionKind(for direction: LedgerDirection) -> CollectionAcquisitionKind {
+        switch direction {
+        case .bought: return .bought
+        case .packed: return .packed
+        case .giftedIn, .giftedOut: return .gifted
+        case .tradedIn, .tradedOut: return .trade
+        case .sold, .adjustmentIn, .adjustmentOut: return .bought
+        }
+    }
+
+    private static func gradingCompany(for raw: String?) -> GradingCompany {
+        guard let raw = raw?.trimmingCharacters(in: .whitespacesAndNewlines).uppercased() else { return .psa }
+        return GradingCompany(rawValue: raw) ?? .psa
     }
 }
