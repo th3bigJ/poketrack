@@ -56,7 +56,7 @@ struct ProfileHeroHeader: View {
                     .foregroundStyle(colorScheme == .dark ? .white : .black)
                     .opacity(colorScheme == .dark ? 0.04 : 0.05)
                     .frame(maxWidth: .infinity, maxHeight: 230, alignment: .center)
-                    .offset(y: -10)
+                    .offset(y: -35)
                     .allowsHitTesting(false)
             }
             

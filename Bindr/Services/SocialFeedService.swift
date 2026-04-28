@@ -505,7 +505,7 @@ final class SocialFeedService {
         let rows: [Vote] = try await execute(
             path: "/rest/v1/reactions?select=*&content_id=eq.\(contentID.uuidString)",
             method: "GET",
-            accessToken: try signedInAccessToken()
+            accessToken: try? signedInAccessToken()
         )
         
         let currentUserID = try? signedInUserID()
@@ -513,7 +513,16 @@ final class SocialFeedService {
         var downvotes = 0
         var myVote: ReactionType?
         
+        #if DEBUG
+        if !rows.isEmpty {
+            print("DEBUG: fetchVoteAggregate for \(contentID.uuidString) found \(rows.count) rows")
+        }
+        #endif
+
         for row in rows {
+            #if DEBUG
+            print("DEBUG: reaction row: id=\(row.id), type=\(row.voteType.rawValue), user=\(row.userID)")
+            #endif
             switch row.voteType {
             case .upvote:
                 upvotes += 1
@@ -524,6 +533,12 @@ final class SocialFeedService {
                 myVote = row.voteType
             }
         }
+        
+        #if DEBUG
+        if upvotes > 0 || downvotes > 0 {
+            print("DEBUG: aggregate for \(contentID.uuidString): up=\(upvotes), down=\(downvotes), score=\(upvotes - downvotes)")
+        }
+        #endif
         return VoteAggregate(upvoteCount: upvotes, downvoteCount: downvotes, myVoteType: myVote)
     }
 
