@@ -319,21 +319,11 @@ final class SocialFeedService {
             includeActivityRows: false
         )
         
-        // Filter out "notification" style items from the main Everyone feed
-        let filtered = fetched.filter { item in
-            switch item.type {
-            case .vote, .comment, .friendship, .wishlistMatch:
-                return false
-            default:
-                return true
-            }
-        }
-
         if refresh {
-            items = filtered
+            items = fetched
         } else {
             let existingIDs = Set(items.map(\.id))
-            items.append(contentsOf: filtered.filter { !existingIDs.contains($0.id) })
+            items.append(contentsOf: fetched.filter { !existingIDs.contains($0.id) })
             items.sort { $0.createdAt > $1.createdAt }
         }
 
@@ -451,19 +441,23 @@ final class SocialFeedService {
         recalculateUnread()
     }
 
-
     func postVote(type: ReactionType, to contentID: UUID) async throws {
         let userID = try signedInUserID()
-        let payload = VoteInsertRequest(contentID: contentID, userID: userID, voteType: type)
-        print("DEBUG: postVote started - type: \(type), contentID: \(contentID), userID: \(userID)")
+        let payload = VoteInsertRequest(
+            contentID: contentID,
+            userID: userID,
+            voteType: type
+        )
+        
+        print("DEBUG: postVote started - type: \(type), contentID: \(contentID)")
         do {
             _ = try await execute(
-                path: "/rest/v1/reactions?on_conflict=content_id,user_id",
+                path: "/rest/v1/reactions",
                 method: "POST",
                 accessToken: try signedInAccessToken(),
                 body: payload,
                 extraHeaders: [
-                    "Prefer": "resolution=merge-duplicates,return=minimal"
+                    "Prefer": "return=minimal"
                 ]
             ) as EmptyResponse
             print("DEBUG: postVote success")

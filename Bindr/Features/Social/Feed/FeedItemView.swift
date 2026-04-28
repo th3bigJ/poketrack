@@ -97,7 +97,6 @@ struct FeedItemView: View {
             }
 
             Spacer()
-            TypePill(label: badgeText, color: typeAccentColor)
         }
     }
 
@@ -124,30 +123,39 @@ struct FeedItemView: View {
     }
 
     private var content: some View {
-        HStack(alignment: .center, spacing: 10) {
-            VStack(alignment: .leading, spacing: 5) {
-                Text(cardTitle)
-                    .font(.system(size: 14, weight: .bold))
-                    .foregroundStyle(.primary)
-                    .lineLimit(2)
+        HStack(alignment: .top, spacing: 14) {
+            CardStackPreview(item: item, size: item.type == .pull ? 90 : 80)
+            
+            VStack(alignment: .leading, spacing: 6) {
+                HStack(alignment: .top) {
+                    Text(cardTitle)
+                        .font(.system(size: 15, weight: .bold))
+                        .foregroundStyle(.primary)
+                        .lineLimit(2)
+                        .fixedSize(horizontal: false, vertical: true)
+                    
+                    Spacer(minLength: 8)
+                    
+                    TypePill(label: badgeText, color: typeAccentColor)
+                }
 
                 if let bodyText {
                     Text(bodyText)
                         .font(.system(size: 12))
                         .foregroundStyle(Color.secondary)
-                        .lineLimit(2)
+                        .lineLimit(3)
+                        .fixedSize(horizontal: false, vertical: true)
                 }
 
                 if let metaText {
                     Text(metaText)
                         .font(.system(size: 11))
-                        .foregroundStyle(Color.secondary.opacity(0.3))
+                        .foregroundStyle(Color.secondary.opacity(0.4))
                 }
             }
-
-            Spacer(minLength: 8)
-            CardStackPreview(item: item, size: item.type == .pull ? 64 : 52)
+            .frame(maxWidth: .infinity, alignment: .leading)
         }
+        .padding(.vertical, 4)
     }
 
     private var actorName: String {

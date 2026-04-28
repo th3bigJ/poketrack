@@ -566,6 +566,17 @@ struct BinderDetailView: View {
             }
             .buttonStyle(.bordered)
 
+            Menu {
+                Button { binder.pageLayout = BinderPageLayout.fixed(rows: 2, columns: 2).rawValue } label: { Label("2x2 (4 slots)", systemImage: "square.grid.2x2") }
+                Button { binder.pageLayout = BinderPageLayout.fixed(rows: 3, columns: 3).rawValue } label: { Label("3x3 (9 slots)", systemImage: "square.grid.3x3") }
+                Button { binder.pageLayout = BinderPageLayout.fixed(rows: 3, columns: 4).rawValue } label: { Label("3x4 (12 slots)", systemImage: "rectangle.grid.3x2") }
+                Button { binder.pageLayout = BinderPageLayout.freeScroll.rawValue } label: { Label("Free Scroll", systemImage: "scroll") }
+            } label: {
+                Label(layout.displayName, systemImage: "rectangle.split.3x3")
+                    .font(.caption.weight(.medium))
+            }
+            .buttonStyle(.bordered)
+
             Spacer()
 
             if !layout.isFreeScroll {

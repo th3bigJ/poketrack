@@ -28,7 +28,19 @@ struct FeedView: View {
     private let selectedScope: SocialFeedService.FeedScope = .everyone
 
     private var groupedItems: [GroupedFeedItem] {
-        let items = services.socialFeed.items
+        // Only show actual content posts (binders, pulls, etc) in the main Feed list.
+        // Interactions (votes, comments) are visible in the Alerts tab or collapsed 
+        // underneath their parents in this group logic.
+        let allItems = services.socialFeed.items
+        let items = allItems.filter { item in
+            switch item.type {
+            case .vote, .comment, .friendship, .wishlistMatch:
+                return false
+            default:
+                return true
+            }
+        }
+        
         var groups: [GroupedFeedItem] = []
         var contentIndex: [UUID: Int] = [:]   // contentID → index into groups
 
