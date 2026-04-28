@@ -10,6 +10,7 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
     @Binding var currentPage: Int
     @Binding var isTurning: Bool
     let pageBackgroundColor: UIColor
+    let contentVersion: Int
     @ViewBuilder let pageContent: (Int) -> Content
 
     func makeCoordinator() -> Coordinator {
@@ -58,12 +59,19 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
         guard needed > 0 else { return }
         let clampedPage = max(0, min(currentPage, needed - 1))
         let shown = uiViewController.viewControllers?.first
-        if shown !== coord.controllers[clampedPage] {
-            isTurning = true
+        let versionChanged = contentVersion != coord.lastVersion
+        coord.lastVersion = contentVersion
+        
+        if shown !== coord.controllers[clampedPage] || versionChanged {
+            let isPageShift = shown !== coord.controllers[clampedPage]
+            if isPageShift {
+                isTurning = true
+            }
+            
             uiViewController.setViewControllers(
                 [coord.controllers[clampedPage]],
-                direction: clampedPage > (coord.lastPage ?? 0) ? .forward : .reverse,
-                animated: true
+                direction: clampedPage >= (coord.lastPage ?? 0) ? .forward : .reverse,
+                animated: isPageShift
             )
             coord.lastPage = clampedPage
         }
@@ -80,6 +88,7 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
         var parent: PageCurlView
         var controllers: [UIViewController] = []
         var lastPage: Int?
+        var lastVersion: Int = 0
 
         init(parent: PageCurlView) {
             self.parent = parent
