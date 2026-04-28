@@ -242,6 +242,7 @@ final class SocialFeedService {
         let description: String?
         let cardCount: Int?
         let brand: String?
+        let payload: [String: JSONValue]?
 
         enum CodingKeys: String, CodingKey {
             case id
@@ -251,6 +252,7 @@ final class SocialFeedService {
             case description
             case cardCount = "card_count"
             case brand
+            case payload
         }
     }
 
@@ -745,6 +747,7 @@ final class SocialFeedService {
                 cardCount: content.cardCount,
                 brand: content.brand
             )
+            let thumbnails = Self.thumbnailsFromPayload(content.payload, includeThumbnailsKey: true)
             return FeedItem(
                 id: "vote-\(row.id.uuidString)",
                 type: .vote,
@@ -762,7 +765,7 @@ final class SocialFeedService {
                 pullRarity: nil,
                 digestCollectionCount: nil,
                 digestWishlistCount: nil,
-                thumbnails: nil,
+                thumbnails: thumbnails,
                 binderColour: nil,
                 binderTexture: nil,
                 binderSeed: nil
@@ -838,7 +841,7 @@ final class SocialFeedService {
                 pullRarity: nil,
                 digestCollectionCount: nil,
                 digestWishlistCount: nil,
-                thumbnails: nil,
+                thumbnails: Self.thumbnailsFromPayload(content.payload, includeThumbnailsKey: true),
                 binderColour: nil,
                 binderTexture: nil,
                 binderSeed: nil
@@ -884,7 +887,7 @@ final class SocialFeedService {
                 pullRarity: nil,
                 digestCollectionCount: nil,
                 digestWishlistCount: nil,
-                thumbnails: nil,
+                thumbnails: Self.thumbnailsFromPayload(content.payload, includeThumbnailsKey: true),
                 binderColour: nil,
                 binderTexture: nil,
                 binderSeed: nil
@@ -909,7 +912,7 @@ final class SocialFeedService {
 
     private func fetchVoteRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [VoteFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/reactions?select=id,content_id,user_id,reaction_type,created_at,actor:user_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand,payload)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
@@ -921,7 +924,7 @@ final class SocialFeedService {
 
     private func fetchCommentRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [CommentFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/comments?select=id,content_id,author_id,parent_id,body,created_at,author:author_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand,payload)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()
@@ -940,7 +943,7 @@ final class SocialFeedService {
 
     private func fetchWishlistMatchRows(before: Date?, limit: Int, scope: FeedScope) async throws -> [WishlistMatchFeedRow] {
         let beforeFilter = before.map { "&created_at=lt.\(iso8601String($0))" } ?? ""
-        var path = "/rest/v1/wishlist_matches?select=id,content_id,card_id,sender_id,matcher_id,created_at,sender:sender_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),matcher:matcher_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
+        var path = "/rest/v1/wishlist_matches?select=id,content_id,card_id,sender_id,matcher_id,created_at,sender:sender_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),matcher:matcher_id(id,username,display_name,avatar_url,avatar_background_color,avatar_outline_style,favorite_pokemon_dex,favorite_pokemon_image_url),content:content_id(id,owner_id,title,content_type,description,card_count,brand,payload)&order=created_at.desc&limit=\(limit)\(beforeFilter)"
         
         if scope == .mine {
             let userID = try signedInUserID()

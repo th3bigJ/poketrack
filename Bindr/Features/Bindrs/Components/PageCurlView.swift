@@ -106,7 +106,7 @@ struct PageCurlView<Content: View>: UIViewControllerRepresentable {
             guard completed, let shown = pvc.viewControllers?.first,
                   let idx = controllers.firstIndex(of: shown) else { return }
             parent.currentPage = idx
-            parent.lastPage = idx
+            self.lastPage = idx
         }
     }
 }
