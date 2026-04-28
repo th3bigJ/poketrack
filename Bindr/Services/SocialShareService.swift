@@ -912,14 +912,22 @@ final class SocialShareService {
     }
 
     private func encodeBinderPayload(_ binder: Binder, includeValue: Bool) async throws -> EncodedPayload {
+        // Sort by position so subscribers can rebuild the original page order
+        // even when SwiftData hands us slots out of order.
+        let sortedSlots = binder.slotList.sorted { $0.position < $1.position }
         var rows: [[String: JSONValue]] = []
         var totalValue: Double = 0
-        for slot in binder.slotList {
+        for slot in sortedSlots {
             var row: [String: JSONValue] = [
                 "cardID": .string(slot.cardID),
                 "variantKey": .string(slot.variantKey),
                 "quantity": .number(1),
-                "cardName": .string(slot.cardName)
+                "cardName": .string(slot.cardName),
+                // Including the slot position lets subscribers recreate empty
+                // slots / page breaks faithfully — without it, friends viewing
+                // the binder would see all cards bunched up at the start of
+                // page one regardless of where the publisher placed them.
+                "position": .number(Double(slot.position))
             ]
             if includeValue,
                let card = await cardDataService.loadCard(masterCardId: slot.cardID),
@@ -937,6 +945,10 @@ final class SocialShareService {
             "colour": .string(binder.colour),
             "texture": .string(binder.textureKind.rawValue),
             "seed": .number(Double(binder.textureSeed)),
+            // `page_layout` is the ``BinderPageLayout`` raw value (e.g.
+            // `"fixed:3x3"` or `"freeScroll"`) so the read-only viewer can
+            // paginate the binder using the same grid the publisher uses.
+            "page_layout": .string(binder.pageLayout),
             "items": .array(rows.map(JSONValue.object))
         ]
         if includeValue {
