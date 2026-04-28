@@ -143,9 +143,6 @@ struct FeedItemView: View {
                         .font(.system(size: 11))
                         .foregroundStyle(Color.secondary.opacity(0.3))
                 }
-
-                }
-            }
             }
 
             Spacer(minLength: 8)
