@@ -105,6 +105,10 @@ struct CardGridCell: View {
         return min(max(ownedCountBadge, 2), 999)
     }
 
+    private var showsOwnedUI: Bool {
+        gridOptions.showOwned && isOwned
+    }
+
     private var cardCornerRadius: CGFloat {
         showsFooter ? 18 : 0
     }
@@ -130,7 +134,7 @@ struct CardGridCell: View {
 
             BrowseCardThumbnailView(
                 imageURL: safeImageURL(relativePath: card.imageLowSrc),
-                isOwned: isOwned,
+                isOwned: showsOwnedUI,
                 isWishlisted: isWishlisted,
                 ownedCountBadge: visibleOwnedCountBadge,
                 accentColor: services.theme.accentColor
@@ -202,8 +206,8 @@ struct CardGridCell: View {
         .overlay {
             RoundedRectangle(cornerRadius: cardCornerRadius, style: .continuous)
                 .stroke(
-                    isOwned ? services.theme.accentColor : tileBorder,
-                    lineWidth: isOwned ? 1.8 : 1.2
+                    showsOwnedUI ? services.theme.accentColor : tileBorder,
+                    lineWidth: showsOwnedUI ? 1.8 : 1.2
                 )
         }
     }
@@ -361,6 +365,8 @@ private struct BrowseCardGridButton: View {
     let isWishlisted: Bool
     let isMultiSelectActive: Bool
     @Binding var multiSelectedCardIDs: Set<String>
+    let onQuickAddRequested: (Card, BrowseQuickAddAction) -> Void
+    let onSelectMultipleRequested: (Card) -> Void
 
     @Environment(\.presentCard) private var presentCard
     @Environment(\.browseFeedCards) private var browseFeedCards
@@ -400,6 +406,20 @@ private struct BrowseCardGridButton: View {
             }
         }
         .buttonStyle(CardCellButtonStyle())
+        .contextMenu {
+            Button("Select Multiple") {
+                onSelectMultipleRequested(row.card)
+            }
+            Button("Add to Collection") {
+                onQuickAddRequested(row.card, .collection)
+            }
+            Button("Add to Wishlist") {
+                onQuickAddRequested(row.card, .wishlist)
+            }
+            Button("Add to Folder") {
+                onQuickAddRequested(row.card, .folder)
+            }
+        }
         .frame(maxWidth: .infinity, alignment: .top)
     }
 }
@@ -470,6 +490,15 @@ struct BrowseView: View {
     @State private var multiSelectFolderNewTitle = ""
     @State private var showFolderCreateAlert = false
     @State private var addedMultiSelectFolderIDs: Set<UUID> = []
+    @State private var lastSelectedSetCodeInSetsTab: String?
+    @State private var auxiliaryScrollPositionID: String?
+    @State private var pendingSetRestoreRowID: String?
+    @State private var setRestoreToken: Int = 0
+    @State private var addToCollectionPayload: AddToCollectionSheetPayload?
+    @State private var addToFolderPayload: AddToFolderSheetPayload?
+    @State private var quickAddContext: BrowseQuickAddContext?
+    @State private var quickAddVariantKeys: [String] = []
+    @State private var showQuickAddVariantPicker = false
 
     private var inlineDetailPriceCacheTaskKey: String {
         let ids = inlineDetailCards.map(\.masterCardId).joined(separator: "|")
@@ -525,6 +554,14 @@ struct BrowseView: View {
             MultiSelectAddToCollectionSheet(cards: payload.cards)
                 .environment(services)
         }
+        .sheet(item: $addToCollectionPayload) { payload in
+            AddToCollectionSheet(card: payload.card, variantKey: payload.variantKey)
+                .environment(services)
+        }
+        .sheet(item: $addToFolderPayload) { payload in
+            AddToFolderSheet(card: payload.card, variantKey: payload.variantKey)
+                .environment(services)
+        }
         .sheet(isPresented: $showMultiSelectFolderSheet, onDismiss: { addedMultiSelectFolderIDs.removeAll() }) {
             multiSelectFolderSheet
         }
@@ -536,6 +573,20 @@ struct BrowseView: View {
             Button("OK", role: .cancel) {}
         } message: {
             Text(wishlistAlertMessage ?? "")
+        }
+        .confirmationDialog(
+            quickAddDialogTitle,
+            isPresented: $showQuickAddVariantPicker,
+            titleVisibility: .visible
+        ) {
+            ForEach(quickAddVariantKeys, id: \.self) { key in
+                Button(variantTitle(key)) {
+                    completeQuickAdd(with: key)
+                }
+            }
+            Button("Cancel", role: .cancel) {
+                clearQuickAddState()
+            }
         }
         .onAppear {
             isViewVisible = true
@@ -611,6 +662,17 @@ struct BrowseView: View {
                 isInlineDetailPresented = (newValue != nil)
                 inlineDetailQuery = ""
                 inlineDetailPriceByCardID = [:]
+                if selectedTab == .sets {
+                    if newValue != nil {
+                        auxiliaryScrollPositionID = browseAuxTopAnchorID()
+                    } else if let setCode = lastSelectedSetCodeInSetsTab?.trimmingCharacters(in: .whitespacesAndNewlines).lowercased(),
+                              !setCode.isEmpty {
+                        let rowID = browseSetRowScrollID(setCode: setCode)
+                        auxiliaryScrollPositionID = rowID
+                        pendingSetRestoreRowID = rowID
+                        setRestoreToken += 1
+                    }
+                }
                 await loadInlineDetailIfNeeded(route: newValue)
             }
         }
@@ -630,14 +692,12 @@ struct BrowseView: View {
         guard isViewVisible else { return }
         let selectedTabSnapshot = selectedTab
         let querySnapshot = query
-        // Avoid reading filter bindings during immediate appearance updates.
-        // The active filters/query pipeline will reconcile right after startup.
-        let filtersSnapshot = BrowseCardGridFilters()
-        // Avoid touching the `@Query`-backed collection rows during SwiftUI's
-        // appearance update cycle. Ownership-sensitive filters are refreshed
-        // later through the normal change handlers once the view is stable.
-        let ownedCardIDsSnapshot: Set<String> = []
-        let shouldUseCatalogFeedOnStartup = false
+        // Use the currently restored state so persisted filters/search apply
+        // immediately after a cold launch.
+        let filtersSnapshot = filters
+        let ownedCardIDsSnapshot = ownedCardIDsCache
+        let shouldUseCatalogFeedOnStartup = selectedTabSnapshot == .cards
+            && (!querySnapshot.isEmpty || filtersSnapshot.hasActiveFieldFilters || filtersSnapshot.hasActiveSort)
         isUsingCatalogFeedSelection = shouldUseCatalogFeedOnStartup
         await initializeBrowseData(
             for: selectedBrand,
@@ -764,7 +824,9 @@ struct BrowseView: View {
                     isOwned: ownedCardIDsCache.contains(row.card.masterCardId),
                     isWishlisted: visibleWishlistedCardIDs.contains(row.card.masterCardId),
                     isMultiSelectActive: isMultiSelectActive,
-                    multiSelectedCardIDs: $multiSelectedCardIDs
+                    multiSelectedCardIDs: $multiSelectedCardIDs,
+                    onQuickAddRequested: beginQuickAdd(card:action:),
+                    onSelectMultipleRequested: beginSelectMultiple(with:)
                 )
                 .onAppear {
                     guard snapshot.hasMoreCardsToLoad else { return }
@@ -878,18 +940,32 @@ struct BrowseView: View {
     }
 
     private var auxiliaryTabScrollView: some View {
-        ScrollView(showsIndicators: false) {
-            VStack(spacing: 0) {
-                Color.clear
-                    .frame(height: rootFloatingChromeInset)
-                browseTabsRow
-                browseSearchRow
-                browseResultCountRow
-                activeTabContent
+        ScrollViewReader { proxy in
+            ScrollView(showsIndicators: false) {
+                VStack(spacing: 0) {
+                    Color.clear
+                        .frame(height: rootFloatingChromeInset)
+                        .id(browseAuxTopAnchorID())
+                    browseTabsRow
+                    browseSearchRow
+                    browseResultCountRow
+                    activeTabContent
+                }
+                .scrollTargetLayout()
             }
-        }
-        .onScrollGeometryChange(for: CGFloat.self, of: { $0.contentOffset.y }) { _, _ in
-            UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            .scrollPosition(id: $auxiliaryScrollPositionID)
+            .onChange(of: setRestoreToken) { _, _ in
+                guard let rowID = pendingSetRestoreRowID else { return }
+                DispatchQueue.main.async {
+                    withAnimation(.easeInOut(duration: 0.2)) {
+                        proxy.scrollTo(rowID, anchor: .center)
+                    }
+                    pendingSetRestoreRowID = nil
+                }
+            }
+            .onScrollGeometryChange(for: CGFloat.self, of: { $0.contentOffset.y }) { _, _ in
+                UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+            }
         }
     }
 
@@ -903,6 +979,7 @@ struct BrowseView: View {
                 inlineDetailContent(route: inlineDetailRoute)
             } else {
                 BrowseSetsTabContent(query: query) { set in
+                    lastSelectedSetCodeInSetsTab = set.setCode
                     inlineDetailRoute = .set(set)
                 }
             }
@@ -964,6 +1041,20 @@ struct BrowseView: View {
                     }
                 }
                 .buttonStyle(CardCellButtonStyle())
+                .contextMenu {
+                    Button("Select Multiple") {
+                        beginSelectMultiple(with: card)
+                    }
+                    Button("Add to Collection") {
+                        beginQuickAdd(card: card, action: .collection)
+                    }
+                    Button("Add to Wishlist") {
+                        beginQuickAdd(card: card, action: .wishlist)
+                    }
+                    Button("Add to Folder") {
+                        beginQuickAdd(card: card, action: .folder)
+                    }
+                }
                 .onAppear {
                     ImagePrefetcher.shared.prefetchCardWindow(filteredCards, startingAt: index + 1)
                 }
@@ -1149,6 +1240,101 @@ struct BrowseView: View {
         if addedCount > 0 {
             HapticManager.notification(.success)
         }
+    }
+
+    private func beginSelectMultiple(with card: Card) {
+        if !isMultiSelectActive {
+            withAnimation(.spring(response: 0.35, dampingFraction: 0.85)) {
+                isMultiSelectActive = true
+            }
+        }
+        multiSelectedCardIDs.insert(card.masterCardId)
+        HapticManager.impact(.light)
+    }
+
+    private var quickAddDialogTitle: String {
+        guard let quickAddContext else { return "Select Variant" }
+        switch quickAddContext.action {
+        case .collection:
+            return "Add to Collection"
+        case .wishlist:
+            return "Add to Wishlist"
+        case .folder:
+            return "Add to Folder"
+        }
+    }
+
+    private func beginQuickAdd(card: Card, action: BrowseQuickAddAction) {
+        quickAddContext = BrowseQuickAddContext(card: card, action: action)
+        Task {
+            var keys = await services.pricing.variantKeys(for: card)
+            if keys.isEmpty, let variants = card.pricingVariants, !variants.isEmpty {
+                keys = variants
+            }
+            if keys.isEmpty {
+                keys = ["normal"]
+            }
+            await MainActor.run {
+                quickAddVariantKeys = Array(Set(keys)).sorted()
+                showQuickAddVariantPicker = true
+            }
+        }
+    }
+
+    private func completeQuickAdd(with variantKey: String) {
+        guard let quickAddContext else { return }
+        switch quickAddContext.action {
+        case .collection:
+            addToCollectionPayload = AddToCollectionSheetPayload(card: quickAddContext.card, variantKey: variantKey)
+        case .wishlist:
+            addToWishlist(card: quickAddContext.card, variantKey: variantKey)
+        case .folder:
+            addToFolderPayload = AddToFolderSheetPayload(card: quickAddContext.card, variantKey: variantKey)
+        }
+        clearQuickAddState()
+    }
+
+    private func clearQuickAddState() {
+        quickAddContext = nil
+        quickAddVariantKeys = []
+    }
+
+    private func addToWishlist(card: Card, variantKey: String) {
+        guard let wl = services.wishlist else {
+            wishlistAlertMessage = "Wishlist isn't available yet. Try again in a moment."
+            showWishlistAlert = true
+            return
+        }
+        do {
+            try wl.addItem(cardID: card.masterCardId, variantKey: variantKey, notes: "")
+            HapticManager.notification(.success)
+        } catch let error as WishlistError {
+            switch error {
+            case .limitReached:
+                showWishlistPaywall = true
+            case .alreadyExists:
+                wishlistAlertMessage = "This card and variant are already on your wishlist."
+                showWishlistAlert = true
+            case .saveFailed(let inner):
+                wishlistAlertMessage = inner.localizedDescription
+                showWishlistAlert = true
+            }
+        } catch {
+            wishlistAlertMessage = error.localizedDescription
+            showWishlistAlert = true
+        }
+    }
+
+    private func variantTitle(_ key: String) -> String {
+        let spaced = key
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([a-z])([A-Z])", with: "$1 $2", options: .regularExpression)
+            .trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !spaced.isEmpty else { return "Normal" }
+        return spaced
+            .split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
     }
 
     private func addSelectedCards(to folder: CardFolder) {
@@ -1776,6 +1962,25 @@ struct BrowseView: View {
     }
 }
 
+private enum BrowseQuickAddAction {
+    case collection
+    case wishlist
+    case folder
+}
+
+private struct BrowseQuickAddContext {
+    let card: Card
+    let action: BrowseQuickAddAction
+}
+
+private func browseSetRowScrollID(setCode: String) -> String {
+    "browse-set-row-\(setCode.trimmingCharacters(in: .whitespacesAndNewlines).lowercased())"
+}
+
+private func browseAuxTopAnchorID() -> String {
+    "browse-aux-top-anchor"
+}
+
 private struct BrowseSetsTabContent: View {
     @Environment(AppServices.self) private var services
     @Query private var collectionItems: [CollectionItem]
@@ -1819,6 +2024,12 @@ private struct BrowseSetsTabContent: View {
         return "\(services.brandSettings.selectedCatalogBrand.rawValue)#\(snapshot)"
     }
 
+    private var setLogoPrefetchTaskKey: String {
+        filteredSets
+            .map { "\($0.setCode)|\($0.logoSrc)" }
+            .joined(separator: "§")
+    }
+
     var body: some View {
         Group {
             if filteredSets.isEmpty {
@@ -1831,7 +2042,7 @@ private struct BrowseSetsTabContent: View {
                 .padding(.horizontal, 16)
                 .padding(.bottom, 16)
             } else {
-                LazyVStack(alignment: .leading, spacing: 20) {
+                VStack(alignment: .leading, spacing: 20) {
                     ForEach(groupedSets, id: \.title) { group in
                         VStack(alignment: .leading, spacing: 8) {
                             Text(group.title)
@@ -1844,8 +2055,8 @@ private struct BrowseSetsTabContent: View {
                         .padding(.horizontal, 16)
                         .padding(.top, 10)
 
-                        LazyVStack(spacing: 0) {
-                            ForEach(Array(group.sets.enumerated()), id: \.offset) { _, set in
+                        VStack(spacing: 0) {
+                            ForEach(group.sets) { set in
                                 Button {
                                     onSelectSet(set)
                                 } label: {
@@ -1911,6 +2122,7 @@ private struct BrowseSetsTabContent: View {
                                     .padding(.vertical, 10)
                                     .contentShape(Rectangle())
                                 }
+                                .id(browseSetRowScrollID(setCode: set.setCode))
                                 .buttonStyle(.plain)
                                 .task(id: setMarketValueTaskID(for: set)) {
                                     await ensureSetMarketValueLoaded(for: set)
@@ -1928,6 +2140,9 @@ private struct BrowseSetsTabContent: View {
         }
         .task(id: collectionProgressTaskKey) {
             await refreshCollectedCounts()
+        }
+        .task(id: setLogoPrefetchTaskKey) {
+            prefetchSetLogos()
         }
     }
 
@@ -2079,6 +2294,14 @@ private struct BrowseSetsTabContent: View {
         }
         let setCode = String(trimmed[..<separatorIndex]).lowercased()
         return (setCode, trimmed.lowercased())
+    }
+
+    private func prefetchSetLogos() {
+        let urls = filteredSets.compactMap { set in
+            AppConfiguration.setLogoURLCandidates(logoSrc: set.logoSrc.trimmingCharacters(in: .whitespacesAndNewlines)).first
+        }
+        guard !urls.isEmpty else { return }
+        ImagePrefetcher.shared.prefetch(urls, priority: .medium)
     }
 }
 

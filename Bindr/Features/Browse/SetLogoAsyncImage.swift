@@ -6,9 +6,6 @@ struct SetLogoAsyncImage: View {
     let height: CGFloat
     let brand: TCGBrand
 
-    @State private var candidateIndex = 0
-    @State private var lastFailureHandledAtIndex: Int?
-
     private var trimmed: String {
         logoSrc.trimmingCharacters(in: .whitespacesAndNewlines)
     }
@@ -18,45 +15,25 @@ struct SetLogoAsyncImage: View {
         return AppConfiguration.setLogoURLCandidates(logoSrc: trimmed)
     }
 
+    private var primaryURL: URL? {
+        urls.first
+    }
+
     var body: some View {
         Group {
             if trimmed.isEmpty {
                 Color.clear
-            } else if candidateIndex < urls.count, !urls.isEmpty {
-                AsyncImage(url: urls[candidateIndex]) { phase in
-                    switch phase {
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .scaledToFit()
-                    case .failure:
-                        let nextIndex = candidateIndex + 1
-                        if nextIndex < urls.count {
-                            Color.clear
-                                .onAppear {
-                                    guard lastFailureHandledAtIndex != candidateIndex else { return }
-                                    lastFailureHandledAtIndex = candidateIndex
-                                    candidateIndex = nextIndex
-                                }
-                        } else {
-                            Color.clear
-                        }
-                    case .empty:
-                        Color.clear
-                    @unknown default:
-                        Color.clear
-                    }
-                }
-                .id("\(trimmed)-\(candidateIndex)")
             } else {
-                Color.clear
+                CachedAsyncImage(url: primaryURL) { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                } placeholder: {
+                    Color.clear
+                }
             }
         }
         .frame(maxWidth: .infinity, minHeight: height, maxHeight: height)
-        .onChange(of: trimmed) { _, _ in
-            candidateIndex = 0
-            lastFailureHandledAtIndex = nil
-        }
     }
 }
 

@@ -6,6 +6,7 @@ struct FolderContentsView: View {
     @Environment(\.modelContext) private var modelContext
     @Environment(\.presentCard) private var presentCard
     @Environment(\.dismiss) private var dismiss
+    @Query private var collectionItems: [CollectionItem]
 
     let folder: CardFolder
 
@@ -13,6 +14,7 @@ struct FolderContentsView: View {
     @State private var filters = BrowseCardGridFilters()
     @State private var gridOptions = BrowseGridOptions()
     @State private var cardsByCardID: [String: Card] = [:]
+    @State private var setNameByBrandAndCode: [String: String] = [:]
     @State private var showShare = false
 
     private var folderSignature: String {
@@ -50,6 +52,10 @@ struct FolderContentsView: View {
         filteredPairs.enumerated().map { IndexedFolderItem(index: $0.offset, item: $0.element.item, card: $0.element.card) }
     }
 
+    private var setNameCacheKey: String {
+        services.brandSettings.enabledBrands.map(\.rawValue).sorted().joined(separator: ",")
+    }
+
     var body: some View {
         ScrollView {
             VStack(spacing: 0) {
@@ -83,6 +89,9 @@ struct FolderContentsView: View {
         }
         .task(id: folderSignature) {
             await resolveCards()
+        }
+        .task(id: setNameCacheKey) {
+            refreshSetNameCache()
         }
     }
 
@@ -147,7 +156,15 @@ struct FolderContentsView: View {
         Button {
             presentCard(card, orderedCards)
         } label: {
-            CardGridCell(card: card, gridOptions: gridOptions, footnote: item.variantKey != "normal" ? item.variantKey : nil)
+            let qty = ownedQuantity(for: item)
+            CardGridCell(
+                card: card,
+                gridOptions: gridOptions,
+                setName: setName(for: card),
+                isOwned: qty > 0,
+                ownedCountBadge: qty,
+                footnote: nil
+            )
         }
         .buttonStyle(CardCellButtonStyle())
         .contextMenu {
@@ -187,6 +204,41 @@ struct FolderContentsView: View {
     private func removeItem(_ item: CardFolderItem) {
         modelContext.delete(item)
         try? modelContext.save()
+    }
+
+    private func setName(for card: Card) -> String? {
+        let brand = TCGBrand.inferredFromMasterCardId(card.masterCardId)
+        return setNameByBrandAndCode[setNameKey(brand: brand, setCode: card.setCode)]
+    }
+
+    private func refreshSetNameCache() {
+        var map: [String: String] = [:]
+        for brand in services.brandSettings.enabledBrands {
+            guard let sets = try? CatalogStore.shared.fetchAllSets(for: brand) else { continue }
+            for set in sets where map[setNameKey(brand: brand, setCode: set.setCode)] == nil {
+                map[setNameKey(brand: brand, setCode: set.setCode)] = set.name
+            }
+        }
+        setNameByBrandAndCode = map
+    }
+
+    private func ownedQuantity(for folderItem: CardFolderItem) -> Int {
+        let targetCardID = folderItem.cardID.trimmingCharacters(in: .whitespacesAndNewlines)
+        let targetVariant = normalizeVariantKey(folderItem.variantKey)
+        guard !targetCardID.isEmpty else { return 0 }
+        return collectionItems.reduce(0) { partial, item in
+            guard item.cardID == targetCardID else { return partial }
+            guard normalizeVariantKey(item.variantKey) == targetVariant else { return partial }
+            return partial + max(0, item.quantity)
+        }
+    }
+
+    private func normalizeVariantKey(_ raw: String) -> String {
+        raw.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
+    }
+
+    private func setNameKey(brand: TCGBrand, setCode: String) -> String {
+        "\(brand.rawValue)|\(setCode)"
     }
 
     private func cardEnergyOptions(_ cards: [Card]) -> [String] {

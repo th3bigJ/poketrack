@@ -22,6 +22,7 @@ struct CollectView: View {
     @State private var collectionDisplayedCards: [Card] = []
     @State private var collectionNextIndex = 0
     @State private var isLoadingMoreCollectionItems = false
+    @State private var markAsSession: CollectionMarkAsSession?
 
     // MARK: - Wishlist State
     @Query(sort: \WishlistItem.dateAdded, order: .reverse) private var wishlistItems: [WishlistItem]
@@ -157,6 +158,10 @@ struct CollectView: View {
             }
             refreshSealedProductCaches()
             refreshCollectionFeed()
+            Task { @MainActor in
+                await Task.yield()
+                refreshCollectionFeed()
+            }
         }
         .onChange(of: services.brandSettings.selectedCatalogBrand) { _, brand in
             selectedBrand = brand
@@ -174,6 +179,14 @@ struct CollectView: View {
         .sheet(item: $selectedSealedProduct) { product in
             SealedProductBrowseDetailView(products: [product], startProductID: product.id)
                 .environment(services)
+        }
+        .sheet(item: $markAsSession) { session in
+            CollectionMarkAsSheet(
+                item: session.item,
+                cardDisplayName: session.cardDisplayName,
+                initialKind: session.initialKind
+            )
+            .environment(services)
         }
         .onChange(of: selectedSealedProduct?.id) { _, productID in
             services.isSealedDetailPresentationActive = (productID != nil)
@@ -387,6 +400,15 @@ struct CollectView: View {
                 )
             }
             .buttonStyle(CardCellButtonStyle())
+            .contextMenu {
+                Menu("Mark as") {
+                    markAsButton(kind: .sold, item: item, card: card)
+                    markAsButton(kind: .traded, item: item, card: card)
+                    markAsButton(kind: .gifted, item: item, card: card)
+                    markAsButton(kind: .lost, item: item, card: card)
+                    markAsButton(kind: .damaged, item: item, card: card)
+                }
+            }
             .accessibilityLabel("\(card.cardName), \(item.quantity) copies, \(item.variantKey)")
         } else {
             VStack(spacing: 4) {
@@ -633,6 +655,11 @@ struct CollectView: View {
                 )
             }
             .buttonStyle(CardCellButtonStyle())
+            .contextMenu {
+                Button("Remove from Wishlist", role: .destructive) {
+                    removeFromWishlist(item)
+                }
+            }
             .accessibilityLabel(card.cardName)
         } else {
             VStack(spacing: 4) {
@@ -753,6 +780,22 @@ struct CollectView: View {
         ImagePrefetcher.shared.prefetchCardWindow(orderedWishlistCards, startingAt: 0, count: 24)
     }
 
+    private func removeFromWishlist(_ item: WishlistItem) {
+        modelContext.delete(item)
+        try? modelContext.save()
+    }
+
+    @ViewBuilder
+    private func markAsButton(kind: CollectionDispositionKind, item: CollectionItem, card: Card) -> some View {
+        Button(kind.title) {
+            markAsSession = CollectionMarkAsSession(
+                item: item,
+                cardDisplayName: card.cardName,
+                initialKind: kind
+            )
+        }
+    }
+
     private func sealedProduct(for item: WishlistItem) -> SealedProduct? {
         if let product = sealedProductByCollectionCardIDCache[item.cardID] {
             return product
@@ -839,6 +882,167 @@ struct CollectView: View {
         ContentUnavailableView(title, systemImage: image, description: Text(description))
             .frame(minHeight: 280)
             .padding(.horizontal)
+    }
+}
+
+private struct CollectionMarkAsSession: Identifiable {
+    let id = UUID()
+    let item: CollectionItem
+    let cardDisplayName: String
+    let initialKind: CollectionDispositionKind
+}
+
+private struct CollectionMarkAsSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    @Environment(\.modelContext) private var modelContext
+    @Environment(AppServices.self) private var services
+    @Environment(\.colorScheme) private var colorScheme
+
+    let item: CollectionItem
+    let cardDisplayName: String
+    let initialKind: CollectionDispositionKind
+
+    @State private var dispositionKind: CollectionDispositionKind
+    @State private var quantity: Int = 1
+    @State private var priceText: String = ""
+    @State private var counterparty: String = ""
+    @State private var notes: String = ""
+    @State private var errorMessage: String?
+
+    init(item: CollectionItem, cardDisplayName: String, initialKind: CollectionDispositionKind) {
+        self.item = item
+        self.cardDisplayName = cardDisplayName
+        self.initialKind = initialKind
+        _dispositionKind = State(initialValue: initialKind)
+    }
+
+    var body: some View {
+        NavigationStack {
+            Form {
+                Section {
+                    Text(displayVariant(item.variantKey))
+                        .font(.subheadline)
+                        .foregroundStyle(.secondary)
+                }
+
+                Section {
+                    Picker("Status", selection: $dispositionKind) {
+                        ForEach(CollectionDispositionKind.allCases, id: \.self) { kind in
+                            Text(kind.title).tag(kind)
+                        }
+                    }
+                    .pickerStyle(.segmented)
+                }
+
+                Section {
+                    Stepper("Quantity: \(quantity)", value: $quantity, in: 1...max(item.quantity, 1))
+                }
+
+                if dispositionKind == .sold {
+                    Section {
+                        TextField("Sold price per card", text: $priceText)
+                            .keyboardType(.decimalPad)
+                    }
+                }
+
+                Section {
+                    TextField(counterpartyLabel, text: $counterparty)
+                    TextField("Notes", text: $notes, axis: .vertical)
+                        .lineLimit(2...6)
+                }
+
+                if let errorMessage {
+                    Section {
+                        Text(errorMessage)
+                            .font(.caption)
+                            .foregroundStyle(.red)
+                    }
+                }
+            }
+            .tint(colorScheme == .dark ? .white : .black)
+            .navigationTitle("Mark Card")
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                ToolbarItem(placement: .cancellationAction) {
+                    Button("Cancel") { dismiss() }
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
+                }
+                ToolbarItem(placement: .confirmationAction) {
+                    Button("Save") { save() }
+                        .foregroundStyle(colorScheme == .dark ? Color.white : Color.black)
+                }
+            }
+            .onAppear {
+                quantity = min(max(item.quantity, 1), quantity)
+                services.setupCollectionLedger(modelContext: modelContext)
+            }
+        }
+    }
+
+    private var counterpartyLabel: String {
+        switch dispositionKind {
+        case .sold: return "Sold to"
+        case .traded: return "Traded with"
+        case .gifted: return "Gifted to"
+        case .lost: return "Lost details"
+        case .damaged: return "Damage details"
+        }
+    }
+
+    private func save() {
+        errorMessage = nil
+        guard let ledger = services.collectionLedger else {
+            errorMessage = "Collection isn’t ready. Try again."
+            return
+        }
+
+        do {
+            try ledger.recordSingleCardDisposition(
+                item: item,
+                kind: dispositionKind,
+                quantity: quantity,
+                currencyCode: services.priceDisplay.currency == .gbp ? "GBP" : "USD",
+                cardDisplayName: cardDisplayName,
+                unitPrice: try parsedOptionalPrice(priceText),
+                counterparty: counterparty,
+                notes: notes
+            )
+            dismiss()
+        } catch {
+            errorMessage = error.localizedDescription
+        }
+    }
+
+    private func parsedOptionalPrice(_ text: String) throws -> Double? {
+        let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmed.isEmpty else { return nil }
+        guard let value = Double(trimmed.replacingOccurrences(of: ",", with: ".")) else {
+            throw CollectionMarkAsSheetError.invalidPrice
+        }
+        return value
+    }
+
+    private func displayVariant(_ variantKey: String) -> String {
+        let normalized = variantKey.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !normalized.isEmpty else { return "Normal" }
+        let spaced = normalized
+            .replacingOccurrences(of: "_", with: " ")
+            .replacingOccurrences(of: "([a-z])([A-Z])", with: "$1 $2", options: .regularExpression)
+        return spaced
+            .split(separator: " ")
+            .map { $0.prefix(1).uppercased() + $0.dropFirst().lowercased() }
+            .joined(separator: " ")
+    }
+}
+
+private enum CollectionMarkAsSheetError: LocalizedError {
+    case invalidPrice
+
+    var errorDescription: String? {
+        switch self {
+        case .invalidPrice:
+            return "Enter a valid price."
+        }
     }
 }
 
